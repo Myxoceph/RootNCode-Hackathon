@@ -23,3 +23,15 @@ Vakıf eserlerini pasif birer turistik bina olmaktan çıkarıp çok duyulu (gö
 - Asla doğrudan kör kodlama yapma; büyük değişikliklerden önce /ecc:plan çalıştır.
 - Ağır dış API bağımlılıkları yerine önceden doğrulanmış veri modellerini ve mock fallback'leri tercih et.
 - Zod ile katı şema doğrulaması uygula.
+
+## Git Branch Stratejisi
+```
+main ◄── dev ◄── feat/<özellik>
+```
+- `main`: Her zaman çalışan, demo edilebilir sürüm. Yalnızca `dev`'den PR ile güncellenir.
+- `dev`: Varsayılan dal ve entegrasyon dalı. Tüm feature PR'ları buraya birleşir.
+- `feat/<özellik>`: Her yeni özellik `dev`'den açılır ve PR ile `dev`'e döner (ör. `feat/monuments-api`). Hata düzeltmeleri için `fix/<konu>`, doküman için `docs/<konu>`.
+- `main` ve `dev`'e doğrudan push yapılmaz; her değişiklik PR üzerinden gelir.
+- Dal açmadan önce `dev`'i güncelle: `git switch dev && git pull && git switch -c feat/<özellik>`.
+- Commit mesajları Conventional Commits formatında: `feat(api): ...`, `fix(mobile): ...`, `docs: ...`, `chore: ...`.
+- PR'lar "Create a merge commit" ile birleştirilir; adım adım commit geçmişi korunur.
