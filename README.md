@@ -25,11 +25,22 @@ deneyimle keşfettirir.
 .
 ├── apps/
 │   ├── api/            # Backend: Prisma + PostgreSQL veri katmanı, REST API
-│   └── mobile/         # Mobil istemci
+│   └── app/            # İstemci: Expo ile iOS, Android ve Web (tek kod tabanı)
 ├── packages/
-│   └── contracts/      # Ortak veri sözleşmesi: Zod şemaları, TS tipleri, mock veri
+│   ├── contracts/      # Ortak veri sözleşmesi: Zod şemaları, TS tipleri, mock veri
+│   └── ui/             # Tasarım sistemi: token'lar, temalar, erişilebilir bileşenler
+├── tools/
+│   └── etl/            # Ham eser verisini temizleyip sözleşmeye dönüştüren veri hattı
+├── docs/
+│   ├── sprints/        # Haftalık görev planları
+│   ├── reports/        # Haftalık ilerleme raporları
+│   └── decisions/      # Mimari karar kayıtları (ADR)
 └── docker-compose.yml  # Yerel PostgreSQL 16
 ```
+
+- **Platform:** Uygulama hem mobilde hem web'de çalışır. Kamera ve AR deneyimleri
+  mobile özeldir; web'de sade alternatifleri sunulur
+  ([ADR 0001](docs/decisions/0001-universal-expo-app.md)).
 
 - **Veri modeli:** [`apps/api/prisma/schema.prisma`](apps/api/prisma/schema.prisma)
   Eserler, kitabeler, eserler arası ilişki ağı, şehir mutfağı ve ziyaretçi ipuçları.
