@@ -3,6 +3,15 @@
 ## Proje Vizyonu
 Vakıf eserlerini pasif birer turistik bina olmaktan çıkarıp çok duyulu (görsel, mekânsal ses, kitabe AR, kentsel ağ) ve WCAG 2.1 AA kapsayıcı erişilebilirlikle keşfettiren dijital deneyim.
 
+## Platform & Klasör Yapısı
+Tek Expo (React Native + Expo Router) kod tabanından iOS, Android ve Web. Kamera/AR deneyimleri yalnızca mobilde; web'de sade alternatifleri sunulur (bkz. `docs/decisions/0001-universal-expo-app.md`).
+- `apps/api`: Backend (Fastify, Prisma, PostgreSQL). Sorumlu: Ahmet
+- `apps/app`: İstemci, mobil + web. Sorumlu: Yiğit, Kübra
+- `packages/contracts`: Backend ↔ istemci veri sözleşmesi (Zod). Tüm veri bu şemadan geçer.
+- `packages/ui`: Tasarım sistemi ve erişilebilir bileşenler. Sorumlu: Kübra
+- `tools/etl`: Ham veri → sözleşme biçimi. Sorumlu: Hüseyin
+- `docs/sprints`, `docs/reports`, `docs/decisions`: Haftalık plan, haftalık rapor, mimari kararlar (ADR).
+
 ## 8 Çekirdek Modül
 1. Zaman Perdesi: Ghost overlay kamera + before/after split slider.
 2. Taşın Dili: 2D Marker-based AR kitabe çözücü (meal, transkripsiyon, vakfiye şartı).
