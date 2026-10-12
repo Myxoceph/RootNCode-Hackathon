@@ -1,0 +1,141 @@
+// Vagabonds — PostgreSQL data model
+//
+// Conventions:
+//   - TypeScript fields are camelCase; database columns/tables are snake_case via @map/@@map.
+//   - Primary keys are UUIDs; `slug` is the stable, human-readable key used by seeds and mocks.
+//   - Child rows cascade when their monument is deleted.
+//
+// Module coverage (see CLAUDE.md):
+//   1 Zaman Perdesi        -> Monument.archivePhotoUrl, archiveYear
+//   2 Taşın Dili           -> Monument.markerImageUrl, Inscription
+//   3 Kentsel Ağ & Sis     -> MonumentRelation, Monument.latitude/longitude
+//   4 Travel Planner       -> Monument.city, monumentType, coordinates
+//   5 Gastronomi           -> CityCuisine
+//   6 Ziyaretçi Nabzı      -> VisitorTip
+//   7 Sesli Zaman Kapsülü  -> Monument.audioCapsuleUrl, monumentType
+//   8 Erişilebilirlik      -> Monument.accessibilityAudioDesc, hasRamp, stepFreeAccess
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum MonumentType {
+  MOSQUE       @map("mosque")
+  MADRASA      @map("madrasa")
+  BATH         @map("bath")
+  FOUNTAIN     @map("fountain")
+  ARASTA       @map("arasta")
+  CARAVANSERAI @map("caravanserai")
+  BRIDGE       @map("bridge")
+  TOMB         @map("tomb")
+  OTHER        @map("other")
+
+  @@map("monument_type")
+}
+
+enum RelationType {
+  REVENUE      @map("revenue")
+  WATER_SUPPLY @map("water_supply")
+  SAME_WAQF    @map("same_waqf")
+  ARCHITECT    @map("architect")
+
+  @@map("relation_type")
+}
+
+enum TipStatus {
+  PENDING  @map("pending")
+  APPROVED @map("approved")
+  REJECTED @map("rejected")
+
+  @@map("tip_status")
+}
+
+model Monument {
+  id                     String       @id @default(uuid()) @db.Uuid
+  slug                   String       @unique
+  name                   String
+  city                   String
+  monumentType           MonumentType @map("monument_type")
+  latitude               Decimal      @db.Decimal(9, 6)
+  longitude              Decimal      @db.Decimal(9, 6)
+  period                 String
+  archivePhotoUrl        String?      @map("archive_photo_url")
+  archiveYear            Int?         @map("archive_year")
+  markerImageUrl         String?      @map("marker_image_url")
+  audioCapsuleUrl        String?      @map("audio_capsule_url")
+  accessibilityAudioDesc String       @map("accessibility_audio_desc") @db.Text
+  hasRamp                Boolean      @default(false) @map("has_ramp")
+  stepFreeAccess         Boolean      @default(false) @map("step_free_access")
+  createdAt              DateTime     @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt              DateTime     @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  inscriptions      Inscription[]
+  visitorTips       VisitorTip[]
+  outgoingRelations MonumentRelation[] @relation("RelationSource")
+  incomingRelations MonumentRelation[] @relation("RelationTarget")
+
+  @@index([city])
+  @@index([latitude, longitude])
+  @@map("monuments")
+}
+
+model Inscription {
+  id            String  @id @default(uuid()) @db.Uuid
+  monumentId    String  @map("monument_id") @db.Uuid
+  transcription String  @db.Text
+  modernTurkish String  @map("modern_turkish") @db.Text
+  waqfCondition String? @map("waqf_condition") @db.Text
+
+  monument Monument @relation(fields: [monumentId], references: [id], onDelete: Cascade)
+
+  @@index([monumentId])
+  @@map("inscriptions")
+}
+
+// Directional edge between two monuments. Symmetric types (SAME_WAQF, ARCHITECT)
+// are stored once and read in both directions; source_id <> target_id is enforced
+// by a CHECK constraint in the init migration (not expressible in Prisma).
+model MonumentRelation {
+  id           String       @id @default(uuid()) @db.Uuid
+  sourceId     String       @map("source_id") @db.Uuid
+  targetId     String       @map("target_id") @db.Uuid
+  relationType RelationType @map("relation_type")
+  note         String?
+
+  source Monument @relation("RelationSource", fields: [sourceId], references: [id], onDelete: Cascade)
+  target Monument @relation("RelationTarget", fields: [targetId], references: [id], onDelete: Cascade)
+
+  @@unique([sourceId, targetId, relationType])
+  @@index([targetId])
+  @@map("monument_relations")
+}
+
+model CityCuisine {
+  id                String @id @default(uuid()) @db.Uuid
+  city              String
+  dishName          String @map("dish_name")
+  description       String @db.Text
+  historicalContext String @map("historical_context") @db.Text
+
+  @@unique([city, dishName])
+  @@index([city])
+  @@map("city_cuisines")
+}
+
+model VisitorTip {
+  id         String    @id @default(uuid()) @db.Uuid
+  monumentId String    @map("monument_id") @db.Uuid
+  tipText    String    @map("tip_text") @db.Text
+  status     TipStatus @default(PENDING)
+  createdAt  DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  monument Monument @relation(fields: [monumentId], references: [id], onDelete: Cascade)
+
+  @@index([monumentId, createdAt(sort: Desc)])
+  @@map("visitor_tips")
+}
