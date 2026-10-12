@@ -1,0 +1,18 @@
+{
+  "name": "vagabonds",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Vakıf eserlerini çok duyulu ve kapsayıcı bir dijital deneyimle keşfettiren platform (KÖK&KOD Hackathon).",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "contracts:validate": "npm run validate --workspace @vagabonds/contracts"
+  }
+}
