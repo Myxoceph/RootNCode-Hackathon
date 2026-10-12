@@ -59,8 +59,24 @@ npm install
 npm run db:up                                   # PostgreSQL'i başlat
 cp apps/api/.env.example apps/api/.env
 npm run db:deploy --workspace @vagabonds/api    # migration'ları uygula
+npm run db:seed --workspace @vagabonds/api      # mock veriyle örnek eserleri yükle
 npm run contracts:validate                      # mock sözleşmeyi doğrula
 ```
+
+### API'yi çalıştırma
+
+```bash
+npm run dev --workspace @vagabonds/api          # http://localhost:3000 (dosya değişince yeniden başlar)
+npm test --workspace @vagabonds/api             # testler
+npm run typecheck --workspace @vagabonds/api    # TypeScript kontrolü
+curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
+```
+
+| Uç | Açıklama |
+|---|---|
+| `GET /health` | Sunucu ve veritabanı durumu (veritabanına ulaşılamazsa `503`) |
+
+Tüm hatalar tek biçimde döner: `{ "error": { "code": "NOT_FOUND", "message": "..." } }`
 
 ## Ekip
 
