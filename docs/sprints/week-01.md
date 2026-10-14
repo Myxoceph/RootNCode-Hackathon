@@ -39,11 +39,13 @@ hazır olur, veri hattı ilk gerçek eserleri üretir ve backend ilk API uçlar�
 
 ## Hüseyin Öztürk · Veri & ETL
 
+> **14 Ekim güncellemesi:** Kaynak veri hazır JSON olarak değil, envanter kitapları (PDF) ve fotoğraf arşivi olarak geldi. Hüseyin veri modelini, görsel hattını ve içe aktarma araçlarını `data/` altında kurdu ([PR #7](https://github.com/Myxoceph/RootNCode-Hackathon/pull/7)). H3 bu şekilde karşılandı; H1, H2 ve H4'ün devamı [`data/eksikler.md`](../../data/eksikler.md) üzerinden takip ediliyor. H5 ve H6, mock sözleşmesi ve `CitySchema` yeni veri modeline bırakıldığı için geçersiz.
+
 | # | Görev | Dal | Tamamlanma kriteri |
 |---|---|---|---|
 | H1 | Kaynak envanteri: 60-80 eserin listesi, şehir, tür ve **her bilginin kaynağı** (VGM, müze kayıtları, akademik yayınlar) | `docs/data-sources` | `tools/etl/SOURCES.md` içinde eser listesi ve kaynak tablosu |
 | H2 | Medya lisans takibi: arşiv fotoğrafı ve ses dosyaları için kaynak + lisans tablosu | `docs/data-sources` | Her medya dosyası için lisans bilgisi var; telif durumu belirsiz olanlar işaretli |
-| H3 | ETL iskeleti `tools/etl` içinde: `raw/` → normalize → `@vagabonds/contracts` ile doğrula → `output/` | `feat/etl-pipeline` | `npm run etl` hatalı kaydı atlayıp raporluyor, geçerli kayıtları `output/monuments.json`'a yazıyor |
+| H3 ✅ | ~~ETL iskeleti `tools/etl` içinde~~ (yerine `data/` veri modeli, PR #7): `raw/` → normalize → `@vagabonds/contracts` ile doğrula → `output/` | `feat/etl-pipeline` | `npm run etl` hatalı kaydı atlayıp raporluyor, geçerli kayıtları `output/monuments.json`'a yazıyor |
 | H4 | İlk parti: ilişkileri dahil eksiksiz 10-15 eser | `feat/etl-first-batch` | Çıktı `npm run contracts:validate` benzeri doğrulamadan geçiyor |
 | H5 | Mock'taki 3 eserin `[DOĞRULANACAK]` kitabe metinlerini kaynaklı metinlerle değiştir | `fix/mock-inscriptions` | Mock'ta `[DOĞRULANACAK]` kalmadı; her metnin kaynağı `SOURCES.md`'de |
 | H6 | Gereken şehirlerin listesini çıkar; `CitySchema`'ya eklenecekleri Ahmet'e ilet | – | Şehir listesi `SOURCES.md`'de |
@@ -57,8 +59,8 @@ hazır olur, veri hattı ilk gerçek eserleri üretir ve backend ilk API uçlar�
 | A3 ✅ | Mock JSON'dan geliştirme seed'i (ETL hazır olunca onun çıktısına geçecek) | `feat/api-foundation` | `npm run db:seed` tekrar çalıştırılabilir; 3 eser veritabanında · [PR #3](https://github.com/Myxoceph/RootNCode-Hackathon/pull/3) |
 | A4 ✅ | `GET /monuments` ve `GET /monuments/:slug`; yanıtlar Zod ile doğrulanıyor; web için CORS | `feat/monuments-endpoints` | Entegrasyon testleri geçiyor; yanıt mock ile aynı biçimde · [PR #4](https://github.com/Myxoceph/RootNCode-Hackathon/pull/4) |
 | A5 ✅ | Swagger UI (`/docs`) | `feat/api-docs` | API dokümantasyonu tarayıcıdan görülebiliyor · [PR #5](https://github.com/Myxoceph/RootNCode-Hackathon/pull/5) |
-| A6 | GitHub Actions CI: her PR'da typecheck, sözleşme doğrulaması ve testler | `chore/ci` | PR'larda CI kontrolü görünüyor ve geçiyor |
-| A7 | `CitySchema`'yı Hüseyin'in şehir listesiyle güncelle | `feat/contracts-cities` | Sözleşme ve mock doğrulaması geçiyor |
+| A6 ✅ | GitHub Actions CI: her PR'da typecheck, sözleşme doğrulaması ve testler | `chore/ci` | PR'larda CI kontrolü görünüyor ve geçiyor · [PR #6](https://github.com/Myxoceph/RootNCode-Hackathon/pull/6) |
+| A7 | ~~`CitySchema`'yı Hüseyin'in şehir listesiyle güncelle~~ Geçersiz: şehirler artık `city` tablosu (`data/enums.json`) | `feat/contracts-cities` | Sözleşme ve mock doğrulaması geçiyor |
 
 ---
 
