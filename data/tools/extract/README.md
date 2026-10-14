@@ -8,6 +8,8 @@ Taslağı Claude Code'da bir **Sonnet** alt ajanı yazar; bir insan kaynağa gö
 > olarak daha çok token harcadı; kullanılmıyor. Yine de **insan kontrolü zorunlu**: iki model de
 > Türkçe-İngilizce metin arasındaki bir çelişkiyi kaçırdı.
 
+> Hüseyin için kurulumdan yayına kadar ayrıntılı rehber: [`HUSEYIN.md`](../../../HUSEYIN.md)
+
 ## Kim, ne zaman
 - Bölükler [`data/kapsam.md`](../../kapsam.md) üzerinden paylaşılır. **İşe başlamadan önce
   bölüğü kendi adınıza yazın**, bitince durumunu güncelleyin.
