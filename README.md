@@ -78,6 +78,7 @@ curl http://localhost:3000/monuments/selimiye-camii
 | `GET /health` | Sunucu ve veritabanı durumu (veritabanına ulaşılamazsa `503`) |
 | `GET /monuments?city=` | Tüm eserler ve şehir mutfakları (`MonumentsPayload`); `city` opsiyonel, `CitySchema` değerlerinden biri |
 | `GET /monuments/:slug` | Tek eser (`Monument`): kitabeler, iki yönlü ilişkiler, onaylı ziyaretçi ipuçları |
+| `GET /docs` | Swagger UI: etkileşimli API dokümantasyonu (OpenAPI 3.1 belgesi: `/docs/json`) |
 
 Yanıtlar `@vagabonds/contracts` şemasıyla doğrulanır ve `mock_monuments.json` ile aynı biçimdedir.
 Tüm hatalar tek biçimde döner: `{ "error": { "code": "MONUMENT_NOT_FOUND", "message": "..." } }`

@@ -1,12 +1,15 @@
 import type { FastifyError, FastifyInstance } from "fastify";
+import { z } from "zod";
 
 /** Every error response has this shape, so clients handle failures in one place. */
-export interface ErrorResponse {
-  error: {
-    code: string;
-    message: string;
-  };
-}
+export const ErrorResponseSchema = z.strictObject({
+  error: z.strictObject({
+    code: z.string(),
+    message: z.string(),
+  }),
+});
+
+export type ErrorResponse = z.infer<typeof ErrorResponseSchema>;
 
 export function registerErrorHandlers(app: FastifyInstance): void {
   app.setNotFoundHandler((request, reply) => {
