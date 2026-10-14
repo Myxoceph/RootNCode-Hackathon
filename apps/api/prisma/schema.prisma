@@ -1,141 +1,459 @@
 // Vagabonds — PostgreSQL data model
 //
-// Conventions:
-//   - TypeScript fields are camelCase; database columns/tables are snake_case via @map/@@map.
-//   - Primary keys are UUIDs; `slug` is the stable, human-readable key used by seeds and mocks.
-//   - Child rows cascade when their monument is deleted.
+// Source of truth: the dataset model designed by the data team in data/README.md
+// (section 5). This file is introspected from the database built by the migrations
+// (`prisma db pull`) and must stay that way:
 //
-// Module coverage (see CLAUDE.md):
-//   1 Zaman Perdesi        -> Monument.archivePhotoUrl, archiveYear
-//   2 Taşın Dili           -> Monument.markerImageUrl, Inscription
-//   3 Kentsel Ağ & Sis     -> MonumentRelation, Monument.latitude/longitude
-//   4 Travel Planner       -> Monument.city, monumentType, coordinates
-//   5 Gastronomi           -> CityCuisine
-//   6 Ziyaretçi Nabzı      -> VisitorTip
-//   7 Sesli Zaman Kapsülü  -> Monument.audioCapsuleUrl, monumentType
-//   8 Erişilebilirlik      -> Monument.accessibilityAudioDesc, hasRamp, stepFreeAccess
+//   - Table and column names, and column order, match data/tools/db_rows.py 1:1.
+//     `python3 data/tools/import_to_db.py --verify` checks this in CI.
+//   - Models keep the snake_case table/column names on purpose, so the data team's
+//     docs, tools and this schema share one vocabulary.
+//   - Constructs Prisma cannot express (domains `confidence` / `a11y_status`, the
+//     `asset_relation_live` view, CHECK constraints, the DEFERRABLE `parent_id` FK,
+//     the `asset_search_idx` expression index) are defined only in the migration SQL.
+//     When generating a new migration, review any DROP statement Prisma proposes.
+//
+// Changing a table? Update data/README.md and data/tools/db_rows.py together and
+// tell the data team (see data/README.md, section 7).
 
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider        = "prisma-client"
+  output          = "../src/generated/prisma"
+  previewFeatures = ["partialIndexes"]
 }
 
 datasource db {
   provider = "postgresql"
 }
 
-enum MonumentType {
-  MOSQUE       @map("mosque")
-  MADRASA      @map("madrasa")
-  BATH         @map("bath")
-  FOUNTAIN     @map("fountain")
-  ARASTA       @map("arasta")
-  CARAVANSERAI @map("caravanserai")
-  BRIDGE       @map("bridge")
-  TOMB         @map("tomb")
-  OTHER        @map("other")
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model asset {
+  id                    String            @id
+  status                String
+  type_code             String
+  secondary_types       String[]          @default([])
+  parent_id             String?
+  era_code              String?
+  tags                  String[]          @default([])
+  name_tr               String
+  name_en               String?
+  subtitle_tr           String?
+  subtitle_en           String?
+  alternate_names       Json              @default("[]")
+  summary_tr            String
+  summary_en            String?
+  city_code             String
+  district              String
+  neighborhood          String?
+  address               String?
+  lat                   Float
+  lng                   Float
+  coord_source          String?
+  coord_verified        Boolean           @default(false)
+  dating_display_tr     String?
+  dating_display_en     String?
+  start_year            Int?              @db.SmallInt
+  end_year              Int?              @db.SmallInt
+  hijri_year            Int?              @db.SmallInt
+  century               Int?              @db.SmallInt
+  dating_basis_tr       String?
+  dating_basis_en       String?
+  dating_confidence     String?
+  founder_name          String?
+  founder_role          String?
+  founder_confidence    String?
+  architect_name        String?
+  architect_candidates  Json              @default("[]")
+  architect_confidence  String?
+  waqf_name             String?
+  waqf_deed             Json?
+  waqf_conditions_tr    String?
+  waqf_conditions_en    String?
+  waqf_land_note_tr     String?
+  waqf_land_note_en     String?
+  waqf_confidence       String?
+  visit_setting         String?
+  visit_duration_min    Int?              @db.SmallInt
+  visit_duration_source String?
+  entrance_fee          String?
+  visit_notes_tr        String?
+  visit_notes_en        String?
+  a11y_wheelchair       String            @default("unknown")
+  a11y_step_free        String            @default("unknown")
+  a11y_ramp             String            @default("unknown")
+  a11y_toilet           String            @default("unknown")
+  a11y_verified         Boolean           @default(false)
+  a11y_notes_tr         String?
+  a11y_notes_en         String?
+  audio_description_tr  String?
+  audio_description_en  String?
+  ambient_sound_key     String?
+  ambient_caption_tr    String?
+  ambient_caption_en    String?
+  media_folder          Json?
+  prepared_by           String?
+  reviewed_by           String?
+  todos                 Json              @default("[]")
+  data_quality_notes    Json              @default("[]")
+  source_json           Json
+  created_at            DateTime          @default(now()) @db.Timestamptz(6)
+  updated_at            DateTime          @default(now()) @db.Timestamptz(6)
+  city                  city              @relation(fields: [city_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  era                   era?              @relation(fields: [era_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  asset                 asset?            @relation("assetToasset", fields: [parent_id], references: [id], onUpdate: NoAction)
+  other_asset           asset[]           @relation("assetToasset")
+  asset_type            asset_type        @relation(fields: [type_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  asset_fact            asset_fact[]
+  asset_highlight       asset_highlight[]
+  asset_legend          asset_legend[]
+  asset_media           asset_media?
+  asset_person          asset_person[]
+  asset_relation        asset_relation[]
+  asset_revision        asset_revision[]
+  asset_section         asset_section[]
+  contribution          contribution[]
+  exhibition            exhibition[]
+  inscription           inscription[]
+  source_citation       source_citation[]
+  timeline_event        timeline_event[]
+  visitor_tip           visitor_tip[]
 
-  @@map("monument_type")
+  @@index([lat, lng], map: "asset_geo_idx")
+  @@index([parent_id], map: "asset_parent_idx")
+  @@index([city_code, type_code], map: "asset_published_idx", where: raw("(status = 'published'::text)"))
 }
 
-enum RelationType {
-  REVENUE      @map("revenue")
-  WATER_SUPPLY @map("water_supply")
-  SAME_WAQF    @map("same_waqf")
-  ARCHITECT    @map("architect")
+model asset_fact {
+  asset_id   String
+  key        String
+  sort_order Int      @db.SmallInt
+  label_tr   String
+  label_en   String?
+  value      String
+  value_num  Decimal? @db.Decimal
+  unit       String?
+  note_tr    String?
+  note_en    String?
+  confidence String
+  asset      asset    @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
-  @@map("relation_type")
+  @@id([asset_id, key])
 }
 
-enum TipStatus {
-  PENDING  @map("pending")
-  APPROVED @map("approved")
-  REJECTED @map("rejected")
+model asset_highlight {
+  asset_id      String
+  sort_order    Int            @db.SmallInt
+  feature       String
+  title_tr      String
+  title_en      String?
+  hint_tr       String
+  hint_en       String?
+  section_slug  String?
+  asset         asset          @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  asset_section asset_section? @relation(fields: [asset_id, section_slug], references: [asset_id, slug], onDelete: SetNull, onUpdate: NoAction)
 
-  @@map("tip_status")
+  @@id([asset_id, sort_order])
 }
 
-model Monument {
-  id                     String       @id @default(uuid()) @db.Uuid
-  slug                   String       @unique
-  name                   String
-  city                   String
-  monumentType           MonumentType @map("monument_type")
-  latitude               Decimal      @db.Decimal(9, 6)
-  longitude              Decimal      @db.Decimal(9, 6)
-  period                 String
-  archivePhotoUrl        String?      @map("archive_photo_url")
-  archiveYear            Int?         @map("archive_year")
-  markerImageUrl         String?      @map("marker_image_url")
-  audioCapsuleUrl        String?      @map("audio_capsule_url")
-  accessibilityAudioDesc String       @map("accessibility_audio_desc") @db.Text
-  hasRamp                Boolean      @default(false) @map("has_ramp")
-  stepFreeAccess         Boolean      @default(false) @map("step_free_access")
-  createdAt              DateTime     @default(now()) @map("created_at") @db.Timestamptz(3)
-  updatedAt              DateTime     @updatedAt @map("updated_at") @db.Timestamptz(3)
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model asset_legend {
+  asset_id       String
+  slug           String
+  sort_order     Int     @db.SmallInt
+  title_tr       String
+  title_en       String?
+  body_tr        String
+  body_en        String?
+  source_verdict String
+  asset          asset   @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
-  inscriptions      Inscription[]
-  visitorTips       VisitorTip[]
-  outgoingRelations MonumentRelation[] @relation("RelationSource")
-  incomingRelations MonumentRelation[] @relation("RelationTarget")
-
-  @@index([city])
-  @@index([latitude, longitude])
-  @@map("monuments")
+  @@id([asset_id, slug])
 }
 
-model Inscription {
-  id            String  @id @default(uuid()) @db.Uuid
-  monumentId    String  @map("monument_id") @db.Uuid
-  transcription String  @db.Text
-  modernTurkish String  @map("modern_turkish") @db.Text
-  waqfCondition String? @map("waqf_condition") @db.Text
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model asset_media {
+  asset_id            String        @unique(map: "one_cover_per_asset", where: raw("is_cover"))
+  media_key           String
+  media_id            String        @db.Uuid
+  sort_order          Int           @default(0) @db.SmallInt
+  is_cover            Boolean       @default(false)
+  subject             String?
+  focal_x             Float?        @db.Real
+  focal_y             Float?        @db.Real
+  caption_tr          String
+  caption_en          String?
+  alt_tr              String
+  alt_en              String?
+  archive_year        Int?          @db.SmallInt
+  archive_year_approx Boolean?
+  overlay_opacity     Float?        @db.Real
+  overlay_aspect      String?
+  shooting_hint_tr    String?
+  shooting_hint_en    String?
+  asset               asset         @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  media               media         @relation(fields: [media_id], references: [id], onUpdate: NoAction)
+  inscription         inscription[]
 
-  monument Monument @relation(fields: [monumentId], references: [id], onDelete: Cascade)
-
-  @@index([monumentId])
-  @@map("inscriptions")
+  @@id([asset_id, media_key])
+  @@unique([asset_id, media_id])
 }
 
-// Directional edge between two monuments. Symmetric types (SAME_WAQF, ARCHITECT)
-// are stored once and read in both directions; source_id <> target_id is enforced
-// by a CHECK constraint in the init migration (not expressible in Prisma).
-model MonumentRelation {
-  id           String       @id @default(uuid()) @db.Uuid
-  sourceId     String       @map("source_id") @db.Uuid
-  targetId     String       @map("target_id") @db.Uuid
-  relationType RelationType @map("relation_type")
-  note         String?
+model asset_person {
+  asset_id   String
+  sort_order Int     @db.SmallInt
+  name       String
+  role_tr    String
+  role_en    String?
+  asset      asset   @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
-  source Monument @relation("RelationSource", fields: [sourceId], references: [id], onDelete: Cascade)
-  target Monument @relation("RelationTarget", fields: [targetId], references: [id], onDelete: Cascade)
-
-  @@unique([sourceId, targetId, relationType])
-  @@index([targetId])
-  @@map("monument_relations")
+  @@id([asset_id, sort_order])
 }
 
-model CityCuisine {
-  id                String @id @default(uuid()) @db.Uuid
-  city              String
-  dishName          String @map("dish_name")
-  description       String @db.Text
-  historicalContext String @map("historical_context") @db.Text
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model asset_relation {
+  id              BigInt        @id @default(autoincrement())
+  source_asset_id String
+  target_asset_id String
+  type_code       String
+  description_tr  String
+  description_en  String?
+  confidence      String
+  asset           asset         @relation(fields: [source_asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  relation_type   relation_type @relation(fields: [type_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
 
-  @@unique([city, dishName])
-  @@index([city])
-  @@map("city_cuisines")
+  @@unique([source_asset_id, target_asset_id, type_code])
+  @@index([target_asset_id], map: "relation_target_idx")
 }
 
-model VisitorTip {
-  id         String    @id @default(uuid()) @db.Uuid
-  monumentId String    @map("monument_id") @db.Uuid
-  tipText    String    @map("tip_text") @db.Text
-  status     TipStatus @default(PENDING)
-  createdAt  DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+model asset_revision {
+  asset_id   String
+  version    Int
+  data       Json
+  changed_by String
+  changed_at DateTime @default(now()) @db.Timestamptz(6)
+  asset      asset    @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
-  monument Monument @relation(fields: [monumentId], references: [id], onDelete: Cascade)
-
-  @@index([monumentId, createdAt(sort: Desc)])
-  @@map("visitor_tips")
+  @@id([asset_id, version])
 }
+
+model asset_section {
+  asset_id        String
+  slug            String
+  sort_order      Int               @db.SmallInt
+  title_tr        String
+  title_en        String?
+  body_tr         String
+  body_en         String?
+  confidence      String
+  asset_highlight asset_highlight[]
+  asset           asset             @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([asset_id, slug])
+}
+
+model asset_type {
+  code          String  @id
+  label_tr      String
+  label_en      String?
+  ambient_sound String?
+  asset         asset[]
+}
+
+model city {
+  code        String  @id
+  region_code String
+  plate       Int?    @db.SmallInt
+  label_tr    String
+  label_en    String?
+  asset       asset[]
+  region      region  @relation(fields: [region_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model contribution {
+  id            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  asset_id      String
+  user_id       String    @db.Uuid
+  kind          String
+  media_id      String?   @db.Uuid
+  body          String?
+  status        String    @default("pending")
+  reviewed_by   String?   @db.Uuid
+  reviewed_at   DateTime? @db.Timestamptz(6)
+  reject_reason String?
+  created_at    DateTime  @default(now()) @db.Timestamptz(6)
+  asset         asset     @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  media         media?    @relation(fields: [media_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([created_at], map: "contribution_queue_idx", where: raw("(status = 'pending'::text)"))
+}
+
+model era {
+  code     String  @id
+  label_tr String
+  label_en String?
+  asset    asset[]
+}
+
+model exhibition {
+  id         BigInt    @id @default(autoincrement())
+  asset_id   String
+  name_tr    String
+  name_en    String?
+  venue      String?
+  start_date DateTime? @db.Date
+  end_date   DateTime? @db.Date
+  asset      asset     @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model inscription {
+  asset_id            String
+  slug                String
+  sort_order          Int          @db.SmallInt
+  location_tr         String
+  location_en         String?
+  language            String
+  script              String?
+  transliteration     String?
+  translation_tr      String?
+  translation_en      String?
+  author              String?
+  hijri_year          Int?         @db.SmallInt
+  gregorian           String?
+  note_tr             String?
+  note_en             String?
+  ar_target_media_key String?
+  asset_media         asset_media? @relation(fields: [asset_id, ar_target_media_key], references: [asset_id, media_key], onDelete: NoAction, onUpdate: NoAction)
+  asset               asset        @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([asset_id, slug])
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model media {
+  id              String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  sha256          String          @unique @db.Char(64)
+  kind            String
+  original_key    String
+  original_bytes  BigInt
+  width           Int
+  height          Int
+  aspect_ratio    Decimal         @db.Decimal(6, 4)
+  dominant_color  String?         @db.Char(7)
+  lqip            String?
+  captured_at     DateTime?       @db.Timestamp(6)
+  capture_lat     Float?
+  capture_lng     Float?
+  credit          String
+  photographer    String?
+  license         String
+  source_id       String?
+  source_provider String?
+  source_ref      String?
+  status          String          @default("published")
+  created_at      DateTime        @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime        @default(now()) @db.Timestamptz(6)
+  asset_media     asset_media[]
+  contribution    contribution[]
+  source          source?         @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  media_variant   media_variant[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model media_variant {
+  media_id String @db.Uuid
+  format   String
+  width    Int
+  height   Int
+  bytes    Int
+  key      String @unique
+  media    media  @relation(fields: [media_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([media_id, format, width])
+}
+
+model region {
+  code     String  @id
+  label_tr String
+  label_en String?
+  city     city[]
+}
+
+model relation_type {
+  code           String           @id
+  label_tr       String
+  label_en       String?
+  asset_relation asset_relation[]
+}
+
+model source {
+  id              String            @id
+  type            String
+  title_tr        String
+  title_en        String?
+  publisher       String?
+  year            Int?              @db.SmallInt
+  isbn            String?
+  url             String?
+  is_official     Boolean           @default(false)
+  extra           Json              @default("{}")
+  media           media[]
+  source_citation source_citation[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model source_citation {
+  id         BigInt  @id @default(autoincrement())
+  asset_id   String
+  entity     String
+  entity_key String  @default("")
+  source_id  String
+  pages      String?
+  asset      asset   @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  source     source  @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([asset_id, entity, entity_key], map: "citation_lookup_idx")
+  @@index([source_id], map: "citation_source_idx")
+}
+
+model timeline_event {
+  asset_id            String
+  slug                String
+  year                Int                 @db.SmallInt
+  date                DateTime?           @db.Date
+  hijri               String?
+  type_code           String
+  title_tr            String
+  title_en            String?
+  note_tr             String?
+  note_en             String?
+  confidence          String
+  asset               asset               @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  timeline_event_type timeline_event_type @relation(fields: [type_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([asset_id, slug])
+  @@index([asset_id, year], map: "timeline_year_idx")
+}
+
+model timeline_event_type {
+  code           String           @id
+  label_tr       String
+  label_en       String?
+  timeline_event timeline_event[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model visitor_tip {
+  id           BigInt    @id @default(autoincrement())
+  asset_id     String
+  text_tr      String
+  text_en      String?
+  origin       String
+  collected_at DateTime? @db.Date
+  asset        asset     @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+
