@@ -1,0 +1,362 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-orhangazi-gurle-koyu-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Orhangazi bölümünden (s. 661-663) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
+      "Arşiv fotoğrafı (archive_media) elimizde yok.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
+      "Kitapta fethin ve yapımın kesin yılı verilmemiş (yalnızca XIV. yüzyıl).",
+      "Vakfiye bilgisi kitapta yok; Gürle'nin Orhan Gazi ve I. Murad vakıfları arasında olduğu belirtilmiş.",
+      "Aynı bölgedeki cami/han/tekke yapılarının adları kitapta yok; ilişki kurulmadı (Orhan Gazi Camii Gürle ile bağ 'probable').",
+      "Zaman çizelgesinde yılsız olay atlandı (metinde bölümlerde var): Orhan Gazi tarafından bölgenin fethinden sonra yaptırıldı (XIV. yy.)"
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlık 'Gürle Köyü Hamamı'; metin sonunda 'Gürle Mahallesi Hamamı' ve 'Gürle Mahallesi' ifadesi kullanılıyor (köy/mahalle). Kitabın başlığı esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Gürle Köyü Hamamı",
+    "en": "Gürle Village Bath"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "hamam",
+    "Gürle"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Orhangazi",
+    "neighborhood": "Gürle",
+    "address": "Gürle Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "661"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIV. yüzyıl (Orhan Gazi dönemi)",
+      "en": "14th century (Orhan Gazi era)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Bölgenin fethinden sonra Orhan Gazi tarafından XIV. yüzyılda yaptırıldığı bilinmektedir.",
+      "en": "Known to have been built by Orhan Gazi in the 14th century after the region's conquest."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "661"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Orhan Gazi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "661"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Orhan Gazi ve I. Murad Hudâvendigâr vakıfları (Gürle)",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "661"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Bölgenin fethinden sonra Orhan Gazi'nin XIV. yüzyılda yaptırdığı bilinen hamam; 1954'e kadar hamam olarak işlemiş, sonra demir deposu olmuş, 2006-2009'da restore edilmiştir.",
+    "en": "A bath known to have been built by Orhan Gazi in the 14th century after the conquest of the region; it functioned as a bath until 1954, then served as an iron warehouse and was restored in 2006-2009."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Hamamın bölgenin fethinden sonra Orhan Gazi tarafından XIV. yüzyılda yaptırıldığı bilinmektedir. Gürle hem Orhan Gazi'nin hem I. Murad Hudâvendigâr'ın vakıfları arasındadır; aynı dönemlerde bölgede hamam dışında cami, han ve tekkenin bulunduğu bazı tarihî kaynaklarda kayıtlıdır. Yapı çeşitli onarımlarla günümüze ulaşmış, 1954'e kadar hamam işlevini sürdürmüş, sonra demir deposu olarak kullanılmıştır. 2006-2009'da Vakıflar Bursa Bölge Müdürlüğü'nce kapsamlı restore edilmiş; turistik ziyarete açık olsa da hamam olarak faal değildir.",
+        "en": "The bath is known to have been built by Orhan Gazi in the 14th century after the region's conquest. Gürle is among the foundations of both Orhan Gazi and Murad I Hudâvendigâr; some sources record mosques, hans and Sufi lodges in the region at the same time. It survived through various restorations, functioned as a bath until 1954, then served as an iron warehouse. It was extensively restored by the Bursa Regional Directorate of Foundations in 2006-2009; it is open to tourists but no longer used as a bath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "661, 663"
+        }
+      ]
+    },
+    {
+      "id": "soguklik-ve-plan",
+      "order": 2,
+      "title": {
+        "tr": "Soğukluk ve Plan",
+        "en": "Frigidarium and Plan"
+      },
+      "body": {
+        "tr": "Yapı kubbeli soğukluk ve sıcaklık bölümlerinden oluşur ve toplam dört yan mekân içerir. Kare planlı soğukluk, üçgenlerle geçilen kubbeyle örtülüdür; kuzey ve doğu duvarlarında ikişer, batı duvarında bir dikdörtgen niş vardır. Güney duvar eksenindeki nişli kapıdan, tromp geçişli kubbeyle örtülü küçük kare holle diğer mekâna geçilir. Holün batısında düz tavanlı dikdörtgen bir mekân ve batıdaki yuvarlak kemerli kapıdan açılan, doğu bölümü konik tavanlı, batı bölümü aynalı tonozlu iki bölümlü dehliz yer alır; dehlizin güneyinde beşik tonozlu bir mekân, batısında sonradan bölmelenmiş düz tavanlı bir mekân ve kuzeyinde bir mekân daha vardır.",
+        "en": "The building consists of domed frigidarium and caldarium sections and has four side spaces. The square frigidarium is covered by a dome on triangles; it has two niches each on the north and east walls and one on the west. A door in a niche on the south axis leads to a small square hall with a squinch-transition dome, giving access to the other space. West of the hall is a flat-ceilinged rectangular space and, through a round-arched western door, a two-part corridor (east part conical-ceilinged, west part flattened barrel-vaulted); south of the corridor is a barrel-vaulted space, to its west a later-partitioned flat-ceilinged space, and north of it another space."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "661-662"
+        }
+      ]
+    },
+    {
+      "id": "sicaklik",
+      "order": 3,
+      "title": {
+        "tr": "Sıcaklık Bölümü",
+        "en": "Caldarium"
+      },
+      "body": {
+        "tr": "Sıcaklık, kare planlı ve pandantif geçişli kubbeyle örtülüdür; dikey eksenlerde aynalı kemerlerle sınırlanan eyvanlarla genişletilmiştir. Diğerlerinden dar güney eyvandaki doğuya kaymış kapıyla dehlize geçilir; kuzey eyvanın ortasında su deposuna bakan bir açıklık vardır. Eyvan kemerleri dikdörtgen nişlerle çevrilidir. Ortada sekizgen mermer göbek taşı bulunur; zemin mermer levha kaplıdır.",
+        "en": "The caldarium is covered by a square-plan pendentive dome and expanded by iwans on the vertical axes bordered by flat-topped arches. The narrower south iwan has a door offset eastward leading to the corridor; the north iwan has an opening overlooking the water tank. Iwan arches are surrounded by rectangular niches. An octagonal marble central slab stands in the middle; the floor is marble."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "662-663"
+        }
+      ]
+    },
+    {
+      "id": "cepheler",
+      "order": 4,
+      "title": {
+        "tr": "Cepheler ve Malzeme",
+        "en": "Façades and Materials"
+      },
+      "body": {
+        "tr": "Kuzey cephede su deposu hizasında yuvarlak kemerli dikdörtgen bir külhan nişi, iki kademeli dikdörtgen nişli yuvarlak kemerli giriş kapısı vardır. Doğu cephe köşelerde büyük ölçüde tahrip olmuş, batı cephe yeni bir inşaat nedeniyle zarar görmüştür; güney cephe arazi eğimine göre kademelidir. Soğukluk kubbesi dışta yuvarlağa yakın çokgen, sıcaklık kubbesi sekizgen kasnaklıdır. Kasnak pencerelerinden batıdaki örülmüştür; düz tavanın eksenlerinde yelpaze biçimli büyük konsollar vardır. Duvarlar içten sıvalı; cepheler moloz taş, tuğla ve bol harçla yapılmıştır.",
+        "en": "On the north side, at water-tank level, is a round-arched rectangular furnace niche and a round-arched entrance in a two-stage rectangular niche. The east side is badly damaged at the corners and the west side was damaged by new construction; the south side is stepped with the slope. The frigidarium dome is polygonal, almost round outside; the caldarium dome sits on an octagonal drum. The western drum window is walled up; large fan-shaped consoles stand on the axes of the flat ceiling. Interior walls are plastered; façades are rubble stone, brick and abundant mortar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "662-663"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kapanis_yili",
+      "label": {
+        "tr": "Hamam işlevinin sona erdiği yıl",
+        "en": "Year bath function ended"
+      },
+      "value": 1954,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "key": "yan_mekan",
+      "label": {
+        "tr": "Yan mekân sayısı",
+        "en": "Number of side spaces"
+      },
+      "value": 4,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon",
+      "label": {
+        "tr": "Restorasyon yılları",
+        "en": "Restoration years"
+      },
+      "value": "2006-2009",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "663"
+        }
+      ]
+    },
+    {
+      "key": "yuzyil",
+      "label": {
+        "tr": "Yapım yüzyılı",
+        "en": "Century of construction"
+      },
+      "value": 14,
+      "unit": "yüzyıl",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "key": "zemin",
+      "label": {
+        "tr": "Zemin kaplaması",
+        "en": "Floor covering"
+      },
+      "value": "Mermer levha",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "663"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "1954-islev",
+      "year": 1954,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hamam işlevi sona erdi; demir deposu olarak kullanıldı",
+        "en": "Ceased functioning as a bath; used as an iron warehouse"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "id": "2006-restorasyon",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bursa Bölge Müdürlüğü'nce 2006-2009 arasında kapsamlı restorasyon",
+        "en": "Extensive restoration by the Bursa Regional Directorate of Foundations, 2006-2009"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "663"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "gobek-tasi",
+      "title": {
+        "tr": "Sekizgen göbek taşı",
+        "en": "Octagonal central slab"
+      },
+      "hint": {
+        "tr": "Sıcaklık bölümünün ortasındaki sekizgen mermer göbek taşı.",
+        "en": "The octagonal marble slab in the center of the caldarium."
+      },
+      "section_id": "sicaklik"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-orhangazi-orhan-gazi-camii-gurle",
+      "type": "same_founder",
+      "description": {
+        "tr": "Gürle'deki cami de Orhan Gazi devri eseri sayılır; Gürle Orhan Gazi vakıfları arasındadır.",
+        "en": "The mosque in Gürle is also considered an Orhan Gazi era work; Gürle is among Orhan Gazi's foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "656, 661"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam moloz taş ve tuğladan yapılmıştır. Kare planlı soğukluk kubbeyle örtülüdür; küçük bir holle sıcaklığa geçilir. Sıcaklık, pandantifli kubbeli ve dört yönde eyvanlı bir mekândır; ortasında sekizgen mermer göbek taşı, zemininde mermer levhalar vardır. Kuzey cephede külhan nişi ve su deposu hizası görülür.",
+      "en": "The bath is built of rubble stone and brick. The square frigidarium has a dome; a small hall leads to the caldarium. The caldarium has a pendentive dome and iwans; at its center is an octagonal marble slab and the floor is marble. The north façade has a furnace niche at water tank level."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "ambient_sound": {
+    "sound_key": "hamam",
+    "caption": {
+      "tr": "[Hamam ortamı: damlayan su sesi]",
+      "en": "[Bath ambience: dripping water]"
+    }
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

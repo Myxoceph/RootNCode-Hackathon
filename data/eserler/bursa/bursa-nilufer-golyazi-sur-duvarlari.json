@@ -1,0 +1,392 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-nilufer-golyazi-sur-duvarlari",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Nilüfer bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Surların yapım dönemi için kesin tarih kitapta yok; arkeolojik kaynaklarla teyit edilmeli.",
+      "Hadrianus kitabesinin metni ve dili kitapta verilmemiş.",
+      "Era alanı: enums.json'da antik/Bizans dönemi kodu yok; era boş bırakıldı.",
+      "Tür 'sivil' (bölüm Sivil Mimari altında); 'savunma yapısı' için uygun bir kod yok, gerekirse enum eklenmeli.",
+      "Bölüm sayfa 640-641'de metin yok (muhtemelen görsel).",
+      "Koordinat kitapta yok; sahada ya da güvenilir bir kaynaktan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraflar (media[]) ve arşiv fotoğrafları (archive_media[]) henüz eklenmedi; Drive klasörü bilinmiyor (media_folder: null).",
+      "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok; eklenmedi.",
+      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): Dış kale (Taş Kapı) stadion taşlarıyla Bizans döneminde kule olarak yeniden değerlendirildi"
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[kale-ve-burclar]",
+        "note": "Kitapta 'dış kale'nin 'Taş Kapı' olarak adlandırıldığı ve kuleye dönüştürüldüğü söylenir; stadion taşlarının kökeni 'düşünülmektedir' ifadesiyle verilmiştir."
+      },
+      {
+        "field": "location.address",
+        "note": "Kitapta açık adres yok; 'Gölyazı yerleşimi' genel ifadesi kullanıldı."
+      },
+      {
+        "field": "timeline[-500]",
+        "note": "Kitap 'kentin tarihi MÖ V. yüzyıla kadar uzanır' diyor; bu surun değil kentin geçmişidir ve -500 yalnızca sıralama için konmuş yaklaşık bir değerdir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Gölyazı Sur Duvarları",
+    "en": "Gölyazı Town Walls"
+  },
+  "subtitle": {
+    "tr": "Apollonia ad Rhyndacum surları",
+    "en": "Walls of Apollonia ad Rhyndacum"
+  },
+  "alternate_names": [
+    {
+      "tr": "Taş Kapı",
+      "en": "Stone Gate",
+      "note": "Dış kalenin halk arasındaki adı."
+    }
+  ],
+  "type": "sivil",
+  "secondary_types": [
+    "diger"
+  ],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "sur",
+    "antik kent",
+    "Apollonia ad Rhyndacum",
+    "Bizans",
+    "Uluabat Gölü",
+    "Hadrianus"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Nilüfer",
+    "neighborhood": "Gölyazı",
+    "address": "Gölyazı yerleşimi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "643"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Antik ve Bizans dönemi yapım teknikleri; kentin tarihi MÖ 5. yüzyıla uzanır",
+      "en": "Ancient and Byzantine construction techniques; the town's history goes back to the 5th century BC"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Surlar hem antik hem Bizans dönemi yapım tekniklerini yansıtır; çevreledikleri kentin adı MÖ 2. yüzyıl kaynaklarında geçer; dış kale Bizans döneminde yeniden değerlendirilmiştir. Kesin yapım tarihi verilmez.",
+      "en": "The walls reflect both ancient and Byzantine techniques; the town they surround is mentioned in 2nd century BC sources; the outer fortress was repurposed in the Byzantine period. No exact construction date is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "643-646"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antik Apollonia ad Rhyndacum kentini çevreleyen, Uluabat Gölü kıyısındaki Gölyazı sur sistemi. Büyük taş bloklarla örülmüş, antik ve Bizans tekniklerini yansıtır; bölümler yıkılmış olsa da kimi kesimler ve göl kıyısındaki izler ayaktadır.",
+    "en": "The wall system of Gölyazı on Lake Uluabat, surrounding the ancient town of Apollonia ad Rhyndacum. Built of large stone blocks reflecting ancient and Byzantine techniques; much has collapsed but some sections and traces by the lakeshore remain."
+  },
+  "sections": [
+    {
+      "id": "kent-ve-tarih",
+      "order": 1,
+      "title": {
+        "tr": "Kent ve Tarihçe",
+        "en": "The Town and Its History"
+      },
+      "body": {
+        "tr": "Gölyazı, Antik Yunan kenti \"Apollonia ad Rhyndacum\" üzerine kurulmuş bir yerleşimdir. Apollon'a adanan kent, diğer Apollonia'lardan ayırt edilmek için \"Rhyndacum\" ekiyle anılmış, bu ek \"Rhyndakos kenarındaki Apollonia\" anlamına gelmiştir; Rhyndakos bugünkü Mustafakemalpaşa Çayı'dır. Kentin tarihi MÖ 5. yüzyıla uzanır. Antik nekropol, karaya yakın Zambak Tepe'dedir; sivil yerleşim kışın ada görünümü alan başka bir tepede olup modern Gölyazı bunun üzerindedir. Antik Yunan, Roma, Bizans ve Osmanlı izleri bir arada görülür.",
+        "en": "Gölyazı is built on the ancient Greek town of 'Apollonia ad Rhyndacum', dedicated to Apollo and given the suffix 'Rhyndacum' to distinguish it from other Apollonias, meaning 'Apollonia on the banks of the Rhyndakos' (today's Mustafakemalpaşa Stream). Its history goes back to the 5th century BC. The necropolis is on Zambak Hill near the mainland; the civilian settlement is on another hill that becomes an island in winter, where modern Gölyazı stands. Ancient Greek, Roman, Byzantine and Ottoman traces are seen together."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "643"
+        }
+      ]
+    },
+    {
+      "id": "surlarin-islevi",
+      "order": 2,
+      "title": {
+        "tr": "Surların İşlevi ve Yapımı",
+        "en": "Function and Construction"
+      },
+      "body": {
+        "tr": "Uluabat Gölü üzerindeki stratejik konum kenti ticari ve askerî açıdan önemli kılmış, dış tehditlere ve göl taşkınlarına karşı güçlü surlarla çevrilmiştir. Sur duvarları antik ve Bizans dönemi tekniklerini yansıtır; göl seviyesi antik dönemde daha yüksek olduğundan en düşük su kotuna göre yapıldıkları anlaşılır. Surlar MÖ 2. yüzyıl kaynaklarında adı geçen kenti çevreler; İmparator Hadrianus'un (117-138) bölge ziyaretinde bu kente de uğradığı düşünülür. Büyük taş bloklarla, yerel ocak taşlarıyla inşa edilmiş, çeşitli onarımlar geçirmiş; temel, kapı ve köşelerde özenli taş işçiliği görülür.",
+        "en": "Its strategic location on Lake Uluabat made the town important for trade and defence, so it was ringed with strong walls against threats and lake flooding. The walls reflect ancient and Byzantine techniques and were built to the lowest water level, as the lake was higher in antiquity. They surround the town mentioned in 2nd century BC sources; Emperor Hadrian (117-138) is believed to have visited it. Built of large blocks of local quarry stone with various repairs; careful stonework at foundations, gates and corners."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "644-645"
+        }
+      ]
+    },
+    {
+      "id": "kale-ve-burclar",
+      "order": 3,
+      "title": {
+        "tr": "Dış Kale, İç Kale ve Burçlar",
+        "en": "Outer and Inner Fortress and Bastions"
+      },
+      "body": {
+        "tr": "Yarımada formundaki şehirde sur sistemi göl kıyısına uzanır, bazı bölümler gölle doğal korunur; karayla bağlantı noktalarında daha kalın sur yapıları tercih edilmiştir. Halk arasında \"Taş Kapı\" denen dış kale, daha önce yapıldığı düşünülen stadion oturma sıralarının taşlarıyla Bizans döneminde yeniden değerlendirilmiş, yaklaşık 10 × 6 m bir kule yapısı oluşturulmuştur. İç kale, bugün beton köprüyle karaya bağlanan adayı çevreler; yaklaşık 800 m uzunluğundaki surlar dikdörtgen planlı burçlarla desteklenmiştir. Burçlar gözetleme ve savunma işlevi görmüş; kuzeydeki burç sağlam ulaşmış, Roma dönemi malzemeler içerir ve İmparator Hadrianus adına yazılmış bir kitabe taşır.",
+        "en": "The wall system extends to the lake shore, some sections naturally protected by the lake, with thicker walls at gateways to the mainland. The outer fortress, popularly the 'Stone Gate', was repurposed in the Byzantine period using stones from what was thought to be earlier stadium seating, forming a tower of about 10 × 6 m. The inner fortress encircles the island, now linked by a concrete bridge; its walls, about 800 m long, are supported by rectangular bastions used for surveillance and defence. The northern bastion survives intact, with Roman-period materials and an inscription dedicated to Emperor Hadrian."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "645-647"
+        }
+      ]
+    },
+    {
+      "id": "sonraki-donemler",
+      "order": 4,
+      "title": {
+        "tr": "Bizans, Osmanlı ve Günümüz",
+        "en": "Byzantine, Ottoman and Present"
+      },
+      "body": {
+        "tr": "Bizans döneminde surlar Arap akınları başta olmak üzere tehditlere karşı savunmada, yerel ayaklanmalar ve çatışmalarda kent güvenliğinde önemli rol oynamıştır. Osmanlı döneminde Gölyazı tarım ve balıkçılıkla geçinen bir köy olmuş, surlar askerî işlevini yitirmiştir. Günümüzde surların büyük bölümü yıkılmış ya da ortadan kalkmış, bazı kesimler ayaktadır; izler özellikle göl kıyısında ve tarihî köy sokaklarında görülür.",
+        "en": "In the Byzantine period the walls defended against threats, particularly Arab raids, and ensured security during local uprisings. In the Ottoman period Gölyazı became an agricultural and fishing village and the walls lost their military function. Today much has collapsed or disappeared but some sections stand; traces are visible near the lakeshore and along historic village streets."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "647"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_kale_uzunluk",
+      "label": {
+        "tr": "İç kale sur uzunluğu",
+        "en": "Inner fortress wall length"
+      },
+      "value": 800,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "646"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık 800 metre' der.",
+        "en": "The book says 'approximately 800 metres'."
+      }
+    },
+    {
+      "key": "dis_kale_kule",
+      "label": {
+        "tr": "Dış kale (Taş Kapı) kule boyutu",
+        "en": "Outer fortress (Stone Gate) tower size"
+      },
+      "value": "10 × 6",
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "646"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık' der.",
+        "en": "The book says 'approximately'."
+      }
+    },
+    {
+      "key": "kent_baslangici",
+      "label": {
+        "tr": "Kentin tarihi",
+        "en": "Town's history begins"
+      },
+      "value": "MÖ 5. yüzyıl",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "643"
+        }
+      ]
+    },
+    {
+      "key": "burc_plani",
+      "label": {
+        "tr": "Burç planı",
+        "en": "Bastion plan"
+      },
+      "value": "Dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "646"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İmparator Hadrianus (117-138)",
+      "role": {
+        "tr": "Bölge ziyaretinde kente uğradığı düşünülen Roma imparatoru; kuzey burçtaki kitabe adına yazılmıştır",
+        "en": "Roman emperor believed to have visited the town; the inscription on the northern bastion is dedicated to him"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "hadrianus-kitabesi",
+      "location": {
+        "tr": "Kuzey yönündeki burç",
+        "en": "Northern bastion"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "İmparator Hadrianus adına yazılmış kitabe; metni kitapta verilmemiş.",
+        "en": "Inscription dedicated to Emperor Hadrian; its text is not given in the book."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "646-647"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kent-mo-5yy",
+      "year": -500,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kentin tarihi MÖ 5. yüzyıla uzanır",
+        "en": "The town's history dates back to the 5th century BC"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "643"
+        }
+      ],
+      "note": {
+        "tr": "MÖ 5. yüzyıl; yaklaşık yıl -500 alındı.",
+        "en": "5th century BC; approximate year -500 used."
+      }
+    },
+    {
+      "id": "hadrianus-ziyaret",
+      "year": 117,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İmparator Hadrianus'un (117-138) bölge ziyaretinde kente uğradığı düşünülüyor",
+        "en": "Emperor Hadrian (117-138) believed to have visited the town"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "645"
+        }
+      ],
+      "note": {
+        "tr": "Hadrianus'un saltanat aralığı 117-138; başlangıç yılı alındı, ziyaret yılı bilinmiyor.",
+        "en": "Reign 117-138; start year used, visit year unknown."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-nilufer-golyazi-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Aynı yerleşim: Gölyazı; cami tarihî yerleşimin en yüksek noktasındadır.",
+        "en": "Same settlement: Gölyazı; the mosque is at the highest point of the historical settlement."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "632, 643"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-nilufer-golyazi-hamami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Aynı yerleşim: Gölyazı Mahallesi.",
+        "en": "Same settlement: Gölyazı Neighborhood."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "638, 643"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Uluabat Gölü kıyısında, yarımada biçimli Gölyazı yerleşimini çevreleyen büyük taş bloklu sur duvarları. Dış kale, yaklaşık 10'a 6 metre boyutunda bir kule yapısıdır ve halk arasında Taş Kapı adıyla anılır. İç kale, beton bir köprüyle karaya bağlanan adayı çevreler; yaklaşık 800 metrelik surlar dikdörtgen burçlarla desteklenir. Surların büyük bölümü yıkılmıştır; izler göl kıyısında ve eski köy sokaklarında görülür.",
+      "en": "Walls of large stone blocks surrounding the peninsula-shaped settlement of Gölyazı on the shore of Lake Uluabat. The outer fortress is a tower of about 10 by 6 metres, popularly called the Stone Gate. The inner fortress encircles the island linked to the mainland by a concrete bridge; its roughly 800 metre walls are supported by rectangular bastions. Much of the wall has collapsed; traces are visible along the lakeshore and old village streets."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden (Bursa Vakıf Eserleri III. Cilt) yalnızca metne dayanarak yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

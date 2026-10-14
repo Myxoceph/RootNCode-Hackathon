@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-gemlik-adliye-koyu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Gemlik bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitapta 1890 tarihinin yapım mı onarım mı tarihi olduğu belirtilmemiş; teyit edilmeli.",
+      "Caminin banisi ve vakfı kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraf ve arşiv görseli yok: media ve archive_media boş, media_folder bulunamadı; Drive klasörü eşlenmeli.",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "Vakıf bilgisi (banî, vakfiye) kitapta yok; arşivden araştırılmalı.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Adliye Köyü Camii",
+    "en": "Adliye Village Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap cami",
+    "Kütahya çinisi",
+    "köy camii"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Gemlik",
+    "neighborhood": "Adliye",
+    "address": "Kenar Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "325"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1890 (cümle kapısı üzerindeki tarih)",
+      "en": "1890 (date on main door)"
+    },
+    "start_year": 1890,
+    "end_year": 1890,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Cümle kapısı üzerindeki tarih.",
+      "en": "Date on the main door."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "326"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Gemlik Adliye Mahallesi'nde, iç mekânı baştan sona Kütahya çinisiyle kaplı, cümle kapısında 1890 tarihi bulunan ahşap cami.",
+    "en": "A wooden mosque in Gemlik's Adliye neighborhood whose interior is covered entirely with Kütahya tiles; the date 1890 appears on its main door."
+  },
+  "sections": [
+    {
+      "id": "konum",
+      "order": 1,
+      "title": {
+        "tr": "Konum",
+        "en": "Location"
+      },
+      "body": {
+        "tr": "Cami, Gemlik ilçesi, Adliye Mahallesi, Kenar Sokak'tadır. Daha önce köy statüsünde olan Adliye, günümüzde mahalleye dönüşmüştür.",
+        "en": "The mosque is in Adliye Neighborhood, Kenar Street, Gemlik District. Adliye, a former village, is now a neighborhood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "325"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dikdörtgen planlı, yığma duvarlı, kırma çatılı, çatısı kiremit kaplı ahşap bir yapıdır; iç mekân tavanı düz ahşapla kaplıdır. Doğu ve batı cephelerinde üçer, kuzey cephesinde iki altlık ve iki üstlük olmak üzere toplam dört pencere vardır; tüm pencereler yuvarlak kemerli ve plastik doğramalıdır. Harim içine alınmış son cemaat yeri iki yanda maksurelerle sınırlandırılmış, üstünde kadınlar mahfili yer almaktadır. Mihrap, minber ve vaaz kürsüsü dahil iç mekân tamamen Kütahya çinileriyle kaplıdır. Minare tek şerefelidir ve bosajlı kesme taştan yapılmıştır. Cümle kapısı üzerinde 1890 tarihi bulunur.",
+        "en": "The mosque is a rectangular wooden structure with masonry walls, a hipped tiled roof and a plain wooden ceiling. It has three windows on each of the east and west façades and four on the north (two above, two below), all round-arched with plastic frames. The narthex, enclosed within the prayer hall, is bordered by maqsuras and has a women's gallery above it. The interior, including mihrab, minbar and sermon platform, is covered entirely with Kütahya tiles. The single-balcony minaret is of bossage cut stone. The date 1890 is inscribed on the main door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "325-326"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_serefe_sayisi",
+      "label": {
+        "tr": "Minare şerefe sayısı",
+        "en": "Minaret balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "326"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 10,
+      "unit": null,
+      "note": {
+        "tr": "Doğu ve batıda üçer, kuzeyde dört; toplam kitapta verilmemiş, toplanarak hesaplanmıştır.",
+        "en": "Three each on east and west, four on north; the total is not stated in the book and is summed here."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "325"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "tarih-1890",
+      "year": 1890,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cümle kapısı üzerindeki tarih (1890)",
+        "en": "Date on the main door (1890)"
+      },
+      "note": {
+        "tr": "Tarihin yapım ya da onarım tarihi olduğu kitapta belirtilmemiş.",
+        "en": "The book does not say whether this is construction or repair date."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "326"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Adliye Köyü Camii, dikdörtgen planlı, kırma çatılı ve kiremit örtülü ahşap bir yapıdır. Yuvarlak kemerli pencereleri vardır. Harimin içinde iki yanı maksurelerle sınırlı son cemaat yeri ve üstünde kadınlar mahfili bulunur. Mihrap, minber ve vaaz kürsüsü dahil iç mekân baştan sona Kütahya çinileriyle kaplıdır. Tek şerefeli minare bosajlı kesme taştandır.",
+      "en": "Adliye Village Mosque is a rectangular wooden building with a hipped, tiled roof and round-arched windows. Inside the prayer hall, the narthex is bordered by maqsuras with a women's gallery above. The whole interior, including mihrab, minbar and sermon platform, is covered with Kütahya tiles. The single-balcony minaret is of bossage cut stone."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif esas alınarak yazıldı; yalnızca kaynak metne dayanır."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

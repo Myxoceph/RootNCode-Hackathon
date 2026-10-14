@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-nilufer-golyazi-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Nilüfer bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banisi ve kesin yapım yılı kitapta yok.",
+      "Vakıf bilgisi kitapta verilmemiş.",
+      "Hamamın içindeki bölümlerin ölçüleri kitapta yok.",
+      "Kitabın 640-641. sayfaları metin içermiyor (muhtemelen görsel); kontrol edilmeli.",
+      "Koordinat kitapta yok; sahada ya da güvenilir bir kaynaktan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraflar (media[]) ve arşiv fotoğrafları (archive_media[]) henüz eklenmedi; Drive klasörü bilinmiyor (media_folder: null).",
+      "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok; eklenmedi.",
+      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): Kısa süre 'hamam-kafe' olarak kullanıldı; sürdürülemedi"
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe 'halvet' İngilizce metinde 'bathing cell', 'sıcaklık/soğukluk' ise 'caldarium/frigidarium' olarak çevrilmiş; Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Gölyazı Hamamı",
+    "en": "Gölyazı Bath"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "su yapıları",
+    "kubbe",
+    "kirpi saçak",
+    "Gölyazı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Nilüfer",
+    "neighborhood": "Gölyazı",
+    "address": "Cumhuriyet Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "638"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Erken Osmanlı dönemi",
+      "en": "Early Ottoman period"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap, hamamın erken Osmanlı dönemine tarihlendirildiğini söyler; kesin yıl verilmez.",
+      "en": "The book says the bath is dated to the early Ottoman period; no exact year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "638"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Gölyazı'daki, dikdörtgen planlı ve iki küçük kubbeli erken Osmanlı hamamı. 2007-2008'de restore edilmiş, kısa süre 'hamam-kafe' olarak kullanılmış, bugün boştur.",
+    "en": "An early Ottoman bath in Gölyazı with a rectangular plan and two small domes. Restored in 2007-2008, briefly used as a 'bath-café', and today empty."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Erken Osmanlı dönemine tarihlendirilen hamam dikdörtgen planlıdır ve iki küçük kubbeyle örtülüdür. Sıcaklık ve soğukluk bölümlerinden oluşur; kubbeler dışında kalan üst örtü kirpi saçaklı kırma çatıyla kapatılmıştır. Halvet, su deposu ve külhan birimleri vardır ancak restorasyon sonrası özgün işlevlerini yitirmiştir. Kubbeler beton malzemeyle yapılmış, dış yüzeyleri sıvanmıştır; iç mekân sıvalı, duvarlar moloz taştır.",
+        "en": "Dated to the early Ottoman period, the bath has a rectangular plan covered by two small domes. It consists of hot and cold sections, with a hipped roof with sawteeth at the eaves over the rest. A bathing cell, water tank and furnace room exist but lost their original function after restoration. The domes are concrete with plastered exteriors; the interior is plastered and walls are rubble stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "638-639"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-restorasyon",
+      "order": 2,
+      "title": {
+        "tr": "Restorasyon ve Kullanım",
+        "en": "Restoration and Use"
+      },
+      "body": {
+        "tr": "Yapı 2007-2008 yılları arasında restorasyon geçirmiştir. Kısa bir süre önce mimari işlevine aykırı biçimde \"hamam-kafe\" olarak işlev görmüş, bu kullanım sürdürülememiştir. Günümüzde yapı boş durumdadır.",
+        "en": "The building was restored between 2007 and 2008. It recently functioned as a 'bath-café', inconsistent with its architectural function, but this was not sustained. Today it stands empty."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "639"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "638"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_malzeme",
+      "label": {
+        "tr": "Kubbe malzemesi",
+        "en": "Dome material"
+      },
+      "value": "Beton",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "638-639"
+        }
+      ]
+    },
+    {
+      "key": "duvar_malzeme",
+      "label": {
+        "tr": "Duvar malzemesi",
+        "en": "Wall material"
+      },
+      "value": "Moloz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "639"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon",
+      "label": {
+        "tr": "Restorasyon yılları",
+        "en": "Restoration years"
+      },
+      "value": "2007-2008",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "639"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-2007-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon geçirdi",
+        "en": "Restored"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "639"
+        }
+      ],
+      "note": {
+        "tr": "2007-2008 arası; bitiş yılı alındı.",
+        "en": "Between 2007 and 2008; end year used."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-nilufer-golyazi-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Aynı yerleşim: Gölyazı Mahallesi.",
+        "en": "Same settlement: Gölyazı Neighborhood."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "632, 638"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, iki küçük kubbeli ve çevresi kirpi saçaklı kırma çatılı küçük bir hamam. Sıcaklık ve soğukluk bölümleri, halvet, su deposu ve külhan birimleri vardır. Duvarlar moloz taştan, kubbeler betondandır ve dışı sıvalıdır.",
+      "en": "A small bath with a rectangular plan, two small domes and a hipped roof with sawteeth at the eaves. It has hot and cold sections, a bathing cell, a water tank and a furnace room. Walls are rubble stone; the domes are concrete with plastered exteriors."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden (Bursa Vakıf Eserleri III. Cilt) yalnızca metne dayanarak yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
