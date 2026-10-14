@@ -1,12 +1,16 @@
 import {
   CONTRACT_VERSION,
   CitySchema,
+  MonumentSchema,
+  MonumentsPayloadSchema,
   type Monument,
   type MonumentsPayload,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync } from "fastify";
 import { z } from "zod";
 import { HttpError } from "../../lib/http-error.ts";
+import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
+import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { toCityCuisine, toMonument } from "./monuments.mapper.ts";
 import type { MonumentsRepository } from "./monuments.repository.ts";
 
@@ -26,7 +30,17 @@ export const monumentsRoutes: FastifyPluginAsync<{ repository: MonumentsReposito
   app,
   { repository },
 ) => {
-  app.get("/monuments", async (request, reply): Promise<MonumentsPayload> => {
+  const errorSchema = toOpenApiSchema(ErrorResponseSchema);
+
+  app.get("/monuments", {
+    schema: {
+      tags: ["monuments"],
+      summary: "Eserleri ve şehir mutfaklarını listele",
+      description: "`city` verilirse yalnızca o şehrin eserleri ve mutfakları döner. Ziyaretçi ipuçlarından yalnızca onaylananlar gösterilir.",
+      querystring: toOpenApiSchema(ListQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(MonumentsPayloadSchema), 400: errorSchema },
+    },
+  }, async (request, reply): Promise<MonumentsPayload> => {
     const query = ListQuerySchema.safeParse(request.query);
     if (!query.success) throw new HttpError(400, "INVALID_QUERY", describeIssues(query.error));
 
@@ -44,7 +58,15 @@ export const monumentsRoutes: FastifyPluginAsync<{ repository: MonumentsReposito
     };
   });
 
-  app.get("/monuments/:slug", async (request, reply): Promise<Monument> => {
+  app.get("/monuments/:slug", {
+    schema: {
+      tags: ["monuments"],
+      summary: "Tek bir eseri getir",
+      description: "Kitabeler, iki yönlü ilişkiler (`direction`) ve onaylı ziyaretçi ipuçlarıyla birlikte.",
+      params: toOpenApiSchema(SlugParamsSchema, "input"),
+      response: { 200: toOpenApiSchema(MonumentSchema), 400: errorSchema, 404: errorSchema },
+    },
+  }, async (request, reply): Promise<Monument> => {
     const params = SlugParamsSchema.safeParse(request.params);
     if (!params.success) throw new HttpError(400, "INVALID_SLUG", describeIssues(params.error));
 
