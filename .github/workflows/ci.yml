@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [dev, main]
+  push:
+    branches: [dev, main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Typecheck, contract & tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: vagabonds
+          POSTGRES_PASSWORD: vagabonds
+          POSTGRES_DB: vagabonds
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U vagabonds -d vagabonds"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      # Throwaway CI database, not a secret.
+      DATABASE_URL: postgresql://vagabonds:vagabonds@localhost:5432/vagabonds?schema=public
+      NODE_ENV: test
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies (also generates the Prisma client)
+        run: npm ci
+
+      - name: Typecheck all workspaces
+        run: npm run typecheck
+
+      - name: Validate the mock data contract
+        run: npm run contracts:validate
+
+      - name: Validate the Prisma schema
+        run: npm run prisma:validate --workspace @vagabonds/api
+
+      - name: Apply database migrations
+        run: npm run db:deploy --workspace @vagabonds/api
+
+      - name: Run tests (unit + integration against PostgreSQL)
+        run: npm test

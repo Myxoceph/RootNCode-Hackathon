@@ -14,6 +14,8 @@
   "scripts": {
     "db:up": "docker compose up -d postgres",
     "db:down": "docker compose down",
-    "contracts:validate": "npm run validate --workspace @vagabonds/contracts"
+    "contracts:validate": "npm run validate --workspace @vagabonds/contracts",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm test --workspaces --if-present"
   }
 }
