@@ -1,0 +1,639 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ulucami",
+
+  "meta": {
+    "status": "in_review",
+    "created_at": "2026-10-14",
+    "updated_at": "2026-10-14",
+    "prepared_by": "veri-ekibi",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ulucami bölümünden (s. 37-76) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; ekip tahminleri ayrıca işaretlenmiştir.",
+    "todos": [
+      "Arşiv fotoğrafı (Zaman Perdesi için) bulunmalı: kitap 1940-1950'lere ait çizim ve fotoğraflardan söz ediyor, dosya elimizde yok.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Vakfiye metni / şartı kitapta yok; VGM arşivinden bulunursa 'waqf.deed' alanına eklenecek.",
+      "AR için kitabe fotoğrafları (minber kapısı kitabesi) seçilip 'inscriptions[].ar_target_media_id' alanına bağlanacak.",
+      "Ziyaretçi ipuçları (visit.visitor_tips) henüz derlenmedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[repair-1503]",
+        "note": "Kitapta '28 Cemaziyelahir 959 / M. 18 Aralık 1503' yazıyor. H. 959 yılı M. 1552'ye denk gelir; M. 1503 için H. 909 olmalı. Hicri ya da miladi yıldan biri hatalı. Kaynağa sadık kalınarak iki değer de saklandı, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "facts[sadirvan_havuz_kenar]",
+        "note": "Kitap s. 48'de havuzu 'onikigen planlı', s. 64'te 'on altı kenarlı' olarak veriyor. Ayrıntılı anlatım (s. 64) esas alındı, çelişki işaretlendi."
+      },
+      {
+        "field": "facts[kubbe_sayisi]",
+        "note": "Kitap 20 kubbe diyor; Evliya Çelebi aktarımında 19 kapalı + ortada açık 1 kubbe = 20. Çelişki yok, açıklama olarak eklendi."
+      },
+      {
+        "field": "sections[minber]",
+        "note": "Güneş sistemi / galaksi tasvirinin yeri: Türkçe metin 'minberin doğu/batı yüzü' diyor, İngilizce metin 'mihrab' diyor. Türkçe metin esas alındı. 6666 parça bilgisi kaynakta kesin dille geçiyor ama ikinci bir kaynakla teyit edilmesi önerilir."
+      }
+    ]
+  },
+
+  "name": { "tr": "Ulucami", "en": "Ulucami (Grand Mosque of Bursa)" },
+  "subtitle": { "tr": "Bursa'nın İncisi Ulucami", "en": "Ulucami, the Pearl of Bursa" },
+  "alternate_names": [
+    { "tr": "Bursa Ulu Camii", "en": "Bursa Grand Mosque" },
+    { "tr": "Bursa'nın Ayasofyası", "en": "Hagia Sophia of Bursa", "note": "Evliya Çelebi'nin benzetmesi" }
+  ],
+
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": ["ulucami plan tipi", "çok kubbeli", "hat sanatı", "kündekâri", "şadırvan", "Yıldırım Bayezid", "selâtin camii", "Uzunçarşı"],
+
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Şehreküstü",
+    "address": "Atatürk Caddesi, Cami Sokak",
+    "coordinates": {
+      "lat": 40.18417,
+      "lng": 29.06167,
+      "source": "manual",
+      "verified": true,
+      "verification_note": "Taç kapı fotoğrafının (m02) EXIF GPS'i 40.184286, 29.061800; elle girilen noktaya ~15 m."
+    },
+    "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "37" }]
+  },
+
+  "dating": {
+    "display": { "tr": "H. 802 / M. 1399-1400", "en": "AH 802 / AD 1399-1400" },
+    "start_year": 1396,
+    "end_year": 1400,
+    "hijri_year": 802,
+    "century": 14,
+    "basis": { "tr": "Minber kapısı kitabesindeki tarih; inşaatın üç yıl sürdüğü ve 1399'da bir cuma günü açıldığı bilgisi.", "en": "Date on the minbar door inscription; three-year construction, opened on a Friday in 1399." },
+    "confidence": "certain",
+    "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "37, 40-41" }]
+  },
+
+  "founder": {
+    "name": "Sultan Yıldırım Bayezid (I. Bayezid)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "38-41" }]
+  },
+
+  "architect": {
+    "name": null,
+    "candidates": [
+      { "name": "Ali Neccâr" },
+      { "name": "Hacı İvaz Paşa (Hacı İvaz bin Ahî Bayezid)", "note": "Yeşil Külliye'nin mimarı" },
+      { "name": "Konyalı Mimar Hacı Alâaddin" },
+      { "name": "Niğbolu Savaşı'nda esir düşen gayrimüslim bir mimar", "note": "Bursa salnamelerindeki 'mimarın Rum olduğu' bilgisi; doğruluğu tartışmalı" }
+    ],
+    "confidence": "disputed",
+    "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "38-41" }]
+  },
+
+  "waqf": {
+    "name": "Yıldırım Bayezid Vakfı (evkafı)",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Caminin arsası Orhan Gazi Vakfı'na aitti. Yıldırım Bayezid, Orhan Vakfı'na başka bir arazi tahsis etti ve cami bu arsa üzerine inşa edildi.",
+      "en": "The land belonged to the Orhan Gazi Foundation. Yıldırım Bayezid allocated another plot to the Orhan Foundation, and the mosque was built on this site."
+    },
+    "confidence": "certain",
+    "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "48, 64" }]
+  },
+
+  "summary": {
+    "tr": "Osmanlıların Bursa'da yaptırdığı ilk büyük cami. Yıldırım Bayezid'in 1399'da tamamlattığı yirmi kubbeli yapı, yaklaşık 170 hat levhasıyla bir hat müzesini, kündekâri minberiyle Osmanlı ahşap işçiliğinin en nadide örneklerinden birini barındırır.",
+    "en": "The first large mosque built by the Ottomans in Bursa. Completed by Yıldırım Bayezid in 1399, the twenty-domed building houses some 170 calligraphy panels, like a museum of calligraphy, and one of the finest examples of Ottoman woodwork in its kündekâri minbar."
+  },
+
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": { "tr": "Genel Bakış", "en": "Overview" },
+      "body": {
+        "tr": "Ulucami, Osmanlı'nın Bursa'da inşa ettirdiği ilk büyük camidir ve altı yüzyıl boyunca şehrin en büyük camisi olarak kalmıştır. Evliya Çelebi Seyahatnâme'de Ulucami'yi \"Bursa'nın Ayasofyası\" olarak tanımlar. Üç yıl süren inşaatın ardından cami 1399 yılında bir cuma günü açılmıştır. Açılışta \"Somuncu Baba\" olarak tanınan Hamîdüddin-i Aksarâyî bulunmuş ve Fatiha suresini yedi farklı düzeyde tefsir etmiştir. Caminin ilk imamı, Mevlid olarak bilinen Vesîletü'n-Necât'ın müellifi Süleyman Çelebi'dir.",
+        "en": "The Ulucami was the first large mosque built by the Ottomans in Bursa and remained the city's largest for six centuries. Evliya Çelebi described it as the \"Hagia Sophia of Bursa\" in his Seyahatnâme. After three years of construction, it was opened on a Friday in 1399. Hamîdüddin-i Aksarâyî, known as \"Somuncu Baba\", attended the opening and gave a seven-level interpretation of the Surah al-Fatiha. The first imam was Süleyman Çelebi, author of the Wasilat al-Najat, known as the Mevlid."
+      },
+      "confidence": "certain",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "37" }]
+    },
+    {
+      "id": "yapim-ve-mimar",
+      "order": 2,
+      "title": { "tr": "Yapımı ve Mimarı", "en": "Construction and Architect" },
+      "body": {
+        "tr": "Minberdeki tarihten cami ve medresenin H. 802 / M. 1399-1400'de tamamlandığı anlaşılır. Yapıyı Sultan Yıldırım Bayezid yaptırmıştır; ancak mimarının kimliği kesin olarak belirlenememiştir. Yeşil Külliye'nin mimarı Hacı İvaz bin Ahî Bayezid, Ali Neccâr, Konyalı Mimar Hacı Alâaddin ya da Niğbolu Savaşı'nda esir düşen gayrimüslim bir mimarın adı geçer. Bursa salnamelerindeki \"binayı yapan mimarın Rum olduğu anlaşılıyor\" bilgisinin doğruluğu tartışmalıdır. Niğbolu esiri Johann Schiltberger yedi yıl kadar Osmanlı sarayında bulunmuş ve muhtemelen inşaata tanıklık etmiştir, ancak hatıratında yapıdan söz etmez.",
+        "en": "The date on the minbar shows that the mosque and madrasa were completed in AH 802 / AD 1399-1400. The building was commissioned by Sultan Yıldırım Bayezid, but the identity of its architect has not been determined with certainty. Names mentioned include Hacı İvaz bin Ahi Bayezid (architect of the Yeşil Complex), Ali Neccâr, Architect Hacı Alâaddin of Konya, or a non-Muslim architect captured at the Battle of Nicopolis. The Bursa Yearbooks' claim that \"the architect was Greek\" is debatable. Johann Schiltberger, a Nicopolis captive who stayed some seven years at the Ottoman palace, probably witnessed the construction but did not mention it in his memoirs."
+      },
+      "confidence": "disputed",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "38-41" }]
+    },
+    {
+      "id": "kulliye-ve-sehir",
+      "order": 3,
+      "title": { "tr": "Külliye ve Çarşı", "en": "Complex and Bazaar" },
+      "body": {
+        "tr": "Cami, plan aşamasında cami, medrese, hamam, bedesten, dükkânlar ve meşrutalardan oluşan bir külliye olarak tasarlanmıştır. Orhan Bey'in 1339 tarihli hanı ve camisi yaklaşık altmış yıl sonra ihtiyacı karşılayamaz hale gelince Yıldırım Bayezid, Orhan Camii'ne paralel olarak Ulucami'yi, Emir Hanı'nın karşısına da bedesteni yaptırmıştır. Şehrin gelişim yönünü daha önce Orhan Külliyesi belirlemişti; bedesten çarşının odak noktasını daha belirgin hale getirdi. Zamanla eklenen şadırvan, muvakkithane, muallimhane gibi yapıların çoğu kaldırılmış; medrese dükkân ve depo olarak kullanılmaya başlanmış, hamam işlevini yitirmiştir.",
+        "en": "The mosque was planned as a complex comprising a mosque, madrasa, bathhouse, bedesten, shops and residential quarters. When Orhan Bey's han and mosque of 1339 became insufficient some sixty years later, Yıldırım Bayezid had the Ulucami built parallel to the Orhan Mosque and the bedesten opposite the Emir Han. The Orhan Complex had set the city's direction of growth; the bedesten made the bazaar's focal point clearer. Most later additions such as shadirvans, the timekeeper's room and schoolroom have been removed; the madrasa is used as shops and storage, and the bathhouse has lost its function."
+      },
+      "confidence": "certain",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "38-41" }]
+    },
+    {
+      "id": "plan-tipi",
+      "order": 4,
+      "title": { "tr": "\"Ulucami\" Plan Tipi", "en": "The \"Ulucami\" Plan Type" },
+      "body": {
+        "tr": "Erken Osmanlı'da tek kubbeli mescitler ve \"Bursa tipi\" zaviyeli camilerin yanında, aynı çaptaki çok sayıda kubbeden oluşan \"ulucami\" plan şeması da uygulanmıştır. Diğer İslam ülkelerinde \"Mescid-i Cuma\" denen bu büyük cuma camilerinin en büyük ve en tanınan örneği Bursa Ulucami'dir. Cami, Filibe ve Gelibolu'daki ulucamilerin devamıdır; sonraki dönemde dokuz kubbeli Bursa Molla Arap Camii ve Edirne Eski Camii ile altı kubbeli İstanbul Zincirlikuyu ve Piyalepaşa camilerine öncülük etmiştir.",
+        "en": "Alongside single-domed masjids and the \"Bursa type\" mosques with zawiyas, early Ottoman architecture also used the \"ulucami\" plan of multiple domes of equal diameter. Called \"Masjid al-Jumuah\" elsewhere in the Islamic world, these great Friday mosques have their largest and best-known example in the Bursa Ulucami. It continues the grand mosques of Plovdiv and Gallipoli and was the forerunner of the nine-domed Molla Arap Mosque in Bursa and the Old Mosque in Edirne, and the six-domed Zincirlikuyu and Piyalepaşa mosques in Istanbul."
+      },
+      "confidence": "certain",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "38-41" }]
+    },
+    {
+      "id": "mimari",
+      "order": 5,
+      "title": { "tr": "Mimari Özellikler", "en": "Architecture" },
+      "body": {
+        "tr": "Yaklaşık 55 × 69 m boyutlarında, kareye yakın dikdörtgen planlı yapıyı 11 m çapında yirmi kubbe örter; kubbeler on iki kare paye üzerine oturur. İbadet alanı 3500 m²'dir. Kuzeyde taç kapı, doğu ve batıda birer giriş vardır: doğudaki \"Çarşı Kapısı\", batıdaki \"Müftülük\" ya da \"Mahkeme Kapısı\", kuzeydeki \"Sahaflar Kapısı\" olarak bilinir. Büyük silmelerle hareketlendirilen cephelerde alt sırada 26, üst sırada 32 olmak üzere 58 pencere bulunur. Havuzun üzerindeki kubbe açık bırakılarak caminin havalandırılması ve doğal ışık alması sağlanmıştır.",
+        "en": "The near-square rectangular building, about 55 × 69 m, is covered by twenty domes 11 m in diameter resting on twelve square piers. The prayer area is 3500 m². There is a portal on the north and entrances on the east and west: the east door is known as the \"Marketplace Door\", the west as the \"Mufti's Office\" or \"Court\" door, and the north as the \"Sahaflar (Booksellers) Door\". The façades, enlivened with large mouldings, have 58 windows, 26 in the lower row and 32 in the upper. The dome over the pool was left open to ventilate the mosque and let in natural light."
+      },
+      "confidence": "certain",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "48-51" }]
+    },
+    {
+      "id": "hat-muzesi",
+      "order": 6,
+      "title": { "tr": "Bir Hat Müzesi", "en": "A Museum of Calligraphy" },
+      "body": {
+        "tr": "Duvarlara nakşedilmiş ya da levha halindeki yaklaşık yüz yetmiş hat eseri, Ulucami'ye İslam cami mimarisinde ayrı bir yer kazandırır. Payelerin her yüzüne celi sülüs ve kûfi hatla esmâ-i hüsnâdan örnekler yazılmıştır. Yazılar Abdülfettah Efendi, Kazasker Mustafa İzzet Efendi, Sâmi Efendi ve Mehmed Şefik Bey gibi hattatlara aittir; tahrir ve konturlarını Mücellid Mehmed Efendi yapmıştır. Hünkâr mahfilinin tam karşısında II. Mahmud'a ait, Nisâ suresi 58. ayetin yazılı olduğu bir levha bulunur. Bu yazıların ilk inşa dönemine ait olup olmadığı kesin bilinmez; XVI. yüzyılda var oldukları bilinir ve en son 1855 depreminden sonra onarılmış, bir kısmı silinerek yeniden yazılmıştır.",
+        "en": "Some one hundred and seventy calligraphic works, painted on the walls or hung as panels, give the Ulucami a distinctive place in Islamic mosque architecture. Each face of the piers carries names from the Asma'ul-Husna in Jeli Thuluth and Kufic script, by calligraphers such as Abdülfettah Efendi, Kazasker Mustafa İzzet Efendi, Sami Efendi and Mehmed Şefik Bey; outlines were made by Mücellid Mehmed Efendi. Opposite the sultan's gallery hangs a panel by Mahmud II bearing verse 58 of Surah An-Nisa. It is not known whether the inscriptions date from the original construction; they are known to have existed in the 16th century and were last repaired after the 1855 earthquake, some being erased and rewritten."
+      },
+      "confidence": "certain",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "50-51, 60-61" }]
+    },
+    {
+      "id": "minber",
+      "order": 7,
+      "title": { "tr": "Kündekâri Minber", "en": "The Kündekâri Minbar" },
+      "body": {
+        "tr": "Minber, çivi, tutkal ya da herhangi bir bağlayıcı kullanılmadan tamamen birbirine geçme parçalardan yapılmış bir kündekâri şaheseridir ve yaklaşık üç yılda tamamlandığı tahmin edilir. Batıya bakan korkuluktaki usta kitabesinde \"Amel-i el-Hâc Muhammed bin Abdülazîz ibnü'd-Dakkî\" yazar; aynı usta 1376 tarihli Manisa Ulucamii'nin minberini de yapmıştır ve oradaki kitabe ustanın Antepli olduğunu belirtir. Kapısının üzerindeki kitabe yapının H. 802'de Sultan Bayezid adına yapıldığını kaydeder. Yangın ve depremlerden sağ çıkan minber, özellikle XIX. ve XX. yüzyıldaki yanlış müdahalelerle zarar görmüştür. Kaynağa göre minber 6666 parçadan oluşur; doğu yüzünde güneş sistemi, batı yüzünde galaksi sistemi tasvir edilmiştir.",
+        "en": "The minbar is a kündekâri masterpiece made entirely of interlocking pieces, without nails, glue or any binder, and is thought to have taken about three years. The master's inscription on the west-facing railing reads \"Amel-i el-Hâc Muhammed bin Abdulaziz ibnü'd-Dakki\"; the same master made the minbar of the Manisa Ulucami (1376), whose inscription adds that he was from Antep. The inscription above its door records that it was made for Sultan Bayezid in AH 802. Having survived fires and earthquakes, it was damaged by misguided interventions in the 19th and 20th centuries. According to the source, it consists of 6666 pieces, with the solar system depicted on its eastern face and the galaxy on its western face."
+      },
+      "confidence": "certain",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "52-55" }]
+    },
+    {
+      "id": "mihrap-ve-mahfiller",
+      "order": 8,
+      "title": { "tr": "Mihrap ve Mahfiller", "en": "Mihrab and Galleries" },
+      "body": {
+        "tr": "Mihraptaki süslemeleri, 1862'de Bursa'ya sürgün edilen Tevfik Paşa yaptırmıştır; mihrap kûfi yazı, stilize motif ve bitkisel süsleme frizleriyle çevrilidir. Güneydoğu köşedeki hünkâr mahfilini Sultan Abdülaziz 1862'de ahşaptan sade bir üslupla yeniden yaptırmıştır. Mahfilin alt bölümü eskiden beri kütüphanedir: Münzevî Abdullah Efendi 1786'da burada kütüphane kurup kitaplarını vakfetmiştir. Yıldırım Bayezid evkafının mütevellisi Mustafa Efendi'nin sekiz ahşap direk üzerine yaptırdığı müezzin mahfilinde, şair Rahîmî'ye ait H. 956 / M. 1549 tarihli talik kıta, camide tarihi bilinen en eski kitabedir. Karşısındaki rokoko mermer vaaz kürsüsü H. 1231 / M. 1816 tarihlidir.",
+        "en": "The mihrab decorations were made by Tevfik Paşa, exiled to Bursa in 1862; the mihrab is framed by friezes of Kufic script, stylised motifs and vegetal ornament. Sultan Abdulaziz rebuilt the sultan's gallery in the southeast corner in 1862 in plain wood. The space beneath has long served as a library: Münzevî Abdullah Efendi founded it in 1786 and endowed his books. On the muezzin's platform, built on eight wooden columns by Mustafa Efendi, trustee of the Yıldırım Bayezid foundations, a Ta'liq verse by the poet Rahimi dated AH 956 / AD 1549 is the oldest dated inscription in the mosque. The rococo marble preaching pulpit opposite is dated AH 1231 / AD 1816."
+      },
+      "confidence": "certain",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "58-61" }]
+    },
+    {
+      "id": "sadirvan",
+      "order": 9,
+      "title": { "tr": "Havuzlu Şadırvan", "en": "The Shadirvan Pool" },
+      "body": {
+        "tr": "Caminin ortasındaki havuzlu şadırvan, mimari düzenin en belirgin öğelerindendir. On altı kenarlı havuz Marmara mermeriyle kaplıdır; her kenarda barok bir motif ve musluk bulunur. Merkezdeki üç katlı selsebilden Pınarbaşı suyu akar. Üstündeki kubbenin ortası açık bırakılarak iç mekân doğal ışıkla aydınlatılır ve havalandırılır; akan suyun sesi caminin ruhani atmosferine derinlik katar. Evliya Çelebi 1630'daki ziyaretinde kubbenin kuşlara karşı sarı pirinç tel ağla örtüldüğünü, havuzda çeşit çeşit balıklar yüzdüğünü ve cemaatin bu sudan abdest aldığını anlatır.",
+        "en": "The shadirvan pool at the centre of the mosque is one of the most prominent elements of its layout. The sixteen-sided pool is clad in Marmara marble, each side bearing a Baroque motif and a tap. Pınarbaşı water flows from a three-tier salsabil at its centre. The dome above is open at its centre, lighting and ventilating the interior; the sound of flowing water deepens the spiritual atmosphere. Evliya Çelebi, visiting in 1630, describes the dome covered with a mesh of yellow brass wire against birds, fish of many kinds swimming in the pool, and the congregation performing ablutions with its water."
+      },
+      "confidence": "certain",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "48, 64-65" }]
+    },
+    {
+      "id": "minareler",
+      "order": 10,
+      "title": { "tr": "Minareler", "en": "Minarets" },
+      "body": {
+        "tr": "İki minareden batıdakini Yıldırım Bayezid yaptırmıştır. Doğudaki minare ilk inşada planlanmış ama tamamlanmamış, bir süre yarım halde kullanıldığı için \"Güdük Minare\" adını almıştır; Çelebi Sultan Mehmed ya da Yavuz Sultan Selim döneminde tamamlandığı tahmin edilir. Kaide ve küpleri mermer, yuvarlak gövdeleri tuğladır; her iki şerefe altı sıra mukarnas üzerine oturur. Özgün halinde ahşap ve kurşun kaplı olan külahlar son yangından sonra taştan yapılmıştır.",
+        "en": "The western of the two minarets was built by Yıldırım Bayezid. The eastern one was planned at the outset but left unfinished and, used for a while in that state, was called the \"Güdük (Stump) Minaret\"; it is presumed to have been completed under Çelebi Sultan Mehmed or Yavuz Sultan Selim. Their bases and transition segments are marble and their round shafts brick; both balconies sit on six rows of stalactites. The spires, originally wood covered with lead, were rebuilt in stone after the last fire."
+      },
+      "confidence": "probable",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "67" }]
+    },
+    {
+      "id": "cevre-hayratlari",
+      "order": 11,
+      "title": { "tr": "Avlu, Çeşme ve Şadırvanlar", "en": "Courtyard, Fountains and Shadirvans" },
+      "body": {
+        "tr": "Ulucami'nin çevresine çeşme ve şadırvan gibi birçok hayrat eseri yapılmıştır. Güneybatı köşedeki dört yüzlü çeşme ilk kez 1903'te yapılmış, 1959'daki büyük onarımda orijinal olmadığı gerekçesiyle yıkılmış, 1993-1994'te yeniden inşa edilmiştir; celi sülüs kitabesinde Enbiyâ suresinden \"Biz canlı olan her şeyi sudan yarattık\" ayeti yazılıdır. Kuzey avlusunda aynı hat üzerinde üç şadırvan vardır; doğu ve batıdakiler 2011'de eski fotoğraflardaki üsluba uygun olarak, yonca kemerlerle bağlanan sekiz ahşap direk üzerinde soğan kubbeli biçimde yeniden ele alınmıştır. Ortadaki tamamen mermer, 2.70 × 1.15 m ölçülerindeki dört cepheli çeşmeyi Vali Ahmed Münir Paşa yaptırmıştır.",
+        "en": "Many charitable works such as fountains and shadirvans were built around the Ulucami. The four-sided fountain at the southwest corner was first built in 1903, demolished in the major 1959 renovation as not original, and rebuilt in 1993-1994; its Jeli Thuluth inscription quotes Surah al-Anbiya: \"We created every living thing from water.\" Three shadirvans stand on one axis in the north courtyard; those on the east and west were rebuilt in 2011 in the style seen in old photographs, with onion domes on eight wooden posts linked by trefoil arches. The four-sided all-marble fountain in the middle, 2.70 × 1.15 m, was built by Governor Ahmed Münir Paşa."
+      },
+      "confidence": "certain",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "74-76" }]
+    }
+  ],
+
+  "legends": [
+    {
+      "id": "besinci-makam",
+      "title": { "tr": "\"Beşinci Makam\" İnancı", "en": "The \"Fifth Sanctuary\" Belief" },
+      "body": {
+        "tr": "Halk arasında Bursa Ulucami; Mescid-i Harâm, Mescid-i Nebevî, Mescid-i Aksâ ve Şam Emeviyye Camii'nden sonra \"beşinci makam\" sayılır. Bazı rivayetlerde bu makam Diyarbakır Ulucami'ye de atfedilir. İnanç, Üftâde Hazretleri'nin divanında yer alan ve bugün camide asılı duran Arapça beyte dayandırılır.",
+        "en": "Popular belief counts the Bursa Ulucami as the \"fifth sanctuary\" after the Masjid al-Haram, the Masjid al-Nabawi, the Masjid al-Aqsa and the Umayyad Mosque of Damascus; some accounts give this place to the Diyarbakır Ulucami. The belief rests on an Arabic couplet from the divan of Üftade, which hangs in the mosque today."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "44-45" }]
+    },
+    {
+      "id": "vav-harfi",
+      "title": { "tr": "Mihrabın Yanındaki \"Vav\" Harfi", "en": "The Letter \"Waw\" by the Mihrab" },
+      "body": {
+        "tr": "Kıble duvarında, mihrabın sağındaki görkemli \"vav\" harfinin bulunduğu yerde Hızır Aleyhisselam'ın namaz kıldığı ve harfin önünde namaz kılmanın faziletli olduğu inancı, kaynağa göre yalnızca halk söylencesidir.",
+        "en": "The belief that Khidr prayed at the spot of the magnificent letter \"waw\" to the right of the mihrab, and that praying before it is meritorious, is according to the source merely a folk legend."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "50-51" }]
+    },
+    {
+      "id": "sadirvan-arsasi",
+      "title": { "tr": "Şadırvanın Arsası Rivayeti", "en": "The Legend of the Shadirvan Plot" },
+      "body": {
+        "tr": "Şadırvanın bulunduğu yerin \"Müslüman olmayan bir kadına ait mülk\" olduğu rivayet edilir. Kaynağa göre vakıf arazisi üzerinde şahıs mülkiyeti olamayacağı için iddia tarihî gerçeklik taşımaz; arsa Orhan Gazi Vakfı'na aittir. Rivayet, şehir hafızasının ürettiği efsaneler arasında değerlendirilir.",
+        "en": "It is said that the shadirvan's site was \"property belonging to a non-Muslim woman\". According to the source, the claim has no historical basis, since private ownership cannot exist on foundation land; the plot belonged to the Orhan Gazi Foundation. The story is best seen as a legend produced by the city's memory."
+      },
+      "source_verdict": "refuted_by_source",
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "64-65" }]
+    }
+  ],
+
+  "facts": [
+    { "key": "boyut",               "label": { "tr": "Boyutlar",          "en": "Dimensions" },        "value": "55 × 69", "unit": "m",  "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "48" }] },
+    { "key": "ibadet_alani",        "label": { "tr": "İbadet alanı",      "en": "Prayer area" },       "value": 3500,      "unit": "m²", "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "48" }] },
+    { "key": "kubbe_sayisi",        "label": { "tr": "Kubbe sayısı",      "en": "Number of domes" },   "value": 20,        "unit": null, "confidence": "certain", "note": { "tr": "Ortadaki kubbe havuzun üzerinde açıktır.", "en": "The central dome over the pool is open." }, "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "48, 64" }] },
+    { "key": "kubbe_capi",          "label": { "tr": "Kubbe çapı",        "en": "Dome diameter" },     "value": 11,        "unit": "m",  "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "50" }] },
+    { "key": "paye_sayisi",         "label": { "tr": "Paye sayısı",       "en": "Number of piers" },   "value": 12,        "unit": null, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "50" }] },
+    { "key": "pencere_sayisi",      "label": { "tr": "Pencere sayısı",    "en": "Number of windows" }, "value": 58,        "unit": null, "confidence": "certain", "note": { "tr": "Alt sırada 26, üst sırada 32.", "en": "26 lower row, 32 upper row." }, "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "60" }] },
+    { "key": "hat_levhasi_sayisi",  "label": { "tr": "Hat levhası",       "en": "Calligraphy panels" },"value": "~170",    "unit": null, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "60" }] },
+    { "key": "minare_sayisi",       "label": { "tr": "Minare sayısı",     "en": "Number of minarets" },"value": 2,         "unit": null, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "67" }] },
+    { "key": "minber_parca_sayisi", "label": { "tr": "Minber parça sayısı","en": "Minbar pieces" },    "value": 6666,      "unit": null, "confidence": "certain", "note": { "tr": "İkinci bir kaynakla teyit önerilir.", "en": "Confirmation from a second source recommended." }, "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "54" }] },
+    { "key": "sadirvan_havuz_kenar","label": { "tr": "Şadırvan havuzu",   "en": "Shadirvan pool" },    "value": 16,        "unit": "kenar", "confidence": "disputed", "note": { "tr": "Kaynak bir yerde onikigen, bir yerde on altı kenarlı diyor.", "en": "Source says dodecagonal in one place, sixteen-sided in another." }, "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "48, 64" }] }
+  ],
+
+  "people": [
+    { "name": "Sultan Yıldırım Bayezid",            "role": { "tr": "Banî (yaptıran)",                      "en": "Founder" } },
+    { "name": "Hamîdüddin-i Aksarâyî (Somuncu Baba)","role": { "tr": "Açılışta Fatiha tefsiri yaptı",       "en": "Interpreted al-Fatiha at the opening" } },
+    { "name": "Süleyman Çelebi",                    "role": { "tr": "İlk imam, Mevlid'in müellifi",          "en": "First imam, author of the Mevlid" } },
+    { "name": "Hacı Muhammed bin Abdülazîz ibnü'd-Dakkî", "role": { "tr": "Minber ustası",                  "en": "Minbar master" } },
+    { "name": "Evliya Çelebi",                      "role": { "tr": "1630'da camiyi tasvir eden seyyah",     "en": "Traveller who described the mosque in 1630" } },
+    { "name": "Münzevî Abdullah Efendi",            "role": { "tr": "1786'da kütüphaneyi kurup vakfetti",    "en": "Founded and endowed the library in 1786" } },
+    { "name": "Mustafa Efendi",                     "role": { "tr": "Mütevelli; müezzin mahfilini yaptırdı", "en": "Trustee; built the muezzin's platform" } },
+    { "name": "Tevfik Paşa",                        "role": { "tr": "Mihrap süslemelerini yaptırdı (1862)",  "en": "Commissioned the mihrab decoration (1862)" } },
+    { "name": "Sultan Abdülaziz",                   "role": { "tr": "Hünkâr mahfilini yeniden yaptırdı (1862)", "en": "Rebuilt the sultan's gallery (1862)" } },
+    { "name": "Vali Ahmed Münir Paşa",              "role": { "tr": "Avludaki mermer çeşmeyi yaptırdı",      "en": "Built the marble fountain in the courtyard" } }
+  ],
+
+  "inscriptions": [
+    {
+      "id": "minber-kapi-kitabesi",
+      "location": { "tr": "Minber kapısının üzerinde, ahşap oyma", "en": "Above the minbar door, carved wood" },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Mimmâ umile bi-resmi es-Sultânu'l-muazzam Bâyezîd bin Murâd Hân bi-târîh-i sene isneyni ve semâne mi'e.",
+      "translation": {
+        "tr": "Bu yapı, Murad Han oğlu büyük Sultan Bayezid'in emriyle sekiz yüz iki (H. 802) yılında inşa edilmiştir.",
+        "en": "This structure was built in the year eight hundred and two by order of the great Sultan Bayezid, son of Murad Han."
+      },
+      "date": { "hijri_year": 802, "gregorian": "1399-1400" },
+      "ar_target_media_id": null,
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "41, 52" }]
+    },
+    {
+      "id": "minber-usta-kitabesi",
+      "location": { "tr": "Minberin batıya bakan korkuluğu", "en": "West-facing railing of the minbar" },
+      "language": "ar",
+      "script": "sülüs kırması",
+      "transliteration": "Amel-i el-Hâc Muhammed bin Abdülazîz ibnü'd-Dakkî",
+      "translation": {
+        "tr": "Hacı Muhammed bin Abdülazîz ibnü'd-Dakkî'nin işidir.",
+        "en": "The work of Hajji Muhammad bin Abdulaziz ibn al-Dakki."
+      },
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "52-53" }]
+    },
+    {
+      "id": "minber-hadis",
+      "location": { "tr": "Minberin doğu yüzü, ajurlu külâhın altı", "en": "East face of the minbar, under the fretwork spire" },
+      "language": "ar",
+      "script": "Selçuklu sülüsü",
+      "transliteration": "El-Mü'minü fî'l-mescidi ke's-semeki fi'l-mâi. Ve'l-münâfıku fi'l-mescidi ke't-tayri fi'l-kafesi.",
+      "translation": {
+        "tr": "Mümin kişi mescitte iken sudaki balık gibidir. Münafık ise mescitte iken kafesteki kuş gibidir.",
+        "en": "A believer in the mosque is like a fish in water; a hypocrite in the mosque is like a bird in a cage."
+      },
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "52-55" }]
+    },
+    {
+      "id": "uftade-beyti",
+      "location": { "tr": "Cami içinde asılı levha", "en": "Panel hung inside the mosque" },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Yâ câmi'al-kebîr ve yâ mecma'al-kibâr / Tûbâ limen yezûrüke fi'l-leyli ve'n-nehâr.",
+      "translation": {
+        "tr": "Ey büyük ve yüce mâbed, ey büyüklerin toplandığı cami. Seni gece ve gündüz ziyaret edenlere müjdeler olsun.",
+        "en": "O great and sublime temple, O mosque where the great ones gather. Good news to those who visit you day and night."
+      },
+      "author": "Üftâde Mehmed Muhyiddin",
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "44-45" }]
+    },
+    {
+      "id": "ii-mahmud-levhasi",
+      "location": { "tr": "Hünkâr mahfilinin tam karşısı", "en": "Directly opposite the sultan's gallery" },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Ve izâ hakemtüm beyne'n-nâsi en tahkümû bi'l-adli.",
+      "translation": {
+        "tr": "Allah, insanlar arasında hükmettiğiniz zaman adaletle hükmetmenizi emretmektedir. (Nisâ, 58)",
+        "en": "Allah commands you to judge with justice when you judge between people. (An-Nisa, 58)"
+      },
+      "author": "Sultan II. Mahmud",
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "50-51" }]
+    },
+    {
+      "id": "muezzin-mahfili-kitasi",
+      "location": { "tr": "Müezzin mahfili merdiveninin altındaki alınlık", "en": "Pediment under the stairs of the muezzin's platform" },
+      "language": "tr-ottoman",
+      "script": "talik",
+      "transliteration": null,
+      "translation": null,
+      "author": "Şair Rahîmî",
+      "date": { "hijri_year": 956, "gregorian": "1549" },
+      "note": { "tr": "Camide tarihi bilinen en eski kitabe. Metni kaynakta verilmemiş.", "en": "Oldest dated inscription in the mosque. Text not given in the source." },
+      "ar_target_media_id": null,
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "60-61" }]
+    },
+    {
+      "id": "guneybati-cesme-kitabesi",
+      "location": { "tr": "Güneybatı köşedeki dört yüzlü çeşme", "en": "Four-sided fountain at the southwest corner" },
+      "language": "ar",
+      "script": "celi sülüs",
+      "transliteration": "Ve ca'alnâ mine'l-mâi külle şey'in hayy.",
+      "translation": {
+        "tr": "Biz canlı olan her şeyi sudan yarattık. (Enbiyâ, 30)",
+        "en": "We created every living thing from water. (Al-Anbiya, 30)"
+      },
+      "date": { "hijri_year": 1321, "gregorian": "1903; yeniden yapım 1994" },
+      "ar_target_media_id": null,
+      "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "74-75" }]
+    }
+  ],
+
+  "timeline": [
+    { "id": "insa",            "year": 1399, "date": null,         "hijri": "802",                    "type": "opening",     "title": { "tr": "Üç yıllık inşaatın ardından bir cuma günü açıldı", "en": "Opened on a Friday after three years of construction" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "37" }] },
+    { "id": "repair-1494",     "year": 1494, "date": "1494-02-19", "hijri": "13 Cemaziyelevvel 899", "type": "repair",      "title": { "tr": "Onarım", "en": "Repair" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "70" }] },
+    { "id": "repair-1503",     "year": 1503, "date": "1503-12-18", "hijri": "28 Cemaziyelahir 959",  "type": "repair",      "title": { "tr": "Onarım", "en": "Repair" }, "confidence": "disputed", "note": { "tr": "Hicri ve miladi tarih birbirini tutmuyor (bkz. meta.data_quality_notes).", "en": "Hijri and Gregorian dates do not match." }, "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "70" }] },
+    { "id": "kitabe-1549",     "year": 1549, "date": null,         "hijri": "956",                    "type": "addition",    "title": { "tr": "Müezzin mahfili kitabesi (en eski tarihli kitabe)", "en": "Muezzin's platform inscription (oldest dated)" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "60" }] },
+    { "id": "repair-1563",     "year": 1563, "date": "1563-07-26", "hijri": "5 Zilhicce 970",        "type": "repair",      "title": { "tr": "Onarım", "en": "Repair" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "70" }] },
+    { "id": "repair-1567",     "year": 1567, "date": "1567-12-15", "hijri": "13 Cemaziyelevvel 975", "type": "repair",      "title": { "tr": "Onarım", "en": "Repair" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "70" }] },
+    { "id": "evliya-1630",     "year": 1630, "date": null,         "hijri": "1040",                   "type": "record",      "title": { "tr": "Evliya Çelebi camiyi ziyaret edip tasvir etti", "en": "Evliya Çelebi visited and described the mosque" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "64-65" }] },
+    { "id": "yildirim-1670",   "year": 1670, "date": "1670-10-14", "hijri": "29 Cemaziyelevvel 1081","type": "damage",      "title": { "tr": "Minareye yıldırım düştü; külah, kurşun ve alem yenilendi", "en": "Lightning struck the minaret; spire, lead and finial renewed" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "70" }] },
+    { "id": "repair-1732",     "year": 1732, "date": "1732-12-10", "hijri": "22 Cemaziyelahir 1145", "type": "repair",      "title": { "tr": "Minare külahı, şadırvanlar, suyolları, 129 kubbe penceresi ve hat yazıları onarıldı", "en": "Minaret spire, shadirvans, water channels, 129 dome windows and calligraphy repaired" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "70" }] },
+    { "id": "repair-1737",     "year": 1737, "date": "1737-07-18", "hijri": "20 Rebiyülevvel 1150",  "type": "repair",      "title": { "tr": "Onarım", "en": "Repair" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "70" }] },
+    { "id": "kutuphane-1786",  "year": 1786, "date": null,         "hijri": null,                     "type": "addition",    "title": { "tr": "Münzevî Abdullah Efendi hünkâr mahfili altında kütüphane kurdu", "en": "Münzevî Abdullah Efendi founded a library under the sultan's gallery" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "60" }] },
+    { "id": "kursu-1816",      "year": 1816, "date": null,         "hijri": "1231",                   "type": "addition",    "title": { "tr": "Rokoko mermer vaaz kürsüsü", "en": "Rococo marble preaching pulpit" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "60" }] },
+    { "id": "deprem-1855",     "year": 1855, "date": null,         "hijri": null,                     "type": "damage",      "title": { "tr": "Büyük deprem; en kapsamlı onarım başladı", "en": "Major earthquake; the largest restoration began" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "70-71" }] },
+    { "id": "acilis-1862",     "year": 1862, "date": null,         "hijri": null,                     "type": "restoration", "title": { "tr": "Yeniden ibadete açıldı; mihrap süslemeleri ve hünkâr mahfili yapıldı", "en": "Reopened for worship; mihrab decoration and sultan's gallery made" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "58-61, 70-71" }] },
+    { "id": "cesme-1903",      "year": 1903, "date": null,         "hijri": "1321",                   "type": "addition",    "title": { "tr": "Güneybatı köşedeki dört yüzlü çeşme yapıldı", "en": "Four-sided fountain built at the southwest corner" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "74" }] },
+    { "id": "yangin-1958",     "year": 1958, "date": null,         "hijri": null,                     "type": "damage",      "title": { "tr": "Bursa Çarşı Yangını'nda kuzey cephe zarar gördü", "en": "North façade damaged in the Bursa Bazaar Fire" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "70-71" }] },
+    { "id": "cesme-1959",      "year": 1959, "date": null,         "hijri": null,                     "type": "removal",     "title": { "tr": "Çeşme 'orijinal değil' gerekçesiyle yıkıldı", "en": "Fountain demolished as not original" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "74" }] },
+    { "id": "kapi-1960",       "year": 1960, "date": null,         "hijri": null,                     "type": "removal",     "title": { "tr": "Abdülaziz döneminde açılan hünkâr kapısı yeniden pencereye çevrildi", "en": "Sultan's door from Abdulaziz's reign turned back into a window" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "48" }] },
+    { "id": "cesme-1994",      "year": 1994, "date": null,         "hijri": null,                     "type": "addition",    "title": { "tr": "Çeşme yeniden inşa edildi (1993-1994)", "en": "Fountain rebuilt (1993-1994)" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "74" }] },
+    { "id": "restorasyon-2009","year": 2009, "date": null,         "hijri": null,                     "type": "restoration", "title": { "tr": "Son kapsamlı restorasyon; müezzin mahfili süslemeleri ortaya çıkarıldı", "en": "Latest major restoration; muezzin's platform decoration uncovered" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "60, 74" }] },
+    { "id": "sadirvan-2011",   "year": 2011, "date": null,         "hijri": null,                     "type": "restoration", "title": { "tr": "Avludaki doğu ve batı şadırvanları eski fotoğraflara göre yenilendi", "en": "East and west courtyard shadirvans rebuilt after old photos" }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "76" }] }
+  ],
+
+  "highlights": [
+    { "feature": "minber",   "title": { "tr": "Kündekâri minber", "en": "Kündekâri minbar" }, "hint": { "tr": "Çivisiz, tutkalsız geçme parçalar; batı korkuluğunda usta kitabesini arayın.", "en": "Interlocking pieces with no nails or glue; look for the master's inscription on the west railing." }, "section_id": "minber" },
+    { "feature": "sadirvan", "title": { "tr": "İçerideki şadırvan", "en": "The indoor shadirvan" }, "hint": { "tr": "Açık kubbeden gelen ışığa ve su sesine dikkat edin.", "en": "Notice the light from the open dome and the sound of water." }, "section_id": "sadirvan" },
+    { "feature": "hat",      "title": { "tr": "Payelerdeki hatlar", "en": "Calligraphy on the piers" }, "hint": { "tr": "Her payenin her yüzünde esmâ-i hüsnâdan bir yazı var.", "en": "Every face of every pier carries one of the Names of God." }, "section_id": "hat-muzesi" },
+    { "feature": "vav",      "title": { "tr": "Büyük \"vav\" harfi", "en": "The great letter \"waw\"" }, "hint": { "tr": "Kıble duvarında, mihrabın sağında.", "en": "On the qibla wall, right of the mihrab." }, "section_id": "hat-muzesi" }
+  ],
+
+  "relations": [
+    { "target_id": "bursa-osmangazi-orhan-bey-camii",   "type": "waqf_land",      "description": { "tr": "Ulucami'nin arsası Orhan Gazi Vakfı'na aitti; Yıldırım Bayezid Orhan Vakfı'na karşılığında başka arazi verdi.", "en": "Ulucami's land belonged to the Orhan Gazi Foundation, which received another plot in exchange." }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "48, 64" }] },
+    { "target_id": "bursa-osmangazi-orhan-bey-camii",   "type": "urban_context",  "description": { "tr": "Ulucami, Orhan Camii'ne paralel olarak yapıldı.", "en": "Ulucami was built parallel to the Orhan Mosque." }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "40-41" }] },
+    { "target_id": "bursa-osmangazi-emir-hani",         "type": "urban_context",  "description": { "tr": "Yıldırım Bayezid, Ulucami ile birlikte Emir Hanı'nın karşısına bedesteni yaptırdı; çarşının odağı bu üçlü oldu.", "en": "Alongside the Ulucami, Yıldırım Bayezid built the bedesten opposite the Emir Han, focusing the bazaar." }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "40-41" }] },
+    { "target_id": "bursa-yildirim-yildirim-kulliyesi", "type": "same_founder",   "description": { "tr": "İkisini de Sultan Yıldırım Bayezid yaptırdı.", "en": "Both were commissioned by Sultan Yıldırım Bayezid." }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "38" }] },
+    { "target_id": "bursa-yildirim-yesil-camii",        "type": "same_architect", "description": { "tr": "Mimar adaylarından Hacı İvaz bin Ahî Bayezid, Yeşil Külliye'nin mimarıdır.", "en": "One candidate architect, Hacı İvaz bin Ahi Bayezid, built the Yeşil Complex." }, "confidence": "disputed", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "40-41" }] },
+    { "target_id": "manisa-ulucami",                    "type": "same_craftsman", "description": { "tr": "Minber ustası İbnü'd-Dakkî, 1376 tarihli Manisa Ulucamii'nin minberini de yaptı.", "en": "Minbar master Ibn al-Dakki also made the minbar of the Manisa Ulucami (1376)." }, "confidence": "certain", "source_refs": [{ "source_id": "vk-bursa-c1", "pages": "52-53" }] }
+  ],
+
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": 45,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "free",
+    "notes": {
+      "tr": "Aktif ibadet mekânıdır; namaz vakitlerinde ziyaret kısıtlanabilir.",
+      "en": "An active place of worship; visits may be restricted during prayer times."
+    },
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ulucami, Uludağ'ın eteğinde, tarihi çarşının ortasında duran, geniş ve alçak bir taş yapıdır. Çatısı, dört sıra halinde dizilmiş yirmi kurşun kaplı kubbeden oluşur; iki köşesinde tuğladan iki ince minare yükselir. Kuzeydeki mermer taç kapıdan girildiğinde, on iki kalın kare ayağın taşıdığı kubbelerle örtülü, ferah ve aydınlık bir iç mekân karşılar. Ayakların ve duvarların üzerinde siyah, kırmızı ve altın renkli büyük Arapça yazılar vardır. Tam ortada, tepesi açık bir kubbenin altında, ortasından su akan mermer bir havuz bulunur; suyun sesi tüm mekânda duyulur. Güney duvarındaki mihrabın sağında, tek parça görünümlü ama binlerce ahşap parçanın çivisiz birleşmesiyle yapılmış, ince oymalı ahşap minber yükselir.",
+      "en": "The Ulucami is a broad, low stone building standing in the middle of the historic bazaar at the foot of Uludağ. Its roof is made of twenty lead-covered domes in four rows, with two slender brick minarets rising at its corners. Entering through the marble portal on the north, you find a spacious, bright interior covered by domes on twelve thick square piers. Large Arabic inscriptions in black, red and gold cover the piers and walls. In the very centre, under a dome open to the sky, is a marble pool with water flowing from its middle; the sound carries through the whole space. To the right of the mihrab on the south wall rises the finely carved wooden minbar, made of thousands of pieces joined without nails."
+    },
+    "audio_description_source": "Kitap metni ve envanter fotoğraflarından ekip tarafından yazıldı."
+  },
+
+  "ambient_sound": {
+    "sound_key": "cami-sadirvan",
+    "caption": {
+      "tr": "[Şadırvandan akan su sesi, uzaktan gelen alçak sesli kıraat ve kubbede yankılanan ayak sesleri]",
+      "en": "[Water flowing from the shadirvan, quiet recitation in the distance, footsteps echoing under the domes]"
+    }
+  },
+
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1xdXMqYBpR_a-JBirfn1zweBbekAZaMZc",
+    "path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Ulucamii Klasörü / Links",
+    "book_layout_pdf_file_id": "1C5DGHngcRVOBm5IiJwray5hxw1l3sZ-U"
+  },
+
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": { "provider": "google_drive", "file_id": "1cXJginLZlO0JOFte0VCAYezmptOBMdo0", "original_name": "DJI_20241129211815_0387_D_ODAK.jpeg" },
+      "subject": "exterior",
+      "focal_point": { "x": 0.5, "y": 0.6 },
+      "caption": { "tr": "Ulucami ve arkasında Uludağ, havadan", "en": "Ulucami with Uludağ behind, from the air" },
+      "alt": { "tr": "Havadan çekilmiş fotoğraf: dört sıra halinde dizilmiş yirmi gri kubbeli büyük taş cami, iki yanında birer tuğla minare, arkasında evlerle kaplı yamaçlar ve dağ.", "en": "Aerial photo: a large stone mosque with twenty grey domes in four rows, a brick minaret on each side, hillsides covered with houses and a mountain behind." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": "2024-11-29",
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": { "provider": "google_drive", "file_id": "10v5RWXGE2DmVvROgtvgvNSPLcaijJqZw", "original_name": "DJI_20241027172515_0203_D_ODAK.jpeg" },
+      "subject": "portal",
+      "caption": { "tr": "Mermer taç kapı", "en": "The marble portal" },
+      "alt": { "tr": "Beyaz mermerden yüksek bir taç kapı; sivri kemerli nişin üst kısmı mukarnaslı, altta yeşil boyalı ahşap kapı.", "en": "A tall white marble portal; the pointed-arch niche has muqarnas at the top and a green-painted wooden door below." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": "2024-10-27",
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": { "provider": "google_drive", "file_id": "1GqZTM33HRDLQTc-FGuue8pq0x-_mV613", "original_name": "ERD05124 kopya-2a.jpg" },
+      "subject": "interior_domes",
+      "caption": { "tr": "Kubbeler ve paye yazıları", "en": "Domes and pier inscriptions" },
+      "alt": { "tr": "Aşağıdan yukarı bakış: krem renkli kubbeler ve kemerler, kubbe içlerinde kahverengi süsleme halkaları, payelerin üzerinde büyük siyah Arapça hat yazıları.", "en": "Looking up: cream-coloured domes and arches with brown ornamental rings inside the domes, and large black Arabic calligraphy on the piers." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": { "provider": "google_drive", "file_id": "1s0cRyamkHcbe7HIXOe0zZayIRbK0157m", "original_name": "ERD04999 kopya.jpg" },
+      "subject": "minber",
+      "caption": { "tr": "Kündekâri minber ve harim", "en": "The kündekâri minbar and prayer hall" },
+      "alt": { "tr": "Cami içi: sağda koyu renkli, ince oymalı yüksek ahşap minber, zeminde desenli halı, arkada sıra sıra kemerler ve duvarlarda hat yazıları.", "en": "Mosque interior: on the right, a tall, dark, finely carved wooden minbar; patterned carpet on the floor, rows of arches behind, calligraphy on the walls." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": { "provider": "google_drive", "file_id": "1f6QghMDZYuaTbXnwuVLsiISfvOOJvsbA", "original_name": "DJI_20241210024324_0276_D_ODAK.jpg" },
+      "subject": "muezzin_mahfili",
+      "caption": { "tr": "Sekiz ahşap direkli müezzin mahfili, arkada mihrap", "en": "The muezzin's platform on eight wooden posts, mihrab behind" },
+      "alt": { "tr": "Ahşap direkler üzerinde yükselen, korkuluklu koyu renkli ahşap bir platform; arkasında yeşil zeminli hat levhaları ve süslemeli mihrap duvarı.", "en": "A dark wooden platform with railings raised on wooden posts; behind it, calligraphy panels on green ground and the decorated mihrab wall." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": "2024-12-10",
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": { "provider": "google_drive", "file_id": "10MwI-MyQ0t1JDDPEqjgjNaOwTT00Lk3u", "original_name": "DJI_20241209231739_0003_D_ODAK.jpeg" },
+      "subject": "calligraphy",
+      "caption": { "tr": "Celi hat levhası", "en": "Jeli calligraphy panel" },
+      "alt": { "tr": "Krem zemin üzerine iri siyah harflerle yazılmış Arapça hat levhası; altında daha küçük bir yazı kartuşu ve iki yanda süslemeli kemer üstleri.", "en": "Arabic calligraphy in large black letters on a cream ground; below, a smaller inscription cartouche flanked by decorated arch tops." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": "2024-12-09",
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": { "provider": "google_drive", "file_id": "1eBRloquA2LPInY00IGASzkdq4SjKZ5l3", "original_name": "ERD05179 kopya.jpg" },
+      "subject": "ornament_detail",
+      "caption": { "tr": "Kalem işi süsleme ve yaldızlı yazı detayı", "en": "Painted ornament and gilded script detail" },
+      "alt": { "tr": "Yakın çekim: siyah ve kırmızı zemin üzerinde altın yaldızlı Arapça harfler, yanlarda beyaz ve altın renkli çiçek motifleri.", "en": "Close-up: gilded Arabic letters on black and red grounds, flanked by white and gold floral motifs." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": { "provider": "google_drive", "file_id": "14OZ2w36Vq_5RfQCtZ4Grh09O91JB-zJw", "original_name": "ERD04721 kopya.jpg" },
+      "subject": "courtyard_sadirvan",
+      "caption": { "tr": "Kuzey avludaki soğan kubbeli şadırvanlar", "en": "Onion-domed shadirvans in the north courtyard" },
+      "alt": { "tr": "Islak taş zeminli avlu; ahşap direkler ve yonca kemerler üzerinde gri, soğan biçimli kubbesi olan sekizgen bir şadırvan, arkada aynı hizada diğer şadırvanlar ve yapraksız ağaçlar.", "en": "A courtyard with wet stone paving; an octagonal shadirvan with a grey onion dome on wooden posts and trefoil arches, the other shadirvans in line behind it, and bare trees." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": { "provider": "google_drive", "file_id": "1euUxPutNP3uBRCjQCyRaFHZhmcBW2kG3", "original_name": "ERD04829 kopya.jpg" },
+      "subject": "courtyard_fountain",
+      "caption": { "tr": "Avluda mermer çeşme", "en": "Marble fountain in the courtyard" },
+      "alt": { "tr": "Avluda, oval mermer bir yalağın ortasında yükselen, kemerli nişli küçük mermer çeşme; sağda caminin kesme taş duvarı ve pencereleri.", "en": "A small marble fountain with an arched niche rising from an oval marble basin in the courtyard; to the right, the mosque's cut-stone wall and windows." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": { "provider": "google_drive", "file_id": "1xHFxYQnPDZQHEkTTjswACBFfe_j61whA", "original_name": "DJI_20241205174837_0085_D_ODAK.jpeg" },
+      "subject": "minaret",
+      "caption": { "tr": "Gün batımında minare", "en": "Minaret at sunset" },
+      "alt": { "tr": "Turuncu gün batımı gökyüzüne karşı minarenin şerefesi ve külahı, altta karanlık tepeler ve şehir ışıkları.", "en": "The minaret's balcony and spire against an orange sunset sky, with dark hills and city lights below." },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": "2024-12-05",
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+
+  "archive_media": [],
+
+  "exhibitions": []
+}

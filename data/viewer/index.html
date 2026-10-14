@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vakıf Eserleri · Veri</title>
+  <meta name="description" content="Vakıf eserleri veri setinin veritabanına giden tüm satırlarını şehir, ilçe ve eser bazında gösteren statik görüntüleyici.">
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.4/dist/lenis.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main" onclick="event.preventDefault();document.getElementById('main').focus()">İçeriğe geç</a>
+
+  <header class="topbar">
+    <button class="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">
+      <span aria-hidden="true">☰</span> Eserler
+    </button>
+    <a class="brand" href="index.html#/">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">Vakıf Eserleri <span class="brand-sub">Veri Görüntüleyici</span></span>
+    </a>
+    <p class="topbar-meta" id="meta"></p>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" data-lenis-prevent aria-label="Eser gezgini">
+      <div class="search">
+        <label for="q" class="visually-hidden">Eser ara</label>
+        <input id="q" type="search" placeholder="Eser, ilçe ya da id ara…" autocomplete="off">
+      </div>
+      <nav>
+        <a class="side-link" href="index.html#/" data-route="home">Genel bakış</a>
+        <a class="side-link" href="index.html#/ortak" data-route="ortak">Ortak tablolar</a>
+        <div id="tree" class="tree"></div>
+      </nav>
+    </aside>
+    <div class="scrim" hidden></div>
+
+    <main id="main" tabindex="-1"></main>
+  </div>
+
+  <dialog id="lightbox" class="lightbox" aria-label="Görsel" data-lenis-prevent>
+    <div class="lb-inner">
+      <figure class="lb-figure">
+        <img id="lb-img" alt="">
+        <figcaption id="lb-cap"></figcaption>
+      </figure>
+      <div class="lb-controls">
+        <button type="button" data-lb="prev" aria-label="Önceki görsel">←</button>
+        <span id="lb-count" aria-live="polite"></span>
+        <button type="button" data-lb="next" aria-label="Sonraki görsel">→</button>
+        <button type="button" data-lb="close" aria-label="Kapat">Kapat</button>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript><p class="noscript">Bu sayfa JavaScript ile çalışır.</p></noscript>
+
+  <script src="data.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
