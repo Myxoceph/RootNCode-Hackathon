@@ -3,7 +3,7 @@
  *
  * The payload is validated with the shared contract before anything is written;
  * the write itself is idempotent and transactional (see src/db/seed.ts).
- * Temporary by design: replaced by the ETL output (tools/etl/output) once available.
+ * Temporary by design: replaced by the data/ dataset import once the schema is unified.
  *
  * Usage: npm run db:seed --workspace @vagabonds/api
  */

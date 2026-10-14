@@ -31,8 +31,7 @@ deneyimle keşfettirir.
 ├── packages/
 │   ├── contracts/      # Ortak veri sözleşmesi: Zod şemaları, TS tipleri, mock veri
 │   └── ui/             # Tasarım sistemi: token'lar, temalar, erişilebilir bileşenler
-├── tools/
-│   └── etl/            # Ham eser verisini temizleyip sözleşmeye dönüştüren veri hattı
+├── data/               # Eser veri seti: JSON kayıtlar, şema, görsel hattı, içe aktarma (bkz. data/README.md)
 ├── docs/
 │   ├── sprints/        # Haftalık görev planları
 │   ├── reports/        # Haftalık ilerleme raporları
