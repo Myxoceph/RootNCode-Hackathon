@@ -14,6 +14,8 @@
     "db:up": "docker compose up -d postgres",
     "db:down": "docker compose down",
     "contracts:validate": "npm run validate --workspace @vagabonds/contracts",
+    "data:validate": "python3 data/tools/validate.py",
+    "db:import": "set -a && . apps/api/.env && set +a && python3 data/tools/import_to_db.py --verify",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm test --workspaces --if-present"
   }
