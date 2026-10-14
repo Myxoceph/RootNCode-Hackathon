@@ -67,6 +67,8 @@ npm run db:import                               # veri setini içe aktar ve şem
 
 Veri modeli, içe aktarma kuralları ve görsel depolama için esas belge: [`data/README.md`](data/README.md).
 
+> **`dev`'i çektikten sonra:** [`docs/upgrade-notes.md`](docs/upgrade-notes.md) dosyasında senin için yeni bir kurulum adımı olup olmadığına bak.
+
 ### API'yi çalıştırma
 
 ```bash
