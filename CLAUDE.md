@@ -9,7 +9,7 @@ Tek Expo (React Native + Expo Router) kod tabanından iOS, Android ve Web. Kamer
 - `apps/app`: İstemci, mobil + web. Sorumlu: Yiğit, Kübra
 - `packages/contracts`: Backend ↔ istemci veri sözleşmesi (Zod). Tüm veri bu şemadan geçer.
 - `packages/ui`: Tasarım sistemi ve erişilebilir bileşenler. Sorumlu: Kübra
-- `tools/etl`: Ham veri → sözleşme biçimi. Sorumlu: Hüseyin
+- `data/`: Eser veri seti (JSON kayıtlar, JSON Schema, kaynaklar, görsel hattı, içe aktarma araçları). Sorumlu: Hüseyin. Veri modeli ve kurallar için esas belge `data/README.md`.
 - `docs/sprints`, `docs/reports`, `docs/decisions`: Haftalık plan, haftalık rapor, mimari kararlar (ADR).
 
 ## 8 Çekirdek Modül
