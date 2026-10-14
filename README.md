@@ -1,5 +1,7 @@
 # Vagabonds
 
+[![CI](https://github.com/Myxoceph/RootNCode-Hackathon/actions/workflows/ci.yml/badge.svg?branch=dev)](https://github.com/Myxoceph/RootNCode-Hackathon/actions/workflows/ci.yml)
+
 > **KÖK&KOD Hackathon** · Türkiye'deki vakıf eserlerini kullanıcıların mobil veya masaüstü cihazlardan keşfedebileceği, güvenilir bilgilerle öğrenebileceği ve kültürel mirasla etkileşim kurabileceği yeni nesil bir dijital deneyime nasıl dönüştürebiliriz?
 
 Vagabonds, vakıf eserlerini pasif birer turistik bina olmaktan çıkarıp **çok duyulu**
