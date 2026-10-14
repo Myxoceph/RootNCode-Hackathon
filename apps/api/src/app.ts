@@ -1,6 +1,8 @@
 import cors from "@fastify/cors";
 import Fastify, { type FastifyInstance, type FastifyServerOptions } from "fastify";
 import type { PrismaClient } from "./db/prisma.ts";
+import { createMonumentsRepository } from "./modules/monuments/monuments.repository.ts";
+import { monumentsRoutes } from "./modules/monuments/monuments.routes.ts";
 import { registerErrorHandlers } from "./plugins/error-handler.ts";
 import { healthRoutes } from "./routes/health.ts";
 
@@ -22,6 +24,7 @@ export function buildApp({ prisma, logger = false, corsOrigins = [] }: BuildAppO
   registerErrorHandlers(app);
   app.register(cors, { origin: corsOrigins, methods: ["GET", "HEAD", "OPTIONS"] });
   app.register(healthRoutes, { prisma });
+  app.register(monumentsRoutes, { repository: createMonumentsRepository(prisma) });
 
   return app;
 }
