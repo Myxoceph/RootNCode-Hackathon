@@ -1,0 +1,12 @@
+# media_pipeline.py çıktısı. Manifest git'e GİRER; görseller ve indirilen orijinaller girmez
+# (yeniden üretilebilir ve büyük: Ulucami tek başına 133 MB orijinal + 27 MB sürüm).
+# Kökteki .gitignore 'build/' kuralı bu klasörü de kapsıyor; manifest girsin diye burada geri açılıyor.
+!build/
+build/cache/
+build/media/
+
+# build_viewer.py çıktısı (eserler + manifestten üretilir)
+viewer/data.js
+
+# Python önbelleği
+__pycache__/
