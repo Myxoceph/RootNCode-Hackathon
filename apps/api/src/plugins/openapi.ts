@@ -31,12 +31,13 @@ export function registerOpenApi(app: FastifyInstance): void {
         title: "Vagabonds API",
         version: CONTRACT_VERSION,
         description:
-          "Vakıf eserleri, kitabeler, eserler arası ilişki ağı, şehir mutfağı ve ziyaretçi ipuçları. " +
+          "Vakıf eserleri: tarihçe, kitabeler, zaman çizelgesi, eserler arası ilişki ağı ve görseller; " +
+          "her içerik kaynağı ve güven düzeyiyle birlikte. " +
           "Yanıtlar `@vagabonds/contracts` sözleşmesiyle doğrulanır. " +
           "Hatalar her zaman `{ error: { code, message } }` biçimindedir.",
       },
       tags: [
-        { name: "monuments", description: "Eserler ve şehir mutfakları" },
+        { name: "assets", description: "Vakıf eserleri" },
         { name: "system", description: "Sunucu durumu" },
       ],
     },

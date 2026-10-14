@@ -36,7 +36,7 @@ jobs:
 
     env:
       # Throwaway CI database, not a secret.
-      DATABASE_URL: postgresql://vagabonds:vagabonds@localhost:5432/vagabonds?schema=public
+      DATABASE_URL: postgresql://vagabonds:vagabonds@localhost:5432/vagabonds
       NODE_ENV: test
 
     steps:
@@ -49,11 +49,23 @@ jobs:
           node-version: 24
           cache: npm
 
+      - name: Set up Python (data tools)
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: data/requirements.txt
+
       - name: Install dependencies (also generates the Prisma client)
-        run: npm ci
+        run: |
+          npm ci
+          python -m pip install -r data/requirements.txt
 
       - name: Typecheck all workspaces
         run: npm run typecheck
+
+      - name: Validate the dataset (JSON Schema + cross-checks)
+        run: python data/tools/validate.py
 
       - name: Validate the mock data contract
         run: npm run contracts:validate
@@ -63,6 +75,10 @@ jobs:
 
       - name: Apply database migrations
         run: npm run db:deploy --workspace @vagabonds/api
+
+      - name: Import the dataset and verify the schema mapping
+        # Proves the Prisma-managed schema matches data/tools/db_rows.py (columns and rows).
+        run: python data/tools/import_to_db.py --verify
 
       - name: Run tests (unit + integration against PostgreSQL)
         run: npm test

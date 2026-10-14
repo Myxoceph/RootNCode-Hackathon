@@ -53,16 +53,19 @@ deneyimle keşfettirir.
 
 ## Kurulum
 
-Gereksinimler: Node.js 20+, Docker
+Gereksinimler: Node.js 20+, Python 3.9+, Docker
 
 ```bash
 npm install
+python3 -m pip install -r data/requirements.txt  # veri araçları (doğrulama, içe aktarma, görsel hattı)
 npm run db:up                                   # PostgreSQL'i başlat
 cp apps/api/.env.example apps/api/.env
-npm run db:deploy --workspace @vagabonds/api    # migration'ları uygula
-npm run db:seed --workspace @vagabonds/api      # mock veriyle örnek eserleri yükle
-npm run contracts:validate                      # mock sözleşmeyi doğrula
+npm run db:deploy --workspace @vagabonds/api    # migration'ları uygula (şema: data/README.md, Bölüm 5)
+npm run data:validate                           # eser JSON'larını doğrula
+npm run db:import                               # veri setini içe aktar ve şemayla birebir uyumunu doğrula
 ```
+
+Veri modeli, içe aktarma kuralları ve görsel depolama için esas belge: [`data/README.md`](data/README.md).
 
 ### API'yi çalıştırma
 
@@ -71,24 +74,17 @@ npm run dev --workspace @vagabonds/api          # http://localhost:3000 (dosya d
 npm test --workspace @vagabonds/api             # birim + entegrasyon testleri (entegrasyon için Postgres açık olmalı)
 npm run typecheck --workspace @vagabonds/api    # TypeScript kontrolü
 curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
-curl http://localhost:3000/monuments/selimiye-camii
 ```
 
 | Uç | Açıklama |
 |---|---|
 | `GET /health` | Sunucu ve veritabanı durumu (veritabanına ulaşılamazsa `503`) |
-| `GET /monuments?city=` | Tüm eserler ve şehir mutfakları (`MonumentsPayload`); `city` opsiyonel, `CitySchema` değerlerinden biri |
-| `GET /monuments/:slug` | Tek eser (`Monument`): kitabeler, iki yönlü ilişkiler, onaylı ziyaretçi ipuçları |
 | `GET /docs` | Swagger UI: etkileşimli API dokümantasyonu (OpenAPI 3.1 belgesi: `/docs/json`) |
 
-Yanıtlar `@vagabonds/contracts` şemasıyla doğrulanır ve `mock_monuments.json` ile aynı biçimdedir.
-Tüm hatalar tek biçimde döner: `{ "error": { "code": "MONUMENT_NOT_FOUND", "message": "..." } }`
+Eser uçları (`/assets`) yeni veri modeli üzerine kuruluyor.
 
-| Kod | Durum |
-|---|---|
-| `INVALID_QUERY` / `INVALID_SLUG` | `400`: geçersiz şehir veya slug |
-| `MONUMENT_NOT_FOUND` / `NOT_FOUND` | `404`: eser veya adres yok |
-| `INTERNAL_ERROR` | `500`: beklenmeyen hata (detaylar yalnızca sunucu loglarında) |
+Tüm hatalar tek biçimde döner: `{ "error": { "code": "NOT_FOUND", "message": "..." } }`.
+`5xx` hataların ayrıntısı yalnızca sunucu loglarında tutulur.
 
 Web istemcisinin API'ye erişebilmesi için adresi `CORS_ORIGINS` içinde olmalıdır (varsayılan: `http://localhost:8081`).
 
