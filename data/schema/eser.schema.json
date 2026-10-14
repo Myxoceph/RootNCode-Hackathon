@@ -6,6 +6,18 @@
   "type": "object",
   "required": ["schema_version", "id", "meta", "name", "type", "location", "summary", "sections", "media"],
   "additionalProperties": false,
+  "allOf": [
+    {
+      "$comment": "Taslaklar (meta.status = draft) koordinatsız ve fotoğrafsız olabilir; in_review ve published kayıtlarda ikisi de zorunlu.",
+      "if": { "required": ["meta"], "properties": { "meta": { "properties": { "status": { "const": "draft" } } } } },
+      "else": {
+        "properties": {
+          "location": { "required": ["coordinates"] },
+          "media": { "minItems": 1 }
+        }
+      }
+    }
+  ],
 
   "$defs": {
     "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
@@ -133,7 +145,7 @@
 
     "location": {
       "type": "object",
-      "required": ["region", "city", "district", "coordinates"],
+      "required": ["region", "city", "district"],
       "properties": {
         "region": { "type": "string" },
         "city": { "type": "string" },
@@ -433,7 +445,6 @@
 
     "media": {
       "type": "array",
-      "minItems": 1,
       "items": { "$ref": "#/$defs/mediaItem" }
     },
 

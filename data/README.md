@@ -858,6 +858,8 @@ Detay yanıtı örneği (kısaltılmış, `lang=tr`):
 
 ## 11. Veri ekibi için: yeni eser ekleme
 
+> Kitap bölüklerinden yapay zekâ destekli taslak üretmek için: [`tools/extract/README.md`](tools/extract/README.md). Aşağıdaki kurallar taslakların kontrolünde de geçerlidir. Taslaklar (`meta.status = "draft"`) koordinatsız ve fotoğrafsız olabilir ve içe aktarılmaz; `in_review` öncesi ikisi de eklenir.
+
 Kurallar:
 1. Her metin bir kaynağa (`source_refs`) bağlanır. Sayfa numarası kitabın **basılı** sayfa numarasıdır.
 2. Kaynak "tahmin edilmektedir" diyorsa `probable`, birden çok görüş veriyorsa `disputed` yazılır. Rivayetler `legends[]`'e gider.
