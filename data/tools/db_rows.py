@@ -271,8 +271,13 @@ def asset_rows(a, manifest):
 
 
 def load_all():
-    """Tüm eserleri ve manifesti okur."""
+    """Tüm eserleri ve manifesti okur.
+
+    Taslaklar (meta.status = draft) atlanır: koordinatsız/fotoğrafsız olabilirler ve
+    uygulamada görünmezler. in_review'a geçince içe aktarmaya ve görüntüleyiciye girerler.
+    """
     manifest_path = DATA / "build" / "media-manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
     assets = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((DATA / "eserler").rglob("*.json"))]
+    assets = [a for a in assets if a["meta"]["status"] != "draft"]
     return assets, manifest

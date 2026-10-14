@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-14 · Bölüklerden yapay zekâ destekli taslak üretimi
+
+Kimler: **veri girişi yapanlar** (Ahmet, Hüseyin)
+
+1. Veri araçlarının bağımlılıklarını güncelle (`pypdf` eklendi):
+   ```bash
+   python3 -m pip install -r data/requirements.txt
+   ```
+2. Süreç: [`data/tools/extract/README.md`](../data/tools/extract/README.md) · kim hangi bölükte: [`data/kapsam.md`](../data/kapsam.md)
+
+Değişenler:
+- `data/eserler/` artık `draft` kayıtları da içerebilir: koordinat ve fotoğraf taslaklarda zorunlu değil, `in_review` öncesi eklenir. `npm run db:import` taslakları atlar.
+
+---
+
 ## 2026-10-14 · Veri ekibinin modeline geçiş ([PR #9](https://github.com/Myxoceph/RootNCode-Hackathon/pull/9))
 
 Kimler: **herkes**
