@@ -12,7 +12,7 @@ de çalışsın diye fetch ile değil, <script> ile yüklenen bir JS dosyasına 
 import json
 from datetime import datetime, timezone
 
-from hackathonRepo.data.tools.db_rows import ASSET_TABLES, DATA, SHARED_TABLES, TABLES, asset_rows, load_all, shared_rows
+from db_rows import ASSET_TABLES, DATA, SHARED_TABLES, TABLES, asset_rows, load_all, shared_rows
 
 OUT = DATA / "viewer" / "data.js"
 

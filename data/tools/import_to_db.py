@@ -22,7 +22,7 @@ import sys
 import psycopg
 from psycopg.types.json import Jsonb
 
-from hackathonRepo.data.tools.db_rows import (ASSET_TABLES, DATA, GENERATED, SHARED_TABLES, TABLES, asset_rows, load_all, shared_rows)
+from db_rows import (ASSET_TABLES, DATA, GENERATED, SHARED_TABLES, TABLES, asset_rows, load_all, shared_rows)
 
 PK = {"region": ["code"], "city": ["code"], "asset_type": ["code"], "era": ["code"], "relation_type": ["code"],
       "timeline_event_type": ["code"], "source": ["id"]}
