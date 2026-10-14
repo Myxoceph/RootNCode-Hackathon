@@ -44,3 +44,4 @@ main ◄── dev ◄── feat/<özellik>
 - Dal açmadan önce `dev`'i güncelle: `git switch dev && git pull && git switch -c feat/<özellik>`.
 - Commit mesajları Conventional Commits formatında: `feat(api): ...`, `fix(mobile): ...`, `docs: ...`, `chore: ...`.
 - PR'lar "Create a merge commit" ile birleştirilir; adım adım commit geçmişi korunur.
+- Bir PR ekipten bir kurulum adımı gerektiriyorsa (paket, ortam değişkeni, migration, veri içe aktarma) `docs/upgrade-notes.md` dosyasının en üstüne tarihli bir madde eklenir.
