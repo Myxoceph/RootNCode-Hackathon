@@ -55,7 +55,7 @@ hazır olur, veri hattı ilk gerçek eserleri üretir ve backend ilk API uçlar�
 | A1 | ~~Prisma şeması, ilk migration, veri sözleşmesi ve mock veri~~ | `feat/data-layer` | ✅ [PR #1](https://github.com/Myxoceph/RootNCode-Hackathon/pull/1) merge edildi |
 | A2 ✅ | Fastify API iskeleti, ortam değişkeni doğrulaması, `GET /health` | `feat/api-foundation` | Sunucu açılıyor; health ucu veritabanı bağlantısını raporluyor · [PR #3](https://github.com/Myxoceph/RootNCode-Hackathon/pull/3) |
 | A3 ✅ | Mock JSON'dan geliştirme seed'i (ETL hazır olunca onun çıktısına geçecek) | `feat/api-foundation` | `npm run db:seed` tekrar çalıştırılabilir; 3 eser veritabanında · [PR #3](https://github.com/Myxoceph/RootNCode-Hackathon/pull/3) |
-| A4 | `GET /monuments` ve `GET /monuments/:slug`; yanıtlar Zod ile doğrulanıyor; web için CORS | `feat/monuments-endpoints` | Entegrasyon testleri geçiyor; yanıt mock ile aynı biçimde |
+| A4 ✅ | `GET /monuments` ve `GET /monuments/:slug`; yanıtlar Zod ile doğrulanıyor; web için CORS | `feat/monuments-endpoints` | Entegrasyon testleri geçiyor; yanıt mock ile aynı biçimde · [PR #4](https://github.com/Myxoceph/RootNCode-Hackathon/pull/4) |
 | A5 | Swagger UI (`/docs`) | `feat/api-docs` | API dokümantasyonu tarayıcıdan görülebiliyor |
 | A6 | GitHub Actions CI: her PR'da typecheck, sözleşme doğrulaması ve testler | `chore/ci` | PR'larda CI kontrolü görünüyor ve geçiyor |
 | A7 | `CitySchema`'yı Hüseyin'in şehir listesiyle güncelle | `feat/contracts-cities` | Sözleşme ve mock doğrulaması geçiyor |

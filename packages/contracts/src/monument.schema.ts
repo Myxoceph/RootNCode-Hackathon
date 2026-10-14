@@ -101,6 +101,12 @@ export const CityCuisineSchema = z.strictObject({
   historicalContext: z.string().min(1),
 });
 
+/**
+ * Version of this contract. Bump it (semver) whenever a schema changes, and
+ * keep mock_monuments.json's `version` in sync; the API reports it in every payload.
+ */
+export const CONTRACT_VERSION = "0.1.0";
+
 /** Response body of `GET /monuments`, and the shape of mock_monuments.json. */
 export const MonumentsPayloadSchema = z.strictObject({
   version: z.string().regex(/^\d+\.\d+\.\d+$/, "version must be semver (x.y.z)"),

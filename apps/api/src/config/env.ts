@@ -13,6 +13,17 @@ const EnvSchema = z.object({
   DATABASE_URL: z
     .url()
     .refine((url) => /^postgres(ql)?:\/\//.test(url), "DATABASE_URL must be a PostgreSQL connection string"),
+  // Comma-separated browser origins allowed to call the API (default: Expo web dev server).
+  CORS_ORIGINS: z
+    .string()
+    .default("http://localhost:8081")
+    .transform((value) =>
+      value
+        .split(",")
+        .map((origin) => origin.trim())
+        .filter(Boolean),
+    )
+    .pipe(z.array(z.url())),
 });
 
 export type Env = z.infer<typeof EnvSchema>;

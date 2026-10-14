@@ -67,16 +67,28 @@ npm run contracts:validate                      # mock sözleşmeyi doğrula
 
 ```bash
 npm run dev --workspace @vagabonds/api          # http://localhost:3000 (dosya değişince yeniden başlar)
-npm test --workspace @vagabonds/api             # testler
+npm test --workspace @vagabonds/api             # birim + entegrasyon testleri (entegrasyon için Postgres açık olmalı)
 npm run typecheck --workspace @vagabonds/api    # TypeScript kontrolü
 curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
+curl http://localhost:3000/monuments/selimiye-camii
 ```
 
 | Uç | Açıklama |
 |---|---|
 | `GET /health` | Sunucu ve veritabanı durumu (veritabanına ulaşılamazsa `503`) |
+| `GET /monuments?city=` | Tüm eserler ve şehir mutfakları (`MonumentsPayload`); `city` opsiyonel, `CitySchema` değerlerinden biri |
+| `GET /monuments/:slug` | Tek eser (`Monument`): kitabeler, iki yönlü ilişkiler, onaylı ziyaretçi ipuçları |
 
-Tüm hatalar tek biçimde döner: `{ "error": { "code": "NOT_FOUND", "message": "..." } }`
+Yanıtlar `@vagabonds/contracts` şemasıyla doğrulanır ve `mock_monuments.json` ile aynı biçimdedir.
+Tüm hatalar tek biçimde döner: `{ "error": { "code": "MONUMENT_NOT_FOUND", "message": "..." } }`
+
+| Kod | Durum |
+|---|---|
+| `INVALID_QUERY` / `INVALID_SLUG` | `400`: geçersiz şehir veya slug |
+| `MONUMENT_NOT_FOUND` / `NOT_FOUND` | `404`: eser veya adres yok |
+| `INTERNAL_ERROR` | `500`: beklenmeyen hata (detaylar yalnızca sunucu loglarında) |
+
+Web istemcisinin API'ye erişebilmesi için adresi `CORS_ORIGINS` içinde olmalıdır (varsayılan: `http://localhost:8081`).
 
 ## Ekip
 

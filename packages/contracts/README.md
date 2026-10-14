@@ -19,6 +19,30 @@ const monuments: Monument[] = payload.monuments;
 API devreye girdiğinde yalnızca veri kaynağı değişir; yanıt aynı şemayla
 doğrulandığı için ekranlarda değişiklik gerekmez.
 
+### Mock'tan API'ye geçiş
+
+```ts
+import { MonumentsPayloadSchema, MonumentSchema } from "@vagabonds/contracts";
+
+const API_URL = "http://localhost:3000"; // fiziksel cihazda bilgisayarın yerel IP'si kullanılır
+
+export async function fetchMonuments(city?: string) {
+  const query = city ? `?city=${encodeURIComponent(city)}` : "";
+  const response = await fetch(`${API_URL}/monuments${query}`);
+  if (!response.ok) throw new Error((await response.json()).error.message);
+  return MonumentsPayloadSchema.parse(await response.json());
+}
+
+export async function fetchMonument(slug: string) {
+  const response = await fetch(`${API_URL}/monuments/${slug}`);
+  if (!response.ok) throw new Error((await response.json()).error.message);
+  return MonumentSchema.parse(await response.json());
+}
+```
+
+API'nin bu mock ile aynı yanıtı döndürdüğü, backend entegrasyon testlerinde eser eser doğrulanır
+(`apps/api/test/monuments.routes.test.ts`).
+
 ## Alanların modüllere karşılığı
 
 | Modül | Alanlar |
