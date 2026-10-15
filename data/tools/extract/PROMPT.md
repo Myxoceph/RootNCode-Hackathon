@@ -49,7 +49,9 @@ the same id already exists, stop and report it.
 - Do NOT invent coordinates, photos, Drive ids or file names: omit `location.coordinates`, set
   `media: []`, `archive_media: []`, `media_folder: null`, and add todos for both.
 - Ids: `<il>-<ilçe>-<ad>`; file name = id. `meta.status: "draft"`,
-  `meta.prepared_by: "ai-draft:sonnet"`, `meta.reviewed_by: null`, dates = today.
+  `meta.prepared_by: "ai-draft:sonnet"`, `meta.reviewed_by: null`,
+  `meta.from: "<PDF ADI, numara ve .pdf olmadan; ör. '3-Sivil Mimari.pdf' → 'Sivil Mimari'>"`
+  (right after `reviewed_by`), dates = today.
 - `accessibility`: all statuses `"unknown"`, `verified: false`; `audio_description` may be
   written from the book's architectural description (factual, from the text only).
 

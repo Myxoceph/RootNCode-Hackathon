@@ -118,6 +118,7 @@
         "updated_at": { "type": "string", "format": "date" },
         "prepared_by": { "type": ["string", "null"] },
         "reviewed_by": { "type": ["string", "null"] },
+        "from": { "type": ["string", "null"], "description": "Kaydın çıkarıldığı bölük PDF'inin numarasız adı (ör. '3-Sivil Mimari.pdf' → 'Sivil Mimari'). Drive'daki fotoğraf klasörünün adıyla aynıdır." },
         "text_origin": { "type": "string" },
         "todos": { "type": "array", "items": { "type": "string" } },
         "data_quality_notes": {

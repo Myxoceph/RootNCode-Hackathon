@@ -121,7 +121,8 @@ Kısaltılmış örnek; tamamı [bursa-osmangazi-ulucami.json](eserler/bursa/bur
   "schema_version": "1.0",
   "id": "bursa-osmangazi-ulucami",                 // <il>-<ilçe>-<ad>; değişmez, upsert anahtarı
   "meta": { "status": "in_review", "created_at": "2026-10-14", "updated_at": "2026-10-14",
-            "prepared_by": "...", "reviewed_by": null, "todos": [], "data_quality_notes": [] },
+            "prepared_by": "...", "reviewed_by": null, "from": "Ulucamii",   // from: bölük PDF'inin numarasız adı = Drive fotoğraf klasörü
+            "todos": [], "data_quality_notes": [] },
   "name": { "tr": "Ulucami", "en": "Ulucami (Grand Mosque of Bursa)" },
   "subtitle": { "tr": "...", "en": "..." },
   "alternate_names": [{ "tr": "Bursa'nın Ayasofyası", "en": "...", "note": "..." }],
@@ -628,6 +629,7 @@ CREATE TABLE asset_revision (
 | `exhibitions[]` | `exhibition` |
 | `media[]`, `archive_media[]` + manifest | `media`, `media_variant`, `asset_media` (Bölüm 8) |
 | her nesnedeki `source_refs[]` | `source_citation` (entity/entity_key kuralları DDL'deki yorumda) |
+| `meta.from` (bölük PDF'i / Drive klasörü) | ayrı sütun yok; `asset.source_json` içinde kalır |
 | dosyanın tamamı | `asset.source_json` |
 
 ---
