@@ -31,10 +31,10 @@ hazır olur, veri hattı ilk gerçek eserleri üretir ve backend ilk API uçlar�
 
 | # | Görev | Dal | Tamamlanma kriteri |
 |---|---|---|---|
-| K1 | Temel ekranların wireframe'leri (Figma): eser listesi, eser detayı, harita, kitabe okuma, erişilebilirlik ayarları; mobil ve web yerleşimi | – | Figma linki bu dosyaya eklendi, ekiple paylaşıldı |
+| K1 ✅ | Temel ekranların wireframe'leri (Figma): eser listesi, eser detayı, harita, kitabe okuma, erişilebilirlik ayarları; mobil ve web yerleşimi | – | Figma linki bu dosyaya eklendi, ekiple paylaşıldı · Wireframe'ler ekiple doğrudan paylaşıldı, Figma linki eklenmedi |
 | K2 ✅ | Tasarım token'ları `packages/ui` içinde: renkler, tipografi, boşluklar | `feat/ui-tokens` | Tüm metin/arka plan çiftleri WCAG AA kontrastını (4.5:1) sağlıyor; kontrast değerleri belgelendi · [`CONTRAST.md`](../../packages/ui/CONTRAST.md) · [PR #12](https://github.com/Myxoceph/RootNCode-Hackathon/pull/12) |
 | K3 | Açık, koyu ve yüksek kontrast temaları | `feat/ui-themes` | Üç tema token'lardan türetiliyor; tema geçişi tek noktadan yapılıyor |
-| K4 | Ekip için erişilebilirlik kontrol listesi: ekran okuyucu etiketleri, odak sırası, dokunma hedefleri, altyazı, switch access | `docs/a11y-checklist` | `docs/accessibility-checklist.md` yazıldı; PR şablonunda kullanılacak maddeler hazır |
+| K4 ✅ | Ekip için erişilebilirlik kontrol listesi: ekran okuyucu etiketleri, odak sırası, dokunma hedefleri, altyazı, switch access | `docs/a11y-checklist` | `docs/accessibility-checklist.md` yazıldı; PR şablonunda kullanılacak maddeler hazır · [PR #13](https://github.com/Myxoceph/RootNCode-Hackathon/pull/13) |
 | K5 | Temel bileşenler: `Button`, `Text`, `Card` (erişilebilirlik özellikleri yerleşik); Yiğit ile birlikte `apps/app`'e bağlanacak | `feat/ui-base-components` | Bileşenler hem mobilde hem web'de ekran okuyucuyla doğru okunuyor |
 
 ## Hüseyin Öztürk · Veri & ETL
