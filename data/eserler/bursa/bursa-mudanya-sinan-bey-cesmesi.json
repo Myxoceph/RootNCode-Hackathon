@@ -1,0 +1,272 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-mudanya-sinan-bey-cesmesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
+      "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
+      "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
+      "Sinan Bey'in kimliği kitapta açıklanmamış."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Çeşme bölümü ve kitabe H. 15 Cemaziyelevvel 1052 / M. 13 Ağustos 1642 diyor; Halil Ağa Evi bölümü (s. 599) çeşmeyi 1645'e tarihliyor. İki değer de saklandı, kayıt 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sinan Bey Çeşmesi",
+    "en": "Sinan Bey Fountain"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "çeşme",
+    "kitabe",
+    "Sinan Bey"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Mudanya",
+    "neighborhood": null,
+    "address": "Mustafakemalpaşa Caddesi, Halil Ağa (Eski) Camii avlu duvarına bitişik",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "579"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 15 Cemaziyelevvel 1052 / M. 13 Ağustos 1642",
+      "en": "15 Cemaziyelevvel AH 1052 / 13 August AD 1642"
+    },
+    "start_year": 1642,
+    "end_year": null,
+    "hijri_year": 1052,
+    "century": 17,
+    "basis": {
+      "tr": "Çeşmenin üç satırlık celi sülüs kitabesi. Halil Ağa Evi bölümünde aynı çeşme için 1645 yılı verilmiştir.",
+      "en": "The fountain's three-line Jeli Thuluth inscription. The Halil Ağa House section gives 1645 for the same fountain."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "579, 599"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sinan Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "579"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Halil Ağa (Eski) Camii'nin avlu duvarına bitişik, 1642 tarihli kitabeli, ikiz kurnalı tuğla çeşme; 2022'de onarılmıştır ve hâlâ akmaktadır.",
+    "en": "Brick twin-basin fountain with an inscription dated 1642, adjacent to the courtyard wall of the Halil Ağa (Old) Mosque; repaired in 2022 and still flowing."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Kitabe",
+        "en": "Structure and Inscription"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı ve şapkalı çeşme tuğladan yapılmış, beton sıvayla kaplanmıştır. Cephede iki sivri kemerli açıklıkta ikiz kurnalı düzen vardır; aynalık mermer, yalaklar taştır, yalağın iki yanında taş üçgen sekiler bulunur. Aynaların üstünde geometrik desenler, iki sivri kemerin üstündeki alınlıkta kitabe yer alır. Çeşme hâlen akmaktadır ve 2022'de bakım ve onarımdan geçmiştir.",
+        "en": "The rectangular, capped fountain is built of brick covered with concrete plaster. Two pointed-arched openings on the façade hold a twin-basin arrangement; the back panels are marble, the troughs stone, with triangular stone benches on both sides. Geometric patterns lie above the panels and the inscription on the pediment above the two arches. It still flows and was repaired in 2022."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "579"
+        }
+      ]
+    },
+    {
+      "id": "tarih-celiskisi",
+      "order": 2,
+      "title": {
+        "tr": "Yapım Tarihi",
+        "en": "Construction Date"
+      },
+      "body": {
+        "tr": "Kendi bölümünde kitabeye dayanılarak çeşmenin 13 Ağustos 1642'de Sinan Bey tarafından yaptırıldığı belirtilir; Halil Ağa Evi bölümünde ise aynı çeşmenin 1645'te Sinan Bey tarafından yaptırıldığı yazılıdır.",
+        "en": "Its own section states, based on the inscription, that Sinan Bey had the fountain built on 13 August 1642; the Halil Ağa House section says the same fountain was built by Sinan Bey in 1645."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "579, 599"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kitabe_satir",
+      "label": {
+        "tr": "Kitabe satır sayısı",
+        "en": "Inscription lines"
+      },
+      "value": 3,
+      "unit": "satır",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "579"
+        }
+      ]
+    },
+    {
+      "key": "kurna",
+      "label": {
+        "tr": "Kurna düzeni",
+        "en": "Basin arrangement"
+      },
+      "value": "İkiz kurnalı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "579"
+        }
+      ]
+    },
+    {
+      "key": "onarim_yili",
+      "label": {
+        "tr": "Son onarım yılı",
+        "en": "Latest repair year"
+      },
+      "value": 2022,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "579"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "cesme-kitabesi",
+      "location": {
+        "tr": "İki sivri kemerin üzerinde, alınlıkta",
+        "en": "On the pediment above the two pointed arches"
+      },
+      "language": "tr-ottoman",
+      "script": "celi sülüs",
+      "transliteration": "Merhûm Sinan hâl eyledi hayrâtı, rûhu şâd ola dâim ânın / Yapdı bu çeşmeyi ol sâhib-i hayr / Tahrîren fî’l-yevmi’l-hâmisi aşere min Cemâziye’l-evvel sene 1052",
+      "translation": {
+        "tr": "Merhum Sinan Bey bu hayratı yaptı; ruhu daim şâd olsun. Bu çeşmeyi o hayır sahibi yaptırdı. 1052 senesi, Cemaziyelevvel ayının on beşinde yazıldı.",
+        "en": "The late Sinan Bey performed this charity; may his soul rest in peace. That benefactor had this fountain built. It was written on the fifteenth of the month of Jumada al-Awwal in the year 1052."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1052,
+        "gregorian": "1642-08-13"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "579"
+        }
+      ],
+      "note": {
+        "tr": "Üç satır.",
+        "en": "Three lines."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yapim-1642",
+      "year": 1642,
+      "date": "1642-08-13",
+      "hijri": "15 Cemaziyelevvel 1052",
+      "type": "construction",
+      "title": {
+        "tr": "Sinan Bey tarafından yaptırıldı",
+        "en": "Built by Sinan Bey"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "579"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2022",
+      "year": 2022,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bakım ve onarım",
+        "en": "Maintenance and repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "579"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tuğladan yapılmış, beton sıvalı küçük bir çeşmedir. Cephesinde iki sivri kemerli açıklık ve içlerinde ikiz kurna bulunur. Aynalıklar mermer, yalaklar taştır; kemerlerin üstünde üç satırlık kitabe yer alır.",
+      "en": "A small brick fountain with concrete plaster. Its façade has two pointed-arched openings with twin basins. The back panels are marble and the troughs stone; a three-line inscription lies above the arches."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-mudanya-hasan-misri-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
+      "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
+      "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
+      "Çeşme, hamam ve türbenin ayrı bölümleri yok; ayrı kayıt açılmadı. Külliye üst kaydı bu nedenle oluşturulmadı.",
+      "Kitabedeki 'selsebil hayrı' ibaresinin sayısal değeri kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap tarihi kuzey kapıdaki kitabeye dayandırır ancak aynı kitabenin okunamaz hâle geldiğini de söyler; bu nedenle 'disputed' işaretlendi."
+      },
+      {
+        "field": "dating.display",
+        "note": "İngilizce metinde 'AH 1062 H / AD 1652' yazım hatası var; Türkçe metin 'H. 1062 / M. 1652'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hasan Mısrî Bey Camii",
+    "en": "Hasan Mısrî Bey Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Hasan Mısrî Bey Camii",
+      "en": "Hasan Mısrî Bey Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "külliye planı",
+    "ahşap minber",
+    "Mısır Mirlivası"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Mudanya",
+    "neighborhood": "Hasanbey",
+    "address": "2. Cami Sokak, No: 18",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "590"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1062 / M. 1652",
+      "en": "AH 1062 / AD 1652"
+    },
+    "start_year": 1652,
+    "end_year": null,
+    "hijri_year": 1062,
+    "century": 17,
+    "basis": {
+      "tr": "Kuzey cephedeki giriş kapısı kitabesine göre; kitabe zamanla boyanıp aşındığı için okunamaz hâle gelmiştir.",
+      "en": "According to the inscription above the north entrance, which has become unreadable through repeated painting and wear."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "590"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hasan Bey (Mısır Mirlivası)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "590"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mısır Mirlivası Hasan Bey'in yaptırdığı, çeşme, hamam ve türbeyle külliye olarak planlanan, 2010-2011'de restore edilip ibadete açılan Mudanya camii.",
+    "en": "Mudanya mosque built by the Egyptian Mirliva Hasan Bey, planned as a complex with a fountain, bathhouse and tomb; restored in 2010-2011 and reopened for worship."
+  },
+  "sections": [
+    {
+      "id": "banisi-kulliye",
+      "order": 1,
+      "title": {
+        "tr": "Banisi ve Külliye Planı",
+        "en": "Founder and Complex Plan"
+      },
+      "body": {
+        "tr": "Kuzey cephedeki kitabeye göre cami H. 1062 / M. 1652'de Mısır Mirlivası Hasan Bey tarafından yaptırılmıştır; ancak kitabe okunamaz durumdadır. Cami, yanındaki çeşme, hamam ve Hasan Bey'in mezarının bulunduğu türbeyle birlikte külliye olarak planlanmıştır. Güneydoğudaki türbede iki lahitten birinde “Mirliva-i Mısır Hasan Bey” yazar; minarenin kuzeyindeki çeşmenin önündeki taş kitabe de suyapısını Hasan Bey'in yaptırdığını bildirir.",
+        "en": "According to the inscription on the north entrance the mosque was built by the Egyptian Mirliva Hasan Bey in AH 1062 / AD 1652, but the inscription is unreadable. The mosque was planned as a complex with a fountain, a bathhouse and the tomb with Hasan Bey's grave. One of two sarcophagi in the southeast tomb reads “Mirliva-i Mısır Hasan Bey”, and the stone inscription in front of the fountain north of the minaret says Hasan Bey built the fountain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "590"
+        }
+      ]
+    },
+    {
+      "id": "plan-ic",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve İç Mekân",
+        "en": "Plan and Interior"
+      },
+      "body": {
+        "tr": "Kuzey-güney doğrultusunda dikdörtgen planlı camiyi kuzey ve doğudan “L” biçimli, düz tavanlı son cemaat yeri çevreler. Harime kuzey eksendeki kapıdan girilir; güney duvar ortasında dışa çıkıntılı yedi cepheli mihrap nişi, güneybatı köşesinde minber, kuzeyde mahfil vardır. Ahşap tavan kirişlemeli alttan kaplama tekniğindedir. Ahşap kadınlar mahfili 2,70 m'lik dört ahşap taşıyıcıya oturur; “L” planlıdır, alt tavanı baklava ve geometrik desenli çıtalı, çerçeveleri kalem işi çiçek-yaprak motiflidir.",
+        "en": "The rectangular north-south mosque is surrounded on the north and east by an “L”-shaped flat-ceilinged narthex. The prayer hall is entered through the door on the north axis; mid-south wall has a protruding seven-sided mihrab niche, the minbar is in the southwest corner and a gallery in the north. The wooden ceiling uses the beamed underlay technique. The wooden women's gallery rests on four 2.70 m wooden supports, is “L”-shaped, with a lower ceiling of diamond and geometric slats and frames painted with flowers and leaves."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "592"
+        }
+      ]
+    },
+    {
+      "id": "minber",
+      "order": 3,
+      "title": {
+        "tr": "Minber",
+        "en": "Minbar"
+      },
+      "body": {
+        "tr": "Tamamen ahşap minber yaklaşık 2,85 m uzunluğundadır; alemle birlikte yüksekliği 5,54 m'ye ulaşır. Dokuz basamaklı minberin yan aynalığı geometrik desenlidir, süpürgelik altı bölmelidir ve minber mermer seki üzerine yerleştirilmiştir.",
+        "en": "The all-wooden minbar is about 2.85 m long and, with its finial, 5.54 m high. The nine-step minbar has geometric side panels, a plinth divided into six sections and stands on a marble platform."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "592"
+        }
+      ]
+    },
+    {
+      "id": "minare-onarim",
+      "order": 4,
+      "title": {
+        "tr": "Minare ve Onarımlar",
+        "en": "Minaret and Repairs"
+      },
+      "body": {
+        "tr": "Minare batı cephesinin kuzeyinde, son cemaat yeriyle harimin birleşim noktasındadır; kare kaideli, pahlı pabuçlu, silindirik gövdeli ve tek şerefelidir. Külah başlangıçta kubbe biçimindeyken sonra piramidal olmuş, kurşunla kaplanmış, tepesinde bakır alem bulunur. Duvarların moloz taş olduğu sıva altından anlaşılır. Cami 1975'te Vakıflar Genel Müdürlüğü'nce onarılmış, 2010-2011'de minare, cami, türbe ve müştemilat restore edilerek yeniden ibadete açılmıştır.",
+        "en": "The minaret stands north of the west façade at the junction of narthex and prayer hall; it has a square base, chamfered transition, cylindrical shaft and a single balcony. The spire, originally domed, later became pyramidal, is lead covered and topped by a copper finial. The walls are understood to be rubble stone beneath plaster. The mosque was repaired by the General Directorate of Foundations in 1975 and, in 2010-2011, the minaret, mosque, tomb and annex were restored and reopened for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "592-593"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minber_uzunluk",
+      "label": {
+        "tr": "Minber uzunluğu",
+        "en": "Minbar length"
+      },
+      "value": 2.85,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "592"
+        }
+      ]
+    },
+    {
+      "key": "minber_yukseklik",
+      "label": {
+        "tr": "Minber yüksekliği (alemle)",
+        "en": "Minbar height (with finial)"
+      },
+      "value": 5.54,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "592"
+        }
+      ]
+    },
+    {
+      "key": "minber_basamak",
+      "label": {
+        "tr": "Minber basamak sayısı",
+        "en": "Minbar steps"
+      },
+      "value": 9,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "592"
+        }
+      ]
+    },
+    {
+      "key": "mahfil_olcusu",
+      "label": {
+        "tr": "Mahfil genişlik × boy × yükseklik",
+        "en": "Gallery width × length × height"
+      },
+      "value": "9,60 × 3,10 × 1,80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "592"
+        }
+      ]
+    },
+    {
+      "key": "mahfil_tasiyici",
+      "label": {
+        "tr": "Mahfil ahşap taşıyıcı sayısı",
+        "en": "Gallery wooden supports"
+      },
+      "value": 4,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "592"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "cesme-kitabesi",
+      "location": {
+        "tr": "Minarenin kuzeyindeki çeşmenin önünde taş kitabe",
+        "en": "Stone inscription in front of the fountain north of the minaret"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Mirlivâ-i Mısr Hasan Bey sevâb içün\nSa’y eyleyüb bu çeşme suyun eyledi sebîl\nFikriyle hayrete düşecek çeşme-sâr içün\nTârîhine bu düşdi gelüb hayr-ı selsebîl",
+      "translation": {
+        "tr": "Mısır Mirlivası Hasan Bey sevap için gayret edip bu çeşmeyi sebil yaptı. Hayran kalacak çeşme ustası için tarih olarak şu ibare düşürüldü: ‘selsebil hayrı’.",
+        "en": "Egyptian Mirliva Hasan Bey, out of devotion, strove and made this fountain as a sabil. The work of the fountain master will inspire admiration. The following phrase was recorded as the date: ‘The blessing of salsabil’."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "590, 592"
+        }
+      ],
+      "note": {
+        "tr": "Kitabe cami değil çeşmeye aittir; tarih ebced ifadesi olarak verilmiş, sayısal yıl kitapta yok.",
+        "en": "The inscription belongs to the fountain, not the mosque; the date is given as a chronogram phrase without a numeric year."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1652",
+      "year": 1652,
+      "date": null,
+      "hijri": "1062",
+      "type": "construction",
+      "title": {
+        "tr": "Hasan Bey tarafından yaptırıldı (H. 1062; kitabe okunamıyor)",
+        "en": "Built by Hasan Bey (AH 1062; inscription unreadable)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "590"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1975",
+      "year": 1975,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından onarıldı",
+        "en": "Repaired by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "593"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "2010-2011 kapsamlı restorasyon; yeniden ibadete açıldı",
+        "en": "2010-2011 comprehensive restoration; reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "593"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, moloz taş duvarlı bir camidir; kuzey ve doğuyu L biçimli düz tavanlı bir son cemaat yeri çevreler. Güney duvarda yedi cepheli mihrap nişi, güneybatıda dokuz basamaklı ahşap minber ve kuzeyde ahşap kadınlar mahfili vardır. Tek şerefeli minare batı cephenin kuzeyindedir.",
+      "en": "A rectangular rubble-stone mosque with an L-shaped flat-ceilinged narthex on the north and east. The south wall has a seven-sided mihrab niche, the southwest corner a nine-step wooden minbar and the north a wooden women's gallery. The single-balcony minaret stands north of the west façade."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

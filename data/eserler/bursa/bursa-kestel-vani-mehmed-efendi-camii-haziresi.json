@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-kestel-vani-mehmed-efendi-camii-haziresi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hazirenin kuruluş tarihi kitapta yok (dating: null).",
+      "Kitabelerin dili/yazı türü kitapta belirtilmiyor; language 'other'.",
+      "Salih Molla kitabesinin meali için kitapta 'Mealen' yok; çeviri İngilizce metin kullanılarak satır satır birleştirildi ve Türkçe karşılığı ekip tarafından yazıldı, kontrol edilmeli.",
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[salih-molla-mezar-tasi,bali-mehmed-mezar-tasi]",
+        "note": "Kitapta Türkçe 'Mealen' basılı değil; çeviri alanı yazının kendisiyle dolduruldu, ajanın yazdığı yeniden ifade kaldırıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Vanî Mehmed Efendi Camii Haziresi",
+    "en": "Vanî Mehmed Efendi Mosque Graveyard"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hazire",
+  "secondary_types": [],
+  "parent_id": "bursa-kestel-vani-mehmed-efendi-kulliyesi",
+  "era": null,
+  "tags": [
+    "hazire",
+    "Vanî Mehmed Efendi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Kestel",
+    "neighborhood": "Kale Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "558"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin kuzeybatısındaki bahçede yer alan geniş hazire. Mezar taşlarının çoğu Vanî Mehmed Efendi'nin ailesine ve vakfında görev yapanlara aittir; düzenli ve bakımlıdır.",
+    "en": "A large graveyard in the garden northwest of the mosque. Most stones belong to Vanî Mehmed Efendi's family and those who served his foundation; it is well maintained."
+  },
+  "sections": [
+    {
+      "id": "hazire",
+      "order": 1,
+      "title": {
+        "tr": "Hazire",
+        "en": "The Graveyard"
+      },
+      "body": {
+        "tr": "Caminin kuzeybatısındaki bahçede geniş bir hazire bulunur ve farklı dönemlere tarihlenen mezar taşları içerir. Taşların büyük kısmı Vanî Mehmed Efendi'nin ailesi ile vakfında görev yapanlara aittir. Medfun şahsiyetler arasında mütevelli Mesudzâde Ahmed Efendi'nin oğlu Seyyid Mehmed Emin Efendi (v. H. 1229 / M. 1814), Vanîzâde es-Seyyid Salih Molla (v. H. 1237 / M. 1821), Bâli Mehmed (v. H. 1167 / M. 1753) ve Vanîzâde es-Seyyid Mahmud Efendi (v. H. 1213 / M. 1798) vardır.",
+        "en": "A large cemetery lies in the garden northwest of the mosque with gravestones of various periods. Most belong to Vanî Mehmed Efendi's family and his foundation's staff. Those buried include Seyyid Mehmed Emin Efendi, son of trustee Mesudzâde Ahmed Efendi (d. AH 1229 / AD 1814), Vanîzâde es-Seyyid Salih Molla (d. AH 1237 / AD 1821), Bâli Mehmed (d. AH 1167 / AD 1753) and Vanîzâde es-Seyyid Mahmud Efendi (d. AH 1213 / AD 1798)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "558"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Seyyid Mehmed Emin Efendi",
+      "role": {
+        "tr": "Mütevelli Mesudzâde Ahmed Efendi'nin oğlu, Vanî evladından (v. H. 1229 / M. 1814)",
+        "en": "Son of trustee Mesudzâde Ahmed Efendi, of Vanî's descendants (d. AH 1229 / AD 1814)"
+      }
+    },
+    {
+      "name": "Vanîzâde es-Seyyid Salih Molla",
+      "role": {
+        "tr": "Vanî evladından (v. H. 1237 / M. 1821)",
+        "en": "Of Vanî's descendants (d. AH 1237 / AD 1821)"
+      }
+    },
+    {
+      "name": "Bâli Mehmed",
+      "role": {
+        "tr": "Mezar taşı hazirede (v. H. 1167 / M. 1753)",
+        "en": "Gravestone in the graveyard (d. AH 1167 / AD 1753)"
+      }
+    },
+    {
+      "name": "Vanîzâde es-Seyyid Mahmud Efendi",
+      "role": {
+        "tr": "Vanî evladından (v. H. 1213 / M. 1798)",
+        "en": "Of Vanî's descendants (d. AH 1213 / AD 1798)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "salih-molla-mezar-tasi",
+      "location": {
+        "tr": "Vanîzâde es-Seyyid Salih Molla'nın mezar taşı",
+        "en": "Gravestone of Vanîzâde es-Seyyid Salih Molla"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Hüve’l-Bâkî\nZiyaretten murat duadır\nBugün bana ise yarın sanadır\nCennet-mekân Firdevs-âşiyân\nMerhum ve mağfûrün leh\nVanîzâde es-Seyyid Salih Molla\nRûhî için rızâen lillâhi teâlâ el-Fâtiha\nSene H 1237 / M 1821.",
+      "translation": {
+        "tr": "Hüve’l-Bâkî Ziyaretten murat duadır Bugün bana ise yarın sanadır Cennet-mekân Firdevs-âşiyân Merhum ve mağfûrün leh Vanîzâde es-Seyyid Salih Molla Rûhî için rızâen lillâhi teâlâ el-Fâtiha Sene H 1237 M 1821.",
+        "en": "He is the Everlasting. The purpose of visiting is prayer. Today for me, tomorrow for you. Heavenly abode, paradise dwelling. The deceased and forgiven Vanîzâde es-Seyyid Salih Molla. For the soul, for the pleasure of Allah the Exalted, Al-Fatiha. AH 1237 / AD 1821."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1237,
+        "gregorian": "1821"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "558"
+        }
+      ],
+      "note": {
+        "tr": "Kitap bu yazı için 'Mealen' vermiyor; metin Osmanlı Türkçesi olduğundan 'translation.tr' alanına çeviri değil yazının kendisi konmuştur. 'en' kitabın İngilizce metnidir.",
+        "en": null
+      }
+    },
+    {
+      "id": "bali-mehmed-mezar-tasi",
+      "location": {
+        "tr": "Bâli Mehmed'in mezar taşı",
+        "en": "Gravestone of Bâli Mehmed"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Merhum Bâli Mehmed\nRuhuna el-Fâtiha\nSene H 1167 / M 1753.",
+      "translation": {
+        "tr": "Merhum Bâli Mehmed Ruhuna el-Fâtiha Sene H 1167 M 1753.",
+        "en": "The late Bâli Mehmed. Al-Fatiha for his soul. AH 1167 / AD 1753."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1167,
+        "gregorian": "1753"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "558"
+        }
+      ],
+      "note": {
+        "tr": "Kitap bu yazı için 'Mealen' vermiyor; metin Osmanlı Türkçesi olduğundan 'translation.tr' alanına çeviri değil yazının kendisi konmuştur. 'en' kitabın İngilizce metnidir.",
+        "en": null
+      }
+    }
+  ],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "bursa-kestel-vani-mehmed-efendi-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin haziresidir.",
+        "en": "The complex's graveyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "558"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Caminin kuzeybatısındaki bahçede yer alan, düzenlenmiş ve bakımlı geniş bir hazire.",
+      "en": "A large, tidy and well-maintained graveyard in the garden northwest of the mosque."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

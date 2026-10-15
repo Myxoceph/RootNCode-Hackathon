@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-mustafakemalpasa-atariye-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının Mustafakemalpaşa bölümünden (s. 608-623) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da güvenilir kaynaktan eklenmeli (location.coordinates eklenmedi).",
+      "Fotoğraf / medya yok; Drive klasörü ve dosya kimlikleri belirlenmeli (media, archive_media boş, media_folder null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "1980'lerdeki inşanın kesin yılı kitapta yok (zaman çizelgesine eklenmedi).",
+      "'Y.T. 1906' kitabesinin neye işaret ettiği ve kısaltmanın anlamı kitapta açıklanmıyor.",
+      "Eski caminin inşa tarihi ve banisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Girişteki yeni mermer kitabede 1906 yazıyor, ancak yapı 1980'lerde tamamen yeniden yapılmış. Kitap bu tarihin anlamını açıklamıyor; kaynağa sadık kalınarak kitabe ayrı kayıt olarak verildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Atariye Camii",
+    "en": "Atariye Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "mahalle camii",
+    "yeniden inşa",
+    "Atariye"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Mustafakemalpaşa",
+    "neighborhood": "Atariye Mahallesi",
+    "address": "Karacabey Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "608"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1980'ler (yeni yapı)",
+      "en": "1980s (new building)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Eski yapının yıkıldığı ve yerine 1980'lerde mahalleliler tarafından tamamen yeni bir cami yapıldığı belirtiliyor. Girişteki yeni mermer kitabede 'Y.T. 1906' yazıyor; bu tarihin neye ait olduğu kitapta açıklanmıyor.",
+      "en": "The old structure was demolished and a completely new mosque was built by locals in the 1980s. A new marble inscription at the entrance reads 'Y.T. 1906'; the book does not explain what the date refers to."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "608-609"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mahalle halkı (mahalleliler)",
+    "role": "yaptıran (1980'lerdeki yeni cami)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "609"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Atariye Mahallesi'nde, adını tarihte aynı adla bilinen köyden alan mahalle camii. Eski yapı yıkılmış, yerine 1980'lerde mahalleliler kubbesiz, çatılı ve minareli yeni bir cami yaptırmıştır; 2018'de Vakıflar tarafından restore edilmiştir.",
+    "en": "A neighbourhood mosque in Atariye, named after a village known by the same name in the past. The old building was demolished and locals built a new domeless, roofed mosque with a minaret in the 1980s; it was restored by the Directorate of Foundations in 2018."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Mustafakemalpaşa ilçesi, Atariye Mahallesi, Karacabey Caddesi üzerindedir. Atariye Camii adıyla ilçedeki yapının, tarihte aynı adla bilinen köyün camisi olması kuvvetle muhtemeldir. Köyün halkı, çevrede 'Karacabey Harası' adıyla bilinen at çiftliğinde at bakıcılığı yapan ve 'at erleri' denilen kişilerden oluşuyordu. Köy sonradan ilçe merkeziyle mahalle olarak birleşmiş ve şehrin parçası olmuştur.",
+        "en": "The mosque is located on Karacabey Street in Atariye Neighborhood. It is highly likely that the building known as the Atariye Mosque was the mosque of the village of the same name in the past. Villagers worked as horse keepers at the horse farm known locally as the 'Karacabey Stud' and were called 'at erleri' (horse handlers). The village later became part of the city as a neighborhood."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "608-609"
+        }
+      ]
+    },
+    {
+      "id": "yapi-ve-onarim",
+      "order": 2,
+      "title": {
+        "tr": "Yapı ve Onarım",
+        "en": "Structure and Restoration"
+      },
+      "body": {
+        "tr": "Eski yapı çok önceleri yıkılmış, yerine 1980'lerde mahalleliler tarafından tamamen yeni bir cami yapılmıştır. Kubbesiz, çatılı ve minareli bir camidir. Minaresinin temeli ve kaidesi kesme taştan, üst kısmı tuğladandır. Musalla taşı batıdaki bahçededir. Cami 2018'de Bursa Vakıflar Bölge Müdürlüğü tarafından restore edilmiştir; ibadete açıktır ve mahallenin önemli bir camisidir. Batı bahçesinden ek arsa ile ara sokağa bahçe kapısı açılmıştır.",
+        "en": "The old structure was demolished long ago and a completely new mosque was built by the locals in the 1980s. It has no dome, only a roof and a minaret. The foundation and base of the minaret are cut stone, the upper part brick. The coffin rest is in the western garden. The mosque was restored by the Bursa Regional Directorate of Foundations in 2018. It is open for worship and is a significant mosque in the neighborhood. An additional plot and a garden gate open from the western garden onto a side street."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "609"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe",
+      "label": {
+        "tr": "Kubbe",
+        "en": "Dome"
+      },
+      "value": "Yok",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "609"
+        }
+      ],
+      "note": {
+        "tr": "Yalnızca çatı ve minare var.",
+        "en": "Only a roof and a minaret."
+      }
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kısmındaki yeni mermer kitabe",
+        "en": "New marble inscription at the entrance"
+      },
+      "language": "tr",
+      "script": null,
+      "transliteration": "Y.T. 1906",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1906"
+      },
+      "note": {
+        "tr": "'Y.T.' kısaltmasının açılımı kitapta verilmiyor.",
+        "en": "The book does not expand the abbreviation 'Y.T.'."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "608"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "restorasyon-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü restorasyonu",
+        "en": "Restoration by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "609"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kubbesiz, çatılı, tek minareli bir mahalle camisidir. Minarenin temeli ve kaidesi kesme taştan, üst kısmı tuğladandır. Musalla taşı batı bahçededir.",
+      "en": "A domeless, roofed neighbourhood mosque with a single minaret. The minaret's foundation and base are cut stone and the upper part brick. The coffin rest is in the western garden."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri III. Cilt) esas alınarak yazılmıştır."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

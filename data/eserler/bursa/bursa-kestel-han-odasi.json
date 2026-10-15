@@ -1,0 +1,293 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-kestel-han-odasi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hacı Mehmed'in onarımının yılı kitapta yok; zaman çizelgesine eklenmedi.",
+      "Kozluören'deki caminin ilçesi/adı kitapta yok; ilişki kaydı oluşturulmadı.",
+      "Mimar kitapta yok.",
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder.name",
+        "note": "Türkçe metin 'Hoca Dursun' yazar; kitabe transliterasyonunda 'Hoca Tursun bin Mehmed' geçer. Mealde 'Hoca Dursun' kullanılıyor. Kitaptaki yazım korundu."
+      },
+      {
+        "field": "timeline[onarim-kayit-1753]",
+        "note": "1660'taki hasar ile Sufi Hacı Mehmed'in onarımı arasındaki sıra ve 1753 kaydıyla ilişkisi kitapta açık değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Han Odası",
+    "en": "Han Room"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Beylik Han",
+      "en": "Beylik Han",
+      "note": "Kaynaklarda geçen ad"
+    },
+    {
+      "tr": "Kurşunlu Han",
+      "en": "Kurşunlu Han",
+      "note": "Bazı arşiv belgelerinde"
+    },
+    {
+      "tr": "Deveci Hanı",
+      "en": "Deveci Han",
+      "note": "Halk arasında rivayet edilen ad"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "han",
+    "Bayezid II",
+    "Aksu",
+    "Beylik Han"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Kestel",
+    "neighborhood": "Aksu Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "563"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 904 / M. 1498",
+      "en": "AH 904 / AD 1498"
+    },
+    "start_year": 1498,
+    "end_year": 1498,
+    "hijri_year": 904,
+    "century": 15,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki inşa kitabesi",
+      "en": "Construction inscription over the entrance"
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "563"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Dursun (Mehmed oğlu, İstanbullu tüccar)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "563"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Şeyhülislam Karaçelebizâde Hüsameddin Efendi, Aksu Köyü'ndeki büyük ve küçük hanları Kozluören Köyü'nde yaptırdığı camiye vakfetmiştir.",
+      "en": "Shaykh al-Islam Karaçelebizâde Hüsameddin Efendi endowed the large and small hans in Aksu Village to the mosque he built in Kozluören Village."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "563"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan II. Bayezid döneminde H. 904 / M. 1498'de İstanbullu tüccar Mehmed oğlu Hoca Dursun tarafından yaptırılan han. Bugün kemerli giriş kapısı ve bazı duvarları ayaktadır; temel izleri geniş bir alana yayılmıştır.",
+    "en": "A han built in AH 904 / AD 1498 under Sultan Bayezid II by Hoca Dursun, son of the Istanbul merchant Mehmed. Today its arched entrance and some walls stand; foundation traces are scattered widely."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Yapım ve Tarihçe",
+        "en": "Construction and History"
+      },
+      "body": {
+        "tr": "Han, Sultan II. Bayezid döneminde H. 904 / M. 1498'de İstanbullu tüccar Mehmed oğlu Hoca Dursun tarafından yaptırılmıştır. Kaynaklarda 'Beylik Han', bazı arşiv belgelerinde 'Kurşunlu Han' olarak geçer; halk arasında 'Deveci Hanı' dendiği rivayet edilir. 1660'taki Celâli Hasan isyanı sırasında han ve karşısındaki dükkânlar kısmen yanıp yıkılmış, hayırsever Sufi Hacı Mehmed tarafından onarılmıştır. H. 1167 / M. 1753 tarihli B97 numaralı Bursa kadı sicilinde hanın birçok bölümünün onarıldığı ve üç yük ile 76.970 akçe harcandığı kayıtlıdır. Şeyhülislam Karaçelebizâde Hüsameddin Efendi, Aksu Köyü'ndeki büyük ve küçük hanları Kozluören Köyü'nde yaptırdığı camiye vakfetmiştir.",
+        "en": "The han was built in AH 904 / AD 1498 under Bayezid II by Hoca Dursun, son of the Istanbul merchant Mehmed. It is called 'Beylik Han' in sources and 'Kurşunlu Han' in some archives; it is rumored to have been known as 'Deveci Han'. During the Celâli Hasan rebellion of 1660 the han and shops opposite were partially burned and destroyed, and it was repaired by the philanthropist Sufi Hacı Mehmed. Bursa court register B97 of AH 1167 / AD 1753 records repairs to many sections at a cost of three 'yük' and 76,970 akçe. Shaykh al-Islam Karaçelebizâde Hüsameddin Efendi endowed the large and small hans in Aksu Village to the mosque he built in Kozluören Village."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "563"
+        }
+      ]
+    },
+    {
+      "id": "mevcut-durum",
+      "order": 2,
+      "title": {
+        "tr": "Mevcut Durum",
+        "en": "Present State"
+      },
+      "body": {
+        "tr": "İlk inşa özelliklerine dair ayrıntılı bilgi bulunmamaktadır. Bugün kemerli giriş kapısı ile bazı duvarları ayaktadır; temellerine ait izler oldukça geniş bir alana yayılmıştır.",
+        "en": "There is no detailed information about the initial construction. Today the arched entrance and some walls stand; foundation traces are spread over a wide area."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "563"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "onarim_bedeli_akce",
+      "label": {
+        "tr": "1753 onarım bedeli",
+        "en": "1753 repair cost"
+      },
+      "value": "3 yük ve 76.970",
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "563"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Kemerli giriş kapısı üzerinde",
+        "en": "Above the arched entrance gate"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Zî-saâdet ki ânın âdını âlemde ana hûş-ı cân-ı hayrile\nSâhib-i hâzâ binâi’l-hayri mefharu’t-tüccâr Hoca Tursun bin\nMehmed belde-i Konstantiniyye fî itmâm-i şehr-i Muharrem târîh-i erba’a ve\ntis’a mie.\nH. 904/ M. 1498.",
+      "translation": {
+        "tr": "Yapanın adı hayırla anılsın diye bu saadetli bina inşa edilmiştir. Bu hayır eserinin sahibi, Konstantiniyye (İstanbul) beldesinin seçkin tüccarlarından Mehmed oğlu Hoca Dursun’dur. Yapı, H. Muharrem 904 / M. Eylül 1498 tarihinde tamamlanmıştır.",
+        "en": "This blessed building was built so that the name of its builder would be remembered with goodness. The owner of this charitable work was Mehmed’s son, Hoca Dursun, one of the distinguished merchants of the town of Constantinople (Istanbul). The structure was completed in Muharram AH 904 / September AD 1498."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 904,
+        "gregorian": "Eylül 1498"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "563"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1498",
+      "year": 1498,
+      "date": null,
+      "hijri": "Muharrem 904",
+      "type": "construction",
+      "title": {
+        "tr": "Hanın inşası tamamlandı",
+        "en": "Construction completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "563"
+        }
+      ]
+    },
+    {
+      "id": "celali-isyani-1660",
+      "year": 1660,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Celâli Hasan isyanında han ve karşısındaki dükkânların kısmen yanıp yıkılması",
+        "en": "Han and opposite shops partially burned and destroyed in the Celâli Hasan rebellion"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "563"
+        }
+      ]
+    },
+    {
+      "id": "onarim-kayit-1753",
+      "year": 1753,
+      "date": null,
+      "hijri": "1167",
+      "type": "repair",
+      "title": {
+        "tr": "B97 numaralı kadı sicilinde hanın birçok bölümünün onarımı kayıtlıdır",
+        "en": "Court register B97 records repair of many sections"
+      },
+      "note": {
+        "tr": "Sufi Hacı Mehmed'in onarımının yılı kitapta verilmiyor.",
+        "en": "The year of Sufi Hacı Mehmed's repair is not given."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "563"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Günümüzde yalnızca kemerli giriş kapısı ve bazı duvarları ayakta kalmıştır; temel izleri geniş bir alana yayılmıştır. Giriş kapısı üzerinde inşa kitabesi bulunur.",
+      "en": "Only the arched entrance and some walls remain; foundation traces spread over a wide area. A construction inscription is above the entrance."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}
