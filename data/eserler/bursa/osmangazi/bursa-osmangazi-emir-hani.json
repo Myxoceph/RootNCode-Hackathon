@@ -1,0 +1,781 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-emir-hani",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-14",
+    "updated_at": "2026-10-14",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Orhan Bey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Orhan Bey Külliyesi bölümünden (s. 187-213) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki Orhan Bey Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Kitap Emir Hanı'nın vakfedildiğini doğrudan söylemiyor; vakfiyedeki 'Eski Bedesten' ile hanın 'Eski Bedesten' adının eşleştirilmesi çıkarım. İnsan gözden geçirmesi gerekir.",
+      "Bedesten (Yıldırım Bayezid) için kayıt açılırsa 'Eski Bedesten' ilişkisi netleştirilecek.",
+      "Kantariye gelirinin vakıfla ilişkisi (kimin gelirine aktığı) kitapta açık değil; teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "relations[waqf_income]",
+        "note": "Vakfiye 'Eski Bedesten'i imarete vakfedildiği kalemler arasında sayar (s. 188); han bölümü ise hanın tarihi kayıtlarda 'Eski Bedesten' olarak anıldığını söyler (s. 210). İki bilgi kitapta birbirine açıkça bağlanmıyor; eşleştirme çıkarımdır, bu yüzden 'probable' işaretlendi."
+      },
+      {
+        "field": "sections[adlar]",
+        "note": "Han hem 'Bursa'nın ilk bedesteni' olarak hem de 'Osmanlı şehir hanları mimarisinin ilk örneklerinden biri' olarak tanıtılıyor; ikisi birbiriyle çelişmiyor ama yapı türü (han/bedesten) kitapta çifte anılıyor."
+      },
+      {
+        "field": "sections[adlar]",
+        "note": "Han İngilizce metinde 'Sultan Inn', 'Caravanserai' vb. adlarla çevrilmiş; Türkçe adlar esas alındı."
+      },
+      {
+        "field": "facts[oda_sayisi]",
+        "note": "Alt katta 36, üst katta 38 oda (toplam 74); üst katta '34 odada birer, ikisinde ikişer pencere, güneydoğudaki iki odada pencere yok' deniyor: 34+2+2=38, tutarlı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Emir Hanı",
+    "en": "Emir Han"
+  },
+  "subtitle": {
+    "tr": "Bursa'nın ilk bedesteni sayılan han",
+    "en": "The han regarded as Bursa's first bedesten"
+  },
+  "alternate_names": [
+    {
+      "tr": "Bey Hanı",
+      "en": "Bey Han"
+    },
+    {
+      "tr": "Hân-ı Bezzâziye",
+      "en": "Hân-ı Bezzâziye"
+    },
+    {
+      "tr": "Eski Bedesten",
+      "en": "Old Bedesten"
+    },
+    {
+      "tr": "Kepenekçiler Çarşısı",
+      "en": "Kepenekçiler Bazaar"
+    },
+    {
+      "tr": "Sultan Hanı",
+      "en": "Sultan Inn"
+    },
+    {
+      "tr": "Kervansaray",
+      "en": "Caravanserai"
+    },
+    {
+      "tr": "Bahar Kapanı",
+      "en": "Bahar Kapanı (Spring Trading and Weighing Area)",
+      "note": "Bursa'daki çarşı kantarı burada bulunduğu için"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [
+    "bedesten"
+  ],
+  "parent_id": "bursa-osmangazi-orhan-bey-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "şehir hanı",
+    "Selçuklu kervansaray tipi",
+    "kantar",
+    "Orhan Gazi",
+    "Eski Bedesten",
+    "Hanlar Bölgesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu",
+    "address": "Uzunçarşı Caddesi, No: 11",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "210"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 740 / M. 1339-40",
+      "en": "AH 740 / AD 1339-40"
+    },
+    "start_year": 1339,
+    "end_year": 1340,
+    "hijri_year": 740,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap hanın Gazi Orhan Bey tarafından külliyesinin parçası olarak H. 740 / M. 1339-40'ta At Pazarı'nın kurulduğu bölgede yaptırıldığını söylüyor.",
+      "en": "The book says the han was built by Gazi Orhan Bey in AH 740 / AD 1339-40 as part of his complex in the area where the Horse Market was established."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "210-211"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Gazi Orhan Bey (Sultan Orhan Gazi bin Sultan Osman)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "210-211"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Orhan Gazi İmareti Vakfı (Orhan Vakfı)",
+    "deed": {
+      "date_display": "H. Cemaziyelahir 761 / M. Nisan 1360",
+      "excerpt": {
+        "tr": "28 sayfalık vakfiye Sultan Orhan Gazi bin Sultan Osman adına düzenlenmiş ve Bursa Kadısı Mevlânâ Burhaneddin İbrahim bin Ali bin Yusuf el-Hemedânî tarafından tasdik edilmiştir. Buna göre bazı köyler, Eski Bedesten, bedestenin bitişiğindeki ve çevresindeki dükkânlar, odalar, evler ile Bıçakçılar Hamamı Orhan Gazi İmareti'ne vakfedilmiştir. (Kitaptaki özet; vakfiye metni değildir.)",
+        "en": "The 28-page deed was prepared in the name of Sultan Orhan Gazi bin Sultan Osman and approved by Bursa Qadi Mevlânâ Burhâneddin İbrahim bin Ali bin Yusuf el-Hemedânî. According to it, some villages, the Old Bedesten, the shops, rooms and houses adjacent to and around the Bedesten, and the Bıçakçılar Bath were endowed to the Orhan Gazi Imaret. (Summary given in the book; not the deed text.)"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "188"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Hanın güneyindeki ahırların bulunduğu alana 1399'da Ulucami yapılmıştır.",
+      "en": "The Ulucami was built in 1399 on the area of the stables south of the han."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "188, 210, 212"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Gazi Orhan Bey'in külliyesinin parçası olarak 1339-40'ta At Pazarı bölgesinde yaptırılan, Bursa'nın ilk ticari yapısı ve ilk bedesteni sayılan iki katlı han. Yaklaşık 45 × 45 m ölçüsünde, 650 m² civarında orta avlulu, 74 odalıdır; kantariye geliri hanın mali kaynağıdır.",
+    "en": "A two-storey han built in 1339-40 in the Horse Market area as part of Gazi Orhan Bey's complex, regarded as Bursa's first commercial building and first bedesten. About 45 × 45 m with a central courtyard of around 650 m² and 74 rooms; weighing fees were its financial source."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Emir Hanı, Ulucami'nin kuzeydoğu köşesinde yer alır. Gazi Orhan Bey tarafından külliyesinin parçası olarak H. 740 / M. 1339-40'ta At Pazarı'nın kurulduğu bölgede yaptırılmıştır. Bursa'nın 1326'daki fethinden sonra 'yeni bir ticaret merkezi olma' iddiasını güçlendirmek için oluşturulan çekirdeğin ilk ticari unsuru sayılır. Selçuklu kervansaray tipinin şehrin ihtiyaçlarına göre yeniden yorumlanmasıyla yapılmış, Osmanlı şehir hanları mimarisinde türünün ilk örneklerinden biri kabul edilmiştir.",
+        "en": "The Emir Han lies at the northeast corner of the Ulucami. It was built by Gazi Orhan Bey as part of his complex in AH 740 / AD 1339-40 in the area where the Horse Market was established. It is considered the first commercial element of the core created after the 1326 conquest of Bursa to strengthen its claim to be a new trade center. Built by reinterpreting the Seljuk caravanserai type for the city's needs, it is considered one of the first examples of its type in Ottoman city han architecture."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210-211"
+        }
+      ]
+    },
+    {
+      "id": "adlar",
+      "order": 2,
+      "title": {
+        "tr": "Adlar ve İşlev",
+        "en": "Names and Function"
+      },
+      "body": {
+        "tr": "Han tarihî kayıtlarda 'Bey Hanı', 'Emir Hanı', 'Hân-ı Bezzâziye', 'Eski Bedesten', 'Kepenekçiler Çarşısı', 'Sultan Hanı' ve 'Kervansaray' gibi adlarla anılmıştır; çarşı kantarı burada bulunduğu için 'Bahar Kapanı' adıyla da bilinirdi. Bursa'nın ilk bedesteni sayılır; Yıldırım Bayezid döneminde yeni bedesten yapılınca 'Eski Bedesten' adını almıştır. Şehirde tüketilen yiyecekler ve alınıp satılan her türlü mal bu handa tartılmış, kantariye geliri hanın mali kaynağını oluşturmuştur. Bursa'nın fethinden 1781'e kadar kullanılan kantarların yerleştirildiği peykeler hanın girişinde görülebilir.",
+        "en": "The han has been called Bey Han, Emir Han, Hân-ı Bezzâziye, Old Bedesten, Kepenekçiler Bazaar, Sultan Inn and Caravanserai in historical records; it was also known as 'Bahar Kapanı' because the town's market scale was located here. It is accepted as Bursa's first bedesten and was called 'Old Bedesten' after the new bedesten built under Yıldırım Bayezid. Food consumed in the city and all goods traded were weighed here, and the weighing income was the han's financial source. The benches for the scales used from the conquest until 1781 can be seen at the entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210-211"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-yapi",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Yapı",
+        "en": "Plan and Structure"
+      },
+      "body": {
+        "tr": "Yaklaşık 45 × 45 m ölçüsündeki han, kesme taş ve tuğladan örülmüş geniş ayaklara oturan revaklarla çevrili, 650 m² civarında bir orta avluya sahiptir. Beden duvarları iki sıra tuğla ve bir sıra küfeki taşıyla almaşık örgü tekniğinde yapılmıştır. İki katlı yapının alt katında 36, üst katında 38 bağımsız oda vardır. Cepheler moloz taştır; revaklar tuğladandır ve iki sıra kirpi saçakla sonlanır. Birinci kat revaklarının dört köşesindeki kubbeler dışında tüm mekânlar tonozla örtülüdür. Güney kanattaki revakın alt kemerleri yarım daire profilli, diğer üç yönde ve üst katlarda sivri kemerlidir; zemin kattaki güney revaklarının payeleri kesme taştır.",
+        "en": "The approx. 45 × 45 m han has a central courtyard of about 650 m² surrounded by arcades on wide piers of cut stone and brick. Main walls use alternating courses of two rows of brick and one of limestone. The two-storey building has 36 independent rooms on the lower floor and 38 on the upper. Façades are rubble stone; arcades are brick and finish with a two-row sawtooth cornice. Except for the domes at the four corners of the first-floor arcades, all spaces are vaulted. The lower arches of the south-wing arcade are semicircular, pointed arches are used in the other three directions and on upper floors; the south ground-floor piers are of cut stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210-211"
+        }
+      ]
+    },
+    {
+      "id": "odalar-ve-girisler",
+      "order": 4,
+      "title": {
+        "tr": "Odalar, Girişler ve Güney Alan",
+        "en": "Rooms, Entrances and the South Area"
+      },
+      "body": {
+        "tr": "Alt kattaki mekânlar penceresizdir ve kervanların getirdiği malların depolandığı korunaklı alanlardır. Üst kattaki odalar tüccarların konakladığı, ocaklı odalardır; 34'ünde birer, ikisinde ikişer pencere vardır, güneydoğu köşedeki iki odada pencere yoktur. Hanın biri Ulucami avlusundan, diğeri Kapalı Çarşı tarafından iki girişi vardır; alt ve üst katlar kuzeydeki Kapalı Çarşı'nın sağında ve solunda iki taş merdivenle bağlanır. Hanın güneyindeki tonozlu ahırlar sonradan kaldırılmış ve 1399'da bu alana Ulucami yapılmıştır.",
+        "en": "Lower-floor spaces have no windows and served as sheltered storage for goods brought by caravans. Upper-floor rooms with hearths were where merchants stayed: 34 have one window, two have two, and the two southeast-corner rooms have none. The han has two entrances, one from the Ulucami courtyard and one from the Covered Bazaar; two stone staircases on either side of the Covered Bazaar to the north connect the floors. Vaulted stables south of the han were later removed and the Ulucami was built there in 1399."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "211-212"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar-ve-bugun",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar ve Günümüz",
+        "en": "Repairs and Today"
+      },
+      "body": {
+        "tr": "Han 1544, 1634, 1674, 1788, 1855 ve 1958'de yangın ve depremlere maruz kalmış, her seferinde uzun ve masraflı onarımlardan geçmiş, özünü ve asıl işlevini koruyarak günümüze ulaşmıştır. En kapsamlı tadilatlardan biri 1958 Büyük Çarşı Yangını'ndan sonra 1962-63'te yapılmıştır. Üzeri bugün kurşun kaplıdır; bir dönem kiremitle örtüldüğü bilinmektedir. Üst katta kitapçılar, hac ve dinî malzeme satıcıları, kuyumcular; alt katta yeme-içme mekânları ve çeşitli dükkânlar bulunur. Fıskiyeli şadırvanı ve tarihî çınarların gölgelediği avlusuyla hâlâ keyifli bir buluşma mekânıdır.",
+        "en": "The han suffered fires and earthquakes in 1544, 1634, 1674, 1788, 1855 and 1958 and each time underwent long, costly repairs, surviving with its essence and original function. One of the most extensive renovations took place in 1962-63 after the 1958 Great Bazaar Fire. It is lead-covered today but is known to have once had roof tiles. The upper floor houses bookstores, pilgrimage and religious goods dealers and jewelers; the lower floor mostly food and beverage venues and various shops. With its shadirvan with a water jet and courtyard shaded by historic plane trees it remains a pleasant meeting place."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212-213"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "boyut",
+      "label": {
+        "tr": "Boyutlar",
+        "en": "Dimensions"
+      },
+      "value": "45 × 45",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210"
+        }
+      ],
+      "note": {
+        "tr": "Yaklaşık.",
+        "en": "Approximate."
+      }
+    },
+    {
+      "key": "avlu_alani",
+      "label": {
+        "tr": "Orta avlu alanı",
+        "en": "Central courtyard area"
+      },
+      "value": 650,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210"
+        }
+      ],
+      "note": {
+        "tr": "Yaklaşık.",
+        "en": "Approximate."
+      }
+    },
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of storeys"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "key": "oda_alt_kat",
+      "label": {
+        "tr": "Alt kat oda sayısı",
+        "en": "Rooms on lower floor"
+      },
+      "value": 36,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "key": "oda_ust_kat",
+      "label": {
+        "tr": "Üst kat oda sayısı",
+        "en": "Rooms on upper floor"
+      },
+      "value": 38,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "key": "giris_sayisi",
+      "label": {
+        "tr": "Giriş sayısı",
+        "en": "Number of entrances"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212"
+        }
+      ],
+      "note": {
+        "tr": "Biri Ulucami avlusundan, biri Kapalı Çarşı'dan.",
+        "en": "One from the Ulucami courtyard, one from the Covered Bazaar."
+      }
+    },
+    {
+      "key": "kantar_donemi",
+      "label": {
+        "tr": "Peykelerdeki kantarların kullanım sonu",
+        "en": "End of use of the scales on the benches"
+      },
+      "value": 1781,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210"
+        }
+      ],
+      "note": {
+        "tr": "Fetihten 1781'e kadar.",
+        "en": "From the conquest until 1781."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Gazi Orhan Bey",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Yıldırım Bayezid",
+      "role": {
+        "tr": "Döneminde yeni bedesten yapıldı; han 'Eski Bedesten' adını aldı",
+        "en": "New bedesten built in his reign; the han became 'Old Bedesten'"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1339",
+      "year": 1339,
+      "date": null,
+      "hijri": "740",
+      "type": "construction",
+      "title": {
+        "tr": "Han külliyenin parçası olarak At Pazarı bölgesinde yaptırıldı (H. 740 / M. 1339-40)",
+        "en": "Han built as part of the complex in the Horse Market area (AH 740 / AD 1339-40)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "id": "ulucami-1399",
+      "year": 1399,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Hanın güneyindeki ahırların bulunduğu alan kaldırılıp yerine Ulucami yapıldı",
+        "en": "Stables south of the han removed and the Ulucami built on their site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1544",
+      "year": 1544,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangın veya deprem; uzun onarım",
+        "en": "Fire or earthquake; long repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1584",
+      "year": 1584,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Hamamla birlikte yanan yapılar arasında anılır (Emir Hanı ve 35 Orhan Vakfı dükkânı)",
+        "en": "Mentioned among buildings burned with the bath (Emir Han and 35 Orhan Foundation shops)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1634",
+      "year": 1634,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangın veya deprem; uzun onarım",
+        "en": "Fire or earthquake; long repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1674",
+      "year": 1674,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangın veya deprem; uzun onarım",
+        "en": "Fire or earthquake; long repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212"
+        }
+      ]
+    },
+    {
+      "id": "kantar-1781",
+      "year": 1781,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Peykelerdeki kantarların kullanımı sona erdi",
+        "en": "Use of the scales on the benches ended"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1788",
+      "year": 1788,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangın veya deprem; uzun onarım",
+        "en": "Fire or earthquake; long repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangın veya deprem; uzun onarım",
+        "en": "Fire or earthquake; long repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük Çarşı Yangını",
+        "en": "Great Bazaar Fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212-213"
+        }
+      ]
+    },
+    {
+      "id": "tadilat-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "1958 yangını sonrası kapsamlı tadilat (1962-63)",
+        "en": "Extensive renovation after the 1958 fire (1962-63)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "213"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kantar-peykeleri",
+      "title": {
+        "tr": "Kantar peykeleri",
+        "en": "Scale benches"
+      },
+      "hint": {
+        "tr": "Hanın girişinde kantarların konduğu peykeleri arayın.",
+        "en": "Look for the benches that held the scales at the entrance."
+      },
+      "section_id": "adlar"
+    },
+    {
+      "feature": "avlu",
+      "title": {
+        "tr": "Şadırvanlı avlu",
+        "en": "Courtyard with shadirvan"
+      },
+      "hint": {
+        "tr": "Fıskiyeli şadırvan ve tarihî çınar ağaçları.",
+        "en": "The shadirvan with a water jet and historic plane trees."
+      },
+      "section_id": "onarimlar-ve-bugun"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Han, Orhan Bey Külliyesi'nin bir parçası olarak yaptırılmıştır.",
+        "en": "The han was built as a part of the Orhan Bey Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami ile aynı külliyenin parçasıdır.",
+        "en": "It is part of the same complex as the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187, 210"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-hamami",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamam da aynı külliyenin parçasıdır.",
+        "en": "The bath is also part of the same complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187, 203"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Her ikisini de Orhan Bey yaptırmıştır.",
+        "en": "Both were commissioned by Orhan Bey."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187, 210"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-gazi-imareti",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Vakfiye 'Eski Bedesten'i imarete vakfedilen kalemler arasında sayar; han de tarihî kayıtlarda 'Eski Bedesten' adıyla anılır. Eşleştirme çıkarımdır.",
+        "en": "The deed lists the 'Old Bedesten' among items endowed to the imaret, and the han is called 'Old Bedesten' in historical records. The match is an inference."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "188, 210"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "waqf_land",
+      "description": {
+        "tr": "Hanın güneyindeki ahırların bulunduğu alana 1399'da Ulucami yapılmıştır.",
+        "en": "The Ulucami was built in 1399 on the site of the stables south of the han."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "212"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Han, Ulucami'nin kuzeydoğu köşesinde yer alır ve girişlerinden biri Ulucami avlusuna açılır.",
+        "en": "The han lies at the northeast corner of the Ulucami, with one entrance from the Ulucami courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "210, 212"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-hamami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Hamam, Emir Hanı ile Kozahan arasında yer alır; 1584 yangınında Emir Hanı'yla birlikte yanmıştır.",
+        "en": "The bath lies between Emir Han and Koza Han; it burned with Emir Han in 1584."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "203"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Emir Hanı, Ulucami'nin kuzeydoğu köşesinde duran, iki katlı ve kare biçimli bir handır. Ortasında yaklaşık altı yüz elli metrekarelik bir avlu, çevresinde tuğladan, geniş ayaklara oturan revaklar vardır. Avluda fıskiyeli bir şadırvan ve tarihî çınar ağaçları bulunur. Alt katta pencereli olmayan, beşik tonozlu dikdörtgen mekânlar, üst katta ise ocaklı odalar sıralanır; üst kata kuzeydeki Kapalı Çarşı'nın iki yanındaki taş merdivenlerle çıkılır. Giriş biri Ulucami avlusundan, diğeri Kapalı Çarşı tarafından olmak üzere iki yerdendir; üstü kurşunla kaplıdır.",
+      "en": "The Emir Han is a two-storey, square han at the northeast corner of the Ulucami. At its centre is a courtyard of about six hundred and fifty square metres, ringed by brick arcades on broad piers. The courtyard holds a shadirvan with a water jet and historic plane trees. The lower floor has windowless barrel-vaulted rectangular spaces and the upper floor rooms with hearths, reached by stone staircases on either side of the Covered Bazaar to the north. There are two entrances, one from the Ulucami courtyard and one from the Covered Bazaar; the roof is covered with lead."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

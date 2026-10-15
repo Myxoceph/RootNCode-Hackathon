@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-kestel-vani-mehmed-efendi-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Kestel",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mimar kitapta yok (architect: null).",
+      "Kitabenin dili kitapta belirtilmiyor; language 'other' bırakıldı.",
+      "Caminin 'dört satırlık talik hat' bilgisi script alanına 'Talik' olarak yazıldı.",
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[giris-kitabesi].script",
+        "note": "Türkçe metin 'talik hat', İngilizce metin 'Ta’liq script' diyor; ikisi aynı yazıyı kasteder."
+      },
+      {
+        "field": "death_date",
+        "note": "Türkçe biyografide (s. 555) Vanî Mehmed Efendi'nin vefatı 10 Ekim 1685; türbedeki ayak taşında (s. 562) 'H. 13 Zilkade 1096 / M. 11 Ekim 1685' yazıyor. Bir günlük fark var; her iki değer de korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Vanî Mehmed Efendi Camii",
+    "en": "Vanî Mehmed Efendi Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "bursa-kestel-vani-mehmed-efendi-kulliyesi",
+  "era": null,
+  "tags": [
+    "cami",
+    "Vanî Mehmed Efendi",
+    "IV. Mehmed",
+    "1673"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Kestel",
+    "neighborhood": "Kale Mahallesi",
+    "address": "Cuma Caddesi, No:11",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "555-557"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1084 / M. 1673",
+      "en": "AH 1084 / AD 1673"
+    },
+    "start_year": 1673,
+    "end_year": 1673,
+    "hijri_year": 1084,
+    "century": 17,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki kitabe",
+      "en": "Inscription over the entrance gate"
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "556-557"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Vanî Mehmed Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "554-555"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Vanî Mehmed Efendi Vakfı (Kestel Külliyesi vakfiyesi)",
+    "deed": {
+      "date_display": "1673",
+      "excerpt": {
+        "tr": "Cenâb-ı Hakk’ın fazlu keremiyle bana ihsan buyurduğu helal malım ile Bursa Livası köylerinden Kestel köyünde, müminlerin farz namazlarını, cuma ve bayram namazlarını eda edebilmeleri için bir cami-i şerif inşa ettirdim.",
+        "en": "With my lawful wealth, which God Almighty bestowed upon me through His gracious generosity, I built a mosque in the village of Kestel, one of the villages in the District of Bursa, so that believers could perform their obligatory prayers, Friday prayers, and Eid prayers."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "556-557"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "İmaret, medresede okuyan öğrencilere yemek sağlayacak, artan yemekler yoksullara dağıtılacaktır. Bu şartlar için Kestel köyünde bir han, bir hamam, altı dükkân ve bir bahçe; Ada köyünde bir bahçe ve bir hamam; Koyun Hisar köyünde bir mera vakfedilmiştir.",
+      "en": "The imaret would provide meals for students at the madrasa and surplus food would go to the poor. To ensure this, a han, a bathhouse, six shops and a garden in Kestel village, a garden and a bathhouse in Ada village and a pasture in Koyun Hisar village were endowed."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "555-557"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Vanî Mehmed Efendi tarafından H. 1084 / M. 1673'te yaptırılan, ahşap kırma çatılı, L biçimli son cemaat yerli, gövdesi ile peteği eşit yükseklikte tuğla minareli cami.",
+    "en": "A mosque built by Vanî Mehmed Efendi in AH 1084 / AD 1673, with a wooden hipped roof, an L-shaped narthex and a brick minaret whose shaft and neck are of equal height."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Yapım ve Vakıf",
+        "en": "Construction and Waqf"
+      },
+      "body": {
+        "tr": "Giriş kapısı üzerindeki kitabeye göre cami Şeyh Seyyid Vanî Mehmed Efendi tarafından H. 1084 / M. 1673'te yaptırılmıştır. Aynı yıl tarihli vakfiyede cami, medrese ve imaret için musakkafât ve müstagillât vakfedilmiştir. Vanî Mehmed Efendi'nin naaşı caminin içine defnedilmiştir.",
+        "en": "According to the inscription over the entrance, the mosque was built by Shaykh Seyyid Vanî Mehmed Efendi in AH 1084 / AD 1673. The waqf deed of 1673 endowed covered and income-generating properties for the mosque, madrasa and imaret. His remains were buried inside the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "555-557"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzey-güney doğrultulu, kareye yakın dikdörtgen planlı cami yığma duvarlı, ahşap kırma çatılı ve Alaturka kiremit kaplıdır; çatı dört yöne taşkındır ve ahşap direklerle desteklenir. Kuzey ve doğu boyunca L biçiminde, ahşap tavanlı bir son cemaat yeri vardır. Harimde iki maksure ve bir kadınlar mahfili bulunur; basık tavanlı harim 24 pencere ile aydınlanır (alt sıra kare, üst sıra yuvarlak kemerli); son cemaat yerinde yedi kare pencere vardır. Mihrap sade ve alçıdandır; minber ve vaaz kürsüsü yakın dönemde ahşaptan yapılmıştır.",
+        "en": "The north-south, almost square mosque has masonry walls and a wooden hipped roof covered with Turkish-style tiles; the roof overhangs in four directions on wooden pillars. An L-shaped narthex with a wooden ceiling extends along the north and east. The prayer hall has two maqsuras and a women's section, and a low ceiling lit by 24 windows (lower row square, upper row round-arched); the narthex has seven square windows. The mihrab is plain plaster; minbar and sermon platform are recent wooden work."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "556-557"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Caminin batı kenarına bitişik minare, iki sıra moloz taş ve iki sıra tuğla örgülü sekizgen kaide üzerinde yükselen tuğladan silindirik gövdelidir; mermer korkuluklu, kurşun külahlıdır, şerefe altı tuğla dolguludur. Gövdesi ile peteği eşit yükseklikte nadir minarelerdendir.",
+        "en": "The minaret adjoins the west edge, a cylindrical brick shaft on an octagonal base of two rows of rubble stone and two of brick, with marble balustrade, lead cap and brick-filled under-balcony. It is among the rare minarets whose shaft and neck are of equal height."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "556-557"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_pencere_sayisi",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 24,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "556-557"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_pencere_sayisi",
+      "label": {
+        "tr": "Son cemaat yeri pencere sayısı",
+        "en": "Narthex windows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "556-557"
+        }
+      ]
+    },
+    {
+      "key": "maksure_sayisi",
+      "label": {
+        "tr": "Maksure sayısı",
+        "en": "Number of maqsuras"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "556-557"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, dört satır",
+        "en": "Over the entrance gate, four lines"
+      },
+      "language": "other",
+      "script": "Talik",
+      "transliteration": "Şeyh Seyyid Mehmed el-Vanî / İtdi bu câmi-i şerîfî binâ / Fâzıl u kâmil ü hasîb ü nesîb / Nevverallâhu kabrehû ebeden sene 1084 / M. 1673.",
+      "translation": {
+        "tr": "Şeyh Seyyid Vanî Mehmed Efendi bu cami-i şerifi inşa etti. Kendisi faziletli, kâmil, asil ve şerefli bir kişidir. Allah kabrini ebediyen rahmetiyle nurlandırsın. H. 1084 / M. 1673.",
+        "en": "Şeyh Seyyid Vanî Mehmed Efendi built this noble mosque. He was a virtuous, perfect, noble, and honorable person. May God illuminate his grave with His eternal mercy. AH 1084 / AD 1673."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1084,
+        "gregorian": "1673"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "556-557"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1673",
+      "year": 1673,
+      "date": null,
+      "hijri": "1084",
+      "type": "construction",
+      "title": {
+        "tr": "Caminin inşası",
+        "en": "Construction of the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "556-557"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-kestel-vani-mehmed-efendi-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin ana yapısıdır.",
+        "en": "Main building of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "555-557"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-kestel-vani-mehmed-efendi-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe caminin son cemaat yerinin batı kenarındadır.",
+        "en": "The tomb is at the west edge of the narthex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "562"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-kestel-vani-mehmed-efendi-camii-haziresi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hazire caminin kuzeybatısındadır.",
+        "en": "The graveyard lies northwest of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "558"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kareye yakın planlı cami, ahşap kırma çatılı ve Alaturka kiremit kaplıdır. Kuzey ve doğuda L biçimli ahşap tavanlı son cemaat yeri bulunur. İçeride iki maksure ve kadınlar mahfili vardır. Batıda sekizgen kaideli, silindirik tuğla minare yükselir.",
+      "en": "The almost square mosque has a wooden hipped roof of Turkish-style tiles. An L-shaped narthex with a wooden ceiling lies on the north and east. Inside are two maqsuras and a women's gallery. A cylindrical brick minaret on an octagonal base rises on the west."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

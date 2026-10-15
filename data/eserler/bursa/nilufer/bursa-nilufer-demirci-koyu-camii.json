@@ -1,0 +1,658 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-nilufer-demirci-koyu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Nilüfer",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Nilüfer bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kesin yapım tarihi ve banisi kitapta yok; Vakıflar arşivinden araştırılmalı.",
+      "Yeni cami / çocuk kütüphanesi dönüşümünün ve geri dönüşün kesin yılları kitapta yok.",
+      "Alâaddin Bey ile ilgili bir kayıt (hedef id) kitapta verilmediği için ilişki eklenmedi.",
+      "Mermer kitabenin cami ile ilişkisi belirsiz; kitabenin fotoğrafı bulunmalı.",
+      "Duvar yazılarının kendi konumları (hangi duvar) kitapta belirtilmemiş; yalnızca 'son cemaat yeri'.",
+      "Koordinat kitapta yok; sahada ya da güvenilir bir kaynaktan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraflar (media[]) ve arşiv fotoğrafları (archive_media[]) henüz eklenmedi; Drive klasörü bilinmiyor (media_folder: null).",
+      "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok; eklenmedi.",
+      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): Eski bina yeniden cami olarak kullanıma döndü"
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap bir yandan caminin 'çok erken tarihli olması gerektiğini', öte yandan 1103 / 1691 tarihli kitabeyle onarım/yeniden inşayı düşündürür; kesin tarih verilmez. Bu yüzden 'disputed' işaretlendi."
+      },
+      {
+        "field": "inscriptions[yazi-03-alem-ardinca]",
+        "note": "Madde 3'ün Türkçe metni sayfa 627'de başlayıp 628'de devam eder; İngilizce çevirisi 629'dadır. Metin kaynakta basılı biçimiyle (ayrı satırlar) alındı."
+      },
+      {
+        "field": "inscriptions[yazi-04-nakil-beyani]",
+        "note": "Türkçe 'nakledildiğini beyan ederim' öznesizdir; İngilizce çeviri 'he was transferred' diyerek özne ekler. Türkçe esas alındı."
+      },
+      {
+        "field": "inscriptions[yazi-12-gel-keyfim-gel]",
+        "note": "Kitapta Türkçe 'Mealen' verilmemiş; metin kendisi Türkçe olduğundan çeviri alanına aynı metin yazıldı, İngilizcesi kitaptan."
+      },
+      {
+        "field": "inscriptions[*].script",
+        "note": "Kitap yazı türünü tek bir genel ifadeyle veriyor ('sülüs, talik gibi yazı üsluplarında'); her yazı için ayrı ayrı belirtmiyor. 'sülüs / talik' bu genel ifadeden alındı. Yazıların dili (Arapça / Osmanlı Türkçesi) içeriğe bakılarak yazılmıştır, kitapta belirtilmemiştir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Demirci Köyü Camii",
+    "en": "Demirci Village Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "köy camii",
+    "ahşap son cemaat yeri",
+    "duvar yazıları",
+    "Demirci",
+    "vakıf köyü"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Nilüfer",
+    "neighborhood": "Demirci",
+    "address": "Demirci Caddesi, Duman Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "626"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kesin tarih bilinmiyor; mermer kitabede H. 1103 / M. 1691",
+      "en": "Exact date unknown; marble inscription reads AH 1103 / AD 1691"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kaynak, köyün Orhan Gazi'nin ağabeyi Alâaddin Bey'in vakıf köyü olması nedeniyle caminin çok erken tarihli olması gerektiğini söyler; yapıdaki 1103 / 1691 tarihli kitabe ilişkili ise o tarihte onarım ya da yeniden inşa düşünülebilir.",
+      "en": "The book states the mosque must be very early because the village was the waqf village of Alâaddin Bey, Orhan Gazi's elder brother; if the 1103 / 1691 inscription relates to it, a repair or reconstruction at that date is possible."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "626-627"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Köy, Orhan Gazi'nin ağabeyi Alâaddin Bey'in vakıf köyüdür.",
+      "en": "The village is the waqf village of Alâaddin Bey, elder brother of Orhan Gazi."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "626"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Bursa Nilüfer'in Demirci Mahallesi'ndeki, yığma duvarlı ve ahşap kırma çatılı köy camisi. 1990'larda yanına yeni cami yapılınca çocuk kütüphanesine çevrilmiş, sonra yeniden camiye dönüştürülmüştür. Son cemaat yeri duvarlarında ortaya çıkarılan hadis, şiir ve güzel sözlerle dikkat çeker.",
+    "en": "A village mosque with masonry walls and a wooden hipped roof in Demirci Neighborhood, Nilüfer. After a new mosque was built beside it in the 1990s it became a children's library, then was returned to use as a mosque. It is notable for hadiths, verses and sayings uncovered on the narthex walls."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, Nilüfer ilçesi Demirci Mahallesi, Demirci Caddesi, Duman Sokak'ta yer alır. Demirci, Orhan Gazi'nin ağabeyi Alâaddin Bey'in vakıf köyü olduğundan caminin çok erken tarihli olması gerektiği belirtilir. Yapının üzerindeki \"Pir Ali oğlu Mehmet Dede fî sene 1103 / M.1691\" yazılı mermer kitabe cami ile ilgiliyse bu tarihte onarım geçirdiği ya da yeniden inşa edildiği düşünülebilir.",
+        "en": "The mosque is in Demirci Neighborhood, Nilüfer, on Demirci Avenue, Duman Street. Since the village is the foundation village of Alâaddin Bey, elder brother of Orhan Gazi, the mosque must be of very early date. If the marble inscription 'Pir Ali Oğlu Mehmet Dede fî 1103 / M1691' relates to it, it may have been restored or rebuilt then."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "626"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-gecmisi",
+      "order": 2,
+      "title": {
+        "tr": "Kullanım Geçmişi",
+        "en": "Use history"
+      },
+      "body": {
+        "tr": "Köy camisi uzun yıllar ibadethane olarak kullanılmış; 1990'lı yıllarda bugünkü yapının doğusuna ve çok yakınına yeni bir cami yapılmış, eski bina düzenlenerek çocuk kütüphanesi olarak kullanılmıştır. Daha sonra yeniden cami olarak kullanılmasına karar verilmiş ve ibadethane haline döndürülmüştür.",
+        "en": "After serving as a place of worship for many years, a new mosque was built in the 1990s to the east and very close to the current structure; the old building was renovated and used as a children's library. It was later decided to return it to mosque use and it was converted back."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "626-627"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yığma duvarlı, ahşap kırma çatılı ve alaturka kiremit kaplamalı olup köy camii tipolojisine uyar. Ahşap son cemaat yeri, harimdeki maksure ve mahfil, minber ve vaaz kürsüsü sıcak bir ortam oluşturur.",
+        "en": "With masonry walls, a wooden hipped roof and Turkish-style tile cladding it conforms to the village mosque typology. The wooden narthex, the maqsura and gallery in the prayer hall, the minbar and the preaching pulpit create a warm atmosphere."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "627"
+        }
+      ]
+    },
+    {
+      "id": "duvar-yazilari",
+      "order": 4,
+      "title": {
+        "tr": "Son Cemaat Yerindeki Yazılar",
+        "en": "Writings in the Narthex"
+      },
+      "body": {
+        "tr": "Son cemaat yerinde yapılan raspa çalışmaları sırasında duvarlarda sülüs ve talik gibi yazı üslûplarında yazılmış bazı hadisler ve güzel sözler ortaya çıkarılmış ve koruma altına alınmıştır. Kitap okunabilir durumdaki on iki yazıyı özetler: Hz. Ali'ye hitap, dünya vefasızlığı üzerine beyitler, Âşık Ömer'e ait ilmihal manzumesi, 1285 / 1868 tarihli bir nakil beyanı, hadis ve ayetler.",
+        "en": "During surface cleaning in the narthex, hadiths and fine sayings written in Thuluth and Ta'liq scripts were unearthed and preserved. The book summarizes twelve readable texts, including couplets on the transience of the world, a catechism poem by Âşık Ömer, a transfer statement dated AH 1285 / AD 1868, a hadith and a Quranic verse."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "627-631"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapi_tipi",
+      "label": {
+        "tr": "Yapı tipi",
+        "en": "Building type"
+      },
+      "value": "Köy camii",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "627"
+        }
+      ]
+    },
+    {
+      "key": "duvar",
+      "label": {
+        "tr": "Duvar malzemesi",
+        "en": "Wall construction"
+      },
+      "value": "Yığma",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "627"
+        }
+      ]
+    },
+    {
+      "key": "cati",
+      "label": {
+        "tr": "Çatı",
+        "en": "Roof"
+      },
+      "value": "Ahşap kırma çatı, alaturka kiremit",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "627"
+        }
+      ]
+    },
+    {
+      "key": "okunabilir_yazi_sayisi",
+      "label": {
+        "tr": "Özetlenen duvar yazısı sayısı",
+        "en": "Number of wall texts summarized"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "627-631"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Pir Ali oğlu Mehmet Dede",
+      "role": {
+        "tr": "Mermer kitabede adı geçen kişi",
+        "en": "Named in the marble inscription"
+      }
+    },
+    {
+      "name": "Âşık Ömer",
+      "role": {
+        "tr": "Duvardaki ilmihal manzumesinin söyleyeni",
+        "en": "Speaker of the catechism poem on the wall"
+      }
+    },
+    {
+      "name": "Alâaddin Bey",
+      "role": {
+        "tr": "Demirci köyünün vakıf sahibi; Orhan Gazi'nin ağabeyi",
+        "en": "Owner of the waqf village of Demirci; elder brother of Orhan Gazi"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mermer-kitabe-1103",
+      "location": {
+        "tr": "Yapının üzerindeki mermer kitabe",
+        "en": "Marble inscription on the structure"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Pir Ali oğlu Mehmet Dede fî sene 1103 / M.1691",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1103,
+        "gregorian": "1691"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "626"
+        }
+      ],
+      "note": {
+        "tr": "Kitabın aktardığı yazı; kitabenin cami ile ilişkisi kesin değildir (kitap 'ilgili ise' diyor).",
+        "en": "Text as quoted in the book; its link to the mosque is conditional ('if related')."
+      }
+    },
+    {
+      "id": "yazi-01-ya-hazret-i-ali",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs / talik",
+      "transliteration": "Yâ Hazret-i Ali",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "627"
+        }
+      ]
+    },
+    {
+      "id": "yazi-02-vefasi-gitti",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs / talik",
+      "transliteration": "Vefası gitti dünyanın cefâ ile elem kaldı,\nTükendi merhamet ehli, ne bir sahip-kerem kaldı",
+      "translation": {
+        "tr": "Dünyanın vefası kalmadı; cefası ve acısı kaldı.\nMerhamet ehli tükendi ne de cömertlik kaldı.",
+        "en": "The world has no loyalty left; only suffering and pain remain. The people of mercy have been exhausted; there is left no generosity."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "627"
+        }
+      ]
+    },
+    {
+      "id": "yazi-03-alem-ardinca",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs / talik",
+      "transliteration": "Âlem ardınca yürür hatvenin\nYa otursan meclisinde saitîn, evâkil-i ma’al-yakîn\nHakk Teâlâ ona verir cennetin\nHer birisi misl-i dünyâ mertebin.",
+      "translation": {
+        "tr": "İnsanlık senin izinden giderse,\nSalihlerin meclisinde oturursan,\nKesin bilgiye ulaşmış kişilerin temsilcisi sayılırsın.\nAllah Teâlâ sana cenneti verir; oradaki her makam dünya dereceleri gibidir.",
+        "en": "If humanity follows you and you sit in the assembly of the righteous, you will be considered a representative of those who have attained certain knowledge. Allah Almighty will grant you Paradise; every rank there is like a degree in this world."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "627-629"
+        }
+      ]
+    },
+    {
+      "id": "yazi-04-nakil-beyani",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs / talik",
+      "transliteration": "Sene 1285’te Çalı karyesinden Demirci karyesine nakledildiğini beyan ederim. Cumâde’l-Uhrâ’nın gurresinde, sene 1285 / M. 19 Eylül 1868.",
+      "translation": {
+        "tr": "1285 yılında Çalı köyünden Demirci köyüne nakledildiğini bildiririm.\nTarih: Hicrî 1285 Cumadelâhir ayının 1. günü, Miladî 19 Eylül 1868.",
+        "en": "I hereby inform you that he was transferred from the village of Çalı to the village of Demirci in 1285. Date: 1st day of Jumada al-Thani AH 1285, 19 September AD 1868."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1285,
+        "gregorian": "1868-09-19"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "628-629"
+        }
+      ]
+    },
+    {
+      "id": "yazi-05-islamin-sarti",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs / talik",
+      "transliteration": "İslâmın şartını suâl edersen,\n İcmâlince şartı beştir efendim,\nMurâdın ger îmânı öğrenmek ise,\n Ânın da adedi şeştir efendim,\nDin Muhammed dîni cümleden asıl, \nOl gayri dinleri bilmezem nasıl,\nZiyâde değildir üç farz-ı gusul, \nMazmaza, istinşak, beden yaştır efendim,\nBiz dört biliriz abdestin farzın, \nDirsekleri yumak mâ ile destin,\nVech ile ricleyn ma’a baştır efendim,\nOn iki şartı vardır salâtın\nKılıp bu menziline iledin,\nAmel-i yakîn var ise aklın, \nÂnın da adedi şeştir efendim,\nEyle hadesten necâsetten tahâret, \nEyle setrin avret etme kerâhet,\nİstikbâl-i kıble, vakt ile niyyet, \nBu altı saydığım dıştır efendim,\nTekbir al ellerin başına götür, \nRükû ve sücûd yerine getir,\nKaîde-i ûlâda bir miktar otur, \nKılarsan bir güzel iştir efendim,\nÂşık Ömer der ki: bildiğim böyle, \nNoksânım var ise tamâmın söyle,\nSu bulunmaz ise teyemmüm eyle, \nİki darb bir niyyet üçtür efendim.",
+      "translation": {
+        "tr": "İslam’ın şartını sorarsan, özetle beştir efendim,\nEğer maksadın imanı öğrenmekse, onun da sayısı altıdır efendim,\nMuhammed’in dini tüm dinlerin özüdür, diğerlerini nasıl bilirim ki,\nGuslün üç farzı vardır: ağza su almak, buruna su çekmek, tüm bedeni yıkamak efendim,\nAbdestin dört farzı vardır: kolları dirseklere kadar yıkamak,\nYüzü, ayakları ve başı mesh etmektir efendim,\nNamazın on iki şartı vardır, bunları yaparsan menziline ulaşırsın,\nKesin bir iman ve aklın varsa, iç şartların sayısı da altıdır efendim,\nHades ve necasetten temizlik yap, avret yerini ört, mekruh olanı terk et,\nKıbleye yönel, vakti bil, niyet et, bu altı dış şartlardır efendim,\nTekbir al, ellerini başına kaldır, rükû ve secdeyi yerine getir,\nİlk oturuşta bir miktar otur, güzelce kılarsan ne güzel iştir efendim,\nÂşık Ömer der ki: Bildiğim budur, eksiğim varsa tamamını sen söyle,\nSu bulunmazsa teyemmüm et: iki toprak vuruşu ve bir niyet, üç unsurdan oluşur efendim.",
+        "en": "A didactic poem by Âşık Ömer: five pillars of Islam, six articles of faith, three fards of ghusl, four fards of ablution, twelve conditions of prayer (six internal, six external), and tayammum (two strikes on the earth and an intention)."
+      },
+      "author": "Âşık Ömer",
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "628-631"
+        }
+      ]
+    },
+    {
+      "id": "yazi-06-mala-mulke-magrur",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs / talik",
+      "transliteration": "Mala ve mülke mağrûr olup deme ‘Var mı ben gibi?’\nBir muhâlif rûzigâr savurur harman gibi.",
+      "translation": {
+        "tr": "Malına mülküne güvenip ‘Benim gibisi var mı?’ deme;\nZira bir ters zaman seni harman gibi savurur.",
+        "en": "Do not trust in your wealth and say: ‘Is there anyone like me?’ One contrary turn of fate can scatter you like chaff in the wind."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "630-631"
+        }
+      ]
+    },
+    {
+      "id": "yazi-07-muminun-mescid",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "ar",
+      "script": "sülüs / talik",
+      "transliteration": "El-mü’minü fi’l-mescidi ke’s-semeki fi’l-mâi\nEl-münâfiku fi’l-mescidi ke’t-tayri fi’l-kafesi.",
+      "translation": {
+        "tr": "Mümin camide su içindeki balık gibidir,\nMünafık ise camide kafesteki kuş gibidir",
+        "en": "A believer is like a fish in water in the mosque, a hypocrite is like a bird in a cage in the mosque."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "630-631"
+        }
+      ]
+    },
+    {
+      "id": "yazi-08-gitti-mecnun",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs / talik",
+      "transliteration": "Gitti Mecnûn hâne-i dehri bana ısmarladı\nHarâb evdir, kalur dîvâneden dîvâneye.",
+      "translation": {
+        "tr": "Mecnûn bu dünyadan gitti, onu bana bıraktı.\nBurası harabe bir evdir, deliden deliye kalır.",
+        "en": "Majnun left this world and left it to me. This house is a ruin; it passes from one madman to another."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "630-631"
+        }
+      ]
+    },
+    {
+      "id": "yazi-09-istiyakim",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs / talik",
+      "transliteration": "İştiyâkım şerh ederim",
+      "translation": {
+        "tr": "Özlemimi açıkça anlatırım.",
+        "en": "I express my longing openly."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "630-631"
+        }
+      ]
+    },
+    {
+      "id": "yazi-10-fetih-suresi",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "ar",
+      "script": "sülüs / talik",
+      "transliteration": "İnnâ fetahnâ leke fethan mubînen.",
+      "translation": {
+        "tr": "Şüphesiz, biz sana apaçık bir fetih verdik. (Fetih Suresi, 1. ayet)",
+        "en": "Indeed we have given you a clear victory. (Surah Al-Fath, verse 1)"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "630-631"
+        }
+      ]
+    },
+    {
+      "id": "yazi-11-akarsudan-abdest",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "ar",
+      "script": "sülüs / talik",
+      "transliteration": "Men tevaddâ’a bi’l-mâi’l-cârî\nVe salli halfe imâmü’l-kârî\nFekad istihakka ilâ rahmeti’l-Bârî.",
+      "translation": {
+        "tr": "Kim akarsudan abdest alır, Kur’an okuyan bir imamın arkasında namaz kılarsa, o kişi Allah’ın rahmetini hak eder.",
+        "en": "Whoever performs ablution from running water and prays behind an imam who recites the Quran, that person deserves the mercy of Allah."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "630-631"
+        }
+      ]
+    },
+    {
+      "id": "yazi-12-gel-keyfim-gel",
+      "location": {
+        "tr": "Son cemaat yeri duvarı",
+        "en": "Narthex wall"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs / talik",
+      "transliteration": "Gel keyfim gel.",
+      "translation": {
+        "tr": "Gel keyfim gel.",
+        "en": "Come, my joy, come"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "630-631"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kitabe-1691",
+      "year": 1691,
+      "date": null,
+      "hijri": "1103",
+      "type": "record",
+      "title": {
+        "tr": "Mermer kitabe: Pir Ali oğlu Mehmet Dede (H. 1103)",
+        "en": "Marble inscription of Pir Ali's son Mehmet Dede (AH 1103)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "626"
+        }
+      ],
+      "note": {
+        "tr": "Kitap, kitabe cami ile ilgiliyse bu tarihte onarım ya da yeniden inşa düşünülebileceğini söyler.",
+        "en": "The book says that if the inscription relates to the mosque, a repair or reconstruction may be assumed at this date."
+      }
+    },
+    {
+      "id": "yeni-cami-1990lar",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Doğusuna yeni cami yapıldı; eski bina çocuk kütüphanesi oldu",
+        "en": "New mosque built to the east; old building became a children's library"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "626-627"
+        }
+      ],
+      "note": {
+        "tr": "Kaynak yalnızca '1990'lı yıllar' der.",
+        "en": "The source says only 'the 1990s'."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yığma duvarlı, ahşap kırma çatılı, alaturka kiremit kaplı küçük bir köy camisi. Ahşap bir son cemaat yeri ve içeride ahşap maksure, mahfil, minber ve vaaz kürsüsü bulunur. Son cemaat yerinin duvarlarında sülüs ve talik yazı stilinde hadisler ve güzel sözler görülür.",
+      "en": "A small village mosque with masonry walls and a wooden hipped roof clad in Turkish-style tiles. It has a wooden narthex and, inside, a wooden maqsura, gallery, minbar and preaching pulpit. Hadiths and sayings in Thuluth and Ta'liq scripts appear on the narthex walls."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden (Bursa Vakıf Eserleri III. Cilt) yalnızca metne dayanarak yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

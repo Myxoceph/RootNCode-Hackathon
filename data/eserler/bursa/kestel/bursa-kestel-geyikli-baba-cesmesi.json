@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-kestel-geyikli-baba-cesmesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Kestel",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi ve banisi kitapta yok.",
+      "Besmele'nin metni basılı değil; kitabe kaydı oluşturulmadı.",
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Geyikli Baba Çeşmesi",
+    "en": "Geyikli Baba Fountain"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": "bursa-kestel-geyikli-babasultan-kulliyesi",
+  "era": null,
+  "tags": [
+    "çeşme",
+    "devşirme",
+    "Geyikli Baba"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Kestel",
+    "neighborhood": "Babasultan Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "569"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Babasultan Camii'nin yanındaki, tamamı devşirme mermerden, aslan başı lüleli ve yonca planlı yalaklı çeşme. Suyunun yüzyıllardır kesintisiz aktığı ve kutsal sayıldığı aktarılır.",
+    "en": "A fountain next to the Babasultan Mosque built entirely of spolia marble, with a lion-head spout and a trefoil basin. Its water is said to have flowed uninterrupted for centuries and is considered sacred."
+  },
+  "sections": [
+    {
+      "id": "cesme",
+      "order": 1,
+      "title": {
+        "tr": "Çeşme",
+        "en": "The Fountain"
+      },
+      "body": {
+        "tr": "Çeşmenin tamamı devşirme mermerle yapılmıştır. Aslan başı biçimli lüleden akan su, yonca planlı bir yalağa dökülür; esasen eski bir vaftiz havuzu olduğu anlaşılan bu yalak hayvanların su ihtiyacı için kullanılmıştır. Ayna taşındaki besmele günümüzde kırıktır. Çeşmenin suyu yüzyıllardır kesintisiz akmakta ve Geyikli Baba ile ilişkilendirildiği için kutsal kabul edilmektedir.",
+        "en": "The fountain is built entirely of spolia marble. Water from a lion-head spout flows into a trefoil basin, understood to have been an old baptismal pool, used to water animals. The Basmala on the back panel is broken. The water has flowed uninterrupted for centuries and is considered sacred because of its association with Geyikli Baba."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "569"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "el-ayak-izleri",
+      "title": {
+        "tr": "Geyikli Baba'nın el ve ayak izleri",
+        "en": "Geyikli Baba's hand and footprints"
+      },
+      "body": {
+        "tr": "Çeşme üzerinde Geyikli Baba'ya ait olduğu rivayet edilen el ve ayak izleri bulunmaktadır.",
+        "en": "The fountain bears hand and footprints said to belong to Geyikli Baba."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "569"
+        }
+      ]
+    }
+  ],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "bursa-kestel-geyikli-babasultan-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Çeşme Babasultan Camii'nin yanındadır.",
+        "en": "The fountain is next to the Babasultan Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "569"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-kestel-geyikli-babasultan-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Çeşme külliye unsurlarındandır.",
+        "en": "The fountain is one of the complex's elements."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "549-550"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Devşirme mermerden yapılmış çeşmede aslan başı biçimli bir lüleden akan su, yonca planlı bir yalağa dökülür. Ayna taşındaki besmele kırıktır.",
+      "en": "Built of spolia marble, the fountain's water flows from a lion-head spout into a trefoil-shaped basin. The Basmala on the back panel is broken."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

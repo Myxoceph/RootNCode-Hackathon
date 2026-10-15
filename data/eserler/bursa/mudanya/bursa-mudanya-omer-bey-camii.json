@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-mudanya-omer-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Mudanya",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
+      "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
+      "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
+      "Bani ve yapım tarihi kesin değil; yalnızca rivayet var.",
+      "Alan ölçüleri 'yaklaşık' olarak verilmiştir."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap banisini kesin bilmediğini belirtir; 1715'te Ömer Bey tarafından yaptırıldığı yalnızca rivayet edilmektedir (legend)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ömer Bey Camii",
+    "en": "Ömer Bey Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Ömer Çavuş Camii",
+      "en": "Ömer Çavuş Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "rivayet",
+    "minare"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Mudanya",
+    "neighborhood": "Ömerbey",
+    "address": "Halitpaşa Caddesi, No: 72",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "594"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1715 (rivayet)",
+      "en": "1715 (rumored)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 18,
+    "basis": {
+      "tr": "Banisi ve inşa tarihi kesin bilinmemekle birlikte 1715'te Ömer Bey adlı bir kişi tarafından yaptırıldığı rivayet edilir.",
+      "en": "The patron and date are not known for sure, but it is rumored to have been built by a person named Ömer Bey in 1715."
+    },
+    "confidence": "legend",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "594"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ömer Bey",
+    "role": "banî (rivayete göre)",
+    "confidence": "legend",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "594"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Halitpaşa Caddesi'nde, kare planlı, kırma çatılı; 1715'te Ömer Bey tarafından yaptırıldığı rivayet edilen, 2018-2022'de restore edilen cami.",
+    "en": "Square-plan, hipped-roof mosque on Halitpaşa Street, rumored to have been built by Ömer Bey in 1715; restored in 2018-2022."
+  },
+  "sections": [
+    {
+      "id": "plan",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve Dış Görünüm",
+        "en": "Plan and Exterior"
+      },
+      "body": {
+        "tr": "Kare planlı caminin üzeri kiremit kaplı kırma çatılıdır. Beden duvarları moloz taş ve tuğladan olup sıvanıp beyaza boyanmıştır. Doğu cephesinde caddeye bakan revaklı son cemaat yeri yedi üç dilimli kemerli açıklıkla sonlanır ve yaklaşık 28 m²'dir. Halk arasında “Ömer Çavuş” veya “Ömer Bey Camii” olarak anılır.",
+        "en": "The square-plan mosque has a tiled hipped roof. Main walls are rubble stone and brick, plastered and painted white. The porticoed narthex on the east side facing the street ends with seven three-lobed arched openings and covers about 28 m². It is known as “Ömer Çavuş” or “Ömer Bey Mosque” among the public."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "594"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 2,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Yaklaşık 122 m²'lik harim ahşap tavanlıdır. Mihrap duvarında iki, doğu duvarında son cemaat yerine açılan dört pencere vardır; pencereler dikdörtgen, ahşap çerçeveli ve demir şebekelidir. Mermer yuvarlak kemerle çevrili mihrap nişi beyaz sıvalı ve sadedir; minber ve kürsü ahşap ve süslemesizdir. Kuzeyde ahşap kadınlar mahfili bulunur.",
+        "en": "The prayer hall of about 122 m² has a wooden ceiling. There are two windows on the mihrab wall and four on the east wall opening onto the narthex, rectangular with wooden frames and iron grilles. The mihrab niche is framed by a marble round arch, plastered white and plain; the minbar and pulpit are wooden and unornamented. A wooden women's section lies to the north."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "594-595"
+        }
+      ]
+    },
+    {
+      "id": "minare-onarim",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve Onarımlar",
+        "en": "Minaret and Repairs"
+      },
+      "body": {
+        "tr": "Kuzeydoğu köşedeki minare caminin en özgün öğesidir: çokgen kesme taş kaide, tuğla örgülü silindirik gövde, şerefe altında dört sıra testere dişli tuğla bezeme ve mermer bilezik, kurşun kaplı sivri külah. Son elli yılda 1970, 1972 ve 1977'de onarımlar yapılmış; 1999 depremiyle ağır hasar alan cami Vakıflar Genel Müdürlüğü'nce 2018'de başlayan ve 2022'de tamamlanan kapsamlı restorasyondan geçmiştir.",
+        "en": "The minaret in the northeast corner is the mosque's most original element: polygonal cut-stone base, cylindrical brick shaft, four rows of sawtooth brick decoration and a marble band under the single balcony, and a lead-covered pointed spire. Repairs were made in 1970, 1972 and 1977; after severe damage in the 1999 earthquake the mosque underwent a comprehensive restoration by the General Directorate of Foundations, started in 2018 and completed in 2022."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "595"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "omer-bey-1715",
+      "title": {
+        "tr": "1715'te Ömer Bey tarafından yaptırıldığı rivayeti",
+        "en": "Rumor of construction by Ömer Bey in 1715"
+      },
+      "body": {
+        "tr": "Yapının banisi ve inşa tarihi kesin bilinmemekle birlikte 1715 yılında Ömer Bey adlı bir kişi tarafından yaptırıldığı rivayet edilmektedir.",
+        "en": "Although the patron and construction date are not known for sure, it is rumored that the building was built by a person named Ömer Bey in 1715."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "594"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "son_cemaat_alani",
+      "label": {
+        "tr": "Son cemaat yeri alanı",
+        "en": "Narthex area"
+      },
+      "value": 28,
+      "unit": "m²",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "594"
+        }
+      ]
+    },
+    {
+      "key": "harim_alani",
+      "label": {
+        "tr": "Harim alanı",
+        "en": "Prayer hall area"
+      },
+      "value": 122,
+      "unit": "m²",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "594"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_kemer",
+      "label": {
+        "tr": "Son cemaat kemerli açıklık sayısı",
+        "en": "Narthex arched openings"
+      },
+      "value": 7,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "594"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1970",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "595"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1972",
+      "year": 1972,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "595"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1977",
+      "year": 1977,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "595"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1999",
+      "year": 1999,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde ağır hasar",
+        "en": "Severe damage in the earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "595"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü restorasyonu (2018-2022)",
+        "en": "Restoration by the General Directorate of Foundations (2018-2022)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "595"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, kırma çatılı, beyaz boyalı bir camidir. Doğu cephesinde yedi üç dilimli kemerli açıklığı olan revaklı bir son cemaat yeri vardır. Kuzeydoğu köşede tuğla gövdeli, tek şerefeli bir minare yükselir.",
+      "en": "A square, white-painted mosque with a hipped roof. The east façade has a porticoed narthex with seven three-lobed arched openings. A brick single-balcony minaret rises in the northeast corner."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

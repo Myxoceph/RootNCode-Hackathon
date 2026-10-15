@@ -1,0 +1,476 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-gursu-orta-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Gürsu",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Gürsu bölümündeki Orta Camii yazısından (s. 335-337) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da fotoğraf EXIF'inden eklenmeli (location.coordinates atlandı).",
+      "Fotoğraf ve arşiv görseli yok; media ve archive_media boş, media_folder null. Drive klasörü bulunmalı.",
+      "Bani/yaptıran kişi kitapta belirtilmiyor (kilise olarak yapıldığı kabul ediliyor); founder.name null.",
+      "Mimar kitapta belirtilmiyor; architect.name null.",
+      "Vakıf bilgisi kitapta yok; waqf alanı null bırakıldı.",
+      "Kilise olarak inşa tarihi kesin değil ('XIX. yüzyıl ortaları'); kesin yıl araştırılmalı.",
+      "1950-1958 restorasyonunu başlatan halk girişiminin/kişilerin adı kitapta yok.",
+      "Minarenin 1960'ta inşasını belirten kitabenin metni kitapta yok ve kitabe günümüzde mevcut değil.",
+      "Mahalle: 'İstiklal Mahallesi' metinde geçiyor; ilçe 'Gürsu' olarak alındı.",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "Ziyaretçi ipuçları ve ziyaret süresi derlenmedi.",
+      "Banî ve mimar kitapta belirtilmemiş (founder/architect null); kilise dönemi için kaynak bulunursa eklenmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap inşa tarihini kesin vermiyor: 'XIX. yüzyıl ortalarında ... inşa edildiği kabul edilmektedir'. Bu yüzden start_year/end_year boş bırakıldı (yalnızca century=19). Zaman çizelgesindeki 1850 yalnızca sıralama içindir."
+      },
+      {
+        "field": "sections[giris-ve-tarihce]",
+        "note": "Türkçe metinde 'Meryem Ana Doğum Yıldönümü Kilisesi' adı '15 Ağustos' ile birlikte geçer; İngilizce metin aynı bilgiyi verir. Çelişki yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Orta Camii",
+    "en": "Orta (Central) Mosque"
+  },
+  "subtitle": {
+    "tr": "Gürsu'da kilise olarak yapılmış, camiye çevrilmiş yapı",
+    "en": "A building built as a church in Gürsu and used as a mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "15 Ağustos Meryem Ana Doğum Yıldönümü Kilisesi",
+      "en": "15 August Virgin Mary Birth Anniversary Church",
+      "note": "Yapının kilise olarak kullanıldığı dönemdeki adı"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "eski kilise",
+    "mübadele",
+    "almaşık duvar",
+    "ahşap mihrap",
+    "kadınlar mahfili",
+    "Gürsu"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Gürsu",
+    "neighborhood": "İstiklal Mahallesi",
+    "address": "Fatih Caddesi, No: 66",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "335"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl ortaları (kilise olarak); 1958 (camiye dönüşüm)",
+      "en": "Mid-19th century (as a church); 1958 (reopened as a mosque)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitabesi yoktur; yapı hakkındaki değerlendirmelere göre XIX. yüzyıl ortalarında kilise olarak inşa edildiği kabul edilmektedir.",
+      "en": "It has no inscription; according to evaluations, it is accepted to have been built as a church in the mid-19th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "335"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "XIX. yüzyıl ortalarında kilise olarak inşa edildiği kabul edilen yapı, 1924 mübadelesinden sonra çeşitli işlevlerle kullanılmış, halkın girişimiyle 1950'de başlayan restorasyon 1958'de bitince Orta Cami adıyla ibadete açılmıştır. Moloz taş-tuğla almaşık duvarlı, kırma çatılı, kuzeybatı köşesinde taş minareli bir yapıdır.",
+    "en": "The building, accepted to have been built as a church in the mid-19th century, was used for various functions after the 1924 population exchange and reopened for worship as Orta Mosque in 1958 after a restoration begun in 1950 on public initiative. It has rubble-and-brick walls, a hipped roof and a stone minaret at its northwest corner."
+  },
+  "sections": [
+    {
+      "id": "giris-ve-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Yapı Gürsu ilçesi, İstiklal Mahallesi, Fatih Caddesi, No: 66 adresindedir. Kitabesi yoktur; yapı hakkındaki değerlendirmelere göre XIX. yüzyıl ortalarında \"15 Ağustos Meryem Ana Doğum Yıldönümü Kilisesi\" adıyla inşa edildiği kabul edilmektedir. Bu işlevini, Kurtuluş Savaşı'nın ardından 1924'te gerçekleştirilen mübadele anlaşması sonrasında bölgedeki Rum nüfusun ayrılışına kadar sürdürmüştür. Mübadeleden sonra çeşitli işlevlerle kullanılan yapı, 1950'de halkın girişimiyle başlatılan restorasyonun 1958'de tamamlanmasıyla \"Orta Cami\" adıyla yeniden ibadet mekânı olarak kullanılmaya başlanmıştır.",
+        "en": "The mosque is located at Fatih Street, No. 66, İstiklal Neighborhood, Gürsu District. It has no inscription; according to evaluations it is accepted that it was built in the mid-19th century as the \"15 August Virgin Mary Birth Anniversary Church\". It continued this function until the departure of the Greek population following the 1924 population exchange agreement. After the exchange it was used for various functions, and after the restoration started with the public's initiative in 1950 was completed in 1958, it began to be used as a place of worship again under the name \"Orta (Central) Mosque\"."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "335-336"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-dis-mimari",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Dış Mimari",
+        "en": "Plan and Exterior"
+      },
+      "body": {
+        "tr": "Doğu-batı doğrultusunda konumlanan yapı yaklaşık 17,00 x 24,00 m ölçülerindedir. Duvarları moloz taş ile aralara yerleştirilen tuğlaların oluşturduğu almaşık teknikle örülmüş, üst örtüsü kırma çatıyla sağlanmış ve kiremitle kaplanmıştır. Geniş bir avlu içinde yer alan yapının ana girişi batı cephesindedir; burada üç basamaklı merdivenle çıkılan, iki ahşap direkle desteklenen sahanlık bulunur. Giriş kapısı yuvarlak kemer söveli ve çift kanatlı ahşaptır. Kuzey ve güneybatı köşelerinde daha küçük iki yuvarlak kemerli giriş daha vardır; bu kapıların kemerlerinde ortada ve yanlarda kabartma bitkisel motifler yer alır.",
+        "en": "The building, positioned east-west, measures approximately 17.00 x 24.00 m. Its walls are built with an alternating technique of rubble stone and bricks, and its upper cover is a tiled hipped roof. Located in a large courtyard, its main entrance is on the west side, with a landing supported by two wooden posts reached by a three-step staircase. The entrance door is wooden, with a round arch frame and double leaves. There are also two smaller round-arched entrances at the north and southwest corners; their arches have relief vegetal motifs in the middle and on the sides."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "336"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Ahşap tavanla örtülü harimin güney duvarında sade tasarımlı ahşap bir mihrap bulunur. Minber ve kürsü de ahşaptır. Harimin kuzeyinde ahşap direkler üzerine inşa edilmiş kadınlar mahfili vardır. İç mekân batı duvarında altta dört, üstte beş; doğu duvarında altta beş; kuzey ve güney duvarlarında altta altışar pencereyle ışık alır. Pencereler yuvarlak kemerli, mermer söveli ve demir parmaklıklıdır; sövelerin orta ve yan kısımlarında kabartma bitkisel bezemeler vardır.",
+        "en": "The prayer hall, covered with a wooden ceiling, has a plain wooden mihrab on its south wall. The minbar and pulpit are also wooden. On the north side is a women's gallery built on wooden pillars. The interior receives light through four windows at the bottom and five at the top on the west wall, five at the bottom on the east wall, and six at the bottom on the north and south walls. The windows have round arches, marble frames and iron grilles, with relief vegetal decoration on the middle and side parts of the frames."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "336-337"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Yapının kuzeybatı köşesinde, kare planlı taş kaide üzerine üçgen geçişlerle oturtulmuş, çokgen gövdeli ve tek şerefeli taş minare bulunur. Şerefe altı dört sıra stalaktit dizisiyle süslenmiş, sivri konik külah kurşunla kaplanmıştır. Minarenin 1960'ta Ali Orhan tarafından inşa edildiğini belirten mermer kitabe geçmişte kaidesinde yer almış, günümüzde mevcut değildir.",
+        "en": "In the northwest corner is a stone minaret with a polygonal shaft and a single balcony, set on a square-plan stone base with triangular transitions. The section below the balcony is decorated with four rows of stalactites, and the pointed conical spire is lead-covered. A marble inscription on its base stating that the minaret was built by Ali Orhan in 1960 existed in the past but is not present today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 5,
+      "title": {
+        "tr": "Restorasyonlar",
+        "en": "Restorations"
+      },
+      "body": {
+        "tr": "1950'de halkın girişimiyle başlayan restorasyon 1958'de tamamlanmıştır. Yapının son kapsamlı restorasyonu 2010-2012 yılları arasında Vakıflar Genel Müdürlüğü tarafından gerçekleştirilmiştir.",
+        "en": "The restoration begun on public initiative in 1950 was completed in 1958. The last comprehensive restoration was carried out by the General Directorate of Foundations between 2010 and 2012."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "336-337"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Boyutlar",
+        "en": "Dimensions"
+      },
+      "value": "yaklaşık 17,00 x 24,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "336"
+        }
+      ]
+    },
+    {
+      "key": "yonelim",
+      "label": {
+        "tr": "Yönelim",
+        "en": "Orientation"
+      },
+      "value": "doğu-batı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "336"
+        }
+      ]
+    },
+    {
+      "key": "duvar_teknigi",
+      "label": {
+        "tr": "Duvar tekniği",
+        "en": "Wall technique"
+      },
+      "value": "moloz taş ve tuğla almaşık",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "336"
+        }
+      ]
+    },
+    {
+      "key": "ust_ortu",
+      "label": {
+        "tr": "Üst örtü",
+        "en": "Roof"
+      },
+      "value": "kiremit kaplı kırma çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "336"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "key": "minare_yapim_yili",
+      "label": {
+        "tr": "Minarenin inşa yılı",
+        "en": "Minaret construction year"
+      },
+      "value": 1960,
+      "unit": null,
+      "note": {
+        "tr": "Günümüzde bulunmayan mermer kitabeye göre; yapan Ali Orhan.",
+        "en": "According to a marble inscription no longer extant; built by Ali Orhan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": "batı 4+5, doğu 5, kuzey 6, güney 6",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "337"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ali Orhan",
+      "role": {
+        "tr": "Minareyi 1960'ta inşa ettiren/yapan kişi (kitabeye göre)",
+        "en": "Built the minaret in 1960 (per inscription)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kilise-insa",
+      "year": 1850,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "XIX. yüzyıl ortalarında kilise olarak inşa edildiği kabul edilir",
+        "en": "Accepted to have been built as a church in the mid-19th century"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "335"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca 'XIX. yüzyıl ortaları' diyor; 1850 yılı sıralama için konmuş yaklaşık bir değerdir, kaynakta sayı yoktur.",
+        "en": "The book says only 'mid-19th century'; 1850 is an approximate value used for ordering, not stated in the source."
+      }
+    },
+    {
+      "id": "mubadele-1924",
+      "year": 1924,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mübadele sonrası Rum nüfusun ayrılması; kilise işlevi sona erdi",
+        "en": "Greek population departed after the exchange; church function ended"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "335"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Halkın girişimiyle restorasyon başladı",
+        "en": "Restoration started on public initiative"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "336"
+        }
+      ]
+    },
+    {
+      "id": "acilis-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Restorasyon tamamlandı; Orta Cami adıyla ibadete açıldı",
+        "en": "Restoration completed; opened for worship as Orta Mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "336"
+        }
+      ]
+    },
+    {
+      "id": "minare-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Minare Ali Orhan tarafından inşa edildi",
+        "en": "Minaret built by Ali Orhan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü'nce kapsamlı restorasyon (2010-2012)",
+        "en": "Comprehensive restoration by the General Directorate of Foundations (2010-2012)"
+      },
+      "note": {
+        "tr": "2010-2012 arası; son kapsamlı restorasyon.",
+        "en": "2010-2012; last comprehensive restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "337"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Orta Camii, geniş bir avlu içinde, doğu-batı doğrultusunda uzanan yaklaşık 17 x 24 metrelik bir yapıdır. Duvarları taş ve tuğla sıralarının dönüşümlü örülmesiyle yapılmış, çatısı kiremit kaplı kırma çatıdır. Ana giriş batıdadır: üç basamaklı bir merdivenle iki ahşap direkli bir sahanlığa çıkılır ve yuvarlak kemerli, çift kanatlı ahşap kapıdan girilir. Kuzeybatı köşesinde, çokgen gövdeli, tek şerefeli taş bir minare yükselir. İçeride ahşap tavanlı bir harim, güney duvarında sade ahşap mihrap, ahşap minber ve kürsü, kuzeyde ahşap direkler üzerinde kadınlar mahfili bulunur. Mermer çerçeveli yuvarlak kemerli pencereler demir parmaklıklıdır.",
+      "en": "Orta Mosque stands in a large courtyard, a building of about 17 by 24 metres extending east-west. Its walls are laid in alternating courses of stone and brick, and it has a tiled hipped roof. The main entrance is on the west: a three-step staircase leads to a landing with two wooden posts, and a round-arched double-leaf wooden door. At the northwest corner rises a stone minaret with a polygonal shaft and a single balcony. Inside is a prayer hall with a wooden ceiling, a plain wooden mihrab on the south wall, a wooden minbar and pulpit, and a women's gallery on wooden pillars to the north. The round-arched windows have marble frames and iron grilles."
+    },
+    "audio_description_source": "book_architectural_description"
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

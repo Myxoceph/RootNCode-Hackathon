@@ -1,0 +1,533 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-orhan-bey-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-14",
+    "updated_at": "2026-10-14",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Orhan Bey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Orhan Bey Külliyesi bölümünden (s. 187-213) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki Orhan Bey Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Külliyenin kendi adresi kitapta verilmiyor; yalnızca cami, hamam ve hanın adresleri var. Gerekirse külliye için temsili nokta/adres belirlenecek.",
+      "Yok olmuş imaret ve mektep için kayıt açılıp açılmayacağına veri ekibi karar vermeli (imaret için ilişki hedefi olarak id ayrıldı: bursa-osmangazi-orhan-gazi-imareti).",
+      "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap külliye için H. 740 / M. 1339-40 verirken hamam için yalnızca '1340' diyor (s. 203); aynı külliyenin parçası olduğu için küçük bir tutarsızlık olabilir. Kaynağa sadık kalındı."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Kitap Orhan Bey'in 1326'da beyliği devraldığını, aynı yıl Bursa'yı fethedip başkent yaptığını söylüyor; külliyenin 1339-40'ta yapıldığı bilgisi ayrıca veriliyor. Çelişki yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Orhan Bey Külliyesi",
+    "en": "Orhan Bey Complex"
+  },
+  "subtitle": {
+    "tr": "Osmanlı'nın ilk külliyelerinden biri",
+    "en": "One of the first complexes of the Ottoman Empire"
+  },
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Orhan Gazi",
+    "külliye",
+    "Hanlar Bölgesi",
+    "Osmanlı başkenti Bursa",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "187"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 740 / M. 1339-40",
+      "en": "AH 740 / AD 1339-40"
+    },
+    "start_year": 1339,
+    "end_year": 1340,
+    "hijri_year": 740,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap, camiyi külliye bünyesinde H. 740 / M. 1339-40'ta inşa edildi diye veriyor; Emir Hanı için de aynı tarih verilir.",
+      "en": "The book gives AH 740 / AD 1339-40 for the mosque within the complex, and the same date for the Emir Han."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "187, 210"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Gazi Orhan Bey (Sultan Orhan Gazi bin Sultan Osman)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "187"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Orhan Gazi İmareti Vakfı (Orhan Vakfı)",
+    "deed": {
+      "date_display": "H. Cemaziyelahir 761 / M. Nisan 1360",
+      "excerpt": {
+        "tr": "28 sayfalık vakfiye Sultan Orhan Gazi bin Sultan Osman adına düzenlenmiş ve Bursa Kadısı Mevlânâ Burhaneddin İbrahim bin Ali bin Yusuf el-Hemedânî tarafından tasdik edilmiştir. Buna göre bazı köyler, Eski Bedesten, bedestenin bitişiğindeki ve çevresindeki dükkânlar, odalar, evler ile Bıçakçılar Hamamı Orhan Gazi İmareti'ne vakfedilmiştir. (Kitaptaki özet; vakfiye metni değildir.)",
+        "en": "The 28-page deed was prepared in the name of Sultan Orhan Gazi bin Sultan Osman and approved by Bursa Qadi Mevlânâ Burhâneddin İbrahim bin Ali bin Yusuf el-Hemedânî. According to it, some villages, the Old Bedesten, the shops, rooms and houses adjacent to and around the Bedesten, and the Bıçakçılar Bath were endowed to the Orhan Gazi Imaret. (Summary given in the book; not the deed text.)"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "188"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Cami ile hamam arasında özellikle bırakılan geniş bahçelik alana 1505'te Koza Hanı yapılmıştır.",
+      "en": "Koza Han was built in 1505 on the large garden area deliberately left between the bath and the mosque."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "188, 203"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Gazi Orhan Bey'in Bursa'da sur dışında yaptırdığı, Osmanlı'nın ilk külliyelerinden biri. Günümüze yalnızca Orhan Camii, Emir Hanı ve Orhan Hamamı ulaşmış; imaret ve mektep yok olmuştur.",
+    "en": "A complex built by Gazi Orhan Bey outside the walls of Bursa, one of the first of the Ottoman Empire. Only the Orhan Mosque, Emir Han and Orhan Bath survive; the imaret and school have disappeared."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Orhan Bey Külliyesi, Tarihi Çarşılar ve Hanlar Bölgesi içinde, Osman Bey'in oğlu Orhan Bey tarafından yaptırılmıştır. Osmanlı'nın ilk külliyelerinden biri olan yapı topluluğundan günümüze yalnızca Orhan Camii, Emir Hanı ve Orhan Hamamı ulaşabilmiştir; imaret ve mektep yapıları zamanla yok olmuştur.",
+        "en": "The Orhan Bey Complex lies in the Historical Bazaars and Hans District and was built by Orhan Bey, son of Osman Bey. Of this group of buildings, one of the first complexes of the Ottoman Empire, only the Orhan Mosque, Emir Han and Orhan Bath have survived; the imaret and school buildings have disappeared over time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187"
+        }
+      ]
+    },
+    {
+      "id": "orhan-bey-ve-bursa",
+      "order": 2,
+      "title": {
+        "tr": "Orhan Bey ve Bursa",
+        "en": "Orhan Bey and Bursa"
+      },
+      "body": {
+        "tr": "Gazi Orhan Bey, ağabeyi Alaaddin Bey'in beylikten feragat etmesi üzerine 1326'da devletin başına geçmiştir. Aynı yıl fethettiği Bursa'yı başkent ilan etmiş, sur dışında inşa ettirdiği külliye ile şehri imar ederken büyütmüş ve bir çekim merkezi haline getirmiştir. 1360'ta 79 yaşında vefat etmiş, Hisar içinde cami ve medreseye dönüştürdüğü Saint Elias Manastırı'ndaki türbesine defnedilmiştir.",
+        "en": "Gazi Orhan Bey became head of the state in 1326 after his elder brother Alâaddin Bey renounced the beylik. He declared Bursa, conquered the same year, the capital, and built this complex outside the walls while developing the city and making it a center of attraction. He died in 1360 at the age of 79 and was buried in his tomb in the Saint Elias Monastery, which he had converted into a mosque and madrasa inside the Hisar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187-188"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "order": 3,
+      "title": {
+        "tr": "1360 Tarihli Vakfiye",
+        "en": "The 1360 Endowment Deed"
+      },
+      "body": {
+        "tr": "H. Cemaziyelahir 761 / M. Nisan 1360 tarihli, 28 sayfalık vakfiyeye göre bazı köyler, Eski Bedesten, bedestenin bitişiğindeki ve çevresindeki dükkânlar, odalar, evler ile Bıçakçılar Hamamı Orhan Gazi İmareti'ne vakfedilmiştir.",
+        "en": "According to the 28-page endowment deed dated Jumada al-Thani AH 761 / April AD 1360, some villages, the Old Bedesten, the shops, rooms and houses adjacent to and around it, and the Bıçakçılar Bath were endowed to the Orhan Gazi Imaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "188"
+        }
+      ]
+    },
+    {
+      "id": "ayakta-kalan-yapilar",
+      "order": 4,
+      "title": {
+        "tr": "Günümüze Ulaşan Yapılar",
+        "en": "Surviving Buildings"
+      },
+      "body": {
+        "tr": "Cami, Ulucami'nin doğusunda; hamam Ulucami'nin kuzeyinde, Emir Hanı ile Kozahan'ın arasında; han ise Ulucami'nin kuzeydoğu köşesinde yer alır. Cami ile hamam arasında özellikle bırakılan geniş bahçelik alana 1505'te Koza Hanı yapılmıştır. Bölge 2014'te Sultan Külliyeleri ve Cumalıkızık Köyü ile birlikte UNESCO Dünya Mirası Alanı'na alınmıştır.",
+        "en": "The mosque is east of the Ulucami; the bath is north of the Ulucami between the Emir Han and Koza Han; the han is at the northeast corner of the Ulucami. Koza Han was built in 1505 on the garden area deliberately left between the bath and the mosque. The district was inscribed on the UNESCO World Heritage List in 2014 together with the Sultan Complexes and Cumalıkızık Village."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187, 200, 203, 210"
+        }
+      ]
+    },
+    {
+      "id": "1413-kusatmasi",
+      "order": 5,
+      "title": {
+        "tr": "1413 Kuşatması",
+        "en": "The 1413 Siege"
+      },
+      "body": {
+        "tr": "Karamanoğlu Mehmed Bey'in 1413'teki 31 günlük Bursa kuşatması sırasında, sur dışında kalan birçok yapı gibi bu külliye de yakılarak zarar görmüş, ardından Sultan Çelebi Mehmed tarafından onarılmış ve tekrar ibadete açılmıştır.",
+        "en": "During the 31-day siege of Bursa by Karamanoğlu Mehmed Bey in 1413, this complex, like many structures outside the walls, was damaged by burning, then repaired by Sultan Çelebi Mehmed and reopened for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "188"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapım yılı (külliye bünyesinde cami)",
+        "en": "Construction year (mosque within complex)"
+      },
+      "value": "H. 740 / M. 1339-40",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187"
+        }
+      ]
+    },
+    {
+      "key": "ayakta_kalan_yapi_sayisi",
+      "label": {
+        "tr": "Günümüze ulaşan yapı sayısı",
+        "en": "Number of surviving buildings"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187"
+        }
+      ],
+      "note": {
+        "tr": "Cami, han, hamam.",
+        "en": "Mosque, han, bath."
+      }
+    },
+    {
+      "key": "vakfiye_sayfa_sayisi",
+      "label": {
+        "tr": "Vakfiye sayfa sayısı",
+        "en": "Deed page count"
+      },
+      "value": 28,
+      "unit": "sayfa",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "188"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Gazi Orhan Bey",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Mevlânâ Burhaneddin İbrahim bin Ali bin Yusuf el-Hemedânî",
+      "role": {
+        "tr": "Vakfiyeyi tasdik eden Bursa Kadısı",
+        "en": "Bursa Qadi who approved the deed"
+      }
+    },
+    {
+      "name": "Sultan Çelebi Mehmed",
+      "role": {
+        "tr": "1413 sonrası onarımı yaptıran",
+        "en": "Had the complex repaired after 1413"
+      }
+    },
+    {
+      "name": "Karamanoğlu Mehmed Bey",
+      "role": {
+        "tr": "1413'te Bursa'yı kuşatan",
+        "en": "Besieged Bursa in 1413"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "fetih-1326",
+      "year": 1326,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Orhan Bey devletin başına geçti; Bursa fethedilip başkent ilan edildi",
+        "en": "Orhan Bey became head of state; Bursa conquered and declared capital"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187"
+        }
+      ]
+    },
+    {
+      "id": "insa-1339",
+      "year": 1339,
+      "date": null,
+      "hijri": "740",
+      "type": "construction",
+      "title": {
+        "tr": "Külliye bünyesinde cami inşa edildi (H. 740 / M. 1339-40)",
+        "en": "Mosque built within the complex (AH 740 / AD 1339-40)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1360",
+      "year": 1360,
+      "date": null,
+      "hijri": "Cemaziyelahir 761",
+      "type": "record",
+      "title": {
+        "tr": "Orhan Gazi adına düzenlenen vakfiye (H. Cemaziyelahir 761 / M. Nisan 1360)",
+        "en": "Endowment deed issued in Orhan Gazi's name (Jumada al-Thani AH 761 / April 1360)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "188"
+        }
+      ]
+    },
+    {
+      "id": "kusatma-1413",
+      "year": 1413,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Karamanoğlu Mehmed Bey'in Bursa kuşatmasında külliye yakılarak zarar gördü",
+        "en": "Complex damaged by burning in Karamanoğlu Mehmed Bey's siege of Bursa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "188"
+        }
+      ]
+    },
+    {
+      "id": "koza-han-1505",
+      "year": 1505,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Cami ile hamam arasındaki bahçelik alana Koza Hanı yapıldı",
+        "en": "Koza Han built on the garden area between bath and mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "id": "unesco-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hanlar Bölgesi UNESCO Dünya Mirası Alanı'na alındı",
+        "en": "Hans District inscribed on the UNESCO World Heritage List"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "200"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Orhan Bey Camii külliyenin ayakta kalan parçalarından biridir.",
+        "en": "Orhan Bey Mosque is one of the surviving parts of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-hamami",
+      "type": "same_complex",
+      "description": {
+        "tr": "Orhan Bey Hamamı külliyenin bir parçası olarak yaptırılmıştır.",
+        "en": "Orhan Bey Bath was built as a part of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187, 203"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-emir-hani",
+      "type": "same_complex",
+      "description": {
+        "tr": "Emir Hanı külliyenin bir parçası olarak yaptırılmıştır.",
+        "en": "Emir Han was built as a part of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187, 210"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-gazi-imareti",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Vakfiyeye göre bazı köyler, Eski Bedesten, dükkânlar, odalar, evler ve Bıçakçılar Hamamı Orhan Gazi İmareti'ne vakfedilmiştir; imaret yok olmuştur.",
+        "en": "According to the deed, some villages, the Old Bedesten, shops, rooms, houses and the Bıçakçılar Bath were endowed to the Orhan Gazi Imaret; the imaret no longer exists."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187-188"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-koza-han",
+      "type": "urban_context",
+      "description": {
+        "tr": "Koza Hanı, cami ile hamam arasında bırakılan bahçelik alana 1505'te yapılmıştır.",
+        "en": "Koza Han was built in 1505 on the garden area left between the mosque and the bath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami Ulucami'nin doğusunda, hamam kuzeyinde, han kuzeydoğu köşesinde yer alır.",
+        "en": "The mosque lies east of the Ulucami, the bath north, the han at its northeast corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "187, 203, 210"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Orhan Bey Külliyesi, Bursa'nın tarihi çarşı ve han bölgesinde, bir arada duran cami, hamam ve han yapılarından oluşur. Cami Ulucami'nin doğusunda, hamam kuzeyinde, han ise kuzeydoğu köşesindedir. Külliyenin imaret ve mektep yapıları günümüze ulaşmamıştır.",
+      "en": "The Orhan Bey Complex consists of a mosque, bath and han standing together in Bursa's historic bazaar and han district. The mosque is east of the Ulucami, the bath to its north and the han at its northeast corner. The complex's imaret and school buildings have not survived."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}
