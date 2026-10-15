@@ -1,0 +1,405 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ahmet-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 236-238) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Molla Fenârî Camii ve Haziresi'nin ilçesi kitapta belirtilmiyor; ilişki hedef id'si tahminidir, ilçe teyit edilmeli.",
+      "Fenârî Ahmed Paşa'nın yaptırdığı medrese ve zaviye günümüze ulaşmamış; kitap isim/yer vermiyor.",
+      "Kitapta vakıf bilgisi yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Türkçe metin 'Camiyi yaptıran Molla Fenârî'nin torunu ve Yusuf Bâli Efendi'nin oğlu olan Sadrazam Fenârî Ahmed Paşa' diyerek camiyi yaptıranı belirsiz bırakıyor (cümle Molla Fenârî'yi de yapıcı gösterebilir). İngilizce metin bozuk ('the son of Efendi, who had the mosque built'). Hazire bölümü camiyi açıkça Ahmed Paşa'nın yaptırdığını söylüyor; bani Ahmed Paşa alındı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Ahmed Paşa Molla Fenârî'nin 'torunu' olarak anılırken aynı paragrafta Molla Fenârî 'büyük dedesi' (İngilizce: great-grandfather) olarak geçer. Torun/büyük dede çelişkisi kaynağa sadık kalınarak korundu."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Hazire bölümünde Fethiye Hanım 'camiyi yeniden inşa ettiren' olarak anılır (1911 onarımı); ana metin onarımı 'Hacı Atikzâde Fethiye Hanım ve mahalle sakinlerinin yardımlarıyla' yapıldı diyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ahmet Paşa (Fenârî) Camii",
+    "en": "Ahmet Pasha (Fenârî) Mosque"
+  },
+  "subtitle": {
+    "tr": "Sadrazam Fenârî Ahmed Paşa'nın yaptırdığı cami ve haziresi",
+    "en": "Mosque of Grand Vizier Fenârî Ahmed Pasha, with its graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Fenârî Camii",
+      "en": "Fenârî Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Fenârî",
+    "dergâh",
+    "Halvetiyye",
+    "hazire",
+    "1855 depremi",
+    "1911 onarımı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Ahmetpaşa",
+    "address": "Fahri Korutürk Caddesi, No: 66",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "236"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1475",
+      "en": "1475"
+    },
+    "start_year": 1475,
+    "end_year": 1475,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap caminin 1475 yılında inşa edildiğini belirtir; kitabe veya belge gösterilmez.",
+      "en": "The book states the mosque was built in 1475; no inscription or document is cited."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "237"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sadrazam Fenârî Ahmed Paşa",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "236-238"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sadrazam Fenârî Ahmed Paşa tarafından 1475'te yaptırıldığı belirtilen cami. Bir dönem Halvetî dergâhı olarak kullanıldı; 1803 yangını, 1855 depremi ve 1911'deki büyük onarımla büyük ölçüde yenilendi. Batısındaki hazirede Fethiye Hanım ve dergâh şeyhleri medfundur.",
+    "en": "A mosque said to have been built in 1475 by Grand Vizier Fenârî Ahmed Pasha. It served for a time as a Halvetî dervish lodge and was largely renewed after a fire in 1803, the earthquake of 1855 and a major repair in 1911. Fethiye Hanım and lodge sheikhs are buried in the graveyard to its west."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Ahmet Paşa (Fenârî) Camii, Osmangazi İlçesi, Ahmetpaşa Mahallesi, Fahri Korutürk Caddesi No: 66'da yer almaktadır. Camiyi yaptıran Molla Fenârî'nin torunu ve Yusuf Bâli Efendi'nin oğlu olan Sadrazam Fenârî Ahmed Paşa, caminin yanı sıra bir medrese ve zaviye de inşa ettirmiştir; ancak bu yapılar günümüze ulaşmamıştır. Fenârî Ahmed Paşa H. 902 / M. 1497 tarihinde vefat etmiş ve rivayetlere göre büyük dedesi Molla Fenârî'nin de medfun olduğu Molla Fenârî Camii Haziresi'ne defnedilmiştir.",
+        "en": "The mosque is located in Osmangazi District, Ahmetpaşa Neighborhood, on Fahri Korutürk Street No. 66. Grand Vizier Fenârî Ahmed Pasha, grandson of Molla Fenârî and son of Yusuf Bâli Efendi, also had a madrasa and a zawiya built beside the mosque; these have not survived. He died in AH 902 / AD 1497 and, according to reports, was buried in the Molla Fenârî Mosque Graveyard, where his great-grandfather Molla Fenârî is also buried."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "236-237"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe ve Onarımlar",
+        "en": "History and Repairs"
+      },
+      "body": {
+        "tr": "Cami 1475 yılında inşa edilmiştir; ancak yapıldığı dönemdeki orijinal hâli korunamamış, zaman içinde çeşitli onarımlar geçirmiştir. Bir dönem Halvetiyye tarikatına bağlı bir dergâh olarak kullanılmıştır. 1803'te geçirdiği yangının ardından Şerife Nefîse Hanım tarafından kısmen onarılmış, minarenin şerefeden yukarısı yeniden inşa edilmiştir. 1855'teki büyük depremde yıkılan cami uzun süre harap kalmış, 1911'de Hacı Atikzâde Fethiye Hanım ve mahalle sakinlerinin yardımlarıyla büyük çapta onarılmıştır.",
+        "en": "The mosque was built in 1475, but its original form could not be preserved and it underwent various repairs. For a time it was used as a dervish lodge of the Halvetiyye order. After a fire in 1803 it was partly repaired by Şerife Nefise Hanım and the minaret above the balcony was rebuilt. Destroyed in the great earthquake of 1855, it lay in ruins for a long time; in 1911 it was largely renovated with help from Hacı Atikzâde Fethiye Hanım and the neighborhood's residents."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami iç mekânı 7,60 × 10,80 m ölçülerinde dikdörtgen planlıdır, duvar kalınlığı 85 cm'dir. Tuğla ve taş malzemeyle inşa edilmiş, üstü ahşap çatılı ve yerli kiremitle örtülüdür. Mihrabın iki yanında birer, sağ ve sol duvarlarda ikişer pencere vardır. Kapının üstü mahfil, alt kısımda iki yanda maksuredir. Kapının her iki yanında birer pencere, mahfilin arkasında dört pencere bulunur. Son cemaat mahallinde kapının solunda iki, doğu tarafında bir pencere vardır. Caminin tamamen yenilenmesi nedeniyle yalnızca mihraptaki iki sıra mukarnas parçası ilk inşa dönemine ait izlenimi vermektedir. Minare de son büyük onarımda yeniden yapılmıştır. Cami günümüzde ibadete açıktır.",
+        "en": "The interior is rectangular, 7.60 × 10.80 m, with 85 cm thick walls. It is built of brick and stone with a timber roof covered in local tiles. There is one window on each side of the mihrab and two on each side wall. A gallery stands above the door with a maqsura on both sides below. One window flanks each side of the door and four lie behind the gallery. In the narthex there are two windows left of the door and one on the east. Owing to the complete renovation, only two rows of muqarnas in the mihrab appear to date from the first construction. The minaret was also rebuilt in the last major renovation. The mosque is open for worship today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Hazire, caminin batı tarafında yer almaktadır. Hazirede, camiyi yeniden inşa ettiren Fethiye Hanım'ın mezarının yanı sıra birkaç mezar taşı daha günümüze ulaşabilmiştir. Caminin bir dönem dergâh olarak kullanılması sebebiyle burada görev yapan bazı kişiler de hazireye defnedilmiş, ancak bu şahısların mezar taşları zamanla kaybolmuştur. Hazirede Fethiye Hanım, Hacı Emir Salih Efendi, Safiye Hanım, Şeyh Hayreddin Efendi, Şeyh Ali Efendi, Şeyh Süleyman Efendi ve Şeyh Kalıbî Ahmed Efendi medfundur.",
+        "en": "The graveyard is on the west side of the mosque. Besides the grave of Fethiye Hanım, who rebuilt the mosque, a few more gravestones have survived. Because the mosque was once a lodge, some of its staff were also buried here, but their tombstones were lost over time. Fethiye Hanım, Hacı Emir Salih Efendi, Safiye Hanım, Shaykh Hayreddin Efendi, Shaykh Ali Efendi, Shaykh Süleyman Efendi and Shaykh Kalıbî Ahmed Efendi are buried in the graveyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "238"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "7,60 × 10,80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 85,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "key": "insa_yili",
+      "label": {
+        "tr": "İnşa yılı",
+        "en": "Year of construction"
+      },
+      "value": 1475,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "key": "ahmed_pasa_vefat",
+      "label": {
+        "tr": "Fenârî Ahmed Paşa'nın vefatı",
+        "en": "Death of Fenârî Ahmed Pasha"
+      },
+      "value": "H. 902 / M. 1497",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "236-237"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sadrazam Fenârî Ahmed Paşa",
+      "role": {
+        "tr": "Banî; Yusuf Bâli Efendi'nin oğlu (H. 902 / M. 1497'de vefat)",
+        "en": "Founder; son of Yusuf Bâli Efendi (d. AH 902 / AD 1497)"
+      }
+    },
+    {
+      "name": "Molla Fenârî",
+      "role": {
+        "tr": "Ahmed Paşa'nın atası (kitapta torun ve büyük dede ifadeleri çelişir); Molla Fenârî Camii Haziresi'nde medfun",
+        "en": "Ancestor of Ahmed Pasha (the book is inconsistent: grandson vs great-grandson); buried in the Molla Fenârî Mosque Graveyard"
+      }
+    },
+    {
+      "name": "Yusuf Bâli Efendi",
+      "role": {
+        "tr": "Ahmed Paşa'nın babası",
+        "en": "Father of Ahmed Pasha"
+      }
+    },
+    {
+      "name": "Şerife Nefîse Hanım",
+      "role": {
+        "tr": "1803 yangını sonrası kısmi onarım",
+        "en": "Partial repair after the 1803 fire"
+      }
+    },
+    {
+      "name": "Hacı Atikzâde Fethiye Hanım",
+      "role": {
+        "tr": "1911 onarımına katkı veren; hazirede medfun",
+        "en": "Contributor to the 1911 renovation; buried in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1475",
+      "year": 1475,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İnşa edildi",
+        "en": "Built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1803",
+      "year": 1803,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangın; Şerife Nefîse Hanım kısmen onardı, minare şerefeden yukarısı yeniden yapıldı",
+        "en": "Fire; partly repaired by Şerife Nefise Hanım, minaret above the balcony rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük depremde yıkıldı, uzun süre harap kaldı",
+        "en": "Destroyed in the great earthquake and left in ruins for a long time"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1911",
+      "year": 1911,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Büyük çaplı onarım (Fethiye Hanım ve mahalle halkı)",
+        "en": "Large-scale renovation (Fethiye Hanım and local residents)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "237"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-molla-fenari-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Ahmed Paşa'nın atası Molla Fenârî, Molla Fenârî Camii Haziresi'nde medfundur; Ahmed Paşa da rivayete göre oraya defnedilmiştir (aile bağı).",
+        "en": "Ahmed Pasha's ancestor Molla Fenârî is buried in the Molla Fenârî Mosque Graveyard, where Ahmed Pasha is also reported to be buried (family link)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "236-237"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ahmet Paşa Camii, Ahmetpaşa Mahallesi'nde, dikdörtgen planlı, tuğla ve taş örgülü, ahşap çatısı yerli kiremitle kaplı bir yapıdır. Kapının üstünde bir mahfil, altında iki yanda maksureler bulunur. Yapı büyük ölçüde yenilenmiştir; yalnızca mihraptaki iki sıra mukarnas ilk dönemden kalma görünür. Batı tarafında Fethiye Hanım'ın ve dergâh şeyhlerinin mezarlarının bulunduğu bir hazire vardır.",
+      "en": "Ahmet Pasha Mosque in Ahmetpaşa Neighborhood is a rectangular building of brick and stone with a timber roof covered in local tiles. Above the door is a gallery, with maqsura areas on both sides below. The building has been largely renewed; only two rows of muqarnas in the mihrab appear to be from the first period. To the west is a graveyard with the graves of Fethiye Hanım and lodge sheikhs."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

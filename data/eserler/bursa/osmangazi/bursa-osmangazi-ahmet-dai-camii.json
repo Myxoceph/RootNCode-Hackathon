@@ -1,0 +1,512 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ahmet-dai-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 233-235) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Ahmed Dâî'nin mezar yeri kitapta kesin değil; hazire bilgisi için ayrı kaynak aranmalı.",
+      "Camiye ait ayrı bir hazire bölümü kitapta yok.",
+      "Kitabenin Arapça metninin ilk üç satırdan sonrası kitapta aktarılmıyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Cami banisinin değil, mahalleye adını veren Ahmed Dâî'nin adıyla anılır; banisi Edincikli Yahşi Bey bin Hızır'dır (kitapta 'Hızıroğlu Yahşi Bey' ve 'Yahşi Bey bin Hızır' olarak geçer)."
+      },
+      {
+        "field": "inscriptions[insa-kitabesi]",
+        "note": "Kitap 'ilk üç satırında Tevbe Suresi 18. ayet' yer aldığını söylüyor; kalan satırlar aktarılmadığı için yalnızca ayet metni girildi. Türkçe metindeki satır sonu tireli 'ekâ-me' birleştirilerek 'ekâme' yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ahmet Dâî Camii",
+    "en": "Ahmet Dâî Mosque"
+  },
+  "subtitle": {
+    "tr": "Yahşi Bey'in 1471'de yaptırdığı, kitabeli cami",
+    "en": "Mosque built by Yahşi Bey in 1471, with its inscription"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kitabeli",
+    "tek kubbeli",
+    "baklavalı kuşak",
+    "mukarnaslı mihrap",
+    "Fatih dönemi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kayhan",
+    "address": "Yeni Cumhuriyet Caddesi, No: 5B",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "233"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. Muharrem 876 / M. Temmuz 1471",
+      "en": "AH Muharram 876 / AD July 1471"
+    },
+    "start_year": 1471,
+    "end_year": 1471,
+    "hijri_year": 876,
+    "century": 15,
+    "basis": {
+      "tr": "İnşa kitabesindeki tarih.",
+      "en": "Date on the construction inscription."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "233-234"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Edincikli Hızıroğlu Yahşi Bey (Yahşi Bey bin Hızır)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "233-234"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Banî, mescit giderleri için 25.000 akçe vakfetmiş; paranın imam, müezzin ve kayyım ücretleri ile hasır döşeme ve kandil yağına harcanmasını şart koşmuştur.",
+      "en": "The founder donated 25,000 akçe for the mosque's expenses and stipulated that it be spent on the salaries of the imam, muezzin and trustee, and on mat flooring and lamp oil."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "235"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Fatih Sultan Mehmed döneminde Edincikli Yahşi Bey'in H. 876 / M. 1471'de yaptırdığı, kitabesi günümüze ulaşan tek kubbeli cami. Banisinin değil, mahalleye adını veren Germiyanlı Ahmed Dâî'nin adıyla anılır.",
+    "en": "A single-domed mosque built in AH 876 / AD 1471 by Edincikli Yahşi Bey in the reign of Fâtih Sultan Mehmed, whose inscription survives. It is known not by its founder's name but by that of Ahmed Dâî of Germiyan, after whom the neighborhood is named."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Ahmet Dâî Camii, Osmangazi İlçesi, Kayhan Mahallesi, Yeni Cumhuriyet Caddesi, No: 5B'de yer almaktadır. Kitabesine göre cami, Fatih Sultan Mehmed döneminde Edincikli Hızıroğlu Yahşi Bey tarafından H. 876 / M. 1471 yılında inşa ettirilmiştir. Öncesinde kapısının üzerinde bulunan kitabe, tamirat sırasında kuzey yönündeki son cemaat yerinin kalkan duvarına yerleştirilmiştir.",
+        "en": "The mosque is located in Osmangazi District, Kayhan Neighborhood, on Yeni Cumhuriyet Street, No. 5B. According to its inscription, it was built by Edincikli Hızıroğlu Yahşi Bey in AH 876 / AD 1471 during the reign of Fâtih Sultan Mehmed. The inscription, previously above the door, was placed on the parapet wall of the northern narthex during repairs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "233"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe",
+        "en": "The Inscription"
+      },
+      "body": {
+        "tr": "Mermerden yapılmış, celî sülüs hatla ve girift istif tekniğiyle Arapça yazılmış 90 × 57 cm ebadındaki kitabede, caminin Edincikli Yahşi Bey bin Hızır tarafından inşa ettirildiği açıkça belirtilmektedir. (H. Muharrem 876 / M. Temmuz 1471) tarihli kitabenin ilk üç satırında Tevbe Suresi'nin 18. ayeti yer almaktadır.",
+        "en": "Made of marble and written in Arabic in Jeli Thuluth calligraphy with an intricate stacking technique, the 90 × 57 cm inscription clearly states that the mosque was built by Edincikli Yahşi Bey bin Hızır. The first three lines of the inscription, dated Muharram AH 876 / July AD 1471, contain verse 18 of Surah al-Tawbah."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "234"
+        }
+      ]
+    },
+    {
+      "id": "ahmed-dai",
+      "order": 3,
+      "title": {
+        "tr": "Ahmed Dâî",
+        "en": "Ahmed Dâî"
+      },
+      "body": {
+        "tr": "Ahmet Dâî Camii, banisinin adıyla değil, mahalleye adını veren Ahmed Dâî ismiyle bilinmektedir. Ahmed Dâî aslen Germiyanlıdır; I. Murad, Germiyan Beyi II. Yakub, Yıldırım Bâyezid'in oğlu Emir Süleyman ve II. Murad dönemlerinde yaşamış, H. 824 / M. 1421'den sonra Bursa'da vefat etmiştir. Mezarının yeri tam olarak bilinmemekle birlikte, adıyla anılan caminin haziresine defnedildiğine dair rivayetler bulunmaktadır.",
+        "en": "The mosque is known by the name of Ahmed Dâî, after whom the neighborhood is named, not by its founder's name. Ahmed Dâî was originally from Germiyan; he lived under Murad I, the Germiyan ruler Yakub II, Yıldırım Bayezid's son Emir Süleyman and Murad II, and died in Bursa after AH 824 / AD 1421. The exact location of his grave is unknown, but there are accounts that he was buried in the graveyard of the mosque bearing his name."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "234"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami, tek kubbeli asıl ibadet alanı ve kuzey yönündeki son cemaat yeri olmak üzere iki bölümden oluşur. Son cemaat mahalli 4,47 m derinliğindedir; tek kubbesi yerden 5,55 m yüksekteki baklavalı kuşağa oturur. Mekân altı alt ve dört üst olmak üzere on pencere ile aydınlanır; güney duvarındaki iki pencere kapatılıp dolap yapılmıştır. Revakın iki ucu beşik tonoz, ortası dairevî tonozla örtülüdür. Cephe iki sıra tuğla ve bir sıra kesme taşla işlenmiş, yan cepheler moloz taştan sade yapılmıştır. Kubbe dıştan sekizgen kasnaklı ve kurşun kaplıdır; içte büyük baklava motifli kuşak aktarmalarla sağlamlaştırılmıştır.",
+        "en": "The mosque has two parts: a single-domed prayer hall and a narthex to the north. The narthex is 4.47 m deep, and the single dome sits on a diamond-patterned band 5.55 m above the ground. Ten windows (six lower, four upper) light the space; two windows on the south wall were closed and turned into a cupboard. The portico is covered with barrel vaults at the ends and a circular vault in the middle. The façade is of two rows of brick and one of cut stone; the side façades are plain rubble. The dome has an octagonal drum outside and a lead covering; inside, the band with large lozenge motifs is reinforced with supports carrying the dome."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "234-235"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minare",
+      "order": 5,
+      "title": {
+        "tr": "Mihrap ve Minare",
+        "en": "Mihrab and Minaret"
+      },
+      "body": {
+        "tr": "Yarım daire kesitli mihrap nişi dokuz sıra mukarnastan oluşur. Dikdörtgen çerçeveli, dış köşeliklerinde sütunçeleri bulunan mihrap kalın yağlı boya ile kaplanmış ve üzerine kalem işiyle \"Âyetü'l-Kürsî\" yazılmıştır. Caminin doğusundaki duvara bitişik minareye son cemaat mahallinden girilir. Dairevî tuğlalarla örülen gövde 24 dilimlidir; kaide tuğla taş, küp biçimli bir dilim mermer ve bir sıra tuğla ile süslenmiştir. Şerefeden yukarısı bir dönem yıkılmışsa da aslına uygun yeniden tamamlanmıştır.",
+        "en": "The semicircular mihrab niche is formed of nine rows of muqarnas. The rectangular-framed mihrab, with colonettes at its outer corners, is coated with thick oil paint and bears hand-painted \"Ayat al-Kursi\". The minaret, attached to the east wall, is entered from the narthex. Its shaft, of circular bricks, has 24 segments; its base is decorated with brick-stone, a cube-shaped slice of marble and a row of bricks. The part above the balcony was destroyed for a time but rebuilt in accordance with the original."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 6,
+      "title": {
+        "tr": "Vakıf",
+        "en": "Endowment"
+      },
+      "body": {
+        "tr": "Belgelerde yer alan bilgilere göre caminin banisi, mescidin giderlerini karşılamak amacıyla 25.000 akçe vakfetmiş ve bu paranın cami imamı, müezzin ve kayyımın ücretleri ile hasır döşeme ve kandil yağına harcanmasını şart koşmuştur.",
+        "en": "According to the documents, the founder donated 25,000 akçe to cover the mosque's expenses and stipulated that it be spent on the salaries of the imam, muezzin and trustee, and on mat flooring and lamp oil."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 7,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Pek çok kez onarılan cami, 1953 yılında Bursa Eski Eserleri Sevenler Kurumu tarafından aslına uygun şekilde tamir edilmiştir. En son 2006 yılında Vakıflar Bölge Müdürlüğü tarafından restore edilmiştir ve hâlen ibadete açıktır.",
+        "en": "Repaired many times, the mosque was restored faithfully by the Bursa Association for the Appreciation of Antiquities in 1953 and last restored by the Regional Directorate of Foundations in 2006. It is still open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "ahmed-dai-mezari",
+      "title": {
+        "tr": "Ahmed Dâî'nin mezarı",
+        "en": "The grave of Ahmed Dâî"
+      },
+      "body": {
+        "tr": "Ahmed Dâî'nin mezarının yeri tam bilinmemekle birlikte, adıyla anılan caminin haziresine defnedildiğine dair rivayetler vardır.",
+        "en": "The exact location of Ahmed Dâî's grave is unknown, but there are accounts that he was buried in the graveyard of the mosque bearing his name."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "234"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kitabe_olcusu",
+      "label": {
+        "tr": "Kitabe ebadı",
+        "en": "Inscription size"
+      },
+      "value": "90 × 57",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "234"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 4.47,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "key": "kusak_yuksekligi",
+      "label": {
+        "tr": "Baklavalı kuşağın yerden yüksekliği",
+        "en": "Height of lozenge band above ground"
+      },
+      "value": 5.55,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ],
+      "note": {
+        "tr": "Altı alt, dört üst; güneydeki ikisi kapatılıp dolap yapılmıştır.",
+        "en": "Six lower, four upper; two on the south were closed and made into a cupboard."
+      }
+    },
+    {
+      "key": "mukarnas_sirasi",
+      "label": {
+        "tr": "Mihrap mukarnas sırası",
+        "en": "Muqarnas rows in mihrab"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "key": "minare_dilim",
+      "label": {
+        "tr": "Minare gövde dilim sayısı",
+        "en": "Minaret shaft segments"
+      },
+      "value": 24,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "key": "vakif_akce",
+      "label": {
+        "tr": "Vakfedilen para",
+        "en": "Endowed sum"
+      },
+      "value": 25000,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Edincikli Hızıroğlu Yahşi Bey (Yahşi Bey bin Hızır)",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Ahmed Dâî",
+      "role": {
+        "tr": "Germiyanlı; mahalleye ve camiye adını veren kişi (H. 824 / M. 1421'den sonra vefat)",
+        "en": "From Germiyan; namesake of the neighborhood and mosque (d. after AH 824 / AD 1421)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Kuzeydeki son cemaat yerinin kalkan duvarında (önceden kapı üstünde); mermer, 90 × 57 cm",
+        "en": "On the parapet wall of the north narthex (formerly above the door); marble, 90 × 57 cm"
+      },
+      "language": "ar",
+      "script": "celî sülüs, girift istif",
+      "transliteration": "İnnemâ ya‘muru mesâcidallâhi men âmene billâhi ve-l-yevmi-l-âhiri ve ekâme-s-salâte ve âte-z-zekâte ve lem yakhşa illâllâh, fe’asâ ulâike en yekûnû mine-l-muhtedîn.",
+      "translation": {
+        "tr": "Allah’ın mescitlerini ancak Allah’a ve ahiret gününe iman eden, namazı dosdoğru kılan, zekâtı veren ve Allah’tan başka kimseden korkmayan kimseler imar eder. İşte doğru yola erenlerden olmaları umulanlar bunlardır.",
+        "en": "Only those shall maintain the mosques of Allah who believe in Allah and the Last Day, establish prayer, give zakat, and fear none but Allah. It is they who are expected to be among the rightly guided."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 876,
+        "gregorian": "Temmuz 1471"
+      },
+      "note": {
+        "tr": "Tevbe Suresi 18. ayet; kitabe Yahşi Bey bin Hızır'ın yaptırdığını belirtir.",
+        "en": "Surah al-Tawbah, verse 18; the inscription names Yahşi Bey bin Hızır as the builder."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "234"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1471",
+      "year": 1471,
+      "date": null,
+      "hijri": "Muharrem 876",
+      "type": "construction",
+      "title": {
+        "tr": "İnşa edildi (kitabe)",
+        "en": "Built (per inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "233-234"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1953",
+      "year": 1953,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu aslına uygun onarım",
+        "en": "Faithful restoration by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü restorasyonu",
+        "en": "Restoration by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "235"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ahmet Dâî Camii, Kayhan Mahallesi'nde, tek kubbeli küçük bir yapıdır. Kuzeyde bir son cemaat yeri, cephede iki sıra tuğla ve bir sıra kesme taş örgü görülür; yan cepheler sade moloz taştır. Kubbe sekizgen kasnak üzerinde, kurşun kaplıdır. Son cemaat yerinin kalkan duvarında mermer bir kitabe levhası bulunur. Doğudaki tuğla minareye son cemaat yerinden girilir.",
+      "en": "Ahmet Dâî Mosque in Kayhan Neighborhood is a small single-domed building. To the north is a narthex; the façade shows two rows of brick and one of cut stone, while the side façades are plain rubble. The dome sits on an octagonal drum and is lead-covered. A marble inscription plaque is set in the narthex parapet wall. The brick minaret to the east is entered from the narthex."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

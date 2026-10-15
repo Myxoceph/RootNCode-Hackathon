@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-arap-mehmet-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 261) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kesin inşa yılı kitapta yok ('1490'dan önce'); banînin kimliği ve vakfı bilinmiyor.",
+      "Minare hakkında kitapta bilgi yok.",
+      "Araplar Camii ile aynı banî olup olmadığı doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "'Arap Mehmet Camii' (s. 261) ve 'Araplar Camii' (s. 262-263) aynı 'Arap Mehmed' ile ilişkilendirilebilir; kitap açıkça belirtmediği için yalnızca 'probable' ilişki kuruldu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Arap Mehmet Camii",
+    "en": "Arap Mehmet Mosque"
+  },
+  "subtitle": {
+    "tr": "1490 öncesi, kare planlı tek kubbeli cami",
+    "en": "A square-plan single-domed mosque predating 1490"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kare planlı",
+    "tek kubbe",
+    "1855 depremi",
+    "1858 onarımı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tahtakale",
+    "address": "Tahtakale Mahallesi, İnebey Caddesi, 10. Ara Sokak No: 7",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "261"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1490 öncesi",
+      "en": "Before 1490"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap camiyi '1490 yılından önce' Arap Mehmed'in yaptırdığını söyler; kesin yıl yok.",
+      "en": "The book says it was built by Arap Mehmed before 1490; no exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "261"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Arap Mehmed",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "261"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Arap Mehmed'in 1490'dan önce yaptırdığı, kare planlı, tek kubbeli, üç gözlü son cemaat yerli cami; giriş kapısı üzerindeki H. 1275 / M. 1858 tarihi 1855 depremi sonrası onarımı gösterir.",
+    "en": "A square-plan, single-domed mosque with a three-bay narthex built by Arap Mehmed before 1490; the AH 1275 / AD 1858 date over the door suggests repair after the 1855 earthquake."
+  },
+  "sections": [
+    {
+      "id": "plan",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve Pencereler",
+        "en": "Plan and Windows"
+      },
+      "body": {
+        "tr": "Kare planlı yapının iç ölçüleri 8,65 × 8,65 m'dir. Kuzeyinde 3,90 m derinliğinde, ortası kubbeli, yanları tonozlu üç gözlü son cemaat yeri bulunur. Dört cephedeki ikişer alt pencere dıştan demir parmaklıklı, mermer sövelidir ve tuğla örgülü çift merkezli kemerler içindedir; içeride yuvarlak kemerlidir. Üst sıra pencereler sivri kemerli ve alçı şebekelidir. Harim toplam 18 pencereyle aydınlanır.",
+        "en": "The square building measures 8.65 × 8.65 m inside. To the north is a three-bay narthex 3.90 m deep, domed in the middle and vaulted at the sides. The two lower windows on each of the four façades have outer iron grilles, marble frames and double-centered brick arches; inside they are round-arched. Upper windows are pointed-arched with plaster grilles. The hall is lit by 18 windows in all."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "duvar-ortu",
+      "order": 2,
+      "title": {
+        "tr": "Duvarlar ve Örtü",
+        "en": "Walls and Roof"
+      },
+      "body": {
+        "tr": "Duvarlar iki sıra tuğla ve iki sıra moloz taşla örülmüştür; bazı bölümlerde aralara tek dikey tuğlalar konmuştur. Kubbe kurşun kaplıdır ve iki sıra kirpi saçakla sonlanır.",
+        "en": "The walls are built with two rows of brick and two rows of rubble stone; in some places single vertical bricks are set between. The dome is lead-covered and ends in a two-row sawtooth cornice."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 3,
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "body": {
+        "tr": "Harim giriş kapısı üzerinde sulu boyayla H. 1275 / M. 1858 tarihi yazılıdır. Bu tarih muhtemelen yapının 1855 depreminde büyük hasar gördüğünü ve sonra onarıldığını gösterir. Cami bakımlı ve ibadete açıktır.",
+        "en": "The date AH 1275 / AD 1858 is written in watercolor over the hall entrance door. It probably indicates the building was badly damaged in the 1855 earthquake and repaired afterwards. The mosque is well maintained and open for worship."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "Harim iç ölçüsü",
+        "en": "Interior dimensions"
+      },
+      "value": "8,65 × 8,65",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3.9,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "key": "pencere",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Hall window count"
+      },
+      "value": 18,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Arap Mehmed",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1858",
+      "year": 1858,
+      "date": null,
+      "hijri": "1275",
+      "type": "repair",
+      "title": {
+        "tr": "Kapı üzerindeki tarih (H. 1275 / M. 1858): deprem sonrası onarım olasılığı",
+        "en": "Date over the door (AH 1275 / AD 1858): probable post-earthquake repair"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde büyük hasar görmüş olması muhtemel",
+        "en": "Probably badly damaged in the 1855 earthquake"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kapi-tarihi",
+      "title": {
+        "tr": "Sulu boya tarih",
+        "en": "Watercolor date"
+      },
+      "hint": {
+        "tr": "Harim kapısının üzerindeki sulu boyayla yazılmış 1858 tarihine bakın.",
+        "en": "Look at the watercolor 1858 date above the hall door."
+      },
+      "section_id": "onarim"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-araplar-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Araplar Camii'ni yaptıran tüccar da 'Arap Mehmed' olarak anılır ve 1490 öncesinde yaşamıştır; kitap iki camiyi açıkça aynı kişiye bağlamaz.",
+        "en": "The merchant who built the Araplar Mosque is also called 'Arap Mehmed' and lived before 1490; the book does not explicitly tie the two mosques to the same person."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "263"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, tek kubbeli bir camidir; kubbe kurşunla kaplıdır. Kuzeyinde üç gözlü bir son cemaat yeri vardır. Duvarlar iki sıra tuğla ve iki sıra moloz taşla örülmüştür; dört cephede alt ve üst sıra pencereler bulunur.",
+      "en": "A square-plan single-domed mosque with a lead-covered dome. A three-bay narthex lies to its north. The walls are of alternating brick and rubble stone, with lower and upper windows on all four façades."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

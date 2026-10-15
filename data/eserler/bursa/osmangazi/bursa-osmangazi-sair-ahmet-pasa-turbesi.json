@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sair-ahmet-pasa-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin yapım yılı kitapta ayrıca verilmiyor; 902/1497 kitabenin ebced tarihi (şairin vefatı).",
+      "Giriş kitabesinin dil kodu kitaba göre Arapça; aruz kalıbı belirtilmiş.",
+      "Mimar kitapta belirtilmiyor (architect: null).",
+      "Medrese müzesinin adı/işletmecisi ve ziyaret bilgileri kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[giris-kitabesi]",
+        "note": "Metin 'Geçdi meded şâir-i Rûm' ifadesinin ebced hesabıyla H. 902 / M. 1497’yi verdiğini söylüyor; ancak basılı kitabe metninde bu ifade yer almıyor (son mısra “İnne fi’l-cennâti me’vâ rûhihî”). Hangi ifadenin tarihi verdiği net değil; kitaptaki iki ifade de aynen aktarıldı."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap 902/1497’yi hem kitabenin tarihi hem şairin vefat yılı olarak veriyor; türbenin yapım tarihi olarak ayrıca belirtmiyor. Bu yüzden 'probable' işaretlendi."
+      },
+      {
+        "field": "inscriptions[giris-kitabesi]",
+        "note": "Kitabe yazarı yalnızca Hoca Sâdeddin Efendi’ye atfen verilmiş; başka bir doğrulama yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şair Ahmet Paşa Türbesi",
+    "en": "Şair Ahmet Paşa Tomb"
+  },
+  "subtitle": {
+    "tr": "Ahmet Paşa (Geyikli) Medresesi bahçesindeki altıgen planlı türbe",
+    "en": "Hexagonal tomb in the garden of the Ahmet Paşa (Geyikli) Madrasa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şair Gedik Ahmet Paşa Türbesi",
+      "en": "Poet Gedik Ahmet Paşa Tomb",
+      "note": "Kitaptaki bölüm başlığı “Şair (Gedik) Ahmet Paşa Türbesi”"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Şair Ahmed Paşa",
+    "Geyikli Medrese",
+    "Fâtih Sultan Mehmed",
+    "altıgen plan",
+    "ebced kitabe",
+    "Beşikçiler Caddesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye Mahallesi",
+    "address": "Beşikçiler Caddesi No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "536"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 902 / M. 1497 (kitabedeki ebced tarihi)",
+      "en": "AH 902 / AD 1497 (abjad date in the inscription)"
+    },
+    "start_year": 1497,
+    "end_year": 1497,
+    "hijri_year": 902,
+    "century": 15,
+    "basis": {
+      "tr": "Giriş kitabesinin son mısraı ebced hesabıyla H. 902 / M. 1497’yi verir ve kitap bunu şairin vefat yılı olarak açıklar; türbenin yapım yılı ayrıca belirtilmiyor.",
+      "en": "The last verse of the entrance inscription gives AH 902 / AD 1497 in abjad, which the book explains as the poet’s death year; the construction year of the tomb is not stated separately."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "536-538"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Veliyyüddinzâde Şair Ahmed Paşa",
+    "role": "banî (medrese ile birlikte)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "536"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Ezine’nin Geyikli köyü Ahmet Paşa Medresesi’ne vakfedilmiştir; bu nedenle yapı halk arasında “Geyikli Medrese” olarak anılmıştır.",
+      "en": "The village of Geyikli in Ezine was endowed to the madrasa, hence the building was popularly known as the “Geyikli Madrasa”."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "536"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Fâtih Sultan Mehmed’in iltifatına mazhar olan Veliyyüddinzâde Şair Ahmed Paşa’nın, Ahmet Paşa (Geyikli) Medresesi ile birlikte yaptırdığı altıgen planlı türbe. Girişindeki ebced kitabe H. 902 / M. 1497’yi verir; içinde yalnızca Ahmed Paşa’nın sandukası vardır.",
+    "en": "Hexagonal tomb built by Veliyyüddinzâde Şair Ahmed Paşa, favored by Fâtih Sultan Mehmed, together with the Ahmet Paşa (Geyikli) Madrasa. The abjad inscription at its entrance gives AH 902 / AD 1497; it holds only Ahmed Paşa’s sarcophagus."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Türbe Osmangazi ilçesi, Muradiye Mahallesi, Beşikçiler Caddesi No: 2’dedir. İçinde bulunduğu Ahmet Paşa Medresesi (diğer adıyla Geyikli Medrese) ile birlikte Fâtih Sultan Mehmed’in iltifatına mazhar olmuş Veliyyüddinzâde Şair Ahmed Paşa tarafından yaptırılmıştır. Ezine’nin Geyikli köyü medreseye vakfedildiği için yapı halk arasında “Geyikli Medrese” diye anılmıştır.",
+        "en": "The tomb is at Beşikçiler Street No. 2, Muradiye Neighborhood, Osmangazi District. Together with the Ahmet Paşa Madrasa (also known as the Geyikli Madrasa) in which it stands, it was built by Veliyyüddinzâde Şair Ahmed Paşa, who was favored by Fâtih Sultan Mehmed. Because the village of Geyikli in Ezine was dedicated to the madrasa, the building was popularly called the “Geyikli Madrasa”."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "536"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 2,
+      "title": {
+        "tr": "Giriş kitabesi",
+        "en": "Entrance inscription"
+      },
+      "body": {
+        "tr": "Türbenin girişindeki kitabe Hoca Sâdeddin Efendi’ye göre Eflatunzâde Derviş Mehmed Efendi tarafından yazılmıştır. 42 × 103 cm ölçülerindeki kitabe Arapça ve aruz kalıbıyla yazılmıştır; son mısra ebced hesabıyla H. 902 / M. 1497 tarihini verir. Kitap, bu tarihin şairin vefat yılına işaret ettiğini söyler.",
+        "en": "According to Hoca Sâdeddin Efendi, the inscription at the entrance of the tomb was written by Eflatunzâde Dervish Mehmed Efendi. Measuring 42 × 103 cm, it is in Arabic and the aruz meter; the last verse gives the date AH 902 / AD 1497 in abjad. The book says this date refers to the poet’s death year."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "536-538"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe altıgen planlıdır. Duvarları doğusundaki medreseyle aynı sistemde taş ve tuğla almaşık örülmüştür; köşelerde plasterler görülür. Girişi küçük bir eyvan içine alınmıştır. Her cephede altlı üstlü beşer pencere vardır. İçinde yalnızca Ahmed Paşa’ya ait bir sanduka bulunur.",
+        "en": "The tomb has a hexagonal plan. Its walls are laid in alternating stone and brick in the same system as the madrasa to its east, with pilasters at the corners. The entrance is enclosed in a small iwan. There are five windows on each façade, one above the other. Inside there is only one sarcophagus, belonging to Ahmed Paşa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "538"
+        }
+      ]
+    },
+    {
+      "id": "bugun",
+      "order": 4,
+      "title": {
+        "tr": "Bugünkü durum",
+        "en": "Present condition"
+      },
+      "body": {
+        "tr": "Günümüzde müze olarak kullanılan medresenin bahçesinde yer alan türbe bakımlı durumdadır ve ziyarete açıktır.",
+        "en": "The tomb, in the garden of the madrasa now used as a museum, is well maintained and open to visitors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "538"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "altıgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "538"
+        }
+      ]
+    },
+    {
+      "key": "pencere_cephe",
+      "label": {
+        "tr": "Her cephedeki pencere sayısı",
+        "en": "Windows per façade"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "538"
+        }
+      ],
+      "note": {
+        "tr": "Altlı üstlü.",
+        "en": "One above the other."
+      }
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "538"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription size"
+      },
+      "value": "42 × 103",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "536"
+        }
+      ]
+    },
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Wall masonry"
+      },
+      "value": "taş ve tuğla almaşık",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "538"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Veliyyüddinzâde Şair Ahmed Paşa",
+      "role": {
+        "tr": "Türbe ve medresenin banisi; türbede medfun",
+        "en": "Founder of the tomb and madrasa; buried in the tomb"
+      }
+    },
+    {
+      "name": "Fâtih Sultan Mehmed",
+      "role": {
+        "tr": "Ahmed Paşa’ya iltifat eden sultan",
+        "en": "Sultan who favored Ahmed Paşa"
+      }
+    },
+    {
+      "name": "Eflatunzâde Derviş Mehmed Efendi",
+      "role": {
+        "tr": "Kitabeyi yazdığı söylenen kişi (Hoca Sâdeddin Efendi’ye göre)",
+        "en": "Said to have written the inscription (according to Hoca Sâdeddin Efendi)"
+      }
+    },
+    {
+      "name": "Hoca Sâdeddin Efendi",
+      "role": {
+        "tr": "Kitabenin yazarı konusunda kaynak gösterilen müellif",
+        "en": "Author cited as the source on the inscription’s writer"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Türbenin girişi",
+        "en": "Entrance of the tomb"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Hâzihî mişkâtu envârun li men\nAddehu’r-Rahmânu min memdûhihî\nFerrû min ednâsi tilke’d-dâri iz\nKâne müştaqan ilâ subbûhihî\nKâle Rûhu’l-Kudsi fî târîhihî\nİnne fi’l-cennâti me’vâ rûhihî H. 902",
+      "translation": {
+        "tr": "Bu, nurlar saçan bir kandildir,\nRahman’ın övdüğü kullarından biri içindir.\nDünyanın pisliklerinden kaçanlar içindir,\nZira o, arınmış olana (Allah’a) iştiyakla yönelmişti.\nRuhü’l-Kudüs onun tarihini şöyle söyledi:\nCennetlerde onun ruhuna bir barınak vardır. M. 1497",
+        "en": "This is a lamp that sheds light, for one of the servants whom the Most Merciful has praised. It is for those who flee from the filth of the world, because he turned with longing to the One who is pure (Allah). The Holy Spirit narrated its history as follows: There is a shelter for his soul in the heavens. AH 902 / AD 1497"
+      },
+      "author": "Eflatunzâde Derviş Mehmed Efendi (Hoca Sâdeddin Efendi’ye göre)",
+      "date": {
+        "hijri_year": 902,
+        "gregorian": "1497"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "536-538"
+        }
+      ],
+      "note": {
+        "tr": "42 × 103 cm; Arapça, aruz kalıbı. Kitap ayrıca “Geçdi meded şâir-i Rûm” ifadesinin ebced hesabıyla şairin vefat yılı H. 902 / M. 1497’yi verdiğini söyler.",
+        "en": "42 × 103 cm; Arabic, aruz meter. The book also says the phrase “Geçdi meded şâir-i Rûm” gives the poet’s death year AH 902 / AD 1497 by abjad."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kitabe-tarihi-1497",
+      "year": 1497,
+      "date": null,
+      "hijri": "902",
+      "type": "record",
+      "title": {
+        "tr": "Kitabenin ebced tarihi (kitaba göre şairin vefat yılı)",
+        "en": "Abjad date of the inscription (the poet’s death year, per the book)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "536-538"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-sair-ahmet-pasa-medresesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe, Ahmet Paşa (Geyikli) Medresesi’nin bahçesindedir ve medreseyle aynı duvar örgü sistemiyle (taş-tuğla almaşık) yapılmıştır.",
+        "en": "The tomb is in the garden of the Ahmet Paşa (Geyikli) Madrasa and uses the same masonry system (alternating stone and brick)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "536, 538"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sair-ahmet-pasa-medresesi",
+      "type": "same_founder",
+      "description": {
+        "tr": "Türbe ve medrese aynı banî Veliyyüddinzâde Şair Ahmed Paşa tarafından yaptırılmıştır; Ezine’nin Geyikli köyü medreseye vakfedilmiştir.",
+        "en": "Tomb and madrasa were built by the same founder, Veliyyüddinzâde Şair Ahmed Paşa; the village of Geyikli in Ezine was endowed to the madrasa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "536"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şair Ahmet Paşa Türbesi, bugün müze olarak kullanılan Ahmet Paşa (Geyikli) Medresesi’nin bahçesinde yer alan altıgen planlı bir yapıdır. Duvarları taş ve tuğla almaşık örülüdür, köşelerde plasterler vardır. Girişi küçük bir eyvanın içindedir; her cephede altlı üstlü beşer pencere bulunur. İçeride yalnızca Ahmed Paşa’nın sandukası vardır.",
+      "en": "Şair Ahmet Paşa Tomb is a hexagonal building in the garden of the Ahmet Paşa (Geyikli) Madrasa, now a museum. Its walls are of alternating stone and brick with corner pilasters. The entrance is within a small iwan; each façade has five windows, one above the other. Inside there is only Ahmed Paşa’s sarcophagus."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

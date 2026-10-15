@@ -1,0 +1,459 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-abdal-mehmet-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 226-227) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Camiyi yaptıran Başçı İbrahim hakkında kitapta başka bilgi yok.",
+      "Camiye ait vakıf bilgisi kitapta verilmemiş; vakfiye aranmalı.",
+      "Zaviyeden eser kalmadığı belirtiliyor; zaviyenin yeri/kaydı araştırılabilir.",
+      "Türbe için ayrı kayıt mevcut (bursa-osmangazi-abdal-mehmet-turbesi); aradaki bağ 'probable' girildi, teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap, caminin inşa kitabesi olmadığını; türbedeki H. Cemaziyelevvel 854 / M. Temmuz 1450 tarihinin yapının bu dönemde inşa edildiğini 'gösterdiğini' söylüyor. Tarih camiye değil türbeye ait olduğundan dolaylı çıkarım olarak 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Abdal Mehmet Camii",
+    "en": "Abdal Mehmed Mosque"
+  },
+  "subtitle": {
+    "tr": "Başçı İbrahim'in Abdal Mehmed adına yaptırdığı cami",
+    "en": "Mosque built in the name of Abdal Mehmed by Başçı İbrahim"
+  },
+  "alternate_names": [
+    {
+      "tr": "Abdal Mehmed Camii",
+      "en": "Abdal Mehmed Mosque",
+      "note": "Kitapta metin içinde bu yazımla da geçer"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "çift kubbeli",
+    "II. Murad dönemi",
+    "zaviye",
+    "Demirtaşpaşa",
+    "türbe ile birlikte"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tuzpazarı (Demirtaşpaşa)",
+    "address": "Tahal Caddesi, No: 28",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "226"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. Cemaziyelevvel 854 / M. Temmuz 1450 (türbedeki tarihe göre, II. Murad dönemi)",
+      "en": "AH Jumada al-Awwal 854 / AD July 1450 (by the date on the tomb; reign of Murad II)"
+    },
+    "start_year": 1450,
+    "end_year": 1450,
+    "hijri_year": 854,
+    "century": 15,
+    "basis": {
+      "tr": "Camide inşa kitabesi yoktur; türbede yer alan tarih yapının bu dönemde inşa edildiğini göstermektedir.",
+      "en": "The mosque has no construction inscription; the date on the tomb shows it was built in this period."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "226"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Başçı İbrahim (hayırsever)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "226"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sultan II. Murad döneminde Başçı İbrahim adlı hayırsever tarafından Abdal Mehmed adına yaptırılan, yan yana iki kubbeli ve üç kubbeli son cemaat yerli küçük bir Bursa camisi. Türbesiyle birlikte sağlam ve bakımlı durumdadır.",
+    "en": "A small Bursa mosque built in the name of Abdal Mehmed by a philanthropist named Başçı İbrahim during the reign of Sultan Murad II, with two adjoining domes and a three-domed narthex. It is well maintained together with its tomb."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Abdal Mehmed Camii, Osmangazi İlçesi, Tuzpazarı (Demirtaşpaşa) Mahallesi, Tahal Caddesi, No:28'de yer almaktadır. Cami, Sultan II. Murad döneminde Başçı İbrahim adlı bir hayırsever tarafından Abdal Mehmed adına inşa edilmiştir. Caminin inşa kitabesi bulunmamakla birlikte, türbede yer alan H. Cemaziyelevvel 854 / M. Temmuz 1450 tarihi, yapının bu dönemde inşa edildiğini göstermektedir.",
+        "en": "The mosque is located in Osmangazi District, Tuzpazarı (Demirtaşpaşa) Neighborhood, on Tahal Street, No. 28. It was built in the name of Abdal Mehmed by a philanthropist named Başçı İbrahim during the reign of Sultan Murad II. Although there is no construction inscription on the mosque, the date Jumada al-Awwal AH 854 / July AD 1450 on the tomb shows that the building was built during this period."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "226"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-yeri",
+      "order": 2,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "Caminin 5,36 m derinliğinde ve 17,47 m genişliğindeki son cemaat mahalli, iki yan duvar ve ortada yer alan yığma iki ayağın birbirine bağladığı, üç sivri kemerin belirlediği üç bölümden oluşmaktadır. Üstleri üç küçük kubbe ile örtülüdür. Ayaklar ve cepheler, iki sıra tuğla ve bir sıra kesme taş ile örülmüş, aralarda dikey ikişer tuğla kullanılmıştır.",
+        "en": "The narthex, 5.36 m deep and 17.47 m wide, consists of three sections defined by three pointed arches connected by two side walls and two masonry piers in the middle. They are covered with three small domes. The piers and façades are built with two rows of bricks and one row of cut stone, with two vertical bricks used in between."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "id": "ibadet-mekani",
+      "order": 3,
+      "title": {
+        "tr": "İbadet Mekânı",
+        "en": "Prayer Hall"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı ve yan yana iki kubbe üzerine inşa edilen cami, kapıdan mihraba 8,19 m, doğudan batıya ise 15,34 m ölçülerindedir. Her iki kubbeli hacmin güney duvarında beş, doğu ve batı duvarlarında beşer, arka duvarda ise birer pencere bulunmaktadır. Caminin iki kapısının üstüne birer pencere açılmış, doğudaki kapının üst kısmına müezzin mahfili yerleştirilmiştir. Ana mekân ortadaki sivri kemerle iki bölüme ayrılmıştır. Her iki kubbe kurşun kaplamadır.",
+        "en": "The mosque has a rectangular plan under two side-by-side domes and measures 8.19 m from door to mihrab and 15.34 m from east to west. There are five windows on the south wall of each domed section, five windows each on the east and west walls, and one on the rear wall. A window is opened above each of the two doors and the muezzin's platform is above the eastern door. The main space is divided in two by a central pointed arch. Both domes are covered with lead."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber",
+      "order": 4,
+      "title": {
+        "tr": "Mihrap, Minber ve Yazılar",
+        "en": "Mihrab, Minbar and Inscriptions"
+      },
+      "body": {
+        "tr": "Dar ve küçük çerçeveli mihrap, büyük sivri kemerin güneyindeki ayağa inşa edilmiştir. Çerçevesinde geometrik motifli kalem işleri ile \"Ayete'l-Kürsî\" yazılıdır. Duvarlarda levhalar halinde Âl-i İmrân Suresi'nin 37. ayeti yer almakta, ayrıca ta'lik hattıyla Esmâ-i şerif nakşedilmiştir. Minber ve ahşap kürsü oldukça sade bir işçilik göstermektedir.",
+        "en": "The narrow, small-framed mihrab is built on the pier south of the large pointed arch. Its frame bears \"Ayat al-Kursi\" in hand-painted work with geometric motifs. Verse 37 of Surah Al-i Imran is inscribed on the walls as plaques, and the Blessed Names of Allah are engraved in Ta'liq script. The minbar and wooden pulpit are very plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 5,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Caminin batı yönünde bulunan duvara bitişik minareye, son cemaat mahallinden çıkılmaktadır.",
+        "en": "The minaret adjacent to the west wall of the mosque is accessed from the narthex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 6,
+      "title": {
+        "tr": "Onarımlar ve Günümüz",
+        "en": "Repairs and Present Condition"
+      },
+      "body": {
+        "tr": "Pek çok kez tamir gören cami, 1955 yılında Bursa Eski Eserleri Sevenler Kurumu tarafından esaslı bir şekilde onarılmış, en son 2013 yılında yeniden tamir edilmiştir. Cami ve türbe günümüzde sağlam ve bakımlı bir durumdadır, ancak zaviyeden herhangi bir eser kalmamıştır.",
+        "en": "The mosque, repaired many times, was thoroughly repaired by the Bursa Association for the Appreciation of Antiques in 1955 and last repaired in 2013. The mosque and the tomb are in solid and well-maintained condition, but nothing remains of the zawiya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 5.36,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_genislik",
+      "label": {
+        "tr": "Son cemaat yeri genişliği",
+        "en": "Narthex width"
+      },
+      "value": 17.47,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "key": "kapidan_mihraba",
+      "label": {
+        "tr": "Kapıdan mihraba uzaklık",
+        "en": "Distance from door to mihrab"
+      },
+      "value": 8.19,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "key": "dogu_bati_olcusu",
+      "label": {
+        "tr": "Doğu-batı ölçüsü",
+        "en": "East-west dimension"
+      },
+      "value": 15.34,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Ana mekân kubbe sayısı",
+        "en": "Number of domes over prayer hall"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ],
+      "note": {
+        "tr": "Son cemaat yerinde ayrıca üç küçük kubbe vardır.",
+        "en": "The narthex additionally has three small domes."
+      }
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Başçı İbrahim",
+      "role": {
+        "tr": "Camiyi yaptıran hayırsever",
+        "en": "Philanthropist who built the mosque"
+      }
+    },
+    {
+      "name": "Abdal Mehmed",
+      "role": {
+        "tr": "Caminin adına yapıldığı kişi",
+        "en": "Person in whose name the mosque was built"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "ali-imran-37-levhalari",
+      "location": {
+        "tr": "Duvarlarda levhalar halinde",
+        "en": "On the walls, as plaques"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Küllemâ dehale aleyhâ Zekeriyya’l-mihrâb",
+      "translation": {
+        "tr": "Zekeriya ne zaman mihraba girse (Âl-i İmrân Suresi, 37. ayet)",
+        "en": "Whenever Zechariah enters the mihrab (Surah Al-i Imran, verse 37)"
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap yalnızca ayetin bu bölümünü aktarır; kitabe fotoğrafı ve tam metin yok.",
+        "en": "The book quotes only this part of the verse; no photograph or full text."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1450",
+      "year": 1450,
+      "date": null,
+      "hijri": "Cemaziyelevvel 854",
+      "type": "construction",
+      "title": {
+        "tr": "Türbedeki tarihe göre inşa (Sultan II. Murad dönemi)",
+        "en": "Built, by the date on the tomb (reign of Murad II)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "226"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından esaslı onarım",
+        "en": "Thorough repair by the Bursa Association for the Appreciation of Antiques"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "En son onarım",
+        "en": "Most recent repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "227"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-abdal-mehmet-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kitap 'cami ve türbe'den birlikte söz eder; tarih türbeden alınmıştır.",
+        "en": "The book speaks of the mosque and the tomb together; the date is taken from the tomb."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "226-227"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Abdal Mehmet Camii, Tuzpazarı Mahallesi'nde, yan yana iki kubbeli dikdörtgen bir yapıdır. Önünde üç sivri kemerli ve üç küçük kubbeli geniş bir son cemaat yeri bulunur; ayaklar ve cepheler iki sıra tuğla ve bir sıra kesme taştan örülmüştür. İçeride ortadaki sivri kemer mekânı ikiye böler, kubbeler kurşun kaplıdır. Batı duvarına bitişik minareye son cemaat yerinden çıkılır.",
+      "en": "Abdal Mehmed Mosque in Tuzpazarı is a rectangular building under two adjoining domes. In front is a wide narthex with three pointed arches and three small domes; piers and façades are built of two rows of brick and one of cut stone. Inside, a central pointed arch divides the space in two, and the domes are lead-covered. The minaret against the west wall is entered from the narthex."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}
