@@ -35,6 +35,7 @@ src/
     +html.tsx             # web HTML kabuğu (lang="tr", zoom açık)
     +not-found.tsx
     (tabs)/               # Keşfet /, Eserler /monuments, Rota /route, Ayarlar /settings
+      monuments/          # kendi Stack'i: liste (index) → detay ([slug], ör. /monuments/selimiye-camii)
   components/
   data/                   # veri kaynağı soyutlaması ve hook'lar (bkz. Veri)
   theme/                  # geçici renk rolleri (K3 gelince değişecek), yazı tipi dosyaları

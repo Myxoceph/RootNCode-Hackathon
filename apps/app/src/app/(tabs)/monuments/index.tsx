@@ -2,11 +2,11 @@ import { spacing, typography } from "@vagabonds/ui";
 import Head from "expo-router/head";
 import { FlatList, StyleSheet, Text } from "react-native";
 
+import { MonumentCard } from "@/components/monument-card";
 import { ResourceView } from "@/components/resource-view";
 import { useMonuments } from "@/data";
 import { useColors } from "@/theme";
 
-/** Eserler: the monument list. Cards and the detail screen come with Y4. */
 export default function MonumentsScreen() {
   const c = useColors();
   const monuments = useMonuments();
@@ -24,11 +24,13 @@ export default function MonumentsScreen() {
             style={{ backgroundColor: c.background }}
             contentContainerStyle={styles.list}
             contentInsetAdjustmentBehavior="automatic"
-            renderItem={({ item }) => (
-              <Text style={[typography.bodyLarge, { color: c.text }]}>
-                {item.name} · {item.city}
-              </Text>
-            )}
+            ListHeaderComponent={
+              <Text style={[typography.body, { color: c.textSecondary }]}>{data.length} eser</Text>
+            }
+            ListEmptyComponent={
+              <Text style={[typography.body, { color: c.textSecondary }]}>Henüz gösterilecek eser yok.</Text>
+            }
+            renderItem={({ item }) => <MonumentCard monument={item} />}
           />
         )}
       </ResourceView>
@@ -38,7 +40,7 @@ export default function MonumentsScreen() {
 
 const styles = StyleSheet.create({
   list: {
-    padding: spacing.xl,
+    padding: spacing.lg,
     gap: spacing.md,
   },
 });
