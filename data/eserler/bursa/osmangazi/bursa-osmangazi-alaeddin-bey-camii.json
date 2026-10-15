@@ -1,0 +1,636 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-alaeddin-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 243-247) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Kale içinde Kaplıca Kapısı yakınındaki Alâeddin Bey mescidinin yeri belirlenememiş; kayıt oluşturulamadı.",
+      "Caminin batısındaki hamamdan söz ediliyor ama adı yok; kayıt bağlanamadı.",
+      "Minberin getirildiği Bursa Mevlevihanesi için hedef kayıt/ilçe kitapta yok.",
+      "Çatalburgaz ve Fodra (Alâeddinbey Köyü) köyleri için ilçe/il bilgisi kitapta yok.",
+      "Levhadaki yazının tam metni kitapta aktarılmıyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[ic_olcu]",
+        "note": "Kitap iç mekânı '8 × 13 m ölçülerinde kare planlı' olarak veriyor; 8 × 13 m kare değildir. Ölçü ve plan tanımı çelişkili olduğundan ikisi de aktarıldı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "dating",
+        "note": "Kapı üstündeki H. 1306 / M. 1888-89 tarihli levha ilk inşayı H. 726 / M. 1326, ikinci inşayı H. 1278 / M. 1861-62 olarak veriyor. Kitap ayrıca H. 733 / M. 1332-33 vakfiyesini 'Bursa'nın 1326'daki fethinden kısa süre sonra' yapıldığının kanıtı sayıyor. İnşa kitabesi yok; ilk inşa tarihi 1888-89 tarihli bir levhaya dayanıyor, bu yüzden 'probable' işaretlendi."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Erken kaynaklar Alâeddin Bey'in 'Bursa Hisarı içinde' bir mescit yaptırdığını söylüyor; bu cami mahallede olduğu için kitap bu mescidin o mescit olup olmadığını açıkça belirtmiyor. Ayrıca kitap kale içindeki Kaplıca Kapısı yakınında ikinci bir Alâeddin Bey mescidinden söz ediyor."
+      },
+      {
+        "field": "timeline[onarim-1861]",
+        "note": "Onarım yılı bir yerde 'H. 1278 / M. 1861-62', bir yerde 'H. 1278 / M. 1861' olarak veriliyor; tutarsızlık yıl yuvarlamasından kaynaklanıyor olabilir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Alâeddin Bey Camii",
+    "en": "Alâeddin Bey Mosque"
+  },
+  "subtitle": {
+    "tr": "Bursa'da Türk hâkimiyetinin ilk eseri sayılan cami ve haziresi",
+    "en": "Mosque regarded as the first work of Turkish rule in Bursa, with its graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Alâeddin Bey Mescidi",
+      "en": "Alâeddin Bey Masjid"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Osman Gazi'nin oğlu",
+    "1326",
+    "ilk Osmanlı camisi",
+    "devşirme başlık",
+    "1855 depremi",
+    "hazire"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alâeddin Bey",
+    "address": "Alâeddin Bey Caddesi, No: 43",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "243"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk inşa H. 726 / M. 1326; ikinci inşa H. 1278 / M. 1861-62",
+      "en": "First construction AH 726 / AD 1326; second construction AH 1278 / AD 1861-62"
+    },
+    "start_year": 1326,
+    "end_year": 1326,
+    "hijri_year": 726,
+    "century": 14,
+    "basis": {
+      "tr": "İnşa kitabesi yoktur; kapı üstündeki H. 1306 / M. 1888-89 tarihli levha ve H. 733 / M. 1332-33 tarihli vakfiye kaydı.",
+      "en": "No construction inscription; a plaque dated AH 1306 / AD 1888-89 over the door and an endowment charter dated AH 733 / AD 1332-33."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "244, 247"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Alâeddin Bey (Osman Gazi'nin büyük oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "243-244, 247"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Alâeddin Bey vakfı",
+    "deed": {
+      "date_display": "H. 733 / M. 1332-33 (Bursa Vakfiye Defteri)",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Bursa Vakfiye Defteri'ndeki H. 733 / M. 1332-33 tarihli vakfiyede Çatalburgaz ve Fodra (Alâeddinbey Köyü) köyleri bu mescide vakfedilmiştir.",
+      "en": "In the endowment charter of AH 733 / AD 1332-33 in the Bursa Endowment Charter Register, the villages of Çatalburgaz and Fodra (Alâeddinbey Village) were endowed to this masjid."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "244"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Osman Gazi'nin büyük oğlu Alâeddin Bey'in, Bursa'nın fethinden kısa süre sonra (1326) yaptırdığı, şehrin bilinen ilk camisi sayılan yapı. 1855 depreminde son cemaat yeri yıkılmış, 1861-62 ve 1960 onarımlarıyla biçim değiştirmiş, 2016'da restore edilmiştir. Avlusunda 18. yüzyıla ait mezar taşlı bir hazire vardır.",
+    "en": "Regarded as the earliest known mosque of Bursa, built by Alâeddin Bey, eldest son of Osman Gazi, shortly after the conquest of the city (1326). Its narthex fell in the 1855 earthquake and the building was reshaped by repairs in 1861-62 and 1960, then restored in 2016. Its courtyard holds a graveyard of 18th-century gravestones."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Alâeddin Bey Camii, Osmangazi İlçesi, Alâeddin Bey Mahallesi, Alâeddin Bey Caddesi No:43'te yer almaktadır. Caminin bânîsi Alâeddin Bey'dir. Osman Gazi'nin büyük oğlu olmasından dolayı Bey veya Paşa unvanlarıyla anılmıştır. Babasının yerine geçmeyi kabul etmeyerek bu görevi küçük kardeşi Orhan Gazi'ye bırakmıştır.",
+        "en": "The mosque is located in Osmangazi District, Alâeddin Bey Neighborhood, on Alâeddin Bey Street No. 43. Its founder was Alâeddin Bey. As the eldest son of Osman Gazi he was known as Bey or Paşa. He refused to succeed his father and left this duty to his younger brother Orhan Gazi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "243"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe ve Kaynaklar",
+        "en": "History and Sources"
+      },
+      "body": {
+        "tr": "Âşıkpaşazâde ve Neşrî gibi erken dönem kaynakları, Osman Gazi'nin oğlu ve Orhan Bey'in kardeşi Alâeddin Bey'in Bursa Hisarı içinde bir mescit yaptırdığını ve evinin bu mescidin yanında bulunduğunu belirtir. Caminin inşa kitabesi yoktur; kapı üstüne siyah zemin üzerine yaldızlı celî sülüs hatla yazılmış H. 1306 / M. 1888-89 tarihli bir levhada yapının ilk inşasının H. 726 / M. 1326, ikinci inşasının ise H. 1278 / M. 1861-62 yıllarına ait olduğu ifade edilmektedir. Bursa Vakfiye Defteri'nde kayıtlı H. 733 / M. 1332-33 tarihli vakfiyede Çatalburgaz ve Fodra (Alâeddinbey Köyü) köylerinin bu mescide vakfedildiği belirtilir; bu bilgi mescidin Bursa'nın 1326'daki fethinden kısa bir süre sonra inşa edildiğini gösterir. Cami, Bursa'da Türk hâkimiyetinin ilk eseri ve işareti olarak özel bir değer taşır ve orijinal şekliyle korunması büyük önem arz eder. Caminin batısında bir hamam olduğu bilinir; kale içinde Kaplıca Kapısı'nın hemen iç tarafında Alâeddin Bey'in bir mescidi daha olduğu bilinmekle birlikte yeri bugün belirlenememektedir.",
+        "en": "Early sources such as Âşıkpaşazâde and Neşrî state that Alâeddin Bey, son of Osman Gazi and brother of Orhan Bey, had a small mosque built within Bursa Hisarı, with his house next to it. The mosque has no construction inscription, but a plaque dated AH 1306 / AD 1888-89, in gilded Jeli Thuluth on a black ground over the door, states that the first construction dates to AH 726 / AD 1326 and the second to AH 1278 / AD 1861-62. The endowment charter dated AH 733 / AD 1332-33 in the Bursa Endowment Charter Register records the villages of Çatalburgaz and Fodra (Alâeddinbey Village) endowed to this masjid, showing it was built shortly after the conquest of Bursa in 1326. It has special value as the first work and sign of Turkish rule in Bursa, so preserving it in its original form is of great importance. A bathhouse is known to have stood west of the mosque; another mosque of Alâeddin Bey is known just inside the castle near the Kaplıca Gate, but its location cannot be determined today."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244, 246"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami, üç kemerli bir son cemaat revakı, tek kubbeli sahın ve doğu tarafında bir minareden oluşur. İç mekân 8 × 13 m ölçülerinde kare planlı olarak verilir. Girişte dört sütunlu ve üç bölümlü bir son cemaat yeri vardır; revak sütunlarının başlıkları devşirme Bizans başlıklarıdır: yanlardakiler Bizans-İyon tipi, ortadakiler oymalı sepet biçimlidir. 1855 depreminden sonra alınlıklı olarak yeniden yapılan son cemaat yerinin alınlığı 1960 onarımında kaldırılmıştır; iki yan bölüm aynalı tonoz, orta bölüm küçük kubbe ile örtülüdür. Kasnaksız kubbeli harimin zemini zamanla yükseldiği için orijinal oranlar bozulmuştur. İçeride süsleme yoktur; kapı, mihrap ve diğer öğeler son derece sadedir. Minber Bursa Mevlevihanesi'nden getirilmiştir. Dış duvarlarda taşların çevresi tuğlalarla çerçevelenerek renkli bir görünüm sağlanmıştır. Yan cephelerde H. 1278 / M. 1861-62 onarımında değiştirilen pencerelerin tuğla kemer kalıntıları görülür; bu onarımda eklenen taş söveli yuvarlak kemerli pencereler cami üslubuna uymaz. Doğu duvarı büyük ölçüde değişmiş, batı duvarı eski özelliğini büyük oranda korumuştur.",
+        "en": "The mosque consists of a three-arched narthex portico, a single-domed prayer hall and a minaret on the east side. The interior is given as a square plan measuring 8 × 13 m. At the entrance is a three-bay narthex with four columns; the portico capitals are Byzantine spolia, Byzantine-Ionic at the sides and carved basket-form in the middle. The narthex, rebuilt with a pediment after the 1855 earthquake, lost the pediment in the 1960 repair; the two side sections have flattened barrel vaults and the middle a small dome. Because the floor of the drumless-domed prayer hall rose over time, the original proportions are distorted. There is no decoration inside; door, mihrab and other elements are extremely plain. The minbar was brought from the Bursa Mevlevi Lodge. On the exterior, stones are framed with bricks for a colorful look. The side façades show remains of brick arches of windows replaced in the AH 1278 / AD 1861-62 repair; the stone-framed round-arched windows added then do not suit the style. The east wall was greatly altered, the west wall largely retained its old features."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244-245"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare, son cemaat yerinin doğusunda duvara bitişik inşa edilmiştir; kaide ve kürsü kısmı son cemaat duvarına gömülüdür. Yuvarlak gövdeli tuğla minarenin şerefeye çıkışı tuğladan kaba mukarnaslarla sağlanır. Mukarnasların üst kenarından itibaren minarenin yenilendiği tahmin edilmektedir. Kaide ve küp kısmı taş, üst bölüm tuğladır. Gövde ve şerefe konsollarının orijinal olduğu düşünülmekte, petek ve külah yenidir. Bu kısımlar gerçekten orijinalse, ilk Osmanlı minarelerinden günümüze ulaşan ender örneklerden biri sayılabilir.",
+        "en": "The minaret is built adjacent to the wall east of the narthex, its base and pulpit embedded in the narthex wall. Access to the balcony of the round-bodied brick minaret is by rough brick muqarnas; it is presumed the minaret was renewed from the upper edge of the muqarnas. The base and transition are stone and the upper part brick. The shaft and balcony consoles are thought to be original, the neck and spire are new. If these parts are truly original, it could be one of the rare surviving examples of the first Ottoman minarets."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "id": "cesme-ve-cevre",
+      "order": 5,
+      "title": {
+        "tr": "Çeşme",
+        "en": "Fountain"
+      },
+      "body": {
+        "tr": "Avlu duvarına bitişik sivri kemerli çeşme 1960 yılında restore edilerek korunmuştur.",
+        "en": "The pointed-arch fountain adjacent to the courtyard wall was restored and preserved in 1960."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 6,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "1 Mart 1855'teki depremde ağır hasar gören caminin son cemaat revakı tamamen yıkılmıştır. H. 1278 / M. 1861'deki onarımda bazı bölümler değiştirilmiş, revak yeniden yapılmış ve cephesine Türk sanatına yabancı bir üçgen alınlık eklenmiştir; kısmen yıkılan minare de büyük ihtimalle tamamlanmıştır. 1960'ta Bursa Eski Eserleri Sevenler Kurumu üçgen alınlığı kaldırarak yapıyı özgün hâline döndürmeye çalışmıştır. 2016'da Vakıflar Bölge Müdürlüğü kapsamlı bir restorasyon yapmış, cami sağlamlaştırılıp ibadete açık hâle getirilmiştir.",
+        "en": "The narthex portico, severely damaged in the earthquake of 1 March 1855, was completely destroyed. In the restoration of AH 1278 / AD 1861 some parts were changed, the portico rebuilt and a triangular pediment, quite foreign to Turkish art, added to the façade; the partly collapsed minaret was probably completed. In 1960 the Bursa Association for the Appreciation of Antiquities removed the pediment, trying to return the building to its original state. In 2016 the Regional Directorate of Foundations carried out a comprehensive restoration, reinforcing the mosque and reopening it for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "245-246"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 7,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Hazire, caminin avlusunda yer almaktadır. 1326'da Bursa'nın fethinin hemen ardından Alâeddin Bey tarafından yaptırılan cami şehrin bilinen ilk camisidir. Avludaki hazirede Alâeddin Bey vakfında hizmet etmiş kişiler ve ailelerine ait mezar taşları bulunur. Caminin yapılışı 14. yüzyılın ilk yarısına tarihlense de günümüze ulaşan mezar taşları 18. yüzyıla aittir. Hazirede Ömer Tahir Bey, Emine Hanım, Asiye Hanım, Mehmed Raşid Bey, Osman Ağa ve Ahmed Ağa gibi isimler medfundur. Yakın dönemdeki restorasyonla hazire düzenlenip koruma altına alınmış, daha bakımlı ve ziyaret edilebilir hâle getirilmiştir.",
+        "en": "The graveyard is in the mosque courtyard. The mosque, built by Alâeddin Bey in 1326 immediately after the conquest of Bursa, is the earliest known mosque of the city. In the courtyard graveyard are gravestones of people who served the Alâeddin Bey foundation and their families. Although the mosque dates to the first half of the 14th century, the surviving gravestones belong to the 18th century. Ömer Tahir Bey, Emine Hanım, Asiye Hanım, Mehmed Raşid Bey, Osman Ağa and Ahmed Ağa are among those buried. Recent restoration reorganized the graveyard and placed it under protection, making it better kept and more visitable."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "247"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç mekân ölçüsü",
+        "en": "Interior dimensions"
+      },
+      "value": "8 × 13",
+      "unit": "m",
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'kare planlı' diyor; 8 × 13 m kare değildir.",
+        "en": "The book says 'square plan'; 8 × 13 m is not square."
+      }
+    },
+    {
+      "key": "revak_sutun",
+      "label": {
+        "tr": "Son cemaat yeri sütun sayısı",
+        "en": "Narthex columns"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Harim kubbe sayısı",
+        "en": "Domes over prayer hall"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "key": "ilk_insa_yili",
+      "label": {
+        "tr": "İlk inşa yılı (levhaya göre)",
+        "en": "First construction (per plaque)"
+      },
+      "value": "H. 726 / M. 1326",
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "key": "ikinci_insa_yili",
+      "label": {
+        "tr": "İkinci inşa yılı (levhaya göre)",
+        "en": "Second construction (per plaque)"
+      },
+      "value": "H. 1278 / M. 1861-62",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Alâeddin Bey",
+      "role": {
+        "tr": "Banî; Osman Gazi'nin büyük oğlu",
+        "en": "Founder; eldest son of Osman Gazi"
+      }
+    },
+    {
+      "name": "Osman Gazi",
+      "role": {
+        "tr": "Banînin babası",
+        "en": "Father of the founder"
+      }
+    },
+    {
+      "name": "Orhan Gazi",
+      "role": {
+        "tr": "Alâeddin Bey'in küçük kardeşi, yerine geçen",
+        "en": "Alâeddin Bey's younger brother, who took the succession"
+      }
+    },
+    {
+      "name": "Âşıkpaşazâde",
+      "role": {
+        "tr": "Erken dönem kaynak",
+        "en": "Early source"
+      }
+    },
+    {
+      "name": "Neşrî",
+      "role": {
+        "tr": "Erken dönem kaynak",
+        "en": "Early source"
+      }
+    },
+    {
+      "name": "Ömer Tahir Bey",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Emine Hanım",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Asiye Hanım",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Mehmed Raşid Bey",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Osman Ağa",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Ahmed Ağa",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-ustu-levhasi",
+      "location": {
+        "tr": "Kapı üstünde, siyah zemin üzerine yaldızlı yazı",
+        "en": "Above the door, gilded writing on a black ground"
+      },
+      "language": "other",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Yapının ilk inşasının H. 726 / M. 1326, ikinci inşasının H. 1278 / M. 1861-62 yıllarına ait olduğunu belirtir.",
+        "en": "States that the first construction dates to AH 726 / AD 1326 and the second to AH 1278 / AD 1861-62."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1306,
+        "gregorian": "1888-89"
+      },
+      "note": {
+        "tr": "Levhanın dili ve tam metni kitapta verilmez; çeviri yalnızca kitabın özetidir. Bu bir inşa kitabesi değildir (kitap inşa kitabesinin bulunmadığını söyler).",
+        "en": "The plaque's language and full text are not given in the book; the translation is only the book's summary. It is not a construction inscription (the book says there is none)."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1326",
+      "year": 1326,
+      "date": null,
+      "hijri": "726",
+      "type": "construction",
+      "title": {
+        "tr": "İlk inşa (levhaya göre; fetihten kısa süre sonra)",
+        "en": "First construction (per plaque; shortly after the conquest)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244, 247"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1332",
+      "year": 1332,
+      "date": null,
+      "hijri": "733",
+      "type": "record",
+      "title": {
+        "tr": "Çatalburgaz ve Fodra köylerini mescide vakfeden vakfiye",
+        "en": "Endowment charter giving the villages of Çatalburgaz and Fodra to the masjid"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": "1855-03-01",
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük deprem; son cemaat revakı tamamen yıkıldı",
+        "en": "Great earthquake; narthex portico completely destroyed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1861",
+      "year": 1861,
+      "date": null,
+      "hijri": "1278",
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (ikinci inşa): revak yeniden yapıldı, üçgen alınlık eklendi, pencereler değiştirildi",
+        "en": "Repair (second construction): portico rebuilt, triangular pediment added, windows replaced"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "245-246"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu onarımı; alınlık kaldırıldı, çeşme restore edildi",
+        "en": "Repair by the Bursa Association for the Appreciation of Antiquities; pediment removed, fountain restored"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "245-246"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2016",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü kapsamlı restorasyonu",
+        "en": "Comprehensive restoration by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "246"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-alaaddin-bey-cesmesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Avlu duvarına bitişik sivri kemerli çeşme 1960'ta restore edilmiştir; mevcut çeşme kaydıyla aynı olduğu teyit edilmeli.",
+        "en": "The pointed-arch fountain adjacent to the courtyard wall was restored in 1960; its identity with the existing fountain record should be confirmed."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "246"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Alâeddin Bey Camii, kentin ilk Osmanlı camisi sayılan, tek kubbeli ve sade bir yapıdır. Önünde dört sütunlu, üç bölümlü bir son cemaat yeri bulunur; sütun başlıkları devşirme Bizans başlıklarıdır. Dış duvarlarda taşlar tuğlalarla çerçevelenmiştir. İç mekânda süsleme yoktur. Doğuda duvara bitişik, yuvarlak gövdeli tuğla bir minare yükselir. Avluda 18. yüzyıla ait mezar taşları olan bir hazire ve duvara bitişik sivri kemerli bir çeşme vardır.",
+      "en": "Alâeddin Bey Mosque, regarded as the city's first Ottoman mosque, is a plain single-domed building. In front is a three-bay narthex with four columns whose capitals are reused Byzantine pieces. On the exterior the stones are framed with bricks. There is no decoration inside. A round-bodied brick minaret adjoins the wall to the east. The courtyard holds a graveyard of 18th-century gravestones and a pointed-arch fountain against the wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

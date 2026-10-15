@@ -1,0 +1,430 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-seydi-nasir-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin yapım tarihi ve banisi kitapta yok (founder: null).",
+      "Sultan Alâaddin vakfının hangi Alâaddin’e (hangi eserlere) ait olduğu kitapta belirtilmiyor.",
+      "Timurtaş Paşa vakfı bağlantısı (hedef: timurtas-pasa-kulliyesi) tahminidir.",
+      "Zaviye ve mescidin bugün ayakta olup olmadığı belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor (architect: null).",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[haci-sehabeddin-mezari]",
+        "note": "Metin önce 'kırık bir mezar taşı yer almaktadır' der, aynı paragrafın sonunda 'mezar taşı günümüze ulaşamamıştır' der; kırık taşın hangi mezara ait olduğu belirsiz. İkisi de olduğu gibi aktarıldı."
+      },
+      {
+        "field": "legends[geldigi-yer]",
+        "note": "Kitap iki farklı rivayeti aktarıyor (Emîr Sultan ile / Abdal Murad ile); hangisinin doğru olduğu belirtilmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Seydi Nasır Türbesi",
+    "en": "Seydi Nasır Tomb"
+  },
+  "subtitle": {
+    "tr": "Halk arasında “Seydi Nâsır” denen Seyyid Nâsır’ın türbesi",
+    "en": "Tomb of Seyyid Nâsır, known among the public as “Seydi Nâsır”"
+  },
+  "alternate_names": [
+    {
+      "tr": "Seyyid Nâsır Türbesi",
+      "en": "Seyyid Nâsır Tomb",
+      "note": "Zatın asıl adı; halk arasında Seydi Nâsır (s. 533)"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Seyyid Nâsır",
+    "zaviye",
+    "Hacı Şehâbeddin Veli",
+    "Mollafenari",
+    "Buhara",
+    "II. Abdülhamid onarımı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollafenari Mahallesi",
+    "address": "Seydinasır Caddesi No: 95",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "533"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyılın ilk yarısı (Seyyid Nâsır’ın vefatı)",
+      "en": "First half of the 15th century (death of Seyyid Nâsır)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, Seyyid Nâsır’ın XV. yüzyılın ilk yarısında vefat ettiğini ve mevcut türbeye defnedildiğini söyler; türbenin yapım tarihi verilmiyor.",
+      "en": "The book says Seyyid Nâsır died in the first half of the 15th century and was buried in the existing tomb; the construction date of the tomb is not given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "534"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Zaviyenin çeşitli vakıfları vardır; burada kalanların ihtiyaçları vakıf gelirleriyle karşılanmıştır. Sultan Alâaddin ve Timurtaş Paşa vakıflarından da bu yapıya tahsisat sağlandığı bilinmektedir.",
+      "en": "The zawiya had various foundations, and the needs of those residing there were met from foundation income. Allocations from the Sultan Alâaddin and Timurtaş Paşa foundations are also known."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "534"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Mollafenari Mahallesi’nde, Buhara’dan geldiği rivayet edilen Seyyid Nâsır’ın ahşap çatılı, yığma taş türbesi. Buharalı tüccar Hacı Şehâbeddin Veli adına bir zaviye ve mescit yaptırmış; yapı 1893’te II. Abdülhamid, 2009’da Osmangazi Belediyesi tarafından onarılmıştır.",
+    "en": "The wooden-roofed, rubble-stone tomb of Seyyid Nâsır, said to have come from Bukhara, in the Mollafenari Neighborhood. The Bukharan merchant Hacı Şehâbeddin Veli had a zawiya and small mosque built in his name; the complex was repaired by Abdülhamid II in 1893 and by Osmangazi Municipality in 2009."
+  },
+  "sections": [
+    {
+      "id": "kimlik",
+      "order": 1,
+      "title": {
+        "tr": "Kimlik",
+        "en": "Identity"
+      },
+      "body": {
+        "tr": "Asıl adı “Seyyid Nâsır” olan zat halk arasında “Seydi Nâsır” olarak anılır. Hayatı hakkında yeterli bilgi bulunmamaktadır. Türbe Osmangazi ilçesi, Mollafenari Mahallesi, Seydinasır Caddesi No: 95’tedir.",
+        "en": "The person whose real name was “Seyyid Nâsır” is known among the public as “Seydi Nâsır”. There is not enough information about his life. The tomb is at Seydinasır Street No. 95, Mollafenari Neighborhood, Osmangazi District."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "533"
+        }
+      ]
+    },
+    {
+      "id": "zaviye-ve-mescit",
+      "order": 2,
+      "title": {
+        "tr": "Zaviye ve mescit",
+        "en": "Zawiya and masjid"
+      },
+      "body": {
+        "tr": "Buharalı zengin tüccar Hacı Şehâbeddin Veli, Seyyid Nâsır adına bir zaviye ile birlikte küçük bir mescit inşa ettirmiştir. İki odalı bu mekânda zaman zaman seyyahların konakladığı aktarılır. Zaviyenin çeşitli vakıfları bulunduğundan burada kalanların ihtiyaçları vakıf gelirleriyle karşılanmıştır; Sultan Alâaddin ve Timurtaş Paşa vakıflarından da tahsisat sağlanmıştır.",
+        "en": "The wealthy Bukharan merchant Hacı Şehâbeddin Veli had a small mosque built with a zawiya in the name of Seyyid Nâsır. Travelers are reported to have occasionally stayed in this two-room place. As the zawiya had various foundations, residents’ needs were met by foundation income; allocations were also provided from the Sultan Alâaddin and Timurtaş Paşa foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    },
+    {
+      "id": "turbe",
+      "order": 3,
+      "title": {
+        "tr": "Türbe",
+        "en": "The tomb"
+      },
+      "body": {
+        "tr": "Seyyid Nâsır XV. yüzyılın ilk yarısında vefat etmiş ve günümüzdeki türbesine defnedilmiştir. Ahşap çatılı türbeye doğu cephesindeki küçük bir kapıdan girilir. İç mekânın ortasında Seyyid Nâsır’a ait bir sanduka bulunur. Duvarlar yığma taş malzemeyle inşa edilmiştir.",
+        "en": "Seyyid Nâsır died in the first half of the 15th century and was buried in his existing tomb. The wooden-roofed tomb is entered through a small door on the east façade. In the middle of the interior there is a sarcophagus belonging to Seyyid Nâsır. The walls are built of rubble stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Yapı, zaviye ile birlikte 1893’te Sultan II. Abdülhamid tarafından onarılmıştır. 2009’da Osmangazi Belediyesi kapsamlı bir restorasyon gerçekleştirmiş ve çevre düzenlemesi yapmıştır.",
+        "en": "The building, together with the zawiya, was repaired by Sultan Abdülhamid II in 1893. In 2009 Osmangazi Municipality carried out a comprehensive restoration and landscaping."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    },
+    {
+      "id": "haci-sehabeddin-mezari",
+      "order": 5,
+      "title": {
+        "tr": "Hacı Şehâbeddin Veli’nin mezarı",
+        "en": "Grave of Hacı Şehâbeddin Veli"
+      },
+      "body": {
+        "tr": "Türbenin ön kısmında harap durumda bir mezar ile kırık bir mezar taşı vardır. H. 855 / M. 1451’de vefat eden zaviyenin banisi Hacı Şehâbeddin Velî’nin buraya defnedildiği bilinmektedir; ancak mezar taşı günümüze ulaşmamıştır.",
+        "en": "In front of the tomb there is a ruined grave and a broken gravestone. The founder of the zawiya, Hacı Şehâbeddin Velî, who died in AH 855 / AD 1451, is known to be buried here; however, his gravestone has not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "geldigi-yer",
+      "title": {
+        "tr": "Buhara’dan geliş rivayeti",
+        "en": "Tradition of arrival from Bukhara"
+      },
+      "body": {
+        "tr": "Rivayetlere göre Seyyid Nâsır, Emîr Sultan ile birlikte, bazı anlatımlarda ise Bursa’nın fethinden önce Abdal Murad ile Buhara’dan gelmiştir.",
+        "en": "According to some accounts, Seyyid Nâsır came from Bukhara together with Emir Sultan; in other accounts, with Abdal Murad before the conquest of Bursa."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "533"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "zaviye_oda_sayisi",
+      "label": {
+        "tr": "Zaviye oda sayısı",
+        "en": "Rooms of the zawiya"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    },
+    {
+      "key": "turbe_cati",
+      "label": {
+        "tr": "Türbe çatı malzemesi",
+        "en": "Roof material"
+      },
+      "value": "ahşap",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    },
+    {
+      "key": "turbe_duvar",
+      "label": {
+        "tr": "Duvar malzemesi",
+        "en": "Wall material"
+      },
+      "value": "yığma taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    },
+    {
+      "key": "sehabeddin_vefat",
+      "label": {
+        "tr": "Hacı Şehâbeddin Veli’nin vefatı",
+        "en": "Death of Hacı Şehâbeddin Veli"
+      },
+      "value": "H. 855 / M. 1451",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyyid Nâsır",
+      "role": {
+        "tr": "Türbede medfun zat; halk arasında Seydi Nâsır",
+        "en": "Person buried in the tomb; known as Seydi Nâsır"
+      }
+    },
+    {
+      "name": "Hacı Şehâbeddin Veli",
+      "role": {
+        "tr": "Buharalı tüccar, zaviye ve mescidin banisi (ö. H. 855 / M. 1451)",
+        "en": "Bukharan merchant, founder of the zawiya and masjid (d. AH 855 / AD 1451)"
+      }
+    },
+    {
+      "name": "II. Abdülhamid",
+      "role": {
+        "tr": "1893’te yapıyı ve zaviyeyi onartan sultan",
+        "en": "Sultan who had the building and zawiya repaired in 1893"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "haci-sehabeddin-vefat-1451",
+      "year": 1451,
+      "date": null,
+      "hijri": "855",
+      "type": "record",
+      "title": {
+        "tr": "Zaviyenin banisi Hacı Şehâbeddin Veli vefat etti ve türbenin önüne defnedildi",
+        "en": "Founder of the zawiya Hacı Şehâbeddin Veli died and was buried in front of the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1893",
+      "year": 1893,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "II. Abdülhamid tarafından zaviye ile birlikte onarıldı",
+        "en": "Repaired together with the zawiya by Abdülhamid II"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2009",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Osmangazi Belediyesi kapsamlı restorasyon ve çevre düzenlemesi yaptı",
+        "en": "Comprehensive restoration and landscaping by Osmangazi Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-timurtas-pasa-kulliyesi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Seyyid Nâsır Zaviyesi’ne Timurtaş Paşa vakıflarından tahsisat sağlanmıştır. Kitap vakfın hangi yapıya ait olduğunu belirtmez; Timurtaş Paşa Külliyesi tahmini hedeftir.",
+        "en": "Allocations to the Seyyid Nâsır Zawiya were provided from the Timurtaş Paşa foundations. The book does not specify which complex the foundation belongs to; Timurtaş Paşa Complex is an assumed target."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "534"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Seydi Nasır Türbesi, Mollafenari Mahallesi’nde küçük, yığma taş duvarlı ve ahşap çatılı bir yapıdır. Doğu cephesindeki küçük bir kapıdan girilir. İçeride, mekânın ortasında Seyyid Nâsır’a ait tek bir sanduka bulunur. Türbenin önünde harap bir mezar ve kırık bir mezar taşı vardır.",
+      "en": "Seydi Nasır Tomb is a small building of rubble stone walls and a wooden roof in the Mollafenari Neighborhood. It is entered through a small door on the east façade. Inside, a single sarcophagus of Seyyid Nâsır stands in the middle of the space. In front of the tomb there is a ruined grave and a broken gravestone."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,1058 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-osman-gazi-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mimar kitapta belirtilmiyor (architect: null).",
+      "Özgün Gümüşlü Kümbet yapısının yapım tarihi kitapta yok.",
+      "Müstakil vakıfların adı/gelirleri Osman Gazi Türbesi bölümünde verilmiyor; vakıf bilgisi Orhan Gazi Türbesi bölümündeki atıftan çıkarıldı (s. 515).",
+      "Giriş kitabesinin ve diğer yazıtların dil kodları (tr-ottoman / ar) ekip sınıflandırmasıdır; uzman gözden geçirmeli.",
+      "Orhan Medresesi’nin kayıt id’si bilinmiyor; orhan-bey-kulliyesi tahmini hedeftir.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin ana türbe mekânına 'birkaç basamakla inilen' (aşağı iniş) diyor; İngilizce metin 'accessed by a few steps' diyor (yön belirtmiyor). Türkçe metin esas alındı."
+      },
+      {
+        "field": "timeline[onarim-1802]",
+        "note": "Osman Gazi Türbesi için onarım listesi 1802'yi içeriyor (s. 531), Orhan Gazi Türbesi listesi ise 1802'yi içermiyor (s. 519); yapı 1801'de yanmıştı (s. 523). Çelişki değil ama iki liste farklı."
+      },
+      {
+        "field": "inscriptions[hakki-levhasi]",
+        "note": "Levhadaki tarih Hicri 1341 Rebiülevvel, Cuma ve Rumi 27 Teşrinievvel 1338 olarak iki takvimle verilmiş; kitap bunu açıkça belirtiyor. Miladi karşılık kitapta yazmıyor, eklenmedi."
+      },
+      {
+        "field": "inscriptions[giris-kitabesi]",
+        "note": "s. 526’daki meal sayfasının sonunda kitabenin son mısraı bir kez daha basılmıştır (baskı tekrarı); metin bir kez alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Osman Gazi Türbesi",
+    "en": "Osman Gazi Tomb"
+  },
+  "subtitle": {
+    "tr": "Osmanlı Devleti’nin kurucusu Osman Gazi’nin türbesi",
+    "en": "Tomb of Osman Gazi, founder of the Ottoman Empire"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Osman Gazi",
+    "Gümüşlü Kümbet",
+    "Hisariçi",
+    "Osmangazi Meydanı",
+    "Sultan Abdülaziz",
+    "barok",
+    "kitabe",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Osmangazi Mahallesi",
+    "address": "Yiğitler Caddesi No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "521"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1280 / M. 1863 (yeniden inşa)",
+      "en": "AH 1280 / AD 1863 (rebuilt)"
+    },
+    "start_year": 1863,
+    "end_year": 1863,
+    "hijri_year": 1280,
+    "century": 19,
+    "basis": {
+      "tr": "Giriş kitabesinin son mısraındaki mühmel harflerin hesabından Hicri 1280 çıkar; bugünkü türbe Sultan Abdülaziz tarafından 1863’te yeniden yaptırılmıştır. Özgün yapının tarihi kitapta verilmiyor.",
+      "en": "The abjad calculation of the undotted letters in the last line of the entrance inscription gives AH 1280; the present tomb was rebuilt by Sultan Abdülaziz in 1863. The date of the original structure is not given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "523-524, 528"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Abdülaziz",
+    "role": "bugünkü türbeyi yeniden yaptıran",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "523-524"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Orhan Gazi Türbesi bölümünde, o türbe için “Osman Gazi Türbesi’nde olduğu gibi” müstakil vakıflar tahsis edildiği söylenir; bu ifade Osman Gazi Türbesi’nin de müstakil vakıflarının olduğunu dolaylı olarak gösterir. Vakıfların adı ve gelirleri bu bölümde verilmiyor.",
+      "en": "In the Orhan Gazi Tomb section it is said that independent foundations were allocated to that tomb “as in the case of the Osman Gazi Tomb”, which indirectly shows that the Osman Gazi Tomb also had independent foundations. Their names and revenues are not given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "515"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Osmanlı Devleti’nin kurucusu Osman Gazi’nin, Orhan Bey tarafından eski bir manastır şapeli olan “Gümüşlü Kümbet”e defnedildiği yerde bulunan türbe. 1855 depreminde ağır hasar gören yapı, Sultan Abdülaziz tarafından 1863’te daha geniş ölçülerde ve barok üslupta yeniden yaptırılmıştır; içinde 17 sanduka vardır.",
+    "en": "The tomb at the place where Osman Gazi, founder of the Ottoman Empire, was buried by Orhan Bey in the “Gümüşlü Kümbet”, a former monastery chapel. Heavily damaged in the 1855 earthquake, it was rebuilt in the Baroque style on a larger scale by Sultan Abdülaziz in 1863; it contains 17 sarcophagi."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-kimlik",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve kimlik",
+        "en": "Location and identity"
+      },
+      "body": {
+        "tr": "Türbe Osmangazi ilçesi, Osmangazi Mahallesi, Yiğitler Caddesi No: 2 adresindedir. Hisariçi’ndeki “Osmangazi Meydanı” olarak bilinen tarihî alanda konumlanır ve Osmanlı Devleti’nin kurucusu Osman Gazi’ye aittir.",
+        "en": "The tomb is located at Yiğitler Street No. 2, Osmangazi Neighborhood, Osmangazi District, in the historical area known as “Osmangazi Square” within Hisariçi, and belongs to Osman Gazi, the founder of the Ottoman Empire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "521"
+        }
+      ]
+    },
+    {
+      "id": "osman-gazi",
+      "order": 2,
+      "title": {
+        "tr": "Osman Gazi",
+        "en": "Osman Gazi"
+      },
+      "body": {
+        "tr": "1258’de doğan Osman Gazi, Ertuğrul Bey’in üç oğlundan biridir. Babasının vefatının ardından ortak bir kararla 23 yaşındayken beyliğin başına getirilmiştir. 1280’de Domaniç ve Bilecik’i fethetmiş, ardından Selçuklu Sultanı Alâaddin tarafından uç beyliği ile görevlendirilmiştir. 1298’de Yarhisar’ı, 1299’da İnegöl’ü fetheden Osman Gazi, Selçuklu Devleti’nin dağılması üzerine 1299 veya 1300’de Osmanlı Beyliği’nin bağımsızlığını ilan etmiştir. Karacahisar’da kendi adına hutbe okutmuş, kadı tayin ederek idari yapıyı kurumsallaştırmış, Yenişehir’i beyliğin merkezi seçmiştir. Kayınpederi Şeyh Edebali’nin desteği toplumsal meşruiyet kazanmasında önemli rol oynamıştır.",
+        "en": "Osman Gazi, born in 1258, was one of the three sons of Ertuğrul Bey. After his father’s death he was appointed head of the principality by mutual decision at only 23. He conquered Domaniç and Bilecik in 1280 and was then entrusted with the frontier governorship by the Seljuk Sultan Alâaddin. Having conquered Yarhisar in 1298 and İnegöl in 1299, he declared the independence of the Ottoman Beylik in 1299 or 1300 after the disintegration of the Seljuk State. He had the khutbah read in his name in Karacahisar, appointed a qadi to institutionalize the administration, and chose Yenişehir as the center. The support of Shaykh Edebali, his father-in-law, played an important role in his gaining social legitimacy."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "521-522"
+        }
+      ]
+    },
+    {
+      "id": "bursa-kusatmasi",
+      "order": 3,
+      "title": {
+        "tr": "Bursa kuşatması",
+        "en": "The siege of Bursa"
+      },
+      "body": {
+        "tr": "Bursa’nın Türkler tarafından fethi kısa sürede gerçekleşmemiştir. Şehrin doğu ve batısına “Balabancık” ve “Aktimur” adlarıyla iki küçük kale inşa edilmiş, kent bu yapılar aracılığıyla yaklaşık yirmi ila yirmi beş yıl boyunca abluka altında tutulmuştur.",
+        "en": "The conquest of Bursa by the Turks did not occur quickly. Two small castles named “Balabancık” and “Aktimur” were built to the east and west of the city, and the city was blockaded for approximately twenty to twenty-five years."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "522"
+        }
+      ]
+    },
+    {
+      "id": "gumuslu-kumbet",
+      "order": 4,
+      "title": {
+        "tr": "Gümüşlü Kümbet ve defin",
+        "en": "The Gümüşlü Kümbet and the burial"
+      },
+      "body": {
+        "tr": "Bursa’yı fetheden Orhan Bey’in, babası Osman Gazi’nin vasiyetini yerine getirerek naaşını “Gümüşlü Kümbet” olarak bilinen yapının içine defnettirdiği erken Osmanlı kaynaklarında belirtilmektedir. Bu yapının bir bölümünün Orhan Medresesi’ne, diğer kısmının ise (fetih camisi işleviyle) Orhan Camii’ne dönüştürüldüğü bilinmektedir. Yuvarlak planlı şapelin içine Osman Gazi’nin kabri yerleştirilmiştir.",
+        "en": "It is stated in early Ottoman sources that Orhan Bey, who conquered Bursa, fulfilled his father Osman Gazi’s will and had his body buried in the structure known as the “Gümüşlü Kümbet”. A part of this building was converted into the Orhan Madrasa and the other part into the Orhan Mosque, with the function of the conquest mosque. Osman Gazi’s tomb is placed inside the round-plan chapel."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "522-523"
+        }
+      ]
+    },
+    {
+      "id": "ibn-battuta",
+      "order": 5,
+      "title": {
+        "tr": "İbn Battûta’nın anlatımı",
+        "en": "Ibn Battuta’s account"
+      },
+      "body": {
+        "tr": "1325-1349 arasında Anadolu’yu dolaşan Tancalı seyyah İbn Battûta Bursa’ya geldiğinde Orhan Bey’le karşılaştığını aktarır ve şöyle yazar: “Zaten onun babası aldı Bursa’yı Rumların elinden. Onun kabri şehir mescidinin kenarındadır. Burası eskiden Hristiyanların kilisesi imiş.” Bu anlatım fetih sonrasında yapıların nasıl dönüştürüldüğünü ve Osman Gazi’nin kabir yerinin tarih boyunca nasıl korunduğunu ortaya koyar.",
+        "en": "Ibn Battuta, a traveler from Tangier who traveled around Anatolia between 1325 and 1349, reports meeting Orhan Bey when he came to Bursa and writes: “His father had already taken Bursa from the Greeks. His grave is at the edge of the city mosque. This used to be a Christian church.” This narrative reveals how structures were transformed after the conquest and how Osman Gazi’s burial place was preserved through history."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "522-523"
+        }
+      ]
+    },
+    {
+      "id": "davullu-manastir-ve-aziz-ilyas",
+      "order": 6,
+      "title": {
+        "tr": "Adlandırmalar: Davullu Manastır ve Aziz İlyas",
+        "en": "Names: Drum Monastery and Saint Elijah"
+      },
+      "body": {
+        "tr": "Türbe ve çevresi uzun süre “Davullu Manastır” olarak anılmış, ancak bu ad bazı yabancı yazarlarca yanlış okunarak “Davut Manastırı” biçiminde aktarılmıştır. Yuvarlak planlı yapıların çoğunlukla Aziz İlyas’a ithaf edilmesi nedeniyle alan “Saint Elie Manastırı” ya da “Aziz İlyas Kilisesi” diye de adlandırılmıştır. Son dönem araştırmalarında yuvarlak planlı yapıların yalnızca Aziz İlyas’a değil, farklı azizlere de ithaf edildiğine dair örnekler tespit edilmiştir.",
+        "en": "The tomb and its surroundings were long called the “Drum Monastery”, but this name was misread by some foreign writers and related as the “Davut Monastery”. Because circular-plan buildings were mostly dedicated to Saint Elijah, the area was also called “Saint Elijah Monastery” or “Saint Elijah Church”. Recent studies have found examples showing that circular-plan buildings were dedicated not only to St. Elijah but also to other saints."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "523"
+        }
+      ]
+    },
+    {
+      "id": "yangin-ve-deprem",
+      "order": 7,
+      "title": {
+        "tr": "1801 yangını ve 1855 depremi",
+        "en": "The 1801 fire and the 1855 earthquake"
+      },
+      "body": {
+        "tr": "Osman Gazi’nin gömülü olduğu yuvarlak planlı yapı 1801’de yanmış ve sonradan onarılmıştır. 1855 Bursa Depremi’nde ise büyük ölçüde zarar görmüştür: bir arşiv belgesindeki “Sultan Osman Gazi hazretlerinin türbe-i şerifeleri zahirde külliyen münhedim olmamış ise de pekçe zedelenmiş olduğu” ifadesine göre türbe tamamen yıkılmamış ama ciddi hasar almıştır.",
+        "en": "The round-plan building where Osman Gazi is buried burned in 1801 and was later repaired. It was severely damaged in the 1855 Bursa Earthquake: according to an archive document, the tomb of Sultan Osman Gazi was not completely destroyed but was damaged a lot."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "523"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa",
+      "order": 8,
+      "title": {
+        "tr": "Yeniden inşa ve kitabe",
+        "en": "Rebuilding and inscription"
+      },
+      "body": {
+        "tr": "Bugün ayakta olan türbe Sultan Abdülaziz tarafından 1863’te yeniden yaptırılmıştır; yeni yapı orijinalinden daha geniş ölçülerde inşa edilmiştir. Girişte, Şair Nevres Efendi’nin yazdığı ve Hattat Mevlevî Zeki Dede’nin talik hatla istinsah ettiği kitabe bulunur. Kitabenin son mısraındaki mühmel harfler hesaplandığında türbenin yapım tarihi olarak Hicri 1280 ortaya çıkar.",
+        "en": "The tomb that stands today was rebuilt by Sultan Abdulaziz in 1863, in larger dimensions than the original. At the entrance there is an inscription written by the poet Nevres Efendi and copied in Ta’liq script by the calligrapher Mevlevî Zeki Dede. Calculating the special letters in the last line gives the construction date AH 1280."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "523-524, 528"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 9,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Bugünkü türbe binası dört bölümden oluşur. Girişte, oldukça ince ve uzun iki sütunçe ile taşınan ve Sultan Abdülaziz’in tuğrasını taşıyan bir sundurma vardır. Bu bölüm ahşap kemerli dikdörtgen bir giriş holüne açılır; holün batısında türbedar odası bulunur. Asıl türbe bölümü birkaç basamakla inilen ana mekândır. Türbe yalnızca giriş cephesi hariç diğer üç cephedeki yuvarlak kemerli, kilit taşı volütlü, mermer söveli ve dökme demir şebekeli pencerelerle aydınlanır. Gövde, kasnak ve kubbe sekizgen plandadır.",
+        "en": "The present tomb consists of four sections. At the entrance there is a porch supported by two very thin and long colonettes and bearing the signature of Sultan Abdulaziz. It opens onto a rectangular entrance hall with a wooden arch; the custodian room is on the west side of the hall. The tomb section proper is the main room, reached by a few steps. The tomb is lit only by windows on the three façades other than the entrance façade, with round arches, keystone volutes, marble frames and cast iron grilles. The body, drum and dome are octagonal."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "528"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 10,
+      "title": {
+        "tr": "İç mekân süslemesi",
+        "en": "Interior decoration"
+      },
+      "body": {
+        "tr": "Kubbenin her dilimi iki girland motifiyle bezenmiştir; kubbe göbeğinde on altı dilimli bir kompozisyon içinde bitkisel motifler dikkat çeker. Sekizgen kasnak kenarlarında kurdele ve palmet motifleri vardır. İç mekândaki kalem işleri oldukça sadedir ve her onarımda yenilenmiştir. Köşe plasterleri yeşil mermer görünümünde boyanmıştır.",
+        "en": "Each slice of the dome is decorated with two garland motifs; vegetal motifs in a sixteen-segmented composition at the center of the dome attract attention. Ribbon and palmette motifs are on the edges of the octagonal drum. The hand-painted work inside is quite plain and has been renewed with each restoration. Corner pilasters are painted to look like green marble."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "528"
+        }
+      ]
+    },
+    {
+      "id": "sanduka",
+      "order": 11,
+      "title": {
+        "tr": "Sanduka ve çevresi",
+        "en": "The sarcophagus and its surroundings"
+      },
+      "body": {
+        "tr": "Türbe içindeki sanduka barok üslupta bitkisel motiflerle süslü kadife bir örtüyle kaplıdır. Sedef kakmalı şebeke kısmı sanat değeri taşıyan nadide bir örnektir. Sanduka en son 2004’te kapsamlı bir onarımdan geçmiştir. Sandukanın tam üzerindeki beyaz kristal kandilli avize Osmanlı’nın son beş padişahı dönemini temsil eder. Puşidenin kuzey ve güney sırtlarında dörder kartuş içinde dualar yer alır; üzerinde Hattat Abdülfettah Efendi’nin gümüş simle işlediği bir beyit de bulunur.",
+        "en": "The sarcophagus is covered with a velvet cloth decorated with Baroque-style vegetal motifs. The mother-of-pearl inlaid grille is a rare example of artistic value. The sarcophagus last underwent comprehensive restoration in 2004. The white crystal chandelier above it represents the last five Ottoman sultans. Four cartouches each on the northern and southern slopes of the pall bear prayers, and a couplet embroidered in silver thread by the calligrapher Abdülfettah Efendi is also on it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 12,
+      "title": {
+        "tr": "Sandukalar ve sahipleri",
+        "en": "Sarcophagi and their owners"
+      },
+      "body": {
+        "tr": "Osman Gazi Türbesi’nde toplam on yedi sanduka vardır; yalnızca beşinin sahibi bilinmektedir: Osman Gazi, oğlu Alâaddin Bey, Orhan Gazi’nin eşi Asporça Hatun, Asporça’dan olan oğlu İbrahim ve I. Murad’ın oğlu Savcı Bey. Diğerlerinin kime ait olduğu belirlenememiştir.",
+        "en": "There are seventeen sarcophagi in the Osman Gazi Tomb; only five are known to belong to: Osman Gazi, his son Alâaddin Bey, Orhan Gazi’s wife Asporça Hatun, her son İbrahim, and Murad I’s son Savcı Bey. The owners of the others have not been determined."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "id": "hediyeler",
+      "order": 13,
+      "title": {
+        "tr": "Hediyeler",
+        "en": "Gifts"
+      },
+      "body": {
+        "tr": "Farklı dönemlerde Osmanlı sultanları ya da diğer İslam ülkelerinin ileri gelenleri türbeye çeşitli hediyeler sunmuştur, ancak günümüze yalnızca iki örnek ulaşmıştır. Birincisi Hattat Hakkı’nın sülüs hatla yazdığı, siyah zemin üzerine altın yaldızlı, Fetih suresinin ilk ayetini içeren levhadır. İkincisi Bursa Yurdu’nun hediye ettiği, kırmızı atlas üzerine altın simle işlenmiş beş satırlık hat tablosudur. Kitap bu hatları türbenin fethin ve cihadın simgesel merkezi ve kolektif hafızada canlı bir manevi merkez olarak görüldüğünü gösteren eserler olarak yorumlar.",
+        "en": "Various gifts were presented to the tomb by Ottoman sultans or leaders of other Islamic countries, but only two have survived. The first is a plaque in Thuluth by Hattat Hakkı, gold gilding on black, with the first verse of Surah al-Fath. The second, given by the Bursa Yurdu, is a five-line calligraphy panel embroidered with gold thread on red satin. The book reads both as showing the tomb as a symbolic center of conquest and jihad and a living spiritual center in the collective memory."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "530-531"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar-ve-unesco",
+      "order": 14,
+      "title": {
+        "tr": "Onarımlar ve UNESCO",
+        "en": "Repairs and UNESCO"
+      },
+      "body": {
+        "tr": "Türbe 1615, 1791, 1802, 1808, 1813 ve 1816-1818’de kısmi ya da kapsamlı müdahaleler görmüş; en son 1855 depreminden sonra o dönemin anlayışına uygun olarak barok tarzda yeniden inşa edilmiştir. Türbenin bulunduğu alan 2014’te Hanlar Bölgesi, Sultan Külliyeleri ve Cumalıkızık köyü ile birlikte UNESCO Dünya Miras alanı olarak tescillenmiştir.",
+        "en": "The tomb was repaired many times, with partial or comprehensive interventions in 1615, 1791, 1802, 1808, 1813 and 1816-1818; it was last rebuilt after the 1855 earthquake in the Baroque style of that period. The area was registered as a UNESCO World Heritage Site in 2014 together with the Hanlar District, the Sultan Complexes and Cumalıkızık village."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "531"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "gumuslu-kubbe-vasiyeti",
+      "title": {
+        "tr": "“Gümüşlü Kubbe” vasiyeti",
+        "en": "The “Silver Dome” will"
+      },
+      "body": {
+        "tr": "Rivayete göre Osman Gazi, kuşatma sırasında surların karşısından Bursa’yı seyrederken, kubbesi yeni yenilenmiş ve üst örtüsü gümüş gibi parlayan Saint Elias Manastırı’nı görmüş ve oğlu Orhan Gazi’ye “Oğul, ben öldüğüm vakit beni Bursa’da şu Gümüşlü Kubbe’nin altına koy” demiştir. Kitap bunu Osman Gazi’nin Bursa üzerindeki emelini ve manevi bağlılığını yansıtan en meşhur anlatılardan biri olarak aktarır.",
+        "en": "According to legend, while watching Bursa from in front of the walls during the siege, Osman Gazi saw the Saint Elias Monastery, whose dome had just been renovated and shone like silver, and told his son Orhan Gazi: “Son, when I die, put me under that Silver Dome in Bursa.” The book presents it as one of the most famous narratives reflecting his ambition and spiritual devotion to Bursa."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "522"
+        }
+      ]
+    },
+    {
+      "id": "selcuk-nisaneleri",
+      "title": {
+        "tr": "Selçuklu armağanlarının türbede saklanması",
+        "en": "Seljuk gifts preserved in the tomb"
+      },
+      "body": {
+        "tr": "Selçuklu Sultanı Alâaddin’in Osman Bey’e bağımsızlık nişanesi olarak gönderdiği davul, tespih, tuğ ve sancağın bu türbede teberrüken muhafaza edildiği halk arasında anlatılagelmiştir. Türbe ve çevresinin uzun süre “Davullu Manastır” diye anılması buna bağlanır.",
+        "en": "It is said among the people that the drum, prayer beads, standard and banner that the Seljuk Sultan Alâaddin sent to Osman Bey as a symbol of independence were preserved in this tomb as sacred relics. The long-time name “Drum Monastery” is linked to this."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "523"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 17,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "key": "taninan_sanduka",
+      "label": {
+        "tr": "Sahibi bilinen sanduka sayısı",
+        "en": "Sarcophagi with known owners"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Gövde, kasnak ve kubbe planı",
+        "en": "Plan of body, drum and dome"
+      },
+      "value": "sekizgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "528"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_dilim_sayisi",
+      "label": {
+        "tr": "Kubbe göbeği kompozisyonundaki dilim sayısı",
+        "en": "Segments in the dome-center composition"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "528"
+        }
+      ]
+    },
+    {
+      "key": "bolum_sayisi",
+      "label": {
+        "tr": "Türbe binasının bölüm sayısı",
+        "en": "Number of sections of the tomb building"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "528"
+        }
+      ]
+    },
+    {
+      "key": "son_sanduka_onarimi",
+      "label": {
+        "tr": "Sandukanın son kapsamlı onarımı",
+        "en": "Last comprehensive restoration of the sarcophagus"
+      },
+      "value": 2004,
+      "unit": "yıl",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "529"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Osman Gazi",
+      "role": {
+        "tr": "Osmanlı Devleti’nin kurucusu; türbede medfun",
+        "en": "Founder of the Ottoman state; buried in the tomb"
+      }
+    },
+    {
+      "name": "Orhan Gazi",
+      "role": {
+        "tr": "Osman Gazi’yi Gümüşlü Kümbet’e defnettiren oğlu",
+        "en": "His son, who had him buried in the Gümüşlü Kümbet"
+      }
+    },
+    {
+      "name": "Şeyh Edebali",
+      "role": {
+        "tr": "Osman Gazi’nin kayınpederi, dönemin önde gelen sufisi",
+        "en": "Father-in-law of Osman Gazi and a leading sufi of the period"
+      }
+    },
+    {
+      "name": "Alâaddin Bey",
+      "role": {
+        "tr": "Osman Gazi’nin oğlu; sandukası tespit edilmiş",
+        "en": "Son of Osman Gazi; sarcophagus identified"
+      }
+    },
+    {
+      "name": "Asporça Hatun",
+      "role": {
+        "tr": "Orhan Gazi’nin eşi; sandukası tespit edilmiş",
+        "en": "Wife of Orhan Gazi; sarcophagus identified"
+      }
+    },
+    {
+      "name": "İbrahim",
+      "role": {
+        "tr": "Orhan Gazi ile Asporça Hatun’un oğlu; sandukası tespit edilmiş",
+        "en": "Son of Orhan Gazi and Asporça; sarcophagus identified"
+      }
+    },
+    {
+      "name": "Savcı Bey",
+      "role": {
+        "tr": "I. Murad’ın oğlu; sandukası tespit edilmiş",
+        "en": "Son of Murad I; sarcophagus identified"
+      }
+    },
+    {
+      "name": "Sultan Abdülaziz",
+      "role": {
+        "tr": "Türbeyi 1863’te yeniden yaptıran sultan",
+        "en": "Sultan who had the tomb rebuilt in 1863"
+      }
+    },
+    {
+      "name": "Nevres Efendi",
+      "role": {
+        "tr": "Giriş kitabesinin şairi",
+        "en": "Poet of the entrance inscription"
+      }
+    },
+    {
+      "name": "Mevlevî Zeki Dede",
+      "role": {
+        "tr": "Giriş kitabesini talik hatla istinsah eden hattat",
+        "en": "Calligrapher who copied the entrance inscription in Ta’liq"
+      }
+    },
+    {
+      "name": "Abdülfettah Efendi",
+      "role": {
+        "tr": "Sanduka üzerindeki beyiti işleyen hattat",
+        "en": "Calligrapher of the couplet on the sarcophagus"
+      }
+    },
+    {
+      "name": "Hattat Hakkı",
+      "role": {
+        "tr": "Hediye Fetih suresi levhasının hattatı",
+        "en": "Calligrapher of the gifted Al-Fath plaque"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Türbenin girişi",
+        "en": "Entrance of the tomb"
+      },
+      "language": "tr-ottoman",
+      "script": "talik",
+      "transliteration": "Mefhar-ı Osmâniyân zıll-i ilâhe’l-âlemîn\nHazret-i Abdülaziz ol padişah-ı bahr u berr\nSâyesinde oldu hep ma’mur mülk ü devleti\nMakdemiyle bulalı câ-yı hilâfet zîb ü fer\nCedd-i pâkî hazret-i Osman Gâzî türbesin\nKıldı ihyâ yaptırıp ol şâh-ı fârûku’s-siyer\nNâmına yapıp nişân kabrine ta’lîk eyledi\nHiç müyesser olmadı bir şâha bu bâlâ eser\nRavza-i cennetde yâ rabb ceddi kıldıkça hırâm\nOla taht-ı saltanat ol şâh-ı zî-şâna makarr\nMühmelinden çâkeri Nevres dedi târîhini\nTürbe-i Osman Gâzî oldu pür-nûr ser-te-ser.",
+      "translation": {
+        "tr": "Osmanoğulları’nın övüncü, âlemlerin gölgesi\nDenizlerin ve karaların sultanı Hazreti Abdülaziz\nOnun himayesinde devletin tüm toprakları mamur hâle geldi\nHilafet makamı, onun gelişiyle güzellik ve ihtişam kazandı\nPak ceddimiz Hazret-i Osman Gazi’nin türbesini\nBu yüce şecaat sahibi padişah yeniden ihya etti\nAdına yaptırdığı bu yapının üzerine bu yazıyı asarak\nHiçbir padişaha böyle yüce bir eser nasip olmadı\nEy Rabbim, cennet bahçelerinde ceddi yürüdükçe\nBu yüce sultanın tahtı da daimî karar kılınsın\nHizmetkârı Nevres, bu mısralarla tarih düşürdü:\nOsman Gazi Türbesi baştan başa nurlandı.",
+        "en": "The pride of the Ottomans, the shadow of the worlds, the sultan of the seas and lands, Hazrat Abdulaziz.\nUnder his protection, all the lands of the state became prosperous.\nThe seat of the Caliphate gained beauty and magnificence with his arrival.\nThis great brave sultan revived the tomb of our pure ancestor Hazrat Osman Gazi.\nHe hung this inscription on the building he had built in his name.\nNo sultan has been granted such a great work.\nOh, my Lord, as long as his ancestor walks in the gardens of heaven,\nMay the throne of this great sultan be permanent.\nHis servant Nevres recorded history with these verses:\nOsman Gazi’s Tomb has been illuminated from top to bottom."
+      },
+      "author": "Şair Nevres Efendi (metin); Hattat Mevlevî Zeki Dede (istinsah)",
+      "date": {
+        "hijri_year": 1280,
+        "gregorian": "1863"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "524-526"
+        }
+      ],
+      "note": {
+        "tr": "Son mısradaki mühmel harflerin ebced hesabı H. 1280 verir. Dil kodu kitapta belirtilmediği için ekip sınıflandırmasıdır.",
+        "en": "The abjad value of the undotted letters in the last line gives AH 1280. The language code is the drafter’s classification as the book does not state it."
+      }
+    },
+    {
+      "id": "sanduka-beyiti",
+      "location": {
+        "tr": "Sanduka üzerinde (gümüş sim işlemeli)",
+        "en": "On the sarcophagus (silver thread embroidery)"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Hüve’l-Hallâku’l-Bâkî\nMatla’-ı şumûs-ı hilâfet\nMülemma’-ı envâr-ı saltanat\nCedd-i ecdâd-ı selâtin-i hümâyûn unvân\nBâni-i yegâne tahtgâh-ı şevket ü şân\nEs-Sultân el-Gâzî Ebu’l-Futûhatü’l-Megâzî Osman Hân\nEskenahullâhu teâlâ bi-hubûhâti’l-cinân hazretleri",
+      "translation": {
+        "tr": "O, baki olan Yaratıcı’dır.\nHilafet güneşlerinin doğduğu yerdir.\nSaltanatın parıltılı nurlarını yansıtır.\nOsmanlı sultanlarının asil ceddi unvanıyla anılır.\nŞevket ve ihtişam tahtının kurucusudur.\nGazi, fetihlerin sahibi Osman Han’dır.\nAllah Tealâa onu cennet bahçelerinde konuk eylesin.",
+        "en": "He is the everlasting Creator.\nIt is the place where the sun of the Caliphate rises.\nIt reflects the sparkling lights of sovereignty.\nHe is known as the noble ancestor of the Ottoman sultans.\nHe is the founder of the throne of glory and splendor.\nGazi is Osman Han, the owner of the conquests.\nMay Allah Almighty host him in the gardens of Paradise."
+      },
+      "author": "Hattat Abdülfettah Efendi",
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "id": "puside-kuzey-kartus",
+      "location": {
+        "tr": "Puşidenin kuzey sırtı (dört kartuş)",
+        "en": "North slope of the pall (four cartouches)"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Vesîleti emînike’r-rasûl\nHabîbike’l-mükerremü’l-cemîl\nVe âlihî ve sahbihim nebîl\nSallâ aleyhi rabbunâ’l-Celîl",
+      "translation": {
+        "tr": "Ey yüce Rabbimiz, Sevgili Peygamber’in şefaatine vesile eyle.\nGüzel ve seçkin Habib’in üzerine salat eyle.\nAilesi ve şerefli sahabeleriyle birlikte ona rahmet et.\nCelil olan Rabbimiz, onu yüceliklerle an.",
+        "en": "Oh our Almighty Lord, make us worthy of the intercession of the Beloved Prophet.\nBless your beautiful and chosen Beloved.\nHave mercy on him along with his family and honorable companions.\nOur Lord, the Glorious, remember him with high praise."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "id": "puside-guney-kartus",
+      "location": {
+        "tr": "Puşidenin güney sırtı (dört kartuş)",
+        "en": "South slope of the pall (four cartouches)"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Gufrâneke allâhümme yercû küllenâ\nFî külli hâlin mevtinâ hayâtinâ\nİlâhenâ is’adna bil-a’lâ emeli\nBi-fevzi husnâ ve ziyâdetin eneli",
+      "translation": {
+        "tr": "Allah’ım, hepimiz senin mağfiretini umarız.\nHayatta da ölümde de her halimizde sana muhtacız.\nEy Rabbimiz, bizi en yüce muradımıza ulaştır.\nBizi güzelliklere ve artan nimetlere eriştir.",
+        "en": "Oh Allah, we all hope for your forgiveness.\nWe need you in every situation, in life and in death.\nOh our Lord, help us reach our highest desire.\nGuide us to beauty and increased blessings."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "id": "hakki-levhasi",
+      "location": {
+        "tr": "Hediye edilen levha (sülüs, siyah zemin üzerine altın yaldız)",
+        "en": "Gifted plaque (Thuluth, gold gilding on black)"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "İnnâ fetahnâ leke fethan mübînen",
+      "translation": {
+        "tr": "Şüphesiz biz sana apaçık bir fetih verdik. Altındaki ibare: “Mekâtib-i İbtidâiye Muallimleri Cemiyeti İstanbul 1341 Rebiülevvel Cuma ve 27 Teşrînievvel 1338” (İstanbul İlkokul Mektepleri Öğretmenleri Derneği, Hicri 1341 Rebiyülevvel ayının bir cuma günü ve Rumi takvime göre 27 Teşrinievvel 1338).",
+        "en": "Indeed, we have given you a clear victory. Bottom inscription: Istanbul Primary School Teachers Association, on a Friday in Rabi’ul-Awwal AH 1341 and 27 Teşrînievvel (October) 1338 in the Rumi calendar."
+      },
+      "author": "Hattat Hakkı",
+      "date": {
+        "hijri_year": 1341,
+        "gregorian": "27 Teşrînievvel 1338 (Rumi)"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "530"
+        }
+      ],
+      "note": {
+        "tr": "Fetih suresinin ilk ayeti. Alt ibare: “Mekâtib-i İbtidâiye Muallimleri Cemiyeti İstanbul 1341 Rebiülevvel Cuma ve 27 Teşrînievvel 1338”.",
+        "en": "First verse of Surah al-Fath. Bottom text: “Mekâtib-i İbtidâiye Muallimleri Cemiyeti İstanbul 1341 Rebiülevvel Cuma ve 27 Teşrînievvel 1338”."
+      }
+    },
+    {
+      "id": "bursa-yurdu-levhasi",
+      "location": {
+        "tr": "Bursa Yurdu’nun hediye ettiği hat tablosu (kırmızı atlas üzerine altın sim)",
+        "en": "Calligraphy panel gifted by the Bursa Yurdu (gold thread on red satin)"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Bursa Yurdu\nBismillahirrahmanirrahim,\nAllahümme salli alâ Muhammed.\nİnnâ fetahnâ leke fethan mübînen\nVe câhidû fî sebîlillâh",
+      "translation": {
+        "tr": "Bursa Yurdu\nRahman ve Rahim olan Allah’ın adıyla,\nAllah’ım, Muhammed’e salat eyle.\nŞüphesiz biz sana apaçık bir fetih verdik.\nVe Allah yolunda cihat edin.",
+        "en": "Bursa Yurdu\nIn the name of Allah, the Most Gracious, the Most Merciful,\nOh Allah, bless Muhammad.\nWe have surely given you a clear victory.\nAnd strive in the way of Allah."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "530-531"
+        }
+      ],
+      "note": {
+        "tr": "Türkçe sayfada ilk satır “Bismillahirrahmanirrahim”, İngilizce sayfada “Bismillahirrahmânirrahîm” yazılmıştır; Türkçe sayfadaki yazım alındı.",
+        "en": "The Turkish page prints “Bismillahirrahmanirrahim” and the English page “Bismillahirrahmânirrahîm”; the Turkish page spelling is used."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1615",
+      "year": 1615,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "531"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1791",
+      "year": 1791,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "531"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1801",
+      "year": 1801,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yuvarlak planlı yapı yandı, sonradan onarıldı",
+        "en": "The round-plan building burned and was later repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "523"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1802",
+      "year": 1802,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "531"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1808",
+      "year": 1808,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "531"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1813",
+      "year": 1813,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "531"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1816-1818",
+      "year": 1816,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım (1816-1818)",
+        "en": "Partial or comprehensive repair (1816-1818)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "531"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Bursa depreminde ağır hasar gördü",
+        "en": "Severely damaged in the Bursa earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "523"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": "1280",
+      "type": "construction",
+      "title": {
+        "tr": "Sultan Abdülaziz tarafından daha geniş ölçülerde yeniden yaptırıldı",
+        "en": "Rebuilt in larger dimensions by Sultan Abdülaziz"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "523-524"
+        }
+      ]
+    },
+    {
+      "id": "sanduka-onarimi-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Sandukanın kapsamlı onarımı",
+        "en": "Comprehensive restoration of the sarcophagus"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "id": "unesco-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Çevresiyle birlikte UNESCO Dünya Miras alanı olarak tescillendi",
+        "en": "Registered as a UNESCO World Heritage Site with its surroundings"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "531"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-orhan-gazi-turbesi",
+      "type": "same_founder",
+      "description": {
+        "tr": "Her iki türbe de Sultan Abdülaziz tarafından birlikte yeniden yaptırılmıştır (Orhan Gazi Türbesi için kitap ayrıca 1868 tarihini de verir).",
+        "en": "Both tombs were rebuilt together by Sultan Abdülaziz (for the Orhan Gazi Tomb the book also gives 1868)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "516"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-gazi-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Orhan Gazi Türbesi, sütun başlığı süslemeleri ve giriş düzeniyle bu türbeye benzer ancak daha sadedir.",
+        "en": "The Orhan Gazi Tomb resembles this tomb in its capital decoration and entrance arrangement but is simpler."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "517-518"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Osman Gazi’nin gömüldüğü Gümüşlü Kümbet’in bir bölümü (fetih camisi işleviyle) Orhan Camii’ne dönüştürülmüştür. Kitap Orhan Camii’ni Orhan Bey Camii olarak açıkça eşleştirmez.",
+        "en": "Part of the Gümüşlü Kümbet where Osman Gazi is buried was converted into the Orhan Mosque (as the conquest mosque). The book does not explicitly equate it with the Orhan Bey Mosque record."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "522-523"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Gümüşlü Kümbet’in bir bölümü Orhan Medresesi’ne dönüştürülmüştür; medrese ve cami Orhan Bey Külliyesi ile ilişkilendirilmiştir (çıkarım).",
+        "en": "Part of the Gümüşlü Kümbet was converted into the Orhan Madrasa; madrasa and mosque are linked to the Orhan Bey Complex (inference)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "522-523"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Osman Gazi Türbesi dört bölümden oluşur. Girişte iki ince ve uzun sütunçenin taşıdığı, Sultan Abdülaziz’in tuğrasını taşıyan bir sundurma, ardından ahşap kemerli dikdörtgen bir giriş holü bulunur; holün batısında türbedar odası vardır. Asıl türbe mekânına birkaç basamakla inilir. Gövde, kasnak ve kubbe sekizgendir; kubbe dilimleri girland motifleriyle bezelidir. Ortada, kadife örtülü ve sedef kakmalı şebekeli sanduka durur; üzerinde beyaz kristal bir avize asılıdır. Toplam on yedi sanduka vardır. Üç cephede yuvarlak kemerli pencereler ışık verir.",
+      "en": "Osman Gazi Tomb has four sections. At the entrance is a porch carried by two thin, tall colonettes and bearing Sultan Abdülaziz’s signature, then a rectangular entrance hall with a wooden arch; the custodian room is west of the hall. The main tomb room is reached down a few steps. Body, drum and dome are octagonal; the dome segments are decorated with garlands. In the middle stands the sarcophagus under a velvet cover with a mother-of-pearl inlaid grille, with a white crystal chandelier above. There are seventeen sarcophagi in all. Round-arched windows on three façades give light."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

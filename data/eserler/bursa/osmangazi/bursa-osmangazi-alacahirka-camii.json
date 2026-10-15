@@ -1,0 +1,345 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-alacahirka-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 248) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi kitapta verilmiyor (kitabe olduğu söyleniyor ama kitabe metni basılmamış); dating boş bırakıldı.",
+      "Mimar ve banî adı (Alacahırkalı'nın gerçek adı) kitapta yok.",
+      "Kitabenin metni kitapta yok; sahadan okunmalı.",
+      "Alacahırkalı menkıbeleri kitapta anlatılmıyor; legends[] içinde yalnızca varlıkları not edildi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Camiyi 'yeniden yaptıran' Hacı Yakup Efendi (hazire) ile 1585'te onaran 'Hoca Yakub' ve 1635'te onaran İmamzade Mahmud Çelebi arasındaki ilişki kitapta açıkça belirtilmiyor; aynı kişi olup olmadıkları bilinmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Alacahırka Camii",
+    "en": "Alacahırka Mosque"
+  },
+  "subtitle": {
+    "tr": "Buharalı Alacahırkalı'nın mescidinden gelen, bahçesinde küçük hazire barındıran cami",
+    "en": "Mosque descending from the masjid of Alacahırkalı of Bukhara, with a small graveyard in its garden"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "alacahırkalı",
+    "hazire",
+    "kirpi saçak",
+    "1585 onarımı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alacahırka",
+    "address": "Alacahırka Mahallesi, Dereağzı Sokak No: 3",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "248"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Alacahırkalı (gerçek adı bilinmiyor)",
+    "role": "banî (mescidi yaptıran)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "248"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Buhara'dan gelip Bursa'ya yerleşen Alacahırkalı'nın yaptırdığı mescide dayanan, 1585 ve 1635'te onarılan, bahçesinde küçük bir hazire bulunan dikdörtgen planlı cami.",
+    "en": "A rectangular-plan mosque that goes back to a masjid built by Alacahırkalı, who came from Bukhara; repaired in 1585 and 1635, with a small graveyard in its garden."
+  },
+  "sections": [
+    {
+      "id": "plan",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve Yapı",
+        "en": "Plan and Structure"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı cami, ana ibadet mekânı ve son cemaat yerinden oluşur. Beden duvarları moloz taş örgülüdür ve iki sıra kirpi saçakla tamamlanır. Tavan ahşap, kırma çatı üstten kurşun kaplıdır. Giriş kapısı tarafında bir pencere, mihrabın üst kısmında iki yanda birer pencere, sağ ve sol duvarlarda biri üstte olmak üzere üçer pencere vardır.",
+        "en": "The rectangular-plan mosque consists of the main prayer hall and the narthex. The walls are of rubble stone with a two-row sawtooth brick cornice. The ceiling is wooden and the hipped roof is covered with lead. There is a window on the entrance side, a window on each side above the mihrab, and three windows on each of the right and left walls, one at the top."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 2,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Mescidin doğu duvarına bitişik minare orijinalliğini korumaktadır. Sekizgen kaide, gövde ve petek kısımları taştandır. Şerefenin altında altı sıra kirpi dizili süsleme bulunur; demir şerefe korkuluklarının bazı kısımları dökülmüştür.",
+        "en": "The minaret adjoining the eastern wall preserves its originality. The octagonal base, shaft and neck are of stone. Six rows of sawtooth decoration lie under the balcony, and parts of the iron balcony railings have fallen off."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 3,
+      "title": {
+        "tr": "Adı, Kuruluşu ve Onarımlar",
+        "en": "Name, Origin and Repairs"
+      },
+      "body": {
+        "tr": "Camiye adını veren Alacahırkalı, Osmanlı Devleti'nin kuruluş yıllarında Buhara'dan gelip Bursa'da Hisar dışında yerleşmiş ve burada bir mescit yaptırmıştır; mahalle onun adıyla anılır. Gerçek adı bilinmemektedir, vefatından sonra caminin bahçesine defnedilmiştir. Caminin yapım tarihine dair bir kitabe bulunmakta olup Kâzım Baykal tarafından ilk Osmanlı eserlerinden biri sayılmaktadır. Cami 1585'te Hoca Yakub adlı hayırsever tarafından büyük ölçüde, 1635'te İmamzade Mahmud Çelebi tarafından yeniden esaslı biçimde onarılmıştır. Günümüzde ibadete açıktır.",
+        "en": "Alacahırkalı, who gave the mosque its name, came from Bukhara in the founding years of the Ottoman State, settled outside the Hisar in Bursa and had a masjid built; the neighborhood is named after him. His real name is unknown and he was buried in the mosque garden. There is an inscription about the construction date, and Kâzım Baykal considers it one of the first Ottoman works. The mosque was largely repaired in 1585 by a philanthropist named Hoca Yakub and thoroughly renovated again in 1635 by İmamzade Mahmud Çelebi. It is open for worship today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Caminin bahçesinde küçük ve şebeke ile çevrili hazirede üç mezar taşı vardır: biri camiyi yeniden yaptıran Hacı Yakup Efendi'ye, diğer ikisi oğulları Hüseyin ve Abdullah'a aittir.",
+        "en": "In the small fenced graveyard in the garden there are three gravestones: one belongs to Hacı Yakup Efendi, who rebuilt the mosque, and the other two to his sons Hüseyin and Abdullah."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "alacahirkali",
+      "title": {
+        "tr": "Alacahırkalı menkıbeleri",
+        "en": "Tales of Alacahırkalı"
+      },
+      "body": {
+        "tr": "Halk arasında Alacahırkalı hakkında çeşitli menkıbeler anlatılmaktadır; kitap bunları aktarmaz.",
+        "en": "Various legends are told among the people about Alacahırkalı; the book does not relate them."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "pencere_yan_duvar",
+      "label": {
+        "tr": "Yan duvar başına pencere",
+        "en": "Windows per side wall"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "key": "minare_kirpi_sira",
+      "label": {
+        "tr": "Şerefe altı kirpi sırası",
+        "en": "Sawtooth rows under balcony"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_tasi",
+      "label": {
+        "tr": "Haziredeki mezar taşı sayısı",
+        "en": "Gravestones in graveyard"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "key": "onarim_1585",
+      "label": {
+        "tr": "Büyük onarım yılı",
+        "en": "Major repair year"
+      },
+      "value": 1585,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Alacahırkalı",
+      "role": {
+        "tr": "Mescidi yaptıran, adını mahalleye ve camiye veren kişi (gerçek adı bilinmiyor)",
+        "en": "Builder of the masjid; gave his name to the mosque and neighborhood (real name unknown)"
+      }
+    },
+    {
+      "name": "Hoca Yakub",
+      "role": {
+        "tr": "1585 onarımını yapan hayırsever",
+        "en": "Philanthropist who repaired the mosque in 1585"
+      }
+    },
+    {
+      "name": "İmamzade Mahmud Çelebi",
+      "role": {
+        "tr": "1635 onarımını yapan",
+        "en": "Who carried out the 1635 repair"
+      }
+    },
+    {
+      "name": "Hacı Yakup Efendi",
+      "role": {
+        "tr": "Camiyi yeniden yaptıran; haziredeki mezar taşı sahibi",
+        "en": "Rebuilder of the mosque; has a gravestone in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1585",
+      "year": 1585,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Hoca Yakub tarafından büyük ölçüde onarıldı",
+        "en": "Largely repaired by Hoca Yakub"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1635",
+      "year": 1635,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "İmamzade Mahmud Çelebi tarafından esaslı onarım",
+        "en": "Thoroughly renovated by İmamzade Mahmud Çelebi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "minare",
+      "title": {
+        "tr": "Özgün minare",
+        "en": "Original minaret"
+      },
+      "hint": {
+        "tr": "Sekizgen taş kaide ve şerefe altındaki altı sıra kirpi süslemeyi gözleyin.",
+        "en": "Observe the octagonal stone base and six rows of sawtooth decoration under the balcony."
+      },
+      "section_id": "minare"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, moloz taş duvarlı cami iki sıra kirpi saçakla biter; üstü kurşun kaplı kırma çatıdır. Doğu duvarına bitişik taş kaideli minare vardır. Bahçede şebekeyle çevrili küçük hazirede üç mezar taşı bulunur.",
+      "en": "The rectangular mosque has rubble stone walls finished with a two-row sawtooth cornice and a lead-covered hipped roof. A minaret with a stone base adjoins the east wall. In the garden a small fenced graveyard holds three gravestones."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

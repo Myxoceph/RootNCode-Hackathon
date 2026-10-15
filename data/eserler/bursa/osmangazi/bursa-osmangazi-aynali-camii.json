@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-aynali-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 264-265) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kesin yapım yılı kitapta yok (II. Murad dönemi); 17. yy minber eklenmesinin yılı belli değil.",
+      "Haziresi hakkında bilgi yok.",
+      "17. yüzyıl minber eklenmesi (mescitten camiye dönüşüm) yıl verilmediği için timeline'a girilmedi; yalnızca bölüm metninde."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architect/founder",
+        "note": "Banî, Yıldırım Darüşşifası'nda müderrislik yapan 'Hoca Tabip Hüsnü Efendi' olarak verilir; 'Hoca Tabib/Tayyib' adları aynı kişiye atıf olarak düşünülmüştür ancak kitap açıkça belirtmez."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Aynalı Camii",
+    "en": "Aynalı Mosque"
+  },
+  "subtitle": {
+    "tr": "Aynalı minareli, mescitten dönüştürülmüş iki kubbeli Bursa camisi",
+    "en": "A two-domed Bursa mosque converted from a masjid, with a minaret ringed by mirrors"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hoca Tabib Camii",
+      "en": "Hoca Tabib Mosque"
+    },
+    {
+      "tr": "Hoca Tayyib Camii",
+      "en": "Hoca Tayyib Mosque"
+    },
+    {
+      "tr": "Çapraz Camii",
+      "en": "Çapraz Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "çift kubbeli",
+    "mescitten camiye",
+    "aynalı minare",
+    "1958 onarımı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kayhan",
+    "address": "Kayhan Mahallesi, Ünlü Cadde ile 2. Sarı Sokak'ın kesişimi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "264"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Murad dönemi",
+      "en": "Reign of Murad II"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap camiyi II. Murad döneminde Hoca Tabip Hüsnü Efendi'nin inşa ettiğini söyler; yıl verilmez.",
+      "en": "The book says it was built during the reign of Murad II by Hoca Tabip Hüsnü Efendi; no year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "264"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Tabip Hüsnü Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "264"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "II. Murad döneminde Yıldırım Darüşşifası müderrisi Hoca Tabip Hüsnü Efendi'nin yaptırdığı; tek kubbe ve son cemaat yerinden kubbeli ikinci mekânla genişletilen, Bursa'da özgün planlı mescitten dönüştürülmüş cami.",
+    "en": "A mosque built in Murad II's reign by Hoca Tabip Hüsnü Efendi, professor at Yıldırım Hospital; originally a single dome and narthex, enlarged with a second domed space - a distinctive plan in Bursa - and converted from a masjid."
+  },
+  "sections": [
+    {
+      "id": "harim",
+      "order": 1,
+      "title": {
+        "tr": "Harim: İki Kubbeli Mekân",
+        "en": "Prayer Hall: Two Domed Spaces"
+      },
+      "body": {
+        "tr": "Taç kapıdan girilen ilk bölüm iç ölçüleri 6,96 × 7 m'dir; Türk üçgenli kuşak üzerine oturan, dıştan sekizgen kasnaklı kubbeyle örtülüdür, beş kasnaktan üçünde pencere vardır. Yüksek sivri kemer altından mihrap önü mekânına geçilir: 8,20 × 8,20 m'lik bu ikinci bölümde kubbe dıştan on altıgen kasnağa, içten Türk üçgenli kuşağa oturur; alt sırada dört pencere vardır.",
+        "en": "The first section, entered through the portal, measures 6.96 × 7 m inside and is covered by a dome on a band of Turkish triangles with an octagonal drum outside; three of the five drum faces have windows. The space before the mihrab is reached under a high pointed arch: in this 8.20 × 8.20 m second section the dome sits on a hexadecagonal drum outside and a Turkish-triangle band inside, with four windows in the lower row."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    },
+    {
+      "id": "ekleme",
+      "order": 2,
+      "title": {
+        "tr": "Sonradan Genişletme",
+        "en": "Later Enlargement"
+      },
+      "body": {
+        "tr": "Mihrap önü mekânının duvar kalınlığı 91 cm, giriş bölümününki 110 cm'dir; iki bölümün duvar örgüsü ve işçiliği farklıdır. Doğu ve batıdaki kemerlerin kesilip farklı eğimli iki köşe oluşturulması, yapının aslında tek kubbe ve son cemaat yerinden oluştuğunu gösterir. Camiyi büyütmek için son cemaat yeri kaldırılıp kubbeli ikinci mekân eklenmiştir; ortaya çıkan dikdörtgen planlı yapı Bursa'daki özgün camiler arasındadır. Başlangıçta mescit olarak yapılan yapı, 17. yüzyılda minber eklenerek camiye dönüştürülmüştür.",
+        "en": "The mihrab-front section has 91 cm thick walls, the entrance section 110 cm; the masonry and workmanship of the two differ. The cutting of the east and west arches to form two corners of different slope shows that the building originally consisted of one dome and a narthex. To enlarge it, the narthex was removed and a second domed space added; the resulting rectangular building is among the distinctive mosques of Bursa. Originally a masjid, it was converted into a mosque by adding a minbar in the 17th century."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    },
+    {
+      "id": "duvar-minare",
+      "order": 3,
+      "title": {
+        "tr": "Duvarlar ve Minare",
+        "en": "Walls and Minaret"
+      },
+      "body": {
+        "tr": "Kuzey giriş bölümü moloz taş ve aralara serpiştirilmiş tuğlayla, ikinci bölüm moloz taş ve üç sıra tuğlayla örülmüştür. Kuzeybatıdaki minareye birinci bölümden açılan kapıyla çıkılır. Altıgen kaidesi kesme taş ve üç sıra tuğladan, silindirik gövdeye geçiş tuğla örgülü üçgenlerle sağlanmıştır; şerefe altında beş sıra kirpi saçak vardır. Minarenin camiden sonra yapıldığı anlaşılır.",
+        "en": "The north entrance section is of rubble stone with scattered bricks; the second section of rubble stone and three rows of brick. The minaret in the northwest is reached by a door from the first section. Its hexagonal base is of cut stone and three rows of brick, with brickwork triangles for the transition to the cylindrical shaft, and five rows of sawtooth under the balcony. It was evidently built after the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    },
+    {
+      "id": "ad-onarim",
+      "order": 4,
+      "title": {
+        "tr": "Adı ve Onarım",
+        "en": "Name and Repair"
+      },
+      "body": {
+        "tr": "Şerefe altındaki daire formlu ayna dizisi nedeniyle 'Aynalı Cami' adıyla anılır. 1958'de Bursa Eski Eserleri Sevenler Kurumu onarıp yeniden ibadete açmıştır. Cami bakımlıdır ve ibadete açıktır.",
+        "en": "It is called 'Aynalı Mosque' because of the circular row of mirrors under the balcony. In 1958 the Bursa Association for the Appreciation of Antiquities repaired it and reopened it for worship. It is well maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ilk_bolum_olcu",
+      "label": {
+        "tr": "Birinci bölüm iç ölçüsü",
+        "en": "First section interior size"
+      },
+      "value": "6,96 × 7",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    },
+    {
+      "key": "ikinci_bolum_olcu",
+      "label": {
+        "tr": "İkinci bölüm iç ölçüsü",
+        "en": "Second section interior size"
+      },
+      "value": "8,20 × 8,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinlik_mihrap",
+      "label": {
+        "tr": "Mihrap önü duvar kalınlığı",
+        "en": "Wall thickness, mihrab section"
+      },
+      "value": 91,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinlik_giris",
+      "label": {
+        "tr": "Giriş bölümü duvar kalınlığı",
+        "en": "Wall thickness, entrance section"
+      },
+      "value": 110,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    },
+    {
+      "key": "minare_kirpi",
+      "label": {
+        "tr": "Şerefe altı kirpi sırası",
+        "en": "Sawtooth rows under balcony"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Tabip Hüsnü Efendi",
+      "role": {
+        "tr": "Banî; Yıldırım Darüşşifası müderrisi",
+        "en": "Founder; professor at Yıldırım Hospital"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu onardı, yeniden ibadete açıldı",
+        "en": "Repaired by the Bursa Association for the Appreciation of Antiquities and reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "265"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "ayna",
+      "title": {
+        "tr": "Şerefe altındaki aynalar",
+        "en": "Mirrors under the balcony"
+      },
+      "hint": {
+        "tr": "Adını veren, şerefe altındaki daire biçimli ayna dizisini arayın.",
+        "en": "Look for the circular row of mirrors under the balcony that gave the mosque its name."
+      },
+      "section_id": "ad-onarim"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı cami iki kubbeli mekândan oluşur: ilk bölüm sekizgen kasnaklı, ikinci bölüm on altıgen kasnaklı kubbeyle örtülüdür. Kuzeybatıda altıgen kaideli tuğla ve taş minare yükselir; şerefe altında daire biçimli aynalar bulunur.",
+      "en": "The rectangular mosque has two domed spaces: the first with an octagonal drum, the second with a hexadecagonal drum. A minaret with a hexagonal stone-and-brick base stands in the northwest, with a circular row of mirrors beneath its balcony."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

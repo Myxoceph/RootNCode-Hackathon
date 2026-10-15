@@ -1,0 +1,364 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-altiparmak-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 258-260) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mezar taşı kitabeleri kitapta basılmamış; kitabe eklenmedi.",
+      "Muallimhane ve tabhanenin konumu kitapta belirtilmiyor.",
+      "Banînin ölüm tarihi ve kabri belirtilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "era",
+        "note": "'klasik-osmanli' dönem kodu 1513 tarihine dayanarak ekip tarafından atandı; kitap dönem etiketi vermiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Altıparmak Camii",
+    "en": "Altıparmak Mosque"
+  },
+  "subtitle": {
+    "tr": "1513 tarihli tek kubbeli Bursa camisi; doğusunda küçülmüş hazire",
+    "en": "A single-domed Bursa mosque of 1513, with a reduced graveyard to its east"
+  },
+  "alternate_names": [
+    {
+      "tr": "Altıparmak Camii ve Haziresi",
+      "en": "Altıparmak Mosque and Graveyard"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "tek kubbeli cami",
+    "Bursa kemeri",
+    "1855 depremi",
+    "hazire",
+    "muallimhane"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Yahşibey",
+    "address": "Yahşibey Mahallesi, Bozkurt Caddesi, Çıkıntı Sokak No: 5",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "258"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 919 / M. 1513",
+      "en": "AH 919 / AD 1513"
+    },
+    "start_year": 1513,
+    "end_year": null,
+    "hijri_year": 919,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap camiyi H. 919 / M. 1513'te inşa ettirilmiş olarak verir.",
+      "en": "The book gives the mosque as built in AH 919 / AD 1513."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "258"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Mehmed Muhyiddin Efendi (Altıparmak, Abdullah oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "258"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Altıparmak lakaplı Hoca Mehmed Muhyiddin Efendi'nin 1513'te yaptırdığı, tek kubbeli harimli, üç kubbeli son cemaat yerli cami; 1855 depreminde ağır hasar görmüş, minaresi 1967'de yeniden yapılmıştır. Doğusunda yaklaşık 25 mezar taşı bulunan hazire vardır.",
+    "en": "A mosque built in 1513 by Hoca Mehmed Muhyiddin Efendi, known as Altıparmak, with a single-domed prayer hall and a three-domed narthex; badly damaged in the 1855 earthquake, its minaret was rebuilt in 1967. To its east lies a graveyard with about 25 gravestones."
+  },
+  "sections": [
+    {
+      "id": "plan",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve Harim",
+        "en": "Plan and Prayer Hall"
+      },
+      "body": {
+        "tr": "Kare planlı, tek kubbeli harim, önündeki üç kubbeli son cemaat yeriyle dikdörtgen plana tamamlanır. Harimin iç ölçüleri 7,50 × 7,65 m'dir ve mermer söveli Bursa kemerli bir kapıyla geçilir. Kubbe dıştan sekizgen kasnaklı, içten Türk üçgenlerinden bir kuşak üzerinedir; kasnakta sivri kemerli üç pencere vardır. Mihrap köşelerde iki silindirik sütunçeyle desteklenir ve yedi sıra mukarnaslıdır.",
+        "en": "The square-plan, single-domed prayer hall is completed into a rectangle by the three-domed narthex in front. The hall measures 7.50 × 7.65 m inside and is entered through a Bursa-arched door with marble jambs. The dome stands on an octagonal drum outside and a band of Turkish triangles inside; the drum has three pointed-arched windows. The mihrab has seven rows of muqarnas supported by two cylindrical colonettes at the corners."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "258-259"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 2,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "Üç bölümlüdür; orta bölüm dar ve yüksek, yarım daire kesitli, yan bölümler aynalı tonozludur. Bu kısım yüksek kalkan duvar eklenerek yeniden düzenlenmiştir. Cephede Bursa kemerinin altında bir kemer daha vardır; ikisi arasındaki boşluk üçgen tuğla ve altıgen taşlarla dolgulanmıştır. İki sıra kirpi saçak çıkıntılı bir çerçeve oluşturur; kalkan duvardaki sivri kemerli niş petek motifleriyle süslüdür.",
+        "en": "It has three parts; the middle is narrow and high with a semicircular vault, the sides have flattened barrel vaults. This part was reorganized by adding a high gable wall. There is another arch under the Bursa arch on the façade; the space between is filled with triangular bricks and hexagonal stones. A two-row sawtooth cornice forms a protruding frame; the pointed-arched niche in the gable wall is decorated with honeycomb motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "258-259"
+        }
+      ]
+    },
+    {
+      "id": "deprem-onarim",
+      "order": 3,
+      "title": {
+        "tr": "Deprem ve Onarımlar",
+        "en": "Earthquake and Repairs"
+      },
+      "body": {
+        "tr": "1855 depreminde son cemaat yeri kubbeleri ve minare küp kısmına kadar yıkılmış, harim kubbesi çatlamış, takviye edilip dıştan kurşunla kaplanmıştır. Son cemaat yeri yanlarda duvarlara, önde ahşap direklere oturan bir çatıyla örtülmüştür. Minareye son cemaat yerinin batısındaki kapıdan çıkılır; kaideden yukarısı yıkılan minare 1967'de yeniden yapılmıştır. Bitişikte bir muallimhane ve tabhane olduğu bilinir, ancak günümüze ulaşmamıştır. Yapı bakımlı ve ibadete açıktır.",
+        "en": "In the 1855 earthquake the narthex domes and the minaret down to the transition section collapsed and the hall dome cracked, then was reinforced and covered with lead. The narthex has a roof resting on side walls and wooden posts in front. The minaret is reached through a door west of the narthex; its part above the base collapsed and was rebuilt in 1967. A schoolroom and a hospice are known beside the mosque but have not survived. The building is well maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "259"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Caminin doğusundaki hazire demir parmaklıklı duvarla çevrilidir. Başlangıçta oldukça geniş olup 15. yüzyıl sonundan itibaren tarihli mezar taşları vardır; bir bölümü yol yapımında yok olmuş, kalan parsellere ev yapılarak büyük ölçüde küçülmüştür. Yakın zamanda düzenlenen hazirede çoğu 16. yüzyıla tarihlenen yaklaşık 25 mezar taşı vardır. Medfunlardan bazıları: Hacı Mustafa bin Turgut, Ramazan Çelebi bin Sinan, Mustafa Çelebi bin Hasan, Hacı Mehmed bin Ömer, Ömer Çelebi bin Cafer, Abdülkadir Efendi el-Kanden, Şerife İhsan ve Mehmed Ağa.",
+        "en": "The graveyard east of the mosque is enclosed by a wall with iron railings. It originally covered a large area, with dated gravestones from the late 15th century; part was lost to road building and houses were built on the remaining plots, shrinking it considerably. In the recently renovated graveyard there are about 25 gravestones, mostly 16th century. Some buried: Hacı Mustafa bin Turgut, Ramazan Çelebi bin Sinan, Mustafa Çelebi bin Hasan, Hacı Mehmed bin Ömer, Ömer Çelebi bin Cafer, Abdülkadir Efendi el-Kanden, Şerife İhsan and Mehmed Ağa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "260"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim iç ölçüsü",
+        "en": "Prayer hall interior dimensions"
+      },
+      "value": "7,50 × 7,65",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "258"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_kubbe",
+      "label": {
+        "tr": "Son cemaat yeri kubbe sayısı",
+        "en": "Narthex dome count"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "258"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas",
+      "label": {
+        "tr": "Mihrap mukarnas sırası",
+        "en": "Mihrab muqarnas rows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "259"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_tasi",
+      "label": {
+        "tr": "Haziredeki yaklaşık mezar taşı sayısı",
+        "en": "Approx. gravestones in graveyard"
+      },
+      "value": 25,
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "260"
+        }
+      ]
+    },
+    {
+      "key": "minare_yeniden_1967",
+      "label": {
+        "tr": "Minarenin yeniden yapıldığı yıl",
+        "en": "Year the minaret was rebuilt"
+      },
+      "value": 1967,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "259"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Mehmed Muhyiddin Efendi (Altıparmak)",
+      "role": {
+        "tr": "Banî; Fatih devrinde yaşamış, Abdullah oğlu",
+        "en": "Founder; lived in Fâtih's time, son of Abdullah"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1513",
+      "year": 1513,
+      "date": null,
+      "hijri": "919",
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa ettirildi (H. 919 / M. 1513)",
+        "en": "Mosque built (AH 919 / AD 1513)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "258"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde son cemaat yeri ve minare yıkıldı, harim kubbesi çatladı",
+        "en": "1855 earthquake destroyed narthex and minaret, cracked the dome"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "259"
+        }
+      ]
+    },
+    {
+      "id": "minare-1967",
+      "year": 1967,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Minare yeniden inşa edildi",
+        "en": "Minaret rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "259"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "son-cemaat",
+      "title": {
+        "tr": "Süslü kalkan duvar",
+        "en": "Decorated gable wall"
+      },
+      "hint": {
+        "tr": "Bursa kemeri, üçgen tuğla ve altıgen taş dolgusu ve petek motifli nişi gözleyin.",
+        "en": "Observe the Bursa arch, triangular brick and hexagonal stone filling and honeycomb-motif niche."
+      },
+      "section_id": "son-cemaat"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı harim tek kubbeyle örtülüdür; önünde üç kubbeli, kalkan duvarlı son cemaat yeri vardır. Kalkan duvarda Bursa kemeri, onun altında ikinci kemer ve aralarında üçgen tuğla ile altıgen taş dolgu görülür. Harim, mermer söveli Bursa kemerli kapıdan girilir. Doğusunda demir parmaklıklı duvarla çevrili hazire bulunur.",
+      "en": "The square prayer hall is covered by one dome, with a three-domed narthex and gable wall in front. The gable wall shows a Bursa arch with a second arch beneath it and triangular brick and hexagonal stone filling between. The hall is entered by a Bursa-arched door with marble jambs. To the east lies a graveyard enclosed by a wall with iron railings."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

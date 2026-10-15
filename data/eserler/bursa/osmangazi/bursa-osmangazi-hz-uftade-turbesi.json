@@ -1,0 +1,752 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hz-uftade-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin yapım yılı kitapta kesin değil (“değerlendirilmektedir”); yaklaşık 1550-1600 aralığı XVI. yüzyılın ikinci yarısından türetildi.",
+      "Banî kitapta belirtilmiyor (founder: null); mimar da belirtilmiyor.",
+      "Üftâde Camii kaydının id’si (bursa-osmangazi-hz-uftade-camii) tahminidir.",
+      "Kitabelerin dil kodları ekip sınıflandırmasıdır; uzman gözden geçirmeli.",
+      "Giriş kitabesi metnindeki “H. 1259 / M. 1843” satırları basılı metinde böyle; asıl yazıtla karşılaştırılmalı.",
+      "Hasan Rıza Paşa (1866) ile kitabedeki Rıza Paşa (1843) aynı kişi mi, kitap belirtmiyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[kapi-kitabesi-1259]",
+        "note": "Kitap, 1866 (H. 1283) onarımının giriş kapısı üzerindeki talik kitabeyle kayıt altına alındığını söyler; ancak aktarılan kitabe H. 1259 / M. 1843 tarihini taşır ve Sultan Abdülmecid ile Rıza Paşa’yı anar (1843 onarımı). Hangi onarımı kaydettiği belirsiz; çelişki 'disputed' olarak işaretlendi."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metindeki 'XVIIII. yüzyıl' açık bir baskı hatasıdır; İngilizce metin '19th century' diyor. XIX. yüzyıl olarak yazıldı."
+      },
+      {
+        "field": "inscriptions[bati-cephe-kitabesi]",
+        "note": "Mealde 'Nakledileceğini duyduğumda...' ifadesi yer alıyor; kitap bunu ölüm tarihi (H. 988 / M. 1580) olarak yorumluyor. 'Nakl' kelimesinin anlamı kitapta açıklanmıyor."
+      },
+      {
+        "field": "people[Rıza Paşa]",
+        "note": "1843 kitabesindeki 'Rıza Paşa' ile 1866 onarımını yapan 'Serasker Hasan Rıza Paşa'nın aynı kişi olup olmadığı kitapta belirtilmiyor; iki ayrı kayıt olarak tutuldu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hz. Üftâde Türbesi",
+    "en": "Hazrat Üftâde Tomb"
+  },
+  "subtitle": {
+    "tr": "Bursa’nın büyük mutasavvıfı Üftâde Hazretleri’nin türbesi",
+    "en": "Tomb of Üftâde Hazretleri, the great sufi of Bursa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hazret-i Üftâde Türbesi",
+      "en": "Hazrat Üftâde Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Üftâde",
+    "Mehmed Muhyiddin",
+    "Kutub İbrâhim Efendi",
+    "Rıza Paşa",
+    "kitabe",
+    "hazire",
+    "Kavaklı",
+    "Celvetî"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kavaklı Mahallesi",
+    "address": "Üftâde Sokağı No: 10",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "545"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XVI. yüzyılın ikinci yarısı",
+      "en": "Second half of the 16th century"
+    },
+    "start_year": 1550,
+    "end_year": 1600,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Türbenin Üftâde Hazretleri’nin yaşadığı dönemde, camiyle birlikte XVI. yüzyılın ikinci yarısında inşa edildiği “değerlendirilmektedir”.",
+      "en": "It “is believed” that the tomb was built together with the mosque in the second half of the 16th century, during Hazrat Üftâde’s lifetime."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "545"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bursa’nın en saygın mutasavvıflarından Mehmed Muhyiddin Üftâde’nin (1489-1580), XVI. yüzyılın ikinci yarısında camiyle birlikte yapıldığı değerlendirilen kare planlı, kırma çatılı türbesi. Kutub İbrâhim Efendi (1670), Rıza Paşa (1843) ve Serasker Hasan Rıza Paşa (1866) onarımları ile iki kitabesi vardır; karşısındaki hazirede çok sayıda mezar taşı bulunur.",
+    "en": "The square-plan, hipped-roof tomb of Mehmed Muhyiddin Üftâde (1489-1580), one of Bursa’s most respected sufis, believed to have been built with the mosque in the second half of the 16th century. It has two inscriptions and was repaired by Kutub İbrâhim Efendi (1670), Rıza Paşa (1843) and Serasker Hasan Rıza Paşa (1866); an open graveyard with many gravestones lies opposite."
+  },
+  "sections": [
+    {
+      "id": "kimlik",
+      "order": 1,
+      "title": {
+        "tr": "Üftâde Hazretleri",
+        "en": "Hazrat Üftâde"
+      },
+      "body": {
+        "tr": "Üftâde Hazretleri, Bursa’da her dönem saygıyla anılmış mutasavvıfların başında gelir. Asıl adı Mehmed Muhyiddin olan Üftâde H. 895 / M. 1489’da Bursa’da doğmuş, H. 988 / M. 1580’de vefat etmiştir. Türbe Osmangazi ilçesi, Kavaklı Mahallesi, Üftâde Sokağı No: 10’dadır.",
+        "en": "Hazrat Üftâde is among the leading sufis always remembered with respect in Bursa. Born Mehmed Muhyiddin, he was born in Bursa in AH 895 / AD 1489 and died in AH 988 / AD 1580. The tomb is at Üftâde Street No. 10, Kavaklı Neighborhood, Osmangazi District."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "545"
+        }
+      ]
+    },
+    {
+      "id": "insa-ve-sandukalar",
+      "order": 2,
+      "title": {
+        "tr": "İnşa ve sandukalar",
+        "en": "Construction and sarcophagi"
+      },
+      "body": {
+        "tr": "Türbenin Üftâde Hazretleri’nin yaşadığı dönemde, camiyle birlikte XVI. yüzyılın ikinci yarısında inşa edildiği değerlendirilmektedir. İçinde Üftâde’nin sandukasının yanı sıra oğulları Mustafa, Mehmed, Hayreddin ve Ahmed’e ait dört ahşap sanduka ile kimliği tespit edilemeyen dokuz kişiye ait sandukalar bulunur.",
+        "en": "It is believed that the tomb was built with the mosque in the second half of the 16th century, during Üftâde’s lifetime. Inside, besides Üftâde’s sarcophagus, are four wooden sarcophagi of his sons Mustafa, Mehmed, Hayreddin and Ahmed, and sarcophagi of nine unidentified people."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "545"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Onarım tarihçesi",
+        "en": "Repair history"
+      },
+      "body": {
+        "tr": "İlk kapsamlı müdahale, Üftâde’nin torunu Kutub İbrâhim Efendi tarafından caminin yeniden inşa edildiği H. 1081 / M. 1670’te yapılmıştır. İkinci büyük onarım, Şeyh Burhâneddin Efendi döneminde Rıza Paşa’nın himayesinde H. 1259 / M. 1843’te tamamlanmış; türbenin hem yapısı hem çevresi yeniden düzenlenmiştir. 1845’te Bursa’yı ziyaret eden Sultan Abdülmecid türbeye bir Kâbe örtüsü hediye etmiştir. H. 1271 / M. 1855 depreminde ağır hasar gören yapı H. 1283 / M. 1866’da Serasker Hasan Rıza Paşa tarafından kapsamlı biçimde onarılmıştır. Sonraki dönemde ilk kapsamlı müdahale 1961’de Bursa Eski Eserleri Sevenler Kurumu tarafından yapılmış; yapı 1986, 2004 ve 2009’da da farklı düzeylerde tamir ve bakım görmüştür.",
+        "en": "The first comprehensive intervention was by Kutub İbrâhim Efendi, Üftâde’s grandson, in AH 1081 / AD 1670, when the mosque was rebuilt. The second major repair, in the time of Shaykh Burhâneddin Efendi under Rıza Paşa’s patronage, was completed in AH 1259 / AD 1843, rearranging both the tomb and its surroundings. Sultan Abdülmecid, visiting Bursa in 1845, gave the tomb a Kaaba cover. Heavily damaged in the AH 1271 / AD 1855 earthquake, it was comprehensively repaired by Serasker Hasan Rıza Paşa in AH 1283 / AD 1866. In later periods the first comprehensive intervention was in 1961 by the Bursa Association for the Appreciation of Antiquities; it also had repair and maintenance in 1986, 2004 and 2009."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "545-546, 548"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-1843",
+      "order": 4,
+      "title": {
+        "tr": "Giriş kapısı kitabesi",
+        "en": "Entrance door inscription"
+      },
+      "body": {
+        "tr": "Kitap, 1866 onarımının türbenin giriş kapısı üzerine talik hatla yazılmış bir kitabeyle kayıt altına alındığını söyler. Aktarılan manzum kitabe Sultan Abdülmecid’in serdarı Rıza Paşa’nın Bursa’yı ziyaretini, yıkılmak üzere gördüğü Üftâde türbesini yeniletmesini anlatır ve H. 1259 / M. 1843 tarihini verir. Kitap, metnin şairinin Zâik (ö. H. 1269 / M. 1852) olduğunu belirtir.",
+        "en": "The book says the 1866 repair was recorded with an inscription in Ta’liq script on the entrance door. The quoted verse inscription tells how Rıza Paşa, the commander of Sultan Abdülmecid, visited Bursa and had Üftâde’s tomb renewed when he saw it about to collapse, and gives the date AH 1259 / AD 1843. The book states that the poet of the text was Zâik (d. AH 1269 / AD 1852)."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "546-548"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 5,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dıştan 12,10 × 12,14 m ölçülerinde kare planlı türbe, kırma çatılı ahşap bir örtü sistemine sahiptir. Taştan inşa edilmiş, dış yüzeyleri sıvalıdır. Kuzeydeki mermer giriş açıklığının iki yanında mermer profili destekleyen kıvrımlı ahşap konsollar vardır. Kapı, türbenin XIX. yüzyılda onarım gördüğünü yansıtan dönem özelliği taşır; üzerinde yeşil zemin üzerine altın varakla yazılmış mermer bir kitabe bulunur. Batı, doğu ve güney cephelerinde beşer, kuzey cephesinde dört basık kemerli ve demir parmaklıklı pencere vardır.",
+        "en": "The tomb, square in plan with external dimensions of 12.10 × 12.14 m, has a wooden hipped-roof cover. It is built of stone with plastered outer surfaces. On both sides of the marble entrance opening on the north are curved wooden consoles supporting the marble profile. The door has period features reflecting a 19th-century repair; above it is a marble inscription in gold leaf on a green background. There are five windows with depressed arches and iron bars on each of the west, east and south façades and four on the north."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 6,
+      "title": {
+        "tr": "İç mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "İç mekânda oldukça sade bir süsleme anlayışı hâkimdir. Tavan ve pencereler tamamen ahşaptır. Tavanın göbeği geometrik geçme yıldız motifiyle, diğer yüzeyler çıtakâri bezemelerle hareketlendirilmiştir. Tavan ile duvarların birleştiği yerlerde geçişi yumuşatan köşe bağlantı unsurları kullanılmıştır.",
+        "en": "A very simple decoration prevails inside. The ceiling and windows are entirely of wood. The ceiling center has a geometric interlaced star motif and other surfaces çıtakâri decoration. Corner connection elements soften the transition between ceiling and walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 7,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Caminin ve türbenin karşısında açık bir hazire vardır. Üftâde’nin vefatından günümüze cami karşısında 21, türbe karşısında 34 mezar taşı tespit edilmiştir; ayrıca mezar taşı olmayan ama kimlikleri arşiv belgeleriyle belirlenen 17 kişi daha kayıt altındadır. Türbenin tam karşısında, demir parmaklıkla çevrili mezarda camiyi yeniden yaptıran ve türbeyi onaran Kutub İbrâhim Efendi yatar; mezar taşına göre Ramazan H. 1089 / Ekim M. 1678’de vefat etmiştir.",
+        "en": "An open graveyard lies opposite the mosque and the tomb. Since Üftâde’s death, 21 gravestones have been identified opposite the mosque and 34 opposite the tomb; 17 more people without gravestones but identified from archive documents are also recorded. Right across from the tomb, in a grave surrounded by iron railings, lies Kutub İbrâhim Efendi, who rebuilt the mosque and repaired the tomb; per his gravestone he died in Ramadan AH 1089 / October AD 1678."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Dış ölçüler (kare plan)",
+        "en": "External dimensions (square plan)"
+      },
+      "value": "12,10 × 12,14",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "545"
+        }
+      ],
+      "note": {
+        "tr": "Üftâde + 4 oğlu (ahşap) + kimliği belirsiz 9 kişi.",
+        "en": "Üftâde + 4 sons (wooden) + 9 unidentified people."
+      }
+    },
+    {
+      "key": "pencere_bati_dogu_guney",
+      "label": {
+        "tr": "Batı, doğu ve güney cephelerinde cephe başına pencere",
+        "en": "Windows per façade on west, east and south"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "key": "pencere_kuzey",
+      "label": {
+        "tr": "Kuzey cephesindeki pencere",
+        "en": "Windows on the north façade"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "key": "mezar_tasi_cami_karsisi",
+      "label": {
+        "tr": "Cami karşısındaki mezar taşı",
+        "en": "Gravestones opposite the mosque"
+      },
+      "value": 21,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "key": "mezar_tasi_turbe_karsisi",
+      "label": {
+        "tr": "Türbe karşısındaki mezar taşı",
+        "en": "Gravestones opposite the tomb"
+      },
+      "value": 34,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "key": "arsiv_ile_belirlenen",
+      "label": {
+        "tr": "Mezar taşı olmayan, arşivle kimliği belirlenen kişi",
+        "en": "People identified by archives without gravestones"
+      },
+      "value": 17,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "key": "dogum",
+      "label": {
+        "tr": "Üftâde’nin doğumu",
+        "en": "Birth of Üftâde"
+      },
+      "value": "H. 895 / M. 1489",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "545"
+        }
+      ]
+    },
+    {
+      "key": "vefat",
+      "label": {
+        "tr": "Üftâde’nin vefatı",
+        "en": "Death of Üftâde"
+      },
+      "value": "H. 988 / M. 1580",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "545, 548"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Üftâde (Mehmed Muhyiddin)",
+      "role": {
+        "tr": "Mutasavvıf; türbede medfun (1489-1580)",
+        "en": "Sufi; buried in the tomb (1489-1580)"
+      }
+    },
+    {
+      "name": "Mustafa, Mehmed, Hayreddin ve Ahmed",
+      "role": {
+        "tr": "Üftâde’nin oğulları; ahşap sandukaları türbededir",
+        "en": "Üftâde’s sons; wooden sarcophagi in the tomb"
+      }
+    },
+    {
+      "name": "Kutub İbrâhim Efendi",
+      "role": {
+        "tr": "Üftâde’nin torunu; camiyi yeniden yaptırdı, türbeyi onardı (ö. Ramazan H. 1089 / Ekim M. 1678)",
+        "en": "Grandson of Üftâde; rebuilt the mosque and repaired the tomb (d. Ramadan AH 1089 / October AD 1678)"
+      }
+    },
+    {
+      "name": "Şeyh Burhâneddin Efendi",
+      "role": {
+        "tr": "1843 onarımı döneminde şeyh",
+        "en": "Shaykh during the 1843 repair"
+      }
+    },
+    {
+      "name": "Rıza Paşa",
+      "role": {
+        "tr": "1843 onarımının hamisi; kitabede Abdülmecid’in serdarı",
+        "en": "Patron of the 1843 repair; commander of Abdülmecid in the inscription"
+      }
+    },
+    {
+      "name": "Sultan Abdülmecid",
+      "role": {
+        "tr": "1845’te türbeye Kâbe örtüsü hediye etti",
+        "en": "Gave a Kaaba cover to the tomb in 1845"
+      }
+    },
+    {
+      "name": "Serasker Hasan Rıza Paşa",
+      "role": {
+        "tr": "1866 onarımını yaptıran",
+        "en": "Had the 1866 repair carried out"
+      }
+    },
+    {
+      "name": "Zâik",
+      "role": {
+        "tr": "1843 kitabesinin şairi (ö. H. 1269 / M. 1852)",
+        "en": "Poet of the 1843 inscription (d. AH 1269 / AD 1852)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi-1259",
+      "location": {
+        "tr": "Türbenin giriş kapısı üzerinde (talik hat)",
+        "en": "Above the entrance door of the tomb (Ta’liq script)"
+      },
+      "language": "tr-ottoman",
+      "script": "talik",
+      "transliteration": "Hilâfet menzilet Abdü’l-mecîd Hân-ı cihân-bânın\nMuizz-i şevket ü şân u sipehdârı Rızâ Paşa\nZiyâret kasdına mebnî idince Bursa’yı teşrîf\nOlub etrâb-ı ehlu’l-lâha sertâpâ cebîn-fersâ\nGörür kim kıblegâh-ı ehl-i celvet pîr üftâde\nKarîn-i inhidâm olmuş o vâlâ kâ’betü’l-ulyâ\nEsâsından idüb tecdîde nakd-ı himmetin masrûf\nBu gûne celb-i feyziyle ola dâd-u sited fermâ\nFüyûzâtı muhît olsun serâser mâ’nevî sûrı\nDil-i bânîyi kim olmuşdı akdem bâ-edeb rû-sâ\nO rütbe hamdüli’llâh buldı rif’at tâk-ı vâlâsı\nUlûvv-i kadrine reşk etse lâyık târem-i mînâ\nBu şevkîle senâ-hân-ı kadîmi Zâik-i ahkar\nİki târîh sebt itdi cevâhirden dahî âlâ\nYapıldı meşhed-i kutb-i cihân Üftâde pek dilkeş\nH. 1259 / M. 1843\nRızâ Paşa idüb cûd ü himem sarfîle nev bâlâ\nH. 1259",
+      "translation": {
+        "tr": "Hilafet makamının sahibi, cihan hükümdarı Abdülmecid Han’ın, şevket ve şanını\nartıran serdarı Rızâ Paşa;\nZiyaret maksadıyla Bursa’ya teşrif ettiğinde, Allah dostlarının çevresinde baştan\nayağa saygı ile durdu.\nCelvet ehlinin kıblesi, yüce makam sahibi Üftâde Hazretleri’nin türbesini yıkılmak\nüzere görünce,\nBu yüksek dergâhın ihyası için servetini ve gayretini sarf etti.\nBöylece feyzi celbederek adalet ve düzenin yerleşmesini umut etti.\nBu manevi yapının feyzi her yana yayılsın,\nZamanında burayı edeple inşa edenin gönlü de huzur bulsun.\nBu makam hamdolsun, yüceliğin kemerine erişti;\nOnun yüceliğine, minare kubbeleri bile gıpta eder.\nİşte bu coşku ile eski övgü ustası, aciz Zâik,\nİki tarih düşürdü; mücevherden bile kıymetli.\nDünyanın kutbu Üftâde’nin makamı gönül okşayıcı şekilde yapıldı.\nH. 1259 / M. 1843\nRızâ Paşa cömertlik ve himmetini sarf ederek burayı yeniden yüceltti.\nM. 1843.",
+        "en": "When Rıza Paşa, the commander of the world ruler Abdülmecid Han, came to Bursa for a visit, he stood respectfully around the friends of Allah. When he saw that the tomb of Hazrat Üftâde, the qibla of the Jelveti Order, was about to be demolished, he spent his wealth and effort for the revival of this noble lodge. May the blessing of this spiritual structure spread everywhere. The poet Zâik assigned two dates: The station of Üftâde, the pole of the world, was built in a heart-soothing way, AH 1259 / AD 1843; Rıza Paşa glorified this place again, AD 1843."
+      },
+      "author": "Zâik (ö. H. 1269 / M. 1852)",
+      "date": {
+        "hijri_year": 1259,
+        "gregorian": "1843"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "546-548"
+        }
+      ],
+      "note": {
+        "tr": "Metin Türkçe sayfadaki basılı hâliyle alınmıştır; orta ve son satırlardaki “H. 1259 / M. 1843” ve “H. 1259” ibareleri basılı olarak yer almaktadır. Kitap bu kitabeyi 1866 onarımına bağlar (bkz. data_quality_notes). Dil kodu ekip sınıflandırmasıdır.",
+        "en": "Text is taken as printed on the Turkish page, including the printed “H. 1259 / M. 1843” and “H. 1259” lines. The book links this inscription to the 1866 repair (see data_quality_notes). The language code is the drafter’s classification."
+      }
+    },
+    {
+      "id": "bati-cephe-kitabesi",
+      "location": {
+        "tr": "Türbenin batı cephesi (sülüs, tek satır)",
+        "en": "West façade of the tomb (Thuluth, single line)"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": "Nakl idicek didim âna târîh / göçd(i) Üftâde Burusa’nın kutbı\nsene H. 988",
+      "translation": {
+        "tr": "Nakledileceğini duyduğumda ona şu tarihi söyledim: Üftâde,\nBursa’nın kutbu, M. 1580 yılında vefat etti.",
+        "en": "When I heard he was being transferred, I told him the following date: Üftâde, the Kutub of Bursa, passed away in AD 1580."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 988,
+        "gregorian": "1580"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548-549"
+        }
+      ],
+      "note": {
+        "tr": "Kitap bu kitabenin Üftâde’nin H. 988 / M. 1580’de vefat ettiğini belgelediğini söyler. Dil kodu ekip sınıflandırmasıdır.",
+        "en": "The book says this inscription documents that Üftâde died in AH 988 / AD 1580. The language code is the drafter’s classification."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vefat-1580",
+      "year": 1580,
+      "date": null,
+      "hijri": "988",
+      "type": "record",
+      "title": {
+        "tr": "Üftâde Hazretleri vefat etti (batı cephe kitabesi)",
+        "en": "Üftâde Hazretleri died (west façade inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1670",
+      "year": 1670,
+      "date": null,
+      "hijri": "1081",
+      "type": "repair",
+      "title": {
+        "tr": "Kutub İbrâhim Efendi caminin yeniden inşasıyla birlikte ilk kapsamlı müdahaleyi yaptı",
+        "en": "Kutub İbrâhim Efendi made the first comprehensive intervention when the mosque was rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "545"
+        }
+      ]
+    },
+    {
+      "id": "vefat-ibrahim-1678",
+      "year": 1678,
+      "date": null,
+      "hijri": "1089",
+      "type": "record",
+      "title": {
+        "tr": "Kutub İbrâhim Efendi vefat etti",
+        "en": "Kutub İbrâhim Efendi died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1843",
+      "year": 1843,
+      "date": null,
+      "hijri": "1259",
+      "type": "repair",
+      "title": {
+        "tr": "Şeyh Burhâneddin Efendi döneminde Rıza Paşa himayesinde ikinci büyük onarım",
+        "en": "Second major repair in the time of Shaykh Burhâneddin Efendi under Rıza Paşa’s patronage"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "545-546"
+        }
+      ]
+    },
+    {
+      "id": "hediye-1845",
+      "year": 1845,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Sultan Abdülmecid türbeye Kâbe örtüsü hediye etti",
+        "en": "Sultan Abdülmecid presented a Kaaba cover to the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "546"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": "1271",
+      "type": "damage",
+      "title": {
+        "tr": "Bursa depreminde ağır hasar gördü",
+        "en": "Heavily damaged in the Bursa earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "546"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1866",
+      "year": 1866,
+      "date": null,
+      "hijri": "1283",
+      "type": "repair",
+      "title": {
+        "tr": "Serasker Hasan Rıza Paşa kapsamlı onarım yaptı",
+        "en": "Serasker Hasan Rıza Paşa carried out a comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "546"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1961",
+      "year": 1961,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu ilk kapsamlı müdahaleyi yaptı",
+        "en": "Bursa Association for the Appreciation of Antiquities made the first comprehensive intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1986",
+      "year": 1986,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir ve bakım",
+        "en": "Repair and maintenance"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir ve bakım",
+        "en": "Repair and maintenance"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2009",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir ve bakım",
+        "en": "Repair and maintenance"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "548"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hz-uftade-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe camiyle birlikte inşa edilmiş kabul edilir; cami Kutub İbrâhim Efendi tarafından yeniden inşa edilmiştir; hazire cami ve türbenin karşısındadır. Cami kaydının id’si tahminidir.",
+        "en": "The tomb is believed to have been built with the mosque; the mosque was rebuilt by Kutub İbrâhim Efendi; the graveyard faces both. The mosque record id is assumed."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "545, 548"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hz. Üftâde Türbesi, Kavaklı Mahallesi’nde, dıştan yaklaşık 12 × 12 metre ölçülerinde kare planlı, taştan yapılmış, dışı sıvalı ve kırma çatılı bir yapıdır. Kuzeydeki mermer giriş açıklığının iki yanında kıvrımlı ahşap konsollar vardır. Pencereler basık kemerli ve demir parmaklıklıdır. İçeride tavan ve pencereler ahşaptır; tavan göbeğinde geometrik geçme yıldız motifi bulunur. Üftâde’nin ve dört oğlunun ahşap sandukaları ile dokuz kişiye ait sandukalar yer alır. Türbenin ve caminin karşısında açık bir hazire uzanır.",
+      "en": "Hz. Üftâde Tomb is a stone, square-plan building about 12 by 12 meters externally, plastered outside, with a hipped roof, in the Kavaklı Neighborhood. Curved wooden consoles flank the marble entrance opening on the north. Windows have depressed arches and iron bars. Inside, the ceiling and windows are of wood; the ceiling center has a geometric interlaced star motif. It holds the sarcophagi of Üftâde, his four sons in wood, and nine other people. An open graveyard lies opposite the tomb and mosque."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

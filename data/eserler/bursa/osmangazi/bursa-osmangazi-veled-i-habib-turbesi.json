@@ -1,0 +1,408 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-veled-i-habib-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin yapım tarihi ve mimarı kitapta yok.",
+      "Veled-i Habib Camii kaydının id’si (bursa-osmangazi-veled-i-habib-camii) tahminidir.",
+      "Kitabenin dil kodu ekip sınıflandırmasıdır; tarihi kitapta yok.",
+      "“İki köşeli plan” ifadesinin (Türkçe) ne anlama geldiği netleşmeli; planın tarifi eksik.",
+      "Eminiye Kültür Evi’nin ziyaret/işletme bilgileri ve restorasyon yılı kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[vefat-1813]",
+        "note": "Kitap '6 Muharrem 1228 / 9 Ocak 1813 Cuma' diyor; 9 Ocak 1813 Gregoryen takvimde Cumartesi’dir. Gün adı ile miladi tarih arasında olası uyumsuzluk var (gün batımında yeni güne geçilmesi gibi bir etki olabilir, kitap açıklamıyor). Kaynaktaki değerler olduğu gibi saklandı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin 'iki köşeli plana sahip' diyor, İngilizce metin 'two-sided plan'; ifade belirsiz, olduğu gibi aktarıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Veled-i Habib Türbesi",
+    "en": "Veled-i Habib Tomb"
+  },
+  "subtitle": {
+    "tr": "Nakşibendi şeyhi Mehmed Emin Kerkûkî’nin Veled-i Habib Camii bitişiğindeki türbesi",
+    "en": "Tomb of the Naqshbandi shaykh Mehmed Emin Kerkûkî next to the Veled-i Habib Mosque"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Mehmed Emin Kerkûkî",
+    "Hoca Emin Efendi",
+    "Nakşibendi",
+    "dergâh",
+    "Eminiye Kültür Evi",
+    "İnebey Caddesi",
+    "Maksem"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alipaşa Mahallesi",
+    "address": "İnebey Caddesi (Maksem Yokuşu kesişimi)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "550"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi belirtilmiyor (Şeyh Mehmed Emin H. 1228 / M. 1813’te buraya defnedildi)",
+      "en": "Construction date not stated (Shaykh Mehmed Emin was buried here in AH 1228 / AD 1813)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Türbenin yapım tarihi verilmiyor; Şeyh Mehmed Emin Efendi’nin 1813’te vefat edip cami bitişiğindeki türbeye defnedildiği söyleniyor. Bu, türbenin 1813’te var olduğunu gösterir.",
+      "en": "The construction date of the tomb is not given; the book says Shaykh Mehmed Emin Efendi died in 1813 and was buried in the tomb next to the mosque, which shows the tomb existed by 1813."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "550"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Aslen Kerküklü Nakşibendi şeyhi Mehmed Emin Efendi’nin (ö. 1813) defnedildiği, Veled-i Habib Camii’ne bitişik, tek sandukalı türbe. 1848’de Sultan Abdülmecid tarafından onartılmış; son yıllardaki restorasyonda yan dergâh binası “Eminiye Kültür Evi” olarak yeniden hizmete açılmıştır.",
+    "en": "The tomb with a single sarcophagus, next to the Veled-i Habib Mosque, where Mehmed Emin Efendi (d. 1813), a Naqshbandi shaykh originally from Kirkuk, is buried. Repaired by Sultan Abdülmecid in 1848; in the recent restoration the adjoining lodge building reopened as the “Eminiye Culture House”."
+  },
+  "sections": [
+    {
+      "id": "konum",
+      "order": 1,
+      "title": {
+        "tr": "Konum",
+        "en": "Location"
+      },
+      "body": {
+        "tr": "Türbe Osmangazi ilçesi, Alipaşa Mahallesi, İnebey Caddesi üzerindedir; İnebey Caddesi ile Maksem Yokuşu’nun kesişimindeki Veled-i Habib Camii’nin bitişiğindedir.",
+        "en": "The tomb is on İnebey Street in Alipaşa Neighborhood, Osmangazi District, adjacent to the Veled-i Habib Mosque at the intersection of İnebey Street and Maksem Hill."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Mehmed Emin Efendi ve dergâh",
+        "en": "Mehmed Emin Efendi and the lodge"
+      },
+      "body": {
+        "tr": "Aslen Kerküklü olan Mehmed Emin Efendi, H. 1216 / M. 1801’de mescidin yanındaki Hacı Abdullah Ağa Konağı’nı satın almış, buraya bir kütüphane ekleyerek mekânı Nakşibendi dergâhına dönüştürmüştür. Aynı dönemde mescide minber eklenmiş ve yapı cami statüsü kazanmıştır. Şeyh Mehmed Emin Efendi H. 6 Muharrem 1228 / M. 9 Ocak 1813 Cuma günü vefat etmiş ve cami bitişiğindeki türbeye defnedilmiştir.",
+        "en": "Mehmed Emin Efendi, originally from Kirkuk, bought the Hacı Abdullah Ağa Mansion next to the masjid in AH 1216 / AD 1801, added a library and turned the place into a Naqshbandi lodge. In the same period a minbar was added to the masjid, which gained mosque status. Shaykh Mehmed Emin Efendi died on Friday, 6 Muharram AH 1228 / 9 January AD 1813 and was buried in the tomb adjacent to the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbede Mehmed Emin Kerkûkî’ye ait tek sanduka vardır. Giriş yapının batı cephesindeki kapıdandır. İki köşeli plana sahip türbe, kuzey ve kuzeybatı yönlerindeki sivri kemerli, ahşap karkaslı iki pencereyle aydınlanır. Vakıflar Bursa Bölge Müdürlüğü’nün restorasyonunda zemindeki iki sıra moloz taş örgü kaldırılmış, yerine cami duvarlarında da görülen tek sıra taş ve iki sıra tuğladan oluşan almaşık duvar dokusu uygulanmıştır.",
+        "en": "The tomb holds a single sarcophagus of Mehmed Emin Kirkukî. Entrance is through a door on the west façade. The tomb, with a two-sided plan, is lit by two pointed-arched, wooden-framed windows on the north and northwest. In the restoration by the Bursa Regional Directorate of Foundations, two rows of rubble stone at ground level were removed and replaced with the alternating wall texture of a single row of stone and two rows of brick also seen on the mosque walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-ve-onarim",
+      "order": 4,
+      "title": {
+        "tr": "Kitabe ve onarımlar",
+        "en": "Inscription and repairs"
+      },
+      "body": {
+        "tr": "Daha önce sandukanın başucunda bulunan ve son restorasyonda türbenin dış duvarına taşınan geç dönem kitabe, Hoca Emin Efendi’yi dergâhın banisi ve Nakşibendi yolunun kutbu olarak anar. Dergâh, cami, kütüphane ve türbe H. 1264 / M. 1848’de Sultan Abdülmecid tarafından tamir ettirilmiştir. Son yıllarda türbe ve cami kapsamlı onarım geçirmiş, dergâh binası aslına uygun restore edilerek “Eminiye Kültür Evi” adıyla yeniden hizmete açılmıştır.",
+        "en": "The late-period inscription, formerly at the head of the sarcophagus and moved to the tomb’s outer wall in the last restoration, honors Hoca Emin Efendi as the founder of the lodge and the pole of the Naqshbandi path. The lodge, mosque, library and tomb were repaired by Sultan Abdülmecid in AH 1264 / AD 1848. In recent years the tomb and mosque have been extensively renovated, and the lodge building was restored to its original state and reopened as the “Eminiye Culture House”."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550-551"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550"
+        }
+      ],
+      "note": {
+        "tr": "Kuzey ve kuzeybatıda, sivri kemerli ve ahşap karkaslı.",
+        "en": "On the north and northwest, pointed-arched with wooden frames."
+      }
+    },
+    {
+      "key": "konak_satin_alma",
+      "label": {
+        "tr": "Konağın satın alınışı",
+        "en": "Purchase of the mansion"
+      },
+      "value": "H. 1216 / M. 1801",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550"
+        }
+      ]
+    },
+    {
+      "key": "vefat",
+      "label": {
+        "tr": "Mehmed Emin Efendi’nin vefatı",
+        "en": "Death of Mehmed Emin Efendi"
+      },
+      "value": "H. 6 Muharrem 1228 / M. 9 Ocak 1813",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550"
+        }
+      ]
+    },
+    {
+      "key": "onarim_abdulmecid",
+      "label": {
+        "tr": "Sultan Abdülmecid onarımı",
+        "en": "Repair by Sultan Abdülmecid"
+      },
+      "value": "H. 1264 / M. 1848",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "551"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mehmed Emin Efendi (Mehmed Emin Kerkûkî, Hoca Emin Efendi)",
+      "role": {
+        "tr": "Nakşibendi şeyhi, dergâhın banisi; türbede medfun (ö. 1813)",
+        "en": "Naqshbandi shaykh, founder of the lodge; buried in the tomb (d. 1813)"
+      }
+    },
+    {
+      "name": "Hacı Abdullah Ağa",
+      "role": {
+        "tr": "Satın alınan konağın önceki sahibi",
+        "en": "Earlier owner of the mansion that was purchased"
+      }
+    },
+    {
+      "name": "Sultan Abdülmecid",
+      "role": {
+        "tr": "1848’de dergâh, cami, kütüphane ve türbeyi tamir ettirdi",
+        "en": "Had the lodge, mosque, library and tomb repaired in 1848"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "gec-donem-kitabe",
+      "location": {
+        "tr": "Türbenin dış duvarı (eskiden sandukanın başucunda)",
+        "en": "Outer wall of the tomb (formerly at the head of the sarcophagus)"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Hüve’l-Hayy’ül-Bâkî\nBânî-i în dergâh tecelligâh-ı Nakşîbendî\nKutbu’l-ârifîn, gavsü’l-vâsılîn\nNecl-i siyâdet ve gülbâğ-ı şerâfet\nHoca Emin Efendi kuddise sirruhu’s-sermedî",
+      "translation": {
+        "tr": "Hayy ve Bâki olan Allah’tır.\nBu dergâhın banisi, Nakşibendi yolunun tecelligâhı,\nAriflerin ve vasılların kutbu,\nSeyitlik neslinden gelen, şeref bahçesinin gülü\nHoca Emin Efendi’nin ruhu daim aziz kılınsın.",
+        "en": "Allah is the Everliving, the Everlasting. May the spirit of Hoca Emin Efendi, the founder of this lodge, the manifestation of the Naqshbandi path, the pole of the wise and the pole of the intercessors, the descendant of the Seyyids, the rose of the garden of honor, be forever honored."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "551"
+        }
+      ],
+      "note": {
+        "tr": "Kitapta “geç dönem kitabe” olarak adlandırılır; tarihi verilmez. Dil kodu ekip sınıflandırmasıdır.",
+        "en": "Described in the book as a “late period inscription”; no date given. The language code is the drafter’s classification."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "konak-1801",
+      "year": 1801,
+      "date": null,
+      "hijri": "1216",
+      "type": "addition",
+      "title": {
+        "tr": "Mehmed Emin Efendi konağı satın aldı, kütüphane ekleyip Nakşibendi dergâhına dönüştürdü; mescide minber eklendi",
+        "en": "Mehmed Emin Efendi bought the mansion, added a library and turned it into a Naqshbandi lodge; a minbar was added to the masjid"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1813",
+      "year": 1813,
+      "date": "1813-01-09",
+      "hijri": "1228",
+      "type": "record",
+      "title": {
+        "tr": "Şeyh Mehmed Emin Efendi vefat etti ve türbeye defnedildi",
+        "en": "Shaykh Mehmed Emin Efendi died and was buried in the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550"
+        }
+      ],
+      "note": {
+        "tr": "Kitap Cuma günü diyor; 9 Ocak 1813 takvimde Cumartesi’ye denk geliyor (bkz. data_quality_notes).",
+        "en": "The book says Friday; 9 January 1813 falls on a Saturday (see data_quality_notes)."
+      }
+    },
+    {
+      "id": "onarim-1848",
+      "year": 1848,
+      "date": null,
+      "hijri": "1264",
+      "type": "repair",
+      "title": {
+        "tr": "Sultan Abdülmecid dergâh, cami, kütüphane ve türbeyi tamir ettirdi",
+        "en": "Sultan Abdülmecid had the lodge, mosque, library and tomb repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "551"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-veled-i-habib-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe Veled-i Habib Camii’ne bitişiktir; dergâh, cami, kütüphane ve türbe 1848’de birlikte tamir edilmiştir. Cami kaydının id’si tahminidir.",
+        "en": "The tomb is adjacent to the Veled-i Habib Mosque; the lodge, mosque, library and tomb were repaired together in 1848. The mosque record id is assumed."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "550-551"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Veled-i Habib Türbesi, İnebey Caddesi üzerinde, Veled-i Habib Camii’nin bitişiğindedir. Girişi batı cephesindeki kapıdandır. İki köşeli planlı küçük mekânda Mehmed Emin Kerkûkî’ye ait tek bir sanduka bulunur; kuzey ve kuzeybatıdaki sivri kemerli, ahşap karkaslı iki pencere ışık verir. Duvarlar tek sıra taş ve iki sıra tuğladan oluşan almaşık dokudadır. Kitabe türbenin dış duvarındadır.",
+      "en": "Veled-i Habib Tomb is on İnebey Street, next to the Veled-i Habib Mosque. It is entered through a door on the west façade. In the small two-sided space there is a single sarcophagus of Mehmed Emin Kerkûkî; two pointed-arched, wooden-framed windows on the north and northwest give light. Walls use an alternating texture of one row of stone and two rows of brick. The inscription is on the tomb’s outer wall."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

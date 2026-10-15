@@ -21,8 +21,8 @@ Durumlar: `sırada` → `işleniyor` → `draft` (ajan taslağı, PR'da) → `in
 | 5 | Tekke ve Zaviyeler | 4 kayıt (`meta.from: "Tekke ve Zaviyeler"`) | Ahmet (ajan) | draft |
 | 6 | Türbeler (1. yarı: Abdal Mehmet → Okçu Baba) | 13 kayıt (`meta.from: "türbeler"`) | Ahmet (ajan) | draft |
 | 7 | Timurtaş Paşa Külliyesi | 3 kayıt (`meta.from: "Timurtaş Paşa Külliyesi"`) | Ahmet (ajan) | draft |
-| 6 | Türbeler (2. yarı: Orhan Gazi → Veled-i Habib) | | Ahmet (ajan) | sırada |
-| 8 | Osmangazi Camiler ve Hazireler | | Ahmet (ajan) | sırada |
+| 6 | Türbeler (2. yarı: Orhan Gazi → Veled-i Habib) | 7 kayıt (`meta.from: "türbeler"`) | Ahmet (ajan) | draft |
+| 8 | Osmangazi Camiler ve Hazireler | 15 kayıt (`meta.from: "Osmangazi Camiler ve Hazireler"`) | Ahmet (ajan) | draft |
 | 9 | Osmangazi Camiler ve Hazireler 2 | | Ahmet (ajan) | sırada |
 | 10 | Osmangazi Camiler ve Hazireler 3 | | Ahmet (ajan) | sırada |
 

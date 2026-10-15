@@ -1,0 +1,467 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-akbiyik-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 239-242) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Caminin inşa yılı kitapta verilmiyor (yalnızca Fatih dönemi); kitabe/vakfiye aranmalı.",
+      "İpekoğlu Hoca Dursun hakkında kitapta ayrıntı yok.",
+      "Revaktaki tarih kaydının metni kitapta aktarılmıyor.",
+      "Hazirede anılan kişilerin ölüm tarihleri kitapta verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf.land_note",
+        "note": "Camii bölümü II. Murad'ın Akbıyık Sultan'a 'Yenişehir'e bağlı bazı arazileri temlik ettiğini', hazire bölümü ise 'Yenişehir'de bulunan bir köyün vakfedildiğini' söylüyor. İki ifade farklı; ikisi de aktarıldı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Kitapta '×VI. yüzyıl' yazıyor; baskı hatası olup 'XVI. yüzyıl' (16. yüzyıl) kastedildiği İngilizce metinden anlaşılıyor."
+      },
+      {
+        "field": "location.address",
+        "note": "Cami adresi 'Akbıyık Sokak No:1', hazire adresi 'Akbıyık Caddesi No:12' olarak verilmiş; ikisi de kaynağa sadık kalınarak aktarıldı."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Ana metin Akbıyık Sultan'ın 'zaviye', hazire metni 'dergâh ve yanına mescit' yaptırdığını söylüyor; aynı yapılaşma için farklı terimler kullanılıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Akbıyık Camii",
+    "en": "Akbıyık Mosque"
+  },
+  "subtitle": {
+    "tr": "Akbıyık Sultan adına yaptırılan cami ve haziresi",
+    "en": "Mosque built in the name of Akbıyık Sultan, with its graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Veled-i Harîrî Camii",
+      "en": "Veled-i Harîrî Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Fatih dönemi",
+    "derz süslemeleri",
+    "tuğla-taş örgü",
+    "Akbıyık Sultan",
+    "hazire",
+    "Hacı Bayram Veli"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu",
+    "address": "Akbıyık Sokak, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "239"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Fatih Sultan Mehmed dönemi",
+      "en": "Reign of Fâtih Sultan Mehmed"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, caminin Fatih döneminde yaşamış tüccar İpekoğlu Hoca Dursun tarafından yaptırıldığını belirtir; kesin yıl verilmez.",
+      "en": "The book says the mosque was built by İpekoğlu Hoca Dursun, a merchant living in Fâtih's reign; no exact year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "239"
+      }
+    ]
+  },
+  "founder": {
+    "name": "İpekoğlu Hoca Dursun (Akbıyık Sultan adına)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "239-240"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Sultan II. Murad, Akbıyık Sultan'ın zaviyesinin masraflarını karşılamak için Yenişehir'e bağlı bazı arazileri ona temlik etmiş (camii bölümü); hazire bölümüne göre ise Yenişehir'de bulunan bir köy vakfedilmiştir.",
+      "en": "Sultan Murad II assigned some lands attached to Yenişehir to Akbıyık Sultan to cover the zawiya's expenses (mosque section); the graveyard section says a village in Yenişehir was endowed."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "240, 242"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Fatih döneminde tüccar İpekoğlu Hoca Dursun'un Akbıyık Sultan adına yaptırdığı, derzlerindeki çeşitli tuğla-taş süslemeleriyle dikkat çeken, Fatih devrinden ahşap kapısı korunmuş cami. Aynı alanda Akbıyık Sultan'ın türbesi ve haziresi bulunur.",
+    "en": "A mosque built in Fâtih's reign by the merchant İpekoğlu Hoca Dursun in the name of Akbıyık Sultan, notable for its varied brick-and-stone joint patterns and an original Fâtih-period wooden door. The tomb and graveyard of Akbıyık Sultan lie at the same site."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Akbıyık Camii, Osmangazi İlçesi, Nalbantoğlu Mahallesi, Akbıyık Sokak, No:1'de yer almaktadır. Cami \"Veled-i Harîrî Camii\" adıyla da bilinmektedir. Fatih Sultan Mehmed döneminde yaşamış tüccarlardan İpekoğlu Hoca Dursun tarafından Akbıyık Sultan adına inşa ettirilmiştir. Kaynaklarda camiyi yaptıran İpekoğlu Hoca Dursun hakkında ayrıntılı bilgiye rastlanmamaktadır.",
+        "en": "The mosque is located in Osmangazi District, Nalbantoğlu Neighborhood, on Akbıyık Street, No. 1. It is also known as Veled-i Harîrî Mosque. It was built in the name of Akbıyık Sultan by İpekoğlu Hoca Dursun, one of the merchants who lived during Fâtih Sultan Mehmed's reign. There is no detailed information in the sources about him."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "239-240"
+        }
+      ]
+    },
+    {
+      "id": "akbiyik-sultan",
+      "order": 2,
+      "title": {
+        "tr": "Akbıyık Sultan",
+        "en": "Akbıyık Sultan"
+      },
+      "body": {
+        "tr": "Akbıyık Sultan, II. Murad döneminde yaşamış ünlü bir sufidir ve Hacı Bayram Veli'nin müritleri arasındadır. Asıl adının Ahmed Şemseddin veya Abdullah olduğu rivayet edilmektedir. Türbesinin bulunduğu yerde bir zaviye inşa etmiş ve burada halkı irşad etmiştir. Sultan II. Murad, zaviyenin masraflarını karşılamak amacıyla Yenişehir'e bağlı bazı arazileri kendisine temlik etmiştir. H. 860 / M. 1456 tarihinde vefat etmiş ve bugünkü türbesinin bulunduğu yere defnedilmiştir.",
+        "en": "Akbıyık Sultan was a famous Sufi who lived during the reign of Murad II and was among the disciples of Hacı Bayrâm Velî. It is reported that his real name was Ahmed Şemseddin or Abdullah. He built a zawiya where his tomb is located and guided the people there. Sultan Murad II assigned him some lands in Yenişehir to cover the zawiya's expenses. He died in AH 860 / AD 1456 and was buried where his present tomb stands."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Ana mekânı 6,46 × 6,66 m iç ölçülerine sahip cami zarif bir yapıdır. Duvarları üç sıra tuğla ve bir sıra kesme taşla örülmüş, her derzde farklı şekiller uygulanarak altı ve üç köşe terkipleri, kuş gagaları, su dalgaları, zencirekler, baklavalar ve testere dişleri gibi desenler oluşturulmuştur. Son cemaat mahalli 4,14 m derinliğindedir ve üç bölümden oluşur; doğu-batı yönündeki yan duvarlar ve ortadaki yığma iki ayak üç kemerle bağlanmıştır. Revakın iki yanı beşik örtü tavanlı, ortası küçük kubbelidir; kubbenin içi kelebek motifleriyle süslü, kubbe ince ve sivri olup Türk üçgenleri kuşağına oturur. Yedi mukarnas sıralı mihrap boyanmış olsa da özgün ayrıntılarını korumuştur. Ana mekânın girişinde Fatih devrinden kalma orijinal bir ahşap kapı bulunur; kapıya yalnızca cilalama yapılmıştır. Mihrap duvarında kubbeye yakın bir pencere, altında iki ve daha aşağıda yine iki pencere yer alır.",
+        "en": "The main space measures 6.46 × 6.66 m inside. The walls are built of three rows of brick and one row of cut stone, with a different shape applied to each joint, creating patterns such as hexagonal and triangular combinations, bird beaks, water waves, guilloches, lozenges and sawteeth. The narthex is 4.14 m deep with three sections; the side walls and two masonry piers are connected by three arches. The portico has barrel-vaulted ceilings at both sides and a small dome in the middle, decorated inside with butterfly motifs; the thin, pointed dome sits on a band of delicate Turkish triangles. The mihrab with seven rows of muqarnas preserved its original details despite being painted. At the entrance of the main room is an original wooden door from the Fâtih period, which has only been polished. On the mihrab wall there is one window near the dome, two below it and two further down."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "240-241"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Kuzeybatıdaki minareye son cemaat mekânından açılan bir kapı ile çıkılır. Kaide üç sıra tuğla ve bir sıra kesme taş örgülüdür; buradan silindirik tuğla gövdeye üçgen geçiş sağlanmıştır. Şerefe altı sıra kirpi dizisi ile kademeli olarak genişletilmiştir.",
+        "en": "The minaret on the northwest side is reached through a door from the narthex. Its base is built of three rows of brick and one of cut stone, with a triangular transition to the cylindrical brick shaft. The balcony is gradually widened with six rows of sawteeth."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Cami farklı dönemlerde onarım görmüştür. Revaktaki bir tarih kaydına dayanarak H. 1274 / M. 1857-58 yıllarında tamirat geçirdiği anlaşılmaktadır. H. 1287 / M. 1870'te duvarlarda üç büyük çatlak oluşmuştur. 1969'da kapsamlı onarım yapılmış, alt sıra pencere tavanları tahta ile kaplanmış ve alçı pencereler eklenmiştir. Vakıflar Bölge Müdürlüğü 2016'da restorasyonu gerçekleştirmiştir; cami sağlam durumdadır ve ibadete açıktır.",
+        "en": "The mosque was repaired in different periods. A date record in the portico shows repairs in AH 1274 / AD 1857-58. In AH 1287 / AD 1870 three large cracks appeared in the walls. A comprehensive renovation in 1969 covered the lower window ceilings with boards and added plaster windows. The Regional Directorate of Foundations restored the mosque in 2016; it is in good condition and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 6,
+      "title": {
+        "tr": "Akbıyık Haziresi",
+        "en": "Akbıyık Graveyard"
+      },
+      "body": {
+        "tr": "Akbıyık Mezarlığı, Osmangazi ilçesi, Nalbantoğlu Mahallesi, Akbıyık Caddesi No:12 adresinde yer almaktadır. Akbıyık Sultan, bulunduğu alana bir dergâh yaptırmış ve yanına eklediği mescitle çevre halkının manevi gelişimine öncülük etmiştir. Bu hizmetlerin sürdürülmesi için Sultan II. Murad tarafından Yenişehir'de bulunan bir köy kendisine vakfedilmiştir. H. 860 / M. 1456'da vefat ederek dergâhının bulunduğu yere defnedilmiş, türbesi de buradadır. Dergâh bir zaman Bektaşîlerin yönetimine geçmiş, zamanla terk edilip ev olarak kullanılmış; bugün dergâhtan bir yapı kalmamış, yalnızca türbe ve hazire günümüze ulaşmıştır. Hazire 16. yüzyıldan itibaren çeşitli tarihlerde vefat edenlerin defnedildiği önemli bir kabristan olmuştur; bazı mezar taşları korunmaktadır. Burada Mehmed Ağa bin Ahmed, Hacı Hüseyin Kâzım Efendi, Hafız Ahmed Efendi, Seyyid Hacı Hafız İmadeddin Efendi, Mehmed Emin Efendi, Edhem Efendi, Şemsa bint Zeyneddin, Mehmed bin Mustafa, Hacı Osman, Sufi Ali ve Mehmed bin Ömer gibi isimler medfundur.",
+        "en": "Akbıyık Graveyard is located in Osmangazi District, Nalbantoğlu Neighborhood, Akbıyık Street No. 12. Akbıyık Sultan had a dervish lodge built there and, with the small mosque he added beside it, led the spiritual development of the local people. To continue these services Sultan Murad II endowed him with a village in Yenişehir. He died in AH 860 / AD 1456 and was buried where his lodge stood; his tomb is also here. The lodge once passed to Bektashi administration, was later abandoned and used as a house; today no structure of the lodge remains, only the tomb and graveyard. From the 16th century on the graveyard served as an important cemetery for people dying at various dates, and some gravestones are still preserved. Among those buried are Mehmed Ağa bin Ahmed, Hacı Hüseyin Kâzım Efendi, Hafız Ahmed Efendi, Seyyid Hacı Hafız İmadeddin Efendi, Mehmed Emin Efendi, Edhem Efendi, Şemsa bint Zeyneddin, Mehmed bin Mustafa, Hacı Osman, Sufi Ali and Mehmed bin Ömer."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "242"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ana_mekan_olcu",
+      "label": {
+        "tr": "Ana mekân iç ölçüleri",
+        "en": "Main space interior dimensions"
+      },
+      "value": "6,46 × 6,66",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 4.14,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas",
+      "label": {
+        "tr": "Mihrap mukarnas sırası",
+        "en": "Muqarnas rows in mihrab"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "key": "akbiyik_vefat",
+      "label": {
+        "tr": "Akbıyık Sultan'ın vefatı",
+        "en": "Death of Akbıyık Sultan"
+      },
+      "value": "H. 860 / M. 1456",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "240, 242"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İpekoğlu Hoca Dursun",
+      "role": {
+        "tr": "Camiyi yaptıran tüccar",
+        "en": "Merchant who built the mosque"
+      }
+    },
+    {
+      "name": "Akbıyık Sultan",
+      "role": {
+        "tr": "Sufi; Hacı Bayram Veli'nin müridi (asıl adı Ahmed Şemseddin veya Abdullah rivayeti); H. 860 / M. 1456'da vefat",
+        "en": "Sufi; disciple of Hacı Bayrâm Velî (real name reported as Ahmed Şemseddin or Abdullah); d. AH 860 / AD 1456"
+      }
+    },
+    {
+      "name": "Sultan II. Murad",
+      "role": {
+        "tr": "Zaviye masrafları için arazi/köy tahsis eden hükümdar",
+        "en": "Ruler who allocated lands/a village for the zawiya's costs"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1456",
+      "year": 1456,
+      "date": null,
+      "hijri": "860",
+      "type": "record",
+      "title": {
+        "tr": "Akbıyık Sultan vefat etti",
+        "en": "Akbıyık Sultan died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "id": "tamirat-1857",
+      "year": 1857,
+      "date": null,
+      "hijri": "1274",
+      "type": "repair",
+      "title": {
+        "tr": "Revaktaki tarih kaydına göre tamirat (H. 1274 / M. 1857-58)",
+        "en": "Repairs per a date record in the portico (AH 1274 / AD 1857-58)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "id": "catlak-1870",
+      "year": 1870,
+      "date": null,
+      "hijri": "1287",
+      "type": "damage",
+      "title": {
+        "tr": "Duvarlarda üç büyük çatlak",
+        "en": "Three large cracks in the walls"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1969",
+      "year": 1969,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Comprehensive renovation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2016",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü restorasyonu",
+        "en": "Restoration by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "241"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-akbiyik-sultan-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Akbıyık Sultan'ın türbesi, zaviyenin/dergâhın bulunduğu aynı alanda yer alır; hazire de burada.",
+        "en": "Akbıyık Sultan's tomb stands on the same site as his zawiya/lodge, along with the graveyard."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "240, 242"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Akbıyık Camii, Nalbantoğlu Mahallesi'nde küçük, kareye yakın bir yapıdır. Duvarları tuğla ve kesme taş sıralarından örülmüş, derzlerde baklava, testere dişi ve dalga gibi desenler görülür. Önünde üç kemerli bir son cemaat yeri ve ortasında küçük, sivri bir kubbe vardır; giriş kapısı Fatih döneminden kalma ahşaptır. Kuzeybatıdaki silindirik tuğla minareye son cemaat yerinden çıkılır. Aynı alanda Akbıyık Sultan'ın türbesi ve haziresi bulunur.",
+      "en": "Akbıyık Mosque in Nalbantoğlu Neighborhood is a small, nearly square building. Its walls are laid in courses of brick and cut stone, with joint patterns such as lozenges, sawteeth and waves. In front is a three-arched narthex with a small pointed dome in the middle, and the entrance door is wood from the Fâtih period. The cylindrical brick minaret to the northwest is entered from the narthex. The tomb and graveyard of Akbıyık Sultan are on the same site."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

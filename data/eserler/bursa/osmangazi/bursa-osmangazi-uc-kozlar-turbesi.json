@@ -1,0 +1,529 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-uc-kozlar-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin ilk yapım tarihi ve ilk banisi kitapta yok.",
+      "Adres (cadde/sokak/no) kitapta verilmiyor.",
+      "Üç Kozlar Camii kaydının id’si (bursa-osmangazi-uc-kozlar-camii) tahminidir; veri setinde yoksa eklenmeli.",
+      "Kitabedeki “Sultan Mahmud” ve “Nuri Paşa”nın hangi Mahmud/kim olduğu kitapta belirtilmiyor.",
+      "Kitabenin dil kodu ekip sınıflandırmasıdır.",
+      "Mimar kitapta belirtilmiyor (architect: null).",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[turbe-yenileme-kitabesi]",
+        "note": "Kitabe düzeni için Türkçe metin 'üç satır ve dört sütun', İngilizce metin 'four rows and three columns' diyor. Kitabe 12 mısradır; iki tarif de çelişkili. Türkçe metin esas alındı."
+      },
+      {
+        "field": "dating",
+        "note": "Kitabe tarihi H. 1235; meal 'M. 1819–1820', metin ise 'M. 1820' veriyor. Hicri 1235 iki miladi yıla yayıldığı için çelişki sayılmadı, ikisi de saklandı."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Türbe dışındaki tek mezar taşı ('üç kişinin isimleri ve kısa öyküleri') ile doğudaki üç kardeşin ortak mezar taşı aynı taş olabilir; kitap açıkça belirtmiyor. Her iki bilgi ayrı ayrı aktarıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Üç Kozlar Türbesi",
+    "en": "Üç Kozlar Tomb"
+  },
+  "subtitle": {
+    "tr": "Üç Kozlar (Kuzular) Dergâhı’nın türbesi ve haziresi",
+    "en": "Tomb and graveyard of the Üç Kozlar (Kuzular) Sufi Lodge"
+  },
+  "alternate_names": [
+    {
+      "tr": "Üç Kuzular Türbesi",
+      "en": "Üç Kuzular Tomb",
+      "note": "Kitaptaki başlık: “Üç Kozlar (Kuzular) Türbe ve Haziresi”"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Üç Kozlar Dergâhı",
+    "Şeyh Muhyiddin-i Bursevî",
+    "hazire",
+    "Mollafenari",
+    "Buharalı üç kardeş",
+    "Nakşibendi",
+    "Emîr Sultan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollafenari Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "539"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1235 / M. 1820’de yenilendi (ilk yapım tarihi bilinmiyor)",
+      "en": "Renovated in AH 1235 / AD 1820 (original construction date unknown)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 1235,
+    "century": null,
+    "basis": {
+      "tr": "Kitabe, türbenin Nuri Paşa’nın hazinedarı Mustafa Ağa tarafından H. 1235 / M. 1820’de yenilendiğini söyler; ilk yapım tarihi kitapta verilmiyor.",
+      "en": "The inscription says the tomb was renovated by Nuri Paşa’s treasurer Mustafa Ağa in AH 1235 / AD 1820; the original construction date is not given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "540"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mustafa Ağa (Nuri Paşa’nın hazinedarı)",
+    "role": "H. 1235 / M. 1820’de yenileten (ilk banî belirtilmiyor)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "540"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mollafenari Mahallesi’nde, aynı adla anılan caminin haziresinde yer alan, altında yedi sandukalı türbe bölümü bulunan Üç Kozlar Dergâhı türbesi. Dergâhın ilk şeyhi Muhyiddin-i Bursevî, çocukları ve eşi burada yatar; güney duvarındaki kitabe H. 1235 / M. 1820 yenilemesini kaydeder. Hazirede 36 mezar taşı ve Buharalı üç kardeşin ortak mezarı vardır.",
+    "en": "The tomb of the Üç Kozlar Sufi Lodge in the graveyard of the mosque of the same name in the Mollafenari Neighborhood, with seven sarcophagi in the lower tomb section. The lodge’s first shaykh Muhyiddin-i Bursevî, his children and wife lie here; an inscription on the south wall records the renovation of AH 1235 / AD 1820. The graveyard has 36 gravestones and the common grave of three brothers from Bukhara."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Türbe, Osmangazi ilçesi Mollafenari Mahallesi’nde, aynı adla anılan caminin haziresinde yer alır. Caminin alt kısmında içinde yedi sanduka bulunan türbe bölümü vardır. Türbenin güney duvarında üç satır ve dört sütun halinde düzenlenmiş bir kitabe bulunur.",
+        "en": "The tomb is in the graveyard of the mosque of the same name in the Mollafenari Neighborhood of Osmangazi District. In the lower part of the mosque there is a tomb section with seven sarcophagi. On the south wall of the tomb there is an inscription arranged in rows and columns."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "539"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-ve-yenileme",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe ve yenileme",
+        "en": "Inscription and renovation"
+      },
+      "body": {
+        "tr": "Kitabeden anlaşıldığına göre türbe, Nuri Paşa’nın hazinedarı Mustafa Ağa tarafından H. 1235 / M. 1820’de yenilenmiştir. Kitabeye göre Mustafa Ağa, silahşörlükle şöhret kazanmış biridir; dergâhı harap halde görünce onarımı kendi parasıyla üstlenmiş, tavanlar bu sayede nurlanmıştır.",
+        "en": "As the inscription shows, the tomb was renovated by Nuri Paşa’s treasurer Mustafa Ağa in AH 1235 / AD 1820. According to the inscription, Mustafa Ağa had gained fame through swordsmanship; seeing the lodge in ruins, he undertook the repair from his own wealth, and the ceilings were illuminated as a result."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "539-540"
+        }
+      ]
+    },
+    {
+      "id": "turbe-ici",
+      "order": 3,
+      "title": {
+        "tr": "Türbenin içi",
+        "en": "Inside the tomb"
+      },
+      "body": {
+        "tr": "Türbede dergâhın ilk şeyhi Şeyh Muhyiddin-i Bursevî Efendi ile kendisinden sonra aynı görevde bulunan çocukları Ömer Efendi, Abdi Efendi, Mustafa Efendi, Abdurrahman Efendi, İbrâhim Efendi ve Şeyh Muhyiddin’in eşi Hürmüz Hatun’a ait toplam yedi sanduka bulunur. Yapı ahşap süslemeli bir tavana sahiptir; aydınlatma dikdörtgen biçimli, demir parmaklıklı pencerelerle sağlanır.",
+        "en": "Inside the tomb are seven sarcophagi belonging to the lodge’s first shaykh, Shaykh Muhyiddin-i Bursevî Efendi, his children who served after him (Ömer Efendi, Abdi Efendi, Mustafa Efendi, Abdurrahman Efendi, İbrâhim Efendi), and Shaykh Muhyiddin’s wife Hürmüz Hatun. The building has a wooden decorated ceiling; light comes through rectangular windows with iron bars."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "541"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Caminin ve türbenin altındaki set üzerine kurulu hazirede, Bursa dışında vefat eden bir kişi hariç, Üç Kozlar Dergâhı şeyhleri ve bazı aile bireyleri defnedilmiştir. Türbe dışında, demir parmaklıkla çevrili tek bir mezar taşında buraya defnedilen üç kişinin isimleri ve kısa öyküleri yazılıdır. Hazirede türbede yatanlar dışında on şeyh ile bunlara mensup on iki aile ferdinin mezar taşı tespit edilmiş; bugün toplam mezar taşı sayısı otuz altıdır. Uzun süre bakımsız kalma ve müdahale sırasındaki hatalar yüzünden bazı taşlar yanlış yerleştirilmiş, farklı kişilere ait baş ve ayak taşları birleştirilmiş, pek çok taşın alt kısmı beton zemine gömüldüğü için tarih bilgilerine ulaşılamamıştır. Hazirede tespit edilen en eski mezar taşı H. 980 / M. 1572 tarihlidir, ancak kırık olduğundan sahibinin adı okunamaz.",
+        "en": "In the graveyard built on the terrace beneath the mosque and tomb, the shaykhs of the Üç Kozlar Lodge and some family members are buried, except for one who died outside Bursa. A single gravestone outside the tomb, surrounded by iron bars, records the names and short histories of three people buried there. Besides those in the tomb, gravestones of ten shaykhs and twelve of their family members have been found; the total is now thirty-six. Due to long neglect and mistakes during intervention, some stones are misplaced, headstones and footstones of different people were combined, and many stones’ lower parts are buried in the concrete floor so dates could not be read. The oldest identified gravestone bears AH 980 / AD 1572, but the owner’s name is unreadable because it is broken."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "541-542"
+        }
+      ]
+    },
+    {
+      "id": "uc-kardes",
+      "order": 5,
+      "title": {
+        "tr": "Buharalı üç kardeşin ortak mezarı",
+        "en": "Common grave of the three brothers from Bukhara"
+      },
+      "body": {
+        "tr": "Türbenin doğusundaki hazire, Buhara’dan Bursa’ya gelen üç kardeşin (Safiyyüddin Efendi, Açıkbaş Mehmed Efendi ve Ali Efendi) ortak mezarını içerir. Mezar taşına göre bu kişiler Emîr Sultan ve Nakşibendi tarikatına mensuptur, H. 825 / M. 1421-1422’de Bursa’ya gelmişlerdir; yalnızca Safiyyüddin Efendi evlenip aile kurmuş, diğer iki kardeş bekâr vefat etmiştir.",
+        "en": "The graveyard on the east side of the tomb contains the common grave of three brothers who came from Bukhara to Bursa (Safiyyüddin Efendi, Açıkbaş Mehmed Efendi and Ali Efendi). The gravestone says they belonged to the Emîr Sultan and Naqshbandi order and came to Bursa in AH 825 / AD 1421-1422; only Safiyyüddin Efendi married and had a family, the other two died as bachelors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "541"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Türbedeki sanduka sayısı",
+        "en": "Sarcophagi in the tomb"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "539, 541"
+        }
+      ]
+    },
+    {
+      "key": "mezar_tasi_sayisi",
+      "label": {
+        "tr": "Haziredeki toplam mezar taşı",
+        "en": "Total gravestones in the graveyard"
+      },
+      "value": 36,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "542"
+        }
+      ]
+    },
+    {
+      "key": "seyh_mezar_tasi",
+      "label": {
+        "tr": "Haziredeki şeyh mezar taşı sayısı",
+        "en": "Shaykh gravestones in the graveyard"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "542"
+        }
+      ],
+      "note": {
+        "tr": "Türbede yatanlar dışında.",
+        "en": "Besides those in the tomb."
+      }
+    },
+    {
+      "key": "aile_mezar_tasi",
+      "label": {
+        "tr": "Haziredeki aile ferdi mezar taşı sayısı",
+        "en": "Family-member gravestones in the graveyard"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "542"
+        }
+      ]
+    },
+    {
+      "key": "en_eski_mezar_tasi",
+      "label": {
+        "tr": "En eski okunabilir tarihli mezar taşı",
+        "en": "Oldest dated gravestone"
+      },
+      "value": "H. 980 / M. 1572",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "542"
+        }
+      ],
+      "note": {
+        "tr": "Sahibinin adı okunamıyor.",
+        "en": "Owner’s name unreadable."
+      }
+    },
+    {
+      "key": "yenileme_yili",
+      "label": {
+        "tr": "Yenileme yılı (kitabe)",
+        "en": "Renovation year (inscription)"
+      },
+      "value": "H. 1235 / M. 1820",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "540"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Muhyiddin-i Bursevî Efendi",
+      "role": {
+        "tr": "Dergâhın ilk şeyhi; türbede medfun",
+        "en": "First shaykh of the lodge; buried in the tomb"
+      }
+    },
+    {
+      "name": "Hürmüz Hatun",
+      "role": {
+        "tr": "Şeyh Muhyiddin’in eşi; türbede medfun",
+        "en": "Wife of Shaykh Muhyiddin; buried in the tomb"
+      }
+    },
+    {
+      "name": "Ömer Efendi",
+      "role": {
+        "tr": "Şeyh Muhyiddin’in çocuğu, şeyh; türbede medfun",
+        "en": "Child of Shaykh Muhyiddin, shaykh; buried in the tomb"
+      }
+    },
+    {
+      "name": "Abdi Efendi",
+      "role": {
+        "tr": "Şeyh Muhyiddin’in çocuğu, şeyh; türbede medfun",
+        "en": "Child of Shaykh Muhyiddin, shaykh; buried in the tomb"
+      }
+    },
+    {
+      "name": "Mustafa Efendi",
+      "role": {
+        "tr": "Şeyh Muhyiddin’in çocuğu, şeyh; türbede medfun",
+        "en": "Child of Shaykh Muhyiddin, shaykh; buried in the tomb"
+      }
+    },
+    {
+      "name": "Abdurrahman Efendi",
+      "role": {
+        "tr": "Şeyh Muhyiddin’in çocuğu, şeyh; türbede medfun",
+        "en": "Child of Shaykh Muhyiddin, shaykh; buried in the tomb"
+      }
+    },
+    {
+      "name": "İbrâhim Efendi",
+      "role": {
+        "tr": "Şeyh Muhyiddin’in çocuğu, şeyh; türbede medfun",
+        "en": "Child of Shaykh Muhyiddin, shaykh; buried in the tomb"
+      }
+    },
+    {
+      "name": "Mustafa Ağa",
+      "role": {
+        "tr": "Nuri Paşa’nın hazinedarı; türbeyi H. 1235 / M. 1820’de yeniletti",
+        "en": "Treasurer of Nuri Paşa; had the tomb renovated in AH 1235 / AD 1820"
+      }
+    },
+    {
+      "name": "Safiyyüddin Efendi",
+      "role": {
+        "tr": "Buharalı üç kardeşten biri; evlenip aile kuran",
+        "en": "One of the three brothers from Bukhara; the one who married"
+      }
+    },
+    {
+      "name": "Açıkbaş Mehmed Efendi",
+      "role": {
+        "tr": "Buharalı üç kardeşten biri; bekâr vefat etti",
+        "en": "One of the three brothers from Bukhara; died unmarried"
+      }
+    },
+    {
+      "name": "Ali Efendi",
+      "role": {
+        "tr": "Buharalı üç kardeşten biri; bekâr vefat etti",
+        "en": "One of the three brothers from Bukhara; died unmarried"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-yenileme-kitabesi",
+      "location": {
+        "tr": "Türbenin güney duvarı",
+        "en": "South wall of the tomb"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Hazret-i şâh-ı cihân cem azamet Mahmûd Hân\nKi cihân milketi adlî ile mesrûr oldı\nSû-be-sû kasr-ı cihân adlîle ta’mir olıcak\nBendegânı dahî hayr itmeğe mecbûr oldı\nMustafa Ağa ki ol hâzin-i Nûrî Paşa\nKim silâhşörlük ile izzeti mevfûr oldı\nİş bu dergâhı ki görmüşdi harâb olmuşiken\nÇünki endîşeyi ta’mîrine mahsûr oldu\nSarf-ı nakdîne himmet ile tecdîd itdi\nSakf-ı zîbâları bu vechile pür-nûr oldı\nOlsa âvîze bu târîh sezâ gerdûne\nDürr gibi üç Kozlar Dergâhı ma’mûr oldı H. 1235",
+      "translation": {
+        "tr": "Azamet sahibi cihan padişahı Sultan Mahmud Han,\nDünyanın mülkünü adaletiyle sevince boğdu.\nYeryüzünün her köşesi adaletle yeniden inşa edilecekti,\nBu yüzden kullar da hayır işlemeye mecbur kaldı.\nMustafa Ağa –ki Nuri Paşa’nın hazinedarıydı–\nSilahşörlüğüyle şöhret ve izzet kazanmıştı.\nBu dergâhı harap halde görmüş,\nOnarımını üstlenmekten kendini alamamıştı.\nKendi malından harcayarak himmetle yeniledi,\nGüzel tavanları bu sayede nurlandı.\nBu onarım göğe asılacak bir avize olsaydı,\nÜç Kozlar Dergâhı inci gibi mamur olurdu. (M. 1819–1820)",
+        "en": "The magnificent world sultan, Sultan Mahmud Han, filled the world’s property with joy with his justice. Every corner of the earth would be rebuilt with justice, that is why people were forced to do good deeds. Mustafa Ağa, Nuri Paşa’s treasurer, had gained fame and honor with his swordsmanship. He saw this lodge in ruins and could not help but undertake its repair. He renovated it with his own effort, spending from his own wealth; its beautiful ceilings were illuminated thanks to this. If this repair were a chandelier to be hung in the sky, the Üç Kozlar Sufi Lodge would be as prosperous as a pearl. (AD 1819–1820)"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1235,
+        "gregorian": "1819-1820"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "539-540"
+        }
+      ],
+      "note": {
+        "tr": "Türkçe metne göre kitabe “üç satır ve dört sütun”, İngilizce metne göre “dört satır ve üç sütun” halindedir. Dil kodu kitapta belirtilmediği için ekip sınıflandırmasıdır.",
+        "en": "The Turkish text says the inscription is in three rows and four columns, the English text says four rows and three columns. The language code is the drafter’s classification as the book does not state it."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "uc-kardes-gelis-1421",
+      "year": 1421,
+      "date": null,
+      "hijri": "825",
+      "type": "record",
+      "title": {
+        "tr": "Buharalı üç kardeş Bursa’ya geldi (mezar taşı kaydı, 1421-1422)",
+        "en": "Three brothers from Bukhara came to Bursa (gravestone record, 1421-1422)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "541"
+        }
+      ]
+    },
+    {
+      "id": "en-eski-mezar-tasi-1572",
+      "year": 1572,
+      "date": null,
+      "hijri": "980",
+      "type": "record",
+      "title": {
+        "tr": "Haziredeki en eski tespit edilen mezar taşı tarihi",
+        "en": "Date of the oldest identified gravestone in the graveyard"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "542"
+        }
+      ]
+    },
+    {
+      "id": "yenileme-1820",
+      "year": 1820,
+      "date": null,
+      "hijri": "1235",
+      "type": "repair",
+      "title": {
+        "tr": "Nuri Paşa’nın hazinedarı Mustafa Ağa tarafından yenilendi",
+        "en": "Renovated by Nuri Paşa’s treasurer Mustafa Ağa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "540"
+        }
+      ],
+      "note": {
+        "tr": "Kitabenin mealinde M. 1819-1820, metinde M. 1820.",
+        "en": "The meaning of the inscription gives AD 1819-1820, the text AD 1820."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-uc-kozlar-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe, aynı adla anılan caminin altında ve haziresinde yer alır. Cami kaydının id’si tahminidir.",
+        "en": "The tomb is beneath and within the graveyard of the mosque of the same name. The mosque record id is assumed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "539"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Üç Kozlar Türbesi, aynı adı taşıyan caminin altında, Mollafenari Mahallesi’ndeki hazirenin içinde yer alır. Türbe bölümünde yedi sanduka bulunur; tavanı ahşap süslemelidir ve demir parmaklıklı dikdörtgen pencerelerle aydınlanır. Güney duvarında satır ve sütunlar halinde düzenlenmiş Osmanlıca bir kitabe vardır. Caminin ve türbenin altındaki set üzerinde kurulu hazirede otuz altı mezar taşı yer alır.",
+      "en": "Üç Kozlar Tomb lies beneath the mosque of the same name, within the graveyard in the Mollafenari Neighborhood. The tomb section holds seven sarcophagi; its ceiling is wooden with decoration and light comes through rectangular windows with iron bars. On the south wall there is an Ottoman inscription arranged in rows and columns. The graveyard, built on a terrace beneath the mosque and tomb, has thirty-six gravestones."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

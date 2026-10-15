@@ -1,0 +1,364 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-azeb-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 267-268) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kitabenin Türkçe meali kitapta yok; translation boş bırakıldı.",
+      "Minarenin ne zaman yıkıldığı ve yeniden yapıldığı kitapta belirtilmiyor.",
+      "Mimar bilgisi yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions.insa-kitabesi",
+        "note": "Kitabe, Rebiülevvel sonu H. 860'ı verir; kitabın İngilizce çevirisi bunu Şubat-Mart 1456 olarak yazar, ana metin yalnızca H. 860 / M. 1456 der. Hicrî ay ile miladî ayın karşılığı doğrulanmalı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Azeb Bey Camii",
+    "en": "Azeb Bey Mosque"
+  },
+  "subtitle": {
+    "tr": "1456 tarihli, çini iç mekânlı tek kubbeli Bursa camisi",
+    "en": "A single-domed Bursa mosque of 1456 with a tiled interior"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tek kubbeli",
+    "kalkan duvar",
+    "Bursa minaresi",
+    "sülüs kitabe",
+    "1955 restorasyonu"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kocanaib",
+    "address": "Kocanaib Mahallesi, 10. Okul Sokak ile Soğukçeşme Sokak kesişimi No: 17",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "267"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 860 / M. 1456",
+      "en": "AH 860 / AD 1456"
+    },
+    "start_year": 1456,
+    "end_year": null,
+    "hijri_year": 860,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap ve kitabe camiyi H. 860 / M. 1456'da Abdullah oğlu Azeb Bey'in yaptırdığını bildirir.",
+      "en": "The book and the inscription state that Azeb Bey, son of Abdullah, had it built in AH 860 / AD 1456."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "267-268"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Azeb Bey bin Abdullah",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "267-268"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Abdullah oğlu Azeb Bey'in H. 860 / M. 1456'da yaptırdığı, tek kubbeli, kare planlı, kalkan duvarlı, üç gözlü son cemaat yerli erken Osmanlı camisi. Banisinin türbesi hemen yanındadır; iç mekânı çinilerle kaplıdır.",
+    "en": "An early Ottoman mosque built in AH 860 / AD 1456 by Azeb Bey, son of Abdullah, single-domed, square-plan, with a parapet wall and three-bay narthex. Its founder's tomb is right beside it; the interior is tiled."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architectural Features"
+      },
+      "body": {
+        "tr": "Cami erken Osmanlı mimarisinin özelliklerini yansıtır: tek kubbeli, kare planlı, kalkan duvarlı ve üç gözlü son cemaat yerlidir. Minare formu Bursa camilerine özgüdür. Beden duvarları üç sıra tuğla ve bir sıra kesme taşla, kalkan duvar bir sıra tuğla ve bir sıra kesme taşla örülmüş, aralara düşey tuğlalar konmuştur. Düşey tuğlalar genellikle Orhan Gazi devri moloz taş örgüsündeki düzensizlikleri gizlemek için kullanılırdı; burada işçilik temiz olduğu hâlde bu unsurun korunması geleneğin yaşatılmak istendiğini düşündürür.",
+        "en": "The mosque reflects early Ottoman architecture: single dome, square plan, parapet wall and three-bay narthex. The minaret form is unique to Bursa mosques. The body walls are of three rows of brick and one of cut stone; the parapet wall has a row of brick and a row of cut stone with vertical bricks between. Vertical bricks were generally used to hide irregularities in the rubble masonry of Orhan Gazi's time; the preservation of this element despite the clean craftsmanship suggests the tradition was meant to be kept alive."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "id": "pencere-ortu",
+      "order": 2,
+      "title": {
+        "tr": "Pencereler, Kubbe ve Son Cemaat Yeri",
+        "en": "Windows, Dome and Narthex"
+      },
+      "body": {
+        "tr": "Alt bölümde sekiz, üst bölümde on bir olmak üzere on dokuz pencere ve mihrap duvarında ayrıca bir pencere vardır. Kubbe geçişi Türk üçgenleriyle sağlanır; üçgenlerin yerden yüksekliği 5,15 m'dir. Üç gözlü son cemaat yeri tonoz örtülü ve oldukça derin bir revaklıdır. Minare kaidesi moloz taş ve tuğla, silindirik gövdesi tamamen tuğladır.",
+        "en": "There are nineteen windows, eight in the lower and eleven in the upper section, plus a window in the mihrab wall. The dome transition uses Turkish triangles, 5.15 m above the ground. The three-bay narthex is vaulted with a very deep portico. The minaret base is of rubble stone and brick; its cylindrical shaft is entirely of brick."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "268"
+        }
+      ]
+    },
+    {
+      "id": "ic-onarim",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân ve Restorasyon",
+        "en": "Interior and Restoration"
+      },
+      "body": {
+        "tr": "Mihrabı, minberi ve duvarları çinilerle kaplı iç mekânda günümüze ulaşan orijinal unsur yoktur. Minare yıkılıp cami ibadete kapatılınca 1955'te Bursa Eski Eserleri Sevenler Kurumu restorasyon yapmıştır. Geçtiğimiz yıllarda tekrar onarılan cami bakımlıdır ve ibadete açıktır. Banisinin türbesi yapının hemen yanındadır.",
+        "en": "The interior, whose mihrab, minbar and walls are tiled, has no surviving original elements. After the minaret was demolished and the mosque closed for worship, the Bursa Association for the Appreciation of Antiquities restored it in 1955. Repaired again in recent years, it is well maintained and open for worship. The founder's tomb is right beside the building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "267-268"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_toplam",
+      "label": {
+        "tr": "Pencere sayısı (alt+üst)",
+        "en": "Windows (lower+upper)"
+      },
+      "value": 19,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "268"
+        }
+      ]
+    },
+    {
+      "key": "pencere_alt",
+      "label": {
+        "tr": "Alt sıra pencere",
+        "en": "Lower windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "268"
+        }
+      ]
+    },
+    {
+      "key": "pencere_ust",
+      "label": {
+        "tr": "Üst sıra pencere",
+        "en": "Upper windows"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "268"
+        }
+      ]
+    },
+    {
+      "key": "turk_ucgen_yukseklik",
+      "label": {
+        "tr": "Türk üçgenlerinin yerden yüksekliği",
+        "en": "Height of Turkish triangles"
+      },
+      "value": 5.15,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "268"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bay count"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Azeb Bey",
+      "role": {
+        "tr": "Banî; Abdullah oğlu",
+        "en": "Founder; son of Abdullah"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Caminin Arapça sülüs inşa kitabesi",
+        "en": "Mosque's Arabic thuluth construction inscription"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "Emere bi-binâi hâza’l-mescidi’l-mubârek sâhibu’l-hayrât ve’l-hasenât mefharu’l-ümerâi ve’l-ekâbir za’îmu’l-cuyûşi ve’l-asâkir Azeb Bey bin Abdullah ufiye anhu fî evâhiri Rebiülevvel sene sittîne ve semâne mi’e.",
+      "translation": null,
+      "note": {
+        "tr": "Kitapta Türkçe meal verilmemiştir. Kitabın İngilizce çevirisi: 'The construction of this blessed mosque was ordered by Azeb Bey bin Abdullah, the owner of good deeds and charities, the source of pride for the emirs and notables, the commander of the armies and soldiers - may Allah be pleased with him - at the end of the month of Rabi'ul-Awwal in the year AH 860 (February-March AD 1456).'",
+        "en": "The book gives no Turkish translation. The book's English translation: 'The construction of this blessed mosque was ordered by Azeb Bey bin Abdullah, the owner of good deeds and charities, the source of pride for the emirs and notables, the commander of the armies and soldiers - may Allah be pleased with him - at the end of the month of Rabi'ul-Awwal in the year AH 860 (February-March AD 1456).'"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 860,
+        "gregorian": "1456"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "268"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1456",
+      "year": 1456,
+      "date": null,
+      "hijri": "860",
+      "type": "construction",
+      "title": {
+        "tr": "Cami Azeb Bey tarafından yaptırıldı (Rebiülevvel sonu H. 860 / M. 1456)",
+        "en": "Built by Azeb Bey (end of Rabi' al-Awwal AH 860 / AD 1456)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "267-268"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Minare yıkılıp cami ibadete kapandıktan sonra Bursa Eski Eserleri Sevenler Kurumu restore etti",
+        "en": "Restored by the Bursa Association for the Appreciation of Antiquities after the minaret was demolished and the mosque closed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "268"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "dusey-tugla",
+      "title": {
+        "tr": "Düşey tuğlalar",
+        "en": "Vertical bricks"
+      },
+      "hint": {
+        "tr": "Kalkan duvardaki taş ve tuğla sıraları arasına yerleştirilmiş düşey tuğlalara bakın.",
+        "en": "Look at the vertical bricks set between the stone and brick rows of the parapet wall."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-azeb-bey-turbesi",
+      "type": "same_founder",
+      "description": {
+        "tr": "Caminin banisi Azeb Bey'in türbesi yapının hemen yanındadır.",
+        "en": "The tomb of the mosque's founder Azeb Bey stands right beside the building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, tek kubbeli bir camidir; önünde derin revaklı, tonoz örtülü üç gözlü son cemaat yeri vardır. Duvarlarda tuğla ve kesme taş sıraları ile aralara konan düşey tuğlalar görülür. Minare kaidesi taş ve tuğla, gövdesi tuğladır. İç mekân çinilerle kaplıdır. Hemen yanında banisinin türbesi bulunur.",
+      "en": "A square-plan, single-domed mosque with a deep-porticoed, vaulted three-bay narthex in front. The walls show rows of brick and cut stone with vertical bricks between. The minaret base is stone and brick, its shaft brick. The interior is tiled. The founder's tomb stands right beside it."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}
