@@ -125,7 +125,7 @@ def asset_rows(a, manifest):
     M, L = a["meta"], a["location"]
     D, F, AR, W = (a.get(k) or {} for k in ("dating", "founder", "architect", "waqf"))
     V, X, S = (a.get(k) or {} for k in ("visit", "accessibility", "ambient_sound"))
-    coords = L["coordinates"]
+    coords = L.get("coordinates") or {}  # taslaklarda olmayabilir (yalnızca viewer; DB'ye taslak girmez)
     rows = {t: [] for t in ASSET_TABLES}
 
     rows["asset"].append({
@@ -136,7 +136,7 @@ def asset_rows(a, manifest):
         "alternate_names": a.get("alternate_names", []),
         "summary_tr": a["summary"]["tr"], "summary_en": a["summary"].get("en"),
         "city_code": L["city"], "district": L["district"], "neighborhood": L.get("neighborhood"), "address": L.get("address"),
-        "lat": coords["lat"], "lng": coords["lng"], "coord_source": coords.get("source"), "coord_verified": coords["verified"],
+        "lat": coords.get("lat"), "lng": coords.get("lng"), "coord_source": coords.get("source"), "coord_verified": coords.get("verified"),
         "dating_display_tr": _t(D.get("display"), "tr"), "dating_display_en": _t(D.get("display"), "en"),
         "start_year": D.get("start_year"), "end_year": D.get("end_year"), "hijri_year": D.get("hijri_year"), "century": D.get("century"),
         "dating_basis_tr": _t(D.get("basis"), "tr"), "dating_basis_en": _t(D.get("basis"), "en"), "dating_confidence": D.get("confidence"),
@@ -270,14 +270,16 @@ def asset_rows(a, manifest):
     return rows
 
 
-def load_all():
+def load_all(include_drafts=False):
     """Tüm eserleri ve manifesti okur.
 
-    Taslaklar (meta.status = draft) atlanır: koordinatsız/fotoğrafsız olabilirler ve
-    uygulamada görünmezler. in_review'a geçince içe aktarmaya ve görüntüleyiciye girerler.
+    Varsayılan: taslaklar (meta.status = draft) atlanır; koordinatsız/fotoğrafsız olabilirler ve
+    uygulamada görünmezler, in_review'a geçince içe aktarmaya girerler. Görüntüleyici
+    (build_viewer.py) include_drafts=True ile hepsini gösterir.
     """
     manifest_path = DATA / "build" / "media-manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
     assets = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((DATA / "eserler").rglob("*.json"))]
-    assets = [a for a in assets if a["meta"]["status"] != "draft"]
+    if not include_drafts:
+        assets = [a for a in assets if a["meta"]["status"] != "draft"]
     return assets, manifest

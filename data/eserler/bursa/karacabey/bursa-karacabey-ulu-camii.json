@@ -1,0 +1,371 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-karacabey-ulu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Karacabey",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Karacabey bölümünden (s. 529-533) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
+      "Arşiv fotoğrafı (archive_media) elimizde yok.",
+      "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
+      "Yapım tarihi ve banî kesin değil.",
+      "I. Abdülhamid onarımının yılı kitapta yalnızca saltanat aralığı (1774-1789) olarak verilmiş; olay eklenmedi.",
+      "Kurtuluş Savaşı'ndaki yangının yılı kitapta yok; olay eklenmedi.",
+      "Kitabenin dili/yazı türü belirtilmemiş; language 'ar' çıkarıma dayanır.",
+      "Restorasyon sonrası yeniden açılış yılı (2012 sonrası) kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Banî için I. Murad Hudâvendigâr görüşü ağırlıklı ama kesin değildir; kitabe H. 880 / M. 1475-76'yı verir ve Fâtih dönemi onarım kitabesi olduğu ileri sürülür. Kaynağın değerleri korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ulu (Hudâvendigâr) Camii",
+    "en": "Ulu (Hudâvendigâr) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Hudâvendigâr Camii",
+      "en": "Hudâvendigâr Mosque",
+      "note": "Başlıktaki ad"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "çarşı camisi",
+    "Hudâvendigâr",
+    "Garipçe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Karacabey",
+    "neighborhood": "Garipçe Mahallesi",
+    "address": "Atatürk Bulvarı, No: 47, Garipçe Mahallesi, Karacabey",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "529"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kitabeden ebced ile H. 880 / M. 1475-76 çıkarılır; I. Murad dönemine ait olduğu görüşü ağırlıktadır",
+      "en": "AH 880 / AD 1475-76 by abjad from the inscription; prevailing view attributes it to Murad I"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 880,
+    "century": null,
+    "basis": {
+      "tr": "Banisi Sultan I. Murad Hudâvendigâr diye görüşler ağırlık kazansa da kesin değildir; kitabe ebced hesabıyla H. 880 / M. 1475-76 verir ve Fâtih dönemi onarım kitabesi olduğu yönünde görüşler vardır.",
+      "en": "The prevailing view is that it was commissioned by Murad I Hudâvendigâr but this is not definitive; the inscription gives AH 880 / AD 1475-76 by abjad, and some suggest it is a restoration inscription from Fâtih's reign."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "529-530"
+      }
+    ]
+  },
+  "founder": {
+    "name": "I. Murad Hudâvendigâr (görüş ağırlıklı, kesin değil)",
+    "role": "banî (tartışmalı)",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "529-530"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Banisi kesin olmayan, Hudâvendigâr vakıfları arasında sayılan, kitabesi H. 880 / M. 1475-76'yı veren; deprem, yangın ve yangınla zarar görmüş, 1774'te I. Abdülhamid döneminde onarılan çarşı camisi.",
+    "en": "A market mosque of uncertain founder, counted among Murad I's foundations, with an inscription yielding AH 880 / AD 1475-76; damaged by earthquakes and fires and repaired under Abdülhamid I."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Banî",
+        "en": "History and Founder"
+      },
+      "body": {
+        "tr": "Yapının Sultan I. Murad Hudâvendigâr tarafından yaptırıldığı görüşü ağırlık kazansa da kesin değildir. Kuzey giriş kapısının solundaki 69 × 83 cm boyutlu iki satırlık kitabede yapı adı ve banî bulunmaz; ebced hesabıyla H. 880 / M. 1475-76 çıkarılır. Kitabenin Fâtih dönemi onarım kitabesi olduğu yönünde görüşler vardır; araştırmalar caminin I. Murad Hudâvendigâr vakıfları arasında olduğunu ortaya koymaktadır. H. 1118 / M. 1774'te camiye ser-mahfil, muarrif, vaiz, müezzin, mütevelli, devirhan ve cüzhan görevlendirmeleri yapılmıştır.",
+        "en": "While the prevailing view is that it was commissioned by Murad I Hudâvendigâr, this is not definitive. The two-line 69 × 83 cm inscription left of the north entrance names neither structure nor benefactor; abjad gives AH 880 / AD 1475-76. Some suggest it is a restoration inscription from Fâtih Sultan Mehmed's reign; research indicates the mosque was among Murad I's foundations. In AH 1118 / AD 1774 a ser-mahfil, muarrif, preacher, muezzin, trustee, devirhan and cüzhan were appointed."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "529-530"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 2,
+      "title": {
+        "tr": "Hasar ve Onarımlar",
+        "en": "Damage and Repairs"
+      },
+      "body": {
+        "tr": "Deprem ve yangınlarla ciddi zarar gören yapı I. Abdülhamid (1774-1789) döneminde kapsamlı onarım görmüştür. Kurtuluş Savaşı sırasında Yunan birliklerince yakılan cami 1964'te restore edilip ibadete açılmıştır. 2012'de Vakıflar Genel Müdürlüğü'nün başlattığı restorasyon sırasında çıkan yangınla yeniden büyük ölçüde tahrip olmuş, onarımlarla tekrar ibadete açılmıştır.",
+        "en": "Severely damaged by earthquakes and fires, the building was extensively restored under Abdülhamid I (1774-1789). Burned by Greek troops in the War of Independence, it was restored and reopened in 1964. A fire during restoration begun by the General Directorate of Foundations in 2012 largely destroyed it again; it was reopened after repairs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "531"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Dış Görünüm",
+        "en": "Plan and Exterior"
+      },
+      "body": {
+        "tr": "19,34 × 16,60 m ölçülerindeki cami kuzey-güney doğrultulu dikdörtgen planlıdır; kuzeyinde doğu-batı uzanan son cemaat mekânı vardır. Duvarlar alt pencerelerin üstüne kadar iki sıra tuğla, iki sıra moloz taş almaşıktır, üstü sıvalıdır. Harimin kırma çatısı ve son cemaat yerinin tek yönlü çatısı kiremitlidir. Harim doğu ve batı yan girişlidir; tüm pencereler yuvarlak kemerli ve mermer sövelidir, bu düzen I. Abdülhamid onarımında yapılmıştır.",
+        "en": "The 19.34 × 16.60 m mosque is rectangular on a north-south axis with an east-west narthex on the north. Walls are two rows of brick and two of rubble up to the lower windows, plastered above. The prayer hall has a tiled hipped roof, the narthex a tiled single-pitched roof. There are side entrances east and west; all windows are round-arched with marble frames, an arrangement made during the Abdülhamid I repairs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "531-532"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan-minare",
+      "order": 4,
+      "title": {
+        "tr": "İç Mekân ve Minare",
+        "en": "Interior and Minaret"
+      },
+      "body": {
+        "tr": "Ahşap tavanlı harimde “U” planlı mahfil ahşap direkler üzerindedir. Tamamen mermer yarım yuvarlak mihrap nişi sütuncelerle çevrilidir; sivri kemerli tacında gülçe motifi ve minare biçimli küçük süslemeler vardır. Minber ve kürsü yakın dönemdir. Kuzeydoğu köşedeki minare altıgen almaşık kaide üzerinde tuğla silindirik gövdelidir; tek şerefelidir, şerefe altı beş sıra stalaktitlidir, kurşunlu külahı miğfer biçimlidir. Kaide dışındaki bölüm 1962'de yenilenmiştir. Cami ana cadde üzerinde çarşı camisi işlevi görür.",
+        "en": "In the wood-ceilinged prayer hall a U-plan gallery rests on wooden pillars. The all-marble semicircular mihrab niche is flanked by colonettes, with a rosette on the pointed crown and small minaret-shaped ornaments. The minbar and pulpit are recent. The northeast minaret rises on a hexagonal alternating-masonry base with a brick cylindrical shaft, a single balcony with five rows of stalactite fill and a helmet-shaped lead spire; all but the base was renewed in 1962. The mosque is a market mosque on the main street."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "533"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Cami ölçüsü",
+        "en": "Mosque dimensions"
+      },
+      "value": "19,34 x 16,60",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "531"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcusu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription dimensions"
+      },
+      "value": "69 x 83",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "key": "minare_yenileme",
+      "label": {
+        "tr": "Minare yenileme yılı (kaide hariç)",
+        "en": "Minaret renewal year (excluding base)"
+      },
+      "value": 1962,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "533"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kuzey-kapi-kitabesi",
+      "location": {
+        "tr": "Kuzey giriş kapısının sol yanı",
+        "en": "Left of the north entrance door"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Mescidun uhkimet mebânîhi / Lem yekün fi’l-bilâdi sânîhi / Dâme mebnâhu misle târih / Hallede’l-hakku hâle bânîhi",
+      "translation": {
+        "tr": "Yapısı sağlamlaştırılmış bir mescittir. Bu bölgede benzeri yoktur. Nasıl ki tarihi sürüyorsa, yapısı da devam etsin. Allah, banisini ebedi kılsın.",
+        "en": "It is a mosque with a well-fortified structure. There is no other like it in this region. Just as its history endures, so too may its structure endure. May Allah make its builder eternal."
+      },
+      "author": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "529-530"
+        }
+      ],
+      "date": {
+        "hijri_year": 880,
+        "gregorian": "1475-76"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kitabe-1475",
+      "year": 1475,
+      "date": null,
+      "hijri": "H. 880",
+      "type": "record",
+      "title": {
+        "tr": "Kitabeden ebced hesabıyla H. 880 / M. 1475-76 tarihi çıkarılır",
+        "en": "AH 880 / AD 1475-76 derived from the inscription by abjad"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "529"
+        }
+      ]
+    },
+    {
+      "id": "gorevlendirme-1774",
+      "year": 1774,
+      "date": null,
+      "hijri": "H. 1118",
+      "type": "record",
+      "title": {
+        "tr": "Ser-mahfil ile muarrif, vaiz, müezzin, mütevelli, devirhan ve cüzhan görevlendirmeleri",
+        "en": "Appointments of ser-mahfil, muarrif, preacher, muezzin, trustee, devirhan and cüzhan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "530"
+        }
+      ]
+    },
+    {
+      "id": "minare-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Minare (kaide hariç) yenilendi",
+        "en": "Minaret renewed except its base"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "533"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1964",
+      "year": 1964,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yunan birliklerince yakılan cami restore edilip ibadete açıldı",
+        "en": "Mosque burned by Greek troops was restored and reopened"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "531"
+        }
+      ]
+    },
+    {
+      "id": "yangin-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Restorasyon sırasında çıkan yangınla büyük ölçüde tahrip oldu",
+        "en": "Largely destroyed by a fire during restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "531"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, kiremit çatılı bir çarşı camisidir. Kuzeyde son cemaat mekânı, kuzeydoğuda altıgen kaideli tek şerefeli minare vardır. İçeride ahşap direkli U planlı mahfil bulunur.",
+      "en": "A rectangular tile-roofed market mosque with a narthex to the north and a single-balcony minaret on a hexagonal base at the northeast. Inside is a U-plan gallery on wooden pillars."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

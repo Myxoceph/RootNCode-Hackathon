@@ -121,7 +121,7 @@ dosyasında; isteğin işi, onu her bölük için doldurup ayrı bir Sonnet alt 
 data/tools/extract/PROMPT.md dosyasındaki talimatı kullanarak aşağıdaki bölüklerin her biri için
 AYRI bir alt ajan başlat. Alt ajanların modeli: sonnet. Ajanlar paralel çalışabilir.
 <…> alanlarını her bölük için doldur. Kaynak: vk-bursa-c1 (bölük hangi ciltteyse onu yaz:
-vk-bursa-c1 / vk-bursa-c2 / vk-bursa-c3). Çıktı klasörü: data/eserler/bursa/.
+vk-bursa-c1 / vk-bursa-c2 / vk-bursa-c3). Çıktı klasörü: data/eserler/bursa/<ilçe-slug>/ (ör. kestel/).
 
 1. Muradiye Külliyesi (Bursa, Osmangazi) — metin: data/build/cache/text/9-muradiye.txt
 2. <Bölük adı> (Bursa, <ilçe>) — metin: data/build/cache/text/<dosya>.txt

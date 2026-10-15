@@ -1,0 +1,330 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-gemlik-adliye-koyu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Gemlik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Gemlik bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitapta 1890 tarihinin yapım mı onarım mı tarihi olduğu belirtilmemiş; teyit edilmeli.",
+      "Caminin banisi ve vakfı kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraflar (media) Drive Links klasöründen kitap sayfalarıyla eşlenerek eklendi; başlık ve alt metinler fotoğraflara bakılarak yazıldı, teyit edilmeli. Arşiv fotoğrafı (archive_media) yok.",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "Vakıf bilgisi (banî, vakfiye) kitapta yok; arşivden araştırılmalı.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Adliye Köyü Camii",
+    "en": "Adliye Village Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap cami",
+    "Kütahya çinisi",
+    "köy camii"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Gemlik",
+    "neighborhood": "Adliye",
+    "address": "Kenar Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "325"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1890 (cümle kapısı üzerindeki tarih)",
+      "en": "1890 (date on main door)"
+    },
+    "start_year": 1890,
+    "end_year": 1890,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Cümle kapısı üzerindeki tarih.",
+      "en": "Date on the main door."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "326"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Gemlik Adliye Mahallesi'nde, iç mekânı baştan sona Kütahya çinisiyle kaplı, cümle kapısında 1890 tarihi bulunan ahşap cami.",
+    "en": "A wooden mosque in Gemlik's Adliye neighborhood whose interior is covered entirely with Kütahya tiles; the date 1890 appears on its main door."
+  },
+  "sections": [
+    {
+      "id": "konum",
+      "order": 1,
+      "title": {
+        "tr": "Konum",
+        "en": "Location"
+      },
+      "body": {
+        "tr": "Cami, Gemlik ilçesi, Adliye Mahallesi, Kenar Sokak'tadır. Daha önce köy statüsünde olan Adliye, günümüzde mahalleye dönüşmüştür.",
+        "en": "The mosque is in Adliye Neighborhood, Kenar Street, Gemlik District. Adliye, a former village, is now a neighborhood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "325"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dikdörtgen planlı, yığma duvarlı, kırma çatılı, çatısı kiremit kaplı ahşap bir yapıdır; iç mekân tavanı düz ahşapla kaplıdır. Doğu ve batı cephelerinde üçer, kuzey cephesinde iki altlık ve iki üstlük olmak üzere toplam dört pencere vardır; tüm pencereler yuvarlak kemerli ve plastik doğramalıdır. Harim içine alınmış son cemaat yeri iki yanda maksurelerle sınırlandırılmış, üstünde kadınlar mahfili yer almaktadır. Mihrap, minber ve vaaz kürsüsü dahil iç mekân tamamen Kütahya çinileriyle kaplıdır. Minare tek şerefelidir ve bosajlı kesme taştan yapılmıştır. Cümle kapısı üzerinde 1890 tarihi bulunur.",
+        "en": "The mosque is a rectangular wooden structure with masonry walls, a hipped tiled roof and a plain wooden ceiling. It has three windows on each of the east and west façades and four on the north (two above, two below), all round-arched with plastic frames. The narthex, enclosed within the prayer hall, is bordered by maqsuras and has a women's gallery above it. The interior, including mihrab, minbar and sermon platform, is covered entirely with Kütahya tiles. The single-balcony minaret is of bossage cut stone. The date 1890 is inscribed on the main door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "325-326"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_serefe_sayisi",
+      "label": {
+        "tr": "Minare şerefe sayısı",
+        "en": "Minaret balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "326"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 10,
+      "unit": null,
+      "note": {
+        "tr": "Doğu ve batıda üçer, kuzeyde dört; toplam kitapta verilmemiş, toplanarak hesaplanmıştır.",
+        "en": "Three each on east and west, four on north; the total is not stated in the book and is summed here."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "325"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "tarih-1890",
+      "year": 1890,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cümle kapısı üzerindeki tarih (1890)",
+        "en": "Date on the main door (1890)"
+      },
+      "note": {
+        "tr": "Tarihin yapım ya da onarım tarihi olduğu kitapta belirtilmemiş.",
+        "en": "The book does not say whether this is construction or repair date."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "326"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Adliye Köyü Camii, dikdörtgen planlı, kırma çatılı ve kiremit örtülü ahşap bir yapıdır. Yuvarlak kemerli pencereleri vardır. Harimin içinde iki yanı maksurelerle sınırlı son cemaat yeri ve üstünde kadınlar mahfili bulunur. Mihrap, minber ve vaaz kürsüsü dahil iç mekân baştan sona Kütahya çinileriyle kaplıdır. Tek şerefeli minare bosajlı kesme taştandır.",
+      "en": "Adliye Village Mosque is a rectangular wooden building with a hipped, tiled roof and round-arched windows. Inside the prayer hall, the narthex is bordered by maqsuras with a women's gallery above. The whole interior, including mihrab, minbar and sermon platform, is covered with Kütahya tiles. The single-balcony minaret is of bossage cut stone."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif esas alınarak yazıldı; yalnızca kaynak metne dayanır."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YLPqDQdMgxY_N-7ouGyeUho7VD6beZGF",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+    "book_layout_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+    "links_folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+    "book_pdf_name": "2-Gemlik.pdf",
+    "book_pages": "325-326"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "13iQZZc9ipWY62mWJUPPoejC0Nkl_zVE-",
+        "original_name": "01 DJI_20241102170905_0096_D_ODAK-Edit-2.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "325"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Adliye Köyü Camii ve minaresi, havadan",
+        "en": "Adliye Village Mosque and its minaret, from the air"
+      },
+      "alt": {
+        "tr": "Havadan: kırmızı kiremitli küçük bir cami ve yanında tek bir minare; solda sararmış yapraklı bir ağaç, arkada ormanlık dağ yamaçları.",
+        "en": "Aerial view: a small red-tiled mosque with a single minaret, a tree with yellowing leaves on the left and forested mountain slopes behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1t1WpL-9o0QzdVJ13cK3mTbImQo_0J8Lt",
+        "original_name": "DJI_20241102171302_0111_D_ODAK-Edit-2.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "326"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami, minare ve çevresi",
+        "en": "The mosque, its minaret and surroundings"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremitli beyaz bir yapı ve yanında kırmızı duvarlı bir ev; uzun ince bir minare, arkada ağaçlar ve vadi.",
+        "en": "A white building with a red-tiled roof next to a red-walled house, a tall slender minaret, with trees and a valley behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "12t5wjCWMZRrwcIqOgLf8etX3zLTbO35i",
+        "original_name": "03 ERD06084 kopya.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "326"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Cami içi: mihrap ve minber",
+        "en": "Interior: mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Turkuaz boyalı duvarlı, mavi tavan ışıklıklı bir cami içi; ortada avize, kıble duvarında mihrap ve minber, zeminde halı.",
+        "en": "A mosque interior with turquoise walls and a blue skylight; a chandelier in the middle, the mihrab and minbar on the qibla wall and a carpet on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1WANQN4Crdj8CYtivXZrP9T4X0QOViZTI",
+        "original_name": "02 DJI_20241102171622_0124_D_ODAK-Edit-2.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "326"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin çevresi, kuşbakışı",
+        "en": "Surroundings of the mosque, bird's-eye view"
+      },
+      "alt": {
+        "tr": "Tepeden: kırmızı kiremitli çatılar, ağaçlar ve dar bir sokak.",
+        "en": "Top-down view: red-tiled roofs, trees and a narrow street."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": []
+}

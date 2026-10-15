@@ -1,0 +1,1176 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ordekli-hamam",
+  "meta": {
+    "status": "in_review",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "veri-ekibi",
+    "reviewed_by": null,
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Su Yapıları bölümünden, Ördekli Hamam kaydından (s. 711-716) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; harita üzerinden belirlenip location.coordinates eklenecek (şu an tanımsız).",
+      "Fotoğraf eşleşmeleri (media) kitap sayfalarıyla karşılaştırılarak yapıldı; m08-m14 başlıkları ve alt metinleri, hangi mekânı gösterdikleri teyit edilerek (soğukluk/ılıklık/sıcaklık) güncellenmeli.",
+      "Mimar ve yaptıran kişi kitapta yok (kitabesiz yapı); VGM arşivi ya da başka kaynaklardan bulunursa founder/architect doldurulacak.",
+      "Vakfiye ve vakıf bilgisi kitapta yok; waqf alanı bu yüzden boş.",
+      "Kitabedeki 'sene 1301' tarihinin hicri/rumi karşılığı kitapta belirtilmiyor; teyit edilecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Nalıncılar Hamamı için kayıt açılırsa relations hedefi teyit edilecek.",
+      "Ziyaret saatleri ve giriş ücreti (kültür merkezi olarak etkinliğe göre değişebilir) belediyeden teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap kesin bir yıl vermiyor; yapının Yıldırım Bayezid döneminde başlandığını 'tahmin edildiğini', Çelebi Mehmed döneminde tamamlandığının 'anlaşıldığını' söylüyor. Bu yüzden güven düzeyi 'probable'; aralık hükümdarların dönem sınırlarıdır (1389-1402 ve 1402-1421)."
+      },
+      {
+        "field": "timeline[yapim-baslangici]",
+        "note": "Başlangıç yılı olarak Yıldırım Bayezid'in dönem başı (1389) kullanıldı; kitap bu yılı vermiyor, yalnızca dönemi veriyor."
+      },
+      {
+        "field": "inscriptions[kadinlar-soguklugu-kitabesi]",
+        "note": "'sene 1301' ifadesinin hicri ya da rumi takvime ait olduğu kitapta belirtilmiyor; miladi karşılık hesaplanmadı."
+      },
+      {
+        "field": "name",
+        "note": "Kitabın başlığı 'Ördekli Hamam (Eski Yeni Hamam)'. Kurnaların ördek gagasına benzetilmesi nedeniyle halk arasındaki ad 'Ördekli Hamam'dır; yapının asıl ad olarak 'Yeni Hamam' ve sonra 'Eski Yeni Hamam' geçtiği belirtiliyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ördekli Hamam (Eski Yeni Hamam)",
+    "en": "Ördekli Bath (Eski Yeni Bath)"
+  },
+  "subtitle": {
+    "tr": "Bursa'nın en büyük çifte hamamlarından biri",
+    "en": "One of the largest double baths of Bursa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Eski Yeni Hamam",
+      "en": "Eski Yeni (Old New) Bath"
+    },
+    {
+      "tr": "Yeni Hamam",
+      "en": "Yeni (New) Bath"
+    },
+    {
+      "tr": "Yıkık Hamam",
+      "en": "Yıkık (Ruined) Bath",
+      "note": "Büyük kubbesi uzun süre yıkık kaldığı için"
+    },
+    {
+      "tr": "Ördekli Kültür Merkezi",
+      "en": "Ördekli Cultural Center",
+      "note": "2004-2008 restorasyonundan sonraki kullanım adı"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "çifte hamam",
+    "Osmanlı hamamı",
+    "kültür merkezi",
+    "hipokaust",
+    "Müftü Suyu",
+    "Yıldırım Bayezid",
+    "Çelebi Mehmed",
+    "kaybolmuş kubbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tayakadın",
+    "address": "Abdal Caddesi No: 61",
+    "coordinates": {
+      "lat": 40.18775,
+      "lng": 29.06828,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "Binayı tepeden gösteren dron fotoğrafının (m07) EXIF GPS'i; dron konumudur, bina merkezine yakın ama harita üzerinde teyit edilmeli."
+    },
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "711"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1389-1421 arası (tahmini); H. 791-824",
+      "en": "Between AD 1389 and 1421 (estimated); AH 791-824"
+    },
+    "start_year": 1389,
+    "end_year": 1421,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitabesi yok. Yapımına Yıldırım Bayezid döneminde (H. 791-805 / M. 1389-1402) başlandığı, 1402'deki Ankara Savaşı ve Timur işgali nedeniyle yarım kaldığı ve Çelebi Mehmed döneminde (H. 805-824 / M. 1402-1421) tamamlandığı anlaşılmaktadır.",
+      "en": "It has no inscription. Construction is thought to have begun under Yıldırım Bayezid (AH 791-805 / AD 1389-1402), was left unfinished after the Battle of Ankara and Timur's occupation in 1402, and was completed under Çelebi Mehmed (AH 805-824 / AD 1402-1421)."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "711"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bursa'nın Tayakadın Mahallesi'nde, kervan yolu üzerinde duran çifte hamam. Yıldırım Bayezid döneminde başlayıp Fetret Devri'nde yarım kalan yapı, Çelebi Mehmed zamanında tamamlandı. Büyük çifte hamamlardan biri olan yapı, kurnalarının ördek gagasına benzetilmesinden dolayı 'Ördekli Hamam' diye anılır; 2004-2008 restorasyonundan sonra Ördekli Kültür Merkezi olarak kullanılmaktadır.",
+    "en": "A double bath on the caravan road in Bursa's Tayakadın neighborhood. Begun under Yıldırım Bayezid and left unfinished during the Interregnum, it was completed under Çelebi Mehmed. One of the largest double baths of the Ottoman period, it is called the 'Ördekli (Duck) Bath' because its basins resemble duck beaks; since the 2004-2008 restoration it has served as the Ördekli Cultural Center."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Ördekli Hamam, Osmangazi ilçesinde, Tayakadın Mahallesi'nde, Abdal Caddesi No: 61'de bulunur. Kitabesi olmayan yapı, dönemin önemli ticaret güzergâhlarından biri olan kervan yolu üzerinde inşa edilmiştir. Osmanlı döneminde inşa edilen en büyük çifte hamamlardan biri kabul edilir. Doğu-batı doğrultusunda yaklaşık 1400 m²'lik kapalı alana sahiptir; kuzeyde kadınlar, güneyde erkekler bölümü yer alır.",
+        "en": "Ördekli Bath is located at Abdal Street No. 61 in the Tayakadın neighborhood of Osmangazi. The building, which has no inscription, was built on the caravan road, one of the important trade routes of the period. It is considered one of the largest double baths built in the Ottoman period. It has a closed area of approximately 1400 m² running east-west, with the women's section in the north and the men's section in the south."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711-712"
+        }
+      ]
+    },
+    {
+      "id": "adlari",
+      "order": 2,
+      "title": {
+        "tr": "Adlarının Hikâyesi",
+        "en": "The Story of Its Names"
+      },
+      "body": {
+        "tr": "Sultan I. Murad döneminde çarşı içinde yapılan Nalıncılar Hamamı'ndan sonra yapıldığı için yapı 'Yeni Hamam' diye anılmış; kentte hamamlar çoğalınca zamanla 'Eski Yeni Hamam' adını almıştır. Kurnalarının ördek gagasına benzetilmesi nedeniyle halk arasında 'Ördekli Hamam', büyük kubbesi uzun süre yıkık kaldığı için de 'Yıkık Hamam' denmiştir.",
+        "en": "Because it was built after the Nalıncılar Bath, constructed in the bazaar during the reign of Sultan Murad I, it was called the 'Yeni (New) Bath'; as the number of baths in the city grew, it came to be called the 'Eski Yeni (Old New) Bath'. Its basins resemble duck beaks, hence the popular name 'Ördekli (Duck) Bath', and it was also called the 'Yıkık (Ruined) Bath' because its large dome stayed ruined for a long time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711-712"
+        }
+      ]
+    },
+    {
+      "id": "yapim-ve-tarihce",
+      "order": 3,
+      "title": {
+        "tr": "Yapımı ve Tarihçesi",
+        "en": "Construction and History"
+      },
+      "body": {
+        "tr": "Yapımına Yıldırım Bayezid döneminde başlandığı tahmin edilmektedir. 1402'deki Ankara Savaşı'ndan sonra Bursa Timur ordusunca işgal edilince inşaat yarım kalmış; hamam için getirilen su çevredeki evlerce kendi kullanımlarına yönlendirilmiştir. Yapının, Fetret Devri'nin sona ermesiyle Sultan Çelebi Mehmed'in tahta çıkışından sonra tamamlandığı anlaşılmaktadır. Hamamın su ihtiyacı, Şeyhülislam Kara Çelebizâde Abdülaziz Efendi'nin Uludağ'ın Ayıalanı mevkiinden şehre getirdiği 'Müftü Suyu' hattıyla karşılanmıştır.",
+        "en": "Construction is believed to have begun under Yıldırım Bayezid. After Bursa was occupied by Timur's army following the Battle of Ankara in 1402, the work was left unfinished and the water brought for the bath was redirected by the surrounding houses for their own use. The building is understood to have been completed after the end of the Interregnum and the accession of Sultan Çelebi Mehmed. Its water was supplied by the 'Mufti Water' line that Shaykh al-Islam Kara Çelebizâde Abdülaziz Efendi brought to the city from the Ayıalanı area of Uludağ."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711-712"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 4,
+      "title": {
+        "tr": "Plan ve Yerleşim",
+        "en": "Plan and Layout"
+      },
+      "body": {
+        "tr": "Yapı, iki sokağın eğimli kesişim noktasında yer aldığından yamuk formlu bir planla araziye uyum sağlayacak biçimde düzenlenmiştir; bu nedenle soğukluk birimleri aksiyal yerleşim göstermez. Erkekler bölümü genel plan olarak kadınlar kısmına benzer, ancak iç ölçülerde farklar vardır; erkekler bölümünde bir halvet ve bir tuvalet daha bulunur. Erkekler girişi doğu cepheden, kadınlar girişi kuzeydoğudaki sokaktan sağlanır.",
+        "en": "Because it sits at the sloping intersection of two streets, the building was planned in a trapezoidal form to adapt to the terrain, so its frigidarium units are not arranged axially. The men's section is similar to the women's in general plan but differs in interior dimensions, and has one more bathing cell and a toilet. The men's entrance is from the east side and the women's entrance from the street to the northeast."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712"
+        }
+      ]
+    },
+    {
+      "id": "kadinlar-bolumu",
+      "order": 5,
+      "title": {
+        "tr": "Kadınlar Bölümü",
+        "en": "The Women's Section"
+      },
+      "body": {
+        "tr": "Soğukluğa kuzeydoğu duvarındaki çift kemerli, çift kanatlı ahşap kapıdan girilir. 111 m²'lik bu bölümün ortasında sekiz köşeli fıskiyeli bir havuz, üstünde yaklaşık 10,50 m çaplı, tuğla kemerlerle oluşturulan pandantiflerle sekizgen kasnağa oturan bir kubbe ve merkezinde çokgen formlu büyük bir fener vardır. Batıdaki ılıklık (55 m²) kare planlıdır; kiremit kaplı kubbeyle örtülüdür. Sıcaklık (65 m²) dikdörtgen planlıdır; mukarnaslı pandantiflerle on altıgen kasnağa oturan on iki dilimli bir kubbe taşır ve 12, 11 ve 30 adet fil gözüyle aydınlanır. Batıdaki iki kapı, her biri 30 m² olan iki halvete açılır.",
+        "en": "The frigidarium is entered through a double-arched, double-leafed wooden door on the northeast wall. In the middle of this 111 m² section is an octagonal fountain pool, covered by a dome about 10.50 m in diameter carried to an octagonal drum by brick-arch pendentives, with a large polygonal lantern at its centre. The tepidarium to the west (55 m²) is square-planned and covered by a tiled dome. The caldarium (65 m²) is rectangular, with a twelve-segmented dome on a hexadecagonal drum connected by muqarnas pendentives, lit by 12, 11 and 30 oculi. Two doors on the west open to two bathing cells of 30 m² each."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712-715"
+        }
+      ]
+    },
+    {
+      "id": "erkekler-bolumu",
+      "order": 6,
+      "title": {
+        "tr": "Erkekler Bölümü",
+        "en": "The Men's Section"
+      },
+      "body": {
+        "tr": "151 m²'lik soğukluğun kubbesi uzun yıllar yıkık kaldığından hamam 'Yıkık Hamam' diye de anılmıştır; güneydoğu köşesi ve yarım kubbesi son restorasyonda tamamlanmıştır. Mekân biri tam, biri yarım iki kubbeyle örtülüdür; kasnak, kemerler ve kubbe tamamen tuğladandır. 72 m²'lik ılıklık 61 fil gözüyle, 63 m²'lik sıcaklık 32 fil gözüyle aydınlanır; sıcaklığın kubbe yüzeyinde Türk üçgenleri ve sekiz köşeli yıldız bezemeler vardır. Batı duvarındaki iki kapı, her biri 31 m² olan iki halvete açılır; kapı alınlıklarında oyma gülçe bezemeler bulunur.",
+        "en": "Because the dome of the 151 m² frigidarium stayed ruined for many years, the bath was also called the 'Ruined Bath'; its southeast corner and half dome were completed in the last restoration. The space is covered by two domes, one full and one half, with drum, arches and dome made entirely of brick. The 72 m² tepidarium is lit by 61 oculi and the 63 m² caldarium by 32 oculi; the caldarium dome carries Turkish triangles and eight-pointed star decoration. Two doors on the west wall open to two bathing cells of 31 m² each, with carved rose decoration on the door pediments."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "715-716"
+        }
+      ]
+    },
+    {
+      "id": "isitma-ve-su",
+      "order": 7,
+      "title": {
+        "tr": "Isıtma ve Su Sistemi",
+        "en": "Heating and Water System"
+      },
+      "body": {
+        "tr": "Isıtma sistemi olarak, külhandan gelen kuru buharın döşeme ve duvar içlerinden dolaştırıldığı 'hipokaust' sistemi kullanılmıştır. Batıdaki su deposu (26 m²) ve külhan (34 m²) güneydeki yuvarlak kemerli kapıyla bağlantılıdır; ikisi de tonoz örtülü ve kiremit kaplıdır.",
+        "en": "A 'hypocaust' system, in which dry steam from the furnace was circulated through the floor and walls, served as the heating system. The water tank (26 m²) and the furnace (34 m²) in the west are connected to the round-arched door in the south; both are vaulted and covered with tiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711-712, 716"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-kullanim",
+      "order": 8,
+      "title": {
+        "tr": "Onarımlar ve Bugünkü Kullanım",
+        "en": "Repairs and Present Use"
+      },
+      "body": {
+        "tr": "1495'te kapsamlı bir onarımdan geçen hamam, 1620'de yağışların zarar verdiği kubbe ve camekân kiremitlerinin yenilenmesiyle tekrar düzenlenmiştir. Uzun yıllar işlevini yitirmiş; bir dönem toprak eşya atölyesi ve belediye deposu olarak kullanılmıştır. 2004-2008 yıllarında Vakıflar ve Osmangazi Belediyesi iş birliğiyle restore edilerek 'Ördekli Kültür Merkezi' adıyla kültürel kullanıma açılmıştır; kadınlar ve erkekler bölümleri arasında yeni bir geçiş açılmış, mekânlar fuaye, sergi holü, çok amaçlı salon gibi işlevler kazanmıştır.",
+        "en": "After extensive repairs in 1495, the bath was remodeled in 1620 by replacing the dome and glazed tiles damaged by rain. It lost its function for many years and was used for a time as an earthenware workshop and municipal warehouse. Restored between 2004 and 2008 in cooperation between the General Directorate of Foundations and Osmangazi Municipality, it was opened to cultural use as the 'Ördekli Cultural Center'; a new passage was opened between the women's and men's sections, and its spaces now serve as foyer, exhibition hall and multi-purpose hall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712, 714, 716"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kapali_alan",
+      "label": {
+        "tr": "Kapalı alan",
+        "en": "Closed area"
+      },
+      "value": 1400,
+      "unit": "m²",
+      "confidence": "probable",
+      "note": {
+        "tr": "Kitap 'yaklaşık' diyor.",
+        "en": "The book says 'approximately'."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712"
+        }
+      ]
+    },
+    {
+      "key": "kadin_sogukluk_alani",
+      "label": {
+        "tr": "Kadınlar soğukluğu",
+        "en": "Women's frigidarium"
+      },
+      "value": 111,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "713"
+        }
+      ]
+    },
+    {
+      "key": "kadin_sogukluk_kubbe_capi",
+      "label": {
+        "tr": "Kadınlar soğukluğu kubbe çapı",
+        "en": "Women's frigidarium dome diameter"
+      },
+      "value": 10.5,
+      "unit": "m",
+      "confidence": "probable",
+      "note": {
+        "tr": "Kitap 'yaklaşık' diyor.",
+        "en": "The book says 'approximately'."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "713"
+        }
+      ]
+    },
+    {
+      "key": "kadin_ilik_alani",
+      "label": {
+        "tr": "Kadınlar ılıklığı",
+        "en": "Women's tepidarium"
+      },
+      "value": 55,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "713"
+        }
+      ]
+    },
+    {
+      "key": "kadin_sicak_alani",
+      "label": {
+        "tr": "Kadınlar sıcaklığı",
+        "en": "Women's caldarium"
+      },
+      "value": 65,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "714"
+        }
+      ]
+    },
+    {
+      "key": "erkek_sogukluk_alani",
+      "label": {
+        "tr": "Erkekler soğukluğu",
+        "en": "Men's frigidarium"
+      },
+      "value": 151,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "715"
+        }
+      ]
+    },
+    {
+      "key": "erkek_ilik_alani",
+      "label": {
+        "tr": "Erkekler ılıklığı",
+        "en": "Men's tepidarium"
+      },
+      "value": 72,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    },
+    {
+      "key": "erkek_sicak_alani",
+      "label": {
+        "tr": "Erkekler sıcaklığı",
+        "en": "Men's caldarium"
+      },
+      "value": 63,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    },
+    {
+      "key": "su_deposu_alani",
+      "label": {
+        "tr": "Su deposu",
+        "en": "Water tank"
+      },
+      "value": 26,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    },
+    {
+      "key": "kulhan_alani",
+      "label": {
+        "tr": "Külhan",
+        "en": "Furnace"
+      },
+      "value": 34,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon_yillari",
+      "label": {
+        "tr": "Son restorasyon",
+        "en": "Latest restoration"
+      },
+      "value": "2004-2008",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712, 716"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Yıldırım Bayezid",
+      "role": {
+        "tr": "Döneminde yapımına başlandığı tahmin ediliyor",
+        "en": "Construction is believed to have begun in his reign"
+      }
+    },
+    {
+      "name": "Sultan Çelebi Mehmed",
+      "role": {
+        "tr": "Döneminde tamamlandığı anlaşılıyor",
+        "en": "The building appears to have been completed in his reign"
+      }
+    },
+    {
+      "name": "Şeyhülislam Kara Çelebizâde Abdülaziz Efendi",
+      "role": {
+        "tr": "Hamamı besleyen Müftü Suyu'nu şehre getirdi",
+        "en": "Brought the 'Mufti Water' that fed the bath to the city"
+      }
+    },
+    {
+      "name": "Abdülhamid Efendi",
+      "role": {
+        "tr": "Kadınlar soğukluğundaki kitabede adı geçer (İsmail Ağa'nın oğlu)",
+        "en": "Named in the inscription of the women's frigidarium (son of İsmail Ağa)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kadinlar-soguklugu-kitabesi",
+      "location": {
+        "tr": "Kadınlar soğukluğunun doğu duvarındaki pano",
+        "en": "Panel on the east wall of the women's frigidarium"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Brusa gazhaneci tüccar İsmail Ağa'nın oğlu Abdülhamid Efendi, sene 1301.",
+        "en": "Abdülhamid Efendi, son of Bursa gasworks merchant İsmail Ağa, year 1301."
+      },
+      "date": null,
+      "note": {
+        "tr": "Kısmen tahrip olmuştur; kitap metnin yazıya aktarımını vermiyor, yalnızca ifadeyi aktarıyor.",
+        "en": "Partially damaged; the book gives only the wording, not a transliteration."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "713"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yapim-baslangici",
+      "year": 1389,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Yıldırım Bayezid döneminde yapımına başlandığı tahmin ediliyor",
+        "en": "Construction is believed to have begun under Yıldırım Bayezid"
+      },
+      "note": {
+        "tr": "Kitap yıl vermiyor; 1389, hükümdarın dönem başıdır (H. 791).",
+        "en": "The book gives no year; 1389 is the start of the sultan's reign (AH 791)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711"
+        }
+      ]
+    },
+    {
+      "id": "ankara-1402",
+      "year": 1402,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Ankara Savaşı ve Timur işgali: inşaat yarım kaldı",
+        "en": "Battle of Ankara and Timur's occupation: construction left unfinished"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711"
+        }
+      ]
+    },
+    {
+      "id": "tamamlanma",
+      "year": 1402,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Çelebi Mehmed döneminde tamamlandı",
+        "en": "Completed under Çelebi Mehmed"
+      },
+      "note": {
+        "tr": "Kesin yıl bilinmiyor; Çelebi Mehmed'in dönemi 1402-1421'dir.",
+        "en": "The exact year is unknown; Çelebi Mehmed reigned 1402-1421."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1495",
+      "year": 1495,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Extensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1620",
+      "year": 1620,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Yağıştan zarar gören kubbe ve camekân kiremitleri yenilendi",
+        "en": "Dome and glazed tiles damaged by rain were replaced"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar ve Osmangazi Belediyesi restorasyonu (2004-2008); Ördekli Kültür Merkezi olarak açıldı",
+        "en": "Restoration by the Foundations Directorate and Osmangazi Municipality (2004-2008); opened as the Ördekli Cultural Center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712, 716"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kubbeler",
+      "title": {
+        "tr": "Fil gözleriyle aydınlanan kubbeler",
+        "en": "Domes lit by oculi"
+      },
+      "hint": {
+        "tr": "Sıcaklık bölümlerinde kubbedeki küçük fil gözlerinden süzülen ışığa bakın; erkekler ılıklığında 61 tane var.",
+        "en": "Look at the light filtering through the small oculi in the caldarium domes; the men's tepidarium alone has 61."
+      },
+      "section_id": "erkekler-bolumu"
+    },
+    {
+      "feature": "havuz",
+      "title": {
+        "tr": "Kadınlar soğukluğundaki sekizgen havuz",
+        "en": "The octagonal pool in the women's frigidarium"
+      },
+      "hint": {
+        "tr": "Yaklaşık 10,50 m çaplı kubbenin altında, ortadaki sekiz köşeli fıskiyeli havuzu arayın.",
+        "en": "Look for the octagonal fountain pool in the middle, under the dome of about 10.50 m in diameter."
+      },
+      "section_id": "kadinlar-bolumu"
+    },
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "Sülüs kitabe",
+        "en": "The thuluth inscription"
+      },
+      "hint": {
+        "tr": "Kadınlar soğukluğunun doğu duvarındaki panoda, 'sene 1301' tarihli kısmen tahrip olmuş kitabeyi bulun.",
+        "en": "Find the partially damaged inscription dated 'year 1301' on the panel of the east wall."
+      },
+      "section_id": "kadinlar-bolumu"
+    },
+    {
+      "feature": "kapilar",
+      "title": {
+        "tr": "Beş dilimli alınlıklı halvet kapıları",
+        "en": "Bathing-cell doors with five-lobed pediments"
+      },
+      "hint": {
+        "tr": "Erkekler sıcaklığından halvetlere açılan kapıların alınlıklarındaki oyma gülçelere bakın.",
+        "en": "Look at the carved roses on the pediments of the doors leading from the men's caldarium to the bathing cells."
+      },
+      "section_id": "erkekler-bolumu"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-nalincilar-hamami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Sultan I. Murad döneminde çarşı içinde yapılan Nalıncılar Hamamı'ndan sonra yapıldığı için 'Yeni Hamam' adını almıştır.",
+        "en": "Built after the Nalıncılar Bath in the bazaar (Murad I's reign), hence the name 'Yeni (New) Bath'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": 30,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Bugün Ördekli Kültür Merkezi olarak kullanılmaktadır; sergi ve etkinlik programına göre bölümler farklı işlev görebilir.",
+      "en": "Today it serves as the Ördekli Cultural Center; spaces may have different functions depending on exhibitions and events."
+    },
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ördekli Hamam, Tayakadın'da iki sokağın kesiştiği eğimli bir köşede duran, kırmızı tuğla ve beyaz taş şeritlerden örülmüş uzun bir yapıdır. Üzeri, birçoğu küçük fil gözleriyle delinmiş kiremit kaplı kubbelerle örtülüdür; en büyük iki kubbenin tepesinde fener bulunur. Girişlerden birinde yan yana iki sivri kemerli ahşap kapı görülür. İçeride kadınlar ve erkekler için ayrı soğukluk, ılıklık ve sıcaklık bölümleri vardır; kadınlar soğukluğunun ortasında sekiz köşeli bir havuz bulunur. Bugün kültür merkezi olarak sergi ve etkinliklere ev sahipliği yapar.",
+      "en": "The Ördekli Bath is a long building of red brick and white stone bands standing on a sloping corner where two streets meet in Tayakadın. It is covered by tile-clad domes, many pierced by small oculi, with lanterns on the two largest. At one entrance two pointed-arch wooden doors stand side by side. Inside are separate frigidarium, tepidarium and caldarium sections for women and men; an octagonal pool stands at the centre of the women's frigidarium. Today it hosts exhibitions and events as a cultural center."
+    },
+    "audio_description_source": "Kitap metni ve envanter fotoğraflarından ekip tarafından yazıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yqn1GQtPzyzoAIbjwRp701xm7nuJDCob",
+    "path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_pdf_name": "4-Su Yapıları.pdf",
+    "book_pages": "711-719"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1RSOgOn38fSvXP7wLmwmdCP6TQgifkW27",
+        "original_name": "1 Kapak (1).jpeg.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "708-709"
+      },
+      "subject": "exterior",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.55
+      },
+      "caption": {
+        "tr": "Ördekli Hamam, gün batımında",
+        "en": "Ördekli Bath at sunset"
+      },
+      "alt": {
+        "tr": "Gün batımında pembe bulutlu gökyüzü altında, çatısı kiremitli, üzerlerinde fener bulunan iki büyük kubbeli taş ve tuğla hamam; arkada Bursa'nın evleri ve dağ.",
+        "en": "A stone-and-brick bathhouse with two large tiled domes topped by lanterns under a pink sunset sky, with Bursa's houses and a mountain behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1qU424iJvW2xMWVmBA1nUTvamP7lHU9AI",
+        "original_name": "ERD00398 kopya.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "717"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dış cephe: sıra sıra tuğla ve taş şeritler, arkada kubbeler",
+        "en": "Outer front: bands of brick and stone, domes behind"
+      },
+      "alt": {
+        "tr": "Gündüz çekilmiş fotoğraf: kırmızı tuğla ve beyaz taş şeritlerden oluşan duvarlar, büyük bir sivri kemerli giriş açıklığı ve arkada kiremitli iki kubbe.",
+        "en": "Daytime photo: walls of alternating red brick and white stone bands, a large pointed-arch entrance recess and two tiled domes behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1PjT43UJKtQdk20aIKQTq-UCAzug2qwV6",
+        "original_name": "ERD00396 kopya.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "717"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kemerli giriş cephesi",
+        "en": "The arched entrance front"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla ve beyaz taş şeritli duvarın ortasında, yuvarlak kemerli bir niş içinde koyu renkli ahşap kapı.",
+        "en": "A dark wooden door set in a rounded-arch recess in the middle of a wall of red brick and white stone bands."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "15BDFDG6P_LZgspKGJgRIZUzdL7CWotP0",
+        "original_name": "10.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "717"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Yan yana iki sivri kemerli kapı",
+        "en": "Two pointed-arch doors side by side"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş şeritli duvarda yan yana iki sivri kemerli niş; her birinde koyu renkli, kemerli ahşap kapı; üstte bitkisel bir süs.",
+        "en": "Two pointed-arch niches side by side in a brick-and-stone wall, each with a dark arched wooden door and a plant motif above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1xjUTEEag4G7AvD38WOMcrAvNcYxZCZgO",
+        "original_name": "DJI_20241010233705_0306_D-Edit.jpeg.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "710"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Uzun cephe ve arkada kubbeler, havadan",
+        "en": "Long front and domes behind, from the air"
+      },
+      "alt": {
+        "tr": "Havadan, gün batımı ışığında: ön planda tuğla ve taş şeritli uzun, tonozlu bir kanat, arkasında fil gözleriyle aydınlanmış kiremitli kubbeler.",
+        "en": "Aerial view at dusk: a long vaulted wing in banded brick and stone in the foreground, with tiled domes lit by oculi behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": "2024-10-10",
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1orjJGWKgGoRS15yPH2xNYml4E9SoHlsm",
+        "original_name": "2.1.jpeg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "713"
+      },
+      "subject": "domes",
+      "caption": {
+        "tr": "Kubbeler ve fil gözleri, gün batımında",
+        "en": "Domes and oculi at dusk"
+      },
+      "alt": {
+        "tr": "Gün batımında, çoğu kubbesinde küçük ışıklar yanan kiremit kaplı çok sayıda kubbenin üstten görünümü.",
+        "en": "A view over many tile-covered domes at dusk, with small lights glowing in the oculi of most of them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1A1To2i-LvREdyQcZXlbPCBnETpt7Qiga",
+        "original_name": "3_2.jpeg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "718-719"
+      },
+      "subject": "domes",
+      "caption": {
+        "tr": "Çatı kubbeleri geceleyin, kuşbakışı",
+        "en": "Roof domes at night, bird's-eye view"
+      },
+      "alt": {
+        "tr": "Geceleyin kuşbakışı: kiremitli kubbelerin yoğun bir kümesi, kubbelerdeki fil gözlerinden ışık sızıyor; sol tarafta iki büyük kubbe.",
+        "en": "A night-time bird's-eye view of a dense cluster of tiled domes with light coming from their oculi; two larger domes on the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1BqGgzrCljnETOkqJyN5gv4-Rk69ClYkp",
+        "original_name": "ERD04046 kopya.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "707"
+      },
+      "subject": "interior_domes",
+      "caption": {
+        "tr": "Mukarnaslı pandantifler ve kubbe",
+        "en": "Muqarnas pendentives and dome"
+      },
+      "alt": {
+        "tr": "Aşağıdan yukarı çekilmiş: açık renk sıvalı bir kubbe, ortasında çok dilimli bir fener ve köşelerde mukarnas (stalaktit) geçişler.",
+        "en": "Looking up: a pale plastered dome with a many-lobed lantern at the centre and muqarnas (stalactite) transitions in the corners."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1HPdZI30JgyZJfYlOsnqF7tONttu8_cTX",
+        "original_name": "12.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "714"
+      },
+      "subject": "interior_domes",
+      "caption": {
+        "tr": "Tuğla kubbe ve merkezindeki aydınlık açıklığı",
+        "en": "Brick dome and its bright central opening"
+      },
+      "alt": {
+        "tr": "Aşağıdan yukarı çekilmiş: tuğlayla örülmüş bir kubbe, ortasında yuvarlak aydınlık bir açıklık; yanlarda mukarnaslı kemer geçişleri ve ışık süzülen bir pencere.",
+        "en": "Looking up: a dome of laid brick with a round bright opening at its centre, muqarnas arch transitions around it and a window letting light in."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1S30ACM-yXBGfjR3fQjjwyMrKzvloXeOJ",
+        "original_name": "ERD09451 kopya.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "716"
+      },
+      "subject": "interior_domes",
+      "caption": {
+        "tr": "Kubbe merkezindeki fener",
+        "en": "The lantern at the centre of a dome"
+      },
+      "alt": {
+        "tr": "Tuğlanın halka halka dizildiği bir kubbenin iç yüzeyi; ortada yuvarlak, aydınlık bir fener açıklığı.",
+        "en": "The inside of a dome with brick laid in concentric rings and a round, bright lantern opening at the centre."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m11",
+      "type": "photo",
+      "is_cover": false,
+      "order": 11,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1tYIX5-jpyF1cE1FFsXLMfhXx9YjDMMWN",
+        "original_name": "9_1.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "712"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kültür merkezi olarak kullanılan büyük salon",
+        "en": "The large hall used as a cultural centre"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla duvarlı, yüksek kubbeli bir salon; ortada kırmızı koltuk sıraları ve kemerli, ışıklı pencereler.",
+        "en": "A high-domed hall with stone-and-brick walls, rows of red seats in the middle and arched, lit windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m12",
+      "type": "photo",
+      "is_cover": false,
+      "order": 12,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1V2FyEIDW_THZdrQDwhWEif_Yx-nbUtML",
+        "original_name": "8_1.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "712"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Salonda fıskiyeli havuz ve masalar",
+        "en": "A fountain pool and tables in the hall"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla duvarlı geniş bir mekân; mermer zeminde ortada fıskiyeli bir havuz, çevresinde kırmızı sandalyeli masalar; arkada ışıklı kemerli nişler ve bir Türk bayrağı.",
+        "en": "A wide stone-and-brick space with a fountain pool in the middle of a marble floor, tables with red chairs around it, lit arched niches and a Turkish flag behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m13",
+      "type": "photo",
+      "is_cover": false,
+      "order": 13,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1oWjhW7yNJfyb8-QP3IWxlsEJk1bX9aDt",
+        "original_name": "11.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "712"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kemerli bir kapı ve sıralı koltuklar",
+        "en": "An arched door and rows of seats"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla örgülü bir duvarda sivri kemerli koyu renkli bir kapı; iki yanında nişler, önde kırmızı koltuk sıraları.",
+        "en": "A dark pointed-arch door in a stone-and-brick wall with niches on both sides and rows of red seats in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m14",
+      "type": "photo",
+      "is_cover": false,
+      "order": 14,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1smNhSDYPvV3zHIx1P_3Ylqx0GpDkSCSA",
+        "original_name": "6_2.jpg",
+        "folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+        "folder_path": "Bursa Fotoğraf Arşivi / I. ve II. Cilt - Osmangazi / Su Yapıları Klasörü / Links",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "712"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mukarnaslı kemerli oda",
+        "en": "An arched room with muqarnas"
+      },
+      "alt": {
+        "tr": "Sıcak ışıkla aydınlanmış, mukarnas bezemeli geniş kemerli bir oda; mermer zeminde beyaz örtülü bir sergi masası ve çevresinde sergilenen nesneler.",
+        "en": "A room with a wide arch decorated with muqarnas, in warm light; a display table with a white cloth and objects around it on a marble floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": []
+}

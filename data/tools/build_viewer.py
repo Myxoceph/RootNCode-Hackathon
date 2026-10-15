@@ -18,7 +18,10 @@ OUT = DATA / "viewer" / "data.js"
 
 
 def main():
-    assets, manifest = load_all()
+    assets, manifest = load_all(include_drafts=True)
+    # Taslaklardan yalnızca fotoğrafı eklenmiş olanlar gösterilir: görseller çekilebiliyor mu diye
+    # bakılabilsin. Fotoğrafsız taslaklar (henüz boş kayıtlar) görüntüleyiciyi doldurmasın.
+    assets = [a for a in assets if a["meta"]["status"] != "draft" or a.get("media")]
     shared = shared_rows()
     city_labels = {c["code"]: c["label_tr"] for c in shared["city"]}
     payload = {

@@ -71,7 +71,7 @@ data/
 ├── enums.json                 # sabit listeler → lookup tabloları
 ├── sources.json               # kaynaklar (kitaplar, foto arşivi) → source tablosu
 ├── schema/eser.schema.json    # eser JSON'unun JSON Schema tanımı
-├── eserler/<il>/<id>.json     # her eser bir dosya → asset + alt tablolar
+├── eserler/<il>/<ilçe>/<id>.json   # her eser bir dosya → asset + alt tablolar
 ├── tools/
 │   ├── validate.py            # şema + çapraz kontrol (veri ekibi her değişiklikte çalıştırır)
 │   ├── media_pipeline.py      # fotoğrafları indirir, sürümlerini üretir, manifesti yazar
@@ -85,7 +85,7 @@ data/
     └── cache/                 # Drive'dan indirilen orijinaller            ← git'e girmez
 ```
 
-Referans kayıt: [eserler/bursa/bursa-osmangazi-ulucami.json](eserler/bursa/bursa-osmangazi-ulucami.json)
+Referans kayıt: [eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json](eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json)
 
 Backend'e gelen her JSON `validate.py`'den geçmiştir: tipler doğru, kodlar geçerli, kaynak id'leri mevcut. Backend bu kontrolleri tekrar etmek zorunda değil, ama DB kısıtları (aşağıda) aynı kuralları ikinci kez korur.
 
@@ -114,14 +114,14 @@ Backend'e gelen her JSON `validate.py`'den geçmiştir: tipler doğru, kodlar ge
 
 ## 4. Eser JSON'unun yapısı
 
-Kısaltılmış örnek; tamamı [bursa-osmangazi-ulucami.json](eserler/bursa/bursa-osmangazi-ulucami.json) dosyasında:
+Kısaltılmış örnek; tamamı [bursa-osmangazi-ulucami.json](eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json) dosyasında:
 
 ```jsonc
 {
   "schema_version": "1.0",
   "id": "bursa-osmangazi-ulucami",                 // <il>-<ilçe>-<ad>; değişmez, upsert anahtarı
   "meta": { "status": "in_review", "created_at": "2026-10-14", "updated_at": "2026-10-14",
-            "prepared_by": "...", "reviewed_by": null, "todos": [], "data_quality_notes": [] },
+            "prepared_by": "...", "reviewed_by": null, "from": "Ulucamii", "todos": [], "data_quality_notes": [] },
   "name": { "tr": "Ulucami", "en": "Ulucami (Grand Mosque of Bursa)" },
   "subtitle": { "tr": "...", "en": "..." },
   "alternate_names": [{ "tr": "Bursa'nın Ayasofyası", "en": "...", "note": "..." }],
@@ -154,9 +154,12 @@ Kısaltılmış örnek; tamamı [bursa-osmangazi-ulucami.json](eserler/bursa/bur
                      "accessible_toilet": "unknown", "verified": false, "notes": null,
                      "audio_description": {...}, "audio_description_source": "..." },
   "ambient_sound": { "sound_key": "cami-sadirvan", "caption": { "tr": "[Şadırvandan akan su sesi ...]" } },
-  "media_folder":  { "provider": "google_drive", "folder_id": "...", "path": "...", "book_layout_pdf_file_id": "..." },
+  "media_folder":  { "provider": "google_drive", "folder_id": "...", "path": "...", "book_layout_pdf_file_id": "...",
+                     "links_folder_id": "...", "book_pdf_name": "4-Su Yapıları.pdf", "book_pages": "711-719" },
   "media": [{ "id": "m01", "type": "photo", "is_cover": true, "order": 1,
-              "source": { "provider": "google_drive", "file_id": "1cXJ...", "original_name": "DJI_....jpeg" },
+              "source": { "provider": "google_drive", "file_id": "1cXJ...", "original_name": "DJI_....jpeg",
+                          "folder_id": "...", "folder_path": ".../Links", "book_pdf_file_id": "...",
+                          "book_pdf_name": "4-Su Yapıları.pdf", "book_page": "717" },
               "subject": "exterior", "focal_point": { "x": 0.5, "y": 0.6 },
               "caption": {...}, "alt": {...}, "credit": "...", "photographer": null,
               "captured_at": "2024-11-29", "license": "vakif-katilim-hackathon", "source_id": "vk-bursa-foto-arsivi" }],
@@ -849,7 +852,7 @@ Detay yanıtı örneği (kısaltılmış, `lang=tr`):
 |---|---|---|
 | Yeni il (ör. İzmir) | `enums.json`'a satır ekle → lookup tablosuna seed | Yok |
 | Yeni eser türü (ör. "kütüphane") | `enums.json`'a satır ekle | Yok |
-| Yeni eser | `eserler/<il>/<id>.json` ekle → import | Yok |
+| Yeni eser | `eserler/<il>/<ilçe>/<id>.json` ekle → import | Yok |
 | Yeni kaynak (kitap, makale) | `sources.json`'a ekle | Yok |
 | Yeni ilişki türü (ör. "aynı hattat") | `enums.json` → `relation_types` | Yok |
 | Üçüncü dil (ör. Arapça) | `_ar` sütunları eklenir **ya da** metinler `*_i18n jsonb` sütunlarına taşınır (`{"tr": ..., "en": ..., "ar": ...}`) | Migration |
