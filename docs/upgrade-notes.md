@@ -7,6 +7,18 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-15 · Tasarım token'ları (`@vagabonds/ui`)
+
+Kimler: **istemci tarafı** (Yiğit, Kübra)
+
+1. Yeni workspace paketi eklendi; bağlamak için:
+   ```bash
+   npm install
+   ```
+2. Token'lar ve kontrast tablosu: [`packages/ui/README.md`](../packages/ui/README.md)
+
+---
+
 ## 2026-10-14 · Bölüklerden yapay zekâ destekli taslak üretimi
 
 Kimler: **veri girişi yapanlar** (Ahmet, Hüseyin)
