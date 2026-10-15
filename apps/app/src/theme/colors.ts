@@ -14,6 +14,8 @@ export const colors = {
     text: palette.gece100,
     textSecondary: palette.gece400,
     primary: palette.kobalt300,
+    /** Label on a filled `primary` button. */
+    onPrimary: palette.gece900,
     border: palette.gece700,
   },
   light: {
@@ -22,6 +24,7 @@ export const colors = {
     text: palette.gece900,
     textSecondary: palette.gece600,
     primary: palette.kobalt700,
+    onPrimary: palette.white,
     border: palette.gece100,
   },
 } as const;

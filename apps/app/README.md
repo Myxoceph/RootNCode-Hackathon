@@ -36,6 +36,7 @@ src/
     +not-found.tsx
     (tabs)/               # Keşfet /, Eserler /monuments, Rota /route, Ayarlar /settings
   components/
+  data/                   # veri kaynağı soyutlaması ve hook'lar (bkz. Veri)
   theme/                  # geçici renk rolleri (K3 gelince değişecek), yazı tipi dosyaları
 ```
 
@@ -61,3 +62,18 @@ API hazır olana kadar veri kaynağı
 [`packages/contracts/mock/mock_monuments.json`](../../packages/contracts/mock/mock_monuments.json)
 dosyasıdır. Tipler ve Zod şemaları `@vagabonds/contracts` paketinden import edilir;
 API devreye girdiğinde yalnızca veri kaynağı değişir, yanıt şekli aynı kalır.
+
+Ekranlar veriye yalnızca `src/data` üzerinden erişir:
+
+```tsx
+import { ResourceView } from "@/components/resource-view";
+import { useMonument, useMonuments } from "@/data";
+
+const monuments = useMonuments();          // loading | error | success, ve retry()
+<ResourceView resource={monuments}>{(data) => /* ... */}</ResourceView>
+```
+
+- `src/data/active-source.ts`: hangi kaynağın kullanılacağına karar verilen **tek** satır.
+- Her kaynak veriyi sözleşmeyle doğrular; uymazsa `DataError` fırlatır. `ResourceView` bunu
+  "Tekrar dene" düğmeli bir hata ekranı olarak gösterir (geliştirmede hangi alanın bozuk
+  olduğu da listelenir).
