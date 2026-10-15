@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-timurtas-pasa-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Timurtaş Paşa Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Timurtaş Paşa Külliyesi bölümünden (s. 215-222) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor.",
+      "Külliyenin kendi adresi kitapta yok; yalnızca caminin adresi verilmiş (Demirtaşpaşa Mahallesi, Demirtaşpaşa Sokak No: 8).",
+      "Yok olmuş imaret için kayıt açılıp açılmayacağına veri ekibi karar vermeli.",
+      "1485 tarihli vakfiyenin kime ait olduğu ve metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
+      "Basılı s. 221 ve sonrası için metin çıkarılamadı (PDF sayfaları boş/görsel); bölümün eksik sayfası olup olmadığı kontrol edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap külliyeyi yaptıran Timurtaş Paşa oğlunu önce 'Ali Paşa' (s. 215), sonra 'Ali Bey' (s. 215, 218) olarak anıyor; aynı kişi kastediliyor gibi görünüyor ama kitap açıkça belirtmiyor."
+      },
+      {
+        "field": "waqf",
+        "note": "s. 215'te 'Vakfiyesi 1485 yılında Bursa'da yazılmıştır' cümlesinin öznesi belirsiz (Ali Bey 1427'de, babası 1404'te vefat etmiş). Kitaba sadık kalındı, güven düzeyi 'disputed'."
+      },
+      {
+        "field": "name",
+        "note": "Bölüm başlığı 'Timurtaş Paşa Külliyesi', cami 'Demirtaş (Timurtaş)', mahalle 'Demirtaşpaşa' ve 'Timurtaş Paşa Mahallesi' olarak geçiyor; Kara Timurtaş / Kara Demirtaş adlandırmaları karışık kullanılıyor."
+      },
+      {
+        "field": "dating",
+        "note": "s. 215 külliyenin (cami, imaret, hamam) 1390'da yapıldığını söylüyor; s. 220 hamamın 1420'den önce Oruç Bey tarafından yaptırıldığını söylüyor. İki bilgi tam örtüşmüyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Timurtaş Paşa Külliyesi",
+    "en": "Timurtaş Paşa Complex"
+  },
+  "subtitle": {
+    "tr": "Cami, imaret ve hamamdan oluşan Kara Timurtaş Paşa ailesi külliyesi",
+    "en": "Complex of the Kara Timurtaş Paşa family consisting of a mosque, an imaret and a bath"
+  },
+  "alternate_names": [
+    {
+      "tr": "Demirtaş (Timurtaş) Külliyesi",
+      "en": "Demirtaş (Timurtaş) Complex"
+    }
+  ],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Kara Timurtaş Paşa",
+    "Ali Bey",
+    "Oruç Bey",
+    "külliye",
+    "Demirtaşpaşa",
+    "hazire"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Demirtaşpaşa",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "215"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1390",
+      "en": "1390"
+    },
+    "start_year": 1390,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap, külliyenin cami, imaret ve hamamdan oluşan yapılarının 1390 senesinde inşa ettirildiğini söylüyor; hamam için s. 220'de '1420'den önce' deniyor.",
+      "en": "The book says the complex of mosque, imaret and bath was built in 1390; for the bath it says 'before 1420' on p. 220."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "215, 220"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ali Paşa / Ali Bey (Kara Timurtaş Paşa'nın oğlu)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "215, 218"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Timurtaş Paşa Camii ve hamam vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "215, 220"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kara Timurtaş Paşa'nın oğlu Ali Paşa'nın 1390'da cami, imaret ve hamam olarak yaptırdığı külliye. Günümüze cami (şadırvanlı minaresi ve haziresiyle) ve hamam ulaşmış, imaret yok olmuştur.",
+    "en": "A complex built in 1390 by Ali Paşa, son of Kara Timurtaş Paşa, as a mosque, an imaret and a bath. The mosque (with its shadirvan minaret and graveyard) and the bath survive; the imaret has not."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Bursa'da ünvanları 'Kara' ve 'Gazi' olan iki Demirtaş Paşa vardır. Kara Timurtaş Paşa'nın oğlu Ali Paşa, 1390 senesinde cami, imaret ve hamamdan oluşan külliyeyi inşa ettirmiştir. Cami Demirtaşpaşa Mahallesi, Demirtaşpaşa Sokak No: 8'dedir.",
+        "en": "There are two Demirtaş Paşas in Bursa, with the titles 'Kara' and 'Gazi'. Ali Paşa, the son of Kara Timurtaş Paşa, had a complex built in 1390 consisting of a mosque, an imaret and a bath. The mosque is at Demirtaşpaşa Neighborhood, Demirtaşpaşa Street No. 8."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "ali-bey",
+      "order": 2,
+      "title": {
+        "tr": "Ali Bey",
+        "en": "Ali Bey"
+      },
+      "body": {
+        "tr": "Timurtaş Paşa'nın oğlu Ali Bey, babasıyla birlikte Timurlenk'e esir düşen ümeradandır. Daha sonra beylerbeyi ve vezir olmuş, 1427'de vefat etmiştir. Mezarının yeri bilinmemektedir; Seyitgazi'deki 'Mürüvvet Ali Baba' türbesinin ona ait olduğu söylense de bilginin doğruluğu kesin değildir. Manisa'da çeşitli hayratları ve vakıfları vardır; vakfiyesi 1485'te Bursa'da yazılmıştır.",
+        "en": "Ali Bey, the son of Timurtaş Paşa, was one of the commanders captured by Timur along with his father. He later became a beylerbey and vizier and died in 1427. The location of his grave is unknown; although the tomb known as 'Mürüvvet Ali Baba' in Seyitgazi is said to be his, the accuracy of this is not certain. He established various charities and foundations in Manisa; his endowment charter was written in Bursa in 1485."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "aile",
+      "order": 3,
+      "title": {
+        "tr": "Kara Timurtaş Paşa ve Oğulları",
+        "en": "Kara Timurtaş Paşa and His Sons"
+      },
+      "body": {
+        "tr": "Aykut Alp'in torunu Kara Timurtaş Paşa XIV. yüzyıl sonlarında Osmanlı komutanları ve vezirleri arasında önemli bir şahsiyettir. Oğulları Ali Bey, Umur Bey, Oruç Bey, Yahşi Bey ve Mahmud Çelebi de kuruluş döneminde önemli hizmetlerde bulunmuştur. Bugünkü Timurtaş Paşa Mahallesi, camisi, hamamı ve diğer eserleri oğullarının yaptırdığı yapılardır; Hisar'daki Oruçbey ve Umurbey mahalleleri de Oruç Bey ve Umur Bey'in yadigârıdır.",
+        "en": "Kara Timurtaş Paşa, grandson of Aykut Alp, was an important figure among Ottoman commanders and viziers in the late 14th century. His sons Ali Bey, Umur Bey, Oruç Bey, Yahşi Bey and Mahmud Çelebi also served in the founding period. Today's Timurtaş Paşa Neighborhood, its mosque, bath and other works were built by his sons; the Oruçbey and Umurbey neighborhoods in Hisar are heirlooms of Oruç Bey and Umur Bey."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "218-219"
+        }
+      ]
+    },
+    {
+      "id": "yapilar",
+      "order": 4,
+      "title": {
+        "tr": "Külliyenin Yapıları",
+        "en": "Buildings of the Complex"
+      },
+      "body": {
+        "tr": "Caminin batısında günümüze ulaşmayan, yuvarlak kemerli beşik tonozlu bir imaret bulunuyordu; hamam imaretin ilerisindedir. Camiye doğuda zaviye/tabhaneler ve bir hazire eşlik eder. Ayrıntılar cami ve hamam kayıtlarındadır.",
+        "en": "On the west side of the mosque there was an imaret with a round-arched barrel vault, which has not survived; the bath lies beyond the imaret. Zawiya/hospices and a graveyard accompany the mosque on the east. Details are in the mosque and bath records."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "216"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Külliyenin yapım yılı",
+        "en": "Construction year of the complex"
+      },
+      "value": 1390,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215, 220"
+        }
+      ],
+      "note": {
+        "tr": "Hamam için s. 220 '1420'den önce' der.",
+        "en": "For the bath p. 220 says 'before 1420'."
+      }
+    },
+    {
+      "key": "vakfiye_yili",
+      "label": {
+        "tr": "Vakfiye yılı",
+        "en": "Year of the endowment charter"
+      },
+      "value": 1485,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215"
+        }
+      ],
+      "note": {
+        "tr": "Vakfiyenin hangi vakfa ait olduğu kitapta belirsiz.",
+        "en": "The book is unclear which foundation the charter belongs to."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Kara Timurtaş Paşa",
+      "role": {
+        "tr": "Külliyeyi yaptıranın babası",
+        "en": "Father of the founder"
+      }
+    },
+    {
+      "name": "Ali Bey (Ali Paşa)",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Oruç Bey",
+      "role": {
+        "tr": "Hamamı yaptıran",
+        "en": "Builder of the bath"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kulliye-1390",
+      "year": 1390,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami, imaret ve hamamdan oluşan külliye inşa ettirildi",
+        "en": "Complex of mosque, imaret and bath built"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "ali-bey-vefat-1427",
+      "year": 1427,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Ali Bey vefat etti",
+        "en": "Ali Bey died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1485",
+      "year": 1485,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye Bursa'da yazıldı",
+        "en": "Endowment charter written in Bursa"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-demirtas-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Demirtaş (Timurtaş) Camii külliyenin ayakta kalan parçasıdır.",
+        "en": "Demirtaş (Timurtaş) Mosque is a surviving part of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215-216"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-timurtas-pasa-hamami",
+      "type": "same_complex",
+      "description": {
+        "tr": "Timurtaş Paşa Hamamı külliyenin ayakta kalan parçasıdır.",
+        "en": "Timurtaş Paşa Bath is a surviving part of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215, 220"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Timurtaş Paşa Külliyesi, Demirtaşpaşa Mahallesi'nde cami, hamam ve doğudaki hazireden oluşur. Caminin batısındaki imaret günümüze ulaşmamıştır. Caminin tuğladan minaresi şadırvanın üzerinde yükselir.",
+      "en": "The Timurtaş Paşa Complex in Demirtaşpaşa Neighborhood consists of a mosque, a bath and a graveyard to the east. The imaret west of the mosque has not survived. The brick minaret of the mosque rises above the shadirvan."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

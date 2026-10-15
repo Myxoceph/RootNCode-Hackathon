@@ -1,0 +1,444 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ahmet-vefik-pasa-tiyatrosu",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Sivil Mimari",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Sivil Mimari (Osmangazi) bölümünden (s. 723-743) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir. İngilizce alanlar kitabın İngilizce çevirisinden kısaltılmıştır.",
+    "todos": [
+      "Binanın bugünkü kullanım/işletme durumu (açık saatler, bilet) kitapta yok.",
+      "Birinci tiyatronun bulunduğu Ziraat Bankası merkez şubesi için ayrı kayıt gerekip gerekmediği sorulmalı (kitapta ayrı bölüm yok).",
+      "Kitapta 'ikinci katın Atatürk'e tahsis edilmesi' ifadesinin ne anlama geldiği (müze odası vb.) belirtilmiyor.",
+      "Koordinat kitapta yok; sahadan veya haritadan doğrulanmış koordinat eklenmeli (location.coordinates).",
+      "Fotoğraflar (media) ve Zaman Perdesi arşiv fotoğrafları (archive_media) henüz yok; Drive klasörü (media_folder) belirlenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name/alternate_names",
+        "note": "Kitapta bina hem 'Ahmet Vefik Paşa Tiyatrosu' hem 'Bursa Devlet Tiyatrosu'nun kullandığı bina' diye anılır; Halkevi ve Marmara Sineması önceki işlevleridir."
+      },
+      {
+        "field": "sections[degisiklikler]",
+        "note": "Kitap ikinci katın Atatürk'e tahsisinden ve birinci kat üstündeki teras katın kapatılmasından söz eder; kat sayıları (üç kat / iki katlı ön cephe / üç-dört katlı arka cephe) arazi eğimiyle açıklanır, çelişki yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ahmet Vefik Paşa Tiyatrosu",
+    "en": "Ahmet Vefik Paşa Theater"
+  },
+  "subtitle": {
+    "tr": "Eski Bursa Halkevi binası",
+    "en": "Former Bursa Community Centre building"
+  },
+  "alternate_names": [
+    {
+      "tr": "Bursa Devlet Tiyatrosu binası",
+      "en": "Bursa State Theater building"
+    },
+    {
+      "tr": "Bursa Halkevi",
+      "en": "Bursa Community Centre"
+    },
+    {
+      "tr": "Marmara Sineması",
+      "en": "Marmara Cinema"
+    }
+  ],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "tiyatro",
+    "halkevi",
+    "Münevver Belen",
+    "Cumhuriyet dönemi",
+    "betonarme"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alacamescit",
+    "address": "Atatürk Caddesi No: 40",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "723"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1938 (proje) / 1940 (kısmen tamamlanma) / 1950-1951 (genişletme) / 28 Eylül 1957 (tiyatro olarak açılış)",
+      "en": "1938 (project) / 1940 (partly completed) / 1950-1951 (expanded) / 28 September 1957 (opened as theater)"
+    },
+    "start_year": 1938,
+    "end_year": 1957,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap, 1938 proje yarışmasını, 1940'ta binanın bir bölümünün tamamlandığını, 1950-1951 genişletmesini ve 1957 açılışını belirtir.",
+      "en": "The book gives the 1938 competition, the partial completion in 1940, the 1950-1951 expansion and the 1957 opening."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "723-724"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Vali Şefik Soyer (Halkevi binası kararı ve öncülük)",
+    "role": "girişimci / vali",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "723"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Münevver Belen",
+    "candidates": [
+      {
+        "name": "Dr. Edip Rüştü Akyürek",
+        "note": "1950-1951 genişletmesini yapan kişi"
+      }
+    ],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "723-724"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Bugün Bursa Devlet Tiyatrosu tarafından kullanılan yapı, 1938'de Vali Şefik Soyer'in öncülüğünde düzenlenen yarışmada Münevver Belen'in projesi seçilerek Halkevi olarak tasarlanmıştır. 1950-1951'de genişletilip bugünkü biçimini almış, üst katı bir süre Marmara Sineması olarak kullanılmış ve 28 Eylül 1957'de Ahmet Vefik Paşa Tiyatrosu adıyla açılmıştır.",
+    "en": "The building used today by the Bursa State Theater was designed as the Bursa Community Centre after Münevver Belen's project won a 1938 competition held under Governor Şefik Soyer. Expanded in 1950-1951, its upper floor served for a time as the Marmara Cinema, and it opened as the Ahmet Vefik Paşa Theater on 28 September 1957."
+  },
+  "sections": [
+    {
+      "id": "adi-ve-onceki-tiyatro",
+      "order": 1,
+      "title": {
+        "tr": "Adı ve ilk tiyatro",
+        "en": "Name and the first theater"
+      },
+      "body": {
+        "tr": "Bina adını Bursa'da ilk Türk tiyatrosunu kuran Vali Ahmet Vefik Paşa'dan almıştır. Paşa'nın 1879-1882 valiliği döneminde kurduğu ilk tiyatro, bugün Ziraat Bankası merkez şubesi olarak kullanılan binanın yerindeydi; burada ilk olarak Paşa'nın sahneye koyduğu Molière'in 'Meraklı' oyunu oynanmıştır.",
+        "en": "The building is named after Governor Ahmet Vefik Paşa, who founded the first Turkish theater in Bursa. The first theater, founded during his governorship in 1879-1882, stood where the head office of Ziraat Bank is today; the first play staged there was Molière's 'Curious'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "723"
+        }
+      ]
+    },
+    {
+      "id": "halkevi-ve-yarisma",
+      "order": 2,
+      "title": {
+        "tr": "Halkevi olarak tasarım ve proje yarışması",
+        "en": "Design as Community Centre and the competition"
+      },
+      "body": {
+        "tr": "Yapı başlangıçta Bursa Halkevi olarak tasarlanmıştır. Halkevlerinin kuruluşunun altıncı yılı dolayısıyla 1938'de Vali Şefik Soyer'in öncülüğünde bir Halkevi yapılmasına karar verilmiş, aynı yıl düzenlenen ve beş mimarın katıldığı yarışmada Türkiye'nin ilk kadın mimarlarından Münevver Belen'in projesi seçilmiştir.",
+        "en": "The building was first designed as the Bursa Community Centre. In 1938, for the sixth anniversary of the Community Centers and under Governor Şefik Soyer, a competition with five architects was held; the project of Münevver Belen, one of Türkiye's first female architects, was selected."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "723"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 3,
+      "title": {
+        "tr": "Tarihçe: tamamlanma, genişletme ve tiyatroya tahsis",
+        "en": "History: completion, expansion and allocation to the theater"
+      },
+      "body": {
+        "tr": "1940'ta binanın bir bölümü tamamlanmış, 1950-1951'de Dr. Edip Rüştü Akyürek tarafından genişletilerek bugünkü biçimini almıştır. Üst kat bir süre Marmara Sineması olarak kullanılmış; dönemin Valisi İhsan Sabri Çağlayangil'in girişimiyle sinema işlevi sona erdirilip bina Bursa Devlet Tiyatrosu'na tahsis edilmiştir. Devlet Tiyatroları Genel Müdürlüğü'nün katkısıyla 28 Eylül 1957'de 'Ahmet Vefik Paşa Tiyatrosu' adıyla açılmıştır.",
+        "en": "A section was completed in 1940 and the building was expanded by Dr. Edip Rüştü Akyürek in 1950-1951. The upper floor served as the Marmara Cinema for a period; through Governor İhsan Sabri Çağlayangil's efforts the cinema function ended and the building was allocated to the Bursa State Theater. It opened on 28 September 1957 as the 'Ahmet Vefik Paşa Theater' with the contribution of the General Directorate of State Theaters."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "723-724"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-yapim",
+      "order": 4,
+      "title": {
+        "tr": "Plan ve yapım tekniği",
+        "en": "Plan and construction"
+      },
+      "body": {
+        "tr": "Yapı inşa edildiği dönemde bodrum üzerine üç katlı ve açık bir avlu etrafında planlanmıştır. Zemin katta çevreyle bağlantıyı sağlayan revaklı bir giriş düzeni, kitaplık, derslikler ve sinema salonu; bodrumda sinema salonunun alt bölümü olan jimnastik salonu; birinci katta idari birimler; ikinci katta Atatürk'e ayrılmış bölüm yer alır. Pencereler yatay şerit yerine bakanlık binalarında görülen dikey bölmeli formları andırır. Duvarlar betonarme taşıyıcı sisteme sahip tuğla örgüdür, dış cephe sıvalıdır; çatı ahşap karkaslıdır ve sağlam, yerli malzeme kullanılmıştır.",
+        "en": "When built, the building was planned as three storeys over a basement around an open courtyard. The ground floor has an arcaded entrance, a library, classrooms and a cinema; in the basement the lower part of the cinema hall was a gym; the first floor housed administrative units and the second floor was dedicated to Atatürk. The windows resemble the vertically divided forms of ministry buildings rather than horizontal strips. Walls are brick with a reinforced concrete carrier system and plastered exterior; the roof has a wooden frame, and solid local materials were used."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "724-725"
+        }
+      ]
+    },
+    {
+      "id": "degisiklikler",
+      "order": 5,
+      "title": {
+        "tr": "Tiyatro işlevi ve sonraki değişiklikler",
+        "en": "Theater use and later changes"
+      },
+      "body": {
+        "tr": "Tiyatro işlevi kazandığı dönemde birinci katın üzerindeki teras kat kapatılmış ve özgün plan şeması değişmiştir. Giriş ana caddeden revaklı bir kapıyla sağlanır; bu yöne bakan cephe iki katlı, arka cephe arazi eğiminden dolayı üç ve dört katlıdır. Başlangıçta sinema salonu olan bölüm bugün tiyatro sahnesidir. Bir salon 1985'te 'Ferâizcizâde Mehmet Şakir Oda Tiyatrosu' adıyla ikinci sahne olarak düzenlenmiş; alt katta Devlet Güzel Sanatlar Galerisi'nin kullandığı geniş bir sergi salonu bulunmaktadır. Teras çatı kaldırılarak yerine kiremit kaplı kırma çatı yapılmış, sığınak olarak kullanılan bodrumun bir bölümü konferans salonu, diğer bölümü sanat galerisi yapılmıştır.",
+        "en": "When the building became a theater, the terrace above the first floor was closed, changing the original plan. The entrance is through an arcaded doorway from the main street; the street façade has two floors, the rear three and four because of the slope. The former cinema hall now serves as the theater stage. A hall was reorganized in 1985 as the 'Ferâizcizâde Mehmet Şakir Chamber Theater', the second stage; the lower floor has a large exhibition hall used by the State Fine Arts Gallery. The terrace roof was replaced by a tiled hipped roof, and the former shelter in the basement became a conference hall and an art gallery."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "725"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı (özgün)",
+        "en": "Number of floors (original)"
+      },
+      "value": "Bodrum üzerine üç kat",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "724"
+        }
+      ]
+    },
+    {
+      "key": "oda_tiyatrosu_acilis",
+      "label": {
+        "tr": "Oda tiyatrosu olarak düzenlenme yılı",
+        "en": "Year the chamber theater was set up"
+      },
+      "value": 1985,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "725"
+        }
+      ]
+    },
+    {
+      "key": "tiyatro_acilis_tarihi",
+      "label": {
+        "tr": "Tiyatro olarak açılış tarihi",
+        "en": "Opening date as theater"
+      },
+      "value": "28 Eylül 1957",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "724"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ahmet Vefik Paşa",
+      "role": {
+        "tr": "Bursa'da ilk Türk tiyatrosunu kuran vali (1879-1882)",
+        "en": "Governor who founded the first Turkish theater in Bursa (1879-1882)"
+      }
+    },
+    {
+      "name": "Şefik Soyer",
+      "role": {
+        "tr": "Halkevi binası kararını veren vali (1938)",
+        "en": "Governor who initiated the Community Centre in 1938"
+      }
+    },
+    {
+      "name": "Münevver Belen",
+      "role": {
+        "tr": "Halkevi proje yarışmasını kazanan mimar",
+        "en": "Architect whose project won the competition"
+      }
+    },
+    {
+      "name": "Dr. Edip Rüştü Akyürek",
+      "role": {
+        "tr": "1950-1951 genişletmesini yapan kişi",
+        "en": "Person who expanded the building in 1950-1951"
+      }
+    },
+    {
+      "name": "İhsan Sabri Çağlayangil",
+      "role": {
+        "tr": "Sinema işlevini sona erdirip binayı Devlet Tiyatrosu'na tahsis ettiren vali",
+        "en": "Governor who ended the cinema use and had the building allocated to the State Theater"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yarisma-1938",
+      "year": 1938,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Halkevi kararı ve proje yarışması",
+        "en": "Community Centre decision and project competition"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "723"
+        }
+      ],
+      "note": {
+        "tr": "Beş mimarın katıldığı yarışmada Münevver Belen'in projesi seçildi.",
+        "en": "Münevver Belen's project was chosen among five architects."
+      }
+    },
+    {
+      "id": "kismen-tamam-1940",
+      "year": 1940,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Binanın bir bölümü tamamlandı",
+        "en": "A section of the building was completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "724"
+        }
+      ]
+    },
+    {
+      "id": "genisletme-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Dr. Edip Rüştü Akyürek tarafından genişletme (1950-1951)",
+        "en": "Expansion by Dr. Edip Rüştü Akyürek (1950-1951)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "724"
+        }
+      ]
+    },
+    {
+      "id": "acilis-1957",
+      "year": 1957,
+      "date": "1957-09-28",
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Ahmet Vefik Paşa Tiyatrosu adıyla açılış",
+        "en": "Opened as the Ahmet Vefik Paşa Theater"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "724"
+        }
+      ]
+    },
+    {
+      "id": "oda-tiyatrosu-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Ferâizcizâde Mehmet Şakir Oda Tiyatrosu açıldı",
+        "en": "Ferâizcizâde Mehmet Şakir Chamber Theater opened"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "725"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "architect",
+      "title": {
+        "tr": "Türkiye'nin ilk kadın mimarlarından Münevver Belen",
+        "en": "Münevver Belen, one of Türkiye's first female architects"
+      },
+      "hint": {
+        "tr": "Halkevi projesi 1938 yarışmasında beş mimar arasından seçildi.",
+        "en": "Her Community Centre project was chosen from five entries in 1938."
+      },
+      "section_id": "halkevi-ve-yarisma"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yapı, Atatürk Caddesi üzerinde, revaklı bir kapıdan girilen, ana cadde yönünde iki katlı, arkada arazi eğiminden dolayı üç ve dört katlı bir yapıdır. Duvarlar sıvalı tuğladır; pencereler bakanlık binalarındaki gibi dikey bölmelidir. Çatı kiremit kaplı bir kırma çatıdır. İçeride tiyatro sahnesi olarak kullanılan eski sinema salonu, bir oda tiyatrosu salonu ve alt katta bir sergi salonu bulunur.",
+      "en": "The building stands on Atatürk Street and is entered through an arcaded doorway. It has two floors facing the main street and three or four at the rear because of the slope. Walls are plastered brick with vertically divided windows like ministry buildings, under a tiled hipped roof. Inside are the former cinema hall used as the theater stage, a chamber theater hall and an exhibition hall on the lower floor."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesi (vk-bursa-c1, s. 724-725)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

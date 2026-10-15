@@ -1,0 +1,321 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sair-ahmet-pasa-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Eğitim Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
+      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
+      "Yapım tarihi ve dönemi bu bölümde verilmiyor (kitap Ahmed Paşa Türbesi bölümüne yönlendiriyor); dating ve era null bırakıldı, o bölümden tamamlanmalı.",
+      "Ahmed Paşa'nın ayrıntılı bilgisi 'Ahmed Paşa Türbesi' bölümünde; türbe kaydı ilçesi bu metinde belirtilmiyor (Osmangazi varsayıldı).",
+      "Vakıf bilgisi ve mimar kaynakta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitapta başlık 'Şair Ahmet Paşa (Geyikli) Medresesi', metinde ise banî 'Ahmed Paşa' diye yazılır; yazım farkı (Ahmet/Ahmed) kaynaktadır."
+      },
+      {
+        "field": "sections[onarim]",
+        "note": "Kitap 1967 onarımında yaşmak/kavsara öğelerinin yeniden yapılmadığını söyler (İngilizce metinde 'muqarnas hood'); Türkçe 'kavsara' karşılığı İngilizce metinde farklı terimle verilmiştir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şair Ahmet Paşa Medresesi",
+    "en": "Şair Ahmet Paşa Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Geyikli Medrese",
+      "en": "Geyikli Madrasa"
+    },
+    {
+      "tr": "Uluumay Halk Kıyafetleri ve El Sanatları Müzesi",
+      "en": "Uluumay Folk Costumes and Handicrafts Museum"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "medrese",
+    "Şair Ahmed Paşa",
+    "Geyikli",
+    "Bursa Ovası manzarası",
+    "müze",
+    "aynalı tonoz"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "Beşikçiler Caddesi, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "583"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Ahmed Paşa (Şair Ahmed Paşa)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "583"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Şair kimliğiyle de tanınan Ahmed Paşa'nın yaptırdığı; on bir öğrenci hücreli, revaksız açık dershaneli ve Bursa Ovası manzarasına açık medrese. Bugün Uluumay Halk Kıyafetleri ve El Sanatları Müzesi.",
+    "en": "A madrasa built by Ahmed Paşa, also known as a poet, with eleven student cells and an arcadeless open classroom facing the Bursa Plain; today the Uluumay Folk Costumes and Handicrafts Museum."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Medrese Osmangazi ilçesi, Muradiye Mahallesi, Beşikçiler Caddesi No: 2'dedir. Banisi şair kimliğiyle de tanınan Ahmed Paşa'dır; kendisi hakkında ayrıntılı bilgi Ahmed Paşa Türbesi bölümünde verilmiştir.",
+        "en": "The madrasa is at Beşikçiler Street No. 2, Muradiye Neighborhood, Osmangazi. Its founder is Ahmed Paşa, also known as a poet; detailed information on him is given in the Ahmed Paşa Tomb section."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "583"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "body": {
+        "tr": "Plan on bir öğrenci hücresi, bir açık dershane ve cümle kapısı işlevi gören bir eyvandan oluşur. Dershanede mihrap nişi vardır, önünde revak yoktur. Kuzey duvarı hizasında dershaneye karşılık gelen bölümde hücre ya da revak yapılmamış; bu kısım açık bırakılarak öğrencilere dershane cephesinden Bursa Ovası manzarasını seyretme imkânı sağlanmıştır.",
+        "en": "The plan consists of eleven student cells, an open classroom and an iwan serving as the entrance gate. The classroom has a mihrab niche and no arcade in front. No cells or arcades were built in the section corresponding to the classroom along the north wall, leaving it open so students could view the Bursa Plain from the classroom front."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "583"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Revaklar hücrelerden daha yüksektir; her odada bir ocak yeri ve duvar nişi bulunur. Revaklar ve hücreler aynalı tonoz örtü sistemiyle tasarlanmıştır. Cephelerde bir sıra kesme küfeki taşı ve iki sıra tuğla kullanılmış, örgünün düzenli görünmesi için tuğla aralarına dikey tuğlalar yerleştirilmiştir.",
+        "en": "The arcades are higher than the cells and each room has a hearth and a wall niche. Arcades and cells have a flattened barrel (mirror) vault system. The façades use one row of cut limestone and two rows of brick, with vertical bricks set between them for a more regular look."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "584"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-bugun",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Bugünkü Kullanım",
+        "en": "Repairs and Present Use"
+      },
+      "body": {
+        "tr": "1950'lerde harap durumdaki yapı uzun bir restorasyonla ayağa kaldırılmış, revaklar baştan inşa edilmiştir; revak gergileri ahşap görünümlü betondan yapılmış ve kirpi saçakla tamamlanmıştır. 1967 onarımında tamamen yıkılmış revak ayakları, kemerler ve kubbeler yeniden yapılmış, üst örtü kurşun taklidi şapla kapatılmış; ancak yaşmak ya da kavsara gibi yapıya özgü öğeler yeniden inşa edilmemiştir. 1986'daki son kapsamlı onarımın ardından Millî Eğitim Bakanlığı'na devredilerek Halk Eğitimi Merkezi olarak kullanılmış; 1999'da basit bir onarımın ardından Uluumay Halk Kıyafetleri ve El Sanatları Müzesi olmuştur.",
+        "en": "Dilapidated in the 1950s, the building was revived through a long restoration in which the arcades were rebuilt; the arcade tie-beams are concrete with a wooden look, finished with sawtooth eaves. In the 1967 repair the collapsed arcade piers, arches and domes were rebuilt and the roof covered with a lead-imitating screed, but building-specific elements such as the yaşmak or muqarnas hood were not rebuilt. After the last comprehensive renovation in 1986 it was transferred to the Ministry of National Education as a Public Education Center; after a simple repair in 1999 it became the Uluumay Folk Costumes and Handicrafts Museum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "584-585"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "ogrenci_hucresi_sayisi",
+      "label": {
+        "tr": "Öğrenci hücresi sayısı",
+        "en": "Student cells"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "583"
+        }
+      ]
+    },
+    {
+      "key": "dershane_sayisi",
+      "label": {
+        "tr": "Açık dershane sayısı",
+        "en": "Open classrooms"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "583"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ahmed Paşa",
+      "role": {
+        "tr": "Banî; şair",
+        "en": "Founder; poet"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "harabe-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1950'lerde harap durumdaydı; uzun süreli restorasyon başladı",
+        "en": "In ruins in the 1950s; long-term restoration began"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "584-585"
+        }
+      ],
+      "note": {
+        "tr": "Kesin yıl belirtilmiyor; on yıl başı alındı.",
+        "en": "No exact year is given; the start of the decade is used."
+      }
+    },
+    {
+      "id": "onarim-1967",
+      "year": 1967,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Revak ayakları, kemerler ve kubbeler yeniden yapıldı",
+        "en": "Arcade piers, arches and domes rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "584-585"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1986",
+      "year": 1986,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son kapsamlı onarım; Halk Eğitimi Merkezi",
+        "en": "Last comprehensive renovation; Public Education Center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "585"
+        }
+      ]
+    },
+    {
+      "id": "muze-1999",
+      "year": 1999,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Uluumay Halk Kıyafetleri ve El Sanatları Müzesi olarak kullanılmaya başlandı",
+        "en": "Began to be used as the Uluumay Folk Costumes and Handicrafts Museum"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "585"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-sair-ahmet-pasa-turbesi",
+      "type": "same_founder",
+      "description": {
+        "tr": "Kitap banî Ahmed Paşa hakkında ayrıntılı bilginin Ahmed Paşa Türbesi bölümünde verildiğini belirtir.",
+        "en": "The book says detailed information on the founder Ahmed Paşa is given in the Ahmed Paşa Tomb section."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "583"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şair Ahmet Paşa Medresesi on bir öğrenci hücresi ve bir açık dershaneden oluşan bir medresedir. Revaklar hücrelerden yüksektir ve aynalı tonozla örtülüdür; cephelerde kesme küfeki taşı ve tuğla sıraları görülür. Dershane bölümünde mihrap nişi vardır ve önünde revak yoktur; bu açık kısımdan Bursa Ovası görülür. Bugün Uluumay Halk Kıyafetleri ve El Sanatları Müzesi olarak kullanılır.",
+      "en": "The Şair Ahmet Paşa Madrasa consists of eleven student cells and an open classroom. The arcades are higher than the cells and covered by flattened barrel vaults; the façades show courses of cut limestone and brick. The classroom has a mihrab niche and no arcade in front, giving a view of the Bursa Plain. It is used today as the Uluumay Folk Costumes and Handicrafts Museum."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

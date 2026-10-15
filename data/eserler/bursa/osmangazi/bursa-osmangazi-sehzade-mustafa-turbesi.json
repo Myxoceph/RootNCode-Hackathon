@@ -1,0 +1,443 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sehzade-mustafa-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Türbenin adresi Şehzade Mahmut Türbesi ile aynı kapı numarasında (Sedat Sokak No: 1/6) verilmiş; doğrulanmalı.",
+      "Şehzade Bayezid'in kimliği ve Şehzade Mustafa ile ilişkisi kitapta açıklanmamış.",
+      "Sayfa 162 görsel sayfa; metin çıkarılamadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "address",
+        "note": "Adres 'Sedat Sokak, No: 1/6' Şehzade Mahmut Türbesi ile aynıdır; aynı kapı numarası iki ayrı yapıya verilmiştir."
+      },
+      {
+        "field": "inscriptions[turbe-kitabesi]",
+        "note": "Kitabe 'iki satırlık' denir; basılı metin dört dizelik iki beyit gibi dizilmiştir. Basılı biçim olduğu gibi saklandı (satır sonları '/' ile)."
+      },
+      {
+        "field": "sections[mezarlar]",
+        "note": "Dördüncü sandukanın Orhan'a ait olduğu 'düşünülmektedir'; 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şehzade Mustafa Türbesi",
+    "en": "Şehzade Mustafa Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "türbe",
+    "İznik çinisi",
+    "sekizgen plan",
+    "Mehmed Çavuş",
+    "Edâyî kitabesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "Sedat Sokak, No: 1/6",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "163"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 981 / M. 1573",
+      "en": "AH 981 / AD 1573"
+    },
+    "start_year": 1573,
+    "end_year": 1573,
+    "hijri_year": 981,
+    "century": 16,
+    "basis": {
+      "tr": "Kapıdaki mermer kitabe H. 981 / M. 1573 tarihini verir.",
+      "en": "The marble inscription on the door gives AH 981 / AD 1573."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "163"
+      }
+    ]
+  },
+  "founder": {
+    "name": "II. Selim",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "163"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Mehmed Çavuş",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "164"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Kanuni Sultan Süleyman'ın oğlu Şehzade Mustafa için üvey kardeşi II. Selim'in 1573'te yaptırdığı sekizgen türbe. Mimarı sonradan Sultanahmet Camii'ni yapan Mehmed Çavuş'tur; alt kısmı 16. yüzyıl natüralist İznik çinileriyle kaplıdır.",
+    "en": "An octagonal tomb that Selim II had built in 1573 for his step-brother Şehzade Mustafa, son of Süleyman the Magnificent. Its architect was Mehmed Çavuş, later builder of the Sultanahmet Mosque; the lower part is covered with naturalistic 16th-century Iznik tiles."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Şehzade Mustafa Türbesi, Sedat Sokak No: 1/6'da yer alır. Kanuni Sultan Süleyman'ın oğlu Şehzade Mustafa H. 960 / M. 1553'te Konya Ereğlisi'nde bir komploya kurban gitmiştir. Naaşı Bursa'ya getirilerek önce başka bir yere defnedilmiş, yaklaşık yirmi yıl sonra H. 981 / M. 1573'te üvey kardeşi II. Selim'in bu türbeyi inşa ettirmesiyle yeni kabrine nakledilmiştir. Türbenin kapısındaki iki satırlık talik hatlı mermer kitabede bu bilgi ve tarih verilir.",
+        "en": "The Şehzade Mustafa Tomb is on Sedat Street No. 1/6. Şehzade Mustafa, son of Süleyman the Magnificent, fell victim to a conspiracy in Ereğli, Konya in AH 960 / AD 1553. His body was brought to Bursa and first buried elsewhere; about twenty years later, in AH 981 / AD 1573, it was transferred to his new tomb when his step-brother Selim II had this tomb built. The two-line marble inscription on the door in Ta'liq script gives these details and the date."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "163"
+        }
+      ]
+    },
+    {
+      "id": "mimar",
+      "order": 2,
+      "title": {
+        "tr": "Mimar",
+        "en": "Architect"
+      },
+      "body": {
+        "tr": "Türbenin mimarı Dergâh-ı Âlî çavuşlarından Mehmed Çavuş'tur; bu görev kendisine Hassa Başmimarı Mimar Sinan'ın tavsiyesiyle verilmiştir. Mehmed Çavuş sonraki yıllarda Osmanlı başmimarlığına yükselmiş, Sultanahmet Camii ve Külliyesi'ni yapmış ve \"Sedefkâr Mehmed Ağa\" olarak tanınmıştır.",
+        "en": "The architect was Mehmed Çavuş, one of the sergeants of the Dergâh-ı Âlî, given the task on the recommendation of the Imperial Chief Architect Mimar Sinan. He later rose to chief architect of the Ottoman Empire, built the Sultanahmet Mosque and Complex and became known as \"Sedefkâr Mehmed Ağa\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "164"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari ve Süsleme",
+        "en": "Architecture and Decoration"
+      },
+      "body": {
+        "tr": "Bir sıra kesme taş ve üç sıra tuğla ile inşa edilen yapı kubbeyle örtülü sekizgen plana sahiptir. İnşasında Bursa Sarayı'ndan alınma mermer levha ve sütunlar gibi devşirme malzemeler kullanılmıştır. Duvarların yerden 3 m yüksekliğe kadar olan kısmı on iki köşelidir ve tamamen 16. yüzyılın natüralist üsluptaki İznik çinileriyle kaplıdır; üst kısım muntazam bir sekizgene dönüşür. Çini kaplamanın bittiği yerde sülüs hatla Âyetü'l-kürsî, Haşr suresinden bölümler ve Esmâ-i hüsnâ yazılıdır. Mekân, yedisi alt sırada mermer söveli, yedisi üstte sivri kemerli toplam on dört pencereyle aydınlanır.",
+        "en": "The building, built with one row of cut stone and three rows of brick, has an octagonal plan covered with a dome. Spolia such as marble slabs and columns taken from the Bursa Palace were used. The walls up to 3 m are dodecagonal and entirely covered with 16th-century Iznik tiles in naturalistic style; the upper part turns into a regular octagon. Where the tiles end are the Ayat al-Kursi, sections of Surah al-Hashr and the Asma'ul-Husna in Thuluth. The space is lit by fourteen windows, seven with marble sills in the lower row and seven pointed-arch in the upper."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "164"
+        }
+      ]
+    },
+    {
+      "id": "mezarlar",
+      "order": 4,
+      "title": {
+        "tr": "Sandukalar ve Restorasyon",
+        "en": "Sarcophagi and Restoration"
+      },
+      "body": {
+        "tr": "Türbedeki dört sandukadan üçü Şehzade Mustafa'ya, annesi Mâhidevran Hatun'a ve Şehzade Bayezid'in oğlu Ahmet'e aittir. Dördüncü sandukanın kime ait olduğu bilinmemekle birlikte Şehzade Bayezid'in diğer oğlu Orhan'a ait olduğu düşünülmektedir. Türbe 2014-2015'te kapsamlı restorasyondan geçmiştir ve ziyarete açıktır.",
+        "en": "Three of the four sarcophagi belong to Şehzade Mustafa, his mother Mâhidevran Hatun and Şehzade Bayezid's son Ahmet. It is not known who the fourth belongs to, though it is thought to be Şehzade Bayezid's other son Orhan. The tomb underwent extensive restoration in 2014-2015 and is open to visitors."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "164"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "164"
+        }
+      ],
+      "note": {
+        "tr": "Alt sırada 7, üst sırada 7.",
+        "en": "7 lower row, 7 upper row."
+      }
+    },
+    {
+      "key": "cini_yuksekligi",
+      "label": {
+        "tr": "Çini kaplama yüksekliği",
+        "en": "Tile cladding height"
+      },
+      "value": 3,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "164"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "164"
+        }
+      ]
+    },
+    {
+      "key": "vefat_yili",
+      "label": {
+        "tr": "Şehzade Mustafa'nın ölüm yılı",
+        "en": "Year of Şehzade Mustafa's death"
+      },
+      "value": 1553,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "163"
+        }
+      ],
+      "note": {
+        "tr": "H. 960",
+        "en": "AH 960"
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Şehzade Mustafa",
+      "role": {
+        "tr": "Kanuni'nin oğlu; türbede yatar",
+        "en": "Son of Süleyman the Magnificent; buried here"
+      }
+    },
+    {
+      "name": "II. Selim",
+      "role": {
+        "tr": "Türbeyi yaptıran üvey kardeş",
+        "en": "Step-brother who had the tomb built"
+      }
+    },
+    {
+      "name": "Mehmed Çavuş (Sedefkâr Mehmed Ağa)",
+      "role": {
+        "tr": "Türbenin mimarı",
+        "en": "Architect of the tomb"
+      }
+    },
+    {
+      "name": "Mimar Sinan",
+      "role": {
+        "tr": "Mehmed Çavuş'u tavsiye eden Hassa Başmimarı",
+        "en": "Imperial Chief Architect who recommended Mehmed Çavuş"
+      }
+    },
+    {
+      "name": "Mâhidevran Hatun",
+      "role": {
+        "tr": "Şehzade Mustafa'nın annesi; türbede yatar",
+        "en": "Mother of Şehzade Mustafa; buried here"
+      }
+    },
+    {
+      "name": "Edâyî",
+      "role": {
+        "tr": "Kitabedeki tarih beytini söyleyen şair",
+        "en": "Poet who composed the date couplet on the inscription"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-kitabesi",
+      "location": {
+        "tr": "Türbenin kapısı üzerinde, mermer",
+        "en": "On the door of the tomb, marble"
+      },
+      "language": "tr-ottoman",
+      "script": "talik",
+      "transliteration": "Şeh Selîm Hân bin Süleyman emr idüb / Oldu hoş bu ravza-i cennet-nümâ / Didi târîhin Edâyî bendesi / Merkad-i gülzâr-ı Sultan Mustafa",
+      "translation": {
+        "tr": "Süleyman oğlu Selim Han bu binanın yapılmasın emretti. Bina cennet misali bir bina oldu. Edâyî bunun üzerine şu tarihi söyledi: Sultan Mustafa’nın kabri gül bahçesidir. (H. 981 / M. 1573)",
+        "en": "Selim Han, son of Süleyman, ordered the construction of this building. It became a building resembling heaven. Edayi then stated the following date: Sultan Mustafa’s tomb is a rose garden. (AH 981 / AD 1573)"
+      },
+      "date": {
+        "hijri_year": 981,
+        "gregorian": "1573"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "163"
+        }
+      ],
+      "author": "Edâyî"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "olum-1553",
+      "year": 1553,
+      "date": null,
+      "hijri": "960",
+      "type": "record",
+      "title": {
+        "tr": "Şehzade Mustafa Konya Ereğlisi'nde bir komploya kurban gitti; Bursa'ya getirilip başka bir yere defnedildi",
+        "en": "Şehzade Mustafa fell victim to a conspiracy in Ereğli; brought to Bursa and first buried elsewhere"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "163"
+        }
+      ]
+    },
+    {
+      "id": "insa-1573",
+      "year": 1573,
+      "date": null,
+      "hijri": "981",
+      "type": "construction",
+      "title": {
+        "tr": "II. Selim türbeyi yaptırdı; Şehzade Mustafa buraya nakledildi",
+        "en": "Selim II had the tomb built; Şehzade Mustafa transferred here"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "163"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon (2014-2015); ziyarete açık",
+        "en": "Extensive restoration (2014-2015); open to visitors"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "164"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "163"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-cariyeler-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cariyeler (Saraylılar) Türbesi'nde yatanlar Mâhidevran Hatun'un halalarıdır.",
+        "en": "The ladies in the Cariyeler (Saraylılar) Tomb are aunts of Mâhidevran Hatun."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "138, 164"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe sekizgen planlıdır; duvarları bir sıra kesme taş ve üç sıra tuğla ile örülmüş ve kubbeyle örtülmüştür. İç duvarlar yerden üç metreye kadar on iki köşeli bir planla tamamen naturalist İznik çinileriyle kaplıdır. Çininin bittiği yerde sülüs hatla yazılmış bir yazı kuşağı dolaşır. On dört pencere ışık verir; içeride dört sanduka bulunur.",
+      "en": "The tomb is octagonal, built with one row of cut stone and three of brick, and domed. The inner walls up to three metres form a twelve-sided plan fully covered with naturalistic Iznik tiles. Where the tiles end, a band of Thuluth calligraphy runs around. Fourteen windows give light, and four sarcophagi stand inside."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

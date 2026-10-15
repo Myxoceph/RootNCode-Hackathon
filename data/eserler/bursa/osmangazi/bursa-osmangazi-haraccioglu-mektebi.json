@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-haraccioglu-mektebi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Eğitim Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
+      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
+      "Mektebin kitabesi fotoğrafla doğrulanıp ar_target_media_id bağlanmalı.",
+      "Vakıf bilgisi (vakfiye, gelir) kaynakta yok.",
+      "Mektebin tür kodu enums.json'da yok; 'diger' kullanıldı.",
+      "Câfer Çelebi türbesi ve Sa'dî Dergâhı hazire taşları için ayrı kayıt ihtiyacı değerlendirilmeli (kaynakta ilçe/ad bilgisi sınırlı)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[kitabe]",
+        "note": "Kitap kitabenin 'iki parça halinde, iki satırdan' oluştuğunu söylerken dört dizelik bir manzume ve tarih satırı vermektedir; sayı farkı kaynakta açıklanmıyor. Metin kitapta basıldığı gibi alınmıştır (İngilizce metindeki son dize 'ma’mû’-' biçiminde kesiktir)."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap duvarı s. 572'de 'iki sıra tuğla ve iki sıra moloz taş', s. 571'de 'küfeki taş ve iki sıra tuğla' diye anlatır; iki ifade farklıdır."
+      },
+      {
+        "field": "sections[bahce]",
+        "note": "Câfer Çelebi'nin 'Abdülkâdir Geylânî'nin torunu' olduğu bilgisi kitapta başka bir kaynağa dayandırılmadan verilir; doğrulanmamıştır."
+      },
+      {
+        "field": "inscriptions[kitabe]",
+        "note": "Kitabedeki beyit Hoca Yakup'un kabri başında söylenmiş olarak anlatılır; yapının yaptırılış tarihi ile Hoca Yakup'un ölüm tarihi arasındaki ilişki kaynakta belirtilmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Haraççıoğlu Mektebi",
+    "en": "Haraççıoğlu School"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Dârülkurrâ",
+      "en": "Dar al-Qurra"
+    },
+    {
+      "tr": "Yerkapı Mektebi",
+      "en": "Yerkapı School"
+    }
+  ],
+  "type": "mektep",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mektep",
+    "dârülkurrâ",
+    "Kur'an eğitimi",
+    "kitabe",
+    "hazire",
+    "kirpi saçak",
+    "Yerkapı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kavaklı",
+    "address": "Kavaklı Caddesi, No: 39",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "570"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 898 / M. 1492",
+      "en": "AH 898 / AD 1492"
+    },
+    "start_year": 1492,
+    "end_year": null,
+    "hijri_year": 898,
+    "century": 15,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki kitabede 'Sene 898 / M. 1492' yazar.",
+      "en": "The inscription above the entrance reads 'AH 898 / AD 1492'."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "570-571"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Yakup",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "570"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1492'de Hoca Yakup'un Kur'an eğitimi için yaptırdığı, manzum kitabeli, kubbeli iki odalı dârülkurrâ binası; bahçesinde Haraççıoğlu ailesinin mezarları vardır.",
+    "en": "A Quran school (Dar al-Qurra) of two domed rooms built in 1492 by Hoca Yakup, with a verse inscription; the Haraççıoğlu family graves lie in its garden."
+  },
+  "sections": [
+    {
+      "id": "adlar-ve-bani",
+      "order": 1,
+      "title": {
+        "tr": "Adları ve Banisi",
+        "en": "Names and Founder"
+      },
+      "body": {
+        "tr": "Yapı Osmangazi ilçesi, Kavaklı Mahallesi, Kavaklı Caddesi No: 39'dadır. Bahçesinde Haraççıoğlu ailesine ait mezarlar bulunduğu için 'Haraççıoğlu Mektebi', Hisar'ın Yerkapı mevkiinde olduğu için 'Yerkapı Mektebi', Kur'an eğitimi için yapıldığından 'Dârülkurrâ' adlarıyla anılır. Hoca Yakup adlı bir hayırsever tarafından Kur'an eğitimi vermek amacıyla H. 898 / M. 1492'de yaptırılmıştır.",
+        "en": "The building is at Kavaklı Street No. 39, Kavaklı Neighborhood, Osmangazi. It is called 'Haraççıoğlu School' for the family graves in its garden, 'Yerkapı School' for its location in the Yerkapı area of Hisar, and 'Dar al-Qurra' because it was built for Quran education. It was built by the philanthropist Hoca Yakup in AH 898 / AD 1492 to provide Quran education."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "570"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dârülkurrâ küfeki taş ve iki sıra tuğla ile yapılmış, zarif ve dengeli bir yapıdır. Batı cephesindeki tuğla örgülü, sivri kemerli kapıdan girilen avlunun kuzey ve kuzeydoğusunda kubbeli iki bağımsız oda vardır. Kuzeydeki oda içten 4.50 × 5.20 m dikdörtgen planlıdır; sekizgen kasnaklı kubbeye iç mekânda pandantiflerle geçilir, kuzey duvarında yaklaşık 70 cm derinliğinde bir ocak ve dikkat çekici tuğla bir baca bulunur. Kuzeydoğudaki okuma odası olarak kullanılan oda 3.80 × 3.80 m kare planlıdır. Genel plan, bazı sıbyan mekteplerinde olduğu gibi yazlık ve kışlık bölümler düşünülerek tasarlanmıştır. Tüm yapı iki sıra tuğla ve iki sıra moloz taş almaşık örgülüdür; kapı, kubbe, pencere kemerleri ve iki sıralı kirpi saçaklarda tuğla tercih edilmiştir.",
+        "en": "The Dar al-Qurra is an elegant, balanced building of limestone and two rows of brick. From the brick pointed-arch door on the west façade one enters a courtyard with two independent domed rooms to the north and northeast. The northern room measures 4.50 × 5.20 m inside, with a dome on an octagonal drum reached by pendentives, and a hearth about 70 cm deep with a notable brick chimney on its north wall. The northeastern reading room is square, 3.80 × 3.80 m. The plan was designed with summer and winter sections, as in some primary schools. The whole is built in alternating two rows of brick and two of rubble stone, with brick for doors, domes, window arches and double-row sawtooth eaves."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "571-573"
+        }
+      ]
+    },
+    {
+      "id": "bahce-ve-mezarlar",
+      "order": 3,
+      "title": {
+        "tr": "Bahçe ve Mezarlar",
+        "en": "Garden and Graves"
+      },
+      "body": {
+        "tr": "Bahçedeki Haraççıoğlu (Cizyedarzâde) ailesine ait mezar taşları dönemin mermer işçiliğini yansıtan nitelikli örneklerdir. Hisar surunun dibinde, Abdülkâdir Geylânî'nin torunu olarak anılan Câfer Çelebi'nin mezarı bulunur. Yapıya bitişik iken sonradan kaldırılan Sa'dî Dergâhı'nın hazire taşları ile Bursa'nın farklı yerlerinde yok edilen mezarlıklardan toplanan taşlar uzun süre bahçede dağınık durmuş, 2014'te yapılan düzenlemeyle sistemli hale getirilmiştir.",
+        "en": "The Haraççıoğlu (Cizyedarzâde) family gravestones in the garden are fine examples of the period's marble work. At the foot of the fortress walls is the tomb of Câfer Çelebi, called the grandson of Abdülkâdir Geylânî. Gravestones from the removed Sa'dî Lodge cemetery and stones collected from destroyed cemeteries elsewhere in Bursa lay scattered in the garden for a long time and were arranged systematically in 2014."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "572-573"
+        }
+      ]
+    },
+    {
+      "id": "sonraki-donem",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Bugünkü Kullanım",
+        "en": "Repairs and Present Use"
+      },
+      "body": {
+        "tr": "Yapı 1946'da kapsamlı onarım geçirmiş, 1958'den itibaren Bursa Eski Eserleri Sevenler Kurumu'nun kullanımına tahsis edilmiştir. Bugün Üftâde Kur'an Kursu'nun ek binası olarak kullanılmaktadır.",
+        "en": "The building underwent extensive restoration in 1946 and, from 1958, was allocated to the Bursa Association for the Appreciation of Antiquities. Today it serves as an annex of the Üftâde Quran School."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "573"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "oda_sayisi",
+      "label": {
+        "tr": "Kubbeli oda sayısı",
+        "en": "Domed rooms"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "571-572"
+        }
+      ]
+    },
+    {
+      "key": "kuzey_oda_olculeri",
+      "label": {
+        "tr": "Kuzey oda iç ölçüleri",
+        "en": "Northern room interior size"
+      },
+      "value": "4.50 × 5.20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "572"
+        }
+      ]
+    },
+    {
+      "key": "okuma_odasi_olculeri",
+      "label": {
+        "tr": "Okuma odası ölçüleri",
+        "en": "Reading room size"
+      },
+      "value": "3.80 × 3.80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "572"
+        }
+      ]
+    },
+    {
+      "key": "ocak_derinligi",
+      "label": {
+        "tr": "Ocak derinliği (yaklaşık)",
+        "en": "Hearth depth (approx.)"
+      },
+      "value": 70,
+      "unit": "cm",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "572"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Yakup",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Cemâlî",
+      "role": {
+        "tr": "Kitabeyi düzenleyen şair",
+        "en": "Poet who composed the inscription"
+      }
+    },
+    {
+      "name": "Câfer Çelebi",
+      "role": {
+        "tr": "Hisar suru dibindeki mezar sahibi; kitaba göre Abdülkâdir Geylânî'nin torunu",
+        "en": "Buried at the foot of the fortress walls; per the book a grandson of Abdülkâdir Geylânî"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısının üzerinde",
+        "en": "Above the entrance door"
+      },
+      "language": "tr-ottoman",
+      "script": "nesih",
+      "transliteration": "Fahru’l-fuzalâ Hoca Ya’kûb kim rûhla ola mesrûr\nHûb binâyı hoş eylemeğe kıldı âh-ı ekremin me’mûr\nÇün câ-yı tilâvet oldı dil-keş câ, sa’yı ola meşkûr\nKabr-i üzerine gezüb Cemâlî dedi ki: ‘Aleyke beytün ma’mûr’\nSene 898 / M. 1492",
+      "translation": {
+        "tr": "Faziletli âlimlerin övüncü Hoca Yakup, ruhu şad olsun.\nGüzel bir binayı inşa etmek için, seçkinlerin hayır duasıyla bu yapıyı mamur kıldı.\nKur’an tilavetine ayrılan bu gönül cezbedici mekânda gösterdiği çaba takdire şayandır.\nKabrinin başında duran Cemâlî şöyle dedi: ‘Üzerine mamur bir beyt (cennet köşkü) olsun.’\nSene 898 / M. 1492",
+        "en": "Hoca Yakup, the pride of virtuous scholars, may his soul rest in peace.\nThe effort he put into constructing a beautiful building, with the blessings of the distinguished people, in this charming place dedicated to the recitation of the Quran, is commendable.\nStanding at the graveside, Cemali said: May there be a prosperous mansion (paradise mansion) over you.\nAH 898 / AD 1492"
+      },
+      "author": "Cemâlî",
+      "date": {
+        "hijri_year": 898,
+        "gregorian": "1492"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "571"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1492",
+      "year": 1492,
+      "date": null,
+      "hijri": "898",
+      "type": "construction",
+      "title": {
+        "tr": "Hoca Yakup tarafından yaptırıldı",
+        "en": "Built by Hoca Yakup"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "570-571"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1946",
+      "year": 1946,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Extensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "573"
+        }
+      ]
+    },
+    {
+      "id": "tahsis-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu'na tahsis edildi",
+        "en": "Allocated to the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "573"
+        }
+      ]
+    },
+    {
+      "id": "bahce-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bahçedeki mezar taşları düzenlendi",
+        "en": "Gravestones in the garden arranged"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "573"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-haraccioglu-medresesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Aynı mahalle ve aynı Haraççıoğlu (Cizyedarzâde) adı; mektebin bahçesinde ailenin mezarları vardır.",
+        "en": "Same neighbourhood and the same Haraççıoğlu (Cizyedarzâde) name; the family's graves are in the school's garden."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "565, 570-572"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Haraççıoğlu Mektebi küfeki taş ve tuğla sıralarıyla örülmüş küçük bir yapıdır. Batı cephesindeki tuğla örgülü sivri kemerli kapıdan girilen avlunun kuzey ve kuzeydoğusunda kubbeli iki oda vardır; kuzeydeki oda ocaklı ve daha büyüktür, kuzeydoğudaki kare oda okuma odasıdır. Giriş kapısının üzerinde nesih hatla yazılmış manzum bir kitabe bulunur. Geniş bahçede mezar taşları düzenli biçimde yerleştirilmiştir.",
+      "en": "The Haraççıoğlu School is a small building of limestone and brick courses. A brick pointed-arch door on the west façade opens to a courtyard with two domed rooms to the north and northeast; the northern room is larger and has a hearth, and the square northeastern room is the reading room. Above the entrance is a verse inscription in naskh script. The large garden holds gravestones arranged systematically."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

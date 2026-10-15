@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hocaalizade-cesmesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 690) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Caminin kesin adı kaynakta yok (halk arasında 'Hoca Alizade Camii'); relation hedefi 'bursa-osmangazi-hoca-alizade-camii' tahminidir, cami kaydı açılırken doğrulanmalı.",
+      "Kitabenin meali kaynakta verilmemiş; Türkçe çeviri sonradan eklenebilir.",
+      "Paşanın adı ve eşinin adı kaynakta yok; arşivden bulunursa eklenebilir.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "meta",
+        "note": "Kaynak, caminin yanlış adlandırılmasının (Hoca Alizade) haziredeki mezar taşının yanlış okunmasından kaynaklandığını söyler; ad 'Hocaalizade' olarak kullanıldı, çeşme başlığı kaynağa uygundur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hocaalizade Çeşmesi",
+    "en": "Hocaalizade Fountain"
+  },
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "çeşme",
+    "kitabeli çeşme",
+    "celi sülüs",
+    "1845",
+    "hayrat"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Selçukhatun / Hocaalizade Mahallesi",
+    "address": "Koca Ali Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "690"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1261 / M. 1845",
+      "en": "AH 1261 / AD 1845"
+    },
+    "start_year": 1845,
+    "end_year": 1845,
+    "hijri_year": 1261,
+    "century": 19,
+    "basis": {
+      "tr": "Çeşmenin ayna taşındaki kitabe.",
+      "en": "The inscription on the fountain's back panel."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "690"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hudâvendigâr Eyaleti Müşiri Devletlü Paşa'nın eşi (adı kaynakta verilmemiş)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "690"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin kuzeydoğu köşesindeki çeşme; celi sülüs kitabesine göre Hudâvendigâr Eyaleti Müşiri Paşa'nın eşi tarafından H. 1261 / M. 1845'te hayrat olarak yaptırılmıştır. Ayakta, bakımlı ve işler durumdadır.",
+    "en": "The fountain at the northeast corner of the mosque; according to its Jeli Thuluth inscription it was built as a charity by the wife of the Marshal of Hudâvendigâr Province in AH 1261 / AD 1845. It stands, well maintained and in working order."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Cami",
+        "en": "Location and Mosque"
+      },
+      "body": {
+        "tr": "Çeşme, Osmangazi ilçesi Selçukhatun / Hocaalizade Mahallesi, Koca Ali Sokak'tadır. Caminin “Hoca Ali” adlı bir şahıs tarafından inşa ettirildiği bilinmekte; ancak haziredeki banisine ait mezar taşının yanlış okunması yapının halk arasında “Hoca Alizade Camii” olarak anılmasına neden olmuştur.",
+        "en": "The fountain is in Osmangazi, Selçukhatun / Hocaalizade Neighborhood, Koca Ali Street. The mosque is known to have been built by a person named “Hoca Ali”; however, a misreading of the benefactor's tombstone in the graveyard caused the building to be known among the public as the “Hoca Alizade Mosque”."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "690"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Caminin kuzeydoğu köşesinde konumlanan çeşme günümüzde ayakta, bakımlı ve işler durumdadır. Hafif dışa kavisli su teknesi, aynası ve oturma setleri özgün niteliklerini büyük ölçüde korur; çerçevesinin daha yakın tarihte yenilendiği anlaşılmaktadır. İki plasterin arasındaki kaideli ayna taşının ortasında, üstü sarkıtmalı ve iki kanatlı perde motifi kabartma olarak işlenmiştir; birer rozetle sıkılan perdelerin ortasında vazo ve vazodan çıkan çiçek motifleri bulunur.",
+        "en": "The fountain at the mosque's northeast corner stands, well maintained and working. The slightly outward-curved basin, back panel and seating platforms largely retain their original character, though the frame appears to have been renewed more recently. On the back panel, set on a pedestal between two pilasters, a two-winged curtain motif with a hanging drape is carved in relief; between the curtains, each tied with a rosette, is a vase with floral motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "690"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-ve-yapim",
+      "order": 3,
+      "title": {
+        "tr": "Kitabe ve Yapım",
+        "en": "Inscription and Construction"
+      },
+      "body": {
+        "tr": "Ayna taşında, iki plaster içine alınmış mermer yüzey üzerine celi sülüs hatla bir kitabe işlenmiştir; iki yanında talik yazıyla “maşallah” ve “barekallah” ibareleri yer alır. Kitabeye göre çeşme, caminin inşasından sonra, 1261 / 1845'te Hudâvendigâr Eyaleti Müşiri unvanlı paşanın eşi tarafından hayır amacıyla yaptırılmıştır.",
+        "en": "On the back panel, on a marble surface enclosed by two pilasters, an inscription is carved in Jeli Thuluth; the phrases “mashallah” and “barakallah” in Ta'liq script flank it. After the construction of the mosque, the fountain was built for charity in 1261 / 1845 by the wife of the Paşa with the title Marshal of the Hudâvendigâr Province."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "690"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Hoca Ali",
+      "role": {
+        "tr": "Caminin banisi",
+        "en": "Builder of the mosque"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cesme-kitabesi",
+      "location": {
+        "tr": "Çeşmenin ayna taşı, iki plaster arasında mermer yüzey",
+        "en": "Back panel of the fountain, marble surface between two pilasters"
+      },
+      "language": "tr-ottoman",
+      "script": "celi sülüs",
+      "transliteration": "Hudâvendigâr Eyâleti Müşîri Devletlü Paşa hazretlerinin halîle-i muhteremeleri, iffetlü hanımefendi hazretlerinin fî sebîlillâh hayrâtıdır. Sene 1261 / M. 1845.",
+      "translation": null,
+      "date": {
+        "hijri_year": 1261,
+        "gregorian": "1845"
+      },
+      "note": {
+        "tr": "Kitabenin günümüz Türkçesiyle meali ('Mealen') kaynakta verilmemiş; 'translation' bu yüzden boş.",
+        "en": "The source gives no modern-Turkish rendering of the inscription, so 'translation' is empty."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "690"
+        }
+      ]
+    },
+    {
+      "id": "masallah-barekallah",
+      "location": {
+        "tr": "Kitabenin iki yanı",
+        "en": "On both sides of the inscription"
+      },
+      "language": "ar",
+      "script": "talik",
+      "transliteration": "maşallah / barekallah",
+      "translation": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "690"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "cesme-1845",
+      "year": 1845,
+      "date": null,
+      "hijri": "1261",
+      "type": "construction",
+      "title": {
+        "tr": "Çeşme, paşanın eşi tarafından hayır amacıyla yaptırıldı",
+        "en": "Fountain built for charity by the wife of the paşa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "690"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hoca-alizade-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Çeşme caminin kuzeydoğu köşesinde yer alır; cami inşasından sonra yaptırılmıştır.",
+        "en": "The fountain stands at the mosque's northeast corner and was built after the mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "690"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çeşme, bir caminin kuzeydoğu köşesinde, hafif dışa kavisli bir su teknesi ve yanlarında oturma setleri olan bir yapıdır. Mermer ayna taşı iki plaster arasındadır; üzerinde celi sülüs yazılı bir kitabe, iki yanında küçük yazılı ibareler bulunur. Kaidenin üstünde, iki kanatlı ve sarkıtmalı bir perde kabartması ile ortasında çiçekli bir vazo işlenmiştir.",
+      "en": "The fountain stands at the northeast corner of a mosque, with a slightly outward-curved basin and seating platforms at its sides. The marble back panel sits between two pilasters, carrying an inscription in Jeli Thuluth and two smaller phrases at its sides. Above the base is a relief of a two-winged curtain with a hanging drape, with a flowered vase in the middle."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

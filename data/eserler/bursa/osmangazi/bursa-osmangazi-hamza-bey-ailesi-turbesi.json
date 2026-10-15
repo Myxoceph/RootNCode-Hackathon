@@ -1,0 +1,299 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hamza-bey-ailesi-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hamzabey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Hamza Bey Külliyesi bölümünden (s. 173-185) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş, archive_media boş); Drive klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
+      "Türbenin yapım yılı ve mimarı kitapta verilmiyor.",
+      "Sandukalara ait kişilerin adları kitapta verilmiyor (eş ve iki kız).",
+      "Kitap ifadesi 'Hamza Bey'in eşine' (tekil); külliye anlatımı 'eşlerine' (çoğul) diyor, eşlerin sayısı belirsiz."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis] / location",
+        "note": "Külliye anlatımında Hamza Bey, eşleri ve Kara Mustafa Paşa türbeleri 'cami bahçesinin kuzeybatısında' (s. 175) deniyor; türbe bölümlerinde Hamza Bey Türbesi 'cami avlusunun güneybatı köşesinde' (s. 180), Hamza Bey Ailesi Türbesi 'caminin batı köşesine bitişik' (s. 182), Kara Mustafa Paşa Türbesi 'avlunun kuzey ucunda' (s. 184) olarak veriliyor. Konum bilgileri tam örtüşmüyor; kaynağa sadık kalınarak her kayıtta kendi bölümündeki ifade esas alındı."
+      },
+      {
+        "field": "sections[sandukalar]",
+        "note": "Külliye genel anlatımı (s. 175) Hamza Bey'in 'eşlerine' ait türbeden söz ederken bu bölüm (s. 182) üç sandukadan birini 'Hamza Bey'in eşine' (tekil) atfediyor. Eş sayısı kaynakta tutarsız; kaynağa sadık kalındı."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Türkçe metin 'Hamza Bey'in, eşine, diğer ikisi kızlarına' diyor; İngilizce metin 'one belongs to Hamza Bey's wife, the other two to his daughters' diyor. Anlam uyumlu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hamza Bey Ailesi Türbesi",
+    "en": "Hamza Bey Family Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-hamza-bey-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "Hamza Bey",
+    "aile türbesi",
+    "kare plan",
+    "pandantifli kubbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hamzabey",
+    "address": "Kaplıca Caddesi, No: 55",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "182"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hamza Bey Camii'nin batı köşesine bitişik, kare planlı, kasnaksız kubbeli türbe; üç sandukadan biri Hamza Bey'in eşine, ikisi kızlarına aittir.",
+    "en": "A square, drumless domed tomb adjoining the west corner of the Hamza Bey Mosque; of its three sarcophagi, one belongs to Hamza Bey's wife and two to his daughters."
+  },
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "182"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "182"
+        }
+      ],
+      "note": {
+        "tr": "Biri eşe, ikisi kızlara ait.",
+        "en": "One wife, two daughters."
+      }
+    },
+    {
+      "key": "kubbe_kasnak",
+      "label": {
+        "tr": "Kasnak",
+        "en": "Drum"
+      },
+      "value": "yok (kasnaksız)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "182"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hamza Bey'in eşi (adı verilmiyor)",
+      "role": {
+        "tr": "Türbede gömülü",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Hamza Bey'in iki kızı (adları verilmiyor)",
+      "role": {
+        "tr": "Türbede gömülü",
+        "en": "Buried here"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından camiyle birlikte restore edildi",
+        "en": "Restored with the mosque by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "182"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe Hamza Bey Külliyesi'nin parçasıdır.",
+        "en": "The tomb is part of the Hamza Bey Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe caminin batı köşesine bitişiktir.",
+        "en": "The tomb adjoins the west corner of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "182"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamza Bey Türbesi ile aynı avludadır.",
+        "en": "In the same courtyard as the Hamza Bey Tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175, 180"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Türbe, Kaplıca Caddesi No:55'teki Hamza Bey Camii bahçesinde yer alır. Camiye, caminin batı köşesinden bitişiktir. 2011'de Vakıflar Genel Müdürlüğü tarafından camiyle birlikte restore edilmiştir.",
+        "en": "The tomb is in the garden of Hamza Bey Mosque at Kaplıca Street No. 55, adjacent to the mosque's western corner. It was restored together with the mosque by the General Directorate of Foundations in 2011."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "182"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe kare planlıdır ve pandantiflerle geçişi sağlanan kasnaksız bir kubbeyle örtülüdür. Pencereler içeriye doğru çekilmiş, kapı daha derin konumdadır; kapı üzerindeki çerçeve biçimli üstlük yapıya estetik bir görünüm verir. Cephe, pencere kemeri seviyesine kadar iki-üç sıra tuğla ve bir sıra kaba yonu taştan örülmüş; bu seviyeden itibaren birbirine çatılmış zikzak tuğlalarla süslenmiştir. Pencerelerin yalnızca üst başlıkları mermerdir. Duvar kenarları kabartma çerçeveyle vurgulanmış, kemerlerden sonra tuğlalar geometrik desenler oluşturacak biçimde dizilmiştir. Kuzey cephesindeki kapı ve iki yanındaki mermer söveli pencereler sivri kemerli alınlıklıdır; kapı üstünde yuvarlak kemerli, alçı şebekeli, renkli camlı bir pencere vardır.",
+        "en": "The tomb has a square plan and a drumless dome on pendentives. The windows are recessed and the door sits deeper; the framed lintel over the door adds an aesthetic look. The façade is of two or three rows of brick and one row of roughly cut stone up to the window-arch level, then decorated with interlocking zigzag bricks. Only window lintels are marble. Wall edges are emphasized with a relief frame, and above the arches the bricks form geometric patterns. The door on the north façade and the marble-framed windows beside it have pointed-arched pediments; above the door is a round-arched window with plaster grille and colored glass."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "182"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 3,
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbedeki üç sandukadan biri Hamza Bey'in eşine, diğer ikisi kızlarına aittir.",
+        "en": "Of the three sarcophagi in the tomb, one belongs to Hamza Bey's wife and the other two to his daughters."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "182"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamza Bey Ailesi Türbesi, caminin batı köşesine yaslanmış küçük, kare planlı bir yapıdır. Üzeri kasnaksız bir kubbeyle örtülüdür. Duvarlar tuğla ve kaba yonu taş sıralarından örülmüş, üst kısımlarda zikzak tuğla süslemeleri vardır. Kuzey yüzdeki kapının iki yanında mermer çerçeveli pencereler, kapının üstünde renkli camlı yuvarlak kemerli bir pencere bulunur. İçeride üç sanduka yer alır.",
+      "en": "The Hamza Bey Family Tomb is a small square building set against the west corner of the mosque, covered by a drumless dome. Its walls are courses of brick and roughly cut stone with zigzag brick decoration above. On the north face, the door is flanked by marble-framed windows, with a round-arched colored-glass window above it. Three sarcophagi stand inside."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tasvirden yapay zekâ taslağı olarak yazıldı; saha ve fotoğrafla doğrulanmadı."
+  }
+}

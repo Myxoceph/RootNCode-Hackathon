@@ -1,0 +1,394 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-haraccioglu-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Eğitim Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
+      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
+      "Medresenin dönüştürüldüğü tarih kaynakta verilmiyor.",
+      "Yapının 18. yüzyıl başındaki kesin yapım yılı kaynakta yok.",
+      "Bahçedeki hazirenin onarım tarihi verilmiyor.",
+      "Bursa İnebey Yazma Eser Kütüphanesi (Haraççı Bölümü) ile ilişki eklendi; kütüphanenin Eyne Bey Medresesi'nde olduğu o yapının bölümünden çıkarıldı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people",
+        "note": "Şeyhler arasında 'İbrahim Rıfkı Efendi' ile medreseye dönüştüren oğul 'Rıfkı İbrahim Bey' adları benzerdir; kitap aynı kişi olup olmadıklarını belirtmez."
+      },
+      {
+        "field": "name",
+        "note": "Kitap yapıyı 'Haraççıoğlu Medresesi' diye adlandırır, ancak ilk kuruluşu dergâhtır ve mevcut bina 2006'da yeniden inşa edilmiştir; özgün yapı korunmamıştır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Haraççıoğlu Medresesi",
+    "en": "Haraççıoğlu Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Nakşibendî-i Cedîd Zaviyesi",
+      "en": "Naqshbandi-i Cedid Zawiya",
+      "note": "Kuruluş dönemi adı"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "medrese",
+    "Nakşibendî dergâhı",
+    "zaviye",
+    "Cizyedarzâde",
+    "kütüphane",
+    "hazire",
+    "Kavaklı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kavaklı",
+    "address": "Kavaklı Caddesi, No: 25",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "565"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "18. yüzyıl başları",
+      "en": "Early 18th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 18,
+    "basis": {
+      "tr": "Kitap yapının 18. yüzyıl başında Nakşibendî dergâhı olarak yaptırıldığını söyler; vakfiye H. 1174 / M. 1760 tarihlidir.",
+      "en": "The book says it was built as a Naqshbandi lodge in the early 18th century; the endowment charter is dated AH 1174 / AD 1760."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "565"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Cizyedarzâde Hüseyin Ağa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "565"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Cizyedarzâde Hüseyin Ağa Vakfı (zaviye vakfı)",
+    "deed": {
+      "date_display": "H. 1174 / M. 1760",
+      "excerpt": {
+        "tr": "Zaviyenin müştemilatı ayrıntılı tanımlanmış; giderleri için çeşitli bahçeler, sekiz kestanelik, Bursa merkezde çok sayıda dükkân ve ekmek fırını, tarlalar, evler ve Gemlik çarşısında bazı dükkânlar vakfedilmiştir.",
+        "en": "The zawiya's outbuildings were described in detail; various gardens, eight chestnut groves, many shops and bakeries in central Bursa, fields, houses and some shops in the Gemlik bazaar were endowed to meet its expenses."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "568"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Zaviyede görev yapacak şeyhin aynı zamanda müderris icazetine sahip olması şart koşulmuş; kütüphanenin çalışma esasları vakfiyede ayrıntılı tanımlanmıştır.",
+      "en": "The shaykh serving in the zawiya was required to also hold a teaching licence; the library's working rules were defined in detail in the charter."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "568"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "18. yüzyıl başında Nakşibendî dergâhı olarak yaptırılan, oğlu tarafından medreseye dönüştürülen yapı; bugünkü bina 2006'da yeniden inşa edilmiştir.",
+    "en": "Built in the early 18th century as a Naqshbandi lodge and converted into a madrasa by the founder's son; the present building was reconstructed in 2006."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Kuruluş",
+        "en": "Overview and Foundation"
+      },
+      "body": {
+        "tr": "Yapı Osmangazi ilçesi, Kavaklı Mahallesi, Kavaklı Caddesi No: 25'tedir. 18. yüzyıl başında Cizyedarzâde Hüseyin Ağa tarafından Nakşibendî Dergâhı olarak yaptırılmış, kuruluş döneminde kaynaklarda Nakşibendî-i Cedîd Zaviyesi olarak geçmiştir. Dergâhın bilinen ilk şeyhi H. 1171 / M. 1758'de ölen 'Küstahizâde'dir; ardından Şeyh Mahmud Efendi, Şeyh Murad Efendi, Şeyh İbrahim Rıfkı Efendi ve Şeyh Abdurrahman Efendi postnişin olarak görev yapmıştır.",
+        "en": "The building is at Kavaklı Street No. 25, Kavaklı Neighborhood, Osmangazi. It was built in the early 18th century by Cizyedarzâde Hüseyin Ağa as a Naqshbandi lodge, called the Naqshbandi-i Cedid Zawiya in its founding period. The first known shaykh, 'Küstahizâde', died in AH 1171 / AD 1758, followed by Shaykh Mahmud Efendi, Shaykh Murad Efendi, Shaykh İbrahim Rıfkı Efendi and Shaykh Abdurrahman Efendi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "565, 568"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "order": 2,
+      "title": {
+        "tr": "Vakfiye ve Zaviyenin Bölümleri",
+        "en": "Endowment Charter and Layout of the Zawiya"
+      },
+      "body": {
+        "tr": "Hüseyin Ağa'nın H. 1174 / M. 1760 tarihli vakfiyesine göre zaviye giderleri için bahçeler, sekiz kestanelik, Bursa'da çok sayıda dükkân ve fırın, tarlalar, evler ve Gemlik çarşısında dükkânlar vakfedilmiştir. İlk yapıldığında zaviye sekiz derviş odası, şeyh odası, yemekhane, zikir odası, mutfak, şeyh evi ve kütüphaneden oluşuyordu. Şeyhin müderris icazetine sahip olması şartı, yapının zamanla eğitim işlevi de üstlendiğini gösterir.",
+        "en": "Under Hüseyin Ağa's charter of AH 1174 / AD 1760, gardens, eight chestnut groves, many shops and bakeries in Bursa, fields, houses and shops in the Gemlik bazaar were endowed. When first built the zawiya had eight dervish rooms, a shaykh's room, a dining hall, a dhikr room, a kitchen, a shaykh's house and a library. The requirement that the shaykh hold a teaching licence shows it also took on an educational function."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "568"
+        }
+      ]
+    },
+    {
+      "id": "kutuphane-ve-medrese",
+      "order": 3,
+      "title": {
+        "tr": "Kütüphane ve Medreseye Dönüşüm",
+        "en": "Library and Conversion to a Madrasa"
+      },
+      "body": {
+        "tr": "Zaviye kütüphanesine çok sayıda kitap bağışlanmış, vakfiyenin sonunda bu eserlerin ayrıntılı listesi yer almıştır; kitapların büyük kısmı bugün Bursa İnebey Yazma Eser Kütüphanesi Haraççı Bölümü'nde korunmaktadır. Hüseyin Ağa'nın ölümünden sonra oğlu Rıfkı İbrahim Bey yapıyı medreseye dönüştürmüş, yapı bir süre bu işlevle kullanılmıştır.",
+        "en": "Many books were donated to the zawiya library and listed in detail at the end of the charter; most are now kept in the Haraççı Section of the Bursa İnebey Manuscript Library. After Hüseyin Ağa's death his son Rıfkı İbrahim Bey converted the building into a madrasa, used as such for a time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "568-569"
+        }
+      ]
+    },
+    {
+      "id": "bugun",
+      "order": 4,
+      "title": {
+        "tr": "Bugünkü Durum",
+        "en": "Present State"
+      },
+      "body": {
+        "tr": "Özgün yapı korunamamıştır. Bugünkü hâliyle bir bahçe içinde geniş bir salon ile bitişik küçük bir odadan ibarettir; salona doğuda birkaç basamakla çıkılan bir kapıdan girilir, güney cephesinde mihrap vardır. Girişin sağındaki küçük kapıdan geçilen oda küçük bir kütüphane, salon çok amaçlı etkinlik alanı olarak kullanılır. Bahçedeki hazire elden geçirilip mezar taşları korunmuştur. Yapının harap bölümü uzun yıllar konut olarak kullanılmış, yalnızca yarım bir oda ve duvar kalıntısı kalmıştır. 2006'da Osmangazi Belediyesi tarafından aynı yerde yeniden inşa edilmiştir; 2024'e kadar Mesnevî sohbetleri, tarih, edebiyat ve tefsir dersleri yapılmıştır. Bugün Vakıflar Genel Müdürlüğü mülkiyetindedir ve Osmangazi Belediyesi tarafından sosyal tesis olarak kullanılır.",
+        "en": "The original structure has not survived. Today it consists of a large hall and a small adjacent room in a garden; the hall is entered by a door at the top of a few steps on the east and has a mihrab on the south. The room to the right of the entrance serves as a small library and the hall for multi-purpose events. The graveyard in the garden was renovated. The dilapidated part was used as housing for many years, leaving only half a room and a wall remnant. In 2006 Osmangazi Municipality rebuilt it on its original site; until 2024 lessons on Mesnevî, history, literature and tafsir were held. It is now owned by the General Directorate of Foundations and used as a social facility by Osmangazi Municipality."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "568-569"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "dervis_odasi_sayisi",
+      "label": {
+        "tr": "Derviş odası sayısı (ilk yapı)",
+        "en": "Dervish rooms (original)"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "568"
+        }
+      ]
+    },
+    {
+      "key": "kestanelik_sayisi",
+      "label": {
+        "tr": "Vakfedilen kestanelik sayısı",
+        "en": "Chestnut groves endowed"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "568"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Cizyedarzâde Hüseyin Ağa",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Küstahizâde",
+      "role": {
+        "tr": "Bilinen ilk şeyh (ö. H. 1171 / M. 1758)",
+        "en": "First known shaykh (d. AH 1171 / AD 1758)"
+      }
+    },
+    {
+      "name": "Rıfkı İbrahim Bey",
+      "role": {
+        "tr": "Yapıyı medreseye dönüştüren oğul",
+        "en": "Son who converted the building into a madrasa"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "sehh-1758",
+      "year": 1758,
+      "date": null,
+      "hijri": "1171",
+      "type": "record",
+      "title": {
+        "tr": "İlk bilinen şeyh Küstahizâde vefat etti",
+        "en": "First known shaykh Küstahizâde died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "565"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1760",
+      "year": 1760,
+      "date": null,
+      "hijri": "1174",
+      "type": "record",
+      "title": {
+        "tr": "Hüseyin Ağa'nın zaviye vakfiyesi",
+        "en": "Hüseyin Ağa's endowment charter for the zawiya"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "568"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Osmangazi Belediyesi tarafından yeniden inşa edildi",
+        "en": "Reconstructed by Osmangazi Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "569"
+        }
+      ]
+    },
+    {
+      "id": "ders-2024",
+      "year": 2024,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Düzenli ders ve etkinlikler 2024'e kadar sürdü",
+        "en": "Regular lessons and activities continued until 2024"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "569"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-eyne-bey-subasi-medresesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Zaviye kütüphanesinin kitaplarının büyük kısmı bugün Bursa İnebey Yazma Eser Kütüphanesi'nin Haraççı Bölümü'nde korunmaktadır.",
+        "en": "Most books of the zawiya library are today kept in the Haraççı Section of the Bursa İnebey Manuscript Library."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "568-569"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-haraccioglu-mektebi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Aynı mahallede, aynı Haraççıoğlu (Cizyedarzâde) adını taşıyan yapı; mektebin bahçesinde ailenin mezarları vardır.",
+        "en": "A building of the same neighbourhood bearing the same Haraççıoğlu (Cizyedarzâde) name; the family's graves are in the school garden."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "565, 570-572"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Bugünkü Haraççıoğlu Medresesi bir bahçe içindeki geniş bir salon ve bitişik küçük bir odadan oluşur. Salona doğu yönündeki birkaç basamaklı kapıdan girilir; salonun güney duvarında mihrap vardır. Girişin sağındaki küçük kapıdan geçilen oda küçük bir kütüphanedir. Bahçede onarılmış mezar taşlarının bulunduğu bir hazire yer alır.",
+      "en": "The present Haraççıoğlu Madrasa consists of a large hall and a small adjoining room in a garden. The hall is entered through a door on the east approached by a few steps; a mihrab is on its south wall. The room reached through a small door to the right of the entrance is a small library. The garden contains a graveyard with repaired gravestones."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

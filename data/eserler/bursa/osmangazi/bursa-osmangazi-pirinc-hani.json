@@ -1,0 +1,654 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-pirinc-hani",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Ticari Yapılar",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 661-667) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
+      "Fotoğraflar eklenmeli (media boş); Drive klasörü ve dosya kimlikleri bulunmalı (media_folder null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
+      "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
+      "Alt kat oda sayısı kitapta tutarsız (30 / 34 / 38); doğrulama için rölöve gerekli.",
+      "Hicri 'H. Muharrem 913' ve 'H. Rebiyülevvel 914' için gün bilgisi kitapta yok.",
+      "İlişki hedefi 'istanbul-ii-bayezid-cami': İstanbul ilçesi ve camiin adı kitapta yok; id belirlenmeli.",
+      "'Tahtakale' adı Pirinç Hanı için 's. 669' ifadesine dayanır; hangi dönemde kullanıldığı belirtilmemiş.",
+      "Kapıdaki sıvalı kitabe iddiası (s. 661) kitapta doğrulanamadı; 'inscriptions' boş bırakıldı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[oda_alt_kat]",
+        "note": "Kitap alt katta 'otuz oda' der, hemen ardından 'otuz dört odanın kapıları iç avluya açılır' ve 'dört dükkân eklenmesiyle oda sayısı otuz sekize ulaşmıştır' der. 30 + 4 = 34 olup 38'e ulaşmaz (34 + 4 = 38 olurdu). Kaynak değerleri korundu."
+      },
+      {
+        "field": "sections[yapi-malzeme]",
+        "note": "Kitabın İngilizce metni 'wall made of cut rubble stone and three rows of bricks' derken Türkçe 'yontma moloz taş' der; Türkçe esas alındı."
+      },
+      {
+        "field": "inscriptions",
+        "note": "Kapıda sıvalı bir kitabe bulunduğu ileri sürülmüş ama son büyük onarımda iz bulunamamıştır; kitabe kaydı oluşturulmadı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Pirinç Hanı",
+    "en": "Pirinç Han"
+  },
+  "subtitle": {
+    "tr": "II. Bayezid'in Koza Hanı'ndan sonra yaptırdığı ikinci büyük han",
+    "en": "The second large han built by Bayezid II after the Koza Han"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hân-ı Cedîd-i Sânî",
+      "en": "Hân-ı Cedîd-i Sânî (Second New Han)"
+    },
+    {
+      "tr": "Tahtakale",
+      "en": "Tahtakale",
+      "note": "Zamanla bu adla da anılmıştır"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "han",
+    "II. Bayezid",
+    "ahır",
+    "taç kapı",
+    "1855 depremi",
+    "Cumhuriyet Caddesi",
+    "kahvehane"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": "Cumhuriyet Caddesi, Bilecik Sokak No: 31",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "661"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. Muharrem 913 / M. Mayıs 1507 - H. Rebiyülevvel 914 / M. Temmuz 1508",
+      "en": "Muharram AH 913 / May AD 1507 - Rabi al-Awwal AH 914 / July AD 1508"
+    },
+    "start_year": 1507,
+    "end_year": 1508,
+    "hijri_year": 913,
+    "century": 16,
+    "basis": {
+      "tr": "Arşiv belgelerine göre inşaat H. Muharrem 913 / M. Mayıs 1507'de başlamış, H. Rebiyülevvel 914 / M. Temmuz 1508'de tamamlanmıştır.",
+      "en": "According to archive documents construction began in Muharram AH 913 / May AD 1507 and was completed in Rabi al-Awwal AH 914 / July AD 1508."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "661"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan II. Bayezid",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "661"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Yâkub Şah bin Sultan Şah",
+    "candidates": [
+      {
+        "name": "Ali bin Abdullah",
+        "note": "Mimarın yardımcısı"
+      }
+    ],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "661"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "II. Bayezid'in İstanbul'daki camisinin vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "661"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan II. Bayezid'in İstanbul'daki camisine gelir sağlamak için 1507-1508'de yaptırdığı, yaklaşık 70 × 75 m ölçülerinde iki katlı han. Taç kapısı, tuğla-kesme taş örgüsü ve Osmanlı'dan kalan nadir ahırlarından biriyle öne çıkar; 1855 depreminde ağır hasar görmüş, 1980'lerde başlayan restorasyonla yenilenmiştir.",
+    "en": "A two-storey han of about 70 × 75 m built in 1507-1508 by Sultan Bayezid II to provide income to his mosque in Istanbul. It stands out for its portal, brick and cut-stone masonry and one of the rare surviving Ottoman stables; heavily damaged in the 1855 earthquake, it was restored from the 1980s."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Adlar ve Yapımı",
+        "en": "Location, Names and Construction"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesinde, Cumhuriyet Caddesi üzerindeki Bilecik Sokak No: 31'de yer alan han, Sultan II. Bayezid tarafından İstanbul'daki camisine vakıf geliri sağlamak için yaptırılmıştır; Koza Hanı'ndan sonra yaptırılan ikinci büyük han olarak kayıtlara geçmiştir. Koza Hanı \"Hân-ı Cedîd-i Evvel\" olarak da anıldığından Pirinç Hanı'na \"Hân-ı Cedîd-i Sânî\" adı verilmiştir; XVII. yüzyılın başından itibaren \"Pirinç Hanı\" adıyla tanınır. Kapısında sıvalı bir kitabe bulunduğu ileri sürülmüşse de son büyük onarımda buna dair iz bulunamamıştır. II. Bayezid yapım masrafları için 10.000 akçe ayırmıştır. Arşiv belgelerine göre mimarı Yâkub Şah bin Sultan Şah, yardımcısı Ali bin Abdullah'tır; inşaat H. Muharrem 913 / M. Mayıs 1507'de başlamış, H. Rebiyülevvel 914 / M. Temmuz 1508'de tamamlanmıştır.",
+        "en": "The han stands at Bilecik Street No. 31 off Cumhuriyet Avenue in Osmangazi District. Sultan Bayezid II built it to provide foundation income to his mosque in Istanbul, and it is recorded as the second large han built after the Koza Han. Because the Koza Han was also called \"Hân-ı Cedîd-i Evvel\" (First New Han), this was called \"Hân-ı Cedîd-i Sânî\" (Second New Han); from the early 17th century it has been known as \"Pirinç Han\". An inscription in plaster was once said to be on its door, but no trace of it was found in the last major renovation. Bayezid II allocated 10,000 silver coins for construction. According to archive documents the architect was Yakub Şah bin Sultan Şah, assisted by Ali bin Abdullah; construction began in Muharram AH 913 / May AD 1507 and ended in Rabi al-Awwal AH 914 / July AD 1508."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "id": "yapi-malzeme",
+      "order": 2,
+      "title": {
+        "tr": "Yapım Malzemesi ve Taç Kapı",
+        "en": "Materials and Portal"
+      },
+      "body": {
+        "tr": "Yapı yontma moloz taş ve üç sıra tuğladan örülmüştür; taç kapısı kesme taş ve üç sıra tuğlayla yapılmıştır. Kemer, kubbe ve tonozlar tuğla, avlu kemerleri ve taşıyıcı ayaklar kesme taştır. Doğu cephesindeki sivri kemerli büyük eyvan biçimindeki taç kapı bugün sadedir; kemer köşe dolgularındaki tuğla geometrik motif kalıntıları kapının bir dönem gösterişli olduğunu gösterir. 2,96 m genişliğindeki kemersiz kapı aralığındaki 2,20 × 1,50 m ölçülü iki girinti bugün dükkân olarak kullanılır.",
+        "en": "The building is of cut rubble stone and three rows of brick; its portal is of cut stone and three rows of brick. Arches, domes and vaults are brick, while the courtyard arches and piers are cut stone. The large pointed-arched iwan-shaped portal on the east façade is plain today, but remains of geometric brick motifs in the arch spandrels show it was once ornate. Two recesses of 2.20 × 1.50 m in the 2.96 m wide archless doorway are used as shops."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "662-663"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-odalar",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Odalar",
+        "en": "Plan and Rooms"
+      },
+      "body": {
+        "tr": "Yaklaşık 70 × 75 m ölçülerindeki iki katlı hanın alt katında otuz oda vardır; odalar 1,35 × 1,35 m kesme taş ayaklara oturan sivri kemerli, çapraz tonozlu revakların gerisinde sıralanır. Otuz dört odanın kapıları iç avluya açılır; odalardan biri revak kemeriyle birlikte tuvalet olarak düzenlenmiştir. Cümle kapısının kuzeyinde bir, güneyinde üç dükkânın eklenmesiyle oda sayısı otuz sekize ulaşmıştır. Batı cephesinin boydan boya beşik tonozla örtülmesi bu bölümün ahır olduğunu gösterir. Üst katta sivri kemerli ve kubbeli revakların gerisinde her biri ocaklı kırk sekiz oda yer alır. Alt kat odalarının dış cepheleri mazgallıdır. Cumhuriyet Caddesi açılırken hanın kuzeydoğu köşesi kesilmiş, altlı üstlü üçer odadan altı oda yıkılmıştır.",
+        "en": "The two-storey han, about 70 × 75 m, has thirty rooms on the lower floor lined up behind pointed-arched, cross-vaulted arcades on 1.35 × 1.35 m cut-stone piers. The doors of thirty-four rooms open onto the courtyard; one room with its arcade arch was arranged as a toilet. With four shops added north (one) and south (three) of the main gate, the room count reached thirty-eight. The western side is covered by a continuous barrel vault, indicating stables. The upper floor has forty-eight rooms, each with a fireplace, behind pointed-arched, domed arcades. The outer façades of the lower rooms are crenelated. When Cumhuriyet Street was opened, the northeast corner was cut and six rooms (three stacked pairs) were demolished."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "662-663"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 4,
+      "title": {
+        "tr": "Tarihçe, Onarımlar ve Kullanım",
+        "en": "History, Repairs and Use"
+      },
+      "body": {
+        "tr": "1642 tarihli bir belge han içinde bir mescit ve altında dört dükkân bulunduğunu belirtir; bunlar günümüze ulaşmamış, on altıgen şadırvanın izleri hâlâ seçilir. Arşiv belgelerine göre Avrupalı, Venedikli ve Rus tüccarlar hanın alt kesimindeki Şehreküstü Mahallesi'nde oturup kürk ticareti yapmış; 1970'lerin sonuna kadar handa deri atölyeleri, ayakkabı imalathaneleri, ipek bükücüleri ve ipek boyacıları çalışmıştır. H. 925 / M. 1519'da taç kapı önündeki Saraçlar Çarşısı yanmış, han emini onarıp yeniden kiraya vermiştir. 1624 ve 1627-28'de su tesisatı ve avludaki fevkani mescit 26.433 akçeyle; 1630-31'de helaların gider sistemi 18.085 akçeyle; 19 Kasım 1671'de su hattı, maksem, terazi ve şadırvanlar 11.265 akçeyle; 1677'de odalar, ocaklar, ahır ayakları, merdivenler ve taç kapı çatısı dâhil kapsamlı onarım 113.350 akçeyle yapılmıştır. 31 Ocak 1855 depreminde batı ve kuzey revakları ve dükkânlar tamamen yıkılmış, yapı bu halde bir asırdan uzun kullanılmıştır. 1980'lerde başlayan restorasyon yaklaşık yirmi yıl sürmüş, üst kat tuvaletleri kaldırılmış, batı cephesine yeni kapı eklenmiştir; mescit ve şadırvan yeniden yapılmamıştır. Bugün üst kat dükkânları genellikle kullanılmaz, alt kat dükkânları kahvehane olarak işletilir. Mülkiyet Millî Emlak, Celal Bayar Vakfı ve bazı özel şahıslara aittir.",
+        "en": "A document of 1642 states there was a masjid in the han with four shops beneath it; these have not survived, though traces of the sixteen-sided shadirvan can still be seen. Archive documents say European, Venetian and Russian merchants lived in the Şehreküstü Neighborhood below the han and traded in fur; until the late 1970s leather workshops, shoe factories, silk winders and dyers worked here. In AH 925 / AD 1519 the Saraçlar Bazaar in front of the portal burned and was repaired by the han's manager. In 1624 and 1627-28 the water installations and the upper-level masjid were repaired for 26,433 akçe; in 1630-31 the toilet drainage for 18,085 akçe; on 19 November 1671 the water line, depot, scale and shadirvans for 11,265 akçe; and in 1677 a comprehensive repair (rooms, hearths, stable piers, stairs, portal roof) cost 113,350 akçe. The 31 January 1855 earthquake destroyed the west and north arcades and shops, and the han was used in this state for over a century. A restoration begun in the 1980s lasted about twenty years: upper-floor toilets were removed and a new west gate added; the masjid and shadirvan were not rebuilt. Today the upper shops are mostly unused and the lower shops run as coffeehouses. Ownership belongs to the Directorate of National Property, the Celal Bayar Foundation and private individuals."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "663, 666-667"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "boyut",
+      "label": {
+        "tr": "Boyutlar",
+        "en": "Dimensions"
+      },
+      "value": "70 × 75",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "662"
+        }
+      ],
+      "note": {
+        "tr": "Yaklaşık.",
+        "en": "Approximate."
+      }
+    },
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "662"
+        }
+      ]
+    },
+    {
+      "key": "oda_alt_kat",
+      "label": {
+        "tr": "Alt kat oda sayısı",
+        "en": "Rooms on lower floor"
+      },
+      "value": 30,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "662-663"
+        }
+      ],
+      "note": {
+        "tr": "Kitap otuz oda, otuz dört kapı ve dört dükkânla otuz sekiz oda der; tutarsız.",
+        "en": "The book gives thirty rooms, thirty-four doors and thirty-eight rooms with four shops; inconsistent."
+      }
+    },
+    {
+      "key": "oda_ust_kat",
+      "label": {
+        "tr": "Üst kat oda sayısı",
+        "en": "Rooms on upper floor"
+      },
+      "value": 48,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "662-663"
+        }
+      ],
+      "note": {
+        "tr": "Her biri ocaklı.",
+        "en": "Each with a fireplace."
+      }
+    },
+    {
+      "key": "ayak_olcusu",
+      "label": {
+        "tr": "Revak ayağı ölçüsü",
+        "en": "Arcade pier size"
+      },
+      "value": "1,35 × 1,35",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "662"
+        }
+      ]
+    },
+    {
+      "key": "tac_kapi_genisligi",
+      "label": {
+        "tr": "Taç kapı aralığı genişliği",
+        "en": "Portal opening width"
+      },
+      "value": 2.96,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "663"
+        }
+      ]
+    },
+    {
+      "key": "insaat_tahsisati",
+      "label": {
+        "tr": "II. Bayezid'in ayırdığı yapım masrafı",
+        "en": "Construction budget allocated by Bayezid II"
+      },
+      "value": 10000,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "key": "onarim_1677",
+      "label": {
+        "tr": "1677 onarım harcaması",
+        "en": "1677 repair cost"
+      },
+      "value": 113350,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "666-667"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan II. Bayezid",
+      "role": {
+        "tr": "Hanı yaptıran",
+        "en": "Commissioner"
+      }
+    },
+    {
+      "name": "Yâkub Şah bin Sultan Şah",
+      "role": {
+        "tr": "Mimar",
+        "en": "Architect"
+      }
+    },
+    {
+      "name": "Ali bin Abdullah",
+      "role": {
+        "tr": "Mimarın yardımcısı",
+        "en": "Architect's assistant"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-baslangic-1507",
+      "year": 1507,
+      "date": null,
+      "hijri": "Muharrem 913",
+      "type": "construction",
+      "title": {
+        "tr": "İnşaat başladı",
+        "en": "Construction began"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "id": "insa-bitis-1508",
+      "year": 1508,
+      "date": null,
+      "hijri": "Rebiyülevvel 914",
+      "type": "construction",
+      "title": {
+        "tr": "İnşaat tamamlandı",
+        "en": "Construction completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1519",
+      "year": 1519,
+      "date": null,
+      "hijri": "925",
+      "type": "damage",
+      "title": {
+        "tr": "Taç kapı önündeki Saraçlar Çarşısı yandı; han emini onarıp yeniden kiraya verdi",
+        "en": "Saraçlar Bazaar in front of the portal burned; repaired and re-let by the han's manager"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "666"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1624",
+      "year": 1624,
+      "date": null,
+      "hijri": "1033",
+      "type": "repair",
+      "title": {
+        "tr": "Su tesisatı ve fevkani mescit onarıldı (1624 ve 1627-28, toplam 26.433 akçe)",
+        "en": "Water installations and upper masjid repaired (1624 and 1627-28, total 26,433 akçe)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "666"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1630",
+      "year": 1630,
+      "date": null,
+      "hijri": "1040",
+      "type": "repair",
+      "title": {
+        "tr": "Helaların gider sistemi 18.085 akçeyle onarıldı (1630-31)",
+        "en": "Toilet drainage repaired for 18,085 akçe (1630-31)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "666"
+        }
+      ]
+    },
+    {
+      "id": "belge-1642",
+      "year": 1642,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Belgede han içinde mescit ve altında dört dükkân kayıtlı",
+        "en": "Document records a masjid in the han with four shops under it"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "663"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1671",
+      "year": 1671,
+      "date": "1671-11-19",
+      "hijri": "17 Recep 1082",
+      "type": "repair",
+      "title": {
+        "tr": "Su hattı, maksem, terazi ve şadırvanlar 11.265 akçeyle onarıldı",
+        "en": "Water line, depot, scale and shadirvans repaired for 11,265 akçe"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "666"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1677",
+      "year": 1677,
+      "date": null,
+      "hijri": "1088",
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım (113.350 akçe)",
+        "en": "Comprehensive repair (113,350 akçe)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "666"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": "1855-01-31",
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük depremde batı ve kuzey revakları ile dükkânlar yıkıldı",
+        "en": "West and north arcades and shops destroyed in the great earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "667"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1980ler",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yaklaşık yirmi yıl süren kapsamlı restorasyon başladı (1980'ler)",
+        "en": "Comprehensive restoration of about twenty years began (1980s)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "667"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca '1980'li yıllar' der.",
+        "en": "The book says only 'the 1980s'."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-koza-hani",
+      "type": "same_founder",
+      "description": {
+        "tr": "İkisini de II. Bayezid yaptırmıştır; Pirinç Hanı Koza Hanı'ndan sonra yapılan ikinci büyük handır.",
+        "en": "Both were commissioned by Bayezid II; the Pirinç Han is the second large han built after the Koza Han."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "target_id": "istanbul-ii-bayezid-cami",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Han, II. Bayezid'in İstanbul'daki camisine vakıf geliri sağlamak için yaptırılmıştır.",
+        "en": "The han was built to provide foundation income to Bayezid II's mosque in Istanbul."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "661"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-tahtakale-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Kitap, Pirinç Hanı'nın da zamanla 'Tahtakale' adıyla anıldığını söyler.",
+        "en": "The book says the Pirinç Han also came to be called 'Tahtakale'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "669"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Pirinç Hanı, Cumhuriyet Caddesi'nde, yaklaşık 70 × 75 metre ölçüsünde iki katlı bir handır. Duvarlar yontma moloz taş ve üç sıra tuğladan örülüdür. Doğu cephesindeki sivri kemerli büyük eyvan biçimli taç kapı bugün sadedir. Avlunun çevresinde kesme taş ayaklara oturan sivri kemerli revaklar vardır; alt katta çapraz tonozlu, üst katta kubbeli. Batı yanı beşik tonozlu eski ahırdır. Alt kat dükkânları kahvehane olarak işletilir.",
+      "en": "The Pirinç Han is a two-storey han of about 70 × 75 metres on Cumhuriyet Avenue. Its walls are cut rubble stone with three rows of brick. The large pointed-arched, iwan-shaped portal on the east façade is plain today. Around the courtyard run pointed-arched arcades on cut-stone piers, cross-vaulted below and domed above. The west side is the barrel-vaulted former stable. The lower shops operate as coffeehouses."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

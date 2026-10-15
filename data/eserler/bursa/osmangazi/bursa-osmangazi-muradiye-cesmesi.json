@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-muradiye-cesmesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Çeşmenin tam konumu/adresi ve kitabe yeri kitapta belirtilmemiş.",
+      "Külliyedeki diğer (vakıf eseri olmayan) çeşmeler kitapta tanıtılmamıştır.",
+      "Sıbyan mektebi binası kitapta anlatılmamıştır."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlık 'Muradiye Çeşmesi'dir; ancak metin yalnızca 'Sıbyan Mektebi (Medrese) Çeşmesi'ni anlatır. Parantez içindeki 'Medrese' ifadesi sıbyan mektebi ile medresenin karıştırıldığına işaret edebilir; kaynağa sadık kalındı."
+      },
+      {
+        "field": "dating",
+        "note": "Tarih doğrudan değil, duvar örgüsünden çıkarılmıştır; 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Muradiye Çeşmesi",
+    "en": "Muradiye Fountain"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Sıbyan Mektebi (Medrese) Çeşmesi",
+      "en": "Sıbyan Mektebi (Madrasa) Fountain"
+    }
+  ],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "çeşme",
+    "sıbyan mektebi çeşmesi",
+    "tuğla",
+    "küfeki taşı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "II. Murad Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "123"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 828-830 / M. 1425-1426 (külliye ile eş zamanlı)",
+      "en": "AH 828-830 / AD 1425-1426 (contemporary with the complex)"
+    },
+    "start_year": 1425,
+    "end_year": 1426,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Duvar örgü sisteminden çeşmenin külliyenin inşa edildiği dönemle eş zamanlı yapıldığı anlaşılmıştır; kitabesi günümüze ulaşmamıştır.",
+      "en": "The wall masonry shows that it was built simultaneously with the complex; the inscription has not survived."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "123"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Muradiye Külliyesi'ne ait çeşmeler arasında yalnızca vakıf eseri niteliği taşıyan, külliyenin batı ucundaki tuğla Sıbyan Mektebi (Medrese) Çeşmesi.",
+    "en": "The Sıbyan Mektebi (Madrasa) Fountain at the western end of the complex, built of brick; among the complex's fountains only this one is considered a foundation work."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Muradiye Külliyesi'ne ait çeşmeler, yapının farklı noktalarına dağılmış su yapıları arasındadır. Bu çeşmeler içinde yalnızca Sıbyan Mektebi (Medrese) Çeşmesi vakıf eseri niteliği taşır. Külliyenin batı ucunda yer alan çeşme, erken Osmanlı çeşme formunun tipik örneklerinden biridir. Kitabe yeri belirlenmiş olmasına rağmen kitabe günümüze ulaşmamıştır. Duvar örgü sistemi, çeşmenin külliyenin inşa edildiği dönemle eş zamanlı yapıldığını gösterir.",
+        "en": "The fountains belonging to the Muradiye Complex are among the water structures scattered through it. Among them, only the Sıbyan Mektebi (Madrasa) Fountain is considered a foundation work. Located at the western end of the complex, it is one of the typical examples of the early Ottoman fountain form. The location of the inscription has been determined, but the inscription has not survived. The wall masonry shows it was built simultaneously with the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Tamamen tuğladan örülen çeşme, dikdörtgen çerçeveli ve sivri kemerli bir nişe sahiptir; nişin çevresi zikzak tuğlalarla dikdörtgen forma tamamlanmıştır. Üstte iki sıra kirpi saçak vardır ve yapı kiremitle sonlanır. Nişin içindeki ayna taşı yatay ve dikey tuğlalarla örülmüş, üzerine iki tas yuvası yerleştirilmiştir. Su teknesi küfeki taşından olup 1,30 × 0,43 m ölçülerindedir.",
+        "en": "Built entirely of brick, the fountain has a rectangular frame and a pointed-arch niche, the surroundings completed with zigzag bricks to form a rectangle. A two-row sawtooth cornice crowns it and the structure ends with roof tiles. The back panel in the niche is built of horizontally and vertically shaped bricks with two recesses for bowls. The water basin is limestone and measures 1.30 × 0.43 m."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "123"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "tekne_olcusu",
+      "label": {
+        "tr": "Su teknesi ölçüsü",
+        "en": "Basin size"
+      },
+      "value": "1,30 × 0,43",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "key": "tas_yuvasi",
+      "label": {
+        "tr": "Tas yuvası sayısı",
+        "en": "Number of bowl recesses"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "123"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "123"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çeşme, tamamen tuğladan, dikdörtgen çerçeveli ve sivri kemerli bir nişten oluşur. Nişin çevresinde zikzak tuğla dizileri vardır; üstte iki sıra kirpi saçak ve kiremit örtü bulunur. Nişin içinde iki tas yuvalı tuğla bir ayna taşı ve küfeki taşından uzun bir su teknesi yer alır.",
+      "en": "The fountain is built entirely of brick, with a rectangular frame and a pointed-arch niche. Zigzag brick courses surround the niche, with a two-row sawtooth cornice and tile roof above. Inside the niche is a brick back panel with two bowl recesses and a long limestone water basin."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

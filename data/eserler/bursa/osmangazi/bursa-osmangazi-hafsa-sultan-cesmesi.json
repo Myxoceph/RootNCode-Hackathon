@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hafsa-sultan-cesmesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 687) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Çeşmenin banisi kaynakta belirtilmiyor; 'founder' boş (cami Hafsa Sultan tarafından yaptırılmış, çeşme için bağ kurulmadı).",
+      "Hafsa Sultan (Bedreddin) Camii kaydı ('bursa-osmangazi-hafsa-sultan-camii') henüz yoksa oluşturulmalı.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hafsa Sultan (Bedreddin) Çeşmesi",
+    "en": "Hafsa Sultan (Bedreddin) Fountain"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hafsa Sultan (Bedreddin) Çeşmesi",
+      "en": "Hafsa Sultan (Bedreddin) Fountain",
+      "note": "Kaynaktaki tam başlık"
+    }
+  ],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "çeşme",
+    "erken Osmanlı",
+    "II. Murat dönemi",
+    "almaşık duvar",
+    "kirpi saçak",
+    "avlu duvarı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kayhan Mahallesi",
+    "address": "Azık Sokak No: 2 (Hafsa Sultan (Bedreddin) Camii avlu duvarı)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "687"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyıl (tahmini)",
+      "en": "15th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitabe yok; caminin H. 847 / M. 1443 tarihi ve çeşmenin camiyle mimari uyumu esas alınarak tahmin edilmiştir.",
+      "en": "No inscription; estimated from the mosque's date of AH 847 / AD 1443 and the architectural harmony between fountain and mosque."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "687"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hafsa Sultan (Bedreddin) Camii'nin avlu duvarındaki, 15. yüzyıla tarihlendiği değerlendirilen çeşme. Almaşık duvarı, sivri kemeri, kirpi saçağı ve geniş su teknesiyle erken dönem Osmanlı çeşmelerinin tipik örneklerindendir ve hâlâ akmaktadır.",
+    "en": "The fountain in the courtyard wall of the Hafsa Sultan (Bedreddin) Mosque, estimated to date to the 15th century. With its alternating masonry, pointed arch, sawtooth eaves and wide basin, it is among the typical early Ottoman fountains and still runs."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-tarih",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihlendirme",
+        "en": "Location and Dating"
+      },
+      "body": {
+        "tr": "Çeşme, Osmangazi ilçesi Kayhan Mahallesi Azık Sokak No: 2'de, Hafsa Sultan (Bedreddin) Camii'nin avlu duvarında yer alır. Yapıya ait kitabe günümüze ulaşmamıştır; caminin tarihiyle ilgili bazı kaynaklarda bilgi bulunsa da çeşmeden bahsedilmez. II. Murat dönemine ait cami, H. 847 / M. 1443'te Sultan Çelebi Mehmed'in kızı Hafsa Sultan tarafından yaptırılmıştır. Bu tarih ve çeşmenin cami ile mimari uyumu dikkate alınarak yapının XV. yüzyıla tarihlenebileceği değerlendirilmektedir.",
+        "en": "The fountain is in the courtyard wall of the Hafsa Sultan (Bedreddin) Mosque, No. 2 Azık Street, Kayhan Neighborhood, Osmangazi. No inscription survives; some sources give information about the mosque but do not mention the fountain. The mosque, of the period of Murad II, was built in AH 847 / AD 1443 by Hafsa Sultan, daughter of Sultan Çelebi Mehmed. Considering this date and the architectural harmony with the mosque, the fountain is estimated to date to the 15th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "687"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Caminin güneybatısında avluyu çevreleyen duvar üzerindeki çeşme 3,85 × 3,60 m ölçülerinde, 75 cm derinliğinde ve tek cepheli düzenlenmiştir. Sivri kemerli cephe, bir sıra küfeki taşı ve üç sıra tuğladan almaşık duvar örgüsüyle yapılmıştır. Tamamen tuğladan örülmüş 67 cm genişliğindeki ayaklara oturan kemer bir silmeyle çevrilidir ve üst kısmı iki sıra kirpi saçakla sonlanır. Çeşme nişi yığma ayaklara oturan sivri kemerle örtülüdür; burada üç sıra tuğla ve bir sıra taş örgüsü kullanılmıştır. Mermer tekne 47 × 67 cm ölçülerinde ve 75 cm derinliğindedir. Yapı günümüzde hâlâ akar durumdadır.",
+        "en": "On the wall surrounding the courtyard to the southwest of the mosque, the fountain measures 3.85 × 3.60 m, is 75 cm deep and has a single façade. The pointed arched façade is built of alternating masonry of one row of limestone and three of brick. The arch sits on 67 cm wide all-brick piers, is surrounded by a molding and ends in two rows of sawtooth eaves. The niche is covered by a pointed arch on masonry piers, again with three rows of brick and one of stone. The marble basin is 47 × 67 cm and 75 cm deep. The fountain still runs today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "687"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Çeşme ölçüsü",
+        "en": "Fountain size"
+      },
+      "value": "3,85 × 3,60",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "687"
+        }
+      ]
+    },
+    {
+      "key": "derinlik",
+      "label": {
+        "tr": "Derinlik",
+        "en": "Depth"
+      },
+      "value": 75,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "687"
+        }
+      ]
+    },
+    {
+      "key": "ayak_genisligi",
+      "label": {
+        "tr": "Tuğla ayak genişliği",
+        "en": "Brick pier width"
+      },
+      "value": 67,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "687"
+        }
+      ]
+    },
+    {
+      "key": "tekne_olcusu",
+      "label": {
+        "tr": "Mermer tekne",
+        "en": "Marble basin"
+      },
+      "value": "47 × 67",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "687"
+        }
+      ],
+      "note": {
+        "tr": "Derinlik 75 cm.",
+        "en": "Depth 75 cm."
+      }
+    },
+    {
+      "key": "islevsel",
+      "label": {
+        "tr": "Günümüzde akıyor mu",
+        "en": "Still running"
+      },
+      "value": "evet",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "687"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hafsa Sultan",
+      "role": {
+        "tr": "Çelebi Mehmed'in kızı; çeşmenin bulunduğu camiyi H. 847 / M. 1443'te yaptırdı",
+        "en": "Daughter of Çelebi Mehmed; built the mosque in whose courtyard the fountain stands, in AH 847 / AD 1443"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "cami-1443",
+      "year": 1443,
+      "date": null,
+      "hijri": "847",
+      "type": "construction",
+      "title": {
+        "tr": "Hafsa Sultan (Bedreddin) Camii yaptırıldı (çeşmenin yapım tarihi bilinmiyor)",
+        "en": "Hafsa Sultan (Bedreddin) Mosque built (the fountain's own date is unknown)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "687"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hafsa-sultan-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Çeşme, caminin avlu duvarında yer alır ve camiyle mimari uyum gösterir.",
+        "en": "The fountain is in the mosque's courtyard wall and shows architectural harmony with it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "687"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çeşme, bir caminin avlusunu çevreleyen duvarın güneybatı kısmında yer alan, dikdörtgen çerçeveli sivri kemerli bir yapıdır. Cephe, bir sıra küfeki taşı ile üç sıra tuğlanın dönüşümlü örülmesiyle yapılmıştır; kemer tuğla ayaklara oturur ve üstü iki sıra testere dişi biçimli saçakla biter. Nişin içinde geniş bir mermer tekne bulunur ve su hâlâ akmaktadır.",
+      "en": "The fountain is a pointed-arched structure in the south-western part of the wall around a mosque courtyard. The façade alternates one row of limestone with three of brick; the arch rests on brick piers and ends in two rows of sawtooth eaves. A wide marble basin sits in the niche and water still runs."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

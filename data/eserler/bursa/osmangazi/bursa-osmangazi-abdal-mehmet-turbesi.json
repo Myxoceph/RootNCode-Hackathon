@@ -1,0 +1,331 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-abdal-mehmet-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Abdal Mehmed'in kimliği ve yaşadığı dönem kitapta verilmiyor; kaynaklardan araştırılmalı.",
+      "Kitapta türbenin plan şekli (kare/dikdörtgen) ayrıca belirtilmiyor; yalnızca 5,85 × 6,20 m ölçüsü var.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Metinde 'Abdal Mehmed', sayfa başlığında 'Abdal Mehmet' yazımı kullanılıyor; her ikisi saklandı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Abdal Mehmet Türbesi",
+    "en": "Abdal Mehmet Tomb"
+  },
+  "subtitle": {
+    "tr": "II. Murad'ın 1450'de yaptırdığı kubbeli türbe",
+    "en": "Domed tomb built by Murad II in 1450"
+  },
+  "alternate_names": [
+    {
+      "tr": "Abdal Mehmed Türbesi",
+      "en": "Abdal Mehmed Tomb",
+      "note": "Kitapta metinde 'Mehmed', başlıkta 'Mehmet' yazımı geçiyor"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "II. Murad",
+    "Bursa kemeri",
+    "kitabe",
+    "sekizgen kasnak"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tuzpazarı-Demirtaşpaşa Mahallesi",
+    "address": "Tahal Caddesi No: 28",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "492"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. Cemaziyelevvel 854 / M. Haziran-Temmuz 1450",
+      "en": "AH Jumada al-Awwal 854 / AD June-July 1450"
+    },
+    "start_year": 1450,
+    "end_year": 1450,
+    "hijri_year": 854,
+    "century": 15,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki Arapça kitabe.",
+      "en": "Arabic inscription above the entrance door."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "492"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan II. Murad",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "492"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Giriş kapısı üzerindeki kitabeye göre Sultan II. Murad'ın 1450'de yaptırdığı, sekizgen kasnaklı ve kubbeli türbe. İçinde Abdal Mehmed'e ait tek sanduka vardır.",
+    "en": "A domed tomb on an octagonal drum, built by Sultan Murad II in 1450 according to its entrance inscription. It holds a single sarcophagus, that of Abdal Mehmed."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Yapım ve kitabe",
+        "en": "Construction and inscription"
+      },
+      "body": {
+        "tr": "Giriş kapısı üzerindeki Arapça kitabeden yapının Sultan II. Murad tarafından H. Cemaziyelevvel 854 / M. Haziran-Temmuz 1450'de yaptırıldığı anlaşılmaktadır. Kitabe Bursa kemeri üzerine yerleştirilmiştir.",
+        "en": "From the Arabic inscription above the entrance door, the building was built by Sultan Murad II in Jumada al-Awwal AH 854 / June-July AD 1450. The inscription is placed on the Bursa arch."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "492-493"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Girişi, Bursa kemerinin altındaki sivri kemerli ve beşik tonozlu kapalı bir eyvandan sağlanır. Sekizgen kasnak üzerine oturan türbe 5,85 × 6,20 m ölçülerindedir; üstü kubbeyle örtülü, dışı kurşun kaplıdır. Duvarlarda üç sıra tuğla, bir sıra kesme taş ve aralarda dikey tek tuğla kullanılmış karma teknik vardır; yapı iki sıralı kirpi saçakla sona erer. Bursa kemeri ve aynalıktaki tuğlalar ince işçiliklidir.",
+        "en": "The entrance is through a closed iwan with a pointed arch and a barrel vault under a Bursa arch. The tomb, on an octagonal drum, measures 5.85 × 6.20 m; it is domed and lead-covered. The walls use three rows of brick, one row of cut stone and a single vertical brick between; the building ends in a two-row sawtooth cornice. The bricks of the Bursa arch and spandrel are finely worked."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "493"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Kubbenin sekizgen kasnağa aktarımı üçer püsküllü, üç sıra stalaktitli köşe tromplarıyla sağlanır. Üstte üç, altta beş pencere iki sıra halindedir. Türbede Abdal Mehmed'e ait tek sanduka bulunur.",
+        "en": "The dome is carried to the octagonal drum by corner squinches with three tassels and three rows of stalactites. There are two rows of windows, three above and five below. The tomb contains a single sarcophagus, belonging to Abdal Mehmed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "493"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım ve bugün",
+        "en": "Restoration and present day"
+      },
+      "body": {
+        "tr": "Yapı en son 2018'de Vakıflar Bölge Müdürlüğü tarafından kısmen restore edilmiştir; günümüzde ziyarete açıktır.",
+        "en": "The building was last partially restored by the Regional Directorate of Foundations in 2018. It is open to visitors today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "493"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Ölçüler",
+        "en": "Dimensions"
+      },
+      "value": "5,85 × 6,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "493"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı (üst + alt)",
+        "en": "Windows (upper + lower)"
+      },
+      "value": "3 + 5",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "493"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "493"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan II. Murad",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Abdal Mehmed",
+      "role": {
+        "tr": "Türbede medfun",
+        "en": "Buried in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, Bursa kemerine yerleştirilmiş",
+        "en": "Above the entrance door, set on the Bursa arch"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Emera hâzâ’l-binâi Sultân Murâd bin Mehmed Hân halledâ’llâhu sultânehû ve ebbede memleketehû fî evâhir-i Cemâziye’l-ûlâ li-seneti erba’a ve hamsîne ve semâne mi’e",
+      "translation": {
+        "tr": "Bu binanın yapılmasını Mehmed Han oğlu Sultan Murad, H. 854 / M. 1450 tarihinde emretti.",
+        "en": "The construction of this building was ordered by Sultan Murad, son of Mehmed Han, in AH 854 / AD 1450."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 854,
+        "gregorian": "1450"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "492-493"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1450,
+      "date": null,
+      "hijri": "Cemaziyelevvel 854",
+      "type": "construction",
+      "title": {
+        "tr": "Sultan II. Murad tarafından yaptırıldı",
+        "en": "Built by Sultan Murad II"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "492"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından kısmen restore edildi",
+        "en": "Partially restored by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "493"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Abdal Mehmet Türbesi, Bursa kemerinin altındaki kapalı, sivri kemerli bir eyvanla girilen, kare planlı ve kubbeli küçük bir yapıdır. Sekizgen kasnak üzerindeki kubbe kurşunla kaplıdır. Duvarlar tuğla ve kesme taş sıralarının dönüşümlü örülmesiyle yapılmıştır; saçak iki sıra kirpi biçimindedir. İçeride tek bir sanduka bulunur.",
+      "en": "Abdal Mehmet Tomb is a small domed building entered through a closed iwan with a pointed arch beneath a Bursa arch. The dome, on an octagonal drum, is lead-covered. The walls alternate rows of brick and cut stone and the eaves have a two-row sawtooth cornice. Inside is a single sarcophagus."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

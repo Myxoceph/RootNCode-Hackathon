@@ -1,0 +1,401 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hamza-bey-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hamzabey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Hamza Bey Külliyesi bölümünden (s. 173-185) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş, archive_media boş); Drive klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
+      "Türbenin yapım yılı ve mimarı kitapta verilmiyor.",
+      "Türbedeki on iki ek sandukanın kime ait olduğu kitapta belirtilmiyor.",
+      "Kitap Hamza Bey'den 'gazi ve şehit' diye söz ediyor; kitabe veya lahit yazısı verilmediği için kitabe kaydı açılmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis] / location",
+        "note": "Külliye anlatımında Hamza Bey, eşleri ve Kara Mustafa Paşa türbeleri 'cami bahçesinin kuzeybatısında' (s. 175) deniyor; türbe bölümlerinde Hamza Bey Türbesi 'cami avlusunun güneybatı köşesinde' (s. 180), Hamza Bey Ailesi Türbesi 'caminin batı köşesine bitişik' (s. 182), Kara Mustafa Paşa Türbesi 'avlunun kuzey ucunda' (s. 184) olarak veriliyor. Konum bilgileri tam örtüşmüyor; kaynağa sadık kalınarak her kayıtta kendi bölümündeki ifade esas alındı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin duvar örgüsünü 'iki sıra tuğla ve bir sıra moloz taş' olarak veriyor; cami duvarında ise 'üç sıra tuğla ve bir sıra moloz taş'. Fark kaynakta var, olduğu gibi korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hamza Bey Türbesi",
+    "en": "Hamza Bey Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-hamza-bey-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "Hamza Bey",
+    "türbe",
+    "sekizgen plan",
+    "gazi ve şehit"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hamzabey",
+    "address": "Kaplıca Caddesi, No: 55",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "180"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hamza Bey Camii avlusunun güneybatı köşesinde yer alan sekizgen planlı, kubbeli türbe; Hamza Bey'in sandukasının yanı sıra on iki sanduka daha barındırır.",
+    "en": "An octagonal domed tomb in the southwest corner of the Hamza Bey Mosque courtyard; besides Hamza Bey's sarcophagus it holds twelve more."
+  },
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "sekizgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 13,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180-181"
+        }
+      ],
+      "note": {
+        "tr": "Hamza Bey'in sandukası ve on iki sanduka daha.",
+        "en": "Hamza Bey's sarcophagus plus twelve more."
+      }
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnak penceresi",
+        "en": "Drum windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "key": "alt_pencere",
+      "label": {
+        "tr": "Alt sıra penceresi (iç)",
+        "en": "Lower-row windows (interior)"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "key": "cephe_pencere",
+      "label": {
+        "tr": "Mermer söveli pencereli cephe sayısı",
+        "en": "Façades with marble-framed windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "key": "testere_disi_sacak",
+      "label": {
+        "tr": "Saçak altı testere dişi sırası",
+        "en": "Sawtooth rows under eaves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "key": "testere_disi_kubbe",
+      "label": {
+        "tr": "Kubbe eteği testere dişi sırası",
+        "en": "Sawtooth rows at dome base"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hamza Bey (Yahşi Beyzade Hamza Bey)",
+      "role": {
+        "tr": "Türbede gömülü; gazi ve şehit",
+        "en": "Buried here; veteran and martyr"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından camiyle birlikte kapsamlı onarım",
+        "en": "Extensive restoration with the mosque by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "181"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından camiyle birlikte restore edildi",
+        "en": "Restored with the mosque by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "181"
+        }
+      ]
+    },
+    {
+      "id": "defin-1462",
+      "year": 1462,
+      "date": null,
+      "hijri": "866",
+      "type": "record",
+      "title": {
+        "tr": "Hamza Bey Eflak'ta öldürüldü; naaşı Bursa'daki türbesine defnedildi",
+        "en": "Hamza Bey was killed in Wallachia; his body was buried in his tomb in Bursa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sandukalar",
+      "title": {
+        "tr": "On üç sanduka",
+        "en": "Thirteen sarcophagi"
+      },
+      "hint": {
+        "tr": "Hamza Bey'in sandukasının yanında on iki sanduka daha vardır; hepsi sıvalıdır.",
+        "en": "Besides Hamza Bey's there are twelve more, all plastered."
+      },
+      "section_id": "ic-mekan"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe Hamza Bey Külliyesi'nin parçasıdır.",
+        "en": "The tomb is part of the Hamza Bey Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe Hamza Bey Camii'nin avlusundadır.",
+        "en": "The tomb lies in the courtyard of the Hamza Bey Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-kara-mustafa-pasa-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kara Mustafa Paşa, babasının yanındaki türbeye defnedilmiştir (kitabın ifadesi).",
+        "en": "Kara Mustafa Paşa was buried in the tomb next to his father (book's wording)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "184"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Hamza Bey Türbesi, Hamzabey Mahallesi, Kaplıca Caddesi No:55'te bulunan Hamza Bey Camii bahçesindedir. Gazi ve şehit Hamza Bey'in türbesi, cami avlusunun güneybatı köşesinde yer alır. 1962'de camiyle birlikte Bursa Eski Eserleri Sevenler Kurumu tarafından kapsamlı biçimde onarılmış, 2011'de Vakıflar Genel Müdürlüğü tarafından cami ile birlikte restore edilmiştir.",
+        "en": "The Hamza Bey Tomb is in the garden of Hamza Bey Mosque at Kaplıca Street No. 55. The tomb of the veteran and martyr Hamza Bey is in the southwestern corner of the mosque courtyard. It underwent extensive restoration with the mosque in 1962 by the Bursa Association for the Appreciation of Antiquities and was restored with the mosque by the General Directorate of Foundations in 2011."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180-181"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe sekizgen planlıdır; duvarları iki sıra tuğla ve bir sıra moloz taşla örülmüştür. Moloz taşların arasına düşey tuğlalar yerleştirilerek yüzey düzgünleştirilmiştir. Kapı doğu cephesindedir ve küçük, dışa taşkın dar bir eyvan içine alınmıştır. Kapı ve mihrap yönündeki yüzler dışındaki altı cephede mermer söveli, parmaklıklı birer pencere vardır; kasnakta alçı şebekeli, sivri kemerli sekiz pencere bulunur. Kesme taş ve tuğladan inşa edilen türbe, yine sekizgen ve yüksek bir kasnağa oturan kubbeyle örtülüdür; kubbenin sekiz köşesinde iri yaprak motifleri vardır. Saçak altında iki, kubbe eteğinde üç sıra testere dişi motifi yapıyı çepeçevre kuşatır.",
+        "en": "The tomb is octagonal, with walls of two rows of brick and one row of rubble stone; vertical bricks between the rubble stones smooth the surface. The door, on the east side, is enclosed in a small iwan projecting outward. Except for the faces corresponding to the door and mihrab, each of the other six façades has a window with marble frame and grille; the drum has eight pointed-arched windows with plaster grilles. Built of cut stone and brick, it is covered with a dome on a high octagonal drum, with large leaf motifs on the dome's eight corners. Two rows of sawtooth motifs under the eaves and three at the base of the dome surround the building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180-181"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Mihrap stalaktitli (mukarnaslı) olarak tarif edilir. Kubbe kasnağında sekiz, alt sırada altı pencere mekânı aydınlatır; kasnaktaki pencereler dilimli çerçeveler içine alınmıştır. İç mekân oldukça sadedir. Hamza Bey'in sandukasının yanı sıra on iki sanduka daha bulunur. Lahitlerin tamamı sıvalıdır ve öncesinde ahşap sanduka oldukları tahmin edilmektedir.",
+        "en": "The mihrab features stalactite (muqarnas) decoration. Eight windows on the dome drum and six in the lower row light the space; the drum windows sit in segmented frames. The interior is quite plain. Besides Hamza Bey's sarcophagus there are twelve more. All sarcophagi are plastered and are thought to have been wooden sarcophagi previously."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180-181"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamza Bey Türbesi, cami avlusunun bir köşesinde duran sekizgen planlı, kubbeli küçük bir yapıdır. Duvarlar tuğla ve moloz taş sıralarından örülmüştür. Doğu yüzdeki kapı, dışa taşan dar bir eyvanın içindedir. Altı yüzde mermer çerçeveli, parmaklıklı pencereler vardır. Üstte sekizgen yüksek bir kasnağın taşıdığı kubbe yükselir; saçak altında ve kubbe eteğinde testere dişi sıraları görülür. İçeride oldukça sade bir mekânda, mukarnaslı bir mihrap ve sıvalı sandukalar bulunur.",
+      "en": "The Hamza Bey Tomb is a small octagonal domed building in a corner of the mosque courtyard. Its walls are courses of brick and rubble stone. The door on the east side sits within a narrow projecting iwan. Six faces have marble-framed, grilled windows. Above rises a dome on a high octagonal drum, with sawtooth bands under the eaves and at the dome base. Inside, a very plain space holds a muqarnas mihrab and plastered sarcophagi."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tasvirden yapay zekâ taslağı olarak yazıldı; saha ve fotoğrafla doğrulanmadı."
+  }
+}
