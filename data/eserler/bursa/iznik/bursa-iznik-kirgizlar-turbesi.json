@@ -1,0 +1,314 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-kirgizlar-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Türbede yatan kişi ve yapım tarihi kaynakta belirsiz; founder ve dating null.",
+      "'Kırgızlar' adının kaynağı kitapta açıklanmamış.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "era",
+        "note": "Kaynak 'Erken Osmanlı döneminin etkilerini taşıyan' der; kesin yapım dönemi belirtmez. era erken-osmanli bu ifadeye dayanır ve tahminidir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kırgızlar Türbesi",
+    "en": "Kırgızlar Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "Selçuklu üslubu",
+    "kalem işi",
+    "Yenişehir Kapısı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Selçuk Mahallesi",
+    "address": "Surların Yenişehir Kapısı çıkışı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "474"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Selçuklu üslubu ile natüralist süslemenin birlikte görüldüğü, tonozlu eyvanı ve yüksek kasnaklı kubbeli mekânıyla özgün bir mezar anıtı; inşa kitabesi günümüze ulaşmamıştır.",
+    "en": "An original funerary monument combining Seljuk style and naturalistic ornament, with a vaulted iwan and a domed space on a high drum; no construction inscription survives."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Erken Osmanlı döneminin etkilerini taşıyan yapı, aynı eksen üzerinde tonoz örtülü bir giriş eyvanı ve arkasında yüksek kasnak üzerine oturan kubbeli bir mekândan oluşur. Ana yapı taş ve tuğla ile inşa edilmiştir. Kubbeli bölümde yedi büyük ve bir çocuk lahdi olmak üzere sekiz sanduka vardır; hepsi sıvalı ve kitabesizdir.",
+        "en": "Bearing early Ottoman influences, the building consists of a vaulted entrance iwan and, on the same axis, a domed space on a high drum. The main structure is stone and brick. The domed space holds eight sarcophagi, seven adults' and one child's, all plastered and without inscriptions."
+      },
+      "confidence": "certain",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "474"
+        }
+      ]
+    },
+    {
+      "id": "kimlik",
+      "title": {
+        "tr": "Kimin Türbesi?",
+        "en": "Whose Tomb?"
+      },
+      "body": {
+        "tr": "İnşa kitabesi günümüze ulaşmamıştır. Yalnızca bir eyvanında çok sayıda kişinin defnedilmiş olması, burada yatan kişinin dönemi için önemli bir şahsiyet olduğunu düşündürmektedir. Ali Sâim Ülgen, yapının Türklerin İznik'i fethinden sonra bir Türk nezaretinde Bizanslı ustalara inşa ettirilmiş olabileceğini ileri sürmektedir.",
+        "en": "The construction inscription has not survived. That many people were buried in just one of its iwans suggests the person buried here was an important figure of his time. Ali Sâim Ülgen suggests it may have been built by Byzantine masters under Turkish supervision after the Turks conquered Iznik."
+      },
+      "confidence": "disputed",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "474, 476"
+        }
+      ]
+    },
+    {
+      "id": "suslemeler",
+      "title": {
+        "tr": "Kalem İşi Süslemeler",
+        "en": "Painted Decoration"
+      },
+      "body": {
+        "tr": "Kubbeli mekânın üst pencere kenarlarında ve kubbe yüzeyinde kalem işi süslemeler vardır. Doğu ve güney cephe pencereleri kıvrık dallar ve rumi motifleriyle, kuzey cephe penceresi kıvrık dal, hatayi ve çiçek motifleriyle ve yılanın dolandığı sütun üzerinde meyve dolu bir vazo sahnesiyle bezelidir. Kubbede yıldız biçimli bir rozet bulunur.",
+        "en": "There are hand-painted decorations around the upper windows and on the dome surface. The east and south windows have tendrils and rumi motifs; the north window has tendrils, hatayi and floral motifs and a scene of a fruit-filled vase on a snake-entwined column. The dome has a star-shaped rosette."
+      },
+      "confidence": "certain",
+      "order": 3,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "476"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "title": {
+        "tr": "Restorasyon",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Yapı 2006-2007 arasında kapsamlı restorasyondan geçmiştir. Doğu cephesine bir 'Kırgız askeri' heykeli yerleştirilmiş, iç mekândaki lahitler yeniden düzenlenmiş ve türbe girişi aslına uygun biçimde yeniden ele alınmıştır.",
+        "en": "The building underwent a comprehensive restoration in 2006-2007. A 'Kyrgyz soldier' statue was placed on the east façade, the sarcophagi were rearranged and the entrance redesigned in accordance with the original."
+      },
+      "confidence": "certain",
+      "order": 4,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "476"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "474"
+        }
+      ],
+      "note": {
+        "tr": "Yedi büyük, bir çocuk lahdi; sıvalı ve kitabesiz.",
+        "en": "Seven adult, one child; plastered and uninscribed."
+      }
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon (2006-2007)",
+        "en": "Comprehensive restoration (2006-2007)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "476"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "outdoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, tuğla ve taş örgülü, önünde tonozlu bir eyvanı olan, arkasında yüksek kasnaklı kubbeli bir yapıdır. İçinde sıvalı, kitabesiz sekiz sanduka vardır; kubbede ve pencere kenarlarında bitkisel kalem işi süslemeler görülür.",
+      "en": "The tomb is a stone-and-brick building with a vaulted iwan in front and a domed space on a high drum behind. Inside are eight plastered, uninscribed sarcophagi; the dome and window surrounds bear painted vegetal decoration."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "474-476"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1jrN3ItulWpm5_zp7uwZQSSYQIx-bjrdl",
+        "original_name": "02 DJI_20241018230001_0483_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "476"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kırgızlar Türbesi (kitap s. 476)",
+        "en": "Kırgızlar Tomb (book p. 476)"
+      },
+      "alt": {
+        "tr": "Kırgızlar Türbesi fotoğrafı",
+        "en": "Photo of Kırgızlar Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1binDJoNWeyeUJe5bhQ5PLJYlF-B88u8N",
+        "original_name": "05 ERD01048 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "477"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kırgızlar Türbesi (kitap s. 477)",
+        "en": "Kırgızlar Tomb (book p. 477)"
+      },
+      "alt": {
+        "tr": "Kırgızlar Türbesi fotoğrafı",
+        "en": "Photo of Kırgızlar Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1Z1CM4M9uK-SzIuW81TXgENQE1qNHB7bl",
+        "original_name": "08 ERD01072 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "477"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kırgızlar Türbesi (kitap s. 477)",
+        "en": "Kırgızlar Tomb (book p. 477)"
+      },
+      "alt": {
+        "tr": "Kırgızlar Türbesi fotoğrafı",
+        "en": "Photo of Kırgızlar Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

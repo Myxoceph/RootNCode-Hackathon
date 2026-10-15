@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-burhaniye-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin, s. 358) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi ve banîsi kitapta yok; dating null bırakıldı.",
+      "Dönem (era) tarih bilinmediği için boş bırakıldı.",
+      "Depremin kesin tarihi kitapta yok ('1998 yılından önce').",
+      "Caminin plan, kubbe ve iç mekân tarifi bu bölümde yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Burhaniye Camii",
+    "en": "Burhaniye Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kerpiç cami",
+    "demir iskeletli minare",
+    "1998 minare",
+    "mahalle camii"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Burhaniye Mahallesi",
+    "address": "Yeşil Bursa Caddesi, No: 15",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "358"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kerpiçten inşa edilmiş, halkça 'Burhaniye Mahallesi Camii' diye bilinen mahalle camii; minaresi 1998'de demir iskelet ve saçla yeniden yapılmıştır.",
+    "en": "A neighborhood mosque built of adobe, known locally as the 'Burhaniye Neighborhood Mosque'; its minaret was rebuilt in 1998 with an iron frame and sheet metal."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapı",
+        "en": "Location and Structure"
+      },
+      "body": {
+        "tr": "Yapı, İnegöl, Burhaniye Mahallesi, Yeşil Bursa Caddesi, No: 15 adresinde yer almaktadır. Mahalle halkı tarafından \"Burhaniye Mahallesi Camii\" olarak bilinmektedir. Caminin ana yapısı kerpiç malzeme ile inşa edilmiştir. Aynı şekilde minaresi de özgün haliyle kerpiçten yapılmıştır. Ancak 1998 yılından önce meydana gelen bir depremde minarenin kaide üzerindeki bölümü yıkılmıştır. Bu yıkımın ardından, 1998 yılında demir profilden iskelet oluşturularak ve dış yüzeyi saç ile kaplanarak yeni bir minare inşa edilmiştir.",
+        "en": "The building is located in İnegöl, Burhaniye Neighborhood, on Yeşil Bursa Street, No. 15. It is known as the \"Burhaniye Neighborhood Mosque\" by the locals. The main structure of the mosque was built with adobe material. Similarly, its minaret was originally made of adobe. However, the section of the minaret above the base was destroyed in an earthquake that occurred before 1998. Following this destruction, a new minaret was built in 1998 by creating a skeleton from iron profiles and covering the outer surface with sheet metal."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "358"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ana_yapi_malzeme",
+      "label": {
+        "tr": "Ana yapı malzemesi",
+        "en": "Main structure material"
+      },
+      "value": "kerpiç",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "358"
+        }
+      ]
+    },
+    {
+      "key": "minare_malzeme_bugun",
+      "label": {
+        "tr": "Bugünkü minarenin malzemesi",
+        "en": "Present minaret material"
+      },
+      "value": "demir profil iskelet, saç kaplama",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "358"
+        }
+      ]
+    },
+    {
+      "key": "yeni_minare_yili",
+      "label": {
+        "tr": "Yeni minarenin yapıldığı yıl",
+        "en": "Year the new minaret was built"
+      },
+      "value": 1998,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "358"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "minare-1998",
+      "year": 1998,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Yıkılan minarenin yerine demir iskeletli, saç kaplı yeni minare",
+        "en": "New minaret with iron frame and sheet-metal cladding replaces the collapsed one"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "358"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami kerpiçten yapılmıştır. Minare, depremde yıkılan özgün kerpiç minarenin yerine 1998'de demir profil iskelet ve saç kaplamayla yeniden yapılmıştır.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "358-358"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1sPUalSHY0h2DUCiR_2IZGODoUyjCG42W",
+        "original_name": "01 (bu şekilde kullanabiliriz) DJI_20241112135611_0016_D_ODAK-Edit - Kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "358"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Burhaniye Camii (kitap s. 358)",
+        "en": "Burhaniye Mosque (book p. 358)"
+      },
+      "alt": {
+        "tr": "Burhaniye Camii fotoğrafı",
+        "en": "Photo of Burhaniye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1oh4HRZrY_gtMJaBjZQQgMIMFbSf4F2G6",
+        "original_name": "02 DJI_20241112135248_0006_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "358"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Burhaniye Camii (kitap s. 358)",
+        "en": "Burhaniye Mosque (book p. 358)"
+      },
+      "alt": {
+        "tr": "Burhaniye Camii fotoğrafı",
+        "en": "Photo of Burhaniye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1yeV9dP08NedS0APzUkn_PLsB7mfx7Yoa",
+        "original_name": "03 ERD08181 kopya 2.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "358"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Burhaniye Camii (kitap s. 358)",
+        "en": "Burhaniye Mosque (book p. 358)"
+      },
+      "alt": {
+        "tr": "Burhaniye Camii fotoğrafı",
+        "en": "Photo of Burhaniye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

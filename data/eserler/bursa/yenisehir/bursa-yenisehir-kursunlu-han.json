@@ -1,0 +1,294 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-kursunlu-han",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yenişehir",
+    "text_origin": "Bursa Vakıf Eserleri III. Cilt, Yenişehir bölümünden (s. 667-683) yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da doğrulanmış bir kaynaktan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri kitapta yok; sahada doğrulanmalı.",
+      "Bu eser için Hicri/Miladi tarihli kitabe kitapta yok ('Yapıların hiçbirinde kitabe bulunmamaktadır', s. 668).",
+      "Yapım tarihi ve banî bilgisi bu bölümde açıkça verilmiyor (vakfiye hanı Sinan Paşa'ya bağlıyor ama han bölümünde 'kim yaptırdı' denmiyor); banî/tarih boş bırakıldı.",
+      "Hanın arasta doğusundaki kervansarayla ilişkisi kaynaktan teyit edilmeli.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "relations[0]",
+        "note": "Kitap, hanı külliyenin dışında inşa edilmiş olarak tanımlıyor (s. 680) ama aynı vakfiyenin 'külliye bünyesinde' anılan iki büyük hanından biri sayıyor (s. 668); bu yüzden parent_id verilmedi, ilişki urban_context olarak yazıldı."
+      },
+      {
+        "field": "identity",
+        "note": "Kurşunlu Han'ın, vakfiyede anılan iki hanın hangisi olduğu ve Arasta bölümünde sözü edilen kervansarayla (arastanın doğusundaki kalıntılar) aynı yapı olup olmadığı kitapta söylenmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kurşunlu Han",
+    "en": "Kurşunlu Han"
+  },
+  "alternate_names": [],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "han",
+    "çarşı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Ulucami Mahallesi",
+    "address": "Sinanpaşa Sokak No. 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "680"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Yenişehir çarşısında, Sinanpaşa Sokak No. 2'de bulunan; Sinan Paşa Vakfiyesi'nde 'hâneyn-i kebîreyn' diye anılan iki büyük yapıdan biri olan han. Külliyenin dışında, çarşı içinde inşa edilmiştir; günümüze yalnızca birkaç dükkân ve taç kapısının bir bölümü ulaşmıştır.",
+    "en": "A han at Sinanpaşa Street No. 2 in Yenişehir's bazaar, one of the two large structures called 'hâneyn-i kebîreyn' in the Sinan Paşa Endowment Charter. Built outside the complex within the bazaar, only a few shops and part of the portal survive."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Han, Yenişehir ilçesi Ulucami Mahallesi, Sinanpaşa Sokak No. 2 adresindedir. Sinan Paşa Vakfiyesi'nde 'hâneyn-i kebîreyn' şeklinde tanımlanan iki büyük yapıdan biridir; külliyenin dışında, çarşı içinde inşa edilmiştir. Günümüze yalnızca birkaç dükkân ile taç kapısının bir bölümü ulaşabilmiştir.",
+        "en": "The han is at Sinanpaşa Street No. 2, Ulucami Neighborhood, Yenişehir. It is one of the two large structures defined as 'hâneyn-i kebîreyn' in the Sinan Paşa Endowment Charter, built outside the complex within the bazaar. Only a few shops and a section of the portal survive."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "680"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yenisehir-sinan-pasa-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Han, Sinan Paşa Vakfiyesi'nde anılan iki büyük hanından biridir; külliyenin dışında, çarşı içinde inşa edilmiştir.",
+        "en": "The han is one of the two large hans named in the Sinan Paşa charter; it was built outside the complex, within the bazaar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668, 680"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, çarşının içinde yer alır; günümüzde yalnızca birkaç dükkân ile taç kapısının bir bölümü ayaktadır.",
+      "en": "The han lies within the bazaar; today only a few shops and part of its portal stand."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden (Bursa Vakıf Eserleri III. Cilt, Yenişehir) yazıldı; yalnızca metindeki bilgiler kullanıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "668-680"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1b9xx0j8FK1n7A-tZQcDA9gqSx_89EF2p",
+        "original_name": "01 ERD09742 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "678"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kurşunlu Han (kitap s. 678)",
+        "en": "Kurşunlu Han (book p. 678)"
+      },
+      "alt": {
+        "tr": "Kurşunlu Han fotoğrafı",
+        "en": "Photo of Kurşunlu Han"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1SrBaAUN-5KjvKn6qvTzVGENRPPkuuRmQ",
+        "original_name": "03 ERD09763 imaret kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "679"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kurşunlu Han (kitap s. 679)",
+        "en": "Kurşunlu Han (book p. 679)"
+      },
+      "alt": {
+        "tr": "Kurşunlu Han fotoğrafı",
+        "en": "Photo of Kurşunlu Han"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1GHGzsImLy81RTo2KS6Zd8ZQO1U8EOE1G",
+        "original_name": "05 DJI_20241116212248_0053_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "679"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kurşunlu Han (kitap s. 679)",
+        "en": "Kurşunlu Han (book p. 679)"
+      },
+      "alt": {
+        "tr": "Kurşunlu Han fotoğrafı",
+        "en": "Photo of Kurşunlu Han"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1L3PlGW-mrOHAxY1uHvQxC-DWCQU8bri1",
+        "original_name": "07 ERD09683 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "679"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kurşunlu Han (kitap s. 679)",
+        "en": "Kurşunlu Han (book p. 679)"
+      },
+      "alt": {
+        "tr": "Kurşunlu Han fotoğrafı",
+        "en": "Photo of Kurşunlu Han"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1CPSPSPNdo_rqO9wfKPBJX1gbo71EHnL9",
+        "original_name": "01 ERD09770 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "680"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kurşunlu Han (kitap s. 680)",
+        "en": "Kurşunlu Han (book p. 680)"
+      },
+      "alt": {
+        "tr": "Kurşunlu Han fotoğrafı",
+        "en": "Photo of Kurşunlu Han"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

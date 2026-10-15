@@ -1,0 +1,366 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-carsi-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yenişehir",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Yenişehir bölümünden (s. 710-712) özetlenerek derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mahalle adı metinde yok.",
+      "Vakfiye elde yok; arşivden aranmalı.",
+      "Mimar kaynakta yok.",
+      "media_folder (Drive klasörü) henüz eşleştirilmedi.",
+      "Koordinat girilmedi; sahada ya da harita kaynağından doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Çarşı (Çifte-Belediye) Hamamı",
+    "en": "Çarşı (Çifte-Belediye) Bath"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "çifte hamam",
+    "Deli Hüseyin Paşa",
+    "1645",
+    "Belediye Hamamı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": null,
+    "address": "Cumhuriyet Caddesi, Çatalçeşme ile Belediye Meydanı Sokağı kesişimi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "710"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1645",
+      "en": "1645"
+    },
+    "start_year": 1645,
+    "end_year": 1645,
+    "hijri_year": null,
+    "century": 17,
+    "basis": {
+      "tr": "Vakfiyesi elde olmadığı için yapım yılı '1645'te Deli Hüseyin Paşa tarafından yaptırıldığı kabul edilmektedir' diye verilmiştir.",
+      "en": "Since the endowment charter is unavailable, the book says it 'is accepted that it was built by Deli Hüseyin Paşa in 1645'."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "710"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Deli Hüseyin Paşa",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "710"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "710-712"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "710"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "1645'te Deli Hüseyin Paşa'nın yaptırdığı kabul edilen, erkekler ve kadınlar bölümlü çifte hamam; 2024'te belediyece restore edilmiştir.",
+    "en": "Double bath accepted as built by Deli Hüseyin Paşa in 1645, with separate men's and women's sections; restored by the municipality in 2024."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Hamam Cumhuriyet Caddesi'nde Çatalçeşme ile Belediye Meydanı Sokağı'nın kesiştiği noktadadır; Çifte Hamam ve Belediye Hamamı gibi adlarla anılır. Vakfiyesi elde olmamakla birlikte 1645'te Deli Hüseyin Paşa tarafından yaptırıldığı kabul edilir. Kuzey-güney doğrultulu dikdörtgen planlı çifte hamamdır; iri moloz taş ve horasan harcıyla yapılmış, yalnız kapı ve pencere kemerleri ile kirpi saçaklar tuğladandır.",
+        "en": "The bath stands on Cumhuriyet Street where Çatalçeşme and Belediye Meydanı streets meet; it is known as Çifte (Double) Bath and Belediye (Municipal) Bath. Its endowment charter is unavailable but it is accepted that Deli Hüseyin Paşa built it in 1645. It is a north-south rectangular double bath of large rubble stone and Khorasan mortar, with only door and window arches and eave sawteeth in brick."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "710"
+        }
+      ]
+    },
+    {
+      "id": "erkekler",
+      "order": 2,
+      "title": {
+        "tr": "Erkekler Bölümü",
+        "en": "Men's Section"
+      },
+      "body": {
+        "tr": "Soyunmalık ve ılıklık mekânlarının özellikleri iki bölümde büyük ölçüde benzerdir. Soyunmalıklara kuzeydeki çökertme alınlıklı, zikzak tuğla bezemeli sivri kemerli kapıdan girilir; iki soyunmalık aynı ölçüdedir ve sivri kemerli tromplu kubbelerle, iki katlı sekizgen kasnaklara oturan kubbelerle örtülüdür. Erkekler bölümünün batı duvarında dışa taşkın aynalı tonozlu bir eyvan vardır. Yıldız planlı sıcaklıkta dört eyvan arasında kubbeli kare halvet hücreleri yer alır; eyvanlar altıgen ve yıldız açıklıklı düz tavanlıdır. Ortadaki sekizgen mermer göbek taşı zeminden yaklaşık 75 cm yüksektir. Güneydeki sekizgen eyvandan üç bölümlü, beşik tonozlu su deposuna, oradan külhana geçilir.",
+        "en": "Changing and tepid rooms of the two sections are largely similar. The changing rooms are entered from a door on the north with sunken pediment, zigzag brick motifs and pointed arches; both are the same size and domed on pointed-arch squinches over two-storey octagonal drums. The men's west wall has a projecting iwan with flattened barrel vault. The star-planned caldarium has domed square bathing cells between four iwans, with flat-ceilinged iwans bearing hexagonal and star openings. The central octagonal marble slab is about 75 cm above the floor. The south octagonal iwan opens to a three-part barrel-vaulted water tank and from there to the furnace."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "710-711"
+        }
+      ]
+    },
+    {
+      "id": "kadinlar",
+      "order": 3,
+      "title": {
+        "tr": "Kadınlar Bölümü",
+        "en": "Women's Section"
+      },
+      "body": {
+        "tr": "Kadınlar kısmına doğu cephedeki kapıdan girilir; kare planlı soyunmalık, üç bölümlü ılıklık, iki eyvanlı sıcaklık ve iki halvet hücresi ile erkeklerle ortak kullanılan üç bölümlü su deposundan oluşur. Soyunmalığın ortasında sekizgen planlı bir şadırvan vardır. Sıcaklık yanlarda iki beşik tonoz, ortada kubbeyle örtülüdür; sıcaklık dışında erkekler kısmına benzer özellik taşır.",
+        "en": "The women's section is entered from the east façade; it comprises a square changing room, three-part tepidarium, caldarium with two iwans, two bathing cells and a three-part water tank shared with the men's section. The changing room has an octagonal shadirvan at its centre. The caldarium is covered by two side barrel vaults and a central dome; otherwise it is similar to the men's section."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "711-712"
+        }
+      ]
+    },
+    {
+      "id": "durum",
+      "order": 4,
+      "title": {
+        "tr": "Kullanım ve Restorasyon",
+        "en": "Use and Restoration"
+      },
+      "body": {
+        "tr": "Isıtma sistemi verimli çalışmadığı için uzun süre kullanılamayan yapı el değiştirmiş ve terk edilmiş hale gelmiştir. Dış cephesi sıvalı, atıl görünümdeyken 2024'te belediye tarafından restore edilmiştir.",
+        "en": "Because its heating system did not work efficiently, the building went unused for long, changed hands and was abandoned. Its exterior plastered and in disrepair, it was restored by the municipality in 2024."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "712"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "goz_tasi_yuksekligi",
+      "label": {
+        "tr": "Göbek taşı yüksekliği",
+        "en": "Central slab height"
+      },
+      "value": 75,
+      "unit": "cm",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "711"
+        }
+      ],
+      "note": {
+        "tr": "'Yaklaşık' denmiştir.",
+        "en": "Described as approximate."
+      }
+    },
+    {
+      "key": "seki_yuksekligi",
+      "label": {
+        "tr": "Kadınlar ılıklığı seki yüksekliği",
+        "en": "Platform height in women's tepidarium"
+      },
+      "value": 50,
+      "unit": "cm",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "712"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Deli Hüseyin Paşa",
+      "role": {
+        "tr": "Yaptıran olarak kabul edilen",
+        "en": "Accepted as founder"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1645",
+      "year": 1645,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Deli Hüseyin Paşa tarafından yaptırıldığı kabul edilir",
+        "en": "Accepted to have been built by Deli Hüseyin Paşa"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "710"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2024",
+      "year": 2024,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Belediye tarafından restore edildi",
+        "en": "Restored by the municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "712"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, kuzey-güney doğrultulu dikdörtgen planlı bir çifte hamamdır; iri moloz taştan yapılmış, kapı ve pencere kemerleri ile saçakları tuğladır. Erkekler ve kadınlar için ayrı girişleri, kubbeli soyunmalıkları ve ılıklıkları vardır. Erkekler bölümünün yıldız planlı sıcaklığında dört eyvan ve ortada sekizgen mermer göbek taşı bulunur.",
+      "en": "The bath is a north-south rectangular double bath built of large rubble stone, with brick door and window arches and eaves. Men and women have separate entrances, domed changing rooms and tepid rooms. The men's star-planned hot room has four iwans and an octagonal marble central slab."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "710-712"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1mU2H-BKLdB0Zx0WTajWlLnQ4xgDDiHJc",
+        "original_name": "01 DJI_20241116194736_0002_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "710"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çarşı (Çifte-Belediye) Hamamı (kitap s. 710)",
+        "en": "Çarşı (Çifte-Belediye) Bath (book p. 710)"
+      },
+      "alt": {
+        "tr": "Çarşı (Çifte-Belediye) Hamamı fotoğrafı",
+        "en": "Photo of Çarşı (Çifte-Belediye) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "105Rxt2WXiXd0RBk5BCuYMTceTZCGhUDd",
+        "original_name": "06 ERD09616 kopya-2.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "712"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çarşı (Çifte-Belediye) Hamamı (kitap s. 712)",
+        "en": "Çarşı (Çifte-Belediye) Bath (book p. 712)"
+      },
+      "alt": {
+        "tr": "Çarşı (Çifte-Belediye) Hamamı fotoğrafı",
+        "en": "Photo of Çarşı (Çifte-Belediye) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

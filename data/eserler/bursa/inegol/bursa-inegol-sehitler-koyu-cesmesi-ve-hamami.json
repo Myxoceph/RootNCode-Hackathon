@@ -1,0 +1,311 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-sehitler-koyu-cesmesi-ve-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hamamın ve çeşmenin yapım tarihi, banisi kitapta yok; kitabe de yok.",
+      "Köy camisinin adı verilmiyor; hedef kimlik 'bursa-inegol-sehitler-koyu-camii' tahminidir.",
+      "Hamamla çeşmenin ayrı kayıt olup olmayacağı veri ekibince karara bağlanmalı; kitap tek bölümde veriyor, tek kayıt (type: hamam, secondary: cesme) açıldı.",
+      "Dönem ('era') ve tarihlendirme kitapta yok; 'era' boş.",
+      "Hamam ölçüleri kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[hamam]",
+        "note": "İngilizce metin 'Since the inside ... is completely plastered, its material is identifiable' diyor; Türkçe metin 'malzemesi belli olmaktadır' diyor. Mantıken 'belli olmamaktadır' beklenirdi; her iki dilde de kaynağın ifadesi korundu."
+      },
+      {
+        "field": "waqf",
+        "note": "Vakıf bağı doğrudan kayıtla değil, köy camisinin vakfiyesi çevresindeki belgelere dayalı bir değerlendirmeyle kuruluyor; bu nedenle 'probable'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şehitler Köyü Çeşmesi ve Hamamı",
+    "en": "Şehitler Village Fountain and Bath"
+  },
+  "alternate_names": [
+    {
+      "tr": "Doma",
+      "en": "Doma",
+      "note": "Köyün eski adı"
+    },
+    {
+      "tr": "Bekceviz",
+      "en": "Bekceviz",
+      "note": "Köyün eski adı"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [
+    "cesme"
+  ],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "hamam",
+    "çeşme",
+    "terk edilmiş",
+    "Şehitler Köyü",
+    "Doma",
+    "Bekceviz"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Şehitler Köyü",
+    "address": "Şehitler Köyü",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "400"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Köy camisinin vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "400"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Eski adı Doma/Bekceviz olan Şehitler köyünde, vakıf yapısı olduğu düşünülen terk edilmiş hamam ve güney duvarındaki çeşmesi.",
+    "en": "An abandoned bath, thought to be a foundation structure, and the fountain on its south wall in Şehitler village, formerly Doma/Bekceviz."
+  },
+  "sections": [
+    {
+      "id": "koy-ve-vakif",
+      "order": 1,
+      "title": {
+        "tr": "Köy ve Vakıf Durumu",
+        "en": "Village and Foundation Status"
+      },
+      "body": {
+        "tr": "İnegöl'e bağlı Şehitler köyü eski kaynaklarda \"Doma\" ve \"Bekceviz\" adlarıyla anılır; Kurtuluş Savaşı'nda çok şehit verildiği için 1970'ten itibaren \"Şehitler\" adını almıştır. Hamamın kitabesi yoktur ve Vakıflar Genel Müdürlüğü arşivinde doğrudan bir vakıf kaydına rastlanmamıştır; ancak köy camisinin vakfiyesine ilişkin belgeler doğrultusunda yapılan değerlendirmelerle hamamın da vakıf yapısı olduğu kanaati oluşmuştur.",
+        "en": "Şehitler village of İnegöl is known as \"Doma\" and \"Bekceviz\" in old sources; it was named \"Şehitler (Martyrs)\" from 1970 because of the large number of martyrs in the War of Independence. The bath has no inscription and no direct foundation record exists in the archives of the General Directorate of Foundations; however, evaluations based on documents about the village mosque's endowment charter led to the conclusion that the bath was also a foundation structure."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 2,
+      "title": {
+        "tr": "Çeşme",
+        "en": "The Fountain"
+      },
+      "body": {
+        "tr": "Çeşme, köydeki tarihî hamamın güney duvarında, eksenin batısına denk gelen noktadadır ve yapının bir parçası olarak dikkat çeker. Batı ve güney duvarlarında ortalanmış birer mermer kurna vardır. Çeşmeye ilişkin ayrıntılı bilgi ve kitabe günümüze ulaşmamıştır.",
+        "en": "The fountain is on the south wall of the village's historic bath, west of the axis, and appears as part of the building. There is a marble basin centred on each of the west and south walls. No detailed information or inscription about the fountain has survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "id": "hamam",
+      "order": 3,
+      "title": {
+        "tr": "Hamam",
+        "en": "The Bath"
+      },
+      "body": {
+        "tr": "Kuzey-güney doğrultulu hamam düzensiz dikdörtgen planlıdır. Doğu-batı doğrultulu dikdörtgen giriş mekânını daha büyük soyunmalık, kare planlı ılıklık, sıcaklık ve daha küçük temizlik birimi ile doğu-batı yönlü dikdörtgen bir su deposu izler. Yapı dıştan moloz taş ve aralarda tuğla ile örülmüş, üstte sıva kalıntıları görülür; kubbeler dıştan betonla kaplıdır. İçi tümüyle sıvalıdır. Hamam terk edilmiş durumdadır.",
+        "en": "The north-south bath has an irregular rectangular plan. An east-west rectangular entrance space is followed by a larger changing room, a square tepidarium, a caldarium and a smaller washing unit, and an east-west rectangular water tank. The outside is rubble stone with brick between; plaster remains are visible and the domes are covered with concrete outside. The interior is entirely plastered. The bath is abandoned."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "400"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "bolumler",
+      "label": {
+        "tr": "Hamam bölümleri",
+        "en": "Bath sections"
+      },
+      "value": "Giriş, soyunmalık, ılıklık, sıcaklık, temizlik birimi, su deposu",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "key": "kurna",
+      "label": {
+        "tr": "Çeşmedeki mermer kurna sayısı",
+        "en": "Marble basins at the fountain"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "key": "ad_yili",
+      "label": {
+        "tr": "Köye 'Şehitler' adının verildiği yıl",
+        "en": "Year the village was named Şehitler"
+      },
+      "value": 1970,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "400"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "ad-1970",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Köye 'Şehitler' adı verildi",
+        "en": "Village renamed 'Şehitler'"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "400"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-inegol-sehitler-koyu-camii",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Köy camisinin vakfiyesine ilişkin belgelere dayanarak hamamın da vakıf yapısı olduğu sonucuna varılmıştır.",
+        "en": "Based on documents on the village mosque's endowment charter, the bath was concluded to be a foundation structure too."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "400"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "outdoor",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Köydeki terk edilmiş hamam, kuzey-güney doğrultulu, düzensiz dikdörtgen planlı, moloz taş ve tuğla örgülü bir yapıdır; kubbeleri dıştan beton kaplıdır. Güney duvarında, eksenin batısında bir çeşme ve batı ile güney duvarlarında birer mermer kurna bulunur.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "400-400"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1qi8os-JbvTrP3VazI7MOAOJIda1pEeY5",
+        "original_name": "01 DJI_20241113212316_0074_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "400"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şehitler Köyü Çeşmesi ve Hamamı (kitap s. 400)",
+        "en": "Şehitler Village Fountain and Bath (book p. 400)"
+      },
+      "alt": {
+        "tr": "Şehitler Köyü Çeşmesi ve Hamamı fotoğrafı",
+        "en": "Photo of Şehitler Village Fountain and Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-hamidiye-altinbas-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin, s. 359-363) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı yalnızca '1960'lı yıllar' olarak verildi; kesin yıl bulunmalı.",
+      "Caminin plan ve mimari tarifi (kubbe sayısı, minare) bu bölümde yok.",
+      "Eski ahşap mahalle camisinin yapım tarihi ve banîsi kitapta yok.",
+      "Caminin banîsi doğrudan belirtilmediği için founder boş; halkın katkısı ve Çayırlı Hoca'nın öncülüğü people ve sections'ta.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.address",
+        "note": "Türkçe metinde 'Has tahane Caddesi' (satır bölünmesi), İngilizce 'Hastahane Street'; adres 'Hastahane Caddesi' alındı."
+      },
+      {
+        "field": "sections[mahalle-tarihi]",
+        "note": "Metin göçü I. Abdülhamid dönemine, mahalleye adını veren camiyi II. Abdülhamid'e bağlar; çelişki yok ama günümüzdeki caminin bu 'II. Abdülhamid camisi' ile aynı olup olmadığı belirtilmez."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hamidiye (Altınbaş) Camii",
+    "en": "Hamidiye (Altınbaş) Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "Hamidiye Mahallesi",
+    "Tatarlık Mahallesi",
+    "Altınbaş Hafız",
+    "kıraathane",
+    "VGM restorasyonu"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Cuma Mahallesi",
+    "address": "Hastahane Caddesi, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "359"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1960'lı yıllar",
+      "en": "1960s"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap yalnızca 'Günümüzdeki cami 1960'lı yıllarda eski mahalle camisinin yerine yapılmıştır' der; kesin yıl yok.",
+      "en": "The book only says the present mosque was built in the 1960s on the site of the old neighborhood mosque; no exact year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "362"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1960'lı yıllarda halkın katkısıyla Altınbaş Hafız lakaplı Ahmet Çayırlı Hoca Efendi'nin öncülüğünde eski mahalle camisinin yerine yapılan kâgir, kubbeli cami; VGM 2008 ve 2014'te restore etmiştir.",
+    "en": "A masonry, domed mosque built in the 1960s on the site of the old neighborhood mosque with public contributions under the leadership of Ahmet Çayırlı Hoca Efendi, known as Altınbaş Hafız; restored by the General Directorate of Foundations in 2008 and 2014."
+  },
+  "sections": [
+    {
+      "id": "mahalle-tarihi",
+      "order": 1,
+      "title": {
+        "tr": "Mahallenin Tarihi",
+        "en": "History of the Neighborhood"
+      },
+      "body": {
+        "tr": "Sultan I. Abdülhamid döneminde Özi Kalesi'nin düşmesi üzerine Kırım coğrafyasından Anadolu'ya yönelen Tatar Müslüman göçmenlerin bir bölümü Eskişehir çevresine yerleştirilirken, bir kısmı da İnegöl'e gelmiş ve burada Hamidiye Mahallesi'nin çekirdeğini oluşturan \"Tatarlık Mahallesi\" isimli mahalleyi kurmuştur. Sonraki yıllarda Balkanlar ve Kafkasya'dan gerçekleşen göçlerle mahallenin nüfusu artmış, nüfus artışıyla birlikte Sultan II. Abdülhamid'in adına inşa edilen cami merkezli yeni bir yerleşim oluşmuştur. Bu nedenle, mahallenin adı zamanla \"Tatarlık\" yerine \"Hamidiye\" olarak anılmaya başlanmıştır.",
+        "en": "During the reign of Sultan Abdülhamid I, after the fall of Ochakov Castle, some of the Tatar Muslim immigrants who moved from the Crimean region to Anatolia were settled around Eskişehir, while others came to İnegöl and founded the neighborhood known as the \"Tatarlık Mahallesi\" (Tatar Neighborhood), which formed the core of the Hamidiye Neighborhood. In the following years, the population of the neighborhood increased with the migrations from the Balkans and the Caucasus, and with the increase in population, a new settlement centered on the mosque built in the name of Sultan Abdülhamid II was formed. For this reason, the name of the neighborhood began to be called \"Hamidiye\" instead of \"Tatarlık\" over time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "359, 362"
+        }
+      ]
+    },
+    {
+      "id": "bugunku-cami",
+      "order": 2,
+      "title": {
+        "tr": "Günümüzdeki Cami ve Altınbaş Hafız",
+        "en": "Present Mosque and Altınbaş Hafız"
+      },
+      "body": {
+        "tr": "Günümüzdeki Hamidiye Mahallesi Camii, halkın katkılarıyla ve \"Altınbaş Hafız\" lakabıyla tanınan Hocaköylü Ahmet Çayırlı Hoca Efendi'nin öncülüğünde, 1960'lı yıllarda eski mahalle camisinin yerine kâgir malzeme ile ve kubbeli olarak inşa edilmiştir. Ahmet Hamdi Çayırlı, 1923 yılında İnegöl'de doğmuştur. İlk eğitimini burada tamamladıktan sonra İstanbul'a giderek dinî eğitim almıştır. Daha sonra İnegöl'e dönerek çeşitli dinî hizmetlerde bulunmuş, başta Devlet Hastanesi olmak üzere, kentte birçok hayır kurumunun inşa edilmesine öncülük etmiştir. 1 Ekim 2006 tarihinde vefat eden Çayırlı Hoca, Hocaköy Mezarlığı'na defnedilmiştir.",
+        "en": "Today's Hamidiye Neighborhood Mosque was built with masonry and a dome on the site of the old neighborhood mosque in the 1960s, with the contributions of the public and under the leadership of Hocaköylü Ahmet Çayırlı Hoca Efendi, known by the nickname \"Altınbaş Hafız\". Ahmet Hamdi Çayırlı was born in İnegöl in 1923. After completing his primary education there, he went to Istanbul and received religious education. He later returned to İnegöl and provided various religious services, leading the construction of many charitable institutions in the city, most notably the State Hospital. Çayırlı Hoca, who passed away on October 1, 2006, was buried in the Hocaköy Cemetery."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "362-363"
+        }
+      ]
+    },
+    {
+      "id": "kiraathane",
+      "order": 3,
+      "title": {
+        "tr": "Kıraathane ve Restorasyon",
+        "en": "Coffee House and Restoration"
+      },
+      "body": {
+        "tr": "Ahşap yapılı eski Hamidiye Mahalle Camii'nde olduğu gibi, günümüzdeki Hamidiye Mahalle Camii'nin avlusunda da bir kıraathane inşa edilmiştir. Bu durum, İnegöl'e özgü bir geleneğin devamı niteliğindedir. Özellikle mahalle camilerinin müştemilatında, girişe yakın bir alana kıraathane yapılması, İnegöl yerelinde köklü bir uygulamadır. Bugün hâlen ibadete açık pek çok mahalle camisinin bünyesinde bir kıraathane ve çay ocağı yer almaktadır. Cami ve müştemilatı 2008 ve 2014 tarihlerinde Vakıflar Genel Müdürlüğü tarafından restore edilmiştir.",
+        "en": "As in the old wooden Hamidiye Neighborhood Mosque, a coffee house was built in the courtyard of today's Hamidiye Neighborhood Mosque. This is a continuation of a tradition specific to İnegöl. Especially in the annexes of neighborhood mosques, the construction of a coffee house in an area close to the entrance is a deep-rooted practice in İnegöl. Today, many neighborhood mosques that are still open for worship have a coffee house and a tea house. The mosque and its outbuildings were restored by the General Directorate of Foundations in 2008 and 2014."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "363"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "kâgir",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "362"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon_sayisi",
+      "label": {
+        "tr": "VGM restorasyon sayısı (2008, 2014)",
+        "en": "Number of General Directorate restorations (2008, 2014)"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "363"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ahmet Hamdi Çayırlı (Altınbaş Hafız)",
+      "role": {
+        "tr": "Hocaköylü; camiyi yaptıran halk girişiminin öncüsü (d. 1923, ö. 1 Ekim 2006)",
+        "en": "Hocaköy native; leader of the public effort that built the mosque (b. 1923, d. 1 October 2006)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM tarafından restorasyon",
+        "en": "Restoration by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "363"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM tarafından restorasyon",
+        "en": "Restoration by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "363"
+        }
+      ]
+    },
+    {
+      "id": "cayirli-vefat-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Ahmet Hamdi Çayırlı'nın vefatı (1 Ekim 2006)",
+        "en": "Death of Ahmet Hamdi Çayırlı (1 October 2006)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "363"
+        }
+      ],
+      "note": {
+        "tr": "Kesin tarih metinde '1 Ekim 2006'.",
+        "en": "Exact date in the text is 1 October 2006."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami kâgir malzemeyle yapılmış kubbeli bir mahalle camisidir; avlusunda İnegöl geleneğine uygun bir kıraathane bulunur.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "359-363"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "19v4NmqBb0aUFL2LyMuOTOl1_Po_d21XM",
+        "original_name": "01 DJI_20241110195812_0171_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "359"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hamidiye (Altınbaş) Camii (kitap s. 359)",
+        "en": "Hamidiye (Altınbaş) Mosque (book p. 359)"
+      },
+      "alt": {
+        "tr": "Hamidiye (Altınbaş) Camii fotoğrafı",
+        "en": "Photo of Hamidiye (Altınbaş) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1sWf-er0RuCmngg_odUx2xkyDEqNQq0wL",
+        "original_name": "05 DJI_20241110202120_0215_D_ODAK.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "362"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hamidiye (Altınbaş) Camii (kitap s. 362)",
+        "en": "Hamidiye (Altınbaş) Mosque (book p. 362)"
+      },
+      "alt": {
+        "tr": "Hamidiye (Altınbaş) Camii fotoğrafı",
+        "en": "Photo of Hamidiye (Altınbaş) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1WQa30Nq8OvaHPx16LVLVxT5XWMGRIMRj",
+        "original_name": "10 ERD08125-Geliştirilmiş-NR kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "363"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hamidiye (Altınbaş) Camii (kitap s. 363)",
+        "en": "Hamidiye (Altınbaş) Mosque (book p. 363)"
+      },
+      "alt": {
+        "tr": "Hamidiye (Altınbaş) Camii fotoğrafı",
+        "en": "Photo of Hamidiye (Altınbaş) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

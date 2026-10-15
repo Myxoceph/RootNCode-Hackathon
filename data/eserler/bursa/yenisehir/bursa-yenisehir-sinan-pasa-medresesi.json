@@ -1,0 +1,376 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-sinan-pasa-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yenişehir",
+    "text_origin": "Bursa Vakıf Eserleri III. Cilt, Yenişehir bölümünden (s. 667-683) yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da doğrulanmış bir kaynaktan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri kitapta yok; sahada doğrulanmalı.",
+      "Bu eser için Hicri/Miladi tarihli kitabe kitapta yok ('Yapıların hiçbirinde kitabe bulunmamaktadır', s. 668).",
+      "Vakfiye metni/şartları kitapta yalnızca özetlenmiş; VGM Arşivi K. 77 numaralı vakfiyeden tam metin bulunursa waqf.deed alanına eklenmeli.",
+      "Medresenin restorasyon yılı kitapta verilmiyor ('son yıllarda'); kaynak bulunursa timeline'a eklenmeli.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf.deed.date_display",
+        "note": "Vakfiye tarihi külliye (s. 668), imaret (s. 678) bölümlerinde 'H. Rebiyülahir 998 / M. Şubat 1590', medrese bölümünde (s. 675) 'H. Rebiyülevvel 998 / M. Şubat 1590' olarak geçiyor; Hicri ay adı tutarsız (Rebiyülahir / Rebiyülevvel), Miladi ay aynı. Kaynağa sadık kalındı; ay kesin değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sinan Paşa Medresesi",
+    "en": "Sinan Paşa Madrasa"
+  },
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "bursa-yenisehir-sinan-pasa-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "üç eyvanlı",
+    "restoran"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Ulucami Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "675"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. Rebiyülevvel 998 / M. Şubat 1590 tarihli vakfiyede anılır",
+      "en": "Mentioned in the charter of Rabi al-Awwal AH 998 / February AD 1590"
+    },
+    "start_year": null,
+    "end_year": 1590,
+    "hijri_year": 998,
+    "century": 16,
+    "basis": {
+      "tr": "Medresenin kendi yapım yılı verilmiyor; yalnızca vakfiyede varlığı belgeli. Külliyenin yapım yılları 1572-1582.",
+      "en": "The madrasa's own construction year is not given; only its presence in the charter is documented. The complex was built 1572-1582."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "675"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Koca Sinan Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "667"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Koca Sinan Paşa vakfı (Sinan Paşa Vakfiyesi)",
+    "deed": {
+      "date_display": "H. Rebiyülahir 998 / M. Şubat 1590",
+      "excerpt": {
+        "tr": "Vakıflar Genel Müdürlüğü Arşivi'nde K. 77 numarada kayıtlı, 132 sayfalık defter halinde vakfiye; ilk sayfasında III. Murad'a ait tuğra bulunur.",
+        "en": "Registered in the General Directorate of Foundations Archives under no. K. 77; a 132-page register whose first page bears the tughra of Murad III."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668-669"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "675"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sinan Paşa Külliyesi'nin camisinin kuzeyindeki, kareye yakın planlı, üç eyvanlı ve dört kapalı mekânlı medresesi. Restore edilmiş, bir süre öğrenci yurdu olarak kullanılmış, bugün restoran işlevi görmektedir.",
+    "en": "The madrasa north of the mosque in the Sinan Paşa Complex has a nearly square plan with three iwans and four covered spaces. It was restored, used for a time as a student dormitory, and now functions as a restaurant."
+  },
+  "sections": [
+    {
+      "id": "vakfiye-ve-gorevliler",
+      "order": 1,
+      "title": {
+        "tr": "Vakfiyedeki Yeri ve Şartlar",
+        "en": "Place in the Charter and Conditions"
+      },
+      "body": {
+        "tr": "Vakfiyede külliyenin bir birimi olarak caminin kuzeyinde konumlandığı belirtilir. Sinan Paşa, ders verecek kişinin takva sahibi, faziletli, ilimlerin usulü ve füruu konusunda bilgili, makul ve meşru biri olmasını şart koşmuştur. Müderrise günlük 50 akçe ücret ayrılmış; müderris aynı zamanda Yenişehir'deki vakıfların nazırlığını üstlenip her yıl başında gelir-gider hesaplarını mütevelliye sunacak, bunun için ayrıca günlük 10 akçe alacaktır.",
+        "en": "The charter places it north of the mosque as a unit of the complex. Sinan Paşa required the teacher to be pious, virtuous, knowledgeable in the principles and branches of science, reasonable and legitimate. The lecturer was allocated 50 silver coins a day and, as overseer of Yenişehir's foundations presenting the accounts to the trustee each year, a further 10 coins a day."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "675"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kareye yakın planlı medrese eş boyutlu üç eyvan ile dört kapalı mekândan oluşur. Avluya bakan doğu cephede eyvanların sivri kemerleri bulunur; kuzeydeki eyvanın kemeri kısmen tahrip olmuştur. Ana eksenin güneyinde dört, kuzeyinde üç sivri kemerli ve alınlıklı dikdörtgen pencere vardır; kuzey ve batı cepheler sağır duvar karakterindedir. Duvarlar dıştan moloz taş ve tuğlanın almaşık örgüsüyle yapılmıştır.",
+        "en": "The nearly square madrasa has three iwans of equal size and four covered spaces. The east façade facing the courtyard has the pointed iwan arches, that of the north iwan partly destroyed. South of the main axis are four and north three rectangular windows with pointed arches and pediments; the north and west façades are blank walls. The walls are of alternating rubble stone and brick."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "675-677"
+        }
+      ]
+    },
+    {
+      "id": "durum",
+      "order": 3,
+      "title": {
+        "tr": "Günümüzdeki Durum",
+        "en": "Present Condition"
+      },
+      "body": {
+        "tr": "Son yıllarda restore edilen medrese bir süre öğrenci yurdu olarak kullanılmış, günümüzde restoran işlevi görmektedir.",
+        "en": "Restored in recent years, the madrasa was used as a student dormitory for a time and now functions as a restaurant."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "676-677"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Eyvan sayısı",
+        "en": "Number of iwans"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "675"
+        }
+      ]
+    },
+    {
+      "key": "kapali_mekan",
+      "label": {
+        "tr": "Kapalı mekân sayısı",
+        "en": "Covered spaces"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "675"
+        }
+      ]
+    },
+    {
+      "key": "muderris_gunluk_ucret",
+      "label": {
+        "tr": "Müderris günlük ücreti",
+        "en": "Lecturer's daily salary"
+      },
+      "value": 50,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "675"
+        }
+      ]
+    },
+    {
+      "key": "nazirlik_gunluk_ucret",
+      "label": {
+        "tr": "Nazırlık görevi günlük ücreti",
+        "en": "Daily salary for overseer duty"
+      },
+      "value": 10,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "675"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-anilma",
+      "year": 1590,
+      "date": null,
+      "hijri": "Rebiyülevvel 998",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiyede medresenin varlığı belirtildi (H. Rebiyülevvel 998 / M. Şubat 1590)",
+        "en": "Madrasa mentioned in the endowment charter (Rabi al-Awwal AH 998 / Feb. AD 1590)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "675"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yenisehir-sinan-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Medrese, Sinan Paşa Külliyesi'nin bir birimidir.",
+        "en": "The madrasa is a unit of the Sinan Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "675"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese kareye yakın planlıdır; avluya bakan doğu cephesinde üç eşit boyutlu eyvanın sivri kemerleri sıralanır. Kuzey ve batı cepheleri pencere açılmayan sağır duvardır. Dış duvarlarda moloz taş ve tuğla sıraları dönüşümlü uzanır.",
+      "en": "The madrasa has a nearly square plan; on its east façade facing the courtyard the pointed arches of three equal iwans line up. The north and west façades are blank walls. The outer walls show alternating courses of rubble stone and brick."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden (Bursa Vakıf Eserleri III. Cilt, Yenişehir) yazıldı; yalnızca metindeki bilgiler kullanıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "667-677"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1DCGisR3YBKqWKwpmCUGNQhYw1evhugvn",
+        "original_name": "04 ERD09749 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "677"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sinan Paşa Medresesi (kitap s. 677)",
+        "en": "Sinan Paşa Madrasa (book p. 677)"
+      },
+      "alt": {
+        "tr": "Sinan Paşa Medresesi fotoğrafı",
+        "en": "Photo of Sinan Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1mEcFXnIzGCfmnJzDtQk1kbe6rudX2AOQ",
+        "original_name": "05 ERD09696 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "677"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sinan Paşa Medresesi (kitap s. 677)",
+        "en": "Sinan Paşa Madrasa (book p. 677)"
+      },
+      "alt": {
+        "tr": "Sinan Paşa Medresesi fotoğrafı",
+        "en": "Photo of Sinan Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

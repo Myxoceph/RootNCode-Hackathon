@@ -1,0 +1,468 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-karacaahmet-kervansarayi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hedef kimlik 'bursa-karacabey-karacabey-imareti' tahminidir; kitap yalnızca 'Karacabey'deki imaret' der. İlgili kayıtla eşlenmeli.",
+      "Yapım yılı kitapta yok.",
+      "Kitaptaki PDF s. 62 (basılı 399) sayfası bu bölümün devamıdır ya da boştur (metin yok); teyit edilmeli.",
+      "Karaca Bey'in tam adı/kimliği ve yapı ile 'Karacaahmet' adının bağı kitapta açıklanmıyor.",
+      "'era' alanı erken-osmanli olarak ekip tarafından seçildi (XIV. yüzyıl sonu / 1455 sonrası); teyit edilmeli.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitap bölüm başlığı 'Karacaahmet Kervansarayı' iken metinde banî 'Karaca Bey' olarak geçer; 'Ahmet' adı metinde açıklanmaz."
+      },
+      {
+        "field": "dating",
+        "note": "Bazı araştırmacılar XIV. yüzyıl sonu, Ayverdi 1455 sonrası diyor; ikisi birlikte saklandı."
+      },
+      {
+        "field": "sections[plan]",
+        "note": "Türkçe metin giriş kapısını 'yuvarlak kemerli' (eyvan içinde), cephe anlatımında ise 'basık kemerli' diyor; İngilizce de 'round-arched' ve 'flattened arch' diyor. Kitabın kendi ifadesi korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Karacaahmet Kervansarayı",
+    "en": "Karacaahmet Caravanserai"
+  },
+  "alternate_names": [
+    {
+      "tr": "Karaca Bey Kervansarayı",
+      "en": "Karaca Bey Caravanserai"
+    }
+  ],
+  "type": "kervansaray",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Karaca Bey",
+    "kervansaray",
+    "2008 restorasyon",
+    "tarihî restoran",
+    "üçgen payanda"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Ortaköy Mahallesi",
+    "address": "Kervansaray Caddesi, No: 43",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "395"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIV. yüzyıl sonu ya da 1455 sonrası (görüşler ayrışıyor)",
+      "en": "Late 14th century or after 1455 (views differ)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Bazı araştırmacılar XIV. yüzyıl sonu der; Ayverdi, Karacabey'deki imaretin vakıfları arasında yer aldığı için 1455 sonrasını ileri sürer. Kesin yıl yok.",
+      "en": "Some researchers say end of the 14th century; Ayverdi suggests after 1455 because it was among the endowments of the Karacabey imaret. No exact year."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "396"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Karaca Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "395"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Karacabey'deki imaretin vakıfları",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "396"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Karaca Bey tarafından yaptırılan, üç sahınlı, üçgen payandalı, 2008'de restore edilip tarihî restoran olarak kullanılan kervansaray.",
+    "en": "A three-aisled caravanserai with triangular buttresses built by Karaca Bey, restored in 2008 and now used as a historic restaurant."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Banî ve Tarihleme",
+        "en": "Location, Founder and Dating"
+      },
+      "body": {
+        "tr": "Yapı İnegöl Ortaköy Mahallesi, Kervansaray Caddesi No: 43'tedir. Kervansaray, II. Murad ve Fâtih Sultan Mehmed dönemlerinin önde gelen devlet adamlarından Karaca Bey tarafından yaptırılmıştır. Doğrudan bir vakfiye kaydına ulaşılamamıştır. Bazı araştırmacılar yapıyı XIV. yüzyıl sonlarına tarihlerken Ekrem Hakkı Ayverdi, kervansarayın Karacabey'deki imaretin vakıfları arasında yer almasını dikkate alarak 1455 sonrası bir tarihi daha uygun görür.",
+        "en": "The building is at Ortaköy Neighborhood, Kervansaray Street No. 43, İnegöl. The caravanserai was built by Karaca Bey, one of the leading statesmen of the reigns of Murad II and Fâtih Sultan Mehmed. No direct endowment record has been found. While some researchers date it to the end of the 14th century, Ekrem Hakkı Ayverdi suggests a date after 1455 is more appropriate, considering that it was among the endowments of the imaret in Karacabey."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "395-396"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Örtü",
+        "en": "Plan and Covering"
+      },
+      "body": {
+        "tr": "Kuzey-güney doğrultulu dikdörtgen planlı yapı, üçerden iki sıra dikdörtgen kesitli destekle boylamasına üç sahına ayrılmıştır. Destekleri bağlayan sivri kemerler kuzey ve güney cephelerde duvara gömülü payelere oturur. Orta sahın sivri beşik tonozludur; güney duvarında dıştan beşik tonozlu bir eyvan içinde yuvarlak kemerli giriş, kuzey duvarında aks üzerinde üstlük penceresi vardır. Yan sahınlar da sivri beşik tonozludur. Yapının tamamını örten büyük bir beşik tonoz, bütün yapıyı kaplayan bir çatı görünümündedir.",
+        "en": "The rectangular building oriented north-south is divided into three longitudinal bays by rectangular-section supports in two rows of three. Pointed arches connecting the supports sit on piers embedded in the north and south walls. The central nave has a pointed barrel vault; on the south wall a round-arched entrance within an externally barrel-vaulted iwan, and on the north wall an axial upper window. The side naves are also pointed barrel-vaulted. The covering is a large barrel vault over the whole building, appearing as a roof enveloping the structure."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396-397"
+        }
+      ]
+    },
+    {
+      "id": "cephe",
+      "order": 3,
+      "title": {
+        "tr": "Cepheler ve Bezeme",
+        "en": "Façades and Decoration"
+      },
+      "body": {
+        "tr": "Doğu, batı ve kuzey cephelerde aksın iki yanında ikişer üçgen kesitli payanda bulunur; payandalar beden duvarlarının yaklaşık yarısı yüksekliğindedir. Güney cephedeki basık kemerli giriş kapısının iki yanında birer pencere vardır; doğu ve batı cepheler tamamen sağırdır, kuzeydeki mazgal pencere sonradan genişletilmiştir. Uzun ve kısa cephelerde köprülerdeki selyaranları andıran mahmuz biçiminde ikişer üçgen çıkıntı vardır. İç ve dışta süsleme yoktur; yalnızca giriş kapısı kemer alınlığında tuğlayla örülmüş balıksırtı motifi dikkat çeker.",
+        "en": "On the east, west and north façades two triangular-section buttresses flank the axis, about half the height of the walls. The south entrance has a flattened arch with a window on each side; the east and west façades are blind and the north loophole window was later enlarged. Both long and short façades have two spur-shaped triangular protrusions reminiscent of bridge cutwaters. There is no ornament inside or outside except a simple herringbone brick pattern on the arch pediment of the entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396-398"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-restorasyon",
+      "order": 4,
+      "title": {
+        "tr": "Kullanım ve Restorasyon",
+        "en": "Use and Restoration"
+      },
+      "body": {
+        "tr": "1982'de ağıl olarak kullanılan yapının dış köşeleri kısmen yıkılmış, tonoz örtüsünün orta bölümü tamamen çökmüş, kapı kemeri ve ocak nişlerinin büyük bölümü tahrip olmuştu. 1983'te kültür mantarı üretim çiftliği olarak kullanılmaya başlanmış, güneydoğu köşedeki payandanın yanına büyük bir havuz eklenmiş, ocak nişleri pencereye çevrilmiş, kuzey duvarına büyük bir pencere açılmıştır. Uzun süre harap kalan yapı, kamu kurumlarının girişimi ve İnegöl Belediyesi'nin desteğiyle 2008'de aslına uygun restore edilmiştir; bugün tarihî restoran olarak hizmet vermektedir. Taç kapı bir sıra kesme taş ve üç sıra tuğlayla, yan duvarlar iri moloz taş ve bir sıra tuğla hatılla örülmüş, üst örtü alaturka kiremitle kaplanmıştır.",
+        "en": "By 1982 the building, used as a sheep pen, had its outer corners partly collapsed, the middle of the vault fallen and the door arch and most hearth niches destroyed. In 1983 it began to be used as a mushroom farm; a large pool was added beside the southeast buttress, the hearth niches were turned into windows and a large window was opened in the north wall. After long ruin it was restored faithfully in 2008 with the initiative of public institutions and the support of İnegöl Municipality and now serves as a historic restaurant. The portal is built of one course of cut stone and three of brick, the side walls of large rubble stone with a brick course, and the roof covering is Turkish-style tiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396-398"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sahin",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "key": "destek",
+      "label": {
+        "tr": "Destek sayısı",
+        "en": "Number of supports"
+      },
+      "value": "3 + 3",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon",
+      "label": {
+        "tr": "Restorasyon yılı",
+        "en": "Year of restoration"
+      },
+      "value": 2008,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "key": "mantar",
+      "label": {
+        "tr": "Mantar çiftliği olarak kullanım yılı",
+        "en": "Year it became a mushroom farm"
+      },
+      "value": 1983,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "key": "payanda",
+      "label": {
+        "tr": "Payanda sayısı (doğu, batı, kuzey cepheler)",
+        "en": "Buttresses (east, west, north façades)"
+      },
+      "value": "2 + 2 + 2",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Karaca Bey",
+      "role": {
+        "tr": "Banî; II. Murad ve Fâtih Sultan Mehmed dönemi devlet adamı",
+        "en": "Founder; statesman of the reigns of Murad II and Fâtih Sultan Mehmed"
+      }
+    },
+    {
+      "name": "Ekrem Hakkı Ayverdi",
+      "role": {
+        "tr": "1455 sonrası tarihi ileri süren araştırmacı",
+        "en": "Researcher who proposed a date after 1455"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "durum-1982",
+      "year": 1982,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Ağıl olarak kullanılan yapı harap durumda",
+        "en": "Used as a sheep pen and in ruinous state"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "id": "mantar-1983",
+      "year": 1983,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Mantar üretim çiftliği; havuz eklendi, nişler pencereye çevrildi",
+        "en": "Mushroom farm; pool added and niches turned into windows"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Aslına uygun restorasyon",
+        "en": "Faithful restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-karacabey-karacabey-imareti",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Kervansaray Karacabey'deki imaretin vakıfları arasında yer alır.",
+        "en": "The caravanserai is among the endowments of the imaret in Karacabey."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "396"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kervansaray, kuzey-güney doğrultulu, uzun dikdörtgen planlı ve üzeri tek büyük beşik tonozla örtülü taş bir yapıdır. Dış cephelerde üçgen kesitli, yarım yüksekliğe ulaşan payandalar sıralanır. Güneydeki giriş kapısının kemer alınlığında tuğladan balıksırtı bezeme vardır. İçeride iki sıra destek yapıyı üç sahına böler; süsleme yoktur. Bugün tarihî restoran olarak kullanılmaktadır.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "395-398"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "17-hl4ksj2QSGtOxPg3mnPZ8DnmO7ilBN",
+        "original_name": "01 DJI_20241110165626_0078_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "395"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Karacaahmet Kervansarayı (kitap s. 395)",
+        "en": "Karacaahmet Caravanserai (book p. 395)"
+      },
+      "alt": {
+        "tr": "Karacaahmet Kervansarayı fotoğrafı",
+        "en": "Photo of Karacaahmet Caravanserai"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1ceCXEWC0KowxT8sp9wEse7Pnw3Ehkgta",
+        "original_name": "03 DJI_20241110165729_0083_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "398"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Karacaahmet Kervansarayı (kitap s. 398)",
+        "en": "Karacaahmet Caravanserai (book p. 398)"
+      },
+      "alt": {
+        "tr": "Karacaahmet Kervansarayı fotoğrafı",
+        "en": "Photo of Karacaahmet Caravanserai"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

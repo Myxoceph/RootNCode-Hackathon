@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-seyh-kutbuddin-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Bitişik olduğu caminin adı, mahalle ve adres bu sayfada verilmemiş (kaynakta başka bölümde olabilir); location.neighborhood/address null.",
+      "Yapım tarihi ve yaptıran kaynakta yok; dating ve founder null.",
+      "Caminin kaydı kapsam dışı (başka ajan); relations eklenecekse hedef id doğrulanmalı.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "era",
+        "note": "Kaynak yapım dönemini açıkça belirtmez; yalnızca duvar tekniğinin erken Osmanlı mimarisine özgü olduğunu söyler. era erken-osmanli bu çıkarıma dayanır (tahmini)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Kutbüddin Türbesi",
+    "en": "Shaykh Kutbüddin Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "kare plan",
+    "tek kubbe",
+    "kirpi saçak"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "478"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bir caminin kuzeybatı köşesine bitişik, tek kubbeli kare planlı; şeyh ve oğlunun iki sandukasını barındıran türbe.",
+    "en": "A single-domed, square-plan tomb adjoining the northwest corner of a mosque, holding the sarcophagi of the shaykh and his son."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Caminin kuzeybatı köşesine bitişik inşa edilen, üstü tek kubbeyle örtülü kare planlı türbe, yapının daha özgün unsurlarından biri olarak günümüze ulaşmıştır. Moloz taş temeller üzerinde yükselen beden duvarları bir sıra kesme taş ile üç sıra tuğladan oluşur; bu teknik erken Osmanlı mimarisine özgü bir uygulamadır. Duvarlar alaturka kiremit örtülü kirpi saçakla sonlanır.",
+        "en": "Built adjacent to the northwest corner of the mosque, the square-plan tomb under a single dome has survived as one of the building's more original elements. The walls rise on rubble stone foundations and consist of one row of cut stone and three rows of brick, a technique characteristic of early Ottoman architecture. They end in sawtooth eaves covered with Turkish-style tiles."
+      },
+      "confidence": "certain",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "478"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbedeki iki sandukadan biri Şeyh Kutbüddin'e, diğeri oğlu Mehmed Muhyiddin'e aittir. Caminin haziresinde herhangi bir kabir bulunmamaktadır.",
+        "en": "Of the two sarcophagi, one belongs to Shaykh Kutbüddin and the other to his son Mehmed Muhyiddin. There is no grave in the mosque's graveyard."
+      },
+      "confidence": "certain",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "478"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "478"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Kutbüddin",
+      "role": {
+        "tr": "Türbede gömülü",
+        "en": "Buried in the tomb"
+      }
+    },
+    {
+      "name": "Mehmed Muhyiddin",
+      "role": {
+        "tr": "Şeyh Kutbüddin'in oğlu; türbede gömülü",
+        "en": "Son of the shaykh; buried in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "outdoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, bir caminin kuzeybatı köşesine bitişik, tek kubbeli, kare planlı küçük bir yapıdır. Duvarlar bir sıra taş, üç sıra tuğla örgülüdür; çatı altında kiremit kaplı kirpi saçak vardır. İçinde iki sanduka bulunur.",
+      "en": "The tomb is a small, square, single-domed building attached to the northwest corner of a mosque. Walls alternate one row of stone with three of brick, with sawtooth tiled eaves. It holds two sarcophagi."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "478-478"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1D0-pruLoYbpIb5LIVz-rjvepM0Zwt-6L",
+        "original_name": "ERD00501-Geliştirilmiş-NR kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "478"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şeyh Kutbüddin Türbesi (kitap s. 478)",
+        "en": "Shaykh Kutbüddin Tomb (book p. 478)"
+      },
+      "alt": {
+        "tr": "Şeyh Kutbüddin Türbesi fotoğrafı",
+        "en": "Photo of Shaykh Kutbüddin Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1DcZk24SIVCj795hay4B9iJkV5vikybaX",
+        "original_name": "ERD00609 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "478"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şeyh Kutbüddin Türbesi (kitap s. 478)",
+        "en": "Shaykh Kutbüddin Tomb (book p. 478)"
+      },
+      "alt": {
+        "tr": "Şeyh Kutbüddin Türbesi fotoğrafı",
+        "en": "Photo of Shaykh Kutbüddin Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

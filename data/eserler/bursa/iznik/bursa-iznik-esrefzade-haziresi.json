@@ -1,0 +1,495 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-esrefzade-haziresi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Üç kitabesiz sandukanın sahipleri kaynakta kesin değil; yalnızca 'olabilir' deniyor.",
+      "Yaptıran kitapta yok; founder boş.",
+      "Menâkıb-ı Eşrefzâde nüshasının kimliği kitapta belirtilmiyor.",
+      "Koordinat bulunmalı (kitapta yok).",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[dogum_tarihi]",
+        "note": "Kitap doğum tarihini H. 754 / M. 1353 verir; bir Menâkıb-ı Eşrefzâde nüshası H. 779 / M. 1377 verir. Hicri-miladi karşılıklar kendi içinde tutarlı; iki görüş saklandı."
+      },
+      {
+        "field": "inscriptions[esrefoglu-sanduka-kitabesi]",
+        "note": "Transliterasyonda Türkçe metin 'Kutbu’l-ârifîn', İngilizce metin 'Kutbü’l-ârifîn' yazar; Türkçe baskı esas alındı. Kitap dili belirtmediği için language 'other' girildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Eşrefzâde Haziresi (Eşrefoğlu Rûmî Sandukası)",
+    "en": "Eşrefzâde Graveyard (Sarcophagus of Eşrefoğlu Rûmî)"
+  },
+  "subtitle": {
+    "tr": "Caminin batısındaki on dört kabirlik hazire",
+    "en": "Fourteen-grave graveyard west of the mosque"
+  },
+  "alternate_names": [],
+  "type": "hazire",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Eşrefoğlu Rûmî",
+    "sanduka",
+    "Kadiri",
+    "hazire",
+    "kitabe",
+    "Yunan işgali"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Eşrefzâde Mahallesi",
+    "address": "Eşrefzâde Camii'nin batısı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "430"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Eşrefoğlu Rûmî H. 874 / M. 1469'da vefat etti; hazirenin oluşum tarihi belirtilmemiştir",
+      "en": "Eşrefoğlu Rûmî died AH 874 / AD 1469; the date of the graveyard is not stated"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kaynak hazirenin kuruluş tarihini vermez; yalnızca Eşrefoğlu Rûmî'nin vefat yılını verir.",
+      "en": "The source does not date the graveyard itself, only the death of Eşrefoğlu Rûmî."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "430-431"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Eşrefzâde Camii'nin batısında, Eşrefoğlu Rûmî'nin büyük sandukasının ortada yer aldığı on dört kabirlik hazire. Kabirler, Yunan işgalinde yakılan türbenin içindeyken yıkımdan sonra bugünkü görünümlerini almıştır.",
+    "en": "Graveyard of fourteen graves west of the Eşrefzâde Mosque with the larger sarcophagus of Eşrefoğlu Rûmî in the middle. The graves were inside the tomb burned in the Greek occupation and took their present appearance after its destruction."
+  },
+  "sections": [
+    {
+      "id": "hazire",
+      "order": 1,
+      "title": {
+        "tr": "Hazire Alanı",
+        "en": "The Graveyard"
+      },
+      "body": {
+        "tr": "Caminin batısındaki hazirede, H. 754 / M. 1353'te İznik'te doğup H. 874 / M. 1469'da İznik'te vefat eden Eşrefoğlu Rûmî'nin sandukasıyla birlikte toplam on dört kabir vardır. Bir \"Menâkıb-ı Eşrefzâde\" nüshasına göre doğum tarihi H. 779 / M. 1377'dir. Üç kabir hariç diğerleri yeşil boyayla sıvanmış sanduka biçimindedir. Bazı kaynaklara göre kitabesiz sandukalardan üçü Tâcüddin İbrahim, Sırrı Ali Efendi ve Amasyalı Pir Mehmed'e ait olabilir. Ortadaki Eşrefoğlu Rûmî sandukası diğerlerinden büyüktür ve Kadiri tarikatına özgü dilimli bir serpuş taşır. Kaynaklara göre IV. Murad devrinde tamamen çinilerle kaplanmış, 1950'de caminin yeniden inşası sırasında betonla sıvanıp koyu yeşile boyanmıştır. Diğer sandukalar beton sıvalı ve açık yeşildir; kuzeyde, diğerlerinden ayrık sandukanın üzerinde kâtiplere özgü bir başlık vardır.",
+        "en": "In the graveyard west of the mosque there are fourteen graves including the sarcophagus of Eşrefoğlu Rûmî, born in Iznik in AH 754 / AD 1353 and died there in AH 874 / AD 1469. According to a copy of the \"Menâkıb-ı Eşrefzâde\" his birth date is AH 779 / AD 1377. Except for three, the graves are sarcophagi covered with green paint. According to some sources three uninscribed sarcophagi may belong to Tâcüddin İbrahim, Sırrı Ali Efendi and Pir Mehmed of Amasya. Eşrefoğlu Rûmî's sarcophagus in the middle is larger and has a segmented headgear of the Qadiri order. Sources say it was covered completely with tiles under Murad IV; in 1950 it was plastered with concrete and painted dark green. The other sarcophagi are concrete-plastered and light green; the one at the far north, set apart, bears a scribes' headgear."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "430-431"
+        }
+      ]
+    },
+    {
+      "id": "turbe",
+      "order": 2,
+      "title": {
+        "tr": "Yakılan Türbe",
+        "en": "The Burned Tomb"
+      },
+      "body": {
+        "tr": "Kabirlerin, Yunan işgali sırasında türbenin yakılmasından önce yapının içinde yer aldığı, türbe yıkıldıktan sonra bugünkü görünümü aldığı anlaşılmaktadır. Yakılarak yok edilen türbenin revaklı, ahşap direkli, geniş saçaklı ve kiremit çatılı olduğu bilinir. Kaynaklarda türbenin kuzey cephesi önünde Eşrefoğlu Rûmî'nin şahsi eşyalarının sergilendiği kare planlı küçük bir mekân bulunduğu belirtilir.",
+        "en": "It is understood that the graves were inside the structure before the tomb was burned in the Greek occupation and took their present appearance after its destruction. The tomb had arcades, wooden pillars, wide eaves and a tiled roof. Sources state a small square area in front of its north façade displayed Eşrefoğlu Rûmî's personal belongings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "431"
+        }
+      ]
+    },
+    {
+      "id": "esrefoglu-rumi",
+      "order": 3,
+      "title": {
+        "tr": "Eşrefoğlu Rûmî",
+        "en": "Eşrefoğlu Rûmî"
+      },
+      "body": {
+        "tr": "Asıl adı Abdullah, babasının adı Ahmed Eşref'tir; \"İbnü'l-Eşref\", \"Eşrefzâde\", \"Eşref-i Rûmî\", \"Abdullah-ı İznikî\" ve \"Abdullah-ı Rûmî\" adlarıyla da anılır. Ailesi Mısır'dan Suriye'nin Hama vilayetine, oradan Manisa'ya, en sonunda İznik'e yerleşmiştir. İznik'te doğup büyüyen sufi, Bursa'da Çelebi Mehmed (Sultâniye) Medresesi'nde okumuş, rüyası üzerine eğitimi bırakıp Abdal Mehmed, Emîr Sultan ve Ankara'da Hacı Bayrâm-ı Velî'nin dergâhına intisap etmiştir. On bir yıllık hizmetten sonra Hacı Bayrâm-ı Velî onu imam tayin etmiş ve kızı Hayrünnisâ Hanım'la evlendirip İznik'e göndermiştir. Sonradan Hama'da Şeyh Hüseyin el-Hamevî'den Kadiriye hilafetnamesi alarak İznik'e dönmüş, irşada devam etmiştir. Abdülkâdir-i Geylânî'den sonra tarikatın ikinci piri sayılır; şiirleri en çok bestelenen mutasavvıf şairlerdendir. Divan sahibidir; Müzekkîn-Nüfûs ve Tarikatnâme en bilinen eserleridir.",
+        "en": "His real name was Abdullah; his father's name was Ahmed Eşref. He is also known as \"İbnü'l-Eşref\", \"Eşrefzâde\", \"Eşref-i Rûmî\", \"Abdullah-ı İznikî\" and \"Abdullah-ı Rûmî\". His family moved from Egypt to Hama in Syria, then Manisa and finally Iznik. Born and raised in Iznik, he studied at the Çelebi Mehmed (Sultâniye) Madrasa in Bursa, left under the influence of a dream, and joined the lodge of Hacı Bayrâm-ı Velî in Ankara via Abdal Mehmed and Emîr Sultan. After eleven years he was appointed imam and married to Hayrunnisa Hanım, then sent to Iznik. He later received the caliphate of the Qadiriyya from Shaykh Hüseyin el-Hamevî in Hama and returned to Iznik. He is considered the second leader of the order after Abdülkâdir-i Geylânî, and his poems are among the most frequently set to music. His best-known works are Müzekkîn-Nüfûs and Tarikatnâme."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "432"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kabir_sayisi",
+      "label": {
+        "tr": "Kabir sayısı",
+        "en": "Number of graves"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "430"
+        }
+      ]
+    },
+    {
+      "key": "dogum_tarihi",
+      "label": {
+        "tr": "Eşrefoğlu Rûmî doğum tarihi",
+        "en": "Birth date of Eşrefoğlu Rûmî"
+      },
+      "value": "H. 754 / M. 1353",
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "430"
+        }
+      ],
+      "note": {
+        "tr": "Bir Menâkıb-ı Eşrefzâde nüshası H. 779 / M. 1377 verir.",
+        "en": "A copy of the Menâkıb-ı Eşrefzâde gives AH 779 / AD 1377."
+      }
+    },
+    {
+      "key": "vefat_tarihi",
+      "label": {
+        "tr": "Eşrefoğlu Rûmî vefat tarihi",
+        "en": "Death date of Eşrefoğlu Rûmî"
+      },
+      "value": "H. 874 / M. 1469",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "430-431"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Eşrefoğlu Rûmî (Abdullah-ı Rûmî)",
+      "role": {
+        "tr": "Kadiri şeyhi; sandukası hazirenin ortasında",
+        "en": "Qadiri shaykh; his sarcophagus is in the middle of the graveyard"
+      }
+    },
+    {
+      "name": "Tâcüddin İbrahim",
+      "role": {
+        "tr": "Kitabesiz sandukalardan birinin sahibi olabileceği belirtilir",
+        "en": "May be buried in one of the uninscribed sarcophagi"
+      }
+    },
+    {
+      "name": "Sırrı Ali Efendi",
+      "role": {
+        "tr": "Kitabesiz sandukalardan birinin sahibi olabileceği belirtilir",
+        "en": "May be buried in one of the uninscribed sarcophagi"
+      }
+    },
+    {
+      "name": "Amasyalı Pir Mehmed",
+      "role": {
+        "tr": "Kitabesiz sandukalardan birinin sahibi olabileceği belirtilir",
+        "en": "May be buried in one of the uninscribed sarcophagi"
+      }
+    },
+    {
+      "name": "Hacı Bayrâm-ı Velî",
+      "role": {
+        "tr": "Eşrefoğlu Rûmî'nin şeyhi",
+        "en": "Shaykh of Eşrefoğlu Rûmî"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "esrefoglu-sanduka-kitabesi",
+      "location": {
+        "tr": "Eşrefoğlu Rûmî sandukasının ön cephesi, tarikat sikkesi biçiminde kitabe",
+        "en": "Front of Eşrefoğlu Rûmî's sarcophagus, inscription in the shape of the order's cap"
+      },
+      "language": "other",
+      "script": null,
+      "note": {
+        "tr": "Kitap dili belirtmez; metin Arapça ibareler içerir.",
+        "en": "The book does not name the language; the text contains Arabic phrases."
+      },
+      "transliteration": "Hâzâ kabru’ş-şerîf Kutbu’l-ârifîn eş-Şeyh Eşrefzâde Abdullah-ı Rûmî -kuddise sirruhû- vefâtı sene 874 / M. 1469.",
+      "translation": {
+        "tr": "Bu, Kutbu'l-ârifîn Şeyh Eşrefzâde Abdullah-ı Rûmî'nin mübarek kabridir. Vefatı H. 874 / M. 1469",
+        "en": "This is the blessed grave of the Kutbu'l-ârifîn (Spiritual Pole of the Gnostics), Shaykh Eşrefzâde Abdullah-ı Rûmî. He died in AH 874 / AD 1469"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 874,
+        "gregorian": "1469"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "431"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "dogum-754",
+      "year": 1353,
+      "date": null,
+      "hijri": "754",
+      "type": "record",
+      "title": {
+        "tr": "Eşrefoğlu Rûmî İznik'te doğdu",
+        "en": "Eşrefoğlu Rûmî born in Iznik"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "430"
+        }
+      ],
+      "note": {
+        "tr": "Bir Menâkıb nüshası H. 779 / M. 1377 verir.",
+        "en": "One Menâkıb copy gives AH 779 / AD 1377."
+      }
+    },
+    {
+      "id": "vefat-874",
+      "year": 1469,
+      "date": null,
+      "hijri": "874",
+      "type": "record",
+      "title": {
+        "tr": "Eşrefoğlu Rûmî İznik'te vefat etti",
+        "en": "Eşrefoğlu Rûmî died in Iznik"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "430-431"
+        }
+      ]
+    },
+    {
+      "id": "sanduka-betonlama-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Sanduka camiyle birlikte betonla sıvanıp koyu yeşile boyandı",
+        "en": "Sarcophagus plastered with concrete and painted dark green with the mosque's rebuilding"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "431"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sanduka",
+      "title": {
+        "tr": "Eşrefoğlu Rûmî sandukası",
+        "en": "Sarcophagus of Eşrefoğlu Rûmî"
+      },
+      "hint": {
+        "tr": "Ortadaki en büyük sandukanın ön yüzündeki sikke biçimli kitabeyi arayın.",
+        "en": "Look for the cap-shaped inscription on the front of the largest central sarcophagus."
+      },
+      "section_id": "hazire"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-esrefzade-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hazire, Eşrefzâde Camii'nin batısındadır; kabirler eskiden yanan türbenin içindeydi.",
+        "en": "The graveyard lies west of the Eşrefzâde Mosque; the graves were formerly inside the burned tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "430-431"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hazire, Eşrefzâde Camii'nin batısında açık bir alandadır. Ortada diğerlerinden büyük, koyu yeşile boyanmış ve üzerinde dilimli tarikat serpuşu bulunan Eşrefoğlu Rûmî sandukası yer alır. Çevresinde açık yeşile boyanmış, beton sıvalı on üç kabir daha vardır; kuzeyde ayrık duran sandukanın üzerinde kâtiplere özgü bir başlık görülür.",
+      "en": "The graveyard lies in an open area west of the Eşrefzâde Mosque. In the middle stands the larger, dark-green sarcophagus of Eşrefoğlu Rûmî with a segmented headgear of the order. Around it are thirteen other concrete-plastered, light-green graves; the one set apart in the north bears a scribes' headgear."
+    },
+    "audio_description_source": "Kitabın hazire betimlemesinden (s. 430-431)"
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "430-432"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1zxMi4ilRs3I53zGWg1fGj0AIaRoBF-Y0",
+        "original_name": "18 ERD00134 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "430"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Eşrefzâde Haziresi (Eşrefoğlu Rûmî Sandukası) (kitap s. 430)",
+        "en": "Eşrefzâde Graveyard (Sarcophagus of Eşrefoğlu Rûmî) (book p. 430)"
+      },
+      "alt": {
+        "tr": "Eşrefzâde Haziresi (Eşrefoğlu Rûmî Sandukası) fotoğrafı",
+        "en": "Photo of Eşrefzâde Graveyard (Sarcophagus of Eşrefoğlu Rûmî)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "15AmKjNih4KWfXvg2x4sZFlZlNKzaJX8A",
+        "original_name": "21 ERD00154 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "430"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Eşrefzâde Haziresi (Eşrefoğlu Rûmî Sandukası) (kitap s. 430)",
+        "en": "Eşrefzâde Graveyard (Sarcophagus of Eşrefoğlu Rûmî) (book p. 430)"
+      },
+      "alt": {
+        "tr": "Eşrefzâde Haziresi (Eşrefoğlu Rûmî Sandukası) fotoğrafı",
+        "en": "Photo of Eşrefzâde Graveyard (Sarcophagus of Eşrefoğlu Rûmî)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1x6X1gsPpcqjSeda3JuU4GoZr0lceC5P7",
+        "original_name": "ERD00161 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "431"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Eşrefzâde Haziresi (Eşrefoğlu Rûmî Sandukası) (kitap s. 431)",
+        "en": "Eşrefzâde Graveyard (Sarcophagus of Eşrefoğlu Rûmî) (book p. 431)"
+      },
+      "alt": {
+        "tr": "Eşrefzâde Haziresi (Eşrefoğlu Rûmî Sandukası) fotoğrafı",
+        "en": "Photo of Eşrefzâde Graveyard (Sarcophagus of Eşrefoğlu Rûmî)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

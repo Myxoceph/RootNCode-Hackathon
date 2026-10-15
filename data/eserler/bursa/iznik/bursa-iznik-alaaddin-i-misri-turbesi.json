@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-alaaddin-i-misri-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Fotoğraf eklenmeli (media[]); photos match_photos.py ile bağlanacak. media_folder henüz belirlenmedi.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Türbenin yapım tarihi ve yaptıranı kaynakta yok; dating ve founder null bırakıldı.",
+      "Kitabeli mezarın kitabesi kaynakta verilmemiş."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kaynak yalnızca Alâaddin-i Mısrî'nin ölüm tarihini (H. 799 / M. 1397) verir; türbenin yapım tarihi belirtilmemiştir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Alaaddin-i Mısri Türbesi",
+    "en": "Alaaddin-i Mısri Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "müderris",
+    "Süleyman Paşa Medresesi",
+    "açık türbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Eşrefzâde Mahallesi",
+    "address": "Alaaddin Mısri Sokağı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "468"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Osmanlı'nın ilk müderrislerinden Alâaddin-i Mısrî'nin defnedildiği alanda yer alan, çatısı bulunmayan ve açık alan olarak korunan duvarlı mezarlık türbesi.",
+    "en": "An open, roofless walled tomb enclosure on the burial site of Alâaddin-i Mısrî, one of the first professors of the Ottoman Empire."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Acem diyarında eğitimini tamamlayan Alâaddin-i Mısrî, Anadolu'ya gelmiş ve İznik'te Süleyman Paşa'nın yaptırdığı medreseye müderris olarak atanmıştır. H. 799 / M. 1397'de vefat etmiş ve bugün türbesi olarak kullanılan alana defnedilmiştir. Osmanlı'nın ilk şeyhülislamı kabul edilen Molla Fenârî öğrencileri arasındadır.",
+        "en": "Alâaddin-i Mısrî came to Anatolia after completing his education in the Persian lands and was appointed professor at the madrasa built by Süleyman Paşa in Iznik. He died in AH 799 / AD 1397 and was buried in the area now used as his tomb. Molla Fenârî, accepted as the first Shaykh al-Islam of the Ottoman Empire, was among his students."
+      },
+      "confidence": "certain",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "468"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Doğu-batı doğrultusunda dikdörtgen planlı türbe duvarlarla çevrili bir alan içindedir. Bir dönem ahşap çatıyla örtülü olduğu rivayet edilse de günümüzde çatısı yoktur ve açık alan olarak korunur. İçinde biri kitabeli dört mezar vardır; mezarlardan birinin yanında oldukça yaşlı bir servi ağacı bulunur. Alâaddin Efendi'nin mezarı ve yola bakan cephe ferforje demir parmaklıkla çevrilidir. Kuzey duvarı diğerlerinden alçaktır; doğu, güney ve batı duvarları daha yüksektir. Mevcut duvarlar 2008'de Vakıflar Bölge Müdürlüğü tarafından onarılmıştır.",
+        "en": "The rectangular tomb on an east-west axis stands within a walled area. Although said to have once had a wooden roof, it has none today and is preserved as an open area. It holds four graves, one with an inscription; a very old cypress stands next to one grave. Alâaddin Efendi's grave and the street façade are enclosed by wrought iron bars. The north wall is lower than the others. The existing walls were repaired by the Foundations Regional Directorate in 2008."
+      },
+      "confidence": "certain",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "468"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "mezar_sayisi",
+      "label": {
+        "tr": "Mezar sayısı",
+        "en": "Number of graves"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "468"
+        }
+      ],
+      "note": {
+        "tr": "Biri kitabeli.",
+        "en": "One has an inscription."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Alâaddin-i Mısrî",
+      "role": {
+        "tr": "Müderris; türbede gömülü",
+        "en": "Professor; buried in the tomb"
+      }
+    },
+    {
+      "name": "Molla Fenârî",
+      "role": {
+        "tr": "Öğrencisi; ilk şeyhülislam kabul edilir",
+        "en": "His student; accepted as the first Shaykh al-Islam"
+      }
+    },
+    {
+      "name": "Süleyman Paşa",
+      "role": {
+        "tr": "Medreseyi yaptıran",
+        "en": "Builder of the madrasa"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1397",
+      "year": 1397,
+      "date": null,
+      "hijri": "799",
+      "type": "record",
+      "title": {
+        "tr": "Alâaddin-i Mısrî vefat etti",
+        "en": "Alâaddin-i Mısrî died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "468"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Duvarlar Vakıflar Bölge Müdürlüğünce onarıldı",
+        "en": "Walls repaired by the Foundations Regional Directorate"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "468"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-suleyman-pasa-medresesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Alâaddin-i Mısrî, Süleyman Paşa Medresesi'ne müderris olarak atanmıştır.",
+        "en": "Alâaddin-i Mısrî was appointed professor at the Süleyman Paşa Madrasa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "468"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "outdoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, duvarlarla çevrili, üstü açık dikdörtgen bir mezarlık alanıdır. İçinde dört mezar ve yaşlı bir servi ağacı vardır; yola bakan cephede ferforje parmaklıklar bulunur.",
+      "en": "The tomb is a rectangular, roofless burial enclosure surrounded by walls. It holds four graves and an old cypress tree; wrought iron railings stand on the street-facing side."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

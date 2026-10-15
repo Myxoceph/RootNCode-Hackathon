@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-tacunnisa-sultan-ve-ishak-pasa-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin, s. 352-355) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin yapım tarihi ve banîsi kitapta açıkça yok; kitap yalnızca 'Tâcunnisâ Sultan için inşa ettirildiği' sonucunu çıkarıyor, yaptıranın kimliği belirtilmediği için founder boş bırakıldı.",
+      "Tâcunnisâ Sultan Hatun'un vefat tarihi kitapta yok.",
+      "Vakfiyede anılan 'İnegöl'deki imaret' ve vakfedilen mülklerin hedef kaydı bu aralıkta yok; imaret kaydı için ilişki kurulmadı.",
+      "Üç mezardan hangisinin kime ait olduğu kitapta kesin değil ('değerlendirilmektedir').",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Bölüm başlığında Türkçe 'Tâcunnisâ', İngilizce başlıkta 'Tâcünnisa', gövde metinde 'Tâcunnisâ/Tâcunnisa' yazımları karışık; ad olarak 'Tâcünnisâ' kitabın başlığındaki biçimde ('Tâcunnisâ Sultan ve İshak Paşa Türbesi') alınmıştır. Çelişki yok, yazım farkı."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap vakfiyeyi bir yerde H. 891 / M. 1486, külliye girişinde ise H. 891-892 / M. 1486-1487 olarak verir; tutarsız değil ama farklı biçimde ifade edilmiş."
+      },
+      {
+        "field": "sections[vakfiye-ve-mezarlar]",
+        "note": "Türkçe metin 'kızları Şehzade Hatun' diyor, İngilizce 'their daughter Şehzâde Hatun'; aynı pasajda Şehzade Hatun 'çocukları' arasında anılıyor. Pîrî Bey'in de gömülü olup olmadığı belirtilmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tâcünnisâ Sultan ve İshak Paşa Türbesi",
+    "en": "Tâcünnisa Sultan and İshak Paşa Tomb"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": "bursa-inegol-ishak-pasa-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "Tâcünnisâ Sultan Hatun",
+    "İshak Paşa",
+    "altıgen planlı türbe",
+    "mezar kitabeleri",
+    "İsfendiyar Bey"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Cuma Camii Mahallesi",
+    "address": "Ankara Caddesi, No: 13 (caminin doğusunda)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "352"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi belli değil; H. 891 / M. 1486 tarihli vakfiyede mevcut",
+      "en": "Construction date unknown; existed by the endowment charter of AH 891 / AD 1486"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Türbenin günümüze ulaşan bir inşa kitabesi yoktur; H. 891 / M. 1486 tarihli vakfiyede anıldığı için o tarihte mevcut olduğu anlaşılır. Yıl aralığı verilmedi.",
+      "en": "The tomb has no surviving construction inscription; it is mentioned in the charter of AH 891 / AD 1486, so it existed by then. No year range given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "352, 354"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 891 / M. 1486",
+      "excerpt": {
+        "tr": "Vakfiyede Tâcunnisâ Sultan Hatun, İshak Paşa'nın İnegöl'de kurduğu imarete çeşitli mülk ve gelirler vakfetmiştir; vakıflar ayrıntılı biçimde kayıtlıdır. Türbeye bakacak bir türbedar görevlendirilmiştir.",
+        "en": "In the charter, Tâcunnisa Sultan Hatun donated various properties and incomes to the imaret established by İshak Paşa in İnegöl; the endowments are recorded in detail. A tombkeeper was assigned to take care of the tomb."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "354"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Bakımından sorumlu bir türbedar görevlendirilmiştir.",
+      "en": "A tombkeeper was assigned to take care of the tomb."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "354"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Caminin doğusunda, altıgen planlı ve kubbeli türbe; İshak Paşa'nın eşi Tâcunnisâ Sultan Hatun için yapıldığı, İshak Paşa'nın mezarının 1937'de buraya nakledildiği anlaşılır.",
+    "en": "A domed hexagonal tomb east of the mosque; it appears to have been built for İshak Paşa's wife Tâcunnisa Sultan Hatun, and İshak Paşa's grave was moved here in 1937."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Mezarlar",
+        "en": "Location and Graves"
+      },
+      "body": {
+        "tr": "Külliyede yer alan türbe, caminin doğu yönünde konumlanmaktadır. Tâcunnisâ Sultan Hatun Türbesi olarak bilinen yapının günümüze ulaşan herhangi bir inşa kitabesi bulunmamaktadır. Türbenin merkezinde yer alan mezarın İshak Paşa'ya ait olduğu, mezar taşlarındaki bilgilerle kesinlik kazanmıştır. Mezar baş taşında, İshak Paşa'nın H. 4 Safer 892 / M. 10 Şubat 1487 tarihinde vefat ettiği yazılıdır.",
+        "en": "The tomb in the complex is located to the east of the mosque. There is no construction inscription of the structure known as the Tâcünnisa Sultan Hatun Tomb that has survived to the present day. It has been confirmed by the information on the tombstones that the grave in the center of the tomb belongs to İshak Paşa. It is written on the headstone that İshak Paşa died on 4 Safar AH 892 / 10 February AD 1487."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "352-353"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe, altıgen planlı ve kubbe örtülüdür. Kuzey cephede, eksen üzerinde yer alan giriş kapısı, dışa taşkın dikdörtgen çerçeveli ve sivri kemerli açıklığa sahip bir eyvan içerisinde konumlandırılmıştır. Eyvanın iç kısmında basık kemerli asıl giriş kapısı yer alır. Güney cephede, alt kısımda sivri kemerli bir kör niş, üstte ise alçı şebekeli, sivri kemerli küçük bir pencere bulunmaktadır. Diğer cephelerde, her bir cephenin ekseninde birer pencere açılmıştır. İç mekân, alt sırada dört, üst sırada altı olmak üzere toplam on pencereyle aydınlatılmaktadır. Türbenin saçak hattı üç sıra testere dişi dizisiyle çevrelenmiştir. Portal kısmı ise saçak hizasında bir sıra testere dişi ile sonlandırılmıştır.",
+        "en": "The tomb has a hexagonal plan and is covered with a dome. The entrance door on the north façade, on the axis, is positioned inside an iwan with a rectangular frame and a pointed arch opening. The main entrance door with a flattened arch is located inside the iwan. On the south façade, there is a blind niche with a pointed arch at the bottom and a small window with a plaster grille and a pointed arch at the top. On the other façades, there is a window on each axis of each façade. The interior is illuminated by a total of ten windows, four in the lower row and six in the upper row. The eaves line of the tomb is surrounded by three rows of sawteeth. The portal section is terminated with a row of sawteeth at the eaves level."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "354-355"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-ve-mezarlar",
+      "order": 3,
+      "title": {
+        "tr": "Vakfiye, Tâcunnisâ Sultan ve Mezarlar",
+        "en": "Endowment Charter, Tâcunnisa Sultan and the Graves"
+      },
+      "body": {
+        "tr": "Tâcunnisâ Sultan Hatun Türbesi, İshak Paşa'nın H. 891 / M. 1486 tarihli vakfiyesinde açık biçimde zikredilmektedir. Bu belgeden, türbenin söz konusu tarihte mevcut olduğu ve bakımından sorumlu bir türbedarın görevlendirildiği anlaşılmaktadır. Türbeye, İshak Paşa'nın eşi Tâcunnisâ Sultan Hatun defnedilmiştir. Vakfiyede, kendisinden \"Hatunların ulusu, kadınların tacı, merhum İsfendiyar Bey'in kızı merhume Sultan Hatun\" ifadeleriyle bahsedilmektedir. Aynı belgede, Tâcunnisâ Sultan Hatun'un, kocası İshak Paşa'nın İnegöl'de kurduğu imarete çeşitli mülk ve gelirler vakfettiği belirtilmekte ve vakıflar ayrıntılı biçimde kayıt altına alınmaktadır. İshak Paşa ve Tâcunnisâ Sultan Hatun'un çocukları olan Pîrî Bey ve Şehzade Hatun, vakfiyenin yazıldığı tarihte küçük yaşta olmalarından dolayı adlarına bir vasi tayin edilmiştir. Araştırmacı Ekrem Hakkı Ayverdi, İshak Paşa'nın kabrinin 1937 yılına kadar caminin güneyinde yer aldığını, ancak bu tarihte bulunduğu yerden alınarak mevcut türbenin içine nakledildiğini ifade etmektedir. Tüm bu veriler, Tâcunnisâ Sultan Hatun'un İshak Paşa'dan önce vefat ettiğini ve türbenin aslında onun için inşa ettirildiğini ortaya koymaktadır. Türbe içerisinde yer alan üç mezardan birinin İshak Paşa'ya, diğer ikisinin ise eşi Tâcunnisâ Sultan Hatun ve kızları Şehzade Hatun'a ait olduğu değerlendirilmektedir.",
+        "en": "Tâcunnisa Sultan Hatun's Tomb is clearly mentioned in İshak Paşa's endowment charter dated AH 891 / AD 1486. It is understood from this document that the tomb existed at the time in question and that a tombkeeper was assigned to take care of it. Tâcunnisa Sultan Hatun, the wife of İshak Paşa, was buried in the tomb. The endowment charter refers to her as \"the great of the ladies, the crown of women, the daughter of the late İsfendiyar Bey, the late Sultan Hatun.\" The same document states that Tâcunnisa Sultan Hatun donated various properties and incomes to the imaret established by her husband İshak Paşa in İnegöl, and the endowments are recorded in detail. A guardian was appointed on behalf of Piri Bey and Şehzade Hatun, the children of İshak Paşa and Tâcunnisa Sultan Hatun, as they were young at the time the endowment charter was written. Researcher Ekrem Hakkı Ayverdi states that the grave of İshak Paşa was located south of the mosque until 1937, but at that time it was removed from its location and transferred to the current tomb. All this data reveals that Tâcunnisa Sultan Hatun died before İshak Paşa and that the tomb was actually built for her. It is thought that one of the three graves in the tomb belongs to İshak Paşa, and that the other two belong to his wife Tâcunnisa Sultan Hatun and their daughter Şehzâde Hatun."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "354-355"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "Altıgen planlı, kubbeli",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "354"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "İç mekânı aydınlatan pencere sayısı",
+        "en": "Windows lighting the interior"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "354"
+        }
+      ],
+      "note": {
+        "tr": "Alt sırada dört, üst sırada altı.",
+        "en": "Four in the lower row, six in the upper row."
+      }
+    },
+    {
+      "key": "mezar_sayisi",
+      "label": {
+        "tr": "Türbedeki mezar sayısı",
+        "en": "Number of graves in the tomb"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "354-355"
+        }
+      ],
+      "note": {
+        "tr": "Biri İshak Paşa'ya, diğer ikisinin eşi Tâcunnisâ Sultan Hatun ve Şehzade Hatun'a ait olduğu değerlendirilmektedir.",
+        "en": "One is thought to be İshak Paşa's, the other two his wife's and daughter's."
+      }
+    },
+    {
+      "key": "nakil_yili",
+      "label": {
+        "tr": "İshak Paşa'nın kabrinin türbeye nakledildiği yıl",
+        "en": "Year İshak Paşa's grave was moved into the tomb"
+      },
+      "value": 1937,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "354-355"
+        }
+      ],
+      "note": {
+        "tr": "Ekrem Hakkı Ayverdi'ye göre; önceden caminin güneyindeydi.",
+        "en": "According to Ekrem Hakkı Ayverdi; previously south of the mosque."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "İshak Paşa",
+      "role": {
+        "tr": "Külliyenin banîsi; türbedeki merkez mezarın sahibi (ö. H. 4 Safer 892 / M. 10 Şubat 1487)",
+        "en": "Founder of the complex; occupant of the central grave (d. 4 Safar AH 892 / 10 February AD 1487)"
+      }
+    },
+    {
+      "name": "Tâcunnisâ Sultan Hatun",
+      "role": {
+        "tr": "İshak Paşa'nın eşi, merhum İsfendiyar Bey'in kızı; türbeye defnedilmiştir",
+        "en": "Wife of İshak Paşa, daughter of the late İsfendiyar Bey; buried in the tomb"
+      }
+    },
+    {
+      "name": "Pîrî Bey",
+      "role": {
+        "tr": "İshak Paşa ile Tâcunnisâ Sultan Hatun'un çocuğu; vakfiye tarihinde küçüktü",
+        "en": "Child of İshak Paşa and Tâcunnisa Sultan Hatun; a minor at the time of the charter"
+      }
+    },
+    {
+      "name": "Şehzade Hatun",
+      "role": {
+        "tr": "İshak Paşa ile Tâcunnisâ Sultan Hatun'un çocuğu; türbede gömülü olduğu değerlendirilir",
+        "en": "Child of İshak Paşa and Tâcunnisa Sultan Hatun; thought to be buried in the tomb"
+      }
+    },
+    {
+      "name": "Ekrem Hakkı Ayverdi",
+      "role": {
+        "tr": "İshak Paşa'nın kabrinin 1937'de nakledildiğini bildiren araştırmacı",
+        "en": "Researcher who reports the 1937 transfer of İshak Paşa's grave"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "basta-ic-yuz-kitabesi",
+      "location": {
+        "tr": "İshak Paşa mezar baş taşı, iç yüzey",
+        "en": "Headstone of İshak Paşa, inner surface"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Fî târihi’l-vefâti’l-merhûm İshak Paşa tûsilü’l-mağfire / Mürşîd-i râh-ı re’y-i emân ya’ni pâşâ-yı pişvây-ı zemân / Ekremü’n-nâs emcedu’l-vüzerâ akdemu’s-saff âsafu’d-devrân",
+      "translation": {
+        "tr": "O, doğruluk yolunun mürşidi, yani zamanın paşası idi / İnsanların en yücesi, vezirlerin en ulusu, safin en önde geleni ve zamanın Âsafı idi.",
+        "en": "He was the guide of the path of truth, that is, the Paşa of the time / He was the most exalted of men, the greatest of viziers, the foremost of the pure and the chief of the time."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap dili belirtmez (Arapça ve Farsça ifadeler karışık görünür). Kitap metinden sonra 'Merhum İshak Paşa'nın vefatı tarihinde mağfiret kendine ulaşsın.' cümlesini de verir.",
+        "en": "The book does not name the language (Arabic and Persian phrases appear mixed). After the text the book also gives the sentence 'May forgiveness reach you on the date of the death of the late İshak Paşa.'"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "352-353"
+        }
+      ]
+    },
+    {
+      "id": "basta-dis-yuz-kitabesi",
+      "location": {
+        "tr": "İshak Paşa mezar baş taşı, dış yüz",
+        "en": "Headstone of İshak Paşa, outer face"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Rûz-ı arum şode zî- mâh-ı Safer reft ber dest sûy-ı ahbâb / revvâhahû min râyihi’l-cenneti râha ma’a rahmeti’r-rıdvân / Kâne târihuhû sümme tis’în ba’dehû isnân / Ey cemâl-i me-dih be dünya dil-i hûn bidâni ki “küllü men aleyhâ fân.”",
+      "translation": {
+        "tr": "Safer ayının dördüncü gününde elden dostlar tarafına gitti. Allah onu Cennet kokularıyla kokulandırsın, rıdvanın rahmetiyle kandırsın doksan ve iki tarih oldu ki her nefis ölümü tadacaktır H. 892 / M. 1487.",
+        "en": "On the fourth day of the month of Safar, he went to the realm of eternal friends. May Allah perfume him with the scents of Paradise and please him with the mercy of ridwan. It has been ninety and two years since every soul will taste death. AH 892 / AD 1487."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 892,
+        "gregorian": "1487"
+      },
+      "note": {
+        "tr": "Kitap dili belirtmez. Mealdeki 'doksan ve iki' (892) ifadesi kitapta olduğu gibi aktarıldı.",
+        "en": "The book does not name the language. The 'ninety and two' (892) wording in the translation is given as in the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "352-353"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vakfiye-1486",
+      "year": 1486,
+      "date": null,
+      "hijri": "891",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiyede türbenin anılması ve türbedar tayini (H. 891 / M. 1486)",
+        "en": "Tomb mentioned in charter; tombkeeper assigned (AH 891 / AD 1486)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "354"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1487",
+      "year": 1487,
+      "date": null,
+      "hijri": "892",
+      "type": "record",
+      "title": {
+        "tr": "İshak Paşa'nın vefatı (H. 4 Safer 892 / M. 10 Şubat 1487)",
+        "en": "Death of İshak Paşa (4 Safar AH 892 / 10 February AD 1487)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "352-353"
+        }
+      ]
+    },
+    {
+      "id": "nakil-1937",
+      "year": 1937,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İshak Paşa'nın kabrinin caminin güneyinden türbeye nakli",
+        "en": "Transfer of İshak Paşa's grave from south of the mosque into the tomb"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "354-355"
+        }
+      ],
+      "note": {
+        "tr": "Ekrem Hakkı Ayverdi'ye göre.",
+        "en": "According to Ekrem Hakkı Ayverdi."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-inegol-ishak-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "İshak Paşa Külliyesi'nin türbesi.",
+        "en": "The tomb of the İshak Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "352"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe altıgen planlı ve kubbelidir; kuzey cephede eyvan içinde basık kemerli bir giriş kapısı vardır. Güney cephede sivri kemerli kör niş ve alçı şebekeli küçük bir pencere bulunur. İç mekânı alt sırada dört, üst sırada altı pencere aydınlatır. Saçak hattı üç sıra testere dişiyle çevrilidir. İçinde üç mezar vardır.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "352-355"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1LH69B_gZKowJTiipmsxAXfHqTMEdm6MJ",
+        "original_name": "03 ERD08634 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "352"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tâcünnisâ Sultan ve İshak Paşa Türbesi (kitap s. 352)",
+        "en": "Tâcünnisa Sultan and İshak Paşa Tomb (book p. 352)"
+      },
+      "alt": {
+        "tr": "Tâcünnisâ Sultan ve İshak Paşa Türbesi fotoğrafı",
+        "en": "Photo of Tâcünnisa Sultan and İshak Paşa Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,483 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-hancerli-fatma-sultan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Camide bir kitabe yok; yapım yılı kitapta verilmiyor (yalnızca XV. yüzyıl sonu).",
+      "Fatma Sultan'ın Bursa'daki mektep, medrese ve hamamının adları kitapta verilmiyor; ilişki (waqf_income/same_founder) kurulmadı.",
+      "'era' alanı XV. yüzyıl sonu için erken-osmanli olarak ekip tarafından seçildi; teyit edilmeli.",
+      "Vakıf kaydı: camiye maaş ödemesi yapılan Hançerli Fatma Sultan Vakfı'nın kaydı kitapta tarih verilmeden aktarılıyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap XV. yüzyıl sonunu uygun görürken Semavi Eyice belgesiz olarak Yıldırım Bayezid dönemini (XIV. yüzyıl sonu) ileri sürer; iki görüş de saklandı, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "waqf",
+        "note": "Fatma Sultan'ın H. 939 / M. 1533 vakfiyesinde cami yoktur; camiye sonradan Hançerli Fatma Sultan Vakfı'ndan maaş ödendiği kayıtlıdır (kitap bunu 'sonradan vakfa dahil edildi' diye yorumlar). Vakıf bağı bu yüzden 'probable'."
+      },
+      {
+        "field": "sections",
+        "note": "PDF s. 31-32'de Türkçe ve İngilizce paragraflar iç içe basılmıştır; metin sırası düzeltilerek okunmuştur. Türkçe ve İngilizce metin arasında çelişki yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Camii",
+    "en": "Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yukarı Cami",
+      "en": "Yukarı (Upper) Mosque"
+    },
+    {
+      "tr": "Yıldırım Camii",
+      "en": "Yıldırım Mosque"
+    },
+    {
+      "tr": "Yukarı İmaret Camii",
+      "en": "Yukarı İmaret Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "zaviyeli cami",
+    "Hançerli Fatma Sultan",
+    "XV. yüzyıl",
+    "Kurşunlu"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Kurşunlu Mahallesi (eski köy yerleşimi)",
+    "address": "İnegöl, Kurşunlu Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "366-367"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyıl sonları (mimari özelliklere göre)",
+      "en": "Late 15th century (based on architectural features)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, mimari özellikler nedeniyle XV. yüzyıl sonlarına tarihlemeyi uygun bulur; kesin yıl verilmez. Semavi Eyice Yıldırım Bayezid dönemini ileri sürer ancak kanıt göstermez.",
+      "en": "The book considers a late-15th-century date appropriate on architectural grounds; no exact year is given. Semavi Eyice suggests the Yıldırım Bayezid period without evidence."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "367"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hançerli Fatma Sultan",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "366-367"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Hançerli Fatma Sultan Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "367"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Şehzade Mahmud'un kızı Hançerli Fatma Sultan'ın banisi olduğu, zaviyeli cami tipinde, kubbeli ana mekânlı XV. yüzyıl sonu camisi; 2017'de restore edilip yeniden ibadete açılmıştır.",
+    "en": "A late-15th-century mosque of the mosque-with-zawiya type, founded by Hançerli Fatma Sultan, daughter of Şehzade Mahmud; restored in 2017 and reopened for worship."
+  },
+  "sections": [
+    {
+      "id": "genel-bilgi",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Adlar ve Banî",
+        "en": "Location, Names and Founder"
+      },
+      "body": {
+        "tr": "Cami İnegöl'ün Kurşunlu Mahallesi'nde (eski köy yerleşimi) yer alır. Kaynaklarda \"Hançerli Fatma Sultan Camii\", \"Yukarı Cami\", \"Yıldırım Camii\" ve \"Yukarı İmaret Camii\" adlarıyla anılır. İnşa kitabesi günümüze ulaşmamıştır. Banisi, II. Bayezid'in oğlu Şehzade Mahmud'un kızı Hançerli Fatma Sultan'dır; 1490'ların ortasında Kastamonu'da doğmuş, Çandarlı ailesinden Sadrazam İbrahim Paşa'nın oğlu Mehmed Bey ile evlenmiş, H. 939 / M. 1533'te vefat edip İstanbul Eyüp'teki türbesine gömülmüştür.",
+        "en": "The mosque is in Kurşunlu Neighborhood (the old village settlement) of İnegöl. It is known in the sources as \"Hançerli Fatma Sultan Mosque\", \"Yukarı (Upper) Mosque\", \"Yıldırım Mosque\" and \"Yukarı İmaret Mosque\". No construction inscription has survived. Its benefactor was Hançerli Fatma Sultan, daughter of Şehzade Mahmud, son of Bayezid II; she was born in Kastamonu in the mid-1490s, married Mehmed Bey, son of Grand Vizier İbrahim Paşa of the Çandarlı family, and died in AH 939 / AD 1533, buried in her tomb in Eyüp, Istanbul."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "366-367"
+        }
+      ]
+    },
+    {
+      "id": "vakif-ve-tarihleme",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf ve Tarihlendirme",
+        "en": "Foundation and Dating"
+      },
+      "body": {
+        "tr": "Fatma Sultan'ın H. 939 / M. 1533 tarihli vakfiyesi günümüze ulaşmıştır ancak Bursa'da yaptırdığı mektep, medrese ve hamam gibi yapılarla ilgilidir. Cami ilk vakıf listesinde yer almaz; sonraki dönemlerde camide görev yapanlara Hançerli Fatma Sultan Vakfı'ndan maaş ödendiğine dair kayıtlar vardır, bu da yapının sonradan vakfa dahil edildiğini gösterir. Mimari özellikler nedeniyle yapının XV. yüzyıl sonlarına tarihlenmesi uygun görülür; Semavi Eyice ise belge ya da somut kanıt göstermeden Yıldırım Bayezid dönemine ait olabileceğini ileri sürmüştür.",
+        "en": "Fatma Sultan's endowment charter dated AH 939 / AD 1533 has survived but concerns structures such as schools, madrasas and baths she had built in Bursa. The mosque is not in the first foundation list; there are records of salaries paid to its staff from the Hançerli Fatma Sultan Foundation in later periods, showing it was later included in the foundation. Considering its architectural features, a date at the end of the 15th century is considered appropriate; Semavi Eyice claimed, without documents or concrete evidence, that it could belong to the period of Yıldırım Bayezid."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "367"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mekânlar",
+        "en": "Plan and Spaces"
+      },
+      "body": {
+        "tr": "Yapı kuzey-güney eksenlidir: kuzeyde giriş bölümü, güneyde ana ibadet mekânı ve bu mekâna doğudan ve batıdan bitişen iki yan bölümden oluşan plan zaviyeli cami tipini gösterir. Giriş bölümü doğu-batı doğrultulu dikdörtgen planlı ve tekne tonozludur; kuzey duvarında yuvarlak kemerli, alınlıklı, lentolu bir kapı, doğu ve batı duvarlarında yuvarlak kemerli birer yan kapı vardır. Güney duvarındaki pencereler dikdörtgen formlu, çökertme alınlıklı, yuvarlak kemerli ve demir parmaklıklıdır.",
+        "en": "The building is organised on a north-south axis; an entrance section in the north, the main prayer hall in the south and two side sections adjoining it from east and west show the mosque-with-zawiya type. The entrance section is rectangular, extends east-west and is vaulted; the north wall has a round-arched door with pediment and lintel, and the east and west walls have round-arched side doors. The windows on its south wall are rectangular, with recessed pediments, round arches and iron grilles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "366-368"
+        }
+      ]
+    },
+    {
+      "id": "ibadet-mekani",
+      "order": 4,
+      "title": {
+        "tr": "Ana İbadet Mekânı ve Yan Mekânlar",
+        "en": "Main Prayer Hall and Side Spaces"
+      },
+      "body": {
+        "tr": "Güneydeki asıl ibadet mekânı kare planlıdır ve pandantiflerle geçilen bir kubbeyle örtülüdür. Güney duvarında beş cepheli mihrap nişi, iki yanında dikdörtgen birer yan niş bulunur; minber batı köşededir, doğu ve batı duvarlarda karşılıklı birer pencere vardır, kuzeyde mahfil yer alır. Yan mekânlar kareye yakın dikdörtgen planlı ve çapraz tonozludur; doğudaki yan mekânın doğu duvarında biri eksende büyük, ikisi iki yanda küçük üç dikdörtgen niş vardır; batıdaki yan mekânın iç duvarlarında kubbeyi taşıyan sivri kemer açıklıkları görülür.",
+        "en": "The main prayer hall in the south has a square plan and is covered by a dome on pendentives. On the south wall is a five-sided mihrab niche flanked by rectangular side niches; the minbar is in the west corner, there is one window on each of the east and west walls and a gallery in the north. The side spaces are almost square and cross-vaulted; the east wall of the east side space has three rectangular niches (one large on the axis, two smaller beside it), and the interior walls of the west side space have pointed-arch openings carrying the dome."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "id": "minare-ve-malzeme",
+      "order": 5,
+      "title": {
+        "tr": "Minare, Malzeme ve Onarımlar",
+        "en": "Minaret, Materials and Repairs"
+      },
+      "body": {
+        "tr": "Minareye kuzey cephede, kaidesinin doğu yüzüne açılan basık kemerli bir kapıyla ulaşılır; kübik kaide üzerinde silindirik gövdeli, tek şerefelidir ve şerefe altı beş sıra testere dişi silmeyle bezelidir. Minber, vaaz kürsüsü ve mahfiller ahşaptır. Dış duvarlar moloz taş, pencere alınlıkları, kemerler, bacalar ve minare gövdesi tuğladır; kapı ve pencere lento ile söveleri mermer, minare kaidesi kesme taştır; kubbe ve tonozlar oluklu kiremitle kaplıdır. Cami 1960'lı yıllarda onarım görmüş, 2017'de Vakıflar Genel Müdürlüğü tarafından kapsamlı biçimde onarılarak yeniden ibadete açılmıştır.",
+        "en": "The minaret is reached on the north side through a depressed-arch door in the east face of its base; it has a cylindrical shaft on a cubic base with a single balcony decorated below with five rows of sawtooth moulding. The minbar, pulpit and galleries are wooden. Outer walls are rubble stone; window pediments, arches, chimneys and the minaret shaft are brick; door and window lintels and jambs are marble and the minaret base is cut stone; domes and vaults are covered with grooved tiles. The mosque was repaired in the 1960s and, taken into the restoration programme of the General Directorate of Foundations in 2017, was reopened for worship after a comprehensive repair."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "368-369"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_tipi",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "Zaviyeli cami",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "366"
+        }
+      ]
+    },
+    {
+      "key": "orten",
+      "label": {
+        "tr": "Ana mekân örtüsü",
+        "en": "Main space cover"
+      },
+      "value": "Pandantifli kubbe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "key": "minare_serefe",
+      "label": {
+        "tr": "Şerefe sayısı",
+        "en": "Number of balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_cephe",
+      "label": {
+        "tr": "Mihrap nişi cephe sayısı",
+        "en": "Mihrab niche sides"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "368"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hançerli Fatma Sultan",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Şehzade Mahmud",
+      "role": {
+        "tr": "Fatma Sultan'ın babası, II. Bayezid'in oğlu",
+        "en": "Father of Fatma Sultan, son of Bayezid II"
+      }
+    },
+    {
+      "name": "Mehmed Bey",
+      "role": {
+        "tr": "Fatma Sultan'ın eşi, Sadrazam İbrahim Paşa'nın oğlu",
+        "en": "Husband of Fatma Sultan, son of Grand Vizier İbrahim Paşa"
+      }
+    },
+    {
+      "name": "Semavi Eyice",
+      "role": {
+        "tr": "Yapının Yıldırım Bayezid dönemine ait olabileceğini ileri süren araştırmacı",
+        "en": "Researcher who suggested the building could date from the Yıldırım Bayezid period"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1533",
+      "year": 1533,
+      "date": null,
+      "hijri": "939",
+      "type": "record",
+      "title": {
+        "tr": "Fatma Sultan'ın vakfiyesi (H. 939 / M. 1533)",
+        "en": "Fatma Sultan's endowment charter (AH 939 / AD 1533)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "367"
+        }
+      ],
+      "note": {
+        "tr": "Vakfiye Bursa'daki yapılarla ilgilidir; cami ilk listede yoktur.",
+        "en": "The charter concerns her buildings in Bursa; the mosque is not in the first list."
+      }
+    },
+    {
+      "id": "onarim-1960lar",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "1960'lı yıllarda onarım",
+        "en": "Repair in the 1960s"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "369"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca '1960'lı yıllar' der; 1960 on yılın başlangıcı olarak yazıldı.",
+        "en": "The book only says 'the 1960s'; 1960 is the start of the decade."
+      }
+    },
+    {
+      "id": "restorasyon-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM restorasyonu; yeniden ibadete açıldı",
+        "en": "General Directorate of Foundations restoration; reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "369"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, eski Kurşunlu köy yerleşimindedir. Kuzeyde, tekne tonozlu dikdörtgen bir giriş bölümü vardır; buradan kare planlı, tek kubbeli ana ibadet mekânına geçilir. Mekânın güney duvarında beş yüzlü bir mihrap nişi, batı köşesinde ahşap minber, kuzeyinde ahşap mahfil bulunur. Doğu ve batı yanlarında çapraz tonozlu iki yan oda vardır. Kuzeyde, kübik kaideden yükselen silindirik gövdeli, tek şerefeli bir minare durur. Dış duvarlar moloz taş, kemerler ve minare tuğladır.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "366-369"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1H-dw8sSgEQrC0tRAFeHjNR57OdOC7_hZ",
+        "original_name": "05 ERD07826 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "368"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Camii (kitap s. 368)",
+        "en": "Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Mosque (book p. 368)"
+      },
+      "alt": {
+        "tr": "Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Camii fotoğrafı",
+        "en": "Photo of Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1CfHUCpofLcZZaV5cKXPdusk2Ng-Ktk1N",
+        "original_name": "02 SunGlassHut.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "369"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Camii (kitap s. 369)",
+        "en": "Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Mosque (book p. 369)"
+      },
+      "alt": {
+        "tr": "Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Camii fotoğrafı",
+        "en": "Photo of Hançerli Fatma Sultan (Yıldırım-Yukarı İmaret) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}
