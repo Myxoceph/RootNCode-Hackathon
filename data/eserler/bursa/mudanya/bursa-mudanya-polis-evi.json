@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-mudanya-polis-evi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Mudanya",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
+      "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
+      "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
+      "Yapım yılı, yaptıran ve mimar kitapta yok; 'dating', 'founder' null bırakıldı.",
+      "Kitaptaki 'Mudanya ilçesi ... I. Murad Hudâvendigâr tarafından vakfedilmiştir' cümlesi binaya mı ilçeye mi ait belirsiz; 'waqf' alanına yazılmadı.",
+      "Bina adının neden 'Polis Evi' olduğu ve XIX-XX. yüzyıl arasındaki kesin yapım tarihi bilinmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf",
+        "note": "TR ve EN metin 'Mudanya ilçesi/district' ifadesiyle Murad I Hudâvendigâr'ın vakfından söz eder; cümle yapıyla ilişkisi açık olmadan sayfa başına konmuş. Bu nedenle waqf null bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mudanya Polis Evi",
+    "en": "Mudanya Police House"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "sivil mimari",
+    "Türk evi",
+    "Girit göçmenleri"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Mudanya",
+    "neighborhood": "Şükrüçavuş",
+    "address": "Parti Sokak, No: 5",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "604"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Restorasyonla gün yüzüne çıkarılan, üç katlı kâgir geleneksel Türk evi; 2003'ten beri 'Mudanya Polis Evi Lokali' olarak hizmet veriyor.",
+    "en": "Three-storey masonry traditional Turkish house revealed by restoration; serving as the “Mudanya Police House Club” since 2003."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yapı, restorasyon çalışmalarıyla gün yüzüne çıkarılmış, geleneksel Türk evi mimarisi özellikleri taşıyan tarihî bir binadır. Rum yapıları ve Girit göçmenlerinin etkisiyle şekillenmiş Mudanya'da geleneksel Türk mimarisini yansıtan ender örneklerden biridir. Bugün “Mudanya Polis Evi Lokali” olarak hizmet verir.",
+        "en": "The historical building, brought to light by restoration, bears the characteristics of traditional Turkish house architecture. It is one of the rare examples of traditional Turkish architecture in Mudanya, shaped by Greek structures and the influence of Cretan immigrants. Today it serves as the “Mudanya Police House Club”."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "604"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Tarihî fotoğraflardan yola çıkılarak 1937'de bu konumda yer alan bir yapının Mudanya Emniyet Komiserliği olarak kullanıldığı ileri sürülür; fotoğraftaki girişin bugünkünden farklı olması ve destekleyen belge bulunmaması nedeniyle bu yorum teyit edilememektedir. Bölge sakinlerinin hatıralarına göre 1950'lerde burada akşam sanat okulu kursları düzenlenmiştir. 2001'de emniyet müdürlüğünce restore edilmiş, 2003'te polis evi olarak hizmete açılmıştır.",
+        "en": "Based on historical photographs it is claimed that a building at this location was used as the Mudanya Police Commissioner's Office in 1937; because the entrance in the photograph differs from the present one and no supporting documents were found, this cannot be confirmed. Local residents recall evening art school courses here in the 1950s. It was restored by the Police Department in 2001 and opened as a Police House in 2003."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "605"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Bodrum dahil üç katlı kâgir yapının taban alanı 372 m²'dir; plan XIX. ve XX. yüzyıl Türk konut mimarisinin özelliklerini yansıtır. Ana giriş 17 basamakla çıkılan birinci kattadır. İç mekân girişin sağından başlayan L biçimli salon etrafında düzenlenmiştir; ahşap çift kanatlı kapılarla bölümlere ayrılır. Tavanlar yüksektir ve süslemesizdir; dar ve uzun ahşap pencereler vardır. Beyaz boyalı yapı çevre duvarlarıyla sınırlı geniş bir bahçededir.",
+        "en": "The three-storey masonry building including the basement has a floor area of 372 m²; its plan reflects 19th and 20th century Turkish residential architecture. The main entrance is on the first floor, reached by 17 steps. The interior is organized around an L-shaped hall starting right of the entrance, divided by wooden double-leafed doors. Ceilings are high and undecorated; windows are narrow, tall and wooden. The white-painted building stands in a large garden enclosed by perimeter walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "605"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "taban_alani",
+      "label": {
+        "tr": "Taban alanı",
+        "en": "Floor area"
+      },
+      "value": 372,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "605"
+        }
+      ]
+    },
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı (bodrum dahil)",
+        "en": "Number of floors (including basement)"
+      },
+      "value": 3,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "605"
+        }
+      ]
+    },
+    {
+      "key": "giris_basamak",
+      "label": {
+        "tr": "Ana giriş basamak sayısı",
+        "en": "Steps to main entrance"
+      },
+      "value": 17,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "605"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-2001",
+      "year": 2001,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Emniyet müdürlüğünce restore edildi",
+        "en": "Restored by the Police Department"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "605"
+        }
+      ]
+    },
+    {
+      "id": "acilis-2003",
+      "year": 2003,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Polis evi olarak hizmete açıldı",
+        "en": "Opened as a Police House"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "605"
+        }
+      ]
+    },
+    {
+      "id": "kayit-1937",
+      "year": 1937,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bu konumdaki yapının Emniyet Komiserliği olarak kullanıldığı iddiası (teyit edilemedi)",
+        "en": "Claim that a building here was used as Police Commissioner's Office (unconfirmed)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "605"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Beyaz boyalı, bodrum dahil üç katlı kâgir bir yapıdır. Ana girişe 17 basamakla çıkılır. İç mekân L biçimli bir salon etrafında düzenlenmiştir; tavanlar yüksek ve süslemesizdir, pencereler dar ve uzun ahşap doğramalıdır.",
+      "en": "A white-painted three-storey masonry building including the basement. The main entrance is reached by 17 steps. The interior is arranged around an L-shaped hall with high undecorated ceilings and narrow tall wooden windows."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

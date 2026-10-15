@@ -23,7 +23,7 @@ Every file must pass the validator.
   and section 11 (data team rules).
 - Schema: `data/schema/eser.schema.json` · Codes: `data/enums.json` · Sources: `data/sources.json`
   (this chapter's source id: `<ör. vk-bursa-c1>`)
-- Format example: `data/eserler/bursa/bursa-osmangazi-ulucami.json` — structure and style only;
+- Format example: `data/eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json` — structure and style only;
   never copy its facts.
 
 Do not search the web. Do not overwrite any existing file in `data/eserler/`; if a record with
@@ -49,17 +49,16 @@ the same id already exists, stop and report it.
 - Do NOT invent coordinates, photos, Drive ids or file names: omit `location.coordinates`, set
   `media: []`, `archive_media: []`, `media_folder: null`, and add todos for both.
 - Ids: `<il>-<ilçe>-<ad>`; file name = id. `meta.status: "draft"`,
-  `meta.prepared_by: "ai-draft:sonnet"`, `meta.reviewed_by: null`,
-  `meta.from: "<PDF ADI, numara ve .pdf olmadan; ör. '3-Sivil Mimari.pdf' → 'Sivil Mimari'>"`
-  (right after `reviewed_by`), dates = today.
+  `meta.prepared_by: "ai-draft:sonnet"`, `meta.reviewed_by: null`, dates = today.
+  `meta.from` = the chapter PDF name without the leading number and without `.pdf` (e.g. `Sivil Mimari`, `Kestel`), placed right after `reviewed_by`.
 - `accessibility`: all statuses `"unknown"`, `verified: false`; `audio_description` may be
   written from the book's architectural description (factual, from the text only).
 
 ## Output
-Write the files into `data/eserler/<il>/` and validate them together until there is no `✗`
+Write the files into `data/eserler/<il>/<ilçe-slug>/` (e.g. `data/eserler/bursa/kestel/`; ascii, lowercase) and validate them together until there is no `✗`
 (warnings are fine):
 ```
-python3 data/tools/validate.py data/eserler/<il>/<id1>.json data/eserler/<il>/<id2>.json ...
+python3 data/tools/validate.py data/eserler/<il>/<ilçe>/<id1>.json data/eserler/<il>/<ilçe>/<id2>.json ...
 ```
 
 ## Final report (under 150 words)

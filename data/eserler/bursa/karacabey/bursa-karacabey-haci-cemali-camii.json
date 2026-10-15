@@ -1,0 +1,270 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-karacabey-haci-cemali-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Karacabey",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Karacabey bölümünden (s. 512) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
+      "Arşiv fotoğrafı (archive_media) elimizde yok.",
+      "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
+      "Mimarı kitapta yok.",
+      "Hacı Cemali Yenişar'ın mahalle ya da başka yapılarla bağı kitapta yok; ilişki kurulmadı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hacı Cemali (Nasrullah) Camii",
+    "en": "Hacı Cemali (Nasrullah) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Nasrullah Camii",
+      "en": "Nasrullah Mosque",
+      "note": "Resmî kayıtlardaki ad"
+    },
+    {
+      "tr": "Hacı Cemali Ağa Camii",
+      "en": "Hacı Cemali Ağa Mosque",
+      "note": "Halk arasındaki ad"
+    },
+    {
+      "tr": "İki Çanaklı Camii",
+      "en": "İki Çanaklı (Two Bowled) Mosque",
+      "note": "Halk arasındaki ad"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "cami",
+    "Karacabey",
+    "iki şerefeli minare"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Karacabey",
+    "neighborhood": "Abdullah Paşa Mahallesi",
+    "address": "Panayır Caddesi, Abdullah Paşa Mahallesi, Karacabey",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "512"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1950",
+      "en": "1950"
+    },
+    "start_year": 1950,
+    "end_year": 1950,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Hacı Cemali Yenişar tarafından 1950 yılında inşa ettirildiği belirtilmiştir.",
+      "en": "Stated to have been built by Hacı Cemali Yenişar in 1950."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "512"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Cemali Yenişar",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "512"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hacı Cemali Yenişar'ın 1950'de yaptırdığı, ilçedeki ilk iki şerefeli minareli örnek olan, gizli kubbeli dikdörtgen planlı cami.",
+    "en": "Built in 1950 by Hacı Cemali Yenişar, a rectangular mosque with a hidden dome whose two-balcony minaret is the first of its kind in the district."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Adlar",
+        "en": "History and Names"
+      },
+      "body": {
+        "tr": "Cami, Hacı Cemali Yenişar tarafından 1950 yılında inşa ettirilmiştir. Resmî kayıtlarda “Nasrullah Camii” adıyla geçmesine rağmen halk arasında “Hacı Cemali Ağa Camii” veya “İki Çanaklı Camii” olarak bilinmektedir. Yapı 2011 yılında tescillenerek koruma altına alınmıştır.",
+        "en": "The mosque was built by Hacı Cemali Yenişar in 1950. Although officially listed as the “Nasrullah Mosque”, it is more commonly known as the “Hacı Cemali Ağa Mosque” or the “İki Çanaklı (Two Bowled) Mosque”. It was registered and placed under protection in 2011."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "512"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı cami 9,75 x 14,10 m ölçülerindedir; son cemaat mahfili 3,80 x 9,75 m'dir. Bitişik minare, ilçede iki şerefeli olarak tasarlanan ilk minare örneğidir. Harimin tavanı ahşaptır; çatı altında 5 m genişliğinde ve 2 m derinliğinde gizli bir kubbe bulunur.",
+        "en": "The rectangular mosque measures 9.75 × 14.10 m; the narthex measures 3.80 × 9.75 m. The adjacent minaret is the first in the district designed with two balconies. The prayer hall ceiling is wood; under the roof is a hidden dome 5 m wide and 2 m deep."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "512"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "cami_olcusu",
+      "label": {
+        "tr": "Cami ölçüleri",
+        "en": "Mosque dimensions"
+      },
+      "value": "9,75 x 14,10",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "512"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcusu",
+      "label": {
+        "tr": "Son cemaat mahfili ölçüsü",
+        "en": "Narthex dimensions"
+      },
+      "value": "3,80 x 9,75",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "512"
+        }
+      ]
+    },
+    {
+      "key": "gizli_kubbe",
+      "label": {
+        "tr": "Gizli kubbe (genişlik x derinlik)",
+        "en": "Hidden dome (width x depth)"
+      },
+      "value": "5 x 2",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "512"
+        }
+      ]
+    },
+    {
+      "key": "serefe_sayisi",
+      "label": {
+        "tr": "Şerefe sayısı",
+        "en": "Number of balconies"
+      },
+      "value": 2,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "512"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa ettirildi",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "512"
+        }
+      ]
+    },
+    {
+      "id": "tescil-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Yapı tescillenerek koruma altına alındı",
+        "en": "Registered and placed under protection"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "512"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, ahşap tavanlı bir camidir. Bitişik minaresi iki şerefelidir. Çatı altında gizli bir kubbe vardır.",
+      "en": "A rectangular mosque with a wooden ceiling. Its adjacent minaret has two balconies. A hidden dome lies under the roof."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

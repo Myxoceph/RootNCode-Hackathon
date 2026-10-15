@@ -1,0 +1,429 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-karacabey-imaret-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Karacabey",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Karacabey bölümünden (s. 513-518) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
+      "Arşiv fotoğrafı (archive_media) elimizde yok.",
+      "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
+      "Yapım yılı kesin değil (1456 öncesi / 1456-57).",
+      "Kitapta mimar adı yok.",
+      "Karaca Bey Hanı'nın (Bursa) ilçesi metinde yok; ilişki kurulmadı.",
+      "Medrese, Karaca Bey türbesi ve su kuyuları ayrı başlık almadığı için kayıt açılmadı.",
+      "Kitabelerin dili/yazı türü kitapta belirtilmemiş; language 'ar' transliterasyondan çıkarıma dayanır, kontrol edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Metin camiyi '1456 yılından önce' inşa edildi diye verir; kapı kemeri kitabesi H. 861 / M. 1456-57 tarihini verir. Kitabın değerleri korundu."
+      },
+      {
+        "field": "inscriptions",
+        "note": "Mezar kitabesi H. 860 / M. 1456'yı, kapı kemeri kitabesi H. 861 / M. 1456-57'yi verir; iki ayrı kitabedir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İmaret (Kurşunlu-Mihalıç) Camii",
+    "en": "Imaret (Kurşunlu-Mihalıç) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Kurşunlu Camii",
+      "en": "Kurşunlu Mosque",
+      "note": "Başlıktaki ad"
+    },
+    {
+      "tr": "Mihalıç Camii",
+      "en": "Mihalıç Mosque",
+      "note": "Başlıktaki ad"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "imaret",
+    "Karaca Bey",
+    "Mihaliç",
+    "türbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Karacabey",
+    "neighborhood": "Selimiye Mahallesi",
+    "address": "17. Sokak, No: 9, Selimiye Mahallesi, Karacabey",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "513"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1456 öncesi; kitabede H. 861 / M. 1456-57",
+      "en": "Before 1456; inscription gives AH 861 / AD 1456-57"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 861,
+    "century": 15,
+    "basis": {
+      "tr": "Metin 'Karaca Bey tarafından 1456 yılından önce inşa ettirilmiştir' der; kapı kemeri kitabesi ise H. 861 / M. 1456-57 tarihini verir ve Karaca Bey 1456'da şehit olmuştur.",
+      "en": "The text says it was built by Karaca Bey before 1456; the door-arch inscription gives AH 861 / AD 1456-57, while Karaca Bey was martyred in 1456."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "513, 514"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Karaca Bey (Abdullah oğlu, Dayı Karaca Bey)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "513, 514"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Karaca Bey vakıfları",
+    "deed": null,
+    "conditions": {
+      "tr": "Karaca Bey, Mihaliç'teki cami, imaret, medrese ve su yolu ile Yenişehir'in Ebe köyündeki zaviyenin devamı için vakıflar kurmuştur. Vakıf malları: Bursa'da Karaca Bey Hanı (Gelincik Çarşısı) ve çevresindeki Çuhacılar, Yorgancılar, Sandıkçılar çarşıları, iki boyahane, Tahtakale'de dükkânlar; İnegöl Ortaköy'de iki değirmen; Manyas Mürüvvetli'de altı değirmen; Manyas'a bağlı Mürüvvetli, Ağaçviran, Çeltikçi, Frenkli köyleri; zaviye için İnegöl'ün Ebe köyü.",
+      "en": "Karaca Bey established foundations to sustain his mosque, imaret, madrasa and waterway in Mihaliç and the zawiya in Ebe village. Properties: the Karaca Bey Han (Gelincik Bazaar) and the surrounding Drapers', Quilt Makers' and Chest Makers' markets in Bursa, two dyehouses, shops in Tahtakale; two mills in Ortaköy (İnegöl); six mills in Mürüvvetli (Manyas); the villages of Mürüvvetli, Ağaçviran, Çeltikçi and Frenkli in Manyas; and Ebe village of İnegöl for the zawiya."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "516-517"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Karaca Bey'in 1456'dan önce ya da 1456-57'de yaptırdığı, ​türbesini ve çevresinde medresesini barındıran kubbeli cami-imaret; 1853 depreminde zarar görmüş, 1971-72'de onarılmıştır.",
+    "en": "A domed mosque-imaret commissioned by Karaca Bey before 1456 or in 1456-57, housing his tomb with a madrasa nearby; damaged in the 1853 earthquake and restored in 1971-72."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Banî",
+        "en": "History and Founder"
+      },
+      "body": {
+        "tr": "Cami, Osmanlı vezirlerinden Abdullah oğlu Karaca Bey tarafından 1456 yılından önce inşa ettirilmiştir; Karacabey kasabasının kuzeyindedir. Karaca Bey II. Murad döneminde Varna Muharebesi'ndeki kahramanlığıyla öne çıkmıştır. Kapı kemeri kitabesi yapıyı H. 861 / M. 1456-57 olarak tarihler; bu, 'önce' ifadesiyle uyuşmaz görünmektedir.",
+        "en": "The mosque was built by Karaca Bey, son of Abdullah, one of the Ottoman viziers, before 1456, on the north side of Karacabey town. Karaca Bey stood out with his heroism in the Battle of Varna under Murad II. The door-arch inscription dates the building AH 861 / AD 1456-57, which does not agree with 'before 1456'."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "513, 514"
+        }
+      ]
+    },
+    {
+      "id": "cevre-ve-turbeler",
+      "order": 2,
+      "title": {
+        "tr": "Çevresi ve Türbeler",
+        "en": "Surroundings and Tombs"
+      },
+      "body": {
+        "tr": "Caminin çevresinde Karaca Bey'e ait bir medrese, türbe ve su kuyuları bulunur. 1456'da şehit düşen Karaca Bey, caminin son cemaat yerindeki türbesine gömülüdür; yakınında eşi Bülbül Hatun'un türbesi vardır. Bülbül Hatun Mihaliç'te bir medrese yaptırmıştır; türbesi aynı yapı kompleksi içindedir.",
+        "en": "Around the mosque are a madrasa, tomb and water wells of Karaca Bey. Karaca Bey, martyred in 1456, is buried in his tomb in the mosque's narthex; near it is the tomb of his wife Bülbül Hatun. Bülbül Hatun had a madrasa built in Mihaliç; her tomb is within the same building complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "515-517"
+        }
+      ]
+    },
+    {
+      "id": "hayirlari",
+      "order": 3,
+      "title": {
+        "tr": "Karaca Bey'in Hayır Eserleri",
+        "en": "Karaca Bey's Charitable Works"
+      },
+      "body": {
+        "tr": "Karaca Bey Mihaliç'te cami, imaret, medrese ve mevcut yapıların ihtiyacı için bir su yolu yaptırmış, Yenişehir'in Ebe köyünde zaviye kurmuş, Bursa'da han ve çarşılar, boyahaneler, dükkânlar, değirmenler ve köyleri vakfetmiştir. Kızı Hundi Hatun, Çandarlı Halil Paşa'nın oğlu İbrahim Paşa ile evlenmiştir; Bursa'da Ulucami'nin doğusunda adına bir mektep bulunduğu bilinir.",
+        "en": "Karaca Bey commissioned a mosque, imaret, madrasa and a waterway in Mihaliç, a zawiya in Ebe village of Yenişehir, and endowed a han, markets, dyehouses, shops, mills and villages. His daughter Hundi Hatun married İbrahim Paşa, son of Çandarlı Halil Paşa; a school named after her stood east of the Ulucami in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "516-517"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 4,
+      "title": {
+        "tr": "Plan ve Mekânlar",
+        "en": "Plan and Spaces"
+      },
+      "body": {
+        "tr": "Duvarlar iki sıra tuğla, bir sıra taş almaşık örgülüdür. Son cemaat yeri kuzey-güney doğrultusunda giriş ve ibadet mekânı ile doğu-batıda önlerinde dehliz bulunan iki yan kanattan oluşur. Giriş mekânı kare planlı, pandantifli kubbelidir; sivri kemerli açıklıkla yine kare planlı, pandantifli kubbeli ibadet alanına bağlanır. Güney duvar ekseninde beş cepheli mihrap vardır. Yan mekânlar kare planlı ve eş boyutludur; dehlizler dikdörtgen planlı ve beşik tonozludur, batı dehlizde üst kata ve minareye çıkan merdiven vardır.",
+        "en": "The walls are in alternating technique, two rows of brick and one row of stone. The narthex consists of an entrance and prayer hall aligned north-south and two side wings, each with a corridor. The entrance hall is square with a pendentive dome; a pointed-arched opening connects it to the square, pendentive-domed prayer area. A five-sided mihrab is on the south wall axis. The side spaces are square and equal in size; the corridors are rectangular and barrel-vaulted, with the stairs to the upper floor and minaret in the western corridor."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "517-518"
+        }
+      ]
+    },
+    {
+      "id": "cephe-ve-minare",
+      "order": 5,
+      "title": {
+        "tr": "Pencereler, Bezeme ve Minare",
+        "en": "Windows, Decoration and Minaret"
+      },
+      "body": {
+        "tr": "Alt pencereler dikdörtgen, mermer çerçeveli ve yuvarlak kemerli alınlıklıdır; üst pencereler sivri kemerli ve alçı şebekelidir. Saçak altı iki sıra testere dişi frizlidir. İbadet mekânında pandantifler mukarnas dolguludur; onikigen kasnağın altında üçgen elemanlı silme vardır. Minare tamamen taştandır. Kubbe kasnakları ve son cemaat yerinin güney duvarı dıştan, tüm mekânlar ve örtü sistemi içten sıvalıdır. Hasluck 1910'larda geçiş elemanları ve kubbenin tuğladan olduğunu belirtmiştir.",
+        "en": "The lower windows are rectangular, marble-framed with round-arched pediments; the upper windows are pointed-arched with plaster grilles. The eaves have two rows of sawtooth friezes. In the prayer hall the pendentives have muqarnas fill and a molding of triangular elements runs under the dodecagonal drum. The minaret is entirely stone. Dome drums and the narthex south wall are plastered outside, and all spaces and the roof system inside. Hasluck, visiting in the 1910s, stated the dome and transitions were of brick."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "518"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 6,
+      "title": {
+        "tr": "Hasar ve Onarım",
+        "en": "Damage and Repair"
+      },
+      "body": {
+        "tr": "Yapı 1853 depreminde büyük ölçüde zarar görmüş, sonra Yunan işgali döneminde tahribat yaşamış, uzun süre kullanılamamış; 1971-72'de Vakıflar Genel Müdürlüğü tarafından kapsamlı onarım görmüştür.",
+        "en": "The building was severely damaged in the 1853 earthquake and suffered further damage during the Greek occupation; unused for a long time, it was extensively restored by the General Directorate of Foundations in 1971-72."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "518"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Masonry"
+      },
+      "value": "İki sıra tuğla, bir sıra taş almaşık",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "517"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_cephe",
+      "label": {
+        "tr": "Mihrap cephe sayısı",
+        "en": "Mihrab facets"
+      },
+      "value": 5,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "517"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Karaca Bey",
+      "role": {
+        "tr": "Banî; Abdullah oğlu, II. Murad ve Sultan Mehmed dönemi komutanı",
+        "en": "Founder; son of Abdullah, commander"
+      }
+    },
+    {
+      "name": "Bülbül Hatun",
+      "role": {
+        "tr": "Karaca Bey'in eşi; medrese yaptıran",
+        "en": "Wife of Karaca Bey; had a madrasa built"
+      }
+    },
+    {
+      "name": "Frederick William Hasluck",
+      "role": {
+        "tr": "1910'larda yapıyı ziyaret eden araştırmacı",
+        "en": "Researcher who visited in the 1910s"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kemeri-kitabesi",
+      "location": {
+        "tr": "Harim kuzey cephesi kapı kemeri",
+        "en": "Door arch on the north façade of the prayer hall"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Emera’l-emîru’l-kebîr ve’z-zâhiru’l-hatîr el-merhûm el-mağfûr es-sa’îd eş-şehîd el-muhtâc ilâ rahmeti’llâhi Ta’âlâ Dayı Karaca Beğ bin Abdullah hâzihi’l-imareti fî-eyyâmi devleti’s-Sultân Mehmed bin Murâd Hân hullide mülkühû fî târîhi sene ihdâ ve sittîn ve semâne mi’e hicriyye-i nebeviyye.",
+      "translation": {
+        "tr": "Bu imaretin yapılmasını, H. 861 / M. 1456-57 tarihinde -mülkü ebedî olsun- Murad Han oğlu Sultan Mehmed’in saltanatı günlerinde, Allah’ın rahmetine muhtaç, merhum, mağfur, saadetli ve şehit, büyük emir ve hatırlı komutan Abdullah oğlu Dayı Karaca Bey emretmiştir.",
+        "en": "The construction of this imaret was ordered by the late, pardoned, blessed and martyred great emir and respected commander Abdullah’s son Dayı Karaca Bey, in the reign of Sultan Mehmed, son of Murad Han, in AH 861 / AD 1456-57."
+      },
+      "author": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "514"
+        }
+      ],
+      "date": {
+        "hijri_year": 861,
+        "gregorian": "1456-57"
+      }
+    },
+    {
+      "id": "mezar-tasi-kitabesi",
+      "location": {
+        "tr": "Türbe içindeki mezar taşı",
+        "en": "Gravestone inside the tomb"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Hâzâ kabru’l-Emîri’l-Kebîr ve hüve Karaca bin Abdullah el-merhûm el-mağfûr es-saîd eş-şehîd gazevâtı Kal’a-i Belgrad fî zamâni hilâfeti Sultân Mehmed bin Murâd Hân fî evâsıtı Şa’bân sene sittîn ve semâne mi’e.",
+      "translation": {
+        "tr": "Bu kabir, H. 860 / M. 1456 yılında, Murad Han oğlu Sultan Mehmed’in saltanatı günlerinde, Belgrad Kalesi seferinde şehit düşen, merhum, mağfur, saadetli ve şehit, büyük emir Abdullah oğlu Karaca Bey’e aittir.",
+        "en": "This tomb belongs to the late, merciful, blessed and martyred Karaca Bey, son of the great emir Abdullah, who was martyred in the Belgrade Castle campaign during the reign of Sultan Mehmed, son of Murad Han, in AH 860 / AD 1456."
+      },
+      "author": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "515"
+        }
+      ],
+      "date": {
+        "hijri_year": 860,
+        "gregorian": "1456"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "sehadet-1456",
+      "year": 1456,
+      "date": null,
+      "hijri": "H. 860",
+      "type": "record",
+      "title": {
+        "tr": "Karaca Bey Belgrad seferinde şehit oldu (Temmuz ikinci yarısı); cenazesi Mihaliç'e getirilip türbesine gömüldü",
+        "en": "Karaca Bey martyred in the Belgrade campaign (second half of July); buried in his tomb at Mihaliç"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "515-516"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1853",
+      "year": 1853,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1853 depreminde büyük ölçüde hasar gördü",
+        "en": "Severely damaged in the 1853 earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "518"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1971",
+      "year": 1971,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü kapsamlı onarım (1971-72)",
+        "en": "Extensive restoration by the General Directorate of Foundations (1971-72)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "518"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı iki kubbeli bölümü, yan kanatları ve dehlizleri olan, tuğla-taş almaşık duvarlı bir camidir. Mihrap beş cephelidir. Minare tamamen taştandır.",
+      "en": "A mosque with two square domed sections, side wings and corridors, built in alternating brick and stone. The mihrab is five-sided. The minaret is entirely stone."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

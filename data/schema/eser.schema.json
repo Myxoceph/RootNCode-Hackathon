@@ -4,401 +4,1098 @@
   "title": "Vakıf Eseri",
   "description": "Tek bir vakıf eserinin kaydı. Kod alanlarının (type, region, confidence...) geçerli değerleri enums.json'da; çapraz kontroller tools/validate.py'de.",
   "type": "object",
-  "required": ["schema_version", "id", "meta", "name", "type", "location", "summary", "sections", "media"],
+  "required": [
+    "schema_version",
+    "id",
+    "meta",
+    "name",
+    "type",
+    "location",
+    "summary",
+    "sections",
+    "media"
+  ],
   "additionalProperties": false,
   "allOf": [
     {
       "$comment": "Taslaklar (meta.status = draft) koordinatsız ve fotoğrafsız olabilir; in_review ve published kayıtlarda ikisi de zorunlu.",
-      "if": { "required": ["meta"], "properties": { "meta": { "properties": { "status": { "const": "draft" } } } } },
+      "if": {
+        "required": [
+          "meta"
+        ],
+        "properties": {
+          "meta": {
+            "properties": {
+              "status": {
+                "const": "draft"
+              }
+            }
+          }
+        }
+      },
       "else": {
         "properties": {
-          "location": { "required": ["coordinates"] },
-          "media": { "minItems": 1 }
+          "location": {
+            "required": [
+              "coordinates"
+            ]
+          },
+          "media": {
+            "minItems": 1
+          }
         }
       }
     }
   ],
-
   "$defs": {
-    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
     "i18n": {
       "type": "object",
-      "required": ["tr"],
+      "required": [
+        "tr"
+      ],
       "properties": {
-        "tr": { "type": "string", "minLength": 1 },
-        "en": { "type": ["string", "null"] }
+        "tr": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       },
       "additionalProperties": false
     },
     "i18nNote": {
       "type": "object",
-      "required": ["tr"],
+      "required": [
+        "tr"
+      ],
       "properties": {
-        "tr": { "type": "string" },
-        "en": { "type": ["string", "null"] },
-        "note": { "type": "string" }
+        "tr": {
+          "type": "string"
+        },
+        "en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
     "sourceRef": {
       "type": "object",
-      "required": ["source_id"],
+      "required": [
+        "source_id"
+      ],
       "properties": {
-        "source_id": { "type": "string" },
-        "pages": { "type": "string" }
-      },
-      "additionalProperties": false
-    },
-    "sourceRefs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/sourceRef" } },
-    "confidence": { "enum": ["certain", "probable", "disputed", "legend"] },
-    "status4": { "enum": ["yes", "partial", "no", "unknown"] },
-    "mediaItem": {
-      "type": "object",
-      "required": ["id", "type", "source", "caption", "alt", "credit", "license"],
-      "properties": {
-        "id": { "type": "string", "pattern": "^m[0-9]{2,3}$|^a[0-9]{2,3}$" },
-        "type": { "enum": ["photo", "archive_photo", "drawing", "audio", "video", "document"] },
-        "is_cover": { "type": "boolean" },
-        "order": { "type": "integer" },
-        "source": {
-          "type": "object",
-          "description": "Orijinal dosyanın NEREDEN geldiği. Depolama yolu, boyut ve sürümleri media_pipeline.py üretir (build/media-manifest.json).",
-          "required": ["provider"],
-          "properties": {
-            "provider": { "enum": ["google_drive", "local", "url"] },
-            "file_id": { "type": "string" },
-            "path": { "type": "string" },
-            "url": { "type": "string" },
-            "original_name": { "type": "string" }
-          },
-          "additionalProperties": false
+        "source_id": {
+          "type": "string"
         },
-        "subject": { "type": "string", "description": "Ne gösterdiği: exterior, portal, minber, calligraphy..." },
-        "focal_point": {
-          "type": "object",
-          "description": "Kırpmada korunacak nokta (0-1 arası, sol üst = 0,0). Yoksa merkez.",
-          "required": ["x", "y"],
-          "properties": { "x": { "type": "number", "minimum": 0, "maximum": 1 }, "y": { "type": "number", "minimum": 0, "maximum": 1 } },
-          "additionalProperties": false
-        },
-        "caption": { "$ref": "#/$defs/i18n" },
-        "alt": { "$ref": "#/$defs/i18n", "description": "Ekran okuyucu metni: görüntüde NE var, yorum yok." },
-        "credit": { "type": "string" },
-        "photographer": { "type": ["string", "null"] },
-        "captured_at": { "type": ["string", "null"] },
-        "year": { "type": ["integer", "null"], "description": "Arşiv fotoğrafı için çekim yılı (yaklaşık olabilir)." },
-        "year_approx": { "type": "boolean" },
-        "overlay": {
-          "type": "object",
-          "description": "Zaman Perdesi: kamera üstüne bindirme ayarları.",
-          "properties": {
-            "opacity": { "type": "number", "minimum": 0.1, "maximum": 0.8 },
-            "aspect_ratio": { "type": "string", "pattern": "^\\d+:\\d+$" },
-            "shooting_hint": { "$ref": "#/$defs/i18n" }
-          },
-          "additionalProperties": false
-        },
-        "license": { "type": "string" },
-        "source_id": { "type": "string" }
-      },
-      "additionalProperties": false
-    }
-  },
-
-  "properties": {
-    "schema_version": { "const": "1.0" },
-    "id": { "$ref": "#/$defs/slug", "description": "<il>-<ilçe>-<eser-adı>; değişmez, URL ve ilişkilerde kullanılır." },
-
-    "meta": {
-      "type": "object",
-      "required": ["status", "created_at", "updated_at"],
-      "properties": {
-        "status": { "enum": ["draft", "in_review", "published"] },
-        "created_at": { "type": "string", "format": "date" },
-        "updated_at": { "type": "string", "format": "date" },
-        "prepared_by": { "type": ["string", "null"] },
-        "reviewed_by": { "type": ["string", "null"] },
-        "from": { "type": ["string", "null"], "description": "Kaydın çıkarıldığı bölük PDF'inin numarasız adı (ör. '3-Sivil Mimari.pdf' → 'Sivil Mimari'). Drive'daki fotoğraf klasörünün adıyla aynıdır." },
-        "text_origin": { "type": "string" },
-        "todos": { "type": "array", "items": { "type": "string" } },
-        "data_quality_notes": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["field", "note"],
-            "properties": { "field": { "type": "string" }, "note": { "type": "string" } },
-            "additionalProperties": false
-          }
+        "pages": {
+          "type": "string"
         }
       },
       "additionalProperties": false
     },
-
-    "name": { "$ref": "#/$defs/i18n" },
-    "subtitle": { "anyOf": [{ "$ref": "#/$defs/i18n" }, { "type": "null" }] },
-    "alternate_names": { "type": "array", "items": { "$ref": "#/$defs/i18nNote" } },
-
-    "type": { "type": "string" },
-    "secondary_types": { "type": "array", "items": { "type": "string" } },
-    "parent_id": { "anyOf": [{ "$ref": "#/$defs/slug" }, { "type": "null" }], "description": "Bir külliyenin parçasıysa külliyenin id'si." },
-    "era": { "type": ["string", "null"] },
-    "tags": { "type": "array", "items": { "type": "string" } },
-
-    "location": {
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sourceRef"
+      }
+    },
+    "confidence": {
+      "enum": [
+        "certain",
+        "probable",
+        "disputed",
+        "legend"
+      ]
+    },
+    "status4": {
+      "enum": [
+        "yes",
+        "partial",
+        "no",
+        "unknown"
+      ]
+    },
+    "mediaItem": {
       "type": "object",
-      "required": ["region", "city", "district"],
+      "required": [
+        "id",
+        "type",
+        "source",
+        "caption",
+        "alt",
+        "credit",
+        "license"
+      ],
       "properties": {
-        "region": { "type": "string" },
-        "city": { "type": "string" },
-        "district": { "type": "string" },
-        "neighborhood": { "type": ["string", "null"] },
-        "address": { "type": ["string", "null"] },
-        "coordinates": {
+        "id": {
+          "type": "string",
+          "pattern": "^m[0-9]{2,3}$|^a[0-9]{2,3}$"
+        },
+        "type": {
+          "enum": [
+            "photo",
+            "archive_photo",
+            "drawing",
+            "audio",
+            "video",
+            "document"
+          ]
+        },
+        "is_cover": {
+          "type": "boolean"
+        },
+        "order": {
+          "type": "integer"
+        },
+        "source": {
           "type": "object",
-          "required": ["lat", "lng", "verified"],
+          "description": "Orijinal dosyanın NEREDEN geldiği. Depolama yolu, boyut ve sürümleri media_pipeline.py üretir (build/media-manifest.json).",
+          "required": [
+            "provider"
+          ],
           "properties": {
-            "lat": { "type": "number", "minimum": 35.5, "maximum": 42.5 },
-            "lng": { "type": "number", "minimum": 25.5, "maximum": 45.0 },
-            "source": { "enum": ["manual", "gps_field", "photo_exif", "osm", "google_maps", "official"] },
-            "verified": { "type": "boolean" },
-            "verification_note": { "type": "string" }
+            "provider": {
+              "enum": [
+                "google_drive",
+                "local",
+                "url"
+              ]
+            },
+            "file_id": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "original_name": {
+              "type": "string"
+            },
+            "folder_id": {
+              "type": "string",
+              "description": "Dosyanın bulunduğu Drive klasörünün id'si."
+            },
+            "folder_path": {
+              "type": "string",
+              "description": "Okunur klasör yolu."
+            },
+            "book_pdf_file_id": {
+              "type": "string",
+              "description": "Fotoğrafın yer aldığı bölük PDF'inin Drive file id'si."
+            },
+            "book_pdf_name": {
+              "type": "string",
+              "description": "Bölük PDF'inin adı."
+            },
+            "book_page": {
+              "type": "string",
+              "description": "Fotoğrafın kitapta göründüğü basılı sayfa (ya da aralık)."
+            }
           },
           "additionalProperties": false
         },
-        "source_refs": { "$ref": "#/$defs/sourceRefs" }
+        "subject": {
+          "type": "string",
+          "description": "Ne gösterdiği: exterior, portal, minber, calligraphy..."
+        },
+        "focal_point": {
+          "type": "object",
+          "description": "Kırpmada korunacak nokta (0-1 arası, sol üst = 0,0). Yoksa merkez.",
+          "required": [
+            "x",
+            "y"
+          ],
+          "properties": {
+            "x": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "y": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "caption": {
+          "$ref": "#/$defs/i18n"
+        },
+        "alt": {
+          "$ref": "#/$defs/i18n",
+          "description": "Ekran okuyucu metni: görüntüde NE var, yorum yok."
+        },
+        "credit": {
+          "type": "string"
+        },
+        "photographer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "captured_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Arşiv fotoğrafı için çekim yılı (yaklaşık olabilir)."
+        },
+        "year_approx": {
+          "type": "boolean"
+        },
+        "overlay": {
+          "type": "object",
+          "description": "Zaman Perdesi: kamera üstüne bindirme ayarları.",
+          "properties": {
+            "opacity": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 0.8
+            },
+            "aspect_ratio": {
+              "type": "string",
+              "pattern": "^\\d+:\\d+$"
+            },
+            "shooting_hint": {
+              "$ref": "#/$defs/i18n"
+            }
+          },
+          "additionalProperties": false
+        },
+        "license": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "id": {
+      "$ref": "#/$defs/slug",
+      "description": "<il>-<ilçe>-<eser-adı>; değişmez, URL ve ilişkilerde kullanılır."
+    },
+    "meta": {
+      "type": "object",
+      "required": [
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "in_review",
+            "published"
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "prepared_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewed_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "text_origin": {
+          "type": "string"
+        },
+        "todos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data_quality_notes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "field",
+              "note"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "from": {
+          "type": "string",
+          "description": "Bilginin alındığı bölük PDF'inin adı, baştaki sayı ve .pdf olmadan (ör. Sivil Mimari, Kestel)."
+        }
       },
       "additionalProperties": false
     },
-
+    "name": {
+      "$ref": "#/$defs/i18n"
+    },
+    "subtitle": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/i18n"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "alternate_names": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/i18nNote"
+      }
+    },
+    "type": {
+      "type": "string"
+    },
+    "secondary_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "parent_id": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/slug"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Bir külliyenin parçasıysa külliyenin id'si."
+    },
+    "era": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "location": {
+      "type": "object",
+      "required": [
+        "region",
+        "city",
+        "district"
+      ],
+      "properties": {
+        "region": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "district": {
+          "type": "string"
+        },
+        "neighborhood": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "coordinates": {
+          "type": "object",
+          "required": [
+            "lat",
+            "lng",
+            "verified"
+          ],
+          "properties": {
+            "lat": {
+              "type": "number",
+              "minimum": 35.5,
+              "maximum": 42.5
+            },
+            "lng": {
+              "type": "number",
+              "minimum": 25.5,
+              "maximum": 45.0
+            },
+            "source": {
+              "enum": [
+                "manual",
+                "gps_field",
+                "photo_exif",
+                "osm",
+                "google_maps",
+                "official"
+              ]
+            },
+            "verified": {
+              "type": "boolean"
+            },
+            "verification_note": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
+      },
+      "additionalProperties": false
+    },
     "dating": {
-      "type": ["object", "null"],
-      "required": ["display", "confidence"],
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "display",
+        "confidence"
+      ],
       "properties": {
-        "display": { "$ref": "#/$defs/i18n" },
-        "start_year": { "type": ["integer", "null"] },
-        "end_year": { "type": ["integer", "null"] },
-        "hijri_year": { "type": ["integer", "null"] },
-        "century": { "type": ["integer", "null"] },
-        "basis": { "anyOf": [{ "$ref": "#/$defs/i18n" }, { "type": "null" }] },
-        "confidence": { "$ref": "#/$defs/confidence" },
-        "source_refs": { "$ref": "#/$defs/sourceRefs" }
+        "display": {
+          "$ref": "#/$defs/i18n"
+        },
+        "start_year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "end_year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "hijri_year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "century": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/i18n"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
       },
       "additionalProperties": false
     },
-
     "founder": {
-      "type": ["object", "null"],
-      "required": ["name", "confidence"],
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "name",
+        "confidence"
+      ],
       "properties": {
-        "name": { "type": "string" },
-        "role": { "type": "string" },
-        "confidence": { "$ref": "#/$defs/confidence" },
-        "source_refs": { "$ref": "#/$defs/sourceRefs" }
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
       },
       "additionalProperties": false
     },
-
     "architect": {
-      "type": ["object", "null"],
-      "required": ["name", "confidence"],
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "name",
+        "confidence"
+      ],
       "properties": {
-        "name": { "type": ["string", "null"], "description": "Kesin biliniyorsa. Bilinmiyorsa null + candidates." },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Kesin biliniyorsa. Bilinmiyorsa null + candidates."
+        },
         "candidates": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["name"],
-            "properties": { "name": { "type": "string" }, "note": { "type": "string" } },
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
             "additionalProperties": false
           }
         },
-        "confidence": { "$ref": "#/$defs/confidence" },
-        "source_refs": { "$ref": "#/$defs/sourceRefs" }
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
       },
       "additionalProperties": false
     },
-
     "waqf": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
-        "name": { "type": ["string", "null"] },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "deed": {
-          "type": ["object", "null"],
+          "type": [
+            "object",
+            "null"
+          ],
           "description": "Vakfiye bilgisi (tarih, alıntı).",
           "properties": {
-            "date_display": { "type": "string" },
-            "excerpt": { "$ref": "#/$defs/i18n" },
-            "source_refs": { "$ref": "#/$defs/sourceRefs" }
+            "date_display": {
+              "type": "string"
+            },
+            "excerpt": {
+              "$ref": "#/$defs/i18n"
+            },
+            "source_refs": {
+              "$ref": "#/$defs/sourceRefs"
+            }
           },
           "additionalProperties": false
         },
-        "conditions": { "anyOf": [{ "$ref": "#/$defs/i18n" }, { "type": "null" }], "description": "Vakfiyedeki şart / vasiyet." },
-        "land_note": { "anyOf": [{ "$ref": "#/$defs/i18n" }, { "type": "null" }] },
-        "confidence": { "$ref": "#/$defs/confidence" },
-        "source_refs": { "$ref": "#/$defs/sourceRefs" }
+        "conditions": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/i18n"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Vakfiyedeki şart / vasiyet."
+        },
+        "land_note": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/i18n"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
       },
       "additionalProperties": false
     },
-
-    "summary": { "$ref": "#/$defs/i18n" },
-
+    "summary": {
+      "$ref": "#/$defs/i18n"
+    },
     "sections": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "order", "title", "body", "confidence", "source_refs"],
+        "required": [
+          "id",
+          "order",
+          "title",
+          "body",
+          "confidence",
+          "source_refs"
+        ],
         "properties": {
-          "id": { "$ref": "#/$defs/slug" },
-          "order": { "type": "integer" },
-          "title": { "$ref": "#/$defs/i18n" },
-          "body": { "$ref": "#/$defs/i18n" },
-          "confidence": { "$ref": "#/$defs/confidence" },
-          "source_refs": { "$ref": "#/$defs/sourceRefs" }
+          "id": {
+            "$ref": "#/$defs/slug"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "title": {
+            "$ref": "#/$defs/i18n"
+          },
+          "body": {
+            "$ref": "#/$defs/i18n"
+          },
+          "confidence": {
+            "$ref": "#/$defs/confidence"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefs"
+          }
         },
         "additionalProperties": false
       }
     },
-
     "legends": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "title", "body", "source_verdict", "source_refs"],
+        "required": [
+          "id",
+          "title",
+          "body",
+          "source_verdict",
+          "source_refs"
+        ],
         "properties": {
-          "id": { "$ref": "#/$defs/slug" },
-          "title": { "$ref": "#/$defs/i18n" },
-          "body": { "$ref": "#/$defs/i18n" },
-          "source_verdict": { "enum": ["folk_belief", "refuted_by_source", "unverified"] },
-          "source_refs": { "$ref": "#/$defs/sourceRefs" }
+          "id": {
+            "$ref": "#/$defs/slug"
+          },
+          "title": {
+            "$ref": "#/$defs/i18n"
+          },
+          "body": {
+            "$ref": "#/$defs/i18n"
+          },
+          "source_verdict": {
+            "enum": [
+              "folk_belief",
+              "refuted_by_source",
+              "unverified"
+            ]
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefs"
+          }
         },
         "additionalProperties": false
       }
     },
-
     "facts": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["key", "label", "value", "confidence", "source_refs"],
+        "required": [
+          "key",
+          "label",
+          "value",
+          "confidence",
+          "source_refs"
+        ],
         "properties": {
-          "key": { "type": "string", "pattern": "^[a-z0-9_]+$" },
-          "label": { "$ref": "#/$defs/i18n" },
-          "value": { "type": ["string", "number"] },
-          "unit": { "type": ["string", "null"] },
-          "note": { "$ref": "#/$defs/i18n" },
-          "confidence": { "$ref": "#/$defs/confidence" },
-          "source_refs": { "$ref": "#/$defs/sourceRefs" }
+          "key": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "label": {
+            "$ref": "#/$defs/i18n"
+          },
+          "value": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "note": {
+            "$ref": "#/$defs/i18n"
+          },
+          "confidence": {
+            "$ref": "#/$defs/confidence"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefs"
+          }
         },
         "additionalProperties": false
       }
     },
-
     "people": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["name", "role"],
-        "properties": { "name": { "type": "string" }, "role": { "$ref": "#/$defs/i18n" } },
+        "required": [
+          "name",
+          "role"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "$ref": "#/$defs/i18n"
+          }
+        },
         "additionalProperties": false
       }
     },
-
     "inscriptions": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "location", "language", "source_refs"],
+        "required": [
+          "id",
+          "location",
+          "language",
+          "source_refs"
+        ],
         "properties": {
-          "id": { "$ref": "#/$defs/slug" },
-          "location": { "$ref": "#/$defs/i18n" },
-          "language": { "enum": ["ar", "fa", "tr-ottoman", "tr", "el", "la", "hy", "other"] },
-          "script": { "type": ["string", "null"] },
-          "transliteration": { "type": ["string", "null"] },
-          "translation": { "anyOf": [{ "$ref": "#/$defs/i18n" }, { "type": "null" }] },
-          "author": { "type": ["string", "null"] },
+          "id": {
+            "$ref": "#/$defs/slug"
+          },
+          "location": {
+            "$ref": "#/$defs/i18n"
+          },
+          "language": {
+            "enum": [
+              "ar",
+              "fa",
+              "tr-ottoman",
+              "tr",
+              "el",
+              "la",
+              "hy",
+              "other"
+            ]
+          },
+          "script": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "transliteration": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "translation": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/i18n"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "author": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "date": {
-            "type": ["object", "null"],
-            "properties": { "hijri_year": { "type": ["integer", "null"] }, "gregorian": { "type": ["string", "null"] } },
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "hijri_year": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "gregorian": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
             "additionalProperties": false
           },
-          "note": { "$ref": "#/$defs/i18n" },
-          "ar_target_media_id": { "type": ["string", "null"], "description": "AR'da işaretçi olarak kullanılacak media[].id" },
-          "source_refs": { "$ref": "#/$defs/sourceRefs" }
+          "note": {
+            "$ref": "#/$defs/i18n"
+          },
+          "ar_target_media_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "AR'da işaretçi olarak kullanılacak media[].id"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefs"
+          }
         },
         "additionalProperties": false
       }
     },
-
     "timeline": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "year", "type", "title", "confidence", "source_refs"],
+        "required": [
+          "id",
+          "year",
+          "type",
+          "title",
+          "confidence",
+          "source_refs"
+        ],
         "properties": {
-          "id": { "$ref": "#/$defs/slug" },
-          "year": { "type": "integer" },
-          "date": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
-          "hijri": { "type": ["string", "null"] },
-          "type": { "type": "string" },
-          "title": { "$ref": "#/$defs/i18n" },
-          "note": { "$ref": "#/$defs/i18n" },
-          "confidence": { "$ref": "#/$defs/confidence" },
-          "source_refs": { "$ref": "#/$defs/sourceRefs" }
+          "id": {
+            "$ref": "#/$defs/slug"
+          },
+          "year": {
+            "type": "integer"
+          },
+          "date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "hijri": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "type": "string"
+          },
+          "title": {
+            "$ref": "#/$defs/i18n"
+          },
+          "note": {
+            "$ref": "#/$defs/i18n"
+          },
+          "confidence": {
+            "$ref": "#/$defs/confidence"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefs"
+          }
         },
         "additionalProperties": false
       }
     },
-
     "highlights": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["feature", "title", "hint"],
+        "required": [
+          "feature",
+          "title",
+          "hint"
+        ],
         "properties": {
-          "feature": { "type": "string" },
-          "title": { "$ref": "#/$defs/i18n" },
-          "hint": { "$ref": "#/$defs/i18n" },
-          "section_id": { "type": ["string", "null"] }
+          "feature": {
+            "type": "string"
+          },
+          "title": {
+            "$ref": "#/$defs/i18n"
+          },
+          "hint": {
+            "$ref": "#/$defs/i18n"
+          },
+          "section_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         },
         "additionalProperties": false
       }
     },
-
     "relations": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["target_id", "type", "description", "confidence", "source_refs"],
+        "required": [
+          "target_id",
+          "type",
+          "description",
+          "confidence",
+          "source_refs"
+        ],
         "properties": {
-          "target_id": { "$ref": "#/$defs/slug" },
-          "type": { "type": "string" },
-          "description": { "$ref": "#/$defs/i18n" },
-          "confidence": { "$ref": "#/$defs/confidence" },
-          "source_refs": { "$ref": "#/$defs/sourceRefs" }
+          "target_id": {
+            "$ref": "#/$defs/slug"
+          },
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "$ref": "#/$defs/i18n"
+          },
+          "confidence": {
+            "$ref": "#/$defs/confidence"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefs"
+          }
         },
         "additionalProperties": false
       }
     },
-
     "visit": {
       "type": "object",
       "properties": {
-        "setting": { "enum": ["indoor", "outdoor", "mixed"] },
-        "estimated_duration_min": { "type": ["integer", "null"], "minimum": 5 },
-        "estimated_duration_source": { "enum": ["source", "team_estimate"] },
-        "entrance_fee": { "enum": ["free", "paid", "unknown"] },
-        "notes": { "anyOf": [{ "$ref": "#/$defs/i18n" }, { "type": "null" }] },
-        "notes_source": { "enum": ["source", "team_estimate"] },
+        "setting": {
+          "enum": [
+            "indoor",
+            "outdoor",
+            "mixed"
+          ]
+        },
+        "estimated_duration_min": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 5
+        },
+        "estimated_duration_source": {
+          "enum": [
+            "source",
+            "team_estimate"
+          ]
+        },
+        "entrance_fee": {
+          "enum": [
+            "free",
+            "paid",
+            "unknown"
+          ]
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/i18n"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notes_source": {
+          "enum": [
+            "source",
+            "team_estimate"
+          ]
+        },
         "visitor_tips": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["text", "origin"],
+            "required": [
+              "text",
+              "origin"
+            ],
             "properties": {
-              "text": { "$ref": "#/$defs/i18n" },
-              "origin": { "enum": ["field_visit", "visitor_reviews_summary", "official"] },
-              "collected_at": { "type": "string", "format": "date" }
+              "text": {
+                "$ref": "#/$defs/i18n"
+              },
+              "origin": {
+                "enum": [
+                  "field_visit",
+                  "visitor_reviews_summary",
+                  "official"
+                ]
+              },
+              "collected_at": {
+                "type": "string",
+                "format": "date"
+              }
             },
             "additionalProperties": false
           }
@@ -406,71 +1103,173 @@
       },
       "additionalProperties": false
     },
-
     "accessibility": {
       "type": "object",
-      "required": ["wheelchair_access", "verified"],
+      "required": [
+        "wheelchair_access",
+        "verified"
+      ],
       "properties": {
-        "wheelchair_access": { "$ref": "#/$defs/status4" },
-        "step_free_entrance": { "$ref": "#/$defs/status4" },
-        "ramp": { "$ref": "#/$defs/status4" },
-        "accessible_toilet": { "$ref": "#/$defs/status4" },
-        "verified": { "type": "boolean" },
-        "notes": { "anyOf": [{ "$ref": "#/$defs/i18n" }, { "type": "null" }] },
-        "audio_description": { "$ref": "#/$defs/i18n" },
-        "audio_description_source": { "type": "string" }
+        "wheelchair_access": {
+          "$ref": "#/$defs/status4"
+        },
+        "step_free_entrance": {
+          "$ref": "#/$defs/status4"
+        },
+        "ramp": {
+          "$ref": "#/$defs/status4"
+        },
+        "accessible_toilet": {
+          "$ref": "#/$defs/status4"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/i18n"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "audio_description": {
+          "$ref": "#/$defs/i18n"
+        },
+        "audio_description_source": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
-
     "ambient_sound": {
-      "type": ["object", "null"],
-      "required": ["sound_key", "caption"],
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "sound_key",
+        "caption"
+      ],
       "properties": {
-        "sound_key": { "type": "string" },
-        "caption": { "$ref": "#/$defs/i18n" }
+        "sound_key": {
+          "type": "string"
+        },
+        "caption": {
+          "$ref": "#/$defs/i18n"
+        }
       },
       "additionalProperties": false
     },
-
     "media_folder": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
-        "provider": { "enum": ["google_drive", "local", "s3"] },
-        "folder_id": { "type": "string" },
-        "path": { "type": "string" },
-        "book_layout_pdf_file_id": { "type": ["string", "null"] }
+        "provider": {
+          "enum": [
+            "google_drive",
+            "local",
+            "s3"
+          ]
+        },
+        "folder_id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "book_layout_pdf_file_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "links_folder_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Fotoğraf dosyalarının fiilen durduğu 'Links' klasörünün Drive id'si."
+        },
+        "book_pdf_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Eserin bilgisinin bulunduğu bölük PDF'inin adı (ör. 4-Su Yapıları.pdf). Bir PDF'te birden çok eser vardır."
+        },
+        "book_pages": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Eserin PDF içindeki basılı sayfa aralığı (ör. 711-719)."
+        }
       },
       "additionalProperties": false
     },
-
     "media": {
       "type": "array",
-      "items": { "$ref": "#/$defs/mediaItem" }
+      "items": {
+        "$ref": "#/$defs/mediaItem"
+      }
     },
-
     "archive_media": {
       "type": "array",
       "description": "Zaman Perdesi için tarihi fotoğraflar. 'year' ve 'overlay' zorunlu.",
       "items": {
         "allOf": [
-          { "$ref": "#/$defs/mediaItem" },
-          { "required": ["year", "overlay"] }
+          {
+            "$ref": "#/$defs/mediaItem"
+          },
+          {
+            "required": [
+              "year",
+              "overlay"
+            ]
+          }
         ]
       }
     },
-
     "exhibitions": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["name"],
+        "required": [
+          "name"
+        ],
         "properties": {
-          "name": { "$ref": "#/$defs/i18n" },
-          "venue": { "type": ["string", "null"] },
-          "start_date": { "type": ["string", "null"] },
-          "end_date": { "type": ["string", "null"] },
-          "media_ids": { "type": "array", "items": { "type": "string" } }
+          "name": {
+            "$ref": "#/$defs/i18n"
+          },
+          "venue": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "media_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         },
         "additionalProperties": false
       }

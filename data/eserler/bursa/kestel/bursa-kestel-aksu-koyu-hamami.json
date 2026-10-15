@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-kestel-aksu-koyu-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Kestel",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banisi bilinmiyor (founder: null).",
+      "Tabeladaki 1460 tarihinin kaynağı kitapta yok; confidence 'probable' verildi.",
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin 'güney duvardaki kapı sıcaklık bölümüne geçişi sağlar' derken İngilizce metin aynı cümlede kapının 'tepidarium'a (ılıklık) açıldığını söylüyor; Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Aksu Köyü Hamamı",
+    "en": "Aksu Village Bath"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "hamam",
+    "köy müzesi",
+    "Aksu"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Kestel",
+    "neighborhood": "Aksu Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "564-566"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1460 (muhtarlık tabelasına göre)",
+      "en": "1460 (according to a village headman's plaque)"
+    },
+    "start_year": 1460,
+    "end_year": 1460,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Muhtarlığın yerleştirdiği tabela; bani ve yapım tarihi kesin bilinmiyor",
+      "en": "Plaque by the village headman's office; builder and date not definitively known"
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "564"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kuzey-güney doğrultulu dikdörtgen planlı köy hamamı; kim tarafından ve ne zaman yapıldığı kesin bilinmez, muhtarlık tabelası 1460 der. 2013'te restore edilmiş ve köy müzesi olarak hizmet vermektedir.",
+    "en": "A rectangular village bathhouse oriented north-south; builder and date are unclear, though a village headman's plaque states 1460. Restored in 2013, it now serves as a village museum."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Hamamın ne zaman ve kim tarafından yaptırıldığı kesin bilinmemekle birlikte, muhtarlık tarafından konan bir tabelada yapım tarihi 1460 olarak belirtilmektedir. 2013'te restore edilmiş, günümüzde köyün tarihî ve kültürel mirasını yansıtan objelerin sergilendiği köy müzesi olarak hizmet vermektedir.",
+        "en": "It is unclear when or by whom the bath was built, but a plaque placed by the village headman's office gives the construction date as 1460. Restored in 2013, it now serves as a village museum exhibiting objects of the village's heritage."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "564, 566"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzey-güney doğrultulu dikdörtgen planlı yapıda kuzeyde soyunmalık, güneyde ılıklık, doğu ve batıda temizlik mekânları, sıcaklık, halvet hücreleri ve su deposu vardır. Soyunmalık doğu-batı doğrultulu ve ahşap tavanlıdır; dört yanı ahşap sekilerle çevrilidir, kuzeydoğu köşesinde tuvaletler, ortasında havuz vardır. Ilıklık tekne tonozludur. Sıcaklık, iki sivri kemerle ortada kare mekân ve yanlarda eş dikdörtgen bölümlere ayrılmıştır. Ilıklık ve sıcaklık mermer döşelidir; temizlik mekânlarında ve sıcaklığın yanlarında birer kurna vardır. Kapılar yuvarlak kemerlidir; örtü sistemlerinde aydınlık açıklıkları bulunur.",
+        "en": "The building has a changing room on the north, a tepidarium on the south, and washing rooms, a caldarium, bathing cells and a water tank east and west. The changing room is east-west with a wooden ceiling, ringed by wooden platforms, with toilets in the northeast corner and a pool at the center. The tepidarium has a trough vault. The caldarium is divided by two pointed arches into a central square and equal side sections. Tepidarium and caldarium have marble floors; basins stand in the washing rooms and sides of the caldarium. Doors are round-arched and the covers include roof lanterns."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "564-566"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon; köy müzesi olarak kullanım",
+        "en": "Restoration; use as village museum"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "566"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kuzeyde ahşap tavanlı soyunmalık, güneyinde tekne tonozlu ılıklık, doğu-batıda temizlik mekânları, sıcaklık ve halvet hücreleri bulunur. Zeminler mermer, kapılar yuvarlak kemerlidir.",
+      "en": "A wooden-ceilinged changing room on the north, a trough-vaulted tepidarium to its south, with washing rooms, caldarium and bathing cells east and west. Floors are marble and doors round-arched."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

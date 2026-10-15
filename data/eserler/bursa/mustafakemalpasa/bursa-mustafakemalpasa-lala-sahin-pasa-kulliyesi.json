@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-mustafakemalpasa-lala-sahin-pasa-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Mustafakemalpaşa",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının Mustafakemalpaşa bölümünden (s. 608-623) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da güvenilir kaynaktan eklenmeli (location.coordinates eklenmedi).",
+      "Fotoğraf / medya yok; Drive klasörü ve dosya kimlikleri belirlenmeli (media, archive_media boş, media_folder null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Külliyenin inşa tarihi ve diğer yapıları (cami, hamam vb.) kitapta anlatılmıyor.",
+      "Vakıf adı ve şartları kitapta yok.",
+      "Külliyenin kitapta kendi başlığı yoktur; üst kayıt, kümbet ve minare bölümlerinde geçen 'külliye' ifadesine dayanılarak ekip tarafından oluşturulmuştur."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf.deed / timeline[vakfiye-1348]",
+        "note": "Vakfiye tarihi H. 746 / M. 1348 olarak veriliyor; H. 746 yılı M. 1345-46'ya denk gelir, M. 1348 için H. 748-49 beklenir. Kaynağa sadık kalınarak ikisi de saklandı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[gunumuze-ulasan]",
+        "note": "Kümbet bölümü türbeyi külliyeden günümüze ulaşan 'tek yapı' diye niteliyor (s. 620), ancak minare bölümü de aynı külliyeye bağlanıyor (s. 610). Çelişki not edildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Lala Şahin Paşa Külliyesi",
+    "en": "Lala Şahin Paşa Complex"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "külliye",
+    "Lala Şahin Paşa",
+    "kümbet",
+    "minare"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Mustafakemalpaşa",
+    "neighborhood": "Lala Şahin Mahallesi",
+    "address": "Hamam Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "610, 620"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Şıhabüddin Lala Şahin Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "610"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 746 / M. 1348",
+      "excerpt": {
+        "tr": "Vakfiyede banisinin baba adının Abdülmuîn olduğu belirtilmektedir.",
+        "en": "The endowment charter states that the founder's father's name was Abdulmuîn."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "610"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "610"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Şıhabüddin Lala Şahin Paşa'nın külliyesi. Kitap, külliyeden günümüze ulaşan yapı olarak türbeyi (kümbet) ve cami minaresini ele almaktadır.",
+    "en": "The complex of Şıhabüddin Lala Şahin Paşa. The book covers the mausoleum (kümbet) and the mosque minaret from the complex."
+  },
+  "sections": [
+    {
+      "id": "banisi",
+      "order": 1,
+      "title": {
+        "tr": "Banisi Lala Şahin Paşa",
+        "en": "Founder Lala Şahin Paşa"
+      },
+      "body": {
+        "tr": "Külliyenin banisi Şıhabüddin Lala Şahin Paşa'nın H. 746 / M. 1348 tarihli vakfiyesinde baba adının Abdülmuîn olduğu belirtilir. Süleyman Paşa ve diğer komutanlarla Rumeli'nin fethine katılmış; beylerbeyliği H. 763 / M. 1361'de hanedan dışından ilk kez kendisine verilmiştir. Sultan I. Murad'ın yetiştirilmesindeki katkısı nedeniyle 'Lala' unvanıyla anılmıştır. 1362'de Hacı İlbey ve Evrenos Bey'le Edirne, Malkara, İpsala ve Dimetoka'yı, 1364'te Filibe'yi fethetmiş, 1368'de vezir olmuş, Filibe ve çevresi malikâne olarak tahsis edilmiştir. 1374 Makedonya seferlerinde Drama, Kavala, Serez ve diğer yerleri fethetmiştir. Hanedana mensup olmamasına rağmen Paşa unvanını alan ilk kişidir.",
+        "en": "The endowment charter of the founder Şıhabüddin Lala Şahin Paşa, dated AH 746 / AD 1348, states that his father's name was Abdulmuîn. He took part in the conquest of Rumelia; the rank of beylerbey was first granted outside the dynasty to him in AH 763 / AD 1361. He was known as 'Lala' (Tutor) for his contributions to the upbringing of Sultan Murad I. With Hacı İlbey and Evrenos Bey he conquered Edirne, Malkara, İpsala and Dimetoka in 1362 and Plovdiv in 1364; he was appointed vizier in 1368 and Plovdiv and its surroundings were allocated as a manor. In the Macedonian campaigns of 1374 he conquered Drama, Kavala, Serez and others. He was the first person to receive the title of Paşa despite not being a member of the dynasty."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "610-611"
+        }
+      ]
+    },
+    {
+      "id": "gunumuze-ulasan",
+      "order": 2,
+      "title": {
+        "tr": "Günümüze Ulaşan Yapılar",
+        "en": "Surviving Structures"
+      },
+      "body": {
+        "tr": "Türbe (kümbet), külliyeden günümüze ulaşabilen tek yapı olarak tanıtılmıştır; ancak kitap ayrıca külliyenin camisine ait olduğu ima edilen minareyi de ele almaktadır. Kümbet ve minare ayrı kayıtlarda verilmiştir.",
+        "en": "The mausoleum is described as the only surviving structure of the complex; the book also covers a minaret implied to belong to the complex's mosque. They are given in separate records."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "610, 620"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Şıhabüddin Lala Şahin Paşa",
+      "role": {
+        "tr": "Külliyenin banisi",
+        "en": "Founder of the complex"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1348",
+      "year": 1348,
+      "date": null,
+      "hijri": "746",
+      "type": "record",
+      "title": {
+        "tr": "Lala Şahin Paşa vakfiyesi",
+        "en": "Endowment charter of Lala Şahin Paşa"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "610"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliyeden günümüze türbe ve minare ulaşmıştır; ayrıntılar ilgili yapıların kayıtlarındadır.",
+      "en": "The mausoleum and minaret survive from the complex; see the individual records for details."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri III. Cilt) esas alınarak yazılmıştır."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

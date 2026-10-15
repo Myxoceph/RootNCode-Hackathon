@@ -1,0 +1,358 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-keles-yakub-bey-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Keles",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabındaki Keles bölümünden (Yakub Bey Hamamı, s. 540-541) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan/haritadan doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: media [] ve media_folder null; envanter fotoğrafları bulunup eklenmeli (alt metin ve credit zorunlu).",
+      "Arşiv medyası (archive_media) bulunmadı.",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "Hamamın tam yapım tarihi kitapta yok; I. Murad dönemi (1380-1385 aralığı kitapta külliye için verilmiş) olarak bırakıldı, kaynaklarla teyit edilmeli.",
+      "Vakfiye ve Mudanya zeytin bahçelerinin konumu/ayrıntısı kitapta yok; vakıf belgesi bulunmalı.",
+      "İlişkilerde geçen Mudanya zeytin bahçeleri ve Yakub Bey Camii (2017, Keles Ertuğrulgazi Mahallesi) için hedef kayıt kimlikleri tahminidir; ilçe Keles metninde Yakub Bey Camii için Keles, Mudanya bahçeleri için Mudanya olarak verilmiştir.",
+      "Kitapta mimar bilgisi yok.",
+      "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok.",
+      "İlişki eklenecekse: Yakub Bey Camii (2017) bu yapının külliyesinin parçası değildir, Bursa Büyükşehir Belediyesi'nce adı yaşatılmak için yaptırılmıştır; 'same_founder' yazılmamalı. Mudanya zeytin bahçeleri bir eser kaydı değil, vakıf bilgisi olarak 'waqf' alanında duruyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap yapının Yakub Bey tarafından 'ya da onun adına' yaptırıldığını söylüyor; ayrıca külliyenin Yakub Bey ya da Sultan I. Murad adına yaptırıldığı 'düşünülmektedir'. Bu yüzden banî 'probable' işaretlendi."
+      },
+      {
+        "field": "dating",
+        "note": "Kesin yapım tarihi yok; yalnızca I. Murad dönemi ve Sultan Murad'ın 1380-1385 arasında Keles'te iki hamam, iki mahalle mektebi ve bir kervansaray yaptırdığı bilgisi var. Bu aralık hamama ancak dolaylı bağlanabildiği için 'probable'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yakub Bey Hamamı",
+    "en": "Yakub Bey Bath"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "erken Osmanlı",
+    "Keles",
+    "Yakub Bey",
+    "I. Murad",
+    "almaşık duvar",
+    "testere dişi friz"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Keles",
+    "neighborhood": "Cuma Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "540"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "I. Murad Hudâvendigâr dönemi (1380-1385 arası olabilir)",
+      "en": "Reign of Murad I Hudâvendigâr (possibly 1380-1385)"
+    },
+    "start_year": 1380,
+    "end_year": 1385,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Yapının I. Murad döneminde yaptırıldığı belirtilir; Sultan Murad'ın 1380-1385 arasında Keles'te iki hamam, iki mahalle mektebi ve bir kervansaray yaptırdığı bilinir.",
+      "en": "The building dates from the reign of Murad I; Murad I is known to have built two baths, two neighborhood schools and a caravanserai in Keles between 1380 and 1385."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "540-541"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yakub Bey (Sultan I. Murad'ın oğlu, Yıldırım Bayezid'in kardeşi)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "540-541"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Yakub Bey vakfı (yapı topluluğuna vakfedilen Mudanya zeytin bahçeleri)",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Yakub Bey'in bu yapı topluluğuna Mudanya'daki bazı zeytin bahçelerini vakfettiği belgelenmiştir.",
+      "en": "It is documented that Yakub Bey donated some olive groves in Mudanya to this complex of buildings."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "541"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Keles'in bölgede tarihî olarak bilinen en eski yapısı olan, I. Murad döneminde Yakub Bey tarafından ya da adına yaptırılan küçük ölçekli, erken Osmanlı dönemi hamamı. Cami, hamam, medrese ve kervansaraydan oluşan topluluktan günümüze yalnızca hamam ulaşmış, bugün de kullanılmaktadır.",
+    "en": "The oldest historically known structure in the Keles region, a small-scale early Ottoman bath built in the reign of Murad I by or in the name of Yakub Bey. Of a complex of mosque, bath, madrasa and caravanserai only the bath survives, and it is still in use."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Konum",
+        "en": "Overview and Location"
+      },
+      "body": {
+        "tr": "Hamam, Keles ilçesi Cuma Mahallesi'nde yer alır. Uludağ'ın güney yamaçlarındaki dört dağ ilçesinden biri olan Keles ve çevresinde özellikle Roma ve Bizans dönemlerine ait kilise, tapınak, hamam gibi çeşitli yapı kalıntılarına rastlanır. Bölgede tarihî olarak bilinen en eski yapı Yakub Bey Hamamı'dır.",
+        "en": "The bath is located in the Cuma Neighborhood of Keles District. Keles, one of the four mountain districts on the southern slopes of Uludağ, and its surroundings contain ruins of churches, temples and baths, especially from the Roman and Byzantine periods. The oldest historically known structure in the region is the Yakub Bey Bath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "540-541"
+        }
+      ]
+    },
+    {
+      "id": "yaptiran-ve-kulliye",
+      "order": 2,
+      "title": {
+        "tr": "Yaptıran ve Yapı Topluluğu",
+        "en": "Founder and Building Complex"
+      },
+      "body": {
+        "tr": "Yapı, Sultan I. Murad Hudâvendigâr döneminde, Sultan Murad'ın oğlu ve Yıldırım Bayezid'in kardeşi Yakub Bey tarafından ya da onun adına yaptırılmıştır. Yakub Bey, Kosova Savaşı'nda şehit edilen Sultan Murad'ın üçüncü oğludur; Bayezid'in tahta geçmesi kabul edilince ileride taht üzerinde hak iddia etme ihtimali gerekçesiyle savaş meydanında paşalar tarafından idam edilmiştir. Yakub Bey ya da Sultan I. Murad adına yaptırıldığı düşünülen cami, hamam, medrese ve kervansaraydan oluşan bir yapı topluluğundan söz edilir. Sultan Murad'ın 1380-1385 arasında Keles'te iki hamam, iki mahalle mektebi ve bir kervansaray inşa ettirdiği bilinmektedir. Yakub Bey'in bu topluluğa Mudanya'daki bazı zeytin bahçelerini vakfettiği belgelenmiştir.",
+        "en": "The structure was built in the reign of Sultan Murad I Hudâvendigâr by Yakub Bey, the son of Sultan Murad and brother of Yıldırım Bayezid, or in his name. Yakub Bey was the third son of Sultan Murad, who was martyred in the Battle of Kosovo; after Bayezid's accession was accepted, he was executed on the battlefield by the pashas on the grounds that he might later claim the throne. A complex of mosque, bath, madrasa and caravanserai is mentioned, thought to have been built in the name of Yakub Bey or Sultan Murad I. Murad I is known to have had two baths, two neighborhood schools and a caravanserai built in Keles between 1380 and 1385. Yakub Bey donated some olive groves in Mudanya to this complex."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "540-541"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Doğu-batı doğrultusunda konumlanan hamam, içten 6,20 × 6,20 m ölçülerinde sıcaklık bölümü, iki halvet, bir külhan ve bir soğukluktan oluşan küçük ölçekli bir yapıdır. Moloz taş ve üç sıra tuğladan oluşan almaşık duvar örgüsü, erken dönem Osmanlı mimarisine özgü teknikle yapılmıştır. Girişi doğu cephesindeki kare planlı, tromplu kubbeyle örtülü bölümden sağlanır. Batı yönünde eş büyüklükte, kare planlı iki kubbeli mekânın arkasında külhan yer alır. Sıcaklık bölümü dört sivri kemerle taşınan büyük bir kubbeyle örtülüdür. Kemer üstlerinde bezemeler, saçak altlarında ve kubbe kasnağında üç sıra tuğlayla oluşturulmuş testere dişi friz şeritleri vardır. İç mekân sıvalıdır; doğal ışık fil gözü açıklıklarla sağlanır. Yapı özgünlüğünü büyük ölçüde yitirmiştir.",
+        "en": "Oriented east-west, the bath is a small structure consisting of a caldarium of 6.20 × 6.20 m, two secluded chambers, a furnace and a frigidarium. The alternating wall of rubble stone and three rows of bricks uses a technique specific to early Ottoman architecture. Entrance is from the square-planned section with a squinch dome on the east side. The furnace lies behind two equal-sized square domed spaces on the west. The caldarium is covered by a large dome on four pointed arches, with decorations on the arches and sawtooth brick friezes of three rows under the eaves and on the dome drum. The interior is plastered and lit by elephant-eye openings. The structure has largely lost its originality."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "541"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-bugun",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Günümüz",
+        "en": "Repairs and Present Day"
+      },
+      "body": {
+        "tr": "Hamam 1972'de Vakıflar Genel Müdürlüğü, 2015'te Bursa Büyükşehir Belediyesi tarafından onarılmış olup günümüzde kullanılmaktadır. Yakub Bey'in adını yaşatmak amacıyla Bursa Büyükşehir Belediyesi tarafından 2017'de Keles Ertuğrulgazi Mahallesi'nde inşa edilen Yakub Bey Camii 2022'de ibadete açılmıştır.",
+        "en": "The bath was repaired by the General Directorate of Foundations in 1972 and by the Bursa Metropolitan Municipality in 2015, and is still in use. Yakub Bey Mosque, built by Bursa Metropolitan Municipality in 2017 in the Ertuğrulgazi Neighborhood of Keles to keep Yakub Bey's name alive, was opened for worship in 2022."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "541"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sicaklik_olcu",
+      "label": {
+        "tr": "Sıcaklık bölümü (iç ölçü)",
+        "en": "Caldarium (interior)"
+      },
+      "value": "6,20 × 6,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "541"
+        }
+      ]
+    },
+    {
+      "key": "plan_bolumleri",
+      "label": {
+        "tr": "Bölümler",
+        "en": "Sections"
+      },
+      "value": "sıcaklık, iki halvet, bir külhan, bir soğukluk",
+      "unit": "",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "541"
+        }
+      ]
+    },
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Wall technique"
+      },
+      "value": "Moloz taş ve üç sıra tuğladan almaşık",
+      "unit": "",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "541"
+        }
+      ]
+    },
+    {
+      "key": "yon",
+      "label": {
+        "tr": "Doğrultu",
+        "en": "Orientation"
+      },
+      "value": "Doğu-batı",
+      "unit": "",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "541"
+        }
+      ]
+    },
+    {
+      "key": "sicaklik_ortu",
+      "label": {
+        "tr": "Sıcaklık bölümü örtüsü",
+        "en": "Caldarium cover"
+      },
+      "value": "Dört sivri kemerle taşınan büyük kubbe",
+      "unit": "",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "541"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1380,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "I. Murad döneminde (muhtemelen 1380-1385 arası) Yakub Bey tarafından ya da adına yaptırıldı",
+        "en": "Built in the reign of Murad I (possibly 1380-1385) by or in the name of Yakub Bey"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "540-541"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1972",
+      "year": 1972,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından onarıldı",
+        "en": "Repaired by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "541"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi tarafından onarıldı",
+        "en": "Repaired by Bursa Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "541"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Küçük ölçekli, doğu-batı doğrultusunda uzanan bir taş ve tuğla hamamdır. Duvarlar moloz taş ile üç sıra tuğlanın dönüşümlü dizilmesiyle örülmüştür. Giriş doğu tarafındaki kare planlı, kubbeli bölümdedir; batıda aynı büyüklükte iki kubbeli mekân ve arkasında külhan bulunur. İçerideki sıcaklık bölümü yaklaşık 6,20 × 6,20 metre olup dört sivri kemerin taşıdığı büyük bir kubbeyle örtülüdür; kubbe kasnağında ve saçak altlarında testere dişi biçiminde tuğla friz şeritleri görülür. İç yüzeyler sıvalıdır ve ışık küçük fil gözü açıklıklarından girer.",
+      "en": "A small stone-and-brick bath running east-west. The walls alternate rubble stone with three rows of brick. The entrance is in the square domed section on the east; to the west lie two equal domed rooms with the furnace behind them. The hot room, about 6.20 by 6.20 metres, is covered by a large dome carried on four pointed arches; sawtooth brick friezes run along the dome drum and under the eaves. The interior is plastered and light enters through small elephant-eye openings."
+    },
+    "audio_description_source": "Kitap metninden yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

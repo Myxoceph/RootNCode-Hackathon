@@ -1,0 +1,479 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-mudanya-haci-mehmet-aga-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Mudanya",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
+      "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
+      "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
+      "Mudanyalı Tahir Paşa vakfiyesindeki 'Cami-i Atik' hangi camidir, kitap belirtmiyor; ilişki kurulmadı.",
+      "Mimar bilgisi kitapta yok. Çeşme, hamam gibi bir ilgili yapı belirtilmemiş.",
+      "Latin harfli kitabenin İngilizce çevirisi bu kayıtta 'translation.en' olarak eklenmedi; TR çeviri kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap bani için 'Mehmed Ağa' (kitabe), 'Muhammed' (Arapça kitabe metni) ve 'Hacı Mehmed bin Halil' (Latin harfli kitabe) biçimlerini kullanır; aynı kişi olarak okunmuştur."
+      },
+      {
+        "field": "sections[kitabeler-bani]",
+        "note": "Kitap, 1088 ile 1096 arası farkı 'yaklaşık dokuz yıl' diye yazar; verilen hicri/miladi yıllardan fark 8 yıldır. Kitaptaki ifade korunmadı, yalnızca yıllar yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Mehmet Ağa (Tekke-i Cedid, Koca Ali Efendi) Camii",
+    "en": "Hacı Mehmet Ağa (Tekke-i Cedid, Koca Ali Efendi) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Tekke-i Cedid Camii",
+      "en": "Tekke-i Cedid Mosque"
+    },
+    {
+      "tr": "Merkez Camii",
+      "en": "Central Mosque"
+    },
+    {
+      "tr": "Hal Camii",
+      "en": "Market Hall Mosque"
+    },
+    {
+      "tr": "Koca Ali Efendi Camii",
+      "en": "Koca Ali Efendi Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "Merkez Camii",
+    "yeniden inşa",
+    "Kütahya çinisi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Mudanya",
+    "neighborhood": "Hasanbey",
+    "address": "İpar Caddesi, No: 21 (Eski Su Sokağı kesişimi)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "585"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1088 / M. 1677-78; 1975'te yeniden inşa",
+      "en": "AH 1088 / AD 1677-78; rebuilt in 1975"
+    },
+    "start_year": 1677,
+    "end_year": 1678,
+    "hijri_year": 1088,
+    "century": 17,
+    "basis": {
+      "tr": "Avlu kapısı ve harim kapısı kitabelerindeki H. 1088 tarihi; Latin harfli kitabede ilk yapılış 1677, yeniden inşa 1975.",
+      "en": "AH 1088 on the courtyard gate and prayer hall door inscriptions; the Latin-letter plaque gives first built 1677, rebuilt 1975."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "585-587"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Mehmed (Mehmet) Ağa (Hacı Mehmed bin Halil)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "586"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Mudanyalı Tahir Paşa vakfiyesi (imam ödemeleri)",
+    "deed": null,
+    "conditions": {
+      "tr": "Mudanyalı Tahir Paşa'nın vakfiyesinde Tekke-i Cedid Camii imamlarına dua okumaları karşılığında yılda 600 kuruş (Cami-i Atik imamlarına 120 kuruş) ödeneceği kayıtlıdır.",
+      "en": "The endowment charter of Mudanyalı Tahir Paşa records that 600 kuruş a year would be paid to the imams of the Tekke-i Cedid Mosque in return for their prayers (120 kuruş to the imams of Cami-i Atik)."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "586-587"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "1677-78'de Mehmed Ağa'nın yaptırdığı, 1975'te yeniden inşa edildiği için özgün mimari unsuru kalmayan, tek kubbeli Mudanya Merkez Camii.",
+    "en": "The Mudanya Central Mosque built by Mehmed Ağa in AH 1088 / AD 1677-78; rebuilt in 1975, it retains no original architectural element and has a single dome."
+  },
+  "sections": [
+    {
+      "id": "adlar-konum",
+      "order": 1,
+      "title": {
+        "tr": "Adları ve Konumu",
+        "en": "Names and Location"
+      },
+      "body": {
+        "tr": "Halk arasında “Tekke-i Cedid Camii”, “Merkez Camii” veya “Hal Camii” olarak da anılan yapı, Eski Su Sokağı ile İpar Caddesi'nin kesişiminde, İpar Caddesi No: 21'de yer alır.",
+        "en": "Also known as “Tekke-i Cedid Mosque”, “Merkez Camii” (Central Mosque) or “Hal Camii” (Market Hall Mosque), it stands at the intersection of Eski Su Street and İpar Street, at İpar Street No. 21."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "585"
+        }
+      ]
+    },
+    {
+      "id": "kitabeler-bani",
+      "order": 2,
+      "title": {
+        "tr": "Kitabeler ve Banisi",
+        "en": "Inscriptions and Founder"
+      },
+      "body": {
+        "tr": "Avlu kapısındaki ve harime açılan kapıdaki kitabeler H. 1088 / M. 1677-78 tarihini verir; bu kitabe caminin Mehmed Ağa adlı bir hayırsever tarafından yaptırıldığını gösterir. Son cemaat yerinden harime geçişteki Latin harfli mermer kitabe banisini Hacı Mehmed bin Halil olarak anar ve camiin avluda gömülü olduğunu, ilk yapılışın 1677, yeniden inşanın 1975 olduğunu bildirir. Bahçedeki küçük hazirede altı mezar vardır; banisi Mehmet Ağa'nın mezar taşı H. 1096 / M. 1685-86'da öldüğünü ve bir mescit yaptırdığını yazar.",
+        "en": "The inscriptions on the courtyard gate and prayer hall door give AH 1088 / AD 1677-78 and show that the mosque was built by a philanthropist named Mehmed Ağa. A Latin-letter marble plaque at the transition from the narthex names the benefactor as Hacı Mehmed bin Halil, buried in the courtyard, first built 1677, rebuilt 1975. A small graveyard with six graves lies in the garden; the tombstone of Mehmet Ağa states that he died in AH 1096 / AD 1685-86 and had a small mosque built."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "585-587"
+        }
+      ]
+    },
+    {
+      "id": "bugunku-yapi",
+      "order": 3,
+      "title": {
+        "tr": "Bugünkü Yapı",
+        "en": "Present Building"
+      },
+      "body": {
+        "tr": "1975'te yeniden inşa edilen camide özgün hiçbir mimari unsur kalmamıştır. Bugünkü cami kesme taştan, sekizgen kasnağa oturan metal kaplamalı tek kubbeyle örtülüdür; geçiş dört trompla sağlanır. 34 pencereyle aydınlanır; mihrap ve minberde Kütahya çinileri kullanılmış, vaaz kürsüsü ahşaptır. Kubbe kasnağı, pencere kenarları, mihrap ve minber rumi-palmetlerle süslüdür. 1975 çalışmalarına dahil edilmeyen minare 1999 depreminde hasar görüp yıkılmış ve yenilenmiştir.",
+        "en": "No original architectural element survives in the mosque rebuilt in 1975. The present mosque is covered by a single metal-clad dome on an octagonal cut-stone drum, with four squinches for the transition. It is lit by 34 windows; the mihrab and minbar use Kütahya tiles and the sermon platform is wooden. The drum, window frames, mihrab and minbar are decorated with rumis and palmettes. The minaret, left out of the 1975 works, was damaged and destroyed in the 1999 earthquake and renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586-588"
+        }
+      ]
+    },
+    {
+      "id": "avlu",
+      "order": 4,
+      "title": {
+        "tr": "Avlu ve Çevre",
+        "en": "Courtyard and Surroundings"
+      },
+      "body": {
+        "tr": "Avluda mezarlık, şadırvan, tuvalet üniteleri ve müftülüğe bağlı eğitim ve kültür merkezi ile kıraathane, lokanta ve manav gibi sosyal işlevli yapılar bulunur.",
+        "en": "The courtyard has a cemetery, a shadirvan, toilet units and an education and culture center affiliated with the mufti's office, as well as a coffeehouse, restaurant and greengrocer's."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "588"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total number of windows"
+      },
+      "value": 34,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586-587"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 1,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586"
+        }
+      ]
+    },
+    {
+      "key": "mezar_sayisi",
+      "label": {
+        "tr": "Avludaki mezar sayısı",
+        "en": "Graves in the courtyard"
+      },
+      "value": 6,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_insa",
+      "label": {
+        "tr": "Yeniden inşa yılı",
+        "en": "Year rebuilt"
+      },
+      "value": 1975,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586"
+        }
+      ]
+    },
+    {
+      "key": "bani_olum_yili",
+      "label": {
+        "tr": "Banisinin ölüm yılı (mezar taşı)",
+        "en": "Founder's year of death (tombstone)"
+      },
+      "value": "H. 1096 / M. 1685-86",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mudanyalı Tahir Paşa",
+      "role": {
+        "tr": "Vakfiyesinde cami imamlarına ödeme şart koşan XIX. yüzyıl ortası devlet görevlisi",
+        "en": "Mid-19th-century official whose endowment charter provides payments to the mosque's imams"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "avlu-kapisi-kitabesi",
+      "location": {
+        "tr": "Avlu kapısı",
+        "en": "Courtyard gate"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Yapdı ol hem-nâm-ı sultân-ı rusül bu cami’î\nOla lutf-ı Hakkile makbûl dergâh-ı ilâh\nSeyr idenler didiler itmâmına târîh içün\nMescid-i ehl-i safâ ve müttekine kıblegâh\nSene H. 1088 / M. 1677-78",
+      "translation": {
+        "tr": "Peygamberler sultanı ile namdar olan bu camiyi yaptırdı. Allah’ın lütfuyla katında makbul bir eser olsun. Görenler bu yapının tamamlanmasına şu tarihi söylediler: ‘Safa ehline mescit, müttakilere de kıblegâh olsun.’ H. 1088 / M. 1677-78.",
+        "en": "He had this mosque, which is renowned together with the sultan of prophets, built. May it be a work acceptable to Allah with His grace. Those who saw it recited the following date for the completion of this structure: ‘Let it be a mosque for the pious and a qibla for the God-fearing.’ AH 1088 / AD 1677-78"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1088,
+        "gregorian": "1677-78"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "585-587"
+        }
+      ]
+    },
+    {
+      "id": "harim-kapisi-kitabesi",
+      "location": {
+        "tr": "Ana ibadet mekânına açılan kapı üzerinde (inşa kitabesi)",
+        "en": "Above the door opening into the main prayer hall (construction inscription)"
+      },
+      "language": "ar",
+      "script": "celi sülüs",
+      "transliteration": "Kad benâhu Muhammedün li’s-sevâb / Hâlisan li’l-Müheymini’l-Vehhâb\nTemme bunyânuhû ve kad errahûh / Mescidün şeyyede ve’n-nîle’s-sevâb \n1088",
+      "translation": {
+        "tr": "Muhammed adlı kişi, bunu Allah rızası için ve sevap kazanmak amacıyla yaptı. Yapı tamamlandı ve şu tarih ile taçlandırıldı: ‘Mescidi inşa etti, sevaba nail oldu.’ Sene H. 1088 / M. 1677-78",
+        "en": "A person named Muhammad did this for the sake of Allah and to earn reward. The structure was completed and crowned with the following date: ‘He built the mosque and earned reward.’ Year AH 1088 / AD 1677-78"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1088,
+        "gregorian": "1677-78"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586-587"
+        }
+      ],
+      "note": {
+        "tr": "Dört bölüm, iki satır.",
+        "en": "Four sections, two lines."
+      }
+    },
+    {
+      "id": "latin-harfli-kitabe",
+      "location": {
+        "tr": "Son cemaat yerinden harime geçişte, mermer",
+        "en": "Marble plaque at the transition from the narthex to the prayer hall"
+      },
+      "language": "tr",
+      "script": null,
+      "transliteration": "Tekke-i Cedid Merkez Camii\nSâhibü’l-hayrât Hacı Mehmed bin Halil,\nCami avlusunda medfûn\nİlk yapılış tarihi 1677,\nYeniden inşa edilişi 1975",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1677, 1975"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586-587"
+        }
+      ],
+      "note": {
+        "tr": "Latin harfli çağdaş kitabe; çevirisi kitapta yalnızca İngilizce verilmiştir.",
+        "en": "Latin-letter modern plaque; the book gives only an English translation."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1677",
+      "year": 1677,
+      "date": null,
+      "hijri": "1088",
+      "type": "construction",
+      "title": {
+        "tr": "Mehmed Ağa tarafından inşa ettirildi (H. 1088)",
+        "en": "Built by Mehmed Ağa (AH 1088)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "585-587"
+        }
+      ]
+    },
+    {
+      "id": "bani-olum-1685",
+      "year": 1685,
+      "date": null,
+      "hijri": "1096",
+      "type": "record",
+      "title": {
+        "tr": "Banisi Mehmet Ağa'nın ölümü (mezar taşına göre H. 1096 / M. 1685-86)",
+        "en": "Death of founder Mehmet Ağa (per tombstone, AH 1096 / AD 1685-86)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1975",
+      "year": 1975,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami yeniden inşa edildi",
+        "en": "Mosque rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "586-587"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1999",
+      "year": 1999,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Minare depremde hasar görüp yıkıldı; yenilendi",
+        "en": "Minaret damaged and destroyed in the earthquake; renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "588"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "1975'te yeniden inşa edilmiş, kesme taştan bir camidir. Sekizgen kasnağa oturan, metal kaplamalı tek kubbeyle örtülüdür. Mihrap ve minberde Kütahya çinileri vardır; avluda mezarlık ve şadırvan bulunur.",
+      "en": "A cut-stone mosque rebuilt in 1975, covered by a single metal-clad dome on an octagonal drum. The mihrab and minbar have Kütahya tiles; the courtyard contains a cemetery and a shadirvan."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
