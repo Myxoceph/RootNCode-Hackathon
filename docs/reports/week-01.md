@@ -44,9 +44,17 @@ _2-3 cümle: Bu hafta ürün olarak nereye geldik? Demo edilebilir ne var?_
 
 ### Yiğit Top · Mobil & Web istemci
 - **Tamamlananlar:**
+  - **Y1 · Expo iskeleti** (incelemede): `apps/app` içinde Expo SDK 57, Expo Router ve TypeScript ile tek kod tabanından iOS, Android ve Web uygulaması kuruldu. Uygulama `@vagabonds/ui` token'larını ve `@vagabonds/contracts` şemalarını doğrudan kullanıyor. Kübra'nın token'larındaki dört yazı tipi (Marcellus, Hanken Grotesk, Amiri, IBM Plex Mono) `useFonts` ile yükleniyor. Web'de sayfa dili Türkçe (`lang="tr"`), yakınlaştırma açık ve her sayfanın başlığı var. Kurulum sırasında Prisma Studio'nun getirdiği ikinci bir React sürümü uygulamayı bozuyordu; kökte tek sürüme sabitlendi, ayrıntısı `docs/upgrade-notes.md` dosyasında.
+  - **Y2 · Navigasyon:** Keşfet, Eserler, Rota ve Ayarlar sekmeleri mobilde ve web'de çalışıyor; web'de her sekmenin kendi adresi var (`/`, `/monuments`, `/route`, `/settings`). Sekme çubuğu kullanıcının yazı boyutu ayarına göre büyüyor, büyük yazıda etiketler kesilmiyor.
+  - **Y3 · Veri katmanı:** Ekranlar veriye yalnızca `src/data` üzerinden erişiyor. Mock veri yüklenirken `MonumentsPayloadSchema` ile doğrulanıyor; veri bozuksa uygulama çökmüyor, "Tekrar dene" düğmeli bir hata ekranı gösteriyor. Hangi kaynağın kullanılacağı tek satırda seçiliyor, API'ye geçiş o satırı değiştirmekle olacak.
+  - **Y4 · Eser listesi ve detay ekranı:** Mock'taki 3 eser kartlarla listeleniyor; detay sayfası `/monuments/[slug]` adresinden açılıyor (ör. `/monuments/selimiye-camii`). Detayda mekân betimlemesi, erişim bilgisi (rampa, basamaksız giriş), kitabeler, bağlantılı eserler, ziyaretçi notları ve konum var. Henüz kaynakla doğrulanmamış kitabe metinleri "Doğrulanmadı" etiketiyle gösteriliyor. Web'de kartlar gerçek bağlantı; her eserin paylaşılabilir bir adresi ve kendi statik sayfası var.
 - **Devam edenler:**
+  - Uygulamanın telefonda (Expo Go) ve ekran okuyucuyla (VoiceOver, TalkBack) uçtan uca testi. Web'de liste ve detay ekranları kontrol edildi, üç platformun paketi de derleniyor.
+  - Renkler şimdilik geçici bir tema dosyasından geliyor; yalnızca `ui:contrast` kontrolünden geçen renk çiftleri kullanılıyor. Kübra'nın temaları (K3) ve bileşenleri (K5) gelince birlikte uygulamaya bağlayacağız.
 - **Engeller / ihtiyaçlar:**
-- **Gelecek hafta:**
+  - **Veri sözleşmesi:** Uygulama `@vagabonds/contracts` içindeki `Monument` sözleşmesine göre yazıldı, ancak veritabanı ve veri seti `asset` modeline geçti ve `/monuments` uçları kaldırıldı. API'ye bağlanmak için Ahmet'le yeni sözleşmenin (`/assets` yanıtı) netleşmesi gerekiyor.
+  - **Medya:** Mock'taki görsel, AR hedefi ve ses adresleri örnek adresler, kitabe metinleri de doğrulanmamış. Zaman Perdesi (arşiv fotoğrafı) ve Taşın Dili (AR kitabe görseli) için Hüseyin'den en az bir eserin gerçek medyasına ihtiyacım var.
+- **Gelecek hafta:** Y5 (AR yaklaşımı) ve Y6 (harita yaklaşımı) için karar kayıtları ve prototipler; Kübra'yla K3 ve K5'i uygulamaya bağlamak; yeni sözleşme hazır olunca uygulamayı API'ye geçirmek.
 
 ### Kübra Alkan · UI/UX & Erişilebilirlik
 - **Tamamlananlar:**

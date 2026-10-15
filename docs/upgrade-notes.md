@@ -7,6 +7,23 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-15 · Expo uygulaması (`@vagabonds/app`)
+
+Kimler: **herkes** (paketler kökten kurulduğu için)
+
+1. Expo SDK 57 ve bağımlılıkları eklendi; kurmak için:
+   ```bash
+   npm install
+   ```
+2. Uygulamayı açmak için `npm run app`. Telefonda **Expo Go**'nun güncel sürümü gerekir (SDK 57).
+
+Değişenler:
+- Kök `package.json`'a `overrides` ile `react` / `react-dom` **19.2.3**'e sabitlendi. React Native
+  bu sürümü birebir istiyor; Prisma Studio'nun çektiği 19.3.0 ikinci bir React kopyası oluşturup
+  uygulamayı çalışma anında bozuyordu. Bu satırları kaldırma.
+
+---
+
 ## 2026-10-15 · Tasarım token'ları (`@vagabonds/ui`)
 
 Kimler: **istemci tarafı** (Yiğit, Kübra)

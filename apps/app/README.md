@@ -11,6 +11,39 @@ Vagabonds istemcisi: **tek kod tabanından iOS, Android ve Web**.
 | Uygulama iskeleti, kamera ghost overlay, Marker AR, ses oynatıcı, harita | Yiğit Top |
 | Ekran tasarımları, erişilebilirlik, tasarım sistemi entegrasyonu | Kübra Alkan |
 
+## Çalıştırma
+
+```bash
+npm install                                  # kökten; tüm workspace'ler
+npm run app                                  # Expo geliştirme sunucusu
+```
+
+- **Telefon:** Expo Go uygulamasıyla terminaldeki QR kodu okut (SDK 57).
+- **Tarayıcı:** sunucu açıkken `w` tuşu, ya da `npm run web --workspace @vagabonds/app`.
+- **Kontrol:** `npm run typecheck --workspace @vagabonds/app` ve
+  `npm run export --workspace @vagabonds/app` (üç platformun paketini derler).
+
+Paket eklerken `npm install` yerine `npx expo install <paket>` kullan (`apps/app` içinden);
+SDK ile uyumlu sürümü seçer.
+
+## Yapı
+
+```
+src/
+  app/                    # Expo Router: her dosya bir ekran / URL
+    _layout.tsx           # yazı tipleri, splash, tema, kök Stack
+    +html.tsx             # web HTML kabuğu (lang="tr", zoom açık)
+    +not-found.tsx
+    (tabs)/               # Keşfet /, Eserler /monuments, Rota /route, Ayarlar /settings
+      monuments/          # kendi Stack'i: liste (index) → detay ([slug], ör. /monuments/selimiye-camii)
+  components/
+  data/                   # veri kaynağı soyutlaması ve hook'lar (bkz. Veri)
+  theme/                  # geçici renk rolleri (K3 gelince değişecek), yazı tipi dosyaları
+```
+
+Renkler, yazı tipleri ve boşluklar `@vagabonds/ui` token'larından gelir. `src/theme/colors.ts`
+yalnızca `npm run ui:contrast` ile kontrol edilen renk çiftlerini kullanır.
+
 ## Platform ayrımı
 
 Kamera ve AR gerektiren deneyimler yalnızca mobilde çalışır. Web'de bunların yerine
@@ -30,3 +63,18 @@ API hazır olana kadar veri kaynağı
 [`packages/contracts/mock/mock_monuments.json`](../../packages/contracts/mock/mock_monuments.json)
 dosyasıdır. Tipler ve Zod şemaları `@vagabonds/contracts` paketinden import edilir;
 API devreye girdiğinde yalnızca veri kaynağı değişir, yanıt şekli aynı kalır.
+
+Ekranlar veriye yalnızca `src/data` üzerinden erişir:
+
+```tsx
+import { ResourceView } from "@/components/resource-view";
+import { useMonument, useMonuments } from "@/data";
+
+const monuments = useMonuments();          // loading | error | success, ve retry()
+<ResourceView resource={monuments}>{(data) => /* ... */}</ResourceView>
+```
+
+- `src/data/active-source.ts`: hangi kaynağın kullanılacağına karar verilen **tek** satır.
+- Her kaynak veriyi sözleşmeyle doğrular; uymazsa `DataError` fırlatır. `ResourceView` bunu
+  "Tekrar dene" düğmeli bir hata ekranı olarak gösterir (geliştirmede hangi alanın bozuk
+  olduğu da listelenir).
