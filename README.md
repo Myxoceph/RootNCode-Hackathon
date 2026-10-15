@@ -69,6 +69,14 @@ Veri modeli, içe aktarma kuralları ve görsel depolama için esas belge: [`dat
 
 > **`dev`'i çektikten sonra:** [`docs/upgrade-notes.md`](docs/upgrade-notes.md) dosyasında senin için yeni bir kurulum adımı olup olmadığına bak.
 
+### Uygulamayı çalıştırma
+
+```bash
+npm run app                                     # Expo: telefonda Expo Go ile QR kodu okut, tarayıcı için `w`
+```
+
+Ayrıntılar: [`apps/app/README.md`](apps/app/README.md).
+
 ### API'yi çalıştırma
 
 ```bash
