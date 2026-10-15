@@ -7,53 +7,43 @@ Eşikler (WCAG 2.1 AA): metin **4.5:1** (1.4.3), ikon / odak halkası **3:1** (1
 
 | Ön plan | Arka plan | Oran | Eşik | Kullanım |
 |---|---|---|---|---|
-| `ink900` #1C1A17 | `stone50` #FAF7F2 | **16.25:1** ✅ | 4.5:1 | Primary text |
-| `ink600` #5A5148 | `stone50` #FAF7F2 | **7.26:1** ✅ | 4.5:1 | Secondary text |
-| `cini700` #1F4E79 | `stone50` #FAF7F2 | **8.11:1** ✅ | 4.5:1 | Links, primary accent |
-| `turkuaz700` #0F5E5C | `stone50` #FAF7F2 | **7.08:1** ✅ | 4.5:1 | Secondary accent |
-| `kiremit700` #9A3324 | `stone50` #FAF7F2 | **6.84:1** ✅ | 4.5:1 | Error |
-| `okra700` #7A5410 | `stone50` #FAF7F2 | **6.33:1** ✅ | 4.5:1 | Warning |
-| `yesil700` #2F6131 | `stone50` #FAF7F2 | **6.83:1** ✅ | 4.5:1 | Success |
-| `ink900` #1C1A17 | `stone100` #F2ECE2 | **14.78:1** ✅ | 4.5:1 | Primary text |
-| `ink600` #5A5148 | `stone100` #F2ECE2 | **6.61:1** ✅ | 4.5:1 | Secondary text |
-| `cini700` #1F4E79 | `stone100` #F2ECE2 | **7.37:1** ✅ | 4.5:1 | Links, primary accent |
-| `turkuaz700` #0F5E5C | `stone100` #F2ECE2 | **6.44:1** ✅ | 4.5:1 | Secondary accent |
-| `kiremit700` #9A3324 | `stone100` #F2ECE2 | **6.22:1** ✅ | 4.5:1 | Error |
-| `okra700` #7A5410 | `stone100` #F2ECE2 | **5.76:1** ✅ | 4.5:1 | Warning |
-| `yesil700` #2F6131 | `stone100` #F2ECE2 | **6.22:1** ✅ | 4.5:1 | Success |
-| `ink900` #1C1A17 | `white` #FFFFFF | **17.36:1** ✅ | 4.5:1 | Primary text |
-| `ink600` #5A5148 | `white` #FFFFFF | **7.76:1** ✅ | 4.5:1 | Secondary text |
-| `cini700` #1F4E79 | `white` #FFFFFF | **8.66:1** ✅ | 4.5:1 | Links, primary accent |
-| `turkuaz700` #0F5E5C | `white` #FFFFFF | **7.57:1** ✅ | 4.5:1 | Secondary accent |
-| `kiremit700` #9A3324 | `white` #FFFFFF | **7.31:1** ✅ | 4.5:1 | Error |
-| `okra700` #7A5410 | `white` #FFFFFF | **6.77:1** ✅ | 4.5:1 | Warning |
-| `yesil700` #2F6131 | `white` #FFFFFF | **7.30:1** ✅ | 4.5:1 | Success |
-| `stone50` #FAF7F2 | `ink900` #1C1A17 | **16.25:1** ✅ | 4.5:1 | Primary text |
-| `stone300` #CFC5B6 | `ink900` #1C1A17 | **10.18:1** ✅ | 4.5:1 | Secondary text |
-| `cini300` #8DB8DE | `ink900` #1C1A17 | **8.30:1** ✅ | 4.5:1 | Links, primary accent |
-| `turkuaz300` #6FC7C1 | `ink900` #1C1A17 | **8.78:1** ✅ | 4.5:1 | Secondary accent |
-| `kiremit300` #F0A08F | `ink900` #1C1A17 | **8.38:1** ✅ | 4.5:1 | Error |
-| `okra300` #E3B862 | `ink900` #1C1A17 | **9.34:1** ✅ | 4.5:1 | Warning |
-| `yesil300` #8FCB8C | `ink900` #1C1A17 | **9.17:1** ✅ | 4.5:1 | Success |
-| `stone50` #FAF7F2 | `ink800` #2A2622 | **14.05:1** ✅ | 4.5:1 | Primary text |
-| `stone300` #CFC5B6 | `ink800` #2A2622 | **8.80:1** ✅ | 4.5:1 | Secondary text |
-| `cini300` #8DB8DE | `ink800` #2A2622 | **7.18:1** ✅ | 4.5:1 | Links, primary accent |
-| `turkuaz300` #6FC7C1 | `ink800` #2A2622 | **7.59:1** ✅ | 4.5:1 | Secondary accent |
-| `kiremit300` #F0A08F | `ink800` #2A2622 | **7.24:1** ✅ | 4.5:1 | Error |
-| `okra300` #E3B862 | `ink800` #2A2622 | **8.08:1** ✅ | 4.5:1 | Warning |
-| `yesil300` #8FCB8C | `ink800` #2A2622 | **7.93:1** ✅ | 4.5:1 | Success |
-| `stone50` #FAF7F2 | `ink700` #38322C | **11.83:1** ✅ | 4.5:1 | Primary text |
-| `stone300` #CFC5B6 | `ink700` #38322C | **7.42:1** ✅ | 4.5:1 | Secondary text |
-| `cini300` #8DB8DE | `ink700` #38322C | **6.05:1** ✅ | 4.5:1 | Links, primary accent |
-| `turkuaz300` #6FC7C1 | `ink700` #38322C | **6.39:1** ✅ | 4.5:1 | Secondary accent |
-| `kiremit300` #F0A08F | `ink700` #38322C | **6.10:1** ✅ | 4.5:1 | Error |
-| `okra300` #E3B862 | `ink700` #38322C | **6.80:1** ✅ | 4.5:1 | Warning |
-| `yesil300` #8FCB8C | `ink700` #38322C | **6.68:1** ✅ | 4.5:1 | Success |
-| `white` #FFFFFF | `cini700` #1F4E79 | **8.66:1** ✅ | 4.5:1 | Primary button label |
-| `white` #FFFFFF | `kiremit700` #9A3324 | **7.31:1** ✅ | 4.5:1 | Destructive button label |
-| `ink900` #1C1A17 | `cini300` #8DB8DE | **8.30:1** ✅ | 4.5:1 | Primary button label (dark) |
-| `ink900` #1C1A17 | `kiremit300` #F0A08F | **8.38:1** ✅ | 4.5:1 | Destructive button label (dark) |
-| `cini700` #1F4E79 | `stone50` #FAF7F2 | **8.11:1** ✅ | 3:1 | Focus ring, icons |
-| `cini300` #8DB8DE | `ink900` #1C1A17 | **8.30:1** ✅ | 3:1 | Focus ring, icons (dark) |
-| `stone50` #FAF7F2 | `cini700` #1F4E79 | **8.11:1** ✅ | 3:1 | Focus ring on primary button |
-| `ink900` #1C1A17 | `cini300` #8DB8DE | **8.30:1** ✅ | 3:1 | Focus ring on primary button (dark) |
+| `gece100` #E7EBF1 | `gece950` #090D15 | **16.25:1** ✅ | 4.5:1 | Primary text |
+| `gece400` #98A2B4 | `gece950` #090D15 | **7.56:1** ✅ | 4.5:1 | Secondary text, captions |
+| `kobalt300` #86A2EB | `gece950` #090D15 | **7.76:1** ✅ | 4.5:1 | Primary action, links |
+| `firuze300` #71C3BD | `gece950` #090D15 | **9.48:1** ✅ | 4.5:1 | Open / confirmed |
+| `mercan300` #DF816A | `gece950` #090D15 | **6.93:1** ✅ | 4.5:1 | Food stops, warnings |
+| `altin300` #D7B76A | `gece950` #090D15 | **10.07:1** ✅ | 4.5:1 | Resolved monument, highlights |
+| `gece100` #E7EBF1 | `gece900` #151B28 | **14.39:1** ✅ | 4.5:1 | Primary text |
+| `gece400` #98A2B4 | `gece900` #151B28 | **6.69:1** ✅ | 4.5:1 | Secondary text, captions |
+| `kobalt300` #86A2EB | `gece900` #151B28 | **6.87:1** ✅ | 4.5:1 | Primary action, links |
+| `firuze300` #71C3BD | `gece900` #151B28 | **8.40:1** ✅ | 4.5:1 | Open / confirmed |
+| `mercan300` #DF816A | `gece900` #151B28 | **6.14:1** ✅ | 4.5:1 | Food stops, warnings |
+| `altin300` #D7B76A | `gece900` #151B28 | **8.92:1** ✅ | 4.5:1 | Resolved monument, highlights |
+| `gece100` #E7EBF1 | `gece800` #1C2334 | **13.10:1** ✅ | 4.5:1 | Primary text |
+| `gece400` #98A2B4 | `gece800` #1C2334 | **6.09:1** ✅ | 4.5:1 | Secondary text, captions |
+| `kobalt300` #86A2EB | `gece800` #1C2334 | **6.26:1** ✅ | 4.5:1 | Primary action, links |
+| `firuze300` #71C3BD | `gece800` #1C2334 | **7.65:1** ✅ | 4.5:1 | Open / confirmed |
+| `mercan300` #DF816A | `gece800` #1C2334 | **5.59:1** ✅ | 4.5:1 | Food stops, warnings |
+| `altin300` #D7B76A | `gece800` #1C2334 | **8.12:1** ✅ | 4.5:1 | Resolved monument, highlights |
+| `gece900` #151B28 | `gece50` #F3F5F9 | **15.78:1** ✅ | 4.5:1 | Primary text |
+| `gece600` #576378 | `gece50` #F3F5F9 | **5.56:1** ✅ | 4.5:1 | Secondary text, captions |
+| `kobalt700` #2658DB | `gece50` #F3F5F9 | **5.50:1** ✅ | 4.5:1 | Primary action, links |
+| `firuze700` #2E6D68 | `gece50` #F3F5F9 | **5.49:1** ✅ | 4.5:1 | Open / confirmed |
+| `mercan700` #AA3F25 | `gece50` #F3F5F9 | **5.58:1** ✅ | 4.5:1 | Food stops, warnings |
+| `altin700` #785F20 | `gece50` #F3F5F9 | **5.57:1** ✅ | 4.5:1 | Resolved monument, highlights |
+| `gece900` #151B28 | `white` #FFFFFF | **17.22:1** ✅ | 4.5:1 | Primary text |
+| `gece600` #576378 | `white` #FFFFFF | **6.07:1** ✅ | 4.5:1 | Secondary text, captions |
+| `kobalt700` #2658DB | `white` #FFFFFF | **6.00:1** ✅ | 4.5:1 | Primary action, links |
+| `firuze700` #2E6D68 | `white` #FFFFFF | **5.99:1** ✅ | 4.5:1 | Open / confirmed |
+| `mercan700` #AA3F25 | `white` #FFFFFF | **6.09:1** ✅ | 4.5:1 | Food stops, warnings |
+| `altin700` #785F20 | `white` #FFFFFF | **6.08:1** ✅ | 4.5:1 | Resolved monument, highlights |
+| `gece900` #151B28 | `kobalt300` #86A2EB | **6.87:1** ✅ | 4.5:1 | Primary button label |
+| `gece900` #151B28 | `mercan300` #DF816A | **6.14:1** ✅ | 4.5:1 | Warning badge label |
+| `gece900` #151B28 | `altin300` #D7B76A | **8.92:1** ✅ | 4.5:1 | Resolved badge label |
+| `white` #FFFFFF | `kobalt700` #2658DB | **6.00:1** ✅ | 4.5:1 | Primary button label (light) |
+| `white` #FFFFFF | `mercan700` #AA3F25 | **6.09:1** ✅ | 4.5:1 | Warning badge label (light) |
+| `kobalt300` #86A2EB | `gece900` #151B28 | **6.87:1** ✅ | 3:1 | Focus ring, icons |
+| `kobalt700` #2658DB | `gece50` #F3F5F9 | **5.50:1** ✅ | 3:1 | Focus ring, icons (light) |
+| `gece900` #151B28 | `kobalt300` #86A2EB | **6.87:1** ✅ | 3:1 | Focus ring on primary button |
+| `altin300` #D7B76A | `gece700` #283248 | **6.63:1** ✅ | 3:1 | Resolved-monument star on the map |
+| `gece400` #98A2B4 | `gece900` #151B28 | **6.69:1** ✅ | 3:1 | Control borders |

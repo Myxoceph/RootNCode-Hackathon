@@ -6,31 +6,35 @@
  * "background". Every foreground/background combination a theme may use is
  * listed in `contrastPairs` and checked by `npm run ui:contrast`.
  *
- * Inspiration: cut stone (stone), ink on paper (ink), İznik tiles (çini,
- * turkuaz), roof tiles (kiremit), gilding (okra) and garden courtyards (yeşil).
- * The 700 shades are for light surfaces, the 300 shades for dark surfaces.
+ * The 300 accents and the gece neutrals are the visual identity as designed
+ * (dark first). The 700 accents are the same hues darkened for light
+ * surfaces (e.g. the camera controls bar), each at about 5.5:1 on gece50.
  */
 export const palette = {
   white: "#FFFFFF",
-  stone50: "#FAF7F2",
-  stone100: "#F2ECE2",
-  stone300: "#CFC5B6",
-  stone400: "#ADA191",
-  ink600: "#5A5148",
-  ink700: "#38322C",
-  ink800: "#2A2622",
-  ink900: "#1C1A17",
+  gece50: "#F3F5F9",
+  gece100: "#E7EBF1",
+  gece400: "#98A2B4",
+  gece600: "#576378",
+  /** Dividers and control borders on dark surfaces. Not a text background. */
+  gece700: "#283248",
+  /** "Tarih sisi": undiscovered monuments under the fog on the map. */
+  gece800: "#1C2334",
+  gece900: "#151B28",
+  gece950: "#090D15",
 
-  cini300: "#8DB8DE",
-  cini700: "#1F4E79",
-  turkuaz300: "#6FC7C1",
-  turkuaz700: "#0F5E5C",
-  kiremit300: "#F0A08F",
-  kiremit700: "#9A3324",
-  okra300: "#E3B862",
-  okra700: "#7A5410",
-  yesil300: "#8FCB8C",
-  yesil700: "#2F6131",
+  /** İznik kobaltı: primary action. */
+  kobalt300: "#86A2EB",
+  kobalt700: "#2658DB",
+  /** Firuze: open / confirmed. */
+  firuze300: "#71C3BD",
+  firuze700: "#2E6D68",
+  /** Mercan: local food stops, warnings. */
+  mercan300: "#DF816A",
+  mercan700: "#AA3F25",
+  /** Varak altın: a resolved monument (the eight-pointed star on the map). */
+  altin300: "#D7B76A",
+  altin700: "#785F20",
 } as const;
 
 export type PaletteColor = keyof typeof palette;
@@ -49,45 +53,45 @@ export interface ContrastPair {
   usage: string;
 }
 
-const lightSurfaces = ["stone50", "stone100", "white"] as const satisfies readonly PaletteColor[];
-const darkSurfaces = ["ink900", "ink800", "ink700"] as const satisfies readonly PaletteColor[];
-
-const lightText: Array<[PaletteColor, string]> = [
-  ["ink900", "Primary text"],
-  ["ink600", "Secondary text"],
-  ["cini700", "Links, primary accent"],
-  ["turkuaz700", "Secondary accent"],
-  ["kiremit700", "Error"],
-  ["okra700", "Warning"],
-  ["yesil700", "Success"],
-];
+const darkSurfaces = ["gece950", "gece900", "gece800"] as const satisfies readonly PaletteColor[];
+const lightSurfaces = ["gece50", "white"] as const satisfies readonly PaletteColor[];
 
 const darkText: Array<[PaletteColor, string]> = [
-  ["stone50", "Primary text"],
-  ["stone300", "Secondary text"],
-  ["cini300", "Links, primary accent"],
-  ["turkuaz300", "Secondary accent"],
-  ["kiremit300", "Error"],
-  ["okra300", "Warning"],
-  ["yesil300", "Success"],
+  ["gece100", "Primary text"],
+  ["gece400", "Secondary text, captions"],
+  ["kobalt300", "Primary action, links"],
+  ["firuze300", "Open / confirmed"],
+  ["mercan300", "Food stops, warnings"],
+  ["altin300", "Resolved monument, highlights"],
+];
+
+const lightText: Array<[PaletteColor, string]> = [
+  ["gece900", "Primary text"],
+  ["gece600", "Secondary text, captions"],
+  ["kobalt700", "Primary action, links"],
+  ["firuze700", "Open / confirmed"],
+  ["mercan700", "Food stops, warnings"],
+  ["altin700", "Resolved monument, highlights"],
 ];
 
 /** Every foreground/background combination the themes are allowed to use. */
 export const contrastPairs: ContrastPair[] = [
-  ...lightSurfaces.flatMap((background) =>
-    lightText.map(([foreground, usage]) => ({ foreground, background, kind: "text" as const, usage })),
-  ),
   ...darkSurfaces.flatMap((background) =>
     darkText.map(([foreground, usage]) => ({ foreground, background, kind: "text" as const, usage })),
   ),
+  ...lightSurfaces.flatMap((background) =>
+    lightText.map(([foreground, usage]) => ({ foreground, background, kind: "text" as const, usage })),
+  ),
   // Text on filled buttons and badges.
-  { foreground: "white", background: "cini700", kind: "text", usage: "Primary button label" },
-  { foreground: "white", background: "kiremit700", kind: "text", usage: "Destructive button label" },
-  { foreground: "ink900", background: "cini300", kind: "text", usage: "Primary button label (dark)" },
-  { foreground: "ink900", background: "kiremit300", kind: "text", usage: "Destructive button label (dark)" },
-  // Focus ring and icons.
-  { foreground: "cini700", background: "stone50", kind: "nonText", usage: "Focus ring, icons" },
-  { foreground: "cini300", background: "ink900", kind: "nonText", usage: "Focus ring, icons (dark)" },
-  { foreground: "stone50", background: "cini700", kind: "nonText", usage: "Focus ring on primary button" },
-  { foreground: "ink900", background: "cini300", kind: "nonText", usage: "Focus ring on primary button (dark)" },
+  { foreground: "gece900", background: "kobalt300", kind: "text", usage: "Primary button label" },
+  { foreground: "gece900", background: "mercan300", kind: "text", usage: "Warning badge label" },
+  { foreground: "gece900", background: "altin300", kind: "text", usage: "Resolved badge label" },
+  { foreground: "white", background: "kobalt700", kind: "text", usage: "Primary button label (light)" },
+  { foreground: "white", background: "mercan700", kind: "text", usage: "Warning badge label (light)" },
+  // Focus ring, icons and map markers.
+  { foreground: "kobalt300", background: "gece900", kind: "nonText", usage: "Focus ring, icons" },
+  { foreground: "kobalt700", background: "gece50", kind: "nonText", usage: "Focus ring, icons (light)" },
+  { foreground: "gece900", background: "kobalt300", kind: "nonText", usage: "Focus ring on primary button" },
+  { foreground: "altin300", background: "gece700", kind: "nonText", usage: "Resolved-monument star on the map" },
+  { foreground: "gece400", background: "gece900", kind: "nonText", usage: "Control borders" },
 ];
