@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-geyve-hani",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Ticari Yapılar",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 639-641) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
+      "Fotoğraflar eklenmeli (media boş); Drive klasörü ve dosya kimlikleri bulunmalı (media_folder null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
+      "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
+      "Hanın kesin yapım yılı kitapta yok (yalnızca '1419'dan önce'); 'dating.start_year' null.",
+      "Mahalle adı kitapta yok.",
+      "Hacı İvaz Paşa'nın hanı kendisinin mi inşa ettiği yoksa yaptırdığı mı net değil: kitap 'inşa ettirilmiş' diyor; mimar kesin yazılmadı.",
+      "Hedef 'bursa-yildirim-yesil-kulliyesi': kitapta ilçe adı yok; ilçe, mevcut Ulucami kaydındaki 'bursa-yildirim-yesil-camii' hedefinden alındı, doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architect",
+        "note": "Kitap Hacı İvaz Paşa'yı 'baş mimar ve komutan' diye anıp hanı onun 'inşa ettirdiğini' söyler; mimar olarak açıkça kaydetmez. Bu yüzden 'architect.name' null, aday olarak yazıldı (probable)."
+      },
+      {
+        "field": "dating",
+        "note": "Çelebi Mehmed'in saltanat yılları kitapta verilmediği için yalnızca '1419'dan önce' bilgisi kullanıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Geyve Hanı",
+    "en": "Geyve Han"
+  },
+  "subtitle": {
+    "tr": "Bedesten'in doğu kapısı çıkışındaki, Yeşil Külliye'ye vakfedilmiş han",
+    "en": "A han at the Bedesten's east gate, endowed to the Yeşil Complex"
+  },
+  "alternate_names": [
+    {
+      "tr": "Lonca Hanı",
+      "en": "Lonca (Guild) Han"
+    },
+    {
+      "tr": "Hacı İvaz Paşa Hanı",
+      "en": "Hacı İvaz Paşa Han"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "han",
+    "Hacı İvaz Paşa",
+    "Çelebi Mehmed",
+    "Demirkapı Çarşısı",
+    "Yeşil Külliye vakfı",
+    "şadırvan",
+    "mescit"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": "Demirkapı Çarşısı, Süleyman Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "639"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1419'dan önce",
+      "en": "Before 1419"
+    },
+    "start_year": null,
+    "end_year": 1419,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap hanın 1419 yılından önce yaptırıldığını belirtir.",
+      "en": "The book states the han was built before 1419."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "639"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı İvaz Paşa bin Ahi Bayezid",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "639"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [
+      {
+        "name": "Hacı İvaz Paşa bin Ahi Bayezid",
+        "note": "Hanı inşa ettiren; Çelebi Sultan Mehmed'in baş mimarı ve komutanlarından olarak anılır"
+      }
+    ],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "639"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Çelebi Mehmed'in Yeşil Külliye'ye vakfettiği han (\"Lonca Hanı\" adıyla)",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "639"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hacı İvaz Paşa'nın 1419'dan önce yaptırıp Çelebi Mehmed'e armağan ettiği, onun da Yeşil Külliye'ye gelir olarak vakfettiği kare planlı, iki katlı han. Bursa çarşısının en işlek noktalarından birinde, Bedesten'in doğu kapısı çıkışındadır.",
+    "en": "A square-plan, two-storey han built before 1419 by Hacı İvaz Paşa and presented to Çelebi Mehmed, who endowed it to provide income to the Yeşil Complex. It stands at one of the busiest points of the Bursa bazaar, at the Bedesten's east gate."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapımı",
+        "en": "Location and Construction"
+      },
+      "body": {
+        "tr": "Han Osmangazi ilçesinde, Uzun Çarşı yönünde, Demirkapı Çarşısı Süleyman Sokak'ta yer alır. 1419'dan önce Çelebi Sultan Mehmed'in baş mimarı ve komutanlarından Hacı İvaz Paşa bin Ahi Bayezid tarafından yaptırılmış ve Çelebi Mehmed'e hediye edilmiştir. Çelebi Mehmed yapıyı Yeşil Külliye'ye gelir sağlaması için \"Lonca Hanı\" adıyla vakfetmiştir.",
+        "en": "The han stands in Osmangazi District, towards the Uzun Bazaar, on Süleyman Street in the Demirkapı Bazaar. It was built before 1419 by Hacı İvaz Paşa bin Ahi Bayezid, one of the chief architects and commanders of Çelebi Sultan Mehmed, and presented to Çelebi Mehmed, who endowed it under the name \"Lonca Han\" to provide income to the Yeşil Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "639"
+        }
+      ]
+    },
+    {
+      "id": "adlar",
+      "order": 2,
+      "title": {
+        "tr": "Adları",
+        "en": "Names"
+      },
+      "body": {
+        "tr": "Hacı İvaz Paşa'nın ahi olması, hanın ilk yıllarda \"Lonca Hanı\" diye anılmasına yol açmıştır. Zamanla halk arasında \"Hacı İvaz Paşa Hanı\" ve \"Geyve Hanı\" adları da kullanılmaya başlanmıştır.",
+        "en": "Because Hacı İvaz Paşa was an ahi (guild member), the han was called \"Lonca (Guild) Han\" in its first years. Over time the names \"Hacı İvaz Paşa Han\" and \"Geyve Han\" came into use among the public."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "639"
+        }
+      ]
+    },
+    {
+      "id": "konum-ve-plan",
+      "order": 3,
+      "title": {
+        "tr": "Çarşıdaki Yeri ve Planı",
+        "en": "Place in the Bazaar and Plan"
+      },
+      "body": {
+        "tr": "Çarşı yapıları Bedesten merkez alınarak konumlandırılmış; Geyve Hanı Bedesten'in doğu kapısı çıkışında, çarşının en yoğun noktalarından birindedir. Bursa şehir içi hanlarının özelliklerini taşıyan yapı kare planlı ve iki katlıdır; ortasında avlu ve şadırvan vardır. Dış duvarlarda moloz taş ve tuğla, içte kemer, ayak ve kapılarda tamamen tuğla kullanılmıştır. Duvarlar iki sıra kirpi saçakla sonlanır; kuzey, batı ve güney cephelerinde kapılar vardır.",
+        "en": "With the Bedesten as the centre of the bazaar layout, the Geyve Han lies at its east gate, one of the busiest points of the bazaar. Typical of Bursa city hans, it has a square plan and two floors with a courtyard and shadirvan in the middle. The exterior walls use rubble stone and brick, while the interior arches, piers and doors are entirely brick. The walls end in two rows of sawtooth eaves; there are doors on the north, west and south."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "640"
+        }
+      ]
+    },
+    {
+      "id": "odalar-ve-onarim",
+      "order": 4,
+      "title": {
+        "tr": "Odalar, Mescit ve Onarım",
+        "en": "Rooms, Masjid and Restoration"
+      },
+      "body": {
+        "tr": "Alt katta 26, üst katta 30 oda vardır; ahırlar günümüze ulaşmamıştır. Üst kata iki yönden merdivenle çıkılır. Sivri kemerler sağlam ayaklara oturur ve çapraz tonoz atkılıdır. Doğudaki zemin katta tek kubbeli bir mescit bulunur. Han 2007'de Osmangazi Belediyesi tarafından kapsamlı biçimde onarılmış, önündeki muhdes yapılar yıkılarak özgün cephe görünümü ortaya çıkarılmıştır. Bugün toptan tekstil ticareti yapan çarşı esnafınca kullanılır.",
+        "en": "There are 26 rooms on the ground floor and 30 on the upper floor; the stables have not survived. The upper floor is reached by stairs from two directions. Pointed arches rest on solid piers and have cross-vaulted ribs. A single-domed masjid stands on the ground floor in the east. The Osmangazi Municipality restored the han extensively in 2007, demolishing later structures in front and re-exposing the original façade. Today it is used by bazaar tradesmen in wholesale textile trade."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "641"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "640"
+        }
+      ]
+    },
+    {
+      "key": "oda_alt_kat",
+      "label": {
+        "tr": "Alt kat oda sayısı",
+        "en": "Rooms on ground floor"
+      },
+      "value": 26,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "641"
+        }
+      ]
+    },
+    {
+      "key": "oda_ust_kat",
+      "label": {
+        "tr": "Üst kat oda sayısı",
+        "en": "Rooms on upper floor"
+      },
+      "value": 30,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "641"
+        }
+      ]
+    },
+    {
+      "key": "kapi_sayisi",
+      "label": {
+        "tr": "Dış kapı sayısı",
+        "en": "Number of exterior doors"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "640"
+        }
+      ],
+      "note": {
+        "tr": "Kuzey, batı ve güney cephelerinde.",
+        "en": "On the north, west and south façades."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı İvaz Paşa bin Ahi Bayezid",
+      "role": {
+        "tr": "Hanı yaptıran; Çelebi Sultan Mehmed'in baş mimarı ve komutanlarından",
+        "en": "Builder of the han; chief architect and commander of Çelebi Sultan Mehmed"
+      }
+    },
+    {
+      "name": "Çelebi Sultan Mehmed",
+      "role": {
+        "tr": "Hanı armağan olarak alıp Yeşil Külliye'ye vakfeden",
+        "en": "Received the han as a gift and endowed it to the Yeşil Complex"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1419-oncesi",
+      "year": 1419,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Han 1419'dan önce Hacı İvaz Paşa tarafından yaptırıldı",
+        "en": "Han built by Hacı İvaz Paşa before 1419"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "639"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'önce' diyor; kesin yıl bilinmiyor, 1419 üst sınırdır.",
+        "en": "The book says 'before'; the exact year is unknown, 1419 is the upper bound."
+      }
+    },
+    {
+      "id": "restorasyon-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Osmangazi Belediyesi'nce kapsamlı onarım; muhdes yapılar yıkıldı",
+        "en": "Extensive restoration by Osmangazi Municipality; later structures demolished"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "641"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yesil-kulliyesi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Çelebi Mehmed hanı Yeşil Külliye'ye gelir sağlaması için vakfetmiştir.",
+        "en": "Çelebi Mehmed endowed the han to provide income to the Yeşil Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "639"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-yildirim-bayezid-bedesteni",
+      "type": "urban_context",
+      "description": {
+        "tr": "Han, Bedesten'in doğu kapısı çıkışında yer alır.",
+        "en": "The han stands at the exit of the Bedesten's east gate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "640"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ipek-hani",
+      "type": "same_architect",
+      "description": {
+        "tr": "İpek Hanı'nın mimarı da Hacı İvaz Paşa'dır.",
+        "en": "The architect of the İpek Han is also Hacı İvaz Paşa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "639, 643"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Geyve Hanı, Bedesten'in doğu kapısından çıkınca karşılaşılan, kare planlı ve iki katlı bir handır. Dış duvarlar moloz taş ve tuğla, içteki kemerler ve ayaklar tuğladır; duvarlar iki sıra kirpi saçakla biter. Ortada bir avlu ve şadırvan, çevresinde sivri kemerli, çapraz tonozlu revaklar vardır; doğuda zemin katta tek kubbeli bir mescit bulunur. Üst kata iki yöndeki merdivenlerle çıkılır.",
+      "en": "The Geyve Han is a square, two-storey han met on leaving the Bedesten's east gate. Its exterior walls are rubble stone and brick, its interior arches and piers brick, ending in two rows of sawtooth eaves. A courtyard with a shadirvan lies in the middle, surrounded by pointed-arched, cross-vaulted arcades; a single-domed masjid stands on the ground floor in the east. Stairs from two directions lead to the upper floor."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

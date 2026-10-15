@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ebe-hatun-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Yapım tarihi, yaptıran ve mimar kitapta yok.",
+      "Burada yatan kişinin kimliği teyit edilmeli (kitapta kesin bilgi yok)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis]",
+        "note": "'Muradiye Camii haziresinin en batısında' denir; Gülruh Hatun Türbesi 'türbelerin en batısında', Şehzade Mahmut Türbesi de 'Muradiye türbelerinin en batısında' olarak tanımlanır. Üç tanım aynı anda doğru olamaz; kaynağa sadık kalındı, sahada teyit edilmeli."
+      },
+      {
+        "field": "identity",
+        "note": "Kimlik kitapta 'izafe edilmektedir' ve 'gelenek haline gelmiş inanış' olarak verilir; 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ebe Hatun Türbesi",
+    "en": "Ebe Hatun Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Gülbahar Hatun Türbesi",
+      "en": "Gülbahar Hatun Tomb"
+    },
+    {
+      "tr": "Ebe Kadın Türbesi",
+      "en": "Ebe Kadın Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": null,
+  "tags": [
+    "türbe",
+    "baldaken plan",
+    "açık türbe",
+    "aslan göğüslü kubbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "146"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Muradiye haziresinin en batısında, hazireyi çevreleyen duvarın yanında yer alan, 4,46 m kenarlı küçük ve sade baldaken planlı türbe. Fâtih Sultan Mehmed'in ebesi Gülbahar Hatun'a atfedilir; kitabesi olmadığından kimliği kesin değildir.",
+    "en": "A small, plain baldachin-plan tomb with 4.46 m sides in the westernmost part of the Muradiye graveyard, next to the surrounding wall. It is attributed to Gülbahar Hatun, the midwife of Fâtih Sultan Mehmed; with no inscription, the identity is not certain."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Gülbahar Hatun ya da Ebe Kadın Türbesi olarak da bilinen yapı, Muradiye türbeleri içinde etrafı açık olarak tasarlanmış baldaken planlı ikinci türbedir. Fâtih Sultan Mehmed'in ebesi Gülbahar Hatun'a izafe edilir. Küçük ve sade yapı 4,46 m kenar uzunluğundadır ve zeminden yaklaşık bir metre yüksekteki kaide üzerine oturur. Kaidenin dört köşesindeki 0,78 × 0,78 m ebatlı dört ayak sivri kemerlerle birbirine bağlıdır; üzeri aslan göğüslerine oturan bir kubbeyle örtülüdür. Bursa'daki hanedan türbeleri içinde en mütevazı örneklerden biridir. Muradiye Camii haziresinin en batısında, ihata duvarının yanındadır.",
+        "en": "Also known as the Gülbahar Hatun or Ebe Kadın Tomb, it is the second baldachin-plan tomb designed with an open area among the Muradiye tombs. It is attributed to Gülbahar Hatun, the midwife of Fâtih Sultan Mehmed. The small, plain structure has a side length of 4.46 m and sits on a pedestal about one metre above the ground. The four 0.78 × 0.78 m piers at the corners are connected by pointed arches and it is covered with a dome on lion corbels. It is one of the most modest dynasty tombs in Bursa, in the westernmost part of the Muradiye graveyard next to the surrounding wall."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "146-147"
+        }
+      ]
+    },
+    {
+      "id": "yapi",
+      "order": 2,
+      "title": {
+        "tr": "Yapı Malzemesi",
+        "en": "Construction"
+      },
+      "body": {
+        "tr": "Kaide tamamen kaba yontma taştan yapılmıştır. Ayaklar iki sıra tuğla ve bir sıra taşla, kemerler üç sıra tuğla ve bir sıra taşla örülmüştür. Ayakları birbirine bağlayan ahşap gergiler kemer üzengilerinin biraz aşağısına yerleştirilmiştir.",
+        "en": "The base is built entirely of roughly cut stone. The piers are two rows of brick and one of stone; the arches three rows of brick and one of stone. The wooden tie-beams connecting the piers are placed slightly below the arch springers."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "146-147"
+        }
+      ]
+    },
+    {
+      "id": "kimlik",
+      "order": 3,
+      "title": {
+        "tr": "Kimin Türbesi?",
+        "en": "Whose Tomb?"
+      },
+      "body": {
+        "tr": "Kaynaklarda Gülbahar adında yalnızca iki hanım anılır: Fâtih Sultan Mehmed'in hanımlarından biri ve II. Bayezid'in bir hanımı. Ancak Fâtih'in eşi İstanbul'daki türbesinde, II. Bayezid'in eşi ise Trabzon'daki türbesinde medfundur. Bursa'daki türbenin kitabesi olmadığından burada yatan kişinin kimliği hakkında kesin bilgi yoktur; Fâtih Sultan Mehmed'in ebesi olduğu görüşü zamanla gelenek haline gelmiş bir inanış olarak kabul edilmiştir.",
+        "en": "In the sources only two women named Gülbahar are mentioned: one of Fâtih Sultan Mehmed's wives and one of Bayezid II's wives; Fâtih's wife is buried in his tomb in Istanbul and Bayezid II's wife in his tomb in Trabzon. Since the Bursa tomb has no inscription, there is no definitive information about who is buried there; the view that she was Fâtih's midwife has been accepted as a belief that became a tradition over time."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "146-147"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "fatihin-ebesi",
+      "title": {
+        "tr": "Fâtih'in Ebesi Gülbahar Hatun",
+        "en": "Gülbahar Hatun, Fâtih's Midwife"
+      },
+      "body": {
+        "tr": "Türbenin Fâtih Sultan Mehmed'in ebesi Gülbahar Hatun'a ait olduğu görüşü, kitaba göre zamanla gelenek haline gelmiş bir inanıştır; kitabe olmadığı için kesin bilgi yoktur.",
+        "en": "The view that the tomb belongs to Gülbahar Hatun, Fâtih Sultan Mehmed's midwife, is according to the book a belief that became tradition over time; with no inscription there is no definitive information."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "146-147"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kenar",
+      "label": {
+        "tr": "Kenar uzunluğu",
+        "en": "Side length"
+      },
+      "value": 4.46,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "146-147"
+        }
+      ]
+    },
+    {
+      "key": "ayak_olcusu",
+      "label": {
+        "tr": "Ayak ölçüsü",
+        "en": "Pier size"
+      },
+      "value": "0,78 × 0,78",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "146-147"
+        }
+      ]
+    },
+    {
+      "key": "kaide_yuksekligi",
+      "label": {
+        "tr": "Kaide yüksekliği",
+        "en": "Pedestal height"
+      },
+      "value": "~1",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "146-147"
+        }
+      ]
+    },
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Ayak sayısı",
+        "en": "Number of piers"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "146-147"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "146"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, dört köşesinde dört ayağı olan, etrafı açık küçük bir yapıdır. Kaba yontma taştan, yaklaşık bir metre yüksekliğinde bir kaide üzerinde durur. Sivri kemerlerle birbirine bağlı ayaklar, aslan göğüslerine oturan bir kubbeyi taşır; ayaklar arasında ahşap gergiler görülür.",
+      "en": "The tomb is a small, open structure with four piers at its corners, standing on a roughly cut stone base about one metre high. The piers, joined by pointed arches, carry a dome resting on lion-bosom corbels; wooden tie-beams run between the piers."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

@@ -1,0 +1,397 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-gulcicek-hatun-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Zaviye, evler, aşhane ve medrese bugün var mı, kitapta anlatılmıyor; külliye kaydı gerekebilir.",
+      "Türbenin kesin yapım yılı kitapta yok; vakfiye tarihi yaklaşık tarih olarak kullanıldı.",
+      "Relation hedef id'si tahmini: zaviyenin ayrı bir kaydı olup olmadığı bilinmiyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap yapım yılı yerine vakfiye tarihini (H. 803 / M. 1399-1400) veriyor; tarih 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Gülçiçek Hatun Türbesi",
+    "en": "Gülçiçek Hatun Tomb"
+  },
+  "subtitle": {
+    "tr": "Adına türbe yapılan ilk padişah annesi",
+    "en": "The first sultan's mother to have a tomb built in her name"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Gülçiçek Hatun",
+    "I. Murad",
+    "Yıldırım Bayezid",
+    "vakfiye",
+    "Türk üçgenleri"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Altıparmak Mahallesi",
+    "address": "Çarklı Değirmen Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "500-501"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 803 / M. 1399-1400 (vakfiye tarihi)",
+      "en": "AH 803 / AD 1399-1400 (date of the foundation charter)"
+    },
+    "start_year": 1399,
+    "end_year": 1400,
+    "hijri_year": 803,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap türbenin yapım yılını vermiyor; türbenin yapıldığı bahçeyi anlatan vakfiyenin tarihini veriyor.",
+      "en": "The book gives no construction year for the tomb; it gives the date of the foundation charter describing the garden in which it was built."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "500-501"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Gülçiçek Hatun",
+    "role": "banî (vakfiyeye göre)",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "500-501"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Gülçiçek Hatun Vakfı",
+    "deed": {
+      "date_display": "H. 803 / M. 1399-1400",
+      "excerpt": {
+        "tr": "Gülçiçek Hatun aynı bahçe içerisinde bir zaviye, türbe, evler ve bir aşhane inşa ettirmiştir.",
+        "en": "According to the document Gülçiçek Hatun had a zawiya, a tomb, houses and a soup kitchen built in the same garden."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "500-501"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "500-501"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "I. Murad'ın eşi ve Yıldırım Bayezid'in annesi Gülçiçek Hatun adına yapılan, kare planlı, tek kubbeli türbe. Adına türbe yapılan ilk padişah annesidir. Yapı, vakfiyede anılan zaviye, ev ve aşhane topluluğuyla aynı bahçededir.",
+    "en": "The square-plan, single-domed tomb of Gülçiçek Hatun, wife of Murad I and mother of Yıldırım Bayezid. She is the first sultan's mother to have a tomb built in her name. The tomb stood in the same garden as the zawiya, houses and soup kitchen named in her foundation charter."
+  },
+  "sections": [
+    {
+      "id": "kisi-vakfiye",
+      "order": 1,
+      "title": {
+        "tr": "Gülçiçek Hatun ve vakfiyesi",
+        "en": "Gülçiçek Hatun and her foundation charter"
+      },
+      "body": {
+        "tr": "Gülçiçek Hatun, I. Murad Hudâvendigâr'ın Rum asıllı eşi ve Yıldırım Bayezid'in annesidir. Diğer oğlu Yahşi Bey'in de tanziminde görev aldığı H. 803 / M. 1399-1400 tarihli bir vakfiye vardır. Bu belgeye göre aynı bahçe içinde bir zaviye, türbe, evler ve bir aşhane yaptırmıştır. Kaynaklarda topluluğa dahil olduğu bilinen ve 1906'ya kadar faaliyet gösterdiği kaydedilen bir medrese de anılır.",
+        "en": "Gülçiçek Hatun was the Greek wife of Murad I Hudâvendigâr and mother of Yıldırım Bayezid. A foundation charter dated AH 803 / AD 1399-1400 exists, in whose preparation her other son Yahşi Bey also took part. According to it she had a zawiya, tomb, houses and a soup kitchen built in the same garden. Sources also mention a madrasa known to have been part of the complex, recorded as operating until 1906."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "500-501"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Tek kubbeli ve kare planlı türbenin iç ölçüleri 6,40 × 6,40 m'dir. Kubbe yüksek sekizgen bir kasnağa oturur; geçişlerde Türk üçgenleri vardır. Kasnağın duvarlara oranla belirgin yüksekliği ve yapının yalnızca kesme taşla örülmüş olması sonraki müdahalelere işaret eder. Duvarlar üç sıra tuğla ve bir sıra küfeki taşıyla örülmüştür; bu, erken Osmanlı döneminde Bursa'da sık görülen bir örgüdür. Her cephede ikişer, toplam sekiz pencere vardır; pencere araları tuğla kurs motifleriyle hareketlendirilmiştir. İç mekânda süsleme yoktur.",
+        "en": "The single-domed square tomb measures 6.40 × 6.40 m inside. The dome sits on a high octagonal drum with Turkish triangles as transition. The drum's marked height compared with the walls and the use of cut stone only point to later interventions. The walls are three rows of brick and one of limestone, a masonry frequently seen in early Ottoman Bursa. There are eight windows, two per side, with brick course motifs between them. The interior has no decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    },
+    {
+      "id": "revak",
+      "order": 3,
+      "title": {
+        "tr": "Revaklı bölüm",
+        "en": "Portico section"
+      },
+      "body": {
+        "tr": "Kabirlerin bulunduğu mekânın önünde yanları kapalı revaklı bir bölüm vardır; yan duvarları ve zemini günümüze ulaşmıştır. Duvardaki kiriş izlerinden düz çatılı olduğu anlaşılan girişin önünde sütunları kaybolmuş iki kaide bulunur.",
+        "en": "In front of the burial room is a portico closed at the sides, whose side walls and floor survive. The entrance, understood from beam traces to have had a flat roof, has two column pedestals with the columns lost."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Kasnak ve onarım",
+        "en": "Drum and repair"
+      },
+      "body": {
+        "tr": "İlk hâlinde on altı köşeli olduğu düşünülen kubbe kasnağının, muhtemelen 1958'deki onarım sırasında sekizgene indirilip yükseltildiği değerlendirilmektedir.",
+        "en": "The dome drum, thought to have been sixteen-sided originally, is judged to have been reduced to an octagon and raised, probably during the 1958 repair."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    },
+    {
+      "id": "mezarlar",
+      "order": 5,
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbede Gülçiçek Hatun'a ait sandukanın yanı sıra kime ait olduğu belirlenemeyen üç sanduka daha vardır.",
+        "en": "Besides Gülçiçek Hatun's sarcophagus there are three more whose owners cannot be determined."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "6,40 × 6,40",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    },
+    {
+      "key": "medrese_son_yil",
+      "label": {
+        "tr": "Medresenin kayıtlı faaliyet son yılı",
+        "en": "Last recorded year of the madrasa"
+      },
+      "value": 1906,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Gülçiçek Hatun",
+      "role": {
+        "tr": "I. Murad'ın eşi, Yıldırım Bayezid'in annesi; türbede medfun",
+        "en": "Wife of Murad I, mother of Yıldırım Bayezid; buried in the tomb"
+      }
+    },
+    {
+      "name": "Yahşi Bey",
+      "role": {
+        "tr": "Gülçiçek Hatun'un oğlu; vakfiyenin düzenlenmesinde görev aldı",
+        "en": "Son of Gülçiçek Hatun; took part in preparing the charter"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye",
+      "year": 1399,
+      "date": null,
+      "hijri": "803",
+      "type": "record",
+      "title": {
+        "tr": "Gülçiçek Hatun vakfiyesi düzenlendi (zaviye, türbe, evler, aşhane)",
+        "en": "Gülçiçek Hatun's foundation charter drawn up (zawiya, tomb, houses, soup kitchen)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "500-501"
+        }
+      ],
+      "note": {
+        "tr": "Yıl aralığı 1399-1400.",
+        "en": "Year span 1399-1400."
+      }
+    },
+    {
+      "id": "onarim-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım; kasnak muhtemelen bu sırada sekizgene indirildi ve yükseltildi",
+        "en": "Repair; the drum was probably reduced to an octagon and raised then"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    },
+    {
+      "id": "medrese-1906",
+      "year": 1906,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Topluluğa dahil medresenin faaliyetinin sona erdiği kayıtlı yıl",
+        "en": "Last year the complex's madrasa is recorded as operating"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "501"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-gulcicek-hatun-zaviyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Vakfiyeye göre türbe ile aynı bahçede yapılan zaviye, evler ve aşhane.",
+        "en": "The zawiya, houses and soup kitchen built in the same garden as the tomb, per the charter."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "500-501"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Gülçiçek Hatun Türbesi kare planlı ve tek kubbelidir; kubbe yüksek bir sekizgen kasnağa oturur. Duvarlar üç sıra tuğla ve bir sıra taşın dönüşümüyle örülmüş, her cephede iki pencere açılmıştır. Kabirlerin önünde yanları kapalı, kaideleri duran bir revaklı giriş bölümü bulunur. İç mekân süslemesizdir ve dört sanduka içerir.",
+      "en": "Gülçiçek Hatun Tomb has a square plan and a single dome on a high octagonal drum. The walls alternate three rows of brick with one row of stone, with two windows on each side. In front of the graves is a closed-sided portico entrance whose column bases remain. The interior is undecorated and holds four sarcophagi."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

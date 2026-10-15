@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-cikcik-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "I. Murat Hüdavendigar Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki I. Murad Hudâvendigâr Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Hamamın adresi/mahallesi kitapta verilmiyor.",
+      "Mimar adı kitapta verilmiyor.",
+      "Hamamın kesin yapım yılı kitapta yok (külliyeyle birlikte deniyor).",
+      "Cıkcık/Girçık adlarının kökeni kitapta açıklanmıyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap hamam için ayrı bir tarih vermiyor; start_year külliyenin öngörülen tarihinden (s. 79) türetildi ve 'probable' işaretlendi."
+      },
+      {
+        "field": "sections[restorasyon]",
+        "note": "İngilizce metin '...was found and connected to the.' diye yarım bitiyor (nesne eksik); Türkçe metne göre kaybolan sıcak su kaynağı bulunup hamama bağlanmıştır."
+      },
+      {
+        "field": "name",
+        "note": "Başlıkta 'Cıkcık (Girçık- Bekârlar) Hamamı', gövdede 'Bekârlar Hamamı' ve 'Girçık Hamamı' kullanılıyor; başlıktaki biçim esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Cıkcık (Girçık-Bekârlar) Hamamı",
+    "en": "Cıkcık (Girçık-Bekârlar) Bath"
+  },
+  "subtitle": {
+    "tr": "Külliyeyle birlikte yapılan küçük kubbeli halvet hamamı",
+    "en": "A small domed bathing-cell bath built with the complex"
+  },
+  "alternate_names": [
+    {
+      "tr": "Bekârlar Hamamı",
+      "en": "Bachelors' Bath"
+    },
+    {
+      "tr": "Girçık Hamamı",
+      "en": "Girçık Bath"
+    },
+    {
+      "tr": "Cıkcık Hamamı",
+      "en": "Cıkcık Bath"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "I. Murad",
+    "Çekirge",
+    "Bekârlar Hamamı",
+    "Girçık Hamamı",
+    "halvet",
+    "ücretsiz"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "100"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Külliyeyle birlikte (tarih belirtilmemiş)",
+      "en": "Together with the complex (no date given)"
+    },
+    "start_year": 1365,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap hamamın külliyeyle birlikte yapıldığını söylüyor; ayrı bir tarih vermiyor. Yıl, külliyenin öngörülen tarihinden alınmıştır.",
+      "en": "The book says the bath was built with the complex and gives no separate date. The year is taken from the complex's presumed date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "100, 79"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan I. Murad Hudâvendigâr",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "80"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Cami ve medresenin hemen doğusundaki küçük kubbeli hamam. Medrese öğrencileri, fakir halk ve bekârlar için ayrıldığından 'Bekârlar Hamamı' ve 'Girçık Hamamı' diye anılır. 2012'de Bursa Büyükşehir Belediyesi tarafından restore edilmiştir; bugün ücretsiz hizmet vermektedir.",
+    "en": "A small domed bath just east of the mosque and madrasa. Reserved for madrasa students, the poor and bachelors, it is known as the 'Bekârlar (Bachelors') Bath' and 'Girçık Bath'. It was restored by Bursa Metropolitan Municipality in 2012 and serves free of charge today."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Murad Hudâvendigâr'ın külliyeyle birlikte yaptırdığı bu küçük hamam, cami ve medresenin hemen doğu yanında yer alan küçük kubbeli bir yapıdır. Medrese öğrencileri, fakir halk ve bekârların kullanımına ayrıldığı bilindiğinden halk arasında 'Bekârlar Hamamı' ve 'Girçık Hamamı' olarak anılır.",
+        "en": "This small bath, built by Murad Hudâvendigâr together with the complex, is a small domed structure just east of the mosque and madrasa. As it is known to have been allocated for madrasa students, the poor and bachelors, it is called the 'Bekârlar (Bachelors') Bath' and 'Girçık Bath' among the public."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "body": {
+        "tr": "Soyunmalık, ılıklık, sıcaklık ve göbek taşı gibi geleneksel hamam birimleri yoktur; yalnızca hızlı yıkanmaya elverişli, 'halvet' denebilecek küçük mekânlardan oluşur. Kare planlı yapının içinde, yine kare biçimli ve ortasında şadırvan bulunan bir sofa yer alır. Bu mekân 6 m çapında, ortasında aydınlık feneri bulunan bir kubbeyle örtülüdür; kubbeye geçişte Türk üçgenleri kullanılmıştır.",
+        "en": "It has none of the traditional bath units such as changing room, tepidarium, caldarium or heated central slab; it consists only of small 'bathing cells' suited to a quick wash. Inside the square-planned building is a square central hall with a shadirvan in the middle, covered by a 6 m diameter dome with a roof lantern; Turkish triangles are used for the transition to the dome."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 3,
+      "title": {
+        "tr": "Özgün Hüviyet ve Restorasyon",
+        "en": "Original Character and Restoration"
+      },
+      "body": {
+        "tr": "Küçük yapı camiyle birlikte inşa edilmiş ve özgün hüviyetini korumuştur. Uzun süre harap kalan hamam 2012'de Bursa Büyükşehir Belediyesi tarafından restore edilerek yeniden işlev kazandırılmıştır. Restorasyonda sahanlığa bir şadırvan eklenmiş, yapılan kazılarda kaybolan sıcak su kaynağı bulunarak hamama bağlanmıştır. Hamam bugün de ücretsiz hizmet vermektedir.",
+        "en": "The small building was built with the mosque and has preserved its original identity. After long being in ruins it was restored and put back into use by Bursa Metropolitan Municipality in 2012. A shadirvan was added to the landing and excavations found the lost hot water source, which was connected to the bath. It continues to serve free of charge."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe_capi",
+      "label": {
+        "tr": "Kubbe çapı",
+        "en": "Dome diameter"
+      },
+      "value": 6,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon_yili",
+      "label": {
+        "tr": "Restorasyon yılı",
+        "en": "Restoration year"
+      },
+      "value": 2012,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    },
+    {
+      "key": "ucret",
+      "label": {
+        "tr": "Kullanım ücreti",
+        "en": "Fee"
+      },
+      "value": "Ücretsiz",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan I. Murad Hudâvendigâr",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-kulliye",
+      "year": 1365,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Külliyeyle birlikte yapıldığı belirtiliyor",
+        "en": "Said to be built together with the complex"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100, 79"
+        }
+      ],
+      "note": {
+        "tr": "Yıl külliyenin öngörülen tarihinden alındı.",
+        "en": "Year taken from the complex's presumed date."
+      }
+    },
+    {
+      "id": "restorasyon-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi restore etti; şadırvan eklendi, sıcak su kaynağı bulundu",
+        "en": "Restored by Bursa Metropolitan Municipality; shadirvan added, hot-water source found"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "halvet-hamami",
+      "title": {
+        "tr": "Halvet tarzı hamam",
+        "en": "Bathing-cell bath"
+      },
+      "hint": {
+        "tr": "Soyunmalık ve sıcaklık yok; ortada şadırvanlı kubbeli sofa.",
+        "en": "No changing room or hot room; a domed hall with a shadirvan in the middle."
+      },
+      "section_id": "plan"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamam külliyeyle birlikte yaptırılmıştır.",
+        "en": "The bath was built together with the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamam cami ve medresenin hemen doğusundadır.",
+        "en": "The bath is just east of the mosque and madrasa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, cami ve medresenin hemen doğusunda duran küçük, kare planlı, kubbeli bir yapıdır. İçeride ortasında şadırvan bulunan kare bir sofa, 6 metre çapında ve tepesinde aydınlık feneri olan bir kubbeyle örtülüdür. Geleneksel soyunmalık ve sıcaklık bölümleri yoktur; yalnızca küçük yıkanma hücreleri vardır.",
+      "en": "The bath is a small, square-planned domed building just east of the mosque and madrasa. Inside, a square hall with a shadirvan in the middle is covered by a 6-metre dome with a roof lantern. There are no traditional changing or hot rooms, only small bathing cells."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

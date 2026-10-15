@@ -1,0 +1,549 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-yildirim-bayezid-bedesteni",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Ticari Yapılar",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 671-675) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
+      "Fotoğraflar eklenmeli (media boş); Drive klasörü ve dosya kimlikleri bulunmalı (media_folder null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
+      "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
+      "Yapım yılı kitapta yok (yalnızca 'XIV. yüzyıl'); 'dating' yıl alanları null, zaman çizelgesindeki 1390 yaklaşık yer tutucudur.",
+      "Vakıf adı ve vakfiye kitapta yok (yalnızca 'vakfa gelir sağlamak').",
+      "Kitapta adı geçen 'Büyük Cuma Camii'nin Ulucami olup olmadığı açıkça söylenmiyor; ilişki 'probable' yazıldı.",
+      "Adres ve mahalle kitapta yok.",
+      "Güney kapısındaki kelime-i tevhit kitabesinin metni kitapta verilmiyor; 'inscriptions' kaydında transliterasyon ve çeviri null.",
+      "Kitap Evliya Çelebi'den aktarıyor; esnaf adlarının tam listesi 'sections[evliya-ve-carsilar]' içinde."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "relations[bursa-osmangazi-ulucami]",
+        "note": "Kitap 'Büyük Cuma Camii' der, 'Ulucami' demez; eşleştirme 'probable'."
+      },
+      {
+        "field": "sections[yangin-ve-bugun]",
+        "note": "Kitap 'Kapalıçarşı Yangını (1958)' ifadesini kullanır, başka eserler için 'Çarşı Yangını (1958)' denir; aynı olay olarak kabul edildi, kaynaktaki adlar korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yıldırım Bayezid Bedesteni",
+    "en": "Yıldırım Bayezid Bedesten"
+  },
+  "subtitle": {
+    "tr": "Osmanlı'nın ilk bedesteni ve Bursa çarşısının çekirdeği",
+    "en": "The first bedesten of the Ottoman Empire and the core of the Bursa bazaar"
+  },
+  "alternate_names": [
+    {
+      "tr": "Bedesten Kuyumcular Çarşısı",
+      "en": "Bedesten Jewelers' Bazaar",
+      "note": "Kapı üzerindeki tabela"
+    }
+  ],
+  "type": "bedesten",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "bedesten",
+    "kuyumcular",
+    "Kapalıçarşı",
+    "Yıldırım Bayezid",
+    "Osmanlı'nın ilk bedesteni",
+    "çarşı çekirdeği"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "671"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIV. yüzyıl",
+      "en": "14th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap bedestenin XIV. yüzyılda Yıldırım Bayezid tarafından yaptırıldığını belirtir.",
+      "en": "The book states the bedesten was built in the 14th century by Yıldırım Bayezid."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "674"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yıldırım Bayezid",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "674"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "674-675"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "674"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Osmanlı Devleti'nin inşa edilen ilk bedesteni; XIV. yüzyılda Yıldırım Bayezid yaptırmıştır. Çarşı dokusunun çekirdeğini oluşturur, sonraki bedestenlere örnek olmuştur. 14 kubbeli, 15,00 × 56,50 m'lik merkezi mekânı bugün Kapalıçarşı'nın kuyumcu çarşısı olarak kullanılır.",
+    "en": "The first bedesten built in the Ottoman Empire, commissioned in the 14th century by Yıldırım Bayezid. It formed the core of the bazaar fabric and served as a model for later bedestens. Its 14-domed central space of 15.00 × 56.50 m is used today as the jewelers' bazaar of the Kapalıçarşı."
+  },
+  "sections": [
+    {
+      "id": "kentsel-baglam",
+      "order": 1,
+      "title": {
+        "tr": "Fetih Sonrası Bursa ve Ticaret Çekirdeği",
+        "en": "Bursa After the Conquest and the Trade Core"
+      },
+      "body": {
+        "tr": "Bursa'nın 6 Nisan 1326'da fethedildiği sırada kent yerleşimi yalnızca Hisar içiyle sınırlıydı; kale içinde yaklaşık iki bin ev, yedi mahalle, yedi mihrap (mescit), bir hamam, bir çarşı ve yirmi dükkân vardı, bugün Emir Hanı'nın bulunduğu alan at pazarıydı. Türk-İslam şehir geleneğine göre şehir sayılmak için cuma namazı kılınacak bir cami ile pazar yeri gerekir; Osmanlı şehir planlamasında cami, bedesten ve imaret merkezî unsurlardır. Fetihten sonra başkent olan Bursa kısa sürede Anadolu'nun önemli ticaret merkezlerinden biri olmuş, Orhan Gazi'nin yaptırdığı Emir Hanı çarşının ilk çekirdeğini oluşturmuş, bedesten yapılmadan önce önemli bir ticaret yapısı olmuştur. Zamanla Emir Hanı ve II. Bayezid döneminde yapılan Koza Hanı bedesten, arasta ve çeşitli hanlarla çevrelenerek bölge çok yönlü bir ticaret merkezine dönüşmüştür.",
+        "en": "When Bursa was conquered on 6 April 1326, the settlement was limited to the interior of the Hisar (fortress), with some two thousand houses, seven neighborhoods, seven masjids, a bath, a bazaar and twenty shops; the Emir Han's site was a horse market. By Turkish-Islamic tradition a city needs a mosque for Friday prayers and a market; in Ottoman planning the mosque, bedesten and imaret are central elements. After the conquest Bursa quickly became a major trade centre of Anatolia; the Emir Han built by Orhan Gazi formed the bazaar's first core and was an important trade structure before the bedesten. Over time the Emir Han and the Koza Han (built under Bayezid II) were surrounded by the bedesten, arasta and various hans, turning the region into a multifaceted trade centre."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "671, 674"
+        }
+      ]
+    },
+    {
+      "id": "genel-bakis",
+      "order": 2,
+      "title": {
+        "tr": "Yapım ve Konum",
+        "en": "Construction and Position"
+      },
+      "body": {
+        "tr": "Osmanlı İmparatorluğu'nun inşa edilen ilk bedesteni olan Yıldırım Bayezid Bedesteni, şehrin hızla ticaret merkezine dönüşmesi üzerine XIV. yüzyılda Yıldırım Bayezid tarafından yaptırılmıştır. Yalnızca Bursa için değil, sonraki tüm Osmanlı bedestenleri için örnek olmuştur. Büyük Cuma Camii'nin yakınına konumlandırılan bedesten, vakfa gelir sağlamanın yanı sıra çarşı dokusunun çekirdeğini oluşturmuştur. Plan olarak İstanbul ve özellikle Edirne Bedesteni'ne benzer; Emir Hanı ve Orhan Hamamı ile paralel bir eksendedir.",
+        "en": "The Yıldırım Bayezid Bedesten, the first bedesten built in the Ottoman Empire, was built in the 14th century by Yıldırım Bayezid as the city rapidly became a trade centre. It set an example for all later Ottoman bedestens. Positioned near the Büyük Cuma (Great Friday) Mosque, it provided foundation income and formed the core of the bazaar fabric. Its plan resembles the Istanbul and especially the Edirne Bedestens, and it lies on an axis parallel to the Emir Han and the Orhan Bath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Merkez mekân iç ölçülerle 15,00 × 56,50 metredir; üst örtü altı ayağa oturan 14 kubbeden oluşur. Ticari mekânlar doğu-batı yönünde sıralı 32 mahzen ile bunların önünde ve taşıyıcı ayaklar çevresindeki dükkânlardan oluşur; tüm birimler yuvarlak tonozla örtülüdür. Bedestene dört cephedeki kapılardan girilir; her kapı kubbeli bir giriş mekânına açılır. Merkezde fıskiyeli bir şadırvan iç avlu düzenine işaret eder. Çevresinde bugün 68 dükkân vardır, ancak bunların ilk yapı düzeniyle ilgisi yoktur. Yapımında taş ve tuğla birlikte kullanılmıştır.",
+        "en": "The central space measures 15.00 × 56.50 m internally; its covering consists of 14 domes on six piers. The commercial areas are 32 cellars arranged east-west with shops in front of them and around the piers, all under round vaults. The bedesten is entered through doors on four sides, each opening to a domed entrance space. A shadirvan with a water jet in the centre marks the inner courtyard layout. Around it are 68 shops today, which have no relation to the original arrangement. Stone and brick were used together in construction."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674-675"
+        }
+      ]
+    },
+    {
+      "id": "evliya-ve-carsilar",
+      "order": 4,
+      "title": {
+        "tr": "Evliya Çelebi'nin Anlatımıyla Çarşılar",
+        "en": "The Bazaars in Evliya Çelebi's Account"
+      },
+      "body": {
+        "tr": "Evliya Çelebi'ye göre bedestenin dört cephesi kuyumcular çarşısıyla çevriliydi; hemen çevresinde Kazzazlar, Kavukçular, Takkeciler, İplikçiler, Bezzazlar, Hallâtlar, Yorgancılar, Gelincikçiler, Arakiyeciler ve Hallaçlar çarşıları yer alırdı; bu esnaf kolları günümüzde sınırlı ölçüde sürmektedir. Çarşıların üstü başlangıçta kurşunla örtülü, bazı yerlerde demir pencereliydi; her köşedeki çeşmeler çarşı altyapısının sosyal boyutunu yansıtır. Bedesten çevresinin uzantısı olan, bugün Kapalıçarşı ile bütünleşik sayılan Saraçhane Çarşısı büyük bir yangından sonra işlevini yitirmiş ve eski canlılığına ulaşamamıştır.",
+        "en": "According to Evliya Çelebi, the bedesten's four sides were surrounded by a goldsmiths' bazaar, with the bazaars of cloth makers, cap makers, skullcap makers, thread merchants, textile merchants, fullers, quilt makers, bride-dress makers, arakiye cap makers and wool carders around it; these trades continue to a limited extent. The bazaars were initially lead-covered, with iron windows in places, and fountains at each corner reflected the bazaar's social side. The Saraçhane Bazaar, an extension now considered part of the Kapalıçarşı, lost its function after a great fire and never regained its liveliness."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674"
+        }
+      ]
+    },
+    {
+      "id": "yangin-ve-bugun",
+      "order": 5,
+      "title": {
+        "tr": "1958 Yangını, Restorasyon ve Bugün",
+        "en": "The 1958 Fire, Restoration and Today"
+      },
+      "body": {
+        "tr": "Yapı zamanla yıpranmış, 1958 Kapalıçarşı Yangını'nda ağır hasar görerek kullanılmaz hale gelmiştir. 1960'ta özgün mimari özelliklerine sadık kalınarak kapsamlı restorasyon yapılmıştır. Bugün Bursa Kapalıçarşısı'nın bir bölümü olarak varlığını sürdürür ve büyük oranda kuyumcu atölyelerine ev sahipliği yapar; bir kapı üzerindeki \"Bedesten Kuyumcular Çarşısı\" tabelası bunu gösterir. Güney kapısı üzerinde kûfi hatla \"kelime-i tevhit\" yazılıdır; batı kapısının üstünde boyayla yazılmış \"Bedesten\" ibaresi bulunur.",
+        "en": "The building deteriorated over time and was severely damaged in the Kapalıçarşı Fire of 1958, becoming unusable. In 1960 a comprehensive restoration was carried out, faithful to its original features. Today it forms part of the Bursa Kapalıçarşı, largely housing jewelers' workshops, as the \"Bedesten Kuyumcular Çarşısı\" (Jewelers' Bazaar) sign above one door shows. The phrase \"Kalimat al-Tawheed\" is written in intricate Kufic script on the south door; the word \"Bedesten\" is painted above the west door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "675"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "merkez_mekan_boyut",
+      "label": {
+        "tr": "Merkez mekânın iç ölçüleri",
+        "en": "Interior dimensions of the central space"
+      },
+      "value": "15,00 × 56,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674"
+        }
+      ]
+    },
+    {
+      "key": "paye_sayisi",
+      "label": {
+        "tr": "Paye sayısı",
+        "en": "Number of piers"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674"
+        }
+      ]
+    },
+    {
+      "key": "mahzen_sayisi",
+      "label": {
+        "tr": "Mahzen sayısı",
+        "en": "Number of cellars"
+      },
+      "value": 32,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674"
+        }
+      ]
+    },
+    {
+      "key": "kapi_sayisi",
+      "label": {
+        "tr": "Kapı sayısı",
+        "en": "Number of doors"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674-675"
+        }
+      ],
+      "note": {
+        "tr": "Her kapı kubbeli bir giriş mekânına açılır.",
+        "en": "Each door opens to a domed entrance space."
+      }
+    },
+    {
+      "key": "cevre_dukkan_sayisi",
+      "label": {
+        "tr": "Çevredeki dükkân sayısı (bugün)",
+        "en": "Shops around it today"
+      },
+      "value": 68,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674-675"
+        }
+      ],
+      "note": {
+        "tr": "İlk yapı düzenlemesiyle ilgisi yok.",
+        "en": "Unrelated to the original arrangement."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Yıldırım Bayezid",
+      "role": {
+        "tr": "Bedesteni yaptıran",
+        "en": "Commissioner"
+      }
+    },
+    {
+      "name": "Orhan Gazi",
+      "role": {
+        "tr": "Emir Hanı'nı yaptıran; çarşının ilk çekirdeği",
+        "en": "Builder of the Emir Han, the bazaar's first core"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Çarşıları anlatan seyyah",
+        "en": "Traveller who described the bazaars"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "guney-kapi-kelime-i-tevhid",
+      "location": {
+        "tr": "Güney kapısı üzerinde",
+        "en": "Above the south door"
+      },
+      "language": "ar",
+      "script": "kûfi",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap yalnızca 'kelime-i tevhit' yazıldığını söyler; metin ve çevirisi verilmemiştir.",
+        "en": "The book says only that the 'kalimat al-tawheed' is written; no text or translation is given."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "675"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "fetih-1326",
+      "year": 1326,
+      "date": "1326-04-06",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bursa'nın fethi; kent yalnızca Hisar içiyle sınırlıydı",
+        "en": "Conquest of Bursa; the city was limited to the Hisar"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "671"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Kapalıçarşı Yangını'nda ağır hasar",
+        "en": "Severely damaged in the Kapalıçarşı Fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "675"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Özgün özelliklerine sadık kapsamlı restorasyon",
+        "en": "Comprehensive restoration faithful to original features"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "675"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-emir-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Bedesten, Emir Hanı ve Orhan Hamamı ile paralel bir eksende yer alır; Emir Hanı çarşının ilk çekirdeğidir.",
+        "en": "The bedesten lies on an axis parallel to the Emir Han and the Orhan Bath; the Emir Han was the bazaar's first core."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "671, 674"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-hamami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Orhan Hamamı ile paralel bir eksendedir.",
+        "en": "It lies on an axis parallel to the Orhan Bath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Bedesten 'Büyük Cuma Camii'nin yakınına konumlandırılmıştır.",
+        "en": "The bedesten is positioned near the 'Büyük Cuma (Great Friday) Mosque'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-geyve-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Geyve Hanı, Bedesten'in doğu kapısı çıkışında yer alır.",
+        "en": "The Geyve Han stands at the Bedesten's east gate exit."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "640"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-koza-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Koza Hanı bedesten, arasta ve hanlarla çevrilen çarşı bölgesinin parçasıdır.",
+        "en": "The Koza Han is part of the bazaar district surrounded by the bedesten, arasta and hans."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "674"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yıldırım Bayezid Bedesteni, Bursa Kapalıçarşısı'nın içinde, taş ve tuğla ile yapılmış uzun dikdörtgen bir çarşı yapısıdır. Altı ayağa oturan on dört kubbe merkez mekânı örter; kubbeli giriş mekânlarına açılan dört kapısı vardır. İçte sıra sıra mahzenler ve dükkânlar yuvarlak tonozla örtülüdür, ortada fıskiyeli bir şadırvan bulunur. Güney kapısının üzerinde kûfi hatla kelime-i tevhit yazılıdır; bugün çoğunlukla kuyumcu atölyeleri yer alır.",
+      "en": "The Yıldırım Bayezid Bedesten is a long rectangular market building of stone and brick inside the Bursa Kapalıçarşı. Fourteen domes on six piers cover the central space, with four doors opening into domed entrance spaces. Inside, rows of cellars and shops lie under round vaults, with a shadirvan with a water jet in the middle. The Kalimat al-Tawheed is written in Kufic script above the south door; jewelers' workshops fill it today."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

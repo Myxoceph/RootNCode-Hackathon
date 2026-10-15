@@ -1,0 +1,316 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-akbiyik-sultan-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Akbıyık Sultan'ın asıl adı kitapta 'Ahmed Şemseddin veya Abdullah' olarak rivayet ediliyor; teyit edilmeli.",
+      "Türbenin yapım tarihi kitapta verilmiyor.",
+      "Yenişehir'deki vakıf köyün adı kitapta yok.",
+      "Hazirenin ayrıntıları kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitap, Akbıyık Sultan'ın asıl adının 'Ahmed Şemseddin' veya 'Abdullah' olduğunun rivayet edildiğini söylüyor; ad kesin değildir."
+      },
+      {
+        "field": "dating",
+        "note": "Türbenin yapım yılı verilmiyor; tarih Akbıyık Sultan'ın yaşadığı yüzyıl ve ölüm yılından çıkarılmıştır (probable)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Akbıyık Sultan (Şemseddin Ahmed) Türbesi",
+    "en": "Akbıyık Sultan (Şemseddin Ahmed) Tomb"
+  },
+  "subtitle": {
+    "tr": "Hacı Bayrâm-ı Velî müridi Akbıyık Sultan'ın ahşap çatılı türbesi",
+    "en": "Wooden-roofed tomb of Akbıyık Sultan, a disciple of Hacı Bayrâm-ı Velî"
+  },
+  "alternate_names": [
+    {
+      "tr": "Akbıyık Sultan Türbesi",
+      "en": "Akbıyık Sultan Tomb"
+    },
+    {
+      "tr": "Şemseddin Ahmed Türbesi",
+      "en": "Şemseddin Ahmed Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Akbıyık Sultan",
+    "Hacı Bayrâm-ı Velî",
+    "II. Murad",
+    "dergâh",
+    "hazire"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu Mahallesi",
+    "address": "Akbıyık Caddesi No: 12",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "494"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyıl (Akbıyık Sultan H. 860 / M. 1456'da vefat etti)",
+      "en": "15th century (Akbıyık Sultan died AH 860 / AD 1456)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap türbenin yapım yılını vermiyor; XV. yüzyılda yaşayan Ahmed Şemseddin adına yaptırıldığını ve onun 1456'da öldüğünü belirtiyor.",
+      "en": "The book gives no construction date; it says the tomb was built in the name of Ahmed Şemseddin, who lived in the 15th century and died in 1456."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "494"
+      }
+    ]
+  },
+  "founder": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "II. Murad'ın Yenişehir'de kendisine temlik ettiği köyü Akbıyık Sultan daha sonra vakfetmiştir.",
+      "en": "Murad II granted him a village in Yenişehir, which Akbıyık Sultan later endowed."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "494"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hacı Bayrâm-ı Velî'nin müritlerinden Akbıyık Sultan'ın, ahşap çatılı türbesi ve haziresi. Dergâh ortadan kalkmış, türbe ve hazire günümüze ulaşmıştır; türbe en son 2006'da restore edilmiştir.",
+    "en": "The wooden-roofed tomb and graveyard of Akbıyık Sultan, a disciple of Hacı Bayrâm-ı Velî. His lodge has vanished but the tomb and graveyard survive; the tomb was last restored in 2006."
+  },
+  "sections": [
+    {
+      "id": "kisi",
+      "order": 1,
+      "title": {
+        "tr": "Akbıyık Sultan",
+        "en": "Akbıyık Sultan"
+      },
+      "body": {
+        "tr": "II. Murad döneminde yaşamış, Hacı Bayrâm-ı Velî'nin müritleri arasında yer alan önemli bir sufidir. Ondan icazet aldıktan sonra bulunduğu yerde bir dergâh ve yanında mescit yaptırmış, çevresindeki halkı irşat etmiş, II. Murad'ın Haçlılar'a karşı seferlerinde orduya katılmıştır. Balkan fetihlerine katkısı nedeniyle II. Murad ona Yenişehir'de bir köy temlik etmiş, o da köyü vakfetmiştir. H. 860 / M. 1456'da vefat etmiş ve türbesine defnedilmiştir.",
+        "en": "He lived in the reign of Murad II and was an important sufi among the disciples of Hacı Bayrâm-ı Velî. After receiving permission from him he built a lodge and a masjid beside it, guided the people around him, and joined the army in Murad II's campaigns against the Crusaders. For his contribution to the Balkan conquests Murad II granted him a village in Yenişehir, which he later endowed. He died in AH 860 / AD 1456 and was buried in his tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "494"
+        }
+      ]
+    },
+    {
+      "id": "istanbul-fethi",
+      "order": 2,
+      "title": {
+        "tr": "İstanbul'un fethi ile ilgili aktarım",
+        "en": "Account of the conquest of Istanbul"
+      },
+      "body": {
+        "tr": "Bazı kaynaklarda Akşemseddin ile birlikte İstanbul'un fethine katıldığı ve fetihten sonra Fâtih Sultan Mehmed'in Cankurtaran semtinde yaptırdığı bir camiye adını verdiği belirtilmektedir.",
+        "en": "Some sources state that he took part in the conquest of Istanbul with Akşemseddin and that, after the conquest, Fâtih Sultan Mehmed named a mosque he built in the Cankurtaran district after him."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "494"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Türbe ve hazire",
+        "en": "Tomb and graveyard"
+      },
+      "body": {
+        "tr": "Dergâh zamanla ortadan kalkmış, türbe ve hazire bölümü günümüze ulaşmıştır. Ahşap çatılı türbenin ortasında Akbıyık Sultan'a ait ahşap bir sanduka, ayakucunda kime ait olduğu bilinmeyen küçük bir beton sanduka bulunur. Yapının Akbıyık Sultan tarafından hayattayken konut olarak kullanıldığı ve ölümünden sonra buraya defnedildiği aktarılmaktadır.",
+        "en": "The lodge disappeared over time but the tomb and graveyard survive. In the middle of the wooden-roofed tomb is a wooden sarcophagus of Akbıyık Sultan; at its foot is a small concrete sarcophagus of unknown ownership. The building is reported to have been his residence while alive, and he was buried here after his death."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "494"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Zaman içindeki çeşitli onarımlarla özgün mimarisinden uzaklaşan türbe en son 2006'da Vakıflar Bölge Müdürlüğü tarafından restore edilmiştir.",
+        "en": "Having drifted from its original architecture through repairs over time, the tomb was last restored by the Regional Directorate of Foundations in 2006."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "494"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "vefat_yili",
+      "label": {
+        "tr": "Vefat yılı",
+        "en": "Year of death"
+      },
+      "value": "H. 860 / M. 1456",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "494"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "494"
+        }
+      ],
+      "note": {
+        "tr": "Biri Akbıyık Sultan'a ait ahşap, diğeri kime ait olduğu bilinmeyen küçük beton sanduka.",
+        "en": "One wooden sarcophagus of Akbıyık Sultan and one small concrete one of unknown ownership."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Akbıyık Sultan (Ahmed Şemseddin)",
+      "role": {
+        "tr": "Türbede medfun sufi",
+        "en": "Sufi buried in the tomb"
+      }
+    },
+    {
+      "name": "Hacı Bayrâm-ı Velî",
+      "role": {
+        "tr": "Akbıyık Sultan'ın icazet aldığı şeyh",
+        "en": "Sheikh from whom Akbıyık Sultan received permission"
+      }
+    },
+    {
+      "name": "Sultan II. Murad",
+      "role": {
+        "tr": "Akbıyık Sultan'a Yenişehir'de köy temlik etti",
+        "en": "Granted a village in Yenişehir to Akbıyık Sultan"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat",
+      "year": 1456,
+      "date": null,
+      "hijri": "860",
+      "type": "record",
+      "title": {
+        "tr": "Akbıyık Sultan vefat etti ve türbesine defnedildi",
+        "en": "Akbıyık Sultan died and was buried in his tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "494"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından restore edildi",
+        "en": "Restored by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "494"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Akbıyık Sultan Türbesi ahşap çatılı küçük bir yapıdır. İçinde, ortada Akbıyık Sultan'a ait ahşap bir sanduka, ayakucunda ise betondan yapılmış küçük bir sanduka bulunur. Türbenin çevresinde, dergâhtan günümüze kalan hazire bölümü yer alır.",
+      "en": "Akbıyık Sultan Tomb is a small wooden-roofed building. Inside, a wooden sarcophagus stands in the middle and a small concrete one at its foot. Around it lies the graveyard, the surviving part of the former lodge."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

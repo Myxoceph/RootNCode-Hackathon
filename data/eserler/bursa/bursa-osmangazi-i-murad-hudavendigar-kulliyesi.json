@@ -1,0 +1,570 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "I. Murat Hüdavendigar Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki I. Murad Hudâvendigâr Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kapan Hanı'nın ilçesi bu bölümde belirtilmiyor (ilişki hedefi bursa-osmangazi-kapan-hani Osmangazi varsayımıyla yazıldı); teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Çeşme, çamaşırhane ve tabhaneler kitapta külliyenin parçası olarak sayılıyor ancak ayrı bölümleri yok; ayrı kayıt açılmadı.",
+      "Vakfiyede geçen vakıf yerlerinin adları kitapta verilmiyor; waqf_land ilişkileri eklenemedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Külliye için s. 79'da H. 767 / M. 1365-66 öngörülüyor; imaret bölümü (s. 97) külliyenin H. 768-787 / M. 1367-1385 arasında yapıldığını söylüyor. İki aralık tam örtüşmüyor; kaynağın değerleri korundu."
+      },
+      {
+        "field": "location.neighborhood",
+        "note": "Cami ve türbe için 'Çekirge Mahallesi', imaret için 'Hudâvendigâr Mahallesi' (Çekirge Caddesi) veriliyor. Kitap farkı açıklamıyor; her kayıtta kitabın o yapı için verdiği ad kullanıldı."
+      },
+      {
+        "field": "sections[bani]",
+        "note": "Kitap I. Murad'ın 1326'da doğduğunu ve 1389'da 65 yaşında şehit edildiğini söylüyor; bu iki değer arasında aritmetik fark var (yaklaşık 63 yaş). Kaynağın değerleri korundu."
+      },
+      {
+        "field": "sections[kulliyenin-parcalari]",
+        "note": "S. 80'de külliye 'tabhaneler, medrese, imarethane, hamam, mektep, çeşme, türbe, çamaşırhane ve Kapan Hanı' olarak, s. 97'de 'cami, tabhaneler, medrese, hamam, imaret, han ve türbe' olarak sayılıyor; ikinci liste daha kısa."
+      }
+    ]
+  },
+  "name": {
+    "tr": "I. Murad Hudâvendigâr Külliyesi",
+    "en": "Murad I Hudâvendigâr Complex"
+  },
+  "subtitle": {
+    "tr": "Çekirge'deki 'Kaplıca İmareti'; üst katı medrese olan cami",
+    "en": "The 'Thermal Spring Imaret' in Çekirge; a mosque with a madrasa on its upper floor"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kaplıca İmareti",
+      "en": "Kaplıca Imaret (Thermal Spring Imaret)",
+      "note": "Çekirge kaplıcalarına yakınlığı nedeniyle"
+    },
+    {
+      "tr": "Hudâvendigâr Külliyesi",
+      "en": "Hudâvendigâr Complex"
+    }
+  ],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "I. Murad",
+    "Çekirge",
+    "Kaplıca İmareti",
+    "selatin külliyesi",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Çekirge",
+    "address": "I. Murad Caddesi, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "79"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 767 / M. 1365-66 (öngörülen)",
+      "en": "AH 767 / AD 1365-66 (presumed)"
+    },
+    "start_year": 1365,
+    "end_year": 1366,
+    "hijri_year": 767,
+    "century": 14,
+    "basis": {
+      "tr": "Günümüze ulaşan inşa kitabesi yoktur; yapının bu tarihte yapıldığı öngörülmektedir ve tarihin sultanın çocukları için düzenlenen sünnet düğününe denk geldiği ifade edilmektedir.",
+      "en": "No construction inscription has survived; the building is presumed to date to this year, which is said to coincide with the circumcision ceremony held for the sultan's children."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "79"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan I. Murad Hudâvendigâr",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "80"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. Cemaziyelahir 787 / M. Temmuz 1385",
+      "excerpt": {
+        "tr": "Sultan Murad Han bin Sultan Orhan adına düzenlenmiş Arapça vakfiye. İlk vakfiyeden 15 yıl sonra, H. 802 / M. 1400'de Yıldırım Bayezid döneminde bir suretinin çıkarıldığı bilinmektedir. Kâtipliğini Bursa Kadısı Molla Fenârî olarak tanınan Mehmed bin Hamza bin Mehmed yaptırmıştır. Kitaptaki özet; vakfiye metni değildir.",
+        "en": "Arabic endowment charter prepared in the name of Sultan Murad Han bin Sultan Orhan. A copy is known to have been issued 15 years after the first charter, in AH 802 / AD 1400 under Yıldırım Bayezid. The clerk was Mehmed bin Hamza bin Mehmed, known as the Judge of Bursa Molla Fenârî. (Summary given in the book; not the deed text.)"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakfiyeye göre sultan, külliyeye Uludağ yamaçlarından başlayıp Mudanya'ya doğru uzanan bölgede birçok yer vakfetmiştir.",
+      "en": "According to the charter, the sultan endowed many places in the region from the slopes of Uludağ towards Mudanya to the complex."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "81"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan I. Murad'ın Çekirge'de ovaya hâkim bir tepeye yaptırdığı, cami merkezli külliye. Medresenin caminin üst katında planlanması Osmanlı mimarisinde ilk ve tek örnek olarak anılır. 2014'te UNESCO Dünya Mirası Alanı'nın parçası ilan edilmiştir.",
+    "en": "A mosque-centred complex built by Sultan Murad I on a hill overlooking the plain in Çekirge. Placing the madrasa on the upper floor of the mosque is described as the first and only example in Ottoman architecture. It was declared part of a UNESCO World Heritage Site in 2014."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "I. Murad Hudâvendigâr Camii ve Medresesi, Osmangazi ilçesi, Çekirge Mahallesi, I. Murad Caddesi üzerinde, No: 1'de yer alır. Tarihî şehrin batısında Çekirge semtinde, diğer selatin yapıları gibi ovaya hâkim bir tepeye inşa edilmiştir. Günümüze ulaşan bir inşa kitabesi yoktur; H. 767 / M. 1365-66'da yapıldığı öngörülmektedir.",
+        "en": "Murad I Hudâvendigâr Mosque and Madrasa are located in Osmangazi District, Çekirge Neighborhood, on I. Murad Street, No. 1. Like other imperial structures, it was built on a hill overlooking the plain in Çekirge, west of the historical city. No construction inscription has survived; it is presumed to have been built in AH 767 / AD 1365-66."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "79"
+        }
+      ]
+    },
+    {
+      "id": "cekirge-ve-kaplica-imareti",
+      "order": 2,
+      "title": {
+        "tr": "Çekirge ve 'Kaplıca İmareti'",
+        "en": "Çekirge and the 'Thermal Spring Imaret'"
+      },
+      "body": {
+        "tr": "Çekirge, Bitinya, Roma ve Bizans dönemlerinde kaplıcalarıyla ünlü bir köydü; bu nedenle külliyeye 'Kaplıca İmareti' de denilmiştir. Şehirden uzak 'Çekirge Köyü' olarak anılan semt, 1950'li yıllardan sonra gelişerek kent merkeziyle bütünleşmiş ve mahalle olmuştur. Külliyenin inşasıyla bölge oldukça hareketli bir yer haline gelmiştir.",
+        "en": "Çekirge was a village famous for its thermal springs in the Bithynian, Roman and Byzantine periods, so the complex was also called the 'Kaplıca (thermal spring) Imaret'. The district, once the 'Çekirge Village' away from the city, developed after the 1950s, merged with the city centre and became a neighborhood. The complex made the area a very lively place."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "79"
+        }
+      ]
+    },
+    {
+      "id": "kulliyenin-parcalari",
+      "order": 3,
+      "title": {
+        "tr": "Külliyenin Parçaları",
+        "en": "Parts of the Complex"
+      },
+      "body": {
+        "tr": "Cami merkezli külliye; tabhaneler, medrese, imarethane, hamam, mektep, çeşme, türbe, çamaşırhane ile çarşı ve hanlar bölgesindeki Kapan Hanı'ndan oluşur. Sıbyan mektebi günümüze ulaşamamıştır. Medresenin caminin üst katında yer alacak şekilde planlanması Osmanlı mimarisinde görülen ilk ve tek örnektir.",
+        "en": "The complex centred around the mosque consists of hospices, a madrasa, an almshouse, a bath, a primary school, a fountain, a tomb, a laundry, and the Kapan Han in the bazaar and hans area. The primary school has not survived. Planning the madrasa on the upper floor of the mosque is the first and only example in Ottoman architecture."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80"
+        }
+      ]
+    },
+    {
+      "id": "bani",
+      "order": 4,
+      "title": {
+        "tr": "Banî: I. Murad",
+        "en": "The Founder: Murad I"
+      },
+      "body": {
+        "tr": "Külliyenin banisi I. Murad, Gazi Orhan Bey ile Nilüfer Hatun'un oğludur; 1326'da Bursa'da doğmuş, Osmanlı tarihinde 'Gazi Hünkâr' ve 'Hudâvendigâr' olarak anılmıştır. Babası tarafından önce Sultanönü'nün sonra Bursa ve civarının valiliği verilmiş, bu yüzden Bursa önce 'Bey Sancağı', sonra 'Hudâvendigâr Sancağı' diye anılmıştır. 1359'da tahta çıkmış, Rumeli ve Balkanlar'da fetihler yapmış, 30 yıllık saltanatında 37 büyük savaşa katılmıştır. H. 15 Şaban 791 / M. 9 Ağustos 1389 Kosova Meydan Muharebesi'nin ardından Miloş Obiliç adlı bir Sırp tarafından şehit edilmiştir. İç organları şehit düştüğü yere gömülmüş ve orada 'Hudâvendigâr Meşhedi' adlı türbe yapılmış; naaşı oğlu Yıldırım Bayezid tarafından Bursa'ya getirilerek Çekirge'deki külliyeye defnedilmiştir.",
+        "en": "Murad I, the founder, was the son of Gazi Orhan Bey and Nilüfer Hatun, born in Bursa in 1326, and known in Ottoman history as 'Gazi Hünkâr' and 'Hudâvendigâr'. His father gave him the governorship of Sultanönü and then Bursa and its surroundings, so Bursa was first called the 'Bey Sanjak' and later the 'Hudâvendigâr Sanjak'. He ascended the throne in 1359, made conquests in Rumelia and the Balkans, and joined 37 major wars during his 30-year reign. He was martyred by a Serb named Miloš Obilić after the Battle of Kosovo on 15 Sha'ban AH 791 / 9 August 1389. His internal organs were buried where he fell and a tomb called 'Hudâvendigâr Meşhedi' was built there; his body was brought to Bursa by Yıldırım Bayezid and buried in the complex in Çekirge."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80-81"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "order": 5,
+      "title": {
+        "tr": "Vakfiye",
+        "en": "Endowment Charter"
+      },
+      "body": {
+        "tr": "Külliyenin Sultan Murad Han bin Sultan Orhan adına düzenlenmiş Arapça vakfiyesi vardır. H. Cemaziyelahir 787 / M. Temmuz 1385 tarihli ilk vakfiyeden 15 yıl sonra, H. 802 / M. 1400'de Yıldırım Bayezid döneminde bir suretinin çıkarıldığı bilinmektedir. Vakfiyeye göre sultan, Uludağ yamaçlarından Mudanya'ya doğru uzanan bölgede birçok yeri külliyeye vakfetmiştir.",
+        "en": "The complex has an Arabic endowment charter in the name of Sultan Murad Han bin Sultan Orhan. A copy is known to have been issued in AH 802 / AD 1400 under Yıldırım Bayezid, 15 years after the first charter of AH Jumada al-Thani 787 / AD July 1385. According to it, the sultan endowed many places from the slopes of Uludağ towards Mudanya to the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "id": "unesco",
+      "order": 6,
+      "title": {
+        "tr": "UNESCO Dünya Mirası",
+        "en": "UNESCO World Heritage"
+      },
+      "body": {
+        "tr": "I. Murad Hudâvendigâr Külliyesi 2014'te Bursa Tarihi Hanlar Bölgesi, Sultan Külliyeleri ve Cumalıkızık Köyü ile birlikte UNESCO Dünya Miras Alanı ilan edilmiştir.",
+        "en": "The Murad I Hudâvendigâr Complex was declared a UNESCO World Heritage Site in 2014, alongside the Bursa Historical Hans District, the Sultan Complexes and Cumalıkızık Village."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "saltanat_suresi",
+      "label": {
+        "tr": "Saltanat süresi",
+        "en": "Length of reign"
+      },
+      "value": 30,
+      "unit": "yıl",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "key": "katildigi_savas",
+      "label": {
+        "tr": "Katıldığı büyük savaş sayısı",
+        "en": "Major wars participated in"
+      },
+      "value": 37,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "key": "vakfiye_tarihi",
+      "label": {
+        "tr": "İlk vakfiye tarihi",
+        "en": "First endowment charter date"
+      },
+      "value": "H. Cemaziyelahir 787 / M. Temmuz 1385",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "key": "vakfiye_sureti_tarihi",
+      "label": {
+        "tr": "Vakfiye suretinin tarihi",
+        "en": "Date of the charter copy"
+      },
+      "value": "H. 802 / M. 1400",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan I. Murad Hudâvendigâr",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Yıldırım Bayezid",
+      "role": {
+        "tr": "Naaşı Bursa'ya getirtti; vakfiye suretini çıkarttı",
+        "en": "Brought the body to Bursa; had the charter copied"
+      }
+    },
+    {
+      "name": "Molla Fenârî (Mehmed bin Hamza bin Mehmed)",
+      "role": {
+        "tr": "Vakfiyenin kâtibi, Bursa Kadısı",
+        "en": "Clerk of the charter, Judge of Bursa"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1365",
+      "year": 1365,
+      "date": null,
+      "hijri": "767",
+      "type": "construction",
+      "title": {
+        "tr": "Külliyenin yapıldığı öngörülüyor",
+        "en": "Complex presumed to have been built"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "79"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1385",
+      "year": 1385,
+      "date": null,
+      "hijri": "Cemaziyelahir 787",
+      "type": "record",
+      "title": {
+        "tr": "İlk vakfiye düzenlendi",
+        "en": "First endowment charter drawn up"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "id": "kosova-1389",
+      "year": 1389,
+      "date": null,
+      "hijri": "15 Şaban 791",
+      "type": "record",
+      "title": {
+        "tr": "I. Murad Kosova'da şehit edildi; naaşı sonradan Çekirge'deki külliyeye defnedildi",
+        "en": "Murad I martyred in Kosovo; body later buried in the Çekirge complex"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-sureti-1400",
+      "year": 1400,
+      "date": null,
+      "hijri": "802",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiyenin suretinin çıkarılması (Yıldırım Bayezid dönemi)",
+        "en": "Copy of the charter issued (reign of Yıldırım Bayezid)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "id": "unesco-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "UNESCO Dünya Miras Alanı ilan edildi",
+        "en": "Declared a UNESCO World Heritage Site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "medrese-ust-kat",
+      "title": {
+        "tr": "Caminin üstündeki medrese",
+        "en": "Madrasa above the mosque"
+      },
+      "hint": {
+        "tr": "Alt katta cami, üst katta medrese olan tek Osmanlı örneği.",
+        "en": "The only Ottoman example with the mosque below and the madrasa above."
+      },
+      "section_id": "kulliyenin-parcalari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin merkezi olan camidir.",
+        "en": "The mosque is the centre of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-medresesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Medrese caminin üst katındadır.",
+        "en": "The madrasa is on the upper floor of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-imareti",
+      "type": "same_complex",
+      "description": {
+        "tr": "İmaret (aşevi) külliyenin parçasıdır.",
+        "en": "The soup kitchen is part of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-cikcik-hamami",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamam külliyeyle birlikte yaptırılmıştır.",
+        "en": "The bath was built together with the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe külliyenin en belirgin parçalarından biridir.",
+        "en": "The tomb is one of the most prominent parts of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-kapan-hani",
+      "type": "same_complex",
+      "description": {
+        "tr": "Çarşı ve hanlar bölgesindeki Kapan Hanı külliyenin parçası olarak sayılmıştır.",
+        "en": "The Kapan Han in the bazaar and hans area is counted as part of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliye, Çekirge'de ovaya hâkim bir tepede yer alır. Merkezinde alt katı cami, üst katı medrese olan iki katlı bir yapı bulunur; çevresinde imaret, hamam ve ayrı bir türbe vardır. İmaret caminin batısında, hamam doğusundadır; türbe caminin kuzeybatı köşesinde yolun karşısındadır.",
+      "en": "The complex stands on a hill overlooking the plain in Çekirge. At its centre is a two-storey building with a mosque below and a madrasa above; around it are the soup kitchen, a bath and a separate tomb. The soup kitchen is west of the mosque, the bath to its east, and the tomb across the road at its northwest corner."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

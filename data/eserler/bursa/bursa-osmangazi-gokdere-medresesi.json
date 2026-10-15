@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-gokdere-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Eğitim Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
+      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
+      "Yapının yapım tarihi, mahallesi ve mimarı kaynakta yok; era alanı bu yüzden null bırakıldı.",
+      "Vakfedilen taşınmazların neler olduğu kaynakta belirtilmiyor.",
+      "Kayhan Medresesi (yıkılmış) ile karışma bilgisi kaynakta var; o yapı için ilişki kaydı eklenmedi (id/ilçe yok)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Yapı kaynaklarda 'Paşa Çelebi Medresesi', 'Gökdere Medresesi' ve yıkılmış Kayhan Medresesi ile karışması nedeniyle 'Kayhan' adlarıyla da anılır; kimliklendirme kitapta 'düşünülmektedir' diliyle verildiği için 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Gökdere Medresesi",
+    "en": "Gökdere Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Paşa Çelebi Medresesi",
+      "en": "Paşa Çelebi Madrasa"
+    },
+    {
+      "tr": "Kayhan Medresesi",
+      "en": "Kayhan Madrasa"
+    },
+    {
+      "tr": "Gökdere Kültür ve Sanat Merkezi",
+      "en": "Gökdere Culture and Art Center"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "medrese",
+    "açık avlulu",
+    "otuzlu medreseler",
+    "Kayhan Caddesi",
+    "kültür merkezi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": "Kayhan Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "563"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Bayezid dönemi (tahmini)",
+      "en": "Reign of Bayezid II (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kaynak yapının II. Bayezid dönemi müderrislerinden Zeyrekzâde Paşa Çelebi tarafından yaptırıldığının 'düşünüldüğünü' söyler.",
+      "en": "The source says the building 'is thought' to have been built by Zeyrekzâde Paşa Çelebi, a teacher of Bayezid II's period."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "563"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Zeyrekzâde Paşa Çelebi",
+    "role": "banî (tahmini)",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "563"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bağımsız bir medrese olarak yapılmış, 'otuzlu medreseler' arasında anılan açık avlulu yapı; 2006'dan beri Gökdere Kültür ve Sanat Merkezi.",
+    "en": "An open-courtyard madrasa built as an independent institution and listed among the 'thirty madrasas'; since 2006 the Gökdere Culture and Art Center."
+  },
+  "sections": [
+    {
+      "id": "adlar-ve-bani",
+      "order": 1,
+      "title": {
+        "tr": "Adı ve Banisi",
+        "en": "Names and Founder"
+      },
+      "body": {
+        "tr": "Medrese Osmangazi ilçesinde Kayhan Caddesi üzerindedir. II. Bayezid dönemi müderrislerinden 'Zeyrekzâde Paşa Çelebi' adıyla bilinen bir hayırsever tarafından yaptırıldığı düşünüldüğü için kaynaklarda 'Paşa Çelebi Medresesi' olarak anılır. Bir dönem Gökderelizâde Mehmed Efendi burada müderrislik yaptığı için 'Gökdere Medresesi' adını da almıştır. Kayhan Caddesi üzerinde olması nedeniyle, zamanla yıkılan Kayhan Medresesi ile karıştırılarak bu adla da anılmıştır.",
+        "en": "The madrasa is on Kayhan Street, Osmangazi. It is thought to have been built by a philanthropist known as 'Zeyrekzâde Paşa Çelebi', a teacher in Bayezid II's period, hence 'Paşa Çelebi Madrasa' in the sources. It is also called 'Gökdere Madrasa' because Gökderelizâde Mehmed Efendi taught there for a time, and, being on Kayhan Street, was confused with the demolished Kayhan Madrasa."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "563"
+        }
+      ]
+    },
+    {
+      "id": "konum-ve-vakif",
+      "order": 2,
+      "title": {
+        "tr": "Konumu ve Vakfı",
+        "en": "Standing and Endowment"
+      },
+      "body": {
+        "tr": "Yapı bağımsız bir medrese olarak inşa edilmiştir. Tarihî belgelerde 'otuzlu medreseler' arasında yer aldığı belirtilir. Giderlerinin karşılanması için çok sayıda taşınmaz mal vakfedilmiştir.",
+        "en": "It was built as an independent madrasa and is recorded in historical documents among the 'thirty madrasas'. A large number of immovable properties were endowed to meet its expenses."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "563"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Açık avlulu medreseler grubundandır; plan on iki öğrenci odası ile dershane işlevi gören büyük bir ana eyvandan oluşur. Son restorasyonda Bursa sivil mimarisinde sık görülen taş-tuğla almaşık duvar örgüsü korunarak onarılmış, avlu cam tavanla örtülerek günümüz kullanımına uygun hale getirilmiştir.",
+        "en": "It belongs to the open-courtyard madrasas; its plan consists of twelve student rooms and a large main iwan serving as classroom. In the last restoration the stone-brick alternating masonry typical of Bursa civil architecture was preserved and repaired, and the courtyard was covered with a glass ceiling for present use."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "563"
+        }
+      ]
+    },
+    {
+      "id": "sonraki-donem",
+      "order": 4,
+      "title": {
+        "tr": "Sonraki Kullanım",
+        "en": "Later Use"
+      },
+      "body": {
+        "tr": "Birçok kez onarılan yapı 1906'da kadınlar hapishanesi olarak kullanılmış, ardından uzun süre metruk kalmıştır. 2006'da Osmangazi Belediyesi tarafından özgün mimari özelliklerine uygun biçimde restore edilerek 'Gökdere Kültür ve Sanat Merkezi' olarak yeniden işlevlendirilmiştir.",
+        "en": "Repaired many times, the building was used as a women's prison in 1906 and then stayed abandoned for a long time. In 2006 it was restored by Osmangazi Municipality in keeping with its original features and reopened as the 'Gökdere Culture and Art Center'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "564"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "ogrenci_odasi_sayisi",
+      "label": {
+        "tr": "Öğrenci odası sayısı",
+        "en": "Number of student rooms"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "563"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Ana eyvan (dershane) sayısı",
+        "en": "Main iwan (classroom)"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "563"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Zeyrekzâde Paşa Çelebi",
+      "role": {
+        "tr": "Tahmini banî; II. Bayezid dönemi müderrisi",
+        "en": "Presumed founder; teacher in Bayezid II's period"
+      }
+    },
+    {
+      "name": "Gökderelizâde Mehmed Efendi",
+      "role": {
+        "tr": "Bir dönem medresede müderris",
+        "en": "Teacher at the madrasa for a period"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "hapishane-1906",
+      "year": 1906,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kadınlar hapishanesi olarak kullanıldı",
+        "en": "Used as a women's prison"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "564"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Osmangazi Belediyesi restorasyonu; Gökdere Kültür ve Sanat Merkezi",
+        "en": "Restoration by Osmangazi Municipality; Gökdere Culture and Art Center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "564"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Gökdere Medresesi, ortası avlulu bir medresedir. Avlunun çevresinde on iki öğrenci odası ve dershane olarak kullanılan büyük bir eyvan sıralanır. Duvarlar taş ve tuğla sıralarıyla almaşık örülmüştür. Avlunun üstü bugün cam bir tavanla kapatılmıştır.",
+      "en": "The Gökdere Madrasa is a madrasa with a central courtyard. Twelve student rooms and a large iwan used as a classroom are arranged around it. The walls are built of alternating rows of stone and brick. The courtyard is now covered by a glass ceiling."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

@@ -1,0 +1,457 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-lalasahinpasa-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Eğitim Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
+      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
+      "Medresenin mimarı kaynakta yok.",
+      "Lala Şâhin Paşa'nın Bursa'da yaptırdığı 'bağlı mescit' için ad/id kaynakta yok; ilişki eklenemedi.",
+      "Mustafakemalpaşa'daki cami, medrese, zaviye ve köprü ile Demir Han'ın vakıf bağı ilçe/ad bilgisi olmadan eklenmedi; Demir Han için tahmini id kullanıldı (ilçe metinde belirtilmiyor, Osmangazi varsayıldı).",
+      "Ortadaki havuzun ve mihrap nişinin fotoğraflanması önerilir."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap tarihi 'H. 740–750 / M. 1340–1350' verir; H. 740–750 yaklaşık M. 1339/40–1349/50'ye denk gelir, yani kaynak değerler kabaca uyumludur. Tarih aralığı kesin değil, vakıf kayıtlarından çıkarıldığı için 'probable' işaretlendi."
+      },
+      {
+        "field": "sections[bani]",
+        "note": "Kitap medresenin Orhan Gazi'nin İznik kuşatması sırasındaki ganimetlerle yaptırıldığını söyler ve yapım tarihini H. 740–750 / M. 1340–1350 verir; iki bilgi arasındaki zaman ilişkisi kitapta açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Lalaşahinpaşa Medresesi",
+    "en": "Lalaşahinpaşa Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Arabiyye",
+      "en": "Arabiyye"
+    },
+    {
+      "tr": "Mercâniyye",
+      "en": "Mercâniyye"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "medrese",
+    "kubbeli medrese",
+    "Selçuklu planı",
+    "devşirme malzeme",
+    "Çocuk Kütüphanesi",
+    "Lala Şâhin Paşa"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": "Hisariçi Ortapazar Caddesi, No: 5",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "576"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 740–750 / M. 1340–1350",
+      "en": "AH 740–750 / AD 1340–1350"
+    },
+    "start_year": 1340,
+    "end_year": 1350,
+    "hijri_year": 740,
+    "century": 14,
+    "basis": {
+      "tr": "Kitabesi günümüze ulaşmayan yapının tarihi vakıf kayıtlarına dayanarak çıkarılmıştır.",
+      "en": "The inscription has not survived; the date is derived from foundation records."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "576"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Lala Şâhin Paşa",
+    "role": "banî (Rumeli Beylerbeyi)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "576-577"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Lala Şâhin Paşa Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "576-577"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Bursa'da günümüze ulaşan en eski tarihli medrese; Lala Şâhin Paşa'nın İznik kuşatması ganimetleriyle yaptırdığı, Selçuklu medreselerini andıran asimetrik planlı kubbeli yapı. 2010'dan beri Çocuk Kütüphanesi.",
+    "en": "The oldest surviving dated madrasa in Bursa, built by Lala Şâhin Paşa from the spoils of the siege of İznik, with an asymmetrical domed plan recalling Seljuk madrasas; a Children's Library since 2010."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Medrese Osmangazi ilçesi, Hisariçi Ortapazar Caddesi No: 5'tedir ve Bursa'da günümüze ulaşan en eski tarihli medrese binasıdır. Rumeli Beylerbeyliği yapan Lala Şâhin Paşa tarafından yaptırılmıştır. Kitabesi günümüze ulaşmayan yapının vakıf kayıtlarına dayanarak H. 740–750 / M. 1340–1350 arasında inşa edildiği anlaşılmaktadır. Geçmişte 'Arabiyye' ve 'Mercâniyye' adlarıyla da anılmıştır.",
+        "en": "The madrasa is at Hisariçi Ortapazar Street No. 5, Osmangazi, and is the oldest surviving madrasa building in Bursa. It was built by Lala Şahin Paşa, the Rumelia Governor. Its inscription is lost; foundation records indicate it was built between AH 740–750 / AD 1340–1350. In the past it was also called 'Arabiyye' and 'Mercâniyye'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "576"
+        }
+      ]
+    },
+    {
+      "id": "bani-ve-vakif",
+      "order": 2,
+      "title": {
+        "tr": "Banisi ve Vakfı",
+        "en": "Founder and Foundation"
+      },
+      "body": {
+        "tr": "Orhan Gazi'nin İznik kuşatması sırasında Bizans kuvvetleriyle yapılan savaşta üstünlük sağlayan Lala Şâhin Paşa, elde ettiği ganimetlerle Bursa'da bu medreseyi ve ona bağlı bir mescidi, ayrıca Mustafakemalpaşa'da bir cami, medrese, zaviye ve köprü yaptırmıştır. Fidan Hanı'nın doğusunda yer alan ve 1900'de Bıçakçılar Çarşısı'nda çıkan yangında harap olan Demir Han da onun vakfına ait eserlerdendir.",
+        "en": "Lala Şahin Paşa, who prevailed against Byzantine forces during Orhan Gazi's siege of İznik, built this madrasa and a small attached mosque in Bursa with the spoils, plus a mosque, madrasa, zawiya and bridge in Mustafakemalpaşa. The Demir Han east of the Fidan Han, destroyed in the 1900 fire in the Bıçakçılar Bazaar, was also among his foundation's works."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Bahçe içindeki medrese, planı bakımından Selçuklu medreselerini andırır; kubbeli medrese tipolojisine dahildir ancak asimetrik düzenlenmiştir. Yapıda boyutları farklı yedi oda, bir dershane ve ortada bir iç avlu vardır; odalar tonozla örtülüdür. Dershanenin eyvanını örten tonoz bir sıra kesme taş ve üç sıra tuğlayla örülmüştür. Üst örtü alaturka kiremit kaplıdır ve sicil kayıtlarına göre yapıyla yaşıttır. Yer yer devşirme Bizans malzemesi görülür. Ortadaki kare planlı havuz dikkat çekicidir. Geniş dikdörtgen iç mekân, Bizans dönemi sütun başlıkları üzerine oturan iki mermer sütunun taşıdığı bir kemerle ikiye ayrılır; kuzeydeki giriş sahanlığı kubbeyle örtülüdür. İç avlu işlevindeki alanın güney duvarındaki mihrap nişi, eyvan kısmının mescit olarak da kullanıldığını gösterir. Duvar örgüsü bir sıra taş ve üç sıra tuğladır.",
+        "en": "The madrasa, in a garden, resembles Seljuk madrasas in plan; it is of the domed madrasa type but asymmetrical. It has seven rooms of different sizes, a classroom and a central inner courtyard; rooms are vaulted. The vault over the classroom iwan uses one row of cut stone and three of brick. The roof has Turkish-style tiles, said by registry records to be as old as the building. Byzantine spolia appear here and there. The square pool in the middle is striking. The large rectangular interior is divided by an arch on two marble columns with Byzantine capitals; the northern entrance landing has a dome. A mihrab niche in the south wall of the courtyard area shows the iwan also served as a prayer room. The walls are one row of stone and three of brick."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "576-577"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-bugun",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Bugünkü Kullanım",
+        "en": "Repairs and Present Use"
+      },
+      "body": {
+        "tr": "Medrese 1555, 1787, 1818 ve 1844'te kapsamlı onarımlar geçirmiş; uzun süre harap kaldıktan sonra 1968'de Bursa Eski Eserleri Sevenler Kurumu tarafından özgün karakterine uygun restore edilmiştir. 2010'daki son onarımın ardından Bursa Büyükşehir Belediyesi tarafından Çocuk Kütüphanesi olarak yeniden işlevlendirilmiş ve bugün de bu amaçla kullanılmaktadır.",
+        "en": "The madrasa underwent extensive repairs in 1555, 1787, 1818 and 1844; after a long time in ruins it was restored in 1968 by the Bursa Association for the Appreciation of Antiquities. After the last renovation in 2010 it was repurposed as a Children's Library by Bursa Metropolitan Municipality and still serves so."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "oda_sayisi",
+      "label": {
+        "tr": "Oda sayısı",
+        "en": "Number of rooms"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "key": "dershane_sayisi",
+      "label": {
+        "tr": "Dershane sayısı",
+        "en": "Number of classrooms"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "key": "mermer_sutun_sayisi",
+      "label": {
+        "tr": "Kemeri taşıyan mermer sütun sayısı",
+        "en": "Marble columns carrying the arch"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Lala Şâhin Paşa",
+      "role": {
+        "tr": "Banî; Rumeli Beylerbeyi",
+        "en": "Founder; Rumelia Governor"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1340",
+      "year": 1340,
+      "date": null,
+      "hijri": "740-750",
+      "type": "construction",
+      "title": {
+        "tr": "Medrese inşa edildi (H. 740–750 / M. 1340–1350 arası)",
+        "en": "Madrasa built (between AH 740–750 / AD 1340–1350)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "576"
+        }
+      ],
+      "note": {
+        "tr": "Kesin yıl bilinmiyor; aralığın başlangıcı alındı.",
+        "en": "The exact year is unknown; the start of the range is used."
+      }
+    },
+    {
+      "id": "onarim-1555",
+      "year": 1555,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Extensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1787",
+      "year": 1787,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Extensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1818",
+      "year": 1818,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Extensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Extensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1900",
+      "year": 1900,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Bıçakçılar Çarşısı yangınında vakfa ait Demir Han harap oldu",
+        "en": "Fire in the Bıçakçılar Bazaar destroyed the foundation's Demir Han"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1968",
+      "year": 1968,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu restorasyonu",
+        "en": "Restoration by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son onarım; Çocuk Kütüphanesi olarak işlevlendirildi",
+        "en": "Last renovation; repurposed as a Children's Library"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-fidan-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Lala Şâhin Paşa vakfına ait Demir Han, Fidan Hanı'nın doğusunda yer alıyordu.",
+        "en": "The Demir Han of Lala Şahin Paşa's foundation stood east of the Fidan Han."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-demir-hani",
+      "type": "same_founder",
+      "description": {
+        "tr": "Demir Han, Lala Şâhin Paşa vakfının eserlerindendi (1900 yangınında harap oldu).",
+        "en": "The Demir Han was among the works of Lala Şahin Paşa's foundation (destroyed in the 1900 fire)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "577"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Lalaşahinpaşa Medresesi bir bahçe içinde, asimetrik planlı, tuğla ve taş sıralı duvarlı kubbeli bir yapıdır. Ortada bir iç avlu, avlunun ortasında kare bir havuz vardır. Yedi tonozlu oda, bir dershane ve dershanenin eyvanı bulunur. Geniş iç mekân, Bizans başlıklı iki mermer sütunun taşıdığı bir kemerle ikiye bölünür; kuzeydeki giriş sahanlığı kubbelidir. Bugün Çocuk Kütüphanesi olarak kullanılır.",
+      "en": "The Lalaşahinpaşa Madrasa is an asymmetrically planned domed building in a garden, with walls of alternating stone and brick. There is a central inner courtyard with a square pool. It has seven vaulted rooms, a classroom and its iwan. The large interior is divided by an arch on two marble columns with Byzantine capitals; the northern entrance landing is domed. It is used today as a Children's Library."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

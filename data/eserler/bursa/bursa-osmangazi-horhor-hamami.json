@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-horhor-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 688) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Yapım tarihi ve banisi kaynakta bilinmiyor; 'dating', 'founder' boş.",
+      "'era' bilinmediği için boş bırakıldı.",
+      "Armutlu Kaplıcası ve Eski Kaplıca çamaşırlığı/kahve ocağı için ilçe kaynakta verilmiyor; relation hedefi 'bursa-osmangazi-armutlu-kaplicasi' ilçe bakımından tahminidir, doğrulanmalı.",
+      "Hamamın bölümleri (soğukluk, sıcaklık vb.) ve ölçüleri kaynakta anlatılmıyor.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Horhor Hamamı",
+    "en": "Horhor Bath"
+  },
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "hamam",
+    "çifte hamam",
+    "kaplıca suyu",
+    "Çekirge",
+    "Horhor kaynağı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kükürtlü Mahallesi",
+    "address": "Eski Kaplıca Sokak No: 9 (Çekirge Meydanı / Armutlu Meydanı'na bitişik)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "688"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Çekirge Meydanı'na bitişik alt kotta yer alan, yapım tarihi ve banisi bilinmeyen çifte hamam. Onarımlarla özgün özelliklerini yitirmiştir; bugün yalnızca kadınlar hamamı olarak kullanılmakta ve çeşitli organizasyonlara ev sahipliği yapmaktadır. 37°C'lik Horhor kaynağıyla beslenir.",
+    "en": "A double bath on a lower level next to Çekirge Square, of unknown date and founder. Repairs have erased its original features; today it is used only as a women's bath and hosts various events. It is fed by the 37°C Horhor spring."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapı",
+        "en": "Location and Structure"
+      },
+      "body": {
+        "tr": "Hamam, Osmangazi'de Kükürtlü Mahallesi Eski Kaplıca Sokak No: 9'dadır. “Armutlu Meydanı” olarak anılan Çekirge Meydanı'na bitişik konumda, alt kottadır. Kitabesi bulunmadığından yapım tarihi ve banisi bilinmemektedir. Yapı kadınlar ve erkekler bölümleriyle çifte hamam olarak inşa edilmiştir; farklı dönemlerdeki onarımlar sonucunda özgün mimari özelliklerini tamamen yitirmiş, basit çatılı bir yapıya dönüşmüştür. Günümüzde yalnızca kadınlar hamamı olarak kullanılmakta ve çeşitli organizasyonlara ev sahipliği yapmaktadır.",
+        "en": "The bath is in Osmangazi, Kükürtlü Neighborhood, Eski Kaplıca Street No. 9. It stands on a lower level next to Çekirge Square, also called “Armutlu Square”. Without an inscription, its construction date and founder are unknown. It was built as a double bath with men's and women's sections; repairs in different periods have completely erased its original architectural features and it has a simple roof. Today it is used only as a women's bath and also hosts various events."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "688"
+        }
+      ]
+    },
+    {
+      "id": "su",
+      "order": 2,
+      "title": {
+        "tr": "Horhor Kaynağı",
+        "en": "The Horhor Spring"
+      },
+      "body": {
+        "tr": "Hamamı besleyen suyun Çekirge semtindeki ahşap bir köprünün altından çıktığı ifade edilir. “Horhor kaynağı” olarak bilinen suyun sıcaklığı 37°C'dir. Kaynak suyunun geçmişte Eski Kaplıca çamaşırlığına, kahve ocağına ve kısmen Armutlu Kaplıcası'na da aktığı bilinmektedir.",
+        "en": "The water feeding the bath is said to emerge from beneath a wooden bridge in the Çekirge district. Known as the “Horhor spring”, its temperature is 37°C. The spring's water is also known to have flowed in the past to the Old Thermal Bath laundry, a coffee house and partly to the Armutlu Thermal Spring."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "688"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "su_sicakligi",
+      "label": {
+        "tr": "Horhor kaynağı su sıcaklığı",
+        "en": "Horhor spring water temperature"
+      },
+      "value": 37,
+      "unit": "°C",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "688"
+        }
+      ]
+    },
+    {
+      "key": "plan_tipi",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "çifte hamam (kadınlar ve erkekler bölümleri)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "688"
+        }
+      ]
+    },
+    {
+      "key": "bugunku_kullanim",
+      "label": {
+        "tr": "Bugünkü kullanım",
+        "en": "Current use"
+      },
+      "value": "yalnızca kadınlar hamamı; organizasyonlara ev sahipliği",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "688"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-armutlu-kaplicasi",
+      "type": "water_supply",
+      "description": {
+        "tr": "Horhor kaynağının suyunun geçmişte kısmen Armutlu Kaplıcası'na aktığı bilinmektedir.",
+        "en": "The water of the Horhor spring is known to have partly flowed to the Armutlu Thermal Spring in the past."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "688"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, Çekirge Meydanı'na bitişik, alt kotta yer alan, basit çatılı bir yapıdır. Kadınlar ve erkekler için ayrı bölümleri olan çifte hamamdır; onarımlar nedeniyle özgün görünümünü yitirmiştir. Hamamı, 37 derece sıcaklıktaki Horhor kaynağının suyu besler.",
+      "en": "The bath is a simply roofed building on a lower level next to Çekirge Square. A double bath with separate sections for women and men, it has lost its original appearance through repairs. It is fed by the 37-degree water of the Horhor spring."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

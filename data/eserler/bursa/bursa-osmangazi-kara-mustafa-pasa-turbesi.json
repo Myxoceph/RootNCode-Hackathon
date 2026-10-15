@@ -1,0 +1,492 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-kara-mustafa-pasa-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hamzabey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Hamza Bey Külliyesi bölümünden (s. 173-185) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş, archive_media boş); Drive klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
+      "Türbenin yapım yılı ve mimarı kitapta verilmiyor.",
+      "Kitap adres vermiyor; yalnızca 'Hamza Bey Camii'nin avlusunun kuzey ucunda' diyor. address alanı boş bırakıldı.",
+      "Kara Mustafa Paşa'nın Pazaryeri'nde (Bilecik) yaptırdığı cami ve imaret için ilişki hedef idleri varsayımsaldır (bilecik-pazaryeri-...); kayıt açılırken ilçe/ad teyit edilecek.",
+      "Eskişehir'deki Gündüz köyü ve İstanbul Cibali Kapısı yakınındaki hamam için ilçe metinde yok; ilişki hedefi kurulamadı.",
+      "Türbedeki beş lahitten hangilerinin kime ait olduğu kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis] / location",
+        "note": "Külliye anlatımında Hamza Bey, eşleri ve Kara Mustafa Paşa türbeleri 'cami bahçesinin kuzeybatısında' (s. 175) deniyor; türbe bölümlerinde Hamza Bey Türbesi 'cami avlusunun güneybatı köşesinde' (s. 180), Hamza Bey Ailesi Türbesi 'caminin batı köşesine bitişik' (s. 182), Kara Mustafa Paşa Türbesi 'avlunun kuzey ucunda' (s. 184) olarak veriliyor. Konum bilgileri tam örtüşmüyor; kaynağa sadık kalınarak her kayıtta kendi bölümündeki ifade esas alındı."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Kitap Kara Mustafa Paşa'nın naaşının 'babasının yanındaki türbeye' defnedildiğini söylüyor (s. 184). Kitaba göre Kara Mustafa Paşa'nın babası Mehmet Bey'dir (Hamza Bey'in torunudur); Hamza Bey'in türbesi ayrı bir bölümde anlatılıyor ve Kara Mustafa Paşa Türbesi'nin kendi bölümü var. 'Babasının yanındaki türbe' ifadesi hangi yapıyı kastettiği açısından belirsiz; kaynağa sadık kalındı."
+      },
+      {
+        "field": "dating",
+        "note": "Kara Mustafa Paşa 1483'te idam edildiği için türbenin bu tarihten sonra yapılmış olması beklenir, ancak kitap türbenin yapım tarihini vermiyor; çıkarım yapılmadı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kara Mustafa Paşa Türbesi",
+    "en": "Kara Mustafa Paşa Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-hamza-bey-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "Kara Mustafa Paşa",
+    "türbe",
+    "kare plan",
+    "sekizgen kasnak",
+    "vezir"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hamzabey",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "184"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hamza Bey Camii avlusunun kuzey ucunda, Hamza Bey'in torunu Kara Mustafa Paşa için yapılmış, sekizgen kasnaklı kubbeli kare planlı türbe; içinde beş lahit vardır.",
+    "en": "A square tomb with a dome on an octagonal drum at the northern end of the mosque courtyard, for Kara Mustafa Paşa, grandson of Hamza Bey; it holds five sarcophagi."
+  },
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Lahit sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ],
+      "note": {
+        "tr": "Üç büyük, bir küçük, bir Zeynî mezar taşı.",
+        "en": "Three large, one small, one Zeyni gravestone."
+      }
+    },
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "kare, sekizgen kasnaklı kubbe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    },
+    {
+      "key": "alt_pencere",
+      "label": {
+        "tr": "Alt sıra penceresi",
+        "en": "Lower-row windows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ],
+      "note": {
+        "tr": "Sekizinci pencere sonradan örülerek kapatılmış.",
+        "en": "The eighth was later bricked up."
+      }
+    },
+    {
+      "key": "ust_pencere",
+      "label": {
+        "tr": "Üst sıra penceresi",
+        "en": "Upper-row windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnak penceresi",
+        "en": "Drum windows"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    },
+    {
+      "key": "doseme_tugla",
+      "label": {
+        "tr": "Döşeme tuğlası (altıgen)",
+        "en": "Hexagonal paving brick"
+      },
+      "value": 25,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kara Mustafa Paşa",
+      "role": {
+        "tr": "Türbede gömülü vezir; Hamza Bey'in torunu",
+        "en": "Vizier buried here; grandson of Hamza Bey"
+      }
+    },
+    {
+      "name": "Mehmet Bey",
+      "role": {
+        "tr": "Kara Mustafa Paşa'nın babası",
+        "en": "Father of Kara Mustafa Paşa"
+      }
+    },
+    {
+      "name": "Hamza Bey (Yahşi Beyzade)",
+      "role": {
+        "tr": "Kara Mustafa Paşa'nın dedesi",
+        "en": "Grandfather of Kara Mustafa Paşa"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "azil-1474",
+      "year": 1474,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kara Mustafa Paşa vezirlikten azledildi, Üsküdar'a yerleşti",
+        "en": "Kara Mustafa Paşa dismissed as vizier, settled in Üsküdar"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "184"
+        }
+      ]
+    },
+    {
+      "id": "idam-1483",
+      "year": 1483,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Cem Sultan Vakası sırasında Seyitgazi civarında idam edildi; Bursa'da defnedildi",
+        "en": "Executed near Seyitgazi during the Cem Sultan Incident; buried in Bursa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "184"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından camiyle birlikte kapsamlı onarım",
+        "en": "Extensive restoration with the mosque by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü külliyenin tüm yapılarıyla birlikte restore etti",
+        "en": "Restored with all structures of the complex by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "doseme",
+      "title": {
+        "tr": "Altıgen döşeme tuğlaları",
+        "en": "Hexagonal paving bricks"
+      },
+      "hint": {
+        "tr": "Diğer yapılarda kare olan döşeme tuğlaları burada 25 cm'lik altıgendir.",
+        "en": "Paving bricks are 25 cm hexagons here, square in the other buildings."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe Hamza Bey Külliyesi'nin parçasıdır.",
+        "en": "The tomb is part of the Hamza Bey Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe Hamza Bey Camii avlusunun kuzey ucundadır.",
+        "en": "The tomb is at the northern end of the Hamza Bey Mosque courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "184"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kitaba göre naaş 'babasının yanındaki türbeye' defnedilmiştir.",
+        "en": "According to the book the body was buried in 'the tomb next to his father'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "184"
+        }
+      ]
+    },
+    {
+      "target_id": "bilecik-pazaryeri-kara-mustafa-pasa-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Kara Mustafa Paşa Pazaryeri'nde cami yaptırmıştır.",
+        "en": "Kara Mustafa Paşa built a mosque in Pazaryeri."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    },
+    {
+      "target_id": "bilecik-pazaryeri-kara-mustafa-pasa-imareti",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Pazaryeri ve Gündüz köyü bu imaret ve cami için vakfedilmiştir.",
+        "en": "Pazaryeri and the Gündüz village were endowed to this imaret and mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Kara Mustafa Paşa'nın Pazaryeri hayır kurumları (cami ve imaret)",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Kara Mustafa Paşa, Pazaryeri ile Eskişehir'deki Gündüz köyünü Pazaryeri'nde yaptırdığı cami ve imaret hayır kurumlarına vakfetmiştir.",
+      "en": "Kara Mustafa Paşa endowed Pazaryeri and the Gündüz village in Eskişehir to the mosque and imaret he had built in Pazaryeri."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "185"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Kara Mustafa Paşa Türbesi, Hamza Bey Camii avlusunun kuzey ucunda yer alır. Kara Mustafa Paşa, Yahşi Beyzade Hamza Bey'in torunu ve Mehmet Bey'in oğludur. Fatih Sultan Mehmet'in takdirini kazanarak vezir olmuş, 1474'te azledilerek Üsküdar'a yerleşmiştir. Sadrazam Mahmut Paşa'nın desteğiyle tekrar vezirliğe getirilmişse de Gedik Ahmet Paşa ile anlaşmazlık yaşadığı için Bursa sancağına mutasarrıf olarak atanmıştır. 1483'te Cem Sultan Vakası sırasında Seyitgazi civarında idam edilmiş, naaşı Bursa'da Hamza Bey Camii avlusunda babasının yanındaki türbeye defnedilmiştir. Tarihte Kara Mustafa Paşa adıyla tanınır.",
+        "en": "The Kara Mustafa Paşa Tomb is at the northern end of the Hamza Bey Mosque courtyard. Kara Mustafa Paşa was the grandson of Yahşi Beyzade Hamza Bey and the son of Mehmed Bey. He became a vizier by earning Fâtih Sultan Mehmed's appreciation but was dismissed in 1474 and settled in Üsküdar. Reappointed vizier with the support of Grand Vizier Mahmud Paşa, he was appointed governor of Bursa Sanjak after a disagreement with Gedik Ahmed Paşa. He was executed near Seyitgazi during the Cem Sultan Incident in 1483, and his body was buried in the tomb next to his father in the mosque courtyard in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "184"
+        }
+      ]
+    },
+    {
+      "id": "hayirlar",
+      "order": 2,
+      "title": {
+        "tr": "Hayır Eserleri",
+        "en": "Charitable Works"
+      },
+      "body": {
+        "tr": "Kara Mustafa Paşa, Bilecik'in Pazaryeri kasabasında bir cami ve imaret inşa ettirmiş, ayrıca Pazaryeri ile Eskişehir'deki Gündüz köyünü bu hayır kurumlarına vakfetmiştir. İstanbul'da Cibali Kapısı yakınlarında bir de hamam yaptırmıştır.",
+        "en": "Kara Mustafa Paşa had a mosque and imaret built in the town of Pazaryeri in Bilecik province and endowed Pazaryeri and the Gündüz village in Eskişehir to these institutions. He also had a bathhouse built near the Cibali Gate in Istanbul."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe kare planlıdır ve sekizgen kasnağa oturan bir kubbeye sahiptir. Alt sırada yedi, üst sırada sekiz ve kasnakta dört pencereyle aydınlatılır; alt sıradaki sekizinci pencere sonradan örülerek kapatılmıştır. Türbenin arkasında, ana yapıyla aynı dönemde inşa edildiği anlaşılan bir ekleme vardır; eski fotoğraflar eklemenin bir dönem binadan dışarıya taşacak biçimde yapıldığını gösterir. Pencere kapakları özgündür, bingileri ustalıkla yapılmıştır. Mihrabı sivri kemerlidir. Cami ve diğer türbelerde döşeme tuğlaları kare iken burada 25 cm'lik altıgen tuğlalar kullanılmıştır.",
+        "en": "The tomb has a square plan and a dome on an octagonal drum. It is lit by seven windows in the lower row, eight in the upper row and four in the drum; the eighth lower window was later bricked up. Behind the tomb is an extension apparently built in the same period as the main structure; old photographs show it projected beyond the building for a period. The window shutters are original and the lintels skillfully made. The mihrab has a pointed arch. While paving bricks in the mosque and other tombs are square, 25 cm hexagonal bricks are used here."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 4,
+      "title": {
+        "tr": "Lahitler",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbede üç büyük, bir küçük ve bir Zeynî mezar taşı olmak üzere toplam beş lahit bulunur. Mermer lahitler Şehzade Mustafa ile Cem Sultan'ın lahitlerine benzer. Lahitlerden birinin kaide ve pehlelerinde üçer adet olmak üzere toplam on iki süsleme motifi, kaide başlıklarında üçer adet olmak üzere toplam altı motif vardır. Altlıklardan birinde üç, diğerinde tek gülbezek işlenmiştir.",
+        "en": "There are five sarcophagi in total: three large, one small and one Zeyni gravestone. The marble sarcophagi resemble those of Şehzade Mustafa and Cem Sultan. One has twelve decorative motifs in total (three on each side of its base and side panels) and six motifs (three on each side) on its base capitals. One of the bases is decorated with three rosettes and the other with a single rosette."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "185"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kara Mustafa Paşa Türbesi, cami avlusunun kuzey ucunda duran kare planlı bir yapıdır; üzerinde sekizgen bir kasnağa oturan kubbe yükselir. Alt ve üst sıralarda ve kasnakta pencereler bulunur, alt sıradaki bir pencere sonradan örülerek kapatılmıştır. Arkasında ana yapıyla aynı dönemden bir ek bölüm vardır. İçeride beş lahit yer alır; zemin 25 cm'lik altıgen tuğlalarla döşenmiştir.",
+      "en": "The Kara Mustafa Paşa Tomb is a square building at the northern end of the mosque courtyard, topped by a dome on an octagonal drum. It has windows in lower and upper rows and in the drum; one lower window was later bricked up. Behind it is an extension from the same period as the main structure. Inside are five sarcophagi, and the floor is paved with 25 cm hexagonal bricks."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tasvirden yapay zekâ taslağı olarak yazıldı; saha ve fotoğrafla doğrulanmadı."
+  }
+}

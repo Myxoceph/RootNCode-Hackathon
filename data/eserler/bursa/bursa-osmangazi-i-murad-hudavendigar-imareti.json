@@ -1,0 +1,474 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-i-murad-hudavendigar-imareti",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "I. Murat Hüdavendigar Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki I. Murad Hudâvendigâr Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor.",
+      "Sırp Sındığı Zaferi'nin tarihi bu bölümde verilmiyor.",
+      "Kitabenin dili kitapta belirtilmiyor; language 'other' bırakıldı.",
+      "Orijinal yapının biçimi 1906 öncesi için bilgi yok; yalnızca kuzey cephedeki pencerenin ilk hâlden kaldığı tahmin ediliyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Külliye için s. 79'da H. 767 / M. 1365-66 öngörülüyor; imaret bölümü (s. 97) külliyenin H. 768-787 / M. 1367-1385 arasında yapıldığını söylüyor. İki aralık tam örtüşmüyor; kaynağın değerleri korundu."
+      },
+      {
+        "field": "location.neighborhood",
+        "note": "Cami ve türbe için 'Çekirge Mahallesi', imaret için 'Hudâvendigâr Mahallesi' (Çekirge Caddesi) veriliyor. Kitap farkı açıklamıyor; her kayıtta kitabın o yapı için verdiği ad kullanıldı."
+      },
+      {
+        "field": "waqf.deed",
+        "note": "Vakfiyenin ikinci yazımı bu bölümde 'H. Şevval 802 / M. Nisan 1400' olarak, külliye bölümünde (s. 81) yalnızca 'H. 802 / M. 1400' olarak veriliyor; ay bilgisi yalnızca burada var."
+      },
+      {
+        "field": "inscriptions[imaret-kitabesi]",
+        "note": "Türkçe metinde 'Fi 12 Recep 1324 (M. 1 Eylül 1906)' tarih satırı tırnak içinde, kitabe metninin parçası olarak; çevirinin sonunda 'Fi 12 Receb 1324 / 1 Eylül 1906' olarak veriliyor. Hicri/miladi karşılığının uyumu doğrulanmadı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Murad Hudâvendigâr İmareti",
+    "en": "Murad Hudâvendigâr Imaret"
+  },
+  "subtitle": {
+    "tr": "Caminin batısındaki tek katlı aşevi",
+    "en": "Single-storey soup kitchen west of the mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kaplıca İmareti",
+      "en": "Kaplıca Imaret",
+      "note": "Külliyenin genel adı"
+    }
+  ],
+  "type": "imaret",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "I. Murad",
+    "imaret",
+    "aşevi",
+    "Çekirge",
+    "II. Abdülhamid",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hudâvendigâr",
+    "address": "Çekirge Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "97"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 768-787 / M. 1367-1385 arası (kabul edilen)",
+      "en": "Between AH 768-787 / AD 1367-1385 (accepted)"
+    },
+    "start_year": 1367,
+    "end_year": 1385,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Yapım tarihi kesin bilinmemektedir; külliyenin Sırp Sındığı Zaferi'nden sonra inşa edildiği bilindiğinden bu aralıkta yapıldığı kabul edilmektedir. Bugünkü yapı H. 1324 / M. 1906'da yeniden inşa edilmiştir.",
+      "en": "The exact construction date is unknown; as the complex is known to have been built after the Battle of Maritsa victory, it is accepted to date between these years. The present building was rebuilt in AH 1324 / AD 1906."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "97, 98"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan I. Murad Hudâvendigâr",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "80"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. Cemaziyelahir 787 / M. Temmuz 1385",
+      "excerpt": {
+        "tr": "Sultan Murad Han bin Sultan Orhan adına düzenlenmiş Arapça vakfiye. İlk vakfiyeden 15 yıl sonra, H. 802 / M. 1400'de Yıldırım Bayezid döneminde bir suretinin çıkarıldığı bilinmektedir. Kâtipliğini Bursa Kadısı Molla Fenârî olarak tanınan Mehmed bin Hamza bin Mehmed yaptırmıştır. Kitaptaki özet; vakfiye metni değildir.",
+        "en": "Arabic endowment charter prepared in the name of Sultan Murad Han bin Sultan Orhan. A copy is known to have been issued 15 years after the first charter, in AH 802 / AD 1400 under Yıldırım Bayezid. The clerk was Mehmed bin Hamza bin Mehmed, known as the Judge of Bursa Molla Fenârî. (Summary given in the book; not the deed text.)"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakfiyeye göre sultan, külliyeye Uludağ yamaçlarından başlayıp Mudanya'ya doğru uzanan bölgede birçok yer vakfetmiştir.",
+      "en": "According to the charter, the sultan endowed many places in the region from the slopes of Uludağ towards Mudanya to the complex."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "81"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Caminin batısındaki, L biçimli, moloz taş duvarlı tek katlı aşevi. Harap hâldeki yapı kitabeye göre H. 1324 / M. 1906'da II. Abdülhamid tarafından yeniden inşa ettirilmiştir; mutfak bölümü bugün çayhane olarak kullanılır.",
+    "en": "A single-storey, L-shaped soup kitchen of rubble stone west of the mosque. According to its inscription the ruined building was rebuilt by Abdulhamid II in AH 1324 / AD 1906; the kitchen section is used as a teahouse today."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Hudâvendigâr Mahallesi, Çekirge Caddesi üzerinde, I. Murad Hudâvendigâr Camii'nin batısında yer alan tek katlı aşevi binasıdır. Cami, tabhaneler, medrese, hamam, imaret, han ve türbeden oluşan külliyenin parçasıdır ve 2014'te UNESCO Dünya Mirası Listesi'ne alınan alan içinde yer alır.",
+        "en": "A single-storey soup kitchen building west of the Murad I Hudâvendigâr Mosque on Çekirge Street, Hudâvendigâr Neighborhood, Osmangazi District. It is part of the complex of mosque, hospices, madrasa, bath, imaret, han and tomb, and lies within the area listed by UNESCO in 2014."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "id": "yapim-ve-vakfiye",
+      "order": 2,
+      "title": {
+        "tr": "Yapım Tarihi ve Vakfiye",
+        "en": "Construction Date and Endowment Charter"
+      },
+      "body": {
+        "tr": "Yapım tarihi kesin bilinmemekle birlikte, külliyenin Sırp Sındığı Zaferi'nden sonra inşa edildiği bilindiğinden H. 768-787 / M. 1367-1385 arasında yapıldığı kabul edilmektedir. Kaynaklara göre vakfiyesi H. Cemaziyelahir 787 / M. Temmuz 1385'te düzenlenmiş, H. Şevval 802 / M. Nisan 1400'de Yıldırım Bayezid'in emriyle yeniden yazılmıştır.",
+        "en": "Although the exact date is unknown, since the complex is known to have been built after the Battle of Maritsa victory it is accepted as built between AH 768-787 / AD 1367-1385. According to the sources, the endowment charter was drawn up in AH Jumada al-Thani 787 / AD July 1385 and rewritten in AH Shawwal 802 / AD April 1400 by order of Yıldırım Bayezid."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "97-98"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa",
+      "order": 3,
+      "title": {
+        "tr": "1906 Yeniden İnşası",
+        "en": "Rebuilding in 1906"
+      },
+      "body": {
+        "tr": "İmaretin camiye bakan doğu duvarındaki kitabede, harap durumdaki yapının H. 1324 / M. 1906'da yeniden inşa edildiği belirtilir. Kitabeye göre II. Abdülhamid, atası Hudâvendigâr Gazi'nin hayır eserlerinden olan bu imareti yeniden inşa ettirmiştir.",
+        "en": "The inscription on the imaret's east wall facing the mosque states that the ruined building was rebuilt in AH 1324 / AD 1906. According to it, Abdulhamid II rebuilt this imaret, one of the charitable works of his ancestor Hudâvendigâr Gazi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "98-99"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "L biçimindeki yapının 40 m'lik uzun kenarı güney-kuzey doğrultusunda camiye paralel uzanır. Beden duvarları moloz taşla örülmüş, az miktarda tuğla kullanılmıştır. Günümüzdeki giriş kuzeydeki kemerli büyük kapıdan sağlanır ve geniş bir avluya açılır. Avluya iki kapı açılır: biri ana binaya, diğeri günümüzde çayhane olarak kullanılan aşhane bölümüne geçişi sağlar. Doğu beden duvarında kesme taştan söveli beş pencere, avluya bakan batı cephede beş dikdörtgen pencere ve güney uçta dikdörtgen bir kapı açıklığı vardır. Kuzey cephesindeki pencerenin yapının ilk hâlinden günümüze ulaştığı tahmin edilmektedir. Üst örtü kiremit kaplı ahşap çatıdır.",
+        "en": "The 40 m long side of the L-shaped building runs south-north parallel to the mosque. The walls are rubble stone with a little brick. The current entrance is through a large arched door on the north, opening onto a large courtyard with two doors: one to the main building and one to the kitchen section, now used as a teahouse. The east wall has five cut-stone-framed windows, the west façade facing the courtyard has five rectangular windows, and a rectangular doorway is at the south end. The window on the north façade is presumed to survive from the original building. The roof is wooden, covered with tiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "99"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "uzun_kenar",
+      "label": {
+        "tr": "L biçimli yapının uzun kenarı",
+        "en": "Long side of the L-shaped building"
+      },
+      "value": 40,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "99"
+        }
+      ]
+    },
+    {
+      "key": "dogu_pencere",
+      "label": {
+        "tr": "Doğu duvardaki pencere sayısı",
+        "en": "Windows on east wall"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "99"
+        }
+      ]
+    },
+    {
+      "key": "bati_pencere",
+      "label": {
+        "tr": "Batı cephedeki pencere sayısı",
+        "en": "Windows on west façade"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "99"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "II. Abdülhamid",
+      "role": {
+        "tr": "İmareti 1906'da yeniden yaptıran sultan (kitabeye göre)",
+        "en": "Sultan who had the imaret rebuilt in 1906 (according to the inscription)"
+      }
+    },
+    {
+      "name": "Yıldırım Bayezid",
+      "role": {
+        "tr": "Vakfiyenin yeniden yazılmasını emretti",
+        "en": "Ordered the charter to be rewritten"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "imaret-kitabesi",
+      "location": {
+        "tr": "İmaretin camiye bakan doğu duvarında",
+        "en": "On the east wall of the imaret facing the mosque"
+      },
+      "language": "other",
+      "script": "Nesih",
+      "transliteration": "Emîrü’l-Mü’minîn İmâmü’l-Müslimîn Halîfe-i Resûlü’l-âlemin Şevketlû\nKudretlû Gâzî Sultan Abdülhamîd Hân-ı Sâni hallede’llâhu hilâfetehû\nve saltanatahû efendimiz hazretleri ecdâd-ı me’âlî-nijâd-ı hümâyunlarından\nCennetmekân Hudâvendigâr-ı Gâzi Hazretlerinin cümle-i meberrât-ı\nseniyyelerinden olan işbu imâreti tecdîden inşâ buyurmuşlardır.\nFi 12 Recep 1324 (M. 1 Eylül 1906)",
+      "translation": {
+        "tr": "Müminlerin Emiri, Müslümanların İmamı, Âlemlerin Resulü'nün Halifesi; şevketli, kudretli Gazi Sultan II. Abdülhamid Han —Allah onun hilafetini ve saltanatını daim kılsın— yüce soylu atalarından Cennetmekân Gazi Hudavendigâr Hazretleri'ne ait hayır eserlerinden biri olan bu imareti yeniden inşa ettirmiştir. Fi 12 Receb 1324 / 1 Eylül 1906",
+        "en": "The Commander of the Faithful, the Imam of the Muslims, the Caliph of the Messenger of the Worlds; the glorious, powerful Gazi Sultan Abdulhamid II -may Allah perpetuate his caliphate and sultanate- rebuilt this imaret, one of the charitable works of his noble ancestor, the heavenly Hazrat Gazi Hudavendigar. In 12 Rajab AH 1324 / 1 September AD 1906"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1324,
+        "gregorian": "1 Eylül 1906"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "98-99"
+        }
+      ],
+      "note": {
+        "tr": "Nesih hatla yazılmış nesir kitabe.",
+        "en": "Prose inscription in Naskh script."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1367-1385",
+      "year": 1367,
+      "date": null,
+      "hijri": "768-787",
+      "type": "construction",
+      "title": {
+        "tr": "Külliyeyle birlikte H. 768-787 / M. 1367-1385 arasında yapıldığı kabul ediliyor",
+        "en": "Accepted as built with the complex between AH 768-787 / AD 1367-1385"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1385",
+      "year": 1385,
+      "date": null,
+      "hijri": "Cemaziyelahir 787",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi",
+        "en": "Endowment charter drawn up"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "98"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1400",
+      "year": 1400,
+      "date": null,
+      "hijri": "Şevval 802",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye Yıldırım Bayezid'in emriyle yeniden yazıldı",
+        "en": "Charter rewritten by order of Yıldırım Bayezid"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "98"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1906",
+      "year": 1906,
+      "date": null,
+      "hijri": "12 Recep 1324",
+      "type": "restoration",
+      "title": {
+        "tr": "II. Abdülhamid tarafından harap yapı yeniden inşa ettirildi",
+        "en": "Ruined building rebuilt by Abdulhamid II"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "98-99"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "1906 kitabesi",
+        "en": "1906 inscription"
+      },
+      "hint": {
+        "tr": "Camiye bakan doğu duvarındaki nesih kitabe.",
+        "en": "The Naskh inscription on the east wall facing the mosque."
+      },
+      "section_id": "yeniden-insa"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "İmaret külliyenin parçasıdır.",
+        "en": "The imaret is part of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "İmaret caminin batısındadır.",
+        "en": "The imaret lies west of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Her ikisini de I. Murad yaptırmıştır.",
+        "en": "Both were commissioned by Murad I."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80, 97"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İmaret, caminin batısında, güney-kuzey doğrultusunda camiye paralel uzanan, L biçimli tek katlı bir yapıdır. Duvarları moloz taştır, üstü kiremit kaplı ahşap çatıyla örtülüdür. Kuzeydeki kemerli büyük kapıdan geniş bir avluya girilir; avludan biri ana binaya, biri çayhane olarak kullanılan aşhane bölümüne iki kapı açılır.",
+      "en": "The imaret is a single-storey L-shaped building west of the mosque, its long side running south-north parallel to it. Its walls are rubble stone and its roof is wooden, covered with tiles. A large arched door on the north leads into a spacious courtyard, from which two doors open: one to the main building and one to the kitchen section now used as a teahouse."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

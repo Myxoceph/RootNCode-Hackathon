@@ -1,0 +1,397 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hanimlar-kizlar-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbede kimlerin medfun olduğu kitapta üç farklı belgeye göre farklı veriliyor; uzman teyidi gerekli.",
+      "'Yılanlı Türbe' adının nedeni kitapta açıklanmıyor.",
+      "Muradiye Külliyesi'nin kayıt id'si tahmini (bursa-osmangazi-muradiye-kulliyesi).",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people",
+        "note": "1929 belgesi sanduka sahiplerini Çerkes Bitu Mustafa Paşa'nın hemşireleri Akîle ve Belkıs olarak, belgenin devamı ise Cedit Şehzade Mustafa'nın zevceleri ve kalfaları olarak veriyor; 1953 belgesi yine Akîle ve Belkıs'ı veriyor. Kitap Akîle ve Belkıs'ı esas alıyor; kayıt 'disputed'."
+      },
+      {
+        "field": "facts[pencere]",
+        "note": "Dıştan 'yedi altlık ve üç üstlük on pencere' ile içeriden 'altta yedi, üstte dört' pencere sayıları uyuşmuyor; kitaptaki gibi saklandı."
+      },
+      {
+        "field": "name",
+        "note": "Kitap halk arasındaki 'Üç Hanım' adını 'Dört Hanım' olarak düzeltmeyi önerir, sonra 'Akîle ve Belkıs Hanım Türbesi' adını önerir; kayıt kitabın bölüm başlığıyla açıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hanımlar Kızlar Türbesi (Yılanlı Türbe)",
+    "en": "Hanımlar Kızlar Tomb (Yılanlı Tomb)"
+  },
+  "subtitle": {
+    "tr": "Saray mensubu kadınların medfun olduğu, kimliği arşiv belgeleriyle aydınlanan türbe",
+    "en": "Tomb of palace women whose identities were clarified by archive documents"
+  },
+  "alternate_names": [
+    {
+      "tr": "Üç Hanım Kızlar Türbesi",
+      "en": "Three Ladies Tomb",
+      "note": "Halk arasındaki ad"
+    },
+    {
+      "tr": "Dört Hanım Kızlar Türbesi",
+      "en": "Four Ladies Tomb",
+      "note": "Kitabın daha isabetli bulduğu ad"
+    },
+    {
+      "tr": "Akîle ve Belkıs Hanım Türbesi",
+      "en": "Akîle and Belkıs Hanım Tomb",
+      "note": "Kitabın bundan sonra önerdiği ad"
+    },
+    {
+      "tr": "Saraylı Hanımlar Türbesi",
+      "en": "Saraylı Hanımlar Tomb",
+      "note": "1929 belgesinde geçen ad"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "saray kadınları",
+    "Muradiye Külliyesi",
+    "arşiv belgesi",
+    "Akîle Hatun",
+    "Belkıs Hatun"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye Mahallesi",
+    "address": "Kaplıca Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "502"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XVI. yüzyıl ortaları",
+      "en": "Mid-16th century"
+    },
+    "start_year": 1540,
+    "end_year": 1560,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Duvar örgüsü nedeniyle önce XIV.-XV. yüzyıla tarihlenmiş; sonradan ortaya çıkan belgelere göre XVI. yüzyıl ortalarında yapıldığı anlaşılmıştır.",
+      "en": "Initially dated to the 14th-15th century because of its masonry, later documents showed it was built in the mid-16th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "503"
+      }
+    ]
+  },
+  "founder": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Muradiye'de Kaplıca Caddesi üzerinde, kare planlı ve tek kubbeli türbe. Halk arasında 'Üç Hanım Kızlar Türbesi' diye bilinirken arşiv belgeleri saray mensubu kadınların medfun olduğunu ve Muradiye Külliyesi içinde yer aldığını göstermiştir. 2014'te kapsamlı onarım görmüştür.",
+    "en": "A square-plan, single-domed tomb on Kaplıca Street in Muradiye. Known popularly as the 'Three Ladies Tomb', archive documents showed that palace women are buried there and that it lies within the Muradiye Complex. It was extensively repaired in 2014."
+  },
+  "sections": [
+    {
+      "id": "kimlik",
+      "order": 1,
+      "title": {
+        "tr": "Kimlik sorunu",
+        "en": "The question of identity"
+      },
+      "body": {
+        "tr": "Halk arasında 'Üç Hanım Kızlar Türbesi' denen yapı, içinde kimlerin medfun olduğu belirsiz kaldığından uzun süre müphem kalmıştır. Yakın dönem arşiv çalışmalarında türbede saray mensubu dört kadının defnedildiği ortaya çıkmış; içeride üzerleri çimento sıvalı dört sanduka bulunduğundan 'Dört Hanım Kızlar Türbesi' adı kitaba göre daha isabetlidir.",
+        "en": "Known popularly as the 'Three Ladies Tomb', the building remained obscure because it was unclear who was buried inside. Recent archive studies showed four palace women are buried there; since there are four cement-plastered sarcophagi, the book finds 'Four Ladies Tomb' more accurate."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "502"
+        }
+      ]
+    },
+    {
+      "id": "belgeler",
+      "order": 2,
+      "title": {
+        "tr": "Arşiv belgeleri",
+        "en": "Archive documents"
+      },
+      "body": {
+        "tr": "12 Şubat 1929 tarihli Evkaf Müdüriyet-i Umumiyesi belgesi, Muradiye Külliyesi içindeki 'Akîle ve Bosfor Belkıs Hatunlar Türbesi, nam-ı diğer Saraylı Hanımlar Türbesi'ni Çerkes Bitu Mustafa Paşa'nın hemşirelerinin medfun olduğu yer olarak anar. Aynı belgenin devamı, Cedit Şehzade Mustafa'nın zevceleri Fatma Handan ve Begüm Nurcihan Hatun ile kalfaları Ferhunde ve Leyla Hatun'un medfun olduğu Hanımlar Türbesi'nin korunması için gereken masrafı bin kuruş olarak tespit eder. 4 Eylül 1953 tarihli Vakıflar Genel Müdürlüğü belgesi ise Haydar kızı (İdar) Akîle Hatun ile ana-baba bir kız kardeşi Belkıs Hatun'un medfun olduğu Saraylılar Türbesi'nin Muradiye Külliyesi içinde olduğunu bildirir. Kitap, bu belgenin türbenin konumunu ve gömülü kişileri açıkça ortaya koyduğunu söyler ve bundan sonra 'Akîle ve Belkıs Hanım Türbesi' denmesini önerir.",
+        "en": "A document dated 12 February 1929 of the General Directorate of Foundations names the 'Akile and Bosfor Belkıs Hatunlar Tomb, also known as the Saraylı Hanımlar Tomb' within the Muradiye Complex as the burial of the sisters of Çerkes Bitu Mustafa Paşa. The document continues that the cost of protecting the Hanımlar Tomb, where Cedit Şehzade Mustafa's consorts Fatma Handan and Begüm Nurcihan Hatun and attendants Ferhunde and Leyla Hatun are buried, is one thousand kurush. A General Directorate of Foundations document of 4 September 1953 says the Saraylılar Tomb, where Haydar's daughter Akîle Hatun (İdar) and her full sister Belkıs Hatun are buried, lies within the Muradiye Complex. The book says this document clearly shows the location and the identities and proposes calling it the 'Akîle and Belkıs Hanım Tomb' from now on."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "502-503"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kare planlı ve tek kubbeli türbe, bir sıra kesme küfeki taşı ve üç sıra tuğlanın dönüşümlü, aralarda düşey tuğlalı örgüsüyle yapılmıştır. Cepheler sivri kemerli büyük silmeler içine alınmış, buralara mermer söveli sivri kemerli pencereler açılmıştır; silme köşe aynaları altıgen tuğlalarla hareketlendirilmiştir. Almaşık teknik nedeniyle başta XIV. veya XV. yüzyıla tarihlenmiş, sonra çıkan belgelerle XVI. yüzyıl ortalarında yapıldığı anlaşılmıştır.",
+        "en": "The square single-domed tomb is built of alternating one row of cut limestone and three rows of brick with vertical bricks in between. The façades are framed in large pointed-arch moldings with marble-framed pointed-arch windows; corner panels of the moldings are enlivened with hexagonal bricks. Dated at first to the 14th or 15th century for its alternating masonry, later documents showed it was built in the mid-16th century."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "503"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Uzun yıllar harap kalan yapı 2014'te kapsamlı onarım görmüş; içindeki sandukalar ve puşideler de yenilenmiştir.",
+        "en": "Left in ruins for many years, the building underwent extensive repair in 2014; its sarcophagi and palls were also renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "503"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "502"
+        }
+      ],
+      "note": {
+        "tr": "Üzerleri çimento sıvalı.",
+        "en": "Plastered with cement."
+      }
+    },
+    {
+      "key": "pencere_sayisi_dis",
+      "label": {
+        "tr": "Dıştan pencere sayısı",
+        "en": "Windows seen from outside"
+      },
+      "value": "7 alt + 3 üst = 10",
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "503"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yedi altlık ve üç üstlük toplam on pencere' diyor; iç mekân için altta yedi, üstte dört veriyor.",
+        "en": "The book says seven lower and three upper windows (ten in total), and for the interior seven lower and four upper."
+      }
+    },
+    {
+      "key": "pencere_sayisi_ic",
+      "label": {
+        "tr": "İç mekândan pencere sayısı",
+        "en": "Windows seen from inside"
+      },
+      "value": "7 alt + 4 üst",
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "503"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Akîle Hatun (İdar, Haydar kızı)",
+      "role": {
+        "tr": "1953 belgesine göre türbede medfun",
+        "en": "Buried in the tomb per the 1953 document"
+      }
+    },
+    {
+      "name": "Belkıs Hatun",
+      "role": {
+        "tr": "Akîle Hatun'un ana-baba bir kız kardeşi; medfun",
+        "en": "Full sister of Akîle Hatun; buried"
+      }
+    },
+    {
+      "name": "Fatma Handan",
+      "role": {
+        "tr": "Cedit Şehzade Mustafa'nın zevcesi (1929 belgesine göre medfun)",
+        "en": "Consort of Cedit Şehzade Mustafa (buried per the 1929 document)"
+      }
+    },
+    {
+      "name": "Begüm Nurcihan Hatun",
+      "role": {
+        "tr": "Cedit Şehzade Mustafa'nın zevcesi",
+        "en": "Consort of Cedit Şehzade Mustafa"
+      }
+    },
+    {
+      "name": "Ferhunde",
+      "role": {
+        "tr": "Kalfa; 1929 belgesine göre medfun",
+        "en": "Attendant; buried per the 1929 document"
+      }
+    },
+    {
+      "name": "Leyla Hatun",
+      "role": {
+        "tr": "Kalfa; 1929 belgesine göre medfun",
+        "en": "Attendant; buried per the 1929 document"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "belge-1929",
+      "year": 1929,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Evkaf belgesi türbeyi Muradiye Külliyesi içinde 'Saraylı Hanımlar Türbesi' olarak anar",
+        "en": "Foundations document names the tomb 'Saraylı Hanımlar Tomb' within the Muradiye Complex"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "502-503"
+        }
+      ],
+      "note": {
+        "tr": "Tam tarih 12 Şubat 1929.",
+        "en": "Exact date 12 February 1929."
+      }
+    },
+    {
+      "id": "belge-1953",
+      "year": 1953,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıflar belgesi Saraylılar Türbesi'nin Muradiye Külliyesi içinde olduğunu bildirir",
+        "en": "Foundations document states the Saraylılar Tomb is within the Muradiye Complex"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "503"
+        }
+      ],
+      "note": {
+        "tr": "Tam tarih 4 Eylül 1953.",
+        "en": "Exact date 4 September 1953."
+      }
+    },
+    {
+      "id": "onarim-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı onarım; sandukalar ve puşideler yenilendi",
+        "en": "Extensive repair; sarcophagi and palls renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "503"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "1929 ve 1953 tarihli belgelere göre türbe Bursa Muradiye Külliyesi içindedir.",
+        "en": "According to the 1929 and 1953 documents the tomb lies within the Bursa Muradiye Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "502-503"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hanımlar Kızlar Türbesi kare planlı ve tek kubbelidir. Cepheleri sivri kemerli büyük silmeler içine alınmış; her silmede mermer söveli, sivri kemerli pencereler vardır. Duvarlar bir sıra açık renkli kesme taş ile üç sıra tuğlanın dönüşümüyle örülmüş, silme köşelerinde altıgen tuğlalar kullanılmıştır. İçeride, üzerleri örtülü dört sanduka bulunur.",
+      "en": "Hanımlar Kızlar Tomb has a square plan and a single dome. Its façades are framed by large pointed-arch moldings, each holding marble-framed, pointed-arch windows. The walls alternate one row of pale cut stone with three rows of brick, and hexagonal bricks mark the molding corners. Inside are four covered sarcophagi."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

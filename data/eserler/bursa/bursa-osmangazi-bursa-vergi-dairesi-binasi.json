@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-bursa-vergi-dairesi-binasi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Sivil Mimari",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Sivil Mimari (Osmangazi) bölümünden (s. 723-743) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir. İngilizce alanlar kitabın İngilizce çevirisinden kısaltılmıştır.",
+    "todos": [
+      "Yapım tarihi, banî, mimar ve dönem kitapta yok; Vakıflar/tescil kayıtlarından araştırılmalı (dating, founder, architect, era = null).",
+      "Vakıf bağlantısı kitapta belirtilmiyor (waqf = null).",
+      "Tescil durumu kitapta 'bilgiye rastlanmamıştır' diyor.",
+      "Koordinat kitapta yok; sahadan veya haritadan doğrulanmış koordinat eklenmeli (location.coordinates).",
+      "Fotoğraflar (media) ve Zaman Perdesi arşiv fotoğrafları (archive_media) henüz yok; Drive klasörü (media_folder) belirlenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating/founder/architect",
+        "note": "Kaynak yapıya ilişkin hiçbir tarih veya yapıcı bilgisi vermiyor; alanlar bilinçli olarak null bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Bursa Vergi Dairesi Binası",
+    "en": "Bursa Tax Office Building"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "vergi dairesi",
+    "kâgir",
+    "taş yapı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu",
+    "address": "Atatürk Caddesi sol tarafı, 2. Sarı Sokak (giriş arka sokaktan)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "732"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Nalbantoğlu Mahallesi sınırlarında, Atatürk Caddesi'nin sol tarafında 2. Sarı Sokak'ta yer alan, tamamen taştan kâgir tekniğiyle yapılmış sade görünümlü bina; bugün Bursa Vergi Dairesi olarak kullanılmaktadır. Kitap yapının yapım tarihi, yapıcısı ve tescili hakkında bilgi vermez.",
+    "en": "A plainly designed building of stone masonry on 2nd Sarı Sokak on the left side of Atatürk Avenue, within the Nalbantoğlu Neighborhood; it is used today as the Bursa Tax Office. The book gives no information on its date, builder or registration."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-giris",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve giriş",
+        "en": "Location and entrance"
+      },
+      "body": {
+        "tr": "Yapı, Osmangazi ilçesi Nalbantoğlu Mahallesi sınırlarında, Cumhuriyet Meydanı ile Setbaşı Köprüsü'nü birbirine bağlayan Atatürk Caddesi'nin sol tarafında, 2. Sarı Sokak'tadır. Girişi arka sokaktan sağlanır; giriş kapısına birkaç basamaklı bir merdivenle ulaşılır.",
+        "en": "The building is within the Nalbantoğlu Neighborhood, on 2nd Sarı Sokak on the left side of Atatürk Avenue connecting Cumhuriyet Square and Setbaşı Bridge. Entrance is from the back street, reached by a staircase of several steps."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "732"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve kullanım",
+        "en": "Architecture and use"
+      },
+      "body": {
+        "tr": "Mimari açıdan sade görünümlü bina tamamen taştan ve kâgir yapı tekniğiyle inşa edilmiştir. Tesciline dair bilgiye rastlanmamıştır. Günümüzde Bursa Vergi Dairesi olarak kullanılmaktadır.",
+        "en": "Architecturally plain, the building is built entirely of stone using a masonry technique. No information on its registration was found. Today it is used as the Bursa Tax Office."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "732"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Taş (kâgir)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "732"
+        }
+      ]
+    },
+    {
+      "key": "giris_basamak",
+      "label": {
+        "tr": "Girişte basamak",
+        "en": "Steps at entrance"
+      },
+      "value": "Birkaç basamak",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "732"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yapı, Atatürk Caddesi'nin sol tarafında bir yan sokakta yer alan, sade görünümlü, tamamen taş kâgir bir binadır. Girişi arka sokaktandır ve birkaç basamaklı bir merdivenle çıkılır.",
+      "en": "The building is a plain, entirely stone masonry structure on a side street on the left of Atatürk Avenue. Its entrance is from the back street, reached by a few steps."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesi (vk-bursa-c1, s. 732)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

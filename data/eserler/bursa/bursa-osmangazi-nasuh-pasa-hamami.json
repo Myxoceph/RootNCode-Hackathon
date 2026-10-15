@@ -1,0 +1,523 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-nasuh-pasa-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 703-706) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Mesih Mehmed Paşa'nın Gelibolu'daki camisi için il/ilçe ve cami adı kaynakta yok; id kurallarına uygun bir relation hedefi ('waqf_income') oluşturulamadı. Cami kaydı belirlenince eklenmeli.",
+      "Hamamın 1588 depreminden mi yoksa başka bir sebepten mi kadınlar bölümünün yıkıldığı: kaynakta 'bakım-onarım giderleri' gerekçe gösteriliyor; deprem bağlantısı kurulmadı.",
+      "Hamamın tam yapım tarihi bilinmiyor ('1483'ten önce').",
+      "Ovakim'in hamamı vakıftan satın alma tarihi kaynakta yok.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[iklik-ve-sicaklik]",
+        "note": "Ilıklık alanları 'm²' ile veriliyor (14,46 ve 12,45 m²), diğer ölçüler boyut çiftleri; kaynağa sadık kalındı."
+      },
+      {
+        "field": "sections[onarim-ve-kullanim]",
+        "note": "Ovakim'in mülkü 'ilgili vakıftan satın aldığı' ifadesi ile yapının 'vakıf statüsünde olduğu' için Vakıflar'a devredildiği ifadesi birbirinin yanında duruyor; kaynak bu görünür gerilimi açıklamıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Nasuh Paşa Hamamı",
+    "en": "Nasuh Paşa Bath"
+  },
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "vakıf hamamı",
+    "Mesih Mehmed Paşa",
+    "deprem onarımı",
+    "mukarnas",
+    "hâlâ faal"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hocaalizade Mahallesi",
+    "address": "Hamam Sokak No: 28",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "703"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1483'ten önce",
+      "en": "Before 1483"
+    },
+    "start_year": null,
+    "end_year": 1483,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kaynak yapının 1483'ten önce yaptırıldığını belirtir; kesin tarih verilmez.",
+      "en": "The source says it was built before 1483; no exact date is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "703"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mesih Mehmed Paşa (II. Bayezid dönemi sadrazamı)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "703"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Hamam, banisinin Gelibolu'daki camisine gelir sağlamak amacıyla yaptırılmıştır; vakfın mütevellisi uzun süre Mevlânâ Nasuh Efendi ve oğlu Mehmed Efendi olmuştur.",
+      "en": "The bath was built to provide income for its founder's mosque in Gallipoli; Mevlânâ Nasuh Efendi and his son Mehmed Efendi long served as trustees."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "703"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sadrazam Mesih Mehmed Paşa'nın Gelibolu'daki camisine gelir sağlamak için 1483'ten önce yaptırdığı hamam. Kitabesizdir; ilk başta çifte hamamken 1588'de kadınlar bölümü yıktırılmış, erkekler bölümü onarılmıştır. Hâlâ işlevini sürdürür.",
+    "en": "A bath built before 1483 by Grand Vizier Mesih Mehmed Paşa to provide income for his mosque in Gallipoli. It has no inscription; originally a double bath, its women's section was demolished in 1588 and the men's section repaired. It still functions."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-banisi",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Banisi ve Adı",
+        "en": "Location, Founder and Name"
+      },
+      "body": {
+        "tr": "Hamam, Osmangazi ilçesi Hocaalizade Mahallesi Hamam Sokak No: 28'dedir. Kitabesi bulunmayan yapı, II. Bayezid devrinde sadrazamlık yapmış Mesih Mehmed Paşa tarafından Gelibolu'daki camisine gelir sağlamak amacıyla 1483'ten önce yaptırılmıştır. Halk arasında, vakfın uzun süre mütevellisi olan Mevlânâ Nasuh Efendi ve oğlu Mehmed Efendi nedeniyle bu adla anılmıştır.",
+        "en": "The bath is at Hamam Street No. 28, Hocaalizade Neighborhood, Osmangazi. With no inscription, it was built before 1483 by Mesih Mehmed Paşa, grand vizier under Sultan Bayezid II, to provide income for his mosque in Gallipoli. It was named among the public after Mevlânâ Nasuh Efendi and his son Mehmed Efendi, long-time trustees of the foundation."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "703"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-dis-gorunus",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Dış Görünüş",
+        "en": "Plan and Exterior"
+      },
+      "body": {
+        "tr": "İlk yapıldığında çifte hamam planındaki yapı zamanla ciddi ölçüde tahrip olmuş; bakım ve onarım giderlerinin yüksekliği nedeniyle 6 Nisan 1588'de batıdaki kadınlar bölümü yıktırılmış ve elde edilen malzemeyle erkekler kısmı onarılmıştır. Kuzey-güney doğrultulu, dikdörtgen planlı hamamın dış ölçüleri 40,87 × 12,98 m'dir. Beden duvarları bir sıra kesme küfeki taşı ve üç sıra tuğladan almaşık örgülüdür; üzeri kiremit kaplı kubbe ve çatıyla tamamlanmıştır. Soğukluk, ılıklık, sıcaklık, halvet, külhan ve odunluk bölümlerinden oluşur ve birimlerin yerleşimi diğer örneklerden farklıdır.",
+        "en": "Originally a double bath, the building was seriously damaged over time; because of high maintenance costs the women's section on the west was demolished on 6 April 1588 and the men's section repaired with its materials. The north-south rectangular bath measures 40.87 × 12.98 m externally. Its walls are alternating bond of one row of cut limestone and three of brick, completed with tile-covered domes and roof. It has frigidarium, tepidarium, caldarium, bathing cells, furnace and woodshed, arranged differently from other examples."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "703-704"
+        }
+      ]
+    },
+    {
+      "id": "soguklik",
+      "order": 3,
+      "title": {
+        "tr": "Giriş ve Soğukluk",
+        "en": "Entrance and Frigidarium"
+      },
+      "body": {
+        "tr": "Yapıya kuzey cephedeki dikdörtgen planlı taç kapıdan girilir; giriş açıklığı 1 m genişliğinde, 65 cm derinliğinde ve çift kademelidir. Üç basamaklı mermer merdivenle ulaşılan çift kanatlı ahşap kapı mermer söveli ve basık kemerlidir. 10,70 × 10,70 m kare planlı soğukluk, mukarnaslı tromplarla sekizgen kasnağa oturan kubbeyle örtülüdür; köşe tromplar Türk üçgenleri ve püsküllü stalaktitlerle süslüdür. Ortasında fıskiyeli havuz bulunan bölüm, on iki basamaklı ahşap merdivenle çıkılan asma kattaki soyunmalık hücreleriyle çevrilidir.",
+        "en": "The building is entered through a rectangular portal on the north façade, with a 1 m wide, 65 cm deep two-step opening. The double-leafed wooden door, reached by a three-step marble staircase, has a marble frame and a depressed arch. The 10.70 × 10.70 m square frigidarium is covered by a dome on an octagonal drum with muqarnas squinches, the corner squinches decorated with Turkish triangles and tasselled stalactites. Its central fountain pool is surrounded by changing cells on a mezzanine reached by a twelve-step wooden staircase."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "704"
+        }
+      ]
+    },
+    {
+      "id": "iklik-ve-sicaklik",
+      "order": 4,
+      "title": {
+        "tr": "Ilıklık, Sıcaklık ve Külhan",
+        "en": "Tepidarium, Caldarium and Furnace"
+      },
+      "body": {
+        "tr": "Ilıklık, yan yana iki kare planlı (14,46 ve 12,45 m²) kubbeli mekândan oluşur; yaprak ve karşılıklı badem motifli bezemeleri, 12 ve 11 fil gözü ile aydınlık fenerleri vardır. Doğusundaki 8,08 m²'lik dikdörtgen tuvalet bölümü tonoz örtülüdür. Sıcaklık, ortada altıgen planlı merkezi bir alan ve çevresinde yedi eyvandan oluşur; göbek taşı çevresinde 2,50 × 3,50 m ölçülerinde tonoz örtülü dört yıkanma hücresi ve kuzeyde üç halvet (11,14; 16,02 ve 12,04 m², kubbeli) bulunur. Eyvanlardaki mermer korkuluklar ve özgün kurnalar günümüze ulaşmıştır. Güney ucunda tonoz örtülü külhan ve ona paralel odunluk vardır.",
+        "en": "The tepidarium consists of two side-by-side square domed rooms (14.46 and 12.45 m²) with leaf and opposing-almond motifs, lit by 12 and 11 oculi and roof lanterns; to its east is an 8.08 m² vaulted rectangular toilet. The caldarium has a hexagonal central area with seven iwans around it, four vaulted bathing cells (2.50 × 3.50 m) around the central slab and three domed bathing cells to the north (11.14, 16.02 and 12.04 m²). The marble railings of the iwans and original basins survive. At the south end are a vaulted furnace and a parallel woodshed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "704-706"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-kullanim",
+      "order": 5,
+      "title": {
+        "tr": "Depremler, Onarımlar ve Mülkiyet",
+        "en": "Earthquakes, Repairs and Ownership"
+      },
+      "body": {
+        "tr": "Hamam 1555, 1568, 1588 ve son olarak 1855'te meydana gelen depremler sonrasında çeşitli dönemlerde kapsamlı onarım görmüştür. Hâlâ işlevini sürdüren yapı, bir dönem “Kalyoncuoğlu Kızı” olarak tanınan Ovakim adlı bir Ermeni kadın tarafından ilgili vakıftan satın alınarak işletilmiştir. 1914'te Ovakim'in ölümünün ardından Ermeni cemaati kullanım hakkını devralmak için girişimde bulunmuş, ancak mülk vakıf statüsünde olduğundan yapı yeniden Vakıflar İdaresi'ne devredilmiştir.",
+        "en": "The bath underwent extensive repairs at different periods after the earthquakes of 1555, 1568, 1588 and finally 1855. Still functioning, it was for a period bought from the foundation and operated by an Armenian woman named Ovakim, known as the “Kalyoncuoğlu daughter”. After her death in 1914 the Armenian community tried to assume the right of use, but since the property had foundation status it was transferred back to the Foundations Administration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "706"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Dış ölçüler",
+        "en": "External dimensions"
+      },
+      "value": "40,87 × 12,98",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "703"
+        }
+      ]
+    },
+    {
+      "key": "soguklik_olcusu",
+      "label": {
+        "tr": "Soğukluk ölçüsü",
+        "en": "Frigidarium size"
+      },
+      "value": "10,70 × 10,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "704"
+        }
+      ]
+    },
+    {
+      "key": "giris_acikligi",
+      "label": {
+        "tr": "Giriş açıklığı genişliği / derinliği",
+        "en": "Entrance opening width / depth"
+      },
+      "value": "1 / 0,65",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "704"
+        }
+      ]
+    },
+    {
+      "key": "iklik_alani",
+      "label": {
+        "tr": "Ilıklık iki mekânın alanı",
+        "en": "Tepidarium room areas"
+      },
+      "value": "14,46 ve 12,45",
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "704"
+        }
+      ]
+    },
+    {
+      "key": "tuvalet_alani",
+      "label": {
+        "tr": "Tuvalet bölümü alanı",
+        "en": "Toilet section area"
+      },
+      "value": 8.08,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "704-705"
+        }
+      ]
+    },
+    {
+      "key": "yikanma_hucresi",
+      "label": {
+        "tr": "Sıcaklıkta yıkanma hücresi",
+        "en": "Bathing cells in caldarium"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "705"
+        }
+      ],
+      "note": {
+        "tr": "Her biri 2,50 × 3,50 m.",
+        "en": "Each 2.50 × 3.50 m."
+      }
+    },
+    {
+      "key": "halvet_alanlari",
+      "label": {
+        "tr": "Kuzey halvetlerin alanı",
+        "en": "Northern bathing cells' areas"
+      },
+      "value": "11,14; 16,02 ve 12,04",
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "705-706"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Sıcaklıktaki eyvan sayısı",
+        "en": "Number of iwans in caldarium"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "705"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mesih Mehmed Paşa",
+      "role": {
+        "tr": "Hamamı yaptıran, II. Bayezid dönemi sadrazamı",
+        "en": "Founder, grand vizier under Bayezid II"
+      }
+    },
+    {
+      "name": "Mevlânâ Nasuh Efendi",
+      "role": {
+        "tr": "Vakfın uzun süreli mütevellisi; hamama adını verdi",
+        "en": "Long-time trustee of the foundation; gave the bath its name"
+      }
+    },
+    {
+      "name": "Mehmed Efendi",
+      "role": {
+        "tr": "Nasuh Efendi'nin oğlu, mütevelli",
+        "en": "Son of Nasuh Efendi, trustee"
+      }
+    },
+    {
+      "name": "Ovakim (“Kalyoncuoğlu Kızı”)",
+      "role": {
+        "tr": "Hamamı vakıftan satın alıp işleten Ermeni kadın; 1914'te öldü",
+        "en": "Armenian woman who bought and ran the bath from the foundation; died 1914"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1483-oncesi",
+      "year": 1483,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Hamam 1483'ten önce yaptırıldı (tam yıl bilinmiyor)",
+        "en": "Bath built before 1483 (exact year unknown)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "703"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1555",
+      "year": 1555,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem; sonrasında kapsamlı onarım",
+        "en": "Earthquake; extensive repair afterwards"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "706"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1568",
+      "year": 1568,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem; sonrasında kapsamlı onarım",
+        "en": "Earthquake; extensive repair afterwards"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "706"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1588",
+      "year": 1588,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem; sonrasında kapsamlı onarım",
+        "en": "Earthquake; extensive repair afterwards"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "706"
+        }
+      ]
+    },
+    {
+      "id": "kadinlar-yikim-1588",
+      "year": 1588,
+      "date": "1588-04-06",
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Batıdaki kadınlar bölümü yıktırıldı; malzemesiyle erkekler kısmı onarıldı",
+        "en": "Women's section on the west demolished; men's section repaired with its materials"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "703"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Son deprem; sonrasında kapsamlı onarım",
+        "en": "Last earthquake; extensive repair afterwards"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "706"
+        }
+      ]
+    },
+    {
+      "id": "ovakim-1914",
+      "year": 1914,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Ovakim'in ölümü; kullanım hakkı talebine rağmen yapı yeniden Vakıflar İdaresi'ne devredildi",
+        "en": "Ovakim's death; despite a request for the right of use, the building returned to the Foundations Administration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "706"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, kuzey-güney doğrultusunda uzanan, dışarıdan taş ve tuğla sıralarının dönüşümlü örüldüğü, kiremit kaplı kubbe ve çatılı uzun bir yapıdır. Kuzey cephedeki taç kapıdan üç basamaklı mermer merdivenle çift kanatlı ahşap kapıya çıkılır. İçeride yaklaşık on bir metre kenarlı, sekizgen kasnaklı kubbeli bir soğukluk, ortasında fıskiyeli havuz ve çevresinde asma kattaki soyunma hücreleri bulunur. Ardından iki kubbeli ılıklık ve altıgen merkezli, yedi eyvanlı sıcaklık gelir; en güneyde külhan ve odunluk yer alır.",
+      "en": "The bath is a long building running north-south, its exterior of alternating stone and brick rows, with tiled domes and roof. From the portal on the north, a three-step marble stair rises to a double-leafed wooden door. Inside is a frigidarium about eleven metres square under a dome on an octagonal drum, with a fountain pool at the centre and changing cells on a mezzanine around it. Next come a tepidarium of two domed rooms and a caldarium with a hexagonal centre and seven iwans; the furnace and woodshed are at the far south."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

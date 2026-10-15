@@ -1,0 +1,600 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ordekli-hamam",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 711-716) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Banî kaynakta yok (yalnızca hükümdar dönemleri anılıyor); 'founder' boş.",
+      "Nalıncılar Hamamı için ilçe kaynakta verilmiyor (yalnızca 'çarşı içinde, I. Murad dönemi'); relation hedefi 'bursa-osmangazi-nalincilar-hamami' ilçe bakımından tahminidir.",
+      "'Müftü Suyu' hattı için ayrı bir kayıt/kimlik yok; su ağı bağlantısı relation olarak eklenmedi.",
+      "Kitabenin ne anlama geldiği/neyi kaydettiği kaynakta belirtilmiyor; 1301 hicri yıl için miladi karşılığı kitapta verilmiyor.",
+      "Restorasyon sonrası ayrı bölümlerin bugünkü kullanımları (fuaye, sergi holü vb.) güncel mi, sahada teyit edilmeli.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[tamamlanma]",
+        "note": "Tamamlanma yılı kaynakta kesin yok; 'Çelebi Mehmed'in tahta çıkışı sonrası' ifadesiyle 1402-1421 aralığı veriliyor, kayıt 'probable'."
+      },
+      {
+        "field": "sections[kadinlar-bolumu]",
+        "note": "Türkçe metindeki 'yarım dikdörtgen çerçeve', 'sivri kemerli açıklık' gibi ifadeler özetlenirken ayrıntıya girilmedi; ölçüler ve alanlar kaynaktaki gibi korundu."
+      },
+      {
+        "field": "sections[erkekler-bolumu]",
+        "note": "İngilizce metinde bir cümle 'illuminated with.' diye yarım kalıyor (halvet bölümü, s. 716); Türkçe metinde cümle 'fil gözleriyle aydınlatılmıştır' diye tamamlanıyor. Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ördekli Hamam",
+    "en": "Ördekli Bath"
+  },
+  "alternate_names": [
+    {
+      "tr": "Eski Yeni Hamam",
+      "en": "Eski Yeni (Old New) Bath",
+      "note": "Kaynaktaki parantez içi ad"
+    },
+    {
+      "tr": "Yeni Hamam",
+      "en": "Yeni (New) Bath",
+      "note": "Nalıncılar Hamamı'ndan sonra yapıldığı için"
+    },
+    {
+      "tr": "Yıkık Hamam",
+      "en": "Yıkık (Ruined) Bath",
+      "note": "Büyük kubbesi uzun süre yıkık kaldığı için"
+    },
+    {
+      "tr": "Ördekli Kültür Merkezi",
+      "en": "Ördekli Cultural Center",
+      "note": "Restorasyon sonrası adı"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "çifte hamam",
+    "hipokaust",
+    "Müftü Suyu",
+    "kültür merkezi",
+    "Yıldırım Bayezid",
+    "Ankara Savaşı",
+    "kervan yolu"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tayakadın Mahallesi",
+    "address": "Abdal Caddesi No: 61",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "711"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yıldırım Bayezid döneminde başlandı (H. 791-805 / M. 1389-1402); Çelebi Mehmed döneminde (H. 805-824 / M. 1402-1421) tamamlandığı anlaşılıyor",
+      "en": "Begun under Yıldırım Bayezid (AH 791-805 / AD 1389-1402); understood to have been completed under Çelebi Mehmed (AH 805-824 / AD 1402-1421)"
+    },
+    "start_year": 1389,
+    "end_year": 1421,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitabe yok; kaynak 'tahmin edilmektedir' ve 'anlaşılmaktadır' ifadelerini kullanıyor.",
+      "en": "No inscription; the source uses 'it is believed' and 'it is understood'."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "711"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Yıldırım Bayezid döneminde başlanıp Ankara Savaşı sonrası yarım kaldığı, Çelebi Mehmed döneminde tamamlandığı tahmin edilen, Osmanlı'nın en büyük çifte hamamlarından biri. 2004-2008'de restore edilerek “Ördekli Kültür Merkezi” olmuştur.",
+    "en": "One of the largest double baths of the Ottoman period, thought to have been begun under Yıldırım Bayezid, left unfinished after the Battle of Ankara and completed under Çelebi Mehmed. Restored in 2004-2008, it opened as the “Ördekli Cultural Center”."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Tarihçe ve Adlar",
+        "en": "Location, History and Names"
+      },
+      "body": {
+        "tr": "Hamam, Osmangazi ilçesi Tayakadın Mahallesi Abdal Caddesi No: 61'dedir. Kitabesi yoktur; dönemin önemli ticaret güzergâhlarından olan kervan yolu üzerinde inşa edilmiştir. Yapımına Yıldırım Bayezid döneminde (H. 791-805 / M. 1389-1402) başlandığı, ancak 1402'deki Ankara Savaşı sonrası Bursa'nın Timur ordusunca işgaliyle inşaatın yarım kaldığı tahmin edilmektedir; bu sürede hamam için getirilen su çevredeki evlerce kendi kullanımlarına yönlendirilmiştir. Yapının Fetret Devri'nin sona ermesi ve Sultan Çelebi Mehmed'in (H. 805-824 / M. 1402-1421) tahta çıkışı sonrasında tamamlandığı anlaşılmaktadır.",
+        "en": "The bath is at Abdal Street No. 61, Tayakadın Neighborhood, Osmangazi. It has no inscription and was built on the caravan road, one of the period's important trade routes. Construction is believed to have begun under Yıldırım Bayezid (AH 791-805 / AD 1389-1402) but to have been left unfinished when Timur's army occupied Bursa after the Battle of Ankara in 1402; the water brought for the bath was meanwhile diverted by neighbouring houses for their own use. It is understood to have been completed after the end of the Interregnum and the accession of Sultan Çelebi Mehmed (AH 805-824 / AD 1402-1421)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711"
+        }
+      ]
+    },
+    {
+      "id": "adlar-ve-su",
+      "order": 2,
+      "title": {
+        "tr": "Adları ve Su İhtiyacı",
+        "en": "Names and Water Supply"
+      },
+      "body": {
+        "tr": "Sultan I. Murad döneminde çarşı içinde yapılan Nalıncılar Hamamı'ndan sonra inşa edildiği için “Yeni Hamam”, kentte hamamlar çoğalınca “Eski Yeni Hamam” adını almıştır. Osmanlı döneminde inşa edilen en büyük çifte hamamlardan biri sayılır. Kurnaları ördek gagasına benzetildiği için halk arasında “Ördekli Hamam”, büyük kubbesi uzun süre yıkık kaldığı için “Yıkık Hamam” olarak da anılmıştır. Su ihtiyacı, Şeyhülislam Kara Çelebizâde Abdülaziz Efendi'nin Uludağ'ın Ayıalanı mevkiinden şehre getirdiği “Müftü Suyu” hattıyla karşılanmıştır.",
+        "en": "Because it was built after the Nalıncılar Bath in the bazaar (reign of Sultan Murad I), it was called the “Yeni (New) Bath”, later “Eski Yeni (Old New) Bath” as baths multiplied. It is considered one of the largest double baths of the Ottoman period. It is known as “Ördekli (Duck) Bath” because its basins resemble duck beaks and as “Yıkık (Ruined) Bath” because its large dome stayed ruined for a long time. Its water came from the “Mufti Water” line that Shaykh al-Islam Kara Çelebizâde Abdülaziz Efendi brought to the city from the Ayıalanı area of Uludağ."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711-712"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 3,
+      "title": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "body": {
+        "tr": "Doğu-batı doğrultusunda yaklaşık 1400 m²'lik kapalı alana sahip yapıda kuzeyde kadınlar, güneyde erkekler bölümü vardır. İki sokağın eğimli kesişim noktasında yer aldığından plan, araziye uyum sağlayacak şekilde farklı kenar uzunluklu yamuk formludur; soğukluk birimleri aksiyal değildir. Erkekler bölümü genel olarak kadınlar kısmına benzer, ancak iç ölçülerde farklar vardır ve bir halvet ile bir tuvalet daha içerir. Erkekler girişi doğu cepheden, kadınlar girişi kuzeydoğudaki sokaktandır.",
+        "en": "Extending east-west over about 1400 m² of enclosed area, the building has the women's section in the north and the men's in the south. Standing at the sloping intersection of two streets, it has a trapezoidal plan adapting to the terrain, so the frigidarium units are not axial. The men's section is similar overall but differs in interior dimensions and has one more bathing cell and a toilet. The men's entrance is on the east, the women's from the northeast street."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712"
+        }
+      ]
+    },
+    {
+      "id": "kadinlar-bolumu",
+      "order": 4,
+      "title": {
+        "tr": "Kadınlar Bölümü",
+        "en": "Women's Section"
+      },
+      "body": {
+        "tr": "Kadınlar soğukluğuna kuzeydoğu duvarındaki çift kemerli, çift kanatlı ahşap kapıdan girilir. 111 m²'lik bu bölümün ortasında sekiz köşeli fıskiyeli havuz vardır; duvarlar sıvasızdır. Üst örtü, tuğla kemerlerle oluşturulan pandantiflerle sekizgen kasnağa taşınan, yaklaşık 10,50 m çaplı bir kubbedir; ortasında çokgen formlu büyük bir aydınlık feneri bulunur. Zemin mermer döşelidir ve bölüm bugün kültür merkezinin fuaye alanıdır. 55 m²'lik kare planlı ılıklık pandantiflerle sekizgen kasnağa oturan kiremit kaplı kubbeyle örtülüdür (bugün içecek servisi alanı). 65 m²'lik dikdörtgen sıcaklığın ortasında mukarnaslı pandantiflerle on altıgen kasnağa oturan on iki dilimli bir kubbe bulunur (bugün sergi holü). Batı duvarındaki iki kapı, her biri 30 m² olan ve kubbeli iki halvete açılır; biri atölye, diğeri idari birim olarak kullanılır.",
+        "en": "The women's frigidarium is entered through a double-arched, double-leafed wooden door in the northeast wall. This 111 m² room has an octagonal fountain pool at its centre and unplastered walls. It is covered by a dome about 10.50 m in diameter carried to an octagonal drum by brick-arch pendentives, with a large polygonal lantern at its centre; the marble-paved floor is now the cultural center's foyer. The 55 m² square tepidarium has a tiled dome on an octagonal drum (now a beverage area). The 65 m² rectangular caldarium has a twelve-segmented dome on a hexadecagonal drum with muqarnas pendentives (now an exhibition hall). Two doors on the west wall open to two domed 30 m² bathing cells, used as a workshop and an administrative unit."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "713-715"
+        }
+      ]
+    },
+    {
+      "id": "erkekler-bolumu",
+      "order": 5,
+      "title": {
+        "tr": "Erkekler Bölümü",
+        "en": "Men's Section"
+      },
+      "body": {
+        "tr": "Erkekler soğukluğu 151 m²'dir ve kubbesi uzun yıllar yıkık kaldığından “Yıkık Hamam” denmiştir; güneydoğu köşesi ve yarım kubbe son restorasyonda tamamlanmıştır. Biri tam, biri yarım iki kubbeyle örtülüdür; ana kubbe mukarnaslı pandantiflerle sekizgen kasnağa oturur ve kiremit kaplıdır, kasnak, kemerler ve kubbe tamamen tuğladandır. 72 m²'lik ılıklık çokgen kasnaklı kubbeyle örtülü ve 61 fil gözüyle aydınlanır (bugün çok amaçlı salon). 63 m²'lik sıcaklık sekizgen kasnaklı kubbeyle örtülüdür; kubbe yüzeyinde Türk üçgenleri ve sekiz köşeli yıldız bezemeler, 32 fil gözü vardır. Batı duvarındaki iki kapıdan, her biri 31 m² olan halvetlere geçilir (biri ofis, biri atölye). Batıdaki 26 m²'lik su deposu ve 34 m²'lik külhan tonoz örtülü ve kiremit kaplıdır; bugün küçük etkinlikler için kullanılır. Restorasyonla kadınlar ve erkekler bölümleri arasında yeni bir geçiş açılmıştır.",
+        "en": "The men's frigidarium (151 m²) was called the “Yıkık (Ruined) Bath” because its dome stayed ruined for years; its southeast corner and half dome were completed in the last restoration. It is covered by one full and one half dome; the main dome sits on an octagonal drum with muqarnas pendentives and is tiled, the drum, arches and dome being entirely brick. The 72 m² tepidarium has a dome on a polygonal drum lit by 61 oculi (now a multi-purpose hall). The 63 m² caldarium has a dome on an octagonal drum with Turkish triangles and eight-pointed star decoration, lit by 32 oculi. Two doors on the west wall open to 31 m² bathing cells (an office and a workshop). The 26 m² water tank and 34 m² furnace in the west are vaulted and tiled, and are used for small events. The restoration opened a new passage between the women's and men's sections."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "715-716"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-kullanim",
+      "order": 6,
+      "title": {
+        "tr": "Onarımlar, Isıtma ve Restorasyon",
+        "en": "Repairs, Heating and Restoration"
+      },
+      "body": {
+        "tr": "Hamam uzun yıllar işlevini yitirmiş, bir dönem toprak eşya atölyesi ve belediye deposu olarak kullanılmıştır. 1495'te kapsamlı onarım görmüş, 1620'de yağmurdan zarar gören kubbe ve camekân kiremitleri yenilenerek yeniden düzenlenmiştir. Isıtma sistemi olarak külhandan gelen kuru buharın döşeme ve duvar içlerinde dolaştırıldığı “hipokaust” sistemi kullanılmıştır. 2004-2008'de Vakıflar ve Osmangazi Belediyesi iş birliğiyle yürütülen restorasyonla “Ördekli Kültür Merkezi” adıyla kültürel kullanıma açılmıştır; yapı bugün şehir etkinliklerinin önemli duraklarından biridir.",
+        "en": "The bath lost its function for many years and was for a time used as an earthenware workshop and municipal warehouse. It underwent extensive repairs in 1495 and was remodelled in 1620 by replacing the dome and glazed tiles damaged by rain. Heating used the “hypocaust” system, circulating dry steam from the furnace through floors and walls. The restoration carried out in 2004-2008 in cooperation between the General Directorate of Foundations and Osmangazi Municipality opened it for cultural use as the “Ördekli Cultural Center”; it is now one of the important stops of city activities."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712, 716"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kapali_alan",
+      "label": {
+        "tr": "Kapalı alan",
+        "en": "Enclosed area"
+      },
+      "value": "~1400",
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712"
+        }
+      ]
+    },
+    {
+      "key": "kadin_soguklik_alani",
+      "label": {
+        "tr": "Kadınlar soğukluğu alanı",
+        "en": "Women's frigidarium area"
+      },
+      "value": 111,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "713"
+        }
+      ]
+    },
+    {
+      "key": "kadin_kubbe_capi",
+      "label": {
+        "tr": "Kadınlar soğukluk kubbe çapı",
+        "en": "Women's frigidarium dome diameter"
+      },
+      "value": "~10,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "713"
+        }
+      ]
+    },
+    {
+      "key": "kadin_iklik_alani",
+      "label": {
+        "tr": "Kadınlar ılıklık alanı",
+        "en": "Women's tepidarium area"
+      },
+      "value": 55,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "713-714"
+        }
+      ]
+    },
+    {
+      "key": "kadin_sicaklik_alani",
+      "label": {
+        "tr": "Kadınlar sıcaklık alanı",
+        "en": "Women's caldarium area"
+      },
+      "value": 65,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "714"
+        }
+      ]
+    },
+    {
+      "key": "erkek_soguklik_alani",
+      "label": {
+        "tr": "Erkekler soğukluğu alanı",
+        "en": "Men's frigidarium area"
+      },
+      "value": 151,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "715"
+        }
+      ]
+    },
+    {
+      "key": "erkek_iklik_alani",
+      "label": {
+        "tr": "Erkekler ılıklığı alanı",
+        "en": "Men's tepidarium area"
+      },
+      "value": 72,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ],
+      "note": {
+        "tr": "61 fil gözü.",
+        "en": "61 oculi."
+      }
+    },
+    {
+      "key": "erkek_sicaklik_alani",
+      "label": {
+        "tr": "Erkekler sıcaklığı alanı",
+        "en": "Men's caldarium area"
+      },
+      "value": 63,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ],
+      "note": {
+        "tr": "32 fil gözü.",
+        "en": "32 oculi."
+      }
+    },
+    {
+      "key": "su_deposu_alani",
+      "label": {
+        "tr": "Su deposu alanı",
+        "en": "Water tank area"
+      },
+      "value": 26,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    },
+    {
+      "key": "kulhan_alani",
+      "label": {
+        "tr": "Külhan alanı",
+        "en": "Furnace area"
+      },
+      "value": 34,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyhülislam Kara Çelebizâde Abdülaziz Efendi",
+      "role": {
+        "tr": "“Müftü Suyu” hattını Uludağ'ın Ayıalanı'ndan şehre getirdi; hamamın su ihtiyacını karşıladı",
+        "en": "Brought the “Mufti Water” line from Ayıalanı on Uludağ; supplied the bath's water"
+      }
+    },
+    {
+      "name": "Abdülhamid Efendi",
+      "role": {
+        "tr": "Kitabede adı geçen, gazhaneci tüccar İsmail Ağa'nın oğlu",
+        "en": "Named in the inscription, son of gasworks merchant İsmail Ağa"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kadinlar-kitabe",
+      "location": {
+        "tr": "Kadınlar soğukluğunun doğu duvarındaki panoda",
+        "en": "Panel on the east wall of the women's frigidarium"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": "Brusa gazhaneci tüccar İsmail Ağa’nın oğlu Abdülhamid Efendi, sene 1301",
+      "translation": null,
+      "date": {
+        "hijri_year": 1301,
+        "gregorian": null
+      },
+      "note": {
+        "tr": "Kısmen tahrip olmuş; kitabenin meali kaynakta verilmemiş. Kitabenin neye ait olduğu (onarım, bağış vb.) belirtilmemiş.",
+        "en": "Partially damaged; the source gives no rendering of its meaning or what it records (repair, donation, etc.)."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "713"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-baslangic",
+      "year": 1389,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Yıldırım Bayezid döneminde inşaata başlandı (H. 791-805 / M. 1389-1402)",
+        "en": "Construction began under Yıldırım Bayezid (AH 791-805 / AD 1389-1402)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711"
+        }
+      ],
+      "note": {
+        "tr": "Yıl aralığın başlangıcı olarak girildi; kesin yıl bilinmiyor.",
+        "en": "Year entered as the start of the range; the exact year is unknown."
+      }
+    },
+    {
+      "id": "yarim-1402",
+      "year": 1402,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Ankara Savaşı sonrası Timur ordusunun Bursa'yı işgali nedeniyle inşaat yarım kaldı",
+        "en": "Construction left unfinished when Timur's army occupied Bursa after the Battle of Ankara"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711"
+        }
+      ]
+    },
+    {
+      "id": "tamamlanma",
+      "year": 1402,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Fetret Devri sonrası, Çelebi Mehmed döneminde (1402-1421) tamamlandığı anlaşılıyor",
+        "en": "Understood to have been completed after the Interregnum under Çelebi Mehmed (1402-1421)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711"
+        }
+      ],
+      "note": {
+        "tr": "Kesin yıl bilinmiyor; 1402-1421 aralığının başı kullanıldı.",
+        "en": "The exact year is unknown; the start of the 1402-1421 range is used."
+      }
+    },
+    {
+      "id": "onarim-1495",
+      "year": 1495,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Extensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    },
+    {
+      "id": "yenileme-1620",
+      "year": 1620,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Yağmurdan zarar gören kubbe ve camekân kiremitleri yenilenerek yeniden düzenlendi",
+        "en": "Remodelled by replacing the dome and glazed tiles damaged by rain"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "716"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar ve Osmangazi Belediyesi iş birliğiyle restorasyon (2004-2008); Ördekli Kültür Merkezi olarak açıldı",
+        "en": "Restoration by the Foundations Directorate and Osmangazi Municipality (2004-2008); opened as the Ördekli Cultural Center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "712, 716"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-nalincilar-hamami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Hamam, Nalıncılar Hamamı'ndan sonra yapıldığı için “Yeni Hamam” adını almıştır.",
+        "en": "The bath was called “Yeni (New) Bath” because it was built after the Nalıncılar Bath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "711"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, iki sokağın eğimli kesişiminde yer alan, yamuk planlı büyük bir taş ve tuğla yapıdır; kuzeyinde kadınlar, güneyinde erkekler bölümü vardır. Kadınlar soğukluğuna kuzeydoğudan, çift kemerli ahşap kapıdan girilir; ortasında sekiz köşeli havuz, üstünde on metreyi aşan çaplı, ortasında büyük ışıklıklı bir kubbe bulunur. Erkekler bölümü doğudan girilir; iki kubbeli geniş bir soğukluk, ılıklık ve sıcaklık bölümleri sırasıyla batıya doğru uzanır, en batıda su deposu ve külhan yer alır. Kubbelerde yıldız ve üçgen biçimli bezemeler ve çok sayıda küçük fil gözü pencere görülür.",
+      "en": "The bath is a large stone and brick building with a trapezoidal plan at the sloping junction of two streets, with the women's section to the north and the men's to the south. The women's frigidarium is entered from the northeast through a double-arched wooden door; it has an octagonal pool in the middle and a dome over ten metres across with a large lantern. The men's section is entered from the east; a wide frigidarium under two domes, then the tepidarium and caldarium extend westward, with the water tank and furnace at the far west. The domes carry star and triangle decoration and many small oculi."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

@@ -1,0 +1,452 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-bursa-dullar-evi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Sivil Mimari",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Sivil Mimari (Osmangazi) bölümünden (s. 723-743) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir. İngilizce alanlar kitabın İngilizce çevirisinden kısaltılmıştır.",
+    "todos": [
+      "Binanın inşa tarihi ve mimarı kitapta yok (architect = null).",
+      "1999'daki 'Darülaceze binası' tahsisinin tam olarak bu Dullar Evi yapısı olup olmadığı metinde açıkça söylenmiyor; güven düzeyi 'probable'. Teyit edilmeli.",
+      "Darülaceze ile bağlantı için ilişki kaydı eklenmedi (hedef yapı, ilçe ve ad metinde yok).",
+      "Binanın bugünkü kullanımı (1999 tahsisi sonrası Alacahırka Aile Eğitim Merkezi olarak sürüp sürmediği) kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahadan veya haritadan doğrulanmış koordinat eklenmeli (location.coordinates).",
+      "Fotoğraflar (media) ve Zaman Perdesi arşiv fotoğrafları (archive_media) henüz yok; Drive klasörü (media_folder) belirlenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[yapi-ve-mekanlar]",
+        "note": "'hamurhane' için İngilizce metin 'pastry shop' diyor; Türkçe terim 'hamur yapılan yer' anlamına gelir. Kitabın İngilizcesi korundu."
+      },
+      {
+        "field": "sections[mudire-ve-gelir]",
+        "note": "Türkçe metinde 'ilgili nazırın onayı', İngilizce metinde 'relevant overseer' geçiyor; çeviri farkı. Türkçe esas alındı."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap vakfın kuruluş (1916) tarihini verir, binanın inşa tarihini vermez; dating vakıf tarihidir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Bursa Dullar Evi",
+    "en": "Bursa Widows' House"
+  },
+  "subtitle": {
+    "tr": "Dullar Evi Vakfı",
+    "en": "Widows' House Foundation"
+  },
+  "alternate_names": [
+    {
+      "tr": "Dul Nisvân-ı Müslimîn",
+      "en": "Dul Nisvân-ı Müslimîn",
+      "note": "Yapının özgün adı"
+    },
+    {
+      "tr": "Alacahırka Aile Eğitim Merkezi",
+      "en": "Alacahırka Family Education Center",
+      "note": "1999 tahsisinden sonraki onarımla yeniden hizmete açıldığı ad"
+    }
+  ],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "dullar evi",
+    "sosyal yardım",
+    "vakıf",
+    "şehit dulları",
+    "Darülaceze",
+    "1916"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alacahırka",
+    "address": "Demirkapı Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "733"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1916 (vakfiye 12 Temmuz 1916; irade 12 Kasım 1916)",
+      "en": "1916 (charter 12 July 1916; decree 12 November 1916)"
+    },
+    "start_year": 1916,
+    "end_year": 1916,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Vakıf 1916'da Hacı Saffet Bey tarafından kurulmuştur; 12 Temmuz 1916 tarihli vakfiyeye dayanarak 12 Kasım 1916 iradesiyle tescil edilmiştir. Binanın inşa tarihi kitapta ayrıca verilmemiştir.",
+      "en": "The foundation was established in 1916 by Hacı Saffet Bey and registered by decree of 12 November 1916 on the basis of its charter of 12 July 1916. The building's construction date is not given separately."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "733-734"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Saffet Bey",
+    "role": "vakıf kurucusu",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "733"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Dullar Evi Vakfı",
+    "deed": {
+      "date_display": "12 Temmuz 1916",
+      "excerpt": {
+        "tr": "Vakıf, 12 Temmuz 1916 tarihli vakfiyesine dayanarak, Şûrâ-yı Evkaf'ın 25 Ekim 1916 tarihli kararı doğrultusunda 12 Kasım 1916'da çıkarılan iradeyle resmen tescil edilmiştir.",
+        "en": "The foundation was officially registered by decree issued on 12 November 1916, based on its charter dated 12 July 1916, in accordance with the Şûrâ-yı Evkaf decision of 25 October 1916."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "734"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "38 maddelik yönetmeliğe göre yönetim Bursa Belediye Başkanı ve il müftüsündedir. Belediye Meclisi kararı ve ilgili nazırın onayıyla uygun görülen Müslüman şehitlerin namuslu dul eşleri alınır; şehit eşi yoksa evi olmayan, kimsesiz, suça karışmamış, sağlıklı ve bedensel engeli bulunmayan kadınlar da kabul edilebilir. Kabul edilen kadınlar arasından dindar, namaz kılan, okuma yazma bilen biri müdire olarak görevlendirilir; dükkân ve fırın kira gelirleri müdireye maaş olarak ayrılır.",
+      "en": "Under the 38-article regulation, management was given to the Mayor of Bursa and the provincial mufti. Honorable widows of Muslim martyrs approved by the Municipal Council and the relevant minister were admitted; absent martyrs' wives, homeless, lonely, healthy women with no physical disability and no criminal involvement could also be admitted. A religious, praying, literate resident would be appointed 'director'; rental income of the shop and bakery was allocated as her salary."
+    },
+    "land_note": {
+      "tr": "Vakfiyeye göre doğuda dere ve umumi yol, batıda Değirmenci Kızı Zeynî Hatun'un evi, kuzeyde Sarı Mustafa'nın evi, güneyde Hamza Bey yoluyla çevrilidir. İçerideki dükkânlar vakfın gelirini sağlamak için işlevlendirilmiştir.",
+      "en": "According to the charter, it is bordered by a stream and public road to the east, the house of Zeynî Hatun daughter of Değirmenci to the west, the house of Sarı Mustafa to the north and Hamza Bey's road to the south. The shops inside provided the foundation's income."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "733-735"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hacı Saffet Bey'in 1916'da kurduğu Dullar Evi Vakfı, şehit dullarına ve kimsesiz kadınlara barınma sağlayan, bahçe içinde 34 odalı bir sosyal yardım yapısıdır. Özgün adı 'Dul Nisvân-ı Müslimîn'dir; sonradan Darülaceze çatısı altındaki kurumlar arasına girmiş, 1999 tahsisinden sonra onarılarak 'Alacahırka Aile Eğitim Merkezi' adıyla yeniden hizmete açılmıştır.",
+    "en": "The Widows' House Foundation, founded by Hacı Saffet Bey in 1916, is a 34-room social-aid building in a garden sheltering martyrs' widows and homeless women. Its original name was 'Dul Nisvân-ı Müslimîn'; it later joined the institutions under the Darülaceze and, after a 1999 allocation, was repaired and reopened as the 'Alacahırka Family Education Center'."
+  },
+  "sections": [
+    {
+      "id": "konum",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve sınırlar",
+        "en": "Location and boundaries"
+      },
+      "body": {
+        "tr": "Yapı Alacahırka Mahallesi'nde Demirkapı Caddesi üzerindedir. Vakfiyedeki bilgilere göre doğuda dere ve umumi yol, batıda Değirmenci Kızı Zeynî Hatun'un evi, kuzeyde Sarı Mustafa'nın evi, güneyde Hamza Bey yoluyla çevrilidir.",
+        "en": "The building is on Demirkapı Street in the Alacahırka Neighborhood. According to the charter it is bordered by a stream and public road to the east, the house of Zeynî Hatun daughter of Değirmenci to the west, the house of Sarı Mustafa to the north and Hamza Bey's road to the south."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "733"
+        }
+      ]
+    },
+    {
+      "id": "yapi-ve-mekanlar",
+      "order": 2,
+      "title": {
+        "tr": "Yapı ve mekânlar",
+        "en": "Building and spaces"
+      },
+      "body": {
+        "tr": "Bahçe içindeki vakıf binası alt ve üst katlarda 17'şer, toplam 34 odadan oluşur. İki salon, bir hamam, bir mutfak, bir bakkal dükkânı, bir hamurhane, bir simit fırını ve bir ahır bulunur; içerideki dükkânlar vakfın gelirini sağlamak için işlevlendirilmiştir.",
+        "en": "The foundation building in a garden has 17 rooms on each of the lower and upper floors, 34 in total. It contains two halls, a bathhouse, a kitchen, a grocery store, a pastry shop, a bagel bakery and a stable; the shops provided income for the foundation."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "733-734"
+        }
+      ]
+    },
+    {
+      "id": "kurulus-ve-ad",
+      "order": 3,
+      "title": {
+        "tr": "Kuruluş, ad ve toplumsal bağlam",
+        "en": "Foundation, name and social context"
+      },
+      "body": {
+        "tr": "Yapının özgün adı 'Dul Nisvân-ı Müslimîn'dir; zamanla Darülaceze çatısı altında toplanan sosyal hizmet kurumları arasına girmiştir. I. Dünya Savaşı, Balkan Savaşları ve Kurtuluş Savaşı'nda çok sayıda asker şehit düşmüş, geride kalan eşleri ve çocukları bakım ve barınmaya muhtaç kalmış; bu ihtiyaca karşılık devlet destekli ve bireysel girişimlere dayalı yardım kuruluşları ve vakıflar faaliyete geçmiştir. Bursa Dullar Evi Vakfı bireysel inisiyatifle hayata geçirilmiş erken örneklerdendir; kitap onu mimari düzenlemesi ve işlevi bakımından eşsiz bir örnek ve geç Osmanlı ile erken Cumhuriyet dönemi için önemli bir sosyal yardım modeli olarak niteler.",
+        "en": "The original name was 'Dul Nisvân-ı Müslimîn'; over time it became one of the social service institutions gathered under the Darülaceze. During World War I, the Balkan Wars and the War of Independence many soldiers were martyred and their wives and children were left in need; state-supported and individual aid organizations and foundations arose in response. The Widows' House Foundation is described as one of the early examples of individual initiative, unique in its architectural arrangement and function, and an important social assistance model in the late Ottoman and early Republican periods."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "734"
+        }
+      ]
+    },
+    {
+      "id": "tescil-ve-yonetmelik",
+      "order": 4,
+      "title": {
+        "tr": "Tescil ve yönetmelik",
+        "en": "Registration and regulation"
+      },
+      "body": {
+        "tr": "Vakıf, 12 Temmuz 1916 tarihli vakfiyeye dayanarak, Şûrâ-yı Evkaf'ın 25 Ekim 1916 tarihli kararı doğrultusunda 12 Kasım 1916 iradesiyle resmen tescil edilmiştir. İşletmesi için 38 maddelik bir yönetmelik hazırlanmıştır. Yönetim Bursa Belediye Başkanı ile il müftüsüne verilmiş; kabul şartları Belediye Meclisi kararı ve ilgili nazırın onayını gerektirmiştir. Kuruma önce Müslüman şehitlerin namuslu dul eşleri alınacak, şehit eşi bulunmazsa evi olmayan, kimsesiz, suça karışmamış, sağlıklı ve bedensel engeli olmayan kadınlar da kabul edilebilecektir. Dullar Evi hayırsever, erdemli ve ahlaklı kadınlara sürekli hizmet vermek üzere kurulmuştur.",
+        "en": "The foundation was officially registered by decree of 12 November 1916 based on its charter of 12 July 1916 and the Şûrâ-yı Evkaf decision of 25 October 1916; a 38-article regulation was prepared. Management went to the Mayor of Bursa and the provincial mufti; admission needed a Municipal Council decision and the relevant minister's approval. Honorable widows of Muslim martyrs were admitted first; otherwise homeless, lonely, healthy women without physical disability or criminal involvement could be accepted. It was established to serve charitable, virtuous and moral women continuously."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "734-735"
+        }
+      ]
+    },
+    {
+      "id": "mudire-ve-gelir",
+      "order": 5,
+      "title": {
+        "tr": "Müdire ve gelir",
+        "en": "The director and income"
+      },
+      "body": {
+        "tr": "Kabul edilen kadınlar arasından dindar, namaz kılan, okuma yazma bilen biri mütevellinin önerisi, Belediye Meclisi kararı ve ilgili nazırın onayıyla 'müdire' görevlendirilecektir. Kurumdaki dükkân ve fırından elde edilen kira gelirleri müdireye maaş olarak ayrılacaktır.",
+        "en": "A religious, praying, literate woman among those admitted would be appointed 'director' on the trustee's recommendation, the Municipal Council's decision and the relevant overseer's approval. Rental income from the shop and bakery would be allocated as the director's salary."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "735"
+        }
+      ]
+    },
+    {
+      "id": "1999-tahsis",
+      "order": 6,
+      "title": {
+        "tr": "1999 tahsisi ve yeniden işlevlendirme",
+        "en": "The 1999 allocation and reuse"
+      },
+      "body": {
+        "tr": "30 Haziran 1999'da 30-18-1-2/1003-394-8 sayılı belgeye istinaden Darülaceze binası 10 yıl süreyle ve bedelsiz olarak Bursa Büyükşehir Belediye Başkanlığı'na tahsis edilmiştir. Tahsisin ardından yapı onarılmış ve 'Alacahırka Aile Eğitim Merkezi' adıyla yeniden hizmete açılmıştır.",
+        "en": "On 30 June 1999, by document no. 30-18-1-2/1003-394-8, the Darülaceze building was allocated to the Bursa Metropolitan Municipality for 10 years free of charge. It was then repaired and reopened as the 'Alacahırka Family Education Center'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "735"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "oda_sayisi",
+      "label": {
+        "tr": "Toplam oda sayısı",
+        "en": "Total rooms"
+      },
+      "value": 34,
+      "unit": "oda",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "733"
+        }
+      ],
+      "note": {
+        "tr": "Alt ve üst katlarda 17'şer oda.",
+        "en": "17 on each of the lower and upper floors."
+      }
+    },
+    {
+      "key": "yonetmelik_madde",
+      "label": {
+        "tr": "Yönetmelik madde sayısı",
+        "en": "Regulation articles"
+      },
+      "value": 38,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "734"
+        }
+      ]
+    },
+    {
+      "key": "kurulus_yili",
+      "label": {
+        "tr": "Kuruluş yılı",
+        "en": "Year founded"
+      },
+      "value": 1916,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "733"
+        }
+      ]
+    },
+    {
+      "key": "tahsis_suresi",
+      "label": {
+        "tr": "1999 tahsisi süresi",
+        "en": "1999 allocation term"
+      },
+      "value": 10,
+      "unit": "yıl",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "735"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Saffet Bey",
+      "role": {
+        "tr": "Dullar Evi Vakfı'nın kurucusu",
+        "en": "Founder of the Widows' House Foundation"
+      }
+    },
+    {
+      "name": "Zeynî Hatun (Değirmenci Kızı)",
+      "role": {
+        "tr": "Batı komşusu ev sahibi (vakfiyedeki sınır tarifi)",
+        "en": "Owner of the western neighboring house (charter boundary)"
+      }
+    },
+    {
+      "name": "Sarı Mustafa",
+      "role": {
+        "tr": "Kuzey komşusu ev sahibi (vakfiyedeki sınır tarifi)",
+        "en": "Owner of the northern neighboring house (charter boundary)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1916",
+      "year": 1916,
+      "date": "1916-07-12",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi",
+        "en": "Foundation charter dated"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "734"
+        }
+      ]
+    },
+    {
+      "id": "irade-1916",
+      "year": 1916,
+      "date": "1916-11-12",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İradeyle resmen tescil",
+        "en": "Officially registered by decree"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "734"
+        }
+      ],
+      "note": {
+        "tr": "Şûrâ-yı Evkaf kararı 25 Ekim 1916.",
+        "en": "Şûrâ-yı Evkaf decision 25 October 1916."
+      }
+    },
+    {
+      "id": "tahsis-1999",
+      "year": 1999,
+      "date": "1999-06-30",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Darülaceze binası Bursa Büyükşehir Belediyesi'ne 10 yıl bedelsiz tahsis edildi; onarılıp Alacahırka Aile Eğitim Merkezi olarak açıldı",
+        "en": "Darülaceze building allocated to the Metropolitan Municipality for 10 years free of charge; repaired and reopened as the Alacahırka Family Education Center"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "735"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "waqf",
+      "title": {
+        "tr": "Şehit dulları için bir vakıf evi",
+        "en": "A foundation house for martyrs' widows"
+      },
+      "hint": {
+        "tr": "Vakıf gelirleri iç dükkân ve fırından sağlandı; yönetim belediye başkanı ve müftüdeydi.",
+        "en": "Income came from the shop and bakery inside; management lay with the mayor and the mufti."
+      },
+      "section_id": "tescil-ve-yonetmelik"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yapı, bahçe içinde, alt ve üst katlarda on yedişer odalı iki katlı bir binadır. İçinde iki salon, bir hamam, bir mutfak, bir bakkal dükkânı, bir hamurhane, bir simit fırını ve bir ahır bulunur. Doğusunda dere ve yol, batısında ve kuzeyinde komşu evler, güneyinde bir yol vardır.",
+      "en": "The building is a two-storey structure in a garden with seventeen rooms on each floor. It contains two halls, a bathhouse, a kitchen, a grocery store, a pastry shop, a bagel bakery and a stable. A stream and road lie to the east, neighboring houses to the west and north, and a road to the south."
+    },
+    "audio_description_source": "Kitabın betimlemesi (vk-bursa-c1, s. 733-734)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}
