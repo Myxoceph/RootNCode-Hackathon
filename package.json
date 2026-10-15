@@ -10,7 +10,12 @@
   "engines": {
     "node": ">=20"
   },
+  "overrides": {
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
   "scripts": {
+    "app": "npm run start --workspace @vagabonds/app",
     "db:up": "docker compose up -d postgres",
     "db:down": "docker compose down",
     "contracts:validate": "npm run validate --workspace @vagabonds/contracts",
