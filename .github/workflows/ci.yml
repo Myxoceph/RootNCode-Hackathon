@@ -70,6 +70,9 @@ jobs:
       - name: Validate the mock data contract
         run: npm run contracts:validate
 
+      - name: Check design token contrast (WCAG 2.1 AA)
+        run: npm run ui:contrast
+
       - name: Validate the Prisma schema
         run: npm run prisma:validate --workspace @vagabonds/api
 
