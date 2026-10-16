@@ -4,7 +4,12 @@
  * real mapper. Every response is also parsed with the shared contract.
  */
 import "dotenv/config";
-import { AssetDetailSchema, AssetListResponseSchema } from "@vagabonds/contracts";
+import {
+  AssetDetailSchema,
+  AssetListResponseSchema,
+  AssetRelationsResponseSchema,
+  NearbyAssetsResponseSchema,
+} from "@vagabonds/contracts";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildApp } from "../src/app.ts";
 import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
@@ -150,6 +155,115 @@ describe.skipIf(!DATABASE_URL)("assets routes (PostgreSQL)", () => {
       expect(missing.json().error.code).toBe("ASSET_NOT_FOUND");
       expect(malformed.statusCode).toBe(400);
       expect(malformed.json().error.code).toBe("INVALID_ID");
+    });
+  });
+
+  describe("GET /assets/:id/relations", () => {
+    async function relationsOf(id: string) {
+      const response = await app.inject({ method: "GET", url: `/assets/${id}/relations` });
+      expect(response.statusCode).toBe(200);
+      return AssetRelationsResponseSchema.parse(response.json());
+    }
+
+    it("returns links in both directions, each with confidence and sources", async () => {
+      const body = await relationsOf(ULUCAMI);
+
+      expect(body.assetId).toBe(ULUCAMI);
+      expect(new Set(body.items.map((item) => item.direction))).toEqual(new Set(["outgoing", "incoming"]));
+      for (const item of body.items) {
+        expect(item.asset.id).not.toBe(ULUCAMI);
+        expect(item.sources.length).toBeGreaterThan(0);
+      }
+    });
+
+    it("shows a link recorded on both assets only once", async () => {
+      const relations = await prisma.asset_relation.findMany({
+        select: { source_asset_id: true, target_asset_id: true, type_code: true },
+      });
+      const keys = new Set(relations.map((r) => `${r.source_asset_id}>${r.target_asset_id}>${r.type_code}`));
+      const mutual = relations.find((r) => keys.has(`${r.target_asset_id}>${r.source_asset_id}>${r.type_code}`));
+      if (!mutual) return; // no link is recorded on both ends: nothing to check
+
+      const body = await relationsOf(mutual.source_asset_id);
+      const links = body.items.map((item) => `${item.asset.id}:${item.type.code}`);
+      expect(new Set(links).size).toBe(links.length);
+      const shown = body.items.filter(
+        (item) => item.asset.id === mutual.target_asset_id && item.type.code === mutual.type_code,
+      );
+      expect(shown.map((item) => item.direction)).toEqual(["outgoing"]);
+    });
+
+    it("counts links to unpublished assets without returning them", async () => {
+      const before = await relationsOf(ULUCAMI);
+      const hidden = before.items[0]?.asset.id;
+      if (!hidden) throw new Error(`${ULUCAMI} has no visible relations`);
+      const original = await prisma.asset.findUniqueOrThrow({ where: { id: hidden }, select: { status: true } });
+      try {
+        await prisma.asset.update({ where: { id: hidden }, data: { status: "in_review" } });
+        const after = await relationsOf(ULUCAMI);
+        const removed = before.items.filter((item) => item.asset.id === hidden).length;
+
+        expect(after.items.map((item) => item.asset.id)).not.toContain(hidden);
+        expect(after.unavailableCount).toBe(before.unavailableCount + removed);
+      } finally {
+        await prisma.asset.update({ where: { id: hidden }, data: { status: original.status } });
+      }
+    });
+
+    it("returns 404 for unknown assets", async () => {
+      const response = await app.inject({ method: "GET", url: "/assets/bursa-osmangazi-yok-boyle-bir-eser/relations" });
+      expect(response.statusCode).toBe(404);
+      expect(response.json().error.code).toBe("ASSET_NOT_FOUND");
+    });
+  });
+
+  describe("GET /assets/:id/nearby", () => {
+    async function nearby(path: string) {
+      const response = await app.inject({ method: "GET", url: `/assets/${path}` });
+      expect(response.statusCode).toBe(200);
+      return NearbyAssetsResponseSchema.parse(response.json());
+    }
+
+    it("lists located assets within the radius, nearest first", async () => {
+      const body = await nearby(`${ULUCAMI}/nearby?radius=50000`);
+
+      expect(body.origin).not.toBeNull();
+      expect(body.items.length).toBeGreaterThan(0);
+      const distances = body.items.map((item) => item.distanceMeters);
+      expect(distances).toEqual([...distances].sort((a, b) => a - b));
+      for (const item of body.items) {
+        expect(item.asset.id).not.toBe(ULUCAMI);
+        expect(item.asset.coordinates).not.toBeNull();
+        expect(item.distanceMeters).toBeLessThanOrEqual(50_000);
+      }
+    });
+
+    it("leaves out assets beyond the radius and honours the limit", async () => {
+      const wide = await nearby(`${ULUCAMI}/nearby?radius=50000`);
+      const nearest = wide.items[0];
+      if (!nearest) throw new Error("no located asset near Ulucami");
+
+      const tight = await nearby(`${ULUCAMI}/nearby?radius=${Math.max(100, nearest.distanceMeters - 50)}`);
+      expect(tight.items.map((item) => item.asset.id)).not.toContain(nearest.asset.id);
+      expect((await nearby(`${ULUCAMI}/nearby?radius=50000&limit=1`)).items).toHaveLength(1);
+    });
+
+    it("returns an empty list for assets without coordinates", async () => {
+      const bare = await prisma.asset.findFirst({ where: { status: "published", lat: null }, select: { id: true } });
+      if (!bare) return; // every asset is located: nothing to check
+
+      const body = await nearby(`${bare.id}/nearby`);
+      expect(body.origin).toBeNull();
+      expect(body.items).toEqual([]);
+    });
+
+    it("rejects out-of-range parameters and unknown assets", async () => {
+      for (const query of ["radius=50", "radius=50001", "limit=0", "limit=51"]) {
+        const response = await app.inject({ method: "GET", url: `/assets/${ULUCAMI}/nearby?${query}` });
+        expect(response.statusCode, query).toBe(400);
+      }
+      const missing = await app.inject({ method: "GET", url: "/assets/bursa-osmangazi-yok-boyle-bir-eser/nearby" });
+      expect(missing.statusCode).toBe(404);
     });
   });
 

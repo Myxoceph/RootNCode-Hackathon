@@ -38,6 +38,7 @@ export function registerOpenApi(app: FastifyInstance): void {
       },
       tags: [
         { name: "assets", description: "Vakıf eserleri" },
+        { name: "meta", description: "Kod listeleri ve etiketler" },
         { name: "system", description: "Sunucu durumu" },
       ],
     },

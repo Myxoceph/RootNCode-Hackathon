@@ -5,6 +5,7 @@ import {
   VisitorTipSchemaV2,
   type AssetDetail,
   type AssetRef,
+  type AssetRelation,
   type AssetSummary,
   type Confidence,
   type Coordinates,
@@ -17,11 +18,14 @@ import {
 import { z } from "zod";
 import { toConfidence } from "../../lib/enums.ts";
 import { nonEmpty, pick } from "../../lib/lang.ts";
-import type {
-  AssetDetailRecord,
-  AssetMediaRecord,
-  AssetSummaryRecord,
-  LabelRecord,
+import type { DirectedRelation } from "./assets.network.ts";
+import {
+  relationCitationKey,
+  type AssetDetailRecord,
+  type AssetMediaRecord,
+  type AssetSummaryRecord,
+  type CitationRecord,
+  type LabelRecord,
 } from "./assets.repository.ts";
 
 export interface MapperContext {
@@ -58,7 +62,9 @@ function isoDate(date: Date | null): string | null {
   return date ? date.toISOString().slice(0, 10) : null;
 }
 
-function toCoordinates(record: AssetSummaryRecord): Coordinates | null {
+export function toCoordinates(
+  record: Pick<AssetSummaryRecord, "lat" | "lng" | "coord_verified" | "coord_source">,
+): Coordinates | null {
   if (record.lat === null || record.lng === null) return null;
   return {
     lat: record.lat,
@@ -120,17 +126,46 @@ function toAssetRef(record: { id: string; name_tr: string; name_en: string | nul
   return { id: record.id, name: pick(record.name_tr, record.name_en, lang), type: label(record.asset_type, lang) };
 }
 
+function toSourceRef(citation: AssetDetailRecord["source_citation"][number], lang: Lang): SourceRef {
+  return {
+    sourceId: citation.source.id,
+    title: pick(citation.source.title_tr, citation.source.title_en, lang),
+    pages: nonEmpty(citation.pages),
+    url: nonEmpty(citation.source.url),
+  };
+}
+
+/**
+ * One link as the client sees it. `citations` may hold citations of other links:
+ * only those recorded on the link's source asset under its key are used.
+ */
+export function toAssetRelation(
+  { relation, direction }: DirectedRelation,
+  other: AssetSummaryRecord,
+  otherCover: AssetMediaRecord | undefined,
+  citations: CitationRecord[],
+  context: MapperContext,
+): AssetRelation {
+  const { lang } = context;
+  const key = relationCitationKey(relation);
+  return {
+    type: label(relation.relation_type, lang),
+    direction,
+    asset: toAssetSummary(other, otherCover, context),
+    description: pick(relation.description_tr, relation.description_en, lang),
+    confidence: requiredConfidence(relation.confidence, lang),
+    sources: citations
+      .filter((citation) => citation.asset_id === relation.source_asset_id && citation.entity_key === key)
+      .map((citation) => toSourceRef(citation, lang)),
+  };
+}
+
 /** Citations grouped by the content item they belong to (`entity:entity_key`). */
 function groupCitations(record: AssetDetailRecord, lang: Lang) {
   const byItem = new Map<string, SourceRef[]>();
   const bibliography = new Map<string, SourceRef>();
   for (const citation of record.source_citation) {
-    const ref: SourceRef = {
-      sourceId: citation.source.id,
-      title: pick(citation.source.title_tr, citation.source.title_en, lang),
-      pages: nonEmpty(citation.pages),
-      url: nonEmpty(citation.source.url),
-    };
+    const ref = toSourceRef(citation, lang);
     const key = `${citation.entity}:${citation.entity_key}`;
     byItem.set(key, [...(byItem.get(key) ?? []), ref]);
     if (!bibliography.has(ref.sourceId)) bibliography.set(ref.sourceId, { ...ref, pages: null });

@@ -3,6 +3,8 @@ import Fastify, { type FastifyInstance, type FastifyServerOptions } from "fastif
 import type { PrismaClient } from "./db/prisma.ts";
 import { assetsRoutes } from "./modules/assets/assets.routes.ts";
 import { createAssetsRepository, type AssetVisibility } from "./modules/assets/assets.repository.ts";
+import { createMetaRepository } from "./modules/meta/meta.repository.ts";
+import { metaRoutes } from "./modules/meta/meta.routes.ts";
 import { registerErrorHandlers } from "./plugins/error-handler.ts";
 import { registerOpenApi } from "./plugins/openapi.ts";
 import { healthRoutes } from "./routes/health.ts";
@@ -42,6 +44,7 @@ export function buildApp({
     mediaBaseUrl,
     visibility: assetVisibility,
   });
+  app.register(metaRoutes, { repository: createMetaRepository(prisma, assetVisibility) });
 
   return app;
 }

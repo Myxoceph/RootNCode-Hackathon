@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { RelationDirectionSchema } from "./asset.schema";
 
 /**
  * @deprecated Legacy v0.1 contract for the removed `/monuments` endpoints.
@@ -45,8 +46,6 @@ export const RelationTypeSchema = z.enum([
 ]);
 
 export const TipStatusSchema = z.enum(["pending", "approved", "rejected"]);
-
-export const RelationDirectionSchema = z.enum(["outgoing", "incoming"]);
 
 const SlugSchema = z
   .string()
@@ -120,7 +119,6 @@ export type City = z.infer<typeof CitySchema>;
 export type MonumentType = z.infer<typeof MonumentTypeSchema>;
 export type RelationType = z.infer<typeof RelationTypeSchema>;
 export type TipStatus = z.infer<typeof TipStatusSchema>;
-export type RelationDirection = z.infer<typeof RelationDirectionSchema>;
 export type Inscription = z.infer<typeof InscriptionSchema>;
 export type MonumentRelationSummary = z.infer<typeof MonumentRelationSummarySchema>;
 export type VisitorTip = z.infer<typeof VisitorTipSchema>;
