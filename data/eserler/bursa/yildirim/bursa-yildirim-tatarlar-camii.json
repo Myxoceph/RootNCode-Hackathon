@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-tatarlar-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Banî ve inşa tarihi kitapta yok; founder null, dating yılları boş bırakıldı.",
+      "Cami adı ve 'Tatarlar' adının kökeni kitapta açıklanmıyor.",
+      "era alanı boş: inşa tarihi belirsiz olduğu için dönem seçilemedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 'bazı kaynaklarda XX. yüzyıl başlarında inşa edildiği' belirtildiğini, ancak 1855 depreminden hiç zarar görmediğini bildiren dönem raporlarının yapının çok daha eski olduğunu gösterdiğini söyler. İki görüş de saklandı; kayıt disputed işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tatarlar Camii",
+    "en": "Tatarlar Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Tatarlar Mahallesi",
+    "2018 müdahalesi",
+    "Kütahya çinisi mihrap",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Selimzade",
+    "address": "Selimzade Mahallesi, Selimzade Caddesi, No: 14",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "268"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "İnşa tarihi belirsiz; XX. yüzyıl başı denmekle birlikte 1855 depreminden önce de var olduğu anlaşılıyor",
+      "en": "Construction date uncertain; some sources say early 20th century, but it existed before the 1855 earthquake"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Bazı kaynaklar yapının XX. yüzyıl başlarında inşa edildiğini söyler; 1855 depreminden hiç zarar görmediğini bildiren dönem raporları yapının bu tarihten çok önce var olduğunu gösterir. Kitap kesin yıl vermez.",
+      "en": "Some sources say the structure was built in the early 20th century; reports saying it was not damaged at all in the 1855 earthquake show it existed long before. The book gives no definite year."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "269"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Selimzade Mahallesi'nde, halk arasında 'Tatarlar Mahallesi' denen bölgedeki cami. Kitaba göre mimari açıdan özgün değildir; 2018'de sıvaları sökülerek moloz taş doku ortaya çıkarılmış, son cemaat yeri açık ahşap direkli olarak yeniden düzenlenmiştir.",
+    "en": "A mosque in the area commonly known as the 'Tatarlar Neighborhood' in Selimzade Neighborhood. The book finds it architecturally unremarkable; in 2018 its plaster was stripped to reveal rubble stone, and the narthex was rebuilt as an open space on wooden poles."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yıldırım, Selimzade Mahallesi, Selimzade Caddesi, No: 14'te, halk arasında 'Tatarlar Mahallesi' olarak da bilinen bölgede yer alır. Sıvalı kâgir duvarlara, ahşap çatıya ve alaturka kiremit kaplamaya sahip, minberli ve minareli bir camidir; mimari açıdan özgün ya da dikkat çekici bir niteliği bulunmadığı belirtilir.",
+        "en": "At Selimzade Street, No. 14, Selimzade Neighborhood, Yıldırım, in the area commonly known as the 'Tatarlar Neighborhood'. It has plastered masonry walls, a wooden roof and Turkish-style tile covering, with a minbar and minaret; its architecture is said to lack any distinctive or striking features."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "268"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Müdahaleler",
+        "en": "Architecture and Interventions"
+      },
+      "body": {
+        "tr": "Her cephesinde tuğla kemerli ve tuğla söveli yüksek pencereler yer alır. Son cemaat mahalli iç mekâna dâhil edilerek harimle aynı çatı altında bütünleştirilmiş, bu nedenle yapı dışarıdan konut görünümündedir. 2018'deki müdahaleyle sıvalar sökülmüş, moloz taş duvar dokusu ortaya çıkarılmış; son cemaat mahallinin duvarları kaldırılarak ahşap direklerle taşınan, ahşap çatılı açık bir son cemaat yeri düzenlenmiştir. Kitap bunu Bursa'daki bazı camilerde son dönemde yaygın görülen ihya ve onarım yaklaşımına benzetir. Mihrap Kütahya çinileriyle kaplıdır, minber yeni yapımdır. Kare kaideli, tuğladan silindirik gövdeli kısa minare camekânlı külahla sonlanır.",
+        "en": "Each façade has high windows with brick arches and frames. The narthex was included in the interior and integrated with the prayer hall under the same roof, giving the building a residential appearance. In a 2018 intervention the plaster was removed, revealing rubble stone walls, and the narthex walls were removed to create an open narthex on wooden poles with a wooden roof, similar to recent revitalization approaches at some Bursa mosques. The mihrab is covered with Kütahya tiles and the minbar is newly made. The short cylindrical brick minaret on a square base is capped by a glass-panelled spire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "268-269"
+        }
+      ]
+    },
+    {
+      "id": "tarih-tartismasi",
+      "order": 3,
+      "title": {
+        "tr": "Yapım Tarihi Üzerine",
+        "en": "On the Date of Construction"
+      },
+      "body": {
+        "tr": "Bazı kaynaklar yapının XX. yüzyıl başlarında inşa edildiğini belirtse de, 1855 depreminden hiç zarar görmediğini bildiren dönemin raporları yapının bu tarihten çok önce var olduğunu ortaya koymaktadır.",
+        "en": "Although some sources state that the structure was built in the early 20th century, reports from the period stating that it was not damaged at all in the 1855 earthquake reveal that it existed long before this date."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "269"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Selimzade Mahallesi, Selimzade Caddesi, No: 14",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "268"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1855 depreminden zarar görmediği dönem raporlarında belirtiliyor",
+        "en": "Period reports say it was not damaged in the 1855 earthquake"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "id": "mudahale-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Sıvalar sökülüp moloz taş doku açığa çıkarıldı; açık ahşap direkli son cemaat yeri düzenlendi",
+        "en": "Plaster removed to reveal rubble stone; open narthex on wooden poles created"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "269"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tatarlar Camii, Selimzade Mahallesi'nde Selimzade Caddesi üzerindedir. Yapı, 2018'de sıvaları sökülmüş moloz taş duvarlı, ahşap çatılı ve alaturka kiremit kaplıdır; her cephesinde tuğla kemerli ve tuğla sövel yüksek pencereler yer alır. Son cemaat yeri ahşap direklerle taşınan açık bir bölümdür. Mihrabı Kütahya çinileriyle kaplıdır. Kare kaideli, tuğladan silindirik gövdeli kısa minaresi camekânlı bir külahla sonlanır.",
+      "en": "Tatarlar Mosque stands on Selimzade Street in Selimzade Neighborhood. Since 2018 its rubble stone walls have been stripped of plaster; it has a wooden roof with Turkish-style tiles and, on each façade, high windows with brick arches and frames. The narthex is open, carried on wooden poles. The mihrab is covered with Kütahya tiles. The short cylindrical brick minaret on a square base ends in a glass-panelled spire."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

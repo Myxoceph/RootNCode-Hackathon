@@ -1,0 +1,355 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-pir-emir-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
+      "Türbenin kesin yapım yılı kaynakta yok.",
+      "Son restorasyonda yerleştirilen kitabenin metni kitapta verilmiyor.",
+      "Pir Emir Dergâhı'nın mescit/camisi için ayrı kayıt yok; kitapta bu bölüm sadece türbe olarak ele alınıyor.",
+      "'founder' alanı: cümlenin öznesi Eyyühüm Ahmed Efendi olarak okunduğundan 'probable'; kaynak edilgen çatıyla yazıyor.",
+      "Mimar kaynakta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[ic-mekan-ve-onarim]",
+        "note": "Kitap Şeyh Sâbit Efendi'nin vefatını 'H. 1327 / M. 1911' olarak veriyor; H. 1327 yaklaşık M. 1909-1910'a denk gelir, iki tarih birbiriyle uyuşmuyor. Kaynağa sadık kalındı."
+      },
+      {
+        "field": "name",
+        "note": "Kitapta Pir Emir hem 'Pir Emir Mehmed' hem 'Pir Emir Sultan Mehmed' olarak geçiyor; ikincisi sandukadaki sonradan eklenen levhada."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Pir Emir Türbesi",
+    "en": "Tomb of Pir Emir"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Pir Emir (Pir Emir Mehmet) Türbesi",
+      "en": "Pir Emir (Pir Emir Mehmet) Tomb",
+      "note": "Kitaptaki başlık"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "türbe",
+    "Pir Emir",
+    "sekizgen plan",
+    "Piremir"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Piremir",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "287-288"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XVI. yüzyıl Osmanlı mimarisine özgü özellikler; kesin yapım yılı belirtilmemiş",
+      "en": "Features specific to 16th-century Ottoman architecture; exact construction year not given"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap yapım yılı vermiyor; yalnızca XVI. yüzyıl Osmanlı mimarisine özgü özellikler taşıdığını belirtiyor.",
+      "en": "The book gives no year; it only says the tomb has characteristics specific to 16th-century Ottoman architecture."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "287-288"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Eyyühüm Ahmed Efendi",
+    "role": "türbeyi yaptıran",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "288"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Buharalı Pir Emir Mehmed adına, mezarlık alanında yapılmış XVI. yüzyıl özellikli, sekizgen planlı, kurşun kaplı kubbeli türbe; içinde tek sanduka vardır ve 1964'te restore edilmiştir.",
+    "en": "An octagonal tomb with a lead-covered dome in the cemetery area, built in the name of Pir Emir Mehmed of Bukhara, with 16th-century characteristics; it holds a single sarcophagus and was restored in 1964."
+  },
+  "sections": [
+    {
+      "id": "pir-emir",
+      "order": 1,
+      "title": {
+        "tr": "Pir Emir ve Zaviyesi",
+        "en": "Pir Emir and His Zawiya"
+      },
+      "body": {
+        "tr": "Yıldırım ilçesi, Piremir Mahallesi, mezarlık alanı içinde yer alır. Türbe, aslen Buharalı olduğu bilinen 'Pir Emir Mehmed' adına yapılmıştır. Kaynaklarda Pir Emir'in H. 900 / M. 1495 civarı Buhara'dan Bursa'ya geldiği ve Emîr Sultan ile akrabalık bağı bulunduğunu ileri sürdüğü belirtilir. Emir Sultan Dergâhı'nda tasarruf yetkisi talep etmiş, dönemin dergâh idaresi bunu kabul etmemiştir. Bunun üzerine yakın çevresinden hayırsever Hoca Alizâde, onun adına Musa Baba mevkiinde bir mescit ve zaviye yaptırmıştır. Pir Emir irşat faaliyetlerini burada sürdürmüş ve vefatının ardından buraya defnedilmiştir. Vefatından sonra Molla Yegân ailesinden Eyyühüm Ahmed Efendi mescidi camiye dönüştürmüş, kabri üzerine de bir türbe yapılmıştır.",
+        "en": "Located in Yıldırım District, Piremir Neighborhood, inside the graveyard area. The tomb was built in the name of 'Pir Emir Mehmed', known to be originally from Bukhara. Sources state he came to Bursa from Bukhara around AH 900 / AD 1495 and claimed kinship with Emîr Sultan. He requested authority over the Emîr Sultan Lodge, but the lodge administration refused. Hoca Alizâde, a charitable person from his circle, then had a masjid and zawiya built in his name at the Musa Baba location. Pir Emir continued his guidance there and was buried there after his death. After his death, Eyyühüm Ahmed Efendi of the Molla Yegân family converted the masjid into a mosque and a tomb was built over his grave."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "287-288"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "XVI. yüzyıl Osmanlı mimarisine özgü özellikler taşıyan türbe, tuğla hatıllarla güçlendirilmiş taş duvarlardan oluşur. Sekizgen planlı yapı dıştan kurşun kaplı bir kubbeyle örtülüdür. Yaklaşık 0,70 m kalınlığındaki duvarlar üstte üç sıra kirpi saçakla sona erer. Giriş doğu cephesindeki kapıdandır; kapı sivri kemerli bir alınlığa sahiptir ve yuvarlak kesimli mermer sövelerle çerçevelenmiştir. Alınlık büyük mermer plakalarla kaplıdır ve son restorasyonda bu bölüme bir kitabe yerleştirilmiştir. İç mekân alt sırada yedi, üst sırada dört olmak üzere on bir pencereyle aydınlanır.",
+        "en": "With characteristics typical of 16th-century Ottoman architecture, the tomb has stone walls reinforced with brick beams. The octagonal structure is covered by a lead-coated dome on the outside. The walls, about 0.70 m thick, end with three rows of sawteeth at the eaves. The entrance is through the east façade door, which has a pointed arched pediment and is framed by round-profiled marble jambs. The pediment is covered with large marble panels and an inscription was placed there during the recent restoration. The interior is lit by eleven windows, seven in the lower row and four in the upper."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "288"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan-ve-onarim",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân ve Onarım",
+        "en": "Interior and Restoration"
+      },
+      "body": {
+        "tr": "Türbe içinde yalnızca bir sanduka vardır; başucuna sonradan eklenen yazılı bir levha mezarın Pir Emir Sultan Mehmed'e ait olduğunu belirtir. Türbe dışında Pir Emir Dergâhı'nda veya başka yerlerde görev yapmış bazı şeyhlere ya da diğer kişilere ait az sayıda tarihî mezar taşı bulunur; biri H. 1327 / M. 1911'de vefat eden Seyyid Baba Dergâhı şeyhi Şeyh Sâbit Efendi'ye aittir. Türbe 1964'te Bursa Eski Eserleri Sevenler Kurumu tarafından restore edilmiştir. Yerel rivayetlerde yapının geçmişte halk tarafından sıkça ziyaret edilen bir türbe olduğu belirtilir.",
+        "en": "Only one sarcophagus is in the tomb; a written plaque added later at its head states that the tomb belongs to Pir Emir Sultan Mehmed. Outside are a few historical tombstones of shaykhs or others who served at the Pir Emir Lodge or elsewhere; one belongs to Shaykh Sâbit Efendi of the Seyyid Baba Lodge, who died in AH 1327 / AD 1911. The tomb was restored by the Bursa Association for the Appreciation of Antiquities in 1964. Local legends state that it was frequently visited by the public in the past."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "288"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_tipi",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "Sekizgen planlı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "288"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": "yaklaşık 0,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "288"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "288"
+        }
+      ],
+      "note": {
+        "tr": "Alt sırada 7, üst sırada 4.",
+        "en": "7 lower, 4 upper."
+      }
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "288"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Pir Emir Mehmed",
+      "role": {
+        "tr": "Buharalı şeyh, türbede yatan kişi",
+        "en": "Shaykh from Bukhara, buried in the tomb"
+      }
+    },
+    {
+      "name": "Hoca Alizâde",
+      "role": {
+        "tr": "Pir Emir adına mescit ve zaviye yaptıran hayırsever",
+        "en": "Benefactor who built the masjid and zawiya for Pir Emir"
+      }
+    },
+    {
+      "name": "Eyyühüm Ahmed Efendi",
+      "role": {
+        "tr": "Mescidi camiye çeviren, türbeyi yaptıran (Molla Yegân ailesinden)",
+        "en": "Converted the masjid into a mosque, built the tomb (of the Molla Yegân family)"
+      }
+    },
+    {
+      "name": "Şeyh Sâbit Efendi",
+      "role": {
+        "tr": "Seyyid Baba Dergâhı şeyhi, taşı türbe dışında",
+        "en": "Shaykh of the Seyyid Baba Lodge, tombstone outside the tomb"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "gelis-1495",
+      "year": 1495,
+      "date": null,
+      "hijri": "900",
+      "type": "record",
+      "title": {
+        "tr": "Pir Emir'in Buhara'dan Bursa'ya geldiği ileri sürülür (yaklaşık)",
+        "en": "Pir Emir is said to have come from Bukhara to Bursa (approx.)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "287"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1964",
+      "year": 1964,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu türbeyi restore etti",
+        "en": "Restored by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "288"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-pir-emir-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Pir Emir'in mescidi vefatından sonra camiye dönüştürülmüş, kabri üzerine türbe yapılmıştır.",
+        "en": "Pir Emir's masjid was converted into a mosque after his death and a tomb built over his grave."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "288"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-emir-sultan-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Pir Emir Emîr Sultan ile akrabalık bağı ileri sürmüş ve Emir Sultan Dergâhı'nda tasarruf yetkisi istemiş, kabul edilmemiştir.",
+        "en": "Pir Emir claimed kinship with Emîr Sultan and requested authority over the Emîr Sultan Lodge, which was refused."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "287"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Pir Emir Türbesi sekizgen planlı, dıştan kurşun kaplı kubbeli, taş duvarları tuğla hatıllı bir yapıdır. Giriş doğu cephesindedir; sivri kemerli alınlık mermer plakalarla kaplıdır. İç mekân on bir pencereyle aydınlanır ve tek bir sanduka içerir.",
+      "en": "The Tomb of Pir Emir is an octagonal building with a lead-covered dome and stone walls with brick beams. The entrance is on the east façade, with a pointed-arch pediment covered in marble panels. The interior is lit by eleven windows and holds a single sarcophagus."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

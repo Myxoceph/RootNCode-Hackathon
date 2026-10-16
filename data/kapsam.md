@@ -36,8 +36,8 @@ Durumlar: `sırada` → `işleniyor` → `draft` (ajan taslağı, PR'da) → `in
 | C2-8 | Umurbey Külliyesi | 63-78 | 4 kayıt (`meta.from: "Umurbey Külliyesi"`) | Ahmet (ajan) | draft |
 | C2-9 | Yeşil Çelebi Mehmed Külliyesi | 83-157 | 6 kayıt (`meta.from: "Yeşil Çelebi Mehmed Külliyesi"`) | Ahmet (ajan) | draft |
 | C2-10 | Yıldırım Külliyesi | 161-209 | 5 kayıt (`meta.from: "Yıldırım Külliyesi"`) | Ahmet (ajan) | draft |
-| C2-11 | Yıldırım Camiler | 215-278 | | Ahmet (ajan) | sırada |
-| C2-12 | Yıldırım Kalan Bölümler | 280-319 | | Ahmet (ajan) | sırada |
+| C2-11 | Yıldırım Camiler | 215-278 | 25 kayıt (`meta.from: "Yıldırım Camiler"`) | Ahmet (ajan) | draft |
+| C2-12 | Yıldırım Kalan Bölümler | 280-319 | 15 kayıt (`meta.from: "Yıldırım Kalan Bölümler"`; Abdüllatif Kudsî Türbesi s. 277'de başlar) | Ahmet (ajan) | draft |
 
 ### Cilt 3: diğer ilçeler (`vk-bursa-c3`)
 

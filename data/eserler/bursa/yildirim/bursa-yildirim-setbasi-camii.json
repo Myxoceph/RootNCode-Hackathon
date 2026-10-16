@@ -1,0 +1,399 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-setbasi-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Banî konusunda Hüsameddin Efendi ve Mehmed Efendi arasındaki ayrım kitapta çözülmüyor; veri ekibi vakfiye metnine bakabilir.",
+      "Mehmed Efendi'nin caminin yanına yaptırdığı mektebin adı, konumu ve bugünkü durumu kitapta yok; ilişki kaydı açılmadı.",
+      "1863 yangınından sonraki yeniden yapım tarihi kitapta yok ('bir süre sonra').",
+      "Camiye ait vakıf/vakfiye metni kitapta basılmıyor; waqf alanı boş bırakıldı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Yaygın kanaat caminin H. 1003 / M. 1594'te Kara Çelebizâde Hüsameddin Efendi tarafından yaptırıldığı yönündedir; vakfiye kaydı (ve Mehmed Şemseddin Ulusoy'un eseri) oğlu Mehmed Efendi'nin yaptırdığını belirtir. Arşiv belgelerinde 'Mehmed Efendi Camii', tescil ve belediye kayıtlarında 'Hüsameddin Efendi Camii' adı geçer. Kayıt disputed işaretlendi; banî olarak vakfiyenin söylediği kişi yazıldı."
+      },
+      {
+        "field": "sections[minare]",
+        "note": "Türkçe metin minare şerefesi altında 'beş sıra kirpi saçak', İngilizce metin 'six rows of sawteeth' der. Türkçe değer ana metne alındı, çelişki burada saklandı."
+      },
+      {
+        "field": "sections[kara-celebizade-ailesi]",
+        "note": "Hüsameddin Efendi'nin ölümü 'H. 10 Muharrem 1007 / M. 13 Ağustos 1598', Zuhurî Mehmed Efendi'nin ölümü 'H. 6 Zilhicce 1042 / M. 14 Haziran 1633' olarak verilir; Hicrî–Miladî eşleşmeleri kitaptaki gibi saklandı, doğrulanmadı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Setbaşı Camii",
+    "en": "Setbaşı Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Kara Çelebizade Camii",
+      "en": "Kara Çelebizade Mosque",
+      "note": "Başlıktaki parantezli ad"
+    },
+    {
+      "tr": "Mehmed Efendi Camii",
+      "en": "Mehmed Efendi Mosque",
+      "note": "Arşiv belgelerindeki ad"
+    },
+    {
+      "tr": "Hüsameddin Efendi Camii",
+      "en": "Hüsameddin Efendi Mosque",
+      "note": "Tescil belgeleri ve belediye kayıtlarındaki ad"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Kara Çelebizâde",
+    "Setbaşı yangını",
+    "1855 depremi",
+    "XIX. yüzyıl üslubu",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Kurdoğlu",
+    "address": "Kurdoğlu Mahallesi, Atatürk Caddesi, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "264"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1003 / M. 1594 (yaygın kanaat)",
+      "en": "AH 1003 / AD 1594 (widespread belief)"
+    },
+    "start_year": 1594,
+    "end_year": 1594,
+    "hijri_year": 1003,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap 1594 tarihini yaptıranın Hüsameddin Efendi olduğu yönündeki 'yaygın kanaat' ile birlikte verir; vakfiye kaydı ise yaptıranın oğlu Mehmed Efendi olduğunu söyler. Yıl vakfiyeden teyit edilmemiştir.",
+      "en": "The book gives 1594 together with the 'widespread belief' that Hüsameddin Efendi built it; the endowment charter says his son Mehmed Efendi did. The year is not confirmed by the charter."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "264"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mehmed Efendi (Kara Çelebizâde Hüsameddin Efendi'nin oğlu)",
+    "role": "banî (vakfiyeye göre)",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "264-265"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kara Çelebizâde ailesiyle anılan, banisi konusunda kaynakların ayrıldığı cami. 1654'te onarılmış, 1855 depreminde ve 1863 Setbaşı yangınında zarar görerek yeniden elden geçirilmiş, bu yüzden XIX. yüzyıl Osmanlı üslubu taşır.",
+    "en": "A mosque associated with the Kara Çelebizâde family, whose founder is disputed in the sources. Repaired in 1654 and damaged in the 1855 earthquake and the 1863 Setbaşı fire, it shows 19th-century Ottoman stylistic features after rebuilding."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yıldırım, Kurdoğlu Mahallesi, Atatürk Caddesi, No: 1 adresinde yer alır. H. 1003 / M. 1594'te Kara Çelebizâde Hüsameddin Efendi tarafından yaptırıldığı yönünde yaygın bir kanaat vardır; ancak vakfiye kaydında yapının Hüsameddin Efendi'nin oğlu Mehmed Efendi tarafından inşa ettirildiği belirtilir. Bu bilgi Mehmed Şemseddin Ulusoy'un eserinde de teyit edilmiştir. Arşiv belgelerinde 'Mehmed Efendi Camii', tescil ve belediye kayıtlarında 'Hüsameddin Efendi Camii' olarak geçer. Mehmed Efendi'nin caminin yanında bir mektep de yaptırdığı bilinir. Günümüze ulaşan bir inşa kitabesi yoktur.",
+        "en": "The mosque is at Atatürk Street, No. 1, Kurdoğlu Neighborhood, Yıldırım. There is a widespread belief that it was built by Kara Çelebizâde Hüsameddin Efendi in AH 1003 / AD 1594, but the endowment charter says it was commissioned by his son Mehmed Efendi, which Mehmed Şemseddin Ulusoy's work also confirms. It appears as 'Mehmed Efendi Mosque' in archival documents and as 'Hüsameddin Efendi Mosque' in registration and municipal records. Mehmed Efendi also commissioned a school next to the mosque. No construction inscription survives."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "264-265"
+        }
+      ]
+    },
+    {
+      "id": "kara-celebizade-ailesi",
+      "order": 2,
+      "title": {
+        "tr": "Kara Çelebizâde Ailesi",
+        "en": "The Kara Çelebizâde Family"
+      },
+      "body": {
+        "tr": "Kara Çelebizâde Hüsameddin Efendi bir süre Rumeli kazaskerliği yapmış, emekliliğinin ardından Bursa'ya yerleşmiş ve ailesiyle birlikte şehre pek çok hayır eseri kazandırmıştır. H. 10 Muharrem 1007 / M. 13 Ağustos 1598'de vefat etmiş, Emir Sultan Kabristanı'na, Emir Sultan Camii'nin batı kapısının hemen girişine defnedilmiştir; kabrin silindirik baş ve ayak taşları dikkati çeker. Oğullarından Zuhurî Mehmed Efendi H. 970 / M. 1562'de doğmuş; medreselerde görev yaptıktan sonra Halep, Şam, Kahire ve Bursa kadılıklarında bulunmuş, Edirne'nin ardından İstanbul kadılığına atanmıştır. H. 6 Zilhicce 1042 / M. 14 Haziran 1633'te vefat edip Eyüp Kabristanı'na defnedilmiştir. Babasının ölümünden sonra kardeşi Şeyhülislam Kara Çelebizâde Abdülaziz Efendi'nin yetişmesinde önemli rol oynamıştır.",
+        "en": "Kara Çelebizâde Hüsameddin Efendi served for a time as Rumeli kazasker, settled in Bursa after retirement and, with his family, gave the city many charitable works. He died on 10 Muharrem AH 1007 / 13 August AD 1598 and was buried in the Emir Sultan Cemetery just inside the west gate of the Emir Sultan Mosque; the cylindrical head and footstones are striking. His son Zuhurî Mehmed Efendi, born in AH 970 / AD 1562, served in madrasas, then as Qadi of Aleppo, Damascus, Cairo and Bursa, and later of Edirne and Istanbul. He died on 6 Dhul-Hijjah AH 1042 / 14 June AD 1633 and was buried in the Eyüp Cemetery. After his father's death he played a significant role in the education of his brother, the renowned Shaykh al-Islam Kara Çelebizâde Abdülaziz Efendi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "265"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı caminin harimi 8,80 × 14,15 m, son cemaat mahalli 3,30 m derinliğindedir. Son cemaat yeri ahşap örtülüdür; batıdan bir merdivenle kadınlar mahfiline çıkılır. Harim dört ana cephede ikişer pencereyle aydınlanır. Tavan ve çatı ahşap kaplıdır, üzeri kiremitlidir; tavan ortasında geometrik motiflerle bezenmiş kare çerçeveli bir göbek vardır. Mihrap nişi beş köşelidir ve kavsarası yukarı doğru kademeli daralır. Duvarlar tuğla ve moloz taşla örülmüşken son onarımda tamamen sıvanmış ve ahşap kırma çatıyla örtülmüştür.",
+        "en": "The prayer hall measures 8.80 × 14.15 m and the narthex is 3.30 m deep. The narthex is wood-covered and a staircase from the west leads to the women's gallery. The hall has two windows on each of four façades. Ceiling and roof are clad in wood and tiles; at the ceiling's center is a square-framed medallion with geometric motifs. The mihrab niche is pentagonal, its hood narrowing upward in steps. The walls, brick and rubble stone, were completely plastered in the latest restoration and covered with a wooden hipped roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare kuzeydoğu köşesindedir ve son cemaat yerinden açılan bir kapıyla ulaşılır. Kare kaide üzerine oturan minare silindirik bir gövdeyle yükselir; şerefe altı beş sıra kirpi saçakla çevrilidir. Sivri külahı kurşunla kaplıdır.",
+        "en": "The minaret is in the northeast corner and is reached through a door from the narthex. It sits on a square base and rises with a cylindrical shaft; the part below the balcony is surrounded by six rows of sawteeth (English text; the Turkish text says five). The pointed spire is lead-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar ve Bugünkü Durum",
+        "en": "Repairs and Present State"
+      },
+      "body": {
+        "tr": "Yapı 1654'te tamir edilmiş, 1855 Bursa depreminde ağır hasar görmüş ve sonra onarılmıştır. 1863'teki büyük Setbaşı yangınında yanmış, bir süre sonra yeniden elden geçirilmiştir. Bu süreç nedeniyle cami XIX. yüzyıl Osmanlı mimarisine özgü üslup özellikleri gösterir. Sağlam durumda ve ibadete açıktır; toplam cemaat kapasitesi 200 kişidir. Ön avluda iki anıtsal çınar ağacı ve bir şadırvan bulunur.",
+        "en": "The structure was repaired in 1654, severely damaged in the 1855 Bursa earthquake and repaired afterwards. It burned in the great Setbaşı fire of 1863 and was later rebuilt, so it shows stylistic features characteristic of 19th-century Ottoman architecture. It is in good condition and open for worship, with a total capacity of 200. Two monumental plane trees and a shadirvan stand in the front courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "266"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Kurdoğlu Mahallesi, Atatürk Caddesi, No: 1",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "264"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcusu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall size"
+      },
+      "value": "8,80 × 14,15",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinligi",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3.3,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "key": "cemaat_kapasitesi",
+      "label": {
+        "tr": "Cemaat kapasitesi",
+        "en": "Congregation capacity"
+      },
+      "value": 200,
+      "unit": "kişi",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "266"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kara Çelebizâde Hüsameddin Efendi",
+      "role": {
+        "tr": "Rumeli kazaskeri; yaygın kanaate göre banî (v. H. 1007 / M. 1598)",
+        "en": "Rumeli kazasker; founder per widespread belief (d. AH 1007 / AD 1598)"
+      }
+    },
+    {
+      "name": "Mehmed Efendi",
+      "role": {
+        "tr": "Hüsameddin Efendi'nin oğlu; vakfiyeye göre camiyi ve yanındaki mektebi yaptıran",
+        "en": "Son of Hüsameddin Efendi; per the charter, builder of the mosque and adjacent school"
+      }
+    },
+    {
+      "name": "Zuhurî Mehmed Efendi",
+      "role": {
+        "tr": "Hüsameddin Efendi'nin oğlu, kadı (v. H. 1042 / M. 1633)",
+        "en": "Son of Hüsameddin Efendi, qadi (d. AH 1042 / AD 1633)"
+      }
+    },
+    {
+      "name": "Kara Çelebizâde Abdülaziz Efendi",
+      "role": {
+        "tr": "Şeyhülislam, Zuhurî Mehmed Efendi'nin kardeşi",
+        "en": "Shaykh al-Islam, brother of Zuhurî Mehmed Efendi"
+      }
+    },
+    {
+      "name": "Mehmed Şemseddin Ulusoy",
+      "role": {
+        "tr": "Banî bilgisini teyit eden kaynağın yazarı",
+        "en": "Author of the source confirming the founder information"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1654",
+      "year": 1654,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Yapı tamir edildi",
+        "en": "Structure repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 Bursa depreminde ağır hasar gördü, sonra onarıldı",
+        "en": "Severely damaged in the 1855 Bursa earthquake, then repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük Setbaşı yangınında yandı, sonra yeniden elden geçirildi",
+        "en": "Burned in the great Setbaşı fire, later rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "266"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Setbaşı Camii, Kurdoğlu Mahallesi'nde Atatürk Caddesi üzerindedir. Dikdörtgen planlı yapının duvarları son onarımda tamamen sıvanmıştır; üzeri kiremit kaplı ahşap kırma çatıyla örtülüdür. Harim dört cephede ikişer pencereyle aydınlanır, ahşap tavanın ortasında geometrik motifli kare çerçeveli bir göbek vardır. Kuzeydoğu köşesinde, kare kaideli, silindirik gövdeli, kurşun kaplı sivri külahlı bir minare yükselir. Ön avluda iki anıtsal çınar ağacı ve bir şadırvan bulunur.",
+      "en": "Setbaşı Mosque stands on Atatürk Street in Kurdoğlu Neighborhood. The rectangular building's walls were completely plastered in the latest restoration, and it is covered by a tiled wooden hipped roof. The prayer hall has two windows on each of four façades, and the wooden ceiling has a square-framed medallion with geometric motifs at its center. In the northeast corner rises a minaret with a square base, cylindrical shaft and lead-covered pointed spire. Two monumental plane trees and a shadirvan stand in the front courtyard."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

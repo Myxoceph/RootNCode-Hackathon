@@ -1,0 +1,325 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-hoca-taskin-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' Yıldırım Camiler bölümünden yapay zekâ ile özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kitapta yok; dating.start_year null.",
+      "Hoca Taşkın'ın mezar taşı günümüze ulaşmamış; kabrin tam yeri kitapta belirtilmiyor.",
+      "Mimar ve vakıf bilgisi yok.",
+      "Minare 1950'lerde yıkılmış; günümüzde minare olup olmadığı kitapta açık değil.",
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[plan_olcu]",
+        "note": "Kitap yapıyı 'kare planlı' diye tanımlıyor ancak iç ölçüleri 9,20 × 10,30 m (eşit değil). Kaynağa sadık kalındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hoca Taşkın Camii",
+    "en": "Hoca Taşkın Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hoca Taşkın Camii ve Kabri",
+      "en": "Hoca Taşkın Mosque and Grave"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Fâtih dönemi",
+    "Taşkın Sufi",
+    "1855 depremi",
+    "kabir",
+    "hazire"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Hoca Taşkın",
+    "address": "Köprü Sokak, No: 8",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "224"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Fâtih Sultan Mehmed dönemi (banî H. 898 / M. 1492'de öldü)",
+      "en": "Reign of Fâtih Sultan Mehmed (founder d. AH 898 / AD 1492)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Yapım yılı verilmiyor; banî Fâtih devrinde yaşamış ve H. 898 / M. 1492'de ölmüştür.",
+      "en": "No construction year is given; the founder lived in Fâtih's reign and died AH 898 / AD 1492."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "224"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Taşkın Sufi (Hoca Taşkın)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "224"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Fâtih devrinde Taşkın Sufi'nin yaptırdığı, 1855 depreminde neredeyse tümüyle yıkılıp bugünkü ölçüleriyle yeniden inşa edilen cami; banisi yanına defnedilmiştir.",
+    "en": "A mosque built by Taşkın Sufi in Fâtih's reign, almost completely destroyed in the 1855 earthquake and rebuilt to its current dimensions; its founder was buried beside it."
+  },
+  "sections": [
+    {
+      "id": "banisi",
+      "order": 1,
+      "title": {
+        "tr": "Banisi",
+        "en": "Founder"
+      },
+      "body": {
+        "tr": "Cami, Fâtih devrinde yaşamış olan Taşkın Sufi (v. H. 898 / M. 1492) tarafından inşa ettirilmiştir. Bir süre kendi yaptırdığı camide vaaz ve irşat faaliyetlerinde bulunan Hoca Taşkın, vefatının ardından caminin yanına defnedilmiştir.",
+        "en": "The mosque was built by Taşkın Sufi (d. AH 898 / AD 1492), who lived during the reign of Fâtih Sultan Mehmed. Hoca Taşkın preached and gave religious guidance for a time in the mosque he built and was buried next to it after his death."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "224"
+        }
+      ]
+    },
+    {
+      "id": "mimari-ve-onarim",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Onarımlar",
+        "en": "Architecture and Repairs"
+      },
+      "body": {
+        "tr": "İçten içe 9,20 × 10,30 m ölçülerinde kare planlı olan yapı, kesme küfeki taşı ve tuğladan örülmüş duvar işçiliğiyle klasik Bursa mescitleri tarzındadır. 1855 depremine dair kayıtlarda 'Hoca Taşkın Mescid-i Şerifi'nin kubbe ve etraf duvarları tamamen çatlamış, minaresinin şerefesine kadar yıkılmıştır' denmesi yapının neredeyse tümüyle harap olduğunu gösterir; yapı sonrasında bugünkü ölçüleriyle yeniden inşa edilmiştir. 1950'li yıllarda minaresi yıkılan cami bir dönem minbersiz ve ibadete kapalı kalmış, ardından onarılarak tekrar kullanılmaya başlanmıştır. 2002'de kapsamlı bir restorasyon geçirmiş olup günümüzde bakımlı ve ibadete açıktır.",
+        "en": "The square-plan building, measuring 9.20 × 10.30 m internally, is in the classic Bursa masjid style, with masonry of cut limestone and brick. Records of the 1855 earthquake state that 'the dome and surrounding walls of the Hoca Taşkın Masjid were completely cracked, and the minaret collapsed down to its balcony', indicating near-total destruction; it was subsequently rebuilt to its current dimensions. The minaret was demolished in the 1950s, and for a time it remained without a minbar and closed for worship; it was later repaired and returned to use. It underwent extensive restoration in 2002 and today is well maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "225"
+        }
+      ]
+    },
+    {
+      "id": "kabir",
+      "order": 3,
+      "title": {
+        "tr": "Hoca Taşkın Kabri",
+        "en": "Grave of Hoca Taşkın"
+      },
+      "body": {
+        "tr": "Hoca Taşkın H. 898 / M. 1492'de vefat etmiş, caminin haziresine defnedildiği halde mezar taşı günümüze ulaşmamıştır. Caminin kıble yönünde yer alan bir mezarın baş ve ayak taşları mevcuttur ancak yalnızca baş taşında yazı vardır. Bu taş H. Zilhicce 981 / M. Nisan 1574'te vefat eden Hacı Hüseyin bin Abdullah adlı bir şahsa aittir.",
+        "en": "Hoca Taşkın died in AH 898 / AD 1492. Although he was buried in the mosque's graveyard, his tombstone has not survived. A grave in the qibla direction has headstone and footstone, but only the headstone bears an inscription. It belongs to Hacı Hüseyin bin Abdullah, who died in Dhul-Hijjah AH 981 / April AD 1574."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Plan ölçüsü (içten)",
+        "en": "Plan size (internal)"
+      },
+      "value": "9,20 × 10,30",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "225"
+        }
+      ],
+      "note": {
+        "tr": "Kaynak 'kare planlı' diyor; ölçüler eşit değil.",
+        "en": "Source says 'square plan'; the dimensions are unequal."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Taşkın Sufi (Hoca Taşkın)",
+      "role": {
+        "tr": "Banî, vaiz; H. 898 / M. 1492'de vefat etti",
+        "en": "Founder and preacher; died AH 898 / AD 1492"
+      }
+    },
+    {
+      "name": "Hacı Hüseyin bin Abdullah",
+      "role": {
+        "tr": "Kıble yönündeki mezar taşının sahibi; H. Zilhicce 981 / M. Nisan 1574",
+        "en": "Owner of the gravestone in the qibla direction; d. Dhul-Hijjah AH 981 / April AD 1574"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "hac-huseyin-basi-tasi",
+      "location": {
+        "tr": "Camiin kıble yönündeki mezarın baş taşı",
+        "en": "Headstone of the grave in the mosque's qibla direction"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 981,
+        "gregorian": "Nisan 1574"
+      },
+      "note": {
+        "tr": "Yazı metni kitapta verilmemiş; dil belirtilmemiş. Taş Hacı Hüseyin bin Abdullah'a aittir.",
+        "en": "Text not given in the book; language not stated. The stone belongs to Hacı Hüseyin bin Abdullah."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "olum-1492",
+      "year": 1492,
+      "date": null,
+      "hijri": "898",
+      "type": "record",
+      "title": {
+        "tr": "Banî Hoca Taşkın vefat etti, camiye bitişik defnedildi",
+        "en": "Founder Hoca Taşkın died and was buried next to the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "224-225"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde kubbe ve duvarlar çatladı, minare şerefeye kadar yıkıldı; yapı yeniden inşa edildi",
+        "en": "Dome and walls cracked and minaret collapsed to its balcony; rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "225"
+        }
+      ]
+    },
+    {
+      "id": "minare-1950ler",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "1950'li yıllarda minare yıkıldı",
+        "en": "Minaret demolished in the 1950s"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "225"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca '1950'li yıllar' diyor.",
+        "en": "Source only says 'the 1950s'."
+      }
+    },
+    {
+      "id": "restorasyon-2002",
+      "year": 2002,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon",
+        "en": "Extensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kesme küfeki taşı ve tuğla duvarlı, kare planlı klasik bir Bursa mescidi görünümünde camidir. Hoca Taşkın'ın kabri caminin haziresindedir; kıble yönündeki bir mezarın yazılı baş taşı Hacı Hüseyin bin Abdullah'a aittir.",
+      "en": "A mosque in the style of a classic Bursa masjid, with cut limestone and brick walls on a square plan. Hoca Taşkın's grave is in the mosque's graveyard; the inscribed headstone of a grave in the qibla direction belongs to Hacı Hüseyin bin Abdullah."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

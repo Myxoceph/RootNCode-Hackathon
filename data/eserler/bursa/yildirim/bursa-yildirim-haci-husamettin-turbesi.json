@@ -1,0 +1,423 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-haci-husamettin-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
+      "Mimar ve türbenin yapım yılı kaynakta yok.",
+      "Kitap, caminin (Hüsameddin Tekke Camii) ayrı bir bölümünü vermiyor; cami/zaviye için ayrı kayıt oluşturulmadı.",
+      "Ali Semerkandî'nin kimliği ve dönemi kaynakta yok.",
+      "Sanduka toplamı (9) hesaplanmıştır; kitabın verdiği 9 isimli/isimsiz sayımla uyuşuyor ancak kitapta toplam verilmiyor.",
+      "Mimar kaynakta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[hazire-ve-mimari]",
+        "note": "s. 286'daki metin 'cami'den söz ediyor ('Cami civarında…', 'caminin batısında…'); önceki sayfada cami adı geçmiyor. Metnin Hüsameddin Tekke Camii için olduğu çıkarımı kaynağa dayanır ('Hüsameddin Tekke olarak bilinen bu cami')."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Hüsamettin Türbesi",
+    "en": "Tomb of Hacı Hüsamettin"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Hüsameddin Tekke",
+      "en": "Hüsameddin Tekke (Sufi Lodge)",
+      "note": "Kitapta bitişikteki cami için kullanılan ad"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "türbe",
+    "Semerkandiyye",
+    "Hüsâmeddin Bursevî",
+    "Zikir Bahçesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Temenyeri",
+    "address": "Temenyeri Mahallesi, Köşk Caddesi, Hüsamettin Tekke Sokağı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "285-286"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım yılı belirtilmemiş; Hüsâmeddin Bursevî H. 1042 / M. 1632'de vefat etmiştir",
+      "en": "Construction year not given; Hüsâmeddin Bursevî died in AH 1042 / AD 1632"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapım yılını vermiyor; yalnızca banînin 1632'de vefat edip kendi yaptırdığı türbeye gömüldüğünü söylüyor. Dönem kodu bu vefat tarihinden varsayıldı.",
+      "en": "The book gives no construction year; it only says the founder died in 1632 and was buried in the tomb he built. The era code is inferred from this death date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "285-286"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Halilzâde Hüsâmeddin Efendi (Hüsâmeddin Bursevî)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "285"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Semerkandiyye tarikatından Hacı Halilzâde Hüsâmeddin Efendi'nin zaviye ve mescitle birlikte yaptırdığı, kendisinin ve yakınlarının gömülü olduğu dikdörtgen planlı türbe; çevresinde 'Zikir Bahçesi' rivayetleri vardır.",
+    "en": "A rectangular-plan tomb built together with a zawiya and masjid by Hacı Halilzâde Hüsâmeddin Efendi of the Semerkandiyye order, where he and others are buried; the 'Dhikr Garden' around it is the subject of local beliefs."
+  },
+  "sections": [
+    {
+      "id": "kurulus",
+      "order": 1,
+      "title": {
+        "tr": "Kuruluş",
+        "en": "Foundation"
+      },
+      "body": {
+        "tr": "Yıldırım ilçesi, Temenyeri Mahallesi, Köşk Caddesi, Hüsamettin Tekke Sokağı'nda yer alır. Semerkandiyye tarikatının Bursa'daki temsilcilerinden Hacı Halilzâde Hüsâmeddin Efendi bu alana bir zaviye, mescit ve türbe yaptırmıştır. 'Bursevî' mahlasını kullanan Hüsâmeddin Efendi H. 1042 / M. 1632'de vefat etmiş ve kendi adına yaptırdığı türbeye defnedilmiştir.",
+        "en": "Located in Yıldırım District, Temenyeri Neighborhood, Köşk Avenue, Hüsamettin Tekke Street. Hacı Halilzâde Hüsâmeddin Efendi, a representative of the Semerkandiyye order in Bursa, built a zawiya, a masjid and a tomb here. Hüsâmeddin Efendi, who used the pseudonym 'Bursevî', died in AH 1042 / AD 1632 and was buried in the tomb he built in his own name."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "285"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 2,
+      "title": {
+        "tr": "Sandukalar ve Gömülü Kişiler",
+        "en": "Sarcophagi and Burials"
+      },
+      "body": {
+        "tr": "1972'de virane hale gelen yapı 1974'te kapsamlı bir onarımdan geçirilerek bugünkü görünümüne kavuşmuştur. Türbede şeyhe ait büyük bir sanduka ile sağında üç, ayakucunda beş sanduka bulunur. Şeyh Hüsâmeddin Bursevî'nin yanı sıra Şeyh Abdülkadir, Şeyh Muhyiddin Bursevî, Şeyh Abdülaziz, Şeyh Mustafa, Şeyh Abdurrahman ve Şeyh İzzettin Efendi'nin burada medfun olduğu bilinir. Kimliği belirlenemeyen iki sandukanın Hüsâmeddin Bursevî'nin eşi, çocukları ya da torunlarına ait olabileceği düşünülmektedir.",
+        "en": "The building fell into disrepair in 1972 and underwent extensive restoration in 1974, taking its current appearance. The tomb has a large sarcophagus belonging to the shaykh, three sarcophagi on the right and five at the foot. Besides Shaykh Hüsâmeddin Bursevî, Shaykh Abdulkadir, Shaykh Muhyiddin Bursevî, Shaykh Abdulaziz, Shaykh Mustafa, Shaykh Abdurrahman and Shaykh İzzettin Efendi are known to be buried here. The two unidentified sarcophagi may belong to Hüsâmeddin Bursevî's wife, children or grandchildren."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "285"
+        }
+      ]
+    },
+    {
+      "id": "hazire-ve-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Hazire ve Mimari",
+        "en": "Graveyard and Architecture"
+      },
+      "body": {
+        "tr": "Cami civarında bir zamanlar bir hazire bölümü olduğu, günümüze ulaşmadığı ve bahçede yalnızca birkaç kırık taş parçası kaldığı bilinir. Caminin batısında, avluda büyük selvilerin gölgesinde kitabesiz kabirler dikkat çeker. Camiyle benzer mimari özellikler taşıyan türbe dikdörtgen planlıdır.",
+        "en": "There was once a burial enclosure near the mosque; it has not survived, and only a few broken stones remain in the garden. The uninscribed tombs in the courtyard west of the mosque, shaded by large cypresses, are noteworthy. The tomb, with architectural features similar to the mosque, has a rectangular plan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "286"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "zikir-bahcesi",
+      "title": {
+        "tr": "Zikir Bahçesi",
+        "en": "The Dhikr Garden"
+      },
+      "body": {
+        "tr": "Molla Fenârî, Emîr Sultan ve Somuncu Baba gibi Bursalı evliyaların zaman zaman Hüsameddin Tekke olarak bilinen bu camiye gelip arka bahçesinde hem Bursa'yı seyrettikleri hem zikir yaptıkları anlatılır; bu yüzden alan 'Zikir Bahçesi' olarak da anılır.",
+        "en": "Bursa saints such as Molla Fenârî, Emîr Sultan and Somuncu Baba are said occasionally to come to this mosque, known as the Hüsameddin Tekke, and both watch Bursa and perform dhikr in its back garden; hence it is also called the 'Dhikr Garden'."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "286"
+        }
+      ]
+    },
+    {
+      "id": "kesilemeyen-agac",
+      "title": {
+        "tr": "Kesilemeyen ağaç",
+        "en": "The tree that could not be cut"
+      },
+      "body": {
+        "tr": "Bahçedeki asırlık bir ağacın kesilmesine karar verilmiş ama bir türlü kesilememiştir; çevre halkı bunu buradaki yatırların engellediğine inanır.",
+        "en": "A centuries-old tree in the garden was planned to be cut years ago but could not be; local people believe the saints buried here prevented it."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "286"
+        }
+      ]
+    },
+    {
+      "id": "parmak-delikli-tas",
+      "title": {
+        "tr": "Ali Semerkandî'nin taşı",
+        "en": "Ali Semerkandî's stone"
+      },
+      "body": {
+        "tr": "Cami girişindeki hazire bölümünün yanında büyük bir taş bulunduğu, bunun Ali Semerkandî'nin işaret parmağına takıp fırlattığı taş olduğu ve kabrinin de burada olduğu söylenir. Taştaki parmak deliğinden cuma vakti içilen iki yudum suyun kalp çarpıntısına iyi geldiğine inanılır. Taş, son restorasyonda hazireyi çevreleyen duvarın altında kalmıştır.",
+        "en": "A large stone next to the graveyard section at the mosque entrance is said to be the stone Ali Semerkandî threw attached to his index finger, and his grave is also here. Two sips of water from the finger hole on Fridays are believed to be good for heart palpitations. The stone was left under the graveyard wall during the last restoration."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "286"
+        }
+      ]
+    },
+    {
+      "id": "havadan-dusen-taslar",
+      "title": {
+        "tr": "Havadan düşen taşlar",
+        "en": "Stones fallen from the air"
+      },
+      "body": {
+        "tr": "Mezarın iki ucundaki iki büyük taşın bir keramet neticesinde havadan düştüğü ve Hüsâmeddin Bursevî'nin kabrinin burada olduğuna işaret ettiği inanılır.",
+        "en": "The two large stones at either end of the grave are believed to have fallen from the air by a miracle and to indicate that Hüsâmeddin Bursevî's grave is here."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "286"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "285"
+        }
+      ],
+      "note": {
+        "tr": "Şeyhin büyük sandukası + sağında 3 + ayakucunda 5; toplam kitapta açıkça verilmiyor, hesaplanmıştır.",
+        "en": "Shaykh's large sarcophagus + 3 on the right + 5 at the foot; the total is not stated in the book, calculated here."
+      }
+    },
+    {
+      "key": "plan_tipi",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "Dikdörtgen planlı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "286"
+        }
+      ]
+    },
+    {
+      "key": "bani_vefat",
+      "label": {
+        "tr": "Banînin vefatı",
+        "en": "Death of the founder"
+      },
+      "value": "H. 1042 / M. 1632",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "285"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Halilzâde Hüsâmeddin Efendi (Bursevî)",
+      "role": {
+        "tr": "Banî, Semerkandiyye şeyhi, türbede yatıyor",
+        "en": "Founder, Semerkandiyye shaykh, buried in the tomb"
+      }
+    },
+    {
+      "name": "Şeyh Abdülkadir",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Şeyh Muhyiddin Bursevî",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Şeyh Abdülaziz",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Şeyh Mustafa",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Şeyh Abdurrahman",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Şeyh İzzettin Efendi",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Ali Semerkandî",
+      "role": {
+        "tr": "Rivayete göre taş fırlatan ve kabri burada olan evliya",
+        "en": "Saint of legend who threw the stone, said to be buried here"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1632",
+      "year": 1632,
+      "date": null,
+      "hijri": "1042",
+      "type": "record",
+      "title": {
+        "tr": "Hüsâmeddin Bursevî vefat etti ve kendi yaptırdığı türbeye defnedildi",
+        "en": "Hüsâmeddin Bursevî died and was buried in the tomb he built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "285"
+        }
+      ]
+    },
+    {
+      "id": "virane-1972",
+      "year": 1972,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yapı virane hale geldi",
+        "en": "The building fell into disrepair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "285"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1974",
+      "year": 1974,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı onarımla bugünkü görünümüne kavuştu",
+        "en": "Extensive restoration gave it its current appearance"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "285"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hacı Hüsamettin Türbesi, camiyle benzer mimari özellikler taşıyan dikdörtgen planlı bir yapıdır. İçinde şeyhin büyük sandukası, sağında üç ve ayakucunda beş sanduka bulunur. Caminin batısındaki avluda büyük selvilerin gölgesinde kitabesiz kabirler yer alır.",
+      "en": "The Tomb of Hacı Hüsamettin is a rectangular-plan building with architectural features similar to the neighboring mosque. It holds the shaykh's large sarcophagus with three sarcophagi to the right and five at the foot. Uninscribed tombs lie in the courtyard west of the mosque in the shade of large cypresses."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

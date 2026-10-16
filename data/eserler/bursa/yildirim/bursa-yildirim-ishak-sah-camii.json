@@ -1,0 +1,352 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-ishak-sah-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 232) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kitabede 'Sultan Mûsâ' anılıyor, metin ise Çelebi Mehmed devrinden söz ediyor; gerçek hükümdar/ dönem ve H. 824'ün karşılığı veri ekibince teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "Yolun açıldığı yıl ve onarım tarihleri kitapta verilmiyor.",
+      "Yıl verilmeyen olaylar (inşa öncesi tarih aralığı, yol/afet vb.) zaman çizelgesine girilmedi; bilgi bölüm metinlerinde yer alır."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap caminin Çelebi Mehmed devrine ait olduğunu söyler (H. 824 / M. 1421), ancak kitabe metni ve mealinde 'Sultan Mûsâ' zamanı anılır. Kitap bu farkı açıklamıyor. İkisi de olduğu gibi saklandı, kayıt disputed işaretlendi."
+      },
+      {
+        "field": "inscriptions[giris-kitabesi]",
+        "note": "Eski kitabe silinmiştir; bugünkü levha rika hatla yeniden yazılmış bir kopyadır (s. 232). Kitap dilini belirtmez; metin Arapça formüle benzediği için 'ar' seçildi, doğrulanmalı. Türkçe metinde 'Mûsâ', İngilizce metinde 'Musa' yazılmıştır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İshak Şah Camii",
+    "en": "İshak Şah Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Müftü Önü Camii",
+      "en": "Müftü Önü Mosque",
+      "note": "Karaçelebizâde Abdülaziz Efendi'nin (halk arasında 'Müftü') mahallede oturması ve konağının aynı mahallede olması nedeniyle."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "İshak Şah",
+    "Müftü Önü",
+    "güdük minare",
+    "mahalle mescidi",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Kurdoğlu",
+    "address": "Kurdoğlu Mahallesi, Namazgâh Caddesi, Kabakçı Sokak, No: 64",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "232"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 824 / M. 1421",
+      "en": "AH 824 / AD 1421"
+    },
+    "start_year": 1421,
+    "end_year": 1421,
+    "hijri_year": 824,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, inşa yılını H. 824 / M. 1421 olarak verir ve Çelebi Mehmed devrine bağlar; kitabe ise 'Sultan Mûsâ' zamanını anar. Yıl kitaptaki değerle yazıldı, çelişki data_quality_notes'ta.",
+      "en": "The book gives AH 824 / AD 1421 and places the mosque in the reign of Çelebi Mehmed, while the inscription names 'Sultan Mûsâ'. The year is the book's value; the contradiction is in data_quality_notes."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "232"
+      }
+    ]
+  },
+  "founder": {
+    "name": "İshak Şah (İvaz Şah oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "232"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "İvaz Şah oğlu İshak Şah'ın H. 824 / M. 1421'de yaptırdığı, 6,85 × 6,95 m ölçülerinde küçük bir cami. Güdük minare tipinde bir minaresi vardır; kitabesi silinmiş, sonradan rika hatla mermere yeniden yazılmıştır.",
+    "en": "A small mosque of 6.85 × 6.95 m built in AH 824 / AD 1421 by İshak Şah, son of İvaz Şah. It has a stubby-type minaret; the original inscription is erased and was rewritten in ruq'ah script on marble."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, Yıldırım ilçesi Kurdoğlu Mahallesi, Namazgâh Caddesi, Kabakçı Sokak, No: 64'te yer alır. Çelebi Mehmed devrine aittir ve H. 824 / M. 1421'de İvaz Şah oğlu İshak Şah tarafından inşa ettirilmiştir. Halk arasında 'Müftü' unvanıyla tanınan Karaçelebizâde Abdülaziz Efendi'nin burada oturması ve konağının aynı mahallede bulunması nedeniyle 'Müftü Önü Camii' diye anılır.",
+        "en": "The mosque is at No. 64 Kabakçı Street, Namazgâh Avenue, Kurdoğlu Neighborhood, Yıldırım. It dates from the reign of Çelebi Mehmed and was built in AH 824 / AD 1421 by İshak Şah, son of İvaz Şah. It is called the 'Müftü Önü Mosque' because Karaçelebizâde Abdülaziz Efendi, known as the 'Mufti', lived here and his mansion was in the same neighborhood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe",
+        "en": "Inscription"
+      },
+      "body": {
+        "tr": "Eski kaynaklardan, kitabesi silinmiş olsa da yapının İvaz Şah oğlu İshak Şah tarafından yaptırıldığı anlaşılmaktadır. Bugün rika hatla yeniden yazılmış kitabe mermer üzerine işlenerek giriş kapısının üzerine yerleştirilmiştir.",
+        "en": "Old sources indicate that the building was commissioned by İshak Şah, son of İvaz Şah, although the inscription has been erased. Today the inscription, rewritten in ruq'ah script, is carved on marble above the entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Cami 6,85 × 6,95 m ölçülerinde oldukça küçüktür; duvar kalınlığı 80 cm, iç mekân yüksekliği yaklaşık 4,5 metredir. Minare batı cephesindedir; moloz taş kaidesi cami çatısına kadar yükselir, kısa tutulmuş gövdesi Anadolu'daki 'güdük minare' tipini andırır.",
+        "en": "The mosque is quite small at 6.85 × 6.95 m, with 80 cm thick walls and an interior height of about 4.5 m. The minaret is on the west side; its rubble stone base rises to roof level and its short shaft resembles the Anatolian 'stubby minaret' type."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "id": "bugunku-durum",
+      "order": 4,
+      "title": {
+        "tr": "Bugünkü Durum",
+        "en": "Present State"
+      },
+      "body": {
+        "tr": "Yapının bir köşesi yol açılması nedeniyle tahrip olmuş, son cemaat yeri kapatılmıştır. Bugün mütevazı bir mahalle mescidi görünümündedir.",
+        "en": "One corner of the building was damaged by road construction and the narthex has been closed. Today it looks like a modest neighborhood masjid."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Kurdoğlu Mahallesi, Namazgâh Caddesi, Kabakçı Sokak, No: 64",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "key": "plan_olcusu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan dimensions"
+      },
+      "value": "6,85 × 6,95",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 80,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "key": "ic_yukseklik",
+      "label": {
+        "tr": "İç mekân yüksekliği (yaklaşık)",
+        "en": "Interior height (approx.)"
+      },
+      "value": 4.5,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "key": "minare_yeri",
+      "label": {
+        "tr": "Minare konumu",
+        "en": "Minaret position"
+      },
+      "value": "Batı cephesi; moloz taş kaideli, kısa gövdeli (güdük minare tipi)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İshak Şah",
+      "role": {
+        "tr": "Banî (yaptıran); İvaz Şah oğlu",
+        "en": "Founder; son of İvaz Şah"
+      }
+    },
+    {
+      "name": "Karaçelebizâde Abdülaziz Efendi",
+      "role": {
+        "tr": "Halk arasında 'Müftü' olarak tanınan; caminin 'Müftü Önü' adının kaynağı",
+        "en": "Known as 'Mufti'; source of the 'Müftü Önü' name"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısının üzeri (mermer, rika hatla yeniden yazılmış)",
+        "en": "Above the entrance door (marble, rewritten in ruq'ah script)"
+      },
+      "language": "ar",
+      "script": "Rika (yeniden yazılmış)",
+      "transliteration": "Emere bi-imâreti hâza’l-fakîr el-muhtâc ilâ’llahi a’nî İshak Şah bin İvaz Şah es-Sultan Mûsâ H. 824.",
+      "translation": {
+        "tr": "Bu yapının inşa edilmesini, Allah’a muhtaç fakir kul İvaz Şah oğlu İshak Şah, Sultan Mûsâ zamanında emretti. H. 824 / M. 1421.",
+        "en": "The construction of this structure was ordered by the poor servant of God, İvaz Şah’s son, İshak Şah, during the reign of Sultan Musa. AH 824 / AD 1421."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 824,
+        "gregorian": "1421"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1421",
+      "year": 1421,
+      "date": null,
+      "hijri": "824",
+      "type": "construction",
+      "title": {
+        "tr": "İshak Şah tarafından inşa ettirildi",
+        "en": "Built by İshak Şah"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "232"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İshak Şah Camii, Kurdoğlu Mahallesi'nde küçük, mütevazı bir mahalle mescidi görünümündedir; planı yaklaşık 7 metrelik bir kareye yakındır. Duvarları kalındır, son cemaat yeri kapatılmıştır ve bir köşesi yol nedeniyle zarar görmüştür. Giriş kapısının üzerinde mermere yeniden yazılmış bir kitabe vardır. Batı cephesinde, moloz taş bir kaide üzerinde, kısa gövdeli bir minare yükselir.",
+      "en": "The İshak Şah Mosque is a small, modest neighborhood masjid in Kurdoğlu Neighborhood, roughly a 7 metre square in plan. Its walls are thick, the narthex has been closed and one corner was damaged by a road. Above the entrance is a rewritten inscription on marble. On the west side, a short-shafted minaret rises from a rubble stone base."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-zeyniler-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Vakıf bilgisi yalnızca Muallimzâde Hamamı'nın camiye vakfedilmesinden ibaret; vakfiye metni/tarihi kitapta yok.",
+      "Dökümcüler (Muallimzâde) Hamamı İncirli Caddesi üzerinde deniyor ancak ilçe belirtilmiyor; ilişki hedef id'si (bursa-yildirim-dokumculer-hamami) Yıldırım varsayımıyla yazıldı, hedef kaydın varlığı/ilçesi teyit edilmeli.",
+      "Abdüllatîf el-Kudsî Türbesi başka kayıtta işleniyor; ilişki hedef id'si bursa-yildirim-abdullatif-kudsi-turbesi olarak yazıldı.",
+      "Molla Hüsrev'in yaptırdığı ve içine defnedildiği medresenin konumu ve bugünkü durumu kitapta yok (Hüseyin Vassâf'tan alıntı); ayrı kayıt/ilişki açılmadı.",
+      "Zeyniler köyündeki sade yapıların adları ve konumu kitapta yok.",
+      "Caminin kitabeleri: 1957 onarım kitabesinin metni kitapta basılmıyor.",
+      "Çeşme için Fâtih Sultan Mehmed fermanı iddiası rivayet olarak legends'e alındı; arşivle teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[mihrap-ali-imran-37]",
+        "note": "Kitap bu ayet parçasının Türkçe çevirisini vermiyor; yalnızca İngilizce metinde parantez içinde 'Whenever Zachariah visited her in the sanctuary' anlamı yer alıyor. translation.tr boş bırakılamadığı için translation null yazıldı, İngilizce anlam note alanına kopyalandı."
+      },
+      {
+        "field": "dating / sections[tarihce]",
+        "note": "Kitap hem inşa (1449) hem camiye dönüştürme (1568) tarihini verir; ayrıca 1449 sonrasında 1475, 1568, 1600, 1679, 1745 ve 1761 yıllarında 'kısmi ya da kapsamlı onarım' yapıldığını söyler. 1568 hem dönüşüm hem onarım listesinde geçer."
+      },
+      {
+        "field": "sections[abdullatif-el-kudsi]",
+        "note": "Zeynüddin Hafî H. 852 / M. 1448'de Bursa'ya gelmiş, H. 856 / M. 1452'de ölmüştür; mescit H. 853 / M. 1449'da Abdüllatîf el-Kudsî adına yapılmıştır. Türbenin Sultan II. Murad (XV. yüzyıl) tarafından yaptırıldığı kitapta başka kayıtta anlatılan yapıya aittir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Zeyniler Camii",
+    "en": "Zeyniler Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Hacı Halife Camii",
+      "en": "Hacı Halife Mosque",
+      "note": "Başlıktaki parantezli ad"
+    },
+    {
+      "tr": "Zeynîler",
+      "en": "Zeynîler",
+      "note": "Kaynaklardaki ad"
+    },
+    {
+      "tr": "Tâceddin",
+      "en": "Tâceddin",
+      "note": "Kaynaklardaki ad"
+    },
+    {
+      "tr": "Abdüllatif el-Kudsî Zaviyesi",
+      "en": "Abdullatif-i Kudsî Zawiya",
+      "note": "Kaynaklardaki ad"
+    },
+    {
+      "tr": "Hacı Halife Zaviyesi",
+      "en": "Hacı Halife Zawiya",
+      "note": "Zeyniyye Hankahı için kaynaklardaki ad"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Zeyniyye",
+    "Abdüllatîf el-Kudsî",
+    "Molla Hüsrev",
+    "çilehane",
+    "Evliya Çelebi",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Emirsultan",
+    "address": "Emirsultan Mahallesi, Zeyniler Caddesi, No: 14",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "274"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 853 / M. 1449 (mescit olarak); H. 976 / M. 1568'de camiye dönüştürüldü",
+      "en": "AH 853 / AD 1449 (as a masjid); converted to a mosque in AH 976 / AD 1568"
+    },
+    "start_year": 1449,
+    "end_year": 1449,
+    "hijri_year": 853,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap Sultan II. Murad devrinde H. 853 / M. 1449'da mescit olarak yapıldığını, H. 976 / M. 1568'de minber eklenerek camiye dönüştürüldüğünü söyler.",
+      "en": "The book says it was built as a masjid in AH 853 / AD 1449 under Sultan Murad II and converted to a mosque with a minbar in AH 976 / AD 1568."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "274"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Ramazan",
+    "role": "banî (mescit)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "274"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Dökümcüler (Muallimzâde) Hamamı vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "275"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Zeyniyye tarikatını Anadolu'ya getiren Abdüllatîf el-Kudsî adına Hoca Ramazan'ın 1449'da yaptırdığı mescit; 1568'de Kazasker Muallimzâde Ahmed Efendi minber ekleyerek camiye çevirmiştir. Sekizgen kasnaklı kubbesi, çilehanesi ve avlusundaki çeşmesiyle Zeyniyye dergâhının ibadet yapısıdır.",
+    "en": "A masjid built in 1449 by Hoca Ramazan in the name of Abdüllatîf el-Kudsî, who brought the Zeyniyye order to Anatolia; Kazasker Muallimzâde Ahmed Efendi converted it to a mosque in 1568 by adding a minbar. It is the place of worship of the Zeyniyye lodge, with an octagonal-drum dome, an ascetic cell and a courtyard fountain."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Emirsultan Mahallesi, Zeyniler Caddesi, No: 14'te yer alır. Sultan II. Murad devrinde H. 853 / M. 1449'da 'Hoca Ramazan' adlı bir şahıs tarafından, Zeynüddîn Hafî hulefâsından Abdüllatîf el-Kudsî adına mescit olarak yaptırılmıştır. H. 976 / M. 1568'de Kazasker Muallimzâde Ahmed Efendi'nin minber ilavesiyle camiye dönüştürülmüştür. Kaynaklarda 'Zeynîler', 'Tâceddin' veya 'Abdüllatif el-Kudsî Zaviyesi' adlarıyla anılır.",
+        "en": "At Zeyniler Street, No. 14, Emirsultan Neighborhood. It was built as a masjid by a person named 'Hoca Ramazan' in AH 853 / AD 1449, during Sultan Murad II's reign, in the name of Abdüllatîf el-Kudsî, a caliph of Zeynüddîn Hafî. In AH 976 / AD 1568 Kazasker Muallimzâde Ahmed Efendi converted it to a mosque by adding a minbar. Sources call it 'Zeynîler', 'Tâceddin' or 'Abdullatif-i Kudsî Zawiya'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "id": "vakif-ve-turbe",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf ve Türbe",
+        "en": "Waqf and Tomb"
+      },
+      "body": {
+        "tr": "Kazasker Muallimzâde Ahmed Efendi, İncirli Caddesi üzerindeki Dökümcüler (Muallimzâde) Hamamı'nı bu camiye vakfetmiştir. Caminin yaklaşık 50 m güneybatısında, Sultan II. Murad tarafından XV. yüzyılda yaptırıldığı bilinen, Abdüllatîf el-Kudsî'ye ait kâgir türbe yer alır. 2016-2017 restorasyonuyla yenilenmiş ve çevresi düzenlenmiştir. Türbede Abdüllatîf el-Kudsî'nin kabrinin yanı sıra beş mezar daha vardır.",
+        "en": "Kazasker Muallimzâde Ahmed Efendi endowed the Dökümcüler (Muallimzâde) Bath on İncirli Street to this mosque. About 50 m southwest of the mosque is the masonry tomb of Abdüllatîf el-Kudsî, known to have been built by Sultan Murad II in the 15th century; it was renovated and its surroundings landscaped in 2016-2017. Besides his tomb it holds five other graves."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "275"
+        }
+      ]
+    },
+    {
+      "id": "abdullatif-el-kudsi",
+      "order": 3,
+      "title": {
+        "tr": "Abdüllatîf el-Kudsî ve Zeyniyye Dergâhı",
+        "en": "Abdüllatîf el-Kudsî and the Zeyniyye Lodge"
+      },
+      "body": {
+        "tr": "Abdüllatîf el-Kudsî Zeyniyye tarikatını Anadolu'ya getiren sufidir. Kudüs'te doğmuş, medrese tahsilinin ardından manevi ilimlere yönelmiş, önce Şeyh Abdülaziz'den ders almış, Kudüs'te karşılaştığı Zeynüddin Hafî'nin sohbetlerinden etkilenip ona bağlanmıştır. Hafî H. 852 / M. 1448'de Bursa'ya gelmiş, H. 856 / M. 1452'deki vefatına kadar talebe yetiştirmiş, dergâhı yakınındaki bugünkü türbesine defnedilmiştir. Zeyniyye Hankahı kaynaklarda 'Hacı Halife Zaviyesi' gibi adlarla da anılır. Dergâh müntesipleri yılın belli dönemlerini Uludağ eteklerindeki bugünkü 'Zeynîler köyü'nde geçirmiş, orada sade barınaklar yapılmıştır. Dergâh 1925'e kadar faaliyetini sürdürmüştür. Zeynî tarikatına mensup kişilerin mezar taşları biçimsel özellikleriyle ayırt edilir; dergâha ilmiye sınıfından ve devlet erkânından pek çok kişi mensup olmuştur.",
+        "en": "Abdüllatîf el-Kudsî was the Sufi who brought the Zeyniyye order to Anatolia. Born in Jerusalem, he began in a madrasa and turned to spiritual sciences, first studying with Shaykh Abdülaziz, then becoming attached to Zeynüddin Hafî after meeting him in Jerusalem. Hafî came to Bursa in AH 852 / AD 1448, trained students until his death in AH 856 / AD 1452 and was buried in his present tomb near his lodge. The Zeyniyye Khankah is also called the 'Hacı Halife Zawiya'. Followers spent certain periods in the area now called 'Zeynîler Village' in the foothills of Mount Uludağ, where simple shelters were built. The lodge continued until 1925. Gravestones of Zeynî members are distinguishable by style, and many members were from the scholarly class or high-ranking officials."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "275"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-son-cemaat",
+      "order": 4,
+      "title": {
+        "tr": "Avlu ve Son Cemaat Yeri",
+        "en": "Courtyard and Narthex"
+      },
+      "body": {
+        "tr": "Cami dikdörtgen planlıdır. Kare planlı harimin kuzeyinde 3,75 m derinliğinde son cemaat mahalli bulunur. Taş duvar ve demir parmaklıkla çevrili küçük avluya sivri kemerli, kirpi saçaklı bir kapıdan girilir. Avlunun sağında, suyunun Fâtih Sultan Mehmed'in fermanıyla temin edildiği rivayet edilen üç kurnalı ve üç yalaklı mermer çeşme ile abdestlikler vardır. Çeşmenin güneyinde, girişi cami içinden sağlanan ve bugün imam odası olarak kullanılan çilehane yer alır. Son cemaat alanının önüne sonradan dikdörtgen bir mekân eklenmiş, cam doğramayla kapatılmıştır; doğu tarafı kadınlara ayrılmıştır, batısından kubbeli çilehaneye geçilir. Son cemaat mahalline avludan beş basamaklı merdivenle çıkılır; doğu ve batısı duvarla sınırlı, ortasında sofa vardır. Kuzey cephesi ortada yuvarlak, yanlarda iki sivri kemerli üçlü açıklıkla sonlanır; açıklıklar cam ve metal doğramayla kapalıdır.",
+        "en": "The mosque is rectangular. North of the square prayer hall is a narthex 3.75 m deep. A small courtyard with stone walls and iron railings is entered through a pointed-arch gate with sawteeth at the eaves. To the right is a marble fountain with three troughs and three waterways, reputedly supplied by decree of Fâtih Sultan Mehmed, and ablution facilities. South of the fountain is the ascetic cell (çilehane), entered from inside the mosque and used as the imam's room. A later rectangular space in front of the narthex is closed with glass; its east side is for women and its west gives access to the domed cell. The narthex is reached by a five-step staircase, bordered by walls east and west with a central hall; its north façade ends in a tripartite opening, round in the center and pointed on the sides, closed with glass and metal."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "275-276"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 5,
+      "title": {
+        "tr": "Harim",
+        "en": "Prayer Hall"
+      },
+      "body": {
+        "tr": "Beden duvarları kesme taş ve üç sıra tuğlayla, aralarına bir sıra dikey tuğla konularak örülmüştür. Harime mermer söveli ve basık kemerli, ikisi art arda çift kanatlı ahşap kapıdan girilir; kapılardan biri özgündür ve kanatlarında 'Lâ ilâhe İllallah' ve 'Muhammedün Resulullah' yazılıdır. Giriş kapısı üzerindeki kitabe yerine Bursa Eski Eserleri Sevenler Kurumu'nun 1957 tarihli onarım kitabesi konmuştur. Mermer sövelerde biri özgün iki kabartma püskül motifi vardır. Kare planlı harim, sekizgen kasnağa oturan kubbeyle örtülüdür; kasnak geçişi bir sıra kesme taş ve iki sıra tuğla, üzerinde üç sıra kirpi saçakla sağlanmıştır. Kubbe, benzer yapılardan farklı olarak baklavalı ya da prizmatik kuşaklarla değil, yükseltilmiş kasnak ve kürevi köşelikler üzerine oturur. Harim doğu, batı ve mihrap duvarlarında ikişer altlık ve üçer üstlük, kuzey duvarında iki altlık ve bir üstlük pencereyle aydınlanır. Alt pencereler dikdörtgen, ince mermer söveli ve sivri kemer alınlıklıdır; batıdaki alt pencereler yaba motifli tuğla zencereklerle çevrilidir. Üst pencereler alçı taklidi beton şebekeli ve revzenlidir.",
+        "en": "The main walls are cut stone and three rows of brick, with a vertical row of bricks between. The prayer hall is entered through two double-leafed wooden doors with marble frames and a depressed arch, one original, whose wings read 'La ilahe illallah' and 'Muhammadun Resulullah'. A 1957 restoration inscription of the Bursa Association for the Appreciation of Antiquities replaces the inscription above the entrance. Two relief tassel motifs, one original, are on the marble jambs. The square hall is covered by a dome on an octagonal drum built of one row of cut stone and two of brick with three rows of sawteeth above. Unlike similar structures, where domes are supported by diamond-shaped or prismatic bands, here the drum is raised and the dome sits on spherical pendentives. The hall is lit by two lower and three upper windows on each of the east, west and mihrab walls and two lower and one upper on the north wall. The lower windows are rectangular with thin marble sills and pointed-arch pediments, those on the west framed by brickwork with interlaced pitchfork motifs; the upper ones have plaster-imitation concrete grilles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "276-277"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber-minare",
+      "order": 6,
+      "title": {
+        "tr": "Mihrap, Minber ve Minare",
+        "en": "Mihrab, Minbar and Minaret"
+      },
+      "body": {
+        "tr": "Güney duvardaki dört boğumlu mihrap nişi beyaz sıvalı ve sadedir; kavsarası iki yandan sütuncelerle sınırlanır, üzerindeki panoda Âl-i İmrân suresi 37. ayetinden 'Küllemâ dehale aleyhâ Zekeriyyâ'l-mihrâb' yazılıdır. Minber ve kürsü ahşaptır, yeşil-beyaz boyalıdır. Kuzeybatıdaki minare cami ile aynı tarzdadır: sekizgen kaide üzerinde tuğla örgülü silindirik gövde, tek şerefe, şerefe altında yedi sıra tuğla bezeme ve beton sıvalı yarım soğan formlu külah.",
+        "en": "The four-node mihrab niche on the south wall is plain and white-plastered; its hood is flanked by columnar elements, and the panel above carries 'Küllemâ dehale aleyhâ Zekeriyyâ'l-mihrâb' from Surah Al-i Imran, verse 37. The minbar and pulpit are wood, painted green and white. The northwest minaret is in the same style as the mosque: a cylindrical brick shaft on an octagonal base, a single balcony with seven rows of brick decoration beneath, and a concrete-plastered half-onion-shaped spire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "277-278"
+        }
+      ]
+    },
+    {
+      "id": "evliya-celebi-ve-vassaf",
+      "order": 7,
+      "title": {
+        "tr": "Evliya Çelebi ve Hüseyin Vassâf",
+        "en": "Evliya Çelebi and Hüseyin Vassâf"
+      },
+      "body": {
+        "tr": "Evliya Çelebi şöyle der: 'Abdüllâtif Makdisî yapısıdır. Dürer ve Gürer kitabı yazarı Molla Hüsrev'in bu mescitte bir ibadet köşesi vardır. Fakir, o şerefli makamda uğurlu olması için bir günde bir Kur'an hatmini tamamlamadan dışarı adım atmadım. Ulu bir ibadet yeridir ki, o değerli kitap yalnızlık köşesinde yazılmıştır.' Hüseyin Vassâf ise Molla Hüsrev'in medresede medfun olduğunu, medreseyi kendisinin yaptırdığını, cenazesinin İstanbul'dan Bursa'ya nakledildiğini, medresenin zamanla yandığını ve Şeyhülislam Çelebizâde Zeynelâbidîn tarafından H. 1233 / M. 1818'de yeniden inşa edilip içine tatlı su akıtıldığını aktarır.",
+        "en": "Evliya Çelebi writes that it is a structure built by Abdüllâtif Makdisî, that Molla Hüsrev, author of Dürer and Gürer, has a prayer corner in this mosque, and that he did not step out until he had completed the whole Quran in a day. Hüseyin Vassâf says Molla Hüsrev is buried in the madrasa, which he built himself, that his body was brought from Istanbul to Bursa, that the madrasa burned over time and was rebuilt by Shaykh al-Islam Çelebizâde Zeynelâbidîn in AH 1233 / AD 1818, with fresh water run into it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 8,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Cami 1449'daki inşasından sonra 1475, 1568, 1600, 1679, 1745 ve 1761'de kısmi ya da kapsamlı onarımlardan geçmiştir. 1855 depreminde zarar gören yapının 1880'li yıllarda başlayan onarımı tamamlanamamıştır. M. Şemseddin Efendi 1929 tespitlerinde cami ve kabristanın harabe durumda olduğunu belirtir. Uzun yıllar bu hâlde kalan yapı ancak 1957'de Vakıflar Genel Müdürlüğü ile Bursa Eski Eserleri Sevenler Kurumu'nun iş birliğiyle restore edilerek yeniden ibadete açılabilmiştir.",
+        "en": "After its construction in 1449 the mosque underwent partial or comprehensive restoration in 1475, 1568, 1600, 1679, 1745 and 1761. Damaged by the 1855 earthquake, restoration begun in the 1880s was never completed. M. Şemseddin Efendi regretfully noted in 1929 that the mosque and cemetery were in ruins. It was restored and reopened for worship only in 1957 through collaboration between the General Directorate of Foundations and the Bursa Association for the Appreciation of Antiquities."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "cesme-suyu-fatih-fermani",
+      "title": {
+        "tr": "Çeşme suyunun Fâtih fermanıyla getirilmesi",
+        "en": "Fountain water supplied by Fâtih's decree"
+      },
+      "body": {
+        "tr": "Avludaki mermer çeşmenin suyunun Fâtih Sultan Mehmed'in fermanıyla temin edildiği rivayet edilmektedir.",
+        "en": "The water of the marble courtyard fountain is reputedly supplied by decree of Fâtih Sultan Mehmed."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "276"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Emirsultan Mahallesi, Zeyniler Caddesi, No: 14",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcusu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall size"
+      },
+      "value": "9,18 × 9,18",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "275"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinligi",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3.75,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "275"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_basamak",
+      "label": {
+        "tr": "Avludan son cemaat yerine merdiven",
+        "en": "Staircase steps to the narthex"
+      },
+      "value": 5,
+      "unit": "basamak",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "276"
+        }
+      ]
+    },
+    {
+      "key": "turbe_mesafesi",
+      "label": {
+        "tr": "Abdüllatîf el-Kudsî Türbesi'ne uzaklık (güneybatı)",
+        "en": "Distance to Abdüllatîf el-Kudsî's tomb (southwest)"
+      },
+      "value": 50,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "275"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Ramazan",
+      "role": {
+        "tr": "Mescidi yaptıran şahıs",
+        "en": "Person who had the masjid built"
+      }
+    },
+    {
+      "name": "Abdüllatîf el-Kudsî",
+      "role": {
+        "tr": "Zeyniyye'yi Anadolu'ya getiren sufi; mescit onun adına yapıldı",
+        "en": "Sufi who brought the Zeyniyye to Anatolia; the masjid was built in his name"
+      }
+    },
+    {
+      "name": "Zeynüddin Hafî",
+      "role": {
+        "tr": "Zeyniyye şeyhi (v. H. 856 / M. 1452)",
+        "en": "Zeyniyye shaykh (d. AH 856 / AD 1452)"
+      }
+    },
+    {
+      "name": "Muallimzâde Ahmed Efendi",
+      "role": {
+        "tr": "Kazasker; camiye dönüştüren, hamamı vakfeden",
+        "en": "Kazasker; converted the masjid and endowed the bath"
+      }
+    },
+    {
+      "name": "Molla Hüsrev",
+      "role": {
+        "tr": "Şeyhülislam; bu mescitte ibadet köşesi vardı, medresede medfun",
+        "en": "Shaykh al-Islam; had a prayer corner here, buried in the madrasa"
+      }
+    },
+    {
+      "name": "Şeyhülislam Çelebizâde Zeynelâbidîn",
+      "role": {
+        "tr": "Medreseyi H. 1233 / M. 1818'de yeniden inşa ettiren",
+        "en": "Rebuilt the madrasa in AH 1233 / AD 1818"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Mescidi ziyaret eden seyyah",
+        "en": "Traveller who visited the masjid"
+      }
+    },
+    {
+      "name": "Hüseyin Vassâf",
+      "role": {
+        "tr": "Medresedeki mezarı anlatan kaynak yazar",
+        "en": "Author describing the grave in the madrasa"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kanatlari-kelime-i-tevhid",
+      "location": {
+        "tr": "Özgün ahşap kapının kanatları",
+        "en": "Wings of the original wooden door"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Lâ ilâhe İllallah / Muhammedün Resulullah",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "277"
+        }
+      ],
+      "note": {
+        "tr": "Metin kitaptaki yazımla verilmiştir (sağ ve sol kanatta); kitapta meal yoktur. İngilizce metinde yazım 'La ilahe illalllah' şeklindedir.",
+        "en": "Text given as printed in the book (right and left wing); no translation printed. The English text spells it 'La ilahe illalllah'."
+      }
+    },
+    {
+      "id": "giris-onarim-kitabesi-1957",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, eski kitabe yerinde",
+        "en": "Above the entrance door, in place of the old inscription"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1957"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "277"
+        }
+      ],
+      "note": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu'nun 1957 onarım kitabesi; metni ve dili kitapta verilmiyor.",
+        "en": "The 1957 restoration inscription of the Bursa Association for the Appreciation of Antiquities; its text and language are not given."
+      }
+    },
+    {
+      "id": "mihrap-ali-imran-37",
+      "location": {
+        "tr": "Mihrap kavsarası üzerindeki pano",
+        "en": "Panel above the mihrab hood"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Küllemâ dehale aleyhâ Zekeriyyâ’l-mihrâb",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ],
+      "note": {
+        "tr": "Âl-i İmrân suresi 37. ayetten. Kitabın İngilizce metni anlamı 'Whenever Zachariah visited her in the sanctuary' olarak verir; Türkçe meal yoktur.",
+        "en": "From Surah Al-i Imran verse 37. The book's English text gives the meaning as 'Whenever Zachariah visited her in the sanctuary'; no Turkish translation is printed."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1449",
+      "year": 1449,
+      "date": null,
+      "hijri": "853",
+      "type": "construction",
+      "title": {
+        "tr": "Hoca Ramazan tarafından mescit olarak yaptırıldı",
+        "en": "Built as a masjid by Hoca Ramazan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1475",
+      "year": 1475,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "camiye-donusum-1568",
+      "year": 1568,
+      "date": null,
+      "hijri": "976",
+      "type": "addition",
+      "title": {
+        "tr": "Kazasker Muallimzâde Ahmed Efendi minber ekleyerek camiye dönüştürdü",
+        "en": "Converted to a mosque with a minbar added by Kazasker Muallimzâde Ahmed Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "274"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 1568'i ayrıca onarım yılları listesinde de sayar.",
+        "en": "The book also lists 1568 among the repair years."
+      }
+    },
+    {
+      "id": "onarim-1600",
+      "year": 1600,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1679",
+      "year": 1679,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1745",
+      "year": 1745,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1761",
+      "year": 1761,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "medrese-yeniden-1818",
+      "year": 1818,
+      "date": null,
+      "hijri": "1233",
+      "type": "record",
+      "title": {
+        "tr": "Molla Hüsrev Medresesi Şeyhülislam Çelebizâde Zeynelâbidîn tarafından yeniden inşa edildi (Vassâf)",
+        "en": "Molla Hüsrev's madrasa rebuilt by Shaykh al-Islam Çelebizâde Zeynelâbidîn (Vassâf)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde zarar gördü; 1880'lerde başlayan onarım tamamlanamadı",
+        "en": "Damaged in the 1855 earthquake; restoration begun in the 1880s was never completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "harabe-1929",
+      "year": 1929,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "M. Şemseddin Efendi cami ve kabristanın harabe durumda olduğunu kaydetti",
+        "en": "M. Şemseddin Efendi recorded the mosque and cemetery as in ruins"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü ve Bursa Eski Eserleri Sevenler Kurumu iş birliğiyle restore edilip ibadete açıldı",
+        "en": "Restored and reopened for worship by the General Directorate of Foundations and the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "dergah-kapandi-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Dergâh faaliyetini sona erdirdi",
+        "en": "The lodge ended its activities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "275"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-dokumculer-hamami",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Kazasker Muallimzâde Ahmed Efendi, İncirli Caddesi üzerindeki Dökümcüler (Muallimzâde) Hamamı'nı bu camiye vakfetmiştir.",
+        "en": "Kazasker Muallimzâde Ahmed Efendi endowed the Dökümcüler (Muallimzâde) Bath on İncirli Street to this mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "275"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-abdullatif-kudsi-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Caminin yaklaşık 50 m güneybatısındaki Abdüllatîf el-Kudsî Türbesi aynı Zeyniyye dergâhının yapısıdır (kitap bunu bu ifadeyle değil, birlikte anlatarak ima eder).",
+        "en": "The tomb of Abdüllatîf el-Kudsî about 50 m southwest belongs to the same Zeyniyye lodge (implied by the book's joint account, not stated in these words)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "275"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Zeyniler Camii, Emirsultan Mahallesi'nde Zeyniler Caddesi üzerindedir. Taş duvar ve demir parmaklıkla çevrili küçük avluya sivri kemerli ve kirpi saçaklı bir kapıdan girilir; avlunun sağında üç kurnalı mermer bir çeşme ve abdestlikler yer alır. Beş basamaklı merdivenle çıkılan son cemaat yeri kuzeyde, cam ve metal doğramayla kapatılmış üçlü bir açıklıkla sonlanır. Kare planlı harim 9,18 × 9,18 m ölçüsündedir ve sekizgen bir kasnağa oturan kubbeyle örtülüdür. Duvarlar kesme taş ve üç sıra tuğla ile örülmüştür. Kuzeybatıdaki minare sekizgen kaide üzerinde tuğla gövdelidir, tek şerefelidir ve yarım soğan biçimli bir külahla biter.",
+      "en": "Zeyniler Mosque stands on Zeyniler Street in Emirsultan Neighborhood. A small courtyard surrounded by a stone wall and iron railings is entered through a pointed-arch gate with sawteeth at the eaves; to its right are a marble fountain with three troughs and ablution facilities. The narthex, reached by a five-step staircase, ends on the north in a tripartite opening closed with glass and metal. The square prayer hall, 9.18 × 9.18 m, is covered by a dome on an octagonal drum. Walls are cut stone with three rows of brick. The northwest minaret has a brick shaft on an octagonal base, a single balcony and a half-onion-shaped spire."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

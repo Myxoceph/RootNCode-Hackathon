@@ -1,0 +1,519 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-molla-yegan-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
+      "Kara Eyne Bey'in ilk yapım yılı ve Molla Yegân'ın yeniden inşa yılı kaynakta yok.",
+      "Molla Yegân'ın bitişikteki mescidi ve mektebi için ayrı kayıt oluşturulmadı.",
+      "Medresenin mimari betimlemesi yalnızca restorasyon sonrası durumu anlatıyor; özgün plan ayrıntısı kaynakta sınırlı.",
+      "Mimar kaynakta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "s. 294 medresenin banisini Kara Eyne Bey olarak veriyor ve Molla Yegân'ın yeniden inşa ettirdiğini söylüyor; s. 297 ise Molla Yegân'dan 'yapının banisi' diye söz ediyor. Kaynağa sadık kalındı: 'founder' Kara Eyne Bey, confidence 'disputed'."
+      },
+      {
+        "field": "dating",
+        "note": "s. 295 'muhtemelen H. 865 / M. 1461 civarı' diyor; s. 297 Molla Yegân'ın XV. yüzyılda vefat ettiğini söylüyor. Tarihler çelişmiyor fakat kesin değil."
+      },
+      {
+        "field": "facts[hucre_sayisi]",
+        "note": "Kitap 12 hücre ve bir dershane diyor; restorasyon bölümünde karşılıklı beşer oda çocuk üniversitesi tarafından kullanılıyor (toplam 10). Bu iki sayı arasındaki ilişki açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Molla Yegân Medresesi",
+    "en": "Molla Yegân Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "medrese",
+    "Molla Yegân",
+    "Kara Eyne Bey",
+    "Yıldırım Bayezid",
+    "çocuk üniversitesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Yıldırım",
+    "address": "Yıldırım Mahallesi, Yıldırım Caddesi No: 9",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "294-297"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yıldırım Bayezid dönemi; Molla Yegân'ın yeniden inşası ve vakfiyesi yaklaşık H. 865 / M. 1461",
+      "en": "Yıldırım Bayezid period; Molla Yegân's rebuilding and charter around AH 865 / AD 1461"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap ilk yapımın tarihini vermiyor (Yıldırım Bayezid dönemi ümerasından Kara Eyne Bey); yeniden inşa tarihi de belirtilmiyor. Vakfiye tarihi 'muhtemelen' H. 865 / M. 1461 civarı.",
+      "en": "The book gives no date for the first construction (Kara Eyne Bey, a notable of the Yıldırım Bayezid period) and none for the rebuilding. The charter is 'probably' around AH 865 / AD 1461."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "294-297"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kara Eyne Bey",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "294"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Molla Yegân Vakfı",
+    "deed": {
+      "date_display": "yaklaşık H. 865 / M. 1461",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "2900 ciltlik kütüphane medresenin yanındaki mescide vakfedilmiştir.",
+      "en": "A library of 2900 volumes was endowed to the masjid next to the madrasa."
+    },
+    "land_note": {
+      "tr": "Yapıların sürdürülebilirliği için birçok gelir getiren arazi vakfa dahil edilmiştir.",
+      "en": "Many income-generating lands were included in the endowment."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "295"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Yıldırım Bayezid dönemi ümerasından Kara Eyne Bey'in yaptırdığı, harap olunca Molla Yegân'ın yeniden inşa ettirdiği medrese; 2006-2009 restorasyonuyla yeniden kullanıma açılmış, avluda Molla Yegân Çocuk Üniversitesi (Bilim Merkezi) yapılmıştır.",
+    "en": "A madrasa built by Kara Eyne Bey, a notable of the Yıldırım Bayezid period, and rebuilt by Molla Yegân after falling into ruin; restored 2006-2009, with the Molla Yegân Children's University (Science Center) built in its courtyard."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-banisi",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banisi",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Yıldırım ilçesi, Yıldırım Mahallesi, Yıldırım Caddesi No: 9'da yer alır. Yıldırım Bayezid dönemi ümerasından Kara Eyne Bey tarafından yaptırılmıştır; Kurtuluş Caddesi'nden Yıldırım Bayezid Camii yönüne dönülen güzergâhta solda bulunur ve tarihî ve coğrafi yakınlığı sebebiyle Yıldırım Külliyesi ile birlikte anılır. Kaynaklar Kara Eyne Bey'in bir süre burada ders verdiğini kaydeder. Yapı zamanla harap olunca daha önce burada ders vermiş olan Molla Yegân tarafından yeniden inşa ettirilmiştir.",
+        "en": "Located in Yıldırım District, Yıldırım Neighborhood, Yıldırım Street No. 9. Built by Kara Eyne Bey, a notable of the Yıldırım Bayezid period; it stands on the left of the route from Kurtuluş Street to the Yıldırım Bayezid Mosque and is mentioned together with the Yıldırım Complex due to proximity. Sources record that Kara Eyne Bey taught here for a time. The building fell into disrepair and was rebuilt by Molla Yegân, who had previously taught here."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "294"
+        }
+      ]
+    },
+    {
+      "id": "molla-yegan",
+      "order": 2,
+      "title": {
+        "tr": "Molla Yegân",
+        "en": "Molla Yegân"
+      },
+      "body": {
+        "tr": "Asıl adı Mehmed olan Molla Yegân Aydın doğumludur, Akçakoyunlu Türkmen ailesine mensuptur. Molla Fenârî'den ders almış, bir süre müderrislik yapmış ve Bursa kadılığında bulunmuştur. H. 845 / M. 1441'de hacca giden Molla Yegân dönüşte Mısır'dan getirdiği genç âlim Molla Gürânî'yi Osmanlı padişahına takdim etmiş; Sultan II. Murad da Gürânî'yi oğlu Şehzade Mehmed'in (Fâtih) hocası yapmıştır. Molla Fenârî ailesiyle şeri hükümler ve bazı ilmî meselelerde fikir ayrılığı yaşamış; ailesinden 'Yegânzâdeler' adıyla çok sayıda âlim yetişmiştir. Muhtemelen vakfiyesini düzenlediği H. 865 / M. 1461 civarında vefat etmiş ve kendi yaptırdığı medresenin haziresine defnedilmiştir; mezarının yeri günümüze ulaşmamıştır.",
+        "en": "Molla Yegân, whose real name was Mehmed, was born in Aydın to the Akçakoyunlu Turkoman family. He studied under Molla Fenârî, taught in madrasas and served as Qadi of Bursa. He went on the hajj in AH 845 / AD 1441 and on his return presented the young scholar Molla Gurani, whom he brought from Egypt, to the Ottoman Sultan; Murad II made Gürânî tutor of his son Şehzade Mehmed (Fâtih). He disagreed with the Molla Fenârî family on religious rulings and some scholarly issues; many scholars known as 'Yegânzâdeler' came from his family. He probably died around AH 865 / AD 1461, the year he prepared his endowment charter, and was buried in the graveyard of the madrasa he built; the location of his grave has not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "294-295"
+        }
+      ]
+    },
+    {
+      "id": "vakif-ve-egitim",
+      "order": 3,
+      "title": {
+        "tr": "Vakıf ve Eğitim",
+        "en": "Endowment and Education"
+      },
+      "body": {
+        "tr": "Molla Yegân'ın 2900 ciltlik bir kütüphanesi olduğu ve kitaplarını medresenin yanındaki mescide vakfettiği bilinir. Yapıların sürdürülebilirliği için birçok gelir getiren araziyi de vakfına dahil etmiştir. Kaynaklarda medrese yakınında bir mektep de yaptırdığı belirtilir. Başlangıçta 20'li medreseler sınıfında olan yapı zamanla 50'li medreseler grubuna dahil edilmiş ve XX. yüzyıl başlarına kadar eğitim vermiştir. Medrese on iki hücre ve bir dershaneden oluşur; bitişikteki kâgir mescit 1723'te kapsamlı onarım görmüştür.",
+        "en": "Molla Yegân had a library of 2900 volumes and donated the books to the masjid next to the madrasa. He also included many income-generating lands in his endowment to sustain the buildings. Sources say he also built a school near the madrasa. Initially in the '20 akçe' class, the building was later placed in the '50 akçe' group and taught until the early 20th century. The madrasa consisted of twelve cells and a classroom; the adjacent masonry masjid underwent extensive repair in 1723."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "id": "gunumuz-ve-restorasyon",
+      "order": 4,
+      "title": {
+        "tr": "Günümüz ve Restorasyon",
+        "en": "Present State and Restoration"
+      },
+      "body": {
+        "tr": "Geniş bir avlu içinde doğu-batı yönünde karşılıklı iki blok ayakta kalmıştır; derslik ve şadırvan bölümleri arkeolojik kazılara rağmen ortaya çıkarılamamıştır. Yapı 1862 tarihli Suphi Bey Haritası'nda iki kollu planıyla yer alır. 1990'larda inceleyen araştırmacılar medresenin metruk olduğunu ve farklı amaçlarla kullanıldığını, hücrelerin kimsesiz ve yoksullara barınak olduğunu, hazire mezar taşlarının dağınık bırakıldığını belirlemiştir. 2006-2009 arasında Yıldırım Belediyesi'nin restorasyonuyla hücreler beşik tonozlu, çatıları kiremit kaplı olarak düzenlenmiş; dışa açılan demir parmaklıklı pencereler içe doğru daralan formda tasarlanmış; dış duvarlarda üç sıra tuğla ve bir sıra moloz taşla almaşık duvar tekniği uygulanmıştır. Kuzeye bir eyvan/dershane eklenmiş, kuzeybatıda bodrum katında otopark yapılmış, üst kotlara muhtarlık, kültür merkezi ve postane şubesi gibi birimler eklenmiştir. Avluda camla çevrili 'Molla Yegân Çocuk Üniversitesi' (Bilim Merkezi) inşa edilmiş, bugün medresenin karşılıklı beşer odası çocuk üniversitesi tarafından kullanılmaktadır.",
+        "en": "Two blocks facing east-west in a large courtyard survive; the classroom and shadirvan sections were not found despite archaeological excavations. The building appears on the 1862 Suphi Bey Map with its two-winged plan. Researchers in the 1990s found it abandoned and used for various purposes, the cells sheltering the destitute and the poor and the graveyard stones scattered. In the 2006-2009 restoration by Yıldırım Municipality the cells were arranged with barrel vaults and tile roofs; the iron-grilled windows narrow inward; the exterior walls use alternating three rows of brick and one row of rubble stone. An iwan/classroom was added to the north, a basement parking lot to the northwest, and public units such as the mukhtar's office, cultural center and post office branch to the upper levels. The glass-enclosed 'Molla Yegân Children's University' (Science Center) was built in the courtyard; five rooms on each side are used by it today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295-297"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 5,
+      "title": {
+        "tr": "Hazirede Gömülü Olduğu Bilinenler",
+        "en": "Known Burials in the Graveyard"
+      },
+      "body": {
+        "tr": "Medrese haziresinde medfun olduğu bilinen ancak mezar taşları günümüze ulaşmayanlar arasında banisi Molla Yegân Mehmed bin Armağan (XV. yüzyılda vefat etmiş müderris ve kadı) vardır. Ailesinden Şah Mehmed Efendi bin Molla Yegân (v. H. 857 / M. 1453, Bursa kadısı ve müderris), Yusuf Bâlî Efendi bin Molla Yegân (v. H. 900 civarı / M. 1495, müderris), Alâaddin Ali Efendi bin Molla Yegân (v. H. 909 / M. 1503, müderris ve müftü), Yegânzâde Sinâneddin Yûsuf bin Ali (v. H. 945 / M. 1538; Şam kadısı, müderris, defterdar, eser sahibi), oğlu Şah Mehmed Efendi bin Sinâneddin Yûsuf (v. H. 969 / M. 1562, müderris) ve hakkında az bilgi bulunan Mustafa Çelebi bin Molla Yegân da anılır.",
+        "en": "Those known to be buried in the madrasa graveyard, though their gravestones have not survived, include its founder Molla Yegân Mehmed bin Armağan (professor and qadi, died in the 15th century). Other family members named are Şah Mehmed Efendi bin Molla Yegân (d. AH 857 / AD 1453, Qadi of Bursa and professor), Yusuf Bâlî Efendi bin Molla Yegân (d. around AH 900 / AD 1495, professor), Alâaddin Ali Efendi bin Molla Yegân (d. AH 909 / AD 1503, professor and mufti), Yegânzâde Sinâneddin Yûsuf bin Ali (d. AH 945 / AD 1538; Qadi of Damascus, professor, treasurer, author), his son Şah Mehmed Efendi bin Sinâneddin Yûsuf (d. AH 969 / AD 1562, professor) and Mustafa Çelebi bin Molla Yegân, of whom little is known."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "297"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hucre_sayisi",
+      "label": {
+        "tr": "Hücre sayısı",
+        "en": "Number of cells"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "key": "dershane",
+      "label": {
+        "tr": "Dershane sayısı",
+        "en": "Number of classrooms"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "key": "kutuphane_cilt",
+      "label": {
+        "tr": "Kütüphane cilt sayısı",
+        "en": "Library volumes"
+      },
+      "value": 2900,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "key": "medrese_sinifi",
+      "label": {
+        "tr": "Medrese sınıfı",
+        "en": "Madrasa class"
+      },
+      "value": "20'li, sonra 50'li medrese",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon_yillari",
+      "label": {
+        "tr": "Restorasyon yılları",
+        "en": "Restoration years"
+      },
+      "value": "2006-2009",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "296"
+        }
+      ]
+    },
+    {
+      "key": "cocuk_universitesi_oda",
+      "label": {
+        "tr": "Çocuk üniversitesi odaları",
+        "en": "Rooms used by Children's University"
+      },
+      "value": "Karşılıklı beşer oda",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "296-297"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kara Eyne Bey",
+      "role": {
+        "tr": "İlk banî, Yıldırım Bayezid dönemi ümerasından; burada ders vermiş",
+        "en": "First founder, notable of the Yıldırım Bayezid period; taught here"
+      }
+    },
+    {
+      "name": "Molla Yegân (Mehmed bin Armağan)",
+      "role": {
+        "tr": "Yeniden inşa ettiren, vakfeden, hazirede medfun",
+        "en": "Rebuilder, endower, buried in the graveyard"
+      }
+    },
+    {
+      "name": "Molla Gürânî",
+      "role": {
+        "tr": "Molla Yegân'ın Mısır'dan getirdiği genç âlim, Fâtih'in hocası",
+        "en": "Young scholar Molla Yegân brought from Egypt, tutor of Fâtih"
+      }
+    },
+    {
+      "name": "Şah Mehmed Efendi bin Molla Yegân",
+      "role": {
+        "tr": "Bursa kadısı ve müderris",
+        "en": "Qadi of Bursa and professor"
+      }
+    },
+    {
+      "name": "Yusuf Bâlî Efendi bin Molla Yegân",
+      "role": {
+        "tr": "Müderris",
+        "en": "Professor"
+      }
+    },
+    {
+      "name": "Alâaddin Ali Efendi bin Molla Yegân",
+      "role": {
+        "tr": "Müderris ve müftü",
+        "en": "Professor and mufti"
+      }
+    },
+    {
+      "name": "Sinâneddin Yûsuf bin Ali (Yegânzâde)",
+      "role": {
+        "tr": "Şam kadısı, müderris, defterdar",
+        "en": "Qadi of Damascus, professor, treasurer"
+      }
+    },
+    {
+      "name": "Şah Mehmed Efendi bin Sinâneddin Yûsuf",
+      "role": {
+        "tr": "Müderris",
+        "en": "Professor"
+      }
+    },
+    {
+      "name": "Mustafa Çelebi bin Molla Yegân",
+      "role": {
+        "tr": "Aile mensubu",
+        "en": "Family member"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "hac-1441",
+      "year": 1441,
+      "date": null,
+      "hijri": "845",
+      "type": "record",
+      "title": {
+        "tr": "Molla Yegân hacca gitti; dönüşte Molla Gürânî'yi padişaha takdim etti",
+        "en": "Molla Yegân went on the hajj and on return presented Molla Gürânî to the Sultan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "294"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1461",
+      "year": 1461,
+      "date": null,
+      "hijri": "865",
+      "type": "record",
+      "title": {
+        "tr": "Muhtemelen Molla Yegân vefat etti; vakfiyesini bu civarda düzenledi",
+        "en": "Molla Yegân probably died around this year, when he prepared his charter"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "id": "mescit-onarim-1723",
+      "year": 1723,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bitişikteki kâgir mescit kapsamlı onarım gördü",
+        "en": "The adjacent masonry masjid underwent extensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "id": "suphi-bey-1862",
+      "year": 1862,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Suphi Bey Haritası'nda iki kollu planıyla yer aldı",
+        "en": "Appears on the Suphi Bey Map with its two-winged plan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2006",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yıldırım Belediyesi restorasyonu (2006-2009); eyvan/dershane eklendi, çocuk üniversitesi yapıldı",
+        "en": "Restoration by Yıldırım Municipality (2006-2009); iwan/classroom added, children's university built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "296-297"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yildirim-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Tarihî ve coğrafi yakınlığı sebebiyle Yıldırım Külliyesi ile birlikte anılır.",
+        "en": "Mentioned together with the Yıldırım Complex due to historical and geographical proximity."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "294"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Molla Yegân Medresesi geniş bir avluda doğu-batı yönünde karşılıklı iki bloktan oluşur. Hücreler beşik tonozlu, çatılar kiremit kaplıdır; dışa açılan demir parmaklıklı pencereler içe doğru daralır. Dış duvarlarda üç sıra tuğla ve bir sıra moloz taşla almaşık duvar kullanılmıştır. Avluda camla çevrili Molla Yegân Çocuk Üniversitesi bulunur.",
+      "en": "The Molla Yegân Madrasa consists of two blocks facing each other east-west in a large courtyard. The cells are barrel-vaulted with tiled roofs; iron-grilled windows narrow inward. Exterior walls alternate three rows of brick with one of rubble stone. A glass-enclosed Children's University stands in the courtyard."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

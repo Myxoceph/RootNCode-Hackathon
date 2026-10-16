@@ -1,0 +1,482 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-namazgah-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 253-255) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Umur Bey Namazgâhı kaydı için tahmini id kullanıldı (bursa-yildirim-umurbey-namazgahi); Umurbey Külliyesi bölümünde varsa id eşlenmeli.",
+      "Banînin açık türbesi için ayrı kayıt gerekip gerekmediğine veri ekibi karar vermeli.",
+      "Besmele çinisinin ve Âyetü'l-kürsî'nin metni kitapta verilmiyor; kitabe kaydı açılmadı. Âl-i İmrân 37. ayet yazısının meali kitapta yok (translation: null).",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Islahat Fermanı'nın ilan tarihi kitapta '13 Teşrinievvel 1875' olarak veriliyor; olay adı ve tarihi veri ekibince başka kaynakla doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 'H. VIII. yüzyılın son çeyreği' ile '1375-1400' aralığını birlikte verir; Hicri çeyrek ile miladi aralık tam örtüşmez. Kitaptaki miladi aralık saklandı, güven probable."
+      },
+      {
+        "field": "timeline[islahat-fermani-1875]",
+        "note": "Kitap tarihi Türkçede '13 Teşrinievvel 1875', İngilizcede '13 October 1875' olarak verir; Rumi takvim tarihi ile Miladi karşılığı aynı gün olarak yazılmıştır. Kitaptaki ifade korundu."
+      },
+      {
+        "field": "inscriptions[minber-ali-imran-37]",
+        "note": "Kitap yalnızca ayet kısmını verir ve meal vermez; translation null bırakıldı. Dil ayet olduğu için 'ar' seçildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Namazgâh Camii",
+    "en": "Namazgâh Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Sufi Mehmed-Yeni Camii",
+      "en": "Sufi Mehmed-Yeni Mosque",
+      "note": "Başlıkta parantez içinde."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Namazgâh",
+    "Sufi Mehmed Efendi",
+    "Emîr Sultan",
+    "Namazgâh Parkı",
+    "açık türbe",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Namazgâh",
+    "address": "Namazgâh Mahallesi, Karınca Dere Sokak, No: 4 (tarihî Namazgâh Parkı içinde)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "253"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1375-1400 (H. VIII. yüzyılın son çeyreği)",
+      "en": "1375-1400 (last quarter of the 8th century AH)"
+    },
+    "start_year": 1375,
+    "end_year": 1400,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap, yapının Sufi Mehmed Efendi tarafından H. VIII. yüzyılın son çeyreğinde, 1375-1400 arasında yaptırıldığının kabul edildiğini söyler. Aralık kitaptan alınmıştır. Mevcut yapı 1969-1977 yeniden inşasıdır.",
+      "en": "The book says the building is believed to have been built by Sufi Mehmed Efendi between 1375 and 1400, in the last quarter of the 8th century AH. The range is the book's. The present building is the 1969-1977 reconstruction."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "253"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sufi Mehmed Efendi",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "253"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Emîr Sultan'ın hadimlerinden Sufi Mehmed Efendi'nin 1375-1400 arasında yaptırdığı kabul edilen, 1969'da yıkılıp 1977'ye kadar yeniden inşa edilen cami; yalnızca minaresi özgünlüğünü korur. Umur Bey Namazgâhı ile birlikte Bursa halkının önemli toplanma alanıdır.",
+    "en": "A mosque believed to have been built between 1375 and 1400 by Sufi Mehmed Efendi, a servant of Emîr Sultan; demolished in 1969 and rebuilt by 1977, only its minaret keeps its original character. With the Umur Bey Namazgâh it is one of the key public gathering places of Bursa."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banî",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Cami Yıldırım ilçesi Namazgâh Mahallesi, Karınca Dere Sokak, No: 4'te, tarihî Namazgâh Parkı içindedir. Emîr Sultan Hazretlerinin hadimlerinden ve ilim sahibi olduğu rivayet edilen Sufi Mehmed Efendi tarafından H. VIII. yüzyılın son çeyreğinde, 1375-1400 arasında yaptırıldığı kabul edilmektedir. Banisinin kabri caminin doğu bitişiğinde, duvarlarla çevrili açık bir türbe içindedir.",
+        "en": "The mosque is at No. 4 Karınca Dere Street, Namazgâh Neighborhood, Yıldırım, inside the historic Namazgâh Park. It is believed to have been built between 1375 and 1400, in the last quarter of the 8th century AH, by Sufi Mehmed Efendi, a servant of Emîr Sultan reputed to be a scholar. The founder's tomb is in a walled open mausoleum next to the east of the mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Yıkım ve Yeniden İnşa",
+        "en": "Demolition and Reconstruction"
+      },
+      "body": {
+        "tr": "İlk yapı moloz taş ve kerpiçten, kırma çatılı ve kiremit kaplı olarak inşa edilmişti. Cami 1969'da Cami Derneği tarafından yıkılmış, 1969-1977 arasında mevcut temeller üzerinde moloz taş ve tuğla ile yeniden inşa edilmiş, üstü yine kırma çatı ve kiremitle örtülmüştür. Günümüzde yalnızca minaresi özgünlüğünü korumaktadır.",
+        "en": "The first structure was of rubble stone and adobe with a tiled hipped roof. The mosque was demolished in 1969 by the Mosque Association and rebuilt between 1969 and 1977 on the existing foundations in rubble stone and brick, again with a tiled hipped roof. Today only the minaret keeps its original character."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Beden duvarları giriş kapısı hizasına kadar moloz taştan, ondan sonra üç sıra tuğla ve iki sıra moloz taştan almaşık örülmüştür. Kuzeydeki iki direkli, kare çatılı giriş sahanlığına iki yandan altı basamaklı merdivenlerle çıkılır. Son cemaat mahallinin ön cephesinde alt ve üstte ikişer pencere vardır; alt pencereler dikdörtgen, sivri kemerli alınlıklı, alınlıklarında tuğla bezeme ve karo çini bulunur, üst pencereler sivri kemerli ve alçı şebekelidir. Giriş üstündeki sivri kemerli sağır pencere alınlığında besmele-i şerif yazılı karo çini dikkat çeker. 135 m²'lik harim kırma çatı ve kiremitle örtülüdür, tüm çatı eteklerinde kirpi saçak vardır.",
+        "en": "The main walls are rubble stone up to the entrance door level and then alternate three rows of brick with two of rubble stone. The two-column, square-roofed entrance platform on the north is reached by six-step staircases on both sides. The narthex front has two windows each at lower and upper levels; the lower windows are rectangular with pointed-arched pediments carrying brickwork and tile panels, the upper ones pointed-arched with plaster lattice. The pointed-arched blind window above the entrance has a tile panel inscribed with the Basmala. The 135 m² prayer hall has a tiled hipped roof, with sawteeth at all roof skirts."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "254-255"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 4,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Harim iç mekânı alçı kaplı, tavanı beyaz sıvalıdır. Aydınlatma doğu ve batı duvarlarında alt ve üstte üçer, mihrap duvarında alt ve üstte ikişer ve kuzey duvarında son cemaat mahalline açılan iki pencereyle sağlanır; mihrap duvarındaki alt pencereler sonradan kapatılıp kitaplık yapılmıştır. Minber ve kürsü ahşaptır; minber çerçevesinde Âyetü'l-kürsî, alınlığında Âl-i İmrân suresinin 37. ayeti yazılıdır. Mihrap nişi sarı yaldızla boyanmış, üç sıra mukarnaslıdır. Betonarme hanımlar mahfili iki silindirik beton direkle taşınır, ahşap kafesle çevrilidir ve son cemaat mahallinden ulaşılır.",
+        "en": "The interior is plaster-clad with a white-plastered ceiling. Lighting comes from three windows each, upper and lower, in the east and west walls, two each in the mihrab wall, and two on the north wall opening onto the narthex; the lower windows in the mihrab wall were later sealed and made into bookcases. The minbar and pulpit are wooden; the Ayat al-Kursi is on the minbar frame and verse 37 of Surah Al-i Imran on its pediment. The mihrab niche is painted with yellow gilding and has three rows of muqarnas. The reinforced-concrete women's gallery rests on two cylindrical concrete pillars, is surrounded by wooden latticework and is reached from the narthex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "254-255"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 5,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Kuzeydoğudaki minare, bir sıra moloz taş ve üç sıra tuğlayla örülmüş çokgen kaide üzerinde tuğla silindirik gövdeyle yükselir. Tek şerefenin altında beş sıra tuğla stalaktit dizisi vardır, konik sivri külah kurşun kaplıdır.",
+        "en": "The minaret in the northeast rises with a cylindrical brick shaft on a polygonal base of one course of rubble stone and three of brick. Below the single balcony is a series of stalactites of five brick courses; the conical spire is lead-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "254-255"
+        }
+      ]
+    },
+    {
+      "id": "namazgah-alani",
+      "order": 6,
+      "title": {
+        "tr": "Namazgâh Alanı",
+        "en": "The Namazgâh Area"
+      },
+      "body": {
+        "tr": "Aynı alanın güneyinde yer alan Umur Bey Namazgâhı ve cami çevresi, tarih boyunca Bursa halkının en önemli toplanma alanlarından biri olmuştur. Burada ordular sefere çıkmadan önce topluca namaz kılıp dua etmiş, kamusal duyurular yapılmış, bahar ve yaz aylarında bayram namazları kılınmış, kalabalık cemaatle yağmur duaları yapılmıştır. Islahat Fermanı 13 Teşrinievvel 1875'te Meclis-i Vâlâ üyesi Suphi Bey tarafından halka bu alanda ilan edilmiştir.",
+        "en": "The Umur Bey Namazgâh to the south of the same area and the mosque's surroundings have been one of the most important gathering places of the people of Bursa. Armies prayed together here before setting out on campaigns, public announcements were made, Eid prayers were held in spring and summer, and rain prayers were held with large congregations. The Reform Edict was proclaimed here to the people on 13 October 1875 by Suphi Bey, a member of the High Council."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "255"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "sufi-mehmed-ilim",
+      "title": {
+        "tr": "Sufi Mehmed Efendi'nin ilim sahibi olduğu rivayeti",
+        "en": "Report that Sufi Mehmed Efendi was a scholar"
+      },
+      "body": {
+        "tr": "Kitap, banisi Sufi Mehmed Efendi'nin Emîr Sultan'ın hadimlerinden ve ilim sahibi olduğunun 'rivayet edildiğini' söyler.",
+        "en": "The book says it is 'reported' that the founder Sufi Mehmed Efendi was a servant of Emîr Sultan and a scholar."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "253"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Namazgâh Mahallesi, Karınca Dere Sokak, No: 4 (Namazgâh Parkı içinde)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "key": "harim_alani",
+      "label": {
+        "tr": "Harim alanı",
+        "en": "Prayer hall area"
+      },
+      "value": 135,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "254"
+        }
+      ]
+    },
+    {
+      "key": "giris_merdiven",
+      "label": {
+        "tr": "Giriş sahanlığı merdivenleri",
+        "en": "Entrance platform stairs"
+      },
+      "value": "İki yandan altı basamaklı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "254"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_insa",
+      "label": {
+        "tr": "Yeniden inşa dönemi",
+        "en": "Reconstruction period"
+      },
+      "value": "1969-1977",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "key": "minare_konumu",
+      "label": {
+        "tr": "Minare konumu",
+        "en": "Minaret position"
+      },
+      "value": "Kuzeydoğu; çokgen kaide (bir sıra moloz taş + üç sıra tuğla)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "254"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sufi Mehmed Efendi",
+      "role": {
+        "tr": "Banî; Emîr Sultan'ın hadimlerinden; kabri doğudaki açık türbede",
+        "en": "Founder; servant of Emîr Sultan; tomb in the open mausoleum to the east"
+      }
+    },
+    {
+      "name": "Suphi Bey",
+      "role": {
+        "tr": "Meclis-i Vâlâ üyesi; Islahat Fermanı'nı bu alanda halka ilan etti",
+        "en": "Member of the High Council; proclaimed the Reform Edict here"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "minber-ali-imran-37",
+      "location": {
+        "tr": "Minber alınlığı",
+        "en": "Pediment of the minbar"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Külle mâ dehale aleyhâ Zekeriyyâ’l-mihrâbe",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "254-255"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1375-1400",
+      "year": 1375,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "1375-1400 arasında Sufi Mehmed Efendi tarafından yaptırıldığı kabul edilir",
+        "en": "Believed to have been built by Sufi Mehmed Efendi between 1375 and 1400"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "253"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 1375-1400 aralığını verir; başlangıç yılı gösterilir.",
+        "en": "The book gives the range 1375-1400; the start year is shown."
+      }
+    },
+    {
+      "id": "yikim-1969",
+      "year": 1969,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Cami Derneği tarafından yıkıldı",
+        "en": "Demolished by the Mosque Association"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1977",
+      "year": 1977,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "1969-1977 arasında mevcut temeller üzerinde yeniden inşa edildi (bitiş yılı)",
+        "en": "Rebuilt on existing foundations between 1969 and 1977 (end year)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "islahat-fermani-1875",
+      "year": 1875,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Islahat Fermanı bu alanda Suphi Bey tarafından halka ilan edildi (13 Teşrinievvel 1875)",
+        "en": "The Reform Edict was proclaimed to the public here by Suphi Bey (13 October 1875)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "255"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-acik-namazgah",
+      "type": "urban_context",
+      "description": {
+        "tr": "Umur Bey Namazgâhı caminin güneyinde, aynı alandadır; birlikte kentin önemli toplanma alanıdır.",
+        "en": "The Umur Bey Namazgâh lies south of the mosque in the same area; together they are an important gathering place of the city."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "255"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Namazgâh Camii, Namazgâh Parkı'nın içinde, Karınca Dere Sokak'ta yer alan kırma çatılı, kiremit örtülü bir camidir. Kuzeyindeki iki direkli giriş sahanlığına iki yandan altı basamaklı merdivenlerle çıkılır; giriş üstündeki sağır pencerede besmele yazılı bir çini vardır. Duvarlar altta moloz taş, üstte tuğla ve taş sıralarından oluşur. Kuzeydoğu köşede çokgen kaideli, tuğla gövdeli, tek şerefeli ve kurşun külahlı özgün minare yükselir. İçeride ahşap minber, sarı yaldızlı mukarnaslı mihrap ve betonarme hanımlar mahfili vardır. Caminin doğusunda, duvarlarla çevrili açık bir türbe bulunur.",
+      "en": "The Namazgâh Mosque is a tiled, hipped-roof mosque inside Namazgâh Park on Karınca Dere Street. A two-column entrance platform on the north is reached by six-step staircases on both sides; the blind window above the entrance holds a tile inscribed with the Basmala. Walls are rubble stone below and alternating brick and stone courses above. In the northeast corner rises the original minaret with a polygonal base, brick shaft, single balcony and lead spire. Inside are a wooden minbar, a mihrab with yellow gilding and muqarnas, and a reinforced-concrete women's gallery. East of the mosque is a walled open mausoleum."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

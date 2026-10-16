@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-asik-yunus-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
+      "Türbenin yapım yılı ve yaptıranı kaynakta yok (Kunter anlatımı Yedekçizâde Ali Efendi'yi anıyor ancak tarih vermiyor).",
+      "Mevcut kitabelerin metni kitapta verilmiyor; 'inscriptions' boş.",
+      "Türbenin hâlâ mı yoksa yeniden mi inşa edildiği, bugün hangi unsurların ayakta olduğu kitapta net değil; sahada kontrol edilmeli.",
+      "Çeşme kitabesinin (1801) alanda hâlen durup durmadığı kitapta belirsiz.",
+      "Mimar kaynakta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitapta başlık 'Âşık Yunus (Kara Abdürrezzak) Türbesi'; id ve ad ilk adla sınırlandırıldı. Metin Âşık Yunus, Yunus Emre ve Kara Abdürrezzak adına üç kabirden söz ediyor."
+      },
+      {
+        "field": "sections[kunter-anlatimi]",
+        "note": "Bölüm doğrudan Halim Baki Kunter'in aktardığı hatıra niteliğindedir; kaynak bunu belge olarak sunmuyor, bu yüzden 'probable' işaretlendi. Kunter anlatımında geçen 1786 tarihi H. 1200 ile uyumludur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Âşık Yunus Türbesi",
+    "en": "Tomb of Âşık Yunus"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Âşık Yunus (Kara Abdürrezzak) Türbesi",
+      "en": "Âşık Yunus (Kara Abdürrezzak) Grave",
+      "note": "Kitaptaki başlık"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "Âşık Yunus",
+    "Yunus Emre",
+    "Kara Abdürrezzak",
+    "Sâdî tekkesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Karamazak",
+    "address": "Karamazak Mahallesi, Karamazak Sokak, No: 12",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "281-282"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım yılı belirtilmemiş; Âşık Yunus H. 843 / M. 1439'da vefat etmiştir",
+      "en": "Construction year not given; Âşık Yunus died in AH 843 / AD 1439"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap türbenin yapım yılını vermiyor; yalnızca Âşık Yunus'un vefat yılını (1439), kabirlerin 1730 onarımını ve 1786'ya kadar yalnızca türbe olarak kullanıldığını belirtiyor.",
+      "en": "The book gives no construction year; it only gives Âşık Yunus's death year (1439), the 1730 repair of the graves and that the place was only a tomb until 1786."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "281-282"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bursalı Kübrevî dervişi Âşık Yunus'un kabri ile Kara Abdürrezzak ve Yunus Emre makam kabirlerinin bulunduğu, eski bir Sâdî tekkesinin yerindeki türbe alanı; 2022'de çevresindeki apartmanlar istimlâk edilerek görünür hale getirilmiştir.",
+    "en": "The tomb area of Bursa-born Kübrevî dervish Âşık Yunus, with the graves of Kara Abdürrezzak and the symbolic tomb of Yunus Emre, on the site of a former Sâdî lodge; in 2022 surrounding apartment blocks were expropriated to make it visible."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-kabirler",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Kabirler",
+        "en": "Location and Graves"
+      },
+      "body": {
+        "tr": "Yıldırım, Karamazak Mahallesi, Karamazak Sokak, No: 12'de yer alır. Âşık Yunus Bursalıdır; H. 843 / M. 1439'da vefat edip mevcut kabrinin bulunduğu yere defnedilmiştir. Halk arasında Yunus Emre'ye ait olduğuna inanılan bir makam da aynı yerdedir. Burada ayrıca Kara Abdürrezzak'a ait bir kabir ve Yunus Emre'nin makam kabri bulunur. Alanda Merkad-i Âşık Yunus, Merkad-i Yunus Emre ve Merkad-i Kara Abdürrezzak olmak üzere üç kabir ve mezar taşları vardır.",
+        "en": "Located in Yıldırım, Karamazak Neighborhood, Karamazak Street No. 12. Âşık Yunus was from Bursa; he died in AH 843 / AD 1439 and was buried where his grave now is. A symbolic tomb popularly believed to belong to Yunus Emre is also here, along with a grave of Kara Abdürrezzak and Yunus Emre's symbolic tomb. The area has three graves with tombstones: Merkad-i Âşık Yunus, Merkad-i Yunus Emre and Merkad-i Kara Abdürrezzak."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "281-282"
+        }
+      ]
+    },
+    {
+      "id": "asik-yunus",
+      "order": 2,
+      "title": {
+        "tr": "Âşık Yunus",
+        "en": "Âşık Yunus"
+      },
+      "body": {
+        "tr": "Bir Kübrevî dervişi olan Bursalı Âşık Yunus, şiirlerinde Emîr Sultan'ı öven ifadelere yer vermiştir. 'Şol cennetin ırmakları', 'Dertli ne ağlayıp gezersin burda', 'Sordum sarı çiçeğe', 'Adı güzel kendi güzel Muhammed', 'Dertli dolap' gibi tanınmış ilahiler Âşık Yunus'a atfedilir.",
+        "en": "Âşık Yunus of Bursa, a Kübrevî dervish, included expressions praising Emîr Sultan in his poems. Well-known hymns such as 'Şol cennetin ırmakları', 'Dertli ne ağlayıp gezersin burda', 'Sordum sarı çiçeğe', 'Adı güzel kendi güzel Muhammed' and 'Dertli dolap' are attributed to him."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "281"
+        }
+      ]
+    },
+    {
+      "id": "kunter-anlatimi",
+      "order": 3,
+      "title": {
+        "tr": "Halim Baki Kunter'in Anlatımı",
+        "en": "Account of Halim Baki Kunter"
+      },
+      "body": {
+        "tr": "Halim Baki Kunter'e göre Yunus Emre ve Âşık Yunus'un mezarları birer makamdır; vaktiyle burada yalnız Kara Abdürrezzak Efendi'nin mezarı bulunuyormuş. Niyâzî-i Mısrî Limni'ye sürülmeden önce cuma günleri Emîr Sultan'ı ziyarete gelir, dönüşte Karamazak aralığına başını çevirip 'Buradan Yunus'un kokusu geliyor' dermiş. Bir cuma müridleri Yunus'un makamını göstermesini istemiş; Niyâzî-i Mısrî Abdürrezzak'ın mezarının alt tarafını işaret edince Bursa eşrafından Yedekçizâde Ali Efendi buraya kitabeli bir türbe ile iki mezar taşı ve sanduka yaptırmıştır. Meşrutiyet'ten birkaç yıl önce saraydan Cemile Sultan türbeyi ziyaret etmiş ve on beş sarı lira harcayarak tamir ettirmiştir. H. 1200 / M. 1786'ya kadar burası yalnızca türbe olarak kullanılmış; Kunter'in ceddi Hacı Esad Efendi türbenin yanına zaviye yaptırıp Sâdî tarikatı ayinlerini başlatmış, tekke sırasıyla oğlu Şeyh Tevfik Efendi, amcası Şeyh Şükrü Efendi ve sonra Kunter'e geçmiştir; Kunter tekke lağvedilene kadar hizmetleri yürütmüştür.",
+        "en": "According to Halim Baki Kunter, the graves of Yunus Emre and Âşık Yunus are each a makam; at one time only the grave of Kara Abdürrezzak Efendi was here. Before being exiled to Limni, Niyâzî-i Mısrî would visit Emîr Sultan on Fridays and on his way back turn toward the Karamazak passage saying 'The scent of Yunus comes from here.' One Friday his disciples asked him to show Yunus's grave; when he pointed to the lower part of Abdürrezzak's grave, Yedekçizâde Ali Efendi, a Bursa notable, commissioned a tomb with an inscription, two tombstones and a sarcophagus. A few years before the Constitutional Monarchy, Cemile Sultan from the palace visited the tomb and had it repaired with fifteen gold liras. Until AH 1200 / AD 1786 it was used solely as a tomb; Kunter's ancestor Hacı Esad Efendi built a lodge next to it and Sâdî ceremonies began; it passed to his son Shaykh Tevfik Efendi, then Shaykh Şükrü Efendi, and then to Kunter, who ran the services until the lodge was dissolved."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "281-282"
+        }
+      ]
+    },
+    {
+      "id": "gunumuz",
+      "order": 4,
+      "title": {
+        "tr": "Yapının Geçmişi ve Günümüzdeki Durum",
+        "en": "History and Present State"
+      },
+      "body": {
+        "tr": "Kara Abdürrezzak Kabri geçmişte ahşap bir türbeyken bugün apartmanlar arasında yalnızca açık bir mezar olarak varlığını sürdürür. Mevcut kitabelerden biri, kabirlerin H. 1143 / M. 1730'da 'Ali Efendi' adlı bir kişinin himmetiyle tamir ettirildiğini kaydeder. Başlangıçta Sâdî tarikatına ait ahşap bir tekke olarak kullanılan yapının bir de camisi bulunuyordu. Türbenin tabanı XVI. yüzyıla ait çinilerle kaplıydı. Burada ayrıca Yeşil Cami'nin kapıcısı Ali Efendi'nin 1801'de yaptırdığı bir çeşmeye ait kitabe de vardır. Kabirler zamanla tamamen kaybolmuş, Niyâzî-i Mısrî'nin işaretiyle yeniden keşfedilip ihya edilmiştir. Yanındaki yapı başlangıçta mescit olarak kullanılmış, sonra konuta dönüştürülmüştür. 2022'de Yıldırım Belediyesi'nin projesi kapsamında çevredeki apartmanlar istimlâk edilerek türbe görünür hâle getirilmiştir.",
+        "en": "The Kara Abdürrezzak grave was once a wooden mausoleum but now survives only as an open grave among apartment buildings. One existing inscription records that the tombs were repaired in AH 1143 / AD 1730 through the benevolence of a certain Ali Efendi. Originally a wooden Sâdî lodge, the structure also housed a mosque. The tomb floor was covered with 16th-century tiles. There is also an inscription from a fountain built in 1801 by Ali Efendi, the doorkeeper of the Green Mosque. The tombs were completely lost over time but rediscovered and revived at Niyâzî-i Mısrî's indication. The adjacent building was initially a masjid and later converted into housing. In 2022 the surrounding apartment blocks were expropriated by Yıldırım Municipality, making the tomb visible."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "282"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kabir_sayisi",
+      "label": {
+        "tr": "Alandaki kabir sayısı",
+        "en": "Number of graves in the area"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "282"
+        }
+      ],
+      "note": {
+        "tr": "Merkad-i Âşık Yunus, Merkad-i Yunus Emre, Merkad-i Kara Abdürrezzak.",
+        "en": "Merkad-i Âşık Yunus, Merkad-i Yunus Emre, Merkad-i Kara Abdürrezzak."
+      }
+    },
+    {
+      "key": "asik_yunus_vefat",
+      "label": {
+        "tr": "Âşık Yunus'un vefatı",
+        "en": "Death of Âşık Yunus"
+      },
+      "value": "H. 843 / M. 1439",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "281"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Âşık Yunus",
+      "role": {
+        "tr": "Bursalı Kübrevî dervişi, kabri burada",
+        "en": "Bursa-born Kübrevî dervish, buried here"
+      }
+    },
+    {
+      "name": "Kara Abdürrezzak Efendi",
+      "role": {
+        "tr": "Burada kabri bulunan kişi",
+        "en": "Person whose grave is here"
+      }
+    },
+    {
+      "name": "Niyâzî-i Mısrî",
+      "role": {
+        "tr": "Yunus'un makamını işaret eden şeyh (Kunter anlatımına göre)",
+        "en": "Shaykh who pointed out Yunus's grave (per Kunter)"
+      }
+    },
+    {
+      "name": "Yedekçizâde Ali Efendi",
+      "role": {
+        "tr": "Kitabeli türbeyi yaptıran Bursa eşrafı (Kunter anlatımına göre)",
+        "en": "Bursa notable who commissioned the tomb (per Kunter)"
+      }
+    },
+    {
+      "name": "Cemile Sultan",
+      "role": {
+        "tr": "Türbeyi ziyaret edip tamir ettiren saray mensubu",
+        "en": "Palace member who visited and repaired the tomb"
+      }
+    },
+    {
+      "name": "Hacı Esad Efendi",
+      "role": {
+        "tr": "Türbe yanında zaviye yaptıran (Kunter'in ceddi)",
+        "en": "Built the lodge next to the tomb (Kunter's ancestor)"
+      }
+    },
+    {
+      "name": "Halim Baki Kunter",
+      "role": {
+        "tr": "Tekke postnişini, kabir hakkında bilgi aktaran",
+        "en": "Last sheikh of the lodge, source of the account"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "asik-yunus-vefat",
+      "year": 1439,
+      "date": null,
+      "hijri": "843",
+      "type": "record",
+      "title": {
+        "tr": "Âşık Yunus vefat etti ve bugünkü kabrinin yerine defnedildi",
+        "en": "Âşık Yunus died and was buried at his present grave"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "281"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1730",
+      "year": 1730,
+      "date": null,
+      "hijri": "1143",
+      "type": "repair",
+      "title": {
+        "tr": "Kabirler 'Ali Efendi'nin himmetiyle tamir ettirildi (mevcut kitabe)",
+        "en": "Graves repaired through the benevolence of 'Ali Efendi' (existing inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "id": "zaviye-1786",
+      "year": 1786,
+      "date": null,
+      "hijri": "1200",
+      "type": "addition",
+      "title": {
+        "tr": "Hacı Esad Efendi türbe yanına zaviye yaptırdı; Sâdî ayinleri başladı (1786'ya kadar yalnızca türbe)",
+        "en": "Hacı Esad Efendi built a lodge next to the tomb; Sâdî ceremonies began (tomb only until 1786)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "id": "cesme-1801",
+      "year": 1801,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Yeşil Cami kapıcısı Ali Efendi bir çeşme yaptırdı (kitabesi burada)",
+        "en": "Ali Efendi, doorkeeper of the Green Mosque, had a fountain built (its inscription is here)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "id": "istimlak-2022",
+      "year": 2022,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yıldırım Belediyesi çevredeki apartmanları istimlâk ederek türbeyi görünür kıldı",
+        "en": "Yıldırım Municipality expropriated surrounding apartments, making the tomb visible"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "282"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Âşık Yunus Türbesi, Karamazak Mahallesi'nde apartmanlar arasında açılmış bir alandır. Alanda Âşık Yunus, Yunus Emre ve Kara Abdürrezzak adına üç kabir ve mezar taşları bulunur; Kara Abdürrezzak kabri bugün açık bir mezardır. Mevcut kitabelerden biri 1730 onarımını kaydeder. Eskiden ahşap bir tekke ve cami vardı; yapı günümüze ulaşmamıştır.",
+      "en": "The Tomb of Âşık Yunus is an open area cleared among apartment blocks in Karamazak. It holds three graves with tombstones for Âşık Yunus, Yunus Emre and Kara Abdürrezzak; the Kara Abdürrezzak grave is now an open grave. An existing inscription records a repair in 1730. A wooden lodge and mosque once stood here but have not survived."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

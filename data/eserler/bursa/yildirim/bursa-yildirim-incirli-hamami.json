@@ -1,0 +1,586 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-incirli-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 311-315) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Bayezid Paşa Camii ve Çatal Çeşme'nin ilçesi kitapta belirtilmiyor; 'bursa-yildirim-catal-cesmesi' hedef id'si varsayılan ilçeyle yazıldı, teyit edilip düzeltilmeli.",
+      "1945 onarım kitabesinin metni kaynakta yok; yerinde okunup eklenmeli.",
+      "Hamamın güncel kullanım durumu (kültür merkezi) tarihleri kitapta 2013'ten sonrası için belirsiz; teyit edilmeli.",
+      "Kitap, Molla Fenârî Camii'nin ilçesini belirtmiyor; ilişki hedefi mevcut kayıt bursa-osmangazi-molla-fenari-camii'ne bağlandı, aynı yapı olduğu teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[iliklik-sicaklik]",
+        "note": "Kitap ılıklık girişini 'sıcaklık alanının güneyindeki' niş yanından, sıcaklığı ise 'ılıklığın doğusundaki' kapıdan tarif eder; yerleşim kitaptaki ifadeye sadık kalınarak özetlendi, plan çizimi olmadan teyit edilemedi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İncirli Hamamı",
+    "en": "İncirli Bath"
+  },
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "tek hamam",
+    "Alâaddin Ali Çelebi",
+    "Mevlânâ Fenârî",
+    "kültür merkezi",
+    "fil gözü",
+    "Bursa kemeri"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Meydancık Mahallesi",
+    "address": "İncirli Caddesi, No: 34",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "311"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1488",
+      "en": "1488"
+    },
+    "start_year": 1488,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, hamamın 1488'de inşa ettirilip vakfedildiğini yazar.",
+      "en": "The book says the bath was built and endowed in 1488."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "311"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kazasker Alâaddin Ali Çelebi (Mevlânâ Fenârî)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "311"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Hamam, banisi tarafından yaptırılarak vakfedilmiştir; 1805'te kiraya verilmiş, 1942'de Vakıflar İdaresi'nden satın alınmış, 2010'da Büyükşehir Belediyesi tarafından kamulaştırılmış, bugün Vakıflar Genel Müdürlüğü mülkiyetindedir.",
+      "en": "The bath was built and endowed by its founder; rented in 1805, bought from the Foundations Administration in 1942, expropriated by the Metropolitan Municipality in 2010, and today owned by the General Directorate of Foundations."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "311-312, 314"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kazasker Alâaddin Ali Çelebi'nin (Mevlânâ Fenârî) 1488'de yaptırıp vakfettiği tek hamam plan tipli yapı. 14 x 14 m kare soğukluğu, altıgen sıcaklığı ve her biri farklı bezemeli özgün kurnalarıyla dikkat çeker; 2010'daki kamulaştırma ve restorasyonun ardından 2013'ten beri kültür merkezi olarak kullanılır.",
+    "en": "A single-bath-plan building built and endowed in 1488 by Kazasker Alâaddin Ali Çelebi (Mevlânâ Fenârî). Notable for its 14 x 14 m square frigidarium, hexagonal caldarium and original basins each with different decoration, it has served as a cultural center since 2013 after the 2010 expropriation and restoration."
+  },
+  "sections": [
+    {
+      "id": "banisi",
+      "order": 1,
+      "title": {
+        "tr": "Banisi Alâaddin Ali Çelebi",
+        "en": "Founder Alâaddin Ali Çelebi"
+      },
+      "body": {
+        "tr": "Hamam, Molla Şemseddin Fenârî'nin torunu ve Yusuf Bâlî Efendi'nin oğlu Kazasker Alâaddin Ali Çelebi (Mevlânâ Fenârî) tarafından 1488'de inşa ettirilerek vakfedilmiştir. İlk eğitimini Bursa'da tamamlayan Ali Çelebi, Herat, Semerkant ve Buhara gibi ilim merkezlerinde uzun yıllar öğrenim görmüş, Anadolu'ya dönünce müderrislik ve kadılık yapmış, Anadolu Kazaskerliği'ne yükselmiştir. 1497'de vefat etmiş, kabri Molla Fenârî Camii haziresindedir. Kaynaklarda Ali Tûsî'den ders aldığı, Bursa Kadılığı yaptığı ve Arapça yazdığı İnşâ ile Miftâhu'l-Ulûm'a Hâşiye adlı iki eseri olduğu bildirilir.",
+        "en": "The bath was built and endowed in 1488 by Kazasker Alâaddin Ali Çelebi (Mevlânâ Fenârî), grandson of Molla Şemseddin Fenârî and son of Yusuf Bali Efendi. After primary education in Bursa he studied for many years in Herat, Samarkand and Bukhara, taught in madrasas, served as qadi and rose to Anatolian Kazasker. He died in 1497 and is buried in the graveyard of the Molla Fenârî Mosque. Sources say he studied under Ali Tûsî, served as Qadi of Bursa and wrote two Arabic works, İnşâ and Miftâhu'l-Ulûm'a Hâşiye."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "311-312"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe ve Kullanım",
+        "en": "History and Use"
+      },
+      "body": {
+        "tr": "Tek hamam plan tipindeki yapı İncirli Caddesi'ne cepheli olup yangın ve depremlerle çeşitli dönemlerde zarar görmüş, onarımlarla kullanımını sürdürmüştür. 1805'te kiraya verilen hamam 1942'ye kadar farklı işlevlerde kullanılmış, son olarak tütün deposu olmuştur. 1942'de Bursalı tüccar Şerif Artış Vakıflar İdaresi'nden satın almış, onarımın ardından 25 Nisan 1945'te yeniden hizmete açılmış; bu onarımda önemli eklemeler yapılmış, özgün plan kısmen değişmiştir. 1985'e kadar kadınlar hamamı olarak kullanılmış, sonra işlevsiz kalmıştır. 2010'da Bursa Büyükşehir Belediyesi tarafından kamulaştırılmış, kapsamlı restorasyonla 2013'te kültür merkezi olarak açılmıştır. Hamamın doğusundaki 11 x 7 m'lik iki katlı sivil mimari örneği yapı da aynı süreçte restore edilerek kültür merkezinin tamamlayıcı birimi yapılmıştır.",
+        "en": "Facing İncirli Street with a single-bath plan, the building was damaged by fires and earthquakes but kept in use through repairs. Rented in 1805, it served various functions until 1942 and last was a tobacco warehouse. Bursa merchant Şerif Artış bought it from the Foundations Administration in 1942 and it reopened on 25 April 1945; significant additions were made and the original plan partially changed. Used as a women's bath until 1985, it then lay idle. Expropriated by the Metropolitan Municipality in 2010, it reopened as a cultural center in 2013 after a comprehensive restoration. A two-storey civil building of 11 x 7 m to the east was restored with it as a complementary unit."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "312-313"
+        }
+      ]
+    },
+    {
+      "id": "soguklik",
+      "order": 3,
+      "title": {
+        "tr": "Dış Yapı ve Soğukluk",
+        "en": "Exterior and Frigidarium"
+      },
+      "body": {
+        "tr": "Genel olarak 410 m² taban alanına sahip hamamın beden duvarları iki sıra tuğla ve iki sıra moloz taşla almaşık örülmüştür. Soğukluk 14 x 14 m kare planlıdır ve iç yüksekliği 14,34 m'dir. Yol cephesinde 40 cm dışa taşkın, dikdörtgen formlu, sivri kemerli ve kurşun örtülü giriş kapısıyla geçilir. Üst örtü, içten tromplarla sekizgen kasnağa geçen, kurşun kaplı büyük bir kubbedir; köşe tromplar iç bükey dilimli ve mukarnaslı süslüdür. Mekân girişin iki yanındaki birer, batı duvarındaki üç, kasnaktaki dört sivri kemerli pencere ve tepedeki aydınlık feneriyle aydınlanır. Duvarlar sıvasız tuğla dokulu, zemin mermerdir; farklı boyutlarda nişler vardır. Güney duvarındaki geniş nişte 1945 onarımına ait Türkçe mermer kitabe bulunur.",
+        "en": "The bath has a floor area of 410 m² and walls of alternating two rows of brick and two rows of rubble stone. The frigidarium is a 14 x 14 m square, 14.34 m high inside. The lead-covered pointed-arch rectangular entrance projects 40 cm from the road facade. A large lead-covered dome on an octagonal drum with concave-lobed squinches decorated with muqarnas covers it. Light comes from a window on each side of the entrance, three on the west wall, four on the drum and a roof lantern. The walls are unplastered brick and the floor marble; niches of various sizes occur, and the wide niche on the south wall holds a Turkish marble inscription of the 1945 restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "313-315"
+        }
+      ]
+    },
+    {
+      "id": "iliklik-sicaklik",
+      "order": 4,
+      "title": {
+        "tr": "Ilıklık, Sıcaklık ve Diğer Birimler",
+        "en": "Tepidarium, Caldarium and Other Units"
+      },
+      "body": {
+        "tr": "Ilıklığa sıcaklığın güneyindeki Bursa kemerli büyük nişin yanındaki kapıdan, kubbeli bir sahanlık üzerinden girilir; sahanlıkta yıkanmalık nişi ile çapraz tonozlu hela ve tıraşlık bölümleri vardır. Altıgen kasnaklı, kurşun kaplı kubbeli ılıklıktan aynalı tonozlu iki eyvana ve bir halvete geçilir. Ilıklığın doğusundaki altıgen planlı sıcaklık yapının en büyük mekânıdır; çevresinde iki halvet, iki eyvan, doğusunda sahanlıktan geçilen kare planlı bir eyvan ve iki yanında iki kare halvet bulunur. Sıcaklığa bitişik, 2,62 x 9,66 m ölçülü su deposu kurşun kaplı beşik tonozludur. Avluda hamamla doğudaki sivil yapıyı bağlayan cam ve ahşap bir geçiş koridoru vardır. Kubbelerde fener ve fil gözü pencereleri, kasnak ve saçak altlarında testere dişi tuğla bezemeler yer alır; tüm kurnalar özgündür ve her biri farklı bezemelidir. Çatal Çeşme suyunun bir kolunun hamama su verdiği rivayet edilir.",
+        "en": "The tepidarium is entered via a domed landing beside the large Bursa-arched niche south of the caldarium; the landing has a washing niche and cross-vaulted toilet and shaving sections. The lead-domed tepidarium on a hexagonal drum leads to two flattened-barrel-vaulted iwans and a bathing cell. The hexagonal caldarium east of it is the largest space, with two cells and two iwans around it and, to the east via a landing, a square iwan flanked by two square cells. The adjoining water tank of 2.62 x 9.66 m has a lead-covered barrel vault. A glass and wood passage in the courtyard links the bath to the civil building to the east. The domes have lanterns and oculi, the drums and eaves sawtooth brick decoration, and all basins are original, each decorated differently. A branch of Çatal Çeşme water is related to have supplied the bath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "314-315"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "catal-cesme-suyu",
+      "title": {
+        "tr": "Çatal Çeşme Suyu Rivayeti",
+        "en": "The Çatal Çeşme Water Tale"
+      },
+      "body": {
+        "tr": "Bayezid Paşa Camii yakınındaki Çatal Çeşme suyunun bir kolunun bu hamama su sağladığı rivayet edilmektedir.",
+        "en": "A branch of the Çatal Çeşme water, near the Bayezid Paşa Mosque, is related to have supplied this bath."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "312"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "taban_alani",
+      "label": {
+        "tr": "Taban alanı",
+        "en": "Floor area"
+      },
+      "value": 410,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "314"
+        }
+      ]
+    },
+    {
+      "key": "soguklik_olcu",
+      "label": {
+        "tr": "Soğukluk ölçüsü (kare)",
+        "en": "Frigidarium size (square)"
+      },
+      "value": "14 × 14",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "314"
+        }
+      ]
+    },
+    {
+      "key": "soguklik_yukseklik",
+      "label": {
+        "tr": "Soğukluk iç yüksekliği",
+        "en": "Frigidarium interior height"
+      },
+      "value": 14.34,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "314"
+        }
+      ]
+    },
+    {
+      "key": "giris_tasma",
+      "label": {
+        "tr": "Giriş kapısı dışa taşkınlığı",
+        "en": "Entrance projection"
+      },
+      "value": 40,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "314"
+        }
+      ]
+    },
+    {
+      "key": "su_deposu_olcu",
+      "label": {
+        "tr": "Su deposu ölçüsü",
+        "en": "Water tank size"
+      },
+      "value": "2,62 × 9,66",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "315"
+        }
+      ]
+    },
+    {
+      "key": "sivil_yapi_olcu",
+      "label": {
+        "tr": "Doğudaki iki katlı sivil yapı",
+        "en": "Two-storey civil building to the east"
+      },
+      "value": "11 × 7",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "314"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Soğukluk kasnağındaki pencere",
+        "en": "Windows on the frigidarium drum"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "315"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kazasker Alâaddin Ali Çelebi (Mevlânâ Fenârî)",
+      "role": {
+        "tr": "Banî; Anadolu Kazaskeri (v. 1497)",
+        "en": "Founder; Anatolian Kazasker (d. 1497)"
+      }
+    },
+    {
+      "name": "Molla Şemseddin Fenârî",
+      "role": {
+        "tr": "Banînin dedesi",
+        "en": "Grandfather of the founder"
+      }
+    },
+    {
+      "name": "Yusuf Bâlî Efendi",
+      "role": {
+        "tr": "Banînin babası",
+        "en": "Father of the founder"
+      }
+    },
+    {
+      "name": "Ali Tûsî",
+      "role": {
+        "tr": "Banînin hocası",
+        "en": "Teacher of the founder"
+      }
+    },
+    {
+      "name": "Şerif Artış",
+      "role": {
+        "tr": "1942'de hamamı satın alan Bursalı tüccar",
+        "en": "Bursa merchant who bought the bath in 1942"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "onarim-kitabesi-1945",
+      "location": {
+        "tr": "Soğukluk güney duvarındaki geniş niş, mermer",
+        "en": "Wide niche on the south wall of the frigidarium, marble"
+      },
+      "language": "tr",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1945"
+      },
+      "note": {
+        "tr": "1945 onarımına ait Türkçe mermer kitabe; metni kaynakta verilmemiştir.",
+        "en": "Turkish marble inscription of the 1945 repair; its text is not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "314-315"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1488",
+      "year": 1488,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Hamam inşa ettirildi ve vakfedildi",
+        "en": "Bath built and endowed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "311"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1497",
+      "year": 1497,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Banî Alâaddin Ali Çelebi vefat etti",
+        "en": "Death of founder Alâaddin Ali Çelebi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "311"
+        }
+      ]
+    },
+    {
+      "id": "kiralama-1805",
+      "year": 1805,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hamam kiraya verildi",
+        "en": "Bath rented out"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "312"
+        }
+      ]
+    },
+    {
+      "id": "satis-1942",
+      "year": 1942,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bursalı tüccar Şerif Artış Vakıflar İdaresi'nden satın aldı",
+        "en": "Bought from the Foundations Administration by merchant Şerif Artış"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "312"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1945",
+      "year": 1945,
+      "date": "1945-04-25",
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarımla yeniden hizmete açıldı (25 Nisan); önemli eklemeler yapıldı",
+        "en": "Reopened after repair (25 April); significant additions made"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "312-313"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-sonu-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kadınlar hamamı olarak kullanımı sona erdi, işlevsiz kaldı",
+        "en": "Use as women's bath ended; became idle"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "312"
+        }
+      ]
+    },
+    {
+      "id": "kamulastirma-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Büyükşehir Belediyesi tarafından kamulaştırıldı",
+        "en": "Expropriated by the Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "313"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyonla kültür merkezi olarak yeniden açıldı",
+        "en": "Reopened as a cultural center after comprehensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "313"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-molla-fenari-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Banî Alâaddin Ali Çelebi'nin kabri Molla Fenârî Camii haziresindedir.",
+        "en": "The founder Alâaddin Ali Çelebi is buried in the graveyard of the Molla Fenârî Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "311"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-catal-cesmesi",
+      "type": "water_supply",
+      "description": {
+        "tr": "Çatal Çeşme suyunun bir kolunun hamama su sağladığı rivayet edilir.",
+        "en": "A branch of the Çatal Çeşme water is related to have supplied the bath."
+      },
+      "confidence": "legend",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "312"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, İncirli Caddesi'ne cepheli, tek hamam plan tipinde bir yapıdır; beden duvarları tuğla ve moloz taş almaşıktır. Kurşun örtülü sivri kemerli kapıdan 14 x 14 m kare planlı, büyük kurşun kaplı kubbeli soğukluğa girilir. Buradan ılıklığa, altıgen planlı büyük sıcaklığa, eyvanlara ve kubbeli halvetlere geçilir. Kubbelerde fener ve fil gözü pencereleri vardır. Doğusunda iki katlı sivil bir yapı bulunur.",
+      "en": "The bath faces İncirli Street, a single-bath plan with alternating brick and rubble-stone walls. A lead-covered pointed-arch door leads into the 14 x 14 m square frigidarium under a large lead dome. From there one passes to the tepidarium, the large hexagonal caldarium, iwans and domed cells. The domes have lanterns and oculi. A two-storey civil building stands to the east."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
