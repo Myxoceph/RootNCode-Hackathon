@@ -1,0 +1,404 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-husamettin-tekkesi-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' Yıldırım Camiler bölümünden yapay zekâ ile özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kitapta yok; dating null. Hüsamettin Efendi'nin ölüm yılı ve I. Ahmed'in yeniden inşa yılı belirtilmiyor.",
+      "Kaynakta 'Halil Ağa' (başlık) ile 'Hacı Halil Efendi' (metin) kullanılıyor; ilişki sahada/arşivde teyit edilmeli.",
+      "Mimar kitapta belirtilmiyor.",
+      "Camii'nin tam tür sınıflaması (cami/tekke/mescit) kitapta belirsiz: yapı tekke olarak yapılmış, I. Ahmed camiye çevirmiş, bugün mescit olarak kullanılıyor.",
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlık 'Hüsamettin Tekkesi (Halil Ağa) Camii'; metinde banî 'Hacı Halil Efendi'nin oğlu Hüsamettin Efendi'. 'Halil Ağa' adının hangi kişiye ait olduğu kitapta açıklanmıyor."
+      },
+      {
+        "field": "era",
+        "note": "Kitap yapım yılı vermiyor; yeniden inşa I. Ahmed (Klasik Osmanlı) dönemine atfedildiği için era 'klasik-osmanli' seçildi. Ahmed'in saltanat yılları metinde yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hüsamettin Tekkesi Camii",
+    "en": "Hüsamettin Sufi Lodge (Halil Ağa) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Halil Ağa Camii",
+      "en": "Halil Ağa Mosque"
+    },
+    {
+      "tr": "Temenna Zaviyesi",
+      "en": "Temenna Zawiya"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "tekke",
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "tekke",
+    "zaviye",
+    "Temenna",
+    "I. Ahmed",
+    "vakfiye",
+    "kütüphane",
+    "türbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Mollaarap",
+    "address": "Hüsamettin Tekke Sokak, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "226"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Hüsamettin Efendi (Hacı Halil Efendi'nin oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "226"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Hüsamettin Efendi Vakfı",
+    "deed": {
+      "date_display": "25 Nisan 1614 / H. 1023",
+      "excerpt": {
+        "tr": "'Temenna'da sakin olduğu iki odayı, kenefini, meyveli ağaçlarını ve duvarla çevrili bir katlı evini, yine bu mahallede çeşitli meyve ağaçlarını içeren bahçesini, ayrıca İnegöl'ün Geyikli Baba Köyü'nde üç oda, bir ahır, bir fırın, bir kenef ve akarsuyu bulunan bir katlı evini vakfettiği' kayıtlıdır.",
+        "en": "It is recorded that he 'endowed his two rooms, shelter, fruit trees and one-story walled house in Temenna, his garden with various fruit trees in this neighborhood, and also his one-storey house with three rooms, a barn, an oven, a shelter and a stream in Geyikli Baba Village of İnegöl.'"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "227-228"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Tekkenin bahçesi taşlarla üç bölüme ayrılmış: bir bölüm eşi ve çocuklarına, bir bölüm zaviyenin şeyhine, bir bölüm zaviyede barınan fukaraya tahsis edilmiştir. Şeyhlik babadan oğula geçecek şekilde sürdürülmüştür.",
+      "en": "The lodge garden was divided into three parts by stones: one for his wife and children, one for the shaykh of the lodge, and one for the poor living in the lodge. The shaykh position passed from father to son."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "226-228"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Dergâh olarak inşa edilen, Sultan I. Ahmed'in yeniden yaptırıp camiye dönüştürdüğü yapı; Hüsamettin Efendi'nin 1614 tarihli vakfiyesi, şeyhlerin türbesi ve 41 ciltlik kitap vakfı ile bilinir, bugün mescit olarak kullanılır.",
+    "en": "Built as a Sufi lodge, rebuilt and converted into a mosque by Sultan Ahmed I; known for Hüsamettin Efendi's 1614 endowment charter, the shaykhs' tomb and a 41-book library endowment, and used today as a masjid."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami dergâh olarak inşa edilmiştir; Temenna Yeri'nde yer aldığı için 'Temenna Zaviyesi' olarak da anılır. Hacı Halil Efendi'nin oğlu Hüsamettin Efendi tarafından inşa edilerek vakfedilmiştir. Hüsamettin Efendi'nin vefatının ardından Sultan I. Ahmed zaviyeyi yeniden inşa ettirmiş, bitişiğindeki yapıyı da genişleterek camiye dönüştürmüştür. Hüsamettin Efendi'nin şeyhi Mehmet Efendi 1562'de tekkeye vakıflar tahsis etmiş, H. 977 / M. 1569'da vefat ederek buraya defnedilmiştir. Tekke birçok kez harap olmuş, H. 1226 / M. 1811'de onarılmış ve kapısına bu tarih yazılmıştır.",
+        "en": "The mosque was built as a Sufi lodge; it is also known as the 'Temenna Zawiya' due to its location in the Temenna Area. It was built and endowed by Hüsamettin Efendi, son of Hacı Halil Efendi. After his death Sultan Ahmed I rebuilt the lodge and expanded the adjacent structure, converting it into a mosque. Hüsamettin Efendi's shaykh, Mehmet Efendi, allocated foundations to the lodge in 1562 and was buried there in AH 977 / AD 1569. The lodge, ruined several times, was repaired in AH 1226 / AD 1811 and the date is inscribed on its door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "226-228"
+        }
+      ]
+    },
+    {
+      "id": "sehlik-ve-kitaplar",
+      "order": 2,
+      "title": {
+        "tr": "Şeyhlik Silsilesi ve Kitaplar",
+        "en": "Succession of Shaykhs and Books"
+      },
+      "body": {
+        "tr": "Hüsamettin Efendi'nin H. 1023 / M. 1614 tarihli bir vakfiyesi vardır. Tekkenin şeyhliği babadan oğula geçecek şekilde Muhittin, Abdurrahim, Ömer, Abdülkadir, Aziz, İbrahim ve Mustafa kardeşler ile İbrahim'in oğlu Mehmed İzzettin, onun oğulları İzzettin ve Ahmet Bahâeddin tarafından sürdürülmüştür. Hüsamettin Efendi sağlığında 41 kitabını caminin dolabına vakfetmiştir; bu kitaplar arasında kendi eserlerinden hiçbirinin bulunmaması dikkat çekicidir.",
+        "en": "Hüsamettin Efendi has an endowment charter dated AH 1023 / AD 1614. The shaykh position was passed from father to son by the brothers Muhittin, Abdurrahim, Ömer, Abdülkadir, Aziz, İbrahim and Mustafa, and İbrahim's son Mehmed İzzettin and his sons İzzettin and Ahmet Bahâeddin. During his lifetime Hüsamettin Efendi donated 41 of his books to the mosque's library; it is noteworthy that none of his own works are among them."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "227-228"
+        }
+      ]
+    },
+    {
+      "id": "turbe",
+      "order": 3,
+      "title": {
+        "tr": "Türbe ve Mezarlar",
+        "en": "Tomb and Burials"
+      },
+      "body": {
+        "tr": "Türbede şeyhe ait büyük bir sanduka, sağ tarafında üç, ayakucunda ise beş sanduka yer almaktadır. Caminin batısında şeyhin sekizinci halifesi Ali Buhârî medfundur.",
+        "en": "Inside the tomb is a large sarcophagus belonging to the shaykh, with three sarcophagi on its right side and five at its foot. To the west of the mosque is the burial place of the shaykh's eighth caliph, Ali Buhârî."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "228"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari ve Günümüzdeki Durum",
+        "en": "Architecture and Present State"
+      },
+      "body": {
+        "tr": "Yapı moloz taşla inşa edilmiş, yan ve ön duvarlarında altlı üstlü sıralanmış pencereler yer almaktadır. Son yıllarda yeniden ele alınarak onarılmış, son cemaat yeri ahşap malzemeyle dört direk üzerine oturtulan geniş bir çatı ile örtülmüştür. Çok sayıdaki onarım nedeniyle özgün niteliğinden önemli ölçüde uzaklaşmıştır. Günümüzde bakımlı durumdadır ve mescit olarak kullanılmaktadır.",
+        "en": "The structure is of rubble stone, with windows arranged in rows on the side and front walls. In recent years it has been restored and the narthex covered with a wide wooden roof on four piers. Due to numerous restorations it has departed significantly from its original character. Today it is well maintained and used as a masjid."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "228"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kitap_sayisi",
+      "label": {
+        "tr": "Vakfedilen kitap sayısı",
+        "en": "Books endowed"
+      },
+      "value": 41,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "227-228"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Türbedeki sanduka sayısı",
+        "en": "Sarcophagi in the tomb"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "228"
+        }
+      ],
+      "note": {
+        "tr": "1 büyük + sağında 3 + ayakucunda 5.",
+        "en": "1 large + 3 on its right + 5 at its foot."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Hüsamettin Efendi",
+      "role": {
+        "tr": "Banî; Hacı Halil Efendi'nin oğlu",
+        "en": "Founder; son of Hacı Halil Efendi"
+      }
+    },
+    {
+      "name": "Sultan I. Ahmed",
+      "role": {
+        "tr": "Zaviyeyi yeniden yaptırıp bitişiğini camiye dönüştürdü",
+        "en": "Rebuilt the lodge and converted the adjacent structure into a mosque"
+      }
+    },
+    {
+      "name": "Mehmet Efendi",
+      "role": {
+        "tr": "Hüsamettin Efendi'nin şeyhi; 1562'de vakıf tahsis etti, H. 977 / M. 1569'da öldü",
+        "en": "Hüsamettin Efendi's shaykh; allocated foundations in 1562, died AH 977 / AD 1569"
+      }
+    },
+    {
+      "name": "Ali Buhârî",
+      "role": {
+        "tr": "Şeyhin sekizinci halifesi; caminin batısında medfun",
+        "en": "Eighth caliph of the shaykh; buried west of the mosque"
+      }
+    },
+    {
+      "name": "Muhittin, Abdurrahim, Ömer, Abdülkadir, Aziz, İbrahim, Mustafa",
+      "role": {
+        "tr": "Şeyhlik yapan kardeşler",
+        "en": "Brothers who served as shaykhs"
+      }
+    },
+    {
+      "name": "Mehmed İzzettin, İzzettin, Ahmet Bahâeddin",
+      "role": {
+        "tr": "İbrahim'in oğlu ve torunları; şeyhlik sürdürdüler",
+        "en": "İbrahim's son and grandsons; continued the shaykhship"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-tarihi-1811",
+      "location": {
+        "tr": "Kapı",
+        "en": "Door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1226,
+        "gregorian": "1811"
+      },
+      "note": {
+        "tr": "Kitap yalnızca onarım tarihinin kapıya yazıldığını söyler; metin ve dil verilmemiş.",
+        "en": "The book only says the repair date is inscribed on the door; text and language not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "228"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "mehmet-efendi-1562",
+      "year": 1562,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hüsamettin Efendi'nin şeyhi Mehmet Efendi tekkeye vakıflar tahsis etti",
+        "en": "Shaykh Mehmet Efendi allocated foundations to the lodge"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "id": "mehmet-efendi-olum-1569",
+      "year": 1569,
+      "date": null,
+      "hijri": "977",
+      "type": "record",
+      "title": {
+        "tr": "Mehmet Efendi vefat etti, tekkeye defnedildi",
+        "en": "Mehmet Efendi died and was buried at the lodge"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1614",
+      "year": 1614,
+      "date": "1614-04-25",
+      "hijri": "1023",
+      "type": "record",
+      "title": {
+        "tr": "Hüsamettin Efendi'nin vakfiyesi düzenlendi (25 Nisan 1614)",
+        "en": "Hüsamettin Efendi's endowment charter dated 25 April 1614"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "227-228"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1811",
+      "year": 1811,
+      "date": null,
+      "hijri": "1226",
+      "type": "repair",
+      "title": {
+        "tr": "Tekke onarıldı, tarih kapıya yazıldı",
+        "en": "Lodge repaired; date inscribed on the door"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "228"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Moloz taştan yapılmış, ön ve yan duvarlarında altlı üstlü pencereler olan bir yapıdır. Son cemaat yeri dört direkli geniş ahşap bir çatıyla örtülüdür. Yapı bir tekkeden camiye dönüşmüştür; türbesinde şeyhe ait büyük bir sanduka ve yanında sandukalar vardır.",
+      "en": "A rubble-stone building with windows in rows on its front and side walls. The narthex is covered by a wide wooden roof on four piers. A former lodge turned mosque, its tomb holds a large sarcophagus for the shaykh with others beside it."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-selami-dergahi-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Dergâhın yıkılan birimlerinin (tekke, hücreler vb.) adları ve konumları kitapta yok.",
+      "Hazire kitapta ayrı başlıkla ele alınmıyor; mezar sayısı ve kimlikleri verilmiyor. Ayrı hazire kaydı gerekip gerekmediğine veri ekibi karar vermeli.",
+      "Bahçedeki Aile Sağlığı Merkezi binasının tarihi kitapta yok.",
+      "Mehmed Muhyiddin Üftâde ve Aziz Mahmud Hüdâyî Dergâhı'nın (İstanbul) kayıtları kitapta ilçe/il dışı olduğundan ilişki kaydı açılmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[minare]",
+        "note": "Metin önce tevhidhaneye bitişik minarenin sekizgen kaidesinin iki sıra tuğla bir sıra moloz taş örgülü olduğunu, sonra 2020 öncesi yeniden yapılan yapıda 'moloz taş kaide üzerine' tuğla gövdeli yeni bir minare kurulduğunu söyler. Eski ve yeni minare ayrımı net değil; her iki ifade olduğu gibi saklandı."
+      },
+      {
+        "field": "sections[restorasyon]",
+        "note": "Metin 'Dergâh 2020 senesinde restore edilmeden önce harap haldeyken tevhidhanesi yeniden yapılmıştır' der; yeniden yapım tarihi verilmiyor, yalnızca 2020 restorasyonu ve aynı süreçte hazirenin düzenlendiği belirtiliyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Selami Dergâhı Camii",
+    "en": "Selami Sufi Lodge Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Celvetiyye",
+    "Selâmi Ali Efendi",
+    "tevhidhane",
+    "hazire",
+    "2020 restorasyonu",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Namazgâh",
+    "address": "Namazgâh Mahallesi, Türe Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "260"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1090 / M. 1679",
+      "en": "AH 1090 / AD 1679"
+    },
+    "start_year": 1679,
+    "end_year": 1679,
+    "hijri_year": 1090,
+    "century": 17,
+    "basis": {
+      "tr": "Kitap dergâhın Selâmi Ali Efendi tarafından H. 1090 / M. 1679'da inşa ettirildiğini söyler.",
+      "en": "The book says the lodge was built by Selâmi Ali Efendi in AH 1090 / AD 1679."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "260"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Selâmi Ali Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "260"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Celvetiyye şeyhi Selâmi Ali Efendi'nin H. 1090 / M. 1679'da yaptırdığı dergâhın günümüze ulaşan tevhidhanesi. 2020'de restore edilip yeniden ibadete açılmış, hazire alanı düzenlenmiştir.",
+    "en": "The surviving prayer hall (tevhidhane) of the lodge built by Celvetiyye shaykh Selâmi Ali Efendi in AH 1090 / AD 1679. It was restored in 2020, reopened for worship, and its graveyard area was renovated."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Namazgâh Mahallesi, Türe Sokak üzerinde yer alan dergâh, Celvetiyye tarikatı şeyhlerinden Selâmi Ali Efendi tarafından H. 1090 / M. 1679 yılında inşa ettirilmiştir. Bursa'da Mehmed Muhyiddin Üftâde'nin öncülüğünde temellenen Celvetiyye yolu, müridi Aziz Mahmud Hüdâyî'nin İstanbul'daki dergâhı vasıtasıyla farklı bölgelere ulaşmıştır. Yapı, Celvetiyye geleneğinin Bursa'daki güçlü temsil mekânlarından biri olarak değerlendirilmektedir.",
+        "en": "The lodge on Türe Street in Namazgâh Neighborhood was built by Selâmi Ali Efendi, a shaykh of the Celvetiyye order, in AH 1090 / AD 1679. The Celvetiyye path, founded in Bursa under Mehmed Muhyiddin Üftâde, reached various regions through the Istanbul lodge of his disciple Aziz Mahmud Hüdâyî. The structure is considered one of the most powerful representations of the Celvetiyye tradition in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "260"
+        }
+      ]
+    },
+    {
+      "id": "selami-ali-efendi",
+      "order": 2,
+      "title": {
+        "tr": "Selâmi Ali Efendi",
+        "en": "Selâmi Ali Efendi"
+      },
+      "body": {
+        "tr": "Selâmi Ali bin İlyas, H. 1000 / M. 1592'de Muğla'nın Kozkaya köyünde doğmuştur. Çeşitli medreselerde müderrislik yapmış, bir süre İstanköy adasında müftülük görevinde bulunmuştur. Sonra tasavvufa yönelip Celvetiyye şeyhlerinden Zâkirzâde Abdullah Efendi'ye intisap ederek icazet almıştır. Bursa'da kendi adıyla anılan dergâhı kurmuş ve bir müddet şeyhlik yapmış, ardından İstanbul'a geçip Aziz Mahmud Hüdâyî Dergâhı'nda şeyhlik görevini üstlenmiştir. İstanbul'da Üsküdar Kısıklı'da kendi adına bir cami ve dergâh yaptırmış, vefatına kadar orada hizmet vermiştir. H. 1104 / M. 1692'de vefat etmiş ve Kısıklı'daki dergâhının bahçesine defnedilmiştir.",
+        "en": "Selâmi Ali bin İlyas was born in Kozkaya village, Muğla, in AH 1000 / AD 1592. He taught at various madrasas and served for a time as mufti on the island of Kos. He then turned to Sufism, joined Zâkirzade Abdullah Efendi, a Celvetiyye shaykh, and received his ijazah. He founded the lodge named after him in Bursa and served as shaykh for a time, then moved to Istanbul and served at the Aziz Mahmud Hüdâyî Lodge. In Istanbul he had a mosque and lodge built in his name in Kısıklı, Üsküdar, serving there until his death in AH 1104 / AD 1692; he was buried in the garden of that lodge."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "seyhler",
+      "order": 3,
+      "title": {
+        "tr": "Şeyhler ve Dergâhın Sonu",
+        "en": "Shaykhs and the End of the Lodge"
+      },
+      "body": {
+        "tr": "Şeyh Selâmi Ali Efendi'den sonra Niksarlı Şeyh Mehmed Efendi (v. H. 1159 / M. 1746) görev yapmıştır. H. 1342 / M. 1923'te vefat eden son postnişin Hacı Hakkı Efendi'ye kadar toplam 11 şeyh burada hizmet vermiştir; bir kısmı sonradan İstanbul'daki Aziz Mahmud Hüdâyî Dergâhı'na geçtiğinden kabirleri de İstanbul'dadır. Tekke ve zaviyelerin kapatıldığı 1925 yılına dek üç asırdan fazla süreyle irşat faaliyetlerini sürdüren dergâhtan günümüze yalnızca tevhidhane ulaşmıştır.",
+        "en": "After Selâmi Ali Efendi, Shaykh Mehmed Efendi of Niksar (d. AH 1159 / AD 1746) served in the lodge. A total of 11 shaykhs served here until the last, Hacı Hakkı Efendi, who died in AH 1342 / AD 1923; some later moved to the Aziz Mahmud Hüdâyî Lodge in Istanbul, so their graves are there. The lodge carried on its guidance activities for over three centuries until 1925, when lodges and zawiyas were closed; only the prayer hall survives today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 4,
+      "title": {
+        "tr": "Günümüze Ulaşan Yapı ve Restorasyon",
+        "en": "Surviving Structure and Restoration"
+      },
+      "body": {
+        "tr": "Vakıflar Genel Müdürlüğü mülkiyetindeki tevhidhane bir dönem özel şahıslara konut olarak kiralanmıştır. Tevhidhaneye bitişik minarenin sekizgen kaidesi iki sıra tuğla bir sıra moloz taş örgü sistemindedir. Diğer yapı birimlerinin yıkılmasıyla ortaya çıkan arsa uzun süre boş kalmıştır. Dergâh 2020'de restore edilmeden önce harap haldeyken tevhidhanesi yeniden yapılmıştır. Tuğladan Türk üçgenli pabuç kısmı, silindirik gövdesi, şerefe korkulukları ve kurşun kaplı konik külahıyla bir minare, moloz taş kaide üzerine inşa edilmiştir. Bu eklemeyle yapı yeniden ibadethane olarak kullanıma açılmış, hazire alanı da düzenlenmiştir. Bahçeye yapılan bir bina Aile Sağlığı Merkezi olarak kullanılmaktadır.",
+        "en": "The prayer hall, owned by the General Directorate of Foundations, was for a time rented to private individuals as a residence. The octagonal base of the adjacent minaret is two rows of brick and one of rubble stone. The land left after the other units were demolished stayed vacant for a long time. Before the 2020 restoration, the dilapidated prayer hall was rebuilt. A minaret with a brick Turkish-triangle transition, cylindrical shaft, balcony railings and lead-lined conical spire was built on a rubble stone base. With this addition the structure reopened as a place of worship and the graveyard area was renovated. A building in the garden is used as a Family Health Center."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "selamsiz-adi",
+      "title": {
+        "tr": "Üsküdar'daki 'Selamsız' adı",
+        "en": "The name 'Selamsız' in Üsküdar"
+      },
+      "body": {
+        "tr": "Üsküdar'daki 'Selamsız' isminin bu zattan (Selâmi Ali Efendi) hatıra kaldığı rivayet edilmektedir.",
+        "en": "It is said that the name 'Selamsız' in Üsküdar is a commemorative reference to this person (Selâmi Ali Efendi)."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Namazgâh Mahallesi, Türe Sokak",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "260"
+        }
+      ]
+    },
+    {
+      "key": "seyh_sayisi",
+      "label": {
+        "tr": "Görev yapan şeyh sayısı",
+        "en": "Number of shaykhs who served"
+      },
+      "value": 11,
+      "unit": "kişi",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "key": "kapanis_yili",
+      "label": {
+        "tr": "Dergâhın kapatıldığı yıl",
+        "en": "Year the lodge was closed"
+      },
+      "value": 1925,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "key": "mulkiyet",
+      "label": {
+        "tr": "Mülkiyet",
+        "en": "Ownership"
+      },
+      "value": "Vakıflar Genel Müdürlüğü",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Selâmi Ali Efendi",
+      "role": {
+        "tr": "Dergâhı yaptıran Celvetiyye şeyhi",
+        "en": "Celvetiyye shaykh who had the lodge built"
+      }
+    },
+    {
+      "name": "Niksarlı Şeyh Mehmed Efendi",
+      "role": {
+        "tr": "Selâmi Ali Efendi'den sonraki şeyh (v. H. 1159 / M. 1746)",
+        "en": "Shaykh after Selâmi Ali Efendi (d. AH 1159 / AD 1746)"
+      }
+    },
+    {
+      "name": "Hacı Hakkı Efendi",
+      "role": {
+        "tr": "Son postnişin (v. H. 1342 / M. 1923)",
+        "en": "Last postnişin (d. AH 1342 / AD 1923)"
+      }
+    },
+    {
+      "name": "Zâkirzâde Abdullah Efendi",
+      "role": {
+        "tr": "Selâmi Ali Efendi'nin intisap ettiği Celvetiyye şeyhi",
+        "en": "Celvetiyye shaykh to whom Selâmi Ali Efendi was affiliated"
+      }
+    },
+    {
+      "name": "Mehmed Muhyiddin Üftâde",
+      "role": {
+        "tr": "Celvetiyye yolunu Bursa'da temellendiren",
+        "en": "Founder of the Celvetiyye path in Bursa"
+      }
+    },
+    {
+      "name": "Aziz Mahmud Hüdâyî",
+      "role": {
+        "tr": "Üftâde'nin müridi; İstanbul dergâhının sahibi",
+        "en": "Disciple of Üftâde; founder of the Istanbul lodge"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "dergah-insa",
+      "year": 1679,
+      "date": null,
+      "hijri": "1090",
+      "type": "construction",
+      "title": {
+        "tr": "Dergâh Selâmi Ali Efendi tarafından yaptırıldı",
+        "en": "Lodge built by Selâmi Ali Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "260"
+        }
+      ]
+    },
+    {
+      "id": "dergah-kapandi",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tekke ve zaviyeler kapatıldı; dergâhın faaliyeti sona erdi",
+        "en": "Lodges and zawiyas closed; lodge activity ended"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2020",
+      "year": 2020,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Dergâh restore edildi, tevhidhane yeniden ibadete açıldı, hazire düzenlendi",
+        "en": "Lodge restored, prayer hall reopened for worship, graveyard renovated"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Selami Dergâhı Camii, Namazgâh Mahallesi'nde Türe Sokak üzerindedir. Dergâhın yıkılan birimlerinden geriye yalnızca tevhidhane kalmıştır; yapı 2020'de yeniden inşa edilerek restore edilmiştir. Yanında moloz taş kaide üzerinde, tuğla gövdeli, kurşun kaplı konik külahlı bir minare yükselir. Çevresinde düzenlenmiş bir hazire alanı ve bahçede Aile Sağlığı Merkezi olarak kullanılan bir bina vardır.",
+      "en": "Selami Sufi Lodge Mosque stands on Türe Street in Namazgâh Neighborhood. Only the prayer hall survives from the lodge's demolished units; it was rebuilt and restored in 2020. Beside it rises a minaret with a brick shaft and a lead-covered conical spire on a rubble stone base. Around it is a renovated graveyard area, and a building in the garden serves as a Family Health Center."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

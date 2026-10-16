@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-babadag-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' Yıldırım Camiler bölümünden yapay zekâ ile özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banî kitapta adıyla belirtilmiyor (muhacirlerin yerleşmesiyle yaptırıldığı yazıyor); founder null bırakıldı.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Babadağ Camii",
+    "en": "Babadağ Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap",
+    "muhacir",
+    "kitabesiz",
+    "kare plan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Yenimahalle",
+    "address": "Balabancık Caddesi, No: 23",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "216"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yaklaşık 1880",
+      "en": "Around 1880"
+    },
+    "start_year": 1880,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kaynak 'yaklaşık 1880 yılı civarında' demektedir.",
+      "en": "Source says 'around 1880'."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "216"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1880 civarında Babadağ'dan gelen Balkan muhacirlerinin yerleşmesiyle yaptırılan, kare planlı, ahşap, kitabesiz ve haziresiz bir mahalle camisidir.",
+    "en": "A square-plan wooden neighbourhood mosque with no inscription and no graveyard, built around 1880 with the settlement of Balkan immigrants, mostly from Babadağ."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "'Yenimahalle' adıyla bilinen bölgeye 1880 yılı civarında çoğunluğu Babadağ'dan gelen Balkan muhacirlerinin yerleşmesiyle inşa ettirilen yapı, ahşap malzemeli, kitabesiz ve haziresi olmayan bir camidir. Tarihî ve sanatsal açıdan öne çıkan nitelikli bir özelliği yoktur. 1964 yılında Bursa Eski Eserleri Sevenler Kurumu tarafından onarılmıştır.",
+        "en": "Built around 1880 with the settlement of Balkan immigrants, mostly from Babadağ, in the area known as 'Yenimahalle', the building is a wooden mosque with no inscription and no burial area. It has no outstanding historical or artistic features. It was repaired by the Bursa Association for the Appreciation of Antiquities in 1964."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "216"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kare planlı yapının üzeri kırma ahşap çatıyla örtülmüş, çatı kaplamasında Alaturka kiremit kullanılmıştır. Silindirik gövdeli minaresi çatının içinden yükselir ve miğfer biçimli bir külahla sonlanır. Mihrap nişi hafifçe dışa taşkındır. Güney ve batı cephelerinde pencere açıklığı yoktur.",
+        "en": "The square-plan building is covered with a hipped timber roof clad in Turkish-style tiles. Its cylindrical minaret rises from the roof and ends in a helmet-shaped spire. The mihrab niche projects slightly outward. There are no windows on the south and west façades."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "216"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Bursa Eski Eserleri Sevenler Kurumu",
+      "role": {
+        "tr": "1964'te camiyi onardı",
+        "en": "Repaired the mosque in 1964"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1964",
+      "year": 1964,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından onarıldı",
+        "en": "Repaired by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "216"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, ahşap bir mahalle camisidir. Kırma çatısı Alaturka kiremitle kaplıdır; silindirik gövdeli minare çatının içinden yükselir ve miğfer biçimli bir külahla biter. Güney ve batı cephelerinde pencere yoktur.",
+      "en": "A square-plan wooden neighbourhood mosque. Its hipped roof is clad in Turkish-style tiles; the cylindrical minaret rises from the roof and ends in a helmet-shaped spire. There are no windows on the south and west façades."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

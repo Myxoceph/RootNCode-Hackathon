@@ -1,0 +1,276 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-sofu-mehmet-mezari",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
+      "Mezarın bulunduğu mahalle ve adres kaynakta yok (bölüm başlığı ve ilk cümle bu sayfada yok); 'location.neighborhood' null.",
+      "Bahsedilen caminin adı kaynakta bu sayfada verilmiyor ('caminin banisi'); cami ve konumu belirlenmeli.",
+      "Türbenin yapım tarihi, yaptıranı ve dönemi kaynakta yok.",
+      "Sûfî Mehmed ile mezar taşındaki Sofu Sinan ilişkisi belirsiz (data_quality_notes'a bakın).",
+      "Mimar kaynakta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[mezar-tasi-kitabesi]",
+        "note": "Kitap türbe Sûfî Mehmed Efendi'ye ait diyor, ancak türbedeki mezar taşı Sofu Sinan Efendi'den söz ediyor (vefat H. 832 / M. 1429). İkisi arasındaki ilişki kitapta açıklanmıyor. Kaynağa sadık kalındı."
+      },
+      {
+        "field": "location",
+        "note": "Bölümün başlık/konum paragrafı bu sayfada yok; yalnızca 'caminin doğusunda' deniyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sofu Mehmet Mezarı",
+    "en": "Grave of Sofu Mehmet"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Et Dede",
+      "en": "Et Dede (Meat Dede)",
+      "note": "Halk arasında bilinen ad"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "mezar",
+    "Et Dede",
+    "Sofu Mehmet",
+    "Emîr Sultan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "289"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bir caminin banisi ve halk arasında 'Et Dede' diye bilinen Sûfî Mehmed Efendi'ye ait, üstü açık düzenlenmiş türbe; 2015'te hazire alanıyla birlikte onarılmıştır. Mezar taşında Sofu Sinan Efendi anılır.",
+    "en": "An open-air tomb of Sûfî Mehmed Efendi, known as 'Et Dede', founder of a mosque; repaired with the graveyard in 2015. The gravestone names Sofu Sinan Efendi."
+  },
+  "sections": [
+    {
+      "id": "sofu-mehmet",
+      "order": 1,
+      "title": {
+        "tr": "Sûfî Mehmed Efendi ('Et Dede')",
+        "en": "Sûfî Mehmed Efendi ('Et Dede')"
+      },
+      "body": {
+        "tr": "Caminin banisi ve halk arasında 'Et Dede' olarak bilinen Sûfî Mehmed Efendi'ye ait türbe yapının doğusunda yer alır. Emîr Sultan Hazretleri'nin hizmetkârlarından biri olduğu rivayet edilen Sûfî Mehmed Efendi'nin dergâha et taşıdığı için bu şekilde anıldığı belirtilir. Üstü açık düzenlenmiş türbe yapısı, hazire alanıyla birlikte 2015'te kapsamlı bakım ve onarımdan geçmiştir.",
+        "en": "The grave of Sûfî Mehmed Efendi, founder of the mosque and known as 'Et (Meat) Dede', lies to the east of the structure. He is said to have been one of Emîr Sultan's servants and to have been named so because he carried meat to the lodge. The tomb, arranged in an open form, underwent extensive maintenance and repair in 2015 together with the graveyard area."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "289"
+        }
+      ]
+    },
+    {
+      "id": "mezar-tasi",
+      "order": 2,
+      "title": {
+        "tr": "Mezar Taşı",
+        "en": "Gravestone"
+      },
+      "body": {
+        "tr": "Türbedeki mezar taşında, Emir Sultan'ın müritlerinden Sofu Sinan Efendi'nin H. 832 / M. 1429'da vefatını bildiren bir yazı yer alır.",
+        "en": "The gravestone in the tomb carries an inscription recording the death in AH 832 / AD 1429 of Sofu Sinan Efendi, one of Emir Sultan's disciples."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "289"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "et-dede",
+      "title": {
+        "tr": "'Et Dede' lakabı",
+        "en": "The nickname 'Et Dede'"
+      },
+      "body": {
+        "tr": "Sûfî Mehmed Efendi'nin Emîr Sultan'ın hizmetkârlarından olduğu ve dergâha et taşıdığı için 'Et Dede' denildiği rivayet edilir.",
+        "en": "Sûfî Mehmed Efendi is said to have been a servant of Emîr Sultan and called 'Et Dede' because he carried meat to the lodge."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "289"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "onarim_yili",
+      "label": {
+        "tr": "Son kapsamlı onarım",
+        "en": "Latest extensive repair"
+      },
+      "value": 2015,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "289"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sûfî Mehmed Efendi (Et Dede)",
+      "role": {
+        "tr": "Caminin banisi, türbenin sahibi",
+        "en": "Founder of the mosque, owner of the tomb"
+      }
+    },
+    {
+      "name": "Sofu Sinan Efendi",
+      "role": {
+        "tr": "Mezar taşında adı geçen Emîr Sultan müridi",
+        "en": "Disciple of Emîr Sultan named on the gravestone"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mezar-tasi-kitabesi",
+      "location": {
+        "tr": "Türbedeki mezar taşı",
+        "en": "Gravestone in the tomb"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "İntekale’l-merhûm el-mağfûr el-muhtâc ilâ rahmeti Rabbihi’l-Ğafûr eş-Şekûr Emir Sultan’ın müritlerinden Sofu Sinan Efendi vefatı: H. 832 / M. 1429.",
+      "translation": {
+        "tr": "Ğafûr olan Allah’ın rahmetine intikal eden Emîr Sultan müritlerinden Sofu Sinan Efendi.",
+        "en": "Sofu Sinan Efendi, one of the disciples of Emîr Sultan who passed away into the mercy of Allah, the Forgiving."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 832,
+        "gregorian": "1429"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "289"
+        }
+      ],
+      "note": {
+        "tr": "Kitap metin dilini belirtmiyor; metin Arapça ibareler ve Türkçe cümle karışımıdır.",
+        "en": "The book does not name the language; the text mixes Arabic phrases and a Turkish sentence."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Türbe ve hazire alanı kapsamlı bakım ve onarımdan geçti",
+        "en": "Tomb and graveyard underwent extensive maintenance and repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "289"
+        }
+      ]
+    },
+    {
+      "id": "sinan-vefat-1429",
+      "year": 1429,
+      "date": null,
+      "hijri": "832",
+      "type": "record",
+      "title": {
+        "tr": "Mezar taşına göre Sofu Sinan Efendi vefat etti",
+        "en": "According to the gravestone, Sofu Sinan Efendi died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "289"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-emir-sultan-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Sûfî Mehmed Efendi'nin Emîr Sultan'ın hizmetkârlarından olduğu rivayet edilir; mezar taşında anılan Sofu Sinan Emîr Sultan müridi olarak geçer.",
+        "en": "Sûfî Mehmed Efendi is said to have been one of Emîr Sultan's servants; Sofu Sinan on the gravestone is called his disciple."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "289"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sofu Mehmet Mezarı, caminin doğusunda yer alan, üstü açık biçimde düzenlenmiş bir türbe yapısıdır. Hazire alanıyla birlikte 2015'te onarılmıştır.",
+      "en": "The Grave of Sofu Mehmet is an open-air tomb to the east of the mosque. It was repaired together with its graveyard in 2015."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

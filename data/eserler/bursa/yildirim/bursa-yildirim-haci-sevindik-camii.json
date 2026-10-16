@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-haci-sevindik-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' Yıldırım Camiler bölümünden yapay zekâ ile özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kitapta verilmiyor; dating.start_year null.",
+      "Mimar ve vakıf bilgisi yok.",
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Bölüm başlığı 'Hacı Sevindik Camii' olsa da metin yapıyı 'Sevindik Mescidi/masjid' olarak tanımlıyor; tür 'mescit' seçildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Sevindik Camii",
+    "en": "Hacı Sevindik Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sevindik Mescidi",
+      "en": "Sevindik Masjid"
+    },
+    {
+      "tr": "Hacı Sevindik Mescid-i Şerîfi",
+      "en": "Hacı Sevindik Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Fâtih dönemi",
+    "tüccar",
+    "kare plan",
+    "1855 depremi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Meydancık",
+    "address": "Sevindik Sokak, No: 3",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "221"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Fâtih Sultan Mehmed dönemi",
+      "en": "Reign of Fâtih Sultan Mehmed"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap yalnızca 'Fâtih Sultan Mehmed döneminde' diyor; yıl verilmiyor.",
+      "en": "The book only says 'during the reign of Fâtih Sultan Mehmed'; no year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "221"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Başçı Hacı Sevindik",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "221"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Fâtih döneminde tüccar Başçı Hacı Sevindik'in yaptırdığı, kare planlı küçük mescit; özgün mimarisinden uzak biçimde günümüze ulaşmıştır.",
+    "en": "A small square-plan masjid built in Fâtih's reign by the merchant Başçı Hacı Sevindik; it has survived in a form far from its original architecture."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Fâtih Sultan Mehmed döneminde Başçı Hacı Sevindik adlı bir tüccar tarafından inşa ettirilmiştir. Banisinin ismini taşıyan yapı 'Sevindik Mescidi' olarak anılmakta ve bulunduğu sokağa da adını vermektedir. Tarihî kaynaklarda dört pencereli, ahşap çatılı, son cemaat yeri ve imam lojmanı bulunan bir yapıdan söz edilir. 1855 depremine dair kayıtlarda 'Hacı Sevindik Mescid-i Şerîfi'nin bir aded penceresiyle havlısının ba'zı dıvarları münhedim oldığı' denmektedir.",
+        "en": "It was built by a merchant named Başçı Hacı Sevindik during the reign of Fâtih Sultan Mehmed. Named after its founder, it is known as the 'Sevindik Masjid' and also gives its name to its street. Historical sources mention a building with four windows, a wooden roof, a narthex and an imam's lodging. Records of the 1855 earthquake state that 'one window of Hacı Sevindik Masjid and some walls of its courtyard are demolished'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "221"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler ve Durum",
+        "en": "Architecture and Condition"
+      },
+      "body": {
+        "tr": "Yapı 6,50 × 6,50 m ölçülerinde kare planlıdır. İç ve dış yüzeyleri kaba sıva ile sıvanmış, üstü kırma ahşap çatıyla örtülerek Alaturka kiremit ile kaplanmıştır. İç mekâna doğudaki kapıdan girilir. Mescit günümüze özgün mimarisinden uzak bir biçimde ulaşmıştır.",
+        "en": "The building has a square plan of 6.50 × 6.50 m. Interior and exterior are covered with rough plaster; the top is a hipped wooden roof clad with Turkish-style tiles. The interior is entered through the door on the east side. The masjid has survived in a form far removed from its original architecture."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "221"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan size"
+      },
+      "value": "6,50 × 6,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "221"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi_tarihi",
+      "label": {
+        "tr": "Tarihî kaynaklardaki pencere sayısı",
+        "en": "Windows in historical sources"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "221"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Başçı Hacı Sevindik",
+      "role": {
+        "tr": "Banî, tüccar",
+        "en": "Founder, merchant"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde bir pencere ve avlu duvarlarının bir kısmı yıkıldı",
+        "en": "One window and some courtyard walls collapsed in the earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "221"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Altı buçuk metre kenarlı, kare planlı küçük bir mescittir. Duvarlar kaba sıvalı, kırma ahşap çatı Alaturka kiremitlidir. Giriş doğu yönündeki kapıdandır.",
+      "en": "A small square masjid, 6.5 m on each side. The walls are rough-plastered and the hipped wooden roof is tiled. Entrance is through the door on the east."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

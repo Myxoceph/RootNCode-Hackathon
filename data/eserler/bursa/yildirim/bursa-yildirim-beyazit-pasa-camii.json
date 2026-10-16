@@ -1,0 +1,461 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-beyazit-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' Yıldırım Camiler bölümünden yapay zekâ ile özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Camiyi yaptırma/yapım tarihi kitapta verilmemiş; dating null. Banî H. 825 / M. 1421'de ölmüştür.",
+      "Yoğurt Hanı'nın ilçesi metinde belirtilmiyor (Tahtakale deniyor); relation hedef id'si bursa-osmangazi-yogurt-hani olarak varsayıldı, ilçe teyit edilmeli.",
+      "Medrese kaydı (bursa-yildirim-beyazit-pasa-medresesi) henüz yok; ayrı kayıt gerekirse bu id kullanılmalı. Yıkılan türbe için kayıt açılmadı.",
+      "Mimar kitapta belirtilmiyor.",
+      "Vakıf adı ve vakfiye kitapta yok.",
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Beyazıt Paşa Camii",
+    "en": "Beyazıt Paşa (Çatalçeşme) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Çatalçeşme Camii",
+      "en": "Çatalçeşme Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Çelebi Mehmed",
+    "Bayezid Paşa",
+    "medrese",
+    "yeniden inşa",
+    "1976"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Hocataşkın",
+    "address": "3. Dere Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "217"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Bayezid Paşa (Yahşi Bey'in oğlu, Hamza Bey'in kardeşi)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "217-218"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Külliye için Tahtakale'deki 'Yoğurt Hanı' ya da 'Davutpaşa Hanı' olarak bilinen yapı vakfedilmiştir.",
+      "en": "The building known as the 'Yoğurt Han' or 'Davutpaşa Han' in Tahtakale was endowed for this complex."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "218"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Çelebi Mehmed devri devlet adamı Bayezid Paşa'nın yaptırdığı cami, 1976'da yıktırılıp yeniden inşa edildiği için özgün mimari niteliklerini yitirmiştir; ibadete açıktır.",
+    "en": "Built by Bayezid Paşa, a statesman of Çelebi Mehmed's reign, the mosque lost its original architectural character when demolished and rebuilt in 1976; it is open for worship."
+  },
+  "sections": [
+    {
+      "id": "banisi",
+      "order": 1,
+      "title": {
+        "tr": "Banisi ve Külliye",
+        "en": "Founder and Complex"
+      },
+      "body": {
+        "tr": "Cami, Çelebi Mehmed devri devlet adamlarından Yahşi Bey'in oğlu ve meşhur Hamza Bey'in kardeşi Bayezid Paşa tarafından inşa ettirilmiştir. Enderun'da yetişen Bayezid Paşa, Çelebi Mehmed'in hizmetinde bulunmuş ve H. 825 / M. 1421 yılında şehit düşerek vefat etmiştir. Cami ile birlikte bir medrese ve inşası yarım kalan bir türbe yaptırmıştır. Bu külliye için Tahtakale'deki 'Yoğurt Hanı' ya da 'Davutpaşa Hanı' olarak bilinen yapıyı vakfetmiştir.",
+        "en": "The mosque was built by Bayezid Paşa, son of Yahşi Bey, a statesman of Çelebi Mehmed's reign, and brother of the famous Hamza Bey. Raised in the Enderun school, he served Çelebi Mehmed and died as a martyr in AH 825 / AD 1421. He commissioned a madrasa, a mosque and an unfinished tomb, and endowed the building known as the 'Yoğurt Han' or 'Davutpaşa Han' in Tahtakale for this complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "217-218"
+        }
+      ]
+    },
+    {
+      "id": "medrese-turbe",
+      "order": 2,
+      "title": {
+        "tr": "Medrese ve Türbenin Akıbeti",
+        "en": "Fate of the Madrasa and Tomb"
+      },
+      "body": {
+        "tr": "Zamanla türbe tamamen yıkılmış, medrese harap hale gelmiş, geride kalan bazı duvarların üzerine evler inşa edilmiştir. 2012'de başlatılan kamulaştırma süreciyle bu evler satın alınmış, ardından Bursa Büyükşehir Belediyesi tarafından medrese aslına uygun şekilde yeniden inşa edilmiştir. 2016'da kültürel amaçlarla kullanılan yapı, 2024'te Vakıflar Genel Müdürlüğü mülkiyetine geçmiştir.",
+        "en": "Over time the tomb was completely demolished, the madrasa fell into disrepair, and houses were built over some remaining walls. These houses were purchased in the expropriation process begun in 2012, and the madrasa was rebuilt faithful to its original condition by the Bursa Metropolitan Municipality. Used for cultural purposes in 2016, it became the property of the General Directorate of Foundations in 2024."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Duvar kalınlığı 0,75 m olan yapının tavanı ahşap, üst örtüsü kiremittir. Eğimli arazide inşa edildiğinden son cemaat yerine iki yandan merdivenle çıkılır; bu bölümün üzerinde mermer ayaklara oturan betonarme kadınlar mahfili vardır. Cami dikdörtgen planlıdır; son cemaat yerinden girilen ana ibadet mekânı kare planlı ve içten 7,75 × 7,75 m'dir. Altlı üstlü toplam altı pencereyle aydınlanır; son cemaat yeri 3,80 m derinliğindedir. Özgün minare zamanla yıkılmış, yerine tuğladan yeni bir minare yapılmıştır; şerefe altı dört sıra kirpi saçakla çevrilidir.",
+        "en": "The walls are 0.75 m thick, the ceiling is wooden and the roof tiled. Built on a sloping site, the narthex is reached by stairs on both sides, and above it is a reinforced concrete women's gallery on marble piers. The mosque has a rectangular plan; the main prayer hall, entered through the narthex, is square, 7.75 × 7.75 m internally, lit by six windows top and bottom. The narthex is 3.80 m deep. The original minaret was demolished and replaced by a new brick minaret, its underside of the balcony surrounded by four rows of sawteeth."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Günümüz",
+        "en": "Repairs and Present State"
+      },
+      "body": {
+        "tr": "Cami çeşitli onarımlarla günümüze ulaşmıştır. 1855 depreminde zarar gören yapı 1892'de onarılmış, 1952'de Bursa Eski Eserleri Sevenler Kurumu tarafından bir kez daha tamir edilmiştir. 1976'da yıktırılarak yeniden inşa edilen yapı bu süreçte özgün mimari niteliklerini bütünüyle yitirmiştir. Bugün cami sağlam durumdadır ve ibadete açıktır.",
+        "en": "The mosque has survived through various restorations. Damaged in the 1855 earthquake, it was repaired in 1892 and again by the Bursa Association for the Appreciation of Antiquities in 1952. Demolished and rebuilt in 1976, it lost all its original architectural qualities. Today it is in good condition and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 0.75,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Ana mekân (içten)",
+        "en": "Main hall (internal)"
+      },
+      "value": "7,75 × 7,75",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3.8,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ],
+      "note": {
+        "tr": "Altlı üstlü toplam.",
+        "en": "Total, top and bottom."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Bayezid Paşa",
+      "role": {
+        "tr": "Banî; H. 825 / M. 1421'de şehit düştü",
+        "en": "Founder; died as a martyr in AH 825 / AD 1421"
+      }
+    },
+    {
+      "name": "Yahşi Bey",
+      "role": {
+        "tr": "Bayezid Paşa'nın babası",
+        "en": "Father of Bayezid Paşa"
+      }
+    },
+    {
+      "name": "Hamza Bey",
+      "role": {
+        "tr": "Bayezid Paşa'nın kardeşi",
+        "en": "Brother of Bayezid Paşa"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "olum-1421",
+      "year": 1421,
+      "date": null,
+      "hijri": "825",
+      "type": "record",
+      "title": {
+        "tr": "Bayezid Paşa şehit düştü",
+        "en": "Bayezid Paşa died as a martyr"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "217-218"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde cami zarar gördü",
+        "en": "Mosque damaged in the earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1892",
+      "year": 1892,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarıldı",
+        "en": "Repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1952",
+      "year": 1952,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından tamir edildi",
+        "en": "Repaired by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1976",
+      "year": 1976,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yıktırılıp yeniden inşa edildi; özgün nitelikler yitirildi",
+        "en": "Demolished and rebuilt; original qualities lost"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "id": "medrese-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Medrese çevresindeki evler için kamulaştırma süreci başladı",
+        "en": "Expropriation of houses around the madrasa began"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "id": "medrese-2016",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Yeniden inşa edilen medrese kültürel amaçlarla kullanıldı",
+        "en": "Rebuilt madrasa used for cultural purposes"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "id": "vgm-2024",
+      "year": 2024,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Medrese Vakıflar Genel Müdürlüğü mülkiyetine geçti",
+        "en": "Madrasa passed to the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-beyazit-pasa-medresesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Bayezid Paşa cami ile birlikte bir medrese yaptırmıştır (medrese sonradan yeniden inşa edilmiştir).",
+        "en": "Bayezid Paşa built a madrasa together with the mosque (later rebuilt)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-yogurt-hani",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Külliye için Tahtakale'deki Yoğurt Hanı (Davutpaşa Hanı) vakfedilmiştir.",
+        "en": "The Yoğurt Han (Davutpaşa Han) in Tahtakale was endowed for the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "218"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Eğimli bir arazide, kiremit örtülü, dikdörtgen planlı bir camidir. Son cemaat yerine iki yandan merdivenle çıkılır; üstünde mermer ayaklı betonarme kadınlar mahfili vardır. Ana ibadet mekânı kare planlıdır, tuğla minare dört sıra kirpi saçaklıdır.",
+      "en": "A tile-roofed, rectangular-plan mosque on a sloping site. The narthex is reached by stairs from both sides and carries a reinforced concrete women's gallery on marble piers. The main prayer hall is square; the brick minaret has four rows of sawteeth below its balcony."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

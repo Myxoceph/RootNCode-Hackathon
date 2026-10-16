@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-vefikiye-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Dış duvarların 1900 yapımında mı sonraki onarımda mı betonarme olduğu kitapta açıklanmıyor; veri ekibi teyit etmeli.",
+      "Caminin vakfı ya da vakfiyesi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap 1900'de yapıldığı söylenen caminin 'dış duvarlarının tamamen betonarme' olduğunu belirtir; yapım tekniği ile tarih arasındaki uyum kitapta açıklanmıyor (muhtemelen sonraki onarımlar). Yorum eklenmedi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Vefikiye Camii",
+    "en": "Vefikiye Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Kırım muhacirleri",
+    "Ahmet Vefik Paşa",
+    "Kütahya çinisi",
+    "1900",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Mollaarap",
+    "address": "Mollaarap Mahallesi, Balabancık Caddesi, No: 63",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "270"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1900",
+      "en": "1900"
+    },
+    "start_year": 1900,
+    "end_year": 1900,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap caminin 1900'de Raif Ağa tarafından inşa ettirildiğini söyler.",
+      "en": "The book says the mosque was built in 1900 by Raif Ağa."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "270"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Raif Ağa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "270"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1877-1878 Osmanlı-Rus Savaşı sonrası Kırım'dan gelen muhacirlerin iskânı üzerine Raif Ağa'nın 1900'de yaptırdığı cami. Adını Bursa Valisi Ahmet Vefik Paşa'dan alır; mihrap, minber ve vaaz kürsüsü Kütahya çinileriyle bezelidir.",
+    "en": "A mosque built in 1900 by Raif Ağa after the settlement of Crimean immigrants following the 1877-1878 Ottoman-Russian War. Named for Bursa Governor Ahmet Vefik Paşa; its mihrab, minbar and pulpit are decorated with Kütahya tiles."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Mollaarap Mahallesi, Balabancık Caddesi, No: 63'te yer alır. 1877-1878 Osmanlı-Rus Savaşı sonrasında Kırım'dan gelen muhacirlerin bu bölgeye iskân edilmesi üzerine Raif Ağa adlı bir kişi tarafından 1900'de inşa ettirilmiştir. Adını, Bursa Valisi Ahmet Vefik Paşa'nın muhacirlerin yerleşim sürecindeki etkisinden alır.",
+        "en": "At Balabancık Street, No. 63, Mollaarap Neighborhood. It was built in 1900 by a man named Raif Ağa after Crimean immigrants were settled in the region following the 1877-1878 Ottoman-Russian War. It takes its name from the influence of Bursa Governor Ahmet Vefik Paşa in the settlement of the immigrants."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "270"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dış duvarlar tamamen betonarmedir; üzeri ahşap çatıyla örtülmüş, kaplama kiremittir. Dikdörtgen planlı cami yuvarlak kemerli altı pencereyle doğal ışık alır. Son cemaat yeri sonradan eklenmiştir. Mihrabın etrafında Âyetü'l-kürsî yazı frizi dolaşır; dört sıralı mukarnasla taçlanan mihrap, minber ve vaaz kürsüsü Kütahya çinileriyle bezelidir. İç duvarlar zeminden 1,50 m yüksekliğe kadar çini kaplıdır. Sade minareye cami içinden bir geçişle çıkılır; sekizgen betonarme kaide üzerinde tuğla örgülü silindirik gövdesi, tek şerefesi, tuğla işçilikli şerefe altı ve sivri külahı vardır.",
+        "en": "The exterior walls are entirely reinforced concrete, covered with a tiled wooden roof. The rectangular mosque takes natural light from six round-arched windows. The narthex was a later addition. An Ayat al-Kursi inscription runs around the mihrab; the mihrab, crowned with four rows of muqarnas, the minbar and the sermon pulpit are decorated with Kütahya tiles, and interior walls are tiled up to 1.50 m. The simple minaret is reached through a passage inside the mosque; it has an octagonal concrete base, a cylindrical brick shaft, a single balcony with brick decoration beneath, and a pointed spire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Cami 1956'da Bursa Eski Eserleri Sevenler Kurumu tarafından onarılmıştır. 1997'de cemaatin girişimiyle mihrap, minber, kürsü ve yan duvarlar çini kaplamayla yenilenmiştir. 2021'de Bursa Vakıflar Bölge Müdürlüğü çevre düzenlemesi ve onarım çalışmaları yapmıştır. Günümüzde ibadete açıktır.",
+        "en": "The mosque was restored in 1956 by the Bursa Association for the Appreciation of Antiquities. In 1997, at the initiative of the congregation, the mihrab, minbar, pulpit and side walls were renovated with tile coverings. In 2021 the Bursa Regional Directorate of Foundations carried out landscaping and repairs. It is open for worship today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Mollaarap Mahallesi, Balabancık Caddesi, No: 63",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "270"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 6,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "key": "cini_yuksekligi",
+      "label": {
+        "tr": "Duvar çini kaplama yüksekliği",
+        "en": "Wall tile height"
+      },
+      "value": 1.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Raif Ağa",
+      "role": {
+        "tr": "Caminin banisi",
+        "en": "Founder of the mosque"
+      }
+    },
+    {
+      "name": "Ahmet Vefik Paşa",
+      "role": {
+        "tr": "Bursa Valisi; caminin adı ondan gelir",
+        "en": "Governor of Bursa; the mosque is named after him"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mihrap-ayetel-kursi",
+      "location": {
+        "tr": "Mihrabın etrafını dolaşan yazı frizi",
+        "en": "Frieze running around the mihrab"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "271"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca 'Âyetü'l-kürsî' yazı frizi olduğunu söyler; metin basılmamıştır, bu yüzden transkripsiyon ve meal yoktur.",
+        "en": "The book only says there is an Ayat al-Kursi frieze; the text is not printed, so there is no transliteration or translation."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1900",
+      "year": 1900,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Raif Ağa tarafından inşa ettirildi",
+        "en": "Built by Raif Ağa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "270"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1956",
+      "year": 1956,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından onarıldı",
+        "en": "Restored by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "id": "yenileme-1997",
+      "year": 1997,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cemaatin girişimiyle mihrap, minber, kürsü ve yan duvarlar çini kaplamayla yenilendi",
+        "en": "Mihrab, minbar, pulpit and side walls renewed with tile at the congregation's initiative"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2021",
+      "year": 2021,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Vakıflar Bölge Müdürlüğü çevre düzenlemesi ve onarım yaptı",
+        "en": "Landscaping and repairs by the Bursa Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Vefikiye Camii, Mollaarap Mahallesi'nde Balabancık Caddesi üzerindedir. Dikdörtgen planlı yapının dış duvarları betonarmedir; üzeri kiremit kaplı ahşap çatıyla örtülüdür ve yuvarlak kemerli altı pencereyle ışık alır. Mihrabın çevresinde Âyetü'l-kürsî yazı frizi dolaşır; mihrap, minber ve vaaz kürsüsü Kütahya çinileriyle bezelidir, iç duvarlar zeminden 1,50 m yüksekliğe kadar çini kaplıdır. Sekizgen betonarme kaide üzerinde, tuğla gövdeli, tek şerefeli sade bir minare yükselir.",
+      "en": "Vefikiye Mosque stands on Balabancık Street in Mollaarap Neighborhood. The rectangular building has reinforced-concrete exterior walls and a tiled wooden roof, and takes light from six round-arched windows. An Ayat al-Kursi inscription runs around the mihrab; mihrab, minbar and sermon pulpit are decorated with Kütahya tiles, and interior walls are tiled to 1.50 m. A simple single-balcony minaret with a brick shaft rises on an octagonal reinforced-concrete base."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}
