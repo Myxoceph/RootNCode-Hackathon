@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-ishak-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin, s. 343-344) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Minarenin üst bölümünü yeniden yapan onarımın tarihi kitapta yok.",
+      "1877 tamir kitabesinin metni kitapta verilmemiş; kitabe fotoğrafı/okuması aranmalı.",
+      "Cami plan ve ölçü bilgisi (kubbe, mekân) kitabın bu bölümünde yok.",
+      "Mimar kitapta anılmıyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraflar (media) ve media_folder henüz eşlenmedi; match_photos.py ile eklenecek. Arşiv fotoğrafı (archive_media) yok.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Cami için tarih doğrudan kitabeye değil, 'anlaşılmaktadır' ifadesine dayanıyor; bu yüzden 'probable'. Aynı külliyenin medresesi H. 887 / M. 1482-83 tarihlidir; 'diğer yapılar' ifadesi ile medrese tarihi arasında tutarsızlık olabilir (bkz. külliye kaydı)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İshak Paşa Camii",
+    "en": "İshak Paşa Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "bursa-inegol-ishak-pasa-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "İshak Paşa",
+    "zaviyeli cami",
+    "1877 tamiri",
+    "İnegöl çarşı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Cuma Camii Mahallesi",
+    "address": "Ankara Caddesi, No: 13",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "343"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 873 / M. 1468-69",
+      "en": "AH 873 / AD 1468-69"
+    },
+    "start_year": 1468,
+    "end_year": 1469,
+    "hijri_year": 873,
+    "century": null,
+    "basis": {
+      "tr": "Kitap, İshak Paşa'nın caminin inşasını vefatından önce H. 873 / M. 1468-69'da tamamladığını belirtir; yapıya ait özgün inşa kitabesi anılmaz.",
+      "en": "The book states İshak Paşa completed the mosque before his death in AH 873 / AD 1468-69; no original construction inscription is mentioned."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "343"
+      }
+    ]
+  },
+  "founder": {
+    "name": "İshak Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "343"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Zaviyeli cami tipinde, İshak Paşa'nın H. 873 / M. 1468-69'da tamamlattığı cami; kuzey kapısındaki kitabe H. 1294 / M. 1877 tamirini belgeler.",
+    "en": "A mosque of the 'mosque with a zawiya' type, completed by İshak Paşa in AH 873 / AD 1468-69; the inscription on its north door records a repair of AH 1294 / AD 1877."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapı Tarihi",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, İnegöl, Cuma Camii Mahallesi, Ankara Caddesi, No: 13 adresindeki İshak Paşa Külliyesi'nin parçasıdır. İshak Paşa'nın cami ve külliyeye ait diğer yapıların inşasını vefatından önce H. 873 / M. 1468-69 yılında tamamladığı anlaşılmaktadır. Cami, dönemin mimari geleneği içinde \"zaviyeli cami\" tipinde inşa edilmiştir.",
+        "en": "The mosque is part of the İshak Paşa Complex at İnegöl, Cuma Camii Neighborhood, Ankara Street, No. 13. It is understood that İshak Paşa completed the construction of the mosque and other structures of the complex in AH 873 / AD 1468-69 before his death. The mosque was built in the \"mosque with a zawiya\" style within the architectural tradition of the period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "343-344"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 2,
+      "title": {
+        "tr": "Onarım ve Minare",
+        "en": "Repair and Minaret"
+      },
+      "body": {
+        "tr": "Yapının kuzey cephesindeki giriş kapısında yer alan kitabe, H. 1294 / M. 1877 yılında gerçekleştirilen bir tamirata aittir. Minarenin kaide ve pabuç kısmı özgün hâlini korumaktadır ancak üst bölümü, daha sonraki bir onarım sırasında yeniden inşa edilmiştir.",
+        "en": "The inscription on the entrance door on the north side of the building belongs to a repair carried out in AH 1294 / AD 1877. The base and transition section of the minaret preserve their original state, but the upper section was rebuilt during a later repair."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "344"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "İshak Paşa",
+      "role": {
+        "tr": "Banî (vefat: H. 4 Safer 892 / M. 10 Şubat 1487)",
+        "en": "Founder (died 4 Safar AH 892 / 10 February AD 1487)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kuzey-kapi-tamir-kitabesi",
+      "location": {
+        "tr": "Kuzey cephedeki giriş kapısı",
+        "en": "Entrance door on the north façade"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1294,
+        "gregorian": "1877"
+      },
+      "note": {
+        "tr": "Kitap kitabenin metnini ve dilini vermez; yalnızca H. 1294 / M. 1877 tamirine ait olduğunu belirtir.",
+        "en": "The book does not give the text or language of the inscription; it only states that it belongs to the AH 1294 / AD 1877 repair."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "344"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "tamamlanis-1468",
+      "year": 1468,
+      "date": null,
+      "hijri": "873",
+      "type": "construction",
+      "title": {
+        "tr": "Caminin tamamlanması (H. 873 / M. 1468-69)",
+        "en": "Completion of the mosque (AH 873 / AD 1468-69)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "343"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1877",
+      "year": 1877,
+      "date": null,
+      "hijri": "1294",
+      "type": "repair",
+      "title": {
+        "tr": "Tamirat (H. 1294 / M. 1877)",
+        "en": "Repair (AH 1294 / AD 1877)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "344"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1487",
+      "year": 1487,
+      "date": null,
+      "hijri": "892",
+      "type": "record",
+      "title": {
+        "tr": "İshak Paşa'nın vefatı (H. 4 Safer 892 / M. 10 Şubat 1487)",
+        "en": "Death of İshak Paşa (4 Safar AH 892 / 10 February AD 1487)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "344"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-inegol-ishak-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "İshak Paşa Külliyesi'nin camisi.",
+        "en": "The mosque of the İshak Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "343"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, zaviyeli cami tipindedir; kuzey cephedeki giriş kapısında 1877 tamirini belgeleyen bir kitabe bulunur. Minarenin kaide ve pabuç kısmı özgün, üst bölümü sonradan yeniden yapılmıştır.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

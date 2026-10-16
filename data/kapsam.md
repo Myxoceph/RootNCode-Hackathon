@@ -35,10 +35,10 @@ Bölük numaraları her ciltte 1'den başlar; bu yüzden `#` sütununda cilt de 
 
 | # | Bölük | Sayfa | ~Eser | Kayıtlar | Kim | Durum |
 |---|---|---|---|---|---|---|
-| C3-1 | İznik | 408-506 | 25 | | | sırada |
+| C3-1 | İznik | 408-506 | 21 | `bursa-iznik-*` (21 kayıt): `alaaddin-i-misri-turbesi`, `ayasofya-orhan-camii`, `buyuk-hamam`, `candarli-halil-pasa-turbesi`, `candarli-ibrahim-pasa-camii`, `candarli-ibrahim-pasa-turbesi`, `esrefzade-camii`, `esrefzade-haziresi`, `haci-hamza-hamami`, `haci-ozbek-camii`, `kirgizlar-turbesi`, `koimesis-kilisesi`, `mahmut-celebi-camii`, `nilufer-hatun-imareti`, `orhan-gazi-imaret-camii`, `seyh-kutbuddin-camii`, `seyh-kutbuddin-turbesi`, `suleyman-pasa-medresesi`, `yakub-bey-camii`, `yakup-celebi-turbesi`, `yesil-camii` | Hüseyin (ajan) | draft |
 | C3-2 | Gemlik | 326-331 | 3 | `bursa-gemlik-adliye-koyu-camii`, `-balikpazari-yeni-camii`, `-kucukkumla-eski-camii` | Hüseyin (ajan) | draft |
 | C3-3 | Gürsu | 336-337 | 1 | `bursa-gursu-orta-camii` | Hüseyin (ajan) | draft |
-| C3-4 | İnegöl | 343-400 | 19 | | | sırada |
+| C3-4 | İnegöl | 343-400 | 17 | `bursa-inegol-*` (17 kayıt): `burhaniye-camii`, `hamidiye-altinbas-camii`, `hancerli-fatma-sultan-camii`, `hurriyet-camii`, `ishak-pasa-camii`, `ishak-pasa-kulliyesi`, `ishak-pasa-medresesi`, `karacaahmet-kervansarayi`, `kasim-efendi-camii`, `kemalpasa-camii`, `laz-haci-hafiz-camii`, `osmaniye-camii`, `sehitler-koyu-cesmesi-ve-hamami`, `sungur-pasa-koyu-turbesi`, `tacunnisa-sultan-ve-ishak-pasa-turbesi`, `tahtakopru-hamidiye-camii`, `yildirim-bayezid-camii` | Hüseyin (ajan) | draft |
 | C3-5 | Karacabey | 513-537 | 7 | `bursa-karacabey-bulbul-hatun-turbesi`, `haci-cemali-camii`, `imaret-camii`, `issiz-han`, `kumbetli-camii`, `mamuriyet-camii`, `ulu-camii` | Hüseyin (ajan) | draft |
 | C3-6 | Keles | 540-541 | 1 | `bursa-keles-yakub-bey-hamami` | Hüseyin (ajan) | draft |
 | C3-7 | Kestel | 546-569 | 13 | `bursa-kestel-aksu-camii-haziresi`, `aksu-koyu-camii`, `aksu-koyu-hamami`, `eski-vani-mehmed-sifa-hamami`, `geyikli-baba-cesmesi`, `geyikli-babasultan-camii`, `geyikli-babasultan-kulliyesi`, `geyikli-babasultan-turbesi`, `han-odasi`, `vani-mehmed-efendi-camii`, `vani-mehmed-efendi-camii-haziresi`, `vani-mehmed-efendi-kulliyesi`, `vani-mehmed-efendi-turbesi` | Hüseyin (ajan) | draft |
@@ -46,4 +46,4 @@ Bölük numaraları her ciltte 1'den başlar; bu yüzden `#` sütununda cilt de 
 | C3-9 | Mustafakemalpaşa | 609-623 | 8 | `bursa-mustafakemalpasa-atariye-camii`, `hamza-bey-turbesi`, `lala-sahin-pasa-camii-minaresi`, `lala-sahin-pasa-kulliyesi`, `lala-sahin-pasa-kumbeti`, `selimiye-camii-minaresi`, `seyh-muftu-camii`, `seyh-muftu-turbesi` | Hüseyin (ajan) | draft |
 | C3-10 | Nilüfer | 627-647 | 5 | `bursa-nilufer-demirci-koyu-camii`, `-golyazi-camii`, `-golyazi-hamami`, `-golyazi-sur-duvarlari`, `-ozluce-kilisesi-camii` | Hüseyin (ajan) | draft |
 | C3-11 | Orhangazi | 653-663 | 3 | `bursa-orhangazi-muradiye-camii`, `-orhan-gazi-camii-gurle`, `-gurle-koyu-hamami` | Hüseyin (ajan) | draft |
-| C3-12 | Yenişehir | 667-717 | 20 | | | sırada |
+| C3-12 | Yenişehir | 667-717 | 17 | `bursa-yenisehir-*` (17 kayıt): `bali-bey-camii`, `carsi-hamami`, `cinarli-camii`, `ethem-pasa-camii`, `haci-hasan-camii`, `kursunlu-han`, `murat-pasa-camii`, `orhan-gazi-camii`, `orhan-gazi-hamami`, `postinpus-camii`, `semakizade-haci-huseyin-efendi-camii`, `sinan-pasa-arastasi`, `sinan-pasa-camii`, `sinan-pasa-imareti`, `sinan-pasa-kulliyesi`, `sinan-pasa-medresesi`, `yarhisar-koyu-cesmesi` | Hüseyin (ajan) | draft |

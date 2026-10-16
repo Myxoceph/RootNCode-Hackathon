@@ -64,3 +64,30 @@ python3 data/tools/validate.py data/eserler/<il>/<ilçe>/<id1>.json data/eserler
 ## Final report (under 150 words)
 Files written, validator result, per-file counts (sections, legends, facts, timeline events,
 inscriptions, relations), and the points you were least sure about.
+
+## Hard rules (learned from reviewing earlier drafts)
+- **No invented numbers.** `dating.start_year` / `end_year` only when the text gives that year or
+  range; otherwise `null` and say why in `basis`. Never fill a range from a century guess.
+- **No placeholder values.** Never write "Bilinmiyor", "Unknown", "N/A" as a name. Unknown founder /
+  architect / waqf → `null` plus a todo.
+- **Founder only if stated.** `founder` is the person the text says had the building made. A
+  person who only repaired it goes to `timeline` / `people`, not `founder`.
+- **Translations are the book's.** `inscriptions[].translation.tr` is copied from the book's
+  "Mealen" / "Translation" text. If the book gives none, set `translation: null` (or put the
+  inscription text itself with a note); never translate yourself.
+- **Relations are one-directional.** Write child → parent (or younger → older) once. Never write
+  the reverse relation in the other record. Use `same_complex` for buildings of one külliye.
+  `same_founder` only when the text names the same person as founder of both.
+- **`parent_id`** only when the parent record is created in your range and its id is known.
+- **Era.** `era` must be one of the codes in `enums.json`; if none fits (antique, Byzantine) use
+  `null` and a todo.
+- **Language of inscriptions.** Use the schema codes; when the text does not name the language
+  use `"other"` and explain in `note`.
+- **Dates that disagree** (Hijri vs Gregorian, Turkish vs English text, two pages) → keep both in
+  `data_quality_notes`, set `confidence: disputed`.
+- **`meta.from`** = the chapter PDF name without number and `.pdf` (e.g. `İznik`), directly after
+  `reviewed_by`.
+- **District folder.** Write into `data/eserler/<il>/<ilçe-slug>/` and set `location.district`
+  to the proper district name (e.g. `İznik`).
+- **Photos.** Do not add media; photos are attached later by `match_photos.py`. Keep
+  `media: []`, `media_folder: null`, and the todo.

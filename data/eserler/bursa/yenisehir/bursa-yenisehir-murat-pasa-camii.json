@@ -1,0 +1,420 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-murat-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yenişehir",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Yenişehir bölümünden (s. 695-697) özetlenerek derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Orijinal yapının günümüze tam ulaşmadığı belirtiliyor; era kesinleştirilemedi (rivayet 1295, bugünkü yapı 1973).",
+      "Mimar kaynakta yok.",
+      "media_folder (Drive klasörü) henüz eşleştirilmedi.",
+      "Koordinat girilmedi; sahada ya da harita kaynağından doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "1295 tarihi kaynakta açıkça 'rivayetlere göre' diye verilmiştir; kesin yıl olarak işlenmedi (start_year/end_year null), banî bilgisi 'legend' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Murat Paşa (Kumluk) Camii",
+    "en": "Murat Paşa (Kumluk) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Kumluk",
+    "Osman Bey",
+    "Kuyucu Murat Paşa",
+    "ilk hutbe rivayeti"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Kurtuluş Mahallesi",
+    "address": "Bilecik Caddesi No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "695"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Rivayete göre 1295; 1600'de kapsamlı tadilat; bugünkü hali 1973",
+      "en": "Reportedly 1295; comprehensive renovation 1600; present form 1973"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "İlk yapının 1295'te yapıldığı rivayete dayanır; kesin yapım yılı verilmez. 1600 ve 1973 onarım tarihleridir.",
+      "en": "The 1295 first construction rests on an account; no certain construction year is given. 1600 and 1973 are renovation dates."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "695-696"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Osman Bey",
+    "role": "banî",
+    "confidence": "legend",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "695-696"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "696-697"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Rivayete göre Osman Bey'in Kumluk'ta yaptırdığı ilk caminin yerinde, 1600'de Kuyucu Murat Paşa'nın kapsamlı onarımıyla adını alan, bugünkü biçimini 1973'te kazanan cami.",
+    "en": "On the site of a mosque said to have been built by Osman Bey at Kumluk; named after Kuyucu Murat Paşa's comprehensive renovation of 1600, and given its present form in 1973."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Kaynaklardaki rivayetlere göre caminin ilk yapısı 1295'te inşa edilmiştir. Anlatıya göre Osman Bey obasını 'Kumluk' denen bölgeye kurmuş, kendi talimatıyla içi kerpiç ve ahşap, dışı taş kaplı duvarlarla çevrili bir cami yaptırmış, yapıya 'Kumluk Camii' adı verilmiştir. Osmanlı Devleti'nde ilk hutbenin bu camide okunduğuna dair bilgiler sözlü kaynaklarda yer alır. 1600'de Sadrazam Kuyucu Murat Paşa tarafından kapsamlı tadilattan geçirilmiş ve bu tarihten itibaren 'Murat Paşa Camii' diye anılmıştır. Bugünkü formunu 1973 tamiratında kazanmıştır.",
+        "en": "According to accounts in the sources the first structure was built in 1295. In the narration Osman Bey set up his encampment in the region called 'Kumluk' and on his own instructions had a mosque built with adobe and wood inside and stone-clad walls outside, called 'Kumluk Mosque'. Oral sources say the first sermon of the Ottoman state was read here. It was comprehensively renovated by Grand Vizier Kuyucu Murat Paşa in 1600 and has been known as 'Murat Paşa Mosque' since. It gained its present form in the 1973 repairs."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "695-697"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı cami 15 × 10 m ölçülerindedir. Duvarların içi kerpiç, dışı moloz taştır; üstü kiremitli kırma çatıdır. Güneybatı köşesinde beş sıralı mukarnaslı pah vardır. Kapatılmış son cemaat mahalline plastik doğramalı sahanlıktan girilir; üst kattaki kadınlar mahfiline sağdaki merdivenle çıkılır, doğuda imam odası bulunur. Harim çift kanatlı ahşap kapıdan girilir, tavanı ahşaptır. Minber ve kürsü ahşaptır; mihrap taç ve niş dahil tamamen çini kaplıdır, çevresinde Âyetü'l-kürsî, alınlığında 'Fe velli vecheke şatra'l-mescidi'l-harâm' ayeti yazılıdır.",
+        "en": "The rectangular mosque measures 15 × 10 m. Walls are adobe inside and rubble stone outside under a tiled hipped roof. The southwest corner has a five-row muqarnas chamfer. The narthex is enclosed and entered through a landing with plastic joinery; the women's gallery above is reached by stairs on the right and the imam's room is on the east. The prayer hall is entered by a double-leaf wooden door and has a wooden ceiling. The minbar and pulpit are wooden; the mihrab, crown and niche included, is fully tiled with Ayat al-Kursi around it and the verse 'Fe velli vecheke şatra'l-mescidi'l-harâm' above."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "696-697"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve Çevre",
+        "en": "Minaret and Surroundings"
+      },
+      "body": {
+        "tr": "Kuzeybatı köşede taş kaide üzerinde silindirik tuğla gövdeli minarenin tek şerefesi stalaktitli ve testere dişi tuğla bezemelidir; sivri külahı kurşun kaplıdır. Batı yönündeki küçük kitabede 'Minareci B. Ali İmir 1976' yazar. Caminin batı köşesinde tarihî bir çınar ağacı, güneyinde Şehzade Süleyman Paşa'nın makam türbesi bulunur.",
+        "en": "The northwest minaret has a cylindrical brick shaft on a stone base; its single balcony has stalactite and sawtooth brick decoration and its pointed spire is lead-covered. A small inscription on the west reads 'Minareci B. Ali İmir 1976'. At the west corner stands a historical plane tree and to the south the official tomb of Şehzade Süleyman Paşa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "697"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "ilk-hutbe",
+      "title": {
+        "tr": "Osmanlı'da İlk Hutbe",
+        "en": "The First Sermon of the Ottoman State"
+      },
+      "body": {
+        "tr": "Sözlü kaynaklarda Osmanlı Devleti'nde ilk hutbenin bu camide okunduğu anlatılır.",
+        "en": "Oral sources say the first sermon in the Ottoman state was read in this mosque."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "695-696"
+        }
+      ]
+    },
+    {
+      "id": "osman-bey-kumluk",
+      "title": {
+        "tr": "Osman Bey ve Kumluk",
+        "en": "Osman Bey and Kumluk"
+      },
+      "body": {
+        "tr": "Rivayete göre Osman Bey obasını Kumluk'a kurmuş ve burada ilk camiyi yaptırmıştır (1295).",
+        "en": "According to the account, Osman Bey set up his encampment at Kumluk and had the first mosque built there (1295)."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "695-696"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan dimensions"
+      },
+      "value": "15 × 10",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "696"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "697"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Osman Bey",
+      "role": {
+        "tr": "Rivayete göre ilk camiyi yaptıran",
+        "en": "Said to have had the first mosque built"
+      }
+    },
+    {
+      "name": "Kuyucu Murat Paşa",
+      "role": {
+        "tr": "Sadrazam; 1600'de kapsamlı tadilat yaptırdı",
+        "en": "Grand Vizier; commissioned comprehensive renovation in 1600"
+      }
+    },
+    {
+      "name": "Şehzade Süleyman Paşa",
+      "role": {
+        "tr": "Makam türbesi caminin güneyinde",
+        "en": "Official tomb south of the mosque"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "minare-kitabesi",
+      "location": {
+        "tr": "Minarenin batı yönü",
+        "en": "West side of the minaret"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Minareci B. Ali İmir 1976",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1976"
+      },
+      "note": {
+        "tr": "Dil kaynakta belirtilmiyor; metin Türkçe yazılmıştır.",
+        "en": "Language not stated; text is in Turkish."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "697"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "ilk-yapi-1295",
+      "year": 1295,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Rivayete göre ilk yapı (Kumluk Camii)",
+        "en": "First structure per tradition (Kumluk Mosque)"
+      },
+      "confidence": "legend",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "695"
+        }
+      ]
+    },
+    {
+      "id": "tadilat-1600",
+      "year": 1600,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Sadrazam Kuyucu Murat Paşa'nın kapsamlı tadilatı; 'Murat Paşa Camii' adı",
+        "en": "Comprehensive renovation by Grand Vizier Kuyucu Murat Paşa; name 'Murat Paşa Mosque'"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "696"
+        }
+      ]
+    },
+    {
+      "id": "tamirat-1973",
+      "year": 1973,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bugünkü biçimini kazandığı tamirat",
+        "en": "Repairs giving the present form"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "696"
+        }
+      ]
+    },
+    {
+      "id": "minare-1976",
+      "year": 1976,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Minare kitabesi tarihi: 'Minareci B. Ali İmir 1976'",
+        "en": "Minaret inscription date: 'Minareci B. Ali İmir 1976'"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "697"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, dikdörtgen planlı, kiremit örtülü kırma çatılı ve moloz taş duvarlı bir yapıdır. Önündeki son cemaat yeri duvarla kapatılmıştır. Kuzeybatı köşesinde taş kaideli, tuğla silindirik bir minare yükselir. Batı köşesinde yaşlı bir çınar ağacı, güneyinde bir türbe bulunur.",
+      "en": "A rectangular mosque with rubble stone walls and a tiled hipped roof. The narthex in front is walled in. A brick cylindrical minaret on a stone base rises at the northwest corner. An old plane tree stands at the west corner and a tomb to the south."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "695-697"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "13rxDkHG_tpQ6pXzt18Tls99782Rtj9Fh",
+        "original_name": "01 DJI_20241115192009_0109_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "695"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Murat Paşa (Kumluk) Camii (kitap s. 695)",
+        "en": "Murat Paşa (Kumluk) Mosque (book p. 695)"
+      },
+      "alt": {
+        "tr": "Murat Paşa (Kumluk) Camii fotoğrafı",
+        "en": "Photo of Murat Paşa (Kumluk) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,338 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-candarli-ibrahim-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İznik bölümünden (vk-bursa-c3) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Bölümün başlığı metinde (basılı s. 447) görünmüyor; ad, metindeki 'cami ve türbesi' ile Çandarlı İbrahim Paşa bilgisinden türetildi; kitaptaki başlığa göre düzeltilmeli.",
+      "Bitişik türbe ayrı bir kayıt olarak kitapta (bu aralıkta) yok; türbe kaydı varsa ilişkilendirilmeli.",
+      "Mahalle ve adres kitapta yok.",
+      "Dönem (era) kesin değil (XV. yüzyıl, II. Bayezid); null bırakıldı.",
+      "relation hedefleri (Nilüfer Hatun İmareti, Yeşil Camii) başka kayıtlarda henüz olmayabilir.",
+      "Koordinat kitapta yok; sahada ya da harita üzerinden doğrulanıp eklenmeli.",
+      "Fotoğraflar (güncel ve arşiv) henüz eşleştirilmedi; match_photos.py ile eklenecek; media_folder atanacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) kitapta yok; sahada teyit edilmeli.",
+      "Ambient ses (ambient_sound) ve ziyaretçi ipuçları henüz hazırlanmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlık sayfası metinde yok; ad türetilmiştir."
+      },
+      {
+        "field": "architect",
+        "note": "Kitabe günümüze ulaşmadığı için tarih ve banî 'kabul edilmektedir' ifadesiyle verilmiş; probable işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çandarlı İbrahim Paşa Camii",
+    "en": "Çandarlı İbrahim Paşa Mosque"
+  },
+  "subtitle": {
+    "tr": "Nilüfer Hatun İmareti'nin güneydoğusunda, Yeşil Camii'nin batısında yer alan, bitişik türbeli kare planlı cami",
+    "en": "Square-plan mosque with an adjoining tomb, southeast of the Nilüfer Hatun Imaret and west of the Green Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kare plan",
+    "türbe",
+    "İbranice kitabe",
+    "devşirme sütun",
+    "İznik"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": null,
+    "address": "Nilüfer Hatun İmareti'nin güneydoğusunda, Yeşil Camii'nin batısında",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "448"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyıl",
+      "en": "15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap yapının XV. yüzyılda Sultan II. Bayezid'in veziri Çandarlı İbrahim Paşa tarafından yaptırıldığının kabul edildiğini söylüyor; kitabe günümüze ulaşmamıştır, kesin yıl yok.",
+      "en": "The book says the building is accepted to date from the 15th century; no inscription survives, so no exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "448-449"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Çandarlı İbrahim Paşa",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "448-449"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kare planlı, kuzeybatısında bitişik türbesi ve minaresiyle bütünlük arz eden cami; 2007'de orijinaline uygun restore edilmiştir. Minare tabanındaki İbranice mezar taşı dikkat çeker.",
+    "en": "A square-plan mosque forming a whole with an adjoining tomb to the northwest and a minaret; restored in 2007 in keeping with the original. A Hebrew gravestone in the base of the minaret is notable."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Yapım ve Genel Durum",
+        "en": "Construction and General State"
+      },
+      "body": {
+        "tr": "Yapıya ait günümüze ulaşan bir kitabe yoktur; Sultan II. Bayezid'in vezirlerinden Çandarlı İbrahim Paşa tarafından XV. yüzyılda yaptırıldığı kabul edilir. Cami kare planlıdır; kuzeybatıda bitişik kare planlı bir türbe ve türbenin kuzeydoğusundaki minareyle bütünlük arz eder. Zamanla büyük ölçüde yıkılmış, 2007'de orijinaline uygun biçimde restore edilerek yeniden ibadete açılmıştır.",
+        "en": "No inscription survives; the building is accepted to have been built in the 15th century by Çandarlı İbrahim Paşa, one of the viziers of Sultan Bayezid II. The mosque has a square plan and forms a whole with an adjacent square-plan tomb to the northwest and the minaret northeast of the tomb. It was largely destroyed over time and was restored to its original form and reopened for worship in 2007."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "448-449"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Geç döneme ait unsurlarıyla dikkat çeken üç gözlü son cemaat yeri, kaidesiz devşirme mermer sütunlara oturan sivri kemerlerle taşınır; başlıklar kompozit tarzdadır. Moloz taş temelli yapının beden duvarları, son cemaat yeri ve kubbe kasnağı bir sıra kesme taş ile üç sıra tuğla örgülüdür; revak tonozları ve kubbe alaturka kiremitle kaplı, kirpi saçakla sonlanır. Kuzey hariç üç cephe ikişer altlık-üstlük ve kasnakta dört olmak üzere 16 pencereyle aydınlanır.",
+        "en": "The three-bay narthex, notable for late-period elements, is carried by pointed arches on baseless spolia marble columns with composite capitals. The walls, narthex and dome drum on rubble foundations are of one row of cut stone and three rows of brick; the portico vaults and dome are covered with Turkish-style tiles ending in sawtooth eaves. The three non-north façades have 16 windows in total: two lower and two upper each, plus four in the drum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "448-449"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve İbranice Kitabe",
+        "en": "Minaret and Hebrew Inscription"
+      },
+      "body": {
+        "tr": "Minare, moloz taşlı kare kaide üzerine oturur; kaideden silindirik gövdeye Türk üçgenleriyle geçilir; gövde, şerefe ve petek tuğla örgülüdür ve zaman içinde onarımlarla bugünkü görünümünü kazanmıştır. Minarenin alt kısmında yapı taşları arasındaki İbranice kitabe, XII-XIII. yüzyıla tarihlenir ve ressam ya da boyacı Abraham bin Mayer'e ait bir mezar taşı olduğu söylenir.",
+        "en": "The minaret stands on a rubble-stone square base with Turkish triangle transitions to a cylindrical shaft; shaft, balcony and neck are brick, and repairs over time gave it its present look. The Hebrew inscription among the stones at the minaret's base dates to the 12th-13th centuries and is said to be a gravestone of the painter or dyer Abraham bin Mayer."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "448-449"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı (kuzey hariç)",
+        "en": "Windows (excluding north)"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "448-449"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon_yili",
+      "label": {
+        "tr": "Restorasyon yılı",
+        "en": "Restoration year"
+      },
+      "value": 2007,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "448-449"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Çandarlı İbrahim Paşa",
+      "role": {
+        "tr": "Banî olduğu kabul edilir; Sultan II. Bayezid'in veziri",
+        "en": "Accepted founder; vizier of Sultan Bayezid II"
+      }
+    },
+    {
+      "name": "Abraham bin Mayer",
+      "role": {
+        "tr": "Minare tabanındaki İbranice mezar taşının sahibi (ressam veya boyacı)",
+        "en": "Owner of the Hebrew gravestone at the minaret base (painter or dyer)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "ibranice-kitabe",
+      "location": {
+        "tr": "Minarenin alt kısmında, yapı taşları arasında",
+        "en": "Among the building stones at the base of the minaret"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "XII-XIII. yüzyıl"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "İbranice; yazı XII-XIII. yüzyıla tarihlenir ve ressam ya da boyacı Abraham bin Mayer'e ait bir mezar taşı olduğu söylenir. Kitap transliterasyon/çeviri vermiyor.",
+        "en": "Hebrew; dated to the 12th-13th centuries and said to be a gravestone of the painter or dyer Abraham bin Mayer. The book gives no transliteration or translation."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "448-449"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "restorasyon-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Büyük ölçüde yıkılmış yapı orijinaline uygun biçimde restore edilip ibadete açıldı",
+        "en": "The largely destroyed building was restored in keeping with the original and reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "448-449"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "ibranice-kitabe",
+      "title": {
+        "tr": "İbranice mezar taşı",
+        "en": "Hebrew gravestone"
+      },
+      "hint": {
+        "tr": "Minarenin alt kısmında taşlar arasında arayın.",
+        "en": "Look among the stones at the minaret base."
+      },
+      "section_id": "minare"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-nilufer-hatun-imareti",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami, Nilüfer Hatun İmareti'nin güneydoğusunda yer alır.",
+        "en": "The mosque lies southeast of the Nilüfer Hatun Imaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "448"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-iznik-yesil-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami, Yeşil Camii'nin batısında yer alır.",
+        "en": "The mosque lies west of the Green Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "448"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "visitor_tips": [],
+    "notes": {
+      "tr": "2007'de restore edilerek yeniden ibadete açılmıştır.",
+      "en": "Restored and reopened for worship in 2007."
+    },
+    "notes_source": "source"
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, kubbeli bir cami; önünde üç gözlü, sivri kemerli bir son cemaat yeri bulunur. Kuzeybatıda bitişik kare planlı bir türbe, türbenin kuzeydoğusunda tuğla gövdeli bir minare yükselir.",
+      "en": "A square, domed mosque with a three-bay pointed-arch narthex in front. A square tomb adjoins it to the northwest and a brick-shafted minaret rises northeast of the tomb."
+    }
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

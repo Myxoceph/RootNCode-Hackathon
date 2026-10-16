@@ -1,0 +1,456 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-osmaniye-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Cami banisi kitapta belirtilmiyor.",
+      "Eğrek Camii (ahşap mescit) yapım tarihi kitapta yok.",
+      "Kafkas göçmenlerinin yerleşim yılı 'savaş sonrası' dışında verilmiyor; timeline yılı tahmini.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mekanlar]",
+        "note": "Türkçe metin 'Mihrap çiniyle kaplı, kürsü ise ahşaptır' derken İngilizce metin 'the mihrab is covered with tiles, and the minbar is wooden' diyor; oysa bir önceki cümlede minberin mermer olduğu söylenmiş. Türkçe metin (kürsü ahşap) esas alındı; İngilizce çeviri 'kürsü'yü 'minbar' diye çevirmiş görünüyor."
+      },
+      {
+        "field": "timeline[kafkas-goc]",
+        "note": "Göç yılı kesin değil; 1878 savaşın bitiş yılı olarak yazıldı, tahmini işaretlendi."
+      },
+      {
+        "field": "facts[alan_toplam]",
+        "note": "Türkçe metin 'genel oturum alanı yaklaşık 550 m²' diyor; İngilizce metin 'total area approximately 550 m²' diyor. Aynı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Osmaniye (Çamaşırlık) Camii",
+    "en": "Osmaniye (Çamaşırlık) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Çamaşırlık Camii",
+      "en": "Çamaşırlık (Laundry) Mosque",
+      "note": "Halk arasında"
+    },
+    {
+      "tr": "Eğrek Camii",
+      "en": "Eğrek (Pasture) Mosque",
+      "note": "Yerine yapıldığı ahşap mescidin adı"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Kafkas göçmenleri",
+    "1982 tadilat",
+    "Osmaniye mahallesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Burhaniye Mahallesi",
+    "address": "Kemalettin Sami Paşa Caddesi, No: 24",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "379"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1907-1910 (ahşap mescidin yeniden inşası)",
+      "en": "1907-1910 (rebuilding of the wooden masjid)"
+    },
+    "start_year": 1907,
+    "end_year": 1910,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap ahşap mescidin 1907-1910 arasında yeniden inşa edilerek ibadete açıldığını belirtir.",
+      "en": "The book says the wooden masjid was rebuilt between 1907 and 1910 and opened for worship."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "380-381"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kafkas göçmenlerinin kurduğu Osmaniye mahallesinde 1907-1910'da ahşap mescidin yerine yapılan, 1982'de büyük ölçüde değiştirilmiş moloz taş cami.",
+    "en": "A rubble-stone mosque built in 1907-1910 to replace a wooden masjid in the Osmaniye neighborhood formed by Caucasian immigrants; largely altered in 1982."
+  },
+  "sections": [
+    {
+      "id": "ad-ve-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Adı ve Tarihçesi",
+        "en": "Name and History"
+      },
+      "body": {
+        "tr": "Cami İnegöl Burhaniye Mahallesi, Kemalettin Sami Paşa Caddesi No: 24'tedir; cadde halk arasında \"Eski Bursa Yolu\" olarak da anılır. Çevresinde \"Kızlar Deresi\", \"Çamaşırlık Deresi\" ve \"Eğrek Deresi\" adları kullanılmış, ihtiyaç üzerine \"Eğrek Camii\" adıyla ahşap bir mescit yapılmıştır. 1877-1878 Osmanlı-Rus Savaşı sonrası bölgeye yerleşen Kafkas göçmenleriyle \"Osmaniye\" adlı yeni bir mahalle oluşmuş, ihtiyacı karşılayamayan ahşap mescit 1907-1910 arasında yeniden inşa edilerek \"Osmaniye Camii\" adıyla ibadete açılmıştır. Halk arasında hâlâ \"Çamaşırlık Camii\" denir.",
+        "en": "The mosque is at Burhaniye Neighborhood, Kemalettin Sami Paşa Street No. 24, İnegöl; the street is also called the \"Old Bursa Road\". The area was called \"Kızlar (Girls) Stream\", \"Çamaşırlık (Laundry) Stream\" and \"Eğrek (Pasture) Stream\", and a wooden masjid called \"Eğrek Mosque\" was built there. After the 1877-1878 Ottoman-Russian War a new neighborhood called \"Osmaniye\" formed with the Caucasian immigrants; the wooden masjid, which could not meet demand, was rebuilt in 1907-1910 and opened as \"Osmaniye Mosque\". The public still calls it \"Çamaşırlık Mosque\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "379-381"
+        }
+      ]
+    },
+    {
+      "id": "duzenleme",
+      "order": 2,
+      "title": {
+        "tr": "1982 Tadilatı ve Plan",
+        "en": "1982 Renovation and Plan"
+      },
+      "body": {
+        "tr": "Duvarları moloz taşla örülen cami 1982'de kapsamlı tadilat geçirmiş, kuzey, doğu ve batı cephelerine bitişik betonarme ikişer katlı yapılar eklenerek özgün mimari kimliğinden büyük ölçüde uzaklaşmıştır. Güney-kuzey doğrultulu dikdörtgen planlı yapının genel oturum alanı yaklaşık 550 m², harim alanı yaklaşık 300 m²'dir.",
+        "en": "The rubble-stone mosque underwent a comprehensive renovation in 1982 in which two-storey reinforced-concrete buildings were added adjacent to its north, east and west façades, so that it departed greatly from its original architectural identity. The rectangular building, oriented south-north, has a total area of about 550 m² and a prayer hall area of about 300 m²."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380-381"
+        }
+      ]
+    },
+    {
+      "id": "mekanlar",
+      "order": 3,
+      "title": {
+        "tr": "Son Cemaat Yeri ve Harim",
+        "en": "Narthex and Prayer Hall"
+      },
+      "body": {
+        "tr": "Kuzeydeki son cemaat mahaline beton direkler üzerindeki bir sahanlığa açılan on basamaklı beton merdivenle ulaşılır; alt katında abdesthane ve tuvaletler vardır, üzeri beton kubbelerle örtülüdür. Kırma çatılı ve kiremit örtülü harime çift kanatlı, yağlı boyalı eski bir çelik kapıdan girilir. Farklı renkli mermerlerle yapılmış bir minber, çini kaplı mihrap ve ahşap kürsü vardır. Harim doğu ve batı duvarlarında üçer, güney ve kuzeyde ikişer sivri kemerli pencereyle aydınlanır; ahşap tavanlıdır; giriş üzerinde ahşap direkli kadınlar mahfili son cemaat yerinden bir merdivenle çıkılır.",
+        "en": "The narthex on the north is reached by a ten-step concrete staircase to a landing on concrete pillars; ablution facilities and toilets are on its lower floor and it is covered with concrete domes. The hipped, tiled prayer hall is entered through an old two-leaf steel door painted with oil paint. It has an aesthetic marble minbar in different colours, a tile-covered mihrab and a wooden pulpit. The hall is lit by three pointed-arch windows on each of the east and west walls and two on the south and north, and has a wooden ceiling; the wooden-posted women's gallery above the entrance is reached by a stair from the narthex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380-381"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Kuzeydeki tek şerefeli minare, neredeyse çatı seviyesine kadar yükselen, kesme taş kaplı betonarme bir kaide üzerindedir. Silindirik gövde metaldir ve beyaza boyalıdır; mavi, şeffaf plastikten basit bir külahla örtülüdür.",
+        "en": "The single-balcony minaret to the north stands on a reinforced-concrete base clad with cut stone, rising almost to roof level. The cylindrical shaft is metal painted white and is covered with a simple spire of blue transparent plastic."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380-381"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "ad-rivayetleri",
+      "title": {
+        "tr": "Cami Adı Rivayetleri",
+        "en": "Stories of the Mosque's Name"
+      },
+      "body": {
+        "tr": "Kitap, caminin adıyla ilgili çeşitli rivayetleri aktarır: Hocaköy Deresi'nin eski yatağı İnegöllü kadınların çamaşır yıkadığı yer olduğundan \"Kızlar\" ya da \"Çamaşırlık Deresi\", çobanların öğle saatlerinde sürüleriyle dinlendiği yer olduğundan \"Eğrek Deresi\" denmiştir.",
+        "en": "The book relates various stories about the mosque's name: the old bed of the Hocaköy Stream was where women of İnegöl washed clothes, hence \"Kızlar\" or \"Çamaşırlık Stream\"; shepherds rested there with flocks at noon, hence \"Eğrek Stream\"."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "379"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "alan_toplam",
+      "label": {
+        "tr": "Genel oturum alanı",
+        "en": "Total area"
+      },
+      "value": 550,
+      "unit": "m²",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık' diyor.",
+        "en": null
+      }
+    },
+    {
+      "key": "alan_harim",
+      "label": {
+        "tr": "Harim alanı",
+        "en": "Prayer hall area"
+      },
+      "value": 300,
+      "unit": "m²",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık' diyor.",
+        "en": null
+      }
+    },
+    {
+      "key": "merdiven",
+      "label": {
+        "tr": "Son cemaat merdiveni basamak sayısı",
+        "en": "Narthex staircase steps"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380"
+        }
+      ]
+    },
+    {
+      "key": "pencere",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380"
+        }
+      ],
+      "note": {
+        "tr": "3+3 doğu-batı, 2+2 güney-kuzey.",
+        "en": null
+      }
+    },
+    {
+      "key": "serefe",
+      "label": {
+        "tr": "Şerefe sayısı",
+        "en": "Number of balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kafkas-goc",
+      "year": 1878,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Osmanlı-Rus Savaşı sonrası Kafkas göçmenleriyle Osmaniye mahallesi oluştu",
+        "en": "Osmaniye neighborhood formed with Caucasian immigrants after the Ottoman-Russian War"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380"
+        }
+      ],
+      "note": {
+        "tr": "Kitap '1877-1878 Savaşı sonrası' der, tam yıl vermez; 1878 yılı yalnızca savaşın bitiş yılıdır.",
+        "en": "The book says 'after the 1877-1878 war' without an exact year; 1878 is only the war's end year."
+      }
+    },
+    {
+      "id": "yeniden-insa-1907-1910",
+      "year": 1910,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Ahşap mescit yeniden inşa edilerek Osmaniye Camii olarak açıldı",
+        "en": "Wooden masjid rebuilt and opened as Osmaniye Mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380"
+        }
+      ],
+      "note": {
+        "tr": "1907-1910 arası; yıl alanı bitiş yılıdır.",
+        "en": "Between 1907 and 1910; the year field is the end year."
+      }
+    },
+    {
+      "id": "tadilat-1982",
+      "year": 1982,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Kapsamlı tadilat; ikişer katlı betonarme yapılar eklendi",
+        "en": "Comprehensive renovation; two-storey concrete buildings added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "380"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, Eski Bursa Yolu denen caddede, moloz taşla örülü, kırma çatılı bir yapıdır; 1982'de kuzey, doğu ve batı yanlarına ikişer katlı betonarme eklentiler yapılmıştır. Kuzeyde beton direkli bir sahanlığa on basamaklı beton merdivenle çıkılır; son cemaat yeri beton kubbelidir. İçeride ahşap tavan, çini kaplı mihrap, renkli mermerden bir minber ve girişin üstünde ahşap direkli kadınlar mahfili vardır. Kuzeydeki metal gövdeli beyaz minarenin külahı mavi şeffaf plastiktendir.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "379-381"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1ps578Qrs_SKveb9C0Rvbkg1Uf-hbSx9A",
+        "original_name": "01 DJI_20241113201510_0060_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "379"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Osmaniye (Çamaşırlık) Camii (kitap s. 379)",
+        "en": "Osmaniye (Çamaşırlık) Mosque (book p. 379)"
+      },
+      "alt": {
+        "tr": "Osmaniye (Çamaşırlık) Camii fotoğrafı",
+        "en": "Photo of Osmaniye (Çamaşırlık) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1bT32XtpEyloJyTwMAV-uc45cKlkJdzWj",
+        "original_name": "02 DJI_20241113200841_0040_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "379"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Osmaniye (Çamaşırlık) Camii (kitap s. 379)",
+        "en": "Osmaniye (Çamaşırlık) Mosque (book p. 379)"
+      },
+      "alt": {
+        "tr": "Osmaniye (Çamaşırlık) Camii fotoğrafı",
+        "en": "Photo of Osmaniye (Çamaşırlık) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

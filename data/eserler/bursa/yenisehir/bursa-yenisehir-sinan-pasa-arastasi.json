@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-sinan-pasa-arastasi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yenişehir",
+    "text_origin": "Bursa Vakıf Eserleri III. Cilt, Yenişehir bölümünden (s. 667-683) yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da doğrulanmış bir kaynaktan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri kitapta yok; sahada doğrulanmalı.",
+      "Bu eser için Hicri/Miladi tarihli kitabe kitapta yok ('Yapıların hiçbirinde kitabe bulunmamaktadır', s. 668).",
+      "Arastanın yapım tarihi kitapta ayrıca verilmiyor; külliyenin yapım yılları ile aynı varsayılmadı.",
+      "Sağlam yapı kalmadığı için erişilebilirlik ve ziyaret bilgisi saha çalışmasıyla belirlenmeli.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Arasta için enums.json'da ayrı tür yok; 'diger' kullanıldı."
+      },
+      {
+        "field": "location",
+        "note": "Kitap 'külliyenin doğu tarafına bitişik' diyor, plan açıklamasında ise taç kapının 'kuzeydoğu yönünde' olduğunu belirtiyor; yön ifadeleri birbirini tam açıklamıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sinan Paşa Arastası",
+    "en": "Sinan Paşa Arasta"
+  },
+  "alternate_names": [],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": "bursa-yenisehir-sinan-pasa-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "arasta",
+    "kalıntı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Ulucami Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "681"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Koca Sinan Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "681"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sinan Paşa tarafından külliyenin doğu tarafına bitişik, bağlı bir birim olarak yaptırılan arasta (dükkân sırası). Yalnızca bazı duvarları ve kazıda ortaya çıkan dükkân izleri günümüze ulaşmıştır.",
+    "en": "The arasta (row of shops) built by Sinan Paşa as a unit attached to the east side of the complex. Only some walls and the shop traces revealed in excavation have survived."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Plan",
+        "en": "Overview and Plan"
+      },
+      "body": {
+        "tr": "Sinan Paşa tarafından külliyenin doğu tarafına bitişik, külliyeye bağlı bir birim olarak inşa edilen yapının yalnızca bazı duvarları günümüze ulaşmıştır; batı duvarında üç dikdörtgen niş tespit edilmiştir. Varsayılan plana göre arasta, kuzeydoğu yönünde külliyenin ana girişi sayılan taç kapının iki yanında, kuzey-güney doğrultusunda uzanan tonoz örtülü birimlerden oluşur. Son yıllardaki kazılarda doğu ve batıda yirmi yedişer birimin varlığı belirlenmiş; birimler orta eksendeki geçiş aralığıyla kesintiye uğrar, batıdaki açıklığın yakınında küçük bir su haznesi vardır.",
+        "en": "Of the structure built by Sinan Paşa as a unit attached to the east side of the complex, only some walls survive; three rectangular niches were found on the west wall. By the assumed plan, the arasta consisted of vaulted units running north-south on both sides of the portal regarded as the main entrance, to the northeast. Recent excavations found twenty-seven units each in the east and west, interrupted by a transition gap on the central axis, with a small water tank near the western opening."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "681"
+        }
+      ]
+    },
+    {
+      "id": "dogu-yonu",
+      "order": 2,
+      "title": {
+        "tr": "Doğudaki Birimler",
+        "en": "Units to the East"
+      },
+      "body": {
+        "tr": "Doğuda kare planlı büyük bir mekân ile doğusunda bir su haznesi vardır; kare birimin güney duvarında sonradan örülerek kapatılmış bir kapı açıklığı bulunur. Bu yöndeki birimlerin işlevleri ve planları henüz netlik kazanmamıştır; bölgede bugün bazı konutlar vardır ve daha güneyde külliyeye ait pahlı bir duvar parçası ayaktadır. Kervansarayın arastanın doğusunda ayrı bir blokta olduğu ve oradaki kalıntıların ona ait olma ihtimalinin kuvvetli olduğu belirtilir.",
+        "en": "To the east are a large square-planned space and a water tank east of it; a doorway in the south wall of the square unit was later bricked up. The functions and plans of these units are not yet clear; houses stand in the area today and a chamfered wall section of the complex still stands further south. The caravanserai is said to lie in a separate block east of the arasta, and the remains there are highly probably its own."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "681-682"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dukkan_birim_sayisi",
+      "label": {
+        "tr": "Doğu ve batıda tespit edilen birim (her yönde)",
+        "en": "Units identified (each of east and west)"
+      },
+      "value": 27,
+      "unit": "birim",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "681"
+        }
+      ]
+    },
+    {
+      "key": "bati_duvar_nis",
+      "label": {
+        "tr": "Batı duvarındaki dikdörtgen niş",
+        "en": "Rectangular niches on west wall"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "681"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yenisehir-sinan-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Arasta, külliyenin doğu tarafına bitişik, külliyeye bağlı bir birimdir.",
+        "en": "The arasta is a unit attached to the east side of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "681"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Arasta bugün büyük ölçüde yıkılmıştır; yalnızca bazı duvarları ve kazıda ortaya çıkan dükkân temelleri görülür. Yapı, taç kapının iki yanında kuzey-güney doğrultusunda karşılıklı dizilen tonozlu dükkânlardan oluşan bir sokak olarak planlanmıştı.",
+      "en": "The arasta is largely ruined today; only some walls and excavated shop foundations are visible. It was planned as a street of vaulted shops facing each other north to south on both sides of the portal."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden (Bursa Vakıf Eserleri III. Cilt, Yenişehir) yazıldı; yalnızca metindeki bilgiler kullanıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "681-682"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1HSPjE3WwgssCl_EdyShxqNeC27ZPS8l0",
+        "original_name": "01 DJI_20241116213115_0078_D_ODAK-Edit.jpeg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "681"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sinan Paşa Arastası (kitap s. 681)",
+        "en": "Sinan Paşa Arasta (book p. 681)"
+      },
+      "alt": {
+        "tr": "Sinan Paşa Arastası fotoğrafı",
+        "en": "Photo of Sinan Paşa Arasta"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

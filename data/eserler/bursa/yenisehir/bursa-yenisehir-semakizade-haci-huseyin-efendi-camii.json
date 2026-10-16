@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-semakizade-haci-huseyin-efendi-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yenişehir",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Yenişehir bölümünden (s. 708-709) özetlenerek derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Başlıkta 'Hacı Hüseyin Efendi', metinde 'Şemakizade Hüseyin Efendi' geçiyor; ad aynı kişiyi gösteriyor gibi ama kitap açıkça belirtmiyor.",
+      "Mimar ve vakıf bilgisi kaynakta yok.",
+      "media_folder (Drive klasörü) henüz eşleştirilmedi.",
+      "Koordinat girilmedi; sahada ya da harita kaynağından doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder.name",
+        "note": "Bölüm başlığı 'Şemakizade Hacı Hüseyin Efendi', gövde metni 'Şemakizade Hüseyin Efendi' yazıyor. Metindeki biçim banî adı olarak alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şemakizade Hacı Hüseyin Efendi Camii",
+    "en": "Şemakizade Hacı Hüseyin Efendi Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Şemakizade",
+    "bağımsız minare",
+    "1830"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Hıdırbali Mahallesi",
+    "address": "Şeref Sokak ile Garaj Caddesi kesişimi, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "708"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1830",
+      "en": "1830"
+    },
+    "start_year": 1830,
+    "end_year": 1830,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap caminin 1830'da yaptırıldığını belirtiyor.",
+      "en": "The book states the mosque was built in 1830."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "708"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şemakizade Hüseyin Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "708"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "708-709"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "1830'da Şemakizade Hüseyin Efendi'nin yaptırdığı, özgün karakterini büyük ölçüde yitirmiş, minaresi camiden bağımsız duran cami.",
+    "en": "Mosque built in 1830 by Şemakizade Hüseyin Efendi; it has largely lost its original character and its minaret stands apart from the building."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Hıdırbali Mahallesi'nde Şeref Sokak ile Garaj Caddesi'nin kesiştiği yerdedir. 1830'da Şemakizade Hüseyin Efendi tarafından yaptırılmış, özgün mimari karakterini büyük ölçüde yitirmiştir. Geniş bir avlu içindeki yapı yaklaşık 16 × 12 m'dir; duvarları moloz taşla örülmüş, üstü kiremitli kırma çatıdır.",
+        "en": "The mosque is at the intersection of Şeref Street and Garaj Avenue in Hıdırbali Neighborhood. Built in 1830 by Şemakizade Hüseyin Efendi, it has largely lost its original character. Standing in a large courtyard, it measures about 16 × 12 m with rubble walls and a tiled hipped roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "708"
+        }
+      ]
+    },
+    {
+      "id": "ic",
+      "order": 2,
+      "title": {
+        "tr": "Son Cemaat Yeri ve Harim",
+        "en": "Narthex and Prayer Hall"
+      },
+      "body": {
+        "tr": "Kuzey cephedeki çift kanatlı ahşap kapıdan girilen son cemaat mahalli sonradan duvarla kapatılmıştır; üç üstlük ve iki altlık dikdörtgen pencereyle aydınlanır. Harimin ahşap tavanı iç içe kare geçmelerle hareketlendirilmiş, merkezine dairesel ahşap bir madalyon yerleştirilmiştir; toplam on yuvarlak kemerli pencere ışık verir. Mihrap nişi ve kavsarası çini kaplıdır; minber ve kürsü de çiniyle bezelidir.",
+        "en": "The narthex, entered through a double-leaf wooden door on the north façade, was later walled in and has three upper and two lower rectangular windows. The prayer hall's wooden ceiling has interlocking squares with a circular wooden medallion at the centre; ten round-arched windows give light. The mihrab niche and hood are tiled; the minbar and pulpit are also tile-decorated."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "709"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Camiden bağımsız duran minare kare kaideli, tuğla silindirik gövdelidir ve iki bilezikle hareketlendirilmiştir. Petek kısmı tuğla, külahı kurşun kaplıdır; şerefe altı tuğla dolgulu bezemelidir.",
+        "en": "The minaret, independent of the mosque, has a square base and a cylindrical brick shaft with two decorative bands. The neck is brick and the spire lead-covered; the underside of the balcony has brick-filled decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "709"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan dimensions"
+      },
+      "value": "16 × 12",
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "708"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık' diyor.",
+        "en": "Book says 'approximately'."
+      }
+    },
+    {
+      "key": "harim_pencere",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "709"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şemakizade Hüseyin Efendi",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1830",
+      "year": 1830,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Şemakizade Hüseyin Efendi tarafından yaptırıldı",
+        "en": "Built by Şemakizade Hüseyin Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "708"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, geniş bir avlu içinde, moloz taş duvarlı ve kiremit örtülü kırma çatılı dikdörtgen bir yapıdır. Minaresi camiden ayrı durur; kare kaideli, tuğla silindirik gövdelidir. İçeride ahşap tavan iç içe karelerle süslüdür ve ortasında dairesel bir madalyon bulunur.",
+      "en": "A rectangular mosque with rubble walls and a tiled hipped roof, set in a large courtyard. Its minaret stands apart, on a square base with a brick cylindrical shaft. Inside, the wooden ceiling is decorated with interlocking squares and a circular medallion at its centre."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "708-709"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1rmMscoJbyg9WFF6RTGodCItSC3yAvgF7",
+        "original_name": "01 DJI_20241115223435_0162_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "708"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şemakizade Hacı Hüseyin Efendi Camii (kitap s. 708)",
+        "en": "Şemakizade Hacı Hüseyin Efendi Mosque (book p. 708)"
+      },
+      "alt": {
+        "tr": "Şemakizade Hacı Hüseyin Efendi Camii fotoğrafı",
+        "en": "Photo of Şemakizade Hacı Hüseyin Efendi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1ulSo-zCr1BeiFtds0VoCuyinYadFgLSV",
+        "original_name": "02 DJI_20241115223238_0157_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "709"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şemakizade Hacı Hüseyin Efendi Camii (kitap s. 709)",
+        "en": "Şemakizade Hacı Hüseyin Efendi Mosque (book p. 709)"
+      },
+      "alt": {
+        "tr": "Şemakizade Hacı Hüseyin Efendi Camii fotoğrafı",
+        "en": "Photo of Şemakizade Hacı Hüseyin Efendi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "11aRXzDF0Z9ohI1RYPyboNcj0i1gAL59v",
+        "original_name": "03 ERD09216 kopya-2.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "709"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şemakizade Hacı Hüseyin Efendi Camii (kitap s. 709)",
+        "en": "Şemakizade Hacı Hüseyin Efendi Mosque (book p. 709)"
+      },
+      "alt": {
+        "tr": "Şemakizade Hacı Hüseyin Efendi Camii fotoğrafı",
+        "en": "Photo of Şemakizade Hacı Hüseyin Efendi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1HeiZxi498-v1KlEL99QfcJ5AvmK8yjdM",
+        "original_name": "05 ERD09240 kopya-2.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "709"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şemakizade Hacı Hüseyin Efendi Camii (kitap s. 709)",
+        "en": "Şemakizade Hacı Hüseyin Efendi Mosque (book p. 709)"
+      },
+      "alt": {
+        "tr": "Şemakizade Hacı Hüseyin Efendi Camii fotoğrafı",
+        "en": "Photo of Şemakizade Hacı Hüseyin Efendi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

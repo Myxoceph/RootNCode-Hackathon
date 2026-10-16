@@ -1,0 +1,308 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-tahtakopru-hamidiye-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banî ve mimar kitapta belirtilmiyor.",
+      "'Hamidiye' adının doğrudan II. Abdülhamid'e atfı kitapta açıkça yazılmıyor (yalnızca devrinin tipik örneği deniyor).",
+      "Cami içi (mihrap, minber) betimlemesi kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Tahtaköprü Hamidiye Camii",
+    "en": "Tahtaköprü Hamidiye Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "II. Abdülhamid",
+    "1896",
+    "Hamidiye"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Tahtaköprü Mahallesi",
+    "address": "Hüseyin Alp Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "382"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1896",
+      "en": "1896"
+    },
+    "start_year": 1896,
+    "end_year": 1896,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap yapının 1896'da inşa edildiğini belirtir.",
+      "en": "The book states the building was built in 1896."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "382"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1896'da inşa edilen, II. Abdülhamid devrinin tipik cami örneklerinden sayılan, 1986'da mahalle halkının desteğiyle yeniden ihya edilen cami.",
+    "en": "A mosque built in 1896, considered a typical example of the reign of Abdülhamid II, revived in 1986 with the support of local people."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "The Building"
+      },
+      "body": {
+        "tr": "Cami İnegöl Tahtaköprü Mahallesi, Hüseyin Alp Caddesi üzerindedir. 1896'da inşa edilen yapı, içeri alınmış son cemaat yeriyle dikdörtgen planlıdır ve II. Abdülhamid devrinin tipik cami örneklerinden sayılır. Kırma çatısı ahşap iskeletli ve kiremit kaplıdır. Yüksek kotta olduğundan harime birkaç basamaklı merdivenle ulaşılır.",
+        "en": "The mosque is on Hüseyin Alp Street in Tahtaköprü Neighborhood, İnegöl. Built in 1896, it has a rectangular plan including the enclosed narthex and is considered a typical mosque of the reign of Abdülhamid II. Its hipped roof has a wooden frame and tile covering. Because it stands at a high elevation, the prayer hall is reached by a staircase of several steps."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "382-383"
+        }
+      ]
+    },
+    {
+      "id": "malzeme-pencere",
+      "order": 2,
+      "title": {
+        "tr": "Malzeme ve Pencereler",
+        "en": "Materials and Windows"
+      },
+      "body": {
+        "tr": "Duvar yüzeyleri tamamen sıvanmış, köşeleri kesme taşla sağlamlaştırılmıştır. Sivri kemerli pencerelerin söveleri mermerdir. Harimde büyük, son cemaat yerinde daha küçük pencereler vardır; yapı toplam on yedi pencereyle aydınlanır.",
+        "en": "Wall surfaces are fully plastered and the corners reinforced with cut stone. The pointed-arch windows have marble frames. The prayer hall has large windows and the narthex smaller ones; the building is lit by a total of seventeen windows."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "382-383"
+        }
+      ]
+    },
+    {
+      "id": "minare-ihya",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve İhya",
+        "en": "Minaret and Revival"
+      },
+      "body": {
+        "tr": "Kare kaide üzerindeki minarenin silindirik gövdesi, peteği ve şerefe altı tuğladır; alemi armudi formdadır. Bir dönem ibadete kapalı kalan ve yıkılma tehlikesi gösteren cami 1986'da mahalle halkının desteğiyle yeniden ihya edilmiştir.",
+        "en": "The minaret rises on a square base; its cylindrical shaft, neck and balcony underside are brick, and its finial is pear-shaped. The mosque, closed to worship for a period and in danger of collapse, was revived in 1986 with the support of local people."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "382-383"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total number of windows"
+      },
+      "value": 17,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "382"
+        }
+      ]
+    },
+    {
+      "key": "ihya",
+      "label": {
+        "tr": "İhya yılı",
+        "en": "Year of revival"
+      },
+      "value": 1986,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "382"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1896",
+      "year": 1896,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa edildi",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "382"
+        }
+      ]
+    },
+    {
+      "id": "ihya-1986",
+      "year": 1986,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mahalle halkının desteğiyle yeniden ihya edildi",
+        "en": "Revived with the support of local people"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "382"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, yüksek bir kotta durduğu için harime birkaç basamakla çıkılır. Dikdörtgen planlı, içeri alınmış son cemaat yerli yapı sıvalı duvarlıdır; köşeleri kesme taştır, kırma çatısı kiremitle kaplıdır. Sivri kemerli pencerelerin söveleri mermerdir. Kare kaideden yükselen tuğla minarenin alemi armut biçimindedir.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "382-383"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "11I_H9NhrQJ002t0t1OkWaR5-FrDnAE0J",
+        "original_name": "ERD07767 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "383"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tahtaköprü Hamidiye Camii (kitap s. 383)",
+        "en": "Tahtaköprü Hamidiye Mosque (book p. 383)"
+      },
+      "alt": {
+        "tr": "Tahtaköprü Hamidiye Camii fotoğrafı",
+        "en": "Photo of Tahtaköprü Hamidiye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1TQwDPO-l3s2bkQ6H3p3UsJ9ct7JlrI3U",
+        "original_name": "01 DJI_20241112173310_0082_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "384"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tahtaköprü Hamidiye Camii (kitap s. 384)",
+        "en": "Tahtaköprü Hamidiye Mosque (book p. 384)"
+      },
+      "alt": {
+        "tr": "Tahtaköprü Hamidiye Camii fotoğrafı",
+        "en": "Photo of Tahtaköprü Hamidiye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

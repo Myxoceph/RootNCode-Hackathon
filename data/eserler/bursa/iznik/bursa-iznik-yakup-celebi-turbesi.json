@@ -1,0 +1,270 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-yakup-celebi-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Yapım tarihi ve yaptıran kaynakta yok; dating ve founder null (H. 791 / M. 1389 ölüm tarihidir).",
+      "Bahçesinde bulunduğu caminin adı bu sayfada verilmemiş.",
+      "Ebe Hatun ve Umur Bey türbelerinin ilçesi metinde belirtilmiyor ('Muradiye Türbeleri', Bursa); relations hedef id'lerindeki osmangazi varsayımı doğrulanmalı.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "era",
+        "note": "Kaynak 'Bursa'daki erken dönem mezar yapıları' ile tipolojik benzerlik der; yapım tarihini vermez. era erken-osmanli tahminidir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yakup Çelebi Türbesi",
+    "en": "Yakup Çelebi Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "baldaken plan",
+    "açık türbe",
+    "makam türbesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Yeni Mahalle",
+    "address": "Yakup Sokak, caminin bahçesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "479"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Yakup Çelebi adına yapılmış, baldaken planlı ve kubbeli açık türbe; makam türbesi olarak kaldığı belirtilir.",
+    "en": "An open, domed baldachin-plan tomb built in the name of Yakup Çelebi, said to have remained a memorial tomb."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Caminin bahçesinde, yapının önünde Yakup Çelebi adına inşa edilmiş, baldaken planlı ve kubbeli açık türbe yer alır. H. 791 / M. 1389'da vefat eden Yakup Çelebi Bursa'da babasının türbesine defnedildiğinden, İznik'teki yapı makam türbesi olarak kalmış ya da bu maksatla inşa edilmiştir. Bu tür açık türbe formu Bursa'daki erken dönem mezar yapılarında da görülür; özellikle Muradiye Türbeleri arasında Ebe Hatun Türbesi ile Umur Bey Türbesi benzer tipolojidedir.",
+        "en": "In the mosque garden stands an open, domed baldachin-plan tomb built in the name of Yakup Çelebi. As Yakup Çelebi, who died in AH 791 / AD 1389, was buried in his father's tomb in Bursa, this structure remained a cenotaph or was built for that purpose. This open tomb form is also seen in early tombs in Bursa; among the Muradiye tombs, those of Ebe Hatun and Umur Bey are of similar typology."
+      },
+      "confidence": "probable",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "6,50 × 6,50 m ölçülerindeki türbe, L biçimli dört köşe paye üzerine oturan sivri kemerli açıklıklardan oluşur. Ayak ve kemerlerde bir sıra kesme taşla üç sıra tuğla almaşık kullanılmış, kirpi saçaklar tuğladan örülmüştür. Zamanla kemer açıklıkları örülerek kapatılmış ve duvarlara dikdörtgen pencereler açılmıştır; 1963 onarımında bu duvarlar kaldırılarak yapı özgün açık formuna kavuşturulmuştur.",
+        "en": "Measuring 6.50 × 6.50 m, the tomb consists of pointed-arch openings resting on four L-shaped corner piers. One row of cut stone alternates with three of brick on piers and arches, and brick sawtooth eaves decorate it. Over time the arches were walled up and rectangular windows added; during the 1963 repair these walls were removed and the original open form restored."
+      },
+      "confidence": "certain",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "479"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Boyutlar",
+        "en": "Dimensions"
+      },
+      "value": "6,50 × 6,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "479"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Yakup Çelebi",
+      "role": {
+        "tr": "Adına türbe yapılan; Bursa'da gömülü (ö. 1389)",
+        "en": "Tomb built in his name; buried in Bursa (d. 1389)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1389",
+      "year": 1389,
+      "date": null,
+      "hijri": "791",
+      "type": "record",
+      "title": {
+        "tr": "Yakup Çelebi vefat etti; Bursa'da babasının türbesine defnedildi",
+        "en": "Yakup Çelebi died; buried in his father's tomb in Bursa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1963",
+      "year": 1963,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarımda kapatılan kemer açıklıkları açıldı, özgün açık form geri kazanıldı",
+        "en": "Walled-up arches reopened; original open form restored"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "479"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-ebe-hatun-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Açık türbe formu bakımından Muradiye'deki Ebe Hatun Türbesi ile benzer tipolojidedir.",
+        "en": "Similar typology to the Ebe Hatun Tomb at Muradiye in terms of the open tomb form."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-umur-bey-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Açık türbe formu bakımından Muradiye'deki Umur Bey Türbesi ile benzer tipolojidedir.",
+        "en": "Similar typology to the Umur Bey Tomb at Muradiye in terms of the open tomb form."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "479"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "outdoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, bir caminin bahçesinde, dört köşe payeye oturan sivri kemerlerle her yönden açık, kubbeli ve kare planlı bir yapıdır. Ayaklarda bir sıra taş, üç sıra tuğla dizisi görülür; çatı altında tuğla kirpi saçak vardır.",
+      "en": "The tomb stands in a mosque garden: a square, domed structure open on all sides through pointed arches on four corner piers. The piers show one row of stone to three of brick, with brick sawtooth eaves."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "479-479"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1EvJmxJRmaBv9HIhbLBVIQgrDeo3SAiOb",
+        "original_name": "04 DJI_20241018204203_0474_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "479"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yakup Çelebi Türbesi (kitap s. 479)",
+        "en": "Yakup Çelebi Tomb (book p. 479)"
+      },
+      "alt": {
+        "tr": "Yakup Çelebi Türbesi fotoğrafı",
+        "en": "Photo of Yakup Çelebi Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

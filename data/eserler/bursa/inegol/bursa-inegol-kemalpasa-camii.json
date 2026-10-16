@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-kemalpasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banî kitapta belirtilmiyor.",
+      "Bosna Kardeşlik Çeşmesi'nin nerede olduğu kitapta yok; ilişki kurulmadı.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kemalpaşa (Boşnak) Camii",
+    "en": "Kemalpaşa (Boşnak) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Boşnak Camii",
+      "en": "Boşnak (Bosnian) Mosque",
+      "note": "Göçmen nüfusun yoğun olduğu bölgede olduğu için"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "Boşnak",
+    "göçmen",
+    "1937",
+    "ahşap şadırvan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Kemalpaşa Mahallesi",
+    "address": "Cami Çıkmazı, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "376"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1937",
+      "en": "1937"
+    },
+    "start_year": 1937,
+    "end_year": 1937,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap yapının 1937'de inşa edildiğini belirtir.",
+      "en": "The book states the building was built in 1937."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "376"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": "İbrahim Kırcalı",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "376"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "1937'de Mimar İbrahim Kırcalı tarafından inşa edilen, göçmen nüfusun yaşadığı bölgede olduğu için 'Boşnak Camisi' de denen, kırma çatılı dikdörtgen planlı cami.",
+    "en": "A hipped-roof, rectangular-plan mosque built in 1937 by architect İbrahim Kırcalı, also called the 'Boşnak (Bosnian) Mosque' because of the immigrant population in its area."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Yapım ve Ad",
+        "en": "Location, Construction and Name"
+      },
+      "body": {
+        "tr": "Cami İnegöl Kemalpaşa Mahallesi, Cami Çıkmazı No: 2 adresindedir. 1937'de Mimar İbrahim Kırcalı tarafından inşa edilmiştir; 8,66 × 12,61 m ölçülerinde, derinlemesine dikdörtgen planlı ve kırma çatılıdır. Göçmen nüfusun yoğun yaşadığı bir bölgede bulunduğundan halk arasında \"Boşnak Camisi\" olarak da anılır.",
+        "en": "The mosque is at Kemalpaşa Neighborhood, Cami Cul-de-Sac No. 2, İnegöl. Built in 1937 by architect İbrahim Kırcalı, it measures 8.66 × 12.61 m and has a deep rectangular plan and a hipped roof. It is also called the \"Boşnak (Bosnian) Mosque\" because it stands in an area densely populated by immigrants."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "mekan",
+      "order": 2,
+      "title": {
+        "tr": "Mekân Düzeni ve Donanım",
+        "en": "Layout and Fittings"
+      },
+      "body": {
+        "tr": "Kuzey cephesine eklenen bölümden son cemaat yerine geçilir; enine dikdörtgen planlı bu alanda imam odası ile mahfil katına geçişi sağlayan düzenlemeler bulunur. Harime çift kanatlı bir kapıyla girilir. Dışta kiremit örtülü kırma çatı, içte ahşap tavan vardır. Beden duvarlarında iki sıra sivri kemerli pencere yer alır, üst sıradakiler daha küçüktür. Mihrap süslemeleri zamanla solmuş, ahşap minber ve vaaz kürsüsü yenilenmiştir.",
+        "en": "The section added to the north side gives access to the narthex; this rectangular area includes the imam's room and the arrangements leading to the gallery floor. The prayer hall is entered through a double-leafed door. The exterior has a tiled hipped roof and the interior a wooden ceiling. Pointed-arch windows are in two rows on the walls, the upper row smaller. The mihrab decoration has faded and the wooden minbar and pulpit have been renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "377"
+        }
+      ]
+    },
+    {
+      "id": "minare-bahce",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve Bahçe",
+        "en": "Minaret and Garden"
+      },
+      "body": {
+        "tr": "Batı cephesindeki minare taş kaide üzerine 1947'de metal malzemeyle inşa edilmiştir. Çevresinde geniş bir bahçe vardır; burada Bosna Kardeşlik Çeşmesi'nden ilhamla yapılmış ahşap bir şadırvan bulunur ve bu, caminin Boşnak kültürel mirasıyla bağını vurgular.",
+        "en": "The minaret on the west side was built in 1947 of metal on a stone base. There is a large garden around the building with a wooden shadirvan inspired by the Bosnian Brotherhood Fountain, emphasising the mosque's link with Bosnian cultural heritage."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "377"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "boyut",
+      "label": {
+        "tr": "Boyutlar",
+        "en": "Dimensions"
+      },
+      "value": "8,66 × 12,61",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "key": "minare_yili",
+      "label": {
+        "tr": "Minare yapım yılı",
+        "en": "Minaret construction year"
+      },
+      "value": 1947,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "377"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sirasi",
+      "label": {
+        "tr": "Pencere sırası sayısı",
+        "en": "Rows of windows"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "377"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İbrahim Kırcalı",
+      "role": {
+        "tr": "Mimar",
+        "en": "Architect"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1937",
+      "year": 1937,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa edildi (Mimar İbrahim Kırcalı)",
+        "en": "Mosque built (architect İbrahim Kırcalı)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "minare-1947",
+      "year": 1947,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Minare metal malzemeyle taş kaide üzerine yapıldı",
+        "en": "Minaret built of metal on a stone base"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "377"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, dar bir çıkmaz sokaktaki geniş bir bahçenin içinde, dikdörtgen planlı, kiremit kırma çatılı bir yapıdır. Kuzeyde enine dikdörtgen bir son cemaat yeri vardır, içeride ahşap tavan ve iki sıra sivri kemerli pencere bulunur. Batı yüzünde, taş kaide üzerinde metal bir minare yükselir. Bahçede ahşap bir şadırvan yer alır.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "376-377"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1J5Cq3g9jlrDfuAOV39FL4rVDRThM_eCM",
+        "original_name": "01 DJI_20241112155053_0032_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "376"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kemalpaşa (Boşnak) Camii (kitap s. 376)",
+        "en": "Kemalpaşa (Boşnak) Mosque (book p. 376)"
+      },
+      "alt": {
+        "tr": "Kemalpaşa (Boşnak) Camii fotoğrafı",
+        "en": "Photo of Kemalpaşa (Boşnak) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1Dg_T4Z9lig-eE-kkgtnNQb4Zu5eLw1Ao",
+        "original_name": "05 ERD08243 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "377"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kemalpaşa (Boşnak) Camii (kitap s. 377)",
+        "en": "Kemalpaşa (Boşnak) Mosque (book p. 377)"
+      },
+      "alt": {
+        "tr": "Kemalpaşa (Boşnak) Camii fotoğrafı",
+        "en": "Photo of Kemalpaşa (Boşnak) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1YEbbkPmnJLNHjPGnYfnVuU76Kxa_a3v5",
+        "original_name": "07 ERD08250 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "377"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kemalpaşa (Boşnak) Camii (kitap s. 377)",
+        "en": "Kemalpaşa (Boşnak) Mosque (book p. 377)"
+      },
+      "alt": {
+        "tr": "Kemalpaşa (Boşnak) Camii fotoğrafı",
+        "en": "Photo of Kemalpaşa (Boşnak) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

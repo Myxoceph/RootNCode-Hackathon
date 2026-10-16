@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-bali-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yenişehir",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Yenişehir bölümünden (s. 684-685) özetlenerek derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi kaynakta yok; arşiv kaynaklarından bulunmalı, era buna göre doldurulmalı.",
+      "Bali Bey Hanı'nın ilçesi metinde yok; relations[].target_id 'bursa-bali-bey-hani' geçici, ilçe bulunca düzeltilmeli.",
+      "Mimar kaynakta belirtilmiyor.",
+      "media_folder (Drive klasörü) henüz eşleştirilmedi.",
+      "Koordinat girilmedi; sahada ya da harita kaynağından doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Bali Bey (Çarşı) Camii",
+    "en": "Bali Bey (Çarşı) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Bâlî Bey",
+    "kubbeli cami",
+    "Çarşı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Ulucami Mahallesi",
+    "address": "İstiklal Caddesi No: 18",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "684"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi kaynakta verilmiyor",
+      "en": "Construction date not given in the source"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapım yılı vermiyor; yalnızca banînin 1493'te öldüğünü ve II. Murad-Fâtih dönemlerinde görev yaptığı babasını belirtiyor.",
+      "en": "The book gives no construction year; it only notes the founder died in 1493 and his father served under Murad II and Fatih."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "684"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Bâlî Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "684"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "684-685"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "685"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Bâlî Bey'in Yenişehir'deki vakıf yapılarından günümüze ulaşabilen tek eseri olan kare planlı, kubbeli, tek minareli cami.",
+    "en": "Square-plan, domed, single-minaret mosque; the only surviving foundation structure of Bâlî Bey in Yenişehir."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Banî ve Konum",
+        "en": "Founder and Location"
+      },
+      "body": {
+        "tr": "Cami Yenişehir ilçesi Ulucami Mahallesi, İstiklal Caddesi No: 18'dedir. II. Murad ve Fâtih dönemlerinde önemli görevlerde bulunan Hamza Bey'in oğlu Bâlî Bey tarafından yaptırılmıştır. Yenişehir'de cami, han ve imaret gibi yapılar yaptırdığı bilinen Bâlî Bey 1493'te ölmüş ve Karacabey'de defnedilmiştir.",
+        "en": "The mosque is at İstiklal Street No. 18, Ulucami Neighborhood, Yenişehir. It was built by Bâlî Bey, son of Hamza Bey who held important positions under Murad II and Fatih. Known to have built mosques, hans and imarets in Yenişehir, Bâlî Bey died in 1493 and was buried in Karacabey."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "684"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf Yapıları",
+        "en": "Foundation Structures"
+      },
+      "body": {
+        "tr": "Bâlî Bey'in Yenişehir'deki vakıf yapılarından yalnızca camisi günümüze ulaşmıştır. Kaynaklar, bölgedeki eserlerine gelir sağlamak amacıyla Bursa'da kendi adıyla anılan Bali Bey Hanı'nı yaptırdığını belirtir. Tarihî kaynaklarda cami yakınında bir han olduğu da yazılıdır; ancak ona ait bir kalıntı günümüze ulaşmamıştır.",
+        "en": "Of Bâlî Bey's foundation structures in Yenişehir only his mosque survives. Sources say he had the Bali Bey Han built in Bursa, named after him, to provide income for his works in the region. Historical sources also mention a han near the mosque, but no remains have survived."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "685"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kare planlı ve kubbelidir. Son cemaat yeri düz tavanla örtülüdür; ibadet mekânı pandantif geçişli bir kubbeyle örtülmüştür. Yapının bir minaresi vardır.",
+        "en": "The mosque has a square plan and a dome. The narthex has a flat ceiling; the prayer hall is covered by a dome on pendentives. The building has one minaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "685"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "685"
+        }
+      ]
+    },
+    {
+      "key": "banin_olum_yili",
+      "label": {
+        "tr": "Banînin ölüm yılı",
+        "en": "Founder's death year"
+      },
+      "value": 1493,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "684"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Bâlî Bey",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Hamza Bey",
+      "role": {
+        "tr": "Banînin babası; II. Murad ve Fâtih dönemlerinde görevli",
+        "en": "Founder's father; held posts under Murad II and Fatih"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "bani-olum-1493",
+      "year": 1493,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Banî Bâlî Bey öldü, Karacabey'de defnedildi",
+        "en": "Founder Bâlî Bey died and was buried in Karacabey"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "684"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-bali-bey-hani",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Bursa'daki Bali Bey Hanı, bölgedeki eserlerine gelir sağlamak üzere yaptırılmıştır.",
+        "en": "The Bali Bey Han in Bursa was built to provide income for his works in the region."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "685"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, kare planlı ve tek kubbeli bir yapıdır. Önünde düz tavanlı bir son cemaat yeri, bir yanında bir minare bulunur. İbadet mekânı pandantiflerle geçilen bir kubbeyle örtülüdür.",
+      "en": "The mosque is a square-plan building with a single dome. It has a flat-ceilinged narthex and one minaret. The prayer hall is covered by a dome on pendentives."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "684-685"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1Tu6_YdU3585LqC6P6_NRtdhVu9jtSv1L",
+        "original_name": "01 ERD09179 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "684"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bali Bey (Çarşı) Camii (kitap s. 684)",
+        "en": "Bali Bey (Çarşı) Mosque (book p. 684)"
+      },
+      "alt": {
+        "tr": "Bali Bey (Çarşı) Camii fotoğrafı",
+        "en": "Photo of Bali Bey (Çarşı) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1EzR86sKdxY7syTnE8b2CFUHTNiQqTbGl",
+        "original_name": "05 ERD09124 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "685"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bali Bey (Çarşı) Camii (kitap s. 685)",
+        "en": "Bali Bey (Çarşı) Mosque (book p. 685)"
+      },
+      "alt": {
+        "tr": "Bali Bey (Çarşı) Camii fotoğrafı",
+        "en": "Photo of Bali Bey (Çarşı) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1877f6PDqlQZRqHd2UvR5WYD92MxaIHxq",
+        "original_name": "07 ERD09166 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "685"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bali Bey (Çarşı) Camii (kitap s. 685)",
+        "en": "Bali Bey (Çarşı) Mosque (book p. 685)"
+      },
+      "alt": {
+        "tr": "Bali Bey (Çarşı) Camii fotoğrafı",
+        "en": "Photo of Bali Bey (Çarşı) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

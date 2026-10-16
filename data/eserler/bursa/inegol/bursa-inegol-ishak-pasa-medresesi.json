@@ -1,0 +1,516 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-ishak-pasa-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin, s. 346-349) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Medresenin bugünkü işlevi ve onarım geçmişi kitapta yok.",
+      "Medresenin kitabedeki 'emreden' kişi doğrudan adla değil 'mirlivaların büyüklerinden (İshak Paşa)' diye anılıyor; ad parantez içinde editoryal olarak eklenmiş görünüyor, teyit edilmeli.",
+      "Mimar kitapta anılmıyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Başlık ve Türkçe metin H. 887 / M. 1482-83 diyor; kitabe mealinde (Türkçe ve İngilizce) 'H. 887 / M. 1482' yazıyor. Kaynağa sadık kalınarak ikisi de saklandı. Ayrıca külliye girişi (s. 343) tüm yapıların H. 873 / M. 1468-69'da tamamlandığını söylüyor; medrese tarihi bununla çelişir."
+      },
+      {
+        "field": "inscriptions[dershane-kapi-kitabesi]",
+        "note": "Türkçe mealde 'Sultan oğlu Sultan Bayezid bin Muhammed Han'; İngilizce çeviri aynı yapıyı korur. Türkçe metin tarihi 'inşa ettirildiğini', kitabe ise 'inşaatın sona erişi ve açılışı'nı H. 887'ye bağlar."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İshak Paşa Medresesi",
+    "en": "İshak Paşa Madrasa"
+  },
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "bursa-inegol-ishak-pasa-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "İshak Paşa",
+    "U planlı medrese",
+    "12 hücre",
+    "Sultan II. Bayezid dönemi",
+    "kitabe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Cuma Camii Mahallesi",
+    "address": "Ankara Caddesi, No: 13 (caminin kuzeyinde)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "346"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 887 / M. 1482-83",
+      "en": "AH 887 / AD 1482-83"
+    },
+    "start_year": 1482,
+    "end_year": 1483,
+    "hijri_year": 887,
+    "century": null,
+    "basis": {
+      "tr": "Dershane girişi üzerindeki özgün mermer kitabe.",
+      "en": "Original marble inscription above the classroom entrance."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "346, 349"
+      }
+    ]
+  },
+  "founder": {
+    "name": "İshak Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "346"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin kuzeyinde, U planlı ve açık avlulu, on iki hücreli medrese; özgün kitabesi H. 887 / M. 1482-83 tarihlidir.",
+    "en": "The U-plan madrasa with an open courtyard and twelve cells, north of the mosque; its original inscription is dated AH 887 / AD 1482-83."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Kitabe",
+        "en": "Location and Inscription"
+      },
+      "body": {
+        "tr": "Medrese, İnegöl, Cuma Camii Mahallesi, Ankara Caddesi No: 13'te yer alan caminin kuzeyinde konumlanmaktadır. Dershane kısmının giriş kapısının üzerinde, üç satır hâlinde yazılmış orijinal bir mermer kitabe bulunmaktadır. Bu kitabe, yapının H. 887 / M. 1482-83 yılında inşa ettirildiğini belgelemektedir. Kitabede, yapının Sultan II. Bayezid dönemi inşa faaliyetleri kapsamında gerçekleştirildiği belirtilmektedir. Kitabedeki bilgiler, medreseye ait H. 891-892 / M. 1486-87 tarihli vakfiyelerle örtüşmektedir.",
+        "en": "The madrasa is located to the north of the mosque in İnegöl, Cuma Camii Neighborhood, on Ankara Street No. 13. There is an original marble inscription in three lines above the entrance door of the classroom section, documenting that the building was built in AH 887 / AD 1482-83. This inscription states that the building was built during the construction activities of the reign of Sultan Bayezid II. The information in the inscription is consistent with the endowment charters of the madrasa dated AH 891-892 / AD 1486-87."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "346, 349"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Medrese, U planlı ve açık avlulu bir düzene sahiptir. Kuzeydoğu, kuzeybatı, güneydoğu ve güneybatı köşelerinde yer alan dört hücre, ikişer pencereli olarak dışa açılmaktadır. Diğer hücrelerde de ikişer pencere yer almakta ve avluya yönelmektedir. Köşe hücreleri üçgen kuşaklı geçişle, diğer hücreler ise pandantifli geçiş sistemine sahip birer kubbe ile örtülmüştür. Dershanenin kuzey duvarında eksene simetrik biçimde iki pencere, doğu ve batı cephelerinde altta birer, üstte ikişer pencere, güney cephesinde ise altta iki pencere bulunmaktadır. Giriş kapısı güney duvarın tam ortasında yer alır. Doğu ve batı yönlerinde, yan hücrelerle bağlantıyı sağlayan birer kapı mevcuttur. Dershane, üçgen geçiş kuşağı üzerine oturan bir kubbe ile örtülüdür. Medrese, dershanenin iki yanında yer alan altışar hücreyle birlikte toplam on iki hücreden oluşmaktadır.",
+        "en": "The madrasa has a U-plan and an open courtyard. The four cells located in the northeast, northwest, southeast and southwest corners open to the outside with two windows each. The other cells also have two windows each and face the courtyard. The corner cells are covered with domes supported by a triangular transition band, while the other cells are covered with domes with a pendentive transition system. There are two windows arranged symmetrically to the axis on the north wall of the classroom, one window at the bottom and two windows at the top on the east and west façades, and two windows at the bottom on the south façade. The entrance door is located in the middle of the south wall. There is a door on the east and west sides that provides connection to the side cells. The classroom is covered with a dome sitting on a triangular transition band. The madrasa consists of twelve cells in total, including six cells on either side of the classroom."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "349"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hucre_sayisi",
+      "label": {
+        "tr": "Hücre sayısı",
+        "en": "Number of cells"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "349"
+        }
+      ],
+      "note": {
+        "tr": "Dershanenin iki yanında altışar hücre.",
+        "en": "Six cells on either side of the classroom."
+      }
+    },
+    {
+      "key": "kose_hucre",
+      "label": {
+        "tr": "Köşe hücresi sayısı",
+        "en": "Number of corner cells"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "349"
+        }
+      ],
+      "note": {
+        "tr": "Her biri ikişer pencereli, dışa açılır.",
+        "en": "Each has two windows and opens outward."
+      }
+    },
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "U planlı, açık avlulu",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "349"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İshak Paşa",
+      "role": {
+        "tr": "Medresenin yapılmasını emreden (kitabede 'mirlivaların büyüklerinden' diye anılır)",
+        "en": "Ordered the madrasa to be built (called 'one of the elders of the mirlivas' in the inscription)"
+      }
+    },
+    {
+      "name": "Sultan II. Bayezid",
+      "role": {
+        "tr": "Medresenin yapıldığı dönemin padişahı",
+        "en": "Sultan during whose reign the madrasa was built"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "dershane-kapi-kitabesi",
+      "location": {
+        "tr": "Dershane giriş kapısının üzerinde, üç satır, mermer",
+        "en": "Above the classroom entrance door, three lines, marble"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Emere bi-imâreti hâzihi’l-medreseti’ş-şerifeti min e’âzimi mirlivâi’l- Osmâniyeti… Hazretü’l-Ali el-mevârid ammere lillahi / Fi eyyâmi devleti’s-Sultân ibni’s-Sultân Bâyezid bin Mehmed Hân halleda’l-lâhu mülkehû ve saltanatehû / Fe vaka’a’l-iftitâhu ve’l-ihtitâm bi-avni’llâhi ve tevfîkihî fi ahseni târihi ‘makâmu’t-tedâris’.",
+      "translation": {
+        "tr": "Bu şerefli medresenin yapılmasını Sultan oğlu Sultan Bayezid bin Muhammed Han-Allah mülkünü ve saltanatını ebedi kılsın- devleti zamanında Osmanlı Devleti mirlivalarının büyüklerinden (İshak Paşa) emretti inşaatın sona erişi ve açılışı Allah’ın yardımı ve başarı inayetiyle ‘makâmu’t-tedâris’ H. 887 / M. 1482 tarihinde vuku bulmuştur",
+        "en": "The construction of this honorable madrasa was ordered by one of the elders of the Ottoman Empire (İshak Paşa) during the reign of Sultan Bayezid bin Muhammed Han, son of the Sultan -may Allah make his kingdom and sultanate eternal- and the completion and opening of construction of the ‘makâmu’t-tedâris’ (place of education) took place with the help of Allah and the grace of success in the year AH 887 / AD 1482."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 887,
+        "gregorian": "1482-83"
+      },
+      "note": {
+        "tr": "Kitap dili belirtmez. Metin kısmen noktalıdır (…) ve satır sonlarında kitapta ‘/’ ile ayrılmıştır. Çeviride miladi yıl 1482, başlıkta 1482–83 verilmiştir.",
+        "en": "The book does not name the language. The text has an ellipsis (…) and lines are separated by ‘/’. The translation gives AD 1482, the heading AD 1482–83."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "346"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1482",
+      "year": 1482,
+      "date": null,
+      "hijri": "887",
+      "type": "construction",
+      "title": {
+        "tr": "Medresenin inşası ve açılışı (H. 887 / M. 1482-83)",
+        "en": "Construction and opening of the madrasa (AH 887 / AD 1482-83)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "346"
+        }
+      ]
+    },
+    {
+      "id": "vakfiyeler-1486",
+      "year": 1486,
+      "date": null,
+      "hijri": "891-892",
+      "type": "record",
+      "title": {
+        "tr": "Medreseye ait vakfiyeler (H. 891-892 / M. 1486-87)",
+        "en": "Endowment charters of the madrasa (AH 891-892 / AD 1486-87)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "346, 349"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-inegol-ishak-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "İshak Paşa Külliyesi'nin medresesi.",
+        "en": "The madrasa of the İshak Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "343"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese caminin kuzeyinde, U planlı ve açık avlulu bir yapıdır. Dershane kubbeli ve güney duvarın ortasından girilir; dershanenin iki yanında altışar, toplam on iki hücre vardır. Hücreler kubbelidir ve ikişer pencerelidir.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "343-349"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1hGybdcQFhxdWP7q_lEuMBdHOhQFwNyyL",
+        "original_name": "02 DJI_20241112202246_0188_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "347"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İshak Paşa Medresesi (kitap s. 347)",
+        "en": "İshak Paşa Madrasa (book p. 347)"
+      },
+      "alt": {
+        "tr": "İshak Paşa Medresesi fotoğrafı",
+        "en": "Photo of İshak Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1arrv4DQ-IBO01D1jSiUVvLjVLP8NcsTp",
+        "original_name": "04 ERD08663 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "347"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İshak Paşa Medresesi (kitap s. 347)",
+        "en": "İshak Paşa Madrasa (book p. 347)"
+      },
+      "alt": {
+        "tr": "İshak Paşa Medresesi fotoğrafı",
+        "en": "Photo of İshak Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1nPez75FqjVD6etiDNGkmE115FDlgOtmR",
+        "original_name": "06 ERD08758 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "347"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İshak Paşa Medresesi (kitap s. 347)",
+        "en": "İshak Paşa Madrasa (book p. 347)"
+      },
+      "alt": {
+        "tr": "İshak Paşa Medresesi fotoğrafı",
+        "en": "Photo of İshak Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1YKXpALCSuhF5gnopYTbvV33ScxShU87n",
+        "original_name": "08 ERD08721 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "347"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İshak Paşa Medresesi (kitap s. 347)",
+        "en": "İshak Paşa Madrasa (book p. 347)"
+      },
+      "alt": {
+        "tr": "İshak Paşa Medresesi fotoğrafı",
+        "en": "Photo of İshak Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1L8PonOgqMpmJnAtSIfYZpjdaEEGtF9Tz",
+        "original_name": "DJI_20241112201926_0179_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "349"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İshak Paşa Medresesi (kitap s. 349)",
+        "en": "İshak Paşa Madrasa (book p. 349)"
+      },
+      "alt": {
+        "tr": "İshak Paşa Medresesi fotoğrafı",
+        "en": "Photo of İshak Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1Yqtzau0Ed-WXeQuMBIbb2ujXQTxI73f-",
+        "original_name": "ERD08760 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "349"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İshak Paşa Medresesi (kitap s. 349)",
+        "en": "İshak Paşa Madrasa (book p. 349)"
+      },
+      "alt": {
+        "tr": "İshak Paşa Medresesi fotoğrafı",
+        "en": "Photo of İshak Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

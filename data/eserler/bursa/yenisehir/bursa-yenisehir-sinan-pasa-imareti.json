@@ -1,0 +1,299 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-sinan-pasa-imareti",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yenişehir",
+    "text_origin": "Bursa Vakıf Eserleri III. Cilt, Yenişehir bölümünden (s. 667-683) yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da doğrulanmış bir kaynaktan eklenmeli (location.coordinates eklenmedi).",
+      "Fotoğraflar henüz eşleştirilmedi; match_photos.py ile eklenecek (media: [], media_folder: null).",
+      "Erişilebilirlik bilgileri kitapta yok; sahada doğrulanmalı.",
+      "Bu eser için Hicri/Miladi tarihli kitabe kitapta yok ('Yapıların hiçbirinde kitabe bulunmamaktadır', s. 668).",
+      "Vakfiye metni/şartları kitapta yalnızca özetlenmiş; VGM Arşivi K. 77 numaralı vakfiyeden tam metin bulunursa waqf.deed alanına eklenmeli.",
+      "Restorasyon yılı kitapta verilmiyor; kaynak bulunursa eklenmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf.deed.date_display",
+        "note": "Vakfiye tarihi külliye (s. 668), imaret (s. 678) bölümlerinde 'H. Rebiyülahir 998 / M. Şubat 1590', medrese bölümünde (s. 675) 'H. Rebiyülevvel 998 / M. Şubat 1590' olarak geçiyor; Hicri ay adı tutarsız (Rebiyülahir / Rebiyülevvel), Miladi ay aynı. Kaynağa sadık kalındı; ay kesin değil."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Ambar, yemekhane ve mutfak işlevleri kitapta 'tahmin edilmektedir / düşünülmektedir / planlanmıştır' diye geçiyor; probable işaretlendi."
+      },
+      {
+        "field": "layout",
+        "note": "Metinde imaretin yönü 'külliyenin kuzeyi' diye veriliyor; medrese de 'caminin kuzeyi' deniyor; ikisinin birbirine göre konumu kitapta açık değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sinan Paşa İmareti",
+    "en": "Sinan Paşa Imaret"
+  },
+  "alternate_names": [],
+  "type": "imaret",
+  "secondary_types": [],
+  "parent_id": "bursa-yenisehir-sinan-pasa-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "L planlı",
+    "sekiz kubbeli"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Ulucami Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "678"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. Rebiyülahir 998 / M. Şubat 1590 tarihli vakfiyede anılır",
+      "en": "Mentioned in the charter of Rabi al-Thani AH 998 / February AD 1590"
+    },
+    "start_year": null,
+    "end_year": 1590,
+    "hijri_year": 998,
+    "century": 16,
+    "basis": {
+      "tr": "İmaretin kendi yapım yılı verilmiyor; vakfiyede kuruluşuna ilişkin bilgi var.",
+      "en": "The imaret's own construction year is not given; the charter contains information on its establishment."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "678"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Koca Sinan Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "667"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Koca Sinan Paşa vakfı (Sinan Paşa Vakfiyesi)",
+    "deed": {
+      "date_display": "H. Rebiyülahir 998 / M. Şubat 1590",
+      "excerpt": {
+        "tr": "Vakıflar Genel Müdürlüğü Arşivi'nde K. 77 numarada kayıtlı, 132 sayfalık defter halinde vakfiye; ilk sayfasında III. Murad'a ait tuğra bulunur.",
+        "en": "Registered in the General Directorate of Foundations Archives under no. K. 77; a 132-page register whose first page bears the tughra of Murad III."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668-669"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "678"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sinan Paşa Külliyesi'nin kuzeyinde, L şeklinde dizilmiş sekiz kubbeli odadan oluşan imaret. Vakfiyede en ayrıntılı tanımlanan birimdir; medrese ile birlikte restore edilmiş ve sağlam durumdadır.",
+    "en": "The imaret north of the Sinan Paşa Complex consists of eight domed rooms in an L shape. It is the unit described in most detail in the charter; it was restored together with the madrasa and is in good condition."
+  },
+  "sections": [
+    {
+      "id": "vakfiye-ve-personel",
+      "order": 1,
+      "title": {
+        "tr": "Vakfiyedeki Yeri ve Personel",
+        "en": "Place in the Charter and Staff"
+      },
+      "body": {
+        "tr": "Kuruluşuna ilişkin bilgiler H. Rebiyülahir 998 / M. Şubat 1590 tarihli vakfiyede açıkça yer alır; vakfiyede en ayrıntılı tanımlanan birim imarettir. Personel sayısı ile barınma ve iaşe hükümleri dikkat çekici ayrıntıyla yazılmıştır. İşleyişten sorumlu olarak bir şeyh (yönetici), vekilharç, kilerci, kâtip, ambar muhafızı, iki aşçı yardımcısı, iki ekmekçi, bulaşıkçı, buğdaycı, buğday ayıklayıcı, uncu, kalburcu, temizlikçi, kapıcı, et ve odun hamalı, iki su yolcu, bir çiftlik görevlisi ve bir usta görevlendirilmiştir.",
+        "en": "Its establishment is clearly recorded in the charter of Rabi al-Thani AH 998 / February AD 1590, where it is the most detailed unit. Staff numbers and accommodation and food provisions are written in remarkable detail. A shaykh (manager), steward, storekeeper, clerk, warehouse guard, two assistant cooks, two bakers, dishwasher, wheat handler, wheat sorter, miller, sifter, cleaner, janitor, meat and wood porter, two water carriers, a farm attendant and a master were assigned."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "678"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Külliyenin kuzeyindeki imaret, L şeklinde dizilmiş sekiz kubbeli odadan oluşur: doğu-batı doğrultusundaki uzun kolda altı, kuzey-güney doğrultusundaki kısa kolda iki kubbeli birim. Batı uçtaki birimin ambar, doğusunda kemerle bağlanan iki kubbeli mekânın yemekhane olduğu düşünülür; hemen yanındaki üç kubbeli bölüm mutfak olarak planlanmıştır ve doğu-batı duvarlarında dikdörtgen nişli, yuvarlak kemerli, tuğla kubbeli ocaklar vardır. Kubbelere geçiş pandantiflerledir; mutfak ve güneydoğu köşedeki birimin kubbelerinde sekizgen planlı aydınlık fenerleri bulunur ve kasnak, baca ve fenerlerde kirpi saçak kullanılmıştır.",
+        "en": "Located north of the complex, the imaret has eight domed rooms in an L shape: six on the east-west long arm, two on the north-south short arm. The western end unit is believed to have been a warehouse, the two-domed space joined to its east by an arch a dining hall, and the three-domed section beside it was planned as the kitchen, with fireplaces with rectangular niches, round arches and brick domes on its east and west walls. Domes sit on pendentives; the kitchen and southeast corner domes have octagonal lanterns, and sawtooth eaves decorate drums, chimneys and lanterns."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "678-679"
+        }
+      ]
+    },
+    {
+      "id": "durum",
+      "order": 3,
+      "title": {
+        "tr": "Günümüzdeki Durum",
+        "en": "Present Condition"
+      },
+      "body": {
+        "tr": "Medrese ile birlikte restore edilen imaret günümüzde sağlam durumdadır.",
+        "en": "The imaret, restored together with the madrasa, is in good condition today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "679"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbeli_oda",
+      "label": {
+        "tr": "Kubbeli oda sayısı",
+        "en": "Domed rooms"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "678"
+        }
+      ]
+    },
+    {
+      "key": "uzun_kol_kubbe",
+      "label": {
+        "tr": "Uzun koldaki kubbeli birim",
+        "en": "Domed units on long arm"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "678"
+        }
+      ]
+    },
+    {
+      "key": "kisa_kol_kubbe",
+      "label": {
+        "tr": "Kısa koldaki kubbeli birim",
+        "en": "Domed units on short arm"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "678"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-anilma",
+      "year": 1590,
+      "date": null,
+      "hijri": "Rebiyülahir 998",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiyede kuruluşuna ilişkin bilgi verildi (H. Rebiyülahir 998 / M. Şubat 1590)",
+        "en": "Its establishment recorded in the charter (Rabi al-Thani AH 998 / Feb. AD 1590)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "678"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yenisehir-sinan-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "İmaret, Sinan Paşa Külliyesi'nin bir birimidir.",
+        "en": "The imaret is a unit of the Sinan Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "678"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İmaret, L şeklinde dizilmiş sekiz kubbeli odadan oluşur; doğu-batı doğrultusundaki uzun kolda altı, kısa kolda iki kubbe vardır. Mutfak bölümü ile bir köşe biriminin kubbelerinin üstünde sekizgen aydınlık fenerleri yükselir; saçaklarda kirpi dizisi görülür. Avluya bakan cephelerde yuvarlak kemerli kapılar ve sivri kemerli alınlıklı dikdörtgen pencereler bulunur.",
+      "en": "The imaret is eight domed rooms in an L shape, six along the long east-west arm and two on the short arm. Octagonal lanterns rise over the domes of the kitchen and a corner unit, and the eaves show sawtooth courses. Courtyard-facing façades have round-arched doors and rectangular windows with pointed-arch pediments."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden (Bursa Vakıf Eserleri III. Cilt, Yenişehir) yazıldı; yalnızca metindeki bilgiler kullanıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

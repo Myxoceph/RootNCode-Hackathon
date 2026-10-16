@@ -1,0 +1,651 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-yildirim-bayezid-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "İlk yapının yapım yılı kitapta yok (yalnızca Yıldırım Bayezid yaptırdı denmekte).",
+      "Hamamın adı kitapta açıkça verilmiyor; 'bursa-inegol-yildirim-bayezid-hamami' hedef kimliği tahmini, hamam kaydı varsa kimlik düzeltilmeli.",
+      "Vakfiye metni kitapta yok.",
+      "İshak Paşa Külliyesi hedef kimliği tahmini; ilgili kayıtla eşlenmeli.",
+      "Açılış töreninin yılı belgede yok; 1895 yalnızca mihrap tarihinden çıkarıldı, teyit edilmeli.",
+      "İnşa edildiği yıl bilinmediği için 'era' erken-osmanli olarak ekip tarafından seçildi; yeniden inşa 1890'larda (geç Osmanlı).",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraflar (media) ve media_folder henüz eşlenmedi; match_photos.py ile eklenecek. Arşiv fotoğrafı (archive_media) yok.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[harim_alan]",
+        "note": "Kitap harimi 15,11 × 15,33 m (yaklaşık 231,6 m²) olarak verirken aynı sayfada harim alanını 155,47 m² yazıyor; iki değer birbirini tutmuyor. İkisi de kaynağa sadık saklandı."
+      },
+      {
+        "field": "timeline[belge-1893]",
+        "note": "Belge Temmuz 1893 tarihli ve yeniden inşa kararını bildiriyor; mihrap kabartması H. 1313 / M. 1895 yazıyor. Açılışın hangi Ağustos'ta yapıldığı belirtilmiyor (1893 mü 1894 mü 1895 mi)."
+      },
+      {
+        "field": "sections[kaynaklar]",
+        "note": "Evliya Çelebi'nin geçişi kitapta 1671 olarak veriliyor; bu yıl kitaptan aynen aktarıldı."
+      },
+      {
+        "field": "sections[kaynaklar]",
+        "note": "Türkçe 'ihyâgerdesi' ifadesi 'ihya ettirdiği' diye mealleniyor; İngilizce ise 'revived by Bayezid Han' diyor. Banî olarak 'yaptıran' anlamı esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yıldırım Bayezid (Cuma) Camii",
+    "en": "Yıldırım Bayezid (Cuma) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Cuma Camii",
+      "en": "Cuma (Friday) Mosque",
+      "note": "Vakıf belgelerinde"
+    },
+    {
+      "tr": "Yıldırım Han Camii",
+      "en": "Yıldırım Han Mosque",
+      "note": "Evliya Çelebi'nin adlandırması"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Yıldırım Bayezid",
+    "Cuma Camii",
+    "II. Abdülhamid",
+    "ahşap kubbe",
+    "1895 yeniden inşa"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Cuma Mahallesi",
+    "address": "Nuri Doğrul Caddesi, No: 22",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "387"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yıldırım Bayezid dönemi; yeniden inşa H. 1313 / M. 1895 (mihrap kabartması)",
+      "en": "Yıldırım Bayezid period; rebuilt AH 1313 / AD 1895 (relief on mihrab)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 1313,
+    "century": null,
+    "basis": {
+      "tr": "İlk yapının yılı kitapta verilmiyor; yalnızca Yıldırım Bayezid tarafından yaptırıldığı belirtiliyor. Yeniden inşanın tarihi mihrap kabartmasındaki H. 1313 / M. 1895'tir.",
+      "en": "The year of the first building is not given; only that it was built by Yıldırım Bayezid. The rebuilding date is AH 1313 / AD 1895 on the mihrab relief."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "387, 390"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Yıldırım Bayezid",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "387, 392"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Sultan Yıldırım Bayezid Hân hazretlerinin câmi-i şerîfi vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakfedilen hamam camiye gelir sağlamıştır; hamamın mütevellisi 1710'da Hacı Mirza Mehmed, 1716'da Lütfullah Efendi olmuştur.",
+      "en": "The bath endowed for the mosque provided its income; trustees of the bath were Hacı Mirza Mehmed in 1710 and Lütfullah Efendi in 1716."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "387, 392"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan Yıldırım Bayezid'in yaptırdığı bilinen, 1893-1895 yıllarında II. Abdülhamid iradesiyle yeniden inşa edilen, ahşap kubbeli İnegöl Cuma Camii.",
+    "en": "The Cuma Mosque of İnegöl, known to be built by Sultan Yıldırım Bayezid and rebuilt in the 1890s by the will of Abdülhamid II, with a wooden dome."
+  },
+  "sections": [
+    {
+      "id": "konum-bani",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banî",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Cami İnegöl Cuma Mahallesi, Nuri Doğrul Caddesi No: 22'dedir; İshak Paşa Külliyesi'nin doğusundadır. Yapıya ait kitabe günümüze ulaşmamıştır. Sultan Yıldırım Bayezid tarafından yaptırıldığı bilinen cami, dönemin vakıf belgelerinde \"Evkâf-ı Hümâyûn hazînesinden, mazbût evkâfdan, İnegöl-i Bursa'da vâkı', merhûm ve mağfûrun-leh Sultan Yıldırım Bayezid Hân hazretlerinin câmi-i şerîfi vakfı\" ifadesiyle yer alır; aynı belgelerde \"Cuma Camii\" olarak da adlandırılmıştır.",
+        "en": "The mosque is in Cuma Neighborhood, Nuri Doğrul Street No. 22, İnegöl, east of the İshak Paşa Complex. No inscription has survived. Known to have been built by Sultan Yıldırım Bayezid, it appears in the foundation documents of the period as \"Evkâf-ı Hümâyûn hazînesinden, mazbût evkâfdan, İnegöl-i Bursa'da vâkı', merhûm ve mağfûrun-leh Sultan Yıldırım Bâyezîd Hân hazretlerinin câmi-i şerîfi vakfı\" and is also called \"Cuma (Friday) Mosque\" in the same documents."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "387"
+        }
+      ]
+    },
+    {
+      "id": "kaynaklar",
+      "order": 2,
+      "title": {
+        "tr": "Evliya Çelebi ve 1893 Belgesi",
+        "en": "Evliya Çelebi and the 1893 Document"
+      },
+      "body": {
+        "tr": "Evliya Çelebi 1671'de hacca giderken İnegöl'e uğradığında camiyi, kiremit örtülü, kurşunlu olmayan ama son derece ruhaniyetli, duaların kabul olacağına inanılan bir cami olarak anar. Temmuz 1893 tarihli bir belge, yapının harap hâlini ve 88.980 kuruş masrafla yeniden inşasına karar verildiğini bildirir. Belgenin devamında yeniden inşanın II. Abdülhamid'in iradesiyle yürütüldüğü, tamamlanınca padişahın cülusuna denk gelen geçen Ağustos'un on dokuzuncu günü açılış yapıldığı anlaşılır.",
+        "en": "During his visit to İnegöl on his way to the hajj in 1671, Evliya Çelebi mentions the mosque as an old place of worship with a tiled, not lead, roof, but very spiritual, where prayers are believed to be accepted. A document dated July 1893 reports its dilapidated state and the decision to rebuild it at a cost of 88,980 kuruş. The document continues that the rebuilding was carried out by the will of Abdülhamid II and that on completion the opening ceremony was held on the nineteenth of the previous August, coinciding with the sultan's accession anniversary."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "387-389"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 3,
+      "title": {
+        "tr": "Plan, Harim ve Kubbe",
+        "en": "Plan, Prayer Hall and Dome"
+      },
+      "body": {
+        "tr": "Günümüzdeki biçimini bu onarımla kazanan caminin mihrabının üst kısmında kabartma olarak II. Abdülhamid tuğrası ile H. 1313 / M. 1895 tarihi yer alır. Kuzey-güney doğrultulu dikdörtgen planlı yapının beden duvarlarında taş ve tuğla birlikte kullanılmıştır; 15,11 × 15,33 m'lik harim ile kuzeyinde 5,61 × 1,99 m'lik son cemaat mahalli bulunur. Son cemaat mahalli yanlarda birer yuvarlak kemer, önde iki sivri kemer ve ortada yay kemerli girişten oluşan beş bölümlüdür. Harime çift kanatlı ahşap kapıdan girilir; ortada dört ahşap destekle sınırlanan kare bölüm üzerinde, pandantiflerle geçilen sekizgen kasnağa oturan ahşap bir kubbe yükselir. 6,45 × 6,54 m ölçülerinde ve 13,77 m yüksekliğindeki fenerli kubbenin üstü kurşunla kaplıdır; yan alanlar düz ahşap çatılı, çevresi kiremit kaplı kırma çatılıdır.",
+        "en": "The upper part of the mihrab of the mosque, which took its present form in this repair, bears in relief the tuğra of Abdülhamid II and the date AH 1313 / AD 1895. The north-south rectangular building uses stone and brick together in its walls; it comprises a 15.11 × 15.33 m prayer hall with a 5.61 × 1.99 m narthex to the north, which has five sections of a round arch on each side, two pointed arches at the front and a bow-arched entrance in the middle. The hall is entered through a double-leafed wooden door; in the middle a wooden dome sits on an octagonal drum with pendentives above a square section bordered by four wooden supports. The lantern dome, 6.45 × 6.54 m and 13.77 m high, is lead-covered, with side areas under a flat wooden roof and a tiled hipped roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390-391"
+        }
+      ]
+    },
+    {
+      "id": "sus-ve-donanim",
+      "order": 4,
+      "title": {
+        "tr": "Süsleme ve Donanım",
+        "en": "Decoration and Fittings"
+      },
+      "body": {
+        "tr": "Kubbe kasnağı, kubbe göbeği ile pencere kenarları rumi bitkisel motiflerle, pandantifler rumi bezemenin yanında alınlıklarındaki ayetlerle süslüdür. 4,91 m yüksekliğindeki beş cepheli mihrap nişinin çevresi geometrik desenli rumi motiflerle bezelidir; açık renk sıvalı nişin ortasında \"besmele\" yazılı kandil motifi, alınlıkta \"Allah\" ve \"Muhammed\" yazıları, tacın üzerinde Âl-i İmrân 37 ayeti ve üstte II. Abdülhamid tuğralı kabartma madalyon bulunur. Soğan külahlı sade ahşap minber, sade ahşap kürsü ve yarım daire biçimde öne çıkan ahşap kadınlar mahfili vardır. Harim, toplam on adet sivri kemerli demir parmaklıklı pencere ve kasnakta sekiz ahşap çerçeveli pencereyle aydınlanır.",
+        "en": "The dome drum, dome centre and window edges are decorated with rumi vegetal motifs; the pendentives carry rumi and verses on their pediments. The five-sided, 4.91 m high mihrab niche is surrounded by geometric rumi motifs; the middle of the light plastered niche has a lamp motif with the \"Basmala\", the pediment bears \"Allah\" and \"Muhammad\", the crown has the verse of Surah Al-i Imran 37 and above is a relief medallion with the tuğra of Abdülhamid II. There is a plain wooden minbar with bulbous spire, a plain wooden pulpit and a wooden women's gallery projecting in a semicircle. The hall is lit by ten pointed-arch iron-grilled windows and eight wooden-framed windows in the drum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390-391"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 5,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare kesme taş ve tuğladan altıgen kaide üzerinde, tamamen tuğladan örülmüş silindirik gövdelidir. Tek şerefesinin alt kısmı beş sıra testere dişi tuğla örgüyle hareketlendirilmiş, külah ve şerefe altlarında çini bezemeli kuşaklar bulunur; kurşun kaplı külaha, şerefe ve kaide üst kotlarına yapısal sağlamlık için çelik bilezikler eklenmiştir.",
+        "en": "The minaret has a cylindrical, entirely brick shaft on a hexagonal base of cut stone and brick. The underside of its single balcony has five rows of sawtooth brickwork, there are tile-decorated bands under the spire and the balcony, and steel bands have been added to the lead-covered spire, the upper levels of the balcony and the base for structural strength."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390-392"
+        }
+      ]
+    },
+    {
+      "id": "vakif-ve-onem",
+      "order": 6,
+      "title": {
+        "tr": "Vakıf Kayıtları ve Önemi",
+        "en": "Foundation Records and Importance"
+      },
+      "body": {
+        "tr": "2 Mart 1710 tarihli hurufat kaydına göre camiye gelir sağlaması için vakfedilen hamamın mütevellisi Hacı Mirza Mehmed olarak görevlendirilmiş, 25 Mart 1716'da bazı sıkıntılar nedeniyle yerine Lütfullah Efendi atanmıştır. Yıldırım Bayezid'in yaptırdığı cami ve hamamı İnegöl'ün tarihî gelişiminde önemli bir mihenk noktasıdır; caminin çeperine yapılan yeni yapı ve çarşılarla Osmanlı dönemi tarihî merkez genişlemiştir.",
+        "en": "According to an archival record dated 2 March 1710, Hacı Mirza Mehmed was appointed trustee of the bath endowed to provide income for the mosque, and on 25 March 1716, owing to some problems, Lütfullah Efendi was appointed in his place. The mosque and its bath, built by Yıldırım Bayezid, are an important milestone in İnegöl's development; the Ottoman-period historic centre grew with new buildings and bazaars around the mosque as its core."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "392"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüleri",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "15,11 × 15,33",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390"
+        }
+      ],
+      "note": {
+        "tr": "Kitap ayrıca harim alanını 155,47 m² verir (bkz. data_quality_notes).",
+        "en": null
+      }
+    },
+    {
+      "key": "harim_alan",
+      "label": {
+        "tr": "Harim alanı",
+        "en": "Prayer hall area"
+      },
+      "value": 155.47,
+      "unit": "m²",
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat",
+      "label": {
+        "tr": "Son cemaat mahalli ölçüleri",
+        "en": "Narthex dimensions"
+      },
+      "value": "5,61 × 1,99",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_olcu",
+      "label": {
+        "tr": "Kubbe ölçüleri",
+        "en": "Dome dimensions"
+      },
+      "value": "6,45 × 6,54",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_yukseklik",
+      "label": {
+        "tr": "Kubbe yüksekliği",
+        "en": "Dome height"
+      },
+      "value": 13.77,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_yukseklik",
+      "label": {
+        "tr": "Mihrap nişi yüksekliği",
+        "en": "Mihrab niche height"
+      },
+      "value": 4.91,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "pencere",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnak pencere sayısı",
+        "en": "Drum windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_insa_masraf",
+      "label": {
+        "tr": "1893 keşif masrafı",
+        "en": "1893 survey cost"
+      },
+      "value": 88980,
+      "unit": "kuruş",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "388"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Yıldırım Bayezid",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "II. Abdülhamid",
+      "role": {
+        "tr": "Yeniden inşanın iradesi; tuğrası mihrapta",
+        "en": "Will behind the rebuilding; his tuğra is on the mihrab"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "1671'de camiyi anan seyyah",
+        "en": "Traveller who mentions the mosque in 1671"
+      }
+    },
+    {
+      "name": "Hacı Mirza Mehmed",
+      "role": {
+        "tr": "1710'da hamamın mütevellisi",
+        "en": "Trustee of the bath in 1710"
+      }
+    },
+    {
+      "name": "Lütfullah Efendi",
+      "role": {
+        "tr": "1716'da hamamın mütevellisi",
+        "en": "Trustee of the bath in 1716"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mihrap-ayet",
+      "location": {
+        "tr": "Mihrap alınlığı, tacın üzerindeki dikdörtgen alan",
+        "en": "Mihrab pediment, rectangular area above the crown"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Küllemâ dehale aleyhâ Zekeriyyâ’l-mihrâbe",
+      "translation": null,
+      "author": null,
+      "note": {
+        "tr": "Âl-i İmrân suresi 37. ayetten; kitap mealini vermiyor.",
+        "en": "From Surah Al-i Imran 37; the book gives no translation."
+      },
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390-391"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-tugra",
+      "location": {
+        "tr": "Mihrabın üst kısmı, kabartma madalyon",
+        "en": "Upper part of the mihrab, relief medallion"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "note": {
+        "tr": "II. Abdülhamid tuğrası ve H. 1313 / M. 1895 tarihi; metin kitapta aktarılmıyor.",
+        "en": "Tuğra of Abdülhamid II and the date AH 1313 / AD 1895; text not transcribed in the book."
+      },
+      "date": {
+        "hijri_year": 1313,
+        "gregorian": "1895"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "390-391"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "evliya-1671",
+      "year": 1671,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Evliya Çelebi camiden söz eder",
+        "en": "Evliya Çelebi mentions the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "387-388"
+        }
+      ]
+    },
+    {
+      "id": "belge-1893",
+      "year": 1893,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Cami harap; yeniden inşa kararı (Temmuz 1893 belgesi)",
+        "en": "Mosque in ruin; decision to rebuild (July 1893 document)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "388"
+        }
+      ],
+      "note": {
+        "tr": "Belge Temmuz 1893 tarihlidir; yeniden inşa 88.980 kuruşla kararlaştırılmıştır.",
+        "en": "Document dated July 1893; rebuilding decided at 88,980 kuruş."
+      }
+    },
+    {
+      "id": "acilis-agustos",
+      "year": 1895,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Yeniden inşa edilen caminin açılışı (19 Ağustos)",
+        "en": "Opening of the rebuilt mosque (19 August)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "389-390"
+        }
+      ],
+      "note": {
+        "tr": "Belge yalnızca 'geçen Ağustos'un on dokuzuncu günü' der; yıl kitapta yok, 1895 mihrap tarihinden varsayılmıştır.",
+        "en": "The document only says 'the nineteenth of last August'; the year is not given and 1895 is inferred from the mihrab date."
+      }
+    },
+    {
+      "id": "hurufat-1710",
+      "year": 1710,
+      "date": "1710-03-02",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hamamın mütevellisi Hacı Mirza Mehmed atandı (2 Mart 1710)",
+        "en": "Hacı Mirza Mehmed appointed trustee of the bath (2 March 1710)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "392"
+        }
+      ]
+    },
+    {
+      "id": "hurufat-1716",
+      "year": 1716,
+      "date": "1716-03-25",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mütevelli Lütfullah Efendi atandı (25 Mart 1716)",
+        "en": "Lütfullah Efendi appointed trustee (25 March 1716)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "392"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-inegol-yildirim-bayezid-hamami",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Camiye gelir sağlaması için vakfedilen hamam; mütevellileri kayıtlıdır.",
+        "en": "The bath endowed to provide income for the mosque; its trustees are recorded."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "392"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-inegol-ishak-pasa-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami İshak Paşa Külliyesi'nin doğusunda yer alır.",
+        "en": "The mosque stands east of the İshak Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "387"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, İshak Paşa Külliyesi'nin doğusunda, taş ve tuğla örgülü, dikdörtgen planlı bir yapıdır. Kuzeyde beş bölümlü, kemerli bir son cemaat yeri vardır. İçeride ortada, dört ahşap destek üzerine oturan, sekizgen kasnaklı ahşap bir kubbe yükselir; kubbe ve mihrap çevresi rumi bezemelidir. Mihrabın üstünde II. Abdülhamid'in tuğrası kabartma olarak durur. Girişin üstünde yarım daire biçimli ahşap kadınlar mahfili vardır. Tuğladan, altıgen kaideli, tek şerefeli minare çini kuşaklıdır.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

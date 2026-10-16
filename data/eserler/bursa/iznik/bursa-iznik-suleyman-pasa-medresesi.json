@@ -1,0 +1,608 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-suleyman-pasa-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Yapım tarihi için kitabe yok; yalnızca '1360'tan önce' tahmini var, start_year null bırakıldı.",
+      "XIX. yüzyıl onarımının yılı kaynakta yok (timeline'a eklenmedi).",
+      "Evliya Çelebi'nin gelişinin yılı bu bölümde 'XVII. yüzyıl' olarak verilmiş (başka sayfada 1648).",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kaynak 'inşa ya da tamir kitabesi bulunmamakla birlikte 1360'tan önce inşa edildiği tahmin edilmektedir' der; end_year 1360 bu tahmine dayanır, kesin tarih değildir."
+      },
+      {
+        "field": "sections[vakif-tarihce]",
+        "note": "Vakfiye (H. 763 / M. 1361-62) Süleyman Paşa'nın ölümünden (1359-1360) sonra Orhan Gazi tarafından düzenlenmiş olarak anlatılır; kaynak Orhan Gazi'nin yaşamına dair başka tarih vermez."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Süleyman Paşa Medresesi",
+    "en": "Süleyman Paşa Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "medrese",
+    "Süleyman Paşa",
+    "Orhan Gazi",
+    "çini",
+    "revaklı avlu"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": null,
+    "address": "Maltepe Caddesi ile Hüseyin Oktay Sokak'ın kesişimi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "481"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1360'tan önce (tahmini)",
+      "en": "Before 1360 (estimated)"
+    },
+    "start_year": null,
+    "end_year": 1360,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "İnşa ya da tamir kitabesi yoktur; kaynak 1360'tan önce inşa edildiğini tahmin eder (Süleyman Paşa 1359-1360'ta ölmüştür). Başlangıç yılı verilmemiştir.",
+      "en": "No construction or repair inscription; the source estimates it was built before 1360 (Süleyman Paşa died in 1359-1360). No start year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "481"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Süleyman Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "481"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Süleyman Paşa vakıfları",
+    "deed": {
+      "date_display": "H. 763 / M. 1361-62",
+      "excerpt": {
+        "tr": "Süleyman Paşa'nın vefatından sonra babası Orhan Gazi tarafından düzenlenen vakfiyede İznik'teki bu medreseden söz edilir.",
+        "en": "The endowment charter prepared by his father Orhan Gazi after Süleyman Paşa's death mentions this madrasa in Iznik."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "482"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "482"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Orhan Gazi'nin büyük oğlu Süleyman Paşa'nın yaptırdığı, açık avlulu U planlı; dershane ve on bir öğrenci hücresinden oluşan medrese. Bugün çini üretim ve satış çarşısıdır.",
+    "en": "A U-plan madrasa with open courtyard, built by Süleyman Paşa, eldest son of Orhan Gazi, with a classroom and eleven student cells; today a tile production and sales bazaar."
+  },
+  "sections": [
+    {
+      "id": "kurucu",
+      "title": {
+        "tr": "Süleyman Paşa ve Yapım",
+        "en": "Süleyman Paşa and Construction"
+      },
+      "body": {
+        "tr": "Medrese, Orhan Gazi'nin büyük oğlu ve Gelibolu fatihi Süleyman Paşa tarafından yaptırılmıştır. Süleyman Paşa 1316'da doğmuş, 1337-1338'de Kocaeli ve çevresinde sancakbeyi olmuş, Gelibolu'nun fethiyle Osmanlı'nın Rumeli'de kalıcı hale gelmesini sağlamıştır. 1359-1360'ta av sırasında atının tökezlemesi sonucu ölmüş, kabri Bolayır'daki türbesindedir. Medresenin inşa ya da tamir kitabesi yoktur; 1360'tan önce inşa edildiği tahmin edilmektedir.",
+        "en": "The madrasa was built by Süleyman Paşa, eldest son of Orhan Gazi and conqueror of Gallipoli. Born in 1316, he was sanjakbey of Kocaeli in 1337-1338 and secured the Ottoman presence in Rumelia through the conquest of Gallipoli. He died when his horse stumbled during a hunt in 1359-1360; his grave is in his tomb at Bolayır. The madrasa has no construction or repair inscription; it is estimated to have been built before 1360."
+      },
+      "confidence": "probable",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "id": "vakif-tarihce",
+      "title": {
+        "tr": "Vakıf ve Tarihçe",
+        "en": "Waqf and History"
+      },
+      "body": {
+        "tr": "Süleyman Paşa'nın birçok yerde cami, medrese ve benzeri yapılar yaptırdığı ve bunlar için vakıflar kurduğu bilinir. Ölümünden sonra babası Orhan Gazi'nin H. 763 / M. 1361-62'de düzenlediği vakfiyede İznik'teki bu medrese de anılır. Arşiv kayıtlarına göre yapı 1890'lı yıllara kadar medrese olarak işlev görmüştür; vakıf defterlerinde 1535-36'da kırklı paye, 1546-47'de ellililer arasında, 1652-53'te hariç elli olarak kayıtlıdır. Evliya Çelebi medresede dârülhadis ve dârülkurrâ bulunduğunu yazar; bu yapılar günümüze ulaşmamıştır. Evliya Çelebi ayrıca Süleyman Şah Camii ve mektebini anar; onlar da günümüze gelmemiştir.",
+        "en": "Süleyman Paşa had mosques, madrasas and similar buildings built in many places and set up foundations for them. The endowment charter drawn up by his father Orhan Gazi in AH 763 / AD 1361-62, after his death, also mentions this madrasa in Iznik. Archive records show it functioned as a madrasa until the 1890s; foundation registers list it with the 'forty akçe' rank in 1535-36, among the 'fifties' in 1546-47 and as 'exclusive fifty' in 1652-53. Evliya Çelebi wrote of a dar al-hadith and dar al-qurra in the madrasa, which have not survived, and also mentions the Süleyman Şah Mosque and school, likewise lost."
+      },
+      "confidence": "certain",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "482"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "title": {
+        "tr": "Plan ve Mekânlar",
+        "en": "Plan and Spaces"
+      },
+      "body": {
+        "tr": "Açık avlulu, U planlı müstakil medrese bir dershane ile on bir öğrenci hücresinden oluşur. Avlu kuzey, batı ve güneyden bu yapılarla, doğudan bir bahçe duvarıyla çevrilidir. Batıdaki dershane eksenin kuzeyine kaydırılmıştır; güneyindeki hücreyle yarım beşik tonozlu bir dehliz bağlanır. Kare planlı dershane tromp geçişli kubbeyle, hücreler pandantif geçişli kubbelerle örtülüdür. Tüm mekânlar avlu tarafındaki revaka açılır; revak sütunlar ve sivri kemerlerle sekiz eş kare bölüme ayrılmış, pandantifli kubbelerle örtülüdür. Her hücrede dikdörtgen bir ocak nişi vardır.",
+        "en": "The independent U-plan madrasa with open courtyard comprises a classroom and eleven student cells. The courtyard is bounded by these on the north, west and south and by a garden wall on the east. The west classroom is shifted north of the axis, linked to the cell south of it by a half-barrel-vaulted corridor. The square classroom has a dome on squinches, the cells pendentive domes. All spaces open to the courtyard arcade, divided by columns and pointed arches into eight equal square bays under pendentive domes. Each cell has a rectangular hearth niche."
+      },
+      "confidence": "certain",
+      "order": 3,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "483, 485"
+        }
+      ]
+    },
+    {
+      "id": "malzeme",
+      "title": {
+        "tr": "Malzeme ve Cepheler",
+        "en": "Materials and Façades"
+      },
+      "body": {
+        "tr": "Cepheler moloz taş, tuğla ve harçla örülmüş, bazı yerlerde devşirme malzeme kullanılmıştır. Revak duvarları bir sıra kesme taş, üç sıra tuğlanın almaşık dizilişidir. Revak sütunları granit ve mermerdir, başlıkları yüzeysel mukarnaslıdır. Hücre ve dershane kubbeleri sekizgen kasnaklara oturur; hücrelerin üzerinde piramidal külahlı ocak bacaları görülür. Kubbeler oluklu kiremitle kaplıdır.",
+        "en": "Façades are rubble stone, brick and mortar, with spolia in places. Arcade walls alternate one row of cut stone with three of brick. Arcade columns are granite and marble with superficial muqarnas capitals. Cell and classroom domes rise on octagonal drums, and pyramidal-capped chimneys top the cells. The domes are covered with grooved tiles."
+      },
+      "confidence": "certain",
+      "order": 4,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "485"
+        }
+      ]
+    },
+    {
+      "id": "onarim-kullanim",
+      "title": {
+        "tr": "Onarımlar ve Günümüz",
+        "en": "Repairs and Present Use"
+      },
+      "body": {
+        "tr": "Medrese XIX. yüzyılda onarılmış, 1968'de ve 2023'te Vakıflar Genel Müdürlüğünce esaslı tamirlerden geçmiştir. Günümüzde çini üretim ve satış çarşısı olarak kullanılmaktadır.",
+        "en": "The madrasa was repaired in the 19th century and underwent major repairs by the General Directorate of Foundations in 1968 and 2023. Today it is used as a tile production and sales bazaar."
+      },
+      "confidence": "certain",
+      "order": 5,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "485"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hucre_sayisi",
+      "label": {
+        "tr": "Öğrenci hücresi",
+        "en": "Student cells"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "483"
+        }
+      ]
+    },
+    {
+      "key": "dershane_sayisi",
+      "label": {
+        "tr": "Dershane",
+        "en": "Classroom"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "483"
+        }
+      ]
+    },
+    {
+      "key": "revak_bolum",
+      "label": {
+        "tr": "Revak bölümü",
+        "en": "Arcade bays"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "485"
+        }
+      ],
+      "note": {
+        "tr": "Sekiz eş boyutlu kare bölüm.",
+        "en": "Eight equal square bays."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Süleyman Paşa",
+      "role": {
+        "tr": "Yaptıran; Orhan Gazi'nin büyük oğlu",
+        "en": "Founder; eldest son of Orhan Gazi"
+      }
+    },
+    {
+      "name": "Orhan Gazi",
+      "role": {
+        "tr": "Vakfiyeyi düzenleyen (1361-62)",
+        "en": "Prepared the endowment charter (1361-62)"
+      }
+    },
+    {
+      "name": "Alâaddin-i Mısrî",
+      "role": {
+        "tr": "Medresenin müderrisi",
+        "en": "Professor of the madrasa"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Medresedeki dârülhadis ve dârülkurrâyı anan seyyah",
+        "en": "Traveller who recorded the dar al-hadith and dar al-qurra"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1361",
+      "year": 1361,
+      "date": null,
+      "hijri": "763",
+      "type": "record",
+      "title": {
+        "tr": "Orhan Gazi'nin düzenlediği vakfiyede medrese anıldı",
+        "en": "Madrasa mentioned in Orhan Gazi's endowment charter"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "482"
+        }
+      ],
+      "note": {
+        "tr": "Kaynak M. 1361-62 verir.",
+        "en": "Source gives AD 1361-62."
+      }
+    },
+    {
+      "id": "defter-1535",
+      "year": 1535,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıf defterlerinde kırklı paye ile kayıtlı (1535-36)",
+        "en": "Registered with 'forty akçe' rank in foundation registers (1535-36)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "482"
+        }
+      ]
+    },
+    {
+      "id": "defter-1546",
+      "year": 1546,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Ellililer arasında kayıtlı (1546-47)",
+        "en": "Listed among the 'fifties' (1546-47)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "482"
+        }
+      ]
+    },
+    {
+      "id": "defter-1652",
+      "year": 1652,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hariç elli olarak tanımlandı (1652-53)",
+        "en": "Defined as 'exclusive fifty' (1652-53)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "482"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1968",
+      "year": 1968,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğünce esaslı tamir",
+        "en": "Major repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "485"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2023",
+      "year": 2023,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğünce esaslı tamir",
+        "en": "Major repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "485"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese, ortada açık bir avlu, çevresinde U biçiminde dizilmiş kubbeli oda ve sütunlu bir revaktan oluşur. Batıda daha büyük kubbeli dershane, çevresinde on bir küçük öğrenci hücresi vardır; her hücrenin üzerinde piramit külahlı bir baca yükselir. Bugün çini atölyeleri ve satış yeri olarak kullanılır.",
+      "en": "The madrasa has an open central courtyard framed in a U by domed rooms and a columned arcade. In the west is the larger domed classroom, beside eleven small student cells, each topped by a pyramid-capped chimney. Today it houses tile workshops and shops."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "481-485"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1ihQ5phmTzbokmK2k-ny-TBqFGJakM6mk",
+        "original_name": "06 ERD01085 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "482"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Süleyman Paşa Medresesi (kitap s. 482)",
+        "en": "Süleyman Paşa Madrasa (book p. 482)"
+      },
+      "alt": {
+        "tr": "Süleyman Paşa Medresesi fotoğrafı",
+        "en": "Photo of Süleyman Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1OEjFmwS06maRkWVwxlrxvjLQNpKZUY8d",
+        "original_name": "07 ERD01112-Geliştirilmiş-NR kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "483"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Süleyman Paşa Medresesi (kitap s. 483)",
+        "en": "Süleyman Paşa Madrasa (book p. 483)"
+      },
+      "alt": {
+        "tr": "Süleyman Paşa Medresesi fotoğrafı",
+        "en": "Photo of Süleyman Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1guLzcpwQ-_sDaBW9UIZyergin3ZhZD-u",
+        "original_name": "08 ERD01008 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "483"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Süleyman Paşa Medresesi (kitap s. 483)",
+        "en": "Süleyman Paşa Madrasa (book p. 483)"
+      },
+      "alt": {
+        "tr": "Süleyman Paşa Medresesi fotoğrafı",
+        "en": "Photo of Süleyman Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1xUXJ56Sme2KcSgw-DqCne1HMimH8MuYs",
+        "original_name": "10 ERD00995 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "483"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Süleyman Paşa Medresesi (kitap s. 483)",
+        "en": "Süleyman Paşa Madrasa (book p. 483)"
+      },
+      "alt": {
+        "tr": "Süleyman Paşa Medresesi fotoğrafı",
+        "en": "Photo of Süleyman Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1K3jVzuceojg8B9onbJYHOdwGOpNTLDfa",
+        "original_name": "11 ERD01026 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "483"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Süleyman Paşa Medresesi (kitap s. 483)",
+        "en": "Süleyman Paşa Madrasa (book p. 483)"
+      },
+      "alt": {
+        "tr": "Süleyman Paşa Medresesi fotoğrafı",
+        "en": "Photo of Süleyman Paşa Madrasa"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

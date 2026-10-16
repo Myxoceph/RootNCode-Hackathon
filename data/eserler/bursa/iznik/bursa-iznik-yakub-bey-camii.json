@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-yakub-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İznik bölümünden (vk-bursa-c3) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kitapta yok.",
+      "Yakup Çelebi'nin türbesi (kitapta 'cami ve türbesi' deniyor) ayrı kayıtsa ilişkilendirilmeli; hedef kimliği bilinmiyor.",
+      "İngilizce bölümde 'Yakup Çelebi (1359-1389)' yaşam yılları; yapım tarihi değildir.",
+      "Koordinat kitapta yok; sahada ya da harita üzerinden doğrulanıp eklenmeli.",
+      "Fotoğraflar (güncel ve arşiv) henüz eşleştirilmedi; match_photos.py ile eklenecek; media_folder atanacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) kitapta yok; sahada teyit edilmeli.",
+      "Ambient ses (ambient_sound) ve ziyaretçi ipuçları henüz hazırlanmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap 'inşa ettirdiği kabul edilmektedir' diyor; kesin bir kitabe bilgisi verilmiyor, bu nedenle probable."
+      },
+      {
+        "field": "era",
+        "note": "Yapım yılı yok; banî 1359-1389 yaşadığından erken-osmanli girildi (çıkarım)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yakub Bey Camii",
+    "en": "Yakub Bey Mosque"
+  },
+  "subtitle": {
+    "tr": "Sultan I. Murad'ın oğlu Yakup Çelebi'ye atfedilen tabhaneli/zaviyeli cami",
+    "en": "Hospice/zawiya-plan mosque attributed to Yakup Çelebi, son of Murad I"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tabhaneli/zaviyeli plan",
+    "kubbe",
+    "devşirme sütun",
+    "Yakup Çelebi",
+    "İznik"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Yeni Mahalle",
+    "address": "Yakup Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "450-451"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi kitapta belirtilmemiş",
+      "en": "Construction date not stated in the book"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapım yılını vermiyor; yalnızca banî Yakup Çelebi'nin yaşam yılları (1359-1389) belirtiliyor, bunlardan yapım yılı çıkarılmadı.",
+      "en": "The book gives no construction year; only the founder's life years (1359-1389) are stated and no construction year was derived."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "450"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yakup Çelebi",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "450"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sultan I. Murad'ın oğlu Yakup Çelebi tarafından yaptırıldığı kabul edilen, tabhaneli/zaviyeli planlı, çok kubbeli cami; 1963'te onarılıp yeniden ibadete açılmıştır.",
+    "en": "A multi-domed hospice/zawiya-plan mosque accepted to have been built by Yakup Çelebi, son of Murad I; repaired and reopened for worship in 1963."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Banî ve Tarihçe",
+        "en": "Founder and History"
+      },
+      "body": {
+        "tr": "Yapının, Kosova Savaşı sonrasında şehit edilen Sultan I. Murad Hudâvendigâr'ın oğlu Yakup Çelebi (1359-1389) tarafından yaptırıldığı kabul edilir; Yakup Çelebi'nin İznik'te cami ve türbesinin yanı sıra Keles ilçesinde bir hamam yaptırdığı da bilinir. Yapı 1919'a kadar cami olarak işlev görmüş, bir süre boş kalmış, 1934-1935'te müze deposu olarak kullanılmış, 1963'te onarılarak yeniden ibadete açılmıştır.",
+        "en": "The building is accepted to have been built by Yakup Çelebi (1359-1389), son of Sultan Murad I Hudâvendigâr, who was martyred after the Kosovo War; Yakup Çelebi is also known to have had a bath built in the Keles district besides the mosque and tomb in Iznik. It served as a mosque until 1919, stood empty for a time, was a museum warehouse in 1934-1935 and was repaired and reopened for worship in 1963."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "450"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-cephe",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Dış Görünüm",
+        "en": "Plan and Exterior"
+      },
+      "body": {
+        "tr": "Cami tabhaneli/zaviyeli camiler grubundadır; erken dönem Bursa sultan külliyelerinin camilerinin tamamında (Ulucami hariç) bu plan tipi görülür. Kuzey-güney doğrultusunda yaklaşık 21 × 20 m ölçülerindedir. Beden duvarları üç sıra tuğla, bir sıra kesme taş almaşıktır; bazı bölümlerde cephe dikey tuğla dizileriyle hareketlendirilmiştir. Duvar üstünde üç sıra kirpi saçak vardır; kubbe ve tonozlar kiremitle kaplıdır. Doğu-batı doğrultulu beş bölümlü son cemaat yerinin beş gözlü revakları aynalı tonozludur; devşirme sütun başlıkları ve duvarlara yerleştirilmiş devşirme sütunlar dikkat çeker.",
+        "en": "The mosque belongs to the hospice/zawiya group; this plan appears in all mosques of early Bursa sultanic complexes except the Bursa Ulucami. It measures about 21 × 20 m north-south. The walls alternate three rows of brick with one of cut stone, and some façades are enlivened with vertical brick rows. Three rows of sawteeth run under the eaves and domes and vaults are tile-covered. The five-part narthex runs east-west with five bays under flattened barrel vaults; spolia capitals and spolia columns set in walls are striking."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "450-451"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Son cemaat yerinden girişte önde iki kubbeli bölüm vardır: biri asıl ibadet mekânı, diğeri yanlardaki tabhanelere geçişi sağlar. Ortadaki 6,00 × 4,50 m dikdörtgen planlı, kubbeli bölüme iki basamakla çıkılır; kubbe zeminden 8,10 m yüksekliktedir ve geçiş Türk üçgenleriyledir. Eskiden üstte bulunan aydınlık feneri 1963 onarımında kapatılmıştır. Orta kubbenin iki yanında 4,70 × 4,70 m kare planlı, tonozlu tabhane birimleri yer alır; her birinde girişin karşısında bir ocak nişi, güney duvarında sivri kemerli alınlıklı birer pencere bulunur. Orta bölümün güneyinde 0,75 m genişliğinde kemerle ayrılan 6,20 × 6,20 m'lik mihraplı alan, 5,50 m çaplı, diğerlerinden yüksek bir kubbeyle örtülüdür; kubbeye tek kademeli Türk üçgenleriyle geçilir, taşıyıcı kemerin yüksekliği 7,70 m'dir.",
+        "en": "After entering from the narthex there are two domed sections at the front: one is the main prayer area, the other gives access to the side hospices. The central 6.00 × 4.50 m rectangular domed section is reached by two steps; its dome is 8.10 m high with Turkish-triangle transitions. A roof lantern formerly above was closed in the 1963 repair. Either side are 4.70 × 4.70 m vaulted square hospice units, each with a fireplace niche opposite the entrance and a window with pointed-arch pediment on the south wall. South of the middle section, past a 0.75 m wide arch, the 6.20 × 6.20 m mihrab area is covered by a 5.50 m diameter dome higher than the others, on a single tier of Turkish triangles; the supporting arch is 7.70 m high."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "450-451"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber",
+      "order": 4,
+      "title": {
+        "tr": "Mihrap ve Minber",
+        "en": "Mihrab and Minbar"
+      },
+      "body": {
+        "tr": "Duvar düzleminden hafifçe öne çıkan, süslemesiz, yuvarlak nişli mihrap 1963 onarımında yeniden inşa edilmiştir; aynı dönemde sade ahşap minber ve vaaz kürsüsü de yenilenmiştir.",
+        "en": "The undecorated mihrab with a round niche, slightly projecting from the wall, was rebuilt in the 1963 repair; the simple wooden minbar and pulpit were renewed at the same time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "451"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "boyut",
+      "label": {
+        "tr": "Plan boyutu (kuzey-güney)",
+        "en": "Plan dimensions (north-south)"
+      },
+      "value": "21 × 20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "450"
+        }
+      ],
+      "note": {
+        "tr": "Yaklaşık",
+        "en": "Approximate"
+      }
+    },
+    {
+      "key": "orta_kubbe_yukseklik",
+      "label": {
+        "tr": "Orta kubbe yüksekliği",
+        "en": "Central dome height"
+      },
+      "value": 8.1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "450"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_kubbe_cap",
+      "label": {
+        "tr": "Mihrap kubbesi çapı",
+        "en": "Mihrab dome diameter"
+      },
+      "value": 5.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "451"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_bolum",
+      "label": {
+        "tr": "Son cemaat yeri bölüm sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "450"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Yakup Çelebi",
+      "role": {
+        "tr": "Banî olduğu kabul edilir (1359-1389)",
+        "en": "Accepted founder (1359-1389)"
+      }
+    },
+    {
+      "name": "Sultan I. Murad Hudâvendigâr",
+      "role": {
+        "tr": "Yakup Çelebi'nin babası",
+        "en": "Father of Yakup Çelebi"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "islev-1919",
+      "year": 1919,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1919'a kadar cami olarak kullanıldı; sonra bir süre boş kaldı",
+        "en": "Used as a mosque until 1919; then empty for a time"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "450"
+        }
+      ]
+    },
+    {
+      "id": "muze-deposu",
+      "year": 1934,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1934-1935 yıllarında müze deposu olarak kullanıldı",
+        "en": "Used as a museum warehouse in 1934-1935"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "450"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1963",
+      "year": 1963,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarıldı ve yeniden ibadete açıldı; mihrap, minber ve vaaz kürsüsü yenilendi, aydınlık feneri kapatıldı",
+        "en": "Repaired and reopened for worship; mihrab, minbar and pulpit renewed, lantern closed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "450-451"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "tabhane",
+      "title": {
+        "tr": "Tabhane odaları",
+        "en": "Hospice rooms"
+      },
+      "hint": {
+        "tr": "Orta kubbenin iki yanında ocak nişli kare odalar.",
+        "en": "Square rooms with fireplace niches on both sides of the central dome."
+      },
+      "section_id": "ic-mekan"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "visitor_tips": [],
+    "notes": {
+      "tr": "Aktif ibadet mekânı olabilir; kitap 1963'te yeniden ibadete açıldığını belirtiyor.",
+      "en": "Reopened for worship in 1963 according to the book."
+    },
+    "notes_source": "source"
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yaklaşık 21 × 20 m'lik, tuğla ve kesme taşın almaşık dizildiği, kiremit kaplı kubbeli bir yapı. Önünde beş gözlü, tonozlu revaklı bir son cemaat yeri vardır. İçeride ortada kubbeli bir bölüm, iki yanında ocak nişli kare tabhane odaları ve güneyde daha yüksek kubbeli mihrap bölümü bulunur.",
+      "en": "A domed building of about 21 × 20 m, in alternating brick and cut stone with tile-covered roofs. A five-bay vaulted portico stands in front. Inside, a domed central section is flanked by square hospice rooms with fireplace niches, with a higher-domed mihrab section to the south."
+    }
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
