@@ -1,6 +1,10 @@
 import { z } from "zod";
 
 /**
+ * @deprecated Legacy v0.1 contract for the removed `/monuments` endpoints.
+ * Use the `/assets` contract in asset.schema.ts. Kept only until the app moves
+ * to `/assets` (week 2, task Y8), then deleted.
+ *
  * Vagabonds API data contract.
  *
  * Mirrors apps/api/prisma/schema.prisma with camelCase fields and the
@@ -101,11 +105,8 @@ export const CityCuisineSchema = z.strictObject({
   historicalContext: z.string().min(1),
 });
 
-/**
- * Version of this contract. Bump it (semver) whenever a schema changes, and
- * keep mock_monuments.json's `version` in sync; the API reports it in every payload.
- */
-export const CONTRACT_VERSION = "0.1.0";
+/** @deprecated Version of the legacy monuments contract; mock_monuments.json keeps it in sync. */
+export const MONUMENTS_CONTRACT_VERSION = "0.1.0";
 
 /** Response body of `GET /monuments`, and the shape of mock_monuments.json. */
 export const MonumentsPayloadSchema = z.strictObject({

@@ -7,6 +7,25 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-16 · `/assets` API'si ve sözleşme v0.2.0
+
+Kimler: **herkes** (sözleşme paketi güncellendi)
+
+1. Paketleri güncelle (`@vagabonds/contracts` 0.2.0):
+   ```bash
+   npm install
+   ```
+2. İsteğe bağlı yeni ortam değişkenleri (`apps/api/.env`); varsayılanlar yeterli:
+   - `MEDIA_BASE_URL`: görsellerin genel adresi (varsayılan: R2 bucket'ı).
+   - `ASSET_VISIBILITY=published|preview`: `preview`, `in_review` kayıtları da gösterir; taslaklar hiçbir zaman dönmez.
+
+Değişenler:
+- Yeni uçlar: `GET /assets` ve `GET /assets/:id`; belge `http://localhost:3000/docs`.
+- `Monument` sözleşmesi ve mock kullanımdan kalkacak; uygulama `/assets`'e geçince (Y8) silinecek.
+  Eski `CONTRACT_VERSION` adı yeni sözleşmenin sürümü oldu; eski sürüm `MONUMENTS_CONTRACT_VERSION`.
+
+---
+
 ## 2026-10-16 · Tüm eserler yayında, koordinat isteğe bağlı
 
 Kimler: **backend ve veri** (Ahmet, Hüseyin); yerelde veritabanı çalıştıran herkes
