@@ -1,0 +1,466 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-molla-fenari-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi kitapta yok; 'dating' null bırakıldı. Molla Fenârî'nin 1431'de vefat ettiği bilgisinden yapının ondan önce yapıldığı çıkarılabilir ama kitap bunu açıkça yazmıyor; 'era' bu çıkarımla erken-osmanli girildi, teyit edilmeli.",
+      "Medrese ve vakıf bilgisi (vakfiye, gelir) kitapta yok; 'waqf' null.",
+      "Mimar bilgisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin 1969 onarımında 'asıl ibadet mekânının ikiye ayrıldığını ve tonozla örtüldüğünü', sonraki paragraf ise 'bir Bursa kemeriyle ikiye ayrıldığını' söylüyor; iki ifade birlikte verildi, nasıl uzlaştıkları kitapta açıklanmıyor."
+      },
+      {
+        "field": "sections[fenari-adi]",
+        "note": "Fenârî adının kaynağı için kitap iki görüş sunuyor (Fenar köyü / babasının fenercilik mesleği); 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Molla Fenârî Camii",
+    "en": "Molla Fenari Mosque"
+  },
+  "subtitle": {
+    "tr": "Osmanlı'nın ilk şeyhülislamının camii ve haziresi",
+    "en": "Mosque and graveyard of the Ottoman Empire's first Shaykh al-Islam"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Molla Fenârî",
+    "şeyhülislam",
+    "hazire",
+    "Fenârîzâde",
+    "moloz taş",
+    "Mollafenari Mahallesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollafenari Mahallesi",
+    "address": "12. Dilek Sokak, No:1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "394"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Molla Mehmed Şemseddin bin Hamza el-Fenârî",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "394"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bursa'nın en yüksek mahallesinde, Osmanlı'nın ilk şeyhülislamı kabul edilen Molla Fenârî'nin yaptırdığı moloz taş cami. 1855 depreminde yıkılan yapıdan yalnızca minarenin şerefeye kadar olan kısmı korunmuştur; bahçedeki hazirede Molla Fenârî ve ailesinin kabirleri yer alır.",
+    "en": "A rubble-stone mosque built by Molla Fenari, regarded as the first Shaykh al-Islam of the Ottoman Empire, in the highest neighborhood of Bursa. Only the minaret up to its balcony survives from the original building, which collapsed in the 1855 earthquake; the graveyard in the garden holds the graves of Molla Fenari and his family."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi Mollafenari Mahallesi'nde, Bursa'nın en yüksek mahallesinde yer alır. Banisi Molla Mehmed Şemseddin bin Hamza el-Fenârî'dir. Kitap, Molla Fenârî'nin Yıldırım Bayezid, Çelebi Mehmed ve II. Murad dönemlerinde Bursa'da kadılık, müderrislik ve şeyhülislamlık görevlerinde bulunduğunu ve Osmanlı Devleti'nin ilk şeyhülislamı kabul edildiğini yazar.",
+        "en": "The mosque is in Mollafenari Neighborhood, the highest neighborhood of Bursa. Its benefactor was Molla Mehmed Şemseddin bin Hamza el-Fenari. The book states that he served as qadi, lecturer and Shaykh al-Islam in Bursa under Yıldırım Bayezid, Çelebi Mehmed and Murad II and was accepted as the first Shaykh al-Islam of the Ottoman Empire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "394"
+        }
+      ]
+    },
+    {
+      "id": "molla-fenari",
+      "order": 2,
+      "title": {
+        "tr": "Molla Fenârî ve Fenârî Ailesi",
+        "en": "Molla Fenari and the Fenari Family"
+      },
+      "body": {
+        "tr": "Fenârî ya da Fenârîzâde ailesi, erken Osmanlı döneminden itibaren ilmiye sınıfında önemli görevler üstlenmiş, aile üyeleri başta Bursa olmak üzere birçok şehirde vakıflar kurup eser bırakmıştır. Molla Fenârî H. Muharrem 751 / M. Nisan 1350'de doğmuştur; asıl adı Şemseddin Muhammed b. Hamza'dır. 1431'de vefat etmiştir.",
+        "en": "The Fenari (Fenarizade) family took important roles in the Ottoman scholarly class from the early period, and its members established foundations and left works in many cities, especially Bursa. Molla Fenari was born in Muharram AH 751 / April AD 1350; his real name was Şemseddin Muhammed b. Hamza. He died in 1431."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "395, 397"
+        }
+      ]
+    },
+    {
+      "id": "fenari-adi",
+      "order": 3,
+      "title": {
+        "tr": "Fenârî Adının Kaynağı",
+        "en": "Origin of the Name Fenari"
+      },
+      "body": {
+        "tr": "Fenârî adının kaynağı hakkında farklı görüşler vardır: Bir görüşe göre Yenişehir ile İnegöl yakınlarındaki Fenar köyünden gelmiştir; diğerine göre babasının fenercilik mesleğinden dolayı bu adı almıştır.",
+        "en": "There are different views on the source of the name: one holds that he came from the village of Fenar near Yenişehir and İnegöl, another that the name comes from his father's profession as a lighthouse keeper."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "395"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dıştan tamamen moloz taşla örülmüştür; dikdörtgen planlıdır ve iç ölçüleri 13,80 × 5,40 m'dir. 1969'daki Vakıflar Müdürlüğü ve Bursa Eski Eserleri Sevenler Kurumu onarımında asıl ibadet mekânı ikiye ayrılmış ve üzeri tamamen tonozla örtülmüştür. Dış cephe kiremit örtülü kırma çatıyla kaplı, çatı altı üç sıra kirpi saçakla süslüdür. İbadet mekânı bir Bursa kemeriyle ikiye bölünmüş ve içeriden tamamen sıvanmıştır. Uzun kenarlarda sivri kemerli, demir parmaklıklı dörder pencere; mihrap yönünde sağda, solda ve üstte birer olmak üzere üç vitraylı pencere vardır. Giriş doğudadır; son cemaat yeri olarak günümüzde yapılmış bir oda eklenmiştir. Mihrap 16. yüzyıl Kütahya çinileriyle süslüdür; ahşap bir minber ve vaiz kürsüsü vardır.",
+        "en": "The exterior is entirely rubble stone; the plan is rectangular with interior dimensions of 13.80 × 5.40 m. In the 1969 restoration by the Foundations Directorate and the Bursa Association for the Appreciation of Antiquities, the main prayer space was divided in two and fully vaulted. The roof is a tiled hipped roof with three rows of sawtooth eaves. The prayer room is divided by a Bursa arch and fully plastered inside; each long side has four pointed-arch windows with iron grilles, and three stained-glass windows surround the mihrab. The entrance is on the east, and a recently built room serves as narthex. The mihrab is decorated with 16th-century Kütahya tiles; there are a wooden minbar and a preaching pulpit."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "395-396"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 5,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Caminin kuzeydoğu köşesine eklenmiş tek minaresi vardır. Kaide çokgen taş ve tuğla almaşığıyla, silindirik üst kısım tamamen tuğlayla örülmüştür; şerefe altında süslemeler bulunur. Yapının ilk hâlinden yalnızca minarenin şerefeye kadar olan kısmı korunabilmiştir.",
+        "en": "A single minaret is attached at the northeast corner. The base is built of alternating polygonal stone and brick, the cylindrical shaft entirely of brick, with decoration under the balcony. Only the part of the minaret up to the balcony survives from the original building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-tescil",
+      "order": 6,
+      "title": {
+        "tr": "Hasar, Onarım ve Tescil",
+        "en": "Damage, Repairs and Registration"
+      },
+      "body": {
+        "tr": "Çeşitli zararlar gören cami birçok onarım geçirmiştir. 1855 Bursa depreminde duvarları yıkılmış, minaresi ağır hasar almış, bu nedenle özgün hâli günümüze ulaşamamıştır. Son tescil 2010'da, son onarım 2011'de Bursa Vakıflar Bölge Müdürlüğü tarafından yapılmıştır.",
+        "en": "The mosque suffered various damages and underwent many repairs. In the great Bursa earthquake of 1855 its walls collapsed and the minaret was heavily damaged, so the original form has not survived. The last registration was in 2010 and the last restoration, by the Bursa Regional Directorate of Foundations, in 2011."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "id": "bahce-ve-medrese",
+      "order": 7,
+      "title": {
+        "tr": "Bahçe ve Medrese Yeri",
+        "en": "Garden and Madrasa Site"
+      },
+      "body": {
+        "tr": "Caminin bahçesi avlulu ve şadırvanlıdır. Eski kayıtlarda caminin karşısında olduğu bilinen medresenin yerinde günümüzde bir ev bulunmaktadır.",
+        "en": "The garden has a courtyard and a shadirvan. A house stands today on the site of the madrasa that old records place opposite the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 8,
+      "title": {
+        "tr": "Molla Fenârî Camii Haziresi",
+        "en": "Molla Fenari Mosque Graveyard"
+      },
+      "body": {
+        "tr": "Bursa'nın güneyinde, Pınarbaşı sırtlarında Molla Fenârî'nin yaptırdığı cami ve medresenin çevresinde oluşan hazire, caminin doğu ve batı yönlerinde iki kısımdan oluşur. Demir parmaklıkla korunan Molla Fenârî kabri ile aile üyelerine ait otuzdan fazla mezar bulunur. Mezar taşları günümüze ulaşan ve taşların bozulmasına rağmen okunabilen isimler arasında Muhammed bin Hamza Molla Fenârî, Esleme Şah bint Mehmed Şah, Hatice Hatun bint Ahmed Çelebi, Ahmed Çelebi bin Hasan Paşa, Yusuf Bali bin Molla Fenârî ve Hatice Hatun bint İbrahim Paşa yer alır.",
+        "en": "The graveyard formed around the mosque and madrasa Molla Fenari built on the skirts of Pınarbaşı, south of Bursa, and has two parts, east and west of the mosque. It includes the iron-barred grave of Molla Fenari and more than thirty graves of family members. Names still legible despite deterioration of the stones include Muhammed bin Hamza Molla Fenari, Esleme Şah bint Mehmed Şah, Hatice Hatun bint Ahmed Çelebi, Ahmed Çelebi bin Hasan Paşa, Yusuf Bali bin Molla Fenari and Hatice Hatun bint İbrahim Paşa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "396-397"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "13,80 × 5,40",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "395"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "key": "pencere_uzun_kenar",
+      "label": {
+        "tr": "Uzun kenar başına pencere",
+        "en": "Windows per long side"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "395"
+        }
+      ]
+    },
+    {
+      "key": "hazire_aile_mezar",
+      "label": {
+        "tr": "Hazirede aile üyelerine ait mezar",
+        "en": "Family graves in graveyard"
+      },
+      "value": "30+",
+      "unit": "adet",
+      "note": {
+        "tr": "More than thirty",
+        "en": "More than thirty"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "396"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Molla Mehmed Şemseddin bin Hamza el-Fenârî",
+      "role": {
+        "tr": "Banî; ilk şeyhülislam kabul edilir",
+        "en": "Founder; regarded as the first Shaykh al-Islam"
+      }
+    },
+    {
+      "name": "Esleme Şah bint Mehmed Şah",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Hatice Hatun bint Ahmed Çelebi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Ahmed Çelebi bin Hasan Paşa",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Yusuf Bali bin Molla Fenârî",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Hatice Hatun bint İbrahim Paşa",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "molla-fenari-vefat",
+      "year": 1431,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Molla Fenârî vefat etti",
+        "en": "Molla Fenari died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük Bursa depreminde duvarlar yıkıldı, minare ağır hasar gördü",
+        "en": "Walls collapsed and the minaret was heavily damaged in the great Bursa earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1969",
+      "year": 1969,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Müdürlüğü ve Eski Eserleri Sevenler Kurumu onarımı; ibadet mekânı ikiye ayrılıp tonozla örtüldü",
+        "en": "Restoration by the Foundations Directorate and the Association for the Appreciation of Antiquities; prayer space divided and vaulted"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "395"
+        }
+      ]
+    },
+    {
+      "id": "tescil-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Yapının son tescili yapıldı",
+        "en": "Last registration of the building"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "396"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Vakıflar Bölge Müdürlüğü tarafından son onarım",
+        "en": "Last restoration by the Bursa Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "396"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Moloz taştan örülmüş, dikdörtgen planlı, kiremit örtülü kırma çatılı sade bir camidir. Giriş doğudadır; kuzeydoğu köşesinde taş-tuğla almaşık kaideli ve tuğla gövdeli tek bir minare yükselir. İçeride bir Bursa kemeri ibadet mekânını ikiye böler; mihrap Kütahya çinileriyle süslüdür. Bahçede avlu, şadırvan ve demir parmaklıkla çevrili Molla Fenârî kabri ile aile mezarları bulunur.",
+      "en": "A simple rectangular mosque of rubble stone under a tiled hipped roof. The entrance is on the east; a single minaret with an alternating stone-and-brick base and a brick shaft rises at the northeast corner. Inside, a Bursa arch divides the prayer space in two and the mihrab is decorated with Kütahya tiles. The garden holds a courtyard, a shadirvan, and the iron-barred grave of Molla Fenari with the graves of his family."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

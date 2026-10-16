@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-tahtali-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 440) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Yapım tarihi ve banisi kitapta yok (kitabe yok); dating ve founder boş bırakıldı.",
+      "Çağ (era) belirlenemedi; era boş bırakıldı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Tahtalı (Hatipzade) Mescidi",
+    "en": "Tahtalı (Hatipzade) Masjid"
+  },
+  "subtitle": {
+    "tr": "Kitabesiz, sonradan minare eklenmiş küçük mescit",
+    "en": "Small masjid without an inscription, to which a minaret was later added"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hatipzade Mescidi",
+      "en": "Hatipzade Masjid",
+      "note": "Halk arasında"
+    },
+    {
+      "tr": "İkinci Tahtalı Mescit",
+      "en": "İkinci (Second) Tahtalı Masjid",
+      "note": "Halk arasında"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "moloz taş",
+    "stalaktitli mihrap",
+    "Zindankapı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alaaddin",
+    "address": "1. Zindankapı Sokağı, No: 25/1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "440"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kitabesi olmadığı için yapım tarihi ve banisi bilinmeyen, moloz taştan inşa edilmiş sonradan sıvanmış mescit. Aslen minaresiz ve minbersiz olan yapıya önce ahşap, sonra kesme taştan bir minare eklenmiştir. 2018'de kapsamlı onarım geçirmiştir.",
+    "en": "A rubble-stone masjid, later plastered, whose construction date and founder are unknown because it has no inscription. Originally without a minaret or minbar, it was first given a wooden minaret and later a cut-stone one. It underwent extensive renovation in 2018."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Halk arasında 'Hatipzade Mescidi' ve 'İkinci Tahtalı Mescit' olarak da bilinir. Mescidin kitabesi bulunmadığından inşa tarihi ve banisi hakkında kesin bilgi yoktur. Moloz taştan inşa edilmiş, sonradan üzeri sıvanmıştır. Aslen minaresiz ve minbersiz olan yapıya önce ahşap, ardından kiremit kaplı ahşap çatıyı delerek çıkan kesme taştan bir minare eklenmiştir.",
+        "en": "It is also known as the 'Hatipzade Masjid' and the 'İkinci (Second) Tahtalı Masjid'. As it has no inscription, there is no definite information on its construction date or founder. It was built of rubble stone and later plastered. Originally without a minaret or minbar, it was first given a wooden minaret and then a cut-stone minaret piercing the tiled wooden roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "440"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Onarım",
+        "en": "Architecture and Renovation"
+      },
+      "body": {
+        "tr": "7,05 × 7,80 m boyutlarındaki yapının son cemaat yeri 2,45 m derinliktedir. Basit mihrap nişi üç sıra stalaktitlidir. Mescidin küçük bir avlusu vardır. 2018'de kapsamlı bir onarım geçirmiş ve duvarları sıvanmıştır.",
+        "en": "The building measures 7.05 × 7.80 m and its narthex is 2.45 m deep. The simple mihrab niche has three rows of stalactites. The masjid has a small courtyard. It underwent extensive renovation in 2018 and its walls were plastered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "440"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Yapı ölçüleri",
+        "en": "Building dimensions"
+      },
+      "value": "7,05 × 7,80",
+      "unit": "m",
+      "note": {
+        "tr": "İngilizce metin bu ölçüyü son cemaat yeriyle karıştırılabilecek biçimde verir; Türkçe metin yapıya atfeder.",
+        "en": "The English text phrases this so it could be read as the narthex; the Turkish text attributes it to the building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "440"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": "2,45",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "440"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_stalaktit",
+      "label": {
+        "tr": "Mihrap nişi stalaktit sırası",
+        "en": "Mihrab niche stalactite rows"
+      },
+      "value": 3,
+      "unit": "sıra",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "440"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım geçirdi, duvarları sıvandı",
+        "en": "Extensive renovation; walls plastered"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "440"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tahtalı Mescidi küçük bir mescittir; moloz taş duvarları sıvalıdır. Kiremit kaplı ahşap çatının içinden çıkan kesme taş bir minaresi, küçük bir avlusu ve üç sıra stalaktitli sade bir mihrabı vardır.",
+      "en": "Tahtalı Masjid is a small masjid with plastered rubble-stone walls. It has a cut-stone minaret rising through its tiled wooden roof, a small courtyard and a simple mihrab niche with three rows of stalactites."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

@@ -1,0 +1,622 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-veled-i-yanic-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 466-469) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Hızırlık Mescidi'nin ilçesi metinde belirtilmiyor; ilişki hedef id'si (bursa-osmangazi-hizirlik-mescidi) tahmindir, doğrulanmalı.",
+      "Baninin kimliği için bkz. data_quality_notes; vakıf kitabesinin kalkan duvarındaki yeri ile çeşme kitabesinin metni kitapta yok (yalnızca tarih var).",
+      "Mimar kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kalkan duvarı kitabesi (H. 844 / M. 1440) mescidi Hacı Mahmud Çelebi bin Hacı Hayreddin bin Yaniç'in yaptırdığını söylüyor. Hazirede ise geç dönemde yazıldığı belirtilen baş taşında “Veled-i Yaniç, camiin banisi (ö. H. 736 / M. 1336)” yazıyor. 1336'da ölen bir kişi 1440 tarihli mescidin banisi olamaz; kitap bu çelişkiyi açıklamıyor. Kitabe esas alındı, banî güveni 'disputed' işaretlendi."
+      },
+      {
+        "field": "fountain.dating",
+        "note": "Çeşmenin mescitle aynı tarihte (1440) yapılmış olabileceği düşünülüyor ancak aynadaki kitabe H. 1331 / M. 1912 tarihli bir yenileme kitabesidir."
+      },
+      {
+        "field": "waqf.deed.date",
+        "note": "Hicri 900 yılı Şaban ayı kitapta hem 'M. 1495' hem 'M. Nisan 1495' olarak geçiyor; ikisi uyumlu, Nisan 1495 esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Veled-i Yaniç Camii",
+    "en": "Veled-i Yaniç Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [
+    "cesme",
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle mescidi",
+    "kalkan duvarlı",
+    "köşk-minare",
+    "çeşme",
+    "kitabeli",
+    "Murad II"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Osmangazi",
+    "address": "2. Yaniç Sokak, No: 3",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "466"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. Safer 844 / M. Temmuz 1440",
+      "en": "Safar AH 844 / July AD 1440"
+    },
+    "start_year": 1440,
+    "end_year": 1440,
+    "hijri_year": 844,
+    "century": 15,
+    "basis": {
+      "tr": "Kalkan duvarındaki inşa kitabesinde Safer 844 yılı yazılıdır; kitap Temmuz 1440 olarak veriyor.",
+      "en": "The construction inscription on the parapet wall gives Safar 844; the book renders it as July 1440."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "466-467"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Mahmud Çelebi bin Hacı Hayreddin bin Yaniç",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "466-467"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. Şaban 900 / M. Nisan 1495",
+      "excerpt": {
+        "tr": "Hacı Musa kızı Hacı Âişe, İbn Yânic Mahallesi'nde altı ev ve altı bin dirhem değerindeki malı vakfetmiştir.",
+        "en": "Hacı Âişe, daughter of Hacı Musa, endowed six houses and property worth six thousand dirhams in the Ibn Yanic District."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "467"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Vakıf gelirleri, yaptıranın ruhuna Kur'ân'dan bir cüzün bir imam ve bir müezzin tarafından okunması için harcanacaktır.",
+      "en": "The foundation income is to be spent so that a section of the Quran is recited for the soul of the person who had the mosque built, by an imam and a muezzin."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "467"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kalkan duvarlı Bursa tipi mahalle mescidi; kitabesine göre H. Safer 844 / Temmuz 1440'ta Hacı Mahmud Çelebi tarafından yaptırılmıştır. Bursa'da bu tarzda tek örnek olan, çeşmenin üzerinde dört ayaklı köşk-minaresi ve bitişik duvar çeşmesiyle bilinir.",
+    "en": "A parapet-walled Bursa-type neighbourhood masjid, built according to its inscription by Hacı Mahmud Çelebi in Safar AH 844 / July 1440. It is known for its kiosk-minaret on four piers above the fountain, the only example of this style in Bursa, and for its attached wall fountain."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Kitabeler",
+        "en": "Overview and Inscriptions"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Osmangazi Mahallesi, 2. Yaniç Sokak No: 3'te yer alır ve kalkan duvarlı Bursa tipi mahalle mescitlerindendir. Kalkan duvarındaki Arapça kitabeye göre mescit, Sultan II. Murad zamanında Yaniç oğlu Hacı Hayreddin oğlu Hacı Mahmud Çelebi tarafından H. Safer 844 / M. Temmuz 1440'ta yaptırılmıştır. Doğu cephesindeki ikinci kitabeye göre Hacı Musa kızı Hacı Âişe (Ayşe), İbn Yânic Mahallesi'ndeki altı ev ve altı bin dirhem değerindeki malı H. Şaban 900 / M. Nisan 1495'te vakfetmiştir; vakıf gelirlerinin, yaptıranın ruhuna bir imam ve bir müezzin tarafından Kur'ân'dan bir cüz okunması için harcanması şart koşulmuştur.",
+        "en": "The mosque is at 2nd Yaniç Street, No. 3, Osmangazi Neighborhood, and is one of the Bursa-type neighbourhood masjids with parapet walls. According to the Arabic inscription on the parapet wall, it was built by Hacı Mahmud Çelebi, son of Hacı Hayreddin, son of Yaniç, in the reign of Sultan Murad II, in Safar AH 844 / July AD 1440. A second inscription on the east façade records that Hacı Ayşe, daughter of Hacı Musa, endowed six houses and property worth six thousand dirhams in the Ibn Yanic District in Sha'ban AH 900 / April AD 1495, stipulating that the income be spent for a section of the Quran to be recited by an imam and a muezzin for the soul of the person who had the mosque built."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "466-467"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı 8.40 × 13.00 m dış ölçülerine, 95 cm duvar kalınlığına ve 6.50 × 6.80 m ibadet alanına sahiptir. İki ya da üç sıra tuğla ve moloz taş örgülü düzensiz almaşık duvarla inşa edilmiştir; kubbe kasnağındaki iki sıra tuğla ve bir sıra moloz taş örgüsü özgündür. Yerden 9.70 m yüksekliğindeki kubbe sekizgen kasnağa oturur ve tamamen kurşun kaplıdır. İç mekânda baklava motifli üçgenler üzerinde yükselen kubbe kasnağının saçağı dışa taşar; dışta tuğladan çift sıra kirpi saçakla bezelidir. Batı cephesi komşu yapının bahçesiyle iç içe kaldığı için algılanamaz. Yapının yalnızca alt pencere kemerleriyle aydınlatılması özgün gibi görünse de bu özelliğin 1855 depreminden sonraki bir onarımda eklendiği düşünülmektedir. Kubbe kasnağında yedi pencere üstten ışık verir. Mihrap dört sıra mukarnaslıdır, özgün özelliklerini korur ve sarı yağlı boyayla boyanmıştır.",
+        "en": "The building has external dimensions of 8.40 x 13.00 m, a wall thickness of 95 cm and a prayer area of 6.50 x 6.80 m. It is built with irregular alternating walls of two or three rows of brick and rubble stone; the two rows of brick and one row of rubble stone on the drum are original. The dome, 9.70 m above ground, sits on an octagonal drum and is completely covered with lead. Inside, the eaves of the drum, rising on triangles with diamond motifs, project outwards; outside they are decorated with a double row of sawteeth. The west façade cannot be perceived because it is intertwined with the garden of a neighbouring building. Lighting through only the lower window arches seems original but is thought to have been added in a repair after the 1855 earthquake. Seven drum windows give light from above. The mihrab has four rows of muqarnas, preserves its original features and is painted with yellow oil paint."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "467-468"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 3,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "Mescidin özgün yönlerinden biri son cemaat yeri uygulamasıdır. 15. yüzyıl Bursa yapılarında görülen kalkan duvarlı, üç gözlü son cemaat yerinin aksine burada tek gözlü bir giriş vardır; bu durum yapının bir onarımla bu hale getirildiğini düşündürür. 3.46 m genişliğindeki son cemaat yerinden asıl ibadet mekânına, Hızırlık Mescidi'nde olduğu gibi, 3.43 m genişliğinde ikinci bir kemerle geçilir; ancak iç kapı uygulaması yoktur.",
+        "en": "One of the unique aspects of the mosque is the narthex. Unlike the parapet-walled, three-bay narthex of 15th-century Bursa buildings, there is a single-bay entrance here, which suggests the building was brought to this state by a repair. From the 3.46 m wide narthex, the passage to the main prayer hall is, as in the Hızırlık Mosque, through a second arch 3.43 m wide, but there is no interior door."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468"
+        }
+      ]
+    },
+    {
+      "id": "kosk-minare",
+      "order": 4,
+      "title": {
+        "tr": "Köşk-Minare",
+        "en": "Kiosk-Minaret"
+      },
+      "body": {
+        "tr": "Bursa mahalle mescitlerindeki mescit-minare birlikteliğinden farklı olarak minare mescitle bütünleşik değildir; ana yapıya yakın, kuzey yönünde ve çeşmenin üzerinde dört ayağa oturan bir köşk-minare düzenindedir. Bursa'da bu tarzda yapılmış tek örnektir. Dört cephesi açık, gölgelik işlevli kare planlı bölüm tamamen tuğla işçiliğiyle yapılmıştır; dört yığma ayak yuvarlak kemerlerle birbirine bağlanır. Üstü iki sıra kirpi saçakla örtülmüş ve ters kiremitle kaplanmıştır. Beş basamakla çıkılan kule biçimli yapısı caminin en dikkat çekici unsurlarından biridir; minarenin yanındaki giriş üstteki minare bölümüne çıkışı sağlar.",
+        "en": "Unlike the usual mosque-minaret combination of Bursa neighbourhood mosques, the minaret is not integrated with the mosque; it is a kiosk-minaret close to the main structure, on the north side, sitting on four piers above the fountain. It is the only example of this style in Bursa. The square-plan section, open on all four façades and serving as a shade, is built entirely of brick on four piers connected by round arches. The top is covered with two rows of sawteeth at the eaves and with inverted tiles. Its tower-shaped structure, reached by five steps, is considered one of the most striking elements of the mosque; the entrance beside the minaret gives access to the minaret section above."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 5,
+      "title": {
+        "tr": "Çeşme",
+        "en": "Fountain"
+      },
+      "body": {
+        "tr": "Caminin çeşmesi mescit duvarına bitişik, üzerinde minarenin yükseldiği biçimde konumlandırılmıştır. Mescit H. 844 / M. 1440'ta yapıldığı için çeşmenin de aynı tarihte yapılmış olabileceği düşünülmektedir; ancak çeşme aynasında H. 1331 / M. 1912 tarihli bir yenileme kitabesi vardır. 3.00 × 3.14 m boyutlarında, 58 cm derinliğinde, mescide bağımlı tek yüzlü bir duvar çeşmesidir; taş, tuğla ve mermer kullanılmıştır. Cephesi iç içe geçmiş iki sivri kemerden oluşur: birincisi bir sıra taş ve üç sıra tuğla, ikincisi tuğla dizileriyle şekillenmiş ve mermer ayna taşını çevreler. Ayna taşında tarih kitabesi ve bir musluk vardır. Küfeki taşından tekne 72 × 50 cm ölçülerinde, 17 cm derinliğindedir; yerden yüksekliği 57 cm olup iki yanında 67 cm yüksekliğinde dinlenme sekileri bulunur. Çeşmenin suyu günümüzde de akmaktadır. Erken Osmanlı mimari anlayışını yansıtan çeşme sade ama hareketli bir cephe düzenine sahiptir.",
+        "en": "The fountain is attached to the mosque wall, with the minaret rising above it. As the inscription dates the mosque to AH 844 / AD 1440, the fountain may have been built at the same time; however, a renovation inscription dated AH 1331 / AD 1912 is on the back panel. It is a single-faced wall fountain attached to the mosque, 3.00 x 3.14 m and 58 cm deep, of stone, brick and marble. Its façade consists of two interlocking pointed arches: the first of one row of stone and three rows of brick, the second of brick rows surrounding the marble back panel, which bears the dated inscription and a tap. The limestone basin measures 72 x 50 cm and is 17 cm deep, 57 cm above ground, with 67 cm high resting ledges on both sides. The water still flows today. Reflecting Early Ottoman architecture, it has a simple but dynamic façade."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468-469"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 6,
+      "title": {
+        "tr": "Veled-i Yaniç Haziresi",
+        "en": "Veled-i Yaniç Graveyard"
+      },
+      "body": {
+        "tr": "Bahçede tek bir kabrin baş ve ayak taşı bulunur. Baş taşı yazılı ve oldukça eski tarihli olmakla birlikte geç dönemde yazılmıştır; üzerinde “Veled-i Yaniç, camiin banisi, (ö. H. 736 / M. 1336)” ifadeleri yer alır. Ayak taşı yazısızdır ve çiçek motifiyle süslüdür.",
+        "en": "There is a single headstone and footstone of a grave in the garden. The headstone is inscribed and dated very early, but was written in a late period; it reads “Veled-i Yaniç, the founder of the mosque, (d. AH 736 / AD 1336)”. The footstone has no inscription and is decorated with a floral motif."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "469"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Dış ölçü",
+        "en": "External dimensions"
+      },
+      "value": "8.40 × 13.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "467"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 95,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "467"
+        }
+      ]
+    },
+    {
+      "key": "ibadet_alani",
+      "label": {
+        "tr": "İbadet alanı",
+        "en": "Prayer area"
+      },
+      "value": "6.50 × 6.80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "467"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_yuksekligi",
+      "label": {
+        "tr": "Kubbe yüksekliği (yerden)",
+        "en": "Dome height (above ground)"
+      },
+      "value": 9.7,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "467"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kubbe kasnağı penceresi",
+        "en": "Drum windows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_genislik",
+      "label": {
+        "tr": "Son cemaat yeri genişliği",
+        "en": "Narthex width"
+      },
+      "value": 3.46,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468"
+        }
+      ]
+    },
+    {
+      "key": "ikinci_kemer_genislik",
+      "label": {
+        "tr": "İkinci kemer genişliği",
+        "en": "Second arch width"
+      },
+      "value": 3.43,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468"
+        }
+      ]
+    },
+    {
+      "key": "cesme_olcu",
+      "label": {
+        "tr": "Çeşme boyutu",
+        "en": "Fountain size"
+      },
+      "value": "3.00 × 3.14",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468-469"
+        }
+      ],
+      "note": {
+        "tr": "Derinlik 58 cm.",
+        "en": "Depth 58 cm."
+      }
+    },
+    {
+      "key": "cesme_tekne",
+      "label": {
+        "tr": "Çeşme teknesi",
+        "en": "Fountain basin"
+      },
+      "value": "72 × 50",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "469"
+        }
+      ],
+      "note": {
+        "tr": "Derinlik 17 cm, yerden yükseklik 57 cm; yan sekiler 67 cm.",
+        "en": "Depth 17 cm, 57 cm above ground; side ledges 67 cm high."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Mahmud Çelebi bin Hacı Hayreddin bin Yaniç",
+      "role": {
+        "tr": "Kitabeye göre mescidi yaptıran",
+        "en": "Had the masjid built, according to the inscription"
+      }
+    },
+    {
+      "name": "Hacı Âişe (Ayşe) binti Hacı Musa",
+      "role": {
+        "tr": "1495'te altı ev ve altı bin dirhemi mescide vakfeden hayırsever",
+        "en": "Benefactor who endowed six houses and six thousand dirhams in 1495"
+      }
+    },
+    {
+      "name": "Veled-i Yaniç",
+      "role": {
+        "tr": "Geç tarihli baş taşında “camiin banisi (ö. H. 736 / M. 1336)” diye anılır",
+        "en": "Called “founder of the mosque (d. AH 736 / AD 1336)” on a late-written headstone"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Kalkan duvarı üzerinde, Arapça",
+        "en": "On the parapet wall, in Arabic"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Emera hâzihi’l-mescidi’l-mübâreketi fî zamâni’s-Sultân / Murâd bin Muhammed Hân halleda’llâhu mülkehû Hacı Mahmûd Çelebi bin Hacı / Hayreddin bin Yânic gafera’llâhu lehum fî şehri’s-Safer / Hateme’llâhu bi’l-hayri ve’z-zaferi seneti erbaa ve erbaîn ve semâne-mi’e.",
+      "translation": {
+        "tr": "Bu mübarek mescidi Mehmed Han oğlu Sultan Murad zamanında Yaniç oğlu Hacı Hayreddin oğlu Hacı Mahmud Çelebi yapılmasını emretti. Allah hepsini bağışlasın. Allah hayırlısı ile. H. Safer 844 senesi / M. Temmuz 1440 tarihinde tamamlattı.",
+        "en": "This blessed mosque was ordered to be built by Hacı Mahmud Çelebi, son of Hacı Hayreddin, son of Yaniç, during the reign of Sultan Murad, son of Mehmed Han. May Allah forgive them all. With the blessing of Allah. He had it completed in Safer AH 844 / July AD 1440."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 844,
+        "gregorian": "1440 Temmuz"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "466-467"
+        }
+      ]
+    },
+    {
+      "id": "vakif-kitabesi",
+      "location": {
+        "tr": "Doğu cephesinde ikinci kitabe",
+        "en": "Second inscription on the east façade"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Vekafet el-hâc Âişe binti’l-Hâc Mûsâ fî mahalleti İbni Yânic el-hâvî / ‘alâ büyüti sitte ve sitte âlâf dirhemen ve ‘ayyenet tilâvete cüz(ihî) imâmen ve müezzinen / li-rûhihâ mine’l-Kur’âni’l-mu’azzam li-rûhihî veka’a fî şehri şa’bân târîhi sene tis’a mi’e.",
+      "translation": {
+        "tr": "Hacı Musa'nın kızı Hacı Âişe, İbn Yânic Mahallesi'nde bulunan altı ev ve altı bin dirhem değerindeki malı vakfetmiştir. Kendi ruhu için Kur'ân-ı Kerîm'den bir cüzün tilavetini (okunmasını), bir imam ve bir müezzin tarafından yerine getirilmesini şart koşmuştur. Bu vakfiye, Hicrî 900 yılı Şâban ayında (M. 1495) düzenlenmiştir.",
+        "en": "Hacı Ayşe, the daughter of Hacı Musa, endowed six houses and property worth six thousand dirhams in the Ibn Yanic District. She stipulated that a section of the Quran be recited for her soul, to be performed by an imam and a muezzin. This endowment was drawn up in the month of Shaban in the year AH 900."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 900,
+        "gregorian": "1495 Nisan"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "467"
+        }
+      ]
+    },
+    {
+      "id": "hazire-bas-tasi",
+      "location": {
+        "tr": "Hazire bahçesindeki tek kabrin baş taşı",
+        "en": "Headstone of the single grave in the graveyard garden"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Veled-i Yaniç, camiin banisi, (ö. H. 736 / M. 1336)",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 736,
+        "gregorian": "1336"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "469"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yazının dilini belirtmiyor; taşın “geç dönemde yazıldığı” söyleniyor. Verilen metin kitaptaki Türkçe aktarımdır, özgün yazının transliterasyonu değildir.",
+        "en": "The book does not name the language; the stone is said to have been written in a late period. The text given is the book's Turkish rendering, not a transliteration of the original."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1440",
+      "year": 1440,
+      "date": null,
+      "hijri": "Safer 844",
+      "type": "construction",
+      "title": {
+        "tr": "Mescit Hacı Mahmud Çelebi tarafından yaptırıldı (kitabe)",
+        "en": "Masjid built by Hacı Mahmud Çelebi (inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "466-467"
+        }
+      ],
+      "note": {
+        "tr": "Kitap tarihi Temmuz 1440 olarak veriyor.",
+        "en": "The book gives the date as July 1440."
+      }
+    },
+    {
+      "id": "vakif-1495",
+      "year": 1495,
+      "date": null,
+      "hijri": "Şaban 900",
+      "type": "record",
+      "title": {
+        "tr": "Hacı Âişe altı ev ve altı bin dirhemi mescide vakfetti",
+        "en": "Hacı Âişe endowed six houses and six thousand dirhams to the masjid"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "467"
+        }
+      ],
+      "note": {
+        "tr": "Kitap Nisan 1495 olarak veriyor.",
+        "en": "The book gives April 1495."
+      }
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "1855 depreminden sonra yapılan onarımda alt pencerelerle aydınlatma düzeninin eklendiği düşünülüyor",
+        "en": "A repair after the 1855 earthquake is thought to have introduced the lower-window-only lighting"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468"
+        }
+      ]
+    },
+    {
+      "id": "cesme-yenileme-1912",
+      "year": 1912,
+      "date": null,
+      "hijri": "1331",
+      "type": "repair",
+      "title": {
+        "tr": "Çeşme aynasındaki yenileme kitabesi",
+        "en": "Renovation inscription on the fountain back panel"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468-469"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hizirlik-mescidi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kitap, son cemaat yerinden ibadet mekânına ikinci bir kemerle geçiş düzenini Hızırlık Mescidi'ndekine benzetir.",
+        "en": "The book compares the second-arch passage from the narthex to the prayer hall with that of the Hızırlık Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "468"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Veled-i Yaniç Camii, ikinci Yaniç Sokak'ta, tuğla ve moloz taşın dizildiği kalkan duvarlı küçük bir mescittir. Kurşun kaplı kubbe sekizgen bir kasnağa oturur. En dikkat çekici özelliği, mescidin kuzeyinde, duvara bitişik çeşmenin üzerinde dört tuğla ayak ve yuvarlak kemerlerle yükselen açık köşk biçimli minaredir. Çeşme tek yüzlüdür, iç içe iki sivri kemerle çevrilidir ve suyu hâlâ akar. Bahçede tek bir mezarın baş ve ayak taşı durur.",
+      "en": "Veled-i Yaniç Mosque is a small parapet-walled masjid on 2nd Yaniç Street, built in alternating brick and rubble stone. Its lead-covered dome sits on an octagonal drum. Its most striking feature is the open kiosk-like minaret on four brick piers and round arches, standing over the fountain attached to the north wall. The fountain is single-faced, framed by two interlocking pointed arches, and its water still flows. In the garden stand the headstone and footstone of a single grave."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

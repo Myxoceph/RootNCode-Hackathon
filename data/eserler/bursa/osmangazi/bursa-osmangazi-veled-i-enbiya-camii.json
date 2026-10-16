@@ -1,0 +1,402 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-veled-i-enbiya-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 460-461) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Caminin vakfı, vakfiyesi ve mimarı kitapta yok.",
+      "Kazzazoğlu Şule Mehmed'in 1499 yenilemesi yenileme mi yeniden inşa mı olduğu kitapta ayrıntılandırılmamış; tarih kesin kabul edilmiştir.",
+      "Hazire günümüze ulaşmamıştır; kayıtlı mezar bilgisi yok."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Veled-i Enbiya Camii",
+    "en": "Veled-i Enbiya (Enbiyaoğlu) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Enbiyaoğlu Camii",
+      "en": "Enbiyaoğlu Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle camii",
+    "Reyhan",
+    "kırma çatı",
+    "çınar"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Reyhan",
+    "address": "Reyhan Caddesi, No: 8",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "460"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "14. yüzyılın sonları; 1499'da yenilendi",
+      "en": "Late 14th century; renewed in 1499"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap camiyi 14. yüzyılın sonlarında inşa edilmiş olarak veriyor; kesin yıl verilmiyor. 1499 yenileme tarihidir.",
+      "en": "The book gives the late 14th century for the construction without a precise year; 1499 is the renovation date."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "460"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Seyyid Çelebi bin Enbiya (Veled-i Enbiya)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "460"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Reyhan Mahallesi'nde, 14. yüzyılın sonlarında Seyyid Çelebi bin Enbiya tarafından yaptırılan ve 1499'da Kazzazoğlu Şule Mehmed tarafından yenilenen mahalle camisi. Kubbeli olarak yapılmış, 1855 depreminden sonra kırma çatıyla örtülmüştür.",
+    "en": "A neighbourhood mosque in the Reyhan Neighborhood, built in the late 14th century by Seyyid Çelebi bin Enbiya and renewed in 1499 by Kazzazoğlu Şule Mehmed. Originally domed, it was given a hipped roof after the 1855 earthquake."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Veled-i Enbiya Camii, Osmangazi ilçesi, Reyhan Mahallesi, Reyhan Caddesi No: 8'de yer alır. Veled-i Enbiya olarak anılan Seyyid Çelebi bin Enbiya tarafından 14. yüzyılın sonlarında inşa edilmiş, 1499 yılında hayırsever Kazzazoğlu Şule Mehmed tarafından yenilenmiştir. Mahalle, eski kayıtlarda “Veled-i Enbiya” adıyla geçmektedir.",
+        "en": "Veled-i Enbiya Mosque is located on Reyhan Street, No. 8, in the Reyhan Neighborhood of Osmangazi District. Built in the late 14th century by Seyyid Çelebi bin Enbiya, also known as Veled-i Enbiya, it was renovated by the philanthropist Kazzazoğlu Şule Mehmed in 1499. The neighborhood is referred to as “Veled-i Enbiya” in older records."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "460"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı, tamamen kapalı son cemaat mahaline (7.00 × 4.00 m) dört basamaklı taş merdivenle çıkılır; mermer söveli, yuvarlak kemerli giriş kapısının iki yanında camekânla kapatılmış, yuvarlak kemerli birer bölüm vardır. Beden duvarları moloz taşla örülmüştür; doğu ve batı cepheleri dışında cami tamamen yenilenmiştir. Duvarlarla çatı arasında testere formunda üç sıra kirpi saçak bulunur. 12.00 × 12.00 m ölçülerindeki kare planlı harim, mermer söveli çift kanatlı ahşap kapıdan girilir; doğu ve batı duvarlarında altta ikişer, üstte birer, kuzey duvarında ise iki alt pencereyle aydınlanır. Pencereler yuvarlak tuğla kemerli ve lokma demirlidir, zaman içindeki onarımlarla özgün biçimlerini kaybetmiştir. Renkli mermer söveli mihrap nişi beyaz sıvalı ve bezemesizdir; ahşap minber ve kürsü yenidir. Hanımlar mahalli son cemaat alanından perdeyle ayrılmıştır.",
+        "en": "The narthex has a rectangular plan (7.00 x 4.00 m), is completely enclosed and is reached by a four-step stone staircase. On both sides of the round-arched entrance with a marble frame are wide round-arched sections closed with wooden-framed glass. The main walls are rubble stone; apart from the east and west façades the mosque has been completely renovated, with three rows of sawteeth at the eaves. The square prayer hall (12.00 x 12.00 m) is entered through a double-leafed wooden door with a marble frame and is lit by two lower windows and one upper window on the east and west walls and two lower windows on the north wall. All windows have round brick arches and wrought-iron grilles and have lost their original form. The mihrab niche with its colored marble frame is white-plastered and undecorated; the wooden minbar and pulpit are new. The women's section is separated from the narthex by a curtain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Caminin batı köşesindeki nispeten kısa minare yaklaşık yirmi metre yüksekliğindedir. Moloz taş ve tuğladan örülmüş kare kaide üzerine oturur; tek şerefeli, tuğla örgülü silindirik bir gövdesi vardır. Şerefe altı beş sıra testere diş formunda tuğlayla bezenmiş, sivri külahı kurşun kaplıdır.",
+        "en": "The relatively short minaret in the western corner is about twenty meters high. It sits on a square base of rubble stone and brick and has a brick cylindrical body with a single balcony. The section below the balcony is adorned with five rows of sawtooth bricks and the pointed spire is lead-coated."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    },
+    {
+      "id": "cati-ve-onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Çatı ve Onarımlar",
+        "en": "Roof and Repairs"
+      },
+      "body": {
+        "tr": "Başlangıçta kubbeli olarak inşa edilen cami, 1855 depreminden sonra yapılan kapsamlı onarımlar sırasında kırma çatıyla kapatılmış ve kiremitle örtülmüştür. Bunun dışında 1890, 1955, 1973 ve en son 2008 yılında kapsamlı restorasyonlar geçirmiştir.",
+        "en": "Originally built with a dome, the mosque was covered with a tiled hipped roof during extensive repairs following the 1855 earthquake. It also underwent extensive restorations in 1890, 1955, 1973 and, most recently, 2008."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    },
+    {
+      "id": "cevre",
+      "order": 5,
+      "title": {
+        "tr": "Çevre ve Hazire",
+        "en": "Surroundings and Graveyard"
+      },
+      "body": {
+        "tr": "Cümle kapısının solunda eski bir dibek taşı, karşısında anıtsal bir çınar ağacı bulunur. Batı tarafına sonradan bir şadırvan eklenmiş, ancak hazire alanı günümüze ulaşmamıştır.",
+        "en": "To the left of the main doorway stands an old mortar stone, and opposite is a monumental plane tree. A shadirvan was later added on the west side, but the burial area has not survived to the present day."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat mahalli ölçüsü",
+        "en": "Narthex dimensions"
+      },
+      "value": "7.00 × 4.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "12.00 × 12.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    },
+    {
+      "key": "minare_yukseklik",
+      "label": {
+        "tr": "Minare yüksekliği",
+        "en": "Minaret height"
+      },
+      "value": 20,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ],
+      "note": {
+        "tr": "Kitap “yaklaşık yirmi metre” diyor.",
+        "en": "The book says “approximately twenty meters”."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyyid Çelebi bin Enbiya",
+      "role": {
+        "tr": "Banî (Veled-i Enbiya olarak anılır)",
+        "en": "Founder (known as Veled-i Enbiya)"
+      }
+    },
+    {
+      "name": "Kazzazoğlu Şule Mehmed",
+      "role": {
+        "tr": "1499'da camiyi yenileten hayırsever",
+        "en": "Philanthropist who renovated the mosque in 1499"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yenileme-1499",
+      "year": 1499,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami hayırsever Kazzazoğlu Şule Mehmed tarafından yenilendi",
+        "en": "Mosque renovated by the philanthropist Kazzazoğlu Şule Mehmed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "460"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminden sonra kubbe yerine kiremit örtülü kırma çatı yapıldı",
+        "en": "After the 1855 earthquake the dome was replaced by a tiled hipped roof"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1890",
+      "year": 1890,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon",
+        "en": "Extensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon",
+        "en": "Extensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1973",
+      "year": 1973,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon",
+        "en": "Extensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "En son kapsamlı restorasyon",
+        "en": "Most recent extensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "461"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "cinar",
+      "title": {
+        "tr": "Anıtsal çınar",
+        "en": "Monumental plane tree"
+      },
+      "hint": {
+        "tr": "Cümle kapısının karşısındaki çınar ağacı ve solundaki eski dibek taşına bakın.",
+        "en": "Look for the plane tree opposite the doorway and the old mortar stone on its left."
+      },
+      "section_id": "cevre"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Veled-i Enbiya Camii, Reyhan Caddesi üzerinde moloz taş duvarlı, kırma çatılı küçük bir mahalle camisidir. Girişte dört basamaklı taş merdivenle çıkılan, camekânla kapatılmış bir son cemaat mahalli vardır. İçerisi 12 × 12 metrelik kare bir salondur; mihrap beyaz sıvalı ve süssüzdür. Batı köşesinde yaklaşık yirmi metre yüksekliğinde, tuğla gövdeli, tek şerefeli bir minare yükselir. Kapının solunda eski bir dibek taşı, karşısında büyük bir çınar ağacı bulunur.",
+      "en": "Veled-i Enbiya Mosque is a small neighbourhood mosque on Reyhan Street with rubble-stone walls and a hipped roof. A glass-enclosed narthex is reached by a four-step stone staircase. Inside is a square 12 by 12 metre hall with a plain white-plastered mihrab. A brick minaret with a single balcony, about twenty metres high, rises at the western corner. To the left of the door stands an old mortar stone and opposite it a large plane tree."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

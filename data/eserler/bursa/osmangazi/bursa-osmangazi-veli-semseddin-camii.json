@@ -1,0 +1,341 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-veli-semseddin-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 472-473) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Caminin vakfiyesi, mimarı ve minarenin tam yaşı kitapta yok.",
+      "Hazire mezar taşı metinleri kitapta yok; yalnızca isimler var."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people",
+        "note": "Türkçe metin hazirede medfun olanlar arasında 'Yahni Kapanzâde, Mehmed Gazâlî' yazıyor (virgüllü, iki kişi gibi), İngilizce metin 'Yahni Kapanzâde Mehmed Gazalî' (tek kişi). Ayrıca 'Yusuf bin Abdüssamed' hem mezar taşı olanlar hem taşı kaybolanlar listesinde geçiyor. İngilizce okuma esas alındı, çelişki işaretlendi."
+      },
+      {
+        "field": "dating",
+        "note": "Cami 'H. 875 / M. 1470'ten önce' yapılmış denirken, arşiv belgelerine göre 1859'da yeni baştan inşa edildiği belirtiliyor; bugünkü yapı 1859 tarihlidir, 1470 öncesi cami ise ilk yapıdır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Veli Şemseddin Camii",
+    "en": "Veli Şemseddin Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yahni Kapan Camii",
+      "en": "Yahni Kapan Mosque",
+      "note": "Uzun süre bu adla anıldı."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle camii",
+    "Yahni Kapan",
+    "Emir Sultan",
+    "1855 depremi",
+    "hazire"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Maksem",
+    "address": "Öğreten Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "472"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 875 / M. 1470'ten önce; 1859'da yeniden inşa",
+      "en": "Before AH 875 / AD 1470; rebuilt in 1859"
+    },
+    "start_year": null,
+    "end_year": 1470,
+    "hijri_year": 875,
+    "century": null,
+    "basis": {
+      "tr": "Kitap camiyi “H. 875 / M. 1470 yılından önce” Veli Şemseddin'in yaptırdığını söylüyor; kesin inşa yılı verilmiyor. Cami 1859'da yeni baştan inşa edilmiştir.",
+      "en": "The book says it was built “before AH 875 / AD 1470” by Veli Şemseddin; no exact year. The mosque was rebuilt from scratch in 1859."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "472-473"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Veli Şemseddin",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "472"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Maksem Mahallesi'nde, H. 875 / M. 1470'ten önce Veli Şemseddin tarafından yaptırılan, uzun süre Yahni Kapan Camii diye anılan cami. 1855 depreminde kubbesi yıkılmış, 1859'da yeniden inşa edilmiştir; haziresinde banisi ve Yahni Kapan ailesinden kişiler yatar.",
+    "en": "A mosque in the Maksem Neighborhood built before AH 875 / AD 1470 by Veli Şemseddin and long called the Yahni Kapan Mosque. Its dome collapsed in the 1855 earthquake and it was rebuilt in 1859; its graveyard holds its founder and members of the Yahni Kapan family."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Maksem Mahallesi, Öğreten Caddesi üzerinde yer alır. Üç tarafı sokağa bakan, ahşap çatılı ve kiremit örtülü bir camidir. H. 875 / M. 1470 yılından önce Veli Şemseddin tarafından yaptırılmıştır. Emir Sultan'ın halifesi Hoca Hasan'ın öğrencisi ve halifelerinden olan Veli Şemseddin mahalleye de adını vermiştir. Yahni Kapan sülalesinin bu camiyle yakın ilişkisi vardır: Yahni Kapanların atası İbrahim Efendi imamlık yapmış ve camiyi yeniden tamir ettirmiştir; bu nedenle yapı uzun süre “Yahni Kapan Camii” adıyla anılmıştır.",
+        "en": "The mosque is in the Maksem Neighborhood, Osmangazi District, on Öğreten Street. It has a wooden tiled roof and faces the street on three sides. It was built by Veli Şemseddin before AH 875 / AD 1470. Veli Şemseddin, a student and one of the deputies of Emir Sultan's caliph Hoca Hasan, also gave his name to the neighborhood. The Yahni Kapan family has a close relationship with the mosque: Ibrahim Efendi, the family's ancestor, served as imam and had the mosque renovated, so the building was called “Yahni Kapan Mosque” for a long time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "472"
+        }
+      ]
+    },
+    {
+      "id": "mimari-ve-onarimlar",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Onarımlar",
+        "en": "Architecture and Repairs"
+      },
+      "body": {
+        "tr": "Kareye yakın dikdörtgen planlı yapının iç mekânı 8.15 × 8.25 m ölçülerindedir; tamamen içeriye alınmış son cemaat yeri 4.10 m derinliğindedir. Cümle kapısına iki yandan çifte merdivenle çıkılır. Günümüzde yapı özgün şeklini kaybetmiş, sivil mimarlık örneği bir yapıya dönüşmüştür. 1855 depreminde kubbesi yıkıldığı için yerine kiremit örtülü kırma çatı yapılmıştır. Arşiv belgelerinden minarenin nispeten eski olduğu, caminin ise yeni baştan inşa edildiği ve 1859'da yapımına başlanıp bir yıl içinde tamamlandığı anlaşılmaktadır.",
+        "en": "The interior of the nearly square rectangular building measures 8.15 x 8.25 m, and the completely enclosed narthex is 4.10 m deep. The main entrance is reached by double staircases on both sides. Today the building has lost its original form and become an example of civil architecture. When its dome collapsed in the 1855 earthquake a tiled hipped roof was built in its place. Archive documents show that the minaret is relatively old, while the mosque was rebuilt from scratch, construction starting in 1859 and finishing within a year."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "473"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 3,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Haziresinde medfun kişilerden bazıları: caminin banisi Veli Şemseddin, Hacı Mustafa, Rabia bint Hacı Mustafa, Yusuf bin Abdüssamed, Seyyid Hacı Ahmed Hasib Efendi, Yahni Kapanzâde, Mehmed Gazâlî, Dersiâm Abdullah Dede ve Şeyh Hacı Mustafa Lutfullah Efendi. Burada defnedildiği bilinen ancak mezar taşları kaybolmuş kişiler arasında Yusuf bin Abdüssamed, Yahni Kapanzâde Seyyid Mustafa Efendi ve Gazâlîzâde Mehmed Efendi de yer alır.",
+        "en": "Some of the people buried in the graveyard: the mosque's builder Veli Şemseddin, Hacı Mustafa, Rabia bint Hacı Mustafa, Yusuf bin Abdüssamed, Seyyid Hacı Ahmed Hasib Efendi, Yahni Kapanzâde Mehmed Gazalî, Dersiâm Abdullah Dede and Shaykh Hacı Mustafa Lutfullah Efendi. Also known to be buried here, but with lost gravestones, are Yusuf bin Abdüssamed, Yahni Kapanzâde Seyyid Mustafa Efendi and Gazalizâde Mehmed Efendi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "473"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_mekan",
+      "label": {
+        "tr": "İç mekân ölçüsü",
+        "en": "Interior dimensions"
+      },
+      "value": "8.15 × 8.25",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "473"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 4.1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "473"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Veli Şemseddin",
+      "role": {
+        "tr": "Banî; Hoca Hasan'ın öğrencisi ve halifesi",
+        "en": "Founder; student and deputy of Hoca Hasan"
+      }
+    },
+    {
+      "name": "Hoca Hasan",
+      "role": {
+        "tr": "Emir Sultan'ın halifesi; Veli Şemseddin'in hocası",
+        "en": "Caliph of Emir Sultan; teacher of Veli Şemseddin"
+      }
+    },
+    {
+      "name": "İbrahim Efendi",
+      "role": {
+        "tr": "Yahni Kapanların atası; imam, camiyi yeniden tamir ettirdi",
+        "en": "Ancestor of the Yahni Kapans; imam, had the mosque renovated"
+      }
+    },
+    {
+      "name": "Hacı Mustafa",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Rabia bint Hacı Mustafa",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Yusuf bin Abdüssamed",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Seyyid Hacı Ahmed Hasib Efendi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Yahni Kapanzâde Mehmed Gazâlî",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Dersiâm Abdullah Dede",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Şeyh Hacı Mustafa Lutfullah Efendi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Yahni Kapanzâde Seyyid Mustafa Efendi",
+      "role": {
+        "tr": "Hazireye defnedildiği bilinir; mezar taşı kaybolmuş",
+        "en": "Known to be buried here; gravestone lost"
+      }
+    },
+    {
+      "name": "Gazâlîzâde Mehmed Efendi",
+      "role": {
+        "tr": "Hazireye defnedildiği bilinir; mezar taşı kaybolmuş",
+        "en": "Known to be buried here; gravestone lost"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem kubbeyi yıktı; yerine kiremit örtülü kırma çatı yapıldı",
+        "en": "The earthquake brought down the dome; a tiled hipped roof replaced it"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "473"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1859",
+      "year": 1859,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami yeni baştan inşa edildi; yapıma 1859'da başlanıp bir yıl içinde tamamlandı",
+        "en": "The mosque was rebuilt from scratch; construction began in 1859 and was finished within a year"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "473"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Veli Şemseddin Camii, Öğreten Caddesi'nde üç yüzü sokağa bakan, kiremit örtülü ahşap çatılı bir yapıdır. 1855 depreminde kubbesi yıkıldığı için kırma çatılıdır ve özgün biçimini kaybederek sivil mimari görünümü kazanmıştır. Cümle kapısına iki yandan çifte merdivenle çıkılır; içeride tamamen kapalı bir son cemaat yeri ve kareye yakın bir ibadet salonu vardır. Haziresinde caminin banisinin de aralarında olduğu birçok mezar bulunur.",
+      "en": "Veli Şemseddin Mosque is a building with a tiled wooden roof on Öğreten Street, facing the street on three sides. Its dome collapsed in the 1855 earthquake, so it has a hipped roof and, having lost its original form, resembles civil architecture. The main door is reached by double staircases from both sides; inside are a completely enclosed narthex and a nearly square prayer hall. Its graveyard holds many graves, including that of the founder."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

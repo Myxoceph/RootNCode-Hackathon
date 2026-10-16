@@ -1,0 +1,277 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-izzeddin-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 356) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi kitapta yok; dating boş bırakıldı. Çağ (era) de bu nedenle boş bırakıldı.",
+      "Hacı İzzet Bey'in yaptırdığı zaviye için kayıt varsa bağlanmalı.",
+      "Çekirge Hüdâvendigâr Camii ile ilişkideki hedef kimlik (bursa-osmangazi-i-murad-hudavendigar-camii) metinde ilçe belirtilmediği için eşleştirme varsayımıdır; doğrulanmalı.",
+      "Nilüfer Hatun Mescidi'nin (Hıdırlık) bursa-osmangazi-hidirlik-camii ile aynı yapı olduğu kitapta açıkça yazmıyor; eşleştirme varsayımdır.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap hem 'Caminin banisi İzzeddin Bey' der, hem Nilüfer Hatun'un camiyi vakıf arazisine inşa ettirdiğini söyler; ayrıca zaviyeyi yaptıran kişiyi 'Hacı İzzet Bey' diye anar (İzzeddin ile aynı kişi mi belli değil). Banî alanı İzzeddin Bey olarak girildi, 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İzzeddin Bey (Pınarbaşı) Camii",
+    "en": "İzzeddin Bey (Pınarbaşı) Mosque"
+  },
+  "subtitle": {
+    "tr": "Pınarbaşı suyunun ilk taksim yerinin yanındaki, vakıf arazisine kurulmuş cami",
+    "en": "Mosque on waqf land beside the first distribution point of the Pınarbaşı water"
+  },
+  "alternate_names": [
+    {
+      "tr": "Pınarbaşı Camii",
+      "en": "Pınarbaşı Mosque",
+      "note": "Pınarbaşı suyunun ilk taksim yeri yanında olduğu için"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Pınarbaşı",
+    "vakıf arazisi",
+    "icâre-i zemin",
+    "kırma çatı",
+    "Niğbolu",
+    "Nilüfer Hatun"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Pınarbaşı",
+    "address": "Alacahırka Caddesi, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "356"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "İzzeddin Bey (Niğbolu kahramanı Doğan Bey'in kardeşi)",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "356"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "İzzeddin Bey Camii vakfı",
+    "deed": null,
+    "conditions": {
+      "tr": "Pınarbaşı'ndaki vakıf arazisi için ödenen yer kirası (icâre-i zemin) karşılığında, Nilüfer Hatun Hıdırlık'taki Nilüfer Hatun Mescidi'nin imam ve müezzininin yevmiyelerini vermeye kefil olmuştur.",
+      "en": "In return for the ground rent called icare-i zemin on the waqf land in Pınarbaşı, Nilüfer Hatun became guarantor of the daily wages of the imam and muezzin of the Nilüfer Hatun Mosque in the Hıdırlık area."
+    },
+    "land_note": {
+      "tr": "Cami Pınarbaşı'ndaki vakıf arazisine yaptırılmıştır. Badırga köyünün yarısı bu mescidin vakfıdır.",
+      "en": "The mosque was built on waqf land in Pınarbaşı. Half of the village of Badırga is the foundation of this mosque."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "356"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Niğbolu kahramanı Doğan Bey'in kardeşi İzzeddin Bey'in banîliğinde anılan, Pınarbaşı suyunun ilk taksim yerinin yanındaki cami. Kitap, Sultan I. Murad'ın kızı Nilüfer Hatun'un vakıf arazisine bu camiyi yaptırdığını da belirtir; 1960'ta ahşap minaresi yıkılıp yenisi yapılmıştır.",
+    "en": "A mosque beside the first distribution point of the Pınarbaşı water, whose founder is given as İzzeddin Bey, brother of the Niğbolu hero Doğan Bey. The book also says Nilüfer Hatun, daughter of Murad I, had it built on waqf land; its wooden minaret was replaced in 1960."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Banî ve Vakıf",
+        "en": "Founder and Endowment"
+      },
+      "body": {
+        "tr": "Cami, Pınarbaşı Mahallesi, Alacahırka Caddesi No:2'de yer almaktadır. Caminin banisi İzzeddin Bey, meşhur Niğbolu kahramanı Doğan Bey'in kardeşidir. I. Murad'ın kızı Nilüfer Hatun, Pınarbaşı'ndaki vakıf arazisine bu camiyi inşa ettirmiş ve icâre-i zemin denilen yer kirası için, Hıdırlık mevkiindeki Nilüfer Hatun Mescidi imamı ve müezzininin yevmiyelerini vermeye kefil olmuştur. Hacı İzzet Bey, mescidin civarına bir de zaviye yaptırmıştır. Badırga köyünün yarısı bu mescidin vakfıdır.",
+        "en": "The founder of the mosque, İzzeddin Bey, is the brother of the famous Niğbolu hero Doğan Bey. Nilüfer Hatun, the daughter of Murad I, had this mosque built on the foundation land in Pınarbaşı and became guarantor of the daily wages of the imam and muezzin of the Nilüfer Hatun Mosque in the Hıdırlık area as payment for the ground rent called icare-i zemin. Hacı İzzet Bey also had a zawiya built near the mosque. Half of the village of Badırga is the foundation of this mosque."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "356"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Bugünkü Durum",
+        "en": "Architecture and Present Condition"
+      },
+      "body": {
+        "tr": "Caminin beden duvarları moloz taşla örülüdür, sonradan sıvanarak düzgün duvar haline getirilmiştir. Ahşap kırma çatısı kiremitle kaplıdır. Minaresi ahşapken 1960'ta yıkılmış, yerine Çekirge Hüdâvendigâr Camii minaresinin bir benzeri yapılmıştır. Caminin yanında, kaynağı Uludağ'da olan Pınarbaşı suyunun ilk taksim yeri bulunduğundan Pınarbaşı Camii olarak da anılır. Günümüzde bakımlı ve ibadete açıktır.",
+        "en": "The main walls are of rubble stone, later plastered into smooth walls. The wooden hipped roof is covered with tiles. Its minaret was wooden until it was demolished in 1960 and replaced by one similar to that of the Çekirge Hudâvendigâr Mosque. Since the first distribution point of the Pınarbaşı water, whose source is on Uludağ, is next to the mosque, it is also known as the Pınarbaşı Mosque. It is well-maintained and open for worship today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "356"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_yenileme_yili",
+      "label": {
+        "tr": "Ahşap minarenin yıkılıp yenilendiği yıl",
+        "en": "Year the wooden minaret was replaced"
+      },
+      "value": 1960,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "356"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İzzeddin Bey",
+      "role": {
+        "tr": "Banî; Niğbolu kahramanı Doğan Bey'in kardeşi",
+        "en": "Founder; brother of the Niğbolu hero Doğan Bey"
+      }
+    },
+    {
+      "name": "Nilüfer Hatun",
+      "role": {
+        "tr": "Sultan I. Murad'ın kızı; camiyi vakıf arazisine yaptırdığı belirtilir, imam ve müezzin yevmiyelerine kefil",
+        "en": "Daughter of Murad I; said to have had the mosque built on waqf land; guarantor of imam and muezzin wages"
+      }
+    },
+    {
+      "name": "Doğan Bey",
+      "role": {
+        "tr": "Niğbolu kahramanı; banînin kardeşi",
+        "en": "Hero of Niğbolu; brother of the founder"
+      }
+    },
+    {
+      "name": "Hacı İzzet Bey",
+      "role": {
+        "tr": "Mescit civarına zaviye yaptırdı",
+        "en": "Had a zawiya built near the masjid"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "minare-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Ahşap minare yıkılıp Çekirge Hüdâvendigâr Camii minaresine benzer yenisi yapıldı",
+        "en": "Wooden minaret demolished and replaced by one similar to that of the Çekirge Hudâvendigâr Mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "356"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hidirlik-camii",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Nilüfer Hatun, bu caminin arsası için ödenen yer kirası karşılığında Hıdırlık'taki Nilüfer Hatun Mescidi'nin imam ve müezzin yevmiyelerine kefil olmuştur.",
+        "en": "In return for the ground rent of this mosque's site, Nilüfer Hatun guaranteed the daily wages of the imam and muezzin of the Nilüfer Hatun Mosque in Hıdırlık."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "356"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hidirlik-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Kitap, Hıdırlık (Nilüfer Hatun) Camii'ni de Nilüfer Hatun'a atfeder; bu cami de Nilüfer Hatun'un vakıf arazisine yaptırıldığı belirtilir.",
+        "en": "The book attributes the Hıdırlık (Nilüfer Hatun) Mosque to Nilüfer Hatun as well; this mosque is also said to have been built by her on waqf land."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "337, 356"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "1960'ta yapılan yeni minare, Çekirge Hüdâvendigâr Camii minaresinin bir benzeridir.",
+        "en": "The minaret built in 1960 is similar to the minaret of the Çekirge Hudâvendigâr Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "356"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İzzeddin Bey Camii, Pınarbaşı Mahallesi'nde, sıvalı moloz taş duvarlı, ahşap kırma çatılı ve kiremit örtülü bir yapıdır. Minaresi 1960'ta yenilenmiştir. Yanında Uludağ'dan gelen Pınarbaşı suyunun ilk taksim yeri bulunur.",
+      "en": "İzzeddin Bey Mosque in Pınarbaşı Neighborhood is a building with plastered rubble-stone walls and a tiled wooden hipped roof. Its minaret was renewed in 1960. Beside it is the first distribution point of the Pınarbaşı water coming from Uludağ."
+    }
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,507 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hacilar-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Hacı Sinan'a ait 'Bursa'da iki mescit daha' kitapta adlandırılmıyor; same_founder ilişkisi kurulamadı.",
+      "Ebced hesabı ile kitabedeki yıl arasındaki fark (872/873) uzman tarafından kontrol edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap yapım yılını üç farklı biçimde veriyor: H. 871 / M. 1466 (s. 324), ebced hesabıyla H. 872 / M. 1467 (s. 326) ve kitabe metni/meali 873 (s. 326). Transkripsiyondaki 'semâne mi’e... seb’în ve ehad ve isnân' ifadesi 873'ü verir. Üçü de saklandı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "inscriptions[kitabe]",
+        "note": "Kitabın Türkçe ve İngilizce metinlerinde transkripsiyon birbirinden küçük farklarla iki kez basılmış (örn. 'fî târîhi' / 'fî târîh-i'); Türkçe metindeki ilk biçim alındı. Meal ilk metindeki 'ilke yad edsin' ifadesini olduğu gibi içeriyor."
+      },
+      {
+        "field": "sections[adin-kaynagi]",
+        "note": "Kitap iki rivayet veriyor; ikincisini 'daha güvenilir' sayıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacılar Camii",
+    "en": "Hacılar Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "kitabeli",
+    "çıtakâri",
+    "ahşap mahfil",
+    "stalaktitli kapı",
+    "Hacı Sinan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hocaalizâde",
+    "address": "Kültür Sokak, No: 16-18",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "324"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 871 / M. 1466 (s. 324); H. 872 / M. 1467 (ebced, s. 326); kitabede 873",
+      "en": "AH 871 / AD 1466 (p. 324); AH 872 / AD 1467 (abjad, p. 326); 873 in the inscription"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap üç farklı yıl veriyor (871, 872, 873); hiçbiri esas alınmadı.",
+      "en": "The book gives three different years (871, 872, 873); none was chosen."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "324, 326"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Bakkal Hacı Sinan",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "324, 326"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bakkal Hacı Sinan'ın 15. yüzyılda yaptırdığı, kitabesi ve çıtakârî ahşap mahfiliyle bilinen, dekoratif tezyinatı özenli kare planlı cami.",
+    "en": "A square-plan mosque built by Bakkal Hacı Sinan in the 15th century, known for its inscription and çıtakârî wooden gallery, with notably careful decoration."
+  },
+  "sections": [
+    {
+      "id": "banisi-tarih",
+      "order": 1,
+      "title": {
+        "tr": "Banisi ve Tarihi",
+        "en": "Founder and Date"
+      },
+      "body": {
+        "tr": "Cami, H. 871 / M. 1466'da Bakkal Hacı Sinan tarafından yaptırılmıştır; Bursa'da ona ait iki mescit daha vardır. Kitabedeki ebced hesabına göre bani Hacı Sinan'dır ve yapı H. 872 / M. 1467'de inşa edilmiştir. Kitabenin Türkçe mealinde ve transkripsiyonundaki yıl ise 873'tür.",
+        "en": "The mosque was built by Bakkal Hacı Sinan in AH 871 / AD 1466; he has two more mosques in Bursa. By abjad calculation of the inscription, the founder is Hacı Sinan and the building was built in AH 872 / AD 1467. The year in the inscription's text and meaning is 873."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "324, 326"
+        }
+      ]
+    },
+    {
+      "id": "adin-kaynagi",
+      "order": 2,
+      "title": {
+        "tr": "Adın Kaynağı",
+        "en": "Origin of the Name"
+      },
+      "body": {
+        "tr": "Mehmed Şemseddin Ulusoy'un rivayetine göre Anadolu'dan hacca giden bir grup hacı adayı Bursa'ya gelmiş, çeşitli sebeplerle o yıl hacca gidememiş ve ellerindeki parayla bu mescidi yaptırmış; bu yüzden \"Hacılar Camii\" adı verilmiştir. Daha güvenilir ve doğru kabul edilen bir diğer rivayete göre yerinde daha önce var olan harap bir mescidi Hacı Sinan adında bir tüccar yeniden inşa ettirmiş ve üzerine kitabe koymuştur.",
+        "en": "According to Mehmed Şemseddin Ulusoy, a group of pilgrims from Anatolia on their way to the hajj came to Bursa, could not go that year and built this mosque with their money, hence the name Hacılar (Pilgrims). According to another narration, considered more reliable, a ruined small mosque on the site was rebuilt by the merchant Hacı Sinan, who placed an inscription on it."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "324-325"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 3,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "Harim kare planlıdır; üç bölümlü son cemaat yeriyle dikdörtgen bir alan oluşturur. Revak ayakları iki sıra tuğla, bir sıra moloz taşla, kemerlerden yukarısı kesme taşla örülmüştür; derzlerde kuş gagası ve kare içinde yıldız motifli kuşaklar vardır. Kalkan duvarındaki üç sivri kemerli nişten ikisinde tuğlayla dalga motifi işlenmiş, orta nişe kitabe yerleştirilmiştir. Medhal gözü daha dar, yüksek ve kubbeli, yan gözler geniş ve tonozludur. Yan duvarlar sonradan örülmüş, kuzey cephe camekânla kapatılmıştır. Hacılar Camii benzerleri arasında dekoratif tezyinatı en özenli yapılardan biridir.",
+        "en": "The prayer hall is square and with the three-part narthex forms a rectangle. Portico piers are two rows of brick and one of rubble stone, with cut stone above the arches; joints carry bird-beak and star-in-square bands. Two of the three pointed-arched niches in the gable are decorated with brick wave motifs; the inscription is in the middle niche. The entrance bay is narrower, higher and domed; the side bays are wider and vaulted. The side walls were added later and the north arches are glazed. It is one of the most elaborate of its type."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "326"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 4,
+      "title": {
+        "tr": "Harim ve Cümle Kapısı",
+        "en": "Prayer Hall and Portal"
+      },
+      "body": {
+        "tr": "Cümle kapısının yanları beş sıra, üst kısmı dokuz sıra stalaktitlidir. İçten 8,90 × 8,95 m ölçülerindeki yapı dıştan sekizgen kasnaklıdır; kubbeye Türk üçgenleriyle geçilir. Yan cepheler ince moloz taşla işlenmiş, hatıl kullanılmamıştır. Kasnak üç sıra tuğla ve bir sıra kaba yontma taşla örülmüş, üç sıra kirpi saçakla sonlanır. Altta sekiz, üstte altı ve kasnakta üç pencere vardır; yan pencereler sivri kemerli çökertme içine alınmış ve ahşap sövelidir.",
+        "en": "The sides of the main portal have five rows of stalactites and the upper part nine. The interior measures 8.90 × 8.95 m, with an octagonal drum outside and Turkish triangles inside. Side façades are fine rubble stone without brick courses. The drum is three rows of brick and one of rough-hewn stone, finished with a three-row sawtooth cornice. There are eight windows below, six above and three on the drum, set in pointed-arch recesses with wooden frames."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "326-327"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-mahfil",
+      "order": 5,
+      "title": {
+        "tr": "Mihrap ve Mahfil",
+        "en": "Mihrab and Gallery"
+      },
+      "body": {
+        "tr": "Mihrap dikdörtgen çerçeve içinde, Türk üçgenli kuşağın altına kadar uzanan ince ve uzun formdadır; alçıdan altı sıra mukarnaslı kavsarası vardır. Caminin en dikkat çekici bölümlerinden biri ahşap mahfilidir: tavanı yeşil ve kırmızı boyalıdır, doğu ve batı maksurelerin tavanlarında çıtakâri tekniğiyle geometrik motifler işlenmiştir.",
+        "en": "The mihrab, in a rectangular frame, is long and thin up to the Turkish-triangle band, with a plaster hood of six rows of muqarnas. One of the most striking surviving parts is the wooden gallery, its ceiling painted green and red, with geometric motifs in çıtakârî on the ceilings of the east and west maqsuras."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 6,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare caminin batısındadır, son cemaat yerinden çıkılır. Sekizgen kaidesinin üç kenarı duvar içine gömülüdür; tuğla örgülü silindirik gövdeye Türk üçgenleriyle geçilir. Şerefe altı kirpi saçaklı, külahı kurşun kaplıdır.",
+        "en": "The minaret on the west is entered from the narthex. Three sides of its octagonal base are embedded in the wall; the brick cylindrical shaft follows a Turkish-triangle transition. The balcony has sawtooth rows beneath and a lead-covered spire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 7,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Raporlara göre 1855 depreminde hafif hasar almış, yalnızca minare şerefesi epey hasarlı bulunmuştur. Cami 1860'ta onarılmış, 1953'te Bursa Eski Eserleri Sevenler Kurumu tarafından aslına uygun restore edilerek yeniden ibadete açılmış, 2011'de Vakıflar Genel Müdürlüğü tarafından kapsamlı bir tamirat daha yapılmıştır.",
+        "en": "Reports show it was slightly damaged in the 1855 earthquake, with only the minaret balcony badly damaged. It was repaired in 1860, restored faithfully and reopened for worship by the Bursa Association for the Appreciation of Antiquities in 1953, and extensively repaired by the General Directorate of Foundations in 2011."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "hacilar-rivayeti",
+      "title": {
+        "tr": "Hacı adaylarının yaptırdığı rivayeti",
+        "en": "Story of the pilgrim candidates"
+      },
+      "body": {
+        "tr": "Mehmed Şemseddin Ulusoy'un rivayetine göre hacca gidemeyen bir grup hacı adayı ellerindeki parayla bu mescidi yaptırmış ve yapıya bu sebeple \"Hacılar Camii\" denmiştir. Kitap, tüccar Hacı Sinan'ın harap mescidi yeniden yaptırdığı diğer rivayeti daha güvenilir bulur.",
+        "en": "According to Mehmed Şemseddin Ulusoy, a group of pilgrims who could not make the hajj built this masjid with their money and it was named Hacılar for that reason. The book considers the other narration, of the merchant Hacı Sinan rebuilding a ruined masjid, more reliable."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "324-325"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim iç ölçüleri",
+        "en": "Interior dimensions"
+      },
+      "value": "8.90 × 8.95",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "326"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription size"
+      },
+      "value": "60 × 90",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "325"
+        }
+      ]
+    },
+    {
+      "key": "pencere_alt",
+      "label": {
+        "tr": "Alt sıra pencere",
+        "en": "Lower windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    },
+    {
+      "key": "pencere_ust",
+      "label": {
+        "tr": "Üst sıra pencere",
+        "en": "Upper windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    },
+    {
+      "key": "pencere_kasnak",
+      "label": {
+        "tr": "Kasnak penceresi",
+        "en": "Drum windows"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Bakkal Hacı Sinan",
+      "role": {
+        "tr": "Banî; tüccar",
+        "en": "Founder; merchant"
+      }
+    },
+    {
+      "name": "Cemâlî (Ebu'l-Hüseyin Seyyid Cemâlî)",
+      "role": {
+        "tr": "Kitabenin şairi",
+        "en": "Poet of the inscription"
+      }
+    },
+    {
+      "name": "Mehmed Şemseddin Ulusoy",
+      "role": {
+        "tr": "Hacılar rivayetinin aktarıcısı",
+        "en": "Narrator of the pilgrims story"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kitabe",
+      "location": {
+        "tr": "Son cemaat yerinin orta bölmesinde, nişin içinde (60 × 90 cm)",
+        "en": "In a niche in the middle section of the narthex (60 × 90 cm)"
+      },
+      "language": "ar",
+      "script": "Selçuklu nesih",
+      "transliteration": "Fî târîhi hâzâ’l-mescidi’l-mübârek, / Ekremü’l-muslihîn Hâc Sinân, / Serrahal-lâhu fî civâri cinân. / Kad benâ mesciden min ‘indihî, / Ra’âhû cennât inâyeti Mennân. / Hateme mebnâhu fî semâne mi’e, / Ba’de seb’în ve ehad ve isnân. / Çün Ebû’l-Hüseyin Seyyid Cemâlî dedi, / Zikr-i cemîl verir ihvân.",
+      "translation": {
+        "tr": "Bu mübarek mescidin tarihine dair, Salih kimselerin en cömerdi Hacı Sinan Allah onu cennetinde ağırlasın, Kendi malından bir mescid bina etti Allah’ın inayetiyle cennet gibi, İnşası 873’te bitince Ebu’l-Hüseyin Seyyid Cemâlî söyledi; İhvan onu Zikr-i cemil ilke yad edsin.",
+        "en": "About the history of this blessed mosque, Hacı Sinan, the most generous of the righteous, May Allah welcome him in Paradise, Built a mosque from his own wealth, With Allah’s grace, like heaven, When its construction was completed in 873, Ebu’l Hüseyin Seyyid Cemali said; May the brothers remember him with the most beautiful dhikr."
+      },
+      "author": "Cemâlî (Ebu’l-Hüseyin Seyyid Cemâlî)",
+      "date": {
+        "hijri_year": 873,
+        "gregorian": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "325-326"
+        }
+      ],
+      "note": {
+        "tr": "Kitap ebcet hesabıyla yapının H. 872 / M. 1467'de inşa edildiğini söylüyor; metin ve meal 873 diyor. Kitap iki farklı transkripsiyon veriyor; Türkçe metindeki ilki alındı.",
+        "en": "The book derives AH 872 / AD 1467 by abjad, while the text and meaning say 873. Two slightly different transcriptions are printed; the first (Turkish text) was used."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1466",
+      "year": 1466,
+      "date": null,
+      "hijri": "871",
+      "type": "construction",
+      "title": {
+        "tr": "Bakkal Hacı Sinan tarafından yaptırıldı (H. 871)",
+        "en": "Built by Bakkal Hacı Sinan (AH 871)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "324"
+        }
+      ],
+      "note": {
+        "tr": "Ebced hesabıyla H. 872 / M. 1467, kitabede 873.",
+        "en": "By abjad AH 872 / AD 1467; the inscription says 873."
+      }
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde hafif hasar",
+        "en": "Slight damage in the 1855 earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1860",
+      "year": 1860,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "1860'ta onarıldı",
+        "en": "Repaired in 1860"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1953",
+      "year": 1953,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından aslına uygun restore edilip ibadete açıldı",
+        "en": "Restored faithfully and reopened for worship by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    },
+    {
+      "id": "tamirat-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü kapsamlı tamirat yaptı",
+        "en": "Extensive repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "327"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hacılar Camii, kare planlı harimi ve önünde üç bölümlü, camla kapatılmış son cemaat yeri olan bir camidir. Dışarıdan sekizgen kasnaklı bir kubbeyle örtülüdür. Cümle kapısı beş ve dokuz sıra stalaktitlerle süslüdür. Son cemaat yerinin ortasındaki nişte Arapça bir kitabe vardır. Batıdaki tuğla minareye son cemaat yerinden çıkılır. İçeride yeşil ve kırmızı boyalı tavanlı bir ahşap mahfil bulunur.",
+      "en": "Hacılar Mosque has a square prayer hall and a three-part glazed narthex in front. It is covered by a dome on an octagonal drum. The portal is decorated with five and nine rows of stalactites. An Arabic inscription sits in the niche in the middle of the narthex. The brick minaret to the west is entered from the narthex. Inside is a wooden gallery with a green and red painted ceiling."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

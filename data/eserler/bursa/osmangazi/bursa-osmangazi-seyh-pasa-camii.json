@@ -1,0 +1,443 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-seyh-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 437-439) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Mahalle: kitapta 'Osmangazi Mahallesi'; adres numarası verilmiyor.",
+      "Kitabedeki 'Sultan Murad Han'ın hangi Murad olduğu kitapta belirtilmiyor.",
+      "Giriş kitabesi fotoğrafı AR için seçilip ar_target_media_id alanına bağlanacak.",
+      "Eski yazılı levhalar ve kûfi yazılar bugün var mı, kitap belirtmiyor; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap ana mekânı 'kare planlı' diye tanımlarken harim ölçülerini 7,30 × 7,15 m olarak verir; küçük fark kaynaktaki haliyle bırakıldı."
+      },
+      {
+        "field": "inscriptions[girift-kitabe]",
+        "note": "Kitapta kitabe transliterasyonunda satır sonu eğik çizgileri ('/') aynen bırakıldı. Türkçe metin 'Mevcut girift kitabesi' diyor; 'girift' (iç içe geçmiş) ifadesi kitaptaki haliyle korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Paşa (Dibekli) Camii",
+    "en": "Shaykh Paşa (Dibekli) Mosque"
+  },
+  "subtitle": {
+    "tr": "1439 tarihli kitabesi olan, 1950'de çatılı yeniden ayağa kaldırılan cami",
+    "en": "Mosque with an inscription dated 1439, rebuilt with a roof in 1950"
+  },
+  "alternate_names": [
+    {
+      "tr": "Dibekli Camii",
+      "en": "Dibekli Mosque",
+      "note": "Eski fotoğraflarda caminin önünde bir dibek görüldüğü için halk arasında bu adla anılır"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kitabeli",
+    "Barok talik",
+    "stalaktitli mihrap",
+    "kırma çatı",
+    "Dibekli"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Osmangazi",
+    "address": "Satı Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "437"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. Şevval 842 / M. Mart 1439",
+      "en": "AH Shawwal 842 / AD March 1439"
+    },
+    "start_year": 1439,
+    "end_year": 1439,
+    "hijri_year": 842,
+    "century": 15,
+    "basis": {
+      "tr": "Girift kitabesi yapım tarihini H. Şevval 842 / M. Mart 1439 olarak verir.",
+      "en": "The inscription gives the construction date as Shawwal AH 842 / March AD 1439."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "438"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şeyh Paşa bin Şahabeddin bin Bayezid",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "438"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Satı Caddesi'ndeki cami, kitabesine göre Şeyh Paşa bin Şahabeddin bin Bayezid tarafından H. Şevval 842 / M. Mart 1439'da yaptırılmıştır. Kesme küfeki taşı ve tuğla işçiliğiyle yapılan yapı aslen kubbeliydi; harap olunca kurşunları satılarak kırma ahşap çatıyla örtülmüştür. 1950'de Bursa Eski Eserleri Sevenler Kurumu çatılı olarak yeniden ayağa kaldırmış, en son 2017'de onarılmıştır.",
+    "en": "The mosque on Satı Street was built, according to its inscription, by Shaykh Paşa bin Şahabeddin bin Bayezid in Shawwal AH 842 / March AD 1439. Built of cut limestone and brick, it was originally domed; after falling into disrepair its lead was sold and it was given a hipped wooden roof. The Bursa Association for the Appreciation of Antiquities rebuilt it with a roof in 1950, and it was last repaired in 2017."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Ad ve Genel Bilgi",
+        "en": "Name and Overview"
+      },
+      "body": {
+        "tr": "Bir zamanlar içinde güzel yazılı levhalar ve kûfi yazılar bulunduğu belirtilen caminin adı Şeyh Paşa Camii olsa da halk arasında 'Dibekli Camii' olarak bilinir. Eski fotoğraflarda caminin önünde bir dibek görüldüğü için bu adla anılmaktadır.",
+        "en": "Although the mosque, said to have once contained beautifully written tablets and Kufic script, is named Shaykh Paşa Mosque, it is commonly known as the 'Dibekli Mosque'. Old photographs show a 'dibek' (mortar) in front of the mosque, hence the name."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "437"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami tipik Bursa camileri gibi kesme küfeki taşı ve tuğla işçiliğiyle inşa edilmiştir. Aslen kubbeli olan yapı, harap olması üzerine kurşunları satılarak çatılı hale getirilmiştir. Kare planlı ibadet mekânı ve son cemaat yerinden oluşur. Harim 7,30 m uzunluğunda, 7,15 m genişliğinde, duvarlar 90 cm kalınlığındadır; kırma ahşap çatılıdır. Minare doğudadır; 4,90 m derinliğindeki son cemaat yeri revakı minareyi içine alacak kadar geniştir. Beden duvarları üç sıra tuğla ve bir sıra kesme taşla yapılmıştır. Revakın doğu kanadında Barok dönemden kalma talik hatla yazılmış 'Maşaallah' ifadesi seçilebilir; yan pencerede altı köşeli tuğla işleme vardır. Eski fotoğraflardan son cemaat yeri sofalarının ahşap parmaklıkla çevrili olduğu anlaşılır. Pencere kemerleri değiştirilmiştir. Mihrabın kavsarası dört sıra stalaktitlidir.",
+        "en": "The mosque is built of cut limestone and brick like typical Bursa mosques. Originally domed, its lead was sold after it fell into disrepair and it was given a roof. It has a square prayer hall and a narthex. The hall is 7.30 m long and 7.15 m wide with 90 cm thick walls and a hipped wooden roof. The minaret is on the east; the 4.90 m deep narthex portico is wide enough to include it. The walls are three rows of brick and one row of cut stone. On the east wing of the portico the phrase 'Masha'Allah' in Baroque-period Ta'liq script can be made out; there is hexagonal brickwork above a side window. Old photographs show the narthex platforms surrounded by wooden railings. The window arches have been changed. The mihrab hood has four rows of stalactites."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "438-439"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Yapı 1504, 1523, 1562 ve 1571'de tamir edilmiştir. 1950'de Bursa Eski Eserleri Sevenler Kurumu tarafından çatılı olarak yeniden ayağa kaldırılmış, en son 2017'de onarım görmüştür.",
+        "en": "The building was repaired in 1504, 1523, 1562 and 1571, rebuilt with a roof by the Bursa Association for the Appreciation of Antiquities in 1950, and last repaired in 2017."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "439"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüleri (uzunluk × genişlik)",
+        "en": "Prayer hall dimensions (length × width)"
+      },
+      "value": "7,30 × 7,15",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 90,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": "4,90",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription size"
+      },
+      "value": "50 × 56",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "438"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Paşa bin Şahabeddin bin Bayezid",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "girift-kitabe",
+      "location": {
+        "tr": "Mermer üzerine Selçuklu tarzı sülüs hatla (50 × 56 cm)",
+        "en": "On marble, Seljuk-style Thuluth (50 × 56 cm)"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "Emera bi-imareti hâza’l-mescid ve binâihi el-abdu’l-muhtâc ilâ rahmeti’llâhi ve gufrânihî Şeyh Paşa bin Şıhâbu’ / d-dîn bin Bâyezîd fî eyyâmi devleti’s-Sultanı a’zâm mevlâ mülûki’l-Arabi ve’l-Acem mâliki / rikâbu’l-ümemi fâtihu’l-bilâd ve nâsıru’l-ibâd es-Sultân ibnu’s-Sultan bin Sultân / Murâd Hân hallada’l-lâhu sultânuhû ve evza’ahû ale’l-âlemîn burhânuhû fî Şevval isnâ ve erba’în ve semâne mi’e.",
+      "translation": {
+        "tr": "Bu mescidin inşa edilmesini ve binasının yapılmasını, Allah’ın rahmetine ve mağfiretine muhtaç kul Şeyh Paşa bin Şahabeddin bin Bayezid emretmiştir. Bu inşa, Arap ve Acem hükümdarlarının efendisi, ümmetlerin dizgini sahibi, şehirlerin fatihi, kulların yardımcısı olan yüce Sultan’ın -ki o, Sultan oğlu Sultan, Sultan Murad Han’dır- hükümdarlığı günlerinde gerçekleştirilmiştir. Allah onun saltanatını daim, adaletini ve gücünü bütün âleme delil kılsın. İnşa H. Şevval 842 / M. Mart 1439 tarihinde yapılmıştır.",
+        "en": "The construction of this mosque and its building was ordered by the servant of Allah, Shaykh Paşa bin Şahabeddin bin Bayezid, who is in need of Allah’s mercy and forgiveness. This construction was carried out during the reign of the great Sultan, the master of the Arab and Persian rulers, the owner of the reins of the nations, the conqueror of the cities, the helper of the servants - he is the Sultan, the son of the Sultan, Sultan Murad Han. May Allah make his reign permanent and his justice and power a proof to the whole world."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 842,
+        "gregorian": "1439-03"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "id": "revak-masaallah",
+      "location": {
+        "tr": "Revakın doğu kanadı, Barok dönemden kalma talik hat",
+        "en": "East wing of the portico, Baroque-period Ta'liq"
+      },
+      "language": "other",
+      "script": "ta'lik",
+      "transliteration": "Maşaallah",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap yalnızca ifadeyi anar; dili belirtilmiyor.",
+        "en": "The book only mentions the phrase; language not stated."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "439"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1439",
+      "year": 1439,
+      "date": null,
+      "hijri": "842",
+      "type": "construction",
+      "title": {
+        "tr": "Şeyh Paşa tarafından inşa ettirildi",
+        "en": "Built by Shaykh Paşa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1504",
+      "year": 1504,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir edildi",
+        "en": "Repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "439"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1523",
+      "year": 1523,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir edildi",
+        "en": "Repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "439"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1562",
+      "year": 1562,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir edildi",
+        "en": "Repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "439"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1571",
+      "year": 1571,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir edildi",
+        "en": "Repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "439"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-ayaga-kaldirma-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından çatılı olarak yeniden ayağa kaldırıldı",
+        "en": "Rebuilt with a roof by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "439"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Son onarım",
+        "en": "Last repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "439"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeyh Paşa Camii kare planlı bir camidir. Duvarlar üç sıra tuğla ve bir sıra kesme taştan örülüdür; kırma ahşap çatılıdır, eskiden kubbeliydi. Doğuda minare, onu içine alacak genişlikte bir son cemaat yeri vardır. Mihrabın kavsarası dört sıra stalaktitlidir.",
+      "en": "Şeyh Paşa Mosque is a square-plan mosque. Walls are three rows of brick and one of cut stone; it has a hipped wooden roof but was once domed. The minaret is on the east, enclosed by a wide narthex portico. The mihrab hood has four rows of stalactites."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

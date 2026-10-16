@@ -1,0 +1,308 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-yeni-bezzaz-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 476-478) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Vakfiye ve mimar kitapta yok.",
+      "İbni Bezzaz Camii'nin tam adı/ilçesi metinde yalnızca 'aynı bölgede' deniyor; ilişki hedef id'si (bursa-osmangazi-ibni-bezzaz-camii) tahmindir.",
+      "Baninin kabri (Mektep Sokak) ayrı kayıt gerektirebilir."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Yeni Bezzâz Camii",
+    "en": "Yeni Bezzâz Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Reyhan Camii",
+      "en": "Reyhan Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kalkan duvarlı",
+    "Fâtih dönemi",
+    "Bâzergânzâde",
+    "Reyhan",
+    "çarşı camii"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Reyhan",
+    "address": "İsmail Hakkı Caddesi, No: 3",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "476"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Fâtih dönemi",
+      "en": "Reign of Fatih"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitabe yok; kitap Fâtih devrinde Bâzergânzâde'nin yaptırdığının bilindiğini söylüyor. Fâtih'in saltanat yılları bu metinde verilmediği için başlangıç/bitiş yılı boş bırakıldı.",
+      "en": "There is no inscription; the book says it is known to have been built in Fatih's reign. Fatih's reign years are not given in this text, so start/end years are left empty."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "476"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Derviş Mehmed bin Ahmed eş-Şehîr bi-Bâzergânzâde",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "476"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Reyhan Mahallesi'nde, kitabesi olmamakla birlikte Fâtih devrinde Bâzergânzâde lakaplı Derviş Mehmed tarafından yaptırıldığı bilinen kalkan duvarlı, kubbeli cami. İbni Bezzaz Camii'nden sonra yapıldığı için “Yeni” adını almıştır; bugün daha çok çarşı esnafı tarafından kullanılır.",
+    "en": "A parapet-walled, domed mosque in the Reyhan Neighborhood, known to have been built in Fatih's reign by Dervish Mehmed, nicknamed Bâzergânzâde, although it has no inscription. It is called “Yeni” (New) because it was built after the Ibn Bezzaz Mosque; today it is mostly used by bazaar tradesmen."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Reyhan Mahallesi, İsmail Hakkı Caddesi No: 3'te yer alır. Caminin kitabesi bulunmasa da Fâtih devrinde, Bâzergânzâde lakabıyla tanınan Derviş Mehmed bin Ahmed eş-Şehîr bi-Bâzergânzâde'nin (v. H. 1 Safer 924 / M. 12 Şubat 1518) inşa ettirdiği bilinmektedir. Aynı bölgede Çelebi Mehmed devrinde yapılmış İbni Bezzaz Camii'nden sonra yapıldığı için “Yeni Bezzaz” adıyla anılmıştır. Banisinin sanat tarihi açısından işçilikli ve zarif mezar taşına sahip kabri, caminin güneybatısındaki Mektep Sokak'ta iki apartmanın arasında kalmıştır.",
+        "en": "The mosque is at İsmail Hakkı Street No. 3, Reyhan Neighborhood. Although it has no inscription, it is known to have been built in Fatih's reign by Dervish Mehmed bin Ahmed eş-Şehîr bi-Bâzergânzâde (d. 1 Safar AH 924 / 12 February AD 1518), known as Bâzergânzâde. It was called “Yeni Bezzaz” because it was built after the Ibn Bezzaz Mosque of the reign of Çelebi Mehmed in the same area. The founder's tomb, with an elaborate and elegant gravestone, lies between two apartment buildings on Mektep Street southwest of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "476-477"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Beden duvarları iki sıra moloz taş ve üç sıra tuğlayla örülen camiye güneydeki Reyhanpazarı Caddesi'nden girilir. Kalkan duvarlı son cemaat mahallinin yan cepheleri duvarla kapatılmıştır. Giriş bölümünün yer aldığı kuzey cephe, yanlarda büyük, ortada küçük olmak üzere sivri kemerli üç bölmeyle sonlanır ve demir doğrama camekânla kapatılmıştır; cephedeki yaba motifleri dikkat çekicidir. Cümle kapısının bulunduğu orta bölümün üzerinde tuğla işlemeli alınlıklı bir Bursa kemeri yer alır; orta bölüm beşik tonoz, yan bölümler aynalı tonozla örtülüdür. Tüm cephe ve kubbe kasnaklarında üç sıra kirpi saçak dizilmiştir. 7.50 × 7.55 m iç ölçülerindeki kare planlı harim, Türk üçgenleriyle geçiş yapılan sekizgen kasnağa oturan kubbeyle örtülüdür; kubbe ve tonozlar tamamen kurşun kaplıdır. Harim doğu ve batı duvarlarında alt sıralarda ikişer, kuzey duvarında iki, kasnakta üç pencereyle aydınlanır; güney duvarındaki iki pencere ile kasnaktaki bir pencere sağırlaştırılmıştır. Alt pencereler yuvarlak kemerli, üst pencereler sivri kemerli ve alçı şebekelidir.",
+        "en": "The main walls are built with two rows of rubble stone and three rows of brick; the mosque is entered from Reyhanpazarı Street in the south. The side façades of the parapet-walled narthex are closed with walls. The north façade with the entrance ends in three pointed-arched sections, large at the sides and small in the middle, closed with iron-framed glass; the pitchfork motifs on the façade are striking. Above the middle section with the main door is a Bursa arch with a brick-worked pediment; the middle is covered by a barrel vault and the sides by flattened barrel vaults. Three rows of sawteeth run along the eaves of all façades and dome drums. The square prayer hall (7.50 x 7.55 m) is covered by a dome on an octagonal drum with Turkish triangles; dome and vaults are completely lead-covered. The hall is lit by two lower windows on each of the east and west walls, two on the north wall and three in the drum; two south-wall windows and one drum window have been blinded. The lower windows are round-arched, the upper ones pointed with plaster grilles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "477"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan-ve-minare",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân ve Minare",
+        "en": "Interior and Minaret"
+      },
+      "body": {
+        "tr": "Girişin solundan merdivenle çıkılan hanımlar mahfili ahşaptır. Minber ve kürsü sade ahşap işçiliklidir. Mihrap nişinde perde ve madalyon bezemeleri vardır; yakın dönemde kaldırılan sıva raspalarının altından çıkan süsleme örnekleri dikkat çekicidir. Batı yönünde yapıya bitişik, sekizgen kaideli, tuğla silindirik gövdeli minareye son cemaat mahallinden çıkılır; şerefe altı dört sıra stalaktitlidir, sivri konik külahı kurşun kaplıdır.",
+        "en": "The women's gallery, reached by stairs from the left of the entrance, is wooden; the minbar and pulpit are simply made of wood. The mihrab niche has curtain and medallion decoration, and the ornament revealed under recently removed plaster layers is noteworthy. Adjacent to the building on the west is a minaret with a brick cylindrical shaft on an octagonal base, reached from the narthex; the underside of the balcony has four rows of stalactites and the pointed conical spire is lead-coated."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "478"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar-ve-kullanim",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Kullanım",
+        "en": "Repairs and Use"
+      },
+      "body": {
+        "tr": "H. 1218 / M. 1803'te kapsamlı bir tamirat geçiren cami, 1855 depreminde hasar görmüş, onarımdan sonra üstü çatıyla örtülmüştür. 1963'te Bursa Eski Eserleri Sevenler Kurumu'nun son onarımında yeniden kubbeyle örtülmüş ve kurşun kaplanmıştır. Cami bugün daha çok çarşı-pazar esnafı ve alışverişe gelenler tarafından kullanılmaktadır; avlusunun bulunması kullanım açısından önemli bir avantajdır.",
+        "en": "The mosque, which underwent extensive repairs in AH 1218 / AD 1803, was damaged in the 1855 earthquake and covered with a roof after repairs. In the last repair by the Bursa Association for the Appreciation of Antiquities in 1963 it was again covered with a dome and coated with lead. Today it is mostly used by bazaar tradesmen and shoppers; having a courtyard is an important advantage."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "478"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim iç ölçüsü",
+        "en": "Prayer hall interior"
+      },
+      "value": "7.50 × 7.55",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "477"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Derviş Mehmed bin Ahmed (Bâzergânzâde)",
+      "role": {
+        "tr": "Banî; v. H. 1 Safer 924 / M. 12 Şubat 1518",
+        "en": "Founder; d. 1 Safar AH 924 / 12 Feb AD 1518"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1518",
+      "year": 1518,
+      "date": "1518-02-12",
+      "hijri": "1 Safer 924",
+      "type": "record",
+      "title": {
+        "tr": "Baninin ölümü (v. 1 Safer 924 / 12 Şubat 1518)",
+        "en": "Death of the founder (1 Safar 924 / 12 February 1518)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "476"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1803",
+      "year": 1803,
+      "date": null,
+      "hijri": "1218",
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı tamirat",
+        "en": "Extensive repairs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "478"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem hasarı; onarımdan sonra çatıyla örtüldü",
+        "en": "Earthquake damage; covered with a roof after repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "478"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1963",
+      "year": 1963,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu son onarımı; yeniden kubbeyle örtülüp kurşunla kaplandı",
+        "en": "Last repair by the Bursa Association for the Appreciation of Antiquities; domed again and lead-covered"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "478"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-ibni-bezzaz-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Aynı bölgedeki, Çelebi Mehmed devrinde yapılmış İbni Bezzaz Camii'nden sonra yapıldığı için “Yeni Bezzaz” adını almıştır.",
+        "en": "Named “Yeni Bezzaz” because it was built after the Ibn Bezzaz Mosque of Çelebi Mehmed's reign in the same area."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "477"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yeni Bezzâz Camii, Reyhan Mahallesi'nde moloz taş ve tuğla örgülü duvarlı, kurşun kaplı kubbeli bir camidir. Kuzeydeki giriş cephesi, ortası küçük, yanları büyük üç sivri kemerli bölmeyle sonlanır ve camekânla kapatılmıştır. Kubbe sekizgen kasnağa oturur. İçeride ahşap hanımlar mahfili, sade ahşap minber ve kürsü vardır. Batı yanında tuğla gövdeli, sekizgen kaideli bir minare yükselir. Caminin avlusu vardır ve çevredeki çarşı esnafı tarafından kullanılır.",
+      "en": "Yeni Bezzâz Mosque is a lead-domed mosque in the Reyhan Neighborhood with walls of rubble stone and brick. The north entrance façade ends in three pointed-arched sections, small in the middle and large at the sides, closed with glass. The dome sits on an octagonal drum. Inside are a wooden women's gallery and a plain wooden minbar and pulpit. A brick minaret on an octagonal base rises on the west side. The mosque has a courtyard and is used by the surrounding bazaar tradesmen."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

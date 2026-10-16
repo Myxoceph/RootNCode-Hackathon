@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-haci-ali-sevinc-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Yapım yılı kitapta yok (yalnızca Fatih dönemi); start_year/end_year null.",
+      "'Türbe kısmı' ifadesi kitapta açıklanmıyor; ne olduğu teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlıkta 'Hacı Ali Sevinç', metinde banisi 'Başçı Hacı Sevinç' olarak geçiyor; 'Ali' kısmının kaynağı belirtilmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Ali Sevinç Camii",
+    "en": "Hacı Ali Sevinç Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "kare planlı mescit",
+    "tekke olarak kullanılmış",
+    "Fatih dönemi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tahtakale",
+    "address": "Fırın Sokak, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "317"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Fatih Sultan Mehmed dönemi",
+      "en": "Reign of Fâtih Sultan Mehmed"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yalnızca hükümdar dönemini veriyor; yıl yok.",
+      "en": "The book gives only the sultan's reign; no year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "317"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Başçı Hacı Sevinç",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "317, 319"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Fatih Sultan Mehmed döneminde tüccar Başçı Hacı Sevinç tarafından yaptırılan, kare planlı, tek kubbeli mescit tipinde cami; batısındaki avluda banisinin mezarı vardır.",
+    "en": "A square-plan, single-domed masjid-type mosque built in the reign of Fâtih Sultan Mehmed by the merchant Başçı Hacı Sevinç; the founder's grave lies in the courtyard to the west."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Mescit, Fatih Sultan Mehmet döneminde tüccar Başçı Hacı Sevinç tarafından yaptırılmıştır. Yapıldığı dönemde bir süre tekke olarak kullanıldığı bilinir. 1855 depreminde önemli zarar görmemiş, ancak türbe kısmı yıkılmıştır.",
+        "en": "The masjid was built during the reign of Fâtih Sultan Mehmed by the merchant Başçı Hacı Sevinç. It is known to have been used for a time as a dervish lodge when built. It was not significantly damaged in the 1855 earthquake, but the tomb section collapsed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "317, 319"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Örtü",
+        "en": "Plan and Covering"
+      },
+      "body": {
+        "tr": "Bursa'da sıkça görülen kare planlı mescit tipindedir; 6.60 × 6.65 m ölçülerindedir. Harim, beden duvarları üzerinde dıştan sekizgen bir kubbeyle örtülüdür; kubbeye geçiş Türk üçgenleriyle sağlanmış, alt sıradaki üçgenler dışa taşırılmıştır. Geçiş yüksekliği dört metre olduğundan iç mekân oldukça basık görünür.",
+        "en": "Of the square-plan masjid type common in Bursa, it measures 6.60 × 6.65 m. The prayer hall is covered by a dome that is octagonal outside; Turkish triangles provide the transition, with the lower row projecting outward. Because the transition begins at four meters, the interior looks rather flat."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "318"
+        }
+      ]
+    },
+    {
+      "id": "duvarlar",
+      "order": 3,
+      "title": {
+        "tr": "Duvarlar ve Pencereler",
+        "en": "Walls and Windows"
+      },
+      "body": {
+        "tr": "Beden duvarları yaklaşık bir metre kalınlıktadır. Üç yönden diğer binalara bitişiktir, yalnızca batısı açıktır. Duvarlar bazen tek, bazen çift tuğla hatıllı moloz taşla örülmüştür; batı duvarında taşlar gelişigüzel konulup tuğlalarla çevrilmiştir. Batı, kuzey ve doğu duvarlarında toplam altı, kubbe kasnağında üç yuvarlak kemerli pencere vardır.",
+        "en": "The main walls are about one meter thick. The building is attached to others on three sides and only the west is open. Walls are rubble stone with single or double brick bonding courses; on the west wall stones are randomly placed and surrounded by bricks. Six windows on the west, north and east walls and three round-arched windows in the drum light the interior."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "318"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 4,
+      "title": {
+        "tr": "Son Cemaat Yeri ve Donatı",
+        "en": "Narthex and Fittings"
+      },
+      "body": {
+        "tr": "Kuzeydeki ahşap örtülü son cemaat yerinin derinliği 2.90 m'dir; pandantif kalıntılarından burasının daha önce kubbeli olduğu anlaşılır. Onarım gördüğü anlaşılan son cemaat yerinde 19. yüzyıl üslubuna uygun dairesel kemerler kullanılmıştır. Dilimli mihrap ve minber yenidir. Minare yoktur.",
+        "en": "The wooden-covered narthex on the north is 2.90 m deep; pendentive remains show it was once domed. In the repaired narthex, circular arches in 19th-century style are used. The segmented mihrab and the minbar are new. There is no minaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "318-319"
+        }
+      ]
+    },
+    {
+      "id": "mezarlar",
+      "order": 5,
+      "title": {
+        "tr": "Mezarlar",
+        "en": "Graves"
+      },
+      "body": {
+        "tr": "Mescidin banisi Hacı Sevinç'in mezarı mescidin batısındaki bir avlu içindedir. Avlunun batısında Helvacı Acele Bacı'nın mezarı bulunur.",
+        "en": "The grave of the founder Hacı Sevinç is in a courtyard west of the masjid. West of the courtyard lies the grave of Helvacı Acele Bacı."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "319"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Dış ölçüler",
+        "en": "Dimensions"
+      },
+      "value": "6.60 × 6.65",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "318"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 1,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "318"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık bir metre' diyor.",
+        "en": "The book says about one meter."
+      }
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 2.9,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "318-319"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 0,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "319"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere (duvarlarda)",
+        "en": "Windows (walls)"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "318"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnak penceresi",
+        "en": "Drum windows"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "318"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Başçı Hacı Sevinç",
+      "role": {
+        "tr": "Banî; tüccar",
+        "en": "Founder; merchant"
+      }
+    },
+    {
+      "name": "Helvacı Acele Bacı",
+      "role": {
+        "tr": "Avlunun batısında mezarı bulunan kişi",
+        "en": "Person whose grave lies west of the courtyard"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde önemli zarar görmedi, türbe kısmı yıkıldı",
+        "en": "Not significantly damaged in 1855 earthquake; tomb section collapsed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "319"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hacı Ali Sevinç Camii, kare planlı küçük bir mescit tipi yapıdır; üç yönden komşu binalara bitişik, yalnızca batısı açıktır. Sekizgen kasnaklı bir kubbe ile örtülüdür. Kuzeyde ahşap örtülü, 19. yüzyıl üslubunda dairesel kemerli, camla kapatılmış bir son cemaat yeri vardır. Minaresi yoktur. Batısındaki avluda iki mezar bulunur.",
+      "en": "Hacı Ali Sevinç Mosque is a small square-plan masjid-type building, attached to neighbouring buildings on three sides with only the west open. It is covered by a dome on an octagonal drum. On the north is a wooden-covered narthex with circular arches in 19th-century style, closed with glass. It has no minaret. Two graves lie in the courtyard to the west."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

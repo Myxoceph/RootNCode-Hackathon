@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-koca-naip-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Yapım tarihi kitapta verilmiyor; dating boş bırakıldı.",
+      "Başlıkta 'Camii ve Haziresi' yazmasına rağmen kitapta hazire bölümü/açıklaması yok; kontrol edilmeli.",
+      "Mihrap arkasındaki kabir ve vakfiye kaydı dışında vakıf bilgisi yok; vakfiyenin Milâdî karşılığı kitapta verilmiyor.",
+      "Koca Nâib'in türbesi için ayrı kayıt yok (Pınarbaşı Caddesi, Mevlevihane karşısı).",
+      "Era kitapta belirtilmiyor; banînin 1360-1372 faaliyetine dayanarak 'erken-osmanli' girildi, gözden geçirilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Koca Nâib bölümü: Kavaklı Camii bölümünde (s. 371) 1329'da kazasker olduğu, bu bölümde (s. 382) 1360'ta kadı nâibi olduğu söylenir; iki ifade kitapta uzlaştırılmıyor. Kavaklı bölümü türbenin 'bugün mevcut yerinde olmadığını' söylerken bu bölüm Pınarbaşı Caddesi'ndeki kubbeli türbede medfun olduğunu belirtir."
+      },
+      {
+        "field": "sections[kabir-ve-vakiflar]",
+        "note": "Hacı Mehmed bin Mahmud'un kabri Türkçe metinde 'H. 978 / M. 1570', İngilizce metinde yalnızca 'AH 978' olarak verilir. Vakfiye tarihi (H. 15 Rebiyülahir 896) de yalnızca Hicrî verilir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Koca Naip Camii",
+    "en": "Koca Naip Mosque"
+  },
+  "subtitle": {
+    "tr": "Bursa'daki ilk kalkan duvarlı cami olarak anılan, tek kubbeli cami",
+    "en": "Single-domed mosque described as the first parapet-wall mosque in Bursa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Koca Naib Camii",
+      "en": "Koca Naib Mosque",
+      "note": "Metinde mahalle ve banî adı 'Naib/Nâib' biçiminde yazılır"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kalkan duvar",
+    "tek kubbeli",
+    "Koca Nâib",
+    "Türk üçgenleri",
+    "oymalı kapı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Koca Naib",
+    "address": "Cami Sokak, No. 33",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "382"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Koca Nâib Mahmud Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "382"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "15 Rebiyülahir 896 (H.)",
+      "excerpt": {
+        "tr": "Tûtî binti Abdullah, mescidin müezzinine meşruta vakfetmiştir.",
+        "en": "Tuti binti Abdullah endowed a conditional estate (meşruta) to the muezzin of the mosque."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "383"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "383"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kavaklı Camii'ni de yaptırmış olan kadı nâibi Koca Nâib Mahmud Efendi'nin yaptırdığı, Bursa'ya özgü kalkan duvarlı camilerin ilk örneği olarak anılan tek kubbeli cami. Altta sekiz, üstte altı pencereyle dönemi için olağanüstü ışık alır; minare kaidesinde sırlı altıgen çiniler bulunur.",
+    "en": "A single-domed mosque built by Koca Nâib Mahmud Efendi, deputy qadi, who also built the Kavaklı Mosque; described as the first example of the parapet-wall mosque type typical of Bursa. With eight lower and six upper windows it is unusually well lit for its time, and the minaret base has glazed hexagonal tiles."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banisi",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Koca Naib Mahallesi, Cami Sokak, No. 33'te bulunur. Banisi, Kavaklı Camii'ni de yaptırmış olan Koca Nâib Mahmud Efendi'dir. Bazı yayınlarda cami banisi olarak Koca Nâib Doğan Bey adlı birinin anılması doğru değildir. Koca Nâib Mahmud Efendi Sultanönü kasabasındandır; 1360'ta Bursa'da Çandarlı Kara Halil yerine kadı nâibi olmuş, 1372'de vefat etmiştir. Pınarbaşı Caddesi'nde, Mevlevîhane karşısındaki kubbeli türbede medfundur.",
+        "en": "The mosque is in Osmangazi District, Koca Naib Neighborhood, Cami Street, No. 33. Its founder was Koca Nâib Mahmud Efendi, who also built the Kavaklı Mosque. Some publications name a Koca Naib Doğan Bey as founder; this is incorrect. Koca Nâib Mahmud Efendi was from the town of Sultanönü, became kadi naib in Bursa in 1360 in place of Çandarlı Kara Halil, and died in 1372. He is buried in the domed tomb on Pınarbaşı Street opposite the Mevlevi Lodge."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "382"
+        }
+      ]
+    },
+    {
+      "id": "kabir-ve-vakiflar",
+      "order": 2,
+      "title": {
+        "tr": "Kabir ve Vakıf Kaydı",
+        "en": "Grave and Endowment Record"
+      },
+      "body": {
+        "tr": "Mihrabın arkasında Hacı Mehmed bin Mahmud'a ait H. 978 / M. 1570 tarihli bir kabir bulunur. H. 15 Rebiyülahir 896 tarihli vakfiyede Tûtî binti Abdullah'ın mescidin müezzinine meşruta vakfettiği bilgisi yer almaktadır.",
+        "en": "Behind the mihrab is a tomb of Hacı Mehmed bin Mahmud dated AH 978 / AD 1570. The endowment charter dated 15 Rabi' al-Akhir AH 896 records that Tuti binti Abdullah endowed a conditional estate to the mosque's muezzin."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "383"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami tek kubbelidir ve son cemaat yeri kalkan duvarlıdır; kitaba göre Bursa'ya mahsus kalkan duvarlı camilerin ilk örneğidir, daha önce Bursa'da böyle bir camiye rastlanmamış, sonraki devirlerde çok örneği görülmüştür. Harim 6,25 × 6,35 m'dir ve kubbe kasnağı Türk üçgenlidir. Son cemaat yeri 3,70 m derinliğinde ve üç gözlüdür: yanlardakiler geniş, ortadaki dar ve tonoz örtülüdür; dıştan dışa 8,17 × 12 m'dir. Beden duvarları üç sıra tuğla ve bir sıra moloz taş dizisiyle işlenmiş, taşlar düzgün ve incedir; yalnızca kalkan duvarda muntazam kesme taş kullanılmış ve taş aralarına düşey ikişer sıra tuğla yerleştirilmiştir. Duvar kalınlığı 90 cm'dir.",
+        "en": "The mosque has a single dome and a parapet wall in the narthex; the book says it is the first example of Bursa's typical parapet-wall mosque, with none seen earlier in Bursa and many in later periods. The prayer hall measures 6.25 × 6.35 m and the drum has Turkish triangles. The narthex is 3.70 m deep with three bays: the sides wide, the middle narrow and vaulted; external size is 8.17 × 12 m. The main walls are of three rows of brick and one of rubble stone, the stones smooth and thin; regular cut stone is used only in the parapet wall, with two vertical rows of brick between the stones. Wall thickness is 90 cm."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "383-384"
+        }
+      ]
+    },
+    {
+      "id": "pencere-minare",
+      "order": 4,
+      "title": {
+        "tr": "Pencereler ve Minare",
+        "en": "Windows and Minaret"
+      },
+      "body": {
+        "tr": "Devrinde büyük camiler penceresiz yapılırken burada altta 8, üstte 6 pencere açılarak mükemmel ışık sağlanmıştır; sekizgen kasnakta da 4 pencere vardır. Kasnak ve duvarların üstü kirpi saçakla sonlanır. Minare kaidesinin alt kısmı düz, üst kısmı sivri kemer nişlidir; nişlere altı köşe sırlı çiniler yerleştirilmiş, aralarında kabartma derzler vardır. Türk üçgenli küp çok kısadır; gövde basit ve yuvarlaktır. Şerefe üç sıra tuğla stalaktitle yapılmış, ancak çok az yeri sağlam kalmıştır. Külah miğfer biçimindedir ve aslına uygun onarılmıştır; minarede çiniden bir bilezik de vardır. Cami temiz ve mamur durumdadır; ahşap kapısı oymalı, mihrabı oldukça latiftir.",
+        "en": "While large mosques of the time were built without windows, here 8 windows below and 6 above give excellent light; the octagonal drum has 4 more. The drum and walls end with a sawtooth cornice. The minaret base is flat below and has pointed-arch niches above, with hexagonal glazed tiles set in the niches and relief joints between them. The Turkish-triangle transition is very short; the shaft is simple and round. The balcony was built with three rows of brick stalactites, but only a few parts survive intact. The spire is helmet-shaped and was restored to its original form; there is also a ceramic band on the minaret. The mosque is clean and well kept, its wooden door carved and its mihrab quite elegant."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "384"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "koca-naib-dogan-bey",
+      "title": {
+        "tr": "Banî 'Koca Nâib Doğan Bey' iddiası",
+        "en": "The claim of a founder 'Koca Naib Doğan Bey'"
+      },
+      "body": {
+        "tr": "Bazı yayınlarda caminin banisi olarak Koca Nâib Doğan Bey adlı birinin anıldığı, ancak kitabın bu bilgiyi doğru bulmadığı belirtilmektedir.",
+        "en": "Some publications name a certain Koca Naib Doğan Bey as the mosque's founder; the book states this information is incorrect."
+      },
+      "source_verdict": "refuted_by_source",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "382"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall size"
+      },
+      "value": "6,25 × 6,35",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "383"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3.7,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "383"
+        }
+      ]
+    },
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Dıştan dışa ölçü",
+        "en": "External size"
+      },
+      "value": "8,17 × 12",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "383"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 90,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "384"
+        }
+      ]
+    },
+    {
+      "key": "alt_pencere",
+      "label": {
+        "tr": "Alt sıra pencere sayısı",
+        "en": "Lower-row windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "384"
+        }
+      ]
+    },
+    {
+      "key": "ust_pencere",
+      "label": {
+        "tr": "Üst sıra pencere sayısı",
+        "en": "Upper-row windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "384"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnaktaki pencere sayısı",
+        "en": "Windows in the drum"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "384"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Koca Nâib Mahmud Efendi",
+      "role": {
+        "tr": "Banî; Sultanönü'lü, kadı nâibi (1360-v. 1372)",
+        "en": "Founder; from Sultanönü, deputy qadi (1360 – d. 1372)"
+      }
+    },
+    {
+      "name": "Çandarlı Kara Halil",
+      "role": {
+        "tr": "Koca Nâib'in 1360'ta yerine kadı nâibi olduğu kişi",
+        "en": "Person in whose place Koca Nâib became deputy qadi in 1360"
+      }
+    },
+    {
+      "name": "Hacı Mehmed bin Mahmud",
+      "role": {
+        "tr": "Mihrap arkasındaki kabrin sahibi (H. 978 / M. 1570)",
+        "en": "Owner of the tomb behind the mihrab (AH 978 / AD 1570)"
+      }
+    },
+    {
+      "name": "Tûtî binti Abdullah",
+      "role": {
+        "tr": "Müezzine meşruta vakfeden kişi",
+        "en": "Person who endowed a conditional estate to the muezzin"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kadi-naibi-1360",
+      "year": 1360,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Koca Nâib Mahmud Efendi Çandarlı Kara Halil yerine Bursa kadı nâibi oldu",
+        "en": "Koca Nâib Mahmud Efendi became deputy qadi of Bursa in place of Çandarlı Kara Halil"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "382"
+        }
+      ]
+    },
+    {
+      "id": "koca-naib-vefat-1372",
+      "year": 1372,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Koca Nâib Mahmud Efendi vefat etti",
+        "en": "Koca Nâib Mahmud Efendi died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "382"
+        }
+      ]
+    },
+    {
+      "id": "kabir-1570",
+      "year": 1570,
+      "date": null,
+      "hijri": "978",
+      "type": "record",
+      "title": {
+        "tr": "Mihrap arkasındaki Hacı Mehmed bin Mahmud kabrinin tarihi",
+        "en": "Date of the tomb of Hacı Mehmed bin Mahmud behind the mihrab"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "383"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-kavakli-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Kavaklı Camii'ni de yaptıran kişi Koca Nâib Mahmud Efendi'dir.",
+        "en": "Koca Nâib Mahmud Efendi also had the Kavaklı Mosque built."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "382"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Koca Naip Camii, tek kubbeli küçük bir yapıdır. Kuzeyde, kalkan duvarlı, üç gözlü bir son cemaat yeri vardır; yan gözler geniş, ortadaki göz dar ve tonoz örtülüdür. Duvarlar üç sıra tuğla ve bir sıra ince moloz taşla örülmüştür. Altta sekiz, üstte altı pencere ve kasnakta dört pencere bulunur. Minare kaidesi sivri kemer nişli olup nişlerde altıgen sırlı çiniler görülür. Ahşap kapısı oymalıdır.",
+      "en": "Koca Naip Mosque is a small single-domed building. Its narthex has a parapet wall and three bays, the side bays wide and the middle one narrow and vaulted. The walls are of three rows of brick and one of thin rubble stone. There are eight lower and six upper windows plus four in the drum. The minaret base has pointed-arch niches holding hexagonal glazed tiles. The wooden door is carved."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

@@ -1,0 +1,523 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ebu-ishak-kazeruni-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 300-302) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Külliyenin ana kaydı (bursa-osmangazi-ebu-ishak-kulliyesi) bu aralıkta üretilmediği için parent_id null bırakıldı; mevcut bursa-osmangazi-ebu-ishak-turbesi ile same_complex ilişkisi eklendi.",
+      "Külliyenin yok olan parçaları (imaret, mektep, halvethane/tabhane) için kayıt yok.",
+      "Kitabenin Türkçe meali kitapta yok; dil/okunuş uzmanca teyit edilmeli.",
+      "Demirtaşpaşa Külliyesi/Orhan Camii ile mimari öncül/ardıl bağlantısı için ilişki eklenmedi; kitap yalnızca plan benzerliğini belirtiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Giriş külliyeyi 'cami, tabhane, imaret, mektep ve türbe' diye sıralar; son sayfa 'imaret, mektep, halvethane ve türbe' der (tabhane ile halvethane farkı). Kitaba sadık kalındı."
+      },
+      {
+        "field": "inscriptions",
+        "note": "Kitabe sultanı 'Sultân Mehmed ibn-i Murâd Hân' olarak anar; kitap bunu 'Fatih devri' diye aktarır. Kitabe tarihi 'Cemâziyel evvel 884 / Temmuz-Ağustos 1479' olarak verilir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ebu İshak Kâzerûnî (Kamberler) Camii (Zaviye)",
+    "en": "Ebu İshak Kâzerûnî (Kamberler) Mosque (Zawiya)"
+  },
+  "subtitle": {
+    "tr": "Yıldırım Bayezid'in Şeyh Ebu İshak Kâzerûnî adına yaptırdığı külliyenin camisi (zaviye)",
+    "en": "Mosque (zawiya) of the complex built by Yıldırım Bayezid in the name of Shaykh Ebu İshak Kâzerûnî"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kamberler Camii",
+      "en": "Kamberler Mosque"
+    },
+    {
+      "tr": "Ebu İshak Zaviyesi",
+      "en": "Ebu İshak Zawiya"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tabhaneli cami",
+    "zaviye",
+    "Kâzerûniye",
+    "1479 kitabesi",
+    "Ebu İshak"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Ebu İshak",
+    "address": "İshak Aralığı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "300"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "14. yüzyılın sonu",
+      "en": "End of the 14th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap, külliyenin Yıldırım Bayezid tarafından 14. yüzyılın sonunda yaptırıldığını söyler; kitabe yapının Bayezid tarafından yaptırıldığını ve 1479'da tamir edildiğini belirtir.",
+      "en": "The book says the complex was built by Yıldırım Bayezid at the end of the 14th century; the inscription says it was built by Bayezid and repaired in 1479."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "300-301"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yıldırım Bayezid",
+    "role": "banî (Şeyh Ebu İshak Kâzerûnî adına)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "300-301"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Kitabe, yerin Şeyh Ebû İshak Kâzerûnî'nin müridleri üzerine vakfedildiğini kaydeder.",
+      "en": "The inscription records that the place was endowed upon the followers of Shaykh Ebû İshak Kâzerûnî."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "301"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Yıldırım Bayezid'in 14. yüzyıl sonunda Kâzerûniye Tarikatı'nın kurucusu Şeyh Ebu İshak Kâzerûnî adına yaptırdığı külliyenin camisidir. Ortada iki bölümlü ana mekân, yanlarda birer zaviye-tabhane ve beş gözlü son cemaat yeri vardır. Kitabesine göre Fatih devrinde H. 884 / M. 1479'da tamir edilmiş, 1969'da esaslı restore edilmiştir; külliyeden yalnızca cami ve türbe günümüze ulaşmıştır.",
+    "en": "The mosque of the complex built by Yıldırım Bayezid at the end of the 14th century in the name of Shaykh Ebu İshak Kâzerûnî, founder of the Kazeruniyeh Order. It has a two-part central space, a zawiya-hospice on each side and a five-bay narthex. According to its inscription it was repaired in AH 884 / AD 1479 in the reign of Fâtih and thoroughly restored in 1969; of the complex only the mosque and the tomb survive."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Külliye",
+        "en": "Overview and Complex"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Ebu İshak Mahallesi, İshak Aralığı'nda yer almaktadır. Demirtaşpaşa Külliyesi'nin yaklaşık yüz metre yukarısında, Yıldırım Bayezid'in İranlı din âlimi ve Kâzerûniye Tarikatı'nın kurucusu Şeyh Ebu İshak Kâzerûni adına 14. yüzyılın sonunda inşa ettirdiği Ebu İshak Külliyesi bulunmaktadır. Cami, tabhane, imaret, mektep ve türbeden meydana gelen külliyenin camisi, Bursa'da Orhan Camii ile başlayan ve daha sonra Demirtaşpaşa Camii'nde de görülen bir plana sahiptir: ortada iki bölümlüdür, yanlarda birer zâviye-tabhanesi ve beş gözlü son cemaat yeri bulunur.",
+        "en": "The mosque is located in Osmangazi District, Ebu İshak Neighborhood, İshak Street. About a hundred meters above the Demirtaşpaşa Complex is the Ebu İshak Complex, which was built by Yıldırım Bayezid at the end of the 14th century in the name of Shaykh Ebu İshak Kâzerûni, the Iranian religious scholar and founder of the Kazeruniyeh Order. The mosque of the social complex, which consists of a mosque, a hospice, an imaret, a school and a tomb, has a plan that started with the Orhan Mosque in Bursa and was later seen in the Demirtaşpaşa Mosque. It has two sections in the middle, with a zawiya-hospice and a five-bay narthex on each side."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "300-301"
+        }
+      ]
+    },
+    {
+      "id": "tarikat",
+      "order": 2,
+      "title": {
+        "tr": "Şeyh Ebu İshak ve Kâzerûniye Tarikatı",
+        "en": "Shaykh Ebu İshak and the Kazeruniyeh Order"
+      },
+      "body": {
+        "tr": "Şeyh Ebu İshak İbrahim bin Şehriyâr, İran'ın Kâzerûn şehrinde doğmuş, 1035 yılında vefat etmiş ve Kâzerûniye Tarikatı'nı kurmuştur. İran'da pek çok misafirhanesi bulunan bu tarikat, Anadolu'ya ulaştığında Yıldırım Bayezid'in himayesine girmiştir. Çalışma ve yardımlaşma esasına dayalı bu tarikatın Anadolu'daki Ahilik teşkilâtını etkilediği söylenebilir.",
+        "en": "Shaykh Ebu İshak İbrahim bin Şehriyâr was born in the city of Kâzerûn in Iran, died in 1035 and founded the Kazeruniyeh Order. This order, which had many guesthouses in Iran, came under the protection of Yıldırım Bayezid when it reached Anatolia. It can be said that this order, based on the principles of work and cooperation, influenced the Ahi organization in Anatolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "300-301"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Duvar işçiliğinde üç sıra tuğla ve bir sıra kesme taştan oluşan almaşık teknik kullanılmıştır. Son cemaat yeri, yan duvarlarla ortadaki dört ayağı birbirine bağlayan sivri kemerlerden oluşan beş bölümlü bir mekândır. Orta mekân diğerlerinden daha yüksek ve geniştir, kubbeyle örtülüdür; yan hacimler tekne tonozla kapatılmıştır. Asıl ibadet mekânındaki sekizgen kasnaklı kubbeye geçiş Türk üçgeni kuşağıyla sağlanmıştır. Doğu ve batıdaki tabhane mekânlarına yuvarlak kemerli birer kapıyla girilir; üstleri tonoz örtülüdür, batı kısmında ocak yeri, doğu kısmında baca deliği vardır. Son cemaat yerinin doğu duvarına bitişik, kare kaideli ve silindirik gövdeli minare 1882'de eklenmiştir.",
+        "en": "In the masonry, an alternating technique of three rows of bricks and one row of cut stones has been used. The narthex is a five-part space consisting of pointed arches connecting the side walls and the four piers in the middle. The central space is higher and wider than the others; it is covered with a dome, while the side bays are covered with trough vaults. The transition to the octagonal drum dome in the main place of worship is provided by the Turkish triangle band. The hospice spaces located on the east and west sides are entered through a round arched door. The hospice rooms are covered with vaults and there is a hearth in the western part and a chimney flue in the eastern part. The square-based and cylindrical-bodied minaret adjacent to the eastern wall of the narthex was added in 1882."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "301-302"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 4,
+      "title": {
+        "tr": "Kitabe",
+        "en": "Inscription"
+      },
+      "body": {
+        "tr": "Girift celî sülüs hatla yazılmış, 55 × 150 cm ebadındaki Arapça üç satırlık kitabede yapının Yıldırım Bayezid tarafından inşa ettirildiği ve 1479 yılında Fatih devrinde tamir edildiği belirtilmektedir.",
+        "en": "In the three-line Arabic inscription, written in intricate Jeli Thuluth script and measuring 55 × 150 cm, it is stated that the structure was built by Yıldırım Bayezid and repaired in 1479, during the reign of Fâtih."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "301"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 5,
+      "title": {
+        "tr": "Külliyenin Günümüze Gelenleri ve Onarımlar",
+        "en": "Surviving Parts and Repairs"
+      },
+      "body": {
+        "tr": "Cami ile birlikte inşa edilen imaret, mektep, halvethane ve türbeden oluşan külliyeden günümüze yalnızca cami ve türbe ulaşmıştır. Cami 1479, 1655, 1760, 1764, 1844 ve 1882 yıllarında onarım görmüş; son olarak 1969'da, son cemaat yeri ahşap, kubbesi çökmüş, duvarları ve minaresi harap halde iken halkın maddi desteğiyle Bursa Eski Eserleri Sevenler Kurumu tarafından esaslı şekilde restore edilmiştir.",
+        "en": "From the complex consisting of an imaret, a school, a seclusion cell, and a tomb, which were built together with the mosque, only the mosque and the tomb have survived to the present day. The mosque was repaired in 1479, 1655, 1760, 1764, 1844 and 1882; finally, in 1969, when the narthex was wooden, its dome collapsed, and its walls and minaret were in ruins, it was thoroughly restored by the Bursa Association for the Appreciation of Antiquities with the financial support of the public."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "302"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "narthex_goz",
+      "label": {
+        "tr": "Son cemaat yeri bölüm sayısı",
+        "en": "Narthex sections"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "301-302"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription size"
+      },
+      "value": "55 × 150",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "301"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_satir",
+      "label": {
+        "tr": "Kitabe satır sayısı",
+        "en": "Inscription lines"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "301"
+        }
+      ]
+    },
+    {
+      "key": "minare_ekleme",
+      "label": {
+        "tr": "Minarenin eklendiği yıl",
+        "en": "Year the minaret was added"
+      },
+      "value": 1882,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "302"
+        }
+      ]
+    },
+    {
+      "key": "seyh_vefat",
+      "label": {
+        "tr": "Şeyh Ebu İshak'ın vefat yılı",
+        "en": "Year of Shaykh Ebu İshak's death"
+      },
+      "value": 1035,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "300"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Yıldırım Bayezid",
+      "role": {
+        "tr": "Banî; Kâzerûniye Tarikatı'nı himaye eden",
+        "en": "Founder; protector of the Kazeruniyeh Order"
+      }
+    },
+    {
+      "name": "Şeyh Ebu İshak İbrahim bin Şehriyâr Kâzerûnî",
+      "role": {
+        "tr": "Kâzerûniye Tarikatı'nın kurucusu; külliye onun adına yapılmıştır",
+        "en": "Founder of the Kazeruniyeh Order; the complex was built in his name"
+      }
+    },
+    {
+      "name": "Sultan Mehmed ibn-i Murâd Han",
+      "role": {
+        "tr": "Kitabeye göre 1479'da tamir ettiren sultan (kitap 'Fatih devri' der)",
+        "en": "Sultan who ordered the repair in 1479 according to the inscription (the book says 'Fâtih's reign')"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tamir-kitabesi",
+      "location": {
+        "tr": "Girift celî sülüs, üç satırlık Arapça kitabe (55 × 150 cm)",
+        "en": "Three-line Arabic inscription in intricate Jeli Thuluth (55 × 150 cm)"
+      },
+      "language": "ar",
+      "script": "Girift celî sülüs",
+      "transliteration": "Kad benâ hâzihi’l-buk’ati’ş-şerîfeti es-Sultân Saîdu’l-a’zâm Bâyezîd Hân eskenehullâhu fî ferâdîsi’l-cinân ve vakafehâ alâ ashâbi’ş-şeyhi’s-samedânî Ebû İshak Kâzerûnî rahmetu’l-lâhi aleyhi fe emera bi-tecdîdihâ es-Sultânu’l-berreyn ve Hâkânu’l-bahreyn Sultân Mehmed ibn-i Murâd Hân halledâ’l-lâhu mülkehû ve sultânuhû Ve seâ’l-abdu’l-fakîr ibn-i iftihâru muînu’l-mürşidiyyu’l-Kureşî fî-tecdîdihâ ve hüve min ashâbi’ş-şeyhül-kebîr ve ekâbîrihî fî şehr-i Cemâziyel evvel sene erba’a ve semânîne ve semâne mâi’e H. 884 / M. Temmuz-Ağustos 1479",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 884,
+        "gregorian": "1479 (Temmuz-Ağustos)"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "301"
+        }
+      ],
+      "note": {
+        "tr": "Kitap Türkçe meal vermez; yalnızca özetler (Bayezid yaptırmış, 1479'da Fatih devrinde tamir edilmiş). Satır sonu tireleri birleştirilerek aktarıldı. İngilizce metinde OCR bozulması ('Hakîkat Seyyid t') vardır, aktarılmadı.",
+        "en": "The book gives no translation, only a summary (built by Bayezid, repaired in 1479 in Fâtih's reign). Line-end hyphens were joined. The English text contains an OCR corruption that was not carried over."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1479",
+      "year": 1479,
+      "date": null,
+      "hijri": "Cemâziyelevvel 884",
+      "type": "repair",
+      "title": {
+        "tr": "Sultan Mehmed ibn-i Murâd Han'ın emriyle tamir (kitabe, H. 884)",
+        "en": "Repair ordered by Sultan Mehmed ibn-i Murâd Han (inscription, AH 884)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "301-302"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1655",
+      "year": 1655,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "302"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1760",
+      "year": 1760,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "302"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1764",
+      "year": 1764,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "302"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "302"
+        }
+      ]
+    },
+    {
+      "id": "minare-1882",
+      "year": 1882,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Onarım; kare kaideli silindirik gövdeli minare eklendi",
+        "en": "Repair; square-based cylindrical minaret added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "302"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1969",
+      "year": 1969,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son cemaat yeri ahşap, kubbe çökmüşken Bursa Eski Eserleri Sevenler Kurumu esaslı restorasyonu",
+        "en": "Thorough restoration by the Bursa Association for the Appreciation of Antiquities, when the dome had collapsed and the narthex was wooden"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "302"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-ebu-ishak-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami ile birlikte yapılan külliyeden günümüze yalnızca cami ve türbe ulaşmıştır.",
+        "en": "Of the complex built together with the mosque, only the mosque and the tomb have survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "302"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ebu İshak Camii, Ebu İshak Mahallesi'nde, Demirtaşpaşa Külliyesi'nin yaklaşık yüz metre yukarısında bir camidir. Orta bölümü kubbeli, yanlarda tonozlu birer tabhane-zaviye mekânı ve beş bölümlü bir son cemaat yeri vardır. Duvarlar üç sıra tuğla ve bir sıra kesme taştan almaşık örülmüştür. Son cemaat yerinin doğu duvarına bitişik, kare kaideli, silindirik gövdeli bir minare vardır.",
+      "en": "Ebu İshak Mosque in Ebu İshak Neighborhood stands about a hundred metres above the Demirtaşpaşa Complex. Its central part is domed, with a vaulted hospice-zawiya space on each side and a five-part narthex. The walls alternate three rows of brick and one row of cut stone. A minaret with a square base and cylindrical shaft stands adjacent to the narthex's east wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

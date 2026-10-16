@@ -1,0 +1,357 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-tuzpazari-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 442-443) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Üç yazarın (Ulusoy, Kepecioğlu, Baykal) eserleri kitapta künye olarak verilmiyor; kaynak kontrolü yapılmalı.",
+      "Kara Ali Bey hakkında başka bilgi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "mihrap",
+        "note": "Türkçe metin mihraptan 'altı sıra stalaktitli' diye söz ederken, aynı bölümde son cemaat yeri orta bölümü için 'yedi sıra stalaktit' verilir; ikisi farklı bölümlerdir, çelişki yoktur. İngilizce metin mihraptan 'altarpiece' diye söz ediyor; Türkçe esas alındı."
+      },
+      {
+        "field": "founder",
+        "note": "Kitap banisinin adının kesin bilinmediğini, ancak üç yazarın Kara Ali Bey dediğini belirtiyor; 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tuzpazarı Camii",
+    "en": "Tuzpazarı Mosque"
+  },
+  "subtitle": {
+    "tr": "Tuz Pazarı içinde kalmış, zarif minareli geniş kubbeli cami",
+    "en": "Mosque hidden inside the Tuz Pazarı, with a wide dome and an elegant minaret"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "geniş kubbe",
+    "Türk üçgenleri",
+    "stalaktitli mihrap",
+    "mihrap ayeti",
+    "yivli minare",
+    "Tuz Pazarı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Orhanbey",
+    "address": "Tuzpazarı Caddesi, No: 53",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "442"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1479 (Şemseddin Ulusoy, Kâmil Kepecioğlu ve Kâzım Baykal'a göre)",
+      "en": "1479 (according to Şemseddin Ulusoy, Kamil Kepecioğlu and Kâzım Baykal)"
+    },
+    "start_year": 1479,
+    "end_year": 1479,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, 1479 tarihini üç yazarın bildirdiğine dayandırır; kitabe bilgisi verilmez.",
+      "en": "The book bases the 1479 date on what three authors reported; no inscription is mentioned."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "442"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kara Ali Bey",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "442"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Tuz Pazarı içinde kalmış cami, yaptıran kişinin adı kesin bilinmemekle birlikte Şemseddin Ulusoy, Kâmil Kepecioğlu ve Kâzım Baykal'a göre 1479'da Fâtih Sultan Mehmed devri ricalinden Kara Ali Bey tarafından yaptırılmıştır. Yaklaşık 9 m çaplı kubbesi, yedi sıra stalaktitli son cemaat yeri, mihrap ayeti ve yivli tuğla gövdeli minaresiyle dikkat çeker.",
+    "en": "Hidden inside the Tuz Pazarı, the mosque, according to Şemseddin Ulusoy, Kamil Kepecioğlu and Kâzım Baykal, was built in 1479 by Kara Ali Bey, one of the statesmen of Fâtih Sultan Mehmed's era, although the founder's name is not known for sure. It stands out for its dome of about 9 m diameter, a narthex with seven rows of stalactites, the mihrab verse and a grooved brick minaret."
+  },
+  "sections": [
+    {
+      "id": "kurulus",
+      "order": 1,
+      "title": {
+        "tr": "Banisi ve Yapım Tarihi",
+        "en": "Founder and Date"
+      },
+      "body": {
+        "tr": "Yaptıran kişinin adı kesin olarak bilinmemekle birlikte Şemseddin Ulusoy, Kâmil Kepecioğlu ve Kâzım Baykal'ın bildirdiklerine göre cami 1479'da Fâtih Sultan Mehmed devri ricalinden 'Kara Ali Bey' adlı bir şahıs tarafından inşa ettirilmiştir.",
+        "en": "Although the name of the person who had it built is not known for sure, according to Şemseddin Ulusoy, Kamil Kepecioğlu and Kâzım Baykal, the mosque was built in 1479 by a person named 'Kara Ali Bey', one of the statesmen of the Fâtih Sultan Mehmed era."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "442"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Tuz Pazarı'nın içinde kalmış, zarafeti gölgelenmiş bir yapıdır. Dıştan dışa 11 × 16,25 m ölçülerinde olup cephelerde iki sıra tuğla ve iki sıra moloz taş, kemerlerde kesme küfeki taşı, kemer ayaklarında düzgün taş ve tuğla kullanılmıştır. 2,30 m yüksekliğindeki Türk üçgenlerine oturan, yaklaşık 9 m çaplı kubbe kurşunla kaplıdır. Son cemaat yeri iki sıra kirpi saçaklı ve kalkan duvarlıdır; orta bölümü yedi sıra stalaktitli ve on iki dilimli kubbeli, yan bölümleri tonozludur. Üzeri kurşun kaplı son cemaat yeri tamamen kapatılmış olup doğu duvarından asimetrik bir kapı açılmıştır.",
+        "en": "It is a building inside the Tuz Pazarı whose elegance has been overshadowed. Measuring 11 × 16.25 m outside to outside, its façades are two rows of brick and two of rubble stone, arches of cut limestone and arch supports of regular stone and brick. The dome, about 9 m in diameter on Turkish triangles 2.30 m high, is lead-covered. The narthex has two rows of sawteeth at the eaves and a parapet wall; the middle section has seven rows of stalactites and a twelve-lobed dome, the side sections vaults. The lead-covered narthex is completely closed and a door opens asymmetrically from its east wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "443"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 3,
+      "title": {
+        "tr": "Mihrap",
+        "en": "Mihrab"
+      },
+      "body": {
+        "tr": "Dengeli ölçülere sahip altı sıra stalaktitli mihrap sonradan estetikten uzak biçimde boyanmıştır. Yine de sülüs hatla özenle yazılmış 'Fe velli vecheke şatra'l-mescidi'l-harâm' mihrap ayeti ve çevresindeki kuşakta Âyet'ül-kürsî ibareleri okunabilir.",
+        "en": "The well-proportioned six-row stalactite mihrab was later painted in an unaesthetic way. The mihrab verse 'Fe velli vecheke şatra'l-mescidi'l-harâm', carefully written in Thuluth, and the Ayat al-Kursi phrases in the band around it can still be read."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "443"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare doğu duvarında, harim ile son cemaat yerinin birleştiği noktada, yarısı beden duvarına gömülü biçimde tasarlanmıştır. Kaideden itibaren Türk üçgenli pabuç kısmı ve yirmi dört dilimli kaval silmeler halinde tuğladan yivli silindirik gövdesi vardır. Üç sıra kirpi saçaklı şerefe altı, mermer korkulukları ve miğfer külahıyla Bursa'daki birkaç caminin minaresine benzese de en zarif örneklerinden biri sayılır.",
+        "en": "The minaret is designed on the east wall where the prayer hall and narthex meet, half embedded in the main wall. From the base it has a transition with Turkish triangles and a grooved cylindrical brick shaft arranged in twenty-four-lobed pipe moldings. With three rows of sawteeth under the balcony, marble balustrades and a helmet-shaped spire, it resembles the minarets of several Bursa mosques but stands out as one of the most elegant."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "443"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Dış ölçüler",
+        "en": "Outside dimensions"
+      },
+      "value": "11 × 16,25",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "443"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_capi",
+      "label": {
+        "tr": "Kubbe çapı (yaklaşık)",
+        "en": "Dome diameter (approx.)"
+      },
+      "value": 9,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "443"
+        }
+      ]
+    },
+    {
+      "key": "turk_ucgeni_yukseklik",
+      "label": {
+        "tr": "Türk üçgenleri yüksekliği",
+        "en": "Height of Turkish triangles"
+      },
+      "value": "2,30",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "443"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_stalaktit",
+      "label": {
+        "tr": "Mihrap stalaktit sırası",
+        "en": "Mihrab stalactite rows"
+      },
+      "value": 6,
+      "unit": "sıra",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "443"
+        }
+      ]
+    },
+    {
+      "key": "minare_govde_dilim",
+      "label": {
+        "tr": "Minare gövde dilim sayısı",
+        "en": "Minaret shaft flutes"
+      },
+      "value": 24,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "443"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kara Ali Bey",
+      "role": {
+        "tr": "Fâtih Sultan Mehmed devri ricalinden; yazarlara göre caminin banisi (kesin değil)",
+        "en": "Statesman of Fâtih's era; the mosque's founder according to the authors (not certain)"
+      }
+    },
+    {
+      "name": "Şemseddin Ulusoy",
+      "role": {
+        "tr": "1479 tarihini ve banisini bildiren yazarlardan",
+        "en": "One of the authors who reported the 1479 date and founder"
+      }
+    },
+    {
+      "name": "Kâmil Kepecioğlu",
+      "role": {
+        "tr": "1479 tarihini ve banisini bildiren yazarlardan",
+        "en": "One of the authors who reported the 1479 date and founder"
+      }
+    },
+    {
+      "name": "Kâzım Baykal",
+      "role": {
+        "tr": "1479 tarihini ve banisini bildiren yazarlardan",
+        "en": "One of the authors who reported the 1479 date and founder"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mihrap-ayeti",
+      "location": {
+        "tr": "Mihrapta, sülüs hatla; çevresindeki kuşakta Âyet'ül-kürsî ibareleri",
+        "en": "In the mihrab, Thuluth; Ayat al-Kursi phrases in the surrounding band"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "Fe velli vecheke şatra'l-mescidi'l-harâm",
+      "translation": {
+        "tr": "Öyleyse yüzünü Mescid-i Harâm'a çevir",
+        "en": "Therefore turn your face towards the Masjid al-Haram"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "443"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1479",
+      "year": 1479,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kara Ali Bey tarafından yaptırıldığı bildirilir",
+        "en": "Reported as built by Kara Ali Bey"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "442"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tuzpazarı Camii, Tuz Pazarı çarşısı içinde kalmış, 11 × 16,25 m ölçülerinde geniş bir camidir. Yaklaşık 9 m çaplı kurşun kaplı kubbesi Türk üçgenlerine oturur. Önünde kapalı, kalkan duvarlı bir son cemaat yeri vardır. Mihrabı yedi sıra stalaktitlidir ve boyalıdır. Doğu duvarına yarı gömülü, yivli tuğla gövdeli, mermer korkuluklu zarif bir minaresi vardır.",
+      "en": "Tuzpazarı Mosque is a wide mosque, 11 × 16.25 m, hidden inside the Tuz Pazarı bazaar. Its lead-covered dome of about 9 m diameter sits on Turkish triangles. In front is a closed narthex with a parapet wall. The stalactite mihrab is painted. An elegant minaret, half embedded in the east wall, has a grooved brick shaft and marble balustrades."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

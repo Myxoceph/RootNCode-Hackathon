@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-cerag-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 287) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Yeşil Külliye mimarı Hacı İvaz Paşa ile bağlantı için ayrı kayıt/ilişki hedefi kitapta yok.",
+      "Banînin tam yapım yılı kitapta yok; end_year 1429 'önce' ifadesinden çıkarıldı (probable).",
+      "Onarım tarihi 'son yıllarda' olarak geçiyor; yıl yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap Hacı İvaz Paşa'yı 'Karamanoğlu'nun kuşatmasında Bursa'ya savunan' diye anlatır; cümle bozuktur ('Bursa'yı savunan' kastedildiği anlaşılıyor). Metin yeniden yazılırken anlam korunmuştur."
+      },
+      {
+        "field": "dating",
+        "note": "II. Murad devrinde yapıldığı söylenir; kesin tarih yok, yalnızca banînin 1429 vefatından önceye tarihlenir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çerağ (Çırağ) Bey Camii",
+    "en": "Çerağ (Çırağ) Bey Mosque"
+  },
+  "subtitle": {
+    "tr": "Şeyh Çerağ Bey'in 1429'dan önce yaptırdığı erken Osmanlı camisi",
+    "en": "Early Ottoman mosque built by Shaykh Çerağ Bey before 1429"
+  },
+  "alternate_names": [
+    {
+      "tr": "Çırağ Bey Camii",
+      "en": "Çırağ Bey Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "erken Osmanlı",
+    "avlulu",
+    "köfeki taşı",
+    "stalaktit",
+    "Hisar içi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollagürani",
+    "address": "Hisar içi, Mollagürani Mahallesi, Çerağ Bey Sokağı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "287"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1429'dan önce",
+      "en": "Before 1429"
+    },
+    "start_year": null,
+    "end_year": 1429,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap, Çerağ Bey'in vefatı 1429 olduğuna göre caminin bu tarihten önce inşa edildiğinin kabul edildiğini belirtir; kesin yapım yılı verilmez.",
+      "en": "The book says that since Çerağ Bey died in 1429 the mosque is accepted to have been built before this date; no exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "287"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şerefüddin Şeyh Çerağ Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "287"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "II. Murad devrinde, Hacı İvaz Paşa'nın kardeşi Şerefüddin Şeyh Çerağ Bey tarafından yaptırılan, 1429'dan önce inşa edildiği kabul edilen küçük bir erken Osmanlı camisi. Aslen kubbeliyken sonradan ahşap çatıyla örtülmüş, son yıllarda kapsamlı onarımla mihrap, minber ve minaresi yenilenmiştir. Avluda Çerağ Bey'e ait olduğu belirtilen mermer kaplı bir mezar vardır.",
+    "en": "A small early Ottoman mosque built during the reign of Murad II by Şerefüddin Shaykh Çerağ Bey, brother of Hacı İvaz Paşa, and accepted to predate 1429. Originally domed, it was later covered with a wooden roof; in recent years a comprehensive restoration renewed its mihrab, minbar and minaret. The courtyard holds a marble-covered tomb said to belong to Çerağ Bey."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banî",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Hisar içi, Mollagürani Mahallesi, Çerağ Bey Sokağı'nda yer almaktadır. II. Murad devrinde, Karamanoğlu'nun kuşatmasında Bursa'yı savunan ve aynı zamanda Yeşil Külliye'nin de mimarı olan Hacı İvaz Paşa'nın kardeşi Şerefüddin Şeyh Çerağ Bey tarafından yaptırılmıştır. Çerağ Bey'in vefatı 1429 olduğuna göre bu tarihten önce inşa edildiği kabul edilmektedir.",
+        "en": "The mosque is located in Osmangazi District, Hisar içi, Mollagürani Neighborhood, on Çerağ Bey Street. The mosque was built by Şerefüddin Shaykh Çerağ Bey, the brother of Hacı İvaz Paşa, who defended Bursa during the siege of Karamanoğlu during the reign of Murad II and was also the architect of the Yeşil Complex. Since Çerağ Bey died in 1429, it is accepted that the mosque was built before this date."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "287"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kareye yakın dikdörtgen planlı (iç ölçüler 7,00 × 6,45 m), 26,75 m²'lik son cemaat yeri ve avlusu olan tipik bir erken Osmanlı devri camisidir. Aslında kubbeli iken sonradan ahşap çatıyla örtülmüştür. Beden duvarları kesme köfeki taşı, tuğla örgü ve horasan harcıyla dönem özelliklerini yansıtır. Doğu beden duvarındaki minare kesme taş ve tuğlayla almaşık teknikte yapılmıştır. Güneydoğu köşe pahlanarak üç sıra tuğla stalaktitle hafifletilmiştir. Doğu duvarında dikdörtgen çerçeveli, demir şebekeli, üstte sivri kemerli iki pencere vardır. Mihrap kavsarası beş sıra stalaktitlidir. Harime giriş avluya bakan kuzey cepheden sağlanır; avlu bir sıra kesme, iki sıra harman tuğla ile almaşık örülmüştür.",
+        "en": "It is a typical early Ottoman period mosque with an interior dimension of 7.00×6.45 m, a rectangular plan close to square, and a narthex and courtyard of 26.75 m². Originally a domed structure, it was later covered with a wooden roof. The main walls reflect the characteristics of the period with their cut stone and brickwork and Khorasan mortar. The minaret located on the eastern main wall is built with alternating cut stone and brick techniques. The south-east corner of the building is beveled and lightened with three rows of brick stalactites. On the east wall there are two rectangular framed windows with iron grids and pointed arches above. The mihrab hood has five rows of stalactites. The entrance to the prayer hall is from the northern façade overlooking the courtyard, which is walled with one row of cut bricks and two rows of blended bricks in alternating masonry style."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "287"
+        }
+      ]
+    },
+    {
+      "id": "avlu-mezar",
+      "order": 3,
+      "title": {
+        "tr": "Avlu ve Mezar",
+        "en": "Courtyard and Tomb"
+      },
+      "body": {
+        "tr": "Avluda, Çerağ Bey'e ait olduğu belirtilen mermer kaplama bir mezar bulunmaktadır.",
+        "en": "In the courtyard, there is a marble-covered tomb said to belong to Çerağ Bey."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "287"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Cami son yıllarda kapsamlı bir onarım geçirmiş; mihrabı, minberi ve yalnızca şerefe altına kadar kısmı kalmış olan minaresi tamamen yenilenerek özgün boyutuna getirilmiştir.",
+        "en": "In recent years, the mosque has undergone extensive restoration, and its mihrab, minbar and minaret, of which only the part below the balcony remained, have been completely renovated and brought back to its original size."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "287"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "7,00 × 6,45",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "287"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_avlu_alan",
+      "label": {
+        "tr": "Son cemaat yeri ve avlu alanı",
+        "en": "Narthex and courtyard area"
+      },
+      "value": 26.75,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "287"
+        }
+      ]
+    },
+    {
+      "key": "bani_vefat",
+      "label": {
+        "tr": "Banînin vefat yılı",
+        "en": "Founder's year of death"
+      },
+      "value": 1429,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "287"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şerefüddin Şeyh Çerağ Bey",
+      "role": {
+        "tr": "Banî; vefatı 1429",
+        "en": "Founder; died 1429"
+      }
+    },
+    {
+      "name": "Hacı İvaz Paşa",
+      "role": {
+        "tr": "Banînin kardeşi; Bursa savunmasında yer almış, Yeşil Külliye'nin mimarı",
+        "en": "Founder's brother; defended Bursa and architect of the Yeşil Complex"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1429",
+      "year": 1429,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Çerağ Bey'in vefatı; caminin bu tarihten önce yapıldığı kabul edilir",
+        "en": "Death of Çerağ Bey; the mosque is accepted to predate this"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "287"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çerağ Bey Camii, Hisar içinde küçük, kareye yakın planlı bir camidir. Duvarlar kesme köfeki taşı ve tuğlanın almaşık örgüsüdür; güneydoğu köşe pahlanarak üç sıra tuğla stalaktitle hafifletilmiştir. Mihrap kavsarası beş sıra stalaktitlidir. Üzeri ahşap çatılıdır; girişi kuzeydeki avludan verilir ve avluda mermer kaplı bir mezar bulunur.",
+      "en": "Çerağ Bey Mosque in Hisar içi is a small mosque on a nearly square plan. Its walls alternate cut köfeki stone and brick; the south-east corner is beveled and lightened with three rows of brick stalactites. The mihrab hood has five rows of stalactites. It has a wooden roof; entrance is from the courtyard to the north, which holds a marble-covered tomb."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

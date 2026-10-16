@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-tavukcu-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 441) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Bazergânzade Mehmet Vakfı için ayrı kayıt/vakfiye bilgisi yok.",
+      "Tatarlar, Sivasiler, Zağferanlık ve Kiremitçi camileri için hedef kayıt bilgisi yok (benzer üslupla yeniden inşa)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf.name",
+        "note": "Türkçe metin 'Bazergânzade Mehmet Vakfı', İngilizce 'Bazergânzade Mehmed Foundation' yazar; Türkçe yazım esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tavukçu Mescidi",
+    "en": "Tavukçu Masjid"
+  },
+  "subtitle": {
+    "tr": "1938'de konut olarak satılan, 2011'de kamulaştırılıp 2014'te yeniden ibadete açılan mescit",
+    "en": "Masjid sold as a residence in 1938, expropriated in 2011 and reopened for worship in 2014"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mescit",
+    "kamulaştırma",
+    "restorasyon",
+    "çarşı",
+    "Bazergânzade Mehmet Vakfı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Şehreküstü",
+    "address": "Tavukçu Sokak, No: 9/A",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "441"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "15. yüzyılın ilk yarısı (tahmini)",
+      "en": "First half of the 15th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kesin inşa tarihi bilinmemekle birlikte 15. yüzyılın ilk yarısında yapıldığı düşünülmektedir.",
+      "en": "Although the exact date is unknown, it is thought to have been built in the first half of the 15th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "441"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Bazergânzade Mehmet Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "441"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Şehreküstü'nde, çarşının uzantısı olan mahallede yer alan, 15. yüzyılın ilk yarısında yapıldığı düşünülen mescit. 1938'de müzayedeyle konut olarak satılmış, alt katı dükkân, üst katı ev olarak kullanılmış; 2011'de kamulaştırılıp restore edilmiş ve 2014'te ibadete açılmıştır.",
+    "en": "A masjid in Şehreküstü, in the neighborhood that extends the bazaar, thought to have been built in the first half of the 15th century. It was sold at auction in 1938 as a residence, used as a shop below and a house above, expropriated and restored in 2011, and opened for worship in 2014."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Kesin inşa tarihi bilinmemekle birlikte 15. yüzyılın ilk yarısında yapıldığı düşünülmektedir. Bazergânzade Mehmet Vakfı adına kayıtlı yapı 1938'de müzayedeye çıkarılmış ve açık artırmayla İsmail Hakkı adlı bir vatandaşa konut olarak satılmıştır. Yıllarca alt katı dükkân, üst katı ev olarak kullanılmıştır. 1938'den 2011'e kadar tapu kayıtlarında ev görünmüş; çarşının uzantısı olan mahallenin dükkânları arasında kalmış, ayakkabıcılar tarafından depo ve dükkân olarak kullanılmış ve harap olmuştur. 2011'de Vakıflar Bölge Müdürlüğü ile Bursa Valiliği arasında yapılan protokolle kamulaştırılmış, park ve yolda kalan bölümler de cami alanına dâhil edilerek restore edilmiş ve 2014'te ibadete açılmıştır.",
+        "en": "The exact date is unknown, but it is thought to have been built in the first half of the 15th century. Registered under the Bazergânzade Mehmed Foundation, it was put up for auction in 1938 and sold to a citizen named İsmail Hakkı as a residence. For years the ground floor was used as a shop and the upper floor as a house. From 1938 to 2011 it appeared as a house in the land registry; surrounded by shops of the neighborhood that extends the bazaar, it was used by shoemakers as a warehouse and shop and fell into ruin. In 2011 it was expropriated under a protocol between the Regional Directorate of Foundations and the Bursa Governorship, restored with the park and road portions included in the masjid area, and opened for worship in 2014."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "441"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yığma duvarlı, kirpi saçaklı ve ahşap çatılı bir yapıdır. Moloz taş ve tuğla örgülü beden duvarları, söveli ve tuğla kemerli pencereleri, camekân içine alınmış son cemaat yeriyle mimari yapısı büyük ölçüde değişmiştir. Son yıllarda ihya edilen Tatarlar, Sivasiler, Zağferanlık ve Kiremitçi camileri gibi yapılara benzer biçimde yeniden inşa edilmiştir.",
+        "en": "It has masonry walls, sawteeth at the eaves and a wooden roof. Its architecture has changed greatly, with main walls of rubble stone and brick, windows with frames and brick arches, and a narthex enclosed in glass. It was rebuilt in a style similar to recently revived structures such as the Tatarlar, Sivasiler, Zağferanlık and Kiremitçi Mosques."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "441"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "satis_yili",
+      "label": {
+        "tr": "Konut olarak satış yılı",
+        "en": "Year sold as a residence"
+      },
+      "value": 1938,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "441"
+        }
+      ]
+    },
+    {
+      "key": "kamulastirma_yili",
+      "label": {
+        "tr": "Kamulaştırma / restorasyon yılı",
+        "en": "Expropriation / restoration year"
+      },
+      "value": 2011,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "441"
+        }
+      ]
+    },
+    {
+      "key": "ibadete_acilis_yili",
+      "label": {
+        "tr": "İbadete açılış yılı",
+        "en": "Year opened for worship"
+      },
+      "value": 2014,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "441"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İsmail Hakkı",
+      "role": {
+        "tr": "1938'de yapıyı müzayedeyle konut olarak satın alan vatandaş",
+        "en": "Citizen who bought the building at auction in 1938 as a residence"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "muzayede-1938",
+      "year": 1938,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Müzayedeyle İsmail Hakkı'ya konut olarak satıldı",
+        "en": "Sold at auction to İsmail Hakkı as a residence"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "441"
+        }
+      ]
+    },
+    {
+      "id": "kamulastirma-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kamulaştırıldı ve restore edildi",
+        "en": "Expropriated and restored"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "441"
+        }
+      ]
+    },
+    {
+      "id": "acilis-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "İbadete açıldı",
+        "en": "Opened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "441"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tavukçu Mescidi, Şehreküstü'nde çarşı dükkânları arasında küçük bir mescittir. Yığma duvarlı, kirpi saçaklı ve ahşap çatılıdır; beden duvarları moloz taş ve tuğladan, pencereleri söveli ve tuğla kemerlidir. Son cemaat yeri camekânla kapatılmıştır.",
+      "en": "Tavukçu Masjid is a small masjid among the bazaar shops in Şehreküstü. It has masonry walls, sawteeth at the eaves and a wooden roof; the walls are rubble stone and brick, and the windows have frames and brick arches. The narthex is enclosed in glass."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

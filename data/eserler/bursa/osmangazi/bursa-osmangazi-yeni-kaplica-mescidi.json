@@ -1,0 +1,336 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-yeni-kaplica-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 479) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Kesin banî ve inşa yılı belirlenmeli (bkz. data_quality_notes); era bu yüzden boş bırakıldı.",
+      "Hedef id bursa-osmangazi-yeni-kaplica-hamami veri setinde henüz yoksa oluşturulmalı ya da doğrulanmalı.",
+      "Vakfiye ve mimar kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder/dating",
+        "note": "Kitap, mescidin 1680'den sonra Yusuf Ağa tarafından yaptırıldığını söylüyor, ancak H. 28 Zilhicce 955 / M. 28 Ocak 1549 tarihli başka bir kayıtta Evhad Fakih'in yaptırdığı yazıyor. 1549 kaydı 1680'den öncedir; ikisi birlikte doğru olamaz (olsa olsa ilk yapı ve yenileme olabilir, kitap bunu belirtmiyor). Kaynağa sadık kalındı, 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yeni Kaplıca Mescidi",
+    "en": "Yeni Kaplıca Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Gazi Akdemir Mescidi",
+      "en": "Gazi Akdemir Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "kaplıca",
+    "cuma namazı",
+    "Gaziakdemir",
+    "minaresiz"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Gaziakdemir",
+    "address": "Yeni Kaplıca Caddesi No: 7 (Yeni Kaplıca Hamamı ile aynı avlu)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "479"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1680'den sonra (başka bir kayda göre 1549 tarihli kayıtta anılıyor)",
+      "en": "After 1680 (another record dated 1549 names a different founder)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap iki bilgi veriyor: Yusuf Ağa'nın 1680'den sonra yaptırdığı bilinir; H. 28 Zilhicce 955 / M. 28 Ocak 1549 tarihli bir kayıt ise Evhad Fakih'in yaptırdığını söyler. Kesin yıl yok.",
+      "en": "The book gives two pieces of information: Yusuf Ağa is known to have built it after 1680; a record of AH 28 Dhul-Hijjah 955 / 28 January 1549 says Evhad Fakih built it. No exact year."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "479"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yusuf Ağa",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "479"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Gaziakdemir Mahallesi'nde, Yeni Kaplıca Hamamı ile aynı avluda yer alan, hamama gelenlerin cuma namazı kılabilmesi için yapılmış, minaresiz küçük mescit. Banisi 1680 sonrası Yusuf Ağa olarak bilinir; 1549 tarihli bir kayıtta ise Evhad Fakih'in yaptırdığı yazar.",
+    "en": "A small masjid without a minaret in the same courtyard as the Yeni Kaplıca Bath in the Gaziakdemir Neighborhood, built so that bathgoers could perform Friday prayers. Its founder is known as Yusuf Ağa after 1680, while a record dated 1549 says it was built by Evhad Fakih."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Gaziakdemir Mahallesi, Yeni Kaplıca Caddesi No: 7'de, Yeni Kaplıca Hamamı ile aynı avlu içinde yer alır. Kitabesi bulunmayan mescidin, 1680 yılından sonra Yusuf Ağa tarafından, cuma günleri hamama gelenlerin cuma namazlarını kılabilmeleri amacıyla yaptırıldığı bilinmektedir. Ancak H. 28 Zilhicce 955 / M. 28 Ocak 1549 tarihli bir başka kayıtta, mescidin aynı amaçla “Evhad Fakih” adında bir hayırsever tarafından yaptırıldığı bilgisi de yer almaktadır.",
+        "en": "The masjid is at Yeni Kaplıca Street No. 7, Gaziakdemir Neighborhood, in the same courtyard as the Yeni Kaplıca Bath. It is known that the masjid, which has no inscription, was built by Yusuf Ağa after 1680 so that those who came to the bath on Fridays could perform their Friday prayers. However, another record dated 28 Dhul-Hijjah AH 955 / 28 January AD 1549 says it was built for the same purpose by a philanthropist named “Evhad Fakih”."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Beden duvarları moloz taş ve tuğla kullanılarak almaşık teknikte örülmüştür. Dıştan dışa 13.00 × 10.00 m ölçülerindeki yapı ahşap kırma çatıyla örtülmüş, üzeri kiremitle kaplanmıştır. Üç tarafı duvarla çevrili son cemaat mahaline 10 basamaklı mermer merdivenle çıkılır; 3.50 m derinliğindeki bu bölüm ahşap tavanlı ve 2 m yüksekliğinde kirpi saçaklıdır, sağ ve sol kısımları imam odası ile kadınlar mahfili olarak düzenlenmiştir. Harim 7.65 × 5.00 m ölçülerindedir ve ahşap tavanla örtülüdür. İç mekân, mihrap duvarı hariç, her cephede altlı üstlü ikişer pencereyle aydınlanır; alt pencereler dikdörtgen, üst pencereler yuvarlak kemerlidir. Mihrap, çevresi iki ayrı renkte mermerle kaplı çokgen planlı bir niştir. Minber ve kürsü sade ahşap işçiliklidir. Yapının minaresi yoktur.",
+        "en": "The main walls are rubble stone and brick in an alternating technique. The building, 13.00 x 10.00 m outside to outside, is covered with a tiled wooden hipped roof. The narthex, walled on three sides, is reached by a 10-step marble staircase; it is 3.50 m deep, with a wooden ceiling and a sawtooth cornice at 2 m, and its right and left parts are arranged as the imam's room and the women's section. The prayer hall measures 7.65 x 5.00 m and has a wooden ceiling. Except for the mihrab wall, the interior is lit by two windows on each side, one above the other; the lower windows are rectangular and the upper ones round-arched. The mihrab is a polygonal niche surrounded by marble of two colors. The minbar and pulpit are plain wood. The building has no minaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-kullanim",
+      "order": 3,
+      "title": {
+        "tr": "Onarım ve Kullanım",
+        "en": "Repair and Use"
+      },
+      "body": {
+        "tr": "Mescidin, Bursa Mevlevihanesi şeyhi Mehmed Şemseddin Efendi'nin annesinin katkılarıyla 9 Ağustos 1893'te onarıldığına dair bir bilgi vardır. Günümüzde mescit, kaplıcaya gelenlerin ibadetlerini yapabildiği küçük ama işlevsel bir yapı olarak kullanılmaktadır.",
+        "en": "There is information that the masjid was repaired on 9 August 1893 with the contributions of the mother of Mehmed Şemseddin Efendi, Shaykh of the Bursa Mevlevi Lodge. Today it is used as a small but functional building where visitors to the spa can pray."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Dış ölçü",
+        "en": "External dimensions"
+      },
+      "value": "13.00 × 10.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "key": "merdiven_basamak",
+      "label": {
+        "tr": "Merdiven basamak sayısı",
+        "en": "Number of stair steps"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "7.65 × 5.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 0,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Yusuf Ağa",
+      "role": {
+        "tr": "Kitaba göre 1680'den sonra mescidi yaptıran",
+        "en": "Had the masjid built after 1680, according to the book"
+      }
+    },
+    {
+      "name": "Evhad Fakih",
+      "role": {
+        "tr": "1549 tarihli bir kayda göre mescidi yaptıran hayırsever",
+        "en": "Philanthropist who built the masjid, according to a record of 1549"
+      }
+    },
+    {
+      "name": "Mehmed Şemseddin Efendi",
+      "role": {
+        "tr": "Bursa Mevlevihanesi şeyhi; annesi 1893 onarımına katkıda bulundu",
+        "en": "Shaykh of the Bursa Mevlevi Lodge; his mother contributed to the 1893 repair"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kayit-1549",
+      "year": 1549,
+      "date": "1549-01-28",
+      "hijri": "28 Zilhicce 955",
+      "type": "record",
+      "title": {
+        "tr": "Bir kayıtta mescidin Evhad Fakih tarafından yaptırıldığı yazılıdır",
+        "en": "A record states the masjid was built by Evhad Fakih"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1893",
+      "year": 1893,
+      "date": "1893-08-09",
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Mehmed Şemseddin Efendi'nin annesinin katkılarıyla onarıldı",
+        "en": "Repaired with contributions from the mother of Mehmed Şemseddin Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-yeni-kaplica-hamami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Mescit, Yeni Kaplıca Hamamı ile aynı avlu içinde yer alır; cuma günleri hamama gelenlerin namaz kılması için yapılmıştır.",
+        "en": "The masjid stands in the same courtyard as the Yeni Kaplıca Bath and was built so that bathgoers could pray on Fridays."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "479"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yeni Kaplıca Mescidi, kaplıca hamamının avlusunda kiremit örtülü kırma çatılı küçük bir yapıdır. Üç tarafı duvarla çevrili son cemaat mahaline on basamaklı mermer merdivenle çıkılır; sağ ve solunda imam odası ile kadınlar mahfili bulunur. Ahşap tavanlı ibadet salonunun mihrabı iki renk mermerle kaplı çokgen bir nişten oluşur. Mescidin minaresi yoktur.",
+      "en": "Yeni Kaplıca Masjid is a small building with a tiled hipped roof in the courtyard of the spa bath. A ten-step marble staircase leads to the narthex, walled on three sides, with the imam's room and women's section on either side. The wooden-ceilinged prayer hall has a mihrab in the form of a polygonal niche clad in two-colored marble. The masjid has no minaret."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

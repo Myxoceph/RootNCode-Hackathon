@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-simkes-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Banî kitapta kesin değil ('dönemin tüccarları' tahmini); 'founder' null.",
+      "Koza Hanı için hedef id ('bursa-osmangazi-koza-hani') varsayıldı: ilçesi bu bölükte açıkça yazmıyor, kayıt oluşturulduğunda teyit edilmeli.",
+      "Caminin özel mülkiyete geçiş ve ambar olarak kullanım tarihleri kitapta yok.",
+      "Onarım/yeniden inşa tarihi kitapta yok (cephe ve son cemaat 'yeniden inşa edilmiş' deniyor)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap 'yan sahınlar geniş, orta sahınlar dar' ifadesinde 'sahın' sözcüğünü kullanıyor (Türkçe metin); İngilizce metin 'naves' diyor. Anlam son cemaat yerinin gözleriyle ilgili görünüyor, ancak kitap açıklamıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Simkeş Camii",
+    "en": "Simkeş Mosque"
+  },
+  "subtitle": {
+    "tr": "Koza Hanı ile aynı adı taşıyan tek kubbeli, minaresiz cami",
+    "en": "A single-domed mosque without minaret, sharing its name with the Koza Han"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sırmakeş Camii",
+      "en": "Sırmakeş Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Simkeş",
+    "Sırmakeş",
+    "tüccar camii",
+    "minaresiz",
+    "tek kubbeli",
+    "Koza Hanı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Orhan Mahallesi",
+    "address": "Gümüşçeken Caddesi, Simkeş Çıkmazı, No:1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "415"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyıl sonları (tahmini)",
+      "en": "Late 15th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap caminin dönemin tüccarları tarafından XV. yüzyılın sonlarında yapıldığını tahmin eder; kesin yıl vermez.",
+      "en": "The book estimates it was built by merchants of the period at the end of the 15th century; no exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "415"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Koza Hanı'na verilen 'Simkeş / Sırmakeş' adını taşıyan, XV. yüzyıl sonlarında dönemin tüccarlarınca yapıldığı tahmin edilen tek kubbeli, minaresiz cami. Bir dönem özel mülkiyete geçip ambar olarak kullanılmıştır; bugün sağlam ve ibadete açıktır.",
+    "en": "A single-domed mosque without a minaret, bearing the name 'Simkeş / Sırmakeş' also given to the Koza Han, believed to have been built by merchants at the end of the 15th century. It was once privately owned and used as a warehouse; today it is intact and open for worship."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Ad",
+        "en": "Overview and Name"
+      },
+      "body": {
+        "tr": "Koza Hanı'na 'Simkeş' veya 'Sırmakeş' denildiği gibi cami de aynı adla anılır; mahallenin eski adı da Simkeş Mahallesi'ydi. Caminin dönemin tüccarları tarafından XV. yüzyılın sonlarında yapıldığı tahmin edilmektedir. Bir dönem özel mülkiyete geçmiş ve ambar olarak kullanılmıştır.",
+        "en": "Just as the Koza Han is called 'Simkeş' or 'Sırmakeş', this mosque is called by the same name; the old name of the neighborhood was Simkeş Neighborhood. The mosque is believed to have been built by merchants of the period at the end of the 15th century. It was privately owned for a period and used as a warehouse."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "415"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Son cemaat yeriyle birlikte dikdörtgen planlı cami, 7,00 × 7,35 m ölçülerinde tek kubbeli ana ibadet mekânı ile 2,55 × 6,68 m ölçülerinde bir son cemaat mahallinden oluşur. Kalkan duvarlı cephesi ve son cemaat mahalli yeniden inşa edilmiş, üzeri tonozla örtülmüştür; yan sahınlar geniş, orta sahınlar dar ve tahfif kemerlidir. Beden duvarları tamamen moloz taşla örülmüş, son cemaat cephesi ve kasnak kesme küfeki taşıyla işlenmiştir; harim duvarları ve kasnak kirpi saçaklıdır. Doğu ve batı duvarlarında üçer, kasnakta üç olmak üzere dokuz pencere vardır; güney duvarındaki iki pencere değiştirilerek dolap haline getirilmiştir. Kubbeye geçiş içeride üçgenlerle sağlanır. Mihrap 0,50 m derinliğinde, dikdörtgen çerçeveli, sivri kemerli ve sadedir. Minber ve kadınlar mahfili günümüz ahşap işçiliğinin nadide örneklerindendir. Caminin minaresi yoktur.",
+        "en": "Rectangular in plan including the narthex, the mosque consists of a single-domed main prayer hall of 7.00 × 7.35 m and a 2.55 × 6.68 m narthex. The parapet-walled facade and narthex were rebuilt and vaulted; the side bays are wide and the middle bays narrow with relieving arches. The main walls are entirely rubble stone, while the narthex facade and drum are of cut limestone; the hall walls and drum have sawtooth eaves. Nine windows light it: three each on the east and west walls and three on the drum; two south-wall windows were converted into cupboards. The dome transition is by triangles. The mihrab is 0.50 m deep, rectangular-framed, pointed-arched and plain. The minbar and women's gallery are rare examples of contemporary woodwork. The mosque has no minaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "415"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "7,00 × 7,35",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "415"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri",
+        "en": "Narthex"
+      },
+      "value": "2,55 × 6,68",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "415"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Windows"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "415"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_derinligi",
+      "label": {
+        "tr": "Mihrap derinliği",
+        "en": "Mihrab depth"
+      },
+      "value": "0,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "415"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 0,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "415"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Dönemin tüccarları",
+      "role": {
+        "tr": "Tahmini banîler",
+        "en": "Presumed founders (merchants of the period)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-koza-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Camiyle aynı 'Simkeş / Sırmakeş' adını taşır; Koza Hanı'na da bu ad verilir.",
+        "en": "The mosque shares the name 'Simkeş / Sırmakeş' with the Koza Han."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "415"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Moloz taş duvarlı, dikdörtgen planlı, tek kubbeli küçük bir camidir ve minaresi yoktur. Kuzeyde, yeniden inşa edilmiş, tonozlu ve kesme küfeki taşlı bir son cemaat yeri bulunur. İçeride sade, sivri kemerli bir mihrap, ahşap minber ve kadınlar mahfili vardır; harim toplam dokuz pencereyle aydınlanır.",
+      "en": "A small single-domed rectangular mosque with rubble-stone walls and no minaret. On the north is a rebuilt, vaulted narthex of cut limestone. Inside are a plain pointed-arch mihrab, a wooden minbar and a women's gallery; nine windows light the hall."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,298 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Caminin banisi kesin bilinmiyor; 'founder' null. Kitap hangi Paşa'dan dolayı 'Paşa Camii' adının verildiğini söylemiyor.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Onarım tarihleri kitapta yok ('çok kez onarıldı' deniyor)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap iki farklı yapım görüşü veriyor: H. 1323-1325 / M. 1905-1907 (bölge halkı) ve H. 1319 / M. 1901 (Kırım muhacirleri, Ahmet Vefik Paşa dönemi). Hicri-miladi eşleşmeler birbiriyle uyumlu; tarih 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Paşa Camii",
+    "en": "Paşa Mosque"
+  },
+  "subtitle": {
+    "tr": "Kitabesiz, banisi kesin bilinmeyen mahalle camii",
+    "en": "A neighborhood mosque without inscription, builder uncertain"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kitabesiz",
+    "Kırım muhacirleri",
+    "Alacahırka",
+    "beton sıva",
+    "meyilli arazi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alacahırka Mahallesi",
+    "address": "Orhaneli Caddesi, No: 39",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "406"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1319 / M. 1901 ya da H. 1323-1325 / M. 1905-1907 (iki görüş)",
+      "en": "AH 1319 / AD 1901 or AH 1323-1325 / AD 1905-1907 (two views)"
+    },
+    "start_year": 1901,
+    "end_year": 1907,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap iki görüş aktarır: bölge halkının 1905-1907'de yaptığı ya da Ahmet Vefik Paşa döneminde Kırım'dan gelen muhacirlerin 1901'de yaptığı. Yıl aralığı bu iki görüşün uç değerlerinden alındı.",
+      "en": "The book gives two views: built by local people in 1905-1907, or by immigrants from Crimea in 1901 in the time of Ahmet Vefik Paşa. The range spans the extremes of both views."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "406"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kitabesi bulunmayan, kimin yaptırdığı kesin bilinmeyen camidir; bir görüşe göre 1905-1907'de bölge halkı, diğerine göre 1901'de Kırım'dan gelen muhacirler yaptırmıştır. Meyilli arazide, on basamaklı merdivenle girilen yapı çok onarım geçirmiş ve özgün hâlini büyük ölçüde yitirmiştir.",
+    "en": "A mosque without an inscription whose builder is not known for certain: by one view it was built by local people in 1905-1907, by another by Crimean immigrants in 1901. On sloping land, entered by a ten-step staircase, it has been repaired many times and has largely lost its original form."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Kitabesi bulunmayan caminin kimin tarafından yaptırıldığı kesin olarak bilinmemektedir. Bir görüşe göre H. 1323-1325 / M. 1905-1907 yıllarında bölge halkı tarafından inşa edilmiştir; diğer bir görüşe göre H. 1319 / M. 1901'de Ahmet Vefik Paşa döneminde Kırım'dan göç ederek bu civara yerleşen muhacirler yaptırmıştır. Cami birçok kez onarım görmüş ve özgün yapısını büyük ölçüde yitirmiştir.",
+        "en": "It is not known for certain who built the mosque, which has no inscription. According to one view it was built by the local people in AH 1323-1325 / AD 1905-1907; according to another, by immigrants who came from Crimea and settled in the area during the time of Ahmet Vefik Paşa in AH 1319 / AD 1901. The mosque has been repaired many times and has lost much of its original structure."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Meyilli arazide yol kotundan yüksekte kalan giriş kapısına on basamaklı merdivenle çıkılır; merdivenlerin altında abdestlik ve helalar vardır. 10,00 × 14,00 m ölçülerindeki dikdörtgen planlı yapı ahşap kırma çatı ve kiremitle örtülüdür. Duvarla çevrili kapalı bir son cemaat mahalli vardır; kare planlı harim yaklaşık 100 m²'dir. Cami içten ve dıştan tamamen beton sıvalıdır. Kuzeybatı köşesindeki küçük, silindirik minarenin tek şerefesinin altı stalaktitlidir; konik sivri külahı betondan yapılmış olup minare tamamen sıvalıdır. Ahşap tavanlı harim altta sekiz, üstte beş dikdörtgen pencereyle aydınlanır. Minber ahşap, mihrap nişi dilimli beyaz mermerle kaplıdır; hanımlar mahfili kuzey girişinin üzerindedir.",
+        "en": "Because of the sloping site, the entrance is above road level and reached by a ten-step staircase; ablution facilities and toilets are under the stairs. The rectangular building measures 10.00 × 14.00 m under a wooden hipped tiled roof. It has a closed, walled narthex and a square prayer hall of about 100 m². It is completely concrete-plastered inside and out. The small cylindrical minaret in the northwest corner has a single balcony with stalactites beneath and a concrete conical spire, and is fully plastered. The wooden-ceilinged prayer hall is lit by eight rectangular windows below and five above. The minbar is wooden and the mihrab niche is faced with white marble panels; the women's gallery is above the north entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan dimensions"
+      },
+      "value": "10,00 × 14,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    },
+    {
+      "key": "harim_alani",
+      "label": {
+        "tr": "Harim alanı",
+        "en": "Prayer hall area"
+      },
+      "value": 100,
+      "unit": "m²",
+      "note": {
+        "tr": "Kitap 'yaklaşık' diyor.",
+        "en": "The book says 'approximately'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    },
+    {
+      "key": "giris_basamak",
+      "label": {
+        "tr": "Giriş merdiveni basamak sayısı",
+        "en": "Entrance steps"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    },
+    {
+      "key": "pencere_alt",
+      "label": {
+        "tr": "Harim alt pencere sayısı",
+        "en": "Lower windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    },
+    {
+      "key": "pencere_ust",
+      "label": {
+        "tr": "Harim üst pencere sayısı",
+        "en": "Upper windows"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ahmet Vefik Paşa",
+      "role": {
+        "tr": "İkinci görüşe göre cami onun döneminde yapıldı",
+        "en": "Under the second view, the mosque was built in his time"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1901",
+      "year": 1901,
+      "date": null,
+      "hijri": "1319",
+      "type": "construction",
+      "title": {
+        "tr": "Bir görüşe göre Kırım muhacirleri tarafından inşa edildi",
+        "en": "By one view, built by Crimean immigrants"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    },
+    {
+      "id": "insa-1905-1907",
+      "year": 1905,
+      "date": null,
+      "hijri": "1323-1325",
+      "type": "construction",
+      "title": {
+        "tr": "Diğer görüşe göre bölge halkı tarafından inşa edildi (1905-1907)",
+        "en": "By the other view, built by local people (1905-1907)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "406"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Meyilli bir arazide, on basamaklı merdivenle çıkılan, dikdörtgen planlı ve kırma çatılı bir camidir; içi ve dışı beton sıvalıdır. Kuzeybatı köşesinde küçük, silindirik bir minare yükselir. Duvarlarla kapatılmış bir son cemaat yeri vardır. Ahşap tavanlı kare harimde ahşap minber, beyaz mermerle kaplı mihrap nişi ve kuzey girişinin üstünde hanımlar mahfili bulunur.",
+      "en": "A rectangular, hipped-roof mosque on a slope, reached by a ten-step staircase, concrete-plastered inside and out. A small cylindrical minaret rises at the northwest corner. It has a closed narthex. The square wooden-ceilinged prayer hall has a wooden minbar, a white-marble-faced mihrab niche and a women's gallery above the north entrance."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

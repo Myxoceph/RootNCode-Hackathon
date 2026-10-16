@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-imaret-i-isa-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 345-346) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Cami ile medrese ve imaretin kaldırılma/yol genişletme tarihleri kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenmeli.",
+      "Çağ (era) kitapta belirtilmiyor; 15. yüzyıl tarihi nedeniyle 'erken-osmanli' girildi, veri ekibi gözden geçirmeli.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap inşa yılını vermez; yalnızca vakfiye tarihi (H. 846 / M. 1442) ve 'az bir süre önce inşa edildiği düşünülmektedir' ifadesi vardır. Bu nedenle yalnızca end_year girildi ve 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İmaret-i İsa Bey Camii",
+    "en": "İmaret-i İsa Bey Mosque"
+  },
+  "subtitle": {
+    "tr": "İsa Bey'in küçük külliyesinden günümüze kalan cami",
+    "en": "The surviving mosque of İsa Bey's small complex"
+  },
+  "alternate_names": [
+    {
+      "tr": "İmaret-i İsa Bey Mescidi",
+      "en": "Imaret-i İsa Bey Masjid",
+      "note": "Kitapta 'olarak da anılan' ad"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "küçük cami",
+    "kare plan",
+    "kurşun kubbe",
+    "imaret",
+    "vakfiyeli",
+    "mukarnas"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alâaddin Bey",
+    "address": "Hastayurdu Caddesi, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "345"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Vakfiyesi H. 846 / M. 1442; kısa süre öncesinde inşa edildiği düşünülüyor",
+      "en": "Endowment charter AH 846 / AD 1442; believed built shortly before"
+    },
+    "start_year": null,
+    "end_year": 1442,
+    "hijri_year": 846,
+    "century": 15,
+    "basis": {
+      "tr": "Vakfiyesi H. 846 / M. 1442 tarihlidir; bu tarihten az bir süre önce inşa edildiği düşünülmektedir. İnşa yılı kitapta verilmez.",
+      "en": "Its endowment charter is dated AH 846 / AD 1442 and it is believed to have been built shortly before; the construction year is not given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "346"
+      }
+    ]
+  },
+  "founder": {
+    "name": "İsa Bey (Yahşi Bey oğlu Bayezid Paşa oğlu İsa Bey)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "345"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 846 / M. 1442",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "346"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "İsa Bey, cami, medrese ve aşevinden oluşan küçük külliyenin hizmet binalarının giderlerini karşılamak için evler, dükkânlar, bağlar ve bahçeler gibi gelir getiren mülkleri vakfetmiştir.",
+      "en": "İsa Bey endowed income-generating properties such as houses, shops, vineyards and gardens to cover the expenses of the service buildings of the small complex of mosque, madrasa and soup kitchen."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "345"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Yahşi Bey oğlu Bayezid Paşa oğlu İsa Bey'in cami, medrese ve aşevinden oluşan küçük külliyesinin tek ayakta kalan yapısı. Bursa'nın en küçük camilerinden olan yapı, 6,40 × 6,40 m kare planlı ve kurşun kaplı kubbelidir; vakfiyesi H. 846 / M. 1442 tarihlidir.",
+    "en": "The only surviving building of the small complex of mosque, madrasa and soup kitchen of İsa Bey, son of Bayezid Pasha, son of Yahşi Bey. Among the smallest mosques of Bursa, it has a 6.40 × 6.40 m square plan and a lead-clad dome; its endowment charter dates to AH 846 / AD 1442."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Vakıf",
+        "en": "Overview and Endowment"
+      },
+      "body": {
+        "tr": "Cami, Alâaddin Bey Mahallesi, Hastayurdu Caddesi No:2'de yer almaktadır. Yapı, cami, medrese ve aşevinden oluşan küçük bir külliyenin parçasıdır. \"İmaret-i İsa Bey Mescidi\" olarak da anılan camiyi Yahşi Bey oğlu Bayezid Paşa oğlu İsa Bey inşa ettirmiştir. İsa Bey, hizmet binalarının giderlerini karşılamak için evler, dükkânlar, bağlar ve bahçeler gibi gelir getiren mülkleri vakfetmiştir. Vakfiyesi H. 846 / M. 1442 tarihli caminin bu tarihten az bir süre önce inşa edildiği düşünülmektedir.",
+        "en": "The mosque is located at No. 2 Hastayurdu Street in Alaaddin Bey Neighborhood. The structure is part of a small social complex consisting of a mosque, a madrasa and a soup kitchen. Also known as the \"Imaret-i İsa Bey Mosque\", it was commissioned by İsa Bey, son of Bayezid Pasha, son of Yahşi Bey, who endowed income-generating properties such as houses, shops, vineyards and gardens to cover the expenses of the service buildings. The mosque, whose endowment charter is dated AH 846 / AD 1442, is believed to have been built shortly before that date."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "345-346"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Bursa camileri arasında en küçük yapılardandır. İçten içe 6,40 × 6,40 m boyutlarındaki kare planlı yapının üzeri, Türk üçgenlerine oturan kurşun kaplı bir kubbeyle örtülüdür. Duvarlar iki sıra tuğla ve bir sıra moloz taşla örülmüştür. Mihrabın kavsarası dört sıra mukarnaslıdır. Sekizgen kasnakta üç, beden duvarlarında on iki pencere vardır; alt sıradaki pencereler demir parmaklıklı ve sivri kemerli alınlıklıdır, mihrabın iki yanındaki pencereler sonradan kapatılıp dolap haline getirilmiştir. Son cemaat mahallinin caddeye bakan bölümü yol genişletme çalışmaları sırasında çapraz kesilmiş ve üçgen bir form almıştır.",
+        "en": "It is among the smallest of Bursa's mosques. The square-plan structure, measuring 6.40 × 6.40 m internally, is covered with a lead-clad dome resting on Turkish triangles. The walls are built with two rows of brick and one row of rubble stone. The mihrab's hood has four rows of muqarnas. The octagonal drum has three windows and the main walls twelve; the lower windows have iron grilles and pointed-arched pediments, and those either side of the mihrab were later blocked and turned into cupboards. The section of the narthex facing the street was cut diagonally during road widening, giving it a triangular shape."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "346"
+        }
+      ]
+    },
+    {
+      "id": "bugun",
+      "order": 3,
+      "title": {
+        "tr": "Bugünkü Durum",
+        "en": "Present Condition"
+      },
+      "body": {
+        "tr": "Zaman içinde medrese ve imaret ortadan kalkmış, sadece cami günümüze ulaşabilmiştir. Cami günümüzde bakımlı haldedir ve ibadete açıktır.",
+        "en": "Over time the madrasa and soup kitchen disappeared and only the mosque has survived. Today the mosque is well-maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "346"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "6,40 × 6,40",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "346"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnak pencere sayısı",
+        "en": "Drum windows"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "346"
+        }
+      ]
+    },
+    {
+      "key": "beden_pencere",
+      "label": {
+        "tr": "Beden duvarı pencere sayısı",
+        "en": "Body wall windows"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "346"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas_sirasi",
+      "label": {
+        "tr": "Mihrap kavsarası mukarnas sırası",
+        "en": "Mihrab hood muqarnas rows"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "346"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İsa Bey",
+      "role": {
+        "tr": "Banî; Yahşi Bey oğlu Bayezid Paşa oğlu",
+        "en": "Founder; son of Bayezid Pasha, son of Yahşi Bey"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1442",
+      "year": 1442,
+      "date": null,
+      "hijri": "846",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi (cami bundan az önce yapılmış sayılıyor)",
+        "en": "Endowment charter drawn up (mosque believed built shortly before)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "346"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İmaret-i İsa Bey Camii, kare planlı, tek kubbeli çok küçük bir camidir. Kubbe kurşunla kaplıdır ve Türk üçgenlerine oturur. Duvarlar tuğla ve moloz taşla örülmüştür. Mihrabın kavsarası dört sıra mukarnaslıdır. Son cemaat yerinin caddeye bakan köşesi yol genişletmesi sırasında çapraz kesilerek üçgen biçim almıştır.",
+      "en": "İmaret-i İsa Bey Mosque is a very small square-plan building with a single dome. The dome is clad in lead and rests on Turkish triangles. The walls are of brick and rubble stone. The mihrab hood has four rows of muqarnas. The street-facing corner of the narthex was cut diagonally during road widening and has a triangular form."
+    }
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
