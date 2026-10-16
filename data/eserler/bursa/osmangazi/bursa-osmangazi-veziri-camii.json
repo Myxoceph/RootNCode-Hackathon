@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-veziri-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 474-475) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Banisi ve inşa tarihi kitapta bilinmiyor; vakfiye, mimar ve minare yapım tarihi yok.",
+      "Özel mülkiyet ve ticari kullanım dönemlerinin tarihi kitapta verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder/dating",
+        "note": "Kitap iki görüş aktarıyor: (1) II. Murad dönemi devlet adamı Vezir Üzeyir'e ait olduğu düşünülüyor; (2) II. Bayezid'in bir veziri tarafından yaptırıldığı rivayet ediliyor. Hiçbiri kesin değil; bani alanı boş bırakıldı ve tarihleme 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Veziri Camii",
+    "en": "Veziri Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Konuralp Camii",
+      "en": "Konuralp Mosque"
+    },
+    {
+      "tr": "Üç Kurnalı Camii",
+      "en": "Three Basins Mosque",
+      "note": "Batısındaki üç kurnalı çeşmeden dolayı."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "cesme"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle mescidi",
+    "çeşme",
+    "çınar",
+    "Veziri",
+    "Üç Kurnalı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alipaşa",
+    "address": "Veziri Caddesi No: 43",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "474"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Murad (1421-1451) ya da II. Bayezid (1481-1512) dönemi; kesin tarih bilinmiyor",
+      "en": "Reign of Murad II (1421-1451) or Bayezid II (1481-1512); exact date unknown"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap inşa tarihinin kesin bilinmediğini söylüyor; iki farklı görüş aktarıyor. Yıl aralıkları hükümdarların saltanat dönemleridir, inşa yılı değildir.",
+      "en": "The book says the date is unknown and gives two views. The year ranges are the sultans' reigns, not construction years."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "474"
+      }
+    ]
+  },
+  "founder": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Alipaşa Mahallesi'nde, batısındaki üç kurnalı çeşmeden dolayı Üç Kurnalı Cami da denen mahalle mescidi. İnşa tarihi ve yaptıranı bilinmez; II. Murad dönemi devlet adamı Vezir Üzeyir'e ait olduğu düşünülür. Moloz taş duvarlı, ahşap tavanlı, çini mihraplıdır.",
+    "en": "A neighbourhood masjid in the Alipaşa Neighborhood, also called the Three Basins Mosque after the three-basin fountain on its west side. Its date and founder are unknown; it is thought to have belonged to Vizier Üzeyir, a statesman of Murad II. It has rubble stone walls, a wooden ceiling and a tiled mihrab."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Adı",
+        "en": "Overview and Name"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Alipaşa Mahallesi, Veziri Caddesi No: 43'te yer alır. İnşa tarihi ve yaptıranı kesin olarak bilinmemektedir. II. Murad dönemi (salt. 1421-1451) devlet adamlarından Vezir Üzeyir'e ait olduğu düşünülmektedir. Diğer bazı görüşlere göre ise II. Bayezid'in (salt. 1481-1512) bir veziri tarafından yaptırıldığı rivayet edilir. Caminin batı yönündeki üç kurnalı zarif çeşmesi nedeniyle “Üç Kurnalı Cami” olarak da adlandırılır.",
+        "en": "The mosque is in the Alipaşa Neighborhood, on Veziri Street No. 43. The exact date of construction and the person who built it are unknown. It is thought to have belonged to Vizier Üzeyir, a statesman of the reign of Murad II (r. 1421-1451); according to some other views it is said to have been built by a vizier of Bayezid II (r. 1481-1512). It is also called the “Three Basins Mosque” because of the elegant three-basin fountain on its west side."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "474"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 2,
+      "title": {
+        "tr": "Üç Kurnalı Çeşme",
+        "en": "The Three-Basin Fountain"
+      },
+      "body": {
+        "tr": "Camiye adını veren çeşmede bugün de üç musluk yer alır; sivri kemeri, geniş aynası ve tuğla işçiliğiyle tipik erken dönem Bursa çeşmeleri arasındadır. Çeşmenin önünde yaşlı bir çınar ağacı bulunur.",
+        "en": "The fountain that gave the mosque its name still has three taps today and, with its pointed arch, wide back panel and brickwork, is among the typical early Bursa fountains. There is an old plane tree in front of it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "474-475"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami Bursa'nın tipik mahalle mescitlerinden biridir; tümüyle moloz taş duvarla inşa edilmiş, giriş cephesi boyalıdır. Son cemaat yeriyle birlikte dikdörtgen planlıdır. İç ölçüleri 6.10 × 7.40 m olup girişinde 3.70 m derinliğinde son cemaat yeri bulunur. Üzeri kiremit kaplı kırma çatıyla örtülüdür; çatı çevresi iki sıra kirpi saçakla çevrilidir, girişte ahşap saçakla sonlanır. Son cemaat yerinin cephesi dört ahşap direğe dayalı üç sivri kemerlidir; kemerler sonradan kapatılmış, alt kısım ahşap çerçeveli camekânla örtülmüş, üzeri ahşap çatıyla kaplanmıştır. Harimdeki alt pencereler sivri kemerli, üsttekiler dikdörtgen formludur. İçeriden ahşap çatılı caminin ortasında motifli bir tavan göbeği yer alır; ahşap minberi ve çini mihrabı vardır.",
+        "en": "The mosque is one of Bursa's typical neighbourhood masjids, built entirely of rubble stone with a painted entrance façade. With the narthex it has a rectangular plan; the interior is 6.10 x 7.40 m with a 3.70 m deep narthex at the entrance. It has a tiled hipped roof surrounded by two rows of sawteeth at the eaves, ending in a wooden eave at the entrance. The narthex façade originally had three pointed arches on four wooden pillars; the arches were later closed, the lower part covered with wooden-framed glass and the top with a wooden roof. The lower prayer-hall windows are pointed-arched, the upper ones rectangular. Inside it has a wooden ceiling with a motif medallion in the middle, a wooden minbar and a tiled mihrab."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "475"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Doğu cephesindeki minarenin moloz taş kaidesi oldukça yüksek tutulmuş ve kirpi saçağa kadar yükseltilmiştir. Tamamen tuğladan örülen gövdede petek ile şerefeyi ayıran iki bilezik vardır; şerefenin altında dört sıra tuğla stalaktit dikkat çeker.",
+        "en": "The rubble-stone base of the minaret on the eastern façade is kept quite high and raised up to the sawtooth rows below the balcony. On its all-brick shaft two decorative bands separate the neck and the balcony; four rows of brick stalactites under the balcony are striking."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "475"
+        }
+      ]
+    },
+    {
+      "id": "kullanim",
+      "order": 5,
+      "title": {
+        "tr": "Kullanım",
+        "en": "Use"
+      },
+      "body": {
+        "tr": "Bir dönem özel mülkiyette yer alan yapı ticaret amacıyla kullanılmış, bu durum camide birtakım değişikliklere neden olmuştur.",
+        "en": "The building, privately owned for a period, was used for commercial purposes, which led to some changes in the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "475"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçü",
+        "en": "Interior dimensions"
+      },
+      "value": "6.10 × 7.40",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "475"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3.7,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "475"
+        }
+      ]
+    },
+    {
+      "key": "cesme_musluk",
+      "label": {
+        "tr": "Çeşme musluk sayısı",
+        "en": "Number of fountain taps"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "474-475"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Vezir Üzeyir",
+      "role": {
+        "tr": "Camiye sahip olduğu düşünülen II. Murad dönemi devlet adamı",
+        "en": "Statesman of Murad II's reign thought to have owned the mosque"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Veziri Camii, Veziri Caddesi'nde moloz taş duvarlı, kiremit kaplı kırma çatılı bir mahalle mescididir. Batı yanında, sivri kemerli ve tuğla işçiliğiyle geniş aynalı üç musluklu bir çeşme ile önünde yaşlı bir çınar ağacı bulunur. Girişteki son cemaat yeri camekânla kapatılmıştır. Doğu cephesindeki tuğla gövdeli minarenin moloz taş kaidesi yüksektir. İçeride ahşap tavan, ahşap minber ve çini bir mihrap vardır.",
+      "en": "Veziri Mosque is a neighbourhood masjid on Veziri Street with rubble-stone walls and a tiled hipped roof. On its west side is a three-tap fountain with a pointed arch and wide brick-framed back panel, with an old plane tree in front. The narthex at the entrance is closed with glass. The brick minaret on the east façade has a high rubble-stone base. Inside are a wooden ceiling, a wooden minbar and a tiled mihrab."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

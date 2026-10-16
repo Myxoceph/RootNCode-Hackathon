@@ -1,0 +1,250 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ruscuk-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Bugünkü (1996) yapının mimari tarifi kitapta yok.",
+      "Banî kitapta yok (Mustafa Efendi ve halkın 'katkısı' geçiyor); 'founder' null bırakıldı.",
+      "Mimar ve vakıf bilgisi yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitapta sayfa 407'de 'Rusçuk Camii' başlığı metnin sonunda yer alıyor; metin 'mescit' ve 'cami' sözcüklerini birlikte kullanıyor. Kayıt 'cami' olarak tutuldu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Rusçuk Camii",
+    "en": "Rusçuk Mosque"
+  },
+  "subtitle": {
+    "tr": "1877'de yapılan, 1996'da yıkılıp yeniden inşa edilen mahalle camii",
+    "en": "A neighborhood mosque built in 1877, demolished and rebuilt in 1996"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Rusçuk muhacirleri",
+    "İntizam Mahallesi",
+    "yeniden inşa",
+    "tarihî niteliği yok"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "İntizam Mahallesi",
+    "address": "Dikyokuş Sokak, No: 15",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "407"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1877 (1996'da yıkılıp yeniden inşa edildi)",
+      "en": "1877 (demolished and rebuilt in 1996)"
+    },
+    "start_year": 1877,
+    "end_year": 1877,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap mahalle mescidinin 1877'de yapıldığını yazar. Bugünkü yapı 1996'da yeniden inşa edilmiştir.",
+      "en": "The book says the neighborhood masjid was built in 1877; the present building dates from the 1996 reconstruction."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "407"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Rusçuk'tan (Bulgaristan) gelen muhacirlerin 1876'da yerleştiği mahallenin mescidi olarak 1877'de yapılmış, 1996'da mahalle halkı tarafından yıktırılıp yeniden inşa edilmiştir. Kitaba göre bugün tarihî bir niteliği yoktur.",
+    "en": "The masjid of the neighborhood where immigrants from Rusçuk (Ruse), Bulgaria settled in 1876, built in 1877 and demolished and rebuilt by the local people in 1996. According to the book it has no historical value today."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Mahalle ve Yapım",
+        "en": "Neighborhood and Construction"
+      },
+      "body": {
+        "tr": "Mahallenin bulunduğu alan eskiden bağ ve bahçelik iken 1876'da Bulgaristan'ın Rusçuk şehrinden gelen muhacirlerin yerleşmesiyle 'Rusçuk Mahallesi' olarak anılmaya başlanmıştır. Mahallenin mescidi 1877'de Rusçuklu Mustafa Efendi ve bölge halkının katkılarıyla inşa edilmiştir.",
+        "en": "The area used to be vineyards and gardens; it became known as the 'Rusçuk (Ruse) Neighborhood' after immigrants from the Bulgarian city of Rusçuk settled there in 1876. The neighborhood masjid was built in 1877 with the contributions of Rusçuklu Mustafa Efendi and the local people."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "407"
+        }
+      ]
+    },
+    {
+      "id": "eski-yapi",
+      "order": 2,
+      "title": {
+        "tr": "İlk Yapı",
+        "en": "Original Building"
+      },
+      "body": {
+        "tr": "Girişinde küçük bir avlusu bulunan caminin caddeye açılan dört penceresi, ahşap mahfili ve kürsüsü vardı. Küçük bir minaresi olan camide öğle, ikindi ve akşam namazları kılınmaktaydı.",
+        "en": "The original mosque had a small courtyard at its entrance, four windows opening to the street, a wooden gallery and a pulpit. It had a small minaret, and the noon, afternoon and evening prayers were performed there."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "407"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa",
+      "order": 3,
+      "title": {
+        "tr": "Yeniden İnşa",
+        "en": "Reconstruction"
+      },
+      "body": {
+        "tr": "Cami 1996'da mahalle halkı tarafından yıktırılarak yeniden inşa edilmiştir; günümüzde tarihî bir nitelik taşımamaktadır.",
+        "en": "The mosque was demolished and rebuilt by the local people in 1996 and has no historical character today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "407"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_ilk_yapi",
+      "label": {
+        "tr": "İlk yapıda caddeye açılan pencere",
+        "en": "Street-facing windows of the original building"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "407"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Rusçuklu Mustafa Efendi",
+      "role": {
+        "tr": "1877 yapımına katkı sağlayan",
+        "en": "Contributor to the 1877 construction"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "muhacir-yerlesimi-1876",
+      "year": 1876,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Rusçuk muhacirleri bölgeye yerleşti; mahalle 'Rusçuk Mahallesi' adını aldı",
+        "en": "Immigrants from Rusçuk settled; the neighborhood became 'Rusçuk Neighborhood'"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "407"
+        }
+      ]
+    },
+    {
+      "id": "insa-1877",
+      "year": 1877,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Mahalle mescidi inşa edildi",
+        "en": "The neighborhood masjid was built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "407"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1996",
+      "year": 1996,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Mahalle halkı tarafından yıktırılıp yeniden inşa edildi",
+        "en": "Demolished and rebuilt by the local people"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "407"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikyokuş Sokak'ta, mahalle halkı tarafından 1996'da yeniden inşa edilmiş bir mahalle camiidir. Kitap bugünkü yapının mimarisini tarif etmez; 1877'deki ilk yapının küçük bir avlusu, caddeye bakan dört penceresi, ahşap mahfili ve küçük bir minaresi olduğunu belirtir.",
+      "en": "A neighborhood mosque on Dikyokuş Street rebuilt by the local people in 1996. The book does not describe the present building; it says the original 1877 mosque had a small courtyard, four street-facing windows, a wooden gallery and a small minaret."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

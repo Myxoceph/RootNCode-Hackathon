@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sehabettin-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 417-418) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Caminin Şehabettin Paşa ile bağlantısı kitapta saptanamadı; ad kaynağı araştırılabilir.",
+      "Şehabettin Paşa'nın Çatalfırın'da yaptırdığı cami, Laleli çeşmesi için hedef kayıt/ilçe bilgisi yok.",
+      "İç kapı kitabesi fotoğrafı AR için seçilip inscriptions[].ar_target_media_id alanına bağlanacak."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Türkçe metin 'Şehabettin Paşa', İngilizce metin 'Şehabetin Paşa' yazıyor; Türkçe yazım esas alındı. Kitapta kitabede 'mescid' denmesine rağmen yapı 'cami' olarak anılıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şehabettin Paşa Camii",
+    "en": "Şehabettin Paşa Mosque"
+  },
+  "subtitle": {
+    "tr": "İç kapı kitabesiyle 1498'de Mehmed Çelebi'nin yaptırdığı cami",
+    "en": "Mosque built in 1498 by Mehmed Çelebi, as shown by its inner door inscription"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "kitabeli",
+    "ahşap tavanlı",
+    "son cemaat yeri",
+    "Altıparmak Caddesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Şehabettin Paşa",
+    "address": "Altıparmak Caddesi, No: 2-4",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "417"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 903 / M. 1498",
+      "en": "AH 903 / AD 1498"
+    },
+    "start_year": 1498,
+    "end_year": 1498,
+    "hijri_year": 903,
+    "century": 15,
+    "basis": {
+      "tr": "İç kapı üzerindeki kitabede H. 903 / M. 1498 tarihi yazılıdır.",
+      "en": "The inner door inscription gives AH 903 / AD 1498."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "417"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mehmed Çelebi ibn-i Mehmed (Karamânî)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "417"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Altıparmak Caddesi'ndeki cami, iç kapısındaki kitabeye göre H. 903 / M. 1498'de Mehmed oğlu Mehmed Çelebi tarafından yaptırılmıştır. Ahşap tavanlı bir ibadet mekânı ve sonradan camekânla kapatılan bir son cemaat yerinden oluşur; adı geçtiği halde Şehabettin Paşa ile doğrudan bağlantısı saptanamamıştır.",
+    "en": "The mosque on Altıparmak Street was built by Mehmed Çelebi, son of Mehmed, in AH 903 / AD 1498 according to the inscription on its inner door. It has a wooden-ceilinged prayer hall and a narthex later closed with glass; no direct link with Şehabettin Paşa, whose name it bears, has been identified."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Cami Osmangazi ilçesi, Şehabettin Paşa Mahallesi, Altıparmak Caddesi, No: 2-4'te yer almaktadır. İç kapı üzerindeki kitabesinden H. 903 / M. 1498'de Mehmed oğlu Mehmed Çelebi tarafından inşa ettirildiği anlaşılmaktadır.",
+        "en": "The mosque is located in Şehabettin Paşa Neighborhood, Osmangazi District, on Altıparmak Street, No. 2-4. The inscription on the inner door shows that it was built by Mehmed Çelebi, son of Mehmed, in AH 903 / AD 1498."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "417"
+        }
+      ]
+    },
+    {
+      "id": "sehabettin-pasa",
+      "order": 2,
+      "title": {
+        "tr": "Şehabettin Paşa",
+        "en": "Şehabettin Paşa"
+      },
+      "body": {
+        "tr": "Şehabettin Paşa, II. Murad'ın hadım ağalarındandır ve sarayda yetişmiştir. 1439'da sahiller muhafızı, ardından Rumeli Beylerbeyi ve daha sonra II. Murad ile Fâtih Sultan Mehmed'in veziri olmuş, 1453'te vefat etmiştir. Kabri Filibe'dedir. Bu cami ile doğrudan bir bağlantısı tespit edilememiştir. Bursa'da Çatalfırın mevkiinde bir cami, Laleli'de bir çeşme ve Filibe'de bir cami ile imaret yaptırdığı bilinmektedir.",
+        "en": "Şehabettin Paşa was one of the eunuchs of Murad II and was raised in the palace. He became a coast guard in 1439, then the Rumelia Beylerbey and later the vizier of Murad II and Fâtih Sultan Mehmed, and died in 1453. His grave is in Plovdiv. No direct connection with this mosque has been identified. He is known to have had a mosque built in the Çatalfırın area of Bursa, a fountain in Lâleli, and a mosque and imaret in Plovdiv."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "418"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı iki kısımdan oluşur. İç ölçüleri 9,80 × 10,25 m olan asıl ibadet mekânının üzeri ahşap tavanlıdır ve çatısı kiremitle kaplıdır. Son cemaat yeri sonradan önü camekânla kapatılmış, basit bir yapıdır; caminin kuzeyine eklenen bu bölümden, kitabeli bir kapıyla asıl ibadet alanına geçilir. Aydınlatma dört yönde ikişer alt sıra pencereyle sağlanır; pencerelerin özgün biçimi değiştirilip yükseltilmiş ve tek merkez kemerli hale getirilmiştir. Daire kesitli mihrap nişi dikdörtgen çerçevelidir; kademeli kavsarası yağlı boya ile kapatılmıştır.",
+        "en": "The building has two parts. The main prayer hall, measuring 9.80 × 10.25 m inside, has a wooden ceiling and a tiled roof. The narthex, added to the north and later closed at the front with glass, is simple; the prayer hall is entered from it through a door with an inscription. Light comes from two lower rows of windows on each of the four sides, which were altered, raised and given a single central arch. The circular-sectioned mihrab niche has a rectangular frame, and its stepped hood is covered with oil paint."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "418"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare ve Durum",
+        "en": "Minaret and Condition"
+      },
+      "body": {
+        "tr": "Kuzeybatı köşedeki minareye son cemaat yerinden açılan bir kapıyla çıkılır. Çatıya kadar yükselen sekizgen kaideden silindirik gövdeye geçiş üçgenlerle sağlanır; şerefe altında tek sıra kirpi saçak korunmuş, petek üzerindeki sivri külah kurşunla kaplanmıştır. Minare sıvalı ve badanalıdır. Cami sağlam ve bakımlıdır, ibadete açıktır.",
+        "en": "The minaret in the northwest corner is entered through a door from the narthex. The octagonal base rises to roof level and the transition to the cylindrical shaft is made with triangles; a single row of sawteeth survives under the balcony and the pointed spire is covered with lead. The minaret is plastered and whitewashed. The mosque is solid, well maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "418"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler (ibadet mekânı)",
+        "en": "Interior dimensions (prayer hall)"
+      },
+      "value": "9,80 × 10,25",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "418"
+        }
+      ]
+    },
+    {
+      "key": "pencere_duzeni",
+      "label": {
+        "tr": "Pencere düzeni",
+        "en": "Window arrangement"
+      },
+      "value": "Dört yönde ikişer alt sıra",
+      "unit": "pencere sırası",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "418"
+        }
+      ]
+    },
+    {
+      "key": "minare_konumu",
+      "label": {
+        "tr": "Minare konumu",
+        "en": "Minaret location"
+      },
+      "value": "Kuzeybatı köşe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "418"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şehabettin Paşa",
+      "role": {
+        "tr": "Cami adını taşıyan II. Murad ve Fâtih dönemi veziri; camiyle doğrudan bağlantısı saptanamamıştır",
+        "en": "Vizier of Murad II and Fâtih whose name the mosque bears; no direct link to the mosque identified"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "ic-kapi-kitabesi",
+      "location": {
+        "tr": "İç kapının üzerinde, mermer üzerine kabartma (0,60 × 0,70 m, dört satır)",
+        "en": "Above the inner door, relief on marble (0.60 × 0.70 m, four lines)"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": "Mehmed Çelebi ibn-i Mehmed ki ol Karamânî\nBu hûb mescide oldu safâyla bânî\nDokuz yüz üç yıla vâsıl olmuştu tarihi\nKi hurrem eyledi bu hazzile dil u cânı\nH. 903 / M.1498",
+      "translation": {
+        "tr": "Karamânî Mehmed'in oğlu Mehmed Çelebi,\nbu güzel mescidin yapımına içten bir sevinçle öncülük etti.\nHicrî 903 yılına ulaşıldığında,\nbu hayır vesilesiyle gönlünü ve ruhunu sevinçle doldurdu.",
+        "en": "Mehmed Çelebi, the son of Karamanî Mehmed, led the construction of this beautiful mosque with sincere joy.\nWhen the year AH 903 was reached, he filled his heart and soul with joy on this charitable occasion."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 903,
+        "gregorian": "1498"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap dili 'Türkçe' olarak verir; Osmanlı Türkçesi kabul edildi.",
+        "en": "The book states the language as Turkish; treated as Ottoman Turkish."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "417"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1498",
+      "year": 1498,
+      "date": null,
+      "hijri": "903",
+      "type": "construction",
+      "title": {
+        "tr": "Mehmed Çelebi tarafından inşa ettirildi",
+        "en": "Built by Mehmed Çelebi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "417"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şehabettin Paşa Camii, Altıparmak Caddesi üzerinde, kare ve dikdörtgene yakın planlı bir yapıdır. Ahşap tavanlı ve kiremit çatılı ibadet mekânının kuzeyinde sonradan camekânla kapatılmış sade bir son cemaat yeri vardır. Kuzeybatı köşede, sekizgen kaideli, sıvalı ve badanalı bir minare yükselir.",
+      "en": "Şehabettin Paşa Mosque stands on Altıparmak Street. It has a wooden-ceilinged, tile-roofed prayer hall with a simple narthex on the north, later closed with glass panels. A plastered and whitewashed minaret with an octagonal base rises at the northwest corner."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

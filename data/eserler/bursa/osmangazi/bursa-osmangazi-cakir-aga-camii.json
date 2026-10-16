@@ -1,0 +1,383 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-cakir-aga-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 282-284) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Banî konusunda iki rivayet var (Çakır Ağa / Mecnun Dede); kesinleştirilemedi.",
+      "Çakır Ağa'nın tam adı/rütbesi ('Subaşı') dışında bilgi kitapta yok.",
+      "Mecnun Dede'nin Yeşil Cami çinileriyle bağı kitapta rivayet düzeyinde değil, bilgi olarak veriliyor; Yeşil Cami kaydına bağlanması düşünülebilir (hedef id kitapta yok, ilişki eklenmedi)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder / dating",
+        "note": "Kitap iki ayrı yapım rivayeti verir: (1) 1440'ta Çakır Ağa'nın Mecnun Dede adına yaptırması, (2) Mecnun Dede'nin zaviyeyle birlikte yaptırması. Giriş bölümü yalnızca birinci görüşü ve '15. yüzyıl' tarihini verir. Banî 'disputed' işaretlendi; 1440 yalnızca zaman çizelgesinde disputed olarak yer aldı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap son cemaat yerinin örtüsünü çelişkili anlatır: 'üç kubbe ile örtülüydü, kubbeye dönüştürüldü' ve 'ortada tonoz, yanlarda kubbeye sahipken, tonozla örtülmüştür'. Metin olduğu gibi aktarıldı; güncel örtü sistemi netleştirilmeli."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çakır Ağa (Mecnun Dede) Camii",
+    "en": "Çakır Ağa (Mecnun Dede) Mosque"
+  },
+  "subtitle": {
+    "tr": "Kalkan duvarlı, tek kubbeli Bursa camisi; yapımı hakkında iki rivayet var",
+    "en": "Single-domed Bursa-type mosque; two accounts of its construction"
+  },
+  "alternate_names": [
+    {
+      "tr": "Mecnun Dede Camii",
+      "en": "Mecnun Dede Mosque"
+    },
+    {
+      "tr": "Çakır Ağa Mescidi",
+      "en": "Çakır Ağa Masjid"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tek kubbeli",
+    "kalkan duvar",
+    "hazire",
+    "Mecnun Dede",
+    "Tahtakale"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tahtakale",
+    "address": "Tahtakale Mahallesi, Kurşunlu Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "282"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "15. yüzyıl",
+      "en": "15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap camiyi 15. yüzyılda inşa edildiği şeklinde verir; bir rivayet 1440 yılını verir (hazire bölümü).",
+      "en": "The book places construction in the 15th century; one account gives 1440 (graveyard section)."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "282, 284"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Subaşı Çakır Ağa",
+    "role": "banî (Mecnun Dede adına); başka bir rivayete göre Mecnun Dede",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "282, 284"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Fâtih Sultan Mehmed devri devlet adamlarından Subaşı Çakır Ağa'nın Mecnun Dede adına 15. yüzyılda yaptırdığı tek kubbeli, kalkan duvarlı Bursa camisi. Bir rivayete göre 1440'ta Çakır Ağa, diğerine göre Mecnun Dede zaviyeyle birlikte yaptırmıştır. Son cemaat yerinin tonozlu olması nadir bir özelliktir; cami 1970'te esaslı onarım görmüştür.",
+    "en": "A single-domed Bursa-type mosque with a parapet wall, built in the 15th century by Soubashi Çakır Ağa, a statesman of Fâtih's time, in the name of Mecnun Dede. One account says Çakır Ağa built it in 1440, another says Mecnun Dede built it with a zawiya. Its vaulted narthex is a rare feature; it was extensively restored in 1970."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Tahtakale Mahallesi, Kurşunlu Sokak'ta yer almaktadır. \"Çakır Ağa Mescidi\" olarak da bilinen cami, Fâtih Sultan Mehmed devri devlet adamlarından Subaşı Çakır Ağa tarafından Mecnun Dede adına, 15. yüzyılda inşa ettirilmiştir. Kalkan duvarlarıyla tipik bir Bursa camisidir ve tek kubbe ile örtülüdür.",
+        "en": "The mosque is located in the Osmangazi District, Tahtakale Neighborhood, Kurşunlu Street. The mosque, also known as the \"Çakır Ağa Mosque\", was built in the 15th century by Soubashi Çakır Ağa, one of the statesmen of the Fâtih Sultan Mehmet period, in the name of Mecnun Dede. The building, which is a typical Bursa Mosque with its parapet wall, is covered with a single dome."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "282-283"
+        }
+      ]
+    },
+    {
+      "id": "insa-rivayetleri",
+      "order": 2,
+      "title": {
+        "tr": "Yapım Hakkındaki İki Rivayet",
+        "en": "Two Accounts of Construction"
+      },
+      "body": {
+        "tr": "Hazirenin bulunduğu caminin inşası hakkında iki farklı rivayet bulunmaktadır. Bir rivayete göre cami 1440 yılında Çakır Ağa tarafından Mecnun Dede adına inşa ettirilmiştir. Diğer bir rivayete göre ise Mecnun Dede tarafından bir zaviye ile birlikte yaptırılmıştır. Asıl ismi Mehmed olan Mecnun Dede, Yeşil Cami mahfilindeki çinileri yapan sanatkârdır.",
+        "en": "There are two different stories about the construction of the mosque where the graveyard is located. According to one narration, the mosque was built in 1440 by Çakır Ağa in the name of Mecnun Dede. According to another narration, it was built together with a zawiya by Mecnun Dede. Mecnun Dede, whose real name was Mehmed, was the artist who made the tiles in the Yeşil Mosque gallery."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "284"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "7,38 × 7,60 m iç ölçülerindeki harim kare plana sahiptir ve 2,90 m derinliğindeki tonoz örtülü son cemaat yeriyle dikdörtgen bir alana oturur. Yapı kubbeli iken son cemaat yerinin tonozla örtülü olması nadir bir özelliktir. Duvarlar üç sıra tuğla ve bir sıra kesme taşla örülmüştür. Son cemaat yeri eskiden üç kubbeyle örtülüyken, inceleme ve araştırmalar sonucunda harimin kalkan duvarlı ve kubbeli olduğu anlaşılmış ve örtü sistemi kubbeye dönüştürülmüştür. Üç bölümlü son cemaat yeri sivri kemerle ayrılmış, orta bölüm yanlardan geniştir; bugün de kubbeye geçişte kullanılan aslan göğsü izleri belirgindir. Kubbe kasnağında sivri kemerli üç pencere vardır. Kirpi saçaklı kalkan duvarla yükseltilen medhal cephesi Bursa kemerlidir ve üstünde sivri kemerli bir silme vardır.",
+        "en": "The prayer hall, with interior dimensions of 7.38 × 7.60 m, has a square plan and sits on a rectangular area with a vaulted narthex of 2.90 m depth. While the building is domed, the narthex is covered with a vault, which is a rare architectural feature. The walls are built with three rows of bricks and one row of cut stones. While the narthex used to be covered with three domes, subsequent examination and research revealed that the prayer hall had a parapet wall and a dome, and the covering system was changed to a dome. The narthex has three sections separated by a pointed arch, with the middle section wider than the sides. Even today, traces of the lion corbel, the architectural element used in the transition to the dome, remain evident. There are three windows with pointed arches on the dome drum. The entrance façade, raised with a parapet wall with a sawtooth cornice at the eaves, has a Bursa arch and a molding with a pointed arch on top."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "id": "minare-onarim",
+      "order": 4,
+      "title": {
+        "tr": "Minare ve Onarım",
+        "en": "Minaret and Restoration"
+      },
+      "body": {
+        "tr": "Yapının batısındaki minareye son cemaat yerine açılan bir kapıdan çıkılır. Sekizgen kaidesi tuğla ve taşla örülmüştür; kaideden gövdeye geçiş Türk üçgenleriyle sağlanmıştır. Silindirik tuğla gövdeli minarenin sivri külahı kurşunla kaplıdır. Cami 1970 yılında Bursa Eski Eserleri Sevenler Kurumu tarafından esaslı bir onarım geçirmiştir; bakımlı bir vaziyettedir ve ibadete açıktır.",
+        "en": "The minaret, located on the west side of the building, is accessed through a door opening onto the narthex. Its octagonal base is built with bricks and stones. The transition from the base to the shaft is provided by Turkish triangles. The pointed spire of the minaret with a cylindrical brick shaft is covered with lead. The mosque underwent a major restoration in 1970 by the Bursa Association for the Appreciation of Antiquities. It is in a well-maintained condition and is open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 5,
+      "title": {
+        "tr": "Mecnun Dede Camii Haziresi",
+        "en": "Mecnun Dede Mosque Graveyard"
+      },
+      "body": {
+        "tr": "Caminin civarındaki hazirede Mecnun Dede'nin ve kardeşi Lokman Dede'nin kabirlerinin bulunduğu rivayet edilse de günümüzde bu mezarların varlığına rastlanmamaktadır. Yalnızca Bayezid oğlu Hacı Nasuh'a ait baş ve ayak taşları günümüze ulaşmıştır.",
+        "en": "Although it is said that the graves of Mecnun Dede and his brother Lokman Dede were located in the cemetery near the mosque, these graves cannot be found today. Only the head and foot stones belonging to Bayezid's son Hacı Nasuh have survived to the present day."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "284"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "mecnun-lokman-mezarlari",
+      "title": {
+        "tr": "Mecnun Dede ve Lokman Dede'nin kabirleri",
+        "en": "The graves of Mecnun Dede and Lokman Dede"
+      },
+      "body": {
+        "tr": "Hazirede Mecnun Dede'nin ve kardeşi Lokman Dede'nin kabirlerinin bulunduğu rivayet edilmektedir; günümüzde bu mezarların varlığına rastlanmamaktadır.",
+        "en": "It is said that the graves of Mecnun Dede and his brother Lokman Dede were located in the cemetery near the mosque; these graves cannot be found today."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "284"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim iç ölçüleri",
+        "en": "Prayer hall interior dimensions"
+      },
+      "value": "7,38 × 7,60",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 2.9,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kubbe kasnağındaki pencere sayısı",
+        "en": "Windows on the dome drum"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "onarim_yili",
+      "label": {
+        "tr": "Esaslı onarım yılı",
+        "en": "Year of major restoration"
+      },
+      "value": 1970,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "283"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Subaşı Çakır Ağa",
+      "role": {
+        "tr": "Fâtih devri devlet adamı; banî (bir rivayete göre)",
+        "en": "Statesman of Fâtih's period; founder (according to one account)"
+      }
+    },
+    {
+      "name": "Mecnun Dede (Mehmed)",
+      "role": {
+        "tr": "Yeşil Cami mahfilindeki çinileri yapan sanatkâr; ikinci rivayete göre banî",
+        "en": "Artist who made the tiles in the Yeşil Mosque gallery; founder according to the second account"
+      }
+    },
+    {
+      "name": "Lokman Dede",
+      "role": {
+        "tr": "Mecnun Dede'nin kardeşi (kabri rivayet edilir)",
+        "en": "Brother of Mecnun Dede (grave only reported)"
+      }
+    },
+    {
+      "name": "Hacı Nasuh bin Bayezid",
+      "role": {
+        "tr": "Baş ve ayak taşları günümüze ulaşmış",
+        "en": "His head and foot stones survive"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1440-rivayet",
+      "year": 1440,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Bir rivayete göre Çakır Ağa'nın Mecnun Dede adına yaptırması",
+        "en": "According to one account, built by Çakır Ağa in the name of Mecnun Dede"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "284"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1970",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından esaslı onarım",
+        "en": "Major restoration by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "283"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çakır Ağa Camii, Tahtakale'de Kurşunlu Sokak'ta, tek kubbeli, kare planlı bir Bursa camisidir. Önünde kirpi saçaklı kalkan duvar ve üç bölümlü, tonozla örtülü bir son cemaat yeri vardır; orta bölüm yanlardan geniştir. Batıdaki minarenin sekizgen kaidesi tuğla ve taştandır, gövdesi silindirik tuğla, külahı kurşun kaplıdır. Yakınında bir hazire bulunur.",
+      "en": "Çakır Ağa Mosque on Kurşunlu Street in Tahtakale is a single-domed Bursa mosque on a square plan. In front is a parapet wall with a sawtooth cornice and a three-part vaulted narthex whose middle section is wider than the sides. The minaret to the west has an octagonal base of brick and stone, a cylindrical brick shaft and a lead-covered spire. A graveyard lies nearby."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

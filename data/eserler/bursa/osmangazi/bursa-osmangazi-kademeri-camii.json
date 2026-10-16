@@ -1,0 +1,375 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-kademeri-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 357-358) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Camiyi yaptıran/inşa yılı kitapta açıkça verilmiyor; founder boş bırakıldı (Hoca Tâceddin Kazgânî'nin vasiyeti ile yapıldığı belirtiliyor), dating yılları boş bırakıldı.",
+      "Çağ (era) kitapta belirtilmiyor; 1498 vasiyeti nedeniyle 'erken-osmanli' girildi, veri ekibi gözden geçirmeli.",
+      "Mimar kitapta belirtilmiyor.",
+      "Muradiye Camii hedef kimliği metinde ilçe belirtilmediği için varsayımdır (Muradiye Camii, Osmangazi'de mevcut kayıttır); doğrulanmalı.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[tarihce]",
+        "note": "Metin önce mescidin 100.000 akçeyle yeniden inşa edildiğini, ardından vasiyetin yerine getirilip malın üçte biri ayrıldıktan sonra 'mescit inşası için arazi aramaya başlandığını' söyler; inşa tarihi bu iki ifadeden kesin çıkarılamaz. Metin korunmuştur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kademeri (Çukur) Camii",
+    "en": "Kademeri (Çukur) Mosque"
+  },
+  "subtitle": {
+    "tr": "1498 vasiyetiyle eski mescidin yerine yapılan hazireli cami",
+    "en": "Mosque built on the site of an older masjid with a 1498 bequest, with its lost graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Çukur Camii",
+      "en": "Çukur Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "vasiyet",
+    "kare plana yakın",
+    "tek kubbeli",
+    "minare",
+    "kayıp hazire",
+    "Çukur Mahallesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Maksem",
+    "address": "Çukurcami Sokak, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "357"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1498 vasiyetiyle yeniden inşa edildi",
+      "en": "Rebuilt with a bequest of 1498"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Hoca Tâceddin Kazgânî 1498'de ağır hastayken yeni bir mescit için 100.000 akçe vasiyet etmiş, mescit bu parayla yeniden yapılmıştır. İnşa yılı kitapta açıkça verilmez.",
+      "en": "Hoca Tâceddin Kazgânî bequeathed 100,000 akçe for a new masjid in 1498 when seriously ill, and the masjid was rebuilt with it. The construction year is not stated."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "357-358"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Hoca Tâceddin Kazgânî'nin vasiyeti",
+    "deed": null,
+    "conditions": {
+      "tr": "Hoca Tâceddin Kazgânî 1498'de 100.000 akçeyi yeni mescit inşası için vasiyet etmiştir. 1511'de Mustafa oğlu Hacı Veli de bu mescide vakıflar yapmıştır.",
+      "en": "Hoca Tâceddin Kazgânî bequeathed 100,000 akçe in 1498 for building a new masjid. In 1511 Hacı Veli, son of Mustafa, also made endowments to this masjid."
+    },
+    "land_note": {
+      "tr": "Çukur Mahallesi halkı mescidin harabe olduğunu ve vakfı olmadığı için yeniden yapamadıklarını belirtmiştir.",
+      "en": "The people of Çukur Neighborhood said the masjid was in ruins and they could not rebuild it as it had no foundation."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "357-358"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Çukur Mahallesi'ndeki harap mescidin yerine, Hoca Tâceddin Kazgânî'nin 1498'deki 100.000 akçelik vasiyetiyle yeniden yapılan, kareye yakın planlı tek kubbeli cami. 1511'de Hacı Veli de vakıf yapmıştır; haziresi günümüze ulaşmamıştır.",
+    "en": "A single-domed mosque on a nearly square plan, rebuilt in place of a ruined masjid in Çukur Neighborhood with Hoca Tâceddin Kazgânî's bequest of 100,000 akçe in 1498. Hacı Veli also made endowments in 1511; its graveyard has not survived."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Vakıf",
+        "en": "History and Endowment"
+      },
+      "body": {
+        "tr": "Cami, Maksem Mahallesi, Çukurcami Sokak No:2'de yer alır ve daha önce mevcut olan bir mescidin yerine inşa edilmiştir. Çukur Mahallesi halkı mescidin harabe olduğunu ve vakfı bulunmadığı için tekrar inşa edemediklerini belirtmiş; 1498'de Hoca Tâceddin Kazgânî ağır hastayken yeni bir mescit için 100.000 akçe vasiyet etmiştir. Çukur Mahalle Mescidi bu 100.000 akçeyle yeniden inşa edilmiştir. Ölümünden sonra vasiyetine uyulmuş ve malının üçte biri ayrıldıktan sonra mescit inşası için arazi aramaya başlanmıştır. Daha sonra, 1511'de Mustafa oğlu Hacı Veli de bu mescide vakıflar yapmıştır.",
+        "en": "The mosque is at Çukurcami Street No. 2, Maksem Neighborhood, and was built on the site of a previously existing masjid. The people of Çukur Neighborhood stated that the masjid was in ruins and they could not rebuild it for lack of a foundation; in 1498, Hoca Tâceddin Kazgânî, seriously ill, bequeathed 100,000 akçe for a new masjid. The Çukur Neighborhood Masjid was rebuilt with these 100,000 coins. After his death his will was carried out and, after one-third of his property was divided, land was sought for the construction of a masjid. Later, in 1511, Hacı Veli, son of Mustafa, also made endowments for this masjid."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "357-358"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kareye yakın planlı ve tek kubbelidir; içten içe 7,15 × 7,25 m ölçülerindedir. Kuzeyinde son cemaat yeri bulunur; doğu ve batı yan duvarları kapatılmış, kuzeydeki direkler yerine duvar çekilmiş, kapının iki yanına iki pencere açılmıştır. Beden duvarları ve sekizgen kasnak tuğla hatıllı taş örgüdür. Her yönde ikişer alt sıra pencere vardır; güney pencereleri kapatılıp dolap yapılmıştır. Yapı toplam on altı pencereyle aydınlanır. Minareye son cemaat yerinden açılan bir pencereyle çıkılır; minare mermer ve tuğla örgülü yüzeylerle silindirik gövdeye geçer, şerefe altında altı sıra kirpi saçak vardır, petek kısmı sivri külahlıdır ve kurşunla kaplıdır. Cami günümüzde bakımlı ve ibadete açıktır.",
+        "en": "The mosque has a nearly square plan and a single dome, with interior dimensions of 7.15 × 7.25 m. There is a narthex to the north; the east and west side walls are closed, a wall replaced the pillars on the north, and two windows were opened on either side of the door. The main walls and octagonal drum are brick-reinforced stone masonry. There are two lower-row windows on each side; the south windows were closed and made into a cupboard. The building is lit by sixteen windows in total. The minaret is reached through a window opening from the narthex; it moves to a cylindrical shaft with marble and brickwork surfaces, has six rows of sawteeth under the balcony and a pointed lead-covered spire. The mosque is well-maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "358"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 3,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Günümüze gelemeyen hazireye XV. yüzyıldan itibaren defin yapıldığı bilinmektedir. Hazireye defnedildiği halde taşı günümüze gelemeyenler arasında Seyyid Şemseddin bin Murtaza, Ayşe Hatun, Hoca İbrahim bin Hoca Musa (H. 909 / M. 1504; taşı Muradiye Camii bahçesindedir) ve Hoca Kemâleddin bulunur.",
+        "en": "It is known that burials were carried out in the graveyard, which has not survived, since the 15th century. Among those buried whose stones have not survived are Seyyid Şemseddin bin Murtaza, Ayşe Hatun, Hoca İbrahim bin Hoca Musa (AH 909 / AD 1504; his stone is in the garden of Muradiye Mosque) and Hoca Kemâleddin."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "358"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "7,15 × 7,25",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "358"
+        }
+      ]
+    },
+    {
+      "key": "pencere_toplam",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total windows"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "358"
+        }
+      ]
+    },
+    {
+      "key": "vasiyet_miktari",
+      "label": {
+        "tr": "Vasiyet edilen miktar",
+        "en": "Amount bequeathed"
+      },
+      "value": 100000,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "357"
+        }
+      ]
+    },
+    {
+      "key": "minare_kirpi_sira",
+      "label": {
+        "tr": "Şerefe altı kirpi saçak sırası",
+        "en": "Sawtooth rows beneath balcony"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "358"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Tâceddin Kazgânî",
+      "role": {
+        "tr": "Mescit için 100.000 akçe vasiyet eden hayırsever (1498)",
+        "en": "Benefactor who bequeathed 100,000 akçe for the masjid (1498)"
+      }
+    },
+    {
+      "name": "Hacı Veli",
+      "role": {
+        "tr": "Mustafa oğlu; 1511'de mescide vakıflar yaptı",
+        "en": "Son of Mustafa; made endowments to the masjid in 1511"
+      }
+    },
+    {
+      "name": "Seyyid Şemseddin bin Murtaza",
+      "role": {
+        "tr": "Hazirede medfun (taşı kayıp)",
+        "en": "Buried in the graveyard (stone lost)"
+      }
+    },
+    {
+      "name": "Ayşe Hatun",
+      "role": {
+        "tr": "Hazirede medfun (taşı kayıp)",
+        "en": "Buried in the graveyard (stone lost)"
+      }
+    },
+    {
+      "name": "Hoca İbrahim bin Hoca Musa",
+      "role": {
+        "tr": "Hazirede medfun (v. H. 909 / M. 1504); taşı Muradiye Camii bahçesinde",
+        "en": "Buried in the graveyard (d. AH 909 / AD 1504); his stone is in the Muradiye Mosque garden"
+      }
+    },
+    {
+      "name": "Hoca Kemâleddin",
+      "role": {
+        "tr": "Hazirede medfun (taşı kayıp)",
+        "en": "Buried in the graveyard (stone lost)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vasiyet-1498",
+      "year": 1498,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hoca Tâceddin Kazgânî yeni mescit için 100.000 akçe vasiyet etti",
+        "en": "Hoca Tâceddin Kazgânî bequeathed 100,000 akçe for a new masjid"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "357"
+        }
+      ]
+    },
+    {
+      "id": "vakif-1511",
+      "year": 1511,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mustafa oğlu Hacı Veli mescide vakıflar yaptı",
+        "en": "Hacı Veli, son of Mustafa, made endowments to the masjid"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "358"
+        }
+      ]
+    },
+    {
+      "id": "hoca-ibrahim-1504",
+      "year": 1504,
+      "date": null,
+      "hijri": "909",
+      "type": "record",
+      "title": {
+        "tr": "Hazirede medfun Hoca İbrahim bin Hoca Musa vefat etti",
+        "en": "Hoca İbrahim bin Hoca Musa, buried in the graveyard, died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "358"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Hazirede medfun Hoca İbrahim bin Hoca Musa'nın mezar taşı Muradiye Camii bahçesindedir.",
+        "en": "The gravestone of Hoca İbrahim bin Hoca Musa, buried in this graveyard, is in the garden of Muradiye Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "358"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kademeri Camii, Maksem Mahallesi'nde kareye yakın planlı, tek kubbeli bir yapıdır. Kuzeyde yanları kapatılmış bir son cemaat yeri vardır. Duvarlar ve sekizgen kasnak tuğla hatıllı taşla örülmüştür. Kubbeyi on altı pencere aydınlatır. Minaresine son cemaat yerinden açılan bir pencereyle çıkılır; mermer ve tuğla örgülü gövdesi kurşun kaplı sivri külahla biter. Haziresi günümüze ulaşmamıştır.",
+      "en": "Kademeri Mosque in Maksem Neighborhood is a single-domed building on a nearly square plan. To the north is a narthex closed at the sides. The walls and octagonal drum are of stone with brick bands. Sixteen windows light the interior. Its minaret is reached through a window from the narthex; its marble-and-brick shaft ends in a lead-covered pointed spire. Its graveyard has not survived."
+    }
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

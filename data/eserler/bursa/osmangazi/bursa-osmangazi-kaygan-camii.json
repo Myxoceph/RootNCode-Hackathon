@@ -1,0 +1,709 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-kaygan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Cami bölümü 'tamamen yenilendi' olduğundan özgün yapım tarihi bilinmiyor; kitapta yalnızca Kayganzâde Musa'nın 1497 vefatı var.",
+      "Banî bilgisi s. 374 ile s. 378 arasında çelişiyor; kaynaklar karşılaştırılıp netleştirilmeli.",
+      "Kaygan Hamamı ('Dülgerler ve Ağaççılar Hamamı') için ilçe bilgisi metinde net değil; hedef id tahminidir ve kayıt yoksa oluşturulmalı.",
+      "Kazzazoğlu'nun yaptırdığı iki kubbe ve kimliği kitapta açıklanmıyor.",
+      "Era alanı tahmini: ilk yapı 15. yüzyıl sonu (Kayganzâde Musa 1497'de vefat etmiş), bugünkü yapı 19. yüzyıl; gözden geçirilmeli.",
+      "İkinci (kâğıt) kitabenin metni kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "S. 374 camiyi Bursalı tüccar Kayganzâde Musa ve Süle Mehmed Paşa'nın ortaklaşa inşa ettirdiğini söyler; s. 378 hazire bölümü 'cami banisi Hacı Mehmed' der ve cami adının Hacı Mehmed'in dedesi Kayağan'dan geldiğini belirtir. Kitap bu iki bilgiyi uzlaştırmaz."
+      },
+      {
+        "field": "facts[hazire_diger_tas]",
+        "note": "S. 378 'banisinden başka altı kişi'nin taşı olduğunu söyler, ancak sayılan altı isim arasında Hacı Mehmed bin Hacı Musa bin Kayağan (banî) da vardır; yani ya banî sayıya dahildir ya da sayı/isimler tutarsızdır."
+      },
+      {
+        "field": "timeline",
+        "note": "1870 hem 'tamamen harap olan yangın yılı' hem de tamir yılları listesinde geçer; tamir mi yoksa yangın sonrası yeniden inşa mı olduğu kitapta açık değil. Yeniden inşa için manzume ve mihrap tarihi H. 1290 / M. 1873'tür."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "S. 374 'sekizgen kubbeli' (İngilizce: eight-segmented), s. 375 'sekiz kubbeli plan' der; s. 376'daki cihannüma iç kubbe ile 'sekiz kubbeli' tasarımın ilişkisi tahminidir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kaygan Camii",
+    "en": "Kaygan Mosque"
+  },
+  "subtitle": {
+    "tr": "Kayhan Çarşısı'nda, 1870 yangınından sonra yeniden yapılmış cami ve haziresi",
+    "en": "Mosque and graveyard in the Kayhan Bazaar, rebuilt after the 1870 fire"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Kayhan Çarşısı",
+    "sekiz kubbeli plan",
+    "1870 yangını",
+    "hazire",
+    "tarih manzumesi",
+    "ahşap ayaklı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kayhan",
+    "address": "Selçuk Hatun Caddesi, Güveri Sokak, No. 28",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "374"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Bugünkü yapı 1870 yangınından sonra yeniden inşa edildi; tarih manzumesi H. 1290 / M. 1873",
+      "en": "The present building was rebuilt after the 1870 fire; chronogram AH 1290 / AD 1873"
+    },
+    "start_year": null,
+    "end_year": 1873,
+    "hijri_year": 1290,
+    "century": 19,
+    "basis": {
+      "tr": "İlk yapım tarihi kitapta verilmiyor; yalnızca Kayganzâde Musa'nın 1497'de vefat ettiği bildirilir. Yeniden inşayı belgeleyen manzumenin tarihi H. 1290 / M. 1873'tür.",
+      "en": "The date of first construction is not given; only the death of Kayganzâde Musa in 1497 is stated. The chronogram documenting the reconstruction is dated AH 1290 / AD 1873."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "374-376"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kayganzâde Musa ve Süle Mehmed Paşa (ortaklaşa); hazire bölümünde banî Hacı Mehmed",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "374, 378"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bursalı tüccar Kayganzâde Musa ve Süle Mehmed Paşa'nın ortaklaşa yaptırdığı, Kayhan Çarşısı'nda Kaygan Hamamı'nın yanındaki cami. 1855 depreminde yıkılıp ahşap olarak yeniden yapılmış, 1870 Kaygan yangınında harap olunca Kolağası Halil Efendi tarafından bugünkü şekliyle inşa ettirilmiştir; sekiz dilimli cihannüma biçimli iç kubbesi ahşap ayaklara oturur. Haziresinde banî Hacı Mehmed'in sağlam kabri bulunur.",
+    "en": "A mosque in the Kayhan Bazaar next to the Kaygan Bath, built jointly by the Bursa merchant Kayganzâde Musa and Süle Mehmed Paşa. Destroyed in the 1855 earthquake and rebuilt in wood, it was ruined in the great Kaygan fire of 1870 and rebuilt in its present form by Kolağası Halil Efendi; its eight-segmented gazebo-shaped inner dome rests on wooden piers. The tomb of the founder Hacı Mehmed survives intact in its graveyard."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banileri",
+        "en": "Location and Founders"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Kayhan Mahallesi, Selçuk Hatun Caddesi, Güveri Sokak, No. 28'de bulunur. Kayhan Çarşısı'nda, \"Dülgerler ve Ağaççılar Hamamı\" olarak bilinen Kaygan Hamamı'nın yanında yer alan cami, günümüzde tamamen yenilenmiş, çatılı bir yapıdır. Bursalı tüccar Kayganzâde Musa ve Süle Mehmed Paşa tarafından ortaklaşa inşa ettirilmiştir; Kayganzâde Musa 1497'de vefat etmiştir. Cami sekizgen kubbeli ve iki şerefeli bir minareye sahiptir.",
+        "en": "The mosque is in Osmangazi District, Kayhan Neighborhood, Selçuk Hatun Avenue, Güveri Street, No. 28. Located in the Kayhan Bazaar next to the Kaygan Bath, known as the \"Carpenters and Woodworkers Bath\", it is a completely renovated, roofed building today. It was built jointly by the Bursa merchant Kayganzâde Musa and Süle Mehmed Paşa; Kayganzâde Musa died in 1497. The mosque has an eight-segmented dome and a minaret with two balconies."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "374"
+        }
+      ]
+    },
+    {
+      "id": "ilk-plan-minare",
+      "order": 2,
+      "title": {
+        "tr": "İlk Plan ve Minare",
+        "en": "Original Plan and Minaret"
+      },
+      "body": {
+        "tr": "İlk inşasında sekiz kubbeli bir plana sahip olan caminin ortasında bir minber, minberin iki yanında iki mihrap bulunmaktadır. Minaresinin bir şerefesi geleneksel yerindeyken, diğer şerefe orantısız biçimde kurşunluk hizasında inşa edilmiştir.",
+        "en": "In its first construction the mosque had an eight-domed plan, with a minbar in the middle and two mihrabs on either side of it. One balcony of the minaret is in its traditional position, while the other was built disproportionately at the level of the lead-covered section."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "id": "yikim-yeniden-insa",
+      "order": 3,
+      "title": {
+        "tr": "Deprem, Yangın ve Yeniden İnşa",
+        "en": "Earthquake, Fire and Reconstruction"
+      },
+      "body": {
+        "tr": "1855 depreminde yıkılan yapının cami bölümü ahşaptan, minaresi kâgir olarak yeniden yapılmıştır. 1870'deki büyük Kaygan yangınında tamamen harap olan bina, o sırada Bursa'da bulunan Kolağası Halil Efendi tarafından bugünkü şekliyle yeniden yaptırılmıştır. Yangına karşı önlem olarak civardaki ev ve dükkânlar istimlak edilerek boşaltılmıştır. Şair Şeyh Hacı Bahâeddin Efendi yeniden inşa edilen camiye talik hatla bir tarih yazmıştır.",
+        "en": "The mosque section destroyed in the 1855 earthquake was rebuilt in wood and the minaret in masonry. The building, completely ruined in the great Kaygan fire of 1870, was rebuilt in its present form by Kolağası Halil Efendi, who was in Bursa at the time. As a fire precaution the surrounding houses and shops were expropriated and cleared. The poet Shaykh Hacı Bahâeddin Efendi wrote a chronogram in ta'liq script on the rebuilt mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Bugün tamamen yenilenmiş caminin son cemaat bölümü 3,15 × 17,10 m'dir ve düz betonarme tavanlıdır. Harime girişin iki yanında yuvarlak duvar nişleri ve birer alt sıra pencere bulunur. Kuzey, doğu ve batıda üç girişi olan harimin ortasında sekiz dilimli, cihannüma şeklinde bir iç kubbe vardır; kubbeyi taşıyan 50 cm ebatlarında ahşap ayaklar kare bir alanı örter ve beden duvarlarına kemerlerle bağlanır. Köşe bölmeler çapraz, diğerleri basık beşik tonozludur. Kitaba göre bu örtü sistemi klasik dönemdeki Şehzade, Sultanahmet, Eminönü Yeni Cami ve Fâtih Camii'nin sistemiyle aynıdır; ancak yarım kubbe ve köşe kubbecikleri yerine tonoz kullanılmıştır. Cami 17,25 × 17,35 m'dir ve eski yapıyla aynı alanı kapladığı tahmin edilmektedir; arşiv belgelerinden orta kubbenin yanlarında ikişer kubbe ve üç gözlü son cemaat yeriyle sekiz kubbeli bir tasarım düşünülebilir. Aydınlatma doğu ve batıda üçer, kuzey ve güneyde ikişer, kasnakta sekiz basık kemerli pencereyle sağlanır. Mihrap 110 cm derinliğinde, yarım daire formunda sade bir niş olup 1873 tarihlidir; kavsarasında beş silme vardır.",
+        "en": "The narthex of the completely renovated mosque is 3.15 × 17.10 m with a flat reinforced-concrete ceiling. There are round wall niches and a lower window on each side of the entrance to the prayer hall. The hall, with entrances on the north, east and west, has an eight-segmented gazebo-shaped inner dome; the 50 cm wooden piers carrying it cover a square area and are connected to the main walls by arches. Corner bays have cross vaults and the others depressed barrel vaults. The book says this covering system is the same as in the Şehzade, Sultanahmet, Eminönü Yeni and Fâtih mosques of the classical period, with vaults used instead of half domes and corner domes. The mosque (17.25 × 17.35 m) is assumed to cover the same area as the old building; archive documents suggest an eight-domed design with a central dome, two domes on each side and a three-bay narthex. Light comes from three windows each in the east and west, two each in the north and south and eight in the drum. The mihrab is a plain semicircular niche 110 cm deep, dated 1873, with five moldings on its hood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "1680'de Kazzazoğlu'nun caminin batı tarafında yaptırdığı iki kubbe tamir edilmiştir. Cami ayrıca 1766, 1817, 1844, 1854 ve 1870'te tamir görmüş, en son 2016'da elden geçirilmiştir.",
+        "en": "In 1680 the two domes built by Kazzazoğlu on the west side of the mosque were repaired. The mosque was also repaired in 1766, 1817, 1844, 1854 and 1870, and was last overhauled in 2016."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 6,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Hazirede cami banisi Hacı Mehmed'in kabri bulunur. Günümüze sağlam gelen baş taşındaki ifadeden Hacı Mehmed'in baba adının Hacı Musa, onun babasının Kayağan olduğu ve caminin isminin bu addan geldiği anlaşılmaktadır. Haziresi eskiden beri geniş bir varlığa ulaşmamıştır. Tarihî kayıtlarda gösterilen üç mezarın (müderris Çömez Ahmed Efendi, oğlu Şevki Çelebi ve 'Ahmed' adlı bir kişi) taşları günümüze ulaşmamıştır. Banî dışında altı kişiye ait mezar taşı tespit edilmiştir; iki taş kırıktır ve yalnızca tarih kısımları okunabilir. İsimler: Hacı Mehmed bin Hacı Musa bin Kayağan, Hafız Hoca Mehmed Efendi, Hafize Gülizar Hanım, Hüseyin Ağa, Şerife Zîbâ Hanım ve Aişe Hanım. Seyyid Ahmed bin Seyyid Mehmed, Çömez Ahmed Efendi ve Çömezzâde Mehmed Şevki Çelebi de hazireye defnedilmiş, ancak taşları günümüze gelmemiştir.",
+        "en": "The tomb of the mosque's founder Hacı Mehmed is in the graveyard. The headstone, intact to the present, shows that his father was Hacı Musa, whose father was Kayağan, and that the mosque's name comes from this name. The graveyard has never been large. The stones of the three graves shown in historical records (the teacher Çömez Ahmed Efendi, his son Şevki Çelebi, and a person named 'Ahmed') have not survived. Tombstones of six people other than the founder have been identified; two are broken and only their dates can be read. The names are Hacı Mehmed bin Hacı Musa bin Kayağan, Hafız Hoca Mehmed Efendi, Hafize Gülizar Hanım, Hüseyin Ağa, Şerife Zîbâ Hanım and Aişe Hanım. Seyyid Ahmed bin Seyyid Mehmed, Çömez Ahmed Efendi and Çömezzâde Mehmed Şevki Çelebi were also buried there, but their stones have not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "378"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri ölçüsü",
+        "en": "Narthex size"
+      },
+      "value": "3,15 × 17,10",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "key": "cami_olcu",
+      "label": {
+        "tr": "Cami ölçüsü",
+        "en": "Mosque size"
+      },
+      "value": "17,25 × 17,35",
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ],
+      "note": {
+        "tr": "Eski yapıyla aynı alanı kapladığı tahmin edilmektedir.",
+        "en": "Assumed to cover the same area as the old building."
+      }
+    },
+    {
+      "key": "ahsap_ayak_olcu",
+      "label": {
+        "tr": "Ahşap ayak ebadı",
+        "en": "Wooden pier size"
+      },
+      "value": 50,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_derinlik",
+      "label": {
+        "tr": "Mihrap derinliği",
+        "en": "Mihrab depth"
+      },
+      "value": 110,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "key": "harim_giris_sayisi",
+      "label": {
+        "tr": "Harim girişi sayısı",
+        "en": "Entrances to the prayer hall"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnaktaki pencere sayısı",
+        "en": "Windows in the drum"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "key": "hazire_diger_tas",
+      "label": {
+        "tr": "Banî dışında taşı tespit edilen kişi sayısı",
+        "en": "People with identified stones other than the founder"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "378"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'banisinden başka altı kişi' der ama sayılan altı isim banînin adını da içerir.",
+        "en": "The book says 'six people other than the founder' but the six names listed include the founder's name."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Kayganzâde Musa",
+      "role": {
+        "tr": "Bursalı tüccar, ortak banî (v. 1497)",
+        "en": "Bursa merchant, joint founder (d. 1497)"
+      }
+    },
+    {
+      "name": "Süle Mehmed Paşa",
+      "role": {
+        "tr": "Ortak banî",
+        "en": "Joint founder"
+      }
+    },
+    {
+      "name": "Hacı Mehmed (bin Hacı Musa bin Kayağan)",
+      "role": {
+        "tr": "Hazire bölümünde banî; kabri sağlam",
+        "en": "Founder per the graveyard section; his tomb survives"
+      }
+    },
+    {
+      "name": "Kolağası Halil Efendi",
+      "role": {
+        "tr": "1870 yangınından sonra camiyi bugünkü şekliyle yeniden yaptıran kişi",
+        "en": "Person who rebuilt the mosque in its present form after the 1870 fire"
+      }
+    },
+    {
+      "name": "Şair Şeyh Hacı Bahâeddin Efendi",
+      "role": {
+        "tr": "Yeniden inşa için tarih manzumesi yazan şair",
+        "en": "Poet who wrote the chronogram for the reconstruction"
+      }
+    },
+    {
+      "name": "Ali Sırrî Efendi",
+      "role": {
+        "tr": "Kâğıt üzerindeki ikinci kitabenin hattatı olduğu anlaşılan kişi",
+        "en": "Understood to be the calligrapher of the second, paper inscription"
+      }
+    },
+    {
+      "name": "Kazzazoğlu",
+      "role": {
+        "tr": "Caminin batısında iki kubbe yaptırdığı belirtilen kişi",
+        "en": "Person said to have built two domes on the west of the mosque"
+      }
+    },
+    {
+      "name": "Çömez Ahmed Efendi",
+      "role": {
+        "tr": "Müderris; hazirede gömülü, taşı yok",
+        "en": "Teacher; buried in the graveyard, stone lost"
+      }
+    },
+    {
+      "name": "Çömezzâde Mehmed Şevki Çelebi",
+      "role": {
+        "tr": "Çömez Ahmed Efendi'nin oğlu; hazirede gömülü, taşı yok",
+        "en": "Son of Çömez Ahmed Efendi; buried in the graveyard, stone lost"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tarih-manzumesi-1873",
+      "location": {
+        "tr": "Yeniden inşa edilen camide (yeri belirtilmiyor)",
+        "en": "On the rebuilt mosque (exact place not stated)"
+      },
+      "language": "tr-ottoman",
+      "script": "talik",
+      "transliteration": "Kaygan Câmii yanmış idi bundan evvel\nArsası kalmış idi hâlî hayli zamân\nİtdi inşâsına bir abd-i Halîl’i sebeb\nLutfına mazhâr idüb hazret-i Rabb-i Mennân\nSarf-ı himmet iderek böyle eser itdi\nNâmın ibkâ bu güzergâhta beyne’l-akrân\nÖmrün efzûn kılub himmet-i sa’yin meşkûr\nEylesin böyle nice hayra muvaffak Yezdân\nBi’l-bedâhe didi bu gûne Bahâ târîhin\nYapdı bu hemnâm-ı Halîlü’r-Rahmân.",
+      "translation": {
+        "tr": "Kaygan Camii yangında kül olmuştur\nArsası uzun müddet boş kalmıştı\nYeniden inşasına Halil adlı bir kişi oldu sebep\nCenab-ı Hakk ona bu işi lütfetti\nO da himmet ederek bu eseri yaptı\nBöylece akranları arasında namı kaldı\nAllah onun ömrünü uzun gayretini meşkur etsin\nKi Allah onu nice böyle eserler yapmaya muvaffak kılsın\nBâhâ açık bir şekilde bugüne tarih düşürdü\nHz. İbrahim’in adaşı bu camiyi yaptı.",
+        "en": "Kaygan Mosque was reduced to ashes in a fire\nThe land was left empty for a long time\nThe reason for its reconstruction was a person named Halil\nThe Almighty God blessed him with this work\nHe also built this work with his help\nThus, his reputation remained among his peers\nMay Allah praise his long life and efforts\nMay Allah make him successful in building many more such works\nBahá clearly set the date for today\nThe namesake of Hz. Abraham built this mosque."
+      },
+      "author": "Şair Şeyh Hacı Bahâeddin Efendi",
+      "date": {
+        "hijri_year": 1290,
+        "gregorian": "1873"
+      },
+      "note": {
+        "tr": "Yeniden inşayı belgeleyen on dizelik tarih manzumesi; İngilizce metin sonuna 'AH 1290 / AD 1873' ekler.",
+        "en": "Ten-line chronogram documenting the reconstruction; the English text adds 'AH 1290 / AD 1873' at the end."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "375-376"
+        }
+      ]
+    },
+    {
+      "id": "kagit-kitabe-ali-sirri",
+      "location": {
+        "tr": "Batı duvarında, kapının hemen yanında asılı",
+        "en": "Hanging on the west wall right next to the door"
+      },
+      "language": "other",
+      "script": "küçük boy talik",
+      "transliteration": null,
+      "translation": null,
+      "author": "Ali Sırrî Efendi (hattat olduğu anlaşılıyor)",
+      "date": null,
+      "note": {
+        "tr": "Birinci kitabenin altında kâğıt üzerine yazılı ikinci kitabe; çalınmış, yenisi yazılıp yerine asılmıştır. Metin ve dil kitapta verilmiyor.",
+        "en": "A second inscription on paper below the first; it was stolen and a new one written and hung in its place. The book gives neither its text nor its language."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kayganzade-musa-vefat-1497",
+      "year": 1497,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kayganzâde Musa vefat etti",
+        "en": "Kayganzâde Musa died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "374"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1680",
+      "year": 1680,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kazzazoğlu'nun batıda yaptırdığı iki kubbe tamir edildi",
+        "en": "The two domes built by Kazzazoğlu on the west were repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1766",
+      "year": 1766,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1817",
+      "year": 1817,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1854",
+      "year": 1854,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem: yapı yıkıldı; cami bölümü ahşap, minare kâgir olarak yeniden yapıldı",
+        "en": "Earthquake: building destroyed; rebuilt with a wooden mosque section and masonry minaret"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1870",
+      "year": 1870,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük Kaygan yangınında yapı tamamen harap oldu; yangına karşı çevre ev ve dükkânlar istimlak edildi",
+        "en": "The great Kaygan fire left the building completely ruined; surrounding houses and shops were expropriated"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1870",
+      "year": 1870,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1873",
+      "year": 1873,
+      "date": null,
+      "hijri": "1290",
+      "type": "restoration",
+      "title": {
+        "tr": "Kolağası Halil Efendi tarafından bugünkü şekliyle yeniden yapıldı (manzume ve mihrap tarihi 1873)",
+        "en": "Rebuilt in its present form by Kolağası Halil Efendi (chronogram and mihrab dated 1873)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "375-376"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2016",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Son elden geçirme",
+        "en": "Latest overhaul"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "376"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-kaygan-hamami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami, Kayhan Çarşısı'nda 'Dülgerler ve Ağaççılar Hamamı' olarak bilinen Kaygan Hamamı'nın yanındadır.",
+        "en": "The mosque stands next to the Kaygan Bath, known as the 'Carpenters and Woodworkers Bath', in the Kayhan Bazaar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "374"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kaygan Camii, Kayhan Çarşısı'nda yer alan, tamamen yenilenmiş çatılı bir yapıdır. İçeride kare bir alanı örten ve ahşap ayaklara oturan, sekiz dilimli cihannüma biçimli bir iç kubbe vardır; ayaklar duvarlara kemerlerle bağlanır. Harime kuzey, doğu ve batıdan üç girişle girilir; önünde düz betonarme tavanlı geniş bir son cemaat bölümü bulunur. Minaresi iki şerefelidir. Batı duvarında, kapının yanında kâğıt üzerine yazılı bir kitabe asılıdır.",
+      "en": "Kaygan Mosque is a completely renovated roofed building in the Kayhan Bazaar. Inside, an eight-segmented gazebo-shaped inner dome covers a square area on wooden piers connected to the walls by arches. The prayer hall is entered by three doors on the north, east and west, with a wide narthex with a flat reinforced-concrete ceiling in front. The minaret has two balconies. A paper inscription hangs on the west wall next to the door."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

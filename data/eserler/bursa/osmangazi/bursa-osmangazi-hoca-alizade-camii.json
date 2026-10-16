@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hoca-alizade-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 338-341) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hoca Ali'nin aynı mahallede yaptırdığı mektebin adı kitapta verilmiyor; varsa ayrı kayıtla bağlanmalı.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[kapi-kitabesi]",
+        "note": "Mealen metnindeki 'HAn' yazımı kitaptaki gibi bırakıldı."
+      },
+      {
+        "field": "waqf",
+        "note": "Kitap yalnızca Hoca Ali'nin zengin olduğunu ve mektep yaptırdığını söyler; vakıf bilgisi verilmez."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hoca Alizâde Camii",
+    "en": "Hoca Alizâde Mosque"
+  },
+  "subtitle": {
+    "tr": "Hoca Ali'nin 1439'da yaptırdığı hazireli cami",
+    "en": "Mosque built by Hoca Ali in 1439, with its graveyard"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kitabeli",
+    "kubbeli",
+    "hazire",
+    "Bursa minaresi",
+    "II. Murad",
+    "Barok süsleme"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hocaalizâde",
+    "address": "Kocaali Sokak, No: 1/1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "338"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 843 / M. 1439",
+      "en": "AH 843 / AD 1439"
+    },
+    "start_year": 1439,
+    "end_year": 1439,
+    "hijri_year": 843,
+    "century": 15,
+    "basis": {
+      "tr": "Kapı üzerindeki kitabede caminin Sultan II. Murad devrinde H. 843 / M. 1439'da yapıldığı açıkça belirtilir.",
+      "en": "The inscription above the door clearly states the mosque was built in AH 843 / AD 1439 during Sultan Murad II's reign."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "339"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Ali (Hoca Ali bin el-Hâc Ömer)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "338-339"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "II. Murad döneminde zengin bir tüccar olan Hoca Ali'nin H. 843 / M. 1439'da yaptırdığı, kare planlı ve kubbeli cami. Kapı kitabesi, Bursa'ya özgü minaresi ve geniş bahçe haziresiyle bilinir; hazirede Hoca Ali'nin çocuklarının mezarları vardır.",
+    "en": "A square-plan domed mosque built in AH 843 / AD 1439 by Hoca Ali, a wealthy merchant of Murad II's reign. It has a door inscription, a minaret with Bursa-specific details, and a large garden graveyard with the graves of Hoca Ali's children."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, Hocaalizâde Mahallesi, Kocaali Sokak No:1/1'de yer almaktadır. Sultan II. Murad devrinde yaşamış olan Hoca Ali tarafından inşa edilmesine rağmen Hoca Alizâde adıyla anılmıştır. Kendi döneminde oldukça zengin sayılan Hoca Ali, aynı mahallede caminin yanı sıra bir mektep de yaptırmıştır. Oğullarından Hacı Ömer Çelebi ve Mahmud Çelebi de kendisi gibi tüccardı.",
+        "en": "The mosque is located in Hocaalizâde Neighborhood, Kocaali Street No. 1/1. Although built by Hoca Ali, who lived during the reign of Sultan Murad II, it was called Hoca Alizâde. Hoca Ali, who was considered very wealthy in his time, had a school built in the same neighborhood as well as the mosque. His sons Hacı Ömer Çelebi and Mahmud Çelebi were also merchants like him."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "338"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Asıl ibadet mekânı kareye yakın planlı olup 8,69 × 8,97 m ölçülerindedir; son cemaat revakıyla birlikte dikdörtgen bir plan oluşturur. Duvarlar iki sıra tuğla, bir sıra kesme taşla örülmüştür. Kalkan duvarlı revakın iki yanı kapatılmış, cephesi camekânla örtülmüştür; revak yanlarındaki pencereler sonradan kapatılmış ve revak direkleri yerine yuvarlak kemerli bir duvar çekilmiştir. Kubbe göbekli tasarlanmış, zengin Türk üçgenli bir kuşağa oturur ve üçgenlerin çevresine kontürler çekilmiştir. Kasnak sekizgendir, iki sıra kirpi saçakla tamamlanır; yapı altta sekiz, üstte yedi pencereyle aydınlanır.",
+        "en": "The main prayer room has a nearly square plan of 8.69 × 8.97 m and forms a rectangle together with the narthex portico. The walls are built with two rows of bricks and one row of cut stone. The portico with parapet wall is closed on both sides and its façade is covered with glass panels; the side windows were later closed and a round-arched wall replaced the portico piers. The dome has a central boss, rests on a rich Turkish triangle band with contours drawn around the triangles. The drum is octagonal with a two-row sawtooth cornice; the building is lit by eight windows below and seven above."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "340"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân ve Minare",
+        "en": "Interior and Minaret"
+      },
+      "body": {
+        "tr": "Mihrap özgünlüğünü kaybetmiş, yarım kubbe formunda kalmış ve yağlı boyayla boyanmıştır. Kubbe eteği, silmeler ve pencere iç kemerleri Barok süslemelidir. Doğu ve batı duvarlarında daire içinde kırmızı sülüs hatla besmele ve Fâtiha suresi yazılıdır. Ahşap minber 19. yüzyıl özellikleri gösterir. Minare, sekizgen kaidesinin üst kısmında sekiz sivri kemerli kitabe taşır; küp bölümünde bir dilim mermer, bir dilim tuğla kullanılmıştır. Şerefe altı beş sıra stalaktitlidir ve külahı yenilenmiştir. Cami sağlam durumdadır ve ibadete açıktır.",
+        "en": "The mihrab has lost its original form, remaining as a half dome painted with oil paint. The dome skirt, moldings and inner window arches have Baroque decorations. On the east and west walls the Basmala and the Surah al-Fatiha are written in red Thuluth script within a circle. The wooden minbar displays 19th-century features. The minaret has eight pointed arched inscriptions on the upper part of its octagonal base, a transition section of alternating marble and brick, five rows of stalactites under the balcony and a renewed spire. The mosque is in good condition and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "340"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Oldukça geniş bir alana sahip hazire caminin bahçesindedir. Caminin güneyindeki bölümde, camiyi yaptıran Hoca Ali'nin çocuklarına ait mezarlar başta olmak üzere son zamanlara kadar defnedilen pek çok kişinin mezar taşı vardır. Ancak Hoca Ali'nin kendi mezar taşı bu hazirede değildir ve tarihî kaynaklarda onun buraya defnedildiğine dair bir kayıt bulunmamaktadır. Hazirede kabri bulunanlar arasında Hoca Ali'nin oğulları Hoca Ahmed Çelebi ve Hoca Ömer, Hoca Abdullah bin Keyvan, Osman Hüdâvendigâr Sancağı Mutasarrıfı Mirliva Tahir Ömerzâde, Abdullah Çelebi bin Ahi, Seyyid Mehmed Bey, Nessâh Remzi Efendizâde ve Seyyid Ahmed Zekî Efendi sayılmaktadır.",
+        "en": "The graveyard, covering quite a large area, is in the garden of the mosque. In the southern section are the gravestones of many people buried until recent times, especially the graves of the children of Hoca Ali, who built the mosque. However, Hoca Ali's own tombstone is not in this graveyard, and there is no record in historical sources that he was buried here. Among those buried are Hoca Ali's sons Hoca Ahmed Çelebi and Hoca Ömer, Hoca Abdullah bin Keyvan, Tahir Ömerzâde (Mirliva, Mutasarrıf of the Osman Hüdâvendigâr Sanjak), Abdullah Çelebi bin Ahi, Seyyid Mehmed Bey, Nessâh Remzi Efendizâde and Seyyid Ahmed Zekî Efendi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "341"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ibadet_mekani_olcu",
+      "label": {
+        "tr": "İbadet mekânı ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "8,69 × 8,97",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "340"
+        }
+      ]
+    },
+    {
+      "key": "pencere_alt",
+      "label": {
+        "tr": "Alt sıra pencere sayısı",
+        "en": "Lower-row windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "340"
+        }
+      ]
+    },
+    {
+      "key": "pencere_ust",
+      "label": {
+        "tr": "Üst sıra pencere sayısı",
+        "en": "Upper-row windows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "340"
+        }
+      ]
+    },
+    {
+      "key": "minare_kitabe_sayisi",
+      "label": {
+        "tr": "Minare kaidesindeki sivri kemerli kitabe sayısı",
+        "en": "Pointed-arched inscriptions on minaret base"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "340"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Ali bin el-Hâc Ömer",
+      "role": {
+        "tr": "Banî; II. Murad dönemi tüccarı",
+        "en": "Founder; merchant of Murad II's reign"
+      }
+    },
+    {
+      "name": "Hacı Ömer Çelebi",
+      "role": {
+        "tr": "Hoca Ali'nin oğlu, tüccar",
+        "en": "Son of Hoca Ali, merchant"
+      }
+    },
+    {
+      "name": "Mahmud Çelebi",
+      "role": {
+        "tr": "Hoca Ali'nin oğlu, tüccar",
+        "en": "Son of Hoca Ali, merchant"
+      }
+    },
+    {
+      "name": "Hoca Ahmed Çelebi",
+      "role": {
+        "tr": "Hoca Ali'nin oğlu; hazirede medfun",
+        "en": "Son of Hoca Ali; buried in the graveyard"
+      }
+    },
+    {
+      "name": "Hoca Ömer",
+      "role": {
+        "tr": "Hoca Ali'nin oğlu; hazirede medfun",
+        "en": "Son of Hoca Ali; buried in the graveyard"
+      }
+    },
+    {
+      "name": "Hoca Abdullah bin Keyvan",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Tahir Ömerzâde",
+      "role": {
+        "tr": "Mirliva, Osman Hüdâvendigâr Sancağı Mutasarrıfı; hazirede medfun",
+        "en": "Mirliva, Mutasarrıf of the Osman Hüdâvendigâr Sanjak; buried in the graveyard"
+      }
+    },
+    {
+      "name": "Abdullah Çelebi bin Ahi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Seyyid Mehmed Bey",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Nessâh Remzi Efendizâde",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Seyyid Ahmed Zekî Efendi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Caminin kapısı üzerinde",
+        "en": "Above the door of the mosque"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Emera bi-binâi hâzâ’l-mescidi’l-mübâreki’ş-şerîf hasbeten lillâhi ve taleben / li-likâihî’l-kerîm yevme lâ yenfa’u mâlün ve lâ benûn illâ men etâ / ‘llâhe bi-kalbin selîm Hoca Ali bin el-Hâc Ömer ufiye anhümâ / fî zamâni’s-Sultân Murâd bin Mehmed bin Bâyezîd Hân seneti selâse ve erbâ’îne ve semâne mi’e.",
+      "translation": {
+        "tr": "Bu mübarek ve şerefli mescidin inşasını, Allah rızası için ve kerem sahibi Rabbinin huzuruna temiz bir kalple kavuşmayı umarak, Hoca Ali bin Hac Ömer yaptırmıştır. “O gün (ahiret günü) ne mal ne evlat fayda verir; ancak Allah’a selîm (temiz) bir kalple gelen kurtulur. Allah her ikisinden razı olsun. Bu inşa, Sultan II. Murad bin Mehmed bin Bayezid HAn devrinde, Hicrî 843 yılında gerçekleşmiştir.”",
+        "en": "The construction of this blessed and honorable mosque was commissioned by Hoca Ali bin Hajj Omar for the sake of Allah and with the hope of meeting his generous Lord with a clean heart. On that day (the Day of Judgment), neither wealth nor children will be of benefit; only the one who comes to Allah with a sound (clean) heart will be saved. May Allah be pleased with both of them. This construction was carried out during the reign of Sultan Murad II bin Mehmed bin Bayezid Khan in the year AH 843."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 843,
+        "gregorian": "1439"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "339-340"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1439",
+      "year": 1439,
+      "date": null,
+      "hijri": "843",
+      "type": "construction",
+      "title": {
+        "tr": "İnşa edildi (kapı kitabesi)",
+        "en": "Built (door inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "339"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hoca Alizâde Camii, kareye yakın planlı, kubbeli bir yapıdır. Duvarları tuğla ve kesme taşla örülmüş, sekizgen kasnaklı kubbesi kirpi saçakla bitmektedir. Önündeki revak yanlarından kapatılmış ve camekânla örtülmüştür. Sekizgen kaideli minarenin kaidesinde sekiz sivri kemerli kitabe vardır. İç mekânda kubbe eteği Barok süslemelidir. Bahçesinde, özellikle Hoca Ali'nin çocuklarına ait mezar taşlarının bulunduğu geniş bir hazire yer alır.",
+      "en": "Hoca Alizâde Mosque is a domed building on a nearly square plan. Its walls are of brick and cut stone and its octagonal-drum dome ends in a sawtooth cornice. The portico in front is closed at the sides and covered with glass. The minaret's octagonal base has eight pointed-arched inscriptions. Inside, the dome skirt has Baroque decoration. In its garden is a large graveyard with the gravestones of Hoca Ali's children among others."
+    }
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

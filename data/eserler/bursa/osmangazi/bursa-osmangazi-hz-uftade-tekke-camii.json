@@ -1,0 +1,386 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hz-uftade-tekke-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 457-459) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Hu Çeşmesi ve semahane için hedef kayıt bilinmiyor.",
+      "Kapı kitabesinin (kelime-i tevhid) ve Hu Çeşmesi kitabesinin fotoğrafları AR için seçilebilir."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Tarih, caminin kendisinde değil tekkenin Hu Çeşmesi'ndeki kitabeden çıkarılıyor; bu yüzden 'probable' işaretlendi."
+      },
+      {
+        "field": "architecture",
+        "note": "Kitap 6,88 × 6,56 m planı 'kareye yakın dikdörtgen' olarak tanımlar; tekke mescidinin camiye dönüşüm yılı verilmez."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hz. Üftâde Tekke Camii",
+    "en": "Hz. Üftâde Sufi Lodge Mosque"
+  },
+  "subtitle": {
+    "tr": "Üftâde Tekkesi'nin tevhidhanesinden camiye dönüştürülen mescit",
+    "en": "Lodge prayer hall of the Üftâde Sufi Lodge converted into a mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "tekke",
+    "tevhidhane",
+    "Hu Çeşmesi",
+    "kalem işi tavan",
+    "semahane",
+    "Uludağ yamacı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Molla Fenari",
+    "address": "Derman Caddesi, No: 28",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "457"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 974 / M. 1566",
+      "en": "AH 974 / AD 1566"
+    },
+    "start_year": 1566,
+    "end_year": 1566,
+    "hijri_year": 974,
+    "century": 16,
+    "basis": {
+      "tr": "Hu Çeşmesi'ndeki kitabedeki H. 974 / M. 1566 tarihi, yapının tekkenin tevhidhanesi olarak inşa edildiğini gösterir.",
+      "en": "The date AH 974 / AD 1566 on the inscription at the Hu Fountain shows it was built as the lodge's prayer hall."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "457"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Üftâde Hazretleri",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "457"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Üftâde Tekkesi bünyesindeki cami, Üftâde Hazretleri'nin kendi bütçesiyle yaptırdığı tekkenin tevhidhanesi olarak inşa edilmiş, minber eklenerek camiye dönüştürülmüştür. 6,88 × 6,56 m'lik yapının mimarisi, kalem işi tavanı ve vitraylı pencereleriyle öne çıkar; II. Mahmud dönemine ait olduğu anlaşılan semahane son cemaat yeri olarak düzenlenmiştir.",
+    "en": "The mosque within the Üftâde Sufi Lodge was built as the prayer hall (tevhidhane) of the lodge that Hazrat Üftâde had built with his own budget, and was converted into a mosque with the addition of a minbar. The 6.88 × 6.56 m building is notable for its hand-painted ceiling and stained-glass windows; the semahane, traced to the reign of Mahmud II, serves as its narthex."
+  },
+  "sections": [
+    {
+      "id": "kurulus",
+      "order": 1,
+      "title": {
+        "tr": "Kuruluş",
+        "en": "Foundation"
+      },
+      "body": {
+        "tr": "Üftâde Hazretleri'nin kendi bütçesiyle yaptırdığı tekkenin Hu Çeşmesi'nde ayna taşına işlenmiş kitabedeki H. 974 / M. 1566 tarihi, yapının Üftade Dergâhı'nın tevhidhanesi olarak inşa edildiğini gösterir. Uludağ'ın güney yamaçlarında, Bursa'ya hâkim eğimli ve dik bir arazide kurulan tekke bünyesindeki cami günümüzde ibadete açıktır. 6,88 × 6,56 m ölçülerinde, kareye yakın dikdörtgen planlı tekke mescidi minber ilavesiyle camiye dönüştürülmüştür.",
+        "en": "The date AH 974 / AD 1566 on the inscription carved on the back panel of the Hu Fountain of the lodge, built by Hazrat Üftâde with his own budget, shows it was built as the prayer hall of the Üftade Sufi Lodge. The mosque within the lodge, on a steep sloping site overlooking Bursa on the southern slopes of Uludağ, is open for worship today. The lodge masjid, a near-square rectangle of 6.88 × 6.56 m, was converted into a mosque with the addition of a minbar."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "457"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Eğimli arazi taş duvarlarla yükseltilerek zeminden kot farkı sağlanmış, yapı küfeki taşı ve tuğlayla inşa edilmiştir; duvar kalınlığı 70 cm'dir. İçeriden kepenkli, dışarıdan taş kasa içinde demir parmaklıklı üç pencere girişin solundadır; üstlerinde vitraylı üç pencere daha vardır, üst pencere dizisi mihrap üzerinde ikişerli sürer. Son onarımda yenilenen ahşap tavan iki renkli, kalem işi geçme çokgen yıldızlarla süslüdür; tavan göbeği kare formlu, çok renkli on iki köşeli bir yıldızdan açılır. İzlerinden II. Mahmud dönemine ait olduğu anlaşılan 9,80 × 9,70 m'lik semahane, çatıları birleştirilerek mescidin son cemaat yeri olarak düzenlenmiştir.",
+        "en": "The sloping land was raised with stone walls to give a level difference; the building is of limestone and brick with 70 cm thick walls. Three windows, shuttered inside and protected outside by iron grilles in stone frames, are to the left of the entrance, with three stained-glass windows above them; the upper row continues in pairs on either side of the mihrab. The ceiling, renewed in the last renovation, is wooden, two-colored and painted with interlaced polygonal stars; the ceiling medallion opens from a square-shaped, multi-colored twelve-pointed star. The 9.80 × 9.70 m semahane, traced to the period of Mahmud II, was arranged as the mosque's narthex by joining their roofs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "458"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-ve-minare",
+      "order": 3,
+      "title": {
+        "tr": "Giriş, Mihrap ve Minare",
+        "en": "Entrance, Mihrab and Minaret"
+      },
+      "body": {
+        "tr": "Asıl ibadet mekânının giriş kapısı yenilenmiştir; mihrabın karşısındaki üzeri kitabeli ahşap kasa ve pervaz özgün niteliğini korur. Kapı üzerindeki kitabede sülüs hatla kelime-i tevhid yazılıdır. Mihrap, mavi tonlarla ve bitkisel motiflerle süslü dairesel bir nişten oluşur. Minareye caminin doğusundaki müezzin mahfilinden ahşap bir merdivenle çıkılır; kısa minarenin gövdesi tuğladan, şerefe altı altı sıra mukarnaslıdır.",
+        "en": "The entrance door of the main prayer area has been renewed; the wooden frame and the inscribed cornice opposite the mihrab keep their original character. The inscription above the door displays the Kelime-i Tevhid in Thuluth. The mihrab is a circular niche decorated in blue and its shades with vegetal motifs. The minaret is reached by a wooden staircase from the muezzin's platform on the east; the short minaret has a brick shaft and six rows of muqarnas below the balcony."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "458-459"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 4,
+      "title": {
+        "tr": "Restorasyon",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "2009-2014 arasındaki son restorasyonda ahşap kısımlar sökülüp ayrı bir atölyede özgün yapısı bozulmadan bakıma alınmıştır. Düzgün kesme taştan duvar örgüsü hatalı bir uygulamayla sıvanmıştır.",
+        "en": "During the last restoration, between 2009 and 2014, the wooden parts were removed and maintained in a separate workshop without damaging their original structure. The cut-stone wall system was plastered by an incorrect application."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "459"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Plan ölçüleri",
+        "en": "Plan dimensions"
+      },
+      "value": "6,88 × 6,56",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "457"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 70,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "458"
+        }
+      ]
+    },
+    {
+      "key": "semahane_olcu",
+      "label": {
+        "tr": "Semahane ölçüleri",
+        "en": "Semahane dimensions"
+      },
+      "value": "9,80 × 9,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "458"
+        }
+      ]
+    },
+    {
+      "key": "minare_mukarnas",
+      "label": {
+        "tr": "Şerefe altı mukarnas sırası",
+        "en": "Muqarnas rows under balcony"
+      },
+      "value": 6,
+      "unit": "sıra",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "459"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Üftâde Hazretleri",
+      "role": {
+        "tr": "Tekkeyi kendi bütçesiyle yaptıran",
+        "en": "Had the lodge built with his own budget"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Asıl ibadet mekânının kapısı üzerinde",
+        "en": "Above the door of the main prayer area"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap yalnızca kelime-i tevhidin sülüs hatla yazıldığını belirtir; metin verilmiyor.",
+        "en": "The book only says the Kelime-i Tevhid is written in Thuluth; no text is given."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "459"
+        }
+      ]
+    },
+    {
+      "id": "hu-cesmesi-kitabesi",
+      "location": {
+        "tr": "Tekkenin Hu Çeşmesi'nde, ayna taşı üzerinde",
+        "en": "On the back panel of the lodge's Hu Fountain"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 974,
+        "gregorian": "1566"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap yalnızca H. 974 / M. 1566 tarihini verir; metin ve dil verilmiyor.",
+        "en": "The book only gives the date AH 974 / AD 1566; no text or language."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "457"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1566",
+      "year": 1566,
+      "date": null,
+      "hijri": "974",
+      "type": "construction",
+      "title": {
+        "tr": "Tekkenin tevhidhanesi olarak inşa edildi",
+        "en": "Built as the prayer hall of the lodge"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "457"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2009-2014",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son restorasyon (2009-2014)",
+        "en": "Last restoration (2009-2014)"
+      },
+      "note": {
+        "tr": "2009-2014 arası; olay yılı başlangıç alınmıştır.",
+        "en": "Spans 2009-2014; year is the start."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "459"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hz-uftade-tekkesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami, Üftade Tekkesi'nin bünyesinde yer alır.",
+        "en": "The mosque is located within the Üftade Sufi Lodge."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "457"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tekke Camii, Uludağ'ın güney yamacında, dik bir arazide taş duvarlarla yükseltilmiş bir zeminde, küfeki taşı ve tuğladan yapılmıştır. İçeride iki renkli kalem işi yıldızlı ahşap tavan, mavi tonlu dairesel mihrap vardır. Önünde 9,80 × 9,70 metrelik eski semahane son cemaat yeri olarak kullanılır. Kısa tuğla bir minaresine ahşap merdivenle müezzin mahfilinden çıkılır.",
+      "en": "The Tekke Mosque stands on a steep slope of Uludağ on ground raised with stone walls, built of limestone and brick. Inside are a two-color wooden ceiling painted with stars and a circular mihrab in blue tones. In front, the old 9.80 × 9.70 metre semahane serves as the narthex. A short brick minaret is reached by a wooden staircase from the muezzin's platform."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

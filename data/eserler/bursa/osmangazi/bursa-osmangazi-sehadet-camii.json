@@ -1,0 +1,455 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sehadet-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 421-423) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Mahalle adı kitapta verilmiyor; location.neighborhood sahada/başka kaynaktan doldurulmalı.",
+      "Orhan Camii (Manastır Medresesi bitişiği, sur içi) için hedef kayıt yok.",
+      "Doğu kapı üzerindeki başka camiden getirilmiş olabilecek kitabenin metni kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap, camiyi I. Murad'ın 'son eseri' ve inşasından sonra Kosova'ya gidip şehit olduğunu söylerken inşa tarihini H. 767 / M. 1366 olarak 'kabul edilen' bir tarihle verir; Kosova Muharebesi'nin tarihi kitapta verilmediği için iki bilgi uzlaştırılamadı. Tarih 'probable' işaretlendi."
+      },
+      {
+        "field": "location.neighborhood",
+        "note": "Kitap yalnızca ilçe ve cadde adını veriyor; mahalle adı verilmiyor, alan boş bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şehadet (Kale-Saray) Camii",
+    "en": "Şehadet (Kale-Saray) Mosque"
+  },
+  "subtitle": {
+    "tr": "I. Murad'ın Bey Sarayı karşısında yaptırdığı 'ikinci ulucami'",
+    "en": "The 'second Ulucami' Murad I had built opposite the Bey Palace"
+  },
+  "alternate_names": [
+    {
+      "tr": "Saray Camii",
+      "en": "Saray (Palace) Mosque",
+      "note": "Bursa'daki Osmanlı Sarayı'nın karşısında yer aldığı için"
+    },
+    {
+      "tr": "Kale Camii",
+      "en": "Castle Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Gotik cephe",
+    "1855 depremi",
+    "I. Murad",
+    "saray camii",
+    "sur içi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": "Hasta Yurdu Caddesi, No: 15",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "421"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 767 / M. 1366 (kabul edilen)",
+      "en": "AH 767 / AD 1366 (accepted)"
+    },
+    "start_year": 1366,
+    "end_year": 1366,
+    "hijri_year": 767,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap, yapının H. 767 / M. 1366'da inşa edildiğinin kabul edildiğini söyler; kitabesi günümüze ulaşmamıştır.",
+      "en": "The book says the building is accepted to have been built in AH 767 / AD 1366; its inscription has not survived."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "421"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan I. Murad",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "421"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Şehadet Camii'ne ait özel bir vakfiye yoktur.",
+      "en": "There is no special endowment charter for the Şehadet Mosque."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "421"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan I. Murad'ın Bey Sarayı'nın karşısında yaptırdığı, 'Bursa'nın ikinci ulucamisi' sayılan cami, çok direkli ve çok kubbeli bir plana sahipken 1855 depreminde yıkılmış; 1892'de yalnızca ortadaki iki kubbeli bölümüyle yeniden ibadete açılmıştır. Bugünkü yapı aslının yaklaşık üçte biridir ve cephesi 19. yüzyıl Gotik üslubundadır.",
+    "en": "Built by Sultan Murad I opposite the Bey Palace and regarded as Bursa's second Ulucami, the mosque was designed as a multi-piered, multi-domed building. It was destroyed in the 1855 earthquake and reopened in 1892 with only its two-domed middle section. The present building is about one third of the original, with a 19th-century Gothic-style façade."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Adlandırma",
+        "en": "History and Naming"
+      },
+      "body": {
+        "tr": "Orhan Gazi, Bursa'nın fethiyle birlikte şimdiki türbesinin bulunduğu yerdeki Saint Elias Manastırı'nı camiye çevirmiştir. Bu cami cuma namazı için yetersiz hale gelince Sultan I. Murad, Bey Sarayı'nın karşısında Bursa'nın ikinci ulucamisi olarak nitelendirilen Şehadet Camii'ni yaptırmıştır. Caminin inşasından sonra Kosova Muharebesi'ne gitmiş ve şehit olmuştur. I. Murad'ın yaptırdığı son eser olduğu için 'Şehadet', Osmanlı Sarayı'nın hemen karşısında bulunduğu için 'Saray', ayrıca 'Kale' Camii olarak da bilinir. H. 767 / M. 1366'da inşa edildiği kabul edilir.",
+        "en": "After the conquest of Bursa, Orhan Gazi converted the Saint Elias Monastery, where his present tomb stands, into a mosque. When this mosque became insufficient for Friday prayers, Sultan Murad I had the Şehadet Mosque, considered the second Ulucami of Bursa, built opposite the Bey Palace. After its construction he went to the Battle of Kosovo and was martyred. It is named 'Şehadet (Martyrdom)' as the last work Murad I had built, 'Saray (Palace)' because it faces the Ottoman Palace in Bursa, and is also known as the 'Castle Mosque'. It is accepted to have been built in AH 767 / AD 1366."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "421"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-durumu",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe Durumu",
+        "en": "Inscription Status"
+      },
+      "body": {
+        "tr": "Eserin inşa ve tamir kitabesi günümüze ulaşmamıştır. Caminin doğu tarafındaki kapının üzerindeki kitabenin bu camiye ait olmadığı, sur içinde bir zamanlar var olan Manastır Medresesi bitişiğindeki Orhan Camii'nden getirilmiş olabileceği düşünülmektedir.",
+        "en": "The construction and repair inscription has not survived. The inscription above the eastern door is thought not to belong to this mosque and may have been brought from the Orhan Mosque next to the Manastır Madrasa, which once stood within the city walls."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "421"
+        }
+      ]
+    },
+    {
+      "id": "ilk-plan-ve-yikim",
+      "order": 3,
+      "title": {
+        "tr": "İlk Plan ve 1855 Depremi",
+        "en": "Original Plan and the 1855 Earthquake"
+      },
+      "body": {
+        "tr": "İlk inşa edildiğinde çok direkli ve çok kubbeli ulucami plan şemasında tasarlanmıştır. İki büyük ayak üzerine arka arkaya iki kubbe yerleştirilmiş, yan sahınların üzeri ikişer çapraz tonozla örtülmüştür. Önünde kubbeli, dört gözlü bir son cemaat yeri bulunuyordu; Bursa'da büyük yıkıma yol açan 1855 depreminde tamamen yıkıldığı kayıtlardan anlaşılmaktadır. Kayıtlara göre cami tamamen harap olmuş, minaresi şerefesine kadar yıkılmış, imaret yapılarında zarar olmamış, yalnızca kazan ocaklarının üstündeki iki kubbe çatlamış ve helâlar tamamen tahrip olmuştur.",
+        "en": "When first built it was designed as a multi-piered, multi-domed grand mosque. Two domes were placed back to back on two large piers and the side naves were covered with two cross vaults each. A domed four-bay narthex stood at the front; records show it was completely destroyed in the 1855 earthquake that caused great destruction in Bursa. The records report the mosque completely ruined, its minaret collapsed down to the balcony, no damage in the soup-kitchen structures except two cracked domes above the boiler furnaces, and the toilets completely destroyed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "422"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa",
+      "order": 4,
+      "title": {
+        "tr": "Yeniden İnşa ve Bugünkü Yapı",
+        "en": "Rebuilding and Present Building"
+      },
+      "body": {
+        "tr": "Yıllarca süren tamirattan sonra yalnızca ortadaki iki kubbeli bölüm tamamlanmış, 1892'de Bursa Valisi Mahmud Celâleddin Paşa döneminde yeniden ibadete açılmıştır. Bugünkü yapı aslının ancak üçte biri kadardır. 19. yüzyılda Avrupa'da yaygın Gotik üslupta tasarlanan cephe sivri kemerli ve ikiz pencerelidir; yüksek nişler, iki lento biçimli silme ve çatı altında üç konsol vardır. Yan cepheler tamamen sıvalı, sivri kemerli derin nişlerle ikiye bölünmüş ve üst-alt pencerelerle aydınlıktır; kubbe iki kemerli payandayla desteklenir. Kuzey cephesindeki son cemaat yeri ve yan sahınlar kaldırılmış, yerine pencereler açılmıştır.",
+        "en": "After years of repair only the two-domed middle section was completed and it was reopened for worship in 1892 under Bursa Governor Mahmut Celâlettin Paşa. The present structure is only one third of the original. The façade, designed in the Gothic style common in 19th-century Europe, has pointed arches and twin windows, with high niches, two lintel-shaped moldings and three consoles under the roof. The side façades are fully plastered, divided by deep pointed-arch niches and lit by upper and lower windows; the dome is supported by two arched buttresses. The narthex and side naves on the north were removed and replaced with windows."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "422-423"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 5,
+      "title": {
+        "tr": "Minare ve Onarımlar",
+        "en": "Minaret and Repairs"
+      },
+      "body": {
+        "tr": "Son cemaat yeri yıkılınca yapıyla uyumsuz kalan, ulucami minareleri biçimindeki eski minare de yıkılmış, yerine daha küçük bir minare yapılmıştır. Mevcut minarenin kaidesi ve 4 m çapındaki çokgen gövdesi kesme taştandır. Eski cami 1614 ve 1844'te tamir edilmiş; yeni haliyle ibadete açıldıktan sonra 1962'de Bursa Eski Eserleri Sevenler Kurumu tarafından onarılmış, 2012'de kapsamlı bir restorasyon geçirmiştir.",
+        "en": "The old minaret, in the form of the Ulucami minarets, became incompatible with the building after the narthex was demolished; it was demolished and a smaller minaret built in its place. The base and the 4 m diameter polygonal shaft of the present minaret are of cut stone. The old mosque was repaired in 1614 and 1844; after it reopened in its new form it was repaired by the Bursa Association for the Appreciation of Antiquities in 1962 and underwent a comprehensive restoration in 2012."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "423"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_govde_capi",
+      "label": {
+        "tr": "Minare gövde çapı",
+        "en": "Minaret shaft diameter"
+      },
+      "value": 4,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "423"
+        }
+      ]
+    },
+    {
+      "key": "mevcut_yapi_orani",
+      "label": {
+        "tr": "Bugünkü yapının özgün yapıya oranı",
+        "en": "Present structure relative to original"
+      },
+      "value": "üçte bir",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "422"
+        }
+      ]
+    },
+    {
+      "key": "ilk_plan",
+      "label": {
+        "tr": "İlk plan tipi",
+        "en": "Original plan type"
+      },
+      "value": "Çok direkli, çok kubbeli ulucami planı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "422"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan I. Murad",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Mahmud Celâleddin Paşa",
+      "role": {
+        "tr": "1892'de caminin yeniden açıldığı dönemin Bursa Valisi",
+        "en": "Governor of Bursa when the mosque reopened in 1892"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1366",
+      "year": 1366,
+      "date": null,
+      "hijri": "767",
+      "type": "construction",
+      "title": {
+        "tr": "Sultan I. Murad tarafından inşa edildiği kabul edilir",
+        "en": "Accepted to have been built by Sultan Murad I"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "421"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1614",
+      "year": 1614,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Eski cami tamir edildi",
+        "en": "Old mosque repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "423"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Eski cami tamir edildi",
+        "en": "Old mosque repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "423"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük Bursa depremi: cami tamamen harap oldu, son cemaat yeri yıkıldı",
+        "en": "Great Bursa earthquake: mosque ruined, narthex destroyed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "422"
+        }
+      ]
+    },
+    {
+      "id": "acilis-1892",
+      "year": 1892,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Ortadaki iki kubbeli bölümle yeniden ibadete açıldı",
+        "en": "Reopened for worship with the two-domed middle section"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "422"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından onarıldı",
+        "en": "Repaired by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "423"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon",
+        "en": "Comprehensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "423"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-orhan-gazi-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Kitaba göre Orhan Gazi, şimdiki türbesinin bulunduğu yerdeki Saint Elias Manastırı'nı camiye çevirmiş; cuma namazı için yetersiz kalınca I. Murad bu camiyi yaptırmıştır.",
+        "en": "According to the book, Orhan Gazi converted the Saint Elias Monastery on the site of his present tomb into a mosque; when it became insufficient for Friday prayers, Murad I built this mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "421"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şehadet Camii, Hasta Yurdu Caddesi üzerindedir. Yapı eski planın yaklaşık üçte biridir; cephesi 19. yüzyıl Gotik üslubunda, sivri kemerli, ikiz pencerelidir ve yüksek nişlerle hafifletilmiştir. Yan cepheler sıvalıdır. Kesme taştan örülmüş, 4 metre çapında çokgen gövdeli küçük bir minaresi vardır.",
+      "en": "Şehadet Mosque stands on Hasta Yurdu Street. It is about one third of the original plan. Its 19th-century Gothic-style façade has pointed arches and twin windows, lightened with high niches. The side façades are plastered. It has a small minaret of cut stone with a polygonal shaft 4 metres in diameter."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

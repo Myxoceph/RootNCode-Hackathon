@@ -1,0 +1,240 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-mantici-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Banî kitapta yok (halk yardımıyla yapıldığı belirtiliyor); founder boş.",
+      "Kesin yapım yılı yok; dating yalnızca 'Fâtih dönemi' olarak girildi, century 15 (Fâtih dönemi) kitaptan çıkarım olarak işaretlendi.",
+      "Hazire mezar taşları artık yok gibi görünüyor ('1940'lı yıllara kadar varlığını sürdürmüştür'); güncel durum sahada teyit edilmeli.",
+      "Onarımların tarihleri (1959 dışında) kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Hazire taşları 16. yüzyıl başına tarihlenirken cami Fâtih devrine (15. yüzyıl) bağlanır; bu uyumsuzluk bir çelişki değildir ancak kitapta açıklanmamıştır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mantıcı Camii",
+    "en": "Mantıcı Mosque"
+  },
+  "subtitle": {
+    "tr": "Fâtih döneminde halk yardımıyla yapılmış, sonradan betonarmeye dönüştürülmüş mahalle camisi",
+    "en": "Neighborhood mosque built with public help in Fâtih's time, later converted to reinforced concrete"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle mescidi",
+    "kırma çatı",
+    "kadınlar mahfili",
+    "minaresiz",
+    "Reyhan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Reyhan",
+    "address": "Mantıcı Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "392"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Fâtih Sultan Mehmed dönemi",
+      "en": "Period of Fâtih Sultan Mehmed"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Şeriyye sicillerindeki kayıtlardan Fâtih Sultan Mehmed devri yapılarından olduğu anlaşılmaktadır; kesin yıl verilmiyor.",
+      "en": "From the sharia records it is understood to be a structure of Fâtih Sultan Mehmed's time; no exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "392"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Şeriyye sicillerine göre Fâtih Sultan Mehmed devrinde halkın yardımlarıyla inşa edilen cami; sonraki tadilatlarla tamamen sıvanmış ve betonarme yapıya dönüştürülerek özgün niteliğini yitirmiştir. Kırma ahşap çatılı, minaresiz, basit bir mahalle mescidi görünümündedir; 1959'da Bursa Eski Eserleri Sevenler Kurumu desteğiyle son kez yenilenmiştir.",
+    "en": "A mosque built with public help in the time of Fâtih Sultan Mehmed according to the sharia records; successive renovations plastered it over entirely and converted it to reinforced concrete, so it lost its original character. A simple neighborhood masjid with a hipped wooden roof and no minaret, it was last renovated in 1959 with the support of the Bursa Association for the Appreciation of Antiquities."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapım",
+        "en": "Location and Construction"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Reyhan Mahallesi, Mantıcı Sokak'ta yer alır. Şeriyye sicillerindeki kayıtlardan Fâtih Sultan Mehmed devri yapılarından olduğu ve halkın yardımlarıyla inşa edildiği anlaşılmaktadır.",
+        "en": "The mosque is in Osmangazi District, Reyhan Neighborhood, Mantıcı Street. From the registries in the sharia records it is understood to be a structure of Fâtih Sultan Mehmed's period, built with the help of the people."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "392"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kareye yakın dikdörtgen planlı cami 8,10 × 8,25 m ölçülerindedir. Yerel taşla moloz örgü tekniğiyle inşa edilmişken zamanla yapılan tadilatlarla tamamen sıvanmış, pencere üslupları değiştirilmiş ve betonarme yapıya dönüştürülmüş; böylece özgün niteliğini kaybetmiş, tarihî doku ve mimari değeri zayıflamıştır. Kırma ahşap çatılı olup basit bir mahalle mescidi görünümündedir. Ön cephesinde iki sıralı dörder pencere vardır ve alt pencereler parmaklıklıdır; yan duvarlarda altta ikişer pencere, üstte vitraylı küçük pencereler yer alır. Cuma namazı için sonradan eklenmiş ahşap minberi vardır. 4,60 m derinlikteki son cemaat yerine bir arakat eklenerek kadınlar mahfili oluşturulmuştur. Minaresi yoktur; bir mükebbire ile yetinilmiştir.",
+        "en": "The mosque, on a rectangular plan close to a square, measures 8.10 × 8.25 m. Built of local stone in rubble masonry, successive renovations plastered it completely, changed the window styles and converted it into a reinforced-concrete structure, so it lost its originality and its historical texture and architectural value weakened. It has a hipped wooden roof and looks like a simple neighborhood masjid. The front façade has two rows of four windows, the lower ones grilled; the side walls have two lower windows and small stained-glass windows above. A wooden minbar was added later for Friday prayers. A mezzanine added to the 4.60 m deep narthex forms a women's section. There is no minaret; only a muezzin's platform (mükebbire) is used."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "392"
+        }
+      ]
+    },
+    {
+      "id": "hazire-onarim",
+      "order": 3,
+      "title": {
+        "tr": "Hazire ve Onarım",
+        "en": "Graveyard and Repairs"
+      },
+      "body": {
+        "tr": "Doğu yönüne bitişik haziresindeki 16. yüzyıl başlarına tarihlenen mezar taşları 1940'lı yıllara kadar varlığını sürdürmüştür. Çok sayıda onarım geçiren cami en son 1959'da Bursa Eski Eserleri Sevenler Kurumu desteğiyle yenilenmiştir.",
+        "en": "The gravestones in the graveyard adjoining the east side, dating from the early 16th century, survived until the 1940s. The mosque, which has undergone numerous repairs, was last renovated in 1959 with the support of the Bursa Association for the Appreciation of Antiquities."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "392"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "cami_olcu",
+      "label": {
+        "tr": "Cami ölçüsü",
+        "en": "Mosque size"
+      },
+      "value": "8,10 × 8,25",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "392"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 4.6,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "392"
+        }
+      ]
+    },
+    {
+      "key": "on_cephe_pencere",
+      "label": {
+        "tr": "Ön cephede sıra başına pencere",
+        "en": "Windows per row on the front façade"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "392"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1959",
+      "year": 1959,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu desteğiyle son kez yenilendi",
+        "en": "Last renovated with the support of the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "392"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mantıcı Camii, Reyhan Mahallesi'nde kareye yakın dikdörtgen planlı, sıvalı, betonarme bir yapıdır. Üzeri kırma ahşap çatıyla örtülüdür. Ön cephede iki sıralı dörder pencere vardır; alt pencereler parmaklıklıdır. Önündeki son cemaat yerinde bir arakatla oluşturulmuş kadınlar mahfili bulunur. Minaresi yoktur. Doğusunda bir hazire yer alır.",
+      "en": "Mantıcı Mosque in Reyhan Neighborhood is a plastered reinforced-concrete building on a nearly square rectangular plan, covered by a hipped wooden roof. The front façade has two rows of four windows, the lower ones grilled. The narthex has a women's section formed by a mezzanine. It has no minaret. A graveyard adjoins it on the east."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

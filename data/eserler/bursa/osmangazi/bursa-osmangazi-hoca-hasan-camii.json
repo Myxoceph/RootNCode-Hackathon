@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hoca-hasan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 342-344) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hoca Hasan'ın caminin karşısında yaptırdığı mektebin kitabesinin bulunduğu müze kitapta adıyla verilmiyor.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "2019 sonrası hazire düzeni ve erişim sahada teyit edilmeli.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitabe ve metin banî olarak Hoca Hasan (Hasan bin Pîr Gâib) der; ancak s. 343'te 'camiyi yaptıran Pir Gayb'ın kabri' ifadesi geçer. Kitabe esas alındı: banî Hoca Hasan, Pir Gayb onun babası (s. 344)."
+      },
+      {
+        "field": "inscriptions[kuzey-kapi-kitabesi]",
+        "note": "Türkçe metindeki transkripsiyon 'mi’e', İngilizce metindeki 'mie' olarak yazılmış; Türkçe metin esas alındı."
+      },
+      {
+        "field": "dating",
+        "note": "Kitabe 1575'e aittir, bugünkü yapı 1904'te yeniden yapılmıştır; tarihleme kitabeye dayanır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hoca Hasan Camii",
+    "en": "Hoca Hasan Mosque"
+  },
+  "subtitle": {
+    "tr": "1575 kitabeli, 1904'te yeniden yapılan hazireli cami",
+    "en": "Mosque with a 1575 inscription, rebuilt in 1904, with its graveyard"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "kitabeli",
+    "hazire",
+    "1855 depremi",
+    "yeniden inşa",
+    "Hocahasan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hocahasan",
+    "address": "Değirmen Caddesi, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "342"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 983 / M. 1575 (kitabe); 1904'te yeniden inşa",
+      "en": "AH 983 / AD 1575 (inscription); rebuilt in 1904"
+    },
+    "start_year": 1575,
+    "end_year": 1575,
+    "hijri_year": 983,
+    "century": 16,
+    "basis": {
+      "tr": "Kuzey kapısı üzerindeki Arapça kitabe yapının H. 983 / M. 1575'te inşa ettirildiğini belirtir. 1855 depreminde tamamen yıkılan cami 1904'te yeniden yapılmıştır; bugünkü yapı bu sonraki inşadır.",
+      "en": "The Arabic inscription over the northern door states the building was built in AH 983 / AD 1575. The mosque was completely destroyed in the 1855 earthquake and rebuilt in 1904; the present building is the later reconstruction."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "342, 343"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Hasan (Hasan bin Pîr Gâib)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "342-343"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Pir Gayb oğlu Hoca Hasan'ın H. 983 / M. 1575'te yaptırdığı cami; 1855 depreminde yıkılmış, 1904'te yeniden inşa edilmiştir. Doğusunda banînin babası Pir Gayb'ın mezarının bulunduğu küçük bir hazire vardır; 2019'da çevre düzenlenmiştir.",
+    "en": "A mosque built by Hoca Hasan, son of Pir Gayb, in AH 983 / AD 1575; destroyed in the 1855 earthquake and rebuilt in 1904. To its east is a small graveyard with the grave of the founder's father Pir Gayb; the surroundings were landscaped in 2019."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Kitabe",
+        "en": "Overview and Inscription"
+      },
+      "body": {
+        "tr": "Cami, Hocahasan Mahallesi, Değirmen Caddesi No:2'de yer almaktadır. Kuzey kapısı üzerindeki, hadis-i şerifle başlayan iki satırlık Arapça kitabe yapının H. 983 / M. 1575 yılında Pir Gayb oğlu Hoca Hasan tarafından inşa ettirildiğini belirtir. Hoca Hasan, caminin karşısına bir de mektep yaptırmıştır; ancak mektep günümüze ulaşamamış, kitabesi müzeye taşınmıştır.",
+        "en": "The mosque is located in Hocahasan Neighborhood, Değirmen Street No. 2. The two-line Arabic inscription starting with a Hadith on its northern door states that it was built by Hoca Hasan, son of Pir Gayb, in AH 983 / AD 1575. Hoca Hasan also had a school built across from the mosque; it did not survive and its inscription was moved to the museum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "342-343"
+        }
+      ]
+    },
+    {
+      "id": "mimari-ve-onarimlar",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Onarımlar",
+        "en": "Architecture and Repairs"
+      },
+      "body": {
+        "tr": "1855 depreminde tamamen yıkılan cami 1904'te bugünkü planında yeniden inşa edilmiştir. Kare planlıdır ve 235 m² iç alana sahiptir; kırma ahşap çatısı kiremit örtülüdür, duvarları taş ve tuğla ile örülmüş ve sıvanmıştır. Zaman içinde bilinçsizce yapılan onarımlarla iç mekân büyük ölçüde değişmiş, doğusuna ek bir bölüm eklenmiştir. Minaresi çatıya kadar yükselen sekizgen kaideye, silindirik kısa gövdeye, tek şerefeye ve sivri külaha sahiptir. Cami 1955'te esaslı bir onarım görmüş, duvarları, çatısı ve minaresi tamamen yenilenmiştir. 2019'daki çevre düzenlemesinde sonradan eklenen kısımlar kaldırılmış, minare onarılarak çelik çember içine alınmış, son cemaat revakı üç yönden ahşap camekânla çevrilmiştir.",
+        "en": "The mosque, completely destroyed in the 1855 earthquake, was rebuilt in its current plan in 1904. It has a square plan with an interior area of 235 m²; the hipped wooden roof is tiled and the walls are of plastered stone and brick. Careless repairs over time changed the interior greatly and an additional section was added to the east. The minaret has an octagonal base rising to the roof height, a short cylindrical shaft, a single balcony and a pointed spire. The mosque underwent a major renovation in 1955 in which its walls, roof and minaret were completely renewed. In the 2019 landscaping the later additions were removed, the minaret was repaired and encased in steel rings, and the narthex portico was enclosed with wooden glass panels on three sides."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "343"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 3,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Hazire caminin doğusundadır. Küçük hazirede Hoca Hasan'ın babası Pir Gayb bin Hüseyin'e (v. H. Zilhicce 989 / M. Ocak 1582) ait mezar ve mezar taşı ile yazısız iki mezar taşı daha bulunur. Cami civarında, XV. yüzyıla ait mezarların da yer aldığı \"Hoca Hasan Mezarlığı\" olarak bilinen bir mezarlıktan söz edilmekte, kayıtlara göre buraya farklı dönemlerde başka kişiler de defnedilmiştir. Banî Hoca Hasan'ın da bu civarda bir mezarı olduğu belirtilmekte, ancak yeri bilinmemekte ve mezar taşı günümüze ulaşmamıştır. Hazirede yer alan diğer üç taşın kime ait olduğu bilinmemektedir; üzerlerinde tarih yoktur. Ayrıca bu civardaki hazireye defnedildiği bilinen 20 kişiye ait mezar taşları zamanla kaybolmuştur. Son yıllarda hazire düzenlenmiş ve caminin çevresi açılmıştır.",
+        "en": "The graveyard is to the east of the mosque. In the small graveyard are the grave and tombstone of Hoca Hasan's father Pir Gayb bin Hüseyin (d. Dhul-Hijjah AH 989 / January AD 1582) and two more uninscribed tombstones. A cemetery known as the Hoca Hasan Cemetery, with graves from the 15th century, is said to exist near the mosque, and according to records other people were buried there at different periods. The founder Hoca Hasan is also said to have a grave in this area, but its location is unknown and his gravestone has not survived. It is not known to whom the other three stones belong and they carry no dates. The gravestones of 20 people known to be buried in the graveyard here have disappeared over time. In recent years the graveyard has been reorganized and the area around the mosque opened."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "344"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_alan",
+      "label": {
+        "tr": "İç alan",
+        "en": "Interior area"
+      },
+      "value": 235,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "343"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_tasi_kayip",
+      "label": {
+        "tr": "Kaybolan mezar taşı sayısı (hazire civarı)",
+        "en": "Lost gravestones (graveyard area)"
+      },
+      "value": 20,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "344"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Hasan (Hasan bin Pîr Gâib)",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Pir Gayb bin Hüseyin",
+      "role": {
+        "tr": "Banînin babası; hazirede medfun (v. H. Zilhicce 989 / M. Ocak 1582)",
+        "en": "Founder's father; buried in the graveyard (d. Dhul-Hijjah AH 989 / January AD 1582)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kuzey-kapi-kitabesi",
+      "location": {
+        "tr": "Caminin kuzey kapısı üzerinde",
+        "en": "Above the northern door of the mosque"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Kâle’n-Nebiyyü sallâllahü aleyhi ve sellem men benâ mesciden benâ’llâhü lehû beyten fi’l-cenneti. Benâ sâhibü’l-hayrât ve’l-hasenât Hasan bin Pîr Gâib gafera’llâhü lehû fî târîhi selâse ve semânîn ve tis’a mi’e.",
+      "translation": {
+        "tr": "Resûlullah (sallallâhu aleyhi ve sellem) buyurur: ‘Bir mescit yapan kimseye, Allah cennette bir ev bina eder.’ Bu hayırlı mabedi, iyilik ve sevap sahibi Hasan bin Pîr Gāib yaptırdı. Allah onu mağfiretiyle kuşatsın. H. 983 / M. 1575.",
+        "en": "The Messenger of Allah (peace and blessings of Allah be upon him) said: ‘Whoever builds a mosque, Allah will build a house in Paradise for him.’ Hasan bin Pir Ghaib, a man of goodness and virtue, had this blessed place of worship built. May Allah surround him with His forgiveness. AH 983 / AD 1575."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 983,
+        "gregorian": "1575"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "343"
+        }
+      ],
+      "note": {
+        "tr": "İki satırlık Arapça kitabe; hadis-i şerifle başlar.",
+        "en": "Two-line Arabic inscription starting with a Hadith."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1575",
+      "year": 1575,
+      "date": null,
+      "hijri": "983",
+      "type": "construction",
+      "title": {
+        "tr": "İnşa ettirildi (kitabe)",
+        "en": "Built (inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "342-343"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde cami tamamen yıkıldı",
+        "en": "Mosque completely destroyed in the 1855 earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "343"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1904",
+      "year": 1904,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Bugünkü planında yeniden inşa edildi",
+        "en": "Rebuilt in its current plan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "343"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Esaslı onarım: duvarlar, çatı ve minare tamamen yenilendi",
+        "en": "Major renovation: walls, roof and minaret completely renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "343"
+        }
+      ]
+    },
+    {
+      "id": "cevre-duzenleme-2019",
+      "year": 2019,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Çevre düzenlemesi; sonradan eklenen kısımlar kaldırıldı, minare onarıldı",
+        "en": "Landscaping; later additions removed, minaret repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "343"
+        }
+      ]
+    },
+    {
+      "id": "pir-gayb-vefat-1582",
+      "year": 1582,
+      "date": null,
+      "hijri": "Zilhicce 989",
+      "type": "record",
+      "title": {
+        "tr": "Banînin babası Pir Gayb bin Hüseyin vefat etti",
+        "en": "Death of the founder's father Pir Gayb bin Hüseyin"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "344"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hoca Hasan Camii, Hocahasan Mahallesi'nde kare planlı, kırma ahşap çatılı ve kiremit örtülü bir yapıdır. Duvarlar taş ve tuğla örgülüdür ve sıvanmıştır. Sekizgen kaideli, kısa silindirik gövdeli ve tek şerefeli minaresi çelik çemberlerle güçlendirilmiştir. Son cemaat revakı üç yönden ahşap camekânla çevrilidir. Caminin doğusunda küçük bir hazire vardır.",
+      "en": "Hoca Hasan Mosque in Hocahasan Neighborhood is a square-plan building with a hipped wooden roof covered in tiles. The walls are of plastered stone and brick. Its minaret, with an octagonal base, a short cylindrical shaft and one balcony, is reinforced with steel rings. The narthex portico is enclosed with wooden glass panels on three sides. A small graveyard lies east of the mosque."
+    }
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,329 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-molla-gurani-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mescidin bugünkü durumu (onarım, ibadete açık mı) kitapta yok.",
+      "Mimar bilgisi ve vakıf bilgisi kitapta yok; 'architect' ve 'waqf' null.",
+      "Bitişik türbe ayrı kayıtta (bursa-osmangazi-molla-gurani-turbesi); ilişki o kayıtta tanımlı, burada tekrarlanmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mahalle-adi]",
+        "note": "Kitap, mahalle adının (Mollagürânî) şeyhülislam Molla Gürânî ile bağlantısız olduğunu özellikle belirtiyor; mescit adı mahalle adından gelir, banisi Hüseyin'dir."
+      },
+      {
+        "field": "name",
+        "note": "Kitap başlığı 'Molla Gürani (Yeşil-Güranlı) Mescidi'; kayıt adı ve id birincil ada göre verildi, diğer adlar alternate_names'te."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Molla Gürani Mescidi",
+    "en": "Molla Gürani Masjid"
+  },
+  "subtitle": {
+    "tr": "Yeşil (Güranlı) Mescit",
+    "en": "The Green (Güranlı) Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yeşil Mescit",
+      "en": "Green Masjid",
+      "note": "Rengi nedeniyle halk arasındaki adı"
+    },
+    {
+      "tr": "Güranlı Mescidi",
+      "en": "Güranlı Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "mahalle mescidi",
+    "ahşap karkas",
+    "kerpiç dolgu",
+    "Güranlı",
+    "Yeşil Mescit",
+    "türbe bitişik"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollagürânî Mahallesi",
+    "address": "Güranlı Sokak ve II. Tahtalı Sokak'ın kesiştiği nokta; sur içinde, Fetih Kapısı'nın ilerisinde",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "398"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1002 / M. 1594",
+      "en": "AH 1002 / AD 1594"
+    },
+    "start_year": 1594,
+    "end_year": 1594,
+    "hijri_year": 1002,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap, mescidin türbe ile birlikte H. 1002 / M. 1594 yılında inşa ettirildiğini yazar; kitabe günümüze ulaşmamıştır.",
+      "en": "The book states the masjid was built together with the tomb in AH 1002 / AD 1594; the inscription has not survived."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "398"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hüseyin (Erzincan'ın Güran Köyü'nden Bursa'ya göç eden hayırsever)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "398"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sur içinde, Fetih Kapısı'nın ilerisinde, ahşap karkas ve kerpiç dolgu tekniğiyle yapılmış, konut görünümlü sade bir mahalle mescidi. Erzincan'ın Güran Köyü'nden gelen hayırsever Hüseyin tarafından türbesiyle birlikte 1594'te yaptırılmıştır; rengi nedeniyle 'Yeşil Mescit' denir.",
+    "en": "A simple neighborhood masjid resembling a house, built with timber frame and adobe infill inside the city walls beyond the Conquest Gate. It was built together with its tomb in 1594 by the philanthropist Hüseyin from Güran Village, Erzincan, and is popularly called the 'Green Masjid' because of its color."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Mescit, türbe ile birlikte, Erzincan'ın Güran Köyü'nden göç ederek Bursa'ya yerleşen Hüseyin adlı bir hayırsever tarafından H. 1002 / M. 1594'te yaptırılmıştır; kendisi de vefatından sonra bu türbeye defnedilmiştir. Renginden ötürü halk arasında 'Yeşil Mescit' olarak tanınır. Avlusu, son cemaat yeri ve kitabesi günümüze ulaşmamıştır.",
+        "en": "The masjid was built with its tomb in AH 1002 / AD 1594 by a philanthropist named Hüseyin who migrated from Güran Village, Erzincan, and settled in Bursa; he was later buried in this tomb. It is known as the 'Green Masjid' because of its color. The courtyard, narthex and inscription have not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "398"
+        }
+      ]
+    },
+    {
+      "id": "mahalle-adi",
+      "order": 2,
+      "title": {
+        "tr": "Mahalle Adı",
+        "en": "Neighborhood Name"
+      },
+      "body": {
+        "tr": "Cumhuriyet döneminde 'Güranlı' olarak anılan mahalle, 1950'li yıllardan itibaren yeniden 'Mollagürânî' adını almıştır. Kitap, mahalle isminin Osmanlı şeyhülislamlarından Molla Gürânî ile bir bağlantısı bulunmadığını belirtir.",
+        "en": "The neighborhood, called 'Güranlı' in the Republican period, was renamed 'Mollagürani' from the 1950s. The book states the name has no connection with Molla Gürânî, one of the Ottoman Shaykhs al-Islam."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "398"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzey duvarı türbeye bitişik olan mescit moloz taşla inşa edilmiştir. Minaresi ve avlusu yoktur. Kırma çatılı yapı, ahşap direkler arasına kerpiç dolgu tekniğiyle yapılmış basit bir mahalle mescididir; dış cephesi sıvalıdır ve mimari formu itibarıyla konut yapısını andırır. İç mekânı ahşap tavanlı ve tamamen beyaza boyalıdır. Sonradan eklenen ahşap bir minberi vardır; mihrabı sade tasarımlıdır.",
+        "en": "Its north wall adjoins the tomb and it is built of rubble stone. It has no minaret or courtyard. Under a hipped roof, it is a simple neighborhood masjid built with adobe infill between wooden posts, with a plastered exterior, resembling a residential building. The interior has a wooden ceiling painted entirely white, a later wooden minbar and a plain mihrab."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "398"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-tarihi",
+      "order": 4,
+      "title": {
+        "tr": "Sonraki Kullanım",
+        "en": "Later Use"
+      },
+      "body": {
+        "tr": "Herhangi bir mimari özelliği bulunmayan yapı 1965'te Hacı Mahmut Efendi tarafından kereste deposu olarak kullanılmıştır. Bursalı Resulzâde'nin maddi desteğiyle tekrar ibadete açılması planlanmış ancak girişim sonuçsuz kalmıştır. Mahalle sakinlerinin girişimiyle 1978'de Vakıflar Genel Müdürlüğü tarafından kamulaştırılmıştır.",
+        "en": "In 1965 the building was used as a lumber warehouse by Hacı Mahmut Efendi. Reopening it for worship with the financial support of Resulzâde from Bursa was planned but the attempt came to nothing. It was expropriated by the General Directorate of Foundations in 1978 at the initiative of neighborhood residents."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "398"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 0,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "398"
+        }
+      ]
+    },
+    {
+      "key": "avlu",
+      "label": {
+        "tr": "Avlu",
+        "en": "Courtyard"
+      },
+      "value": "yok",
+      "unit": null,
+      "note": {
+        "tr": "Avlu ve son cemaat yeri günümüze ulaşmamıştır.",
+        "en": "The courtyard and narthex have not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "398"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hüseyin",
+      "role": {
+        "tr": "Banî; Erzincan Güran Köyü'nden gelen hayırsever",
+        "en": "Founder; philanthropist from Güran Village, Erzincan"
+      }
+    },
+    {
+      "name": "Hacı Mahmut Efendi",
+      "role": {
+        "tr": "1965'te yapıyı kereste deposu olarak kullandı",
+        "en": "Used the building as a lumber warehouse in 1965"
+      }
+    },
+    {
+      "name": "Resulzâde (Bursalı)",
+      "role": {
+        "tr": "Yeniden ibadete açma girişimini destekleyen",
+        "en": "Financial supporter of the failed reopening attempt"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1594",
+      "year": 1594,
+      "date": null,
+      "hijri": "1002",
+      "type": "construction",
+      "title": {
+        "tr": "Mescit, türbeyle birlikte inşa ettirildi",
+        "en": "Masjid built together with the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "398"
+        }
+      ]
+    },
+    {
+      "id": "kereste-deposu-1965",
+      "year": 1965,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hacı Mahmut Efendi tarafından kereste deposu olarak kullanıldı",
+        "en": "Used as a lumber warehouse by Hacı Mahmut Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "398"
+        }
+      ]
+    },
+    {
+      "id": "kamulastirma-1978",
+      "year": 1978,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından kamulaştırıldı",
+        "en": "Expropriated by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "398"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Moloz taştan, ahşap karkas ve kerpiç dolgulu, kırma çatılı, sıvalı ve konut görünümlü küçük bir mescittir; minaresi ve avlusu yoktur. Kuzey duvarı türbeye bitişiktir. İçi ahşap tavanlı ve baştan başa beyaz boyalıdır; sade bir mihrap ve sonradan eklenmiş ahşap bir minber vardır.",
+      "en": "A small house-like masjid of rubble stone and timber frame with adobe infill, under a hipped roof and plastered outside; it has no minaret or courtyard. Its north wall adjoins the tomb. The interior has a wooden ceiling painted white throughout, a plain mihrab and a later wooden minbar."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

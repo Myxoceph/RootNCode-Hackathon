@@ -1,0 +1,379 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-uc-kuzular-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 445-447) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Yapım yılı kitapta yok; dating boş bırakıldı.",
+      "Dergâh için hedef kayıt bilinmiyor.",
+      "Mevcut bursa-osmangazi-uc-kozlar-turbesi kaydıyla ilişki gözden geçirilmeli (aynı türbe mi?)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Yapı kitapta 'Üç Kuzular (Kozlar) Camii ve Kabri' başlığıyla veriliyor; kabir ayrı kayıt açılmadı, bölüm olarak eklendi. 'Üç Kozlar' adının ağaç kaynaklı açıklaması tahmindir."
+      },
+      {
+        "field": "founder",
+        "note": "Kitap, banisinin kesin olarak bilinmediğini, üç kardeşin yaptırdığının düşünüldüğünü söyler (probable). Aynı zamanda mevcut camiyi yaptıran kişi Karaca Muhiddin'dir; eski cami yıkıldığı için mevcut yapı üç kardeşe ait değildir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Üç Kuzular (Kozlar) Camii",
+    "en": "Üç Kuzular (Kozlar) Mosque"
+  },
+  "subtitle": {
+    "tr": "Uludağ eteklerinde, üç kardeşin kabirleriyle anılan cami",
+    "en": "Mosque on the foothills of Uludağ, known for the graves of three brothers"
+  },
+  "alternate_names": [
+    {
+      "tr": "Üç Kozlar Camii",
+      "en": "Üçkozlar Mosque",
+      "note": "Bazı kaynaklarda; üç ceviz ağacı (koz) arasında yer aldığı için düşünülmektedir"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Emir Sultan",
+    "üç kardeş",
+    "Uludağ eteği",
+    "dergâh",
+    "yeniden inşa",
+    "Mollafenâri"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollafenâri",
+    "address": "1. Dere Sokak, No: 10",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "445"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Safiyyüddin Efendi, Açıkbaş Mehmed Efendi ve Ali Efendi (üç kardeş)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "445"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Uludağ eteklerinde, kenti izleyen bir alanda cami, türbe ve dergâhın bulunduğu semte adını veren yapı. Yapım yılı ve banisi kesin bilinmemekle birlikte 15. yüzyılda Emir Sultan ile bağlantılı üç kardeşin yaptırdığı düşünülür. Eski cami yıkılmış, Karaca Muhiddin yenisini yaptırmıştır; 1950'de yıkılıp 1958'de yeniden inşa edilmiş, 2016'da restore edilmiştir.",
+    "en": "The building gives its name to the district on the foothills of Uludağ, overlooking the city, where a mosque, a tomb and a Sufi lodge stand. Its construction year and founder are not known for sure, but it is thought to have been built by three brothers connected with Emir Sultan in the 15th century. The old mosque was demolished and Karaca Muhiddin had a new one built; it was demolished in 1950, rebuilt in 1958 and restored in 2016."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Ad",
+        "en": "Location and Name"
+      },
+      "body": {
+        "tr": "Uludağ eteklerinde kenti izleyen bir alanda kurulan cami, türbe ve dergâhın bulunduğu semt Üç Kuzular'a ithaf edildiğinden bu adla anılır. Caminin yapım yılı ve banisi kesin olarak bilinmemektedir. 15. yüzyılda Emir Sultan ile irtibatları bulunan Safiyyüddin Efendi, Açıkbaş Mehmed Efendi ve Ali Efendi adlı üç kardeşin mezarlarının burada bulunması nedeniyle caminin bu üç zat tarafından yaptırıldığı ve adını buradan aldığı düşünülmektedir. Bazı kaynaklarda 'Üç Kozlar' adıyla da anılan camiye bu adın üç ceviz ağacının arasında yer almasından verildiği düşünülmektedir.",
+        "en": "The district where the mosque, tomb and Sufi lodge stand, on the foothills of Uludağ overlooking the city, is called by this name because it is dedicated to the Three Lambs. The construction year and founder are not known for sure. Because the graves of three brothers named Safiyyüddin Efendi, Açıkbaş Mehmed Efendi and Ali Efendi, who had ties with Emir Sultan in the 15th century, are here, the mosque is thought to have been built by them and to take its name from this. It is also called 'Üçkozlar' in some sources, which is thought to come from its location among three walnut trees (koz)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "id": "yeni-cami",
+      "order": 2,
+      "title": {
+        "tr": "Yeniden İnşa ve Mimari",
+        "en": "Rebuilding and Architecture"
+      },
+      "body": {
+        "tr": "Cami, türbe ve dergâhtan oluşan bir yapıya sahipken eski cami yıkılmış, yerine Safiyyüddin Efendi'nin oğlu veya damadı olduğu düşünülen Karaca Muhiddin yeni bir cami yaptırmıştır. Erken dönem Bursa Hisar İçi camileri tarzında moloz taştan inşa edilen yapı dıştan beyaza boyanmıştır; duvarlar arasına yatay ahşap hatıllar yerleştirilmiştir. Kare planlı cami kırma çatıyla örtülüdür ve on yedi pencereyle aydınlanır. Mihrabı çini kaplıdır; minberi ve vaaz kürsüsü ahşap işçiliğiyle dikkat çeker.",
+        "en": "While it was a complex of mosque, tomb and Sufi lodge, the old mosque was demolished and Karaca Muhiddin, thought to be the son or son-in-law of Safiyyüddin Efendi, had a new mosque built. Built of rubble stone in the style of early Bursa Hisar İçi mosques, it is painted white outside, with horizontal wooden beams between the walls. The square-plan mosque has a hipped roof and seventeen windows. The mihrab is tile-covered; the minbar and preaching pulpit stand out for their woodwork."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "446"
+        }
+      ]
+    },
+    {
+      "id": "minare-ve-onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve Onarımlar",
+        "en": "Minaret and Repairs"
+      },
+      "body": {
+        "tr": "Doğudaki minarenin kaidesi özgün halini korur; silindirik gövdeli tuğla minare aslına uygun yeniden yapılmıştır, şerefe altında beş sıra stalaktitli süsleme vardır. Cami 1950'de yalnızca minaresi ayakta kalacak şekilde yıkılmış, 1958'de mevcut planıyla ve dergâhın yerini de içine alacak biçimde yeniden inşa edilmiştir. 1992 onarımıyla dış cephesi yeşile boyanmış, 2016'da Bursa Büyükşehir Belediyesi tarafından restore edilerek bugünkü görünümünü kazanmıştır.",
+        "en": "The base of the minaret on the east preserves its original state; the brick minaret with cylindrical shaft was rebuilt faithfully, with five rows of stalactite decoration under the balcony. The mosque was demolished in 1950 leaving only its minaret, and rebuilt in 1958 with its current plan, including the location of the Sufi lodge. Its exterior was painted green in the 1992 repair, and it was restored by the Bursa Metropolitan Municipality in 2016, giving its present appearance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "446"
+        }
+      ]
+    },
+    {
+      "id": "kabir",
+      "order": 4,
+      "title": {
+        "tr": "Üç Kuzular Kabri",
+        "en": "Üç Kuzular Grave"
+      },
+      "body": {
+        "tr": "Caminin doğu tarafında üç açık mezar bulunmaktadır. Son yıllarda yenilenmiş olan kabirlerde kitabe yoktur.",
+        "en": "There are three open graves on the east side of the mosque. The graves, renovated in recent years, bear no inscriptions."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "447"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "uc-kardes-kabirleri",
+      "title": {
+        "tr": "Üç kardeşin kabirleri",
+        "en": "The graves of the three brothers"
+      },
+      "body": {
+        "tr": "Doğu taraftaki üç açık mezarın, 15. yüzyılda Emir Sultan ile irtibatı bulunan Safiyyüddin Efendi, Açıkbaş Mehmed Efendi ve Ali Efendi adlı üç kardeşe ait olduğu rivayet edilmektedir. Bu şahıslar hakkında detaylı bilgi bulunmamaktadır.",
+        "en": "It is said that the three open graves on the east side belong to three brothers named Safiyyüddin Efendi, Açıkbaş Mehmed Efendi and Ali Efendi, who had contact with Emir Sultan in the 15th century. There is no detailed information about these individuals."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "447"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 17,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "446"
+        }
+      ]
+    },
+    {
+      "key": "kabir_sayisi",
+      "label": {
+        "tr": "Doğudaki açık mezar sayısı",
+        "en": "Open graves on the east"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "447"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_insa_yili",
+      "label": {
+        "tr": "Yeniden inşa yılı",
+        "en": "Year rebuilt"
+      },
+      "value": 1958,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "446"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Safiyyüddin Efendi",
+      "role": {
+        "tr": "Üç kardeşten biri; Emir Sultan ile bağlantılı, kabri burada olduğu rivayet edilir",
+        "en": "One of the three brothers; connected with Emir Sultan, said to be buried here"
+      }
+    },
+    {
+      "name": "Açıkbaş Mehmed Efendi",
+      "role": {
+        "tr": "Üç kardeşten biri; Emir Sultan ile bağlantılı, kabri burada olduğu rivayet edilir",
+        "en": "One of the three brothers; connected with Emir Sultan, said to be buried here"
+      }
+    },
+    {
+      "name": "Ali Efendi",
+      "role": {
+        "tr": "Üç kardeşten biri; Emir Sultan ile bağlantılı, kabri burada olduğu rivayet edilir",
+        "en": "One of the three brothers; connected with Emir Sultan, said to be buried here"
+      }
+    },
+    {
+      "name": "Karaca Muhiddin",
+      "role": {
+        "tr": "Eski caminin yıkılmasından sonra yeni camiyi yaptıran; Safiyyüddin Efendi'nin oğlu veya damadı olduğu düşünülür",
+        "en": "Had the new mosque built after the old one was demolished; thought to be Safiyyüddin Efendi's son or son-in-law"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yikim-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Cami yalnızca minaresi ayakta kalacak şekilde yıkıldı",
+        "en": "Mosque demolished, leaving only the minaret standing"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "446"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Mevcut planıyla, dergâhın yerini de içine alacak biçimde yeniden inşa edildi",
+        "en": "Rebuilt with its present plan, including the site of the Sufi lodge"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "446"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1992",
+      "year": 1992,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım; dış cephe yeşile boyandı",
+        "en": "Repair; exterior painted green"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "446"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2016",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi tarafından restore edildi",
+        "en": "Restored by the Bursa Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "446"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-uc-kozlar-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kitap, cami, türbe ve dergâhtan oluşan bir yapıdan söz eder; mevcut 'Üç Kozlar Türbesi' kaydıyla aynı türbe olup olmadığı kitaptan kesin anlaşılmıyor.",
+        "en": "The book describes a complex of mosque, tomb and Sufi lodge; it is not clear from the text whether the existing 'Üç Kozlar Türbesi' record is the same tomb."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "445"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Üç Kuzular Camii, Uludağ eteğinde kare planlı, kırma çatılı, dıştan yeşile boyalı bir camidir; moloz taştan yapılmış ve on yedi pencerelidir. Mihrabı çini kaplı, minberi ve vaaz kürsüsü ahşaptır. Doğusunda tuğla gövdeli bir minare ve üç açık mezar vardır.",
+      "en": "Üç Kuzular Mosque on the foothills of Uludağ is a square-plan mosque with a hipped roof, painted green outside; it is built of rubble stone with seventeen windows. The mihrab is tile-covered and the minbar and pulpit are wooden. To its east are a brick-shafted minaret and three open graves."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

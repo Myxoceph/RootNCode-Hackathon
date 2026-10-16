@@ -1,0 +1,423 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-selcuk-hatun-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Selçuk Hatun'un Bursa'da yaptırdığı zaviye, imaret ve köprü ile ilişkileri için hedef kayıtların id'leri kitapta yok; ilişki yazılmadı.",
+      "Vakfiye metni VGM Arşivi'nde; 'waqf.deed' ve 'waqf.name' doldurulmadı, arşivden alınmalı.",
+      "Selçuk Hatun'un defnedildiği Yeşil Türbe için hedef id ve ilçe kitapta yok; ilişki yazılmadı.",
+      "Mimar bilgisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[giris-kapisi-kitabesi]",
+        "note": "Kitabe metni 'mescid' diyor, kitap başlığı ve metin 'cami' diyor; kayıt 'cami' olarak tutuldu. H. 854 Ramazan sonu Ekim 1450 ile uyumlu (kitaptaki meal de aynı)."
+      },
+      {
+        "field": "sections[selcuk-hatun]",
+        "note": "Kitap 'bir müddet sonra eşi beyliğin başına geçti, dört sene sonra vefat etti' diyor; dört yılın evlilikten mi, beyliğe geçişten mi sayıldığı net değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Selçuk Hatun Camii",
+    "en": "Selçuk Hatun Mosque"
+  },
+  "subtitle": {
+    "tr": "Çelebi Mehmed'in kızı Selçuk Hatun'un 1450 tarihli camii",
+    "en": "The 1450 mosque of Selçuk Hatun, daughter of Çelebi Mehmed"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Selçuk Hatun",
+    "kadın banî",
+    "tek kubbeli",
+    "kalkan duvarlı son cemaat",
+    "vakfiye",
+    "1450"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kayhan Mahallesi",
+    "address": "Selçuk Hatun Sokak, No:1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "410"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 854 / M. 1450",
+      "en": "AH 854 / AD 1450"
+    },
+    "start_year": 1450,
+    "end_year": 1450,
+    "hijri_year": 854,
+    "century": 15,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki kitabe H. 854 Ramazan ayı sonlarını (Ekim 1450) verir.",
+      "en": "The entrance inscription gives the end of Ramadan AH 854 (October 1450)."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "410-411"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Selçuk Hatun (Sultan Çelebi Mehmed'in kızı)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "410-411"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Selçuk Hatun, camisine Manyas, Ulubad, Karacabey, Kite ve Soğanlık'taki köy, çiftlik ve arazileri ile Bursa'daki ev, dükkân, bağ ve bahçelerinin tamamını vakfetmiştir. Bunların bir kısmını ağabeyi II. Murad, yeğeni Fâtih Sultan Mehmed ve torun-yeğeni II. Bayezid temlik etmiş, bir kısmını kendisi satın almıştır. Vakfiye kopyası Vakıflar Genel Müdürlüğü Arşivi'ndedir ve vakıfların ayrıntılarını içerir.",
+      "en": "Selçuk Hatun endowed to her mosque all the villages, farms and lands in Manyas, Ulubad, Karacabey, Kite and Soğanlık and her houses, shops, vineyards and gardens in Bursa, some assigned to her by her brother Murad II, her nephew Mehmed the Conqueror and her great-nephew Bayezid II, and some purchased by herself. A copy of the endowment charter in the General Directorate of Foundations Archive holds the details."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "411"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Çelebi Mehmed'in kızı Selçuk Hatun'un H. 854 / M. 1450'de yaptırdığı, tek kubbeli kare harimli ve kalkan duvarlı üç gözlü son cemaat yerli cami. Giriş kapısı üzerinde mermere sülüs hatla yazılı kitabesi vardır; Selçuk Hatun köy ve arazilerini camisine vakfetmiştir.",
+    "en": "A single-domed mosque with a square prayer hall and a parapet-walled three-bay narthex, built in AH 854 / AD 1450 by Selçuk Hatun, daughter of Çelebi Mehmed. Its thuluth inscription on marble is above the entrance; Selçuk Hatun endowed villages and lands to it."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, Sultan Çelebi Mehmed'in kızı Selçuk Hatun tarafından H. 854 / M. 1450'de inşa ettirilmiştir. Giriş kapısı üzerinde mermer üzerine sülüs hatla yazılmış bir kitabe bulunur.",
+        "en": "The mosque was built by Selçuk Hatun, daughter of Sultan Çelebi Mehmed, in AH 854 / AD 1450. An inscription in thuluth on marble is above the entrance door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "410"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe",
+        "en": "Inscription"
+      },
+      "body": {
+        "tr": "Kitabe, Selçuk Hatun'un bu şerefli mescidin yapımını Hicrî 854 yılının Ramazan ayı sonlarında (Ekim 1450) emrettiğini bildirir. Kitabenin tam metni ve meali 'inscriptions' bölümündedir.",
+        "en": "The inscription states that Selçuk Hatun ordered the construction of this honorable mosque at the end of Ramadan AH 854 (October 1450). The full text and meaning are in the inscriptions entry."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "id": "selcuk-hatun",
+      "order": 3,
+      "title": {
+        "tr": "Selçuk Hatun",
+        "en": "Selçuk Hatun"
+      },
+      "body": {
+        "tr": "Selçuk Hatun 1407'de Amasya'da doğmuştur. 1425'te 18 yaşında, Osmanoğulları ve Candaroğulları ittifakını pekiştirmek için Candaroğlu İbrahim Bey ile evlendirilmiş ve beyliğin merkezi Kastamonu'ya gitmiştir. Eşi bir süre sonra beyliğin başına geçmiş, dört yıl sonra vefat edince Bursa'ya dönmüştür. Hayır işlerine yönelen Selçuk Hatun, şehirde bu mescidi, bir zaviye, imaret ve köprü yaptırmış; Edirne ve İstanbul'da da birer mescidi, Kastamonu'da vefat eden çocukları için bir türbesi vardır. 25 Ekim 1485'te vefat etmiş ve Bursa'da Yeşil Türbe'de babasının yanına defnedilmiştir.",
+        "en": "Selçuk Hatun was born in Amasya in 1407. In 1425, aged 18, she was married to Candaroğlu İbrahim Bey to strengthen the alliance of the Ottomans and the Candaroğulları and went to Kastamonu, the principality's center. Her husband later became head of the principality; when he died four years later she returned to Bursa. Devoting herself to charity, she had this masjid, a zawiya, an imaret and a bridge built in the city, besides a masjid each in Edirne and Istanbul and a tomb in Kastamonu for her deceased children. She died on 25 October 1485 and was buried next to her father in the Yeşil Tomb in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 4,
+      "title": {
+        "tr": "Vakıf",
+        "en": "Endowment"
+      },
+      "body": {
+        "tr": "Selçuk Hatun, Bursa'daki camisine Manyas, Ulubad, Karacabey, Kite ve Soğanlık'taki köy, çiftlik ve araziler ile Bursa'daki ev, dükkân, bağ ve bahçelerinin tamamını vakfetmiştir; bunların bir kısmı kardeşi II. Murad, yeğeni Fâtih Sultan Mehmed ve torun-yeğeni II. Bayezid tarafından kendisine temlik edilmiş, bir kısmını kendisi satın almıştır. Vakıfların ayrıntıları Vakıflar Genel Müdürlüğü Arşivi'ndeki vakfiye kopyasında yer alır.",
+        "en": "Selçuk Hatun endowed to her mosque in Bursa all the villages, farms and lands in Manyas, Ulubad, Karacabey, Kite and Soğanlık and her houses, shops, vineyards and gardens in Bursa; some had been assigned to her by her brother Murad II, her nephew Mehmed the Conqueror and her great-nephew Bayezid II, and some she bought herself. Details are in the endowment charter copy in the General Directorate of Foundations Archive."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 5,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Tek kubbeli asıl ibadet mekânı 8,80 × 8,80 m ölçülerinde karedir; üzeri dıştan sekizgen kasnağa, içten prizmatik üçgen motifli kuşağa oturan kurşun kaplı kubbeyle örtülüdür. Kuzeydeki 3,10 × 8,80 m'lik son cemaat yeri kalkan duvarlı ve üç gözlüdür: ortası yarım daire kesitli tonozla, yanları düz tavanla örtülüdür. Ortadaki iki yığma ayak ile yan duvarlar üç sivri kemerle bağlanır, ortadakinin altında Bursa kemeri vardır; iki kemerin arası altıgen taşlar ve lacivert çinilerle süslüdür. Kalkan duvarı ile doğu, batı ve güney duvarlarındaki kör kemerlerin içi tuğla motiflerle bezelidir. Duvarlar iki sıra tuğla ve bir sıra moloz taşla örülmüştür. Kuzeybatı köşedeki sekizgen kaideli, silindirik gövdeli, sivri külahlı minareye son cemaat yerinden girilir.",
+        "en": "The single-domed main prayer hall is square, 8.80 × 8.80 m, covered by a lead-covered dome on an octagonal drum outside and a prismatic-triangle band inside. The 3.10 × 8.80 m narthex on the north is parapet-walled and three-bayed: a semicircular vault over the middle and flat ceilings at the sides. Two piers are joined to the side walls by three pointed arches, with a Bursa arch under the middle one; the space between two arches is decorated with hexagonal stones and dark-blue tiles. The blind arches of the parapet wall and the east, west and south walls are decorated with brick motifs. Walls are two rows of brick and one of rubble stone. The octagonal-based, cylindrical minaret with a pointed spire at the northwest corner is entered from the narthex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "412"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 6,
+      "title": {
+        "tr": "Onarımlar ve Çevre",
+        "en": "Repairs and Surroundings"
+      },
+      "body": {
+        "tr": "Cami zaman içinde birçok kez onarılmıştır. 1950'li yıllarda yalnızca ahşap bir revakı kalmış, duvarları ve kubbesi sağlam durmuştur. 1966'da Eski Eserleri Sevenler Kurumu revakı yenilemiş ve genel onarım yapmış, bir yıl sonra caminin batısındaki çeşmeler restore edilmiştir. Avlu köşesinde sokağa cepheli iki yüzlü bir çeşme ve bahçede bazı mezar taşları vardır. Cami son derece bakımlıdır ve ibadete açıktır.",
+        "en": "The mosque has been repaired many times. By the 1950s only a wooden portico remained, while the walls and dome stayed intact. In 1966 the Association for the Appreciation of Antiquities renewed the portico and carried out a general repair; a year later the fountains west of the mosque were restored. A two-sided street-facing fountain stands at the courtyard corner and there are some gravestones in the garden. The mosque is extremely well maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "8,80 × 8,80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "412"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri",
+        "en": "Narthex"
+      },
+      "value": "3,10 × 8,80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "412"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Selçuk Hatun",
+      "role": {
+        "tr": "Banî; Sultan Çelebi Mehmed'in kızı",
+        "en": "Founder; daughter of Sultan Çelebi Mehmed"
+      }
+    },
+    {
+      "name": "Candaroğlu İbrahim Bey",
+      "role": {
+        "tr": "Selçuk Hatun'un eşi",
+        "en": "Husband of Selçuk Hatun"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kapisi-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, mermer",
+        "en": "Above the entrance door, marble"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "Emaret bi-imâret-i hâzâ’l-mescidi’ş-şerîf Selçuk Hâtun bint-i es-Sultân ibni’s-Sultân es-Sultân Mehmed bin Bâyezîd Gâzî Hân halledallâhü memleketehû ve ebbede devletehû ve şevketehû fî âhir-i şehr-i Ramazane’l-mu’azzam Hicreti’n-Nebiyyi aleyhi’s-salâvâtü ve’s-selâm min şühûri seneti erba’a ve hamsîne ve semâne mi’e.",
+      "translation": {
+        "tr": "Bu şerefli mescidin inşasını, Gazi Sultan Bayezid Han’ın oğlu Sultan Mehmed’in kızı Selçuk Hatun, -Allah memleketini daim, devletini ve kudretini ebedî kılsın-, Hicrî 854 yılının Ramazan ayının sonlarında (Ekim 1450) emretmiştir.",
+        "en": "The construction of this honorable mosque was ordered by Seljuk Hatun, the daughter of Sultan Mehmed, the son of Gazi Sultan Bayezid Han -may Allah make his country permanent, his state and his power eternal- at the end of the month of Ramadan in the year 854 Hijri (October 1450)."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 854,
+        "gregorian": "Ekim 1450"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "410-411"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1450",
+      "year": 1450,
+      "date": null,
+      "hijri": "854",
+      "type": "construction",
+      "title": {
+        "tr": "Selçuk Hatun'un emriyle inşa edildi (Ramazan sonu)",
+        "en": "Built by order of Selçuk Hatun (end of Ramadan)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "id": "selcuk-hatun-vefat-1485",
+      "year": 1485,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Selçuk Hatun vefat etti (25 Ekim) ve Yeşil Türbe'de defnedildi",
+        "en": "Selçuk Hatun died (25 October) and was buried in the Yeşil Tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1966",
+      "year": 1966,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Eski Eserleri Sevenler Kurumu revakı yeniledi, genel onarım yaptı",
+        "en": "The Association for the Appreciation of Antiquities renewed the portico and carried out a general repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "412"
+        }
+      ]
+    },
+    {
+      "id": "cesme-1967",
+      "year": 1967,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Caminin batısındaki çeşmeler restore edildi",
+        "en": "The fountains west of the mosque were restored"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, tek kubbeli, moloz taş ve tuğla sıralı duvarlı bir camidir. Kubbe dışarıdan sekizgen bir kasnağa oturur ve kurşunla kaplıdır. Kuzeyde, kalkan duvarlı, üç gözlü bir son cemaat yeri vardır; ortada iki ayak, üç sivri kemer ve ortadaki kemerin altında bir Bursa kemeri görülür, kemer araları altıgen taş ve lacivert çinilerle süslüdür. Giriş kapısı üzerinde mermer bir kitabe bulunur. Kuzeybatı köşede silindirik gövdeli, sivri külahlı bir minare yükselir; avlunun köşesinde sokağa bakan iki yüzlü bir çeşme vardır.",
+      "en": "A square, single-domed mosque with walls of brick and rubble-stone courses. The dome rests on an octagonal drum and is covered in lead. On the north is a parapet-walled three-bay narthex with two piers, three pointed arches and a Bursa arch beneath the middle one, the spaces between arches decorated with hexagonal stones and dark-blue tiles. A marble inscription is above the entrance. A cylindrical minaret with a pointed spire rises at the northwest corner, and a two-sided fountain faces the street at the courtyard corner."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-zagferanlik-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 488-489) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Banisi, vakfı ve mimarı kitapta yok (kitabe bulunmuyor).",
+      "Bekir Dede'nin kimliği/yaşadığı dönem kitapta verilmiyor.",
+      "Restorasyon öncesi yapının özgün planı kitapta tarif edilmiyor."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Zağferanlık Mescidi",
+    "en": "Zağferanlık Masjid"
+  },
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle mescidi",
+    "zaviye",
+    "Bekir Dede",
+    "Reyhan",
+    "restorasyon"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Reyhan",
+    "address": "Bekir Dede Sokak, No: 18",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "488"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "15. yüzyılın ilk yarısı",
+      "en": "First half of the 15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap yapının XV. yüzyılın ilk yarısında mahalle mescidi olarak inşa edildiğini söylüyor; kesin yıl verilmiyor.",
+      "en": "The book says it was built as a neighbourhood masjid in the first half of the 15th century; no exact year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "488"
+      }
+    ]
+  },
+  "founder": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Reyhan Mahallesi'nde, XV. yüzyılın ilk yarısında mahalle mescidi olarak yapılan, kitabesiz mescit. Doğusundaki türbesiyle bilinen Bekir Dede mescidi zaviye olarak kullanmıştır. 1938'de satılıp konuta çevrilen yapı 2012-2013'te Vakıflar Bölge Müdürlüğü tarafından restore edilerek asli işlevine döndürülmüştür.",
+    "en": "An inscriptionless masjid in the Reyhan Neighborhood, built as a neighbourhood masjid in the first half of the 15th century. Bekir Dede, whose tomb stands on its east side, used it as a zawiya. Sold in 1938 and turned into a residence, it was restored by the Regional Directorate of Foundations in 2012-2013 and returned to its original function."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Reyhan Mahallesi, Bekir Dede Sokak No: 18'de yer alır. XV. yüzyılın ilk yarısında mahalle mescidi olarak inşa edilen yapının kitabesi bulunmamaktadır; bu sebeple banisi hakkında da herhangi bir bilgi yoktur. Yapının doğu tarafında türbesi yer alan ve halk arasında “Bekir Dede” olarak tanınan kişinin mescidi zaviye olarak kullandığı bilinmektedir.",
+        "en": "The masjid is at Bekir Dede Street No. 18, Reyhan Neighborhood, Osmangazi District. There is no inscription on the building, which was built as a neighbourhood masjid in the first half of the 15th century, so there is no information about its founder. It is known that the person known among the public as “Bekir Dede”, whose tomb is on the east side of the building, used the masjid as a zawiya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "488"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-ve-restorasyon",
+      "order": 2,
+      "title": {
+        "tr": "Kullanım ve Restorasyon",
+        "en": "Use and Restoration"
+      },
+      "body": {
+        "tr": "Mescit 1938'de satılmış ve bu tarihten sonra konut olarak kullanılmaya başlanmıştır. 2010-2011'de İl Özel İdaresi tarafından kamulaştırıldıktan sonra 2012-2013'te Vakıflar Bölge Müdürlüğü tarafından restore edilerek asli fonksiyonuna kavuşturulmuştur.",
+        "en": "The masjid was sold in 1938 and began to be used as a residence. After its expropriation by the Special Provincial Administration in 2010-2011, it was restored to its original function by the Regional Directorate of Foundations in 2012-2013."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Restorasyon sonrası genel hatlarıyla dikdörtgen planlı olan mescit 8.00 × 14.00 m ölçülerindedir. Son cemaat mahalli ve harimden oluşan yapı kırma çatıyla örtülmüş, kiremitle kaplanmıştır. Beden duvarları moloz taştan örülmüş, köşelerde kesme taş tercih edilmiştir. Toplam altı ahşap direkle taşınan, 2.50 × 8.00 m ölçülerindeki revaklı son cemaat mahallinin üzeri de kiremit örtülüdür ve çatısı üç sıra kirpi saçakla sonlanır. Kesme küfeki taşından mihrap nişinde aşağıdan yukarıya kademeli olarak daralan bir yaşmak yer alır. İç mekânda ahşap yapılı küçük bir kürsü ve minber bulunur. Ahşap çatılı harim, dört adet taş söveli ve lokma demir şebekeli pencereyle aydınlanır.",
+        "en": "After restoration the masjid has a generally rectangular plan of 8.00 x 14.00 m. Consisting of a narthex and prayer hall, it is covered with a tiled hipped roof. The main walls are rubble stone, with cut stone preferred at the corners. The portico narthex (2.50 x 8.00 m), carried by six wooden posts, is also tiled and its roof ends in three rows of sawteeth at the eaves. The mihrab niche of cut limestone has a framing band that narrows gradually from bottom to top. Inside are a small wooden pulpit and minbar. The wooden-roofed hall is lit by four stone-framed windows with iron grilles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-minare",
+      "order": 4,
+      "title": {
+        "tr": "Avlu, Şadırvan ve Minare",
+        "en": "Courtyard, Fountain and Minaret"
+      },
+      "body": {
+        "tr": "Mescit, bir metre yüksekliğinde, üstü harpuşta ve demir korkulukla çevrili bir avlu duvarıyla sınırlanmıştır. Avluda altı ahşap ayakla taşınan, ahşap çatılı ve kiremit örtülü bir şadırvan vardır. Altıgen taş kaide üzerine oturan, tuğla örgülü silindirik gövdeli kısa bir minare bulunur; tek şerefesinin altında beş sıra tuğladan testere dişi bezeme vardır. Sivri konik, kurşun kaplı külahlı minarenin kaidesi, eski camiden günümüze ulaşan özgün bir unsurdur.",
+        "en": "The masjid is bounded by a one-meter-high courtyard wall with a coping and iron railing. In the courtyard is a fountain supported by six wooden posts, with a wooden ceiling and tiled roof. The short minaret, with a brick cylindrical shaft on a hexagonal stone base, has five rows of brick sawtooth decoration under its single balcony. Its base, with a pointed conical lead-covered spire above, is an original element surviving from the old mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Ölçü (restorasyon sonrası)",
+        "en": "Dimensions (after restoration)"
+      },
+      "value": "8.00 × 14.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat mahalli",
+        "en": "Narthex"
+      },
+      "value": "2.50 × 8.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_direk",
+      "label": {
+        "tr": "Son cemaat ahşap direk sayısı",
+        "en": "Wooden posts of the narthex"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "key": "avlu_duvari",
+      "label": {
+        "tr": "Avlu duvarı yüksekliği",
+        "en": "Courtyard wall height"
+      },
+      "value": 1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Bekir Dede",
+      "role": {
+        "tr": "Mescidi zaviye olarak kullandığı bilinen kişi; türbesi doğuda",
+        "en": "Known to have used the masjid as a zawiya; his tomb is on the east side"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "satis-1938",
+      "year": 1938,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mescit satıldı ve konut olarak kullanılmaya başlandı",
+        "en": "The masjid was sold and began to be used as a residence"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "id": "kamulastirma-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İl Özel İdaresi kamulaştırdı (2010-2011)",
+        "en": "Expropriated by the Special Provincial Administration (2010-2011)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 2010-2011 yıllarını veriyor.",
+        "en": "The book gives 2010-2011."
+      }
+    },
+    {
+      "id": "restorasyon-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü restorasyonu; asli işlevine döndü (2012-2013)",
+        "en": "Restoration by the Regional Directorate of Foundations; returned to its original function (2012-2013)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "489"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 2012-2013 yıllarını veriyor.",
+        "en": "The book gives 2012-2013."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-bekir-dede-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Mescidi zaviye olarak kullanan Bekir Dede'nin türbesi yapının doğu tarafındadır.",
+        "en": "The tomb of Bekir Dede, who used the masjid as a zawiya, is on the east side of the building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "488"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Zağferanlık Mescidi, Bekir Dede Sokak'ta tek katlı, dikdörtgen planlı, kiremit örtülü kırma çatılı bir mescittir. Duvarlar moloz taştan, köşeler kesme taştandır. Önünde altı ahşap direğe oturan revaklı bir son cemaat yeri vardır. Avlusu bir metre yüksekliğinde duvarla çevrilidir ve ahşap çatılı bir şadırvan içerir. Altıgen taş kaideli, tuğla gövdeli kısa bir minare yükselir; kaidesi eski camiden kalmıştır.",
+      "en": "Zağferanlık Masjid is a rectangular masjid on Bekir Dede Street with a tiled hipped roof. The walls are rubble stone with cut stone at the corners. In front is a portico narthex on six wooden posts. The courtyard is enclosed by a one-meter-high wall and holds a wooden-roofed fountain. A short brick minaret rises on a hexagonal stone base that survives from the old mosque."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

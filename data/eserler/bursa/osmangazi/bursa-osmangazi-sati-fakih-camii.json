@@ -1,0 +1,341 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sati-fakih-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Satı Fakih'in kesin vefat tarihi ve türbenin durumu kitapta yok.",
+      "Onarım tarihleri kitapta yok.",
+      "Vakıf bilgisi kitapta yok; 'waqf' null. Mimar bilgisi yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[hazire]",
+        "note": "Bedeviyye Şeyhi Seyyid Şeyh Osman Efendi: Türkçe metin 'Bedeviyye Şeyhi' unvanını yazıyor, İngilizce metin yalnızca 'Seyyid Şeyh Osman Efendi' diyor; Türkçe metin esas alındı."
+      },
+      {
+        "field": "name",
+        "note": "Kitap yapı adının kaynaklarda farklı yazıldığını (Sait, Sadi, Sa'd, Sa'dî) belirtiyor; kayıtta Satı Fakih esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Satı Fakih Camii",
+    "en": "Satı Fakih Mosque"
+  },
+  "subtitle": {
+    "tr": "Bahçesinde banisinin türbesi ve haziresi bulunan cami",
+    "en": "Mosque with its founder's tomb and a graveyard in the garden"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sait Fakih / Sadi Fakih / Sa'd Fakih / Sa'dî Fakih Camii",
+      "en": "Sait / Sadi / Sa'd / Sa'dî Fakih Mosque",
+      "note": "Kitap, yapı adının kaynaklarda farklı yazıldığını, asıl adın Satı Fakih olduğunu belirtir."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Satı Fakih",
+    "hazire",
+    "türbe",
+    "moloz taş",
+    "Oruçbey Caddesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollagürani Mahallesi",
+    "address": "Oruçbey Caddesi, No: 26",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "408"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yaklaşık 1426-1430",
+      "en": "Approximately 1426-1430"
+    },
+    "start_year": 1426,
+    "end_year": 1430,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, Satı Fakih'in 1426'da hayatta olduğunu ve kesin vefat tarihi bilinmediği için yapının 1426-1430 arasında inşa edildiğinin tahmin edildiğini yazar.",
+      "en": "The book says Satı Fakih was alive in 1426 and, since his death date is unknown, the building is presumed to date from 1426-1430."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "408"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Satı Fakih",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "408"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "II. Murad ve Fâtih dönemi hocalarından Satı Fakih'in yaptırdığı, 1426-1430 arasında inşa edildiği tahmin edilen moloz taş cami. Bahçesinde banisinin türbesi ve 19. yüzyıl mezar taşlı bir hazire bulunur; cami sağlamdır ve ibadete açıktır.",
+    "en": "A rubble-stone mosque built by Satı Fakih, a teacher of the reigns of Murad II and Mehmed the Conqueror, presumed to date from 1426-1430. The garden holds the founder's tomb and a graveyard with 19th-century gravestones; the mosque is in good condition and open for worship."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banî",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Cami, Sultan II. Murad ve Fâtih Sultan Mehmed dönemi hocalarından Satı Fakih tarafından yaptırılmıştır. Yapı adı kaynaklarda farklı yazılsa da asıl adı (Sait, Sadi, Sa'd, Sa'dî) Satı Fakih'tir. Arşiv kayıtlarına göre babası Bayram Bey'dir ve 1426'da hayattadır. Oğlu Murad Fakih bu camide imamlık yapmıştır. Belgelerde Satı Fakih adıyla anılan bir mahalle bulunduğu belirtilir.",
+        "en": "The mosque was built by Satı Fakih, a teacher of the reigns of Sultan Murad II and Mehmed the Conqueror. Although the name is written differently in sources (Sait, Sadi, Sa'd, Sa'dî), the real name is Satı Fakih. Archive records say his father was Bayram Bey and that he was alive in 1426. His son Murad Fakih served as imam in the mosque. Documents mention a neighborhood called Satı Fakih."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "tarih",
+      "order": 2,
+      "title": {
+        "tr": "Yapım Tarihi",
+        "en": "Date of Construction"
+      },
+      "body": {
+        "tr": "Bahçedeki türbenin mezar taşı günümüze ulaşmadığı için Satı Fakih'in kesin vefat tarihi bilinmemekte, yapının 1426-1430 yılları arasında inşa edildiği tahmin edilmektedir.",
+        "en": "Because the gravestone of the tomb in the garden has not survived, Satı Fakih's exact death date is unknown and the building is presumed to have been built between 1426 and 1430."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı cami 6,30 × 9,90 m ölçülerindedir; moloz taş duvarlıdır, ahşap çatı kiremitle kaplıdır. Günümüzde belirgin bir mimari özelliği yoktur. Cami sağlam durumdadır ve ibadete açıktır.",
+        "en": "The rectangular mosque measures 6.30 × 9.90 m, with rubble-stone walls and a tiled wooden roof. It has no distinctive architectural features today. It is in good condition and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Satı Fakih Camii Haziresi ve Türbe",
+        "en": "Satı Fakih Mosque Graveyard and Tomb"
+      },
+      "body": {
+        "tr": "Hazire caminin bahçesindedir. Bahçede Satı Fakih'e ait bir türbe bulunur, ancak mezar taşı günümüze ulaşmamıştır. Hazirede 19. yüzyıla ait mezar taşları vardır; taşları günümüze ulaşan kişiler arasında Dîvân-ı Hümâyun hâcegânından Seyyid Hacı Ali Efendi, Bedeviyye Şeyhi Seyyid Şeyh Osman Efendi, Mustafa Muhtar, Şerife Şakire Hanım, Seyyid Ali Fehim Efendi ve Şerife Hatice Hatun yer alır. Kayıtlara göre Rumeli kazaskeri olan ve bir mevlit yazdığı bilinen Mehmed Dede Efendi (v. H. 1147 / M. 1735) de buraya defnedilmiştir.",
+        "en": "The graveyard is in the mosque garden. A tomb belonging to Satı Fakih stands there, but its gravestone has not survived. The graveyard has 19th-century gravestones; people whose stones survive include Seyyid Hacı Ali Efendi of the hâcegân of the Imperial Council, Seyyid Şeyh Osman Efendi, Mustafa Muhtar, Şerife Şakire Hanım, Seyyid Ali Fehim Efendi and Şerife Hatice Hatun. Records also say Mehmed Dede Efendi (d. AH 1147 / AD 1735), a Rumeli kazasker known to have written a mevlid, was buried here."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "408-409"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan dimensions"
+      },
+      "value": "6,30 × 9,90",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "408"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Satı Fakih",
+      "role": {
+        "tr": "Banî; II. Murad ve Fâtih dönemi hocası",
+        "en": "Founder; teacher of the reigns of Murad II and Mehmed the Conqueror"
+      }
+    },
+    {
+      "name": "Bayram Bey",
+      "role": {
+        "tr": "Satı Fakih'in babası (1426'da hayatta)",
+        "en": "Father of Satı Fakih (alive in 1426)"
+      }
+    },
+    {
+      "name": "Murad Fakih",
+      "role": {
+        "tr": "Satı Fakih'in oğlu; camide imam",
+        "en": "Son of Satı Fakih; imam of the mosque"
+      }
+    },
+    {
+      "name": "Seyyid Hacı Ali Efendi",
+      "role": {
+        "tr": "Dîvân-ı Hümâyun hâcegânından; hazirede mezar taşı var",
+        "en": "Of the hâcegân of the Imperial Council; gravestone in graveyard"
+      }
+    },
+    {
+      "name": "Seyyid Şeyh Osman Efendi",
+      "role": {
+        "tr": "Bedeviyye Şeyhi; hazirede mezar taşı var",
+        "en": "Shaykh of the Bedeviyye order; gravestone in graveyard"
+      }
+    },
+    {
+      "name": "Mustafa Muhtar",
+      "role": {
+        "tr": "Hazirede mezar taşı var",
+        "en": "Gravestone in graveyard"
+      }
+    },
+    {
+      "name": "Şerife Şakire Hanım",
+      "role": {
+        "tr": "Hazirede mezar taşı var",
+        "en": "Gravestone in graveyard"
+      }
+    },
+    {
+      "name": "Seyyid Ali Fehim Efendi",
+      "role": {
+        "tr": "Hazirede mezar taşı var",
+        "en": "Gravestone in graveyard"
+      }
+    },
+    {
+      "name": "Şerife Hatice Hatun",
+      "role": {
+        "tr": "Hazirede mezar taşı var",
+        "en": "Gravestone in graveyard"
+      }
+    },
+    {
+      "name": "Mehmed Dede Efendi",
+      "role": {
+        "tr": "Rumeli kazaskeri, mevlit yazarı (v. 1735); kayıtlara göre hazirede medfun",
+        "en": "Rumeli kazasker and author of a mevlid (d. 1735); recorded as buried here"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "sati-fakih-hayatta-1426",
+      "year": 1426,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Satı Fakih'in arşiv kayıtlarına göre hayatta olduğu yıl",
+        "en": "Year Satı Fakih is recorded as alive in the archives"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "insa-tahmini",
+      "year": 1426,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami 1426-1430 arasında inşa edilmiş olarak tahmin ediliyor",
+        "en": "Mosque presumed built between 1426 and 1430"
+      },
+      "note": {
+        "tr": "Aralığın başlangıç yılı yazıldı; bitiş 1430.",
+        "en": "Start year of the 1426-1430 range; the range ends in 1430."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "408"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Moloz taş duvarlı, dikdörtgen planlı, kiremit kaplı ahşap çatılı küçük bir camidir; belirgin bir süslemesi yoktur. Bahçesinde banisi Satı Fakih'in türbesi ile 19. yüzyıla ait mezar taşları olan bir hazire bulunur.",
+      "en": "A small rectangular mosque with rubble-stone walls and a tiled wooden roof, without notable ornament. Its garden contains the tomb of its founder Satı Fakih and a graveyard with 19th-century gravestones."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

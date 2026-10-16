@@ -1,0 +1,326 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-isa-bey-fenari-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-15",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 348-349) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kitapta verilmiyor (yalnızca II. Bayezid devri); dating yılları boş bırakıldı.",
+      "Çağ (era) kitapta belirtilmiyor; II. Bayezid dönemi nedeniyle 'erken-osmanli' girildi, veri ekibi gözden geçirmeli.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Minare dibindeki çeşme için ayrı kayıt varsa bağlanmalı.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "İsa Bey Fenârî (Güdük Minare) Camii",
+    "en": "İsa Bey Fenârî (Güdük Minare) Mosque"
+  },
+  "subtitle": {
+    "tr": "Avlusunun köşesinde kısa minaresiyle bilinen II. Bayezid dönemi camisi",
+    "en": "Bayezid II-period mosque known for its short minaret in the corner of its courtyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Güdük Minare Camii",
+      "en": "Güdük (Stubby) Minaret Mosque",
+      "note": "Kısa minaresinden dolayı"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kare plan",
+    "güdük minare",
+    "kurşun kubbe",
+    "çeşme",
+    "Kaplıca Kapısı",
+    "II. Bayezid",
+    "sur içi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alaaddin Paşa",
+    "address": "1. Uzun Sokak, No: 10",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "348"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Bayezid devri",
+      "en": "Reign of Sultan Bayezid II"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapıyı yalnızca 'Sultan II. Bayezid devri yapısı' olarak niteler; yıl vermez.",
+      "en": "The book only describes the building as a structure of the reign of Sultan Bayezid II and gives no year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "348"
+      }
+    ]
+  },
+  "founder": {
+    "name": "İsa Bey (Molla Fenârî'nin torunlarından)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "348"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sur içinde, Kaplıca Kapısı yakınında, Molla Fenârî'nin torunlarından İsa Bey'in II. Bayezid devrinde yaptırdığı kare planlı, kurşun kubbeli cami. Avlunun kuzeydoğu köşesindeki kısa minaresi nedeniyle Güdük Minare adıyla anılır.",
+    "en": "A square-plan mosque with a lead-clad dome, built during the reign of Bayezid II by İsa Bey, a grandson of Molla Fenârî, within the city walls near the Kaplıca Gate. It is called Güdük (Stubby) Minaret because of the short minaret in the northeast corner of its courtyard."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, Alaaddin Paşa Mahallesi, 1. Uzun Sokak No:10'da, sur içinde Kaplıca Kapısı yakınında yer almaktadır. Sultan II. Bayezid devri yapısıdır ve Molla Fenârî'nin torunlarından İsa Bey tarafından inşa ettirilmiştir.",
+        "en": "The mosque is at 1st Uzun Street No. 10, Alaaddin Paşa Neighborhood, within the city walls near the Kaplıca Gate. It is a structure of the reign of Sultan Bayezid II and was built by İsa Bey, one of the grandsons of Molla Fenârî."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "348"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Her kenarı 8,15 m olan cami kare planlıdır; üzeri sekizgen kasnaklı, kirpi saçaklı ve Türk üçgenlerine oturan kurşun kaplı bir kubbeyle örtülüdür. Harim ve kasnak bir sıra kesme taş ile üç sıra tuğladan örülmüştür. Avluyu çevreleyen ihata duvarı moloz taştır ve alaturka kiremitle kaplıdır. Her cephede ikişer alt pencere vardır. Mihrap nişi 60 cm derinliğindedir; stalaktitleri bozularak sivri kemerli hale dönüştürülmüştür. Üç gözlü son cemaat yeri 3,95 m derinliğindedir, yanları kapalıdır ve masif görüntüsünü gizlemek için büyük sağır kemerler açılmıştır.",
+        "en": "The mosque, each side of which is 8.15 m, has a square plan and is covered with a lead-clad dome on an octagonal drum with sawteeth at the eaves, resting on Turkish triangles. The prayer hall and drum are built of one row of cut stone and three rows of brick. The wall around the courtyard is of rubble stone covered with Turkish-style tiles. There are two lower windows on each façade. The 60 cm deep mihrab niche was transformed into a pointed arch by altering its stalactites. The three-bay narthex is 3.95 m deep, closed at the sides, with large blind arches opened to hide its massive appearance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "id": "minare-ve-cesme",
+      "order": 3,
+      "title": {
+        "tr": "Güdük Minare ve Çeşme",
+        "en": "Stubby Minaret and Fountain"
+      },
+      "body": {
+        "tr": "Minare alışılmışın dışında avlunun kuzeydoğu köşesinde yer alır ve beş sıra kirpi saçaklıdır; kısa boyundan dolayı \"Güdük Minare\" adını almıştır. Minare dibindeki çeşme kesme taş ve tuğladan örülmüştür; sivri kemeri, geniş aynası ve kirpi saçağıyla tipik bir Bursa çeşmesidir.",
+        "en": "The minaret is unusually located in the northeast corner of the courtyard and has five rows of sawteeth beneath the balcony; it is called the Güdük (Stubby) Minaret because of its short height. The fountain at its foot is made of cut stone and brick and is a typical Bursa fountain with its pointed arch, wide back panel and sawteeth at the eaves."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "1855 depreminde son cemaat yerinin sütunları, kemerleri ve üst örtüsü tamamen yıkılmıştır. Vali Mahmud Celâleddin Paşa zamanında, 1891'de basit tarzda, kiremit örtülü ahşap çatılı olarak onarılmıştır; bu tamirin izleri duvarlarda halen belli olmaktadır. Günümüzde cami bakımlı ve ibadete açıktır.",
+        "en": "In the 1855 earthquake the columns, arches and roof of the narthex were completely destroyed. It was repaired in a simple style with a tiled wooden roof in 1891 during the term of Governor Mahmud Celâleddin Paşa; traces of this repair are still visible on the walls. Today the mosque is well-maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "349"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kenar",
+      "label": {
+        "tr": "Cami kenar uzunluğu",
+        "en": "Side length of mosque"
+      },
+      "value": 8.15,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3.95,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_derinlik",
+      "label": {
+        "tr": "Mihrap nişi derinliği",
+        "en": "Mihrab niche depth"
+      },
+      "value": 0.6,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "key": "minare_kirpi_sira",
+      "label": {
+        "tr": "Şerefe altı kirpi saçak sırası",
+        "en": "Sawtooth rows beneath balcony"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "349"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İsa Bey",
+      "role": {
+        "tr": "Banî; Molla Fenârî'nin torunlarından",
+        "en": "Founder; one of Molla Fenârî's grandsons"
+      }
+    },
+    {
+      "name": "Molla Fenârî",
+      "role": {
+        "tr": "Banînin dedesi",
+        "en": "Grandfather of the founder"
+      }
+    },
+    {
+      "name": "Mahmud Celâleddin Paşa",
+      "role": {
+        "tr": "Vali; 1891 onarımı sırasında görevde",
+        "en": "Governor in office during the 1891 repair"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde son cemaat yeri yıkıldı",
+        "en": "Narthex destroyed in the 1855 earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1891",
+      "year": 1891,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Son cemaat yeri ahşap çatılı olarak onarıldı",
+        "en": "Narthex repaired with a wooden roof"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "349"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İsa Bey Fenârî Camii, kare planlı, her kenarı yaklaşık sekiz metre olan bir yapıdır. Kurşun kaplı kubbesi sekizgen kasnağa oturur ve kirpi saçakla bitmektedir. Avluyu moloz taş bir duvar çevreler. Kısa bir minare avlunun kuzeydoğu köşesindedir ve dibinde sivri kemerli, kesme taş ve tuğladan bir çeşme vardır. Üç gözlü, yanları kapalı bir son cemaat yeri bulunur.",
+      "en": "İsa Bey Fenârî Mosque has a square plan with sides of about eight metres. Its lead-clad dome sits on an octagonal drum and ends in a sawtooth cornice. A rubble-stone wall surrounds the courtyard. A short minaret stands in the northeast corner of the courtyard, with a pointed-arched fountain of cut stone and brick at its foot. The three-bay narthex is closed at the sides."
+    }
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
