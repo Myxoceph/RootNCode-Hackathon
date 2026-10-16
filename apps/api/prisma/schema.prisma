@@ -48,8 +48,8 @@ model asset {
   district              String
   neighborhood          String?
   address               String?
-  lat                   Float
-  lng                   Float
+  lat                   Float?
+  lng                   Float?
   coord_source          String?
   coord_verified        Boolean           @default(false)
   dating_display_tr     String?

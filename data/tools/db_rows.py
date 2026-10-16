@@ -125,7 +125,7 @@ def asset_rows(a, manifest):
     M, L = a["meta"], a["location"]
     D, F, AR, W = (a.get(k) or {} for k in ("dating", "founder", "architect", "waqf"))
     V, X, S = (a.get(k) or {} for k in ("visit", "accessibility", "ambient_sound"))
-    coords = L.get("coordinates") or {}  # taslaklarda olmayabilir (yalnızca viewer; DB'ye taslak girmez)
+    coords = L.get("coordinates") or {}  # isteğe bağlı: yoksa lat/lng NULL, eser haritada görünmez
     rows = {t: [] for t in ASSET_TABLES}
 
     rows["asset"].append({
@@ -136,7 +136,7 @@ def asset_rows(a, manifest):
         "alternate_names": a.get("alternate_names", []),
         "summary_tr": a["summary"]["tr"], "summary_en": a["summary"].get("en"),
         "city_code": L["city"], "district": L["district"], "neighborhood": L.get("neighborhood"), "address": L.get("address"),
-        "lat": coords.get("lat"), "lng": coords.get("lng"), "coord_source": coords.get("source"), "coord_verified": coords.get("verified"),
+        "lat": coords.get("lat"), "lng": coords.get("lng"), "coord_source": coords.get("source"), "coord_verified": coords.get("verified", False),
         "dating_display_tr": _t(D.get("display"), "tr"), "dating_display_en": _t(D.get("display"), "en"),
         "start_year": D.get("start_year"), "end_year": D.get("end_year"), "hijri_year": D.get("hijri_year"), "century": D.get("century"),
         "dating_basis_tr": _t(D.get("basis"), "tr"), "dating_basis_en": _t(D.get("basis"), "en"), "dating_confidence": D.get("confidence"),
@@ -270,12 +270,38 @@ def asset_rows(a, manifest):
     return rows
 
 
+def asset_rows_processed_media(a, manifest):
+    """asset_rows gibi, ama media_pipeline.py'den henüz geçmemiş (manifestte olmayan) görselleri atlar.
+
+    Döner: (rows, atlanan medya id'leri). Atlanan görsele bağlı kitabe AR hedefi boşaltılır.
+    source_json ve asset_revision.data yine kaydın tamamını taşır; görseller işlenip yeniden
+    içe aktarılınca kendiliğinden eklenir.
+    """
+    all_media = a["media"] + a.get("archive_media", [])
+    skipped = [m["id"] for m in all_media if m["id"] not in manifest]
+    if not skipped:
+        return asset_rows(a, manifest), []
+    trimmed = {
+        **a,
+        "media": [m for m in a["media"] if m["id"] in manifest],
+        "archive_media": [m for m in a.get("archive_media", []) if m["id"] in manifest],
+        "inscriptions": [
+            {**n, "ar_target_media_id": n["ar_target_media_id"] if n.get("ar_target_media_id") in manifest else None}
+            for n in a.get("inscriptions", [])
+        ],
+    }
+    rows = asset_rows(trimmed, manifest)
+    rows["asset"][0]["source_json"] = a
+    rows["asset_revision"][0]["data"] = a
+    return rows, skipped
+
+
 def load_all(include_drafts=False):
     """Tüm eserleri ve manifesti okur.
 
-    Varsayılan: taslaklar (meta.status = draft) atlanır; koordinatsız/fotoğrafsız olabilirler ve
-    uygulamada görünmezler, in_review'a geçince içe aktarmaya girerler. Görüntüleyici
-    (build_viewer.py) include_drafts=True ile hepsini gösterir.
+    Varsayılan: taslaklar (meta.status = draft) atlanır; uygulamada görünmezler, in_review'a
+    geçince içe aktarmaya girerler. Görüntüleyici (build_viewer.py) include_drafts=True ile
+    hepsini gösterir. Koordinatsız ve fotoğrafsız kayıtlar her durumda içe aktarılır.
     """
     manifest_path = DATA / "build" / "media-manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}

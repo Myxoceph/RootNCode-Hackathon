@@ -218,8 +218,7 @@ Bir taslağı `in_review`'a almak için:
 | Durum | Ne yapmalı |
 |---|---|
 | `ModuleNotFoundError: pypdf` / `jsonschema` / `psycopg` | `python3 -m pip install -r data/requirements.txt` |
-| `validate.py`: `location: 'coordinates' is a required property` | Kayıt `draft` değil. Ya koordinat ekle ya da `meta.status`'u `draft` bırak. |
-| `validate.py`: `media: tam olarak 1 kapak fotoğrafı olmalı` | `draft` olmayan kayıtta fotoğraf var ama `is_cover: true` olan tam olarak bir tane değil. |
+| `validate.py`: `media: tam olarak 1 kapak fotoğrafı olmalı` | Kayıtta fotoğraf var ama `is_cover: true` olan tam olarak bir tane değil. |
 | `id '…' ile başlamalı` / `dosya adı ile id aynı olmalı` | Kimlik `bursa-<ilçe>-<ad>`, dosya adı kimlikle aynı olmalı. |
 | Ajan "aynı kimlikte kayıt var" diyor | `kapsam.md`'ye bak; başkasının kaydıysa dokunma, değilse kimliği netleştir. |
 | Ajan yarıda kaldı (limit) | 5 saatlik pencere yenilenince eksik bölükleri tekrar ver. |
