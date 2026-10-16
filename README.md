@@ -90,13 +90,20 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 |---|---|
 | `GET /health` | Sunucu ve veritabanı durumu (veritabanına ulaşılamazsa `503`) |
 | `GET /docs` | Swagger UI: etkileşimli API dokümantasyonu (OpenAPI 3.1 belgesi: `/docs/json`) |
+| `GET /assets`, `GET /assets/:id` | Eser listesi (filtre, arama, harita kutusu) ve detayı |
+| `GET /assets/:id/relations`, `GET /assets/:id/nearby` | Eserler arası bağlar ve yakındaki eserler |
+| `GET /meta/enums` | Filtre ve rozet kod listeleri |
 
-Eser uçları (`/assets`) yeni veri modeli üzerine kuruluyor.
+Yanıt şemaları ve istemci örnekleri: [`packages/contracts/README.md`](packages/contracts/README.md).
 
 Tüm hatalar tek biçimde döner: `{ "error": { "code": "NOT_FOUND", "message": "..." } }`.
 `5xx` hataların ayrıntısı yalnızca sunucu loglarında tutulur.
 
 Web istemcisinin API'ye erişebilmesi için adresi `CORS_ORIGINS` içinde olmalıdır (varsayılan: `http://localhost:8081`).
+
+### Demo sunucusu
+
+VDS'e kurulum, güncelleme ve yedekleme: [`docs/deploy.md`](docs/deploy.md) (Docker Compose: PostgreSQL + API + Caddy ile web uygulaması).
 
 ## Ekip
 
