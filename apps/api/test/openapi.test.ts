@@ -23,7 +23,15 @@ describe("OpenAPI documentation", () => {
     const doc = response.json();
     expect(doc.openapi).toBe("3.1.0");
     expect(doc.info.version).toBe(CONTRACT_VERSION);
-    expect(Object.keys(doc.paths)).toEqual(expect.arrayContaining(["/health"]));
+    expect(Object.keys(doc.paths)).toEqual(
+      expect.arrayContaining(["/health", "/assets", "/assets/{id}/relations", "/assets/{id}/nearby", "/meta/enums"]),
+    );
+  });
+
+  it("points 'Try it out' at the API root relative to the document, so a proxy prefix works", async () => {
+    const doc = (await app.inject({ method: "GET", url: "/docs/json" })).json();
+
+    expect(doc.servers).toEqual([expect.objectContaining({ url: ".." })]);
   });
 
   it("documents responses with Zod-generated schemas", async () => {

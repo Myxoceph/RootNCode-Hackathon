@@ -25,6 +25,8 @@ export function registerOpenApi(app: FastifyInstance): void {
   app.setSerializerCompiler(() => (data) => JSON.stringify(data));
 
   app.register(swagger, {
+    // Routes have no base path to strip, and stripping would parse the relative server URL below as absolute.
+    stripBasePath: false,
     openapi: {
       openapi: "3.1.0",
       info: {
@@ -36,6 +38,9 @@ export function registerOpenApi(app: FastifyInstance): void {
           "Yanıtlar `@vagabonds/contracts` sözleşmesiyle doğrulanır. " +
           "Hatalar her zaman `{ error: { code, message } }` biçimindedir.",
       },
+      // Relative to this document (`<api root>/docs/json`), so "Try it out" also works
+      // when a proxy serves the API under a prefix (`/api` on the demo server).
+      servers: [{ url: "..", description: "Bu API" }],
       tags: [
         { name: "assets", description: "Vakıf eserleri" },
         { name: "meta", description: "Kod listeleri ve etiketler" },
