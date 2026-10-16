@@ -100,6 +100,21 @@ export type AssetMediaRecord = Prisma.asset_mediaGetPayload<{ select: typeof ass
 export type AssetDetailRecord = Prisma.assetGetPayload<ReturnType<typeof detailArgs>>;
 export type LabelRecord = { code: string; label_tr: string; label_en: string | null };
 
+const relationSelect = {
+  source_asset_id: true,
+  target_asset_id: true,
+  description_tr: true,
+  description_en: true,
+  confidence: true,
+  relation_type: { select: labelSelect },
+} satisfies Prisma.asset_relationSelect;
+
+const locationSelect = { id: true, lat: true, lng: true, coord_verified: true, coord_source: true } as const;
+
+export type RelationRecord = Prisma.asset_relationGetPayload<{ select: typeof relationSelect }>;
+export type CitationRecord = Prisma.source_citationGetPayload<{ select: typeof citationSelect & { asset_id: true } }>;
+export type LocationRecord = Prisma.assetGetPayload<{ select: typeof locationSelect }>;
+
 export interface AssetListFilters {
   city?: string | undefined;
   type?: string | undefined;
@@ -133,6 +148,24 @@ export interface AssetsRepository {
   /** Images of the given assets, ordered; with `coversOnly`, just each asset's cover. */
   findMedia(assetIds: string[], options?: { coversOnly?: boolean }): Promise<AssetMediaRecord[]>;
   findAssetTypes(codes: string[]): Promise<LabelRecord[]>;
+  /** Visible assets among `ids`, in no particular order. */
+  findSummaries(ids: string[]): Promise<AssetSummaryRecord[]>;
+  /** Coordinates of a visible asset, or null when the asset is not visible. */
+  findLocation(id: string): Promise<LocationRecord | null>;
+  /**
+   * Every link recorded on this asset or pointing at it, whatever the other end's
+   * status; the caller drops links to assets it cannot show.
+   */
+  findRelations(id: string): Promise<RelationRecord[]>;
+  /** Citations of the given relations, keyed in the dataset as `<target id>:<type>` on the source asset. */
+  findRelationCitations(relations: RelationRecord[]): Promise<CitationRecord[]>;
+  /** Visible assets with coordinates inside the box, except `excludeId`. */
+  findLocatedInBox(bbox: [number, number, number, number], excludeId: string): Promise<AssetSummaryRecord[]>;
+}
+
+/** `entity_key` of a relation citation, as written by data/tools/db_rows.py. */
+export function relationCitationKey(relation: Pick<RelationRecord, "target_asset_id" | "relation_type">): string {
+  return `${relation.target_asset_id}:${relation.relation_type.code}`;
 }
 
 export function createAssetsRepository(prisma: PrismaClient, visibility: AssetVisibility): AssetsRepository {
@@ -188,6 +221,50 @@ export function createAssetsRepository(prisma: PrismaClient, visibility: AssetVi
     findAssetTypes(codes) {
       if (codes.length === 0) return Promise.resolve([]);
       return prisma.asset_type.findMany({ where: { code: { in: codes } }, select: labelSelect });
+    },
+
+    findSummaries(ids) {
+      if (ids.length === 0) return Promise.resolve([]);
+      return prisma.asset.findMany({ where: { id: { in: ids }, status: { in: statuses } }, select: summarySelect });
+    },
+
+    findLocation(id) {
+      return prisma.asset.findFirst({ where: { id, status: { in: statuses } }, select: locationSelect });
+    },
+
+    findRelations(id) {
+      return prisma.asset_relation.findMany({
+        where: { OR: [{ source_asset_id: id }, { target_asset_id: id }] },
+        select: relationSelect,
+        orderBy: { id: "asc" },
+      });
+    },
+
+    findRelationCitations(relations) {
+      if (relations.length === 0) return Promise.resolve([]);
+      return prisma.source_citation.findMany({
+        where: {
+          entity: "relation",
+          OR: relations.map((relation) => ({
+            asset_id: relation.source_asset_id,
+            entity_key: relationCitationKey(relation),
+          })),
+        },
+        select: { ...citationSelect, asset_id: true },
+        orderBy: { id: "asc" },
+      });
+    },
+
+    findLocatedInBox([minLng, minLat, maxLng, maxLat], excludeId) {
+      return prisma.asset.findMany({
+        where: {
+          id: { not: excludeId },
+          status: { in: statuses },
+          lng: { gte: minLng, lte: maxLng },
+          lat: { gte: minLat, lte: maxLat },
+        },
+        select: summarySelect,
+      });
     },
   };
 }

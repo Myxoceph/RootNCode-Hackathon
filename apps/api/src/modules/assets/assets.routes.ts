@@ -2,11 +2,15 @@ import {
   AssetDetailSchema,
   AssetIdSchema,
   AssetListResponseSchema,
+  AssetRelationsResponseSchema,
   CONTRACT_VERSION,
   LangSchema,
+  NearbyAssetsResponseSchema,
   type AssetDetail,
   type AssetListResponse,
+  type AssetRelationsResponse,
   type Lang,
+  type NearbyAssetsResponse,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
@@ -14,8 +18,14 @@ import { HttpError } from "../../lib/http-error.ts";
 import { resolveLang } from "../../lib/lang.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
-import { toAssetDetail, toAssetSummary, type MapperContext } from "./assets.mapper.ts";
-import { visibleStatuses, type AssetsRepository, type AssetVisibility } from "./assets.repository.ts";
+import { toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, type MapperContext } from "./assets.mapper.ts";
+import { boundingBox, distanceMeters, selectRelations } from "./assets.network.ts";
+import {
+  visibleStatuses,
+  type AssetSummaryRecord,
+  type AssetsRepository,
+  type AssetVisibility,
+} from "./assets.repository.ts";
 
 const CodeSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "must be a lowercase code");
 
@@ -41,6 +51,12 @@ const ListQuerySchema = z.object({
 const DetailParamsSchema = z.object({ id: AssetIdSchema });
 const DetailQuerySchema = z.object({ lang: LangSchema.optional() });
 
+const NearbyQuerySchema = z.object({
+  lang: LangSchema.optional(),
+  radius: z.coerce.number().int().min(100).max(50_000).default(2_000).describe("Yarıçap, metre"),
+  limit: z.coerce.number().int().min(1).max(50).default(10),
+});
+
 // Asset data changes only through imports, so short client caching is safe.
 const CACHE_CONTROL = "public, max-age=60";
 
@@ -56,6 +72,22 @@ function setLanguageHeaders(reply: FastifyReply, lang: Lang): void {
 
 function requestLang(request: FastifyRequest, queryLang: Lang | undefined): Lang {
   return resolveLang(queryLang, request.headers["accept-language"]);
+}
+
+/** Validates `:id` and the query string of a per-asset route. */
+function parseAssetRequest<Query extends z.ZodType>(
+  request: FastifyRequest,
+  querySchema: Query,
+): { id: string; query: z.output<Query> } {
+  const params = DetailParamsSchema.safeParse(request.params);
+  if (!params.success) throw new HttpError(400, "INVALID_ID", describeIssues(params.error));
+  const query = querySchema.safeParse(request.query);
+  if (!query.success) throw new HttpError(400, "INVALID_QUERY", describeIssues(query.error));
+  return { id: params.data.id, query: query.data };
+}
+
+function notFound(id: string): HttpError {
+  return new HttpError(404, "ASSET_NOT_FOUND", `Asset "${id}" not found`);
 }
 
 export interface AssetsRoutesOptions {
@@ -109,14 +141,11 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
       response: { 200: toOpenApiSchema(AssetDetailSchema), 400: errorSchema, 404: errorSchema },
     },
   }, async (request, reply): Promise<AssetDetail> => {
-    const params = DetailParamsSchema.safeParse(request.params);
-    if (!params.success) throw new HttpError(400, "INVALID_ID", describeIssues(params.error));
-    const query = DetailQuerySchema.safeParse(request.query);
-    if (!query.success) throw new HttpError(400, "INVALID_QUERY", describeIssues(query.error));
-    const lang = requestLang(request, query.data.lang);
+    const { id, query } = parseAssetRequest(request, DetailQuerySchema);
+    const lang = requestLang(request, query.lang);
 
-    const record = await repository.findById(params.data.id);
-    if (!record) throw new HttpError(404, "ASSET_NOT_FOUND", `Asset "${params.data.id}" not found`);
+    const record = await repository.findById(id);
+    if (!record) throw notFound(id);
     const [media, secondaryTypes] = await Promise.all([
       repository.findMedia([record.id]),
       repository.findAssetTypes(record.secondary_types),
@@ -124,5 +153,94 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
 
     setLanguageHeaders(reply, lang);
     return AssetDetailSchema.parse(toAssetDetail(record, media, secondaryTypes, context(lang)));
+  });
+
+  app.get("/assets/:id/relations", {
+    schema: {
+      tags: ["assets"],
+      summary: "Eserin bağları (Kentsel Ağ): iki yönlü, yalnızca görünür eserlere",
+      params: toOpenApiSchema(DetailParamsSchema, "input"),
+      querystring: toOpenApiSchema(DetailQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(AssetRelationsResponseSchema), 400: errorSchema, 404: errorSchema },
+    },
+  }, async (request, reply): Promise<AssetRelationsResponse> => {
+    const { id, query } = parseAssetRequest(request, DetailQuerySchema);
+    const lang = requestLang(request, query.lang);
+
+    if (!(await repository.findLocation(id))) throw notFound(id);
+    const relations = await repository.findRelations(id);
+    const otherIds = new Set(relations.flatMap((r) => [r.source_asset_id, r.target_asset_id]));
+    otherIds.delete(id);
+    const others = new Map((await repository.findSummaries([...otherIds])).map((other) => [other.id, other]));
+    const { items, unavailableCount } = selectRelations(id, relations, (otherId) => others.has(otherId));
+
+    const [covers, citations] = await Promise.all([
+      repository.findMedia(items.map((item) => item.otherId), { coversOnly: true }),
+      repository.findRelationCitations(items.map((item) => item.relation)),
+    ]);
+    const coverOf = new Map(covers.map((cover) => [cover.asset_id, cover]));
+    const ctx = context(lang);
+    const mapped = items.map((item) => {
+      const other = others.get(item.otherId);
+      if (!other) throw new Error(`relation target ${item.otherId} vanished`);
+      return toAssetRelation(item, other, coverOf.get(item.otherId), citations, ctx);
+    });
+    mapped.sort((a, b) => a.type.code.localeCompare(b.type.code) || a.asset.name.localeCompare(b.asset.name, "tr"));
+
+    setLanguageHeaders(reply, lang);
+    return AssetRelationsResponseSchema.parse({
+      version: CONTRACT_VERSION,
+      lang,
+      assetId: id,
+      items: mapped,
+      unavailableCount,
+    });
+  });
+
+  app.get("/assets/:id/nearby", {
+    schema: {
+      tags: ["assets"],
+      summary: "Yakındaki eserler, en yakından uzağa (kuş uçuşu)",
+      params: toOpenApiSchema(DetailParamsSchema, "input"),
+      querystring: toOpenApiSchema(NearbyQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(NearbyAssetsResponseSchema), 400: errorSchema, 404: errorSchema },
+    },
+  }, async (request, reply): Promise<NearbyAssetsResponse> => {
+    const { id, query } = parseAssetRequest(request, NearbyQuerySchema);
+    const lang = requestLang(request, query.lang);
+
+    const location = await repository.findLocation(id);
+    if (!location) throw notFound(id);
+    const origin = toCoordinates(location);
+
+    let nearest: { record: AssetSummaryRecord; distance: number }[] = [];
+    if (origin) {
+      const candidates = await repository.findLocatedInBox(boundingBox(origin, query.radius), id);
+      nearest = candidates
+        .flatMap((record) =>
+          record.lat === null || record.lng === null
+            ? []
+            : [{ record, distance: distanceMeters(origin, { lat: record.lat, lng: record.lng }) }],
+        )
+        .filter(({ distance }) => distance <= query.radius)
+        .sort((a, b) => a.distance - b.distance || a.record.id.localeCompare(b.record.id))
+        .slice(0, query.limit);
+    }
+    const covers = await repository.findMedia(nearest.map(({ record }) => record.id), { coversOnly: true });
+    const coverOf = new Map(covers.map((cover) => [cover.asset_id, cover]));
+    const ctx = context(lang);
+
+    setLanguageHeaders(reply, lang);
+    return NearbyAssetsResponseSchema.parse({
+      version: CONTRACT_VERSION,
+      lang,
+      assetId: id,
+      origin,
+      radiusMeters: query.radius,
+      items: nearest.map(({ record, distance }) => ({
+        distanceMeters: Math.round(distance),
+        asset: toAssetSummary(record, coverOf.get(record.id), ctx),
+      })),
+    });
   });
 };
