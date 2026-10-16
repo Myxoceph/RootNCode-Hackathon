@@ -28,6 +28,17 @@ Durumlar: `sırada` → `işleniyor` → `draft` (ajan taslağı, PR'da) → `in
 
 <!-- Kalan bölükler Drive'daki bölük listesinden eklenecek: | # | Bölük | | | sırada | -->
 
+### Cilt 2: Yıldırım (`vk-bursa-c2`)
+
+| # | Bölük | Sayfa | Kayıtlar | Kim | Durum |
+|---|---|---|---|---|---|
+| C2-7 | Emir Sultan | 19-59 | 5 kayıt (`meta.from: "Emir Sultan"`) | Ahmet (ajan) | draft |
+| C2-8 | Umurbey Külliyesi | 63-78 | 4 kayıt (`meta.from: "Umurbey Külliyesi"`) | Ahmet (ajan) | draft |
+| C2-9 | Yeşil Çelebi Mehmed Külliyesi | 83-157 | 6 kayıt (`meta.from: "Yeşil Çelebi Mehmed Külliyesi"`) | Ahmet (ajan) | draft |
+| C2-10 | Yıldırım Külliyesi | 161-209 | 5 kayıt (`meta.from: "Yıldırım Külliyesi"`) | Ahmet (ajan) | draft |
+| C2-11 | Yıldırım Camiler | 215-278 | | Ahmet (ajan) | sırada |
+| C2-12 | Yıldırım Kalan Bölümler | 280-319 | | Ahmet (ajan) | sırada |
+
 ### Cilt 3: diğer ilçeler (`vk-bursa-c3`)
 
 Bölük numaraları her ciltte 1'den başlar; bu yüzden `#` sütununda cilt de yazılır (`C3-2` = Cilt 3, 2. bölük).

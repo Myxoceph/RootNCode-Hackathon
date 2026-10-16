@@ -1,0 +1,1085 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-yesil-turbe",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yeşil Çelebi Mehmed Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yeşil Çelebi Mehmed Külliyesi bölümünden (Part B) yapay zekâ ile özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar eklenmeli (location.coordinates kaynakta yok, uydurulmadı).",
+      "Fotoğraflar eklenmeli (media, archive_media boş; media_folder henüz yok, match_photos.py ile bağlanacak).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Mahalle ve açık adres kaynakta yok (yalnızca 'caminin güneyinde, küçük bir tepede').",
+      "Türbenin yapım başlangıç ve bitiş yılı kaynakta yok; dating.start_year/end_year boş bırakıldı.",
+      "Kitabenin transliterasyonları basılı metne sadık kopyalandı; 'mihrap-ust-hadis' satır sonundaki 'azzi- mu’r-rabbe' birleştirildi, kontrol edilmeli.",
+      "Selçuk Hatun sandukası kitabesinin metni kitapta yok.",
+      "Kapı sahanlığı kitabesi ve kûfi dualar (mihrap kartuşları altında) metin olarak verilmemiş.",
+      "Çini mihrap ve kitabeler için AR hedef fotoğrafları seçilip inscriptions[].ar_target_media_id doldurulmalı.",
+      "Sitti Hatun'un kime ait olduğu (kızı mı, başka biri mi) kitapta açık değil; beşli grup 'kızları ve sütannesi' olarak anılıyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap Çelebi Mehmed'i 'külliyenin banisi' ve türbenin sahibi olarak anar; ancak türbenin yerinin sağlığında belirlendiğini, yapının ölümünden sonra tamamlandığını yazar. Kapı kitabesi 'Sultan Mehmed adına vezir Hacı İvaz tarafından yaptırılmıştır' der. Kimin yaptırdığı kesin dille söylenmediği için probable işaretlendi."
+      },
+      {
+        "field": "inscriptions[kapi-kanatlari-kitabesi]",
+        "note": "Arapça metin soyağacını Mehmed < Bayezid < Murad < Orhan < Osman sırasıyla verir, kitabın Türkçe meali bunu ters sırada (Osman oğlu Orhan oğlu ...) çevirir; İngilizce metin 'Bazeyid' yazım hatası içerir. Kaynağa sadık kalındı."
+      },
+      {
+        "field": "inscriptions[celebi-mehmed-sandukasi]",
+        "note": "Arapça metin 'Mehmed bin Sultan Ebi Yezid bin Murad Han' sırasındadır; Türkçe ve İngilizce meal bunu 'Murad Han oğlu ... Bayezid oğlu ... Mehmed' ve 'son of Murad Han, son of the late Sultan Bayezid' biçiminde, yani soyağacı ters olarak verir."
+      },
+      {
+        "field": "inscriptions[ic-pencere-alinliklari]",
+        "note": "Kitabın Türkçe mealinde 'Dünya birleştir; ona talip olanlar da köpeklerdir' geçer; İngilizce karşılığı 'The world is carrion' (cîfe = leş) olduğundan Türkçe ifade bir yazım/dizgi hatası olabilir. Türkçe metin basıldığı gibi korundu. Ayrıca 'Hayru’n-nâs' alınlığı ile ilk alınlıklar tekrar eden hadisler içerir (Ed-dâllu ale’l-hayri iki kez geçer)."
+      },
+      {
+        "field": "inscriptions[tac-kapi-kitabesi]",
+        "note": "Kitabede 'senete erbâîn ve işrîn ve semâne mi’e' (824) yazılıdır ve kitap bunu H. 824 / M. Mayıs-Haziran 1421 olarak verir; Hicri-Miladi karşılık tutarlıdır. Bu kitabe ölüm tarihini bildirir, inşa tarihini değil."
+      },
+      {
+        "field": "sandukalar",
+        "note": "Selçuk Hatun'un H. 890 / M. 1485'te ölümü 'babasının vefatından altmış dört yıl sonra' denir (1485 - 1421 = 64); tutarlıdır. Sitti Hatun'un kimliği kitapta açıklanmamıştır."
+      },
+      {
+        "field": "sections[celebi-mehmed]",
+        "note": "Kalemkâr ve çini ustasının türbede çalıştığı 'güçlü biçimde düşünülmektedir' ifadesiyle verilmiştir; kesin değildir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yeşil Türbe",
+    "en": "Green Tomb"
+  },
+  "subtitle": {
+    "tr": "Çelebi Mehmed'in çinili anıt mezarı",
+    "en": "The tiled monumental tomb of Çelebi Mehmed"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-yesil-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "çini",
+    "Çelebi Mehmed",
+    "Yeşil Külliye",
+    "sekizgen",
+    "çini mihrap",
+    "cenazelik",
+    "Hacı İvaz"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "137"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Yeşil Külliye'nin parçası olarak caminin güneyinde, küçük bir tepe üzerinde yer alan Yeşil Türbe, Çelebi Mehmed'e aittir. Firuze çinileriyle kaplı sekizgen gövdesi ve 25,5 m yüksekliğiyle Osmanlı türbeleri arasındaki en yüksek örnek olup külliyeye 'Yeşil' adını vermiştir.",
+    "en": "Part of the Yeşil Complex, the Green Tomb stands on a small hill south of the mosque and belongs to Çelebi Mehmed. Its octagonal body covered in turquoise tiles reaches 25.5 m, the tallest among Ottoman tombs, and inspired the complex's name 'Yeşil'."
+  },
+  "legends": [],
+  "facts": [
+    {
+      "key": "kenar_uzunlugu",
+      "label": {
+        "tr": "Sekizgen gövde kenar uzunluğu",
+        "en": "Octagon side length"
+      },
+      "value": 8.2,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "138"
+        }
+      ]
+    },
+    {
+      "key": "toplam_yukseklik",
+      "label": {
+        "tr": "Toplam yükseklik (kubbeyle)",
+        "en": "Total height with dome"
+      },
+      "value": 25.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "138"
+        }
+      ],
+      "note": {
+        "tr": "Osmanlı türbeleri arasında en yüksek",
+        "en": "Tallest among Ottoman tombs"
+      }
+    },
+    {
+      "key": "cephe_yuksekligi",
+      "label": {
+        "tr": "Saçak silmesine kadar cephe yüksekliği",
+        "en": "Façade height to cornice"
+      },
+      "value": 13.83,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "138"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total windows"
+      },
+      "value": 22,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "140-141"
+        }
+      ],
+      "note": {
+        "tr": "Altta 6, üstte 8, kasnakta 8",
+        "en": "6 lower, 8 upper, 8 in the drum"
+      }
+    },
+    {
+      "key": "mihrap_yuksekligi",
+      "label": {
+        "tr": "Çini mihrap yüksekliği",
+        "en": "Tile mihrab height"
+      },
+      "value": 7,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "144"
+        }
+      ],
+      "note": {
+        "tr": "Taç kısmıyla birlikte",
+        "en": "Including the crown"
+      }
+    },
+    {
+      "key": "sanduka_uzunlugu",
+      "label": {
+        "tr": "Çelebi Mehmed sandukası uzunluğu",
+        "en": "Çelebi Mehmed sarcophagus length"
+      },
+      "value": 2.77,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "148"
+        }
+      ]
+    },
+    {
+      "key": "kapi_olcusu",
+      "label": {
+        "tr": "Ahşap giriş kapısı",
+        "en": "Wooden entrance door"
+      },
+      "value": "1,71 x 2,37",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "140"
+        }
+      ]
+    },
+    {
+      "key": "kapi_sahanligi",
+      "label": {
+        "tr": "Kapı sahanlığı",
+        "en": "Door landing"
+      },
+      "value": "1,74 x 2,65",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "140"
+        }
+      ]
+    },
+    {
+      "key": "zemin_yukseltisi",
+      "label": {
+        "tr": "Asıl türbe zemini yükseltisi",
+        "en": "Raised main floor"
+      },
+      "value": 60,
+      "unit": "cm",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "140"
+        }
+      ],
+      "note": {
+        "tr": "Yaklaşık",
+        "en": "Approximately"
+      }
+    },
+    {
+      "key": "cenazelik",
+      "label": {
+        "tr": "Cenazelik düzeni",
+        "en": "Burial chamber layout"
+      },
+      "value": "3 kol, 5 göz",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "138"
+        }
+      ]
+    },
+    {
+      "key": "lambri_yuksekligi",
+      "label": {
+        "tr": "Altıgen çini kaplı duvar yüksekliği",
+        "en": "Hexagonal tile wall height"
+      },
+      "value": 3.2,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "141"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Çelebi Mehmed",
+      "role": {
+        "tr": "Türbenin sahibi, külliyenin banisi",
+        "en": "Owner of the tomb, founder of the complex"
+      }
+    },
+    {
+      "name": "Hacı İvaz Paşa (Hacı İvaz bin Ahi Bayezid)",
+      "role": {
+        "tr": "Mimar; inşaatı yönetti",
+        "en": "Architect; directed construction"
+      }
+    },
+    {
+      "name": "Hacı Ali bin Ahmed Tebrîzî",
+      "role": {
+        "tr": "Ahşap işçiliği ustası",
+        "en": "Woodwork master"
+      }
+    },
+    {
+      "name": "Ali bin İlyas Ali",
+      "role": {
+        "tr": "Kalemkâr (Yeşil Cami'de imzası var; türbede de çalıştığı güçlü biçimde düşünülür)",
+        "en": "Decorative painter (signed the Green Mosque; strongly believed to have worked here)"
+      }
+    },
+    {
+      "name": "Mehmed el-Mecnûn",
+      "role": {
+        "tr": "Çini ustası (Yeşil Cami'de imzası var; türbede de çalıştığı güçlü biçimde düşünülür)",
+        "en": "Tile master (signed the Green Mosque; strongly believed to have worked here)"
+      }
+    },
+    {
+      "name": "Mimar Macit Kural",
+      "role": {
+        "tr": "1941-1943 restorasyonunu yapan mimar",
+        "en": "Architect of the 1941-1943 restoration"
+      }
+    },
+    {
+      "name": "Şehzade Mahmud",
+      "role": {
+        "tr": "Çelebi Mehmed'in oğlu, türbede sandukası var",
+        "en": "Son of Çelebi Mehmed, sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Şehzade Mustafa",
+      "role": {
+        "tr": "Çelebi Mehmed'in oğlu, türbede sandukası var",
+        "en": "Son of Çelebi Mehmed, sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Şehzade Yusuf",
+      "role": {
+        "tr": "Çelebi Mehmed'in oğlu, türbede sandukası var",
+        "en": "Son of Çelebi Mehmed, sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Dâye Hatun",
+      "role": {
+        "tr": "Çelebi Mehmed'in sütannesi, türbede sandukası var",
+        "en": "Wet nurse of Çelebi Mehmed, sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Ayşe Hatun",
+      "role": {
+        "tr": "Çelebi Mehmed'in kızı, türbede sandukası var",
+        "en": "Daughter of Çelebi Mehmed, sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Hafsa Hatun",
+      "role": {
+        "tr": "Çelebi Mehmed'in kızı, türbede sandukası var",
+        "en": "Daughter of Çelebi Mehmed, sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Sitti Hatun",
+      "role": {
+        "tr": "Türbede sandukası var (kitap beş sandukayı kızları ve sütannesi olarak toplu anar; yakınlığı ayrıca belirtmez)",
+        "en": "Sarcophagus in the tomb (the book groups the five as daughters and wet nurse without stating her relation)"
+      }
+    },
+    {
+      "name": "Selçuk Hatun",
+      "role": {
+        "tr": "Çelebi Mehmed'in kızı; H. 890 / M. 1485'te öldü",
+        "en": "Daughter of Çelebi Mehmed; died AH 890 / AD 1485"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tac-kapi-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerindeki dikdörtgen kitabe",
+        "en": "Rectangular inscription above the entrance door"
+      },
+      "language": "ar",
+      "script": "Celi sülüs (lacivert zemin üzerine sarı)",
+      "transliteration": "Hâzihit türbetül merhûmis saîdis şehîdis Sultân ibnüs Sultân Muhammed bin Bâyezîd Hân, tuvuffiye fî Cemâdil evvel senete erbâîn ve işrîn ve semâne mi’e.",
+      "translation": {
+        "tr": "Bu türbe, Bayezid Han oğlu, merhum, said, şehid, sultan oğlu Sultan Mehmed’indir. Sekiz yüz yirmi dört yılının Cemaziyelevvel ayında vefat etmiştir. (H. 824 / M. Mayıs-Haziran 1421)",
+        "en": "This tomb belongs to Sultan Mehmed, the son of Bayezid Han, the deceased, blessed, martyr, son of the sultan. He passed away in the month of Jumada al-Awwal in the year eight hundred and twenty-four. (AH 824 / AD May-June 1421)"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 824,
+        "gregorian": "1421 (Mayıs-Haziran)"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "138-140"
+        }
+      ]
+    },
+    {
+      "id": "kapi-kanatlari-kitabesi",
+      "location": {
+        "tr": "Ahşap giriş kapısı kanatları (oyma)",
+        "en": "Wooden entrance door leaves (carved)"
+      },
+      "language": "ar",
+      "script": "Oyma",
+      "transliteration": "Es-Sultanu’l-mağfur Mehmed bin Bayezid bin Murad bin Orhan bin Osman bi-işareti veziri sahibi’t-tedbir Hacı İvaz bin Ahi Bayezid",
+      "translation": {
+        "tr": "Osman oğlu Orhan oğlu Murad oğlu Bayezid oğlu mağfur Sultan Mehmed adına, tedbirli vezir Ahi Bayezid oğlu Hacı İvaz tarafından yaptırılmıştır.",
+        "en": "Built by the cautious vizier Hacı Ivaz, son of Ahi Bayezid, in the name of the forgiven Sultan Mehmed, son of Bazeyid, son of Murad, son of Orhan, son of Osman."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "141, 144"
+        }
+      ],
+      "note": {
+        "tr": "Kitabe bir kanatta başlayıp diğerinde devam eder. Kitabın Türkçe meali soyağacını Arapça metne göre ters sırayla verir.",
+        "en": "The text starts on one leaf and continues on the other. The book's Turkish rendering gives the genealogy in reverse order relative to the Arabic."
+      }
+    },
+    {
+      "id": "kapi-usta-imzasi",
+      "location": {
+        "tr": "Kapı kitabelerinin hemen altı",
+        "en": "Just below the door inscriptions"
+      },
+      "language": "ar",
+      "script": "Oyma",
+      "transliteration": "Amel-i Hacı Ali bin Ahmed-i Tebrîzî",
+      "translation": {
+        "tr": "Tebrizli Ahmed oğlu Hacı Ali yapmıştır.",
+        "en": "Made by Hacı Ali bin Ahmed-i Tebrîzî."
+      },
+      "author": "Hacı Ali bin Ahmed Tebrîzî",
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "id": "dis-cephe-alinliklari",
+      "location": {
+        "tr": "Dış cephe pencere alınlıkları",
+        "en": "Exterior window pediments"
+      },
+      "language": "ar",
+      "script": "Beyaz celi sülüs (lacivert zemin üzerine)",
+      "transliteration": "Küllü nefsin zâikatü’l-mevt, sümme ileynâ türce’un\nŞifâü’l-cinân kırâatü’l-Kur’ân\nEd-dâllü ale’l-hayri ke-fâilihi\nİzzü’d-dünyâ bi’l-mâli ve izzü’l-âhireti bi’l-a’mâl\nEd-Dünyâ sicnü’l-mü’min ve cennetü’l-kâfir",
+      "translation": {
+        "tr": "Her nefis ölümü tadacaktır, sonra bize döndürüleceksiniz.\nKalplerin şifası Kur’an okumaktır.\nBir hayra vesile olan, onu yapan gibidir.\nDünyanın şerefi mal iledir, ahiretin şerefi ise amelle kazanılır.\nDünya müminin zindanı, kâfirin ise cennetidir.",
+        "en": "Every soul shall taste death, then to Us you shall be returned.\nThe cure for hearts is reading the Quran.\nThe one who is the means of a good deed is like the one who does it.\nThe honor of the world is gained with wealth and the glory of the hereafter is gained with deeds.\nThe world is the prison of the believer and the paradise of the unbeliever."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "138-139"
+        }
+      ],
+      "note": {
+        "tr": "Kitap bunları 'öne çıkan' örnekler olarak verir; alınlıklardaki yazıların tamamı olmayabilir.",
+        "en": "The book gives these as prominent examples; they may not be all the texts on the pediments."
+      }
+    },
+    {
+      "id": "dogu-nis-kitabesi",
+      "location": {
+        "tr": "Doğu cephesindeki nişin üst kısmı",
+        "en": "Above the niche on the east side"
+      },
+      "language": "ar",
+      "script": "Kûfi ve sülüs",
+      "transliteration": "Kale’n-nebiyyu sallallahu aleyhi ve sellem\nEd-dünya kantaratun fa-burûha ve la ta’mirûha",
+      "translation": {
+        "tr": "Dünya bir köprüdür, geçiniz ama tamir etmeyiniz.",
+        "en": "The world is a bridge, cross it but do not repair it."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "141"
+        }
+      ]
+    },
+    {
+      "id": "bati-nis-kitabesi",
+      "location": {
+        "tr": "Batı cephesindeki nişin üst kısmı",
+        "en": "Above the niche on the west side"
+      },
+      "language": "ar",
+      "script": "Kûfi ve sülüs",
+      "transliteration": "El-muminune la yemutune bel yunkalune min darin ila dar",
+      "translation": {
+        "tr": "Müminler ölmez, sadece bir yurttan diğerine göç ederler.",
+        "en": "Believers do not die, they just migrate from one homeland to another."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "141"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-sure-bordur",
+      "location": {
+        "tr": "Çini mihrabın dış bordürü",
+        "en": "Outer border of the tile mihrab"
+      },
+      "language": "ar",
+      "script": "Sarı celi sülüs",
+      "transliteration": "Euzu billahi mine’ş-şeytani’r-racim. Bismillahi’r-rahmani’r-rahim. Fetekabbeleha rabbuha bikabulin hasenin ve enbeteha nebaten hasenen ve keffeleha Zekeriyya. Kullema dehale aleyha Zekeriyya’l-mihrabe vecede indeha rizkan. Kale ya Meryemu enna leki haza. Kalet huve min indi’llah. İnna’llaha yerzuku men yeşa’u bi gayri hisab.",
+      "translation": {
+        "tr": "Bunun üzerine Rabbi onu güzel bir şekilde kabul buyurdu ve onu güzel bir şekilde yetiştirdi. Zekeriya’yı da onun bakımıyla görevlendirdi. Zekeriya, onun bulunduğu bölmeye her girişinde yanında bir yiyecek bulurdu. ‘Meryem! Bu sana nereden geldi?’ derdi. O da ‘Bu, Allah katındandır’ diye cevap verirdi. Zira Allah, dilediğine hesapsız rızık verir.",
+        "en": "Thereupon her Lord accepted her in a good manner and raised her in a good manner. He appointed Zechariah to look after her. Whenever Zechariah entered her quarters, he would find food with her. He would say, ‘Mary, where did this come to you?’ She would reply, ‘This is from Allah.’ Allah provides sustenance without measure to whomever He wills."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "146-147"
+        }
+      ],
+      "note": {
+        "tr": "Âl-i İmrân suresi 37. ayet.",
+        "en": "Surah Al-i Imran, verse 37."
+      }
+    },
+    {
+      "id": "mihrap-ust-hadis",
+      "location": {
+        "tr": "Mihrabın üst kısmı",
+        "en": "Upper part of the mihrab"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Ve kale Rasulullahi sallallahu aleyhi ve sellem: Fe emma’r-ruku’u fe azzimu’r-rabbe fihi. Ve emma’s-sucudu fectehidu fihi bi’d-duai ve mukinine bi en yustecabe leküm.",
+      "translation": {
+        "tr": "Rasulullah (s.a.v.) buyurdu: Rükuda Rabbinizi yüceltin. Secdede ise duaya yönelin. Dualarınızın kabul edileceğinden emin olun.",
+        "en": "The Messenger of Allah (PBUH) said: In bowing, glorify your Lord. In prostration, turn to supplication. Be sure that your supplications will be accepted."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "146-147"
+        }
+      ],
+      "note": {
+        "tr": "Kitabın basımında 'azzimu’r-rabbe' sözcüğü satır sonunda 'azzi- mu’r-rabbe' olarak bölünmüştür; birleştirilerek yazıldı.",
+        "en": "In print the word is split across lines ('azzi- mu’r-rabbe'); joined here."
+      }
+    },
+    {
+      "id": "mihrap-kartus-hadisi",
+      "location": {
+        "tr": "Mihrap kavsarasını çevreleyen dört kartuştan biri",
+        "en": "One of four cartouches around the mihrab hood"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "An Süleyman bin Büreydeti an ebîhi radıyallahu anhuma ani’n-Nebiyyi sallallahu aleyhi ve sellem kale: Kad küntü neheytüküm an ziyareti’l-kuburi fe-kad üzzine li-Muhammed’in fî ziyareti kabri ümmihî. Fe-zurûhâ fe-innehâ tüzekkirükümü’l-âhirete.",
+      "translation": {
+        "tr": "Süleyman bin Büreyde (r.a.) babasından rivayet eder: Resulullah (s.a.v.) şöyle buyurdu: Ben daha önce size kabir ziyaretini yasaklamıştım. Fakat Muhammed’e annesinin kabrini ziyaret etme izni verildi. Öyleyse siz de kabirleri ziyaret edin. Çünkü bu, size ahireti hatırlatır.",
+        "en": "Suleyman bin Buraydah (r.a.) narrated from his father: The Messenger of Allah (PBUH) said: I had forbidden you to visit graves before, but Muhammad was given permission to visit his mother’s grave. So, you too should visit graves, because this will remind you of the Hereafter."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "146-147"
+        }
+      ],
+      "note": {
+        "tr": "Kartuşların altında kûfi hatla çeşitli dualar vardır (metni kitapta yok).",
+        "en": "Various prayers in Kufic script run below the cartouches (text not given in the book)."
+      }
+    },
+    {
+      "id": "mihrap-musenna-hadis",
+      "location": {
+        "tr": "Mihrap nişindeki mukarnas sıralarının altı",
+        "en": "Beneath the muqarnas rows of the mihrab niche"
+      },
+      "language": "ar",
+      "script": "Müsenna; sağdan sola sarı, soldan sağa firuze",
+      "transliteration": "Accilû bi’s-salâti kable’l-fevti\nVe accilû bi’t-tevbeti kable’l-mevti",
+      "translation": {
+        "tr": "Vakti geçmeden önce namaz için acele ediniz.\nÖlüm gelmeden önce de tevbe etmekte acele ediniz.",
+        "en": "Hurry up to pray before the time is up.\nHave haste to repent before death comes."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "147-148"
+        }
+      ]
+    },
+    {
+      "id": "celebi-mehmed-sandukasi",
+      "location": {
+        "tr": "Çelebi Mehmed'in çinili sandukası",
+        "en": "Çelebi Mehmed's tiled sarcophagus"
+      },
+      "language": "ar",
+      "script": "Lacivert zemin üzerine kabartma sarı harf",
+      "transliteration": "Haza’l-merkadü’l-münevver ve’l-madcaü’l-muattar medfenü’s-Sultan’il-a‘zam ve’l-Hakani’l-ekrem iftiharı selatini’l-alem nasıri’l-ibad ve amiri’l-bilad ve dafi’i’z-zulmi ve’l-fesad el-gazi el-mücahid es-Sultan Mehmed bin es-Sultan el-mağfur Ebi Yezid bin Murad Han. Teğammedehullahu bi-rıdvânihi ve eskenehu feradise cinânihi. Tuvuffiye fi şehri Cumadi’l-ula senete erba’in ve işrin ve semane mie.",
+      "translation": {
+        "tr": "Bu nurlu kabir ve güzel kokulu mezar, Murad Han oğlu, merhum Sultan Bayezid oğlu, büyük sultan, yüce hakan, âlemin sultanlarının iftiharı, kulların yardımcısı, beldeleri imar eden, zulüm ve fesadı ortadan kaldıran, gazi ve mücahit Sultan Mehmed’in metfenidir. Allah onu rızasına gark etsin ve cennetinin bahçelerinde iskân eylesin. Kendisi, sekiz yüz yirmi dört yılı Cemaziyelevvel ayında vefat etti. (H. Cemaziyelevvel 824 / M. Mayıs-Haziran 1421)",
+        "en": "This bright grave and fragrant grave is the tomb of Sultan Mehmed, the son of Murad Han, the son of the late Sultan Bayezid, the great sultan, the sublime Han, the pride of the sultans of the world, the helper of servants, the builder of the lands, the eradicator of oppression and corruption, the warrior and fighter. May Allah immerse him in His pleasure and settle him in the gardens of His paradise. He passed away in the month of Jumada al-Awwal in the year eight hundred and twenty-four. (Jumada al-Awwal AH 824 / May-June AD 1421)"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 824,
+        "gregorian": "1421 (Mayıs-Haziran)"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "148"
+        }
+      ],
+      "note": {
+        "tr": "Metin 'Mehmed bin Sultan Ebi Yezid (Bayezid) bin Murad Han' der; kitabın Türkçe meali sıralamayı ters çevirmiştir.",
+        "en": "The text reads 'Mehmed son of Sultan Ebi Yezid (Bayezid) son of Murad Han'; the book's Turkish rendering reverses the order."
+      }
+    },
+    {
+      "id": "ic-pencere-alinliklari",
+      "location": {
+        "tr": "İç mekândaki çini pencere alınlıkları",
+        "en": "Tile window pediments inside the tomb"
+      },
+      "language": "ar",
+      "script": "Üç satır; harf araları bitkisel motif ve rumi dolgulu",
+      "transliteration": "Ve kale aleyhi’s-selam / Şifâu’l-cinân kıra’atü’l-Kur’an / El-hayru bi temâmihi / Şemmetü mine’l-ma’rifeti hayrun min kesîri’l-amel.\nKale aleyhi’s-selam / Ed-dâllu ale’l-hayri ke-fâilihî / Kale aleyhi’s-selam / El-cennetu daru’l-eshiyâi.\nKale aleyhi’s-selam / İzzü’d-dünya bi’l-mâli ve izzü’l-âhireti bi’l-a’mâl / Kale aleyhi’s-selam / Ed-dünya cîfetün ve talibuhâ kilâb.\nKale aleyhi’s-selam / El-cennetu daru’l-eshiyai / Oda yakışarlar eşkiyai / Kale aleyhi’s-selam / Ed-dünya sa’atün fec’alha ta’aten.\nVe kale aleyhi’s-selam / Ed-dünya sicnü’l-mümini ve cennetu’l-kâfiri / ve kale Aliyyun kerremallahu vechehu / ve la libasün ecmelü mine’s-selameti.\nVe kale aleyhi’s-selam / Ed-dâllu ale’l-hayri ke-fâilihî / El-hayru bi temâmihî / ve kale aleyhi’s-selam / Hayru’n-nâsi men yenfau’n-nâs.",
+      "translation": {
+        "tr": "Rasulullah buyurdu: Kalplerin şifası Kur’an okumaktır. Hayır, tamamıyla yapıldığında anlam kazanır. Marifetten bir nebze koklamak, çokça amel işlemekten daha hayırlıdır.\nPeygamber buyurdu: Hayra vesile olan, onu yapan gibidir. Yine buyurdu: Cennet, cömertlerin evidir.\nPeygamber şöyle buyurdu: Dünyanın izzeti mal iledir, ahiretin izzeti ise amelle kazanılır. Dünya birleştir; ona talip olanlar da köpeklerdir.\nPeygamber buyurdu: Cennet, cömertlerin evidir. Fakat ona yakışmayan eşkıyalar da orayı isteyecektir, onlar sonunda cezaya çarptırılır. Yine buyurdu: Dünya çok kısadır, onu ibadet ve itaate ayırınız.\nHazreti Peygamber şöyle buyurdu: Dünya mümin için bir zindandır, kâfir için ise bir cennettir. Hazreti Ali de şöyle demiştir: Selametten daha güzel bir elbise yoktur.\nHazreti Peygamber buyurdu: Hayra vesile olan, onu yapan gibidir. Hayır, onu tam anlamıyla yerine getirmektir. Yine buyurdu: İnsanların en hayırlısı, insanlara faydası dokunandır.",
+        "en": "The Messenger of Allah said: The cure for hearts is reading the Quran. Its benefit becomes meaningful when it is done completely. A little whiff of divine knowledge is better than doing many deeds without it.\nThe Prophet said: The one who is a means to good is like the one who does it. He also said: Paradise is the home of the generous.\nThe Prophet said: The honor of the world is in wealth, but the honor of the Hereafter is earned through deeds. The world is carrion and those who seek it are dogs.\nThe Prophet said: Paradise is the home of the generous. But bandits who do not befit it will also seek it, and they will be punished in the end. He also said: The world is very short, devote it to worship and obedience.\nThe Holy Prophet said: The world is a prison for the believer and a paradise for the unbeliever. Hazrat Ali also said: There is no dress more beautiful than salvation.\nThe Prophet said: The one who is the means of good is like the one who does it. True goodness lies in carrying it out completely. He also said: The best of people are those who benefit people."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "150, 152"
+        }
+      ],
+      "note": {
+        "tr": "Kitap alınlıkları kuzeybatı köşeden başlayarak sırayla verir; son pencere alınlığı metni (Hayru’n-nâs) ayrı bir alınlıktır. 'Dünya birleştir' ifadesi basımda böyle geçer (bkz. data_quality_notes).",
+        "en": "The book lists the pediments in order from the northwest corner. 'Dünya birleştir' is printed as such (see data_quality_notes)."
+      }
+    },
+    {
+      "id": "selcuk-hatun-sandukasi",
+      "location": {
+        "tr": "Selçuk Hatun'un alçı sandukası",
+        "en": "Selçuk Hatun's plaster sarcophagus"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 890,
+        "gregorian": "1485-10-25"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "149"
+        }
+      ],
+      "note": {
+        "tr": "Kitap kitabenin metnini vermez; yalnızca Selçuk Hatun'un H. 15 Şevval 890 / M. 25 Ekim 1485'te öldüğünü bildirdiğini söyler. Dil ve yazı belirtilmemiştir.",
+        "en": "The book does not give the text, only that it records her death on 15 Shawwal AH 890 / 25 October AD 1485. Language and script are not stated."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "celebi-mehmed-olumu-1421",
+      "year": 1421,
+      "date": null,
+      "hijri": "Cemaziyelevvel 824",
+      "type": "record",
+      "title": {
+        "tr": "Çelebi Mehmed'in ölümü (H. Cemaziyelevvel 824 / M. Mayıs-Haziran 1421)",
+        "en": "Death of Çelebi Mehmed (AH Jumada al-Awwal 824 / AD May-June 1421)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "137, 140, 148"
+        }
+      ],
+      "note": {
+        "tr": "Ölüm haberi kırk gün gizlenmiş, naaş tahnit edilip Bursa'ya getirilmiştir.",
+        "en": "News of his death was hidden for forty days; the body was embalmed and brought to Bursa."
+      }
+    },
+    {
+      "id": "selcuk-hatun-olumu-1485",
+      "year": 1485,
+      "date": null,
+      "hijri": "15 Şevval 890",
+      "type": "record",
+      "title": {
+        "tr": "Selçuk Hatun'un ölümü (H. 15 Şevval 890 / M. 25 Ekim 1485)",
+        "en": "Death of Selçuk Hatun (15 Shawwal AH 890 / 25 October AD 1485)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "149"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1941-1943",
+      "year": 1941,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mimar Macit Kural'ın restorasyonu (1941-1943)",
+        "en": "Restoration by Architect Macit Kural (1941-1943)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "138-139"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı.",
+        "en": "Start year."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "firuze-cini",
+      "title": {
+        "tr": "Firuze çini cepheler",
+        "en": "Turquoise tile façades"
+      },
+      "hint": {
+        "tr": "Cepheleri kaplayan firuze çiniler ve lacivert zeminli hat alınlıkları.",
+        "en": "Turquoise tiles covering the façades and the dark-blue calligraphic pediments."
+      },
+      "section_id": "dis-mimari"
+    },
+    {
+      "feature": "cini-mihrap",
+      "title": {
+        "tr": "7 m'lik çini mihrap",
+        "en": "7 m tile mihrab"
+      },
+      "hint": {
+        "tr": "Kandil ve şamdan motiflerini ve müsenna yazıyı arayın.",
+        "en": "Look for the lamp and candlestick motifs and the mirror-writing inscription."
+      },
+      "section_id": "mihrap"
+    },
+    {
+      "feature": "celebi-mehmed-sandukasi",
+      "title": {
+        "tr": "Çelebi Mehmed'in sandukası",
+        "en": "Çelebi Mehmed's sarcophagus"
+      },
+      "hint": {
+        "tr": "2,77 m uzunluğundaki çinili sanduka.",
+        "en": "The 2.77 m tiled sarcophagus."
+      },
+      "section_id": "sandukalar"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yesil-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Caminin güneyinde, onunla karşılıklı konumda küçük bir tepede yer alan külliye yapısı.",
+        "en": "A building of the complex on a small hill south of, and facing, the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-yesil-camii",
+      "type": "same_craftsman",
+      "description": {
+        "tr": "Yeşil Cami'de imzaları bulunan kalemkâr Ali bin İlyas Ali ile çini ustası Mehmed el-Mecnûn'un türbede de çalıştığı güçlü biçimde düşünülmektedir.",
+        "en": "The painter Ali bin İlyas Ali and tile master Mehmed el-Mecnûn, who signed the Green Mosque, are strongly believed to have worked on the tomb too."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "141"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yeşil Türbe, küçük bir tepe üzerinde duran, sekiz kenarlı ve yüksek kasnaklı, hafif sivri kubbeli bir yapıdır. Cepheleri baştan aşağı firuze renkli çinilerle kaplıdır; pencerelerin üzerinde lacivert zemine beyaz yazıyla ayet ve hadislerin işlendiği çini alınlıklar vardır. Kuzeydeki taç kapıdan, iki kanatlı ahşap kapıdan girilir. İçeride duvarlar altıgen firuze çinilerle kaplıdır; güney duvarında yedi metre yüksekliğinde çini bir mihrap yükselir. Tam ortada, yüksek bir platformda, çinili büyük sanduka durur; ayakucunda kızlarına ait sandukalar yan yana dizilidir.",
+      "en": "The Green Tomb stands on a small hill: an eight-sided building with a high drum and a slightly pointed dome. Its façades are covered from bottom to top in turquoise tiles, with tile pediments above the windows bearing verses and hadiths in white on dark blue. It is entered through the north portal and a double-leaf wooden door. Inside, the walls are clad in hexagonal turquoise tiles and a seven-metre tile mihrab rises on the south wall. In the centre, on a high platform, stands the large tiled sarcophagus, with sarcophagi of his daughters lined up at its foot."
+    },
+    "audio_description_source": "source_text"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": [],
+  "dating": {
+    "display": {
+      "tr": "Çelebi Mehmed'in ölümünden (H. 824 / M. 1421) sonra tamamlandı; başlangıcı bilinmiyor",
+      "en": "Completed after Çelebi Mehmed's death (AH 824 / AD 1421); start unknown"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap inşaatın ne zaman başladığının kesin bilinmediğini, yerinin Çelebi Mehmed'in sağlığında belirlendiğini ve yapının onun vefatından sonra tamamlandığının kabul edildiğini söyler. Kesin yıl verilmediği için başlangıç/bitiş yılı boş bırakıldı.",
+      "en": "The book says the start of construction is not known exactly; the site was fixed in Çelebi Mehmed's lifetime and the building is accepted as completed after his death. No exact years are given, so start/end years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "137"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Çelebi Mehmed",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "137, 141, 144"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Hacı İvaz Paşa",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "141, 144"
+      }
+    ]
+  },
+  "waqf": null,
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yeşil Türbe, Yeşil Külliyesi'nin parçası olarak caminin güneyinde, yapıyla karşılıklı, küçük bir tepe üzerinde yer alır. Külliyenin banisi Çelebi Mehmed'e ait bu anıt mezar, göz alıcı çini süslemeleriyle yalnızca külliyenin değil Bursa'nın da simgesel yapılarından biri olmuş ve külliyeye 'Yeşil' adının verilmesine ilham kaynağı olmuştur.",
+        "en": "The Green Tomb stands on a small hill south of the mosque, facing it, as part of the Yeşil Complex. Belonging to the complex's founder Çelebi Mehmed, it has become a symbol of both the complex and Bursa through its eye-catching tile decoration, and inspired the complex's name 'Yeşil'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "id": "celebi-mehmed",
+      "order": 2,
+      "title": {
+        "tr": "Çelebi Mehmed ve Türbenin İnşası",
+        "en": "Çelebi Mehmed and the Tomb's Construction"
+      },
+      "body": {
+        "tr": "Fetret Devri'nde kardeşlerini saf dışı bırakarak Osmanlı tahtında birliği yeniden sağlayan Çelebi Mehmed, tarih yazınında 'bani-i sânî' (ikinci kurucu) olarak anılır. Edirne yakınlarında çıktığı bir av sırasında aniden hastalanıp genç yaşta ölmüştür. Devletin yeniden istikrarsızlığa sürüklenmemesi için ölüm haberi saray erkânınca kırk gün gizlenmiş, naaşı 'tahnit' yöntemiyle korunmuş, sonra Bursa'daki türbesine getirilip gömülmüştür. Türbenin inşasına ne zaman başlandığı kesin bilinmemektedir; yerinin Çelebi Mehmed'in sağlığında belirlendiği ve külliye planına dahil edildiği, yapının ise onun vefatından sonra tamamlandığı kabul edilmektedir. Giriş kapısı kanatlarındaki kitabeler inşaatı Mimar Hacı İvaz Paşa'nın yönettiğini, ahşap işçiliğini Hacı Ali bin Ahmed Tebrîzî'nin yaptığını bildirir. Yeşil Cami'de imzaları bulunan kalemkâr Ali bin İlyas Ali ile çini ustası Mehmed el-Mecnûn'un türbede de çalıştıkları güçlü biçimde düşünülmektedir.",
+        "en": "Çelebi Mehmed, who eliminated his brothers in the Interregnum and restored unity to the Ottoman throne, is remembered as 'bani-i sâni', the second founder. He fell suddenly ill on a hunt near Edirne and died young. To keep the state from instability, palace officials hid the news for forty days; his body was embalmed ('tahnit'), then brought to his tomb in Bursa and buried. It is not known exactly when construction began; the site is accepted to have been set in his lifetime and included in the complex plan, with the building completed after his death. Inscriptions on the door leaves say Architect Hacı İvaz Paşa directed construction and Hacı Ali bin Ahmed Tebrîzî did the woodwork. The decorative painter Ali bin İlyas Ali and tile master Mehmed el-Mecnûn, whose signatures are in the Green Mosque, are strongly believed to have worked here too."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "137, 141"
+        }
+      ]
+    },
+    {
+      "id": "cenazelik",
+      "order": 3,
+      "title": {
+        "tr": "Cenazelik Bölümü",
+        "en": "Burial Chamber (Cenazelik)"
+      },
+      "body": {
+        "tr": "Anadolu Selçuklu dönemine ait birçok kümbette rastlanan ve tahnit edilmiş cenazelerin korunduğu 'cenazelik' bölümü Yeşil Türbe'de de uygulanmıştır. Türbenin doğu cephesindeki bu bölüm üç kol halinde beş gözlüdür. Türbeyi 1941-1943'te restore eden Mimar Macit Kural'a göre buradaki tabutlar bir dönem mermer ayaklar üzerine konulmuştur; günümüzde bu uygulamaya ait iz yoktur.",
+        "en": "The 'cenazelik' where embalmed bodies were kept, found in many Anatolian Seljuk tombs, was also used in the Green Tomb. On the east side, it has three arms with five compartments. According to Architect Macit Kural, who restored the tomb in 1941-1943, the coffins once stood on marble bases, but no trace of this remains."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "138-139"
+        }
+      ]
+    },
+    {
+      "id": "dis-mimari",
+      "order": 4,
+      "title": {
+        "tr": "Dış Mimari",
+        "en": "Exterior Architecture"
+      },
+      "body": {
+        "tr": "Türbe sekizgen planlı, yüksek kasnaklı ve hafif sivri kubbelidir; gövdeden hafif taşkın bir kaide üzerine oturur ve cepheleri firuze çinilerle kaplıdır. Her kenarı 8,20 m olan sekizgen gövde, Türk üçgenleriyle geçilen yüksek kasnağın taşıdığı kubbeyle 25,5 m yüksekliğe ulaşır ve Osmanlı türbeleri arasında en yüksek örnektir; benzer ölçekte bir türbe daha yapılmamıştır. Kuzey cephe taç kapılı ana giriş cephesidir, diğer yedi cephe benzer düzendedir. Saçak silmesine kadar 13,83 m yüksekliğindeki cepheler dikdörtgen çerçeveler içinde düzenlenmiş, taç kapı hizasındaki sivri kemerlerle kütle etkisi hafifletilmiştir. Pencereler iki sıradır: üstte sivri kemerli, altta mermer söveli. Alt pencerelerin üstünde, lacivert zemin üzerine beyaz celi sülüs hatla ayet ve hadislerin yazılı olduğu çini alınlıklar bulunur. Türbe kendisinden sonra yapılanlara doğrudan model olmasa da Türk türbe mimarisinin en seçkin örneklerinden biridir.",
+        "en": "The tomb is octagonal with a high drum and slightly pointed dome, set on a pedestal slightly wider than the body and covered in turquoise tiles. Each side is 8.20 m; with the dome on a high drum (Turkish triangle transition) it reaches 25.5 m, the tallest Ottoman tomb, and none of similar scale was built again. The north façade has the portal; the other seven are similar. Façades are 13.83 m to the cornice, set in rectangular frames, with pointed arches aligned to the portal to lighten the mass. Windows are in two rows, pointed-arched above and marble-framed below, with tile pediments bearing verses and hadiths in white jali thuluth on dark blue. It was not a direct model for later buildings but remains one of the most distinguished examples of Turkish tomb architecture."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "138-139"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 5,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "İki kanatlı ahşap giriş kapısı (1,71 x 2,37 m) içeri açıldığında ziyaretçiyi duvarları bütünüyle saran çini kaplamalar, mihrap ve anıtsal sandukalar karşılar. Girişin hemen arkasında 1,74 x 2,65 m ölçülü kapı sahanlığından sonra, altıgen döşenmiş tuğlalarla kaplı, yaklaşık 60 cm yükseltilmiş asıl türbe zeminine geçilir. Yapı alt sırada altı düz atkılı, üst sırada sekiz ve kasnakta sekiz olmak üzere toplam yirmi iki pencereyle aydınlanır. Alt sıra pencereler zeminden 3,20 m yüksekliğe kadar altıgen firuze çinilerle kaplı duvarlara yerleştirilmiştir; her pencerenin iki yanında firuze, mavi, siyah, sarı ve beyaz çinilerle bezenmiş, palmet, rumi yaprak ve kıvrık dallardan oluşan iri salbekli şemseler vardır. Taç kapının iki yanında mukarnas kavsaralı birer niş bulunur.",
+        "en": "Entering through the double-leaf wooden door (1.71 x 2.37 m), the visitor is surrounded by tile-covered walls, the mihrab and monumental sarcophagi. After a 1.74 x 2.65 m door landing, the main floor, raised about 60 cm and paved with hexagonally laid bricks, is reached. Twenty-two windows light the building: six lintelled in the lower row, eight in the upper row and eight in the drum. Lower windows sit in walls tiled with hexagonal turquoise tiles up to 3.20 m; on both sides of each window are large shamsas with finials, filled with palmettes, rumi leaves and tendrils in turquoise, blue, black, yellow and white tiles. Each side of the portal has a niche with a muqarnas hood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "140-141"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 6,
+      "title": {
+        "tr": "Çini Mihrap",
+        "en": "Tiled Mihrab"
+      },
+      "body": {
+        "tr": "Güney duvarın ortasında, taç kısmıyla birlikte 7 m yüksekliğe ulaşan anıtsal bir çini mihrap yer alır. Beş dilimli mihrap nişinin ortasında zincirle asılmış bir kandil motifi, iki yanında şamdan motifleri vardır; kalan yüzeyler vazodan yükselen çiçekler, kıvrık dallar, yapraklar ve baharı simgeleyen bezemelerle doludur. Kandilin üzerinde 'Allahu veliyyü't-tevfik', şamdanlar üzerinde 'Allah' ve 'Muhammed' yazar. Mihrap üç büyük ve aralarında iki küçük palmetten oluşan bir taçla biter. Dış bordürde sarı celi sülüsle Âl-i İmrân suresinin 37. ayeti yazılıdır; üst kısımda bir hadisle son bulur. Mukarnaslı kavsara dört kartuşta hadislerle çevrilidir, altlarında kûfi hatla çeşitli dualar vardır. Mukarnas sıralarının altında müsenna tarzında bir hadis yazılmıştır: sağdan sola sarı renkte, soldan sağa firuze renkte.",
+        "en": "In the middle of the south wall is a monumental tile mihrab, 7 m high with its crown. The five-lobed niche centres on a lamp motif hanging from a chain, flanked by candlesticks; remaining surfaces are filled with flowers rising from a vase, tendrils, leaves and spring-symbolising ornament. 'Allahu veliyyü't-tevfik' is written on the lamp, 'Allah' and 'Muhammad' on the candlesticks. The top ends in a crown of five palmettes (three large, two small). The outer border carries verse 37 of Al-i Imran in yellow jali thuluth, ending with a hadith above. The muqarnas hood is framed by hadiths in four cartouches with Kufic prayers below, and a hadith in muthanna (mirror) writing sits beneath the muqarnas rows: yellow right-to-left, turquoise left-to-right."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "144, 146-148"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 7,
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbenin tam ortasında, yüksek bir platform üzerinde Çelebi Mehmed'in 2,77 m uzunluğundaki eşsiz çinili sandukası yer alır. Lacivert zemin üzerine kabartma sarı harflerle yazılmış kitabesi vardır. Platformda Şehzade Mahmud, Mustafa ve Yusuf'a ait üç sade sanduka daha bulunur; kitap bunların özensiz biçim ve işçiliğiyle türbenin estetik düzeniyle bütünlük kuramadığını ve uyumu zayıflattığını belirtir. Sandukanın ayakucunda Çelebi Mehmed'in kızları ve sütannesi Dâye Hatun'a ait beş sanduka yan yana dizilidir: güney uçtan başlayarak Dâye Hatun, Ayşe Hatun, Hafsa Hatun (diğerlerinden farklı altıgen çinili) ve Sitti Hatun (mavi-beyaz altıgen çinili) sandukaları çinili kaideler üzerindedir; kuzey uçtaki alçıdan sade beşinci sanduka Selçuk Hatun'undur. Kitabesine göre Selçuk Hatun, babasından altmış dört yıl sonra, H. 15 Şevval 890 / M. 25 Ekim 1485'te ölmüştür.",
+        "en": "In the centre of the tomb, on a high platform, stands Çelebi Mehmed's unique tiled sarcophagus, 2.77 m long, with an inscription in raised yellow letters on dark blue. Three simpler sarcophagi of Şehzade Mahmud, Mustafa and Yusuf share the platform; the book says their careless form and craftsmanship clash with the tomb's aesthetic order. At the foot, five sarcophagi of Çelebi Mehmed's daughters and wet nurse Dâye Hatun are lined up: from the south end Dâye Hatun, Ayşe Hatun, Hafsa Hatun (different hexagonal tiles) and Sitti Hatun (blue-white hexagonal tiles) on tiled bases, and at the north end a plain plaster sarcophagus of Selçuk Hatun, who according to its inscription died on 15 Shawwal AH 890 / 25 October AD 1485, sixty-four years after her father."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "148-149"
+        }
+      ]
+    },
+    {
+      "id": "pencere-alinliklari",
+      "order": 8,
+      "title": {
+        "tr": "İç Mekân Pencere Alınlıkları",
+        "en": "Interior Window Pediments"
+      },
+      "body": {
+        "tr": "İç mekândaki sivri kemerli çini pencere alınlıklarında üç satır halinde hadisler yer alır; harf araları bitkisel motif ve rumi ile zenginleştirilmiştir. Girişin sağındaki kuzeybatı köşeden başlayarak sırasıyla kalplerin şifası Kur'an okumak, hayra vesile olanın yapan gibi olduğu, cennetin cömertlerin evi olduğu, dünyanın izzetinin mal, ahiretin izzetinin amel ile kazanıldığı, dünyanın mümin için zindan olduğu gibi hadisler okunur. Ayrıntılı metinler 'inscriptions' alanındadır.",
+        "en": "The pointed-arched tile window pediments inside carry hadiths in three lines, with letter gaps filled by vegetal motifs and rumi. Starting from the northwest corner right of the entrance, the hadiths include that reading the Quran is the cure for hearts, that one who leads to good is like the doer, that paradise is the home of the generous, and that the world is a prison for the believer. Full texts are under 'inscriptions'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "150, 152"
+        }
+      ]
+    }
+  ]
+}

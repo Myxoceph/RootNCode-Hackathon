@@ -1,0 +1,1815 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-yesil-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yeşil Çelebi Mehmed Külliyesi",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok).",
+      "Fotoğraflar eklenmeli: media ve media_folder boş; match_photos.py ile bağlanacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Mihrap ve minber ustaları, minber kitabesi ve tarihi bu bölükte yok; varsa sonraki sayfalardan eklenmeli.",
+      "Hünkâr mahfili kemer kitabesi ve çini kitabelerinin metinleri kitapta verilmiyor; sahada okunmalı.",
+      "Evliya Çelebi, Hüseyin Vassaf ve Ayverdi alıntıları 'sections' içinde özetlendi; doğrudan alıntı olarak ayrıca saklanması düşünülebilir.",
+      "Yıldırım Camii (benzerlik ilişkisi) için hedef id tahmindir; ilçesi metinde belirtilmiyor.",
+      "Tabhane odalarının ve kuzeybatı/kuzeydoğu odalarının kullanım amacı hakkında kitap 'farklı görüşler var' diyor; görüşler verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap inşaat başlangıcını (H. 817 / M. 1414) taç kapı kitabesine dayandırıyor, ancak aktarılan kitabe metninde yalnızca tamamlanma (Zilhicce 822 / Aralık 1419) geçiyor. Başlangıç tarihi külliye girişinden alındı."
+      },
+      {
+        "field": "timeline[deprem-1855]",
+        "note": "Sayfa 110 mevcut minarenin 1855 depreminde zarar görüp kaide seviyesine kadar sökülerek yeniden yapıldığını söylüyor; sayfa 116 ise minarenin temeline kadar çatladığını ve şerefeye kadar olan kısmın yıkıldığını yazıyor. İki anlatım kaynağa sadık biçimde korundu."
+      },
+      {
+        "field": "sections[tabhaneler]",
+        "note": "Türkçe metin 'tabhane' diyor; İngilizce çeviri aynı odalar için 'hospice' ve 'guest rooms' sözcüklerini karışık kullanıyor. Türkçe terim esas alındı."
+      },
+      {
+        "field": "inscriptions[tac-kapi-kitabesi]",
+        "note": "Mealen metni basılı transliterasyonda olmayan giriş cümleleri içeriyor; transliterasyon kitaptaki biçimiyle korundu. Kitap külliyede altı kitabeden söz ediyor, bu bölükte yalnızca bir kısmının metni/konumu veriliyor."
+      },
+      {
+        "field": "sections[kitabeler-ustalar]",
+        "note": "Sayfa 98'de Hacı İvaz'ın kitabesi onu yazan/düzenleyen/esasları belirleyen kişi olarak anıyor; 'mimar' demiyor. Tarihî kaynaklara göre Bursalı mimar Abdullah oğlu Timurtaş ile birlikte çalışmıştır. Mimar kesin bilinmediği için architect.name null, confidence probable."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yeşil Camii",
+    "en": "Yeşil (Green) Mosque"
+  },
+  "subtitle": {
+    "tr": "Çelebi Mehmed'in çini ve hat sanatıyla bezeli tabhaneli camisi",
+    "en": "Çelebi Mehmed's tabhane mosque adorned with tiles and calligraphy"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yeşil Cami",
+      "en": "Green Mosque"
+    },
+    {
+      "tr": "Yeşil İmaret",
+      "en": "Yeşil Imaret",
+      "note": "Evliya Çelebi'nin kullandığı ad ve halk arasındaki ad"
+    },
+    {
+      "tr": "Zaviye",
+      "en": "Zawiya",
+      "note": "Bazı tarihî kaynaklarda yapı doğrudan 'zaviye' olarak anılır"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-yesil-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "tabhaneli cami",
+    "zaviyeli plan",
+    "taç kapı",
+    "hünkâr mahfili",
+    "sır altı çini",
+    "Tebrizli ustalar",
+    "kalem işi",
+    "Çelebi Mehmed",
+    "Yeşil Külliye"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Yeşil Mahallesi",
+    "address": "Akyokuş Sokak No: 8",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "83"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 817-822 / M. 1414-1419 (nakış 1424)",
+      "en": "AH 817-822 / AD 1414-1419 (embroidery 1424)"
+    },
+    "start_year": 1414,
+    "end_year": 1419,
+    "hijri_year": 822,
+    "century": 15,
+    "basis": {
+      "tr": "İnşaat başlangıcı külliye girişindeki bilgiye (H. 817 / M. 1414), bitiş taç kapı kitabesine (Zilhicce 822 / Aralık 1419) dayanır; hünkâr mahfilindeki nakış işleri Ramazan 827 / Ağustos 1424'te bitmiştir.",
+      "en": "Start date from the complex introduction (AH 817 / AD 1414), completion from the portal inscription (Dhul-Hijjah AH 822 / December AD 1419); embroidery in the Sultan's gallery was finished in Ramadan AH 827 / August AD 1424."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "83, 90, 95-96, 98-99"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Çelebi Mehmed",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "85, 90, 95-97"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [
+      {
+        "name": "Hacı İvaz Paşa (Ahi Bayezid oğlu Hacı İvaz)",
+        "note": "İç kitabeye göre yapıyı yazan, tertip eden ve esaslarını belirleyen kişi; 'mimar' denmiyor"
+      },
+      {
+        "name": "Timurtaş (Abdullah oğlu), Bursalı mimar",
+        "note": "Tarihî kaynaklara göre Hacı İvaz Paşa ile birlikte çalışmıştır"
+      }
+    ],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "98-99"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Sultan Çelebi Mehmed'in 1414-1419 arasında yaptırdığı, tabhaneli (zaviyeli) plana sahip cami. Geri çekilmiş taç kapısı, Osmanlı mimarisinde ilk hünkâr mahfili, çini ve kalem işi bezemeleri, fıskiyeli orta harimi ve Tebrizli ustaların imzasını taşıyan mihrabıyla öne çıkar.",
+    "en": "A tabhane (zawiya-plan) mosque built by Sultan Çelebi Mehmed between 1414 and 1419. It stands out for its recessed portal, the first imperial gallery in Ottoman architecture, tile and hand-painted decoration, the central prayer hall with a fountain, and a mihrab bearing the signature of Tabrizi masters."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Plan Tipi",
+        "en": "Overview and Plan Type"
+      },
+      "body": {
+        "tr": "Külliyenin merkezinde yer alan cami tabhaneli ya da zaviyeli plan tipine uygun inşa edilmiştir; bazı tarihî kaynaklarda doğrudan \"zaviye\" diye anılır. Plan kurgusu, duvar örgüsü, malzeme ve ölçüleri bakımından Yıldırım Camii ile dikkat çekici benzerlikler taşır. Şehrin siluetine kattığı görünümle öne çıkar; bazı kaynaklar plan şeması ve süsleme anlayışı bakımından Tebriz'deki Gök Mescit ile paralellikler gördüğünü belirtir. Timur'un Ankara Savaşı'ndan (1402) sonra Tebriz'e götürdüğü sanatkârlar ve onun ölümü (1405) sonrası Anadolu'ya dönerken getirdikleri Tebrizli ustalar yeni bir sanat anlayışı aktarmış, bu etkileşim yapı tekniği ve bezemede kendini göstermiştir.",
+        "en": "The mosque at the centre of the complex was built in the hospice (tabhane) or zawiya plan type and is called a \"zawiya\" in some sources. It closely resembles the Yıldırım Mosque in plan, masonry, materials and dimensions. It stands out in the city silhouette; some sources note parallels with the Gök Masjid in Tabriz in plan and decoration. Scholars and artists Timur took to Tabriz after the 1402 Battle of Ankara returned to Anatolia after his death (1405) with Tabrizi masters, bringing a new art understanding visible in construction technique and ornament."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86-87"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Genel Plan",
+        "en": "General Plan"
+      },
+      "body": {
+        "tr": "Cami, taç kapıdan girilen bir giriş holü, holün iki yanındaki tonoz örtülü odalar, iki büyük kubbeyle örtülü harim, harimin sağında ve solunda 75 cm yükseltilmiş eyvanlar ve eyvanların güneyinde harimle bağlantılı tabhane odalarından oluşur.",
+        "en": "In general plan the mosque consists of an entrance hall entered through the portal, vaulted rooms on both sides, a prayer hall covered by two large domes, iwans raised 75 cm on both sides, and tabhane rooms south of the iwans connected to the prayer hall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "88-89"
+        }
+      ]
+    },
+    {
+      "id": "tac-kapi",
+      "order": 3,
+      "title": {
+        "tr": "Taç Kapı ve Dış Cephe",
+        "en": "Portal and Exterior"
+      },
+      "body": {
+        "tr": "Taç kapı Anadolu Selçuklu mimarisinin biçim özelliklerini yansıtır; dışa taşkın bir kütle oluşturmaması en belirgin farktır ve bu, önüne revak yapılması düşüncesiyle açıklanır. Cephe duvarlarında kemer üzengilerinin hazırlanmış olması ve iki yanda set düzenlemeleri son cemaat yerinin tamamlanmadığı görüşünü güçlendirir; bazı araştırmacılar revaktan taç kapının görünümünü kapatmamak için vazgeçildiğini, bazıları bütçenin yetmediğini ya da Çelebi Mehmed'in ölümü sonrası sürdürülemediğini ileri sürer. Yarım bırakılmış yazı süslemeleri bu görüşleri destekler. Yoğun taş oyma ve kabartma işçiliğindeki taç kapının üç yıl çalışılarak bu hale geldiği ifade edilir. Dış duvarlar kesme taştır ve dönemi için değerli sayılan pembe mermer tabakalarla kaplıdır. Girişin iki yanında yüksek kotta, mermer çerçeveli, beş sıralı mukarnaslı ve rumi kabartmalı birer mihrap nişi vardır; yanlarında yaklaşık bir metre boyunda yeşil ince sütunlar, mukarnas dolgulu pencereler ve kûfi yazı ile geometrik motifli sivri kemerli alınlıklar yer alır; bazı alınlıkların dolguları tamamlanmamıştır.",
+        "en": "The portal reflects Anatolian Seljuk formal features but does not project outward, explained by the intent to build a portico in front. Prepared arch springers on the façade and platforms on both sides support the view that the narthex was left unfinished; some researchers say the portico was abandoned to avoid blocking the portal, others cite insufficient budget or that work stopped after Çelebi Mehmed's death. Unfinished inscription decoration supports these views. The densely carved portal reportedly took about three years. Exterior walls are cut stone covered with pink marble considered valuable for the time. Either side of the entrance, at a raised level, are marble-framed niches with five-row muqarnas and relief rumi, flanked by thin green columns about one metre long, muqarnas-filled windows and pointed-arch pediments with Kufic inscriptions and geometric motifs; some pediments remain unfinished."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "88-90, 96-97"
+        }
+      ]
+    },
+    {
+      "id": "kitabeler-ustalar",
+      "order": 4,
+      "title": {
+        "tr": "Kitabeler ve Ustalar",
+        "en": "Inscriptions and Masters"
+      },
+      "body": {
+        "tr": "Taç kapının iç kısmındaki kitabeye göre yapıyı yazan, düzenleyen ve esaslarını belirleyen kişi Ahi Bayezid oğlu Hacı İvaz'dır; tarihî kaynaklar onun Bursalı mimar Abdullah oğlu Timurtaş ile çalıştığını belirtir. Nakış işlerini şair ve müellif Lâmiî Çelebi'nin dedesi Nakkaş Ali bin İlyas Ali, çinileri Mehmed el-Mecnûn üstlenmiştir; ahşap kanatlar Hacı Ahmed oğlu Tebrizli Ali ile Anadolu'ya gelen Tebrizli ustaların işidir. Kitap, bu kayıtlarla camiyi bir sanatçı kolektifinin ürünü olarak değerlendirir.",
+        "en": "According to the inscription inside the portal, Ahi Bayezid's son Hacı İvaz wrote, arranged and set the principles of the structure; historical sources say he worked with the Bursa architect Timurtaş son of Abdullah. Embroidery was undertaken by Nakkaş Ali bin İlyas Ali, grandfather of the poet Lâmiî Çelebi; tiles by Mehmed el-Mecnûn; wooden wings by masters from Tabriz who came with Tebrizli Ali son of Hacı Ahmed. The book regards the mosque as the product of an artists' collective."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "97-99"
+        }
+      ]
+    },
+    {
+      "id": "hunkar-mahfili",
+      "order": 5,
+      "title": {
+        "tr": "Giriş Holü ve Hünkâr Mahfili",
+        "en": "Entrance Hall and Sultan's Gallery"
+      },
+      "body": {
+        "tr": "Taç kapıdan girildiğinde holün sağında ve solunda sahanlıklar, doğu ve batıdaki odalara koridorlar ve üst kata merdivenler bulunur. Hünkâr mahfili üst katta cami mekânına hâkim biçimde yer alır; Osmanlı mimarisinde hünkâr mahfilinin ilk kez Yeşil Camii'nde uygulandığı belirtilir. İkinci katın içe bakan orta kısmındaki mahfil çini ve altın süslemelerle bezelidir; iki merdiven sahanlığına bağlı planı, ocaklı iki oda, balkonları dışa açılan iki oda, ortadaki sofa ve önündeki merdivenli mahfille küçük bir kasır gibi kurgulanmıştır. Çiniler renkli sır tekniğindedir ve sarı, lacivert, firuze ve beyaz uyum içindedir; kemer üzengilerindeki küçük kitabeler çinilerin Mehmed el-Mecnûn'a, mahfil kemerindeki Arapça kitabe ise nakış işlerinin Ali b. İlyas Ali eliyle Ramazan 827 / Ağustos 1424'te tamamlandığına işaret eder.",
+        "en": "Entering through the portal there are landings on each side of the hall with corridors to rooms east and west and stairs to the upper floor. The Sultan's gallery on the upper floor dominates the mosque; the imperial gallery is said to have been first applied in Ottoman architecture in the Green Mosque. Placed in the inward-facing middle of the second floor with tile and gold decoration, it is planned like a small pavilion: two rooms with fireplaces, two rooms with outward balconies, a central hall and a stepped gallery in front. Tiles use the coloured-glaze technique in yellow, navy, turquoise and white; small inscriptions on the arch springers show the tiles are by Mehmed el-Mecnûn, and the Arabic inscription on the gallery arch records completion of the embroidery by Ali b. İlyas Ali in Ramadan AH 827 / August AD 1424."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "98-99"
+        }
+      ]
+    },
+    {
+      "id": "sahanlik-ve-odalar",
+      "order": 6,
+      "title": {
+        "tr": "Sahanlık ve Kuzey Odaları",
+        "en": "Landing and Northern Rooms"
+      },
+      "body": {
+        "tr": "Taç kapı ile harim arasındaki kare planlı sahanlık, kenarları iki sıra mukarnaslı, zengin kalem işi bezemeli bir tonozla örtülüdür. Koridorlarla ulaşılan kuzeybatı ve kuzeydoğudaki iki büyük dikdörtgen oda, tamamen kalem işi bezemeli dört dilimli kubbelerle örtülüdür; duvarları pencere üstlerine kadar karo çini, güney duvarları kubbeye kadar alçı nişlerle kaplıdır. Odaların kullanım amacı konusunda farklı görüşler vardır; kuzeybatıdaki oda sonradan açılan bir kapıyla eyvana bağlanmıştır.",
+        "en": "The square landing between portal and prayer hall is vaulted, with two rows of muqarnas and rich hand-painted decoration. Two large rectangular rooms in the northwest and northeast, reached by corridors, have four-segmented domes fully painted; walls are tiled up to the windows and south walls have plaster niches up to the dome. Opinions differ on their use; the northwest room is linked to the iwan by a later door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "99-101"
+        }
+      ]
+    },
+    {
+      "id": "orta-harim",
+      "order": 7,
+      "title": {
+        "tr": "Fıskiyeli Orta Harim",
+        "en": "Central Prayer Hall with Fountain"
+      },
+      "body": {
+        "tr": "Orta harim, Türk üçgenleriyle geçilen kasnak üzerinde 13 m çapında ve 25 m yüksekliğinde, tepesinde aydınlık feneri bulunan bir kubbeyle örtülüdür. Girişin iki yanında, bugün müezzin mahfili olarak kullanılan, birer basamaklı merdivenle çıkılan tamamen çini kaplı iki mekân ve merdivenlerin yanlarında pabuçluklar vardır. Geniş açıklıklı Bursa kemeriyle ayrılan harim iki kademelidir; mermer fıskiyeli şadırvanın bulunduğu alanın bir dönem doldurulduğu, Ahmet Vefik Paşa döneminde eski haline getirildiği ifade edilir. Akçağlayan suyunun aktığı özgün mermer fıskiye 2004'te sökülerek çalınmış, yerine aslına uygun bir kopyası konmuştur.",
+        "en": "The central prayer hall is covered by a dome 13 m in diameter and 25 m high on a drum with Turkish triangles, with a roof lantern. Either side of the entrance are two fully tiled spaces now used as muezzin's platforms, reached by one-step stairs, with shoe racks beside. The hall, separated by a wide Bursa arch, has two levels; the area of the marble fountain was reportedly filled at one time and restored under Ahmet Vefik Paşa. The original marble fountain, fed by the Akçağlayan water, was stolen in 2004 and replaced by a faithful reproduction."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "101-103"
+        }
+      ]
+    },
+    {
+      "id": "eyvanlar",
+      "order": 8,
+      "title": {
+        "tr": "Eyvanlar",
+        "en": "Iwans"
+      },
+      "body": {
+        "tr": "Fıskiyeli bölümün iki yanındaki büyük eyvanlar, geniş açıklıklı kemerlerle ayrılmış ve sekizgen kasnak üzerine oturan, 18 m yüksekliğinde, 7 m çapında 24 dilimli kubbelerle örtülüdür. Kubbeler kalem işiyle süslüdür; duvarlar yaklaşık 2 m yüksekliğe kadar sarı yaldız, açık mavi ve yeşil karo çinilerle kaplanmış, üst bordürlerde ayet ve hadisler hatla yer almıştır.",
+        "en": "The large iwans beside the fountain section, separated by wide arches, are covered by 24-segmented domes 18 m high and 7 m in diameter on octagonal drums. The domes carry hand-painted ornament; walls are tiled in yellow gilt, light blue and green up to about 2 m, with verses and hadiths in calligraphy on the upper borders."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "id": "tabhaneler",
+      "order": 9,
+      "title": {
+        "tr": "Tabhane Odaları",
+        "en": "Tabhane Rooms"
+      },
+      "body": {
+        "tr": "Fıskiyeli ön harimin güneydoğu ve güneybatı köşelerinde iki tabhane vardır; basık kemerli, mukarnas dolgulu mermer sövelerle çevrili kapılardan girilir. XVI. yüzyıl sonlarında dışarıdan doğrudan erişim için açılan girişler sonradan iptal edilmiştir. İçlerinde hücreler, alçı nişli ocaklar ve ahşap kapaklı dolaplar bulunur; duvarlar pencere seviyesine kadar açık mavi altıgen çinilerle kaplı, ayet, hadis ve özlü sözlü sivri kemerli çini panolarla vurgulanmıştır. Doğu kanadındaki tabhane 32 dilimli, beyaz sıvalı süslemesiz bir kubbeyle; batıdaki 24 dilimli, göbeğinde kalem işi bulunan bir kubbeyle örtülüdür; her iki kasnakta mukarnas vardır.",
+        "en": "Two tabhane sections lie at the southeast and southwest corners of the front prayer hall, entered through doors with depressed arches and muqarnas-filled marble frames. Entrances opened for direct outside access in the late 16th century were later closed. Inside are cells, plaster-niched fireplaces and wood-covered cabinets; walls are covered with light blue hexagonal tiles to window level, with pointed-arch tile panels bearing verses, hadiths and sayings. The east tabhane has an undecorated white-plastered 32-segmented dome; the west one a 24-segmented dome with hand-painted centre; both drums have muqarnas."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "103-105"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 10,
+      "title": {
+        "tr": "Mihrap Bölümü ve Mihrap",
+        "en": "Mihrab Section and Mihrab"
+      },
+      "body": {
+        "tr": "Mihrap bölümüne iki basamakla çıkılır ve harimden bir kemerle ayrılır; bezemeli Türk üçgenleriyle geçilen kare kasnaktaki kubbe harimdeki diğer kubbeyle aynı ölçüdedir. Duvarlar yaklaşık 2 m yüksekliğe kadar lacivert altıgen çinilerle kaplıdır. Yaklaşık 6 m genişliğinde ve 10,67 m yüksekliğindeki mihrap celî sülüs kelime-i tevhit ile taçlanmış, çevresi Fetih suresinden ayetler içeren sarı, lacivert, firuze ve beyaz geniş yazı frizi ile kuşatılmıştır; mukarnaslı kavsarası, bitkisel süslemeli koltukları, sütunçeleri ve geometrik frizleriyle erken Osmanlı mimarisinin önde gelen örnekleri arasında sayılır. Sütunçedeki \"amel-i üstâdân-ı Tebriz\" ibaresi çinilerin Tebrizli ustalarca yapıldığını gösterir. Minber ve kürsü zarif ahşap işçiliğiyle dikkat çeker.",
+        "en": "The mihrab section is reached by two steps and separated by an arch; its dome on a square drum with decorated Turkish triangles equals the other prayer-hall dome. Walls are covered with dark blue hexagonal tiles to about 2 m. The mihrab, about 6 m wide and 10.67 m high, is crowned with the Kalimat al-Tawhid in Jeli Thuluth and framed by a wide frieze of Surah al-Fath verses in yellow, navy, turquoise and white; with its muqarnas hood, vegetal spandrels, colonettes and geometric friezes it is considered among the leading early Ottoman examples. The phrase \"amel-i üstadân-ı Tabriz\" on the colonette shows the tiles were made by masters from Tabriz. The minbar and preaching platform are notable for elegant woodwork."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "105-107"
+        }
+      ]
+    },
+    {
+      "id": "pencereler-ve-hat",
+      "order": 11,
+      "title": {
+        "tr": "Pencereler ve Hat Yazıları",
+        "en": "Windows and Calligraphy"
+      },
+      "body": {
+        "tr": "Harimde mihrap duvarında alt ve üst sırada ikişer, doğu ve batı duvarlarında birer pencere; orta mekân kasnağında dört, mihrap önü kasnağında sekiz pencere bulunur. Dışa bakan alt pencereler iç içe mermer silmeler içindedir; en dış silme turkuaz çini şeritlidir, kenarlarda mukarnas, üstte rumi kabartmalı sivri kemerli alınlıklar vardır; lokma demirlerinde gümüş kakma ve telkâri görülür, bazı kartuşlar yarım bırakılmıştır. Her söve farklı tasarlanmıştır. İç yüzdeki ahşap kanatlarda rumi ve sülüs yazılar vardır. Üst pencereler ve kasnak açıklıkları sivri kemerli, alçı şebekeli ve revzenlidir; bazı büyük kubbe pencereleri işlevsiz bırakılarak sağır duvarla tamamlanmıştır. Harimin yan duvarlarındaki dairevi Nebe suresi ve diğer hatlar, Ahmed Vefik Paşa'nın emriyle dönemin imamı Cemâlizâde Şeyh Hacı İbrâhim Edhem Efendi tarafından yazılmıştır; o aynı zamanda Şâbâniyye tarikatına bağlı Hacı Şevki Efendi Dergâhı'nın şeyhidir.",
+        "en": "In the prayer hall the mihrab wall has two windows in each of the lower and upper rows, one each on the east and west walls; the central drum has four windows and the drum before the mihrab eight. Lower exterior windows sit in nested marble mouldings, the outermost with a turquoise tile band, muqarnas edges and pointed-arch pediments with relief rumi; the socket irons have silver inlay and filigree and some cartouches are unfinished. Every frame is different. Interior wooden shutters carry rumi and Thuluth text. Upper windows and drum openings are pointed-arch with plaster grilles; some large-dome windows were made blind. The circular Surah an-Naba and other calligraphy on the side walls were written by the imam of the period, Cemâlizâde Shaykh Hacı İbrâhim Edhem Efendi, on Ahmed Vefik Paşa's order; he was also Shaykh of the Hacı Şevki Efendi Lodge of the Shabaniyya order."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "106-107"
+        }
+      ]
+    },
+    {
+      "id": "minareler",
+      "order": 12,
+      "title": {
+        "tr": "Minareler",
+        "en": "Minarets"
+      },
+      "body": {
+        "tr": "İnşasında iki minare tasarlanmış ancak yalnızca biri yapılabilmiştir. Mevcut minare 1855 Bursa Depremi'nde zarar görmesi üzerine kaide seviyesine kadar sökülerek yeniden yapılmış; ikinci minare mahya kurulabilmesi için 1869'da eklenmiştir. Kuzeydoğu ve kuzeybatı köşelerindeki tuğla minareler dışa taşkın bombeli kaide üzerinde silindirik gövdelidir; tek şerefelidir, şerefe altlarında stalaktit ve üstte mermer külahlar vardır.",
+        "en": "Two minarets were planned but only one was built. The existing one was dismantled to the base and rebuilt after the 1855 Bursa Earthquake; the second was added in 1869 to allow a mahya. The brick minarets at the northeast and northwest corners rise as cylindrical shafts on projecting rounded bases, each with a single balcony, stalactites beneath and marble spires above."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "107, 110"
+        }
+      ]
+    },
+    {
+      "id": "avlu-sadirvan",
+      "order": 13,
+      "title": {
+        "tr": "Avlu ve Şadırvan",
+        "en": "Courtyard and Shadirvan"
+      },
+      "body": {
+        "tr": "Caminin kuzeyindeki geniş avlunun ortasında, sekiz ahşap sütun üzerine oturan, kurşun kaplı sivri kubbeli sekizgen planlı bir şadırvan vardır; ortasında fıskiyeli bir havuz bulunur.",
+        "en": "In the middle of the large courtyard north of the mosque stands an octagonal shadirvan with a lead-covered pointed dome on eight wooden columns, with a pool with water jets at its centre."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "110"
+        }
+      ]
+    },
+    {
+      "id": "seyyah-yorumlari",
+      "order": 14,
+      "title": {
+        "tr": "Seyyah ve Aydın Yorumları",
+        "en": "Traveller and Scholar Accounts"
+      },
+      "body": {
+        "tr": "Evliya Çelebi 1640'ta camiyi \"Yeşil İmaret\" adıyla anılan nurla dolu bir mabet olarak anlatır; adın, tüm kubbelerle minare külahının yeşil çinilerle kaplı olmasından geldiğini, dış avlunun çınarlarla süslü olduğunu ve Bursa'da bu denli bezemeli başka cami görmediğini yazar. Hüseyin Vassaf Mayıs 1901'de avluya girerken Bursa ovasının başka bir manzara oluşturduğunu ve yarım saat temaşaya doyamadığını anlatır. Ekrem Hakkı Ayverdi camiyi Fetret Devri sonunda istikrarı kuran Çelebi Sultan Mehmed'in kendi nefsine bir teselli mükâfatı ve milletine verdiği müsekkin bir ilaç olarak yorumlar.",
+        "en": "Evliya Çelebi in 1640 described the mosque as a temple full of light known as \"Yeşil Imaret\"; he says the name comes from all domes and the minaret spire being covered in green tiles, notes the plane trees of the outer courtyard, and had seen no other mosque in Bursa so decorated. Hüseyin Vassaf, in May 1901, wrote that Bursa plain looked different from the courtyard and that he watched for half an hour. Ekrem Hakkı Ayverdi interprets the mosque as a consolation reward for Çelebi Sultan Mehmed and a soothing medicine for his nation after the Interregnum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "110, 113"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 15,
+      "title": {
+        "tr": "Onarımlar ve Restorasyonlar",
+        "en": "Repairs and Restorations"
+      },
+      "body": {
+        "tr": "Şiddetli lodos ve ağır kışlar nedeniyle özellikle kurşun kaplamalar onarım gerektirmiştir. Bilinen ilk onarım belgesi 1552'dir; ardından 1573, 1617, 1623, 1630, 1632, 1635, 1645, 1684, 1741, 1743, 1761, 1768 ve 1775'te müdahaleler yapılmıştır. 1775'te Hassa Mimar Kaymakamı Seyyid Ali Ağa kapsamlı onarım yapmış, ön cepheye rokoko saçak eklenmiştir; 1776 ve 1783'te iç nakışlar yenilenmiştir. XIX. yüzyılda 1818, 1820, 1826, 1840, 1844, 1847 ve 1851'de onarımlar belgelenmiştir. 1855 depreminde ana girişin üzerindeki kubbede tahribat, aydınlık kubbesi ve duvarlarda çatlaklar, çinilerde dökülme oluşmuş, minare yıkılmıştır; yapı yine de ibadete devam edebilecek durumda kalmış, 1858 keşfi sonrası onarımlar uzun yıllar sürmüştür. Ana kubbeyi yıkıp çatı yapma fikri Bursa müfettişi Ahmet Vefik Paşa'nın karşı çıkmasıyla bırakılmıştır. 1863-1864'te Fransız mimar Léon Parvillée camiyi ve türbesini restore etmiş; restorasyonlar hakkında kapsamlı belge bulunmaması dikkat çekicidir, müdahaleler sonraki uzmanlarca eleştirilmiş, çok sayıda özgün çininin yenileriyle değiştirilip sonradan Victoria & Albert Müzesi'ne satıldığı 2016'da belgelenmiştir. 1907'de Mimar Asım Bey'in keşfiyle kurulan ekip eksik çinileri Kütahya'da yeniden ürettirmiş, restorasyon 1908 sonunda bitmiştir. 1945-1947'de Macit Kural ve Sedat Çetintaş yönetiminde, 2010-2014'te yeniden kapsamlı restorasyon yapılmıştır.",
+        "en": "Strong south winds and harsh winters required repairs, especially to the lead coverings. The first known repair document is dated 1552, followed by interventions in 1573, 1617, 1623, 1630, 1632, 1635, 1645, 1684, 1741, 1743, 1761, 1768 and 1775. In 1775 Seyyid Ali Ağa carried out a comprehensive repair and a rococo eave was added to the front façade; interior ornament was renewed in 1776 and 1783. Nineteenth-century repairs are documented in 1818, 1820, 1826, 1840, 1844, 1847 and 1851. The 1855 earthquake damaged the dome over the main entrance, cracked the lantern dome and walls, loosened tiles and brought down the minaret, yet the building stayed usable; repairs after the 1858 survey lasted many years. The idea of replacing the main dome with a roof was dropped when Bursa inspector Ahmet Vefik Paşa objected. In 1863-1864 the French architect Léon Parvillée restored the mosque and its tomb; there is no comprehensive report, later experts criticised his work, and a 2016 study documented that many original tiles were replaced and later sold to the Victoria & Albert Museum. In 1907 Architect Asım Bey's survey led to a team that had missing tiles reproduced in Kütahya, completing the restoration at the end of 1908. Extensive restorations followed in 1945-1947 (Macit Kural, Sedat Çetintaş) and 2010-2014."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114-117"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "orta_kubbe_cap",
+      "label": {
+        "tr": "Orta harim kubbesi çapı",
+        "en": "Central dome diameter"
+      },
+      "value": 13,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "101"
+        }
+      ]
+    },
+    {
+      "key": "orta_kubbe_yukseklik",
+      "label": {
+        "tr": "Orta harim kubbesi yüksekliği",
+        "en": "Central dome height"
+      },
+      "value": 25,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "101"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_yukseltisi",
+      "label": {
+        "tr": "Eyvanların yükseltisi",
+        "en": "Iwan raised level"
+      },
+      "value": 75,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_kubbe_yukseklik",
+      "label": {
+        "tr": "Eyvan kubbelerinin yüksekliği",
+        "en": "Iwan dome height"
+      },
+      "value": 18,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_kubbe_cap",
+      "label": {
+        "tr": "Eyvan kubbelerinin çapı",
+        "en": "Iwan dome diameter"
+      },
+      "value": 7,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_kubbe_dilim",
+      "label": {
+        "tr": "Eyvan kubbelerinin dilim sayısı",
+        "en": "Iwan dome segments"
+      },
+      "value": 24,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "key": "dogu_tabhane_kubbe_dilim",
+      "label": {
+        "tr": "Doğu tabhane kubbesi dilim sayısı",
+        "en": "East tabhane dome segments"
+      },
+      "value": 32,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "105"
+        }
+      ]
+    },
+    {
+      "key": "bati_tabhane_kubbe_dilim",
+      "label": {
+        "tr": "Batı tabhane kubbesi dilim sayısı",
+        "en": "West tabhane dome segments"
+      },
+      "value": 24,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "105"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_genislik",
+      "label": {
+        "tr": "Mihrap genişliği (yaklaşık)",
+        "en": "Mihrab width (approx.)"
+      },
+      "value": 6,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "106"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_yukseklik",
+      "label": {
+        "tr": "Mihrap yüksekliği",
+        "en": "Mihrab height"
+      },
+      "value": 10.67,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "106"
+        }
+      ]
+    },
+    {
+      "key": "cini_kaplama_yuksekligi",
+      "label": {
+        "tr": "Duvar çini kaplama yüksekliği (yaklaşık)",
+        "en": "Wall tile height (approx.)"
+      },
+      "value": 2,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "103, 105-106"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "107, 110"
+        }
+      ],
+      "note": {
+        "tr": "İkisi tasarlanmış, ilki inşa edilmiş, ikincisi 1869'da eklenmiştir.",
+        "en": "Two were planned; one was built and the second added in 1869."
+      }
+    },
+    {
+      "key": "sadirvan_kolon",
+      "label": {
+        "tr": "Avlu şadırvanının ahşap sütun sayısı",
+        "en": "Wooden columns of courtyard shadirvan"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "110"
+        }
+      ]
+    },
+    {
+      "key": "orta_pencere_kasnak",
+      "label": {
+        "tr": "Orta mekân kubbe kasnağındaki pencere",
+        "en": "Windows on central dome drum"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "106"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_onu_kasnak_pencere",
+      "label": {
+        "tr": "Mihrap önü kubbe kasnağındaki pencere",
+        "en": "Windows on drum before the mihrab"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "106"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Çelebi Mehmed",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Hacı İvaz bin Ahi Bayezid",
+      "role": {
+        "tr": "Yapıyı yazan, düzenleyen, esaslarını belirleyen (iç kitabe)",
+        "en": "Wrote, arranged and set principles of the structure (inner inscription)"
+      }
+    },
+    {
+      "name": "Timurtaş (Abdullah oğlu)",
+      "role": {
+        "tr": "Bursalı mimar",
+        "en": "Architect from Bursa"
+      }
+    },
+    {
+      "name": "Nakkaş Ali bin İlyas Ali",
+      "role": {
+        "tr": "Nakış işlerini yapan; Lâmiî Çelebi'nin dedesi",
+        "en": "Embroidery master; grandfather of Lâmiî Çelebi"
+      }
+    },
+    {
+      "name": "Mehmed el-Mecnûn",
+      "role": {
+        "tr": "Çini ustası",
+        "en": "Tile master"
+      }
+    },
+    {
+      "name": "Tebrizli Ali (Hacı Ahmed oğlu)",
+      "role": {
+        "tr": "Tebrizli ahşap ustalarıyla Anadolu'ya gelen usta",
+        "en": "Master who came to Anatolia with Tabrizi woodworkers"
+      }
+    },
+    {
+      "name": "Seyyid Ali Ağa",
+      "role": {
+        "tr": "1775'te kapsamlı onarımı yapan Hassa Mimar Kaymakamı",
+        "en": "Imperial Architect District Governor who carried out the 1775 repair"
+      }
+    },
+    {
+      "name": "Ahmet Vefik Paşa",
+      "role": {
+        "tr": "Bursa müfettişi; kubbenin yıkılmasına karşı çıktı, şadırvan alanını eski haline getirdi, hat yazılarını yazdırdı",
+        "en": "Bursa inspector; opposed demolishing the dome, restored the fountain area, ordered the calligraphy"
+      }
+    },
+    {
+      "name": "Cemâlizâde Şeyh Hacı İbrâhim Edhem Efendi",
+      "role": {
+        "tr": "Harimdeki Nebe suresi ve diğer hatları yazan imam",
+        "en": "Imam who wrote the Surah an-Naba and other calligraphy in the hall"
+      }
+    },
+    {
+      "name": "Léon Parvillée",
+      "role": {
+        "tr": "1863-1864'te restorasyon yapan Fransız mimar",
+        "en": "French architect who carried out restoration in 1863-1864"
+      }
+    },
+    {
+      "name": "Asım Bey",
+      "role": {
+        "tr": "1907-1908 restorasyonunu yöneten mimar",
+        "en": "Architect who led the 1907-1908 restoration"
+      }
+    },
+    {
+      "name": "Macit Kural",
+      "role": {
+        "tr": "1945-1947 restorasyonunu yöneten mimar",
+        "en": "Architect of the 1945-1947 restoration"
+      }
+    },
+    {
+      "name": "Sedat Çetintaş",
+      "role": {
+        "tr": "1945-1947 restorasyonunu yöneten yüksek mimar",
+        "en": "Master architect of the 1945-1947 restoration"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "1640'ta camiyi anlatan seyyah",
+        "en": "Traveller who described the mosque in 1640"
+      }
+    },
+    {
+      "name": "Hüseyin Vassaf",
+      "role": {
+        "tr": "Mayıs 1901'de camiyi ziyaret eden yazar",
+        "en": "Author who visited in May 1901"
+      }
+    },
+    {
+      "name": "Ekrem Hakkı Ayverdi",
+      "role": {
+        "tr": "Camiyi tarihsel bağlamda yorumlayan mimar ve sanat tarihçisi",
+        "en": "Architect and art historian who interpreted the mosque"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tac-kapi-kitabesi",
+      "location": {
+        "tr": "Taç kapı üzerinde, kavsarayı dolaşan üç satır",
+        "en": "On the portal, three lines running around the whole hood"
+      },
+      "language": "other",
+      "script": "Celî Sülüs",
+      "transliteration": "Vel-itisamu bikeremihil-amim, masnu saniyil-fıtrati ve masugu saiki’l-kudreti an hazihil-bukatil-kerimeti nushatun min nusahi cennetin-naim, nusihat bitakdîril-Azîzil-Alim ravdatun min riyazil-ukba, nusicet bizehretil-hayatid-dünya. Tebahteret alel-aktar ve tedalet dunehal-emsaru, ma semiha bimislil-edvaru, ma darel-felekud-devvar. Ve kame’s-sultanul-azam ve’l-hakanul-ekrem, sultanüş-şarki ve’l-garbi ve hakanul-acemi ve’l-arabi, el-mueyyedu biteyyidi Rabbil-alemin, gıyased-dünya ve’d-din. Es-Sultan bin es-Sultan, es-Sultan Mehmed bin Bayezid bin Murad bin Orhan -halledellahu fi hilafetil-ardi mülkehu ve ejra fi bahril-muradati fulkehu- bil-emni bite’sisihâ ve tavtidihâ ve teşdidi erkânihâ ve teşyîdihâ ve’t-tefeqqu itmamehâ fi Zilhicce hiccete isnateyn ve işrine ve semane mie.",
+      "translation": {
+        "tr": "Rahman ve Rahim olan Allah’ın adıyla. Her şeyi kuşatan lütfu ile başlanır işe. Bu kıymetli mekân, yaratılışın sanatkârı olan Allah’ın hikmetiyle şekillenmiş, kudretinin tezahürüyle ortaya çıkmış eşsiz bir yapı olarak tarif edilmiştir. Allah’ın takdiriyle cennet bahçelerinden birinin dünyadaki yansıması olarak inşa edilen bu yer, dünya hayatının çiçekleriyle bezenmiş; cihanın dört bir yanında eşi görülmemiş, benzeriyle kıyaslanamayacak kadar zarif ve ihtişamlı bir hüviyet kazanmıştır. Bu yapının güzelliği karşısında geçmiş zamanlar suskun kalmış, şehirler onunla yarışamayıp geride durmuştur. Böylece bu eser, yalnızca estetik değil, aynı zamanda bir güç ve hâkimiyet sembolü haline gelmiştir. Bu yapının banisi, şark ve garbın ulu sultanı, Arap ve Acem diyarlarının hükümdarı, Allah’ın nusretine mazhar olmuş, dinin ve dünyanın sığınağı, sultanlar silsilesinin bir halkası olan Sultan Mehmed bin Bayezid bin Murad bin Orhan’dır. Allah ona yeryüzünde uzun ömürlü bir hükümranlık versin ve murat ettiği yolda gemisini selametle yüzdürsün. Bu muazzam külliyenin inşası onun emriyle titizlikle başlatılmış, temelleri sağlamlaştırılmış, yapısı güçlendirilmiş, ayrıntılarıyla tahkim edilmiştir. Tamamlanma tarihi H. Zilhicce 822 / M. 1419’dur.",
+        "en": "In the name of Allah, the Most Gracious, the Most Merciful. The work begins with His grace that encompasses everything. This precious place has been described as a unique structure shaped by the wisdom of Allah, the artist of creation, and has emerged with the manifestation of His power. Built as the reflection of one of the gardens of Paradise in the world by the will of Allah, this place is adorned with the flowers of worldly life; it has gained an identity of elegance and magnificence that has not been seen in the four corners of the world and cannot be compared with any other. The past remained silent in the face of the beauty of this structure, cities could not compete with it and remained behind. Thus, this work became not only an aesthetic creation but also a symbol of power and dominance. The benefactor of this structure is the great sultan of the east and west, the ruler of the Arab and Persian lands, the one who has been granted the help of Allah, the shelter of religion and the world, a link in the chain of sultans, Sultan Mehmed bin Bayezid bin Murad bin Orhan. May Allah grant him a long-lasting reign on earth and sail his ship safely on the path he desires. The construction of this magnificent complex was meticulously started upon his order, its foundations were strengthened, its structure was reinforced, and its details were fortified. The completion date is AH Dhul-Hijjah 822 / AD 1419."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 822,
+        "gregorian": "1419-12"
+      },
+      "note": {
+        "tr": "Kitap kitabenin dilini belirtmiyor. Mealen metni, aktarılan transliterasyonda bulunmayan ilk cümleleri de içeriyor. Aktarılan transliterasyonun bir bölümü kitapta iki kez, hafif farklı satır bölünmesiyle basılmıştır.",
+        "en": "The book does not name the language. The Mealen text includes opening sentences absent from the printed transliteration; part of the transliteration is printed twice with different line breaks."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "90, 95-96"
+        }
+      ]
+    },
+    {
+      "id": "tac-kapi-ic-kitabesi",
+      "location": {
+        "tr": "Taç kapının iç kısmında, sağda ve solda, beş sıra stalaktitli nişlerin üzerinde; çıkıntılı mermer bloklar üzerine kabartma",
+        "en": "Inside the portal, right and left, above five-row stalactite niches; relief on protruding marble blocks"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Râkimuhû ve nâzımuhû ve mukanninu kavâninihi ekallu hademi bânihi. Hacı İvaz bin Ahi Bayezid gufire lehumâ",
+      "translation": {
+        "tr": "Onu yazan, tertip eden ve yapının esaslarını belirleyen, banisinin en sadık hizmetkârlarından biridir. Ahi Bayezid oğlu Hacı İvaz, Allah ikisini de bağışlasın.",
+        "en": "The one who wrote it, arranged it and determined the principles of the structure is one of the most loyal servants of his benefactor. Ahi Bayezid’s son Hacı İvaz, may Allah forgive them both."
+      },
+      "author": "Hacı İvaz bin Ahi Bayezid",
+      "date": null,
+      "note": {
+        "tr": "Kitap kitabenin dilini belirtmiyor; yazı Arapça harfli ve Arapça ifadeler içeriyor ancak dil 'other' olarak bırakıldı.",
+        "en": "The book does not name the inscription's language; left as 'other'."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "97-99"
+        }
+      ]
+    },
+    {
+      "id": "hunkar-mahfili-kemer-kitabesi",
+      "location": {
+        "tr": "Hünkâr mahfilinin cami iç mekânına bakan kemerinin üst kısmı",
+        "en": "Above the arch of the Sultan's gallery facing the mosque interior"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": "Ali b. İlyas Ali",
+      "date": {
+        "hijri_year": 827,
+        "gregorian": "1424-08"
+      },
+      "note": {
+        "tr": "Kitap kitabenin metnini vermiyor; yalnızca nakış işlerinin Ramazan 827 / Ağustos 1424'te tamamlandığını ve Ali b. İlyas Ali tarafından yapıldığını belgelediğini söylüyor.",
+        "en": "The book gives no text; it only states that the inscription documents completion of the embroidery in Ramadan AH 827 / August AD 1424 by Ali b. İlyas Ali."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "98-99"
+        }
+      ]
+    },
+    {
+      "id": "hunkar-mahfili-cini-kitabeleri",
+      "location": {
+        "tr": "Hünkâr mahfilinde sağ ve soldaki kemer üzengileri (iki küçük kitabe)",
+        "en": "Two small inscriptions on the arch springers right and left in the Sultan's gallery"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": "Mehmed el-Mecnûn",
+      "date": null,
+      "note": {
+        "tr": "Kitap metinlerini vermiyor; çinilerin Mehmed el-Mecnun tarafından hazırlandığını gösterdiğini söylüyor.",
+        "en": "Texts not given; the book says they show the tiles were prepared by Mehmed el-Mecnun."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "98-99"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-sutuncesi-kitabesi",
+      "location": {
+        "tr": "Mihrabın sağındaki sütunçe",
+        "en": "Colonette to the right of the mihrab"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "amel-i üstâdân-ı Tebriz",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap anlamı Tebrizli ustaların yaptığı çini bezemeler olarak veriyor (İngilizce: 'the work of the masters from Tabriz'); ayrı bir Mealen metni yok. İngilizce metinde 'Tabriz' yazımı kullanılıyor. Dil belirtilmiyor.",
+        "en": "The book glosses it as tile decoration made by masters from Tabriz ('the work of the masters from Tabriz'); no separate Mealen text. Language not named."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "106-107"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-fetih-suresi-friz",
+      "location": {
+        "tr": "Mihrabın çevresi: sarı, lacivert, firuze ve beyaz geniş yazı frizi; üstte celî sülüs kelime-i tevhit",
+        "en": "Around the mihrab: wide frieze in yellow, navy, turquoise and white; Kalimat al-Tawhid in Jeli Thuluth on top"
+      },
+      "language": "other",
+      "script": "Celî Sülüs (kelime-i tevhit)",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Friz Fetih suresinden ayetler içerir; metin kitapta aktarılmıyor.",
+        "en": "The frieze carries verses of Surah al-Fath; text not reproduced in the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "105-106"
+        }
+      ]
+    },
+    {
+      "id": "pencere-kanadi-hayir-hadisi",
+      "location": {
+        "tr": "Mihrap duvarındaki alt sıra pencere kanatlarından birinde, sülüs hatla",
+        "en": "On one of the lower window shutters of the mihrab wall, Thuluth script"
+      },
+      "language": "other",
+      "script": "Sülüs",
+      "transliteration": "Kale’n-Nebiyyü aleyhisselâm: Ed-dallu ale’l-hayri kefâilihî",
+      "translation": {
+        "tr": "Nebi aleyhisselam buyurdu ki: Hayra vesile olan, onu yapan gibidir.",
+        "en": "The Prophet (peace be upon him) said: The one who is the means of good is like the one who does it."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap kitabenin dilini belirtmiyor; yazı Arapça harfli ve Arapça ifadeler içeriyor ancak dil 'other' olarak bırakıldı.",
+        "en": "The book does not name the inscription's language; left as 'other'."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "106-107"
+        }
+      ]
+    },
+    {
+      "id": "pencere-kanadi-cennet-sozu",
+      "location": {
+        "tr": "Mihrap duvarındaki alt sıra pencere kanatlarından diğerinde",
+        "en": "On the other lower window shutter of the mihrab wall"
+      },
+      "language": "other",
+      "script": "Sülüs",
+      "transliteration": "el-Cennetu dâru’l-eshiyâ",
+      "translation": {
+        "tr": "Cennet cömertler yurdudur.",
+        "en": "Paradise is the abode of the generous."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap kitabenin dilini belirtmiyor; yazı Arapça harfli ve Arapça ifadeler içeriyor ancak dil 'other' olarak bırakıldı.",
+        "en": "The book does not name the inscription's language; left as 'other'."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "106-107"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insaat-baslangic",
+      "year": 1414,
+      "date": null,
+      "hijri": "817",
+      "type": "construction",
+      "title": {
+        "tr": "Külliyenin inşasına başlandı",
+        "en": "Construction of the complex began"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "83"
+        }
+      ]
+    },
+    {
+      "id": "insaat-tamam",
+      "year": 1419,
+      "date": null,
+      "hijri": "Zilhicce 822",
+      "type": "construction",
+      "title": {
+        "tr": "Taç kapı kitabesine göre inşaat tamamlandı",
+        "en": "Construction completed according to the portal inscription"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "90, 95-96"
+        }
+      ],
+      "note": {
+        "tr": "Kitabe: Aralık 1419",
+        "en": "Inscription: December 1419"
+      }
+    },
+    {
+      "id": "nakis-1424",
+      "year": 1424,
+      "date": null,
+      "hijri": "Ramazan 827",
+      "type": "construction",
+      "title": {
+        "tr": "Hünkâr mahfili nakış işleri tamamlandı",
+        "en": "Embroidery works of the Sultan's gallery completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "98-99"
+        }
+      ],
+      "note": {
+        "tr": "Mahfil kemerindeki Arapça kitabeye göre Ağustos 1424; Ali b. İlyas Ali.",
+        "en": "According to the Arabic inscription on the gallery arch, August 1424; by Ali b. İlyas Ali."
+      }
+    },
+    {
+      "id": "onarim-1552",
+      "year": 1552,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bilinen ilk onarım belgesi",
+        "en": "First known repair document"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ],
+      "note": {
+        "tr": "Şiddetli lodos ve ağır kış koşulları nedeniyle özellikle kurşun kaplamalar onarım gerektirmiştir.",
+        "en": "Strong south winds and harsh winters required repairs, especially to the lead coverings."
+      }
+    },
+    {
+      "id": "onarim-1573",
+      "year": 1573,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1617",
+      "year": 1617,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1623",
+      "year": 1623,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1630",
+      "year": 1630,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1632",
+      "year": 1632,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1635",
+      "year": 1635,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "evliya-1640",
+      "year": 1640,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Evliya Çelebi camiyi ziyaret edip betimledi",
+        "en": "Evliya Çelebi visited and described the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "110, 113"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1645",
+      "year": 1645,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1684",
+      "year": 1684,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1741",
+      "year": 1741,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1743",
+      "year": 1743,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1761",
+      "year": 1761,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1768",
+      "year": 1768,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım / müdahale",
+        "en": "Repair / intervention"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1775",
+      "year": 1775,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Hassa Mimar Kaymakamı Seyyid Ali Ağa'nın kapsamlı onarımı; ön cepheye rokoko saçak eklendi",
+        "en": "Comprehensive repair by Imperial Architect District Governor Seyyid Ali Ağa; rococo eave added to the front façade"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "nakis-yenileme-1776",
+      "year": 1776,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "İç mekândaki nakış ve süslemeler yenilendi",
+        "en": "Interior embroidery and ornaments renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "nakis-yenileme-1783",
+      "year": 1783,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "İç mekândaki nakış ve süslemeler yenilendi",
+        "en": "Interior embroidery and ornaments renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1818",
+      "year": 1818,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (çoğunlukla kurşun örtüler)",
+        "en": "Repair (mostly lead roofing)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1820",
+      "year": 1820,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (çoğunlukla kurşun örtüler)",
+        "en": "Repair (mostly lead roofing)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1826",
+      "year": 1826,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (çoğunlukla kurşun örtüler)",
+        "en": "Repair (mostly lead roofing)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1840",
+      "year": 1840,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (çoğunlukla kurşun örtüler)",
+        "en": "Repair (mostly lead roofing)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (çoğunlukla kurşun örtüler)",
+        "en": "Repair (mostly lead roofing)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1847",
+      "year": 1847,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (çoğunlukla kurşun örtüler)",
+        "en": "Repair (mostly lead roofing)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1851",
+      "year": 1851,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (çoğunlukla kurşun örtüler)",
+        "en": "Repair (mostly lead roofing)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Bursa Depremi: ana girişin üzerindeki kubbede tahribat, çatlaklar, çini dökülmeleri; minare şerefeye kadar yıkıldı",
+        "en": "Bursa Earthquake: damage to the dome over the main entrance, cracks, tile loss; minaret collapsed down to the balcony"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "114, 116-117"
+        }
+      ]
+    },
+    {
+      "id": "kesif-1858",
+      "year": 1858,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Keşif çalışmaları; onarımlar uzun yıllara yayıldı",
+        "en": "Survey work; repairs spread over many years"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "116-117"
+        }
+      ]
+    },
+    {
+      "id": "parvillee-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Léon Parvillée'nin restorasyon çalışmaları (1863-1864)",
+        "en": "Léon Parvillée's restoration works (1863-1864)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "116-117"
+        }
+      ],
+      "note": {
+        "tr": "Özgün çinilerin yenileriyle değiştirilip Parvillée'nin koleksiyonuna girdiği, sonradan Victoria & Albert Müzesi'ne satıldığı 2016 tarihli bir çalışmayla belgelenmiştir.",
+        "en": "A 2016 study documented that many original tiles were replaced and entered Parvillée's collection, later sold to the Victoria & Albert Museum."
+      }
+    },
+    {
+      "id": "ikinci-minare-1869",
+      "year": 1869,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Mahya kurulabilmesi için ikinci minare eklendi",
+        "en": "Second minaret added to enable a mahya"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "107, 110"
+        }
+      ]
+    },
+    {
+      "id": "vassaf-1901",
+      "year": 1901,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hüseyin Vassaf Mayıs ayında camiyi ziyaret etti",
+        "en": "Hüseyin Vassaf visited the mosque in May"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "113"
+        }
+      ]
+    },
+    {
+      "id": "kesif-1907",
+      "year": 1907,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mimar Asım Bey'in keşifleri; uzman ekip kuruldu",
+        "en": "Architect Asım Bey's surveys; expert team formed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "116-117"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1908",
+      "year": 1908,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Asım Bey başkanlığındaki restorasyon yıl sonunda tamamlandı; eksik çiniler Kütahya'da yeniden üretildi",
+        "en": "Restoration under Asım Bey completed at the end of the year; missing tiles reproduced in Kütahya"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "116-117"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1945",
+      "year": 1945,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mimar Macit Kural ve Yüksek Mimar Sedat Çetintaş yönetiminde kapsamlı restorasyon ve çevre düzenlemesi (1945-1947, türbeyle birlikte)",
+        "en": "Extensive restoration and landscaping under Macit Kural and Sedat Çetintaş (1945-1947, with the tomb)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "116-117"
+        }
+      ]
+    },
+    {
+      "id": "fiskiye-calinma-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Orijinal mermer fıskiye çalındı; aslına uygun kopyası yerleştirildi",
+        "en": "The original marble fountain was stolen; a faithful reproduction was installed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "101-103"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Geniş çaplı restorasyon (2010-2014)",
+        "en": "Extensive restoration (2010-2014)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "116-117"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "tac-kapi",
+      "title": {
+        "tr": "Geri çekilmiş taç kapı",
+        "en": "Recessed portal"
+      },
+      "hint": {
+        "tr": "Dışa taşkın olmayan portali ve iç yüzdeki kitabeleri arayın.",
+        "en": "Look for the non-projecting portal and the inscriptions on its inner side."
+      },
+      "section_id": "tac-kapi"
+    },
+    {
+      "feature": "hunkar-mahfili",
+      "title": {
+        "tr": "Hünkâr mahfili",
+        "en": "Sultan's gallery"
+      },
+      "hint": {
+        "tr": "Üst kattaki çini ve altın bezemeli küçük kasır; Osmanlı'da ilk örnek.",
+        "en": "The small pavilion upstairs with tile and gold decoration; the first example in Ottoman architecture."
+      },
+      "section_id": "hunkar-mahfili"
+    },
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Çinili mihrap",
+        "en": "Tiled mihrab"
+      },
+      "hint": {
+        "tr": "Sütunçede 'amel-i üstâdân-ı Tebriz' ibaresine bakın.",
+        "en": "Look for the 'amel-i üstadân-ı Tabriz' phrase on the colonette."
+      },
+      "section_id": "mihrap"
+    },
+    {
+      "feature": "fiskiye",
+      "title": {
+        "tr": "Fıskiyeli orta harim",
+        "en": "Central hall with fountain"
+      },
+      "hint": {
+        "tr": "Kubbenin altındaki mermer fıskiye (aslına uygun kopya).",
+        "en": "The marble fountain under the dome (a faithful reproduction)."
+      },
+      "section_id": "orta-harim"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yesil-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Yeşil Çelebi Mehmed Külliyesi'nin merkezindeki camidir.",
+        "en": "The mosque at the centre of the Yeşil Çelebi Mehmed Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "83, 86-87"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-yildirim-bayezid-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Plan kurgusu, duvar örgüsü, malzeme ve ölçüleri bakımından Yıldırım Camii ile dikkat çekici benzerlikler taşır (hedef id tahmindir; ilçesi metinde yok).",
+        "en": "Shows striking similarities to the Yıldırım Mosque in plan, masonry, materials and dimensions (target id assumed; district not stated)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86-87"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": 45,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Aktif ibadet mekânı olabilir; ziyaret saatleri sahada teyit edilmeli.",
+      "en": "May be an active place of worship; visiting hours should be confirmed on site."
+    },
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yeşil Camii, kuzeyde sekiz ahşap sütunlu, kurşun kaplı kubbeli sekizgen bir şadırvanın bulunduğu geniş bir avlunun güneyinde yer alır. Pembe mermer kaplı kesme taş cephenin ortasındaki geri çekilmiş taç kapı yoğun taş oyma ile bezelidir; kuzeydoğu ve kuzeybatı köşelerinde tuğladan birer minare yükselir. İçeri girildiğinde kare bir sahanlık ve ardından 13 metre çaplı ana kubbenin altında fıskiyeli orta harim gelir. Harimin iki yanında 24 dilimli kubbeli eyvanlar, güney köşelerinde de iki tabhane odası vardır. Duvarlar yaklaşık iki metre yüksekliğe kadar sarı, mavi, yeşil ve lacivert çinilerle kaplıdır; üst katta çinili hünkâr mahfili bulunur. Güney duvarın ortasında yaklaşık 10,67 metre yüksekliğinde çinili mihrap yer alır.",
+      "en": "The Green Mosque stands south of a large courtyard with an octagonal shadirvan on eight wooden columns under a lead-covered pointed dome. The recessed portal in the pink-marble-clad cut-stone façade is densely carved; a brick minaret rises at each of the northeast and northwest corners. Inside, a square landing leads to the central hall with a fountain under the main dome, 13 m across. On either side are iwans with 24-segmented domes, and two tabhane rooms in the south corners. Walls are covered with yellow, blue, green and navy tiles up to about two metres; upstairs is the tiled Sultan's gallery. In the middle of the south wall stands the tiled mihrab, about 10.67 m high."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; incelenmeli."
+  },
+  "ambient_sound": {
+    "sound_key": "cami-sadirvan",
+    "caption": {
+      "tr": "[Fıskiyeden akan su sesi, kubbede yankılanan ayak sesleri ve uzaktan alçak sesli kıraat]",
+      "en": "[Water flowing from the fountain, footsteps echoing under the dome, and quiet recitation in the distance]"
+    }
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

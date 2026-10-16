@@ -1,0 +1,821 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-yildirim-bayezid-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Külliyesi",
+    "text_origin": "Bursa Vakıf Eserleri II. Cilt, Yıldırım Külliyesi bölümünden (s. 161-209) yapay zekâ (Sonnet) ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabelerin dili kitapta belirtilmiyor ('other' işaretlendi); ikinci (mimar) kitabenin yeri belirtilmiyor.",
+      "Sanduka sayısı kitapta toplam olarak verilmiyor (5 çıkarım); İsa Çelebi ve hanımın adı dışında kimlikler bilinmiyor.",
+      "Türbenin ziyaret düzeni/açık olma durumu kitapta yok.",
+      "Koordinatlar kitapta yok; sahadan ya da fotoğraf EXIF'inden eklenmeli.",
+      "Fotoğraflar eklenmeli (media_folder ve media), match_photos.py ile bağlanacak; arşiv fotoğrafı (Zaman Perdesi) bulunmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people[bayezid]",
+        "note": "Bölüm (s. 162-163) Yıldırım Bayezid'in H. 755 / M. 1354'te doğduğunu ve H. 805 / M. 1403'te 43 yaşında öldüğünü yazar; bu tarihlere göre yaş yaklaşık 49'dur. Kaynak değerleri korundu (ana külliye kaydında da not edildi)."
+      },
+      {
+        "field": "founder",
+        "note": "Kitabe, türbenin Yıldırım Bayezid adına oğlu 'Süleyman Han bin Bayezid Han' tarafından yaptırıldığını söyler; giriş bölümü aynı kişiyi Emir Süleyman / Süleyman Çelebi diye anar (s. 163, 203). Ad aynı kişiye ait kabul edildi; kitap bunu açıkça bağlamıyor, bu yüzden bir not eklenmiştir."
+      },
+      {
+        "field": "sections[sandukalar]",
+        "note": "Kitap kimlikleri belirlenemeyen iki küçük sandukanın 'muhtemelen' çocukları olduğunu yazar; bölüm 'probable' işaretlendi."
+      },
+      {
+        "field": "timeline[esya-1930]",
+        "note": "Kitap '1930'lu yılların başı' der; 1930 yaklaşık gösterimdir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yıldırım Bayezid Türbesi",
+    "en": "Yıldırım Bayezid Tomb"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-yildirim-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "revaklı türbe",
+    "Yıldırım Bayezid",
+    "Emir Süleyman",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Yıldırım",
+    "address": "Yardım Sokak, No: 8",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "203"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 809 / M. 1406",
+      "en": "AH 809 / AD 1406"
+    },
+    "start_year": 1406,
+    "end_year": 1406,
+    "hijri_year": 809,
+    "century": 15,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki kitabe türbenin H. 809 Muharrem başında (Haziran 1406) yaptırıldığını, ikinci kitabe inşanın Rebiyülahir 809'da (Eylül 1406) tamamlandığını bildirir.",
+      "en": "The inscription above the entrance gives the beginning of Muharram AH 809 (June 1406) for its commissioning; a second inscription records completion in Rabi al-Akhir 809 (September 1406)."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "203-205"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Emir Süleyman (Süleyman Çelebi)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "163, 203"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Ali bin Hüseyin",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "204-205"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Yıldırım Bayezid adına oğlu Emir Süleyman tarafından H. 809 / M. 1406'da yaptırılan türbe. Osmanlı'da inşa edilen ilk revaklı türbe örneği olduğu ifade edilir; sultanın yanı sıra oğlu İsa Çelebi ve yakınlarının sandukaları vardır.",
+    "en": "The tomb built in the name of Yıldırım Bayezid by his son Emir Süleyman in AH 809 / AD 1406. It is said to be the first arcaded tomb built in the Ottoman Empire; besides the sultan's, it holds the sarcophagi of his son İsa Çelebi and others."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-kitabe",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Kitabe",
+        "en": "Location and Inscription"
+      },
+      "body": {
+        "tr": "Türbe, Yıldırım Külliyesi dahilinde, caminin kuzeyinde ve daha alçak bir kotta yer alır. Giriş kapısı üzerindeki kitabeye göre Yıldırım Bayezid adına, oğlu Emir Süleyman tarafından H. 809 / M. 1406'da yaptırılmıştır. 0,60 x 1,20 m ölçülerindeki üç satırlık kitabede \"Bu türbe, merhum ve mağfur Sultan Bayezid Han bin Murad Han'ındır. Onu, Arap ve Acem krallarının efendisi büyük sultan Süleyman Han bin Bayezid Han inşa ettirmiştir\" denir. Bir ikinci kitabe, inşanın zayıf kul Ali bin Hüseyin'in eliyle tamamlandığını bildirir; mimarın Ali bin Hüseyin olduğu bu kitabeden anlaşılır.",
+        "en": "The tomb lies within the Yıldırım Complex, north of the mosque and at a lower elevation. According to the inscription above the entrance door it was built in the name of Yıldırım Bayezid by his son Emir Süleyman in AH 809 / AD 1406. The three-line, 0.60 x 1.20 m inscription reads: \"This tomb belongs to the late and forgiven Sultan Bayezid Han bin Murad Han. The great sultan Suleyman Han bin Bayezid Han, the lord of the Arab and Persian kings, had it built.\" A second inscription records that construction was completed by the hands of the weak servant Ali bin Hüseyin, from which the architect is understood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "203-205"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Genel olarak dikdörtgen planlı türbenin beden duvarları iki sıra tuğla ve bir sıra küfeki taşının almaşık kullanımıyla örülmüş, köşelerde ve revak ayaklarında beyaz mermer kesme taş kullanılmıştır. 10,50 x 10,50 m ölçülerindeki kare planlı ana mekân, iri mukarnaslarla geçilen sekizgen kasnağa oturan bir kubbeyle örtülüdür; zemini tuğla kaplıdır. Kuzeydeki üç kubbeli revaklı giriş alanı nedeniyle Osmanlı'da inşa edilen ilk revaklı türbe örneği olduğu ifade edilir. Revak, köşelerde mermer kaplı yığma ayaklar ve ortada iki koyu bordo sütunla taşınır; başlıkları mukarnaslıdır. Kubbe ve kemer yüzeylerinde kalem işi bezemeler vardır.",
+        "en": "The generally rectangular tomb's walls alternate two rows of brick with one row of limestone, with white marble cut stone at the corners and portico piers. The square main space, 10.50 x 10.50 m, is covered by a dome on an octagonal drum reached via large muqarnas; its floor is brick. With its three-domed arcaded entrance on the north it is said to be the first arcaded tomb built in the Ottoman Empire. The portico is carried by marble-clad piers at the corners and two dark burgundy columns in the middle with muqarnas capitals. The domes and arch surfaces bear hand-painted decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "204-205"
+        }
+      ]
+    },
+    {
+      "id": "giris-ve-pencereler",
+      "order": 3,
+      "title": {
+        "tr": "Giriş, Kapı ve Pencereler",
+        "en": "Entrance, Door and Windows"
+      },
+      "body": {
+        "tr": "Giriş, silindirik yastıklara oturan basık kemerli, iç bükey silmeyle çerçevelenmiş bir açıklıktan sağlanır; iç içe iki sivri kemer ve alınlıklı çift kanatlı ahşap kapı vardır, sütunçelerin üstü üç sıra stalaktitlidir. Dıştaki sivri kemerin tepesinde gülçe motifi bulunur. Alınlıkta altın yaldızlı, rumi madalyon ve lale motifli kitabe yer alır; alt köşelerinde kabartma \"Mâşâallah\" ve \"Bârekallah\" yazılıdır. İç mekân kuzey ve güney duvarlarında ikişer, batıda üç, doğuda iki pencere ve kubbe kasnağındaki üç pencereyle aydınlanır; doğudaki pencerelerden biri sonradan kapatılmıştır. Alt pencerelerin mevcut biçimlerini muhtemelen 1855 Depremi sonrası bir onarımda aldığı ifade edilir.",
+        "en": "The entrance is a rectangular opening with a flat arch on cylindrical imposts, framed by a concave molding, with two nested pointed arches and a double-leafed wooden door with pediment; colonettes are topped by three rows of stalactites. A rosette sits at the top of the outer pointed arch. The pediment holds the gilded inscription with rumi medallions and tulips, with \"Mashaallah\" and \"Barakallah\" in relief at the lower corners. The interior is lit by two windows each on the north and south walls, three on the west, two on the east and three on the dome drum; one east window was later sealed. The lower windows probably took their current form in a repair after the 1855 earthquake."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "204-206"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 4,
+      "title": {
+        "tr": "Sandukalar ve Eşyalar",
+        "en": "Sarcophagi and Objects"
+      },
+      "body": {
+        "tr": "Türbenin ortasında demir parmaklıkla çevrili Yıldırım Bayezid'in sandukası bulunur. Yanında oğlu İsa Çelebi'ye ve hanımına ait sandukalar ile ayakucunda, kimlikleri belirlenememekle birlikte muhtemelen çocukları olduğu düşünülen daha küçük iki sanduka yer alır. 2013'te çalınan sanduka örtüsünün yerine, Bursalı bir hayırseverin katkısıyla Bursa Olgunlaşma Enstitüsü'nde aslına uygun hazırlanan yeni örtü Mayıs 2024'te yerine konulmuştur. H. 1175 / M. 1761'de mütevelli Abdurrahman Efendi tarafından konulan iki şamdan da dâhil bazı değerli eşyalar 1930'ların başında İstanbul'daki Evkaf Müzesi'ne nakledilmiş, bir kısmı kaybolmuştur.",
+        "en": "In the middle of the tomb, surrounded by iron railings, is Yıldırım Bayezid's sarcophagus. Beside it are sarcophagi of his son İsa Çelebi and his wife, and at the foot two smaller ones whose occupants are unidentified but thought likely to be his children. In place of the cover stolen in 2013, a new cover made to the original by the Bursa Maturation Institute with a Bursa benefactor's contribution was put in place in May 2024. Some valuable items, including two candlesticks placed by trustee Abdurrahman Efendi in AH 1175 / AD 1761, were moved to the Foundations Museum in Istanbul in the early 1930s, and some were lost."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "204-207"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Türbe, çoğunlukla külliyenin diğer yapılarıyla birlikte ve özellikle şiddetli lodosun yol açtığı zararlar nedeniyle 1618, 1640, 1649, 1669, 1780, 1825 ve 1846'da tamir edilmiştir. 1855 depremi belgelerinde \"Türbe-i şerîfeleri derûnında bir sakat olmayub, fakat sofa kubbeleri münşakk olmuş\" denir; yapı yalnızca sınırlı ölçüde etkilenmiştir. Türbenin yeniden keşfi 1884'te \"Pandalaki Kalfa\" tarafından yapılmış, II. Abdülhamid döneminde başlatılan onarım 1892-1895'te tamamlanmıştır. Son olarak 2017-2019'da Bursa Büyükşehir Belediyesi ile Vakıflar Bölge Müdürlüğü iş birliğiyle kapsamlı restore edilmiştir.",
+        "en": "The tomb was repaired in 1618, 1640, 1649, 1669, 1780, 1825 and 1846, mostly with other buildings of the complex and especially after damage from strong southerly winds. Documents on the 1855 earthquake state \"There is no damage inside the tomb, but the domes of the hall are damaged\", so it was only limitedly affected. The tomb was rediscovered in 1884 by \"Pandalaki Kalfa\"; repairs begun in the early reign of Abdülhamid II were completed in 1892-1895. It was last restored comprehensively in 2017-2019 by the Bursa Metropolitan Municipality and the Regional Directorate of Foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207-209"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "gomlek",
+      "title": {
+        "tr": "Ankara Savaşı Gömleği",
+        "en": "The Shirt from the Battle of Ankara"
+      },
+      "body": {
+        "tr": "Türbede bulunduğu bilinen, Yıldırım Bayezid'in Ankara Savaşı'nda giydiği, üzerinde Fetih suresi ve bazı dualar yazılı sarı atlas gömleğin, Osmanlı'nın son dönemlerinde türbedarlar tarafından parça parça yabancı gezginlere satıldığı rivayet edilir.",
+        "en": "It is said that the yellow satin shirt Yıldırım Bayezid wore at the Battle of Ankara, with the Conquest Sura and some prayers written on it and known to have been in the tomb, was sold piece by piece to foreign travelers by the tombkeepers in the late Ottoman period."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "206"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "ana_mekan",
+      "label": {
+        "tr": "Ana mekân",
+        "en": "Main space"
+      },
+      "value": "10,50 x 10,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "204-205"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription size"
+      },
+      "value": "0,60 x 1,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "key": "revak_kubbe",
+      "label": {
+        "tr": "Revak kubbe sayısı",
+        "en": "Portico domes"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "204-205"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "204-205"
+        }
+      ],
+      "note": {
+        "tr": "Yıldırım Bayezid'in sandukası, İsa Çelebi, hanımı ve ayakucundaki iki küçük sanduka (kitap toplam sayı vermez).",
+        "en": "Yıldırım Bayezid's, İsa Çelebi's, his wife's and two smaller at the foot (the book gives no total)."
+      }
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "İç mekân pencere sayısı (kasnak dâhil)",
+        "en": "Interior windows (including drum)"
+      },
+      "value": 13,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "205-206"
+        }
+      ],
+      "note": {
+        "tr": "Kuzey 2, güney 2, batı 3, doğu 2 ve kasnakta 3; doğudakilerden biri kapatılmıştır.",
+        "en": "North 2, south 2, west 3, east 2 and 3 on the drum; one east window sealed."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Yıldırım Bayezid",
+      "role": {
+        "tr": "Türbede yatan sultan",
+        "en": "Sultan buried in the tomb"
+      }
+    },
+    {
+      "name": "Emir Süleyman (Süleyman Çelebi)",
+      "role": {
+        "tr": "Türbeyi yaptıran oğul",
+        "en": "Son who had the tomb built"
+      }
+    },
+    {
+      "name": "Ali bin Hüseyin",
+      "role": {
+        "tr": "Mimar; inşayı tamamlayan",
+        "en": "Architect; completed the construction"
+      }
+    },
+    {
+      "name": "İsa Çelebi",
+      "role": {
+        "tr": "Yıldırım Bayezid'in oğlu, türbede sandukası bulunur",
+        "en": "Son of Yıldırım Bayezid, has a sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Çelebi Mehmed",
+      "role": {
+        "tr": "Bayezid'in naaşını Bursa'ya nakleden oğlu",
+        "en": "Son who transferred Bayezid's body to Bursa"
+      }
+    },
+    {
+      "name": "Abdurrahman Efendi",
+      "role": {
+        "tr": "1761'de türbeye şamdan koyan mütevelli",
+        "en": "Trustee who placed candlesticks in the tomb in 1761"
+      }
+    },
+    {
+      "name": "Pandalaki Kalfa",
+      "role": {
+        "tr": "1884'te türbeyi yeniden keşfeden",
+        "en": "Rediscovered the tomb in 1884"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerindeki alınlık, altın yaldızlı",
+        "en": "Pediment above the entrance door, gilded"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Hâzihi ravzatü’s-Sultâni’s-saîd el-merhûm el-mağfûr Bâyezîd Hân ibni Murad Han. Benâhâ es-Sultânü’l-azam mevlâ’l-mülûki’l-Arab ve’l-Acem Süleyman Hân bin Bâyezîd Hân hallede’llâhü mülkehû fî evveli şehri’l-Muharrem li-seneti tisa ve semâne mi’e.",
+      "translation": {
+        "tr": "Bu türbe, merhum ve mağfur Sultan Bayezid Han bin Murad Han’ındır. Onu, Arap ve Acem krallarının efendisi büyük sultan Süleyman Han bin Bayezid Han -Allah mülkünü daim kılsın- inşa ettirmiştir. Hicri 809 yılı Muharrem ayı başında (Haziran 1406).",
+        "en": "This tomb belongs to the late and forgiven Sultan Bayezid Han bin Murad Han. The great sultan Suleyman Han bin Bayezid Han, the lord of the Arab and Persian kings -may Allah make his dominion permanent- had it built. At the beginning of the month of Muharram in the year AH 809 (June AD 1406)."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 809,
+        "gregorian": "1406 (Haziran)"
+      },
+      "note": {
+        "tr": "Kitap dili belirtmez; 0,60 x 1,20 m, üç satır.",
+        "en": "The book does not name the language; 0.60 x 1.20 m, three lines."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "id": "mimar-kitabesi",
+      "location": {
+        "tr": "Yeri kitapta belirtilmemiştir",
+        "en": "Location not stated in the book"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Kad vekaa’l-ferâğu min hâzihi’l-imâreti’l-mübâreketi an yeddi’l-abdi’z-zaîf Ali bin Hüseyin gafara’llahu lehumâ fî Rebîi’l-âhir seneti tisa ve semâne mi’e",
+      "translation": {
+        "tr": "Bu mübarek yapının inşası, zayıf kul Ali bin Hüseyin’in eliyle tamamlanmıştır. Allah her ikisini de bağışlasın. Rebiyülahir 809 (Eylül 1406).",
+        "en": "The construction of this blessed structure was completed by the hands of the weak servant Ali bin Hüseyin. May Allah forgive them both. Rabi al-Akhir 809 (September 1406)."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 809,
+        "gregorian": "1406 (Eylül)"
+      },
+      "note": {
+        "tr": "Kitap dili ve yeri belirtmez.",
+        "en": "The book does not name the language or the location."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "204-205"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1406,
+      "date": null,
+      "hijri": "Muharrem 809",
+      "type": "construction",
+      "title": {
+        "tr": "Emir Süleyman tarafından yaptırıldı (H. Muharrem 809 / M. Haziran 1406)",
+        "en": "Built by Emir Süleyman (AH Muharram 809 / AD June 1406)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "id": "tamamlanma",
+      "year": 1406,
+      "date": null,
+      "hijri": "Rebiyülahir 809",
+      "type": "construction",
+      "title": {
+        "tr": "İnşa Ali bin Hüseyin eliyle tamamlandı (Rebiyülahir 809 / Eylül 1406)",
+        "en": "Construction completed by Ali bin Hüseyin (Rabi al-Akhir 809 / September 1406)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "204-205"
+        }
+      ]
+    },
+    {
+      "id": "samdan-1761",
+      "year": 1761,
+      "date": null,
+      "hijri": "1175",
+      "type": "record",
+      "title": {
+        "tr": "Mütevelli Abdurrahman Efendi türbeye iki kıymetli şamdan koydu",
+        "en": "Trustee Abdurrahman Efendi placed two valuable candlesticks in the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "206"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1618",
+      "year": 1618,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Çeşitli tamirat",
+        "en": "Various repairs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1640",
+      "year": 1640,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Çeşitli tamirat",
+        "en": "Various repairs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1649",
+      "year": 1649,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Çeşitli tamirat",
+        "en": "Various repairs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1669",
+      "year": 1669,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Çeşitli tamirat",
+        "en": "Various repairs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1780",
+      "year": 1780,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Çeşitli tamirat",
+        "en": "Various repairs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1825",
+      "year": 1825,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Çeşitli tamirat",
+        "en": "Various repairs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1846",
+      "year": 1846,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Çeşitli tamirat",
+        "en": "Various repairs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": "1271",
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde yalnızca sofa kubbeleri zarar gördü; gerekli onarımlar yapıldı",
+        "en": "In the 1855 earthquake only the portico domes were damaged; necessary repairs were made"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-kesif-1884",
+      "year": 1884,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Türbe \"Pandalaki Kalfa\" tarafından yeniden keşfedildi",
+        "en": "The tomb was rediscovered by \"Pandalaki Kalfa\""
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1892",
+      "year": 1892,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "1892-1895 onarımı: revak ayakları sökülüp yeniden yapıldı, iki sütun başlığı yenilendi, kubbe ve kemerler özgün biçimine uygun yeniden inşa edildi",
+        "en": "1892-1895 repair: portico piers dismantled and rebuilt, two column capitals renewed, dome and arches rebuilt in original form"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "esya-1930",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1930'lu yılların başında bazı değerli eşyalar İstanbul'daki Evkaf Müzesi'ne nakledildi, bir kısmı kayboldu",
+        "en": "In the early 1930s some valuable items were moved to the Foundations Museum in Istanbul, some were lost"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "206"
+        }
+      ],
+      "note": {
+        "tr": "Kitap '1930'lu yılların başı' der; yıl yaklaşık gösterimdir.",
+        "en": "The book says 'early 1930s'; the year is approximate."
+      }
+    },
+    {
+      "id": "unesco",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Külliye UNESCO Dünya Mirası Alanı olarak tescillendi",
+        "en": "Complex registered as UNESCO World Heritage Site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "orttu-calindi-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Sanduka örtüsü çalındı",
+        "en": "The sarcophagus cover was stolen"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "2017-2019 Bursa Büyükşehir Belediyesi ve Vakıflar Bölge Müdürlüğü iş birliğiyle kapsamlı restorasyon",
+        "en": "2017-2019 comprehensive restoration by Bursa Metropolitan Municipality and the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "yeni-ortu-2024",
+      "year": 2024,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bursa Olgunlaşma Enstitüsü'nde aslına uygun hazırlanan yeni sanduka örtüsü Mayıs 2024'te yerine konuldu",
+        "en": "A new sarcophagus cover made to the original by the Bursa Maturation Institute was put in place in May 2024"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "207"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "revakli-giris",
+      "title": {
+        "tr": "İlk revaklı türbe",
+        "en": "The first arcaded tomb"
+      },
+      "hint": {
+        "tr": "Üç kubbeli revak ve iki bordo sütun; kitaba göre Osmanlı'da bu planın ilk örneğidir.",
+        "en": "A three-domed portico with two burgundy columns; according to the book the first example of this plan in the Ottoman Empire."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yildirim-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Yıldırım Bayezid Külliyesi'nin içinde, caminin kuzeyinde ve daha alçak kottadır.",
+        "en": "Within the Yıldırım Bayezid Complex, north of the mosque at a lower elevation."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "203"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "source",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, külliyenin içinde, caminin kuzeyinde ve daha alçak bir kotta duran kare planlı bir yapıdır. Duvarları tuğla ve taş sıralarının dönüşümlü örülmesiyle yapılmış, köşeleri beyaz mermerdir. Kuzey yüzünde üç kubbeli, açık kemerli bir revak vardır; ortada iki koyu bordo sütun yükselir. Kapı üzerinde altın yaldızlı kitabe parlar. İçeride yaklaşık 10,5 metre kenarlı kare bir mekân kubbeyle örtülüdür; ortada demir parmaklıkla çevrili sultanın sandukası, çevresinde daha küçük sandukalar vardır. Kubbe ve kemerlerde el boyaması bezemeler görülür.",
+      "en": "The tomb is a square building inside the complex, north of the mosque and at a lower elevation. Its walls alternate rows of brick and stone, with white marble corners. The north side has an open-arched portico with three domes and two dark burgundy columns in the middle. A gilded inscription shines above the door. Inside, a square space about 10.5 metres on a side is covered by a dome; the sultan's sarcophagus, surrounded by iron railings, stands in the middle with smaller sarcophagi around it. Hand-painted decoration is seen on the domes and arches."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

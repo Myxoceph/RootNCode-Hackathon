@@ -1,0 +1,1108 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-yesil-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yeşil Çelebi Mehmed Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yeşil Çelebi Mehmed Külliyesi bölümünden (Part B) yapay zekâ ile özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar eklenmeli (location.coordinates kaynakta yok, uydurulmadı).",
+      "Fotoğraflar eklenmeli (media, archive_media boş; media_folder henüz yok, match_photos.py ile bağlanacak).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Mahalle ve açık adres kaynakta yok.",
+      "Vakfiye metni kitapta yok; 'waqf.deed' boş.",
+      "Mimar adı kaynakta geçmiyor.",
+      "'İpek Han' ve 'Geyve Han' ilişkileri mevcut bursa-osmangazi-ipek-hani / bursa-osmangazi-geyve-hani kayıtlarına bağlandı; kitap ilçe vermediği için aynı yapılar olup olmadığı veri ekibince teyit edilmeli.",
+      "Müzenin ziyaret saatleri, giriş ücreti ve ziyaretçi ipuçları derlenmedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[muze-tasinma-1923]",
+        "note": "Kitap medreselerin kapanışını 1924 tarihli Tevhid-i Tedrisat Kanunu'na bağlarken Bursa Müzesi'nin 'medreseler kapatılınca boşalan' yapıya 1923'te taşındığını yazar. Sıralama çelişkilidir; iki yıl da kaynağa sadık kalınarak korundu."
+      },
+      {
+        "field": "sections[dershane]",
+        "note": "Yapının aslında iki katlı tasarlandığı ancak tek katının yapılabildiği kitapta 'değerlendirme' olarak verilir (kesin bilgi değil), bu yüzden probable işaretlendi."
+      },
+      {
+        "field": "dating",
+        "note": "İnşa tarihi bir aralık olarak (1414-1429) verilir; hicri karşılığı metinde yoktur. İlk müderris atamasının 1421'de olması aralığın içindedir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yeşil (Sultaniye) Medresesi",
+    "en": "Yeşil (Sultaniye) Madrasa"
+  },
+  "subtitle": {
+    "tr": "Osmanlı'nın ilk medreselerinden biri, bugün Türk İslam Eserleri Müzesi",
+    "en": "One of the first Ottoman madrasas, now the Turkish and Islamic Arts Museum"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sultaniye Medresesi",
+      "en": "Sultaniye Madrasa"
+    },
+    {
+      "tr": "Türk İslam Eserleri Müzesi",
+      "en": "Turkish and Islamic Arts Museum",
+      "note": "Yapının bugünkü işlevi; 1975'te bu adla ziyarete açıldı."
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [
+    "diger"
+  ],
+  "parent_id": "bursa-yildirim-yesil-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "medrese",
+    "Sultaniye",
+    "Çelebi Mehmed",
+    "Yeşil Külliye",
+    "müze",
+    "üç eyvanlı",
+    "şadırvan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "123"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Çelebi Sultan Mehmed'in 1414-1429 arasında yaptırdığı Sultaniye Medresesi, Yeşil Cami'nin batısında, üç eyvanlı açık avlulu bir plana sahiptir. Uzun süre yüksek ilmî itibarıyla anılmış, 1923'ten itibaren müze olarak kullanılmış ve bugün Türk İslam Eserleri Müzesi olarak hizmet vermektedir.",
+    "en": "Built by Çelebi Sultan Mehmed in 1414-1429 west of the Green Mosque, the Sultaniye Madrasa has a three-iwan open-courtyard plan. Long renowned for its scholarship, it has served as a museum since 1923 and today houses the Turkish and Islamic Arts Museum."
+  },
+  "legends": [
+    {
+      "id": "yilanli-hoca-osman-efendi",
+      "title": {
+        "tr": "Yılanlı Hoca Osman Efendi ile ilmî canlanma",
+        "en": "Revival under Yılanlı Hoca Osman Efendi"
+      },
+      "body": {
+        "tr": "Medresenin, Yılanlı Hoca Osman Efendi'nin müderris olarak göreve başlamasıyla ilmî canlılığını yeniden kazandığı rivayet edilir; sonraki yıllarda Bilal Efendi, Murteza Efendi, Aydınî Mehmed Efendi, Müftü Hacı Refik, İbrahim Kerîm, İbrahim Dağıstanî ve Tâhir Efendi gibi âlimler burada yetişmiştir.",
+        "en": "It is said that the madrasa regained its scholarly vitality when Yılanlı Hoca Osman Efendi became its teacher; later scholars such as Bilal Efendi, Murteza Efendi, Aydınî Mehmed Efendi, Müftü Hacı Refik, İbrahim Kerîm, İbrahim Dağıstanî and Tahir Efendi were educated here."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "130-131"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan size"
+      },
+      "value": "36,00 x 38,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "125"
+        }
+      ]
+    },
+    {
+      "key": "oda_sayisi",
+      "label": {
+        "tr": "Revaklara açılan oda sayısı",
+        "en": "Rooms opening onto arcades"
+      },
+      "value": 13,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "125"
+        }
+      ],
+      "note": {
+        "tr": "Biri müderris odasıdır.",
+        "en": "One is the teacher's room."
+      }
+    },
+    {
+      "key": "ogrenci_sayisi_vakfiye",
+      "label": {
+        "tr": "Vakfiyedeki öğrenci sayısı",
+        "en": "Students per charter"
+      },
+      "value": 30,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "key": "ogrenci_sayisi_1906",
+      "label": {
+        "tr": "1906'daki öğrenci sayısı",
+        "en": "Students in 1906"
+      },
+      "value": 70,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "131"
+        }
+      ]
+    },
+    {
+      "key": "muderris_gunluk_ucret",
+      "label": {
+        "tr": "Müderris günlük ücreti",
+        "en": "Teacher's daily pay"
+      },
+      "value": 20,
+      "unit": "dirhem",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "key": "ogrenci_gunluk_ucret",
+      "label": {
+        "tr": "Öğrenci günlük ücreti",
+        "en": "Student's daily pay"
+      },
+      "value": 1,
+      "unit": "dirhem",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_capi",
+      "label": {
+        "tr": "Dershane kubbesi çapı",
+        "en": "Classroom dome diameter"
+      },
+      "value": 10,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "key": "sadirvan_capi",
+      "label": {
+        "tr": "Şadırvan çapı",
+        "en": "Shadirvan diameter"
+      },
+      "value": 2.6,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "127"
+        }
+      ],
+      "note": {
+        "tr": "12 kenarlı",
+        "en": "12-sided"
+      }
+    },
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Avlu revağı ayak sayısı",
+        "en": "Courtyard piers"
+      },
+      "value": 18,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "127"
+        }
+      ],
+      "note": {
+        "tr": "Devşirme sütunlar da vardır; revak on dokuz bölümlüdür.",
+        "en": "Includes spolia columns; the arcade has nineteen sections."
+      }
+    },
+    {
+      "key": "revak_bolum_sayisi",
+      "label": {
+        "tr": "Revak bölüm sayısı",
+        "en": "Arcade sections"
+      },
+      "value": 19,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "127"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Çelebi Mehmed",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Fenarîzâde Mehmed Şah Efendi",
+      "role": {
+        "tr": "İlk müderris (H. 824 / M. 1421)",
+        "en": "First professor (AH 824 / AD 1421)"
+      }
+    },
+    {
+      "name": "Yılanlı Hoca Osman Efendi",
+      "role": {
+        "tr": "Müderris (rivayete göre medresenin canlanmasını sağladı)",
+        "en": "Professor (said to have revived the madrasa)"
+      }
+    },
+    {
+      "name": "Tahtakıranzâde Sâdık Efendi",
+      "role": {
+        "tr": "Son müderris, H. 1347 / M. 1928'de öldü",
+        "en": "Last professor, died AH 1347 / AD 1928"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1414-1429",
+      "year": 1414,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Medresenin inşası (1414-1429)",
+        "en": "Construction of the madrasa (1414-1429)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "123"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı; inşa 1429'a kadar sürmüştür.",
+        "en": "Start year; construction lasted until 1429."
+      }
+    },
+    {
+      "id": "ilk-muderris-1421",
+      "year": 1421,
+      "date": null,
+      "hijri": "824",
+      "type": "record",
+      "title": {
+        "tr": "İlk müderris Fenarîzâde Mehmed Şah Efendi atandı",
+        "en": "First professor Fenarîzâde Mehmed Şah Efendi appointed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "130"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1573",
+      "year": 1573,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1573)",
+        "en": "Repair (1573)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1583",
+      "year": 1583,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1583)",
+        "en": "Repair (1583)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1617",
+      "year": 1617,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1617)",
+        "en": "Repair (1617)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1632",
+      "year": 1632,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1632)",
+        "en": "Repair (1632)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1645",
+      "year": 1645,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1645)",
+        "en": "Repair (1645)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1670",
+      "year": 1670,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1670)",
+        "en": "Repair (1670)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1678",
+      "year": 1678,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1678)",
+        "en": "Repair (1678)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1683",
+      "year": 1683,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1683)",
+        "en": "Repair (1683)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1684",
+      "year": 1684,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1684)",
+        "en": "Repair (1684)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1743",
+      "year": 1743,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1743)",
+        "en": "Repair (1743)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1762",
+      "year": 1762,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1762)",
+        "en": "Repair (1762)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1767",
+      "year": 1767,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1767)",
+        "en": "Repair (1767)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1770",
+      "year": 1770,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1770)",
+        "en": "Repair (1770)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1775",
+      "year": 1775,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1775)",
+        "en": "Repair (1775)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1818",
+      "year": 1818,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1818)",
+        "en": "Repair (1818)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "onarim-1825",
+      "year": 1825,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1825)",
+        "en": "Repair (1825)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'çeşitli nedenlerle' der; kapsamı belirtmez.",
+        "en": "The book says 'for various reasons' without giving the scope."
+      }
+    },
+    {
+      "id": "ogrenci-1906",
+      "year": 1906,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Belgelerde 70 öğrenci kayıtlı",
+        "en": "Documents record 70 students"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "131"
+        }
+      ]
+    },
+    {
+      "id": "muze-tasinma-1923",
+      "year": 1923,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Bursa Müzesi medreseye taşındı",
+        "en": "Bursa Museum moved into the madrasa"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Kitap medreselerin kapanışını 1924 kanununa bağlar, taşınmayı ise 1923 olarak verir; bkz. data_quality_notes.",
+        "en": "The book ties closure to the 1924 law but dates the move to 1923; see data_quality_notes."
+      }
+    },
+    {
+      "id": "tevhid-i-tedrisat-1924",
+      "year": 1924,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tevhid-i Tedrisat Kanunu ile medrese kapandı",
+        "en": "Madrasa closed under the Tevhid-i Tedrisat Law"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ]
+    },
+    {
+      "id": "son-muderris-1928",
+      "year": 1928,
+      "date": null,
+      "hijri": "1347",
+      "type": "record",
+      "title": {
+        "tr": "Son müderris Tahtakıranzâde Sâdık Efendi vefat etti",
+        "en": "Last professor Tahtakıranzâde Sâdık Efendi died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1972-1975",
+      "year": 1972,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı onarım; 1975'te Türk İslam Eserleri Müzesi olarak açıldı",
+        "en": "Extensive restoration; opened in 1975 as the Turkish Islamic Arts Museum"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı; kitap 1974 onarımını da ayrıca sayar.",
+        "en": "Start year; the book also lists a 1974 repair."
+      }
+    },
+    {
+      "id": "restorasyon-2016-2020",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon ve teşhir yenileme (2016 sonu - 2020 sonu)",
+        "en": "Restoration and renewal of displays (late 2016 - late 2020)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sadirvan",
+      "title": {
+        "tr": "Avludaki şadırvan",
+        "en": "Courtyard shadirvan"
+      },
+      "hint": {
+        "tr": "12 kenarlı şadırvanı ve devşirme sütunlu revakları arayın.",
+        "en": "Look for the 12-sided shadirvan and the arcade with spolia columns."
+      },
+      "section_id": "giris-ve-avlu"
+    },
+    {
+      "feature": "dershane-kubbesi",
+      "title": {
+        "tr": "Dershane kubbesi",
+        "en": "Classroom dome"
+      },
+      "hint": {
+        "tr": "Sekizgen kasnaklı, 10 m çaplı kurşun kaplı kubbe.",
+        "en": "A 10 m lead-covered dome on an octagonal drum."
+      },
+      "section_id": "dershane"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yesil-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Yeşil Cami'nin batısında yer alan külliye yapısı.",
+        "en": "A building of the complex, west of the Green Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ipek-hani",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Kitap 'İpek Han'ın medreseye tahsis edildiğini söyler; ilçesi metinde yazmaz, mevcut kayıtla aynı yapı olduğu varsayıldı.",
+        "en": "The book says the 'İpek Han' was allotted to the madrasa; the district is not given in the text, assumed to be the same building as the existing record."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-geyve-hani",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Kitap 'Geyve Han'ın medreseye tahsis edildiğini söyler; ilçesi metinde yazmaz, mevcut kayıtla aynı yapı olduğu varsayıldı.",
+        "en": "The book says the 'Geyve Han' was allotted to the madrasa; the district is not given in the text, assumed to be the same building as the existing record."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "123"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Bugün Türk İslam Eserleri Müzesi olarak hizmet vermektedir.",
+      "en": "Serves today as the Turkish and Islamic Arts Museum."
+    },
+    "visitor_tips": [],
+    "notes_source": "source"
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yeşil Medrese, kareye yakın planlı, tuğla ve moloz taş sıralarından örülmüş bir yapıdır. Kuzeydeki sivri kemerli, yüksek ve geniş girişin üzeri süslemeli ahşap bir tavanla kapalıdır; mermer ana kapının alınlığı turkuaz ve deniz mavisi çinilerle bezelidir. İçeride sivri kemerli revaklarla çevrili dikdörtgen bir avlu vardır; ortasında on iki kenarlı bir şadırvan bulunur. Revakların ardında tonozlu, kiremit kaplı talebe hücreleri sıralanır. Güneyde, sekizgen bir kasnak üzerinde kurşun kaplı geniş bir kubbeyle örtülü kare planlı dershane dışa taşar.",
+      "en": "The Yeşil Madrasa has a nearly square plan, built of alternating brick and rubble stone. The tall, wide, pointed-arched entrance on the north is covered by an ornamented wooden ceiling; the pediment of the marble main door is decorated with turquoise and sea-blue tiles. Inside is a rectangular courtyard ringed by pointed-arched arcades, with a twelve-sided shadirvan in the centre. Vaulted, tiled student cells line the arcades. On the south, the square classroom projects outward under a lead-covered dome on an octagonal drum."
+    },
+    "audio_description_source": "source_text"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": [],
+  "dating": {
+    "display": {
+      "tr": "M. 1414-1429",
+      "en": "AD 1414-1429"
+    },
+    "start_year": 1414,
+    "end_year": 1429,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap yapının Çelebi Sultan Mehmed tarafından 1414-1429 yılları arasında inşa ettirildiğini belirtir.",
+      "en": "The book states it was built by Çelebi Sultan Mehmed between 1414 and 1429."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "123"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Çelebi Mehmed",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "123"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Çelebi Mehmed Külliyesi vakfı",
+    "deed": null,
+    "conditions": {
+      "tr": "Müderris dinî ilimlerde yetkin olmalı, zamanını boşa harcamamalı ve cehalete müsamaha göstermemelidir. Müderrise günde 20 dirhem, ayda 3 müd buğday ve 1 müd arpa verilir. Öğrenci sayısı 30'dur; her öğrenciye günde 1 dirhem ücret, zaviyeden iki öğün yemek ve günlük kandil yağı için üçer dirhem ayrılır; kandil yağı bedeli tüm öğrenciler arasında eşit paylaşılır.",
+      "en": "The teacher must be competent in religious sciences, must not waste his time and must not tolerate ignorance. He receives 20 dirhams a day plus 3 müd of wheat and 1 müd of barley a month. There are 30 students, each paid 1 dirham a day with two meals from the zawiya and 3 dirhams set aside for daily lamp oil, shared equally among all students."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "123"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Çelebi Sultan Mehmed tarafından 1414-1429 yılları arasında inşa ettirilen ve 'Sultaniye Medresesi' olarak da bilinen yapı Yeşil Külliyesi bünyesinde, Yeşil Cami'nin batısında yer alır. Osmanlı eğitim kurumlarının ilk örneklerinden biri olan medrese, dönemin ilmî yapısını ve vakıf sistemi içindeki yerini ortaya koyan önemli bir örnektir.",
+        "en": "Built by Çelebi Sultan Mehmed between 1414 and 1429 and also known as the 'Sultaniye Madrasa', the structure lies within the Yeşil Complex, west of the Green Mosque. One of the first Ottoman educational institutions, it reveals the intellectual framework of the period and its place in the foundation system."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf ve Gelirler",
+        "en": "Endowment and Income"
+      },
+      "body": {
+        "tr": "Medresenin giderleri, külliyenin diğer yapıları gibi Çelebi Mehmed'in vakfettiği mülklerle karşılanmıştır; 'İpek Han' ve 'Geyve Han' gibi gelir getiren yapılar medreseye tahsis edilmiştir. Vakfiyede müderrisin dinî ilimlerde yetkin olması, zamanını boşa harcamaması ve cehalete müsamaha göstermemesi belirtilmiştir. Müderrise günde yirmi dirhem, ayda üç müd buğday ve bir müd arpa verilmiştir. Öğrenci sayısı otuzdur; her öğrenciye günde bir dirhem, zaviyeden iki öğün yemek ve kandil yağı için üçer dirhem öngörülmüş, yağ bedelinin eşit paylaşılacağı açıkça belirtilmiştir.",
+        "en": "The madrasa's expenses, like the rest of the complex, were met by properties donated by Çelebi Mehmed; income-generating buildings such as the 'İpek Han' and 'Geyve Han' were allotted to it. The charter says the teacher should be competent in religious sciences, not waste his time and not tolerate ignorance, and sets his pay at 20 dirhams a day plus 3 müd of wheat and 1 müd of barley monthly. There are thirty students, each paid one dirham a day with two meals from the zawiya and three dirhams for lamp oil, shared equally."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-yapi",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Yapım",
+        "en": "Plan and Construction"
+      },
+      "body": {
+        "tr": "Medrese 36,00 x 38,50 m ölçüsünde, kareye yakın planlıdır. Üç eyvanlı şemasıyla Anadolu Selçuklu açık avlulu medreselerinin devamı niteliğindedir. Dikdörtgen avlunun doğu, batı ve kuzeyinde tonozlu revaklı alanlar bulunur; bu revaklara açılan toplam 13 odadan biri müderris odasıdır. Yapının yanlarında ikişer eyvan ve helalar, güneyde dışa taşkın bir dershane bölümü yer alır. Beden duvarlarında tuğla ve moloz taş almaşık düzende kullanılmış, yapı yığma teknikle yapılmıştır; köşelerde ve dershanede küfeki taşı tercih edilmiştir.",
+        "en": "The madrasa has a nearly square plan of 36.00 x 38.50 m. Its three-iwan scheme continues the open-courtyard madrasas of the Anatolian Seljuk period. Vaulted arcades run along the east, west and north of the rectangular courtyard; of the 13 rooms opening onto them, one is the teacher's room. Each side has two iwans and toilets, and the classroom projects outward at the south. Walls are alternating brick and rubble stone in masonry; limestone is used at the corners and in the classroom."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "125-127"
+        }
+      ]
+    },
+    {
+      "id": "giris-ve-avlu",
+      "order": 4,
+      "title": {
+        "tr": "Giriş ve Avlu",
+        "en": "Entrance and Courtyard"
+      },
+      "body": {
+        "tr": "Kuzey cephede sivri kemerli, yüksek açıklıklı geniş bir giriş vardır; üzeri kiremit örtülü çıtalardan oluşan süslemeli ahşap bir tavanla kapatılmıştır. Girişten sonra tonoz kubbeyle örtülü bir hole geçilir; iki yanda Bursa kemeri biçiminde iki niş bulunur. Mermer ana kapı sivri kemerli ve alınlıklıdır; çift kanatlı ahşap kapının alınlığı ve kemer iç yüzeyleri turkuaz ve deniz mavisi çinilerle bezelidir. Girişin iki yanında dikdörtgen planlı eyvanlar vardır; batı eyvanı çapraz tonozludur ve iç mekânda çini bezemenin yanında tavanlarda çeşitli desenler ve rumi desenli zengin bir bordür kullanılmıştır. Devşirme sütunların da bulunduğu on sekiz ayağın taşıdığı revaklı avlunun ortasında 12 kenarlı, 2,60 m çapında fıskiyeli bir şadırvan vardır. Yükseltilmiş taş platform üzerindeki sütunlarla oluşturulan on dokuz bölümlü revak sivri kemerlerle çevrilmiş, bölümler tonozla örtülüp kiremit çatıyla tamamlanmıştır. Avlu çevresindeki, dışa bakan pencereli ve içinde ocak bulunan talebe hücreleri de tonozlu ve kiremit kaplıdır.",
+        "en": "On the north façade is a wide pointed-arch entrance with a high opening, covered by an ornamented wooden ceiling of tiled slats, leading to a hall with a vaulted dome and two Bursa-arch niches. The marble main door has a pointed arch and pediment; the pediment and arch interior of the double-leaf wooden door are decorated with turquoise and sea-blue tiles. Rectangular iwans flank the entrance; the west iwan has a cross vault, and the interior combines tile decoration, patterned ceilings and a rich rumi border. In the centre of the courtyard, whose arcade rests on eighteen piers including spolia columns, stands a 12-sided shadirvan with fountain jets, 2.60 m in diameter. The nineteen-section arcade on a raised stone platform has pointed arches, vaults and a tiled roof. The student cells around the courtyard have outward windows and a hearth inside, and are vaulted and tiled."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "id": "dershane",
+      "order": 5,
+      "title": {
+        "tr": "Dershane ve Süslemeler",
+        "en": "Classroom and Decoration"
+      },
+      "body": {
+        "tr": "Kare planlı dershane, sekizgen kasnak üzerine oturan, 10 m çapında kurşun kaplı bir kubbeyle örtülüdür. Dershane kot farkıyla yükseltilmiş ve iki yönlü merdivenle erişilecek biçimde planlanmıştır. Vakfiyedeki öğrenci sayısı da düşünüldüğünde bu tercih, yapının aslında iki katlı tasarlandığı ancak yalnızca bir katının yapılabildiği yönündeki değerlendirmeleri destekler. Yapıda zengin çini ve ahşap işçilik dikkat çeker. Tuğla kubbe kasnağının her cephesinde pencere açılmıştır; pencereler beden duvarlarındaki yaklaşık 30 cm derinliğinde ve 1 m genişliğindeki dışa taşkın nişlere yerleştirilmiştir. Dikdörtgen taş söveli, sivri kemerli pencerelerin üstünde çini bezemeli alınlıklar vardır.",
+        "en": "The square classroom is covered by a 10 m lead-covered dome on an octagonal drum. It is raised for the level difference and reached by a two-way staircase. Given the student number in the charter, this supports the view that the building was designed with two storeys but only one was built. Rich tile and woodwork stand out. Each façade of the brick drum has windows, set in projecting niches about 30 cm deep and 1 m wide; pointed-arch windows with rectangular stone frames have tile-decorated pediments."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "127, 130"
+        }
+      ]
+    },
+    {
+      "id": "ilmi-itibar",
+      "order": 6,
+      "title": {
+        "tr": "İlmî İtibar ve Müderrisler",
+        "en": "Scholarly Reputation and Professors"
+      },
+      "body": {
+        "tr": "'Sultaniye Medresesi' adıyla tüm İslam coğrafyasında tanınan yapı tarih boyunca yüksek ilmî itibarıyla öne çıkmıştır; burada müderrislik büyük bir ayrıcalık sayılmış, azametiyle dikkat çeken kişilere 'Sultaniye Medresesi'ne müderris mi oldun?' denilerek latifeler yapılmıştır. İlk müderris, zorlu bir sınavı geçip H. 824 / M. 1421'de atanan Fenarîzâde Mehmed Şah Efendi'dir. Sonraki müderrisler arasında Bursa kadılığı da yapmış Yusuf Bâlî Efendi, Molla Yegânzâde Mehmed Şah Efendi, Alâüddin Ali, Molla Hüsrev, Molla Hayâlî, İstanbul'un ilk kadısı Hızır Bey, Muslihiddin Mustafa, tarihçi Neşrî Mehmed Efendi, Bağdat Kadısı Sinan Efendi, Şeyhülislam Muhyiddin Çelebi, Sadullah Efendi ve Ebüssuûd Efendi sayılır. Taşköprülü Muslihuddin Mustafa, Ali et-Tûsî, Şeyhülislam Seyyid Mehmed Efendi, Hoca Sâdeddin Efendi, Mekke Kadısı Mehmed bin Yusuf Efendi ve Baş Müderris Seyyid Hacı Mehmed burada ders veren önde gelen âlimler; Eşrefoğlu Rûmî ve Zenbilli Ali Efendi burada yetişenlerdendir. Bazı dönemlerde öğrenci bulmakta zorlanmış, hatta bir süre talebesiz kalmıştır. Her odada bir öğrenci öngörülmesine rağmen odalar bazen iki veya daha fazla talebe tarafından paylaşılmış; 1906 belgelerinde 70 öğrenci kayıtlıdır.",
+        "en": "Known across the Islamic world as the 'Sultaniye Madrasa', it was celebrated for its scholarship; teaching here was a great privilege, and people with an air of importance were teased with 'Did you become a professor at the Sultaniye Madrasa?'. The first professor, Fenarîzâde Mehmed Şah Efendi, passed a difficult exam and was appointed in AH 824 / AD 1421. Later professors include Yusuf Bâlî Efendi (also Qadi of Bursa), Molla Yegânzâde Mehmed Şah Efendi, Alâüddin Ali, Molla Hüsrev, Molla Hayâlî, Hızır Bey (first Qadi of Istanbul), Muslihiddin Mustafa, the historian Neşrî Mehmed Efendi, Sinan Efendi, Shaykh al-Islam Muhyiddin Çelebi, Sadullah Efendi and Ebüssuûd Efendi. Scholars who taught here include Taşköprülü Muslihuddin Mustafa, Ali et-Tûsî, Shaykh al-Islam Seyyid Mehmed Efendi, Hoca Sadeddin Efendi, Mehmed bin Yusuf Efendi and Chief Mudarris Seyyid Hacı Mehmed; Eşrefoğlu Rûmî and Zenbilli Ali Efendi studied here. At times it struggled to find students. Though one student per room was intended, rooms were sometimes shared; 1906 documents record 70 students."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "130-131"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-muze",
+      "order": 7,
+      "title": {
+        "tr": "Onarımlar ve Müze Kullanımı",
+        "en": "Repairs and Museum Use"
+      },
+      "body": {
+        "tr": "Medrese 1573, 1583, 1617, 1632, 1645, 1670, 1678, 1683, 1684, 1743, 1762, 1767, 1770, 1775, 1818, 1825 ve 1974 yıllarında onarılmıştır. 1924 tarihli Tevhid-i Tedrisat Kanunu ile medreseler kapatılınca eğitim işlevini yitirmiştir; son müderrisi H. 1347 / M. 1928'de ölen Tahtakıranzâde Sâdık Efendi'dir. 19 Ağustos 1902'de Bursa Erkek Lisesi binasında kurulan Bursa Müzesi 1923'te medreseye taşınmış, yapı 1972'ye kadar Bursa Arkeoloji Müzesi olarak hizmet vermiştir. 1972'de başlayan kapsamlı onarımın ardından 1975'te Türk İslam Eserleri Müzesi adıyla ziyarete açılmıştır. 2016 sonlarında başlayan ve 2020 sonunda biten restorasyonla teşhir alanları yenilenmiş, yapı müze olarak sürmektedir. Müzede XII. yüzyıldan XX. yüzyıla tarihli maden, seramik, ahşap işleme, silah, el yazması, İslami sikke, kitabe ve etnografik eserler talebe hücreleri, revaklar ve bahçede sergilenir; bahçede çok sayıda mezar taşı, kitabe ve mimari parça da bulunur.",
+        "en": "The madrasa was repaired in 1573, 1583, 1617, 1632, 1645, 1670, 1678, 1683, 1684, 1743, 1762, 1767, 1770, 1775, 1818, 1825 and 1974. It lost its educational function when madrasas were closed under the Tevhid-i Tedrisat Law of 1924; its last teacher, Tahtakıranzâde Sâdık Efendi, died in AH 1347 / AD 1928. The Bursa Museum, founded on 19 August 1902 in the Bursa Boys' High School building, moved here in 1923 and served as the Bursa Archaeological Museum until 1972. After extensive restoration begun in 1972 it opened in 1975 as the Turkish Islamic Arts Museum. Restoration from late 2016 to late 2020 renewed the displays and it remains a museum. It exhibits metalwork, ceramics, woodwork, weapons, manuscripts, Islamic coins, inscriptions and ethnographic items from the 12th to 20th centuries in the student cells, arcades and garden, which also holds many tombstones, inscriptions and architectural fragments."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "132-133"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1010 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-emir-sultan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Emir Sultan",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Emir Sultan Külliyesi bölümünden (s. 19-59) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup photos match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Yapım tarihi kesin değil (kaynakta 'XV. yüzyıl'); 'dating.start_year' boş bırakıldı. Banî konusundaki farklı anlatımlar (Hundi Fatma Hatun / Hoca Kasım / II. Murad) kaynaklarla teyit edilmeli.",
+      "Mimar kaynakta yok; 'architect' null.",
+      "Hat levhalarının hattatları ve minber/kürsü hakkında ayrıntı kitapta yok.",
+      "Mihrap kavsarası ve Zümer/Âl-i İmrân ayetlerinin çevirisi kitapta verilmemiş (kitabe kaydında translation null)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Banî için üç anlatım var: Hundi Fatma Hatun (ana anlatım), tüccar Hoca Kasım (rivayet; sonradan Sinan Bey iki kubbe ekledi) ve imaret/Cuma mescidi için II. Murad (Behiştî Tarihi). 'founder' ana anlatıma göre yazıldı ve 'disputed' işaretlendi."
+      },
+      {
+        "field": "timeline[repair-1742]",
+        "note": "Camiye ait onarım listesinde 1742, türbe listesinde 1743 geçiyor (ayrıca Beşir Ağa çeşmesi H. 1156 / M. 1743 tarihli ve cami ile türbeyi onardığını belirtiyor). Aynı onarım olabilir ama kitap bunu söylemiyor; her iki değer korundu."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Cami bölümü 1855 depremi sonrası Abdülmecid dönemi onarımından söz ediyor; türbe bölümünde Abdülmecid'in inşası 1845'e (depremden önce) tarihleniyor. Kaynağa sadık kalındı; aynı olay olup olmadığı belirsiz."
+      },
+      {
+        "field": "inscriptions[ihya-kitabesi-1804]",
+        "note": "Başlık/ilk anlatım 'H. 1219 / M. 1804-1805' diyor; kitabenin son mısrasında ve mealinde 'H. 1219 / M. 1804' yazıyor. H. 1219 yılı 1804-1805'e denk gelir; fark yuvarlama olabilir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Emir Sultan Camii",
+    "en": "Emir Sultan Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-emir-sultan-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "cami",
+    "Emîr Sultan",
+    "ampir",
+    "rokoko",
+    "Osmanlı Barok",
+    "kalem işi",
+    "çift minare",
+    "III. Selim"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Emirsultan Mahallesi",
+    "address": "Doyuran Caddesi No:1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "19"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyıl başı (yapının yeniden inşası H. 1219 / M. 1804-1805)",
+      "en": "Early 15th century (rebuilt AH 1219 / AD 1804-1805)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap 'XV. yüzyılın başlarında, erken Osmanlı mimari üslubunda inşa edildi' diyor; kesin yıl verilmiyor. Mevcut yapı 1804-1805 yeniden inşasına aittir.",
+      "en": "The book says it was built in the early 15th century in the early Ottoman style without giving a year. The present building dates from the 1804-1805 reconstruction."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "20, 26"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hundi Fatma Hatun",
+    "role": "banî (Emîr Buhârî adına)",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "20-21"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Emir Sultan Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "22-23"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Emîr Sultan adına XV. yüzyılda yaptırılan, 1795 depreminden sonra III. Selim'in emriyle 1804-1805'te ampir ve rokoko üsluplarının birleşimiyle yeniden inşa edilen, tek kubbeli ve çift minareli cami.",
+    "en": "A single-domed, double-minareted mosque built in the 15th century in the name of Emîr Sultan and rebuilt in 1804-1805 by order of Selim III after the 1795 earthquake, in a combination of Empire and Rococo styles."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Emir Sultan Camii, Yıldırım ilçesi, Emirsultan Mahallesi, Doyuran Caddesi No:1 adresinde, Emir Sultan Külliyesi'nin en önemli unsurlarından biridir. Erken Osmanlı mimari üslubunda XV. yüzyılın başlarında inşa edilen yapı, zamanla yangın, deprem ve isyan gibi etkenlerle önemli değişimler geçirmiş; 1804-1805'te yeniden inşa edilmiştir.",
+        "en": "The Emir Sultan Mosque, at Doyuran Street No. 1, Emirsultan Neighborhood, Yıldırım District, is one of the most important elements of the Emir Sultan Complex. Built in the early Ottoman style in the early 15th century, it has been significantly altered by fire, earthquake and rebellion and was rebuilt in 1804-1805."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "19, 26"
+        }
+      ]
+    },
+    {
+      "id": "yapim-ve-banisi",
+      "order": 2,
+      "title": {
+        "tr": "Yapımı ve Banisi",
+        "en": "Construction and Founder"
+      },
+      "body": {
+        "tr": "Cami, XV. yüzyılda Sultan Yıldırım Bayezid'in kızı ve Emîr Sultan'ın eşi Hundi Fatma Hatun tarafından Emîr Buhârî (Emîr Sultan) adına inşa ettirilmiştir. Başka bir rivayete göre tüccar Hoca Kasım, Emîr Sultan'a arakıye hediye etmiş ve karşılığında bir akçe almış; ticarette büyük servet kazanınca bunu Emîr Sultan'ın duasına bağlayarak tek kubbeli bir cami yaptırmıştır. Daha sonra Uç Beyi Sinan Bey'in girişimiyle kıble yönüne iki kubbe daha eklenerek yapı genişletilmiştir. Behiştî Tarihi'ne göre ise imaret, Cuma mescidiyle birlikte II. Murad tarafından yaptırılmıştır.",
+        "en": "The mosque was built in the 15th century by Hundi Fatma Hatun, daughter of Sultan Yıldırım Bayezid and wife of Emîr Sultan, in the name of Emîr Buhârî (Emîr Sultan). According to another account, the merchant Hoca Kasım gave Emîr Sultan an arakiye cap and received a silver coin in return; having grown wealthy in trade he attributed his success to Emîr Sultan's prayers and had a single-domed mosque built. Later, on the initiative of Uç Bey Sinan Bey, two more domes were added toward the qibla. According to the Behiştî History, the imaret was built by Murad II together with the Friday Mosque."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "20-21"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 3,
+      "title": {
+        "tr": "İlk Plan ve Adlandırma",
+        "en": "Original Plan and Naming"
+      },
+      "body": {
+        "tr": "Birçok kaynakta yapı için \"mescit\" denmesi harim bölümünün daha küçük olduğu izlenimini verir ve yapının erken Osmanlı camilerindeki tabhaneli/zaviyeli plan tipine göre inşa edilmiş olabileceği düşüncesini destekler; yapı XVI. yüzyılın başlarından itibaren tarihî kaynaklarda \"cami\" olarak anılmaya başlamıştır. İlk plana dair farklı görüşler vardır: bazı araştırmacılar yapının altı kubbeli olduğunu, bazıları Ulucami'ye benzer biçimde dikdörtgen planlı ve harimi altı kare tabanlı kubbeyle örtülü olduğunu, bir diğer görüş ise 1507 tarihli bir belgeye dayanarak ilk inşada tek kubbeli olduğunu, sonradan üç kubbeli ve revaklı bir son cemaat yerinin eklendiğini savunur.",
+        "en": "The use of the term \"masjid\" in many sources suggests a smaller prayer hall and supports the idea that the building followed the hospice/zawiya plan type of early Ottoman mosques; from the early 16th century it is called a \"mosque\" in historical sources. There are different views on the original plan: some researchers say it had six domes, others a rectangular plan like the Ulucami with the prayer hall covered by six square-based domes, and another view, based on a 1507 document, holds that it first had a single dome and was later expanded with a three-domed, porticoed narthex."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "25"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Yeniden İnşa",
+        "en": "Repairs and Rebuilding"
+      },
+      "body": {
+        "tr": "Cami 1571, 1598, 1604, 1617, 1670, 1742, 1761, 1766, 1786 ve 1789'da kapsamlı ya da sınırlı onarımlar geçirmiş, 1608 yılı Ramazan başındaki Celâlî isyanlarında zarar görmüştür. 1604 tarihli bir onarım kaydında iç mekân için İznik çinisi ısmarlandığının belirtilmesi, mihrabın ve bazı bölümlerin geçmişte çini kaplı olduğu kanaatini doğurmuştur. 1795 depreminde büyük yıkım gören cami III. Selim'in emriyle 1804-1805'te, ampir ve rokoko üsluplarının birleşimiyle özgün bir tasarımla yeniden inşa edilmiştir. Dârüssaâde Nazırı Moralı Beşir Ağa 1743 tarihli çeşmesinin kitabesine göre camiyi ve türbeyi de onartmıştır. 1855 depremi sonrası Abdülmecid döneminde ve 1868'de Abdülaziz döneminde yapılan onarımlar mimaride değişikliğe yol açmamış; her ikisine ilişkin kitabeler korunmuştur. 1891'de Hudâvendigâr Valisi Ahmed Münir Paşa döneminde cami ile avlu arasındaki kot farkı giderilmiş ve zemin mermerle kaplanmıştır. 2018-2022 arasında Vakıflar Genel Müdürlüğü cami ve türbede kapsamlı restorasyon yapmış, gerekli bölümlerde güçlendirme sonrası yapı yeniden ibadete açılmıştır.",
+        "en": "The mosque underwent extensive or limited repairs in 1571, 1598, 1604, 1617, 1670, 1742, 1761, 1766, 1786 and 1789 and was damaged in the Celali rebellions at the start of Ramadan 1608. A 1604 repair record says Iznik tiles were ordered for the interior, suggesting the mihrab and some sections were once tiled. After heavy destruction in the 1795 earthquake it was rebuilt in 1804-1805 by order of Selim III in a unique design combining Empire and Rococo styles. According to the inscription of his 1743 fountain, Dârüssaâde Minister Moralı Beşir Ağa also repaired the mosque and the tomb. Repairs after the 1855 earthquake under Abdülmecid and in 1868 under Abdülaziz did not change the architecture; inscriptions for both survive. In 1891, under Hudâvendigâr Governor Ahmed Münir Paşa, the level difference between mosque and courtyard was removed and the floor paved in marble. In 2018-2022 the General Directorate of Foundations carried out a comprehensive restoration of mosque and tomb and the building reopened for worship after reinforcement."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26, 34, 40, 36-37, 58"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-yeri",
+      "order": 5,
+      "title": {
+        "tr": "Revaklı Son Cemaat Yeri",
+        "en": "Porticoed Narthex"
+      },
+      "body": {
+        "tr": "Caminin kuzeybatı köşesinde imam odası, kuzeydoğu köşesinde müezzin odası bulunur. Revaklı son cemaat mahallinin iki yanında, revakların üzerindeki kadınlar mahfiline çıkan sekizer basamaklı merdivenler vardır. Giriş sahanlığı üzerindeki tonoz örtülü kubbede manzara resimleri dikkat çeker. Cami giriş kapısının doğu ve batısında kalem işi bezemeli birer mihrap nişi bulunur. Mermer söveli, iki kanatlı ahşap harim kapısının üzerinde III. Selim dönemine ait ihya kitabesi yer alır.",
+        "en": "There is an imam's room in the northwest corner and a muezzin's room in the northeast corner. On either side of the arcaded narthex, eight-stepped staircases lead to the women's gallery above the arcades. Landscape paintings decorate the vaulted dome above the entrance landing. East and west of the mosque entrance are two mihrab niches with hand-painted decoration. Above the two-leafed wooden prayer hall door with a marble frame is the Selim III restoration inscription."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "28-29"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 6,
+      "title": {
+        "tr": "Harim ve Kubbe",
+        "en": "Prayer Hall and Dome"
+      },
+      "body": {
+        "tr": "Beden duvarları alt pencerelerin üst seviyesine kadar kesme taş, üstü küfeki taş ve üç sıra tuğla ile örülmüştür. 15,20 × 15,20 m ölçülerindeki harim tek kubbeyle örtülüdür; kurşun kaplı kubbe, tromp ve kemerler arasındaki pandantiflerle geçiş sağlanan yuvarlak bir kasnağa oturur. Kubbenin ağırlığını toplam on üç duvar payandası taşır: biri kıble duvarında mihrabın arkasında, dördü köşelerde, sekizi cephelerde ikişer olarak. İç mekândaki kalem işi süslemelerde Osmanlı Barok üslubunun izleri görülür; sekiz dilime ayrılmış kubbe yüzeyinde açık tonlarda bitkisel ve geometrik motifler vardır.",
+        "en": "The main walls are of cut stone up to the level of the lower windows, and above that of limestone with three courses of brick. The 15.20 × 15.20 m prayer hall is covered by a single lead-coated dome on a circular drum, with pendentives between squinches and arches. A total of thirteen wall buttresses carry the dome: one behind the mihrab on the qibla wall, four at the corners and eight in pairs on the façades. The hand-painted interior shows traces of the Ottoman Baroque; the dome surface, divided into eight segments, carries floral and geometric motifs in light tones."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "30"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-ve-donanim",
+      "order": 7,
+      "title": {
+        "tr": "Mihrap ve İç Donanım",
+        "en": "Mihrab and Furnishings"
+      },
+      "body": {
+        "tr": "Kalem işi mihrabın kıvrımlı hatlı ve akantus yapraklı tepeliğindeki kartuşta Âl-i İmrân 3/37 ayeti yazılıdır. Mihrap kavsarasının iki yanı bitkisel bezemelerle, köşelikler kahverengi mermer taklidi süslemeler ve altın yaldızlı palmetlerle zenginleştirilmiştir; dokuz bölümlü kavsara ve nişin iki yanındaki altın yaldızlı iyonik başlıklı sütunçeler dikkat çeker. Mihrabın iki yanında tarihî şamdanlar, duvarda bir saat bulunur. Ahşap işçiliğiyle dikkat çeken minber ve kürsü sade üsluplu olup harimin batı ve doğu duvarlarında farklı hattatların hat levhaları yer alır.",
+        "en": "On the cartouche above the hand-painted mihrab's hood, decorated with tendrils and acanthus leaves, is Surah Al Imran 3/37. The mihrab hood is enriched with floral decoration, brown marble-imitation spandrels and gilded palmettes; the nine-section hood and the gilded Ionic-capital colonettes on both sides of the niche stand out. Historical candlesticks flank the mihrab and a clock hangs on the wall. The minbar and preaching pulpit are of simple wooden style, and calligraphy panels by different calligraphers hang on the west and east walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "30, 34"
+        }
+      ]
+    },
+    {
+      "id": "pencereler-ve-dis-cephe",
+      "order": 8,
+      "title": {
+        "tr": "Pencereler ve Dış Cephe",
+        "en": "Windows and Exterior"
+      },
+      "body": {
+        "tr": "İç mekân, beden duvarlarında üç sıra halinde toplam kırk dört pencere ve kubbe kasnağında on iki pencereyle ışık alır. Alt sıra pencereler dikdörtgen planlı, küfeki taş söveli ve demir şebekeli; üst sıradakiler yuvarlak kemerli, alçı şebekeli ve revzenlidir; tüm pencerelerin çevresi kalem işi bezemelidir. Harimin dış cephesi tuğla ve küfeki taşıyla örülmüş, ortada büyük, yanlarda daha küçük yuvarlak kemerlerle hareketlendirilmiştir; mihrabın dış cephesinde zarif bir kuş evi örneği bulunur.",
+        "en": "The interior is lit by forty-four windows in three rows on the main walls and twelve windows on the dome drum. Lower-row windows are rectangular with limestone frames and iron grilles; upper rows are round-arched with plaster grilles and decorative panes; all are framed with hand-painted decoration. The exterior of the prayer hall is of brick and limestone, animated by a large round arch in the middle and smaller ones at the sides; on the exterior of the mihrab is an elegant bird-house."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "35-36"
+        }
+      ]
+    },
+    {
+      "id": "minareler",
+      "order": 9,
+      "title": {
+        "tr": "Minareler",
+        "en": "Minarets"
+      },
+      "body": {
+        "tr": "Caminin başlangıçta tek minareli olduğu, III. Selim döneminde selatin camilerine benzer biçimde çift minareli olarak yeniden inşa ettirildiği bilinir. 1855 depremi sonrası 1868-1869'da Abdülaziz döneminde yenilenen tek şerefeli minareler yapının kuzeydoğu ve kuzeybatı köşelerindedir. Saçak seviyesine kadar yükselen kare planlı kesme taş kaideler üzerinde silindirik gövdeli, sivri külahlı minarelerin şerefe altlarında stalaktit biçimli süslemeler, altıgen tabanlı külahların altında üç taş bilezik vardır; alt bölümlerinde ahşap kayyım odaları bulunur.",
+        "en": "The mosque initially had a single minaret and was rebuilt with double minarets, like imperial mosques, under Selim III. The single-balcony minarets, renewed in 1868-1869 under Abdülaziz after the 1855 earthquake, stand at the northeast and northwest corners. They rise from square cut-stone bases to the eaves level, with cylindrical shafts and pointed spires, stalactite decoration under the balconies and three stone bands under the hexagonal-based spires; wooden trustee rooms are in their lower parts."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "36"
+        }
+      ]
+    },
+    {
+      "id": "muvakkithane",
+      "order": 10,
+      "title": {
+        "tr": "Muvakkithane",
+        "en": "Timekeeper's Room"
+      },
+      "body": {
+        "tr": "Pir Emir Zaviyesi şeyhlerinden Ali Efendi'nin (v. 1713) yaptırdığı ve uzun yıllar muvakkitlik yaptığı muvakkithane günümüze ulaşmamıştır. Yapının harim içinde konumlanmış olabileceğine dair bazı görüşler vardır.",
+        "en": "The timekeeper's room built by Ali Efendi (d. 1713), one of the sheikhs of the Pir Emir Zawiya, where he served as timekeeper for many years, has not survived. Some views hold that it may have been located inside the prayer hall."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "35"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "hoca-kasim",
+      "title": {
+        "tr": "Hoca Kasım'ın Camisi",
+        "en": "Hoca Kasım's Mosque"
+      },
+      "body": {
+        "tr": "Başka bir rivayete göre arakıye hediye eden tüccar Hoca Kasım, karşılığında Emîr Sultan'dan bir akçe almış, ticarette zenginleşince bunu Emîr Sultan'ın duasına bağlayarak tek kubbeli bir cami yaptırmıştır; kıble yönüne iki kubbe daha sonra Uç Beyi Sinan Bey'in girişimiyle eklenmiştir.",
+        "en": "According to another account, the merchant Hoca Kasım, who gave an arakiye cap as a gift, received a silver coin from Emîr Sultan; having prospered in trade he credited Emîr Sultan's prayers and had a single-domed mosque built; two further domes toward the qibla were later added at the initiative of Uç Bey Sinan Bey."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "20-21"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "harim_boyutu",
+      "label": {
+        "tr": "Harim boyutu",
+        "en": "Prayer hall size"
+      },
+      "value": "15,20 × 15,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "30"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "30"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_dilim_sayisi",
+      "label": {
+        "tr": "Kubbe yüzeyi dilim sayısı",
+        "en": "Dome segments"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "30"
+        }
+      ]
+    },
+    {
+      "key": "duvar_payanda_sayisi",
+      "label": {
+        "tr": "Duvar payandası",
+        "en": "Wall buttresses"
+      },
+      "value": 13,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "30"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi_beden",
+      "label": {
+        "tr": "Beden duvarı penceresi (3 sıra)",
+        "en": "Body-wall windows (3 rows)"
+      },
+      "value": 44,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "35"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi_kasnak",
+      "label": {
+        "tr": "Kubbe kasnağı penceresi",
+        "en": "Dome-drum windows"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "35"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "36"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_kavsara_bolum",
+      "label": {
+        "tr": "Mihrap kavsarası bölüm sayısı",
+        "en": "Mihrab hood sections"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "34"
+        }
+      ]
+    },
+    {
+      "key": "ilk_plan_kubbe_sayisi",
+      "label": {
+        "tr": "İlk plandaki kubbe sayısı (görüşlere göre)",
+        "en": "Domes in the original plan (per views)"
+      },
+      "value": "1 / 6 / 1+3",
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "25"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hundi Fatma Hatun",
+      "role": {
+        "tr": "Banî (ana anlatıma göre)",
+        "en": "Founder (main account)"
+      }
+    },
+    {
+      "name": "Hoca Kasım",
+      "role": {
+        "tr": "Rivayete göre tek kubbeli camiyi yaptıran tüccar",
+        "en": "Merchant said to have built the single-domed mosque"
+      }
+    },
+    {
+      "name": "Uç Beyi Sinan Bey",
+      "role": {
+        "tr": "Kıble yönüne iki kubbe ekletti (rivayet)",
+        "en": "Had two domes added toward the qibla (account)"
+      }
+    },
+    {
+      "name": "II. Murad",
+      "role": {
+        "tr": "Behiştî Tarihi'ne göre imaret ve Cuma mescidini yaptıran",
+        "en": "Per the Behiştî History, built the imaret and Friday Mosque"
+      }
+    },
+    {
+      "name": "III. Selim",
+      "role": {
+        "tr": "1804-1805'te camiyi yeniden inşa ettirdi",
+        "en": "Had the mosque rebuilt in 1804-1805"
+      }
+    },
+    {
+      "name": "Moralı Beşir Ağa",
+      "role": {
+        "tr": "Dârüssaâde Nazırı; camiyi ve türbeyi onarttı (1743 çeşme kitabesine göre)",
+        "en": "Dârüssaâde Minister; repaired the mosque and tomb (per the 1743 fountain inscription)"
+      }
+    },
+    {
+      "name": "Abdülaziz",
+      "role": {
+        "tr": "1868 onarımı",
+        "en": "1868 repair"
+      }
+    },
+    {
+      "name": "Ahmed Münir Paşa",
+      "role": {
+        "tr": "1891'de cami-avlu kot farkını giderdi",
+        "en": "Removed the mosque-courtyard level difference in 1891"
+      }
+    },
+    {
+      "name": "Ali Efendi (v. 1713)",
+      "role": {
+        "tr": "Muvakkithaneyi yaptıran Pir Emir Zaviyesi şeyhi",
+        "en": "Pir Emir Zawiya sheikh who built the timekeeper's room"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "ihya-kitabesi-1804",
+      "location": {
+        "tr": "Ahşap harim kapısı üzerinde, mermer üzerine talik hat, 0,50 × 1,50 m",
+        "en": "On the wooden prayer hall door, Ta'liq script on marble, 0.50 × 1.50 m"
+      },
+      "language": "tr-ottoman",
+      "script": "talik",
+      "transliteration": "Emîr Sultan’a olmuştu bina vaktiyle bu mâbed\nHarap olmuş mürur-ı sâl ile ol câmi-i mümtaz\nBu hâle vâkıf oldukça Selîm Han-ı kerem-perver\nAnı bünyâde kıldı, himmet-i şahânesin ibraz\nEdip fermân, esasından yapıldı resm-i dilkeşle\nFirâz-ı kubbe-i vâlâsı oldu çerh ile demsâz\nMuvaffak oldu bu hayr-ı azîme çün şeh-i âlem\nEder eltâf-ı Hak’tan bikarâr ecr-i cemîl ihrâz\nİki mısra ile “İhyâ” söyledim târih-i itmâmın\nMüfîd ü muhtasar kıldım kelâmı eyleyip îcaz\nŞeh-i İslâm Emîr Sultân içün câmi bina kıldı\nŞu zîbâ mâbedi yaptı Selîm Şah-ı atâ-perdâz.",
+      "translation": {
+        "tr": "Bu mabet vaktiyle Emîr Sultan için inşa edilmişti, ancak aradan geçen yıllarla birlikte bu seçkin cami de harap olmuştu. Cömert Selim Han bu durumu öğrenince, camiyi tekrar inşa etmek üzere, bir hükümdara yakışır şekilde yüksek iradesini ortaya koydu. Ferman buyurdu ta temelden gönül alıcı bir tarzda tekrar yapıldı. Yüksek ve ihtişamlı kubbesi âdeta gök kubbeye arkadaş oldu. Böylece cihan padişahı, bu büyük hayırlı hizmeti tamamlamayı başardı. İnşallah Allah’ın lütfuna mazhar olur. Sonsuz bol sevaplar kazanır. Ben iki mısra ile caminin ihya bitiş tarihini belirttim. Sözü kısa kesip az ve öz söyledim: İslam büyüklerinden Emîr Sultan için cami yaptı, ihsanı bol padişah Sultan Selim Han bu süslü mabedi inşa etti. H.1219 / M. 1804",
+        "en": "This temple was once built for Emir Sultan, but over the years this exquisite mosque fell into disrepair. When the generous Selim Han learned of this, he displayed his high will, as befits a ruler, to rebuild the mosque. The decree ordered that it be rebuilt from the ground up in a heartwarming manner. Its high and magnificent dome became a friend of the sky. Thus the world sultan succeeded in completing this great and auspicious service. I indicated the completion date of the restoration with two lines: He built a mosque for Emir Sultan, one of the great Islamic figures. The generous Sultan Selim Han built this ornate sanctuary. AH 1219 / AD 1804"
+      },
+      "author": "III. Selim (hükümdar); şair adı kaynakta verilmemiş",
+      "date": {
+        "hijri_year": 1219,
+        "gregorian": "1804-1805"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "29"
+        }
+      ],
+      "note": {
+        "tr": "Transkripsiyon satırları '\\n' ile ayrılmıştır; kitapta 11 beyit/mısra çifti olarak verilir.",
+        "en": "Transliteration lines are separated by line breaks as printed."
+      }
+    },
+    {
+      "id": "mihrap-kartusu-ayeti",
+      "location": {
+        "tr": "Kalem işi mihrabın tepeliğindeki kartuş",
+        "en": "Cartouche on the hood of the hand-painted mihrab"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Küllemâ dehale aleyhâ Zekeriyye’l-mihrâb",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "30"
+        }
+      ],
+      "note": {
+        "tr": "Âl-i İmrân 3/37. Kitap çeviri vermemiştir.",
+        "en": "Surah Al Imran 3/37. The book gives no translation."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "belge-1507",
+      "year": 1507,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1507 tarihli belge: ilk yapı tek kubbeli",
+        "en": "1507 document: first building single-domed"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "25"
+        }
+      ],
+      "note": {
+        "tr": "Bir görüşe göre bu belgeye dayanarak yapı tek kubbeliydi, sonradan üç kubbeli revaklı son cemaat yeri eklendi.",
+        "en": "One view, based on this document, holds that the building had one dome and later gained a three-domed porticoed narthex."
+      }
+    },
+    {
+      "id": "onarim-1571",
+      "year": 1571,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1598",
+      "year": 1598,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1604",
+      "year": 1604,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım; İznik çinisi ısmarlandığı kaydı",
+        "en": "Repair; record of ordering Iznik tiles"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26, 34"
+        }
+      ]
+    },
+    {
+      "id": "celali-1608",
+      "year": 1608,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Celâlî isyanlarında hasar (Ramazan başı)",
+        "en": "Damage in the Celali rebellions (start of Ramadan)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1617",
+      "year": 1617,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1670",
+      "year": 1670,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1742",
+      "year": 1742,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "besir-aga-1743",
+      "year": 1743,
+      "date": null,
+      "hijri": "1156",
+      "type": "repair",
+      "title": {
+        "tr": "Moralı Beşir Ağa cami ve türbeyi onarttı",
+        "en": "Moralı Beşir Ağa had the mosque and tomb repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "58"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1761",
+      "year": 1761,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1766",
+      "year": 1766,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1786",
+      "year": 1786,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1789",
+      "year": 1789,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1795",
+      "year": 1795,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1795 depremi: büyük yıkım",
+        "en": "1795 earthquake: great destruction"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1804",
+      "year": 1804,
+      "date": null,
+      "hijri": "1219",
+      "type": "restoration",
+      "title": {
+        "tr": "III. Selim'in emriyle yeniden inşa (1804-1805)",
+        "en": "Rebuilt by order of Selim III (1804-1805)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26, 29"
+        }
+      ],
+      "note": {
+        "tr": "Ampir ve rokoko üsluplarının birleşimi.",
+        "en": "Combination of Empire and Rococo styles."
+      }
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depremi: minarelerde çatlak",
+        "en": "1855 earthquake: cracks in the minarets"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26, 50-51"
+        }
+      ],
+      "note": {
+        "tr": "Yerel Meclis mazbatasına göre camide büyük zarar yok, minarelerde çatlak; imaret ve ambar yıkıldı.",
+        "en": "Per the Local Council report there was no major damage to the mosque, cracks in the minarets; imaret and warehouse destroyed."
+      }
+    },
+    {
+      "id": "onarim-1868",
+      "year": 1868,
+      "date": null,
+      "hijri": "1285",
+      "type": "repair",
+      "title": {
+        "tr": "Abdülaziz dönemi onarımı; minareler yenilendi (1868-1869)",
+        "en": "Repair under Abdülaziz; minarets renewed (1868-1869)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "26, 36"
+        }
+      ]
+    },
+    {
+      "id": "kot-duzenleme-1891",
+      "year": 1891,
+      "date": null,
+      "hijri": "1309",
+      "type": "repair",
+      "title": {
+        "tr": "Cami-avlu kot farkı giderildi, zemin mermerle kaplandı",
+        "en": "Cami-courtyard level difference removed, floor paved in marble"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "52"
+        }
+      ]
+    },
+    {
+      "id": "kentsel-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Çevre kentsel tasarımı (2008-2010)",
+        "en": "Surrounding urban design (2008-2010)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "36"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM restorasyonu (2018-2022); yeniden ibadete açıldı",
+        "en": "Restoration by VGM (2018-2022); reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "36"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-emir-sultan-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Emir Sultan Külliyesi'nin parçasıdır.",
+        "en": "Part of the Emir Sultan Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "19"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, doğudan ve batıdan iki kapıyla girilen bir avlunun kıble tarafında yer alır. Revaklı son cemaat yerinin iki yanında sekizer basamaklı merdivenler kadınlar mahfiline çıkar. Mermer söveli, iki kanatlı ahşap bir kapıdan 15,20 × 15,20 m'lik harime girilir; harim tek bir kurşun kaplı kubbeyle örtülüdür ve kalem işi süslemelerle bezelidir. Mihrabın iki yanında tarihî şamdanlar vardır. Dış cephede kuzeydoğu ve kuzeybatı köşelerde taş kaideli iki tek şerefeli minare yükselir.",
+      "en": "The mosque stands on the qibla side of a courtyard entered by two doors, east and west. On either side of the arcaded narthex, eight-stepped staircases lead up to the women's gallery. A two-leafed wooden door with a marble frame opens to the 15.20 × 15.20 m prayer hall, covered by one lead dome and decorated with hand-painted ornament. Historical candlesticks flank the mihrab. Outside, two single-balcony minarets on stone bases rise at the northeast and northwest corners."
+    },
+    "audio_description_source": "Kitap metnindeki mimari anlatımdan (yalnızca kaynakta yazanlar) yapay zekâ taslağı olarak yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
