@@ -53,7 +53,7 @@ eserleri listelenir, Ulucami detayında kaynak sayfaları, güven rozetleri ve i
 | # | Görev | Dal | Tamamlanma kriteri |
 |---|---|---|---|
 | A8 ✅ | `packages/contracts` v0.2.0 (eser listesi/detayı, medya, kaynak, güven düzeyi) ve `GET /assets`, `GET /assets/:id`. Filtreler: şehir, tür, dönem, arama, harita kutusu, sayfalama. Dil `?lang=` ve `Accept-Language` ile | `feat/assets-api` | Entegrasyon testleri geçiyor; yanıtlar sözleşmeyle doğrulanıyor; çekim koordinatları hiçbir yanıtta yok; Swagger'da görünüyor · [PR #26](https://github.com/Myxoceph/RootNCode-Hackathon/pull/26) |
-| A9 | `GET /assets/:id/relations`, `GET /assets/:id/nearby`, `GET /meta/enums` | `feat/assets-network` | İlişkiler iki yönlü dönüyor; yayında olmayan hedefler sayılıyor ama dönmüyor; yakındaki eserler mesafeye göre sıralı |
+| A9 ✅ | `GET /assets/:id/relations`, `GET /assets/:id/nearby`, `GET /meta/enums` | `feat/assets-network` | İlişkiler iki yönlü dönüyor; yayında olmayan hedefler sayılıyor ama dönmüyor; yakındaki eserler mesafeye göre sıralı · [PR #27](https://github.com/Myxoceph/RootNCode-Hackathon/pull/27) |
 | A10 | Medyanın CI üzerinden R2'ye yüklenmesi (`rclone copy`, anahtarlar GitHub Secrets'ta) | `chore/media-upload` | `dev`'e birleşen her medya değişikliği R2'de; API'nin döndürdüğü görsel adresleri açılıyor |
 | A11 | Belgeler: `data/README.md` §5'e "şemanın esas kaynağı Prisma migration'ı" notu; `/assets` için `docs/upgrade-notes.md` maddesi | `docs/assets-api` | Yeni tablo değişikliğinin nasıl yapılacağı yazılı |
 | A12 | İlk `dev` → `main` sürüm PR'ı | – | `main` demo edilebilir; CI yeşil |
