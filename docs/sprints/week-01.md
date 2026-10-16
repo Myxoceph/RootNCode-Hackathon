@@ -20,10 +20,10 @@ hazır olur, veri hattı ilk gerçek eserleri üretir ve backend ilk API uçlar�
 
 | # | Görev | Dal | Tamamlanma kriteri |
 |---|---|---|---|
-| Y1 | Expo uygulamasını `apps/app` içinde kur: Expo Router, TypeScript; iOS, Android ve Web hedefleri | `feat/app-scaffold` | `npx expo start` ile uygulama telefonda (Expo Go) ve tarayıcıda açılıyor |
-| Y2 | Navigasyon iskeleti: Keşfet (harita), Eserler, Rota, Ayarlar sekmeleri | `feat/app-navigation` | Sekmeler arası geçiş mobilde ve web'de çalışıyor; web'de her sekmenin kendi URL'i var |
-| Y3 | Veri katmanı: `mock_monuments.json`'u `MonumentsPayloadSchema` ile doğrulayarak yükle; ileride API'ye geçişi tek ayarla yapacak bir veri kaynağı soyutlaması kur | `feat/app-data-source` | Ekranlar veriye sadece bu katman üzerinden erişiyor; geçersiz veride anlaşılır hata gösteriliyor |
-| Y4 | Eser listesi ve eser detay ekranı (salt okunur) | `feat/app-monument-screens` | Liste 3 eseri gösteriyor; detay ekranı `/monuments/[slug]` adresinden açılıyor |
+| Y1 ✅ | Expo uygulamasını `apps/app` içinde kur: Expo Router, TypeScript; iOS, Android ve Web hedefleri | `feat/app-scaffold` | `npx expo start` ile uygulama telefonda (Expo Go) ve tarayıcıda açılıyor · [PR #17](https://github.com/Myxoceph/RootNCode-Hackathon/pull/17) |
+| Y2 ✅ | Navigasyon iskeleti: Keşfet (harita), Eserler, Rota, Ayarlar sekmeleri | `feat/app-navigation` | Sekmeler arası geçiş mobilde ve web'de çalışıyor; web'de her sekmenin kendi URL'i var · [PR #17](https://github.com/Myxoceph/RootNCode-Hackathon/pull/17) |
+| Y3 ✅ | Veri katmanı: `mock_monuments.json`'u `MonumentsPayloadSchema` ile doğrulayarak yükle; ileride API'ye geçişi tek ayarla yapacak bir veri kaynağı soyutlaması kur | `feat/app-data-source` | Ekranlar veriye sadece bu katman üzerinden erişiyor; geçersiz veride anlaşılır hata gösteriliyor · [PR #17](https://github.com/Myxoceph/RootNCode-Hackathon/pull/17) |
+| Y4 ✅ | Eser listesi ve eser detay ekranı (salt okunur) | `feat/app-monument-screens` | Liste 3 eseri gösteriyor; detay ekranı `/monuments/[slug]` adresinden açılıyor · [PR #17](https://github.com/Myxoceph/RootNCode-Hackathon/pull/17) |
 | Y5 | **AR araştırması:** MindAR'ı WebView içinde çalıştırma vs. Expo uyumlu native AR kütüphanesi. Küçük bir prototip ve karar notu | `docs/adr-ar-approach` | [`docs/decisions/`](../decisions/) altında karar kaydı (ADR) |
 | Y6 | **Harita araştırması:** mobilde native harita, web'de MapLibre GL JS; ortak bir harita bileşeni arayüzü | `docs/adr-map-approach` | Karar kaydı + iki platformda tek pin gösteren prototip |
 
