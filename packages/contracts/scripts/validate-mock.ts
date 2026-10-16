@@ -10,7 +10,7 @@
  */
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { CONTRACT_VERSION, MonumentsPayloadSchema, type MonumentsPayload } from "../src/index";
+import { MONUMENTS_CONTRACT_VERSION, MonumentsPayloadSchema, type MonumentsPayload } from "../src/index";
 
 const MOCK_PATH = fileURLToPath(new URL("../mock/mock_monuments.json", import.meta.url));
 
@@ -79,8 +79,8 @@ if (!result.success) {
 }
 
 const integrityErrors = checkIntegrity(result.data);
-if (result.data.version !== CONTRACT_VERSION) {
-  integrityErrors.push(`version is ${result.data.version}, expected CONTRACT_VERSION ${CONTRACT_VERSION}`);
+if (result.data.version !== MONUMENTS_CONTRACT_VERSION) {
+  integrityErrors.push(`version is ${result.data.version}, expected ${MONUMENTS_CONTRACT_VERSION}`);
 }
 if (integrityErrors.length > 0) {
   console.error("✖ Integrity check failed:\n");

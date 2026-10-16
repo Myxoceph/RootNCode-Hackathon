@@ -1,80 +1,65 @@
 # @vagabonds/contracts
 
-Backend ile mobil istemci arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi.
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.2.0`).
 
-- `src/monument.schema.ts`: Zod şemaları ve bunlardan türetilen TypeScript tipleri
-- `mock/mock_monuments.json`: `GET /monuments` yanıtının birebir örneği
-- `scripts/validate-mock.ts`: mock dosyanın şema ve bütünlük doğrulaması
+- `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
+- `src/monument.schema.ts`: **kullanımdan kalkacak** v0.1 sözleşmesi (`Monument`, mock). Uygulama `/assets`'e geçince (Y8) silinecek.
 
-## Mobil ekip için hızlı başlangıç
+## Uç noktalar
 
-```ts
-import mock from "@vagabonds/contracts/mock/mock_monuments.json";
-import { MonumentsPayloadSchema, type Monument } from "@vagabonds/contracts";
+| Uç nokta | Yanıt şeması |
+|---|---|
+| `GET /assets?city=&type=&era=&q=&bbox=&limit=&offset=&lang=` | `AssetListResponseSchema` (liste ve harita) |
+| `GET /assets/:id?lang=` | `AssetDetailSchema` |
 
-const payload = MonumentsPayloadSchema.parse(mock);
-const monuments: Monument[] = payload.monuments;
-```
+Hata yanıtları her zaman `{ error: { code, message } }` biçimindedir: `INVALID_QUERY`, `INVALID_ID` (400), `ASSET_NOT_FOUND` (404).
+Ayrıntılı ve denenebilir belge: API çalışırken `http://localhost:3000/docs`.
 
-API devreye girdiğinde yalnızca veri kaynağı değişir; yanıt aynı şemayla
-doğrulandığı için ekranlarda değişiklik gerekmez.
-
-### Mock'tan API'ye geçiş
+## İstemci için hızlı başlangıç
 
 ```ts
-import { MonumentsPayloadSchema, MonumentSchema } from "@vagabonds/contracts";
+import { AssetDetailSchema, AssetListResponseSchema } from "@vagabonds/contracts";
 
 const API_URL = "http://localhost:3000"; // fiziksel cihazda bilgisayarın yerel IP'si kullanılır
 
-export async function fetchMonuments(city?: string) {
-  const query = city ? `?city=${encodeURIComponent(city)}` : "";
-  const response = await fetch(`${API_URL}/monuments${query}`);
+export async function fetchAssets(params: Record<string, string> = {}) {
+  const response = await fetch(`${API_URL}/assets?${new URLSearchParams(params)}`);
   if (!response.ok) throw new Error((await response.json()).error.message);
-  return MonumentsPayloadSchema.parse(await response.json());
+  return AssetListResponseSchema.parse(await response.json());
 }
 
-export async function fetchMonument(slug: string) {
-  const response = await fetch(`${API_URL}/monuments/${slug}`);
+export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
+  const response = await fetch(`${API_URL}/assets/${id}?lang=${lang}`);
   if (!response.ok) throw new Error((await response.json()).error.message);
-  return MonumentSchema.parse(await response.json());
+  return AssetDetailSchema.parse(await response.json());
 }
 ```
 
-API'nin bu mock ile aynı yanıtı döndürdüğü, backend entegrasyon testlerinde eser eser doğrulanır
-(`apps/api/test/monuments.routes.test.ts`).
+## Sözleşme kuralları
+
+- Alan adları camelCase. Nesneler `strict`: tanımsız bir alan doğrulamayı bozar, sessizce yok sayılmaz.
+- **Dil:** Metinler tek dilde gelir. `?lang=tr|en` verilmezse `Accept-Language`, o da yoksa Türkçe. İngilizcesi olmayan metin Türkçe döner. Yanıtın dili `Content-Language` başlığındadır.
+- **Güven düzeyi:** Bölüm, bilgi, zaman çizelgesi olayı, tarihleme, banî, mimar ve vakıf bilgisi `confidence: { code, label }` taşır. `probable`, `disputed` ve `legend` rozetle gösterilir; hiçbiri kesin bilgi gibi sunulmaz. Rivayetler (`legends[]`) tarihçe bölümlerinden ayrıdır.
+- **Kaynak:** Aynı öğeler `sources: [{ sourceId, title, pages, url }]` taşır ("Kaynak: Bursa Vakıf Eserleri – I. Cilt, s. 52-55"). `sources` (detayın kökünde) eserde geçen tüm kaynakların listesidir.
+- **Koordinat** (`coordinates`) yoksa `null`: eser haritada gösterilmez. `verified: false`, konumun yerinde doğrulanmadığını söyler.
+- **Görsel** (`cover`, `media[]`) yoksa `cover: null`: yer tutucu görsel gösterilir. Kutu `aspectRatio` ile çizilip `dominantColor` ile boyanır, `lqip` bulanık önizlemedir; `sources.webp` / `sources.jpg` farklı genişlikleri verir. Fotoğrafın çekildiği konum hiçbir yanıtta yer almaz.
+- **Erişilebilirlik** değerleri `yes | partial | no | unknown`; `unknown` "Bilgi yok" demektir, "erişilebilir" değil.
+- Tarihler ISO 8601 (`2026-10-16`, `2026-10-16T18:20:00.000Z`).
 
 ## Alanların modüllere karşılığı
 
 | Modül | Alanlar |
 |---|---|
-| 1. Zaman Perdesi | `archivePhotoUrl`, `archiveYear` |
-| 2. Taşın Dili | `markerImageUrl`, `inscriptions[]` |
-| 3. Kentsel Ağ & Sis Açma | `relations[]`, `latitude`, `longitude` |
-| 4. Travel Planner & Hava Durumu | `city`, `monumentType`, koordinatlar |
-| 5. Yöresel Kültür & Gastronomi | `cityCuisines[]` |
-| 6. Ziyaretçi Nabzı | `visitorTips[]` (yalnızca `approved` olanlar gösterilir) |
-| 7. Sesli Zaman Kapsülü | `audioCapsuleUrl`, `monumentType` |
-| 8. Kapsayıcı Erişilebilirlik | `accessibilityAudioDesc`, `hasRamp`, `stepFreeAccess` |
-
-## Sözleşme kuralları
-
-- Alan adları camelCase; enum değerleri küçük harf (`"same_waqf"`), veritabanıyla aynı.
-- Nesneler `strict`: tanımsız bir alan doğrulamayı bozar, sessizce yok sayılmaz.
-- `relations[]` her eserde kenarı kendi bakış açısından verir. `direction`,
-  kaydın `outgoing` mı `incoming` mi olduğunu söyler; `architect` ve `same_waqf`
-  ilişkileri anlamca iki yönlüdür.
-- `city` serbest metin değil, `CitySchema` listesinden gelir. Yeni şehir gerekirse listeye eklenir.
-- Tarihler ISO 8601 UTC (`2026-10-05T09:30:00Z`).
-
-## Mock veri hakkında
-
-- Kitabe metinleri `[DOĞRULANACAK]` önekiyle işaretlidir. Kaynaklı metinler ETL sürecinden gelecektir.
-- Medya URL'leri `assets.example.com` yer tutucularıdır. CDN hazır olduğunda değiştirilecektir.
-- Rampa ve basamaksız erişim değerleri arayüz geliştirme içindir; yerinde doğrulanmadan kullanıcıya sunulmamalıdır.
+| 1. Zaman Perdesi | `media[]` (`kind: "archive_photo"`, `archiveYear`) |
+| 2. Taşın Dili | `inscriptions[]` (`transliteration`, `translation`, `arTargetMediaKey`), `waqf` |
+| 3. Kentsel Ağ & Sis Açma | `coordinates`, `parent`, `children` (ilişkiler: `/assets/:id/relations`, sıradaki PR) |
+| 4. Travel Planner | `coordinates`, `type`, `visit` |
+| 7. Sesli Zaman Kapsülü | `ambientSound` (`key`, `caption`) |
+| 8. Kapsayıcı Erişilebilirlik | `accessibility`, `media[].alt`, `ambientSound.caption` |
 
 ## Doğrulama
 
 ```bash
-npm run contracts:validate                         # şema + bütünlük kontrolü
 npm run typecheck --workspace @vagabonds/contracts # TypeScript kontrolü
+npm run contracts:validate                         # eski mock_monuments.json kontrolü (v0.1)
 ```
