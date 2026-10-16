@@ -67,7 +67,7 @@ def cross_check(rec, path, all_ids):
     if not rec["id"].startswith(loc["city"] + "-"):
         errors.append(f"id '{loc['city']}-' ile başlamalı")
     if "coordinates" not in loc:
-        warnings.append("koordinat yok (taslak; in_review öncesi eklenmeli)")
+        warnings.append("koordinat yok (haritada ve yakındaki eserlerde görünmez)")
     elif not loc["coordinates"]["verified"]:
         warnings.append("koordinat doğrulanmamış")
 
@@ -110,8 +110,8 @@ def cross_check(rec, path, all_ids):
             errors.append(f"inscriptions[{ins['id']}]: media '{mid}' yok")
 
     covers = [m for m in rec["media"] if m.get("is_cover")]
-    if rec["meta"]["status"] == "draft" and not rec["media"]:
-        warnings.append("fotoğraf yok (taslak; in_review öncesi eklenmeli)")
+    if not rec["media"]:
+        warnings.append("fotoğraf yok (uygulamada yer tutucu görsel gösterilir)")
     elif len(covers) != 1:
         errors.append(f"media: tam olarak 1 kapak fotoğrafı olmalı (şu an {len(covers)})")
     for m in rec["media"]:

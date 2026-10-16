@@ -276,8 +276,8 @@ CREATE TABLE asset (
   district         text NOT NULL,
   neighborhood     text,
   address          text,
-  lat              double precision NOT NULL CHECK (lat BETWEEN 35.5 AND 42.5),
-  lng              double precision NOT NULL CHECK (lng BETWEEN 25.5 AND 45.0),
+  lat              double precision CHECK (lat BETWEEN 35.5 AND 42.5),   -- isteğe bağlı: NULL ise eser haritada görünmez
+  lng              double precision CHECK (lng BETWEEN 25.5 AND 45.0),   -- lat ile birlikte dolu ya da boş (asset_coordinates_pair)
   coord_source     text,
   coord_verified   boolean NOT NULL DEFAULT false,
 
@@ -861,7 +861,7 @@ Detay yanıtı örneği (kısaltılmış, `lang=tr`):
 
 ## 11. Veri ekibi için: yeni eser ekleme
 
-> Kitap bölüklerinden yapay zekâ destekli taslak üretmek için: [`tools/extract/README.md`](tools/extract/README.md). Aşağıdaki kurallar taslakların kontrolünde de geçerlidir. Taslaklar (`meta.status = "draft"`) koordinatsız ve fotoğrafsız olabilir ve içe aktarılmaz; `in_review` öncesi ikisi de eklenir.
+> Kitap bölüklerinden yapay zekâ destekli taslak üretmek için: [`tools/extract/README.md`](tools/extract/README.md). Aşağıdaki kurallar taslakların kontrolünde de geçerlidir. Taslaklar (`meta.status = "draft"`) içe aktarılmaz. Koordinat ve fotoğraf her durumda isteğe bağlıdır: koordinatı olmayan eser haritada ve yakındaki eserlerde görünmez, fotoğrafı olmayan eser yer tutucu görselle gösterilir. `validate.py` eksikleri uyarı olarak raporlar.
 
 Kurallar:
 1. Her metin bir kaynağa (`source_refs`) bağlanır. Sayfa numarası kitabın **basılı** sayfa numarasıdır.

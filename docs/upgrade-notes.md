@@ -7,6 +7,28 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-16 · Tüm eserler yayında, koordinat isteğe bağlı
+
+Kimler: **backend ve veri** (Ahmet, Hüseyin); yerelde veritabanı çalıştıran herkes
+
+1. Yeni migration (`asset.lat` / `lng` artık boş olabilir):
+   ```bash
+   npm run db:deploy --workspace @vagabonds/api
+   ```
+2. Veriyi yeniden içe aktar; 356 eserin hepsi `published` olarak girer:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- Kayıtlar kaynakla teyit edildiği için hepsi `published`, `meta.reviewed_by` dolu.
+- Koordinat ve fotoğraf hiçbir durumda zorunlu değil. Koordinatı olmayan eser haritada ve yakındaki
+  eserlerde görünmez; `validate.py` eksikleri uyarı olarak listeler.
+- `media_pipeline.py`'den henüz geçmemiş görseller (manifestte olmayanlar) içe aktarmada atlanır ve
+  sayısı yazdırılır. Görseller işlenip yeniden içe aktarılınca kendiliğinden eklenir.
+
+---
+
 ## 2026-10-15 · Expo uygulaması (`@vagabonds/app`)
 
 Kimler: **herkes** (paketler kökten kurulduğu için)

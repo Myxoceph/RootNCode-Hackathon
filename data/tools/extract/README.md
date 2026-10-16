@@ -31,8 +31,8 @@ Taslağı Claude Code'da bir **Sonnet** alt ajanı yazar; bir insan kaynağa gö
    > `data/build/cache/text/6-orhan-bey.txt`, kaynak: `vk-bursa-c1`.
 
    Birden fazla bölüğü paralel ajanlarla aynı anda işleyebilirsiniz.
-5. **Doğrulayın:** `python3 data/tools/validate.py`. Taslaklarda koordinat ve fotoğraf
-   uyarıları normaldir; `✗` olmamalı.
+5. **Doğrulayın:** `python3 data/tools/validate.py`. Koordinat ve fotoğraf uyarıları engel
+   değildir; `✗` olmamalı.
 6. **PR açın** (`data/<bölük-adı>` → `dev`). Taslaklar (`draft`) veritabanına aktarılmaz ve
    uygulamada görünmez; CI yalnızca şemaya uygunluğu kontrol eder.
 
@@ -41,11 +41,12 @@ Taslağı Claude Code'da bir **Sonnet** alt ajanı yazar; bir insan kaynağa gö
 | Durum | Ne gerekiyor | Kim |
 |---|---|---|
 | `draft` | Ajanın ürettiği kayıt | Ajan |
-| `in_review` | Kontrol listesi (aşağıda) tamam, **koordinat** ve en az bir **fotoğraf** (kapak) eklendi | Veri ekibi |
+| `in_review` | Kontrol listesi (aşağıda) tamam | Veri ekibi |
 | `published` | İkinci kişi kontrol etti, `meta.reviewed_by` dolu, `en` metinleri var | İkinci kişi |
 
-`in_review` ve `published` kayıtlarda koordinat ve kapak fotoğrafı zorunludur; `validate.py`
-bunları denetler.
+Koordinat ve fotoğraf hiçbir durumda zorunlu değildir (16 Ekim 2026 kararı); eklenince haritada
+ve galeride görünür. Fotoğrafı olan kayıtta tam olarak bir kapak (`is_cover: true`) olmalı;
+`validate.py` bunu denetler.
 
 ### Kontrol listesi (kaynakla karşılaştırarak)
 - [ ] Bölüm, tarih ve sayılar kitapla aynı; `source_refs` sayfaları doğru
