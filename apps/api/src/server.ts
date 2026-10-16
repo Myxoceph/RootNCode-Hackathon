@@ -4,7 +4,13 @@ import { createPrismaClient } from "./db/prisma.ts";
 
 const env = loadEnv();
 const prisma = createPrismaClient(env.DATABASE_URL);
-const app = buildApp({ prisma, logger: { level: env.LOG_LEVEL }, corsOrigins: env.CORS_ORIGINS });
+const app = buildApp({
+  prisma,
+  logger: { level: env.LOG_LEVEL },
+  corsOrigins: env.CORS_ORIGINS,
+  mediaBaseUrl: env.MEDIA_BASE_URL,
+  assetVisibility: env.ASSET_VISIBILITY,
+});
 
 async function shutdown(signal: NodeJS.Signals): Promise<void> {
   app.log.info({ signal }, "Shutting down");

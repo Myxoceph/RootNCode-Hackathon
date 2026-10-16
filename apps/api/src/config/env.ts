@@ -24,6 +24,14 @@ const EnvSchema = z.object({
         .filter(Boolean),
     )
     .pipe(z.array(z.url())),
+  // Public base URL of the media bucket; image URLs are built as `${MEDIA_BASE_URL}/${variant key}`.
+  MEDIA_BASE_URL: z
+    .url()
+    .default("https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev")
+    .transform((url) => url.replace(/\/+$/, "")),
+  // Which assets the API serves: only `published`, or `preview` (published + in_review) for development.
+  // Drafts are never served.
+  ASSET_VISIBILITY: z.enum(["published", "preview"]).default("published"),
 });
 
 export type Env = z.infer<typeof EnvSchema>;
