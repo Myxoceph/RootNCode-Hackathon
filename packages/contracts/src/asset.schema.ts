@@ -269,14 +269,57 @@ export const AssetDetailSchema = AssetSummarySchema.extend({
   updatedAt: z.iso.datetime({ offset: true }),
 });
 
+export const ContractVersionSchema = z.string().regex(/^\d+\.\d+\.\d+$/, "version must be semver (x.y.z)");
+
 /** Response body of `GET /assets`. */
 export const AssetListResponseSchema = z.strictObject({
-  version: z.string().regex(/^\d+\.\d+\.\d+$/, "version must be semver (x.y.z)"),
+  version: ContractVersionSchema,
   lang: LangSchema,
   total: z.int().min(0),
   limit: z.int().positive(),
   offset: z.int().min(0),
   items: z.array(AssetSummarySchema),
+});
+
+/** `outgoing`: the link is recorded on this asset; `incoming`: on the other asset. */
+export const RelationDirectionSchema = z.enum(["outgoing", "incoming"]);
+
+/** A link between two assets (Kentsel Ağ). `asset` is the other end; its coordinates draw the line on the map. */
+export const AssetRelationSchema = z.strictObject({
+  type: LabeledCodeSchema,
+  direction: RelationDirectionSchema,
+  asset: AssetSummarySchema,
+  description: z.string().min(1),
+  confidence: ConfidenceSchema,
+  sources: z.array(SourceRefSchema),
+});
+
+/** Response body of `GET /assets/:id/relations`. */
+export const AssetRelationsResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  lang: LangSchema,
+  assetId: AssetIdSchema,
+  items: z.array(AssetRelationSchema),
+  /** Links whose other asset is not in the dataset or not published yet: counted, never returned. */
+  unavailableCount: z.int().min(0),
+});
+
+export const NearbyAssetSchema = z.strictObject({
+  /** Straight-line (great-circle) distance, not walking distance. */
+  distanceMeters: z.int().min(0),
+  asset: AssetSummarySchema,
+});
+
+/** Response body of `GET /assets/:id/nearby`. */
+export const NearbyAssetsResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  lang: LangSchema,
+  assetId: AssetIdSchema,
+  /** Null when this asset has no coordinates yet; `items` is then empty. */
+  origin: CoordinatesSchema.nullable(),
+  radiusMeters: z.int().positive(),
+  /** Nearest first. Assets without coordinates are never included. */
+  items: z.array(NearbyAssetSchema),
 });
 
 export type Lang = z.infer<typeof LangSchema>;
@@ -303,3 +346,8 @@ export type AssetHighlight = z.infer<typeof AssetHighlightSchema>;
 export type VisitorTipV2 = z.infer<typeof VisitorTipSchemaV2>;
 export type AssetDetail = z.infer<typeof AssetDetailSchema>;
 export type AssetListResponse = z.infer<typeof AssetListResponseSchema>;
+export type RelationDirection = z.infer<typeof RelationDirectionSchema>;
+export type AssetRelation = z.infer<typeof AssetRelationSchema>;
+export type AssetRelationsResponse = z.infer<typeof AssetRelationsResponseSchema>;
+export type NearbyAsset = z.infer<typeof NearbyAssetSchema>;
+export type NearbyAssetsResponse = z.infer<typeof NearbyAssetsResponseSchema>;
