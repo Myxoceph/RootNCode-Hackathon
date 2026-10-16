@@ -57,7 +57,7 @@ eserleri listelenir, Ulucami detayında kaynak sayfaları, güven rozetleri ve i
 | A10 | Medyanın CI üzerinden R2'ye yüklenmesi (`rclone copy`, anahtarlar GitHub Secrets'ta) | `chore/media-upload` | `dev`'e birleşen her medya değişikliği R2'de; API'nin döndürdüğü görsel adresleri açılıyor |
 | A11 | Belgeler: `data/README.md` §5'e "şemanın esas kaynağı Prisma migration'ı" notu; `/assets` için `docs/upgrade-notes.md` maddesi | `docs/assets-api` | Yeni tablo değişikliğinin nasıl yapılacağı yazılı |
 | A12 | İlk `dev` → `main` sürüm PR'ı | – | `main` demo edilebilir; CI yeşil |
-| A13 | Demo sunucusu (VDS) için dağıtım: API ve veri içe aktarma imajları, Caddy ile web + `/api`, `docs/deploy.md` | `feat/vds-deploy` | Yığın tek komutla kuruluyor; yerelde prova edildi; prova haftası 3'te VDS'te |
+| A13 ✅ | Demo sunucusu (VDS) için dağıtım: API ve veri içe aktarma imajları, Caddy ile web + `/api`, `docs/deploy.md` | `feat/vds-deploy` | Yığın tek komutla kuruluyor; yerelde prova edildi; prova haftası 3'te VDS'te · [PR #28](https://github.com/Myxoceph/RootNCode-Hackathon/pull/28) |
 
 ## Ekip (herkes)
 
