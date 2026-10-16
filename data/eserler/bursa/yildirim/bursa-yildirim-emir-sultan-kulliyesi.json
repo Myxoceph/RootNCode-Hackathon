@@ -1,0 +1,568 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-emir-sultan-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Emir Sultan",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Emir Sultan Külliyesi bölümünden (s. 19-59) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup photos match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaviye/tekke, imaret, mektep, medrese, kütüphane ve muvakkithane için kitapta ayrı bölüm yok; ayrı kayıt açılmadı. Cezerî Kasım Paşa ve Molla Hüsrev medreselerinin ilçesi metinde belirtilmiyor; ilişki kaydı eklenmedi.",
+      "Külliyenin yapım tarihi/ilk yapı kesin değil (cami, imaret, Cuma mescidi için farklı anlatımlar); 'dating' boş bırakıldı.",
+      "Vakfiye metni/şartları kitapta özetlenmemiş; 1470 tarihli vakfiye VGM arşivinden bulunursa 'waqf.deed.excerpt' doldurulmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[vakif]",
+        "note": "Türkçe metin Emîr Sultan, Hundi Hatun ve Fâtih'in vakıflarına ek olarak 'yedi farklı kişinin' ilavede bulunduğunu söylüyor; aynı sayfada ek olarak yalnızca altı kişi adlandırılıyor (mütevelli Süleyman b. Mehmed Bey, Hacı İsa b. Arûz, Yusuf b. Mürsel, Dilfiruz Hatun, Hacı Bayezid, Hacı Musa). Kaynağa sadık kalındı."
+      },
+      {
+        "field": "sections[imaret-ve-hizmetler]",
+        "note": "İmaret ve Cuma mescidini Behiştî Tarihi II. Murad'a, hamam ve medreseyi başka kaynaklar Cezerî Kasım Paşa'ya atfediyor; cami için Hundi Fatma Hatun'un banî olduğu da söyleniyor. Birden çok görüş olduğu için 'disputed'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Emir Sultan Külliyesi",
+    "en": "Emir Sultan Complex"
+  },
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "külliye",
+    "Emîr Sultan",
+    "Hundi Hatun",
+    "tasavvuf",
+    "erguvan",
+    "zaviye",
+    "imaret",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Emirsultan Mahallesi",
+    "address": "Doyuran Caddesi No:1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "19"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Emîr Sultan (Seyyid Mehmed Buhârî)",
+    "role": "vâkıf (vakfın kurucusu, 1470 vakfiyesine göre)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "22-23"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Emir Sultan Vakfı",
+    "deed": {
+      "date_display": "H. 15 Receb 874 / M. 18 Ocak 1470 (Fâtih Sultan Mehmed devri; Bursa Kadısı Ali b. Yusuf el-Fenârî tasdikli)",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "22-23"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakıf gelirleri Bursa merkezi ve çevresi ile Edremit-Havran bölgesindeki köy, mezra, bağ, bahçe, han, hamam, değirmen, ev, tuzla ve fırınlardan sağlanıyordu.",
+      "en": "Foundation income came from villages, hamlets, vineyards, gardens, hans, baths, mills, houses, salt pans and bakeries in Bursa and its surroundings and in the Edremit-Havran region."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "22-23"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Şehre hâkim bir tepede, Emîr Sultan adına inşa edilen ve zamanla cami, zaviye, imaret, türbe, hamam, mektep, muvakkithane, çeşme ve kütüphane gibi birimlerle genişleyen yapı topluluğu. Kitaba göre Bursa'nın en önemli manevi odaklarından biridir.",
+    "en": "A building complex on a hill overlooking the city, built in the name of Emîr Sultan and expanded over time with a mosque, zawiya, imaret, tomb, bath, school, timekeeper's room, fountain and library. According to the book it is one of the most important spiritual centers of Bursa."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Külliye Yıldırım ilçesi, Emirsultan Mahallesi, Doyuran Caddesi No:1 adresinde, şehre hâkim bir tepe üzerinde yer alır. İlk yapının inşasından itibaren farklı dönemlerde çeşitli kişiler tarafından yapılan ilavelerle genişlemiş; cami, zaviye, imaret, türbe, hamam, mektep, muvakkithane, çeşme ve kütüphane gibi birimlerle kapsamlı bir yapı topluluğu olmuştur. Şehrin sosyal, ekonomik, kültürel ve dinî-tasavvufi tarihinde derin izler bırakmış, halkın hafızasında müstesna bir yere sahiptir.",
+        "en": "The complex is in Yıldırım District, Emirsultan Neighborhood, Doyuran Street No. 1, on a hill overlooking the city. Since the first structure it has grown with additions by various people in different periods into a comprehensive complex with a mosque, zawiya, imaret, tomb, bath, school, timekeeper's room, fountain and library. It has left deep traces in the social, economic, cultural and religious-sufistic history of the city."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "19"
+        }
+      ]
+    },
+    {
+      "id": "emir-sultan",
+      "order": 2,
+      "title": {
+        "tr": "Emîr Sultan",
+        "en": "Emîr Sultan"
+      },
+      "body": {
+        "tr": "Emîr Sultan'ın asıl adı Seyyid Şemseddin Muhammed b. Ali el-Hüseynî el-Buhârî'dir; 1368'de Buhara'da doğmuştur. Babası çömlekçilikle uğraşan Emîr Külâl'dir. Hac dönüşü Bursa'ya yerleşmiş, önce Pınarbaşı mevkiindeki bir dergâhta kalmış, sonra adına inşa edilen dergâha yerleşerek irşat faaliyetini sürdürmüştür. Yıldırım Bayezid'in kızı Hundi Hatun ile evlenmesinin ardından \"Emîr Sultan\" unvanıyla anılmıştır. 1402 Ankara Savaşı'ndan sonra Fetret Devri'nde Emîr Timur tarafından Semerkant'a götürülmüş, Timur'un ölümünden sonra serbest bırakılarak Bursa'ya dönmüştür. 1429'da Bursa'da veba (taun) hastalığından vefat etmiş ve bugün adıyla anılan türbeye defnedilmiştir.",
+        "en": "Emîr Sultan's real name was Seyyid Şemseddin Muhammed b. Ali el-Hüseynî el-Buhârî; he was born in Bukhara in 1368. His father was Emîr Külâl, a potter. After the hajj he settled in Bursa, first staying in a Sufi lodge in the Pınarbaşı area and later in the lodge built in his name, where he continued his guidance activities. After marrying Hundi Hatun, daughter of Yıldırım Bayezid, he became known by the title \"Emîr Sultan\". During the Interregnum following the Battle of Ankara in 1402 he was taken to Samarkand by Timur and, released after Timur's death, returned to Bursa. He died of plague in Bursa in 1429 and was buried in the tomb that bears his name."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "20-21"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 3,
+      "title": {
+        "tr": "Emir Sultan Vakfı ve Vakfiye",
+        "en": "The Emir Sultan Foundation and Endowment Charter"
+      },
+      "body": {
+        "tr": "Külliyenin inşa süreci ve gelişimine ilişkin ilk vakfiyesi günümüze ulaşmamıştır. Fâtih Sultan Mehmed devrine ait H. 15 Receb 874 / M. 18 Ocak 1470 tarihli, Bursa Kadısı Ali b. Yusuf el-Fenârî tarafından tasdik edilmiş orijinal bir vakfiye mevcuttur; vakfın kurucusunun Emîr Sultan olduğunu belirtir ve daha eski bir vakfiyeye dayanılarak hazırlandığı ifade edilir. Belgede Emîr Sultan, Hundi Hatun ve Fâtih Sultan Mehmed'in vakıfları yer alır; başında \"Hüve'l-Ganiyyü'l-Müğniyyü'l-Müste'ân\" ibaresi, ardından besmele ve Fâtih'in tuğrası bulunur. Vakfın 1453'ten önce kurulduğu kabul edilir. Bursa merkezi ve çevresi ile Edremit-Havran bölgesindeki köy, mezra, bağ, bahçe, han, hamam, değirmen, ev, tuzla ve fırın gelirlerinin nasıl harcanacağı ayrıntılı belirtilmiştir. Vakfedenler arasında Emîr Sultan, Hundi Hatun, mütevelli Süleyman b. Mehmed Bey, Fâtih Sultan Mehmed Han, Hacı İsa b. Arûz, Yusuf b. Mürsel, Çelebi Mehmed'in eşi Abdullah kızı Dilfiruz Hatun, Hacı Bayezid ve Hacı Musa b. Abdullah vardır.",
+        "en": "The first endowment charter on the construction and development of the complex has not survived. An original charter from the reign of Fâtih Sultan Mehmed, dated 15 Rajab AH 874 / 18 January AD 1470 and approved by Bursa Qadi Ali b. Yusuf el-Fenârî, exists; it names Emîr Sultan as the founder of the foundation and is said to be based on an older charter. It covers the foundations of Emîr Sultan, Hundi Hatun and Fâtih Sultan Mehmed and opens with \"Hüve'l-Ganiyyü'l-Müğniyyü'l-Müste'ân\", the Basmala and Fâtih's tughra. The foundation is accepted to have been established before 1453. The charter specifies how income from villages, hamlets, vineyards, gardens, hans, baths, mills, houses, salt pans and bakeries in Bursa and the Edremit-Havran region is to be spent. Donors include Emîr Sultan, Hundi Hatun, trustee Süleyman b. Mehmed Bey, Fâtih Sultan Mehmed Han, Hacı İsa b. Arûz, Yusuf b. Mürsel, Dilfiruz Hatun (wife of Çelebi Mehmed, daughter of Abdullah), Hacı Bayezid and Hacı Musa b. Abdullah."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "22-23"
+        }
+      ]
+    },
+    {
+      "id": "imaret-ve-hizmetler",
+      "order": 4,
+      "title": {
+        "tr": "İmaret ve Hizmetler",
+        "en": "Imaret and Services"
+      },
+      "body": {
+        "tr": "Külliyede görev yapan tüm personelin imaret mutfağında pişirilen yemeklerden faydalandığı, XVII. yüzyılın sonlarında görevli sayısının 170'e ulaştığı bilinmektedir. Cezerî Kasım Paşa ve Molla Hüsrev medreselerinin öğrencilerinin de bu hizmetlerden yararlandığı belirtilir. Behiştî Tarihi'ne göre imaret, Cuma mescidiyle birlikte II. Murad tarafından yaptırılmıştır; kaynaklarda külliyedeki hamam ve medresenin Cezerî Kasım Paşa tarafından yaptırıldığı bilgisi de yer alır.",
+        "en": "All personnel working in the complex are known to have eaten the meals cooked in the imaret kitchen, and the number of personnel reached 170 by the end of the 17th century. Students of the Cezerî Kasım Paşa and Molla Hüsrev madrasas are also said to have benefited. According to the Behiştî History the imaret was built by Murad II together with the Friday Mosque; sources also say the bath and madrasa in the complex were built by Cezerî Kasım Paşa."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "20, 25"
+        }
+      ]
+    },
+    {
+      "id": "avlu",
+      "order": 5,
+      "title": {
+        "tr": "Avlu ve Revaklar",
+        "en": "Courtyard and Arcades"
+      },
+      "body": {
+        "tr": "Avluya doğu ve batıdan iki ayrı kapıyla girilir. Her iki giriş, iki mermer sütun ve payandalarla desteklenen dikdörtgen planlı, kurşun kaplı kubbeli mekânlardır; kubbe tepelerinde pirinç alemler, tavanlarında kalem işi süslemeler vardır. Doğu giriş kapısının avluya bakan yüzünde Zümer suresinin 73. ayeti yer alır. Doğu-batı doğrultulu dikdörtgen avlunun ortasında sekizgen planlı, fıskiyeli mermer bir şadırvan vardır; avlunun iki yanında cami, türbe ve bitişik odalar sıralanır. Şadırvan, abdesthane ve diğer çeşmelere geçmişte \"suların padişahı\" denilen Akçağlayan Suyu'nun ulaştığı belirtilir. Avluyu çevreleyen on altı sade başlıklı beyaz, açık kahverengi ve neftî yeşil mermer sütunun taşıdığı kaş kemerli ahşap ve kâgir revaklar bağdadi sıvalı aynalı tonozlarla örtülüdür; cami ve türbe girişleri önündeki revak kemerleri daha yüksektir. Revaklar ve odalar ahşap, diğer yapılar kâgirdir.",
+        "en": "The courtyard is entered by two doors, east and west. Each entrance is a rectangular space carried by two marble columns and buttresses, covered with lead domes topped by brass finials and with hand-painted ceilings. The courtyard side of the east door bears verse 73 of Surah al-Zumar. In the middle of the east-west rectangular courtyard stands an octagonal marble shadirvan with water jets; the mosque, the tomb and adjacent rooms line its sides. The Akçağlayan Water, once called the \"sultan of waters\", is said to have supplied the shadirvan, ablution facilities and other fountains. The arcades around the courtyard, carried by sixteen plain-capped marble columns in white, light brown and green and covered with lath-and-plaster flattened barrel vaults, have ogee arches; those in front of the mosque and tomb are higher. The arcades and rooms are of wood, the other structures of masonry."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "28"
+        }
+      ]
+    },
+    {
+      "id": "erguvan-cemiyeti",
+      "order": 6,
+      "title": {
+        "tr": "Erguvan Cemiyeti",
+        "en": "The Judas Tree Society Gathering"
+      },
+      "body": {
+        "tr": "Evliya Çelebi, Emîr Sultan çevresinde oluşan geleneği aktarır: ağaçları ve özellikle erguvan çiçekleri o kadar bol açar ki yılda bir kez \"Erguvan Cemiyeti\" şenliği düzenlenir, her diyardan insanlar akın eder. Türbe bölümünde Emîr Sultan'ın Osmanlı coğrafyasından derviş, sufi ve alimleri Bursa'ya davet ederek ilmî ve tasavvufi meclisler kurduğu, erguvan mevsiminde bayram havasında düzenlenen bu toplantıların vefatından sonra da yüzyıllarca kesintisiz sürdüğü anlatılır.",
+        "en": "Evliya Çelebi relates the tradition around Emîr Sultan: the trees, especially the Judas trees, bloom so abundantly that once a year the \"Judas Tree Society\" festival is held and people flock from all lands. The tomb section adds that Emîr Sultan invited dervishes, sufis and scholars from the Ottoman lands to Bursa to hold scholarly and mystical assemblies, held every Judas tree season in a festive atmosphere and continued uninterruptedly for centuries after his death."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "21-22, 44"
+        }
+      ]
+    },
+    {
+      "id": "diger-birimler",
+      "order": 7,
+      "title": {
+        "tr": "Diğer Birimler",
+        "en": "Other Units"
+      },
+      "body": {
+        "tr": "Kitap külliyenin zaviye, imaret, mektep, muvakkithane, medrese ve kütüphane gibi birimlerini sayar ancak bunlara ayrı bölüm ayırmaz. Pir Emir Zaviyesi şeyhlerinden Ali Efendi'nin (v. 1713) yaptırdığı muvakkithane günümüze ulaşmamıştır. 1855 depreminden sonra Bursa Mahalli Meclisi'nin mazbatasında camiye ait imaret ve ambar yapılarının yıkıldığı, bitişikteki medresenin ciddi zarar gördüğü belirtilmiştir. 2008-2010 kentsel tasarımda yeniden ihya edilen tekkeden söz edilir.",
+        "en": "The book lists units such as the zawiya, imaret, school, timekeeper's room, madrasa and library but gives them no section of their own. The timekeeper's room built by Ali Efendi (d. 1713), one of the sheikhs of the Pir Emir Zawiya, has not survived. After the 1855 earthquake the Bursa Local Council's report said the mosque's imaret and warehouse buildings were destroyed and the adjacent madrasa seriously damaged. The revived Sufi lodge is mentioned in the 2008-2010 urban design."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "19, 35, 36-37, 50-51"
+        }
+      ]
+    },
+    {
+      "id": "kentsel-duzenleme",
+      "order": 8,
+      "title": {
+        "tr": "Kentsel Düzenleme ve Bugün",
+        "en": "Urban Design and Today"
+      },
+      "body": {
+        "tr": "2008-2010 yılları arasında Bursa Büyükşehir Belediyesi külliye çevresinde kentsel tasarım çalışması yapmıştır: külliyenin güneyinden geçen yol yeraltına alınmış, yeniden ihya edilen tekke ile mevcut hamam arasında camiyle bütünleşen bir meydan oluşturulmuştur. Külliye bugün de Bursa'nın en önemli manevi odaklarından biridir ve özellikle yerli ziyaretçiler tarafından yoğun ziyaret edilir.",
+        "en": "Between 2008 and 2010 Bursa Metropolitan Municipality carried out an urban design project around the complex: the road passing south of it was taken underground and a square integrated with the mosque was created between the revived Sufi lodge and the existing bath. Today the complex remains one of Bursa's most important spiritual centers and is visited intensively, especially by local visitors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "36-37"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "hundi-hatun-ruyasi",
+      "title": {
+        "tr": "Hundi Hatun'un Rüyası ve Nikâh",
+        "en": "Hundi Hatun's Dream and the Marriage"
+      },
+      "body": {
+        "tr": "Menakıpnamelerde Hundi Hatun'un rüyasında Peygamber Efendimiz'i gördüğü ve onun tavsiyesiyle Emîr Sultan ile evlenmeye karar verdiği anlatılır. Bu evliliğin Yıldırım Bayezid'in Niğbolu Seferi sırasında Molla Fenârî tarafından kıyılan bir nikâhla gerçekleştiği rivayet edilir.",
+        "en": "Hagiographical accounts narrate that Hundi Hatun saw the Prophet in a dream and decided on his advice to marry Emîr Sultan. The marriage is narrated to have taken place during Yıldırım Bayezid's Nicopolis Campaign, with a marriage contract performed by Molla Fenârî."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "20-21"
+        }
+      ]
+    },
+    {
+      "id": "cenaze-namazi",
+      "title": {
+        "tr": "Cenaze Namazını Hacı Bayrâm-ı Velî'nin Kıldırması",
+        "en": "Funeral Prayer Led by Hacı Bayrâm-ı Velî"
+      },
+      "body": {
+        "tr": "Rivayete göre Emîr Sultan'ın cenaze namazı, hastalığı sırasında kendisini ziyarete gelen Hacı Bayrâm-ı Velî tarafından kıldırılmıştır.",
+        "en": "According to legend, Emîr Sultan's funeral prayer was led by Hacı Bayrâm-ı Velî, who had visited him during his illness."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "20-21"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "avlu_sutun_sayisi",
+      "label": {
+        "tr": "Avlu revak sütunu",
+        "en": "Courtyard arcade columns"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "28"
+        }
+      ]
+    },
+    {
+      "key": "personel_sayisi_17yy_sonu",
+      "label": {
+        "tr": "Görevli sayısı (XVII. yy. sonu)",
+        "en": "Personnel (end of 17th c.)"
+      },
+      "value": 170,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "25"
+        }
+      ]
+    },
+    {
+      "key": "vakfiye_tasdik_imzasi",
+      "label": {
+        "tr": "Vakfiyedeki tasdik imzası",
+        "en": "Approval signatures on the charter"
+      },
+      "value": 28,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "23"
+        }
+      ]
+    },
+    {
+      "key": "vakfa_ilave_eden_kisi",
+      "label": {
+        "tr": "Vakfa ilave yapan kişi (metne göre)",
+        "en": "Additional donors (per text)"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "23"
+        }
+      ],
+      "note": {
+        "tr": "Metinde yedi deniyor, adı geçen altı kişi var.",
+        "en": "Text says seven; six are named."
+      }
+    },
+    {
+      "key": "kentsel_tasarim_donemi",
+      "label": {
+        "tr": "Kentsel tasarım çalışması",
+        "en": "Urban design project"
+      },
+      "value": "2008-2010",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "36-37"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Emîr Sultan (Seyyid Şemseddin Muhammed b. Ali el-Hüseynî el-Buhârî)",
+      "role": {
+        "tr": "Mutasavvıf; vakfın kurucusu",
+        "en": "Sufi; founder of the foundation"
+      }
+    },
+    {
+      "name": "Hundi (Fatma) Hatun",
+      "role": {
+        "tr": "Yıldırım Bayezid'in kızı, Emîr Sultan'ın eşi; vakıf sahibi",
+        "en": "Daughter of Yıldırım Bayezid, wife of Emîr Sultan; donor"
+      }
+    },
+    {
+      "name": "Fâtih Sultan Mehmed",
+      "role": {
+        "tr": "Vakıf sahibi; 1470 vakfiyesi onun devrinde",
+        "en": "Donor; the 1470 charter dates from his reign"
+      }
+    },
+    {
+      "name": "Süleyman b. Mehmed Bey",
+      "role": {
+        "tr": "Vakfın mütevellisi",
+        "en": "Trustee of the foundation"
+      }
+    },
+    {
+      "name": "Cezerî Kasım Paşa",
+      "role": {
+        "tr": "Külliyedeki hamam ve medreseyi yaptırdığı ileri sürülen devlet adamı ve şair",
+        "en": "Statesman and poet said by some sources to have built the bath and madrasa"
+      }
+    },
+    {
+      "name": "Ali Efendi (v. 1713)",
+      "role": {
+        "tr": "Pir Emir Zaviyesi şeyhi; muvakkithaneyi yaptırdı",
+        "en": "Sheikh of the Pir Emir Zawiya; built the timekeeper's room"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Erguvan Cemiyeti'ni aktaran seyyah",
+        "en": "Traveller who describes the Judas Tree Society gathering"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "dogu-kapi-zumer-ayeti",
+      "location": {
+        "tr": "Doğu giriş kapısının avluya bakan yüzü",
+        "en": "Courtyard side of the east entrance door"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "28"
+        }
+      ],
+      "note": {
+        "tr": "Zümer suresi 73. ayet; metni kaynakta verilmemiş, çeviri de yok.",
+        "en": "Surah al-Zumar, verse 73; the text is not given in the source, and no translation is given."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vakfiye-1470",
+      "year": 1470,
+      "date": "1470-01-18",
+      "hijri": "15 Receb 874",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi",
+        "en": "Endowment charter drawn up"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "22-23"
+        }
+      ],
+      "note": {
+        "tr": "Emîr Sultan, Hundi Hatun ve Fâtih Sultan Mehmed'in vakıflarını içerir; Kadı Ali b. Yusuf el-Fenârî tasdik etmiştir.",
+        "en": "Covers the foundations of Emîr Sultan, Hundi Hatun and Fâtih Sultan Mehmed; approved by Qadi Ali b. Yusuf el-Fenârî."
+      }
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Bursa depremi: imaret, ambar ve medrese zarar gördü",
+        "en": "Bursa earthquake: imaret, warehouse and madrasa damaged"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "50-51"
+        }
+      ],
+      "note": {
+        "tr": "Yerel Meclis mazbatasına göre imaret ve ambar yıkılmış, medrese ciddi zarar görmüştür.",
+        "en": "Per the Local Council's report, the imaret and warehouse were destroyed and the madrasa seriously damaged."
+      }
+    },
+    {
+      "id": "kentsel-tasarim-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Çevre kentsel tasarımı (2008-2010)",
+        "en": "Surrounding urban design (2008-2010)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "36-37"
+        }
+      ],
+      "note": {
+        "tr": "Yol yeraltına alındı; tekke ile hamam arasında meydan oluşturuldu.",
+        "en": "Road put underground; square created between the lodge and the bath."
+      }
+    },
+    {
+      "id": "restorasyon-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Cami ve türbe restorasyonu (2018-2022)",
+        "en": "Mosque and tomb restoration (2018-2022)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "36-37"
+        }
+      ],
+      "note": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından yapıldı.",
+        "en": "Carried out by the General Directorate of Foundations."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliye, şehre hâkim bir tepede kurulu bir yapı topluluğudur. Doğu-batı doğrultulu dikdörtgen bir avlunun ortasında sekizgen planlı fıskiyeli mermer bir şadırvan vardır. Avlunun iki yanında cami ve türbe ile bitişik odalar sıralanır; avluyu on altı mermer sütunun taşıdığı revaklar çevreler. Avluya doğu ve batıdan iki kapıyla girilir.",
+      "en": "The complex stands on a hill overlooking the city. In the middle of a rectangular east-west courtyard is an octagonal marble shadirvan with water jets. The mosque, the tomb and adjacent rooms line the two sides of the courtyard, which is surrounded by arcades on sixteen marble columns. The courtyard has two entrances, east and west."
+    },
+    "audio_description_source": "Kitap metnindeki mimari anlatımdan (yalnızca kaynakta yazanlar) yapay zekâ taslağı olarak yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

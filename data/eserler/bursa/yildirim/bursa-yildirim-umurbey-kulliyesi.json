@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-umurbey-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Umurbey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Umurbey Külliyesi bölümünden (s. 63-78) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Külliyenin bütününe ait inşa/tamamlanma tarihi kitapta verilmiyor; dating boş bırakıldı.",
+      "Külliyenin kendi adresi kitapta yok; yalnızca cami adresi verilmiş (5. Yan Sokak, No: 2). Gerekirse temsilî adres belirlenecek.",
+      "Taş vakfiyede caminin yanında yapıldığı söylenen hamamın günümüzde var olup olmadığı kitapta belirtilmiyor; hamam için kayıt açılmadı. Veri ekibi karar vermeli.",
+      "Vakfiyede geçen vakıf yapıları (Tuz Pazarı kervansarayı, Bergama, Biga, Karahisar, Edirne, Golya Dağı, Derzîler vb.) için ilçe/il kitapta yeterince belirtilmediğinden ilişki kaydı açılmadı.",
+      "Kitap külliyeyi 'külliye birimi' olarak anıyor ama külliyenin bileşenlerini (cami, çeşme, türbe, hazire) tek tek saymıyor; bu liste bölüm başlıklarından çıkarıldı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Kitap, camiyi 'Umur Bey tarafından bir külliye birimi olarak inşa ettirilmiştir' diye tanıtıyor (s. 63); külliyenin diğer birimlerini (örn. hamam) ayakta yapı olarak anlatmıyor. Üst kayıt bölüm başlığına (Umurbey Külliyesi) göre açıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Umurbey Külliyesi",
+    "en": "Umurbey Complex"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Umur Bey",
+    "külliye",
+    "taş vakfiye",
+    "Yıldırım",
+    "cami",
+    "türbe",
+    "çeşme",
+    "hazire"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Umurbey",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "63"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": {
+    "name": "Umur Bey (Timurtaş oğlu Umur)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "63"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "69-71"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Umur Bey'in Bursa'da yaptırdığı cami, çeşme, türbe ve hazireden oluşan külliye. Camideki iki taş vakfiye, Umur Bey'in Anadolu ve Rumeli'deki çok sayıdaki vakfını sıralar.",
+    "en": "A complex in Bursa built by Umur Bey, made up of a mosque, fountain, tomb and graveyard. Two stone endowment inscriptions in the mosque list his many foundations across Anatolia and Rumelia."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Umurbey Külliyesi, Yıldırım ilçesi Umurbey Mahallesi'nde yer alır. Kitap camiyi Umur Bey'in bir külliye birimi olarak yaptırdığını söyler. Külliyede cami, caminin batı duvarındaki çeşme, güney bahçedeki hazirede Umur Bey'in türbesi ve caminin kuzeyindeki ikinci hazire bulunur.",
+        "en": "The Umurbey Complex stands in the Umurbey Neighborhood of Yıldırım District. The book says the mosque was built by Umur Bey as a unit of a complex. The complex includes the mosque, a fountain on its west wall, Umur Bey's tomb in the graveyard of the south garden, and a second graveyard north of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "63, 72-73, 77"
+        }
+      ]
+    },
+    {
+      "id": "umur-bey",
+      "order": 2,
+      "title": {
+        "tr": "Umur Bey",
+        "en": "Umur Bey"
+      },
+      "body": {
+        "tr": "Umur Bey, Osman Gazi'nin silah arkadaşlarından Aykut Alp'in torunu, Kara Timurtaş Paşa'nın oğludur; Yahşi, Ali, Mehmed, Oruç ve Mahmud adlı beş kardeşten biridir. Yıldırım Bayezid'in İstanbul kuşatmasına katılmış, 1402 Ankara Savaşı'nda yaralanmış ve babasıyla birlikte Timur ordusuna esir düşmüştür. Fetret Devri'nde önce Musa Çelebi'nin yanında yer almış, sonra Çelebi Mehmed'in safına geçmiş, Anadolu beylerbeyi olmuş, Düzmece Mustafa vakasında sadakatiyle öne çıkmıştır. II. Murad döneminde vezirliğe ulaşmıştır. Cami haziresindeki mezar taşından H. Zilkade 865 / M. Ağustos 1461'de vefat ettiği anlaşılır.",
+        "en": "Umur Bey was the grandson of Aykut Alp, a comrade-in-arms of Osman Gazi, and the son of Kara Timurtaş Paşa; he was one of five brothers named Yahşi, Ali, Mehmed, Oruç and Mahmud. He took part in Yıldırım Bayezid's siege of Istanbul, was wounded at the Battle of Ankara in 1402 and was captured with his father by Timur's army. During the Interregnum he first sided with Musa Çelebi, then with Çelebi Mehmed, became Anatolian governor and stood out for loyalty in the Düzmece Mustafa incident. He reached the rank of vizier under Murad II. His tombstone in the mosque graveyard shows he died in Dhu al-Qa'dah AH 865 / August AD 1461."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "63"
+        }
+      ]
+    },
+    {
+      "id": "vakiflari",
+      "order": 3,
+      "title": {
+        "tr": "Umur Bey'in Vakıfları",
+        "en": "Umur Bey's Foundations"
+      },
+      "body": {
+        "tr": "Hayırseverliğiyle tanınan Umur Bey'in farklı bölgelerde çok sayıda vakfı vardır: 6 cami, 3 medrese, 8 hamam, 2 han, 2 kervansaray, 1 namazgâh, 1 imaret ve 2 mahalle. Toplam 25 yapı ve alan onun adıyla kayıtlara geçmiştir.",
+        "en": "Known for his philanthropy, Umur Bey established many foundations in different regions: 6 mosques, 3 madrasas, 8 bathhouses, 2 hans, 2 caravanserais, 1 open-air prayer area, 1 imaret and 2 neighborhoods. In total 25 buildings and areas were registered under his name."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "64"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "vakif_yapi_sayisi",
+      "label": {
+        "tr": "Umur Bey adına kayıtlı vakıf yapı ve alan sayısı",
+        "en": "Number of buildings and areas registered under Umur Bey's name"
+      },
+      "value": 25,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "64"
+        }
+      ],
+      "note": {
+        "tr": "6 cami, 3 medrese, 8 hamam, 2 han, 2 kervansaray, 1 namazgâh, 1 imaret, 2 mahalle.",
+        "en": "6 mosques, 3 madrasas, 8 bathhouses, 2 hans, 2 caravanserais, 1 open-air prayer area, 1 imaret, 2 neighborhoods."
+      }
+    },
+    {
+      "key": "vefat",
+      "label": {
+        "tr": "Umur Bey'in vefatı",
+        "en": "Umur Bey's death"
+      },
+      "value": "H. Zilkade 865 / M. Ağustos 1461",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "63, 77"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Umur Bey",
+      "role": {
+        "tr": "Banî (yaptıran); Kara Timurtaş Paşa'nın oğlu, II. Murad döneminde vezir",
+        "en": "Founder; son of Kara Timurtaş Paşa, vizier under Murad II"
+      }
+    },
+    {
+      "name": "Kara Timurtaş Paşa",
+      "role": {
+        "tr": "Umur Bey'in babası",
+        "en": "Umur Bey's father"
+      }
+    },
+    {
+      "name": "Aykut Alp",
+      "role": {
+        "tr": "Umur Bey'in dedesi, Osman Gazi'nin silah arkadaşı",
+        "en": "Umur Bey's grandfather, comrade-in-arms of Osman Gazi"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "umur-bey-vefat",
+      "year": 1461,
+      "date": null,
+      "hijri": "865",
+      "type": "record",
+      "title": {
+        "tr": "Umur Bey Zilkade 865 / Ağustos 1461'de vefat etti",
+        "en": "Umur Bey died in Dhu al-Qa'dah AH 865 / August AD 1461"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "63, 77"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Umurbey Külliyesi, Yıldırım'ın Umurbey Mahallesi'nde, birbirine yakın yapılardan oluşur. Cami, iki kare mekânlı ve kuzeyinde beş gözlü son cemaat yeri olan tuğla ve taş almaşık duvarlı bir yapıdır. Caminin batı duvarına gömülü sivri kemerli bir çeşme vardır. Caminin güney bahçesindeki hazirede, dört ayağa oturan ve kiremit kaplı kubbeyle örtülü bir tuğla türbe bulunur; kuzeyde ikinci bir hazire yer alır.",
+      "en": "The Umurbey Complex stands in the Umurbey Neighborhood of Yıldırım as a group of close buildings. The mosque has two square rooms, a five-bay narthex on its north side and walls of alternating brick and stone. A pointed-arch fountain is embedded in the mosque's west wall. In the graveyard of the south garden stands a brick tomb on four piers with a tile-covered dome; a second graveyard lies to the north."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

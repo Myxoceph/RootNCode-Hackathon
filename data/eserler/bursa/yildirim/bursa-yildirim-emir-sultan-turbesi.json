@@ -1,0 +1,974 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-emir-sultan-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Emir Sultan",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Emir Sultan Külliyesi bölümünden (s. 19-59) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup photos match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Türbenin ilk yapım yılı kaynakta yok (yalnızca Emîr Sultan'ın 1429'daki vefatı verilmiş); 'dating.start_year' boş.",
+      "Mimar kaynakta yok.",
+      "Niyaz Penceresi'nin tam konumu (türbe mi avlu mu) ve 1868 kitabesinin pencereye göre yeri sahada teyit edilmeli.",
+      "1845 kitabesinin çeşme arkasındaki duvarda mı yoksa çeşmenin üzerinde mi durduğu kitapta iki ayrı yerde farklı anlatılıyor; sahada kontrol edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[yeniden-insa-1804|yeniden-insa-1845|yeniden-insa-1868]",
+        "note": "Kitap türbenin üç kez yeniden inşa edildiğini söylüyor: 1804 (III. Selim, camiyle birlikte), 1845 (Abdülmecid), 1868 (Abdülaziz; 1855 depreminin ardından). Üçü ayrı olaylar olabilir ancak 1855 mazbatası türbede yalnızca sınırlı hasar bildiriyor. Kaynağa sadık kalındı."
+      },
+      {
+        "field": "timeline[onarim-1743]",
+        "note": "Türbe onarım listesinde 1743, cami listesinde 1742 yazıyor; ayrıca Beşir Ağa çeşmesi H. 1156 / M. 1743 tarihli ve cami ile türbeyi onardığını söylüyor."
+      },
+      {
+        "field": "sections[evliya-tasviri]",
+        "note": "Evliya Çelebi altı basamaklı inişi ve çini kaplı duvarları anlatıyor; bugünkü yapıda iki + iki basamak ve ampir iç süsleme var. Fark sonraki yeniden inşalardan kaynaklanıyor olabilir; kitap karşılaştırma yapmıyor."
+      },
+      {
+        "field": "inscriptions",
+        "note": "1845 kitabesi çeşme bölümünde (s. 59) 'çeşmeye değil, türbe onarımına ait' olduğu belirtilerek anılıyor; bu yüzden türbe kaydına konuldu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Emir Sultan Türbesi",
+    "en": "Emir Sultan Tomb"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-emir-sultan-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "Emîr Sultan",
+    "Hundi Hatun",
+    "ampir",
+    "rokoko",
+    "sanduka",
+    "Niyaz Penceresi",
+    "Evliya Çelebi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Emirsultan Mahallesi",
+    "address": "Emir Sultan Camii ile aynı avlu",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "44"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Emîr Sultan'ın vefatından (1429) sonra; mevcut yapı XIX. yüzyıl yeniden inşalarına ait",
+      "en": "After Emîr Sultan's death (1429); present building from 19th-century reconstructions"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap türbenin 1429'da vefat eden Emîr Sultan adına yaptırıldığını yazar; inşa yılı verilmez.",
+      "en": "The book says the tomb was built in the name of Emîr Sultan, who died in 1429, without giving a construction year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "44"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hundi Hatun",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "44"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Emir Sultan Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "22-23"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Mutasavvıf Emîr Sultan'ın (v. 1429) sandukasını ve eşi Hundi Hatun, oğlu Emîr Ali ve kızlarının sandukalarını barındıran sekizgen planlı türbe; mevcut hâli 1795 sonrası ve XIX. yüzyıl yeniden inşalarına aittir.",
+    "en": "An octagonal tomb housing the sarcophagus of the Sufi Emîr Sultan (d. 1429) and those of his wife Hundi Hatun, son Emîr Ali and daughters; its present form results from reconstructions after 1795 and in the 19th century."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Emîr Sultan Türbesi, aynı adı taşıyan cami ile aynı avlu içindedir. 1429'da vefat eden mutasavvıf Emîr Sultan adına eşi ve Yıldırım Bayezid'in kızı Hundi Hatun tarafından inşa ettirilmiştir. Emîr Sultan, Osmanlı coğrafyasından derviş, sufi ve alimleri Bursa'ya davet ederek ilmî ve tasavvufi meclisler kurmuş; her yıl erguvan mevsiminde bayram havasında düzenlenen bu toplantılar vefatından sonra da yüzyıllarca sürmüştür.",
+        "en": "The Emîr Sultan Tomb stands in the same courtyard as the mosque of the same name. It was built in the name of the Sufi Emîr Sultan, who died in 1429, by his wife Hundi Hatun, daughter of Yıldırım Bayezid. Emîr Sultan invited dervishes, sufis and scholars from the Ottoman lands to Bursa and pioneered scholarly and mystical assemblies, held every Judas tree season in a festive atmosphere and continued for centuries after his death."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-45"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe, cami gibi küfeki kesme taş beden duvarları ve tuğla kemerli pencere alınlıklarıyla dikkat çeker; sekizgen planlıdır ve kurşun kaplı bir kubbeyle örtülüdür. Doğu ve batı cephelerinde dikdörtgen planlı iki oda vardır; güneybatı köşesinde bugün dernek merkezi olarak kullanılan bir oda ile eskiden cüzhane olan, bugün hanımlara ayrılmış başka bir oda, güneydoğu köşesinde yine dernek faaliyetlerine ayrılmış bir mekân bulunur. Batıdaki oda türbedar odasıdır. Giriş doğu cephesinden, revaklı avluya açılan mekândan sağlanır. 1579'da çevresi genişletilen türbede sandukaların bulunduğu iç mekân avlu seviyesinden yaklaşık bir metre aşağıdadır: revaklı avludan türbe sofasına iki basamaklı merdivenle geçilir, buradan iki basamakla ana mekâna inilir. Doğu giriş cephesi dışında tüm cephelerde demir parmaklıklı, yuvarlak kemerli büyük pencereler vardır. Kuzey duvarındaki pencerenin iki yanında dikdörtgen formlu iki niş bulunur; iç süslemelerde ampir üslubu belirgindir ve merkezdeki büyük avize öne çıkar.",
+        "en": "Like the mosque, the tomb has cut limestone walls and brick-arched window pediments; it is octagonal and covered by a lead dome. Two rectangular rooms stand on the east and west façades: in the southwest corner a room now used as an association center and another, formerly a Quran reading room, now allocated to women; in the southeast corner another space for association activities. The room to the west is the tomb keeper's room. The entrance is from the east façade, in a space opening onto the arcaded courtyard. In the tomb, whose surroundings were expanded in 1579, the interior with the sarcophagi lies about one meter below courtyard level: a two-step staircase leads from the arcaded courtyard to the tomb hall, and two more steps lead down to the main space. Except for the east entrance façade, all façades have large round-arched windows with iron grilles. Two rectangular niches flank the window in the north wall; the Empire style is clearly felt in the interior and the large central chandelier stands out."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-46"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 3,
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbede Emîr Sultan'ın yanı sıra eşi Hundi Hatun, oğlu Emîr Ali ve kızlarına ait sandukalar bulunur. Emîr Sultan'ın sandukası diğerlerinden daha büyük ve gösterişlidir; çevresi kalem işi ve yaldızlarla bezeli ahşap oyma bir korkulukla sınırlandırılmıştır. Türbe giriş mekânında Kadiri tarikatına ait sancak, Kâbe örtüsü, türbeye vakfedilmiş kitaplar ve çeşitli etnografik eserler sergilenir; tarihî şamdanlar bugün de türbe içindedir.",
+        "en": "The tomb holds the sarcophagi of Emîr Sultan, his wife Hundi Hatun, his son Emir Ali and his daughters. Emîr Sultan's is larger and more ostentatious, bordered by a wooden carved railing decorated with hand-painted work and gilding. The entrance space displays the flag of the Qadiri order, a Kaaba cover, books endowed to the tomb and various ethnographic items; historical candlesticks remain inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-45, 56-57"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Yeniden İnşalar",
+        "en": "Repairs and Reconstructions"
+      },
+      "body": {
+        "tr": "Türbe 1571, 1598, 1604, 1608, 1617, 1633, 1670, 1743, 1761, 1766, 1786 ve 1789'da kapsamlı ya da kısmi onarımlar görmüş, H. 1210 / M. 1795 depreminde ağır hasar almış, III. Selim tarafından H. 1219 / M. 1804'te cami ile birlikte ampir ve rokoko üsluplarının birleşimiyle yeniden inşa ettirilmiştir. H. 1261 / M. 1845'te Bursa'yı ziyaret eden Abdülmecid türbeyi çok bakımsız bulmuş, basit onarımla yetinmeyip yeniden inşa ettirmiş; Ebniye-i Hümâyun uzmanları ve ustaları İstanbul'dan gönderilmiştir. 1855 depreminden sonra Yerel Meclis mazbatasında türbede sınırlı hasar bildirilmiş; ardından H. 1285 / M. 1868'de Bursa Valisi Hüsnü Paşa'nın gözetiminde Abdülaziz'in emriyle türbe yapısı ve avlu revakları yeniden inşa edilmiştir. 2018-2022'de VGM'nin camiyle birlikte restorasyonundan geçmiştir. 1605 (H. 1013) tarihli bir onarım belgesi, o dönemde türbe ile avlunun aynı kotta, caminin ise daha yüksekte olduğunu gösterir.",
+        "en": "The tomb was repaired extensively or partly in 1571, 1598, 1604, 1608, 1617, 1633, 1670, 1743, 1761, 1766, 1786 and 1789; it was heavily damaged in the AH 1210 / AD 1795 earthquake and rebuilt by Selim III together with the mosque in AH 1219 / AD 1804 in a combination of Empire and Rococo styles. Sultan Abdülmecid, visiting Bursa in AH 1261 / AD 1845, found it very neglected and had it rebuilt rather than simply repaired, sending experts of the Ebniye-i Hümâyun and craftsmen from Istanbul. After the 1855 earthquake the Local Council reported limited damage to the tomb; in AH 1285 / AD 1868 the tomb structure and courtyard arcades were rebuilt under Governor Hüsnü Paşa by order of Abdülaziz. It was restored in 2018-2022 by the General Directorate of Foundations together with the mosque. A restoration document dated AH 1013 / AD 1605 shows that then the tomb and courtyard were at the same level and the mosque higher."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-46, 50-51, 36-37"
+        }
+      ]
+    },
+    {
+      "id": "niyaz-penceresi",
+      "order": 5,
+      "title": {
+        "tr": "Niyaz Penceresi",
+        "en": "Niyaz (Supplication) Window"
+      },
+      "body": {
+        "tr": "Güney cephede, kıble istikametinde yükseltilmiş revakın önünde büyük boyutlu \"Niyaz Penceresi\" yer alır. Özellikle sünnet düğünleri gibi toplu merasimlerde cemaatin birlikte dua ettiği bu pencerenin önünde çekilmiş çok sayıda hatıra fotoğrafı günümüze ulaşmıştır. Pencerenin üzerinde 1868 tarihli ihya kitabesi bulunur.",
+        "en": "A large \"Niyaz (Supplication) Window\" stands in front of the elevated portico on the south façade in the qibla direction. Many souvenir photographs survive, taken in front of this window where the congregation prayed together, especially at mass ceremonies such as circumcision ceremonies. The 1868 restoration inscription is above the window."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "50, 52-53"
+        }
+      ]
+    },
+    {
+      "id": "evliya-tasviri",
+      "order": 6,
+      "title": {
+        "tr": "Evliya Çelebi'nin Tasviri",
+        "en": "Evliya Çelebi's Description"
+      },
+      "body": {
+        "tr": "Evliya Çelebi 1640'ta Bursa'yı ziyaretinde türbeyi gezmiş ve Seyahatnâme'sinde şöyle anlatmıştır: türbe şehrin doğusunda yüksekçe ve havadar bir yerde büyük bir yapıdır; yüksek kapısının kanatları gümüş pullar, halkalar ve sürgülerle, eşiği tamamen gümüşle süslüdür; kapıdan altı basamaklı taş merdivenle türbeye inilir; iç ve dış duvarlar kâşî çinidir; dört pencere batıda Bursa ovasına, dört pencere kıble tarafında cami avlusuna bakar. Sandukanın çevresinde altın ve gümüş çerağlar, kandiller, şamdanlar, buhurdanlar ve gülabdanlar, ünlü hattatların yazdığı Kur'an'lar bulunur; sanduka ibrişim ipekle örtülüdür. Bazı kimseler edeplerinden içeri girmeyip başucu tarafındaki pencereden Fatiha okuyup gider.",
+        "en": "Visiting Bursa in 1640, Evliya Çelebi toured the tomb and wrote in his Seyahatnâme that it lies in a large building on a high, airy place east of the city; the leaves of its high door are adorned with silver sequins, rings and bolts and its threshold is entirely silver; a six-step stone staircase descends from the door; the walls inside and out are covered with kaşi tiles; four windows face west to the Bursa plain and four face the mosque courtyard on the qibla side. Around the sarcophagus are gold and silver lamps, lanterns, candlesticks, censers and rosewater sprinklers and Qurans by renowned calligraphers; the sarcophagus is covered with silk. Some people, out of decency, do not enter but recite the Fatiha at the window by the head side."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "52-53, 56"
+        }
+      ]
+    },
+    {
+      "id": "hediyeler-ve-ziyaret",
+      "order": 7,
+      "title": {
+        "tr": "Hediyeler, Ziyaret ve Gelenekler",
+        "en": "Gifts, Visits and Traditions"
+      },
+      "body": {
+        "tr": "H. 5 Cemaziyelevvel 1067 / M. 19 Şubat 1657 tarihli bir belgeye göre türbedeki kıymetli eşyalar: bir altın kandil, üç küçük yeni ve beş büyük eski gümüş kandil, bir gümüş gülabdan, altı değerli seccade, iki gümüş şamdan, bir asılı gümüş buhurdan, bir gümüş buhurdan ve altı pirinç şamdan. Şehzade II. Selim 1561 Ağustos'unda türbeyi ziyaret edip bir mushaf-ı şerif hediye etmiş; mushaf mahkeme huzurunda türbedar Hacı Mehmed oğlu Habib Halife ile türbe emini Seyyid Hüseyin'e teslim edilmiştir. Osmanlı döneminde padişahların sefere çıkmadan önce Emîr Sultan'ın elinden kılıç kuşandıkları ve dua aldıkları bilinir. Türbe bugün de Bursa'nın en önemli ziyaret yerlerindendir; sünnet çocuklarının ziyaret geleneği ile Ramazan aylarında mahallede davul çalınmaması âdeti sürmektedir.",
+        "en": "According to a document of 5 Jumada al-Awwal AH 1067 / 19 February AD 1657, the valuables in the tomb were: one gold lamp, three small new and five large old silver lamps, one silver rosewater sprinkler, six valuable prayer rugs, two silver candlesticks, one hanging silver censer, one silver censer and six brass candlesticks. Prince Selim II presented a Mushaf al-Sharif in August 1561; it was delivered before the court to tomb keeper Habib Halife, son of Hacı Mehmed, and tomb trustee Seyyid Hüseyin. During the Ottoman period the sultans are known to have girded swords and received prayers from Emîr Sultan before campaigns. The tomb remains one of Bursa's most important places of visit; the tradition of circumcised boys visiting it and of not playing drums in the neighborhood during Ramadan continues."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "56-57"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sahibi",
+      "label": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "value": "Emîr Sultan, Hundi Hatun, Emîr Ali ve kızları",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-45"
+        }
+      ]
+    },
+    {
+      "key": "ic_mekan_kot_farki",
+      "label": {
+        "tr": "İç mekân avlu seviyesinin altında (yaklaşık)",
+        "en": "Interior below courtyard level (approx.)"
+      },
+      "value": 1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-45"
+        }
+      ]
+    },
+    {
+      "key": "sofaya_basamak",
+      "label": {
+        "tr": "Avludan sofaya basamak",
+        "en": "Steps from courtyard to hall"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-45"
+        }
+      ]
+    },
+    {
+      "key": "ana_mekana_basamak",
+      "label": {
+        "tr": "Sofadan ana mekâna basamak",
+        "en": "Steps from hall to main space"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-45"
+        }
+      ]
+    },
+    {
+      "key": "niyaz_kitabe_boyutu",
+      "label": {
+        "tr": "1868 kitabesi boyutu",
+        "en": "1868 inscription size"
+      },
+      "value": "0,50 × 1,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "50"
+        }
+      ]
+    },
+    {
+      "key": "onarim_sayisi_listesi",
+      "label": {
+        "tr": "Listelenen onarım yılı sayısı",
+        "en": "Listed repair years"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Emîr Sultan",
+      "role": {
+        "tr": "Türbede yatan mutasavvıf (v. 1429)",
+        "en": "Sufi buried in the tomb (d. 1429)"
+      }
+    },
+    {
+      "name": "Hundi Hatun",
+      "role": {
+        "tr": "Banî; sandukası türbededir",
+        "en": "Founder; her sarcophagus is in the tomb"
+      }
+    },
+    {
+      "name": "Emîr Ali",
+      "role": {
+        "tr": "Emîr Sultan'ın oğlu; sandukası türbededir",
+        "en": "Son of Emîr Sultan; sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "III. Selim",
+      "role": {
+        "tr": "1804'te türbeyi camiyle birlikte yeniden inşa ettirdi",
+        "en": "Had the tomb rebuilt with the mosque in 1804"
+      }
+    },
+    {
+      "name": "Abdülmecid",
+      "role": {
+        "tr": "1845'te türbeyi yeniden inşa ettirdi",
+        "en": "Had the tomb rebuilt in 1845"
+      }
+    },
+    {
+      "name": "Zîver Paşa",
+      "role": {
+        "tr": "1845 kitabesinin şairi",
+        "en": "Poet of the 1845 inscription"
+      }
+    },
+    {
+      "name": "Abdülaziz",
+      "role": {
+        "tr": "1868'de türbe ve avlu revaklarını yeniden inşa ettirdi",
+        "en": "Had the tomb and courtyard arcades rebuilt in 1868"
+      }
+    },
+    {
+      "name": "Vali Hüsnü Paşa",
+      "role": {
+        "tr": "1868 inşaatını gözetti",
+        "en": "Supervised the 1868 construction"
+      }
+    },
+    {
+      "name": "Şehzade II. Selim",
+      "role": {
+        "tr": "1561'de mushaf hediye etti",
+        "en": "Presented a Quran in 1561"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "1640'ta türbeyi tasvir eden seyyah",
+        "en": "Traveller who described the tomb in 1640"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kitabe-1845",
+      "location": {
+        "tr": "Caminin kıble yönündeki dış avlu duvarında, Hacı Beşir Ağa Çeşmesi'nin arkasındaki duvara gömülü",
+        "en": "Embedded in the outer courtyard wall on the qibla side of the mosque, behind the Hacı Beşir Ağa Fountain"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Yapdırub Abdü’l-Mecîd Hân-ı velayet-iktidâr\nHazret-i Sultân Emîr’e nev-mekân bu türbeyi\nRûh-i pâkin n’ola şâdân eylesin terkîm ile\nKıldı ihyâ ol cihân-bân-ı zamân bu türbeyi\nDâimâ kılsun ziyâret kudsiyân bünyânını\nYapdı dünyâ içre çün kasr-ı cinân bu türbeyi\nZîb-i revzen ile Zîver cevherin târîhini\nPâk ü âlî yapdı Hâkân-ı cihân bu türbeyi.",
+      "translation": {
+        "tr": "Sultan Abdülmecid Han’ın iktidar döneminde, Emîr Sultan hazretleri için bu türbe yeni bir mekân olarak inşa ettirildi. Ne olur, bu ikram vesilesiyle onun pak ruhu şad olsun. Cihan padişahı, bu türbeyi saygıyla yeniden ihya etti, hayat verdi. Böylece, meleklerin sürekli ziyaret etmesi için yeryüzündeki bu türbeyi âdeta bir cennet kasrına dönüştürdü. Ey Ziver! “Cevherîn” kelimesiyle tarih düşür ve bu beyit, türbenin penceresine nakşedilmiş bir süs olsun: ‘İşte cihan hakanı bu türbeyi temiz ve yüce bir yapı haline getirdi.’ H. 1261 / M. 1845",
+        "en": "During the reign of Sultan Abdülmecid Han, this tomb was built as a new place for His Excellency Emîr Sultan. Please, may his pure soul be happy through this honor. The world sultan respectfully revived this tomb and gave it life. Thus, he transformed this tomb on earth into a heavenly palace for the angels to visit constantly. Oh Ziver! Write down the date with the word “Cevherîn” and let this couplet be an ornament engraved on the window of the tomb: ‘Here, the world ruler has transformed this tomb into a clean and sublime structure.’ AH 1261 / AD 1845"
+      },
+      "author": "Zîver Paşa",
+      "date": {
+        "hijri_year": 1261,
+        "gregorian": "1845"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46, 49, 58-59"
+        }
+      ],
+      "note": {
+        "tr": "Çeşme bölümü (s. 59) bu kitabenin bugün çeşmenin yanında durduğunu ancak çeşmeye değil türbe onarımına ait olduğunu belirtir. Dil kaynakta adlandırılmamış; Osmanlı Türkçesi (manzum) olarak işaretlendi.",
+        "en": "The fountain section (p. 59) says this inscription now stands by the fountain but belongs to the tomb repair, not the fountain. The language is not named in the source; marked as Ottoman Turkish verse."
+      }
+    },
+    {
+      "id": "kitabe-1868",
+      "location": {
+        "tr": "Niyaz Penceresi üzerinde, talik hatla, 0,50 × 1,50 m",
+        "en": "Above the Niyaz Window, Ta'liq script, 0.50 × 1.50 m"
+      },
+      "language": "tr-ottoman",
+      "script": "talik",
+      "transliteration": "Şâhen-şeh-i deryâ-nevâl Sultân-ı memdûhu’l-hısâl\nAbdu’l- Azîz-i zü’l-kemâl âlemlere dâd eyledi\nOl Husrev u Hakân-ı dîn ol kâmkâr u kâmbîn\nOl mükrim-i ehl-i yakîn tekrîm-i dâmâd eyledi\nBu türbeye cennet-nazîr derler kamu bernâ vü pîr\nBunda yatub Sultân Emîr hep halkı irşâd eyledi\nZilzâlden olmuşdı harâb düşmezdi ammâ kim türâb\nRûh-ı Emîr-i kâmyâb zîrâ ki imdâd eyledi\nTa’mîrin ol Şâh-ı enâm emr eyledi bi’l-ihtirâm\nHalkı bu lutf-i müstedâm mesrûr u dil-şâd eyledi\nBu vâlî-i bî-kudreti Husnî-i abd-i şevketi\nBer vefk-ı emr-i devleti tesrî-i bünyâd eyledi\nOl tâc-dârın dem-be-dem şükrân-ı alâ tilke’n-ni’âm\nSükkân-ı dünyâ vü irem da’vâtını yâd eyledi\nRûh-ı Emîr olsun hemîn her kâr u emrinde mu’în\nHakkâ ki ber tarz-ı güzîn çok şeyler îcâd eyledi\nKilk-i Emel bi’l-iftihâr yazdı hemân târîh-i tâm\nSultân Emîr’in türbesin bünyâd u âbâd eyledi",
+      "translation": {
+        "tr": "Övgüye değer sultan, bağışı ve ihsanı denizler kadar çok olan kemal sahibi sultan Abdülaziz Han, âlemlere adaletle hükmetti. Dinin hakanı, Allah dostlarına ikramda bulunan o bahtiyar padişah, hanedanın damadı Emîr Sultan’a da saygı gösterdi. Bu türbeye genç yaşlı herkes ‘Cennet gibi’ derler. Burada halkı daima irşat eden, onlara yol gösteren Emîr Sultan hazretleri yatmaktadır. Zelzeleden sonra harap olmuştu, ama bir toprak parçası dahi düşmemişti. Çünkü talihli Emîr Sultan’ın ruhu yardım etmekteydi. Halkın padişahı Sultan Abdülaziz Han, hürmetle türbenin tamir edilmesini emretti. Bu ihsan bu devamlı bağış halkı çok sevindirdi. Vali Hüsnü Paşa da devletli Padişah’ın emrine göre inşaatı hızlandırarak tamiratı tamamladı. Allah’ın verdiği bu nimetlere her an şükreden o kudretli padişah bu dünya sakinlerinin ve cennet ehlinin dualarını yad etti. Emîr Sultan’ın ruhu her işinde ona daima yardımcı olsun, doğrusu çok beğenilen bir tarzda çok güzel bir iş yaptı. Emel’in kalemi iftiharla tam ve doğru tarihi yazdı. Emîr Sultan hazretlerinin türbesini bayındır etti. H.1285/ M. 1868",
+        "en": "The praiseworthy sultan, the perfect sultan Abdülaziz Han, whose generosity and benevolence were as abundant as the seas, ruled the worlds with justice. The ruler of religion, that fortunate sultan who showed kindness to the friends of Allah, also showed respect to the son-in-law of the dynasty, Emir Sultan. Everyone, young and old, calls this tomb ‘Like Heaven’. Here lies Hazrat Emir Sultan, who always guided the people and showed them the way. It was devastated after the earthquake, but not even a piece of earth fell because the spirit of the fortunate Emir Sultan was aiding it. Sultan Abdülaziz Han, the people’s sultan, ordered the tomb to be repaired out of respect. This generosity, this continuous donation made the people very happy. The Governor Hüsnü Paşa also accelerated the construction and completed the repairs according to the order of the Sultan. That mighty sultan, who was always grateful for the blessings bestowed by God, remembered the prayers of the inhabitants of this world and the people of heaven. May the spirit of Emir Sultan always help him in all his work, indeed he did a very good job in a very admirable style. Emel’s pen proudly wrote the complete and correct date. He beautified the tomb of Hazrat Emir Sultan. AH 1285/ AD 1868"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1285,
+        "gregorian": "1868"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "50-52"
+        }
+      ],
+      "note": {
+        "tr": "Şairin adı kaynakta verilmemiş; metinde 'Emel' mahlası geçer.",
+        "en": "The poet's name is not given; the pen name 'Emel' appears in the text."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vefat-1429",
+      "year": 1429,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Emîr Sultan vefat etti ve türbeye defnedildi",
+        "en": "Emîr Sultan died and was buried in the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "20-21, 44"
+        }
+      ]
+    },
+    {
+      "id": "mushaf-1561",
+      "year": 1561,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Şehzade II. Selim türbeye mushaf hediye etti",
+        "en": "Prince Selim II presented a Quran to the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "56"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1571",
+      "year": 1571,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "genisletme-1579",
+      "year": 1579,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Türbenin çevresi genişletildi",
+        "en": "Surroundings of the tomb expanded"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-45"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1598",
+      "year": 1598,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1604",
+      "year": 1604,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "belge-1605",
+      "year": 1605,
+      "date": null,
+      "hijri": "1013",
+      "type": "record",
+      "title": {
+        "tr": "Onarım belgesi: türbe ve avlu aynı kotta, cami daha yüksek",
+        "en": "Repair document: tomb and courtyard at the same level, mosque higher"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44-45"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1608",
+      "year": 1608,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1617",
+      "year": 1617,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1633",
+      "year": 1633,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "evliya-1640",
+      "year": 1640,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Evliya Çelebi türbeyi gezdi ve tasvir etti",
+        "en": "Evliya Çelebi visited and described the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "52-53"
+        }
+      ]
+    },
+    {
+      "id": "envanter-1657",
+      "year": 1657,
+      "date": "1657-02-19",
+      "hijri": "5 Cemaziyelevvel 1067",
+      "type": "record",
+      "title": {
+        "tr": "Türbedeki kıymetli eşya listesi",
+        "en": "List of valuables in the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "56"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1670",
+      "year": 1670,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1743",
+      "year": 1743,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (Beşir Ağa onarımı bu tarihli olabilir)",
+        "en": "Repair (Beşir Ağa's repair is dated 1743)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46, 58"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1761",
+      "year": 1761,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1766",
+      "year": 1766,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1786",
+      "year": 1786,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1789",
+      "year": 1789,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1795",
+      "year": 1795,
+      "date": null,
+      "hijri": "1210",
+      "type": "damage",
+      "title": {
+        "tr": "Depremde ağır hasar",
+        "en": "Heavily damaged in the earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1804",
+      "year": 1804,
+      "date": null,
+      "hijri": "1219",
+      "type": "restoration",
+      "title": {
+        "tr": "III. Selim cami ile birlikte yeniden inşa ettirdi",
+        "en": "Rebuilt by Selim III together with the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1845",
+      "year": 1845,
+      "date": null,
+      "hijri": "1261",
+      "type": "restoration",
+      "title": {
+        "tr": "Abdülmecid türbeyi yeniden inşa ettirdi",
+        "en": "Abdülmecid had the tomb rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "46, 49"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depremi: türbede sınırlı hasar",
+        "en": "1855 earthquake: limited damage to the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "50-51"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1868",
+      "year": 1868,
+      "date": null,
+      "hijri": "1285",
+      "type": "restoration",
+      "title": {
+        "tr": "Abdülaziz: türbe ve avlu revakları yeniden inşa (Vali Hüsnü Paşa)",
+        "en": "Abdülaziz: tomb and courtyard arcades rebuilt (Governor Hüsnü Paşa)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "50-52"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM restorasyonu (2018-2022)",
+        "en": "VGM restoration (2018-2022)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "36-37"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-emir-sultan-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Emir Sultan Külliyesi'nin parçasıdır.",
+        "en": "Part of the Emir Sultan Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "19, 44"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-emir-sultan-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Türbe, camiyle aynı avluda yer alır ve 1804'te camiyle birlikte yeniden inşa edilmiştir.",
+        "en": "The tomb stands in the same courtyard as the mosque and was rebuilt with it in 1804."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "44, 46"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, camiyle aynı revaklı avluda yer alan sekizgen planlı, kurşun kaplı kubbeli bir yapıdır. Giriş doğu cephesinden, revaklı avluya açılan mekândandır. Avludan türbe sofasına iki basamakla, oradan sandukaların bulunduğu ana mekâna iki basamakla inilir; ana mekân avlu seviyesinin yaklaşık bir metre altındadır. İçeride ahşap oyma korkuluk ile çevrili büyük bir sanduka ve diğer sandukalar, ampir üslubunda süslemeler ve ortada büyük bir avize vardır.",
+      "en": "The tomb is an octagonal, lead-domed building in the same arcaded courtyard as the mosque. It is entered from the east façade through a space opening onto the arcaded courtyard. Two steps lead from the courtyard to the tomb hall and two more down to the main space with the sarcophagi, about one meter below courtyard level. Inside are a large sarcophagus bordered by a carved wooden railing and the other sarcophagi, Empire-style decoration and a large central chandelier."
+    },
+    "audio_description_source": "Kitap metnindeki mimari anlatımdan (yalnızca kaynakta yazanlar) yapay zekâ taslağı olarak yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

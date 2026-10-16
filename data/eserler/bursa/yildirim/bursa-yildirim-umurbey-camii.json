@@ -1,0 +1,678 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-umurbey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Umurbey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Umurbey Külliyesi bölümünden (s. 63-75) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir. Hazire kitapta cami bölümüyle birlikte (Umurbey Camii ve Haziresi) ele alındığı için bu kayıtta bir bölüm olarak yer alır.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Caminin inşa yılı kitapta doğrudan verilmiyor; yalnızca taş vakfiyelerin 'inşadan 22 yıl sonra' yazıldığı söyleniyor. Kesin tarih için kaynak taranmalı.",
+      "Vakfiyede caminin yanında yapıldığı söylenen hamamın bugünkü durumu kitapta anlatılmıyor.",
+      "Vakfiyede geçen vakıf yapılarının (Tuz Pazarı kervansarayı, Bergama, Biga, Karahisar, Edirne, Golya Dağı, Derzîler vb.) ilçe/ili belirsiz olduğundan ilişki kaydı açılmadı.",
+      "Molla Hüsrev'in düzenlediği vakfiye (H. 858 / M. 1454) kitapta yalnızca anılıyor; metni yok, bulunursa waqf.deed alanına eklenecek.",
+      "Hazire kitapta ayrı başlıkla anlatılıyor ama mezar taşlarının tamamı sayılmıyor (yaklaşık 80); hazire için ayrı kayıt açılıp açılmayacağına veri ekibi karar vermeli.",
+      "Sadullah Efendi ve Fatma Hanım mezar taşlarının caminin hangi hazire bölümünde (güney) olduğu 'aynı pafta' ifadesiyle belirsiz; Umur Bey'in kabri güney hazirede olduğu için güney varsayıldı, teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[vakfiye-bati].translation",
+        "note": "Kitabın Türkçe ve İngilizce 'Mealen' metinleri Tuz Pazarı'ndaki kervansaray ve dükkânları, Ayazma'daki evleri vb. 'dışında neye sahipsem hepsini camiye vakfettim' diye çeviriyor. Osmanlı Türkçesi metin ise bunları camiye vakfedilenler arasında sayıyor ('…kâfirleriyle … gayrı ne ki milkim var ise cemî’ini … vakf itdim'). Metin ile çeviri çelişiyor; kaynağa sadık kalınarak ikisi de olduğu gibi saklandı."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap taş kitabelerin H. 858 / M. 1454'te, 'Molla Hüsrev tarafından düzenlenen vakfiye ile aynı tarihte' yazıldığını, caminin inşasından 22 yıl sonra taşa kazındığını söylüyor (s. 66-67). Doğu kitabe ise 'Muharrem sonu, sekiz yüz elli tokuzuncu yıl' (H. 859) ve ayrıca 'Cumâde’l-âhir 865 (M. Mart 1461)' tarihlerini veriyor (s. 70-71). H. 858, 859 ve 865 birbirinden farklıdır; kitap bunu açıklamıyor. Hepsi saklandı, kayıt disputed işaretlendi."
+      },
+      {
+        "field": "inscriptions[vakfiye-dogu].transliteration",
+        "note": "Doğu kitabenin transkripsiyonu kitapta iki kez, küçük yazım farklarıyla basılmış (örn. 's. 69: …vakf-ı ebnâ itdim ve Edirne’de…' / 's. 70: …vakf-ı ebnâ itdim. Ve Edirne’de…', 'cibâyet' / 'cibāyet'). Sayfa 70'teki tam metin esas alındı."
+      },
+      {
+        "field": "sections[ayakta-kalan-yapi]",
+        "note": "1855 depremi bilgisi arşiv ifadesine dayanıyor: ifade 'yesâr cânibindeki kubbe' (sol taraftaki kubbe) diyor, kitap bunu 'doğu kubbesi' olarak yorumluyor (s. 65). Yorum kitaba ait."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Kitap Sadullah Efendi'nin mezar taşındaki dizelerde adını Türkçe metinde 'Sadullah', İngilizce çevirisinde 'Sa’dullah' yazıyor; Türkçe yazım esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Umurbey Camii",
+    "en": "Umurbey Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-umurbey-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "Umur Bey",
+    "taş vakfiye",
+    "son cemaat yeri",
+    "iki mekânlı plan",
+    "hazire",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Umurbey",
+    "address": "Umurbey Mahallesi, 5. Yan Sokak, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "63"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "İnşa yılı belirtilmemiş; taş vakfiyeler H. 858 / M. 1454'te, inşadan 22 yıl sonra yazılmış",
+      "en": "Construction year not given; stone endowment inscriptions written in AH 858 / AD 1454, 22 years after construction"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap inşa yılını vermiyor; taş vakfiyelerin 1454'te yazıldığını ve caminin inşasından 22 yıl sonra yerleştirildiğini söylüyor. Bu bilgiden yalnızca 15. yüzyıl çıkarıldı, yıl yazılmadı.",
+      "en": "The book gives no construction year; it says the stone inscriptions were written in 1454, 22 years after the mosque was built. Only the 15th century is inferred from this; no year is entered."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "66-67"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Umur Bey (Timurtaş oğlu Umur)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "63, 68"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 858 / M. 1454 (taş vakfiyeler; Molla Hüsrev düzenlemesiyle aynı tarih)",
+      "excerpt": {
+        "tr": "Caminin son cemaat yerindeki iki taş vakfiye, Umur Bey'in cami ve yanındaki hamam ile Bursa ve çevresindeki, İnegöl, Engürye, Bergama, Biga, Karahisar ve Edirne'deki vakıflarını sayar; gelirleriyle Golya Dağı'ndaki kervansarayın giderlerinin karşılanacağını belirtir.",
+        "en": "Two stone endowment inscriptions in the narthex list Umur Bey's mosque and adjoining bath and his foundations in and around Bursa, İnegöl, Engürye, Bergama, Biga, Karahisar and Edirne; the income is to pay for the caravanserai on Mount Golya."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "66-71"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Kitapların camiden dışarı çıkarılmaması şartıyla vakfedilmesi; vakfedilenlerin değiştirilmesine kalkışana lanet okunması; Kuşaksızoğlu Alâüddin ile Oğuzoğlu Hacı Ali'nin nâzır olup her birinin günde dört akçe alması; gelirleri toplama görevinin Hoşkadem bin Abdullah ve oğullarına verilmesi.",
+      "en": "Books are endowed on condition they are not taken out of the mosque; a curse is pronounced on anyone who tries to alter the foundations; Kuşaksızoğlu Alâüddin and Oğuzoğlu Hacı Ali are supervisors, each receiving four akçe a day; collecting the income is entrusted to Hoşkadem bin Abdullah and his sons."
+    },
+    "land_note": null,
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "66-71"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Umur Bey'in yaptırdığı, büyük ve küçük iki kare mekânın 2,20 m'lik geçitle bağlandığı özgün planlı cami. Son cemaat yerindeki iki taş vakfiye, Anadolu'da nadir görülen bir uygulamadır ve Umur Bey'in vakıflarını sıralar.",
+    "en": "A mosque built by Umur Bey with an original plan of one large and one small square room joined by a 2.20 m passage. The two stone endowment inscriptions in its narthex, a rare practice in Anatolia, list Umur Bey's foundations."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Umurbey Camii, Yıldırım ilçesi Umurbey Mahallesi, 5. Yan Sokak, No: 2'de yer alır. Umur Bey tarafından bir külliye birimi olarak yaptırılmıştır. Camiyi yaptıran Umur Bey'in hayatı ve vakıfları külliye kaydında anlatılmıştır.",
+        "en": "The Umurbey Mosque is at Umurbey Neighborhood, 5th Yan Street, No. 2, Yıldırım District. It was built by Umur Bey as a unit of a complex. Umur Bey's life and foundations are described in the complex record."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "63"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mimari",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Cami, biri büyük diğeri küçük iki kare planlı mekândan oluşur; mekânlar 2,20 m genişliğindeki bir geçitle bağlanmıştır. Bu düzenleme camiye özgün bir plan şeması kazandırır. Kuzey cephesinde dört korint başlıklı sütuna oturan beş gözlü bir son cemaat yeri vardır. İç mekânda günümüze ulaşan özgün mimari ya da sanatsal öğe yoktur. Duvarlarda bir sıra kesme küfeki taşı ve üç sıra tuğladan oluşan almaşık örgü kullanılmış, taş sıraları arasına yerleştirilen düşey tuğlalarla düzgün bir cephe elde edilmiştir.",
+        "en": "The mosque consists of two square rooms, one large and one small, linked by a 2.20 m wide passage, which gives it a unique plan. On the north façade is a five-bay narthex on four Corinthian columns. No original architectural or artistic element survives in the interior. The walls use alternating courses of one row of cut küfeki stone and three rows of brick, with vertical bricks between the stone rows giving a regular façade."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "64-65"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Kasnak seviyesine kadar yükselen minare kaidesi sekizgen planlıdır ve duvarlardakine benzer örgü sistemiyle yapılmıştır. Pabuç kısmındaki sekiz niş görünümü zarifleştirir. Tuğladan örülen silindirik gövdeye geçiş mermer Türk üçgenleriyle sağlanır; şerefenin alt kısmı yedi kat tuğla dolgudur.",
+        "en": "The minaret base rises to the drum level and is octagonal, built with a masonry system similar to the walls. Eight niches in the base make it look more elegant. The transition to the cylindrical brick shaft is by marble Turkish triangles, and the lower part of the balcony consists of seven courses of brick infill."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "65"
+        }
+      ]
+    },
+    {
+      "id": "ayakta-kalan-yapi",
+      "order": 4,
+      "title": {
+        "tr": "Deprem ve Restorasyon",
+        "en": "Earthquake and Restoration"
+      },
+      "body": {
+        "tr": "Bir arşiv ifadesinden, 1855'teki büyük Bursa depreminde caminin doğu kubbesinin yarıldığı ve onarımının mümkün görülmediği, minaredeki çatlakların ise onarılabilir olduğu anlaşılır. Cami 1970'li yıllara kadar ahşap çatı ve pasa tavan kaplamasıyla örtülüydü; bu dönemdeki restorasyonla yeniden kubbeyle örtüldü. Kubbenin yeniden inşasında kasnak hizasında da duvarlardaki örgü tekniği uygulandı.",
+        "en": "An archive statement shows that in the great Bursa earthquake of 1855 the east dome of the mosque cracked and was judged beyond repair, while the cracks in the minaret were repairable. Until the 1970s the mosque had a wooden roof and panelled ceiling; a restoration in that period covered it with a dome again, applying the same masonry technique at the drum level."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "64-65"
+        }
+      ]
+    },
+    {
+      "id": "tas-vakfiyeler",
+      "order": 5,
+      "title": {
+        "tr": "Taş Vakfiyeler",
+        "en": "Stone Endowment Inscriptions"
+      },
+      "body": {
+        "tr": "Son cemaat yerinin sağ ve sol duvarında, zeminden yüksekte, çevresi sıvayla kaplı iki taş vakfiye bulunur. Kitap bu uygulamanın Anadolu Türk-İslam sanatında çok nadir olduğunu, Sivas'taki Buruciye Medresesi ve Rahatoğlu Dârurrâhası'ndaki vakfiyelerin de bu geleneğin örnekleri olduğunu belirtir. Taş kitabeler H. 858 / M. 1454'te, Molla Hüsrev'in düzenlediği vakfiyeyle aynı tarihte yazılmış ve caminin inşasından 22 yıl sonra taşa kazınarak yerleştirilmiştir. Batıdaki kitabe 1,35 × 2,15 m boyutlarında, yedi satır, Osmanlı Türkçesiyle, girift bir nesih ve yer yer teknik açıdan zayıf bir sülüsle yazılmıştır. Metinler Umur Bey'in cami, hamam ve diğer yerlerdeki vakıflarını sayar.",
+        "en": "Two stone endowment inscriptions, plastered around and set high above the floor, are on the right and left walls of the narthex. The book says this practice is very rare in Anatolian Turkish-Islamic art, and cites the inscriptions at the Buruciye Madrasa and the Rahatoğlu Dar-ur-Raha in Sivas as examples of the tradition. The inscriptions were written in AH 858 / AD 1454, the same date as the endowment charter arranged by Molla Hüsrev, and were engraved and placed 22 years after the mosque was built. The west one measures 1.35 × 2.15 m, has seven lines and is in Ottoman Turkish in an intricate naskh and, in places, a technically weak thuluth. The texts list Umur Bey's mosque, bath and other foundations."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "66-71"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 6,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Umurbey Haziresi iki bölümdür: Umur Bey'in türbesinin de bulunduğu ilk bölüm caminin güney bahçesindedir, ikincisi caminin kuzeyindedir. İki alanda, bir kısmı kırık ya da yazısız yaklaşık 80 mezar taşı vardır. Güneydeki hazirenin en eski mezar taşı Umur Bey'e aittir; 16. yüzyıla tarihlenen örnekler de vardır. Aynı paftadaki, H. 1208 / M. 1794'te vefat eden Çıngıllızâde Hacı Hasan Ağa ile aynı yıl ölen Sadullah Efendi'nin mezar taşları anıtsal nitelikleriyle dikkat çeker. Hacı Selman Ağa'nın kızı Fatma Hanım'ın H. 1202 / M. 1788 tarihli kabri de bu paftadadır. Hazire zamanla düzenlenmiş ve taşlar düzgünce yerlerine yerleştirilmiştir.",
+        "en": "The Umurbey Graveyard has two sections: the first, including Umur Bey's tomb, is in the mosque's south garden; the other is north of the mosque. Together they hold about 80 gravestones, some broken or uninscribed. The oldest stone in the south graveyard is Umur Bey's; there are also 16th-century examples. The monumental gravestones of Çıngıllızâde Hacı Hasan Ağa, who died in AH 1208 / AD 1794, and Sadullah Efendi, who died the same year, are in the same plot. The grave of Fatma Hanım, daughter of Hacı Selman Ağa (AH 1202 / AD 1788), is also there. The graveyard has been reorganized over time and the stones set neatly in place."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "73-75"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Umurbey Mahallesi, 5. Yan Sokak, No: 2",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "63"
+        }
+      ]
+    },
+    {
+      "key": "mekan_sayisi",
+      "label": {
+        "tr": "Ana mekân sayısı",
+        "en": "Number of main spaces"
+      },
+      "value": 2,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "64"
+        }
+      ],
+      "note": {
+        "tr": "Biri büyük, biri küçük iki kare planlı mekân.",
+        "en": "One large and one small square-planned room."
+      }
+    },
+    {
+      "key": "gecit_genisligi",
+      "label": {
+        "tr": "İki mekânı bağlayan geçit genişliği",
+        "en": "Width of passage between the two spaces"
+      },
+      "value": "2,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "64"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_yeri",
+      "label": {
+        "tr": "Son cemaat yeri",
+        "en": "Narthex"
+      },
+      "value": "Beş gözlü, dört korint başlıklı sütunlu (kuzey cephe)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "64"
+        }
+      ]
+    },
+    {
+      "key": "duvar_ormesi",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Wall masonry"
+      },
+      "value": "Bir sıra kesme küfeki taşı + üç sıra tuğla",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "65"
+        }
+      ]
+    },
+    {
+      "key": "minare_kaidesi",
+      "label": {
+        "tr": "Minare kaidesi",
+        "en": "Minaret base"
+      },
+      "value": "Sekizgen planlı, pabuçta sekiz niş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "65"
+        }
+      ]
+    },
+    {
+      "key": "bati_vakfiye_boyutu",
+      "label": {
+        "tr": "Batı taş vakfiyenin boyutu",
+        "en": "Size of the west stone endowment inscription"
+      },
+      "value": "1,35 × 2,15",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "68"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_sayisi",
+      "label": {
+        "tr": "Hazirelerdeki mezar taşı sayısı (yaklaşık)",
+        "en": "Approximate number of gravestones in the graveyards"
+      },
+      "value": 80,
+      "unit": "adet",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "73"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon_oncesi_ortu",
+      "label": {
+        "tr": "1970'lere kadarki örtü",
+        "en": "Roof until the 1970s"
+      },
+      "value": "Ahşap çatı ve pasa tavan kaplaması",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "65"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Umur Bey",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Molla Hüsrev",
+      "role": {
+        "tr": "H. 858 / M. 1454 tarihli vakfiyeyi düzenleyen",
+        "en": "Arranged the endowment charter of AH 858 / AD 1454"
+      }
+    },
+    {
+      "name": "Kuşaksızoğlu Alâüddin",
+      "role": {
+        "tr": "Vakıf nâzırı",
+        "en": "Foundation supervisor"
+      }
+    },
+    {
+      "name": "Oğuzoğlu Hacı Ali",
+      "role": {
+        "tr": "Vakıf nâzırı",
+        "en": "Foundation supervisor"
+      }
+    },
+    {
+      "name": "Hoşkadem bin Abdullah",
+      "role": {
+        "tr": "Vakıf gelirlerini toplamakla görevli",
+        "en": "Charged with collecting the foundation's income"
+      }
+    },
+    {
+      "name": "Çıngıllızâde Hacı Hasan Ağa",
+      "role": {
+        "tr": "Hazirede mezarı bulunan, H. 1208 / M. 1794'te vefat eden kişi",
+        "en": "Buried in the graveyard; died AH 1208 / AD 1794"
+      }
+    },
+    {
+      "name": "Sadullah Efendi",
+      "role": {
+        "tr": "Hazirede mezarı bulunan, H. 1208 / M. 1794'te vefat eden kişi",
+        "en": "Buried in the graveyard; died AH 1208 / AD 1794"
+      }
+    },
+    {
+      "name": "Fatma Hanım",
+      "role": {
+        "tr": "Hacı Selman Ağa'nın kızı, H. 1202 / M. 1788'de vefat etmiş",
+        "en": "Daughter of Hacı Selman Ağa; died AH 1202 / AD 1788"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "vakfiye-bati",
+      "location": {
+        "tr": "Son cemaat yerinin batı duvarı, zeminden yüksekte, taş vakfiye",
+        "en": "West wall of the narthex, high above the floor, stone endowment inscription"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Bismillâhirrahmânirrahîm. Hamd ü senâ sâbittir şol Allah’a ki bizi rahmetiyle oddan kurtarır ve dahi salât ü selâm şol Rasûl’ün üzerine olsun ki bize Allah buyruğın yetişdürüb toğrı yol gösterdi.\nBundan sonra bu târîhe nazar idene ma’lûm ola ki, ben ki Timurtaş oğlu Umur’ım, bu yirde hasbeten lillâh bir câmi’ binâ itdim. Bu câmi’ mesâlihî içün yine yanında bir hamam yapub bu câmi’e vakf itdim. Tuz Bâzârı’nda yapduğum kârvansaray ve önünde bulunan dükkânlarıyla, Ayazma’daki evlerüm ve bağlarum, Aşağa Bursa altındaki bahçalarum ve değirmenüm ve mezra’alarum kâfirleriyle ve Bursa nâhiyetindeki köylerüm kâfirleriyle -ki biri Kelesân, biri Akköy’dür- ve Bursa’da Yukarı Hisar’daki evlerümden gayrı ne ki milkim var ise cemî’ini mezkûr câmi’e vakf itdim.\nİnegöl nâhiyetindeki Îsâ Virânı’ndaki değirmenüm bahçasıyla ve kâfiriyle, Engürye nâhiyetindeki Destarlı adlu köyüm ve ol vilâyette ne kadar mezra’alarum var ise ve Tekür Bınarı’ndaki üç hissem ki benümdür, bağlarum, bahçalarum, ekin yirlerüm ve kâfirlerüm, mezkûrların tamamını bu câmi’e vakf itdim. Kitablarumı dahi tafsîl ile vakf itdim.\nAmmâ, câmi’den taşra çıkmaya: Birgama’da hasbeten lillâh bir medrese yapdum, yanında bir hamam yapdum. Birgama’da ne kadar bağlarum ve bahçalarum, Begüş Ova’sında iki değirmenüm, Giresün’de iki değirmenüm, Birgama’daki dükkânlarum ve dükkân yerlerüm, ve Ayvadoğlı’ndan aldığım bir çiftlük -ki Ada’dadır- mezkûrların tamamını Birgama’daki medreseye vakf itdim.\nBiga’da hasbeten lillâh bir câmi’ yapdum, yanında bir hamam yapub ol câmi’e vakf itdim. Karahisar’da bir câmi’ ve bir medrese yapdum, yanında bir hamam ve bir kârvansaray inşâ itdim. Sarucabınar adlı köy ve Homa’da bir çiftlik dingi satın aldum bunları da Karahisar’daki câmi’e ve medreseye vakf itdim.\nCemî’ vakıflarımı müseccel itdim. Bu vakıflardan hâsıl olacak gallât ile Golya Dağı’ndaki kârvansarayın masrafı karşılanacaktır.",
+      "translation": {
+        "tr": "Rahman ve Rahim olan Allah’ın adıyla.\nÖvgü ve yüce sena, bizleri rahmetiyle ateşten kurtaran Allah’a aittir. Salat ve selam, Allah’ın buyruklarını bize ulaştıran ve bize doğru yolu gösteren Peygamber’in üzerine olsun.\nBenden sonra bu metne göz atacak olanlara açıkça bildiririm ki, ben Timurtaş oğlu Umur, bu yerde Allah rızası için bir cami inşa ettim. Caminin ihtiyaçlarını karşılamak üzere yanına bir de hamam yaptırdım ve her ikisini birlikte vakfettim.\nAyrıca Tuz Pazarı’nda inşa ettiğim kervansaray ve onun önündeki dükkânlar, Ayazma’daki evlerim ve bağlarım, Aşağı Bursa’da bulunan bahçelerim, değirmenim ve mezralarım köy halklarıyla birlikte Bursa çevresindeki köylerim- ki biri Kelesân, biri de Akköy’dür- ve Bursa’da Yukarı Hisar’da bulunan evlerim dışında neye sahipsem, hepsini bu camiye vakfettim.\nİnegöl kazasında yer alan “Îsâ Viran”ı adlı yerdeki değirmenim, bahçesi ve çalışanlarıyla birlikte Engürye kazasında bulunan Destarlı adlı köyüm ve bu bölgede sahip olduğum mezralar Tekür Pınarı’ndaki üç hissenin tümü -bağlar, bahçeler, ekinlikler ve çalışanlarıyla birlikte- hepsi bu caminin vakfına dahil edilmiştir. Kitaplarımı caminin dışına çıkarılmaması şartıyla vakfettim.\nBunun dışında, Bergama’da Allah rızası için bir medrese inşa ettim, yanına bir hamam yaptım. Bergama’daki bağlarım, bahçelerim, Begüş Ovası’nda bulunan iki değirmenim, Giresun’daki iki değirmenim, Bergama’daki tüm dükkânlarım ve dükkân arsalarım ile Ayvadoğlı’ndan satın aldığım ve Ada’da yer alan bir çiftliğimi de Bergama’daki medreseye vakfettim.\nAyrıca Biga’da Allah rızası için bir cami yaptırdım, yanına bir hamam yaptırdım ve camiye vakfettim. Karahisar’da bir cami ve bir medrese yaptım, yanlarına birer hamam ve kervansaray da inşa ettim. Sarucabınar köyünü ve Homa’da satın aldığım bir çiftliği Karahisar’daki cami ve medreseye vakfettim.\nTüm bu vakıflarımı kayıt altına aldırdım. Bu vakıflardan elde edilecek gelir, Golya Dağı’nda yer alan kervansarayın giderleri için kullanılacaktır.",
+        "en": "In the name of Allah, the Most Gracious, the Most Merciful.\nPraise and glory be to Allah, who saved us from the fire with his mercy. Peace and blessings be upon the Prophet who conveyed the commands of Allah to us and showed us the right path.\nI hereby declare clearly to those who will look at this text after me that I, Umur, the son of Timurtaş, built a mosque in this place for the sake of Allah. I also had a bath built next to the mosque to meet its needs and I dedicated both of them together.\nIn addition, I have dedicated everything I own, except the caravanserai I built in the Tuz Pazarı and the shops in front of it, my houses and vineyards in Ayazma, my gardens, my mill and my hamlets in Aşağı (Lower) Bursa, my villages around Bursa with the villagers - one of which is Kelesân and the other is Akköy - and my houses in Yukarı Hisar in Bursa, to this mosque.\nMy mill in the place called “İsâ Viran” in the İnegöl district, my village called Destarlı in the Engürye district with its garden and employees, and all three shares in Tekür Pınarı, the hamlets I own in this region - together with the vineyards, gardens, croplands and employees - are all included in the foundation of this mosque. I have donated my books on the condition that they will not be taken out of the mosque.\nApart from this, I built a madrasa in Bergama for the sake of Allah, and built a bath next to it. I donated my vineyards and gardens in Bergama, my two mills in Begüş Plain, my two mills in Giresun, all my shops and shop lands in Bergama, and a farm I bought from Ayvadoğlı and located on the island to the madrasa in Bergama.\nI also had a mosque built in Biga for the sake of Allah, I had a bathhouse built next to it and I dedicated it to the mosque. I built a mosque and a madrasah in Karahisar, I also built a bathhouse and a caravanserai next to them. I dedicated the village of Sarucabınar and a farm I bought in Homa to the mosque and madrasa in Karahisar.\nI have all these foundations registered. The income from these foundations will be used for the expenses of the caravanserai located on Mount Golya."
+      },
+      "date": {
+        "hijri_year": 858,
+        "gregorian": "1454"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "68-70"
+        }
+      ],
+      "note": {
+        "tr": "Kitap tarihi H. 858 / M. 1454 olarak verir; bkz. data_quality_notes. Boyut 1,35 × 2,15 m, yedi satır.",
+        "en": "The book dates it AH 858 / AD 1454; see data_quality_notes. Size 1.35 × 2.15 m, seven lines."
+      }
+    },
+    {
+      "id": "vakfiye-dogu",
+      "location": {
+        "tr": "Son cemaat yerinin doğu duvarı, zeminden yüksekte, taş vakfiye",
+        "en": "East wall of the narthex, high above the floor, stone endowment inscription"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Ve yolundaki köprücükler ve Derzîler’deki kârvansaray muhtâc olduğunca meremmet ideler. Karşu Savaklar adlı köyümü vakf-ı ebnâ itdim. Ve Edirne’de hasbeten lillâh bir mescid yapdum ve anda yirler vardır, mukâtaa’ya virilür. Ve bağum ve evlerüm anda vardır, yine Edirne’de yapdığım mescide vakf itdim. Ve bunlar küllîsi lillâh billâh olsun. Allah rahmet itsün ol kişiye ki bu târîhe nazar ide, okuya, vâkıf ruhına duâ kıla.\nAllah’ın laneti ve melâikelerin laneti ve peygamberlerin laneti ol kişinin üzerine olsun kim bu vakıfların tebdîline ve tağyîrine kasd ide ve bunların fesâdına mubâşir ola. Âmîn yâ Rabbe’l- âlemîn.\nVe vakıfnâmemdir. Kullarum benüm zemânumda her biri ne yiyi geldilerse, yine benden sonra anı yiyeler. Ve Kuşaksızoğlı Alâyüddin ve Oguz oğlı Hacı Ali’yi nâzır kıldım. Her biri yevmî dörder akçe yiyeler.\nVe bu târîh Muharrem ayının âhırında yazıldı ki sekiz yüz elli tokuzuncı yıldır. Şekera’llâhu mesâîahû.\nEvkâf-ı mezkûre üzre cibāyet itmekçün Hoşkadem bin Abdullah ve dahi oğlanları -bunlara sayleri ve vakfa hizmetleri mukâbelesinde- alâ, benden kalur sözdür. Beyân-ı vakfdur. Cerâ zâlike ve hurrire fī Cumâde’l-âhir senete hamsîn ve sittîn ve semâne mietin.\n(H. 865 / M. Mart 1461).",
+      "translation": {
+        "tr": "Yol üzerindeki küçük köprülerin ve Derzîler’deki kervansarayın ihtiyaç hasıl oldukça onarılması sağlansın. Karşu Savaklar adlı köyümü, oğullarım adına vakfettim.\nEdirne’de, yalnızca Allah rızası için bir mescit inşa ettim. O bölgede, devlete kira karşılığında (mukataa) tahsis edilmiş bazı gayrimenkuller mevcuttur. Aynı şekilde, Edirne’de bağlarım ve evlerim de bulunmaktadır. Bunların tamamını, söz konusu mescide vakfettim. Bu vakıfların tümü, Allah adına ve O’nun rızası için tahsis edilmiştir.\nBu belgelere göz atan ve onları okuyan kişi, vakfedenin ruhuna dua etmeli, ona Allah’tan rahmet dilemelidir. Kim bu vakıfları değiştirmeye, yerini ve amacını dönüştürmeye teşebbüs eder ve bu işin bozulmasına aracılık ederse, Allah’ın, meleklerin ve peygamberlerin laneti onun üzerine olsun. Âmin, ey âlemlerin Rabbi.\nBu metin, tarafımca düzenlenmiş resmi vakıf senedidir. Hayattayken hizmetimde bulunan kullarım, benden sonra da geçimlerini aynı şekilde sürdürsünler.\nKuşaksızoğlu Alâüddin ile Oğuzoğlu Hacı Ali’yi vakıf işlerinin gözetimiyle görevlendirdim. Her biri günde dört akçe alacaktır.\nBu belge, Hicri 859 yılının Muharrem ayı sonunda yazılmıştır. Allah, bu hayırlı iş için çaba gösterenleri mükâfatlandırsın.\nSöz konusu vakıfların gelirlerinin toplanması görevi Hoşkadem bin Abdullah ve oğullarına tevdi edilmiştir. Bu kişiler, gösterdikleri hizmet karşılığında vakıftan geçimlerini sağlama hakkına sahiptir. Bu, bizzat tarafımdan verilmiş bir sözdür.\nBu beyanname, vakfın açık şartlarını içeren resmi metindir. Bu suretle düzenlendi ve Hicri 865 yılı Cemaziyelahir ayında (Miladi Mart 1461) yazıya geçirildi.",
+        "en": "The small bridges on the road and the caravanserai in Derzîler should be repaired as needed. I endowed my village called Karşu Savaklar to my sons.\nI built a mosque in Edirne only for the sake of Allah. In that region, there are some real estates allocated to the state in return for rent (mukataa). Likewise, I also have vineyards and houses in Edirne. I dedicated all of these to the mosque in question. All of these foundations were allocated in the name of Allah and for His sake.\nAnyone who looks at and reads these documents should pray for the soul of the donor and ask Allah to have mercy on him. Whoever attempts to alter these foundations, to change their place and purpose, or to mediate in the disruption of this work, may the curse of Allah, the angels, and the prophets be upon him. Amen, O Lord of the worlds.\nThis text is the official endowment charter prepared by me. May my servants, who served me while I was alive, continue their livelihood in the same way after I am gone.\nI have assigned Kuşaksızoğlu Alaüddin and Oğuzoğlu Hacı Ali to the supervision of the foundation’s affairs. Each of them will receive four silver coins per day.\nThis document was written at the end of the month of Muharram in the year AH 859. May Allah reward those who strive for this good work.\nThe duty of collecting the income of the foundations in question was entrusted to Hoşkadem bin Abdullah and his sons. These people have the right to earn their living from the foundation in return for the services they provide. This is a promise made by me personally.\nThis declaration is the official text containing the clear conditions of the foundation. It was arranged in this way and it was written down in the month of Jumada al-Thani 865 Hijri (March 1461 Gregorian)."
+      },
+      "date": {
+        "hijri_year": 859,
+        "gregorian": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "69-71"
+        }
+      ],
+      "note": {
+        "tr": "Kitabe iki tarih içerir: Muharrem sonu H. 859 ve Cumâde’l-âhir H. 865 (M. Mart 1461). Bkz. data_quality_notes.",
+        "en": "The inscription holds two dates: end of Muharram AH 859 and Jumada al-Thani AH 865 (AD March 1461). See data_quality_notes."
+      }
+    },
+    {
+      "id": "mezar-sadullah-efendi",
+      "location": {
+        "tr": "Hazire, Sadullah Efendi'nin mezar taşı",
+        "en": "Graveyard, gravestone of Sadullah Efendi"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "El-emân ey sâkî-i zehrâbe-i mevt el-emân\nÂh u efgân ile doldu zemîn ü asmân\nKande bir sâhib-hüner, ehl-i maârif var ise\nHâke yeksân eyledi tîr-i kazâ-yı nâgehân\nNice sabretsin bu zahm-ı cân-güdâze vâlideyn\nMerhem-i sabrın meğer halk eyleye Hallâk-ı cihân\nİşte Sadullah Efendi fâikü’l-akrân iken\nMâl ü evlâdın bıraktı, teslîm etti Hakk’a cân\nDüşdü bir târîh-i yektâ fevtine, Sâdık dedi:\nRûh-ı Sadullah Efendi kıldı Adnî âşiyân.",
+      "translation": {
+        "tr": "El aman ey zehir gibi ölüm şarabını sunan saki, aman...\nZemin ve gök, ahlar ve feryatlarla doldu.\nNerede bir hüner sahibi, ilim ve irfan ehli varsa,\nAnsızın gelen kader oklarıyla toprağa eş oldu.\nAnne ve baba, yüreği kavuran bu yaraya nasıl sabretsin?\nBelki de bu sabır merhemini, âlemleri Yaratan yaratır.\nİşte Sadullah Efendi, akranları arasında öne çıkan bir kişiydi;\nMalını ve evladını geride bırakarak canını Hakk’a teslim etti.\nSâdık onun vefatına şu eşsiz tarihi düşürdü:\n“Sadullah Efendi’nin ruhu cennet yurduna kavuştu.”",
+        "en": "Oh, cupbearer who offers the poisonous wine of death, oh…\nThe earth and the sky were filled with sighs and cries.\nWherever there was a person of skill, knowledge and wisdom,\nHe became a companion to the soil with the arrows of fate that came suddenly.\nHow can mother and father be patient with this wound that burns their hearts?\nPerhaps the Creator of the worlds creates this balm of patience.\nHere, Sa’dullah Efendi was a prominent person among his peers;\nHe left his property and children behind and surrendered his life to God.\nSâdık recorded the following unique date for his death:\n‘The soul of Sadullah Efendi has reached the heavenly abode.’"
+      },
+      "date": {
+        "hijri_year": 1208,
+        "gregorian": "1794"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "73-75"
+        }
+      ]
+    },
+    {
+      "id": "mezar-fatma-hanim",
+      "location": {
+        "tr": "Hazire, Fatma Hanım'ın mezar taşı",
+        "en": "Graveyard, gravestone of Fatma Hanım"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Hacı Selmân Ağa’nın nevbârı,\nFatıma Hanım, o nâzik endâm.\nNûş idüp şerbet-i câm-ı mevtî,\nEyledi gülşen-i Firdevs’e hırâm.\nDevlet ü servetiyle tâze civân,\nAlmadı meyve-i ömründen kâm.\nVâlideynin kuzusı bî-çâre,\nKodu hasretle ilâ yevmi’l-kıyâm.\nEyle târihine gel atf-ı zamîr:\n‘Fatıma Hanım’a Adn oldu makâm’\nSene 1202 (M. 1788)",
+      "translation": {
+        "tr": "Hacı Selman Ağa’nın açmamış gülüydü,\nFatıma Hanım’dı, o zarif ve ince ruhlu genç.\nİçti ölüm kadehinin buruk şerbetini,\nYöneldi Firdevs bahçelerine mahzun adımlarla.\nGençti, nasibi bol, serveti yerindeydi,\nAma ömründen bir tat alamadan gitti.\nAnne babasının çaresiz kuzusuydu,\nHasretini kıyamet gününe dek bıraktı geriye.\nBir zamir ilave ile tarih düşürdü:\nFatıma Hanım’a Cennet oldu makam.\nYıl: Hicri 1202 / Miladi 1788",
+        "en": "She was Hacı Selman Ağa’s unbloomed rose,\nShe was Fatıma Hanım, that elegant and delicate young woman.\nShe drank the bitter syrup of the cup of death,\nShe headed towards Firdaws gardens with sad steps.\nShe was young, well-off, and wealthy,\nBut she left without enjoying her life.\nShe was her parents’ helpless lamb,\nShe left her longing behind until the Day of Judgment.\nThe date was recorded with the addition of a pronoun:\nHeaven became the abode of Fatima Hanım\nYear: Hijri 1202 / Gregorian 1788."
+      },
+      "date": {
+        "hijri_year": 1202,
+        "gregorian": "1788"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "74-75"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "tas-vakfiyeler-yazildi",
+      "year": 1454,
+      "date": null,
+      "hijri": "858",
+      "type": "record",
+      "title": {
+        "tr": "Taş vakfiyeler yazıldı (inşadan 22 yıl sonra taşa kazınıp yerleştirildi)",
+        "en": "Stone endowment inscriptions written (engraved and placed 22 years after construction)"
+      },
+      "note": {
+        "tr": "Doğu kitabe H. 859 ve H. 865 tarihlerini de içerir.",
+        "en": "The east inscription also contains AH 859 and AH 865 dates."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "66-67, 70-71"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük Bursa depremi: doğu kubbesi yarıldı, onarılamaz görüldü; minarede onarılabilir çatlaklar",
+        "en": "Great Bursa earthquake: east dome cracked and judged beyond repair; repairable cracks in the minaret"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "64-65"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1970ler",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "1970'li yıllarda restorasyon: ahşap çatı yerine yeniden kubbe",
+        "en": "Restoration in the 1970s: wooden roof replaced by a dome again"
+      },
+      "note": {
+        "tr": "Kitap yalnızca '1970'li yıllar' der; 1970 yılı yaklaşık değerdir.",
+        "en": "The book says only 'the 1970s'; 1970 is an approximate placeholder year."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "65"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-umurbey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kitap camiyi Umur Bey'in bir külliye birimi olarak yaptırdığını söyler.",
+        "en": "The book says the mosque was built by Umur Bey as a unit of a complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "63"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Umurbey Camii, Umurbey Mahallesi'nde sokak aralarında duran, tuğla ve taştan almaşık örülmüş bir yapıdır. Kuzey yüzünde dört korint başlıklı sütunun taşıdığı beş gözlü bir son cemaat yeri bulunur; sütunların arkasında, duvarların yüksek bir yerinde, çevresi sıvalı iki büyük taş yazıt vardır. İçeride büyük ve küçük, ikisi de kare planlı iki mekân, aralarında 2,20 m genişliğinde bir geçitle birleşir. Camiyi kubbe örter; yanında sekizgen kaideli, tuğladan silindirik bir minare yükselir. Caminin güney bahçesinde ve kuzeyinde mezar taşlarının dizildiği iki hazire yer alır.",
+      "en": "The Umurbey Mosque stands among the streets of Umurbey Neighborhood, built of alternating brick and stone. On its north face is a five-bay narthex on four Corinthian columns; high on the walls, with plastered surroundings, are two large stone inscriptions. Inside, two square rooms, one large and one small, are joined by a 2.20 m wide passage. A dome covers the mosque; beside it rises a cylindrical brick minaret on an octagonal base. A graveyard with rows of gravestones lies in the south garden and another on the north side."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

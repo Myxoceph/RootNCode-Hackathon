@@ -1,0 +1,726 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-yildirim-darussifasi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Yıldırım Külliyesi",
+    "text_origin": "Bursa Vakıf Eserleri II. Cilt, Yıldırım Külliyesi bölümünden (s. 161-209) yapay zekâ (Sonnet) ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mimar kitapta belirtilmiyor.",
+      "İnşa tarihi tartışmalı (vakfiye öncesi, 1390-1394, 1398 öncesi, 1399); kesin yıl bulunamadı.",
+      "Yapının bugünkü kullanım durumu: boş, yeni işlev çalışmaları sürüyor; ziyarete açık olup olmadığı teyit edilmeli.",
+      "Orhan Vakfı arazisi için hedef kayıt (bursa-osmangazi-orhan-bey-kulliyesi) tahminidir; teyit edilmeli.",
+      "Koordinatlar kitapta yok; sahadan ya da fotoğraf EXIF'inden eklenmeli.",
+      "Fotoğraflar eklenmeli (media_folder ve media), match_photos.py ile bağlanacak; arşiv fotoğrafı (Zaman Perdesi) bulunmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Vakfiye tarihine dayanarak genel kanaat H. 802 / M. 1400 öncesidir; başka görüşler H. 792-797 / M. 1390-1394 arası, 1398 öncesi veya 1399'dur. Kesin yıl seçilmedi, 'disputed' işaretlendi. Ayrıca kitabın giriş bölümü vakfiyeyi M. 1399, bu bölümler M. 1400 olarak verir."
+      },
+      {
+        "field": "founder",
+        "note": "Kitap darüşşifanın 'külliyenin diğer unsurlarıyla birlikte' yapıldığını ve vakfiyede Yıldırım Bayezid külliyesinin bir parçası olduğunu yazar; banîsi açıkça 'yaptırdı' cümlesiyle bu bölümde belirtilmediği için 'probable' bırakıldı."
+      },
+      {
+        "field": "facts[yillik_odenek]",
+        "note": "260 dirhem/gün x 360 = 93.600; kitap 'yaklaşık 93.600' der."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yıldırım Darüşşifası",
+    "en": "Yıldırım Hospital"
+  },
+  "alternate_names": [],
+  "type": "darussifa",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-yildirim-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "darüşşifa",
+    "hastane",
+    "Selçuklu darüşşifa geleneği",
+    "Baruthane",
+    "tıp eğitimi",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Sinandede",
+    "address": "Baruthane Caddesi, No: 92",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "193"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 802 / M. 1400 öncesi (tarih tartışmalı)",
+      "en": "Before AH 802 / AD 1400 (date disputed)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Vakfiye tarihine dayanarak yapının külliyenin diğer unsurlarıyla birlikte H. 802 / M. 1400'den önce yapıldığı yönünde genel bir kanaat vardır. H. 792-797 / M. 1390-1394 arası, 1398'den önce veya 1399 gibi farklı görüşler de bulunur; tek bir yıl ya da aralık seçilmemiştir.",
+      "en": "Based on the charter date, there is a general opinion that it was built before AH 802 / AD 1400 along with the other elements of the complex. Other views give AH 792-797 / AD 1390-1394, before 1398, or 1399; no single year or range was chosen."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "193"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Yıldırım Bayezid (I. Bayezid)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "193-194"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Yıldırım Bayezid Vakfı",
+    "deed": {
+      "date_display": "H. 802 / M. 1400",
+      "excerpt": {
+        "tr": "\"Külliye; mutfaklar, mahzenler, bir hamam, iki medrese, bir han, hizmetliler için evler, Akçağlayan'dan su getiren kemer ve ahırlardan ibarettir. Etrafı duvar ile çevrilmiş olup, küçük bir tepenin üzerine bir de Darüşşifa inşa ettirilmiştir. Elde edilen gelir, zaviye, her iki medrese ve diğer yapıların bakım ve onarımlarına tahsis edilecektir.\"",
+        "en": "\"The complex consists of kitchens, cellars, a bath, two madrasas, a han, houses for servants, an aqueduct bringing water from Akçağlayan, and stables. It is surrounded by walls and a hospital has been built on a small hill. The income obtained will be allocated to the maintenance and repair of the zawiya, both madrasas and other structures.\""
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "194"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Hastaların yeme, içme ve temel ihtiyaçları için vakıf gelirlerinden günde 260 dirhem (yılda yaklaşık 93.600 dirhem) ayrılacak; her gün ¼ ölçek pirinç, bir müd arpa ve yeterli buğday sağlanacak. Yapının bakım ve onarımı için günlük 20 dirhem ayrılacak; yetmezse diğer vakıf gelirlerinden takviye edilecek, fazla kalırsa vakfa eklenecektir.",
+      "en": "260 dirhams per day (about 93,600 per year) from the foundation's income for the food, drink and basic needs of patients; ¼ measure of rice, one müd of barley and sufficient wheat each day. 20 dirhams per day for the building's maintenance, repair and restoration, supplemented from other incomes if insufficient and any surplus added to the foundation."
+    },
+    "land_note": {
+      "tr": "Darüşşifanın da içinde yer aldığı \"Şüşterî Bahçesi\" arazisi Orhan Vakfı'na aittir; bazı kaynaklara göre arazi, Ortakızık köyü ile takas edilerek külliyeye tahsis edilmiştir.",
+      "en": "The land known as \"Şüşterî Garden\", where the hospital stands, belongs to the Orhan Foundation; according to some sources it was allocated to the complex through an exchange with Ortakızık village."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "193-195"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Osmanlıların ilk hastane yapısı olarak kabul edilen, külliyenin yaklaşık 300 m doğusundaki darüşşifa. 30 x 53 m planlı, revaklı avlulu ve yirmi odalıdır; tıp eğitimi de verilmiştir.",
+    "en": "Considered the first hospital building of the Ottomans, this hospital lies about 300 m east of the complex. It has a 30 x 53 m plan, an arcaded courtyard and twenty rooms, and also trained physicians."
+  },
+  "sections": [
+    {
+      "id": "tarihce-ve-konum",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Konum",
+        "en": "History and Location"
+      },
+      "body": {
+        "tr": "Vakfiye tarihine dayanarak darüşşifanın külliyenin diğer unsurlarıyla birlikte H. 802 / M. 1400'den önce yapıldığı yönünde genel bir kanaat vardır; H. 792-797 / M. 1390-1394 arasında, 1398'den önce ya da 1399'da yapıldığına dair farklı görüşler de bulunur. Yapı, cami ve medresenin bulunduğu yüksek duvarların dışında, külliyenin yaklaşık 300 m doğusunda, güneye doğru artan %7 eğimli bir arazidedir. Osmanlıların ilk hastane yapısı olarak kabul edilir. Vakfiyede \"darüşşifa\" ve \"mâristân\", bazı kaynaklarda \"bîmârhâne\" ve \"tîmârhâne\" adlarıyla geçer.",
+        "en": "There is a general opinion that the hospital was built before AH 802 / AD 1400 together with the rest of the complex; other views give AH 792-797 / AD 1390-1394, before 1398, or 1399. It lies about 300 m east of the complex, outside the high walls enclosing the mosque and madrasa, on land with a 7% slope rising to the south. It is considered the first hospital structure of the Ottomans. The charter calls it \"dârüşşifâ\" and \"mâristân\", and some sources \"bîmârhâne\" and \"tîmârhâne\"."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "193"
+        }
+      ]
+    },
+    {
+      "id": "bashekim",
+      "order": 2,
+      "title": {
+        "tr": "İlk Başhekim Rivayetleri",
+        "en": "Accounts of the First Chief Physician"
+      },
+      "body": {
+        "tr": "İlk başhekime dair iki farklı rivayet vardır: Birine göre İran'da yetişmiş Tabib Hoca Hüsnü Efendi görevlendirilmiştir; diğerine göre Yıldırım Bayezid'in talebi üzerine Memlûk Sultanı Berkuk'un tabibi Şemseddin Sagîr atanmıştır. Darüşşifa, hastaların şifa aradığı yer olmasının yanı sıra usta-çırak ilişkisiyle yeni hekim ve sağlık personelinin yetiştiği bir kurumdur.",
+        "en": "There are two accounts of the first chief physician: in one, Hoca Hüsnü Efendi, trained in Iran, was appointed; in the other, Şemseddin Sagîr, physician to the Mamluk Sultan Berkuk, was appointed at Yıldırım Bayezid's request. Besides treating patients, the hospital trained new physicians and health staff through a master-apprentice relationship."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "193-194"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Klasik Selçuklu darüşşifaları geleneğini yansıtan yapı 30 x 53 m ölçülerinde dikdörtgen planlı ve moloz taştandır; köşelerde, kubbeli odaların kuzeye bakan duvarlarında, kubbe kasnaklarında ve sivri kemerli revaklarda kesme taş ve tuğla birlikte kullanılmıştır. Kuzeydeki giriş kapısına üç basamakla çıkılır; girişin iki yanında hastalar için peykeler vardır. Kuzeybatıdaki birbirine bağlı iki odanın hekim ve eczacıya, kuzeydoğudaki iki odadan girişe yakın olanın mutfağa, küçük odanın helaların servis alanına ayrıldığı düşünülür. Ortasında fıskiyeli şadırvan bulunan 420 m²'lik revaklı avlunun çevresinde 3,30 x 3,60 m ölçülerinde yirmi oda sıralanır; güney cephesi ortasında 9,40 x 7,67 m kubbeli bir salon ve yanlarında 5,62 x 7,90 m tonozlu iki oda vardır. Kubbeli büyük salonun muayene ve tedaviye ayrıldığı, burada mihrap bulunmasının yapının mescit olarak da kullanıldığı görüşünü desteklediği ifade edilir. Dış duvarlarda 34 pencere vardır (bir kısmı kapatılmıştır).",
+        "en": "Reflecting the classical Seljuk hospital tradition, the building is a 30 x 53 m rectangle of rubble stone, with cut stone and brick used together at the corners, on the north walls of the domed rooms, on the dome drums and in the pointed-arch arcades. The entrance on the north is reached by three steps, with benches for patients on both sides. The two connected rooms in the northwest corner are thought to have been for the doctor and pharmacist; of the two in the northeast, the one near the entrance is thought to have been the kitchen and the small one the toilet service area. Twenty rooms of 3.30 x 3.60 m surround a 420 m² arcaded courtyard with a fountain shadirvan; the middle of the south façade has a 9.40 x 7.67 m domed hall flanked by two 5.62 x 7.90 m vaulted rooms. The large domed hall is said to have been used for examination and treatment, and a mihrab there supports the view that it was also a masjid. There are 34 windows on the outer walls, some now sealed."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "195, 198"
+        }
+      ]
+    },
+    {
+      "id": "personel",
+      "order": 4,
+      "title": {
+        "tr": "Personel ve Tedavi",
+        "en": "Staff and Treatment"
+      },
+      "body": {
+        "tr": "Darüşşifada ilk etapta üç tabip, iki şerbetçi, iki eczacı, bir aşçı ve bir ekmekçi bulunurken, sonraki dönemlerde cerrah, kehhâl (göz hekimi) ve çeşitli yardımcı personelle toplam görevli sayısı 27'ye ulaşmıştır. Üç tabipten biri özel odasında görev yapan \"reisü'l-etibbâ\" (baştabip) idi; idari işleri külliyenin genel yönetiminden sorumlu mütevelli yürütüyordu. Cerrahi müdahaleler öncesinde hastaların rızası mahkemeden onaylı \"rıza senedi\" ile alınırdı. Arşiv kayıtlarında iki cerrah ve iki kehhâl anılır; yardımcı kadroda vekilharç, muhasip kâtip, bevvab, kayyım, ferrâş, gassal, câmeşûyân ve et hamalı gibi görevliler vardır. Kayıtlardan akıl ve sinir hastalıklarının da tedavi edildiği anlaşılır; Çandarlı Halil Paşa'nın oğlu İbrahim Paşa \"mecnûndur\" teşhisiyle bir süre yatırılmıştır.",
+        "en": "Initially there were three physicians, two sherbet makers, two pharmacists, one cook and one baker; later a surgeon, a kehhâl (ophthalmologist) and auxiliary staff raised the total to 27. One of the three physicians was the \"reisü'l-etibbâ\" (chief physician) with a special room; administration was handled by the mütevelli (trustee) responsible for the complex. Before surgery patients' consent was obtained through a court-approved \"consent document\". Archive records mention two surgeons and two kehhâls; the auxiliary staff included a steward, accountant-clerk, doorkeeper, caretaker, cleaner, body washer, laundress and meat porter. Records show mental and nervous disorders were treated too; Çandarlı Halil Paşa's son İbrahim Paşa, diagnosed \"mad\", was hospitalized for a time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "198-199"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-terk",
+      "order": 5,
+      "title": {
+        "tr": "Onarım, Terk ve Yeniden Canlandırma",
+        "en": "Repair, Abandonment and Revival"
+      },
+      "body": {
+        "tr": "1618'de 26.699 akçe, 1649'da cami, türbe, medrese ve darüşşifanın harap kısımları için toplam 35.125 akçe, 1669'da külliye genelindeki 241.099 akçelik onarımın 12.320 akçesi darüşşifa için harcanmıştır. Ekrem Hakkı Ayverdi'ye göre 1755'ten sonra arşivde darüşşifaya dair kayıt bulunmaması yapının yavaş yavaş işlevini yitirdiği görüşünü destekler; 1855 depreminden sonra onarılmayıp terk edilmiştir. Sağlam kalan bölümleri askerî idare barut deposu olarak kullanmış, bu yüzden halk arasında \"Baruthane\" denmeye başlanmış, cadde de \"Baruthane Caddesi\" adını almıştır. Sedat Çetintaş 1944, 1945 ve 1947'de araştırma ve kazı yapıp plan ve restitüsyon projesini yayımlamış; yapı ancak 1991'de Vakıflar Genel Müdürlüğü restorasyonuyla ayağa kaldırılmıştır. 2001'den itibaren göz hastanesi olarak hizmet vermiş, günümüzde boştur ve yeni işlev için çalışmalar sürmektedir.",
+        "en": "26,699 akçe were spent on repairs in 1618, 35,125 akçe in 1649 for the mosque, tomb, madrasa and dilapidated parts of the hospital, and 12,320 of the 241,099 akçe spent on the complex in 1669 were for the hospital. According to Ekrem Hakkı Ayverdi, the lack of records after 1755 supports the view that it gradually lost its function; after the 1855 earthquake it was abandoned. The intact sections were used as a gunpowder depot by the military, so it became known as \"Baruthane\" and the street as \"Baruthane Street\". Sedat Çetintaş carried out research and excavation in 1944, 1945 and 1947 and published the plan and restitution project; the building was only restored from 1991 by the General Directorate of Foundations. From 2001 it served as an eye hospital and is now vacant, with work ongoing for a new function."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "199-201"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan dimensions"
+      },
+      "value": "30 x 53",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "195"
+        }
+      ]
+    },
+    {
+      "key": "avlu_alan",
+      "label": {
+        "tr": "Revaklı avlu alanı",
+        "en": "Arcaded courtyard area"
+      },
+      "value": 420,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "198"
+        }
+      ]
+    },
+    {
+      "key": "oda_sayisi",
+      "label": {
+        "tr": "Avlu çevresindeki oda sayısı",
+        "en": "Rooms around the courtyard"
+      },
+      "value": 20,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "198"
+        }
+      ],
+      "note": {
+        "tr": "Her biri 3,30 x 3,60 m.",
+        "en": "Each 3.30 x 3.60 m."
+      }
+    },
+    {
+      "key": "kubbeli_salon",
+      "label": {
+        "tr": "Güneydeki kubbeli salon",
+        "en": "Domed hall on the south"
+      },
+      "value": "9,40 x 7,67",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "198"
+        }
+      ]
+    },
+    {
+      "key": "tonozlu_odalar",
+      "label": {
+        "tr": "Salonun yanındaki tonozlu odalar (2 adet)",
+        "en": "Vaulted rooms beside the hall (2)"
+      },
+      "value": "5,62 x 7,90",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "198"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Dış duvarlardaki pencere sayısı",
+        "en": "Windows on outer walls"
+      },
+      "value": 34,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "198"
+        }
+      ],
+      "note": {
+        "tr": "Bir kısmı kapatılmıştır.",
+        "en": "Some are now sealed."
+      }
+    },
+    {
+      "key": "egim",
+      "label": {
+        "tr": "Arazi eğimi",
+        "en": "Land slope"
+      },
+      "value": 7,
+      "unit": "%",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "193"
+        }
+      ]
+    },
+    {
+      "key": "personel",
+      "label": {
+        "tr": "Toplam görevli sayısı (sonraki dönem)",
+        "en": "Total staff (later period)"
+      },
+      "value": 27,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "198"
+        }
+      ]
+    },
+    {
+      "key": "gunluk_odenek",
+      "label": {
+        "tr": "Hastalar için günlük ödenek",
+        "en": "Daily allowance for patients"
+      },
+      "value": 260,
+      "unit": "dirhem",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "194-195"
+        }
+      ]
+    },
+    {
+      "key": "yillik_odenek",
+      "label": {
+        "tr": "Hastalar için yıllık ödenek",
+        "en": "Yearly allowance for patients"
+      },
+      "value": 93600,
+      "unit": "dirhem",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "194-195"
+        }
+      ],
+      "note": {
+        "tr": "Yaklaşık değer.",
+        "en": "Approximate."
+      }
+    },
+    {
+      "key": "bakim_odenek",
+      "label": {
+        "tr": "Bakım-onarım için günlük ödenek",
+        "en": "Daily allowance for maintenance"
+      },
+      "value": 20,
+      "unit": "dirhem",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "194-195"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Yıldırım Bayezid",
+      "role": {
+        "tr": "Külliyeyi ve vakfı kuran sultan",
+        "en": "Sultan who established the complex and foundation"
+      }
+    },
+    {
+      "name": "Hoca Hüsnü Efendi",
+      "role": {
+        "tr": "İlk başhekim olarak anılan, İran'da yetişmiş tabib (rivayet)",
+        "en": "Physician trained in Iran named as first chief physician (account)"
+      }
+    },
+    {
+      "name": "Şemseddin Sagîr",
+      "role": {
+        "tr": "Memlûk Sultanı Berkuk'un tabibi; ilk başhekim olarak atandığı rivayet edilir",
+        "en": "Physician of Mamluk Sultan Berkuk; said to have been appointed first chief physician"
+      }
+    },
+    {
+      "name": "Sedat Çetintaş",
+      "role": {
+        "tr": "1944-1947 araştırma ve kazılarını yapan, plan ve restitüsyon projesini yayımlayan yüksek mimar",
+        "en": "Master architect who carried out the 1944-1947 research and excavations and published the plan and restitution project"
+      }
+    },
+    {
+      "name": "Ekrem Hakkı Ayverdi",
+      "role": {
+        "tr": "1755 sonrası kayıt bulunmadığını belirten araştırmacı",
+        "en": "Researcher noting the absence of records after 1755"
+      }
+    },
+    {
+      "name": "Osman Şevki Uludağ",
+      "role": {
+        "tr": "1925 notlarında yapının durumunu aktaran yazar",
+        "en": "Author who recorded the building's state in his 1925 notes"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1400,
+      "date": null,
+      "hijri": "802",
+      "type": "construction",
+      "title": {
+        "tr": "Vakfiye tarihinden (H. 802 / M. 1400) önce inşa edildiği yönünde genel kanaat",
+        "en": "General opinion that it was built before the charter date (AH 802 / AD 1400)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "193"
+        }
+      ],
+      "note": {
+        "tr": "Diğer görüşler: H. 792-797 / M. 1390-1394 arası, 1398'den önce ya da 1399. Yıl, 'öncesi' sınırını gösterir; kesin inşa yılı değildir.",
+        "en": "Other views: between AH 792-797 / AD 1390-1394, before 1398, or in 1399. The year marks an upper bound, not the exact year of construction."
+      }
+    },
+    {
+      "id": "onarim-1618",
+      "year": 1618,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamirat için 26.699 akçe harcandı",
+        "en": "26,699 akçe spent on repairs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "199-201"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1649",
+      "year": 1649,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami, türbe, medrese ve darüşşifanın harap kısımlarının onarımı için toplam 35.125 akçe harcandı",
+        "en": "A total of 35,125 akçe spent on repairing the mosque, tomb, madrasa and dilapidated parts of the hospital"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "199-201"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1669",
+      "year": 1669,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Külliye genelindeki 241.099 akçelik onarımın 12.320 akçesi darüşşifaya ayrıldı",
+        "en": "12,320 of the 241,099 akçe spent on the complex's structures and waterways was allocated to the hospital"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "199-201"
+        }
+      ]
+    },
+    {
+      "id": "son-kayit-1755",
+      "year": 1755,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Ekrem Hakkı Ayverdi'ye göre bu yıldan sonra arşiv belgelerinde darüşşifaya dair kayıt yok",
+        "en": "According to Ekrem Hakkı Ayverdi, no archive record of the hospital after this year"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminden sonra onarılmayıp kendi haline terk edildi",
+        "en": "After the 1855 earthquake it was not repaired and was abandoned"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "uludag-notlari-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Osman Şevki Uludağ, yapının harap durumunu ve sağlam kalan dairelerin baruthane yapıldığını kaydetti",
+        "en": "Osman Şevki Uludağ recorded the ruinous state and the conversion of intact chambers into a gunpowder depot"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "cetintas-1944",
+      "year": 1944,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Sedat Çetintaş araştırma ve kazı çalışmaları (1944, 1945, 1947); plan ve restitüsyon projesini yayımladı",
+        "en": "Sedat Çetintaş research and excavations (1944, 1945, 1947); published the plan and restitution project"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1991",
+      "year": 1991,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü restorasyonu başladı",
+        "en": "Restoration by the General Directorate of Foundations began"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "goz-hastanesi-2001",
+      "year": 2001,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Restorasyon sonrası göz hastanesi olarak hizmet vermeye başladı",
+        "en": "Began serving as an eye hospital after restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "200-201"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "baruthane",
+      "title": {
+        "tr": "\"Baruthane\" adı",
+        "en": "The name \"Baruthane\""
+      },
+      "hint": {
+        "tr": "Caddenin adı, yapının barut deposu olarak kullanılmasından gelir.",
+        "en": "The street name comes from the building's use as a gunpowder depot."
+      },
+      "section_id": "onarim-ve-terk"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yildirim-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Yıldırım Bayezid Külliyesi'ne dâhil darüşşifadır; yapı külliyenin duvarlarının dışında, yaklaşık 300 m doğudadır.",
+        "en": "The hospital belongs to the Yıldırım Bayezid Complex, standing about 300 m east, outside its walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "193"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-kulliyesi",
+      "type": "waqf_land",
+      "description": {
+        "tr": "Arazi Orhan Vakfı'na aitti (Şüşterî Bahçesi); bazı kaynaklara göre Ortakızık köyü ile takas edilerek külliyeye tahsis edildi.",
+        "en": "The land (Şüşterî Garden) belonged to the Orhan Foundation; some sources say it was allocated by exchange with Ortakızık village."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "193"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Yapı günümüzde boştur; yeni bir işlev kazandırılması için çalışmalar sürmektedir.",
+      "en": "The building is currently vacant; work is ongoing to give it a new function."
+    },
+    "notes_source": "source",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Darüşşifa, külliyenin duvarlarının dışında, hafif eğimli bir arazide duran geniş, dikdörtgen planlı bir taş yapıdır. Dışı moloz taş, köşeleri ve kemerleri taş ile tuğla karışımıdır. Kuzeydeki kapıdan üç basamakla girilir; girişin iki yanında hastalar için taş peykeler vardır. İçeride ortasında fıskiyeli bir şadırvan bulunan revaklı bir avlu uzanır ve çevresinde yirmi küçük oda sıralanır. Güney cephesinin ortasında kubbeyle örtülü büyük bir salon, iki yanında ise tonozlu iki oda yer alır.",
+      "en": "The hospital is a large rectangular stone building standing outside the walls of the complex, on gently sloping land. The outside is rubble stone, with corners and arches of mixed stone and brick. It is entered from the north through a door reached by three steps, with stone benches for patients on both sides. Inside lies an arcaded courtyard with a fountain shadirvan in the middle, surrounded by twenty small rooms. In the middle of the south façade is a large domed hall flanked by two vaulted rooms."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
