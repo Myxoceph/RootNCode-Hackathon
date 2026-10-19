@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-seyh-ali-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
+      "Konum bilgisi (parsel) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli ve doğrulanmalı.",
+      "Külliyenin bütününe ait banî kitapta verilmiyor (medrese için Halefzâde Cemil Ağa, cami için kimse anılmıyor); founder null.",
+      "Eserin dönemi (era) cami için kesin bir tarih olmadığı, medrese ise 1903 olduğu için külliye düzeyinde null bırakıldı.",
+      "Şadırvanın yapım tarihi ve banisi kitapta yok; ayrı kayıt yazılmadı.",
+      "Vakıf/vakfiye ve mimar bilgisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Cami kitaba göre 15. yüzyılın ikinci yarısına kadar gidebilecek (tahmini) ama varlığı ilk kez 1580'de ortaya çıkıyor; medrese 1903'te yapılmış. Külliye tek bir dönemde yapılmamış, bu yüzden yıl alanları boş."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Ali Camii ve Külliyesi",
+    "en": "The Sheikh Ali Mosque and Complex"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "külliye",
+    "antakya",
+    "şeyh-ali",
+    "cami",
+    "medrese",
+    "şadırvan"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "HATAY - ANTAKYA 4. MINTIKA 827 PARSEL",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "163"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Cami: yapım tarihi 15. yüzyılın ikinci yarısına kadar gidebileceği tahmin edilir, varlığı 1580'de ortaya çıkar; medrese 1903",
+      "en": "Mosque: construction estimated to go back to the second half of the 15th century, its existence revealed in 1580; madrasa 1903"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap camiyi için kesin bir yıl vermez (tahmini 15. yüzyılın ikinci yarısı, 1580'de ortaya çıkan varlık); medrese kitabeyle 1903'e tarihlenir. Külliyenin tümü için tek bir başlangıç yılı verilmediğinden yıllar boş bırakıldı.",
+      "en": "The book gives no exact year for the mosque (estimated second half of the 15th century, existence revealed in 1580); the madrasa is dated to 1903 by inscription. No single start year is given for the whole complex, so years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "163-174"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'da, doğu ve batıdan birer girişi olan düzensiz bir avlu içinde cami, medrese ve şadırvandan oluşan külliye. Medrese avlunun kuzeyinde, cami güneyinde, şadırvan batısındadır. Kitaba göre Şeyh Ali Camii Antakya'nın en zengin tezyinatlı eserlerinden biridir; yedi hücreli medrese 1903 tarihlidir.",
+    "en": "A complex in Antakya of a mosque, a madrasa and a shadirvan in an irregular courtyard with entrances from the east and west. The madrasa is north of the courtyard, the mosque south, the shadirvan west. According to the book the Sheikh Ali Mosque is one of Antakya's most richly decorated works; the seven-cell madrasa dates from 1903."
+  },
+  "sections": [
+    {
+      "id": "plan",
+      "order": 1,
+      "title": {
+        "tr": "Külliyenin planı",
+        "en": "Layout of the complex"
+      },
+      "body": {
+        "tr": "Külliye, doğu ve batıdan birer girişi olan ve düzensiz bir avlu içerisinde bulunan cami, medrese ve şadırvandan oluşur. Medrese avlunun kuzeyinde, cami güneyinde, şadırvan ise batısındadır. Şadırvan için kitap başka bilgi vermez (ayrı kayıt yazılmadı).",
+        "en": "The complex consists of a mosque, a madrasa and a shadirvan in an irregular courtyard with entrances from the east and west. The madrasa is in the north of the courtyard, the mosque in the south, and the shadirvan in the west. The book gives no further information on the shadirvan (no separate record was written)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "163"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Halefzâde Cemil Ağa",
+      "role": {
+        "tr": "Kitabeye göre 1903'te medreseyi yaptıran",
+        "en": "Had the madrasa built in 1903 according to the inscription"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliye düzensiz bir avlunun çevresindedir ve doğudan ile batıdan birer girişi vardır. Avlunun güneyinde beyaz kalker taşlı cami, kuzeyinde yedi hücreli medrese, batısında şadırvan yer alır.",
+      "en": "The complex is gathered around an irregular courtyard with an entrance from the east and one from the west. The white limestone mosque stands on the south side, the seven-cell madrasa on the north and the shadirvan on the west."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

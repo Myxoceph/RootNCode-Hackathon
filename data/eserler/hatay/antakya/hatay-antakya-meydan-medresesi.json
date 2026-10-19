@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-meydan-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Kitap Şeyh Ali ve Yeni Cami medreselerine benzerlikten de söz ediyor; bu hedefler ids.md'de medrese olarak yok, ilişki yazılmadı.",
+      "Medresenin banîsi kitapta yok."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Meydan Camii Medresesi",
+    "en": "Meydan Mosque Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-meydan-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "medrese",
+    "antakya",
+    "meydan-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "133"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Tahminen 19. yüzyıl; 1903'te faal",
+      "en": "Probably 19th century; active in 1903"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap benzer medreselere dayanarak 19. yüzyılı 'düşünmek mümkündür' diyor; kesin yıl yok.",
+      "en": "The book says it is 'possible to think' of the 19th century from similar madrasas; no exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "133"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kuzeyde beş, güneydoğuda iki oda ve bir dersliği olan; 19. yüzyılda yapıldığı düşünülen medrese.",
+    "en": "A madrasa with five rooms in the north and two rooms and a classroom in the southeast, thought to date from the 19th century."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Günümüzde medresenin kuzeyinde beş, güneydoğusunda iki odası ve bir dersliği vardır; şadırvanın karşısındaki kuzeydoğu köşede eskiden dört odası daha olduğu bilinmektedir. Her oda avluya basık kemerli bir kapı ve iki pencereyle açılır; daha büyük yapılan derslik çapraz tonoz örtülüdür. Hücreler içten ahşap düz tavanlıdır, dıştan kiremit kaplı kırma çatı kuzey ve doğudaki oda gruplarında kesintisiz devam eder.",
+        "en": "Today the madrasa has five rooms in the north and two rooms and a classroom in the southeast; four more old rooms are known to have existed in the northeast corner opposite the shadirvan. Each room opens to the courtyard with a low-arched door and two windows; the larger classroom is covered with cross vaults. The cells have flat wooden ceilings inside, and the tiled hipped roof outside continues uninterrupted over each group of rooms in the north and east."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    },
+    {
+      "id": "tarih",
+      "order": 2,
+      "title": {
+        "tr": "Tarihleme ve onarımlar",
+        "en": "Dating and repairs"
+      },
+      "body": {
+        "tr": "Medrese Habib-i Neccar, Ulu, Şeyh Ali ve Yeni Cami medreselerine benzer özellikler taşıdığından 19. yüzyılda yapıldığı düşünülebilir. 1903'te faal olduğu bilinen medrese 1878 ve 1985'te onarım görmüştür.",
+        "en": "Since the madrasa has characteristics similar to those of the Habib-i Neccar, Grand, Sheikh Ali and New Mosque madrasas, it is possible to think it was built in the 19th century. Known to have been active in 1903, it was repaired in 1878 and 1985."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "oda_kuzey",
+      "label": {
+        "tr": "Kuzeydeki oda sayısı",
+        "en": "Rooms in the north"
+      },
+      "value": 5,
+      "unit": "oda",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    },
+    {
+      "key": "oda_guneydogu",
+      "label": {
+        "tr": "Güneydoğudaki oda sayısı",
+        "en": "Rooms in the southeast"
+      },
+      "value": 2,
+      "unit": "oda",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    },
+    {
+      "key": "derslik",
+      "label": {
+        "tr": "Derslik sayısı",
+        "en": "Classrooms"
+      },
+      "value": 1,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    },
+    {
+      "key": "eski_oda_kuzeydogu",
+      "label": {
+        "tr": "Eskiden kuzeydoğuda bulunan oda",
+        "en": "Former rooms in the northeast"
+      },
+      "value": 4,
+      "unit": "oda",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1878",
+      "year": 1878,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Medresenin onarımı",
+        "en": "Repair of the madrasa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    },
+    {
+      "id": "faal-1903",
+      "year": 1903,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Medresenin faal olduğunun bilindiği yıl",
+        "en": "Year in which the madrasa is known to have been active"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Medresenin onarımı",
+        "en": "Repair of the madrasa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-meydan-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Meydan Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Meydan Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "125"
+        }
+      ]
+    },
+    {
+      "target_id": "hatay-antakya-habib-i-neccar-medresesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kitap Meydan Camii Medresesi'nin Habib-i Neccar Medresesi'ne benzer özellikler taşıdığını söyler.",
+        "en": "The book says the Meydan Mosque Madrasa has characteristics similar to the Habib-i Neccar Madrasa."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    },
+    {
+      "target_id": "hatay-antakya-ulu-medresesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kitap Meydan Camii Medresesi'nin Ulu (Camii) Medresesi'ne benzer özellikler taşıdığını söyler.",
+        "en": "The book says the Meydan Mosque Madrasa has characteristics similar to the Grand Mosque Madrasa."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "133"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese odaları avlunun kuzeyinde beş, güneydoğusunda iki oda ve bir derslik olarak sıralanır. Odalar avluya basık kemerli bir kapı ve iki pencereyle açılır. Derslik daha büyüktür ve çapraz tonozludur. Çatı kiremit kaplı kırma çatıdır.",
+      "en": "The madrasa has five rooms along the north of the courtyard and two rooms and a classroom in the southeast. Each room opens to the courtyard with a low-arched door and two windows. The classroom is larger and cross-vaulted. The roof is a tiled hipped roof."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Meydan Camii Medresesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

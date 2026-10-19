@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-seyh-ali-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
+      "Vakıf/vakfiye ve mimar bilgisi kitapta yok.",
+      "Hücrelerin bugünkü kullanımı kitapta yok.",
+      "Kitap medresenin kitabesinden hicri yıl vermiyor; yalnızca 1903."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şeyh Ali Medresesi",
+    "en": "Sheikh Ali Madrasa"
+  },
+  "subtitle": {
+    "tr": "Şeyh Ali Külliyesi'nin medresesi",
+    "en": "The madrasa of the Sheikh Ali complex"
+  },
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-seyh-ali-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "medrese",
+    "antakya",
+    "şeyh-ali",
+    "hücre"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "174"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1903",
+      "en": "1903"
+    },
+    "start_year": 1903,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Batıdan üçüncü hücrenin kapısı üzerindeki kitabe, medresenin 1903'te Halefzâde Cemil Ağa tarafından yaptırıldığını gösterir.",
+      "en": "The inscription over the door of the third cell from the west shows the madrasa was built in 1903 by Halefzâde Cemil Agha."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "174"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Halefzâde Cemil Ağa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "174"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Cami avlusunun kuzeyinde yedi hücre halinde sıralanan medrese. Kitabesine göre 1903'te Halefzâde Cemil Ağa tarafından yaptırılmıştır. Hücrelerin dördü kırma çatı, üçü beton tabliyeyle örtülüdür.",
+    "en": "A madrasa arranged as seven cells in the north of the mosque courtyard. According to its inscription it was built in 1903 by Halefzâde Cemil Agha. Four cells have hipped roofs and three have concrete decks."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Medrese cami avlusunun kuzeyinde yedi hücre halinde sıralanmıştır. Doğu uçtaki üç hücre bir kapı ve bir pencereyle avluya açılır; diğer dört hücre bir kapı ve yan yana ikişer pencereyle açılır. Üç hücrenin kapı ve pencereleri dikdörtgen çerçevelidir, diğer dört hücrenin pencere açıklıkları basık kemerlidir. Dört hücre kırma çatıyla, diğer üçü beton tabliyeyle örtülüdür. Batıdaki üçüncü hücrenin kapısı üzerindeki kitabe medresenin 1903'te Halefzâde Cemil Ağa tarafından yaptırıldığını gösterir.",
+        "en": "The madrasa is arranged as seven cells in the north of the mosque courtyard. The three cells at the eastern end open to the courtyard with a door and a window; the other four with a door and two windows side by side. Doors and windows of three cells are rectangular-framed, while the openings of the other four windows are low-arched. Four cells are covered with hipped roofs and the other three with concrete decks. The inscription over the door of the third cell to the west shows it was built in 1903 by Halefzâde Cemil Agha."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "174"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hucre_sayisi",
+      "label": {
+        "tr": "Hücre sayısı",
+        "en": "Number of cells"
+      },
+      "value": 7,
+      "unit": "hücre",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "174"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Halefzâde Cemil Ağa",
+      "role": {
+        "tr": "Medreseyi 1903'te yaptıran",
+        "en": "Had the madrasa built in 1903"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "hucre-kapi-kitabesi",
+      "location": {
+        "tr": "Batıdan üçüncü hücrenin kapısı üzerinde",
+        "en": "Over the door of the third cell from the west"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1903"
+      },
+      "note": {
+        "tr": "Medresenin 1903'te Halefzâde Cemil Ağa tarafından yaptırıldığını gösteren kitabe; metin ve dil kitapta verilmiyor.",
+        "en": "Inscription showing the madrasa was built in 1903 by Halefzâde Cemil Agha; the book gives neither text nor language."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "174"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1903",
+      "year": 1903,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Halefzâde Cemil Ağa tarafından yaptırıldı",
+        "en": "Built by Halefzâde Cemil Agha"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "174"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-seyh-ali-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Şeyh Ali Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Sheikh Ali Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "163"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese, cami avlusunun kuzeyinde yan yana sıralanmış yedi hücreden oluşur. Her hücre avluya bir kapı ve bir ya da iki pencereyle açılır. Dört hücrenin üstü kırma çatılı, üçünün beton tabliyelidir.",
+      "en": "The madrasa is a row of seven cells side by side in the north of the mosque courtyard. Each cell opens to the courtyard with a door and one or two windows. Four cells have hipped roofs and three have concrete decks."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

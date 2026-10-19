@@ -1,0 +1,277 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-belen-kanuni-sultan-suleyman-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
+      "Kitap Kanuni dışında bir banî vermiyor; sonradan eklenen iki bölümün ne zaman yapıldığı belli değil.",
+      "Minber ve mahfilin '19. yüzyılda yenilendiği' ifadesinde kesin yıl yok; zaman çizelgesine yazılmadı.",
+      "Kıble arkasındaki haziredeki mezarların kime ait olduğu kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[minare-mahfil]",
+        "note": "s. 151'de 'minberin ve mahfilin yenilenmiş olduğu', s. 152'de ise 'mihrap ve minare dışındaki diğer iki unsurun 19. yüzyılda yenilendiği' söylenir; ayrıca s. 149 minber, mahfil ve minareyi en eski bölümün kanıtı sayar. Kitaptaki ifadeler olduğu gibi korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kanuni Sultan Süleyman Camii (Belen)",
+    "en": "Suleiman the Magnificent Mosque (Belen)"
+  },
+  "subtitle": {
+    "tr": "Kanuni Sultan Süleyman Kervansarayı külliyesinin camisi",
+    "en": "The mosque of the Suleiman the Magnificent Caravanserai complex"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "hatay-belen-kanuni-sultan-suleyman-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "cami",
+    "belen",
+    "kanuni",
+    "ters-t-plan"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Belen",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "149-152"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 960 (M. 1553)",
+      "en": "960 H (1553 A.D.)"
+    },
+    "start_year": 1553,
+    "end_year": null,
+    "hijri_year": 960,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap, camiyi kitabesine göre Kanuni'nin H. 960, M. 1553 yılında bina ettirdiğini söyler; sonraki zamanlarda iki ilave gördüğü düşünülür.",
+      "en": "The book says the mosque was built by Suleiman in 960 H, 1553 A.D. according to its inscription; it is thought to have received two additions later."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "149"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kanuni Sultan Süleyman",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "149"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Eski Halep yolunun güneyinde, kervansarayın biraz güneybatısındaki cami. Ters 'T' planlı ana mekânı pandantifli bir kubbe ve üç yanındaki beşik tonozlu eyvanlarla örtülüdür; kuzeyde kapalı bir son cemaat yeri bulunur. Kitap, Kanuni'nin yaptırdığı eserlerin en mütevazısı olup olmadığını sorar. Kıble duvarının arkasında birkaç mezarlı bir hazire vardır.",
+    "en": "The mosque south of the old Aleppo road and a little southwest of the caravanserai. Its main space has an inverted-T plan covered by a dome on pendentives with barrel-vaulted iwans on three sides; there is a closed narthex to the north. The book asks whether it might be the most modest of Suleiman's works. Behind the qibla wall is a burial ground with several graves."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve yapım evreleri",
+        "en": "History and building phases"
+      },
+      "body": {
+        "tr": "Eski Halep yolunun güneyinde ve kervansarayın biraz güneybatısındaki cami, kitabesine göre Kanuni Sultan Süleyman tarafından H. 960, M. 1553 yılında bina edilmiştir; sonraki zamanlarda iki ilave gördüğü düşünülür. En eski kısım güneydeki asıl cami bölümüdür; mihrap dışında inşa kitabesinin, minarenin, minberin ve mahfilin bu bölümde olması bunun kanıtıdır. Kuzeydeki kapalı son cemaat yeri harimden sonra yapılmıştır. Doğudaki üçüncü bölüm düzenli planı olmadığı için muhdes kabul edilir; cemaat arttığı için geç bir devirde eklendiği tahmin edilir ve 2010'da Vakıflar Genel Müdürlüğü'nün restorasyonunda yıkılarak yerine şadırvan yapılmıştır.",
+        "en": "The mosque, south of the old Aleppo road and a little southwest of the caravanserai, was built by Suleiman in 960 H, 1553 A.D. according to its inscription; it is thought to have received two additions later. The oldest part is the southern main mosque; that the inscription, minaret, minbar and mahfil are in this part, besides the mihrab, proves it. The closed narthex to the north was built after the sanctuary. The third section on the east is considered a later addition as it has no regular plan; it was probably added late because of a growing congregation and was demolished in the General Directorate of Foundations restoration of 2010, a shadirvan being built in its place."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "149-152"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 2,
+      "title": {
+        "tr": "Harim ve süsleme",
+        "en": "Sanctuary and decoration"
+      },
+      "body": {
+        "tr": "Mihrap önü mekânı kıbleye doğru çıkıntı yaptığı için ters 'T' plan görüntüsü verir. Kare mekândan kubbeye geçişte pandantiflerin kullanıldığı ortadaki kubbe, doğu, batı ve güneyde beşik tonoz örtülü eyvanlarla kuşatılmıştır. Mihrap, yukarı doğru nöbetleşe sıralanan kırmızı ve beyaz taşlarla kaplı küçük bir nişten ibarettir. Harimin güney duvarında alt sırada dikdörtgen dört, kuzey duvarda iki, batıda bir pencere vardır; doğudaki pencere genişletilerek sonradan eklenen yapıya bağlantı sağlayan kapıya dönüştürülmüştür. Kitap, Kanuni'nin başka yerlerdeki eserlerindeki gösterişi bu yapılarda görmenin mümkün olmadığını belirtir.",
+        "en": "The space in front of the mihrab protrudes towards the qibla, giving an inverted-T plan. The central dome, with pendentives in the transition from the square space, is surrounded by barrel-vaulted iwans on the east, west and south. The mihrab is a small niche covered with red and white stones arranged alternately upwards. The south wall of the sanctuary has four rectangular lower windows, the north wall two and the west one; the east window was enlarged into a door linking to the later building. The book notes that the splendour of Suleiman's works elsewhere cannot be seen in these buildings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "149-151"
+        }
+      ]
+    },
+    {
+      "id": "minare-mahfil",
+      "order": 3,
+      "title": {
+        "tr": "Minare, mahfil ve son cemaat yeri",
+        "en": "Minaret, mahfil and narthex"
+      },
+      "body": {
+        "tr": "Harim kapısının batısındaki şemsiye örtülü kısa gövdeli minare duvarın içinde yükselir. Taç kapının üstünde merdiveni minareyle ortak ahşap mahfil vardır. Kitap, mihrap ve minare dışındaki iki unsurun (minber ve mahfil) 19. yüzyılda yenilendiğini söyler. Harimin kuzeyinde doğrudan sokaktan girilen bölüm son cemaat yeri işlevindedir ancak tamamen kapalı olduğu için geleneksel tipe aykırıdır; başlıksız ayaklara oturan çapraz tonozlu kemerleri abartılı biçimde sivridir. Caminin kıble duvarının arkasında birkaç mezarın bulunduğu hazire vardır.",
+        "en": "The short-bodied, umbrella-capped minaret west of the sanctuary door rises within the wall. Above the portal is a wooden mahfil whose staircase is shared with the minaret. The book says the two elements other than the mihrab and minaret (the minbar and mahfil) were renewed in the 19th century. The section north of the sanctuary, entered directly from the street, serves as a narthex but is completely closed, contrary to the traditional type; the arches of its cross vault on bare piers are exaggeratedly pointed. Behind the qibla wall of the mosque is a burial ground with several graves."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "151-152"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_alt_pencere_guney",
+      "label": {
+        "tr": "Harimin güney duvarındaki alt pencere sayısı",
+        "en": "Lower windows on the sanctuary south wall"
+      },
+      "value": 4,
+      "unit": "pencere",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "151"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi-960",
+      "location": {
+        "tr": "Cami (harim bölümü)",
+        "en": "Mosque (sanctuary part)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 960,
+        "gregorian": "1553"
+      },
+      "note": {
+        "tr": "İnşa kitabesi; metin ve dil kitapta yok. Kitabeye göre cami H. 960, M. 1553'te Kanuni tarafından bina edilmiştir.",
+        "en": "Construction inscription; the book gives neither text nor language. According to it the mosque was built by Suleiman in 960 H, 1553 A.D."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "149"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1553",
+      "year": 1553,
+      "date": null,
+      "hijri": "960",
+      "type": "construction",
+      "title": {
+        "tr": "Kanuni tarafından bina edildi (H. 960 / M. 1553)",
+        "en": "Built by Suleiman (960 H / 1553 A.D.)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "149"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü restorasyonu; muhdes doğu bölümü yıkılıp yerine şadırvan yapıldı",
+        "en": "General Directorate of Foundations restoration; the later east section demolished and a shadirvan built in its place"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "152"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-belen-kanuni-sultan-suleyman-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kanuni Sultan Süleyman Kervansarayı külliyesinin bir yapısıdır.",
+        "en": "A building of the Suleiman the Magnificent Caravanserai complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "142"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, eski Halep yolunun güneyinde yer alır. Ana mekân bir kubbeyle örtülüdür; kubbenin doğu, batı ve güneyinde beşik tonozlu eyvanlar vardır ve mihrap önü kıbleye doğru çıkıntı yaparak ters T biçimi verir. Mihrap kırmızı ve beyaz taşların nöbetleşe dizildiği küçük bir niştir. Batıda şemsiye örtülü kısa gövdeli bir minare, kuzeyde sokaktan girilen tamamen kapalı bir son cemaat yeri bulunur. Kıble duvarının arkasında birkaç mezarlı bir hazire vardır.",
+      "en": "The mosque lies south of the old Aleppo road. The main space is covered by a dome with barrel-vaulted iwans to its east, west and south, and the space before the mihrab protrudes towards the qibla, forming an inverted T. The mihrab is a small niche of alternating red and white stones. A short, umbrella-capped minaret stands to the west and a completely closed narthex entered from the street lies to the north. Behind the qibla wall is a burial ground with several graves."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

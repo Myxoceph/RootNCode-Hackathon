@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-ulu-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Konum bilgisi (mıntıka/parsel) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Vakıf dükkânlar kitapta yalnızca adı geçen külliye unsuru olarak anılıyor; ayrıca anlatılmıyor.",
+      "Çeşme için ayrı kayıt açılmadı, parent'ta bölüm olarak yazıldı.",
+      "Kitaptaki 'Şeyh Abdurrahman Efendi Türbesi', ids.md #47 'Şeyh Abdurrahman Türbesi'nden ayrı varsayıldı; metin ilişki kurmuyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Külliye 'farklı dönemlerde inşa edilmiş' deniyor; yapıların çoğu için tarih verilmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ulu Camii ve Külliyesi",
+    "en": "Ulu Mosque and Complex"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "külliye",
+    "antakya",
+    "ulu-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "HATAY - ANTAKYA 4. MINTIKA 2986 PARSEL",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "76-77"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Farklı dönemlerde inşa edilmiş; cami 13. yüzyılın ikinci yarısına tarihleniyor",
+      "en": "Built in different periods; the mosque is dated to the second half of the 13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Külliye için tek bir inşa tarihi verilmiyor; camiyle ilgili tarih yorumu cami kaydındadır.",
+      "en": "No single construction date is given for the complex; see the mosque record."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "76-78"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'nın şehir merkezinde, çarşılara yakın bir yerde, farklı dönemlerde inşa edilmiş cami, medrese, yazlık mescit, şadırvan, iki türbe, çeşme, imaret ve vakıf dükkânlardan oluşan külliye.",
+    "en": "A complex in the city centre of Antakya, near the bazaars, made up of a mosque, madrasa, summer masjid, shadirvan, two tombs, fountain, imaret and foundation shops built in different periods."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Külliyenin genel tanıtımı",
+        "en": "Overview of the complex"
+      },
+      "body": {
+        "tr": "Şehirde yaşayan Müslümanların Cuma namazını birlikte kılması için yapılan büyük mabetler ilk zamanlar 'Mescid-i Cuma', 'Cuma Camii' veya 'Cami-i Kebir' diye anılmıştır. Şehrin merkezinde, çarşılara yakın yerde inşa edilen bu camiler hacim olarak olduğu kadar bânisinin şahsiyeti bakımından da ulu mabetlerdir; Antakya Ulu Camii kitaba göre 'Ulu' olmanın tüm gereklerini yerine getiren bir eserdir. Külliye farklı dönemlerde inşa edilmiş cami, medrese, yazlık mescit, şadırvan, iki türbe, çeşme, imaret ve vakıf dükkânlardan meydana gelir.",
+        "en": "Great mosques built so that the Muslims of a city could perform the Friday prayer together were first called 'Masjid al-Jum'a', 'Friday Mosque' or 'Jami al-Kebir'. Built in the city centre near the bazaars, they are great not only in volume but also in the personality of their builders; according to the book the Grand Mosque of Antakya fulfils almost all the requirements of being 'Grand'. The complex consists of a mosque, madrasa, summer masjid, shadirvan, two tombs, fountain, imarat and foundation shops built in different periods."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "76-77"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Avlu ve yerleşim",
+        "en": "Courtyard and layout"
+      },
+      "body": {
+        "tr": "Avlu, karşılıklı iki ucunda birer kapıdan girilen ve doğudan batıya doğru genişleyen dörtgen biçimlidir. Avlunun doğusunda ve kuzeyinde medrese odaları, güneyinde cami, orta batısında şadırvan, güneybatısında yazlık mescit yer alır. Cami ile yazlık mescit arasındaki kapıdan, içinde iki türbe ve imaretin bulunduğu güneydeki ikinci avluya geçilir. Minare, medrese odaları arasında doğu uca yakın bir yerdedir.",
+        "en": "The courtyard is a quadrangle entered through a door at each of two opposite ends and widening from east to west. Madrasa rooms lie on the east and north, the mosque in the south, the shadirvan in the middle west and the summer masjid in the south-west. The door between the mosque and the summer masjid leads to a second courtyard on the south, with two tombs and the soup kitchen. The minaret stands between the madrasa rooms, close to the east end."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "76-77"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 3,
+      "title": {
+        "tr": "Çeşme",
+        "en": "Fountain"
+      },
+      "body": {
+        "tr": "Çeşme, caminin güney duvarına doğudan bitişir ve doğuya doğru çıkıntı yapar; komşu yapının kuzey cephesinde, dikdörtgen formlu, sivri kemerli, kitabesiz sade bir yapıdır.",
+        "en": "The fountain adjoins the south wall of the mosque from the east and projects eastward; on the north façade of the neighbouring building it is a plain rectangular structure with a pointed arch and no inscription."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "91"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-1986",
+      "year": 1986,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Külliyenin Vakıflar Genel Müdürlüğü tarafından restorasyonu",
+        "en": "Restoration of the whole complex by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2002",
+      "year": 2002,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Külliyenin Vakıflar Genel Müdürlüğü tarafından ikinci restorasyonu",
+        "en": "Second restoration of the whole complex by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ulu Camii Külliyesi, doğudan batıya doğru genişleyen dörtgen bir avlu etrafında toplanmıştır. Avlunun doğusunda ve kuzeyinde medrese odaları, güneyinde cami, orta batısında şadırvan, güneybatısında yazlık mescit vardır. Cami ile yazlık mescit arasındaki kapıdan, iki türbe ve imaretin bulunduğu güneydeki ikinci avluya geçilir. Minare, doğu uca yakın, medrese odalarının arasındadır.",
+      "en": "The complex is gathered around a quadrangular courtyard widening from east to west. Madrasa rooms lie east and north, the mosque south, the shadirvan in the middle west and the summer masjid south-west. A door between the mosque and the summer masjid leads to a second courtyard to the south with two tombs and the soup kitchen. The minaret stands among the madrasa rooms near the east end."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Ulu Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

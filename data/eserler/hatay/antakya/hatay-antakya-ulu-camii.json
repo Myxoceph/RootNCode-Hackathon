@@ -1,0 +1,442 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-ulu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Minare kaidesindeki kitabenin metni kitapta yok; kitabe kaydı yazılmadı.",
+      "Kitap Baybars'ın dönemini anıyor; banî belirtilmiyor.",
+      "Mezhep yorumu ve doğu bölümünün Osmanlı sonrası eklendiği görüşü kitapta çıkarım olarak sunuluyor; probable."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap kesin yapılış tarihinin bilinmediğini söylüyor; H. 670 (M. 1271) yalnızca minare kaidesi kitabesinin tarihidir, caminin inşa tarihi olarak verilmiyor."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Türkçe metin 'eserin camiyle birlikte yazlık bölümü 1849'da' diyor; yazlık bölümün camiyle birlikte mi yoksa yazlık mescit olarak mı onarıldığı belirsiz."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ulu Camii",
+    "en": "Ulu Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-ulu-kulliyesi",
+  "era": null,
+  "tags": [
+    "cami",
+    "antakya",
+    "ulu-camii",
+    "memluk"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "78"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kesin tarih bilinmiyor; minare kaidesi kitabesi H. 670 (M. 1271); 13. yüzyılın ikinci yarısı",
+      "en": "Exact date unknown; minaret-base inscription 670 H (1271 A.D.); second half of the 13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 670,
+    "century": 13,
+    "basis": {
+      "tr": "Başlangıç yılı verilmediği için start_year null; yalnızca kitabe H. 670 (M. 1271) ve sanat tarihçilerinin tarihleme eğilimi aktarılıyor.",
+      "en": "No start year is given; only the inscription (670 H / 1271 A.D.) and art historians' tendency are reported."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "78"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kıbleye paralel iki sahınlı, beyaz kalker taştan harimi olan; minare kaidesindeki H. 670 (M. 1271) tarihli kitabe nedeniyle 13. yüzyılın ikinci yarısına tarihlenen cami.",
+    "en": "A mosque with a white-limestone sanctuary of two naves parallel to the qibla, dated to the second half of the 13th century because of the inscription of 670 H (1271 A.D.) on the minaret base."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve tarihleme",
+        "en": "History and dating"
+      },
+      "body": {
+        "tr": "Kesin yapılış tarihi bilinmese de minare kaidesinde satrançlı kufi hatla yazılmış H. 670 (M. 1271) tarihli kitabe, eseri Memlük Sultanı Baybars dönemine bağlar; sanat tarihçileri eseri 13. yüzyılın ikinci yarısının ortalarına tarihleme eğilimindedir. Camiyle birlikte yazlık bölüm 1849'da, minare 1705 ve 1791'de, batı kapısı 1835'te, caminin kendisi 1876'da onarım görmüştür. 1986 ve 2002'de külliye bir bütün olarak Vakıflar Genel Müdürlüğü aracılığıyla restore edilmiştir.",
+        "en": "Although the exact date of construction is not known, the inscription dated 670 H (1271 A.D.) in chess kufic on the minaret base belongs to the period of the Mamluk Sultan Baybars; art historians tend to date the work to the middle of the second half of the 13th century. The summer part and the mosque were repaired in 1849, the minaret in 1705 and 1791, the west door in 1835 and the mosque itself in 1876. In 1986 and 2002 the complex was restored as a whole by the General Directorate of Foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 2,
+      "title": {
+        "tr": "Harim",
+        "en": "Sanctuary"
+      },
+      "body": {
+        "tr": "Doğu-batı yönünde ince uzun dikdörtgen planlı harime kuzeydeki avludan üç kapıyla girilir; ikisi batıdaki büyük bölüme, biri doğudaki küçük bölüme aittir. Beyaz kalker taştan yapılan ve dıştan payandalarla desteklenen harim, kıbleye paralel iki sahından oluşur. Batı bölümünde her sahında beş ayak üzerine oturan altı kemer gözü vardır ve çapraz tonozla örtülüdür. Kotu biraz daha düşük olan doğu bölümü ise çapraz tonozlarını doğrudan gömme ayaklara bindirir.",
+        "en": "The sanctuary, on an elongated rectangular plan in the east-west direction, is entered from the northern courtyard through three doors: two belong to the large western section and one to the small eastern section. Made of white limestone and supported by buttresses on the outside, it has two naves parallel to the qibla. In the west each nave has six arches on five pillars, covered with cross vaults; the slightly lower eastern section's cross vaults rest directly on recessed pillars."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "id": "dogu-bolum",
+      "order": 3,
+      "title": {
+        "tr": "Doğu bölümü ve mezhep yorumu",
+        "en": "Eastern section and the sect interpretation"
+      },
+      "body": {
+        "tr": "Doğu ile batı bölümleri arasındaki farklar yapıların farklı zamanlarda yapıldığını gösterir; minarenin doğusundan kıbleye çekilen çizginin doğusunda kalan iki medrese odası ile bu bölüm sonradan eklenmiştir. Doğu bölümünde ayrı bir mihrap bulunması bu kısmın farklı bir mezhep için yapılmış olabileceğini düşündürür. Kitaba göre Osmanlı öncesinde her mezhep aynı çatı altında kendi mihrabı önünde namaz kılıyordu; bu uygulama Osmanlı döneminde kaldırılmış ve başka mezhepler için bitişik veya yakın mekânlar ayrılmıştır, dolayısıyla doğu bölümü şehrin Osmanlı hâkimiyetine girmesinden sonraki bir genişletmenin sonucu olmalıdır.",
+        "en": "The differences between the eastern and western sections show they were built at different times; the two madrasa rooms and this section east of the line drawn from the east of the minaret to the qibla were added later. A separate mihrab in the east suggests it may have been built for a different sect. Before Ottoman rule each sect prayed before its own mihrab under one roof; this was abolished in the Ottoman period and adjacent or nearby spaces were allocated to other sects, so the eastern section must result from an expansion after the city came under Ottoman rule."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "82"
+        }
+      ]
+    },
+    {
+      "id": "pencere-mihrap",
+      "order": 4,
+      "title": {
+        "tr": "Pencereler, mihrap ve minber",
+        "en": "Windows, mihrab and minbar"
+      },
+      "body": {
+        "tr": "Batı bölümü altlı üstlü iki sıra pencereyle aydınlanır; iki kapının bulunduğu yerler hariç her kemer gözünün karşısında kuzey cephede altta iki, üstte bir pencerelik demetler vardır, güney duvarda da benzer düzen uygulanmıştır. Doğudaki bölüm kuzey avluya iki kemerle açılıyor olmalıdır. Batı bölümündeki sivri kemerli mihrap nişini çerçeveleyen dikdörtgenin üst iki yanına kandil asmak için birer konsol konmuştur. Taş minber abartılı büyüklükte köşk altı geçidi ve süslemesiz yan aynalarının altındaki küçük süpürgeliklerle dikkat çeker. Mihrabın tam karşısındaki ahşap müezzin mahfili yalın görünümlüdür.",
+        "en": "The western part is lit by two rows of windows: opposite each arch, apart from the two doors, the north façade has a bundle of three windows (two below, one above), and the south wall is similar. The eastern section must have opened to the northern courtyard with two arches. In the western section a console was placed on each upper side of the rectangle framing the pointed-arched mihrab niche to hang oil lamps. The stone minbar stands out with an exaggeratedly large kiosk passage and small skirting boards under plain side mirrors. The wooden muezzin's gallery opposite the mihrab is plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "82, 84-85"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 5,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Beyaz kesme taştan yapılan minarenin kaidesi kare planlı, gövdesi yirmi iki kenarlıdır. Şerefe üzerindeki külah kurşun kaplı ve konik biçimlidir; şerefe altı geçişleri yüzeysel mukarnaslarla zenginleştirilmiştir.",
+        "en": "The minaret of white cut stone has a square base and a twenty-two-sided body. The cone above the balcony is lead-coated and conical; the transitions beneath the balcony are enriched with shallow muqarnas."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "84-85"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kitabe_tarihi_hicri",
+      "label": {
+        "tr": "Minare kaidesi kitabesi (Hicri)",
+        "en": "Minaret-base inscription (Hijri)"
+      },
+      "value": 670,
+      "unit": "H.",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "key": "minare_govde_kenar",
+      "label": {
+        "tr": "Minare gövde kenar sayısı",
+        "en": "Minaret body sides"
+      },
+      "value": 22,
+      "unit": "kenar",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "key": "bati_sah_kemer",
+      "label": {
+        "tr": "Batı bölümde sahın başına kemer gözü",
+        "en": "Arches per nave, western part"
+      },
+      "value": 6,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "key": "bati_sah_ayak",
+      "label": {
+        "tr": "Batı bölümde sahın başına ayak",
+        "en": "Pillars per nave, western part"
+      },
+      "value": 5,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "key": "harim_sah_sayisi",
+      "label": {
+        "tr": "Sah sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": "sah",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "key": "harim_kapi",
+      "label": {
+        "tr": "Harime açılan kapı sayısı",
+        "en": "Doors into the sanctuary"
+      },
+      "value": 3,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "81"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Baybars",
+      "role": {
+        "tr": "Minare kaidesindeki kitabenin dönemine ait Memlük sultanı",
+        "en": "Mamluk sultan to whose period the minaret-base inscription belongs"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "minare-kitabesi-1271",
+      "year": 1271,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Minare kaidesindeki kitabenin tarihi (H. 670)",
+        "en": "Date of the minaret-base inscription (670 H)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "id": "minare-onarim-1705",
+      "year": 1705,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Minare onarımı",
+        "en": "Minaret repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "id": "minare-onarim-1791",
+      "year": 1791,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Minare onarımı",
+        "en": "Minaret repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "id": "bati-kapi-onarim-1835",
+      "year": 1835,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Batı kapısı onarımı",
+        "en": "West door repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "id": "cami-yazlik-onarim-1849",
+      "year": 1849,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami ve yazlık bölümün onarımı",
+        "en": "Repair of the mosque and the summer part"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "id": "cami-onarim-1876",
+      "year": 1876,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Caminin onarımı",
+        "en": "Repair of the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "78"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-ulu-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Ulu Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Ulu Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "76-77"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, doğu-batı yönünde ince uzun dikdörtgen planlıdır ve avlunun güneyindedir. Beyaz kalker taştan yapılmıştır; dışarıda payandalar vardır. İçeride kıbleye paralel iki sah, batıda her sahta altı kemer ve beş ayak görülür. Taş minber ve mihrabın karşısında ahşap müezzin mahfili bulunur. Beyaz kesme taş minare, kare kaideli ve yirmi iki kenarlı gövdelidir; kurşun kaplı konik külahı vardır.",
+      "en": "The mosque is an elongated rectangle running east-west on the south side of the courtyard. It is of white limestone with buttresses outside. Inside there are two naves parallel to the qibla, with six arches on five pillars per nave in the west. There is a stone minbar and, opposite the mihrab, a wooden muezzin's gallery. The white cut-stone minaret has a square base, a twenty-two-sided body and a lead-covered conical cap."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Ulu Camii bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

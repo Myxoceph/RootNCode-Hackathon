@@ -37,7 +37,7 @@ Fotoğraflar 2023 depremlerinden önce çekilmiştir.
 
 | # | Bölüm | Kayıtlar | Basılı s. | Foto | Kim | Durum |
 |---|---|---|---|---|---|---|
-| 1–7 | Külliyeler ve Kervansaraylar | 7 eser + alt yapıları; #1 Habib-i Neccar yazıldı (6 kayıt, fotoğraflı), #2–7 sırada | 54–191 | 127 | Ahmet (ajan) | #1 draft, #2–7 sırada |
+| 1–7 | Külliyeler ve Kervansaraylar | 38 kayıt: 7 külliye + alt yapıları (Habib-i Neccar 6, Ulu 8, Sokullu 9, Meydan 5, Kanuni 4, Şeyh Ali 3, Mustafa Şevki Paşa 3) | 54–191 | 127 | Ahmet (ajan) | draft (fotoğraf yalnızca Habib-i Neccar'da) |
 | 8–27 | Camiler ve Mescitler (1. yarı: Ali Çavuş → Rıfat Ağa) | 20; #8 Ali Çavuş yazıldı (fotoğraflı) | 194–309 | 100 | Ahmet (ajan) | #8 draft, #9–27 sırada |
 | 28–46 | Camiler ve Mescitler (2. yarı: Sarımiye → Kaptan Paşa Minaresi) | 19 | 310–401 | 84 | | sırada |
 | 47–63 | Türbeler / Ziyaretler | 17 (eser başına 1 sayfa) | 404–441 | 18 | Ahmet (ajan) | draft (fotoğraf eklenmedi) |

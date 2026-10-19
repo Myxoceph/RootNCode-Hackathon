@@ -1,0 +1,243 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-reyhanli-mustafa-sevki-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
+      "Banî kitapta verilmiyor; Mustafa Şevki Paşa'nın camiyi yaptırdığı kitapta açıkça söylenmiyor, bu yüzden founder null.",
+      "Harim kapısı kitabesinin metni ve dili kitapta yok; tarihin hangi kitabeden alındığı net değil.",
+      "Vakıf/vakfiye ve mimar bilgisi kitapta yok.",
+      "Bölüm başlığındaki 'PAŞACAMİİ' yazım hatası düzeltilerek 'Paşa Camii' yazıldı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Mustafa Şevki Paşa Camii",
+    "en": "Mustafa Şevki Pasha Mosque"
+  },
+  "subtitle": {
+    "tr": "Mustafa Şevki Paşa Külliyesi'nin camisi",
+    "en": "The mosque of the Mustafa Şevki Pasha complex"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "hatay-reyhanli-mustafa-sevki-pasa-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "reyhanlı",
+    "mustafa-şevki-paşa",
+    "iki-sahınlı",
+    "1910"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Reyhanlı",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "183-187"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1910",
+      "en": "1910"
+    },
+    "start_year": 1910,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Külliyede bulunan kitabelerden inşa tarihinin 1910 olduğu anlaşılır.",
+      "en": "The inscriptions in the complex show the date of construction to be 1910."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "187"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mihrap duvarına paralel iki sahınlı, kırma çatılı cami. Sivri kemerler gömme sütunlar ve dört sekizgen sütunla iki sahına ayrılır. Kesme taş mihrap nişi ve özgün haliyle günümüze ulaşan ahşap minber vardır. Kitaba göre mihrap sütuncesi başlığının piramidal başlıkla sonlanması caminin Hatay'daki diğer yapılardan ayrıldığı noktadır.",
+    "en": "A two-nave, hipped-roof mosque parallel to the mihrab wall. Pointed arches on recessed columns and four octagonal columns divide it into two naves. It has a cut-stone mihrab niche and a wooden minbar that has survived in its original form. According to the book, the cubic column head on the mihrab ending with a pyramidal head sets the mosque apart from other buildings in Hatay."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mihrap duvarına paralel iki sahınlı cami kırma çatıyla örtülüdür. Son cemaat yerindeki kemerlerden ortadaki dar, diğerleri daha geniş açıklığa sahiptir. Harimin kuzey cephesini, ana eksendeki harim kapısının iki yanında üçer altlık ve iki üstlük pencere ile doğudaki ilk iki pencere arasına yerleştirilen mihrabiye şekillendirir. Kapının düz lentosunun hemen üzerinde bir kitabe, onun üzerinde oval bir pencere yer alır. Harim, doğu ve batıda gömme sütunun ve aralarındaki dört sekizgen sütunun taşıdığı sivri kemerlerle iki sahına bölünmüştür. Kemerler üzerindeki duvarda taşların farklı renkte olması bu bölümün sonradan yükseltildiğini, düz dam olan asıl örtünün sonradan kırma çatıya dönüştürüldüğünü gösterir.",
+        "en": "The two-nave mosque parallel to the mihrab wall is covered with a hipped roof. Among the narthex arches the middle ones are narrow and the others wider. The north facade of the sanctuary is shaped by three lower and two upper windows on both sides of the sanctuary door on the main axis and by the mihrabiye between the first two windows in the east. An inscription sits just above the flat lintel of the door with an oval window above it. The sanctuary is divided into two naves by pointed arches on recessed columns in the east and west and four octagonal columns between them. The different colour of the stones in the wall above the arches shows this section was raised later and the original flat-roof cover later converted into a hipped roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "183-185"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber",
+      "order": 2,
+      "title": {
+        "tr": "Mihrap ve minber",
+        "en": "Mihrab and minbar"
+      },
+      "body": {
+        "tr": "Girişle aynı eksendeki, tamamen kesme taştan mihrap nişi iki yanda kare başlıkları külahla sonlanan sütuncelerle, kavsara eteğinde kaval silmeyle sınırlandırılmıştır. Yüzeyinde uç uca eklenmiş baklava motifleri, zincir ve silmelerden oluşan bir dekor kullanılmıştır. Mihrabın sağındaki ahşap minber özgün haliyle günümüze ulaşmıştır ve klasik minberlerin unsurlarını taşır. Kitaba göre mihraptaki kübik sütunce başlığının piramidal başlıkla sonlanması camiyi Hatay'daki diğer yapılardan ayırır.",
+        "en": "The cut-stone mihrab niche on the same axis as the entrance is bordered on both sides by colonnettes with square capitals ending in cones and by a bowtell at the skirt of the hood. Its surface has a decor of end-to-end lozenge motifs, chains and mouldings. The wooden minbar to the right of the mihrab has survived in its original form and carries the elements of classical minbars. According to the book, the cubic column head on the mihrab ending in a pyramidal head distinguishes the mosque from other buildings in Hatay."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "187"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "saha_sayisi",
+      "label": {
+        "tr": "Sah sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": "sah",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "183"
+        }
+      ]
+    },
+    {
+      "key": "sekizgen_sutun",
+      "label": {
+        "tr": "Sekizgen sütun sayısı",
+        "en": "Octagonal columns"
+      },
+      "value": 4,
+      "unit": "sütun",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "183"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "harim-kapi-kitabesi",
+      "location": {
+        "tr": "Harim kapısının düz lentosu üzerinde",
+        "en": "Above the flat lintel of the sanctuary door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1910"
+      },
+      "note": {
+        "tr": "Kitap kitabenin metnini, dilini ve tarihini ayrıca vermez; inşa tarihinin 1910 olduğu 'külliyede bulunan kitabelerden' anlaşılır.",
+        "en": "The book does not give the inscription's text, language or date separately; the construction date of 1910 is understood 'from the inscriptions found in the complex'."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "183"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1910",
+      "year": 1910,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İnşa (kitabelere göre 1910)",
+        "en": "Built (1910 according to the inscriptions)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "187"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-reyhanli-mustafa-sevki-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Mustafa Şevki Paşa Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Mustafa Şevki Pasha Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "180"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, mihrap duvarına paralel uzanan, kırma çatılı iki sahınlı bir yapıdır. Son cemaat yerinde ortadaki kemer dar, diğerleri daha geniştir. İçeride sivri kemerler, gömme sütunlar ve aralarında dört sekizgen sütunla mekânı iki sahına böler. Kesme taştan sivri nişli mihrabın sağında özgün ahşap minber durur. Harim kapısının lentosu üzerinde bir kitabe ve onun üstünde oval bir pencere vardır.",
+      "en": "The mosque is a two-nave hipped-roof building running parallel to the mihrab wall. In the narthex the middle arch is narrow and the others wider. Inside, pointed arches on recessed columns and four octagonal columns between them divide the space into two naves. The original wooden minbar stands to the right of the cut-stone mihrab niche. Above the lintel of the sanctuary door are an inscription and, above it, an oval window."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}
