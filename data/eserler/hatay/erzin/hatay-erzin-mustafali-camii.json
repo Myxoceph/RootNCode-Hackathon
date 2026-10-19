@@ -1,0 +1,300 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-erzin-mustafali-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Caminin plan, örtü ve malzeme bilgisi kaynakta yok; yerinde belgelenmeli.",
+      "Antik kalıntı taşın hangi yapıdan geldiği ve üzerindeki figürler kaynakta açıklanmıyor.",
+      "Kitabenin metni ve dili kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
+      "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türkçe metin kapı üstü kitabeyi 'H. 1302 (M. 1895)' diye verir, İngilizce metinde Hicri yıl yoktur ('dated (1895 A.D.)'). 1302 Hicri yılı Miladi 1884-85'e denk düşer; kaynağın iki tarihi birbirini tutmaz. Miladi 1895 korundu, kayıt 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mustafalı Camii",
+    "en": "Mustafalı Mosque"
+  },
+  "subtitle": {
+    "tr": "1895'te yapılmış, sonradan yenilenip değişmiş Erzin camisi",
+    "en": "An Erzin mosque built in 1895 and later renewed and altered"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "Erzin",
+    "1895",
+    "sonradan yenilenmiş",
+    "iki şerefeli minare"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Erzin",
+    "neighborhood": null,
+    "address": "Yeşilkent, 2925 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "363, 399"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1895 (H. 1302)",
+      "en": "1895 (1302 AH)"
+    },
+    "start_year": 1895,
+    "end_year": 1895,
+    "hijri_year": 1302,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap yapının 1895'te yapıldığını ve kapı üstündeki kitabenin H. 1302 (M. 1895) tarihli olduğunu söyler. 1302 Hicri yılı Miladi 1884-85'e denk düşer; bu nedenle iki tarih uyuşmaz. Kaynağın Miladi değeri (1895) korundu.",
+      "en": "The book says the mosque was built in 1895 and that the inscription above the door is dated 1302 AH (1895 AD). 1302 AH corresponds to 1884-85 AD, so the two dates do not match. The source's Gregorian value (1895) is kept."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "363"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Erzin'deki Mustafalı Camii, Çukurova ve Hatay'ın verimli bölgelerindeki yeni yerleşimlerle birlikte yürüyen imar faaliyetlerinin bir ürünüdür. 1895'te yapılmış, sonradan yenilendiği için eski özelliğini büyük ölçüde yitirmiştir; 1947'de oransız bir minare, 1960'ta genişletilmiş son cemaat yeri eklenmiştir.",
+    "en": "Mustafalı Mosque in Erzin is a product of the building activity that accompanied new settlements in the fertile regions of Çukurova and Hatay. Built in 1895, it has lost its old character through later renewal; an out-of-proportion minaret was added in 1947 and the narthex was enlarged in 1960."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Çukurova ve Hatay'ın verimli bölgelerinde sayıları artan yeni yerleşim yerlerine paralel olarak yapılan imar faaliyetleri içinde yer alan diğer bir eser de Erzin'deki Mustafalı Camii'dir. Eser 1895 yılında yapılmış olmakla birlikte sonradan yenilendiği için eski özelliğini tamamen yitirmiştir.",
+        "en": "Another work among the building activities carried out in parallel with the increasing number of new settlements in the fertile regions of Çukurova and Hatay is the Mustafalı Mosque in Erzin. Although it was built in 1895, it has completely lost its old character because it was renewed later."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "363"
+        }
+      ]
+    },
+    {
+      "id": "sonraki-eklemeler",
+      "order": 2,
+      "title": {
+        "tr": "Sonraki Eklemeler ve Kitabeler",
+        "en": "Later Additions and Inscriptions"
+      },
+      "body": {
+        "tr": "Uzun iki şerefeli minare, mevcut binayla orantısız biçimde 1947'de eklenmiştir. 1960'ta son cemaat yeri genişletilerek eski özgün mimarisi bozulmuştur. Son cemaat yerindeki bir başka taşın üzerinde, damla şeklindeki motifin içinde dini ibareler okunur. Caminin H. 1302 (M. 1895) tarihli, kapı üstündeki eski inşa kitabesi korunmuştur. Antik bir kalıntıdan elde edilen ve üzerinde çeşitli figürler bulunan bir taş da duvarda muhafaza altına alınmıştır.",
+        "en": "The tall two-balcony minaret was added in 1947, out of proportion to the existing building. In 1960 the narthex was enlarged and its former original architecture was spoiled. On another stone in the narthex, religious phrases are read inside a drop-shaped motif. The old construction inscription above the door, dated 1302 AH (1895 AD), has been preserved. A stone with various figures, obtained from an ancient ruin, is also preserved in the wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "363"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_serefe",
+      "label": {
+        "tr": "Minare şerefe sayısı",
+        "en": "Number of minaret balconies"
+      },
+      "value": 2,
+      "unit": null,
+      "note": {
+        "tr": "Minare 1947'de eklenmiştir.",
+        "en": "The minaret was added in 1947."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "363"
+        }
+      ]
+    },
+    {
+      "key": "antik_tas",
+      "label": {
+        "tr": "Duvarda korunan antik kalıntı taşı",
+        "en": "Ancient stone preserved in the wall"
+      },
+      "value": "Üzerinde çeşitli figürler bulunan taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "363"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kapi-ustu-insa-kitabesi",
+      "location": {
+        "tr": "Kapı üstü",
+        "en": "Above the door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1302,
+        "gregorian": "1895"
+      },
+      "note": {
+        "tr": "Kitabenin dili ve metni kaynakta verilmemiştir. Hicri yıl (1302) ile Miladi yıl (1895) uyuşmaz; bkz. data_quality_notes.",
+        "en": "The language and text of the inscription are not given. The Hijri year (1302) and the Gregorian year (1895) do not match; see data_quality_notes."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "363"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-damla-motifli-tas",
+      "location": {
+        "tr": "Son cemaat yerindeki taş (damla şeklindeki motif içinde)",
+        "en": "Stone in the narthex (inside a drop-shaped motif)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kaynak yalnızca 'dini ibareler okunur' der; metin verilmemiştir.",
+        "en": "The source only says religious phrases are read; the text is not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "363"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1895",
+      "year": 1895,
+      "date": null,
+      "hijri": "1302",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı (kitabe H. 1302 / M. 1895)",
+        "en": "Mosque built (inscription 1302 AH / 1895 AD)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "363"
+        }
+      ]
+    },
+    {
+      "id": "minare-1947",
+      "year": 1947,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Uzun iki şerefeli minare eklendi",
+        "en": "Tall two-balcony minaret added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "363"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Son cemaat yeri genişletildi",
+        "en": "Narthex enlarged"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "363"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mustafalı Camii, Erzin'dedir. 1895'te yapılan cami sonradan yenilenmiştir. Önünde 1960'ta genişletilmiş bir son cemaat yeri vardır. Binaya göre oransız, uzun ve iki şerefeli minare 1947'de eklenmiştir. Kapının üstünde eski inşa kitabesi korunmuştur; duvarda antik bir kalıntıdan alınmış, üzerinde figürler olan bir taş durur.",
+      "en": "Mustafalı Mosque is in Erzin. Built in 1895, it was later renewed. In front is a narthex enlarged in 1960. A tall two-balcony minaret, out of proportion to the building, was added in 1947. The old construction inscription is preserved above the door, and a stone with figures taken from an ancient ruin is set in the wall."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

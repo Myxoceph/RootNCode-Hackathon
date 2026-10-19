@@ -1,0 +1,285 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-payas-sokullu-mehmet-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Caminin yeri ('kalenin merkezine yakın') ile hanikah avlusunun yeri ('külliyenin güneybatısı') kitapta açıkça ilişkilendirilmiyor; yapının kale içinde mi külliye içinde mi olduğu doğrulanmalı.",
+      "Hanikah ile külliyenin ana metnindeki 'hanegâh (medrese)' ifadesi aynı yapı olarak yorumlandı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap iki farklı tarihleme görüşü aktarıyor (17. yüzyıl sonu / 1567); hiçbiri kesinleştirilmiyor: disputed."
+      },
+      {
+        "field": "location",
+        "note": "Kale Camii kalenin merkezine yakın anlatılıyor, ancak aynı bölümde hanikah avlusu 'külliyenin güneybatı tarafına' konuyor; kitap iki konumu açıklamıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sokullu Mehmet Paşa Camii ve Hanikâhı",
+    "en": "Sokullu Mehmet Pasha Mosque and Hanikah"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Kale Camii",
+      "en": "Castle Mosque",
+      "note": "Kitap camiyi 'Kale Camii' diye anıyor."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "medrese"
+  ],
+  "parent_id": "hatay-payas-sokullu-mehmet-pasa-kulliyesi",
+  "era": null,
+  "tags": [
+    "cami",
+    "hanikah",
+    "payas",
+    "sokullu-mehmet-pasa",
+    "kale-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Payas",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "113-117"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kitabe yok; 1567 ya da 17. yüzyıl sonu",
+      "en": "No inscription; 1567 or the end of the 17th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap iki görüş aktarıyor: 17. yüzyıl sonu veya 1567. Hiçbiri kesin değil, start_year null.",
+      "en": "The book reports two views: end of the 17th century or 1567; neither is certain, so start_year is null."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "113"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kale Camii olarak anlatılan, haçvari planlı kubbeli harimi olan cami ile bahçeli avluyu üç yandan çevreleyen hanikah odaları.",
+    "en": "The mosque described as the Castle Mosque, with a domed cross-plan sanctuary, and the hanikah rooms enclosing a garden courtyard on three sides."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihleme",
+        "en": "Dating"
+      },
+      "body": {
+        "tr": "Bütün kalelerde olduğu gibi kale görevlilerinin Cuma dahil tüm namazlarını kılabilmesi için bir cami vardır. Caminin tarihini belgeleyen bir kitabe yoktur; eseri 17. yüzyıl sonlarına tarihleyenler olduğu gibi, külliye bitinceye kadar namaz kılınabilsin diye böyle küçük bir eserin 1567'de yapıldığını savunanlar da vardır.",
+        "en": "As in all castles there is a mosque for the castle officials to perform all their prayers, including Friday prayers. No inscription documents its history; some date it to the end of the 17th century, while others argue that such a small work was built in 1567 so prayers could be performed until the complex was finished."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "113"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Yerleşim ve plan",
+        "en": "Layout and plan"
+      },
+      "body": {
+        "tr": "Kale Camii kalenin merkezine yakın bir yerde, kareye yakın dikdörtgen planlı ve beyaz kesme taştan yapılmıştır; doğusuna aynı tarzda bitişik bir mekân daha vardır ve bu, son cemaat yeri bulunmayan caminin son cemaat yeri gibi kullanılmış olabilir. Külliyenin güneybatı tarafında dikdörtgen bahçeli bir avlu yapılmış; avlunun doğusunda, batısında ve kuzeyinde hanikah odaları, kıble tarafında cami yer alır. Caminin son cemaat yeri bu revak silsilesini güneyde tamamlar. Kuzeybatı köşede, kare kaide üzerinde yuvarlak gövdeli, klasik Osmanlı üslubunda şerefesiz bir minare vardır.",
+        "en": "The Castle Mosque is built of white cut stone on a near-square rectangular plan close to the centre of the castle; another space of the same style adjoins it to the east and, since the mosque has no narthex, may have served as one. A rectangular garden courtyard was made on the southwest side of the complex, with hanikah rooms on its east, west and north and the mosque on the qibla side; the mosque's narthex completes the porticoes on the south. At the northwest corner is a minaret with a round body on a square base, in the classical Ottoman style, without a balcony."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "113"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 3,
+      "title": {
+        "tr": "Harim ve kubbe",
+        "en": "Sanctuary and dome"
+      },
+      "body": {
+        "tr": "Batıdaki ana mekân, iki yanda gömme ayaklara oturan bir kemerle kıbleye paralel iki sahına ayrılır; batıda iki, kıble duvarında bir pencere vardır, doğudaki iki pencere yan mekânla bağlantı sağlar. Harimin namaz alanı eşit kollu dört kollu haçvari plandadır. Ortadaki yüksek kubbenin çevresinde sivri kemerle kubbeli mekâna bakan eyvanlar çapraz tonozla örtülüdür; kubbe dıştan çokgen kasnağa oturur, köşelerde uçan payandalarla desteklenir, içte pandantiflerle geçiş yapılır ve kurşun kaplıdır. Harimin kuzeydoğu ve kuzeybatı köşelerinde birer küçük itikâf odası vardır.",
+        "en": "The main space in the west is divided into two naves parallel to the qibla by an arch on recessed legs; it has two windows in the west and one in the qibla wall, and two windows in the east connect to the side space. The prayer area has a four-armed cross plan with equal arms. The iwans around the high central dome, facing the domed space with pointed arches, are cross-vaulted; the dome rests on a polygonal drum, is supported by flying buttresses at the corners, uses pendentives inside and is lead-covered. A small itikaf room sits in each of the northeast and northwest corners."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "114-115"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 4,
+      "title": {
+        "tr": "Mihrap",
+        "en": "Mihrab"
+      },
+      "body": {
+        "tr": "Sivri kemerli sade bir nişten oluşan mihrap, Bursa kemerli bir silme içine alınmış ve dıştan dikdörtgen bir blok halinde düzenlenmiştir. Mukarnaslı sivri kavsaranın üst kısmı yarım kemer biçimli siyah bir friz ile çevrilidir; bu friz kilit taşı üzerinde düğüm yapar ve iki yanına birer ince pano yerleştirilmiştir. Mihrap siyah, kirli beyaz ve pembe taş işçiliğiyle etkileyici görünür.",
+        "en": "The mihrab, a plain pointed-arched niche, is enclosed in a Bursa-arched moulding and arranged as a rectangular block outside. The upper part of its muqarnas pointed kavsara is surrounded by a half-arch black frieze that forms a knot on the keystone, with a thin panel on each side. The mihrab looks impressive with its black, off-white and pink stonework."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "114-115"
+        }
+      ]
+    },
+    {
+      "id": "hanikah",
+      "order": 5,
+      "title": {
+        "tr": "Hanikah odaları",
+        "en": "Hanikah rooms"
+      },
+      "body": {
+        "tr": "Avlunun çevresindeki revakların gerisindeki hanikah odaları avluya birer kapı ve pencereyle açılır. Odaların ikisi çapraz tonozla, diğerleri beşik tonozla örtülüdür; ayrıca birer ocak, dolap nişi ve sokağa açılan üstlük mazgal pencereler bulunur.",
+        "en": "The hanikah rooms behind the porticoes around the courtyard open to it with a door and window each. Two are covered with cross vaults and the others with barrel vaults; they also have a stove, cupboard niches and crenellated windows opening onto the street."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "117"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sah_sayisi",
+      "label": {
+        "tr": "Ana mekândaki sah sayısı",
+        "en": "Naves in the main space"
+      },
+      "value": 2,
+      "unit": "sah",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "key": "itikaf_odasi",
+      "label": {
+        "tr": "İtikâf odası sayısı",
+        "en": "Itikaf rooms"
+      },
+      "value": 2,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "key": "capraz_tonoz_hanikah",
+      "label": {
+        "tr": "Çapraz tonozlu hanikah odası",
+        "en": "Cross-vaulted hanikah rooms"
+      },
+      "value": 2,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "117"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-payas-sokullu-mehmet-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Sokullu Mehmet Paşa Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Sokullu Mehmet Pasha Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "113"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami beyaz kesme taştan, kareye yakın dikdörtgen planlıdır. Namaz alanı dört eşit kollu haçvari plandadır; ortada kurşun kaplı yüksek bir kubbe, kollarda çapraz tonozlu eyvanlar bulunur. Mihrap siyah, kirli beyaz ve pembe taşlarla işlenmiştir. Caminin kuzeybatı köşesinde şerefesiz, yuvarlak gövdeli minare vardır. Kuzeyinde, doğusunda ve batısında bahçeli avluyu çevreleyen hanikah odaları yer alır.",
+      "en": "The mosque is of white cut stone on a near-square rectangular plan. Its prayer area is a cross of four equal arms with a high lead-covered dome in the centre and cross-vaulted iwans in the arms. The mihrab is worked in black, off-white and pink stone. A round-bodied minaret without a balcony stands at the northwest corner. Hanikah rooms enclose the garden courtyard on the north, east and west."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Sokullu Mehmet Paşa Camii ve Hanikâhı bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

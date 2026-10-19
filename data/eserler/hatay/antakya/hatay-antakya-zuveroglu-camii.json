@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-zuveroglu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Züveroğlu Camii bölümünden (s. 342-345) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Kapının üzerindeki levhada yazan 1215 (1800) tarihinin ayrıntısı (levhanın yazısı, dili) kaynakta yok.",
+      "Kitapta 'sebil' sözcüğü geçiyor, İngilizce metin 'fountain' diyor; küçük bir çeşme/sebil olarak aktarıldı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Orijinal kitabe yok; kapı üstündeki levhadaki H. 1215 (M. 1800) tarihi kitapça yapılış tarihi olarak 'kabul edilmiştir'. Bu nedenle 'probable' işaretlendi."
+      },
+      {
+        "field": "sections[avlu]",
+        "note": "Türkçe metin 'ezanlık' derken İngilizce 'short prayer hall ... azan hall' gibi karışık ifade eder; Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Züveroğlu Camii",
+    "en": "Züveroğlu Mosque"
+  },
+  "subtitle": {
+    "tr": "İki caddenin kesiştiği köşede, evden dönüştürülmüş izlenimi veren cami",
+    "en": "A mosque at a street corner that looks like a masjid converted from a house"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "evden dönüştürülmüş",
+    "yazlık açık mescit",
+    "ezanlık",
+    "çapraz mihrap"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 846 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "345"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kapı üzerindeki levhaya göre H. 1215 (M. 1800)",
+      "en": "1215 H (1800 A.D.) per the plate above the door"
+    },
+    "start_year": 1800,
+    "end_year": null,
+    "hijri_year": 1215,
+    "century": 19,
+    "basis": {
+      "tr": "Orijinal kitabe olmadığı için kapının üzerindeki levhada yazan 1215 (1800) tarihi eserin yapılış tarihi olarak kabul edilmiştir.",
+      "en": "As there is no original inscription, the date 1215 (1800) written on a plate above the door has been accepted as the construction date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "345"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "İki caddenin kesiştiği köşede evden dönüştürülmüş mescit görünümündeki camidir. Kıble tarafındaki avlu aynı zamanda yazlık açık mescittir; kapalı harim kuzeydedir ve cami geleneğine aykırı olarak kıble tarafından sade bir kapıyla girilir. Mihrap, kıbleyi tutturmak için güneydoğuya bakacak şekilde çapraz yapılmıştır.",
+    "en": "A mosque that looks like a masjid converted from a house at the corner where two streets intersect. The courtyard on the qibla side is also a summer open masjid; the closed sanctuary is to the north and, contrary to mosque tradition, is entered from the qibla side by a plain door. The mihrab was built diagonally to face southeast to keep the qibla direction."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "İki caddenin kesiştiği köşede evden dönüştürülmüş mescit görüntüsüne sahip olan bir camidir. Aynı zamanda yazlık açık mescit olan avlu kıble tarafında, kapalı harim kısmı ise kuzeydedir; bu yüzden harime cami geleneğine aykırı olarak kıble tarafından sade bir kapıyla girilir. Bu durum eserin mescit olarak inşa edilmediği intibasını güçlendirmiştir. Orijinal kitabesi olmadığından kapı üzerindeki levhada yazan 1215 (1800) tarihi yapılış tarihi olarak kabul edilmiştir.",
+        "en": "It is a mosque with the appearance of a masjid converted from a house at the corner where two streets intersect. The courtyard, which is also a summer open masjid, is on the qibla side and the closed sanctuary is to the north, so the sanctuary is entered from the qibla side through a plain door, contrary to mosque tradition. This strengthens the impression that it was not built as a masjid. As it has no original inscription, the date 1215 (1800) on a plate above the door has been accepted as the construction date."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "345"
+        }
+      ]
+    },
+    {
+      "id": "avlu",
+      "order": 2,
+      "title": {
+        "tr": "Avlu ve Ezanlık",
+        "en": "Courtyard and Azan Hall"
+      },
+      "body": {
+        "tr": "Doğudaki bir kapıdan girilen avlunun güneydoğu köşesinde birkaç basamaktan oluşan minber ve sac örtüden ibaret kısa bir ezanlık bulunur. Ezanlığın sağında sembolik bir mihrap, güneybatı köşesinde küçük bir oda vardır. Avlu kapısının hemen kuzeyine küçük bir sebil yerleştirilmiştir.",
+        "en": "In the southeast corner of the courtyard, entered through a door in the east, there is a short azan hall consisting of a minbar of a few steps and a sheet cover. To the right of the azan hall is a symbolic mihrab and in the southwest corner a small room. A small fountain was placed just north of the courtyard gate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "345"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 3,
+      "title": {
+        "tr": "Kapalı Harim",
+        "en": "Closed Sanctuary"
+      },
+      "body": {
+        "tr": "Kapalı mescit olarak kullanılan kuzeydeki bölüm, bir kemerle kıbleye paralel eşit olmayan iki sahına bölünmüştür; kuzeydeki sahın daha geniştir. Kıble duvarının doğu ucuna yakın, yuvarlak kemerli sade bir nişten ibaret mihrap, kıbleyi tutturabilmek için güneydoğuya bakacak şekilde çapraz yapılmıştır. Kırma çatılı harimin kıble duvarında bir kapı ve dört pencere vardır; kuzey duvarında diğerlerinden geniş bir pencere daha bulunur.",
+        "en": "The northern section used as a closed masjid is divided by an arch into two unequal naves parallel to the qibla; the northern nave is wider. The mihrab, a plain round-arched niche near the east end of the qibla wall, was built diagonally to face southeast to keep the qibla direction. The qibla wall of the hipped-roof sanctuary has a door and four windows; one more window, larger than the others, is on the north wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "345"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_kible",
+      "label": {
+        "tr": "Kıble duvarındaki pencere sayısı",
+        "en": "Windows on the qibla wall"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "345"
+        }
+      ]
+    },
+    {
+      "key": "kapi_kible",
+      "label": {
+        "tr": "Kıble duvarındaki kapı sayısı",
+        "en": "Doors on the qibla wall"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "345"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "note": {
+        "tr": "Eşit olmayan; kuzeydeki daha geniş.",
+        "en": "Unequal; the northern is wider."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "345"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kapi-levhasi",
+      "location": {
+        "tr": "Kapının üzerindeki levha",
+        "en": "Plate above the door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1215,
+        "gregorian": "1800"
+      },
+      "note": {
+        "tr": "Levhada yazan 1215 (1800) tarihi yapılış tarihi olarak kabul edilmiştir; kitap bunun orijinal bir kitabe olmadığını belirtir. Metin ve dil verilmez.",
+        "en": "The date 1215 (1800) on the plate has been accepted as the construction date; the book says there is no original inscription. Text and language are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "345"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yapim-1800",
+      "year": 1800,
+      "date": null,
+      "hijri": "1215",
+      "type": "construction",
+      "title": {
+        "tr": "Kapı üzerindeki levhaya göre yapım (H. 1215)",
+        "en": "Construction according to the plate above the door (1215 H)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "345"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Züveroğlu Camii, iki caddenin kesiştiği köşededir ve evden dönüştürülmüş bir mescit görünümündedir. Avluya doğudaki bir kapıdan girilir. Kıble tarafındaki avlu yazın açık mescit olarak kullanılır; güneydoğu köşesinde birkaç basamaklı bir minber ve sac örtülü kısa bir ezanlık, yanında sembolik bir mihrap vardır. Kapalı harim avlunun kuzeyindedir ve cami geleneğinin tersine kıble tarafından sade bir kapıyla girilir. İçeride bir kemer, kıbleye paralel iki eşit olmayan sahın oluşturur. Mihrap, kıbleyi tutturmak için güneydoğuya bakacak şekilde çapraz yerleştirilmiştir.",
+      "en": "The Züveroğlu Mosque stands at the corner where two streets meet and looks like a masjid converted from a house. The courtyard is entered through a door in the east. The courtyard on the qibla side is used as an open masjid in summer; in its southeast corner are a minbar of a few steps and a short sheet-covered azan hall, with a symbolic mihrab beside it. The closed sanctuary is north of the courtyard and, contrary to mosque tradition, is entered from the qibla side through a plain door. Inside, an arch forms two unequal naves parallel to the qibla. The mihrab is placed diagonally to face southeast to keep the qibla direction."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 345) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

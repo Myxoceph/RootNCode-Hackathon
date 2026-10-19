@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-payas-sokullu-mehmet-pasa-tabhaneleri",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Tabhâneler için tür kodu uygun olmadığı için 'diger' seçildi; bölüm hanın bir parçası olabilir, veri ekibi karar vermeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Sokullu Mehmet Paşa Tabhâneleri",
+    "en": "Sokullu Mehmet Pasha Tabhanes"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": "hatay-payas-sokullu-mehmet-pasa-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "tabhane",
+    "payas",
+    "sokullu-mehmet-pasa"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Payas",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "106-107"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapıya özgü tarih verilmiyor; külliye kitabesi 1574",
+      "en": "No building-specific date is given; the complex inscription bears 1574"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap yalnızca külliyenin kitabesinin 1574 tarihini taşıdığını söyler; bu yapı için ayrı tarih yok, start_year null bırakıldı.",
+      "en": "The book only says the complex inscription bears 1574; there is no separate date for this building."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "98-99"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hanın avlusunun batısında, hatırlı konuklar için süit odalara benzer düzenlenmiş, her biri kendi revaklı avlusu ve su tesisi olan dört tabhâne.",
+    "en": "Four tabhanes west of the inn courtyard, arranged like suites for dignified guests, each with its own cloistered courtyard and water facility."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Avlunun batısındaki odalar daha itibarlı konuklara ayrılmış, günümüzdeki süit odalara benzer biçimde düzenlenmiştir. Tabhâne denen bu bölüm handan bir duvarla ayrılır ve odalarda su sistemleri görülür. Hanın batısındaki tabhâneler ana girişin sağında ve solunda ikişer tanedir. Her tabhânenin kendi revaklı avlusu ve su tesisi olduğundan bunlar han içinde küçük bir kervansaray gibidir.",
+        "en": "The rooms west of the courtyard were reserved for more dignified guests and arranged like today's suites. This section, called tabhanes, is separated from the inn by a wall and has water systems in the rooms. The tabhanes west of the inn are two each to the right and left of the main entrance. Since each has its own cloistered courtyard and water facility, they are like a small caravanserai inside the inn."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "106-107"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "tabhane_sayisi",
+      "label": {
+        "tr": "Tabhâne sayısı",
+        "en": "Number of tabhanes"
+      },
+      "value": 4,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "106"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-payas-sokullu-mehmet-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Sokullu Mehmet Paşa Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Sokullu Mehmet Pasha Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "98-101"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tabhâneler hanın batısında, handan bir duvarla ayrılmıştır. Ana girişin sağında ve solunda ikişer tabhâne vardır. Her birinin kendi revaklı avlusu ve su tesisi bulunur.",
+      "en": "The tabhanes lie west of the inn, separated from it by a wall. There are two on each side of the main entrance. Each has its own cloistered courtyard and water facility."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Sokullu Mehmet Paşa Tabhâneleri bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-defne-seyh-ibrahim-ve-seyh-ali-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Şeyh İbrahim ve Şeyh Ali’nin kimlikleri, yapım tarihi ve banî kitapta yok.",
+      "Bölüm özetindeki Konum satırı 'HATAY-DEFNE TAVLA,' diye yarım bitiyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şeyh İbrahim ve Şeyh Ali Türbesi",
+    "en": "Sheikh İbrahim and Sheikh Ali Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "Tavla",
+    "briket",
+    "taş örgü",
+    "yedi mezar"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Defne",
+    "neighborhood": "Tavla",
+    "address": "Tavla Köyü, 170 parsel (bölüm özeti)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "414"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Defne’nin Tavla Köyü’nde yüksekçe bir tepede, kare planlı, briket ve taş örgülü türbe. İçinde ikisi mozaik, beşi taş kaplı yedi mezar vardır; yakında bir hazire bulunur.",
+    "en": "A square-plan tomb of breeze block and stone masonry on a high hill in Tavla Village, Defne. Inside are seven graves, two in mosaic and five stone-covered; a burial ground lies nearby."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Türbe kare planlı olup briket ve taş örgüyle yapılmıştır; beden duvarlarında sıva ve boya kullanılmamıştır. Bazı cephelerde pencere, giriş yönünde ahşap bir kapı vardır. İçindeki yedi mezardan ikisi mozaik, beşi taş kaplıdır. Mezarların baş şahide taşlarında Arapça yazıtlar görülür; yakında bir hazire ve giriş yönünde başka mezarlar bulunur.",
+        "en": "The tomb is square in plan, built of breeze block and stone masonry with no plaster or paint on the main walls. Some façades have windows and the entrance side has a wooden door. Of the seven graves inside, two are mosaic and five stone-covered. Arabic inscriptions appear on the headstones; there is a burial ground nearby and graves toward the entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "414"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "mezar_sayisi",
+      "label": {
+        "tr": "Türbedeki mezar sayısı",
+        "en": "Graves inside"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "414"
+        }
+      ],
+      "note": {
+        "tr": "İkisi mozaik, beşi taş kaplı",
+        "en": null
+      }
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "basucu-tasi-yazitlari",
+      "location": {
+        "tr": "Mezarların baş şahide taşları",
+        "en": "Headstones of the graves"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "note": {
+        "tr": "Kitap yalnızca Arapça yazıtlar olduğunu belirtiyor; metinleri verilmiyor.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "414"
+        }
+      ]
+    }
+  ],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, yüksekçe bir tepede, kare planlı, briket ve taş örgülü bir yapıdır; duvarları sıvasız ve boyasızdır. Girişte ahşap bir kapı vardır. İçinde yedi mezar bulunur: ikisi mozaik, beşi taş kaplıdır.",
+      "en": "The tomb is a square-plan building of breeze block and stone masonry on a high hill, with unplastered, unpainted walls. The entrance has a wooden door. Inside are seven graves: two in mosaic and five stone-covered."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

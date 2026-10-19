@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-meydan-sadirvani",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Kitabenin metni ve dili kitapta yok; inscriptions yazılmadı.",
+      "Yaptıran hayırsever adı kitapta belirtilmiyor.",
+      "Tekne köşe sayısı Türkçe/İngilizce metinde çelişiyor, esere bakarak doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[tekne_kose]",
+        "note": "Türkçe metin 'on altı köşeli su teknesi', İngilizce metin 'hexagonal water basin' diyor; iki değer çelişiyor, ikisi de korundu."
+      },
+      {
+        "field": "sections[yapi]",
+        "note": "Konum: s. 127 şadırvanı avlunun ortasında, s. 137 kuzeydoğu köşede veriyor; çelişki."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Meydan Camii Şadırvanı",
+    "en": "Meydan Mosque Shadirvan"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-meydan-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "şadırvan",
+    "antakya",
+    "meydan-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "137"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1906 (kitabeye göre)",
+      "en": "1906 (according to the inscription)"
+    },
+    "start_year": 1906,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Beş satırlık kitabeye göre şadırvan 1906'da yaptırılmıştır.",
+      "en": "According to the five-line inscription the shadirvan was built in 1906."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "137"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1906 tarihli beş satırlık kitabesi olan, ortasında fıskiyeli mermer tekneli şadırvan.",
+    "en": "A shadirvan with a five-line inscription of 1906 and a marble basin with a central fountain."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Avlunun kuzeydoğu köşesinde, muvakkithanenin hemen batısında yer alır. Ortasında fıskiyesi bulunan mermer teknenin üst ve alt kenar profilleri kalın birer korniş ile vurgulanmıştır. Tekne köşelerine oturtulan ahşap sütuncelerin üzerinde yayvan bir külah vardır. Kitap tekneyi Türkçe metinde on altı köşeli, İngilizce metinde ise altıgen (hexagonal) olarak verir.",
+        "en": "It is in the northeast corner of the courtyard, just west of the muvakkithane. The upper and lower edge profiles of the marble basin, with a fountain in the middle, are highlighted by thick cornices. A flat cone stands on wooden colonnettes set at the basin's corners. The Turkish text gives the basin as sixteen-cornered, the English text as hexagonal."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe ve onarım",
+        "en": "Inscription and repair"
+      },
+      "body": {
+        "tr": "Şadırvanın en önemli unsuru beş satırlık kitabesidir; kitabeye göre şadırvan adı belirtilmeyen bir hayırsever tarafından 1906'da yaptırılmıştır. Meydan Camii manzumesi 1985'te onarılırken şadırvan da elden geçirilmiştir.",
+        "en": "Its most important element is a five-line inscription, according to which the shadirvan was built in 1906 by an unnamed benefactor. When the Meydan Mosque ensemble was repaired in 1985 the shadirvan was overhauled too."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "137"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kitabe_satir",
+      "label": {
+        "tr": "Kitabe satır sayısı",
+        "en": "Inscription lines"
+      },
+      "value": 5,
+      "unit": "satır",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "key": "tekne_kose",
+      "label": {
+        "tr": "Su teknesi köşe sayısı",
+        "en": "Basin corners"
+      },
+      "value": "16 (Türkçe metin) / altıgen (İngilizce metin)",
+      "unit": "köşe",
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "137"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1906",
+      "year": 1906,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Şadırvanın yaptırılması (kitabeye göre)",
+        "en": "Construction of the shadirvan (according to the inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Şadırvanın elden geçirilmesi",
+        "en": "Overhaul of the shadirvan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "137"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-meydan-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Meydan Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Meydan Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "125"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şadırvan avlunun kuzeydoğu köşesindedir. Ortasında fıskiye olan mermer bir su teknesi, köşelerinde ahşap sütuncelerin taşıdığı yayvan bir külah vardır. Teknenin üst ve alt kenarlarında kalın korniş profilleri görülür. Üzerinde beş satırlık bir kitabe bulunur.",
+      "en": "The shadirvan stands in the northeast corner of the courtyard. It has a marble basin with a fountain in the middle and a flat cone carried by wooden colonnettes at the corners. Thick cornice profiles mark the top and bottom edges of the basin. A five-line inscription is on it."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Meydan Camii Şadırvanı bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

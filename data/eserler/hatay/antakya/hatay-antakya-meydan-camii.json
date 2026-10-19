@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-meydan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Caminin kendi inşa tarihi ve banîsi kitapta yok.",
+      "Era klasik-osmanli, külliye için 16. yüzyıl tarihleme eğiliminden alındı (probable)."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Meydan Camii",
+    "en": "Meydan Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-meydan-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "cami",
+    "antakya",
+    "meydan-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "128-131"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Tarih verilmiyor; külliyeyle birlikte 16. yüzyıla tarihlenmek isteniyor, 1878'de esaslı onarım",
+      "en": "No date given; with the complex tentatively 16th century; extensively repaired in 1878"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Cami için ayrı tarih verilmiyor; külliye için kitap 16. yüzyıl ve 1878 onarımını söylüyor.",
+      "en": "No separate date for the mosque; for the complex the book gives the 16th century and the 1878 repair."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "125"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Avlunun güneybatısında, ahşap direkli kiremit örtülü son cemaat yeri ve üç sahınlı, kısa sütunlu harimi olan cami.",
+    "en": "A mosque in the southwest of the courtyard with a tile-roofed narthex on wooden posts and a three-nave sanctuary on short columns."
+  },
+  "sections": [
+    {
+      "id": "plan",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve son cemaat yeri",
+        "en": "Plan and narthex"
+      },
+      "body": {
+        "tr": "Avlunun güneybatısındaki cami son cemaat yeri ve harimden oluşur. Ahşap direkler üzerine dışa doğru hafif meyilli sakıf biçiminde yapılan son cemaat yeri kiremitle kaplıdır. Antakya camilerindeki son cemaat yerlerinin aksine mihrabiye yoktur; harime açılan yuvarlak kemerli sekiz pencere mekâna ışık, son cemaat yerine estetik katar. Doğu-batı doğrultulu, düzgün dikdörtgen planlı harim beyaz kesme taştandır.",
+        "en": "The mosque in the southwest of the courtyard consists of a narthex and a sanctuary. The narthex, a slightly outward-sloping roof on wooden posts, is tiled. Unlike the narthexes of Antakya mosques, there is no mihrabiye; eight round-arched windows to the sanctuary give light and aesthetic value. The sanctuary, on a regular rectangular plan in the east-west direction, is of white cut stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "128"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 2,
+      "title": {
+        "tr": "Harim",
+        "en": "Sanctuary"
+      },
+      "body": {
+        "tr": "Harim, ikişer sıra halinde üçerli dizilmiş kısa gövdeli sütunların taşıdığı dörder kemer gözüyle kıbleye paralel üç sahına bölünmüştür. Kemer sıraları kuzey ve güney duvarlarından yüksek tutulmuş, kiremit örtülü çatı iki yana meyillidir ve diğer iki yönde duvarlar üçgen alınlıkla biter. Harim kapısının üstünde doğudan taş basamaklı merdivenle çıkılan, ahşap direkler üzerinde ahşap müezzin mahfili vardır. Cami doğudaki avluya beş altlık ve üç üstlük pencereyle açılır; kıble duvarında dokuz altlık dokuz üstlük pencere ve mihrap çıkıntısındaki nişe açılan küçük bir pencere bulunur; doğu ve batı duvarlarda da çok sayıda altlı üstlü pencere vardır.",
+        "en": "The sanctuary is divided into three naves parallel to the qibla by four arches carried by short-bodied columns in two rows of three. The arch rows are higher than the north and south walls, the tiled roof slopes down on both sides, and the walls end in triangular pediments in the other two directions. Above the plain, low-arched sanctuary door is a wooden muezzin's gallery on wooden posts, reached by a stone staircase from the east. The mosque opens to the eastern courtyard with five lower and three upper windows; the qibla wall has nine lower and nine upper windows and a small window to the mihrab niche; the east and west walls also have many windows."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "128, 131"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber",
+      "order": 3,
+      "title": {
+        "tr": "Mihrap ve minber",
+        "en": "Mihrab and minbar"
+      },
+      "body": {
+        "tr": "Mihrabın yarım daire biçimli nişi duvar yüzeyinden hafifçe öne taşar ve üst iki köşede birer küçük konsola oturan korniş ile sınırlanır. Yapılan onarımlarla mihrap özgün şeklini kaybetmiştir; yan aynaları ve cephesi dikey dikdörtgen panolarla işlenmiş ahşap minber de yenidir.",
+        "en": "The semicircular mihrab niche protrudes slightly from the wall and is bounded by a cornice on a small console at each of the upper two corners. The mihrab lost its original form through repairs; the wooden minbar, with side mirrors and façade in vertical rectangular panels, is also new."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "131"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sah_sayisi",
+      "label": {
+        "tr": "Sah sayısı",
+        "en": "Number of naves"
+      },
+      "value": 3,
+      "unit": "sah",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "128"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_pencere",
+      "label": {
+        "tr": "Son cemaat yerinden harime açılan pencere",
+        "en": "Windows from narthex to sanctuary"
+      },
+      "value": 8,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "128"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-meydan-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Meydan Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Meydan Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "125"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami avlunun güneybatısındadır. Önünde ahşap direkli, kiremit örtülü bir son cemaat yeri bulunur. Düzgün dikdörtgen planlı harim beyaz kesme taştandır; kıbleye paralel üç sahı kısa sütunlar ve kemerler ayırır. Kıble duvarında dokuz altlı dokuz üstlü pencere vardır. Girişin üstünde ahşap müezzin mahfili, mihrabın yanında yenilenmiş ahşap minber bulunur.",
+      "en": "The mosque is in the southwest of the courtyard, fronted by a tile-roofed narthex on wooden posts. The regular rectangular sanctuary is of white cut stone, divided into three qibla-parallel naves by short columns and arches. The qibla wall has nine lower and nine upper windows. A wooden muezzin's gallery sits above the entrance and a renewed wooden minbar stands beside the mihrab."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Meydan Camii bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

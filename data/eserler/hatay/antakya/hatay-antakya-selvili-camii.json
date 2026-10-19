@@ -1,0 +1,397 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-selvili-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Yapının gerçek yapım tarihi (1842 öncesi sicil kaydı ile 1873 kitabesi) araştırılmalı.",
+      "Kitabelerin metni ve dili kaynakta yok; yerinde okunup eklenmeli.",
+      "Medresenin camiyle aynı tarihte olup olmadığı kaynakta 'tahmin edilmektedir' diye geçer.",
+      "Medrese yalnızca birkaç cümleyle anlatıldığı için ayrı kayıt yapılmadı; cami kaydının bölümü olarak bırakıldı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
+      "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitabe 1873 der, Şer'i Mahkeme Sicili kayıtları 1842 öncesine uzanır; kitabe ayrıca 'inşa edilmiş veyahut tamir ettirilmiş' ifadesiyle belirsizdir. Tarihleme 'disputed' işaretlendi."
+      },
+      {
+        "field": "founder",
+        "note": "Türkçe metin 'Mustafa oğlu Abdullah', kitabe açıklaması 'Mustafa oğlu Ali Abdullah' der; İngilizce metin 'Ali Abdullah (or Abdullah)' yazar. Ad 'Mustafa oğlu Abdullah' olarak alındı, varyant not edildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Selvili Camii",
+    "en": "Selvili Mosque"
+  },
+  "subtitle": {
+    "tr": "Dört odalı medrese kalıntısı ve yazlık namazgâhı olan, evden dönüştürülmüş cami",
+    "en": "A converted-house mosque with the remains of a four-room madrasa and a summer prayer place"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "medrese"
+  ],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "medrese bakiyesi",
+    "namazgâh",
+    "mezene",
+    "evden dönüştürülmüş",
+    "1873 kitabesi"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "5. Mıntıka, 707 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "384-385, 399"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kitabe 1873; kayıtlara göre 1842 öncesi",
+      "en": "Inscription 1873; before 1842 according to records"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Yapının tarihi 1873 tarihli kitabesine rağmen Şer'i Mahkeme Sicili kayıtlarına göre 1842 öncesine dayanır. Eserin ne zaman inşa edildiği bilinmemektedir; kitabeye göre 1873'te inşa edilmiş veya tamir ettirilmiştir. Kesin yapım yılı olmadığı için başlangıç ve bitiş yılı boş bırakıldı.",
+      "en": "Despite its 1873 inscription, the building dates back to before 1842 according to the Sharia Court Register. When it was built is not known; according to the inscription it was built or repaired in 1873. No exact construction year is given, so start and end years are left empty."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "384"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mustafa oğlu Abdullah",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "384-385"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'daki Selvili Camii, geniş bahçeli bir avlu içinde dört odalı bir medrese bakiyesi ve bir namazgâhtan oluşur. 1873 tarihli kitabesine göre Mustafa oğlu Abdullah tarafından büyük deprem sonrası yaptırılmış ya da onarılmıştır; ancak sicil kayıtları 1842 öncesine uzanır. Mihrabın kıble yönünde olmayıp köşeye çapraz yapılması, yapının evden dönüştürüldüğünü düşündürür.",
+    "en": "Selvili Mosque in Antakya consists of the remains of a four-room madrasa and a prayer place in a courtyard with a large garden. According to its 1873 inscription it was built or repaired by Abdullah, son of Mustafa, after the great earthquake, but court records go back before 1842. The mihrab, placed diagonally in a corner because the wall does not face the qibla, suggests the building was converted from a house."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Dört odalı bir medrese bakiyesi ve bir namazgâhtan oluşan eser, geniş bahçeli bir avlu içerisinde yer alır. Yapının tarihi 1873 tarihli kitabesine rağmen Şer'i Mahkeme Sicili kayıtlarına göre 1842 öncesine kadar dayanmaktadır. Eserin ne zaman inşa edildiğine dair herhangi bir bilgi bulunmamaktadır. Kitabeye göre, savaşta şehit düştüğü anlaşılan Mustafa oğlu Abdullah tarafından büyük Antakya depreminden bir yıl sonra, 1873 yılında inşa edilmiş veyahut tamir ettirilmiştir.",
+        "en": "The building, consisting of the remains of a four-room madrasa and a prayer place, stands in a courtyard with a large garden. Despite the inscription dated 1873, its history goes back before 1842 according to the Sharia Court Register. There is no information on when it was built. According to the inscription, it was built or repaired in 1873, one year after the great Antakya earthquake, by Abdullah, son of Mustafa, who is understood to have fallen as a martyr in war."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "384"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-namazgah",
+      "order": 2,
+      "title": {
+        "tr": "Avlu, Mezene ve Namazgâh",
+        "en": "Courtyard, Mezene and Prayer Place"
+      },
+      "body": {
+        "tr": "Avlu, basık kemerli bir açıklıktan ve devamındaki tonoz örtülü kısa bir dehlizden ibarettir. Avlu girişinin üstüne, boyu bir metreyi bulan, sekizgen gövdeli ve ahşap külahlı bir mezene (ezanlık) yerleştirilmiştir; avlunun içinden basamaklarla çıkılır. Avlunun ortasında kare planlı bir sekiden ibaret yazlık namazgâh bulunur. Bu tür namazgâhlar sabah, akşam ve yatsı namazları için planlanmıştır; yazın sıcak günlerde, ağaçlar yeterli gölge sağladığında ya da üzeri hasırla kapatılarak öğle ve ikindi namazları da kılınır.",
+        "en": "The courtyard consists of a low-arched opening followed by a short vaulted corridor. Above the courtyard entrance a mezene (place for the call to prayer), about one meter tall with an octagonal body and wooden cone, is set; it is reached by steps from inside the courtyard. In the middle of the courtyard is a summer prayer place consisting of a square-planned platform. Such prayer places are planned for the morning, evening and night prayers; on hot summer days, when trees give enough shade or when covered with a mat, the noon and afternoon prayers are also performed there."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "384"
+        }
+      ]
+    },
+    {
+      "id": "cami",
+      "order": 3,
+      "title": {
+        "tr": "Cami",
+        "en": "The Mosque"
+      },
+      "body": {
+        "tr": "Namazgâh kısmı aynı zamanda son cemaat yeri işlevi de görür; bu yüzden camiye alışılmışın dışında güneye bakan duvardaki düz atkı taşlı bir kapıdan girilir. Kapının sağında üçü altta ve büyük, üçü üstte ve küçük olmak üzere altı pencere açılmıştır. Cami, ortadaki kısa bir sütuna oturan iki sivri kemerle kıbleye paralel iki sahına bölünmüştür; kırma çatı bu kemerlere ve iki yan duvara biner.",
+        "en": "The prayer place also serves as the narthex, so the mosque is, unusually, entered through a lintel-stone door in the south-facing wall. To its right are six windows, three large ones below and three small ones above. The mosque is divided into two naves parallel to the qibla by two pointed arches resting on a short central column; the hipped roof rests on these arches and on the two side walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "384"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-ve-kitabeler",
+      "order": 4,
+      "title": {
+        "tr": "Mihrap ve Kitabeler",
+        "en": "Mihrab and Inscriptions"
+      },
+      "body": {
+        "tr": "Binanın doğal planlamasına göre kıble istikametinde olması gereken mihrap duvarı kıble yönünde değildir (Antakya için tam güney); mihrap mecburen bu yöne denk gelen güneydoğu köşeye çapraz biçimde yapılmıştır. Mihrabın normal olmayan yeri, bu caminin de evden dönüştürülmüş olduğunu akla getirmektedir. Kapının üstündeki ve minare kaidesindeki iki kitabe benzer ifadeler içerir: Allah yolunda şehit olanlara 'ölü' denilemeyeceğini ve camiyi yaptıran Mustafa oğlu Ali Abdullah'ın da böyle bir şehit olduğunu söylerler.",
+        "en": "According to the building's natural planning, the wall where the mihrab would be placed does not face the qibla (due south for Antakya); the mihrab was necessarily built diagonally in the southeast corner. The unusual position of the mihrab suggests that this mosque was also converted from a house. The two inscriptions above the door and on the minaret base contain similar expressions: that those martyred in the way of Allah cannot be called 'dead', and that Mustafa's son Ali Abdullah (or Abdullah), who had the mosque built, was such a martyr."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "385"
+        }
+      ]
+    },
+    {
+      "id": "medrese",
+      "order": 5,
+      "title": {
+        "tr": "Medrese ve Onarım",
+        "en": "Madrasa and Repair"
+      },
+      "body": {
+        "tr": "Birbirine benzer, kare planlı dört odadan oluşan medresenin her odası avluya bir kapı ve ikişer pencereyle açılır; doğu, batı ve güney duvarlarında birer dolap nişi vardır. Caminin tarihiyle paralellik gösterdiği tahmin edilen medrese, mescitle birlikte 1955'te onarım görmüştür.",
+        "en": "Each room of the madrasa, which has four similar square-planned rooms, opens to the courtyard with a door and two windows; there is a cabinet niche in each of the east, west and south walls. The madrasa, estimated to be contemporary with the mosque, was repaired together with the masjid in 1955."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "385"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "nef_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "384"
+        }
+      ]
+    },
+    {
+      "key": "medrese_oda_sayisi",
+      "label": {
+        "tr": "Medrese oda sayısı",
+        "en": "Number of madrasa rooms"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "385"
+        }
+      ]
+    },
+    {
+      "key": "mezene_boyu",
+      "label": {
+        "tr": "Mezene boyu",
+        "en": "Height of the mezene"
+      },
+      "value": 1,
+      "unit": "m",
+      "note": {
+        "tr": "Kaynak 'bir metreyi bulan' der.",
+        "en": "The source says 'reaching one meter'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "384"
+        }
+      ]
+    },
+    {
+      "key": "giris_yonu",
+      "label": {
+        "tr": "Cami giriş yönü",
+        "en": "Mosque entrance direction"
+      },
+      "value": "Güneye bakan duvar",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "384"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mustafa oğlu Abdullah",
+      "role": {
+        "tr": "Kitabeye göre camiyi yaptıran ya da onartan; savaşta şehit olduğu anlaşılıyor",
+        "en": "According to the inscription, builder or restorer of the mosque; understood to have been martyred in war"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-ustu-kitabesi",
+      "location": {
+        "tr": "Kapının üstü",
+        "en": "Above the door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1873"
+      },
+      "note": {
+        "tr": "Allah yolunda şehit olanlara 'ölü' denilemeyeceğini ve camiyi yaptıran Mustafa oğlu Ali Abdullah'ın şehit olduğunu söyler. Metin ve dil kaynakta verilmemiştir.",
+        "en": "Says that those martyred in the way of Allah cannot be called 'dead' and that Mustafa's son Ali Abdullah, who had the mosque built, was such a martyr. The text and language are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "384-385"
+        }
+      ]
+    },
+    {
+      "id": "minare-kaidesi-kitabesi",
+      "location": {
+        "tr": "Minare kaidesi",
+        "en": "Minaret base"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kapı üstü kitabeye benzer ifadeler içerir. Metin, dil ve tarih kaynakta verilmemiştir.",
+        "en": "Contains expressions similar to the inscription above the door. The text, language and date are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "385"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kitabe-1873",
+      "year": 1873,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kitabeye göre inşa edildi ya da tamir ettirildi (büyük depremden bir yıl sonra)",
+        "en": "Built or repaired according to the inscription (one year after the great earthquake)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "384"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Mescit ve medrese onarımı",
+        "en": "Repair of the masjid and madrasa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "385"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Selvili Camii, geniş bahçeli bir avlunun içindedir. Avluya basık kemerli açıklık ve tonozlu kısa bir dehlizle girilir; girişin üstünde sekizgen gövdeli, ahşap külahlı küçük bir ezanlık vardır. Avlunun ortasında kare planlı, sekiye benzer yazlık bir namazgâh bulunur; burası aynı zamanda son cemaat yeridir. Cami, güneye bakan duvardaki kapıdan girilen, iki sivri kemerle iki sahına ayrılmış bir mekândır. Mihrap kıble yönünde olmadığı için güneydoğu köşeye çapraz yapılmıştır. Avlunun kenarında kare planlı dört odalı medrese kalıntısı yer alır.",
+      "en": "Selvili Mosque stands inside a courtyard with a large garden. The courtyard is entered through a low-arched opening and a short vaulted corridor; above the entrance is a small octagonal call-to-prayer place with a wooden cone. In the middle of the courtyard is a square, platform-like summer prayer place, which also serves as the narthex. The mosque is entered through a door in the south-facing wall and divided into two naves by two pointed arches. Because the wall does not face the qibla, the mihrab was built diagonally in the southeast corner. A four-room madrasa of square rooms stands by the courtyard."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

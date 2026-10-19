@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-ulu-sadirvani",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Şadırvanın tarihi ve banîsi kitapta yok; 'geç dönem görüntüsü' dışında tarihleme yok."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Ulu Camii Şadırvanı",
+    "en": "Ulu Mosque Shadirvan"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-ulu-kulliyesi",
+  "era": null,
+  "tags": [
+    "şadırvan",
+    "antakya",
+    "ulu-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "89"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Avlunun orta batısında, on iki kenarlı taş su teknesi ve ahşap sütunlarla taşınan külahı olan şadırvan.",
+    "en": "A shadirvan in the middle west of the courtyard with a twelve-sided stone basin and a cone carried by wooden columns."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Tamamen taştan yapılan on iki kenarlı su teknesi, köşelere yerleştirilen ahşap sütunlar üzerine oturan dilimli kemerlerin taşıdığı, içten ahşap dıştan saç kaplamalı külahla örtülüdür. Yapı geç dönem görüntüsü vermektedir.",
+        "en": "The twelve-sided water basin, made entirely of stone, is covered with a cone, wooden inside and sheet-metal outside, carried by lobed arches resting on wooden columns at the corners. The building gives the appearance of a late period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "89"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hazne_kenar",
+      "label": {
+        "tr": "Su teknesi kenar sayısı",
+        "en": "Basin sides"
+      },
+      "value": 12,
+      "unit": "kenar",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "89"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-ulu-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Ulu Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Ulu Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "76-77"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şadırvan avlunun orta batısındadır. On iki kenarlı taş bir su teknesi vardır; köşelerdeki ahşap sütunlar dilimli kemerleri, kemerler de içten ahşap, dıştan saç kaplı bir külahı taşır.",
+      "en": "The shadirvan stands in the middle west of the courtyard. It has a twelve-sided stone basin; wooden columns at the corners carry lobed arches, which carry a cone of wood inside and sheet metal outside."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Ulu Camii Şadırvanı bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-ulu-yazlik-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Yazlık mescidin kendi inşa tarihi kitapta yok (cami kaydındaki 1849 onarımı 'yazlık bölüm' için belirsiz anılıyor)."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Ulu Camii Yazlık Mescidi",
+    "en": "Ulu Mosque Summer Masjid"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-ulu-kulliyesi",
+  "era": null,
+  "tags": [
+    "mescit",
+    "antakya",
+    "ulu-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "88"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Avlunun batısında, kıbleye paralel iki sahınlı küçük, enine dikdörtgen planlı yazlık mescit.",
+    "en": "A small summer masjid of transverse rectangular plan with two naves parallel to the qibla, in the west of the courtyard."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Antakya'nın sıcak iklimi nedeniyle pek çok cami ve mescitte son cemaat yeri yapılmıştır; bu camide de aynı amaçla avlunun batısına yazlık bir mescit konmuştur. En az bir veya iki tarafı açık olan bu mekânlar yaz mevsiminde daha serin ortamda namaz kılmak için inşa edilmiştir. Enine dikdörtgen planlı küçük mekân, cami gibi kıbleye paralel iki sahın halinde düzenlenmiştir; güney duvarında üç pencere ve bir mihrap nişi bulunur.",
+        "en": "Because of Antakya's hot climate a narthex was built in many mosques and masjids; here a summer masjid in the west of the courtyard serves the same purpose. These spaces, open on at least one or two sides, were built for praying in a cooler environment in summer. The small transverse rectangular space is arranged, like the mosque, in two naves parallel to the qibla; its south wall has three windows and a mihrab niche."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "88"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sah_sayisi",
+      "label": {
+        "tr": "Sah sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": "sah",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "key": "guney_pencere",
+      "label": {
+        "tr": "Güney duvardaki pencere sayısı",
+        "en": "Windows in the south wall"
+      },
+      "value": 3,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "88"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-ulu-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Ulu Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Ulu Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "76-77"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yazlık mescit, avlunun batısında, enine dikdörtgen planlı küçük bir mekândır. Cami gibi kıbleye paralel iki sahına ayrılır; güney duvarında üç pencere ve bir mihrap nişi vardır.",
+      "en": "The summer masjid is a small transverse rectangular space on the west of the courtyard. Like the mosque it is divided into two naves parallel to the qibla; its south wall has three windows and a mihrab niche."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Ulu Camii Yazlık Mescidi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

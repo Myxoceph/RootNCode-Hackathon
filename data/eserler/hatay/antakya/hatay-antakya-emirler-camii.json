@@ -1,0 +1,315 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-emirler-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Emirler Camii bölümünden (s. 229-230) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabede anılan Halef oğlu Recez'in kimliği ve rolü kaynakta bilinmiyor.",
+      "Kitabenin metni, dili ve kesin konumu kaynakta verilmiyor; sahada okunmalı.",
+      "Medrese odasının gerçekten bir medreseye ait olup olmadığı kaynakta 'tahmin' düzeyinde; araştırılmalı.",
+      "Era (dönem) 1793 tarihi enums.json'daki dönem sınırlarına net oturmadığı için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Banî, mimar ve vakıf bilgisi kaynakta yok.",
+      "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Emirler Camii",
+    "en": "Emirler Mosque"
+  },
+  "subtitle": {
+    "tr": "Şirince adıyla da bilinen, 1793 tarihli beyaz kesme taş cami",
+    "en": "A white cut-stone mosque dated 1793, also known as Şirince"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şirince Camii",
+      "en": "Şirince Mosque",
+      "note": "Kaynak eserin 'Şirince' adıyla da bilindiğini söyler."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "Şirince",
+    "1793",
+    "kesme taş",
+    "medrese odası",
+    "iki sahın"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 1312 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "229-230"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1793",
+      "en": "1793"
+    },
+    "start_year": 1793,
+    "end_year": 1793,
+    "hijri_year": null,
+    "century": 18,
+    "basis": {
+      "tr": "Avludaki odanın kapısı üstündeki kitabede okunan 1793 tarihi caminin yapılış tarihi olarak da kabul edilmektedir.",
+      "en": "The date 1793 read on the inscription above the door of the courtyard room is also accepted as the construction date of the mosque."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "229"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Şirince adıyla da bilinen cami, meyilli bir arazide, ağaçlarla serinletilmiş bir avlunun güneyindedir. Avlunun kuzeyindeki, eski bir medreseye ait olduğu tahmin edilen odanın kitabesindeki 1793 tarihi caminin de yapılış tarihi sayılır. Tamamen beyaz kesme taştan, ortada bir sütun ve iki gömme ayaklı iki sivri kemerle iki sahına ayrılmıştır.",
+    "en": "Also known as Şirince, the mosque stands on sloping land to the south of a courtyard cooled by trees. The date 1793 on the inscription of a room to the north of the courtyard, thought to belong to an old madrasa, is also accepted as the mosque's construction date. Built entirely of white cut stone, it is divided into two naves by two pointed arches on a central column and two recessed piers."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "\"Şirince\" adıyla da bilinen eser meyilli bir arazi üzerine inşa edilmiştir. Avlunun kuzeyinde eski bir medreseye ait olduğu tahmin edilen ve kapısının üstünde kitabesi bulunan bir oda vardır. Bu kitabede okunan 1793 tarihi aynı zamanda caminin yapılış tarihi olarak da kabul edilmektedir. Kitabede adı geçen Halef oğlu Recez'in kimliği ve cami ile ilgili rolü bilinmemektedir.",
+        "en": "The work, also known as Şirince, was built on sloping land. To the north of the courtyard is a room with an inscription above its door, thought to belong to an old madrasa. The date 1793 read in this inscription is also accepted as the construction date of the mosque. The identity of Recez, son of Halef, mentioned in the inscription, and his role in the mosque are unknown."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Çeşitli ağaçlarla serinletilmiş avlunun güneyindeki harim, kıbleye paralel, düzgün dikdörtgen planlı bir mekândır. Kesme taştan yapılan caminin son cemaat yeri yoktur. Tamamen beyaz kesme taştan bina edilen cami, ortada bir sütun ve iki yanda birer gömme ayak üzerine oturtulan iki sivri kemerle iki sahına bölünmüştür. İçten ahşap tavanlı, dıştan kırma çatılı örtü kiremit kaplıdır.",
+        "en": "The sanctuary south of the courtyard, cooled by various trees, is a regular rectangular space parallel to the qibla. Built of cut stone, the mosque has no narthex. Built entirely of white cut stone, it is divided into two naves by two pointed arches resting on a central column and a recessed pier on each side. It has a wooden ceiling inside and a tile-covered hipped roof outside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "230"
+        }
+      ]
+    },
+    {
+      "id": "pencereler-ve-mihrap",
+      "order": 3,
+      "title": {
+        "tr": "Pencereler, Mihrap ve Minber",
+        "en": "Windows, Mihrab and Minbar"
+      },
+      "body": {
+        "tr": "Cami kuzeyde iki, güneyde dört pencereden ışık alır; yapı fazla yüksek olmadığı için üst pencerelere ihtiyaç duyulmamıştır. Kapı gibi pencereler de sadedir. Doğu ve batı duvarlarında pencere yoktur; batı duvarında iki dolap nişi vardır. Mihrap ve minber de sadedir; mihrapta imamın göz seviyesine konulmuş küçük pencere, daha fazla ışık sağlamanın yanında \"ilahi rahmetin kaynağı\" gibi simgesel bir maksatla yapılmış gibidir.",
+        "en": "The mosque receives light from two windows in the north and four in the south; since the building is not very high, upper windows were not needed. Like the door, the windows are plain. There are no windows on the east and west walls; the west wall has two cabinet niches. The mihrab and minbar are also plain; a small window placed in the mihrab at the imam's eye level seems, besides giving more light, to have been made for the symbolic purpose of \"the source of divine mercy\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "230"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total number of windows"
+      },
+      "value": 6,
+      "unit": null,
+      "note": {
+        "tr": "Kuzey 2, güney 4; doğu ve batıda yok.",
+        "en": "North 2, south 4; none on east and west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "230"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "230"
+        }
+      ]
+    },
+    {
+      "key": "dolap_nisi",
+      "label": {
+        "tr": "Batı duvarındaki dolap nişi sayısı",
+        "en": "Cabinet niches on west wall"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "230"
+        }
+      ]
+    },
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapılış yılı (kitabeye göre kabul edilen)",
+        "en": "Construction year (accepted per inscription)"
+      },
+      "value": 1793,
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "229"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Halef oğlu Recez",
+      "role": {
+        "tr": "Kitabede adı geçen kişi; kimliği ve cami ile ilgili rolü bilinmiyor",
+        "en": "Person named in the inscription; identity and role regarding the mosque unknown"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "medrese-odasi-kitabesi",
+      "location": {
+        "tr": "Avlunun kuzeyindeki odanın kapısı üstü",
+        "en": "Above the door of the room north of the courtyard"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1793"
+      },
+      "note": {
+        "tr": "Metin ve dil kaynakta verilmiyor; kitabede Halef oğlu Recez adı geçer.",
+        "en": "Text and language are not given; the inscription mentions Recez, son of Halef."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "229"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1793",
+      "year": 1793,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı (kitabedeki tarih yapılış tarihi olarak kabul edilir)",
+        "en": "Mosque built (the inscription date is accepted as the construction date)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "229"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap-penceresi",
+      "title": {
+        "tr": "Mihraptaki küçük pencere",
+        "en": "Window in the mihrab"
+      },
+      "hint": {
+        "tr": "Mihrap nişinde imam göz hizasındaki küçük pencereyi arayın.",
+        "en": "Look for the small window at the imam's eye level in the mihrab niche."
+      },
+      "section_id": "pencereler-ve-mihrap"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Emirler Camii, meyilli bir arazide, ağaçlarla serinletilmiş bir avlunun güneyinde yer alır. Avlunun kuzeyinde, kapısı üstünde kitabe bulunan eski bir medrese odası vardır. Cami tamamen beyaz kesme taştan yapılmış, düzgün dikdörtgen planlıdır ve son cemaat yeri yoktur. Ortadaki bir sütun ile iki yandaki gömme ayaklara oturan iki sivri kemer içeriyi iki sahına böler. İçerisi ahşap tavanlı, dışarısı kiremit kaplı kırma çatılıdır. Kuzeyde iki, güneyde dört pencere vardır; doğu ve batı duvarlarında pencere yoktur, batıda iki dolap nişi bulunur. Sade mihrabın içinde imam göz hizasında küçük bir pencere yer alır.",
+      "en": "Emirler Mosque stands on sloping land to the south of a courtyard cooled by trees. North of the courtyard is a room of an old madrasa with an inscription above its door. The mosque is built entirely of white cut stone on a regular rectangular plan and has no narthex. Two pointed arches resting on a central column and recessed piers on both sides divide the interior into two naves. It has a wooden ceiling inside and a tile-covered hipped roof outside. There are two windows in the north and four in the south; the east and west walls have none, and the west has two cabinet niches. The plain mihrab holds a small window at the imam's eye level."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 229-230) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

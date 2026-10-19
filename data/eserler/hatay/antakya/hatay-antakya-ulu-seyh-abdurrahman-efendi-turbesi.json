@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-ulu-seyh-abdurrahman-efendi-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Türbede yatan kişi(ler) hakkında kitapta bilgi yok; Şeyh Abdurrahman Efendi'nin kimliği belirtilmiyor.",
+      "Bu türbe ids.md #47 'Şeyh Abdurrahman Türbesi'yle bağlanmadı; metin bir bağ kurmuyor, aynı kişi olup olmadığı doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şeyh Abdurrahman Efendi Türbesi",
+    "en": "Sheikh Abdurrahman Efendi Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-ulu-kulliyesi",
+  "era": null,
+  "tags": [
+    "türbe",
+    "antakya",
+    "ulu-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "90"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Ulu Camii'nin kıble duvarına bitişik, hacet penceresiyle camiyle bağlantılı, kare planlı taş türbe.",
+    "en": "A square stone tomb adjoining the qibla wall of the Ulu Mosque, connected to the mosque by a hacet window."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve hacet penceresi",
+        "en": "Structure and hacet window"
+      },
+      "body": {
+        "tr": "Türbe caminin kıble duvarına bitişik olarak inşa edilmiştir; taş malzemeli ve kare planlıdır. Cami mihrabının doğusunda kalan ikinci pencere cami ile türbe arasındaki hacet penceresidir; böylece türbeye girmeden cami içinden türbede yatanların ruhuna Fatiha okunabilir. Batı cephesinde basık kemerli giriş kapısı ve bir mazgal pencere, güney cephesinde bir tepe penceresi vardır. Türbe sonradan yapılmış betonarme düz damla örtülüdür.",
+        "en": "The tomb was built adjoining the qibla wall of the mosque; it is of stone and has a square plan. The second window east of the mosque mihrab is the hacet window linking mosque and tomb, so that the Fatiha can be recited from inside the mosque for those buried in the tomb without entering it. The west façade has a low-arched entrance door and a loophole window, the south façade a skylight. The tomb is covered with a later reinforced-concrete flat roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "90"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-ulu-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Ulu Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Ulu Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "76-77"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı taş türbe, caminin kıble duvarına bitişiktir. Batı cephesinde basık kemerli bir kapı ve bir mazgal pencere, güney cephesinde bir tepe penceresi vardır. Düz betonarme bir damla örtülüdür. Cami içinden, mihrabın doğusundaki ikinci pencere hacet penceresi olarak türbeye açılır.",
+      "en": "The square stone tomb adjoins the mosque's qibla wall. The west façade has a low-arched door and a loophole window, the south façade a skylight. It has a flat reinforced-concrete roof. From inside the mosque, the second window east of the mihrab opens onto the tomb as a hacet window."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Şeyh Abdurrahman Efendi Türbesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

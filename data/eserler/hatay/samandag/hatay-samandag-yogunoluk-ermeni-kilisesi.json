@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-samandag-yogunoluk-ermeni-kilisesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Kiliseler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Yoğunoluk Ermeni Kilisesi bölümünden (s. 452-453) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kilise kitabesinin transliterasyonu/metni kaynakta yok; yerinde okunup inscriptions'a eklenmeli.",
+      "Yaptıran ve mimar kaynakta yok.",
+      "Caminin 1940 dönüşümünün ve 1990 yapımının güncel durumu doğrulanmalı.",
+      "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
+      "Dönem (era) kodu 1774 için uygun olmadığından null bırakıldı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Yoğunoluk Ermeni Kilisesi",
+    "en": "Yoğunoluk Armenian Church"
+  },
+  "subtitle": {
+    "tr": "1774'te yapılan, üzerine cami eklenmiş üç nefli köy kilisesi",
+    "en": "A three-nave village church built in 1774, with a mosque built over it"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yoğunoluk Köyü Ermeni Kilisesi",
+      "en": "Yoğunoluk Village Armenian Church",
+      "note": "Bölüm özeti sayfasındaki yazım."
+    }
+  ],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kilise",
+    "Samandağ",
+    "Ermeni",
+    "camiye dönüşüm",
+    "köy"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Samandağ",
+    "neighborhood": null,
+    "address": "Samandağ, Yoğunoluk köy merkezi; 91 Ada 1 Parsel (1.450 m² parsel)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "453"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1774",
+      "en": "1774"
+    },
+    "start_year": 1774,
+    "end_year": 1774,
+    "hijri_year": null,
+    "century": 18,
+    "basis": {
+      "tr": "Güney girişindeki kitabeden anlaşılıyor.",
+      "en": "Understood from the inscription at the south entrance."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "453"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Köyün ticari ve sosyal merkezindeki kilise, güney girişindeki kitabeye göre 1774'te küçük bir cemaat kilisesi olarak yapılmıştır. Cemaat kalmayınca 1940'ta çatı eklenerek camiye çevrilmiş, 1990'da köylüler tam üzerine betonarme bir cami yapmıştır.",
+    "en": "In the commercial and social center of the village, the church was built in 1774 as a small community church according to the inscription at its south entrance. When the congregation was gone it was converted to a mosque in 1940 by adding a roof, and in 1990 villagers built a reinforced-concrete mosque directly on top."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Dönüşüm",
+        "en": "History and Conversion"
+      },
+      "body": {
+        "tr": "Kilisenin güney girişindeki kitabeden 1774 yılında küçük bir cemaat kilisesi olarak inşa edildiği anlaşılır. 1900'lü yıllarda bölgedeki Ermeni vatandaşların çeşitli yerlere dağılmasıyla kilise cemaati kalmamış; köyde yaşayan Müslümanlar 1940 yılında kilisenin üzerine tek katlı kiremit çatı ekleyerek yapıyı camiye dönüştürmüştür. 1990'da köy halkı kendi bütçesiyle tek katlı düz damlı kilisenin tam üstüne betonarme bir cami yapmıştır. Halen ayakta olan cami alttaki kilise için yapısal bir tehdit oluşturmamaktadır. İki kat üzerine toplam 700 m²'lik yapıda cami, minare, tuvalet, lojman ve depo müştemilatları bulunur.",
+        "en": "The inscription at the south entrance shows it was built in 1774 as a small community church. In the 1900s, as the region's Armenians dispersed, no congregation remained; in 1940 the Muslims of the village converted it into a mosque by adding a single-storey tiled roof. In 1990 the villagers built a reinforced-concrete mosque with their own budget directly on top of the single-storey flat-roofed church. The mosque, still standing, does not pose a structural threat to the church below. The two-storey building of 700 m² in total includes a mosque, minaret, toilet, lodging and storage outbuildings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "id": "arazi-ve-plan",
+      "order": 2,
+      "title": {
+        "tr": "Arazi ve Plan",
+        "en": "Site and Plan"
+      },
+      "body": {
+        "tr": "Yapı eğimli bir parsel üzerindedir; kuzeyden güneye yer yer keskin eğimler vardır. Parsel sınırı, daha çok istinat duvarı niteliğindeki alçak taş duvarlarla çevrilidir. Parsele giriş özgün olarak güneydeki dar sokaklardan, camiye giriş için sonradan doğudan sağlanmıştır. Kilise 280 m²'lik dikdörtgen bir yapıdır; üstteki cami 177 m² ve kare planlıdır. Kiliseye giriş güneydendir ve üç nefli yapı doğu-batı yönündedir. Zeminde büyük tahribat vardır, özgün kaplamalara ulaşılamamıştır. Kilisenin tüm iç duvarları kesme taştır. Kuzey cephesi tamamen toprak altındadır ve çatı kotundadır; bu yüzden sonradan yapılan caminin girişi bu cepheden sağlanır.",
+        "en": "The building is on a sloping plot with sharp slopes from north to south. The plot boundary is surrounded by low stone walls that act more like retaining walls. The plot was originally entered from the narrow streets in the south, and later from the east for the mosque. The church is a 280 m² rectangular structure; the mosque above is 177 m² and square. The church is entered from the south and its three-nave structure runs east-west. The floor is heavily damaged and original coverings could not be reached. All interior walls are cut stone. The north façade is completely underground at roof level, which is why the later mosque is entered from this side."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "parsel_alani",
+      "label": {
+        "tr": "Parsel alanı",
+        "en": "Plot area"
+      },
+      "value": 1450,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "key": "toplam_alan",
+      "label": {
+        "tr": "Toplam kapalı alan (iki kat)",
+        "en": "Total area (two floors)"
+      },
+      "value": 700,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "key": "kilise_alani",
+      "label": {
+        "tr": "Kilise alanı",
+        "en": "Church area"
+      },
+      "value": 280,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "key": "cami_alani",
+      "label": {
+        "tr": "Üstteki cami alanı",
+        "en": "Mosque area above"
+      },
+      "value": 177,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "key": "nef",
+      "label": {
+        "tr": "Nef sayısı",
+        "en": "Number of naves"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1774",
+      "year": 1774,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Küçük cemaat kilisesi olarak inşa edildi",
+        "en": "Built as a small community church"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "id": "camiye-1940",
+      "year": 1940,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Tek katlı kiremit çatı eklenerek camiye dönüştürüldü",
+        "en": "Converted to a mosque by adding a single-storey tiled roof"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "id": "betonarme-cami-1990",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Kilisenin üzerine köylülerce betonarme cami yapıldı",
+        "en": "Reinforced-concrete mosque built on top by villagers"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "453"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kilise-ustunde-cami",
+      "title": {
+        "tr": "Kilisenin üzerine yapılmış cami",
+        "en": "Mosque built over the church"
+      },
+      "hint": {
+        "tr": "Üst katta 1990 tarihli betonarme cami, altta 1774 tarihli kilise vardır.",
+        "en": "A 1990 reinforced-concrete mosque sits above the 1774 church."
+      },
+      "section_id": "tarihce"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yoğunoluk Ermeni Kilisesi, Samandağ'ın Yoğunoluk köyünde, köyün ticari ve sosyal merkezinde, eğimli bir parselde yer alır. 1774'te yapılan üç nefli kilise doğu-batı doğrultusundadır ve güneyden girilir; iç duvarları kesme taştandır. Kilisenin tam üzerinde kare planlı, betonarme bir cami yükselir; bu caminin girişi, toprak altında kalan kuzey cepheden, yani kilisenin çatı hizasındandır.",
+      "en": "Yoğunoluk Armenian Church stands in the commercial and social center of Yoğunoluk village in Samandağ, on a sloping plot. The three-nave church, built in 1774, runs east-west and is entered from the south; its interior walls are cut stone. A square reinforced-concrete mosque rises directly above it, entered from the buried north façade at the church's roof level."
+    },
+    "audio_description_source": "Kitabın tarifinden (vk-hatay, s. 453) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-kantara-cesmesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Kantara Çeşmesi bölümünden (s. 267, 271) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabenin metni kaynakta verilmiyor; sahada okunmalı.",
+      "Tevfik'in ve şair Sami'nin kimliği kaynakta belirtilmiyor.",
+      "Çeşmenin sokağa bakan yüzü olup olmadığı ve musluk sayısı gibi ayrıntılar kaynakta yok.",
+      "Mimar ve vakıf bilgisi kaynakta yok.",
+      "Kitapta çeşme ayrı başlıkla anlatılıyor; kayıt adı 'Kantara Çeşmesi' bu başlıktan türetildi.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kantara Çeşmesi",
+    "en": "Kantara Fountain"
+  },
+  "subtitle": {
+    "tr": "Minare altındaki kapatılmış geçitten elde edilen 1906 tarihli çeşme",
+    "en": "A 1906 fountain made from the closed passage under the minaret"
+  },
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "çeşme",
+    "1906",
+    "talik kitabe",
+    "tarih kıtası",
+    "Kantara"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 414 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "267, 271"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1906",
+      "en": "1906"
+    },
+    "start_year": 1906,
+    "end_year": 1906,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Çeşme, talik hatla yazılmış iki beyitlik kitabesine göre 1906 yılında yaptırılmıştır; mescit kısmında da geçidin 1906'da kapatılıp çeşme yapıldığı belirtilir.",
+      "en": "According to its two-couplet inscription in talik script the fountain was built in 1906; the mosque section also says the passage was closed and turned into a fountain in 1906."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "267, 271"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Tevfik",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "271"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Çeşme, Kantara Camii'nin minaresi altındaki beşik tonozlu geçidin hafif girintili bir niş biçiminde kapatılmasıyla elde edilmiştir. Talik hatla yazılmış iki beyitlik kitabesine göre 1906'da Tevfik adlı bir hayırsever tarafından yaptırılmış; dört mısralık tarih kitabesini Sami adlı bir şair yazmıştır.",
+    "en": "The fountain was obtained by closing the barrel-vaulted passage under the minaret of the Kantara Mosque in the form of a slightly recessed niche. According to its two-couplet inscription in talik script it was built in 1906 by a philanthropist named Tevfik; the four-line chronogram inscription was written by a poet named Sami."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Kitabe",
+        "en": "Structure and Inscription"
+      },
+      "body": {
+        "tr": "Çeşme minare altındaki beşik tonozlu kapının hafif girintili bir niş şeklinde kapatılmasıyla elde edilmiştir. Talik hatla yazılmış iki beyitlik kitabesine göre 1906 yılında Tevfik adlı bir hayırsever tarafından yaptırılmıştır. Dört mısralık tarih kitabesini ise Sami isimli bir şair yazmıştır.",
+        "en": "The fountain was obtained by closing the barrel-vaulted door under the minaret in the form of a slightly recessed niche. According to its two-couplet inscription in talik script it was built in 1906 by a philanthropist named Tevfik. The four-line chronogram inscription was written by a poet named Sami."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "id": "onceki-gecit",
+      "order": 2,
+      "title": {
+        "tr": "Önceki Geçit",
+        "en": "The Former Passage"
+      },
+      "body": {
+        "tr": "Minare kaidesinin altında sokağa açılan ve beşik tonozla son cemaat yerine ulaşan geçit 1906'da kapatılmış ve çeşme haline getirilmiştir.",
+        "en": "The passage under the minaret pedestal, which opened to the street and reached the narthex with a barrel vault, was closed in 1906 and turned into a fountain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapım yılı",
+        "en": "Year built"
+      },
+      "value": 1906,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_yazi",
+      "label": {
+        "tr": "Kitabe yazı türü",
+        "en": "Inscription script"
+      },
+      "value": "Talik",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_beyit",
+      "label": {
+        "tr": "Kitabe beyit sayısı",
+        "en": "Number of couplets in the inscription"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "key": "tarih_misra",
+      "label": {
+        "tr": "Tarih kitabesi mısra sayısı",
+        "en": "Lines of the chronogram inscription"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Tevfik",
+      "role": {
+        "tr": "Çeşmeyi yaptıran hayırsever",
+        "en": "Philanthropist who had the fountain built"
+      }
+    },
+    {
+      "name": "Sami",
+      "role": {
+        "tr": "Dört mısralık tarih kitabesini yazan şair",
+        "en": "Poet who wrote the four-line chronogram inscription"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cesme-kitabesi",
+      "location": {
+        "tr": "Çeşme nişi; iki beyitlik kitabe, talik hatla",
+        "en": "Fountain niche; two-couplet inscription in talik script"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1906"
+      },
+      "note": {
+        "tr": "Metin ve dil kaynakta verilmiyor.",
+        "en": "Text and language are not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "id": "tarih-kitabesi",
+      "location": {
+        "tr": "Çeşme nişi; dört mısralık tarih kitabesi",
+        "en": "Fountain niche; four-line chronogram inscription"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": "Sami",
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1906"
+      },
+      "note": {
+        "tr": "Metin ve dil kaynakta verilmiyor.",
+        "en": "Text and language are not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1906",
+      "year": 1906,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Minare altındaki geçit kapatılarak çeşme yapıldı",
+        "en": "Passage under the minaret closed and fountain built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267, 271"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "minare-alti-cesme",
+      "title": {
+        "tr": "Minare altındaki çeşme nişi",
+        "en": "Fountain niche under the minaret"
+      },
+      "hint": {
+        "tr": "Eskiden geçit olan, kapatılmış hafif girintili nişi arayın.",
+        "en": "Look for the slightly recessed niche that used to be a passage."
+      },
+      "section_id": "genel-bakis"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-kantara-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kantara Camii Manzumesi'nin bir yapısıdır; caminin minaresi altındadır.",
+        "en": "A building of the Kantara Mosque ensemble; it lies beneath the mosque's minaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267, 271"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kantara Çeşmesi, caminin minaresinin altında, sokağa bakan hafif girintili bir nişten oluşur. Burası eskiden sokaktan son cemaat yerine uzanan beşik tonozlu bir geçitti; 1906'da kapatılıp çeşmeye dönüştürüldü. Üzerinde talik hatla yazılmış iki beyitlik kitabe ve dört mısralık tarih kitabesi bulunur.",
+      "en": "The Kantara Fountain is a slightly recessed niche beneath the mosque's minaret. It was formerly a barrel-vaulted passage running from the street to the narthex; it was closed and turned into a fountain in 1906. It carries a two-couplet inscription in talik script and a four-line chronogram inscription."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 267, 271) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

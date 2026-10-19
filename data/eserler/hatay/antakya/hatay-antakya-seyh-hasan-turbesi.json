@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-seyh-hasan-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Türbenin mimarisi (plan, örtü, malzeme) ve sandukanın kime ait olduğu kitapta anlatılmıyor.",
+      "'Tesis tarihi' 1923’ün binanın inşası mı vakıf kaydı mı olduğu belirtilmiyor.",
+      "Dönem (era) 1923 tarihi Cumhuriyet’in ilanı yılına denk geldiği için belirsiz bırakıldı.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şeyh Hasan Türbesi",
+    "en": "Sheikh Hasan Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "ziyaretgâh",
+    "Vakıflar Genel Müdürlüğü kaydı",
+    "müştemilat"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "3. Mıntıka 1146 parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "418"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1923 (VGM kayıtlarına göre tesis tarihi)",
+      "en": "1923 (establishment date per General Directorate of Foundations records)"
+    },
+    "start_year": 1923,
+    "end_year": 1923,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap, türbenin tesis tarihinin Vakıflar Genel Müdürlüğü kayıtlarına göre 1923 olduğunu söylüyor.",
+      "en": "The book gives 1923 as the establishment date according to General Directorate of Foundations records."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "418"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya’da 1146 parselde, avlunun ortasında yer alan türbe. Vakıflar Genel Müdürlüğü kayıtlarına göre tesis tarihi 1923’tür; mutfak, tuvalet ve sundurmalı bir alan ile oda gibi müştemilatı vardır.",
+    "en": "A tomb in the middle of a courtyard on plot 1146 in Antakya. According to General Directorate of Foundations records it was established in 1923; outbuildings include a kitchen, a toilet, and a porch area with a room."
+  },
+  "sections": [
+    {
+      "id": "yerlesim",
+      "order": 1,
+      "title": {
+        "tr": "Yerleşim ve avlu",
+        "en": "Setting and courtyard"
+      },
+      "body": {
+        "tr": "Türbe, güneydoğu-kuzeybatı doğrultusunda düzgün olmayan dikdörtgen bir parsel üzerinde kurulmuştur. Türbeye ve müştemilat avlusuna kuzeybatı köşesindeki demir kapıdan girilir. Avlunun ortasındaki türbenin kuzeybatısında mutfak ve tuvalet, kuzeydoğusunda sundurmalı bir alan ile oda bulunur. Kitaba göre türbe, diğer türbeler gibi ziyaretlere açık bir mabettir.",
+        "en": "The tomb was established on an irregular rectangular plot running southeast-northwest. The tomb and courtyard with outbuildings are entered through an iron gate in the northwest corner. Northwest of the tomb in the middle of the courtyard are a kitchen and toilet, and to the northeast a porch area and a room. The book says that, like other tombs, it is a shrine open to visitors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "418"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "parsel",
+      "label": {
+        "tr": "Parsel",
+        "en": "Plot"
+      },
+      "value": "1146",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "418"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "tesis-1923",
+      "year": 1923,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Türbenin tesisi (VGM kaydı)",
+        "en": "Establishment of the tomb (Foundations record)"
+      },
+      "note": {
+        "tr": "Tarih Vakıflar Genel Müdürlüğü kayıtlarına dayanır.",
+        "en": "The date is based on General Directorate of Foundations records."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "418"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, düzgün olmayan dikdörtgen bir parselde, avlunun ortasındadır. Avluya kuzeybatı köşesindeki demir kapıdan girilir. Türbenin kuzeybatısında mutfak ve tuvalet, kuzeydoğusunda sundurmalı bir alan ve bir oda bulunur.",
+      "en": "The tomb stands in the middle of a courtyard on an irregular rectangular plot. The courtyard is entered through an iron gate in the northwest corner. Northwest of the tomb are a kitchen and a toilet; to the northeast are a porch area and a room."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

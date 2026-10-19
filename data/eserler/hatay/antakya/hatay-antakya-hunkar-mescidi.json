@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-hunkar-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Hünkâr Mescidi bölümünden (s. 247-249) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kesin yapım ve mescide çevrilme tarihi, banî, mimar ve vakıf bilgisi kaynakta yok; yalnızca '150 yıllık' sözlü bilgisi var.",
+      "Era (dönem) kesin tarih olmadığı için null bırakıldı.",
+      "Son onarımın yılı ve yapanı kaynakta yok.",
+      "Ezanlığın (mezene) yeri kaynakta açıkça belirtilmiyor.",
+      "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hünkâr Mescidi",
+    "en": "Hünkâr Masjid"
+  },
+  "subtitle": {
+    "tr": "Köşede mihraplı, yazlık namazgâh avlulu tipik mahalle mescidi",
+    "en": "A typical neighbourhood masjid with a corner mihrab and a summer-prayer courtyard"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "yazlık namazgâh",
+    "ezanlık",
+    "köşe mihrap",
+    "mahalle mescidi"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 821 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "247-249"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Mahalle halkına göre yaklaşık 150 yıllık",
+      "en": "About 150 years old according to the neighbourhood"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Yapılma ve mescide çevrilme tarihi hakkında bilinen tek kaynak mahalle halkının '150 yıllık mescittir' ifadesidir; eserin üslubu bu sözü doğrulamaktadır. Kesin yıl verilmediği için yıllar boş bırakıldı.",
+      "en": "The only known source about its construction and conversion is the neighbourhood's statement that it is a '150-year-old masjid'; the style of the work confirms this. No exact year is given, so the years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "247"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Yazlık namazgâh olarak kullanılan avlusu, kısa ve gösterişsiz ezanlığı ve düz ahşap tavanlı loş harimiyle bölgeye özgü özellikleri taşıyan tipik bir mahalle mescididir. Hem avlu-namazgâhın hem de harim mihrabının tam köşede olması, yapının sonradan mescide çevrilmiş sivil bir bina olduğunu düşündürür.",
+    "en": "A typical neighbourhood masjid with architectural features unique to the region: a courtyard used as a summer prayer area, a short, modest adhan place and a dim sanctuary with a flat wooden ceiling. That both the courtyard prayer area and the sanctuary mihrab are exactly in the corner suggests it was a civil building later converted into a masjid."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarih",
+        "en": "Overview and Date"
+      },
+      "body": {
+        "tr": "Hünkâr Mescidi yazlık namazgâh olarak kullanılan avlusu, kısa ve gösterişsiz ezanlığı, düz ahşap tavanlı loş görüntülü harimiyle bu bölgeye mahsus mimari özellikleri taşıyan tipik bir mahalle mescididir. Yapılma ve mescide çevrilme tarihi hakkında bilinen tek kaynak mahalle halkının \"150 yıllık mescittir\" ifadesidir; eserin üslubu da bu sözü doğrulamaktadır.",
+        "en": "Hünkâr Masjid is a typical neighbourhood masjid with architectural features unique to this region, with its courtyard used as a summer prayer place, short and modest adhan place and dim sanctuary with a flat wooden ceiling. The only known source about its date of construction and conversion into a masjid is the neighbourhood's statement that it is a '150-year-old masjid'; the style of the work confirms this."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "247"
+        }
+      ]
+    },
+    {
+      "id": "kose-mihrap",
+      "order": 2,
+      "title": {
+        "tr": "Köşedeki Mihraplar ve Olası Dönüşüm",
+        "en": "Corner Mihrabs and Possible Conversion"
+      },
+      "body": {
+        "tr": "Mescit hem namazgâh-avlunun hem de harim mihrabının tam köşede bulunması ile diğer mescitlerden ayrılır. Bu durum, eserin de mescit olarak yapılmadığını, daha sonra mescide çevrilmiş sivil bir bina olduğunu düşündürmektedir.",
+        "en": "The masjid differs from others in that both the prayer-courtyard and the sanctuary mihrab are exactly in the corner. This suggests that it too was not built as a masjid but was a civil building later converted into one."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "247"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mekan",
+      "order": 3,
+      "title": {
+        "tr": "Avlu ve Harim",
+        "en": "Courtyard and Sanctuary"
+      },
+      "body": {
+        "tr": "Avlunun dört tarafı duvarla çevrilidir ve ağaçlarla güzelleştirilmiştir. Bir kemer gözüyle iki sahına bölünmüş mescit, yalnızca kuzeye bakan duvara açılan iki pencereden ışık alır; diğer duvarlar başka yapılarla kuşatıldığı için sağır bırakılmıştır. Basık görünüşlü yapı ahşap düz tavanla örtülüdür. Pencerelerdeki değişiklikler eserin yakın zamanda onarım gördüğünü işaret etmektedir.",
+        "en": "The courtyard is surrounded by walls on all four sides and beautified with trees. Divided into two naves by an arch, the masjid receives light only from two windows opening onto the north-facing wall; the other walls are left blind as they are surrounded by other structures. The flattened building is covered with a flat wooden ceiling. Changes in the windows indicate it has recently undergone a repair."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "249"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı (yalnızca kuzey duvarı)",
+        "en": "Windows (north wall only)"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "key": "tavan",
+      "label": {
+        "tr": "Tavan",
+        "en": "Ceiling"
+      },
+      "value": "Ahşap düz tavan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "249"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "kose-mihrap",
+      "title": {
+        "tr": "Köşedeki mihraplar",
+        "en": "Corner mihrabs"
+      },
+      "hint": {
+        "tr": "Avlu ve harimde mihrapların köşede olduğuna dikkat edin.",
+        "en": "Note that the mihrabs in both courtyard and sanctuary are in the corner."
+      },
+      "section_id": "kose-mihrap"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hünkâr Mescidi alçak, basık görünümlü küçük bir yapıdır. Dört tarafı duvarla çevrili, ağaçlı bir avlusu vardır; bu avlu yazın namazgâh olarak kullanılır. Harim ahşap düz tavanlı ve loştur; bir kemer onu iki sahına böler. Yalnızca kuzey duvarında iki pencere vardır, diğer duvarlar komşu yapılarla çevrilidir. Hem avlunun hem harimin mihrabı köşededir. Kısa ve gösterişsiz bir ezanlığı vardır.",
+      "en": "Hünkâr Masjid is a small building with a low, flattened appearance. It has a tree-lined courtyard enclosed by walls on all four sides, used as a summer prayer area. The sanctuary is dim, with a flat wooden ceiling, and an arch divides it into two naves. Only the north wall has windows, two in number; the other walls adjoin neighbouring buildings. The mihrabs of both the courtyard and the sanctuary are in the corner. It has a short, modest adhan place."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 247-249) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

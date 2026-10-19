@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-seyh-isa-ve-seyh-ali-bagdadi-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Yapım tarihi/banîsi kitapta yok; Selçuklu tarihlemesi yalnızca 'düşünülmektedir'.",
+      "Konum çelişkisi: bölüm özeti '5. mıntıka 832 parsel' (Antakya), metin 'Merkez ilçe, Işıklı Köyü'.",
+      "Dosyalarda iki ayrı 58 numaralı metin var; bu kayıt 'seyh-isa-ve-' dosyasından yazıldı.",
+      "Şeyh Ali Bağdadi hakkında kitapta ayrıca bilgi yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.address",
+        "note": "Bölüm özeti '5. mıntıka 832 parsel' derken metin 'Merkez ilçe, Işıklı Köyü' diyor; ikisi de saklandı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh İsa ve Şeyh Ali Bağdadi Türbesi",
+    "en": "Sheikh İsa and Sheikh Ali Bağdadi Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "türbe",
+    "Işıklı",
+    "kesme taş",
+    "kubbeli",
+    "Selçuklu",
+    "dilek",
+    "şifa"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": "Işıklı",
+    "address": "Merkez ilçe, Işıklı Köyü; 5. Mıntıka 832 parsel (bölüm özeti)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "428"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Selçuklu dönemi (tahmini)",
+      "en": "Seljuk period (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap 'Selçuklu döneminde inşa edildiği düşünülmektedir' diyor; yıl veya aralık vermiyor.",
+      "en": "The book says it is 'thought to have been built in the Seljuk period' and gives no year or range."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "428"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Merkez ilçe Işıklı Köyü’ndeki, kesme taştan kubbeli türbenin Selçuklu döneminde yapıldığı düşünülmektedir. Bölgede şifa ve çocuk dileğiyle ziyaret edilir.",
+    "en": "The cut-stone domed tomb in Işıklı Village, central district, is thought to date from the Seljuk period. People visit it in the region to pray for healing and for children."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Merkez ilçe Işıklı Köyü’nde bulunan türbe kesme taştan yapılmış, kubbeli bir yapıdır. Selçuklu döneminde inşa edildiği düşünülmektedir.",
+        "en": "The tomb in Işıklı Village, central district, is a domed building of cut stone, thought to have been built in the Seljuk period."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "428"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "soy-ve-kardeslik",
+      "title": {
+        "tr": "Şeyh İsa’nın soyu ve kardeşleri",
+        "en": "Lineage and brothers of Sheikh İsa"
+      },
+      "body": {
+        "tr": "Bölgede Şeyh İsa’nın Hz. Muhammed’in soyundan geldiği, Hanifi Dede ve Şeyh Ömer’le kardeş oldukları inancı yaygındır.",
+        "en": "It is widely believed in the region that Sheikh İsa is a descendant of Prophet Muhammad and a brother of Hanifi Dede and Sheikh Ömer."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "428"
+        }
+      ]
+    },
+    {
+      "id": "dilek-ve-sifa",
+      "title": {
+        "tr": "Dilek ve şifa ziyareti",
+        "en": "Visits for wishes and healing"
+      },
+      "body": {
+        "tr": "Hastalıklarına şifa bulmak, çocuk sahibi olmak gibi dileklerde bulunmak isteyenler türbeyi ziyaret ederek dua eder.",
+        "en": "Those who wish to find healing for illnesses or to have children visit the tomb and pray."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "428"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Material"
+      },
+      "value": "Kesme taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "428"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh İsa",
+      "role": {
+        "tr": "Türbenin sahibi; soyu rivayet",
+        "en": "Owner of the tomb; lineage reported as belief"
+      }
+    },
+    {
+      "name": "Şeyh Ali Bağdadi",
+      "role": {
+        "tr": "Türbenin diğer sahibi",
+        "en": "Other owner of the tomb"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, Işıklı Köyü’nde kesme taştan yapılmış kubbeli bir yapıdır. Kitaba göre Selçuklu döneminde inşa edildiği düşünülmektedir.",
+      "en": "The tomb in Işıklı Village is a domed building of cut stone. According to the book it is thought to have been built in the Seljuk period."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

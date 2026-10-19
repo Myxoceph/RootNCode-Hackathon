@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-arsuz-maryo-hanna-kilisesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Kiliseler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Maryo Hanna Kilisesi bölümünden (s. 446-447) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kilisenin ilk yapım tarihi ve 1514'teki yeniden yapımın nedeni kaynakta yok.",
+      "Yaptıran/mimar ve vakıf bilgisi kaynakta yok.",
+      "Aziz Hanna'nın kurucu olduğu yalnızca inanış olarak aktarılıyor; kimliği ve dönemi kaynakta açıklanmıyor.",
+      "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
+      "Dönem (era) kodu 1514 için belirsiz olduğundan null bırakıldı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Maryo Hanna Kilisesi",
+    "en": "Maryo Hanna Church"
+  },
+  "subtitle": {
+    "tr": "Arsuz merkezinde hâlâ kullanılan, 1514'te yeniden yapılmış kilise",
+    "en": "A church in central Arsuz, rebuilt in 1514 and still in use"
+  },
+  "alternate_names": [
+    {
+      "tr": "Aziz Hanna Kilisesi",
+      "en": "St. Hanna Church",
+      "note": "Kitap metninde kilise bu adla da anılıyor."
+    }
+  ],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kilise",
+    "Arsuz",
+    "Aziz Hanna",
+    "ikona"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Arsuz",
+    "neighborhood": null,
+    "address": "Arsuz, Kabev, 160 Parsel; kitaba göre Arsuz merkezinde",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "447"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1514'te yeniden yapıldı",
+      "en": "Rebuilt in 1514"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yalnızca 1514'teki yeniden yapım yılını veriyor; ilk yapım tarihi bilinmiyor, bu yüzden başlangıç/bitiş yılı boş bırakıldı.",
+      "en": "The book only gives the 1514 rebuilding; the original date is unknown, so start/end years are left empty."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "447"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Aziz Hanna",
+    "role": "kurucu (inanışa göre)",
+    "confidence": "legend",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "447"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Arsuz merkezinde bulunan ve halen kullanılan kilise 1514 yılında yeniden yapılmıştır. Kurucusunun Aziz Hanna olduğuna inanılır; kilisede 1600'lü yıllardan kalma bez üzerine iki baskı resim ve çok sayıda ikona korunmaktadır.",
+    "en": "The church in central Arsuz, still in use, was rebuilt in 1514. Its founder is believed to be St. Hanna; it preserves two prints on cloth and many icons from the 1600s."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Hristiyanlığın ilk yıllarında birçok rahip ve keşiş, öğretiyi yaymak için Arsuz ve çevresine yerleşmiştir; kilisenin kurucusunun bunlardan biri olan Aziz Hanna olduğuna inanılmaktadır. Arsuz merkezde bulunan ve halen kullanılan kilise 1514 yılında yeniden yapılmıştır.",
+        "en": "In the early years of Christianity many priests and monks settled in Arsuz and its surroundings to spread the teachings; one of them, St. Hanna, is believed to be the founder of the church. The church, located in the center of Arsuz and still in use, was rebuilt in 1514."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "447"
+        }
+      ]
+    },
+    {
+      "id": "eserler",
+      "order": 2,
+      "title": {
+        "tr": "Kilisedeki Değerli Eserler",
+        "en": "Valuable Works in the Church"
+      },
+      "body": {
+        "tr": "Kilisede 1600'lü yıllardan kalma, bez üzerine yapılmış çok değerli iki baskı resim ve çok sayıda ikona bulunmaktadır. Bu eserler halen Aziz Hanna Kilisesi'nin titiz koruması altındadır.",
+        "en": "The church holds two very valuable prints on cloth from the 1600s and many icons. These works are still under the careful protection of the St. Hanna Church."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "447"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "kurucu-aziz-hanna",
+      "title": {
+        "tr": "Kilisenin kurucusu Aziz Hanna",
+        "en": "St. Hanna as founder"
+      },
+      "body": {
+        "tr": "İlk Hristiyanlık yıllarında Arsuz'a yerleşen rahip ve keşişlerden Aziz Hanna'nın kilisenin kurucusu olduğuna inanılmaktadır.",
+        "en": "St. Hanna, one of the priests and monks who settled in Arsuz in early Christianity, is believed to be the church's founder."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "447"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "baski_resim_sayisi",
+      "label": {
+        "tr": "Bez üzerine baskı resim sayısı",
+        "en": "Prints on cloth"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "447"
+        }
+      ],
+      "note": {
+        "tr": "1600'lü yıllardan kalma",
+        "en": "From the 1600s"
+      }
+    },
+    {
+      "key": "kullanim",
+      "label": {
+        "tr": "Güncel kullanım",
+        "en": "Current use"
+      },
+      "value": "Halen kullanılıyor",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "447"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yeniden-yapim-1514",
+      "year": 1514,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kilise yeniden yapıldı",
+        "en": "Church rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "447"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "ikonalar",
+      "title": {
+        "tr": "1600'lü yıllardan ikonalar ve baskı resimler",
+        "en": "Icons and prints from the 1600s"
+      },
+      "hint": {
+        "tr": "Bez üzerine yapılmış iki baskı resim ve ikonalar korunmaktadır.",
+        "en": "Two prints on cloth and several icons are preserved."
+      },
+      "section_id": "eserler"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Maryo Hanna Kilisesi, Arsuz'un merkezinde yer alır ve bugün de kullanılmaktadır. Kitaba göre 1514 yılında yeniden yapılmıştır. İçinde 1600'lü yıllardan kalma, bez üzerine yapılmış iki baskı resim ve çok sayıda ikona korunmaktadır. Kilisenin kurucusunun, Hristiyanlığın ilk yıllarında bölgeye yerleşen Aziz Hanna olduğuna inanılır.",
+      "en": "Maryo Hanna Church stands in the center of Arsuz and is still in use. According to the book it was rebuilt in 1514. It preserves two prints on cloth and many icons from the 1600s. Its founder is believed to be St. Hanna, who settled in the region in the early years of Christianity."
+    },
+    "audio_description_source": "Kitabın anlatımından (vk-hatay, s. 447) yazılmıştır; kaynakta mimari tarif yoktur."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-iskenderun-suryani-katolik-kilisesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Kiliseler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Süryani Katolik Kilisesi bölümünden (s. 444-445) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi kesin değil; kitap yalnızca 'düşünülmektedir' diyor. Arşiv belgesiyle teyit edilmeli.",
+      "Yaptıran, mimar bilgisi kaynakta yok.",
+      "Sinema salonuna çevrilme tarihi kaynakta verilmiyor.",
+      "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
+      "Dönem (era) için uygun kod yok (Fransız işgali dönemi); null bırakıldı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Süryani Katolik Kilisesi",
+    "en": "Syriac Catholic Church"
+  },
+  "subtitle": {
+    "tr": "İskenderun'un tarihi çarşısında, bir dönem sinema salonu olarak kullanılmış kilise",
+    "en": "A church in the historic bazaar of Iskenderun, once used as a movie theater"
+  },
+  "alternate_names": [],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kilise",
+    "İskenderun",
+    "alınlı",
+    "çan kulesi",
+    "sinema salonu"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "İskenderun",
+    "neighborhood": null,
+    "address": "İskenderun, 2. Mıntıka, 104 Parsel; kitaba göre kent merkezinde, tarihi çarşıda",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "445"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Tahminen 20. yüzyılın ilk çeyreği",
+      "en": "Probably first quarter of the 20th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap 'düşünülmektedir' diyor; kesin yıl verilmediği için yıllar boş bırakıldı.",
+      "en": "The book says it 'is thought'; no exact year is given, so the years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "445"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Süryani Katolik Kilisesi Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "445"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Süryani Katolik Kilisesi Vakfı adına kayıtlı kilise, dikdörtgen planlı ve alınlı üslupta, taş yapıdır. Tahminen 20. yüzyılın ilk çeyreğinde yapılmış, apsisi yıkılarak sinema salonuna çevrilmiş, 2009'da restore edilerek yeniden kilise olarak hizmete girmiştir.",
+    "en": "Registered to the Syriac Catholic Church Foundation, the church is a rectangular stone building in the frontal style. Thought to have been built in the first quarter of the 20th century, its apse was demolished for a movie theater stage; it was restored in 2009 and serves as a church again."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-plan",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Plan",
+        "en": "Location and Plan"
+      },
+      "body": {
+        "tr": "İskenderun kent merkezindeki tarihi çarşıda bulunur ve Süryani Katolik Kilisesi Vakfı adına kayıtlıdır. Hafif meyilli bir arazidedir; binanın doğusu ile batısı arasında belirgin bir kot farkı vardır. Kilise dikdörtgen planlıdır ve geç dönem taşra kiliselerinde görülen 'alınlı' tarzda inşa edilmiştir.",
+        "en": "It stands in the historic bazaar of Iskenderun and is registered to the Syriac Catholic Church Foundation. It lies on slightly sloping land with a distinct level difference between east and west. The church has a rectangular plan and is built in the 'frontal' style of late provincial churches."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "id": "malzeme-ve-avlu",
+      "order": 2,
+      "title": {
+        "tr": "Malzeme ve Avlu",
+        "en": "Material and Courtyard"
+      },
+      "body": {
+        "tr": "İnşasında ağırlıklı olarak taş kullanılmıştır. Kemer, pencere, kapı söveleri, köşe bağlamaları ve doğu cephedeki çan kulesinde düzgün yonu taş vardır; çatı mertek ve aşıkları ahşaptır. Etrafı binalarla çevrili avlunun giriş cephesinin iki yanında kiliseye ait olduğu düşünülen mekânlar bulunur; bunların bir kısmı bugün olmayan narteksin üzerine kurulmuş, bir kısmı avlu boşluğunu kaplamaktadır.",
+        "en": "Stone is the main material. Smooth-cut stone is used for arches, windows, door jambs, corner bindings and the bell tower on the east façade; roof rafters and purlins are wooden. On both sides of the entrance façade of the courtyard, which is surrounded by buildings, are spaces thought to belong to the church; some were built over the narthex, which no longer exists, and some cover the courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 3,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Yapı hakkında bilgi veren kaynaklar oldukça sınırlıdır. Kilisenin 20. yüzyılın ilk çeyreğinde, İskenderun'un Fransızlar tarafından işgali sırasında yapıldığı düşünülmektedir. Apsisi yıkılarak sahneye dönüştürülmüş ve uzun yıllar sinema salonu olarak hizmet vermiştir. 1973'te Vakıflar Genel Müdürlüğü'ne devredilmiş, 2009'da Hatay Vakıflar Bölge Müdürlüğü'nce restore edilerek yeniden kilise olarak kullanılmaya başlanmıştır. Kitap, 19. yüzyıldaki Islahat ve Tanzimat fermanlarından sonra kiliselerin yenilenme ve yeniden inşa hakkının verildiğini, 20. yüzyıl başında Anadolu'da çeşitli yerlerde büyük ölçekli kiliseler yapıldığını da belirtir.",
+        "en": "Sources on the building are very limited. The church is thought to have been built in the first quarter of the 20th century during the French occupation of Iskenderun. Its apse was demolished and turned into a stage, and it served as a movie theater for many years. Transferred to the General Directorate of Foundations in 1973, it was restored by the Hatay Regional Directorate of Foundations in 2009 and began to serve as a church again. The book adds that the right to renovate and rebuild churches was granted after the 19th-century Islahat and Tanzimat edicts, and large churches were built in various parts of Anatolia in the early 20th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "445"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "key": "uslup",
+      "label": {
+        "tr": "Üslup",
+        "en": "Style"
+      },
+      "value": "Alınlı (geç dönem taşra kilisesi)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "key": "cati",
+      "label": {
+        "tr": "Çatı",
+        "en": "Roof"
+      },
+      "value": "Ahşap mertek ve aşıklı çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "445"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "devir-1973",
+      "year": 1973,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü'ne devredildi",
+        "en": "Transferred to the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2009",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Hatay Vakıflar Bölge Müdürlüğü'nce restore edildi; yeniden kilise olarak hizmete girdi",
+        "en": "Restored by the Hatay Regional Directorate of Foundations; reopened as a church"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "445"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "can-kulesi",
+      "title": {
+        "tr": "Doğu cephedeki çan kulesi",
+        "en": "Bell tower on the east façade"
+      },
+      "hint": {
+        "tr": "Düzgün yonu taşla örülmüş çan kulesine bakın.",
+        "en": "Look at the bell tower built of smooth-cut stone."
+      },
+      "section_id": "malzeme-ve-avlu"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Süryani Katolik Kilisesi, İskenderun'un tarihi çarşısında, hafif meyilli bir arazide yer alır. Dikdörtgen planlı taş bir yapıdır; alınlı bir cephesi ve doğu cephede düzgün yonu taştan bir çan kulesi vardır. Çatısı ahşap mertek ve aşıklarla taşınır. Avlusu binalarla çevrilidir ve giriş cephesinin iki yanında kiliseye ait olduğu düşünülen mekânlar bulunur. Yapı bir dönem sinema salonu olarak kullanılmış, restorasyonla yeniden kilise olmuştur.",
+      "en": "The Syriac Catholic Church stands in the historic bazaar of Iskenderun on slightly sloping land. It is a rectangular stone building with a frontal façade and a bell tower of smooth-cut stone on its east side. The roof is carried by wooden rafters and purlins. The courtyard is surrounded by buildings, with spaces thought to belong to the church on both sides of the entrance façade. The building was once a movie theater and became a church again after restoration."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 445) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

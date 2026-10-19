@@ -1,0 +1,474 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-ahmediye-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Ahmediye Camii bölümünden (s. 215-217) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banî Ahmed Bey hakkında kitapta başka bilgi yok; vakıf kayıtlarından araştırılmalı.",
+      "Mimar ve vakıf bilgisi kaynakta yok.",
+      "Eskiden var olan medresenin yeri, kalıntısı ya da adı kaynakta verilmiyor.",
+      "Şadırvan kitabesinin (altı satır) ve kapı üstündeki ayetin Arapça metni kaynakta verilmiyor; sahada okunmalı.",
+      "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Ahmediye Camii",
+    "en": "Ahmediye Mosque"
+  },
+  "subtitle": {
+    "tr": "Antakya'nın en kalabalık yerinde, şadırvanlı ve 1941 minareli taş cami",
+    "en": "A stone mosque with a shadirvan and a 1941 minaret in Antakya's most crowded spot"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "şadırvan",
+    "1842",
+    "1941 minaresi",
+    "dükkânlı avlu"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "5. Mıntıka, 339 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "215-217"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1842",
+      "en": "1842"
+    },
+    "start_year": 1842,
+    "end_year": 1842,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap eseri '1842 tarihli' olarak anar.",
+      "en": "The book refers to the mosque as dated 1842."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "215"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ahmed Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "215"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'nın en merkezi ve kalabalık yerinde bulunan, bir zamanlar medresesi de olan 1842 tarihli taş camidir. Ahmed Bey tarafından yaptırılmıştır. Hatay'ın anavatana katılmasından sonra 1941'de eklenen yuvarlak gövdeli minaresi ve dükkânlarla çevrili avlusundaki on kenarlı şadırvanı (1909) vardır.",
+    "en": "A stone mosque dated 1842 in the most central and crowded place of Antakya, which once also had a madrasa. It was built by Ahmed Bey. It has a round-bodied minaret added in 1941 after Hatay's return to the homeland and a ten-sided shadirvan (1909) in its courtyard surrounded by shops."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Antakya'nın en merkezi ve kalabalık yerinde bir zamanlar medresesi de olan 1842 tarihli Ahmediye Camii varlığını sürdürmektedir. Eserin banisi Ahmed Bey hakkında herhangi bir bilgi bulunmamaktadır. 1941 yılında, Hatay'ın ana vatana kavuşmasından hemen sonra âdeta zafer nişanesi olarak yapıya eklenen yuvarlak gövdeli narin minare, harimin güneybatısındadır.",
+        "en": "The Ahmediye Mosque, dated 1842, in the most central and crowded place of Antakya and once with a madrasa, continues to exist. Nothing is known about its builder, Ahmed Bey. The delicate round-bodied minaret, added in 1941 right after Hatay's return to the homeland as a sign of victory, stands to the south-west of the sanctuary."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dikdörtgen plan üzerine taş malzemeyle yapılmıştır ve oldukça mütevazı görünür. Tek ayak üzerine oturan, iki kemer gözünün oluşturduğu, kıble duvarına paralel iki sahından meydana gelir. Kendi türündeki mahalle mescitlerinden daha özenli bir plana ve taş işçiliğine sahiptir; düz tavan üzerine kırma çatılıdır. Kuzey ve güneyde dörder, batıda iki olmak üzere toplam on penceresi vardır; pencereler yuvarlak kemerleriyle dikkat çeker, doğuda pencere yoktur. Mihrap kuzeydeki girişin tam karşısında yer alan, dışa hafifçe çıkıntı yapan yarım daire biçiminde sade bir girintidir.",
+        "en": "The mosque is built of stone on a rectangular plan and has a very modest appearance. It consists of two naves parallel to the qibla wall formed by two arch openings resting on a single pier. It has a more careful plan and stonework than neighbourhood mosques of its kind and a hipped roof over a flat ceiling. It has ten windows in total, four each on the north and south and two on the west, notable for their round arches; there is no window on the east. The mihrab, directly opposite the entrance on the north, is a plain semicircular recess that protrudes slightly outward."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "216"
+        }
+      ]
+    },
+    {
+      "id": "kapi-ayeti",
+      "order": 3,
+      "title": {
+        "tr": "Kapı Üstündeki Ayet",
+        "en": "Verse Above the Door"
+      },
+      "body": {
+        "tr": "Cami kapısının üstüne \"Allah'ın mescitlerini ancak Allah'a ve ahiret gününe iman edenler imar eder.\" (Tevbe, 18) ayeti nakşedilmiştir.",
+        "en": "The verse \"Only those who believe in Allah and the Last Day will build the mosques of Allah.\" (Tawba, 18) is engraved above the mosque door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan",
+      "order": 4,
+      "title": {
+        "tr": "Şadırvan",
+        "en": "Shadirvan"
+      },
+      "body": {
+        "tr": "Şadırvan on kenarlıdır ve caminin dükkânlarla çevrili avlusunda yer alır. Güneye bakan çeşme aynasındaki altı satırlık kitabesine göre 1909 yılında yapılmıştır. Düzgün işçilikle yapılmış, tezyinatı bulunmayan şadırvanın ahşap örtüsü doğrudan on kenarlı hazne üzerinde yükselen ahşap ayaklara oturur.",
+        "en": "The shadirvan has ten sides and stands in the mosque's courtyard surrounded by shops. According to its six-line inscription on the south-facing fountain panel it was built in 1909. Made with proper workmanship and without decoration, its wooden cover rests directly on wooden legs rising from the ten-sided basin."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Vakıflar Genel Müdürlüğü'nün 1997'deki onarımında cami ile birlikte şadırvanın ahşap örtüsü yenilenmiş, taşlar zımparalanarak temizlenmiştir. 2001 yılında caminin kemer ve sıvalarıyla birlikte tavanındaki çürüyen tahtaların değiştirilmesi işi tamamlanmıştır.",
+        "en": "In the 1997 repair by the General Directorate of Foundations the wooden cover of the shadirvan was renewed along with the mosque and the stones were cleaned by sanding. In 2001 the replacement of the rotting boards of the ceiling, together with the arches and plaster, was completed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "217"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total number of windows"
+      },
+      "value": 10,
+      "unit": null,
+      "note": {
+        "tr": "Kuzey 4, güney 4, batı 2; doğuda yok.",
+        "en": "North 4, south 4, west 2; none on the east."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "216"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "216"
+        }
+      ]
+    },
+    {
+      "key": "sadirvan_yili",
+      "label": {
+        "tr": "Şadırvan yapım yılı",
+        "en": "Shadirvan year"
+      },
+      "value": 1909,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "key": "sadirvan_kenar",
+      "label": {
+        "tr": "Şadırvan kenar sayısı",
+        "en": "Shadirvan number of sides"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "key": "minare_yili",
+      "label": {
+        "tr": "Minare eklenme yılı",
+        "en": "Year minaret added"
+      },
+      "value": 1941,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "215"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kapi-ayeti",
+      "location": {
+        "tr": "Cami kapısının üstü",
+        "en": "Above the mosque door"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Allah'ın mescitlerini ancak Allah'a ve ahiret gününe iman edenler imar eder.",
+        "en": "Only those who believe in Allah and the Last Day will build the mosques of Allah."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Tevbe suresi, 18. ayet; Arapça metin kaynakta verilmiyor.",
+        "en": "Tawba, verse 18; the Arabic text is not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan-kitabesi",
+      "location": {
+        "tr": "Şadırvanın güneye bakan çeşme aynası; altı satır",
+        "en": "South-facing fountain panel of the shadirvan; six lines"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1909"
+      },
+      "note": {
+        "tr": "Metin ve dil kaynakta verilmiyor.",
+        "en": "Text and language are not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "217"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1842",
+      "year": 1842,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı (1842 tarihli)",
+        "en": "Mosque built (dated 1842)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan-1909",
+      "year": 1909,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Şadırvan yapıldı (kitabeye göre)",
+        "en": "Shadirvan built (per inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "minare-1941",
+      "year": 1941,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Yuvarlak gövdeli minare eklendi",
+        "en": "Round-bodied minaret added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1997",
+      "year": 1997,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı; şadırvan ahşap örtüsü yenilendi",
+        "en": "Repair by the General Directorate of Foundations; shadirvan cover renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2001",
+      "year": 2001,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tavandaki çürüyen tahtalar, kemer ve sıvalar yenilendi",
+        "en": "Rotting ceiling boards, arches and plaster replaced"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "217"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "minare-1941",
+      "title": {
+        "tr": "1941 minaresi",
+        "en": "The 1941 minaret"
+      },
+      "hint": {
+        "tr": "Harimin güneybatısındaki narin yuvarlak gövdeli minareye bakın.",
+        "en": "Look at the delicate round-bodied minaret to the south-west of the sanctuary."
+      },
+      "section_id": "genel-bakis"
+    },
+    {
+      "feature": "sadirvan",
+      "title": {
+        "tr": "On kenarlı şadırvan",
+        "en": "Ten-sided shadirvan"
+      },
+      "hint": {
+        "tr": "Dükkânlarla çevrili avludaki ahşap örtülü şadırvanı arayın.",
+        "en": "Find the wooden-covered shadirvan in the shop-lined courtyard."
+      },
+      "section_id": "sadirvan"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ahmediye Camii, Antakya'nın kalabalık merkezinde taştan yapılmış dikdörtgen planlı mütevazı bir camidir. Kuzeydeki girişin üstünde Tevbe suresinin 18. ayeti yazılıdır. İçeride tek ayak üzerine oturan iki kemer, kıble duvarına paralel iki sahın oluşturur; düz tavan üzerinde kırma çatı vardır. Kuzey ve güneyde dörder, batıda iki yuvarlak kemerli pencere bulunur, doğuda pencere yoktur. Girişin karşısındaki mihrap yarım daire biçiminde sade bir girintidir. Harimin güneybatısında yuvarlak gövdeli narin bir minare yükselir. Dükkânlarla çevrili avluda, on kenarlı, ahşap örtülü bir şadırvan bulunur.",
+      "en": "Ahmediye Mosque is a modest stone mosque on a rectangular plan in the crowded centre of Antakya. A verse from the Tawba chapter (verse 18) is inscribed above the entrance on the north. Inside, two arches resting on a single pier form two naves parallel to the qibla wall, under a hipped roof over a flat ceiling. There are four round-arched windows each on the north and south and two on the west; none on the east. The mihrab opposite the entrance is a plain semicircular recess. A delicate round-bodied minaret rises to the south-west of the sanctuary. In the courtyard, surrounded by shops, stands a ten-sided shadirvan with a wooden cover."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 215-217) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

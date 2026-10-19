@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-belen-kanuni-sultan-suleyman-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
+      "Konum bilgisi (parsel) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli ve doğrulanmalı.",
+      "Eserin dönemi için kitap yalnızca 16. yüzyıl tarihlerini veriyor; era klasik-osmanli olarak seçildi, uzman teyidi gerekir.",
+      "Mimar kitapta kesin değil: Koca Sinan adayı disputed olarak candidates'a yazıldı; name null.",
+      "Han Harabesi için kitapta yer, tarih ve durum bilgisi yok; ayrı kayıt yazılmadı, yalnızca bölüm olarak anıldı.",
+      "Kitap Payas'taki külliyeyle karşılaştırıyor (hatay-payas-sokullu-mehmet-pasa-kulliyesi); kitap ilişkiyi (aynı mimar vb.) kesin söylemediği için ilişki yazılmadı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap yapıların 1550-1566 arasında yapıldığını söyler; hamam kitabesinin tarihinin son hanesi okunamadığı için 1562-1566 aralığı verilir. Bitiş yılı bu yüzden kesin değildir (probable)."
+      },
+      {
+        "field": "architect",
+        "note": "Kitap bir yandan 'mimarının da Koca Sinan olması' der, diğer yandan Tuhfetü'l-Mimarin'in Koca Sinan'ı Payas külliyesinin mimarı olarak gösterdiğini ve bazı sanat tarihçilerinin Sinan'ı kabul etmediğini yazar. Disputed olarak işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kanuni Sultan Süleyman Kervansarayı",
+    "en": "Suleiman the Magnificent Caravanserai"
+  },
+  "subtitle": {
+    "tr": "Kervansaray, cami ve hamamdan oluşan külliye",
+    "en": "A complex of caravanserai, mosque and bath"
+  },
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "külliye",
+    "belen",
+    "kervansaray",
+    "kanuni",
+    "menzil"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Belen",
+    "neighborhood": null,
+    "address": "HATAY - BELEN 1457 - 1465 - 1495 PARSELLER",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "142"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1550-1566 arası; kervansaray H. 957 (M. 1550), cami H. 960 (M. 1553), hamam 1562-1566 arası olabilir",
+      "en": "Between 1550 and 1566; caravanserai 957 H (1550), mosque 960 H (1553), bath possibly 1562-1566"
+    },
+    "start_year": 1550,
+    "end_year": 1566,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap yapıların 1550-1566 arasında sırasıyla kervansaray, cami ve hamam olarak birkaç yıl arayla yapıldığını söyler. Başlangıç yılı kervansarayın kitabesinden (1550), bitiş yılı ise hamam kitabesinin son hanesi okunamadığı için verilen 1562-1566 aralığının üst sınırından alınmıştır.",
+      "en": "The book says the buildings were built between 1550 and 1566, in the order caravanserai, mosque, bath, a few years apart. The start year is from the caravanserai inscription (1550); the end year is the upper limit of the 1562-1566 range given because the last digit of the bath inscription cannot be read."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "142-157"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kanuni Sultan Süleyman",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "142"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [
+      {
+        "name": "Koca Sinan",
+        "note": "Kitap, Tuhfetü'l-Mimarin'in Payas'taki külliyenin mimarı olarak Koca Sinan'ı gösterdiğini; bazı sanat tarihçilerinin bunu kabul etmediğini söyler."
+      }
+    ],
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "142"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Amanos Dağları'nın güney yamacında, geçide hâkim konumda kurulmuş menzil kervansarayı külliyesi. Kitaba göre kervansaray, cami ve hamamdan oluşur; kitabelerine göre hepsi Kanuni'nin eseridir. Arazi engebeli olduğu için Payas'taki külliye kadar büyük ve ayrıntılı yapılmamış, işçilik ve süsleme yönünden sade kalmıştır. Kitap ayrıca kervansarayın bir yardımcı yapısı olan Han Harabesi'ni anar.",
+    "en": "A way-station caravanserai complex on the southern slope of the Amanos Mountains, overlooking the pass. According to the book it consists of a caravanserai, a mosque and a bath, all of them the work of Suleiman according to their inscriptions. Because the land is rough it was not built as large and detailed as the complex in Payas and is plain in workmanship and decoration. The book also mentions an auxiliary building, the Inn Ruin."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Amaç ve tarihçe",
+        "en": "Purpose and history"
+      },
+      "body": {
+        "tr": "Belen'deki Kanuni Sultan Süleyman Kervansarayı; İstanbul-Şam-Hicaz şehirlerinin ve kervan yollarının güvenliğini sağlamak, civar halkı daha geniş maddi-manevi imkânlara kavuşturmak, devletle bütünleştirmek ve İstanbul kültürü ile diğer şehir kültürlerini tanıştırmak için yapılmış menzil kervansaraylarından biridir. Amanos Dağları'nın güney yamacında geçide hâkim vaziyette kurulmuştur. Eseri meydana getiren yapılar 1550 ile 1566 yılları arasında sırasıyla kervansaray, cami ve hamam olarak birkaç sene arayla yapılmıştır; kitabelerden edinilen bilgilere göre hepsi Kanuni'nin eseridir.",
+        "en": "The Suleiman the Magnificent Caravanserai in Belen is one of the range caravanserais built to ensure the safety of the Istanbul-Damascus-Hijaz cities and caravan routes, to give the surrounding people wider material and moral opportunities, to integrate them with the state and to introduce Istanbul culture to other city cultures. It stands on the southern slope of the Amanos Mountains overlooking the pass. The buildings were built between 1550 and 1566, as caravanserai, mosque and bath respectively, a few years apart; according to the inscriptions all are the work of Suleiman."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "142"
+        }
+      ]
+    },
+    {
+      "id": "sadelik",
+      "order": 2,
+      "title": {
+        "tr": "Sade yapılış",
+        "en": "Plain construction"
+      },
+      "body": {
+        "tr": "Arazi oldukça engebeli olduğu için külliye Payas'taki kadar büyük ve ayrıntılı yapılmamıştır. İşçilik ve süsleme yönünden banisinin Muhteşem Süleyman, mimarının da Koca Sinan olması ile bağdaşamayacak kadar sadedir; kitap bunu arazinin daha fazlasına izin vermemesine bağlar.",
+        "en": "Because the land is rough, the complex was not built as large and detailed as in Payas. In workmanship and decoration it is too plain to match its founder Suleiman the Magnificent and its architect the Great Sinan; the book attributes this to the terrain not allowing more."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "142"
+        }
+      ]
+    },
+    {
+      "id": "mimar",
+      "order": 3,
+      "title": {
+        "tr": "Mimar tartışması",
+        "en": "The architect question"
+      },
+      "body": {
+        "tr": "Mimar Sinan'ın yapılarını konu alan Tuhfetü'l-Mimarin'de Payas'taki külliyenin mimarı olarak Koca Sinan gösterilmiştir. Bazı sanat tarihçileri, Sinan'ın yüzlerce eserin mimarı olamayacağını düşünerek yapının mimarının Sinan olamayacağını söyler. Kitap ise Sinan'ın eserin yerini keşfedip planı, çizimleri ve hatta maketleri yardımcılarına verdikten sonra yerinde incelediğinin bilindiğini ve kervansarayın da böyle meydana gelmiş olması gerektiğini söyler.",
+        "en": "In the Tuhfetu'l-Mimarin, which is about the buildings of Sinan the Architect, Great Sinan is shown as the architect of the complex in Payas. Some art historians who think he cannot have been the architect of hundreds of works say the architect cannot be Sinan. The book says it is known that Sinan found the site, prepared the plan, drawings and even models, gave them to his assistants and then examined the work on site, and that the caravanserai must have come into being this way."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "142"
+        }
+      ]
+    },
+    {
+      "id": "yapilar",
+      "order": 4,
+      "title": {
+        "tr": "Külliyeyi oluşturan yapılar",
+        "en": "Buildings of the complex"
+      },
+      "body": {
+        "tr": "Külliye kervansaray, cami ve hamamdan meydana gelir. Cami eski Halep yolunun güneyinde ve kervansarayın biraz güneybatısında, hamam ise caminin hemen batısındadır. Kervansarayın tamamlayıcı yapısı olarak anılan Han Harabesi'nin yeri ve durumu hakkında kitap ayrıntı vermez.",
+        "en": "The complex consists of a caravanserai, a mosque and a bath. The mosque is south of the old Aleppo road and a little southwest of the caravanserai; the bath is just west of the mosque. The book gives no details on the location or state of the Inn Ruin, which it mentions as a complementary structure of the caravanserai."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "142-157"
+        }
+      ]
+    },
+    {
+      "id": "han-harabesi",
+      "order": 5,
+      "title": {
+        "tr": "Han Harabesi",
+        "en": "Inn Ruin"
+      },
+      "body": {
+        "tr": "Kanuni Sultan Süleyman Kervansarayı'nın tamamlayıcı bir yapısı olarak, kervansarayın yardımcı bölümü olarak inşa edilmiştir. Kitap bu bölümde başka bilgi vermez (kendi kaydı yazılmadı).",
+        "en": "Built as a complementary structure and auxiliary part of the Suleiman the Magnificent Caravanserai. The book gives no further information in this section (no separate record was written)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "157"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Kanuni Sultan Süleyman",
+      "role": {
+        "tr": "Kitabelerine göre külliyenin yaptırıcısı",
+        "en": "Founder of the complex according to its inscriptions"
+      }
+    },
+    {
+      "name": "Koca Sinan",
+      "role": {
+        "tr": "Mimar olup olmadığı tartışmalı; Tuhfetü'l-Mimarin'de Payas külliyesinin mimarı olarak anılır",
+        "en": "Disputed as architect; named in the Tuhfetu'l-Mimarin as architect of the Payas complex"
+      }
+    },
+    {
+      "name": "J. Sauvaget",
+      "role": {
+        "tr": "Kervansarayın planını 1937 tarihli kitabında yayımlayan Fransız yazar",
+        "en": "French writer who published the caravanserai plan in his 1937 book"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kanuni Sultan Süleyman Külliyesi, Amanos Dağları'nın güney yamacında, geçide hâkim bir yerdedir. Yola paralel uzanan dikdörtgen planlı kervansaray, onun biraz güneybatısında eski Halep yolunun güneyindeki cami ve caminin hemen batısındaki hamamdan oluşur. Yapılar arazi engebeli olduğu için büyük tutulmamış, işçilik ve süsleme bakımından sadedir.",
+      "en": "The complex stands on the southern slope of the Amanos Mountains overlooking the pass. It consists of the rectangular caravanserai running parallel to the road, the mosque a little to its southwest south of the old Aleppo road, and the bath just west of the mosque. The buildings are small because of the rough terrain and plain in workmanship and decoration."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

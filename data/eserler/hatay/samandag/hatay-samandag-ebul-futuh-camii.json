@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-samandag-ebul-futuh-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Yapım yılı (1798 mi 1978 mi) kaynaklarla doğrulanmalı.",
+      "Era alanı, tarihleme belirsiz olduğu için boş bırakıldı.",
+      "Cami adındaki kişi (Ebu'l Fütuh) kaynakta açıklanmıyor.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
+      "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türkçe metin 'eserin 1798 yılında yapılmış olduğu düşünülmektedir' der; İngilizce metin 'It is thought to have been built in 1978' yazar. Türkçe değer (1798) korundu, 'disputed' işaretlendi; İngilizce değer büyük olasılıkla yazım hatasıdır."
+      },
+      {
+        "field": "name",
+        "note": "Bölüm özeti sayfasında ad 'EBUL FUTTUH CAMİİ' yazılmıştır; başlıktaki yazım (Ebu'l Fütuh) kullanıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ebu'l Fütuh Camii",
+    "en": "Ebu'l Fütuh Mosque"
+  },
+  "subtitle": {
+    "tr": "Samandağ merkezindeki, 1798'de yapıldığı düşünülen cami",
+    "en": "A mosque in central Samandağ thought to have been built in 1798"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ebul Futtuh Camii",
+      "en": "Ebul Futtuh Mosque",
+      "note": "Bölüm özeti sayfasındaki yazım."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "Samandağ",
+    "düz ahşap tavan",
+    "2008 onarımı"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Samandağ",
+    "neighborhood": null,
+    "address": "Samandağ ilçe merkezi, Atatürk; 710 Ada 1 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "377, 399"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Tahminen 1798",
+      "en": "Thought to be 1798"
+    },
+    "start_year": 1798,
+    "end_year": 1798,
+    "hijri_year": null,
+    "century": 18,
+    "basis": {
+      "tr": "Türkçe metin eserin 1798'de yapıldığını 'düşünüldüğünü' söyler; İngilizce metin '1978' yazar. Kaynaklar uyuşmadığı için tarihleme tartışmalıdır; Türkçe değer korundu.",
+      "en": "The Turkish text says it is thought to have been built in 1798, while the English text says 1978. Because the two disagree the dating is disputed; the Turkish value is kept."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "377"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Samandağ ilçe merkezindeki Ebu'l Fütuh Camii'nin 1798'de yapıldığı düşünülür. Kareye yakın dikdörtgen planlı ve düz ahşap tavanlıdır; kuzeybatı köşesinde yuvarlak gövdeli, şemsiye külahlı şerefeli bir minare yükselir. 2008'de Vakıflar Bölge Müdürlüğü onarmıştır.",
+    "en": "Ebu'l Fütuh Mosque in the center of Samandağ is thought to have been built in 1798. It has a near-square rectangular plan and a flat wooden ceiling; a round minaret with an umbrella-coned balcony rises at the northwest corner. It was repaired by the Regional Directorate of Foundations in 2008."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Ebu'l Fütuh Camii Samandağ ilçesi merkezinde bulunmaktadır ve eserin 1798 yılında yapılmış olduğu düşünülmektedir. Cami kareye yakın dikdörtgen planlı, düz ahşap tavanlıdır. Dıştan kiremit kaplı kırma çatıyla örtülüdür. Mihrap sade bir nişten ibarettir. Yuvarlak gövdeli, şemsiye külahlı şerefeye sahip minare caminin kuzeybatı köşesinde yükselir.",
+        "en": "Ebu'l Fütuh Mosque is in the center of Samandağ and is thought to have been built in 1798. It has a rectangular plan close to a square and a flat wooden ceiling, and is covered outside by a tiled hipped roof. The mihrab is a simple niche. The round minaret with an umbrella-coned balcony rises at the northwest corner."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "377"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 2,
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "body": {
+        "tr": "Cami, Vakıflar Bölge Müdürlüğü tarafından 2008'de onarılmıştır.",
+        "en": "The mosque was repaired by the Regional Directorate of Foundations in 2008."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "377"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "tavan",
+      "label": {
+        "tr": "Tavan",
+        "en": "Ceiling"
+      },
+      "value": "Düz ahşap",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "377"
+        }
+      ]
+    },
+    {
+      "key": "cati",
+      "label": {
+        "tr": "Çatı",
+        "en": "Roof"
+      },
+      "value": "Kiremit kaplı kırma çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "377"
+        }
+      ]
+    },
+    {
+      "key": "minare_yeri",
+      "label": {
+        "tr": "Minare yeri",
+        "en": "Minaret position"
+      },
+      "value": "Kuzeybatı köşe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "377"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "377"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ebu'l Fütuh Camii, Samandağ ilçe merkezindedir. Kareye yakın dikdörtgen planlıdır, içi düz ahşap tavanlı, dışı kiremit kaplı kırma çatılıdır. Mihrap sade bir nişten ibarettir. Kuzeybatı köşede yuvarlak gövdeli, şemsiye külahlı şerefeli bir minare yükselir.",
+      "en": "Ebu'l Fütuh Mosque is in the center of Samandağ. It has a near-square rectangular plan, a flat wooden ceiling inside and a tiled hipped roof outside. The mihrab is a simple niche. A round minaret with an umbrella-coned balcony rises at the northwest corner."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

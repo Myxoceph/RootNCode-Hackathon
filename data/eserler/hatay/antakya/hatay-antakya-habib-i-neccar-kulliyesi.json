@@ -1,0 +1,315 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-habib-i-neccar-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Külliyenin bütününe ait banî kitapta verilmiyor (cami için Ebu Ubeyde bin Cerrah anılıyor, medrese için Halil Ağa); founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Mimar kitapta verilmiyor.",
+      "Konum bilgisi (5. Mıntıka, 4676 - 4677 - 1305 parseller) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli.",
+      "Bölüm özetindeki parsel/mıntıka bilgisi location.address alanına olduğu gibi yazıldı; doğrulanmalı.",
+      "Antakya Salnameleri ve 'son onarım' (halk yardımıyla) tarihi kitapta verilmiyor; arşiv kaynağından teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türkçe ve İngilizce metin 'M.S. 636'da Ebu Ubeyde bin Cerrah tarafından inşa ettirilmiştir' diyor; aynı sayfada 'inşa ettirdiği varsayılan eserden herhangi bir buluntu kalmasa da' ifadesi var. Kesin ifade ile varsayım çelişiyor: disputed."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Habib-i Neccar'ın mezarı s. 59'da 'caminin içerisinde' deniyor; s. 61 ve 68'de türbe caminin doğu yanında ayrı yapı olarak anlatılıyor. Elçilerin mezarları 'cami içinde' deniyor, Aziz Pavlos türbesi (s. 70) ise doğu girişinin güneyinde ayrı yapıdır."
+      },
+      {
+        "field": "location.address",
+        "note": "Parsel bilgisi kitabın bölüm özeti sayfasından (s. 190) alındı; yazım kitaptaki gibi bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Habib-i Neccar Camii ve Külliyesi",
+    "en": "Habib-i Neccar Mosque and Complex"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "külliye",
+    "antakya",
+    "habib-i-neccar",
+    "türbe",
+    "medrese",
+    "şadırvan"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "HATAY - ANTAKYA 5. MINTIKA 4676 - 4677 - 1305 PARSELLER",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "59-61"
+      },
+      {
+        "source_id": "vk-hatay",
+        "pages": "190"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Geleneksel olarak M.S. 636; bugünkü külliye 1474, 1721, 1858 ve 1863 onarımlarıyla günümüze ulaşmıştır",
+      "en": "Traditionally 636 A.D.; the present complex reached today through repairs in 1474, 1721, 1858 and 1863"
+    },
+    "start_year": 636,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 7,
+    "basis": {
+      "tr": "Kitap hem 'M.S 636'da inşa ettirilmiştir' diyor hem de bu yapıdan hiçbir buluntu kalmadığını, eserin 'varsayıldığını' belirtiyor; bugünkü yapının ilk inşa tarihi verilmiyor.",
+      "en": "The book says it was built in 636 but also that nothing remains of the supposed original and that it is assumed; no construction date is given for the present structure."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "59-61"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'da, trapez planlı bir avlunun güneyinde cami, doğusunda, kuzeydoğusunda ve kuzeybatısında medrese hücreleri, kuzeyinde şadırvan bulunan; caminin doğusunda Habib-i Neccar ve Aziz Pavlos türbelerinin yer aldığı külliye. Kitap onu tarihi, mimarisi ve süslemeleriyle Antakya'nın en seçkin yapılarından biri sayar; tarihini Ebu Ubeyde bin Cerrah'a (M.S. 636) kadar götüren bilgi ise kesin değildir.",
+    "en": "A complex in Antakya with a mosque to the south of a trapezoidal courtyard, madrasa cells to the east, northeast and northwest, a shadirvan to the north, and the tombs of Habib-i Neccar and St. Paul east of the mosque. The book counts it among Antakya's most distinguished buildings; the claim that its history goes back to Abu Ubeyde bin Jarrah (636) is not certain."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Habib-i Neccar Camii; tarihi, mimarisi ve süslemeleri bakımından Antakya'daki tarihi binalar arasında en seçkin yere sahip eserlerden biridir. Antakya Salnameleri'nden edinilen bilgiler caminin tarihini Ebu Ubeyde bin Cerrah'a kadar götürmektedir; onun inşa ettirdiği varsayılan eserden herhangi bir buluntu kalmamıştır. Cami, boyut, şöhret ve tarih olarak Ulu Cami'nin çağdaşıdır; diğer bir çağdaşı Şeyh Ali Camii'dir. Mevcut en eski kitabe, şehri 1268'de Moğol hâkimiyetinden kurtaran Memlük sultanı Baybars'ın 'El-Melikü'z Zâhir' unvanını taşır. Külliyenin birçok kez onarım gördüğü, son onarımının halkın yardımlarıyla yapıldığı kitabelerden ve arşiv vesikalarından anlaşılmaktadır. Cami 1474'te Memlükler, 1721, 1858 ve 1863'te Osmanlılar döneminde tamir ve tadilat görmüştür.",
+        "en": "Habib-i Neccar Mosque is one of the most distinguished historical buildings of Antakya in history, architecture and decoration. The Antakya Almanacs trace its history back to Abu Ubeyde bin Jarrah; nothing remains of the work he supposedly built. The mosque is contemporary of the Great Mosque in size, fame and history; another contemporary is the Sheikh Ali Mosque. Its oldest existing inscription bears the title 'El-Meliku'z Zahir' of the Mamluk Sultan Baybars, who liberated the city from Mongol rule in 1268. The inscriptions and archive documents show the complex was repaired many times, the last with the help of the people. It was repaired and altered under the Mamluks in 1474 and the Ottomans in 1721, 1858 and 1863."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "59-61"
+        }
+      ],
+      "order": 1
+    },
+    {
+      "id": "adlandirma",
+      "title": {
+        "tr": "Adın kaynağı",
+        "en": "Origin of the name"
+      },
+      "body": {
+        "tr": "Camiye ismini veren Habib-i Neccar'ın, Yâsin Suresi'nin 13-29. ayetlerinde anlatılan kıssadaki 'halkı imana davet eden elçilerden biri olduğu' ve olayın Antakya'da geçtiği düşünüldüğü için Müslümanların buraya bir cami inşa etmiş olması ihtimali akla uygun gelmektedir. Kitap ayrıca, onun adına Hıristiyanlar tarafından yapılan bir mabedin Müslümanlar tarafından ihya edildiğini belirtir.",
+        "en": "Since Habib-i Neccar is thought to be 'one of the envoys who invited the people to faith' in verses 13-29 of Surah Yasin, and the event is thought to have taken place in Antakya, it seems plausible that Muslims built a mosque here. The book also says a temple built by Christians in his name was revived by Muslims."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ],
+      "order": 2
+    },
+    {
+      "id": "plan",
+      "title": {
+        "tr": "Külliyenin planı",
+        "en": "Layout of the complex"
+      },
+      "body": {
+        "tr": "Külliye bugün cami, medrese, şadırvan ile Habib-i Neccar ve Saint Pavlos türbelerinden oluşur. Yamuk planlı avlunun güneyine cami, doğusuna, kuzeydoğusuna ve kuzeybatısına medrese odaları, kuzeyine şadırvan yerleştirilmiştir. Türbeler caminin doğu tarafındadır.",
+        "en": "Today the complex consists of a mosque, a madrasa, a shadirvan, and the tombs of Habib-i Neccar and Saint Paul. The mosque is in the south of the trapezoidal courtyard, the madrasa rooms in the east, northeast and northwest, and the shadirvan in the north. The tombs are on the east side of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ],
+      "order": 3
+    }
+  ],
+  "legends": [
+    {
+      "id": "habib-i-neccar-inanci",
+      "title": {
+        "tr": "Habib-i Neccar: ilk inanan ve şehit",
+        "en": "Habib-i Neccar: first believer and martyr"
+      },
+      "body": {
+        "tr": "Kitaba göre Habib-i Neccar, Hz. İsa'nın havarilerine inanan ilk kişidir; bir inanç abidesi ve Yâsin Suresi'nde övülmüş bir şehittir. Mezarının caminin içinde bulunduğu aktarılır.",
+        "en": "According to the book, Habib-i Neccar was the first person to believe in the Apostles of Jesus, a monument of faith and a martyr praised in Surah Yasin. His tomb is said to be inside the mosque."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "59"
+        }
+      ]
+    },
+    {
+      "id": "havarilerin-mezarlari",
+      "title": {
+        "tr": "Elçilerin mezarları",
+        "en": "Tombs of the envoys"
+      },
+      "body": {
+        "tr": "Çok tanrılı dönemde Roma halkının Allah'a iman etmesi için Antakya'ya Hz. İsa tarafından elçiler gönderildiği, elçiler Yuhanna, Pavlos ve Şem'un Safa'nın mezarlarının da cami içinde yer aldığına inanıldığı belirtilir.",
+        "en": "In the polytheistic period envoys were sent to Antakya by Jesus; it is believed that the tombs of the envoys John, Paul and Shem'un Safa are also inside the mosque."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "59"
+        }
+      ]
+    }
+  ],
+  "facts": [],
+  "people": [
+    {
+      "name": "Habib-i Neccar",
+      "role": {
+        "tr": "Caminin adını aldığı dinî şahsiyet; Yâsin Suresi'ndeki kıssada anılan elçilerden biri olduğu düşünülür",
+        "en": "Religious figure after whom the mosque is named"
+      }
+    },
+    {
+      "name": "Ebu Ubeyde bin Cerrah",
+      "role": {
+        "tr": "Rivayete göre camiyi M.S. 636'da inşa ettiren komutan",
+        "en": "Commander said to have had the mosque built in 636"
+      }
+    },
+    {
+      "name": "Baybars",
+      "role": {
+        "tr": "Mevcut en eski kitabede unvanı geçen Memlük sultanı",
+        "en": "Mamluk sultan whose title appears in the oldest existing inscription"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Habib-i Neccar Külliyesi, trapez planlı bir avlunun çevresinde toplanmıştır. Avlunun güneyinde yüksek kubbeli cami ve önünde altı gözlü son cemaat yeri yer alır. Doğuda, kuzeydoğuda ve kuzeybatıda medrese hücreleri, kuzeyde şadırvan bulunur. Caminin doğu yanında Habib-i Neccar Türbesi, külliyenin doğu girişinin hemen güneyinde Aziz Pavlos Türbesi vardır.",
+      "en": "The complex is gathered around a trapezoidal courtyard. The high-domed mosque with a six-bay narthex stands on the south side. Madrasa cells lie to the east, northeast and northwest, and the shadirvan to the north. The Habib-i Neccar Tomb is east of the mosque, and the Tomb of St. Paul is just south of the complex's eastern entrance."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Habib-i Neccar Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p029-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "56-57"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Habib-i Neccar Camii ve minaresi, sokaktan",
+        "en": "Habib-i Neccar Mosque and its minaret from the street"
+      },
+      "alt": {
+        "tr": "Köşeden görülen kesme taş, dikdörtgen bir cami; uzun duvarlarda kemerli pencereler, sağda ince ahşap şerefeli yüksek taş minare; önde alçak taştan bir ek yapı, arkada ahşap çıkmalı bir ev; mavi, bulutlu gökyüzü.",
+        "en": "A rectangular cut-stone mosque seen from its corner; arched windows along the long walls, a tall stone minaret with a narrow wooden balcony on the right; a low stone annex in front and a house with a wooden bay window behind; blue, cloudy sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p030-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "58"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Külliye avlusu, kubbe ve revaklar",
+        "en": "The complex courtyard with the dome and porticoes"
+      },
+      "alt": {
+        "tr": "Taş döşeli avlunun ortasında yeşil bir ağaç; solda kemerli revaklar ve kurşun kaplı bir kubbe, arkada kiremit çatılı iki katlı evler; masmavi gökyüzü.",
+        "en": "A green tree in the middle of a stone-paved courtyard; arched porticoes and a lead-covered dome on the left, two-storey tiled-roof houses behind; deep blue sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "drawing",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p028-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "54"
+      },
+      "subject": "engraving",
+      "caption": {
+        "tr": "Bölüm açılışındaki eski gravür",
+        "en": "Old engraving from the chapter opening"
+      },
+      "alt": {
+        "tr": "Sepya tonlu gravür: önde taş bir köprü ve keçileriyle çobanlar, ortada nehir ve ağaçlık bir kıyı, arkada sisli dağ sıraları.",
+        "en": "Sepia engraving: a stone bridge with shepherds and goats in front, a river and a wooded bank in the middle, misty mountain ranges behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

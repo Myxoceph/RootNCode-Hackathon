@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-seyh-hasan-mekzun-el-sincari-makami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Şeyh Hasan Sincari’nin kimliği, yapım tarihi ve banî kitapta yok; sandukada kimlik kaydı bulunmadığı belirtiliyor.",
+      "Müştemilatın engelli bölümü kitapta anılıyor; erişilebilirlik alanları yine de 'unknown' bırakıldı, sahada doğrulanmalı.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlık 'Şeyh Hasan Mekzun el-Sincari', metin 'Şeyh Hasan Sincari' diyor; ad biçimi tutarsız."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Hasan Mekzun el-Sincari Makamı",
+    "en": "Maqam of Sheikh Hasan Mekzun al-Sincari"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Şeyh Hasan Sincari Türbesi",
+      "en": "Sheikh Hasan Sincari Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "makam",
+    "ziyaretgâh",
+    "Serinyol",
+    "şifalı su",
+    "çeşme",
+    "betonarme"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": "Serinyol",
+    "address": "Serinyol, 594 ada 1 parsel (bölüm özeti)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "434"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya Serinyol’da, bakımlı ve sade görünümlü betonarme bir türbe ile iki katlı müştemilattan oluşan ziyaretgâh. Yanındaki şifalı su havuzunun her türlü ağrıya iyi geldiği rivayet edilir.",
+    "en": "A visiting site in Serinyol, Antakya, made up of a well-kept, plain reinforced-concrete tomb and a two-storey outbuilding. The healing-water pool beside it is rumored to cure all kinds of pain."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Kare planlı betonarme türbe bakımlı ve sadedir. Giriş cephesi beyaz seramik kaplı, diğer cepheler beyaz boyalıdır. Sacdan yapılmış geniş saçaklı yapının üzerinde yuvarlak bir kubbe bulunur. Üç cephede birer pencere, giriş yönünde kemerli açıklıklı bir kapı vardır. Ortadaki sanduka mermer kaplıdır; üzerinde türbe sahibine dair bilgi yoktur.",
+        "en": "The square-plan reinforced-concrete tomb is well kept and plain. The entrance façade is clad in white ceramic and the others are painted white. A round dome sits on a wide-eaved roof made of sheet metal. Three façades have one window each and the entrance has an arched door opening. The sarcophagus in the middle is marble-covered, with no information about the tomb’s owner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "434"
+        }
+      ]
+    },
+    {
+      "id": "avlu",
+      "order": 2,
+      "title": {
+        "tr": "Avlu ve müştemilat",
+        "en": "Courtyard and outbuilding"
+      },
+      "body": {
+        "tr": "Müştemilatın yol cephesinde mermer kaplı bir çeşme vardır. Girişe yeşil demir kapının önündeki mermer kaplı merdivenlerle ulaşılır; avlunun döşemesi seramiktir. Türbenin yakınındaki iki katlı müştemilat kadın, erkek ve engelli bölümlerine ayrılmış olup ibadet ve toplantı mekânı olarak kullanılır.",
+        "en": "The outbuilding’s road side has a marble-covered fountain. Entry is by marble-covered stairs in front of a green iron gate; the courtyard floor is ceramic. The two-storey outbuilding near the tomb, divided into sections for men, women and the disabled, is used for worship and meetings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "434"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "sifali-su",
+      "title": {
+        "tr": "Şifalı su havuzu",
+        "en": "Healing-water pool"
+      },
+      "body": {
+        "tr": "Türbenin yanındaki şifalı su havuzunun her türlü ağrıya karşı iyileştirici gücü olduğu rivayet edilir.",
+        "en": "The healing-water pool next to the tomb is rumored to have healing power against all kinds of pain."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "434"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Material"
+      },
+      "value": "Betonarme",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "434"
+        }
+      ]
+    },
+    {
+      "key": "mustemilat_kat",
+      "label": {
+        "tr": "Müştemilat kat sayısı",
+        "en": "Outbuilding storeys"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "434"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Hasan Sincari",
+      "role": {
+        "tr": "Yapının sahibi (adı başlıkta 'Mekzun el-Sincari')",
+        "en": "Owner of the site (titled 'Mekzun al-Sincari')"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ziyaretgâh, yeşil demir kapıdan mermer kaplı merdivenlerle girilen bir avludadır. Kare planlı betonarme türbenin giriş cephesi beyaz seramik kaplıdır; üzerinde sac çatılı yuvarlak bir kubbe vardır. İçinde mermer kaplı bir sanduka bulunur. Yakında kadın, erkek ve engelli bölümleri olan iki katlı bir yapı ve bir su havuzu yer alır.",
+      "en": "The site lies in a courtyard entered by marble-covered stairs through a green iron gate. The square-plan reinforced-concrete tomb has a white ceramic-clad entrance façade and a round dome on a sheet-metal roof. A marble-covered sarcophagus is inside. Nearby are a two-storey building with sections for men, women and the disabled, and a water pool."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

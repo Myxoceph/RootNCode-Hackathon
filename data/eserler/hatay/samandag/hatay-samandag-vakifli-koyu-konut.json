@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-samandag-vakifli-koyu-konut",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Eski Evler ve Konaklar",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Samandağ Vakıflı Köyü Konut bölümünden (s. 480-481) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı yalnızca '1915'ten sonra' olarak veriliyor; kesin yıl bulunamadı.",
+      "Evin hangi yoldan vakfa geçtiği ve vakıf adı kaynakta yok.",
+      "Güncel kullanımı ('hizmete girdi') ne amaçla olduğu kaynakta belirtilmiyor.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location",
+        "note": "Eserin kendi metni 'Vakıflı Köyü' diyor; bölüm özeti sayfası ise 'SAMANDAĞ YOĞUNOLUK 80 PARSEL' yazıyor. Yoğunoluk, Samandağ'da başka bir köy/mahalle adı olduğundan konum belirsiz; iki ifade de adreste tutuldu."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metinde üst kattaki 'samanlık' İngilizce çeviride 'barn' olarak geçiyor; Türkçe değer (samanlık) korundu."
+      },
+      {
+        "field": "dating",
+        "note": "Metin hem '20. yüzyılın ilk yıllarına tarihli' hem de '1915 yılından sonra yaptırıldığı' diyor; iki ifade tam örtüşmüyor, kaynaktaki değerler korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Samandağ Vakıflı Köyü Konut",
+    "en": "Samandağ Vakıflı Village Home"
+  },
+  "subtitle": {
+    "tr": "Vakıflı Köyü'nde, 1915'ten sonra Tomas Antepyan'ın yaptırdığı iki katlı taş vakıf konutu",
+    "en": "A two-storey stone foundation house in Vakıflı Village built by Tomas Antepyan after 1915"
+  },
+  "alternate_names": [],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "konut",
+    "Samandağ",
+    "Vakıflı Köyü",
+    "taş ev",
+    "vakıf konutu"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Samandağ",
+    "neighborhood": null,
+    "address": "Samandağ, Vakıflı Köyü (ilçenin doğusunda); bölüm özetinde: Yoğunoluk, 80 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "481"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1915'ten sonra (20. yüzyılın ilk yılları)",
+      "en": "After 1915 (early 20th century)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap 'Tomas Antepyan tarafından 1915 yılından sonra yaptırıldığı bilinmektedir' diyor; kesin yıl yok. 1929 Fransız kadastro paftasında görünüyor.",
+      "en": "The book says it is known to have been built by Tomas Antepyan after 1915; no exact year. It appears on the 1929 French cadastral maps."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "481"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Tomas Antepyan",
+    "role": "banî (Antepyan ailesi eşrafından)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "481"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "555 m² bahçeli, iki katlı, kaba yonu ve moloz taşla örülü vakıf konutu, Antepyan ailesi eşrafından Tomas Antepyan tarafından 1915'ten sonra yaptırıldığı bilinmektedir. 2013'te Vakıflar Genel Müdürlüğü tarafından restore edilerek hizmete girmiştir.",
+    "en": "A two-storey foundation residence with a 555 m² garden, built of rough-cut and rubble stone. It is known to have been built by Tomas Antepyan of the Antepyan family after 1915 and was restored and put into service by the General Directorate of Foundations in 2013."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Samandağ ilçesinin doğusundaki Vakıflı Köyü'nde, 555 m² sahalı bahçeli vakıf konutudur. 20. yüzyılın ilk yıllarına tarihlenen ev iki katlıdır. Duvarlar kaba yonu ve moloz taşla, harç olarak toprak kullanılarak örülmüştür; duvar kalınlıkları 50-60 cm'dir. Çatı ahşap beşik çatıdır. Alt katta 2 oda, 1 mutfak ve 1 ahır; merdivenle çıkılan üst katta 2 oda ve 1 samanlık vardır. Alt katın alanı 93,15 m²'dir, zemini şap, tavanı ahşaptır. Taş yapıda küçük delikler halinde açılan pencerelerin üzerinde ahşap hatıllar bulunur ve pencerelerin dışa açılan ahşap kapakları vardır.",
+        "en": "A foundation residence with a 555 m² garden in Vakıflı Village east of Samandağ. Dated to the early 20th century, the house has two floors. Walls are rough-cut and rubble stone with soil mortar, 50-60 cm thick. The roof is a wooden saddle roof. The lower floor has 2 rooms, a kitchen and a barn; the upper floor, reached by stairs, has 2 rooms and a hayloft. The lower floor is 93.15 m², with screed floor and wooden ceiling. Small windows have wooden lintels above and outward-opening wooden shutters."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Konutun Antepyan ailesi eşrafından Tomas Antepyan tarafından 1915 yılından sonra yaptırıldığı bilinmektedir. 1929 tarihli Fransız kadastro paftalarında konutun izleri yer alır. 2013 yılında Vakıflar Genel Müdürlüğü tarafından restore edilerek hizmete girmiştir.",
+        "en": "The house is known to have been built by Tomas Antepyan of the Antepyan notables after 1915. Traces of it appear on the French cadastral maps of 1929. It was restored and put into service by the General Directorate of Foundations in 2013."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "481"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "bahce_alani",
+      "label": {
+        "tr": "Bahçeli arsa alanı",
+        "en": "Garden plot area"
+      },
+      "value": 555,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "key": "alt_kat_alani",
+      "label": {
+        "tr": "Alt kat alanı",
+        "en": "Lower floor area"
+      },
+      "value": 93.15,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": "50-60",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Storeys"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "481"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Tomas Antepyan",
+      "role": {
+        "tr": "Antepyan ailesi eşrafından; konutu yaptıran",
+        "en": "Of the Antepyan notables; builder of the house"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "pafta-1929",
+      "year": 1929,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Fransız kadastro paftalarında konutun izleri yer alıyor",
+        "en": "Traces of the house appear on French cadastral maps"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından restore edilip hizmete girdi",
+        "en": "Restored by the General Directorate of Foundations and put into service"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "481"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Samandağ Vakıflı Köyü Konutu, ilçenin doğusundaki Vakıflı Köyü'nde, bahçeli iki katlı bir taş evdir. Kaba yonu ve moloz taştan, toprak harçla örülmüş 50-60 santimetre kalınlığındaki duvarlar üzerine ahşap beşik çatı oturur. Alt katta iki oda, mutfak ve ahır; üst katta iki oda ve samanlık vardır. Küçük pencerelerin üzerinde ahşap hatıllar ve dışa açılan ahşap kapaklar bulunur.",
+      "en": "Samandağ Vakıflı Village Home is a two-storey stone house with a garden in Vakıflı Village, east of the district. Walls of rough-cut and rubble stone with earth mortar, 50-60 centimetres thick, carry a wooden saddle roof. The lower floor has two rooms, a kitchen and a barn; the upper floor has two rooms and a hayloft. Small windows have wooden lintels above and outward-opening wooden shutters."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 481) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

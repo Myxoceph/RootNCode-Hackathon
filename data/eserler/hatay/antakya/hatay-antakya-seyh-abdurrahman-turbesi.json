@@ -1,0 +1,247 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-seyh-abdurrahman-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Türbenin yapım tarihi, banîsi ve vakıf bilgisi kitapta yok.",
+      "Kapı kitabesindeki 'İbn-i Neccar' adının Habib-i Neccar ile bir ilgisi olup olmadığı kitapta belirtilmiyor; ilişki yazılmadı.",
+      "Kitap metni 'mescit' ve 'türbe' sözcüklerini birlikte kullanıyor; yapının işlevi (mescit/türbe) netleştirilmeli.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şeyh Abdurrahman Türbesi",
+    "en": "Sheikh Abdurrahman Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "antakya",
+    "mezarlık avlu",
+    "Şeyh Abdurrahman İbn-i Neccar"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka 2052 parsel; Bağyolu Sokak ile Barbaros Sokağı’nın kesiştiği köşe",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "404"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya merkezde, Bağyolu ve Barbaros sokaklarının kesiştiği köşede, yüksek taş duvarlı bir avluda yer alan türbe. Kapısındaki kitabeden Şeyh Abdurrahman İbn-i Neccar’a ait olduğu anlaşılır; avluda on dört mezar bulunur.",
+    "en": "A tomb in a high stone-walled courtyard at the corner of Bağyolu and Barbaros streets in central Antakya. The door inscription shows it belongs to Sheikh Abdurrahman Ibn-i Neccar; the courtyard holds fourteen graves."
+  },
+  "sections": [
+    {
+      "id": "yerlesim",
+      "order": 1,
+      "title": {
+        "tr": "Yerleşim ve avlu",
+        "en": "Setting and courtyard"
+      },
+      "body": {
+        "tr": "Mescit, 4. mıntıka 2052 parsel üzerindedir; yerleşkenin kuzeybatı ucundaki türbe, binasından ve mezarlardan oluşur. Türbeye kuzeydoğudaki merdivenlerle çıkılır ve üç tarafı yüksek taş duvarlarla çevrilidir. Avlunun sağında ve solunda taş kaplamalı, işlenmiş on dört mezar vardır. Müştemilat, avlunun doğusunda arka köşedeki basit bir yapıdır.",
+        "en": "The mosque stands on 4th District plot 2052; the tomb at the northwest end of the site consists of a building and graves. It is reached by stairs on the northeast and is enclosed on three sides by high stone walls. Fourteen carved, stone-covered graves lie to the right and left of the courtyard. The outbuilding is a simple structure in the rear east corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "404"
+        }
+      ]
+    },
+    {
+      "id": "turbe-yapisi",
+      "order": 2,
+      "title": {
+        "tr": "Türbe yapısı",
+        "en": "The tomb building"
+      },
+      "body": {
+        "tr": "Avlunun güneybatısındaki türbede üç mezar bulunur. Taş platform üzerindeki mermer sandukanın baş ve ayak ucu taşları hafif süslemelidir; mezarlardan ikisinin baş taşı kavuk biçimindedir.",
+        "en": "In the southwest of the courtyard is a tomb with three graves. The head and foot stones of the marble sarcophagus on a stone platform are lightly decorated; two of the headstones are turban-shaped."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "404"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "mezar_sayisi",
+      "label": {
+        "tr": "Avludaki mezar sayısı",
+        "en": "Graves in the courtyard"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "404"
+        }
+      ]
+    },
+    {
+      "key": "turbe_ici_mezar",
+      "label": {
+        "tr": "Türbedeki mezar sayısı",
+        "en": "Graves inside the tomb"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "404"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Abdurrahman İbn-i Neccar",
+      "role": {
+        "tr": "Türbenin sahibi (kapı kitabesine göre)",
+        "en": "Owner of the tomb (per door inscription)"
+      }
+    },
+    {
+      "name": "Muhammed el-Rubari",
+      "role": {
+        "tr": "Şeyh Ali oğlu; H.1354 tarihli mezar sahibi",
+        "en": "Son of Sheikh Ali; grave dated 1354 H"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-kapi-kitabesi",
+      "location": {
+        "tr": "Türbe kapısının üzerinde",
+        "en": "Above the tomb door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "note": {
+        "tr": "Kitabın metni verilmiyor; yalnızca türbenin Şeyh Abdurrahman İbn-i Neccar’a ait olduğunun bu kitabeden anlaşıldığı söyleniyor. Dil ve yazı kitapta belirtilmiyor.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "404"
+        }
+      ]
+    },
+    {
+      "id": "rubari-mezar-kitabesi",
+      "location": {
+        "tr": "Girişin solunda, cephe duvarına bitişik beş mezardan birinde",
+        "en": "On one of the five graves beside the façade wall, left of the entrance"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "note": {
+        "tr": "Şeyh Ali oğlu Muhammed el-Rubari’ye ait mezar; metin kitapta verilmiyor, yalnızca H.1354 (M.1935) tarihli olduğu belirtiliyor. Mezar kitabelerinin büyük bölümü aşınmıştır.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "404"
+        }
+      ],
+      "date": {
+        "hijri_year": 1354,
+        "gregorian": "1935"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "rubari-mezari-1935",
+      "year": 1935,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Muhammed el-Rubari mezarının tarihi (H.1354)",
+        "en": "Date of Muhammed el-Rubari’s grave (1354 H)"
+      },
+      "note": {
+        "tr": "Bu tarih mezar taşına aittir, türbenin yapım tarihi değildir.",
+        "en": "This is the date of the headstone, not of the tomb’s construction."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "404"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, yüksek taş duvarlarla çevrili bir avlunun güneybatısındadır; avluya kuzeydoğudaki merdivenlerle girilir. Avluda taş kaplamalı on dört mezar vardır. Türbenin içinde üç mezar ve taş platform üzerinde mermer bir sanduka bulunur; baş taşlarından ikisi kavuk biçimindedir.",
+      "en": "The tomb stands in the southwest of a courtyard enclosed by high stone walls, entered by stairs on the northeast. The courtyard has fourteen stone-covered graves. Inside the tomb are three graves and a marble sarcophagus on a stone platform; two headstones are turban-shaped."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

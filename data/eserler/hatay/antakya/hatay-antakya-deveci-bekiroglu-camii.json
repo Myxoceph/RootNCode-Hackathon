@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-deveci-bekiroglu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Deveci Bekiroğlu Camii bölümünden (s. 225) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi, banî, mimar ve vakıf bilgisi kaynakta yok; era null bırakıldı.",
+      "Metin çok kısa: plan, harim, minare, pencere ve mihrap tarifi kaynakta yok.",
+      "Nişteki kitabenin metni, dili ve tarihi kaynakta verilmiyor; sahada okunmalı.",
+      "Çeşmenin yapım tarihi ve adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Deveci Bekiroğlu Camii",
+    "en": "Deveci Bekiroğlu Mosque"
+  },
+  "subtitle": {
+    "tr": "Kesme taştan, kurnalı kemerli nişi ve tarihî çeşmesi olan küçük cami",
+    "en": "A small cut-stone mosque with an arched niche holding a basin and a historic fountain"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "kesme taş",
+    "kurna",
+    "çeşme",
+    "tescilli"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": "İplik Pazarı",
+    "address": "İplik Pazarı Mahallesi, Gökşen Sokak, 1485 Parsel (4. Mıntıka)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "225"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "İplik Pazarı Mahallesi'nde Gökşen Sokak'taki 1485 numaralı parselde bulunan, kesme taştan yapılmış camidir. Kemerli bir nişinin içinde kurna ve kitabe vardır; duvarına düzgün kesme taştan tarihî bir çeşme yerleştirilmiştir. 15.11.1985 tarihli 1558 sayılı kurul kararıyla tescil edilmiştir.",
+    "en": "A cut-stone mosque on plot 1485 on Gökşen Street in the İplik Pazarı neighbourhood. An arched niche holds a basin and an inscription, and a historic fountain of smooth cut stones is set into its wall. It was registered by Board decision no. 1558 of 15 November 1985."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapı",
+        "en": "Location and Structure"
+      },
+      "body": {
+        "tr": "İplik Pazarı Mahallesi, Gökşen Sokak, 1485 numaralı parsel üzerinde bulunan cami kesme taştan yapılmıştır. Kemerli bir nişi vardır ve nişin iç kısmında bir kurna ile kitabe bulunmaktadır. Niş kemerinin başladığı yerde taştan kornişler yapılmıştır; üst kısımda ahşaptan bir sundurma vardır. Cami duvarına yerleştirilmiş düzgün kesme taşlardan yapılmış tarihî bir çeşme de mevcuttur.",
+        "en": "The mosque, on plot 1485 on Gökşen Street in the İplik Pazarı neighbourhood, is built of cut stone. It has an arched niche with a basin and an inscription inside. Stone cornices are made where the niche arch begins, and there is a wooden porch above. A historic fountain of smooth cut stones is also set into the mosque wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    },
+    {
+      "id": "tescil",
+      "order": 2,
+      "title": {
+        "tr": "Koruma Altına Alınması",
+        "en": "Registration"
+      },
+      "body": {
+        "tr": "Cami, Kültür ve Tabiat Varlıklarını Koruma Kurulu'nun 15.11.1985 tarihinde aldığı 1558 sayılı kararla tescil edilerek korumaya alınmıştır.",
+        "en": "The mosque was registered and placed under protection by decision no. 1558 of the Cultural and Natural Heritage Preservation Board dated 15 November 1985."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Kesme taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    },
+    {
+      "key": "parsel",
+      "label": {
+        "tr": "Parsel",
+        "en": "Plot"
+      },
+      "value": "1485",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    },
+    {
+      "key": "tescil_karari",
+      "label": {
+        "tr": "Tescil kararı",
+        "en": "Registration decision"
+      },
+      "value": "KTVKK, 15.11.1985, karar no. 1558",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "nis-kitabesi",
+      "location": {
+        "tr": "Kemerli niş içi, kurnanın yanında",
+        "en": "Inside the arched niche, with the basin"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Metin, dil ve tarih kaynakta verilmiyor.",
+        "en": "Text, language and date are not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "tescil-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kültür ve Tabiat Varlıklarını Koruma Kurulu 1558 sayılı kararla tescil etti",
+        "en": "Registered by Cultural and Natural Heritage Preservation Board decision no. 1558"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kemerli-nis",
+      "title": {
+        "tr": "Kurnalı kemerli niş",
+        "en": "Arched niche with basin"
+      },
+      "hint": {
+        "tr": "Duvardaki niş içinde kurna ve kitabeyi arayın.",
+        "en": "Look for the basin and inscription inside the wall niche."
+      },
+      "section_id": "genel-bakis"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Deveci Bekiroğlu Camii kesme taştan yapılmış küçük bir camidir. Duvarında kemerli bir niş vardır; nişin içinde bir kurna ve bir kitabe bulunur. Niş kemerinin başladığı yerde taştan kornişler, üstte ise ahşap bir sundurma yer alır. Cami duvarına düzgün kesme taşlardan yapılmış tarihî bir çeşme yerleştirilmiştir.",
+      "en": "Deveci Bekiroğlu Mosque is a small mosque built of cut stone. Its wall has an arched niche holding a basin and an inscription. Stone cornices run where the niche arch begins, with a wooden porch above. A historic fountain of smooth cut stones is set into the mosque wall."
+    },
+    "audio_description_source": "Kitabın kısa yapı tarifinden (vk-hatay, s. 225) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

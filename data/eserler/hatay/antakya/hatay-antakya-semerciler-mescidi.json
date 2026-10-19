@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-semerciler-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Kesin yapım yılı ve hangi kaynaklara dayandığı kitapta belirtilmiyor; arşiv belgesiyle teyit edilmeli.",
+      "Uzun Çarşı ayrı bir eser olarak ids.md'de yok; urban_context ilişkisi yazılmadı.",
+      "Mahalle adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
+      "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Semerciler Mescidi",
+    "en": "Semerciler Masjid"
+  },
+  "subtitle": {
+    "tr": "Uzun Çarşı'daki semerciler sokağından adını alan, 1990'da restore edilmiş mescit",
+    "en": "A masjid named after the saddlers' street in the Long Bazaar, restored in 1990"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mescit",
+    "Uzun Çarşı",
+    "semerciler",
+    "eşkenar dörtgen plan",
+    "1990 restorasyonu"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "Uzun Çarşı'da semerci ustalarının sokağı; 5. Mıntıka, 197 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "389, 399"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Tarihi 1873'e uzandığı anlaşılıyor",
+      "en": "Understood to date back to 1873"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap 'çeşitli kaynaklardan tarihinin 1873 yılına kadar uzandığı anlaşılmaktadır' der; kesin yapım yılı verilmez, bu yüzden başlangıç ve bitiş yılı boş bırakıldı.",
+      "en": "The book says it is understood from various sources that its history goes back to 1873; no exact construction year is given, so start and end years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "389"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'da her meslek grubundan insanın kazanç kapısı olan Uzun Çarşı'daki semerci ustalarının sokağından adını alan mescit, ev ve iş yerleri arasına sıkışmıştır. Harimi hafif eğik eşkenar dörtgen planlıdır ve iki sivri kemerle iki sahına bölünür. Tarihi 1873'e uzandığı anlaşılan mescit, 1990'da Vakıflar Genel Müdürlüğü tarafından aslına uygun restore edilmiştir.",
+    "en": "The masjid takes its name from the street of saddlebag makers in the Long Bazaar, the source of income for people of every profession in Antakya, and is squeezed between houses and workplaces. Its sanctuary has a slightly slanted rhombus plan divided into two naves by two pointed arches. Its history is understood to go back to 1873, and it was restored faithfully to its original form in 1990 by the General Directorate of Foundations."
+  },
+  "sections": [
+    {
+      "id": "ad-ve-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Ad ve Tarihçe",
+        "en": "Name and History"
+      },
+      "body": {
+        "tr": "Mescit ismini, Antakya'da her meslek grubundan insanın kazanç kapısı olan Uzun Çarşı'da, semer yapan ustaların bulunduğu sokaktan almıştır. Mescit avlusuna kuzeyde ve batıda olmak üzere iki kapıdan girilir. Çeşitli kaynaklardan tarihinin 1873 yılına kadar uzandığı anlaşılmaktadır. Mescit, 1990 yılında Vakıflar Genel Müdürlüğü tarafından aslına uygun şekilde restore edilmiştir.",
+        "en": "The masjid took its name from the street where the saddlebag-making masters are located in the Long Bazaar, the source of income for people from every profession in Antakya. Its courtyard is entered through two doors, one in the north and one in the west. It is understood from various sources that its history dates back to 1873. The masjid was restored in accordance with its original form in 1990 by the General Directorate of Foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "389"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescidin kuzeyde, Uzun Çarşı'ya açılan kapısının hemen yanında minaresi bulunur. Minare yuvarlak şekilli kısa gövdeye sahip bir şerefe ve ahşap direkler üzerine şemsiye şeklinde oturtulmuş külahla örtülüdür. Ev ve iş yerleri arasına sıkışmış olan harim kısmının planı eşkenar dörtgen şeklinde, hafif eğiktir. Mescit, ortadaki bir sütun üzerine binen iki sivri kemerle kıbleye paralel iki sahına bölünmüştür. Kıble ve kuzey duvarlarına konulmuş dörder pencereyle aydınlatılır. Harim kapısı gibi mihrap da sadedir; mihrap nişinde ayrıca küçük bir pencere vardır.",
+        "en": "The masjid's minaret is in the north, right beside the door opening to the Long Bazaar. It has a balcony on a short round body and a cone set umbrella-like on wooden poles. The sanctuary, squeezed between houses and workplaces, has a rhombus-shaped, slightly slanted plan. The masjid is divided into two naves parallel to the qibla by two pointed arches on a central column. It is lit by four windows each on the qibla and north walls. Like the sanctuary door, the mihrab is plain, and there is a small window in the mihrab niche."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "389"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "nef_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "389"
+        }
+      ]
+    },
+    {
+      "key": "avlu_kapilari",
+      "label": {
+        "tr": "Avlu kapıları",
+        "en": "Courtyard doors"
+      },
+      "value": "Kuzeyde ve batıda birer kapı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "389"
+        }
+      ]
+    },
+    {
+      "key": "pencere",
+      "label": {
+        "tr": "Pencere (kıble ve kuzey duvarı)",
+        "en": "Windows (qibla and north walls)"
+      },
+      "value": "Her birinde dört",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "389"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon",
+      "label": {
+        "tr": "Son restorasyon",
+        "en": "Latest restoration"
+      },
+      "value": 1990,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "389"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-1990",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü aslına uygun restorasyonu",
+        "en": "Faithful restoration by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "389"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Semerciler Mescidi, Antakya'da Uzun Çarşı'nın semerci ustalarının sokağındadır. Avluya kuzeyden ve batıdan girilir. Kuzeydeki çarşı kapısının hemen yanında, kısa yuvarlak gövdeli, ahşap direkler üzerinde şemsiye külahlı şerefeli minare yükselir. Ev ve iş yerleri arasına sıkışan harim, hafif eğik bir eşkenar dörtgen biçimindedir ve ortadaki sütuna oturan iki sivri kemerle iki sahına ayrılır. Kıble ve kuzey duvarlarında dörder pencere vardır; mihrap sadedir ve nişinde küçük bir pencere bulunur.",
+      "en": "Semerciler Masjid is on the saddlers' street of the Long Bazaar in Antakya. The courtyard is entered from the north and the west. Right beside the bazaar door in the north rises the minaret, with a short round body and a balcony under an umbrella cone on wooden poles. The sanctuary, squeezed between houses and workplaces, is a slightly slanted rhombus divided into two naves by two pointed arches on a central column. The qibla and north walls each have four windows; the mihrab is plain and has a small window in its niche."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

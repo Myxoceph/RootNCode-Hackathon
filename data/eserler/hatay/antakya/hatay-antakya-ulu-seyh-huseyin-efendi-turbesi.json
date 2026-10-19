@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-ulu-seyh-huseyin-efendi-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Türbede yatan kişi hakkında kitapta bilgi yok."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şeyh Hüseyin Efendi Türbesi",
+    "en": "Sheikh Hussein Efendi Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-ulu-kulliyesi",
+  "era": null,
+  "tags": [
+    "türbe",
+    "antakya",
+    "ulu-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "91"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin güneyinde, içten çapraz tonozlu, dıştan kiremit kaplı kırma çatılı kare planlı taş türbe.",
+    "en": "A square stone tomb south of the mosque, cross-vaulted inside and covered with a tiled hipped roof."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Caminin güneyinde yer alan kare planlı, taş malzemeli türbe içten çapraz tonozla, dıştan sonradan yapılmış alaturka kiremit kaplı kırma çatıyla örtülüdür. Kapısı doğu cephesindedir.",
+        "en": "The tomb south of the mosque has a square plan and is built of stone; it is covered with a cross vault inside and a later hipped roof covered with traditional Turkish tiles outside. Its door is on the east side."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "91"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-ulu-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Ulu Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Ulu Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "76-77"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı taş türbe caminin güneyindedir. İçi çapraz tonozlu, dışı kiremit kaplı kırma çatılıdır. Kapısı doğu cephesindedir.",
+      "en": "A square stone tomb south of the mosque. It is cross-vaulted inside with a tiled hipped roof outside. Its door is on the east side."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Şeyh Hüseyin Efendi Türbesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

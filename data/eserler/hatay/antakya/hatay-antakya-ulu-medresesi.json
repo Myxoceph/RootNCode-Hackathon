@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-ulu-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Medresenin inşa tarihi ve banîsi kitapta yok.",
+      "Odaların işlevi ve eğitim bilgisi kitapta anlatılmıyor."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Ulu Camii Medresesi",
+    "en": "Ulu Mosque Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-ulu-kulliyesi",
+  "era": null,
+  "tags": [
+    "medrese",
+    "antakya",
+    "ulu-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "87"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Avlunun doğusunda iki, kuzeyinde yedi hücreden oluşan, farklı boyut ve biçimde medrese odaları.",
+    "en": "Madrasa rooms of different size and shape: two on the east and seven on the north of the courtyard."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Odalar ve yapım dönemi",
+        "en": "Rooms and building period"
+      },
+      "body": {
+        "tr": "Hepsi farklı boyut ve şekillerde olmak üzere avlunun doğusunda iki, kuzeyinde yedi medrese odası vardır. Minarenin ve avlunun doğusunda kalan odalar diğerlerinden farklı bir zaman diliminde yapılmıştır; bu odalar basık kemerlidir ve pencerelerle avluya açılır. Caminin kuzey duvarında dar kenarından bitişik iki hücre vardır; hücreler batıda basık kemerli bir kapı ve ikişer pencere dizisiyle, kuzeyde bir pencere ve kapı akslarındaki kaş kemerli pencerelerle avluya bakar.",
+        "en": "There are two madrasa rooms on the east and seven on the north of the courtyard, all of different size and shape. The rooms east of the minaret and courtyard were built in a different period; they have low arches and open to the courtyard with windows. On the north wall of the mosque two cells adjoin by their narrow side; they face the courtyard with a low-arched door and two rows of windows on the west and with eyebrow-arched windows on the door axes on the north."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "87"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "oda_dogu",
+      "label": {
+        "tr": "Doğudaki oda sayısı",
+        "en": "Rooms on the east"
+      },
+      "value": 2,
+      "unit": "oda",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "87"
+        }
+      ]
+    },
+    {
+      "key": "oda_kuzey",
+      "label": {
+        "tr": "Kuzeydeki oda sayısı",
+        "en": "Rooms on the north"
+      },
+      "value": 7,
+      "unit": "oda",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "87"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-ulu-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Ulu Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Ulu Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "76-77"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese odaları cami avlusunun doğusunda ve kuzeyinde sıralanır: doğuda iki, kuzeyde yedi oda. Odalar farklı boyut ve biçimdedir; doğudakiler basık kemerlidir ve pencerelerle avluya açılır.",
+      "en": "The madrasa rooms line the east and north of the mosque courtyard: two on the east and seven on the north, of differing sizes. The eastern rooms have low arches and open to the courtyard with windows."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Ulu Camii Medresesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}
