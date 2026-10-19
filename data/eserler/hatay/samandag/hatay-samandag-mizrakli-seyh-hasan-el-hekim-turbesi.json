@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-samandag-mizrakli-seyh-hasan-el-hekim-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Şeyh Hasan el-Hekim’in kimliği, yapım tarihi ve banî kitapta yok.",
+      "Kayıt s. 438-441 aralığında; s. 440-441 bölüm genelindeki türbe konum listesidir, bu esere özgü değildir.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Mızraklı Şeyh Hasan el-Hekim Türbesi",
+    "en": "Mızraklı Sheikh Hasan el-Hekim Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "ziyaretgâh",
+    "Mızraklı",
+    "Ziyara Mevkii",
+    "hazire"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Samandağ",
+    "neighborhood": "Mızraklı",
+    "address": "Mızraklı Köyü, Ziyara Mevkii, 465 parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "438"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Samandağ’ın Mızraklı Köyü, Ziyara Mevkii’nde yüksekçe bir tepede, klasik kare planlı, geniş saçaklı ve yuvarlak kubbeli türbe. Yakınında küçük bir hazire, iki katlı bir ibadet ve toplantı yapısı, su deposu ve odunluk vardır.",
+    "en": "A tomb on a high hill at Ziyara locality, Mızraklı Village, Samandağ, with a classical square plan, wide eaves and a round dome. Nearby are a small burial ground, a two-storey worship and meeting building, a water tank and a woodshed."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Klasik kare planlı, geniş saçaklı türbenin üzerinde yuvarlak bir kubbe vardır. Her cephede birer pencere bulunur; döşeme karo mozaik, duvarların bir kısmı seramik kaplıdır. Türbenin tam ortasındaki mermer kaplı sandukanın üzerinde herhangi bir kayıt yoktur. Yanında küçük bir hazire bulunur.",
+        "en": "The classical square-plan, wide-eaved tomb has a round dome. Each façade has a window; the floor is tile mosaic and some walls are ceramic-clad. The marble-covered sarcophagus in the middle has no record on it. A small burial ground lies beside it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "id": "cevre",
+      "order": 2,
+      "title": {
+        "tr": "Çevre yapıları",
+        "en": "Surrounding structures"
+      },
+      "body": {
+        "tr": "Türbenin yakınında ibadet ve toplantı için kullanılan iki katlı bir yapı ile kesim ve pişirme yerleri, su deposu ve odunluk bulunur.",
+        "en": "Near the tomb are a two-storey building used for worship and meetings, slaughtering and cooking places, a water tank and a woodshed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "438"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "438"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, yüksekçe bir tepede, kare planlı ve geniş saçaklıdır; üzerinde yuvarlak bir kubbe vardır. Her cephesinde bir pencere bulunur. Ortasında mermer kaplı bir sanduka, yanında küçük bir hazire yer alır.",
+      "en": "The tomb is square in plan with wide eaves, on a high hill, with a round dome above. Each façade has a window. A marble-covered sarcophagus stands in the middle, with a small burial ground beside it."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

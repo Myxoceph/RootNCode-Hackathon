@@ -1,0 +1,304 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-kursunlu-han",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – İş Yeri ve Diğerleri",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Kurşunlu Han bölümünden (s. 468-473) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir. Han, cami ve çeşme ayrı kayıtlarda verilmiştir.",
+    "todos": [
+      "Kurşunların söküldüğü tarih kaynakta yok (yalnızca 'muhtemelen 18.-19. yüzyıl').",
+      "Han için vakıf bilgisi kaynakta yok.",
+      "Mimar kaynakta yok.",
+      "Cafer Ağa'nın kimliği ('Dersaadet Kapı Ağası') ve kayıtların yeri kaynakta ayrıntılı verilmiyor; arşiv kaydı teyit edilmeli.",
+      "Kaynakta s. 471-472 sayfaları boştur (metin yok); İngilizce metin s. 473'tedir.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location",
+        "note": "Bölüm özeti sayfasının İngilizce sütunu (s. 476) Kurşunlu Inn için 'DISTRICT 5, PLOT 2479' yazıyor; bu Kurtuluş (Beysen) Hamamı'nın parseli. Türkçe özet ve ünite listesi '5. Mıntıka 260 Parsel' veriyor; Türkçe değer korundu."
+      },
+      {
+        "field": "founder",
+        "note": "Hanı bazı iddialara göre Sokullu'nun yaptırdığı söyleniyor ama destekleyen belge yok; 1660'ta Köprülü Mehmet Paşa'nın yaptırdığını iddia etmek de zor deniyor. Kitap, kurşun alımı ve imam ataması kayıtlarına dayanarak Dersaadet Kapı Ağası Cafer Ağa'yı ve 1569'u gösteriyor. Banî ve tarih 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kurşunlu Han",
+    "en": "Kurşunlu Inn"
+  },
+  "subtitle": {
+    "tr": "Camisi ve çeşmesiyle birlikte 1569'da yapıldığı düşünülen iki katlı şehir hanı",
+    "en": "A two-storey city inn, with its mosque and fountain, thought to date from 1569"
+  },
+  "alternate_names": [],
+  "type": "han",
+  "secondary_types": [
+    "kulliye"
+  ],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "han",
+    "Antakya",
+    "Kurşunlu",
+    "cami",
+    "çeşme",
+    "iki katlı"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "Antakya, 5. Mıntıka, 260 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "469"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1569 (kayıtlara göre)",
+      "en": "1569 (according to records)"
+    },
+    "start_year": 1569,
+    "end_year": 1569,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kurşun alımı ve imam ataması kayıtlarına dayanan kitabın sonucu; Sokullu ve 1660 Köprülü iddiaları belgesiz bulunuyor.",
+      "en": "The book's conclusion from records on procuring lead and appointing an imam; the Sokullu and 1660 Köprülü claims are undocumented."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "469"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Cafer Ağa (Dersaadet Kapı Ağası)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "469"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Han, cami ve çeşmeden oluşan topluluk düz bir alana kurulmuş, eklerle günümüze ulaşmıştır. İki katlı hanın avlusu etrafında odalar sıralanır; üç kapıdan girilir. Adını eskiden kurşun kaplı olmasından alır. Kitap, kayıtlara dayanarak Dersaadet Kapı Ağası Cafer Ağa'nın 1569'da yaptırdığını gösterir.",
+    "en": "The complex of inn, mosque and fountain was built on flat ground and reached today with additions. The two-storey inn has rooms around its courtyard and three doors. It takes its name from its former lead covering. Based on records, the book points to Dersaadet Kapı Ağası Cafer Ağa, 1569, as builder and date."
+  },
+  "sections": [
+    {
+      "id": "genel-ve-ad",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Adı",
+        "en": "Overview and Name"
+      },
+      "body": {
+        "tr": "Han, cami ve çeşmeden meydana gelen topluluk düz bir alana inşa edilmiş, çeşitli eklemeler ve düzenlemelerle günümüze ulaşmıştır. Cami hanın avlusunun güneydoğu köşesinde, çeşme hanın batı kenarının kuzey köşesindedir. Osmanlı döneminde kubbe ve çatılar çoğunlukla kurşunla kaplandığından birçok eser banisinin değil bu malzemenin adıyla anılır. Eskiden kurşun kaplı olduğu anlaşılan eserin kurşunları bilinmeyen bir tarihte (muhtemelen savaşların arttığı 18. ve 19. yüzyıllarda) cephane yapımı için sökülmüştür; yapı adını korumuştur. 1831-1834 tarihli Şer'i Mahkeme sicillerine göre han bir ara cephanelik olarak kullanılmıştır. Han gece gündüz işlek bir konumdadır ve kalabalık bir nüfusa ev sahipliği yapar.",
+        "en": "The complex of inn, mosque and fountain was built on a flat area and reached the present with various additions. The mosque is in the southeast corner of the courtyard and the fountain at the northern corner of the inn's western edge. In the Ottoman period domes and roofs were often covered with lead, so many works are named after this material rather than their patron. The lead was removed at an unknown date (probably in the 18th-19th centuries when wars increased) for ammunition, but the name stayed. The Sharia Court Records of 1831-1834 show the inn was used as an arsenal for a time. The inn is busy day and night and hosts a large population."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "469"
+        }
+      ]
+    },
+    {
+      "id": "banisi-ve-tarih",
+      "order": 2,
+      "title": {
+        "tr": "Banisi ve Yapım Tarihi",
+        "en": "Patron and Date"
+      },
+      "body": {
+        "tr": "Hanı bazı iddialara göre Sokullu bina ettirmiştir ancak bunu destekleyen belge yoktur. 1660'ta Köprülü Mehmet Paşa'nın yaptırdığını iddia etmek de zordur. Buna karşılık binaya kurşun alınması ve camiye imam atanmasıyla ilgili iki kayıt, hanın Dersaadet Kapı Ağası Cafer Ağa'nın eseri olduğunu ve 1569'da inşa edildiğini göstermektedir.",
+        "en": "According to some claims the inn was built by Sokullu, but no document supports this. It is also hard to claim that Köprülü Mehmet Pasha commissioned it in 1660. However, two records, about procuring lead for the building and appointing an imam to the mosque, show it to be the work of Dersaadet Kapı Ağası Cafer Ağa, built in 1569."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "469"
+        }
+      ]
+    },
+    {
+      "id": "han-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Han Yapısı",
+        "en": "The Inn"
+      },
+      "body": {
+        "tr": "İki katlı hana batı, kuzey ve güney yönlerine açılan üç kapıdan girilir. Alt kat sokaklara bakan dükkânlarla çevrilidir; avlu etrafında odalar sıralanır. Güney cephesinde sokağa sivri kemerli eyvan biçiminde açılan taç kapı, üst katta dikdörtgen çerçeveli pencereli odalar, ortada daha alçak basık kemerli pencereli odalar yer alır. Doğu kanattaki üç bölüm avluya birer kapı ve pencereyle açılır; bir muhdes bir özgün iki kapıdan girilen çapraz tonoz örtülü ahır kısmı sonradan bir duvarla kapatılmıştır. Avlunun ortasındaki üç oda avlu bütünlüğünü bozduğu için özgün halinde değildir. Güneybatıdaki merdiven belli bir yükseklikten sonra ikiye ayrılarak güney ve batıdaki odaların açıldığı sahanlığa, oradan ikinci kat revakına ulaştırır.",
+        "en": "The two-storey inn is entered through three doors to west, north and south. The lower floor is surrounded by shops facing the streets, with rooms around the courtyard. The south façade has a portal as a pointed-arched iwan opening to the street, rooms with rectangular-framed windows above and rooms with lower arched windows in the middle. Three sections in the east wing open to the courtyard with a door and window; a cross-vaulted barn entered through two doors (one renovated, one original) was later walled off. Three rooms built in the courtyard centre are not original as they damage its integrity. The southwest stairs split after a certain height, leading to a landing for the south and west rooms and from there to the second-floor portico."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "470, 473"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Storeys"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "470, 473"
+        }
+      ]
+    },
+    {
+      "key": "kapi_sayisi",
+      "label": {
+        "tr": "Han kapı sayısı",
+        "en": "Inn doors"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "470, 473"
+        }
+      ],
+      "note": {
+        "tr": "Batı, kuzey ve güney",
+        "en": "West, north and south"
+      }
+    },
+    {
+      "key": "orta_avlu_oda",
+      "label": {
+        "tr": "Avlu ortasındaki sonradan eklenmiş oda",
+        "en": "Later rooms in the courtyard centre"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "470, 473"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Cafer Ağa",
+      "role": {
+        "tr": "Dersaadet Kapı Ağası; kayıtlara göre hanın banisi",
+        "en": "Dersaadet Kapı Ağası; patron of the inn according to records"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1569",
+      "year": 1569,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kayıtlara göre Cafer Ağa tarafından inşa edildi",
+        "en": "Built by Cafer Ağa according to records"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "469"
+        }
+      ]
+    },
+    {
+      "id": "cephanelik-1831",
+      "year": 1831,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Şer'i Mahkeme sicillerine göre bir ara cephanelik olarak kullanıldı (sicil tarihi 1831-1834 arası)",
+        "en": "Used for a time as an arsenal according to Sharia Court records (records dated 1831-1834)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "469"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "tac-kapi",
+      "title": {
+        "tr": "Sivri kemerli eyvan biçimli taç kapı",
+        "en": "Pointed-arched iwan-shaped portal"
+      },
+      "hint": {
+        "tr": "Güney cephede sokağa açılan taç kapıya bakın.",
+        "en": "Look at the portal opening to the street on the south façade."
+      },
+      "section_id": "han-mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kurşunlu Han, Antakya'da iki katlı bir şehir hanıdır. Batı, kuzey ve güneyden üç kapıyla girilir. Alt kat sokaklara bakan dükkânlarla çevrilidir; odalar ortadaki avlunun çevresinde sıralanır. Güney cephede sokağa sivri kemerli bir eyvan biçiminde açılan taç kapı vardır. Güneydoğu köşede cami, kuzeybatı köşede çeşme bulunur. Eskiden kurşun kaplı olduğu için bu adı almıştır.",
+      "en": "Kurşunlu Inn is a two-storey city inn in Antakya. It has three doors, on the west, north and south. The lower floor is surrounded by shops facing the streets; rooms line the central courtyard. The south façade has a portal opening to the street as a pointed-arched iwan. The mosque is in the southeast corner and the fountain in the northwest. It takes its name from its former lead covering."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 469-470, 473) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
