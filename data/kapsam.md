@@ -37,11 +37,11 @@ Fotoğraflar 2023 depremlerinden önce çekilmiştir.
 
 | # | Bölüm | Kayıtlar | Basılı s. | Foto | Kim | Durum |
 |---|---|---|---|---|---|---|
-| 1–7 | Külliyeler ve Kervansaraylar | 7 eser + alt yapıları (Cami, Medrese, Şadırvan…) | 54–191 | 127 | | sırada |
-| 8–27 | Camiler ve Mescitler (1. yarı: Ali Çavuş → Rıfat Ağa) | 20 | 194–309 | 100 | | sırada |
+| 1–7 | Külliyeler ve Kervansaraylar | 7 eser + alt yapıları; #1 Habib-i Neccar yazıldı (6 kayıt, fotoğraflı), #2–7 sırada | 54–191 | 127 | Ahmet (ajan) | #1 draft, #2–7 sırada |
+| 8–27 | Camiler ve Mescitler (1. yarı: Ali Çavuş → Rıfat Ağa) | 20; #8 Ali Çavuş yazıldı (fotoğraflı) | 194–309 | 100 | Ahmet (ajan) | #8 draft, #9–27 sırada |
 | 28–46 | Camiler ve Mescitler (2. yarı: Sarımiye → Kaptan Paşa Minaresi) | 19 | 310–401 | 84 | | sırada |
-| 47–63 | Türbeler / Ziyaretler | 17 (eser başına 1 sayfa) | 404–441 | 18 | | sırada |
-| 64–78 | Kiliseler, İş Yeri ve Diğerleri, Eski Evler ve Konaklar | 14 (#69 eser değil: ticari iş yerleri listesi) | 444–487 | 20 | | sırada |
+| 47–63 | Türbeler / Ziyaretler | 17 (eser başına 1 sayfa) | 404–441 | 18 | Ahmet (ajan) | draft (fotoğraf eklenmedi) |
+| 64–78 | Kiliseler, İş Yeri ve Diğerleri, Eski Evler ve Konaklar | 14 kayıt + Kurşunlu Han'ın 2 alt yapısı (#69 eser değil: ticari iş yerleri listesi) | 444–487 | 20 | Ahmet (ajan) | draft (fotoğraf eklenmedi) |
 
 ### Cilt 2: Yıldırım (`vk-bursa-c2`)
 
