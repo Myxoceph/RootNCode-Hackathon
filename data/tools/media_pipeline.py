@@ -7,7 +7,8 @@ Kullanım:
     python3 data/tools/media_pipeline.py bursa-osmangazi-ulucami
 
 Her media[] / archive_media[] kaydı için:
-  1. Orijinali kaynaktan (Google Drive) indirir → data/build/cache/ (tekrar indirmez)
+  1. Orijinali kaynaktan alır: Google Drive (data/build/cache/ altına bir kez indirir) ya da
+     yerel dosya (`provider: "local"`, depo köküne göre `path`; ör. hatay_book.py çıktısı)
   2. sha256 hesaplar (içerik kimliği; aynı dosya iki kez yüklenmez)
   3. EXIF yönünü uygular, boyutları ve EXIF'teki çekim tarihi + GPS'i okur
   4. 480 / 1280 / 2560 px genişlikte WebP + JPEG sürümler üretir (büyütmez),
@@ -53,6 +54,14 @@ except ImportError:
 
 
 def download(source):
+    if source["provider"] == "local":
+        # Depo köküne göre yol; ör. hatay_book.py'nin kitaptan çıkardığı fotoğraflar
+        # (data/build/cache/hatay/images/…). Dosya yoksa önce o araç çalıştırılmalı.
+        root = DATA.parent.resolve()
+        path = (root / source["path"]).resolve()
+        if root not in path.parents:
+            raise ValueError(f"yerel kaynak depo dışında: {source['path']}")
+        return path.read_bytes()
     if source["provider"] != "google_drive":
         raise ValueError(f"desteklenmeyen kaynak: {source['provider']}")
     target = CACHE / source["file_id"]
