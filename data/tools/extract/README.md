@@ -36,6 +36,54 @@ Taslağı Claude Code'da bir **Sonnet** alt ajanı yazar; bir insan kaynağa gö
 6. **PR açın** (`data/<bölük-adı>` → `dev`). Taslaklar (`draft`) veritabanına aktarılmaz ve
    uygulamada görünmez; CI yalnızca şemaya uygunluğu kontrol eder.
 
+## Hatay kitabı (tek PDF)
+
+Hatay için Drive'da bölük ya da fotoğraf klasörü yok; kitap tek bir PDF
+(`hatay-vakif-eserleri.pdf`, 249 sayfa, her sayfa karşılıklı iki kitap sayfası, Türkçe + İngilizce).
+`hatay_book.py` kitabı eserlere böler, her eserin metnini ve fotoğraflarını ayrı ayrı çıkarır.
+
+1. PDF'i repo köküne koyun (git'e girmez) ve aracı çalıştırın:
+   ```bash
+   python3 -m pip install pymupdf          # match_photos.py ile aynı bağımlılık
+   python3 data/tools/extract/hatay_book.py hatay-vakif-eserleri.pdf
+   ```
+   ~15 saniyede `data/build/cache/hatay/` altına yazar:
+   - `index.md` / `index.json`: 78 satır (77 eser + 1 liste). Her satırda bölüm, Türkçe/İngilizce başlık,
+     basılı sayfalar, ilçe ve parsel (bölüm sonundaki özet sayfasından), önerilen id, alt yapılar
+     (külliyelerde Cami, Medrese…) ve fotoğraflar var.
+   - `text/NN-<ad>.txt`: eserin metni, basılı sayfa sayfa (`--- s. 59 (PDF 30, sağ) ---`), sütun
+     sırasıyla (önce Türkçe, sonra İngilizce). Dosyanın başında kaynak sayfaları ve konum satırı var.
+   - `images/<önerilen-id>/pNNN-k.jpg`: PDF'e gömülü orijinal fotoğraflar (yeniden sıkıştırılmaz).
+     Süs şeritleri ve 300 px'ten küçük görseller atlanır.
+2. Ajanı Bursa'daki gibi çalıştırın; metin dosyası `data/build/cache/hatay/text/NN-<ad>.txt`,
+   kaynak `vk-hatay`. Id için `index.md`'deki öneriyi kullanın (`hatay-<ilçe>-<ad>`); ilçe ve
+   mıntıka/parsel bilgisi metnin başındaki "Konum" satırındadır.
+3. Fotoğrafları `media[]`'ya ekleyin. Kaynak yereldir; `book_page` ve sayfa yarısı `index.json`'da:
+   ```json
+   {
+     "id": "m01", "type": "photo", "is_cover": true, "order": 1,
+     "source": {
+       "provider": "local",
+       "path": "data/build/cache/hatay/images/hatay-antakya-ali-cavus-mescidi/p098-1.jpg",
+       "book_pdf_name": "hatay-vakif-eserleri.pdf",
+       "book_page": "194-195"
+     },
+     "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+     "photographer": "Berica Nevin Berberoğlu Şen",
+     "license": "vakif-katilim-hackathon"
+   }
+   ```
+   Sonra `python3 data/tools/media_pipeline.py <id>`. Görseller yerelde üretildiği için bu adımı
+   çalıştıracak kişide PDF ve `hatay_book.py` çıktısı bulunmalı.
+
+Bilinenler:
+- Fotoğraflar 2023 depremlerinden **önce** çekilmiş; kitap Nisan 2023'te hazırlanmış ama eserlerin
+  depremden sonraki durumunu anlatmıyor. Yıkılmış ya da ağır hasarlı eserlerde bu
+  `meta.data_quality_notes`'a yazılmalı.
+- `#69 İş Yeri ve Diğerleri` bir eser değil: bölüm girişi ve ticari vakıf iş yerlerinin listesi.
+- Bölüm özetindeki "Geleneksel Ev (İskenderun 3. Mıntıka 159 Parsel)" için kitapta ayrı sayfa yok.
+- Başlıklarda PDF'ten gelen küçük yazım hataları var (ör. `PAŞACAMİİ`); kayıtta düzeltin.
+
 ## Taslaktan yayına
 
 | Durum | Ne gerekiyor | Kim |

@@ -28,6 +28,21 @@ Durumlar: `sırada` → `işleniyor` → `draft` (ajan taslağı, PR'da) → `in
 
 <!-- Kalan bölükler Drive'daki bölük listesinden eklenecek: | # | Bölük | | | sırada | -->
 
+## Hatay (tek kitap, 77 eser)
+
+Kaynak: `vk-hatay`. Drive klasörü yok; kitap tek PDF. Eser metinleri ve fotoğraflar
+`hatay_book.py` ile çıkarılır ([`tools/extract/README.md`](tools/extract/README.md#hatay-kitabı-tek-pdf)).
+`#` sütunu, aracın ürettiği `data/build/cache/hatay/index.md` dizinindeki sıra numaralarıdır.
+Fotoğraflar 2023 depremlerinden önce çekilmiştir.
+
+| # | Bölüm | Kayıtlar | Basılı s. | Foto | Kim | Durum |
+|---|---|---|---|---|---|---|
+| 1–7 | Külliyeler ve Kervansaraylar | 7 eser + alt yapıları (Cami, Medrese, Şadırvan…) | 54–191 | 127 | | sırada |
+| 8–27 | Camiler ve Mescitler (1. yarı: Ali Çavuş → Rıfat Ağa) | 20 | 194–309 | 100 | | sırada |
+| 28–46 | Camiler ve Mescitler (2. yarı: Sarımiye → Kaptan Paşa Minaresi) | 19 | 310–401 | 84 | | sırada |
+| 47–63 | Türbeler / Ziyaretler | 17 (eser başına 1 sayfa) | 404–441 | 18 | | sırada |
+| 64–78 | Kiliseler, İş Yeri ve Diğerleri, Eski Evler ve Konaklar | 14 (#69 eser değil: ticari iş yerleri listesi) | 444–487 | 20 | | sırada |
+
 ### Cilt 2: Yıldırım (`vk-bursa-c2`)
 
 | # | Bölük | Sayfa | Kayıtlar | Kim | Durum |
