@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-arsuz-narduzu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Banisinin II. Abdülhamit olduğu kitapta 'düşünülmektedir' diye geçer; belgeyle doğrulanmalı.",
+      "'Orhaniye' camisinin kayıtlardaki Orhanlı Camii olup olmadığı doğrulanmalı (kaynak yalnızca 'Orhaniye' der).",
+      "Kitabenin metni kaynakta yok.",
+      "Okula çevrilme ve terk edilme tarihleri kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
+      "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "relations",
+        "note": "Kitaptaki 'Orhaniye' adı ids.md'deki 'Orhanlı Camii' ile eşleştirildi; bu eşleştirme kaynaktan değil kayıt eşlemesinden gelir."
+      },
+      {
+        "field": "inscriptions[giris-kitabesi]",
+        "note": "İngilizce metinde 'kitabeden caminin Sultan Selim adına anıldığı anlaşılıyor' cümlesi vardır, Türkçe metinde yoktur. Kayda yalnızca not olarak işlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Nardüzü Camii",
+    "en": "Nardüzü Mosque"
+  },
+  "subtitle": {
+    "tr": "II. Abdülhamit tuğralı kitabeli, sonradan okula çevrilip terk edilmiş cami",
+    "en": "A mosque with an Abdulhamid II tughra inscription, later turned into a school and abandoned"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "Arsuz",
+    "II. Abdülhamit tuğrası",
+    "enine dikdörtgen plan",
+    "okula çevrilmiş"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Arsuz",
+    "neighborhood": null,
+    "address": "Nardüzü Mahallesi; güneyinde İnönü Caddesi, doğusunda Atatürk Caddesi; 674 Ada 17 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "367, 399"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1313 (M. 1895-96)",
+      "en": "1313 AH (1895-96 AD)"
+    },
+    "start_year": 1895,
+    "end_year": 1896,
+    "hijri_year": 1313,
+    "century": 19,
+    "basis": {
+      "tr": "Giriş kapısı üstündeki taş kitabede H. 1313 (M. 1895-96) tarihi yazılıdır.",
+      "en": "The stone inscription above the entrance gives the date 1313 AH (1895-96 AD)."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "367"
+      }
+    ]
+  },
+  "founder": {
+    "name": "II. Abdülhamit",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "367"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Arsuz'daki Nardüzü Camii, kıble duvarına paralel enine dikdörtgen planlı, tek sahınlı bir camidir. Kuzey kapısı üstündeki kitabede II. Abdülhamit'in tuğrası ve H. 1313 (M. 1895-96) tarihi vardır; kitap onu Sultan II. Abdülhamit'in yaptırdığını düşünür. Harimi briket duvarlarla bölünerek okula çevrilmiş, sonra terk edilmiştir.",
+    "en": "Nardüzü Mosque in Arsuz is a single-nave mosque on a transverse rectangular plan parallel to the qibla wall. The inscription over its north door bears the tughra of Abdulhamid II and the date 1313 AH (1895-96 AD); the book thinks it was built by Sultan Abdulhamid II. Its sanctuary was divided with briquette walls into a school and then abandoned."
+  },
+  "sections": [
+    {
+      "id": "plan-ve-ic-mekan",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve İç Mekân",
+        "en": "Plan and Interior"
+      },
+      "body": {
+        "tr": "Nardüzü Mahallesi'ndeki caminin güneyinde İnönü Caddesi, doğusunda Atatürk Caddesi vardır. Cami, kıble duvarına paralel, enine dikdörtgen planlı ve tek sahınlıdır. Kıble duvarının ortasında yarım daire planlı mihrap nişi bulunur. Kuzey duvarının ortasındaki kapının her iki yanında birer, doğu ve batı duvarlarında ikişer pencere vardır. Yuvarlak kemerli yalın mihrap nişi tuğladandır; yanlarındaki gömme payeler ve onları üstten bağlayan silmeli kuşak betondur. Tavanlar ahşap kaplamalı, ahşap kırma çatı kiremit kaplıdır.",
+        "en": "The mosque has İnönü Street to the south and Atatürk Street to the east. It has a transverse rectangular plan parallel to the qibla wall and a single nave. A semicircular mihrab niche is in the middle of the qibla wall. There is one window on each side of the door in the middle of the north wall and two windows on each of the east and west walls. The round-arched plain mihrab niche is of brick; the built-in piers beside it and the molded belt joining them are of concrete. The ceilings are wood-clad and the wooden hipped roof is covered with tiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    },
+    {
+      "id": "minare-ve-sonraki-kullanim",
+      "order": 2,
+      "title": {
+        "tr": "Minare ve Sonraki Kullanım",
+        "en": "Minaret and Later Use"
+      },
+      "body": {
+        "tr": "Caminin batı duvarının kuzey ucunda taş malzemeden kare planlı bir minare bulunur; yalnızca kaide kısmı günümüze ulaşmıştır. Harim bölümü briket duvarlar kullanılarak farklı mekânlar oluşturulup okula dönüştürülmüştür. Bir müddet bu şekilde kullanıldıktan sonra terk edilmiştir.",
+        "en": "A square-planned stone minaret stands at the northern end of the west wall; only its base has survived. The sanctuary was transformed into a school by creating different spaces with briquette walls. After being used like this for a while it was abandoned."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-ve-banisi",
+      "order": 3,
+      "title": {
+        "tr": "Kitabe ve Banisi",
+        "en": "Inscription and Founder"
+      },
+      "body": {
+        "tr": "Kuzey cephedeki giriş kapısının üstünde bir taş kitabe vardır. Taş kitabenin üst bölümünde Sultan II. Abdülhamit'in tuğrası, altında iki satırlık yazı ve H. 1313 (M. 1895-96) tarihi yer alır. Antakya ve çevresinde yaygın olan, kıble duvarına paralel enine dikdörtgen planlı cami örneğine Nardüzü Camii'nde de rastlanır. Bu sebeple camiyi, Orhaniye, Osmaniye ve Affan (Ertuğrul) camilerinin de banisi olan Sultan II. Abdülhamit'in yaptırdığı düşünülmektedir.",
+        "en": "A stone inscription is above the entrance door on the north facade. The upper part bears the tughra of Sultan Abdulhamid II, and below it are two lines of text and the date 1313 AH (1895-96 AD). The transverse rectangular plan parallel to the qibla wall, common in Antakya and its surroundings, is also found here. For this reason it is thought that the mosque was built by Sultan Abdulhamid II, who was also the founder of the Orhaniye, Osmaniye and Affan (Ertuğrul) mosques."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "nef_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    },
+    {
+      "key": "minare_durumu",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "Kare planlı taş minare; yalnızca kaidesi kalmış",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_nisi",
+      "label": {
+        "tr": "Mihrap nişi",
+        "en": "Mihrab niche"
+      },
+      "value": "Yarım daire planlı, yuvarlak kemerli, tuğladan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "II. Abdülhamit",
+      "role": {
+        "tr": "Yaptırdığı düşünülen padişah; kitabede tuğrası var",
+        "en": "Sultan thought to have had the mosque built; his tughra is on the inscription"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Kuzey cephe, giriş kapısı üstü",
+        "en": "North facade, above the entrance door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1313,
+        "gregorian": "1895-96"
+      },
+      "note": {
+        "tr": "Üst bölümde II. Abdülhamit'in tuğrası, altında iki satırlık yazı. Metin ve dil kaynakta verilmemiştir. İngilizce metin kitabeden caminin Sultan Selim adına verildiği anlaşıldığını da söyler; Türkçe metinde bu cümle yoktur.",
+        "en": "The tughra of Abdulhamid II is on the upper part with a two-line text below. The text and language are not given. The English text also says the inscription shows the mosque was named after Sultan Selim; this sentence is missing from the Turkish text."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1895-96",
+      "year": 1895,
+      "date": null,
+      "hijri": "1313",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı (kitabe H. 1313 / M. 1895-96)",
+        "en": "Mosque built (inscription 1313 AH / 1895-96 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-orhanli-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Kitap, Nardüzü Camii'nin bani olarak düşünülen II. Abdülhamit'in 'Orhaniye' camisinin de banisi olduğunu söyler; 'Orhaniye' kayıtlardaki Orhanlı Camii'ne eşlendi.",
+        "en": "The book says Abdulhamid II, thought to have built Nardüzü, also founded the 'Orhaniye' mosque; 'Orhaniye' was matched to the Orhanlı Mosque record."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    },
+    {
+      "target_id": "hatay-antakya-osmaniye-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Kitap, II. Abdülhamit'in Osmaniye Camii'nin de banisi olduğunu söyler.",
+        "en": "The book says Abdulhamid II was also the founder of Osmaniye Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    },
+    {
+      "target_id": "hatay-antakya-affan-ertugrul-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Kitap, II. Abdülhamit'in Affan (Ertuğrul) Camii'nin de banisi olduğunu söyler.",
+        "en": "The book says Abdulhamid II was also the founder of Affan (Ertuğrul) Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "367"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Nardüzü Camii, Arsuz'da Nardüzü Mahallesi'ndedir; güneyinde İnönü, doğusunda Atatürk Caddesi vardır. Kıble duvarına paralel, enine dikdörtgen planlı ve tek sahınlıdır. Kıble duvarının ortasında tuğladan, yuvarlak kemerli yalın bir mihrap nişi bulunur. Kuzeydeki giriş kapısının üstünde II. Abdülhamit'in tuğralı taş kitabesi vardır. Taş kare minareden yalnızca kaide kalmıştır. Harim sonradan briket duvarlarla okula çevrilmiştir.",
+      "en": "Nardüzü Mosque is in the Nardüzü district of Arsuz, with İnönü Street to the south and Atatürk Street to the east. It is a single-nave mosque on a transverse rectangular plan parallel to the qibla wall. A plain round-arched brick mihrab niche is in the middle of the qibla wall. Above the north entrance is a stone inscription with the tughra of Abdulhamid II. Of the square stone minaret only the base remains. The sanctuary was later turned into a school with briquette walls."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

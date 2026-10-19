@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-iskenderun-kaptan-pasa-camii-minaresi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Enums.json'da minare için ayrı bir tür kodu yok; type 'diger' olarak bırakıldı, uygun bir kod eklenirse güncellenmeli.",
+      "Eski minarenin kesin yapım yılı kaynakta yok; ahşap caminin tarihinden (H. 1280) çıkarıldı.",
+      "Kaptan Paşa'nın kimliği ve adı kaynakta 'muhtemelen Kırım Harbi komutanı' diye geçer; kesinleştirilmeli.",
+      "Yeni caminin yıkılan minarelerinin yerine yapılan kısa tek şerefeli minarenin tarihi kaynakta yok.",
+      "Kitap bu bölüm özeti sayfasında eser adını 'KAPTANPAŞA CAMİİ MİNARESİ' yazar; ad ids.md ve başlıktaki yazıma göre alındı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
+      "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Eser camiden geriye kalan yalnızca minaredir; enums.json'da minare kodu olmadığından 'diger' kullanıldı."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Sivastopol Marşı dizeleri kitaptaki ifadeyle aktarıldı; kitap Kaptan Paşa için 'muhtemelen' der, bu yüzden bölüm 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kaptan Paşa Camii Minaresi",
+    "en": "Kaptan Pasha Mosque Minaret"
+  },
+  "subtitle": {
+    "tr": "Yıkılan ahşap caminin geriye kalan iki renkli taş minaresi",
+    "en": "The two-colored stone minaret that remains from a demolished wooden mosque"
+  },
+  "alternate_names": [],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "minare",
+    "İskenderun",
+    "Kaptan Paşa",
+    "iki renkli taş",
+    "yıkılan ahşap cami"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "İskenderun",
+    "neighborhood": null,
+    "address": "İskenderun; 1. Mıntıka, 443 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "397, 399"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Ahşap cami H. 1280 (M. 1863/64)",
+      "en": "Wooden mosque 1280 AH (1863/64 AD)"
+    },
+    "start_year": 1863,
+    "end_year": 1864,
+    "hijri_year": 1280,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap ahşap caminin H. 1280 (M. 1863/64) yılında yapıldığının bilindiğini söyler. Minarenin kendi yapım yılı ayrıca verilmez; eski caminin sağlam minaresi olarak anıldığından aynı döneme ait kabul edilir.",
+      "en": "The book says the wooden mosque is known to have been built in 1280 AH (1863/64 AD). The minaret's own date is not given separately; as the intact minaret of the old mosque it is taken to be of the same period."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "397"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kaptan Paşa",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "397"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "İskenderun'daki Kaptan Paşa Camii Minaresi, Kırım Harbi komutanlarından olduğu sanılan Kaptan Paşa'nın yaptırdığı, H. 1280 (M. 1863/64) tarihli ahşap caminin geriye kalan tek parçasıdır. Cami 1969'da yıkılıp yerine betonarme kubbeli cami yapılmış, eski caminin sağlam minaresine dokunulmamıştır. Kare kaideli minare iki renkli taşın nöbetleşe dizilmesiyle örülmüştür.",
+    "en": "The Kaptan Pasha Mosque Minaret in İskenderun is all that remains of the wooden mosque dated 1280 AH (1863/64 AD), built by Kaptan Pasha, probably a commander of the Crimean War. The mosque was demolished in 1969 and replaced by a reinforced-concrete domed mosque, leaving the intact minaret of the old mosque untouched. The minaret on a square base is built of two-colored stone laid in alternating rows."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Minare, muhtemelen Kırım Harbi'nin (1853-1856) önemli komutanlarından olan ve Sivastopol Marşı'nın 'Aman da Kaptan Paşa izin ver bize / İzin de vermez isen dök bizi denize...' mısralarında adı geçen Kaptan Paşa'nın İskenderun'da yaptırmış olduğu caminin isimsiz tanığı gibidir. 'Cami yıkılsa da mihrabı kalır' sözü burada adeta 'Cami yıkılsa da minaresi kalır' şeklinde gerçekleşmiştir. H. 1280 (M. 1863/64) yılında yapıldığı bilinen ahşap cami eskiyince 1969'da yıkılarak bugünkü betonarme kubbeli cami bina edilmiştir. Eski caminin sağlam olan minaresine dokunulmamıştır. Yeni caminin her biri 40 m yüksekliğe sahip çift şerefeli iki minaresinde görülen çatlamalar sebebiyle minareler yıkılarak yerine tek şerefeli kısa bir minare yapılmıştır.",
+        "en": "The minaret is like the anonymous witness of the mosque built in İskenderun by Kaptan Pasha, probably one of the important commanders of the Crimean War (1853-1856), who is named in the verses of the Sevastopol March: 'Oh, Captain Pasha, let us go / If you won't, throw us overboard...'. The saying 'even if the mosque is destroyed, its mihrab remains' has here come true as 'even if the mosque is destroyed, its minaret remains'. The wooden mosque, known to have been built in 1280 AH (1863/64 AD), was demolished in 1969 when it got old, and today's reinforced-concrete domed mosque was built. The intact minaret of the old mosque was not touched. Because of cracks in the new mosque's two double-balcony minarets, each 40 m high, they were demolished and a short single-balcony minaret was built in their place."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Eski Minarenin Mimarisi",
+        "en": "Architecture of the Old Minaret"
+      },
+      "body": {
+        "tr": "Kare kaide üzerine inşa edilen asil görünüşlü eski minare, üst üste nöbetleşe sıralanan iki renkli taşla yapılmıştır. Minare sade görünüşlü şerefeden sonra kısa bir petek ve konik külahla devam eder ve alemle sona erer.",
+        "en": "The noble-looking old minaret, built on a square base, is made of two-colored stones laid in alternating rows one on top of another. After the plain balcony it continues with a short honeycomb and conical cone and ends with the alem."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "397"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kaide",
+      "label": {
+        "tr": "Kaide",
+        "en": "Base"
+      },
+      "value": "Kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Malzeme",
+        "en": "Material"
+      },
+      "value": "Üst üste nöbetleşe sıralanan iki renkli taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "key": "serefe_sayisi",
+      "label": {
+        "tr": "Eski minarenin şerefe sayısı",
+        "en": "Balconies of the old minaret"
+      },
+      "value": 1,
+      "unit": null,
+      "note": {
+        "tr": "'Sade görünüşlü şerefe' tekil anılır.",
+        "en": "The 'plain balcony' is mentioned in the singular."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "key": "yeni_cami_minare_yuksekligi",
+      "label": {
+        "tr": "Yeni caminin yıkılan minarelerinin yüksekliği (her biri)",
+        "en": "Height of the demolished minarets of the new mosque (each)"
+      },
+      "value": 40,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "397"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "ahsap-cami-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": "1280",
+      "type": "construction",
+      "title": {
+        "tr": "Ahşap cami yapıldı (H. 1280 / M. 1863/64)",
+        "en": "Wooden mosque built (1280 AH / 1863/64 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "id": "yikim-1969",
+      "year": 1969,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Eski ahşap cami yıkıldı, betonarme kubbeli cami yapıldı; minareye dokunulmadı",
+        "en": "Old wooden mosque demolished and a reinforced-concrete domed mosque built; the minaret was left untouched"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "397"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kaptan Paşa Camii Minaresi, İskenderun'da eski ahşap caminin geriye kalan parçasıdır. Kare bir kaide üzerinde yükselir ve üst üste nöbetleşe dizilmiş iki renkli taştan örülmüştür. Sade bir şerefeden sonra kısa bir petek ve konik külah gelir; alemle sona erer. Yanındaki betonarme kubbeli cami 1969'da yapılmıştır.",
+      "en": "The Kaptan Pasha Mosque Minaret in İskenderun is what remains of the old wooden mosque. It rises on a square base and is built of two-colored stone laid in alternating rows. After a plain balcony comes a short honeycomb and conical cone, ending in the alem. The reinforced-concrete domed mosque beside it was built in 1969."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

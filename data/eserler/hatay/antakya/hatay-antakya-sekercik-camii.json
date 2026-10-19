@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-sekercik-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Şekercik Camii bölümünden (s. 334-337) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Çeşme kitabesinin metni, dili ve çevirisi kaynakta yok.",
+      "Yeniden yapılan harimin tarihi ve mimarisi kaynakta anlatılmıyor.",
+      "Çeşme bir cümleyle anıldığından ayrı kayıt açılmadı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap '1869'da yapıldığı tahmin edilen' diyor; yalnızca çeşme kitabesi H. 1286 (M. 1869/1870) kesin tarih veriyor. Tahmin 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şekercik Camii",
+    "en": "Şekercik Mosque"
+  },
+  "subtitle": {
+    "tr": "Yalnızca minareli taç kapısı ve çeşmesi özgün kalmış cami",
+    "en": "A mosque of which only the minaret portal and fountain remain original"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "minareli taç kapı",
+    "çeşme",
+    "sekizgen minare",
+    "1869",
+    "1872 depremi"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 1626 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "337"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Tahminen 1869",
+      "en": "Estimated 1869"
+    },
+    "start_year": 1869,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap eserin 1869'da yapıldığının tahmin edildiğini söylüyor; çeşme kitabesi H. 1286 (M. 1869/1870) tarihli. Harim yeniden yapılmış olduğundan tarih özgün kısımlar içindir.",
+      "en": "The book says the work is estimated to have been built in 1869; the fountain inscription is dated 1286 H (1869/1870 A.D.). The sanctuary was rebuilt, so the date concerns the original parts."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "337"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1869'da yapıldığı tahmin edilen eserden günümüze yalnızca minareli taç kapısı ve yanındaki çeşme ulaşmıştır; harim büyük ihtimalle 1872 depreminde ya da daha geç bir tarihte harap olduğu için yeniden yapılmıştır. Minareye pabuçluk kısmındaki bir kapıdan girilir.",
+    "en": "Only the minaret portal and the fountain next to it have survived from the work estimated to have been built in 1869; the sanctuary was rebuilt after being ruined, probably by the 1872 earthquake or later. The minaret is entered through a door in its shoe section."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Özgün Kısımlar",
+        "en": "Overview and Original Parts"
+      },
+      "body": {
+        "tr": "1869 yılında yapıldığı tahmin edilen eserden günümüze yalnızca minareli taç kapısı ile hemen yanındaki çeşme ulaşabilmiştir. Harim büyük ihtimalle 1872 depreminde veya daha geç bir tarihte tanınmayacak kadar harap olmuş, bu sebeple yeniden yapılmıştır. Mevcut halinde özgün bölümler; sivri kemerli kavsaranın çevrelediği basık kemerli kapı, üstüne oturan hantal görünümlü sekizgen gövdeli minare ve yanındaki çeşmedir.",
+        "en": "Only the minaret portal and the fountain next to it have survived from the work, estimated to have been built in 1869. The sanctuary was probably destroyed beyond recognition by the 1872 earthquake or later, and was therefore rebuilt. The original parts in its current form are the low-arched door enclosed by a pointed-arched niche, the clumsy-looking octagonal-bodied minaret on top, and the fountain next to it."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 2,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minareye birkaç basamakla çıkılan pabuçluk kısmındaki bir kapıdan girilir. Kitaba göre bu yapı, cemaatin cami şerefesine ezan-ı Muhammedi'nin okunduğu minarenin altından geçerek girmesini ve ezanın kutsallığını fiziki olarak yaşamasını sağlar. Şerefe korkuluğu pahlı bir silme üzerine oturur ve çok hafif çıkıntı yapar; kare gövdeden sekizgen gövdeye yumuşak geçiş için üçgen prizmalar kullanılmıştır.",
+        "en": "The minaret is entered through a door in the shoe section, reached by a few steps. According to the book this structure lets people enter the mosque by passing under the minaret where the call to prayer is recited and physically experience its sanctity. The balcony balustrade sits on a chamfered molding and protrudes slightly; triangular prisms provide a smooth transition from the square to the octagonal body."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 3,
+      "title": {
+        "tr": "Çeşme",
+        "en": "Fountain"
+      },
+      "body": {
+        "tr": "Minareli taç kapının sağında bulunan sade görünüşlü çeşmenin kitabesi H. 1286 (M. 1869/1870) tarihlidir.",
+        "en": "The inscription of the plain-looking fountain on the right of the portal with minaret is dated 1286 H (1869/1870 A.D.)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "337"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_govde",
+      "label": {
+        "tr": "Minare gövdesi",
+        "en": "Minaret body"
+      },
+      "value": "Sekizgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "key": "giris",
+      "label": {
+        "tr": "Taç kapı",
+        "en": "Portal"
+      },
+      "value": "Sivri kemerli kavsara içinde basık kemerli kapı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "337"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "cesme-kitabesi",
+      "location": {
+        "tr": "Minareli taç kapının sağındaki çeşme",
+        "en": "Fountain on the right of the minaret portal"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1286,
+        "gregorian": "1869-1870"
+      },
+      "note": {
+        "tr": "Çeşme kitabesi H. 1286 (M. 1869/1870) tarihlidir; metin, dil ve çeviri verilmez.",
+        "en": "The fountain inscription is dated 1286 H (1869/1870 A.D.); text, language and translation are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "337"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "cesme-1869",
+      "year": 1869,
+      "date": null,
+      "hijri": "1286",
+      "type": "construction",
+      "title": {
+        "tr": "Çeşme kitabesi tarihi (H. 1286); eserin 1869'da yapıldığı tahmin ediliyor",
+        "en": "Fountain inscription date (1286 H); the work is estimated to have been built in 1869"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "337"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şekercik Camii'nin günümüze yalnızca minareli taç kapısı ve yanındaki çeşme özgün olarak ulaşmıştır. Sivri kemerli bir kavsaranın içinde basık kemerli bir kapı vardır ve kapının üzerinde sekizgen gövdeli bir minare yükselir. Minareye birkaç basamakla çıkılan bir kapıdan girilir; böylece cemaat ezanın okunduğu minarenin altından geçer. Kapının sağında sade bir çeşme bulunur. Harim sonradan yeniden yapılmıştır.",
+      "en": "Only the minaret portal and the fountain beside it survive from the original Şekercik Mosque. A low-arched door sits within a pointed-arched niche, and an octagonal-bodied minaret rises above the door. The minaret is entered through a door reached by a few steps, so worshippers pass under the minaret from which the call to prayer is recited. A plain fountain is to the right of the door. The sanctuary was rebuilt later."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 337) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

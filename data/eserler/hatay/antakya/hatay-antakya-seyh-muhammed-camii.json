@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-seyh-muhammed-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Şeyh Muhammed Camii bölümünden (s. 322-325) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Kitabe metni, dili ve çevirisi kaynakta yok; yerinde okunmalı.",
+      "Caminin 'yeni hali' ve onarım tarihleri kaynakta kesin değil; 20. yüzyıl başı onarımı yalnızca ay-yıldız motifinden çıkarılıyor.",
+      "Mescidin adındaki 'Şeyh Muhammed' kişisinin kimliği kaynakta açıklanmıyor.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap, kitabedeki H. 1131 (1718/1719) tarihinin yapılışı mı onarımı mı gösterdiğini bilmediğini söylüyor; Hicri 1131 miladi 1718/1719 ile uyumlu. 'disputed' işaretlendi."
+      },
+      {
+        "field": "timeline",
+        "note": "20. yüzyıl başı onarımı için kitap yıl vermiyor; zaman çizelgesine yazılmadı, yalnızca bölüm metninde anıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Muhammed Camii",
+    "en": "Sheikh Muhammed Mosque"
+  },
+  "subtitle": {
+    "tr": "Fırının üst katındaki tek harimli, minareli taç kapılı cami",
+    "en": "A mosque with a single sanctuary on the upper floor of a building over an oven, with a minaret portal"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "minareli taç kapı",
+    "1718 kitabesi",
+    "fırın",
+    "geleneksel pencere"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 892 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "325"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kitabede H. 1131 (M. 1718/1719); yapım mı onarım mı belli değil",
+      "en": "1131 H (1718/1719 A.D.) on the inscription; unclear whether construction or repair"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 1131,
+    "century": null,
+    "basis": {
+      "tr": "Minareli taç kapı alnındaki kitabede H. 1131 (1718/1719) tarihi var; kitap bunun yapılışa mı onarıma mı delalet ettiğinin belli olmadığını söylüyor. Bu nedenle başlangıç/bitiş yılı boş bırakıldı. Basık kapı kemeri üzerindeki ay yıldız motifi 20. yüzyıl başı onarımına işaret ediyor.",
+      "en": "The inscription on the forehead of the minaret portal gives 1131 H (1718/1719 A.D.); the book says it is unclear whether this indicates construction or repair. Start and end years are therefore left empty. The crescent and star motif on the low door arch indicates an early 20th century repair."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "325"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Avlu içine yerleştirilmiş iki katlı binanın üst katında tek bir harim ile küçük bir avludan oluşan camidir; alt kat fırındır. Avluya minareli taç kapıdan girilir. Yeni halinin en dikkat çekici yanı mihrap nişindeki geleneksel penceredir.",
+    "en": "The mosque consists of a single sanctuary and a small courtyard on the upper floor of a two-storey building in a courtyard; the lower floor is an oven. The courtyard is entered through a recessed arch with a minaret. The most striking aspect of its new version is the traditional window in the mihrab niche."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, avlu içerisine yerleştirilmiş iki katlı binanın üst katındaki tek bir harimden ve küçük bir avludan oluşur. Alt kat fırındır; avluya giriş minareli taç kapıdan sağlanır. Yeni halinin en dikkat çekici tarafı mihrap nişinde kullanılan geleneksel penceredir. Caminin orijinalinden kalan minareli taç kapının sokağa bakan eyvan biçimli kemerinin cephesi, dıştan silmelerle ikinci bir kemer biçiminde kuşatılmıştır.",
+        "en": "The mosque consists of a single sanctuary and a small courtyard on the upper floor of a two-storey building placed in a courtyard. The lower floor is an oven; the entrance to the courtyard is through the recessed arch with the minaret. The most striking aspect of its new version is the traditional window in the mihrab niche. The iwan-shaped arch of the portal with minaret, left from the original mosque and facing the street, is surrounded from outside by a second arch with moldings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "325"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 2,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Kapı kütlesiyle ortak olan minare kaidesinden gövdeye geçişte kaval silme kullanılmış, gövde bunun üzerindeki bilezikle başlatılmıştır. Silindirik gövdeden şerefeye geçişte profilli silmeler kullanılmıştır. Minare silindirik petek ve konik külahla sonlanır.",
+        "en": "In the transition from the minaret base, shared with the door mass, to the minaret body, a bowtell was used and the body begins with a bracelet on it. Profile moldings were used in the transition from the cylindrical body to the balcony. The minaret ends with a cylindrical honeycomb and conical cone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "325"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-onarim",
+      "order": 3,
+      "title": {
+        "tr": "Kitabe ve Onarım",
+        "en": "Inscription and Repair"
+      },
+      "body": {
+        "tr": "Minareli taç kapının alın kısmındaki kitabede yer alan Hicri 1131 (1718/1719) tarihinin eserin yapılışına mı yoksa tamirine mi delalet ettiği belli değildir. Basık kapı kemeri üzerindeki ay yıldız motifinin ise 20. yüzyıl başlarında yapılan onarımın bir işareti olduğu söylenebilir.",
+        "en": "It is not clear whether the 1131 H (1718/1719 A.D.) date in the inscription on the forehead of the minaret portal indicates the construction or repair of the work. The crescent and star motif on the low door arch indicates the repair done in the early 20th century."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "325"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "note": {
+        "tr": "Alt kat fırın, üst kat cami.",
+        "en": "Lower floor oven, upper floor mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "325"
+        }
+      ]
+    },
+    {
+      "key": "alt_kat_kullanimi",
+      "label": {
+        "tr": "Alt katın kullanımı",
+        "en": "Use of lower floor"
+      },
+      "value": "Fırın",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "325"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "tac-kapi-kitabesi",
+      "location": {
+        "tr": "Minareli taç kapının alın kısmı",
+        "en": "Forehead of the minaret portal"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1131,
+        "gregorian": "1718-1719"
+      },
+      "note": {
+        "tr": "Kitap kitabede H. 1131 (1718/1719) tarihi bulunduğunu söyler; yapıya mı onarıma mı işaret ettiği belli değildir. Metin, dil ve çeviri verilmez.",
+        "en": "The book says the inscription bears 1131 H (1718/1719 A.D.); it is unclear whether this indicates construction or repair. Text, language and translation are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "325"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kitabe-1718",
+      "year": 1718,
+      "date": null,
+      "hijri": "1131",
+      "type": "record",
+      "title": {
+        "tr": "Taç kapı kitabesinde H. 1131 (1718/1719) tarihi; yapılış mı onarım mı belli değil",
+        "en": "1131 H (1718/1719 A.D.) on the portal inscription; unclear whether construction or repair"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "325"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeyh Muhammed Camii, avlu içindeki iki katlı bir binanın üst katındadır; alt kat fırındır. Avluya sokaktan, minareli taç kapıdan girilir. Taç kapının sokağa bakan eyvan biçimli kemeri, dıştan silmelerle ikinci bir kemerle çevrilidir. Minare kapı kütlesiyle ortak bir kaide üzerinde yükselir; silindirik gövdesi bir bilezikle başlar ve silindirik petek ile konik külahla biter. Üst kattaki tek harimin mihrap nişinde geleneksel bir pencere vardır.",
+      "en": "The Sheikh Muhammed Mosque is on the upper floor of a two-storey building inside a courtyard; the lower floor is an oven. The courtyard is entered from the street through the portal with a minaret. The iwan-shaped arch of the portal facing the street is surrounded by a second arch with moldings. The minaret rises on a base shared with the door mass; its cylindrical body begins with a bracelet and ends with a cylindrical honeycomb and a conical cone. The single sanctuary on the upper floor has a traditional window in the mihrab niche."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 325) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-orhanli-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Orhanlı Camii bölümünden (s. 302-305) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Kitabe metninin transliterasyonu ve mealı kaynakta yok; yerinde okunmalı.",
+      "Caminin bugünkü (yenilenmiş) yapısının tarihi ve mimarisi kaynakta anlatılmıyor.",
+      "Minarenin H. 1340 (M. 1921/22) tarihli olma ihtimali kaynakta kesinleştirilmiyor.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[kitabe-tarihce]",
+        "note": "Kitabe H. 1313 / M. 1895-96 tarihini veriyor; Hicri ve miladi tarihler uyumludur. Metin dört satır sülüs yazı dışında içeriği vermiyor."
+      },
+      {
+        "field": "inscriptions[kapi-kitabesi]",
+        "note": "İngilizce metin minare tarihini '340 H (1921/22)' diye yazar (basamak eksik); Türkçe metindeki H. 1340 esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Orhanlı Camii",
+    "en": "Orhanlı Mosque"
+  },
+  "subtitle": {
+    "tr": "Tamamen yenilenmiş; adı, minaresi ve tuğralı kitabesi kalan cami",
+    "en": "A completely renovated mosque of which only the name, minaret and inscription survive"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "Orhaniye",
+    "tuğralı kitabe",
+    "sülüs",
+    "1895",
+    "Abdülhamid"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "5. Mıntıka, 823 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "304"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1313 (M. 1895/96)",
+      "en": "1313 H (1895/96 A.D.)"
+    },
+    "start_year": 1895,
+    "end_year": 1896,
+    "hijri_year": 1313,
+    "century": 19,
+    "basis": {
+      "tr": "Kitabeye göre eser Sultan Abdülhamid zamanında H. 1313 (M. 1895/96) tarihinde 'Orhaniye' adıyla yapılmıştır. Cami sonradan tamamen yenilenmiştir.",
+      "en": "According to the inscription the work was built in 1313 H (1895/96 A.D.) under Sultan Abdulhamid with the name 'Orhaniye'. The mosque was later completely renovated."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "304"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sultan Abdülhamid zamanında H. 1313 (M. 1895/96) tarihinde 'Orhaniye' adıyla yapılan cami tamamen yenilenmiş; eski halinden yalnızca adı, minaresi ve kitabesi günümüze ulaşmıştır. Kapı üzerinde Sultan Abdülhamid tuğrası ve altında sülüs yazılı dört satırlık kitabe yer alır.",
+    "en": "Built under Sultan Abdulhamid in 1313 H (1895/96 A.D.) as 'Orhaniye', the mosque was completely renovated; only its name, minaret and inscription survive from its old form. Above the door are the tughra of Sultan Abdulhamid and a four-line thuluth inscription below it."
+  },
+  "sections": [
+    {
+      "id": "kitabe-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Kitabe ve Tarihçe",
+        "en": "Inscription and History"
+      },
+      "body": {
+        "tr": "Tamamen yenilenen caminin eski halinden günümüze ancak adı, minaresi ve kitabesi ulaşabilmiştir. Cami kapısının üstünde Sultan Abdülhamid tuğrası, hemen altında sülüs yazılı dört satırlık kitabe bulunur. Kitabeye göre eser H. 1313 (M. 1895/96) tarihinde Sultan Abdülhamid zamanında Orhaniye adıyla yapılmıştır.",
+        "en": "Only the name, minaret and inscription of the completely renovated mosque have survived. Above the door is the tughra of Sultan Abdulhamid, with a four-line thuluth inscription just below. According to the inscription the work was built under the name Orhaniye during the reign of Sultan Abdulhamid in 1313 H (1895/96 A.D.)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "304"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Minare",
+        "en": "Architecture and Minaret"
+      },
+      "body": {
+        "tr": "Antakya'da Abdülhamid zamanında yapılan eserlere Ertuğrul ve Orhan gibi Osmanlı Devleti'nin kurucu şahsiyetlerinin adlarının verilmesi dikkate değer bir husustur. Eski fotoğraflardan caminin kare plan üzerine taştan yapıldığı ve kiremit kaplı çatıyla örtüldüğü anlaşılmaktadır. Avlunun batısında kare kaide üzerinde yuvarlak gövdeyle devam eden minare ahşap şemsiye külahla sona erer. Bu minarenin H. 1340 (M. 1921/22) tarihli olma ihtimali de vardır.",
+        "en": "It is noteworthy that works made in Antakya during Abdulhamid's reign were named after founding figures of the Ottoman state such as Ertuğrul and Orhan. Old photographs show the mosque was built of stone on a square plan with a tiled roof. The minaret in the west of the courtyard continues with a round body on a square base and ends with a wooden umbrella cone. It is also possible that this minaret dates from 1340 H (1921/22 A.D.)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "304"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kitabe_satir",
+      "label": {
+        "tr": "Kitabe satır sayısı",
+        "en": "Inscription lines"
+      },
+      "value": 4,
+      "unit": "satır",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "304"
+        }
+      ]
+    },
+    {
+      "key": "minare_konumu",
+      "label": {
+        "tr": "Minare konumu",
+        "en": "Minaret position"
+      },
+      "value": "Avlunun batısında, kare kaide üzerinde",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "304"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Cami kapısının üstü, Sultan Abdülhamid tuğrasının altı",
+        "en": "Above the mosque door, below the tughra of Sultan Abdulhamid"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1313,
+        "gregorian": "1895-1896"
+      },
+      "note": {
+        "tr": "Sülüs yazılı dört satırlık kitabe; kitap yalnızca eserin H. 1313 (M. 1895/96) tarihinde Orhaniye adıyla yapıldığını söyler. Metin, dil ve çeviri verilmez.",
+        "en": "Four-line thuluth inscription; the book only says the work was built under the name Orhaniye in 1313 H (1895/96 A.D.). Text, language and translation are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "304"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1895",
+      "year": 1895,
+      "date": null,
+      "hijri": "1313",
+      "type": "construction",
+      "title": {
+        "tr": "Orhaniye adıyla yapıldı (kitabeye göre H. 1313)",
+        "en": "Built under the name Orhaniye (1313 H according to the inscription)"
+      },
+      "note": {
+        "tr": "M. 1895/96",
+        "en": "1895/96 A.D."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "304"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "Tuğralı kitabe",
+        "en": "Inscription with tughra"
+      },
+      "hint": {
+        "tr": "Kapı üstündeki Abdülhamid tuğrasına ve altındaki dört satırlık sülüs kitabeye bakın.",
+        "en": "Look at Abdulhamid's tughra above the door and the four-line thuluth inscription below it."
+      },
+      "section_id": "kitabe-tarihce"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Orhanlı Camii tamamen yenilenmiştir; eski halinden yalnızca adı, minaresi ve kitabesi kalmıştır. Cami kapısının üzerinde Sultan Abdülhamid'in tuğrası, hemen altında sülüs yazıyla dört satırlık bir kitabe bulunur. Avlunun batısında kare bir kaide üzerinde yuvarlak gövdeli, ahşap şemsiye külahlı bir minare yükselir.",
+      "en": "The Orhanlı Mosque has been completely renovated; only its name, minaret and inscription remain from its old form. Above the mosque door is the tughra of Sultan Abdulhamid, with a four-line thuluth inscription just below. In the west of the courtyard a round-bodied minaret with a wooden umbrella cone rises from a square base."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 304) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

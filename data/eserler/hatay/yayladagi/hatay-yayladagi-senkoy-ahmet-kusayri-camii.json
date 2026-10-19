@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-yayladagi-senkoy-ahmet-kusayri-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Şenköy Ahmet Kusayri Camii bölümünden (s. 326-333) (ana metin ve 'Cami' alt başlığı) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Kitap topluluğa 'külliye' diyor ve zaviyeyi anıyor, ancak zaviye için ayrı bir bölüm yok; zaviye için kayıt açılmadı. Külliye üst kaydı ids.md'de tanımlı olmadığı için açılmadı, gerekirse eklenmeli.",
+      "Mahalle/köy adı: Şenköy köyü metinden alındı; mahalle adı yok. Adres bölüm özeti sayfasındandır (Cumhuriyet, 183 Ada 7 Parsel).",
+      "Kitabelerin (1714, 1785, H. 1011) metinleri, dilleri ve çevirileri kaynakta yok (türbedeki kitabe Arapça); yerinde okunmalı.",
+      "Caminin kesin ilk yapım yılı bilinmiyor; 16. yüzyıl ortası çıkarım. 1464 iddiası kaynakça ile değerlendirilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitabın başlığı 'ŞENKÖY AHMET KUSAYRİ CAMİİ'dir; bölüm özeti sayfasında ad 'ŞENKÖY ŞEYH AHMET KUSEYRİ CAMİİ' yazılmıştır. Metin içinde ayrıca 'Kusayri' ve 'Kuseyr (Çayı)' yazımları geçer. İki yazım da alternate_names'e alındı; kayıt adı başlıktaki yazımla verildi."
+      },
+      {
+        "field": "people[Ahmed Kusayri]",
+        "note": "Türkçe metin Ahmed Kusayri için '(öl. 1549)' der; İngilizce metin '(b. 1549)' yazar ('born'). Türkçe metindeki ölüm yılı esas alındı."
+      },
+      {
+        "field": "sections[tarihce-kitabeler]",
+        "note": "Aynı bölümde 'kitabeler batıdaki türbenin güney duvarında' (s. 333) ve 'türbe içindeki üç satırlık Arapça kitabe' (s. 331) deniyor; aynı kitabe olup olmadığı belirsiz."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şenköy Ahmet Kusayri Camii",
+    "en": "Şenköy Ahmet Kusayri Mosque"
+  },
+  "subtitle": {
+    "tr": "Şenköy köyünde cami, zaviye ve türbeden oluşan topluluğun camisi",
+    "en": "The mosque of a group of mosque, zawiya and tomb in the village of Şenköy"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şenköy Şeyh Ahmet Kuseyri Camii",
+      "en": null,
+      "note": "Bölüm özeti sayfasındaki yazım."
+    },
+    {
+      "tr": "Ahmet Kusayri Camii",
+      "en": "Ahmet Kusayri Mosque",
+      "note": "Metin içinde kullanılan kısa ad."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "cami",
+    "Şenköy",
+    "Ahmed Kusayri",
+    "Halveti",
+    "çapraz tonoz",
+    "külliye (kitaba göre)",
+    "1714 kitabesi",
+    "1785 onarımı"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Yayladağı",
+    "neighborhood": null,
+    "address": "Cumhuriyet, 183 Ada 7 Parsel; Şenköy köyü (Antakya'nın 35 km güneyi)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "329"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "16. yüzyıl ortası (türbe kitabesinden çıkarım); 1714 ve 1785 onarımları",
+      "en": "Mid-16th century (inferred from the tomb inscription); repairs in 1714 and 1785"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Türbedeki H. 1011 (M. 1602) tarihli kitabe türbenin Ahmed Kusayri'nin torunu tarafından yenilendiğini gösteriyor; kitap bundan caminin ilk olarak 16. yüzyıl ortalarında yapılmış olması gerektiği sonucunu çıkarıyor. 1464'te yapıldığını öne sürenlerin iddiasını sağlam dayanaktan yoksun buluyor. Kesin yıl olmadığı için başlangıç/bitiş yılı boş.",
+      "en": "The inscription in the tomb dated 1011 H (1602 A.D.) shows the tomb was renewed by Ahmed Kusayri's grandson; the book infers that the mosque must first have been built in the mid-16th century. It finds the claim that it was built in 1464 to lack solid basis. With no exact year, start and end years are empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "331"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'nın 35 km güneyinde Şenköy köyünde, meyilli arazide cami, zaviye ve türbeden oluşan topluluğun camisidir. Beyaz kalker taştan, iki sahınlı ve çapraz tonozludur; mihrap önünde kubbe vardır. Kitabelere göre 1714 ve 1785'te onarılmış, minaresi 1957'de yeniden yapılmıştır.",
+    "en": "The mosque of the group of mosque, zawiya and tomb in the village of Şenköy, 35 km south of Antakya, on sloping land. Made of white limestone, it has two naves with cross vaults and a dome in front of the mihrab. Inscriptions show repairs in 1714 and 1785; its minaret was rebuilt in 1957."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Antakya'nın 35 km güneyinde Şenköy isimli köyde meyilli arazi üzerinde kurulu topluluk cami, zaviye ve türbeden meydana gelmektedir. Kitap topluluğa 'külliye' de demektedir. Türbe avlunun kuzeydoğu köşesindedir; caminin güneye doğru alçalan yamacı üzerine, biri doğuda sade ve eski, diğeri batıda gösterişli ve yeni kapısı olan türbe yerleştirilmiştir.",
+        "en": "The group, built on sloping land in the village of Şenköy, 35 km south of Antakya, consists of a mosque, zawiya and tomb. The book also calls the group a 'külliye' (complex). The tomb is in the northeast corner of the courtyard; on the slope descending south, the tomb has one plain and old door in the east and another flamboyant new gate in the west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "329"
+        }
+      ]
+    },
+    {
+      "id": "cami-mimari",
+      "order": 2,
+      "title": {
+        "tr": "Cami Mimarisi",
+        "en": "Architecture of the Mosque"
+      },
+      "body": {
+        "tr": "Harimin önünde on ahşap direk üzerine oturan, Türk kiremitleriyle kaplı, çatısı kuzeye doğru hafifçe alçalan son cemaat yeri bulunur. Kuzeydoğu köşedeki kare kaideli minarenin yuvarlak gövdesi yıkılmış, 1957'de yeniden yapılmıştır. Beyaz kalker taştan cami kıbleye paralel dikdörtgen planlı, iki sahınlıdır; dördü serbest, ikisi doğu ve batı uçlarda gömme olmak üzere altı ayak üzerinde çapraz tonozla örtülüdür. Mihrap önündeki mekânda çapraz tonozun yerini dıştan yüksek çokgen kasnaklı, kiremit kaplı hafif sivri külahlı bir kubbe alır. Sade yarım daire nişli mihrabın iki yanında ikişer pencere bulunur; taş minberin korkulukları ve köşk kısmı ahşaptır, kuzeydeki kapı üzerindeki ahşap müezzin mahfili de sadedir.",
+        "en": "In front of the sanctuary is a narthex on ten wooden posts covered with Turkish tiles, its roof sloping slightly north. The round body of the square-based minaret in the northeast corner was demolished and rebuilt in 1957. The mosque of white limestone has a rectangular plan parallel to the qibla with two naves; it is covered by cross vaults on six piers, four free and two buried at the east and west ends. In front of the mihrab, which is a plain semicircular niche, a dome replaces the cross vault, resting outside on a high polygonal drum with a slightly pointed tiled cone. Two windows flank each side of the mihrab; the stone minbar has wooden balustrades and pavilion, and the wooden muezzin's mahfil above the north door is also plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    },
+    {
+      "id": "tarihce-kitabeler",
+      "order": 3,
+      "title": {
+        "tr": "Tarihçe ve Kitabeler",
+        "en": "History and Inscriptions"
+      },
+      "body": {
+        "tr": "Yapıdaki onarım kitabesinde 1714 tarihi ile Kusayrili Şeyh Muhammed'in oğlu İsmail'in adı yer alır; son cemaat yerinin batısındaki bir diğer kitabe caminin 1785'te onarıldığını gösterir. Yapım tarihine ışık tutan en erken kitabe, külliyenin diğer öğesi Ahmet Kusayri Türbesi içindeki üç satırlık Arapça kitabedir; H. 1011'e (M. 1602) ait kabul edilen bu kitabeye göre türbe Ahmed Kusayri'nin torunu tarafından yenilenmiştir. Bu durumda eserin ilk olarak 16. yüzyıl ortalarında yapılmış olması gerekir. Caminin, Kusayri'nin babası Şeyh Abdo'nun (Abdi) 1525'teki ölümünün ardından yapılan türbeden önce var olduğunu, hatta 1464'te inşa edildiğini iddia edenlerin iddiaları sağlam bir dayanaktan yoksundur.",
+        "en": "The repair inscription on the building bears the date 1714 and the name of İsmail, son of Sheikh Muhammed of Kusayri; another inscription on the wall in the west of the narthex indicates the mosque was repaired in 1785. The earliest inscription shedding light on the construction history is the three-line Arabic inscription inside the Ahmet Kusayri Tomb, the other element of the complex; according to this inscription, accepted as belonging to 1011 H (1602 A.D.), the tomb was renewed by Ahmed Kusayri's grandson. The structure must therefore first have been built in the mid-16th century. The claims of those who say the mosque existed before the tomb built after the death of Kusayri's father Sheikh Abdo (Abdi) in 1525, and was built in 1464, lack a solid basis."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "kusayri-rivayetleri",
+      "title": {
+        "tr": "Ahmed Kusayri rivayetleri",
+        "en": "Narrations about Ahmed Kusayri"
+      },
+      "body": {
+        "tr": "Rivayete göre Ahmed Kusayri İstanbul'da Kanuni ile görüşmüş ve onun lütuf ve ikramlarına mazhar olmuştur. Memleketi Hatay'a döndükten sonra yollar, medreseler, mescitler ve çeşmeler yaptırdığı, Altınözü'ndeki Kuseyr Çayı üzerindeki köprünün de bunlar arasında olduğu söylenir. Halk kültüründe onunla ilgili olağanüstü inanışlar da vardır; kitap bunların içeriğini vermez.",
+        "en": "According to narrations Ahmed Kusayri met Suleiman the Magnificent in Istanbul and received his favors and treats. After returning to Hatay he is said to have had roads, madrasas, masjids and fountains built, among them the existing bridge over the Kuseyr Stream in Altınözü. There are also extraordinary beliefs about him in folk culture; the book does not give their content."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "329"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "direk_son_cemaat",
+      "label": {
+        "tr": "Son cemaat yeri ahşap direk sayısı",
+        "en": "Wooden posts of the narthex"
+      },
+      "value": 10,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    },
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Çapraz tonozu taşıyan ayak sayısı",
+        "en": "Piers carrying the cross vault"
+      },
+      "value": 6,
+      "unit": null,
+      "note": {
+        "tr": "Dördü serbest, ikisi doğu ve batı uçlarda gömme.",
+        "en": "Four free, two buried at the east and west ends."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    },
+    {
+      "key": "minare_yenileme",
+      "label": {
+        "tr": "Minare gövdesinin yeniden yapıldığı yıl",
+        "en": "Year the minaret body was rebuilt"
+      },
+      "value": 1957,
+      "unit": "yıl",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    },
+    {
+      "key": "antakya_uzaklik",
+      "label": {
+        "tr": "Antakya'ya uzaklık",
+        "en": "Distance from Antakya"
+      },
+      "value": 35,
+      "unit": "km",
+      "note": {
+        "tr": "Antakya'nın güneyinde.",
+        "en": "South of Antakya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "329"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ahmed Kusayri",
+      "role": {
+        "tr": "Halveti dervişi (öl. 1549); topluluğa adını veren kişi",
+        "en": "Halveti dervish (d. 1549 per the Turkish text); namesake of the complex"
+      }
+    },
+    {
+      "name": "Şeyh Abdo (Abdi)",
+      "role": {
+        "tr": "Ahmed Kusayri'nin babası; 1525'te öldü",
+        "en": "Father of Ahmed Kusayri; died in 1525"
+      }
+    },
+    {
+      "name": "İsmail",
+      "role": {
+        "tr": "Kusayrili Şeyh Muhammed'in oğlu; 1714 tarihli onarım kitabesinde adı geçer",
+        "en": "Son of Sheikh Muhammed of Kusayri; named on the 1714 repair inscription"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "onarim-kitabesi-1714",
+      "location": {
+        "tr": "Cami yapısı üzerinde",
+        "en": "On the mosque building"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1714"
+      },
+      "note": {
+        "tr": "Onarım kitabesi; 1714 tarihi ile Kusayrili Şeyh Muhammed'in oğlu İsmail'in adı geçer. Metin, dil ve çeviri verilmez.",
+        "en": "Repair inscription; bears the date 1714 and the name of İsmail, son of Sheikh Muhammed of Kusayri. Text, language and translation are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    },
+    {
+      "id": "onarim-kitabesi-1785",
+      "location": {
+        "tr": "Son cemaat yerinin batı duvarı",
+        "en": "West wall of the narthex"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1785"
+      },
+      "note": {
+        "tr": "Kitap bu kitabenin caminin 1785'te onarıldığını gösterdiğini söyler. Metin, dil ve çeviri verilmez.",
+        "en": "The book says this inscription indicates the mosque was repaired in 1785. Text, language and translation are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1714",
+      "year": 1714,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (kitabeye göre; İsmail adı geçer)",
+        "en": "Repair (per the inscription naming İsmail)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1785",
+      "year": 1785,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (kitabeye göre)",
+        "en": "Repair (per the inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    },
+    {
+      "id": "minare-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yıkılan minare gövdesi yeniden yapıldı",
+        "en": "Demolished minaret body rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "cok-kubbe",
+      "title": {
+        "tr": "Mihrap önündeki kubbe",
+        "en": "The dome before the mihrab"
+      },
+      "hint": {
+        "tr": "Çapraz tonozlu iç mekânda yalnızca mihrap önü kubbeyle örtülüdür.",
+        "en": "In the cross-vaulted interior only the space before the mihrab is covered by a dome."
+      },
+      "section_id": "cami-mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şenköy Ahmet Kusayri Camii, Antakya'nın yaklaşık 35 kilometre güneyinde, meyilli bir arazidedir. Harimin önünde, on ahşap direğin taşıdığı, kiremit kaplı bir son cemaat yeri vardır. Beyaz kalker taştan yapılan cami, kıbleye paralel dikdörtgen planlı ve iki sahınlıdır; üstü çapraz tonozlarla örtülüdür. Mihrabın önündeki bölümde tonoz yerine kubbe bulunur. Mihrap sade, yarım daire biçimli bir nişten oluşur; iki yanında ikişer pencere vardır. Taş minberin korkulukları ahşaptır. Kare kaideli minare kuzeydoğu köşededir.",
+      "en": "The Şenköy Ahmet Kusayri Mosque stands on sloping land about 35 kilometers south of Antakya. In front of the sanctuary is a tile-covered narthex carried by ten wooden posts. Built of white limestone, the mosque has a rectangular plan parallel to the qibla with two naves covered by cross vaults. In front of the mihrab a dome replaces the vault. The mihrab is a plain semicircular niche with two windows on each side. The stone minbar has wooden balustrades. The square-based minaret is in the northeast corner."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 331) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

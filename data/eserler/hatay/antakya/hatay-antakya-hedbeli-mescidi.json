@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-hedbeli-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Hedbeli Mescidi bölümünden (s. 235-237) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mimar, banî ve kesin yapılış tarihi kaynakta yok; yalnızca 19. yüzyıl varsayımı var.",
+      "Sebilin yeri ve ayrıntıları kaynakta anılmıyor (yalnızca varlığı belirtiliyor).",
+      "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[harim]",
+        "note": "Türkçe metin ilk sayfada 'doğu ve kıble duvarı' çarpık der, ikinci sayfada 'doğu ve güney duvarı' çarpık der; kıble güney olduğundan iki ifade uyumludur. İngilizce metin 'mezene'yi 'mezzanine' diye çevirmiştir; kayıtta 'mezene (adhan place)' yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hedbeli Mescidi",
+    "en": "Hedbeli Masjid"
+  },
+  "subtitle": {
+    "tr": "Dar bir ara sokakta, yazlık namazgâhlı ve sebilli mahalle mescidi",
+    "en": "A neighbourhood masjid in a narrow side street, with a summer prayer area and a sebil"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mescit",
+    "yazlık namazgâh",
+    "mezene",
+    "çeşme",
+    "sebil",
+    "kuyu"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 1438 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "235-237"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "19. yüzyıl (varsayım)",
+      "en": "19th century (assumed)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Mimarı, bânisi ve yapılış tarihi belli olmayan eserin 19. yüzyılda inşa edildiği varsayılmaktadır; kesin yıl yok.",
+      "en": "The architect, builder and date of the work are unknown; it is assumed to have been built in the 19th century. No exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "237"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Dar bir ara sokakta, meyilli arazide ve sivil yapıların arasında yer alan mescit, ev olarak inşa edilip sonradan ibadethaneye çevrilmiş izlenimi verir. Ağaçlı avlusu yazlık namazgâh olarak kullanılır; avlu duvarında çeşme, ayrıca kuyu ve sebil bulunur. Mimarı, bânisi ve tarihi bilinmeyen eserin 19. yüzyılda yapıldığı varsayılır.",
+    "en": "Located in a narrow side street on sloping land among civil buildings, the masjid gives the impression of having been built as a house and later converted into a place of worship. Its tree-lined courtyard is used as a summer prayer area; it has a fountain on the courtyard wall, a well and a sebil. Its architect, builder and date are unknown; it is assumed to date from the 19th century."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Eserin dar bir ara sokak içinde, meyilli arazi üzerinde bulunması ve etrafının sivil yapılarla çevrili olması ev olarak inşa edildiğini, sonrasında ibadethaneye çevrilmiş olabileceği izlenimini vermektedir. Özellikle doğu ve kıble duvarının çarpık olması bu düşünceyi doğrular niteliktedir. Buna rağmen yazlık namazgâh olarak kullanılan ağaçlarla bezeli avlusu, avlu duvarındaki çeşmesi, kuyusu ve sebili ile mahalle halkına her daim hizmet veren asude bir mekândır.",
+        "en": "The fact that the work stands in a narrow side street, on sloping land and surrounded by civil buildings gives the impression that it was built as a house and then possibly turned into a place of worship. The crooked shape of the east and qibla walls in particular confirms this idea. Even so, with its tree-lined courtyard used as a summer prayer place, its fountain on the courtyard wall, its well and its sebil, it is a peaceful place serving the neighbourhood not only five times a day but at all times."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "id": "tarih",
+      "order": 2,
+      "title": {
+        "tr": "Tarih",
+        "en": "Date"
+      },
+      "body": {
+        "tr": "Mimarı, bânisi ve hatta yapılış tarihi belli olmayan eserin 19. yüzyılda inşa edildiği varsayılmaktadır.",
+        "en": "The architect, builder and even the date of construction of the work are unknown, but it is assumed to have been built in the 19th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-mezene",
+      "order": 3,
+      "title": {
+        "tr": "Avlu, Namazgâh ve Mezene",
+        "en": "Courtyard, Prayer Area and Mezene"
+      },
+      "body": {
+        "tr": "Eserin avlusuna batıdaki bir merdivenle çıkılır; buradan başka bir merdiven, minare görevi gören küçük ve basit ahşap şerefeden ibaret mezeneye (ezanlık) yönelir. Namazgâhın sonradan ilave edildiği belli olan sade mihrabı, mezenenin tam altında yer alır.",
+        "en": "The courtyard is reached by a staircase on the west, and from here another staircase leads to the mezene (adhan place), a small, simple wooden balcony serving as a minaret. The plain mihrab of the prayer area, clearly added later, is right under the mezene."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 4,
+      "title": {
+        "tr": "Kapalı İbadet Alanı",
+        "en": "Enclosed Prayer Space"
+      },
+      "body": {
+        "tr": "Caminin kapalı ibadet alanı kıbleye doğru dik bir dikdörtgen plan üzerine oturur; kuzey ve batı duvarları düzgün, doğu ve güney duvarı çarpıktır. Düz tavanı taşımak için yapılan ortadaki bir kemerle kıbleye paralel iki bölüme ayrılmıştır. İçeriye kuzeydeki kapıdan girilir; batı duvarında dört, mihrabın batısında ise bir pencere vardır. Mihrap sade bir nişten ibarettir.",
+        "en": "The enclosed prayer area sits on a rectangular plan perpendicular to the qibla; the north and west walls are regular while the east and south walls are crooked. It is divided into two sections parallel to the qibla by an arch in the middle built to carry the flat ceiling. It is entered through the door on the north side and has four windows on the west wall and one window west of the mihrab. The mihrab is a simple niche."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 5,
+      "title": {
+        "tr": "Çeşme",
+        "en": "Fountain"
+      },
+      "body": {
+        "tr": "Cami gibi çeşmenin de 19. yüzyılda yapıldığı tahmin edilmektedir. Çeşme tas koymak için yapılan küçük bir nişten başka ayrıntı içermez.",
+        "en": "The fountain, like the mosque, is estimated to have been built in the 19th century. It contains no details other than a small niche for a bowl."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "237"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı (batı duvarı 4 + mihrabın batısı 1)",
+        "en": "Windows (4 on west wall + 1 west of mihrab)"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Kıbleye paralel bölüm sayısı",
+        "en": "Sections parallel to the qibla"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "key": "giris",
+      "label": {
+        "tr": "Giriş",
+        "en": "Entrance"
+      },
+      "value": "Kuzey kapı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "237"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "mezene",
+      "title": {
+        "tr": "Mezene (ezanlık)",
+        "en": "Mezene (adhan place)"
+      },
+      "hint": {
+        "tr": "Avlunun üstündeki küçük ahşap şerefeyi ve altındaki mihrabı arayın.",
+        "en": "Look for the small wooden balcony above the courtyard and the mihrab beneath it."
+      },
+      "section_id": "avlu-ve-mezene"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hedbeli Mescidi dar bir ara sokakta, meyilli arazide ve sivil yapıların arasındadır. Batıdaki bir merdivenle ağaçlı avluya çıkılır; avlu yazın namazgâh olarak kullanılır ve duvarında çeşme, ayrıca bir kuyu ile sebil vardır. Avludan başka bir merdiven, ahşap küçük şerefe biçimindeki mezeneye (ezanlık) çıkar. Kapalı ibadet alanına kuzeydeki kapıdan girilir; düz tavanı taşıyan ortadaki bir kemer mekânı kıbleye paralel iki bölüme ayırır. Doğu ve güney duvarları çarpıktır. Mihrap sade bir nişten ibarettir.",
+      "en": "Hedbeli Masjid stands in a narrow side street on sloping land among civil buildings. A staircase on the west leads up to the tree-lined courtyard, used in summer as a prayer area, with a fountain on its wall, a well and a sebil. From the courtyard another staircase leads to the mezene (adhan place), a small wooden balcony. The enclosed prayer space is entered through a door on the north; an arch in the middle carrying the flat ceiling divides it into two sections parallel to the qibla. The east and south walls are crooked. The mihrab is a simple niche."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 235-237) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

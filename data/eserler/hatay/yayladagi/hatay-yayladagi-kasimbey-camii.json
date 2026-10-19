@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-yayladagi-kasimbey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "1131 yılının Hicri mi Miladi mi olduğu kaynakta belirtilmiyor; tarihleme ve 'Abbasiler dönemi' ifadesi kitabeden doğrulanmalı.",
+      "Era alanı kaynakta uygun bir dönem kodu olmadığı için boş bırakıldı.",
+      "Kitabelerin metni, dili ve tam yerleri kaynakta yok.",
+      "Cami adı bazı yerlerde 'Kasım Bey' diye ayrı yazılıyor; kayıt adı ids.md'e göre 'Kasımbey'.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
+      "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kaynak 1131 yılını Abbasiler dönemine ve Kasım Bey'e bağlar, Hicri/Miladi belirtmez. Hicri 1131 Miladi 1718-19'a denk düşer ve aynı camide 1532 onarımı yazıldığı için Miladi 1131 kabul edildi. Bu iki yorum kaynaktan değil, yılların birbirine uyumundan çıkarıldı; doğrulanmalı."
+      },
+      {
+        "field": "founder",
+        "note": "Kitap Kasım Bey'i 'Avar Türklerinden Savcılar aşireti reisi' olarak tanımlar; tarihî olarak doğrulanmamıştır, kaynağın ifadesi aynen aktarılmıştır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kasımbey Camii",
+    "en": "Kasımbey Mosque"
+  },
+  "subtitle": {
+    "tr": "1131'de Kasım Bey'in yaptırdığı, dört kitabeli Yayladağı camisi",
+    "en": "A Yayladağı mosque built in 1131 by Kasım Bey, with four inscriptions"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "Yayladağı",
+    "Kasım Bey",
+    "kitabeli",
+    "altıgen taş minare"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Yayladağı",
+    "neighborhood": null,
+    "address": "Çamaltı; 23 Ada 1 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "380-381, 399"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1131 (kitabe)",
+      "en": "1131 (inscription)"
+    },
+    "start_year": 1131,
+    "end_year": 1131,
+    "hijri_year": null,
+    "century": 12,
+    "basis": {
+      "tr": "Kitap camiyi 1131'de Abbasiler döneminde Kasım Bey'in yaptırdığını söyler ve bir kitabenin bunu yazdığını belirtir. Yılın Hicri mi Miladi mi olduğu belirtilmemiştir; kitap aynı camide 1532, 1553 ve 1820 onarımlarını saydığı için Miladi kabul edildi.",
+      "en": "The book says Kasım Bey had the mosque built in 1131 during the Abbasid period and that an inscription states this. It does not say whether the year is Hijri or Gregorian; it was taken as Gregorian because the book lists repairs in 1532, 1553 and 1820 for the same mosque."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "380-381"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kasım Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "380"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Yayladağı sınırlarındaki Kasımbey Camii, kitaba göre 1131'de Abbasiler döneminde Avar Türklerinden Savcılar aşireti reisi Kasım Bey tarafından yaptırılmıştır. Üç sahınlı, kiremit kaplı beşik çatılı, altıgen taş minareli camide dört kitabe vardır; 1532, 1553 ve 1820'de onarılmış, en son 2010'da Vakıflar Genel Müdürlüğü tarafından kapsamlı onarım görmüştür.",
+    "en": "According to the book, Kasımbey Mosque in Yayladağı was built in 1131, in the Abbasid period, by Kasım Bey, chief of the Savcılar tribe of the Avar Turks. With three naves, a tiled gable roof and a hexagonal stone minaret, it has four inscriptions; it was repaired in 1532, 1553 and 1820 and last extensively repaired by the General Directorate of Foundations in 2010."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Kasım Bey Camii, Yayladağı ilçe sınırları içerisinde 1131 yılında Abbasiler döneminde, Avar Türklerinden Savcılar aşireti reisi Kasım Bey tarafından yaptırılmıştır. Caminin giriş kapısı üzerindeki kitabeler onarımlarla ilgili bilgi verir; bunlara göre cami günümüze kadar dört onarım görmüştür. Bir kitabede 1131'de Kasım Bey tarafından yaptırıldığı yazılıdır, diğerlerinde 1532, 1553 ve 1820'de kapsamlı onarımlar yapıldığı bilgisi verilir. Cami en son Vakıflar Genel Müdürlüğü tarafından 2010'da kapsamlı bir onarım görmüştür.",
+        "en": "Kasım Bey Mosque was built within the borders of Yayladağı in 1131, in the Abbasid period, by Kasım Bey, chief of the Savcılar tribe, one of the Avar Turks. The inscriptions on the entrance door give information about its repairs; according to them the mosque has been repaired four times. One inscription states that it was built by Kasım Bey in 1131; the others record extensive repairs in 1532, 1553 and 1820. The mosque was last extensively repaired by the General Directorate of Foundations in 2010."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "380-381"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami doğu-batı doğrultusunda dikdörtgen bir alana inşa edilmiş, mihraba paralel iki sıra kemerle üç sahına ayrılmıştır. Sahınların tavanı çıtalı tavanlarla örtülüdür; üst örtü kiremit kaplı beşik çatıdır. İç mekân dikdörtgen mazgallı pencerelerle aydınlanır. Kuzey cephedeki pencereler yuvarlak kemerlidir. Güneydeki mihrap yarım yuvarlak kemerlidir. Minberi oldukça sade görünümlüdür ve ahşap korkulukları vardır. Caminin kuzeyinde sonradan yapılmış iki katlı bir yapı bulunur. Taştan altıgen yapılmış minare, geniş şerefesiyle bölgedeki diğer cami minarelerinden oldukça farklıdır.",
+        "en": "The mosque is built on a rectangular area in the east-west direction and divided into three naves by two rows of arches parallel to the mihrab. The nave ceilings are slatted and the roof is a tile-covered gable roof. The interior is lit by rectangular loophole windows. The windows on the north facade are round-arched, and the mihrab in the south has a half-round arch. The minbar is quite plain with wooden railings. A two-storey building added later stands north of the mosque. The hexagonal stone minaret differs greatly from other minarets in the region with its wide balcony."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "380"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-ozellikler",
+      "order": 3,
+      "title": {
+        "tr": "Avlu ve Özellikler",
+        "en": "Courtyard and Character"
+      },
+      "body": {
+        "tr": "Kasım Bey Camisinin mimari özellikleri tipik Antakya camilerinden farklıdır. Onarım sırasında avlu içindeki imam odası, Kur'an kursu, şadırvan, çeşme ve lavabolar caminin tarihî yapısına uygun olacak şekilde yeniden inşa edilmiştir.",
+        "en": "The architectural features of Kasım Bey Mosque differ from typical Antakya mosques. During the repair, the imam's room, Quran course, fountain, drinking fountain and sinks in the courtyard were rebuilt in keeping with the mosque's historical structure."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "nef_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "380"
+        }
+      ]
+    },
+    {
+      "key": "minare",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "Taştan altıgen; geniş şerefeli",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "380"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_sayisi",
+      "label": {
+        "tr": "Kitabe sayısı",
+        "en": "Number of inscriptions"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    },
+    {
+      "key": "onarim_sayisi",
+      "label": {
+        "tr": "Kitabelere göre onarım sayısı",
+        "en": "Repairs according to the inscriptions"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kasım Bey",
+      "role": {
+        "tr": "Savcılar aşireti reisi (Avar Türklerinden); camiyi yaptıran",
+        "en": "Chief of the Savcılar tribe (of the Avar Turks); builder of the mosque"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kitabe-1131",
+      "location": {
+        "tr": "Giriş kapısı çevresi (cami duvarı)",
+        "en": "Around the entrance door (mosque wall)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1131"
+      },
+      "note": {
+        "tr": "Camiyi Kasım Bey'in yaptırdığını yazar. Metin ve dil kaynakta verilmemiştir.",
+        "en": "States that Kasım Bey had it built. The text and language are not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-1532",
+      "location": {
+        "tr": "Giriş kapısı çevresi (cami duvarı)",
+        "en": "Around the entrance door (mosque wall)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1532"
+      },
+      "note": {
+        "tr": "Kapsamlı onarımı bildirir. Metin ve dil kaynakta verilmemiştir.",
+        "en": "Records an extensive repair. The text and language are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-1553",
+      "location": {
+        "tr": "Giriş kapısı çevresi (cami duvarı)",
+        "en": "Around the entrance door (mosque wall)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1553"
+      },
+      "note": {
+        "tr": "Kapsamlı onarımı bildirir. Metin ve dil kaynakta verilmemiştir.",
+        "en": "Records an extensive repair. The text and language are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-1820",
+      "location": {
+        "tr": "Giriş kapısı çevresi (cami duvarı)",
+        "en": "Around the entrance door (mosque wall)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1820"
+      },
+      "note": {
+        "tr": "Kapsamlı onarımı bildirir. Metin ve dil kaynakta verilmemiştir.",
+        "en": "Records an extensive repair. The text and language are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1131",
+      "year": 1131,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kasım Bey cami yaptırdı",
+        "en": "Mosque built by Kasım Bey"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "380-381"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1532",
+      "year": 1532,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım (kitabe)",
+        "en": "Extensive repair (inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1553",
+      "year": 1553,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım (kitabe)",
+        "en": "Extensive repair (inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1820",
+      "year": 1820,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım (kitabe)",
+        "en": "Extensive repair (inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü kapsamlı onarımı; avludaki yapılar yeniden inşa edildi",
+        "en": "Extensive repair by the General Directorate of Foundations; courtyard structures rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "381"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kasımbey Camii, Yayladağı'nda doğu-batı doğrultulu dikdörtgen bir alana kuruludur. İçeride mihraba paralel iki sıra kemer üç sahın oluşturur; tavanlar çıtalıdır, üstte kiremit kaplı beşik çatı vardır. Pencereler dikdörtgen mazgal biçimindedir, kuzey cephedekiler yuvarlak kemerlidir. Güneydeki mihrap yarım yuvarlak kemerlidir; ahşap korkuluklu sade bir minber vardır. Taştan altıgen minare geniş şerefesiyle dikkat çeker. Kuzeyde sonradan yapılmış iki katlı bir yapı bulunur.",
+      "en": "Kasımbey Mosque in Yayladağı stands on a rectangular area aligned east-west. Inside, two rows of arches parallel to the mihrab form three naves; the ceilings are slatted, with a tiled gable roof above. The windows are rectangular loopholes, those on the north facade round-arched. The mihrab in the south has a half-round arch, and there is a plain minbar with wooden railings. The hexagonal stone minaret stands out with its wide balcony. A later two-storey building stands to the north."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

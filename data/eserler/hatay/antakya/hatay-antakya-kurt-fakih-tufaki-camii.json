@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-kurt-fakih-tufaki-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Kürt Fakih (Tufaki) Camii bölümünden (s. 274-277) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banî, mimar ve vakıf bilgisi kaynakta yok; 'Kürt Fakih' / 'Tufaki' adlarının kimlere ait olduğu açıklanmıyor.",
+      "Yapının 16. yüzyıldan kalıp kalmadığı kaynakta yalnızca 'düşünülüyor' düzeyinde; arşivle teyit edilmeli.",
+      "Era: tarih belirsiz olduğu için gec-osmanli yalnızca 1872 sonrası şekline dayanarak probable olarak girildi; uzman doğrulaması gerekir.",
+      "Batıdaki aynı adlı çeşmenin yapım tarihi ve ayrıntıları kaynakta yok; ids.md'de ayrı karşılığı yok.",
+      "Rozetlerin devşirme olup olmadığı kaynakta 'muhtemelen' düzeyinde.",
+      "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kaynak iki görüş verir: tarih 16. yüzyıla dayanır (düşünülüyor) ve bugünkü şekli 1872 depreminden sonradır (daha gerçekçi). Kayıt bu yüzden 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[avlu-ve-portal]",
+        "note": "İngilizce metin rozetler için 'Most of the rosettes ... decorated with geometric compositions, but with herbal compositions' diyen bozuk bir cümle içerir; Türkçe metin esas alındı (çoğunluğu geometrik, bitkisel kompozisyonlar da var)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kürt Fakih (Tufaki) Camii",
+    "en": "Kurt Fakih (Tufaki) Mosque"
+  },
+  "subtitle": {
+    "tr": "Testere dişi kemerli ve rozetli portalıyla ayrışan küçük mahalle camii",
+    "en": "A small neighbourhood mosque set apart by its saw-tooth arched, rosetted portal"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "mahalle camii",
+    "rozet",
+    "devşirme",
+    "testere dişi kemer",
+    "çeşme"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 597 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "274-277"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Günümüzdeki şekli 1872 depreminden sonra; tarihi 16. yüzyıla dayandığı düşünülüyor",
+      "en": "Present form after the 1872 earthquake; thought to date back to the 16th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Eserin tarihinin 16. yüzyıla dayandığı düşünülse de günümüzdeki şeklini 1872 büyük depreminden sonra edindiğini kabul etmek daha gerçekçi bulunur. Kesin yıl verilmediği için yıllar boş bırakıldı.",
+      "en": "Although the work is thought to date back to the 16th century, it is considered more realistic to accept that it took its present form after the great earthquake of 1872. No exact year is given, so the years are left empty."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "274"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kareye yakın dikdörtgen planlı, düz ahşap tavanlı küçük bir mahalle mescidi tarzında cami, batısındaki aynı adlı çeşmesiyle bilinir. Tarihinin 16. yüzyıla dayandığı düşünülse de bugünkü şeklini 1872 depreminden sonra aldığı kabul edilir. Batı avlusuna açılan kapısı diğer mahalle mescitlerinden daha özenlidir; sivri kemerli, rozetli ve testere dişi girinti çıkıntılı kemer cephesi ona büyük bir ayrıcalık kazandırır.",
+    "en": "Built in the style of a small neighbourhood mosque, the mosque has a rectangular plan close to a square with a flat wooden ceiling and is known for its fountain of the same name to the west. Although its history is thought to go back to the 16th century, it is accepted to have taken its present form after the 1872 earthquake. The door opening to its west courtyard is more elaborate than those of other neighbourhood mosques; its pointed arches, rosettes and sawtooth-chamfered arch façade give it a great distinction."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarih",
+        "en": "Overview and Date"
+      },
+      "body": {
+        "tr": "Antakya'da küçük mahalle mescidi tarzında yapılmış eser, yine aynı isimle bilinen batıdaki çeşmesi ve mihrabın iki yanından sokağa bakan penceresiyle şehri ve insanlarını selamlıyor gibidir. Eserin tarihinin her ne kadar 16. yüzyıla dayandığı düşünülse de günümüzdeki şeklini 1872 yılındaki büyük depremden sonra edindiğini kabul etmek daha gerçekçidir.",
+        "en": "Built in the style of a small neighbourhood mosque in Antakya, the work seems to greet the city and its people with its fountain to the west, also known by the same name, and the windows on both sides of the mihrab facing the street. Although its date is thought to go back to the 16th century, it is more realistic to accept that it took its present form after the great earthquake of 1872."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mekan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve İç Mekân",
+        "en": "Plan and Interior"
+      },
+      "body": {
+        "tr": "Kareye yakın dikdörtgen planlı cami düz ahşap tavanla örtülüdür. Mihrabı ve minberi oldukça sadedir. Doğuda ve batıda birer, kuzeyde iki ve güneyde dört olmak üzere toplam sekiz pencereden ışık alır.",
+        "en": "The mosque, on a rectangular plan close to a square, is covered with a flat wooden ceiling. Its mihrab and minbar are quite plain. It receives light from a total of eight windows: one each in the east and west, two in the north and four in the south."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-portal",
+      "order": 3,
+      "title": {
+        "tr": "Avlu, Portal ve Minare",
+        "en": "Courtyard, Portal and Minaret"
+      },
+      "body": {
+        "tr": "Caminin batısındaki avluya yüksek, tekdüze duvarlara yerleştirilmiş bir kapıdan girilir; kapı diğer mahalle mescitlerinin aksine daha özenli ve özellikli bir görünüme sahiptir. Minare gövdesi kapının hemen yanındadır; kaidesi kare planla başlar, sekizgen olarak devam eder ve ahşap iskeletli külah ile örtülü şerefeyle sona erer. Düz atkılı kapı üç taraftan sivri kemerlerle çevrilidir; kemerle kapı arasındaki alınlığa altta büyük, üstte küçük iki rozet yerleştirilmiştir. Muhtemelen devşirme olan rozetlerde çoğunlukla geometrik, ayrıca bitkisel kompozisyonlar işlenmiştir. Kemer cephesi, Memlûk eserlerinde ve Adana'da sık görüldüğü gibi testere dişine benzer girinti çıkıntılarla yivlenmiştir.",
+        "en": "The courtyard to the west of the mosque is entered through a door set in high, uniform walls; unlike other neighbourhood mosques the door has a more elaborate and distinctive look. The minaret body is right next to the door; its base starts square and continues octagonal, ending with a wooden-framed cone and a covered balcony. The flat-lintelled door is surrounded on three sides by pointed arches; two rosettes, a large one below and a small one above, are set in the pediment between arch and door. The rosettes, probably spolia, are mostly decorated with geometric compositions, with some vegetal ones. The arch façade is chamfered with sawtooth-like indentations, as often seen in Mamluk works and in Adana."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "275-276"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total number of windows"
+      },
+      "value": 8,
+      "unit": null,
+      "note": {
+        "tr": "Doğu 1, batı 1, kuzey 2, güney 4.",
+        "en": "East 1, west 1, north 2, south 4."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "key": "rozet_sayisi",
+      "label": {
+        "tr": "Portaldaki rozet sayısı",
+        "en": "Rosettes on the portal"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "275"
+        }
+      ]
+    },
+    {
+      "key": "minare_kaide",
+      "label": {
+        "tr": "Minare kaidesi",
+        "en": "Minaret base"
+      },
+      "value": "Kare plandan sekizgene geçen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "275"
+        }
+      ]
+    },
+    {
+      "key": "tavan",
+      "label": {
+        "tr": "Tavan",
+        "en": "Ceiling"
+      },
+      "value": "Düz ahşap tavan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "274"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "portal-rozetleri",
+      "title": {
+        "tr": "Rozetli portal",
+        "en": "The rosetted portal"
+      },
+      "hint": {
+        "tr": "Kapı ile kemer arasındaki alınlıkta büyük ve küçük iki rozete bakın.",
+        "en": "Look for the large and small rosettes in the pediment between door and arch."
+      },
+      "section_id": "avlu-ve-portal"
+    },
+    {
+      "feature": "testere-disi-kemer",
+      "title": {
+        "tr": "Testere dişi kemer cephesi",
+        "en": "Sawtooth-chamfered arch façade"
+      },
+      "hint": {
+        "tr": "Kemerin yivli, testere dişine benzer girinti çıkıntılarını inceleyin.",
+        "en": "Study the arch's sawtooth-like grooved indentations."
+      },
+      "section_id": "avlu-ve-portal"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kürt Fakih (Tufaki) Camii, kareye yakın dikdörtgen planlı, düz ahşap tavanlı küçük bir mahalle camisidir. Batısındaki avluya, yüksek ve düz duvarlara yerleştirilmiş özenli bir kapıdan girilir. Düz atkılı kapı üç yandan sivri kemerlerle çevrilidir; kemerle kapı arasındaki alınlıkta biri büyük biri küçük iki rozet bulunur. Kemer cephesi testere dişi gibi girinti çıkıntılıdır. Kapının hemen yanında, kare kaideden sekizgene geçen gövdeli ve ahşap iskeletli külahlı minare yükselir. Mihrabın iki yanındaki pencereler sokağa bakar; mihrap ve minber sadedir. Batıda aynı adı taşıyan bir çeşme vardır.",
+      "en": "Kürt Fakih (Tufaki) Mosque is a small neighbourhood mosque on a nearly square rectangular plan with a flat wooden ceiling. The courtyard to its west is entered through an elaborate door set in high, plain walls. The flat-lintelled door is surrounded on three sides by pointed arches; two rosettes, one large and one small, are set in the pediment between arch and door. The arch façade is chamfered with sawtooth-like indentations. Right beside the door rises the minaret, with a body going from a square base to an octagon and a wooden-framed cone. The windows on both sides of the mihrab face the street; the mihrab and minbar are plain. To the west is a fountain bearing the same name."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 274-277) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
