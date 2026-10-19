@@ -1,0 +1,277 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-habib-i-neccar-sadirvani",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "İnşa kitabesinin metni ve dili kitapta yok.",
+      "H. 1270 ile M. 1858 karşılığı uzman tarafından doğrulanmalı.",
+      "Banî kitapta verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap kitabe tarihini 'H. 1270 (M. 1858)' olarak verir. 1270 hicri yılı miladi 1853-54'e denk gelir; 1858 hicri 1274-75'tir. İki değer kitaptaki gibi korundu, disputed işaretlendi. (Takvim karşılığı kaynaktan değil dönüşüm hesabından; uzman teyidi gerekir.)"
+      }
+    ]
+  },
+  "name": {
+    "tr": "Habib-i Neccar Şadırvanı",
+    "en": "Habib-i Neccar Shadirvan"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "şadırvan",
+    "antakya",
+    "habib-i-neccar",
+    "barok"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "66-67"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1270 (M. 1858)",
+      "en": "1270 H (1858 A.D.)"
+    },
+    "start_year": 1858,
+    "end_year": null,
+    "hijri_year": 1270,
+    "century": 19,
+    "basis": {
+      "tr": "İnşa kitabesi H. 1270 (M. 1858) olarak verilir; iki takvim yılı birbirini tutmuyor olabilir (bkz. data_quality_notes).",
+      "en": "The inscription is given as 1270 H (1858 A.D.); the two calendar years may not match (see data_quality_notes)."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "66-67"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Cami avlusunun kuzeyindeki, on iki köşeli su haznesi ve metal kaplı piramidal külahı olan şadırvan. Dört satırlık inşa kitabesi H. 1270 (M. 1858) tarihlidir.",
+    "en": "The shadirvan north of the courtyard, with a twelve-sided water reservoir and a metal-covered pyramidal cone. Its four-line construction inscription is dated 1270 H (1858 A.D.)."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Avlunun kuzeyine yerleştirilen şadırvan; onikigen planlı su haznesi, köşelerinden yükselen kısa sütunlar ve bunların üzerine oturan metal levha kaplamalı yayvan piramidal külahtan oluşur. Su haznesinden sonra yukarı devam eden gövde nişinin pencere biçimli kemer açıklığı, palmet benzeri püskül sarkıtları ve saçağa kadar süren, barok karakterli çok sayıda yatay korniş dikkat çeker.",
+        "en": "The shadirvan in the north of the courtyard has a dodecagonal water reservoir, short columns rising from its corners and a flat pyramidal cone with metal covering. The window-shaped arch opening of the trunk niche, palmette-like tassel stalactites and numerous baroque-character horizontal cornices up to the eaves draw attention."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "66-67"
+        }
+      ],
+      "order": 1
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hazne_kenar",
+      "label": {
+        "tr": "Su haznesi kenar sayısı",
+        "en": "Reservoir sides"
+      },
+      "value": 12,
+      "unit": "kenar",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "66-67"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_satir",
+      "label": {
+        "tr": "İnşa kitabesi satır sayısı",
+        "en": "Lines of construction inscription"
+      },
+      "value": 4,
+      "unit": "satır",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "66-67"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi-1270",
+      "location": {
+        "tr": "Şadırvan",
+        "en": "Shadirvan"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1270,
+        "gregorian": "1858"
+      },
+      "note": {
+        "tr": "Dört satırlık inşa kitabesi; kitap metin ve dil vermez.",
+        "en": "Four-line construction inscription; the book gives no text or language."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "66-67"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1858",
+      "year": 1858,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İnşa kitabesi tarihi (H. 1270 / M. 1858)",
+        "en": "Construction inscription date (1270 H / 1858 A.D.)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "66-67"
+        }
+      ],
+      "note": {
+        "tr": "Hicri ve miladi yıl uyuşmuyor olabilir.",
+        "en": "Hijri and Gregorian years may not match."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Habib-i Neccar Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Habib-i Neccar Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şadırvan, cami avlusunun kuzeyindedir. On iki kenarlı bir su haznesi vardır; haznenin köşelerinden kısa sütunlar yükselir ve bunlar metal levha kaplı, yayvan piramit biçimli bir külahı taşır. Yukarıdaki gövde nişinde pencere biçimli bir kemer açıklığı, palmet benzeri püskül sarkıtları ve saça kadar süren yatay kornişler görülür. Üzerinde dört satırlık bir inşa kitabesi vardır.",
+      "en": "The shadirvan stands north of the mosque courtyard. It has a twelve-sided water reservoir; short columns rise from its corners and carry a flat pyramid-shaped cone covered with metal plate. The trunk niche above has a window-shaped arch opening, palmette-like tassel stalactites and horizontal cornices up to the eaves. A four-line construction inscription is on it."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Habib-i Neccar Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p034-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "66-67"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Şadırvan",
+        "en": "The ablution fountain (şadırvan)"
+      },
+      "alt": {
+        "tr": "Avlunun bir köşesinde, ince taş sütunlar arası demir parmaklıklı, sekizgen planlı, geniş saçaklı taş bir şadırvan; arkada ahşap kapılı taş yapılar ve basamaklar.",
+        "en": "An octagonal stone ablution fountain with iron grilles between slender stone columns and a wide eave, in a corner of the courtyard; stone buildings with wooden doors and steps behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p034-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "67"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Şadırvanın kitabeli yüzü",
+        "en": "The inscribed face of the şadırvan"
+      },
+      "alt": {
+        "tr": "Yakın çekim: oymalı başlıklı taş sütunlar arasında demir parmaklıklı açıklıklar, üstte dört satırlık Arapça harfli taş kitabe; sağda dualar yazılı beyaz bir pano.",
+        "en": "Close-up: openings with iron grilles between stone columns with carved capitals, a four-line stone inscription in Arabic script above; a white board with prayers on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}
