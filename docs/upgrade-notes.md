@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-21 · Eser koordinatları
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- 472 eserin 216'sında artık koordinat var (Bursa 185, Hatay 31); harita ve `/assets/:id/nearby` dolu dönüyor.
+- Yeni noktaların hepsi `verified: false`. Kaynakları: fotoğraf EXIF'i, OpenStreetMap ya da bağlı olunan yapı (`data/tools/geocode.py`).
+- OSM'den gelen noktalar ODbL lisanslı: uygulamada "© OpenStreetMap katkıcıları" atfı gösterilmeli (Kübra).
+
 ## 2026-10-21 · Hatay kayıtları yayında
 
 Kimler: **API'yi yerelde çalıştıranlar**
