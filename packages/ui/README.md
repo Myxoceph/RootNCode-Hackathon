@@ -18,24 +18,28 @@ import { palette, typography, spacing, radius, touchTarget } from "@vagabonds/ui
 
 | Dosya | İçerik |
 |---|---|
-| [`src/tokens/colors.ts`](src/tokens/colors.ts) | Ham renk paleti ve temaların kullanabileceği ön plan/arka plan çiftleri (`contrastPairs`) |
+| [`src/tokens/colors.ts`](src/tokens/colors.ts) | Ham renk paleti |
 | [`src/tokens/typography.ts`](src/tokens/typography.ts) | Yazı aileleri (`fontFamily`) ve yazı ölçeği: `display`, `title`, `heading`, `bodyLarge`, `body`, `label`, `caption`, `overline`, `data`, `inscription` (en küçük 14) |
-| [`src/tokens/spacing.ts`](src/tokens/spacing.ts) | 4 puanlık boşluk ızgarası, köşe yuvarlaklıkları, en küçük dokunma hedefi (44) |
+| [`src/tokens/spacing.ts`](src/tokens/spacing.ts) | 4 puanlık boşluk ızgarası, köşe yuvarlaklıkları (`lg` buton, `xl` kart), en küçük dokunma hedefi (44) |
 
-Ekranlar `palette`'i doğrudan kullanmaz; renkler temalar (K3) üzerinden rollere bağlanır.
+Ekranlar `palette`'i doğrudan kullanmaz; renkler temalar üzerinden rollere bağlanır.
 
 ### Görsel kimlik
 
-Tasarım önce koyu zemin için yapıldı. 300 tonları ve `gece` nötrleri tasarımdaki değerlerin aynısı;
-700 tonları aynı renklerin açık zeminler (ör. kamera ekranının kontrol çubuğu) için koyulaştırılmış hâli.
+Renkler ve yazı tipleri **Hayrat** tasarımından ([Claude Design](https://claude.ai/artifact/5aNMunmUkKttWHs8wVXCrJ)) gelir.
+300 tonları koyu zemin, 700 tonları açık zemin içindir.
 
 | Renk | Koyu zemin | Açık zemin | Anlamı |
 |---|---|---|---|
-| İznik kobaltı | `kobalt300` #86A2EB | `kobalt700` #2658DB | Ana eylem |
-| Firuze | `firuze300` #71C3BD | `firuze700` #2E6D68 | Açık / onay |
-| Mercan | `mercan300` #DF816A | `mercan700` #AA3F25 | Lezzet, uyarı |
-| Varak altın | `altin300` #D7B76A | `altin700` #785F20 | Çözülen eser (haritada sekiz köşeli yıldız) |
-| Tarih sisi | `gece800` #1C2334 | – | Keşfedilmemiş eser |
+| İznik kobaltı | `kobalt300` #7FA3F1 | `kobalt700` #1E4AA0 | Ana eylem |
+| Firuze | `firuze300` #4FC6BE | `firuze700` #0A7A76 | Açık / onay, odak halkası |
+| Mercan | `mercan300` #EE7B64 | `mercan700` #BE3A26 | Lezzet, uyarı |
+| Varak altın | `altin300` #DDB55C | `altin600` #9C7424 (işaret) · `altin700` #82601B (metin) | Çözülen eser (sekiz köşeli yıldız) |
+| Tarih sisi | `gece800` #1B2537 | `gece200` #D3DAE3 | Keşfedilmemiş eser |
+
+Tasarımdaki açık zemin altını (#9C7424) metin olarak 4.5:1'i tutturmuyor; yalnızca ikon ve işaretlerde
+kullanılır, altın renkli metin için bir ton koyusu (`altin700`) var. Firuze de aynı nedenle tasarımdakinden
+(#0A7F7B) biraz koyu.
 
 | Yazı tipi | Kullanım | Expo paketi |
 |---|---|---|
@@ -46,17 +50,41 @@ Tasarım önce koyu zemin için yapıldı. 300 tonları ve `gece` nötrleri tasa
 
 Yazı tipleri `apps/app` açılırken `useFonts` ile yüklenir; `fontFamily` değerleri bu paketlerin kaydettiği adlardır.
 
+## Temalar
+
+[`src/themes.ts`](src/themes.ts) dört tema tanımlar: `light`, `dark`, `lightHighContrast`, `darkHighContrast`.
+Her tema bir rol → palet rengi eşlemesidir (`text`, `textSecondary`, `surface`, `primary`, `highlight`,
+`focusRing`, `fog`…). Yüksek kontrast, ikincil metni ve çizgileri ana metin rengine çeker.
+
+Tema tek noktadan seçilir: `getTheme(sistemŞeması, yüksekKontrastAçıkMı)`. Kamera ekranları (Zaman Perdesi,
+Taşın Dili, Ses Kapsülü) her temada karanlıktır ve `cameraColors` kullanır.
+
+## Bileşenler
+
+```tsx
+import { UiProvider, useTheme, Text, Button, Card } from "@vagabonds/ui";
+```
+
+| Bileşen | Notlar |
+|---|---|
+| `UiProvider` / `useUi` / `useTheme` | Uygulamanın kökünde bir kez; tema, "Büyük metin" çarpanı ve odak halkası ayarını taşır |
+| `Text` | `variant` (tipografi) + `color` (tema rolü). Sistem yazı boyutunu ve "Büyük metin"i izler |
+| `Button` | `primary` / `ghost` / `success`; etiketi erişilebilir adıdır, en az 44×44, klavye odağında firuze halka. `selected` ile aç/kapa düğmesi olur |
+| `Card` | Yüzey + ince kenar. Tıklanabilir kart için bir `Link`/`Pressable` ile sar |
+
 ### Kontrast
 
-Her çiftin oranı [`CONTRAST.md`](CONTRAST.md) dosyasında belgelidir. Tüm metin çiftleri 4.5:1'in
-üzerindedir (en düşük: `firuze700` / `gece50`, 5.49:1).
+Her temanın kullandığı her ön plan/arka plan çifti otomatik çıkarılır (`themeContrastPairs`) ve oranları
+[`CONTRAST.md`](CONTRAST.md) dosyasında belgelidir. Tüm metin çiftleri 4.5:1'in üzerindedir
+(en düşük: `mercan700` / `gece50`, 5.12:1).
 
 ```bash
 npm run ui:contrast                                # oranları kontrol eder (CI'da da çalışır)
 npm run contrast:docs --workspace @vagabonds/ui    # renk değiştirdikten sonra CONTRAST.md'yi yeniden üretir
 ```
 
-Yeni bir renk kombinasyonu kullanmak için önce `contrastPairs`'e ekle; eşiğin altındaysa kontrol başarısız olur.
+Bir temaya yeni bir rol çifti eklerken `src/themes.ts` içindeki `textOn` / `nonTextOn` listelerine de ekle;
+eşiğin altındaysa kontrol başarısız olur.
 
 ## Erişilebilirlik kuralları (WCAG 2.1 AA)
 
