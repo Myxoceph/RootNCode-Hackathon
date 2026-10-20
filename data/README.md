@@ -573,15 +573,25 @@ CREATE TABLE inscription (
 );
 
 -- ─────────────────────────────── Topluluk katkısı ve moderasyon
+-- Bu iki tabloyu yalnızca API yazar; içe aktarma bunlara dokunmaz.
+CREATE TABLE app_user (                               -- anonim ziyaretçi (takma ad) ya da moderatör
+  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  nickname    text NOT NULL CHECK (char_length(nickname) BETWEEN 2 AND 32),
+  role        text NOT NULL DEFAULT 'visitor' CHECK (role IN ('visitor','moderator')),
+  token_hash  text NOT NULL UNIQUE CHECK (token_hash ~ '^[0-9a-f]{64}$'),  -- token'ın SHA-256'sı
+  created_at  timestamptz NOT NULL DEFAULT now(),
+  banned_at   timestamptz
+);
+
 CREATE TABLE contribution (
   id             uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   asset_id       text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
-  user_id        uuid NOT NULL,                        -- kullanıcı tablosu backend'e ait (FK eklenir)
+  user_id        uuid NOT NULL REFERENCES app_user(id) ON DELETE CASCADE,
   kind           text NOT NULL CHECK (kind IN ('photo','memory','tip','correction')),
   media_id       uuid REFERENCES media(id),            -- kind = photo ise
   body           text,
   status         text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')),
-  reviewed_by    uuid,
+  reviewed_by    uuid REFERENCES app_user(id),         -- moderatör
   reviewed_at    timestamptz,
   reject_reason  text,
   created_at     timestamptz NOT NULL DEFAULT now(),
@@ -589,6 +599,8 @@ CREATE TABLE contribution (
   CHECK (status = 'pending' OR (reviewed_by IS NOT NULL AND reviewed_at IS NOT NULL))
 );
 CREATE INDEX contribution_queue_idx ON contribution (created_at) WHERE status = 'pending';
+CREATE INDEX contribution_approved_idx ON contribution (asset_id, created_at DESC) WHERE status = 'approved';
+CREATE INDEX contribution_user_idx ON contribution (user_id, created_at DESC);
 
 -- ─────────────────────────────── Değişiklik geçmişi (admin panelde her kayıt)
 CREATE TABLE asset_revision (
@@ -685,7 +697,7 @@ Notlar:
 
 `--verify` seçeneği içe aktarmadan sonra iki şeyi kontrol eder:
 - DB'deki her tablonun sütunları `db_rows.TABLES` ile aynı mı? (Şemaya sütun eklenip eşleme unutulursa yakalar.)
-- Her eserin DB'deki satırları `db_rows` çıktısıyla birebir aynı mı? (Görüntüleyicide görünen = DB'de olan.)
+- Her eserin DB'deki satırları `db_rows` çıktısıyla birebir aynı mı? (Görüntüleyicide görünen = DB'de olan.) API'nin yazdığı `contribution` satırları bu karşılaştırmaya girmez; `app_user` hiç denetlenmez.
 
 PostgreSQL 16'da test edildi: iki kez üst üste içe aktarma aynı sonucu verdi. Elle değiştirilmiş bir metin, silinmiş bir satır ve fazladan eklenmiş bir sütun `--verify` ile yakalandı.
 

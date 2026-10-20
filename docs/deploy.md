@@ -100,6 +100,20 @@ dc exec -T postgres pg_dump -U vagabonds -Fc vagabonds > vagabonds-$(date +%F).d
 dc exec -T postgres pg_restore -U vagabonds -d vagabonds --clean --if-exists < vagabonds-2026-10-30.dump
 ```
 
+> **Veritabanında artık JSON'da olmayan veri var.** Ziyaretçi Nabzı kullanıcıları (`app_user`) ve katkıları
+> (`contribution`) yalnızca veritabanında durur; eserler gibi içe aktarmayla yeniden kurulamaz.
+> `down -v` bunları siler. Sürüm güncellemesinden önce yedek al.
+
+### Moderatör oluşturma
+
+Moderasyon uçları (`/api/admin/...`) moderatör token'ı ister. Token yalnızca bir kez yazdırılır, kaybolursa yeni moderatör oluşturulur:
+
+```bash
+dc exec api npx --no-install tsx src/scripts/create-moderator.ts "Ahmet"
+```
+
+Kuyruk Swagger'dan yönetilebilir: `/api/docs` → **Authorize** → token → `GET /admin/contributions`.
+
 | Belirti | Neden / çözüm |
 |---|---|
 | `api` başlamıyor, `seed` "exited (1)" | `dc logs seed`: veri doğrulaması ya da migration hatası. Aynı commit'te CI yeşil mi bak. |

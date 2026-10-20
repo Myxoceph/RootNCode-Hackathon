@@ -156,7 +156,8 @@ def verify(con):
         aid = (a["id"],)
         compare("asset", rows["asset"], "id = %s", aid)
         for t in ASSET_TABLES:
-            if t in ("asset", "media", "media_variant", "asset_relation", "asset_revision"):
+            # contribution: API'nin yazdığı ziyaretçi katkıları; JSON'da yoktur, satırları karşılaştırılmaz
+            if t in ("asset", "media", "media_variant", "asset_relation", "asset_revision", "contribution"):
                 continue
             compare(t, rows[t], "asset_id = %s", aid)
         compare("asset_relation", rows["asset_relation"], "source_asset_id = %s", aid)
