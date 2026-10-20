@@ -125,4 +125,6 @@ docker compose -p vagabonds-trial -f deploy/compose.yml --env-file /tmp/trial.en
 - `deploy/.env` git'e girmez (`.gitignore`); parola yalnızca sunucuda durur.
 - API yalnızca `published` kayıtları sunar (`ASSET_VISIBILITY=published`); fotoğrafların çekim konumu hiçbir yanıtta yoktur.
 - API konteyneri yetkisiz kullanıcıyla ve salt okunur dosya sistemiyle çalışır; Caddy `nosniff`, `X-Frame-Options`, `Referrer-Policy` ve `Permissions-Policy` başlıklarını ekler.
-- API'de şimdilik yalnızca okuma uçları var; yazma uçları (ör. Topluluk Nabzı) eklenince hız sınırlama da eklenmeli.
+- API kendi güvenlik başlıklarını da ekler (JSON yanıtlarda `default-src 'none'` CSP). API'yi Caddy olmadan açsan da başlıklar korunur.
+- **Hız sınırı:** IP başına dakikada 120 istek (`RATE_LIMIT_MAX`); aşılınca `429 RATE_LIMITED`. `/health` sınırsızdır. API gerçek istemci IP'sini Caddy'nin `X-Forwarded-For` başlığından alır (`TRUST_PROXY: uniquelocal`, yalnızca özel Docker ağındaki proxy'ye güvenilir).
+- İstek gövdesi API'de 16 KB, Caddy'de 64 KB ile sınırlıdır.

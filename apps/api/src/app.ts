@@ -7,6 +7,7 @@ import { createMetaRepository } from "./modules/meta/meta.repository.ts";
 import { metaRoutes } from "./modules/meta/meta.routes.ts";
 import { registerErrorHandlers } from "./plugins/error-handler.ts";
 import { registerOpenApi } from "./plugins/openapi.ts";
+import { DEFAULT_RATE_LIMIT, registerSecurity, type RateLimitOptions } from "./plugins/security.ts";
 import { healthRoutes } from "./routes/health.ts";
 
 export interface BuildAppOptions {
@@ -18,7 +19,14 @@ export interface BuildAppOptions {
   mediaBaseUrl?: string;
   /** `published` serves only published assets; `preview` also serves in_review (never drafts). */
   assetVisibility?: AssetVisibility;
+  /** Fastify `trustProxy`: which proxies' X-Forwarded-For to trust for the client IP. */
+  trustProxy?: FastifyServerOptions["trustProxy"];
+  /** Per-IP request limit; `false` turns it off. */
+  rateLimit?: RateLimitOptions | false;
 }
+
+// Request bodies are short JSON (contributions are at most a few KB of text).
+const BODY_LIMIT_BYTES = 16 * 1024;
 
 /**
  * Builds the Fastify application without binding a port.
@@ -31,11 +39,14 @@ export function buildApp({
   corsOrigins = [],
   mediaBaseUrl = "https://media.invalid",
   assetVisibility = "published",
+  trustProxy = false,
+  rateLimit = DEFAULT_RATE_LIMIT,
 }: BuildAppOptions): FastifyInstance {
-  const app = Fastify({ logger });
+  const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
 
   registerErrorHandlers(app);
-  // Applied to the root instance before the routes so @fastify/swagger sees every route.
+  // Both hook into route registration, so they come before every route (Swagger's own included).
+  registerSecurity(app, rateLimit);
   registerOpenApi(app);
   app.register(cors, { origin: corsOrigins, methods: ["GET", "HEAD", "OPTIONS"] });
   app.register(healthRoutes, { prisma });

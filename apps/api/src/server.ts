@@ -10,6 +10,8 @@ const app = buildApp({
   corsOrigins: env.CORS_ORIGINS,
   mediaBaseUrl: env.MEDIA_BASE_URL,
   assetVisibility: env.ASSET_VISIBILITY,
+  trustProxy: env.TRUST_PROXY,
+  rateLimit: env.RATE_LIMIT_MAX === 0 ? false : { max: env.RATE_LIMIT_MAX, timeWindowMs: 60_000 },
 });
 
 async function shutdown(signal: NodeJS.Signals): Promise<void> {
