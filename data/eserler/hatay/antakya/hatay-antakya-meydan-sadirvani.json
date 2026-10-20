@@ -12,7 +12,6 @@
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
       "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
@@ -234,6 +233,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Meydan Camii Şadırvanı bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p069-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "136"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Külahlı ahşap saçaklı şadırvan",
+        "en": "Shadirvan with wooden canopy"
+      },
+      "alt": {
+        "tr": "Sekizgen ahşap çatılı şadırvan, demir şebekeli sütunçeler ve mermer bir tekne üzerinde durur. Çevresinde taş zemin ve arkada kapılı beyaz binalar görünür.",
+        "en": "An octagonal wooden-roofed shadirvan on slender columns with iron lattice around a marble basin. Stone paving surrounds it, with white buildings with doors behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

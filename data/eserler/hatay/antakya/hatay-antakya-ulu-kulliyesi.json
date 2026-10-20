@@ -12,7 +12,6 @@
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
       "Konum bilgisi (mıntıka/parsel) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli.",
       "Mimar kitapta verilmiyor.",
@@ -202,6 +201,223 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Ulu Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p038-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "74-75"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Külliye avlusu, minare ve cami duvarı",
+        "en": "Complex courtyard, minaret and mosque wall"
+      },
+      "alt": {
+        "tr": "Taş döşemeli geniş avlunun sağında pencereli beyaz taş cami duvarı, solunda kapıları ahşap, beyaz sıvalı medrese odaları var. Ağaçların ardında ince bir minare ile ortada küçük bir şadırvan görünür.",
+        "en": "A wide stone-paved courtyard with the white stone mosque wall and its windows on the right and whitewashed madrasa rooms with wooden doors on the left. A slender minaret and a small shadirvan stand beyond the trees."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "drawing",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p037-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "72"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Antakya manzarasını gösteren eski gravür",
+        "en": "Old engraving showing a view of Antakya"
+      },
+      "alt": {
+        "tr": "Kahverengi tonlu eski bir gravürde, arkada sivri dağ silsilesi, önünde ovaya yayılmış küçük yapılar, minareler ve ağaçlar görülür.",
+        "en": "A brown-toned old engraving with a jagged mountain range behind and small buildings, minarets and trees spread across the plain in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p039-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "77"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Külliyeyi çevreleyen meydandan minare görünümü",
+        "en": "Minaret seen across the square beside the complex"
+      },
+      "alt": {
+        "tr": "Palmiye ve zeytin ağaçları arasındaki açık alanda masalar vardır. Arkada dağ siluetinin önünde bir minare ve avluya açılan sivri kemerli bir giriş görünür.",
+        "en": "Tables stand in an open area among palm and olive trees. A minaret and a pointed-arched entrance to the courtyard rise in front of the mountain skyline."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p039-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "76"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Külliye avlusuna açılan taş kapı",
+        "en": "Stone gate leading into the courtyard"
+      },
+      "alt": {
+        "tr": "Sivri kemerli, silmelerle çerçevelenmiş açık taş bir kapı vardır; kapının içinden ağaçlı avlu ve gökyüzü görünür. Taş yüzeyde küçük bir yazı levhası bulunur.",
+        "en": "An open stone gateway with a pointed arch framed by moldings. Through it a tree-filled courtyard and sky are visible, and a small inscription plaque sits on the stone."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p039-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "76"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Külliyenin demir kapılı giriş açıklığı",
+        "en": "Complex entrance with iron gate"
+      },
+      "alt": {
+        "tr": "Taş duvarda, bezemeli kemerle çevrili bir açıklığa siyah demir kapı yerleştirilmiştir. Sağında bir dükkân vitrini, solunda taş duvar ve bir elektrik dolabı görülür.",
+        "en": "A black iron gate fills an opening in the stone wall, framed by a carved arch. A shop window is on the right, and a stone wall with a utility cabinet is on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p045-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "88"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avludan minare ve cami cephesi",
+        "en": "Minaret and mosque façade from the courtyard"
+      },
+      "alt": {
+        "tr": "Mavi gökyüzü altında taş döşemeli avluda turuncu bir ağaç ve uzaktaki minare öne çıkar. Sağda pencereli beyaz cami duvarı, solda kapılı medrese odaları uzanır.",
+        "en": "Under a blue sky, a tree and a distant minaret stand in the paved courtyard. The windowed white mosque wall is on the right and the madrasa rooms with doors on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p043-5.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "85"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "İkinci avluda taş yapı ve mezar taşları",
+        "en": "Stone building and grave markers in the second courtyard"
+      },
+      "alt": {
+        "tr": "İki katlı, kaba kesme taştan yapının alt katında kemerli, demir parmaklıklı pencereler, üstte küçük pencereler vardır. Önünde bitkiler ve iki ayakta mezar taşı görünür.",
+        "en": "A stone building with arched, barred windows below and small windows above. In front are plants and two upright grave markers on a stone base."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p043-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "85"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Bahçedeki mezar taşları",
+        "en": "Gravestones in the garden"
+      },
+      "alt": {
+        "tr": "Toprak zeminde, yaklaşık beyaz taş kaideler üzerinde sıralanmış yazıtlı mezar taşları vardır. Öndeki taşın üstünde renkli bir arma bezemesi görülür; çevrede çalılar ve ağaç gövdesi bulunur.",
+        "en": "Inscribed gravestones stand in rows on pale stone bases on bare ground. The front stone bears a colorful emblem, with shrubs and a tree trunk around."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p046-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "91"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Sivri kemerli sade taş çeşme nişi",
+        "en": "Plain pointed-arch stone fountain niche"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarda sivri kemerli derin bir niş vardır. Nişin altında küçük bir musluk ve taş bir su teknesi görülür; yüzey yıpranmış ve süslemesizdir.",
+        "en": "A deep pointed-arch niche in a cut-stone wall. A small spout and a stone basin sit at its base, and the weathered surface is undecorated."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

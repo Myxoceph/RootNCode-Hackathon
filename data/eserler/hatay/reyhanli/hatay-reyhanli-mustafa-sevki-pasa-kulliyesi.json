@@ -12,7 +12,6 @@
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
       "Konum bilgisi (parsel) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli ve doğrulanmalı.",
       "Külliyenin banîsi kitapta verilmiyor; Mustafa Şevki Paşa'nın kimliği ve külliyedeki rolü kitapta açıklanmıyor; founder null.",
       "Kitap bölüm başlığındaki 'PAŞACAMİİ' yazımı hatalıdır; kayıtta 'Paşa Camii' yazıldı.",
@@ -145,6 +144,55 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p090-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "178-179"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Külliyenin sivri kemerli taç kapısı",
+        "en": "Pointed-arched portal of the complex"
+      },
+      "alt": {
+        "tr": "Taş taç kapının geniş sivri kemerinden avluya giden yol görünür. Yanında bir minare gövdesi ve sıvalı bir bina vardır.",
+        "en": "A stone portal with a wide pointed arch showing the path into the courtyard. A minaret shaft and a plastered building are beside it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "drawing",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p089-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "176"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Eski gravürde bir avlu ve insanlar",
+        "en": "Old engraving of a courtyard with people"
+      },
+      "alt": {
+        "tr": "Sepya tonlu gravürde ağaç altında sivri kemerli taş bir cephe görünür. Önünde çocuklar, yetişkinler ve büyük bir küp vardır.",
+        "en": "A sepia engraving of a stone façade with arched openings under a tree. Children, adults and a large jar are in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

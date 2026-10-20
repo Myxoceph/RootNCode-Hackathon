@@ -16,7 +16,6 @@
       "Medresenin camiyle aynı tarihte olup olmadığı kaynakta 'tahmin edilmektedir' diye geçer.",
       "Medrese yalnızca birkaç cümleyle anlatıldığı için ayrı kayıt yapılmadı; cami kaydının bölümü olarak bırakıldı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -391,7 +390,128 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-selvili-camii/p192-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "382"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Giriş kapısı üstündeki ahşap minare",
+        "en": "Wooden minaret above the entrance"
+      },
+      "alt": {
+        "tr": "Taş çerçeveli kemerli dar bir giriş geçidinin üstünde ahşap şerefeli ve külahlı küçük bir minare yükseliyor. Yanlarda kepenkli dükkânlar var.",
+        "en": "A small minaret with a wooden balcony and cap rises above a narrow arched stone entrance passage. Shuttered shops are on both sides."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-selvili-camii/p192-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "383"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Asmalı avlu ve şadırvan",
+        "en": "Vine-covered courtyard and fountain"
+      },
+      "alt": {
+        "tr": "Asma yaprakları altında kırmızı halılı açık bir namaz alanı ve arkada küçük çatılı bir şadırvan görülüyor. Çevrede yeşillik ve evler var.",
+        "en": "An open prayer area with red carpet beneath vine leaves, with a small roofed ablution fountain behind. Greenery and houses surround it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-selvili-camii/p193-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "385"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Camlı son cemaat yeri",
+        "en": "Glazed portico"
+      },
+      "alt": {
+        "tr": "Metal çatılı, camlı uzun bir son cemaat yeri ve desenli halı görülüyor. Solda ahşap kaplı duvar, ileride kapı var.",
+        "en": "A long glazed portico with a metal roof and patterned carpet. A wood-panelled wall is on the left and a door lies ahead."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-selvili-camii/p193-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "385"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mermer mihrap nişi ve pencere",
+        "en": "Marble mihrab niche and window"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı duvarda mermer kaplı bir mihrap nişi ve üstünde yazılı bir levha var. Yanda ahşap çerçeveli bir pencere ve elektronik vakit tabelası görülüyor.",
+        "en": "A marble-faced mihrab niche in a wood-panelled wall with a lettered plaque above. A wooden-framed window and an electronic prayer-time board are beside it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-selvili-camii/p193-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "385"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kemerli namaz salonu",
+        "en": "Prayer hall with arch"
+      },
+      "alt": {
+        "tr": "Çizgili renkli taş kemerin ardında ahşap kaplı duvarlı, yeşil tavanlı bir salon var. Zeminde desenli halı ve duvarda pencereler görülüyor.",
+        "en": "Beyond a striped two-tone stone arch, a hall with wood-panelled walls and a green ceiling. Patterned carpet covers the floor and windows line the wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

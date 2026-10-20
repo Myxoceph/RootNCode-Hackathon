@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Mahremiye Camii bölümünden (s. 278-283) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -404,7 +403,104 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-mahremiye-camii/p140-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "278-279"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu ve revaklı cephe",
+        "en": "Courtyard and arcaded side"
+      },
+      "alt": {
+        "tr": "Taş döşeli avluda ortada bir ağaç ve alçak taş blok, çevrede ahşap banklar; kiremit çatılı revaklı yapı ve arkada küçük bir minare.",
+        "en": "A stone-paved courtyard with a tree and a low stone block, wooden benches around, a tiled-roof building with a portico and a small minaret behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-mahremiye-camii/p140-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "279"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Siyah-beyaz taşlı giriş kapısı",
+        "en": "Entrance with black and white stonework"
+      },
+      "alt": {
+        "tr": "Sivri kemerli girişte siyah-beyaz taş süslemeler ve yuvarlak madalyonlar; içeride merdivenle çıkılan ahşap kapı, üstte avize ve iki pencere.",
+        "en": "A pointed-arch entrance with black and white stone decoration and round medallions; inside a wooden doorway reached by steps, a chandelier and two windows above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-mahremiye-camii/p141-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "280-281"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İbadet salonu ve taş sütunlar",
+        "en": "Prayer hall and stone columns"
+      },
+      "alt": {
+        "tr": "Kalın taş sütunlar ve kemerlerle bölünmüş salon; sağda taş minber, bordo halı, avize ve ahşap tavan; duvarda küçük pencereler.",
+        "en": "A hall divided by thick stone columns and arches; a stone minbar on the right, red carpet, a chandelier and a wooden ceiling, with small windows in the walls."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-mahremiye-camii/p141-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "281"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Taş mihrap ve minber",
+        "en": "Stone mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Sivri kemerli taş mihrap nişi ve sağında taş minberin merdiveni; mihrabın içinde dar bir ışıklı aralık, solda duvar saati, zeminde bordo halı.",
+        "en": "A pointed-arch stone mihrab niche with the stone minbar stairs to its right; a narrow lit slit inside the niche, a wall clock on the left and red carpet on the floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

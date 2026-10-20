@@ -15,7 +15,6 @@
       "Hisse sahibi 'Abbas Kıllı Reyhanlı Yeni Şehir Camii Vakfı' ile Reyhanlı Yenişehir Camii (hatay-reyhanli-yenisehir-camii) arasındaki bağ kaynakta açıkça söylenmiyor; ilişki 'probable' yazıldı, doğrulanmalı.",
       "Dönem (era) için kaynakta bilgi yok; null bırakıldı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
       "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -233,7 +232,56 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-butik-otel/p232-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "462-463"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Otelin ahşap cumbalı sokak cephesi",
+        "en": "Street façade of the hotel with its wooden balcony"
+      },
+      "alt": {
+        "tr": "İki katlı, krem sıvalı ve taş cepheli yapı; üst katta demir korkuluklu balkon ve ahşap panjurlu pencereler, altta şemsiyeli kafe terası ve saksılı bitkiler.",
+        "en": "A two-storey cream plastered and stone building with an iron-railed balcony and wooden-shuttered windows above, and a café terrace with a parasol and potted plants below."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-butik-otel/p232-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "463"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Otelin giriş salonu ve taş kemeri",
+        "en": "Hotel lobby with its stone arch"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı tavanlı geniş salon; sağda taş kemerli açıklık, altın çerçeveli aynalar ve tablolar, yeşilimsi parlak mermer zemin, kanepe ve koltuklar.",
+        "en": "A wide lobby with a wooden-clad ceiling; a stone arch on the right, gold-framed mirrors and paintings, a glossy greenish marble floor, and a sofa and armchairs."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

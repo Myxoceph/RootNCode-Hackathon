@@ -15,7 +15,6 @@
       "Medrese ve tekke işlevleri bu kayıtta ikincil tür olarak verildi; ayrı kayıt gerekip gerekmediği veri ekibince değerlendirilmeli.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
       "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
-      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -370,6 +369,55 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-kirikhan-beyazid-i-bestami-turbesi/p211-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "421"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbe alanı ve taş yapılar",
+        "en": "The tomb area and stone buildings"
+      },
+      "alt": {
+        "tr": "Taş döşeli geniş bir teras; arkasında kesme taş duvarlı uzun, alçak bir yapı, kapıları kırmızı-kahverengi ahşap; solda sıralı banklar, sokak lambaları ve iki küçük ağaç.",
+        "en": "A wide stone-paved terrace; behind it a long low cut-stone building with red-brown wooden doors; benches, street lamps and two small trees on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-kirikhan-beyazid-i-bestami-turbesi/p212-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "423"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Taş yapıda sivri kemerli giriş ve merdiven",
+        "en": "Arched entrance and staircase of the stone building"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarda geniş, sivri kemerli bir giriş nişi; içinde kapı ve küçük kovalar, üstte yazılı levha, sağda demir korkuluklu taş merdiven, solda cam cepheli modern bir yapı.",
+        "en": "A wide pointed-arch entrance niche in a cut-stone wall with a door and small buckets inside and a plaque above; on the right a stone stair with iron railings, on the left a modern glass-fronted structure."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

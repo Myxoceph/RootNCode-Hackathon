@@ -17,7 +17,6 @@
       "Yeni caminin yıkılan minarelerinin yerine yapılan kısa tek şerefeli minarenin tarihi kaynakta yok.",
       "Kitap bu bölüm özeti sayfasında eser adını 'KAPTANPAŞA CAMİİ MİNARESİ' yazar; ad ids.md ve başlıktaki yazıma göre alındı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -272,7 +271,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-kaptan-pasa-camii-minaresi/p198-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "394-395"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Beyaz cami ve taş minareleri",
+        "en": "White mosque and its stone minarets"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı camide solda silindirik taş bir minare, ortada daha ince başka bir minare görülüyor. Sağda apartmanlar, solda palmiye var; gökyüzü mavi.",
+        "en": "A white-plastered mosque with a cylindrical stone minaret on the left and a thinner minaret in the middle. Apartment blocks are on the right and a palm tree on the left under a blue sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-kaptan-pasa-camii-minaresi/p199-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "396"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Çini kaplı mihrap ve minber",
+        "en": "Tile-clad mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Yeşil ve mavi çinilerle kaplı bir mihrap, yanında oymalı ahşap minber var. Duvar ve tavanda mavi-beyaz süslemeler, zeminde kırmızı halı görülüyor.",
+        "en": "A mihrab covered in green and blue tiles beside a carved wooden minbar. Blue and white decoration covers the walls and ceiling, and the carpet is red."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-kaptan-pasa-camii-minaresi/p199-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "397"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Süslemeli tavan",
+        "en": "Decorated ceiling"
+      },
+      "alt": {
+        "tr": "Aşağıdan bakıldığında beyaz zemin üzerinde mavi ve turkuaz bitkisel motiflerle bezeli iki dikdörtgen tavan panosu görülüyor. Kenarlarda çini bordürler yer alıyor.",
+        "en": "A view upward at two rectangular ceiling panels with blue and turquoise floral motifs on white. Tiled borders frame the edges."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

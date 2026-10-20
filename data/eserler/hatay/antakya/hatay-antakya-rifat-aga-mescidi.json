@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Rıfat Ağa Mescidi bölümünden (s. 306-309) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -220,7 +219,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-rifat-aga-mescidi/p155-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "308-309"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Mescit avlusu",
+        "en": "The masjid courtyard"
+      },
+      "alt": {
+        "tr": "Taş döşeli avlu; ortada ağaç ve alçak taş blok, sağda ahşap banklar, solda ahşap kapılı kiremit çatılı revaklı yapı.",
+        "en": "A stone-paved courtyard with a tree and a low stone block in the middle, wooden benches on the right and a tiled-roof building with a portico and wooden doors on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-rifat-aga-mescidi/p154-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "306-307"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Avlu ve mescidin girişi",
+        "en": "Courtyard and entrance of the masjid"
+      },
+      "alt": {
+        "tr": "Tente altındaki avluda mavi bank; arka planda taş ve sıvalı alçak yapı, kemerli girişi, Türk bayrağı ve ahşap kapıları. Solda küçük musluklar.",
+        "en": "A blue bench in a courtyard under an awning; behind it a low stone and plastered building with an arched entrance, a Turkish flag and wooden doors. Small taps on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-rifat-aga-mescidi/p155-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "309"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Sokak kapısındaki kemerli geçit",
+        "en": "Arched passage at the street gate"
+      },
+      "alt": {
+        "tr": "Taş duvarda kemerli bir geçit; üstünde \"Rıfat Ağa Mescidi\" yazılı levha, içeride basamaklar ve avluya açılan kapılar.",
+        "en": "An arched passage in a stone wall with a sign above it reading Rıfat Ağa Mescidi; inside, steps and doors opening onto the courtyard."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -16,7 +16,6 @@
       "Mescidin ismindeki 'Yemeniciler' adının kaynağı kitapta açıklanmıyor.",
       "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -284,7 +283,104 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kerhan-yemeniciler-mescidi/p130-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "258-259"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Mescidin avlusu",
+        "en": "The masjid courtyard"
+      },
+      "alt": {
+        "tr": "Küçük çakıl döşemeli bir avlu; üzerinde oluklu metal bir sundurma, ortada bir ağaç gövdesi, solda iki yeşil demirli ahşap bank, arkada krem sıvalı duvarda turuncu ahşap kapılar ve bir bekçi kulübesi.",
+        "en": "A small pebble-paved courtyard under a corrugated metal canopy, a tree trunk in the middle, two green-framed wooden benches on the left, and orange wooden doors in a cream plastered wall behind, with a small booth on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kerhan-yemeniciler-mescidi/p131-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "260-261"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescidin iç mekânı",
+        "en": "Interior of the masjid"
+      },
+      "alt": {
+        "tr": "Beşik çatılı, koyu ahşap tavanlı dikdörtgen bir ibadet salonu; duvarların alt kısmı açık renk ahşap kaplamalı, zeminde kırmızı-krem desenli seccade halısı, ortada bir kare ayak ve duvarda saat.",
+        "en": "A rectangular prayer hall with a dark wooden gabled ceiling, light wooden panelling on the lower walls, a red and cream prayer-rug carpet, a square pier in the middle and a clock on the wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kerhan-yemeniciler-mescidi/p132-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "262-263"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap, minber ve iç mekân",
+        "en": "Mihrab, minbar and interior"
+      },
+      "alt": {
+        "tr": "Açık renk mermer çerçeveli mihrap nişi, üzerinde yazılı bir levha; sağında ahşap minber ve merdiveni, yanında pencere. Duvarın altı ahşap kaplamalı, zeminde kırmızı halı.",
+        "en": "A mihrab niche in light marble with an inscribed panel above it; to its right a wooden minbar with stairs beside a window. Lower walls are wood-panelled and the floor has red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kerhan-yemeniciler-mescidi/p131-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "261"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Mescidin tabelalı sokak kapısı",
+        "en": "The masjid's street door with sign"
+      },
+      "alt": {
+        "tr": "Dar bir sokakta, üzerinde mavi bir müftülük tabelası bulunan gri boyalı metal kapı; kapının iki yanında boru ve kablolar uzanıyor.",
+        "en": "A grey painted metal door in a narrow street with a blue muftiate sign above it; pipes and cables run down both sides of the door."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

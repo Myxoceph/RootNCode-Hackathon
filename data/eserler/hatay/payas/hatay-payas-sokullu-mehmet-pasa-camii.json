@@ -12,7 +12,6 @@
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
@@ -280,6 +279,271 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Sokullu Mehmet Paşa Camii ve Hanikâhı bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p057-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "112-113"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi, minaresi ve hanikâh revakları",
+        "en": "Mosque dome, minaret and hanikah arcades"
+      },
+      "alt": {
+        "tr": "Yüksekten görünen camide kurşun kaplı gri kubbe, küçük kubbeler ve sivri külahlı bir minare öne çıkar. Arkada yeşil dağlar vardır.",
+        "en": "A mosque seen from above with a grey lead-covered dome, smaller domes and a minaret with a pointed cap. Green mountains rise behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p058-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "115"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Caminin sivri kemerli taş girişi",
+        "en": "Stone entrance of the mosque"
+      },
+      "alt": {
+        "tr": "Renkli taşlı sivri kemerli girişte iki kanatlı ahşap kapı bulunur. Kapının üstünde mukarnaslı kemer ve bir kitabe levhası, iki yanında ahşap banklar vardır.",
+        "en": "A pointed-arched entrance in coloured stone with a double wooden door. A muqarnas arch and a name plate are above it, with wooden benches on both sides."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p058-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "114"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Haçvari harimde ortadaki kubbe",
+        "en": "Central dome of the cross-plan sanctuary"
+      },
+      "alt": {
+        "tr": "Kırmızı halılı harimde sivri kemerli eyvanlar ortadaki yüksek kubbeye açılır. Sağda ahşap minber, solda ahşap bir mahfil ve sarkıt avize görünür.",
+        "en": "In the red-carpeted sanctuary, pointed arched bays open to the high central dome. A wooden minber is on the right and a wooden gallery and chandelier on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p058-5.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "115"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harimde giriş kapısı ve ahşap mahfil",
+        "en": "Sanctuary entrance door and wooden gallery"
+      },
+      "alt": {
+        "tr": "Kırmızı halılı harimin girişinde ahşap kapı ve üstünde korkuluklu ahşap bir mahfil vardır. Yukarıda kubbe ve sarkıt bir avize görünür.",
+        "en": "A wooden door at the entrance of the red-carpeted sanctuary, with a railed wooden gallery above it. The dome and a hanging chandelier are overhead."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p058-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "115"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap önünde süslü ahşap yapı",
+        "en": "Ornate wooden stand before the mihrab"
+      },
+      "alt": {
+        "tr": "Kırmızı halıdaki süslü, uzun ahşap yapının arkasında mermerli mihrap nişi görünür. Taş duvarlı eyvanın yan duvarlarında yuvarlak yazılı levhalar vardır.",
+        "en": "An ornate tall wooden stand on the red carpet with the mihrab niche behind it, in dark and white stone. Round lettered panels hang on the side walls."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p058-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "115"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harimde ahşap direk ve tavan",
+        "en": "Wooden pillar and ceiling in the sanctuary"
+      },
+      "alt": {
+        "tr": "Taş duvarlı harimde kırmızı halı üzerinde bir ahşap direk ve kahverengi ahşap kirişli tavan görünür. Solda ahşap bir kapı, duvarda pencereler vardır.",
+        "en": "A wooden pillar and a brown timber-beamed ceiling above the red carpet in the stone sanctuary. A wooden door is on the left and windows are in the wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p059-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "116"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Cami girişinin içeriden görünümü",
+        "en": "Mosque entrance seen from inside"
+      },
+      "alt": {
+        "tr": "Siyah beyaz taşlı sivri kemerli girişte ahşap kapı ve üstünde mukarnaslı kemer bulunur. İki yanda ahşap ayakkabılıklar vardır.",
+        "en": "A black-and-white stone pointed-arched entrance with a wooden door and a muqarnas arch above. Wooden shoe racks stand on both sides."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p059-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "117"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Hat levhalı sivri kemerli pencere",
+        "en": "Pointed-arched window with a calligraphy roundel"
+      },
+      "alt": {
+        "tr": "Kalın taş duvardaki sivri kemerli pencere nişinde kırmızı çerçeveli bir pencere bulunur. Üstte siyah beyaz yazılı yuvarlak bir levha vardır.",
+        "en": "A pointed-arched window niche in a thick stone wall with a red-framed window. A round calligraphy panel is above it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p060-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "118-119"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Avlu, şadırvan ve minare",
+        "en": "Courtyard, shadirvan and minaret"
+      },
+      "alt": {
+        "tr": "Zeytin ağaçları arasında kubbeli, açık bir şadırvan bulunur. Arkada revaklı bina ve sivri külahlı minare görünür.",
+        "en": "An open domed shadirvan among olive trees in the courtyard. An arcaded building and a minaret with a pointed cap are behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p060-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "119"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Zeytin ağaçları ve şadırvan",
+        "en": "Olive trees and the shadirvan"
+      },
+      "alt": {
+        "tr": "Geniş gövdeli bir zeytin ağacı ve arkasında taş şadırvan görünür. Avlu taş döşelidir; kemerli kapılar ve mavi gökyüzü vardır.",
+        "en": "A thick-trunked olive tree with the stone shadirvan behind it. The courtyard is stone-paved, with arched doors and blue sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m11",
+      "type": "photo",
+      "is_cover": false,
+      "order": 11,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p060-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "119"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlunun taş döşemesi ve hanikâh duvarı",
+        "en": "Courtyard paving and hanikah wall"
+      },
+      "alt": {
+        "tr": "Geniş taş döşeli avluda ağaçlar ve uzakta şadırvan görünür. Sağda kemerli kapıları olan taş duvar, önde ahşap bank ve çimenlik vardır.",
+        "en": "A wide stone-paved courtyard with trees and the shadirvan in the distance. A stone wall with arched doors is on the right, with a wooden bench and lawn in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

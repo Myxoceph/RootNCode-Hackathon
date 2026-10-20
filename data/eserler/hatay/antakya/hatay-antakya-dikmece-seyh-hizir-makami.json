@@ -13,7 +13,6 @@
       "Başlıkta 'makam', bölüm özetinde Antakya Dikmece 126 ada 5 parsel; İngilizce içindekilerde 'Arsuz Dikmece, 126 / plot 29' yazıyor (ilçe ve parsel çelişkisi).",
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
       "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
-      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
       "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
@@ -138,6 +137,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-dikmece-seyh-hizir-makami/p206-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "411"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Makam yapısı ve çevresindeki mezarlar",
+        "en": "The maqam building and surrounding graves"
+      },
+      "alt": {
+        "tr": "Çam ağaçları altında beyaz sıvalı, düz çatılı küçük bir yapı; önünde mermer kaplı iki modern mezar, arkada zeytinlik ve açık bir manzara.",
+        "en": "A small white plastered building with a flat roof under pine trees; two modern marble-covered graves in front, with olive groves and open landscape behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

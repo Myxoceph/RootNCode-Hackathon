@@ -15,7 +15,6 @@
       "Yapının asıl yapım dönemi (16. yüzyıl mı, 1875 mi) araştırılmalı.",
       "Era alanı 'gec-osmanli' yalnızca 1875 kitabesine dayanır; tarihleme tartışmalıdır.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -338,7 +337,152 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p178-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "354-355"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kemerli revakı ve minaresi",
+        "en": "Mosque's arched portico and minaret"
+      },
+      "alt": {
+        "tr": "Taş cephede geniş sivri kemerli bir revak, solda yüksek ve ince taş minare var. Önünde taş döşeli bir meydan uzanıyor; gökyüzü bulutlu mavi.",
+        "en": "A stone façade with a wide pointed-arch portico and a tall slender stone minaret on the left. A paved square stretches in front under a cloudy blue sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p179-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "356"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Taş minare",
+        "en": "The stone minaret"
+      },
+      "alt": {
+        "tr": "Taş örgülü, silindirik gövdeli ve sivri külahlı minare mavi gökyüzüne yükseliyor. Dibinde alçak taş duvar ve kemerli bir geçit var.",
+        "en": "A cylindrical stone minaret with a pointed cap rises into a blue sky. A low stone wall and an arched passage are at its foot."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p179-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "357"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Cami girişi ve kitabe levhası",
+        "en": "Mosque entrance and inscription plaque"
+      },
+      "alt": {
+        "tr": "Taş duvarda sivri kemerli, iki kanatlı ahşap bir kapı ve basamaklar var. Kapının üstünde küçük bir kitabe levhası bulunuyor.",
+        "en": "A pointed-arch double wooden door set in a stone wall, with steps in front. A small inscription plaque is above the door."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p180-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "358-359"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sütunlu ve çapraz tonozlu namaz salonu",
+        "en": "Prayer hall with column and cross vaults"
+      },
+      "alt": {
+        "tr": "Kalın taş sütun ve tonozlu bölümlerle bölünen salonda solda taş minber, sağda ahşap mahfil var. Zemin turkuaz halıyla kaplı, avizeler sarkıyor.",
+        "en": "A hall divided by a thick stone column and vaulted bays, with a stone minbar on the left and a wooden loft on the right. The floor has turquoise carpet and chandeliers hang above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p180-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "358-359"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kemer üstündeki kitabe ve rozet",
+        "en": "Inscription and rosette above an arch"
+      },
+      "alt": {
+        "tr": "Taş duvarda siyah zeminli, Arapça yazılı dikdörtgen bir kitabe ve altında bitkisel kabartmalı bir rozet var. Altta bir kemerin üst kısmı görülüyor.",
+        "en": "A rectangular black inscription with Arabic lettering on a stone wall, with a carved floral rosette below it. The top of an arch is visible beneath."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p180-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "359"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap ve taş minber",
+        "en": "Mihrab and stone minbar"
+      },
+      "alt": {
+        "tr": "Taş çerçeveli mihrap nişinin yanında, kapılı ve yazıtlı taş bir minber yükseliyor. Üstte altıgen bir avize ve sağda ahşap pencere görülüyor.",
+        "en": "Next to a stone-framed mihrab niche, a stone minbar with a doorway and an inscription. A hexagonal chandelier hangs above and a wooden window is on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

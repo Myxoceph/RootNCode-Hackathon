@@ -12,7 +12,6 @@
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
       "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
@@ -176,6 +175,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Sokullu Mehmet Paşa Hamamı bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p055-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "109"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Hamamın renkli taşlı kapısı",
+        "en": "Bath entrance with coloured stonework"
+      },
+      "alt": {
+        "tr": "Pembe, gri ve siyah yatay taş şeritlerle kaplı duvarda sivri kemerli ahşap bir kapı vardır. Kapının yanlarında demir parmaklıklı pencereler ve bir Türk bayrağı görünür.",
+        "en": "A wall of pink, grey and black horizontal stone bands with a pointed-arched wooden door. Barred windows and a Turkish flag are on either side."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

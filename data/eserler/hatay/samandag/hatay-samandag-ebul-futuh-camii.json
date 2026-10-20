@@ -15,7 +15,6 @@
       "Era alanı, tarihleme belirsiz olduğu için boş bırakıldı.",
       "Cami adındaki kişi (Ebu'l Fütuh) kaynakta açıklanmıyor.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -227,7 +226,128 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-samandag-ebul-futuh-camii/p188-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "374-375"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu, son cemaat yeri ve minare",
+        "en": "Courtyard, portico and minaret"
+      },
+      "alt": {
+        "tr": "Zeytin ağaçlarıyla gölgelenen taş döşeli avluda ahşap banklar ve beyaz sıvalı revaklı cami var. Arkada ahşap şerefeli kısa bir minare görülüyor.",
+        "en": "A stone-paved courtyard shaded by olive trees, with wooden benches and a white-plastered mosque with a portico. A short minaret with a wooden balcony is behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-samandag-ebul-futuh-camii/p189-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "376-377"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Namaz salonu ve ahşap minber",
+        "en": "Prayer hall and wooden minbar"
+      },
+      "alt": {
+        "tr": "Ahşap kirişli tavanlı, beyaz duvarlı salonda uzakta ahşap minber ve soldaki taş mihrap var. Zemin yeşil desenli halıyla kaplı, tavandan avize sarkıyor.",
+        "en": "A white-walled hall with an exposed timber roof, a wooden minbar in the distance and a stone mihrab on the left. The floor has green patterned carpet and a chandelier hangs from the ceiling."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-samandag-ebul-futuh-camii/p189-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "377"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Ahşap tavan ve avize",
+        "en": "Wooden ceiling and chandelier"
+      },
+      "alt": {
+        "tr": "Aşağıdan bakıldığında ahşap kirişli ve tahta kaplı tavan görülüyor. Ortada yeşil ışıklı çok kollu bir avize asılı.",
+        "en": "A view upward at a ceiling of wooden beams and boards. A multi-armed chandelier with a green bulb hangs in the centre."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-samandag-ebul-futuh-camii/p189-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "376-377"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap ve hat levhaları",
+        "en": "Mihrab and calligraphy roundels"
+      },
+      "alt": {
+        "tr": "Taş çerçeveli sivri kemerli mihrap nişinin üstünde üç yuvarlak hat levhası asılı. Yanda camlı bir kitaplık ve ahşap pencere kanadı var.",
+        "en": "A stone-framed pointed mihrab niche with three round calligraphy plaques above it. A glass-fronted bookcase and a wooden shutter are at the sides."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-samandag-ebul-futuh-camii/p189-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "377"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Taş çerçeveli kapı ve tuğralı kitabe",
+        "en": "Stone-framed door and tughra plaque"
+      },
+      "alt": {
+        "tr": "Taş çerçeveli kemerli, iki kanatlı ahşap bir kapının üstünde tuğra ve yazı içeren bir kitabe levhası var. Duvar beyaz sıvalı.",
+        "en": "A double wooden door in an arched stone frame, with an inscription plaque bearing a tughra above it. The wall is white-plastered."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -12,7 +12,6 @@
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
       "Kervansarayın günümüzdeki kullanımı ve kapı durumu kitapta yok.",
       "Mimar kitapta kesin değil; ayrıntı için külliye kaydına bakınız (architect null).",
       "Vakıf/vakfiye bilgisi kitapta yok."
@@ -286,6 +285,127 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-belen-kanuni-sultan-suleyman-kervansarayi/p073-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "144"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kervansarayın kitabeli girişi",
+        "en": "Caravanserai entrance with inscription"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarda basık kemerli, koyu ahşap bir kapı ve üzerinde yazılı taş kitabe bulunur. Kapının iki yanında fener biçimli lambalar vardır.",
+        "en": "A dark wooden door under a low arch in a cut-stone wall, with an inscribed stone panel above it. Lantern-shaped lamps hang on each side."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-belen-kanuni-sultan-suleyman-kervansarayi/p074-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "146"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kervansaray içi, tonozlar ve kare ayaklar",
+        "en": "Caravanserai interior with vaults and piers"
+      },
+      "alt": {
+        "tr": "Beyaz badanalı geniş salonda taş kare ayaklar çapraz tonozları taşır. Taş zeminde köşede değirmen taşları durur.",
+        "en": "A wide whitewashed hall where square stone piers carry cross vaults. Millstones rest on the stone floor in the corner."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-belen-kanuni-sultan-suleyman-kervansarayi/p074-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "146"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kervansaray içinde taş kemer ve değirmen taşları",
+        "en": "Stone arch and millstones inside"
+      },
+      "alt": {
+        "tr": "Taş bir kemer beyaz tonozlu bölümleri ayırır; önde iki büyük yuvarlak değirmen taşı yere dayalıdır. Yan duvar kesme taştandır.",
+        "en": "A stone arch divides white vaulted sections, with two large round millstones leaning on the floor in front. The side wall is cut stone."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-belen-kanuni-sultan-suleyman-kervansarayi/p073-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "145"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "İki kanatlı kapı ve üstündeki kitabe",
+        "en": "Double door with inscription above"
+      },
+      "alt": {
+        "tr": "Kemerli taş çerçeve içinde iki kanatlı kahverengi ahşap kapı, üstünde yıpranmış yazılı bir taş levha bulunur. Solda küçük bir lamba vardır.",
+        "en": "A brown double wooden door in an arched stone frame, with a worn inscribed stone slab above. A small lamp is on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-belen-kanuni-sultan-suleyman-kervansarayi/p073-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "145"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Taş çerçeveli çeşme",
+        "en": "Stone-framed fountain"
+      },
+      "alt": {
+        "tr": "Üçgen alınlıklı, sütunçeli taş çerçeve içinde yuvarlak madalyonlu bir çeşme yer alır. Altında taş bir tekne ve duvarda açık renkli taşlar görünür.",
+        "en": "A fountain in a stone frame with a triangular pediment and small columns, with a round medallion in the centre. A stone basin is below."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }
