@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-21 · Fotoğraflar R2'de
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Yeni manifesti veritabanına al:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- Kayıtlara bağlı 174 fotoğrafın sürümleri R2'de; API'nin döndürdüğü görsel adresleri artık açılıyor.
+- Orijinaller R2'ye yüklenmiyor, kaynağında kalıyor (Drive / kitap PDF'i). Ayrıntı: `data/README.md` §8.
+
+---
+
 ## 2026-10-20 · Ziyaretçi Nabzı: anonim oturum, katkılar, moderasyon (sözleşme v0.2.2)
 
 Kimler: **herkes** (migration ve sözleşme paketi)
