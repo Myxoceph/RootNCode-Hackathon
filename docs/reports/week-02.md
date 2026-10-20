@@ -17,7 +17,7 @@ _2-3 cümle: Bu hafta ürün olarak nereye geldik? Demo edilebilir ne var?_
   - **Hatay envanteri** ([#29](https://github.com/Myxoceph/RootNCode-Hackathon/pull/29), [#30](https://github.com/Myxoceph/RootNCode-Hackathon/pull/30)): Hatay için tek kaynak bir PDF kitap olduğundan kitabı eserlere bölen bir araç yazıldı (`data/tools/extract/hatay_book.py`: 77 eser, 349 fotoğraf, ilçe ve parsel eşleşmesiyle). Görsel hattı yerel kaynaktan fotoğraf alabiliyor. Bu araçla 116 taslak kayıt üretildi; `validate.py` tüm veri setinde hatasız. 7 kaydın fotoğrafı bağlandı.
   - **A11 · Şema değişikliği belgesi**: `data/README.md` §5'e şemanın esas kaynağının Prisma migration'ları olduğu ve yeni bir tablo değişikliğinin adım adım nasıl yapılacağı eklendi.
 - **Devam edenler:**
-  - **A10 · Medyanın R2'ye yüklenmesi:** İlk yükleme elle yapılacak; ardından CI'daki `rclone` adımı. Yükleme bitene kadar API'nin döndürdüğü görsel adresleri açılmıyor.
+  - **A10 · Medyanın R2'ye yüklenmesi:** İlk yükleme yapıldı: kayıtlara bağlı 174 fotoğrafın (Bursa 156, Hatay 18) 974 sürümü, toplam 456 MB. API'nin döndürdüğü görsel adresleri açılıyor (348 adres kontrol edildi). Orijinaller yüklenmiyor, kaynağında kalıyor (Drive / kitap PDF'i); böylece üç şehir de R2'nin 10 GB'lık ücretsiz kotasına sığıyor. Kalan: yüklemenin CI'a alınması.
   - **A12 · İlk `main` sürümü:** Bilinçli olarak bekletiliyor. Çalışan sürüm uygulamayla birlikte çıkacak; uygulama API'ye bağlanınca (Y8, Y9) açılacak.
   - Hatay'da fotoğrafı bağlanmamış 109 kayıt.
 - **Engeller / ihtiyaçlar:**
