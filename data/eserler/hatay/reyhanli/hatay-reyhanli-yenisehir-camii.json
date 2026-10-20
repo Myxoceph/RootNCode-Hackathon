@@ -14,7 +14,6 @@
       "Kitabenin metni kaynakta yok.",
       "İskenderun Butik Otel kaydı bu camiye waqf_income ilişkisi yazar (otel tarafında); ters ilişki bu kayıtta yazılmadı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -279,7 +278,152 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-yenisehir-camii/p185-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "368-369"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin taş cephesi ve küçük minaresi",
+        "en": "Mosque's stone façade and small minaret"
+      },
+      "alt": {
+        "tr": "Taş örgülü, kiremit çatılı alçak yapının arkasında küçük bir minare görülüyor. Önde taş basamaklar, demir korkuluk ve geniş bir meydan var.",
+        "en": "A low tile-roofed stone building with a small minaret behind it. Stone steps, an iron railing and a wide square are in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-yenisehir-camii/p186-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "370"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Ahşap korkuluklu son cemaat yeri",
+        "en": "Portico with wooden railing"
+      },
+      "alt": {
+        "tr": "Ahşap kirişli çatı altında kırmızı halılı bir revak ve ahşap korkuluk var. Arkada kesme taş duvar ile pencereler görülüyor.",
+        "en": "A portico under a wooden-beamed roof with red carpet and a wooden railing. A cut-stone wall with windows is behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-yenisehir-camii/p187-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "372"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Yazılı sütun başlığı ve levha",
+        "en": "Inscribed column capital and plaque"
+      },
+      "alt": {
+        "tr": "Sekizgen taş bir sütunun başlığında siyah Arapça yazı var. Sütunun yanındaki duvarda küçük süslü bir levha, üstte ahşap tavan kirişleri görülüyor.",
+        "en": "An octagonal stone column with black Arabic lettering on its capital. A small decorated plaque is on the wall beside it and wooden roof beams are above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-yenisehir-camii/p187-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "373"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Girişteki ahşap kapı ve korkuluklu bölüm",
+        "en": "Entrance door and railed section"
+      },
+      "alt": {
+        "tr": "Taş duvarda kemerli ahşap bir kapı ve önünde ahşap korkuluklu yükseltilmiş bölüm var. Kırmızı halı ve ahşap tavan kirişleri görülüyor.",
+        "en": "An arched wooden door in a stone wall with a raised section with a wooden railing in front. Red carpet and wooden roof beams are visible."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-yenisehir-camii/p187-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "373"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Namaz salonu ve ahşap mahfil",
+        "en": "Prayer hall and wooden loft"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap tavanlı uzun salonda sağda merdivenli ahşap bir mahfil, solda minber var. Orta kısımda kırmızı halı uzanıyor.",
+        "en": "A long white-walled hall with a wooden ceiling, a wooden loft with a ladder-like stair on the right and a minbar on the left. Red carpet runs down the middle."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-yenisehir-camii/p187-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "373"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Taş mihrap ve ahşap minber",
+        "en": "Stone mihrab and wooden minbar"
+      },
+      "alt": {
+        "tr": "Sivri kemerli taş bir mihrap nişinin yanında ahşap kafesli bir minber ve bir vaaz kürsüsü duruyor. Minberin yanında Türk bayrağı asılı.",
+        "en": "A pointed-arch stone mihrab niche with a latticed wooden minbar and a lectern beside it. A Turkish flag hangs next to the minbar."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

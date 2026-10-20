@@ -16,7 +16,6 @@
       "Şadırvan kitabesinin (altı satır) ve kapı üstündeki ayetin Arapça metni kaynakta verilmiyor; sahada okunmalı.",
       "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -468,7 +467,152 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ahmediye-camii/p107-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "212-213"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Ahmediye Camii'nin minaresi ve çevresi",
+        "en": "Minaret and surroundings of the Ahmediye Mosque"
+      },
+      "alt": {
+        "tr": "Ağaç dallarının arasından görünen yuvarlak gövdeli taş minare; önünde ahşap saçaklı, şemsiyeli kafe oturma alanları ve çevreleyen dükkânlar.",
+        "en": "A round-bodied stone minaret seen through tree branches; in front are wooden-roofed cafe seating areas with umbrellas and the surrounding shops."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ahmediye-camii/p109-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "217"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "On kenarlı şadırvan",
+        "en": "The ten-sided şadırvan"
+      },
+      "alt": {
+        "tr": "Taş kaide üzerinde, ahşap ayaklı, kafes pencereli ve geniş saçaklı çok kenarlı şadırvan; çevresinde taş oturakları ve arkada dükkânlar vardır.",
+        "en": "A many-sided ablution fountain on a stone base with wooden posts, lattice panels and broad eaves; stone stools surround it with shops behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ahmediye-camii/p108-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "214-215"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescidin içi, minber ve sütun",
+        "en": "Interior with minbar and column"
+      },
+      "alt": {
+        "tr": "Kırmızı halılı uzun salonda ortada taş bir sütun, ileride turuncu-yeşil ahşap minber; solda ve sağda ahşap pencereler, tavanda ahşap kirişler.",
+        "en": "A long hall with a red carpet, a stone column in the middle and an orange-green wooden minbar ahead; wooden windows on both sides and wooden beams overhead."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ahmediye-camii/p109-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "217"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kemerli iki sahın ve mihrap tarafı",
+        "en": "Arches and the mihrab side of the hall"
+      },
+      "alt": {
+        "tr": "Taş kemerlerle bölünmüş, ahşap tavanlı salon; kırmızı halı, yeşil işlemeli bir örtü ve sağda mihrap yanında mavi perde görünür.",
+        "en": "A hall with a wooden ceiling divided by stone arches, a red carpet, a green embroidered hanging and a blue curtain near the mihrab on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ahmediye-camii/p108-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "215"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Taş duvarda kitabe ve yuvarlak kemerli pencere",
+        "en": "Inscription and round-arched window on the stone wall"
+      },
+      "alt": {
+        "tr": "Düzgün kesme taş duvarda kabartma yazılı dikdörtgen bir kitabe; altında yuvarlak kemerli, ahşap çerçeveli bir pencere, solda ahşap saçak.",
+        "en": "On a wall of cut stone, a rectangular relief inscription; below it a round-arched wooden-framed window, with a wooden eave on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ahmediye-camii/p109-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "216"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Şadırvanın çeşme aynasındaki kitabe",
+        "en": "Inscription on the şadırvan's fountain panel"
+      },
+      "alt": {
+        "tr": "Soluk gri taş yüzeyde altın rengi bir musluk; sağında çok satırlı, kabartma yazılı bir kitabe görülür.",
+        "en": "A golden tap on a pale grey stone surface, with a multi-line relief inscription to its right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -16,7 +16,6 @@
       "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
       "Dönem (era) kodu 1774 için uygun olmadığından null bırakıldı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
       "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -301,7 +300,32 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-samandag-yogunoluk-ermeni-kilisesi/p227-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "452"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Taş istinat duvarı ve merdiven",
+        "en": "Stone retaining wall and steps"
+      },
+      "alt": {
+        "tr": "Kaba moloz taştan örülmüş basamaklı istinat duvarı; üstte ot ve ağaçlar, geride daha yüksek bir taş duvar, önde toprak ve parke yol.",
+        "en": "A stepped retaining wall of rough rubble stone with grass and trees above, a higher stone wall behind it and a dirt and cobbled road in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

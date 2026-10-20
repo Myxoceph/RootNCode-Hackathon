@@ -14,7 +14,6 @@
       "Evin adı kaynakta yok; kayıt adı betimleyici olarak mıntıka/parsel numarasından oluşturuldu.",
       "Evin bugün neden kullanılmadığı ve hasar durumu kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
       "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -208,7 +207,32 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-3-mintika-466-parsel-konut/p244-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "486-487"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Konutun taş döşeli, bitkili avlusu",
+        "en": "Stone-paved courtyard of the house with plants"
+      },
+      "alt": {
+        "tr": "Taş döşeli bir avluda saksılar, bir ağaç ve yukka bitkisi; solda demir korkuluklu taş merdiven, ileride kemerli kapılı kiremit çatılı alçak yapılar.",
+        "en": "A stone-paved courtyard with potted plants, a tree and a yucca; a stone staircase with iron railings on the left and low tile-roofed buildings with arched doors beyond."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

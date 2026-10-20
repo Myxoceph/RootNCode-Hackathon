@@ -12,7 +12,6 @@
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
       "Banî, mimar ve vakıf bilgisi kitapta yok.",
       "Yapım tarihi yalnızca tahmin (kitabesiz); probable işaretlendi.",
       "Hücrelerin kullanım amacı kitapta yok."
@@ -173,6 +172,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p095-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "188-189"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Medrese hücreleri ve taş döşeli avlu",
+        "en": "Madrasa cells and stone-paved courtyard"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı, turuncu taşlı tek katlı hücre sırası avluya açılır. Önde mavi bir bank, arkada minare gövdesi ve mavi gökyüzü vardır.",
+        "en": "A single-storey row of cells in orange stone with a tiled roof opens onto the courtyard. A blue bench is in front, with a minaret shaft and blue sky behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

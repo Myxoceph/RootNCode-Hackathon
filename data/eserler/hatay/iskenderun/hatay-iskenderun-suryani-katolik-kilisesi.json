@@ -16,7 +16,6 @@
       "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
       "Dönem (era) için uygun kod yok (Fransız işgali dönemi); null bırakıldı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
       "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -276,7 +275,32 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-suryani-katolik-kilisesi/p223-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "444"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kilisenin alınlıklı taş cephesi",
+        "en": "Gabled stone façade of the church"
+      },
+      "alt": {
+        "tr": "Üçgen alınlıklı kesme taş cephe; ortada sivri kemerli koyu kırmızı çift kanatlı kapı, iki yanında sivri kemerli pencereler, üstte gül pencere ve ikili pencere, önünde taş döşeli avlu.",
+        "en": "A gabled cut-stone façade with a pointed-arch dark red double door flanked by pointed windows, a rose window and a twin window above, and a stone-paved courtyard in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

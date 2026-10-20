@@ -16,7 +16,6 @@
       "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
       "Dönem (era) kodu 1514 için belirsiz olduğundan null bırakıldı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
       "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -249,7 +248,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-arsuz-maryo-hanna-kilisesi/p224-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "446-447"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kilisenin avlusu, çan kulesi ve girişi",
+        "en": "Church courtyard, bell tower and entrance"
+      },
+      "alt": {
+        "tr": "Krem sıvalı, kiremit çatılı alçak kilise binası; üzerinde taş çan kulesi ve haç, önde bir zeytin ağacı, ahşap panjurlu pencereler ve ahşap kapı.",
+        "en": "A low cream-plastered church with a tiled roof; a stone bell tower with a cross rises above it, with an olive tree in front, wooden shutters and a wooden door."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-arsuz-maryo-hanna-kilisesi/p224-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "447"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Altın yaldızlı ikonostasis",
+        "en": "Gilded iconostasis"
+      },
+      "alt": {
+        "tr": "Sunağın önünde, ikona dizileriyle süslü altın yaldızlı ahşap ikonostasis; ortada siyah örtülü masa, iki yanda şamdanlar, sağda tahtlı oyma kürsü ve tavandan sarkan avize.",
+        "en": "A gilded wooden iconostasis with rows of icons; a black-draped table in the centre, candle stands on both sides, a carved throne-like seat on the right and a chandelier above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-arsuz-maryo-hanna-kilisesi/p224-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "447"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kilisenin nefi ve ahşap sıralar",
+        "en": "Church nave and wooden pews"
+      },
+      "alt": {
+        "tr": "Sivri taş kemerli, beyaz sıvalı uzun bir mekân; iki yanda ahşap sıralar, solda taş bir kap, önde işlemeli örtülü okuma kürsüsü, ileride ikonostasis ve avizeler.",
+        "en": "A long whitewashed space with a stone arch; wooden pews on both sides, a stone basin on the left, a lectern with an embroidered cloth in front and the iconostasis and chandeliers beyond."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

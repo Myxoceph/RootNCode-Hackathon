@@ -15,7 +15,6 @@
       "Zemin kattaki dükkânların vakıf geliri olup olmadığı kaynakta yok.",
       "Kitap yakındaki Katolik Kilisesi ve Sinagog'dan söz eder ama adlarını vermez; bu yüzden onlara ilişki yazılmadı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -253,7 +252,104 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-caferiye-mescidi/p174-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "346-347"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caferiye Mescidi'nin sokak cephesi",
+        "en": "Street façade of Caferiye Mescidi"
+      },
+      "alt": {
+        "tr": "Alt katında dükkânların bulunduğu, beyaz sıvalı iki katlı yapının üst katında kepenkli ahşap pencereler var. Cephede kırmızı bir flama ve mescit tabelası görülüyor.",
+        "en": "A two-storey white-plastered building with shops on the ground floor and shuttered wooden windows above. A red banner and the masjid sign are on the façade."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-caferiye-mescidi/p175-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "348"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescit içi, mihrap ve ahşap minber",
+        "en": "Masjid interior, mihrab and wooden minbar"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada sivri kemerli bir mihrap nişi ve ahşap korkuluklu bir minber var. Tavan ahşap kaplı, avize sarkıyor; zemin koyu mavi halıyla kaplı.",
+        "en": "A white-walled room with a pointed mihrab niche and a minbar with a wooden railing. The ceiling is wood-clad with a chandelier and the floor has dark blue carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-caferiye-mescidi/p175-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "349"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap nişi ve minber merdiveni",
+        "en": "Mihrab niche and minbar stairs"
+      },
+      "alt": {
+        "tr": "Sivri kemerli sade bir mihrap nişinin sağında ahşap minber merdiveni yükseliyor. Sağda ahşap çerçeveli bir pencere ve üstte ahşap tavan görülüyor.",
+        "en": "A plain pointed mihrab niche with the stairs of a wooden minbar rising on its right. A wooden-framed window is on the right and a wooden ceiling above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-caferiye-mescidi/p175-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "349"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Namaz salonunun genel görünümü",
+        "en": "General view of the prayer hall"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap tavanlı dikdörtgen salonda ahşap çerçeveli pencereler ve solda minber var. Zemin koyu mavi halıyla kaplı.",
+        "en": "A rectangular hall with white walls and a wooden ceiling, wooden-framed windows and a minbar on the left. The floor is covered with dark blue carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

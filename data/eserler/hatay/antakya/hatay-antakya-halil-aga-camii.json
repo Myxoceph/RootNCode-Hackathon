@@ -18,7 +18,6 @@
       "Metindeki 'minber de avluda bulunmaktadır' ifadesi olağan dışı; sahada teyit edilmeli.",
       "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -333,7 +332,104 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-halil-aga-camii/p120-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "238-239"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Halil Ağa Camii'nin minaresi ve avlusu",
+        "en": "Minaret and courtyard of the Halil Ağa Mosque"
+      },
+      "alt": {
+        "tr": "Bulutlu gökyüzüne yükselen ince taş minare; önünde geniş taş avlu, solda demir korkuluklu yapı, uzakta evler ve tepeler.",
+        "en": "A slender stone minaret rises into a dramatic cloudy sky, with a wide stone courtyard before it, a building with iron railings on the left and houses and hills beyond."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-halil-aga-camii/p122-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "242"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Minare ve avludaki kiremit çatılı yapılar",
+        "en": "Minaret and tile-roofed buildings in the courtyard"
+      },
+      "alt": {
+        "tr": "Mavi gökyüzünde ince minare; altında kiremit çatılı, kremli taş yapı ve geniş avlu, arkada dağlar ve yerleşim.",
+        "en": "A slender minaret against a blue sky, with a cream tile-roofed building and a wide courtyard below and mountains and houses behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-halil-aga-camii/p121-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "240-241"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Ahşap direkli girişte kapı ve kitabe",
+        "en": "Entrance with wooden posts, door and inscription"
+      },
+      "alt": {
+        "tr": "Ahşap direkli, düz tavanlı girişte kesme taş duvarın ortasında ahşap kapı; üzerinde cami adını gösteren levha, iki yanda kafesli pencereler ve ahşap korkuluklu banklar.",
+        "en": "An entrance with wooden posts, in the middle of a cut-stone wall a wooden door with a name plate above it, lattice windows on both sides and wooden-railed benches."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-halil-aga-camii/p122-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "243"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minarenin kapısı",
+        "en": "The minaret's door"
+      },
+      "alt": {
+        "tr": "Kesme taş minare kaidesinde sivri kemerli ahşap kapı; üzerinde küçük kitabe ve duvar feneri, önünde basamaklar.",
+        "en": "A pointed-arch wooden door in the cut-stone minaret base, with a small inscription and a lantern above and steps in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

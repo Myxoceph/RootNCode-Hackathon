@@ -12,7 +12,6 @@
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
       "Banî kitapta verilmiyor; Mustafa Şevki Paşa'nın camiyi yaptırdığı kitapta açıkça söylenmiyor, bu yüzden founder null.",
       "Harim kapısı kitabesinin metni ve dili kitapta yok; tarihin hangi kitabeden alındığı net değil.",
       "Vakıf/vakfiye ve mimar bilgisi kitapta yok.",
@@ -238,6 +237,223 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p092-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "182-183"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin son cemaat yeri ve şadırvan",
+        "en": "Mosque narthex and shadirvan"
+      },
+      "alt": {
+        "tr": "Kiremit kırma çatılı caminin camekânlı kemerli son cemaat yeri, taş döşeli avluya bakar. Sağda beyaz mantar biçimli bir şadırvan vardır.",
+        "en": "The mosque's tiled hipped roof and glazed arched narthex face a stone-paved courtyard. A white mushroom-shaped shadirvan is on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p091-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "181"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Harim kapısı ve üstündeki kitabe",
+        "en": "Sanctuary door and its inscription"
+      },
+      "alt": {
+        "tr": "Sivri kemerli taş çerçevede iki kanatlı ahşap kapı vardır. Kapının üstünde kitabe ve oval bir pencere görünür; yanlarda raflar bulunur.",
+        "en": "A double wooden door in a pointed-arched stone frame. An inscription and an oval window are above it, with shelves on both sides."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p091-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "181"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harimde sütun, kemerler ve minber",
+        "en": "Sanctuary columns, arches and minbar"
+      },
+      "alt": {
+        "tr": "Sivri kemerli sütunlar harimi iki sahına böler; tavan sarı ahşap kirişlidir. Arkada ahşap minber ve duvarın alt yarısında ahşap lambri görünür.",
+        "en": "Pillars with pointed arches divide the sanctuary into two aisles under a yellow timber ceiling. A wooden minbar is at the back, with wood panelling on the lower wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p093-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "184"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Ahşap minber ve mihrap yönü",
+        "en": "Wooden minbar and the mihrab side"
+      },
+      "alt": {
+        "tr": "Merdivenli ahşap minber ve yanındaki mihrap nişi görünür. Solda sarı boyalı korkuluklu bir mahfil, üstte ahşap kirişli tavan vardır.",
+        "en": "A wooden minbar with a staircase beside the mihrab niche. A yellow-painted balustraded gallery is on the left, with a timber ceiling above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p094-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "186-187"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Mihrap sütunçesinin çiçekli başlığı",
+        "en": "Flower-carved capital of the mihrab column"
+      },
+      "alt": {
+        "tr": "Küçük bir sütunçenin kare başlığında çiçek rozeti işlenmiştir. Yanında baklava motifli taş silme görünür.",
+        "en": "A small column with a square capital carved with a flower rosette. A stone moulding with lozenge motifs is beside it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p093-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "185"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kemer arasından giriş kapısı ve mahfil",
+        "en": "Entrance door and gallery through an arch"
+      },
+      "alt": {
+        "tr": "Taş kemerin arasından, ahşap kapı ve üstündeki korkuluklu ahşap mahfil görünür. Tavan sarı ahşap kirişlidir, duvarlar beyazdır.",
+        "en": "Through a stone arch, a wooden door and a railed wooden gallery above it. The ceiling has yellow timber beams and the walls are white."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p093-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "184"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Harimde pencereler ve ahşap lambri",
+        "en": "Sanctuary windows and wood panelling"
+      },
+      "alt": {
+        "tr": "Beyaz duvarda iki kemerli pencere ve ortada kahverengi ahşap bir kapak vardır. Duvarın alt yarısı ahşap lambrilidir.",
+        "en": "Two arched windows with a brown wooden shutter between them on a white wall. The lower half of the wall is wood panelled."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p093-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "185"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Taş cephede niş, pencereler ve yazı",
+        "en": "Niche, windows and inscription on the stone wall"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarda ortada sığ bir niş, iki yanında demir parmaklıklı pencereler vardır. Nişin üstünde küçük bir yazı levhası, solda kırmızı perde görünür.",
+        "en": "A shallow niche in the middle of a cut-stone wall with barred windows on either side. A small inscription plaque is above and a red curtain on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p094-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "187"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kitabeli kapı ve ardındaki geçit",
+        "en": "Inscribed doorway and passage beyond"
+      },
+      "alt": {
+        "tr": "Taş duvardaki dikdörtgen kapının lentosu üstünde Arapça yazılı bir kitabe bulunur. Kapıdan ağaçlı bir geçit ve mavi bank görünür.",
+        "en": "A rectangular doorway in a stone wall with an Arabic inscription above its lintel. A passage with trees and a blue bench is seen through it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

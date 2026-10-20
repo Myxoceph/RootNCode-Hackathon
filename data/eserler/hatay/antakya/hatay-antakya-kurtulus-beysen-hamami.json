@@ -16,7 +16,6 @@
       "Bani Bî'seri yalnızca varsayım; vakıf kaydı/ vakfiye bilgisi kaynakta yok.",
       "Hamamın vakıf bilgisi kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
       "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -285,7 +284,32 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kurtulus-beysen-hamami/p234-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "466"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın sokak cephesi ve kemerli girişi",
+        "en": "Street front and arched entrance of the bath"
+      },
+      "alt": {
+        "tr": "Çevre binalar arasında taş kemerli, siyah kapılı bir giriş; yanında kepenkli dükkânlar, üstte sarı ve pembe sıvalı katlar, önde park halinde iki araç.",
+        "en": "A stone-arched entrance with a black door among neighbouring buildings; shuttered shops beside it, yellow and pink plastered storeys above and two parked cars in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

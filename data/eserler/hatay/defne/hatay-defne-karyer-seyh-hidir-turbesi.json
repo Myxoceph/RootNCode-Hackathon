@@ -13,7 +13,6 @@
       "Mıntıka/parsel bilgisi çelişiyor: metin 'Antakya 3. mıntıka 1087 parsel' diyor, bölüm özeti 'Defne Karyer 1431 parsel'. Kitapta 1431 parsel ayrıca 5. mıntıka 905 kaydının (Karyer Mahallesi) metninde geçiyor.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
       "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
-      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
       "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
@@ -183,6 +182,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-defne-karyer-seyh-hidir-turbesi/p204-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "407"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin sivri kemerli girişi ve avlusu",
+        "en": "Pointed-arch entrance of the tomb and its courtyard"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı duvarda taş çerçeveli sivri kemerli bir kapı; önünde gövdesi beyaza boyalı büyük bir ağaç, solda tuğla bir baca, zemin düzensiz taş döşeli.",
+        "en": "A pointed-arch doorway with a stone frame in a white plastered wall; in front, a large tree with a whitewashed trunk, a brick chimney on the left and an irregular stone-paved floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

@@ -16,7 +16,6 @@
       "Caminin vakıf bilgisi, mimarı ve Affan'ın kimliği kaynakta yok; vakıf kayıtlarından araştırılmalı.",
       "Şadırvanın ve minarenin yapım tarihi kaynakta verilmiyor.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -462,7 +461,248 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p100-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "198-199"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Affan (Ertuğrul) Camii'nin minaresi ve avlusu",
+        "en": "Minaret and courtyard of the Affan (Ertuğrul) Mosque"
+      },
+      "alt": {
+        "tr": "Bulutlu mavi gökyüzüne yükselen taş gövdeli, ince külahlı minare; önünde kiremit çatılı, yeşilimsi sıvalı küçük bir yapı ve sokağa açılan avlu. Sağda çok katlı sivil binalar görünür.",
+        "en": "A slender stone minaret with a pointed cap rises into a cloudy blue sky; in front are a small green-plastered building with a tiled roof and the open courtyard. Multi-storey houses stand on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p103-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "204-205"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Caminin yuvarlak gövdeli minaresi",
+        "en": "The mosque's round-bodied minaret"
+      },
+      "alt": {
+        "tr": "Açık gökyüzüne uzanan, krem renkli taştan yuvarlak gövdeli minare; şerefe altında noktalı süs kuşağı var. Çevresinde ahşap saçaklar ve apartman cepheleri görünür.",
+        "en": "A round cream-coloured stone minaret reaches into a clear sky, with a dotted decorative band below its balcony. Wooden eaves and apartment façades surround it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p102-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "202"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Tuğralı kitabenin altındaki cami kapısı",
+        "en": "Mosque door beneath the inscription with the tughra"
+      },
+      "alt": {
+        "tr": "Yeşil sıvalı duvarda taş çerçeveli sivri kemerli, çift kanatlı ahşap kapı; üstünde küçük bir tuğralı levha, yanlarda ahşap korkuluklar ve zeminde siyah-beyaz geometrik karolar.",
+        "en": "A double-leaf wooden door in a pointed stone arch set in a green plastered wall, with a small plaque bearing a tughra above, wooden railings at the sides and black-and-white geometric tiles on the floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p101-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "200-201"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Düz ahşap tavanlı harim",
+        "en": "Prayer hall with a flat wooden ceiling"
+      },
+      "alt": {
+        "tr": "Koyu kahverengi ahşap tavanlı, beyaz duvarlı geniş bir salon; zeminde mavi-yeşil halı, tavandan sarkan avizeler ve karşı duvarda kapalı ahşap panjurlu bir pencere.",
+        "en": "A wide hall with a dark brown wooden ceiling and white walls; a blue-green carpet covers the floor, chandeliers hang from the ceiling and a window with closed wooden shutters is on the far wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p101-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "201"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harimin yan duvarı ve pencereleri",
+        "en": "Side wall and windows of the prayer hall"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı salonda turkuaz halı serili zemin; solda ahşap korkuluklu minber, sağda ahşap çerçeveli bir pencere ve duvarda asılı levhalar.",
+        "en": "In a hall with a wooden ceiling and a turquoise carpet, a pulpit with a wooden balustrade is on the left, a wooden-framed window on the right and framed panels hang on the wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p103-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "205"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap duvarı",
+        "en": "The mihrab wall"
+      },
+      "alt": {
+        "tr": "Düz, krem rengi bir duvarın ortasında sade, sivri kemerli bir mihrap nişi; iki yanında ahşap çerçeveli pencereler, üstte yazılı levhalar ve bir duvar saati.",
+        "en": "A plain niche with a pointed arch in the middle of a flat cream wall, flanked by wooden-framed windows, with calligraphic panels and a wall clock above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p102-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "203"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Avlunun ortasındaki şadırvan",
+        "en": "The şadırvan in the middle of the courtyard"
+      },
+      "alt": {
+        "tr": "Taş döşeli avluda gri çatılı, sekizgen gövdeli şadırvan; sağda saksıda yeşil bir ağaç, arkada evler ve tepe görünür.",
+        "en": "In the stone-paved courtyard stands an octagonal ablution fountain with a grey roof; a leafy tree grows in a stone planter on the right, with houses and a hill behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p101-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "201"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Avlu duvarındaki kesme taş çeşme",
+        "en": "Cut-stone fountain on the courtyard wall"
+      },
+      "alt": {
+        "tr": "Yeşil sıvalı duvara yerleştirilmiş, kesme taştan yuvarlak kemerli bir çeşme nişi; ortada küçük bir yazı levhası, altta taş yalak, üstte demir korkuluk.",
+        "en": "A round-arched fountain niche of cut stone set into a green plastered wall, with a small inscription plate in the centre, a stone basin below and an iron railing above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p102-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "202"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minare kaidesi ve niş",
+        "en": "Minaret base with a niche"
+      },
+      "alt": {
+        "tr": "Gökyüzüne yükselen ince taş minare; altında yeşil sıvalı duvar üzerinde süslemeli, yuvarlak rozetli bir taş niş ve demir korkuluk.",
+        "en": "A slender stone minaret rising into the sky; below it, on a green plastered wall, an ornamented stone niche with a round rosette and an iron railing."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p103-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "205"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minarenin kapısı ve kitabesi",
+        "en": "The minaret's door and inscription"
+      },
+      "alt": {
+        "tr": "Yuvarlak taş minare kaidesinde sivri kemerli ahşap bir kapı; üstünde yazılı küçük bir levha ve bir duvar feneri.",
+        "en": "A pointed-arch wooden door at the foot of the round stone minaret, with a small inscribed plate and a wall lantern above it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

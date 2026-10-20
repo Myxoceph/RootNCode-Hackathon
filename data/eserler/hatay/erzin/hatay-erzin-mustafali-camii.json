@@ -15,7 +15,6 @@
       "Antik kalıntı taşın hangi yapıdan geldiği ve üzerindeki figürler kaynakta açıklanmıyor.",
       "Kitabenin metni ve dili kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -294,7 +293,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-erzin-mustafali-camii/p181-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "360-361"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin minaresi ve kiremit çatılı ana yapısı",
+        "en": "Minaret and tile-roofed main building"
+      },
+      "alt": {
+        "tr": "Solda ince, taş örgülü uzun bir minare ve ortada kiremit çatılı, saçaklı alçak cami yapısı görülüyor. Gökyüzü derin mavi, sağda ağaçlar var.",
+        "en": "A tall slender stone minaret on the left and a low tile-roofed mosque building with a canopy in the middle. The sky is deep blue and trees stand on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-erzin-mustafali-camii/p182-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "362-363"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kubbeli iç mekân, mihrap ve minber",
+        "en": "Domed interior, mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı kubbeli salonda yeşil çerçeveli bir mihrap ve ahşap minber var. Duvarlarda yazılar, zeminde kırmızı halı görülüyor; sağda ahşap bir mahfil merdiveni yükseliyor.",
+        "en": "A hall with a wood-clad dome, a green-framed mihrab and a wooden minbar. Lettering decorates the walls, the carpet is red and a wooden loft stair rises on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-erzin-mustafali-camii/p182-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "363"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Avludaki sekizgen şadırvan",
+        "en": "Octagonal ablution fountain in the courtyard"
+      },
+      "alt": {
+        "tr": "Beyaz kaplı sekizgen bir şadırvan geniş saçaklı bir çatıyla örtülü; çevresinde küçük ahşap oturaklar var. Taş döşeli zeminde arkada yeşillik ve duvar görülüyor.",
+        "en": "A white-tiled octagonal ablution fountain under a broad roof, ringed by small wooden stools. Greenery and a wall are visible behind the paved floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

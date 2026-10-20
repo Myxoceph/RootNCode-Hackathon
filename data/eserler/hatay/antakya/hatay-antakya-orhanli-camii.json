@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Orhanlı Camii bölümünden (s. 302-305) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -252,7 +251,128 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-orhanli-camii/p152-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "303"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin avlu duvarı ve minaresi",
+        "en": "Courtyard wall and minaret of the mosque"
+      },
+      "alt": {
+        "tr": "Taş duvar ve demir korkuluklu avlu girişi; arkada yüksek taş minare ve çevredeki evler. Önde dar sokak.",
+        "en": "A stone wall and an iron-railed courtyard entrance; a tall stone minaret and neighbouring houses behind, with a narrow street in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-orhanli-camii/p152-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "302"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Minare kaidesindeki kitabeler",
+        "en": "Inscriptions on the minaret base"
+      },
+      "alt": {
+        "tr": "Taş minare kaidesinin üst kısmında sıralı yuvarlak ve dikdörtgen kabartmalı kitabe panelleri; düzgün kesme taş örgü.",
+        "en": "Rows of round and rectangular relief inscription panels on the upper part of a stone minaret base, in neat cut-stone masonry."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-orhanli-camii/p153-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "304"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İbadet salonu",
+        "en": "Prayer hall"
+      },
+      "alt": {
+        "tr": "Ahşap kirişli tavanlı, beyaz duvarlı salon; zeminde sarı halı ve bordo şeritler, solda minber, sağda ahşap kapı ve ayakkabılık.",
+        "en": "A white-walled hall with a timber-beamed ceiling; yellow carpet with red stripes, a minbar on the left and a wooden door and shoe rack on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-orhanli-camii/p153-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "305"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Ahşap kapılı giriş",
+        "en": "Entrance with a wooden door"
+      },
+      "alt": {
+        "tr": "Kemerli, çift kanatlı ahşap kapı; iki yanında yuvarlak madalyonlar, üstte tuğralı bir kitabe levhası. Kapı krem taş çerçeveli.",
+        "en": "An arched double-leaf wooden door framed in cream stone, with round medallions on each side and an inscription plaque with a tughra above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-orhanli-camii/p153-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "305"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "alt": {
+        "tr": "Taş gövdeli, ahşap çatılı şerefeli minare; kaide kısmı kesme taş, arkada eski evler ve mavi gökyüzü.",
+        "en": "A stone minaret with a wooden-roofed balcony and a cut-stone base; old houses and blue sky behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -15,7 +15,6 @@
       "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
       "Meydan düzenlemesinin kararı ve uygulaması kaynakta yok; güncel durum doğrulanmalı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
       "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -199,7 +198,32 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-vakif-kultur-konaklari/p242-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "482-483"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Konakların çevrelediği avlu ve havuz",
+        "en": "Courtyard and pool surrounded by the mansions"
+      },
+      "alt": {
+        "tr": "Taş döşeli geniş bir meydanın çevresinde, ahşap pencere ve panjurlu iki katlı krem renkli konaklar; ortada havuz, hurma ağaçları, banklar ve kırmızı halı.",
+        "en": "Two-storey cream mansions with wooden windows and shutters around a wide stone-paved square, with a pool, palm trees, benches and a red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

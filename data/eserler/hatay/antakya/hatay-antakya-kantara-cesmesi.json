@@ -16,7 +16,6 @@
       "Mimar ve vakıf bilgisi kaynakta yok.",
       "Kitapta çeşme ayrı başlıkla anlatılıyor; kayıt adı 'Kantara Çeşmesi' bu başlıktan türetildi.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -338,7 +337,32 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p136-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "271"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Minare ve altındaki çeşme nişi",
+        "en": "Minaret and the fountain niche below it"
+      },
+      "alt": {
+        "tr": "Taş gövdeli, ahşap şerefeli bir minare; kaidesinde sivri kemerli bir niş içinde çeşme bulunuyor. Solda taş duvar, arkada mavi gökyüzü.",
+        "en": "A stone minaret with a wooden balcony; at its base a fountain sits in a pointed-arch niche. A stone wall on the left and blue sky behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

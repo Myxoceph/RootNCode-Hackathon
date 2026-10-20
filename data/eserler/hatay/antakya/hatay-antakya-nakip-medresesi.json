@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Nakip Camii bölümünün 'Medrese' alt başlığından (s. 297) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -198,7 +197,32 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-nakip-camii/p147-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "292-293"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu ve çevresindeki yapılar",
+        "en": "Courtyard and surrounding buildings"
+      },
+      "alt": {
+        "tr": "Taş döşeli, ağaçlı avlu; solda ahşap saçaklı taş duvar, arkada merdivenle çıkılan üst kat ve taş yapılar.",
+        "en": "A stone-paved courtyard with trees; a stone wall with a wooden eave on the left and, behind, stairs leading to an upper floor and stone buildings."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

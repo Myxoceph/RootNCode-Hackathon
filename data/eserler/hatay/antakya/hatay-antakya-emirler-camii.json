@@ -17,7 +17,6 @@
       "Banî, mimar ve vakıf bilgisi kaynakta yok.",
       "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -309,7 +308,128 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-emirler-camii/p114-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "226-227"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Emirler Camii'nin taş avlusu",
+        "en": "Stone courtyard of the Emirler Mosque"
+      },
+      "alt": {
+        "tr": "Taş döşeli, eğimli avlu; solda kiremit çatılı küçük taş bir yapı, sağda bank ve kapı açıklığı olan taş cephe, arkada apartmanlar ve ağaçlar.",
+        "en": "A sloping stone-paved courtyard with a small tiled-roof stone building on the left, a bench and a doorway on a stone façade on the right, and apartments and trees behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-emirler-camii/p116-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "231"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Caminin avlu girişi",
+        "en": "The courtyard entrance"
+      },
+      "alt": {
+        "tr": "Kesme taş avlu duvarında dikdörtgen bir kapı açıklığı ve üzerinde cami adını yazan levha; arkasında ahşap ezanlık köşkü görünür.",
+        "en": "A rectangular doorway in a cut-stone courtyard wall with a name plate above; a wooden adhan pavilion rises behind it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-emirler-camii/p115-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "229"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kitabeli oda cephesi",
+        "en": "Façade of the room with the inscription"
+      },
+      "alt": {
+        "tr": "Kesme taştan alçak yapıda ahşap kemerli kapı, iki demir parmaklıklı yuvarlak kemerli pencere ve üstte küçük bir kitabe; yanında yeşil bir bitki.",
+        "en": "A low cut-stone building with an arched wooden door, two arched windows with iron grilles and a small inscription above; a green plant stands beside it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-emirler-camii/p115-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "228-229"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sivri kemerden harimin görünümü",
+        "en": "The prayer hall seen through the pointed arch"
+      },
+      "alt": {
+        "tr": "Büyük bir taş kemerin ardında beyaz duvarlı, ahşap tavanlı salon; sağda kırmızı-turuncu ahşap minber, kafesli iki pencere ve yeşil halı.",
+        "en": "Through a large stone arch, a white-walled hall with a wooden ceiling, a red-orange wooden minbar on the right, two lattice windows and a green carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-emirler-camii/p116-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "231"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ortadaki sütun ve ahşap tavanlı harim",
+        "en": "Central column and wooden ceiling of the hall"
+      },
+      "alt": {
+        "tr": "Ortada ince bir sütunun taşıdığı ahşap kirişli tavan; yeşil halılı zemin, solda ahşap minber ve sağda sıralar, dolaplar.",
+        "en": "A wooden-beamed ceiling carried by a slender central column; green carpet, a wooden minbar on the left and desks and cabinets on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

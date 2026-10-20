@@ -12,7 +12,6 @@
       "Şeyh Ali Issuvayre’nin kimliği, yapım tarihi ve banî kitapta yok.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
       "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
-      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
       "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
@@ -140,6 +139,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-samandag-koyunoglu-seyh-ali-issuvayre-turbesi/p217-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "433"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbe ve çevresindeki ağaçlı alan",
+        "en": "The tomb and the tree-shaded area around it"
+      },
+      "alt": {
+        "tr": "Zeytin ağaçlarının gölgelediği toprak bir alan; geride beyaz kubbeli, yeşil kapılı türbe ve yeşil sundurma, önde beyaz mermer bir mezar.",
+        "en": "A dirt area shaded by olive trees; in the background a white-domed tomb with a green door and a green canopy, and a white marble grave in the foreground."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

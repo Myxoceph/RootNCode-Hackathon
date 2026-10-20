@@ -13,7 +13,6 @@
       "Dilek ağacı geleneğinin içeriği kitapta açıklanmıyor.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
       "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
-      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
       "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
@@ -161,6 +160,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-defne-el-arabi-turbesi/p207-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "413"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbe yapısı ve önündeki açık alan",
+        "en": "The tomb building and the open ground in front"
+      },
+      "alt": {
+        "tr": "Beyaz badanalı, yeşil çatılı sundurmalı bir yapı; çevresinde zeytin ve çam ağaçları, önünde ağaç gölgeleri düşen toprak bir meydan ve beyaz bir duvar.",
+        "en": "A whitewashed building with a green-roofed porch among olive and pine trees; in front, a dirt plaza with tree shadows and a white low wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

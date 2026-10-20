@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Züveroğlu Camii bölümünden (s. 342-345) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -272,7 +271,128 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-zuveroglu-camii/p172-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "342-343"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu ve kemerli pencereli cami cephesi",
+        "en": "Courtyard and arched-window façade"
+      },
+      "alt": {
+        "tr": "Taş döşeli avluda kiremit çatılı alçak yapının ön yüzünde ahşap bir kapı ve üç kemerli pencere var. Sağda büyük bir ağaç gövdesi, üstte mavi gökyüzü görülüyor.",
+        "en": "In a stone-paved courtyard, a low tile-roofed building with a wooden door and three arched windows. A large tree trunk is on the right under a blue sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-zuveroglu-camii/p173-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "344"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu, taş merdiven ve ahşap mahfil",
+        "en": "Courtyard, stone stair and wooden loft"
+      },
+      "alt": {
+        "tr": "Avluda taş bir merdiven, üstte ahşap korkuluklu küçük bir köşk ve ortada çıplak bir ağaç var. Beyaz duvarlar ve ahşap kapı çevreyi çeviriyor.",
+        "en": "A stone stair rises in the courtyard to a small wooden-railed pavilion, with a bare tree in the middle. White walls and a wooden door surround the space."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-zuveroglu-camii/p173-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "344"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap tavanlı iç mekân ve pencereler",
+        "en": "Interior with wooden ceiling and windows"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap tavanlı odada iki ahşap çerçeveli kemerli pencere ve bir taş niş var. Zemin çiçek desenli halıyla kaplı.",
+        "en": "A white-walled room with a wooden ceiling, two arched wooden-framed windows and a stone niche. The floor has a floral-patterned carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-zuveroglu-camii/p173-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "344"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sivri kemerli salon ve masalar",
+        "en": "Pointed-arch hall with tables"
+      },
+      "alt": {
+        "tr": "Büyük taş bir sivri kemerin ardında ahşap tavanlı bir salonda sıralı masalar ve sıralar görülüyor. Zemin çiçek desenli halıyla kaplı.",
+        "en": "Through a large pointed stone arch, a hall with a wooden ceiling and rows of tables and benches. The floor has a floral-patterned carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-zuveroglu-camii/p173-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "345"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Taş çerçeveli duvar çeşmesi",
+        "en": "Stone-framed wall fountain"
+      },
+      "alt": {
+        "tr": "Kemerli taş bir nişin içinde musluğu olan duvar çeşmesi var. İki yanda sütunlar ve üstte silmeli bir korniş görülüyor; ortada boş bir kitabe levhası bulunuyor.",
+        "en": "A wall fountain with a tap set in an arched stone niche, with columns on both sides and a moulded cornice above. A blank inscription plaque is in the centre."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

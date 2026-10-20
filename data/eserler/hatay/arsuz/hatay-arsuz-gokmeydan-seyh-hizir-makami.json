@@ -13,7 +13,6 @@
       "Bölüm özeti sayfasında başlığın yanında 'LİSTEDE TURBE BURDA MAKAM' notu var; liste adlandırması (türbe/makam) netleştirilmeli. enums.json’da makam türü olmadığı için type 'turbe' seçildi.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
       "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
-      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
       "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
@@ -147,6 +146,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-arsuz-gokmeydan-seyh-hizir-makami/p205-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "409"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Makamın mermer kaplı cephesi ve girişi",
+        "en": "Marble-clad front and entrance of the maqam"
+      },
+      "alt": {
+        "tr": "Beyaz ve bal rengi mermer şeritlerle kaplı alçak bir cephe; ortada sivri kemerli bir niş ve açık duran kapı, sağda yazılı bir levha, üstte oluklu metal sundurma.",
+        "en": "A low façade clad in alternating white and honey-coloured marble bands; a pointed-arch niche with an open door in the middle, an inscribed plaque on the right and a corrugated metal canopy above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

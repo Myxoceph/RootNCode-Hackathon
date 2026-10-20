@@ -15,7 +15,6 @@
       "Uzun Çarşı ayrı bir eser olarak ids.md'de yok; urban_context ilişkisi yazılmadı.",
       "Mahalle adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -229,7 +228,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-semerciler-mescidi/p194-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "386-387"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Taş duvarlı mescidin sundurmalı girişi",
+        "en": "Masjid entrance under a canopy"
+      },
+      "alt": {
+        "tr": "Metal sundurma ve beyaz direklerin altında taş duvarlı cephede beyaz bir kapı ile kemerli pencereler var. Önde eğimli bir rampa ve taş zemin görülüyor.",
+        "en": "A stone wall with a white door and arched windows beneath a metal canopy on white posts. A sloped ramp and stone paving are in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-semerciler-mescidi/p194-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "387"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Dar sokaktaki ahşap minare ve merdiven",
+        "en": "Wooden minaret and stair in a narrow lane"
+      },
+      "alt": {
+        "tr": "Dar bir aralıkta ahşap şerefeli küçük bir minare ve ona çıkan metal korkuluklu merdiven görülüyor. Çevrede beyaz duvarlar var.",
+        "en": "In a narrow passage, a small minaret with a wooden balcony and a stair with a metal railing leading to it. White walls surround it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-semerciler-mescidi/p195-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "388-389"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap duvarı ve pencereler",
+        "en": "Mihrab wall and windows"
+      },
+      "alt": {
+        "tr": "Taş çerçeveli sivri kemerli mihrabın üstünde yazılı bir levha, iki yanında kemerli pencereler var. Alt duvarlar ahşap kaplı, zemin desenli halıyla kaplı.",
+        "en": "A pointed stone-framed mihrab with an inscribed panel above and arched windows on both sides. The lower walls are wood-panelled and the floor has patterned carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

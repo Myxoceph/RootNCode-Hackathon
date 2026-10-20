@@ -18,7 +18,6 @@
       "Kitapta anılan Ulu, Habib-i Neccar ve Meydan Camii'ne yalnızca avlu biçimi karşılaştırması için atıf var; mimari köken ilişkisi kurulmadı.",
       "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -405,7 +404,176 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p133-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "264-265"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin taş cephesi ve sivri kemerli girişi",
+        "en": "Stone façade and pointed-arch entrance of the mosque"
+      },
+      "alt": {
+        "tr": "Kesme taştan cephede ortada sivri kemerli girişte ahşap kapı ve sarkan bir fener; solda iki demir parmaklıklı kemerli pencere, sağda dar küçük açıklıklar.",
+        "en": "On a cut-stone façade, a wooden door in a pointed-arch entrance with a hanging lantern; two barred arched windows on the left and small narrow openings on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p134-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "266"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu ve minare",
+        "en": "Courtyard and minaret"
+      },
+      "alt": {
+        "tr": "Taş döşeli avlunun çevresinde ahşap saçaklı taş yapılar; arkada ahşap şerefeli, ince bir taş minare. Solda ağaç, sağda bank.",
+        "en": "A stone-paved courtyard surrounded by stone buildings with wooden eaves; behind them a slender stone minaret with a wooden balcony. A tree on the left and a bench on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p135-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "268-269"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Cami girişinin önündeki sundurma",
+        "en": "Covered area in front of the mosque"
+      },
+      "alt": {
+        "tr": "Taş cephenin önünde ahşap direkli bir sundurma; cephede kemerli bir pencere ve camlı ahşap kapı, solda ahşap ayakkabılık rafları, zeminde hasır döşeme.",
+        "en": "A covered area on wooden posts before a stone façade with an arched window and a glazed wooden door; wooden shoe racks on the left and matting on the floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p135-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "268"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kapı ve kemerli niş",
+        "en": "Doorway and arched recess"
+      },
+      "alt": {
+        "tr": "Kesme taş, sivri kemerli derin bir nişin içinde kemerli ahşap kapı; üstte sarkan fener ve \"Kantara Camii\" yazılı levha.",
+        "en": "An arched wooden door set in a deep pointed-arch stone recess; a lantern hangs above and a sign reads Kantara Camii."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p135-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "268-269"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Ahşap minber ve ibadet salonu",
+        "en": "Wooden minbar and prayer hall"
+      },
+      "alt": {
+        "tr": "Oyma ahşap minber, solda kalın taş ayak ve ahşap kirişli tavandan sarkan avize; beyaz duvarlar, mavi halı ve kemerli pencereler.",
+        "en": "A carved wooden minbar, a thick stone pier on the left and a chandelier hanging from the timber-beamed ceiling; white walls, blue carpet and arched windows."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p135-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "269"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kemer ve ahşap mahfil",
+        "en": "Arch and wooden gallery"
+      },
+      "alt": {
+        "tr": "Geniş taş bir kemerin ardında ahşap korkuluklu mahfil, ahşap tavan ve avize; beyaz duvarlarda pencereler, zeminde mavi halı.",
+        "en": "Through a broad stone arch, a gallery with a wooden balustrade, a wooden ceiling and a chandelier; windows in white walls and a blue carpet below."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p136-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "270"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İç mekân, ayak ve mahfil",
+        "en": "Interior with pier and gallery"
+      },
+      "alt": {
+        "tr": "Ortada taş bir ayak, solda mihrap nişi ve ahşap minber, sağda ahşap korkuluklu mahfil; ahşap kirişli tavan ve mavi halı.",
+        "en": "A stone pier in the middle, a mihrab niche and wooden minbar on the left and a wooden-railed gallery on the right; timber-beamed ceiling and a blue carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

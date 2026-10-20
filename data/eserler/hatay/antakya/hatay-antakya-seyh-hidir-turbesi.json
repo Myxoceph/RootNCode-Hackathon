@@ -14,7 +14,6 @@
       "İngilizce başlık metin bölümünde yer yer 'Hidir', yer yer 'Hıdır' yazılıyor; başlıkta 'MINTIKA905' bitişik yazılmış.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
       "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
-      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
       "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
@@ -169,6 +168,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-5-mintika905-parsel-seyh-hidir-turbesi/p209-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "417"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Türbenin ahşap revaklı girişi",
+        "en": "Entrance of the tomb with its wooden portico"
+      },
+      "alt": {
+        "tr": "Ahşap kemerli ve yeşil çatılı bir revakın ardında yeşil boyalı türbe kapısı; iki hurma ağacı korkuluklu yeşil çinili kaldırım saksılarında, zemin açık renk fayans.",
+        "en": "A green tomb door behind a portico of wooden arches under a green roof; two palm trees in green-tiled planters with railings, on a light tiled floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }
