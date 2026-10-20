@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useColorScheme as useSystemColorScheme } from "react-native";
 
-import type { ColorScheme } from "./colors";
+type ColorScheme = "light" | "dark";
 
 /**
  * Web pages are rendered ahead of time without knowing the visitor's
