@@ -711,7 +711,7 @@ PostgreSQL 16'da test edildi: iki kez üst üste içe aktarma aynı sonucu verdi
 
 1. **Veritabanında dosya tutulmaz.** Görselin kendisi (BLOB/base64) DB'ye girmez. Dosyalar nesne depolamasında (S3 uyumlu) durur; DB yalnızca **depolama anahtarını ve metadata'yı** tutar.
 2. **DB'de tam URL değil, anahtar (key) tutulur.** Örnek: `assets/bursa-osmangazi-ulucami/m02-e06842fd8d/1280.webp`. Tam adres, yapılandırmadaki `MEDIA_BASE_URL` ile çalışma anında birleştirilir. CDN ya da sağlayıcı değişirse DB'de hiçbir şey değişmez.
-3. **Orijinal dosya korunur, kullanıcıya hiç gönderilmez.** Envanter fotoğrafları 4-22 MB ve 50 MP'ye kadar büyüklükte. Orijinaller **özel (private)** bir alanda durur; uygulamaya yalnızca küçültülmüş sürümler gider.
+3. **Orijinal dosya kaynağında kalır, kullanıcıya hiç gönderilmez.** Envanter fotoğrafları 4-22 MB ve 50 MP'ye kadar büyüklükte. Orijinaller depolamaya yüklenmez: Bursa'nınkiler Drive'da, Konya ve Hatay'ınkiler kitap PDF'inde durur. Manifestteki `source` ve `sha256` aynı dosyanın her zaman yeniden alınıp doğrulanmasını sağlar. Uygulamaya yalnızca küçültülmüş sürümler gider. (Ölçüm: Drive orijinali ortalama 17,9 MB, sürümlerinin toplamı 2,7 MB; orijinaller R2'nin 10 GB'lık ücretsiz kotasını tek başına aşardı.)
 4. **Her görselin birden çok sürümü vardır.** 480 / 1280 / 2560 px genişlikte, WebP ve JPEG olarak. Telefon küçük sürümü, tablet ve masaüstü büyüğünü indirir.
 5. **Dosya yolu içerik özetini içerir, bu yüzden önbellek kalıcıdır.** Yoldaki `e06842fd8d`, dosyanın sha256 özetinin başıdır. Fotoğraf değişirse yol da değişir. Bu sayede CDN'de `Cache-Control: public, max-age=31536000, immutable` güvenle kullanılır.
 6. **Yayınlanan dosyalarda metadata yoktur.** EXIF (GPS, kamera) üretilen sürümlerden silinir. Envanter fotoğraflarının bir kısmında GPS kayıtlı (Ulucami'de 10 fotoğrafın 3'ünde). Kullanıcı yüklemelerinde bu silme işlemi **KVKK açısından zorunludur**.
@@ -722,7 +722,6 @@ PostgreSQL 16'da test edildi: iki kez üst üste içe aktarma aynı sonucu verdi
 
 ```
 kok-kod-media-private                     ← herkese kapalı
-  originals/<sha256>.jpg                   orijinal dosya
   uploads/pending/<uuid>                   kullanıcı yüklemeleri (onay bekleyen)
 
 kok-kod-media-public  (+ CDN)             ← herkese açık, salt okunur
@@ -774,8 +773,14 @@ Manifest kaydı (`manifest[asset_id][media_key]`):
 ```
 
 Depolamaya yükleme:
-- Sürümler: `rclone sync data/build/media r2:kok-kod-media-public`
-- Orijinaller: `build/cache/originals/<drive-id>` dosyaları `originals/<sha256>.<ext>` adıyla private bucket'a yüklenir.
+- Sürümler (`r2` remote'u Object Read & Write yetkili, bucket'a özel bir token ile kurulur):
+  ```bash
+  rclone copy data/build/media r2:kok-kod-media-public --checksum --transfers 16 \
+    --header-upload "Cache-Control: public, max-age=31536000, immutable"
+  ```
+  `sync` değil `copy`: yerelde eksik dosya varsa `sync` onları bucket'tan da siler.
+- Orijinaller yüklenmez (İlke 3). Manifestteki `original.key` yalnızca dosyanın özetini ve biçimini kaydeder.
+- Kontrol ederken tarayıcı user-agent'ı kullanın: `r2.dev` adresi Python'un varsayılan istemcisine (`Python-urllib`) 403 döner, tarayıcı ve uygulama etkilenmez.
 
 **Git'e ne girer?**
 - **Girer:** `build/media-manifest.json`. Küçük bir metin dosyasıdır (görsel başına ~1 KB) ve hangi görselin hangi yolda, hangi boyutta olduğunun kaydıdır. Backend içe aktarmayı bununla yapar.
