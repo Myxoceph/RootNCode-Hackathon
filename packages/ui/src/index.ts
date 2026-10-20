@@ -3,3 +3,7 @@ export * from "./tokens/typography";
 export * from "./tokens/spacing";
 export * from "./contrast";
 export * from "./themes";
+export * from "./components/theme-context";
+export * from "./components/text";
+export * from "./components/button";
+export * from "./components/card";
