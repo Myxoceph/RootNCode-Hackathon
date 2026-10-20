@@ -3,6 +3,9 @@ import Fastify, { type FastifyInstance, type FastifyServerOptions } from "fastif
 import type { PrismaClient } from "./db/prisma.ts";
 import { assetsRoutes } from "./modules/assets/assets.routes.ts";
 import { createAssetsRepository, type AssetVisibility } from "./modules/assets/assets.repository.ts";
+import { createCommunityRepository } from "./modules/community/community.repository.ts";
+import { communityRoutes } from "./modules/community/community.routes.ts";
+import { moderationRoutes } from "./modules/community/moderation.routes.ts";
 import { createMetaRepository } from "./modules/meta/meta.repository.ts";
 import { metaRoutes } from "./modules/meta/meta.routes.ts";
 import { registerErrorHandlers } from "./plugins/error-handler.ts";
@@ -48,7 +51,7 @@ export function buildApp({
   // Both hook into route registration, so they come before every route (Swagger's own included).
   registerSecurity(app, rateLimit);
   registerOpenApi(app);
-  app.register(cors, { origin: corsOrigins, methods: ["GET", "HEAD", "OPTIONS"] });
+  app.register(cors, { origin: corsOrigins, methods: ["GET", "HEAD", "POST", "OPTIONS"] });
   app.register(healthRoutes, { prisma });
   app.register(assetsRoutes, {
     repository: createAssetsRepository(prisma, assetVisibility),
@@ -56,6 +59,9 @@ export function buildApp({
     visibility: assetVisibility,
   });
   app.register(metaRoutes, { repository: createMetaRepository(prisma, assetVisibility) });
+  const communityRepository = createCommunityRepository(prisma);
+  app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility });
+  app.register(moderationRoutes, { repository: communityRepository });
 
   return app;
 }

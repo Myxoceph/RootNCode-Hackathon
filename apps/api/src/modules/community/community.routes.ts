@@ -1,0 +1,167 @@
+import {
+  AnonymousSessionRequestSchema,
+  AnonymousSessionResponseSchema,
+  AppUserSchema,
+  AssetIdSchema,
+  CONTRACT_VERSION,
+  ContributionSchema,
+  CreateContributionRequestSchema,
+  LangSchema,
+  MyContributionsResponseSchema,
+  PulseResponseSchema,
+  type AnonymousSessionResponse,
+  type AppUser,
+  type Contribution,
+  type MyContributionsResponse,
+  type PulseResponse,
+} from "@vagabonds/contracts";
+import type { FastifyPluginAsync } from "fastify";
+import { z } from "zod";
+import { HttpError } from "../../lib/http-error.ts";
+import { resolveLang } from "../../lib/lang.ts";
+import { parseWith } from "../../lib/validate.ts";
+import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
+import { toOpenApiSchema } from "../../plugins/openapi.ts";
+import { visibleStatuses, type AssetVisibility } from "../assets/assets.repository.ts";
+import { hashToken, newToken, requireUser } from "./auth.ts";
+import { toAppUser, toContribution, toPulseItems } from "./community.mapper.ts";
+import type { CommunityRepository } from "./community.repository.ts";
+
+/** Contributions one user may send per hour, across all assets. */
+export const CONTRIBUTIONS_PER_HOUR = 5;
+
+const AssetParamsSchema = z.object({ id: AssetIdSchema });
+const PulseQuerySchema = z.object({
+  lang: LangSchema.optional(),
+  limit: z.coerce.number().int().min(1).max(50).default(20).describe("En fazla kaç topluluk katkısı"),
+});
+const MyContributionsQuerySchema = z.object({
+  limit: z.coerce.number().int().min(1).max(50).default(20),
+});
+
+const HOUR_MS = 60 * 60 * 1000;
+const bearer = [{ bearerAuth: [] }];
+
+function assetNotFound(id: string): HttpError {
+  return new HttpError(404, "ASSET_NOT_FOUND", `Asset "${id}" not found`);
+}
+
+export interface CommunityRoutesOptions {
+  repository: CommunityRepository;
+  visibility: AssetVisibility;
+}
+
+export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async (app, { repository, visibility }) => {
+  const statuses = visibleStatuses(visibility);
+  const errorSchema = toOpenApiSchema(ErrorResponseSchema);
+
+  app.post("/auth/anonymous", {
+    // Per-IP limit against mass sign-ups; visitors sharing event Wi-Fi still have room.
+    config: { rateLimit: { max: 20, timeWindow: HOUR_MS } },
+    schema: {
+      tags: ["community"],
+      summary: "Takma adla anonim oturum aç; token yalnızca bir kez gösterilir",
+      body: toOpenApiSchema(AnonymousSessionRequestSchema, "input"),
+      response: { 201: toOpenApiSchema(AnonymousSessionResponseSchema), 400: errorSchema, 429: errorSchema },
+    },
+  }, async (request, reply): Promise<AnonymousSessionResponse> => {
+    const { nickname } = parseWith(AnonymousSessionRequestSchema, request.body, "INVALID_BODY");
+    const token = newToken();
+    const user = await repository.createUser({ nickname, role: "visitor", tokenHash: hashToken(token) });
+
+    reply.code(201).header("cache-control", "no-store");
+    return AnonymousSessionResponseSchema.parse({ user: toAppUser(user), token });
+  });
+
+  app.get("/me", {
+    schema: {
+      tags: ["community"],
+      summary: "Token'ın sahibi (oturum hâlâ geçerli mi?)",
+      security: bearer,
+      response: { 200: toOpenApiSchema(AppUserSchema), 401: errorSchema, 403: errorSchema },
+    },
+  }, async (request, reply): Promise<AppUser> => {
+    const user = await requireUser(request, repository);
+    reply.header("cache-control", "no-store");
+    return AppUserSchema.parse(toAppUser(user));
+  });
+
+  app.get("/me/contributions", {
+    schema: {
+      tags: ["community"],
+      summary: "Kendi katkılarım ve moderasyon durumları (yeniden eskiye)",
+      security: bearer,
+      querystring: toOpenApiSchema(MyContributionsQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(MyContributionsResponseSchema), 400: errorSchema, 401: errorSchema },
+    },
+  }, async (request, reply): Promise<MyContributionsResponse> => {
+    const user = await requireUser(request, repository);
+    const { limit } = parseWith(MyContributionsQuerySchema, request.query, "INVALID_QUERY");
+    const items = await repository.listUserContributions(user.id, limit);
+
+    reply.header("cache-control", "no-store");
+    return MyContributionsResponseSchema.parse({ items: items.map(toContribution) });
+  });
+
+  app.post("/assets/:id/contributions", {
+    config: { rateLimit: { max: 10, timeWindow: 60_000 } },
+    schema: {
+      tags: ["community"],
+      summary: "Esere katkı gönder (ipucu, anı, düzeltme); moderatör onayından sonra nabızda görünür",
+      security: bearer,
+      params: toOpenApiSchema(AssetParamsSchema, "input"),
+      body: toOpenApiSchema(CreateContributionRequestSchema, "input"),
+      response: {
+        201: toOpenApiSchema(ContributionSchema),
+        400: errorSchema,
+        401: errorSchema,
+        403: errorSchema,
+        404: errorSchema,
+        429: errorSchema,
+      },
+    },
+  }, async (request, reply): Promise<Contribution> => {
+    const user = await requireUser(request, repository);
+    const { id } = parseWith(AssetParamsSchema, request.params, "INVALID_ID");
+    const { kind, body } = parseWith(CreateContributionRequestSchema, request.body, "INVALID_BODY");
+
+    if ((await repository.findVisibleAsset(id, statuses)) === null) throw assetNotFound(id);
+    const recent = await repository.countContributionsSince(user.id, new Date(Date.now() - HOUR_MS));
+    if (recent >= CONTRIBUTIONS_PER_HOUR) {
+      throw new HttpError(429, "CONTRIBUTION_LIMIT", `At most ${CONTRIBUTIONS_PER_HOUR} contributions per hour`);
+    }
+    const contribution = await repository.createContribution({ assetId: id, userId: user.id, kind, body });
+
+    reply.code(201).header("cache-control", "no-store");
+    return ContributionSchema.parse(toContribution(contribution));
+  });
+
+  app.get("/assets/:id/pulse", {
+    schema: {
+      tags: ["community"],
+      summary: "Ziyaretçi Nabzı: veri setindeki ipuçları ve onaylanmış topluluk katkıları",
+      params: toOpenApiSchema(AssetParamsSchema, "input"),
+      querystring: toOpenApiSchema(PulseQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(PulseResponseSchema), 400: errorSchema, 404: errorSchema },
+    },
+  }, async (request, reply): Promise<PulseResponse> => {
+    const { id } = parseWith(AssetParamsSchema, request.params, "INVALID_ID");
+    const query = parseWith(PulseQuerySchema, request.query, "INVALID_QUERY");
+    const lang = resolveLang(query.lang, request.headers["accept-language"]);
+
+    if ((await repository.findVisibleAsset(id, statuses)) === null) throw assetNotFound(id);
+    const records = await repository.findPulse(id, query.limit);
+
+    // Short caching: a newly approved contribution shows up within a minute.
+    reply.header("cache-control", "public, max-age=60");
+    reply.header("content-language", lang);
+    reply.header("vary", "Accept-Language");
+    return PulseResponseSchema.parse({
+      version: CONTRACT_VERSION,
+      lang,
+      assetId: id,
+      items: toPulseItems(records, lang),
+      communityTotal: records.communityTotal,
+    });
+  });
+};
