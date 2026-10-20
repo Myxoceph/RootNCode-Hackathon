@@ -93,6 +93,9 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 | `GET /assets`, `GET /assets/:id` | Eser listesi (filtre, arama, harita kutusu) ve detayı |
 | `GET /assets/:id/relations`, `GET /assets/:id/nearby` | Eserler arası bağlar ve yakındaki eserler |
 | `GET /meta/enums` | Filtre ve rozet kod listeleri |
+| `POST /auth/anonymous`, `GET /me` | Takma adla anonim oturum (token) |
+| `POST /assets/:id/contributions`, `GET /assets/:id/pulse` | Ziyaretçi Nabzı: katkı gönderme ve onaylanmış katkılar |
+| `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör token'ı: `npm run moderator:create --workspace @vagabonds/api -- "<ad>"`) |
 
 Yanıt şemaları ve istemci örnekleri: [`packages/contracts/README.md`](packages/contracts/README.md).
 

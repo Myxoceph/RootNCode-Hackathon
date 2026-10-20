@@ -7,6 +7,28 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-20 · Ziyaretçi Nabzı: anonim oturum, katkılar, moderasyon (sözleşme v0.2.2)
+
+Kimler: **herkes** (migration ve sözleşme paketi)
+
+1. Paketleri güncelle ve yeni migration'ı uygula (`app_user` tablosu):
+   ```bash
+   npm install
+   npm run db:deploy --workspace @vagabonds/api
+   ```
+2. Moderasyonu denemek istersen bir moderatör oluştur; token bir kez yazdırılır:
+   ```bash
+   npm run moderator:create --workspace @vagabonds/api -- "Adın"
+   ```
+
+Değişenler:
+- Yeni uçlar: `POST /auth/anonymous`, `GET /me`, `GET /me/contributions`, `POST /assets/:id/contributions`,
+  `GET /assets/:id/pulse` ve `/admin/...` moderasyon uçları. Ayrıntılar [`packages/contracts/README.md`](../packages/contracts/README.md)'de.
+- **Veri ekibi:** `import_to_db.py --verify` artık `contribution` satırlarını karşılaştırmıyor; bu satırları API yazıyor.
+  `app_user` tablosu içe aktarılmıyor (`data/README.md` §5'teki DDL'e eklendi).
+
+---
+
 ## 2026-10-20 · API güvenliği: hız sınırı ve güvenlik başlıkları
 
 Kimler: **API'yi yerelde çalıştıranlar**
