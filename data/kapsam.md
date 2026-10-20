@@ -37,11 +37,11 @@ Fotoğraflar 2023 depremlerinden önce çekilmiştir.
 
 | # | Bölüm | Kayıtlar | Basılı s. | Foto | Kim | Durum |
 |---|---|---|---|---|---|---|
-| 1–7 | Külliyeler ve Kervansaraylar | 38 kayıt: 7 külliye + alt yapıları (Habib-i Neccar 6, Ulu 8, Sokullu 9, Meydan 5, Kanuni 4, Şeyh Ali 3, Mustafa Şevki Paşa 3) | 54–191 | 127 | Ahmet (ajan) | draft (fotoğraf yalnızca Habib-i Neccar'da) |
-| 8–27 | Camiler ve Mescitler (1. yarı: Ali Çavuş → Rıfat Ağa) | 20 cami/mescit + alt yapılar (Kantara medrese ve çeşme, Nakip medrese ve kütüphane) | 194–309 | 100 | Ahmet (ajan) | draft (fotoğraf yalnızca Ali Çavuş'ta) |
-| 28–46 | Camiler ve Mescitler (2. yarı: Sarımiye → Kaptan Paşa Minaresi) | 19 + alt yapılar (Sofular türbesi, Şenköy türbesi) | 310–401 | 84 | Ahmet (ajan) | draft (fotoğraf eklenmedi) |
-| 47–63 | Türbeler / Ziyaretler | 17 (eser başına 1 sayfa) | 404–441 | 18 | Ahmet (ajan) | draft (fotoğraf eklenmedi) |
-| 64–78 | Kiliseler, İş Yeri ve Diğerleri, Eski Evler ve Konaklar | 14 kayıt + Kurşunlu Han'ın 2 alt yapısı (#69 eser değil: ticari iş yerleri listesi) | 444–487 | 20 | Ahmet (ajan) | draft (fotoğraf eklenmedi) |
+| 1–7 | Külliyeler ve Kervansaraylar | 38 kayıt: 7 külliye + alt yapıları (Habib-i Neccar 6, Ulu 8, Sokullu 9, Meydan 5, Kanuni 4, Şeyh Ali 3, Mustafa Şevki Paşa 3) | 54–191 | 127 | Ahmet (ajan) | published (fotoğraflar bağlı) |
+| 8–27 | Camiler ve Mescitler (1. yarı: Ali Çavuş → Rıfat Ağa) | 20 cami/mescit + alt yapılar (Kantara medrese ve çeşme, Nakip medrese ve kütüphane) | 194–309 | 100 | Ahmet (ajan) | published (fotoğraflar bağlı) |
+| 28–46 | Camiler ve Mescitler (2. yarı: Sarımiye → Kaptan Paşa Minaresi) | 19 + alt yapılar (Sofular türbesi, Şenköy türbesi) | 310–401 | 84 | Ahmet (ajan) | published (fotoğraflar bağlı) |
+| 47–63 | Türbeler / Ziyaretler | 17 (eser başına 1 sayfa) | 404–441 | 18 | Ahmet (ajan) | published (fotoğraflar bağlı) |
+| 64–78 | Kiliseler, İş Yeri ve Diğerleri, Eski Evler ve Konaklar | 14 kayıt + Kurşunlu Han'ın 2 alt yapısı (#69 eser değil: ticari iş yerleri listesi) | 444–487 | 20 | Ahmet (ajan) | published (fotoğraflar bağlı) |
 
 ### Cilt 2: Yıldırım (`vk-bursa-c2`)
 
