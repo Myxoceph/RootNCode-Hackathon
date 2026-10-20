@@ -10,9 +10,25 @@ _2-3 cümle: Bu hafta ürün olarak nereye geldik? Demo edilebilir ne var?_
 
 ### Ahmet Bakırcan · Backend & Sistem Mimarisi
 - **Tamamlananlar:**
+  - **A8 · `/assets` API'si ve sözleşme v0.2.0** ([#26](https://github.com/Myxoceph/RootNCode-Hackathon/pull/26)): `GET /assets` (şehir, tür, dönem, arama, harita kutusu, sayfalama) ve `GET /assets/:id`. Detayda bölümler, zaman çizelgesi, rivayetler, kitabeler, kişiler, görseller, ziyaretçi notları, ortam sesi ve her bilginin kaynağı (kitap + sayfa) ile güven düzeyi var. Dil `?lang=` ve `Accept-Language` ile seçiliyor; çekim koordinatları hiçbir yanıtta dönmüyor. Yanıtlar sözleşmeyle doğrulanıyor ve Swagger'da görünüyor.
+  - **A9 · Kentsel ağ uçları** ([#27](https://github.com/Myxoceph/RootNCode-Hackathon/pull/27)): `GET /assets/:id/relations` bağları iki yönlü döndürüyor; yayında olmayan hedefler sayılıyor ama dönmüyor (Sis Açma'daki "keşfedilmemiş bağ" için). `GET /assets/:id/nearby` yakındaki eserleri mesafeye göre sıralıyor. `GET /meta/enums` filtre ve rozet listelerini etiketleri ve eser sayılarıyla veriyor.
+  - **A13 · Demo sunucusu dağıtımı** ([#28](https://github.com/Myxoceph/RootNCode-Hackathon/pull/28)): API ve veri içe aktarma imajları, web uygulaması ve `/api` için Caddy (HTTPS, güvenlik başlıkları, istek boyutu sınırı), PostgreSQL yedekleme/geri yükleme. Yığın tek komutla kuruluyor; yerelde prova edildi. Kurulum adımları `docs/deploy.md`'de.
+  - **Veri setinin yayına alınması** ([#25](https://github.com/Myxoceph/RootNCode-Hackathon/pull/25)): Doğrulanan 356 Bursa kaydı `published` oldu; koordinat ve fotoğraf isteğe bağlı hale geldi, böylece uygulama API'den gerçek veri alabiliyor.
+  - **Hatay envanteri** ([#29](https://github.com/Myxoceph/RootNCode-Hackathon/pull/29), [#30](https://github.com/Myxoceph/RootNCode-Hackathon/pull/30)): Hatay için tek kaynak bir PDF kitap olduğundan kitabı eserlere bölen bir araç yazıldı (`data/tools/extract/hatay_book.py`: 77 eser, 349 fotoğraf, ilçe ve parsel eşleşmesiyle). Görsel hattı yerel kaynaktan fotoğraf alabiliyor. Bu araçla 116 taslak kayıt üretildi; `validate.py` tüm veri setinde hatasız. 7 kaydın fotoğrafı bağlandı.
+  - **A11 · Şema değişikliği belgesi**: `data/README.md` §5'e şemanın esas kaynağının Prisma migration'ları olduğu ve yeni bir tablo değişikliğinin adım adım nasıl yapılacağı eklendi.
 - **Devam edenler:**
+  - **A10 · Medyanın R2'ye yüklenmesi:** İlk yükleme elle yapılacak; ardından CI'daki `rclone` adımı. Yükleme bitene kadar API'nin döndürdüğü görsel adresleri açılmıyor.
+  - **A12 · İlk `main` sürümü:** Bilinçli olarak bekletiliyor. Çalışan sürüm uygulamayla birlikte çıkacak; uygulama API'ye bağlanınca (Y8, Y9) açılacak.
+  - Hatay'da fotoğrafı bağlanmamış 109 kayıt.
 - **Engeller / ihtiyaçlar:**
+  - Hatay kayıtlarında koordinat yok; harita ve rota için parsel ve mıntıka bilgisinden konum çıkarılması gerekiyor.
+  - Hatay'da kilise, değirmen, höyük ve makam için `asset_types` kodu yok (E2 ile birlikte karar verilmeli).
 - **Gelecek hafta:**
+  - API güvenliği: istek sınırı (rate limit), güvenlik başlıkları.
+  - Topluluk Ziyaretçi Nabzı: anonim takma adla katkı gönderme, moderasyon kuyruğu ve onaylanan notların listesi.
+  - Vakıf Travel Planner: tematik rota ve hava durumu (Open-Meteo, kapalıyken yedek yanıt); yağmurda kapalı mekânlar öne alınıyor.
+  - Gastronomi ve ortam sesleri için veri uçları (içerik Hüseyin'le).
+  - Dağıtımın VDS'te provası.
 
 ### Hüseyin Öztürk · Veri & ETL
 - **Tamamlananlar:**
@@ -38,7 +54,7 @@ _2-3 cümle: Bu hafta ürün olarak nereye geldik? Demo edilebilir ne var?_
 | Metrik | Değer |
 |---|---|
 | Birleşen PR sayısı | |
-| Veri setindeki eser sayısı (taslak / incelemede / yayında) | 356 (354 / 2 / 0) |
+| Veri setindeki eser sayısı (taslak / incelemede / yayında) | 472 (116 / 0 / 356) |
 | Tamamlanan modüller (1-8) | |
 
 ## Alınan kararlar
