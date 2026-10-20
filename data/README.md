@@ -75,6 +75,7 @@ data/
 ├── tools/
 │   ├── validate.py            # şema + çapraz kontrol (veri ekibi her değişiklikte çalıştırır)
 │   ├── media_pipeline.py      # fotoğrafları indirir, sürümlerini üretir, manifesti yazar
+│   ├── geocode.py             # koordinat önerir/yazar: fotoğraf EXIF'i, OpenStreetMap, parent
 │   ├── db_rows.py             # JSON + manifest → DB satırları (TEK eşleme kaynağı)
 │   ├── import_to_db.py        # referans içe aktarma + doğrulama (db_rows.py'yi kullanır)
 │   └── build_viewer.py        # görüntüleyici verisi (db_rows.py'yi kullanır)
@@ -82,7 +83,7 @@ data/
 └── build/
     ├── media-manifest.json    # her görselin hash, boyut ve sürüm bilgisi   ← git'e GİRER
     ├── media/                 # yüklemeye hazır görsel sürümleri           ← git'e girmez
-    └── cache/                 # Drive'dan indirilen orijinaller            ← git'e girmez
+    └── cache/                 # Drive orijinalleri, OSM yanıtları          ← git'e girmez
 ```
 
 Referans kayıt: [eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json](eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json)
@@ -916,10 +917,13 @@ Adımlar:
    pip install jsonschema pillow certifi
    python3 data/tools/validate.py                  # ✗ varsa düzeltin; uyarılar engel değil
    python3 data/tools/media_pipeline.py <id>       # EXIF'te GPS varsa koordinatı onunla doğrulayın
+   python3 data/tools/geocode.py --write            # koordinatı olmayan kayıtlara önerilen noktayı yazar
    python3 data/tools/build_viewer.py               # görüntüleyicide kontrol edin
    ```
 5. Manifesti (`build/media-manifest.json`) eser JSON'uyla birlikte commit edin.
 6. `meta.status = "in_review"` yapın. İkinci kişi kontrol edince `reviewed_by` doldurulur ve durum `published` olur.
+
+**Koordinatlar.** `geocode.py` koordinatı olmayan kayda sırasıyla şunları dener: eserin fotoğraflarındaki EXIF GPS'in medyanı (`source: photo_exif`; drone konumu olabilir, binadan birkaç on metre sapar), OpenStreetMap'te aynı ilçede adı ve türü tutan tek aday (`source: osm`; Hatay'da 2023 depremleri öncesi OSM verisi de sorgulanır) ve son olarak bağlı olduğu yapının noktası. Elle girilmiş koordinata dokunmaz; yazdığı her nokta `verified: false`'tur ve `verification_note` nereden geldiğini söyler. Ad tam tutmadığı için elle teyit edilen eşleşmeler araçtaki `OSM_PICK` listesindedir. OSM'den gelen noktalar © OpenStreetMap katkıcıları, ODbL lisanslıdır; uygulamada atıf gösterilmelidir.
 
 ---
 
