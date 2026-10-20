@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-21 · Hatay kayıtları yayında
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- 116 Hatay kaydı `published` oldu; API artık 472 eser döndürüyor (`/assets?city=hatay`).
+- Hatay kayıtlarının 109'unda kitaptan fotoğraf var (348 fotoğraf, sürümleri R2'de).
+- Koordinat henüz yok; Hatay eserleri haritada ve yakındaki eserlerde görünmez.
+
 ## 2026-10-21 · Fotoğraflar R2'de
 
 Kimler: **API'yi yerelde çalıştıranlar**

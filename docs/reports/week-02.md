@@ -14,12 +14,12 @@ _2-3 cümle: Bu hafta ürün olarak nereye geldik? Demo edilebilir ne var?_
   - **A9 · Kentsel ağ uçları** ([#27](https://github.com/Myxoceph/RootNCode-Hackathon/pull/27)): `GET /assets/:id/relations` bağları iki yönlü döndürüyor; yayında olmayan hedefler sayılıyor ama dönmüyor (Sis Açma'daki "keşfedilmemiş bağ" için). `GET /assets/:id/nearby` yakındaki eserleri mesafeye göre sıralıyor. `GET /meta/enums` filtre ve rozet listelerini etiketleri ve eser sayılarıyla veriyor.
   - **A13 · Demo sunucusu dağıtımı** ([#28](https://github.com/Myxoceph/RootNCode-Hackathon/pull/28)): API ve veri içe aktarma imajları, web uygulaması ve `/api` için Caddy (HTTPS, güvenlik başlıkları, istek boyutu sınırı), PostgreSQL yedekleme/geri yükleme. Yığın tek komutla kuruluyor; yerelde prova edildi. Kurulum adımları `docs/deploy.md`'de.
   - **Veri setinin yayına alınması** ([#25](https://github.com/Myxoceph/RootNCode-Hackathon/pull/25)): Doğrulanan 356 Bursa kaydı `published` oldu; koordinat ve fotoğraf isteğe bağlı hale geldi, böylece uygulama API'den gerçek veri alabiliyor.
-  - **Hatay envanteri** ([#29](https://github.com/Myxoceph/RootNCode-Hackathon/pull/29), [#30](https://github.com/Myxoceph/RootNCode-Hackathon/pull/30)): Hatay için tek kaynak bir PDF kitap olduğundan kitabı eserlere bölen bir araç yazıldı (`data/tools/extract/hatay_book.py`: 77 eser, 349 fotoğraf, ilçe ve parsel eşleşmesiyle). Görsel hattı yerel kaynaktan fotoğraf alabiliyor. Bu araçla 116 taslak kayıt üretildi; `validate.py` tüm veri setinde hatasız. 7 kaydın fotoğrafı bağlandı.
+  - **Hatay envanteri** ([#29](https://github.com/Myxoceph/RootNCode-Hackathon/pull/29), [#30](https://github.com/Myxoceph/RootNCode-Hackathon/pull/30)): Hatay için tek kaynak bir PDF kitap olduğundan kitabı eserlere bölen bir araç yazıldı (`data/tools/extract/hatay_book.py`: 77 eser, 349 fotoğraf, ilçe ve parsel eşleşmesiyle). Görsel hattı yerel kaynaktan fotoğraf alabiliyor. Bu araçla 116 kayıt üretildi; `validate.py` tüm veri setinde hatasız.
+  - **Hatay fotoğrafları ve yayın** ([#35](https://github.com/Myxoceph/RootNCode-Hackathon/pull/35), [#37](https://github.com/Myxoceph/RootNCode-Hackathon/pull/37)): Kitaptaki 348 fotoğraf 109 kayda bağlandı; her biri Türkçe ve İngilizce altyazı ve alt metinle birlikte. Kitapta kendi fotoğrafı olmayan 7 kayıt var. 116 Hatay kaydı `published` oldu. Atanması belirsiz 8 fotoğraf insan kontrolü için [#36](https://github.com/Myxoceph/RootNCode-Hackathon/issues/36)'da.
   - **A11 · Şema değişikliği belgesi**: `data/README.md` §5'e şemanın esas kaynağının Prisma migration'ları olduğu ve yeni bir tablo değişikliğinin adım adım nasıl yapılacağı eklendi.
 - **Devam edenler:**
-  - **A10 · Medyanın R2'ye yüklenmesi:** İlk yükleme yapıldı: kayıtlara bağlı 174 fotoğrafın (Bursa 156, Hatay 18) 974 sürümü, toplam 456 MB. API'nin döndürdüğü görsel adresleri açılıyor (348 adres kontrol edildi). Orijinaller yüklenmiyor, kaynağında kalıyor (Drive / kitap PDF'i); böylece üç şehir de R2'nin 10 GB'lık ücretsiz kotasına sığıyor. Kalan: yüklemenin CI'a alınması.
+  - **A10 · Medyanın R2'ye yüklenmesi:** Kayıtlara bağlı 504 fotoğrafın (Bursa 156, Hatay 348) 1850 sürümü R2'de, toplam 513 MB. API'nin döndürdüğü görsel adresleri açılıyor. Orijinaller yüklenmiyor, kaynağında kalıyor (Drive / kitap PDF'i); böylece üç şehir de R2'nin 10 GB'lık ücretsiz kotasına sığıyor. Kalan: yüklemenin CI'a alınması.
   - **A12 · İlk `main` sürümü:** Bilinçli olarak bekletiliyor. Çalışan sürüm uygulamayla birlikte çıkacak; uygulama API'ye bağlanınca (Y8, Y9) açılacak.
-  - Hatay'da fotoğrafı bağlanmamış 109 kayıt.
 - **Engeller / ihtiyaçlar:**
   - Hatay kayıtlarında koordinat yok; harita ve rota için parsel ve mıntıka bilgisinden konum çıkarılması gerekiyor.
   - Hatay'da kilise, değirmen, höyük ve makam için `asset_types` kodu yok (E2 ile birlikte karar verilmeli).
@@ -54,7 +54,7 @@ _2-3 cümle: Bu hafta ürün olarak nereye geldik? Demo edilebilir ne var?_
 | Metrik | Değer |
 |---|---|
 | Birleşen PR sayısı | |
-| Veri setindeki eser sayısı (taslak / incelemede / yayında) | 472 (116 / 0 / 356) |
+| Veri setindeki eser sayısı (taslak / incelemede / yayında) | 472 (0 / 0 / 472) |
 | Tamamlanan modüller (1-8) | |
 
 ## Alınan kararlar
