@@ -49,6 +49,8 @@ services:
       CORS_ORIGINS: ${PUBLIC_URL:-http://localhost}
       MEDIA_BASE_URL: ${MEDIA_BASE_URL:-https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev}
       ASSET_VISIBILITY: published
+      # Only Caddy reaches the API (private Docker network); the rate limit keys on the client IP it forwards.
+      TRUST_PROXY: uniquelocal
     read_only: true
     tmpfs:
       - /tmp

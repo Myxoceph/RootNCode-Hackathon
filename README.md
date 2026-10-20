@@ -99,6 +99,9 @@ Yanıt şemaları ve istemci örnekleri: [`packages/contracts/README.md`](packag
 Tüm hatalar tek biçimde döner: `{ "error": { "code": "NOT_FOUND", "message": "..." } }`.
 `5xx` hataların ayrıntısı yalnızca sunucu loglarında tutulur.
 
+İstemci IP'si başına dakikada 120 istek sınırı vardır (`RATE_LIMIT_MAX`; `/health` hariç). Aşılınca
+`429 RATE_LIMITED` döner.
+
 Web istemcisinin API'ye erişebilmesi için adresi `CORS_ORIGINS` içinde olmalıdır (varsayılan: `http://localhost:8081`).
 
 ### Demo sunucusu

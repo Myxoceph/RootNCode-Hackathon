@@ -7,6 +7,24 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-20 · API güvenliği: hız sınırı ve güvenlik başlıkları
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Yeni paketleri kur (`@fastify/rate-limit`, `@fastify/helmet`):
+   ```bash
+   npm install
+   ```
+2. İsteğe bağlı yeni ortam değişkenleri (`apps/api/.env`); varsayılanlar yeterli:
+   - `RATE_LIMIT_MAX`: IP başına dakikadaki istek sınırı (varsayılan 120, `0` kapatır).
+   - `TRUST_PROXY`: API bir proxy arkasındaysa proxy'nin adresleri ya da `uniquelocal`. Yerelde gerekmez.
+
+Değişenler:
+- Sınır aşılınca API `429` ve `{ error: { code: "RATE_LIMITED" } }` döner; `Retry-After` başlığı kaç saniye bekleneceğini söyler. İstemci bu hatayı ayrı gösterebilir.
+- İstek gövdesi 16 KB ile sınırlı.
+
+---
+
 ## 2026-10-16 · `/assets` API'si ve sözleşme v0.2.0
 
 Kimler: **herkes** (sözleşme paketi güncellendi)

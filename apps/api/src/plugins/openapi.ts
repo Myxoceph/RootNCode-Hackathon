@@ -49,5 +49,21 @@ export function registerOpenApi(app: FastifyInstance): void {
     },
   });
 
-  app.register(swaggerUi, { routePrefix: "/docs" });
+  // Replaces the API's `default-src 'none'` policy on the /docs routes with one Swagger UI loads under.
+  // Based on the plugin's `staticCSP: true` policy, minus `upgrade-insecure-requests` (it would break the
+  // docs on a demo server served over plain HTTP) and plus inline styles, which Swagger UI's bundle sets.
+  app.register(swaggerUi, {
+    routePrefix: "/docs",
+    staticCSP: {
+      "default-src": "'self'",
+      "base-uri": "'self'",
+      "font-src": "'self' https: data:",
+      "frame-ancestors": "'self'",
+      "img-src": "'self' data: validator.swagger.io",
+      "object-src": "'none'",
+      "script-src": "'self'",
+      "script-src-attr": "'none'",
+      "style-src": "'self' 'unsafe-inline' https:",
+    },
+  });
 }
