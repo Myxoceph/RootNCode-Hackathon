@@ -601,6 +601,25 @@ CREATE TABLE asset_revision (
 );
 ```
 
+### Şemanın esas kaynağı ve tablo değişikliği
+
+Yukarıdaki DDL tasarımı anlatmak içindir. **Çalışan şemanın esas kaynağı Prisma migration'larıdır**
+([`apps/api/prisma/migrations/`](../apps/api/prisma/migrations/)); bu bölümle bir migration çelişirse
+migration geçerlidir. `schema.prisma` elle yazılmaz, migration'ların kurduğu veritabanından üretilir.
+
+Bir tabloya sütun eklemek ya da yeni tablo açmak için:
+
+1. `apps/api/prisma/migrations/<zaman>_<ad>/migration.sql` olarak yeni bir migration yazılır. Prisma'nın
+   ifade edemediği yapılar (domain, CHECK, görünüm, DEFERRABLE FK, ifade indeksi) yalnızca bu SQL'de yer alır.
+   Birleşmiş bir migration asla değiştirilmez.
+2. `npm run db:migrate -w apps/api` ile uygulanır, ardından `apps/api` içinde `npx prisma db pull` ile `schema.prisma` yenilenir.
+   Prisma'nın önerdiği `DROP` ifadeleri gözden geçirilir.
+3. İçe aktarılan bir tablo değiştiyse [`tools/db_rows.py`](tools/db_rows.py) içindeki `TABLES` ve eşleme
+   güncellenir (Bölüm 7); `import_to_db.py --verify` bunu CI'da denetler.
+4. Bu bölümdeki DDL ve Bölüm 6'daki eşleme aynı PR'da güncellenir.
+5. [`docs/upgrade-notes.md`](../docs/upgrade-notes.md) dosyasına "migration uygula" maddesi eklenir ve veri
+   ekibine haber verilir.
+
 ---
 
 ## 6. JSON → tablo eşlemesi
