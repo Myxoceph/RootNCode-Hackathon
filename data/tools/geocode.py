@@ -6,7 +6,9 @@ Kullanım:
     python3 data/tools/geocode.py --write    # koordinatı olmayan kayıtlara yazar
 
 Kaynaklar, öncelik sırasıyla:
-  1. photo_exif: eserin fotoğraflarının (build/media-manifest.json) EXIF GPS'lerinin medyanı.
+  1. photo_exif: eserin fotoğraflarının (build/media-manifest.json) EXIF GPS'lerinin medyanı; yoksa
+     drive_photo_map.py'nin kitap sayfası eşleşmesiyle esere bağladığı Drive fotoğraflarınınki
+     (build/cache/drive/photo-map.json; GPS'ler medyandan 500 m'den fazla dağılıyorsa kullanılmaz).
      Çoğu drone çekimi olduğundan nokta binadan birkaç on metre sapabilir.
   2. osm: OpenStreetMap'te (Hatay'da 2023 depremleri öncesi veri de) aynı ilçede, adı ve türü tutan TEK aday. İlçe başına bir Overpass
      sorgusu atılır, yanıt build/cache/osm/ altında saklanır; tekrar çalıştırmak ağa çıkmaz
@@ -27,6 +29,9 @@ from pathlib import Path
 DATA = Path(__file__).resolve().parent.parent
 CACHE = DATA / "build" / "cache" / "osm"
 MANIFEST = DATA / "build" / "media-manifest.json"
+DRIVE_MAP = DATA / "build" / "cache" / "drive" / "photo-map.json"
+# Fotoğraflar bu kadar dağınıksa (geniş açılı ya da uzaktan çekimler) nokta güvenilmez sayılır
+MAX_EXIF_SPREAD_METERS = 500
 OVERPASS = "https://overpass-api.de/api/interpreter"
 USER_AGENT = "vagabonds-geocode/1.0 (KOK&KOD hackathon data tool)"
 
@@ -122,12 +127,26 @@ def haversine(a, b):
     return 2 * 6371000 * asin(sqrt(h))
 
 
-def exif_point(manifest, asset_id):
-    pts = [(e["exif"]["gps"]["lat"], e["exif"]["gps"]["lng"])
-           for e in manifest.get(asset_id, {}).values() if (e.get("exif") or {}).get("gps")]
+def median_point(pts):
+    """(medyan nokta, nokta sayısı) ya da dağılım çok büyükse None."""
     if not pts:
         return None
-    return (statistics.median(p[0] for p in pts), statistics.median(p[1] for p in pts)), len(pts)
+    mid = (statistics.median(p[0] for p in pts), statistics.median(p[1] for p in pts))
+    if max(haversine(mid, p) for p in pts) > MAX_EXIF_SPREAD_METERS:
+        return None
+    return mid, len(pts)
+
+
+def exif_point(manifest, drive_map, asset_id):
+    """Önce kayda bağlı fotoğrafların, yoksa Drive eşleşmesindeki fotoğrafların GPS'i: (nokta, sayı, kaynak notu)."""
+    own = [(e["exif"]["gps"]["lat"], e["exif"]["gps"]["lng"])
+           for e in manifest.get(asset_id, {}).values() if (e.get("exif") or {}).get("gps")]
+    if own:
+        hit = median_point(own)
+        return hit and (*hit, "fotoğrafın")
+    drive = [(p["gps"]["lat"], p["gps"]["lng"]) for p in drive_map.get(asset_id, []) if p.get("gps")]
+    hit = median_point(drive)
+    return hit and (*hit, "Drive fotoğrafının (kitap sayfası eşleşmesiyle)")
 
 
 # Ad içindeki tür sözcüğü → kategori. Cami ve mescit aynı kategoridir (adlar ikisi arasında değişebiliyor).
@@ -222,6 +241,7 @@ def osm_match(rec, idx):
 def main(argv):
     write = "--write" in argv
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    drive_map = json.loads(DRIVE_MAP.read_text(encoding="utf-8")) if DRIVE_MAP.exists() else {}
     files = sorted((DATA / "eserler").rglob("*.json"))
     recs = {f: json.loads(f.read_text(encoding="utf-8")) for f in files}
     by_id = {r["id"]: r for r in recs.values()}
@@ -244,10 +264,10 @@ def main(argv):
         hit, cands = osm_match(r, idx_cache[key])
         if r["id"] in OSM_PICK:
             hit = next(e for es in idx_cache[key].values() for e in es if e["osm"] == OSM_PICK[r["id"]])
-        ex = exif_point(manifest, r["id"])
+        ex = exif_point(manifest, drive_map, r["id"])
         if ex:
-            (lat, lng), n = ex
-            note = f"{n} fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+            (lat, lng), n, what = ex
+            note = f"{n} {what} EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
             if hit:
                 d = haversine((lat, lng), (hit["lat"], hit["lng"]))
                 deltas.append((round(d), r["id"]))
