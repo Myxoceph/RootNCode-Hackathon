@@ -10,6 +10,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "export": "expo export --platform all",
+    "fixtures": "tsx scripts/capture-fixtures.mts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -41,6 +42,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "tsx": "^4.20.0",
     "typescript": "~6.0.3"
   }
 }

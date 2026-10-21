@@ -24,6 +24,10 @@
 		root * /srv/web
 		@hashed path /_expo/static/*
 		header @hashed Cache-Control "public, max-age=31536000, immutable"
+		# Asset details are rendered in the browser from the API, so the export has one shell
+		# page for all of them. Only one rewrite runs: a detail URL skips try_files below.
+		@assetDetail path_regexp ^/monuments/[^/]+/?$
+		rewrite @assetDetail "/monuments/[id].html"
 		try_files {path} {path}.html {path}/index.html /index.html
 		file_server
 	}

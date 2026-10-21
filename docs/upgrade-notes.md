@@ -7,6 +7,30 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-21 · Uygulama `/assets` API'sinden okuyor
+
+Kimler: **uygulamayı çalıştıranlar** (Yiğit, Kübra) ve **demo sunucusunu kuranlar** (Ahmet)
+
+1. Paketleri güncelle (`tsx` uygulamaya eklendi):
+   ```bash
+   npm install
+   ```
+2. Uygulama artık veri için API'ye ihtiyaç duyuyor. Ya API'yi aç (`npm run dev --workspace @vagabonds/api`),
+   ya da API olmadan çalışmak için örnek veriyi seç:
+   ```bash
+   EXPO_PUBLIC_DATA_SOURCE=mock npm run app
+   ```
+3. Telefonda (Expo Go) API adresi otomatik bulunur: Expo sunucusunun çalıştığı bilgisayarın `:3000` portu.
+   Telefon ile bilgisayar aynı ağda olmalı. Başka bir API için `EXPO_PUBLIC_API_URL` ver.
+
+Değişenler:
+- Eser detay adresi `/monuments/<eser id>` oldu (ör. `/monuments/bursa-osmangazi-ulucami`).
+- `deploy/Caddyfile`: her `/monuments/<id>` adresi web çıktısındaki `monuments/[id].html` kabuğuna yönleniyor.
+  Demo sunucusunda web imajını yeniden derle (`docs/deploy.md`).
+- Uygulama `Monument` sözleşmesini ve `mock_monuments.json`'u artık kullanmıyor.
+
+---
+
 ## 2026-10-21 · Eser koordinatları
 
 Kimler: **API'yi yerelde çalıştıranlar**

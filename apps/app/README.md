@@ -4,7 +4,7 @@ Vagabonds istemcisi: **tek kod tabanından iOS, Android ve Web**.
 
 - **Teknoloji:** Expo (React Native), Expo Router, TypeScript
 - **Web:** `react-native-web` ile aynı ekranlar tarayıcıda çalışır; Expo Router sayesinde
-  paylaşılabilir URL'ler oluşur (ör. `/monuments/selimiye-camii`).
+  paylaşılabilir URL'ler oluşur (ör. `/monuments/bursa-osmangazi-ulucami`).
 
 | Sorumluluk | Kişi |
 |---|---|
@@ -35,9 +35,9 @@ src/
     +html.tsx             # web HTML kabuğu (lang="tr", zoom açık)
     +not-found.tsx
     (tabs)/               # Keşfet /, Eserler /monuments, Rota /route, Ayarlar /settings
-      monuments/          # kendi Stack'i: liste (index) → detay ([slug], ör. /monuments/selimiye-camii)
+      monuments/          # kendi Stack'i: liste (index) → detay ([id], ör. /monuments/bursa-osmangazi-ulucami)
   components/
-  data/                   # veri kaynağı soyutlaması ve hook'lar (bkz. Veri)
+  data/                   # veri kaynakları (API, mock), hook'lar, örnek veri (fixtures/)
   theme/                  # geçici renk rolleri (K3 gelince değişecek), yazı tipi dosyaları
 ```
 
@@ -59,22 +59,38 @@ Platforma özel kod, dosya uzantısıyla ayrılır: `Component.native.tsx` / `Co
 
 ## Veri
 
-API hazır olana kadar veri kaynağı
-[`packages/contracts/mock/mock_monuments.json`](../../packages/contracts/mock/mock_monuments.json)
-dosyasıdır. Tipler ve Zod şemaları `@vagabonds/contracts` paketinden import edilir;
-API devreye girdiğinde yalnızca veri kaynağı değişir, yanıt şekli aynı kalır.
+Uygulama veriyi `/assets` API'sinden alır (`@vagabonds/contracts` v0.2). Yerelde API'yi aç:
+
+```bash
+npm run db:up && npm run db:import             # bir kez (bkz. kök README)
+npm run dev --workspace @vagabonds/api         # http://localhost:3000
+npm run app                                    # ayrı terminalde
+```
+
+Web'den API'ye erişim için Expo'nun varsayılan portu (8081) API'nin `CORS_ORIGINS` listesinde olmalı;
+varsayılan ayar budur.
+
+| Ortam değişkeni | Varsayılan | Ne işe yarar |
+|---|---|---|
+| `EXPO_PUBLIC_API_URL` | Telefonda Expo sunucusunun çalıştığı bilgisayar (`http://<ip>:3000`), diğerlerinde `http://localhost:3000` | API adresi. Demo sunucusu: `https://<alan adı>/api`; web derlemesi `/api` kullanır (`deploy/web.Dockerfile`) |
+| `EXPO_PUBLIC_DATA_SOURCE` | `api` | `mock`: API olmadan, `src/data/fixtures/` içindeki küçük örnek veriyle çalışır (Ulucami ve bağlı 5 eser) |
 
 Ekranlar veriye yalnızca `src/data` üzerinden erişir:
 
 ```tsx
 import { ResourceView } from "@/components/resource-view";
-import { useMonument, useMonuments } from "@/data";
+import { useAsset, useAssetList, useAssetRelations } from "@/data";
 
-const monuments = useMonuments();          // loading | error | success, ve retry()
-<ResourceView resource={monuments}>{(data) => /* ... */}</ResourceView>
+const list = useAssetList();                   // sayfalı: data.items, data.loadMore(), retry()
+const asset = useAsset("bursa-osmangazi-ulucami");
+<ResourceView resource={asset}>{(data) => /* data === null: eser yok */}</ResourceView>
 ```
 
-- `src/data/active-source.ts`: hangi kaynağın kullanılacağına karar verilen **tek** satır.
+- `src/data/active-source.ts`: hangi kaynağın kullanılacağına karar verilen **tek** yer.
 - Her kaynak veriyi sözleşmeyle doğrular; uymazsa `DataError` fırlatır. `ResourceView` bunu
-  "Tekrar dene" düğmeli bir hata ekranı olarak gösterir (geliştirmede hangi alanın bozuk
-  olduğu da listelenir).
+  "Tekrar dene" düğmeli bir hata ekranı olarak gösterir (geliştirmede hangi adresin ya da
+  alanın sorunlu olduğu da listelenir). API kapalıysa "Sunucuya ulaşılamıyor" der; sessizce
+  mock'a düşmez.
+- Sözleşme değişince örnek veriyi yenile: API açıkken `npm run fixtures --workspace @vagabonds/app`.
+- Web derlemesinde detay sayfaları tek bir kabuk sayfadır (`monuments/[id].html`); içerik
+  tarayıcıda API'den yüklenir. `deploy/Caddyfile` her `/monuments/<id>` adresine bu sayfayı verir.
