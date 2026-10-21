@@ -29,7 +29,7 @@ export function Segmented<T extends string>({ label, options, value, onChange, l
           <Pressable
             key={option.value}
             accessibilityRole="radio"
-            accessibilityState={{ checked: on }}
+            aria-checked={on}
             onPress={() => onChange(option.value)}
             style={[
               styles.option,
