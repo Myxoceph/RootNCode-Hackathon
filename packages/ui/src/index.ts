@@ -7,3 +7,4 @@ export * from "./components/theme-context";
 export * from "./components/text";
 export * from "./components/button";
 export * from "./components/card";
+export * from "./components/confidence-badge";
