@@ -31,7 +31,7 @@ export default function SettingsScreen() {
       <Head>
         <title>Profil · Vagabonds</title>
       </Head>
-      <Text variant="title" accessibilityRole="header">
+      <Text variant="title" headingLevel={1}>
         Erişilebilirlik
       </Text>
       <Text color="textSecondary">Buradaki ayarlar uygulamadaki tüm ekranlara uygulanır.</Text>

@@ -37,7 +37,7 @@ export default function CameraScreen() {
       <Head>
         <title>Kamera · Vagabonds</title>
       </Head>
-      <Text variant="title" accessibilityRole="header">
+      <Text variant="title" headingLevel={1}>
         Kamera
       </Text>
       <Text color="textSecondary">

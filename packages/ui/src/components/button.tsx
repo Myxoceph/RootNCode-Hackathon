@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { Pressable, StyleSheet, View, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
+import { Platform, Pressable, StyleSheet, View, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
 
 import { radius, spacing, touchTarget } from "../tokens/spacing";
 import { Text } from "./text";
@@ -12,7 +12,10 @@ export interface ButtonProps extends Omit<PressableProps, "children" | "style"> 
   variant?: ButtonVariant;
   /** Drawn before the label; hidden from screen readers, the label already says it. */
   icon?: ReactNode;
-  /** Toggle buttons ("Rotaya ekle"): announced as selected / not selected. */
+  /**
+   * Makes it a toggle ("Rotaya ekle"): announced as selected on phones and as a
+   * pressed toggle (`aria-pressed`) on the web. Leave unset for plain buttons.
+   */
   selected?: boolean;
   /** Custom colors for camera screens: [background, label, border]. */
   colors?: [string, string, string?];
@@ -37,7 +40,9 @@ export function Button({ label, variant = "primary", icon, selected, colors, sty
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityState={{ disabled: disabled ?? undefined, selected }}
+      accessibilityState={{ disabled: disabled ?? false, selected }}
+      aria-disabled={disabled ?? false}
+      {...(Platform.OS === "web" && selected !== undefined ? ({ "aria-pressed": selected } as object) : {})}
       disabled={disabled}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}

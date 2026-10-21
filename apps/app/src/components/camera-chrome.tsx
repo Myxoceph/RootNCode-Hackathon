@@ -33,7 +33,7 @@ export function CameraTopBar({ title, subtitle, children }: { title: string; sub
     <View style={styles.topBar}>
       <GlassIconButton icon="chevron-back" label="Geri" onPress={() => (router.canGoBack() ? router.back() : router.navigate("/camera"))} />
       <View style={styles.title}>
-        <Text variant="heading" colorValue={cameraColors.text} accessibilityRole="header" numberOfLines={1}>
+        <Text variant="heading" colorValue={cameraColors.text} headingLevel={1} numberOfLines={1}>
           {title}
         </Text>
         <Text variant="caption" colorValue={cameraColors.textSecondary} style={styles.mono}>
