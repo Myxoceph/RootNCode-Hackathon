@@ -7,6 +7,25 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-22 · Hayrat arayüzü, temalar ve yeni istemci paketleri
+
+Kimler: **istemci tarafında çalışan herkes** (Yiğit, Kübra)
+
+1. Yeni paketleri kur (`react-native-svg`, `expo-speech`; `@vagabonds/ui` için `@types/react`):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Sekmeler Hayrat tasarımına geçti: Harita (`/`), Rotalar (`/route`), Kamera (`/camera`), Kapsül (`/capsule`),
+  Profil (`/settings`). Eser listesi `/monuments` adresinde kaldı; haritadaki "Tüm eserler" ve "Eser kartı" ile açılıyor.
+- Renkler artık `useColors()` ile temadan geliyor (`apps/app/src/theme/colors.ts` silindi). Ekranlarda
+  `@vagabonds/ui`'nin `Text`, `Button`, `Card` bileşenlerini kullan.
+- Harita, rota, lezzet, ses kapsülü ve kamera ekranlarındaki içerik `apps/app/src/content/` altında
+  **tasarım örnek içeriği**; gerçek veri geldikçe oradaki dosyalar değiştirilir.
+
+---
+
 ## 2026-10-21 · Uygulama `/assets` API'sinden okuyor
 
 Kimler: **uygulamayı çalıştıranlar** (Yiğit, Kübra) ve **demo sunucusunu kuranlar** (Ahmet)

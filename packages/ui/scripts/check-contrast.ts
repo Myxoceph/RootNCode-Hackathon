@@ -8,11 +8,14 @@
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { contrastPairs, contrastRatio, MIN_CONTRAST, palette } from "../src/index";
+// Not "../src/index": that also exports the React Native components, which do not load in Node.
+import { contrastRatio } from "../src/contrast";
+import { themeContrastPairs } from "../src/themes";
+import { MIN_CONTRAST, palette } from "../src/tokens/colors";
 
 const DOC_PATH = fileURLToPath(new URL("../CONTRAST.md", import.meta.url));
 
-const rows = contrastPairs.map((pair) => {
+const rows = themeContrastPairs().map((pair) => {
   const ratio = contrastRatio(palette[pair.foreground], palette[pair.background]);
   const min = MIN_CONTRAST[pair.kind];
   return { ...pair, ratio, min, ok: ratio >= min };

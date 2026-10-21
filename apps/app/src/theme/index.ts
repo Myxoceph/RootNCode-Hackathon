@@ -1,9 +1,8 @@
-import { colors } from "./colors";
-import { useColorScheme } from "./use-color-scheme";
+import { useTheme, type ThemeColors } from "@vagabonds/ui";
 
-export { colors, type ColorRole, type ColorScheme } from "./colors";
 export { useColorScheme } from "./use-color-scheme";
 
-export function useColors() {
-  return colors[useColorScheme()];
+/** The current theme's color roles (light, dark or high contrast). */
+export function useColors(): ThemeColors {
+  return useTheme().colors;
 }

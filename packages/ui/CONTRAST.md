@@ -7,43 +7,62 @@ Eşikler (WCAG 2.1 AA): metin **4.5:1** (1.4.3), ikon / odak halkası **3:1** (1
 
 | Ön plan | Arka plan | Oran | Eşik | Kullanım |
 |---|---|---|---|---|
-| `gece100` #E7EBF1 | `gece950` #090D15 | **16.25:1** ✅ | 4.5:1 | Primary text |
-| `gece400` #98A2B4 | `gece950` #090D15 | **7.56:1** ✅ | 4.5:1 | Secondary text, captions |
-| `kobalt300` #86A2EB | `gece950` #090D15 | **7.76:1** ✅ | 4.5:1 | Primary action, links |
-| `firuze300` #71C3BD | `gece950` #090D15 | **9.48:1** ✅ | 4.5:1 | Open / confirmed |
-| `mercan300` #DF816A | `gece950` #090D15 | **6.93:1** ✅ | 4.5:1 | Food stops, warnings |
-| `altin300` #D7B76A | `gece950` #090D15 | **10.07:1** ✅ | 4.5:1 | Resolved monument, highlights |
-| `gece100` #E7EBF1 | `gece900` #151B28 | **14.39:1** ✅ | 4.5:1 | Primary text |
-| `gece400` #98A2B4 | `gece900` #151B28 | **6.69:1** ✅ | 4.5:1 | Secondary text, captions |
-| `kobalt300` #86A2EB | `gece900` #151B28 | **6.87:1** ✅ | 4.5:1 | Primary action, links |
-| `firuze300` #71C3BD | `gece900` #151B28 | **8.40:1** ✅ | 4.5:1 | Open / confirmed |
-| `mercan300` #DF816A | `gece900` #151B28 | **6.14:1** ✅ | 4.5:1 | Food stops, warnings |
-| `altin300` #D7B76A | `gece900` #151B28 | **8.92:1** ✅ | 4.5:1 | Resolved monument, highlights |
-| `gece100` #E7EBF1 | `gece800` #1C2334 | **13.10:1** ✅ | 4.5:1 | Primary text |
-| `gece400` #98A2B4 | `gece800` #1C2334 | **6.09:1** ✅ | 4.5:1 | Secondary text, captions |
-| `kobalt300` #86A2EB | `gece800` #1C2334 | **6.26:1** ✅ | 4.5:1 | Primary action, links |
-| `firuze300` #71C3BD | `gece800` #1C2334 | **7.65:1** ✅ | 4.5:1 | Open / confirmed |
-| `mercan300` #DF816A | `gece800` #1C2334 | **5.59:1** ✅ | 4.5:1 | Food stops, warnings |
-| `altin300` #D7B76A | `gece800` #1C2334 | **8.12:1** ✅ | 4.5:1 | Resolved monument, highlights |
-| `gece900` #151B28 | `gece50` #F3F5F9 | **15.78:1** ✅ | 4.5:1 | Primary text |
-| `gece600` #576378 | `gece50` #F3F5F9 | **5.56:1** ✅ | 4.5:1 | Secondary text, captions |
-| `kobalt700` #2658DB | `gece50` #F3F5F9 | **5.50:1** ✅ | 4.5:1 | Primary action, links |
-| `firuze700` #2E6D68 | `gece50` #F3F5F9 | **5.49:1** ✅ | 4.5:1 | Open / confirmed |
-| `mercan700` #AA3F25 | `gece50` #F3F5F9 | **5.58:1** ✅ | 4.5:1 | Food stops, warnings |
-| `altin700` #785F20 | `gece50` #F3F5F9 | **5.57:1** ✅ | 4.5:1 | Resolved monument, highlights |
-| `gece900` #151B28 | `white` #FFFFFF | **17.22:1** ✅ | 4.5:1 | Primary text |
-| `gece600` #576378 | `white` #FFFFFF | **6.07:1** ✅ | 4.5:1 | Secondary text, captions |
-| `kobalt700` #2658DB | `white` #FFFFFF | **6.00:1** ✅ | 4.5:1 | Primary action, links |
-| `firuze700` #2E6D68 | `white` #FFFFFF | **5.99:1** ✅ | 4.5:1 | Open / confirmed |
-| `mercan700` #AA3F25 | `white` #FFFFFF | **6.09:1** ✅ | 4.5:1 | Food stops, warnings |
-| `altin700` #785F20 | `white` #FFFFFF | **6.08:1** ✅ | 4.5:1 | Resolved monument, highlights |
-| `gece900` #151B28 | `kobalt300` #86A2EB | **6.87:1** ✅ | 4.5:1 | Primary button label |
-| `gece900` #151B28 | `mercan300` #DF816A | **6.14:1** ✅ | 4.5:1 | Warning badge label |
-| `gece900` #151B28 | `altin300` #D7B76A | **8.92:1** ✅ | 4.5:1 | Resolved badge label |
-| `white` #FFFFFF | `kobalt700` #2658DB | **6.00:1** ✅ | 4.5:1 | Primary button label (light) |
-| `white` #FFFFFF | `mercan700` #AA3F25 | **6.09:1** ✅ | 4.5:1 | Warning badge label (light) |
-| `kobalt300` #86A2EB | `gece900` #151B28 | **6.87:1** ✅ | 3:1 | Focus ring, icons |
-| `kobalt700` #2658DB | `gece50` #F3F5F9 | **5.50:1** ✅ | 3:1 | Focus ring, icons (light) |
-| `gece900` #151B28 | `kobalt300` #86A2EB | **6.87:1** ✅ | 3:1 | Focus ring on primary button |
-| `altin300` #D7B76A | `gece700` #283248 | **6.63:1** ✅ | 3:1 | Resolved-monument star on the map |
-| `gece400` #98A2B4 | `gece900` #151B28 | **6.69:1** ✅ | 3:1 | Control borders |
+| `gece900` #141B29 | `gece50` #F5F7FA | **16.06:1** ✅ | 4.5:1 | Primary text (light) |
+| `gece900` #141B29 | `white` #FFFFFF | **17.23:1** ✅ | 4.5:1 | Primary text on cards (light) |
+| `gece900` #141B29 | `gece100` #E6EBF2 | **14.39:1** ✅ | 4.5:1 | Chip labels (light) |
+| `gece600` #566174 | `gece50` #F5F7FA | **5.83:1** ✅ | 4.5:1 | Secondary text (light) |
+| `gece600` #566174 | `white` #FFFFFF | **6.25:1** ✅ | 4.5:1 | Secondary text on cards (light) |
+| `kobalt700` #1E4AA0 | `gece50` #F5F7FA | **7.70:1** ✅ | 4.5:1 | Links (light) |
+| `kobalt700` #1E4AA0 | `white` #FFFFFF | **8.26:1** ✅ | 4.5:1 | Links and active tab on cards (light) |
+| `firuze700` #0A7A76 | `white` #FFFFFF | **5.17:1** ✅ | 4.5:1 | Open / confirmed (light) |
+| `mercan700` #BE3A26 | `white` #FFFFFF | **5.49:1** ✅ | 4.5:1 | Food stops, warnings (light) |
+| `mercan700` #BE3A26 | `gece50` #F5F7FA | **5.12:1** ✅ | 4.5:1 | Warnings (light) |
+| `altin700` #82601B | `white` #FFFFFF | **5.77:1** ✅ | 4.5:1 | Resolved monument label, legend badge (light) |
+| `altin700` #82601B | `gece100` #E6EBF2 | **4.82:1** ✅ | 4.5:1 | Legend badge (filled) (light) |
+| `altin700` #82601B | `gece50` #F5F7FA | **5.38:1** ✅ | 4.5:1 | Legend badge on the page (light) |
+| `firuze700` #0A7A76 | `gece50` #F5F7FA | **4.82:1** ✅ | 4.5:1 | Certain badge on the page (light) |
+| `kobalt700` #1E4AA0 | `gece100` #E6EBF2 | **6.90:1** ✅ | 4.5:1 | Probable badge on chips (light) |
+| `white` #FFFFFF | `kobalt700` #1E4AA0 | **8.26:1** ✅ | 4.5:1 | Primary button label (light) |
+| `white` #FFFFFF | `firuze700` #0A7A76 | **5.17:1** ✅ | 4.5:1 | Confirmed button label (light) |
+| `gece50` #F5F7FA | `gece900` #141B29 | **16.06:1** ✅ | 4.5:1 | Selected chip (inverted) (light) |
+| `firuze700` #0A7A76 | `gece50` #F5F7FA | **4.82:1** ✅ | 3:1 | Focus ring (light) |
+| `firuze700` #0A7A76 | `white` #FFFFFF | **5.17:1** ✅ | 3:1 | Focus ring on cards (light) |
+| `altin600` #9C7424 | `white` #FFFFFF | **4.25:1** ✅ | 3:1 | Star, tab underline (light) |
+| `altin600` #9C7424 | `gece50` #F5F7FA | **3.96:1** ✅ | 3:1 | Star on the map (light) |
+| `kobalt700` #1E4AA0 | `white` #FFFFFF | **8.26:1** ✅ | 3:1 | Icons, switch thumb track (light) |
+| `firuze700` #0A7A76 | `gece100` #E6EBF2 | **4.32:1** ✅ | 3:1 | Switch on (light) |
+| `gece600` #566174 | `white` #FFFFFF | **6.25:1** ✅ | 3:1 | Control borders (light) |
+| `gece100` #E6EBF2 | `gece950` #0D1420 | **15.40:1** ✅ | 4.5:1 | Primary text (dark) |
+| `gece100` #E6EBF2 | `gece900` #141B29 | **14.39:1** ✅ | 4.5:1 | Primary text on cards (dark) |
+| `gece100` #E6EBF2 | `gece800` #1B2537 | **12.83:1** ✅ | 4.5:1 | Chip labels (dark) |
+| `gece400` #96A2B6 | `gece950` #0D1420 | **7.15:1** ✅ | 4.5:1 | Secondary text (dark) |
+| `gece400` #96A2B6 | `gece900` #141B29 | **6.68:1** ✅ | 4.5:1 | Secondary text on cards (dark) |
+| `kobalt300` #7FA3F1 | `gece950` #0D1420 | **7.39:1** ✅ | 4.5:1 | Links (dark) |
+| `kobalt300` #7FA3F1 | `gece900` #141B29 | **6.90:1** ✅ | 4.5:1 | Links and active tab on cards (dark) |
+| `firuze300` #4FC6BE | `gece900` #141B29 | **8.33:1** ✅ | 4.5:1 | Open / confirmed (dark) |
+| `mercan300` #EE7B64 | `gece900` #141B29 | **6.28:1** ✅ | 4.5:1 | Food stops, warnings (dark) |
+| `mercan300` #EE7B64 | `gece950` #0D1420 | **6.72:1** ✅ | 4.5:1 | Warnings (dark) |
+| `altin300` #DDB55C | `gece900` #141B29 | **8.89:1** ✅ | 4.5:1 | Resolved monument label, legend badge (dark) |
+| `altin300` #DDB55C | `gece800` #1B2537 | **7.93:1** ✅ | 4.5:1 | Legend badge (filled) (dark) |
+| `altin300` #DDB55C | `gece950` #0D1420 | **9.52:1** ✅ | 4.5:1 | Legend badge on the page (dark) |
+| `firuze300` #4FC6BE | `gece950` #0D1420 | **8.92:1** ✅ | 4.5:1 | Certain badge on the page (dark) |
+| `kobalt300` #7FA3F1 | `gece800` #1B2537 | **6.16:1** ✅ | 4.5:1 | Probable badge on chips (dark) |
+| `gece950` #0D1420 | `kobalt300` #7FA3F1 | **7.39:1** ✅ | 4.5:1 | Primary button label (dark) |
+| `gece950` #0D1420 | `firuze300` #4FC6BE | **8.92:1** ✅ | 4.5:1 | Confirmed button label (dark) |
+| `gece950` #0D1420 | `gece100` #E6EBF2 | **15.40:1** ✅ | 4.5:1 | Selected chip (inverted) (dark) |
+| `firuze300` #4FC6BE | `gece950` #0D1420 | **8.92:1** ✅ | 3:1 | Focus ring (dark) |
+| `firuze300` #4FC6BE | `gece900` #141B29 | **8.33:1** ✅ | 3:1 | Focus ring on cards (dark) |
+| `altin300` #DDB55C | `gece900` #141B29 | **8.89:1** ✅ | 3:1 | Star, tab underline (dark) |
+| `altin300` #DDB55C | `gece950` #0D1420 | **9.52:1** ✅ | 3:1 | Star on the map (dark) |
+| `kobalt300` #7FA3F1 | `gece900` #141B29 | **6.90:1** ✅ | 3:1 | Icons, switch thumb track (dark) |
+| `firuze300` #4FC6BE | `gece800` #1B2537 | **7.43:1** ✅ | 3:1 | Switch on (dark) |
+| `gece400` #96A2B6 | `gece900` #141B29 | **6.68:1** ✅ | 3:1 | Control borders (dark) |
+| `gece900` #141B29 | `white` #FFFFFF | **17.23:1** ✅ | 3:1 | Control borders (lightHighContrast) |
+| `gece100` #E6EBF2 | `gece900` #141B29 | **14.39:1** ✅ | 3:1 | Control borders (darkHighContrast) |
+| `gece50` #F5F7FA | `gece1000` #06080D | **18.67:1** ✅ | 4.5:1 | Camera text |
+| `gece50` #F5F7FA | `gece925` #111723 | **16.71:1** ✅ | 4.5:1 | Camera panel text |
+| `gece300` #AEB6C4 | `gece925` #111723 | **8.79:1** ✅ | 4.5:1 | Camera secondary text |
+| `gece300` #AEB6C4 | `gece1000` #06080D | **9.81:1** ✅ | 4.5:1 | Camera secondary text |
+| `altin200` #E7C26A | `gece925` #111723 | **10.53:1** ✅ | 4.5:1 | Inscription glow, gold labels |
+| `altin950` #1B1408 | `altin200` #E7C26A | **10.71:1** ✅ | 4.5:1 | Gold button label |
+| `altin200` #E7C26A | `gece1000` #06080D | **11.75:1** ✅ | 3:1 | Shutter ready, guides |

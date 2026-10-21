@@ -1,9 +1,7 @@
-import { spacing, typography } from "@vagabonds/ui";
+import { spacing, Text, useTheme } from "@vagabonds/ui";
 import Head from "expo-router/head";
 import type { PropsWithChildren } from "react";
-import { ScrollView, StyleSheet, Text } from "react-native";
-
-import { useColors } from "@/theme";
+import { ScrollView, StyleSheet } from "react-native";
 
 interface ScreenPlaceholderProps {
   title: string;
@@ -12,7 +10,7 @@ interface ScreenPlaceholderProps {
 
 /** Stand-in body for screens whose content lands in a later task. */
 export function ScreenPlaceholder({ title, description, children }: PropsWithChildren<ScreenPlaceholderProps>) {
-  const c = useColors();
+  const { colors: c } = useTheme();
   return (
     <ScrollView
       style={{ backgroundColor: c.background }}
@@ -23,10 +21,10 @@ export function ScreenPlaceholder({ title, description, children }: PropsWithChi
       <Head>
         <title>{`${title} · Vagabonds`}</title>
       </Head>
-      <Text accessibilityRole="header" style={[typography.title, { color: c.text }]}>
+      <Text variant="title" headingLevel={1}>
         {title}
       </Text>
-      <Text style={[typography.body, { color: c.textSecondary }]}>{description}</Text>
+      <Text color="textSecondary">{description}</Text>
       {children}
     </ScrollView>
   );
