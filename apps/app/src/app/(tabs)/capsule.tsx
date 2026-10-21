@@ -39,7 +39,7 @@ export default function CapsuleScreen() {
       <Head>
         <title>Ses Kapsülü · Vagabonds</title>
       </Head>
-      <Text variant="overline" colorValue={cameraColors.textSecondary} accessibilityRole="header">
+      <Text variant="overline" colorValue={cameraColors.textSecondary} headingLevel={1}>
         SESLİ ZAMAN KAPSÜLÜ
       </Text>
 
@@ -50,7 +50,7 @@ export default function CapsuleScreen() {
             <Pressable
               key={key}
               accessibilityRole="radio"
-              accessibilityState={{ checked: on }}
+              aria-checked={on}
               onPress={() => choose(key)}
               style={[styles.type, on && styles.typeOn]}
             >
@@ -65,7 +65,7 @@ export default function CapsuleScreen() {
       <Visualizer live={mine !== null} />
 
       <View style={styles.info}>
-        <Text variant="title" colorValue={cameraColors.text} style={styles.center}>
+        <Text variant="title" colorValue={cameraColors.text} style={styles.center} headingLevel={2}>
           {capsule.name}
         </Text>
         <Text colorValue={cameraColors.textSecondary} style={styles.center}>
@@ -104,7 +104,7 @@ export default function CapsuleScreen() {
           <Pressable
             accessibilityRole="switch"
             accessibilityLabel="Altyazılar"
-            accessibilityState={{ checked: settings.captions }}
+            aria-checked={settings.captions}
             onPress={() => setSetting("captions", !settings.captions)}
             style={[styles.cc, settings.captions && styles.ccOn]}
           >

@@ -45,7 +45,7 @@ export function MonumentDetail({ monument }: { monument: Monument }) {
 
       <View style={styles.body}>
         <View style={styles.intro}>
-          <Text variant="title" accessibilityRole="header">
+          <Text variant="title" headingLevel={1}>
             {monument.name}
           </Text>
           <Text variant="caption" color="textSecondary" style={styles.mono}>
@@ -65,7 +65,7 @@ export function MonumentDetail({ monument }: { monument: Monument }) {
               <Pressable
                 key={key}
                 accessibilityRole="tab"
-                accessibilityState={{ selected: on }}
+                aria-selected={on}
                 onPress={() => setTab(key)}
                 style={[styles.tab, { borderBottomColor: on ? c.highlightMark : "transparent" }]}
               >
@@ -244,7 +244,7 @@ function MiniPlayer({ monument }: { monument: Monument }) {
 function Section({ title, children }: PropsWithChildren<{ title: string }>) {
   return (
     <View style={styles.section}>
-      <Text variant="heading" accessibilityRole="header">
+      <Text variant="heading" headingLevel={2}>
         {title}
       </Text>
       {children}

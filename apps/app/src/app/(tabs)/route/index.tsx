@@ -56,7 +56,7 @@ export default function RouteScreen() {
       <Head>
         <title>Rota Planla · Vagabonds</title>
       </Head>
-      <Text variant="title" accessibilityRole="header">
+      <Text variant="title" headingLevel={1}>
         Rota Planla
       </Text>
       <Text color="textSecondary">Bölge ve süre seç, vakıf güzergâhını biz dizelim.</Text>
@@ -84,7 +84,7 @@ export default function RouteScreen() {
           <Text variant="overline" color="textSecondary">
             {`VAKIF GÜZERGÂHI · ${stopCount} ESER`}
           </Text>
-          <Text variant="heading" accessibilityRole="header">
+          <Text variant="heading" headingLevel={2}>
             {plan.title}
           </Text>
           {plan.days.map((day, i) => (
@@ -169,15 +169,15 @@ function Timeline({ items }: { items: PlanItem[] }) {
       {items.map((item, i) => {
         const food = item.kind === "food";
         const last = i === items.length - 1;
-        const time = item.minutes >= 0 ? formatClock(item.minutes) : "";
+        const time = item.minutes >= 0 ? `${formatClock(item.minutes)} ` : "";
         const title = food ? `${item.label} · ${item.name}` : item.stop.name;
         const detail = food
           ? item.where
           : `${Math.round(item.stop.hours * 60)} dk · ${item.stop.tag}${item.stop.outdoor >= 0.6 ? " · açık hava" : ""}`;
         return (
-          <View key={`${title}-${i}`} style={styles.stop} accessible accessibilityLabel={`${time} ${title}, ${detail}`}>
+          <View key={`${title}-${i}`} style={styles.stop} accessible accessibilityLabel={`${time}${title}, ${detail}`}>
             <Text variant="caption" color="textSecondary" style={styles.time}>
-              {time}
+              {time.trim()}
             </Text>
             <View style={styles.rail}>
               <View

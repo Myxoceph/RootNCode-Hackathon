@@ -268,7 +268,7 @@ function Curtain({ onRetake }: { onRetake: (() => void) | null }) {
         <Text variant="overline" colorValue={cameraColors.textSecondary}>
           ZAMAN PERDESİ AÇILDI
         </Text>
-        <Text variant="heading" colorValue={cameraColors.text} accessibilityRole="header">
+        <Text variant="heading" colorValue={cameraColors.text} headingLevel={2}>
           Yüz yıl, aynı açıdan
         </Text>
         <Text variant="caption" colorValue={cameraColors.textSecondary}>
