@@ -8,6 +8,9 @@ import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
 import { createMetaRepository } from "./modules/meta/meta.repository.ts";
 import { metaRoutes } from "./modules/meta/meta.routes.ts";
+import { createPlannerRepository } from "./modules/planner/planner.repository.ts";
+import { plannerRoutes } from "./modules/planner/planner.routes.ts";
+import type { WeatherService } from "./modules/weather/weather.service.ts";
 import { registerErrorHandlers } from "./plugins/error-handler.ts";
 import { registerOpenApi } from "./plugins/openapi.ts";
 import { DEFAULT_RATE_LIMIT, registerSecurity, type RateLimitOptions } from "./plugins/security.ts";
@@ -26,7 +29,11 @@ export interface BuildAppOptions {
   trustProxy?: FastifyServerOptions["trustProxy"];
   /** Per-IP request limit; `false` turns it off. */
   rateLimit?: RateLimitOptions | false;
+  /** Current-weather provider; by default weather is unavailable (tests never reach the network). */
+  weather?: WeatherService;
 }
+
+const NO_WEATHER: WeatherService = { current: async () => null };
 
 // Request bodies are short JSON (contributions are at most a few KB of text).
 const BODY_LIMIT_BYTES = 16 * 1024;
@@ -44,6 +51,7 @@ export function buildApp({
   assetVisibility = "published",
   trustProxy = false,
   rateLimit = DEFAULT_RATE_LIMIT,
+  weather = NO_WEATHER,
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
 
@@ -53,8 +61,12 @@ export function buildApp({
   registerOpenApi(app);
   app.register(cors, { origin: corsOrigins, methods: ["GET", "HEAD", "POST", "OPTIONS"] });
   app.register(healthRoutes, { prisma });
-  app.register(assetsRoutes, {
-    repository: createAssetsRepository(prisma, assetVisibility),
+  const assetsRepository = createAssetsRepository(prisma, assetVisibility);
+  app.register(assetsRoutes, { repository: assetsRepository, mediaBaseUrl, visibility: assetVisibility });
+  app.register(plannerRoutes, {
+    repository: createPlannerRepository(prisma, assetVisibility),
+    assets: assetsRepository,
+    weather,
     mediaBaseUrl,
     visibility: assetVisibility,
   });

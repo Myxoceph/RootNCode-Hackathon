@@ -1,9 +1,10 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.2.2`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.2.3`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
+- `src/planner.schema.ts`: `/weather` ve `/routes/plan` (Vakıf Travel Planner & Hava Durumu)
 - `src/monument.schema.ts`: **kullanımdan kalkacak** v0.1 sözleşmesi (`Monument`, mock). Uygulama `/assets`'e geçince (Y8) silinecek.
 
 ## Uç noktalar
@@ -15,6 +16,8 @@ Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan v
 | `GET /assets/:id/relations?lang=` | `AssetRelationsResponseSchema` (Kentsel Ağ bağları) |
 | `GET /assets/:id/nearby?radius=&limit=&lang=` | `NearbyAssetsResponseSchema` (yarıçap metre: 100–50000, varsayılan 2000; limit 1–50, varsayılan 10) |
 | `GET /meta/enums?lang=` | `MetaEnumsResponseSchema` (il, tür, dönem, bağ türü, güven, erişilebilirlik, medya türü) |
+| `GET /weather?city=&lang=` | `WeatherResponseSchema` (anlık hava durumu ve `advice`; sağlayıcıya ulaşılamazsa `available: false`) |
+| `GET /routes/plan?city=&theme=&start=&maxMinutes=&lang=` | `RoutePlanResponseSchema` (`theme`: `type:<kod>`, `era:<kod>` ya da `network:<eser id>`; `start`: `lat,lng`; `maxMinutes` 15–600, varsayılan 120) |
 | `POST /auth/anonymous` | İstek `AnonymousSessionRequestSchema` (`nickname`), yanıt `AnonymousSessionResponseSchema` (`user`, `token`) |
 | `GET /me` 🔒 | `AppUserSchema` |
 | `GET /me/contributions?limit=` 🔒 | `MyContributionsResponseSchema` (kendi katkıların ve moderasyon durumu) |
@@ -26,7 +29,7 @@ Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan v
 
 🔒 `Authorization: Bearer <token>` gerekir; 🛡️ moderatör token'ı gerekir (`npm run moderator:create`).
 
-Hata yanıtları her zaman `{ error: { code, message } }` biçimindedir: `INVALID_QUERY`, `INVALID_ID` (400), `ASSET_NOT_FOUND` (404),
+Hata yanıtları her zaman `{ error: { code, message } }` biçimindedir: `INVALID_QUERY`, `INVALID_ID` (400), `ASSET_NOT_FOUND`, `CITY_NOT_FOUND` (404),
 `RATE_LIMITED` (429: IP başına dakikada 120 istek aşıldı; kaç saniye bekleneceği `Retry-After` başlığında).
 Ziyaretçi Nabzı uçlarında ayrıca: `INVALID_BODY` (400), `UNAUTHORIZED` (401: token yok ya da geçersiz),
 `USER_BANNED`, `FORBIDDEN` (403), `CONTRIBUTION_NOT_FOUND`, `USER_NOT_FOUND` (404), `ALREADY_REVIEWED` (409),
@@ -66,6 +69,8 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
 - **Yakındaki eserler** (`/nearby`) kuş uçuşu mesafeye göre sıralıdır (`distanceMeters`). Eserin koordinatı yoksa `origin: null` ve `items: []` döner.
 - **Filtreler** için kodları ve etiketleri `/meta/enums` verir; `assetCount` 0 olan il, tür ve dönemler gizlenebilir. Güven listesi `certain → legend` sırasındadır.
 - Tarihler ISO 8601 (`2026-10-16`, `2026-10-16T18:20:00.000Z`).
+- **Hava durumu** (`/weather`) Open-Meteo'dan gelir ve 15 dakika önbelleğe alınır. Sağlayıcı 2 saniyede yanıt vermezse `available: false`, `current: null` döner; uygulama hava durumu olmadan çalışmaya devam eder. Yağmur, kar, fırtına ya da 32 °C ve üstünde `advice: "indoor_preferred"` olur. Hava durumunun gösterildiği yerde `attribution` metni (CC BY 4.0) gösterilmelidir.
+- **Rota** (`/routes/plan`) en yakından ilerleyen bir yürüyüştür: her adımda süre bütçesine (yürüme + ziyaret) sığan en yakın eser seçilir, tek bacak 3 km'yi geçmez. `advice: "indoor_preferred"` iken açık mekânlar daha uzakmış gibi değerlendirilir, dışlanmaz. `start` verilmezse rota `network` temasında o eserden, diğer temalarda eserlerin en yoğun olduğu yerden başlar (`start.source`). Yürüme süreleri tahminidir (kuş uçuşu × 1,3, dakikada 80 m; `estimateNote`). Veri setinde ziyaret süresi ya da açık/kapalı bilgisi yoksa eser türünden tahmin edilir ve `visitMinutesEstimated` / `settingEstimated` `true` olur. Koordinatı olmayan eserler rotaya girmez, `skippedWithoutCoordinates` içinde sayılır; sığmayanlar `notReachedCount` içindedir. Eşleşen eser yoksa `stops: []` ve `start: null` döner (hata değil).
 - **Ziyaretçi Nabzı:**
   - Kullanıcı anonimdir. `POST /auth/anonymous` ile takma ad verir, karşılığında bir token alır. Token yalnızca bir kez döner, API onun yalnızca özetini saklar. İstemci token'ı güvenli depoda tutar (mobilde `expo-secure-store`); kaybolursa yeni oturum açılır.
   - Katkı türleri: `tip` (saha ipucu), `memory` (anı) ve `correction` (editörlere düzeltme). Fotoğraf katkısı şimdilik yok.
@@ -82,7 +87,7 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
 | 1. Zaman Perdesi | `media[]` (`kind: "archive_photo"`, `archiveYear`) |
 | 2. Taşın Dili | `inscriptions[]` (`transliteration`, `translation`, `arTargetMediaKey`), `waqf` |
 | 3. Kentsel Ağ & Sis Açma | `coordinates`, `parent`, `children`, `/assets/:id/relations`, `/assets/:id/nearby` |
-| 4. Travel Planner | `coordinates`, `type`, `visit`, `/assets/:id/nearby` |
+| 4. Travel Planner & Hava Durumu | `/routes/plan` (`stops[]`, `totals`), `/weather` (`advice`), `coordinates`, `/assets/:id/nearby` |
 | 6. Ziyaretçi Nabzı | `visitorTips`, `/assets/:id/pulse`, `/assets/:id/contributions`, `/auth/anonymous` |
 | 7. Sesli Zaman Kapsülü | `ambientSound` (`key`, `caption`) |
 | 8. Kapsayıcı Erişilebilirlik | `accessibility`, `media[].alt`, `ambientSound.caption` |

@@ -44,6 +44,7 @@ export function registerOpenApi(app: FastifyInstance): void {
       tags: [
         { name: "assets", description: "Vakıf eserleri" },
         { name: "meta", description: "Kod listeleri ve etiketler" },
+        { name: "planner", description: "Vakıf Travel Planner: tematik yürüyüş rotası ve hava durumu" },
         { name: "community", description: "Ziyaretçi Nabzı: anonim oturum, katkılar, nabız akışı" },
         { name: "moderation", description: "Katkı moderasyonu (moderatör token'ı gerekir)" },
         { name: "system", description: "Sunucu durumu" },
