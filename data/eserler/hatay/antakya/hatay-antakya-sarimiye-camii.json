@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-sarimiye-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Sarımiye Camii bölümünden (s. 310-315) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -326,7 +325,152 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p156-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "311"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Minare ve caminin çevresi",
+        "en": "Minaret and surroundings of the mosque"
+      },
+      "alt": {
+        "tr": "Taş gövdeli, sivri külahlı yüksek bir minare; yanında iki servi, arkada kiremit çatılı yapılar ve bir bilgi panosu. Gökyüzü bulutlu.",
+        "en": "A tall stone minaret with a pointed cap; two cypress trees beside it, tiled-roof buildings and an information board behind. Cloudy sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p156-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "310"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Taş geçit ve cami tabelası",
+        "en": "Stone passage and mosque sign"
+      },
+      "alt": {
+        "tr": "Kemerli taş geçidin üstünde yazılı levha ve altında \"Sarımiye Camii\" tabelası; içeride basamaklar ve ahşap kapı.",
+        "en": "Above a stone arched passage an inscribed panel and a \"Sarımiye Camii\" sign; steps and a wooden door lead inside."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p156-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "310"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Minare kaidesindeki kitabeler",
+        "en": "Inscriptions on the minaret base"
+      },
+      "alt": {
+        "tr": "Taş minare kaidesinin üstünde sıralı yuvarlak ve dikdörtgen kitabe panelleri; kesme taş örgü.",
+        "en": "Rows of round and rectangular inscription panels above a stone minaret base, in cut-stone masonry."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p157-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "312-313"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İbadet salonu ve mahfil",
+        "en": "Prayer hall and gallery"
+      },
+      "alt": {
+        "tr": "Ahşap kirişli tavan, sağda ahşap mahfil, ortada taş ayak ve minber; tavandan top şekilli lambalı büyük bir avize, zeminde turkuaz halı.",
+        "en": "A timber-beamed ceiling, a wooden gallery on the right, a stone pier and minbar in the middle and a large chandelier with globe lamps; turquoise carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p157-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "313"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Taş mihrap nişi",
+        "en": "Stone mihrab niche"
+      },
+      "alt": {
+        "tr": "Sivri kemerli taş mihrap nişi, solda kırmızı çerçeveli iki pencere; sağda ahşap minber kenarı, zeminde turkuaz halı.",
+        "en": "A pointed-arch stone mihrab niche with two red-framed windows on its left; the edge of the wooden minbar on the right and turquoise carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p158-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "315"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Ağaçlı avlu ve revak",
+        "en": "Tree-shaded courtyard and portico"
+      },
+      "alt": {
+        "tr": "Taş döşeli, ağaçlı avluda sol tarafta korkuluklu taş merdiven; arka planda direkli revak ve ahşap kapılar. Zeminde gölgeler var.",
+        "en": "A stone-paved courtyard with trees and a railed stone stair on the left; a colonnaded portico and wooden doors behind. Shadows fall on the ground."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

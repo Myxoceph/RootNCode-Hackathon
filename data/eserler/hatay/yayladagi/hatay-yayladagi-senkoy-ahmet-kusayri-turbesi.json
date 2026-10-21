@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "hatay-yayladagi-senkoy-ahmet-kusayri-turbesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Şenköy Ahmet Kusayri Camii bölümünden (s. 329-333) ('Türbe' alt başlığı) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -295,7 +294,56 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-senkoy-ahmet-kusayri-camii/p167-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "332"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Türbenin kiremit çatılı sekizgen gövdesi",
+        "en": "The tomb's octagonal body with tiled roof"
+      },
+      "alt": {
+        "tr": "Mezarlık içinde taş duvarlı, sekizgen kasnaklı ve kiremit çatılı bir türbe yükseliyor. Önünde ağaçlar, mezar taşları ve gül çalıları, solda kırmızı bir bayrak var.",
+        "en": "A stone tomb with an octagonal drum and a tiled roof stands in a cemetery. Trees, gravestones and rose bushes are in front, and a red flag hangs on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-senkoy-ahmet-kusayri-camii/p167-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "332"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbe içinde yeşil örtülü sandukalar",
+        "en": "Green-covered sarcophagi inside the tomb"
+      },
+      "alt": {
+        "tr": "Yeşil üzerine altın yaldızlı yazılarla bezeli büyük bir sanduka, üzerinde uzun bir tespih ile görülüyor. Arkada daha küçük sandukalar ve bir Türk bayrağı var; zemin halıyla kaplı.",
+        "en": "A large sarcophagus covered in green cloth with gold lettering, with a long string of prayer beads draped over it. Smaller covered sarcophagi and a Turkish flag stand behind, and the floor is carpeted."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-osmaniye-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Osmaniye Camii bölümünden (s. 298-301) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -283,7 +282,104 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-osmaniye-camii/p150-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "298-299"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin cephesi ve minaresi",
+        "en": "Façade and minaret of the mosque"
+      },
+      "alt": {
+        "tr": "Krem sıvalı, taş çerçeveli kemerli pencereleri ve ahşap kapısı olan tek katlı yapı; arkada ahşap şerefeli bir minare. Önde sokak ve taş zemin.",
+        "en": "A single-storey cream plastered building with stone-framed arched windows and a wooden door; a minaret with a wooden balcony behind. A street and stone ground in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-osmaniye-camii/p151-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "300"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "İç mekân ve ahşap minber",
+        "en": "Interior and wooden minbar"
+      },
+      "alt": {
+        "tr": "Sağda ahşap minber ve merdiveni, solda taş kemerli niş; duvarların altı pembe ahşap kaplamalı, zeminde sarı halı ve kırmızı bordür.",
+        "en": "A wooden minbar and stairs on the right, an arched stone niche on the left; pink wooden panelling on the lower walls and yellow carpet with a red border."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-osmaniye-camii/p151-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "300"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap nişi ve pencereler",
+        "en": "Mihrab niche and windows"
+      },
+      "alt": {
+        "tr": "Ortada kemerli taş mihrap nişi, iki yanında ahşap kepenkli pencereler; üstte yuvarlak yazı levhaları, zeminde sarı halı üzerinde seccade.",
+        "en": "An arched stone mihrab niche in the middle with shuttered windows on both sides; round inscription plaques above and a prayer rug on yellow carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-osmaniye-camii/p151-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "301"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Taş minare",
+        "en": "Stone minaret"
+      },
+      "alt": {
+        "tr": "Taş gövdeli, ahşap şerefe çatılı silindir minare; alt kısmında kemerli küçük ahşap kapı, solda cami duvarı.",
+        "en": "A cylindrical stone minaret with a wooden-roofed balcony and a small arched wooden door at its base; the mosque wall is on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

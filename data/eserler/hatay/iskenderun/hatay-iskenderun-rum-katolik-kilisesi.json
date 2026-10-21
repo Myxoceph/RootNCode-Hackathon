@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "hatay-iskenderun-rum-katolik-kilisesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Kiliseler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Rum Katolik Kilisesi bölümünden (s. 448-449) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -14,7 +14,6 @@
       "Kuzey girişi üzerindeki Arapça kitabenin metni kaynakta yok; yerinde okunup inscriptions'a eklenmeli.",
       "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
       "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -246,7 +245,32 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-rum-katolik-kilisesi/p225-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "448"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kilisenin sokağa bakan yan cephesi",
+        "en": "Side façade of the church facing the street"
+      },
+      "alt": {
+        "tr": "Pembemsi sıvalı uzun duvarda taş çerçeveli, kemerli ve panjurlu iki yüksek pencere; sağda demir kapılı taş giriş, kenarda saçaklı kiremit çatı ve kaldırım.",
+        "en": "A long pinkish plastered wall with two tall arched shuttered windows in stone frames; on the right a stone gateway with an iron gate, a tiled eave above and a paved sidewalk."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

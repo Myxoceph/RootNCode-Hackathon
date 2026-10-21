@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-meydan-kulliyesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Konum bilgisi (mıntıka/parsel) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli.",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
@@ -185,6 +184,271 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Meydan Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p063-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "124-125"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Külliye avlusu, çınar ve şadırvan",
+        "en": "Complex courtyard with plane tree and shadirvan"
+      },
+      "alt": {
+        "tr": "Taş döşemeli avluda ortada büyük bir ağaç, solda ahşap külahlı şadırvan, sağda kiremit çatılı krem renkli yapılar var. Ağacın dibinde yuvarlak taş bir set bulunuyor.",
+        "en": "In a stone-paved courtyard, a large tree stands in the middle, a shadirvan with a wooden cone roof on the left and cream-coloured tile-roofed buildings on the right. A round stone planter surrounds the trunk."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "drawing",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p061-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "120"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Antakya'nın eski bir gravürü",
+        "en": "Old engraving of Antakya"
+      },
+      "alt": {
+        "tr": "Siyah beyaz bir gravürde arkada iki zirveli bir dağ, önünde minareli, ağaçlı alçak yapılarla dolu bir şehir görünür.",
+        "en": "A black and white engraving shows a mountain with two peaks behind a town of low buildings and trees, with a minaret rising among them."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p067-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "132-133"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu, ağaçlar ve çevredeki odalar",
+        "en": "Courtyard, trees and surrounding rooms"
+      },
+      "alt": {
+        "tr": "Geniş avluda ağaçlar ve çiçek yatakları, arkada pencereli taş odalar ile ahşap balkonlu bir ev görünür. Zemin kesme taş döşemelidir.",
+        "en": "A wide courtyard with trees and flower beds, with stone rooms with windows and a house with a wooden balcony behind. The ground is paved with cut stone."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p064-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "127"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu ve caminin ahşap revakı",
+        "en": "Courtyard and the mosque's wooden portico"
+      },
+      "alt": {
+        "tr": "Taş döşeli avluda ortada ağaçlar, sağda kahverengi ahşap direkli ve kiremit örtülü bir revak uzanır. Uzakta avlunun diğer yapıları seçilir.",
+        "en": "In a stone-paved courtyard with trees in the middle, a brown wooden-columned, tile-roofed portico runs along the right. Other courtyard buildings are visible in the distance."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p067-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "133"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avluda ağaçlar ve ahşap revak",
+        "en": "Courtyard trees and wooden portico"
+      },
+      "alt": {
+        "tr": "Ağaçlar ve banklarla düzenlenmiş avluda sağda ahşap direkli bir revak görülür. Arka planda taş yapılar ve bir minare gövdesi vardır.",
+        "en": "A courtyard with trees and benches, with a wooden-columned portico on the right. Stone buildings stand in the background."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p067-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "133"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlunun doğu yönüne bakış",
+        "en": "View across the courtyard"
+      },
+      "alt": {
+        "tr": "Taş döşeli avluda yuvarlak taş setli bir ağaç, banklar ve sokak lambaları var. Arkada pencereli taş yapılar ve açık renk duvarlar görünür.",
+        "en": "A stone-paved courtyard with a tree in a round stone planter, benches and street lamps. Stone buildings with windows and light walls stand behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p069-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "137"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Revaktan avluya ve şadırvana bakış",
+        "en": "From the portico toward the courtyard and shadirvan"
+      },
+      "alt": {
+        "tr": "Ahşap revak direğinin ve ayakkabılıkların arkasında geniş bir avlu, uzakta külahlı şadırvan ve büyük bir ağaç görünür. Önde siyah beyaz desenli paspas vardır.",
+        "en": "Past a wooden portico post and shoe racks, a wide courtyard opens with a roofed shadirvan and a large tree beyond. A black and white patterned mat lies in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p063-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "125"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Avlu dış duvarında Meydan Camii tabelalı kapı",
+        "en": "Door with Meydan Mosque sign on the courtyard wall"
+      },
+      "alt": {
+        "tr": "Taş duvarda Meydan Camii tabelalı yeşil çift kanatlı kapı, yanında sivri kemerli pencereler ve ahşap bir büfe vardır. Önde kaldırım taşlı sokak ve üstte ağaç dalları görünür.",
+        "en": "A stone wall with a green double door under a Meydan Mosque sign, pointed-arch windows and a wooden kiosk beside it. Cobbled street in front and tree branches above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p064-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "126"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Minareli doğu kapısının eyvan geçidi",
+        "en": "Vaulted passage of the east gate"
+      },
+      "alt": {
+        "tr": "Sivri tonozlu, taş döşemeli dar bir geçidin sonunda açık kapıdan ağaçlı bir sokak görünür. Yan duvarlarda taş oturma yerleri ve üstte küçük bir tabela vardır.",
+        "en": "A narrow stone-paved passage under a pointed vault, with an open doorway at the end showing a tree-lined street. Stone benches line the walls and a small sign is above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p064-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "127"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Eyvan tonozundaki kitabe levhası",
+        "en": "Inscription plaque in the iwan vault"
+      },
+      "alt": {
+        "tr": "Kesme taş yarım daire bir nişin içinde koyu yeşil, dikdörtgen bir levha yer alır. Levhada Arapça harfli yazı vardır.",
+        "en": "A dark green rectangular plaque with Arabic lettering set in a semicircular niche of cut stone under a vault."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m11",
+      "type": "photo",
+      "is_cover": false,
+      "order": 11,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p064-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "126"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Eyvandaki duvar çeşmesi",
+        "en": "Wall fountain in the iwan"
+      },
+      "alt": {
+        "tr": "Taş duvarda sivri kemerli bir niş içinde küçük bir musluk ve altında su teknesi bulunan çeşme vardır. Nişin üstünde küçük bir yazı levhası görünür.",
+        "en": "A fountain in a pointed-arch niche in a stone wall, with a small tap and a basin below. A small plaque is set above the niche."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

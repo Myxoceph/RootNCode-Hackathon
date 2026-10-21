@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-payas-sokullu-mehmet-pasa-arastasi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
       "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
@@ -207,6 +206,55 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Sokullu Mehmet Paşa Arasta-Bedesteni bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p052-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "103"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Arasta-Bedesten'in taş taç kapısı",
+        "en": "Stone portal of the Arasta-Bedesten"
+      },
+      "alt": {
+        "tr": "Uzun taş cephede sivri kemerli geniş bir kapı açılır; içeriden aydınlık bir geçit görünür. Önde bodur çalılar ve taş döşeli bir yol vardır.",
+        "en": "A wide pointed-arched doorway in a long stone façade, with a lit passage visible inside. Low shrubs and a stone-paved path lead up to it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p052-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "102"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Arastanın tonozlu çarşı koridoru",
+        "en": "Vaulted bazaar corridor of the arasta"
+      },
+      "alt": {
+        "tr": "Çapraz tonozlu uzun bir koridorun iki yanında dükkânlar sıralanır. Taş döşemede masalar ve sandalyeler, uzakta koridorun sonu görünür.",
+        "en": "A long cross-vaulted corridor lined with shops on both sides. Tables and chairs stand on the stone floor, and the far end of the corridor is visible."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

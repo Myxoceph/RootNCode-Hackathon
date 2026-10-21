@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-seyh-ali-medresesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
       "Vakıf/vakfiye ve mimar bilgisi kitapta yok.",
       "Hücrelerin bugünkü kullanımı kitapta yok.",
       "Kitap medresenin kitabesinden hicri yıl vermiyor; yalnızca 1903."
@@ -49,7 +48,14 @@
         "source_id": "vk-hatay",
         "pages": "174"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 36.202157,
+      "lng": 36.167577,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (hatay-antakya-seyh-ali-kulliyesi) noktası kullanıldı."
+    }
   },
   "dating": {
     "display": {
@@ -219,6 +225,55 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p088-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "174-175"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlunun kuzeyindeki medrese hücreleri",
+        "en": "Madrasa cells on the north of the courtyard"
+      },
+      "alt": {
+        "tr": "Ağaçlı avlunun kenarında kapı ve pencereli, tek katlı hücreler uzun bir sıra oluşturur. Sağda taş sütunlar ve ahşap korkuluk görülür.",
+        "en": "A long row of single-story cells with doors and windows lines the tree-shaded courtyard. Stone columns and a wooden railing are on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p088-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "175"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Medrese hücrelerinin kemerli kapı ve pencereleri",
+        "en": "Arched doors and windows of the madrasa cells"
+      },
+      "alt": {
+        "tr": "Sıvalı duvarlı hücrelerde basık kemerli ahşap kapılar ve pencereler görülür. Önde portakal ağacı ve taş döşeli avlu bulunur.",
+        "en": "The plastered cells have low-arched wooden doors and windows. An orange tree and a paved courtyard are in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

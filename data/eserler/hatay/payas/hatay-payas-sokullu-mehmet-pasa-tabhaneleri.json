@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-payas-sokullu-mehmet-pasa-tabhaneleri",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
       "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
@@ -151,6 +150,79 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Sokullu Mehmet Paşa Tabhâneleri bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p054-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "106-107"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Tabhânelerin sivri kemerli revakı",
+        "en": "Pointed-arched portico of the tabhanes"
+      },
+      "alt": {
+        "tr": "Taş ayaklar ve sivri kemerlerle uzanan, tonozlarla örtülü uzun bir revak koridoru görünür. Beyaz tonozlar ve taş duvar arasında koridor uzağa doğru daralır.",
+        "en": "A long vaulted portico of stone piers and pointed arches. White vaults and a stone wall narrow toward the far end."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p054-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "107"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tabhânede koltuklarla düzenlenmiş oda",
+        "en": "Furnished room in a tabhane"
+      },
+      "alt": {
+        "tr": "Beyaz tonozlu, taş duvarlı odada altın yaldızlı koltuklar ve uzun bir masa bulunur. Karşı duvarda portreler ve bir raf vardır.",
+        "en": "A white-vaulted, stone-walled room with gilded armchairs and a long table. Portraits and a shelf are on the far wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p054-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "107"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tabhânede minderli oturma köşesi",
+        "en": "Seating corner with cushions in a tabhane"
+      },
+      "alt": {
+        "tr": "Taş duvarlı tonozlu odanın köşesinde yeşil minderli alçak bir sedir yer alır. Yanında küçük masalar ve duvarda ocak nişi görünür.",
+        "en": "A low bench with green cushions in the corner of a stone vaulted room. Small tables are beside it and a hearth niche is in the wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

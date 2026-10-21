@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "hatay-yayladagi-kasimbey-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -16,7 +16,6 @@
       "Kitabelerin metni, dili ve tam yerleri kaynakta yok.",
       "Cami adı bazı yerlerde 'Kasım Bey' diye ayrı yazılıyor; kayıt adı ids.md'e göre 'Kasımbey'.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -457,7 +456,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-kasimbey-camii/p190-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "378-379"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Ahşap direkli revaklı cami cephesi",
+        "en": "Mosque façade with wooden-post portico"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı camide kiremit çatılı, ahşap direkli ve korkuluklu geniş bir revak var. Revağın ardında kemerli bir kapı ve pencereler görülüyor; arkada çam ağaçları var.",
+        "en": "A white-walled mosque with a wide tile-roofed portico on wooden posts with railings. An arched door and windows are behind it and pine trees stand in the background."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-kasimbey-camii/p191-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "380"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sivri kemerli iç mekân ve mihrap",
+        "en": "Pointed-arch interior and mihrab"
+      },
+      "alt": {
+        "tr": "Taş sivri kemerlerle bölünen beyaz salonda taş mihrap ve yeşil örtülü minber görülüyor. Ahşap tavandan büyük bir avize sarkıyor.",
+        "en": "A white hall divided by pointed stone arches, with a stone mihrab and a minbar with a green cover. A large chandelier hangs from the wooden ceiling."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-kasimbey-camii/p191-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "381"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Taş gövdeli minare",
+        "en": "Stone-shaft minaret"
+      },
+      "alt": {
+        "tr": "Köşeli taş gövdeli, ahşap korkuluklu şerefesi ve sivri külahı olan minare mavi gökyüzüne yükseliyor. Dibinde banklar ve ağaç görülüyor.",
+        "en": "A minaret with an angular stone shaft, a wooden-railed balcony and a pointed cap rises into a blue sky. Benches and a tree are at its foot."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

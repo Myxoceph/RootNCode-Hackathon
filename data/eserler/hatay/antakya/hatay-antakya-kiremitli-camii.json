@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-kiremitli-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Kiremitli Camii bölümünden (s. 253-257) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -17,7 +17,6 @@
       "Mimar ve vakıf bilgisi kaynakta yok.",
       "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -435,7 +434,128 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p126-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "250-251"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kiremitli Camii'nin avlusu ve minaresi",
+        "en": "Courtyard and minaret of the Kiremitli Mosque"
+      },
+      "alt": {
+        "tr": "Taş döşeli geniş avlu; solda ahşap direkli gölgeliği olan kesme taş cami cephesi, uzakta ahşap çatılı, çokgen gövdeli minare ve banklar.",
+        "en": "A wide stone-paved courtyard with a cut-stone mosque façade and a wooden-post canopy on the left, and a polygonal minaret with a wooden roof in the distance, plus benches."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p129-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "257"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Çokgen gövdeli şemsiyeli minare",
+        "en": "Polygonal umbrella-roofed minaret"
+      },
+      "alt": {
+        "tr": "Kesme taştan, kare kaideli, çokgen gövdeli minare; üstte ahşap korkuluklu şerefe ve çatı. Sokağın ucunda, mavi gökyüzü önünde.",
+        "en": "A cut-stone minaret on a square base with a polygonal shaft, topped by a wooden-railed balcony and roof, at the end of a street against a blue sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p127-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "252"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yeri ve cami kapısı",
+        "en": "Narthex and mosque door"
+      },
+      "alt": {
+        "tr": "Ahşap direkli gölgelikten görünen kesme taş cephe; ortada ahşap kapı, iki yanında yuvarlak kemerli pencere, üstte kitabe ve kırmızı halı.",
+        "en": "Seen through the wooden posts of the canopy, a cut-stone façade with a wooden door in the middle, round-arched windows on both sides, an inscription above and a red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p128-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "254-255"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sütunlu iç mekân ve minber",
+        "en": "Interior with column and minbar"
+      },
+      "alt": {
+        "tr": "Turkuaz halılı, ahşap tavanlı uzun salon; sağda sivri kemerleri taşıyan sütun, ileride ahşap minber ve soldaki pencereler.",
+        "en": "A long hall with turquoise carpet and a wooden ceiling, a column carrying pointed arches on the right, a wooden minbar ahead and windows on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p129-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "256-257"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Minare yanındaki iki gözlü sokak çeşmesi",
+        "en": "Street fountain with two niches beside the minaret"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarda geniş kemer içinde iki sivri nişli çeşme ve ortada kitabe; altlarında musluklar, üstte ahşap saçak.",
+        "en": "A cut-stone wall with a broad arch framing two niches with taps and an inscription between them, beneath a wooden eave."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

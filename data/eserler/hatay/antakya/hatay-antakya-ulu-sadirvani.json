@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-ulu-sadirvani",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
@@ -47,7 +46,14 @@
         "source_id": "vk-hatay",
         "pages": "89"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 36.201913,
+      "lng": 36.161998,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (hatay-antakya-ulu-kulliyesi) noktası kullanıldı."
+    }
   },
   "dating": null,
   "founder": null,
@@ -132,6 +138,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Ulu Camii Şadırvanı bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p045-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "89"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Ahşap sütunlu, külahlı şadırvan",
+        "en": "Shadirvan with wooden columns and a canopy"
+      },
+      "alt": {
+        "tr": "Taş, çokgen bir su teknesinin üstünde ahşap sütunlar dalgalı kenarlı, geniş bir külahı taşır. Teknenin çevresinde kütük şeklinde oturaklar ve ağaçlar bulunur.",
+        "en": "A polygonal stone basin topped by wooden columns that carry a wide, scalloped-edged canopy. Log-shaped stools and trees surround it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

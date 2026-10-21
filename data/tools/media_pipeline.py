@@ -20,7 +20,7 @@ Her media[] / archive_media[] kaydı için:
 Git'e yalnızca build/media-manifest.json girer; görseller (build/media, build/cache) girmez.
 Repoyu yeni çeken biri bu betiği çalıştırınca manifestteki görseller aynı yollarla yeniden
 üretilir; manifest değişmez. Yeni ya da değişen fotoğraf varsa manifest güncellenir ve commit edilir.
-Depolamaya yükleme: `rclone sync data/build/media <remote>:<bucket>` ya da `aws s3 sync`.
+Depolamaya yükleme: `rclone copy data/build/media r2:kok-kod-media-public` (komutun tamamı: data/README.md §8).
 """
 import base64
 import hashlib

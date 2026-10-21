@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-seyh-ali-kulliyesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
       "Konum bilgisi (parsel) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli ve doğrulanmalı.",
       "Külliyenin bütününe ait banî kitapta verilmiyor (medrese için Halefzâde Cemil Ağa, cami için kimse anılmıyor); founder null.",
       "Eserin dönemi (era) cami için kesin bir tarih olmadığı, medrese ise 1903 olduğu için külliye düzeyinde null bırakıldı.",
@@ -55,7 +54,14 @@
         "source_id": "vk-hatay",
         "pages": "163"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 36.202157,
+      "lng": 36.167577,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (hatay-antakya-seyh-ali-camii) noktası kullanıldı."
+    }
   },
   "dating": {
     "display": {
@@ -135,6 +141,55 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p087-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "172-173"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avluda şadırvan ve cami cephesi",
+        "en": "Shadirvan and mosque façade in the courtyard"
+      },
+      "alt": {
+        "tr": "Avluda ahşap sütunlu, geniş saçaklı küçük bir şadırvan durur. Arkada pencereli kaba taş cami duvarı ile yüksek bir ağaç görülür.",
+        "en": "A small shadirvan with wooden columns and a wide roof stands in the courtyard. Behind it are the windowed rough stone mosque wall and a tall tree."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "drawing",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p080-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "158"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Minareli bir sokağı gösteren eski gravür",
+        "en": "Old engraving of a street with a minaret"
+      },
+      "alt": {
+        "tr": "Eski bir gravürde yüksek, yuvarlak bir minare ve kemerli geçit görülür. Önde deve ve çeşitli giysili insanlar sokakta durur.",
+        "en": "An old engraving of a tall round minaret and an arched passage. Camels and people in varied dress stand in the street in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

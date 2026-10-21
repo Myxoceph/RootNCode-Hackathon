@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-belen-kanuni-sultan-suleyman-hamami",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder boş bırakıldı.",
       "Bu hamam Antakya'daki Kurtuluş (Beysen) Hamamı (hatay-antakya-kurtulus-beysen-hamami) ile aynı yapı değildir; karıştırılmamalı, ilişki yazılmadı.",
       "Kitabe tarihinin son hanesi okunamıyor; kesin yıl yok, start_year/end_year null.",
       "Hamamın 'Kurtuluş' adının nedeni ve ne zaman verildiği kitapta yok.",
@@ -59,7 +58,14 @@
         "source_id": "vk-hatay",
         "pages": "155-157"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 36.492296,
+      "lng": 36.193026,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (hatay-belen-kanuni-sultan-suleyman-kulliyesi) noktası kullanıldı."
+    }
   },
   "dating": {
     "display": {
@@ -222,6 +228,55 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-belen-kanuni-sultan-suleyman-kervansarayi/p078-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "154-155"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kurtuluş Hamamı'nın dış cephesi",
+        "en": "Exterior of the Kurtuluş Bath"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarlı hamamın üstünde kubbe başı, ortada kemerli bir giriş ve önünde ahşap kafes ile sarmaşıklar görünür. Girişte Kurtuluş Hamamı tabelası vardır.",
+        "en": "A cut-stone bath wall with a dome top, an arched entrance in the middle and a wooden lattice with climbing plants in front. A Kurtuluş Hamamı sign hangs at the entrance."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-belen-kanuni-sultan-suleyman-kervansarayi/p079-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "156"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Hamamın dar kemerli ahşap kapısı",
+        "en": "Narrow arched wooden door of the bath"
+      },
+      "alt": {
+        "tr": "Taş kemer içinde, üzerinde küçük bir kitabe taşıyan, kahverengi ahşap bir kapı vardır. Üstte küçük bir lamba görünür.",
+        "en": "A brown wooden door in a stone arch, with a small inscribed panel above. A small lamp hangs on top."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

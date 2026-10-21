@@ -2,18 +2,17 @@
   "schema_version": "1.0",
   "id": "hatay-defne-seyh-ibrahim-ve-seyh-ali-turbesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Türbeler / Ziyaretler",
     "todos": [
       "Şeyh İbrahim ve Şeyh Ali’nin kimlikleri, yapım tarihi ve banî kitapta yok.",
       "Bölüm özetindeki Konum satırı 'HATAY-DEFNE TAVLA,' diye yarım bitiyor.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
       "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
-      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
       "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
@@ -146,6 +145,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-defne-seyh-ibrahim-ve-seyh-ali-turbesi/p208-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "415"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tepedeki türbe ve çevresindeki mezarlık",
+        "en": "The tomb on the hilltop and surrounding cemetery"
+      },
+      "alt": {
+        "tr": "Kurumuş otlarla kaplı bir tepede, demir parmaklıklı, briket duvarlı ve açık yan yüzlü türbe; solda beyaz mezar sandukaları ve mezar taşları, geride vadi.",
+        "en": "On a hilltop of dry grass, a tomb with block walls, iron bars and an open side; white tomb chests and gravestones on the left and a valley behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

@@ -93,11 +93,18 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 | `GET /assets`, `GET /assets/:id` | Eser listesi (filtre, arama, harita kutusu) ve detayı |
 | `GET /assets/:id/relations`, `GET /assets/:id/nearby` | Eserler arası bağlar ve yakındaki eserler |
 | `GET /meta/enums` | Filtre ve rozet kod listeleri |
+| `GET /routes/plan`, `GET /weather` | Vakıf Travel Planner: tematik yürüyüş rotası ve anlık hava durumu (Open-Meteo) |
+| `POST /auth/anonymous`, `GET /me` | Takma adla anonim oturum (token) |
+| `POST /assets/:id/contributions`, `GET /assets/:id/pulse` | Ziyaretçi Nabzı: katkı gönderme ve onaylanmış katkılar |
+| `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör token'ı: `npm run moderator:create --workspace @vagabonds/api -- "<ad>"`) |
 
 Yanıt şemaları ve istemci örnekleri: [`packages/contracts/README.md`](packages/contracts/README.md).
 
 Tüm hatalar tek biçimde döner: `{ "error": { "code": "NOT_FOUND", "message": "..." } }`.
 `5xx` hataların ayrıntısı yalnızca sunucu loglarında tutulur.
+
+İstemci IP'si başına dakikada 120 istek sınırı vardır (`RATE_LIMIT_MAX`; `/health` hariç). Aşılınca
+`429 RATE_LIMITED` döner.
 
 Web istemcisinin API'ye erişebilmesi için adresi `CORS_ORIGINS` içinde olmalıdır (varsayılan: `http://localhost:8081`).
 

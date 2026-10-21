@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "hatay-samandag-vakifli-koyu-konut",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Eski Evler ve Konaklar",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Samandağ Vakıflı Köyü Konut bölümünden (s. 480-481) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -14,7 +14,6 @@
       "Evin hangi yoldan vakfa geçtiği ve vakıf adı kaynakta yok.",
       "Güncel kullanımı ('hizmete girdi') ne amaçla olduğu kaynakta belirtilmiyor.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi; media ve media_folder boş, fotoğraflar sonradan eşleştirilecek.",
       "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -277,7 +276,32 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-samandag-vakifli-koyu-konut/p241-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "480-481"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Taş konutun balkonlu cephesi",
+        "en": "Stone house with its balcony façade"
+      },
+      "alt": {
+        "tr": "İki katlı, bal rengi taştan konut; üst katta ahşap korkuluklu uzun balkon, alt katta ahşap kapılar ve saksılar, sağda kiremitli sundurma, çevrede ağaçlar.",
+        "en": "A two-storey honey-coloured stone house with a long wooden-railed balcony above, wooden doors and pots below, a tiled canopy on the right and trees around."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

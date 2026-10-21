@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-ulu-seyh-huseyin-efendi-turbesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
@@ -47,7 +46,14 @@
         "source_id": "vk-hatay",
         "pages": "91"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 36.201913,
+      "lng": 36.161998,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (hatay-antakya-ulu-kulliyesi) noktası kullanıldı."
+    }
   },
   "dating": null,
   "founder": null,
@@ -115,6 +121,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Şeyh Hüseyin Efendi Türbesi bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p046-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "91"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Türbede turkuaz örtülü sanduka",
+        "en": "Turquoise-draped sarcophagus in the tomb"
+      },
+      "alt": {
+        "tr": "Turkuaz kadife örtüyle kaplı uzun bir sanduka, taş döşeli zeminde durur. Üst kenarında yazılı bir şerit ve uçta ahşap bir başlık görülür.",
+        "en": "A long sarcophagus covered in turquoise velvet stands on a stone-paved floor. An inscribed band runs along its top edge, with a wooden finial at the end."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

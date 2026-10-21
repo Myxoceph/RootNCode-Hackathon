@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-meydan-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
       "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
@@ -206,6 +205,151 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Meydan Camii bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p062-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "122-123"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin ahşap revaklı ön cephesi",
+        "en": "Mosque facade with its wooden portico"
+      },
+      "alt": {
+        "tr": "Kesme taş cepheli, kiremit çatılı camide ahşap direkli geniş bir son cemaat revakı uzanır. Önde taş döşeli avlu ve yuvarlak bir taş kuyu ağzı bulunur.",
+        "en": "A stone mosque with a tile roof and a long wooden-columned portico along its front. A stone-paved courtyard and a round stone well head lie in the foreground."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p065-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "129"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yerinin uzun revak sırası",
+        "en": "Long colonnade of the mosque portico"
+      },
+      "alt": {
+        "tr": "Ahşap kirişli ve direkli revakın altında taş zemin, solda ahşap oturma bankları, sağda parmaklıklı pencereli taş duvar uzanır. Uzakta siyah beyaz desenli bir paspas vardır.",
+        "en": "Under a wooden-beamed portico, a stone floor with wooden benches on the left and a stone wall with barred windows on the right. A black and white patterned mat is at the far end."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p065-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "129"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Cami girişi, ahşap kapı ve pencereler",
+        "en": "Mosque entrance with wooden door and windows"
+      },
+      "alt": {
+        "tr": "Revağın altında kemerli ahşap bir kapı ve iki yanında parmaklıklı kemerli pencereler görünür. Önde desenli halılar ve üstte ahşap kirişli tavan vardır.",
+        "en": "Under the portico, an arched wooden door flanked by barred arched windows. Patterned mats lie in front and the ceiling has wooden beams."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p065-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "129"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harimde sütun sıraları ve kırmızı halı",
+        "en": "Prayer hall columns and red carpet"
+      },
+      "alt": {
+        "tr": "Gri sütunların taşıdığı sivri kemerler ahşap çatı örtüsüne doğru uzanır. Yerde kırmızı, bej şeritli halı serilidir; solda ahşap bir merdiven görünür.",
+        "en": "Grey columns carry pointed arches under a wooden roof. A red carpet with beige stripes covers the floor, and a wooden staircase is on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p065-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "129"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap duvarı ve minber",
+        "en": "Mihrab wall and minbar"
+      },
+      "alt": {
+        "tr": "Kemerli sütun sırası arkasında taş çerçeveli mihrap ve yanında ahşap bir kürsü görünür. Duvarda pencereler, tavanda halka şeklinde avizeler vardır.",
+        "en": "Behind an arcade of columns, a stone-framed mihrab with a wooden pulpit beside it. Windows line the wall and ring-shaped chandeliers hang from the ceiling."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-meydan-camii-ve-kulliyesi/p066-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "130-131"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harimde sütunlar, minber ve kadınlar mahfili",
+        "en": "Prayer hall with columns, minbar and gallery"
+      },
+      "alt": {
+        "tr": "Uzun salonda sütunlar ve sivri kemerler ahşap kirişli tavanı taşır. Sağda ahşap minber, solda korkuluklu bir bölüm, zeminde kırmızı halı vardır.",
+        "en": "A long hall with columns and pointed arches under a wooden-beamed ceiling. A wooden minbar is on the right, a railed section on the left and a red carpet on the floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

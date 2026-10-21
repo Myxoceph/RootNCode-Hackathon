@@ -239,12 +239,15 @@ describe.skipIf(!DATABASE_URL)("assets routes (PostgreSQL)", () => {
     });
 
     it("leaves out assets beyond the radius and honours the limit", async () => {
-      const wide = await nearby(`${ULUCAMI}/nearby?radius=50000`);
-      const nearest = wide.items[0];
-      if (!nearest) throw new Error("no located asset near Ulucami");
+      const wide = await nearby(`${ULUCAMI}/nearby?radius=50000&limit=50`);
+      // The smallest allowed radius is 100 m, so pick an asset far enough to fall outside a tighter circle.
+      const far = wide.items.find((item) => item.distanceMeters >= 150);
+      if (!far) throw new Error("no located asset 150 m or more from Ulucami");
 
-      const tight = await nearby(`${ULUCAMI}/nearby?radius=${Math.max(100, nearest.distanceMeters - 50)}`);
-      expect(tight.items.map((item) => item.asset.id)).not.toContain(nearest.asset.id);
+      const radius = far.distanceMeters - 50;
+      const tight = await nearby(`${ULUCAMI}/nearby?radius=${radius}&limit=50`);
+      expect(tight.items.map((item) => item.asset.id)).not.toContain(far.asset.id);
+      expect(tight.items.every((item) => item.distanceMeters <= radius)).toBe(true);
       expect((await nearby(`${ULUCAMI}/nearby?radius=50000&limit=1`)).items).toHaveLength(1);
     });
 

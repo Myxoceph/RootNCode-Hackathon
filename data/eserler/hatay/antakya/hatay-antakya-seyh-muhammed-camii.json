@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-seyh-muhammed-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Şeyh Muhammed Camii bölümünden (s. 322-325) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -257,7 +256,128 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-muhammed-camii/p163-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "324"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minare ve alt kısmındaki giriş",
+        "en": "Minaret and the entrance below it"
+      },
+      "alt": {
+        "tr": "Taş gövdeli, sivri külahlı minare ve kaidesinde kemerli girişi; çevrede dükkânlar ve ahşap balkonlu evler.",
+        "en": "A stone minaret with a pointed cap and an arched entrance at its base; shops and houses with wooden balconies around."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-muhammed-camii/p163-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "324"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minare ve ahşap kapısı",
+        "en": "Minaret and its wooden door"
+      },
+      "alt": {
+        "tr": "Yakından görülen taş minare; kaidesinde ahşap kapı, sağda korkuluklu ahşap bir sundurma ve bank.",
+        "en": "A close view of the stone minaret with a wooden door at its base; on the right a railed wooden porch and a bench."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-muhammed-camii/p162-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "322-323"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Sivri kemerli taş giriş",
+        "en": "Pointed-arch stone entrance"
+      },
+      "alt": {
+        "tr": "Çok sıralı sivri kemerli taş girişin içinde havalandırma ızgarası ve küçük bir rozet; sağda duvar lambası ve bilgi levhası.",
+        "en": "Inside a multi-ring pointed stone arch a ventilation grille and a small rosette; a wall lamp and an information plaque on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-muhammed-camii/p163-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "325"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Ahşap minber",
+        "en": "Wooden minbar"
+      },
+      "alt": {
+        "tr": "Kare panolu, açık kahverengi ahşap minberin merdiveni; solda ve sağda ahşap çerçeveli pencereler, beyaz duvarlar ve kırmızı halı.",
+        "en": "The stairs of a light brown wooden minbar with square panels; wooden-framed windows on both sides, white walls and a red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-muhammed-camii/p163-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "325"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap ve pencereler",
+        "en": "Mihrab and windows"
+      },
+      "alt": {
+        "tr": "Sivri kemerli taş mihrap nişi, üstünde yazılı levha; iki yanında ahşap pencereler ve duvar saati, zeminde kırmızı halı.",
+        "en": "A pointed-arch stone mihrab niche with an inscribed panel above it; wooden windows and a wall clock beside it and red carpet below."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

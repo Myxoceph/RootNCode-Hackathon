@@ -2,18 +2,17 @@
   "schema_version": "1.0",
   "id": "hatay-iskenderun-seyh-turhan-reyhani-turbesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Türbeler / Ziyaretler",
     "todos": [
       "Şeyh Turhan Reyhani’nin kimliği ve banî kitapta yok.",
       "Yakın dönemdeki yenilemenin yılı ve kapsamı kitapta yok.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
       "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
-      "Fotoğraf yok: media boş, media_folder null; fotoğraflar sonradan eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -200,6 +199,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-seyh-turhan-reyhani-turbesi/p213-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "425"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Türbenin yeşil çerçeveli girişi ve kitabeleri",
+        "en": "Green-framed entrance of the tomb with its inscriptions"
+      },
+      "alt": {
+        "tr": "Yeşil boyalı çerçeveli kapı; üstünde Arapça yazılı levhalar, duvarın alt yarısı açık yeşil fayans, üst yarısı beyaz; kapının ardında yeşil örtülü sanduka görünüyor.",
+        "en": "A green-painted doorframe with Arabic-inscribed panels above; the lower wall is light green tile and the upper part white; a green-draped tomb chest is visible through the door."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

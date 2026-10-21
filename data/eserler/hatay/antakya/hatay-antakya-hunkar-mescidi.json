@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-hunkar-mescidi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Hünkâr Mescidi bölümünden (s. 247-249) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -16,7 +16,6 @@
       "Ezanlığın (mezene) yeri kaynakta açıkça belirtilmiyor.",
       "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -226,7 +225,104 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-hunkar-mescidi/p123-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "244-245"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hünkâr Mescidi'nin sokak girişi ve ezanlığı",
+        "en": "Street entrance and adhan platform of the Hünkâr Masjid"
+      },
+      "alt": {
+        "tr": "Dar sokakta kesme taş cephede demir kafesli kemerli kapı, üzerinde sarı levha; yukarıda kırmızı-kahverengi ahşap çatılı ezanlık köşkü.",
+        "en": "In a narrow street, a stone façade with an arched lattice door and a yellow name plate; above it a red-brown wooden adhan pavilion with a roof."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-hunkar-mescidi/p124-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "246-247"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu, kapı ve taş niş",
+        "en": "Courtyard with door and stone niche"
+      },
+      "alt": {
+        "tr": "Taş duvarlı avluda ahşap kapı, solda raflı dolap, sağda taş çerçeveli niş, pencere ve bank; üstte gölgelik.",
+        "en": "A courtyard with stone walls, a wooden door, shelves on the left, a stone-framed niche, a window and a bench on the right, and a canopy above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-hunkar-mescidi/p125-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "249"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Ezanlığa çıkan merdiven",
+        "en": "Stairs to the adhan platform"
+      },
+      "alt": {
+        "tr": "Demir korkuluklu merdiven ve üstündeki ahşap çatılı, korkuluklu küçük ezanlık; altında kafesli kapı.",
+        "en": "A staircase with an iron railing leading up to a small roofed wooden adhan platform, with a lattice door beneath."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-hunkar-mescidi/p125-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "248"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescidin iç mekânı, mihrap ve minber",
+        "en": "Interior with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı, beyaz duvarlı küçük salon; solda taş mihrap nişi, sağda ahşap minber, zeminde kırmızı halı.",
+        "en": "A small white-walled hall with a wooden ceiling, a stone mihrab niche on the left, a wooden minbar on the right and a red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

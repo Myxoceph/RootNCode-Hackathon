@@ -17,6 +17,8 @@ export const healthRoutes: FastifyPluginAsync<{ prisma: PrismaClient }> = async 
   const healthSchema = toOpenApiSchema(HealthResponseSchema);
 
   app.get("/health", {
+    // Polled by the container health check and uptime monitors.
+    config: { rateLimit: false },
     schema: {
       tags: ["system"],
       summary: "Sunucu ve veritabanı durumu",

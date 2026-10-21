@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-sofular-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Sofular Camii bölümünden (s. 316-321) (alt başlık 'Türbe' ayrı kayıtta) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -295,7 +294,104 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sofular-camii/p159-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "316-317"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Beyaz cephe, avlu duvarı ve minare",
+        "en": "White façade, courtyard wall and minaret"
+      },
+      "alt": {
+        "tr": "Beyaz boyalı yüksek duvar ve ahşap kapılı giriş; arkasında ahşap saçaklı beyaz cami kütlesi ve sivri külahlı taş minare.",
+        "en": "A high white-painted wall with a wooden entrance door; behind it the white mosque with wooden eaves and a stone minaret with a pointed cap."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sofular-camii/p160-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "318"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Taş cephe ve ahşap kapı",
+        "en": "Stone façade and wooden door"
+      },
+      "alt": {
+        "tr": "Taş cephede çift kanatlı ahşap kapı ve demir parmaklıklı pencere; önünde ahşap bank ve çöp kovası, üstte kiremit çatı.",
+        "en": "A stone façade with a double wooden door and a barred window; a wooden bench and bin in front, a tiled roof above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sofular-camii/p161-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "320-321"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kemerli iç mekân",
+        "en": "Interior with a large arch"
+      },
+      "alt": {
+        "tr": "Geniş taş kemerle bölünmüş ahşap tavanlı salon; zeminde kırmızı seccadeli halı, uzakta yeşil örtülü minber ve avize.",
+        "en": "A hall with a wooden ceiling divided by a broad stone arch; red prayer-rug carpet on the floor and, further back, a minbar with a green cover and a chandelier."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sofular-camii/p161-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "321"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap nişi ve yeşil örtülü minber",
+        "en": "Mihrab niche and minbar with a green cover"
+      },
+      "alt": {
+        "tr": "Taş mihrap nişi, yanında altın işlemeli yeşil örtülü ahşap minber; solda pencere, sağda ahşap kapı, zeminde kırmızı halı.",
+        "en": "A stone mihrab niche beside a wooden minbar draped in green with gold embroidery; a window on the left, a wooden door on the right and red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

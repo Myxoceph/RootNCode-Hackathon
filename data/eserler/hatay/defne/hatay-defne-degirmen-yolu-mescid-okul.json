@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "hatay-defne-degirmen-yolu-mescid-okul",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -14,7 +14,6 @@
       "Yapının mescit olarak ne zamandan beri kullanıldığı kaynakta yok.",
       "Mahalle adı 'Değirmenyolu' kaynakta geçer; bölüm özetinde ayrıca 'Değirmenyolu 433 parsel' yazar.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraf eklenmedi (media: [] ve media_folder: null); fotoğraflar sonradan match_photos.py ile bağlanacak.",
       "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
@@ -238,7 +237,56 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-defne-degirmen-yolu-mescid-okul/p177-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "352-353"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mescid-okulun sarı sıvalı iki katlı yapısı",
+        "en": "Two-storey yellow-plastered masjid-school"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı iki katlı, beşik çatılı yapının üst katında dikdörtgen pencereler, alt katında gri bir kapı ve parmaklıklı pencereler var. Solda büyük bir ağaç görülüyor.",
+        "en": "A two-storey yellow-plastered building with a gabled roof, rectangular upper windows, a grey door and barred windows below. A large tree is on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-defne-degirmen-yolu-mescid-okul/p176-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "350-351"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Yapının köşeden görünüşü",
+        "en": "Corner view of the building"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı iki katlı yapının köşeden görünümünde üst katta ahşap çerçeveli pencereler, altta gri bir kapı var. Sağda yan bina ve taş döşeli sokak görülüyor.",
+        "en": "A corner view of the yellow-plastered two-storey building with wooden-framed upper windows and a grey door below. A neighbouring building and a paved street are on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

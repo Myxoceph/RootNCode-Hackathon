@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-uctum-mescidi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Uçtum Mescidi bölümünden (s. 338-341) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -243,7 +242,128 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p171-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "340-341"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mescidin taş cephesi ve ahşap minaresi",
+        "en": "Masjid's stone façade and wooden minaret"
+      },
+      "alt": {
+        "tr": "Kesme taştan örülü köşe yapısında kemerli, demir parmaklıklı pencereler var. Çatının köşesinde ahşap şerefeli küçük bir minare yükseliyor; arkada dağ görülüyor.",
+        "en": "A stone corner building with arched, barred windows. A small minaret with a wooden balcony rises from the roof corner, with a mountain behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p170-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "338-339"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dar sokaktan mescit ve minaresi",
+        "en": "The masjid and minaret from a narrow street"
+      },
+      "alt": {
+        "tr": "Taş duvarlı dar bir sokakta uzakta küçük ahşap minare ve eski taş yapılar görülüyor. Solda ahşap pencereli balkonlu bir ev var.",
+        "en": "In a narrow street between stone walls, a small wooden minaret and old stone buildings in the distance. A house with a wooden-windowed balcony is on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p171-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "340-341"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescit içi, mihrap ve ahşap tavan",
+        "en": "Masjid interior, mihrab and wooden ceiling"
+      },
+      "alt": {
+        "tr": "Ahşap kirişli tavanlı, beyaz duvarlı salonda taş çerçeveli mihrap ve ahşap kaplı alt duvarlar görülüyor. Zemin koyu desenli halıyla kaplı.",
+        "en": "A hall with a wooden-beamed ceiling, white walls, a stone-framed mihrab and wood-panelled lower walls. The floor has a dark patterned carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p171-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "341"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Taş çerçeveli mihrap",
+        "en": "Stone-framed mihrab"
+      },
+      "alt": {
+        "tr": "Beyaz duvarda açık renkli taşla çerçevelenmiş sivri kemerli mihrap nişi var; üstünde yazılı bir levha asılı. İki yanında ahşap pencereler bulunuyor.",
+        "en": "A pointed-arch mihrab niche framed in light stone on a white wall with a lettered panel above it. Wooden windows flank it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p171-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "341"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Namaz salonu ve ahşap minber",
+        "en": "Prayer hall and wooden minbar"
+      },
+      "alt": {
+        "tr": "Uzun salonda ortada koyu halı, uzakta yeşil kısmı olan ahşap bir minber var. Solda mihrap, üstte ahşap kirişli tavan görülüyor.",
+        "en": "A long hall with a dark carpet, a wooden minbar with a green part in the distance, the mihrab on the left and a wooden-beamed ceiling above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

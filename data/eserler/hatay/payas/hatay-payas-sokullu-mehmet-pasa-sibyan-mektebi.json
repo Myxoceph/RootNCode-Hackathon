@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-payas-sokullu-mehmet-pasa-sibyan-mektebi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Mimar kitapta verilmiyor.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
       "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
@@ -151,6 +150,31 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Sokullu Mehmet Paşa Sıbyan Mektebi bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p056-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "111"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Taş döşeli avlu ve revaklı sıra",
+        "en": "Cobbled courtyard with an arcade"
+      },
+      "alt": {
+        "tr": "Kaldırım taşlı bir avlunun kenarında sivri kemerli revak ve arkasında kapılar sıralanır. Sağda alçak bir taş duvar ve ağaçlar görünür.",
+        "en": "A pointed-arched arcade with doors behind it runs along a cobbled courtyard. A low stone wall and trees are on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-deveci-bekiroglu-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Deveci Bekiroğlu Camii bölümünden (s. 225) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -15,7 +15,6 @@
       "Nişteki kitabenin metni, dili ve tarihi kaynakta verilmiyor; sahada okunmalı.",
       "Çeşmenin yapım tarihi ve adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -230,7 +229,152 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p112-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "222-223"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Caminin avlusu ve yan yapıları",
+        "en": "Courtyard and adjoining buildings"
+      },
+      "alt": {
+        "tr": "Toprak zeminli avluda turuncu-sarı sıvalı alçak yapılar, beyaz kapılar ve pencereler; ön planda banklar ve her iki yanda yapraklı ağaçlar.",
+        "en": "A courtyard with orange-yellow plastered low buildings, white doors and windows, benches in the foreground and leafy trees on both sides."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "224"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Yuvarlak gövdeli minare",
+        "en": "Round-bodied minaret"
+      },
+      "alt": {
+        "tr": "Alttan bakılan, dairesel gövdeli taş minare; şerefe kısmı süslü, tabanında küçük bir kapı, arkada bulutlu gökyüzü.",
+        "en": "A round stone minaret seen from below, with a decorated balcony, a small door at its base and a cloudy sky behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "224"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Minare kapısı ve kitabesi",
+        "en": "Minaret door and inscription"
+      },
+      "alt": {
+        "tr": "Sıvalı minare gövdesinde taş çerçeveli mavi renkli ahşap kapı; üstünde yazılı dikdörtgen bir kitabe.",
+        "en": "A blue wooden door in a stone frame on the plastered minaret shaft, with a rectangular inscription above it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "225"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sıra ve masalarla düzenlenmiş iç mekân",
+        "en": "Interior arranged with desks and tables"
+      },
+      "alt": {
+        "tr": "Şeftali rengi duvarlı, beyaz kirişli tavanlı salonda örtülü masalar ve sıralar; solda kemerli bir niş, camlı bir dolap ve klima.",
+        "en": "A peach-coloured hall with white beams on the ceiling, covered tables and desks, an arched niche on the left, a glazed cabinet and an air conditioner."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "225"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İç mekânın diğer köşesi",
+        "en": "Another view of the interior"
+      },
+      "alt": {
+        "tr": "Beyaz kirişli tavanın altında sıralanmış masalar; duvarda çerçeveli levhalar, bir niş ve mavi-beyaz camlı dolap.",
+        "en": "Rows of tables beneath a ceiling with white beams, with framed panels on the wall, a niche and a blue-and-white glazed cabinet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-5.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "225"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Kemerli niş ve pencere",
+        "en": "Arched niche and window"
+      },
+      "alt": {
+        "tr": "Şeftali rengi duvarda ortada yuvarlak kemerli, küçük pencereli bir niş; solda beyaz panjurlar, sağda mavi kanatlı açık bir pencere ve bir duvar saati.",
+        "en": "A rounded niche with a small window in the middle of a peach wall, white shutters on the left, an open blue-shuttered window on the right and a wall clock."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

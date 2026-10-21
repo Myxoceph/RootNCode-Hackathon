@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-agca-mescidi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Ağca Mescidi bölümünden (s. 209-210) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -17,7 +17,6 @@
       "Kitapta anılan Adana'daki Ağca Bey Camii ile bir ilişki kurulmadı (farklı il, id tabloda yok).",
       "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek; media ve media_folder bu yüzden boş.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
     ],
@@ -63,7 +62,14 @@
         "source_id": "vk-hatay",
         "pages": "209-210"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 36.198921,
+      "lng": 36.168253,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1141939357 ('Ağca Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -367,7 +373,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-agca-mescidi/p104-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "206-207"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Ağca Mescidi'nin avlusu ve cephesi",
+        "en": "Courtyard and façade of the Ağca Masjid"
+      },
+      "alt": {
+        "tr": "Açık renkli taş ve koyu karolarla döşeli avlu; sağda kırma çatılı taş mescit cephesi, turuncu kapılı sivri kemerli girişi, solda ahşap kapılı yan bölüm ve bir bank.",
+        "en": "A courtyard paved with light stone and dark slabs; on the right the stone masjid façade with a hipped roof and an orange door in a pointed arch, a wooden-doored annex on the left and a bench."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-agca-mescidi/p105-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "208-209"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescidin iç mekânı, minber ve ortadaki sütun",
+        "en": "Interior with the minbar and central column"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı salonda ortada taş bir sütun, solda ahşap minber; duvarlarda sivri kemerli ahşap çerçeveli pencereler, tavanda açık ahşap kirişler ve mavi desenli halı.",
+        "en": "In a white-walled hall, a stone column stands in the centre with a wooden minbar on the left; arched wooden windows line the wall, exposed wooden beams cross the ceiling and a patterned blue carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-agca-mescidi/p106-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "211"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Avluda ahşap ezanlık ve merdiven",
+        "en": "Wooden adhan platform and stairs in the courtyard"
+      },
+      "alt": {
+        "tr": "Taş bir kaide üzerinde, turuncu-kahverengi ahşap korkuluklu ve çatılı küçük bir köşk; yanında taş merdiven, önünde bankların durduğu avlu.",
+        "en": "A small wooden pavilion with railings and a pointed roof on a stone base, with stone steps beside it and benches in the courtyard in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

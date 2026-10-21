@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "hatay-antakya-sekercik-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Şekercik Camii bölümünden (s. 334-337) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -250,7 +249,128 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sekercik-camii/p168-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "334-335"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin taş örgülü dış cephesi",
+        "en": "Mosque's stone-faced exterior"
+      },
+      "alt": {
+        "tr": "Kaba kesme taşlarla örülmüş alçak cephede demir parmaklıklı pencereler ve öne çıkan ince bir saçak var. Önünde taş döşeli bir avlu uzanıyor, gökyüzü mavi.",
+        "en": "A low façade of rough-cut stones with barred windows and a narrow projecting canopy. A paved courtyard stretches in front under a blue sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sekercik-camii/p169-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "336"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Caminin ahşap şerefeli minaresi",
+        "en": "The mosque's minaret with wooden balcony"
+      },
+      "alt": {
+        "tr": "Köşeli gövdeli kısa bir taş minarenin ahşap şerefesi ve sivri külahı görülüyor. Önde demir korkuluklu bir merdiven ve sokak lambası var.",
+        "en": "A short stone minaret with an angular shaft, a wooden balcony and a pointed cap. An iron-railed stair and a street lamp stand in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sekercik-camii/p169-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "336"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Cami içi, taş sütun ve minber",
+        "en": "Mosque interior, stone column and minbar"
+      },
+      "alt": {
+        "tr": "Kemerli bir taş sütunun yanında beyaz duvarlı mekânda mihrap nişi ve ahşap minber görülüyor. Zemin kırmızı desenli halıyla, tavan ahşap kirişlerle kaplı.",
+        "en": "Beside an arched stone column, a white-walled hall with a mihrab niche and a wooden minbar. The floor has a red patterned carpet and the ceiling shows wooden beams."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sekercik-camii/p169-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "336"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Namaz salonu ve minber",
+        "en": "Prayer hall and minbar"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap çatılı salonda soldan ışık alan demir parmaklıklı pencereler, uzakta ahşap minber var. Kırmızı halıda ışık lekeleri görülüyor.",
+        "en": "A white-walled hall with a timber roof, barred windows letting in light from the left and a wooden minbar in the distance. Patches of sunlight fall on the red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sekercik-camii/p169-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "337"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Cami avlusu ve ana yapı",
+        "en": "Mosque courtyard and main building"
+      },
+      "alt": {
+        "tr": "Ağaçlarla gölgelenen avluda sokak lambaları, ahşap kapılı bir yan yapı ve taş duvarlı, saçaklı cami cephesi görülüyor. Sağda bir çeşme var.",
+        "en": "A tree-shaded courtyard with street lamps, a side building with a wooden door and the stone mosque façade with its canopy. A fountain stands on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

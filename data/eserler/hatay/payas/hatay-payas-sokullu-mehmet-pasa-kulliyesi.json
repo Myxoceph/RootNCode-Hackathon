@@ -2,17 +2,16 @@
   "schema_version": "1.0",
   "id": "hatay-payas-sokullu-mehmet-pasa-kulliyesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Külliyeler ve Kervansaraylar",
     "todos": [
       "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Fotoğraflar sonradan eklenecek (media boş, media_folder null).",
       "Konum bilgisi (mıntıka/parsel) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli.",
       "Banî kitapta verilmiyor; founder null bırakıldı.",
       "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
@@ -207,6 +206,127 @@
     "audio_description_source": "Hatay Vakıf Eserleri, Sokullu Mehmet Paşa Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p049-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "96-97"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliyenin yüksekten genel görünümü",
+        "en": "High view of the whole complex"
+      },
+      "alt": {
+        "tr": "Taş yapılardan oluşan külliyenin kubbeli ve düz damlı bölümleri yüksekten görünür. Ortada ağaçlı bir avlu, arkada şehir ve yeşil dağlar vardır.",
+        "en": "Stone buildings of the complex with domed and flat-roofed parts seen from above. A tree-filled courtyard is in the middle, with the town and green mountains behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p050-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "98"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliyenin damları ve dağ manzarası",
+        "en": "Rooftops of the complex and the mountains"
+      },
+      "alt": {
+        "tr": "Külliyenin uzun, gri kurşun örtülü damları ve taş duvarları sıralanır. Solda bir kubbe ve Türk bayrağı, arkada dağlar ve mavi gökyüzü görünür.",
+        "en": "Long grey-roofed stone ranges of the complex. A dome and a Turkish flag are on the left, with mountains and blue sky behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p051-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "100-101"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Külliye yapıları, kubbeler ve minare",
+        "en": "Complex buildings, domes and minaret"
+      },
+      "alt": {
+        "tr": "Bahçeden bakıldığında bal rengi kesme taştan yapılar, kubbeler ve uzakta ince bir minare görünür. Önde budanmış çalılar ve bir yürüyüş yolu vardır.",
+        "en": "Honey-coloured cut-stone buildings, domes and a slender minaret in the distance, seen from a garden. Trimmed shrubs and a walkway are in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p050-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "99"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Zeytin ağaçlı taş döşeli avlu",
+        "en": "Stone-paved courtyard with an olive tree"
+      },
+      "alt": {
+        "tr": "Taş döşeli geniş bir avluda zeytin ağacı ve sıra sıra ahşap banklar durur. Yanında turuncu kapılı taş duvar ve uzakta kubbe vardır.",
+        "en": "A wide stone-paved courtyard with an olive tree and a row of wooden benches. A stone wall with orange doors runs alongside, and a dome is in the distance."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "drawing",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-payas-sokullu-mehmet-pasa-camii-ve-kulliyesi/p048-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "94"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Payas ve çevresini gösteren eski gravür",
+        "en": "Old engraving showing Payas and its surroundings"
+      },
+      "alt": {
+        "tr": "Sepya tonlu gravürde dağ yamacında surlar, uzun bir minare ve nehir kenarında köprü görünür. Önde kalabalık bir grup insan ve develer vardır.",
+        "en": "A sepia engraving with walls on a mountainside, a tall minaret and a bridge by a river. A crowd of people and camels are in the foreground."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": []
 }

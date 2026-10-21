@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "hatay-yayladagi-senkoy-ahmet-kusayri-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-21",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Hatay – Camiler ve Mescitler",
     "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Şenköy Ahmet Kusayri Camii bölümünden (s. 326-333) (ana metin ve 'Cami' alt başlığı) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
-      "Fotoğraflar sonradan eklenecek; media boş, media_folder null.",
       "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
       "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
@@ -81,7 +80,14 @@
         "source_id": "vk-hatay",
         "pages": "329"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 36.046028,
+      "lng": 36.14498,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1142031721 ('Şeyh Ahmet Kuseyri Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -445,7 +451,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-senkoy-ahmet-kusayri-camii/p164-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "326-327"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin avlusu, şadırvanı ve minaresi",
+        "en": "The mosque courtyard, fountain and minaret"
+      },
+      "alt": {
+        "tr": "Taş döşeli avluda koyu çatılı bir şadırvan, sağda ahşap korkuluklu uzun revak ve arkada ince taş minare yükseliyor. Gökyüzü açık mavi, çevrede selvi ağaçları var.",
+        "en": "A stone-paved courtyard with a dark-roofed ablution fountain, a long arcade with wooden railings on the right and a slender stone minaret behind. The sky is clear blue and cypress trees stand nearby."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-senkoy-ahmet-kusayri-camii/p165-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "328-329"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Cami içi, mihrap ve minber",
+        "en": "Mosque interior, mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Sivri kemerlerin arasından görülen beyaz badanalı mekânda ortada taş bir mihrap, sağında yeşil örtülü ahşap minber, solunda vaaz kürsüsü var. İki yanda kemerli pencereler, tavandan sarkan bir avize görülüyor.",
+        "en": "Seen through pointed arches, a whitewashed hall with a stone mihrab in the centre, a wooden minbar with a green cover on its right and a lectern on its left. Arched windows flank the wall and a chandelier hangs from the ceiling."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-senkoy-ahmet-kusayri-camii/p166-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "330"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Caminin ahşap kapısı ve kitabesi",
+        "en": "The mosque's wooden door and inscription"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarda iki kanatlı, kasetli koyu ahşap bir kapı var. Kapının üstünde mermer bir söve ve en üstte siyah yazılı, dikdörtgen bir kitabe bulunuyor.",
+        "en": "A dark wooden double door with panels set in a cut-stone wall. Above it are a marble lintel and, at the top, a rectangular inscription panel with black lettering."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

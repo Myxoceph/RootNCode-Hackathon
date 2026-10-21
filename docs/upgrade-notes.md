@@ -7,7 +7,7 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
-## 2026-10-20 · Hayrat arayüzü, temalar ve yeni istemci paketleri
+## 2026-10-22 · Hayrat arayüzü, temalar ve yeni istemci paketleri
 
 Kimler: **istemci tarafında çalışan herkes** (Yiğit, Kübra)
 
@@ -23,6 +23,89 @@ Değişenler:
   `@vagabonds/ui`'nin `Text`, `Button`, `Card` bileşenlerini kullan.
 - Harita, rota, lezzet, ses kapsülü ve kamera ekranlarındaki içerik `apps/app/src/content/` altında
   **tasarım örnek içeriği**; gerçek veri geldikçe oradaki dosyalar değiştirilir.
+
+---
+
+## 2026-10-21 · Eser koordinatları
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- 472 eserin 216'sında artık koordinat var (Bursa 185, Hatay 31); harita ve `/assets/:id/nearby` dolu dönüyor.
+- Yeni noktaların hepsi `verified: false`. Kaynakları: fotoğraf EXIF'i, OpenStreetMap ya da bağlı olunan yapı (`data/tools/geocode.py`).
+- OSM'den gelen noktalar ODbL lisanslı: uygulamada "© OpenStreetMap katkıcıları" atfı gösterilmeli (Kübra).
+
+## 2026-10-21 · Hatay kayıtları yayında
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- 116 Hatay kaydı `published` oldu; API artık 472 eser döndürüyor (`/assets?city=hatay`).
+- Hatay kayıtlarının 109'unda kitaptan fotoğraf var (348 fotoğraf, sürümleri R2'de).
+- Koordinat henüz yok; Hatay eserleri haritada ve yakındaki eserlerde görünmez.
+
+## 2026-10-21 · Fotoğraflar R2'de
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Yeni manifesti veritabanına al:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- Kayıtlara bağlı 174 fotoğrafın sürümleri R2'de; API'nin döndürdüğü görsel adresleri artık açılıyor.
+- Orijinaller R2'ye yüklenmiyor, kaynağında kalıyor (Drive / kitap PDF'i). Ayrıntı: `data/README.md` §8.
+
+---
+
+## 2026-10-20 · Ziyaretçi Nabzı: anonim oturum, katkılar, moderasyon (sözleşme v0.2.2)
+
+Kimler: **herkes** (migration ve sözleşme paketi)
+
+1. Paketleri güncelle ve yeni migration'ı uygula (`app_user` tablosu):
+   ```bash
+   npm install
+   npm run db:deploy --workspace @vagabonds/api
+   ```
+2. Moderasyonu denemek istersen bir moderatör oluştur; token bir kez yazdırılır:
+   ```bash
+   npm run moderator:create --workspace @vagabonds/api -- "Adın"
+   ```
+
+Değişenler:
+- Yeni uçlar: `POST /auth/anonymous`, `GET /me`, `GET /me/contributions`, `POST /assets/:id/contributions`,
+  `GET /assets/:id/pulse` ve `/admin/...` moderasyon uçları. Ayrıntılar [`packages/contracts/README.md`](../packages/contracts/README.md)'de.
+- **Veri ekibi:** `import_to_db.py --verify` artık `contribution` satırlarını karşılaştırmıyor; bu satırları API yazıyor.
+  `app_user` tablosu içe aktarılmıyor (`data/README.md` §5'teki DDL'e eklendi).
+
+---
+
+## 2026-10-20 · API güvenliği: hız sınırı ve güvenlik başlıkları
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Yeni paketleri kur (`@fastify/rate-limit`, `@fastify/helmet`):
+   ```bash
+   npm install
+   ```
+2. İsteğe bağlı yeni ortam değişkenleri (`apps/api/.env`); varsayılanlar yeterli:
+   - `RATE_LIMIT_MAX`: IP başına dakikadaki istek sınırı (varsayılan 120, `0` kapatır).
+   - `TRUST_PROXY`: API bir proxy arkasındaysa proxy'nin adresleri ya da `uniquelocal`. Yerelde gerekmez.
+
+Değişenler:
+- Sınır aşılınca API `429` ve `{ error: { code: "RATE_LIMITED" } }` döner; `Retry-After` başlığı kaç saniye bekleneceğini söyler. İstemci bu hatayı ayrı gösterebilir.
+- İstek gövdesi 16 KB ile sınırlı.
 
 ---
 
