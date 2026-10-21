@@ -7,63 +7,158 @@ import type {
   InscriptionV2,
   SourceRef,
   TimelineEvent,
+  VisitorTipV2,
 } from "@vagabonds/contracts";
-import { radius, spacing, touchTarget, typography } from "@vagabonds/ui";
+import {
+  ConfidenceBadge,
+  fontFamily,
+  legendVerdictLabel,
+  radius,
+  SourceNote,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+} from "@vagabonds/ui";
 import { Link } from "expo-router";
-import type { ComponentProps, PropsWithChildren, ReactNode } from "react";
-import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { useState, type ComponentProps, type PropsWithChildren } from "react";
+import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from "react-native";
 
+import { toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
 import { AssetImage } from "@/components/asset-image";
-import { ConfidenceBadge, HeadingWithBadge, LegendBadge, SourceLine, SourceNote } from "@/components/provenance";
+import { BuildingIllustration } from "@/components/building-illustration";
+import { CAPSULE_SECONDS, captionAt, capsuleForAssetType, capsules, formatSeconds } from "@/content/capsules";
 import { useAssetRelations } from "@/data";
-import { languageProps, transliterationLanguage } from "@/lib/language";
-import { useColors } from "@/theme";
+import { transliterationLanguage } from "@/lib/language";
+import { useA11ySettings } from "@/settings/a11y-settings";
 
-const MAX_CONTENT_WIDTH = 720;
+type Tab = "story" | "tips" | "access";
+
+const tabs: Array<{ key: Tab; label: string }> = [
+  { key: "story", label: "Hikâye" },
+  { key: "tips", label: "Ziyaretçi Notları" },
+  { key: "access", label: "Ulaşım" },
+];
 
 /**
- * Read-only detail of one asset. Everything that is not certain carries a badge,
- * and every claim shows the book and pages it comes from.
+ * Eser kartı (modules 6 and 8). Physical access sits at the top. Visitor notes
+ * open first when there are any (field notes first, encyclopedia second);
+ * most records have none yet, so those open on the story.
+ *
+ * Everything that is not certain carries a confidence badge, and every claim
+ * shows the book and pages it comes from.
  */
 export function AssetDetailView({ asset }: { asset: AssetDetail }) {
-  const c = useColors();
-  const a11y = asset.accessibility;
+  const { colors: c } = useTheme();
+  const [tab, setTab] = useState<Tab>(asset.visitorTips.length > 0 ? "tips" : "story");
+  const meta = [asset.datingDisplay, asset.type.label, `${asset.district}, ${asset.city.label}`].filter(Boolean).join(" · ");
 
   return (
-    <ScrollView
-      style={{ backgroundColor: c.background }}
-      contentContainerStyle={styles.content}
-      contentInsetAdjustmentBehavior="automatic"
-    >
-      {asset.cover && <AssetImage media={asset.cover} style={styles.cover} />}
-
-      <View style={styles.intro}>
-        <Text accessibilityRole="header" style={[typography.title, { color: c.text }]}>
-          {asset.name}
-        </Text>
-        {asset.subtitle && <Text style={[typography.bodyLarge, { color: c.textSecondary }]}>{asset.subtitle}</Text>}
-        <Text style={[typography.label, { color: c.primary }]}>
-          {asset.type.label} · {asset.district}, {asset.city.label}
-        </Text>
+    <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={styles.content} contentInsetAdjustmentBehavior="automatic">
+      <View style={styles.hero}>
+        {/* The drawing stays underneath, so a photo that is missing or fails to load leaves it visible. */}
+        <BuildingIllustration mode="now" id={`hero-${asset.id}`} />
+        {asset.cover && <AssetImage media={asset.cover} style={styles.heroImage} />}
       </View>
 
-      <Body>{asset.summary}</Body>
+      <View style={styles.body}>
+        <View style={styles.intro}>
+          <Text variant="title" headingLevel={1}>
+            {asset.name}
+          </Text>
+          {asset.subtitle && <Text color="textSecondary">{asset.subtitle}</Text>}
+          <Text variant="caption" color="textSecondary" style={styles.mono}>
+            {meta}
+          </Text>
+        </View>
 
-      <Identity asset={asset} />
+        <View style={styles.access} accessibilityLabel="Fiziksel erişim" accessibilityRole="summary">
+          <AccessTile icon="trending-up-outline" title="Rampa" status={asset.accessibility.ramp} />
+          <AccessTile icon="walk-outline" title="Basamaksız giriş" status={asset.accessibility.stepFree} />
+        </View>
 
-      {a11y.audioDescription && (
+        <View accessibilityRole="tablist" style={[styles.tabs, { borderBottomColor: c.border }]}>
+          {tabs.map(({ key, label }) => {
+            const on = key === tab;
+            return (
+              <Pressable
+                key={key}
+                accessibilityRole="tab"
+                aria-selected={on}
+                onPress={() => setTab(key)}
+                style={[styles.tab, { borderBottomColor: on ? c.highlightMark : "transparent" }]}
+              >
+                <Text variant="label" color={on ? "text" : "textSecondary"}>
+                  {label}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </View>
+
+        <View style={styles.panel}>
+          {tab === "story" && <Story asset={asset} />}
+          {tab === "tips" && <Tips tips={asset.visitorTips} />}
+          {tab === "access" && <Access asset={asset} />}
+        </View>
+
+        <MiniPlayer typeCode={asset.type.code} />
+      </View>
+    </ScrollView>
+  );
+}
+
+const accessStatus: Record<AccessibilityStatus, { short: string; spoken: string }> = {
+  yes: { short: "Var", spoken: "var" },
+  partial: { short: "Kısmen", spoken: "kısmen var" },
+  no: { short: "Yok", spoken: "yok" },
+  // "unknown" means nobody has checked; it must never read as "accessible".
+  unknown: { short: "Bilgi yok", spoken: "bilgi yok" },
+};
+
+/** Says the state in words, so it never depends on the icon or its color alone. */
+function AccessTile({
+  icon,
+  title,
+  status,
+}: {
+  icon: ComponentProps<typeof Ionicons>["name"];
+  title: string;
+  status: AccessibilityStatus;
+}) {
+  const { colors: c } = useTheme();
+  const color = status === "yes" ? c.primary : status === "no" ? c.warning : c.textSecondary;
+  return (
+    <View
+      style={[styles.tile, { backgroundColor: c.surface, borderColor: c.border }]}
+      accessible
+      accessibilityLabel={`${title}: ${accessStatus[status].spoken}`}
+    >
+      <Ionicons name={icon} size={22} color={color} />
+      <Text variant="label">{accessStatus[status].short}</Text>
+      <Text variant="caption" color="textSecondary" style={styles.centerText}>
+        {title}
+      </Text>
+    </View>
+  );
+}
+
+function Story({ asset }: { asset: AssetDetail }) {
+  return (
+    <>
+      <Text>{asset.summary}</Text>
+      {asset.accessibility.audioDescription && (
         <Section title="Mekânı tanı">
-          <Body>{a11y.audioDescription}</Body>
+          <Text>{asset.accessibility.audioDescription}</Text>
         </Section>
       )}
-
+      <Identity asset={asset} />
       {asset.sections.map((section) => (
         <Section key={section.id} title={section.title ?? "Tarihçe"} confidence={section.confidence}>
-          <Body>{section.body}</Body>
+          <Text>{section.body}</Text>
           <SourceNote sources={section.sources} />
         </Section>
       ))}
-
       {asset.facts.length > 0 && (
         <Section title="Bilgiler">
           {asset.facts.map((fact) => (
@@ -71,7 +166,6 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
           ))}
         </Section>
       )}
-
       {asset.timeline.length > 0 && (
         <Section title="Zaman çizelgesi">
           {asset.timeline.map((event) => (
@@ -79,21 +173,26 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
           ))}
         </Section>
       )}
-
       {asset.legends.length > 0 && (
         <Section title="Rivayetler">
-          <Caption>Halk arasında anlatılanlar. Tarihî bilgi olarak değil, rivayet olarak okunmalı.</Caption>
+          <Text variant="caption" color="textSecondary">
+            Halk arasında anlatılanlar. Tarihî bilgi olarak değil, rivayet olarak okunmalı.
+          </Text>
           {asset.legends.map((legend) => (
             <Block key={legend.id}>
-              <Text style={[typography.label, { color: c.text }]}>{legend.title}</Text>
-              <LegendBadge verdict={legend.verdict} />
-              <Body>{legend.body}</Body>
+              <Text variant="label">{legend.title}</Text>
+              <View style={styles.row}>
+                <ConfidenceBadge confidence={{ code: "legend", label: "Rivayet" }} />
+                <Text variant="caption" color="textSecondary">
+                  {legendVerdictLabel[legend.verdict]}
+                </Text>
+              </View>
+              <Text>{legend.body}</Text>
               <SourceNote sources={legend.sources} />
             </Block>
           ))}
         </Section>
       )}
-
       {asset.inscriptions.length > 0 && (
         <Section title="Kitabeler">
           {asset.inscriptions.map((inscription) => (
@@ -101,49 +200,13 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
           ))}
         </Section>
       )}
-
-      <Section title="Erişim">
-        <AccessibilityRow label="Tekerlekli sandalye" status={a11y.wheelchair} />
-        <AccessibilityRow label="Basamaksız giriş" status={a11y.stepFree} />
-        <AccessibilityRow label="Rampa" status={a11y.ramp} />
-        <AccessibilityRow label="Engelli tuvaleti" status={a11y.toilet} />
-        {a11y.notes && <Body>{a11y.notes}</Body>}
-        {!a11y.verified && (
-          <Caption>Bu bilgiler yerinde doğrulanmadı. Gitmeden önce teyit etmeni öneririz.</Caption>
-        )}
-      </Section>
-
       <RelatedAssets id={asset.id} />
-
-      {asset.visitorTips.length > 0 && (
-        <Section title="Ziyaretçi notları">
-          {asset.visitorTips.map((tip, index) => (
-            <Body key={index}>{tip.text}</Body>
-          ))}
-        </Section>
-      )}
-
-      {asset.coordinates && (
-        <Section title="Konum">
-          {asset.address && <Body>{asset.address}</Body>}
-          <Text
-            style={[typography.data, { color: c.text }]}
-            accessibilityLabel={`Enlem ${asset.coordinates.lat}, boylam ${asset.coordinates.lng}`}
-          >
-            {formatCoordinate(asset.coordinates.lat, "K", "G")} · {formatCoordinate(asset.coordinates.lng, "D", "B")}
-          </Text>
-          {!asset.coordinates.verified && <Caption>Konum yaklaşık; yerinde doğrulanmadı.</Caption>}
-        </Section>
-      )}
-
       {asset.sources.length > 0 && (
         <Section title="Kaynakça">
-          {asset.sources.map((source) => (
-            <SourceLine key={source.sourceId} source={source} />
-          ))}
+          <SourceNote sources={asset.sources} />
         </Section>
       )}
-    </ScrollView>
+    </>
   );
 }
 
@@ -158,28 +221,36 @@ function Identity({ asset }: { asset: AssetDetail }) {
     <Section title="Künye">
       {dating?.display && (
         <IdentityRow label="Tarih" confidence={dating.confidence} sources={dating.sources}>
-          <Body>{dating.display}</Body>
-          {dating.basis && <Caption>{`Dayanak: ${dating.basis}`}</Caption>}
+          <Text>{dating.display}</Text>
+          {dating.basis && (
+            <Text variant="caption" color="textSecondary">{`Dayanak: ${dating.basis}`}</Text>
+          )}
         </IdentityRow>
       )}
       {founder && (
         <IdentityRow label="Banî" confidence={founder.confidence} sources={founder.sources}>
-          <Body>{founder.name}</Body>
+          <Text>{founder.name}</Text>
           {/* The row is already labelled "Banî"; only show a role that says something else. */}
-          {founder.role && founder.role.toLocaleLowerCase("tr") !== "banî" && <Caption>{founder.role}</Caption>}
+          {founder.role && founder.role.toLocaleLowerCase("tr") !== "banî" && (
+            <Text variant="caption" color="textSecondary">
+              {founder.role}
+            </Text>
+          )}
         </IdentityRow>
       )}
       {architect && (architectName || candidates.length > 0) && (
         <IdentityRow label="Mimar" confidence={architect.confidence} sources={architect.sources}>
           {architectName ? (
-            <Body>{architectName}</Body>
+            <Text>{architectName}</Text>
           ) : (
             <>
-              <Caption>Kesin olarak bilinmiyor. Kaynaklarda adı geçenler:</Caption>
+              <Text variant="caption" color="textSecondary">
+                Kesin olarak bilinmiyor. Kaynaklarda adı geçenler:
+              </Text>
               {candidates.map((candidate) => (
-                <Body key={candidate.name}>
+                <Text key={candidate.name}>
                   {candidate.note ? `• ${candidate.name} (${candidate.note})` : `• ${candidate.name}`}
-                </Body>
+                </Text>
               ))}
             </>
           )}
@@ -187,10 +258,14 @@ function Identity({ asset }: { asset: AssetDetail }) {
       )}
       {waqf?.name && (
         <IdentityRow label="Vakıf" confidence={waqf.confidence} sources={waqf.sources}>
-          <Body>{waqf.name}</Body>
-          {waqf.conditions && <Body>{`Vakfiye şartı: ${waqf.conditions}`}</Body>}
-          {waqf.deedExcerpt && <Body>{`Vakfiyeden: “${waqf.deedExcerpt}”`}</Body>}
-          {waqf.landNote && <Caption>{waqf.landNote}</Caption>}
+          <Text>{waqf.name}</Text>
+          {waqf.conditions && <Text>{`Vakfiye şartı: ${waqf.conditions}`}</Text>}
+          {waqf.deedExcerpt && <Text>{`Vakfiyeden: “${waqf.deedExcerpt}”`}</Text>}
+          {waqf.landNote && (
+            <Text variant="caption" color="textSecondary">
+              {waqf.landNote}
+            </Text>
+          )}
         </IdentityRow>
       )}
     </Section>
@@ -203,12 +278,13 @@ function IdentityRow({
   sources,
   children,
 }: PropsWithChildren<{ label: string; confidence: Confidence | null; sources: SourceRef[] }>) {
-  const c = useColors();
   return (
     <Block>
-      <View style={styles.labelRow}>
-        <Text style={[typography.label, { color: c.textSecondary }]}>{label}</Text>
-        <ConfidenceBadge confidence={confidence} />
+      <View style={styles.row}>
+        <Text variant="label" color="textSecondary">
+          {label}
+        </Text>
+        {confidence && <ConfidenceBadge confidence={confidence} />}
       </View>
       {children}
       <SourceNote sources={sources} />
@@ -217,42 +293,67 @@ function IdentityRow({
 }
 
 function FactRow({ fact }: { fact: AssetFact }) {
-  const c = useColors();
   const value = [fact.value, fact.unit].filter(Boolean).join(" ");
   return (
     <View style={styles.fact}>
-      <View style={styles.labelRow}>
-        <Text style={[typography.body, { color: c.textSecondary }]}>{fact.label}</Text>
-        {value !== "" && <Text style={[typography.label, { color: c.text }]}>{value}</Text>}
+      <View style={styles.row}>
+        <Text color="textSecondary">{fact.label}</Text>
+        {value !== "" && <Text variant="label">{value}</Text>}
         <ConfidenceBadge confidence={fact.confidence} />
       </View>
-      {fact.note && <Caption>{fact.note}</Caption>}
-      <SourceNote sources={fact.sources} compact />
+      {fact.note && (
+        <Text variant="caption" color="textSecondary">
+          {fact.note}
+        </Text>
+      )}
+      <SourceText sources={fact.sources} />
     </View>
   );
 }
 
 function TimelineRow({ event }: { event: TimelineEvent }) {
-  const c = useColors();
   const when = event.year !== null ? String(event.year) : (event.date ?? event.hijri ?? "");
   return (
     <View style={styles.timelineRow}>
-      <Text style={[typography.data, styles.year, { color: c.primary }]}>{when}</Text>
+      <Text variant="data" color="primary" style={styles.year}>
+        {when}
+      </Text>
       <View style={styles.timelineBody}>
-        <Text style={[typography.body, { color: c.text }]}>{event.title}</Text>
-        <View style={styles.labelRow}>
-          <Text style={[typography.caption, { color: c.textSecondary }]}>{event.type.label}</Text>
+        <Text>{event.title}</Text>
+        <View style={styles.row}>
+          <Text variant="caption" color="textSecondary">
+            {event.type.label}
+          </Text>
           <ConfidenceBadge confidence={event.confidence} />
         </View>
-        {event.note && <Caption>{event.note}</Caption>}
-        <SourceNote sources={event.sources} compact />
+        {event.note && (
+          <Text variant="caption" color="textSecondary">
+            {event.note}
+          </Text>
+        )}
+        <SourceText sources={event.sources} />
       </View>
     </View>
   );
 }
 
+/**
+ * The compact source line for long lists (facts, timeline, links): plain text
+ * without a 44pt link target on every row. The same books are linked in Kaynakça.
+ */
+function SourceText({ sources }: { sources: SourceRef[] }) {
+  if (sources.length === 0) return null;
+  const text = sources.map((s) => (s.pages ? `${s.title}, s. ${s.pages}` : s.title)).join("; ");
+  const spoken = sources.map((s) => (s.pages ? `${s.title}, sayfa ${s.pages}` : s.title)).join("; ");
+  return (
+    <Text variant="caption" color="textSecondary" accessibilityLabel={`Kaynak: ${spoken}`}>
+      {`Kaynak: ${text}`}
+    </Text>
+  );
+}
+
 function RelatedAssets({ id }: { id: string }) {
-  const c = useColors();
+  const { colors: c } = useTheme();
   const relations = useAssetRelations(id);
 
   // The detail is useful without its links, so a failed request only hides this section.
@@ -268,20 +369,32 @@ function RelatedAssets({ id }: { id: string }) {
             <View key={`${relation.asset.id}-${relation.type.code}`} style={styles.relation}>
               <Link href={{ pathname: "/monuments/[id]", params: { id: relation.asset.id } }} asChild>
                 <Pressable accessibilityRole="link" style={styles.relationLink}>
-                  <Text style={[typography.label, styles.link, { color: c.primary }]}>{relation.asset.name}</Text>
+                  <Text variant="label" color="primary" style={styles.underline}>
+                    {relation.asset.name}
+                  </Text>
                 </Pressable>
               </Link>
-              <View style={styles.labelRow}>
-                <Text style={[typography.caption, { color: c.textSecondary }]}>{relation.type.label}</Text>
+              <View style={styles.row}>
+                <Text variant="caption" color="textSecondary">
+                  {relation.type.label}
+                </Text>
                 <ConfidenceBadge confidence={relation.confidence} />
               </View>
-              <Caption>{relation.description}</Caption>
-              <SourceNote sources={relation.sources} />
+              <Text variant="caption" color="textSecondary">
+                {relation.description}
+              </Text>
+              <SourceText sources={relation.sources} />
             </View>
           ))}
-          {relations.data!.items.length === 0 && <Caption>Henüz yayında bağlantılı eser yok.</Caption>}
+          {relations.data!.items.length === 0 && (
+            <Text variant="caption" color="textSecondary">
+              Henüz yayında bağlantılı eser yok.
+            </Text>
+          )}
           {relations.data!.unavailableCount > 0 && (
-            <Caption>{`+${relations.data!.unavailableCount} bağlantılı eser yakında eklenecek.`}</Caption>
+            <Text variant="caption" color="textSecondary">
+              {`+${relations.data!.unavailableCount} bağlantılı eser yakında eklenecek.`}
+            </Text>
           )}
         </>
       )}
@@ -289,90 +402,180 @@ function RelatedAssets({ id }: { id: string }) {
   );
 }
 
+const tipOrigin: Record<VisitorTipV2["origin"], string> = {
+  field_visit: "Saha ziyareti",
+  visitor_reviews_summary: "Ziyaretçi yorumlarından özet",
+  official: "Resmî bilgi",
+};
+
+const tipAccents = ["warning", "highlight", "primary", "success"] as const;
+
+function Tips({ tips }: { tips: VisitorTipV2[] }) {
+  const { colors: c } = useTheme();
+  if (tips.length === 0) return <Text color="textSecondary">Bu eser için henüz ziyaretçi notu yok.</Text>;
+
+  return (
+    <View accessibilityRole="list" style={styles.tips}>
+      {tips.map((tip, i) => {
+        const accent = c[tipAccents[i % tipAccents.length] ?? "primary"];
+        const meta = [tipOrigin[tip.origin], tip.collectedAt && formatDate(tip.collectedAt)].filter(Boolean).join(" · ");
+        return (
+          <View key={i} style={[styles.tip, { backgroundColor: c.surface, borderColor: c.border }]}>
+            <View style={[styles.tipIcon, { backgroundColor: c.surfaceRaised }]}>
+              <Ionicons
+                name="chatbubble-ellipses-outline"
+                size={16}
+                color={accent}
+                accessibilityElementsHidden
+                importantForAccessibility="no"
+              />
+            </View>
+            <View style={styles.flex}>
+              <Text>{tip.text}</Text>
+              <Text variant="caption" color="textSecondary">
+                {meta}
+              </Text>
+            </View>
+          </View>
+        );
+      })}
+    </View>
+  );
+}
+
+function Access({ asset }: { asset: AssetDetail }) {
+  const { colors: c } = useTheme();
+  const a11y = asset.accessibility;
+  const coords = asset.coordinates;
+  const rows: Array<{ label: string; value: string; spoken?: string; mono?: boolean }> = [
+    ...(coords
+      ? [
+          {
+            label: "Konum",
+            value: `${formatCoordinate(coords.lat, "K", "G")} · ${formatCoordinate(coords.lng, "D", "B")}${coords.verified ? "" : " (yaklaşık)"}`,
+            spoken: `Enlem ${coords.lat}, boylam ${coords.lng}${coords.verified ? "" : ", yaklaşık"}`,
+            mono: true,
+          },
+        ]
+      : []),
+    ...(asset.address ? [{ label: "Adres", value: asset.address }] : []),
+    { label: "Tekerlekli sandalye", value: accessStatus[a11y.wheelchair].short },
+    { label: "Basamaksız giriş", value: accessStatus[a11y.stepFree].short },
+    { label: "Rampa", value: accessStatus[a11y.ramp].short },
+    { label: "Engelli tuvaleti", value: accessStatus[a11y.toilet].short },
+    ...(asset.visit.durationMin ? [{ label: "Ziyaret süresi", value: `yaklaşık ${asset.visit.durationMin} dk` }] : []),
+    ...(asset.visit.entranceFee ? [{ label: "Giriş ücreti", value: asset.visit.entranceFee }] : []),
+  ];
+
+  return (
+    <View style={styles.kv}>
+      {rows.map((row) => (
+        <View
+          key={row.label}
+          style={[styles.kvRow, { borderBottomColor: c.border }]}
+          accessible
+          accessibilityLabel={`${row.label}: ${row.spoken ?? row.value}`}
+        >
+          <Text variant="caption" color="textSecondary" style={styles.kvLabel}>
+            {row.label}
+          </Text>
+          <Text style={[styles.flex, row.mono && styles.mono]}>{row.value}</Text>
+        </View>
+      ))}
+      {a11y.notes && <Text>{a11y.notes}</Text>}
+      {asset.visit.notes && <Text>{asset.visit.notes}</Text>}
+      {!a11y.verified && (
+        <Text variant="caption" color="textSecondary">
+          Erişim bilgileri yerinde doğrulanmadı. Gitmeden önce teyit etmeni öneririz.
+        </Text>
+      )}
+    </View>
+  );
+}
+
+/** Plays the sound capsule that fits the building type; hidden when none fits yet. */
+function MiniPlayer({ typeCode }: { typeCode: string }) {
+  const { colors: c } = useTheme();
+  const { settings } = useA11ySettings();
+  const player = useCapsulePlayer();
+  const type = capsuleForAssetType[typeCode];
+  if (!type) return null;
+
+  const capsule = capsules[type];
+  const mine = player?.type === type ? player : null;
+  const line = mine
+    ? settings.captions
+      ? captionAt(type, mine.elapsed)
+      : `${formatSeconds(mine.elapsed)} / ${formatSeconds(CAPSULE_SECONDS)}`
+    : `${capsule.description} · ${formatSeconds(CAPSULE_SECONDS)}`;
+
+  return (
+    <View style={[styles.player, { backgroundColor: c.text }]}>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={mine ? "Durdur" : `${capsule.name} ses kapsülünü çal`}
+        onPress={() => toggleCapsule(type)}
+        style={[styles.playButton, { backgroundColor: c.highlightMark }]}
+      >
+        <Ionicons name={mine ? "pause" : "play"} size={16} color={c.onPrimary} />
+      </Pressable>
+      <View style={styles.flex}>
+        <Text variant="label" colorValue={c.background}>{`Zaman kapsülü · ${capsule.name}`}</Text>
+        <Text variant="caption" colorValue={c.background} accessibilityLiveRegion="polite">
+          {line}
+        </Text>
+      </View>
+    </View>
+  );
+}
+
+/** A section heading with the confidence badge beside it, wrapping under it on narrow screens. */
 function Section({ title, confidence = null, children }: PropsWithChildren<{ title: string; confidence?: Confidence | null }>) {
   return (
     <View style={styles.section}>
-      <HeadingWithBadge title={title} confidence={confidence} />
+      <View style={styles.row}>
+        <Text variant="heading" headingLevel={2}>
+          {title}
+        </Text>
+        {confidence && <ConfidenceBadge confidence={confidence} />}
+      </View>
       {children}
     </View>
   );
 }
 
-function Block({ children }: { children: ReactNode }) {
-  const c = useColors();
-  return <View style={[styles.block, { borderColor: c.border }]}>{children}</View>;
-}
-
-/** `lang`: BCP 47 tag when the text is not Turkish, so screen readers switch voice. */
-function Body({ children, lang }: { children: string; lang?: string }) {
-  const c = useColors();
-  return (
-    <Text style={[typography.body, { color: c.text }]} {...languageProps(lang)}>
-      {children}
-    </Text>
-  );
-}
-
-function Caption({ children }: { children: string }) {
-  const c = useColors();
-  return <Text style={[typography.caption, { color: c.textSecondary }]}>{children}</Text>;
-}
-
-const accessibilityStatus: Record<
-  AccessibilityStatus,
-  { label: string; icon: ComponentProps<typeof Ionicons>["name"] }
-> = {
-  yes: { label: "var", icon: "checkmark-circle" },
-  partial: { label: "kısmen", icon: "remove-circle" },
-  no: { label: "yok", icon: "close-circle" },
-  // "unknown" means nobody has checked; it must never read as "accessible".
-  unknown: { label: "bilgi yok", icon: "help-circle" },
-};
-
-/** Says the state in words, so it never depends on the icon or its color alone. */
-function AccessibilityRow({ label, status }: { label: string; status: AccessibilityStatus }) {
-  const c = useColors();
-  const { label: statusLabel, icon } = accessibilityStatus[status];
-  return (
-    <View style={styles.row}>
-      <Ionicons
-        name={icon}
-        size={24}
-        color={status === "yes" ? c.primary : c.textSecondary}
-        accessibilityElementsHidden
-        importantForAccessibility="no"
-      />
-      <Text style={[typography.body, { color: c.text }]}>
-        {label}: {statusLabel}
-      </Text>
-    </View>
-  );
+function Block({ children }: PropsWithChildren) {
+  const { colors: c } = useTheme();
+  return <View style={[styles.block, { borderColor: c.border, backgroundColor: c.surface }]}>{children}</View>;
 }
 
 function InscriptionBlock({ inscription }: { inscription: InscriptionV2 }) {
-  const c = useColors();
   const fields = [
     {
       label: "Transkripsiyon",
       value: inscription.transliteration,
-      lang: transliterationLanguage(inscription.language),
+      language: transliterationLanguage(inscription.language),
     },
-    { label: "Günümüz Türkçesi", value: inscription.translation, lang: undefined },
-    { label: "Not", value: inscription.note, lang: undefined },
+    { label: "Günümüz Türkçesi", value: inscription.translation, language: undefined },
+    { label: "Not", value: inscription.note, language: undefined },
   ];
-  const date = [inscription.hijriYear && `H. ${inscription.hijriYear}`, inscription.gregorian]
-    .filter(Boolean)
-    .join(" / ");
+  const date = [inscription.hijriYear && `H. ${inscription.hijriYear}`, inscription.gregorian].filter(Boolean).join(" / ");
 
   return (
     <Block>
-      {inscription.location && <Text style={[typography.label, { color: c.text }]}>{inscription.location}</Text>}
-      {date !== "" && <Text style={[typography.data, { color: c.textSecondary }]}>{date}</Text>}
-      {fields.map(({ label, value, lang }) =>
+      {inscription.location && <Text variant="label">{inscription.location}</Text>}
+      {date !== "" && (
+        <Text variant="data" color="textSecondary">
+          {date}
+        </Text>
+      )}
+      {fields.map(({ label, value, language }) =>
         value === null ? null : (
           <View key={label} style={styles.field}>
-            <Text style={[typography.label, { color: c.textSecondary }]}>{label}</Text>
-            <Body lang={lang}>{value}</Body>
+            <Text variant="label" color="textSecondary">
+              {label}
+            </Text>
+            <Text language={language}>{value}</Text>
           </View>
         ),
       )}
@@ -381,24 +584,85 @@ function InscriptionBlock({ inscription }: { inscription: InscriptionV2 }) {
   );
 }
 
+function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
+}
+
 function formatCoordinate(value: number, positive: string, negative: string): string {
   return `${Math.abs(value).toFixed(4)}° ${value >= 0 ? positive : negative}`;
 }
 
 const styles = StyleSheet.create({
   content: {
-    width: "100%",
-    maxWidth: MAX_CONTENT_WIDTH,
-    alignSelf: "center",
-    padding: spacing.lg,
-    gap: spacing.xl,
+    paddingBottom: spacing.xxl,
   },
-  cover: {
-    borderRadius: radius.lg,
-    maxHeight: 420,
+  hero: {
+    height: 220,
+    overflow: "hidden",
+  },
+  heroImage: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: "100%",
+    // The hero has a fixed height; the photo is cropped to it around its focal point.
+    aspectRatio: undefined,
+  },
+  body: {
+    padding: spacing.lg,
+    gap: spacing.md,
+    maxWidth: 720,
+    width: "100%",
+    alignSelf: "center",
   },
   intro: {
     gap: spacing.xs,
+  },
+  flex: {
+    flex: 1,
+  },
+  mono: {
+    fontFamily: fontFamily.mono,
+  },
+  centerText: {
+    textAlign: "center",
+  },
+  underline: {
+    textDecorationLine: "underline",
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: spacing.sm,
+  },
+  access: {
+    flexDirection: "row",
+    gap: spacing.sm,
+  },
+  tile: {
+    flex: 1,
+    alignItems: "center",
+    gap: spacing.xxs,
+    padding: spacing.sm,
+    borderRadius: radius.lg,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
+  tabs: {
+    flexDirection: "row",
+    gap: spacing.md,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  tab: {
+    minHeight: touchTarget.min,
+    justifyContent: "center",
+    borderBottomWidth: 2,
+    marginBottom: -StyleSheet.hairlineWidth,
+  },
+  panel: {
+    gap: spacing.lg,
   },
   section: {
     gap: spacing.sm,
@@ -406,19 +670,8 @@ const styles = StyleSheet.create({
   block: {
     gap: spacing.sm,
     padding: spacing.md,
-    borderRadius: radius.md,
+    borderRadius: radius.lg,
     borderWidth: StyleSheet.hairlineWidth,
-  },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-  },
-  labelRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    gap: spacing.sm,
   },
   fact: {
     gap: spacing.xxs,
@@ -441,8 +694,48 @@ const styles = StyleSheet.create({
     minHeight: touchTarget.min,
     justifyContent: "center",
   },
-  link: {
-    textDecorationLine: "underline",
+  tips: {
+    gap: spacing.sm,
+  },
+  tip: {
+    flexDirection: "row",
+    gap: spacing.sm,
+    padding: spacing.md,
+    borderRadius: radius.lg,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
+  tipIcon: {
+    width: 30,
+    height: 30,
+    borderRadius: radius.md,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  kv: {
+    gap: spacing.sm,
+  },
+  kvRow: {
+    flexDirection: "row",
+    gap: spacing.sm,
+    paddingBottom: spacing.sm,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  kvLabel: {
+    width: 128,
+  },
+  player: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.md,
+    borderRadius: radius.xl,
+  },
+  playButton: {
+    width: touchTarget.min,
+    height: touchTarget.min,
+    borderRadius: touchTarget.min / 2,
+    alignItems: "center",
+    justifyContent: "center",
   },
   field: {
     gap: spacing.xxs,

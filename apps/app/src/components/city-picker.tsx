@@ -1,5 +1,5 @@
-import { radius, spacing, touchTarget, typography } from "@vagabonds/ui";
-import { Pressable, ScrollView, StyleSheet, Text } from "react-native";
+import { radius, spacing, Text, touchTarget } from "@vagabonds/ui";
+import { Pressable, ScrollView, StyleSheet } from "react-native";
 
 import type { CityOption } from "@/data";
 import { useColors } from "@/theme";
@@ -55,8 +55,8 @@ function Chip({ label, count, selected, onPress }: { label: string; count: numbe
         { borderColor: selected ? c.primary : c.border, backgroundColor: selected ? c.primary : c.surface },
       ]}
     >
-      <Text style={[typography.label, { color: selected ? c.onPrimary : c.text }]}>
-        {label} · {count}
+      <Text variant="label" color={selected ? "onPrimary" : "text"}>
+        {`${label} · ${count}`}
       </Text>
     </Pressable>
   );

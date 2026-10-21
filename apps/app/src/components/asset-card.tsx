@@ -1,46 +1,48 @@
 import type { AssetSummary } from "@vagabonds/contracts";
-import { radius, spacing, touchTarget, typography } from "@vagabonds/ui";
+import { Card, fontFamily, spacing, Text, touchTarget } from "@vagabonds/ui";
 import { Link } from "expo-router";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 
 import { AssetImage } from "@/components/asset-image";
-import { useColors } from "@/theme";
 
 /**
  * One asset in the list. A real link (an `<a href>` on the web), so it can be
- * opened in a new tab or shared. Moves to the design system's `Card` once K5 lands.
+ * opened in a new tab or shared; announced once, as one link.
  */
 export function AssetCard({ asset }: { asset: AssetSummary }) {
-  const c = useColors();
   const meta = `${asset.type.label} · ${asset.district}, ${asset.city.label}`;
   const label = [asset.name, meta, asset.datingDisplay].filter(Boolean).join(", ");
 
   return (
     <Link href={{ pathname: "/monuments/[id]", params: { id: asset.id } }} asChild>
-      <Pressable
-        accessibilityRole="link"
-        accessibilityLabel={label}
-        // `Link asChild` needs one flat style object: it rejects arrays and drops function styles.
-        style={StyleSheet.flatten([styles.card, { backgroundColor: c.surface, borderColor: c.border }])}
-      >
-        {asset.cover && <AssetImage media={asset.cover} decorative style={styles.cover} />}
-        <View style={styles.body}>
-          <Text style={[typography.heading, { color: c.text }]}>{asset.name}</Text>
-          <Text style={[typography.label, { color: c.primary }]}>{meta}</Text>
-          {asset.datingDisplay && (
-            <Text style={[typography.caption, { color: c.textSecondary }]}>{asset.datingDisplay}</Text>
-          )}
-        </View>
+      <Pressable accessibilityRole="link" accessibilityLabel={label} style={styles.pressable}>
+        <Card style={styles.card}>
+          {asset.cover && <AssetImage media={asset.cover} decorative style={styles.cover} />}
+          <View style={styles.body}>
+            <Text variant="heading">{asset.name}</Text>
+            <Text variant="label" color="primary">
+              {meta}
+            </Text>
+            {asset.datingDisplay && (
+              <Text variant="caption" color="textSecondary" style={styles.mono}>
+                {asset.datingDisplay}
+              </Text>
+            )}
+          </View>
+        </Card>
       </Pressable>
     </Link>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
+  pressable: {
     minHeight: touchTarget.min,
-    borderRadius: radius.lg,
-    borderWidth: StyleSheet.hairlineWidth,
+  },
+  card: {
+    // The photo runs edge to edge; the text keeps the card's padding.
+    padding: 0,
+    gap: 0,
     overflow: "hidden",
   },
   cover: {
@@ -50,5 +52,8 @@ const styles = StyleSheet.create({
   body: {
     padding: spacing.lg,
     gap: spacing.xs,
+  },
+  mono: {
+    fontFamily: fontFamily.mono,
   },
 });

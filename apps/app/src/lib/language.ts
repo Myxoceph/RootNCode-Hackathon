@@ -12,13 +12,3 @@ const transliterationTags: Record<string, string> = {
 export function transliterationLanguage(language: string): string | undefined {
   return transliterationTags[language];
 }
-
-/**
- * Props that mark a text's language for screen readers (WCAG 3.1.2):
- * `accessibilityLanguage` on iOS, the `lang` attribute on the web. Android has no
- * per-text language in React Native, so TalkBack keeps the system language there.
- */
-export function languageProps(tag: string | undefined): object {
-  // react-native-web forwards `lang` to the DOM; React Native's types do not list it.
-  return tag ? { accessibilityLanguage: tag, lang: tag } : {};
-}

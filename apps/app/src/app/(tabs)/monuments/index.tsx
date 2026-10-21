@@ -1,29 +1,19 @@
-import { radius, spacing, touchTarget, typography } from "@vagabonds/ui";
+import { Button, spacing, Text, useTheme } from "@vagabonds/ui";
 import { router, useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
 import { useEffect } from "react";
-import {
-  AccessibilityInfo,
-  ActivityIndicator,
-  FlatList,
-  Platform,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { AccessibilityInfo, ActivityIndicator, FlatList, Platform, StyleSheet, View } from "react-native";
 
 import { AssetCard } from "@/components/asset-card";
 import { CityPicker } from "@/components/city-picker";
 import { ResourceView } from "@/components/resource-view";
 import { useAssetList, useCities, type AssetListPage } from "@/data";
-import { useColors } from "@/theme";
 
 /** Content column width; on a wide screen the cards stay readable instead of stretching. */
 const MAX_CONTENT_WIDTH = 720;
 
 export default function MonumentsScreen() {
-  const c = useColors();
+  const { colors: c } = useTheme();
   // The city lives in the URL (/monuments?city=bursa), so a filtered list can be shared.
   const { city } = useLocalSearchParams<{ city?: string }>();
   const cities = useCities();
@@ -54,10 +44,7 @@ export default function MonumentsScreen() {
         </View>
       )}
       <View style={styles.column}>
-        <Text
-          accessibilityLiveRegion="polite"
-          style={[typography.body, styles.status, { color: c.textSecondary }]}
-        >
+        <Text color="textSecondary" accessibilityLiveRegion="polite" style={styles.status}>
           {status}
         </Text>
       </View>
@@ -71,9 +58,7 @@ export default function MonumentsScreen() {
             contentInsetAdjustmentBehavior="automatic"
             onEndReached={page.loadMore}
             onEndReachedThreshold={0.5}
-            ListEmptyComponent={
-              <Text style={[typography.body, { color: c.textSecondary }]}>Henüz gösterilecek eser yok.</Text>
-            }
+            ListEmptyComponent={<Text color="textSecondary">Henüz gösterilecek eser yok.</Text>}
             ListFooterComponent={<ListFooter page={page} />}
             renderItem={({ item }) => <AssetCard asset={item} />}
           />
@@ -84,7 +69,7 @@ export default function MonumentsScreen() {
 }
 
 function ListFooter({ page }: { page: AssetListPage }) {
-  const c = useColors();
+  const { colors: c } = useTheme();
 
   if (page.loadingMore) {
     return <ActivityIndicator color={c.primary} accessibilityLabel="Daha fazla eser yükleniyor" style={styles.footer} />;
@@ -92,20 +77,16 @@ function ListFooter({ page }: { page: AssetListPage }) {
   if (page.moreError) {
     return (
       <View style={[styles.footer, styles.footerError]} accessibilityRole="alert">
-        <Text style={[typography.body, { color: c.textSecondary }]}>{page.moreError.message}</Text>
-        <Pressable
-          accessibilityRole="button"
-          onPress={page.loadMore}
-          style={[styles.button, { borderColor: c.primary }]}
-        >
-          <Text style={[typography.label, { color: c.primary }]}>Daha fazla yükle</Text>
-        </Pressable>
+        <Text color="textSecondary">{page.moreError.message}</Text>
+        <Button label="Daha fazla yükle" variant="ghost" onPress={page.loadMore} />
       </View>
     );
   }
   if (page.items.length > 0 && page.items.length >= page.total) {
     return (
-      <Text style={[typography.caption, styles.footer, { color: c.textSecondary }]}>Tüm eserler gösterildi.</Text>
+      <Text variant="caption" color="textSecondary" style={[styles.footer, styles.centerText]}>
+        Tüm eserler gösterildi.
+      </Text>
     );
   }
   return null;
@@ -132,18 +113,12 @@ const styles = StyleSheet.create({
   },
   footer: {
     paddingVertical: spacing.xl,
-    textAlign: "center",
   },
   footerError: {
     alignItems: "center",
     gap: spacing.md,
   },
-  button: {
-    minHeight: touchTarget.min,
-    paddingHorizontal: spacing.xl,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    alignItems: "center",
-    justifyContent: "center",
+  centerText: {
+    textAlign: "center",
   },
 });

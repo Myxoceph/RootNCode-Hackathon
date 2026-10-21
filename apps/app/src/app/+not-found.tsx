@@ -13,7 +13,7 @@ export default function NotFoundScreen() {
       description="Aradığın sayfa taşınmış ya da hiç var olmamış olabilir."
     >
       <Link href="/" style={[styles.link, { color: c.primary }]}>
-        Keşfet'e dön
+        Haritaya dön
       </Link>
     </ScreenPlaceholder>
   );
