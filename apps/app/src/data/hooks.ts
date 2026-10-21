@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { dataSource } from "./active-source";
 import { DataError } from "./errors";
+import type { CityOption } from "./source";
 
 /** Content language. Fixed to Turkish until the language setting lands (Ayarlar). */
 const LANG: Lang = "tr";
@@ -52,6 +53,11 @@ export function useAssetRelations(id: string): ResourceWithRetry<AssetRelationsR
   return useResource(load);
 }
 
+export function useCities(): ResourceWithRetry<CityOption[]> {
+  const load = useCallback(() => dataSource.listCities(LANG), []);
+  return useResource(load);
+}
+
 export interface AssetListPage {
   items: AssetSummary[];
   total: number;
@@ -70,6 +76,9 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
   const [loadingMore, setLoadingMore] = useState(false);
   const [moreError, setMoreError] = useState<DataError | null>(null);
   const busy = useRef(false);
+  // A page that arrives after the city changed belongs to the old list and is dropped.
+  const currentCity = useRef(city);
+  currentCity.current = city;
 
   // The first page goes through useResource for the loading and error screens.
   const loadFirst = useCallback(async () => {
@@ -90,10 +99,11 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
       .listAssets({ city, limit: PAGE_SIZE, offset: items.length }, LANG)
       .then(
         (page) => {
+          if (currentCity.current !== city) return;
           setItems((current) => [...current, ...page.items]);
           setTotal(page.total);
         },
-        (error: unknown) => setMoreError(toDataError(error)),
+        (error: unknown) => currentCity.current === city && setMoreError(toDataError(error)),
       )
       .finally(() => {
         busy.current = false;

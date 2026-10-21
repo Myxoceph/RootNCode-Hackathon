@@ -5,6 +5,13 @@ import type {
   Lang,
 } from "@vagabonds/contracts";
 
+/** A city that has published assets, for the list filter. */
+export interface CityOption {
+  code: string;
+  label: string;
+  assetCount: number;
+}
+
 export interface AssetListQuery {
   /** City code from `/meta/enums`, e.g. `bursa`. */
   city?: string;
@@ -25,4 +32,6 @@ export interface DataSource {
   getAsset(id: string, lang: Lang): Promise<AssetDetail | null>;
   /** Resolves to `null` when no published asset has this id. */
   getRelations(id: string, lang: Lang): Promise<AssetRelationsResponse | null>;
+  /** Cities with at least one published asset, in the API's order. */
+  listCities(lang: Lang): Promise<CityOption[]>;
 }

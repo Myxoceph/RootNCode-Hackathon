@@ -1,10 +1,12 @@
 import { radius, spacing, touchTarget, typography } from "@vagabonds/ui";
+import { router, useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
 import { ActivityIndicator, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { AssetCard } from "@/components/asset-card";
+import { CityPicker } from "@/components/city-picker";
 import { ResourceView } from "@/components/resource-view";
-import { useAssetList, type AssetListPage } from "@/data";
+import { useAssetList, useCities, type AssetListPage } from "@/data";
 import { useColors } from "@/theme";
 
 /** Content column width; on a wide screen the cards stay readable instead of stretching. */
@@ -12,13 +14,23 @@ const MAX_CONTENT_WIDTH = 720;
 
 export default function MonumentsScreen() {
   const c = useColors();
-  const list = useAssetList();
+  // The city lives in the URL (/monuments?city=bursa), so a filtered list can be shared.
+  const { city } = useLocalSearchParams<{ city?: string }>();
+  const cities = useCities();
+  const list = useAssetList(city);
+  const cityLabel = cities.status === "success" ? cities.data.find((x) => x.code === city)?.label : undefined;
 
   return (
-    <>
+    <View style={[styles.screen, { backgroundColor: c.background }]}>
       <Head>
-        <title>Eserler · Vagabonds</title>
+        <title>{cityLabel ? `${cityLabel} eserleri · Vagabonds` : "Eserler · Vagabonds"}</title>
       </Head>
+      {/* Without the city list the picker is left out; the asset list still works. */}
+      {cities.status === "success" && cities.data.length > 1 && (
+        <View style={styles.column}>
+          <CityPicker cities={cities.data} selected={city} onSelect={(code) => router.setParams({ city: code })} />
+        </View>
+      )}
       <ResourceView resource={list}>
         {(page) => (
           <FlatList
@@ -40,7 +52,7 @@ export default function MonumentsScreen() {
           />
         )}
       </ResourceView>
-    </>
+    </View>
   );
 }
 
@@ -73,6 +85,14 @@ function ListFooter({ page }: { page: AssetListPage }) {
 }
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
+  column: {
+    width: "100%",
+    maxWidth: MAX_CONTENT_WIDTH,
+    alignSelf: "center",
+  },
   list: {
     width: "100%",
     maxWidth: MAX_CONTENT_WIDTH,

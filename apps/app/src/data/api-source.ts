@@ -2,6 +2,7 @@ import {
   AssetDetailSchema,
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
+  MetaEnumsResponseSchema,
 } from "@vagabonds/contracts";
 
 import { DataError, type SchemaParser } from "./errors";
@@ -70,6 +71,12 @@ export function createApiSource(baseUrl: string): DataSource {
       return request(`/assets/${encodeURIComponent(id)}/relations?lang=${lang}`, AssetRelationsResponseSchema, {
         allowNotFound: true,
       });
+    },
+    async listCities(lang) {
+      const enums = (await request(`/meta/enums?lang=${lang}`, MetaEnumsResponseSchema))!;
+      return enums.cities
+        .filter((city) => city.assetCount > 0)
+        .map(({ code, label, assetCount }) => ({ code, label, assetCount }));
     },
   };
 }

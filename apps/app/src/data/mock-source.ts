@@ -68,5 +68,14 @@ export function createMockSource(load: () => Promise<MockFixtures> = loadBundled
       }
       return parsedRelations.get(id)!;
     },
+    async listCities() {
+      // The fixtures have no /meta/enums snapshot; the list's own cities are enough offline.
+      parsedList ??= parse((await getFixtures()).list, AssetListResponseSchema, "Örnek eser listesi");
+      const counts = new Map<string, { label: string; count: number }>();
+      for (const { city } of parsedList.items) {
+        counts.set(city.code, { label: city.label, count: (counts.get(city.code)?.count ?? 0) + 1 });
+      }
+      return [...counts].map(([code, { label, count }]) => ({ code, label, assetCount: count }));
+    },
   };
 }
