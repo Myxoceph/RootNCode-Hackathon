@@ -1,4 +1,3 @@
-
 /**
  * Sound capsules: 24-second ambiences, one per former use of a building.
  * Sample content (see ./README.md). On the web the sound is synthesized live;
@@ -62,15 +61,14 @@ export const capsules: Record<CapsuleType, Capsule> = {
 export const capsuleTypes = Object.keys(capsules) as CapsuleType[];
 
 /**
- * The capsule an asset card plays, by asset type code (`type.code` in `/assets`,
- * `asset_types` in data/enums.json). Types without a fitting capsule yet play none.
+ * The capsule an asset card plays, by its ambient sound key (`ambientSound.key` in
+ * `/assets/:id`). The API resolves the key from the asset or its type's default
+ * (`ambient_sound` in data/enums.json). Keys without a capsule yet play none.
  */
-export const capsuleForAssetType: Partial<Record<string, CapsuleType>> = {
+export const capsuleForSoundKey: Partial<Record<string, CapsuleType>> = {
   medrese: "medrese",
   hamam: "hamam",
   han: "kervan",
-  kervansaray: "kervan",
-  bedesten: "kervan",
   darussifa: "sifahane",
 };
 

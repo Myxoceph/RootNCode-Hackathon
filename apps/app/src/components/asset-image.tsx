@@ -10,6 +10,8 @@ interface AssetImageProps {
    */
   decorative?: boolean;
   style?: StyleProp<ImageStyle>;
+  /** Called when no variant loads (offline, missing file). */
+  onError?: () => void;
 }
 
 /**
@@ -17,7 +19,7 @@ interface AssetImageProps {
  * dominant color, then the blurred preview, so the layout never jumps while it loads.
  * expo-image picks the smallest variant that covers the rendered size.
  */
-export function AssetImage({ media, decorative = false, style }: AssetImageProps) {
+export function AssetImage({ media, decorative = false, style, onError }: AssetImageProps) {
   const sources = (media.sources.webp.length > 0 ? media.sources.webp : media.sources.jpg).map((s) => ({
     uri: s.url,
     width: s.width,
@@ -32,6 +34,7 @@ export function AssetImage({ media, decorative = false, style }: AssetImageProps
       contentFit="cover"
       contentPosition={focal ? { left: `${focal.x * 100}%`, top: `${focal.y * 100}%` } : "center"}
       transition={200}
+      onError={onError}
       accessible={!decorative}
       // Read by screen readers on native; the `alt` attribute on the web.
       alt={decorative ? "" : media.alt}

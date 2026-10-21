@@ -2,6 +2,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   AccessibilityStatus,
   AssetDetail,
+  AssetRelationsResponse,
   AssetFact,
   Confidence,
   InscriptionV2,
@@ -27,8 +28,8 @@ import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from "reac
 import { toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
 import { AssetImage } from "@/components/asset-image";
 import { BuildingIllustration } from "@/components/building-illustration";
-import { CAPSULE_SECONDS, captionAt, capsuleForAssetType, capsules, formatSeconds } from "@/content/capsules";
-import { useAssetRelations } from "@/data";
+import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds } from "@/content/capsules";
+import { useAssetRelations, type ResourceWithRetry } from "@/data";
 import { transliterationLanguage } from "@/lib/language";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -51,14 +52,19 @@ const tabs: Array<{ key: Tab; label: string }> = [
 export function AssetDetailView({ asset }: { asset: AssetDetail }) {
   const { colors: c } = useTheme();
   const [tab, setTab] = useState<Tab>(asset.visitorTips.length > 0 ? "tips" : "story");
+  const [coverFailed, setCoverFailed] = useState(false);
+  // Fetched here, not in the story tab, so switching tabs does not refetch or lose it.
+  const relations = useAssetRelations(asset.id);
   const meta = [asset.datingDisplay, asset.type.label, `${asset.district}, ${asset.city.label}`].filter(Boolean).join(" · ");
 
   return (
     <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={styles.content} contentInsetAdjustmentBehavior="automatic">
       <View style={styles.hero}>
-        {/* The drawing stays underneath, so a photo that is missing or fails to load leaves it visible. */}
+        {/* The drawing stays underneath; a photo that is missing or fails to load is removed, so it shows. */}
         <BuildingIllustration mode="now" id={`hero-${asset.id}`} />
-        {asset.cover && <AssetImage media={asset.cover} style={styles.heroImage} />}
+        {asset.cover && !coverFailed && (
+          <AssetImage media={asset.cover} style={styles.heroImage} onError={() => setCoverFailed(true)} />
+        )}
       </View>
 
       <View style={styles.body}>
@@ -83,6 +89,7 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
             return (
               <Pressable
                 key={key}
+                nativeID={`tab-${key}`}
                 accessibilityRole="tab"
                 aria-selected={on}
                 onPress={() => setTab(key)}
@@ -96,13 +103,13 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
           })}
         </View>
 
-        <View style={styles.panel}>
-          {tab === "story" && <Story asset={asset} />}
+        <View role="tabpanel" aria-labelledby={`tab-${tab}`} style={styles.panel}>
+          {tab === "story" && <Story asset={asset} relations={relations} />}
           {tab === "tips" && <Tips tips={asset.visitorTips} />}
           {tab === "access" && <Access asset={asset} />}
         </View>
 
-        <MiniPlayer typeCode={asset.type.code} />
+        <MiniPlayer soundKey={asset.ambientSound?.key ?? null} />
       </View>
     </ScrollView>
   );
@@ -143,7 +150,7 @@ function AccessTile({
   );
 }
 
-function Story({ asset }: { asset: AssetDetail }) {
+function Story({ asset, relations }: { asset: AssetDetail; relations: ResourceWithRetry<AssetRelationsResponse | null> }) {
   return (
     <>
       <Text>{asset.summary}</Text>
@@ -200,7 +207,7 @@ function Story({ asset }: { asset: AssetDetail }) {
           ))}
         </Section>
       )}
-      <RelatedAssets id={asset.id} />
+      <RelatedAssets relations={relations} />
       {asset.sources.length > 0 && (
         <Section title="Kaynakça">
           <SourceNote sources={asset.sources} />
@@ -352,9 +359,8 @@ function SourceText({ sources }: { sources: SourceRef[] }) {
   );
 }
 
-function RelatedAssets({ id }: { id: string }) {
+function RelatedAssets({ relations }: { relations: ResourceWithRetry<AssetRelationsResponse | null> }) {
   const { colors: c } = useTheme();
-  const relations = useAssetRelations(id);
 
   // The detail is useful without its links, so a failed request only hides this section.
   if (relations.status === "error" || (relations.status === "success" && relations.data === null)) return null;
@@ -420,7 +426,7 @@ function Tips({ tips }: { tips: VisitorTipV2[] }) {
         const accent = c[tipAccents[i % tipAccents.length] ?? "primary"];
         const meta = [tipOrigin[tip.origin], tip.collectedAt && formatDate(tip.collectedAt)].filter(Boolean).join(" · ");
         return (
-          <View key={i} style={[styles.tip, { backgroundColor: c.surface, borderColor: c.border }]}>
+          <View key={`${tip.origin}-${tip.text}`} style={[styles.tip, { backgroundColor: c.surface, borderColor: c.border }]}>
             <View style={[styles.tipIcon, { backgroundColor: c.surfaceRaised }]}>
               <Ionicons
                 name="chatbubble-ellipses-outline"
@@ -493,12 +499,12 @@ function Access({ asset }: { asset: AssetDetail }) {
   );
 }
 
-/** Plays the sound capsule that fits the building type; hidden when none fits yet. */
-function MiniPlayer({ typeCode }: { typeCode: string }) {
+/** Plays the sound capsule for the asset's ambient sound; hidden when none fits yet. */
+function MiniPlayer({ soundKey }: { soundKey: string | null }) {
   const { colors: c } = useTheme();
   const { settings } = useA11ySettings();
   const player = useCapsulePlayer();
-  const type = capsuleForAssetType[typeCode];
+  const type = soundKey ? capsuleForSoundKey[soundKey] : undefined;
   if (!type) return null;
 
   const capsule = capsules[type];
@@ -521,7 +527,12 @@ function MiniPlayer({ typeCode }: { typeCode: string }) {
       </Pressable>
       <View style={styles.flex}>
         <Text variant="label" colorValue={c.background}>{`Zaman kapsülü · ${capsule.name}`}</Text>
-        <Text variant="caption" colorValue={c.background} accessibilityLiveRegion="polite">
+        {/* Only captions are announced; a counter that ticks every second would talk over everything. */}
+        <Text
+          variant="caption"
+          colorValue={c.background}
+          accessibilityLiveRegion={mine && settings.captions ? "polite" : "none"}
+        >
           {line}
         </Text>
       </View>
@@ -584,8 +595,9 @@ function InscriptionBlock({ inscription }: { inscription: InscriptionV2 }) {
   );
 }
 
+/** `iso` is a date without a time ("2025-06-01"); read as UTC so it never shifts a day west of Greenwich. */
 function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
+  return new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 }
 
 function formatCoordinate(value: number, positive: string, negative: string): string {
