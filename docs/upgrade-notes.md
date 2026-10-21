@@ -7,6 +7,22 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-22 · Drive fotoğraflarından 87 koordinat daha
+
+Kimler: **API'yi yerelde çalıştıranlar**; veri araçlarını kullananlar için 2. adım
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+2. (Yalnızca `drive_photo_map.py` ya da `match_photos.py` çalıştıracaksan) yeni Python paketini kur:
+   ```bash
+   python3 -m pip install -r data/requirements.txt   # pymupdf eklendi
+   ```
+
+Değişenler:
+- Koordinatlı eser sayısı 216'dan 303'e çıktı (Bursa 272/356). Yeni noktalar Drive arşivindeki fotoğrafların EXIF GPS'inden; hepsi `verified: false`.
+
 ## 2026-10-22 · Hayrat arayüzü, temalar ve yeni istemci paketleri
 
 Kimler: **istemci tarafında çalışan herkes** (Yiğit, Kübra)

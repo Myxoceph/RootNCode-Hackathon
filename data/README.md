@@ -75,6 +75,7 @@ data/
 ├── tools/
 │   ├── validate.py            # şema + çapraz kontrol (veri ekibi her değişiklikte çalıştırır)
 │   ├── media_pipeline.py      # fotoğrafları indirir, sürümlerini üretir, manifesti yazar
+│   ├── drive_photo_map.py     # Drive fotoğraflarını kitap sayfası üzerinden eserlere eşler, EXIF GPS'ini okur
 │   ├── geocode.py             # koordinat önerir/yazar: fotoğraf EXIF'i, OpenStreetMap, parent
 │   ├── db_rows.py             # JSON + manifest → DB satırları (TEK eşleme kaynağı)
 │   ├── import_to_db.py        # referans içe aktarma + doğrulama (db_rows.py'yi kullanır)
@@ -83,7 +84,7 @@ data/
 └── build/
     ├── media-manifest.json    # her görselin hash, boyut ve sürüm bilgisi   ← git'e GİRER
     ├── media/                 # yüklemeye hazır görsel sürümleri           ← git'e girmez
-    └── cache/                 # Drive orijinalleri, OSM yanıtları          ← git'e girmez
+    └── cache/                 # Drive orijinalleri, bölük PDF'leri, OSM ve Drive eşleşmeleri ← git'e girmez
 ```
 
 Referans kayıt: [eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json](eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json)
@@ -923,7 +924,7 @@ Adımlar:
 5. Manifesti (`build/media-manifest.json`) eser JSON'uyla birlikte commit edin.
 6. `meta.status = "in_review"` yapın. İkinci kişi kontrol edince `reviewed_by` doldurulur ve durum `published` olur.
 
-**Koordinatlar.** `geocode.py` koordinatı olmayan kayda sırasıyla şunları dener: eserin fotoğraflarındaki EXIF GPS'in medyanı (`source: photo_exif`; drone konumu olabilir, binadan birkaç on metre sapar), OpenStreetMap'te aynı ilçede adı ve türü tutan tek aday (`source: osm`; Hatay'da 2023 depremleri öncesi OSM verisi de sorgulanır) ve son olarak bağlı olduğu yapının noktası. Elle girilmiş koordinata dokunmaz; yazdığı her nokta `verified: false`'tur ve `verification_note` nereden geldiğini söyler. Ad tam tutmadığı için elle teyit edilen eşleşmeler araçtaki `OSM_PICK` listesindedir. OSM'den gelen noktalar © OpenStreetMap katkıcıları, ODbL lisanslıdır; uygulamada atıf gösterilmelidir.
+**Koordinatlar.** `geocode.py` koordinatı olmayan kayda sırasıyla şunları dener: eserin fotoğraflarındaki EXIF GPS'in medyanı (`source: photo_exif`; kayda bağlı fotoğraf yoksa `drive_photo_map.py`'nin kitap sayfası eşleşmesiyle esere bağladığı Drive fotoğrafları kullanılır; GPS'ler 500 m'den fazla dağılıyorsa nokta yazılmaz; drone konumu olabilir, binadan birkaç on metre sapar), OpenStreetMap'te aynı ilçede adı ve türü tutan tek aday (`source: osm`; Hatay'da 2023 depremleri öncesi OSM verisi de sorgulanır) ve son olarak bağlı olduğu yapının noktası. Elle girilmiş koordinata dokunmaz; yazdığı her nokta `verified: false`'tur ve `verification_note` nereden geldiğini söyler. Ad tam tutmadığı için elle teyit edilen eşleşmeler araçtaki `OSM_PICK` listesindedir. `drive_photo_map.py` her bölüğün Drive "Links" klasöründeki fotoğrafların yalnızca ilk 64 KB'ını (EXIF) indirir, küçük resimlerini bölük PDF'indeki sayfa görselleriyle karşılaştırır (`match_photos.py` yöntemi, skor ≥ 0,90) ve basılı sayfayı kaydın `source_refs` sayfalarıyla eşler; sonuç `build/cache/drive/photo-map.json`'dadır. Bölük PDF'leri (~6 GB) ilk çalıştırmada `build/cache/pdf/` altına indirilir. OSM'den gelen noktalar © OpenStreetMap katkıcıları, ODbL lisanslıdır; uygulamada atıf gösterilmelidir.
 
 ---
 

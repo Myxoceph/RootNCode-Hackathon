@@ -16,17 +16,19 @@ _2-3 cümle: Bu hafta ürün olarak nereye geldik? Demo edilebilir ne var?_
   - **Veri setinin yayına alınması** ([#25](https://github.com/Myxoceph/RootNCode-Hackathon/pull/25)): Doğrulanan 356 Bursa kaydı `published` oldu; koordinat ve fotoğraf isteğe bağlı hale geldi, böylece uygulama API'den gerçek veri alabiliyor.
   - **Hatay envanteri** ([#29](https://github.com/Myxoceph/RootNCode-Hackathon/pull/29), [#30](https://github.com/Myxoceph/RootNCode-Hackathon/pull/30)): Hatay için tek kaynak bir PDF kitap olduğundan kitabı eserlere bölen bir araç yazıldı (`data/tools/extract/hatay_book.py`: 77 eser, 349 fotoğraf, ilçe ve parsel eşleşmesiyle). Görsel hattı yerel kaynaktan fotoğraf alabiliyor. Bu araçla 116 kayıt üretildi; `validate.py` tüm veri setinde hatasız.
   - **Hatay fotoğrafları ve yayın** ([#35](https://github.com/Myxoceph/RootNCode-Hackathon/pull/35), [#37](https://github.com/Myxoceph/RootNCode-Hackathon/pull/37)): Kitaptaki 348 fotoğraf 109 kayda bağlandı; her biri Türkçe ve İngilizce altyazı ve alt metinle birlikte. Kitapta kendi fotoğrafı olmayan 7 kayıt var. 116 Hatay kaydı `published` oldu. Atanması belirsiz 8 fotoğraf insan kontrolü için [#36](https://github.com/Myxoceph/RootNCode-Hackathon/issues/36)'da.
+  - **API güvenliği** ([#32](https://github.com/Myxoceph/RootNCode-Hackathon/pull/32)): IP başına istek sınırı (dakikada 120, `429 RATE_LIMITED`), güvenlik başlıkları, istek boyutu sınırı; vekil sunucu arkasında gerçek istemci IP'si (`TRUST_PROXY`).
+  - **Ziyaretçi Nabzı** ([#33](https://github.com/Myxoceph/RootNCode-Hackathon/pull/33)): takma adla anonim oturum, katkı gönderme (ipucu, anı, düzeltme), moderasyon kuyruğu (onay, ret, engelleme) ve eserin nabız akışı.
+  - **Vakıf Travel Planner & Hava Durumu** ([#39](https://github.com/Myxoceph/RootNCode-Hackathon/pull/39)): `GET /routes/plan` süre bütçesine sığan tematik yürüyüş rotası (tür, dönem ya da Kentsel Ağ bağları); `GET /weather` Open-Meteo'dan anlık hava durumu, ulaşılamazsa `available: false`. Yağmurda ve sıcakta kapalı mekânlar öne alınıyor. Sözleşme v0.2.3.
+  - **Eser koordinatları** ([#38](https://github.com/Myxoceph/RootNCode-Hackathon/pull/38), [#45](https://github.com/Myxoceph/RootNCode-Hackathon/pull/45)): 472 eserin 303'ünde koordinat var (Bursa 272/356, Hatay 31/116). Kaynaklar: fotoğrafların EXIF GPS'i (Drive arşivindeki fotoğraflar kitap sayfasıyla eserlere eşlendi), OpenStreetMap ve bağlı olunan yapı. Hepsi `verified: false`; aynı esere ait EXIF ile OSM noktaları arasındaki medyan fark 20-30 m.
   - **A11 · Şema değişikliği belgesi**: `data/README.md` §5'e şemanın esas kaynağının Prisma migration'ları olduğu ve yeni bir tablo değişikliğinin adım adım nasıl yapılacağı eklendi.
 - **Devam edenler:**
   - **A10 · Medyanın R2'ye yüklenmesi:** Kayıtlara bağlı 504 fotoğrafın (Bursa 156, Hatay 348) 1850 sürümü R2'de, toplam 513 MB. API'nin döndürdüğü görsel adresleri açılıyor. Orijinaller yüklenmiyor, kaynağında kalıyor (Drive / kitap PDF'i); böylece üç şehir de R2'nin 10 GB'lık ücretsiz kotasına sığıyor. Kalan: yüklemenin CI'a alınması.
   - **A12 · İlk `main` sürümü:** Bilinçli olarak bekletiliyor. Çalışan sürüm uygulamayla birlikte çıkacak; uygulama API'ye bağlanınca (Y8, Y9) açılacak.
 - **Engeller / ihtiyaçlar:**
-  - Hatay kayıtlarında koordinat yok; harita ve rota için parsel ve mıntıka bilgisinden konum çıkarılması gerekiyor.
+  - 169 eserde hâlâ koordinat yok (Bursa 84, Hatay 85). Antakya'nın tarihî camileri OpenStreetMap'te yok; Hatay için parsel ve mıntıka bilgisinden elle konum gerekiyor.
   - Hatay'da kilise, değirmen, höyük ve makam için `asset_types` kodu yok (E2 ile birlikte karar verilmeli).
 - **Gelecek hafta:**
-  - API güvenliği: istek sınırı (rate limit), güvenlik başlıkları.
-  - Topluluk Ziyaretçi Nabzı: anonim takma adla katkı gönderme, moderasyon kuyruğu ve onaylanan notların listesi.
-  - Vakıf Travel Planner: tematik rota ve hava durumu (Open-Meteo, kapalıyken yedek yanıt); yağmurda kapalı mekânlar öne alınıyor.
+  - Kalan koordinatlar (elle kontrol listesi) ve Bursa'da fotoğrafı olmayan kayıtlar için Drive fotoğraflarının etiketlenmesi.
   - Gastronomi ve ortam sesleri için veri uçları (içerik Hüseyin'le).
   - Dağıtımın VDS'te provası.
 
