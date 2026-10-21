@@ -17,7 +17,11 @@ Eşikler (WCAG 2.1 AA): metin **4.5:1** (1.4.3), ikon / odak halkası **3:1** (1
 | `firuze700` #0A7A76 | `white` #FFFFFF | **5.17:1** ✅ | 4.5:1 | Open / confirmed (light) |
 | `mercan700` #BE3A26 | `white` #FFFFFF | **5.49:1** ✅ | 4.5:1 | Food stops, warnings (light) |
 | `mercan700` #BE3A26 | `gece50` #F5F7FA | **5.12:1** ✅ | 4.5:1 | Warnings (light) |
-| `altin700` #82601B | `white` #FFFFFF | **5.77:1** ✅ | 4.5:1 | Resolved monument label (light) |
+| `altin700` #82601B | `white` #FFFFFF | **5.77:1** ✅ | 4.5:1 | Resolved monument label, legend badge (light) |
+| `altin700` #82601B | `gece100` #E6EBF2 | **4.82:1** ✅ | 4.5:1 | Legend badge (filled) (light) |
+| `altin700` #82601B | `gece50` #F5F7FA | **5.38:1** ✅ | 4.5:1 | Legend badge on the page (light) |
+| `firuze700` #0A7A76 | `gece50` #F5F7FA | **4.82:1** ✅ | 4.5:1 | Certain badge on the page (light) |
+| `kobalt700` #1E4AA0 | `gece100` #E6EBF2 | **6.90:1** ✅ | 4.5:1 | Probable badge on chips (light) |
 | `white` #FFFFFF | `kobalt700` #1E4AA0 | **8.26:1** ✅ | 4.5:1 | Primary button label (light) |
 | `white` #FFFFFF | `firuze700` #0A7A76 | **5.17:1** ✅ | 4.5:1 | Confirmed button label (light) |
 | `gece50` #F5F7FA | `gece900` #141B29 | **16.06:1** ✅ | 4.5:1 | Selected chip (inverted) (light) |
@@ -38,7 +42,11 @@ Eşikler (WCAG 2.1 AA): metin **4.5:1** (1.4.3), ikon / odak halkası **3:1** (1
 | `firuze300` #4FC6BE | `gece900` #141B29 | **8.33:1** ✅ | 4.5:1 | Open / confirmed (dark) |
 | `mercan300` #EE7B64 | `gece900` #141B29 | **6.28:1** ✅ | 4.5:1 | Food stops, warnings (dark) |
 | `mercan300` #EE7B64 | `gece950` #0D1420 | **6.72:1** ✅ | 4.5:1 | Warnings (dark) |
-| `altin300` #DDB55C | `gece900` #141B29 | **8.89:1** ✅ | 4.5:1 | Resolved monument label (dark) |
+| `altin300` #DDB55C | `gece900` #141B29 | **8.89:1** ✅ | 4.5:1 | Resolved monument label, legend badge (dark) |
+| `altin300` #DDB55C | `gece800` #1B2537 | **7.93:1** ✅ | 4.5:1 | Legend badge (filled) (dark) |
+| `altin300` #DDB55C | `gece950` #0D1420 | **9.52:1** ✅ | 4.5:1 | Legend badge on the page (dark) |
+| `firuze300` #4FC6BE | `gece950` #0D1420 | **8.92:1** ✅ | 4.5:1 | Certain badge on the page (dark) |
+| `kobalt300` #7FA3F1 | `gece800` #1B2537 | **6.16:1** ✅ | 4.5:1 | Probable badge on chips (dark) |
 | `gece950` #0D1420 | `kobalt300` #7FA3F1 | **7.39:1** ✅ | 4.5:1 | Primary button label (dark) |
 | `gece950` #0D1420 | `firuze300` #4FC6BE | **8.92:1** ✅ | 4.5:1 | Confirmed button label (dark) |
 | `gece950` #0D1420 | `gece100` #E6EBF2 | **15.40:1** ✅ | 4.5:1 | Selected chip (inverted) (dark) |
