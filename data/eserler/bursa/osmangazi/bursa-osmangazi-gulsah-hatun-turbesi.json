@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
       "Mimar kitapta belirtilmemiş.",
       "Yanındaki sandukanın sahibi bilinmiyor.",
@@ -360,7 +359,41 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-gulsah-hatun-turbesi/p041-1.jpg",
+        "original_name": "ERD02748 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "150"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Gülşah Hatun Türbesi'nin girişi",
+        "en": "Entrance of the Gülşah Hatun Tomb"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş sıralı, sekizgen kasnaklı küçük türbenin ortasında sivri kemerli, beyaz mermer çerçeveli bir giriş var. Yanında bir bilgi levhası, çevresinde ağaçlar ve çim görünüyor.",
+        "en": "A small tomb of banded brick and stone with an octagonal drum and a pointed-arch entrance framed in white marble. An information panel stands beside it, with trees and lawn around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    }
+  ],
   "archive_media": []
 }

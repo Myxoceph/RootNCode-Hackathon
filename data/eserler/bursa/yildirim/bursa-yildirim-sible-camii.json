@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
-      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
       "Kitap 'Şıblizâde Mahmud Çelebi'nin oğlu' dışında Şıblizâde ailesi hakkında bilgi vermiyor.",
@@ -238,7 +236,40 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-sible-camii/p056-1.jpg",
+        "original_name": "01 DJI_20240920172053_0201_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "267"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şible Camii ve minaresi, yüksekten görünüm",
+        "en": "Şible Mosque and minaret from above"
+      },
+      "alt": {
+        "tr": "Dar bir sokağın köşesinde, kiremit çatılı hardal renkli bir cami ve yanında açık renkli, sivri külahlı minare görünür. Çevresinde yüksek apartmanlar ve dağ eteğine yayılan mahalle yer alır.",
+        "en": "On a street corner, a mustard-coloured mosque with a tiled roof and a pale pointed-cap minaret. Tall apartment blocks and a neighbourhood spreading up the hillside surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": []
 }

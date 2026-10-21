@@ -14,8 +14,8 @@
       "Mimar kitapta belirtilmiyor.",
       "Zağanos Mehmed Paşa için ayrı kayıt varsa bağlanmalı.",
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -559,8 +559,98 @@
       "en": "Kanberler Mosque near Kanberler Park is a single-domed building with a square prayer hall. The parapet-walled façade of its three-bay narthex is built of two rows of brick and one of rubble stone and decorated with brick triangles and inlaid stones. Its octagonal-based minaret was rebuilt after the 1855 earthquake. Inside is a tall mihrab, over six metres high, with seven rows of muqarnas."
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kanberler-camii/p091-1.jpg",
+        "original_name": "kamberler camii 2.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "360"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kemerli cephesi, kubbesi ve minaresi",
+        "en": "The mosque's arched front, dome and minaret"
+      },
+      "alt": {
+        "tr": "Tuğla cepheli, sivri kemerli girişleri olan cami; gri kubbe ve yüksek tuğla minare yükseliyor. Önünde ağaçlar, arkasında şehir ve dağ var.",
+        "en": "A brick-fronted mosque with pointed-arch openings, a grey dome and a tall brick minaret. Trees stand in front, and the city and mountain lie behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kanberler-camii/p090-1.jpg",
+        "original_name": "kamberler camii 1.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "359"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin park içindeki havadan görünümü",
+        "en": "Aerial view of the mosque in the park"
+      },
+      "alt": {
+        "tr": "Parkın içinde yer alan kubbeli cami ve yanındaki küçük kubbeli yapılar. Çevrede çimenlikler, yollar, ağaçlar, şehir ve dağ silsilesi görünüyor.",
+        "en": "A domed mosque and nearby small domed buildings set in a park. Lawns, paths, trees, the city and a mountain range surround them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kanberler-camii/p092-1.jpg",
+        "original_name": "kamberler camii 3.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "361"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami ve çevre yapıların kuşbakışı çatıları",
+        "en": "Rooftops of the mosque and nearby buildings"
+      },
+      "alt": {
+        "tr": "Camiye ait büyük gri kubbe ve yanında minare tabanı yukarıdan görünüyor; sağ üstte iki kubbeli ayrı bir yapı var. Taş döşemeli meydan ve ağaçlar çevreler.",
+        "en": "A large grey dome and a minaret base seen from above, with a separate two-domed building at top right. A stone-paved plaza and trees surround them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

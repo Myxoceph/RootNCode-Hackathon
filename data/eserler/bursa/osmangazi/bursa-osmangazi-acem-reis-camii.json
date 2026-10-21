@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 228-231) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Hazirede anılan Elmas Dede mezarı için ayrı kayıt yok; varsa bağlanmalı.",
       "Mahmud Efendi'nin yaptırdığı Geredeli Köprüsü civarındaki odalar için hedef kayıt yok.",
-      "Hazirede anılan 'üstü açık türbe' bugün yok; kayıtlar araştırılabilir."
+      "Hazirede anılan 'üstü açık türbe' bugün yok; kayıtlar araştırılabilir.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -598,7 +598,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-acem-reis-camii/p005-1.jpg",
+        "original_name": "01_1.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "228"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Acem Reis Camii ve yol kavşağı",
+        "en": "Acem Reis Mosque at the road junction"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kubbeli küçük cami iki yolun ayrıldığı köşede, demir korkuluklu bir bahçede duruyor. Yanında taş bir minare yükseliyor.",
+        "en": "A small stone mosque with a dome on a corner where two roads split, inside a garden with iron railings. A stone minaret rises beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-acem-reis-camii/p006-2.jpg",
+        "original_name": "03-3.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "229"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, minber ve kadınlar mahfili",
+        "en": "Interior with the minber and gallery"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kırmızı halı döşeli salonda sağda ahşap korkuluklu bir mahfil, solda ahşap minber var. Tavanda üçgen biçimli taş süslemeler ve bir avize görünüyor.",
+        "en": "In a white hall with red carpet, a wooden-railed gallery is on the right and a wooden minber on the left. Triangular stone ornaments and a chandelier hang above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    }
+  ],
   "archive_media": []
 }

@@ -14,9 +14,9 @@
       "Mimar bilgisi kaynaklarda kesin değil (Şehbender yalnızca 'mimar kalfası'); Hüseyin Hüsnü Efendi ve inşayı yaptıran kurum için ek kaynak aranmalı.",
       "Dönem (era) ve 'yaptıran' alanları kitaba göre dolduruldu; yaptıran kişi/kurum kitapta açıkça belirtilmiyor.",
       "Koordinat kitapta yok; sahadan veya haritadan doğrulanmış koordinat eklenmeli (location.coordinates).",
-      "Fotoğraflar (media) ve Zaman Perdesi arşiv fotoğrafları (archive_media) henüz yok; Drive klasörü (media_folder) belirlenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli."
+      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -490,7 +490,97 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesi (vk-bursa-c1, s. 729-730)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1C_DxmRm7tS_2mJUgiSLEM4k4jQUxTen3",
+    "book_layout_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+    "book_pdf_name": "3-Sivil Mimari.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-belediye-binasi/p009-1.jpg",
+        "original_name": "08-3.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "728"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Bezemeli tören salonu",
+        "en": "Ornate reception hall"
+      },
+      "alt": {
+        "tr": "Altın yaldızlı kabartmalı tavanı olan geniş salon. Altın çerçeveli beyaz koltuklar, turkuaz perdeler, kristal avize, Türk bayrağı ve duvarda portre bulunur.",
+        "en": "A wide hall with a gold-trimmed ceiling, gilded white armchairs, turquoise curtains, a crystal chandelier, a Turkish flag and a portrait on the wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-belediye-binasi/p010-2.jpg",
+        "original_name": "05-2.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "729"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kat holü ve oymalı ahşap merdivenler",
+        "en": "Hall with carved timber stairs"
+      },
+      "alt": {
+        "tr": "Orta holde yuvarlak ahşap masa, iki yanda kafes işlemeli ahşap korkuluklu merdivenler ve ince sütunlar var. Tavan ahşap çıtalıdır.",
+        "en": "A central hall with a round wooden table, two staircases with lattice-work timber balustrades, slim columns and a slatted timber ceiling."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-belediye-binasi/p010-1.jpg",
+        "original_name": "10.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "729"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Merdiven ve kat holü",
+        "en": "Staircase and landing"
+      },
+      "alt": {
+        "tr": "Kıvrımlı, kafes işlemeli ahşap korkuluklu merdiven ve beyaz sütunlu hol. Duvarda tablolar, büyük pencere ve bir avize görülür.",
+        "en": "A curving staircase with lattice-work timber balustrade in a hall with white columns, paintings, a large window and a chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    }
+  ],
   "archive_media": []
 }

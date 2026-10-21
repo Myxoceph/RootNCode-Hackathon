@@ -11,14 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yeşil Çelebi Mehmed Külliyesi bölümünden (Part B) yapay zekâ ile özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar eklenmeli (location.coordinates kaynakta yok, uydurulmadı).",
-      "Fotoğraflar eklenmeli (media, archive_media boş; media_folder henüz yok, match_photos.py ile bağlanacak).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Mahalle ve açık adres kaynakta yok (yalnızca 'caminin güneyinde, küçük bir tepede').",
       "Türbenin yapım başlangıç ve bitiş yılı kaynakta yok; dating.start_year/end_year boş bırakıldı.",
       "Kitabenin transliterasyonları basılı metne sadık kopyalandı; 'mihrap-ust-hadis' satır sonundaki 'azzi- mu’r-rabbe' birleştirildi, kontrol edilmeli.",
       "Selçuk Hatun sandukası kitabesinin metni kitapta yok.",
       "Kapı sahanlığı kitabesi ve kûfi dualar (mihrap kartuşları altında) metin olarak verilmemiş.",
-      "Çini mihrap ve kitabeler için AR hedef fotoğrafları seçilip inscriptions[].ar_target_media_id doldurulmalı.",
       "Sitti Hatun'un kime ait olduğu (kızı mı, başka biri mi) kitapta açık değil; beşli grup 'kızları ve sütannesi' olarak anılıyor."
     ],
     "data_quality_notes": [
@@ -887,8 +885,97 @@
     },
     "audio_description_source": "source_text"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ya5DSM5reasFmWdGEd8OJoIBgacL8QtC",
+    "book_layout_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+    "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-turbe/p061-1.jpg",
+        "original_name": "DJI_20240920200931_0244_D-Edit.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "140"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Türbede çiniyle çevrili kafesli pencere",
+        "en": "Lattice window surrounded by tile"
+      },
+      "alt": {
+        "tr": "Turkuaz çini kaplı duvarda beyaz mermer sivri kemerin içinde petek desenli bir pencere var. Altında küçük süslü bir çini panel görünür.",
+        "en": "On a turquoise tiled wall, a lattice window sits within a white marble pointed arch. A small decorated tile panel is below it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-20"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-turbe/p065-1.jpg",
+        "original_name": "DJI_20240922170539_0603_D-Edit.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "144"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Taç kapı üzerindeki çini kitabe kuşağı",
+        "en": "Tile inscription band above the portal"
+      },
+      "alt": {
+        "tr": "Mavi ve altın renkli çinilerle bezeli kapı üstünde yazı kuşağı ve sarkıtlı bir bordür var. Altta mermer bir kemerin başlangıcı görünür.",
+        "en": "Above the portal is an inscription band in blue and gold tiles with a stalactite-like border. The start of a marble arch is visible below."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-turbe/p070-1.jpg",
+        "original_name": "ERD01918 kopya.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "149"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Altıgen çiniler üzerinde madalyon bezeme",
+        "en": "Medallion ornament on hexagonal tiles"
+      },
+      "alt": {
+        "tr": "Turkuaz altıgen çiniler üzerinde, altın sarısı ve pembe renkli bitkisel bezemeli sivri uçlu bir madalyon yer alır.",
+        "en": "A pointed medallion with gold and pink floral ornament on turquoise hexagonal tiles."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-20"
+    }
+  ],
   "archive_media": [],
   "exhibitions": [],
   "dating": {

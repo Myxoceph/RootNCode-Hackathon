@@ -11,12 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
-      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
       "Mevcut binanın mimarı kaynakta yok.",
       "Vakıf bilgisi (Hoca İlyaszâde Vakıf Mektebi) kitapta ayrıntılandırılmıyor.",
       "Okulun tür kodu enums.json'da yok; 'diger' kullanıldı.",
-      "Kütahya çinilerinin tarihli/imzalı fotoğrafı ve Arkeoloji Müzesi'ne taşınan mezar taşları için kaynak araştırılabilir."
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -413,7 +412,96 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hoca-ilyas-ortaokulu/p024-1.jpg",
+        "original_name": "ERD02018 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "575"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hoca İlyas Ortaokulu ön cephesi",
+        "en": "Front facade of Hoca İlyas Middle School"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı iki katlı binada kırmızı tuğla çerçeveli sivri kemerli pencereler ve ortada balkonlu giriş vardır. Önünde geniş bir okul bahçesi ve bir büst bulunur.",
+        "en": "A white-plastered two-storey building with pointed-arch windows framed in red brick and a central entrance with a balcony. A wide schoolyard and a bust stand in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hoca-ilyas-ortaokulu/p023-1.jpg",
+        "original_name": "DJI_20241016165750_0937_D-Edit.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "574"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Okul binasının yandan kuşbakışı görünümü",
+        "en": "Aerial side view of the school"
+      },
+      "alt": {
+        "tr": "Büyük kırmızı kiremitli kırma çatılı, bacalı iki katlı bina yukarıdan görünür. Çevresinde ağaçlar ve şehrin yüksek binaları vardır.",
+        "en": "A two-storey building with a large red-tiled hipped roof and chimneys seen from above, surrounded by trees and taller city buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hoca-ilyas-ortaokulu/p024-2.jpg",
+        "original_name": "ERD02027 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "575"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Balkonlu giriş kapısı",
+        "en": "Entrance door with balcony"
+      },
+      "alt": {
+        "tr": "Siyah demir kapılı girişin üstünde ahşap kafesli bir balkon vardır. Sivri kemerli pencereler kırmızı tuğla çerçevelerle çevrilidir; en üstte yeşil zeminli yazı levhası görünür.",
+        "en": "An entrance with a black iron door under a lattice wooden balcony. Pointed-arch windows have red-brick frames, and a green inscription plaque is at the top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
   "archive_media": []
 }

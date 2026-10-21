@@ -10,7 +10,6 @@
     "from": "Osmangazi Camiler ve Hazireler 2",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
-      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Yapım yılı kitapta yok (yalnızca I. Murad dönemi).",
       "Dârülhadis medresesi ve imaret için id belirsiz, relation kurulmadı.",
@@ -272,8 +271,42 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hayrettin-pasa-camii/p067-2.jpg",
+        "original_name": "7-4.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "336"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve mahfil katı",
+        "en": "Interior with mihrab and gallery"
+      },
+      "alt": {
+        "tr": "Yüksek kubbeli, açık renkli bir iç mekân; ortada çinili mihrap, sağda minber ve iki yanda korkuluklu mahfil katları var. Zeminde mavi halı, kubbe eteğinde pencereler görünüyor.",
+        "en": "A tall, light-coloured domed interior with a tiled mihrab in the centre, a minber on the right and railed galleries on both sides. A blue carpet covers the floor and windows ring the dome."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-08"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

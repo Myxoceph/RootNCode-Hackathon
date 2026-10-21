@@ -11,15 +11,14 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Karacabey bölümünden (s. 513-518) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
-      "Arşiv fotoğrafı (archive_media) elimizde yok.",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
       "Yapım yılı kesin değil (1456 öncesi / 1456-57).",
       "Kitapta mimar adı yok.",
       "Karaca Bey Hanı'nın (Bursa) ilçesi metinde yok; ilişki kurulmadı.",
       "Medrese, Karaca Bey türbesi ve su kuyuları ayrı başlık almadığı için kayıt açılmadı.",
-      "Kitabelerin dili/yazı türü kitapta belirtilmemiş; language 'ar' transliterasyondan çıkarıma dayanır, kontrol edilmeli."
+      "Kitabelerin dili/yazı türü kitapta belirtilmemiş; language 'ar' transliterasyondan çıkarıma dayanır, kontrol edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -430,7 +429,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-imaret-camii/p006-3.jpg",
+        "original_name": "09 ERD06346 kopya.jpg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "515"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Caminin son cemaat yeri ve bahçe yolu",
+        "en": "Portico and garden path"
+      },
+      "alt": {
+        "tr": "Taş döşeli bir yol, her iki yanda kesilmiş çitlerle son cemaat yerinin kemerli revakına çıkar. Ortada ahşap bir kapı vardır.",
+        "en": "A stone path between trimmed hedges leads to an arched portico, with a wooden door at the centre."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-imaret-camii/p006-4.jpg",
+        "original_name": "14 ERD06398 kopya.jpg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "515"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Revak ve bahçedeki şadırvan",
+        "en": "Portico and garden fountain"
+      },
+      "alt": {
+        "tr": "Mermer ve taş sütunlu revakta soldaki taş sıralı kapı ve yeşil korkuluk görülür. Bahçede çitler ve kubbeli küçük bir şadırvan vardır.",
+        "en": "A portico with marble and stone pillars and a door with banded stonework. A green railing and a garden with hedges and a small domed fountain are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    }
+  ],
   "archive_media": [],
-  "exhibitions": []
+  "exhibitions": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "19dW7EV_S0PPnXV1zTfP2jbB3e7m3UIQ0",
+    "book_layout_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+    "book_pdf_name": "5-Karacabey.pdf"
+  }
 }

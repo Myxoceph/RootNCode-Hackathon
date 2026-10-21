@@ -11,11 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Emir Sultan Külliyesi bölümünden (s. 19-59) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup photos match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Zaviye/tekke, imaret, mektep, medrese, kütüphane ve muvakkithane için kitapta ayrı bölüm yok; ayrı kayıt açılmadı. Cezerî Kasım Paşa ve Molla Hüsrev medreselerinin ilçesi metinde belirtilmiyor; ilişki kaydı eklenmedi.",
       "Külliyenin yapım tarihi/ilk yapı kesin değil (cami, imaret, Cuma mescidi için farklı anlatımlar); 'dating' boş bırakıldı.",
-      "Vakfiye metni/şartları kitapta özetlenmemiş; 1470 tarihli vakfiye VGM arşivinden bulunursa 'waqf.deed.excerpt' doldurulmalı."
+      "Vakfiye metni/şartları kitapta özetlenmemiş; 1470 tarihli vakfiye VGM arşivinden bulunursa 'waqf.deed.excerpt' doldurulmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -568,8 +568,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari anlatımdan (yalnızca kaynakta yazanlar) yapay zekâ taslağı olarak yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1szziOwS-QhLsMDMpFHb1JfpzFsmkCDr-",
+    "book_layout_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+    "book_pdf_name": "7-Emir Sultan.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-emir-sultan-kulliyesi/p010-1.jpg",
+        "original_name": "DJI_20240919122011_0018_D-Edit.jpg",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "22"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Emir Sultan Külliyesi ve şehir manzarası",
+        "en": "Emir Sultan Complex over the city"
+      },
+      "alt": {
+        "tr": "Gri kurşun kubbeli cami ve iki ince minare, selvilerle çevrili biçimde şehrin üstünde yükselir. Arkada binalar ve dağlar sisli bir ışıkta görünür.",
+        "en": "A grey lead-domed mosque with two slender minarets rises among cypress trees above the city. Buildings and mountains appear behind in hazy light."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-emir-sultan-kulliyesi/p016-1.jpg",
+        "original_name": "DJI_20240919131118_0053_D-Edit.jpg",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "28"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Şadırvanlı avlu ve ahşap revaklı cephe",
+        "en": "Courtyard with fountain and timber arcade"
+      },
+      "alt": {
+        "tr": "Ortada sekizgen mermer bir şadırvan ve turkuaz havuz bulunur. Arkada ahşap çıkmalı, sivri kemerli revaklı cephe ve mermer sütunlar sıralanır.",
+        "en": "An octagonal marble fountain with a turquoise basin in the centre. Behind it rises a timber-framed facade with an arcade of pointed arches on marble columns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-emir-sultan-kulliyesi/p011-1.jpg",
+        "original_name": "ERD01370 kopya.jpg",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "23"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Açık kapıdan Bursa manzarası",
+        "en": "View of Bursa through an open doorway"
+      },
+      "alt": {
+        "tr": "Kapının üstünde mavi zeminli yazı levhası, açık ahşap kapı kanatları arasında kemerli geçitten ağaçlar ve yamaçtaki evler görünür.",
+        "en": "A blue inscription plaque above an arched doorway with open wooden leaves. Through it are trees and houses on a hillside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

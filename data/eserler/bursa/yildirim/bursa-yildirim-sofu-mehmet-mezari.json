@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
       "Mezarın bulunduğu mahalle ve adres kaynakta yok (bölüm başlığı ve ilk cümle bu sayfada yok); 'location.neighborhood' null.",
       "Bahsedilen caminin adı kaynakta bu sayfada verilmiyor ('caminin banisi'); cami ve konumu belirlenmeli.",
       "Türbenin yapım tarihi, yaptıranı ve dönemi kaynakta yok.",
       "Sûfî Mehmed ile mezar taşındaki Sofu Sinan ilişkisi belirsiz (data_quality_notes'a bakın).",
-      "Mimar kaynakta yok."
+      "Mimar kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -270,7 +270,41 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-sofu-mehmet-mezari/p010-1.jpg",
+        "original_name": "02 ERD04213 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "289"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Sofu Mehmet Mezarı, açık hazire düzeni",
+        "en": "Grave of Sofu Mehmet in its open-air setting"
+      },
+      "alt": {
+        "tr": "Taş duvarla çevrili küçük bir avluda dikdörtgen taş bir sanduka vardır. Üstünde sarıklı iki başlık taşı ve oymalı bir mezar taşı durur; önündeki levhada kabir yazısı okunur.",
+        "en": "In a small yard enclosed by stone walls stands a rectangular stone tomb chest. Two turban-shaped stones and a carved gravestone sit on top, and a plaque on the front carries the grave inscription."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    }
+  ],
   "archive_media": []
 }

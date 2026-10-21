@@ -11,13 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 449-454) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Dating: kitap 1579'u veriyor ama yapı 1670 ve 1866'da yeniden yapıldı; mevcut yapı büyük oranda 19. yüzyıl.",
       "Doğanbey Mescidi, Aziz Mahmud Hüdâyî ve Hızır Dede için hedef kayıt bilinmiyor.",
-      "Cümle kapısı kitabesi fotoğrafı AR için seçilip ar_target_media_id alanına bağlanacak.",
-      "Hasan Rıza Paşa vakfı için vakfiye bilgisi yok."
+      "Hasan Rıza Paşa vakfı için vakfiye bilgisi yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -689,7 +688,97 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-camii/p059-1.jpg",
+        "original_name": "05_4.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "452"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hz. Üftâde Camii'nin harimi, mihrap ve minber",
+        "en": "Prayer hall of Hz. Üftâde Mosque with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "İki beyaz ayağın arasında, karşıda süslü mihrap ve sağda oyma ahşap minber görünür. Duvarlarda kalem işi bezemeler, tavandan sarkan avize ve kırmızı halı öne çıkar.",
+        "en": "Between two white piers, an ornate mihrab faces the viewer with a carved wooden minbar on its right. Painted wall decoration, a chandelier and a red carpet stand out."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-camii/p060-2.jpg",
+        "original_name": "10_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "453"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Hz. Üftâde Camii mihrabının yakın görünümü",
+        "en": "Close view of the mihrab of Hz. Üftâde Mosque"
+      },
+      "alt": {
+        "tr": "Mihrap nişi altın sarısı sarkıtlı (mukarnas) bir yarım kubbeyle örtülü. Çevresinde kırmızı, mavi, yeşil ve altın renkli bitkisel ve yazılı bezemeler, aşağıda beyaz kemerli bölümler vardır.",
+        "en": "The mihrab niche is topped by a golden stalactite-vaulted hood. Red, blue, green and gold floral and calligraphic decoration surrounds it, with white arched panels below."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-camii/p061-1.jpg",
+        "original_name": "06_3.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "454"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hz. Üftâde Camii'nde mahfiller ve girişe bakış",
+        "en": "Galleries and entrance side of Hz. Üftâde Mosque"
+      },
+      "alt": {
+        "tr": "Mihrabın karşı yönünde, ahşap korkuluklu ve ahşap kafesli mahfiller sıralanır. Ortada beyaz ayaklar ve kemerler, zeminde kırmızı halı görünür.",
+        "en": "On the side opposite the mihrab, wooden galleries with railings and lattice screens line the wall. White piers and arches stand in the middle, and a red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    }
+  ],
   "archive_media": []
 }

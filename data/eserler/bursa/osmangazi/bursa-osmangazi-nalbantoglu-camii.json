@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Yapım yılı kitapta yok (yalnızca II. Murad dönemi); 'dating' yılları null.",
       "Nalbantbaşı'nın kişisel adı kitapta yok; 'founder.name' unvanla girildi.",
@@ -506,8 +505,70 @@
     },
     "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nalbantoglu-camii/p012-2.jpg",
+        "original_name": "01 Kapak.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "405"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Nalbantoğlu Camii ve minaresi şehir içinde",
+        "en": "Nalbantoğlu Mosque and its minaret in the city"
+      },
+      "alt": {
+        "tr": "Yüksekten bakıldığında uzun tuğla gövdeli minare, gri kurşun kubbeli ve taş-tuğla duvarlı caminin yanında yükselir. Çevrede apartmanlar, ağaçlar, kiremit çatılar ve arkada dağlar yer alır.",
+        "en": "From above, a tall brick minaret rises beside the grey lead dome and stone-and-brick walls of the mosque. Apartment blocks, trees, tiled roofs and mountains surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nalbantoglu-camii/p011-1.jpg",
+        "original_name": "02.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "404"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Nalbantoğlu Camii'nin harimi, mihrap ve minber",
+        "en": "Prayer hall of Nalbantoğlu Mosque with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Turuncu mukarnaslı mihrap mavi ve sarı bir çerçeve içindedir; sağında yeşil ve altın yazılı bezemeli ahşap minber durur. Avize ve kırmızı, mavi desenli halı salonu tamamlar.",
+        "en": "An orange stalactite-vaulted mihrab in a blue and yellow frame, with a wooden minbar decorated in green and gold on its right. A chandelier and a red and blue patterned carpet complete the hall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

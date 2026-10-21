@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 292-293) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Mescidin ilk yapım yılı kitapta yok (yalnızca II. Bayezid dönemi).",
       "Hamam ilişkisinde hedef id (bursa-osmangazi-davutpasa-hamami) ve 'Yeni Tahtakale Hanı' hedefi (bursa-osmangazi-yeni-tahtakale-hani) varsayımdır; hamamın ilçesi/adı kitapta 'Davutpaşa Hamamı' dışında verilmiyor.",
       "Mektep ve kahvehane için ayrı kayıt yok; yapıları bugün var mı belirtilmiyor.",
-      "Kitap mimari detay (kubbe, mihrap, minber vb.) vermiyor; yalnızca iç ölçü ve duvar kalınlığı var."
+      "Kitap mimari detay (kubbe, mihrap, minber vb.) vermiyor; yalnızca iç ölçü ve duvar kalınlığı var.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -385,7 +385,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-davutpasa-camii/p024-1.jpg",
+        "original_name": "DJI_20241005130159_0521_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "293"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin çatısı ve minaresi, havadan",
+        "en": "Mosque roof and minaret from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan, kırmızı kiremitli dört eğimli çatı ve sol üstte minare külahı görünür. Yanında sarı yapraklı bir ağaç ve çevrede çatılar vardır.",
+        "en": "From above, a red-tiled hipped roof and the minaret cap at upper left. A tree with yellow leaves stands beside it, with roofs all around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-davutpasa-camii/p023-2.jpg",
+        "original_name": "3_1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "292"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harim, mihrap ve kırmızı halı",
+        "en": "Prayer hall, mihrab and red carpet"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı, pembe duvarlı harimde mihrap mavi çerçevelidir; sağda ahşap minber ve kırmızı örtülü kürsü var. Zeminde kırmızı halı serilidir.",
+        "en": "A prayer hall with a wooden ceiling and pink walls; the mihrab has a blue frame, with a wooden minbar and a red-draped pulpit on the right. A red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-davutpasa-camii/p023-3.jpg",
+        "original_name": "ERD08037 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "292"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mahfil ve giriş duvarı",
+        "en": "Gallery and entrance wall"
+      },
+      "alt": {
+        "tr": "Ahşap korkuluklu mahfil, altında ahşap sütunlar ve ortada çift kanatlı ahşap kapı görünür. Yanlarda yazılı hat levhaları ve kırmızı halı vardır.",
+        "en": "A wooden gallery with a railing, wooden columns beneath and a double wooden door in the middle. Framed calligraphy panels hang on the sides and a red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    }
+  ],
   "archive_media": []
 }

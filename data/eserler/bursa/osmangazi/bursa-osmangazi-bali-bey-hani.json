@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 676-679) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
-      "Fotoğraflar eklenmeli (media boş); Drive klasörü ve dosya kimlikleri bulunmalı (media_folder null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
       "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
@@ -601,8 +600,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bali-bey-hani/p047-1.jpg",
+        "original_name": "01 Kapak Bali.jpeg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "676"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Bali Bey Hanı ve eğimli arazideki yapısı",
+        "en": "Bali Bey Han on its sloping site"
+      },
+      "alt": {
+        "tr": "Eğimli arazide kademeli yükselen, kemerli revaklı krem renkli taş bir han. Arkasında şehir surları ve yukarıda evler, çevresinde yeşil ağaçlar vardır.",
+        "en": "A cream stone han rising in tiers up a slope, with arched galleries. City walls and houses stand behind it, with green trees around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bali-bey-hani/p048-1.jpg",
+        "original_name": "06  Bali.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "677"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Tuğla tonozlu revak ve dükkânlar",
+        "en": "Brick-vaulted gallery and shops"
+      },
+      "alt": {
+        "tr": "Tuğla tonozlu uzun bir revakta ahşap kapılı dükkânlar, çok sayıda saksı bitkisi ve duvarlarda levhalar vardır. Zemin taş döşelidir; 13 numaralı turuncu bir kapı seçilir.",
+        "en": "A long brick-vaulted gallery lined with wooden-doored shops, many potted plants and wall signs. The floor is stone, and a door numbered 13 stands out."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bali-bey-hani/p048-2.jpg",
+        "original_name": "balibey04.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "677"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Revaktaki ahşap merdiven ve oturma yeri",
+        "en": "Wooden stair and seating in the gallery"
+      },
+      "alt": {
+        "tr": "Tuğla tonozlu revakta ahşap bir merdiven üst kata çıkar. Sağda bir masa ve iki sandalye; ardında çok katlı revaklı avlu görünür.",
+        "en": "In the brick-vaulted gallery, a wooden stair leads to the upper floor. A table and two chairs stand on the right, with a multi-level arcaded courtyard beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

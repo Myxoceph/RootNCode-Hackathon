@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Orhan Bey Külliyesi bölümünden (s. 187-213) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki Orhan Bey Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
       "Kitap Emir Hanı'nın vakfedildiğini doğrudan söylemiyor; vakfiyedeki 'Eski Bedesten' ile hanın 'Eski Bedesten' adının eşleştirilmesi çıkarım. İnsan gözden geçirmesi gerekir.",
@@ -782,7 +780,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1szYG4K01kG96L2sZgOvZlw1JJC6PQevi",
+    "book_layout_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+    "book_pdf_name": "6-Orhan Bey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-emir-hani/p027-1.jpg",
+        "original_name": "ERD02242 kopya.jpg",
+        "book_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+        "book_pdf_name": "6-Orhan Bey Külliyesi.pdf",
+        "book_page": "212"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Emir Hanı'nın avlusu",
+        "en": "Courtyard of Emir Han"
+      },
+      "alt": {
+        "tr": "Taş döşemeli avlunun ortasında ağaçların gölgelediği bir kafe bahçesi var. Çevresinde kemerli revaklar ve iki katlı han cephesi görünüyor.",
+        "en": "A paved courtyard with a tree-shaded café garden in the middle. Arcades and the two-storey façade of the han surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-emir-hani/p028-1.jpg",
+        "original_name": "ERD02275 kopya.jpg",
+        "book_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+        "book_pdf_name": "6-Orhan Bey Külliyesi.pdf",
+        "book_page": "213"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Hanın kubbeli revak galerisi",
+        "en": "The han's vaulted arcade"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla şeritli kalın payeler beyaz sivri kemerleri taşıyor. Kırmızı tuğla döşeli galeride masalar ve kitaplık bulunuyor; yanında avlu görünüyor.",
+        "en": "Thick piers of banded stone and brick carry white pointed vaults. The red-brick-paved gallery holds tables and a bookcase, with the courtyard beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-emir-hani/p028-2.jpg",
+        "original_name": "ERD02267 kopya.jpg",
+        "book_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+        "book_pdf_name": "6-Orhan Bey Külliyesi.pdf",
+        "book_page": "213"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Revakta tezgâhlarda kumaş ve el işleri",
+        "en": "Fabrics and crafts on display in the arcade"
+      },
+      "alt": {
+        "tr": "Beyaz kemerli revakta tezgâhlara yığılmış kumaşlar, işlemeler ve halılar sergileniyor. Zemin kırmızı tuğla döşeli, sağda avlu görünüyor.",
+        "en": "In a white-vaulted arcade, fabrics, embroideries and rugs are piled on stalls. The floor is red brick, with the courtyard to the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    }
+  ],
   "archive_media": []
 }

@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Hamza Bey Külliyesi bölümünden (s. 173-185) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş, archive_media boş); Drive klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
       "Türbenin yapım yılı ve mimarı kitapta verilmiyor.",
@@ -224,8 +222,42 @@
     "visitor_tips": []
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1q5tdZZqn4SpOpp6Nlka4iS0c3_UDyFZZ",
+    "book_layout_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+    "book_pdf_name": "5-Hamzabey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hamza-bey-ailesi-turbesi/p009-1.jpg",
+        "original_name": "ERD06026 kopya-2.jpg",
+        "book_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+        "book_pdf_name": "5-Hamzabey Külliyesi.pdf",
+        "book_page": "180"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Hamza Bey Ailesi Türbesi sandukaları",
+        "en": "Sarcophagi in the Hamza Bey Family Tomb"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada ahşap kaideler üzerinde yeşil ve siyah örtülü sandukalar sıralanır. Ortadaki sandukanın önünde adı yazan beyaz bir levha vardır.",
+        "en": "In a white-walled room, several sarcophagi with dark green and black covers stand on wooden bases. A white name plate stands in front of the central one."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-29"
+    }
+  ],
   "archive_media": [],
   "dating": null,
   "founder": null,

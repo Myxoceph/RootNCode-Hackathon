@@ -11,11 +11,10 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 457-459) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Hu Çeşmesi ve semahane için hedef kayıt bilinmiyor.",
-      "Kapı kitabesinin (kelime-i tevhid) ve Hu Çeşmesi kitabesinin fotoğrafları AR için seçilebilir."
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -380,7 +379,69 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-tekke-camii/p065-1.jpg",
+        "original_name": "04_3.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "458"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tekke Camii'nin mihrabı ve minberi",
+        "en": "Mihrab and minbar of the Sufi Lodge Mosque"
+      },
+      "alt": {
+        "tr": "Mavi çinili, kemerli mihrabın sağında ahşap minber ve kırmızı Kâbe işlemeli perde var. Tavan yeşil kalem işi bezemeli; pencereler vitraylı, duvarda altın yazılı levhalar asılıdır.",
+        "en": "A blue-tiled arched mihrab with a wooden minbar and a red curtain bearing a Kaaba motif on its right. The ceiling has green painted decoration; windows have stained glass and gilded calligraphy panels hang on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-tekke-camii/p066-3.jpg",
+        "original_name": "11_3.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "459"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tekke Camii'nin ahşap mahfili",
+        "en": "Wooden gallery of the Sufi Lodge Mosque"
+      },
+      "alt": {
+        "tr": "Salonun arka tarafında ahşap korkuluklu bir mahfil yükselir; altında kafes bölmeler ve merdiven vardır. Tavan ahşap kaplama, zemin açık renk halıdır.",
+        "en": "At the back of the hall a wooden gallery with a railing rises above lattice partitions and a staircase. The ceiling is wood-panelled and the carpet is light coloured."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    }
+  ],
   "archive_media": []
 }

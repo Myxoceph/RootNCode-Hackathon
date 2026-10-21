@@ -13,8 +13,8 @@
       "Abdal Mehmed'in kimliği ve yaşadığı dönem kitapta verilmiyor; kaynaklardan araştırılmalı.",
       "Kitapta türbenin plan şekli (kare/dikdörtgen) ayrıca belirtilmiyor; yalnızca 5,85 × 6,20 m ölçüsü var.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -331,8 +331,42 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-abdal-mehmet-turbesi/p004-2.jpg",
+        "original_name": "03.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "493"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Türbenin kubbesi ve çevresi",
+        "en": "The tomb's dome from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında gri metal kaplı, ışınsal şeritli yuvarlak bir kubbe görünür. Yanında yoğun yeşil ağaçlar ve kırmızı çatılı evler yer alır.",
+        "en": "From above: a round grey metal-clad dome with radiating ribs. Dense green trees and red-roofed houses stand beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

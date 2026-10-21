@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 311-315) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Bayezid Paşa Camii ve Çatal Çeşme'nin ilçesi kitapta belirtilmiyor; 'bursa-yildirim-catal-cesmesi' hedef id'si varsayılan ilçeyle yazıldı, teyit edilip düzeltilmeli.",
       "1945 onarım kitabesinin metni kaynakta yok; yerinde okunup eklenmeli.",
       "Hamamın güncel kullanım durumu (kültür merkezi) tarihleri kitapta 2013'ten sonrası için belirsiz; teyit edilmeli.",
-      "Kitap, Molla Fenârî Camii'nin ilçesini belirtmiyor; ilişki hedefi mevcut kayıt bursa-osmangazi-molla-fenari-camii'ne bağlandı, aynı yapı olduğu teyit edilmeli."
+      "Kitap, Molla Fenârî Camii'nin ilçesini belirtmiyor; ilişki hedefi mevcut kayıt bursa-osmangazi-molla-fenari-camii'ne bağlandı, aynı yapı olduğu teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -579,8 +579,70 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-incirli-hamami/p032-1.jpg",
+        "original_name": "01 ERD03730 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "311"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "İncirli Hamamı, kubbeler ve tuğla taş cephe",
+        "en": "İncirli Bath, domes and brick and stone facade"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş sıralı hamamın büyük kubbesi ve yanında küçük gri kubbeler görünür. Duvarlarda kemerli pencereler yer alır.",
+        "en": "A bath of brick and stone courses with a large dome and a row of smaller grey domes beside it. Arched windows line the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-incirli-hamami/p033-1.jpg",
+        "original_name": "05 ERD03500 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "312"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Beyaz mermerli iç mekân ve kemerler",
+        "en": "Marble-clad interior and arches"
+      },
+      "alt": {
+        "tr": "Beyaz mermer kaplı salonda, kırmızı tuğlalı kemerler ve basamaklı nişler görünür. Ortada uzun bir masa ve kırmızı sandalyeler yer alır.",
+        "en": "A white marble-clad hall with red brick arches and stepped niches. A long table with red chairs stands in the centre."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

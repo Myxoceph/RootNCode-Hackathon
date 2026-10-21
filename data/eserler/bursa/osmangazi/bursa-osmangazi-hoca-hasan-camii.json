@@ -14,8 +14,8 @@
       "Mimar ve vakıf bilgisi kitapta yok.",
       "2019 sonrası hazire düzeni ve erişim sahada teyit edilmeli.",
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -377,8 +377,70 @@
       "en": "Hoca Hasan Mosque in Hocahasan Neighborhood is a square-plan building with a hipped wooden roof covered in tiles. The walls are of plastered stone and brick. Its minaret, with an octagonal base, a short cylindrical shaft and one balcony, is reinforced with steel rings. The narthex portico is enclosed with wooden glass panels on three sides. A small graveyard lies east of the mosque."
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hoca-hasan-camii/p073-1.jpg",
+        "original_name": "Hoca Hasan Camii ve Haziresi 01.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "342"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kiremit çatısı ve tuğla minaresi",
+        "en": "The mosque's tiled roof and brick minaret"
+      },
+      "alt": {
+        "tr": "Kırma kiremit çatılı, ahşap ve camlı cepheli cami; yanında tuğla örgülü minare yükseliyor. Avlu ve çevresinde sıra sıra apartmanlar ile uzakta tepe görünüyor.",
+        "en": "A mosque with a hipped tile roof and a wood-and-glass front, with a brick minaret beside it. A courtyard and rows of apartment buildings surround it, with a hill beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hoca-hasan-camii/p075-1.jpg",
+        "original_name": "ERD06599 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "344"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Mermer çerçeveli, bitkilerle dolu mezar alanı",
+        "en": "Marble-framed grave area with shrubs"
+      },
+      "alt": {
+        "tr": "Gri mermer bir çerçevenin içinde sık çalılar ve küçük bitkiler yer alıyor. Arkada demir parmaklıklı pencereleri olan açık renk bir duvar ve komşu binalar görünüyor.",
+        "en": "Dense shrubs and small plants fill a grey marble frame. Behind it are a light wall with barred windows and neighbouring buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

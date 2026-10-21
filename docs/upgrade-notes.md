@@ -7,6 +7,18 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-22 · Bursa'da 238 kayda kitap fotoğrafları
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- Fotoğraflı Bursa kaydı 49'dan 287'ye çıktı (506 yeni fotoğraf, altyazı ve alt metinleriyle); sürümleri R2'de.
+
 ## 2026-10-22 · Drive fotoğraflarından 87 koordinat daha
 
 Kimler: **API'yi yerelde çalıştıranlar**; veri araçlarını kullananlar için 2. adım

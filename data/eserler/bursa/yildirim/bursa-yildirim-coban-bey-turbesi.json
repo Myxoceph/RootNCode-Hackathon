@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
       "Türbeyi yaptıran ve yapım tarihi kaynakta yok; Çoban Bey'in türbede yatıp yatmadığı kitapta açıkça söylenmiyor.",
       "Çoban Bey'in dönemi ve kimliği kaynakta yok.",
       "Türbede yatan sekiz kişinin kimlikleri kaynakta yok.",
       "Çoban Bey'in İznik'teki mescidi için hedef kayıt id'si bilinmiyor; ilişki kurulmadı.",
-      "Mimar kaynakta yok."
+      "Mimar kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -213,7 +213,41 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-coban-bey-turbesi/p005-3.jpg",
+        "original_name": "03 ERD03958 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "284"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Çoban Bey Türbesi ve çevresindeki bahçe",
+        "en": "Tomb of Çoban Bey and its garden"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kırmızımsı kubbeli küçük türbe çimenlik bahçede durur. Önünde iki mezar taşı ve yaprağı dökülmüş ağaçlar, arkada tepeler görünür.",
+        "en": "A small stone-walled tomb with a reddish dome stands in a grassy garden. Two gravestones and bare trees are in front, with hills behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    }
+  ],
   "archive_media": []
 }

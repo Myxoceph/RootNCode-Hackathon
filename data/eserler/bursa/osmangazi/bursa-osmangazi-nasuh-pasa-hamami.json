@@ -15,8 +15,8 @@
       "Hamamın tam yapım tarihi bilinmiyor ('1483'ten önce').",
       "Ovakim'in hamamı vakıftan satın alma tarihi kaynakta yok.",
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -524,7 +524,97 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nasuh-pasa-hamami/p025-1.jpg",
+        "original_name": "3_1.jpeg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "704"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Hamamın büyük kiremit kubbesi",
+        "en": "The bath's large tiled dome"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında merkezinde cam ışıklığı olan, ışınsal kiremit sıralı geniş bir kubbe görünür. Kenarlarında küçük kubbeler ve çevre binalar vardır.",
+        "en": "From above: a wide dome of radiating roof tiles with a glazed skylight at its centre. Small domes and neighbouring buildings lie at the edges."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nasuh-pasa-hamami/p025-2.jpg",
+        "original_name": "2 Nasuh paşa hamamı.jpeg.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "704"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hamamın kubbeleri ve çevresi",
+        "en": "Bath domes and surroundings"
+      },
+      "alt": {
+        "tr": "Yoğun yapılaşmış bir mahallede, kiremit kaplı birkaç kubbe ve aralarında yeşil bir avlu yukarıdan görünür. Yanlarında kırmızı çatılı evler vardır.",
+        "en": "In a dense neighbourhood, several tile-covered domes with a green courtyard between them, seen from above. Red-roofed houses stand beside them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nasuh-pasa-hamami/p026-1.jpg",
+        "original_name": "5_3.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "705"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap galerili ortadaki soyunma holü",
+        "en": "Central hall with wooden galleries"
+      },
+      "alt": {
+        "tr": "Mermer zeminli geniş holün çevresi iki katlı, kahverengi ahşap galerilerle çevrilidir. Ortada kırmızı koltuklar ve işlemeli bir örtüyle kaplı bir masa; kenarlarda ahşap sandalyeler durur.",
+        "en": "A wide hall with a marble floor is ringed by two levels of brown wooden galleries. Red sofas and a table with a patterned cloth stand in the middle, with wooden chairs along the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    }
+  ],
   "archive_media": []
 }

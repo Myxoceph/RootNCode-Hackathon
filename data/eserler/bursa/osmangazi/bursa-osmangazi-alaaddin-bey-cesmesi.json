@@ -14,8 +14,8 @@
       "Yapı ve etrafındaki konumun adresi kaynakta yalnızca mahalle düzeyinde; cadde/sokak adı yok.",
       "Alaaddin Bey Camii kaydı ('bursa-osmangazi-alaaddin-bey-camii') henüz yoksa oluşturulmalı.",
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -180,7 +180,41 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-alaaddin-bey-cesmesi/p003-2.jpg",
+        "original_name": "DJI_20241002182932_0126_D-Edit.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "682"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Alaaddin Bey Camii ve çevresi, havadan",
+        "en": "Alaaddin Bey Mosque area from above"
+      },
+      "alt": {
+        "tr": "Havadan görünen kubbeli cami, tuğla minare ve çevresindeki kiremit çatılar. Avluda çeşmenin bulunduğu alan, arkada dağ ve kent vardır.",
+        "en": "An aerial view of a domed mosque with a brick minaret among tiled roofs. The courtyard area with the fountain is visible, with mountains and the city beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    }
+  ],
   "archive_media": []
 }

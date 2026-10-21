@@ -15,8 +15,8 @@
       "Mimar kitapta belirtilmiyor (architect: null).",
       "Medrese müzesinin adı/işletmecisi ve ziyaret bilgileri kitapta yok.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -419,8 +419,41 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sair-ahmet-pasa-turbesi/p047-1.jpg",
+        "original_name": "01.1 Kapak.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "536"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şair Ahmet Paşa Türbesinin dış görünümü",
+        "en": "Exterior of Şair Ahmet Paşa Tomb"
+      },
+      "alt": {
+        "tr": "Altıgen planlı türbenin tuğla ve taş şeritli duvarları ile kurşun gri kubbesi görünür. Kemerli pencereler kafesli, yanında bir avlu duvarı vardır.",
+        "en": "A hexagonal tomb with walls of brick and stone bands and a grey lead dome. Arched windows are fitted with grilles, and a courtyard wall runs beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

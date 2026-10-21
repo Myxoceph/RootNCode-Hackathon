@@ -14,9 +14,8 @@
       "İnşa tarihi tartışmalı (vakfiye öncesi, 1390-1394, 1398 öncesi, 1399); kesin yıl bulunamadı.",
       "Yapının bugünkü kullanım durumu: boş, yeni işlev çalışmaları sürüyor; ziyarete açık olup olmadığı teyit edilmeli.",
       "Orhan Vakfı arazisi için hedef kayıt (bursa-osmangazi-orhan-bey-kulliyesi) tahminidir; teyit edilmeli.",
-      "Koordinatlar kitapta yok; sahadan ya da fotoğraf EXIF'inden eklenmeli.",
-      "Fotoğraflar eklenmeli (media_folder ve media), match_photos.py ile bağlanacak; arşiv fotoğrafı (Zaman Perdesi) bulunmalı.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -726,8 +725,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "12yPc_UrR6yjVczGXdLgefVhSy0n3eSzx",
+    "book_layout_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+    "book_pdf_name": "10-Yıldırım Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yildirim-darussifasi/p042-2.jpg",
+        "original_name": "DJI_20241201133329_0681_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+        "book_pdf_name": "10-Yıldırım Külliyesi.pdf",
+        "book_page": "199"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Darüşşifanın taş duvarlı yapısı, yukarıdan",
+        "en": "Stone-walled hospital building seen from above"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarlı, düz çatılı yapının köşesinde küçük bir kubbe yükselir. Çevrede yollar, apartmanlar ve uzakta dağlar görünür.",
+        "en": "A stone-walled building with flat roofs has a small dome at one corner. Roads and apartment blocks surround it, with mountains in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yildirim-darussifasi/p037-1.jpg",
+        "original_name": "DJI_20241201134348_0722_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+        "book_pdf_name": "10-Yıldırım Külliyesi.pdf",
+        "book_page": "194"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Darüşşifa ve revaklı avlusu, kuşbakışı",
+        "en": "Hospital and its arcaded courtyard from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında kemerli revakla çevrili avlu ve düz çatılı taş yapı görünür. Çevresinde apartmanlar ve arkada dağlar vardır.",
+        "en": "From above, an arcaded courtyard and a stone building with flat roofs are visible. Apartment blocks surround it, with mountains behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yildirim-darussifasi/p038-2.jpg",
+        "original_name": "ERD03544 kopya.jpg",
+        "book_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+        "book_pdf_name": "10-Yıldırım Külliyesi.pdf",
+        "book_page": "195"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Revaklı koridor ve oda kapıları",
+        "en": "Arcade corridor and room doors"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı uzun bir koridorda solda ahşap kapılar ve kemerli nişler, sağda geniş pencereler vardır. Işık taş zemine düşer.",
+        "en": "A long corridor with white walls has wooden doors and arched niches on the left and large windows on the right. Light falls on the stone floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

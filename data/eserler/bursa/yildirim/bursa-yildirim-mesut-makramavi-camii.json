@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 233-234) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir. Hazire kitapta cami bölümüyle birlikte (Mesut Makramavi Camii ve Haziresi) ele alındığı için bu kayıtta bir bölüm olarak yer alır.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
-      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Caminin inşa yılı kitapta yok; yalnızca II. Murad dönemi (ve İbn Bezzâz / Şeker Hoca Camileri ile aynı dönem) belirtiliyor.",
       "Mimar ve vakıf bilgisi kitapta yok.",
@@ -364,7 +362,97 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mesut-makramavi-camii/p022-2.jpg",
+        "original_name": "DJI_20240925205524_0796_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "233"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Caminin minaresi",
+        "en": "The minaret of the mosque"
+      },
+      "alt": {
+        "tr": "Mavi gökyüzüne karşı yükselen, açık gri renkli, sivri külahlı ve tek şerefeli bir minare. Alt kısımda çevre evlerin kiremit çatıları görünür.",
+        "en": "A light grey minaret with a single balcony and a pointed cap, rising against a deep blue sky. Neighbouring tile roofs and houses appear at the bottom."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mesut-makramavi-camii/p022-1.jpg",
+        "original_name": "01 DJI_20240925205249_0792_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "233"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Minare ve çevresindeki çatılar, kuşbakışı",
+        "en": "Minaret and surrounding rooftops, aerial view"
+      },
+      "alt": {
+        "tr": "Yukarıdan görünen mahallede kiremit çatılı evler ve apartmanlar sıkışık düzende dizilmiştir. Çatıların arasında yeşil külahlı ince bir minare seçilir.",
+        "en": "An aerial view of a dense neighbourhood of tile-roofed houses and apartment blocks. A slim minaret with a green cap stands among the roofs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mesut-makramavi-camii/p023-2.jpg",
+        "original_name": "ERD04062 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "234"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mihrap, minber ve avizeli ibadet alanı",
+        "en": "Mihrab, minbar and chandelier in the prayer hall"
+      },
+      "alt": {
+        "tr": "Açık yeşil duvarlı küçük salonda yeşil çerçeveli mihrap ve üzerinde altın renkli bir avize durur. Sağda ahşap minber, yerde kırmızı seccade desenli halı vardır.",
+        "en": "In a small light-green hall, a mihrab in a green frame hangs beneath a gold chandelier. A wooden minbar is on the right and the floor has a red prayer-rug-pattern carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    }
+  ],
   "archive_media": []
 }

@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 249) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Yapım tarihi kesin değil (Fatih dönemi tahmini); yıl ve dönem kitapta verilmiyor.",
       "Banî bilinmiyor.",
@@ -282,7 +280,41 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-alanyeri-mescidi/p026-1.jpg",
+        "original_name": "01-3.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "249"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Mescit, avlusu ve minaresi",
+        "en": "Masjid, its yard and minaret"
+      },
+      "alt": {
+        "tr": "Yüksekten bakıldığında kırmızı kiremitli, geniş saçaklı mescit ile yanındaki tuğla minare ve ahşap külahı görünür. Çevresinde apartmanlar ve evler, uzakta dağ vardır.",
+        "en": "From above, the red-tiled masjid with wide eaves and a brick minaret with a wooden cap beside it. Apartment buildings and houses surround it, with a mountain in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-08"
+    }
+  ],
   "archive_media": []
 }

@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 633-635) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
-      "Fotoğraflar eklenmeli (media boş); Drive klasörü ve dosya kimlikleri bulunmalı (media_folder null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
       "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
@@ -514,8 +513,41 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-fidan-hani/p006-1.jpg",
+        "original_name": "ERD02386 kopya.tif",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "635"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avludaki ağaçlar ve köşkvari mescit",
+        "en": "Trees and the small domed pavilion in the courtyard"
+      },
+      "alt": {
+        "tr": "Çıplak ağaç dallarının arasından yeşil çimenli bir avlu görünür. Ortada çok köşeli, kurşun kaplı çatılı küçük bir yapı var; çevresinde kırmızı şemsiyeler ve masalar yer alır.",
+        "en": "A grassy courtyard seen through bare tree branches. A small polygonal building with a lead-covered roof stands in the middle, surrounded by red umbrellas and tables."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

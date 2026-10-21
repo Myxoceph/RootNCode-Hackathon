@@ -12,12 +12,10 @@
     "todos": [
       "Mimar kitapta bilinmiyor; kitabe yok. Kesin inşa tarihi bilinmiyor.",
       "Kubbe sayısı, minare konumu (ön/yan) ve minarelerin yüksekliği kitapta belirtilmiyor.",
-      "Kitabelerin dili kitapta belirtilmiyor ('other' olarak işaretlendi); ayet/hadis metinleri kitabın yazımıyla aktarıldı. Kitap bu ayetlerin tam yerini ('sağ/sol duvar') tarif eder, AR için fotoğrafla bağlanacak.",
       "İlçe/adres: kitap adresi 'Yıldırım Mahallesi, Yardım Sokak No: 10' olarak verir.",
       "Yeşil Cami (bursa-yildirim-yesil-camii) ve Hudâvendigâr Camii hedef kayıtlarının varlığı/idsi teyit edilmeli.",
-      "Koordinatlar kitapta yok; sahadan ya da fotoğraf EXIF'inden eklenmeli.",
-      "Fotoğraflar eklenmeli (media_folder ve media), match_photos.py ile bağlanacak; arşiv fotoğrafı (Zaman Perdesi) bulunmalı.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -1124,8 +1122,125 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "12yPc_UrR6yjVczGXdLgefVhSy0n3eSzx",
+    "book_layout_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+    "book_pdf_name": "10-Yıldırım Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yildirim-bayezid-turbesi/p006-1.jpg",
+        "original_name": "DJI_20240921134146_0394_D-Edit.jpg",
+        "book_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+        "book_pdf_name": "10-Yıldırım Külliyesi.pdf",
+        "book_page": "163"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı kubbeleri ve iki tuğla minaresi olan bir caminin yukarıdan görünümü. Çevresinde ağaçlar ve kentin evleri vardır.",
+        "en": "A mosque seen from above, with lead-covered domes and two brick minarets. Trees and the city's houses surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yildirim-bayezid-camii/p010-2.jpg",
+        "original_name": "ERD02102 kopya.jpg",
+        "book_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+        "book_pdf_name": "10-Yıldırım Külliyesi.pdf",
+        "book_page": "167"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Son cemaat yerinin kubbeli tavanı",
+        "en": "Domed ceiling of the portico"
+      },
+      "alt": {
+        "tr": "Aşağıdan bakıldığında iki yuvarlak kubbe, ortalarında yıldız biçimli bezemeleriyle görünür. Sivri kemerler ve taş duvarlar kubbeleri çevreler, altta demir parmaklıklı pencereler bulunur.",
+        "en": "Seen from below, two round domes show star-shaped ornaments at their centres. Pointed arches and stone walls frame them, with iron-grilled windows beneath."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-21"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yildirim-bayezid-camii/p009-1.jpg",
+        "original_name": "ERD02156 kopya.jpg",
+        "book_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+        "book_pdf_name": "10-Yıldırım Külliyesi.pdf",
+        "book_page": "166"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Demir parmaklıklı, taş çerçeveli pencere",
+        "en": "Iron-grilled window with a stone frame"
+      },
+      "alt": {
+        "tr": "Sivri kemerli, işlemeli taş çerçevenin içinde ince demir parmaklıklı bir pencere yer alır. Çevresindeki duvar gri ve pembe tonlu taştır.",
+        "en": "An iron-grilled window sits inside a carved stone frame with a pointed arch. The surrounding wall is grey and pinkish stone."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-21"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yildirim-bayezid-camii/p018-3.jpg",
+        "original_name": "DJI_20240921145404_0412_D-Edit.jpg",
+        "book_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+        "book_pdf_name": "10-Yıldırım Külliyesi.pdf",
+        "book_page": "175"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Hat levhası, Hz. Ömer adı",
+        "en": "Calligraphy panel with the name of Caliph Omar"
+      },
+      "alt": {
+        "tr": "Krem zeminde siyah mürekkeple yazılmış Arapça bir yazı, turuncu ve altın renkli bezemeli bir çerçeve içindedir.",
+        "en": "Arabic calligraphy in black ink on a cream ground, set in a frame decorated in orange and gold."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-21"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

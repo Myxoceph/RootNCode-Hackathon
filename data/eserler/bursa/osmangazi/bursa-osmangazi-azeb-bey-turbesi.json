@@ -13,8 +13,8 @@
       "Camiden (Azeb Bey Camii) kitapta adı ve ilçesi açıkça verilmiyor; ilişki hedef id'si tahmini ve ilçe doğrulanmalı.",
       "Türbenin plan şekli ve ölçüleri kitapta yok.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -319,8 +319,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-azeb-bey-turbesi/p006-1.jpg",
+        "original_name": "ERD06562 kopya-2.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "495"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Azeb Bey Türbesi'nin tuğla-taş cephesi",
+        "en": "Brick-and-stone front of Azeb Bey Tomb"
+      },
+      "alt": {
+        "tr": "Almaşık tuğla ve taş örgülü, kırmızımsı iki katlı bir türbe cephesi. Önünde yeşil tenteli bir saçak, kapı ve ızgaralı pencereler vardır.",
+        "en": "A reddish tomb front of alternating brick and stone courses. A green awning, a door and grilled windows are in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-azeb-bey-turbesi/p006-2.jpg",
+        "original_name": "ERD06566 kopya.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "495"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbe içindeki ahşap sandukalar",
+        "en": "Wooden sarcophagi inside the tomb"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla duvarlı, beyaz kubbeli odada koyu kahverengi ahşap üç sanduka yer alır. Zemin turuncu fayanstır; ızgaralı pencerelerden ışık girer.",
+        "en": "In a room with red brick walls and a white dome stand three dark brown wooden sarcophagi. The floor is orange tile and light enters through grilled windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-azeb-bey-turbesi/p006-3.jpg",
+        "original_name": "ERD06577 kopya.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "495"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Duvardaki mermer kitabe",
+        "en": "Marble inscription on the wall"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş duvarda sivri kemerli bir niş içinde kare, beyaz mermer bir kitabe levhası var. Levhada yazı satırları işlenmiştir.",
+        "en": "In the brick-and-stone wall, a square white marble inscription panel is set in a pointed-arch niche. Lines of script are carved on it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

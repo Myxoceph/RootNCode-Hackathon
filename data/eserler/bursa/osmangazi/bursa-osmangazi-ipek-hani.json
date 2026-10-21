@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 643-647) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
-      "Fotoğraflar eklenmeli (media boş); Drive klasörü ve dosya kimlikleri bulunmalı (media_folder null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
       "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
@@ -548,8 +547,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ipek-hani/p017-2.jpg",
+        "original_name": "DJI_20241201091939_0515_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "646"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "İpek Hanı ve çevresinin kuşbakışı",
+        "en": "Aerial view of İpek Han"
+      },
+      "alt": {
+        "tr": "Yukarıdan, ortasında ağaçlı bir avlu bulunan çok kubbeli kare bir han ve sağda başka bir han görünür. Arada minareli bir cami ve kırmızı çatılı yapılar vardır.",
+        "en": "From above: a square han with many small domes around a tree-filled courtyard, and another han on the right. A mosque with a minaret and red-roofed buildings lie between them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ipek-hani/p017-3.jpg",
+        "original_name": "ERD02565 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "646"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Hanın tuğla kemerli üst kat galerisi",
+        "en": "Brick-arched upper gallery"
+      },
+      "alt": {
+        "tr": "Tuğla payelerin taşıdığı uzun kemerli bir galeri, gri zeminde uzar. Sağda galerinin dışa açılan kemerleri ve uzakta avlunun karşı kanadı görünür.",
+        "en": "A long gallery of brick arches on piers stretches over a grey floor. Open arches on the right look outward, with the far wing of the courtyard in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-28"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ipek-hani/p017-1.jpg",
+        "original_name": "ERD02547 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "646"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Galeride kemerli geçit",
+        "en": "Arched passage in the gallery"
+      },
+      "alt": {
+        "tr": "Tuğla kemerli dar bir galeri uzaklaşırken sağdaki açıklıktan çıplak ağaçlar ve karşıdaki revaklar görünür. Zemin yıpranmış gri taştır, üstte beyaz bir tonoz yer alır.",
+        "en": "A narrow brick-arched gallery recedes into the distance; through the opening on the right are bare trees and the arcades opposite. The floor is weathered grey stone with a white vault above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-28"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

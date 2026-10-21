@@ -11,15 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Orhan Bey Külliyesi bölümünden (s. 187-213) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki Orhan Bey Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
       "Caminin kendisinin vakfiyede geçip geçmediği kitapta belirtilmiyor; vakfiye yalnızca imarete yapılan vakfı sayıyor. Vakfiye metni bulunursa teyit edilecek.",
       "Onarım kitabesinin (cümle kapısı üzerindeki beş satırlık) ile s. 195'te anılan mermer alınlıktaki Çelebi Mehmed dönemi onarım kitabesinin aynı kitabe olup olmadığı netleştirilmeli.",
-      "AR için kitabe fotoğrafları seçilip inscriptions[].ar_target_media_id alanına bağlanacak.",
       "Kitabeler için Arapça/Osmanlıca yazı türü (script) alanı kitapta yalnızca mihrap kitabesi için belirtilmiş; diğerleri boş bırakıldı.",
-      "Arşiv fotoğrafı (Zaman Perdesi) kitaptan çıkarılamadı; aranacak."
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -1193,7 +1190,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1szYG4K01kG96L2sZgOvZlw1JJC6PQevi",
+    "book_layout_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+    "book_pdf_name": "6-Orhan Bey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-orhan-bey-camii/p010-1.jpg",
+        "original_name": "05.jpeg",
+        "book_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+        "book_pdf_name": "6-Orhan Bey Külliyesi.pdf",
+        "book_page": "195"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Orhan Bey Camii'nin dıştan görünümü",
+        "en": "Exterior of the Orhan Bey Mosque"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş şeritli, kemerli pencereli kubbeli yapı ağaçların arasında duruyor. Önünde çim, çalılar ve kaldırım yer alıyor.",
+        "en": "A domed building of banded brick and stone with arched windows stands among trees. Lawn, shrubs and a pavement lie in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-orhan-bey-camii/p004-2.jpg",
+        "original_name": "ERD03201 kopya.jpg",
+        "book_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+        "book_pdf_name": "6-Orhan Bey Külliyesi.pdf",
+        "book_page": "189"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yerinden şadırvana bakış",
+        "en": "View to the fountain from the portico"
+      },
+      "alt": {
+        "tr": "Sivri kemerli revağın ortasından, ahşap sütunlu kubbeli bir şadırvan görünüyor. İki yanda ayakkabılıklar, ileride demir korkuluklu avlu var.",
+        "en": "Through the central pointed arch of the portico, a domed fountain on timber columns is visible. Shoe racks stand on both sides, with an iron-railed courtyard beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    }
+  ],
   "archive_media": []
 }

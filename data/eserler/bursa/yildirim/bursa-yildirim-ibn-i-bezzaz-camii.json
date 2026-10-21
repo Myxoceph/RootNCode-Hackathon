@@ -15,7 +15,6 @@
       "Hazirede adı geçen ancak taşı kalmamış kişinin kimliği kitapta verilmiyor.",
       "Mimar ve vakıf bilgisi yok.",
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
     ],
     "data_quality_notes": [
@@ -352,8 +351,98 @@
     "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-ibn-i-bezzaz-camii/p018-1.jpg",
+        "original_name": "01 ERD03662 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "229"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "İbn-i Bezzaz Camii, cephe ve minare",
+        "en": "İbn-i Bezzaz Mosque, facade and minaret"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla sıralı cephede sivri kemerli üç büyük pencere ve ortada küçük bir kapı vardır. Arkasında kırmızı tuğlalı, sivri külahlı bir minare yükselir.",
+        "en": "The stone and brick facade has three large pointed-arch windows and a small central door. A red brick minaret with a pointed cap rises behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-ibn-i-bezzaz-camii/p019-3.jpg",
+        "original_name": "05 ERD03621 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "230"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Ahşap kapı ve üzerindeki kitabelik",
+        "en": "Wooden door and inscription panel above it"
+      },
+      "alt": {
+        "tr": "Çift kanatlı koyu renkli ahşap kapının üstünde sivri kemerli, yaldızlı bir kitabe levhası vardır. Kapı, taş çerçeveli ve beyaz duvara oturur.",
+        "en": "A dark double-leaf wooden door with a gilded, pointed-arch inscription panel above it. The door has a stone frame set in a white wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-ibn-i-bezzaz-camii/p019-2.jpg",
+        "original_name": "04 ERD03614 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "230"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap mahfilli ibadet alanı",
+        "en": "Prayer hall with wooden gallery"
+      },
+      "alt": {
+        "tr": "İç mekânda ahşap korkuluklu bir mahfil, ince direklere oturan kemerlerle taşınır. Arka duvarda ahşap bir kapı, zeminde sarı ve kırmızı desenli halı görünür.",
+        "en": "Inside, a wooden-railed gallery is carried on slender posts with arches. A wooden door is on the back wall and the floor has a yellow and red patterned carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

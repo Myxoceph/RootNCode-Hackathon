@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Satı Fakih'in kesin vefat tarihi ve türbenin durumu kitapta yok.",
       "Onarım tarihleri kitapta yok.",
@@ -341,8 +340,98 @@
     },
     "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sati-fakih-camii/p015-3.jpg",
+        "original_name": "06.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "408"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Satı Fakih Camii ve sokaktan minaresi",
+        "en": "Satı Fakih Mosque and its minaret from the street"
+      },
+      "alt": {
+        "tr": "Moloz taş duvarlı küçük cami, taş kaplı dar bir sokağın köşesinde durur. Arkasında tuğla minare yükselir; iki yanda pembe ve sarı evler görünür.",
+        "en": "A small rubble-stone mosque stands at the corner of a narrow paved street. A brick minaret rises behind it, with pink and yellow houses on both sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sati-fakih-camii/p015-1.jpg",
+        "original_name": "01 Kapak_1.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "408"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Satı Fakih Camii'nin minaresi ve çevresi",
+        "en": "Minaret and surroundings of Satı Fakih Mosque"
+      },
+      "alt": {
+        "tr": "Yüksekten bakıldığında külahı gri metalle kaplı tuğla minare taş duvarlı caminin yanında yükselir. Çevresinde kiremit çatılı evler ve ağaçlar, arkada Bursa'nın dağ yamacı yer alır.",
+        "en": "From above, a brick minaret with a grey metal cap rises beside the stone-walled mosque. Tiled-roof houses and trees surround it, with a mountain slope behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sati-fakih-camii/p016-1.jpg",
+        "original_name": "01 ERD07874 kopya.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "409"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Satı Fakih Camii haziresindeki mezar taşları",
+        "en": "Gravestones in the graveyard of Satı Fakih Mosque"
+      },
+      "alt": {
+        "tr": "Güneşli küçük bir bahçede, tepesi başlıklı uzun mezar taşları bir ağacın çevresinde dikilir. Arkada turkuaz boyalı bir duvar ve taş duvar yer alır.",
+        "en": "In a small sunny garden, tall gravestones with carved tops stand around a tree. A turquoise-painted wall and a stone wall are behind them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

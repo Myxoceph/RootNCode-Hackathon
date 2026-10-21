@@ -11,13 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 437-439) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Mahalle: kitapta 'Osmangazi Mahallesi'; adres numarası verilmiyor.",
       "Kitabedeki 'Sultan Murad Han'ın hangi Murad olduğu kitapta belirtilmiyor.",
-      "Giriş kitabesi fotoğrafı AR için seçilip ar_target_media_id alanına bağlanacak.",
-      "Eski yazılı levhalar ve kûfi yazılar bugün var mı, kitap belirtmiyor; sahada teyit edilmeli."
+      "Eski yazılı levhalar ve kûfi yazılar bugün var mı, kitap belirtmiyor; sahada teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -444,7 +443,69 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyh-pasa-camii/p044-1.jpg",
+        "original_name": "01 Kapak_10.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "437"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeyh Paşa Camii ve minaresi",
+        "en": "Shaykh Paşa Mosque and its minaret"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı, tuğla ve taş şeritli yapının önünde camlı bir bölüm var. Yanında tuğla minare yükselir; arkada sokak ve dağ yamacı görünür.",
+        "en": "A tile-roofed building with brick and stone bands and a glazed section in front. A brick minaret rises beside it, with a street and mountain slope behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyh-pasa-camii/p045-1.jpg",
+        "original_name": "03_4.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "438"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeyh Paşa Camii'nin mihrabı ve minberi",
+        "en": "Mihrab and minbar of Shaykh Paşa Mosque"
+      },
+      "alt": {
+        "tr": "Beyaz mihrap yeşil bezeme şeridiyle çevrilidir; sağda ahşap minber ve yeşil perde durur. Tavan ahşap, duvarlarda hat levhaları, halı ise mavi tonludur.",
+        "en": "A white mihrab framed by a green decorative border, with a wooden minbar and green curtain on the right. The ceiling is wooden, calligraphy panels hang on the walls and the carpet is blue."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    }
+  ],
   "archive_media": []
 }

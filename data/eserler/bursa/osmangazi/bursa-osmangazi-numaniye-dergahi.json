@@ -11,14 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Tekkeler ve Zaviyeler (Osmangazi) bölümünden yapay zekâ ile özetlenerek taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; saha/GPS ile eklenip doğrulanmalı (in_review öncesi zorunlu).",
-      "Fotoğraf ve arşiv fotoğrafı yok; Drive klasörü belirlenip media[] ve media_folder doldurulmalı. Kitapta yapıya ait görsel sayfalar (metinsiz PDF sayfaları) vardı, içerikleri okunamadı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgisi (ücret, saat, süre) kitapta yok.",
       "Dergâhın ilk kuruluş (hanikah) tarihi ve 1734 vakfiyesinin metni kitapta yok; vakfiye VGM arşivinden bulunursa waqf.deed'e eklenmeli.",
       "Mimar kitapta belirtilmiyor.",
-      "Kitabenin 'Mealen' metnindeki iki hata (kapanış tırnakları, 'Tahsin' ifadesi) kaynağa sadık bırakıldı; kitabe fotoğrafı AR için çekilmeli.",
       "'Yusuf Ziya Paşa' ve 'Sıdkî' imzası dışında kitabe sahibi/hattatı kitapta ayrıca belirtilmiyor.",
-      "Ana giriş kapısı kanatlarındaki III. Selim dönemi kalem işi ayetlerin metni kitapta yok."
+      "Ana giriş kapısı kanatlarındaki III. Selim dönemi kalem işi ayetlerin metni kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -761,8 +760,98 @@
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt'teki mimari anlatımdan derlendi; yalnızca kitapta yazanlar."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1U0yA31gBwZKBr6PdCLJ0f0rbibji23rF",
+    "book_layout_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+    "book_pdf_name": "5-Tekke ve Zaviyeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-numaniye-dergahi/p016-2.jpg",
+        "original_name": "18.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "601"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dergâhın taş döşeli sokağı ve evleri",
+        "en": "Cobbled lane and houses of the lodge"
+      },
+      "alt": {
+        "tr": "Bazalt taş döşeli dar bir sokak, solda taş duvar ve sağda yeşil boyalı ahşap bir ev. Ortada açık mavi renkli, geniş saçaklı iki katlı bir konak yükselir.",
+        "en": "A narrow basalt-cobbled lane with a stone wall on the left and a green-painted wooden house on the right. A pale blue two-storey house with wide eaves stands in the middle."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-27"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-numaniye-dergahi/p015-1.jpg",
+        "original_name": "5_1.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "600"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tevhidhane salonu ve halılar",
+        "en": "The prayer-and-ritual hall with carpets"
+      },
+      "alt": {
+        "tr": "Sarı duvarlı geniş salon; yeşil boyalı ahşap tavanın ortasında bezemeli bir göbek var. Zeminde çok sayıda halı serilidir, duvarlarda hat levhaları asılıdır, sağda minber benzeri beyaz bir merdivenli kürsü görülür.",
+        "en": "A wide yellow-walled hall with a green-painted wooden ceiling and a decorated central medallion. Many carpets cover the floor, calligraphy panels hang on the walls and a white stepped pulpit stands on the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-numaniye-dergahi/p016-1.jpg",
+        "original_name": "7.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "601"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Salonun minber köşesi",
+        "en": "The pulpit corner of the hall"
+      },
+      "alt": {
+        "tr": "Sarı duvarın önünde yeşil kapılı beyaz bir minber ve çevresinde hat levhaları var. Önde balüstrat korkuluk ve renkli halılar görünür, tavan yeşil ahşaptır.",
+        "en": "A white pulpit with a green door stands before a yellow wall, surrounded by calligraphy panels. A balustrade and colourful carpets are in front, and the ceiling is green wood."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    }
+  ],
   "archive_media": [],
   "visit": {
     "setting": "mixed",

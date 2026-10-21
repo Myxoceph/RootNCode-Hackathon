@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Hamza Bey Külliyesi bölümünden (s. 173-185) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş, archive_media boş); Drive klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
       "Türbenin yapım yılı ve mimarı kitapta verilmiyor.",
@@ -326,8 +324,41 @@
     "visitor_tips": []
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1q5tdZZqn4SpOpp6Nlka4iS0c3_UDyFZZ",
+    "book_layout_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+    "book_pdf_name": "5-Hamzabey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hamza-bey-turbesi/p010-2.jpg",
+        "original_name": "DJI_20240929195451_0504_D-Edit-2.jpg",
+        "book_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+        "book_pdf_name": "5-Hamzabey Külliyesi.pdf",
+        "book_page": "181"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Hamza Bey Türbesi kubbesi kuşbakışı",
+        "en": "Top view of the Hamza Bey Tomb dome"
+      },
+      "alt": {
+        "tr": "Sekizgen gövdenin üstündeki kubbe, merkezden yayılan metal şeritlerle yukarıdan görünür. Çevrede ağaçlar ve bir yol bulunur.",
+        "en": "A dome above an octagonal body seen from above, with metal ribs radiating from the centre. Trees and a road are around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": [],
   "dating": null,
   "founder": null,

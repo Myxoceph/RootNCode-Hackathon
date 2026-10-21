@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
-      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
       "Medresenin dönüştürüldüğü tarih kaynakta verilmiyor.",
       "Yapının 18. yüzyıl başındaki kesin yapım yılı kaynakta yok.",
       "Bahçedeki hazirenin onarım tarihi verilmiyor.",
-      "Bursa İnebey Yazma Eser Kütüphanesi (Haraççı Bölümü) ile ilişki eklendi; kütüphanenin Eyne Bey Medresesi'nde olduğu o yapının bölümünden çıkarıldı."
+      "Bursa İnebey Yazma Eser Kütüphanesi (Haraççı Bölümü) ile ilişki eklendi; kütüphanenin Eyne Bey Medresesi'nde olduğu o yapının bölümünden çıkarıldı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -388,7 +388,41 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haraccioglu-medresesi/p017-1.jpg",
+        "original_name": "ERD03023 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "568"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap tavanlı oda ve nişli duvar",
+        "en": "Room with timber ceiling and niche"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı tavanlı odada beyaz örtülü sekizgen bir kürsü durur. Duvarda kemerli niş ve iki küçük pencere, yanlarda minderli oturaklar ve kiremit renkli zemin bulunur.",
+        "en": "A room with a timber panelled ceiling and an octagonal stand under a white cloth. An arched niche and two windows are on the wall, with cushioned benches and a terracotta floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    }
+  ],
   "archive_media": []
 }

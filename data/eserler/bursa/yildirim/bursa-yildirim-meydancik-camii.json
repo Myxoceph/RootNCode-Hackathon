@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 235-237) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
-      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Kesin inşa yılı kitapta yok; yalnızca 'H. 903 / M. 1497'den önce' deniyor.",
       "Veled-i Enbiya, Hasirî ve Meydancık Mescitleri ile Çendik Medresesi'nin ilçesi/ili kitapta 'Bursa' dışında belirtilmediği için same_founder ilişkisi açılmadı (id'leri bilinmiyor).",
@@ -443,7 +441,97 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-meydancik-camii/p024-1.jpg",
+        "original_name": "01 DJI_20240925144754_0703_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "235"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Meydancık Camii, ön görünüm ve minare",
+        "en": "Meydancık Mosque, front view and minaret"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla ve taş sıralı, üç kemerli son cemaat yeri olan küçük bir cami ile gri kubbesi görünür. Yanında kırmızı tuğlalı minare ve arkasında şehir ile dağlar yer alır.",
+        "en": "A small mosque of red brick and stone courses with a three-arched portico and a grey dome. A red brick minaret stands beside it, with the city and mountains behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-meydancik-camii/p025-2.jpg",
+        "original_name": "ERD03816 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "236"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mihrap ve avizeli ibadet alanı",
+        "en": "Mihrab and chandelier in the prayer hall"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı salonda kafes biçimli mihrap, iki yanında mavi çini şeritler ve tavanda geniş bir halka avize vardır. Sağda ahşap minber, yerde kırmızı halı görünür.",
+        "en": "In a white-walled hall, a cage-like mihrab sits between blue tile strips beneath a large ring chandelier. A wooden minbar is on the right and the carpet is red."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-meydancik-camii/p025-1.jpg",
+        "original_name": "07 ERD05210 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "236"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Duvardaki turuncu bitkisel kalem işi",
+        "en": "Orange painted plant motifs on the wall"
+      },
+      "alt": {
+        "tr": "Soluk renkli sıva üzerinde, sıra halinde dizilmiş turuncu ve kızıl kahve palmet benzeri bitkisel motifler görünür.",
+        "en": "A row of orange and reddish-brown palmette-like plant motifs painted on a pale, weathered plaster surface."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-10"
+    }
+  ],
   "archive_media": []
 }

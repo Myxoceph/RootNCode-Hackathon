@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 258-260) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mezar taşı kitabeleri kitapta basılmamış; kitabe eklenmedi.",
       "Muallimhane ve tabhanenin konumu kitapta belirtilmiyor.",
@@ -365,7 +363,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-altiparmak-camii/p035-3.jpg",
+        "original_name": "ERD06380 kopya.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "258"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harim, minber ve ahşap mahfil",
+        "en": "Prayer hall, minbar and wooden gallery"
+      },
+      "alt": {
+        "tr": "Açık yeşil boyalı ahşap minber solda, sağda ahşap direkler üzerinde mahfil yer alır. Duvarlar sarı-yeşil, zemin mavi halıyla kaplıdır; tavandan sarkan bir avize görünür.",
+        "en": "A pale green wooden minbar on the left and a wooden gallery on posts on the right. Walls are yellow and green, the floor has a blue carpet, and a chandelier hangs from above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-altiparmak-camii/p037-6.jpg",
+        "original_name": "altıparmak07.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "260"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Hazirede silindirik mezar taşları",
+        "en": "Cylindrical gravestones in the graveyard"
+      },
+      "alt": {
+        "tr": "Bitkilerle çevrili toprak zeminde dört silindirik taş mezar şahidesi yan yana durur. Soldaki ikisinin yüzünde kabartma yazı ve süsleme seçilir.",
+        "en": "Four cylindrical stone grave markers stand side by side in soil among plants. The two on the left carry carved script and ornament."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    }
+  ],
   "archive_media": []
 }

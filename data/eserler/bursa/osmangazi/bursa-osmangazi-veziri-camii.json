@@ -11,10 +11,10 @@
     "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 474-475) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
-      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Banisi ve inşa tarihi kitapta bilinmiyor; vakfiye, mimar ve minare yapım tarihi yok.",
-      "Özel mülkiyet ve ticari kullanım dönemlerinin tarihi kitapta verilmiyor."
+      "Özel mülkiyet ve ticari kullanım dönemlerinin tarihi kitapta verilmiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -272,7 +272,97 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veziri-camii/p082-3.jpg",
+        "original_name": "04_7.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "475"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin cephesi ve minaresi",
+        "en": "Mosque facade and minaret"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı giriş cephesi ve yanındaki taş yan duvar; geniş ahşap saçaklı kiremit çatı ve üzerinde minare. Sokak köşesinde, ağaçlarla çevrili.",
+        "en": "A yellow-plastered entrance facade next to a stone side wall, under a wide timber-eaved tiled roof, with a minaret rising behind. The mosque stands on a street corner among trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veziri-camii/p081-1.jpg",
+        "original_name": "01 Kapak_8.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "474"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin giriş cephesi, sokak köşesi",
+        "en": "Entrance facade on the street corner"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı, kiremit çatılı giriş cephesi bir sokak köşesinde. Arkasında minare ve yukarıda yamaçtaki evler, önde sonbahar yapraklı ağaçlar var.",
+        "en": "The yellow-plastered, tile-roofed entrance facade on a street corner, with the minaret behind it, hillside houses beyond and autumn-coloured trees in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veziri-camii/p082-1.jpg",
+        "original_name": "02_1.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "475"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami çatısı ve minaresi, kuşbakışı",
+        "en": "Mosque roof and minaret from above"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı kırma çatı ve köşesinde kurşun külahlı minare; çevrede yollar, plan ağaçları ve komşu çatılar görülür.",
+        "en": "A tiled hipped roof with a lead-capped minaret at its corner, seen from above, surrounded by roads, plane trees and neighbouring roofs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    }
+  ],
   "archive_media": []
 }

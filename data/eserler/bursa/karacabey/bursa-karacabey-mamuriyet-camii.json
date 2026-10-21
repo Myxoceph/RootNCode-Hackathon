@@ -11,12 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Karacabey bölümünden (s. 526-527) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
-      "Arşiv fotoğrafı (archive_media) elimizde yok.",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
       "Mimar kitapta yok.",
-      "Giriş kitabesinin metni basılmamış; kitabe kaydı açılmadı."
+      "Giriş kitabesinin metni basılmamış; kitabe kaydı açılmadı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -244,7 +243,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-mamuriyet-camii/p017-1.jpg",
+        "original_name": "01 DJI_20241105143045_0195_D_ODAK.jpeg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "526"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin dışı ve yeşil şerefeli minaresi",
+        "en": "Mosque and its minaret with green balcony"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı açık yeşil boyalı cami, yanında beyaz gövdeli, yeşil külahlı minareyle yükselir. Arkada ova ve evler görülür.",
+        "en": "A pale green mosque with a tiled roof and a white minaret with a green balcony and cap. Houses and a plain are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-mamuriyet-camii/p018-1.jpg",
+        "original_name": "05 ERD06212 kopya-2.jpg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "527"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap ve çevresindeki pencereler",
+        "en": "Mihrab and surrounding windows"
+      },
+      "alt": {
+        "tr": "Beyaz, nişli mihrabın iki yanında renkli camlı pencereler ve yuvarlak hat levhaları bulunur. Zemin turkuaz halıdır.",
+        "en": "A white niche-shaped mihrab flanked by stained-glass windows and round calligraphy plates. The floor is turquoise carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    }
+  ],
   "archive_media": [],
-  "exhibitions": []
+  "exhibitions": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "19dW7EV_S0PPnXV1zTfP2jbB3e7m3UIQ0",
+    "book_layout_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+    "book_pdf_name": "5-Karacabey.pdf"
+  }
 }

@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki I. Murad Hudâvendigâr Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor.",
       "Sırp Sındığı Zaferi'nin tarihi bu bölümde verilmiyor.",
@@ -475,7 +473,96 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1Nh5U0z8qZBwN7XodcyZLe_IqCfD3wrcx",
+    "book_layout_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+    "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-imareti/p023-1.jpg",
+        "original_name": "ERD04984 kopya.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "98"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "İmaretin avlu cephesi ve ahşap saçağı",
+        "en": "The imaret's courtyard side and timber eaves"
+      },
+      "alt": {
+        "tr": "Moloz taş duvarlı, L biçimli tek katlı yapının kahverengi ahşap saçağı iki kanat boyunca devam ediyor. Demir parmaklıklı pencereler ve ahşap kapılar var; önünde taş döşemeli avlu uzanıyor.",
+        "en": "A single-storey L-shaped building of rubble stone with brown timber eaves along both wings. It has barred windows and wooden doors, with a paved courtyard in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-28"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-imareti/p023-2.jpg",
+        "original_name": "ERD04952 kopya.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "98"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İmaretin içinde konferans salonu düzeni",
+        "en": "Interior arranged as a conference hall"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, koyu ahşap kirişli salonda yeşil kadife döşemeli sandalyeler sıra sıra dizilmiş. Zemin kiremit renginde, duvarda bayraklar ve çerçeveli levhalar var.",
+        "en": "A hall with stone walls and dark timber beams, filled with rows of green upholstered chairs. The floor is terracotta, and flags and framed panels hang on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-28"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-imareti/p006-2.jpg",
+        "original_name": "DJI_20240928200817_0162_D-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "81"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliye çevresinin kuşbakışı görünümü",
+        "en": "Aerial view of the area around the complex"
+      },
+      "alt": {
+        "tr": "Yamaca yayılan kentin içinde kubbeli yapılar, bir minare ve ağaçlar yer alıyor. Ön planda beyaz duvarlı, kurşun kubbeli küçük bir yapı görünüyor.",
+        "en": "Buildings with domes, a minaret and trees amid a city climbing a hillside. In the foreground is a small white-walled building with a lead dome."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": []
 }

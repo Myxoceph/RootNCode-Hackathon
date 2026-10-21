@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 299-303) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Tekkenin kitapta verilen adresi 'Kurtoğlu Mahallesi'; mahalle adı kitapta başka bir yerde (Irgandı Köprüsü) 'Kurdoğlu' yazılıyor, doğru yazım teyit edilmeli.",
       "Mezar taşı kitabesinin yazı türü ve Emir Sultan Mezarlığı'ndaki kabrin yeri kitapta yok; sahada teyit edilmeli.",
       "Tekkenin güncel kullanım durumu (2019 sonrası) kaynakta belirsiz; güncel kaynaktan teyit edilmeli.",
-      "Yeşil Camii ile ilişki (Hacı Şevki Efendi imamlık yapmıştır; Mehmed Şevki Efendi hatlarıyla anılır) 'people' içinde; ilişki olarak bağlanmadı."
+      "Yeşil Camii ile ilişki (Hacı Şevki Efendi imamlık yapmıştır; Mehmed Şevki Efendi hatlarıyla anılır) 'people' içinde; ilişki olarak bağlanmadı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -549,8 +549,42 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-haci-sevki-efendi-tekkesi/p024-3.jpg",
+        "original_name": "06 ERD04905 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "303"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sedirli ve ahşap tavanlı oda",
+        "en": "Room with benches and wooden ceiling"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı, beyaz duvarlı odada üç duvar boyunca alçak sedirler uzanır. Pencerelerde beyaz tül perdeler, zeminde ahşap döşeme vardır.",
+        "en": "A white-walled room with a wooden ceiling and low built-in benches along three walls. White lace curtains hang at the windows and the floor is wooden."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-28"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

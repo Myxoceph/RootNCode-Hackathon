@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Kuzeye eklenen geniş mekân ve asma katın eklenme tarihi kitapta yok.",
       "Mektebin yıkılış tarihi ve şadırvanın taşınma tarihi kitapta yok.",
@@ -344,8 +343,98 @@
     },
     "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-selimiye-camii/p020-1.jpg",
+        "original_name": "01 Kapak_3.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "413"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Selimiye Camii'nin kiremit çatılı cephesi",
+        "en": "Tiled-roof facade of Selimiye Mosque"
+      },
+      "alt": {
+        "tr": "Krem sıvalı, kırmızı kiremitli kırma çatılı yapının önünde ahşap doğramalı kemerli camlı bir bölüm yer alır. Taş döşeli avlu ve etrafında sonbahar yapraklı ağaçlar görünür.",
+        "en": "A cream-plastered building with a red hipped tile roof and a glazed arched section with wooden frames in front. A paved yard and autumn trees surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-selimiye-camii/p020-2.jpg",
+        "original_name": "04.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "413"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Selimiye Camii'nin ahşap tavanlı iç mekânı",
+        "en": "Interior of Selimiye Mosque with wooden ceiling"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı tavanı olan salonda kemerli pencereler, mihrap ve sağda minber vardır. Zeminde kırmızı halının ortasında mavi geometrik bir rozet göze çarpar.",
+        "en": "A hall with a wooden ceiling, arched windows, a mihrab and a minbar on the right. A blue geometric rosette stands out on the red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-selimiye-camii/p021-1.jpg",
+        "original_name": "07.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "414"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Selimiye Camii'nin tuğla minaresi",
+        "en": "Brick minaret of Selimiye Mosque"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğlalı, kurşun kaplı sivri külahlı minare şerefesi demir korkuluklu olarak ağaçların arasından görünür. Arkada mavi gökyüzü ve çatılar vardır.",
+        "en": "A red brick minaret with a pointed lead cap and an iron-railed balcony seen through the trees. Blue sky and rooftops are behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

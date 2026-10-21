@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Türkçe metinde adres numarası yok; 'No. 2' yalnızca İngilizce metinden alındı (s. 389).",
       "Kitabedeki Sultan Mehmed bin Murad'ın hangi padişah olduğu kitapta açıkça belirtilmiyor.",
       "Mahalle, Maksem su kaynağı ve künkler için ayrı kayıt yok; varsa su ağı ilişkisi (water_supply) eklenebilir.",
-      "Minberin yapım tarihi ve mihrap boyası onarımı kitapta yok."
+      "Minberin yapım tarihi ve mihrap boyası onarımı kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -498,7 +498,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-maksem-camii/p120-1.jpg",
+        "original_name": "DJI_20241011155647_0380_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "389"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi, minaresi ve sokak görünümü",
+        "en": "The mosque's dome, minaret and street view"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla almaşık duvarlı cami; gri kubbe ve ince tuğla minare var. Önünde ağaç, çevrede renkli apartmanlar ile dağ yamacı görünüyor.",
+        "en": "A mosque of alternating stone and brick with a grey dome and a slender brick minaret. A tree stands in front, with colourful apartment blocks and a mountain slope around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-maksem-camii/p121-1.jpg",
+        "original_name": "Maksem Camii 3-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "390"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Mavi ve yeşil süslü mihrap ortada, sağda ahşap minber yer alıyor. Üstte avize, yanlarda vitraylar ve zeminde mavi-beyaz madalyonlu kırmızı halı var.",
+        "en": "A mihrab with blue and green decoration at the centre and a wooden minber on the right. A chandelier hangs above, stained glass on the sides and a red carpet with a blue-white medallion on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-maksem-camii/p122-1.jpg",
+        "original_name": "Maksem Camii 5-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "391"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap mahfil ve giriş tarafı",
+        "en": "Wooden gallery and entrance side"
+      },
+      "alt": {
+        "tr": "Girişin üstünde korkuluklu ahşap mahfil var; altında kapılar ve kafesli bölmeler görünüyor. Duvarlarda hat levhaları, ortada avize ve kırmızı halı yer alıyor.",
+        "en": "A railed wooden gallery above the entrance, with doors and lattice partitions beneath. Calligraphy panels hang on the walls, with a chandelier and a red carpet at the centre."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
   "archive_media": []
 }

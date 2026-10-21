@@ -11,11 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 442-443) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Üç yazarın (Ulusoy, Kepecioğlu, Baykal) eserleri kitapta künye olarak verilmiyor; kaynak kontrolü yapılmalı.",
-      "Kara Ali Bey hakkında başka bilgi kitapta yok."
+      "Kara Ali Bey hakkında başka bilgi kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -358,7 +358,41 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-tuzpazari-camii/p049-1.jpg",
+        "original_name": "01 Kapak_13.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "442"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, havadan",
+        "en": "Aerial view of the mosque dome and minaret"
+      },
+      "alt": {
+        "tr": "Gün batımında havadan görünen cami: kurşun kaplı kubbe, kesme taş duvarlar ve tuğla örgülü uzun minare. Çevresi çarşı çatıları ve kiremitli evlerle çevrili, arkada turuncu bir ufuk var.",
+        "en": "The mosque seen from above at sunset, with a lead-covered dome, stone walls and a tall brick minaret. It is surrounded by market awnings and tiled rooftops under an orange sky."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    }
+  ],
   "archive_media": []
 }

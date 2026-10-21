@@ -14,8 +14,8 @@
       "Hamamın kesin yapım tarihi bilinmiyor (vakfiye 1421'de anıyor).",
       "Kadınlar bölümünün bugünkü işleticisi ve çalışma saatleri kaynakta yok.",
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -489,7 +489,97 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mahkeme-hamami/p020-1.jpg",
+        "original_name": "6_1.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "699"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamamın kafe olarak kullanılan bölümü",
+        "en": "Bath section used as a café"
+      },
+      "alt": {
+        "tr": "Tuğla sivri kemerlerin altında ahşap masalar ve sandalyeler dizilidir. Zemin gri damarlı mermerdir; arkada kitap dolapları ve beyaz duvarlı bir geçit görünür, kemer üstlerinde beyaz mukarnaslar yer alır.",
+        "en": "Wooden tables and chairs stand beneath pointed brick arches on a grey-veined marble floor. Bookcases and a white-walled passage are visible behind, with white muqarnas above the arches."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mahkeme-hamami/p020-2.jpg",
+        "original_name": "ERD09843 kopya.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "699"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Konferans düzenindeki tuğla duvarlı salon",
+        "en": "Brick-walled hall arranged for events"
+      },
+      "alt": {
+        "tr": "Kırmızı kadife kaplı sandalyeler sıra sıra dizilmiştir. Karşıdaki tuğla duvarda bir niş ve masa var; üstte beyaz, köşeli kubbe ve avize görünür.",
+        "en": "Rows of red velvet chairs face a brick wall with a niche and a small table. Above is a white faceted dome with a chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mahkeme-hamami/p020-3.jpg",
+        "original_name": "8.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "699"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Mukarnaslı kubbe ve ışık delikleri",
+        "en": "Muqarnas dome with light openings"
+      },
+      "alt": {
+        "tr": "Aşağıdan bakıldığında ortada yuvarlak bir kubbe ve üzerinde küçük yıldız biçimli ışık delikleri görünür. Çevresinde beyaz mukarnaslar ile tuğla kemerler yer alır.",
+        "en": "Looking up: a round white dome pierced by small star-shaped light openings. White muqarnas and brick arches frame it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    }
+  ],
   "archive_media": []
 }

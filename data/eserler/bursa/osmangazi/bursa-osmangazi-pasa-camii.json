@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Caminin banisi kesin bilinmiyor; 'founder' null. Kitap hangi Paşa'dan dolayı 'Paşa Camii' adının verildiğini söylemiyor.",
       "Mimar ve vakıf bilgisi kitapta yok.",
@@ -298,8 +297,70 @@
     },
     "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-pasa-camii/p013-1.jpg",
+        "original_name": "01.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "406"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Paşa Camii'nin minaresi ve çevre sokaklar",
+        "en": "Minaret of Paşa Mosque and the surrounding streets"
+      },
+      "alt": {
+        "tr": "Yeşilimsi külahlı, beyaz gövdeli minare kiremit çatılı evlerin arasında yükselir. Eğimli sokak, sarı ve renkli evler ile arkada dağ yamacı görünür.",
+        "en": "A white minaret with a greenish cap rises among tiled-roof houses. A sloping street, yellow and coloured houses and a mountain slope lie beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-pasa-camii/p013-2.jpg",
+        "original_name": "02_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "406"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Paşa Camii'nin çatısı kuşbakışı",
+        "en": "Aerial view of the roof of Paşa Mosque"
+      },
+      "alt": {
+        "tr": "Kuşbakışı karede turuncu kiremitli büyük çatı ve köşesindeki yeşil külahlı minare tabanı görünür. Soldaki merdivenli bahçe ve çevredeki çatılar bina ile iç içedir.",
+        "en": "From directly above, a large orange-tiled roof with the green-capped minaret at its corner. A stairway and a yard on the left and neighbouring roofs surround the building."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

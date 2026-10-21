@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 433-434) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Yapım yılı kitapta verilmiyor; dating alanı boş bırakıldı.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Somuncu Baba'nın dergâhı, çilehanesi ve fırını (caminin batısında) için hedef kayıt bilinmiyor.",
-      "Ulucami ile bağlantı (ilk hutbe) ilişki olarak eklenmedi; uygun ilişki türü yok."
+      "Ulucami ile bağlantı (ilk hutbe) ilişki olarak eklenmedi; uygun ilişki türü yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -281,7 +281,69 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyh-hamit-camii/p040-1.jpg",
+        "original_name": "02_5.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "433"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeyh Hamit Camii ve minaresi",
+        "en": "Shaykh Hamit Mosque and its minaret"
+      },
+      "alt": {
+        "tr": "Kubbeli taş ve tuğla yapının önünde uzun tuğla gövdeli bir minare yükselir. Çevresinde ağaçlar, arkada yamaca yayılan evler ve bulutlu gökyüzü görünür.",
+        "en": "A domed stone-and-brick building with a tall brick minaret in front. Trees surround it, with houses spreading up the hillside and a cloudy sky behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyh-hamit-camii/p041-1.jpg",
+        "original_name": "03_6.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "434"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeyh Hamit Camii'nin çinili mihrabı ve minberi",
+        "en": "Tiled mihrab and minbar of Shaykh Hamit Mosque"
+      },
+      "alt": {
+        "tr": "Mavi çinilerle kaplı yüksek mihrabın üstünde büyük bir avize asılıdır; sağda ahşap minber ve kırmızı perde görünür. Pencereler kemerli, halı krem renkli ve kırmızı desenlidir.",
+        "en": "A tall mihrab covered in blue tiles with a large chandelier hanging above. A wooden minbar and red curtain are on the right, arched windows beside, and a cream carpet with red patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    }
+  ],
   "archive_media": []
 }

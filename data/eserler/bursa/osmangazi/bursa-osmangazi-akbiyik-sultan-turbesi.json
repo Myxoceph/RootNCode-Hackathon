@@ -15,8 +15,8 @@
       "Yenişehir'deki vakıf köyün adı kitapta yok.",
       "Hazirenin ayrıntıları kitapta yok.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -316,8 +316,42 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-akbiyik-sultan-turbesi/p005-1.jpg",
+        "original_name": "01 Kapak-2.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "494"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Akbıyık Sultan Türbesi'nin giriş cephesi",
+        "en": "Entrance front of Akbıyık Sultan Tomb"
+      },
+      "alt": {
+        "tr": "Yeşil boyalı küçük, tek katlı bir yapının ortasında camlı çift kanatlı ahşap bir kapı vardır. Kiremit çatısı ahşap saçaklı; çevresi demir korkuluk ve apartmanlarla çevrilidir.",
+        "en": "A small green-painted single-storey building with a glazed double wooden door in the middle. Its tiled roof has wooden eaves, with an iron fence and apartment blocks around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

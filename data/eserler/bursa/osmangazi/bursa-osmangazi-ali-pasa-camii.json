@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 251-257) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Caminin batısındaki medrese ve imaretin adı kitapta yok; bu yüzden relation eklenmedi.",
       "Hamam Tekke'nin hangi ilçede/hangi kayıtta olduğu belirtilmiyor; relation eklenmedi.",
@@ -553,7 +551,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ali-pasa-camii/p032-3.jpg",
+        "original_name": "ERD00321 kopya.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "255"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yeri ve kemerli revak",
+        "en": "Narthex with arched portico"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla bantlı, dört kemerli bir revak, önünde merdivenler ve demir korkuluk bulunur. Yüksek servi ağaçları ve sonbahar yaprakları cepheyi çerçeveler.",
+        "en": "A portico of four arches in stone with brick bands, with steps and an iron railing in front. Tall cypress trees and autumn leaves frame the facade."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ali-pasa-camii/p029-1.jpg",
+        "original_name": "DJI_20241010204437_0171_D-Edit.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "252"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin havadan görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı, birden çok küçük kubbeli yapı ve minaresi, yoğun yerleşimin ortasında yeşil ağaçlarla çevrili durur. Çevrede renkli evler sıralanır.",
+        "en": "A tiled mosque with several small domes and a minaret stands among green trees in a dense neighbourhood of colourful houses."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ali-pasa-camii/p031-2.jpg",
+        "original_name": "07.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "254"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Kiremit çatılar ve minare, kuşbakışı",
+        "en": "Tiled roofs and minaret from above"
+      },
+      "alt": {
+        "tr": "Doğrudan yukarıdan çekilmiş görüntüde sekizgen ve piramit biçimli kırmızı kiremitli çatılar görünür. Sol üstte minarenin külahı ve çevrede ağaçlar vardır.",
+        "en": "A straight-down view of octagonal and pyramid-shaped red-tiled roofs. The cap of the minaret is at upper left, with trees around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    }
+  ],
   "archive_media": []
 }

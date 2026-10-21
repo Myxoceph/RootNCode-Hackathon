@@ -10,7 +10,6 @@
     "from": "Osmangazi Camiler ve Hazireler 2",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
-      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Caminin yapım yılı kitapta verilmiyor; dating null bırakıldı (era erken-osmanli, banisinin ölüm tarihlerinden çıkarım - kontrol edilmeli).",
       "Mihrap yanındaki ayetler (Ayete'l-Kürsî, Bakara 149) kitapta kitabe olarak ayrı transkripsiyonla verilmiş, yalnızca Bakara 149 ibaresi eklendi.",
@@ -587,8 +586,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ertugrul-bey-camii/p037-1.jpg",
+        "original_name": "3-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "306"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin cephesi ve sivri kemerli pencereler",
+        "en": "Facade with pointed-arch windows"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı cephede ince sivri kemerli üç pencere ve kapı ile yanda taş duvar görünür. Üstünde tuğla minare, solda demir çitli hazire vardır.",
+        "en": "A yellow plastered facade with three slender pointed-arch windows and a door, beside a stone wall. A brick minaret rises above and a fenced graveyard is on the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ertugrul-bey-camii/p038-1.jpg",
+        "original_name": "4_1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "307"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harim, mihrap ve renkli camlı pencereler",
+        "en": "Prayer hall, mihrab and stained-glass windows"
+      },
+      "alt": {
+        "tr": "Krem duvarlı harimde ortada mihrap, sağda ahşap minber ve renkli camlı pencereler görünür. Zeminde mavi halı ve tavandan sarkan avize vardır.",
+        "en": "A cream-walled prayer hall with the mihrab at the centre, a wooden minbar on the right and coloured-glass windows. The floor has a blue carpet and a chandelier hangs above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

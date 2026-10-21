@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
       "Kara Eyne Bey'in ilk yapım yılı ve Molla Yegân'ın yeniden inşa yılı kaynakta yok.",
       "Molla Yegân'ın bitişikteki mescidi ve mektebi için ayrı kayıt oluşturulmadı.",
       "Medresenin mimari betimlemesi yalnızca restorasyon sonrası durumu anlatıyor; özgün plan ayrıntısı kaynakta sınırlı.",
-      "Mimar kaynakta yok."
+      "Mimar kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -520,7 +520,97 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-molla-yegan-medresesi/p017-1.jpg",
+        "original_name": "02 DJI_20240921222115_0512_D-Edit.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "296"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Medresenin kuşbakışı görünümü",
+        "en": "Aerial view of the madrasa"
+      },
+      "alt": {
+        "tr": "Yukarıdan görülen medresenin ortasında camlı bir çatı uzanır. İki yanda gri kurşun kaplı çatılar, çevrede sokak ve kiremit çatılı evler vardır.",
+        "en": "Seen from directly above, a glass roof runs along the centre of the madrasa. Grey lead-covered roofs flank it, with a street and tile-roofed houses around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-21"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-molla-yegan-medresesi/p017-2.jpg",
+        "original_name": "03 ERD02302 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "296"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Camlı avluda Molla Yegân Çocuk Üniversitesi",
+        "en": "Molla Yegân Children's University in the glazed courtyard"
+      },
+      "alt": {
+        "tr": "Cam çatılı geniş bir mekânın ortasında roket biçimli beyaz bir giriş ve lacivert panel durur. Solda bir astronot kıyafeti camlı bölmede sergilenir; yanlarda taş kemerli kapılar görünür.",
+        "en": "In a wide hall with a glass roof, a white rocket-shaped entrance stands in front of a dark blue panel. An astronaut suit is displayed in a glass case at left, with stone arched doorways at the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-21"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-molla-yegan-medresesi/p017-3.jpg",
+        "original_name": "05 ERD02336 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "296"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Bilim merkezinin cam cepheli giriş holü",
+        "en": "Glass-walled entrance hall of the science centre"
+      },
+      "alt": {
+        "tr": "Cam çatılı ve cam cepheli holde parlak taban, astronot ve roket şeklinde kesme figürler ile beyaz bir danışma bankosu bulunur.",
+        "en": "A hall with a glass roof and glass walls has a shiny floor, cut-out figures of an astronaut and a rocket, and a white reception desk."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-21"
+    }
+  ],
   "archive_media": []
 }

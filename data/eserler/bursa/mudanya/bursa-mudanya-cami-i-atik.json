@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
       "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
       "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
       "İlk yapım tarihi ve bani kitapta bu bölümde yok; Halil Ağa Evi bölümünde (s. 599) Hoca Hacı Ali bin Muhammed ez-Zâbeli'nin 'banisi olduğu düşünülmektedir' deniyor (probable); mezar taşı ihya kitabesinden 111 yıl öncesine tarihlenir.",
@@ -528,8 +527,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MSAPwPYfleCJID7tsM2Cex8h9sx8r_PW",
+    "book_layout_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+    "book_pdf_name": "8-Mudanya.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-cami-i-atik/p005-2.jpg",
+        "original_name": "02 DJI_20241031185439_0839_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "574"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami-i Atik'in kuşbakışı görünümü",
+        "en": "Aerial view of Cami-i Atik"
+      },
+      "alt": {
+        "tr": "Gri kaplamalı, piramit biçimli çatılı caminin ve tek şerefeli minarenin yukarıdan görüntüsü. Çevresinde kırmızı kiremitli çatılar, ağaçlar ve dar bir yol var.",
+        "en": "Top-down view of the mosque's grey-clad pyramid roof and its minaret with one balcony. Red-tiled roofs, trees and a narrow road surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-cami-i-atik/p005-3.jpg",
+        "original_name": "ERD05542 kopya.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "574"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Kapı yanındaki servi motifli kabartma",
+        "en": "Cypress relief beside the door"
+      },
+      "alt": {
+        "tr": "Açık renkli taş yüzeyde, uçları sivrilen servi ağacı biçiminde oyma bir kabartma var. Sağda ahşap panelli bir kapı kanadı görünüyor.",
+        "en": "A cypress-shaped relief carved into pale stone, with a scale-like pattern inside. A wooden panelled door leaf is visible on the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

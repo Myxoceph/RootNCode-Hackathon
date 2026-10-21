@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 285-286) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Yapım yılı/aralığı kitapta yok (yalnızca padişah dönemi); dating yılları null.",
       "Caminin vakfına ve Hoca Muslihuddin'in vakıflarının içeriğine dair ayrıntı kitapta yok.",
-      "Kitapta bu cami için hazire bölümü yok."
+      "Kitapta bu cami için hazire bölümü yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -321,7 +321,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-candarli-ibrahim-pasa-camii/p016-1.jpg",
+        "original_name": "1-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "285"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami, minare ve çevre sokak",
+        "en": "Mosque, minaret and surrounding street"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş bantlı minare, kurşun kaplı kubbe ve kiremitli sundurmalı cepheli cami. Çevresinde apartmanlar, ağaçlar ve desenli taş döşeme vardır.",
+        "en": "A mosque with a brick and stone minaret, a lead-covered dome and a tiled-roof wooden-fronted porch. Apartment blocks, trees and patterned paving surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-candarli-ibrahim-pasa-camii/p017-1.jpg",
+        "original_name": "2-2-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "286"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harim, ahşap mihrap ve minber",
+        "en": "Prayer hall, wooden mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı mihrap, sağda yeşil perdeli ahşap minber ve ahşap saçaklı tavan görünür. Zeminde pembe tonlu desenli halı serilidir.",
+        "en": "A wood-clad mihrab, a wooden minbar with green hangings on the right and a wooden eaved ceiling. A pink patterned carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-candarli-ibrahim-pasa-camii/p017-2.jpg",
+        "original_name": "ERD09951 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "286"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Kırmızı ve altın renkli ahşap panel detayı",
+        "en": "Detail of a red and gold wooden panel"
+      },
+      "alt": {
+        "tr": "Dikdörtgen çerçeveli, eskimiş yüzeyli panelde kırmızı ve altın rengi, kum saati biçimli tekrar eden motifler görünür.",
+        "en": "A rectangular framed panel with a worn surface and repeating hourglass-shaped motifs in red and gold."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    }
+  ],
   "archive_media": []
 }

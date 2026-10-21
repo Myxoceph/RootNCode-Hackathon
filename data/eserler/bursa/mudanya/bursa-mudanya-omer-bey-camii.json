@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
       "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
       "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
       "Bani ve yapım tarihi kesin değil; yalnızca rivayet var.",
@@ -340,8 +339,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MSAPwPYfleCJID7tsM2Cex8h9sx8r_PW",
+    "book_layout_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+    "book_pdf_name": "8-Mudanya.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-omer-bey-camii/p025-1.jpg",
+        "original_name": "01 DJI_20241031140859_0709_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "594"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Ömer Bey Camii ve minaresi",
+        "en": "Ömer Bey Mosque and its minaret"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kırmızı kırma çatılı caminin kemerli yan cephesi caddeye bakar. Arkasında tuğla örgülü, gri külahlı bir minare yükselir.",
+        "en": "A white-walled mosque with a red hipped roof and an arched side portico faces the street. A brick minaret with a grey cone rises behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-omer-bey-camii/p025-2.jpg",
+        "original_name": "DJI_20241031140608_0704_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "594"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Tuğla minare ve arkasında deniz",
+        "en": "Brick minaret with the sea behind"
+      },
+      "alt": {
+        "tr": "Tuğla örgülü silindir gövdeli, tek şerefeli, gri külahlı minare mavi gökyüzüne yükselir. Arkada deniz ve uzak dağlar, önde çatılar görünür.",
+        "en": "A cylindrical brick minaret with one balcony and a grey conical cap against a blue sky. The sea and distant mountains lie behind, and rooftops are in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

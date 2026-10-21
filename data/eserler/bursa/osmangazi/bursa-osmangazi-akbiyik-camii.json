@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 239-242) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Caminin inşa yılı kitapta verilmiyor (yalnızca Fatih dönemi); kitabe/vakfiye aranmalı.",
       "İpekoğlu Hoca Dursun hakkında kitapta ayrıntı yok.",
       "Revaktaki tarih kaydının metni kitapta aktarılmıyor.",
-      "Hazirede anılan kişilerin ölüm tarihleri kitapta verilmiyor."
+      "Hazirede anılan kişilerin ölüm tarihleri kitapta verilmiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -468,7 +468,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-akbiyik-camii/p016-1.jpg",
+        "original_name": "01_2.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "239"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Akbıyık Camii ve tuğla minare",
+        "en": "Akbıyık Mosque and its brick minaret"
+      },
+      "alt": {
+        "tr": "Pembe tuğla ve beyaz taş şeritli cami, yanında yüksek bir minareyle çevresindeki evlerin arasında duruyor. Kubbesi gri, kemerli bir giriş revağı var.",
+        "en": "A mosque of banded pink brick and white stone with a tall minaret beside it, among the surrounding houses. It has a grey dome and an arched entrance porch."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-akbiyik-camii/p018-2.jpg",
+        "original_name": "akbiyik05-2.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "241"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Yazılı süslemeli demir parmaklıklı pencere",
+        "en": "Barred window with a calligraphic wreath"
+      },
+      "alt": {
+        "tr": "Beyaz duvarda pembe taş çerçeveli, demir parmaklıklı bir pencere var. Üstünde mavi defne dalları arasında siyah Arap harfli bir yazı bulunuyor.",
+        "en": "A barred window set in a pink stone frame on a white wall. Above it, black Arabic lettering sits inside a wreath of blue leaves."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    }
+  ],
   "archive_media": []
 }

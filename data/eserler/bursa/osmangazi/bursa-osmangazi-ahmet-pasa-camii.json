@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 236-238) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Molla Fenârî Camii ve Haziresi'nin ilçesi kitapta belirtilmiyor; ilişki hedef id'si tahminidir, ilçe teyit edilmeli.",
       "Fenârî Ahmed Paşa'nın yaptırdığı medrese ve zaviye günümüze ulaşmamış; kitap isim/yer vermiyor.",
-      "Kitapta vakıf bilgisi yok."
+      "Kitapta vakıf bilgisi yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -406,7 +406,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ahmet-pasa-camii/p014-1.jpg",
+        "original_name": "apf03.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "237"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Ahmet Paşa Camii ve taş minare",
+        "en": "Ahmet Paşa Mosque and its stone minaret"
+      },
+      "alt": {
+        "tr": "Tuğla duvarlı, kiremit çatılı caminin yanında uzun taş bir minare yükseliyor. Ön cephede kemerli pencereler ve ağaçlar yer alıyor.",
+        "en": "A brick mosque with a tiled roof and a tall stone minaret beside it. The front has arched windows, with trees around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-03"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ahmet-pasa-camii/p013-1.jpg",
+        "original_name": "apf01.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "236"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı taş cami ağaçların arasında, arkasında minare ve yamaca yayılmış kent görünüyor. Önde taş döşeli bir yol var.",
+        "en": "A stone mosque with a tiled roof among trees, with a minaret and the city climbing the slope behind. A paved path is in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-03"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ahmet-pasa-camii/p015-1.jpg",
+        "original_name": "08.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "238"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Hazirede başlıklı mezar taşı",
+        "en": "Headstone with a turban-style top in the cemetery"
+      },
+      "alt": {
+        "tr": "Beyaz mermer, yazıtlı bir mezar taşının üstünde koyu renkli sarık biçimli bir başlık var. Önünde çiçekler, arkada taş duvar görünüyor.",
+        "en": "A white marble headstone with inscription, topped by a dark turban-shaped finial. Flowers are in front, with a stone wall behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-03"
+    }
+  ],
   "archive_media": []
 }

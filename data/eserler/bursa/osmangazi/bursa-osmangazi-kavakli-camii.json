@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Koca Nâib'in Muradiye'de yaptırdığı cami için hedef kayıt belirtilmedi (kitap adını vermiyor).",
       "Koca Nâib'in türbesinin şimdiki yeri kitapta yok.",
       "Hisar kapısı içindeki iki vakıf dükkânı kayboldu; vakıf adı/vakfiye kitapta yok.",
       "Ayetü'l-kürsî ve esmâ-i hüsna yazılarının metni kitapta verilmiyor; transliterasyon eklenmeli.",
-      "Minaresi için '1890 tuğla' ve 'çift bilezikli' ayrıntıları kitaptan; ölçü verilmiyor."
+      "Minaresi için '1890 tuğla' ve 'çift bilezikli' ayrıntıları kitaptan; ölçü verilmiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -494,7 +494,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kavakli-camii/p104-2.jpg",
+        "original_name": "ERD03098-Geliştirilmiş-NR kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "373"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe içi ve avize",
+        "en": "Inside the dome with chandelier"
+      },
+      "alt": {
+        "tr": "Kalem işi süslü kubbenin içinde, merkezde büyük bir avize, çevresinde ışınsal bezeme ve yazı kuşağı bulunuyor. Kenarlarda madalyonlar ve vitraylı pencereler görünüyor.",
+        "en": "The painted inside of the dome with a large chandelier at the centre, radiating ornament and a ring of script. Medallions and stained-glass windows appear at the edges."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kavakli-camii/p104-3.jpg",
+        "original_name": "ERD03111-Geliştirilmiş-NR kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "373"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Kubbe göbeğindeki kalem işi rozet",
+        "en": "Painted rosette on the ceiling"
+      },
+      "alt": {
+        "tr": "Açık zeminde mavi, kırmızı ve yeşil tonlarında girift bitkisel bir rozet; etrafında dağınık palmet motifleri yer alıyor.",
+        "en": "An intricate floral rosette in blue, red and green on a pale ground, surrounded by scattered palmette motifs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    }
+  ],
   "archive_media": []
 }

@@ -10,7 +10,6 @@
     "from": "Yeşil Çelebi Mehmed Külliyesi",
     "todos": [
       "Koordinat eklenmeli (kitapta yok).",
-      "Fotoğraflar eklenmeli: media ve media_folder boş; match_photos.py ile bağlanacak.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Külliyenin imaret, medrese, Yeşil Türbe ve Devlet Hatun Türbesi kayıtları ayrı bir ajan/bölükte yazılıyor; han, hamam ve çarşı birimleri bu bölükte anlatılmıyor, gerekirse eklenmeli.",
       "Vakfiyede geçen İvaz Paşa Hanı (Lonca Hanı) ve İpek Hanı'nın ilçesi metinde belirtilmiyor; relation hedef id'leri tahmin (İpek Hanı mevcut kayıtla eşleştirildi, İvaz Paşa Hanı henüz yok).",
@@ -637,8 +636,42 @@
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; incelenmeli."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ya5DSM5reasFmWdGEd8OJoIBgacL8QtC",
+    "book_layout_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+    "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-kulliyesi/p005-1.jpg",
+        "original_name": "DJI_20240920124544_0161_D-Edit.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "84"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kurşun kaplı kubbeler ve şehir manzarası",
+        "en": "Lead-covered domes and city view"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı ana kubbe ve çevresinde küçük kubbeler görünür. Arkada Bursa evleri ve dağ silueti uzanır.",
+        "en": "A lead-covered main dome with smaller domes around it. Houses of Bursa and a mountain ridge extend behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-20"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

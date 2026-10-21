@@ -15,8 +15,8 @@
       "Mimar kitapta belirtilmiyor.",
       "Muradiye Camii hedef kimliği metinde ilçe belirtilmediği için varsayımdır (Muradiye Camii, Osmangazi'de mevcut kayıttır); doğrulanmalı.",
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -375,8 +375,70 @@
       "en": "Kademeri Mosque in Maksem Neighborhood is a single-domed building on a nearly square plan. To the north is a narthex closed at the sides. The walls and octagonal drum are of stone with brick bands. Sixteen windows light the interior. Its minaret is reached through a window from the narthex; its marble-and-brick shaft ends in a lead-covered pointed spire. Its graveyard has not survived."
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kademeri-camii/p088-1.jpg",
+        "original_name": "DJI_20241011144546_0344_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "357"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, çevre yapılarla",
+        "en": "The mosque's dome and minaret among buildings"
+      },
+      "alt": {
+        "tr": "Kurşun kubbeli cami, tuğla minare ve açık yeşil duvarlı kiremit çatılı bir bölüm. Çevrede renkli evler ile yamaca yayılan mahalle görünüyor.",
+        "en": "A lead-domed mosque with a brick minaret and a tile-roofed section with pale green walls. Colourful houses and a hillside neighbourhood surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kademeri-camii/p089-2.jpg",
+        "original_name": "ERD00437 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "358"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Pembe duvar önünde mermer blok ve ortanca",
+        "en": "Marble block and hydrangea by a pink wall"
+      },
+      "alt": {
+        "tr": "Pembe boyalı duvarın dibinde gri damarlı mermer bir blok uzanıyor; üzerine yeşil yapraklı, açık yeşil çiçek öbekli bir bitki sarkıyor. Üstte demir parmaklıklı bir pencere var.",
+        "en": "A grey-veined marble block along a pink-painted wall, with a plant of green leaves and pale green flower clusters hanging over it. A barred window is above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

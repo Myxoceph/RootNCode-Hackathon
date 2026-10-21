@@ -15,8 +15,8 @@
       "Evliya Çelebi'nin çeşmeden söz ettiği yer/sayfa kaynakta verilmiyor.",
       "Beşikçiler Sinan Dede Camii kaydı ('bursa-osmangazi-besikciler-camii') henüz yoksa oluşturulmalı.",
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -171,7 +171,41 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-besikciler-sinan-dede-camii-cesmesi/p004-1.jpg",
+        "original_name": "1.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "683"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami ve çeşme, yoldan görünüş",
+        "en": "The mosque and fountain from the road"
+      },
+      "alt": {
+        "tr": "Almaşık taş-tuğla duvarlı cami, tuğla minare ve ön duvardaki sivri kemerli çeşme nişi. Virajlı yolun kenarında, ağaçlarla çevrilidir.",
+        "en": "A mosque of alternating stone and brick with a brick minaret and a pointed-arch fountain niche in the front wall, beside a curving road among trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    }
+  ],
   "archive_media": []
 }

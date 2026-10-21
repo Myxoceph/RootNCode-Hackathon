@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 298-299) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Kitap vakfın kapsamını belirtmiyor (waqf null); Şâhî Hatun 'vâkıfe' olarak geçiyor.",
       "Yapım yılı kitapta yok; end_year 1492 sicil kaydından çıkarıldı (probable).",
-      "Mevlânâ Şerefüddin'in İstanbul'daki camisi için kayıt/hedef yok."
+      "Mevlânâ Şerefüddin'in İstanbul'daki camisi için kayıt/hedef yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -393,7 +393,41 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-duhteri-seref-camii/p029-1.jpg",
+        "original_name": "kapak DJI_20241017192527_0183_D-Edit.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "298"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami, kubbe ve taş-tuğla minare",
+        "en": "Mosque, dome and stone-brick minaret"
+      },
+      "alt": {
+        "tr": "Gri kurşun kaplı kubbe, taş ve tuğla örgülü duvarlar ve solda uzun minare görünür. Çevresinde ağaçlar ve şehrin çatıları yer alır.",
+        "en": "A grey lead dome, walls of stone and brick, and a tall minaret on the left. Trees and the city roofs are around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    }
+  ],
   "archive_media": []
 }

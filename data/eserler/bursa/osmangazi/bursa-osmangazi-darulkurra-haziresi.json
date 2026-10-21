@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 289-290) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Mahalle adı kitapta verilmiyor (yalnızca Kavaklı Caddesi, No: 39); neighborhood null bırakıldı.",
       "Bina (dârulkurrâ) ve hazire tek kayıtta toplandı; türü 'hazire', ikincil tür 'diger' (dârulkurrâ için enum karşılığı yok). Gerekirse ayrı kayıt açılabilir.",
       "Zencîrî Ali Efendi Dergâhı ve Haziresi için ayrı kayıt/hedef yok.",
-      "Dârulkurrâ'nın kitabesinin metni kitapta verilmiyor; inscriptions'a yalnızca Zencîrî Ali Efendi taşı eklendi."
+      "Dârulkurrâ'nın kitabesinin metni kitapta verilmiyor; inscriptions'a yalnızca Zencîrî Ali Efendi taşı eklendi.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -380,7 +380,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-darulkurra-haziresi/p021-2.jpg",
+        "original_name": "ERD04049 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "290"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Süslü başlıklı mezar taşı",
+        "en": "Gravestone with ornate crest"
+      },
+      "alt": {
+        "tr": "Yivli yelpaze biçimli tepeliği ve kabartma yazılı gövdesi olan ayakta duran beyaz mezar taşı. Arkada taş duvar ve başka mezar taşları görünür.",
+        "en": "A standing white gravestone with a fan-shaped crest and an inscribed body. A stone wall and more gravestones are behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-darulkurra-haziresi/p021-3.jpg",
+        "original_name": "ERD04063 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "290"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Ağaç kabartmalı mezar taşı",
+        "en": "Gravestone with tree relief"
+      },
+      "alt": {
+        "tr": "Gövdesinde saksıdan çıkan, meyveli ağaç kabartması bulunan, kıvrımlı tepeliği süslü mezar taşı. Arkasında başka taşlar ve tuğla duvar vardır.",
+        "en": "A gravestone with a relief of a fruiting tree growing from a vase and a scrolled crest. Other stones and a brick wall are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-darulkurra-haziresi/p021-1.jpg",
+        "original_name": "ERD04047 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "290"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yazılı sivri başlıklı mezar taşı",
+        "en": "Inscribed gravestone with pointed top"
+      },
+      "alt": {
+        "tr": "Gövdesi baştan sona el yazısı biçimli kitabeyle dolu, sivri başlıklı gri mezar taşı. Arkada taş duvar ve çim vardır.",
+        "en": "A grey gravestone with a pointed top, its body covered with lines of carved script. A stone wall and grass are behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    }
+  ],
   "archive_media": []
 }

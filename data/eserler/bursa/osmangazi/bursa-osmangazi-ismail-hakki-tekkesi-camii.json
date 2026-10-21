@@ -15,8 +15,8 @@
       "Çağ (era): 1723 tarihi nedeniyle 'gec-osmanli' girildi (enums'ta tanımlı sınır yok), veri ekibi gözden geçirmeli.",
       "Çeşme kitabesinin yazarı kitapta belirtilmiyor; author alanı mahlastan çıkarıldı, doğrulanmalı.",
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -590,8 +590,98 @@
       "en": "İsmail Hakkı Sufi Lodge Mosque in Tuzpazarı Neighborhood is reached by double-sided stairs on its north side and has wide eaves, a wooden roof and tiles. Its façade and roof bear 18th-century features; the stone minaret was added later. Beside it are a vaulted ascetic cell and rooms used as a student dormitory. In the graveyard to its south is the open-topped tomb of İsmail Hakkı Bursevî, surrounded by iron bars."
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ismail-hakki-tekkesi-camii/p081-1.jpg",
+        "original_name": "İsmail Hakkı Tekkesi Camii ve Haziresi 1.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "350"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tekke camisi ve minaresi, yukarıdan",
+        "en": "The tekke mosque and minaret from above"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı yapılar ve yüksek, ince bir minare; önünde dar bir avlu var. Arkada şehir ve dağ silsilesi uzanıyor.",
+        "en": "Tile-roofed buildings and a tall, thin minaret with a narrow courtyard in front. The city and a mountain range extend behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ismail-hakki-tekkesi-camii/p083-1.jpg",
+        "original_name": "ismail hakkı kitabe.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "352"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Yeşil zeminli altın yazılı kitabe levhası",
+        "en": "Gold-lettered inscription on green ground"
+      },
+      "alt": {
+        "tr": "Yeşil bir levha üzerinde dört satır halinde altın renkli Arapça yazı yer alıyor. Yazılar düzenli aralıklarla sıralanmış.",
+        "en": "A green panel bearing four rows of gold Arabic script in regular spacing."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ismail-hakki-tekkesi-camii/p085-2.jpg",
+        "original_name": "İsmail Hakkı Tekkesi Camii ve Haziresi 4.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "354"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yeşil demir kafesli kabir, yukarıdan",
+        "en": "Grave under a green iron cage, from above"
+      },
+      "alt": {
+        "tr": "Beyaz mezar yapısı, yeşil ışınsal demir kafesle örtülü; ortada altın renkli bir madalyon var. Çevresinde taş zemin, ahşap banklar ve küçük bir yeşil alan görünüyor.",
+        "en": "A white grave structure covered by a green radiating iron cage with a gold medallion at the centre. Stone paving, wooden benches and a small green patch surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

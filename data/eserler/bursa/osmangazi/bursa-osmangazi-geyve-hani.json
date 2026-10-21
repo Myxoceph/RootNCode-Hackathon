@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 639-641) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
-      "Fotoğraflar eklenmeli (media boş); Drive klasörü ve dosya kimlikleri bulunmalı (media_folder null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
       "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
@@ -425,8 +424,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-geyve-hani/p011-1.jpg",
+        "original_name": "DJI_20241201113901_0638_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "640"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Geyve Hanı'nın dış cephesi",
+        "en": "Exterior of Geyve Han"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kırmızı kiremit çatılı uzun, iki katlı bir han. Arkada çarşının gri kubbeleri ile iki minareli bir cami ve dağlar görünür.",
+        "en": "A long two-storey stone han with a red tiled roof. The grey domes of the bazaar, a mosque with two minarets and mountains are visible behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-geyve-hani/p012-1.jpg",
+        "original_name": "DJI_20241201112820_0597_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "641"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hanın kare avlusu ve şadırvanı",
+        "en": "Square courtyard and fountain"
+      },
+      "alt": {
+        "tr": "Yukarıdan kare bir avlu görünür; ortasında sekizgen bir şadırvan, çevresinde iki katlı kemerli revaklar vardır. Avlu zemini koyu gri, kenarlarda tuğla kemerler seçilir.",
+        "en": "A square courtyard from above, with an octagonal fountain in the centre and two floors of arched galleries around it. The ground is dark grey, framed by brick arches."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-geyve-hani/p012-4.jpg",
+        "original_name": "ERD03337 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "641"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Üst kat revakı ve tuğla paye",
+        "en": "Upper gallery and brick pier"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı sivri kemerlerle örtülü uzun bir revak, kalın tuğla bir payenin yanından geçer. Sağda oturma bankları, sol tarafta avluya açılan korkuluklu bir boşluk görünür.",
+        "en": "A long gallery with whitewashed pointed vaults passes a thick brick pier. Benches stand on the right, and a railed opening to the courtyard is on the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

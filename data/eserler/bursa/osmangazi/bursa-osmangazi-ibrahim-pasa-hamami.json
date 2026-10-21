@@ -15,8 +15,8 @@
       "Hamamın bugünkü müze adı ve işletmesi kaynakta verilmiyor.",
       "Vakfın adı ve vakfiye bilgisi kaynakta yok.",
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -400,7 +400,97 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ibrahim-pasa-hamami/p015-2.jpg",
+        "original_name": "2_1.jpeg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "694"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "İbrahim Paşa Hamamı'nın kiremit kubbeleri",
+        "en": "Tiled domes of the İbrahim Paşa Bath"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında büyük bir kiremit kubbe ve yanında ışıklıklı daha küçük iki kubbe görünür. Yapı ağaçlar ile bir apartmanın arasında kalmıştır.",
+        "en": "Seen from directly above: a large tiled dome with two smaller domes beside it, each with a small skylight. The building sits between trees and an apartment block."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-22"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ibrahim-pasa-hamami/p015-1.jpg",
+        "original_name": "5_1.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "694"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Müzeye dönüşen hamamın sergi salonu",
+        "en": "The bath's main hall used as a museum"
+      },
+      "alt": {
+        "tr": "Yüksek tavanlı beyaz bir salonun ortasında sekizgen mermer bir havuz ve fıskiye durur. Duvarlar boyunca eski fotoğraflar, bir top ve eski makineler sergilenir; üst duvarlarda sivri kemerli pencereler vardır.",
+        "en": "In a tall white hall, an octagonal marble pool with a fountain stands in the centre. Old photographs, a cannon and old machines are displayed along the walls, and pointed-arch windows run along the top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-22"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ibrahim-pasa-hamami/p015-3.jpg",
+        "original_name": "9.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "694"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe ve mukarnaslı geçiş bölgesi",
+        "en": "The dome and muqarnas transition zone"
+      },
+      "alt": {
+        "tr": "Aşağıdan yukarı bakıldığında ortada fil gözleriyle oyulmuş, ışık alan bir kubbe görünür. İki yanda krem renkli mukarnas dizileri kubbeye geçişi sağlar.",
+        "en": "Looking straight up: a dome with a ring of small openings letting in light in the centre. Cream-coloured muqarnas tiers on both sides form the transition to the dome."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-22"
+    }
+  ],
   "archive_media": []
 }

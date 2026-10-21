@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
-      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
       "Dergâhın yıkılan birimlerinin (tekke, hücreler vb.) adları ve konumları kitapta yok.",
@@ -390,7 +388,69 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-selami-dergahi-camii/p049-1.jpg",
+        "original_name": "DJI_20240920215326_0311_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "260"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Selami Dergâhı Camii, ön cephe ve minare",
+        "en": "Selami Sufi Lodge Mosque, front and minaret"
+      },
+      "alt": {
+        "tr": "İki katlı, kiremit çatılı, krem renkli bir yapı merdivenle girilen ahşap kapıya sahiptir. Yanında tuğlalı bir minare, önünde uzun bir kavak ağacı bulunur.",
+        "en": "A two-storey cream building with a tile roof has a wooden door reached by steps. A brick minaret stands beside it and a tall poplar tree is in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-20"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-selami-dergahi-camii/p050-1.jpg",
+        "original_name": "03 ERD01824 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "261"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap tavanlı ibadet salonu ve minber",
+        "en": "Prayer hall with wooden ceiling and minbar"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı salonda turkuaz halı serilidir. Sağda ahşap minber ve yaldız yazılı koyu perde, duvarlarda sekizgen yazı levhaları bulunur.",
+        "en": "A hall with a wooden ceiling and a turquoise carpet. A wooden minbar and a dark curtain with gold lettering are on the right, with octagonal calligraphy plaques on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-20"
+    }
+  ],
   "archive_media": []
 }

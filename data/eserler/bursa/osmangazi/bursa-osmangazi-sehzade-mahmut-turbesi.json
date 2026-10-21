@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
       "Kapı kitabesinin metni kitapta verilmemiş.",
       "Yaptıran kişi kitapta belirtilmemiş.",
@@ -372,7 +371,97 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehzade-mahmut-turbesi/p051-1.jpg",
+        "original_name": "Kapak_4.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "160"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şehzade Mahmut Türbesi ve giriş sundurması",
+        "en": "Şehzade Mahmut Tomb and its entrance porch"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş şeritli sekizgen türbenin yeşilimsi bir kubbesi var. Önünde mermer sütunlu, gri çatılı küçük bir giriş sundurması duruyor.",
+        "en": "An octagonal tomb of banded brick and stone with a greenish dome. A small marble-columned porch with a grey roof stands in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehzade-mahmut-turbesi/p052-1.jpg",
+        "original_name": "ERD02911 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "161"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Beyaz mermer sandukalar ve çini duvar",
+        "en": "White marble sarcophagi and tiled wall"
+      },
+      "alt": {
+        "tr": "Sıralı beyaz mermer sandukalar, altta turkuaz altıgen çinilerle kaplı duvarın önünde duruyor. Üst bölümde renkli kalem işi kemerler ve pencereler var.",
+        "en": "A row of white marble sarcophagi stands before a wall of turquoise hexagonal tiles. Above are arches with coloured paintwork and windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehzade-mahmut-turbesi/p052-2.jpg",
+        "original_name": "ERD02931 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "161"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Renkli kalem işi kubbe",
+        "en": "The painted dome"
+      },
+      "alt": {
+        "tr": "Beyaz sekizgen kasnağın ortasında kırmızı, yeşil ve turuncu renklerle işlenmiş yuvarlak kubbe bezemesi var. İçinde yazı bantları ve çiçek motifleri görünüyor.",
+        "en": "At the centre of a white octagonal drum is a round dome decoration in red, green and orange. Bands of calligraphy and flower motifs fill it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    }
+  ],
   "archive_media": []
 }

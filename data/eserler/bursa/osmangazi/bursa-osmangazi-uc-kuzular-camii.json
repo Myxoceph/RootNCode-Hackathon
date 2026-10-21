@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 445-447) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Yapım yılı kitapta yok; dating boş bırakıldı.",
       "Dergâh için hedef kayıt bilinmiyor.",
-      "Mevcut bursa-osmangazi-uc-kozlar-turbesi kaydıyla ilişki gözden geçirilmeli (aynı türbe mi?)."
+      "Mevcut bursa-osmangazi-uc-kozlar-turbesi kaydıyla ilişki gözden geçirilmeli (aynı türbe mi?).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -380,7 +380,97 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-uc-kuzular-camii/p053-1.jpg",
+        "original_name": "5_2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "446"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı, çini mihrap ve minber",
+        "en": "Mosque interior with tiled mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Yeşilimsi ahşap tavanlı cami içi. Duvarda mavi çinilerle kaplı mihrap, yanında ahşap minber; vitraylı pencereler ve kırmızı desenli halı dikkat çeker.",
+        "en": "A prayer hall with a pale green wooden ceiling. A mihrab covered in blue tiles is flanked by a wooden minbar, with stained-glass windows and a red patterned carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-uc-kuzular-camii/p054-2.jpg",
+        "original_name": "ERD00899 kopya.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "447"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Üç Kuzular Türbesi yazı levhası",
+        "en": "Üç Kuzular Tomb inscription panel"
+      },
+      "alt": {
+        "tr": "Siyah demir korkuluklu, kafes biçimli bir çerçevenin içinde beyaz mermer levha. Levhada \"Üç Kuzular Türbesi\" başlığı ve Türkçe bir açıklama yazısı bulunur; yanında bir ağaç gövdesi var.",
+        "en": "A white marble panel inside a black wrought-iron cage-like frame. It is titled \"Üç Kuzular Türbesi\" and carries a block of Turkish text, with a tree trunk beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-uc-kuzular-camii/p054-1.jpg",
+        "original_name": "3_1.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "447"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami ve çevresi, kuşbakışı",
+        "en": "Bird's-eye view of the mosque and surroundings"
+      },
+      "alt": {
+        "tr": "Tam tepeden görünüşte kiremit kaplı kırma çatılı cami, önünde küçük bir şadırvan ve çevresinde yeşil ağaçlar. Betonlaşmış avlu ve yollar yapıyı çevreler.",
+        "en": "A top-down view of the mosque with its tiled hipped roof, a small fountain in front and green trees around. Paved courtyards and paths surround the building."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    }
+  ],
   "archive_media": []
 }

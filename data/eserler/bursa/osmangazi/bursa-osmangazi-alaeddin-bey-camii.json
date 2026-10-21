@@ -11,14 +11,14 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 243-247) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Kale içinde Kaplıca Kapısı yakınındaki Alâeddin Bey mescidinin yeri belirlenememiş; kayıt oluşturulamadı.",
       "Caminin batısındaki hamamdan söz ediliyor ama adı yok; kayıt bağlanamadı.",
       "Minberin getirildiği Bursa Mevlevihanesi için hedef kayıt/ilçe kitapta yok.",
       "Çatalburgaz ve Fodra (Alâeddinbey Köyü) köyleri için ilçe/il bilgisi kitapta yok.",
-      "Levhadaki yazının tam metni kitapta aktarılmıyor."
+      "Levhadaki yazının tam metni kitapta aktarılmıyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -637,7 +637,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-alaeddin-bey-camii/p020-1.jpg",
+        "original_name": "01_2.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "243"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin cephesi, minaresi ve kubbesi",
+        "en": "Mosque facade, minaret and dome"
+      },
+      "alt": {
+        "tr": "Tuğla örgülü cami, kurşun kaplı sığ kubbe ve önünde kemerli revak. Solda uzun tuğla minare, arkada ağaçlarla kaplı dağ yamacı ve evler görünür.",
+        "en": "A brick mosque with a shallow lead-grey dome and an arched porch in front. A tall brick minaret stands on the left, with a wooded hillside and houses behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-alaeddin-bey-camii/p022-1.jpg",
+        "original_name": "03-4.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "245"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Cami içi, mihrap ve halı",
+        "en": "Prayer hall with mihrab and carpet"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, aydınlık harimde sağda renkli işlemeli mihrap ve bakır şamdanlar var. Zeminde mavi, desenli halı serilidir; kemerli pencerelerden ışık girer.",
+        "en": "A bright whitewashed prayer hall with a decorated mihrab and copper candlesticks on the right. A blue patterned carpet covers the floor, and light enters through arched windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-alaeddin-bey-camii/p023-2.jpg",
+        "original_name": "02_4.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "246"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin havadan görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Yukarıdan çekilmiş görüntüde gri-mavi kurşun kaplı kubbe ve çatı ile yanındaki küçük kubbeli bölüm görünür. Çevresinde kırmızı kiremitli evler ve bir avlu yer alır.",
+        "en": "A view from above shows the grey-blue lead-covered dome and roof with a small domed section beside it. Red-tiled houses and a courtyard surround the building."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    }
+  ],
   "archive_media": []
 }

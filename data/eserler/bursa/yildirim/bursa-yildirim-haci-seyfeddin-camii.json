@@ -13,7 +13,6 @@
       "Yapım yılı kitapta yok; dating.start_year null.",
       "Mimar ve vakıf bilgisi yok.",
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
     ],
     "data_quality_notes": []
@@ -341,8 +340,70 @@
     "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-haci-seyfeddin-camii/p011-1.jpg",
+        "original_name": "02 DJI_20240925125754_0660_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "222"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Yukarıdan gri kurşun kaplı kubbe ve yanında minare görünür. Cami bir caddenin kenarındadır ve çevresinde bahçe ile komşu çatılar vardır.",
+        "en": "From above, a grey lead-covered dome and a minaret. The mosque lies beside a road, with gardens and neighbouring roofs around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-haci-seyfeddin-camii/p012-2.jpg",
+        "original_name": "3 ERD04804 kopya 2.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "223"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mermer mihrap ve kitabe",
+        "en": "Marble mihrab and inscription"
+      },
+      "alt": {
+        "tr": "Beyaz mermer mihrap nişinin üstünde yeşil zeminli bir yazı levhası var. Yanlarda pencereler, altın renkli şamdanlar ve kırmızı halı görünür.",
+        "en": "A white marble mihrab niche with a green inscription panel above it. Windows, golden candlesticks and a red carpet are at the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

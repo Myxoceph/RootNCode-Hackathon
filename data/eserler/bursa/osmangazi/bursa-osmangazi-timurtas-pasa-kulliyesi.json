@@ -11,14 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Timurtaş Paşa Külliyesi bölümünden (s. 215-222) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor.",
       "Külliyenin kendi adresi kitapta yok; yalnızca caminin adresi verilmiş (Demirtaşpaşa Mahallesi, Demirtaşpaşa Sokak No: 8).",
       "Yok olmuş imaret için kayıt açılıp açılmayacağına veri ekibi karar vermeli.",
-      "1485 tarihli vakfiyenin kime ait olduğu ve metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
-      "Basılı s. 221 ve sonrası için metin çıkarılamadı (PDF sayfaları boş/görsel); bölümün eksik sayfası olup olmadığı kontrol edilmeli."
+      "1485 tarihli vakfiyenin kime ait olduğu ve metni kitapta yok; bulunursa waqf.deed alanına eklenecek."
     ],
     "data_quality_notes": [
       {
@@ -382,7 +379,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MAcTfGCJar2MwSzAPtslDsAjhT9wFTIE",
+    "book_layout_pdf_file_id": "1QJfZ_9gWam3iR_LKm1SrHLU1O9Aa9ZFF",
+    "book_pdf_name": "7-Timurtaş Paşa Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-timurtas-pasa-kulliyesi/p006-3.jpg",
+        "original_name": "ERD03423 kopya.jpg",
+        "book_pdf_file_id": "1QJfZ_9gWam3iR_LKm1SrHLU1O9Aa9ZFF",
+        "book_pdf_name": "7-Timurtaş Paşa Külliyesi.pdf",
+        "book_page": "219"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Hazirede mezar taşları ve camii duvarı",
+        "en": "Gravestones in the cemetery beside the mosque wall"
+      },
+      "alt": {
+        "tr": "Basamaklı taş kaideler üzerinde yükselen, işlemeli ve yazıtlı mezar şahideleri sıralanır. Arkada tuğla-taş örgülü cami duvarı ve ızgaralı bir pencere vardır.",
+        "en": "Carved and inscribed gravestones rise from stepped stone bases. Behind them are the mosque's brick-and-stone wall and a grilled window."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-19"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-timurtas-pasa-kulliyesi/p006-2.jpg",
+        "original_name": "ERD03396 kopya.jpg",
+        "book_pdf_file_id": "1QJfZ_9gWam3iR_LKm1SrHLU1O9Aa9ZFF",
+        "book_pdf_name": "7-Timurtaş Paşa Külliyesi.pdf",
+        "book_page": "219"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Hazire ve yazıtlı mezar şahidesi",
+        "en": "Cemetery and an inscribed headstone"
+      },
+      "alt": {
+        "tr": "Önde koyu gri taş kaide üzerinde yazıtlı, sivri uçlu bir mezar şahidesi durur. Çevresinde ağaç gövdeleri, dökülen yapraklar ve arkada kemerli pencereli tuğla bir yapı görünür.",
+        "en": "In front, a dark grey stone base carries an inscribed pointed headstone. Tree trunks, fallen leaves and a brick building with arched windows are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-19"
+    }
+  ],
   "archive_media": []
 }

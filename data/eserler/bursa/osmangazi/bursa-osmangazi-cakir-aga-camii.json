@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 282-284) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Banî konusunda iki rivayet var (Çakır Ağa / Mecnun Dede); kesinleştirilemedi.",
       "Çakır Ağa'nın tam adı/rütbesi ('Subaşı') dışında bilgi kitapta yok.",
-      "Mecnun Dede'nin Yeşil Cami çinileriyle bağı kitapta rivayet düzeyinde değil, bilgi olarak veriliyor; Yeşil Cami kaydına bağlanması düşünülebilir (hedef id kitapta yok, ilişki eklenmedi)."
+      "Mecnun Dede'nin Yeşil Cami çinileriyle bağı kitapta rivayet düzeyinde değil, bilgi olarak veriliyor; Yeşil Cami kaydına bağlanması düşünülebilir (hedef id kitapta yok, ilişki eklenmedi).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -384,7 +384,96 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-cakir-aga-camii/p014-2.jpg",
+        "original_name": "3 Çakırağa Mecnun Dede Camii ve Haziresi.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "283"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami cephesi, kubbe ve minare",
+        "en": "Mosque facade, dome and minaret"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğlalı cephede kemerli pencereler, kiremitli saçak ve önünde küçük bir çeşme var. Arkada gri kubbe ile tuğla minare yükselir.",
+        "en": "A red brick facade with arched windows, a tiled canopy and a small fountain in front. A grey dome and a brick minaret rise behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-cakir-aga-camii/p013-1.jpg",
+        "original_name": "1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "282"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin çarşı sokağındaki görünümü",
+        "en": "Mosque beside the bazaar street"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğlalı cami ve gri kubbesi, dükkânlarla dolu dar bir sokağın kenarında durur. Arka planda tepe ve renkli evler görünür.",
+        "en": "The red brick mosque with its grey dome stands beside a narrow shop-lined street, with a hillside and colourful houses behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-cakir-aga-camii/p014-1.jpg",
+        "original_name": "6-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "283"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harim, mihrap ve çini minber",
+        "en": "Prayer hall, mihrab and tiled minbar"
+      },
+      "alt": {
+        "tr": "Krem ve bej duvarlı harimde ortada mihrap, sağda çini kaplı minber vardır. Üçgen geçişli tavan, avize ve mavi halı görünür.",
+        "en": "A cream and beige prayer hall with the mihrab at the centre and a tiled minbar on the right. A faceted ceiling, chandelier and blue carpet are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    }
+  ],
   "archive_media": []
 }

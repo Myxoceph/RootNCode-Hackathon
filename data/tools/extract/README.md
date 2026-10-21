@@ -84,6 +84,23 @@ Bilinenler:
 - Bölüm özetindeki "Geleneksel Ev (İskenderun 3. Mıntıka 159 Parsel)" için kitapta ayrı sayfa yok.
 - Başlıklarda PDF'ten gelen küçük yazım hataları var (ör. `PAŞACAMİİ`); kayıtta düzeltin.
 
+## Bursa kitap fotoğrafları (fotoğrafı olmayan kayıtlar)
+
+Bursa'nın Drive'daki orijinalleri büyük (ortalama 18 MB). Fotoğrafı olmayan kayıtlar için kitapta basılı
+fotoğraflar bölük PDF'lerinden alınır, Hatay'daki gibi:
+
+1. `python3 data/tools/drive_photo_map.py` — bölük PDF'lerini indirir (~6 GB), sayfa görsellerini Drive
+   fotoğraflarıyla ve kayıtlarla eşler (önbellek: `build/cache/drive/`).
+2. `python3 data/tools/extract/bursa_book_photos.py --all --delete-pdf` — fotoğrafı olmayan her kayıt için
+   en çok 3 görseli (`--max=`) RGB JPEG olarak `build/cache/bursa-book/images/<id>/` altına çıkarır,
+   listeyi `build/cache/bursa-book/index.json`'a yazar ve işi biten PDF'i siler.
+3. Altyazı ve alt metin Hatay'daki gibi yazılır (eşleme dosyası `{id: [{file, subject, caption, alt}]}`),
+   kayda `media[]` olarak bağlanır (`source.provider: "local"`, `path: data/build/cache/bursa-book/…`,
+   `original_name` = Drive'daki dosya adı) ve `media_pipeline.py <id>` ile işlenir.
+
+Görseller yerelde üretildiği için `media_pipeline.py`'yi bu kayıtlar için yeniden çalıştıracak kişide 1. ve
+2. adımın çıktısı bulunmalı. Görsellerin çoğu ~1300 px genişliğinde; hattın büyütme yapmaması nedeniyle bunlarda 2560 px sürümü olmaz.
+
 ## Taslaktan yayına
 
 | Durum | Ne gerekiyor | Kim |

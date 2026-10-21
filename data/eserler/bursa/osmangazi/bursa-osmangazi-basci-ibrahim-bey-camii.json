@@ -11,15 +11,14 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 271-278) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Kitabeli mektep ve medreseye çevrilen zaviye gibi yapıların bugünkü durumu/konumu kitapta belirsiz; kayıt gerekirse eklenmeli.",
-      "Kitabın basılı s. 274-275'i metin olarak çıkarılamadı (PDF sayfa 5-6 boş görünüyor; muhtemelen görsel sayfalar); bu sayfalarda ek bilgi olabilir.",
       "Doğangözü Hanı ilişkisinde hedef kaydın ilçesi kitapta belirtilmiyor (Çakır Ağa Hamamı'nın kuzeyi); id bursa-osmangazi-dogangozu-hani varsayımdır.",
       "Başçı İbrahim'in yaptırdığı hamam, zaviye/dergâh ve mektep ile İstanbul'daki medrese için ayrı kayıt/hedef yok; ilçeleri kitapta belirtilmiyor.",
       "Mektebin bugün var olup olmadığı belirtilmiyor; kitabe mektep için verilmiştir, cami kitabesi yoktur.",
-      "Caminin yapım tarihi kitapta verilmiyor (dating null)."
+      "Caminin yapım tarihi kitapta verilmiyor (dating null).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -682,7 +681,96 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-basci-ibrahim-bey-camii/p004-1.jpg",
+        "original_name": "02-4.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "273"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin havadan görünümü ve avlusu",
+        "en": "Aerial view of the mosque and yard"
+      },
+      "alt": {
+        "tr": "Yukarıdan, açık mavi-gri kurşun kaplı kubbe ve çatılar ile ortada ağaçlı bir avlu görünür. Çevresinde kiremitli evler ve sokaklar yer alır.",
+        "en": "From above, pale blue-grey lead-covered domes and roofs with a courtyard containing trees in the middle. Tiled houses and streets surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-basci-ibrahim-bey-camii/p003-1.jpg",
+        "original_name": "04-6.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "272"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Süslemeli harim ve mihrap duvarı",
+        "en": "Decorated prayer hall and mihrab wall"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı harimde pencere kemerleri mavi, turuncu ve altın renkli bezemelidir. Ortada sarkıtlı mihrap, sağda koyu ahşap minber ve geniş bir avize vardır.",
+        "en": "A white prayer hall with window arches painted in blue, orange and gold. A mihrab with a stalactite niche at the centre, a dark wooden minbar on the right and a large chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-basci-ibrahim-bey-camii/p007-1.jpg",
+        "original_name": "DJI_20241015212514_0839_D-Edit.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "276"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap ve çevresindeki kalem işleri",
+        "en": "Mihrab and surrounding painted decoration"
+      },
+      "alt": {
+        "tr": "Mavi çerçeveli mihrap nişinde kıvrımlı altın renkli mukarnas ve üstünde yazılı bir kuşak vardır. Yanlarda süslemeli pencereler ve yuvarlak hat levhaları görünür.",
+        "en": "A blue-framed mihrab niche with a curved gilded stalactite vault and a band of script above. Decorated windows and round calligraphy panels flank it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    }
+  ],
   "archive_media": []
 }

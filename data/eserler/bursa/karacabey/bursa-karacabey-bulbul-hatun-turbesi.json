@@ -11,13 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Karacabey bölümünden (s. 534) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
-      "Arşiv fotoğrafı (archive_media) elimizde yok.",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
       "Türbenin yapım tarihi ve yaptıranı kitapta yok.",
       "Mimari tarif kitapta yok.",
-      "Karaca Bey Hanı / Gelincik Çarşısı'nın ilçesi metinde yok; ilişki kurulmadı."
+      "Karaca Bey Hanı / Gelincik Çarşısı'nın ilçesi metinde yok; ilişki kurulmadı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -192,7 +191,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-bulbul-hatun-turbesi/p025-3.jpg",
+        "original_name": "06 DJI_20241105153819_0253_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "534"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Türbenin kubbesi ve taş-tuğla duvarları",
+        "en": "Dome and stone-brick walls of the tomb"
+      },
+      "alt": {
+        "tr": "Kare planlı, kurşun kaplı kubbeli küçük yapının duvarları taş ve tuğla örgülüdür. Önünde kemerli, demir parmaklıklı bir pencere vardır.",
+        "en": "A small square building with a lead-covered dome and walls of stone and brick. An arched window with iron bars is on its front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-bulbul-hatun-turbesi/p025-1.jpg",
+        "original_name": "05 DJI_20241105153842_0254_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "534"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Türbenin kuşbakışı kubbesi",
+        "en": "Aerial view of the tomb dome"
+      },
+      "alt": {
+        "tr": "Kare yapının üzerindeki kubbe merkezden açılan dilimli çizgilerle yukarıdan görülür. Çevresinde ağaçlar ve bir yol vardır.",
+        "en": "From above the dome on the square building shows segmented lines from the centre. Trees and a road surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-bulbul-hatun-turbesi/p008-2.jpg",
+        "original_name": "ERD06393 kopya.jpg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "517"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yeşil parmaklıkla çevrili sanduka",
+        "en": "Sarcophagus within a green railing"
+      },
+      "alt": {
+        "tr": "Revak altında, yeşil demir parmaklıkla çevrili taş bir sanduka durur. Zemin mermer, arkadaki duvar beyazdır.",
+        "en": "A stone sarcophagus under a portico is enclosed by a green iron railing. The floor is marble and the wall behind is white."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    }
+  ],
   "archive_media": [],
-  "exhibitions": []
+  "exhibitions": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "19dW7EV_S0PPnXV1zTfP2jbB3e7m3UIQ0",
+    "book_layout_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+    "book_pdf_name": "5-Karacabey.pdf"
+  }
 }

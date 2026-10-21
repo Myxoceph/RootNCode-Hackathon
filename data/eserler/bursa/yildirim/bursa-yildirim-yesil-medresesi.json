@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yeşil Çelebi Mehmed Külliyesi bölümünden (Part B) yapay zekâ ile özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar eklenmeli (location.coordinates kaynakta yok, uydurulmadı).",
-      "Fotoğraflar eklenmeli (media, archive_media boş; media_folder henüz yok, match_photos.py ile bağlanacak).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Mahalle ve açık adres kaynakta yok.",
       "Vakfiye metni kitapta yok; 'waqf.deed' boş.",
@@ -924,8 +923,97 @@
     },
     "audio_description_source": "source_text"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ya5DSM5reasFmWdGEd8OJoIBgacL8QtC",
+    "book_layout_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+    "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-medresesi/p046-3.jpg",
+        "original_name": "02 DJI_20250815211232_0056_D-Edit.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "125"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Medresenin kuşbakışı görünümü",
+        "en": "Aerial view of the madrasa"
+      },
+      "alt": {
+        "tr": "Yukarıdan dört kollu, kiremit çatılı dikdörtgen bir yapı ve ortasında ağaçlı avlu görünür. Alt tarafta beyaz kubbeli bir yapı yer alır.",
+        "en": "From above, a rectangular tiled-roof building around a central courtyard with trees. A white-domed building is at the bottom."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-medresesi/p046-1.jpg",
+        "original_name": "ERD08050 kopya.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "125"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Medrese avlusunun revaklı görünümü",
+        "en": "Arcaded view of the madrasa courtyard"
+      },
+      "alt": {
+        "tr": "Sivri kemerli turuncu bir revaktan taş döşeli avlu, çimenlik ve ağaçlar görünür. Karşıda kemerli hücre cephesi uzanır.",
+        "en": "Through an orange pointed-arch arcade, a stone-paved courtyard with lawn and trees. An arched row of cells faces it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-06"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-medresesi/p046-2.jpg",
+        "original_name": "ERD08058 kopya.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "125"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlunun ortasındaki yuvarlak bahçe",
+        "en": "Round garden in the centre of the courtyard"
+      },
+      "alt": {
+        "tr": "Taş döşeli avlunun ortasında çalılarla çevrili yuvarlak bir bahçe yer alır. Arkada kemerli cephe ve ağaçlar görünür.",
+        "en": "A round planting bed with shrubs in the middle of the stone-paved courtyard. An arched façade and trees stand behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-06"
+    }
+  ],
   "archive_media": [],
   "exhibitions": [],
   "dating": {

@@ -15,9 +15,9 @@
       "Darülaceze ile bağlantı için ilişki kaydı eklenmedi (hedef yapı, ilçe ve ad metinde yok).",
       "Binanın bugünkü kullanımı (1999 tahsisi sonrası Alacahırka Aile Eğitim Merkezi olarak sürüp sürmediği) kitapta belirtilmiyor.",
       "Koordinat kitapta yok; sahadan veya haritadan doğrulanmış koordinat eklenmeli (location.coordinates).",
-      "Fotoğraflar (media) ve Zaman Perdesi arşiv fotoğrafları (archive_media) henüz yok; Drive klasörü (media_folder) belirlenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli."
+      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -446,7 +446,68 @@
     },
     "audio_description_source": "Kitabın betimlemesi (vk-bursa-c1, s. 733-734)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1C_DxmRm7tS_2mJUgiSLEM4k4jQUxTen3",
+    "book_layout_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+    "book_pdf_name": "3-Sivil Mimari.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bursa-dullar-evi/p016-1.jpg",
+        "original_name": "DJI_20241024210124_0263_D_ODAK kopya.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "735"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Binanın dış görünüşü, havadan",
+        "en": "Exterior of the building from above"
+      },
+      "alt": {
+        "tr": "Üç katlı, beyaz sıvalı, ahşap karkas görünümlü ve kiremit çatılı bina. Çevresinde ağaçlar, bahçe ve yamaçtaki evler görülür.",
+        "en": "A three-storey white building with timber-frame detailing and a tiled roof, surrounded by trees, a garden and hillside houses."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bursa-dullar-evi/p015-1.jpg",
+        "original_name": "ERD02287 kopya.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "734"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Merdiven ve koridor",
+        "en": "Staircase and corridor"
+      },
+      "alt": {
+        "tr": "Mavi halılı merdiven, demir korkuluk ve ahşap kapıların bulunduğu koridor. Zemindeki renkli halıda yol ve araba desenleri vardır.",
+        "en": "A corridor with a blue-carpeted stair, iron railings and wooden doors. The floor carpet is colourful with road and car patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-26"
+    }
+  ],
   "archive_media": []
 }

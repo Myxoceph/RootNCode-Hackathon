@@ -11,11 +11,11 @@
     "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 466-469) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
-      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Hızırlık Mescidi'nin ilçesi metinde belirtilmiyor; ilişki hedef id'si (bursa-osmangazi-hizirlik-mescidi) tahmindir, doğrulanmalı.",
       "Baninin kimliği için bkz. data_quality_notes; vakıf kitabesinin kalkan duvarındaki yeri ile çeşme kitabesinin metni kitapta yok (yalnızca tarih var).",
-      "Mimar kitapta yok."
+      "Mimar kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -616,7 +616,69 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-yanic-camii/p073-1.jpg",
+        "original_name": "01 Kapak_17.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "466"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin taş cephesi ve kubbesi",
+        "en": "Stone facade and dome of the mosque"
+      },
+      "alt": {
+        "tr": "Kesme ve moloz taş örgülü cami cephesi; sivri kemerli pencereler, kurşun kaplı kubbe ve sağda sivri kemerli giriş. Dar bir sokak ve ağaç yapıyı çevreler.",
+        "en": "The mosque facade in dressed and rubble stone, with arched windows, a lead dome and a pointed-arch entrance on the right. A narrow street and a tree flank the building."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-yanic-camii/p075-1.jpg",
+        "original_name": "05_5.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "468"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı, mihrap ve minber",
+        "en": "Mosque interior with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Krem rengi boyalı duvarlarda altın renkli mihrap, sağında yeşil perdeli ahşap minber. Zeminde kırmızı, mihrap desenli halılar serili; duvarda yazılı levhalar var.",
+        "en": "A mihrab with gilded detail on cream-painted walls, and a wooden minbar with green curtains to its right. Red prayer-niche carpets cover the floor, and calligraphic panels hang on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    }
+  ],
   "archive_media": []
 }

@@ -11,13 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
       "Caminin mimarı kitapta belirtilmemiş.",
       "Kitabedeki 'imaret' sözcüğünün külliyenin tamamını mı camiyi mi kasteden olduğu kitapta açıklanmamış.",
       "'bursa-yildirim-yesil-camii' ilişki hedefinin ilçesi metinde yok (Yeşil Cami'nin ilçesi bu bölümde geçmiyor); Ulucami kaydındaki id kullanıldı, doğrulanmalı.",
-      "Caminin hazire/haziresi bu bölümde ayrı anlatılmamıştır; türbeler ayrı kayıtlardır.",
-      "Mihrap yanındaki Şeyh Sırrî Efendi levhasının ayet metni kitapta ayrıca verilmemiştir; AR için fotoğraf gerekir."
+      "Caminin hazire/haziresi bu bölümde ayrı anlatılmamıştır; türbeler ayrı kayıtlardır."
     ],
     "data_quality_notes": [
       {
@@ -932,7 +930,68 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-camii/p005-2.jpg",
+        "original_name": "ERD00715 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "114"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yerinden şadırvan avlusu",
+        "en": "The fountain courtyard seen from the portico"
+      },
+      "alt": {
+        "tr": "Kemerli revaktan bakılan avluda ortada kubbeli, ahşap sütunlu bir şadırvan duruyor. Revağın kubbesi kırmızı, yeşil ve kahverengi kalem işi motiflerle süslü.",
+        "en": "From the arched portico, a domed fountain on timber columns stands in the courtyard. The portico dome is decorated with red, green and brown painted motifs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-camii/p008-1.jpg",
+        "original_name": "ERD04525 kopya.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "117"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı ve halı döşeli zemin",
+        "en": "Prayer hall with its patterned carpet"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, geniş kemerli salonun zemini kırmızı desenli halıyla kaplı. Solda ahşap bir korkuluklu galeri, uzakta mihrap yönü ve mavi çini panolar görünüyor.",
+        "en": "A white hall with wide arches and a floor covered in red patterned carpet. A wooden-railed gallery is on the left, and blue tile panels and the mihrab side are in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-25"
+    }
+  ],
   "archive_media": []
 }

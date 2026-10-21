@@ -15,8 +15,8 @@
       "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenmeli.",
       "Çağ (era) kitapta belirtilmiyor; 15. yüzyıl tarihi nedeniyle 'erken-osmanli' girildi, veri ekibi gözden geçirmeli.",
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -302,8 +302,70 @@
       "en": "İmaret-i İsa Bey Mosque is a very small square-plan building with a single dome. The dome is clad in lead and rests on Turkish triangles. The walls are of brick and rubble stone. The mihrab hood has four rows of muqarnas. The street-facing corner of the narthex was cut diagonally during road widening and has a triangular form."
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-imaret-i-isa-bey-camii/p076-1.jpg",
+        "original_name": "İmaret-i İsa Bey Camii 1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "345"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, ağaçlar arasında",
+        "en": "The mosque's dome and minaret among trees"
+      },
+      "alt": {
+        "tr": "Ağaçlıklı bir alanda küçük, kurşun kubbeli cami ve ince tuğla minare. Yan tarafında kiremit örtülü bir bölüm ve yol, uzakta şehir ile dağ görünüyor.",
+        "en": "A small lead-domed mosque and slender brick minaret amid trees. A tile-roofed section and a road lie beside it, with the city and mountains in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-imaret-i-isa-bey-camii/p077-2.jpg",
+        "original_name": "İmaret-i İsa Bey Camii 4.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "346"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Açık renk duvarlı küçük bir iç mekân; solda sarı-altın tonlu mihrap, sağda ahşap minber ve yeşil perdeli kürsü var. Zemin mavi halıyla kaplı.",
+        "en": "A small light-walled interior with a gold-toned mihrab on the left, a wooden minber on the right and a green-draped pulpit. The floor is covered with a blue carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

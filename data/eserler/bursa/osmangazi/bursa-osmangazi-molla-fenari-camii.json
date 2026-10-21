@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Yapım tarihi kitapta yok; 'dating' null bırakıldı. Molla Fenârî'nin 1431'de vefat ettiği bilgisinden yapının ondan önce yapıldığı çıkarılabilir ama kitap bunu açıkça yazmıyor; 'era' bu çıkarımla erken-osmanli girildi, teyit edilmeli.",
       "Medrese ve vakıf bilgisi (vakfiye, gelir) kitapta yok; 'waqf' null.",
@@ -466,8 +465,98 @@
     },
     "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-molla-fenari-camii/p001-1.jpg",
+        "original_name": "ERD00845 kopya.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "394"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Molla Fenârî Camii ve tuğla minaresi",
+        "en": "Molla Fenari Mosque and its brick minaret"
+      },
+      "alt": {
+        "tr": "Kesme taş ve tuğladan örülü, gri metal çatılı yapının arkasından kırmızı tuğlalı bir minare yükselir. Önde çimenli bahçe, iki yanda ağaçlar, arkada şehir manzarası ve mavi gökyüzü vardır.",
+        "en": "A stone and brick building with a grey metal roof, and a red brick minaret rising behind it. A grassy yard and trees frame the scene, with the city and a blue sky beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-molla-fenari-camii/p002-1.jpg",
+        "original_name": "2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "395"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Molla Fenârî Camii'nin minaresi ve haziresi",
+        "en": "Minaret and graveyard of Molla Fenari Mosque"
+      },
+      "alt": {
+        "tr": "Tuğla gövdeli, sivri külahlı minare caminin taş duvarının üstünde yükselir. Önde bahçedeki hazirede ayakta ve yatık mezar taşları, yeşillikler görünür.",
+        "en": "A brick minaret with a pointed cap rises above the stone wall of the mosque. In the foreground, upright and fallen gravestones stand among greenery."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-molla-fenari-camii/p003-2.jpg",
+        "original_name": "1.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "396"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Molla Fenârî Camii'nin yamaçtaki mahalleyle görünümü",
+        "en": "Molla Fenari Mosque seen with the hillside neighbourhood"
+      },
+      "alt": {
+        "tr": "Yüksekten çekilen karede minare, çevre duvarlı bahçenin içindeki taş yapının yanında yükselir. Arkada yamaca dizilmiş renkli evler ve ormanlık dağ vardır.",
+        "en": "From above, the minaret rises beside the stone building inside its walled garden. Colourful houses climb the hillside behind, below a forested mountain."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

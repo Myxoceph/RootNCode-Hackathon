@@ -17,8 +17,8 @@
       "Giriş kitabesi metnindeki “H. 1259 / M. 1843” satırları basılı metinde böyle; asıl yazıtla karşılaştırılmalı.",
       "Hasan Rıza Paşa (1866) ile kitabedeki Rıza Paşa (1843) aynı kişi mi, kitap belirtmiyor.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -752,8 +752,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-turbesi/p057-2.jpg",
+        "original_name": "12 kitabe.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "546"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Üftâde Türbesi çini kitabe panosu",
+        "en": "Tile inscription panel of Üftâde Tomb"
+      },
+      "alt": {
+        "tr": "Yeşil zemin üzerine altın sarısı rengiyle yazılmış, dört satırlık Osmanlıca bir çini kitabe. Satırlar sarı şeritlerle ayrılmıştır.",
+        "en": "A four-line Ottoman Turkish tile inscription in golden-yellow script on a green ground. Yellow bands separate the lines."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-turbesi/p057-1.jpg",
+        "original_name": "14 kitabe.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "546"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Çini kitabenin iki sütunlu bölümü",
+        "en": "Two-column section of the tile inscription"
+      },
+      "alt": {
+        "tr": "Yeşil çini üzerinde iki sütun hâlinde, dörder satırlık altın sarısı Osmanlıca yazı var. Ortada süslü bir ayırıcı şerit uzanır.",
+        "en": "Two columns of four lines each in golden-yellow Ottoman script on green tile. A decorated divider strip runs between them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-turbesi/p057-3.jpg",
+        "original_name": "13 kitabe.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "546"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Çini kitabenin yıpranmış bir bölümü",
+        "en": "A weathered section of the tile inscription"
+      },
+      "alt": {
+        "tr": "Açık yeşil ve beyazımsı lekeli zeminde dört satır altın sarısı yazı görünür. Yüzeyde aşınma ve leke izleri var.",
+        "en": "Four lines of golden-yellow script on a pale green ground with white stains. The surface shows wear and discolouration."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

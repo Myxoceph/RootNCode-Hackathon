@@ -10,8 +10,6 @@
     "from": "Gürsu",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Gürsu bölümündeki Orta Camii yazısından (s. 335-337) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
-      "Koordinat kitapta yok; sahadan ya da fotoğraf EXIF'inden eklenmeli (location.coordinates atlandı).",
-      "Fotoğraf ve arşiv görseli yok; media ve archive_media boş, media_folder null. Drive klasörü bulunmalı.",
       "Bani/yaptıran kişi kitapta belirtilmiyor (kilise olarak yapıldığı kabul ediliyor); founder.name null.",
       "Mimar kitapta belirtilmiyor; architect.name null.",
       "Vakıf bilgisi kitapta yok; waqf alanı null bırakıldı.",
@@ -21,7 +19,8 @@
       "Mahalle: 'İstiklal Mahallesi' metinde geçiyor; ilçe 'Gürsu' olarak alındı.",
       "Erişilebilirlik bilgileri sahada teyit edilmeli.",
       "Ziyaretçi ipuçları ve ziyaret süresi derlenmedi.",
-      "Banî ve mimar kitapta belirtilmemiş (founder/architect null); kilise dönemi için kaynak bulunursa eklenmeli."
+      "Banî ve mimar kitapta belirtilmemiş (founder/architect null); kilise dönemi için kaynak bulunursa eklenmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -476,8 +475,70 @@
     "audio_description_source": "book_architectural_description"
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "12oOe-omm3LU3NsFHjoChL6Qo2tGtZshq",
+    "book_layout_pdf_file_id": "1YLuNU5C1wwYXPFvQj7C74S1kLZP42NOz",
+    "book_pdf_name": "3-Gürsu.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-gursu-orta-camii/p005-1.jpg",
+        "original_name": "04 DJI_20241023213949_0079_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1YLuNU5C1wwYXPFvQj7C74S1kLZP42NOz",
+        "book_pdf_name": "3-Gürsu.pdf",
+        "book_page": "336"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı çatısı",
+        "en": "Aerial view of the mosque roof"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında kiremit kaplı kırma çatı ve çevresindeki sokaklar, ağaçlar ve komşu evler görülür.",
+        "en": "From above, a tiled hipped roof is seen with surrounding streets, trees and neighbouring houses."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-gursu-orta-camii/p006-1.jpg",
+        "original_name": "06 ERD02056 kopya.jpg",
+        "book_pdf_file_id": "1YLuNU5C1wwYXPFvQj7C74S1kLZP42NOz",
+        "book_pdf_name": "3-Gürsu.pdf",
+        "book_page": "337"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap, minber ve halı",
+        "en": "Prayer hall with mihrab, minber and carpet"
+      },
+      "alt": {
+        "tr": "Ahşap oyma mihrap ve minber duvarda yer alır; kemerli pencereler ve hat levhaları görülür. Zeminde mavi, ortasında madalyonlu bir halı vardır.",
+        "en": "A carved wooden mihrab and minber stand at the front wall between arched windows and calligraphy roundels. The floor has a blue carpet with a central medallion."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-25"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

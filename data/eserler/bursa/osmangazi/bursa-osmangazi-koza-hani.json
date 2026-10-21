@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 649-659) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
-      "Fotoğraflar eklenmeli (media boş); Drive klasörü ve dosya kimlikleri bulunmalı (media_folder null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
       "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
@@ -618,8 +617,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-koza-hani/p023-1.jpg",
+        "original_name": "ERD04128 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "652"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Koza Han'ın tuğla giriş cephesi",
+        "en": "Brick entrance front of Koza Han"
+      },
+      "alt": {
+        "tr": "Tuğla ve taştan uzun tek katlı bir cephe; üzerinde “KOZA HAN” yazısı, kemerli demir parmaklıklı pencereler ve çok sayıda küçük bacalar var. Önde taş döşeli bir meydan ve basamaklar uzanır.",
+        "en": "A long single-storey front of brick and stone with the words 'KOZA HAN', arched windows with iron grilles and many small chimneys. A paved square with steps lies in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-koza-hani/p026-2.jpg",
+        "original_name": "ERD04161 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "655"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Sivri kemerli revaktan avluya bakış",
+        "en": "View to the courtyard through a pointed arch"
+      },
+      "alt": {
+        "tr": "Taş ve tuğladan sivri bir kemer, içindeki küçük masa ve sandalyelerle birlikte çerçeve oluşturur. Kemerin ardında yeşil ağaçlı avlu görünür; zemin kırmızı fayanstır.",
+        "en": "A pointed arch of stone and brick frames a small table and chairs. Beyond it is a courtyard with green trees; the floor is red tile."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

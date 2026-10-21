@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Umurbey Külliyesi bölümünden (s. 63-75) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir. Hazire kitapta cami bölümüyle birlikte (Umurbey Camii ve Haziresi) ele alındığı için bu kayıtta bir bölüm olarak yer alır.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
-      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
       "Caminin inşa yılı kitapta doğrudan verilmiyor; yalnızca taş vakfiyelerin 'inşadan 22 yıl sonra' yazıldığı söyleniyor. Kesin tarih için kaynak taranmalı.",
@@ -679,7 +677,96 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1FD1iP2dzVTcfHxxA_sKvRofOVQ5v77hb",
+    "book_layout_pdf_file_id": "1ClGGjU_FFWVNm3a8E9XzERe20ZKwzXti",
+    "book_pdf_name": "8-Umurbey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-umurbey-camii/p006-1.jpg",
+        "original_name": "DJI_20240927135138_0023_D-Edit.jpg",
+        "book_pdf_file_id": "1ClGGjU_FFWVNm3a8E9XzERe20ZKwzXti",
+        "book_pdf_name": "8-Umurbey Külliyesi.pdf",
+        "book_page": "67"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Umurbey Camii, son cemaat yeri ve minare",
+        "en": "Umurbey Mosque, portico and minaret"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla örgülü cami, kiremit kırmızısı kubbeler ve sağda tuğla bir minare görünür. Sütunlu bir revak ve çevresinde servi ağaçları vardır.",
+        "en": "A stone and brick mosque with red-tiled domes and a brick minaret on the right. A columned portico and cypress trees are in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-umurbey-camii/p005-1.jpg",
+        "original_name": "DJI_20240927134813_0014_D-Edit.jpg",
+        "book_pdf_file_id": "1ClGGjU_FFWVNm3a8E9XzERe20ZKwzXti",
+        "book_pdf_name": "8-Umurbey Külliyesi.pdf",
+        "book_page": "66"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Yukarıdan iki büyük kiremit kubbe, küçük kubbeler ve bir minare görünür. Cami, çevresindeki mezarlık ve ağaçlarla birliktedir.",
+        "en": "From above, two large tiled domes, smaller domes and a minaret. The mosque is surrounded by a graveyard and trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-27"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-umurbey-camii/p007-1.jpg",
+        "original_name": "ERD04737 kopya.jpg",
+        "book_pdf_file_id": "1ClGGjU_FFWVNm3a8E9XzERe20ZKwzXti",
+        "book_pdf_name": "8-Umurbey Külliyesi.pdf",
+        "book_page": "68"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Taş vakfiye kitabesi",
+        "en": "Stone endowment inscription"
+      },
+      "alt": {
+        "tr": "Siyah zemin üzerine altın sarısı yazılmış çok satırlı Arapça harfli kitabe. Satırlar yatay sarı şeritlerle ayrılmıştır.",
+        "en": "A multi-line inscription in Arabic script, gold on a black ground. Horizontal gold bands separate the lines."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-27"
+    }
+  ],
   "archive_media": []
 }

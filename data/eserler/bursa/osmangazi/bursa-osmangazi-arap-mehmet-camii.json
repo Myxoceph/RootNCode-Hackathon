@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 261) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Kesin inşa yılı kitapta yok ('1490'dan önce'); banînin kimliği ve vakfı bilinmiyor.",
       "Minare hakkında kitapta bilgi yok.",
@@ -304,7 +302,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-arap-mehmet-camii/p038-2.jpg",
+        "original_name": "arapmehmetdede03.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "261"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kubbe ve minare, havadan görünüm",
+        "en": "Dome and minaret from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan görüldüğünde dilimli, gri kurşun kaplı büyük kubbe ve sol üstte minare gövdesi dikkat çeker. Çevresinde dar sokaklar ve kiremitli çatılar vardır.",
+        "en": "From above, a large ribbed grey lead dome with the minaret base at upper left. Narrow streets and tiled roofs lie around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-arap-mehmet-camii/p040-2.jpg",
+        "original_name": "03_3.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "263"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çini mihrap ve ahşap minber",
+        "en": "Tiled mihrab and wooden minbar"
+      },
+      "alt": {
+        "tr": "Mavi-beyaz çinili mihrap, sağda oymalı ahşap minber ve ahşap kaplı alt duvarlar görünür. Tavan ahşap, zemin turkuaz halıdır; duvarlarda yuvarlak levhalar asılıdır.",
+        "en": "A blue and white tiled mihrab, a carved wooden minbar on the right and wood-panelled lower walls. The ceiling is wooden, the carpet turquoise, with round panels on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
   "archive_media": []
 }
