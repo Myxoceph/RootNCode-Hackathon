@@ -16,6 +16,7 @@ import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from
 import { AssetImage } from "@/components/asset-image";
 import { ConfidenceBadge, HeadingWithBadge, LegendBadge, SourceLine, SourceNote } from "@/components/provenance";
 import { useAssetRelations } from "@/data";
+import { languageProps, transliterationLanguage } from "@/lib/language";
 import { useColors } from "@/theme";
 
 const MAX_CONTENT_WIDTH = 720;
@@ -302,9 +303,14 @@ function Block({ children }: { children: ReactNode }) {
   return <View style={[styles.block, { borderColor: c.border }]}>{children}</View>;
 }
 
-function Body({ children }: { children: string }) {
+/** `lang`: BCP 47 tag when the text is not Turkish, so screen readers switch voice. */
+function Body({ children, lang }: { children: string; lang?: string }) {
   const c = useColors();
-  return <Text style={[typography.body, { color: c.text }]}>{children}</Text>;
+  return (
+    <Text style={[typography.body, { color: c.text }]} {...languageProps(lang)}>
+      {children}
+    </Text>
+  );
 }
 
 function Caption({ children }: { children: string }) {
@@ -346,9 +352,13 @@ function AccessibilityRow({ label, status }: { label: string; status: Accessibil
 function InscriptionBlock({ inscription }: { inscription: InscriptionV2 }) {
   const c = useColors();
   const fields = [
-    { label: "Transkripsiyon", value: inscription.transliteration },
-    { label: "Günümüz Türkçesi", value: inscription.translation },
-    { label: "Not", value: inscription.note },
+    {
+      label: "Transkripsiyon",
+      value: inscription.transliteration,
+      lang: transliterationLanguage(inscription.language),
+    },
+    { label: "Günümüz Türkçesi", value: inscription.translation, lang: undefined },
+    { label: "Not", value: inscription.note, lang: undefined },
   ];
   const date = [inscription.hijriYear && `H. ${inscription.hijriYear}`, inscription.gregorian]
     .filter(Boolean)
@@ -358,11 +368,11 @@ function InscriptionBlock({ inscription }: { inscription: InscriptionV2 }) {
     <Block>
       {inscription.location && <Text style={[typography.label, { color: c.text }]}>{inscription.location}</Text>}
       {date !== "" && <Text style={[typography.data, { color: c.textSecondary }]}>{date}</Text>}
-      {fields.map(({ label, value }) =>
+      {fields.map(({ label, value, lang }) =>
         value === null ? null : (
           <View key={label} style={styles.field}>
             <Text style={[typography.label, { color: c.textSecondary }]}>{label}</Text>
-            <Body>{value}</Body>
+            <Body lang={lang}>{value}</Body>
           </View>
         ),
       )}

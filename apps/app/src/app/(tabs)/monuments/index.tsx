@@ -1,7 +1,17 @@
 import { radius, spacing, touchTarget, typography } from "@vagabonds/ui";
 import { router, useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
-import { ActivityIndicator, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { useEffect } from "react";
+import {
+  AccessibilityInfo,
+  ActivityIndicator,
+  FlatList,
+  Platform,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 import { AssetCard } from "@/components/asset-card";
 import { CityPicker } from "@/components/city-picker";
@@ -20,6 +30,18 @@ export default function MonumentsScreen() {
   const list = useAssetList(city);
   const cityLabel = cities.status === "success" ? cities.data.find((x) => x.code === city)?.label : undefined;
 
+  // A status message (WCAG 4.1.3): read out when the list loads or the city changes.
+  // Android and the web read the live region below; iOS needs an explicit announcement.
+  const status =
+    list.status === "loading"
+      ? "Eserler yükleniyor"
+      : list.status === "success"
+        ? `${cityLabel ? `${cityLabel}: ` : ""}${list.data.total} eser`
+        : "";
+  useEffect(() => {
+    if (Platform.OS === "ios" && status !== "") AccessibilityInfo.announceForAccessibility(status);
+  }, [status]);
+
   return (
     <View style={[styles.screen, { backgroundColor: c.background }]}>
       <Head>
@@ -31,6 +53,14 @@ export default function MonumentsScreen() {
           <CityPicker cities={cities.data} selected={city} onSelect={(code) => router.setParams({ city: code })} />
         </View>
       )}
+      <View style={styles.column}>
+        <Text
+          accessibilityLiveRegion="polite"
+          style={[typography.body, styles.status, { color: c.textSecondary }]}
+        >
+          {status}
+        </Text>
+      </View>
       <ResourceView resource={list}>
         {(page) => (
           <FlatList
@@ -41,9 +71,6 @@ export default function MonumentsScreen() {
             contentInsetAdjustmentBehavior="automatic"
             onEndReached={page.loadMore}
             onEndReachedThreshold={0.5}
-            ListHeaderComponent={
-              <Text style={[typography.body, { color: c.textSecondary }]}>{page.total} eser</Text>
-            }
             ListEmptyComponent={
               <Text style={[typography.body, { color: c.textSecondary }]}>Henüz gösterilecek eser yok.</Text>
             }
@@ -92,6 +119,9 @@ const styles = StyleSheet.create({
     width: "100%",
     maxWidth: MAX_CONTENT_WIDTH,
     alignSelf: "center",
+  },
+  status: {
+    paddingHorizontal: spacing.lg,
   },
   list: {
     width: "100%",

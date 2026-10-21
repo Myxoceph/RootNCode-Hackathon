@@ -76,6 +76,11 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
   const [loadingMore, setLoadingMore] = useState(false);
   const [moreError, setMoreError] = useState<DataError | null>(null);
   const busy = useRef(false);
+  // Paging state lives in refs, not in render state: FlatList can call onEndReached again
+  // before the appended page re-renders, and a stale `items.length` would fetch the same
+  // page twice (duplicate keys in the list).
+  const loaded = useRef(0);
+  const knownTotal = useRef(0);
   // A page that arrives after the city changed belongs to the old list and is dropped.
   const currentCity = useRef(city);
   currentCity.current = city;
@@ -83,6 +88,8 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
   // The first page goes through useResource for the loading and error screens.
   const loadFirst = useCallback(async () => {
     const page = await dataSource.listAssets({ city, limit: PAGE_SIZE, offset: 0 }, LANG);
+    loaded.current = page.items.length;
+    knownTotal.current = page.total;
     setItems(page.items);
     setTotal(page.total);
     setMoreError(null);
@@ -91,16 +98,21 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
   const first = useResource(loadFirst);
 
   const loadMore = useCallback(() => {
-    if (busy.current || first.status !== "success" || items.length >= total) return;
+    if (busy.current || first.status !== "success" || loaded.current >= knownTotal.current) return;
     busy.current = true;
     setLoadingMore(true);
     setMoreError(null);
     dataSource
-      .listAssets({ city, limit: PAGE_SIZE, offset: items.length }, LANG)
+      .listAssets({ city, limit: PAGE_SIZE, offset: loaded.current }, LANG)
       .then(
         (page) => {
           if (currentCity.current !== city) return;
-          setItems((current) => [...current, ...page.items]);
+          loaded.current += page.items.length;
+          knownTotal.current = page.total;
+          setItems((current) => {
+            const seen = new Set(current.map((a) => a.id));
+            return [...current, ...page.items.filter((a) => !seen.has(a.id))];
+          });
           setTotal(page.total);
         },
         (error: unknown) => currentCity.current === city && setMoreError(toDataError(error)),
@@ -109,7 +121,7 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
         busy.current = false;
         setLoadingMore(false);
       });
-  }, [city, first.status, items.length, total]);
+  }, [city, first.status]);
 
   if (first.status !== "success") return first;
   return { status: "success", data: { items, total, loadingMore, moreError, loadMore }, retry: first.retry };
