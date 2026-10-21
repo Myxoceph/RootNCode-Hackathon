@@ -5,10 +5,12 @@ import { AccessibilityInfo, Animated, Easing, Platform, ScrollView, StyleSheet, 
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, G, Line, Path, RadialGradient, Rect, Stop, Text as SvgText } from "react-native-svg";
 
-import { CameraTopBar } from "@/components/camera-chrome";
+import { CameraTopBar, GlassIconButton } from "@/components/camera-chrome";
+import { InscriptionReading } from "@/components/inscription-reading";
 import { inscription, inscriptionReadAloud } from "@/content/camera";
 import { speak } from "@/lib/speak";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { useScreenReaderEnabled } from "@/lib/use-screen-reader";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
 type Phase = "scanning" | "locked" | "revealed";
@@ -25,17 +27,42 @@ const REVEAL_MS = 2700;
  * reading, meaning and the waqf's condition rise in a card below).
  *
  * Marker recognition is simulated until the AR prototype lands (Y5, H7).
- * On the web there is no camera (ADR 0001): the card opens right away.
+ *
+ * The camera-free reading mode (K7) opens instead on the web (no camera,
+ * ADR 0001) and when a screen reader is on; on a phone it is one tap away.
  */
 export default function InscriptionScreen() {
+  const web = Platform.OS === "web";
+  const screenReader = useScreenReaderEnabled();
+  const [mode, setMode] = useState<"camera" | "reading">(web ? "reading" : "camera");
+
+  // A screen reader cannot follow a scan line; start such users on the text.
+  useEffect(() => {
+    if (screenReader) setMode("reading");
+  }, [screenReader]);
+
+  return (
+    <>
+      <Head>
+        <title>Taşın Dili · Vagabonds</title>
+      </Head>
+      {mode === "reading" ? (
+        <InscriptionReading onUseCamera={web ? null : () => setMode("camera")} />
+      ) : (
+        <InscriptionCamera onReadAsText={() => setMode("reading")} />
+      )}
+    </>
+  );
+}
+
+function InscriptionCamera({ onReadAsText }: { onReadAsText: () => void }) {
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
-  const web = Platform.OS === "web";
   const { settings } = useA11ySettings();
-  const [phase, setPhase] = useState<Phase>(web ? "revealed" : "scanning");
+  const [phase, setPhase] = useState<Phase>("scanning");
   const [size, setSize] = useState({ width: 0, height: 0 });
   const scan = useRef(new Animated.Value(0)).current;
-  const card = useRef(new Animated.Value(web ? 1 : 0)).current;
+  const card = useRef(new Animated.Value(0)).current;
   const timers = useRef<Array<ReturnType<typeof setTimeout>>>([]);
 
   const run = useCallback(() => {
@@ -54,15 +81,16 @@ export default function InscriptionScreen() {
       }, LOCK_MS),
       setTimeout(() => {
         setPhase("revealed");
+        AccessibilityInfo.announceForAccessibility("Kitabe çözüldü. Meal ve vakfiye şartı aşağıda.");
         Animated.timing(card, { toValue: 1, duration: 600, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
       }, REVEAL_MS),
     ];
   }, [card, reduceMotion]);
 
   useEffect(() => {
-    if (!web) run();
+    run();
     return () => timers.current.forEach(clearTimeout);
-  }, [run, web]);
+  }, [run]);
 
   useEffect(() => {
     if (phase !== "scanning" || reduceMotion) return;
@@ -87,9 +115,6 @@ export default function InscriptionScreen() {
 
   return (
     <View style={styles.screen} onLayout={(e) => setSize(e.nativeEvent.layout)}>
-      <Head>
-        <title>Taşın Dili · Vagabonds</title>
-      </Head>
       <Wall phase={phase} />
 
       {phase === "scanning" && size.width > 0 && (
@@ -108,17 +133,17 @@ export default function InscriptionScreen() {
       )}
 
       <View style={[styles.top, { top: insets.top + spacing.sm }]}>
-        <CameraTopBar title="Taşın Dili" subtitle="Giriş kapısının üzerindeki kitabeye odaklan" />
+        <CameraTopBar title="Taşın Dili" subtitle="Giriş kapısının üzerindeki kitabeye odaklan">
+          <GlassIconButton icon="document-text-outline" label="Kamerasız oku" onPress={onReadAsText} />
+        </CameraTopBar>
       </View>
 
-      {!web && (
-        <View style={[styles.status, { top: Math.min(toY(262), cardTop - 52) }]} accessibilityRole="text" accessibilityLiveRegion="polite">
-          <View style={[styles.dot, { backgroundColor: phase === "scanning" ? cameraColors.textSecondary : "#5FD3A4" }]} />
-          <Text variant="caption" colorValue={cameraColors.text}>
-            {status}
-          </Text>
-        </View>
-      )}
+      <View style={[styles.status, { top: Math.min(toY(262), cardTop - 52) }]} accessibilityRole="text" accessibilityLiveRegion="polite">
+        <View style={[styles.dot, { backgroundColor: phase === "scanning" ? cameraColors.textSecondary : "#5FD3A4" }]} />
+        <Text variant="caption" colorValue={cameraColors.text}>
+          {status}
+        </Text>
+      </View>
 
       <Animated.View
         style={[
@@ -136,7 +161,7 @@ export default function InscriptionScreen() {
           <Text variant="overline" colorValue={cameraColors.textSecondary} style={styles.center}>
             ORİJİNAL HAT · ARAPÇA
           </Text>
-          <Text variant="inscription" colorValue={cameraColors.gold} style={styles.center} accessibilityLanguage="ar">
+          <Text variant="inscription" colorValue={cameraColors.gold} style={styles.center} language="ar">
             {inscription.lines.join("\n")}
           </Text>
           <Text variant="caption" colorValue={cameraColors.textSecondary} style={[styles.center, styles.italic]}>
@@ -153,14 +178,12 @@ export default function InscriptionScreen() {
             </View>
           </Section>
           <View style={styles.buttons}>
-            {!web && (
-              <Button
-                label="Yeniden tara"
-                onPress={run}
-                colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
-                style={styles.flex}
-              />
-            )}
+            <Button
+              label="Yeniden tara"
+              onPress={run}
+              colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
+              style={styles.flex}
+            />
             {settings.audioDescription && (
               <Button
                 label="Sesli oku"
@@ -179,7 +202,7 @@ export default function InscriptionScreen() {
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <View style={styles.section}>
-      <Text variant="overline" colorValue={cameraColors.textSecondary}>
+      <Text variant="overline" colorValue={cameraColors.textSecondary} headingLevel={2}>
         {title}
       </Text>
       {children}

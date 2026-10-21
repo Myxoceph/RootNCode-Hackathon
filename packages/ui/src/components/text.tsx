@@ -15,6 +15,12 @@ export interface TextProps extends NativeTextProps {
    * the level becomes `aria-level`, so a page reads as an outline (1 = page title).
    */
   headingLevel?: 1 | 2 | 3 | 4;
+  /**
+   * Language of this text when it differs from the app's Turkish, e.g. "ar"
+   * for an inscription, so screen readers switch voice (WCAG 3.1.2). Sets
+   * `accessibilityLanguage` on phones and `lang` on the web.
+   */
+  language?: string;
 }
 
 /**
@@ -23,7 +29,7 @@ export interface TextProps extends NativeTextProps {
  * Follows the system text size (`allowFontScaling` stays on) and the in-app
  * "Büyük metin" setting.
  */
-export function Text({ variant = "body", color = "text", colorValue, headingLevel, style, ...rest }: TextProps) {
+export function Text({ variant = "body", color = "text", colorValue, headingLevel, language, style, ...rest }: TextProps) {
   const { theme, textScale } = useUi();
   const base = typography[variant];
   const scaled = {
@@ -34,5 +40,6 @@ export function Text({ variant = "body", color = "text", colorValue, headingLeve
   const heading = headingLevel
     ? { accessibilityRole: "header" as const, ...(Platform.OS === "web" ? ({ "aria-level": headingLevel } as object) : {}) }
     : {};
-  return <NativeText {...heading} {...rest} style={[scaled, { color: colorValue ?? theme.colors[color] }, style]} />;
+  const lang = language ? (Platform.OS === "web" ? ({ lang: language } as object) : { accessibilityLanguage: language }) : {};
+  return <NativeText {...heading} {...lang} {...rest} style={[scaled, { color: colorValue ?? theme.colors[color] }, style]} />;
 }

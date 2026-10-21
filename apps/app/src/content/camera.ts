@@ -9,6 +9,7 @@ export const timeCurtain = {
 };
 
 export const inscription = {
+  place: "Muradiye Külliyesi · giriş kapısının üzerindeki kitabe",
   lines: ["بسم الله الرحمن الرحيم", "وقف لوجه الله تعالى"],
   transcription: "Bismillâhirrahmânirrahîm · Vakfen li-vechillâhi teâlâ",
   meaning: "Rahman ve Rahim olan Allah'ın adıyla. Yüce Allah'ın rızası için vakfedilmiştir.",
