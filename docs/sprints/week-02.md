@@ -33,10 +33,10 @@ eserleri listelenir, Ulucami detayında kaynak sayfaları, güven rozetleri ve i
 
 | # | Görev | Dal | Tamamlanma kriteri |
 |---|---|---|---|
-| K3 | (H1'den) Açık, koyu ve yüksek kontrast temaları | `feat/ui-themes` | Üç tema token'lardan türetiliyor; tema geçişi tek noktadan yapılıyor |
-| K5 | (H1'den) Temel bileşenler: `Button`, `Text`, `Card` (erişilebilirlik özellikleri yerleşik); Yiğit ile birlikte `apps/app`'e bağlanacak | `feat/ui-base-components` | Bileşenler hem mobilde hem web'de ekran okuyucuyla doğru okunuyor |
+| K3 ✅ | (H1'den) Açık, koyu ve yüksek kontrast temaları | `feat/ui-themes` | Üç tema token'lardan türetiliyor; tema geçişi tek noktadan yapılıyor · Hayrat temaları (açık, koyu, iki yüksek kontrast), `getTheme()` · [PR #40](https://github.com/Myxoceph/RootNCode-Hackathon/pull/40) |
+| K5 | (H1'den) Temel bileşenler: `Button`, `Text`, `Card` (erişilebilirlik özellikleri yerleşik); Yiğit ile birlikte `apps/app`'e bağlanacak | `feat/ui-base-components` | Bileşenler hem mobilde hem web'de ekran okuyucuyla doğru okunuyor · Bileşenler yazıldı ve ekranlara bağlandı ([PR #40](https://github.com/Myxoceph/RootNCode-Hackathon/pull/40)); ekran okuyucu testi bekliyor |
 | K6 | Güven düzeyi ve kaynak gösterimi tasarımı: `certain` / `probable` / `disputed` / `legend` rozetleri, kaynak notu ve sayfa bilgisi | – | Tasarım ekiple paylaşıldı; rozetler yalnızca renge dayanmıyor (ikon + metin), kontrastı AA |
-| K7 | Kitabe okuma (Taşın Dili) ekranının kamerasız alternatifi: transkripsiyon, meal ve vakfiye şartının metin + sesli betimleme düzeni | – | Wireframe hazır; ekran okuyucu okuma sırası belirlendi |
+| K7 | Kitabe okuma (Taşın Dili) ekranının kamerasız alternatifi: transkripsiyon, meal ve vakfiye şartının metin + sesli betimleme düzeni | – | Wireframe hazır; ekran okuyucu okuma sırası belirlendi · Web'de kamerasız sürüm ve "Sesli oku" uygulandı ([PR #40](https://github.com/Myxoceph/RootNCode-Hackathon/pull/40)); ekran okuyucu okuma sırası henüz denenmedi |
 
 ## Hüseyin Öztürk · Veri & ETL
 
