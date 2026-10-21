@@ -1,17 +1,15 @@
 import type { Monument } from "@vagabonds/contracts";
-import { radius, spacing, touchTarget, typography } from "@vagabonds/ui";
+import { Card, fontFamily, spacing, Text, touchTarget } from "@vagabonds/ui";
 import { Link } from "expo-router";
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 
 import { monumentTypeLabel } from "@/lib/labels";
-import { useColors } from "@/theme";
 
 /**
  * One monument in the list. A real link (an `<a href>` on the web), so it can be
- * opened in a new tab or shared. Moves to the design system's `Card` once K5 lands.
+ * opened in a new tab or shared.
  */
 export function MonumentCard({ monument }: { monument: Monument }) {
-  const c = useColors();
   const meta = `${monumentTypeLabel[monument.monumentType]} · ${monument.city}`;
 
   return (
@@ -19,23 +17,28 @@ export function MonumentCard({ monument }: { monument: Monument }) {
       <Pressable
         accessibilityRole="link"
         accessibilityLabel={`${monument.name}, ${meta}, ${monument.period}`}
-        // `Link asChild` needs one flat style object: it rejects arrays and drops function styles.
-        style={StyleSheet.flatten([styles.card, { backgroundColor: c.surface, borderColor: c.border }])}
+        style={styles.pressable}
       >
-        <Text style={[typography.heading, { color: c.text }]}>{monument.name}</Text>
-        <Text style={[typography.label, { color: c.primary }]}>{meta}</Text>
-        <Text style={[typography.body, { color: c.textSecondary }]}>{monument.period}</Text>
+        <Card>
+          <Text variant="heading">{monument.name}</Text>
+          <Text variant="label" color="primary">
+            {meta}
+          </Text>
+          <Text variant="caption" color="textSecondary" style={styles.mono}>
+            {monument.period}
+          </Text>
+        </Card>
       </Pressable>
     </Link>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
+  pressable: {
     minHeight: touchTarget.min,
-    padding: spacing.lg,
-    gap: spacing.xs,
-    borderRadius: radius.lg,
-    borderWidth: StyleSheet.hairlineWidth,
+  },
+  mono: {
+    fontFamily: fontFamily.mono,
+    marginTop: spacing.xxs,
   },
 });
