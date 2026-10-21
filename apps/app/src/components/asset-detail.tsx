@@ -1,17 +1,29 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { AccessibilityStatus, AssetDetail, InscriptionV2 } from "@vagabonds/contracts";
+import type {
+  AccessibilityStatus,
+  AssetDetail,
+  AssetFact,
+  Confidence,
+  InscriptionV2,
+  SourceRef,
+  TimelineEvent,
+} from "@vagabonds/contracts";
 import { radius, spacing, touchTarget, typography } from "@vagabonds/ui";
 import { Link } from "expo-router";
-import type { ComponentProps, PropsWithChildren } from "react";
+import type { ComponentProps, PropsWithChildren, ReactNode } from "react";
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { AssetImage } from "@/components/asset-image";
+import { ConfidenceBadge, HeadingWithBadge, LegendBadge, SourceLine, SourceNote } from "@/components/provenance";
 import { useAssetRelations } from "@/data";
 import { useColors } from "@/theme";
 
 const MAX_CONTENT_WIDTH = 720;
 
-/** Read-only detail of one asset. */
+/**
+ * Read-only detail of one asset. Everything that is not certain carries a badge,
+ * and every claim shows the book and pages it comes from.
+ */
 export function AssetDetailView({ asset }: { asset: AssetDetail }) {
   const c = useColors();
   const a11y = asset.accessibility;
@@ -32,12 +44,11 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
         <Text style={[typography.label, { color: c.primary }]}>
           {asset.type.label} · {asset.district}, {asset.city.label}
         </Text>
-        {asset.datingDisplay && (
-          <Text style={[typography.body, { color: c.textSecondary }]}>{asset.datingDisplay}</Text>
-        )}
       </View>
 
       <Body>{asset.summary}</Body>
+
+      <Identity asset={asset} />
 
       {a11y.audioDescription && (
         <Section title="Mekânı tanı">
@@ -46,10 +57,41 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
       )}
 
       {asset.sections.map((section) => (
-        <Section key={section.id} title={section.title ?? "Tarihçe"}>
+        <Section key={section.id} title={section.title ?? "Tarihçe"} confidence={section.confidence}>
           <Body>{section.body}</Body>
+          <SourceNote sources={section.sources} />
         </Section>
       ))}
+
+      {asset.facts.length > 0 && (
+        <Section title="Bilgiler">
+          {asset.facts.map((fact) => (
+            <FactRow key={fact.key} fact={fact} />
+          ))}
+        </Section>
+      )}
+
+      {asset.timeline.length > 0 && (
+        <Section title="Zaman çizelgesi">
+          {asset.timeline.map((event) => (
+            <TimelineRow key={event.id} event={event} />
+          ))}
+        </Section>
+      )}
+
+      {asset.legends.length > 0 && (
+        <Section title="Rivayetler">
+          <Caption>Halk arasında anlatılanlar. Tarihî bilgi olarak değil, rivayet olarak okunmalı.</Caption>
+          {asset.legends.map((legend) => (
+            <Block key={legend.id}>
+              <Text style={[typography.label, { color: c.text }]}>{legend.title}</Text>
+              <LegendBadge verdict={legend.verdict} />
+              <Body>{legend.body}</Body>
+              <SourceNote sources={legend.sources} />
+            </Block>
+          ))}
+        </Section>
+      )}
 
       {asset.inscriptions.length > 0 && (
         <Section title="Kitabeler">
@@ -92,7 +134,119 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
           {!asset.coordinates.verified && <Caption>Konum yaklaşık; yerinde doğrulanmadı.</Caption>}
         </Section>
       )}
+
+      {asset.sources.length > 0 && (
+        <Section title="Kaynakça">
+          {asset.sources.map((source) => (
+            <SourceLine key={source.sourceId} source={source} />
+          ))}
+        </Section>
+      )}
     </ScrollView>
+  );
+}
+
+/** Künye: when it was built, who had it built, who designed it, which waqf kept it. */
+function Identity({ asset }: { asset: AssetDetail }) {
+  const { dating, founder, architect, waqf } = asset;
+  const architectName = architect?.name ?? null;
+  const candidates = architect?.candidates ?? [];
+  if (!dating?.display && !founder && !architectName && candidates.length === 0 && !waqf?.name) return null;
+
+  return (
+    <Section title="Künye">
+      {dating?.display && (
+        <IdentityRow label="Tarih" confidence={dating.confidence} sources={dating.sources}>
+          <Body>{dating.display}</Body>
+          {dating.basis && <Caption>{`Dayanak: ${dating.basis}`}</Caption>}
+        </IdentityRow>
+      )}
+      {founder && (
+        <IdentityRow label="Banî" confidence={founder.confidence} sources={founder.sources}>
+          <Body>{founder.name}</Body>
+          {/* The row is already labelled "Banî"; only show a role that says something else. */}
+          {founder.role && founder.role.toLocaleLowerCase("tr") !== "banî" && <Caption>{founder.role}</Caption>}
+        </IdentityRow>
+      )}
+      {architect && (architectName || candidates.length > 0) && (
+        <IdentityRow label="Mimar" confidence={architect.confidence} sources={architect.sources}>
+          {architectName ? (
+            <Body>{architectName}</Body>
+          ) : (
+            <>
+              <Caption>Kesin olarak bilinmiyor. Kaynaklarda adı geçenler:</Caption>
+              {candidates.map((candidate) => (
+                <Body key={candidate.name}>
+                  {candidate.note ? `• ${candidate.name} (${candidate.note})` : `• ${candidate.name}`}
+                </Body>
+              ))}
+            </>
+          )}
+        </IdentityRow>
+      )}
+      {waqf?.name && (
+        <IdentityRow label="Vakıf" confidence={waqf.confidence} sources={waqf.sources}>
+          <Body>{waqf.name}</Body>
+          {waqf.conditions && <Body>{`Vakfiye şartı: ${waqf.conditions}`}</Body>}
+          {waqf.deedExcerpt && <Body>{`Vakfiyeden: “${waqf.deedExcerpt}”`}</Body>}
+          {waqf.landNote && <Caption>{waqf.landNote}</Caption>}
+        </IdentityRow>
+      )}
+    </Section>
+  );
+}
+
+function IdentityRow({
+  label,
+  confidence,
+  sources,
+  children,
+}: PropsWithChildren<{ label: string; confidence: Confidence | null; sources: SourceRef[] }>) {
+  const c = useColors();
+  return (
+    <Block>
+      <View style={styles.labelRow}>
+        <Text style={[typography.label, { color: c.textSecondary }]}>{label}</Text>
+        <ConfidenceBadge confidence={confidence} />
+      </View>
+      {children}
+      <SourceNote sources={sources} />
+    </Block>
+  );
+}
+
+function FactRow({ fact }: { fact: AssetFact }) {
+  const c = useColors();
+  const value = [fact.value, fact.unit].filter(Boolean).join(" ");
+  return (
+    <View style={styles.fact}>
+      <View style={styles.labelRow}>
+        <Text style={[typography.body, { color: c.textSecondary }]}>{fact.label}</Text>
+        {value !== "" && <Text style={[typography.label, { color: c.text }]}>{value}</Text>}
+        <ConfidenceBadge confidence={fact.confidence} />
+      </View>
+      {fact.note && <Caption>{fact.note}</Caption>}
+      <SourceNote sources={fact.sources} compact />
+    </View>
+  );
+}
+
+function TimelineRow({ event }: { event: TimelineEvent }) {
+  const c = useColors();
+  const when = event.year !== null ? String(event.year) : (event.date ?? event.hijri ?? "");
+  return (
+    <View style={styles.timelineRow}>
+      <Text style={[typography.data, styles.year, { color: c.primary }]}>{when}</Text>
+      <View style={styles.timelineBody}>
+        <Text style={[typography.body, { color: c.text }]}>{event.title}</Text>
+        <View style={styles.labelRow}>
+          <Text style={[typography.caption, { color: c.textSecondary }]}>{event.type.label}</Text>
+          <ConfidenceBadge confidence={event.confidence} />
+        </View>
+        {event.note && <Caption>{event.note}</Caption>}
+        <SourceNote sources={event.sources} compact />
+      </View>
+    </View>
   );
 }
 
@@ -110,18 +264,19 @@ function RelatedAssets({ id }: { id: string }) {
       ) : (
         <>
           {relations.data!.items.map((relation) => (
-            <Link
-              key={`${relation.asset.id}-${relation.type.code}`}
-              href={{ pathname: "/monuments/[id]", params: { id: relation.asset.id } }}
-              asChild
-            >
-              <Pressable accessibilityRole="link" style={styles.relation}>
-                <Text style={[typography.label, styles.link, { color: c.primary }]}>{relation.asset.name}</Text>
-                <Text style={[typography.caption, { color: c.textSecondary }]}>
-                  {relation.type.label} · {relation.description}
-                </Text>
-              </Pressable>
-            </Link>
+            <View key={`${relation.asset.id}-${relation.type.code}`} style={styles.relation}>
+              <Link href={{ pathname: "/monuments/[id]", params: { id: relation.asset.id } }} asChild>
+                <Pressable accessibilityRole="link" style={styles.relationLink}>
+                  <Text style={[typography.label, styles.link, { color: c.primary }]}>{relation.asset.name}</Text>
+                </Pressable>
+              </Link>
+              <View style={styles.labelRow}>
+                <Text style={[typography.caption, { color: c.textSecondary }]}>{relation.type.label}</Text>
+                <ConfidenceBadge confidence={relation.confidence} />
+              </View>
+              <Caption>{relation.description}</Caption>
+              <SourceNote sources={relation.sources} />
+            </View>
           ))}
           {relations.data!.items.length === 0 && <Caption>Henüz yayında bağlantılı eser yok.</Caption>}
           {relations.data!.unavailableCount > 0 && (
@@ -133,16 +288,18 @@ function RelatedAssets({ id }: { id: string }) {
   );
 }
 
-function Section({ title, children }: PropsWithChildren<{ title: string }>) {
-  const c = useColors();
+function Section({ title, confidence = null, children }: PropsWithChildren<{ title: string; confidence?: Confidence | null }>) {
   return (
     <View style={styles.section}>
-      <Text accessibilityRole="header" style={[typography.heading, { color: c.text }]}>
-        {title}
-      </Text>
+      <HeadingWithBadge title={title} confidence={confidence} />
       {children}
     </View>
   );
+}
+
+function Block({ children }: { children: ReactNode }) {
+  const c = useColors();
+  return <View style={[styles.block, { borderColor: c.border }]}>{children}</View>;
 }
 
 function Body({ children }: { children: string }) {
@@ -198,7 +355,7 @@ function InscriptionBlock({ inscription }: { inscription: InscriptionV2 }) {
     .join(" / ");
 
   return (
-    <View style={[styles.inscription, { borderColor: c.border }]}>
+    <Block>
       {inscription.location && <Text style={[typography.label, { color: c.text }]}>{inscription.location}</Text>}
       {date !== "" && <Text style={[typography.data, { color: c.textSecondary }]}>{date}</Text>}
       {fields.map(({ label, value }) =>
@@ -209,7 +366,8 @@ function InscriptionBlock({ inscription }: { inscription: InscriptionV2 }) {
           </View>
         ),
       )}
-    </View>
+      <SourceNote sources={inscription.sources} />
+    </Block>
   );
 }
 
@@ -235,24 +393,46 @@ const styles = StyleSheet.create({
   section: {
     gap: spacing.sm,
   },
+  block: {
+    gap: spacing.sm,
+    padding: spacing.md,
+    borderRadius: radius.md,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
   row: {
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.sm,
   },
-  relation: {
-    minHeight: touchTarget.min,
-    paddingVertical: spacing.xs,
+  labelRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: spacing.sm,
+  },
+  fact: {
     gap: spacing.xxs,
+  },
+  timelineRow: {
+    flexDirection: "row",
+    gap: spacing.md,
+  },
+  year: {
+    minWidth: 48,
+  },
+  timelineBody: {
+    flex: 1,
+    gap: spacing.xxs,
+  },
+  relation: {
+    gap: spacing.xxs,
+  },
+  relationLink: {
+    minHeight: touchTarget.min,
+    justifyContent: "center",
   },
   link: {
     textDecorationLine: "underline",
-  },
-  inscription: {
-    gap: spacing.md,
-    padding: spacing.md,
-    borderRadius: radius.md,
-    borderWidth: StyleSheet.hairlineWidth,
   },
   field: {
     gap: spacing.xxs,
