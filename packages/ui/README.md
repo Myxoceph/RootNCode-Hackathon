@@ -68,7 +68,7 @@ import { UiProvider, useTheme, Text, Button, Card } from "@vagabonds/ui";
 | Bileşen | Notlar |
 |---|---|
 | `UiProvider` / `useUi` / `useTheme` | Uygulamanın kökünde bir kez; tema, "Büyük metin" çarpanı ve odak halkası ayarını taşır |
-| `Text` | `variant` (tipografi) + `color` (tema rolü). Sistem yazı boyutunu ve "Büyük metin"i izler. `headingLevel={1…4}` başlık yapar; web'de `aria-level` olur, sayfa başlığı 1, bölümler 2 |
+| `Text` | `variant` (tipografi) + `color` (tema rolü). Sistem yazı boyutunu ve "Büyük metin"i izler. `headingLevel={1…4}` başlık yapar; web'de `aria-level` olur, sayfa başlığı 1, bölümler 2. `language="ar"` Türkçe dışındaki metni işaretler (telefonda `accessibilityLanguage`, web'de `lang`) |
 | `Button` | `primary` / `ghost` / `success`; etiketi erişilebilir adıdır, en az 44×44, klavye odağında firuze halka. `selected` ile aç/kapa düğmesi olur (telefonda "seçili", web'de `aria-pressed`) |
 
 Seçim durumları için `accessibilityState` yerine `aria-checked` / `aria-selected` kullan: `react-native-web`
