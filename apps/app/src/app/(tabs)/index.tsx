@@ -143,7 +143,7 @@ export default function MapScreen() {
               key={m.id}
               accessibilityRole="button"
               accessibilityLabel={`${m.name}, çözüldü`}
-              accessibilityState={{ selected: m.id === selected }}
+              aria-selected={m.id === selected}
               onPress={() => reveal(m.id)}
               style={[styles.pin, { left: left - touchTarget.min / 2, top: top - touchTarget.min / 2 }]}
             >
@@ -169,7 +169,7 @@ export default function MapScreen() {
       <View style={[styles.header, { top: insets.top + spacing.sm }]}>
         <View style={[styles.search, { backgroundColor: c.surface }]}>
           <View style={styles.flex}>
-            <Text variant="heading" accessibilityRole="header">
+            <Text variant="heading" headingLevel={1}>
               Bursa
             </Text>
             <Text variant="caption" color="textSecondary">
@@ -206,7 +206,7 @@ export default function MapScreen() {
           <Text variant="overline" colorValue={kickerColor}>
             {kicker.toLocaleUpperCase("tr-TR")}
           </Text>
-          <Text variant="heading" accessibilityRole="header">
+          <Text variant="heading" headingLevel={2}>
             {sel.name}
           </Text>
           <Text variant="caption" color="textSecondary" style={styles.mono}>

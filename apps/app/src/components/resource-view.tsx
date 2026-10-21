@@ -1,6 +1,6 @@
-import { radius, spacing, touchTarget, typography } from "@vagabonds/ui";
+import { Button, spacing, Text } from "@vagabonds/ui";
 import type { ReactNode } from "react";
-import { ActivityIndicator, Pressable, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 
 import type { DataError, ResourceWithRetry } from "@/data";
 import { useColors } from "@/theme";
@@ -28,28 +28,23 @@ export function ResourceView<T>({ resource, children }: ResourceViewProps<T>) {
 }
 
 export function DataErrorView({ error, onRetry }: { error: DataError; onRetry: () => void }) {
-  const c = useColors();
   const title = error.kind === "invalid" ? "Veriler okunamadı" : "Veriler yüklenemedi";
 
   return (
     <View style={styles.center} accessibilityRole="alert">
-      <Text accessibilityRole="header" style={[typography.heading, { color: c.text }]}>
+      <Text variant="heading" headingLevel={1}>
         {title}
       </Text>
-      <Text style={[typography.body, styles.centerText, { color: c.textSecondary }]}>{error.message}</Text>
+      <Text color="textSecondary" style={styles.centerText}>
+        {error.message}
+      </Text>
       {__DEV__ && error.details.length > 0 && (
-        <Text style={[typography.caption, { color: c.textSecondary }]}>
+        <Text variant="caption" color="textSecondary">
           {error.details.slice(0, 5).join("\n")}
           {error.details.length > 5 ? `\n… ve ${error.details.length - 5} sorun daha` : ""}
         </Text>
       )}
-      <Pressable
-        accessibilityRole="button"
-        onPress={onRetry}
-        style={({ pressed }) => [styles.button, { backgroundColor: c.primary }, pressed && styles.pressed]}
-      >
-        <Text style={[typography.label, { color: c.onPrimary }]}>Tekrar dene</Text>
-      </Pressable>
+      <Button label="Tekrar dene" onPress={onRetry} />
     </View>
   );
 }
@@ -64,16 +59,5 @@ const styles = StyleSheet.create({
   },
   centerText: {
     textAlign: "center",
-  },
-  button: {
-    minHeight: touchTarget.min,
-    minWidth: touchTarget.min,
-    paddingHorizontal: spacing.xl,
-    borderRadius: radius.md,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  pressed: {
-    opacity: 0.8,
   },
 });
