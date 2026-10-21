@@ -50,6 +50,8 @@ const EnvSchema = z.object({
     }),
   // Requests per minute one client IP may make; 0 turns the limit off.
   RATE_LIMIT_MAX: z.coerce.number().int().min(0).default(120),
+  // Open-Meteo base URL for current weather (no API key); empty turns weather off.
+  OPEN_METEO_URL: z.union([z.literal(""), z.url()]).default("https://api.open-meteo.com"),
 });
 
 export type Env = z.infer<typeof EnvSchema>;
