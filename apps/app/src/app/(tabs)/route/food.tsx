@@ -46,7 +46,7 @@ function DishCard({ dish, added }: { dish: Dish; added: boolean }) {
         </View>
       </View>
       <View style={styles.body}>
-        <Text variant="heading" accessibilityRole="header">
+        <Text variant="heading" headingLevel={2}>
           {dish.name}
         </Text>
         <Text variant="caption" color="textSecondary" style={styles.mono}>
@@ -60,7 +60,8 @@ function DishCard({ dish, added }: { dish: Dish; added: boolean }) {
         </View>
         <Button
           label={added ? "Rotada ✓" : "Rotaya ekle"}
-          accessibilityLabel={`${dish.name}: rotaya ekle`}
+          // Starts with the visible words, so voice control ("Rotaya ekle'ye dokun") finds it (WCAG 2.5.3).
+          accessibilityLabel={`${added ? "Rotada" : "Rotaya ekle"}: ${dish.name}`}
           variant="ghost"
           selected={added}
           onPress={() => toggleDish(dish.id)}
