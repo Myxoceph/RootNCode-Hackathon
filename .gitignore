@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Expo (also created at the root when expo is started from here by mistake)
+.expo/
+
 # Build output
 dist/
 build/
