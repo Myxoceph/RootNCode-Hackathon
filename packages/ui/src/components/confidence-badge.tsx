@@ -33,23 +33,26 @@ const looks: Record<ConfidenceCode, BadgeLook> = {
 
 function BadgeIcon({ code, color }: { code: ConfidenceCode; color: string }) {
   const stroke = { stroke: color, strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, fill: "none" };
+  // Hidden on a wrapping View: react-native-svg passes accessibility props on to the DOM on the web.
   return (
-    <Svg width={14} height={14} viewBox="0 0 16 16" accessibilityElementsHidden importantForAccessibility="no">
-      {code === "certain" && (
-        <>
-          <Circle cx={8} cy={8} r={6.5} {...stroke} />
-          <Path d="M5 8.2l2 2 4-4.2" {...stroke} />
-        </>
-      )}
-      {/* "About": two waves, as in ≈ */}
-      {code === "probable" && <Path d="M2.5 6c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0M2.5 10.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0" {...stroke} />}
-      {/* Two views pointing at each other */}
-      {code === "disputed" && <Path d="M2 5.5h10M9.5 3l2.5 2.5L9.5 8M14 10.5H4M6.5 8L4 10.5 6.5 13" {...stroke} />}
-      {/* Quotation marks: something told, not recorded */}
-      {code === "legend" && (
-        <Path d="M3 10.5c0-2.6 1-4.3 3-5.2M3 10.5a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 0 0-3.2 0M9 10.5c0-2.6 1-4.3 3-5.2M9 10.5a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 0 0-3.2 0" {...stroke} />
-      )}
-    </Svg>
+    <View aria-hidden>
+      <Svg width={14} height={14} viewBox="0 0 16 16">
+        {code === "certain" && (
+          <>
+            <Circle cx={8} cy={8} r={6.5} {...stroke} />
+            <Path d="M5 8.2l2 2 4-4.2" {...stroke} />
+          </>
+        )}
+        {/* "About": two waves, as in ≈ */}
+        {code === "probable" && <Path d="M2.5 6c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0M2.5 10.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0" {...stroke} />}
+        {/* Two views pointing at each other */}
+        {code === "disputed" && <Path d="M2 5.5h10M9.5 3l2.5 2.5L9.5 8M14 10.5H4M6.5 8L4 10.5 6.5 13" {...stroke} />}
+        {/* Quotation marks: something told, not recorded */}
+        {code === "legend" && (
+          <Path d="M3 10.5c0-2.6 1-4.3 3-5.2M3 10.5a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 0 0-3.2 0M9 10.5c0-2.6 1-4.3 3-5.2M9 10.5a1.6 1.6 0 1 0 3.2 0 1.6 1.6 0 0 0-3.2 0" {...stroke} />
+        )}
+      </Svg>
+    </View>
   );
 }
 
@@ -110,11 +113,23 @@ function formatPages(pages: string): string {
   return pages.includes("-") ? `s. ${pages.replace("-", "–")}` : `s. ${pages}`;
 }
 
+const sourceText = (source: SourceRef) => (source.pages ? `${source.title}, ${formatPages(source.pages)}` : source.title);
+const sourceSpoken = (source: SourceRef) => (source.pages ? `${source.title}, sayfa ${source.pages}` : source.title);
+
+export interface SourceNoteProps {
+  sources: SourceRef[];
+  /**
+   * One line of plain text without links, for long lists (facts, timeline) where a
+   * 44pt link target on every row would crowd the page; link the same books once elsewhere.
+   */
+  compact?: boolean;
+}
+
 /**
  * "Kaynak: Bursa Vakıf Eserleri – I. Cilt, s. 52–55". Each source with a
  * link opens it; screen readers hear "sayfa" instead of "s.".
  */
-export function SourceNote({ sources }: { sources: SourceRef[] }) {
+export function SourceNote({ sources, compact = false }: SourceNoteProps) {
   const { colors: c } = useTheme();
   if (sources.length === 0) {
     return (
@@ -124,17 +139,28 @@ export function SourceNote({ sources }: { sources: SourceRef[] }) {
     );
   }
 
+  const prefix = sources.length === 1 ? "Kaynak:" : "Kaynaklar:";
+  if (compact) {
+    return (
+      <Text variant="caption" color="textSecondary" accessibilityLabel={`${prefix} ${sources.map(sourceSpoken).join("; ")}`}>
+        {`${prefix} ${sources.map(sourceText).join("; ")}`}
+      </Text>
+    );
+  }
+
   return (
     <View style={styles.sources}>
       <Text variant="caption" color="textSecondary">
-        {sources.length === 1 ? "Kaynak:" : "Kaynaklar:"}
+        {prefix}
       </Text>
-      {sources.map((source) => {
-        const text = source.pages ? `${source.title}, ${formatPages(source.pages)}` : source.title;
-        const spoken = source.pages ? `${source.title}, sayfa ${source.pages}` : source.title;
+      {/* The same book can be cited twice with different pages, so the id alone is not a key. */}
+      {sources.map((source, index) => {
+        const key = `${source.sourceId}-${index}`;
+        const text = sourceText(source);
+        const spoken = sourceSpoken(source);
         if (!source.url) {
           return (
-            <Text key={source.sourceId} variant="caption" color="textSecondary" accessibilityLabel={spoken}>
+            <Text key={key} variant="caption" color="textSecondary" accessibilityLabel={spoken}>
               {text}
             </Text>
           );
@@ -142,7 +168,7 @@ export function SourceNote({ sources }: { sources: SourceRef[] }) {
         const url = source.url;
         return (
           <Pressable
-            key={source.sourceId}
+            key={key}
             accessibilityRole="link"
             accessibilityLabel={spoken}
             onPress={() => Linking.openURL(url)}

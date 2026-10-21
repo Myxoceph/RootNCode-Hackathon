@@ -219,54 +219,55 @@ function Wall({ phase }: { phase: Phase }) {
   const corner = locked ? cameraColors.gold : cameraColors.text;
   const arabic = { fontFamily: fontFamily.arabic, fontSize: 25, textAnchor: "middle" as const };
 
+  // Hidden on a wrapping View: react-native-svg passes accessibility props on to the DOM on the web.
   return (
-    <Svg
-      style={StyleSheet.absoluteFill}
-      viewBox={`0 0 ${SCENE.width} ${SCENE.height}`}
-      preserveAspectRatio="xMidYMid slice"
-      accessibilityElementsHidden
-      importantForAccessibility="no-hide-descendants"
-    >
-      <Defs>
-        <RadialGradient id="stone" cx="50%" cy="28%" r="80%">
-          <Stop offset="0" stopColor="#968b7b" />
-          <Stop offset="0.6" stopColor="#544b40" />
-          <Stop offset="1" stopColor="#26221d" />
-        </RadialGradient>
-      </Defs>
-      <Rect width={SCENE.width} height={SCENE.height} fill="url(#stone)" />
-      {Array.from({ length: 14 }, (_, i) => (
-        <Line key={`h${i}`} x1={0} x2={SCENE.width} y1={i * 44} y2={i * 44} stroke="rgba(0,0,0,0.28)" strokeWidth={2} />
-      ))}
-      {Array.from({ length: 4 }, (_, i) => (
-        <Line key={`v${i}`} y1={0} y2={SCENE.height} x1={i * 88} x2={i * 88} stroke="rgba(0,0,0,0.2)" strokeWidth={2} />
-      ))}
-      <Path d="M56 622V346a84 84 0 0 1 168 0V622z" fill="#191613" stroke="#7a6f60" strokeWidth={9} />
+    <View aria-hidden style={StyleSheet.absoluteFill}>
+      <Svg
+        style={StyleSheet.absoluteFill}
+        viewBox={`0 0 ${SCENE.width} ${SCENE.height}`}
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <Defs>
+          <RadialGradient id="stone" cx="50%" cy="28%" r="80%">
+            <Stop offset="0" stopColor="#968b7b" />
+            <Stop offset="0.6" stopColor="#544b40" />
+            <Stop offset="1" stopColor="#26221d" />
+          </RadialGradient>
+        </Defs>
+        <Rect width={SCENE.width} height={SCENE.height} fill="url(#stone)" />
+        {Array.from({ length: 14 }, (_, i) => (
+          <Line key={`h${i}`} x1={0} x2={SCENE.width} y1={i * 44} y2={i * 44} stroke="rgba(0,0,0,0.28)" strokeWidth={2} />
+        ))}
+        {Array.from({ length: 4 }, (_, i) => (
+          <Line key={`v${i}`} y1={0} y2={SCENE.height} x1={i * 88} x2={i * 88} stroke="rgba(0,0,0,0.2)" strokeWidth={2} />
+        ))}
+        <Path d="M56 622V346a84 84 0 0 1 168 0V622z" fill="#191613" stroke="#7a6f60" strokeWidth={9} />
 
-      <G transform={`translate(${PLAQUE.x} ${PLAQUE.y})`}>
-        <Rect x={2} y={2} width={216} height={126} rx={3} fill="#B9AD97" stroke="#857A68" strokeWidth={3} />
-        <Rect x={10} y={10} width={200} height={110} fill="none" stroke="#857A68" strokeWidth={1.2} />
-        <Line x1={16} y1={66} x2={204} y2={66} stroke="#857A68" strokeWidth={0.9} />
-        <SvgText x={110.8} y={48.8} fill="#D8CDB8" {...arabic}>{inscription.lines[0]}</SvgText>
-        <SvgText x={110} y={48} fill="#5B5243" {...arabic}>{inscription.lines[0]}</SvgText>
-        <SvgText x={110.8} y={102.8} fill="#D8CDB8" {...arabic}>{inscription.lines[1]}</SvgText>
-        <SvgText x={110} y={102} fill="#5B5243" {...arabic}>{inscription.lines[1]}</SvgText>
-        {locked && (
-          <G>
-            <Rect x={2} y={2} width={216} height={126} rx={3} fill="rgba(231,194,106,0.1)" stroke={cameraColors.gold} strokeWidth={1} />
-            <SvgText x={110} y={48} fill="#F6D98E" {...arabic}>{inscription.lines[0]}</SvgText>
-            <SvgText x={110} y={102} fill="#F6D98E" {...arabic}>{inscription.lines[1]}</SvgText>
-          </G>
-        )}
-      </G>
+        <G transform={`translate(${PLAQUE.x} ${PLAQUE.y})`}>
+          <Rect x={2} y={2} width={216} height={126} rx={3} fill="#B9AD97" stroke="#857A68" strokeWidth={3} />
+          <Rect x={10} y={10} width={200} height={110} fill="none" stroke="#857A68" strokeWidth={1.2} />
+          <Line x1={16} y1={66} x2={204} y2={66} stroke="#857A68" strokeWidth={0.9} />
+          <SvgText x={110.8} y={48.8} fill="#D8CDB8" {...arabic}>{inscription.lines[0]}</SvgText>
+          <SvgText x={110} y={48} fill="#5B5243" {...arabic}>{inscription.lines[0]}</SvgText>
+          <SvgText x={110.8} y={102.8} fill="#D8CDB8" {...arabic}>{inscription.lines[1]}</SvgText>
+          <SvgText x={110} y={102} fill="#5B5243" {...arabic}>{inscription.lines[1]}</SvgText>
+          {locked && (
+            <G>
+              <Rect x={2} y={2} width={216} height={126} rx={3} fill="rgba(231,194,106,0.1)" stroke={cameraColors.gold} strokeWidth={1} />
+              <SvgText x={110} y={48} fill="#F6D98E" {...arabic}>{inscription.lines[0]}</SvgText>
+              <SvgText x={110} y={102} fill="#F6D98E" {...arabic}>{inscription.lines[1]}</SvgText>
+            </G>
+          )}
+        </G>
 
-      <G stroke={corner} strokeWidth={3} fill="none">
-        <Path d={`M${box.l} ${box.t + k}V${box.t}H${box.l + k}`} />
-        <Path d={`M${box.r - k} ${box.t}H${box.r}V${box.t + k}`} />
-        <Path d={`M${box.l} ${box.b - k}V${box.b}H${box.l + k}`} />
-        <Path d={`M${box.r - k} ${box.b}H${box.r}V${box.b - k}`} />
-      </G>
-    </Svg>
+        <G stroke={corner} strokeWidth={3} fill="none">
+          <Path d={`M${box.l} ${box.t + k}V${box.t}H${box.l + k}`} />
+          <Path d={`M${box.r - k} ${box.t}H${box.r}V${box.t + k}`} />
+          <Path d={`M${box.l} ${box.b - k}V${box.b}H${box.l + k}`} />
+          <Path d={`M${box.r - k} ${box.b}H${box.r}V${box.b - k}`} />
+        </G>
+      </Svg>
+    </View>
   );
 }
 

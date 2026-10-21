@@ -313,7 +313,7 @@ function FactRow({ fact }: { fact: AssetFact }) {
           {fact.note}
         </Text>
       )}
-      <SourceText sources={fact.sources} />
+      <SourceNote compact sources={fact.sources} />
     </View>
   );
 }
@@ -338,24 +338,9 @@ function TimelineRow({ event }: { event: TimelineEvent }) {
             {event.note}
           </Text>
         )}
-        <SourceText sources={event.sources} />
+        <SourceNote compact sources={event.sources} />
       </View>
     </View>
-  );
-}
-
-/**
- * The compact source line for long lists (facts, timeline, links): plain text
- * without a 44pt link target on every row. The same books are linked in Kaynakça.
- */
-function SourceText({ sources }: { sources: SourceRef[] }) {
-  if (sources.length === 0) return null;
-  const text = sources.map((s) => (s.pages ? `${s.title}, s. ${s.pages}` : s.title)).join("; ");
-  const spoken = sources.map((s) => (s.pages ? `${s.title}, sayfa ${s.pages}` : s.title)).join("; ");
-  return (
-    <Text variant="caption" color="textSecondary" accessibilityLabel={`Kaynak: ${spoken}`}>
-      {`Kaynak: ${text}`}
-    </Text>
   );
 }
 
@@ -389,7 +374,7 @@ function RelatedAssets({ relations }: { relations: ResourceWithRetry<AssetRelati
               <Text variant="caption" color="textSecondary">
                 {relation.description}
               </Text>
-              <SourceText sources={relation.sources} />
+              <SourceNote compact sources={relation.sources} />
             </View>
           ))}
           {relations.data!.items.length === 0 && (
