@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Hamza Bey Külliyesi bölümünden (s. 173-185) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş, archive_media boş); Drive klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
       "Caminin yapım yılı kitapta verilmiyor.",
@@ -521,8 +519,97 @@
     "visitor_tips": []
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1q5tdZZqn4SpOpp6Nlka4iS0c3_UDyFZZ",
+    "book_layout_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+    "book_pdf_name": "5-Hamzabey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hamza-bey-camii/p006-1.jpg",
+        "original_name": "DJI_20240929195324_0501_D-Edit-2.jpg",
+        "book_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+        "book_pdf_name": "5-Hamzabey Külliyesi.pdf",
+        "book_page": "177"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hamza Bey Camii kuşbakışı",
+        "en": "Aerial view of Hamza Bey Mosque"
+      },
+      "alt": {
+        "tr": "Gri kubbeli birimlerden oluşan cami ve yanındaki küçük kubbeli yapılar yukarıdan görünür. Çevrede ağaçlar ve kırmızı çatılı evler vardır.",
+        "en": "A mosque of several grey domes with small domed buildings beside it, seen from above. Trees and red-roofed houses surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hamza-bey-camii/p005-1.jpg",
+        "original_name": "ERD05899 kopya-2.jpg",
+        "book_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+        "book_pdf_name": "5-Hamzabey Külliyesi.pdf",
+        "book_page": "176"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamza Bey Camii iç mekânı",
+        "en": "Hamza Bey Mosque interior"
+      },
+      "alt": {
+        "tr": "Geniş kemerlerle bölünmüş beyaz iç mekânda mihrap ve minber uzakta görünür. Zeminde desenli halılar, duvarlarda renkli camlı pencereler vardır.",
+        "en": "A white interior divided by wide arches, with the mihrab and minber in the distance. Patterned carpets cover the floor and windows with coloured glass line the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-29"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hamza-bey-camii/p006-2.jpg",
+        "original_name": "ERD06174 kopya-2.jpg",
+        "book_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+        "book_pdf_name": "5-Hamzabey Külliyesi.pdf",
+        "book_page": "177"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Altın yazılı mermer kitabe",
+        "en": "Gold-lettered marble inscription"
+      },
+      "alt": {
+        "tr": "Açık renkli mermer üzerinde altın renkli Arap harfli, tek satırlık bir yazı bulunur.",
+        "en": "A single line of gold-coloured Arabic script on light marble."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-29"
+    }
+  ],
   "archive_media": [],
   "dating": {
     "display": {

@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 427-428) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Pars Bey zaviyesi (Ulu Camii Caddesi'nde, Vakıflar Bankası yerinde) ve Pars Bey türbesi için hedef kayıt bilinmiyor.",
       "Vakfiye (1445) metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
-      "Yazır ve Umurbey köylerinin bugünkü yerleri/ilçeleri kitapta belirtilmiyor."
+      "Yazır ve Umurbey köylerinin bugünkü yerleri/ilçeleri kitapta belirtilmiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -351,7 +351,69 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehrekustu-camii/p035-2.jpg",
+        "original_name": "10_2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "428"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şehreküstü Camii'nde minber ve pencereler",
+        "en": "Minbar and windows in Şehreküstü Mosque"
+      },
+      "alt": {
+        "tr": "Çinili gövdeli minberin ahşap külahı, vitraylı kemerli pencereler arasında yükselir. Duvarlarda mavi, turuncu ve altın bitkisel bezemeler, üst kısımda siyah zeminli yazı kuşağı görünür.",
+        "en": "A tiled minbar with a wooden cap rises between arched stained-glass windows. Blue, orange and gold floral decoration covers the walls, with a band of script on black above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehrekustu-camii/p035-3.jpg",
+        "original_name": "4.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "428"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Şehreküstü Camii'nin vitraylı pencereleri",
+        "en": "Stained-glass windows of Şehreküstü Mosque"
+      },
+      "alt": {
+        "tr": "Kemer içinde üç vitraylı pencere sıralanır; altlarında mavi ve kırmızı bezemeli bir pano ile ortada siyah zeminli altın yazılı yuvarlak levha vardır.",
+        "en": "Three stained-glass windows sit under a large arch. Below them is a decorated blue and red panel with a round gold-on-black inscription in the centre."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    }
+  ],
   "archive_media": []
 }

@@ -17,8 +17,8 @@
       "Kitabenin dil kodu ekip sınıflandırmasıdır.",
       "Mimar kitapta belirtilmiyor (architect: null).",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -529,8 +529,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-uc-kozlar-turbesi/p052-1.jpg",
+        "original_name": "02_2-2.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "541"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Üç Kozlar Türbesi ve çevresi, kuşbakışı",
+        "en": "Üç Kozlar Tomb and surroundings from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan turuncu kiremitli kırma çatılı bir yapı görünür. Çevresinde ağaçlar, dar sokaklar ve komşu çatılar var.",
+        "en": "From above, a building with an orange tiled hipped roof. Trees, narrow lanes and neighbouring roofs surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-uc-kozlar-turbesi/p052-3.jpg",
+        "original_name": "ERD00927 kopya.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "541"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Hazirede mezar taşları",
+        "en": "Gravestones in the graveyard"
+      },
+      "alt": {
+        "tr": "Yeşil çimenli hazirede uzun taş mezar taşları ve beyaz taş çerçeveli kabirler sıralanmış. Arkada kırmızımsı taş bir duvar ve ağaçlar görünür.",
+        "en": "Tall stone gravestones and white stone grave borders stand on green grass. A reddish stone wall and trees are behind them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-uc-kozlar-turbesi/p053-4.jpg",
+        "original_name": "08_2.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "542"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Çiçek bezemeli hat levhası",
+        "en": "Calligraphic panel with flower motifs"
+      },
+      "alt": {
+        "tr": "Beyaz zemin üzerinde kıvrımlı siyah hat, ortada pembe bir çiçek demeti ve köşelerde küçük çiçekler var. Levha kırmızı bir çerçeveyle çevrilidir.",
+        "en": "Curving black calligraphy on a white ground, with a pink flower bunch in the centre and small flowers in the corners. A red border frames the panel."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

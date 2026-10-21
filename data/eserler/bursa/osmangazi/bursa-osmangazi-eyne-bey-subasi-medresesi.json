@@ -11,11 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
-      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
       "Medresenin mimarı kaynakta yok.",
       "Vakfiyede geçen Bursa'daki hamamın, zaviyenin ve diğer vakıf mallarının adı/ilçesi kaynakta verilmiyor; ilişki kaydı eklenemedi.",
-      "1960'lı yıllardaki onarımın kesin yılı verilmiyor; zaman çizelgesine eklenmedi."
+      "1960'lı yıllardaki onarımın kesin yılı verilmiyor; zaman çizelgesine eklenmedi.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -661,7 +661,41 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-subasi-medresesi/p008-2.jpg",
+        "original_name": "DJI_20241021221026_0066_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "559"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Eyne Bey Subaşı Medresesi kuşbakışı",
+        "en": "Aerial view of Eyne Bey Subaşı Madrasa"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı çatılı, içte revaklı avlusu olan tuğla ve taş medrese yukarıdan görünür. Sol köşede kubbeli bir bölüm, çevrede renkli şehir evleri vardır.",
+        "en": "A brick and stone madrasa with lead-covered roofs and an inner arcaded courtyard seen from above. A domed section stands in the left corner, surrounded by colourful town houses."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    }
+  ],
   "archive_media": []
 }

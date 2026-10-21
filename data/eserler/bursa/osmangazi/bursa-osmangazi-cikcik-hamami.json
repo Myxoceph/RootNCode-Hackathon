@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki I. Murad Hudâvendigâr Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Hamamın adresi/mahallesi kitapta verilmiyor.",
       "Mimar adı kitapta verilmiyor.",
@@ -347,7 +345,41 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1Nh5U0z8qZBwN7XodcyZLe_IqCfD3wrcx",
+    "book_layout_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+    "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-cikcik-hamami/p005-1.jpg",
+        "original_name": "DJI_20240928215550_0188_D-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "80"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cıkcık Hamamı ve çevresindeki yamaç",
+        "en": "Cıkcık Bathhouse and the hillside behind it"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş almaşık duvarlı, kemerli girişli, gri kubbeli uzun bir yapı; solunda tuğla bir minare yükseliyor. Arkada ağaçlı yamaç ve evler uzanıyor.",
+        "en": "A long building of alternating brick and stone with arched openings and grey domes. A brick minaret rises on its left, with a wooded hillside and houses behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    }
+  ],
   "archive_media": []
 }

@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
       "Mimar kitapta belirtilmemiş.",
       "İkinci sandukanın sahibi bilinmiyor.",
@@ -385,7 +384,97 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-huma-hatun-turbesi/p022-1.jpg",
+        "original_name": "ERD00820 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "131"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbe içinde sanduka ve sütunlar",
+        "en": "Sarcophagus and columns inside the tomb"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı iç mekânda mermer zemin üzerinde açık renkli bir sanduka duruyor. Arkada kırmızı bir sütun, mermer sütunlar, avize ve boyalı kemerler görünüyor.",
+        "en": "In a white-walled interior a pale sarcophagus rests on a marble floor. Behind it are a red pillar, marble columns, a chandelier and painted arches."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-huma-hatun-turbesi/p044-1.jpg",
+        "original_name": "ERD02596 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "153"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Kırmızı ve siyah örtülü sandukalar",
+        "en": "Sarcophagi with red and black covers"
+      },
+      "alt": {
+        "tr": "Yükseltilmiş beyaz platformda kırmızı ve siyah işlemeli örtülü iki sanduka yan yana duruyor. Arkada renkli bezemeli kemerler, vitraylı pencere ve bir kapı var.",
+        "en": "Two sarcophagi with red and black embroidered covers stand on a raised white platform. Behind them are arches with coloured decoration, a stained-glass window and a doorway."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-22"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-huma-hatun-turbesi/p045-1.jpg",
+        "original_name": "ERD02606 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "154"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kalem işi süslemeli kubbe",
+        "en": "The painted dome"
+      },
+      "alt": {
+        "tr": "Tepeden bakılan kubbenin ortasında altın ve kırmızı renkli daire biçimli bezeme var. Çevresinde renkli yaprak motifleri ve vitraylı pencereler sıralanıyor.",
+        "en": "Looking up into the dome, a circular gold and red ornament fills the centre. Coloured leaf motifs and stained-glass windows are arranged around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-22"
+    }
+  ],
   "archive_media": []
 }

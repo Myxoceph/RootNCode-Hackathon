@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Tekkeler ve Zaviyeler (Osmangazi) bölümünden yapay zekâ ile özetlenerek taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; saha/GPS ile eklenip doğrulanmalı (in_review öncesi zorunlu).",
-      "Fotoğraf ve arşiv fotoğrafı yok; Drive klasörü belirlenip media[] ve media_folder doldurulmalı. Kitapta yapıya ait görsel sayfalar (metinsiz PDF sayfaları) vardı, içerikleri okunamadı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgisi (ücret, saat, süre) kitapta yok.",
       "Kuruluş tarihi bilinmiyor (inşa kitabesi yok); kitap 15. yüzyıl kabul ediyor.",
@@ -19,7 +18,8 @@
       "İbrahim Dede (1856) ve Süleyman Rûhî (1847) mezar taşı metinlerinin 'Mealen' çevirisi kitapta verilmemiş; translation boş bırakıldı.",
       "Hoca Hasan Sincânî (H. 920) ve Hoca Mahmud (H. 919) mezar taşlarının Farsça metni kitapta aktarılmamış.",
       "Hazirede mezar taşı olmayan 14 kişinin adları kitapta yok.",
-      "Peripeyker Câfer Çelebi ve Emîr Sultan, Seyyid Nâsır, Seyyid Nimetullah, Baba Zakir için ayrı eser kayıtları varsa ilişki eklenebilir (kitap bu eserleri bağlamıyor)."
+      "Peripeyker Câfer Çelebi ve Emîr Sultan, Seyyid Nâsır, Seyyid Nimetullah, Baba Zakir için ayrı eser kayıtları varsa ilişki eklenebilir (kitap bu eserleri bağlamıyor).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -708,8 +708,98 @@
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt'teki mimari anlatımdan derlendi; yalnızca kitapta yazanlar."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1U0yA31gBwZKBr6PdCLJ0f0rbibji23rF",
+    "book_layout_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+    "book_pdf_name": "5-Tekke ve Zaviyeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyyid-usul-tekkesi/p029-4.jpg",
+        "original_name": "7 seyyid usul.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "614"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Konferans düzenindeki ahşap tavanlı salon",
+        "en": "Hall with wooden ceiling set for events"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı ve beyaz duvarlı salonda sıralanmış ahşap sandalyeler, ortada kırmızı bir yolluk vardır. Karşıda beyaz bir niş, iki yanında kitap dolapları ve kafesli pencereler görünür.",
+        "en": "A white-walled hall with a wooden ceiling, rows of wooden chairs and a red runner down the middle. A white niche flanked by bookcases and lattice windows is at the far end."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyyid-usul-tekkesi/p029-1.jpg",
+        "original_name": "6.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "614"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Taş duvarlı oturma odası",
+        "en": "Sitting room with stone walls"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, koyu ahşap kirişli bir odada kırmızı desenli yer minderleri L biçiminde dizilidir. Ortada bir halı ve alçak masalar; duvar raflarında bakır eşyalar ve fotoğraflar durur.",
+        "en": "A stone-walled room with dark wooden beams and red patterned cushions arranged in an L shape. A rug and low tables are in the middle, with copperware and photographs on wall shelves."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyyid-usul-tekkesi/p029-3.jpg",
+        "original_name": "10 seyyid usul.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "614"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Oturma köşesi ve ahşap kapılar",
+        "en": "Seating corner and wooden doors"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada kırmızı çiçek desenli minderli bir köşe oturak ve üstünde raf var. Sağda iki büyük kahverengi ahşap kapı, tavan ve zemin ahşaptır.",
+        "en": "In a white-walled room, a corner bench with red floral cushions has a shelf above it. Two large brown wooden doors are on the right, and the ceiling and floor are wood."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    }
+  ],
   "archive_media": [],
   "visit": {
     "setting": "mixed",

@@ -11,11 +11,11 @@
     "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 480-482) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
-      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "İnşa tarihi kitapta yok; dating boş bırakıldı. Kara Ali Bey'in 14. yüzyıl emiri olması yapının 14. yüzyılda yapıldığı anlamına gelmez, kitap bunu belirtmiyor. era bu yüzden boş.",
       "Kara Timurtaş Paşa'nın bu kayıtla aynı kişi olup olmadığı veri setindeki bursa-osmangazi-timurtas-pasa-kulliyesi ile kitapta bağlanmıyor; ilişki yazılmadı.",
-      "Vakfiye ve mimar kitapta yok."
+      "Vakfiye ve mimar kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -311,7 +311,97 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yer-kapi-camii/p087-1.jpg",
+        "original_name": "02 (1) yer kapı.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "480"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami ve kubbeli ana mekân, sokaktan",
+        "en": "Mosque with its dome seen from the street"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı kubbeli cami; önünde kemerli, saçaklı son cemaat yeri, yanında tuğla örgülü minare. Çevresinde apartmanlar ve kiremit çatılı evler vardır.",
+        "en": "A lead-domed mosque with an arched porch under a sloping roof and a brick minaret beside it, surrounded by apartment blocks and tiled houses."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-19"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yer-kapi-camii/p088-2.jpg",
+        "original_name": "ERD03293 kopya 2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "481"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı, mihrap ve minber",
+        "en": "Mosque interior with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kubbeli salon. Ortada sade taş mihrap, sağda ahşap minber ve Türk bayrağı; solda kitaplık, zeminde kırmızı halı var.",
+        "en": "A white domed hall with a plain stone mihrab in the centre, a wooden minbar and a Turkish flag on the right, a bookshelf on the left and red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-19"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yer-kapi-camii/p088-1.jpg",
+        "original_name": "03_3.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "481"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kubbe ve çatı, kuşbakışı",
+        "en": "Dome and roof from directly above"
+      },
+      "alt": {
+        "tr": "Tam tepeden görülen gri kurşun kaplı kubbe ve çevresindeki düz kurşun çatılar. Sol üstte minare başı, çevrede kiremit çatılı evler görünür.",
+        "en": "A grey lead dome and flat lead roofs seen from straight above, with a minaret top at upper left and tiled houses around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-19"
+    }
+  ],
   "archive_media": []
 }

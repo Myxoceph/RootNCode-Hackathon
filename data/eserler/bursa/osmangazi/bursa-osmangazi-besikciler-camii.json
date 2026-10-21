@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 279-281) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Kitap 'Sufi Hacı Sinan' ve 'Sufi Sinan Efendi (Paşa)' adlarını kullanıyor; aynı kişi olduğu varsayıldı, teyit edilmeli.",
       "Mevcut bursa-osmangazi-besikciler-sinan-dede-camii-cesmesi kaydı ile bu cami arasındaki ilişki kitapta belirtilmiyor; ilişki eklenmedi.",
-      "Camiye ait vakıf bilgisi kitapta yok (waqf null)."
+      "Camiye ait vakıf bilgisi kitapta yok (waqf null).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -401,7 +401,96 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-besikciler-camii/p012-1.jpg",
+        "original_name": "02-5.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "281"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin havadan görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Yukarıdan, dilimli kubbe ve kurşun kaplı çatısı olan küçük cami ile yanındaki minare gövdesi görünür. Yan taraftan bir cadde geçer.",
+        "en": "From above, a small mosque with a ribbed dome and lead-covered roof, and the minaret beside it. A road runs along one side."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-besikciler-camii/p012-2.jpg",
+        "original_name": "ERD06262 kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "281"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yerinde giriş kapısı",
+        "en": "Entrance door in the narthex"
+      },
+      "alt": {
+        "tr": "Mavi ve beyaz boyalı duvarın ortasında mor renkli çift kanatlı kapı, iki yanında kafesli pencereler ve ahşap banklar vardır. Kapının önünde ahşap bir rampa uzanır.",
+        "en": "A purple double door in a blue and white wall, flanked by lattice windows and wooden benches. A wooden ramp leads up to the door."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-besikciler-camii/p012-3.jpg",
+        "original_name": "ERD06266 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "281"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Revaklı son cemaat yeri",
+        "en": "Arcaded narthex"
+      },
+      "alt": {
+        "tr": "Beyaz sivri kemerli ve kalın dikmeli açık revakta altıgen taş döşemeli zemin ile ahşap kirişler görünür. Sağda demir korkuluk ve yeşil bahçe vardır.",
+        "en": "An open portico with white pointed arches and thick piers, a hexagonal stone-paved floor and wooden beams. An iron railing and green garden are on the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    }
+  ],
   "archive_media": []
 }

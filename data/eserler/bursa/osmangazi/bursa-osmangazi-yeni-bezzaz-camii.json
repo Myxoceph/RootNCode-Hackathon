@@ -11,11 +11,11 @@
     "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 476-478) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
-      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Vakfiye ve mimar kitapta yok.",
       "İbni Bezzaz Camii'nin tam adı/ilçesi metinde yalnızca 'aynı bölgede' deniyor; ilişki hedef id'si (bursa-osmangazi-ibni-bezzaz-camii) tahmindir.",
-      "Baninin kabri (Mektep Sokak) ayrı kayıt gerektirebilir."
+      "Baninin kabri (Mektep Sokak) ayrı kayıt gerektirebilir.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -309,7 +309,69 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yeni-bezzaz-camii/p083-1.jpg",
+        "original_name": "01 Kapak_19.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "476"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, havadan",
+        "en": "Aerial view of the mosque dome and minaret"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı kubbeli, taş duvarlı cami ve yanında uzun minare; çevresinde çarşı çatıları, apartmanlar ve arkada dağ ile kent görülür.",
+        "en": "A stone mosque with a lead dome and a tall minaret, surrounded by market roofs and apartment buildings, with mountains and the city behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yeni-bezzaz-camii/p085-1.jpg",
+        "original_name": "03 (1) bezzaz.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "478"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı, mihrap ve minber",
+        "en": "Mosque interior with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı salonda açık turkuaz mihrap, sağında ahşap minber; renkli vitraylı pencereler, kristal avize ve mavi halı dikkat çeker.",
+        "en": "A white hall with a pale turquoise mihrab and a wooden minbar on its right, coloured stained-glass windows, a crystal chandelier and blue carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    }
+  ],
   "archive_media": []
 }

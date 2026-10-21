@@ -10,7 +10,6 @@
     "from": "Osmangazi Camiler ve Hazireler 2",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
-      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Mescidin yapım yılı kitapta yok; dating ve era null. Hatice Sultan 1474 sonrası Bursa'da yaşamış ve 1502'de ölmüştür (kitap).",
       "Hatice Sultan'ın yaptırdığı 'Emir Sultan semtindeki kâgir okul' için kayıt kurulmadı (adı kitapta yok).",
@@ -456,8 +455,98 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hatice-isfendiyar-sultan-camii/p062-1.jpg",
+        "original_name": "DJI_20241004203749_0456_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "331"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin minaresi ve ön cephesi, arkada dağ",
+        "en": "The mosque, minaret and front, with mountain"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş almaşık duvarlı, kemerli girişli küçük cami; sağında yüksek tuğla minare ve gri kubbe. Arkada şehir ve dağ yamacı uzanıyor.",
+        "en": "A small mosque of alternating brick and stone with arched openings, a tall brick minaret on the right and a grey dome. The city and mountain slope rise behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hatice-isfendiyar-sultan-camii/p064-1.jpg",
+        "original_name": "DJI_20241004203304_0453_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "333"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Kare planlı yapının gri kubbesi ve çatısı yukarıdan görünüyor. Çevresinde taş döşemeli yollar, çimenlik alanlar ve ağaçlar var.",
+        "en": "The grey dome and roof of the square building seen from directly above. Stone-paved paths, lawns and trees surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hatice-isfendiyar-sultan-camii/p065-1.jpg",
+        "original_name": "01 ERD07916 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "334"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Camiye bitişik, yeşil korkuluklu kabir",
+        "en": "Fenced grave beside the mosque"
+      },
+      "alt": {
+        "tr": "Beyaz taş kenarlıklı bir kabir alanı yeşil demir korkuluklarla çevrili; içinde sarı çiçekli bitkiler var. Arkada tuğla ve taş duvarlı yapı görünüyor.",
+        "en": "A grave area with a white stone edge, enclosed by green iron railings and planted with yellow-flowered shrubs. A brick and stone building stands behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

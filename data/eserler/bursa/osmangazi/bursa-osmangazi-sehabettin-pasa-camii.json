@@ -11,12 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 417-418) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Caminin Şehabettin Paşa ile bağlantısı kitapta saptanamadı; ad kaynağı araştırılabilir.",
       "Şehabettin Paşa'nın Çatalfırın'da yaptırdığı cami, Laleli çeşmesi için hedef kayıt/ilçe bilgisi yok.",
-      "İç kapı kitabesi fotoğrafı AR için seçilip inscriptions[].ar_target_media_id alanına bağlanacak."
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -307,7 +306,41 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehabettin-pasa-camii/p024-1.jpg",
+        "original_name": "06_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "417"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Şehabettin Paşa Camii'ndeki hat levhası",
+        "en": "Calligraphy panel in Şehabettin Paşa Mosque"
+      },
+      "alt": {
+        "tr": "Ahşap çerçeveli krem bir levhada üstte siyah ve kırmızı yazı satırları, altta geniş siyah bir vav harfi ve küçük kırmızı yazı yer alır. Vav'ın bir ucu bitkisel motifle biter.",
+        "en": "A framed cream panel with lines of black and red script at the top and a large black letter waw below. One end of the waw ends in a floral motif, with small red script beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-03"
+    }
+  ],
   "archive_media": []
 }

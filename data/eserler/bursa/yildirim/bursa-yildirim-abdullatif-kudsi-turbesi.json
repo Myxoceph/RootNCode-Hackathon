@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
       "Türbenin yapım yılı kaynakta yok; 'dating.start_year' boş bırakıldı.",
       "Bölüm önceki bölümün son sayfasında (s. 279) başlıyor; konum/yaptıran bilgisi s. 279'dan, devamı s. 280'den alındı.",
       "Önceki bölümün (Zeyniler Camii) metninde Abdüllâtif Makdisî adı geçiyor; bu kişinin Kudsî ile aynı olup olmadığı kaynakta belirtilmiyor, ilişki kurulmadı.",
-      "Mimar kaynakta yok."
+      "Mimar kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -416,7 +416,69 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-abdullatif-kudsi-turbesi/p001-2.jpg",
+        "original_name": "01 DJI_20240919200957_0105_D-Edit.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "280"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Abdüllatif Kudsî Türbesi, genel görünüm",
+        "en": "Tomb of Abdüllatif Kudsî, general view"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla ve taş sıralı, kare gövdeli ve gri kubbeli türbe; sivri kemerli pencereleri vardır. Etrafı demir korkuluk ve yüksek ağaçlarla çevrilidir.",
+        "en": "A square red brick and stone tomb with a grey dome and pointed-arch windows. It is enclosed by iron railings and tall trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-abdullatif-kudsi-turbesi/p001-1.jpg",
+        "original_name": "DJI_20240919200812_0102_D-Edit.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "280"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Türbenin kubbesi, kuşbakışı",
+        "en": "Dome of the tomb, aerial view"
+      },
+      "alt": {
+        "tr": "Yukarıdan, mavimsi gri kurşun kaplı çok kenarlı bir kubbe görünür. Çevresinde koyu yeşil ağaçlar ve sol tarafta yol vardır.",
+        "en": "From above, a bluish-grey lead-covered polygonal dome. Dark green trees surround it and a road runs along the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    }
+  ],
   "archive_media": []
 }

@@ -16,10 +16,10 @@
       "Bursa Hisar'daki karşılaştırılan camilerin adları verilmemiş; architectural_lineage ilişkisi eklenmedi.",
       "Hamam ve sur duvarları ile ilişkiler 'aynı yerleşim' çıkarımıdır (probable).",
       "Koordinat kitapta yok; sahada ya da güvenilir bir kaynaktan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraflar (media[]) ve arşiv fotoğrafları (archive_media[]) henüz eklenmedi; Drive klasörü bilinmiyor (media_folder: null).",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok; eklenmedi.",
-      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): İki katlı son cemaat mahalli ve minare sonradan eklendi"
+      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): İki katlı son cemaat mahalli ve minare sonradan eklendi",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -339,8 +339,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden (Bursa Vakıf Eserleri III. Cilt) yalnızca metne dayanarak yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MaFDs8805U-GChT4qXjf_KyaXW3wgUnz",
+    "book_layout_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+    "book_pdf_name": "10-Nilüfer.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-golyazi-camii/p009-1.jpg",
+        "original_name": "01 DJI_20241029162024_0591_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "632"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Gölyazı Camii ve minaresi, göl manzarası",
+        "en": "Gölyazı Mosque and its minaret above the lake"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı taş duvarlı cami, tuğla gövdeli minaresiyle evlerin arasında görünür. Arkada sakin bir göl ve uzakta küçük adacıklar vardır.",
+        "en": "A stone mosque with a tiled roof and a brick minaret among village houses. Behind it lies a calm lake with small islets in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-golyazi-camii/p010-1.jpg",
+        "original_name": "05 ERD05097 kopya.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "633"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Prayer hall with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap kasetli tavanlı salonda ortada küçük bir mihrap, sağda ahşap minber vardır. Duvarlarda yeşil zeminli yazı levhaları, tavanda avize asılıdır.",
+        "en": "A white-walled hall with a coffered wooden ceiling. A small mihrab stands in the centre and a wooden minber at right. Green calligraphy panels line the walls and a chandelier hangs from the ceiling."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-golyazi-camii/p010-2.jpg",
+        "original_name": "07 ERD05103 kopya.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "633"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, kadınlar mahfili ve kalın sütun",
+        "en": "Prayer hall with gallery and pillar"
+      },
+      "alt": {
+        "tr": "Ahşap korkuluklu bir mahfil solda yer alır; ortada büyük, beyaz bir dayanak kütlesi vardır. Zeminde kırmızı ve mavi halılar ile ahşap döşeme görülür.",
+        "en": "A wooden-railed gallery stands at left and a large white pillar-like mass in the centre. The floor has red and blue carpets and bare wooden boards."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

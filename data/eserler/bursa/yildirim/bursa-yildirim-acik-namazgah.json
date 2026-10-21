@@ -15,7 +15,6 @@
       "Kitap 'Umur Bey' demektedir; Yıldırım'daki Umur Bey Külliyesi'nin banisiyle aynı kişi olup olmadığı belirtilmiyor, bu yüzden same_founder ilişkisi yazılmadı.",
       "Mimar kitapta belirtilmiyor.",
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
     ],
     "data_quality_notes": [
@@ -296,8 +295,42 @@
     "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-acik-namazgah/p003-1.jpg",
+        "original_name": "01 DJI_20240926134233_0028_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "214"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Açık Namazgâh ve çevresi",
+        "en": "The open-air prayer area and surroundings"
+      },
+      "alt": {
+        "tr": "Taş döşeli açık alan demir parmaklıkla çevrili, arka tarafta mermer mihrap duvarı ve minber basamakları var. Çevrede apartmanlar ve bir ağaç görünür.",
+        "en": "A stone-paved open area enclosed by a metal fence, with a marble mihrab wall and minber steps at the back. Apartment buildings and a tree stand around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

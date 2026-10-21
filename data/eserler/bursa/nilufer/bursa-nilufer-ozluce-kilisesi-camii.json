@@ -16,9 +16,9 @@
       "Nilüfer'in ilçe statüsü kazandığı yıl kitapta verilmemiş.",
       "Cami olarak yeniden açılış tarihi henüz yok (restorasyon sürüyor).",
       "Koordinat kitapta yok; sahada ya da güvenilir bir kaynaktan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraflar (media[]) ve arşiv fotoğrafları (archive_media[]) henüz eklenmedi; Drive klasörü bilinmiyor (media_folder: null).",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
-      "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok; eklenmedi."
+      "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok; eklenmedi.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -557,8 +557,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden (Bursa Vakıf Eserleri III. Cilt) yalnızca metne dayanarak yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MaFDs8805U-GChT4qXjf_KyaXW3wgUnz",
+    "book_layout_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+    "book_pdf_name": "10-Nilüfer.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-ozluce-kilisesi-camii/p012-1.jpg",
+        "original_name": "01 DJI_20241029142017_0570_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "635"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Yapının cephesi ve minaresi, restorasyon iskelesi",
+        "en": "Façade and minaret under restoration"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş almaşık duvarlı, üçgen alınlıklı yapının önünde kemerli bir revak, yan yüzünde iskele bulunur. Arkada beyaz gövdeli bir minare yükselir.",
+        "en": "A brick-and-stone building with a triangular pediment, an arched portico in front and scaffolding on its side. A white minaret rises behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-ozluce-kilisesi-camii/p014-2.jpg",
+        "original_name": "DJI_20241029142045_0571_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "637"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Tuğla ve taş duvarda kör kemerli niş",
+        "en": "Blind arched niche in brick and stone wall"
+      },
+      "alt": {
+        "tr": "Tuğla ve renkli taşların sıralandığı duvarda tuğladan örülmüş, kemerli bir niş yer alır. Üstte tuğla bir silme uzanır.",
+        "en": "A wall of alternating brick and coloured stone with an arched niche filled with brick. A brick moulding runs along the top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

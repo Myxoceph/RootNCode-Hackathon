@@ -11,11 +11,10 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
-      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
       "Mevcut binanın mimarı ve ilk yapıya ait vakıf bilgisi kaynakta yok.",
-      "Balkon kitabesinin metni kitapta verilmiyor; yalnızca içeriği özetleniyor. Kitabe fotoğrafı ve okunuşu eklenmeli.",
-      "Okulun tür kodu enums.json'da yok; geçici olarak 'diger' kullanıldı (mektep/okul türü eklenebilir)."
+      "Okulun tür kodu enums.json'da yok; geçici olarak 'diger' kullanıldı (mektep/okul türü eklenebilir).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -340,7 +339,95 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ataturk-ilkogretim-okulu/p003-1.jpg",
+        "original_name": "ATATÜRK İO 3.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "554"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Okul binası ve yanındaki kubbeli yapı",
+        "en": "School building and nearby domed structure"
+      },
+      "alt": {
+        "tr": "İki katlı, kırmızı kiremitli çatılı tuğla ve taş okul binası yukarıdan görünüyor. Sağda kurşun kubbeli küçük bir yapı ve minare, arkada yamaçtaki şehir vardır.",
+        "en": "A two-storey brick and stone school with a red-tiled roof seen from above. On the right a small lead-domed building and a minaret, with the town on the hillside behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ataturk-ilkogretim-okulu/p004-2.jpg",
+        "original_name": "ATATÜRK İO 1.jpeg.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "555"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Okul binasının ön cephesi ve bahçesi",
+        "en": "School facade and yard"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremitli çatılı, sivri kemerli pencereleri tuğla çerçeveli bina taş merdivenli bir girişe sahiptir. Önünde ağaçlı okul bahçesi, arkasında yamaçtaki şehir görünür.",
+        "en": "A building with a red-tiled roof and pointed-arch windows framed in brick, with a stone stairway to the entrance. A tree-lined schoolyard is in front and the hillside town behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ataturk-ilkogretim-okulu/p004-1.jpg",
+        "original_name": "ATATÜRK İO 7.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "555"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Yüksek pencereli sınıf",
+        "en": "Classroom with tall windows"
+      },
+      "alt": {
+        "tr": "Sivri kemerli iki yüksek pencereli sınıfta sıralar halinde metal ayaklı masalar ve ahşap oturaklar dizilidir. Solda tahta, duvarlarda gri ve beyaz boya vardır.",
+        "en": "A classroom with two tall pointed-arch windows and rows of metal-legged desks with wooden seats. A blackboard is on the left; walls are painted grey and white."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
   "archive_media": []
 }

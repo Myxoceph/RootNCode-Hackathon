@@ -10,7 +10,6 @@
     "from": "Osmangazi Camiler ve Hazireler 2",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
-      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Yapım tarihi ve banisi kitapta yok; dating ve founder null.",
       "Mescidin Geyve Hanı ile birlikte mi yapıldığı belirtilmiyor."
@@ -184,8 +183,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-geyve-hani-mescidi/p044-1.jpg",
+        "original_name": "ERD03351 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "313"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Hanın iki katlı avlusu ve havuzu",
+        "en": "Two-storey han courtyard with fountain"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğlalı, iki katlı revaklı avlunun ortasında beyaz taş bir havuz yer alır. Üst katta korkuluklu kemerli galeri, alt katta dükkânlar görünür.",
+        "en": "A courtyard of red brick with two storeys of arcades and a white stone fountain at the centre. A railed arched gallery is above and shops are below."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-geyve-hani-mescidi/p043-1.jpg",
+        "original_name": "ERD07956 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "312"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kubbeli mescit odası ve mihrap",
+        "en": "Domed masjid room and mihrab"
+      },
+      "alt": {
+        "tr": "Mavi çini desenli kubbe altında küçük bir oda, ahşap kaplı alt duvarlar ve ortada mihrap vardır. Zeminde mavi halı serilidir.",
+        "en": "A small room under a dome painted with blue floral patterns, with wood-panelled lower walls and a mihrab at the centre. A blue carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

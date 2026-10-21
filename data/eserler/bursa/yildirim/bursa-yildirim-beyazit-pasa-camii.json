@@ -16,7 +16,6 @@
       "Mimar kitapta belirtilmiyor.",
       "Vakıf adı ve vakfiye kitapta yok.",
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
     ],
     "data_quality_notes": []
@@ -461,8 +460,70 @@
     "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-beyazit-pasa-camii/p006-1.jpg",
+        "original_name": "01 DJI_20240924223452_0620_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "217"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Beyazıt Paşa Camii ve minaresi",
+        "en": "Beyazıt Paşa Mosque and minaret"
+      },
+      "alt": {
+        "tr": "Yeşil boyalı duvarlı, kiremit çatılı cami ve ince tuğla minare yokuşlu bir sokağın köşesinde görünür. Arkada Bursa evleri ve ağaçlar vardır.",
+        "en": "A mosque with green painted walls, a tiled roof and a slim brick minaret at the corner of a sloping street. Houses of Bursa and trees are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-beyazit-pasa-camii/p007-1.jpg",
+        "original_name": "03 ERD03526 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "218"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Mosque interior, mihrab and minber"
+      },
+      "alt": {
+        "tr": "Çinilerle kaplı mihrap duvarın ortasında, sağda ahşap minber ve çini kaplı bir sütun var. Tavanda avize, zeminde turkuaz halı görünür.",
+        "en": "A tiled mihrab in the middle of the wall, with a wooden minber and a tiled panel on the right. A chandelier hangs from the ceiling over a turquoise carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

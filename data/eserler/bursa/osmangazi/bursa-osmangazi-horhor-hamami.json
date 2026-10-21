@@ -15,8 +15,8 @@
       "Armutlu Kaplıcası ve Eski Kaplıca çamaşırlığı/kahve ocağı için ilçe kaynakta verilmiyor; relation hedefi 'bursa-osmangazi-armutlu-kaplicasi' ilçe bakımından tahminidir, doğrulanmalı.",
       "Hamamın bölümleri (soğukluk, sıcaklık vb.) ve ölçüleri kaynakta anlatılmıyor.",
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -188,7 +188,69 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-horhor-hamami/p009-2.jpg",
+        "original_name": "DJI_20241027201852_0325_D_ODAK-Edit.jpeg.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "688"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Horhor Hamamı'nın kuşbakışı görünümü",
+        "en": "Aerial view of the Horhor Bath"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı, avlulu alçak yapı ve yanındaki bahçe yukarıdan görünür. Avluda ağaçlar ve küçük bir fıskiye vardır; yapının üstünde düz bir teras, ardında geniş bir yol kavşağı ve beyaz bir ev yer alır.",
+        "en": "A low tile-roofed building with a courtyard garden, seen from above. The courtyard holds trees and a small fountain; a flat terrace lies on top, with a wide road junction and a white house beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-27"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-horhor-hamami/p009-1.jpg",
+        "original_name": "02.jpeg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "688"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avludaki mermer fıskiye ve oturma alanı",
+        "en": "Marble fountain and seating area in the courtyard"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı, turuncu duvarlı bir revakın önünde basamaklı beyaz mermer bir fıskiye var. Çevresinde saksı bitkileri, sarmaşık, masa ve sandalyeler; duvarda hat levhaları ve çeşitli süs plakaları asılıdır.",
+        "en": "A tiered white marble fountain stands in front of a tile-roofed, orange-walled portico. Potted plants, vines, tables and chairs surround it; calligraphy panels and decorative plaques hang on the wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-27"
+    }
+  ],
   "archive_media": []
 }

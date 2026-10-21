@@ -13,7 +13,6 @@
       "Kitabe yok; mimar ve vakıf bilgisi kitapta yok.",
       "Caminin 1885 sonrası minaresiz olup olmadığı 'bu dönemde' ifadesiyle verilmiş; günümüzdeki durumu kitapta açık değil, sahada teyit edilmeli.",
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
     ],
     "data_quality_notes": [
@@ -391,8 +390,70 @@
     "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-davut-kadi-camii/p008-1.jpg",
+        "original_name": "ERD04605 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "219"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Davut Kadı Camii ve minaresi",
+        "en": "Davut Kadı Mosque and minaret"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı, kırmızı kenarlı kemerli pencereleri olan cami ve tuğla minare görünür. Cami bir sokak köşesinde, apartmanların yanındadır.",
+        "en": "A whitewashed mosque with arched windows edged in red and a brick minaret. It stands at a street corner beside apartment blocks."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-davut-kadi-camii/p009-1.jpg",
+        "original_name": "04 ERD04574 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "220"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Mosque interior, mihrab and minber"
+      },
+      "alt": {
+        "tr": "Çini desenli mihrap duvarının sağında kırmızı ahşap minber var. Ahşap tavandan büyük bir avize sarkar; zemin kırmızı halıyla kaplıdır.",
+        "en": "A red wooden minber stands to the right of the tile-patterned mihrab wall. A large chandelier hangs from the wooden ceiling above a red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

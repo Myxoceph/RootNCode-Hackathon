@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Yapım tarihi kitapta verilmiyor; dating boş bırakıldı (yalnızca banînin ölüm yılı H. 888 / M. 1483 veriliyor).",
       "Banî adları sayfalar arasında farklı (Mehmed Hüseyin Çelebi / Seyyid Hüseyin Hüsameddin Karakâdî); aynı kişi olup olmadığı ve 'iki banî' ifadesi netleştirilmeli.",
       "Minarenin 'yarım hâlde' olması ve sonraki onarım tarihi kitapta belirtilmiyor.",
       "Era kitapta açıkça belirtilmiyor; banînin Fâtih dönemi hizmeti ve 1483 vefatına dayanarak 'erken-osmanli' girildi, gözden geçirilmeli.",
-      "Vakıf bilgisi kitapta yok; waqf boş."
+      "Vakıf bilgisi kitapta yok; waqf boş.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -377,7 +377,41 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-karakadi-camii/p098-1.jpg",
+        "original_name": "Karakadi Camii ve Haziresi 1.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "367"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, şehir içinde",
+        "en": "The mosque's dome and minaret in the city"
+      },
+      "alt": {
+        "tr": "Kubbeli küçük cami ve yüksek tuğla minare, yoğun çatılar arasında yükseliyor. Arkada şehir ve dağ silsilesi görünüyor.",
+        "en": "A small domed mosque and a tall brick minaret rising among dense rooftops. The city and a mountain range lie behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    }
+  ],
   "archive_media": []
 }

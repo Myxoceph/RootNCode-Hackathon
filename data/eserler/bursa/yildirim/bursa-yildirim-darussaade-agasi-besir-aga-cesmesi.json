@@ -11,10 +11,10 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Emir Sultan Külliyesi bölümünden (s. 19-59) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup photos match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Çeşmenin dönem kodu: 1743 tarihi 'gec-osmanli' olarak işaretlendi; 'enums.json' sınıflamasıyla ekip teyit etmeli.",
-      "Mimar/usta kaynakta yok."
+      "Mimar/usta kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -354,8 +354,42 @@
     },
     "audio_description_source": "Kitap metnindeki mimari anlatımdan (yalnızca kaynakta yazanlar) yapay zekâ taslağı olarak yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1szziOwS-QhLsMDMpFHb1JfpzFsmkCDr-",
+    "book_layout_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+    "book_pdf_name": "7-Emir Sultan.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-darussaade-agasi-besir-aga-cesmesi/p046-1.jpg",
+        "original_name": "00 Kapak_1.jpg",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "58"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Beşir Ağa Çeşmesi ve avlu kapısı",
+        "en": "Beşir Ağa Fountain and courtyard gate"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş sıralı duvarda süslemeli beyaz mermer bir çeşme ve önünde mermer yalak durur. Yanında kemerli bir geçit, ardında pencereli avlu duvarı görünür.",
+        "en": "A decorated white marble fountain with a marble basin set into a wall of alternating brick and stone. Beside it a brick arched passage opens to a courtyard wall with a window."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

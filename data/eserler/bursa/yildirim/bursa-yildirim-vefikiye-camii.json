@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
-      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
       "Dış duvarların 1900 yapımında mı sonraki onarımda mı betonarme olduğu kitapta açıklanmıyor; veri ekibi teyit etmeli.",
@@ -341,7 +339,41 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-vefikiye-camii/p059-1.jpg",
+        "original_name": "01 DJI_20240926195748_0132_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "270"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Vefikiye Camii ve minaresi, yüksekten görünüm",
+        "en": "Vefikiye Mosque and minaret from above"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı, krem renkli bir cami; yanında kırmızı tuğlalı, sivri külahlı bir minare yükselir. Yolun karşısında apartmanlar ve arka planda dağ eteği görünür.",
+        "en": "A cream-coloured mosque with a tiled roof and a red brick minaret with a pointed cap. Apartment blocks line the road beyond, with hills in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    }
+  ],
   "archive_media": []
 }

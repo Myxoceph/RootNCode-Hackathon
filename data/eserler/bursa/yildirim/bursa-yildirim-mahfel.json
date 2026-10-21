@@ -11,14 +11,14 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 317-319) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Yapının mimari betimlemesi (plan, malzeme, ölçü) kitapta yok; sahadan ya da başka kaynaktan eklenmeli.",
       "İlk kurucu Ermeni girişimcinin adı kitapta verilmiyor; 'founder' null bırakıldı.",
       "Mahfel'in bugünkü mülkiyet/kira durumu (2018 özelleştirme sonrası) güncel kaynaktan teyit edilmeli.",
       "Setbaşı Köprüsü için ilçe kitapta belirtilmiyor; ilişki yazılmadı.",
       "Kitabın Mahfel metni PDF s. 40'ta (basılı s. 319) cümle ortasında bitiyor gibi görünüyor (İngilizce kısım 'meeting point of the people of Bursa' ile bitiyor); Türkçe metin tam olduğundan eksik sayılmadı, ama teyit edilmeli.",
-      "Zaman çizelgesinde yıl zorunlu olduğundan 'yapının 1870'lerin sonlarında inşa edildiği' bilgisi olay olarak eklenmedi; yalnızca dating ve 'kurulus' bölümünde yer alıyor."
+      "Zaman çizelgesinde yıl zorunlu olduğundan 'yapının 1870'lerin sonlarında inşa edildiği' bilgisi olay olarak eklenmedi; yalnızca dating ve 'kurulus' bölümünde yer alıyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -519,8 +519,42 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mahfel/p038-1.jpg",
+        "original_name": "04 ERD04565 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "317"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Mahfel çay bahçesi ve havuz",
+        "en": "Mahfel tea garden and pool"
+      },
+      "alt": {
+        "tr": "Ağaçlı bahçede masalar, sandalyeler ve mavi havuzlu küçük bir fıskiye bulunur. Arkada uzun, camlı kahvehane yapısı görünür.",
+        "en": "A tree-shaded garden with tables, chairs and a small tiered fountain in a blue pool. The long glazed café building is behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-07"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

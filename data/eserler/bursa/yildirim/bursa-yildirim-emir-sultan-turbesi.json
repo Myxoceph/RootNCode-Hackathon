@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Emir Sultan Külliyesi bölümünden (s. 19-59) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup photos match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Türbenin ilk yapım yılı kaynakta yok (yalnızca Emîr Sultan'ın 1429'daki vefatı verilmiş); 'dating.start_year' boş.",
       "Mimar kaynakta yok.",
       "Niyaz Penceresi'nin tam konumu (türbe mi avlu mu) ve 1868 kitabesinin pencereye göre yeri sahada teyit edilmeli.",
-      "1845 kitabesinin çeşme arkasındaki duvarda mı yoksa çeşmenin üzerinde mi durduğu kitapta iki ayrı yerde farklı anlatılıyor; sahada kontrol edilmeli."
+      "1845 kitabesinin çeşme arkasındaki duvarda mı yoksa çeşmenin üzerinde mi durduğu kitapta iki ayrı yerde farklı anlatılıyor; sahada kontrol edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -974,8 +974,96 @@
     },
     "audio_description_source": "Kitap metnindeki mimari anlatımdan (yalnızca kaynakta yazanlar) yapay zekâ taslağı olarak yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1szziOwS-QhLsMDMpFHb1JfpzFsmkCDr-",
+    "book_layout_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+    "book_pdf_name": "7-Emir Sultan.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-emir-sultan-turbesi/p041-4.jpg",
+        "original_name": "ERD01315.tif",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "53"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Çerçeveli iki satırlık hat levhası",
+        "en": "Framed two-line calligraphy panel"
+      },
+      "alt": {
+        "tr": "Mavi zeminli çerçevede, açık renk kâğıda yazılmış iki satır siyah Arap harfli hat yazısı vardır. Sol uçta daire biçimli küçük bir imza motifi bulunur.",
+        "en": "Two lines of black Arabic script on light paper inside a blue-ground frame, with a small rounded signature motif at the left end."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-emir-sultan-turbesi/p041-3.jpg",
+        "original_name": "ERD01311.tif",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "53"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Çerçeveli kemerli levha",
+        "en": "Framed arched panel"
+      },
+      "alt": {
+        "tr": "Sivri kemer biçiminde bir bölmenin içinde, ayaklı bir kürsünün üstünde siyah yuvarlak yazılı bir levha durur. Çevresi küçük yazılı daireler ve ince şeritlerle doludur.",
+        "en": "Inside an arched field, a black round inscribed plate sits on a footed stand. Small lettered circles and narrow bands fill the surrounding space."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-emir-sultan-turbesi/p041-1.jpg",
+        "original_name": "ERD01317 kopya.jpg",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "53"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Çerçeveli sekizgen levha",
+        "en": "Framed octagonal panel"
+      },
+      "alt": {
+        "tr": "Sekizgen biçimli levhada mavi ve yeşil şeritler, ortada küçük madalyonlar ve siyah yazılar bulunur. Koyu bir çerçeve ve paspartu ile çevrilidir.",
+        "en": "An octagonal panel with blue and green bands, small medallions in the middle and black lines of script, set in a dark frame and mat."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

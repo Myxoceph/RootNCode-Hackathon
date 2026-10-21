@@ -10,7 +10,6 @@
     "from": "Osmangazi Camiler ve Hazireler 2",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
-      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Yapım yılı kitapta yok (yalnızca Fatih dönemi); start_year/end_year null.",
       "'Türbe kısmı' ifadesi kitapta açıklanmıyor; ne olduğu teyit edilmeli."
@@ -346,8 +345,98 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haci-ali-sevinc-camii/p050-2.jpg",
+        "original_name": "ERD02578 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "319"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin taş cephesi ve girişi",
+        "en": "Stone facade and entrance"
+      },
+      "alt": {
+        "tr": "Açık renk taş cephede üç kemerli pencere ve ortada ahşap kapı bulunur. Yanında tuğla bir avlu duvarı ve arkada mavi bir ev görünür.",
+        "en": "A light stone facade with three arched windows and a wooden door in the middle. A brick yard wall is beside it and a blue house behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haci-ali-sevinc-camii/p050-3.jpg",
+        "original_name": "ERD02583 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "319"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Avlu duvarı ve arkada kubbe",
+        "en": "Yard wall with the dome behind"
+      },
+      "alt": {
+        "tr": "Kemerli açıklıkları ve kapısı olan tuğla avlu duvarının arkasında caminin gri kubbesi ve taş cephesi görünür. Sokak taş döşelidir.",
+        "en": "Behind a brick yard wall with arched openings and a gate, the mosque's grey dome and stone facade appear. The street is paved with stone."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haci-ali-sevinc-camii/p049-1.jpg",
+        "original_name": "3-2_3.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "318"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harim, mihrap ve ahşap minber",
+        "en": "Prayer hall, mihrab and wooden minbar"
+      },
+      "alt": {
+        "tr": "Krem duvarlı harimde ortada sade bir mihrap, sağda oymalı ahşap minber ve solda ahşap kürsü vardır. Zemin kırmızı halıyla kaplıdır.",
+        "en": "A cream prayer hall with a plain mihrab at the centre, a carved wooden minbar on the right and a wooden pulpit on the left. The floor has a red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

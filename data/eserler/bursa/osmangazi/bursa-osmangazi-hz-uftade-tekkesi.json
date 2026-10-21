@@ -11,16 +11,15 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Tekkeler ve Zaviyeler (Osmangazi) bölümünden yapay zekâ ile özetlenerek taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; saha/GPS ile eklenip doğrulanmalı (in_review öncesi zorunlu).",
-      "Fotoğraf ve arşiv fotoğrafı yok; Drive klasörü belirlenip media[] ve media_folder doldurulmalı. Kitapta yapıya ait görsel sayfalar (metinsiz PDF sayfaları) vardı, içerikleri okunamadı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgisi (ücret, saat, süre) kitapta yok.",
       "Mimar kitapta belirtilmiyor.",
       "Vakıf/vakfiye bilgisi kitapta yok.",
       "Selamlığın yeri 'düşünülmektedir' diye veriliyor; yol altında kaldığı için doğrulanamaz.",
       "Üftâde Hazretleri'nin ölüm tarihi kitapta verilmiyor.",
-      "Kitabe (Hu Çeşmesi ayet metni) Arapça aslı kitapta verilmiyor, yalnızca Türkçe meal; AR için çeşme ayna taşı fotoğrafı gerekirse çekilmeli.",
       "İlişki hedefleri: Emîr Sultan Camii ve Doğanbey Mescidi'nin ilçesi bu metinde belirtilmiyor; 'Osmangazi' varsayımı doğrulanmalı (hedef kayıtlar henüz yok).",
-      "Ziyaret: kitap 'kontrollü ziyaret' diyor, saat/koşul yok. Cami ibadete açık."
+      "Ziyaret: kitap 'kontrollü ziyaret' diyor, saat/koşul yok. Cami ibadete açık.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -618,8 +617,98 @@
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt'teki mimari anlatımdan derlendi; yalnızca kitapta yazanlar."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1U0yA31gBwZKBr6PdCLJ0f0rbibji23rF",
+    "book_layout_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+    "book_pdf_name": "5-Tekke ve Zaviyeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-tekkesi/p039-2.jpg",
+        "original_name": "ERD01193 kopya.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "624"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tekkenin ahşap saçaklı ve taş duvarlı cephesi",
+        "en": "Lodge front with wooden eaves and stone wall"
+      },
+      "alt": {
+        "tr": "Krem renkli sıvalı, ahşap pencereli ve ahşap saçaklı iki katlı bir yapı. Önünde taş duvarlı bir merdiven ve demir korkuluk aşağıya iner; üst köşede kafesli küçük pencereler vardır.",
+        "en": "A two-storey cream-plastered building with wooden windows and wooden eaves. A stone-walled stair with an iron railing descends in front of it, and small lattice windows sit at the top corner."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-tekkesi/p039-1.jpg",
+        "original_name": "14.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "624"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Ahşap direkli sundurma",
+        "en": "Wooden-pillared veranda"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı uzun bir sundurma, taş kaideli koyu ahşap direkler ve demir korkuluklarla sınırlanır. Dışarıda ağaçlar ve uzakta şehir görünür.",
+        "en": "A long veranda with a wooden ceiling, dark wooden posts on stone bases and an iron railing. Trees and the city in the distance are visible outside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-tekkesi/p037-1.jpg",
+        "original_name": "04.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "622"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap tavanlı oturma odası",
+        "en": "Sitting room with a wooden ceiling"
+      },
+      "alt": {
+        "tr": "Petek desenli ahşap tavanı ve kenarında bitkisel bezemeli bir bordürü olan oda. Duvar boyunca turkuaz renkli minderler ve zemin döşemesi, pencerelerde dantel perdeler, solda çerçeveli hat levhası var.",
+        "en": "A room with a honeycomb-patterned wooden ceiling and a floral border. Turquoise cushions and floor covering run along the walls, lace curtains hang at the windows and a framed calligraphy panel is on the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    }
+  ],
   "archive_media": [],
   "visit": {
     "setting": "mixed",

@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Bugünkü (1996) yapının mimari tarifi kitapta yok.",
       "Banî kitapta yok (Mustafa Efendi ve halkın 'katkısı' geçiyor); 'founder' null bırakıldı.",
@@ -250,8 +249,98 @@
     },
     "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ruscuk-camii/p014-1.jpg",
+        "original_name": "01_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "407"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Rusçuk Camii'nin kubbesi ve minaresi",
+        "en": "Dome and minaret of Rusçuk Mosque"
+      },
+      "alt": {
+        "tr": "Yüksekten çekilen karede gri kurşun kaplı kubbe ve etrafındaki küçük kubbecikler ile ince bir minare yükselir. Çevrede kiremit çatılı evler, apartmanlar ve arkada yeşil bir tepe vardır.",
+        "en": "From above, a grey lead-covered dome with small surrounding domes and a slender minaret. Tiled-roof houses, apartment blocks and a green hill lie behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ruscuk-camii/p014-2.jpg",
+        "original_name": "02_2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "407"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Rusçuk Camii'nin kubbesi kuşbakışı",
+        "en": "Aerial view of the dome of Rusçuk Mosque"
+      },
+      "alt": {
+        "tr": "Dikey kuşbakışı karede büyük, açık gri kubbe etrafında yarım kubbeler ve köşe kubbecikleriyle görünür. Soldan uzanan minare gölgesi ile komşu çatılar ve bir ağaç çevreyi doldurur.",
+        "en": "Directly from above, a large pale grey dome sits with smaller domes at its corners. The minaret leans in from the left, with neighbouring roofs and a tree around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ruscuk-camii/p014-4.jpg",
+        "original_name": "08.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "407"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Rusçuk Camii kubbe içinin bezemesi",
+        "en": "Painted decoration inside the dome of Rusçuk Mosque"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakılan kubbe içinde ortada mavi bir rozet ve siyah zemin üzerine yazı halkası var. Çevresinde kırmızı, mavi ve yeşil dilimli bitkisel bezemeler krem zemine dağılır.",
+        "en": "Looking up into the dome, a blue rosette sits at the centre inside a ring of script on black. Red, blue and green scalloped floral patterns spread over a cream ground."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

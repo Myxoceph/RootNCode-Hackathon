@@ -10,7 +10,6 @@
     "from": "Osmangazi Camiler ve Hazireler 2",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
-      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Babasultan köyündeki cami (benzerlik) ve Yeşil Türbe için relation kurulmadı: Babasultan köyünün ilçesi metinde yok.",
       "Hazire için ayrı kayıt gerekirse mezar taşı yazıları kitapta verilmiyor.",
@@ -481,8 +480,98 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hafsa-sultan-camii/p059-1.jpg",
+        "original_name": "1_2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "328"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi, minaresi ve duvarları",
+        "en": "The mosque's dome, minaret and walls"
+      },
+      "alt": {
+        "tr": "Yukarıdan görünen cami; tuğla ve taş almaşık duvarlı, kurşun kaplı kubbeli ve ince tuğla minareli. Arkada ağaçlar ve dağ yamacındaki mahalle yer alıyor.",
+        "en": "The mosque seen from above, with brick and stone walls, a lead-covered dome and a slender brick minaret. Trees and a hillside neighbourhood lie behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hafsa-sultan-camii/p060-1.jpg",
+        "original_name": "2_1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "329"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, yüksek bir harim; ortada yeşil çerçeveli mihrap, sağda ahşap minber. Tavandan büyük bir avize sarkıyor, zeminde kırmızı halı var.",
+        "en": "A tall white-walled prayer hall with a green-framed mihrab at the centre and a wooden minber on the right. A large chandelier hangs from above over a red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hafsa-sultan-camii/p061-1.jpg",
+        "original_name": "02 ERD07923 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "330"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Haziredeki ayakta mezar taşı",
+        "en": "Upright gravestone in the cemetery"
+      },
+      "alt": {
+        "tr": "Tuğla duvarın yanında, yazıt işlemeli uzun gri bir mezar taşı; çevresinde otlar ve yeşil bitkiler var. Arka planda başka bir mezar taşı seçiliyor.",
+        "en": "A tall grey gravestone with carved script beside a brick wall, surrounded by weeds and green plants. Another gravestone can be seen in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

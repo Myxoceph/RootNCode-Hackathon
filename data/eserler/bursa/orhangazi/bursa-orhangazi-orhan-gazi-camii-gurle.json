@@ -11,15 +11,14 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Orhangazi bölümünden (s. 656-659) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
-      "Arşiv fotoğrafı (archive_media) elimizde yok.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
       "Kesin yapım yılı/mimar kitapta yok; yalnızca Orhan Gazi devri (1324-1362) ve kayıtlar belirtiliyor.",
       "Vakfiye bilgisi kitapta yok; yalnızca Orhan Gazi evkaf muhasebe defterinde adı geçtiği belirtiliyor.",
       "Yunan işgali onarımının ve 1900'lerin başındaki genişletmenin kesin yılı kitapta yok.",
       "Hazire izi yok; hazire kaydı oluşturulmadı.",
-      "Zaman çizelgesinde yılsız olay atlandı (metinde bölümlerde var): Yunan işgalinde tahrip edildi ve yeniden tamir edildi"
+      "Zaman çizelgesinde yılsız olay atlandı (metinde bölümlerde var): Yunan işgalinde tahrip edildi ve yeniden tamir edildi",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -486,8 +485,70 @@
       "en": "[Quiet ambience of a village mosque]"
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1jfZN3gLZw8W1gg7IrHHts71FRqZVg6h9",
+    "book_layout_pdf_file_id": "13rTzgbDo1Idz44uNj89f9YeBMs-xVv8P",
+    "book_pdf_name": "11-Orhangazi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-orhangazi-orhan-gazi-camii-gurle/p008-1.jpg",
+        "original_name": "03 DJI_20241102154613_0075_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "13rTzgbDo1Idz44uNj89f9YeBMs-xVv8P",
+        "book_pdf_name": "11-Orhangazi.pdf",
+        "book_page": "657"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kırma çatısı ve minaresi",
+        "en": "Hipped roof and minaret of the mosque"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı büyük bir kırma çatı ve tuğla bir minare yukarıdan görülür. Çevrede evler ve zeytinliklerle kaplı ova uzanır.",
+        "en": "A large tiled hipped roof and a brick minaret seen from above. Village houses and an olive-covered plain surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-02"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-orhangazi-orhan-gazi-camii-gurle/p009-1.jpg",
+        "original_name": "05 ERD05973 kopya.jpg",
+        "book_pdf_file_id": "13rTzgbDo1Idz44uNj89f9YeBMs-xVv8P",
+        "book_pdf_name": "11-Orhangazi.pdf",
+        "book_page": "658"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Prayer hall with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı salonda sivri kemerli sade bir mihrap, sağda kırmızı ahşap minber ve kırmızı ahşap tavan vardır. Zeminde yeşil, turuncu desenli seccadeli halı serilidir.",
+        "en": "A white hall with a plain pointed-arch mihrab, a red wooden minber at right and a red wooden ceiling. The floor has a green carpet with orange prayer-rug patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-02"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -16,8 +16,8 @@
       "Giriş kitabesinin ve diğer yazıtların dil kodları (tr-ottoman / ar) ekip sınıflandırmasıdır; uzman gözden geçirmeli.",
       "Orhan Medresesi’nin kayıt id’si bilinmiyor; orhan-bey-kulliyesi tahmini hedeftir.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -1058,8 +1058,96 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-osman-gazi-turbesi/p035-1.jpg",
+        "original_name": "ERD03985 kopya.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "524"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Türbenin ahşap kapısı ve mermer çerçevesi",
+        "en": "Wooden door and marble frame of the tomb"
+      },
+      "alt": {
+        "tr": "Kemerli kahverengi çift kanatlı ahşap kapı, beyaz mermer çerçeveyle çevrili. Üstte yeşil zeminli bir yazı panosu ve altın renkli başlıklar var.",
+        "en": "An arched brown double wooden door in a white marble frame. Above it is a green inscription panel, with gilded column capitals at the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-22"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-osman-gazi-turbesi/p035-3.jpg",
+        "original_name": "ERD03789 kopya.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "524"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Osman Gazi Türbesinde sandukalar ve pencereler",
+        "en": "Sarcophagi and windows in Osman Gazi Tomb"
+      },
+      "alt": {
+        "tr": "İşlemeli koyu renk örtülü büyük bir sanduka, önünde yeşil desenli bir örtü ve sarıklar görünür. Arkada sivri kemerli pencereler ve tavanda büyük bir avize var.",
+        "en": "A large sarcophagus with a dark embroidered cover, a green patterned cloth in front and turbans on top. Arched windows and a large chandelier are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-osman-gazi-turbesi/p036-1.jpg",
+        "original_name": "03_1-3.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "525"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Türbe kubbesi ve pencereleri, aşağıdan görünüm",
+        "en": "Tomb dome and windows seen from below"
+      },
+      "alt": {
+        "tr": "Sekizgen mekânın yukarıdan görünümünde çevrede kemerli pencereler ve bezemeli yüzeyler yer alır. Ortada avize ve altında yeşil örtülü sandukalar seçilir.",
+        "en": "Seen from above, an octagonal space with arched windows and decorated surfaces around the edge. A chandelier hangs in the centre above green-covered sarcophagi."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

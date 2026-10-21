@@ -11,14 +11,14 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Cami bölümü 'tamamen yenilendi' olduğundan özgün yapım tarihi bilinmiyor; kitapta yalnızca Kayganzâde Musa'nın 1497 vefatı var.",
       "Banî bilgisi s. 374 ile s. 378 arasında çelişiyor; kaynaklar karşılaştırılıp netleştirilmeli.",
       "Kaygan Hamamı ('Dülgerler ve Ağaççılar Hamamı') için ilçe bilgisi metinde net değil; hedef id tahminidir ve kayıt yoksa oluşturulmalı.",
       "Kazzazoğlu'nun yaptırdığı iki kubbe ve kimliği kitapta açıklanmıyor.",
       "Era alanı tahmini: ilk yapı 15. yüzyıl sonu (Kayganzâde Musa 1497'de vefat etmiş), bugünkü yapı 19. yüzyıl; gözden geçirilmeli.",
-      "İkinci (kâğıt) kitabenin metni kitapta yok."
+      "İkinci (kâğıt) kitabenin metni kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -710,7 +710,96 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kaygan-camii/p105-1.jpg",
+        "original_name": "kayhan camii ve haziresi 1.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "374"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve çatısı, ağaçlar arasında",
+        "en": "The mosque's dome and roof among trees"
+      },
+      "alt": {
+        "tr": "Gri kubbeli ve kurşun çatılı cami, uzun servi ve çam ağaçlarıyla çevrili. Sol tarafta ince minare, arkada geniş şehir manzarası var.",
+        "en": "A mosque with a grey dome and lead roof surrounded by tall cypress and pine trees. A slender minaret is on the left, with a wide view of the city beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kaygan-camii/p106-1.jpg",
+        "original_name": "ERD08245 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "375"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap direkli caminin içi ve mihrap",
+        "en": "Interior with wooden columns and mihrab"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap direkli ve kirişli bir harim; arkada mihrap ve minber var. Zeminde kırmızı halı, yanlarda sivri kemerli pencereler görünüyor.",
+        "en": "A white-walled hall with wooden columns and beams, the mihrab and minber at the far end. Red carpet covers the floor, with pointed-arch windows along the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kaygan-camii/p109-1.jpg",
+        "original_name": "kayhan camii ve haziresi 12-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "378"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Haziredeki sarıklı mezar taşı",
+        "en": "Turbaned gravestone in the cemetery"
+      },
+      "alt": {
+        "tr": "Yazıt işlemeli, üstü başlıklı uzun bir mezar taşı yüksek bir kaide üzerinde duruyor. Çevrede ağaçlar ve arkada başka mezar taşları görünüyor.",
+        "en": "A tall carved gravestone with a capped top on a high base. Trees surround it, with other gravestones visible behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": []
 }

@@ -11,12 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
-      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
       "Medresenin mimarı kaynakta yok.",
       "Lala Şâhin Paşa'nın Bursa'da yaptırdığı 'bağlı mescit' için ad/id kaynakta yok; ilişki eklenemedi.",
       "Mustafakemalpaşa'daki cami, medrese, zaviye ve köprü ile Demir Han'ın vakıf bağı ilçe/ad bilgisi olmadan eklenmedi; Demir Han için tahmini id kullanıldı (ilçe metinde belirtilmiyor, Osmangazi varsayıldı).",
-      "Ortadaki havuzun ve mihrap nişinin fotoğraflanması önerilir."
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -451,7 +450,69 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-lalasahinpasa-medresesi/p026-2.jpg",
+        "original_name": "ERD03227 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "577"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çocuk kütüphanesi olarak kullanılan medrese",
+        "en": "Madrasa used as a children's library"
+      },
+      "alt": {
+        "tr": "Taş sütunlu, kubbeli ve tuğla kemerli salonda renkli sandalyeler ve masalar bulunur. Karşıda basamaklı bir bölüm ve kitap rafları görünür.",
+        "en": "A hall with stone columns, a dome and brick arches holds colourful chairs and tables. Book shelves and a stepped area are at the far end."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-lalasahinpasa-medresesi/p026-1.jpg",
+        "original_name": "ERD03218 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "577"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tuğla kemerli kütüphane salonu",
+        "en": "Library hall with brick arches"
+      },
+      "alt": {
+        "tr": "Tuğla kemerlerle bölünmüş uzun salonda renkli sandalyeli ahşap masalar sıralanır. Yanlarda küçük kemerli kapılar, tavanda ışık alan açıklık vardır.",
+        "en": "A long hall divided by brick arches, with wooden tables and colourful chairs. Small arched doors line the sides, and a skylight opening is in the ceiling."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    }
+  ],
   "archive_media": []
 }

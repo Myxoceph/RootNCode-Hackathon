@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
       "Yapımcı ve mimar kitapta belirtilmemiş.",
       "Kesin yapım tarihi belirlenmeli (1442 mi, 1451 sonrası mı).",
@@ -353,7 +352,68 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehzade-alaaddin-ali-turbesi/p027-1.jpg",
+        "original_name": "ERD03348 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "136"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbeler ve çevresindeki mezarlık",
+        "en": "Tombs and the cemetery around them"
+      },
+      "alt": {
+        "tr": "Kubbeli tuğla türbeler yan yana sıralanmış; önlerinde çimenlikte gri mezar taşları ve ön planda koyu sandukalar var. Üstte ağaç dalları uzanıyor.",
+        "en": "Domed brick tombs side by side, with grey gravestones on the lawn and dark sarcophagi in the foreground. Tree branches stretch overhead."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehzade-alaaddin-ali-turbesi/p028-1.jpg",
+        "original_name": "ERD00825 kopya-2-3.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "137"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Beyaz iç mekânda kırmızı sandukalar",
+        "en": "Red sarcophagi in a white interior"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, yüksek pencereli odada kırmızı örtülü iki sanduka var; üstlerindeki siyah kısım tahta çatı gibi eğimli. Zemin altıgen kırmızımsı taşlarla döşeli.",
+        "en": "In a white room with tall windows stand two sarcophagi under red covers with dark sloping tops. The floor is paved with hexagonal reddish stones."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-18"
+    }
+  ],
   "archive_media": []
 }

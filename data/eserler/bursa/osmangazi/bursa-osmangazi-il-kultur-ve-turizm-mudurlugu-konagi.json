@@ -15,9 +15,9 @@
       "timeline[insa] ve [devir] için yıllar yaklaşıktır (kitap kesin yıl vermiyor); Osman Gazi/Orhan Gazi türbelerinin id'leri doğrulanmalı.",
       "Konağın yaptıranı, mimarı ve inşa amacı kitapta yok.",
       "Koordinat kitapta yok; sahadan veya haritadan doğrulanmış koordinat eklenmeli (location.coordinates).",
-      "Fotoğraflar (media) ve Zaman Perdesi arşiv fotoğrafları (archive_media) henüz yok; Drive klasörü (media_folder) belirlenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
-      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli."
+      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -493,7 +493,97 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesi (vk-bursa-c1, s. 741-743)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1C_DxmRm7tS_2mJUgiSLEM4k4jQUxTen3",
+    "book_layout_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+    "book_pdf_name": "3-Sivil Mimari.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-il-kultur-ve-turizm-mudurlugu-konagi/p022-1.jpg",
+        "original_name": "DJI_20241026210155_0146_D_ODAK kopya.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "741"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Konağın giriş cephesi",
+        "en": "Entrance facade of the mansion"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı, kahverengi ahşap doğramalı iki katlı konak; kemerli kapı, taş temel ve geniş saçaklı kiremit çatı görülür.",
+        "en": "A two-storey yellow mansion with brown timber windows, an arched door, stone foundation and a wide-eaved tiled roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-il-kultur-ve-turizm-mudurlugu-konagi/p021-1.jpg",
+        "original_name": "DJI_20241026205449_0116_D_ODAK kopya.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "740"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Konak ve yanındaki sur duvarı",
+        "en": "The mansion and adjacent city wall"
+      },
+      "alt": {
+        "tr": "Sarı konak, önündeki taş sur duvarı ve merdivenli yürüyüş yolu. Çevresi ağaçlıdır, gökyüzü bulutludur.",
+        "en": "The yellow mansion with a stone city wall and stepped path in front, among trees under a cloudy sky."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-il-kultur-ve-turizm-mudurlugu-konagi/p022-2.jpg",
+        "original_name": "ERD02645 kopya.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "741"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Konağın yeşil boyalı odası",
+        "en": "Green-painted room in the mansion"
+      },
+      "alt": {
+        "tr": "Yeşil duvarlı, ahşap tavanlı ve parkeli geniş oda. Üç pencere, çalışma masası, koltuklar ve duvarda iki tablo bulunur.",
+        "en": "A large room with green walls, wooden ceiling and parquet floor, three windows, a desk, armchairs and two framed paintings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-28"
+    }
+  ],
   "archive_media": []
 }

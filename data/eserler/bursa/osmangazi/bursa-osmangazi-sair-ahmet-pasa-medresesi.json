@@ -11,11 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
-      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
       "Yapım tarihi ve dönemi bu bölümde verilmiyor (kitap Ahmed Paşa Türbesi bölümüne yönlendiriyor); dating ve era null bırakıldı, o bölümden tamamlanmalı.",
       "Ahmed Paşa'nın ayrıntılı bilgisi 'Ahmed Paşa Türbesi' bölümünde; türbe kaydı ilçesi bu metinde belirtilmiyor (Osmangazi varsayıldı).",
-      "Vakıf bilgisi ve mimar kaynakta yok."
+      "Vakıf bilgisi ve mimar kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -322,7 +322,97 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sair-ahmet-pasa-medresesi/p033-2.jpg",
+        "original_name": "01 Kapak.jpeg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "584"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Şair Ahmet Paşa Medresesi kuşbakışı",
+        "en": "Aerial view of Şair Ahmet Paşa Madrasa"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla duvarlı, kurşun kubbeli birimlerden oluşan yapı yukarıdan görünür. Arkada ağaçlar, park ve Bursa Ovası uzanır.",
+        "en": "A complex of stone and brick walls with lead domes seen from above. Trees, a park and the Bursa plain stretch behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sair-ahmet-pasa-medresesi/p034-1.jpg",
+        "original_name": "ERD06740 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "585"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Müze vitrinli giriş koridoru",
+        "en": "Museum entrance corridor with showcases"
+      },
+      "alt": {
+        "tr": "Sivri kemerli geçidin iki yanında aydınlatılmış raflarda el sanatı eserleri sergilenir. Koridorun sonunda camlı kapı ve dışarıdaki avlu görünür.",
+        "en": "Lit shelves on both sides of a pointed-arch passage display handicrafts. At the end, a glass door opens to an outer courtyard."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sair-ahmet-pasa-medresesi/p034-2.jpg",
+        "original_name": "ERD06816 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "585"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Geleneksel başlık giyen büst ve vitrin",
+        "en": "Bust with traditional headdress in a showcase"
+      },
+      "alt": {
+        "tr": "Vitrinde yeşil işlemeli, sikkeli geleneksel bir başörtüsü giydirilmiş büst durur. Yanında tüylü bir başlık ve altın renkli bir nesne sergilenir.",
+        "en": "In a showcase, a bust wears a green embroidered headscarf with coins and a red necklace. Beside it are a plumed hat and a gold-coloured object."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    }
+  ],
   "archive_media": []
 }

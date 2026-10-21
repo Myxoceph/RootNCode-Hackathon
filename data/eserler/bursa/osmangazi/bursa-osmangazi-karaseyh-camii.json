@@ -14,8 +14,8 @@
       "Çağ (era): 1533 öncesi tarih nedeniyle 'klasik-osmanli' girildi (enums'ta tanımlı sınır yok), veri ekibi gözden geçirmeli.",
       "Mimar ve vakıf bilgisi kitapta yok.",
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -347,8 +347,70 @@
       "en": "Karaşeyh Mosque stands at a street intersection in Orhanbey Neighborhood, a building with a square prayer hall and a lead-covered dome. Small niches above the arches on the parapet-walled façade of its three-bay narthex lighten its mass; with the side façades closed it looks rectangular. A brick minaret with a cylindrical shaft rises from the east wall and is entered from inside. The mihrab is a five-cornered niche with five rows of muqarnas."
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-karaseyh-camii/p096-1.jpg",
+        "original_name": "ERD09618 kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "365"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Ahşap minber ve vitray pencereler",
+        "en": "Wooden minber and stained-glass windows"
+      },
+      "alt": {
+        "tr": "Köşede kırmızı kumaş süslemeli, oymalı ahşap minber; yanında bir ayaklı saat var. Üstte renkli sivri kemerli vitray pencereler ve madalyonlar görünüyor.",
+        "en": "A carved wooden minber with red fabric trim in a corner, with a standing clock beside it. Coloured pointed-arch stained-glass windows and medallions are above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-08"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-karaseyh-camii/p096-2.jpg",
+        "original_name": "ERD09619 kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "365"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin köşesi, kürsü ve kitaplık",
+        "en": "Corner with pulpit and bookcase"
+      },
+      "alt": {
+        "tr": "Gri-bej duvarlı iç mekânda alçak kürsü ile kitaplarla dolu ahşap bir dolap var. Yukarıda iki vitray pencere, aşağıda ahşap çerçeveli bir pencere görünüyor.",
+        "en": "A grey-beige interior corner with a low pulpit and a wooden bookcase full of books. Two stained-glass windows are above and a wood-framed window below."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-08"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

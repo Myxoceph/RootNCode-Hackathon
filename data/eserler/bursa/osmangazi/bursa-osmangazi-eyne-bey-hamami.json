@@ -15,8 +15,8 @@
       "Hamamın bugünkü işlevi (restorasyon sonrası) kaynakta kesinleşmemiş: 'kütüphane ile bütüncül kullanım için çalışmalar yürütülüyor'.",
       "Vakfın adı kaynakta verilmemiş; 'waqf.name' boş.",
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş; Drive klasörü ('media_folder') bilinmiyor, ekip tarafından bulunup eklenmeli.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -489,7 +489,97 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-hamami/p005-2.jpg",
+        "original_name": "5.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "684"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamamın sıcaklık bölümü",
+        "en": "Bath hot room"
+      },
+      "alt": {
+        "tr": "Sivri kemerli, sıvalı duvarlarla çevrili taş döşemeli oda; asılı lambalar ve yerde iki taş kurna görülür.",
+        "en": "A room with pointed arches, plastered walls and stone paving, lit by hanging lamps, with two stone basins on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-hamami/p006-2.jpg",
+        "original_name": "2.jpeg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "685"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Hamamın çatısı, kuşbakışı",
+        "en": "Bath roof from directly above"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremitli kırma çatı ortasında gri sekizgen bir ışıklık ile komşu yapılar tepeden görülür.",
+        "en": "A red-tiled hipped roof with a grey octagonal skylight at its centre, seen from above next to neighbouring buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-hamami/p005-1.jpg",
+        "original_name": "4.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "684"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap sütunlu üst kat salonu",
+        "en": "Upper hall with timber columns"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlu, ahşap tavan ve zeminli salon; küçük pencereler, ahşap kapılar ve balüstrad korkuluklu merdiven vardır.",
+        "en": "A hall with timber columns, ceiling and floor, small windows, wooden doors and a stair with a balustrade."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    }
+  ],
   "archive_media": []
 }

@@ -11,11 +11,11 @@
     "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 460-461) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
-      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Caminin vakfı, vakfiyesi ve mimarı kitapta yok.",
       "Kazzazoğlu Şule Mehmed'in 1499 yenilemesi yenileme mi yeniden inşa mı olduğu kitapta ayrıntılandırılmamış; tarih kesin kabul edilmiştir.",
-      "Hazire günümüze ulaşmamıştır; kayıtlı mezar bilgisi yok."
+      "Hazire günümüze ulaşmamıştır; kayıtlı mezar bilgisi yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -403,7 +403,41 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-enbiya-camii/p067-1.jpg",
+        "original_name": "DJI_20241009124531_0975_D-Edit.jpeg.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "460"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin çatısı ve minaresi, havadan",
+        "en": "Aerial view of the mosque roof and minaret"
+      },
+      "alt": {
+        "tr": "Yukarıdan görünen kiremit kaplı kırma çatılı cami ve pembe tonlu, sivri külahlı minare. Sokaklar, bir çınar ağacı ve çevredeki kiremit çatılı evler görülür.",
+        "en": "An aerial view of the mosque with its tiled hipped roof and a pinkish minaret with a pointed cap. Narrow streets, a plane tree and neighbouring tiled roofs surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    }
+  ],
   "archive_media": []
 }

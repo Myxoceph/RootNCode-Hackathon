@@ -15,7 +15,6 @@
       "Mimar ve vakıf bilgisi yok.",
       "Minare 1950'lerde yıkılmış; günümüzde minare olup olmadığı kitapta açık değil.",
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraflar sonradan match_photos.py ile eklenecek (media ve media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
     ],
     "data_quality_notes": [
@@ -325,8 +324,98 @@
     "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hoca-taskin-camii/p013-3.jpg",
+        "original_name": "01 DJI_20240924220209_0012_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "224"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hoca Taşkın Camii, ön cephe ve minare",
+        "en": "Hoca Taşkın Mosque, front facade and minaret"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla örgülü, kemerli pencereli küçük bir caminin ön cephesi. Sağında yüksek taş minare, arkasında gri kubbe ve yamaca dizilmiş apartmanlar görünür.",
+        "en": "Front facade of a small mosque in stone and brick with arched windows. A tall stone minaret rises on the right, with a grey dome behind and apartment blocks climbing the hillside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hoca-taskin-camii/p013-2.jpg",
+        "original_name": "02 DJI_20240924220303_0015_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "224"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, kuşbakışı",
+        "en": "Dome and minaret of the mosque, aerial view"
+      },
+      "alt": {
+        "tr": "Yukarıdan görünen cami: gri metal kaplı geniş bir kubbe, solunda minare ve çevresinde kiremit çatılı evlerle dar bir sokak var.",
+        "en": "Top-down view of the mosque showing a wide grey metal-clad dome with the minaret to its left, surrounded by tile-roofed houses and a narrow street."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hoca-taskin-camii/p014-1.jpg",
+        "original_name": "05 ERD03521 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "225"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mihrap, minber ve halı döşeli ibadet alanı",
+        "en": "Mihrab, minbar and carpeted prayer hall"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı iç mekânda mavi ve yeşil çinili mihrap ile sağında ahşap minber durur. Zemin, kırmızı ve mavi desenli seccade motifli halıyla kaplıdır.",
+        "en": "In a white-walled hall, a blue and green tiled mihrab stands with a wooden minbar to its right. The floor is covered with a red and blue carpet with prayer-niche motifs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

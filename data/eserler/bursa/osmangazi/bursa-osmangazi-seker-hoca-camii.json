@@ -11,11 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 430) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Mahalledeki Şeker Hoca türbesi için hedef kayıt/id bilinmiyor.",
-      "Çelebi Sultan Mehmed'in saltanat yılları kitapta yok; dating.start_year/end_year boş bırakıldı."
+      "Çelebi Sultan Mehmed'in saltanat yılları kitapta yok; dating.start_year/end_year boş bırakıldı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -266,7 +266,69 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seker-hoca-camii/p037-1.jpg",
+        "original_name": "01 Kapak_2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "430"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeker Hoca Camii'nin camlı giriş bölümü",
+        "en": "Glazed entrance section of Şeker Hoca Mosque"
+      },
+      "alt": {
+        "tr": "Koyu ahşap saçaklı, üç büyük kemerli camekânla kapalı cephe taş zeminli bir avluya bakar. Önde yeşil bir gölgelik ve altıgen taş döşeli yol görünür.",
+        "en": "A dark timber-eaved facade closed by a glass screen with three large arches, facing a stone-paved yard. A green awning and hexagonal paving are in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seker-hoca-camii/p037-2.jpg",
+        "original_name": "03_7.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "430"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeker Hoca Camii'nin kubbeli iç mekânı",
+        "en": "Domed interior of Şeker Hoca Mosque"
+      },
+      "alt": {
+        "tr": "Beyaz kubbeli salonda yeşil çinili mihrap, sağda oyma ahşap minber ve ortada avize bulunur. Alt duvarlar yeşil, zeminde kırmızı halı serilidir; kubbe eteğinde yuvarlak yazı levhaları vardır.",
+        "en": "A white-domed hall with a green-tiled mihrab, a carved wooden minbar on the right and a chandelier. Lower walls are green, the carpet is red, and round inscription plaques ring the dome base."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
   "archive_media": []
 }

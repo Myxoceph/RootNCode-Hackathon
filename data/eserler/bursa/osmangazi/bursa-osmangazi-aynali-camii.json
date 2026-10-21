@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 264-265) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media ve archive_media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Kesin yapım yılı kitapta yok (II. Murad dönemi); 17. yy minber eklenmesinin yılı belli değil.",
       "Haziresi hakkında bilgi yok.",
@@ -334,7 +332,41 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-aynali-camii/p041-1.jpg",
+        "original_name": "01_7.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "264"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin cephesi ve minaresi",
+        "en": "Mosque side view and minaret"
+      },
+      "alt": {
+        "tr": "Kaba taş ve tuğla örgülü, kiremit çatılı iki kubbeli bölümlü cami; sağda tuğla minare yükselir. Solda küçük, kiremit çatılı bir şadırvan görünür.",
+        "en": "A mosque of rough stone and brick with two domed sections and tiled roofs; a brick minaret rises on the right. A small tile-roofed fountain pavilion is at lower left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-28"
+    }
+  ],
   "archive_media": []
 }

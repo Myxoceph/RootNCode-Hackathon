@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 671-675) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
-      "Fotoğraflar eklenmeli (media boş); Drive klasörü ve dosya kimlikleri bulunmalı (media_folder null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
       "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
@@ -542,8 +541,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yildirim-bayezid-bedesteni/p045-1.jpg",
+        "original_name": "ERD04262 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "674"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Bedestenin tonozlu mücevher çarşısı",
+        "en": "Vaulted jewellery arcade of the bedesten"
+      },
+      "alt": {
+        "tr": "Sarı ışıkla aydınlanan tuğla kemerli ve tonozlu uzun bir koridorda altın ve mücevher dükkânları sıralanır. Zemin açık renkli taştır.",
+        "en": "A long brick-arched, vaulted corridor lit with warm light, lined with gold and jewellery shops. The floor is pale stone."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yildirim-bayezid-bedesteni/p045-2.jpg",
+        "original_name": "ERD04293 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "674"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Bedestenin geniş ortak mekânı",
+        "en": "The wide central space of the bedesten"
+      },
+      "alt": {
+        "tr": "Metal makaslı yüksek bir çatı altında giysi askıları ve kuyumcu vitrinleri yer alır. Yanlarda taş duvarlar ve kemerli açıklıklar görünür.",
+        "en": "Under a high metal-trussed roof are clothing racks and jewellers' display cases. Stone walls and arched openings line the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

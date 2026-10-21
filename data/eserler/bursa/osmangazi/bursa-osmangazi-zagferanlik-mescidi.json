@@ -11,11 +11,11 @@
     "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 488-489) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
-      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Banisi, vakfı ve mimarı kitapta yok (kitabe bulunmuyor).",
       "Bekir Dede'nin kimliği/yaşadığı dönem kitapta verilmiyor.",
-      "Restorasyon öncesi yapının özgün planı kitapta tarif edilmiyor."
+      "Restorasyon öncesi yapının özgün planı kitapta tarif edilmiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -347,7 +347,69 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-zagferanlik-mescidi/p095-1.jpg",
+        "original_name": "01 Kapak_22.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "488"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mescidin kiremit çatısı ve minaresi",
+        "en": "Masjid tiled roof and minaret"
+      },
+      "alt": {
+        "tr": "Kırma kiremit çatılı küçük mescit ve tuğla gövdeli, balkonlu minare. Sol altta camlı bir giriş bölümü, çevrede ağaçlar ve evler vardır.",
+        "en": "A small masjid with a hipped tile roof and a brick minaret with a balcony. A glazed entrance bay is at lower left, with trees and houses around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-zagferanlik-mescidi/p096-1.jpg",
+        "original_name": "02_11.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "489"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Mescit çatısı, kuşbakışı",
+        "en": "Masjid roof from directly above"
+      },
+      "alt": {
+        "tr": "Tepeden görünen kırma kiremit çatı, üstünde sekizgen gri kubbeli bölüm ve yanında minare ile küçük kiremit çatılı yapılar bulunur.",
+        "en": "A tiled hipped roof seen from above, with an octagonal grey section, a minaret and small tile-roofed structures beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    }
+  ],
   "archive_media": []
 }

@@ -11,11 +11,11 @@
     "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 462-464) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
-      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Camiin vakfiyesi ve mimarı kitapta yok; 1484 vakıf bilgisi tarihî bir kaynaktan aktarılıyor ama kaynağın adı verilmiyor.",
       "Yanındaki türbe (Şeyh Mehmed Emin Kerkükî) ayrı kayıt olarak başka bir ajanda/kayıtta (bursa-osmangazi-veled-i-habib-turbesi) olabilir; ilişki bu kayıttan yazılmadı, ters yönlü ilişki üretmemek için.",
-      "1990'lı yıllarda hazırlanan restitüsyon projesinin yılı kesin değil; zaman çizgisine eklenmedi."
+      "1990'lı yıllarda hazırlanan restitüsyon projesinin yılı kesin değil; zaman çizgisine eklenmedi.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -560,7 +560,97 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-habib-camii/p069-1.jpg",
+        "original_name": "01.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "462"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, sokaktan",
+        "en": "The mosque dome and minaret from the street"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla örgülü duvarlı, kurşun kaplı kubbeli cami ve ince minaresi. Önünde sokak, yanında kırmızı bir ev, arkada yamaca yayılan kent var.",
+        "en": "A stone-and-brick mosque with a lead-covered dome and a slender minaret. A street runs in front, a red house stands beside it, and the city climbs the hill behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-habib-camii/p071-1.jpg",
+        "original_name": "ERD00242 kopya.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "464"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin yan cephesi ve kubbesi",
+        "en": "Side facade and dome of the mosque"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla almaşık duvarlı caminin yan cephesi, kurşun kaplı kubbesi ve minaresi. Önünde yeşillikler arasında taş döşeli bir yürüyüş yolu uzanır.",
+        "en": "The side of the mosque in alternating stone and brick, with a lead dome and minaret. A paved walkway runs beside it between green bushes and trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-habib-camii/p070-2.jpg",
+        "original_name": "ERD00181 kopya.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "463"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Cami içi, ahşap mahfil ve kütüphane",
+        "en": "Interior with wooden gallery and bookcase"
+      },
+      "alt": {
+        "tr": "Giriş duvarının üzerinde, korkuluklu ve merdivenli ahşap bir mahfil. Ortada çift kanatlı ahşap kapı, solda kitap dolu bir kitaplık, zeminde çiçek motifli halı var.",
+        "en": "A wooden gallery with a balustrade and staircase above the entrance wall. A double wooden door is in the centre, a bookcase full of books on the left, and a floral-patterned carpet on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    }
+  ],
   "archive_media": []
 }

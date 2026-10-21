@@ -11,12 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 431-432) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
       "Yapım yılı kitapta verilmiyor (yalnızca 15. yüzyıl); kesin tarih araştırılmalı.",
-      "1916 yeniden inşa kitabesi ve mezar taşı kitabesinin metinleri kitapta yok; fotoğraftan okunabilir.",
-      "Hazire için ayrı bir kayıt açılmadı; hazire bu kaydın bölümüdür."
+      "Hazire için ayrı bir kayıt açılmadı; hazire bu kaydın bölümüdür.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -458,7 +457,69 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-serafettin-pasa-camii/p038-1.jpg",
+        "original_name": "01 Kapak_7.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "431"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Şerafettin Paşa Camii'nin kubbesi ve minaresi",
+        "en": "Dome and minaret of Şerafettin Paşa Mosque"
+      },
+      "alt": {
+        "tr": "Çarşı çatılarının arasında gri kurşun kubbe ve ince tuğla minare yükselir. Çevresinde kiremit çatılar, cam örtülü pasajlar ve ağaçlar, uzakta şehir görünür.",
+        "en": "A grey lead dome and slender brick minaret rise among market roofs. Tiled roofs, glass-covered passages and trees surround it, with the city in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-serafettin-pasa-camii/p039-1.jpg",
+        "original_name": "03_5.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "432"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şerafettin Paşa Camii'nin çinili iç mekânı",
+        "en": "Tiled interior of Şerafettin Paşa Mosque"
+      },
+      "alt": {
+        "tr": "Alt duvarları mavi çinilerle kaplı salonda çinili mihrap ve minber ile ortadaki avize öne çıkar. Pencereler kırmızı çerçeveli, zemin kırmızı halıyla örtülüdür.",
+        "en": "A hall with lower walls covered in blue tiles, a tiled mihrab and minbar and a central chandelier. The windows have red frames and a red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    }
+  ],
   "archive_media": []
 }

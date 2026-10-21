@@ -16,8 +16,8 @@
       "Zaviye ve mescidin bugün ayakta olup olmadığı belirtilmiyor.",
       "Mimar kitapta belirtilmiyor (architect: null).",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -430,8 +430,42 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seydi-nasir-turbesi/p045-1.jpg",
+        "original_name": "02_3.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "534"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Seydi Nasır Türbesinin çatısı, kuşbakışı",
+        "en": "Roof of Seydi Nasır Tomb from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan kiremit kırmızısı, kırma çatı ve yanında koyu yeşil ağaçlar görünür. Çevrede merdivenli dar sokaklar ve başka kiremitli çatılar vardır.",
+        "en": "From above, a red-tiled hipped roof with dark green trees beside it. Narrow stepped lanes and other tiled roofs surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

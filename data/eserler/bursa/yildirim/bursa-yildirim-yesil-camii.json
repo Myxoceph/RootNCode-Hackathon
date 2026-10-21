@@ -10,7 +10,6 @@
     "from": "Yeşil Çelebi Mehmed Külliyesi",
     "todos": [
       "Koordinat eklenmeli (kitapta yok).",
-      "Fotoğraflar eklenmeli: media ve media_folder boş; match_photos.py ile bağlanacak.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Mihrap ve minber ustaları, minber kitabesi ve tarihi bu bölükte yok; varsa sonraki sayfalardan eklenmeli.",
       "Hünkâr mahfili kemer kitabesi ve çini kitabelerinin metinleri kitapta verilmiyor; sahada okunmalı.",
@@ -1815,8 +1814,98 @@
       "en": "[Water flowing from the fountain, footsteps echoing under the dome, and quiet recitation in the distance]"
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ya5DSM5reasFmWdGEd8OJoIBgacL8QtC",
+    "book_layout_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+    "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-camii/p016-1.jpg",
+        "original_name": "ERD01698 kopya.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "95"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Çinilerle çevrili kemerli ahşap kapı",
+        "en": "Arched wooden door framed by tiles"
+      },
+      "alt": {
+        "tr": "Sivri kemerli kahverengi ahşap çift kanatlı kapı, mavi ve altın renkli çinilerle bezeli çerçeve içinde. Kemer üstünde yazı kuşağı vardır.",
+        "en": "A pointed-arch brown wooden double door in a frame of blue and gold tiles. An inscription band runs across the arch above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-20"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-camii/p009-1.jpg",
+        "original_name": "DJI_20240920125207_0169_D-Edit.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "88"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Mermer çerçeveli pencere ve çini şerit",
+        "en": "Marble-framed window with tile border"
+      },
+      "alt": {
+        "tr": "Mermer bir çerçeve içinde işlemeli sivri kemerli, kafesli bir pencere var. Çerçeveyi turkuaz çini şeritler çevreler.",
+        "en": "A grilled window with a carved pointed arch set in a marble frame, outlined with turquoise tile strips."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-20"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-camii/p010-2.jpg",
+        "original_name": "ERD02541 kopya.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "89"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Turkuaz çerçeveli mermer pencere",
+        "en": "Marble window with turquoise frame"
+      },
+      "alt": {
+        "tr": "İşlemeli sivri kemerli, demir kafesli pencere beyaz mermer yüzeyde yer alır. Çevresinde ince turkuaz bir çini şerit uzanır.",
+        "en": "A window with a carved pointed arch and iron grille on a white marble surface, bordered by a thin turquoise tile strip."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-22"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

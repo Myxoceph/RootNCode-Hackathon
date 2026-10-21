@@ -13,8 +13,8 @@
       "Banisinin kimliği ve yapım tarihi netleştirilmeli (kitap iki farklı dönem veriyor).",
       "Kitabenin özgün yazısı ve dili kitapta yok.",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -285,8 +285,42 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mehmet-bin-seyit-ali-turbesi/p019-2.jpg",
+        "original_name": "02_2.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "508"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeker Hoca Türbesinin içi",
+        "en": "Inside Şeker Hoca Tomb"
+      },
+      "alt": {
+        "tr": "Yeşil ışıkla aydınlanmış küçük kubbeli odada yeşil örtülü bir sanduka ve başucunda yeşil sarık var. Yanında yeşil kafesli bir pencere görünür.",
+        "en": "In a small domed room lit with a green tint, a sarcophagus under a green cover has a green turban at its head. A green grilled window is beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

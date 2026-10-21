@@ -11,12 +11,10 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
       "Mimar kitapta belirtilmemiş.",
       "Kapı alınlığının iç sıvasındaki onarım tarihi kitapta verilmemiş.",
-      "'bursa-osmangazi-orhan-gazi-turbesi' ve 'bursa-osmangazi-i-murad-hudavendigar-turbesi' hedeflerinin ilçeleri metinde yok; Osmangazi varsayıldı, doğrulanmalı.",
-      "Kitabenin Arapça yazımında iki ayrı basılı varyant (satır sonları) vardır; ikinci, düzgün olan alındı. Hat ve metin fotoğraftan kontrol edilmeli."
+      "'bursa-osmangazi-orhan-gazi-turbesi' ve 'bursa-osmangazi-i-murad-hudavendigar-turbesi' hedeflerinin ilçeleri metinde yok; Osmangazi varsayıldı, doğrulanmalı."
     ],
     "data_quality_notes": [
       {
@@ -622,7 +620,96 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ii-murad-turbesi/p021-1.jpg",
+        "original_name": "ERD00808 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "130"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Türbenin ahşap saçaklı girişi",
+        "en": "The tomb's entrance with its carved timber canopy"
+      },
+      "alt": {
+        "tr": "Yuvarlak, oymalı ve yaldızlı ahşap saçak, beyaz mermer çerçeveli sivri kemerli girişin üzerine uzanıyor. Duvarlar tuğla ve taş sıralı, pencereler demir parmaklıklı.",
+        "en": "A rounded carved and gilded timber canopy extends over a pointed-arch entrance framed in white marble. The walls are banded brick and stone, with barred windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ii-murad-turbesi/p024-3.jpg",
+        "original_name": "ERD00801 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "133"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbe cephesi ve merdivenli giriş",
+        "en": "Tomb façade and the stepped entrance"
+      },
+      "alt": {
+        "tr": "Kubbeli tuğla türbelerin önünde ahşap saçaklı bir giriş ve taş basamaklar var. Basamakların yanında kırmızı kahverengi çiçeklikler, önünde taş döşeli alan görünüyor.",
+        "en": "Brick tombs with domes, with an entrance under a timber canopy and stone steps. Brown wooden planters with flowers line the steps, and a paved area lies in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-18"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ii-murad-turbesi/p023-1.jpg",
+        "original_name": "DJI_20241025180240_0184_D_ODAK.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "132"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Türbeler arasındaki mezarlık bahçesi",
+        "en": "The cemetery garden among the tombs"
+      },
+      "alt": {
+        "tr": "Çimenlik alanda sıralanmış gri mezar taşlarının ardında kubbeli tuğla türbeler yükseliyor. Servi ağaçları ve mavi gökyüzü görünüyor.",
+        "en": "Rows of grey gravestones on a lawn, with domed brick tombs rising behind. Cypress trees and blue sky are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": []
 }

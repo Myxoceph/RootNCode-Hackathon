@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki I. Murad Hudâvendigâr Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor; yabancı usta/mimar olasılığı yalnızca 'düşünülmektedir' diye anılıyor (architect.name null).",
       "Kitabelerin dili kitapta belirtilmiyor; inscriptions[].language 'other' bırakıldı, teyit edilmeli.",
@@ -1015,7 +1013,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1Nh5U0z8qZBwN7XodcyZLe_IqCfD3wrcx",
+    "book_layout_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+    "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-camii/p009-1.jpg",
+        "original_name": "DJI_20240928225847_0264_D-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "84"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin revaklı kemerli cephesi ve yan sokak",
+        "en": "The arcaded façade of the mosque beside the street"
+      },
+      "alt": {
+        "tr": "İki katlı, tuğla ve taşın almaşık sıralandığı cephede alt katta sivri kemerli revaklar, üst katta beyaz korkuluklu galeri var. Yanında kaldırım taşlı dar bir sokak uzanıyor.",
+        "en": "A two-storey façade of alternating brick and stone, with pointed-arch arcades below and a gallery with white railings above. A narrow cobbled street runs alongside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-camii/p007-2.jpg",
+        "original_name": "DJI_20240928230508_0277_D-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "82"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Üst kat galerisi ve süslemeli kemer",
+        "en": "Upper gallery and the decorated arch"
+      },
+      "alt": {
+        "tr": "Beyaz korkuluklu üst kat galerisi, ortadaki ince sütun ve iki sivri kemerle bölünüyor. Üstünde geometrik tuğla süslemeli büyük bir kemer ve saçak sırası var.",
+        "en": "An upper gallery with white railings, divided by a slim central column and two pointed arches. Above is a large arch with geometric brick patterns and a row of cornice teeth."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-camii/p007-1.jpg",
+        "original_name": "DJI_20240928220949_0216_D-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "82"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tuğla ve taş duvarlar, saçak ve kubbe",
+        "en": "Brick and stone walls, cornice and dome"
+      },
+      "alt": {
+        "tr": "Yakından görülen duvarlarda tuğla ve taş sıraları, küçük kör kemerler ve dişli saçak süslemesi var. Arka planda bir kubbenin kenarı ve mavi gökyüzü görünüyor.",
+        "en": "A close view of walls with courses of brick and stone, small blind arches and a toothed cornice. The edge of a dome and a blue sky are visible behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    }
+  ],
   "archive_media": []
 }

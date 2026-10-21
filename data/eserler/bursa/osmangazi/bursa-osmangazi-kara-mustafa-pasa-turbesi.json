@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Hamza Bey Külliyesi bölümünden (s. 173-185) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş, archive_media boş); Drive klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
       "Türbenin yapım yılı ve mimarı kitapta verilmiyor.",
@@ -383,8 +381,42 @@
     "visitor_tips": []
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1q5tdZZqn4SpOpp6Nlka4iS0c3_UDyFZZ",
+    "book_layout_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+    "book_pdf_name": "5-Hamzabey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kara-mustafa-pasa-turbesi/p013-1.jpg",
+        "original_name": "DJI_20240929205241_0522_D-Edit-2.jpg",
+        "book_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+        "book_pdf_name": "5-Hamzabey Külliyesi.pdf",
+        "book_page": "184"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kara Mustafa Paşa Türbesi'nin kuşbakışı görünümü",
+        "en": "Aerial view of the Kara Mustafa Pasha Tomb"
+      },
+      "alt": {
+        "tr": "Kırmızımsı kesme taştan, gri kurşun kaplı kubbeli kare planlı türbe; önünde sivri kemerli bir giriş var. Çevresi yoğun ağaçlarla, arkası yamaçtaki evlerle çevrili.",
+        "en": "A square tomb of reddish cut stone with a grey lead-covered dome and a pointed-arch entrance. Dense trees surround it, with houses on the hillside behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-29"
+    }
+  ],
   "archive_media": [],
   "dating": null,
   "founder": null,

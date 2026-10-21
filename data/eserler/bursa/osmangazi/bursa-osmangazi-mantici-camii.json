@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Banî kitapta yok (halk yardımıyla yapıldığı belirtiliyor); founder boş.",
       "Kesin yapım yılı yok; dating yalnızca 'Fâtih dönemi' olarak girildi, century 15 (Fâtih dönemi) kitaptan çıkarım olarak işaretlendi.",
       "Hazire mezar taşları artık yok gibi görünüyor ('1940'lı yıllara kadar varlığını sürdürmüştür'); güncel durum sahada teyit edilmeli.",
-      "Onarımların tarihleri (1959 dışında) kitapta yok."
+      "Onarımların tarihleri (1959 dışında) kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -241,7 +241,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mantici-camii/p123-1.jpg",
+        "original_name": "DJI_20241007155125_0742_D-Edit.jpeg-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "392"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mantıcı Camii'nin sokak cephesi",
+        "en": "Street facade of Mantıcı Mosque"
+      },
+      "alt": {
+        "tr": "Minaresiz, iki katlı, pembemsi sıvalı bir bina. Üst katta kemerli pencereler ve küçük bir balkon, alt katta parmaklıklı pencereler ile beyaz çift kanatlı demir kapı vardır.",
+        "en": "A two-storey building with pinkish plaster and no minaret. Arched windows and a small balcony are on the upper floor; barred windows and a white double metal door are below."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mantici-camii/p123-2.jpg",
+        "original_name": "ERD09009 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "392"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mantıcı Camii'nin harimi, mihrap ve minber",
+        "en": "Prayer hall, mihrab and minbar of Mantıcı Mosque"
+      },
+      "alt": {
+        "tr": "Düz tavanlı, beyaz duvarlı salonun ortasında çiçek bezemeli mihrap, sağda ahşap minber ve vaaz kürsüsü var. Zemin turkuaz halıyla kaplı; iki yan duvarda vitraylı pencereler görünür.",
+        "en": "A hall with a flat ceiling and white walls. A painted mihrab stands at the centre, a wooden minbar on the right, and the floor is covered with a turquoise carpet. Stained-glass windows flank the wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    }
+  ],
   "archive_media": []
 }

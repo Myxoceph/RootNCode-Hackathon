@@ -15,8 +15,8 @@
       "Çekirge Hüdâvendigâr Camii ile ilişkideki hedef kimlik (bursa-osmangazi-i-murad-hudavendigar-camii) metinde ilçe belirtilmediği için eşleştirme varsayımıdır; doğrulanmalı.",
       "Nilüfer Hatun Mescidi'nin (Hıdırlık) bursa-osmangazi-hidirlik-camii ile aynı yapı olduğu kitapta açıkça yazmıyor; eşleştirme varsayımdır.",
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -277,8 +277,70 @@
       "en": "İzzeddin Bey Mosque in Pınarbaşı Neighborhood is a building with plastered rubble-stone walls and a tiled wooden hipped roof. Its minaret was renewed in 1960. Beside it is the first distribution point of the Pınarbaşı water coming from Uludağ."
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-izzeddin-bey-camii/p087-1.jpg",
+        "original_name": "DJI_20241014171226_0614_D-Edit kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "356"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin sarı cephesi ve tuğla minaresi",
+        "en": "The mosque's yellow front and brick minaret"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı, sarı badanalı küçük cami ve yanında yüksek tuğla minare. Kıvrımlı bir yol, ağaçlar ve yamaca dizilmiş yapılar çevresinde görünüyor.",
+        "en": "A small yellow-plastered mosque with a tiled roof and a tall brick minaret beside it. A curving road, trees and hillside buildings surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-izzeddin-bey-camii/p087-2.jpg",
+        "original_name": "ERD01251 kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "356"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Yeşil duvarlı ve yeşil ahşap tavanlı geniş bir harim; sağda ahşap minber, solda kürsü var. Zeminde turkuaz halı, duvarlarda kemerli pencereler ve bir avize görünüyor.",
+        "en": "A wide prayer hall with green walls and a green wooden ceiling, a wooden minber on the right and a pulpit on the left. A turquoise carpet, arched windows and a chandelier are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

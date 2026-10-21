@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 304-306) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Hamamın inşa yılı kitapta yok; yalnızca külliye vakfiyesi (H. 938 / M. 1531) var. Kesin inşa tarihi VGM arşivinden bulunmalı.",
       "Vakfedilen 'Çekirge Sultan Adak Hamamı' için ilçe kitapta belirtilmiyor; relations[].target_id 'bursa-yildirim-...' varsayılan ilçeyle yazıldı, gerçek ilçe teyit edilip id düzeltilmeli.",
       "Külliyenin medresesi (yeniden yapılmış) ve türbesi için ayrı kayıt/id yok; varsa same_complex ilişkisi eklenmeli.",
-      "Mimar kitapta belirtilmiyor."
+      "Mimar kitapta belirtilmiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -422,8 +422,98 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hancerli-fatma-sultan-hamami/p026-1.jpg",
+        "original_name": "02 ERD05856 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "305"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hançerli Fatma Sultan Hamamı, dış cephe",
+        "en": "Hançerli Fatma Sultan Bath, exterior"
+      },
+      "alt": {
+        "tr": "Kısmen taş, kısmen beyaz sıvalı alçak yapı bir yol kenarında durur. Duvarlarda bilgi levhaları ve kapı vardır; çevresinde ağaçlar ve kaldırım bulunur.",
+        "en": "A low building, partly stone and partly white-plastered, beside a paved path. Information panels and a door are on the walls, with trees around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hancerli-fatma-sultan-hamami/p027-2.jpg",
+        "original_name": "05 ERD05825 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "306"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Hamamın kubbesi ve yıldız biçimli ışıklıkları",
+        "en": "Bath dome with star-shaped skylights"
+      },
+      "alt": {
+        "tr": "Beyaz kubbede yıldız biçimli küçük ışık delikleri düzenli halkalar oluşturur. Merkezde daha büyük bir açıklık, kenarda süslemeli bir kuşak vardır.",
+        "en": "A white dome with small star-shaped light openings arranged in rings. A larger opening is at the centre and a decorated band runs around the edge."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-01"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hancerli-fatma-sultan-hamami/p027-3.jpg",
+        "original_name": "06 ERD05837 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "306"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sarkıtlı niş ve kemerli geçit",
+        "en": "Muqarnas niche and arched passage"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı duvarda kademeli sarkıtlı bir niş ve altında kemerli bir geçit vardır. Alt kısımda mermer kaplama görünür.",
+        "en": "A white plastered wall has a stepped muqarnas niche above an arched passage. Marble cladding is visible at the bottom."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-01"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

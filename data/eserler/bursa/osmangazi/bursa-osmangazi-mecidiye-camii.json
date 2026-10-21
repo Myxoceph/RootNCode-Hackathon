@@ -11,14 +11,14 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Mahalle adı kitapta verilmiyor; location.neighborhood boş.",
       "Doğu duvarındaki H. 1323-1325 / M. 1905-1907 tarihlerinin anlamı (inşa mı, onarım mı) kitapta belirtilmiyor.",
       "Ahmet Vefik Paşa'nın valilik dönemi ve yapım yılı kitapta verilmiyor.",
       "Pınarbaşı Mezarlığı için ayrı kayıt yok.",
       "Bursa Ahmet Vefik Paşa Tiyatrosu kaydına bağlantı kitapta kurulmuyor; yalnızca aynı kişi anılıyor (same_founder eklenmedi).",
-      "Bu bölümün başlığı sayfa altında (s. 393) basılı olduğundan, bu metnin Mecidiye Camii'ne ait olduğu sayfa sırasından çıkarıldı; PDF sayfası 124 ile eşleştirilmeli."
+      "Bu bölümün başlığı sayfa altında (s. 393) basılı olduğundan, bu metnin Mecidiye Camii'ne ait olduğu sayfa sırasından çıkarıldı; PDF sayfası 124 ile eşleştirilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -288,7 +288,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mecidiye-camii/p124-1.jpg",
+        "original_name": "Mecidiye Camii 1.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "393"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Mecidiye Camii'nin minaresi ve çevresindeki mahalle",
+        "en": "Minaret of Mecidiye Mosque among the neighbourhood houses"
+      },
+      "alt": {
+        "tr": "Yüksekten bakıldığında dar bir sokağın kenarında ince, açık renkli bir minare yükselir. Çevrede kırmızı kiremitli çatılar, çok katlı evler ve arkada dağ eteği görünür.",
+        "en": "Seen from above, a slim pale minaret rises beside a narrow street. Red-tiled roofs, multi-storey houses and a mountain slope fill the surroundings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mecidiye-camii/p124-2.jpg",
+        "original_name": "Mecidiye Camii 3.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "393"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mecidiye Camii'nin iç mekânı, mihrap ve minber",
+        "en": "Interior of Mecidiye Mosque with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Kemerli büyük pencereleri ve tahta kaplı tavanı olan ibadet salonunun ortasında avizeli mihrap, sağda ahşap minber var. Alt duvarlar ahşap lambriyle kaplı, zeminde kırmızı desenli halı serilidir.",
+        "en": "A prayer hall with large arched windows and a panelled ceiling. A chandelier hangs before the mihrab, a wooden minbar stands on the right, and a red patterned carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mecidiye-camii/p124-3.jpg",
+        "original_name": "DJI_20241012200104_0573_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "393"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Mecidiye Camii'nin kuşbakışı çatı görünümü",
+        "en": "Aerial view of the roof of Mecidiye Mosque"
+      },
+      "alt": {
+        "tr": "Kuşbakışı çekilen karede koyu kırmızı kiremitli büyük bir çatı, yanındaki beyaz ve kiremit çatılarla sıkışık bir mahalle dokusunun içinde durur. Üst köşede minarenin tepesi seçilir.",
+        "en": "From directly above, a large dark red tiled roof sits among white and tiled roofs of a dense neighbourhood. The top of the minaret is visible in the upper corner."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    }
+  ],
   "archive_media": []
 }

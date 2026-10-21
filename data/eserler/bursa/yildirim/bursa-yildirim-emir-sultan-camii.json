@@ -11,12 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Emir Sultan Külliyesi bölümünden (s. 19-59) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup photos match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
       "Yapım tarihi kesin değil (kaynakta 'XV. yüzyıl'); 'dating.start_year' boş bırakıldı. Banî konusundaki farklı anlatımlar (Hundi Fatma Hatun / Hoca Kasım / II. Murad) kaynaklarla teyit edilmeli.",
       "Mimar kaynakta yok; 'architect' null.",
       "Hat levhalarının hattatları ve minber/kürsü hakkında ayrıntı kitapta yok.",
-      "Mihrap kavsarası ve Zümer/Âl-i İmrân ayetlerinin çevirisi kitapta verilmemiş (kitabe kaydında translation null)."
+      "Mihrap kavsarası ve Zümer/Âl-i İmrân ayetlerinin çevirisi kitapta verilmemiş (kitabe kaydında translation null).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -1010,8 +1010,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari anlatımdan (yalnızca kaynakta yazanlar) yapay zekâ taslağı olarak yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1szziOwS-QhLsMDMpFHb1JfpzFsmkCDr-",
+    "book_layout_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+    "book_pdf_name": "7-Emir Sultan.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-emir-sultan-camii/p022-2.jpg",
+        "original_name": "ERD01125 kopya.jpg",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "34"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Emir Sultan Camii mihrabı",
+        "en": "Mihrab of Emir Sultan Mosque"
+      },
+      "alt": {
+        "tr": "Süslemeli açık renkli mermer mihrap ve üstünde siyah zeminli yazı levhası vardır. Yanlarda pencereler ve şamdanlar, önde kırmızı halı görünür.",
+        "en": "An ornate pale marble mihrab with a black inscription panel above it. Windows and tall candlesticks flank it, and a red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-emir-sultan-camii/p017-1.jpg",
+        "original_name": "kitabe.jpg",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "29"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Altın yazılı kitabe levhaları",
+        "en": "Gold-lettered inscription panels"
+      },
+      "alt": {
+        "tr": "Siyah zeminli on iki dikdörtgen levhada altın sarısı Arap harfli yazılar sıralanır. Levhalar sarı zemin üzerinde üç sıra hâlindedir.",
+        "en": "Twelve rectangular black panels with gold Arabic-script lines, arranged in three rows on a yellow background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-emir-sultan-camii/p040-1.jpg",
+        "original_name": "ERD01325 kopya.jpg",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "52"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Çerçeveli hat levhası",
+        "en": "Framed calligraphy panel"
+      },
+      "alt": {
+        "tr": "Koyu oymalı ahşap çerçeve içinde, açık renk kâğıt üzerine dört satır siyah Arap harfli hat yazısı bulunur. Levha mavi gri bir paspartuyla çevrilidir.",
+        "en": "A calligraphy panel of four lines of black Arabic script on light paper, in a dark carved wooden frame with a blue-grey mat."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

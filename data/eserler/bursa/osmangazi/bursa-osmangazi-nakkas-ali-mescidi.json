@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve Drive klasörü henüz yok: 'media', 'archive_media' boş, 'media_folder' null; match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mescidin 'dating' yılı kitapta yok (yalnızca II. Murad dönemi); yıllar null bırakıldı.",
       "Mimar bilgisi kitapta yok.",
@@ -567,8 +566,98 @@
     },
     "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nakkas-ali-mescidi/p006-2.jpg",
+        "original_name": "1_1.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "399"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Nakkaş Ali Mescidi'nin ahşap sundurmalı cephesi",
+        "en": "Facade of Nakkaş Ali Masjid with its wooden porch"
+      },
+      "alt": {
+        "tr": "Taş ve ahşap hatıllı duvarlı yapının önünde geniş saçaklı, ahşap direkli bir sundurma bulunur. Sundurma demir korkuluklarla çevrilidir; arkada mavi bir apartman görünür.",
+        "en": "A stone building with timber bands and a wide-eaved porch on wooden posts at the front. Iron railings surround the porch, and a blue apartment block stands behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nakkas-ali-mescidi/p006-1.jpg",
+        "original_name": "2_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "399"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Nakkaş Ali Mescidi'nin içi, mihrap ve minber",
+        "en": "Interior of Nakkaş Ali Masjid with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı tavanı ve sarı duvarları olan sade salonda beyaz mihrap, sağda oyma ahşap minber vardır. Tavan kenarında yeşil bitkisel bordür, zeminde yeşilimsi halı görünür.",
+        "en": "A simple hall with a wooden ceiling and yellow walls, a white mihrab and a carved wooden minbar on the right. A green floral border runs under the ceiling and the carpet is greenish."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nakkas-ali-mescidi/p008-1.jpg",
+        "original_name": "5_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "401"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Haziredeki başlıklı mezar taşı",
+        "en": "Turbaned gravestone in the graveyard"
+      },
+      "alt": {
+        "tr": "Üstünde başlık biçimli taş bulunan, yazıtlı bir mezar taşı yeşil bitkilerin arasında durur. Yüzeyinde kabartma yazı satırları seçilir.",
+        "en": "A gravestone topped with a carved headdress stands among green plants. Lines of carved script cover its face."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

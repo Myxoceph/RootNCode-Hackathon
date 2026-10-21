@@ -10,7 +10,6 @@
     "from": "Osmangazi Camiler ve Hazireler 2",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
-      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Yapım yılı kitapta yok; yalnızca 1427 vakıf kaydından 'önce' çıkarımı var.",
       "'bursa-osmangazi-haci-ivaz-pasa-kulliyesi' kaydı bu işte oluşturulmadı; medrese/mektep/çarşı için ayrı kayıt ve ad kitapta yok.",
@@ -471,8 +470,98 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haci-ivaz-pasa-camii/p051-1.jpg",
+        "original_name": "1_3.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "320"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami, kubbeleri ve minaresi",
+        "en": "Mosque, domes and minaret"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla bantlı duvarlı, gri kurşun kaplı iki kubbeli cami ve yanında tek şerefeli minare görünür. Arkada geniş bir çarşı çatısı ve dağ yer alır.",
+        "en": "A mosque with stone and brick banded walls, two grey lead domes and a single-balcony minaret. A large market roof and a mountain are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haci-ivaz-pasa-camii/p052-1.jpg",
+        "original_name": "5-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "321"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap mahfilli harim",
+        "en": "Prayer hall with wooden gallery"
+      },
+      "alt": {
+        "tr": "Uzun harimde sağda ahşap direkli mahfil, solda çini şeritli pencere nişleri ve ahşap kaplı alt duvarlar vardır. Zemin turkuaz halıyla kaplıdır.",
+        "en": "A long prayer hall with a wooden gallery on posts on the right, tiled window niches on the left and wood-panelled lower walls. The floor has a turquoise carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haci-ivaz-pasa-camii/p053-2.jpg",
+        "original_name": "4.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "322"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Ahşap şadırvan ve avlu",
+        "en": "Wooden ablution fountain and courtyard"
+      },
+      "alt": {
+        "tr": "Kubbeli ahşap sekizgen şadırvan, taş döşemeli avluda caminin önünde durur. Arkada taş cephe ve ağaç dalları görünür.",
+        "en": "A domed octagonal wooden ablution fountain stands in a stone-paved courtyard in front of the mosque. A stone facade and tree branches are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

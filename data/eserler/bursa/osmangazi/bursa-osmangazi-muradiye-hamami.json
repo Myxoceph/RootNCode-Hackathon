@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
       "Hamamın bugünkü işlevi ve erişimi (2020 sonrası) kitapta yok.",
       "Hamamın vakfiye geliri/bağı kitapta belirtilmemiş."
@@ -440,7 +439,41 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-hamami/p018-1.jpg",
+        "original_name": "DJI_20241026155034_0385_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "127"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Muradiye Hamamı'nın köşeden görünümü",
+        "en": "The Muradiye Bathhouse seen from the corner"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş sıralı duvarlı hamamın üzerinde sekizgen, pembe renkli kubbe kasnağı yükseliyor. Kemerli kapı ve küçük pencereler sokağa bakıyor; kapı yanında kırmızı bir bayrak asılı.",
+        "en": "A bathhouse of banded brick and stone with a pink octagonal dome base rising above. An arched door and small windows face the street, with a red flag beside the door."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    }
+  ],
   "archive_media": []
 }

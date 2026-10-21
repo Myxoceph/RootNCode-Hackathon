@@ -15,8 +15,8 @@
       "Mimar ve vakıf bilgisi kitapta yok.",
       "Minare dibindeki çeşme için ayrı kayıt varsa bağlanmalı.",
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı). Fotoğraflar sonra match_photos.py ile eklenecek.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -326,8 +326,98 @@
       "en": "İsa Bey Fenârî Mosque has a square plan with sides of about eight metres. Its lead-clad dome sits on an octagonal drum and ends in a sawtooth cornice. A rubble-stone wall surrounds the courtyard. A short minaret stands in the northeast corner of the courtyard, with a pointed-arched fountain of cut stone and brick at its foot. The three-bay narthex is closed at the sides."
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-isa-bey-fenari-camii/p079-1.jpg",
+        "original_name": "İsabey Fenari Güdük Camii 1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "348"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi, cephesi ve kısa minaresi",
+        "en": "The mosque's dome, front and short minaret"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla şeritli, kemerli girişli cami; üstünde gri kubbe var. Solda kısa tuğla minare, çevrede ağaçlar, apartmanlar ve dağ yamacı görünüyor.",
+        "en": "A mosque of banded stone and brick with an arched entrance and a grey dome. A short brick minaret stands at the left, with trees, apartments and a hillside around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-isa-bey-fenari-camii/p080-1.jpg",
+        "original_name": "İsabey Fenari Güdük Camii 2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "349"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Krem duvarlı harimde ortada mihrap, sağda ahşap minber var. Tavanda üçgen kıvrımlı geçişler, duvarlarda hat levhaları ve kırmızı seccade desenli halı görünüyor.",
+        "en": "A cream-walled prayer hall with the mihrab at the centre and a wooden minber on the right. Faceted vault transitions overhead, calligraphy panels on the walls and a red prayer-rug-pattern carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-isa-bey-fenari-camii/p080-2.jpg",
+        "original_name": "DJI_20241002174514_0113_D-Edit.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "349"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı çatı görünümü",
+        "en": "Aerial view of the mosque roof"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı kubbe ve çevresindeki gri çatı yüzeyleri yukarıdan görünüyor. Yanında kiremitli çatılar, ağaçlar ve dar bir avlu var.",
+        "en": "The lead-covered dome and surrounding grey roofs seen from above. Tiled roofs, trees and a narrow courtyard lie beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

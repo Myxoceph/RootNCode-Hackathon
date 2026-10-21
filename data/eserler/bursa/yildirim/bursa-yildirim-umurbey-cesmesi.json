@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Umurbey Külliyesi bölümünden (s. 72) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
-      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
       "Çeşmeyi kimin yaptırdığı kitapta belirtilmiyor (founder: null); kitabe yalnızca Umur Bey'i 'hayırların sahibi' olarak anıyor.",
@@ -265,7 +263,69 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1FD1iP2dzVTcfHxxA_sKvRofOVQ5v77hb",
+    "book_layout_pdf_file_id": "1ClGGjU_FFWVNm3a8E9XzERe20ZKwzXti",
+    "book_pdf_name": "8-Umurbey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-umurbey-cesmesi/p011-1.jpg",
+        "original_name": "ERD07847 kopya.jpg",
+        "book_pdf_file_id": "1ClGGjU_FFWVNm3a8E9XzERe20ZKwzXti",
+        "book_pdf_name": "8-Umurbey Külliyesi.pdf",
+        "book_page": "72"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Umurbey Çeşmesi",
+        "en": "Umurbey Fountain"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş duvara gömülü sivri kemerli bir niş içinde beyaz taş bir çeşme ve küçük havuz var. Üstte sarı çerçeveli bir kitabe bulunur.",
+        "en": "A white stone fountain with a small basin sits in a pointed-arch niche in a brick and stone wall. A small yellow-framed inscription is above it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-umurbey-cesmesi/p011-2.jpg",
+        "original_name": "ERD07845 kopya.jpg",
+        "book_pdf_file_id": "1ClGGjU_FFWVNm3a8E9XzERe20ZKwzXti",
+        "book_pdf_name": "8-Umurbey Külliyesi.pdf",
+        "book_page": "72"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Çeşme kitabesi",
+        "en": "Fountain inscription"
+      },
+      "alt": {
+        "tr": "Siyah zemin üzerine sarı renkte yazılmış, iki bölmeli Arapça harfli kitabe. Kalın sarı bir çerçeve çevreler.",
+        "en": "A two-panel inscription in Arabic script, yellow on a black ground, inside a thick yellow frame."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    }
+  ],
   "archive_media": []
 }

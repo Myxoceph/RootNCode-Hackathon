@@ -11,13 +11,12 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 307-310) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
-      "Köprü bölümünün 308-309. sayfaları (PDF 29-30) metin içermiyor (muhtemelen görsel sayfa); eksik bilgi olup olmadığı kitaptan teyit edilmeli.",
       "Mimar kitapta belirtilmiyor.",
       "Köprü için uygun 'type' kodu yok; 'diger' kullanıldı, tür listesine 'köprü' eklenmesi değerlendirilmeli.",
       "Setbaşı ve Boyacıkulluğu köprüleri için ilçe kitapta belirtilmiyor; ilişki yazılmadı.",
-      "Vakıf (vakfiye) bilgisi kitapta yok."
+      "Vakıf (vakfiye) bilgisi kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -374,8 +373,98 @@
     },
     "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-irgandi-koprusu/p031-2.jpg",
+        "original_name": "11 ERD01569ai kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "310"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Irgandı Köprüsü, taş kemer ve üzerindeki yapı",
+        "en": "Irgandı Bridge, stone arch and building above"
+      },
+      "alt": {
+        "tr": "Dere yatağı üzerinde tek taş kemerli köprü ve üzerinde sarı renkli, ahşap pencereli çarşı yapısı görünür. Çevre ağaçlarla çevrilidir.",
+        "en": "A single stone arch spans a stream bed, with a yellow building with wooden windows on top. Trees surround the scene."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-irgandi-koprusu/p031-1.jpg",
+        "original_name": "05 DJI_20241015135759_0718_D-Edit.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "310"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Köprü ve çarşının kuşbakışı görünümü",
+        "en": "Bridge and market from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan, dere üzerinden geçen köprünün iki yanında uzun, kiremit çatılı iki sıra çarşı yapısı uzanır. Çevresinde ağaçlar ve dere yatağı bulunur.",
+        "en": "From above, two long tile-roofed rows of market buildings run along the bridge over the stream. Trees and the stream bed surround them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-irgandi-koprusu/p031-3.jpg",
+        "original_name": "08 ERD01524 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "310"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Köprüdeki çarşı sokağı",
+        "en": "Market street on the bridge"
+      },
+      "alt": {
+        "tr": "Taş döşeli dar sokağın iki yanında sarı boyalı, koyu ahşap kepenkli dükkânlar sıralanır. Üstte demir levhalı bir tabela asılıdır; sağda bilgi levhası vardır.",
+        "en": "A narrow stone-paved street lined with yellow shops with dark wooden shutters. An iron sign arches overhead and an information board is on the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

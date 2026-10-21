@@ -10,7 +10,6 @@
     "from": "Osmangazi Camiler ve Hazireler 2",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
-      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
       "Hacı Sinan'a ait 'Bursa'da iki mescit daha' kitapta adlandırılmıyor; same_founder ilişkisi kurulamadı.",
       "Ebced hesabı ile kitabedeki yıl arasındaki fark (872/873) uzman tarafından kontrol edilmeli."
@@ -507,8 +506,98 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hacilar-camii/p056-3.jpg",
+        "original_name": "ERD09772 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "325"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi ve ahşap tavanı",
+        "en": "Mosque interior and wooden ceiling"
+      },
+      "alt": {
+        "tr": "Uzun bir harim; sağda ahşap korkuluklu mahfil, solda kırmızı halı ve mihrap. Tavan kırmızı zemin üzerine geometrik ahşap çıtalarla süslü.",
+        "en": "A long prayer hall with a wooden-railed gallery on the right, red carpet and the mihrab at the far end. The ceiling is covered in geometric wooden strips on a red ground."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hacilar-camii/p057-1.jpg",
+        "original_name": "ERD09784 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "326"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Yıldız desenli ahşap tavan kasetleri",
+        "en": "Wooden ceiling panels with star pattern"
+      },
+      "alt": {
+        "tr": "Kırmızı ahşap tavanda mavi çıtalarla oluşturulmuş çok köşeli yıldız deseni; çevresindeki karelerde beyaz çiçek motifleri var.",
+        "en": "Red wooden ceiling panels with a multi-pointed star outlined in blue strips. The surrounding squares carry small white flower motifs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hacilar-camii/p057-2.jpg",
+        "original_name": "ERD09801 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "326"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Kalem işli sivri kemerli pencere",
+        "en": "Window with painted pointed arch"
+      },
+      "alt": {
+        "tr": "Beyaz duvarda yeşil çerçeveli, demir parmaklıklı bir pencere; üstünde gri tonlarda bitkisel kalem işi bezemeli sivri kemer var. Altta kırmızı halı görünüyor.",
+        "en": "A green-framed window with iron bars on a white wall, topped by a pointed arch painted with grey plant motifs. Red carpet is visible at the bottom."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
       "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
       "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
       "Çeşme, hamam ve türbenin ayrı bölümleri yok; ayrı kayıt açılmadı. Külliye üst kaydı bu nedenle oluşturulmadı.",
@@ -369,8 +368,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MSAPwPYfleCJID7tsM2Cex8h9sx8r_PW",
+    "book_layout_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+    "book_pdf_name": "8-Mudanya.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-hasan-misri-bey-camii/p024-1.jpg",
+        "original_name": "DJI_20241031212442_0928_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "593"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hasan Mısrî Bey Camii ve minaresi",
+        "en": "Hasan Mısrî Bey Mosque and its minaret"
+      },
+      "alt": {
+        "tr": "Kırma kırmızı kiremitli çatılı, taş ve beyaz duvarlı caminin yukarıdan görünümü. Önünde ahşap direkli bir sundurma, arkasında ince bir minare ve şehrin evleri var.",
+        "en": "High view of the stone and white-walled mosque with a red-tiled hipped roof. A timber-columned porch runs along its front, with a slender minaret and town houses behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-hasan-misri-bey-camii/p024-3.jpg",
+        "original_name": "ERD05723 kopya.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "593"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kapı üstündeki yazı kuşağı ve pencere",
+        "en": "Door, inscription band and window"
+      },
+      "alt": {
+        "tr": "Beyaz duvarda renkli camlı sivri kemerli bir pencere, altında siyah yazı kuşağı ve boyalı ahşap çerçeveli bir kapı bulunur. Duvarın alt kısmı ahşap kaplamadır.",
+        "en": "On a white wall, a pointed-arch window with coloured glass sits above a black inscription band and a door in a painted wooden frame. The lower wall is panelled in wood."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

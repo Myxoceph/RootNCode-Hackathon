@@ -11,12 +11,11 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
-      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
-      "Mektebin kitabesi fotoğrafla doğrulanıp ar_target_media_id bağlanmalı.",
       "Vakıf bilgisi (vakfiye, gelir) kaynakta yok.",
       "Mektebin tür kodu enums.json'da yok; 'diger' kullanıldı.",
-      "Câfer Çelebi türbesi ve Sa'dî Dergâhı hazire taşları için ayrı kayıt ihtiyacı değerlendirilmeli (kaynakta ilçe/ad bilgisi sınırlı)."
+      "Câfer Çelebi türbesi ve Sa'dî Dergâhı hazire taşları için ayrı kayıt ihtiyacı değerlendirilmeli (kaynakta ilçe/ad bilgisi sınırlı).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -422,7 +421,97 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haraccioglu-mektebi/p014-1.jpg",
+        "original_name": "DJI_20241018170322_0328_D-Edit.jpeg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "565"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Haraççıoğlu Mektebi dış görünüm",
+        "en": "Haraççıoğlu School exterior"
+      },
+      "alt": {
+        "tr": "Taş örgülü, kiremit çatılı alçak yapının tuğla bantlı bir bölümü ve kafesli bir penceresi vardır. Önünde çim ve taş döşeli bir yol uzanır.",
+        "en": "A low stone building with a tiled roof, a section with brick bands and a lattice window. A lawn and a stone-paved path lie in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haraccioglu-mektebi/p020-2.jpg",
+        "original_name": "4.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "571"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kubbeli dershane odası",
+        "en": "Domed classroom"
+      },
+      "alt": {
+        "tr": "Beyaz kubbeli odada ahşap çerçeveli pencereler, sedirler ve sıra masalar yer alır. Duvarda yazı levhaları ve bir mihrap, zeminde desenli döşeme görünür.",
+        "en": "A white domed room with wooden-framed windows, benches and low desks. Calligraphic plaques and a mihrab are on the wall, with a patterned floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haraccioglu-mektebi/p019-1.jpg",
+        "original_name": "ERD04023 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "570"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Bahçedeki mezar taşları ve mektep",
+        "en": "Gravestones in the garden and the school"
+      },
+      "alt": {
+        "tr": "Yeşilliklerin arasında sıra sıra eski mezar taşları uzanır. Arkada tuğla ve taş yapı, sağda moloz taş yüksek bir duvar görünür.",
+        "en": "Rows of old gravestones among greenery. A brick and stone building stands behind, and a tall rubble-stone wall is on the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    }
+  ],
   "archive_media": []
 }

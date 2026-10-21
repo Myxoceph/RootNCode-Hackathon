@@ -11,7 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
-      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
       "Medresenin kendi inşa tarihi ve müderrisleri bu bölümde yok.",
       "Müzenin ziyaret saatleri/ücreti kitapta yok.",
@@ -447,7 +446,94 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-medresesi/p003-1.jpg",
+        "original_name": "DJI_20241025141037_0007_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "112"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliyenin kuşbakışı görünümü",
+        "en": "Aerial view of the complex"
+      },
+      "alt": {
+        "tr": "Ağaçlar arasında gri kubbeli, iki minareli tuğla yapı ve önünde kurşun çatılı revak görülüyor. Arkada tepeye doğru yükselen kent uzanıyor.",
+        "en": "A brick building with grey domes and two minarets among trees, with a lead-roofed portico in front. The city climbs the hillside behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-medresesi/p011-1.jpg",
+        "original_name": "Kapak.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "120"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Medresenin üstten görünümü",
+        "en": "The madrasa seen from above"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı çatılı, kubbeli hücreleri ve bacaları olan tuğla yapı bir avluyu çeviriyor. Ortada camla kaplı bir bölüm, ön tarafta dalga desenli taş döşeme var.",
+        "en": "A brick building with lead roofs, domed cells and chimneys surrounds a courtyard. A glazed section stands in the middle, and wave-patterned paving lies in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-medresesi/p012-4.jpg",
+        "original_name": "ERD03320 kopya.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "121"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Medrese yanındaki bahçe ve kubbeli yapı",
+        "en": "Garden beside a domed madrasa building"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş duvarlı, kubbeli yapı taş döşeli bir yolun yanında duruyor. Önde çimenlik ve büyük ağaçlar var.",
+        "en": "A domed building of brick and stone beside a paved path. A lawn and large trees lie in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": []
 }

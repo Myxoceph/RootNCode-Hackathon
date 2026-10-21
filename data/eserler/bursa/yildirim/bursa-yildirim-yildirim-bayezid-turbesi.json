@@ -13,9 +13,8 @@
       "Kitabelerin dili kitapta belirtilmiyor ('other' işaretlendi); ikinci (mimar) kitabenin yeri belirtilmiyor.",
       "Sanduka sayısı kitapta toplam olarak verilmiyor (5 çıkarım); İsa Çelebi ve hanımın adı dışında kimlikler bilinmiyor.",
       "Türbenin ziyaret düzeni/açık olma durumu kitapta yok.",
-      "Koordinatlar kitapta yok; sahadan ya da fotoğraf EXIF'inden eklenmeli.",
-      "Fotoğraflar eklenmeli (media_folder ve media), match_photos.py ile bağlanacak; arşiv fotoğrafı (Zaman Perdesi) bulunmalı.",
-      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli."
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -821,8 +820,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "12yPc_UrR6yjVczGXdLgefVhSy0n3eSzx",
+    "book_layout_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+    "book_pdf_name": "10-Yıldırım Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yildirim-bayezid-turbesi/p050-1.jpg",
+        "original_name": "DJI_20240921180253_0459_D-Edit.jpg",
+        "book_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+        "book_pdf_name": "10-Yıldırım Külliyesi.pdf",
+        "book_page": "207"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin revaklı cephesi ve kubbesi",
+        "en": "Arcaded front and dome of the tomb"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla sıralı duvarlı türbenin önünde sivri kemerli bir revak vardır. Üzerinde kurşun kaplı kubbeler yükselir; önde taş döşemeli bir avlu uzanır.",
+        "en": "A tomb with walls of alternating stone and brick has an arcade of pointed arches at the front. Lead-covered domes rise above it, and a paved courtyard lies in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-21"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yildirim-bayezid-turbesi/p052-1.jpg",
+        "original_name": "ERD02232 kopya.jpg",
+        "book_pdf_file_id": "1T1zMW49gG4IgZe-bXmANEom2-f3GHS7u",
+        "book_pdf_name": "10-Yıldırım Külliyesi.pdf",
+        "book_page": "209"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Türbede örtülü sandukalar",
+        "en": "Covered sarcophagi inside the tomb"
+      },
+      "alt": {
+        "tr": "Yeşil demir korkuluklu bir bölümde işlemeli kırmızı ve siyah örtülü sandukalar durur. Başlarında beyaz ve yeşil sarıklı başlıklar vardır; arkada beyaz duvar ve avize görünür.",
+        "en": "Sarcophagi with embroidered red and black covers stand behind a green iron railing. White and green turbans top them, with a white wall and a chandelier behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-21"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

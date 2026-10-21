@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Yapım tarihi kitapta verilmiyor; dating boş bırakıldı.",
       "Başlıkta 'Camii ve Haziresi' yazmasına rağmen kitapta hazire bölümü/açıklaması yok; kontrol edilmeli.",
       "Mihrap arkasındaki kabir ve vakfiye kaydı dışında vakıf bilgisi yok; vakfiyenin Milâdî karşılığı kitapta verilmiyor.",
       "Koca Nâib'in türbesi için ayrı kayıt yok (Pınarbaşı Caddesi, Mevlevihane karşısı).",
-      "Era kitapta belirtilmiyor; banînin 1360-1372 faaliyetine dayanarak 'erken-osmanli' girildi, gözden geçirilmeli."
+      "Era kitapta belirtilmiyor; banînin 1360-1372 faaliyetine dayanarak 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -447,7 +447,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-koca-naip-camii/p113-1.jpg",
+        "original_name": "DJI_20241001142618_0535_D-Edit-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "382"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi, tuğla minaresi ve avlusu",
+        "en": "The mosque's dome, brick minaret and yard"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş cepheli cami; gri kubbe ve yüksek tuğla minare görünüyor. Önünde taş duvarla çevrili bahçe ile ağaçlar, arkada mahalle ve dağ yamacı yer alıyor.",
+        "en": "A mosque with brick and stone front, a grey dome and a tall brick minaret. A stone-walled yard and trees lie in front, with a hillside neighbourhood behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-koca-naip-camii/p115-1.jpg",
+        "original_name": "7 kocanaip.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "384"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yazıtlı üç mezar taşı",
+        "en": "Three inscribed gravestones"
+      },
+      "alt": {
+        "tr": "Yan yana duran üç gri mezar taşı; ortadakinin üstünde yuvarlak bir başlık var. Üzerlerinde kabartma Arapça yazılar, arkada tuğla duvar görünüyor.",
+        "en": "Three grey gravestones side by side, the middle one topped with a round finial. They carry relief Arabic inscriptions, with a brick wall behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    }
+  ],
   "archive_media": []
 }

@@ -11,10 +11,10 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 440) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı); fotoğraflar sonra match_photos.py ile eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Yapım tarihi ve banisi kitapta yok (kitabe yok); dating ve founder boş bırakıldı.",
-      "Çağ (era) belirlenemedi; era boş bırakıldı."
+      "Çağ (era) belirlenemedi; era boş bırakıldı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -208,7 +208,41 @@
     },
     "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-tahtali-mescidi/p047-1.jpg",
+        "original_name": "01 Kapak_11.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "440"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mescidin kiremit çatısı ve ahşap minaresi",
+        "en": "Masjid roof and timber minaret"
+      },
+      "alt": {
+        "tr": "Havadan görünüşte kırma kiremit çatılı küçük mescit ve taş kaideli, ahşap gövdeli ince minare. Mescit sokak kenarında; arkada yamaca yayılan renkli evler görünür.",
+        "en": "An aerial view of a small masjid with a hipped tile roof and a slender minaret with a stone base and timber shaft. The building stands beside a narrow street, with colourful houses climbing the hillside behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    }
+  ],
   "archive_media": []
 }

@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 300-302) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
       "Külliyenin ana kaydı (bursa-osmangazi-ebu-ishak-kulliyesi) bu aralıkta üretilmediği için parent_id null bırakıldı; mevcut bursa-osmangazi-ebu-ishak-turbesi ile same_complex ilişkisi eklendi.",
       "Külliyenin yok olan parçaları (imaret, mektep, halvethane/tabhane) için kayıt yok.",
       "Kitabenin Türkçe meali kitapta yok; dil/okunuş uzmanca teyit edilmeli.",
-      "Demirtaşpaşa Külliyesi/Orhan Camii ile mimari öncül/ardıl bağlantısı için ilişki eklenmedi; kitap yalnızca plan benzerliğini belirtiyor."
+      "Demirtaşpaşa Külliyesi/Orhan Camii ile mimari öncül/ardıl bağlantısı için ilişki eklenmedi; kitap yalnızca plan benzerliğini belirtiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -524,7 +524,69 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ebu-ishak-kazeruni-camii/p033-2.jpg",
+        "original_name": "4-4.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "302"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Beş gözlü revak ve sıva duvar",
+        "en": "Arcaded portico along the white wall"
+      },
+      "alt": {
+        "tr": "Taş ayaklı kemerli revak boyunca kiremit renkli zemin uzanır. Sağda beyaz duvarda demir parmaklıklı ahşap pencere ve duvar lambası vardır.",
+        "en": "A porch of arches on stone piers with a terracotta-coloured floor. On the right a white wall has a wooden window with iron bars and a wall lamp."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ebu-ishak-kazeruni-camii/p032-2.jpg",
+        "original_name": "ERD07946 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "301"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Üç satırlık taş kitabe",
+        "en": "Three-line stone inscription"
+      },
+      "alt": {
+        "tr": "Taş üzerine üç yatay satır hâlinde işlenmiş, aşınmış yazılı uzun bir kitabe görünür.",
+        "en": "A long weathered stone inscription carved in three horizontal lines of script."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    }
+  ],
   "archive_media": []
 }

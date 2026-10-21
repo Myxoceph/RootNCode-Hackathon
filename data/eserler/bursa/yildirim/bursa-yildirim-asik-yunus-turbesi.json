@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
     "todos": [
       "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
-      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
       "Türbenin yapım yılı ve yaptıranı kaynakta yok (Kunter anlatımı Yedekçizâde Ali Efendi'yi anıyor ancak tarih vermiyor).",
       "Mevcut kitabelerin metni kitapta verilmiyor; 'inscriptions' boş.",
       "Türbenin hâlâ mı yoksa yeniden mi inşa edildiği, bugün hangi unsurların ayakta olduğu kitapta net değil; sahada kontrol edilmeli.",
       "Çeşme kitabesinin (1801) alanda hâlen durup durmadığı kitapta belirsiz.",
-      "Mimar kaynakta yok."
+      "Mimar kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -378,7 +378,69 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-asik-yunus-turbesi/p003-2.jpg",
+        "original_name": "01 ERD04041 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "282"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Âşık Yunus Türbesi, demir kafesli yapı",
+        "en": "Tomb of Âşık Yunus, iron cage structure"
+      },
+      "alt": {
+        "tr": "Mezarların üzerini örten, koyu yeşil demir kafes kubbe biçimindedir; kafes uçları süslü ve sivridir. İçinde çalılar ve gül çiçekleri, arkada apartman duvarı görünür.",
+        "en": "A dark green iron cage with an ornate dome-like top covers the graves; its bars end in spear points. Shrubs and roses are inside, with an apartment wall behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-asik-yunus-turbesi/p003-1.jpg",
+        "original_name": "02 DJI_20240925195924_0784_D.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "282"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Demir kafesin kuşbakışı görünümü",
+        "en": "Iron cage seen from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan, dikdörtgen demir kafes ortada halka biçiminde birleşen ışınsal çubuklardan oluşur. İçinde yeşil bitkiler, çevresinde renkli taşlarla döşeli zemin vardır.",
+        "en": "From above, a rectangular iron cage whose bars radiate to a central ring. Green plants are inside and the ground around is paved with coloured stones."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    }
+  ],
   "archive_media": []
 }

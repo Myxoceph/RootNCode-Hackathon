@@ -11,10 +11,10 @@
     "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 472-473) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
-      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Caminin vakfiyesi, mimarı ve minarenin tam yaşı kitapta yok.",
-      "Hazire mezar taşı metinleri kitapta yok; yalnızca isimler var."
+      "Hazire mezar taşı metinleri kitapta yok; yalnızca isimler var.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -342,7 +342,97 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veli-semseddin-camii/p079-1.jpg",
+        "original_name": "01 Kapak_4.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "472"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin giriş yapısı ve minaresi",
+        "en": "Entrance building and minaret of the mosque"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı, kiremit çatılı küçük yapının arkasında tuğla örgülü uzun minare yükselir. Önünde korkuluklu merdiven, yanında bir ağaç, arkada yamaçtaki kent görülür.",
+        "en": "A small yellow-plastered building with a tiled roof, with a tall brick minaret rising behind it. A railed stair leads up to it, with a tree beside it and the hillside city behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veli-semseddin-camii/p080-2.jpg",
+        "original_name": "05 yahni-2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "473"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Cami haziresi ve mezar taşları",
+        "en": "Mosque cemetery with gravestones"
+      },
+      "alt": {
+        "tr": "Taş duvarın dibinde, yeşilliklerin arasında kitabeli ve sarıklı mezar taşları. Ağaçlar gölge yapar; duvarda demir parmaklıklı bir pencere vardır.",
+        "en": "Inscribed gravestones, some turban-topped, stand among greenery beside a stone wall with a barred window. Trees shade the cemetery."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veli-semseddin-camii/p080-3.jpg",
+        "original_name": "08 Yahni.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "473"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Yazıtlı mezar taşı",
+        "en": "Inscribed gravestone"
+      },
+      "alt": {
+        "tr": "Yüzeyi baştan başa kabartma yazılarla kaplı uzun, silindirik taş. Yeşil bitkilerin ve bir ağaç gövdesinin yanında dik durur.",
+        "en": "A tall cylindrical stone covered in relief inscription, standing upright beside green plants and a tree trunk."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    }
+  ],
   "archive_media": []
 }

@@ -14,8 +14,8 @@
       "Balibey Hanı'nın kayıt id'si tahmini.",
       "Türbenin tam yapım yılı yok (yalnızca XIV. yüzyıl).",
       "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
-      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
-      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -367,8 +367,42 @@
     },
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-okcu-baba-turbesi/p021-2.jpg",
+        "original_name": "02_4.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "510"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Okçu Baba Türbesinin içi",
+        "en": "Inside Okçu Baba Tomb"
+      },
+      "alt": {
+        "tr": "Sanduka kırmızı beyaz bir bayrak ve yeşil örtüyle kaplı; başucunda yeşil sarık var. Beyaz kubbeli odada perdeli pencereler, duvarda çerçeveli levhalar ve mavi halı görünür.",
+        "en": "The sarcophagus is covered with a red and white flag and a green cloth, with a green turban at its head. The white domed room has curtained windows, framed panels and a blue carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

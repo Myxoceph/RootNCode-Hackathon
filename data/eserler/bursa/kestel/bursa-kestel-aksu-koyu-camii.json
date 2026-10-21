@@ -14,7 +14,6 @@
       "Caminin dönem (era) bilgisi kitapta kesin değil; era boş bırakıldı.",
       "Çiçek Dede ve Sâmit Dede ile caminin ilişkisi kitapta yalnızca iskân bağlamında anlatılıyor.",
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
-      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
     ],
     "data_quality_notes": [
@@ -229,7 +228,41 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1cxeDobWd9zo-NOT3PQQ4p-OdJNj-7SA2",
+    "book_layout_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+    "book_pdf_name": "7-Kestel.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-aksu-koyu-camii/p006-2.jpg",
+        "original_name": "05 ERD07453 kopya.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "547"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin minaresi ve köy sokağı",
+        "en": "Mosque minaret and village street"
+      },
+      "alt": {
+        "tr": "Tuğla gövdeli ince minare, krem renkli caminin yanında yükselir. Kaldırım taşlı sokakta ahşap evler ve ağaçlar görülür.",
+        "en": "A slender brick minaret rises beside a cream-coloured mosque. A cobbled street runs past timber houses and trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    }
+  ],
   "archive_media": []
 }

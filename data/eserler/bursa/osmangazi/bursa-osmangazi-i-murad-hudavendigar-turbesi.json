@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki I. Murad Hudâvendigâr Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor.",
       "Türbenin ilk yapım yılı kitapta yok; dating 1863 yeniden inşasını gösteriyor.",
@@ -581,7 +579,41 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1Nh5U0z8qZBwN7XodcyZLe_IqCfD3wrcx",
+    "book_layout_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+    "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-turbesi/p030-2.jpg",
+        "original_name": "DJI_20240929130549_0387_D-Enhanced-NR-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "105"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Türbenin üstten görünümü",
+        "en": "Top-down view of the tomb"
+      },
+      "alt": {
+        "tr": "Kare planlı türbenin gri kurşun çatısı ve ortasındaki yuvarlak kubbe tepeden görülüyor. Çevresinde ağaçlar ve bir yol var.",
+        "en": "The grey lead roof of the square tomb and its round central dome seen from directly above. Trees and a road surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-29"
+    }
+  ],
   "archive_media": []
 }

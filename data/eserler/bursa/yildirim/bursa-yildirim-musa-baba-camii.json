@@ -11,8 +11,6 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 243-248) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir. Hazire kitapta cami bölümüyle birlikte (Musa Baba Camii ve Haziresi) ele alındığı için bu kayıtta bir bölüm olarak yer alır.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
-      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Kesin inşa yılı kitapta yok; kitap 'rivayete göre XVI. yüzyıl başı' diyor.",
       "Mimar bilgisi kitapta yok.",
@@ -685,7 +683,41 @@
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
   "ambient_sound": null,
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-musa-baba-camii/p032-1.jpg",
+        "original_name": "01 DJI_20240926145257_0019_D-Edit.jpeg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "243"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Musa Baba Camii, kubbe ve minare",
+        "en": "Musa Baba Mosque, dome and minaret"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla ve taş sıralı küçük bir cami, gri kubbesi ve yanındaki ince kırmızı tuğlalı minaresiyle görünür. Arkada apartmanlar ve dağ vardır.",
+        "en": "A small mosque of red brick and stone courses with a grey dome and a slim red brick minaret beside it. Apartment blocks and a mountain are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    }
+  ],
   "archive_media": []
 }

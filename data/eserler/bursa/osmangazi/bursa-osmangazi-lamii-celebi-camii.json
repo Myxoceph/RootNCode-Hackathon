@@ -11,13 +11,13 @@
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
-      "Fotoğraf ve arşiv görseli bulunmalı; media, archive_media ve media_folder boş (Drive id'leri uydurulmadı).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
       "Banî Lâmiî Çelebi'nin hayat tarihleri ve mescidin vakıf durumu kitapta yok.",
       "Nakkaş Ali'nin yaptırdığı mescit ve Yeşil Külliye için hedef kayıt eklenmedi (ilçe ve id kitapta verilmiyor).",
       "Sahibenin kimliği kitapta belirtilmiyor ('sahibesi').",
       "Yapı kitapta 'cami' başlığıyla, metinde ise 'mescit' olarak anılıyor; tür 'cami' girildi, gözden geçirilmeli.",
-      "Minare yükseklik/ölçü bilgisi yok."
+      "Minare yükseklik/ölçü bilgisi yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -314,7 +314,41 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-lamii-celebi-camii/p119-2.jpg",
+        "original_name": "ERD04894 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "388"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı dikdörtgen harimde ortada beyaz mukarnaslı mihrap, sağda yeşil süslü ahşap minber var. Sarı camlı, ahşap panjurlu pencereler ve mavi halı görünüyor.",
+        "en": "A rectangular hall with a wooden ceiling, a white muqarnas mihrab at the centre and a wooden minber with green decoration on the right. Windows with yellow glass and shutters, and a blue carpet, are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    }
+  ],
   "archive_media": []
 }
