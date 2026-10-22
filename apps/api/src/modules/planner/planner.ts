@@ -9,16 +9,19 @@ export const WALK_METERS_PER_MINUTE = 80;
 export const MAX_LEG_WALK_METERS = 3_000;
 
 // Used while the dataset has no `visit` block (as of 2026-10 no record has one).
-const DEFAULT_VISIT_MINUTES: Record<string, number> = {
+export const DEFAULT_VISIT_MINUTES: Record<string, number> = {
   kulliye: 45, cami: 20, mescit: 10, turbe: 10, hazire: 10, hamam: 20, medrese: 15, imaret: 15,
   darussifa: 15, mektep: 10, tekke: 15, han: 20, bedesten: 20, kervansaray: 25, cesme: 5, sivil: 10,
+  makam: 10, kilise: 15, kutuphane: 10, namazgah: 5, kopru: 10, degirmen: 10, hoyuk: 15,
 };
 const FALLBACK_VISIT_MINUTES = 10;
 
-const DEFAULT_SETTING: Record<string, VisitSetting> = {
+export const DEFAULT_SETTING: Record<string, VisitSetting> = {
   cami: "indoor", mescit: "indoor", turbe: "indoor", hamam: "indoor", medrese: "indoor", imaret: "indoor",
   darussifa: "indoor", mektep: "indoor", tekke: "indoor", han: "indoor", bedesten: "indoor", kervansaray: "indoor",
-  cesme: "outdoor", hazire: "outdoor", kulliye: "mixed", sivil: "mixed",
+  makam: "indoor", kilise: "indoor", kutuphane: "indoor",
+  cesme: "outdoor", hazire: "outdoor", namazgah: "outdoor", kopru: "outdoor", degirmen: "outdoor", hoyuk: "outdoor",
+  kulliye: "mixed", sivil: "mixed",
 };
 
 /** With `preferIndoor`, an outdoor site counts as this many times farther when choosing the next stop. */

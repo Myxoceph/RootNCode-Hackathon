@@ -64,7 +64,7 @@ eserleri listelenir, Ulucami detayında kaynak sayfaları, güven rozetleri ve i
 | # | Görev | Sorumlu | Tamamlanma kriteri |
 |---|---|---|---|
 | E1 | Kitap metinleri ve Drive fotoğraflarının kullanım izni için organizasyona yazılı soru ([`data/eksikler.md`](../../data/eksikler.md) §1) | Ahmet + Hüseyin | E-posta gönderildi; yanıt geldiğinde `data/eksikler.md`'ye işlendi |
-| E2 | Namazgâh ve köprü için `asset_types` kodu eklenip eklenmeyeceği (şimdilik `diger`) | Hüseyin + Ahmet | Karar verildi; gerekiyorsa `enums.json` ve ilgili kayıtlar güncellendi |
+| E2 ✅ | Namazgâh ve köprü için `asset_types` kodu eklenip eklenmeyeceği (şimdilik `diger`) | Hüseyin + Ahmet | Karar verildi; gerekiyorsa `enums.json` ve ilgili kayıtlar güncellendi · 7 yeni tür (`makam`, `kilise`, `kutuphane`, `namazgah`, `kopru`, `degirmen`, `hoyuk`), 18 kayıt yeniden sınıflandırıldı |
 
 ---
 

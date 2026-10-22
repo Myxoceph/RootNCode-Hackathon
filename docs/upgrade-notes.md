@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-22 · Yeni eser türleri (E2)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- `data/enums.json` → `asset_types`: `makam`, `kilise`, `kutuphane`, `namazgah`, `kopru`, `degirmen`, `hoyuk`.
+- 18 kaydın türü değişti (çoğu `diger`'den). `/meta/enums` ve `/assets?type=` yeni kodları döndürüyor; sözleşme değişmedi.
+- Planner bu türler için de varsayılan ziyaret süresi ve iç/dış mekân tahmini kullanıyor.
+
 ## 2026-10-22 · Sözleşme v0.3.0: eski `Monument` şeması kaldırıldı
 
 Kimler: **sözleşmeyi kullananlar** (kurulum adımı yok)

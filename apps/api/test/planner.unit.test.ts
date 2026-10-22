@@ -1,6 +1,9 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it, vi } from "vitest";
 import type { Point } from "../src/modules/assets/assets.network.ts";
 import {
+  DEFAULT_SETTING,
+  DEFAULT_VISIT_MINUTES,
   MAX_LEG_WALK_METERS,
   planRoute,
   visitProfile,
@@ -35,6 +38,16 @@ describe("visitProfile", () => {
     expect(visitProfile({ typeCode: "unknown-type", visitMinutes: null, setting: null })).toMatchObject({
       visitMinutes: 10, setting: "mixed",
     });
+  });
+
+  it("has defaults for every asset type in data/enums.json except diger", () => {
+    const enums = JSON.parse(readFileSync(new URL("../../../data/enums.json", import.meta.url), "utf8")) as {
+      asset_types: Array<{ code: string }>;
+    };
+    const missing = enums.asset_types
+      .map(({ code }) => code)
+      .filter((code) => code !== "diger" && (!(code in DEFAULT_VISIT_MINUTES) || !(code in DEFAULT_SETTING)));
+    expect(missing).toEqual([]);
   });
 });
 
