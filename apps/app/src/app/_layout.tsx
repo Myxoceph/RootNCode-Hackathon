@@ -56,6 +56,7 @@ function ThemedStack() {
         <Stack.Screen name="time-curtain" options={{ headerShown: false, title: "Zaman Perdesi" }} />
         <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
         <Stack.Screen name="ar-prototype" options={{ headerShown: false, title: "AR prototipi" }} />
+        <Stack.Screen name="map-prototype" options={{ headerShown: false, title: "Harita prototipi" }} />
         <Stack.Screen name="+not-found" options={{ title: "Sayfa bulunamadı" }} />
       </Stack>
     </ThemeProvider>
