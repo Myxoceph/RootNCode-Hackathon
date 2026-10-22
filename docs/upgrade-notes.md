@@ -7,6 +7,19 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-22 · AR prototipi için WebView
+
+Kimler: **uygulamayı çalıştıranlar**
+
+1. Yeni paketleri kur (`react-native-webview`, `expo-camera`):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Geliştirme modunda `Kamera` sekmesinde **AR prototipi** var: MindAR ile gerçek kitabe takibi (Y5, [ADR 0002](decisions/0002-ar-approach.md)). Test görselleri `apps/app/src/ar/test-targets/` altında; birini bilgisayar ekranında açıp telefonla tara.
+- Prototip MindAR'ı jsDelivr'den indirir, bu yüzden internet gerekir.
+
 ## 2026-10-22 · Bursa'da 238 kayda kitap fotoğrafları
 
 Kimler: **API'yi yerelde çalıştıranlar**
