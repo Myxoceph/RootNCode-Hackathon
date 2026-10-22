@@ -21,7 +21,7 @@ const modes: Array<{ href: Href; icon: ComponentProps<typeof Ionicons>["name"]; 
     description: "Kapıdaki kitabeye odaklan: hat parlar, okunuşu, meali ve vakfiye şartı belirir.",
     web: "Web'de: kitabe metni, meal ve vakfiye şartı doğrudan okunur.",
   },
-  // The AR decision record's prototype (Y5); development builds only.
+  // The decision records' prototypes (Y5 AR, Y6 map); development builds only.
   ...(__DEV__
     ? [
         {
@@ -30,6 +30,13 @@ const modes: Array<{ href: Href; icon: ComponentProps<typeof Ionicons>["name"]; 
           title: "AR prototipi",
           description: "Gerçek kitabe takibi: MindAR, WebView içinde. Test görselini başka bir ekranda aç.",
           web: "Web'de: aynı sayfa tarayıcının kamerasıyla çalışır.",
+        },
+        {
+          href: "/map-prototype" as Href,
+          icon: "map-outline" as const,
+          title: "Harita prototipi",
+          description: "API'deki koordinatlarla gerçek harita: MapLibre, telefonda WebView içinde.",
+          web: "Web'de: MapLibre doğrudan tarayıcıda.",
         },
       ]
     : []),

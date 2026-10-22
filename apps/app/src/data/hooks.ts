@@ -53,6 +53,15 @@ export function useAssetRelations(id: string): ResourceWithRetry<AssetRelationsR
   return useResource(load);
 }
 
+/** Every published asset that has coordinates, in one request (the API allows 500), for the map. */
+export function useMapAssets(city?: string): ResourceWithRetry<{ located: AssetSummary[]; total: number }> {
+  const load = useCallback(async () => {
+    const page = await dataSource.listAssets({ city, limit: 500, offset: 0 }, LANG);
+    return { located: page.items.filter((asset) => asset.coordinates !== null), total: page.total };
+  }, [city]);
+  return useResource(load);
+}
+
 export function useCities(): ResourceWithRetry<CityOption[]> {
   const load = useCallback(() => dataSource.listCities(LANG), []);
   return useResource(load);

@@ -5,6 +5,7 @@ export {
   useAssetList,
   useAssetRelations,
   useCities,
+  useMapAssets,
   type AssetListPage,
   type Resource,
   type ResourceWithRetry,

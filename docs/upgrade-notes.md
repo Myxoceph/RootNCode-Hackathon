@@ -7,6 +7,15 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-22 · Harita prototipi
+
+Kimler: **uygulamayı çalıştıranlar**
+
+Kurulum adımı yok (harita, AR ile gelen `react-native-webview`'ı kullanıyor).
+
+Değişenler:
+- Geliştirme modunda `Kamera` sekmesinde **Harita prototipi** var: API'deki koordinatlarla MapLibre haritası (Y6, [ADR 0003](decisions/0003-map-approach.md)).
+- API'nin çalışıyor olması ve internet gerekir (MapLibre jsDelivr'den, harita karoları OpenFreeMap'ten gelir).
 ## 2026-10-22 · Yeni eser türleri (E2)
 
 Kimler: **API'yi yerelde çalıştıranlar**
