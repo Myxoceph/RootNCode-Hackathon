@@ -7,6 +7,19 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-22 · Harita prototipi
+
+Kimler: **uygulamayı çalıştıranlar**
+
+1. Yeni paketi kur (`react-native-maps`):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Geliştirme modunda `Kamera` sekmesinde **Harita prototipi** var: API'deki koordinatlarla gerçek harita (Y6, [ADR 0003](decisions/0003-map-approach.md)). Telefonda MapLibre ile `react-native-maps` arasında geçiş yapılabilir.
+- API'nin çalışıyor olması ve internet gerekir (MapLibre jsDelivr'den, harita karoları OpenFreeMap'ten gelir).
+
 ## 2026-10-22 · AR prototipi için WebView
 
 Kimler: **uygulamayı çalıştıranlar**
