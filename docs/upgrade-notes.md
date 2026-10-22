@@ -7,6 +7,17 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-22 · Sözleşme v0.3.0: eski `Monument` şeması kaldırıldı
+
+Kimler: **sözleşmeyi kullananlar** (kurulum adımı yok)
+
+Değişenler:
+- `packages/contracts`'tan `Monument`, `MonumentsPayloadSchema`, `MONUMENTS_CONTRACT_VERSION` ve `mock_monuments.json` kaldırıldı. Uygulama bunları #48'den beri kullanmıyordu.
+- `npm run contracts:validate` artık uygulamanın fixture'larını (`apps/app/src/data/fixtures`) doğruluyor. Sözleşme sürümü değişince fixture'ları API'den yeniden al:
+  ```bash
+  npm run fixtures --workspace @vagabonds/app   # API çalışırken
+  ```
+
 ## 2026-10-22 · AR prototipi için WebView
 
 Kimler: **uygulamayı çalıştıranlar**
