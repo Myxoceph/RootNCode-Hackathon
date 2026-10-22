@@ -1,6 +1,6 @@
 # ADR 0003: Harita için MapLibre, her platformda
 
-- **Durum:** Önerildi (telefon ölçümleri bekleniyor)
+- **Durum:** Kabul edildi (Android'de doğrulandı; iOS açık)
 - **Tarih:** 2026-10-22
 - **Karar veren:** Yiğit Top (Y6)
 
@@ -48,25 +48,32 @@ Harita her platformda **MapLibre GL JS** ile çizilir: web'de bir iframe'de, tel
 ## Prototip
 
 `Kamera → Harita prototipi` ekranı (yalnızca geliştirme modunda, `apps/app/src/app/map-prototype.tsx`).
-API'den koordinatı olan eserleri şehre göre gösterir. Telefonda MapLibre ile `react-native-maps`
-arasında geçiş yapılabilir; panelde haritanın kaç saniyede çizildiği ve kaç eserin koordinatı
+API'den koordinatı olan eserleri şehre göre gösterir. Karşılaştırma sırasında telefonda
+`react-native-maps`'e geçiş de vardı; panelde haritanın kaç saniyede çizildiği ve kaç eserin koordinatı
 olduğu yazar.
 
 ### Sonuçlar
 
 | Ölçüm | Web (masaüstü Chrome) | Android: MapLibre | Android: react-native-maps | iOS |
 |---|---|---|---|---|
-| Harita ve pinler çizildi | 0,6–0,8 sn | | | Denenmedi |
-| Koordinatlı eser (Bursa) | 185 / 356 | | | |
-| Kümeleme | Var | | Yok | |
-| Pine dokunma, eser kartı | Çalışıyor | | | |
-| Kaydırma / yakınlaştırma akıcılığı | – | | | |
-| Tema renkleri | Uygulanıyor | | Uygulanmıyor | |
+| Harita ve pinler çizildi | 0,6–0,8 sn | 1 sn | Çizilmedi¹ | Denenmedi |
+| Koordinatlı eser (Bursa) | 185 / 356 | 185 / 356 | – | |
+| Kümeleme | Var | Var | Yok | |
+| Pine dokunma, eser kartı | Çalışıyor | Çalışıyor; kümeye dokununca yakınlaşıyor | – | |
+| Kaydırma / yakınlaştırma akıcılığı (Tümü, 185+ eser) | – | Akıcı | – | |
+| Tema renkleri | Uygulanıyor | Uygulanıyor | Uygulanmıyor | |
+
+Android testi: Honor 400 (Android 16), Expo Go, 2026-10-22.
+
+¹ Google Maps başladı (logosu göründü), ama ne harita karoları ne de işaretler çizildi. Logo görünüp
+haritanın boş kalması, Google Maps'in API anahtarını kabul etmediğinde görülen durum; sebebi cihaz
+loglarıyla doğrulanmadı. Yayın sürümünde de kendi Google Maps anahtarımız (faturalandırması açık bir
+Google Cloud projesi) gerekeceği için bu yol araştırılmadı.
 
 ## Sonuçlar
 
-- Bağımlılıklar: `react-native-webview` (ADR 0002 ile geldi). `react-native-maps` (1.27.2) yalnızca
-  karşılaştırma için eklendi; karar kesinleşince kaldırılır.
+- Yeni bağımlılık yok: harita, ADR 0002 ile gelen `react-native-webview`'ı kullanıyor.
+  `react-native-maps` yalnızca bu karşılaştırma için eklenmişti ve kaldırıldı.
 - **İnternet gerekiyor:** MapLibre jsDelivr'den, karolar OpenFreeMap'ten geliyor. Gerçek kullanımdan
   önce kütüphane kendi sunucumuzdan verilmeli; karo sağlayıcısının erişimi ve atfı demo öncesi kontrol edilmeli.
 - **Kübra'nın sis haritası:** Hayrat'ın sis ve bağ çizgileri bu haritaya katman olarak taşınabilir

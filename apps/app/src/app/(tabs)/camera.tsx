@@ -35,7 +35,7 @@ const modes: Array<{ href: Href; icon: ComponentProps<typeof Ionicons>["name"]; 
           href: "/map-prototype" as Href,
           icon: "map-outline" as const,
           title: "Harita prototipi",
-          description: "API'deki koordinatlarla gerçek harita: MapLibre ve react-native-maps yan yana.",
+          description: "API'deki koordinatlarla gerçek harita: MapLibre, telefonda WebView içinde.",
           web: "Web'de: MapLibre doğrudan tarayıcıda.",
         },
       ]

@@ -2,32 +2,23 @@ import { Button, Card, fontFamily, radius, spacing, Text, useTheme } from "@vaga
 import { Link, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useMemo, useRef, useState } from "react";
-import { Platform, Pressable, StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CityPicker } from "@/components/city-picker";
-import { Segmented } from "@/components/segmented";
 import { useCities, useMapAssets } from "@/data";
-import { MapLibreMap, NativeMap, type MapPin } from "@/map";
-
-type Renderer = "maplibre" | "native";
-
-const renderers: ReadonlyArray<{ value: Renderer; label: string }> = [
-  { value: "maplibre", label: "MapLibre (WebView)" },
-  { value: "native", label: "react-native-maps" },
-];
+import { MapLibreMap, type MapPin } from "@/map";
 
 /**
  * Map prototype for the decision record (Y6, ADR 0003): published assets with
- * coordinates on a real map, with the two candidate renderers side by side on
- * phones. Reached from the Kamera tab in development, like the AR prototype.
+ * coordinates on the MapLibre map. Reached from the Kamera tab in development,
+ * like the AR prototype.
  */
 export default function MapPrototypeScreen() {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const [city, setCity] = useState<string | undefined>("bursa");
-  const [renderer, setRenderer] = useState<Renderer>("maplibre");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [readyMs, setReadyMs] = useState<number | null>(null);
   const [mapError, setMapError] = useState<string | null>(null);
@@ -50,14 +41,8 @@ export default function MapPrototypeScreen() {
   );
   const selected = data?.located.find((a) => a.id === selectedId) ?? null;
 
-  const restartClock = () => {
-    started.current = Date.now();
-    setReadyMs(null);
-    setMapError(null);
-  };
   const onReady = useCallback(() => setReadyMs(Date.now() - started.current), []);
 
-  const Map = renderer === "native" && Platform.OS !== "web" ? NativeMap : MapLibreMap;
   const count =
     assets.status === "success"
       ? `${assets.data.located.length} / ${assets.data.total} eserin koordinatı var`
@@ -70,14 +55,13 @@ export default function MapPrototypeScreen() {
       <Head>
         <title>Harita prototipi · Vagabonds</title>
       </Head>
-      <Map
-        key={renderer}
+      <MapLibreMap
         pins={pins}
         selectedId={selectedId}
         onSelect={setSelectedId}
         onReady={onReady}
         onError={setMapError}
-        fitPadding={{ top: insets.top + 190, right: 32, bottom: insets.bottom + 220, left: 32 }}
+        fitPadding={{ top: insets.top + 140, right: 32, bottom: insets.bottom + 220, left: 32 }}
         style={StyleSheet.absoluteFill}
       />
 
@@ -104,18 +88,6 @@ export default function MapPrototypeScreen() {
             onSelect={(code) => {
               setCity(code);
               setSelectedId(null);
-            }}
-          />
-        )}
-        {Platform.OS !== "web" && (
-          <Segmented
-            label="Harita"
-            look="track"
-            options={renderers}
-            value={renderer}
-            onChange={(value) => {
-              restartClock();
-              setRenderer(value);
             }}
           />
         )}

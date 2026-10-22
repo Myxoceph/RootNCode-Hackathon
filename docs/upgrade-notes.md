@@ -11,13 +11,10 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 Kimler: **uygulamayı çalıştıranlar**
 
-1. Yeni paketi kur (`react-native-maps`):
-   ```bash
-   npm install
-   ```
+Kurulum adımı yok (harita, AR ile gelen `react-native-webview`'ı kullanıyor).
 
 Değişenler:
-- Geliştirme modunda `Kamera` sekmesinde **Harita prototipi** var: API'deki koordinatlarla gerçek harita (Y6, [ADR 0003](decisions/0003-map-approach.md)). Telefonda MapLibre ile `react-native-maps` arasında geçiş yapılabilir.
+- Geliştirme modunda `Kamera` sekmesinde **Harita prototipi** var: API'deki koordinatlarla MapLibre haritası (Y6, [ADR 0003](decisions/0003-map-approach.md)).
 - API'nin çalışıyor olması ve internet gerekir (MapLibre jsDelivr'den, harita karoları OpenFreeMap'ten gelir).
 
 ## 2026-10-22 · AR prototipi için WebView
