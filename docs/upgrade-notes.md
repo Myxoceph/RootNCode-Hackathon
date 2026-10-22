@@ -16,6 +16,30 @@ Kurulum adımı yok (harita, AR ile gelen `react-native-webview`'ı kullanıyor)
 Değişenler:
 - Geliştirme modunda `Kamera` sekmesinde **Harita prototipi** var: API'deki koordinatlarla MapLibre haritası (Y6, [ADR 0003](decisions/0003-map-approach.md)).
 - API'nin çalışıyor olması ve internet gerekir (MapLibre jsDelivr'den, harita karoları OpenFreeMap'ten gelir).
+## 2026-10-22 · Yeni eser türleri (E2)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- `data/enums.json` → `asset_types`: `makam`, `kilise`, `kutuphane`, `namazgah`, `kopru`, `degirmen`, `hoyuk`.
+- 18 kaydın türü değişti (çoğu `diger`'den). `/meta/enums` ve `/assets?type=` yeni kodları döndürüyor; sözleşme değişmedi.
+- Planner bu türler için de varsayılan ziyaret süresi ve iç/dış mekân tahmini kullanıyor.
+
+## 2026-10-22 · Sözleşme v0.3.0: eski `Monument` şeması kaldırıldı
+
+Kimler: **sözleşmeyi kullananlar** (kurulum adımı yok)
+
+Değişenler:
+- `packages/contracts`'tan `Monument`, `MonumentsPayloadSchema`, `MONUMENTS_CONTRACT_VERSION` ve `mock_monuments.json` kaldırıldı. Uygulama bunları #48'den beri kullanmıyordu.
+- `npm run contracts:validate` artık uygulamanın fixture'larını (`apps/app/src/data/fixtures`) doğruluyor. Sözleşme sürümü değişince fixture'ları API'den yeniden al:
+  ```bash
+  npm run fixtures --workspace @vagabonds/app   # API çalışırken
+  ```
 
 ## 2026-10-22 · AR prototipi için WebView
 

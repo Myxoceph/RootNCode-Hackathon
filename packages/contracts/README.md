@@ -1,11 +1,13 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.2.3`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.0`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
 - `src/planner.schema.ts`: `/weather` ve `/routes/plan` (Vakıf Travel Planner & Hava Durumu)
-- `src/monument.schema.ts`: **kullanımdan kalkacak** v0.1 sözleşmesi (`Monument`, mock). Uygulama `/assets`'e geçince (Y8) silinecek.
+- `scripts/validate-fixtures.ts`: uygulamanın örnek verisini (`apps/app/src/data/fixtures`) bu şemalarla doğrular
+
+v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı; uygulama `/assets` uçlarını kullanıyor (Y8).
 
 ## Uç noktalar
 
@@ -96,5 +98,5 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
 
 ```bash
 npm run typecheck --workspace @vagabonds/contracts # TypeScript kontrolü
-npm run contracts:validate                         # eski mock_monuments.json kontrolü (v0.1)
+npm run contracts:validate                         # uygulama fixture'ları: şema, id eşleşmesi, güncel sürüm
 ```

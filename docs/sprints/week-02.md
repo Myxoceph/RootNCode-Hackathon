@@ -23,8 +23,8 @@ eserleri listelenir, Ulucami detayında kaynak sayfaları, güven rozetleri ve i
 
 | # | Görev | Dal | Tamamlanma kriteri |
 |---|---|---|---|
-| Y5 | (H1'den) **AR araştırması:** MindAR'ı WebView içinde çalıştırma vs. Expo uyumlu native AR kütüphanesi. Küçük bir prototip ve karar notu | `docs/adr-ar-approach` | [`docs/decisions/`](../decisions/) altında karar kaydı (ADR) |
-| Y6 ✅ | (H1'den) **Harita araştırması:** mobilde native harita, web'de MapLibre GL JS; ortak bir harita bileşeni arayüzü | `docs/adr-map-approach` | Karar kaydı + iki platformda tek pin gösteren prototip · [ADR 0003](../decisions/0003-map-approach.md): her platformda MapLibre; prototip web'de ve Honor 400'de (Expo Go) doğrulandı |
+| Y5 ✅ | (H1'den) **AR araştırması:** … | `docs/adr-ar-approach` | … · [PR #50](…) |
+| Y6 ✅ | (H1'den) **Harita araştırması:** … | `docs/adr-map-approach` | … · [ADR 0003](../decisions/0003-map-approach.md): … |
 | Y7 | (H1'den) Uygulamanın telefonda (Expo Go) ve ekran okuyucuyla (VoiceOver, TalkBack) uçtan uca testi | – | Bulunan sorunlar düzeltildi ya da issue olarak açıldı; test edilen cihazlar rapora yazıldı |
 | Y8 | Veri katmanını `/assets` sözleşmesine geçir: `Monument` yerine `AssetListItem` / `AssetDetail`; API veri kaynağını ekle, mock'u geliştirme yedeği olarak bırak | `feat/app-assets-source` | Liste ve detay ekranları API'den gelen veriyle çalışıyor; API kapalıyken anlaşılır hata gösteriliyor |
 | Y9 | Eser detayında kaynak ve güven bilgisi: her bilginin yanında kaynak (kitap + sayfa), `disputed` / `legend` bilgileri ayrı rozetle | `feat/app-asset-detail` | Rivayet ve tartışmalı bilgiler kesin bilgi gibi görünmüyor; kaynak sayfaları okunabiliyor |
@@ -64,7 +64,7 @@ eserleri listelenir, Ulucami detayında kaynak sayfaları, güven rozetleri ve i
 | # | Görev | Sorumlu | Tamamlanma kriteri |
 |---|---|---|---|
 | E1 | Kitap metinleri ve Drive fotoğraflarının kullanım izni için organizasyona yazılı soru ([`data/eksikler.md`](../../data/eksikler.md) §1) | Ahmet + Hüseyin | E-posta gönderildi; yanıt geldiğinde `data/eksikler.md`'ye işlendi |
-| E2 | Namazgâh ve köprü için `asset_types` kodu eklenip eklenmeyeceği (şimdilik `diger`) | Hüseyin + Ahmet | Karar verildi; gerekiyorsa `enums.json` ve ilgili kayıtlar güncellendi |
+| E2 ✅ | Namazgâh ve köprü için `asset_types` kodu eklenip eklenmeyeceği (şimdilik `diger`) | Hüseyin + Ahmet | Karar verildi; gerekiyorsa `enums.json` ve ilgili kayıtlar güncellendi · 7 yeni tür (`makam`, `kilise`, `kutuphane`, `namazgah`, `kopru`, `degirmen`, `hoyuk`), 18 kayıt yeniden sınıflandırıldı |
 
 ---
 
