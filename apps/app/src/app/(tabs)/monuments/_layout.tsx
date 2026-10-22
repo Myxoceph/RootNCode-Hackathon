@@ -6,7 +6,7 @@ export default function MonumentsLayout() {
   return (
     <Stack screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display } }}>
       <Stack.Screen name="index" options={{ title: "Eserler" }} />
-      <Stack.Screen name="[slug]" options={{ title: "" }} />
+      <Stack.Screen name="[id]" options={{ title: "" }} />
     </Stack>
   );
 }

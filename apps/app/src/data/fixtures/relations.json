@@ -1,0 +1,3791 @@
+{
+  "bursa-osmangazi-ulucami": {
+    "version": "0.2.3",
+    "lang": "tr",
+    "assetId": "bursa-osmangazi-ulucami",
+    "items": [
+      {
+        "type": {
+          "code": "architectural_lineage",
+          "label": "Mimari öncül / ardıl"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-i-murad-hudavendigar-camii",
+          "name": "I. Murad Hudâvendigâr Camii",
+          "subtitle": "Zaviyeli/tabhaneli erken Osmanlı camisi; üstünde medrese",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.202366,
+            "lng": 29.021103,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Alt katı cami, üst katı medrese olan, kesme taş ve tuğlanın almaşık kullanıldığı iki katlı yapı. Kuzeyde ovaya bakan beş bölümlü son cemaat yeri, kubbeli şadırvanlı harim ön mekânı ve mihrabı II. Abdülhamid dönemindeki 1904 onarımıyla bugünkü görünümünü almıştır.",
+          "datingDisplay": "H. 767 / M. 1365-66 (öngörülen)",
+          "cover": null
+        },
+        "description": "Bazı müellifler mihrabı 'Ulu Camii mihrabının küçük bir modeli' olarak niteler.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "89",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_architect",
+          "label": "Aynı mimar"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-yildirim-yesil-camii",
+          "name": "Yeşil Camii",
+          "subtitle": "Çelebi Mehmed'in çini ve hat sanatıyla bezeli tabhaneli camisi",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Yıldırım",
+          "coordinates": {
+            "lat": 40.18219,
+            "lng": 29.074647,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Sultan Çelebi Mehmed'in 1414-1419 arasında yaptırdığı, tabhaneli (zaviyeli) plana sahip cami. Geri çekilmiş taç kapısı, Osmanlı mimarisinde ilk hünkâr mahfili, çini ve kalem işi bezemeleri, fıskiyeli orta harimi ve Tebrizli ustaların imzasını taşıyan mihrabıyla öne çıkar.",
+          "datingDisplay": "H. 817-822 / M. 1414-1419 (nakış 1424)",
+          "cover": null
+        },
+        "description": "Mimar adaylarından Hacı İvaz bin Ahî Bayezid, Yeşil Külliye'nin mimarıdır.",
+        "confidence": {
+          "code": "disputed",
+          "label": "Tartışmalı"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "40-41",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_founder",
+          "label": "Aynı banî (yaptıran)"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-yildirim-yildirim-kulliyesi",
+          "name": "Yıldırım Bayezid Külliyesi",
+          "subtitle": null,
+          "type": {
+            "code": "kulliye",
+            "label": "Külliye"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Yıldırım",
+          "coordinates": {
+            "lat": 40.187906,
+            "lng": 29.081997,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Sultan Yıldırım Bayezid'in şehrin en doğusundaki bir tepeye kurdurduğu, surları andıran yüksek duvarlarla çevrili külliye; cami, medrese, türbe ve darüşşifa günümüze ulaşmıştır. 2014'te UNESCO Dünya Mirası Alanı olarak tescil edilmiştir.",
+          "datingDisplay": "H. 793-797 / M. 1391-1395",
+          "cover": null
+        },
+        "description": "İkisini de Sultan Yıldırım Bayezid yaptırdı.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "38",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-emir-hani",
+          "name": "Emir Hanı",
+          "subtitle": "Bursa'nın ilk bedesteni sayılan han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in külliyesinin parçası olarak 1339-40'ta At Pazarı bölgesinde yaptırılan, Bursa'nın ilk ticari yapısı ve ilk bedesteni sayılan iki katlı han. Yaklaşık 45 × 45 m ölçüsünde, 650 m² civarında orta avlulu, 74 odalıdır; kantariye geliri hanın mali kaynağıdır.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Yıldırım Bayezid, Ulucami ile birlikte Emir Hanı'nın karşısına bedesteni yaptırdı; çarşının odağı bu üçlü oldu.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "40-41",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-gungormez-camii",
+          "name": "Güngörmez Camii ve Haziresi",
+          "subtitle": null,
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": null,
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Ulucami'nin tam karşısında, Tahtakale Hanı'nın kuzeyine bitişik tek kubbeli cami; Abdullah Efendi tarafından H. 970-971 / M. 1562-1563'ten önce mescit olarak yaptırılmıştır. Bahçesinde hazire vardır.",
+          "datingDisplay": "H. 970-971 / M. 1562-1563'ten önce",
+          "cover": null
+        },
+        "description": "Cami Ulucami'nin tam karşısında yer alır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "314",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-hz-uftade-tekkesi",
+          "name": "Hz. Üftâde Tekkesi",
+          "subtitle": null,
+          "type": {
+            "code": "tekke",
+            "label": "Tekke / Zaviye"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Uludağ'ın güney yamacında, Bursa evliyasından Üftâde Hazretleri'nin kendi gelirleriyle yaptırdığı cami ve tekke. Mescit, semahane, çilehane, çeşme, harem ve selamlıktan oluşan külliye; Celvetiyye usulüyle ayin yapılır. Mescit ibadete açıktır, tekke bölümü öğrenci eğitiminde kullanılır.",
+          "datingDisplay": "H. 974 / M. 1566 (Hu Çeşmesi); 16. yüzyılın ikinci yarısı",
+          "cover": null
+        },
+        "description": "Üftâde burada müezzinlik yapmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "621",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-il-kultur-ve-turizm-mudurlugu-konagi",
+          "name": "İl Kültür ve Turizm Müdürlüğü Konağı",
+          "subtitle": "Sarı Konak",
+          "type": {
+            "code": "sivil",
+            "label": "Sivil Mimari"
+          },
+          "era": {
+            "code": "gec-osmanli",
+            "label": "Geç Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Saltanat Kapısı'nın karşısında, Okçubaba Türbesi'nin kuzeyinde, halk arasında 'Sarı Konak' denen konak; XIX. yüzyılın son çeyreğinde yapıldığı düşünülmektedir. Bursa şehir surlarının güney ve doğu sınırını oluşturduğu avlulu yapı, Bursa'nın nitelikli sivil mimarlık örneklerindendir; bugün İl Kültür ve Turizm Müdürlüğü olarak kullanılmaktadır.",
+          "datingDisplay": "Büyük ihtimalle XIX. yüzyılın son çeyreği",
+          "cover": null
+        },
+        "description": "Çatı katı terasından Bursa tarihî çarşısı ve Ulucami manzarası vardır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "742",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-koza-hani",
+          "name": "Koza Hanı",
+          "subtitle": "II. Bayezid'in yaptırdığı, Orhan Camii ile Ulucami arasındaki han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184379,
+            "lng": 29.063538,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Sultan II. Bayezid'in İstanbul'daki külliyesine gelir sağlamak için 1489-1491 arasında yaptırdığı han. Orhan Camii ile Ulucami arasında yer alır; doğusuna bitişik tek katlı ahır-depo bölümü (İç Koza Hanı) Osmanlı'dan kalan nadir ahırlardandır. Bugün Bursa Çarşısı'nın en yoğun ticaret alanlarından biridir.",
+          "datingDisplay": "Mart 1489 - 30 Eylül 1491",
+          "cover": null
+        },
+        "description": "Ulucami ile Orhan Camii arasında, aynı kentsel aks üzerindedir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "649-650",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-camii",
+          "name": "Orhan Bey Camii",
+          "subtitle": "Tabhaneli/zaviyeli erken Osmanlı camii",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.183933,
+            "lng": 29.064113,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesi bünyesinde 1339-40'ta yapılan, simetrik planlı tabhaneli/zaviyeli cami. Beş gözlü son cemaat yeri, mihrap duvarındaki ileri düzey alçı işçilikli mihrabı ve çok sayıda onarım geçirmiş yapısıyla erken Osmanlı mimarisinin karakteristik örneklerinden biridir.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Ulucami, Orhan Camii'ne paralel olarak yapıldı.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "40-41",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-hamami",
+          "name": "Orhan Bey Hamamı (Aynalı Çarşı)",
+          "subtitle": "İlk dönem Osmanlı çifte hamamı",
+          "type": {
+            "code": "hamam",
+            "label": "Hamam"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesinin parçası olarak 1340'ta yaptırılan çifte hamam. Zamanla çarşı ve kahvehane olarak kullanılmış, 1934'te Sedat Çetintaş'ın araştırmasıyla hamam olduğu anlaşılmış, 1943'te kadınlar bölümü ayağa kaldırılmıştır. Bugün 'Eski Aynalı Çarşı' olarak anılır.",
+          "datingDisplay": "1340",
+          "cover": null
+        },
+        "description": "Hamam Ulucami'nin kuzeyinde yer alır; güney eyvandan 14 basamaklı merdivenle Ulucami yönüne geçiş vardır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "203, 207",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-kulliyesi",
+          "name": "Orhan Bey Külliyesi",
+          "subtitle": "Osmanlı'nın ilk külliyelerinden biri",
+          "type": {
+            "code": "kulliye",
+            "label": "Külliye"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in Bursa'da sur dışında yaptırdığı, Osmanlı'nın ilk külliyelerinden biri. Günümüze yalnızca Orhan Camii, Emir Hanı ve Orhan Hamamı ulaşmış; imaret ve mektep yok olmuştur.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Cami Ulucami'nin doğusunda, hamam kuzeyinde, han kuzeydoğu köşesinde yer alır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187, 203, 210",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-yildirim-bayezid-bedesteni",
+          "name": "Yıldırım Bayezid Bedesteni",
+          "subtitle": "Osmanlı'nın ilk bedesteni ve Bursa çarşısının çekirdeği",
+          "type": {
+            "code": "bedesten",
+            "label": "Bedesten / Çarşı"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Osmanlı Devleti'nin inşa edilen ilk bedesteni; XIV. yüzyılda Yıldırım Bayezid yaptırmıştır. Çarşı dokusunun çekirdeğini oluşturur, sonraki bedestenlere örnek olmuştur. 14 kubbeli, 15,00 × 56,50 m'lik merkezi mekânı bugün Kapalıçarşı'nın kuyumcu çarşısı olarak kullanılır.",
+          "datingDisplay": "XIV. yüzyıl",
+          "cover": null
+        },
+        "description": "Bedesten 'Büyük Cuma Camii'nin yakınına konumlandırılmıştır.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "674",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "waqf_land",
+          "label": "Vakıf arazisi bağı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-emir-hani",
+          "name": "Emir Hanı",
+          "subtitle": "Bursa'nın ilk bedesteni sayılan han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in külliyesinin parçası olarak 1339-40'ta At Pazarı bölgesinde yaptırılan, Bursa'nın ilk ticari yapısı ve ilk bedesteni sayılan iki katlı han. Yaklaşık 45 × 45 m ölçüsünde, 650 m² civarında orta avlulu, 74 odalıdır; kantariye geliri hanın mali kaynağıdır.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Hanın güneyindeki ahırların bulunduğu alana 1399'da Ulucami yapılmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "212",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "waqf_land",
+          "label": "Vakıf arazisi bağı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-camii",
+          "name": "Orhan Bey Camii",
+          "subtitle": "Tabhaneli/zaviyeli erken Osmanlı camii",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.183933,
+            "lng": 29.064113,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesi bünyesinde 1339-40'ta yapılan, simetrik planlı tabhaneli/zaviyeli cami. Beş gözlü son cemaat yeri, mihrap duvarındaki ileri düzey alçı işçilikli mihrabı ve çok sayıda onarım geçirmiş yapısıyla erken Osmanlı mimarisinin karakteristik örneklerinden biridir.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Ulucami'nin arsası Orhan Gazi Vakfı'na aitti; Yıldırım Bayezid Orhan Vakfı'na karşılığında başka arazi verdi.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "48, 64",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 1
+  },
+  "bursa-osmangazi-orhan-bey-camii": {
+    "version": "0.2.3",
+    "lang": "tr",
+    "assetId": "bursa-osmangazi-orhan-bey-camii",
+    "items": [
+      {
+        "type": {
+          "code": "architectural_lineage",
+          "label": "Mimari öncül / ardıl"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-ali-pasa-camii",
+          "name": "Ali Paşa Camii",
+          "subtitle": "Çandarlı Ali Paşa'nın zaviyeli camisi; kuzeydoğusunda makam kabirli hazire",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.179654,
+            "lng": 29.059496,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Yıldırım Bayezid'in veziri Çandarlı Ali Paşa'nın yaptırdığı, Orhan Camii ile başlayan zaviyeli cami tipinden yapı; 1855 depreminde büyük hasar görmüş, 1958 ve 1999-2004 restorasyonlarıyla bugünkü hâlini almıştır. Kuzeydoğusundaki haziresinde Ali Paşa'nın makam kabri bulunur.",
+          "datingDisplay": "H. 796 / M. 1394 öncesi (vakfiye tarihi)",
+          "cover": null
+        },
+        "description": "Bursa'da Orhan Camii ile başlayan zaviyeli cami tipinin devamıdır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "253",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "architectural_lineage",
+          "label": "Mimari öncül / ardıl"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-hamza-bey-camii",
+          "name": "Hamza Bey Camii",
+          "subtitle": "Fâtih döneminin büyük camilerinden",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Hamza Bey tarafından yaptırılan, tabhaneli/zaviyeli planlı külliyenin ana yapısı. Başlangıçta mescit olarak inşa edilmiş, 1614'te camiye çevrilmiştir; 2011'de kapsamlı restore edilmiş ve halen ibadete açıktır.",
+          "datingDisplay": "Fâtih Sultan Mehmed dönemi (kesin yıl belirtilmemiş)",
+          "cover": null
+        },
+        "description": "Tabhanelerin eyvana dönüştürülmesi Gazi Orhan Bey ve Muradiye camilerindeki gibi yapılmıştır.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "178-179",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "architectural_lineage",
+          "label": "Mimari öncül / ardıl"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-yildirim-yildirim-bayezid-camii",
+          "name": "Yıldırım Bayezid Camii",
+          "subtitle": null,
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Yıldırım",
+          "coordinates": {
+            "lat": 40.187906,
+            "lng": 29.081997,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Yıldırım Bayezid Külliyesi'nin merkezindeki tabhaneli/zaviyeli cami. İki büyük kubbe ve yanlarda eyvanlarla simetrik planlıdır; kitabesi yoktur. Bursa kemerinin ilk kez bu camide uygulandığı belirtilir.",
+          "datingDisplay": "H. 793-797 / M. 1391-1395 (külliye için); kesin tarih bilinmiyor",
+          "cover": null
+        },
+        "description": "Tabhaneli/zaviyeli cami tipolojisi Bursa Orhan Camii ile başlamıştır; yan cephelerdeki dikdörtgen silme çerçeveli ikiz Bursa kemerleri ilk kez Orhan Camii'nde görülür.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c2",
+            "title": "Bursa Vakıf Eserleri – II. Cilt",
+            "pages": "164-165, 172-173",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-2.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-emir-hani",
+          "name": "Emir Hanı",
+          "subtitle": "Bursa'nın ilk bedesteni sayılan han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in külliyesinin parçası olarak 1339-40'ta At Pazarı bölgesinde yaptırılan, Bursa'nın ilk ticari yapısı ve ilk bedesteni sayılan iki katlı han. Yaklaşık 45 × 45 m ölçüsünde, 650 m² civarında orta avlulu, 74 odalıdır; kantariye geliri hanın mali kaynağıdır.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Emir Hanı külliyenin bir parçası olarak yaptırılmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187, 210",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-hamami",
+          "name": "Orhan Bey Hamamı (Aynalı Çarşı)",
+          "subtitle": "İlk dönem Osmanlı çifte hamamı",
+          "type": {
+            "code": "hamam",
+            "label": "Hamam"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesinin parçası olarak 1340'ta yaptırılan çifte hamam. Zamanla çarşı ve kahvehane olarak kullanılmış, 1934'te Sedat Çetintaş'ın araştırmasıyla hamam olduğu anlaşılmış, 1943'te kadınlar bölümü ayağa kaldırılmıştır. Bugün 'Eski Aynalı Çarşı' olarak anılır.",
+          "datingDisplay": "1340",
+          "cover": null
+        },
+        "description": "Hamam, külliyenin diğer parçası olarak cami ile aynı külliyeye aittir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187, 203",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-kulliyesi",
+          "name": "Orhan Bey Külliyesi",
+          "subtitle": "Osmanlı'nın ilk külliyelerinden biri",
+          "type": {
+            "code": "kulliye",
+            "label": "Külliye"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in Bursa'da sur dışında yaptırdığı, Osmanlı'nın ilk külliyelerinden biri. Günümüze yalnızca Orhan Camii, Emir Hanı ve Orhan Hamamı ulaşmış; imaret ve mektep yok olmuştur.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Cami, Orhan Bey Külliyesi'nin ayakta kalan parçalarındandır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_founder",
+          "label": "Aynı banî (yaptıran)"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-emir-hani",
+          "name": "Emir Hanı",
+          "subtitle": "Bursa'nın ilk bedesteni sayılan han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in külliyesinin parçası olarak 1339-40'ta At Pazarı bölgesinde yaptırılan, Bursa'nın ilk ticari yapısı ve ilk bedesteni sayılan iki katlı han. Yaklaşık 45 × 45 m ölçüsünde, 650 m² civarında orta avlulu, 74 odalıdır; kantariye geliri hanın mali kaynağıdır.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Her ikisini de Orhan Bey yaptırmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187, 210",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_founder",
+          "label": "Aynı banî (yaptıran)"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-hamami",
+          "name": "Orhan Bey Hamamı (Aynalı Çarşı)",
+          "subtitle": "İlk dönem Osmanlı çifte hamamı",
+          "type": {
+            "code": "hamam",
+            "label": "Hamam"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesinin parçası olarak 1340'ta yaptırılan çifte hamam. Zamanla çarşı ve kahvehane olarak kullanılmış, 1934'te Sedat Çetintaş'ın araştırmasıyla hamam olduğu anlaşılmış, 1943'te kadınlar bölümü ayağa kaldırılmıştır. Bugün 'Eski Aynalı Çarşı' olarak anılır.",
+          "datingDisplay": "1340",
+          "cover": null
+        },
+        "description": "Her ikisini de Orhan Bey yaptırmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187, 203",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-eyne-bey-subasi-medresesi",
+          "name": "Eyne Bey Subaşı Medresesi",
+          "subtitle": null,
+          "type": {
+            "code": "medrese",
+            "label": "Medrese"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "15. yüzyıl başında subaşı Eyne Bey'in yaptırdığı, merdivenli girişli ve revaklı avlulu medrese. 1969'dan beri yazma eser kütüphanesi olarak hizmet veriyor.",
+          "datingDisplay": "15. yüzyıl başları (vakfiye: H. 3 Şaban 804 / M. 8 Mart 1402)",
+          "cover": null
+        },
+        "description": "Medresenin 1674'te kazandırılan kütüphanesi sonradan Orhan Camii'ne taşınmış; 1969'da oradaki eserler medreseye getirilmiştir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "558-561",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-koza-hani",
+          "name": "Koza Hanı",
+          "subtitle": "II. Bayezid'in yaptırdığı, Orhan Camii ile Ulucami arasındaki han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184379,
+            "lng": 29.063538,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Sultan II. Bayezid'in İstanbul'daki külliyesine gelir sağlamak için 1489-1491 arasında yaptırdığı han. Orhan Camii ile Ulucami arasında yer alır; doğusuna bitişik tek katlı ahır-depo bölümü (İç Koza Hanı) Osmanlı'dan kalan nadir ahırlardandır. Bugün Bursa Çarşısı'nın en yoğun ticaret alanlarından biridir.",
+          "datingDisplay": "Mart 1489 - 30 Eylül 1491",
+          "cover": null
+        },
+        "description": "Cami ile hamam arasında özellikle bırakılan bahçelik alana 1505'te Koza Hanı yapılmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "203",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-gazi-turbesi",
+          "name": "Orhan Gazi Türbesi",
+          "subtitle": "Osmanlı’nın ikinci sultanı ve Bursa’nın fâtihi Orhan Gazi’nin türbesi",
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "gec-osmanli",
+            "label": "Geç Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.186771,
+            "lng": 29.057694,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Hisariçi’nde, Osmangazi Meydanı’nda yer alan; eski bir manastır yapısı olan “Gümüşlü Kümbet” kompleksinde defnedilen Orhan Gazi’ye ait türbe. Bugünkü kare planlı, tek kubbeli yapı 1855 depreminden sonra Sultan Abdülaziz tarafından yeniden yaptırılmış, içinde Orhan Gazi dahil 21 sanduka bulunur.",
+          "datingDisplay": "H. 1280 / M. 1863 (yeniden inşa; kitap ayrıca 1868 veriyor)",
+          "cover": null
+        },
+        "description": "Kadı sicillerindeki inşaat ve onarım kayıtları türbe ile caminin bitişik olduğunu gösterir; Orhan Gazi muhtemelen camiye dönüştürülen bölüme defnedilmiştir. Kitap camiyi adıyla anmaz; Orhan Bey Camii olduğu bir çıkarımdır.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "515",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-osman-gazi-turbesi",
+          "name": "Osman Gazi Türbesi",
+          "subtitle": "Osmanlı Devleti’nin kurucusu Osman Gazi’nin türbesi",
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "gec-osmanli",
+            "label": "Geç Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.186771,
+            "lng": 29.057323,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Osmanlı Devleti’nin kurucusu Osman Gazi’nin, Orhan Bey tarafından eski bir manastır şapeli olan “Gümüşlü Kümbet”e defnedildiği yerde bulunan türbe. 1855 depreminde ağır hasar gören yapı, Sultan Abdülaziz tarafından 1863’te daha geniş ölçülerde ve barok üslupta yeniden yaptırılmıştır; içinde 17 sanduka vardır.",
+          "datingDisplay": "H. 1280 / M. 1863 (yeniden inşa)",
+          "cover": null
+        },
+        "description": "Osman Gazi’nin gömüldüğü Gümüşlü Kümbet’in bir bölümü (fetih camisi işleviyle) Orhan Camii’ne dönüştürülmüştür. Kitap Orhan Camii’ni Orhan Bey Camii olarak açıkça eşleştirmez.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "522-523",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-ulucami",
+          "name": "Ulucami",
+          "subtitle": "Bursa'nın İncisi Ulucami",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.18417,
+            "lng": 29.06167,
+            "verified": true,
+            "source": "manual"
+          },
+          "summary": "Osmanlıların Bursa'da yaptırdığı ilk büyük cami. Yıldırım Bayezid'in 1399'da tamamlattığı yirmi kubbeli yapı, yaklaşık 170 hat levhasıyla bir hat müzesini, kündekâri minberiyle Osmanlı ahşap işçiliğinin en nadide örneklerinden birini barındırır.",
+          "datingDisplay": "H. 802 / M. 1399-1400",
+          "cover": {
+            "key": "m01",
+            "kind": "photo",
+            "isCover": true,
+            "width": 5266,
+            "height": 3944,
+            "aspectRatio": 1.3352,
+            "dominantColor": "#857b6d",
+            "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQAgCdASoQAAwAAUAmJQBOgNOSe8Icu6Jon3gA/mbfuSQtCKFYZJReso2GHidqn8z3eLw5M4TneWae+x4YBMatuz13rsSNe30eK0QjXmk84T3Gu9Ppar4dBF3amhegc2V0DqceLVHqZm8lXLZsjwHx2LrycCjFo++99MdKf35QAAAA",
+            "focalPoint": {
+              "x": 0.5,
+              "y": 0.6
+            },
+            "caption": "Ulucami ve arkasında Uludağ, havadan",
+            "alt": "Havadan çekilmiş fotoğraf: dört sıra halinde dizilmiş yirmi gri kubbeli büyük taş cami, iki yanında birer tuğla minare, arkasında evlerle kaplı yamaçlar ve dağ.",
+            "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+            "photographer": null,
+            "license": "vakif-katilim-hackathon",
+            "archiveYear": null,
+            "sources": {
+              "webp": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.webp",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.webp",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.webp",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ],
+              "jpg": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.jpg",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.jpg",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.jpg",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ]
+            }
+          }
+        },
+        "description": "Cami, Ulucami'nin doğusunda yer alır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "waqf_land",
+          "label": "Vakıf arazisi bağı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-ulucami",
+          "name": "Ulucami",
+          "subtitle": "Bursa'nın İncisi Ulucami",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.18417,
+            "lng": 29.06167,
+            "verified": true,
+            "source": "manual"
+          },
+          "summary": "Osmanlıların Bursa'da yaptırdığı ilk büyük cami. Yıldırım Bayezid'in 1399'da tamamlattığı yirmi kubbeli yapı, yaklaşık 170 hat levhasıyla bir hat müzesini, kündekâri minberiyle Osmanlı ahşap işçiliğinin en nadide örneklerinden birini barındırır.",
+          "datingDisplay": "H. 802 / M. 1399-1400",
+          "cover": {
+            "key": "m01",
+            "kind": "photo",
+            "isCover": true,
+            "width": 5266,
+            "height": 3944,
+            "aspectRatio": 1.3352,
+            "dominantColor": "#857b6d",
+            "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQAgCdASoQAAwAAUAmJQBOgNOSe8Icu6Jon3gA/mbfuSQtCKFYZJReso2GHidqn8z3eLw5M4TneWae+x4YBMatuz13rsSNe30eK0QjXmk84T3Gu9Ppar4dBF3amhegc2V0DqceLVHqZm8lXLZsjwHx2LrycCjFo++99MdKf35QAAAA",
+            "focalPoint": {
+              "x": 0.5,
+              "y": 0.6
+            },
+            "caption": "Ulucami ve arkasında Uludağ, havadan",
+            "alt": "Havadan çekilmiş fotoğraf: dört sıra halinde dizilmiş yirmi gri kubbeli büyük taş cami, iki yanında birer tuğla minare, arkasında evlerle kaplı yamaçlar ve dağ.",
+            "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+            "photographer": null,
+            "license": "vakif-katilim-hackathon",
+            "archiveYear": null,
+            "sources": {
+              "webp": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.webp",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.webp",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.webp",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ],
+              "jpg": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.jpg",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.jpg",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.jpg",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ]
+            }
+          }
+        },
+        "description": "Ulucami'nin arsası Orhan Gazi Vakfı'na aitti; Yıldırım Bayezid Orhan Vakfı'na karşılığında başka arazi verdi.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "48, 64",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 1
+  },
+  "bursa-osmangazi-emir-hani": {
+    "version": "0.2.3",
+    "lang": "tr",
+    "assetId": "bursa-osmangazi-emir-hani",
+    "items": [
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-camii",
+          "name": "Orhan Bey Camii",
+          "subtitle": "Tabhaneli/zaviyeli erken Osmanlı camii",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.183933,
+            "lng": 29.064113,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesi bünyesinde 1339-40'ta yapılan, simetrik planlı tabhaneli/zaviyeli cami. Beş gözlü son cemaat yeri, mihrap duvarındaki ileri düzey alçı işçilikli mihrabı ve çok sayıda onarım geçirmiş yapısıyla erken Osmanlı mimarisinin karakteristik örneklerinden biridir.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Cami ile aynı külliyenin parçasıdır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187, 210",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-hamami",
+          "name": "Orhan Bey Hamamı (Aynalı Çarşı)",
+          "subtitle": "İlk dönem Osmanlı çifte hamamı",
+          "type": {
+            "code": "hamam",
+            "label": "Hamam"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesinin parçası olarak 1340'ta yaptırılan çifte hamam. Zamanla çarşı ve kahvehane olarak kullanılmış, 1934'te Sedat Çetintaş'ın araştırmasıyla hamam olduğu anlaşılmış, 1943'te kadınlar bölümü ayağa kaldırılmıştır. Bugün 'Eski Aynalı Çarşı' olarak anılır.",
+          "datingDisplay": "1340",
+          "cover": null
+        },
+        "description": "Hamam da aynı külliyenin parçasıdır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187, 203",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-kulliyesi",
+          "name": "Orhan Bey Külliyesi",
+          "subtitle": "Osmanlı'nın ilk külliyelerinden biri",
+          "type": {
+            "code": "kulliye",
+            "label": "Külliye"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in Bursa'da sur dışında yaptırdığı, Osmanlı'nın ilk külliyelerinden biri. Günümüze yalnızca Orhan Camii, Emir Hanı ve Orhan Hamamı ulaşmış; imaret ve mektep yok olmuştur.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Han, Orhan Bey Külliyesi'nin bir parçası olarak yaptırılmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "210",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_founder",
+          "label": "Aynı banî (yaptıran)"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-camii",
+          "name": "Orhan Bey Camii",
+          "subtitle": "Tabhaneli/zaviyeli erken Osmanlı camii",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.183933,
+            "lng": 29.064113,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesi bünyesinde 1339-40'ta yapılan, simetrik planlı tabhaneli/zaviyeli cami. Beş gözlü son cemaat yeri, mihrap duvarındaki ileri düzey alçı işçilikli mihrabı ve çok sayıda onarım geçirmiş yapısıyla erken Osmanlı mimarisinin karakteristik örneklerinden biridir.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Her ikisini de Orhan Bey yaptırmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187, 210",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-koza-hani",
+          "name": "Koza Hanı",
+          "subtitle": "II. Bayezid'in yaptırdığı, Orhan Camii ile Ulucami arasındaki han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184379,
+            "lng": 29.063538,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Sultan II. Bayezid'in İstanbul'daki külliyesine gelir sağlamak için 1489-1491 arasında yaptırdığı han. Orhan Camii ile Ulucami arasında yer alır; doğusuna bitişik tek katlı ahır-depo bölümü (İç Koza Hanı) Osmanlı'dan kalan nadir ahırlardandır. Bugün Bursa Çarşısı'nın en yoğun ticaret alanlarından biridir.",
+          "datingDisplay": "Mart 1489 - 30 Eylül 1491",
+          "cover": null
+        },
+        "description": "Emir Hanı, Orhan Camii ve Ulucami ile aynı aks üzerindedir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "650",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-hamami",
+          "name": "Orhan Bey Hamamı (Aynalı Çarşı)",
+          "subtitle": "İlk dönem Osmanlı çifte hamamı",
+          "type": {
+            "code": "hamam",
+            "label": "Hamam"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesinin parçası olarak 1340'ta yaptırılan çifte hamam. Zamanla çarşı ve kahvehane olarak kullanılmış, 1934'te Sedat Çetintaş'ın araştırmasıyla hamam olduğu anlaşılmış, 1943'te kadınlar bölümü ayağa kaldırılmıştır. Bugün 'Eski Aynalı Çarşı' olarak anılır.",
+          "datingDisplay": "1340",
+          "cover": null
+        },
+        "description": "Hamam, Emir Hanı ile Kozahan arasında yer alır; 1584 yangınında Emir Hanı'yla birlikte yanmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "203",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-ulucami",
+          "name": "Ulucami",
+          "subtitle": "Bursa'nın İncisi Ulucami",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.18417,
+            "lng": 29.06167,
+            "verified": true,
+            "source": "manual"
+          },
+          "summary": "Osmanlıların Bursa'da yaptırdığı ilk büyük cami. Yıldırım Bayezid'in 1399'da tamamlattığı yirmi kubbeli yapı, yaklaşık 170 hat levhasıyla bir hat müzesini, kündekâri minberiyle Osmanlı ahşap işçiliğinin en nadide örneklerinden birini barındırır.",
+          "datingDisplay": "H. 802 / M. 1399-1400",
+          "cover": {
+            "key": "m01",
+            "kind": "photo",
+            "isCover": true,
+            "width": 5266,
+            "height": 3944,
+            "aspectRatio": 1.3352,
+            "dominantColor": "#857b6d",
+            "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQAgCdASoQAAwAAUAmJQBOgNOSe8Icu6Jon3gA/mbfuSQtCKFYZJReso2GHidqn8z3eLw5M4TneWae+x4YBMatuz13rsSNe30eK0QjXmk84T3Gu9Ppar4dBF3amhegc2V0DqceLVHqZm8lXLZsjwHx2LrycCjFo++99MdKf35QAAAA",
+            "focalPoint": {
+              "x": 0.5,
+              "y": 0.6
+            },
+            "caption": "Ulucami ve arkasında Uludağ, havadan",
+            "alt": "Havadan çekilmiş fotoğraf: dört sıra halinde dizilmiş yirmi gri kubbeli büyük taş cami, iki yanında birer tuğla minare, arkasında evlerle kaplı yamaçlar ve dağ.",
+            "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+            "photographer": null,
+            "license": "vakif-katilim-hackathon",
+            "archiveYear": null,
+            "sources": {
+              "webp": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.webp",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.webp",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.webp",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ],
+              "jpg": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.jpg",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.jpg",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.jpg",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ]
+            }
+          }
+        },
+        "description": "Han, Ulucami'nin kuzeydoğu köşesinde yer alır ve girişlerinden biri Ulucami avlusuna açılır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "210, 212",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-yildirim-bayezid-bedesteni",
+          "name": "Yıldırım Bayezid Bedesteni",
+          "subtitle": "Osmanlı'nın ilk bedesteni ve Bursa çarşısının çekirdeği",
+          "type": {
+            "code": "bedesten",
+            "label": "Bedesten / Çarşı"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Osmanlı Devleti'nin inşa edilen ilk bedesteni; XIV. yüzyılda Yıldırım Bayezid yaptırmıştır. Çarşı dokusunun çekirdeğini oluşturur, sonraki bedestenlere örnek olmuştur. 14 kubbeli, 15,00 × 56,50 m'lik merkezi mekânı bugün Kapalıçarşı'nın kuyumcu çarşısı olarak kullanılır.",
+          "datingDisplay": "XIV. yüzyıl",
+          "cover": null
+        },
+        "description": "Bedesten, Emir Hanı ve Orhan Hamamı ile paralel bir eksende yer alır; Emir Hanı çarşının ilk çekirdeğidir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "671, 674",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "waqf_land",
+          "label": "Vakıf arazisi bağı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-ulucami",
+          "name": "Ulucami",
+          "subtitle": "Bursa'nın İncisi Ulucami",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.18417,
+            "lng": 29.06167,
+            "verified": true,
+            "source": "manual"
+          },
+          "summary": "Osmanlıların Bursa'da yaptırdığı ilk büyük cami. Yıldırım Bayezid'in 1399'da tamamlattığı yirmi kubbeli yapı, yaklaşık 170 hat levhasıyla bir hat müzesini, kündekâri minberiyle Osmanlı ahşap işçiliğinin en nadide örneklerinden birini barındırır.",
+          "datingDisplay": "H. 802 / M. 1399-1400",
+          "cover": {
+            "key": "m01",
+            "kind": "photo",
+            "isCover": true,
+            "width": 5266,
+            "height": 3944,
+            "aspectRatio": 1.3352,
+            "dominantColor": "#857b6d",
+            "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQAgCdASoQAAwAAUAmJQBOgNOSe8Icu6Jon3gA/mbfuSQtCKFYZJReso2GHidqn8z3eLw5M4TneWae+x4YBMatuz13rsSNe30eK0QjXmk84T3Gu9Ppar4dBF3amhegc2V0DqceLVHqZm8lXLZsjwHx2LrycCjFo++99MdKf35QAAAA",
+            "focalPoint": {
+              "x": 0.5,
+              "y": 0.6
+            },
+            "caption": "Ulucami ve arkasında Uludağ, havadan",
+            "alt": "Havadan çekilmiş fotoğraf: dört sıra halinde dizilmiş yirmi gri kubbeli büyük taş cami, iki yanında birer tuğla minare, arkasında evlerle kaplı yamaçlar ve dağ.",
+            "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+            "photographer": null,
+            "license": "vakif-katilim-hackathon",
+            "archiveYear": null,
+            "sources": {
+              "webp": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.webp",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.webp",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.webp",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ],
+              "jpg": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.jpg",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.jpg",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.jpg",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ]
+            }
+          }
+        },
+        "description": "Hanın güneyindeki ahırların bulunduğu alana 1399'da Ulucami yapılmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "212",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 1
+  },
+  "bursa-osmangazi-koza-hani": {
+    "version": "0.2.3",
+    "lang": "tr",
+    "assetId": "bursa-osmangazi-koza-hani",
+    "items": [
+      {
+        "type": {
+          "code": "architectural_lineage",
+          "label": "Mimari öncül / ardıl"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-fidan-hani",
+          "name": "Fidan Hanı",
+          "subtitle": "Uzun Çarşı'da, Mahmud Paşa'nın İstanbul külliyesine vakfedilmiş han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": null,
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.185142,
+            "lng": 29.064113,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Bursa Çarşısı ve Hanlar Bölgesi'nde, Uzun Çarşı'da yer alan, iki katlı ve sivri kemerli revaklarla çevrili büyük bir han. Gelirleri Fâtih'in sadrazamı Mahmud Paşa'nın İstanbul'daki külliyesine vakfedilmiştir; avlusunda on iki köşeli şadırvan üzerinde yükselen bir mescit vardır.",
+          "datingDisplay": null,
+          "cover": null
+        },
+        "description": "Kitap, ilk evrede iki avlu arasındaki geçişi Koza Hanı'ndaki düzenle karşılaştırır.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "634",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "architectural_lineage",
+          "label": "Mimari öncül / ardıl"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-ipek-hani",
+          "name": "İpek Hanı",
+          "subtitle": "Yeşil Külliye ile eş zamanlı yapılan, ipek ticaretinin han'ı",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.185192,
+            "lng": 29.060956,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Çelebi Mehmed'in 1425'te Yeşil Külliye'ye gelir sağlamak için yaptırıp vakfettiği, mimarı Hacı İvaz Paşa olan han. Ortası açık avlulu, çift katlı galerili plana sahiptir; özgün yapıdan yalnızca batı bölümü ayaktadır, 1958 yangınından sonra 1972-1973'te onarılmıştır.",
+          "datingDisplay": "1425",
+          "cover": null
+        },
+        "description": "Kitap, ana kapının ilk yapımda Koza Hanı'ndaki gibi taç kapı olabileceğini söyler.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "644",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-kozahan-mescidi",
+          "name": "Kozahan Mescidi",
+          "subtitle": "Koza Hanı avlusunun ortasındaki sekizgen köşk mescit",
+          "type": {
+            "code": "mescit",
+            "label": "Mescit"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184361,
+            "lng": 29.063522,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Koza Hanı avlusunun ortasında yer alan, Bursa'da han avlusu köşk mescitlerinin özgün olarak günümüze ulaşan nadir örneklerinden biri. Sekizgen planlı, sekiz altıgen ayaklı, kurşun kubbeli mescidin altında on altıgen şekilli bir şadırvan bulunur. 1948'de kubbeli hâline restore edilmiş, 2008'de özel bir kuruluşça yeniden restore edilmiştir; Bursa'nın Tarihi Çarşı ve Hanlar Bölgesi'nin parçası olarak 2014'te UNESCO Dünya Mirası Listesi'ne girmiştir.",
+          "datingDisplay": null,
+          "cover": null
+        },
+        "description": "Köşk mescit Koza Hanı'nın avlusunun ortasında yer alır.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "385-387",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_founder",
+          "label": "Aynı banî (yaptıran)"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-pirinc-hani",
+          "name": "Pirinç Hanı",
+          "subtitle": "II. Bayezid'in Koza Hanı'ndan sonra yaptırdığı ikinci büyük han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.185713,
+            "lng": 29.060279,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Sultan II. Bayezid'in İstanbul'daki camisine gelir sağlamak için 1507-1508'de yaptırdığı, yaklaşık 70 × 75 m ölçülerinde iki katlı han. Taç kapısı, tuğla-kesme taş örgüsü ve Osmanlı'dan kalan nadir ahırlarından biriyle öne çıkar; 1855 depreminde ağır hasar görmüş, 1980'lerde başlayan restorasyonla yenilenmiştir.",
+          "datingDisplay": "H. Muharrem 913 / M. Mayıs 1507 - H. Rebiyülevvel 914 / M. Temmuz 1508",
+          "cover": null
+        },
+        "description": "İkisini de II. Bayezid yaptırmıştır; Pirinç Hanı Koza Hanı'ndan sonra yapılan ikinci büyük handır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "649, 661",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-emir-hani",
+          "name": "Emir Hanı",
+          "subtitle": "Bursa'nın ilk bedesteni sayılan han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in külliyesinin parçası olarak 1339-40'ta At Pazarı bölgesinde yaptırılan, Bursa'nın ilk ticari yapısı ve ilk bedesteni sayılan iki katlı han. Yaklaşık 45 × 45 m ölçüsünde, 650 m² civarında orta avlulu, 74 odalıdır; kantariye geliri hanın mali kaynağıdır.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Emir Hanı, Orhan Camii ve Ulucami ile aynı aks üzerindedir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "650",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-camii",
+          "name": "Orhan Bey Camii",
+          "subtitle": "Tabhaneli/zaviyeli erken Osmanlı camii",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.183933,
+            "lng": 29.064113,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesi bünyesinde 1339-40'ta yapılan, simetrik planlı tabhaneli/zaviyeli cami. Beş gözlü son cemaat yeri, mihrap duvarındaki ileri düzey alçı işçilikli mihrabı ve çok sayıda onarım geçirmiş yapısıyla erken Osmanlı mimarisinin karakteristik örneklerinden biridir.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Han Orhan Camii ile Ulucami arasında yer alır; ahırların bir kapısı Orhan Camii'ne açılır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "649, 652",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-hamami",
+          "name": "Orhan Bey Hamamı (Aynalı Çarşı)",
+          "subtitle": "İlk dönem Osmanlı çifte hamamı",
+          "type": {
+            "code": "hamam",
+            "label": "Hamam"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesinin parçası olarak 1340'ta yaptırılan çifte hamam. Zamanla çarşı ve kahvehane olarak kullanılmış, 1934'te Sedat Çetintaş'ın araştırmasıyla hamam olduğu anlaşılmış, 1943'te kadınlar bölümü ayağa kaldırılmıştır. Bugün 'Eski Aynalı Çarşı' olarak anılır.",
+          "datingDisplay": "1340",
+          "cover": null
+        },
+        "description": "Hamam, Emir Hanı ile Kozahan'ın arasında bulunur; Koza Hanı 1505'te cami ile hamam arasındaki alana yapılmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "203",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-kulliyesi",
+          "name": "Orhan Bey Külliyesi",
+          "subtitle": "Osmanlı'nın ilk külliyelerinden biri",
+          "type": {
+            "code": "kulliye",
+            "label": "Külliye"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in Bursa'da sur dışında yaptırdığı, Osmanlı'nın ilk külliyelerinden biri. Günümüze yalnızca Orhan Camii, Emir Hanı ve Orhan Hamamı ulaşmış; imaret ve mektep yok olmuştur.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Koza Hanı, cami ile hamam arasında bırakılan bahçelik alana 1505'te yapılmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "203",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-simkes-camii",
+          "name": "Simkeş Camii",
+          "subtitle": "Koza Hanı ile aynı adı taşıyan tek kubbeli, minaresiz cami",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Koza Hanı'na verilen 'Simkeş / Sırmakeş' adını taşıyan, XV. yüzyıl sonlarında dönemin tüccarlarınca yapıldığı tahmin edilen tek kubbeli, minaresiz cami. Bir dönem özel mülkiyete geçip ambar olarak kullanılmıştır; bugün sağlam ve ibadete açıktır.",
+          "datingDisplay": "XV. yüzyıl sonları (tahmini)",
+          "cover": null
+        },
+        "description": "Camiyle aynı 'Simkeş / Sırmakeş' adını taşır; Koza Hanı'na da bu ad verilir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "415",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-ulucami",
+          "name": "Ulucami",
+          "subtitle": "Bursa'nın İncisi Ulucami",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.18417,
+            "lng": 29.06167,
+            "verified": true,
+            "source": "manual"
+          },
+          "summary": "Osmanlıların Bursa'da yaptırdığı ilk büyük cami. Yıldırım Bayezid'in 1399'da tamamlattığı yirmi kubbeli yapı, yaklaşık 170 hat levhasıyla bir hat müzesini, kündekâri minberiyle Osmanlı ahşap işçiliğinin en nadide örneklerinden birini barındırır.",
+          "datingDisplay": "H. 802 / M. 1399-1400",
+          "cover": {
+            "key": "m01",
+            "kind": "photo",
+            "isCover": true,
+            "width": 5266,
+            "height": 3944,
+            "aspectRatio": 1.3352,
+            "dominantColor": "#857b6d",
+            "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQAgCdASoQAAwAAUAmJQBOgNOSe8Icu6Jon3gA/mbfuSQtCKFYZJReso2GHidqn8z3eLw5M4TneWae+x4YBMatuz13rsSNe30eK0QjXmk84T3Gu9Ppar4dBF3amhegc2V0DqceLVHqZm8lXLZsjwHx2LrycCjFo++99MdKf35QAAAA",
+            "focalPoint": {
+              "x": 0.5,
+              "y": 0.6
+            },
+            "caption": "Ulucami ve arkasında Uludağ, havadan",
+            "alt": "Havadan çekilmiş fotoğraf: dört sıra halinde dizilmiş yirmi gri kubbeli büyük taş cami, iki yanında birer tuğla minare, arkasında evlerle kaplı yamaçlar ve dağ.",
+            "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+            "photographer": null,
+            "license": "vakif-katilim-hackathon",
+            "archiveYear": null,
+            "sources": {
+              "webp": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.webp",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.webp",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.webp",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ],
+              "jpg": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.jpg",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.jpg",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.jpg",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ]
+            }
+          }
+        },
+        "description": "Ulucami ile Orhan Camii arasında, aynı kentsel aks üzerindedir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "649-650",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-yildirim-bayezid-bedesteni",
+          "name": "Yıldırım Bayezid Bedesteni",
+          "subtitle": "Osmanlı'nın ilk bedesteni ve Bursa çarşısının çekirdeği",
+          "type": {
+            "code": "bedesten",
+            "label": "Bedesten / Çarşı"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Osmanlı Devleti'nin inşa edilen ilk bedesteni; XIV. yüzyılda Yıldırım Bayezid yaptırmıştır. Çarşı dokusunun çekirdeğini oluşturur, sonraki bedestenlere örnek olmuştur. 14 kubbeli, 15,00 × 56,50 m'lik merkezi mekânı bugün Kapalıçarşı'nın kuyumcu çarşısı olarak kullanılır.",
+          "datingDisplay": "XIV. yüzyıl",
+          "cover": null
+        },
+        "description": "Koza Hanı bedesten, arasta ve hanlarla çevrilen çarşı bölgesinin parçasıdır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "674",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 1
+  },
+  "bursa-osmangazi-yildirim-bayezid-bedesteni": {
+    "version": "0.2.3",
+    "lang": "tr",
+    "assetId": "bursa-osmangazi-yildirim-bayezid-bedesteni",
+    "items": [
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-emir-hani",
+          "name": "Emir Hanı",
+          "subtitle": "Bursa'nın ilk bedesteni sayılan han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Gazi Orhan Bey'in külliyesinin parçası olarak 1339-40'ta At Pazarı bölgesinde yaptırılan, Bursa'nın ilk ticari yapısı ve ilk bedesteni sayılan iki katlı han. Yaklaşık 45 × 45 m ölçüsünde, 650 m² civarında orta avlulu, 74 odalıdır; kantariye geliri hanın mali kaynağıdır.",
+          "datingDisplay": "H. 740 / M. 1339-40",
+          "cover": null
+        },
+        "description": "Bedesten, Emir Hanı ve Orhan Hamamı ile paralel bir eksende yer alır; Emir Hanı çarşının ilk çekirdeğidir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "671, 674",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-geyve-hani",
+          "name": "Geyve Hanı",
+          "subtitle": "Bedesten'in doğu kapısı çıkışındaki, Yeşil Külliye'ye vakfedilmiş han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.185147,
+            "lng": 29.062999,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Hacı İvaz Paşa'nın 1419'dan önce yaptırıp Çelebi Mehmed'e armağan ettiği, onun da Yeşil Külliye'ye gelir olarak vakfettiği kare planlı, iki katlı han. Bursa çarşısının en işlek noktalarından birinde, Bedesten'in doğu kapısı çıkışındadır.",
+          "datingDisplay": "1419'dan önce",
+          "cover": null
+        },
+        "description": "Geyve Hanı, Bedesten'in doğu kapısı çıkışında yer alır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "640",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-koza-hani",
+          "name": "Koza Hanı",
+          "subtitle": "II. Bayezid'in yaptırdığı, Orhan Camii ile Ulucami arasındaki han",
+          "type": {
+            "code": "han",
+            "label": "Han"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184379,
+            "lng": 29.063538,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Sultan II. Bayezid'in İstanbul'daki külliyesine gelir sağlamak için 1489-1491 arasında yaptırdığı han. Orhan Camii ile Ulucami arasında yer alır; doğusuna bitişik tek katlı ahır-depo bölümü (İç Koza Hanı) Osmanlı'dan kalan nadir ahırlardandır. Bugün Bursa Çarşısı'nın en yoğun ticaret alanlarından biridir.",
+          "datingDisplay": "Mart 1489 - 30 Eylül 1491",
+          "cover": null
+        },
+        "description": "Koza Hanı bedesten, arasta ve hanlarla çevrilen çarşı bölgesinin parçasıdır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "674",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-orhan-bey-hamami",
+          "name": "Orhan Bey Hamamı (Aynalı Çarşı)",
+          "subtitle": "İlk dönem Osmanlı çifte hamamı",
+          "type": {
+            "code": "hamam",
+            "label": "Hamam"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.184506,
+            "lng": 29.062328,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Orhan Bey'in külliyesinin parçası olarak 1340'ta yaptırılan çifte hamam. Zamanla çarşı ve kahvehane olarak kullanılmış, 1934'te Sedat Çetintaş'ın araştırmasıyla hamam olduğu anlaşılmış, 1943'te kadınlar bölümü ayağa kaldırılmıştır. Bugün 'Eski Aynalı Çarşı' olarak anılır.",
+          "datingDisplay": "1340",
+          "cover": null
+        },
+        "description": "Orhan Hamamı ile paralel bir eksendedir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "674",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-ulucami",
+          "name": "Ulucami",
+          "subtitle": "Bursa'nın İncisi Ulucami",
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.18417,
+            "lng": 29.06167,
+            "verified": true,
+            "source": "manual"
+          },
+          "summary": "Osmanlıların Bursa'da yaptırdığı ilk büyük cami. Yıldırım Bayezid'in 1399'da tamamlattığı yirmi kubbeli yapı, yaklaşık 170 hat levhasıyla bir hat müzesini, kündekâri minberiyle Osmanlı ahşap işçiliğinin en nadide örneklerinden birini barındırır.",
+          "datingDisplay": "H. 802 / M. 1399-1400",
+          "cover": {
+            "key": "m01",
+            "kind": "photo",
+            "isCover": true,
+            "width": 5266,
+            "height": 3944,
+            "aspectRatio": 1.3352,
+            "dominantColor": "#857b6d",
+            "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQAgCdASoQAAwAAUAmJQBOgNOSe8Icu6Jon3gA/mbfuSQtCKFYZJReso2GHidqn8z3eLw5M4TneWae+x4YBMatuz13rsSNe30eK0QjXmk84T3Gu9Ppar4dBF3amhegc2V0DqceLVHqZm8lXLZsjwHx2LrycCjFo++99MdKf35QAAAA",
+            "focalPoint": {
+              "x": 0.5,
+              "y": 0.6
+            },
+            "caption": "Ulucami ve arkasında Uludağ, havadan",
+            "alt": "Havadan çekilmiş fotoğraf: dört sıra halinde dizilmiş yirmi gri kubbeli büyük taş cami, iki yanında birer tuğla minare, arkasında evlerle kaplı yamaçlar ve dağ.",
+            "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+            "photographer": null,
+            "license": "vakif-katilim-hackathon",
+            "archiveYear": null,
+            "sources": {
+              "webp": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.webp",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.webp",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.webp",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ],
+              "jpg": [
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/480.jpg",
+                  "width": 480,
+                  "height": 359
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/1280.jpg",
+                  "width": 1280,
+                  "height": 959
+                },
+                {
+                  "url": "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev/assets/bursa-osmangazi-ulucami/m01-8b293455e6/2560.jpg",
+                  "width": 2560,
+                  "height": 1917
+                }
+              ]
+            }
+          }
+        },
+        "description": "Bedesten 'Büyük Cuma Camii'nin yakınına konumlandırılmıştır.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "674",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "waqf_income",
+          "label": "Gelir / finansman bağı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-yildirim-yildirim-kulliyesi",
+          "name": "Yıldırım Bayezid Külliyesi",
+          "subtitle": null,
+          "type": {
+            "code": "kulliye",
+            "label": "Külliye"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Yıldırım",
+          "coordinates": {
+            "lat": 40.187906,
+            "lng": 29.081997,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Sultan Yıldırım Bayezid'in şehrin en doğusundaki bir tepeye kurdurduğu, surları andıran yüksek duvarlarla çevrili külliye; cami, medrese, türbe ve darüşşifa günümüze ulaşmıştır. 2014'te UNESCO Dünya Mirası Alanı olarak tescil edilmiştir.",
+          "datingDisplay": "H. 793-797 / M. 1391-1395",
+          "cover": null
+        },
+        "description": "Vakfiye, Kalealtı'ndaki dört yanı dükkânlı \"Yeni Bedesten\"i külliye vakfına dâhil eder.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c2",
+            "title": "Bursa Vakıf Eserleri – II. Cilt",
+            "pages": "164-165",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-2.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 0
+  },
+  "bursa-osmangazi-muradiye-kulliyesi": {
+    "version": "0.2.3",
+    "lang": "tr",
+    "assetId": "bursa-osmangazi-muradiye-kulliyesi",
+    "items": [
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-cariyeler-turbesi",
+          "name": "Cariyeler (Saraylılar) Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190911,
+            "lng": 29.046998,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Muradiye türbeleri içinde etrafı açık yapılmış iki baldaken planlı yapıdan biri; sekiz ayaklı ve piramidal külahlı. Kitabesi olmadığından uzun yıl kime ait olduğu bilinmemiş, arşiv çalışmaları Âkile Hatun ve Bosfor Belkıs Hatun'un burada yattığını ortaya koymuştur.",
+          "datingDisplay": "16. yüzyıl ortaları",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-cem-sultan-turbesi",
+          "name": "Cem Sultan Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190398,
+            "lng": 29.045771,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Fâtih Sultan Mehmed'in oğlu Şehzade Mustafa için yaptırılan, sonradan Cem Sultan'ın da yattığı için adını ondan alan altıgen planlı türbe. Muradiye türbeleri içinde en zengin süslemeli olanıdır; dört mermer sandukası vardır.",
+          "datingDisplay": "H. 884 / M. 1479",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-ebe-hatun-turbesi",
+          "name": "Ebe Hatun Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": null,
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190582,
+            "lng": 29.04545,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Muradiye haziresinin en batısında, hazireyi çevreleyen duvarın yanında yer alan, 4,46 m kenarlı küçük ve sade baldaken planlı türbe. Fâtih Sultan Mehmed'in ebesi Gülbahar Hatun'a atfedilir; kitabesi olmadığından kimliği kesin değildir.",
+          "datingDisplay": null,
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-gulruh-hatun-turbesi",
+          "name": "Gülruh Hatun Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190647,
+            "lng": 29.045407,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "II. Bayezid'in eşi Gülruh Hatun'un hayattayken, 1527'de yaptırdığı, kare planlı ve mukarnaslı tromplu kubbeli türbe. Dört mermer mezar içerir; kündekâri ahşap kapıları 2014'te aslına uygun yenilenmiştir.",
+          "datingDisplay": "1527",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-gulsah-hatun-turbesi",
+          "name": "Gülşah Hatun Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190252,
+            "lng": 29.045627,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Fâtih Sultan Mehmed'in eşi ve Şehzade Mustafa'nın annesi Gülşah Hatun'un vefatından önce, 1487'de yaptırdığı küçük ve mütevazı kübik türbe. İçindeki iki mermer mezardan biri Gülşah Sultan'a aittir.",
+          "datingDisplay": "1487",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-hanimlar-kizlar-turbesi",
+          "name": "Hanımlar Kızlar Türbesi (Yılanlı Türbe)",
+          "subtitle": "Saray mensubu kadınların medfun olduğu, kimliği arşiv belgeleriyle aydınlanan türbe",
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Muradiye'de Kaplıca Caddesi üzerinde, kare planlı ve tek kubbeli türbe. Halk arasında 'Üç Hanım Kızlar Türbesi' diye bilinirken arşiv belgeleri saray mensubu kadınların medfun olduğunu ve Muradiye Külliyesi içinde yer aldığını göstermiştir. 2014'te kapsamlı onarım görmüştür.",
+          "datingDisplay": "XVI. yüzyıl ortaları",
+          "cover": null
+        },
+        "description": "1929 ve 1953 tarihli belgelere göre türbe Bursa Muradiye Külliyesi içindedir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "502-503",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-huma-hatun-turbesi",
+          "name": "Hüma Hatun Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190802,
+            "lng": 29.047015,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Halk arasında \"Hatuniye\" veya \"Ak Türbe\" olarak da bilinen, II. Murad döneminde oğlu II. Mehmed'in annesi için yaptırdığı altıgen planlı kubbeli türbe. Kapı kitabesi Fâtih'in annesini \"Hatunların Efendisi\" unvanıyla anar.",
+          "datingDisplay": "H. 853 / M. 1449",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-muradiye-imareti",
+          "name": "İkinci Murad (Muradiye) İmareti",
+          "subtitle": null,
+          "type": {
+            "code": "imaret",
+            "label": "İmaret"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190916,
+            "lng": 29.045744,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Caminin yaklaşık yirmi metre kuzeydoğusundaki, 13 × 40 m ölçülerinde dikdörtgen planlı imaret. Uzun süre depo olarak kullanılmış, 1996'da restore edilmiş ve 2000'li yılların başından beri özel bir restoran olarak işletilmektedir.",
+          "datingDisplay": "M. 1425",
+          "cover": null
+        },
+        "description": "Caminin kuzeydoğusundaki imaret.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "124-125",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-muradiye-camii",
+          "name": "Muradiye Camii",
+          "subtitle": null,
+          "type": {
+            "code": "cami",
+            "label": "Cami"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.191015,
+            "lng": 29.046501,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Bursa'daki sultan camilerinin sonuncusu. Sultan II. Murad'ın 1425-1426'da yaptırdığı, iki yanında tabhane/zaviyeleri olan cami; Tebrizli ustaların çinileriyle ve 1897'de eyvana çevrilen tabhaneleriyle bilinir.",
+          "datingDisplay": "H. 828-830 / M. 1425-1426",
+          "cover": null
+        },
+        "description": "Külliyenin ana yapısı olan cami.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111-118",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-muradiye-cesmesi",
+          "name": "Muradiye Çeşmesi",
+          "subtitle": null,
+          "type": {
+            "code": "cesme",
+            "label": "Çeşme"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190911,
+            "lng": 29.046998,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Muradiye Külliyesi'ne ait çeşmeler arasında yalnızca vakıf eseri niteliği taşıyan, külliyenin batı ucundaki tuğla Sıbyan Mektebi (Medrese) Çeşmesi.",
+          "datingDisplay": "H. 828-830 / M. 1425-1426 (külliye ile eş zamanlı)",
+          "cover": null
+        },
+        "description": "Külliyenin vakıf eseri niteliğindeki Sıbyan Mektebi (Medrese) Çeşmesi.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "123",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-muradiye-hamami",
+          "name": "Muradiye Hamamı",
+          "subtitle": null,
+          "type": {
+            "code": "hamam",
+            "label": "Hamam"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190911,
+            "lng": 29.046998,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Medresenin batısındaki, soğukluk, ılıklık, iki halvet ve külhandan oluşan sade planlı hamam. Zaman içinde dökümhane, engelli rehabilitasyon merkezi ve giyim mağazası olarak kullanılmıştır.",
+          "datingDisplay": "M. 1426",
+          "cover": null
+        },
+        "description": "Medresenin batısındaki hamam.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "126-127",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-muradiye-medresesi",
+          "name": "Muradiye Medresesi",
+          "subtitle": null,
+          "type": {
+            "code": "medrese",
+            "label": "Medrese"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190916,
+            "lng": 29.045744,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Muradiye Külliyesi'nin batı ucundaki, 17 × 17 m revaklı avlulu, tek eyvanlı ve on altı hücreli Erken Osmanlı medresesi. Bugün Muradiye El Yazmaları Müzesi olarak ziyarete açıktır.",
+          "datingDisplay": "H. 828-830 / M. 1425-1426 (külliye ile birlikte)",
+          "cover": null
+        },
+        "description": "Külliyenin batı ucundaki medrese.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "120-122",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-mukrime-hatun-turbesi",
+          "name": "Mükrime Hatun Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.19033,
+            "lng": 29.045512,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "II. Bayezid'in oğlu Şehinşah'ın hanımı Mükrime Hatun'a atfedilen, 12 pencereli, kurşun kubbeli kare planlı türbe. Celi sülüs Âyetü'l-kürsî ve Fatiha frizi, mukarnaslı mihrabı ve zengin kalem işleriyle 2012'de restore edilip ziyarete açılmıştır.",
+          "datingDisplay": "1517 öncesi",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-ii-murad-turbesi",
+          "name": "Sultan II. Murad Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190654,
+            "lng": 29.046329,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Muradiye türbelerinin en görkemlisi; Osmanlı padişah türbeleri içinde en sade olanı ve Bursa'da sanduka ya da lahit kullanılmayan tek padişah mezarı. II. Mehmed babasının vasiyetine uyarak 1451'de yaptırmıştır; saçağı çıtakâri ve Edirnekâri süslemeleriyle bilinir.",
+          "datingDisplay": "H. 855 / M. 1451",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-sehzade-ahmet-turbesi",
+          "name": "Şehzade Ahmet Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190684,
+            "lng": 29.046268,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Yavuz Sultan Selim'in 1513 tarihli fermanıyla, Muradiye Camii ile II. Murad Türbesi arasında yaptırılan sekizgen planlı türbe. Şehzade Ahmet, annesi Bülbül Hatun, kardeşi Şehinşah ve Şehinşah'ın oğlu Mehmed ile Şehzade Korkut burada yatar; kapısı kündekâri tekniğindedir.",
+          "datingDisplay": "H. 919 / M. 1513",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-sehzade-alaaddin-ali-turbesi",
+          "name": "Şehzade Alâaddin Ali Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190911,
+            "lng": 29.046998,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Sultan II. Murad'ın oğlu Şehzade Alâaddin Ali'nin, babasının türbesinin doğu duvarına bitişik, 7,25 × 7,80 m ölçülerindeki türbesi. Şehzade Alâaddin, Ahmed, Orhan ve Şehzade Hatun burada yatar.",
+          "datingDisplay": "Tarih tartışmalı: 1442 (giriş bölümü) / II. Murad'ın vefatından (1451) sonra (türbe bölümü)",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-sehzade-mahmut-turbesi",
+          "name": "Şehzade Mahmut Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190445,
+            "lng": 29.045463,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Manisa valisiyken 1506'da ölen II. Bayezid'in oğlu Şehzade Mahmud için yaptırılan sekizgen türbe. Dört mermer sandukada Şehzade Mahmud ile oğulları Orhan, Emir ve Musa yatar; iç mekân çini, kalem işi ve malakâri bakımından zengindir.",
+          "datingDisplay": "H. 913 / M. 1507 (kapı kitabesi, kaynaklara göre)",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-sehzade-mustafa-turbesi",
+          "name": "Şehzade Mustafa Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "klasik-osmanli",
+            "label": "Klasik Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190398,
+            "lng": 29.045771,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "Kanuni Sultan Süleyman'ın oğlu Şehzade Mustafa için üvey kardeşi II. Selim'in 1573'te yaptırdığı sekizgen türbe. Mimarı sonradan Sultanahmet Camii'ni yapan Mehmed Çavuş'tur; alt kısmı 16. yüzyıl natüralist İznik çinileriyle kaplıdır.",
+          "datingDisplay": "H. 981 / M. 1573",
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "same_complex",
+          "label": "Aynı külliyenin parçası"
+        },
+        "direction": "outgoing",
+        "asset": {
+          "id": "bursa-osmangazi-sirin-hatun-turbesi",
+          "name": "Şirin Hatun Türbesi",
+          "subtitle": null,
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": null,
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": {
+            "lat": 40.190754,
+            "lng": 29.045423,
+            "verified": false,
+            "source": "osm"
+          },
+          "summary": "II. Bayezid'in eşi ve Şehzade Abdullah'ın annesi Şirin Hatun'un hayattayken yaptırdığı, kare planlı ve yüksek sekizgen kasnaklı tromplu kubbeli türbe. 16. yüzyıla ait kalem işi süslemeleri 2013 restorasyonunda raspayla yeniden ortaya çıkarılmıştır.",
+          "datingDisplay": null,
+          "cover": null
+        },
+        "description": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "111",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      },
+      {
+        "type": {
+          "code": "urban_context",
+          "label": "Kentsel / çarşı bağlamı"
+        },
+        "direction": "incoming",
+        "asset": {
+          "id": "bursa-osmangazi-karisdiran-suleyman-bey-turbesi",
+          "name": "Karışdıran (Karşıduran) Süleyman Bey Türbesi",
+          "subtitle": "Muradiye Külliyesi ihata duvarının batısındaki kriptalı türbe",
+          "type": {
+            "code": "turbe",
+            "label": "Türbe"
+          },
+          "era": {
+            "code": "erken-osmanli",
+            "label": "Erken Osmanlı"
+          },
+          "city": {
+            "code": "bursa",
+            "label": "Bursa"
+          },
+          "district": "Osmangazi",
+          "coordinates": null,
+          "summary": "Muradiye Külliyesi'ni çevreleyen ihata duvarının batısında, Fâtih döneminde defterdarlık yapmış Süleyman Bey'in kare planlı, kubbeli türbesi. Altında kripta ya da mumyalık katı vardır; 1949 ve 2010'da onarılmıştır.",
+          "datingDisplay": null,
+          "cover": null
+        },
+        "description": "Türbe, Muradiye Külliyesi'ni çevreleyen ihata duvarının batı kesiminde yer alır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "507",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 0
+  }
+}

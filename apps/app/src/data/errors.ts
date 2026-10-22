@@ -3,6 +3,11 @@ interface SchemaError {
   issues: ReadonlyArray<{ path: ReadonlyArray<PropertyKey>; message: string }>;
 }
 
+/** Any `@vagabonds/contracts` schema. */
+export interface SchemaParser<T> {
+  safeParse(data: unknown): { success: true; data: T } | { success: false; error: SchemaError };
+}
+
 /**
  * - `invalid`: the data arrived but does not match the contract.
  * - `unavailable`: the data could not be fetched at all (network, server down).

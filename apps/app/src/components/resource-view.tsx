@@ -1,8 +1,9 @@
 import { Button, spacing, Text } from "@vagabonds/ui";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
 import type { DataError, ResourceWithRetry } from "@/data";
+import { announce } from "@/lib/announce";
 import { useColors } from "@/theme";
 
 interface ResourceViewProps<T> {
@@ -29,6 +30,9 @@ export function ResourceView<T>({ resource, children }: ResourceViewProps<T>) {
 
 export function DataErrorView({ error, onRetry }: { error: DataError; onRetry: () => void }) {
   const title = error.kind === "invalid" ? "Veriler okunamadı" : "Veriler yüklenemedi";
+
+  // The screen changes under the reader's finger; say what happened (web: role="alert" below).
+  useEffect(() => announce(`${title}. ${error.message}`), [title, error.message]);
 
   return (
     <View style={styles.center} accessibilityRole="alert">

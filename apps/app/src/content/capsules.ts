@@ -1,5 +1,3 @@
-import type { MonumentType } from "@vagabonds/contracts";
-
 /**
  * Sound capsules: 24-second ambiences, one per former use of a building.
  * Sample content (see ./README.md). On the web the sound is synthesized live;
@@ -62,17 +60,16 @@ export const capsules: Record<CapsuleType, Capsule> = {
 
 export const capsuleTypes = Object.keys(capsules) as CapsuleType[];
 
-/** The capsule a monument card plays, by building type; `null` when none fits yet. */
-export const capsuleForMonumentType: Record<MonumentType, CapsuleType | null> = {
-  mosque: null,
-  madrasa: "medrese",
-  bath: "hamam",
-  fountain: null,
-  arasta: "kervan",
-  caravanserai: "kervan",
-  bridge: null,
-  tomb: null,
-  other: null,
+/**
+ * The capsule an asset card plays, by its ambient sound key (`ambientSound.key` in
+ * `/assets/:id`). The API resolves the key from the asset or its type's default
+ * (`ambient_sound` in data/enums.json). Keys without a capsule yet play none.
+ */
+export const capsuleForSoundKey: Partial<Record<string, CapsuleType>> = {
+  medrese: "medrese",
+  hamam: "hamam",
+  han: "kervan",
+  darussifa: "sifahane",
 };
 
 export function captionAt(type: CapsuleType, seconds: number): string {
