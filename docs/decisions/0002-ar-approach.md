@@ -1,6 +1,6 @@
 # ADR 0002: Kitabe AR'ı için MindAR, WebView içinde
 
-- **Durum:** Önerildi (Android'de doğrulandı; iOS ve sahada deneme bekleniyor)
+- **Durum:** Kabul edildi (Android'de doğrulandı; iOS ve gerçek bir kitabenin önünde deneme açık)
 - **Tarih:** 2026-10-22
 - **Karar veren:** Yiğit Top (Y5)
 
@@ -63,10 +63,12 @@ işlenen kareyi gösterir. H7'nin gerçek fotoğrafı gelince yalnızca hedef do
 | Başlatma (ilk açılış / önbellekten) | 3,8 sn / 0,3 sn | 3,5 sn | Denenmedi |
 | İlk tanıma¹ | 0,1 sn | 19,1 sn | |
 | Taş kitabe, hafif açıyla | Tanındı, köşeler doğru yerde | Tanındı, dizüstü ekranından ve açıyla; köşeler doğru yerde | |
-| Hat levhası | Tanındı | | |
+| Hat levhası | Tanındı | Tanındı | |
+| Yaklaşma, uzaklaşma, açı | – | Geçti | |
+| Loş ışık | – | Geçti | |
 | Hedef kadrajdan çıkınca | Kayboldu olarak bildirildi | Kayboldu, geri gelince yeniden tanındı | |
 | Saniyede işlenen kare (ararken / takipte) | ~60 | 31 / 65–71 | |
-| Kamera izni akışı | – | `expo-camera` ile çalışıyor (aşağıya bakın) | |
+| Kamera izni akışı | – | `expo-camera` ile çalışıyor; izin kaldırılınca ekran nedenini söylüyor (aşağıya bakın) | |
 
 ¹ Sayfanın hazır olduğu andan ilk tanımaya kadar: kameranın hedefe çevrilme süresini de içerir.
 
@@ -75,6 +77,9 @@ kamera isteği Expo Go'da hiç yanıtlanmadı (ne izin ne ret). İzin Expo'nun m
 (`expo-camera`, `useCameraPermissions`) alınınca kamera açıldı. Expo Go izinleri proje başına
 tuttuğu için büyük ihtimalle WebView ilk izni görmüyordu. Sayfa artık kamera isteği 10 sn'de
 yanıtlanmazsa hata veriyor; ekranda hangi başlangıç adımında kalındığı görünüyor.
+
+Telefon testleri bilgisayar ekranında açılan test görselleriyle yapıldı (2026-10-22, Expo Go).
+Gerçek bir taş kitabenin önünde, gün ışığında ve gölgede deneme sahada yapılacak.
 
 Masaüstü sonuçları yalnızca altyapının doğru çalıştığını gösterir. Sahte kamera kusursuz
 bir görüntü veriyor; ışık, titreme ve odak telefonda ölçülecek.
