@@ -21,6 +21,7 @@
     "contracts:validate": "npm run validate --workspace @vagabonds/contracts",
     "ui:contrast": "npm run contrast --workspace @vagabonds/ui",
     "data:validate": "python3 data/tools/validate.py",
+    "data:ar-targets": "tsx data/tools/compile_ar_targets.mts",
     "db:import": "set -a && . apps/api/.env && set +a && python3 data/tools/import_to_db.py --verify",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm test --workspaces --if-present"

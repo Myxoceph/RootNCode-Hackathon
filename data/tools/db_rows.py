@@ -8,6 +8,8 @@ TABLES: her tablonun sütunları, DDL'deki sırayla. DB'nin kendisinin ürettiğ
 sütunlar (identity id, uuid, now()) satırlarda GENERATED değeriyle gelir.
 """
 import json
+import re
+from functools import lru_cache
 from pathlib import Path
 
 DATA = Path(__file__).resolve().parent.parent
@@ -117,6 +119,32 @@ def shared_rows():
         for s in sources
     ]
     return {t: rows[t] for t in SHARED_TABLES}
+
+
+@lru_cache(maxsize=None)
+def _ar_targets():
+    """build/ar-targets.json (compile_ar_targets.mts) ve sözleşmedeki MindAR sürümü."""
+    path = DATA / "build" / "ar-targets.json"
+    compiled = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"mindar_version": None, "targets": {}}
+    contract = (DATA.parent / "packages" / "contracts" / "src" / "asset.schema.ts").read_text(encoding="utf-8")
+    return compiled, re.search(r'AR_MINDAR_VERSION = "([^"]+)"', contract).group(1)
+
+
+def ar_target(asset_id, media_id, manifest):
+    """Kitabenin AR hedefi; `.mind` dosyası henüz derlenmemişse None.
+
+    API `.mind` adresini fotoğrafın klasöründen kendisi kurar (`arTargetMindKey`); bu yüzden
+    yalnızca bu fotoğraftan, sözleşmedeki MindAR sürümüyle derlenmiş hedef DB'ye girer.
+    Fotoğraf değiştiyse ya da sürüm yükseldiyse önce `npm run data:ar-targets`.
+    """
+    if not media_id:
+        return None
+    compiled, version = _ar_targets()
+    entry = compiled["targets"].get(asset_id, {}).get(media_id)
+    photo = manifest.get(media_id)
+    if not entry or not photo or compiled["mindar_version"] != version or entry["sha256"] != photo["sha256"]:
+        return None
+    return media_id
 
 
 def asset_rows(a, manifest):
@@ -257,7 +285,7 @@ def asset_rows(a, manifest):
             "language": n["language"], "script": n.get("script"), "transliteration": n.get("transliteration"),
             "translation_tr": _t(n.get("translation"), "tr"), "translation_en": _t(n.get("translation"), "en"),
             "author": n.get("author"), "hijri_year": d.get("hijri_year"), "gregorian": d.get("gregorian"),
-            "note_tr": _t(n.get("note"), "tr"), "note_en": _t(n.get("note"), "en"), "ar_target_media_key": n.get("ar_target_media_id"),
+            "note_tr": _t(n.get("note"), "tr"), "note_en": _t(n.get("note"), "en"), "ar_target_media_key": ar_target(aid, n.get("ar_target_media_id"), manifest),
         })
         cite("inscription", n["id"], n["source_refs"])
 
