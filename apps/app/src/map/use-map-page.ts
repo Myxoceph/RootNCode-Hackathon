@@ -13,7 +13,7 @@ const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
  * the commands sent to it when pins or the selection change, and its events.
  */
 export function useMapPage(
-  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING }: AssetMapProps,
+  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null }: AssetMapProps,
   send: (command: MapPageCommand) => void,
 ) {
   const { scheme, colors: c } = useTheme();
@@ -24,7 +24,18 @@ export function useMapPage(
       maplibre
         ? mapPageHtml({
             scheme,
-            colors: { land: c.mapBackground, pin: c.primary, pinSelected: c.highlightMark, outline: c.surface, onCluster: c.onPrimary },
+            colors: {
+              land: c.mapBackground,
+              pin: c.primary,
+              pinSelected: c.highlightMark,
+              outline: c.surface,
+              onCluster: c.onPrimary,
+              fog: c.fog,
+              mark: c.highlightMark,
+              markText: c.highlight,
+              label: c.surface,
+              labelText: c.text,
+            },
             maplibre,
           })
         : null,
@@ -36,6 +47,9 @@ export function useMapPage(
   const padding = JSON.stringify(fitPadding);
   useEffect(() => send({ type: "pins", pins, padding: JSON.parse(padding) }), [pins, padding, send]);
   useEffect(() => send({ type: "select", id: selectedId }), [selectedId, send]);
+  // Same for the network, which screens rebuild on every render.
+  const networkJson = JSON.stringify(network);
+  useEffect(() => send({ type: "network", network: JSON.parse(networkJson) }), [networkJson, send]);
 
   const onMessage = (data: unknown) => {
     const event = parseMapPageEvent(data);
@@ -51,6 +65,7 @@ export function useMapPage(
   const replay = () => {
     send({ type: "pins", pins, padding: fitPadding });
     send({ type: "select", id: selectedId });
+    send({ type: "network", network });
   };
 
   return { html, onMessage, replay };
