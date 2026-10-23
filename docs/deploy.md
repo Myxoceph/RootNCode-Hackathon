@@ -18,7 +18,7 @@ Demo günü uygulama ekibin kendi VDS'inden yayınlanır. Bütün yığın tek b
 | `api` | `/assets`, `/meta`, `/health`, Swagger (`/api/docs`); `node` kullanıcısıyla, salt okunur dosya sistemiyle çalışır | Hayır |
 | `web` | Caddy: HTTPS sertifikası, güvenlik başlıkları, sıkıştırma, statik site ve `/api` yönlendirmesi | 80, 443 |
 
-Görseller sunucudan değil, R2'den (`MEDIA_BASE_URL`) gelir.
+Görseller sunucudan değil, R2'den (`MEDIA_BASE_URL`) gelir; Türkiye'den erişilebilsin diye kendi alan adımızdaki bir Worker üzerinden (bkz. [Görsellerin alan adı](#görsellerin-alan-adı)).
 
 ## Gereksinimler
 
@@ -87,6 +87,37 @@ docker compose -f deploy/compose.yml --env-file deploy/.env run --rm seed
 
 **Geri alma:** Bir önceki commit'e dönüp aynı komutu çalıştır (`git switch --detach <commit>` → `up -d --build`). Migration'lar geri alınmaz; sorunlu bir migration varsa yedekten dön (aşağıda).
 
+## Görsellerin alan adı
+
+R2 bucket'ının genel adresi (`pub-….r2.dev`) Türk operatörlerinde engelli. Bucket Ahmet'in Cloudflare
+hesabında, alan adı Yiğit'in hesabında; R2 özel alan adını yalnızca kendi hesabındaki bir alan adına
+bağladığı için araya küçük bir Worker konur (`deploy/media-worker/`). Worker her isteği bucket'ın genel
+adresine iletir, cevabı Cloudflare'in önbelleğinde 30 gün tutar. Görseller kopyalanmaz, CI'ın R2'ye
+yükleme düzeni değişmez.
+
+```
+Uygulama ──► media.<alan adı> (Worker, Yiğit'in hesabı) ──► pub-….r2.dev (bucket, Ahmet'in hesabı)
+```
+
+Kurulum (Cloudflare hesabının sahibi yapar, bir kez):
+
+```bash
+cd deploy/media-worker
+npx wrangler@4.149.0 login            # tarayıcıda Cloudflare hesabına izin ver
+npx wrangler@4.149.0 deploy           # vagabonds-media.<hesap>.workers.dev adresinde yayına alır
+```
+
+1. Denemek için bir görsel anahtarı al (ör. API'den bir eserin `cover` adresindeki `assets/...` kısmı) ve
+   `https://vagabonds-media.<hesap>.workers.dev/assets/...` adresini tarayıcıda aç.
+2. Cloudflare panelinde **Workers & Pages → vagabonds-media → Settings → Domains & Routes → Add → Custom
+   domain** ile `media.<alan adı>` ekle. DNS kaydı ve sertifika kendiliğinden oluşur; alan adındaki
+   web site etkilenmez.
+3. Aynı görseli `https://media.<alan adı>/assets/...` adresinden, Türkiye'deki iki farklı operatörden
+   (ör. ev interneti ve mobil veri) aç.
+4. `MEDIA_BASE_URL`'i yeni adrese çevir (sunucuda `deploy/.env`, yerelde `apps/api/.env`) ve API'yi yeniden başlat.
+
+Bucket'ın adresi değişirse `wrangler.toml`'daki `ORIGIN`'i güncelleyip yeniden `deploy` et.
+
 ## Kayıtlar, yedek, sorun giderme
 
 ```bash
@@ -119,7 +150,7 @@ Kuyruk Swagger'dan yönetilebilir: `/api/docs` → **Authorize** → token → `
 | `api` başlamıyor, `seed` "exited (1)" | `dc logs seed`: veri doğrulaması ya da migration hatası. Aynı commit'te CI yeşil mi bak. |
 | `set POSTGRES_PASSWORD in deploy/.env` | `--env-file deploy/.env` unutuldu ya da parola boş. |
 | Sertifika alınamıyor | Alan adının A kaydı sunucuyu göstermiyor ya da 80/443 kapalı. `dc logs web`. |
-| Görseller açılmıyor | R2'ye yükleme yapılmamış ya da `MEDIA_BASE_URL` yanlış. |
+| Görseller açılmıyor | R2'ye yükleme yapılmamış, `MEDIA_BASE_URL` yanlış ya da medya Worker'ı yayında değil (adresin kökü "Vagabonds media" yazmalı). |
 | Parolayı değiştirdim, veritabanına bağlanamıyor | PostgreSQL parolayı yalnızca ilk kurulumda okur. Eski parolayla bağlanıp `ALTER USER vagabonds PASSWORD '...'` çalıştır. |
 
 ## Yerelde prova

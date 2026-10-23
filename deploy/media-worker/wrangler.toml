@@ -1,0 +1,12 @@
+# Media Worker (Y14): serves the R2 media bucket under our own domain.
+# Deploy: docs/deploy.md, "Görsellerin alan adı".
+name = "vagabonds-media"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Also reachable at vagabonds-media.<account>.workers.dev, for testing before the domain is added.
+workers_dev = true
+
+[vars]
+# Public URL of the bucket (Ahmet's Cloudflare account). Without a trailing slash.
+ORIGIN = "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev"
