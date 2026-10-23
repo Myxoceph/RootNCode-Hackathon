@@ -13,6 +13,15 @@ export type TrackerFailure =
   | "load-failed"
   | "unknown";
 
+/** What to tell a person when the tracker cannot start. */
+export const trackerFailureText: Record<TrackerFailure, string> = {
+  "camera-denied": "Kamera izni verilmedi. Telefonun ayarlarından izin verip yeniden dene.",
+  "camera-unavailable": "Kamera açılamadı. Başka bir uygulama kullanıyor olabilir.",
+  "camera-unsupported": "Bu WebView kameraya erişemiyor.",
+  "load-failed": "AR kütüphanesi yüklenemedi.",
+  unknown: "AR başlatılamadı.",
+};
+
 export type TrackerStep = "page" | "library" | "camera" | "video" | "targets";
 
 /** Messages the tracker page posts to the app. */

@@ -5,17 +5,9 @@ import { AccessibilityInfo, Platform, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { MarkerTracker } from "@/ar/marker-tracker";
-import type { TrackerEvent, TrackerFailure, TrackerStep } from "@/ar/mindar";
+import { trackerFailureText, type TrackerEvent, type TrackerFailure, type TrackerStep } from "@/ar/mindar";
 import { testTargetLabels, testTargetsMind } from "@/ar/test-targets.generated";
 import { CameraTopBar } from "@/components/camera-chrome";
-
-const failureText: Record<TrackerFailure, string> = {
-  "camera-denied": "Kamera izni verilmedi. Telefonun ayarlarından izin verip yeniden dene.",
-  "camera-unavailable": "Kamera açılamadı. Başka bir uygulama kullanıyor olabilir.",
-  "camera-unsupported": "Bu WebView kameraya erişemiyor.",
-  "load-failed": "AR kütüphanesi yüklenemedi.",
-  unknown: "AR başlatılamadı.",
-};
 
 const stepText: Record<TrackerStep, string> = {
   page: "Sayfa yüklendi",
@@ -90,7 +82,7 @@ export default function ArPrototypeScreen() {
         break;
       case "error":
         setFailure(event.reason);
-        setStatus(failureText[event.reason]);
+        setStatus(trackerFailureText[event.reason]);
         setDetail(event.message);
         break;
     }

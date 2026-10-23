@@ -18,8 +18,8 @@ const modes: Array<{ href: Href; icon: ComponentProps<typeof Ionicons>["name"]; 
     href: "/inscription",
     icon: "scan-outline",
     title: "Taşın Dili",
-    description: "Kapıdaki kitabeye odaklan: hat parlar, okunuşu, meali ve vakfiye şartı belirir.",
-    web: "Web'de: kitabe metni, meal ve vakfiye şartı doğrudan okunur.",
+    description: "Kitabeye odaklan: tanınınca köşeleri belirir, okunuşu ve günümüz Türkçesi açılır.",
+    web: "Web'de: kitabenin okunuşu ve günümüz Türkçesi doğrudan okunur.",
   },
   // The decision records' prototypes (Y5 AR, Y6 map); development builds only.
   ...(__DEV__
