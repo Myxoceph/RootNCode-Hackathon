@@ -79,9 +79,13 @@ Google Cloud projesi) gerekeceği için bu yol araştırılmadı.
   web'de ayrı bir parça, yalnızca harita açılınca iniyor.
 - **Karolar ve yazı tipleri hâlâ internetten:** Altlık ve küme sayılarının yazı tipi OpenFreeMap'ten geliyor.
   İnternet yoksa altlık boş kalır, pinler ve eser kartı çalışır. Karo sağlayıcısının erişimi ve atfı demo öncesi kontrol edilmeli.
-- **Kübra'nın sis haritası:** Hayrat'ın sis ve bağ çizgileri bu haritaya katman olarak taşınabilir
-  (sis: eserlerin çevresinde delikleri olan bir poligon; bağlar: `/relations`'tan çizgiler). Bu iş Hafta 3'te
-  Kübra'yla birlikte yapılır; bugünkü Harita sekmesi o zamana kadar değişmez.
+- **Sis haritası (Y11, 2026-10-23):** Hayrat'ın sis ve bağ çizgileri Harita sekmesine taşındı. Harita
+  bileşeni `network` özelliğiyle sis, açıklıklar, bağ çizgileri ve işaretli pinler (açılmış eser yıldızı,
+  ipucu "?") alıyor; bunlar MapLibre katmanı değil, haritanın üstündeki bir tuvale her karede çiziliyor.
+  Sebebi: delikli poligonda üst üste binen açıklıklar yeniden sisle doluyor, tuvalde ise kendiliğinden
+  birleşiyor ve kenarları yumuşak kalıyor. Açıklık 260 m, ama şehir bütün olarak görünürken kaybolmasın
+  diye en az 44 px. Bağlar yalnızca açılan eserler için `/assets/:id/relations`'tan çekiliyor (`useRelationsOf`);
+  bütün bağları veren bir uç nokta yok. Hangi bağ türlerinin sayıldığı `apps/app/src/map/urban-network.ts`'de.
 - **Koordinat eksikleri:** Bursa'da eserlerin yaklaşık yarısının, Hatay'da büyük çoğunluğunun koordinatı
   veritabanında yok. Haritada görünmeyen eserlere liste her zaman ulaştırır.
 - **Yedek yol:** Telefonda akıcılık yetersiz kalırsa `@maplibre/maplibre-react-native` ve development build;
