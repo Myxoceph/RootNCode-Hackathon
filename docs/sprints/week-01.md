@@ -24,8 +24,8 @@ hazır olur, veri hattı ilk gerçek eserleri üretir ve backend ilk API uçlar�
 | Y2 ✅ | Navigasyon iskeleti: Keşfet (harita), Eserler, Rota, Ayarlar sekmeleri | `feat/app-navigation` | Sekmeler arası geçiş mobilde ve web'de çalışıyor; web'de her sekmenin kendi URL'i var · [PR #17](https://github.com/Myxoceph/RootNCode-Hackathon/pull/17) |
 | Y3 ✅ | Veri katmanı: `mock_monuments.json`'u `MonumentsPayloadSchema` ile doğrulayarak yükle; ileride API'ye geçişi tek ayarla yapacak bir veri kaynağı soyutlaması kur | `feat/app-data-source` | Ekranlar veriye sadece bu katman üzerinden erişiyor; geçersiz veride anlaşılır hata gösteriliyor · [PR #17](https://github.com/Myxoceph/RootNCode-Hackathon/pull/17) |
 | Y4 ✅ | Eser listesi ve eser detay ekranı (salt okunur) | `feat/app-monument-screens` | Liste 3 eseri gösteriyor; detay ekranı `/monuments/[slug]` adresinden açılıyor · [PR #17](https://github.com/Myxoceph/RootNCode-Hackathon/pull/17) |
-| Y5 | **AR araştırması:** MindAR'ı WebView içinde çalıştırma vs. Expo uyumlu native AR kütüphanesi. Küçük bir prototip ve karar notu | `docs/adr-ar-approach` | [`docs/decisions/`](../decisions/) altında karar kaydı (ADR) |
-| Y6 | **Harita araştırması:** mobilde native harita, web'de MapLibre GL JS; ortak bir harita bileşeni arayüzü | `docs/adr-map-approach` | Karar kaydı + iki platformda tek pin gösteren prototip |
+| Y5 ✅ | **AR araştırması:** MindAR'ı WebView içinde çalıştırma vs. Expo uyumlu native AR kütüphanesi. Küçük bir prototip ve karar notu | `docs/adr-ar-approach` | [`docs/decisions/`](../decisions/) altında karar kaydı (ADR) · Hafta 2'ye taşındı, orada tamamlandı: [ADR 0002](../decisions/0002-ar-approach.md) · [PR #50](https://github.com/Myxoceph/RootNCode-Hackathon/pull/50) |
+| Y6 ✅ | **Harita araştırması:** mobilde native harita, web'de MapLibre GL JS; ortak bir harita bileşeni arayüzü | `docs/adr-map-approach` | Karar kaydı + iki platformda tek pin gösteren prototip · Hafta 2'ye taşındı, orada tamamlandı: [ADR 0003](../decisions/0003-map-approach.md) · [PR #55](https://github.com/Myxoceph/RootNCode-Hackathon/pull/55) |
 
 ## Kübra Alkan · UI/UX & Erişilebilirlik
 
@@ -33,7 +33,7 @@ hazır olur, veri hattı ilk gerçek eserleri üretir ve backend ilk API uçlar�
 |---|---|---|---|
 | K1 ✅ | Temel ekranların wireframe'leri (Figma): eser listesi, eser detayı, harita, kitabe okuma, erişilebilirlik ayarları; mobil ve web yerleşimi | – | Figma linki bu dosyaya eklendi, ekiple paylaşıldı · Wireframe'ler ekiple doğrudan paylaşıldı, Figma linki eklenmedi |
 | K2 ✅ | Tasarım token'ları `packages/ui` içinde: renkler, tipografi, boşluklar | `feat/ui-tokens` | Tüm metin/arka plan çiftleri WCAG AA kontrastını (4.5:1) sağlıyor; kontrast değerleri belgelendi · [`CONTRAST.md`](../../packages/ui/CONTRAST.md) · [PR #12](https://github.com/Myxoceph/RootNCode-Hackathon/pull/12) |
-| K3 | Açık, koyu ve yüksek kontrast temaları | `feat/ui-themes` | Üç tema token'lardan türetiliyor; tema geçişi tek noktadan yapılıyor |
+| K3 ✅ | Açık, koyu ve yüksek kontrast temaları | `feat/ui-themes` | Üç tema token'lardan türetiliyor; tema geçişi tek noktadan yapılıyor · Hafta 2'ye taşındı, orada tamamlandı ([`week-02.md`](week-02.md)) |
 | K4 ✅ | Ekip için erişilebilirlik kontrol listesi: ekran okuyucu etiketleri, odak sırası, dokunma hedefleri, altyazı, switch access | `docs/a11y-checklist` | `docs/accessibility-checklist.md` yazıldı; PR şablonunda kullanılacak maddeler hazır · [PR #13](https://github.com/Myxoceph/RootNCode-Hackathon/pull/13) |
 | K5 | Temel bileşenler: `Button`, `Text`, `Card` (erişilebilirlik özellikleri yerleşik); Yiğit ile birlikte `apps/app`'e bağlanacak | `feat/ui-base-components` | Bileşenler hem mobilde hem web'de ekran okuyucuyla doğru okunuyor |
 
