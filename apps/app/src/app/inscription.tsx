@@ -1,45 +1,54 @@
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import { AccessibilityInfo, Animated, Easing, Platform, ScrollView, StyleSheet, View } from "react-native";
+import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Svg, { Defs, G, Line, Path, RadialGradient, Rect, Stop, Text as SvgText } from "react-native-svg";
 
+import { inscriptionTargets, inscriptionTargetsMind, type InscriptionTarget } from "@/ar/inscription-targets";
+import { MarkerTracker } from "@/ar/marker-tracker";
+import { trackerFailureText, type TrackerEvent, type TrackerFailure } from "@/ar/mindar";
+import { useInscription, type InscriptionText } from "@/ar/use-inscription";
 import { CameraTopBar, GlassIconButton } from "@/components/camera-chrome";
 import { InscriptionReading } from "@/components/inscription-reading";
-import { inscription, inscriptionReadAloud } from "@/content/camera";
+import type { ResourceWithRetry } from "@/data";
+import { announce } from "@/lib/announce";
 import { speak } from "@/lib/speak";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderEnabled } from "@/lib/use-screen-reader";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
-type Phase = "scanning" | "locked" | "revealed";
+type Phase = "starting" | "scanning" | "locked" | "revealed";
 
-/** Scene in the design's 280×600 grid, scaled to cover the screen. */
-const SCENE = { width: 280, height: 600 };
-const PLAQUE = { x: 30, y: 112, width: 220, height: 130 };
-const LOCK_MS = 1900;
-const REVEAL_MS = 2700;
+/** How long the gold corners hold on the inscription before its card rises. */
+const REVEAL_MS = 800;
 
 /**
- * Taşın Dili (module 2). Three states: searching (scan line), locked (gold
- * corners on the plaque, green dot) and revealed (the inscription glows, its
- * reading, meaning and the waqf's condition rise in a card below).
- *
- * Marker recognition is simulated until the AR prototype lands (Y5, H7).
+ * Taşın Dili (module 2). The camera looks for an inscription with MindAR
+ * (ADR 0002); once one is found the page marks its corners, and its reading,
+ * today's Turkish and the waqf rise in a card below, from the asset's record.
  *
  * The camera-free reading mode (K7) opens instead on the web (no camera,
- * ADR 0001) and when a screen reader is on; on a phone it is one tap away.
+ * ADR 0001), when a screen reader is on and when the camera cannot start; on a
+ * phone it is one tap away.
  */
 export default function InscriptionScreen() {
   const web = Platform.OS === "web";
   const screenReader = useScreenReaderEnabled();
   const [mode, setMode] = useState<"camera" | "reading">(web ? "reading" : "camera");
+  const [notice, setNotice] = useState<string | null>(null);
+  const [targetIndex, setTargetIndex] = useState(0);
+  const target = inscriptionTargets[targetIndex]!;
+  const inscription = useInscription(target);
 
-  // A screen reader cannot follow a scan line; start such users on the text.
+  // A screen reader cannot follow a camera image; start such users on the text.
   useEffect(() => {
     if (screenReader) setMode("reading");
   }, [screenReader]);
+
+  const onFailure = useCallback((reason: TrackerFailure) => {
+    setNotice(`${trackerFailureText[reason]} Kitabeyi aşağıda metin olarak okuyabilirsin.`);
+    setMode("reading");
+  }, []);
 
   return (
     <>
@@ -47,50 +56,113 @@ export default function InscriptionScreen() {
         <title>Taşın Dili · Vagabonds</title>
       </Head>
       {mode === "reading" ? (
-        <InscriptionReading onUseCamera={web ? null : () => setMode("camera")} />
+        <InscriptionReading
+          inscription={inscription}
+          notice={notice}
+          onUseCamera={
+            web
+              ? null
+              : () => {
+                  setNotice(null);
+                  setMode("camera");
+                }
+          }
+        />
       ) : (
-        <InscriptionCamera onReadAsText={() => setMode("reading")} />
+        <InscriptionCamera
+          inscription={inscription}
+          target={target}
+          onTarget={setTargetIndex}
+          onFailure={onFailure}
+          onReadAsText={() => setMode("reading")}
+        />
       )}
     </>
   );
 }
 
-function InscriptionCamera({ onReadAsText }: { onReadAsText: () => void }) {
+interface InscriptionCameraProps {
+  inscription: ResourceWithRetry<InscriptionText>;
+  target: InscriptionTarget;
+  onTarget: (index: number) => void;
+  onFailure: (reason: TrackerFailure) => void;
+  onReadAsText: () => void;
+}
+
+function InscriptionCamera({ inscription, target, onTarget, onFailure, onReadAsText }: InscriptionCameraProps) {
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
-  const { settings } = useA11ySettings();
-  const [phase, setPhase] = useState<Phase>("scanning");
-  const [size, setSize] = useState({ width: 0, height: 0 });
+  const [phase, setPhase] = useState<Phase>("starting");
+  const [height, setHeight] = useState(0);
   const scan = useRef(new Animated.Value(0)).current;
   const card = useRef(new Animated.Value(0)).current;
-  const timers = useRef<Array<ReturnType<typeof setTimeout>>>([]);
+  const revealTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  // Read inside tracker events, which arrive outside React's render.
+  const phaseRef = useRef<Phase>("starting");
+  // The target in view, or -1, so "Yeniden tara" can lock again without a new `found`.
+  const inView = useRef(-1);
 
-  const run = useCallback(() => {
-    timers.current.forEach(clearTimeout);
+  const go = useCallback((next: Phase) => {
+    phaseRef.current = next;
+    setPhase(next);
+  }, []);
+
+  const reveal = useCallback(() => {
+    go("revealed");
+    announce("Kitabe çözüldü. Okunuşu ve günümüz Türkçesi aşağıda.");
+    if (reduceMotion) card.setValue(1);
+    else Animated.timing(card, { toValue: 1, duration: 600, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
+  }, [card, go, reduceMotion]);
+
+  const lock = useCallback(
+    (index: number) => {
+      onTarget(index);
+      clearTimeout(revealTimer.current);
+      if (reduceMotion) {
+        reveal();
+        return;
+      }
+      go("locked");
+      announce("Kitabe tanındı, hedef kilitli");
+      revealTimer.current = setTimeout(reveal, REVEAL_MS);
+    },
+    [go, onTarget, reduceMotion, reveal],
+  );
+
+  const onEvent = useCallback(
+    (event: TrackerEvent) => {
+      switch (event.type) {
+        case "ready":
+          if (phaseRef.current === "starting") go("scanning");
+          break;
+        case "found":
+          inView.current = event.target;
+          if (phaseRef.current === "scanning") lock(event.target);
+          break;
+        case "lost":
+          if (inView.current === event.target) inView.current = -1;
+          // Once the card is up it stays, so reading it does not depend on holding the phone still.
+          if (phaseRef.current === "locked") {
+            clearTimeout(revealTimer.current);
+            go("scanning");
+          }
+          break;
+        case "error":
+          onFailure(event.reason);
+          break;
+      }
+    },
+    [go, lock, onFailure],
+  );
+
+  const rescan = () => {
+    clearTimeout(revealTimer.current);
     card.setValue(0);
-    if (reduceMotion) {
-      setPhase("revealed");
-      card.setValue(1);
-      return;
-    }
-    setPhase("scanning");
-    timers.current = [
-      setTimeout(() => {
-        setPhase("locked");
-        AccessibilityInfo.announceForAccessibility("Kitabe tanındı, hedef kilitli");
-      }, LOCK_MS),
-      setTimeout(() => {
-        setPhase("revealed");
-        AccessibilityInfo.announceForAccessibility("Kitabe çözüldü. Meal ve vakfiye şartı aşağıda.");
-        Animated.timing(card, { toValue: 1, duration: 600, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
-      }, REVEAL_MS),
-    ];
-  }, [card, reduceMotion]);
+    go("scanning");
+    if (inView.current >= 0) lock(inView.current);
+  };
 
-  useEffect(() => {
-    run();
-    return () => timers.current.forEach(clearTimeout);
-  }, [run]);
+  useEffect(() => () => clearTimeout(revealTimer.current), []);
 
   useEffect(() => {
     if (phase !== "scanning" || reduceMotion) return;
@@ -104,42 +176,35 @@ function InscriptionCamera({ onReadAsText }: { onReadAsText: () => void }) {
     return () => loop.stop();
   }, [phase, reduceMotion, scan]);
 
-  // Same mapping as the SVG's "xMidYMid slice", so overlays line up with the plaque.
-  const s = Math.max(size.width / SCENE.width, size.height / SCENE.height) || 1;
-  const ox = (size.width - SCENE.width * s) / 2;
-  const oy = (size.height - SCENE.height * s) / 2;
-  const toY = (y: number) => y * s + oy;
-  const cardTop = Math.max(insets.top + 260, toY(300));
+  const cardTop = Math.max(insets.top + 260, height / 2);
+  const guideTop = insets.top + 120;
+  const guideHeight = Math.max(0, cardTop - 64 - guideTop);
 
-  const status = phase === "scanning" ? "Kitabe aranıyor…" : "Kitabe tanındı · hedef kilitli";
+  const status = { starting: "Kamera açılıyor…", scanning: "Kitabe aranıyor…", locked: "Kitabe tanındı · hedef kilitli", revealed: "Kitabe tanındı · hedef kilitli" }[phase];
+  const found = phase === "locked" || phase === "revealed";
 
   return (
-    <View style={styles.screen} onLayout={(e) => setSize(e.nativeEvent.layout)}>
-      <Wall phase={phase} />
+    <View style={styles.screen} onLayout={(e) => setHeight(e.nativeEvent.layout.height)}>
+      <MarkerTracker targetsMind={inscriptionTargetsMind} onEvent={onEvent} style={StyleSheet.absoluteFill} />
 
-      {phase === "scanning" && size.width > 0 && (
+      {phase === "scanning" && !reduceMotion && guideHeight > 0 && (
         <Animated.View
           pointerEvents="none"
           style={[
             styles.scanLine,
-            {
-              left: 24 * s + ox,
-              right: 24 * s + ox,
-              top: toY(96),
-              transform: [{ translateY: scan.interpolate({ inputRange: [0, 1], outputRange: [0, 160 * s] }) }],
-            },
+            { top: guideTop, transform: [{ translateY: scan.interpolate({ inputRange: [0, 1], outputRange: [0, guideHeight] }) }] },
           ]}
         />
       )}
 
       <View style={[styles.top, { top: insets.top + spacing.sm }]}>
-        <CameraTopBar title="Taşın Dili" subtitle="Giriş kapısının üzerindeki kitabeye odaklan">
+        <CameraTopBar title="Taşın Dili" subtitle="Kitabeye odaklan, tamamı ekrana sığsın">
           <GlassIconButton icon="document-text-outline" label="Kamerasız oku" onPress={onReadAsText} />
         </CameraTopBar>
       </View>
 
-      <View style={[styles.status, { top: Math.min(toY(262), cardTop - 52) }]} accessibilityRole="text" accessibilityLiveRegion="polite">
-        <View style={[styles.dot, { backgroundColor: phase === "scanning" ? cameraColors.textSecondary : "#5FD3A4" }]} />
+      <View style={[styles.status, { top: cardTop - 52 }]} accessibilityRole="text" accessibilityLiveRegion="polite">
+        <View style={[styles.dot, { backgroundColor: found ? "#5FD3A4" : cameraColors.textSecondary }]} />
         <Text variant="caption" colorValue={cameraColors.text}>
           {status}
         </Text>
@@ -151,51 +216,102 @@ function InscriptionCamera({ onReadAsText }: { onReadAsText: () => void }) {
           {
             top: cardTop,
             bottom: insets.bottom + spacing.sm,
-            transform: [{ translateY: card.interpolate({ inputRange: [0, 1], outputRange: [size.height, 0] }) }],
+            transform: [{ translateY: card.interpolate({ inputRange: [0, 1], outputRange: [height, 0] }) }],
           },
         ]}
         accessibilityElementsHidden={phase !== "revealed"}
         importantForAccessibility={phase === "revealed" ? "auto" : "no-hide-descendants"}
       >
         <ScrollView contentContainerStyle={styles.cardContent}>
-          <Text variant="overline" colorValue={cameraColors.textSecondary} style={styles.center}>
-            ORİJİNAL HAT · ARAPÇA
-          </Text>
-          <Text variant="inscription" colorValue={cameraColors.gold} style={styles.center} language="ar">
-            {inscription.lines.join("\n")}
-          </Text>
-          <Text variant="caption" colorValue={cameraColors.textSecondary} style={[styles.center, styles.italic]}>
-            {inscription.transcription}
-          </Text>
-          <Section title="SADELEŞTİRİLMİŞ MEAL">
-            <Text colorValue={cameraColors.text}>{inscription.meaning}</Text>
-          </Section>
-          <Section title="VAKFİYENİN ŞARTI">
-            <View style={styles.quote}>
-              <Text variant="bodyLarge" colorValue={cameraColors.text} style={styles.quoteText}>
-                {`“${inscription.waqfCondition}”`}
-              </Text>
-            </View>
-          </Section>
+          <CardContent inscription={inscription} target={target} />
           <View style={styles.buttons}>
             <Button
               label="Yeniden tara"
-              onPress={run}
+              onPress={rescan}
               colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
               style={styles.flex}
             />
-            {settings.audioDescription && (
-              <Button
-                label="Sesli oku"
-                onPress={() => speak(inscriptionReadAloud)}
-                colors={[cameraColors.gold, cameraColors.onGold]}
-                style={styles.flex}
-              />
-            )}
+            <ReadAloudButton inscription={inscription} />
           </View>
         </ScrollView>
       </Animated.View>
     </View>
+  );
+}
+
+function CardContent({ inscription, target }: { inscription: ResourceWithRetry<InscriptionText>; target: InscriptionTarget }) {
+  if (inscription.status === "loading") {
+    return <ActivityIndicator color={cameraColors.gold} accessibilityLabel="Yükleniyor" />;
+  }
+  if (inscription.status === "error") {
+    return (
+      <View style={styles.section} accessibilityRole="alert">
+        <Text colorValue={cameraColors.text}>{inscription.error.message}</Text>
+        <Button label="Tekrar dene" onPress={inscription.retry} colors={[cameraColors.gold, cameraColors.onGold]} />
+      </View>
+    );
+  }
+
+  const text = inscription.data;
+  return (
+    <>
+      <Text variant="overline" colorValue={cameraColors.textSecondary} style={styles.center}>
+        KİTABE
+      </Text>
+      <Text variant="heading" colorValue={cameraColors.gold} style={styles.center} headingLevel={1}>
+        {text.place}
+      </Text>
+      {text.date && (
+        <Text variant="caption" colorValue={cameraColors.textSecondary} style={styles.center}>
+          {text.date}
+        </Text>
+      )}
+      {target.test && (
+        <Text variant="caption" colorValue={cameraColors.textSecondary} style={styles.center}>
+          {`Test görseli tanındı (${target.label}); gerçek hedef eklenene kadar bu kitabe gösteriliyor.`}
+        </Text>
+      )}
+      {text.translation && (
+        <Section title="GÜNÜMÜZ TÜRKÇESİ">
+          <Text colorValue={cameraColors.text}>{text.translation}</Text>
+        </Section>
+      )}
+      {text.transliteration && (
+        <Section title="OKUNUŞU">
+          <Text colorValue={cameraColors.text} style={styles.italic} language={text.transliterationLanguage}>
+            {text.transliteration}
+          </Text>
+        </Section>
+      )}
+      {text.waqfConditions ? (
+        <Section title="VAKFİYENİN ŞARTI">
+          <View style={styles.quote}>
+            <Text variant="bodyLarge" colorValue={cameraColors.text} style={styles.quoteText}>
+              {`“${text.waqfConditions}”`}
+            </Text>
+          </View>
+        </Section>
+      ) : (
+        text.waqfName && (
+          <Section title="VAKIF">
+            <Text colorValue={cameraColors.text}>{text.waqfName}</Text>
+          </Section>
+        )
+      )}
+    </>
+  );
+}
+
+function ReadAloudButton({ inscription }: { inscription: ResourceWithRetry<InscriptionText> }) {
+  const { settings } = useA11ySettings();
+  if (!settings.audioDescription || inscription.status !== "success") return null;
+  return (
+    <Button
+      label="Sesli oku"
+      onPress={() => speak(inscription.data.readAloud)}
+      colors={[cameraColors.gold, cameraColors.onGold]}
+      style={styles.flex}
+    />
   );
 }
 
@@ -206,67 +322,6 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
         {title}
       </Text>
       {children}
-    </View>
-  );
-}
-
-/** The wall, the arched door and the plaque, with the gold glow once the plaque is recognized. */
-function Wall({ phase }: { phase: Phase }) {
-  const locked = phase !== "scanning";
-  // Corner marks: wide while searching, snapped onto the plaque once locked.
-  const box = locked ? { l: 22, r: 258, t: 104, b: 250 } : { l: 10, r: 270, t: 80, b: 284 };
-  const k = 22;
-  const corner = locked ? cameraColors.gold : cameraColors.text;
-  const arabic = { fontFamily: fontFamily.arabic, fontSize: 25, textAnchor: "middle" as const };
-
-  // Hidden on a wrapping View: react-native-svg passes accessibility props on to the DOM on the web.
-  return (
-    <View aria-hidden style={StyleSheet.absoluteFill}>
-      <Svg
-        style={StyleSheet.absoluteFill}
-        viewBox={`0 0 ${SCENE.width} ${SCENE.height}`}
-        preserveAspectRatio="xMidYMid slice"
-      >
-        <Defs>
-          <RadialGradient id="stone" cx="50%" cy="28%" r="80%">
-            <Stop offset="0" stopColor="#968b7b" />
-            <Stop offset="0.6" stopColor="#544b40" />
-            <Stop offset="1" stopColor="#26221d" />
-          </RadialGradient>
-        </Defs>
-        <Rect width={SCENE.width} height={SCENE.height} fill="url(#stone)" />
-        {Array.from({ length: 14 }, (_, i) => (
-          <Line key={`h${i}`} x1={0} x2={SCENE.width} y1={i * 44} y2={i * 44} stroke="rgba(0,0,0,0.28)" strokeWidth={2} />
-        ))}
-        {Array.from({ length: 4 }, (_, i) => (
-          <Line key={`v${i}`} y1={0} y2={SCENE.height} x1={i * 88} x2={i * 88} stroke="rgba(0,0,0,0.2)" strokeWidth={2} />
-        ))}
-        <Path d="M56 622V346a84 84 0 0 1 168 0V622z" fill="#191613" stroke="#7a6f60" strokeWidth={9} />
-
-        <G transform={`translate(${PLAQUE.x} ${PLAQUE.y})`}>
-          <Rect x={2} y={2} width={216} height={126} rx={3} fill="#B9AD97" stroke="#857A68" strokeWidth={3} />
-          <Rect x={10} y={10} width={200} height={110} fill="none" stroke="#857A68" strokeWidth={1.2} />
-          <Line x1={16} y1={66} x2={204} y2={66} stroke="#857A68" strokeWidth={0.9} />
-          <SvgText x={110.8} y={48.8} fill="#D8CDB8" {...arabic}>{inscription.lines[0]}</SvgText>
-          <SvgText x={110} y={48} fill="#5B5243" {...arabic}>{inscription.lines[0]}</SvgText>
-          <SvgText x={110.8} y={102.8} fill="#D8CDB8" {...arabic}>{inscription.lines[1]}</SvgText>
-          <SvgText x={110} y={102} fill="#5B5243" {...arabic}>{inscription.lines[1]}</SvgText>
-          {locked && (
-            <G>
-              <Rect x={2} y={2} width={216} height={126} rx={3} fill="rgba(231,194,106,0.1)" stroke={cameraColors.gold} strokeWidth={1} />
-              <SvgText x={110} y={48} fill="#F6D98E" {...arabic}>{inscription.lines[0]}</SvgText>
-              <SvgText x={110} y={102} fill="#F6D98E" {...arabic}>{inscription.lines[1]}</SvgText>
-            </G>
-          )}
-        </G>
-
-        <G stroke={corner} strokeWidth={3} fill="none">
-          <Path d={`M${box.l} ${box.t + k}V${box.t}H${box.l + k}`} />
-          <Path d={`M${box.r - k} ${box.t}H${box.r}V${box.t + k}`} />
-          <Path d={`M${box.l} ${box.b - k}V${box.b}H${box.l + k}`} />
-          <Path d={`M${box.r - k} ${box.b}H${box.r}V${box.b - k}`} />
-        </G>
-      </Svg>
     </View>
   );
 }
@@ -296,6 +351,8 @@ const styles = StyleSheet.create({
   },
   scanLine: {
     position: "absolute",
+    left: spacing.xl,
+    right: spacing.xl,
     height: 2,
     backgroundColor: cameraColors.gold,
     shadowColor: cameraColors.gold,
