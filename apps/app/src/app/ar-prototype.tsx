@@ -13,7 +13,7 @@ const failureText: Record<TrackerFailure, string> = {
   "camera-denied": "Kamera izni verilmedi. Telefonun ayarlarından izin verip yeniden dene.",
   "camera-unavailable": "Kamera açılamadı. Başka bir uygulama kullanıyor olabilir.",
   "camera-unsupported": "Bu WebView kameraya erişemiyor.",
-  "load-failed": "AR kütüphanesi indirilemedi. İnternet bağlantını kontrol et.",
+  "load-failed": "AR kütüphanesi yüklenemedi.",
   unknown: "AR başlatılamadı.",
 };
 

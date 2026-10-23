@@ -7,6 +7,19 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-23 · AR ve harita kütüphaneleri uygulamayla birlikte
+
+Kimler: **uygulamayı çalıştıranlar**
+
+1. Paketleri güncelle (`esbuild` geliştirme bağımlılığı olarak eklendi):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- MindAR ve MapLibre artık jsDelivr'den indirilmiyor, uygulamanın içinde geliyor (Y12). AR ve haritanın kütüphaneleri için internet gerekmiyor; harita karoları hâlâ OpenFreeMap'ten.
+- Sürüm değişince kütüphaneleri yeniden paketlemek için: `npm run vendor --workspace @vagabonds/app` (internet gerekir). Çıktı `apps/app/src/vendor/`'da; elle düzenlenmez.
+
 ## 2026-10-22 · Harita prototipi
 
 Kimler: **uygulamayı çalıştıranlar**

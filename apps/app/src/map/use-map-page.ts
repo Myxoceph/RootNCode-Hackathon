@@ -1,6 +1,8 @@
 import { useTheme } from "@vagabonds/ui";
 import { useEffect, useMemo, useRef } from "react";
 
+import { loadMaplibre, useVendored } from "@/vendor";
+
 import { mapPageHtml, parseMapPageEvent, type MapPageCommand } from "./maplibre-page";
 import type { AssetMapProps } from "./types";
 
@@ -15,13 +17,18 @@ export function useMapPage(
   send: (command: MapPageCommand) => void,
 ) {
   const { scheme, colors: c } = useTheme();
+  const maplibre = useVendored(loadMaplibre);
+  /** `null` until MapLibre is loaded. */
   const html = useMemo(
     () =>
-      mapPageHtml({
-        scheme,
-        colors: { land: c.mapBackground, pin: c.primary, pinSelected: c.highlightMark, outline: c.surface, onCluster: c.onPrimary },
-      }),
-    [scheme, c],
+      maplibre
+        ? mapPageHtml({
+            scheme,
+            colors: { land: c.mapBackground, pin: c.primary, pinSelected: c.highlightMark, outline: c.surface, onCluster: c.onPrimary },
+            maplibre,
+          })
+        : null,
+    [scheme, c, maplibre],
   );
   const ready = useRef(false);
 

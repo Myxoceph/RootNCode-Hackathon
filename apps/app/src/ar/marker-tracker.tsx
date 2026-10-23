@@ -1,8 +1,10 @@
 import { cameraColors } from "@vagabonds/ui";
-import { useEffect, useMemo } from "react";
 import { useCameraPermissions } from "expo-camera";
+import { useEffect, useMemo } from "react";
 import { StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import { WebView } from "react-native-webview";
+
+import { loadMindar, useVendored } from "@/vendor";
 
 import { parseTrackerEvent, type TrackerEvent } from "./mindar";
 import { trackerPageHtml } from "./tracker-page";
@@ -23,7 +25,11 @@ export interface MarkerTrackerProps {
  * offer getUserMedia to those.
  */
 export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProps) {
-  const html = useMemo(() => trackerPageHtml({ targetsMind, markColor: cameraColors.gold }), [targetsMind]);
+  const mindarScript = useVendored(loadMindar);
+  const html = useMemo(
+    () => (mindarScript ? trackerPageHtml({ targetsMind, markColor: cameraColors.gold, mindarScript }) : null),
+    [targetsMind, mindarScript],
+  );
   const permission = useCameraPermission();
 
   useEffect(() => {
@@ -32,7 +38,7 @@ export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProp
 
   return (
     <View style={[styles.box, style]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
-      {permission === "granted" && (
+      {permission === "granted" && html !== null && (
         <WebView
           source={{ html, baseUrl: "https://localhost/" }}
           originWhitelist={["*"]}

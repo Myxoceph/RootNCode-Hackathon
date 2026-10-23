@@ -1,10 +1,10 @@
-import { MINDAR_VERSION } from "./mindar";
-
 interface TrackerPageOptions {
   /** A compiled `.mind` file, base64. */
   targetsMind: string;
   /** Color of the corner marks drawn on a found target. */
   markColor: string;
+  /** MindAR, inlined so the page needs no network (`loadMindar` in @/vendor). */
+  mindarScript: string;
 }
 
 /**
@@ -15,7 +15,7 @@ interface TrackerPageOptions {
  * MindAR's core (`Controller`) is used without its three.js layer: the corners
  * are projected from the pose it returns, so nothing 3D is loaded.
  */
-export function trackerPageHtml({ targetsMind, markColor }: TrackerPageOptions): string {
+export function trackerPageHtml({ targetsMind, markColor, mindarScript }: TrackerPageOptions): string {
   return `<!doctype html>
 <html>
 <head>
@@ -29,6 +29,7 @@ export function trackerPageHtml({ targetsMind, markColor }: TrackerPageOptions):
 </head>
 <body>
 <video id="video" autoplay muted playsinline></video>
+<script>${mindarScript}</script>
 <canvas id="marks"></canvas>
 <script type="module">
 const post = (event) => {
@@ -110,13 +111,12 @@ async function start() {
     return;
   }
 
-  let Controller;
-  try {
-    ({ Controller } = await import("https://cdn.jsdelivr.net/npm/mind-ar@${MINDAR_VERSION}/dist/mindar-image.prod.js"));
-  } catch (error) {
-    fail("load-failed", error);
+  const library = window.MINDAR && window.MINDAR.IMAGE;
+  if (!library) {
+    fail("load-failed", "MindAR did not load");
     return;
   }
+  const { Controller } = library;
   step("library");
 
   let stream;
