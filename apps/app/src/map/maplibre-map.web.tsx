@@ -25,7 +25,9 @@ export function MapLibreMap(props: AssetMapProps) {
 
   return (
     <View style={[styles.box, props.style]} aria-hidden>
-      <iframe ref={frame} srcDoc={html} onLoad={replay} title="Harita" tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />
+      {html !== null && (
+        <iframe ref={frame} srcDoc={html} onLoad={replay} title="Harita" tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />
+      )}
     </View>
   );
 }

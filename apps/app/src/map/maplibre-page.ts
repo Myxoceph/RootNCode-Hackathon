@@ -1,9 +1,9 @@
 import type { MapPadding, MapPin } from "./types";
 
 /**
- * MapLibre GL JS from jsDelivr: the same renderer on the web and, in a WebView, on phones.
- * 5.x on purpose: 6.x ships only ES modules with a separate worker file, which a page
- * cannot start from another origin (the CDN).
+ * MapLibre GL JS, bundled into the app by scripts/vendor-web-libs.mts: the same renderer
+ * on the web and, in a WebView, on phones. 5.x on purpose: 6.x ships only ES modules with
+ * a separate worker file, which an inlined page has no URL to start from.
  */
 export const MAPLIBRE_VERSION = "5.24.0";
 
@@ -41,20 +41,29 @@ export function parseMapPageEvent(data: unknown): MapPageEvent | null {
  * GeoJSON layer. Tapping a cluster zooms into it; tapping a pin selects it.
  * Pins and the selection come in as `MapPageCommand`s through `window.vagabondsMap.receive`.
  */
-export function mapPageHtml({ scheme, colors }: { scheme: "light" | "dark"; colors: MapPageColors }): string {
+export function mapPageHtml({
+  scheme,
+  colors,
+  maplibre,
+}: {
+  scheme: "light" | "dark";
+  colors: MapPageColors;
+  /** MapLibre inlined, so the page needs no network for it (`loadMaplibre` in @/vendor). */
+  maplibre: { script: string; css: string };
+}): string {
   return `<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@${MAPLIBRE_VERSION}/dist/maplibre-gl.css">
+<style>${maplibre.css}</style>
 <style>
   html, body, #map { margin: 0; height: 100%; background: ${colors.land}; }
 </style>
 </head>
 <body>
 <div id="map"></div>
-<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@${MAPLIBRE_VERSION}/dist/maplibre-gl.js"></script>
+<script>${maplibre.script}</script>
 <script>
 const post = (event) => {
   const data = JSON.stringify(event);
@@ -80,7 +89,7 @@ window.vagabondsMap = {
 };
 
 if (!window.maplibregl) {
-  post({ type: "error", message: "MapLibre could not be downloaded" });
+  post({ type: "error", message: "MapLibre did not load" });
 } else {
   start();
 }

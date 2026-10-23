@@ -2,6 +2,8 @@ import { cameraColors } from "@vagabonds/ui";
 import { useEffect, useMemo, useRef } from "react";
 import { StyleSheet, View } from "react-native";
 
+import { loadMindar, useVendored } from "@/vendor";
+
 import type { MarkerTrackerProps } from "./marker-tracker";
 import { parseTrackerEvent } from "./mindar";
 import { trackerPageHtml } from "./tracker-page";
@@ -12,7 +14,11 @@ import { trackerPageHtml } from "./tracker-page";
  * this lets the prototype be tried in a phone's browser and on a laptop.
  */
 export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProps) {
-  const html = useMemo(() => trackerPageHtml({ targetsMind, markColor: cameraColors.gold }), [targetsMind]);
+  const mindarScript = useVendored(loadMindar);
+  const html = useMemo(
+    () => (mindarScript ? trackerPageHtml({ targetsMind, markColor: cameraColors.gold, mindarScript }) : null),
+    [targetsMind, mindarScript],
+  );
   const frame = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
@@ -27,7 +33,7 @@ export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProp
 
   return (
     <View style={[styles.box, style]} aria-hidden>
-      <iframe ref={frame} srcDoc={html} allow="camera" title="Kamera" tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />
+      {html !== null && <iframe ref={frame} srcDoc={html} allow="camera" title="Kamera" tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />}
     </View>
   );
 }

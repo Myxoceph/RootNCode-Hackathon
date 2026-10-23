@@ -1,4 +1,4 @@
-/** MindAR, loaded from jsDelivr by the tracker page and the target compiler. Pinned: `.mind` files are tied to it. */
+/** MindAR, bundled into the app by scripts/vendor-web-libs.mts. Pinned: `.mind` files are tied to it. */
 export const MINDAR_VERSION = "1.2.5";
 
 /** Why the tracker page could not start. */
@@ -9,7 +9,7 @@ export type TrackerFailure =
   | "camera-unavailable"
   /** The WebView or browser has no getUserMedia (old WebView, insecure page). */
   | "camera-unsupported"
-  /** MindAR could not be downloaded (offline, CDN blocked). */
+  /** The bundled MindAR script did not run. */
   | "load-failed"
   | "unknown";
 

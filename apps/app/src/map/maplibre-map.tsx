@@ -16,17 +16,19 @@ export function MapLibreMap(props: AssetMapProps) {
 
   return (
     <View style={[styles.box, props.style]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
-      <WebView
-        ref={webView}
-        source={{ html, baseUrl: "https://localhost/" }}
-        originWhitelist={["*"]}
-        onLoadEnd={replay}
-        onMessage={(message) => onMessage(message.nativeEvent.data)}
-        onError={(e) => props.onError?.(`WebView: ${e.nativeEvent.description}`)}
-        scrollEnabled={false}
-        bounces={false}
-        style={styles.box}
-      />
+      {html !== null && (
+        <WebView
+          ref={webView}
+          source={{ html, baseUrl: "https://localhost/" }}
+          originWhitelist={["*"]}
+          onLoadEnd={replay}
+          onMessage={(message) => onMessage(message.nativeEvent.data)}
+          onError={(e) => props.onError?.(`WebView: ${e.nativeEvent.description}`)}
+          scrollEnabled={false}
+          bounces={false}
+          style={styles.box}
+        />
+      )}
     </View>
   );
 }

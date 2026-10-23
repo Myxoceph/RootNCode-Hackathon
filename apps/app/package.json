@@ -12,6 +12,7 @@
     "export": "expo export --platform all",
     "fixtures": "tsx scripts/capture-fixtures.mts",
     "ar:targets": "tsx scripts/compile-ar-targets.mts",
+    "vendor": "tsx scripts/vendor-web-libs.mts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "esbuild": "0.28.2",
     "tsx": "^4.20.0",
     "typescript": "~6.0.3"
   }
