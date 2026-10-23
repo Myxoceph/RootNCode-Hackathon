@@ -24,10 +24,11 @@ const EnvSchema = z.object({
         .filter(Boolean),
     )
     .pipe(z.array(z.url())),
-  // Public base URL of the media bucket; image URLs are built as `${MEDIA_BASE_URL}/${variant key}`.
+  // Public base URL of the media (the media Worker in front of the R2 bucket, docs/deploy.md);
+  // image URLs are built as `${MEDIA_BASE_URL}/${variant key}`.
   MEDIA_BASE_URL: z
     .url()
-    .default("https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev")
+    .default("https://media.allbytech.com")
     .transform((url) => url.replace(/\/+$/, "")),
   // Which assets the API serves: only `published`, or `preview` (published + in_review) for development.
   // Drafts are never served.

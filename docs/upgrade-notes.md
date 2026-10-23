@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-23 · Görseller kendi alan adımızdan (`media.allbytech.com`)
+
+Kimler: **API'yi ya da demo sunucusunu çalıştıranlar**
+
+1. `apps/api/.env`'de (sunucuda `deploy/.env`) `MEDIA_BASE_URL` tanımlıysa yeni adrese çevir; tanımlı değilse bir şey yapma, varsayılan değer değişti:
+   ```bash
+   MEDIA_BASE_URL=https://media.allbytech.com
+   ```
+2. API'yi yeniden başlat.
+
+Değişenler:
+- `r2.dev` Türk operatörlerinde engelli olduğu için görseller artık `https://media.allbytech.com` adresinden geliyor (Y14). Bu adres, R2 bucket'ının önündeki küçük bir Worker (`deploy/media-worker/`, Yiğit'in Cloudflare hesabında). Görseller bucket'ta kalıyor; R2'ye yükleme düzeni değişmedi.
+- Uygulamanın örnek verisindeki (`EXPO_PUBLIC_DATA_SOURCE=mock`) görsel adresleri de yeni adrese çevrildi.
+- Kurulum ve sorun giderme: [`docs/deploy.md`](deploy.md#görsellerin-alan-adı).
+
 ## 2026-10-23 · AR ve harita kütüphaneleri uygulamayla birlikte
 
 Kimler: **uygulamayı çalıştıranlar**
