@@ -87,8 +87,9 @@ bir görüntü veriyor; ışık, titreme ve odak telefonda ölçülecek.
 ## Sonuçlar
 
 - `react-native-webview` (13.16.1) ve kamera izni için `expo-camera` (~57.0.6) eklendi; ikisi de SDK 57'nin sabitlediği sürümler. `expo-camera` Zaman Perdesi'nin kamera katmanında da kullanılacak.
-- **İnternet gerekiyor:** MindAR jsDelivr'den yükleniyor. Gerçek kullanımdan önce kütüphane
-  kendi sunucumuzdan (Caddy) ya da uygulama paketinden verilmeli.
+- **MindAR uygulamayla birlikte geliyor (Y12, 2026-10-23):** Kütüphane jsDelivr yerine sayfanın içine
+  gömülüyor (`scripts/vendor-web-libs.mts`, `apps/app/src/vendor/`); AR için internet gerekmiyor.
+  Bedeli: telefon paketi yaklaşık 1,5 MB büyüdü. Web'de MindAR ayrı bir parça, yalnızca AR ekranı açılınca iniyor.
 - **Hedefler veriye bağlanacak:** Prototip hedefleri uygulamaya gömülü (base64). Gerçek
   akışta `.mind` dosyası, kayıttaki `arTargetMediaKey` fotoğrafından veri hattında derlenip
   R2'ye konur, uygulama onu API'den alır.

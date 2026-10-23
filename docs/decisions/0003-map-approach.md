@@ -74,8 +74,11 @@ Google Cloud projesi) gerekeceği için bu yol araştırılmadı.
 
 - Yeni bağımlılık yok: harita, ADR 0002 ile gelen `react-native-webview`'ı kullanıyor.
   `react-native-maps` yalnızca bu karşılaştırma için eklenmişti ve kaldırıldı.
-- **İnternet gerekiyor:** MapLibre jsDelivr'den, karolar OpenFreeMap'ten geliyor. Gerçek kullanımdan
-  önce kütüphane kendi sunucumuzdan verilmeli; karo sağlayıcısının erişimi ve atfı demo öncesi kontrol edilmeli.
+- **MapLibre uygulamayla birlikte geliyor (Y12, 2026-10-23):** Kütüphane jsDelivr yerine sayfanın içine
+  gömülüyor (`scripts/vendor-web-libs.mts`, `apps/app/src/vendor/`). Bedeli: telefon paketi yaklaşık 1,1 MB büyüdü;
+  web'de ayrı bir parça, yalnızca harita açılınca iniyor.
+- **Karolar ve yazı tipleri hâlâ internetten:** Altlık ve küme sayılarının yazı tipi OpenFreeMap'ten geliyor.
+  İnternet yoksa altlık boş kalır, pinler ve eser kartı çalışır. Karo sağlayıcısının erişimi ve atfı demo öncesi kontrol edilmeli.
 - **Kübra'nın sis haritası:** Hayrat'ın sis ve bağ çizgileri bu haritaya katman olarak taşınabilir
   (sis: eserlerin çevresinde delikleri olan bir poligon; bağlar: `/relations`'tan çizgiler). Bu iş Hafta 3'te
   Kübra'yla birlikte yapılır; bugünkü Harita sekmesi o zamana kadar değişmez.
