@@ -1,2 +1,2 @@
 export { MapLibreMap } from "./maplibre-map";
-export type { AssetMapProps, MapPin } from "./types";
+export type { AssetMapProps, MapLink, MapNetwork, MapPin } from "./types";
