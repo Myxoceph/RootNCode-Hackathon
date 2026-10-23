@@ -1,28 +1,42 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Button, fontFamily, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import { Button, fontFamily, radius, SourceNote, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
-import type { ReactNode } from "react";
-import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useEffect, type ReactNode } from "react";
+import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { inscription, inscriptionReadAloud } from "@/content/camera";
+import type { InscriptionText } from "@/ar/use-inscription";
+import { DataErrorView } from "@/components/resource-view";
+import type { ResourceWithRetry } from "@/data";
+import { announce } from "@/lib/announce";
 import { speak } from "@/lib/speak";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
+interface InscriptionReadingProps {
+  inscription: ResourceWithRetry<InscriptionText>;
+  /** Why the camera is not in use, when it failed to start. */
+  notice: string | null;
+  onUseCamera: (() => void) | null;
+}
+
 /**
  * Taşın Dili without the camera (K7): the inscription as a page to read or
- * listen to. Used on the web, when a screen reader is on, and whenever the
- * visitor asks for it on a phone.
+ * listen to. Used on the web, when a screen reader is on, when the camera
+ * cannot start, and whenever the visitor asks for it on a phone.
  *
  * The visual order is the reading order (WCAG 1.3.2), and it puts what most
- * people can follow first: the Turkish meaning and the waqf's condition come
- * before the transliteration and the Arabic original.
+ * people can follow first: today's Turkish and the waqf come before the
+ * transliteration.
  */
-export function InscriptionReading({ onUseCamera }: { onUseCamera: (() => void) | null }) {
+export function InscriptionReading({ inscription, notice, onUseCamera }: InscriptionReadingProps) {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { settings } = useA11ySettings();
+
+  useEffect(() => {
+    if (notice) announce(notice);
+  }, [notice]);
 
   return (
     <ScrollView
@@ -42,43 +56,77 @@ export function InscriptionReading({ onUseCamera }: { onUseCamera: (() => void) 
         <Text variant="title" headingLevel={1}>
           Taşın Dili
         </Text>
-        <Text color="textSecondary">{inscription.place}</Text>
-      </View>
-
-      <View style={styles.actions}>
-        {settings.audioDescription && (
-          <Button
-            label="Sesli oku"
-            icon={<Ionicons name="volume-high-outline" size={18} color={c.onPrimary} />}
-            onPress={() => speak(inscriptionReadAloud)}
-            style={styles.flex}
-          />
-        )}
-        {onUseCamera && <Button label="Kamerayla tara" variant="ghost" onPress={onUseCamera} style={styles.flex} />}
-      </View>
-
-      <Block title="Sadeleştirilmiş meal">
-        <Text variant="bodyLarge">{inscription.meaning}</Text>
-      </Block>
-
-      <Block title="Vakfiyenin şartı">
-        <View style={[styles.quote, { borderLeftColor: c.highlightMark }]}>
-          <Text variant="bodyLarge" style={styles.quoteText}>
-            {`“${inscription.waqfCondition}”`}
+        {inscription.status === "success" && <Text color="textSecondary">{inscription.data.place}</Text>}
+        {inscription.status === "success" && inscription.data.date && (
+          <Text variant="data" color="textSecondary">
+            {inscription.data.date}
           </Text>
+        )}
+      </View>
+
+      {notice && (
+        <View style={[styles.block, { backgroundColor: c.surface, borderColor: c.border }]} accessibilityRole="alert">
+          <Text>{notice}</Text>
         </View>
-      </Block>
+      )}
 
-      <Block title="Okunuşu">
-        <Text style={styles.mono}>{inscription.transcription}</Text>
-      </Block>
-
-      <Block title="Orijinal hat · Arapça">
-        <Text variant="inscription" color="highlight" language="ar" style={styles.arabic}>
-          {inscription.lines.join("\n")}
-        </Text>
-      </Block>
+      {inscription.status === "loading" && <ActivityIndicator color={c.primary} size="large" accessibilityLabel="Yükleniyor" />}
+      {inscription.status === "error" && <DataErrorView error={inscription.error} onRetry={inscription.retry} />}
+      {inscription.status === "success" && (
+        <>
+          <View style={styles.actions}>
+            {settings.audioDescription && (
+              <Button
+                label="Sesli oku"
+                icon={<Ionicons name="volume-high-outline" size={18} color={c.onPrimary} />}
+                onPress={() => speak(inscription.data.readAloud)}
+                style={styles.flex}
+              />
+            )}
+            {onUseCamera && <Button label="Kamerayla tara" variant="ghost" onPress={onUseCamera} style={styles.flex} />}
+          </View>
+          <InscriptionBlocks text={inscription.data} />
+        </>
+      )}
+      {inscription.status !== "success" && onUseCamera && <Button label="Kamerayla tara" variant="ghost" onPress={onUseCamera} />}
     </ScrollView>
+  );
+}
+
+function InscriptionBlocks({ text }: { text: InscriptionText }) {
+  const { colors: c } = useTheme();
+  return (
+    <>
+      {text.translation && (
+        <Block title="Günümüz Türkçesi">
+          <Text variant="bodyLarge">{text.translation}</Text>
+        </Block>
+      )}
+
+      {(text.waqfConditions || text.waqfName) && (
+        <Block title={text.waqfConditions ? "Vakfiyenin şartı" : "Vakıf"}>
+          {text.waqfConditions ? (
+            <View style={[styles.quote, { borderLeftColor: c.highlightMark }]}>
+              <Text variant="bodyLarge" style={styles.quoteText}>
+                {`“${text.waqfConditions}”`}
+              </Text>
+            </View>
+          ) : (
+            <Text variant="bodyLarge">{text.waqfName}</Text>
+          )}
+        </Block>
+      )}
+
+      {text.transliteration && (
+        <Block title="Okunuşu">
+          <Text style={styles.mono} language={text.transliterationLanguage}>
+            {text.transliteration}
+          </Text>
+        </Block>
+      )}
+
+      <SourceNote sources={text.sources} />
+    </>
   );
 }
 
@@ -136,8 +184,5 @@ const styles = StyleSheet.create({
   },
   mono: {
     fontFamily: fontFamily.mono,
-  },
-  arabic: {
-    textAlign: "right",
   },
 });
