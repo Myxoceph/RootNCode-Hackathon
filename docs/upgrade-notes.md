@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-24 · AR hedefleri veriden (sözleşme 0.3.1)
+
+Kimler: **herkes** (sözleşme değişti), **AR hedefi ekleyen veri ekibi**
+
+1. Paketleri güncelle (sözleşme paketi 0.3.1):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Kitabelerde yeni `arTarget: { mindUrl, mindarVersion } | null` alanı (Y13). Taşın Dili hedefi buradan alıyor; yoksa uygulamadaki test görsellerine dönüyor.
+- Bir kitabeye `ar_target_media_id` bağlayan, `media_pipeline.py`'den sonra `npm run data:ar-targets` çalıştırıp `data/build/ar-targets.json`'u commit eder; `.mind` dosyası fotoğraflarla aynı `rclone copy` komutuyla R2'ye gider ([`data/README.md`](../data/README.md) §8).
+- Derleme Chrome gerektiriyor (macOS dışında `CHROME_PATH`); MindAR uygulamaya gömülü kopyadan geliyor, jsDelivr gerekmiyor. `npm run ar:targets` (uygulamanın test hedefleri) de artık internetsiz çalışıyor.
+
 ## 2026-10-23 · Görseller kendi alan adımızdan (`media.allbytech.com`)
 
 Kimler: **API'yi ya da demo sunucusunu çalıştıranlar**

@@ -90,9 +90,16 @@ bir görüntü veriyor; ışık, titreme ve odak telefonda ölçülecek.
 - **MindAR uygulamayla birlikte geliyor (Y12, 2026-10-23):** Kütüphane jsDelivr yerine sayfanın içine
   gömülüyor (`scripts/vendor-web-libs.mts`, `apps/app/src/vendor/`); AR için internet gerekmiyor.
   Bedeli: telefon paketi yaklaşık 1,5 MB büyüdü. Web'de MindAR ayrı bir parça, yalnızca AR ekranı açılınca iniyor.
-- **Hedefler veriye bağlanacak:** Prototip hedefleri uygulamaya gömülü (base64). Gerçek
-  akışta `.mind` dosyası, kayıttaki `arTargetMediaKey` fotoğrafından veri hattında derlenip
-  R2'ye konur, uygulama onu API'den alır.
+- **Hedefler veriden geliyor (Y13, 2026-10-24):** Kitabenin `ar_target_media_id` fotoğrafı
+  `npm run data:ar-targets` ile derleniyor; `.mind` dosyası fotoğrafın sürümlerinin yanına
+  (`assets/<eser>/<medya>-<sha>/target-mindar-1.2.5.mind`) yazılıp fotoğraflarla aynı `rclone`
+  komutuyla R2'ye gidiyor. API adresi aynı kuralla kuruyor (`arTarget.mindUrl`, sözleşme 0.3.1);
+  içe aktarma derlenmemiş hedefi almadığı için API var olmayan bir dosyayı göstermiyor.
+  MindAR sürümü sözleşmede sabit (`AR_MINDAR_VERSION`): bir `.mind` yalnızca onu derleyen
+  sürümde açılıyor. MindAR bir seferde tek `.mind` yüklediği için bir eserde ilk hedefli kitabe
+  izleniyor. Veride hedef yoksa, sürüm tutmuyorsa ya da dosya inmiyorsa uygulama gömülü test
+  hedeflerine dönüyor (kartta "test görseli" notuyla); demoda gerçek kitabe taranamazsa yedek.
+  Ulucami'nin bir fotoğrafı geçici hedef yapılarak Honor 400'de uçtan uca denendi.
 - **Kalan riskler:**
   - MindAR'ın bakımı durmuş görünüyor. Takip telefonda yetersiz kalırsa yedek plan ViroReact
     ve development build'dir; WebView ile native arasındaki mesaj sözleşmesi (`TrackerEvent`)
