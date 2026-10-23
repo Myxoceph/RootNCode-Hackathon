@@ -60,6 +60,8 @@ try {
     format: "iife",
     platform: "browser",
     legalComments: "none",
+    // esbuild names each bundled file in a comment; relative to the package, not the temp folder, so every run gives the same output.
+    absWorkingDir: mindar,
     // TensorFlow.js inside MindAR requires these only when it runs under Node.js.
     external: ["node-fetch", "util", "string_decoder"],
     write: false,
