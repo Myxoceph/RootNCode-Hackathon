@@ -4,7 +4,11 @@ name = "vagabonds-media"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
 
-# Also reachable at vagabonds-media.<account>.workers.dev, for testing before the domain is added.
+# The address the app uses (MEDIA_BASE_URL). The zone is in Yiğit's Cloudflare account;
+# deploying creates the DNS record and the certificate, the rest of the zone is untouched.
+routes = [{ pattern = "media.allbytech.com", custom_domain = true }]
+
+# Also reachable at vagabonds-media.yigit-toq.workers.dev, as a fallback and for testing.
 workers_dev = true
 
 [vars]

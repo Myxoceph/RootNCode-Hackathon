@@ -99,6 +99,9 @@ yükleme düzeni değişmez.
 Uygulama ──► media.<alan adı> (Worker, Yiğit'in hesabı) ──► pub-….r2.dev (bucket, Ahmet'in hesabı)
 ```
 
+Bugünkü adres: **`https://media.allbytech.com`** (yedek: `https://vagabonds-media.yigit-toq.workers.dev`).
+Alan adı `wrangler.toml`'da `routes` altında; `deploy` DNS kaydını ve sertifikayı kendisi oluşturur.
+
 Kurulum (Cloudflare hesabının sahibi yapar, bir kez):
 
 ```bash
@@ -109,9 +112,9 @@ npx wrangler@4.149.0 deploy           # vagabonds-media.<hesap>.workers.dev adre
 
 1. Denemek için bir görsel anahtarı al (ör. API'den bir eserin `cover` adresindeki `assets/...` kısmı) ve
    `https://vagabonds-media.<hesap>.workers.dev/assets/...` adresini tarayıcıda aç.
-2. Cloudflare panelinde **Workers & Pages → vagabonds-media → Settings → Domains & Routes → Add → Custom
-   domain** ile `media.<alan adı>` ekle. DNS kaydı ve sertifika kendiliğinden oluşur; alan adındaki
-   web site etkilenmez.
+2. Alan adı başka bir hesaba ya da ada taşınacaksa `wrangler.toml`'daki `routes`'u değiştirip yeniden
+   `deploy` et (ya da panelde **Workers & Pages → vagabonds-media → Settings → Domains & Routes**).
+   Alan adındaki diğer kayıtlar ve web site etkilenmez.
 3. Aynı görseli `https://media.<alan adı>/assets/...` adresinden, Türkiye'deki iki farklı operatörden
    (ör. ev interneti ve mobil veri) aç.
 4. `MEDIA_BASE_URL`'i yeni adrese çevir (sunucuda `deploy/.env`, yerelde `apps/api/.env`) ve API'yi yeniden başlat.
