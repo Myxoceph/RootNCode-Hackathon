@@ -1,4 +1,4 @@
-import type { AssetDetail, AssetRelationsResponse, AssetSummary, Lang } from "@vagabonds/contracts";
+import type { AssetDetail, AssetRelation, AssetRelationsResponse, AssetSummary, Lang } from "@vagabonds/contracts";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { dataSource } from "./active-source";
@@ -51,6 +51,47 @@ export function useAsset(id: string): ResourceWithRetry<AssetDetail | null> {
 export function useAssetRelations(id: string): ResourceWithRetry<AssetRelationsResponse | null> {
   const load = useCallback(() => dataSource.getRelations(id, LANG), [id]);
   return useResource(load);
+}
+
+export interface RelationsOf {
+  /** Links of each asset whose relations have arrived; an unpublished asset has none. */
+  byId: Record<string, AssetRelation[]>;
+  /** Assets whose relations are still on the way. */
+  loading: string[];
+  failed: string[];
+  retry: () => void;
+}
+
+/**
+ * The relations of a growing set of assets (the fog map's found assets). Each
+ * asset is fetched once; one that fails is fetched again on `retry`.
+ */
+export function useRelationsOf(ids: string[]): RelationsOf {
+  const [byId, setById] = useState<Record<string, AssetRelation[]>>({});
+  const [failed, setFailed] = useState<string[]>([]);
+  const [attempt, setAttempt] = useState(0);
+  const requested = useRef(new Set<string>());
+
+  useEffect(() => {
+    for (const id of ids) {
+      if (requested.current.has(id)) continue;
+      requested.current.add(id);
+      dataSource.getRelations(id, LANG).then(
+        (response) => setById((map) => ({ ...map, [id]: response?.items ?? [] })),
+        () => {
+          requested.current.delete(id);
+          setFailed((list) => (list.includes(id) ? list : [...list, id]));
+        },
+      );
+    }
+  }, [ids, attempt]);
+
+  const retry = useCallback(() => {
+    setFailed([]);
+    setAttempt((n) => n + 1);
+  }, []);
+  const loading = ids.filter((id) => !(id in byId) && !failed.includes(id));
+  return { byId, loading, failed, retry };
 }
 
 /** Every published asset that has coordinates, in one request (the API allows 500), for the map. */

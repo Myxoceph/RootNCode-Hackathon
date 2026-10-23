@@ -6,7 +6,9 @@ export {
   useAssetRelations,
   useCities,
   useMapAssets,
+  useRelationsOf,
   type AssetListPage,
+  type RelationsOf,
   type Resource,
   type ResourceWithRetry,
 } from "./hooks";
