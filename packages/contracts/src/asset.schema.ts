@@ -151,6 +151,25 @@ export const AssetLegendSchema = z.strictObject({
   sources: z.array(SourceRefSchema),
 });
 
+/**
+ * MindAR release the AR target files (`.mind`) are compiled with. A `.mind` file only
+ * loads in the release that compiled it, so the data pipeline, the API and the app share this.
+ */
+export const AR_MINDAR_VERSION = "1.2.5";
+
+/** Storage key of an AR target's `.mind` file, next to the variants of the photo it was compiled from. */
+export function arTargetMindKey(photoVariantKey: string): string {
+  return `${photoVariantKey.slice(0, photoVariantKey.lastIndexOf("/"))}/target-mindar-${AR_MINDAR_VERSION}.mind`;
+}
+
+/** The compiled AR marker of an inscription (Taşın Dili). */
+export const ArTargetSchema = z.strictObject({
+  /** MindAR `.mind` file of the target photo. */
+  mindUrl: z.url(),
+  /** MindAR release that compiled it; a tracker of another release cannot load it. */
+  mindarVersion: z.string().min(1),
+});
+
 export const InscriptionSchemaV2 = z.strictObject({
   id: z.string().min(1),
   location: z.string().min(1).nullable(),
@@ -164,6 +183,8 @@ export const InscriptionSchemaV2 = z.strictObject({
   note: z.string().min(1).nullable(),
   /** Key of the photo in `media` used as the AR marker (Taşın Dili), if any. */
   arTargetMediaKey: z.string().min(1).nullable(),
+  /** Null when the inscription has no target, or its `.mind` file is not compiled yet. */
+  arTarget: ArTargetSchema.nullable(),
   sources: z.array(SourceRefSchema),
 });
 
@@ -340,6 +361,7 @@ export type AssetSection = z.infer<typeof AssetSectionSchema>;
 export type AssetFact = z.infer<typeof AssetFactSchema>;
 export type TimelineEvent = z.infer<typeof TimelineEventSchema>;
 export type AssetLegend = z.infer<typeof AssetLegendSchema>;
+export type ArTarget = z.infer<typeof ArTargetSchema>;
 export type InscriptionV2 = z.infer<typeof InscriptionSchemaV2>;
 export type AssetPerson = z.infer<typeof AssetPersonSchema>;
 export type AssetHighlight = z.infer<typeof AssetHighlightSchema>;

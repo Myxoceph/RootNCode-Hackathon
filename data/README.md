@@ -782,11 +782,16 @@ Depolamaya yükleme:
   ```
   `sync` değil `copy`: yerelde eksik dosya varsa `sync` onları bucket'tan da siler.
 - Orijinaller yüklenmez (İlke 3). Manifestteki `original.key` yalnızca dosyanın özetini ve biçimini kaydeder.
+- **AR hedefleri (Taşın Dili):** Bir kitabenin `ar_target_media_id`'si dolduysa, fotoğraf `media_pipeline.py`'den geçtikten sonra `.mind` dosyası derlenir; yukarıdaki `rclone copy` onu da yükler:
+  ```bash
+  npm run data:ar-targets
+  ```
+  Betik (`tools/compile_ar_targets.mts`, Chrome gerekir) fotoğrafın 1280 px JPEG sürümünden `target-mindar-<sürüm>.mind` dosyasını sürümlerin yanına yazar ve `build/ar-targets.json`'u günceller. Hedef fotoğraf önden, net ve kitabeyi dolduracak biçimde çekilmiş olmalı; MindAR kitabenin desenini tanır. İçe aktarma, derlenmemiş (ya da fotoğrafı değişmiş) hedefi boş bırakır.
 - Kontrol ederken tarayıcı user-agent'ı kullanın: `r2.dev` adresi Python'un varsayılan istemcisine (`Python-urllib`) 403 döner, tarayıcı ve uygulama etkilenmez.
 
 **Git'e ne girer?**
-- **Girer:** `build/media-manifest.json`. Küçük bir metin dosyasıdır (görsel başına ~1 KB) ve hangi görselin hangi yolda, hangi boyutta olduğunun kaydıdır. Backend içe aktarmayı bununla yapar.
-- **Girmez:** `build/media/` (sürümler) ve `build/cache/` (orijinaller). Bunlar büyüktür (Ulucami tek başına 133 MB orijinal + 27 MB sürüm) ve yeniden üretilebilir.
+- **Girer:** `build/media-manifest.json` ve `build/ar-targets.json` (derlenmiş AR hedefleri). Manifest küçük bir metin dosyasıdır (görsel başına ~1 KB) ve hangi görselin hangi yolda, hangi boyutta olduğunun kaydıdır. Backend içe aktarmayı bununla yapar.
+- **Girmez:** `build/media/` (sürümler ve `.mind` dosyaları) ve `build/cache/` (orijinaller). Bunlar büyüktür (Ulucami tek başına 133 MB orijinal + 27 MB sürüm) ve yeniden üretilebilir.
 
 Repoyu yeni çeken biri `media_pipeline.py` çalıştırınca, manifestte kayıtlı görseller Drive'dan indirilip **manifestteki yollarla aynı adlarla** yeniden üretilir; manifest değişmez. Bu senaryo test edildi: dosyalar birebir aynı üretildi. Depolama (R2) kurulduktan sonra görseller oradan da çekilebilir: `rclone sync r2:kok-kod-media-public data/build/media`.
 

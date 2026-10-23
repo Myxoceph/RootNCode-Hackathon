@@ -1,8 +1,11 @@
 import {
+  AR_MINDAR_VERSION,
   AccessibilityStatusSchema,
+  arTargetMindKey,
   LegendVerdictSchema,
   MediaKindSchema,
   VisitorTipSchemaV2,
+  type ArTarget,
   type AssetDetail,
   type AssetRef,
   type AssetRelation,
@@ -99,6 +102,17 @@ export function toMedia(record: AssetMediaRecord, { lang, mediaBaseUrl }: Mapper
     archiveYear: record.archive_year,
     sources,
   };
+}
+
+/**
+ * An inscription's AR target. Its `.mind` file is compiled next to the target photo's
+ * variants (data/tools/compile_ar_targets.mts); the import drops a target whose file is
+ * not compiled yet, so a key here always has one.
+ */
+function toArTarget(mediaKey: string | null, media: AssetMediaRecord[], mediaBaseUrl: string): ArTarget | null {
+  const variant = media.find((m) => m.media_key === mediaKey)?.media.media_variant[0];
+  if (!variant) return null;
+  return { mindUrl: `${mediaBaseUrl}/${arTargetMindKey(variant.key)}`, mindarVersion: AR_MINDAR_VERSION };
 }
 
 export function toAssetSummary(
@@ -300,6 +314,7 @@ export function toAssetDetail(
       gregorian: nonEmpty(i.gregorian),
       note: pick(i.note_tr, i.note_en, lang),
       arTargetMediaKey: nonEmpty(i.ar_target_media_key),
+      arTarget: toArTarget(i.ar_target_media_key, media, context.mediaBaseUrl),
       sources: sourcesOf("inscription", i.slug),
     })),
     people: record.asset_person.map((p) => ({ name: p.name, role: pick(p.role_tr, p.role_en, lang) })),

@@ -1,5 +1,10 @@
-/** MindAR, bundled into the app by scripts/vendor-web-libs.mts. Pinned: `.mind` files are tied to it. */
-export const MINDAR_VERSION = "1.2.5";
+import { AR_MINDAR_VERSION } from "@vagabonds/contracts";
+
+/**
+ * MindAR, bundled into the app by scripts/vendor-web-libs.mts. Pinned in the contract:
+ * `.mind` files only load in the release that compiled them, and the dataset's are compiled with it.
+ */
+export const MINDAR_VERSION = AR_MINDAR_VERSION;
 
 /** Why the tracker page could not start. */
 export type TrackerFailure =

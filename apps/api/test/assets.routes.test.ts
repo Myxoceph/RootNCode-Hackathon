@@ -5,6 +5,7 @@
  */
 import "dotenv/config";
 import {
+  AR_MINDAR_VERSION,
   AssetDetailSchema,
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
@@ -130,6 +131,28 @@ describe.skipIf(!DATABASE_URL)("assets routes (PostgreSQL)", () => {
 
       expect(withGps).toBeGreaterThan(0); // the test is meaningful only if GPS exists in the DB
       expect(response.body).not.toMatch(/capture|captured/i);
+    });
+
+    it("gives an inscription with an AR target the .mind file next to its photo", async () => {
+      // No inscription has a compiled target yet (H7); point one at Ulucami's cover for the test.
+      const [inscription] = await prisma.inscription.findMany({ where: { asset_id: ULUCAMI }, orderBy: { sort_order: "asc" }, take: 1 });
+      const cover = await prisma.asset_media.findFirstOrThrow({ where: { asset_id: ULUCAMI, is_cover: true } });
+      expect(inscription).toBeDefined();
+      await prisma.inscription.update({ where: { asset_id_slug: { asset_id: ULUCAMI, slug: inscription!.slug } }, data: { ar_target_media_key: cover.media_key } });
+      try {
+        const asset = AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ULUCAMI}` })).json());
+        const photo = asset.cover!.sources.jpg[0]!.url;
+        const target = asset.inscriptions.find((i) => i.id === inscription!.slug);
+
+        expect(target?.arTargetMediaKey).toBe(cover.media_key);
+        expect(target?.arTarget).toEqual({
+          mindUrl: `${photo.slice(0, photo.lastIndexOf("/"))}/target-mindar-${AR_MINDAR_VERSION}.mind`,
+          mindarVersion: AR_MINDAR_VERSION,
+        });
+        expect(asset.inscriptions.filter((i) => i.arTarget)).toHaveLength(1);
+      } finally {
+        await prisma.inscription.update({ where: { asset_id_slug: { asset_id: ULUCAMI, slug: inscription!.slug } }, data: { ar_target_media_key: inscription!.ar_target_media_key } });
+      }
     });
 
     it("answers in English via ?lang= or Accept-Language", async () => {
