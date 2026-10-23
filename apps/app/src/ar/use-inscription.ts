@@ -1,9 +1,9 @@
 import type { AssetDetail, SourceRef } from "@vagabonds/contracts";
 
-import { DataError, useAsset, type ResourceWithRetry } from "@/data";
+import { DataError, type ResourceWithRetry } from "@/data";
 import { transliterationLanguage } from "@/lib/language";
 
-import type { InscriptionTarget } from "./inscription-targets";
+import { featuredInscription } from "./inscription-targets";
 
 /** One inscription as Taşın Dili shows it, on the camera card and in the reading mode alike. */
 export interface InscriptionText {
@@ -41,13 +41,16 @@ export function inscriptionText(asset: AssetDetail, inscriptionId: string): Insc
   };
 }
 
-/** The target's inscription, read from its asset's record. */
-export function useInscription(target: InscriptionTarget): ResourceWithRetry<InscriptionText> {
-  const asset = useAsset(target.assetId);
+/** One inscription of the loaded asset; `inscriptionId` null for the featured one (`featuredInscription`). */
+export function inscriptionOf(
+  asset: ResourceWithRetry<AssetDetail | null>,
+  inscriptionId: string | null,
+): ResourceWithRetry<InscriptionText> {
   if (asset.status !== "success") return asset;
-  const text = asset.data && inscriptionText(asset.data, target.inscriptionId);
+  const id = inscriptionId ?? (asset.data && featuredInscription(asset.data)?.id);
+  const text = asset.data && id ? inscriptionText(asset.data, id) : null;
   if (!text) {
-    const error = new DataError("invalid", "Bu kitabenin kaydı bulunamadı.", [`${target.assetId} / ${target.inscriptionId}`]);
+    const error = new DataError("invalid", "Bu kitabenin kaydı bulunamadı.", [`${asset.data?.id ?? "?"} / ${id ?? "?"}`]);
     return { status: "error", error, retry: asset.retry };
   }
   return { status: "success", data: text, retry: asset.retry };
