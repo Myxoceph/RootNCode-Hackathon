@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-25 · Çevrimdışı veriler (AsyncStorage)
+
+Kimler: **uygulama ekibi**
+
+1. Yeni paket (`@react-native-async-storage/async-storage`):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- API yanıtları cihazda saklanıyor; bağlantı yoksa ya da yavaşsa ekranlar saklanan veriyle açılıyor ve üstte
+  "Çevrimdışı" şeridi çıkıyor (`apps/app/src/data/cached-source.ts`, ayrıntı `apps/app/README.md` "Veri").
+  Ekranların veri kullanımı değişmedi.
+
 ## 2026-10-25 · Ses Kapsülü telefonda sesli (expo-audio)
 
 Kimler: **uygulama ekibi**, **ses kayıtlarını ekleyecek veri ekibi (H9)**

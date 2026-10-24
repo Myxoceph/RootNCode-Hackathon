@@ -106,6 +106,12 @@ const asset = useAsset("bursa-osmangazi-ulucami");
 ```
 
 - `src/data/active-source.ts`: hangi kaynağın kullanılacağına karar verilen **tek** yer.
+- **Çevrimdışı:** API'nin her yanıtı telefonda (web'de tarayıcıda) saklanır (`src/data/cached-source.ts`,
+  toplam ~4 MB; en eski kaydedilen önce silinir). Ağa ulaşılamazsa ya da saklanan yanıt varken ağ 4 sn'de cevap vermezse saklanan
+  gösterilir ve ekranın üstünde "Çevrimdışı · veriler SS:DD itibarıyla" şeridi çıkar; "Yenile" ekrandaki
+  bütün verileri yeniden ister. Hiç saklanmamış bir ekran eskisi gibi hata gösterir. Sözleşme sürümü
+  değişince eski kayıtlar silinir. Not: API yanıtları 60 sn tarayıcı önbelleğinde de durur; web'de API'yi
+  kapatıp denerken bir dakika bekle.
 - Her kaynak veriyi sözleşmeyle doğrular; uymazsa `DataError` fırlatır. `ResourceView` bunu
   "Tekrar dene" düğmeli bir hata ekranı olarak gösterir (geliştirmede hangi adresin ya da
   alanın sorunlu olduğu da listelenir). API kapalıysa "Sunucuya ulaşılamıyor" der; sessizce
