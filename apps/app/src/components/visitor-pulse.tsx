@@ -31,11 +31,10 @@ export function VisitorPulse({ asset }: { asset: AssetDetail }) {
 
   return (
     <View style={styles.pulse}>
-      {tips.length === 0 ? (
+      {items.length === 0 && (
         <Text color="textSecondary">Bu eser için henüz ziyaretçi notu yok. İlk notu sen bırakabilirsin.</Text>
-      ) : (
-        <PulseList items={tips} icon="chatbubble-ellipses-outline" />
       )}
+      {tips.length > 0 && <PulseList items={tips} icon="chatbubble-ellipses-outline" />}
 
       {memories.length > 0 && (
         <View style={styles.pulse}>
@@ -53,7 +52,7 @@ export function VisitorPulse({ asset }: { asset: AssetDetail }) {
       )}
       {pulse.status === "error" && <PulseError onRetry={pulse.retry} />}
 
-      <ContributionForm assetId={asset.id} />
+      <ContributionForm asset={asset} />
     </View>
   );
 }
