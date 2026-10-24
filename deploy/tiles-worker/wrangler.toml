@@ -1,0 +1,13 @@
+# Map tiles Worker (Y19): serves OpenFreeMap's style, tiles, fonts and sprites under our own domain.
+# Deploy: docs/deploy.md, "Harita altlığının alan adı".
+name = "vagabonds-tiles"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# The address the map's style URL uses (apps/app/src/map/maplibre-page.ts). The zone is in
+# Yiğit's Cloudflare account; deploying creates the DNS record and the certificate.
+routes = [{ pattern = "tiles.allbytech.com", custom_domain = true }]
+
+# Also reachable at vagabonds-tiles.yigit-toq.workers.dev, for testing. The Cache API (the
+# style's last good copy) only works on the custom domain.
+workers_dev = true
