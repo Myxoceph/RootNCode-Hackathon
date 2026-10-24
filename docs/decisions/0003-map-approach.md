@@ -77,8 +77,16 @@ Google Cloud projesi) gerekeceği için bu yol araştırılmadı.
 - **MapLibre uygulamayla birlikte geliyor (Y12, 2026-10-23):** Kütüphane jsDelivr yerine sayfanın içine
   gömülüyor (`scripts/vendor-web-libs.mts`, `apps/app/src/vendor/`). Bedeli: telefon paketi yaklaşık 1,1 MB büyüdü;
   web'de ayrı bir parça, yalnızca harita açılınca iniyor.
-- **Karolar ve yazı tipleri hâlâ internetten:** Altlık ve küme sayılarının yazı tipi OpenFreeMap'ten geliyor.
-  İnternet yoksa altlık boş kalır, pinler ve eser kartı çalışır. Karo sağlayıcısının erişimi ve atfı demo öncesi kontrol edilmeli.
+- **Karolar kendi alan adımızdan (Y19, 2026-10-24):** Stil, karolar, yazı tipleri ve simgeler
+  `https://tiles.allbytech.com` üzerinden geliyor: OpenFreeMap'in önünde, Cloudflare önbelleğinde tutan küçük
+  bir Worker (`deploy/tiles-worker/`). Stil ve TileJSON'daki adresler bu alan adına çevriliyor; stilin son
+  sağlam kopyası bir ay saklanıyor. OpenFreeMap yavaşlar, çöker ya da engellenirse daha önce açılmış (ya da
+  `npm run map:warm` ile doldurulmuş) bölgeler çizilmeye devam ediyor. Bursa'nın tamamı (~3.400 dosya) demodan
+  bir gün önce, demonun yapılacağı ağdan doldurulmalı: Cloudflare her konumda ayrı önbellek tutuyor ve stil
+  OpenFreeMap'in haftalık karo setini izliyor. İnternet hiç yoksa altlık yine boş kalır; pinler ve eser kartı
+  çalışır. Atıf (OpenFreeMap, OpenMapTiles, OpenStreetMap) stilden geldiği için aynen duruyor.
+  Değerlendirilen öbür yol, Bursa karolarını indirip demo sunucusundan vermekti: yalnızca Bursa'yı
+  kapsıyor, stilin elle yeniden yazılmasını istiyordu.
 - **Sis haritası (Y11, 2026-10-23):** Hayrat'ın sis ve bağ çizgileri Harita sekmesine taşındı. Harita
   bileşeni `network` özelliğiyle sis, açıklıklar, bağ çizgileri ve işaretli pinler (açılmış eser yıldızı,
   ipucu "?") alıyor; bunlar MapLibre katmanı değil, haritanın üstündeki bir tuvale her karede çiziliyor.
