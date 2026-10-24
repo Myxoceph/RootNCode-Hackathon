@@ -38,15 +38,19 @@ const REVEAL_MS = 800;
  */
 export default function InscriptionScreen() {
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
+  const insets = useSafeAreaInsets();
   const web = Platform.OS === "web";
   const screenReader = useScreenReaderStatus();
   const [chosen, setMode] = useState<"camera" | "reading" | null>(web ? "reading" : null);
   const [notice, setNotice] = useState<string | null>(null);
   const asset = useAsset(id ?? INSCRIPTION_ASSET);
-  // Opened from an asset whose inscription has no AR target yet: the camera has nothing to find.
-  const untrackable = asset.status === "success" && asset.data !== null && !isTrackable(asset.data);
-  // Until the system says whether a screen reader is on, open neither, so the camera is not asked for in vain.
-  const mode = untrackable ? "reading" : (chosen ?? (screenReader === null ? null : screenReader ? "reading" : "camera"));
+  const loaded = asset.status !== "loading";
+  // An asset whose inscription has no AR target yet (or that did not load): the camera has nothing to find.
+  const hasTarget = asset.status === "success" && asset.data !== null && isTrackable(asset.data);
+  const untrackable = loaded && !hasTarget;
+  // Until the asset is in and the system says whether a screen reader is on, open neither,
+  // so the camera is not asked for in vain.
+  const mode = untrackable ? "reading" : (chosen ?? (screenReader === null || !loaded ? null : screenReader ? "reading" : "camera"));
 
   // A screen reader cannot follow a camera image; start such users on the text.
   useEffect(() => {
@@ -66,7 +70,7 @@ export default function InscriptionScreen() {
       {mode === "reading" && (
         <InscriptionReading
           inscription={inscriptionOf(asset, null)}
-          notice={untrackable ? "Bu kitabe için henüz kamera hedefi yok; metnini aşağıda okuyabilirsin." : notice}
+          notice={untrackable && asset.status === "success" ? "Bu kitabe için henüz kamera hedefi yok; metnini aşağıda okuyabilirsin." : notice}
           onUseCamera={
             web || untrackable
               ? null
@@ -78,6 +82,14 @@ export default function InscriptionScreen() {
         />
       )}
       {mode === "camera" && <InscriptionCamera asset={asset} onFailure={onFailure} onReadAsText={() => setMode("reading")} />}
+      {mode === null && (
+        <View style={[styles.screen, styles.waiting]}>
+          <ActivityIndicator color={cameraColors.gold} size="large" accessibilityLabel="Yükleniyor" />
+          <View style={[styles.top, { top: insets.top + spacing.sm }]}>
+            <CameraTopBar title="Taşın Dili" subtitle="Yükleniyor" />
+          </View>
+        </View>
+      )}
     </>
   );
 }
@@ -90,7 +102,11 @@ interface InscriptionCameraProps {
 
 function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCameraProps) {
   const insets = useSafeAreaInsets();
-  const targetSet = useTargetSet(asset.status === "success" ? asset.data : null, asset.status !== "loading");
+  const targets = useTargetSet(asset.status === "success" ? asset.data : null, asset.status !== "loading");
+  const targetSet = targets === "failed" ? null : targets;
+  useEffect(() => {
+    if (targets === "failed") onFailure("target-unavailable");
+  }, [targets, onFailure]);
   const [tracked, setTracked] = useState<TrackedTarget | null>(null);
   const inscription = inscriptionOf(asset, tracked?.inscriptionId ?? null);
   const reduceMotion = useReducedMotion();
@@ -336,6 +352,10 @@ const styles = StyleSheet.create({
   },
   flex: {
     flex: 1,
+  },
+  waiting: {
+    alignItems: "center",
+    justifyContent: "center",
   },
   center: {
     textAlign: "center",

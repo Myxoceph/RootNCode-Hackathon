@@ -16,6 +16,8 @@ export type TrackerFailure =
   | "camera-unsupported"
   /** The bundled MindAR script did not run. */
   | "load-failed"
+  /** The asset's own `.mind` file could not be downloaded (offline). Raised by the app, not the page. */
+  | "target-unavailable"
   | "unknown";
 
 /** What to tell a person when the tracker cannot start. */
@@ -24,6 +26,7 @@ export const trackerFailureText: Record<TrackerFailure, string> = {
   "camera-unavailable": "Kamera açılamadı. Başka bir uygulama kullanıyor olabilir.",
   "camera-unsupported": "Bu WebView kameraya erişemiyor.",
   "load-failed": "AR kütüphanesi yüklenemedi.",
+  "target-unavailable": "Kitabenin kamera hedefi indirilemedi; internet bağlantısı gerekiyor.",
   unknown: "AR başlatılamadı.",
 };
 

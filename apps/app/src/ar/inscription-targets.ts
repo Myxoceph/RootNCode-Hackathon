@@ -46,12 +46,15 @@ export function isTrackable(asset: AssetDetail): boolean {
 
 /**
  * The targets to track, once the asset has loaded (`settled`): its inscription's
- * `.mind` file from the dataset (Y13), or the bundled test targets when it has
- * none, it was compiled for another MindAR or it cannot be downloaded. MindAR
- * loads one `.mind` file at a time, so an asset tracks its first target only.
+ * `.mind` file from the dataset (Y13). Ulucami falls back to the bundled test
+ * targets when it has none, it was compiled for another MindAR or it cannot be
+ * downloaded; another asset whose file cannot be downloaded gets `"failed"`, as
+ * the test targets stand for Ulucami's inscription. MindAR loads one `.mind` file
+ * at a time, so an asset tracks its first target only.
  */
-export function useTargetSet(asset: AssetDetail | null, settled: boolean): TargetSet | null {
-  const [set, setSet] = useState<TargetSet | null>(null);
+export function useTargetSet(asset: AssetDetail | null, settled: boolean): TargetSet | "failed" | null {
+  const [set, setSet] = useState<TargetSet | "failed" | null>(null);
+  const fallback: TargetSet | "failed" = asset?.id === INSCRIPTION_ASSET ? testSet : "failed";
   const inscription = asset?.inscriptions.find((i) => i.arTarget?.mindarVersion === MINDAR_VERSION);
   const mindUrl = inscription?.arTarget?.mindUrl ?? null;
   const inscriptionId = inscription?.id;
@@ -60,18 +63,18 @@ export function useTargetSet(asset: AssetDetail | null, settled: boolean): Targe
   useEffect(() => {
     if (!settled) return;
     if (!mindUrl || !inscriptionId) {
-      setSet(testSet);
+      setSet(fallback);
       return;
     }
     let active = true;
     downloadBase64(mindUrl).then(
       (mind) => active && setSet({ mind, targets: [{ inscriptionId, label, test: false }] }),
-      () => active && setSet(testSet),
+      () => active && setSet(fallback),
     );
     return () => {
       active = false;
     };
-  }, [settled, mindUrl, inscriptionId, label]);
+  }, [settled, mindUrl, inscriptionId, label, fallback]);
 
   return set;
 }
