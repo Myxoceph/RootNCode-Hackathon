@@ -158,11 +158,14 @@ SITE_ADDRESS=:80
 PUBLIC_URL=https://vagabonds.allbytech.com
 HTTP_PORT=127.0.0.1:8080
 HTTPS_PORT=127.0.0.1:8443
+TRUSTED_PROXIES=private_ranges
 ```
 
 Caddy sertifika almaz (`:80`) ve yalnızca `127.0.0.1`'de dinler; siteye yerel ağdan değil, yalnızca
-tünelden ulaşılır. Caddyfile özel ağdan gelen isteklerin `Cf-Connecting-IP` başlığına güvenir, böylece
-API'nin hız sınırı tüneli değil ziyaretçiyi sayar. Port ağa açılırsa bu başlık taklit edilebilir.
+tünelden ulaşılır. `TRUSTED_PROXIES=private_ranges` ile Caddy özel ağdan gelen isteklerin
+`Cf-Connecting-IP` başlığına güvenir, böylece API'nin hız sınırı tüneli değil ziyaretçiyi sayar. Bu ayar
+yalnızca tünelde ve portlar `127.0.0.1`'e bağlıyken açılır; sunucuda kapalı kalır (varsayılan), yoksa
+ziyaretçi IP'sini taklit edip hız sınırını aşabilir.
 
 Kurulum (alan adının sahibi yapar, bir kez):
 
