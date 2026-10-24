@@ -11,4 +11,4 @@ Gerçek veri geldiğinde ilgili dosya `@/data` katmanından gelen veriyle deği�
 | `routes.ts` | Rota kural motoru + hava durumu servisi (modül 4) |
 | `food.ts` | `cityCuisines` / şehir mutfağı tablosu (modül 5) |
 | `capsules.ts` | `sounds.json` ve CC0 ses dosyaları (H9) |
-| `camera.ts` | Arşiv fotoğrafı (H8) |
+| `camera.ts` | Zaman Perdesi artık veriden (Y16); yalnızca Ayarlar'daki sesli betimleme örneği kullanıyor (K10) |
