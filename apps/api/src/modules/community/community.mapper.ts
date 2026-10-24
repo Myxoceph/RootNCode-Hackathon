@@ -13,8 +13,22 @@ import {
 import { pick } from "../../lib/lang.ts";
 import type { ContributionRecord, ModerationRecord, PulseRecords, UserRecord } from "./community.repository.ts";
 
+/** A `@db.Date` column: a day without a time, read back as UTC midnight. */
 function isoDate(date: Date | null): string | null {
   return date ? date.toISOString().slice(0, 10) : null;
+}
+
+// en-CA formats as YYYY-MM-DD.
+const turkeyDay = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Europe/Istanbul",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+/** The day a moment falls on in Türkiye, where the assets and their visitors are: a note sent at 01:30 is of that day, not the day before in UTC. */
+function turkeyDate(moment: Date): string {
+  return turkeyDay.format(moment);
 }
 
 export function toAppUser(record: UserRecord): AppUser {
@@ -66,7 +80,7 @@ export function toPulseItems({ tips, community }: PulseRecords, lang: Lang): Pul
       text: item.body ?? "",
       origin: "community" as const,
       author: item.user.nickname,
-      date: isoDate(item.created_at),
+      date: turkeyDate(item.created_at),
     })),
   ];
 }
