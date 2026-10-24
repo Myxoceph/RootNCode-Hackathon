@@ -22,6 +22,11 @@ npm run app                                  # Expo geliştirme sunucusu
 - **Tarayıcı:** sunucu açıkken `w` tuşu, ya da `npm run web --workspace @vagabonds/app`.
 - **Kontrol:** `npm run typecheck --workspace @vagabonds/app` ve
   `npm run export --workspace @vagabonds/app` (üç platformun paketini derler).
+- **Testler:** `npm test --workspace @vagabonds/app` (Vitest, `test/`; izlemede `test:watch`). Node'da çalışır:
+  depolama, anahtarlık, ses ve React Native'in kullanılan parçaları `test/mocks/` içindeki bellek içi
+  karşılıklarıyla değiştirilir (`vitest.config.mts`). Veri katmanını (istek, çevrimdışı önbellek, şerit,
+  ziyaretçi oturumu), ses kapsülü oynatıcısını ve küçük yardımcıları kapsar; React hook'ları ve ekranlar
+  kapsam dışı. Kökteki `npm test` (CI) bunları da çalıştırır.
 
 ### Android APK (demo)
 

@@ -5,7 +5,7 @@ import { useSyncExternalStore } from "react";
  * a "refresh" every data hook listens to. One store for the whole app: the banner
  * (components/offline-banner.tsx) reads it, the hooks (./hooks.ts) refetch on `refreshData`.
  */
-interface OfflineState {
+export interface OfflineState {
   /** When the oldest stored answer shown was saved; `null` while everything is fresh. */
   since: number | null;
   /** Bumped by `refreshData`. */
@@ -54,10 +54,15 @@ function subscribe(listener: () => void) {
   };
 }
 
+/** The store as it is now, outside React (tests). */
+export function getOfflineState(): OfflineState {
+  return state;
+}
+
 export function useOfflineSince(): number | null {
-  return useSyncExternalStore(subscribe, () => state.since, () => null);
+  return useSyncExternalStore(subscribe, () => getOfflineState().since, () => null);
 }
 
 export function useRefreshEpoch(): number {
-  return useSyncExternalStore(subscribe, () => state.epoch, () => 0);
+  return useSyncExternalStore(subscribe, () => getOfflineState().epoch, () => 0);
 }
