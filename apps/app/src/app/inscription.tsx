@@ -1,4 +1,5 @@
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
+import { useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, View } from "react-native";
@@ -6,7 +7,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import type { AssetDetail } from "@vagabonds/contracts";
 
-import { INSCRIPTION_ASSET, useTargetSet, type TrackedTarget } from "@/ar/inscription-targets";
+import { INSCRIPTION_ASSET, isTrackable, useTargetSet, type TrackedTarget } from "@/ar/inscription-targets";
 import { MarkerTracker } from "@/ar/marker-tracker";
 import { trackerFailureText, type TrackerEvent, type TrackerFailure } from "@/ar/mindar";
 import { inscriptionOf, type InscriptionText } from "@/ar/use-inscription";
@@ -36,13 +37,16 @@ const REVEAL_MS = 800;
  * phone it is one tap away.
  */
 export default function InscriptionScreen() {
+  const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const web = Platform.OS === "web";
   const screenReader = useScreenReaderStatus();
   const [chosen, setMode] = useState<"camera" | "reading" | null>(web ? "reading" : null);
-  // Until the system says whether a screen reader is on, open neither, so the camera is not asked for in vain.
-  const mode = chosen ?? (screenReader === null ? null : screenReader ? "reading" : "camera");
   const [notice, setNotice] = useState<string | null>(null);
-  const asset = useAsset(INSCRIPTION_ASSET);
+  const asset = useAsset(id ?? INSCRIPTION_ASSET);
+  // Opened from an asset whose inscription has no AR target yet: the camera has nothing to find.
+  const untrackable = asset.status === "success" && asset.data !== null && !isTrackable(asset.data);
+  // Until the system says whether a screen reader is on, open neither, so the camera is not asked for in vain.
+  const mode = untrackable ? "reading" : (chosen ?? (screenReader === null ? null : screenReader ? "reading" : "camera"));
 
   // A screen reader cannot follow a camera image; start such users on the text.
   useEffect(() => {
@@ -62,9 +66,9 @@ export default function InscriptionScreen() {
       {mode === "reading" && (
         <InscriptionReading
           inscription={inscriptionOf(asset, null)}
-          notice={notice}
+          notice={untrackable ? "Bu kitabe için henüz kamera hedefi yok; metnini aşağıda okuyabilirsin." : notice}
           onUseCamera={
-            web
+            web || untrackable
               ? null
               : () => {
                   setNotice(null);

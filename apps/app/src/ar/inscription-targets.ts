@@ -29,9 +29,19 @@ const testSet: TargetSet = {
   targets: testTargetLabels.map((label) => ({ inscriptionId: FALLBACK_INSCRIPTION, label, test: true })),
 };
 
-/** The inscription Taşın Dili is about: the first with an AR target, else the demo's. */
+/** The inscription Taşın Dili is about: the first with an AR target, else the demo's, else the first with a text. */
 export function featuredInscription(asset: AssetDetail): InscriptionV2 | undefined {
-  return asset.inscriptions.find((i) => i.arTarget) ?? asset.inscriptions.find((i) => i.id === FALLBACK_INSCRIPTION);
+  return (
+    asset.inscriptions.find((i) => i.arTarget) ??
+    asset.inscriptions.find((i) => i.id === FALLBACK_INSCRIPTION) ??
+    asset.inscriptions.find((i) => i.translation || i.transliteration) ??
+    asset.inscriptions[0]
+  );
+}
+
+/** Whether the camera has something to look for: the asset's own target, or (Ulucami) the bundled test targets. */
+export function isTrackable(asset: AssetDetail): boolean {
+  return asset.id === INSCRIPTION_ASSET || asset.inscriptions.some((i) => i.arTarget?.mindarVersion === MINDAR_VERSION);
 }
 
 /**
