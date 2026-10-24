@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-25 · Ziyaretçi Nabzı uygulamada (expo-secure-store)
+
+Kimler: **uygulama ekibi**
+
+1. Yeni paket (`expo-secure-store`, Expo Go'da hazır):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Eser sayfasının "Ziyaretçi Notları" sekmesi API'nin nabzını gösteriyor ve "Not bırak" formu var; Profil'de
+  "Notlarım" listeleniyor (ayrıntı `apps/app/README.md` "Veri"). `DataSource`'a `getPulse` eklendi: kendi
+  kaynağını yazan varsa onu da eklemeli.
+
 ## 2026-10-25 · Çevrimdışı veriler (AsyncStorage)
 
 Kimler: **uygulama ekibi**
