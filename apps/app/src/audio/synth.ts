@@ -13,3 +13,6 @@ export interface SynthHandle {
 export function startSynth(_type: CapsuleType): SynthHandle | null {
   return null;
 }
+
+/** Only the web's engine needs opening inside a tap. */
+export function unlockAudio() {}

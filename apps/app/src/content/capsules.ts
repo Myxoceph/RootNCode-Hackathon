@@ -6,6 +6,8 @@
 export type CapsuleType = "sifahane" | "kervan" | "medrese" | "hamam";
 
 export interface Capsule {
+  /** The ambient sound key (`ambientSound.key` in `/assets/:id`, `ambient_sound` in data/enums.json). */
+  soundKey: string;
   name: string;
   description: string;
   /** Captions as [second, text]; every sound event becomes a bracketed line. */
@@ -16,6 +18,7 @@ export const CAPSULE_SECONDS = 24;
 
 export const capsules: Record<CapsuleType, Capsule> = {
   sifahane: {
+    soundKey: "darussifa",
     name: "Darüşşifa",
     description: "Havuz, fıskiye ve ney: musikiyle tedavinin yapıldığı avlu.",
     captions: [
@@ -27,6 +30,7 @@ export const capsules: Record<CapsuleType, Capsule> = {
     ],
   },
   kervan: {
+    soundKey: "han",
     name: "Kervansaray",
     description: "Taş avluya giren kervan: nallar, çanlar, yolcu uğultusu.",
     captions: [
@@ -37,6 +41,7 @@ export const capsules: Record<CapsuleType, Capsule> = {
     ],
   },
   medrese: {
+    soundKey: "medrese",
     name: "Medrese",
     description: "Hücrelerden taşan ders tekrarı ve sayfa hışırtıları.",
     captions: [
@@ -47,6 +52,7 @@ export const capsules: Record<CapsuleType, Capsule> = {
     ],
   },
   hamam: {
+    soundKey: "hamam",
     name: "Hamam",
     description: "Kubbede yankılanan damlalar, kurnadan dökülen su, buhar.",
     captions: [
@@ -65,12 +71,9 @@ export const capsuleTypes = Object.keys(capsules) as CapsuleType[];
  * `/assets/:id`). The API resolves the key from the asset or its type's default
  * (`ambient_sound` in data/enums.json). Keys without a capsule yet play none.
  */
-export const capsuleForSoundKey: Partial<Record<string, CapsuleType>> = {
-  medrese: "medrese",
-  hamam: "hamam",
-  han: "kervan",
-  darussifa: "sifahane",
-};
+export const capsuleForSoundKey: Partial<Record<string, CapsuleType>> = Object.fromEntries(
+  capsuleTypes.map((type) => [capsules[type].soundKey, type]),
+);
 
 export function captionAt(type: CapsuleType, seconds: number): string {
   let text = capsules[type].captions[0]?.[1] ?? "";

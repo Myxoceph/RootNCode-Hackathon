@@ -6,7 +6,7 @@ import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle, G, Line, Rect } from "react-native-svg";
 
-import { readFrequencies, toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
+import { hasFrequencies, readFrequencies, toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
 import { CAPSULE_SECONDS, captionAt, capsules, capsuleTypes, formatSeconds, type CapsuleType } from "@/content/capsules";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useA11ySettings } from "@/settings/a11y-settings";
@@ -62,7 +62,7 @@ export default function CapsuleScreen() {
         })}
       </View>
 
-      <Visualizer live={mine !== null} />
+      <Visualizer live={mine !== null && hasFrequencies()} />
 
       <View style={styles.info}>
         <Text variant="title" colorValue={cameraColors.text} style={styles.center} headingLevel={2}>
@@ -120,9 +120,11 @@ export default function CapsuleScreen() {
         >
           {settings.captions ? captionAt(type, elapsed) : "Altyazılar kapalı. Açmak için CC."}
         </Text>
-        {mine && !mine.audible && (
+        {mine && !mine.loading && mine.source !== "recording" && (
           <Text variant="caption" colorValue={cameraColors.textSecondary}>
-            Ses kayıtları henüz eklenmedi; bu cihazda kapsül yalnızca altyazıyla ilerliyor.
+            {mine.source === "stand-in"
+              ? "Gerçek ses kaydı henüz eklenmedi; şimdilik canlandırılmış bir ses çalıyor."
+              : "Ses başlatılamadı; kapsül yalnızca altyazıyla ilerliyor."}
           </Text>
         )}
       </View>

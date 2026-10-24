@@ -315,6 +315,14 @@ const generators: Record<CapsuleType, Generator> = {
   },
 };
 
+/**
+ * Opens the audio engine inside the visitor's tap. The capsule's sound starts a moment
+ * later (after looking up the recording), and Safari only lets audio start in a tap.
+ */
+export function unlockAudio() {
+  getEngine();
+}
+
 export function startSynth(type: CapsuleType): SynthHandle | null {
   const e = getEngine();
   if (!e) return null;
