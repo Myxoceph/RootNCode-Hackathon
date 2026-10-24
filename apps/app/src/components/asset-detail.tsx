@@ -21,7 +21,7 @@ import {
   touchTarget,
   useTheme,
 } from "@vagabonds/ui";
-import { Link } from "expo-router";
+import { Link, type Href } from "expo-router";
 import { useState, type ComponentProps, type PropsWithChildren } from "react";
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from "react-native";
 
@@ -82,6 +82,8 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
           <AccessTile icon="trending-up-outline" title="Rampa" status={asset.accessibility.ramp} />
           <AccessTile icon="walk-outline" title="Basamaksız giriş" status={asset.accessibility.stepFree} />
         </View>
+
+        <Experiences asset={asset} />
 
         <View accessibilityRole="tablist" style={[styles.tabs, { borderBottomColor: c.border }]}>
           {tabs.map(({ key, label }) => {
@@ -146,6 +148,49 @@ function AccessTile({
       <Text variant="caption" color="textSecondary" style={styles.centerText}>
         {title}
       </Text>
+    </View>
+  );
+}
+
+interface Experience {
+  href: Href;
+  icon: ComponentProps<typeof Ionicons>["name"];
+  title: string;
+  hint: string;
+}
+
+/** The camera experiences that fit this asset: its inscription (Taşın Dili), its photos (Zaman Perdesi). */
+function Experiences({ asset }: { asset: AssetDetail }) {
+  const { colors: c } = useTheme();
+  const archive = asset.media.find((m) => m.kind === "archive_photo");
+  const experiences: Experience[] = [];
+  if (asset.inscriptions.some((i) => i.translation || i.transliteration)) {
+    experiences.push({ href: { pathname: "/inscription", params: { asset: asset.id } }, icon: "scan-outline", title: "Taşın Dili", hint: "Kitabeyi oku" });
+  }
+  if (archive || asset.cover) {
+    const hint = archive ? `${archive.archiveYear ?? "Arşiv"} ile bugün` : "Aynı açıdan çek";
+    experiences.push({ href: { pathname: "/time-curtain", params: { asset: asset.id } }, icon: "time-outline", title: "Zaman Perdesi", hint });
+  }
+  if (experiences.length === 0) return null;
+
+  return (
+    <View style={styles.access}>
+      {experiences.map(({ href, icon, title, hint }) => (
+        <Link key={title} href={href} asChild>
+          <Pressable
+            accessibilityRole="link"
+            accessibilityLabel={`${title}: ${hint}`}
+            // One flat style object: `Link asChild` takes neither a style function nor an array.
+            style={StyleSheet.flatten([styles.tile, { backgroundColor: c.surface, borderColor: c.border }])}
+          >
+            <Ionicons name={icon} size={22} color={c.primary} />
+            <Text variant="label">{title}</Text>
+            <Text variant="caption" color="textSecondary" style={styles.centerText}>
+              {hint}
+            </Text>
+          </Pressable>
+        </Link>
+      ))}
     </View>
   );
 }
