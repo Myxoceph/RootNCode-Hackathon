@@ -188,6 +188,11 @@ function subscribe(listener: () => void) {
   };
 }
 
+/** The player as it is now, outside React (tests). */
+export function getPlayerState(): PlayerState | null {
+  return state;
+}
+
 export function useCapsulePlayer(): PlayerState | null {
-  return useSyncExternalStore(subscribe, () => state, () => null);
+  return useSyncExternalStore(subscribe, getPlayerState, () => null);
 }

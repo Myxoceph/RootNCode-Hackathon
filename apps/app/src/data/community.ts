@@ -182,9 +182,14 @@ function subscribe(listener: () => void) {
   };
 }
 
+/** The state as it is now, outside React (tests). */
+export function getCommunityState(): CommunityState {
+  return state;
+}
+
 export function useCommunity(): CommunityState {
   useEffect(() => {
     void loadSession();
   }, []);
-  return useSyncExternalStore(subscribe, () => state, () => state);
+  return useSyncExternalStore(subscribe, getCommunityState, getCommunityState);
 }
