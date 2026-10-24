@@ -76,7 +76,7 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
 - **Ziyaretçi Nabzı:**
   - Kullanıcı anonimdir. `POST /auth/anonymous` ile takma ad verir, karşılığında bir token alır. Token yalnızca bir kez döner, API onun yalnızca özetini saklar. İstemci token'ı güvenli depoda tutar (mobilde `expo-secure-store`); kaybolursa yeni oturum açılır.
   - Katkı türleri: `tip` (saha ipucu), `memory` (anı) ve `correction` (editörlere düzeltme). Fotoğraf katkısı şimdilik yok.
-  - Metin düz metindir ve 10–1000 karakter arasıdır. `normalizeContributionText` API'nin uyguladığı temizliği yapar; karakter sayacı bu fonksiyonla gösterilebilir.
+  - Metin düz metindir ve `CONTRIBUTION_TEXT_MIN`–`CONTRIBUTION_TEXT_MAX` (10–1000) karakter arasıdır. `normalizeContributionText` API'nin uyguladığı temizliği yapar; karakter sayacı bu fonksiyonla gösterilebilir.
   - Katkı önce `pending` olarak kaydedilir. Nabızda yalnızca moderatörün onayladığı `tip` ve `memory` katkıları görünür; `correction` katkıları hiçbir zaman görünmez.
   - Nabız sırası: önce veri setindeki ipuçları (`origin: official | field_visit | visitor_reviews_summary`), sonra topluluk katkıları (`origin: "community"`, `author` takma ad), yeniden eskiye.
   - Anılar (`kind: "memory"`) saha ipuçlarından ayrı gösterilir. Topluluk içeriği kaynaklı bilgi gibi sunulmaz.

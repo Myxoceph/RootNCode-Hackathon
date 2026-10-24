@@ -34,10 +34,19 @@ export function normalizeContributionText(text: string): string {
     .trim();
 }
 
+/** Length of a contribution after `normalizeContributionText`; clients show it as a counter. */
+export const CONTRIBUTION_TEXT_MIN = 10;
+export const CONTRIBUTION_TEXT_MAX = 1000;
+
 export const ContributionTextSchema = z
   .string()
   .transform(normalizeContributionText)
-  .pipe(z.string().min(10, "at least 10 characters").max(1000, "at most 1000 characters"));
+  .pipe(
+    z
+      .string()
+      .min(CONTRIBUTION_TEXT_MIN, `at least ${CONTRIBUTION_TEXT_MIN} characters`)
+      .max(CONTRIBUTION_TEXT_MAX, `at most ${CONTRIBUTION_TEXT_MAX} characters`),
+  );
 
 export const UserRoleSchema = z.enum(["visitor", "moderator"]);
 
