@@ -5,6 +5,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 
+import { OfflineBanner } from "@/components/offline-banner";
 import { A11ySettingsProvider } from "@/settings/a11y-settings";
 import { fontFiles } from "@/theme/fonts";
 
@@ -50,15 +51,17 @@ function ThemedStack() {
   return (
     <ThemeProvider value={navigationTheme(theme)}>
       <StatusBar style={theme.scheme === "dark" ? "light" : "dark"} />
-      <Stack screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display } }}>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        {/* Camera screens are full screen and always dark; they draw their own back button. */}
-        <Stack.Screen name="time-curtain" options={{ headerShown: false, title: "Zaman Perdesi" }} />
-        <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
-        <Stack.Screen name="ar-prototype" options={{ headerShown: false, title: "AR prototipi" }} />
-        <Stack.Screen name="map-prototype" options={{ headerShown: false, title: "Harita prototipi" }} />
-        <Stack.Screen name="+not-found" options={{ title: "Sayfa bulunamadı" }} />
-      </Stack>
+      <OfflineBanner>
+        <Stack screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display } }}>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          {/* Camera screens are full screen and always dark; they draw their own back button. */}
+          <Stack.Screen name="time-curtain" options={{ headerShown: false, title: "Zaman Perdesi" }} />
+          <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
+          <Stack.Screen name="ar-prototype" options={{ headerShown: false, title: "AR prototipi" }} />
+          <Stack.Screen name="map-prototype" options={{ headerShown: false, title: "Harita prototipi" }} />
+          <Stack.Screen name="+not-found" options={{ title: "Sayfa bulunamadı" }} />
+        </Stack>
+      </OfflineBanner>
     </ThemeProvider>
   );
 }
