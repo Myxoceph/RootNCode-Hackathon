@@ -28,6 +28,15 @@
     "plugins": [
       "expo-router",
       [
+        "expo-camera",
+        {
+          "cameraPermission": "Kitabeleri tanımak ve Zaman Perdesi için kamera kullanılır. Görüntü cihazdan çıkmaz.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": false
+        }
+      ],
+      [
         "expo-splash-screen",
         {
           "backgroundColor": "#151B28",

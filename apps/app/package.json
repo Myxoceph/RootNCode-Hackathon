@@ -7,6 +7,7 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
+    "android:apk": "export EXPO_PUBLIC_API_URL=${EXPO_PUBLIC_API_URL:-https://vagabonds.allbytech.com/api}; expo prebuild --platform android --no-install && cd android && ./gradlew assembleRelease -PreactNativeArchitectures=${ANDROID_ARCHS:-arm64-v8a}",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "export": "expo export --platform all",
