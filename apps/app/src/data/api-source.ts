@@ -3,6 +3,7 @@ import {
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
   MetaEnumsResponseSchema,
+  PulseResponseSchema,
 } from "@vagabonds/contracts";
 
 import { DataError, type SchemaParser } from "./errors";
@@ -73,6 +74,9 @@ export function createApiSource(baseUrl: string): DataSource {
         allowNotFound: true,
       });
     },
+    getPulse(id, lang) {
+      return request(`/assets/${encodeURIComponent(id)}/pulse?lang=${lang}`, PulseResponseSchema, { allowNotFound: true });
+    },
     async listCities(lang) {
       const enums = (await request(`/meta/enums?lang=${lang}`, MetaEnumsResponseSchema))!;
       return enums.cities
@@ -82,7 +86,7 @@ export function createApiSource(baseUrl: string): DataSource {
   };
 }
 
-async function readErrorCode(response: Response): Promise<string | null> {
+export async function readErrorCode(response: Response): Promise<string | null> {
   try {
     const body = (await response.json()) as { error?: { code?: unknown } };
     return typeof body.error?.code === "string" ? body.error.code : null;

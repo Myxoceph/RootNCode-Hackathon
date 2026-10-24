@@ -11,8 +11,9 @@ export interface SchemaParser<T> {
 /**
  * - `invalid`: the data arrived but does not match the contract.
  * - `unavailable`: the data could not be fetched at all (network, server down).
+ * - `rejected`: the API refused a visitor's request (a limit, a ban, an input it does not accept).
  */
-export type DataErrorKind = "invalid" | "unavailable";
+export type DataErrorKind = "invalid" | "unavailable" | "rejected";
 
 export class DataError extends Error {
   readonly kind: DataErrorKind;

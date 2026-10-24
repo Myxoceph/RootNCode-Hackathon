@@ -3,6 +3,7 @@ import type {
   AssetListResponse,
   AssetRelationsResponse,
   Lang,
+  PulseResponse,
 } from "@vagabonds/contracts";
 
 /** A city that has published assets, for the list filter. */
@@ -32,6 +33,8 @@ export interface DataSource {
   getAsset(id: string, lang: Lang): Promise<AssetDetail | null>;
   /** Resolves to `null` when no published asset has this id. */
   getRelations(id: string, lang: Lang): Promise<AssetRelationsResponse | null>;
+  /** Ziyaretçi Nabzı: dataset tips and approved visitor notes. `null` when no published asset has this id. */
+  getPulse(id: string, lang: Lang): Promise<PulseResponse | null>;
   /** Cities with at least one published asset, in the API's order. */
   listCities(lang: Lang): Promise<CityOption[]>;
 }

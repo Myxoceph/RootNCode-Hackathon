@@ -75,4 +75,10 @@ describe("pulse items", () => {
       },
     ]);
   });
+
+  it("dates a contribution by the day in Türkiye, not in UTC", () => {
+    const lateNight = { ...records.community[0]!, created_at: new Date("2026-10-24T22:51:00Z") };
+    const [item] = toPulseItems({ tips: [], community: [lateNight], communityTotal: 1 }, "tr");
+    expect(item?.date).toBe("2026-10-25");
+  });
 });

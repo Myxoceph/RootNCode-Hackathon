@@ -53,7 +53,7 @@ src/
     _layout.tsx           # yazı tipleri, splash, tema, kök Stack
     +html.tsx             # web HTML kabuğu (lang="tr", zoom açık)
     +not-found.tsx
-    (tabs)/               # Keşfet /, Eserler /monuments, Rota /route, Ayarlar /settings
+    (tabs)/               # Keşfet /, Eserler /monuments, Rota /route, Profil /settings
       monuments/          # kendi Stack'i: liste (index) → detay ([id], ör. /monuments/bursa-osmangazi-ulucami)
   components/
   data/                   # veri kaynakları (API, mock), hook'lar, örnek veri (fixtures/)
@@ -112,6 +112,13 @@ const asset = useAsset("bursa-osmangazi-ulucami");
   bütün verileri yeniden ister. Hiç saklanmamış bir ekran eskisi gibi hata gösterir. Sözleşme sürümü
   değişince eski kayıtlar silinir. Not: API yanıtları 60 sn tarayıcı önbelleğinde de durur; web'de API'yi
   kapatıp denerken bir dakika bekle.
+- **Ziyaretçi Nabzı (modül 6):** eser sayfasının "Ziyaretçi Notları" sekmesi `GET /assets/:id/pulse`'ı
+  gösterir (veri setindeki ipuçları ve onaylanmış ziyaretçi notları; yüklenemezse eserin `visitorTips`'i).
+  "Not bırak" ilk gönderimde takma ad sorar ve anonim oturum açar (`src/data/community.ts`); token telefonda
+  `expo-secure-store`'da, web'de tarayıcı deposunda durur. Notlar moderatör onayından sonra görünür; durumları
+  Profil → "Notlarım"da. Not göndermek her zaman API ister (mock'ta da). Yerelde onaylamak için:
+  `npm run moderator:create -w @vagabonds/api -- "Ad"` ve `POST /admin/contributions/:id/approve`
+  (API'nin `/docs` sayfası).
 - Her kaynak veriyi sözleşmeyle doğrular; uymazsa `DataError` fırlatır. `ResourceView` bunu
   "Tekrar dene" düğmeli bir hata ekranı olarak gösterir (geliştirmede hangi adresin ya da
   alanın sorunlu olduğu da listelenir). API kapalıysa "Sunucuya ulaşılamıyor" der; sessizce

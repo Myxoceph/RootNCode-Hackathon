@@ -1,7 +1,16 @@
-import type { AssetDetail, AssetRelation, AssetRelationsResponse, AssetSummary, Lang } from "@vagabonds/contracts";
+import type {
+  AssetDetail,
+  AssetRelation,
+  AssetRelationsResponse,
+  AssetSummary,
+  Contribution,
+  Lang,
+  PulseResponse,
+} from "@vagabonds/contracts";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { dataSource } from "./active-source";
+import { fetchMyContributions, useCommunity } from "./community";
 import { DataError } from "./errors";
 import { useRefreshEpoch } from "./offline";
 import type { CityOption } from "./source";
@@ -59,6 +68,21 @@ export function useAsset(id: string): ResourceWithRetry<AssetDetail | null> {
 /** `data` is `null` when no published asset has this id. */
 export function useAssetRelations(id: string): ResourceWithRetry<AssetRelationsResponse | null> {
   const load = useCallback(() => dataSource.getRelations(id, LANG), [id]);
+  return useResource(load);
+}
+
+/** Ziyaretçi Nabzı of an asset; `data` is `null` when no published asset has this id. */
+export function usePulse(id: string): ResourceWithRetry<PulseResponse | null> {
+  const load = useCallback(() => dataSource.getPulse(id, LANG), [id]);
+  return useResource(load);
+}
+
+/** The visitor's own notes ("Notlarım"); fetched again after each note sent. `null` without a session. */
+export function useMyContributions(): ResourceWithRetry<Contribution[] | null> {
+  const { user, sent } = useCommunity();
+  const userId = user?.id;
+  // Not read inside, but a new session or a new note means a new list.
+  const load = useCallback(() => fetchMyContributions(), [userId, sent]);
   return useResource(load);
 }
 
