@@ -23,6 +23,25 @@ npm run app                                  # Expo geliştirme sunucusu
 - **Kontrol:** `npm run typecheck --workspace @vagabonds/app` ve
   `npm run export --workspace @vagabonds/app` (üç platformun paketini derler).
 
+### Android APK (demo)
+
+Expo Go'suz, telefona kurulan sürüm. Expo hesabı ya da bulut derlemesi gerekmez; bilgisayardaki
+Android SDK ve JDK 17 ile derlenir (`ANDROID_HOME` tanımlı olmalı):
+
+```bash
+npm run android:apk --workspace @vagabonds/app
+```
+
+- API adresi derlemeye gömülür; varsayılanı demo adresi (`https://vagabonds.allbytech.com/api`).
+  Başka bir API için komutun başına `EXPO_PUBLIC_API_URL=...` ekle.
+- Yalnızca `arm64-v8a` için derlenir (bugünkü bütün telefonlar); emülatör ya da eski bir telefon için
+  `ANDROID_ARCHS=arm64-v8a,armeabi-v7a,x86_64`.
+- Çıktı: `android/app/build/outputs/apk/release/app-release.apk`. Telefona USB ile
+  `adb install -r <apk>`, ya da dosyayı telefona gönderip aç ("bilinmeyen kaynaklar" izni ister).
+- `android/` klasörü `app.json`'dan üretilir ve git'e girmez; izinler ve eklentiler `app.json`'da.
+- İmza, Expo şablonunun hata ayıklama anahtarıdır: demo ve test için yeterli, Play Store'a yüklenemez.
+- İlk derleme Gradle bağımlılıklarını indirir (birkaç GB, 10–20 dk); en az 10 GB boş disk bırak.
+
 Paket eklerken `npm install` yerine `npx expo install <paket>` kullan (`apps/app` içinden);
 SDK ile uyumlu sürümü seçer.
 
