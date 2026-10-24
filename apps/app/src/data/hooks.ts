@@ -27,13 +27,19 @@ function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
   const [attempt, setAttempt] = useState(0);
   // "Yenile" on the offline banner refetches every resource on screen.
   const epoch = useRefreshEpoch();
+  const lastEpoch = useRef(epoch);
 
   useEffect(() => {
     let active = true;
-    setState({ status: "loading" });
+    // A refresh keeps what is on screen until the new answer is in: no spinner, and a
+    // failed refresh leaves the data shown rather than replacing it with an error.
+    const refreshing = epoch !== lastEpoch.current;
+    lastEpoch.current = epoch;
+    if (!refreshing) setState({ status: "loading" });
     load().then(
       (data) => active && setState({ status: "success", data }),
-      (error: unknown) => active && setState({ status: "error", error: toDataError(error) }),
+      (error: unknown) =>
+        active && setState((current) => (refreshing && current.status === "success" ? current : { status: "error", error: toDataError(error) })),
     );
     return () => {
       active = false;
@@ -94,9 +100,12 @@ export function useRelationsOf(ids: string[]): RelationsOf {
     setFailed([]);
     setAttempt((n) => n + 1);
   }, []);
-  // "Yenile" on the offline banner: fetch the ones that failed again.
+  // "Yenile" on the offline banner: fetch every one again, as some came from storage.
+  // What is shown stays until the new answers arrive.
   useEffect(() => {
-    if (epoch > 0) retry();
+    if (epoch === 0) return;
+    requested.current.clear();
+    retry();
   }, [epoch, retry]);
   const loading = ids.filter((id) => !(id in byId) && !failed.includes(id));
   return { byId, loading, failed, retry };
@@ -139,13 +148,16 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
   // page twice (duplicate keys in the list).
   const loaded = useRef(0);
   const knownTotal = useRef(0);
-  // A page that arrives after the city changed belongs to the old list and is dropped.
+  // A page that arrives after the city changed, or after the list was loaded again
+  // ("Yenile"), belongs to the old list and is dropped.
   const currentCity = useRef(city);
   currentCity.current = city;
+  const generation = useRef(0);
 
   // The first page goes through useResource for the loading and error screens.
   const loadFirst = useCallback(async () => {
     const page = await dataSource.listAssets({ city, limit: PAGE_SIZE, offset: 0 }, LANG);
+    generation.current++;
     loaded.current = page.items.length;
     knownTotal.current = page.total;
     setItems(page.items);
@@ -160,11 +172,13 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
     busy.current = true;
     setLoadingMore(true);
     setMoreError(null);
+    const started = generation.current;
+    const current = () => currentCity.current === city && generation.current === started;
     dataSource
       .listAssets({ city, limit: PAGE_SIZE, offset: loaded.current }, LANG)
       .then(
         (page) => {
-          if (currentCity.current !== city) return;
+          if (!current()) return;
           loaded.current += page.items.length;
           knownTotal.current = page.total;
           setItems((current) => {
@@ -173,7 +187,7 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
           });
           setTotal(page.total);
         },
-        (error: unknown) => currentCity.current === city && setMoreError(toDataError(error)),
+        (error: unknown) => current() && setMoreError(toDataError(error)),
       )
       .finally(() => {
         busy.current = false;
