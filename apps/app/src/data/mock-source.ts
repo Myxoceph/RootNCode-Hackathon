@@ -2,12 +2,14 @@ import {
   AssetDetailSchema,
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
+  CONTRACT_VERSION,
   type AssetDetail,
   type AssetListResponse,
   type AssetRelationsResponse,
 } from "@vagabonds/contracts";
 
 import { DataError, type SchemaParser } from "./errors";
+import { pulseItemsFromTips } from "./pulse";
 import type { DataSource } from "./source";
 
 /** Raw fixture files, captured from a local API with `npm run fixtures --workspace @vagabonds/app`. */
@@ -48,18 +50,20 @@ export function createMockSource(load: () => Promise<MockFixtures> = loadBundled
   const parsedDetails = new Map<string, AssetDetail>();
   const parsedRelations = new Map<string, AssetRelationsResponse>();
 
+  async function getAsset(id: string): Promise<AssetDetail | null> {
+    const raw = (await getFixtures()).details[id];
+    if (raw === undefined) return null;
+    if (!parsedDetails.has(id)) parsedDetails.set(id, parse(raw, AssetDetailSchema, "Örnek eser verisi"));
+    return parsedDetails.get(id)!;
+  }
+
   return {
     async listAssets({ city, limit, offset }) {
       parsedList ??= parse((await getFixtures()).list, AssetListResponseSchema, "Örnek eser listesi");
       const matching = city ? parsedList.items.filter((a) => a.city.code === city) : parsedList.items;
       return { ...parsedList, total: matching.length, limit, offset, items: matching.slice(offset, offset + limit) };
     },
-    async getAsset(id) {
-      const raw = (await getFixtures()).details[id];
-      if (raw === undefined) return null;
-      if (!parsedDetails.has(id)) parsedDetails.set(id, parse(raw, AssetDetailSchema, "Örnek eser verisi"));
-      return parsedDetails.get(id)!;
-    },
+    getAsset: (id) => getAsset(id),
     async getRelations(id) {
       const raw = (await getFixtures()).relations[id];
       if (raw === undefined) return null;
@@ -67,6 +71,12 @@ export function createMockSource(load: () => Promise<MockFixtures> = loadBundled
         parsedRelations.set(id, parse(raw, AssetRelationsResponseSchema, "Örnek bağ verisi"));
       }
       return parsedRelations.get(id)!;
+    },
+    async getPulse(id, lang) {
+      // The fixtures carry the dataset tips only; visitor notes need the API.
+      const asset = await getAsset(id);
+      if (!asset) return null;
+      return { version: CONTRACT_VERSION, lang, assetId: id, items: pulseItemsFromTips(asset.visitorTips), communityTotal: 0 };
     },
     async listCities() {
       // The fixtures have no /meta/enums snapshot; the list's own cities are enough offline.

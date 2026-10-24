@@ -5,6 +5,7 @@ import {
   AssetRelationsResponseSchema,
   CONTRACT_VERSION,
   CountedCodeSchema,
+  PulseResponseSchema,
 } from "@vagabonds/contracts";
 
 import { DataError, type SchemaParser } from "./errors";
@@ -48,6 +49,7 @@ export function createCachedSource(source: DataSource): DataSource {
     getAsset: (id, lang) => cached(`asset:${lang}:${id}`, AssetDetailSchema, () => source.getAsset(id, lang)),
     getRelations: (id, lang) =>
       cached(`relations:${lang}:${id}`, AssetRelationsResponseSchema, () => source.getRelations(id, lang)),
+    getPulse: (id, lang) => cached(`pulse:${lang}:${id}`, PulseResponseSchema, () => source.getPulse(id, lang)),
     listCities: (lang) => cached(`cities:${lang}`, CitiesSchema, () => source.listCities(lang)),
   };
 }
@@ -151,8 +153,4 @@ function save(key: string, data: unknown): Promise<void> {
     }
   });
   return writes;
-}
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
 }
