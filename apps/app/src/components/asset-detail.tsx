@@ -8,7 +8,6 @@ import type {
   InscriptionV2,
   SourceRef,
   TimelineEvent,
-  VisitorTipV2,
 } from "@vagabonds/contracts";
 import {
   ConfidenceBadge,
@@ -28,6 +27,7 @@ import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from "reac
 import { toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
 import { AssetImage } from "@/components/asset-image";
 import { BuildingIllustration } from "@/components/building-illustration";
+import { VisitorPulse } from "@/components/visitor-pulse";
 import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds } from "@/content/capsules";
 import { useAssetRelations, type ResourceWithRetry } from "@/data";
 import { transliterationLanguage } from "@/lib/language";
@@ -107,7 +107,7 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
 
         <View role="tabpanel" aria-labelledby={`tab-${tab}`} style={styles.panel}>
           {tab === "story" && <Story asset={asset} relations={relations} />}
-          {tab === "tips" && <Tips tips={asset.visitorTips} />}
+          {tab === "tips" && <VisitorPulse asset={asset} />}
           {tab === "access" && <Access asset={asset} />}
         </View>
 
@@ -438,47 +438,6 @@ function RelatedAssets({ relations }: { relations: ResourceWithRetry<AssetRelati
   );
 }
 
-const tipOrigin: Record<VisitorTipV2["origin"], string> = {
-  field_visit: "Saha ziyareti",
-  visitor_reviews_summary: "Ziyaretçi yorumlarından özet",
-  official: "Resmî bilgi",
-};
-
-const tipAccents = ["warning", "highlight", "primary", "success"] as const;
-
-function Tips({ tips }: { tips: VisitorTipV2[] }) {
-  const { colors: c } = useTheme();
-  if (tips.length === 0) return <Text color="textSecondary">Bu eser için henüz ziyaretçi notu yok.</Text>;
-
-  return (
-    <View accessibilityRole="list" style={styles.tips}>
-      {tips.map((tip, i) => {
-        const accent = c[tipAccents[i % tipAccents.length] ?? "primary"];
-        const meta = [tipOrigin[tip.origin], tip.collectedAt && formatDate(tip.collectedAt)].filter(Boolean).join(" · ");
-        return (
-          <View key={`${tip.origin}-${tip.text}`} style={[styles.tip, { backgroundColor: c.surface, borderColor: c.border }]}>
-            <View style={[styles.tipIcon, { backgroundColor: c.surfaceRaised }]}>
-              <Ionicons
-                name="chatbubble-ellipses-outline"
-                size={16}
-                color={accent}
-                accessibilityElementsHidden
-                importantForAccessibility="no"
-              />
-            </View>
-            <View style={styles.flex}>
-              <Text>{tip.text}</Text>
-              <Text variant="caption" color="textSecondary">
-                {meta}
-              </Text>
-            </View>
-          </View>
-        );
-      })}
-    </View>
-  );
-}
-
 function Access({ asset }: { asset: AssetDetail }) {
   const { colors: c } = useTheme();
   const a11y = asset.accessibility;
@@ -625,11 +584,6 @@ function InscriptionBlock({ inscription }: { inscription: InscriptionV2 }) {
   );
 }
 
-/** `iso` is a date without a time ("2025-06-01"); read as UTC so it never shifts a day west of Greenwich. */
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
-}
-
 function formatCoordinate(value: number, positive: string, negative: string): string {
   return `${Math.abs(value).toFixed(4)}° ${value >= 0 ? positive : negative}`;
 }
@@ -734,23 +688,6 @@ const styles = StyleSheet.create({
   },
   relationLink: {
     minHeight: touchTarget.min,
-    justifyContent: "center",
-  },
-  tips: {
-    gap: spacing.sm,
-  },
-  tip: {
-    flexDirection: "row",
-    gap: spacing.sm,
-    padding: spacing.md,
-    borderRadius: radius.lg,
-    borderWidth: StyleSheet.hairlineWidth,
-  },
-  tipIcon: {
-    width: 30,
-    height: 30,
-    borderRadius: radius.md,
-    alignItems: "center",
     justifyContent: "center",
   },
   kv: {
