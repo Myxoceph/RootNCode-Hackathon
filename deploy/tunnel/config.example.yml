@@ -1,0 +1,10 @@
+# Cloudflare Tunnel config for serving the demo from a laptop (docs/deploy.md, "Bilgisayardan yayın").
+# Copy to ~/.cloudflared/vagabonds-demo.yml and put in the tunnel id that `cloudflared tunnel create` printed.
+tunnel: <TUNNEL_ID>
+credentials-file: /Users/<user>/.cloudflared/<TUNNEL_ID>.json
+
+ingress:
+  # Caddy, published on 127.0.0.1 only (HTTP_PORT in deploy/.env), so only the tunnel reaches it.
+  - hostname: vagabonds.allbytech.com
+    service: http://localhost:8080
+  - service: http_status:404
