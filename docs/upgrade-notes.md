@@ -7,6 +7,24 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-25 · Ses Kapsülü telefonda sesli (expo-audio)
+
+Kimler: **uygulama ekibi**, **ses kayıtlarını ekleyecek veri ekibi (H9)**
+
+1. Yeni paket (`expo-audio`):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Kapsüller telefonda da ses çalıyor. Gerçek kayıt yokken web'de ses yine canlı sentezleniyor; telefonda aynı sesin
+  kaydı (`apps/app/src/audio/stand-ins/`, `npm run audio:stand-ins --workspace @vagabonds/app`) çalıyor, ekranda
+  "canlandırılmış ses" notu var.
+- **Gerçek kayıtlar (H9):** `sounds/<ses anahtarı>.mp3` olarak medya bucket'ına yüklenince uygulama onları
+  kendiliğinden çalar (`https://media.allbytech.com/sounds/<anahtar>.mp3`). Anahtarlar `data/enums.json`'daki
+  `ambient_sound` değerleri (`darussifa`, `han`, `medrese`, `hamam`, …). Kapsül 24 sn; dosya 24–25 sn, mono, CC0.
+  Altyazılar şimdilik `apps/app/src/content/capsules.ts`'de; `sounds.json` gelince oradan okunacak.
+
 ## 2026-10-24 · AR hedefleri veriden (sözleşme 0.3.1)
 
 Kimler: **herkes** (sözleşme değişti), **AR hedefi ekleyen veri ekibi**
