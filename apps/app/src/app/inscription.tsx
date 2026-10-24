@@ -16,7 +16,7 @@ import { useAsset, type ResourceWithRetry } from "@/data";
 import { announce } from "@/lib/announce";
 import { speak } from "@/lib/speak";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { useScreenReaderEnabled } from "@/lib/use-screen-reader";
+import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
 type Phase = "starting" | "scanning" | "locked" | "revealed";
@@ -37,8 +37,10 @@ const REVEAL_MS = 800;
  */
 export default function InscriptionScreen() {
   const web = Platform.OS === "web";
-  const screenReader = useScreenReaderEnabled();
-  const [mode, setMode] = useState<"camera" | "reading">(web ? "reading" : "camera");
+  const screenReader = useScreenReaderStatus();
+  const [chosen, setMode] = useState<"camera" | "reading" | null>(web ? "reading" : null);
+  // Until the system says whether a screen reader is on, open neither, so the camera is not asked for in vain.
+  const mode = chosen ?? (screenReader === null ? null : screenReader ? "reading" : "camera");
   const [notice, setNotice] = useState<string | null>(null);
   const asset = useAsset(INSCRIPTION_ASSET);
 
@@ -57,7 +59,7 @@ export default function InscriptionScreen() {
       <Head>
         <title>Taşın Dili · Vagabonds</title>
       </Head>
-      {mode === "reading" ? (
+      {mode === "reading" && (
         <InscriptionReading
           inscription={inscriptionOf(asset, null)}
           notice={notice}
@@ -70,9 +72,8 @@ export default function InscriptionScreen() {
                 }
           }
         />
-      ) : (
-        <InscriptionCamera asset={asset} onFailure={onFailure} onReadAsText={() => setMode("reading")} />
       )}
+      {mode === "camera" && <InscriptionCamera asset={asset} onFailure={onFailure} onReadAsText={() => setMode("reading")} />}
     </>
   );
 }

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { AccessibilityInfo } from "react-native";
 
-/** `true` while VoiceOver, TalkBack or another screen reader is running. */
-export function useScreenReaderEnabled(): boolean {
-  const [enabled, setEnabled] = useState(false);
+/**
+ * `true` while VoiceOver, TalkBack or another screen reader is running; `null` until
+ * the system has answered, so a screen can wait before opening the camera.
+ */
+export function useScreenReaderStatus(): boolean | null {
+  const [enabled, setEnabled] = useState<boolean | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -16,4 +19,9 @@ export function useScreenReaderEnabled(): boolean {
   }, []);
 
   return enabled;
+}
+
+/** `true` while VoiceOver, TalkBack or another screen reader is running. */
+export function useScreenReaderEnabled(): boolean {
+  return useScreenReaderStatus() ?? false;
 }
