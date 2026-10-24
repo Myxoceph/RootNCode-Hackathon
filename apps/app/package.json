@@ -15,7 +15,9 @@
     "ar:targets": "tsx scripts/compile-ar-targets.mts",
     "audio:stand-ins": "tsx scripts/render-capsule-sounds.mts",
     "vendor": "tsx scripts/vendor-web-libs.mts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@expo-google-fonts/amiri": "^0.4.1",
@@ -55,6 +57,7 @@
     "@types/react": "~19.2.2",
     "esbuild": "0.28.2",
     "tsx": "^4.20.0",
-    "typescript": "~6.0.3"
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.4"
   }
 }
