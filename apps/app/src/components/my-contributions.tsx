@@ -3,7 +3,7 @@ import { radius, spacing, Text, touchTarget, useTheme, type ThemeRole } from "@v
 import { Link } from "expo-router";
 import { ActivityIndicator, Pressable, StyleSheet, View } from "react-native";
 
-import { useAsset, useCommunity, useMyContributions } from "@/data";
+import { useCommunity, useMyContributions } from "@/data";
 import { formatDate } from "@/lib/format-date";
 
 const statuses: Record<ContributionStatus, { label: string; color: ThemeRole }> = {
@@ -21,7 +21,7 @@ const kinds: Record<Contribution["kind"], string> = {
 /** Profil · Notlarım (module 6): the notes the visitor sent and what the moderators decided. */
 export function MyContributions() {
   const { colors: c } = useTheme();
-  const { user } = useCommunity();
+  const { user, assetNames } = useCommunity();
   const mine = useMyContributions();
 
   return (
@@ -56,7 +56,7 @@ export function MyContributions() {
       {mine.status === "success" && mine.data && mine.data.length > 0 && (
         <View accessibilityRole="list" style={styles.list}>
           {mine.data.map((item) => (
-            <ContributionRow key={item.id} item={item} />
+            <ContributionRow key={item.id} item={item} name={assetNames[item.assetId] ?? "Eser"} />
           ))}
         </View>
       )}
@@ -64,11 +64,8 @@ export function MyContributions() {
   );
 }
 
-function ContributionRow({ item }: { item: Contribution }) {
+function ContributionRow({ item, name }: { item: Contribution; name: string }) {
   const { colors: c } = useTheme();
-  // Mostly an asset the visitor has just seen, so usually answered from the device.
-  const asset = useAsset(item.assetId);
-  const name = asset.status === "success" && asset.data ? asset.data.name : "Eser";
   const status = statuses[item.status];
 
   return (

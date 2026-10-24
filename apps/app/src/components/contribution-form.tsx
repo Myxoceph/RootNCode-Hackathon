@@ -1,15 +1,19 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { ContributionTextSchema, NicknameSchema, normalizeContributionText, type ContributionKind } from "@vagabonds/contracts";
+import {
+  CONTRIBUTION_TEXT_MAX,
+  CONTRIBUTION_TEXT_MIN,
+  ContributionTextSchema,
+  NicknameSchema,
+  normalizeContributionText,
+  type ContributionKind,
+} from "@vagabonds/contracts";
 import { Button, fontFamily, radius, spacing, Text, useTheme, useUi } from "@vagabonds/ui";
 import { useState } from "react";
 import { StyleSheet, TextInput, View, type TextInputProps } from "react-native";
 
 import { Segmented } from "@/components/segmented";
-import { DataError, sendContribution, useCommunity } from "@/data";
+import { communityAvailable, DataError, sendContribution, useCommunity } from "@/data";
 import { announce } from "@/lib/announce";
-
-const MAX_CHARS = 1000;
-const MIN_CHARS = 10;
 
 const kinds: ReadonlyArray<{ value: ContributionKind; label: string; hint: string }> = [
   { value: "tip", label: "İpucu", hint: "Ziyarete yarayan bir bilgi: giriş, saatler, kalabalık, rampa…" },
@@ -24,7 +28,7 @@ type Phase = "closed" | "open" | "sending" | "sent";
  * which opens an anonymous session (data/community.ts); later notes go under it. Every note
  * waits for a moderator, and the form says so.
  */
-export function ContributionForm({ assetId }: { assetId: string }) {
+export function ContributionForm({ asset }: { asset: { id: string; name: string } }) {
   const { colors: c } = useTheme();
   const { user } = useCommunity();
   const [phase, setPhase] = useState<Phase>("closed");
@@ -42,16 +46,21 @@ export function ContributionForm({ assetId }: { assetId: string }) {
   }
 
   async function submit() {
-    if (chars < MIN_CHARS) return fail(`Not en az ${MIN_CHARS} karakter olmalı.`);
-    if (chars > MAX_CHARS) return fail(`Not en çok ${MAX_CHARS} karakter olabilir.`);
-    if (!ContributionTextSchema.safeParse(body).success) return fail("Not kabul edilmedi; metni kontrol et.");
+    // The contract's own check; the counter tells which limit it broke.
+    if (!ContributionTextSchema.safeParse(body).success) {
+      return fail(
+        chars < CONTRIBUTION_TEXT_MIN
+          ? `Not en az ${CONTRIBUTION_TEXT_MIN} karakter olmalı.`
+          : `Not en çok ${CONTRIBUTION_TEXT_MAX} karakter olabilir.`,
+      );
+    }
     if (needsNickname && !NicknameSchema.safeParse(nickname).success) {
       return fail("Takma ad 2–32 karakter olmalı; harf ya da rakamla başlamalı. Boşluk, nokta, alt çizgi ve tire kullanılabilir.");
     }
     setError(null);
     setPhase("sending");
     try {
-      await sendContribution(assetId, { kind, body }, needsNickname ? nickname.trim() : undefined);
+      await sendContribution(asset, { kind, body }, needsNickname ? nickname.trim() : undefined);
       setBody("");
       setPhase("sent");
       announce("Notun gönderildi. Moderatör onayından sonra burada görünecek.");
@@ -59,6 +68,14 @@ export function ContributionForm({ assetId }: { assetId: string }) {
       setPhase("open");
       fail(e instanceof DataError ? e.message : "Not gönderilemedi. Biraz sonra tekrar dene.");
     }
+  }
+
+  if (!communityAvailable) {
+    return (
+      <Text variant="caption" color="textSecondary">
+        Örnek veriyle çalışılıyor: not göndermek için sunucu gerekiyor.
+      </Text>
+    );
   }
 
   if (phase === "closed") {
@@ -103,11 +120,13 @@ export function ContributionForm({ assetId }: { assetId: string }) {
         value={body}
         onChangeText={setBody}
         multiline
-        maxLength={MAX_CHARS + 200}
+        maxLength={CONTRIBUTION_TEXT_MAX + 200}
         editable={!sending}
       />
-      <Text variant="caption" color={chars > MAX_CHARS ? "warning" : "textSecondary"} accessibilityLiveRegion="polite">
-        {chars < MIN_CHARS ? `${chars}/${MAX_CHARS} · en az ${MIN_CHARS} karakter` : `${chars}/${MAX_CHARS}`}
+      <Text variant="caption" color={chars > CONTRIBUTION_TEXT_MAX ? "warning" : "textSecondary"} accessibilityLiveRegion="polite">
+        {chars < CONTRIBUTION_TEXT_MIN
+          ? `${chars}/${CONTRIBUTION_TEXT_MAX} · en az ${CONTRIBUTION_TEXT_MIN} karakter`
+          : `${chars}/${CONTRIBUTION_TEXT_MAX}`}
       </Text>
 
       {needsNickname ? (
