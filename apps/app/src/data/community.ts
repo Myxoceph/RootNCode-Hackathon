@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   AnonymousSessionResponseSchema,
   ContributionSchema,
@@ -9,39 +10,51 @@ import {
 } from "@vagabonds/contracts";
 import { useEffect, useSyncExternalStore } from "react";
 
-import { readErrorCode } from "./api-source";
-import { resolveApiUrl } from "./config";
+import { resolveApiUrl, resolveDataSourceKind } from "./config";
 import { DataError, type SchemaParser } from "./errors";
+import { request, statusError } from "./http";
 import { clearSession, readSession, writeSession } from "./session-storage";
 
-const TIMEOUT_MS = 10_000;
+/** Asset id → name of the assets the visitor left notes on, for "Notlarım". */
+const ASSET_NAMES_KEY = "vagabonds-note-assets";
+
+/**
+ * Notes go to the API only. With the mock source (`EXPO_PUBLIC_DATA_SOURCE=mock`) there is no
+ * server to send them to: the form says so and "Notlarım" stays empty.
+ */
+export const communityAvailable = resolveDataSourceKind() === "api";
 
 /**
  * Topluluk Ziyaretçi Nabzı (module 6), the visitor's side: an anonymous session under a
  * nickname, sending notes, and the notes' moderation status. The token is stored on the
  * device (./session-storage.ts) and sent as `Authorization: Bearer`; no password, no account.
- * Always the API, also with the mock source: notes cannot be sent without a server.
  */
 export interface CommunityState {
   /** `undefined` until the stored session has been read; `null` while the visitor has none. */
   user: AppUser | null | undefined;
   /** Bumped on every note sent, so "Notlarım" fetches again. */
   sent: number;
+  /**
+   * Names of the assets the visitor's notes are on, kept when sending: a session lives on one
+   * device, so every note of it was sent from here, and the list needs no asset requests.
+   */
+  assetNames: Readonly<Record<string, string>>;
 }
 
-let state: CommunityState = { user: undefined, sent: 0 };
+let state: CommunityState = { user: undefined, sent: 0, assetNames: {} };
 let token: string | null = null;
 let loaded: Promise<void> | null = null;
 const listeners = new Set<() => void>();
 
-function set(next: CommunityState) {
-  state = next;
+function set(next: Partial<CommunityState>) {
+  state = { ...state, ...next };
   listeners.forEach((listener) => listener());
 }
 
 function loadSession(): Promise<void> {
   loaded ??= (async () => {
     let session: AnonymousSessionResponse | null = null;
+    let assetNames: Record<string, string> = {};
     try {
       const raw = await readSession();
       const parsed = raw ? AnonymousSessionResponseSchema.safeParse(JSON.parse(raw)) : null;
@@ -49,16 +62,24 @@ function loadSession(): Promise<void> {
     } catch {
       // Unreadable storage: the visitor picks a nickname again.
     }
+    try {
+      const raw = await AsyncStorage.getItem(ASSET_NAMES_KEY);
+      if (raw) assetNames = JSON.parse(raw) as Record<string, string>;
+    } catch {
+      // The list shows "Eser" instead of the names.
+    }
     token = session?.token ?? null;
-    set({ ...state, user: session?.user ?? null });
+    set({ user: session?.user ?? null, assetNames });
   })();
   return loaded;
 }
 
-/** The API no longer knows the token (revoked, database reset): the next note asks for a nickname. */
-async function forgetSession() {
+/** The API no longer knows `rejected` (revoked, database reset): the next note asks for a nickname. */
+async function forgetSession(rejected: string) {
+  // A 401 that arrives after a new session was opened is about the old token: keep the new one.
+  if (token !== rejected) return;
   token = null;
-  set({ ...state, user: null });
+  set({ user: null });
   try {
     await clearSession();
   } catch {
@@ -66,51 +87,34 @@ async function forgetSession() {
   }
 }
 
-async function call<T>(path: string, schema: SchemaParser<T>, init: { body?: unknown; token?: string } = {}): Promise<T> {
-  const url = `${resolveApiUrl()}${path}`;
-  const headers: Record<string, string> = { Accept: "application/json" };
-  if (init.body !== undefined) headers["Content-Type"] = "application/json";
-  if (init.token) headers.Authorization = `Bearer ${init.token}`;
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
-
-  let response: Response;
+async function rememberAssetName(id: string, name: string) {
+  if (state.assetNames[id] === name) return;
+  const assetNames = { ...state.assetNames, [id]: name };
+  set({ assetNames });
   try {
-    response = await fetch(url, {
-      method: init.body === undefined ? "GET" : "POST",
-      headers,
-      body: init.body === undefined ? undefined : JSON.stringify(init.body),
-      signal: controller.signal,
-    });
-  } catch (error) {
-    throw new DataError("unavailable", "Sunucuya ulaşılamıyor. İnternet bağlantını kontrol edip tekrar dene.", [url, String(error)]);
-  } finally {
-    clearTimeout(timer);
-  }
-
-  if (!response.ok) {
-    const code = await readErrorCode(response);
-    if (response.status === 401) await forgetSession();
-    throw errorFor(response.status, code, url);
-  }
-
-  let body: unknown;
-  try {
-    body = await response.json();
+    await AsyncStorage.setItem(ASSET_NAMES_KEY, JSON.stringify(assetNames));
   } catch {
-    throw new DataError("unavailable", "Sunucuya ulaşılamıyor. Wi-Fi giriş sayfası açıksa önce oturum aç.", [url]);
+    // Shown for this run only.
   }
-  const result = schema.safeParse(body);
-  if (!result.success) throw DataError.fromSchema("Sunucudan gelen veri", result.error);
-  return result.data;
 }
 
-function errorFor(status: number, code: string | null, url: string): DataError {
-  const details = [`${status} ${code ?? ""} ${url}`.trim()];
+/** A request whose answer is never "not found"; a 401 forgets the session it was sent with. */
+async function call<T>(path: string, schema: SchemaParser<T>, init: { body?: unknown; token?: string } = {}): Promise<T> {
+  const result = await request(`${resolveApiUrl()}${path}`, schema, {
+    ...init,
+    errorFor: (status, code, details) => {
+      if (status === 401 && init.token) void forgetSession(init.token);
+      return errorFor(status, code, details);
+    },
+  });
+  return result!;
+}
+
+function errorFor(status: number, code: string | null, details: string[]): DataError {
   const rejected = (message: string) => new DataError("rejected", message, details);
   switch (code) {
     case "CONTRIBUTION_LIMIT":
-      return rejected("Bir saatte en fazla 5 not gönderilebiliyor. Biraz sonra tekrar dene.");
+      return rejected("Saatlik not sınırına ulaştın. Biraz sonra tekrar dene.");
     case "USER_BANNED":
       return rejected("Bu takma adla artık not gönderilemiyor.");
     case "UNAUTHORIZED":
@@ -120,42 +124,52 @@ function errorFor(status: number, code: string | null, url: string): DataError {
     case "INVALID_BODY":
       return rejected("Not kabul edilmedi; metni ve takma adı kontrol et.");
   }
-  if (status === 429) return rejected("Çok fazla istek gönderildi. Biraz bekleyip tekrar dene.");
-  if (status >= 500) return new DataError("unavailable", "Sunucuda bir sorun oluştu. Biraz sonra tekrar dene.", details);
-  return rejected("İstek tamamlanamadı.");
+  return statusError(status, code, details);
 }
 
 /**
- * Sends a note on `assetId`. A visitor without a session gets one first under `nickname`.
+ * Sends a note on `asset`. A visitor without a session gets one first under `nickname`.
  * The note waits for a moderator; the pulse shows it once approved.
  */
 export async function sendContribution(
-  assetId: string,
+  asset: { id: string; name: string },
   note: { kind: ContributionKind; body: string },
   nickname?: string,
 ): Promise<Contribution> {
+  if (!communityAvailable) throw new DataError("unavailable", "Not göndermek için sunucu gerekiyor.");
   await loadSession();
+  let opened: AppUser | null = null;
   if (!token) {
     if (!nickname) throw new DataError("rejected", "Takma ad gerekli.");
     const session = await call("/auth/anonymous", AnonymousSessionResponseSchema, { body: { nickname } });
     token = session.token;
+    opened = session.user;
     try {
       await writeSession(JSON.stringify(session));
     } catch {
       // Not kept: this run still sends with it, the next launch asks for a nickname again.
     }
-    set({ ...state, user: session.user });
   }
-  const contribution = await call(`/assets/${encodeURIComponent(assetId)}/contributions`, ContributionSchema, {
-    body: note,
-    token,
-  });
-  set({ ...state, sent: state.sent + 1 });
+
+  let contribution: Contribution;
+  try {
+    contribution = await call(`/assets/${encodeURIComponent(asset.id)}/contributions`, ContributionSchema, {
+      body: note,
+      token,
+    });
+  } catch (error) {
+    if (opened) set({ user: opened });
+    throw error;
+  }
+  void rememberAssetName(asset.id, asset.name);
+  // One update for the new session and the new note, so "Notlarım" fetches once.
+  set(opened ? { user: opened, sent: state.sent + 1 } : { sent: state.sent + 1 });
   return contribution;
 }
 
 /** The visitor's own notes with their moderation status, newest first; `null` without a session. */
 export async function fetchMyContributions(): Promise<Contribution[] | null> {
+  if (!communityAvailable) return null;
   await loadSession();
   if (!token) return null;
   return (await call("/me/contributions", MyContributionsResponseSchema, { token })).items;

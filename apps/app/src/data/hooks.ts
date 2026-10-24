@@ -80,9 +80,13 @@ export function usePulse(id: string): ResourceWithRetry<PulseResponse | null> {
 /** The visitor's own notes ("Notlarım"); fetched again after each note sent. `null` without a session. */
 export function useMyContributions(): ResourceWithRetry<Contribution[] | null> {
   const { user, sent } = useCommunity();
-  const userId = user?.id;
-  // Not read inside, but a new session or a new note means a new list.
-  const load = useCallback(() => fetchMyContributions(), [userId, sent]);
+  // A new session or a new note means a new list. Until the stored session has been read
+  // (`undefined`), nothing is fetched: that read decides whether there is a list at all.
+  const key = user === undefined ? null : `${user?.id ?? ""}:${sent}`;
+  const load = useCallback(
+    () => (key === null ? new Promise<never>(() => {}) : fetchMyContributions()),
+    [key],
+  );
   return useResource(load);
 }
 
