@@ -121,6 +121,58 @@ npx wrangler@4.149.0 deploy           # vagabonds-media.<hesap>.workers.dev adre
 
 Bucket'ın adresi değişirse `wrangler.toml`'daki `ORIGIN`'i güncelleyip yeniden `deploy` et.
 
+## Bilgisayardan yayın: Cloudflare Tunnel
+
+Sunucu yokken aynı yığın bir Mac'ten yayınlanır. `cloudflared` bilgisayardan Cloudflare'e giden bir
+bağlantı açar; modeme port yönlendirme, sabit IP ya da sertifika gerekmez. HTTPS'i Cloudflare verir.
+Bilgisayar uyursa ya da kapanırsa site de kapanır.
+
+```
+Ziyaretçi ──► vagabonds.allbytech.com (Cloudflare) ──► cloudflared (Mac) ──► 127.0.0.1:8080 (Caddy) ──► api, postgres
+```
+
+Bugünkü adres: **`https://vagabonds.allbytech.com`** (tünel adı `vagabonds-demo`, Yiğit'in hesabı).
+
+`deploy/.env` farkları (gerisi [İlk kurulum](#ilk-kurulum) ile aynı):
+
+```dotenv
+SITE_ADDRESS=:80
+PUBLIC_URL=https://vagabonds.allbytech.com
+HTTP_PORT=127.0.0.1:8080
+HTTPS_PORT=127.0.0.1:8443
+```
+
+Caddy sertifika almaz (`:80`) ve yalnızca `127.0.0.1`'de dinler; siteye yerel ağdan değil, yalnızca
+tünelden ulaşılır. Caddyfile özel ağdan gelen isteklerin `Cf-Connecting-IP` başlığına güvenir, böylece
+API'nin hız sınırı tüneli değil ziyaretçiyi sayar. Port ağa açılırsa bu başlık taklit edilebilir.
+
+Kurulum (alan adının sahibi yapar, bir kez):
+
+```bash
+brew install cloudflared
+cloudflared tunnel login
+cloudflared tunnel create vagabonds-demo
+cloudflared tunnel route dns vagabonds-demo vagabonds.allbytech.com
+cp deploy/tunnel/config.example.yml ~/.cloudflared/vagabonds-demo.yml
+```
+
+`login` tarayıcıda alan adını seçtirir. `create` tünel kimliğini yazdırır; kimliği kopyaladığın dosyaya
+koy. `route dns` alan adına tek bir CNAME ekler, diğer kayıtlar etkilenmez.
+
+Her yayında:
+
+```bash
+docker compose -f deploy/compose.yml --env-file deploy/.env up -d --build
+cloudflared tunnel --config ~/.cloudflared/vagabonds-demo.yml run vagabonds-demo
+```
+
+Terminal açık kaldıkça site yayındadır. Demo boyunca Mac'in uyumaması için ikinci komutu
+`caffeinate -i` ile başlat. Mobil uygulamayı bu API'ye bağlamak için:
+`EXPO_PUBLIC_API_URL=https://vagabonds.allbytech.com/api`.
+
+Docker'ın disk dosyası (`Docker.raw`) imajlar derlendikçe büyür. Mac'in diski dolarsa Docker'ın sanal
+makinesi bozulup açılmayabilir; derlemeden önce en az 10 GB boş yer bırak.
+
 ## Kayıtlar, yedek, sorun giderme
 
 ```bash

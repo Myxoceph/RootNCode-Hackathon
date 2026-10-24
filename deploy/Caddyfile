@@ -1,5 +1,16 @@
 # SITE_ADDRESS: a domain (e.g. vagabonds.example.com) gets automatic HTTPS from Let's Encrypt;
 # ":80" serves plain HTTP on any host name or IP (no certificate).
+
+{
+	servers {
+		# Behind Cloudflare Tunnel (docs/deploy.md) every request arrives from cloudflared on a
+		# private address; trust it for the visitor's IP, so the API's rate limit counts visitors,
+		# not the tunnel. A request from a public address is never trusted, so its headers are dropped.
+		trusted_proxies static private_ranges
+		client_ip_headers Cf-Connecting-IP X-Forwarded-For
+	}
+}
+
 {$SITE_ADDRESS::80} {
 	encode zstd gzip
 
