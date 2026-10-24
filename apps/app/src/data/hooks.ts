@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { dataSource } from "./active-source";
 import { DataError } from "./errors";
+import { useRefreshEpoch } from "./offline";
 import type { CityOption } from "./source";
 
 /** Content language. Fixed to Turkish until the language setting lands (Ayarlar). */
@@ -24,6 +25,8 @@ function toDataError(error: unknown): DataError {
 function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
   const [state, setState] = useState<Resource<T>>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
+  // "Yenile" on the offline banner refetches every resource on screen.
+  const epoch = useRefreshEpoch();
 
   useEffect(() => {
     let active = true;
@@ -35,7 +38,7 @@ function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
     return () => {
       active = false;
     };
-  }, [load, attempt]);
+  }, [load, attempt, epoch]);
 
   const retry = useCallback(() => setAttempt((n) => n + 1), []);
   return { ...state, retry };
@@ -70,6 +73,7 @@ export function useRelationsOf(ids: string[]): RelationsOf {
   const [byId, setById] = useState<Record<string, AssetRelation[]>>({});
   const [failed, setFailed] = useState<string[]>([]);
   const [attempt, setAttempt] = useState(0);
+  const epoch = useRefreshEpoch();
   const requested = useRef(new Set<string>());
 
   useEffect(() => {
@@ -90,6 +94,10 @@ export function useRelationsOf(ids: string[]): RelationsOf {
     setFailed([]);
     setAttempt((n) => n + 1);
   }, []);
+  // "Yenile" on the offline banner: fetch the ones that failed again.
+  useEffect(() => {
+    if (epoch > 0) retry();
+  }, [epoch, retry]);
   const loading = ids.filter((id) => !(id in byId) && !failed.includes(id));
   return { byId, loading, failed, retry };
 }
