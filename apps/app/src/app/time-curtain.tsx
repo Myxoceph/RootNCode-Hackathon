@@ -154,11 +154,15 @@ function TimeCurtain({ asset, curtain }: { asset: AssetDetail; curtain: CurtainI
   }, []);
 
   const openCamera = async () => {
-    const permission = await Camera.getCameraPermissionsAsync();
-    if (!permission.granted && !permission.canAskAgain) {
-      setBlocked(true);
-      Linking.openSettings();
-      return;
+    try {
+      const permission = await Camera.getCameraPermissionsAsync();
+      if (!permission.granted && !permission.canAskAgain) {
+        setBlocked(true);
+        await Linking.openSettings();
+        return;
+      }
+    } catch {
+      // Could not ask; the camera screen asks again and falls back here if it must.
     }
     setBlocked(false);
     setNotice(null);
