@@ -1,18 +1,20 @@
 import { useSyncExternalStore } from "react";
 
 /**
- * Whether the screens show stored answers instead of fresh ones (./cached-source.ts),
- * and a "refresh" every data hook listens to. One store for the whole app: the banner
+ * Which answers on screen are stored ones instead of fresh ones (./cached-source.ts), and
+ * a "refresh" every data hook listens to. One store for the whole app: the banner
  * (components/offline-banner.tsx) reads it, the hooks (./hooks.ts) refetch on `refreshData`.
  */
 interface OfflineState {
-  /** When the oldest stored answer on screen was saved; `null` while everything is fresh. */
+  /** When the oldest stored answer shown was saved; `null` while everything is fresh. */
   since: number | null;
   /** Bumped by `refreshData`. */
   epoch: number;
 }
 
 let state: OfflineState = { since: null, epoch: 0 };
+/** Answers shown from storage, by cache key, with when they were saved. */
+const stale = new Map<string, number>();
 const listeners = new Set<() => void>();
 
 function set(next: OfflineState) {
@@ -20,17 +22,29 @@ function set(next: OfflineState) {
   listeners.forEach((listener) => listener());
 }
 
-export function markStale(savedAt: number) {
-  if (state.since === null || savedAt < state.since) set({ ...state, since: savedAt });
+function update() {
+  const since = stale.size > 0 ? Math.min(...stale.values()) : null;
+  if (since !== state.since) set({ ...state, since });
 }
 
-export function markFresh() {
-  if (state.since !== null) set({ ...state, since: null });
+/** `key` was answered from storage. */
+export function markStale(key: string, savedAt: number) {
+  stale.set(key, savedAt);
+  update();
 }
 
-/** Refetches every data hook on screen. */
+/** `key` was answered by the network; other stored answers on screen keep the banner up. */
+export function markFresh(key: string) {
+  if (stale.delete(key)) update();
+}
+
+/**
+ * Refetches every data hook on screen. The stored answers of screens no longer open are
+ * forgotten; the refetch marks whatever is still answered from storage again.
+ */
 export function refreshData() {
-  set({ ...state, epoch: state.epoch + 1 });
+  stale.clear();
+  set({ since: null, epoch: state.epoch + 1 });
 }
 
 function subscribe(listener: () => void) {

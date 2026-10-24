@@ -49,7 +49,8 @@ export function createApiSource(baseUrl: string): DataSource {
     try {
       body = await response.json();
     } catch {
-      throw new DataError("invalid", "Sunucudan gelen veri okunamadı.", [url]);
+      // Not JSON at all: most likely not our API but a Wi-Fi login page (hotel, museum) in between.
+      throw new DataError("unavailable", "Sunucuya ulaşılamıyor. Wi-Fi giriş sayfası açıksa önce oturum aç.", [url]);
     }
 
     const result = schema.safeParse(body);

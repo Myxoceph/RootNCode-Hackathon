@@ -4,6 +4,7 @@ import {
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
   CONTRACT_VERSION,
+  CountedCodeSchema,
 } from "@vagabonds/contracts";
 
 import { DataError, type SchemaParser } from "./errors";
@@ -28,12 +29,8 @@ interface Entry {
   data: unknown;
 }
 
-const CitiesSchema: SchemaParser<CityOption[]> = {
-  safeParse: (data) =>
-    Array.isArray(data)
-      ? { success: true, data: data as CityOption[] }
-      : { success: false, error: { issues: [{ path: [], message: "not a list" }] } },
-};
+/** `listCities` returns the cities of `/meta/enums` cut down to these fields. */
+const CitiesSchema: SchemaParser<CityOption[]> = CountedCodeSchema.array();
 
 /**
  * The API, with every answer kept on the device. When the network fails,
@@ -65,19 +62,23 @@ async function cached<T>(key: string, schema: SchemaParser<NonNullable<T>>, load
     },
     (error: unknown) => ({ ok: false, error }),
   );
-  const stored = read(key, schema);
 
-  const first = await Promise.race([fresh, sleep(SLOW_MS).then(() => null)]);
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const slow = new Promise<null>((resolve) => (timer = setTimeout(() => resolve(null), SLOW_MS)));
+  const first = await Promise.race([fresh, slow]);
+  clearTimeout(timer);
   if (first?.ok) {
-    markFresh();
+    markFresh(key);
     return first.data;
   }
-  // Only a network or server failure falls back; data that breaks the contract is a bug to show.
+  // Only a failed fetch falls back (network, server, a Wi-Fi login page; see api-source.ts):
+  // data that breaks the contract is a bug to show.
   if (first && !(first.error instanceof DataError && first.error.kind === "unavailable")) throw first.error;
 
-  const entry = await stored;
+  // Read only now: on a healthy network the stored copy is never touched.
+  const entry = await read(key, schema);
   if (entry) {
-    markStale(entry.savedAt);
+    markStale(key, entry.savedAt);
     return entry.data as T;
   }
   if (first) throw first.error;
@@ -85,7 +86,7 @@ async function cached<T>(key: string, schema: SchemaParser<NonNullable<T>>, load
   // Slow, and nothing stored: keep waiting.
   const outcome = await fresh;
   if (!outcome.ok) throw outcome.error;
-  markFresh();
+  markFresh(key);
   return outcome.data;
 }
 
