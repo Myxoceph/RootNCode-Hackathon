@@ -5,6 +5,7 @@ import type { ComponentProps } from "react";
 import { Platform, ScrollView, StyleSheet, Switch, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { MyContributions } from "@/components/my-contributions";
 import { timeCurtain } from "@/content/camera";
 import { speak } from "@/lib/speak";
 import { useA11ySettings, type A11ySettings } from "@/settings/a11y-settings";
@@ -17,7 +18,7 @@ const switches: Array<{ key: keyof A11ySettings; icon: ComponentProps<typeof Ion
   { key: "strongFocusRing", icon: "scan-outline", title: "Belirgin odak halkası", detail: "Klavye ve anahtar erişimi için" },
 ];
 
-/** Profil · Erişilebilirlik (module 8). Every switch applies to all screens at once. */
+/** Profil: Erişilebilirlik (module 8; every switch applies to all screens at once) and Notlarım (module 6). */
 export default function SettingsScreen() {
   const { colors: c } = useTheme();
   const { settings, setSetting } = useA11ySettings();
@@ -76,6 +77,8 @@ export default function SettingsScreen() {
           disabled={!settings.audioDescription}
         />
       </Card>
+
+      <MyContributions />
 
       {Platform.OS === "web" && (
         <Text variant="caption" color="textSecondary">
