@@ -16,7 +16,16 @@ const BURSA = [39.95, 28.25, 40.5, 29.85];
 const GLYPH_RANGES = ["0-255", "256-511"];
 const PARALLEL = 8;
 
-const [south, west, north, east] = process.argv.length === 6 ? process.argv.slice(2).map(Number) : BURSA;
+const args = process.argv.slice(2).map(Number);
+if (args.length !== 0 && (args.length !== 4 || !args.every(Number.isFinite))) {
+  console.error("Usage: npm run map:warm -- <south> <west> <north> <east>   (degrees; no arguments: Bursa)");
+  process.exit(1);
+}
+const [south, west, north, east] = args.length === 4 ? args : BURSA;
+if (south >= north || west >= east) {
+  console.error(`Empty area: south ${south} must be below north ${north}, west ${west} left of east ${east}`);
+  process.exit(1);
+}
 
 function tileX(lng, z) {
   return Math.floor(((lng + 180) / 360) * 2 ** z);

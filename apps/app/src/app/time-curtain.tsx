@@ -1,5 +1,5 @@
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
-import { CameraView, useCameraPermissions } from "expo-camera";
+import { Camera, CameraView, useCameraPermissions } from "expo-camera";
 import { Image } from "expo-image";
 import { useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
@@ -8,6 +8,7 @@ import {
   AccessibilityInfo,
   ActivityIndicator,
   Animated,
+  Linking,
   PanResponder,
   Platform,
   Pressable,
@@ -26,7 +27,7 @@ import { Slider } from "@/components/slider";
 import { useAsset } from "@/data";
 import { speak } from "@/lib/speak";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { useScreenReaderEnabled } from "@/lib/use-screen-reader";
+import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { useA11ySettings } from "@/settings/a11y-settings";
 import { useColors } from "@/theme";
 
@@ -81,6 +82,8 @@ export default function TimeCurtainScreen() {
   const c = useColors();
   const insets = useSafeAreaInsets();
 
+  const curtain = resource.status === "success" && resource.data ? curtainOf(resource.data) : null;
+
   let body;
   if (resource.status === "loading") {
     body = (
@@ -95,7 +98,6 @@ export default function TimeCurtainScreen() {
       </View>
     );
   } else {
-    const curtain = resource.data && curtainOf(resource.data);
     body =
       resource.data && curtain ? (
         <TimeCurtain asset={resource.data} curtain={curtain} />
@@ -114,7 +116,7 @@ export default function TimeCurtainScreen() {
         <title>Zaman Perdesi · Vagabonds</title>
       </Head>
       {body}
-      {resource.status !== "success" || !resource.data ? (
+      {!curtain ? (
         <View style={[styles.top, { top: insets.top + spacing.sm }]}>
           <CameraTopBar title="Zaman Perdesi" subtitle="Arşiv karesi" />
         </View>
@@ -126,45 +128,54 @@ export default function TimeCurtainScreen() {
 function TimeCurtain({ asset, curtain }: { asset: AssetDetail; curtain: CurtainImages }) {
   const insets = useSafeAreaInsets();
   const web = Platform.OS === "web";
-  const screenReader = useScreenReaderEnabled();
-  const [mode, setMode] = useState<"camera" | "compare">(web ? "compare" : "camera");
+  const screenReader = useScreenReaderStatus();
+  const [chosen, setChosen] = useState<"camera" | "compare" | null>(web ? "compare" : null);
   const [shot, setShot] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
+  // The camera permission was refused for good: only the system settings can give it back.
+  const [blocked, setBlocked] = useState(false);
   const { settings } = useA11ySettings();
 
-  // A screen reader cannot follow a camera image; start such users on the curtain.
+  // A screen reader cannot follow a camera image; start such users on the curtain. Until the
+  // system says whether one is on, open neither, so the camera is not asked for in vain.
+  const mode = chosen ?? (screenReader === null ? null : screenReader ? "compare" : "camera");
   useEffect(() => {
-    if (screenReader) setMode("compare");
+    if (screenReader) setChosen("compare");
   }, [screenReader]);
 
   const onShot = useCallback((uri: string) => {
     setShot(uri);
-    setMode("compare");
+    setChosen("compare");
   }, []);
-  const onFailure = useCallback((message: string) => {
+  const onFailure = useCallback((message: string, permanent = false) => {
     setNotice(`${message} Arşivi bugünkü fotoğrafla karşılaştırabilirsin.`);
-    setMode("compare");
+    setBlocked(permanent);
+    setChosen("compare");
   }, []);
+
+  const openCamera = async () => {
+    const permission = await Camera.getCameraPermissionsAsync();
+    if (!permission.granted && !permission.canAskAgain) {
+      setBlocked(true);
+      Linking.openSettings();
+      return;
+    }
+    setBlocked(false);
+    setNotice(null);
+    setChosen("camera");
+  };
 
   const subtitle = curtain.standIn ? "Arşiv fotoğrafı bekleniyor" : `Arşiv karesi · ${curtain.label}`;
 
   return (
     <>
-      {mode === "camera" ? (
-        <Viewfinder curtain={curtain} onShot={onShot} onFailure={onFailure} />
-      ) : (
+      {mode === "camera" && <Viewfinder curtain={curtain} onShot={onShot} onFailure={onFailure} />}
+      {mode === "compare" && (
         <Curtain
           curtain={curtain}
           shot={shot}
           notice={notice}
-          onCamera={
-            web
-              ? null
-              : () => {
-                  setNotice(null);
-                  setMode("camera");
-                }
-          }
+          camera={web ? null : { label: blocked ? "Kamera iznini ayarlardan aç" : shot ? "Yeniden çek" : "Kamerayla çek", onPress: openCamera }}
         />
       )}
       <View style={[styles.top, { top: insets.top + spacing.sm }]}>
@@ -181,7 +192,8 @@ function TimeCurtain({ asset, curtain }: { asset: AssetDetail; curtain: CurtainI
 interface ViewfinderProps {
   curtain: CurtainImages;
   onShot: (uri: string) => void;
-  onFailure: (message: string) => void;
+  /** `permanent`: the permission was refused and cannot be asked for again. */
+  onFailure: (message: string, permanent?: boolean) => void;
 }
 
 function Viewfinder({ curtain, onShot, onFailure }: ViewfinderProps) {
@@ -196,9 +208,10 @@ function Viewfinder({ curtain, onShot, onFailure }: ViewfinderProps) {
 
   // Asked once on open; a refusal (now or earlier) sends the visitor to the curtain.
   const denied = permission !== null && !permission.granted && permission.status !== "undetermined";
+  const permanent = denied && !permission.canAskAgain;
   useEffect(() => {
-    if (denied) onFailure("Kamera izni verilmedi.");
-  }, [denied, onFailure]);
+    if (denied) onFailure("Kamera izni verilmedi.", permanent);
+  }, [denied, permanent, onFailure]);
 
   const shoot = async () => {
     if (!camera.current || !ready || busy) return;
@@ -209,9 +222,8 @@ function Viewfinder({ curtain, onShot, onFailure }: ViewfinderProps) {
       flash.setValue(0.9);
       Animated.timing(flash, { toValue: 0, duration: 450, useNativeDriver: true }).start(() => onShot(picture.uri));
     } catch {
-      onFailure("Fotoğraf çekilemedi.");
-    } finally {
       setBusy(false);
+      onFailure("Fotoğraf çekilemedi.");
     }
   };
 
@@ -295,11 +307,12 @@ interface CurtainProps {
   /** The photo just taken; without one, today's cover is on the right. */
   shot: string | null;
   notice: string | null;
-  onCamera: (() => void) | null;
+  /** The button back to the camera; none on the web. */
+  camera: { label: string; onPress: () => void } | null;
 }
 
 /** Before/after: left of the handle is the archive, right is today. */
-function Curtain({ curtain, shot, notice, onCamera }: CurtainProps) {
+function Curtain({ curtain, shot, notice, camera }: CurtainProps) {
   const insets = useSafeAreaInsets();
   const [width, setWidth] = useState(0);
   const [pos, setPos] = useState(50);
@@ -403,10 +416,10 @@ function Curtain({ curtain, shot, notice, onCamera }: CurtainProps) {
           {caption}
         </Text>
         <View style={styles.buttons}>
-          {onCamera && (
+          {camera && (
             <Button
-              label={shot ? "Yeniden çek" : "Kamerayla çek"}
-              onPress={onCamera}
+              label={camera.label}
+              onPress={camera.onPress}
               colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
               style={styles.flex}
             />

@@ -9,8 +9,10 @@
  */
 
 const ORIGIN = "https://tiles.openfreemap.org";
-/** Tiles, fonts and sprites sit under versioned paths: a URL never changes content. */
+/** Tiles and sprites sit under versioned paths: a URL never changes content. */
 const LONG_SECONDS = 60 * 60 * 24 * 30;
+/** Fonts do not (`/fonts/<stack>/<range>.pbf`), though they rarely change. */
+const FONT_SECONDS = 60 * 60 * 24 * 7;
 /** The style and the TileJSON point at the latest weekly tile set. */
 const JSON_SECONDS = 60 * 60 * 24;
 /** Only what a style needs; anything else is not forwarded. */
@@ -38,12 +40,20 @@ export default {
 
 /** Tiles, fonts, sprites: cached as they are. */
 async function serveFile(url, method) {
-  const upstream = await fetch(`${ORIGIN}${url.pathname}`, {
-    method,
-    cf: { cacheEverything: true, cacheTtlByStatus: { "200-299": LONG_SECONDS, 404: 60, "500-599": 0 } },
-  });
+  const font = url.pathname.startsWith("/fonts/");
+  const seconds = font ? FONT_SECONDS : LONG_SECONDS;
+  let upstream;
+  try {
+    upstream = await fetch(`${ORIGIN}${url.pathname}`, {
+      method,
+      cf: { cacheEverything: true, cacheTtlByStatus: { "200-299": seconds, 404: 60, "500-599": 0 } },
+    });
+  } catch {
+    // Not cached and OpenFreeMap unreachable; say so, with CORS, so the map logs the real cause.
+    return new Response("Map tiles unavailable", { status: 502, headers: corsHeaders(new Headers()) });
+  }
   const headers = corsHeaders(upstream.headers);
-  if (upstream.ok) headers.set("Cache-Control", `public, max-age=${LONG_SECONDS}, immutable`);
+  if (upstream.ok) headers.set("Cache-Control", `public, max-age=${seconds}${font ? "" : ", immutable"}`);
   return new Response(upstream.body, { status: upstream.status, headers });
 }
 

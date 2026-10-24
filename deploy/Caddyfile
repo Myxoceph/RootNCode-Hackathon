@@ -3,10 +3,12 @@
 
 {
 	servers {
-		# Behind Cloudflare Tunnel (docs/deploy.md) every request arrives from cloudflared on a
-		# private address; trust it for the visitor's IP, so the API's rate limit counts visitors,
-		# not the tunnel. A request from a public address is never trusted, so its headers are dropped.
-		trusted_proxies static private_ranges
+		# Proxies whose X-Forwarded-For / Cf-Connecting-IP are believed. Default: none (a request
+		# from 127.0.0.1 inside this container never comes). Behind Cloudflare Tunnel (docs/deploy.md)
+		# every request arrives from cloudflared on a private address: set TRUSTED_PROXIES=private_ranges,
+		# so the API's rate limit counts visitors, not the tunnel. Only with the ports bound to 127.0.0.1;
+		# on a server, Docker may hand over clients from a private address too, and they could fake their IP.
+		trusted_proxies static {$TRUSTED_PROXIES:127.0.0.1/32}
 		client_ip_headers Cf-Connecting-IP X-Forwarded-For
 	}
 }
