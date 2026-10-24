@@ -121,6 +121,24 @@ npx wrangler@4.149.0 deploy           # vagabonds-media.<hesap>.workers.dev adre
 
 Bucket'ın adresi değişirse `wrangler.toml`'daki `ORIGIN`'i güncelleyip yeniden `deploy` et.
 
+## Harita altlığının alan adı
+
+Harita altlığı (stil, karolar, yazı tipleri, simgeler) OpenFreeMap'ten, ama kendi alan adımızdaki bir
+Worker üzerinden gelir: **`https://tiles.allbytech.com`** (`deploy/tiles-worker/`, Yiğit'in hesabı). Worker
+istekleri yalnızca `tiles.openfreemap.org`'a iletir, cevapları Cloudflare önbelleğinde tutar; OpenFreeMap
+erişilemezse önbellekteki bölgeler çizilmeye devam eder. Ayrıntı: [ADR 0003](decisions/0003-map-approach.md).
+
+```bash
+cd deploy/tiles-worker
+npx wrangler@4.149.0 deploy           # kurulum ya da değişiklik sonrası
+cd ../..
+npm run map:warm                      # Bursa'nın karolarını önbelleğe doldurur (~3.400 dosya, ~1 dk)
+```
+
+**Demodan bir gün önce** `npm run map:warm`'ı demonun yapılacağı ağdan çalıştır: Cloudflare her konumda ayrı
+önbellek tutar, stil de OpenFreeMap'in haftalık karo setini izler. Başka bir bölge için:
+`npm run map:warm -- <güney> <batı> <kuzey> <doğu>` (derece). Çıktıdaki "failed" sayısı 0 olmalı.
+
 ## Bilgisayardan yayın: Cloudflare Tunnel
 
 Sunucu yokken aynı yığın bir Mac'ten yayınlanır. `cloudflared` bilgisayardan Cloudflare'e giden bir

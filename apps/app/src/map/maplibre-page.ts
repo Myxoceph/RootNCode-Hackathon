@@ -7,8 +7,12 @@ import type { MapNetwork, MapPadding, MapPin } from "./types";
  */
 export const MAPLIBRE_VERSION = "5.24.0";
 
-/** Free vector tiles from OpenStreetMap data, no key (openfreemap.org). */
-const STYLE_URL = { light: "https://tiles.openfreemap.org/styles/positron", dark: "https://tiles.openfreemap.org/styles/dark" };
+/**
+ * Free vector tiles from OpenStreetMap data, no key (openfreemap.org), through our own
+ * domain: deploy/tiles-worker caches them, so the map draws when OpenFreeMap cannot (Y19).
+ */
+const TILES = "https://tiles.allbytech.com";
+const STYLE_URL = { light: `${TILES}/styles/positron`, dark: `${TILES}/styles/dark` };
 
 export interface MapPageColors {
   /** Land, from the theme's `mapBackground`. */
