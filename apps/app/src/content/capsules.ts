@@ -71,9 +71,11 @@ export const capsuleTypes = Object.keys(capsules) as CapsuleType[];
  * `/assets/:id`). The API resolves the key from the asset or its type's default
  * (`ambient_sound` in data/enums.json). Keys without a capsule yet play none.
  */
-export const capsuleForSoundKey: Partial<Record<string, CapsuleType>> = Object.fromEntries(
-  capsuleTypes.map((type) => [capsules[type].soundKey, type]),
-);
+const bySoundKey = new Map(capsuleTypes.map((type) => [capsules[type].soundKey, type]));
+
+export function capsuleForSoundKey(soundKey: string): CapsuleType | undefined {
+  return bySoundKey.get(soundKey);
+}
 
 export function captionAt(type: CapsuleType, seconds: number): string {
   let text = capsules[type].captions[0]?.[1] ?? "";

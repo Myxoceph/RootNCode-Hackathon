@@ -489,7 +489,7 @@ function MiniPlayer({ soundKey }: { soundKey: string | null }) {
   const { colors: c } = useTheme();
   const { settings } = useA11ySettings();
   const player = useCapsulePlayer();
-  const type = soundKey ? capsuleForSoundKey[soundKey] : undefined;
+  const type = soundKey ? capsuleForSoundKey(soundKey) : undefined;
   if (!type) return null;
 
   const capsule = capsules[type];

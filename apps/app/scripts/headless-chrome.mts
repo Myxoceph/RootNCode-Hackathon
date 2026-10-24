@@ -13,8 +13,8 @@ const PORT = 9339;
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function pageSocketUrl(): Promise<string> {
-  for (let i = 0; i < 40; i++) {
+async function pageSocketUrl(exited: () => boolean): Promise<string> {
+  for (let i = 0; i < 40 && !exited(); i++) {
     try {
       const tabs = (await (await fetch(`http://127.0.0.1:${PORT}/json`)).json()) as Array<{ type: string; webSocketDebuggerUrl: string }>;
       const page = tabs.find((tab) => tab.type === "page");
@@ -49,13 +49,23 @@ export async function withHeadlessChrome<T>(run: (evaluate: (expression: string)
   const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${PORT}`, `--user-data-dir=${profile}`, "about:blank"], {
     stdio: "ignore",
   });
+  // Set up before anything can fail: an early exit or a wrong CHROME_PATH must not hang the script.
+  let failure: Error | null = null;
+  const exited = new Promise<void>((resolve) => {
+    chrome.once("exit", () => resolve());
+    chrome.once("error", (error) => {
+      failure = new Error(`Chrome could not start (${CHROME}, set CHROME_PATH): ${error.message}`);
+      resolve();
+    });
+  });
   try {
-    const socket = await pageSocketUrl();
+    const socket = await pageSocketUrl(() => failure !== null || chrome.exitCode !== null);
     return await run((expression) => evaluate(socket, expression));
+  } catch (error) {
+    throw failure ?? error;
   } finally {
     // Chrome writes to its profile until it has exited.
-    const exited = new Promise((resolve) => chrome.once("exit", resolve));
-    chrome.kill();
+    if (chrome.exitCode === null && failure === null) chrome.kill();
     await exited;
     rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
   }
