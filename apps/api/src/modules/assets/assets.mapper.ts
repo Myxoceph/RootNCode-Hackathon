@@ -55,7 +55,7 @@ function label(record: LabelRecord, lang: Lang): LabeledCode {
 }
 
 /** Section, fact and timeline rows always carry a confidence (NOT NULL in the schema). */
-function requiredConfidence(code: string, lang: Lang): Confidence {
+export function requiredConfidence(code: string, lang: Lang): Confidence {
   const confidence = toConfidence(code, lang);
   if (!confidence) throw new Error("confidence is required");
   return confidence;
