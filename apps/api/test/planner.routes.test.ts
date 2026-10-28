@@ -155,7 +155,10 @@ describe.skipIf(!DATABASE_URL)("planner routes (PostgreSQL)", () => {
       expect(day).toMatchObject({ day: 1, date: TODAY, weather: null, weatherNote: { code: "unavailable" } });
       expect(stops(day).length).toBeGreaterThan(3);
       expect(day?.items.map((i) => i.kind === "meal" && i.meal).filter(Boolean)).toEqual(["lunch", "dessert"]);
-      expect(day?.items.find((i) => i.kind === "meal")).toMatchObject({ label: "Öğle molası", dish: null });
+      const lunch = day?.items.find((i) => i.kind === "meal" && i.meal === "lunch");
+      expect(lunch).toMatchObject({ label: "Öğle molası", dish: { kind: { code: "main" } } });
+      const dessert = day?.items.find((i) => i.kind === "meal" && i.meal === "dessert");
+      expect(dessert).toMatchObject({ dish: { kind: { code: "dessert" } } });
       const ats = day?.items.map((i) => i.at) ?? [];
       expect(ats).toEqual([...ats].sort((a, b) => a - b));
       expect(Math.max(...stops(day).map((s) => s.importance))).toBeGreaterThan(20);
@@ -173,6 +176,9 @@ describe.skipIf(!DATABASE_URL)("planner routes (PostgreSQL)", () => {
       const firstIds = stops(first).map((s) => s.asset.id);
       expect(stops(second).filter((s) => firstIds.includes(s.asset.id))).toEqual([]);
       expect(second?.items.find((i) => i.kind === "meal")).toMatchObject({ label: "Lunch break" });
+      const dishIds = body.days.flatMap((d) => d.items.flatMap((i) => (i.kind === "meal" && i.dish ? [i.dish.id] : [])));
+      expect(dishIds).toHaveLength(4);
+      expect(new Set(dishIds).size).toBe(4);
     });
 
     it("keeps a themed half day to its theme and before 13:30", async () => {

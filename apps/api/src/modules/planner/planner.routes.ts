@@ -26,6 +26,9 @@ import { visibleStatuses, type AssetsRepository, type AssetVisibility } from "..
 import { adviceFor, FORECAST_DAYS, WEATHER_ATTRIBUTION, type WeatherService } from "../weather/weather.service.ts";
 import { DETOUR_FACTOR, planRoute, WALK_METERS_PER_MINUTE, type PlannerCandidate } from "./planner.ts";
 import type { CandidateRecord, PlannerRepository } from "./planner.repository.ts";
+import { toCityDish } from "../gastronomy/gastronomy.mapper.ts";
+import type { GastronomyRepository } from "../gastronomy/gastronomy.repository.ts";
+import { pickDish } from "../gastronomy/meals.ts";
 import { importanceOf, planTrip, TRIP_SHAPE, weatherNoteCode, type ImportanceSignals } from "./trip.ts";
 
 const CodeSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "must be a lowercase code");
@@ -157,11 +160,13 @@ export interface PlannerRoutesOptions {
   weather: WeatherService;
   mediaBaseUrl: string;
   visibility: AssetVisibility;
+  /** Local dishes for a trip's lunch and dessert breaks. */
+  gastronomy: GastronomyRepository;
 }
 
 export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
   app,
-  { repository, assets, weather, mediaBaseUrl, visibility },
+  { repository, assets, weather, mediaBaseUrl, visibility, gastronomy },
 ) => {
   const statuses = visibleStatuses(visibility);
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
@@ -312,13 +317,14 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
     }
     const dates = Array.from({ length: dayCount }, (_, day) => addDays(firstDate, day));
 
-    const [records, forecast] = await Promise.all([
+    const [records, forecast, dishes] = await Promise.all([
       repository.findCandidates({
         city: city.code,
         ...(theme?.kind === "type" && { type: theme.code }),
         ...(theme?.kind === "era" && { era: theme.code }),
       }),
       cityForecast(city.code),
+      gastronomy.findDishes(city.code),
     ]);
     const signals = await repository.findImportanceSignals(records.map((record) => record.id));
     const dayWeather = dates.map((date) => forecast.find((day) => day.date === date) ?? null);
@@ -339,6 +345,21 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
     const coverOf = new Map(covers.map((cover) => [cover.asset_id, cover]));
     const ctx = { lang, mediaBaseUrl, statuses };
 
+    // Each break gets a dish of the district it is in (the previous stop's), not served before on the trip.
+    const served = new Set<string>();
+    const mealDishes = plan.days.map((day) => {
+      let district: string | null = null;
+      return day.items.map((item) => {
+        if (item.kind === "stop") {
+          district = byId.get(item.id)?.district ?? null;
+          return null;
+        }
+        const dish = pickDish(dishes, item.meal, district, served);
+        if (dish) served.add(dish.id);
+        return dish && toCityDish(dish, lang);
+      });
+    });
+
     setHeaders(reply, lang);
     return TripPlanResponseSchema.parse({
       version: CONTRACT_VERSION,
@@ -354,7 +375,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
           date: dates[index],
           weather: weatherOfDay,
           weatherNote: { code, text: weatherNoteText(code, weatherOfDay, lang) },
-          items: day.items.map((item) =>
+          items: day.items.map((item, itemIndex) =>
             item.kind === "stop"
               ? {
                   kind: "stop",
@@ -368,7 +389,14 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
                   settingEstimated: item.settingEstimated,
                   importance: item.importance,
                 }
-              : { kind: "meal", at: item.at, meal: item.meal, label: MEAL_LABEL[item.meal][lang], minutes: item.minutes, dish: null },
+              : {
+                  kind: "meal",
+                  at: item.at,
+                  meal: item.meal,
+                  label: MEAL_LABEL[item.meal][lang],
+                  minutes: item.minutes,
+                  dish: mealDishes[index]?.[itemIndex] ?? null,
+                },
           ),
           outdoorShare: day.outdoorShare,
           totals: { walkMeters: day.walkMeters, walkMinutes: day.walkMinutes, visitMinutes: day.visitMinutes },

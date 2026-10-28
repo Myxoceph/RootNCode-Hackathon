@@ -65,15 +65,17 @@ export function buildApp({
   app.register(healthRoutes, { prisma });
   const assetsRepository = createAssetsRepository(prisma, assetVisibility);
   app.register(assetsRoutes, { repository: assetsRepository, mediaBaseUrl, visibility: assetVisibility });
+  const gastronomyRepository = createGastronomyRepository(prisma, assetVisibility);
   app.register(plannerRoutes, {
     repository: createPlannerRepository(prisma, assetVisibility),
     assets: assetsRepository,
     weather,
     mediaBaseUrl,
     visibility: assetVisibility,
+    gastronomy: gastronomyRepository,
   });
   app.register(metaRoutes, { repository: createMetaRepository(prisma, assetVisibility) });
-  app.register(gastronomyRoutes, { repository: createGastronomyRepository(prisma, assetVisibility) });
+  app.register(gastronomyRoutes, { repository: gastronomyRepository });
   const communityRepository = createCommunityRepository(prisma);
   app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility });
   app.register(moderationRoutes, { repository: communityRepository });
