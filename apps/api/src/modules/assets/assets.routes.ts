@@ -18,7 +18,9 @@ import { HttpError } from "../../lib/http-error.ts";
 import { resolveLang } from "../../lib/lang.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
-import { toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, type MapperContext } from "./assets.mapper.ts";
+import { toSoundRecording } from "../sounds/sounds.mapper.ts";
+import type { SoundsRepository } from "../sounds/sounds.repository.ts";
+import { ambientKeyOf, toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, type MapperContext } from "./assets.mapper.ts";
 import { boundingBox, distanceMeters, selectRelations } from "./assets.network.ts";
 import {
   visibleStatuses,
@@ -94,11 +96,13 @@ export interface AssetsRoutesOptions {
   repository: AssetsRepository;
   mediaBaseUrl: string;
   visibility: AssetVisibility;
+  /** Ambient recordings for `ambientSound.recording`. */
+  sounds: SoundsRepository;
 }
 
 export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
   app,
-  { repository, mediaBaseUrl, visibility },
+  { repository, mediaBaseUrl, visibility, sounds },
 ) => {
   const statuses = visibleStatuses(visibility);
   const context = (lang: Lang): MapperContext => ({ lang, mediaBaseUrl, statuses });
@@ -146,13 +150,16 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
 
     const record = await repository.findById(id);
     if (!record) throw notFound(id);
-    const [media, secondaryTypes] = await Promise.all([
+    const soundKey = ambientKeyOf(record);
+    const [media, secondaryTypes, sound] = await Promise.all([
       repository.findMedia([record.id]),
       repository.findAssetTypes(record.secondary_types),
+      soundKey ? sounds.findByKey(soundKey) : null,
     ]);
 
     setLanguageHeaders(reply, lang);
-    return AssetDetailSchema.parse(toAssetDetail(record, media, secondaryTypes, context(lang)));
+    const recording = sound && toSoundRecording(sound, mediaBaseUrl, lang);
+    return AssetDetailSchema.parse(toAssetDetail(record, media, secondaryTypes, context(lang), recording));
   });
 
   app.get("/assets/:id/relations", {
