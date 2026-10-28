@@ -194,6 +194,64 @@ Terminal açık kaldıkça site yayındadır. Demo boyunca Mac'in uyumaması iç
 Docker'ın disk dosyası (`Docker.raw`) imajlar derlendikçe büyür. Mac'in diski dolarsa Docker'ın sanal
 makinesi bozulup açılmayabilir; derlemeden önce en az 10 GB boş yer bırak.
 
+## AI asistan
+
+Asistan (`POST /chat`) yerel bir dil modeliyle çalışır. Model, yayını yapan makinede Ollama ile
+servis edilir (Mac mini M4, 16 GB). API modele OpenAI uyumlu `/v1/chat/completions` ile bağlanır.
+Bu yüzden model ya da sağlayıcı değiştirmek yalnızca üç ortam değişkenini değiştirmek demektir.
+Model tanımlı değilse ya da cevap vermiyorsa `GET /chat/status` `available: false` döner, uygulama
+sohbet girişlerini gizler; sitenin geri kalanı etkilenmez.
+
+```
+API (Docker) ──► host.docker.internal:11434 (Ollama, Mac) ──► model (bellekte)
+```
+
+Kurulum (bir kez, Mac mini'de):
+
+```bash
+brew install ollama
+ollama pull qwen3:8b          # aday 1; Gemma'nın araç çağırabilen sürümü de denenebilir
+```
+
+Demo boyunca modelin bellekte kalması ve aynı anda iki soruya bakabilmesi için Ollama'yı şöyle başlat:
+
+```bash
+OLLAMA_KEEP_ALIVE=-1 OLLAMA_NUM_PARALLEL=2 caffeinate -i ollama serve
+```
+
+`deploy/.env`'e ekle:
+
+```dotenv
+ASSISTANT_BASE_URL=http://host.docker.internal:11434/v1
+ASSISTANT_MODEL=qwen3:8b
+```
+
+Sonra `docker compose … up -d` ile API'yi yeniden başlat ve kontrol et:
+`curl https://vagabonds.allbytech.com/api/chat/status` → `"available": true`.
+
+Model seçimi: Aday modelleri aynı sorularla karşılaştır. Sorular şu gruplarda: eser, gezi, yemek ve
+veri setinde cevabı olmayan ya da konu dışı sorular.
+
+```bash
+# apps/api/.env içinde ASSISTANT_BASE_URL=http://localhost:11434/v1 ve ASSISTANT_MODEL=<model>
+npm run assistant:eval --workspace @vagabonds/api
+```
+
+Karşılaştırırken şunlara bak:
+- Her bilginin yanında `[n]` kaynak işareti var mı?
+- Cevabı olmayan soruda model "bilgi yok" diyor mu, uydurmuyor mu?
+- Cevaplar kaç saniyede geliyor? Sonuç özetinde ortanca ve en yavaş süre yazar.
+
+Ollama'yı `0.0.0.0`'a açma; parolası yoktur, yalnızca aynı makinedeki API'ye hizmet etmelidir.
+
+**Barındırılan model ile deneme (isteğe bağlı):** Mac mini gelmeden akışı denemek için OpenAI uyumlu
+bir uç sunan barındırılan bir model kullanılabilir. Örneğin Gemini:
+`ASSISTANT_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai`. `ASSISTANT_MODEL`
+alanına sağlayıcının sayfasındaki model adı, `ASSISTANT_API_KEY` alanına anahtar yazılır. Anahtar
+yalnızca `.env` dosyasında durur; git'e, PR'a ya da sohbete yazılmaz. Ücretsiz katmanlar
+gönderilen soruları kendi amaçları için kullanabilir. Bu yüzden barındırılan model yalnızca
+geliştirmede kullanılır, demoda yerel model çalışır.
+
 ## Kayıtlar, yedek, sorun giderme
 
 ```bash
@@ -249,3 +307,7 @@ docker compose -p vagabonds-trial -f deploy/compose.yml --env-file /tmp/trial.en
 - API kendi güvenlik başlıklarını da ekler (JSON yanıtlarda `default-src 'none'` CSP). API'yi Caddy olmadan açsan da başlıklar korunur.
 - **Hız sınırı:** IP başına dakikada 120 istek (`RATE_LIMIT_MAX`); aşılınca `429 RATE_LIMITED`. `/health` sınırsızdır. API gerçek istemci IP'sini Caddy'nin `X-Forwarded-For` başlığından alır (`TRUST_PROXY: uniquelocal`, yalnızca özel Docker ağındaki proxy'ye güvenilir).
 - İstek gövdesi API'de 16 KB, Caddy'de 64 KB ile sınırlıdır.
+- **Asistan:**
+  - Sınırlar: IP başına dakikada 10 soru, aynı anda en çok 2 soru (fazlası `503 ASSISTANT_BUSY`), soru başına 60 sn ve en çok 3 araç çağrısı.
+  - Model yalnızca API'nin kendi verisini araçlarla okur. Ziyaretçi katkıları modele hiç gitmez. Soruların metni kayıtlara yazılmaz.
+  - Sağlayıcı anahtarı yalnızca `Authorization` başlığında kullanılır.

@@ -7,6 +7,29 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-28 · AI asistan: `POST /chat` (sözleşme 0.3.5)
+
+Kimler: **uygulama ekibi**, **demoyu yayınlayan**. API'yi yerelde çalıştıranlar için zorunlu adım yok: model tanımlı değilse asistan kapalıdır.
+
+1. İsteğe bağlı, asistanı yerelde denemek için `apps/api/.env`'e ekle (`.env.example`'daki örnekler):
+   ```dotenv
+   ASSISTANT_BASE_URL=http://localhost:11434/v1   # Ollama
+   ASSISTANT_MODEL=qwen3:8b
+   ```
+   Barındırılan bir model denenecekse `ASSISTANT_API_KEY` de eklenir. Anahtar git'e girmez.
+2. Demo makinesinde: `docs/deploy.md` → "AI asistan" (Ollama kurulumu, `deploy/.env`).
+
+Değişenler:
+- Yeni uçlar: `GET /chat/status` ve `POST /chat`.
+  - İstek: `message`, isteğe bağlı `assetId` ve `history` (son 6 tur), `lang`.
+  - Cevap: `answer` metnindeki `[n]` işaretleri `citations[].ref` ile eşleşir (`kind`: `asset`, `dish`, `trip`, `weather`; `id` ile ilgili sayfa açılır). Gezi sorusunda `attachments.trip` Rotalar ekranının kullandığı planın aynısıdır.
+  - `grounded: false` ise cevap kaynaksızdır (selamlaşma, konu dışı soru).
+- Uygulama:
+  - Sohbet ekranı ve eser sayfasındaki "Bu eser hakkında sor" (`assetId` ile) eklenebilir.
+  - `/chat/status` `available: false` dönerse bu girişler gizlenir.
+  - `503 ASSISTANT_BUSY` gelirse kısa bir süre sonra tekrar denenir. `ASSISTANT_UNAVAILABLE` gelirse "asistan şu an kapalı" gösterilir.
+- Sözleşme yalnızca eklendiği için uygulamanın fixture'ları sürüm numarasıyla yeniden üretildi.
+
 ## 2026-10-28 · Ortam sesi kayıtları için altyapı (migration, sözleşme 0.3.4)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **veri ekibi (H9)**, **uygulama ekibi**
