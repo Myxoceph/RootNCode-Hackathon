@@ -72,8 +72,10 @@ data/
 ├── sources.json               # kaynaklar (kitaplar, foto arşivi) → source tablosu
 ├── schema/eser.schema.json    # eser JSON'unun JSON Schema tanımı
 ├── schema/sehir.schema.json   # şehir dosyasının (yöresel lezzetler) JSON Schema tanımı
+├── schema/sound.schema.json   # sounds.json'un JSON Schema tanımı
 ├── eserler/<il>/<ilçe>/<id>.json   # her eser bir dosya → asset + alt tablolar
 ├── sehirler/<il>.json         # ilin yöresel lezzetleri, coğrafi işaret tesciliyle → city_dish
+├── sounds.json                # ortam sesi kayıtları (Sesli Zaman Kapsülü) → sound
 ├── tools/
 │   ├── validate.py            # şema + çapraz kontrol (veri ekibi her değişiklikte çalıştırır)
 │   ├── media_pipeline.py      # fotoğrafları indirir, sürümlerini üretir, manifesti yazar
@@ -282,6 +284,22 @@ CREATE TABLE city_dish (
   status                 text NOT NULL CHECK (status IN ('draft','in_review','published'))
 );
 CREATE INDEX city_dish_city_idx ON city_dish (city_code, sort_order);
+
+-- ─────────────────────────────── Ortam sesleri (sounds.json)
+CREATE TABLE sound (
+  key              text PRIMARY KEY CHECK (key ~ '^[a-z]+(-[a-z]+)*$'),  -- ambient_sound anahtarı, ör. 'hamam'
+  sort_order       smallint NOT NULL,
+  title_tr         text NOT NULL,
+  title_en         text,
+  file_key         text NOT NULL,              -- bucket'taki yol: 'sounds/hamam.mp3'
+  duration_seconds real NOT NULL CHECK (duration_seconds > 0),
+  captions         jsonb NOT NULL DEFAULT '[]', -- [{ "at": 3, "text_tr": "[...]", "text_en": "[...]" }]
+  license          text NOT NULL CHECK (license IN ('CC0-1.0','CC-BY-4.0')),
+  author           text,
+  source_url       text NOT NULL,
+  status           text NOT NULL CHECK (status IN ('draft','in_review','published')),
+  CHECK (license <> 'CC-BY-4.0' OR author IS NOT NULL)
+);
 
 -- ─────────────────────────────── Eser
 CREATE TABLE asset (
@@ -670,6 +688,7 @@ Bir tabloya sütun eklemek ya da yeni tablo açmak için:
 |---|---|
 | `enums.json` → `regions`, `cities`, `asset_types`, `eras`, `relation_types`, `timeline_event_types` | aynı adlı lookup tabloları (`code`, `label.tr` → `label_tr`…) |
 | `sources.json` → `sources[]` | `source` (tanımsız alanlar `extra` jsonb'ye) |
+| `sounds.json` → `sounds[]` | `sound` (`file` → `file_key`, dizideki sıra → `sort_order`, `captions[]` → jsonb `[{at, text_tr, text_en}]`). Dosyadan çıkarılan ses DB'den silinir. |
 | `sehirler/<il>.json` → `dishes[]` | `city_dish` (`city` → `city_code`, dizideki sıra → `sort_order`, `geographical_indication.*` → `gi_*`, `source_refs[0]` → `source_id`, `source_url`). Taslaklar da içe aktarılır; dosyadan çıkarılan lezzet DB'den silinir. |
 | `id`, `meta.status`, `type`, `era`, `parent_id`, `tags`, `secondary_types` | `asset.id`, `status`, `type_code`, `era_code`, `parent_id`, `tags`, `secondary_types` |
 | `name`, `subtitle`, `summary` | `asset.name_tr/en`, `subtitle_tr/en`, `summary_tr/en` |

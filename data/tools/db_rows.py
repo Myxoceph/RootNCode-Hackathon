@@ -29,6 +29,10 @@ TABLES = {
         "district", "gi_portal_id", "gi_registration_number", "gi_registered_on", "gi_type", "gi_registrant", "gi_document_url",
         "source_id", "source_url", "confidence", "status",
     ],
+    "sound": [
+        "key", "sort_order", "title_tr", "title_en", "file_key", "duration_seconds", "captions", "license", "author",
+        "source_url", "status",
+    ],
     # eser
     "asset": [
         "id", "status", "type_code", "secondary_types", "parent_id", "era_code", "tags",
@@ -84,7 +88,7 @@ ASSET_TABLES = [
     "asset_highlight", "asset_relation", "visitor_tip", "exhibition", "source_citation",
     "media", "media_variant", "asset_media", "inscription", "contribution", "asset_revision",
 ]
-SHARED_TABLES = ["region", "city", "asset_type", "era", "relation_type", "timeline_event_type", "source", "city_dish"]
+SHARED_TABLES = ["region", "city", "asset_type", "era", "relation_type", "timeline_event_type", "source", "city_dish", "sound"]
 
 ENUM_TABLES = {
     "region": "regions", "era": "eras", "relation_type": "relation_types", "timeline_event_type": "timeline_event_types",
@@ -124,7 +128,22 @@ def shared_rows():
         for s in sources
     ]
     rows["city_dish"] = city_dish_rows()
+    rows["sound"] = sound_rows()
     return {t: rows[t] for t in SHARED_TABLES}
+
+
+def sound_rows():
+    """sounds.json → sound. Altyazılar jsonb'de [{at, text_tr, text_en}] olarak durur."""
+    sounds = json.loads((DATA / "sounds.json").read_text(encoding="utf-8"))["sounds"]
+    return [
+        {
+            "key": s["key"], "sort_order": order, "title_tr": s["title"]["tr"], "title_en": s["title"].get("en"),
+            "file_key": s["file"], "duration_seconds": s["duration_seconds"],
+            "captions": [{"at": c["at"], "text_tr": c["text"]["tr"], "text_en": c["text"].get("en")} for c in s["captions"]],
+            "license": s["license"], "author": s["author"], "source_url": s["source_url"], "status": s["status"],
+        }
+        for order, s in enumerate(sounds)
+    ]
 
 
 def city_dish_rows():
