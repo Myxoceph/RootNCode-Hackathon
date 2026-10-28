@@ -23,6 +23,22 @@ export const CurrentWeatherSchema = z.strictObject({
   observedAt: z.string().min(1),
 });
 
+/** One day of the forecast, in the city's local time. */
+export const DailyForecastSchema = z.strictObject({
+  /** Local date, YYYY-MM-DD. */
+  date: z.iso.date(),
+  highC: z.number(),
+  lowC: z.number(),
+  /** Highest hourly chance of precipitation that day, percent; null when the provider has none. */
+  precipitationProbability: z.int().min(0).max(100).nullable(),
+  condition: WeatherConditionSchema,
+  weatherCode: z.int().min(0),
+  /** Highest chance of precipitation between 12:00 and 18:00, percent; null when unknown. */
+  afternoonPrecipitationProbability: z.int().min(0).max(100).nullable(),
+  /** `afternoonPrecipitationProbability` is 50 or more: the trip planner moves open-air stops to the morning. */
+  afternoonRain: z.boolean(),
+});
+
 /** Response body of `GET /weather?city=`. */
 export const WeatherResponseSchema = z.strictObject({
   version: ContractVersionSchema,
@@ -31,6 +47,8 @@ export const WeatherResponseSchema = z.strictObject({
   /** False when the provider is unreachable or slow; `current` is then null and the app works without weather. */
   available: z.boolean(),
   current: CurrentWeatherSchema.nullable(),
+  /** Today and the next two days; empty when the forecast is unavailable. */
+  daily: z.array(DailyForecastSchema),
   advice: WeatherAdviceSchema,
   /** Show this credit wherever the weather is displayed (Open-Meteo, CC BY 4.0). */
   attribution: z.string().min(1),
@@ -106,7 +124,86 @@ export const RoutePlanResponseSchema = z.strictObject({
   estimateNote: z.string().min(1),
 });
 
+/** `half`: 09:00–13:30; `1`: 09:00–17:30 with a lunch break; `2`: two such days, no site twice. */
+export const TripDurationSchema = z.enum(["half", "1", "2"]);
+
+/** How the weather shaped a day of the trip; `text` says it in the response language. */
+export const TripWeatherNoteCodeSchema = z.enum(["afternoon_rain", "heat", "rain_possible", "clear", "unavailable"]);
+
+export const TripStopItemSchema = z.strictObject({
+  kind: z.literal("stop"),
+  /** Arrival, minutes after local midnight (540 = 09:00). */
+  at: z.int().min(0),
+  asset: AssetSummarySchema,
+  /** Estimated walk from the previous stop or meal; 0 for the first stop of a day. */
+  legMeters: z.int().min(0),
+  legMinutes: z.int().min(0),
+  visitMinutes: z.int().positive(),
+  visitMinutesEstimated: z.boolean(),
+  setting: VisitSettingSchema,
+  settingEstimated: z.boolean(),
+  /** Why the site was chosen first: Kentsel Ağ links × 2 + highlights + 1 with a photo. */
+  importance: z.int().min(0),
+});
+
+export const TripMealItemSchema = z.strictObject({
+  kind: z.literal("meal"),
+  at: z.int().min(0),
+  meal: z.enum(["lunch", "dessert"]),
+  /** "Öğle molası" / "Tatlı durağı" in the response language. */
+  label: z.string().min(1),
+  minutes: z.int().positive(),
+  /** The city's dish for this break; null until the gastronomy data is in. */
+  dish: z.null(),
+});
+
+export const TripItemSchema = z.discriminatedUnion("kind", [TripStopItemSchema, TripMealItemSchema]);
+
+export const TripDaySchema = z.strictObject({
+  /** 1-based. */
+  day: z.int().positive(),
+  date: z.iso.date(),
+  /** Null when the forecast is unavailable; the day is then planned without weather. */
+  weather: DailyForecastSchema.nullable(),
+  weatherNote: z.strictObject({ code: TripWeatherNoteCodeSchema, text: z.string().min(1) }),
+  /** Stops and meals in time order. Empty when nothing is left to visit. */
+  items: z.array(TripItemSchema),
+  /** Share of the visiting time spent outdoors (mixed counts half), 0–1. */
+  outdoorShare: z.number().min(0).max(1),
+  totals: z.strictObject({
+    walkMeters: z.int().min(0),
+    walkMinutes: z.int().min(0),
+    visitMinutes: z.int().min(0),
+  }),
+});
+
+/** Response body of `GET /routes/trip`. */
+export const TripPlanResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  lang: LangSchema,
+  city: LabeledCodeSchema,
+  /** Null when the trip covers every type of site. */
+  theme: z.strictObject({ kind: z.enum(["type", "era"]), code: z.string().min(1) }).nullable(),
+  duration: TripDurationSchema,
+  days: z.array(TripDaySchema).min(1),
+  /** Visible sites matching the theme in this city. */
+  candidateCount: z.int().min(0),
+  /** Matching sites left out because their location is not known yet. */
+  skippedWithoutCoordinates: z.int().min(0),
+  /** Located matching sites that did not fit the days. */
+  notPlannedCount: z.int().min(0),
+  estimateNote: z.string().min(1),
+  /** Show this credit with the forecast (Open-Meteo, CC BY 4.0). */
+  attribution: z.string().min(1),
+});
+
 export type WeatherCondition = z.infer<typeof WeatherConditionSchema>;
+export type DailyForecast = z.infer<typeof DailyForecastSchema>;
+export type TripDuration = z.infer<typeof TripDurationSchema>;
+export type TripWeatherNoteCode = z.infer<typeof TripWeatherNoteCodeSchema>;
+export type TripItem = z.infer<typeof TripItemSchema>;
+export type TripDay = z.infer<typeof TripDaySchema>;
+export type TripPlanResponse = z.infer<typeof TripPlanResponseSchema>;
 export type WeatherAdvice = z.infer<typeof WeatherAdviceSchema>;
 export type CurrentWeather = z.infer<typeof CurrentWeatherSchema>;
 export type WeatherResponse = z.infer<typeof WeatherResponseSchema>;
