@@ -153,6 +153,16 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     expect(body).toMatchObject({ grounded: false, citations: [], answer: "Veri setimizde bu eser yok." });
   });
 
+  it("sends a tool call's provider data back with it", async () => {
+    const extraContent = { google: { thought_signature: "sig" } };
+    const { model, calls } = scriptedModel([
+      { content: null, toolCalls: [{ id: "c1", name: "weather", arguments: '{"city":"bursa"}', extraContent }] },
+      answer("Tamam."),
+    ]);
+    await chat(appWith(model), { message: "Hava?" });
+    expect(calls[1]!.messages.find((m) => m.role === "assistant")).toMatchObject({ tool_calls: [{ id: "c1", extra_content: extraContent }] });
+  });
+
   it("stops offering tools after three calls", async () => {
     const { model, calls } = scriptedModel([
       call("weather", { city: "bursa" }, "a"),

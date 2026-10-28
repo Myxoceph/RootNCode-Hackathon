@@ -11,6 +11,19 @@ export interface ToolCall {
   name: string;
   /** Raw JSON text as the model wrote it; the caller validates it. */
   arguments: string;
+  /**
+   * Provider data that must go back with the call, e.g. Gemini 3's thought signature
+   * (`extra_content.google.thought_signature`); without it the next request fails with 400.
+   */
+  extraContent?: Record<string, unknown> | undefined;
+}
+
+/** A tool call as the API carries it in an assistant message. */
+export interface ToolCallMessage {
+  id: string;
+  type: "function";
+  function: { name: string; arguments: string };
+  extra_content?: Record<string, unknown>;
 }
 
 export type ChatMessage =
@@ -18,7 +31,7 @@ export type ChatMessage =
   | {
       role: "assistant";
       content: string | null;
-      tool_calls?: Array<{ id: string; type: "function"; function: { name: string; arguments: string } }>;
+      tool_calls?: ToolCallMessage[];
     }
   | { role: "tool"; tool_call_id: string; content: string };
 
@@ -54,6 +67,7 @@ const CompletionSchema = z.object({
             .array(
               z.object({
                 id: z.string().optional(),
+                extra_content: z.record(z.string(), z.unknown()).optional(),
                 function: z.object({
                   name: z.string(),
                   arguments: z.union([z.string(), z.record(z.string(), z.unknown())]),
@@ -78,7 +92,8 @@ const PING_TIMEOUT_MS = 3_000;
 const PING_TTL_MS = 30_000;
 // Low temperature: answers should stay close to the tool results.
 const TEMPERATURE = 0.2;
-const MAX_ANSWER_TOKENS = 800;
+// Thinking models (Gemini 3, Qwen 3) spend part of this on reasoning; 800 cut answers short.
+const MAX_ANSWER_TOKENS = 2_048;
 
 export interface ModelClientOptions {
   baseUrl: string;
@@ -133,6 +148,7 @@ export function createChatModel({ baseUrl, model, apiKey, fetchImpl = fetch }: M
           name: call.function.name,
           arguments:
             typeof call.function.arguments === "string" ? call.function.arguments : JSON.stringify(call.function.arguments),
+          extraContent: call.extra_content,
         })),
       };
     },

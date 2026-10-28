@@ -5,6 +5,10 @@
  *
  *   npm run assistant:eval -w @vagabonds/api            # every question
  *   npm run assistant:eval -w @vagabonds/api -- trip    # one group
+ *   npm run assistant:eval -w @vagabonds/api -- food --pause=60
+ *
+ * `--pause` waits that many seconds between questions, for free tiers that allow only a
+ * few requests per minute (one question makes up to four model calls).
  *
  * Read the answers by hand: does every fact carry a [n], and does the "outside" group
  * say the data has no answer instead of inventing one?
@@ -54,7 +58,9 @@ if (!env.ASSISTANT_BASE_URL || !env.ASSISTANT_MODEL) {
   console.error("Set ASSISTANT_BASE_URL and ASSISTANT_MODEL in apps/api/.env first (see .env.example).");
   process.exit(1);
 }
-const group = process.argv[2];
+const args = process.argv.slice(2);
+const group = args.find((arg) => !arg.startsWith("--"));
+const pauseSeconds = Number(args.find((arg) => arg.startsWith("--pause="))?.slice("--pause=".length) ?? 0);
 if (group && !(group in QUESTIONS)) {
   console.error(`Unknown group "${group}"; one of: ${Object.keys(QUESTIONS).join(", ")}`);
   process.exit(1);
@@ -63,6 +69,8 @@ if (group && !(group in QUESTIONS)) {
 const prisma = createPrismaClient(env.DATABASE_URL);
 const app = buildApp({
   prisma,
+  // Warnings show why the model failed (e.g. HTTP 429 on a free tier); questions are never logged.
+  logger: { level: "warn" },
   rateLimit: false,
   weather: env.OPEN_METEO_URL ? createWeatherService({ baseUrl: env.OPEN_METEO_URL }) : undefined,
   assistantModel: createChatModel({
@@ -79,6 +87,7 @@ try {
     if (group && name !== group) continue;
     console.log(`\n=== ${name} ===`);
     for (const question of questions) {
+      if (seconds.length > 0 && pauseSeconds > 0) await new Promise((resolve) => setTimeout(resolve, pauseSeconds * 1000));
       const started = Date.now();
       const response = await app.inject({ method: "POST", url: "/chat", payload: question });
       seconds.push((Date.now() - started) / 1000);

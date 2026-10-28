@@ -59,6 +59,19 @@ describe("createChatModel", () => {
     expect(JSON.stringify(body)).not.toContain("secret");
   });
 
+  it("keeps a tool call's provider data (Gemini's thought signature) to send it back", async () => {
+    const extra = { google: { thought_signature: "sig" } };
+    const fetchImpl = (async () =>
+      new Response(
+        JSON.stringify({
+          choices: [{ message: { tool_calls: [{ id: "c1", extra_content: extra, function: { name: "weather", arguments: "{}" } }] } }],
+        }),
+      )) as unknown as typeof fetch;
+    const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl });
+    const reply = await model.complete([], [], AbortSignal.timeout(1_000));
+    expect(reply.toolCalls[0]?.extraContent).toEqual(extra);
+  });
+
   it("turns a provider error into a ModelError that names only the status", async () => {
     const fetchImpl = (async () => new Response("prompt was: secret question", { status: 500 })) as unknown as typeof fetch;
     const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl });
