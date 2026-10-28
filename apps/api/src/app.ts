@@ -33,7 +33,7 @@ export interface BuildAppOptions {
   weather?: WeatherService;
 }
 
-const NO_WEATHER: WeatherService = { current: async () => null };
+const NO_WEATHER: WeatherService = { current: async () => null, forecast: async () => null };
 
 // Request bodies are short JSON (contributions are at most a few KB of text).
 const BODY_LIMIT_BYTES = 16 * 1024;

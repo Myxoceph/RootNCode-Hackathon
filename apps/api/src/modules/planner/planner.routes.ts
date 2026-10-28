@@ -3,10 +3,15 @@ import {
   CONTRACT_VERSION,
   LangSchema,
   RoutePlanResponseSchema,
+  TripDurationSchema,
+  TripPlanResponseSchema,
   VisitSettingSchema,
   WeatherResponseSchema,
+  type DailyForecast,
   type Lang,
   type RoutePlanResponse,
+  type TripPlanResponse,
+  type TripWeatherNoteCode,
   type WeatherResponse,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
@@ -18,9 +23,10 @@ import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { toAssetSummary } from "../assets/assets.mapper.ts";
 import { visibleStatuses, type AssetsRepository, type AssetVisibility } from "../assets/assets.repository.ts";
-import { adviceFor, WEATHER_ATTRIBUTION, type WeatherService } from "../weather/weather.service.ts";
+import { adviceFor, FORECAST_DAYS, WEATHER_ATTRIBUTION, type WeatherService } from "../weather/weather.service.ts";
 import { DETOUR_FACTOR, planRoute, WALK_METERS_PER_MINUTE, type PlannerCandidate } from "./planner.ts";
 import type { CandidateRecord, PlannerRepository } from "./planner.repository.ts";
+import { importanceOf, planTrip, TRIP_SHAPE, weatherNoteCode, type ImportanceSignals } from "./trip.ts";
 
 const CodeSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "must be a lowercase code");
 
@@ -51,6 +57,25 @@ const PlanQuerySchema = z.object({
   maxMinutes: z.coerce.number().int().min(15).max(600).default(120).describe("Yürüme + ziyaret süresi bütçesi, dakika"),
 });
 
+const TripThemeSchema = z.string().transform((value, ctx) => {
+  const [kind, ...rest] = value.split(":");
+  const code = rest.join(":");
+  if ((kind === "type" || kind === "era") && CodeSchema.safeParse(code).success) {
+    return { kind: kind as "type" | "era", code };
+  }
+  ctx.addIssue({ code: "custom", message: "theme must be type:<code> or era:<code>" });
+  return z.NEVER;
+});
+
+const TripQuerySchema = z.object({
+  lang: LangSchema.optional(),
+  city: CodeSchema.describe("İl kodu, ör. bursa"),
+  duration: TripDurationSchema.default("1").describe("half: 09:00–13:30; 1: tam gün, öğle molasıyla; 2: iki tam gün"),
+  theme: TripThemeSchema.optional().describe("type:<tür kodu> ya da era:<dönem kodu>; verilmezse bütün eserler"),
+  start: PointSchema.optional().describe("1. günün başlangıç noktası lat,lng; verilmezse her gün en önemli eserden başlar"),
+  date: z.iso.date().optional().describe("1. günün tarihi (YYYY-MM-DD), bugünden itibaren tahmin aralığında; varsayılan bugün"),
+});
+
 const WeatherQuerySchema = z.object({
   lang: LangSchema.optional(),
   city: CodeSchema.describe("İl kodu, ör. bursa"),
@@ -60,6 +85,57 @@ const ESTIMATE_NOTE: Record<Lang, string> = {
   tr: `Yürüme süreleri tahminidir: kuş uçuşu mesafe × ${DETOUR_FACTOR}, dakikada ${WALK_METERS_PER_MINUTE} m.`,
   en: `Walking times are estimates: straight-line distance × ${DETOUR_FACTOR} at ${WALK_METERS_PER_MINUTE} m per minute.`,
 };
+
+const MEAL_LABEL: Record<"lunch" | "dessert", Record<Lang, string>> = {
+  lunch: { tr: "Öğle molası", en: "Lunch break" },
+  dessert: { tr: "Tatlı durağı", en: "Dessert stop" },
+};
+
+function weatherNoteText(code: TripWeatherNoteCode, weather: DailyForecast | null, lang: Lang): string {
+  const afternoon = weather?.afternoonPrecipitationProbability ?? 0;
+  const chance = weather?.precipitationProbability ?? 0;
+  const high = Math.round(weather?.highC ?? 0);
+  const texts: Record<TripWeatherNoteCode, Record<Lang, string>> = {
+    afternoon_rain: {
+      tr: `Öğleden sonra %${afternoon} yağış ihtimali var. Açık ve avlulu duraklar sabaha, kapalı mekânlar öğleden sonraya alındı.`,
+      en: `${afternoon}% chance of rain in the afternoon. Open-air and courtyard stops come in the morning, indoor ones after noon.`,
+    },
+    heat: {
+      tr: `Hava sıcak (en yüksek ${high}°). Açık hava durakları serin sabah saatlerine alındı.`,
+      en: `A hot day (up to ${high}°). Open-air stops come in the cooler morning.`,
+    },
+    rain_possible: {
+      tr: `Gün içinde %${chance} yağış ihtimali var, öğleden sonra düşük. Avlu durakları için yanınızda şemsiye olsun.`,
+      en: `${chance}% chance of rain during the day, low in the afternoon. Keep an umbrella for the courtyards.`,
+    },
+    clear: {
+      tr: "Hava açık. Avlular ve türbe bahçeleri için iyi bir gün.",
+      en: "Clear weather. A good day for courtyards and tomb gardens.",
+    },
+    unavailable: {
+      tr: "Hava tahmini şu an alınamadı; plan havaya bakılmadan yapıldı.",
+      en: "The forecast is unavailable right now; the plan does not take the weather into account.",
+    },
+  };
+  return texts[code][lang];
+}
+
+// en-CA formats as YYYY-MM-DD.
+const turkeyDay = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Europe/Istanbul",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+/** Today in Türkiye, where all the cities are. */
+const turkeyToday = () => turkeyDay.format(new Date());
+
+function addDays(date: string, days: number): string {
+  const d = new Date(`${date}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
 
 // Weather changes within minutes; plans depend on it.
 const CACHE_CONTROL = "public, max-age=300";
@@ -108,6 +184,12 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
     return point ? weather.current(point) : null;
   }
 
+  /** The forecast at the city's centre; empty when unknown. */
+  async function cityForecast(code: string): Promise<DailyForecast[]> {
+    const point = await repository.findCityPoint(code);
+    return (point && (await weather.forecast(point))) ?? [];
+  }
+
   const langOf = (request: FastifyRequest, queryLang: Lang | undefined) =>
     resolveLang(queryLang, request.headers["accept-language"]);
 
@@ -122,7 +204,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
     const query = parseWith(WeatherQuerySchema, request.query, "INVALID_QUERY");
     const lang = langOf(request, query.lang);
     const city = await cityOf(query.city, lang);
-    const current = await cityWeather(city.code);
+    const [current, daily] = await Promise.all([cityWeather(city.code), cityForecast(city.code)]);
 
     setHeaders(reply, lang);
     return WeatherResponseSchema.parse({
@@ -131,6 +213,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
       city,
       available: current !== null,
       current,
+      daily,
       advice: adviceFor(current),
       attribution: WEATHER_ATTRIBUTION,
     });
@@ -204,6 +287,98 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
       skippedWithoutCoordinates: plan.skippedWithoutCoordinates,
       notReachedCount: plan.notReachedCount,
       estimateNote: ESTIMATE_NOTE[lang],
+    });
+  });
+
+  app.get("/routes/trip", {
+    schema: {
+      tags: ["planner"],
+      summary: "Yarım, bir ya da iki günlük gezi: önemli eserler önce, hava tahminine göre sıralı, öğle ve tatlı molalarıyla",
+      querystring: toOpenApiSchema(TripQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(TripPlanResponseSchema), 400: errorSchema, 404: errorSchema },
+    },
+  }, async (request, reply): Promise<TripPlanResponse> => {
+    const query = parseWith(TripQuerySchema, request.query, "INVALID_QUERY");
+    const lang = langOf(request, query.lang);
+    const city = await cityOf(query.city, lang);
+    const { theme, duration } = query;
+    const dayCount = TRIP_SHAPE[duration].days;
+
+    const today = turkeyToday();
+    const firstDate = query.date ?? today;
+    const lastAllowed = addDays(today, FORECAST_DAYS - dayCount);
+    if (firstDate < today || firstDate > lastAllowed) {
+      throw new HttpError(400, "INVALID_QUERY", `date must be between ${today} and ${lastAllowed} for this duration`);
+    }
+    const dates = Array.from({ length: dayCount }, (_, day) => addDays(firstDate, day));
+
+    const [records, forecast] = await Promise.all([
+      repository.findCandidates({
+        city: city.code,
+        ...(theme?.kind === "type" && { type: theme.code }),
+        ...(theme?.kind === "era" && { era: theme.code }),
+      }),
+      cityForecast(city.code),
+    ]);
+    const signals = await repository.findImportanceSignals(records.map((record) => record.id));
+    const dayWeather = dates.map((date) => forecast.find((day) => day.date === date) ?? null);
+
+    const plan = planTrip({
+      candidates: records.map((record) => ({
+        ...toCandidate(record),
+        importance: importanceOf(signals.get(record.id) as ImportanceSignals),
+      })),
+      start: query.start ?? null,
+      duration,
+      weather: dayWeather,
+    });
+
+    const byId = new Map(records.map((record) => [record.id, record]));
+    const stopIds = plan.days.flatMap((day) => day.items.flatMap((item) => (item.kind === "stop" ? [item.id] : [])));
+    const covers = await assets.findMedia(stopIds, { coversOnly: true });
+    const coverOf = new Map(covers.map((cover) => [cover.asset_id, cover]));
+    const ctx = { lang, mediaBaseUrl, statuses };
+
+    setHeaders(reply, lang);
+    return TripPlanResponseSchema.parse({
+      version: CONTRACT_VERSION,
+      lang,
+      city,
+      theme: theme ?? null,
+      duration,
+      days: plan.days.map((day, index) => {
+        const weatherOfDay = dayWeather[index] ?? null;
+        const code = weatherNoteCode(weatherOfDay);
+        return {
+          day: index + 1,
+          date: dates[index],
+          weather: weatherOfDay,
+          weatherNote: { code, text: weatherNoteText(code, weatherOfDay, lang) },
+          items: day.items.map((item) =>
+            item.kind === "stop"
+              ? {
+                  kind: "stop",
+                  at: item.at,
+                  asset: toAssetSummary(byId.get(item.id) as CandidateRecord, coverOf.get(item.id), ctx),
+                  legMeters: item.legMeters,
+                  legMinutes: item.legMinutes,
+                  visitMinutes: item.visitMinutes,
+                  visitMinutesEstimated: item.visitMinutesEstimated,
+                  setting: item.setting,
+                  settingEstimated: item.settingEstimated,
+                  importance: item.importance,
+                }
+              : { kind: "meal", at: item.at, meal: item.meal, label: MEAL_LABEL[item.meal][lang], minutes: item.minutes, dish: null },
+          ),
+          outdoorShare: day.outdoorShare,
+          totals: { walkMeters: day.walkMeters, walkMinutes: day.walkMinutes, visitMinutes: day.visitMinutes },
+        };
+      }),
+      candidateCount: records.length,
+      skippedWithoutCoordinates: plan.skippedWithoutCoordinates,
+      notPlannedCount: plan.notPlannedCount,
+      estimateNote: ESTIMATE_NOTE[lang],
+      attribution: WEATHER_ATTRIBUTION,
     });
   });
 };

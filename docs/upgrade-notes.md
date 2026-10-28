@@ -7,6 +7,18 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-28 · Rotalar için çok günlük gezi ve hava tahmini (sözleşme 0.3.2)
+
+Kimler: **uygulama ekibi** (Rotalar ekranı), **API'yi yerelde çalıştıranlar**
+
+1. API'yi yeniden başlat. Kurulum adımı yok: yeni paket, ortam değişkeni ya da migration gerekmiyor.
+
+Değişenler:
+- Yeni uç `GET /routes/trip?city=bursa&duration=half|1|2`: önemli eserler önce, saatli gün akışı, öğle ve tatlı molaları, günün hava notu. Ayrıntı `packages/contracts/README.md` ("Gezi").
+  `content/routes.ts`'deki örnek motorun yerine geçebilir. Tasarımdaki "Bursa + Edirne" seçimi yerine şehirler `/meta/enums`'tan gelmeli; veri setinde Edirne yok.
+- `GET /weather` yanıtında yeni `daily` alanı: bugün ve sonraki iki gün için en yüksek/en düşük sıcaklık, yağış olasılığı ve öğleden sonra yağmur.
+- `/routes/plan` değişmedi.
+
 ## 2026-10-25 · Ziyaretçi Nabzı uygulamada (expo-secure-store)
 
 Kimler: **uygulama ekibi**
