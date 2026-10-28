@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kok-kod.local/schema/sehir.schema.json",
+  "title": "Şehir: yöresel lezzetler",
+  "description": "Bir ilin yöresel lezzetleri (Yöresel Kültür & Gastronomi, modül 5). Dosya adı il kodudur: sehirler/<il>.json. Kod alanlarının geçerli değerleri enums.json'da; çapraz kontroller tools/validate.py'de.",
+  "$comment": "Her lezzet kaynaklıdır. Şimdilik kaynak Türk Patent'in coğrafi işaret sicil belgesidir; tanım ve hikâye metinleri belgedeki 'Ürünün Tanımı ve Ayırt Edici Özellikleri' bölümünden özetlenir.",
+  "type": "object",
+  "required": ["schema_version", "city", "dishes"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "city": { "type": "string", "pattern": "^[a-z]+$", "description": "enums.json → cities.code" },
+    "dishes": { "type": "array", "items": { "$ref": "#/$defs/dish" } }
+  },
+  "$defs": {
+    "text": {
+      "type": "object",
+      "required": ["tr", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "tr": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "dish": {
+      "type": "object",
+      "required": [
+        "id", "name", "kind", "description", "story", "district", "geographical_indication", "source_refs", "confidence", "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z]+-[a-z0-9]+(-[a-z0-9]+)*$", "description": "<il>-<ad>, ör. bursa-pideli-kofte" },
+        "name": { "$ref": "#/$defs/text" },
+        "kind": {
+          "enum": ["main", "meze", "dessert", "street"],
+          "description": "main: ana yemek (gezide öğle molası); meze; dessert: tatlı (gezide tatlı durağı); street: fırın ve sokak lezzeti"
+        },
+        "description": { "$ref": "#/$defs/text" },
+        "story": {
+          "oneOf": [{ "$ref": "#/$defs/text" }, { "type": "null" }],
+          "description": "Geçmişi ya da hangi günlerde yapıldığı; kaynakta yoksa null"
+        },
+        "district": {
+          "type": ["string", "null"],
+          "description": "Coğrafi sınırı bir ilçeyse ilçe adı (eserlerdeki location.district ile aynı yazım); il genelindeyse null"
+        },
+        "geographical_indication": {
+          "type": "object",
+          "required": ["portal_id", "registration_number", "registered_on", "type", "registrant", "document_url"],
+          "additionalProperties": false,
+          "properties": {
+            "portal_id": { "type": "integer", "description": "ci.turkpatent.gov.tr/cografi-isaretler/detay/<portal_id>" },
+            "registration_number": { "type": "string", "pattern": "^[0-9]+$" },
+            "registered_on": { "type": "string", "format": "date" },
+            "type": { "enum": ["mense", "mahrec"], "description": "menşe adı ya da mahreç işareti" },
+            "registrant": { "type": "string", "minLength": 1 },
+            "document_url": { "type": "string", "format": "uri", "description": "Coğrafi işaret sicil belgesi (PDF)" }
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "$comment": "Şimdilik lezzet başına tek kaynak (coğrafi işaret sicil belgesi); DB'de city_dish.source_id / source_url.",
+          "items": {
+            "type": "object",
+            "required": ["source_id"],
+            "additionalProperties": false,
+            "properties": {
+              "source_id": { "type": "string" },
+              "pages": { "type": ["string", "null"] },
+              "url": { "type": ["string", "null"], "format": "uri" }
+            }
+          }
+        },
+        "confidence": { "type": "string", "description": "enums.json → confidence" },
+        "status": { "enum": ["draft", "in_review", "published"] }
+      }
+    }
+  }
+}

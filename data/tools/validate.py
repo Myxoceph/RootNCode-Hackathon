@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Eser JSON dosyalarını doğrular.
+"""Eser ve şehir JSON dosyalarını doğrular.
 
 Kullanım:
     pip install jsonschema
@@ -10,6 +10,9 @@ Kullanım:
   1. JSON Schema (data/schema/eser.schema.json): alanlar, tipler, zorunlular.
   2. Çapraz kontroller: kod alanları enums.json'da var mı, source_id'ler
      sources.json'da var mı, id'ler tekrar ediyor mu, ilişki hedefleri mevcut mu.
+
+Şehir dosyaları (data/sehirler/<il>.json, yöresel lezzetler) da aynı iki aşamayla,
+data/schema/sehir.schema.json'a göre doğrulanır.
 """
 import json
 import sys
@@ -22,6 +25,7 @@ ENUMS = json.loads((DATA / "enums.json").read_text(encoding="utf-8"))
 SOURCES = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
 SCHEMA = json.loads((DATA / "schema" / "eser.schema.json").read_text(encoding="utf-8"))
 VALIDATOR = Draft202012Validator(SCHEMA)
+CITY_VALIDATOR = Draft202012Validator(json.loads((DATA / "schema" / "sehir.schema.json").read_text(encoding="utf-8")))
 
 
 def codes(name):
@@ -129,8 +133,62 @@ def cross_check(rec, path, all_ids):
     return errors, warnings
 
 
+def cross_check_city(data, path, districts, seen_dish_ids):
+    """Şehir dosyası (sehirler/<il>.json): il kodu, lezzet id'leri, kaynaklar, güven kodları, ilçeler."""
+    errors, warnings = [], []
+    city = data["city"]
+    if path.stem != city:
+        errors.append(f"dosya adı '{path.stem}' ile city '{city}' aynı olmalı")
+    if city not in codes("cities"):
+        errors.append(f"city '{city}' cities listesinde yok (enums.json)")
+    for i, dish in enumerate(data["dishes"]):
+        where = f"dishes[{i}] {dish['id']}"
+        if not dish["id"].startswith(f"{city}-"):
+            errors.append(f"{where}: id '{city}-' ile başlamalı")
+        if dish["id"] in seen_dish_ids:
+            errors.append(f"{where}: id tekrar ediyor")
+        seen_dish_ids.add(dish["id"])
+        if dish["confidence"] not in codes("confidence"):
+            errors.append(f"{where}: confidence '{dish['confidence']}' confidence listesinde yok (enums.json)")
+        for sid in iter_source_refs(dish):
+            if sid not in SOURCE_IDS:
+                errors.append(f"{where}: source_id '{sid}' sources.json'da yok")
+        if dish["district"] is not None and dish["district"] not in districts.get(city, set()):
+            warnings.append(f"{where}: ilçe '{dish['district']}' bu ilin hiçbir eserinde geçmiyor (yazım?)")
+    return errors, warnings
+
+
+def validate_cities(files):
+    """Şehir dosyalarını doğrular; ilçe yazımı eserlerdeki location.district ile karşılaştırılır. Hata varsa True."""
+    districts = {}
+    for f in (DATA / "eserler").rglob("*.json"):
+        loc = json.loads(f.read_text(encoding="utf-8")).get("location") or {}
+        districts.setdefault(loc.get("city"), set()).add(loc.get("district"))
+    seen, failed = set(), False
+    for f in files:
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            print(f"✗ {f}: geçersiz JSON: {e}")
+            failed = True
+            continue
+        schema_errors = [
+            f"{'/'.join(map(str, e.absolute_path)) or '(kök)'}: {e.message}" for e in CITY_VALIDATOR.iter_errors(data)
+        ]
+        errors, warnings = (schema_errors, []) if schema_errors else cross_check_city(data, f, districts, seen)
+        print(f"{'✗' if errors else '✓'} {f.relative_to(DATA) if f.is_relative_to(DATA) else f}")
+        for e in errors:
+            print(f"    HATA  {e}")
+        for w in warnings:
+            print(f"    uyarı {w}")
+        failed |= bool(errors)
+    return failed
+
+
 def main(argv):
-    files = [Path(a) for a in argv] or sorted((DATA / "eserler").rglob("*.json"))
+    paths = [Path(a).resolve() for a in argv]
+    city_files = [p for p in paths if p.parent.name == "sehirler"] if argv else sorted((DATA / "sehirler").glob("*.json"))
+    files = [p for p in paths if p.parent.name != "sehirler"] if argv else sorted((DATA / "eserler").rglob("*.json"))
     records = {}
     failed = False
     for f in files:
@@ -158,6 +216,7 @@ def main(argv):
             print(f"    uyarı {w}")
         failed |= bool(errors)
 
+    failed |= validate_cities(city_files)
     sys.exit(1 if failed else 0)
 
 
