@@ -50,7 +50,7 @@ Kayıt doğrulamadan geçiyor, durumu `in_review`. Yayına almak için:
 
 ## 4. Şema ve araçlar
 
-- [ ] **P1 · Şehir dosyası (`sehirler/<il>.json`).** Şehir tanıtımı ve **yöresel lezzetler** (Gastronomi Durakları özelliği) için. Şeması henüz yok. Bursa için: İskender, Pideli Köfte, Kestane Şekeri, Cantık; her biri kaynaklı.
+- [x] **P1 · Şehir dosyası (`sehirler/<il>.json`).** Yöresel lezzetler (Gastronomi Durakları): `schema/sehir.schema.json`. Bursa 9, Hatay 10 lezzet; her biri Türk Patent coğrafi işaret tesciliyle kaynaklı. İnegöl Köfte'nin sicil belgesi taranmış görüntü olduğu için eklenmedi. Şehir tanıtım metni henüz yok.
 - [ ] **P1 · Ortam sesi kütüphanesi.** `ambient_sound.sound_key` değerleri (`cami-sadirvan` vb.) için telifsiz ses dosyaları bulunacak (freesound.org, CC0 olanlar), lisansları bir `sounds.json` dosyasına yazılacak.
 - [ ] **P1 · Kişileri ortak kayda almak.** `people[]` şu an her eserde serbest metin. Yıldırım Bayezid, Hacı İvaz Paşa gibi kişiler birden çok eserde geçecek; ortak bir `people.json` (id ile) yapılırsa "bu kişinin yaptırdığı diğer eserler" sorgusu kolaylaşır.
 - [ ] **P1 · Depolamaya yükleme.** `media_pipeline.py` dosyaları `build/media/` altında hazırlıyor, ama yükleme adımı (`rclone sync`) bucket açılınca kurulacak. O zamana kadar herkes görselleri pipeline ile kendi makinesinde üretir.
