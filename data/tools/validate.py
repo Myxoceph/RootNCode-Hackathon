@@ -12,7 +12,8 @@ Kullanım:
      sources.json'da var mı, id'ler tekrar ediyor mu, ilişki hedefleri mevcut mu.
 
 Şehir dosyaları (data/sehirler/<il>.json, yöresel lezzetler) da aynı iki aşamayla,
-data/schema/sehir.schema.json'a göre doğrulanır.
+data/schema/sehir.schema.json'a göre doğrulanır; ortam sesleri (data/sounds.json)
+data/schema/sound.schema.json'a göre.
 """
 import json
 import sys
@@ -26,6 +27,7 @@ SOURCES = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
 SCHEMA = json.loads((DATA / "schema" / "eser.schema.json").read_text(encoding="utf-8"))
 VALIDATOR = Draft202012Validator(SCHEMA)
 CITY_VALIDATOR = Draft202012Validator(json.loads((DATA / "schema" / "sehir.schema.json").read_text(encoding="utf-8")))
+SOUND_VALIDATOR = Draft202012Validator(json.loads((DATA / "schema" / "sound.schema.json").read_text(encoding="utf-8")))
 
 
 def codes(name):
@@ -185,6 +187,40 @@ def validate_cities(files):
     return failed
 
 
+def validate_sounds(path):
+    """sounds.json: şema, tekrarsız anahtar, dosya adı = anahtar, altyazı sırası, CC BY'de yazar. Hata varsa True."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    errors = [f"{'/'.join(map(str, e.absolute_path)) or '(kök)'}: {e.message}" for e in SOUND_VALIDATOR.iter_errors(data)]
+    warnings = []
+    if not errors:
+        used = {t["ambient_sound"] for t in ENUMS["asset_types"] if t.get("ambient_sound")}
+        for f in (DATA / "eserler").rglob("*.json"):
+            sound = json.loads(f.read_text(encoding="utf-8")).get("ambient_sound")
+            if sound:
+                used.add(sound["sound_key"])
+        seen = set()
+        for i, s in enumerate(data["sounds"]):
+            where = f"sounds[{i}] {s['key']}"
+            if s["key"] in seen:
+                errors.append(f"{where}: anahtar tekrar ediyor")
+            seen.add(s["key"])
+            if s["file"].rsplit("/", 1)[-1].rsplit(".", 1)[0] != s["key"]:
+                errors.append(f"{where}: dosya adı anahtarla aynı olmalı (sounds/{s['key']}.mp3)")
+            times = [c["at"] for c in s["captions"]]
+            if times != sorted(times) or times[-1] >= s["duration_seconds"]:
+                errors.append(f"{where}: altyazılar artan sırada ve ses bitmeden olmalı")
+            if s["license"] == "CC-BY-4.0" and not s["author"]:
+                errors.append(f"{where}: CC BY kayıtta author zorunlu")
+            if s["key"] not in used:
+                warnings.append(f"{where}: hiçbir eser ya da eser türü bu anahtarı kullanmıyor")
+    print(f"{'✗' if errors else '✓'} {path.relative_to(DATA) if path.is_relative_to(DATA) else path}")
+    for e in errors:
+        print(f"    HATA  {e}")
+    for w in warnings:
+        print(f"    uyarı {w}")
+    return bool(errors)
+
+
 def main(argv):
     paths = [Path(a).resolve() for a in argv]
     city_files = [p for p in paths if p.parent.name == "sehirler"] if argv else sorted((DATA / "sehirler").glob("*.json"))
@@ -217,6 +253,8 @@ def main(argv):
         failed |= bool(errors)
 
     failed |= validate_cities(city_files)
+    if not argv or any(p.name == "sounds.json" for p in paths):
+        failed |= validate_sounds(DATA / "sounds.json")
     sys.exit(1 if failed else 0)
 
 

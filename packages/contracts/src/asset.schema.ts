@@ -44,6 +44,25 @@ export const SourceRefSchema = z.strictObject({
   url: z.url().nullable(),
 });
 
+/** One line of a recording's captions: every sound event in brackets, from second `at`. */
+export const SoundCaptionSchema = z.strictObject({
+  at: z.number().min(0),
+  text: z.string().min(1),
+});
+
+/** A published ambient recording (Sesli Zaman Kapsülü), from data/sounds.json. */
+export const SoundRecordingSchema = z.strictObject({
+  url: z.url(),
+  durationSeconds: z.number().positive(),
+  /** In time order; show them while the sound plays. */
+  captions: z.array(SoundCaptionSchema).min(1),
+  license: z.enum(["CC0-1.0", "CC-BY-4.0"]),
+  /** Show it wherever the recording plays, e.g. "Ses: Ayşe Yılmaz (CC BY 4.0)". */
+  credit: z.string().min(1),
+  /** Where the recording comes from, e.g. its freesound.org page. */
+  sourceUrl: z.url(),
+});
+
 /** Null when the location is not known yet; such assets are left off the map and out of nearby results. */
 export const CoordinatesSchema = z.strictObject({
   lat: z.number().min(35.5).max(42.5),
@@ -277,6 +296,8 @@ export const AssetDetailSchema = AssetSummarySchema.extend({
     .strictObject({
       key: z.string().min(1),
       caption: z.string().min(1).nullable(),
+      /** The key's published recording; null until the data team adds one (the app then plays a stand-in). */
+      recording: SoundRecordingSchema.nullable(),
     })
     .nullable(),
   visit: z.strictObject({
@@ -362,6 +383,8 @@ export type AssetFact = z.infer<typeof AssetFactSchema>;
 export type TimelineEvent = z.infer<typeof TimelineEventSchema>;
 export type AssetLegend = z.infer<typeof AssetLegendSchema>;
 export type ArTarget = z.infer<typeof ArTargetSchema>;
+export type SoundCaption = z.infer<typeof SoundCaptionSchema>;
+export type SoundRecording = z.infer<typeof SoundRecordingSchema>;
 export type InscriptionV2 = z.infer<typeof InscriptionSchemaV2>;
 export type AssetPerson = z.infer<typeof AssetPersonSchema>;
 export type AssetHighlight = z.infer<typeof AssetHighlightSchema>;

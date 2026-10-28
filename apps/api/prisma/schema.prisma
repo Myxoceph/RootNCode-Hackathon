@@ -504,3 +504,18 @@ model city_dish {
 
   @@index([city_code, sort_order], map: "city_dish_city_idx")
 }
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model sound {
+  key              String  @id
+  sort_order       Int     @db.SmallInt
+  title_tr         String
+  title_en         String?
+  file_key         String
+  duration_seconds Float   @db.Real
+  captions         Json    @default("[]")
+  license          String
+  author           String?
+  source_url       String
+  status           String
+}

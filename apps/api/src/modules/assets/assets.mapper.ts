@@ -6,6 +6,7 @@ import {
   MediaKindSchema,
   VisitorTipSchemaV2,
   type ArTarget,
+  type SoundRecording,
   type AssetDetail,
   type AssetRef,
   type AssetRelation,
@@ -194,11 +195,18 @@ function toNamedNotes(names: { name: string; note?: string | null | undefined }[
   return names.map(({ name, note }) => ({ name, note: nonEmpty(note) }));
 }
 
+/** The asset's ambient sound key: its own, else its type's default. */
+export function ambientKeyOf(record: AssetDetailRecord): string | null {
+  return nonEmpty(record.ambient_sound_key) ?? nonEmpty(record.asset_type.ambient_sound);
+}
+
 export function toAssetDetail(
   record: AssetDetailRecord,
   media: AssetMediaRecord[],
   secondaryTypes: LabelRecord[],
   context: MapperContext,
+  /** The published recording for the asset's sound key, if any. */
+  recording: SoundRecording | null = null,
 ): AssetDetail {
   const { lang } = context;
   const { sourcesOf, bibliography } = groupCitations(record, lang);
@@ -240,7 +248,7 @@ export function toAssetDetail(
   const hasWaqf = [waqf.name, waqf.deedExcerpt, waqf.conditions, waqf.landNote].some((value) => value !== null);
 
   const parent = record.asset && context.statuses.includes(record.asset.status) ? toAssetRef(record.asset, lang) : null;
-  const ambientKey = nonEmpty(record.ambient_sound_key) ?? nonEmpty(record.asset_type.ambient_sound);
+  const ambientKey = ambientKeyOf(record);
   const accessibility = (value: string) => AccessibilityStatusSchema.parse(value);
   const founderName = nonEmpty(record.founder_name);
 
@@ -340,7 +348,7 @@ export function toAssetDetail(
       audioDescription: pick(record.audio_description_tr, record.audio_description_en, lang),
     },
     ambientSound: ambientKey
-      ? { key: ambientKey, caption: pick(record.ambient_caption_tr, record.ambient_caption_en, lang) }
+      ? { key: ambientKey, caption: pick(record.ambient_caption_tr, record.ambient_caption_en, lang), recording }
       : null,
     visit: {
       setting: nonEmpty(record.visit_setting),

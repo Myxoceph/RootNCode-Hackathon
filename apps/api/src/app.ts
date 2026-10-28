@@ -11,6 +11,8 @@ import { gastronomyRoutes } from "./modules/gastronomy/gastronomy.routes.ts";
 import { createMetaRepository } from "./modules/meta/meta.repository.ts";
 import { metaRoutes } from "./modules/meta/meta.routes.ts";
 import { createPlannerRepository } from "./modules/planner/planner.repository.ts";
+import { createSoundsRepository } from "./modules/sounds/sounds.repository.ts";
+import { soundsRoutes } from "./modules/sounds/sounds.routes.ts";
 import { plannerRoutes } from "./modules/planner/planner.routes.ts";
 import type { WeatherService } from "./modules/weather/weather.service.ts";
 import { registerErrorHandlers } from "./plugins/error-handler.ts";
@@ -64,7 +66,8 @@ export function buildApp({
   app.register(cors, { origin: corsOrigins, methods: ["GET", "HEAD", "POST", "OPTIONS"] });
   app.register(healthRoutes, { prisma });
   const assetsRepository = createAssetsRepository(prisma, assetVisibility);
-  app.register(assetsRoutes, { repository: assetsRepository, mediaBaseUrl, visibility: assetVisibility });
+  const soundsRepository = createSoundsRepository(prisma, assetVisibility);
+  app.register(assetsRoutes, { repository: assetsRepository, mediaBaseUrl, visibility: assetVisibility, sounds: soundsRepository });
   const gastronomyRepository = createGastronomyRepository(prisma, assetVisibility);
   app.register(plannerRoutes, {
     repository: createPlannerRepository(prisma, assetVisibility),
@@ -76,6 +79,7 @@ export function buildApp({
   });
   app.register(metaRoutes, { repository: createMetaRepository(prisma, assetVisibility) });
   app.register(gastronomyRoutes, { repository: gastronomyRepository });
+  app.register(soundsRoutes, { repository: soundsRepository, mediaBaseUrl });
   const communityRepository = createCommunityRepository(prisma);
   app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility });
   app.register(moderationRoutes, { repository: communityRepository });
