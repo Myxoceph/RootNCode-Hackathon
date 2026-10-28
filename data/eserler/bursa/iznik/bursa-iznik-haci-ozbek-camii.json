@@ -1,0 +1,444 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-haci-ozbek-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabenin dili kitapta belirtilmiyor.",
+      "Sokak numarası kitapta yok.",
+      "Son cemaat yerinin yıkım yılı kaynakta kesin değil.",
+      "Koordinat bulunmalı (kitapta yok).",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türkçe ve İngilizce metin inşa tarihini 'H. 734 / M. 1333-1334' verir; kitabe mealinde ise 'H. 734 / M. 1333' yazar. Aralık ve tek yıl birlikte saklandı."
+      },
+      {
+        "field": "inscriptions[mescit-kitabesi]",
+        "note": "Transliterasyonda Türkçe metin 'erbaa ... seba mieti', İngilizce metin 'erba’a ... seb’a mieti' yazar; Türkçe baskı esas alındı."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Kitabe 'mescid' der, kitap yapıya cami adını verir; kitaptaki adlandırma esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Özbek Camii",
+    "en": "Hacı Özbek Mosque"
+  },
+  "subtitle": {
+    "tr": "Osmanlı döneminin bilinen en erken tarihli camisi",
+    "en": "The earliest dated mosque of the Ottoman period"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Çarşı Camii",
+    "merkezi kubbe",
+    "erken Osmanlı",
+    "almaşık duvar",
+    "kitabe",
+    "minaresiz"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Eşrefzâde Mahallesi",
+    "address": "Kılıçaslan Caddesi, Hüseyin Oktay Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "433"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.429448,
+      "lng": 29.723101,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir. OSM way/408913212 ile arası 13 m."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 734 / M. 1333-1334",
+      "en": "AH 734 / AD 1333-1334"
+    },
+    "start_year": 1333,
+    "end_year": 1334,
+    "hijri_year": 734,
+    "century": 14,
+    "basis": {
+      "tr": "Kitabedeki H. 734 tarihi; metin miladi yılı 1333-1334, kitabe meali ise 1333 olarak verir.",
+      "en": "The date AH 734 in the inscription; the text gives AD 1333-1334 while the translation of the inscription gives AD 1333."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "433-434"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Özbek bin Muhammed",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "433-434"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Halk arasında \"Çarşı Camii\" olarak da bilinen, H. 734 / M. 1333-1334'te Hacı Özbek bin Muhammed tarafından yaptırılan kare planlı, kubbeli, minaresiz cami. Kitabesiyle günümüze ulaşan, Osmanlı dönemine ait bilinen en erken tarihli camidir.",
+    "en": "Also known as the \"Çarşı (Market) Mosque\", built by Hacı Özbek bin Muhammed in AH 734 / AD 1333-1334. A square domed mosque without minaret, it is the earliest known dated mosque of the Ottoman period."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Önemi",
+        "en": "History and Significance"
+      },
+      "body": {
+        "tr": "Halk arasında \"Çarşı Camii\" olarak da anılan cami, H. 734 / M. 1333-1334'te Hacı Özbek bin Muhammed tarafından inşa ettirilmiştir. Kitabesiyle günümüze ulaşan yapı, Osmanlı dönemine ait bilinen en erken tarihli camidir ve Batı Anadolu'da erken Osmanlı devrinde inşa edilen merkezi kubbeli cami tipinin ilk örneği kabul edilir. Özgün kitabe batı cephedeki giriş kapısı üzerindeydi; bugün mihrap önünde pencere altında çerçeveli yerleştirilmiştir.",
+        "en": "Also known as the \"Çarşı (Market) Mosque\", it was built by Hacı Özbek bin Muhammed in AH 734 / AD 1333-1334. Surviving with its inscription, it is the earliest known dated mosque of the Ottoman period and is considered the first example of the central domed mosque type built in Western Anatolia in the early Ottoman period. The inscription was originally over the west entrance and is now framed under the window before the mihrab."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "433-434"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Doğu-batı doğrultusunda 7,92 x 7,92 m ölçülerinde kare planlıdır; doğuda harim, batıda son cemaat yeri yer alır. Üçgen kuşaklarla geçilen, kiremit kaplı 4,00 m yüksekliğindeki on iki köşeli kasnağa oturan kubbeyle örtülüdür. Harimin güneyinde dikdörtgen mihrap nişi vardır; batı duvarında bir, kuzey ve doğu duvarlarda ikişer pencere, güney duvarında giriş kapısı bulunur. Özgün son cemaat yeri iki devşirme Bizans mermer sütunuyla üç bölüme ayrılmış ve tonozla örtülmüştü; bu bölüm 1940'lı yıllardaki yol genişletmesinde yıkılmıştır (yıkım tarihine ilişkin farklı görüşler vardır). 2001'de Vakıflar Bölge Müdürlüğü onarımında ahşap çatılı eğimli bir son cemaat yeri yeniden yapılmış, batıdaki kapı pencereye dönüştürülmüş, kitabe pencerenin içine yerleştirilmiştir. Duvarlar taş ve tuğla almaşıktır; saçak altlarında testere dişi tuğla dizileri vardır. Yapının minaresi yoktur.",
+        "en": "It is square, 7.92 x 7.92 m, east-west, with the prayer room in the east and narthex in the west. A dome on a tiled twelve-sided drum 4.00 m high, with triangular transition bands, covers it. There is a rectangular mihrab niche in the south of the prayer room; one window in the west wall, two each in the north and east walls, and the entrance in the south wall. The original narthex had two reused Byzantine marble columns and a vault; it was demolished in road widening in the 1940s (views differ on the exact date). In the 2001 restoration by the Regional Directorate of Foundations a sloping narthex with wooden roof was rebuilt, the west door turned into a window and the inscription placed inside it. Walls are alternating stone and brick; sawtooth brick rows run under the eaves. There is no minaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "434-435"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "İç mekân beyaz badanalı sade bir görünümdedir; kubbeye geçiş Türk üçgenleriyle sağlanır. Zeminden yaklaşık 1,5 m yüksekliğe kadar ahşap çıtalar son cemaat dahil tüm iç mekânı çevreler. Mihrap gri-beyaz damarlı mermerdendir, iki sarı silindirik sütunla çevrelenir; üstünde vitray boyalı küçük bir aydınlık penceresi vardır. Ahşap minber ve mihrap günümüze ait yeni unsurlardır.",
+        "en": "The interior is plain with whitewash and a dome transition with Turkish triangles. Wooden slats about 1.5 m high surround the interior including the narthex. The mihrab is of gray and white veined marble flanked by two yellow cylindrical columns, with a small stained glass window above. The wooden minbar and mihrab are new elements."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "435"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan dimensions"
+      },
+      "value": "7,92 × 7,92",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "434"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_yuksekligi",
+      "label": {
+        "tr": "Kubbe kasnağı yüksekliği",
+        "en": "Dome drum height"
+      },
+      "value": 4.0,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "434"
+        }
+      ],
+      "note": {
+        "tr": "On iki köşeli, kiremit kaplı.",
+        "en": "Twelve-sided, tile-covered."
+      }
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 0,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "435"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Özbek bin Muhammed",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mescit-kitabesi",
+      "location": {
+        "tr": "Özgün olarak batı cephedeki giriş kapısı üzerinde; bugün mihrap önünde pencere altında çerçeveli",
+        "en": "Originally above the west entrance door; now framed under the window in front of the mihrab"
+      },
+      "language": "other",
+      "script": null,
+      "note": {
+        "tr": "Kitap dili belirtmez; metin Arapça ibareler içerir.",
+        "en": "The book does not name the language; the text contains Arabic phrases."
+      },
+      "transliteration": "Kad amera hâzihi’l-mescidi’l-mübâreki, Hâlisan muhlisan li-vechillâhi Teâlâ Hâcı Özbek bin Muhammed târihuhü fi seneti erbaa ve selâsine ve seba mieti 734.",
+      "translation": {
+        "tr": "Bu mübarek mescidi, Allah Taala'nın rızasını gözeterek, ihlas ve samimiyetle Mehmed oğlu Hacı Özbek H. 734 / M. 1333 yılında inşa ettirmiştir.",
+        "en": "This blessed mosque was built by Mehmed's son Hacı Özbek in AH 734 / AD 1333, with sincerity and with an eye on the approval of Allah Almighty."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 734,
+        "gregorian": "1333"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "434"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1333",
+      "year": 1333,
+      "date": null,
+      "hijri": "734",
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa ettirildi",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "433-434"
+        }
+      ],
+      "note": {
+        "tr": "Metin M. 1333-1334 verir.",
+        "en": "Text gives AD 1333-1334."
+      }
+    },
+    {
+      "id": "yol-genisletme-1940lar",
+      "year": 1940,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Yol genişletmesinde son cemaat yeri yıkıldı",
+        "en": "Narthex demolished during road widening"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "435"
+        }
+      ],
+      "note": {
+        "tr": "1940'lı yıllar; kesin yıla ilişkin farklı görüşler vardır.",
+        "en": "1940s; views differ on the exact date."
+      }
+    },
+    {
+      "id": "onarim-2001",
+      "year": 2001,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı; son cemaat yeri yeniden yapıldı",
+        "en": "Foundations Regional Directorate restoration; narthex rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "435"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "Kuruluş kitabesi",
+        "en": "Foundation inscription"
+      },
+      "hint": {
+        "tr": "Mihrap önünde pencerenin altındaki çerçeveli kitabeye bakın.",
+        "en": "Look at the framed inscription below the window before the mihrab."
+      },
+      "section_id": "tarihce"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hacı Özbek Camii, İznik çarşısında, kare planlı ve tek kubbeli küçük bir yapıdır. Duvarlar taş ve tuğlanın almaşık dizilmesiyle örülmüştür; saçak altlarında testere dişi biçiminde tuğla dizileri görülür. Kubbe, kiremit kaplı on iki köşeli bir kasnağın üzerinde yükselir. Caminin minaresi yoktur. Batıdaki son cemaat yeri ahşap çatılı ve eğimlidir. İç mekân beyaz badanalıdır; mihrap gri-beyaz mermerdendir.",
+      "en": "Hacı Özbek Mosque is a small square building with a single dome. The walls alternate stone and brick, with sawtooth brick rows under the eaves. The dome rises on a tiled twelve-sided drum. There is no minaret. The narthex on the west has a sloping wooden roof. The interior is whitewashed; the mihrab is of gray and white marble."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (s. 434-435)"
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "433-435"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1d51xgPB69pOa73Hz3Kvl_Q9Jssc_5EPB",
+        "original_name": "02 DJI_20241017185018_0042_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "433"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Özbek Camii (kitap s. 433)",
+        "en": "Hacı Özbek Mosque (book p. 433)"
+      },
+      "alt": {
+        "tr": "Hacı Özbek Camii fotoğrafı",
+        "en": "Photo of Hacı Özbek Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1yi8YuF2hlJKIgLDl43d6zcOqsA1CC2NB",
+        "original_name": "01 DJI_20241017184858_0039_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "435"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Özbek Camii (kitap s. 435)",
+        "en": "Hacı Özbek Mosque (book p. 435)"
+      },
+      "alt": {
+        "tr": "Hacı Özbek Camii fotoğrafı",
+        "en": "Photo of Hacı Özbek Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

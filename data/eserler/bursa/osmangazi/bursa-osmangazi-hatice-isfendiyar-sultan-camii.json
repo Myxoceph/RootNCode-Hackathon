@@ -1,0 +1,552 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hatice-isfendiyar-sultan-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Mescidin yapım yılı kitapta yok; dating ve era null. Hatice Sultan 1474 sonrası Bursa'da yaşamış ve 1502'de ölmüştür (kitap).",
+      "Hatice Sultan'ın yaptırdığı 'Emir Sultan semtindeki kâgir okul' için kayıt kurulmadı (adı kitapta yok).",
+      "'bursa-osmangazi-hatice-sultan-turbesi' kaydı başka bir Hatice Sultan'a (II. Bayezid'in kızı) ait; bu kayıtla ilişkilendirilmedi.",
+      "Mezar taşının hangi müzede olduğu kitapta belirtilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[kabir]",
+        "note": "Hatice Sultan'ın 'türbesi'nden söz ediliyor, mezar taşı ise müzeye taşındığı için kabrin bugünkü durumu açık değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hatice İsfendiyâr Sultan (Atpazarı) Camii ve Kabri",
+    "en": "Hatice İsfendiyâr Sultan (Atpazarı) Mosque and Grave"
+  },
+  "alternate_names": [
+    {
+      "tr": "At Pazarı Camii",
+      "en": "At Pazarı Mosque",
+      "note": "Bulunduğu semt nedeniyle"
+    },
+    {
+      "tr": "İsfendiyâri Camii",
+      "en": "İsfendiyâri Mosque",
+      "note": "Hatice Sultan'ın babasının adına telmihle"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kare planlı",
+    "tek kubbeli",
+    "Hatice Sultan",
+    "At Pazarı",
+    "Kamberler Parkı",
+    "kabir"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Ebuishak",
+    "address": "2. Salkım Sokak, Kamberler Parkı içinde, No: 10",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "331"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185675,
+      "lng": 29.075031,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/343627351 ('Hatice İsfendiyar Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Hatice İsfendiyâr Sultan",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "331, 333"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Vakıfların yönetimi için oğlu Süleyman Bey mütevelli tayin edilmiştir.",
+      "en": "Her son Süleyman Bey was appointed trustee for the management of the endowments."
+    },
+    "land_note": {
+      "tr": "Amasya, Merzifon ve Yenişehir'de bazı köyler, Bursa'da dükkânlar ve odalar, Dikencik Köyü'nde büyükbaş hayvanlar vakfedilmiştir.",
+      "en": "Villages in Amasya, Merzifon and Yenişehir, shops and rooms in Bursa and cattle in Dikencik Village were endowed."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "333-334"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "İsfendiyâroğlu İbrahim Bey'in kızı Hatice Sultan'ın At Pazarı'nda yaptırdığı, kare planlı, tek kubbeli küçük cami. 2008'de Kamberler Parkı düzenlemesiyle ortaya çıkarılıp restore edilmiş; yanındaki kabri de aynı çalışmada gün yüzüne çıkmıştır.",
+    "en": "A small square-plan, single-domed mosque built by Hatice Sultan, daughter of İsfendiyâroğlu İbrahim Bey, in the former At Pazarı. Unearthed and restored in 2008 with the Kamberler Park works; her grave beside it was also brought to light."
+  },
+  "sections": [
+    {
+      "id": "adlar",
+      "order": 1,
+      "title": {
+        "tr": "Adlar",
+        "en": "Names"
+      },
+      "body": {
+        "tr": "Yapı kayıtlarda bulunduğu semt nedeniyle At Pazarı Camii, Hatice Sultan'ın babasının ismine telmihle \"İsfendiyâri Camii\" adıyla geçer.",
+        "en": "In the records the building is known as the At Pazarı Mosque after its district and as the İsfendiyâri Mosque, alluding to Hatice Sultan's father."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "331"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kare planlıdır, iç ölçüleri 3,55 × 3,55 m'dir. Harim, içten Türk üçgenlerine oturan, dıştan sekizgen kasnaklı tuğla örgülü tek kubbeyle örtülüdür. Kasnağın doğu, batı ve güney yönlerinde sivri kemerli üç pencere vardır; dört ana yönde ikişer pencere demir parmaklıklı ve mermer sövelidir. Mihrap 0,57 m derinliğindedir; taban altıgen tuğlalarla döşelidir. Beden duvarları moloz taş ve tuğla ile, kasnak üç sıra tuğla, iki sıra kesme taş ve aralarda dikey tek tuğla ile örülmüş; duvarlarda ve kasnakta iki sıra kirpi saçak vardır.",
+        "en": "The mosque has a square plan with interior dimensions of 3.55 × 3.55 m. The hall is covered by a single brick dome, octagonal drum outside and Turkish triangles inside. The drum has three pointed-arch windows on the east, west and south; two windows in each of the four main directions have iron grilles and marble frames. The mihrab is 0.57 m deep and the floor is paved with hexagonal bricks. The walls are rubble stone and brick; the drum is three rows of brick, two of cut stone and a single vertical brick between, with a two-row sawtooth cornice on walls and drum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "332"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Caminin kuzeybatısındaki minareye harimden bir kapıyla çıkılır. Sekizgen kaideden silindirik gövdeye üçgen yüzeylerle geçilir. İki sıra tuğla ve moloz taş örgülü gövde zamanla yıkılmış, son restorasyonlarda yeniden inşa edilmiştir.",
+        "en": "The minaret in the northwest is entered by a door from the prayer hall. The octagonal base passes to the cylindrical shaft by triangular surfaces. The shaft, of two rows of brick and rubble stone, collapsed over time and was rebuilt in recent restorations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "332"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 4,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami H. 1315 / M. 1897'de kapsamlı bir onarım geçirmiştir. Yeri mahallede uzun süre tespit edilememiş, bu yüzden ortadan kalktığı düşünülmüştür. Mahalle istimlak edilince harap durumdaki yapı ortaya çıkarılmış, odun deposu olarak kullanıldığı anlaşılmıştır. 1977'de Vakıflar Genel Müdürlüğü tarafından istimlak edilmiş; 2008'de Kamberler ve çevresi park olarak düzenlenince çevresi temizlenmiş, restore edilerek yeniden ibadete açılmıştır.",
+        "en": "The mosque had extensive repairs in AH 1315 / AD 1897. Its location could not be determined for a long time and it was thought to have disappeared. After the neighborhood was expropriated the ruined building was unearthed and found to have been used as a wood store. It was expropriated by the General Directorate of Foundations in 1977; after Kamberler was laid out as a park in 2008 its surroundings were cleaned and it was restored and reopened for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "332-333"
+        }
+      ]
+    },
+    {
+      "id": "hatice-sultan",
+      "order": 5,
+      "title": {
+        "tr": "Hatice Sultan",
+        "en": "Hatice Sultan"
+      },
+      "body": {
+        "tr": "Hatice Sultan'ın babası İsfendiyâroğlu İbrahim Bey, annesi Çelebi Mehmed'in kızı Selçuk Hatun'dur. Eşi, Fâtih Sultan Mehmed döneminin sadrazamı Mahmud Paşa 1474'te öldürülünce Bursa'ya yerleşmiş, 28 yıl başka evlilik yapmadan yaşayıp kendini hayır işlerine adamıştır. Bursa'da eski At Pazarı'nda kendi adına bir mescit, Emir Sultan semtinde kâgir bir okul yaptırmıştır. Vakıflarının yönetimi için oğlu Süleyman Bey'i mütevelli tayin etmiş; Amasya, Merzifon ve Yenişehir'de bazı köyleri, Bursa'da dükkân ve odaları, Dikencik Köyü'nde büyükbaş hayvanları vakfetmiştir. H. 908 / M. 1502'de Bursa'da vefat etmiş, mescidinin yanındaki türbesine defnedilmiştir.",
+        "en": "Hatice Sultan's father was İsfendiyâroğlu İbrahim Bey and her mother Selçuk Hatun, daughter of Çelebi Mehmed. After her husband Mahmud Paşa, grand vizier of Mehmed the Conqueror, was killed in 1474, she settled in Bursa, where she lived 28 years as a widow devoted to charity. She had a masjid built in her name in the former At Pazarı and a stone school in the Emir Sultan district. She appointed her son Süleyman Bey trustee of her endowments and endowed villages in Amasya, Merzifon and Yenişehir, shops and rooms in Bursa and cattle in Dikencik Village. She died in Bursa in AH 908 / AD 1502 and was buried in her tomb beside her mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "333-334"
+        }
+      ]
+    },
+    {
+      "id": "kabir",
+      "order": 6,
+      "title": {
+        "tr": "Kabir ve Mezar Taşı",
+        "en": "Grave and Gravestone"
+      },
+      "body": {
+        "tr": "Kabir caminin yanındadır. Mezar taşının bir yüzünde Hatice Hatun'un İbrahim Bey bin İsfendiyâr'ın kızı olduğu, diğer yüzünde Hicrî 908 Cemaziyelahir ayının ortalarında vefat ettiği yazılıdır. Mezar taşı daha sonra müzeye taşınmıştır. Cami ve mezarın bulunduğu alan 2008'de başlayan çalışmalar sonucu Kamberler Parkı'nın düzenlenmesiyle gün yüzüne çıkarılmıştır.",
+        "en": "The grave is next to the mosque. One face of the gravestone states that Hatice Hatun is the daughter of İbrahim Bey bin İsfendiyâr; the other that she died in mid-Jumada al-Akhir AH 908. The gravestone was later moved to the museum. The mosque and grave area was brought to light by the works begun in 2008 with the reorganization of Kamberler Park."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "334-335"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "3.55 × 3.55",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "332"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_derinlik",
+      "label": {
+        "tr": "Mihrap derinliği",
+        "en": "Mihrab depth"
+      },
+      "value": 0.57,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "332"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnak penceresi",
+        "en": "Drum windows"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "332"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hatice İsfendiyâr Sultan",
+      "role": {
+        "tr": "Banî (ö. H. 908 / M. 1502)",
+        "en": "Founder (d. AH 908 / AD 1502)"
+      }
+    },
+    {
+      "name": "İsfendiyâroğlu İbrahim Bey",
+      "role": {
+        "tr": "Babası",
+        "en": "Her father"
+      }
+    },
+    {
+      "name": "Selçuk Hatun",
+      "role": {
+        "tr": "Annesi; Çelebi Mehmed'in kızı",
+        "en": "Her mother; daughter of Çelebi Mehmed"
+      }
+    },
+    {
+      "name": "Mahmud Paşa",
+      "role": {
+        "tr": "Eşi; Fâtih dönemi sadrazamı, 1474'te öldürüldü",
+        "en": "Her husband; grand vizier of Mehmed the Conqueror, killed in 1474"
+      }
+    },
+    {
+      "name": "Süleyman Bey",
+      "role": {
+        "tr": "Oğlu; vakıf mütevellisi",
+        "en": "Her son; trustee of the waqf"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mezar-tasi-on",
+      "location": {
+        "tr": "Mezar taşının bir yüzü",
+        "en": "One face of the gravestone"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "İntekalet el-merhûme, el-mağfûre, es-saîde, eş-şehîde Hadîce Hâtûn binti İbrahim Bey bin İsfendiyâr.",
+      "translation": {
+        "tr": "Merhume, bağışlanmış, bahtiyar ve şehîde Hatîce Hatun, İsfendiyâr oğlu İbrahim Bey’in kızıdır.",
+        "en": "The deceased, forgiven, fortunate and martyred Hatice Hatun is the daughter of İbrahim Bey, the son of İsfendiyar."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "334-335"
+        }
+      ],
+      "note": {
+        "tr": "Kitap iki baskıda küçük noktalama farkı gösteriyor; Türkçe metin alındı. Mezar taşı müzeye taşınmıştır.",
+        "en": "Minor punctuation differences between the two printed versions; the Turkish text was used. The gravestone was moved to the museum."
+      }
+    },
+    {
+      "id": "mezar-tasi-arka",
+      "location": {
+        "tr": "Mezar taşının diğer yüzü",
+        "en": "Other face of the gravestone"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "El-Muhtâce ilâ rahmeti’llâhi Teâlâ / Tüvüffiyet fî evâsıtı şehri / Cemaziyelahir (sene) semâne ve tis’a mi’e",
+      "translation": {
+        "tr": "Allah Teâlâ’nın rahmetine muhtaç olan bu kişi, Hicrî 908 yılı Cemaziyelahir ayının ortalarında (1502) vefat etmiştir.",
+        "en": "In need of Allah’s mercy. Passed away in the middle of the month of Jumaada al-Akhir in the year AH 908."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 908,
+        "gregorian": "1502"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "334-335"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "olum-1502",
+      "year": 1502,
+      "date": null,
+      "hijri": "908",
+      "type": "record",
+      "title": {
+        "tr": "Hatice Sultan Bursa'da vefat etti, mescidinin yanındaki türbesine defnedildi (H. 908)",
+        "en": "Hatice Sultan died in Bursa, buried in her tomb beside her mosque (AH 908)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "334"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1897",
+      "year": 1897,
+      "date": null,
+      "hijri": "1315",
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım (H. 1315)",
+        "en": "Extensive repair (AH 1315)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "332-333"
+        }
+      ]
+    },
+    {
+      "id": "kamulastirma-1977",
+      "year": 1977,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından istimlak edildi",
+        "en": "Expropriated by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "333"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kamberler Parkı düzenlemesiyle ortaya çıkarıldı, restore edilip ibadete açıldı",
+        "en": "Unearthed with the Kamberler Park works, restored and reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "333"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hatice İsfendiyâr Sultan Camii, Kamberler Parkı içinde, kare planlı ve tek kubbeli çok küçük bir camidir; iç ölçüsü 3,55 × 3,55 metredir. Kubbe dıştan sekizgen kasnağa oturur ve tuğla örülüdür. Pencereleri demir parmaklıklı ve mermer sövelidir. Zemini altıgen tuğlalarla döşelidir. Kuzeybatıdaki minareye harimden bir kapıyla çıkılır. Yanında hanımın kabri vardır.",
+      "en": "Hatice İsfendiyâr Sultan Mosque is a very small square-plan, single-domed mosque in Kamberler Park, with interior dimensions of 3.55 × 3.55 m. The brick dome sits on an octagonal drum outside. The windows have iron grilles and marble frames, and the floor is paved with hexagonal bricks. A door from the prayer hall leads to the minaret in the northwest. Her grave lies beside it."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hatice-isfendiyar-sultan-camii/p062-1.jpg",
+        "original_name": "DJI_20241004203749_0456_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "331"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin minaresi ve ön cephesi, arkada dağ",
+        "en": "The mosque, minaret and front, with mountain"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş almaşık duvarlı, kemerli girişli küçük cami; sağında yüksek tuğla minare ve gri kubbe. Arkada şehir ve dağ yamacı uzanıyor.",
+        "en": "A small mosque of alternating brick and stone with arched openings, a tall brick minaret on the right and a grey dome. The city and mountain slope rise behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hatice-isfendiyar-sultan-camii/p064-1.jpg",
+        "original_name": "DJI_20241004203304_0453_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "333"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Kare planlı yapının gri kubbesi ve çatısı yukarıdan görünüyor. Çevresinde taş döşemeli yollar, çimenlik alanlar ve ağaçlar var.",
+        "en": "The grey dome and roof of the square building seen from directly above. Stone-paved paths, lawns and trees surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hatice-isfendiyar-sultan-camii/p065-1.jpg",
+        "original_name": "01 ERD07916 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "334"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Camiye bitişik, yeşil korkuluklu kabir",
+        "en": "Fenced grave beside the mosque"
+      },
+      "alt": {
+        "tr": "Beyaz taş kenarlıklı bir kabir alanı yeşil demir korkuluklarla çevrili; içinde sarı çiçekli bitkiler var. Arkada tuğla ve taş duvarlı yapı görünüyor.",
+        "en": "A grave area with a white stone edge, enclosed by green iron railings and planted with yellow-flowered shrubs. A brick and stone building stands behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

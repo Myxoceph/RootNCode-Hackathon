@@ -1,0 +1,427 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-gemlik-balikpazari-yeni-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Gemlik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Gemlik bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kilise olarak yapım tarihi, banisi ve mimarı kitapta yok.",
+      "Rumca ve Türkçe kitabe metinleri, konumları ve yazı türü kitapta verilmemiş; fotoğrafla eklenmeli.",
+      "Era alanı dönüşüm tarihine (Cumhuriyet) göre konuldu; özgün kilise dönemi bilinmiyor.",
+      "Koordinat kitapta yok; dron fotoğrafının EXIF GPS'inden geçici olarak eklendi (verified: false); harita üzerinden teyit edilmeli.",
+      "Fotoğraflar (media) Drive Links klasöründen kitap sayfalarıyla eşlenerek eklendi; başlık ve alt metinler fotoğraflara bakılarak yazıldı, teyit edilmeli. Arşiv fotoğrafı (archive_media) yok.",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "Vakıf bilgisi (banî, vakfiye) kitapta yok; arşivden araştırılmalı.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[tarihce]",
+        "note": "Türkçe metin s. 328'de Rumca kitabe 'bulunmaktadır' derken İngilizce metin 'There is no Greek inscription' diyor (olumsuz). İki metin çelişiyor; kaynağa sadık kalınarak ikisi de not edildi ve bölüm 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Balıkpazarı (Yeni) Camii",
+    "en": "Balıkpazarı (Yeni) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yeni Camii",
+      "en": "Yeni (New) Mosque"
+    },
+    {
+      "tr": "Panagia Pazariotissa",
+      "en": "Panagia Pazariotissa",
+      "note": "Kilise adı"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "kiliseden çevrilme",
+    "Yunan haçı planı",
+    "Panagia Pazariotissa",
+    "Yeni Camii"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Gemlik",
+    "neighborhood": "Balıkpazarı",
+    "address": "Avukat Özgür Aksoy Caddesi",
+    "coordinates": {
+      "lat": 40.43433,
+      "lng": 29.15284,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "Kubbeyi tepeden gösteren dron fotoğrafının (m03) EXIF GPS'i; bina merkezine yakın ama harita üzerinde teyit edilmeli."
+    },
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "327-328"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Camiye çevrilme: 1922-1923",
+      "en": "Converted to mosque: 1922-1923"
+    },
+    "start_year": 1922,
+    "end_year": 1923,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Türkçe kitabe; bu tarih camiye dönüşümü gösterir, özgün yapım tarihi bilinmiyor.",
+      "en": "Turkish inscription; refers to the conversion, original construction date unknown."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "327"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Şehir merkezindeki, Panagia Pazariotissa adıyla bilinen kiliseden 1922-1923'te camiye çevrilmiş, Yunan haçı planlı yapı.",
+    "en": "A building in the city center converted in 1922-1923 into a mosque from the church known as Panagia Pazariotissa; it has a Greek-cross plan."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Kilise ve Cami Olarak Tarihçesi",
+        "en": "History as Church and Mosque"
+      },
+      "body": {
+        "tr": "Şehir merkezinde yer alan yapı geçmişte kilise olarak inşa edilmiş, sonra camiye dönüştürülmüştür; bugün 'Balıkpazarı Camii' ya da 'Yeni Camii' adıyla anılır. Türkçe kitabesine göre daha önce 'Panagia Pazariotissa' adıyla bilinen bir Hristiyan ibadethanesiyken 1922-1923 yıllarında camiye çevrilmiştir. Yapının geçmişte kilise olduğunu belgeleyen bir Rumca kitabe bulunmaktadır; camiye dönüştürülmesine ilişkin bilgileri içeren bir Türkçe kitabe de mevcuttur.",
+        "en": "Located in the city center, the building was originally built as a church and later converted into a mosque; it is known as the 'Balıkpazarı Mosque' or 'Yeni (New) Mosque'. According to its Turkish inscription, it was previously a Christian place of worship known as 'Panagia Pazariotissa' and was converted into a mosque in 1922-1923."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "327-328"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı doğu-batı doğrultusunda yerleştirilmiş, dikdörtgen planlıdır; plan şeması Yunan haçı biçimindedir. Merkezî kubbe dört yönde konumlanan yarım kubbelerle desteklenmiştir. Günümüzde de cami olarak kullanılmaya devam etmektedir.",
+        "en": "The building is oriented east-west and has a rectangular plan shaped like a Greek cross. The central dome is supported by semi-domes on four sides. It is still used as a mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "328"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "rumca-kitabe",
+      "location": {
+        "tr": "Konumu kitapta belirtilmemiş",
+        "en": "Location not stated"
+      },
+      "language": "el",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "date": null,
+      "note": {
+        "tr": "Yapının geçmişte kilise olduğunu belgeleyen Rumca kitabe; metni kitapta verilmemiş.",
+        "en": "Greek inscription documenting the church past; text not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "328"
+        }
+      ]
+    },
+    {
+      "id": "turkce-kitabe",
+      "location": {
+        "tr": "Konumu kitapta belirtilmemiş",
+        "en": "Location not stated"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1922-1923"
+      },
+      "note": {
+        "tr": "Camiye dönüşümü kaydeden Türkçe kitabe; metni kitapta verilmemiş.",
+        "en": "Turkish inscription recording the conversion; text not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "327-328"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "camiye-donusum",
+      "year": 1922,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kiliseden camiye dönüştürüldü (1922-1923)",
+        "en": "Converted from church to mosque (1922-1923)"
+      },
+      "note": {
+        "tr": "Türkçe kitabeye göre.",
+        "en": "According to the Turkish inscription."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "327"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Balıkpazarı Camii, doğu-batı doğrultusunda uzanan, dikdörtgen planlı, Yunan haçı şemalı bir yapıdır. Ortada merkezî bir kubbe, dört yönde yarım kubbeler bulunur. Yapı eskiden kilise olarak kullanılmıştır.",
+      "en": "Balıkpazarı Mosque is a rectangular building extending east-west with a Greek-cross plan. A central dome is flanked by semi-domes on four sides. The building was formerly used as a church."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif esas alınarak yazıldı; yalnızca kaynak metne dayanır."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YLPqDQdMgxY_N-7ouGyeUho7VD6beZGF",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+    "book_layout_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+    "links_folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+    "book_pdf_name": "2-Gemlik.pdf",
+    "book_pages": "327-328"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1mFwh_Go39ZE0drNQUMh9k2fS_I-P_D2d",
+        "original_name": "01 DJI_20241102183829_0129_D_ODAK-Edit-2.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "327"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Balıkpazarı Camii (eski Panagia Pazariotissa Kilisesi), havadan",
+        "en": "Balıkpazarı Mosque (the former Panagia Pazariotissa Church), from the air"
+      },
+      "alt": {
+        "tr": "Havadan: pembe sıvalı, kiremit çatılı, kubbeli eski bir kilise yapısı; çevresinde şehir evleri, arkada tepeler.",
+        "en": "Aerial view: a pink-plastered, red-tiled, domed former church building surrounded by city houses with hills behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1sBFZK-TzQQ1FRIdbOMIJGZMNroLLhCgb",
+        "original_name": "04 DJI_20241102184806_0159_D_ODAK-Edit.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "328"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Giriş cephesi",
+        "en": "The entrance front"
+      },
+      "alt": {
+        "tr": "Pembe sıvalı cephede beyaz süslemeler, üçlü pencereler ve ortada giriş kapısı.",
+        "en": "A pink-plastered front with white ornament, triple windows and an entrance door in the middle."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1M4ElQNhKZBW9BE5amkVMbuguxdYunZJP",
+        "original_name": "03 DJI_20241102184034_0137_D_ODAK-Edit.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "328"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe, tepeden",
+        "en": "The dome, from above"
+      },
+      "alt": {
+        "tr": "Tepeden: gri renkli, dilimli büyük bir kubbe ve çevresindeki çatı yüzeyleri.",
+        "en": "Top-down view of a large grey ribbed dome and the roof surfaces around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1govTCII6_zD5Oy0CZwP95sLWxk-JRkEJ",
+        "original_name": "07 ERD06143 kopya.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "328"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İç mekân: sütunlar ve halı",
+        "en": "Interior: columns and carpet"
+      },
+      "alt": {
+        "tr": "Beyaz sütunlu, yüksek kubbeli bir iç mekân; mavi halı şeritleri ve ortada avize.",
+        "en": "A high-domed interior with white columns, blue carpet bands and a chandelier in the middle."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1odLSokL51AmJy6XuLKDWdxrvXqePLfYf",
+        "original_name": "09 ERD06130 kopya.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "328"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mihrap ve minber tarafı",
+        "en": "The mihrab and minbar side"
+      },
+      "alt": {
+        "tr": "Beyaz sütunlar arasında ahşap minber ve mihrap bölümü, yanında Türk bayrağı; zeminde mavi halı.",
+        "en": "A wooden minbar and mihrab area between white columns with a Turkish flag beside it and blue carpet on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1C54fcQwou2md0DRXTFEu_ZVnfTF-hgTD",
+        "original_name": "02 DJI_20241102184014_0136_D_ODAK-Edit-2.jpg",
+        "folder_id": "1S91Te5Xe2anYNVMYiNgFBoytpFgtNGBW",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 2-Gemlik Klasörü / Links",
+        "book_pdf_file_id": "1OAiGRkuARH8cmSLvZW9rHzspLJasCoCt",
+        "book_pdf_name": "2-Gemlik.pdf",
+        "book_page": "328"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Camiyi çevreleyen şehir dokusu, kuşbakışı",
+        "en": "The urban fabric around the mosque, bird's-eye view"
+      },
+      "alt": {
+        "tr": "Tepeden: kiremit çatılı binalar ve aralarındaki dar sokaklar.",
+        "en": "Top-down view of tiled-roof buildings and narrow streets between them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": []
+}

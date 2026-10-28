@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "_aciklama": "Sabit değer listeleri. Eser JSON'larındaki kod alanları (type, region, confidence vb.) yalnızca bu listelerdeki 'code' değerlerini alabilir. Yeni tür eklemek = buraya bir satır eklemek; kod değişmez.",
+
+  "regions": [
+    { "code": "marmara",            "label": { "tr": "Marmara",            "en": "Marmara" } },
+    { "code": "ege",                "label": { "tr": "Ege",                "en": "Aegean" } },
+    { "code": "akdeniz",            "label": { "tr": "Akdeniz",            "en": "Mediterranean" } },
+    { "code": "ic-anadolu",         "label": { "tr": "İç Anadolu",         "en": "Central Anatolia" } },
+    { "code": "karadeniz",          "label": { "tr": "Karadeniz",          "en": "Black Sea" } },
+    { "code": "dogu-anadolu",       "label": { "tr": "Doğu Anadolu",       "en": "Eastern Anatolia" } },
+    { "code": "guneydogu-anadolu",  "label": { "tr": "Güneydoğu Anadolu",  "en": "Southeastern Anatolia" } }
+  ],
+
+  "cities": [
+    { "code": "bursa",   "label": { "tr": "Bursa",   "en": "Bursa" },   "region": "marmara",     "plate": 16 },
+    { "code": "hatay",   "label": { "tr": "Hatay",   "en": "Hatay" },   "region": "akdeniz",     "plate": 31 },
+    { "code": "konya",   "label": { "tr": "Konya",   "en": "Konya" },   "region": "ic-anadolu",  "plate": 42 },
+    { "code": "kutahya", "label": { "tr": "Kütahya", "en": "Kütahya" }, "region": "ege",         "plate": 43 },
+    { "code": "izmir",   "label": { "tr": "İzmir",   "en": "İzmir" },   "region": "ege",         "plate": 35 },
+    { "code": "manisa",  "label": { "tr": "Manisa",  "en": "Manisa" },  "region": "ege",         "plate": 45 }
+  ],
+
+  "asset_types": [
+    { "code": "cami",        "label": { "tr": "Cami",              "en": "Mosque" },            "ambient_sound": "cami" },
+    { "code": "mescit",      "label": { "tr": "Mescit",            "en": "Masjid" },            "ambient_sound": "cami" },
+    { "code": "kulliye",     "label": { "tr": "Külliye",           "en": "Complex" },           "ambient_sound": "cami" },
+    { "code": "medrese",     "label": { "tr": "Medrese",           "en": "Madrasa" },           "ambient_sound": "medrese" },
+    { "code": "mektep",      "label": { "tr": "Mektep / Okul",     "en": "School" },            "ambient_sound": null },
+    { "code": "turbe",       "label": { "tr": "Türbe",             "en": "Tomb" },              "ambient_sound": "turbe" },
+    { "code": "hazire",      "label": { "tr": "Hazire",            "en": "Graveyard" },         "ambient_sound": "turbe" },
+    { "code": "han",         "label": { "tr": "Han",               "en": "Inn" },               "ambient_sound": "han" },
+    { "code": "kervansaray", "label": { "tr": "Kervansaray",       "en": "Caravanserai" },      "ambient_sound": "han" },
+    { "code": "bedesten",    "label": { "tr": "Bedesten / Çarşı",  "en": "Bedesten / Bazaar" }, "ambient_sound": "carsi" },
+    { "code": "hamam",       "label": { "tr": "Hamam",             "en": "Bathhouse" },         "ambient_sound": "hamam" },
+    { "code": "cesme",       "label": { "tr": "Çeşme",             "en": "Fountain" },          "ambient_sound": "su" },
+    { "code": "imaret",      "label": { "tr": "İmaret",            "en": "Almshouse" },         "ambient_sound": "imaret" },
+    { "code": "darussifa",   "label": { "tr": "Darüşşifa",         "en": "Hospital" },          "ambient_sound": "darussifa" },
+    { "code": "tekke",       "label": { "tr": "Tekke / Zaviye",    "en": "Dervish Lodge" },     "ambient_sound": "tekke" },
+    { "code": "makam",       "label": { "tr": "Makam",             "en": "Shrine" },            "ambient_sound": "turbe" },
+    { "code": "kilise",      "label": { "tr": "Kilise",            "en": "Church" },            "ambient_sound": null },
+    { "code": "kutuphane",   "label": { "tr": "Kütüphane",         "en": "Library" },           "ambient_sound": null },
+    { "code": "namazgah",    "label": { "tr": "Namazgâh",          "en": "Open-air Prayer Place" },"ambient_sound": null },
+    { "code": "kopru",       "label": { "tr": "Köprü",             "en": "Bridge" },            "ambient_sound": "su" },
+    { "code": "degirmen",    "label": { "tr": "Değirmen",          "en": "Mill" },              "ambient_sound": "su" },
+    { "code": "hoyuk",       "label": { "tr": "Höyük",             "en": "Mound" },             "ambient_sound": null },
+    { "code": "sivil",       "label": { "tr": "Sivil Mimari",      "en": "Civil Architecture" },"ambient_sound": null },
+    { "code": "diger",       "label": { "tr": "Diğer",             "en": "Other" },             "ambient_sound": null }
+  ],
+
+  "eras": [
+    { "code": "beylikler",    "label": { "tr": "Beylikler Dönemi",   "en": "Principalities Period" } },
+    { "code": "selcuklu",     "label": { "tr": "Selçuklu",           "en": "Seljuk" } },
+    { "code": "erken-osmanli","label": { "tr": "Erken Osmanlı",      "en": "Early Ottoman" } },
+    { "code": "klasik-osmanli","label": { "tr": "Klasik Osmanlı",    "en": "Classical Ottoman" } },
+    { "code": "gec-osmanli",  "label": { "tr": "Geç Osmanlı",        "en": "Late Ottoman" } },
+    { "code": "cumhuriyet",   "label": { "tr": "Cumhuriyet",         "en": "Republican" } }
+  ],
+
+  "confidence": [
+    { "code": "certain",  "label": { "tr": "Kaynakta kesin",       "en": "Stated in source" },  "_kural": "Kaynak bilgiyi kesin dille veriyor (… inşa edilmiştir)." },
+    { "code": "probable", "label": { "tr": "Tahmini",              "en": "Probable" },          "_kural": "Kaynak 'düşünülmektedir / tahmin edilmektedir / muhtemelen' diyor." },
+    { "code": "disputed", "label": { "tr": "Tartışmalı",           "en": "Disputed" },          "_kural": "Kaynak birden fazla görüş veriyor ya da 'kesin olarak bilinmemektedir' diyor." },
+    { "code": "legend",   "label": { "tr": "Rivayet / Halk inancı","en": "Legend / Folk belief" },"_kural": "Kaynak bunu rivayet, söylence ya da halk inancı olarak aktarıyor. Arayüzde ayrı rozetle gösterilir, asla kesin bilgi gibi sunulmaz." }
+  ],
+
+  "relation_types": [
+    { "code": "same_founder",       "label": { "tr": "Aynı banî (yaptıran)",       "en": "Same founder" } },
+    { "code": "same_complex",       "label": { "tr": "Aynı külliyenin parçası",    "en": "Part of same complex" } },
+    { "code": "waqf_land",          "label": { "tr": "Vakıf arazisi bağı",         "en": "Waqf land link" } },
+    { "code": "waqf_income",        "label": { "tr": "Gelir / finansman bağı",     "en": "Endowment income link" } },
+    { "code": "water_supply",       "label": { "tr": "Su yolu / altyapı bağı",     "en": "Water supply link" } },
+    { "code": "same_architect",     "label": { "tr": "Aynı mimar",                 "en": "Same architect" } },
+    { "code": "same_craftsman",     "label": { "tr": "Aynı usta",                  "en": "Same craftsman" } },
+    { "code": "architectural_lineage","label": { "tr": "Mimari öncül / ardıl",     "en": "Architectural lineage" } },
+    { "code": "urban_context",      "label": { "tr": "Kentsel / çarşı bağlamı",    "en": "Urban context" } }
+  ],
+
+  "timeline_event_types": [
+    { "code": "construction", "label": { "tr": "İnşa",        "en": "Construction" } },
+    { "code": "opening",      "label": { "tr": "Açılış",      "en": "Opening" } },
+    { "code": "repair",       "label": { "tr": "Onarım",      "en": "Repair" } },
+    { "code": "restoration",  "label": { "tr": "Restorasyon", "en": "Restoration" } },
+    { "code": "damage",       "label": { "tr": "Hasar / Afet","en": "Damage / Disaster" } },
+    { "code": "addition",     "label": { "tr": "Ek yapı / Ek", "en": "Addition" } },
+    { "code": "removal",      "label": { "tr": "Kaldırılma",  "en": "Removal" } },
+    { "code": "record",       "label": { "tr": "Tarihî kayıt / Tanıklık", "en": "Historical record" } }
+  ],
+
+  "media_types": [
+    { "code": "photo",         "label": { "tr": "Güncel fotoğraf", "en": "Photo" } },
+    { "code": "archive_photo", "label": { "tr": "Arşiv fotoğrafı", "en": "Archive photo" } },
+    { "code": "drawing",       "label": { "tr": "Çizim / Rölöve",  "en": "Drawing" } },
+    { "code": "audio",         "label": { "tr": "Ses",             "en": "Audio" } },
+    { "code": "video",         "label": { "tr": "Video",           "en": "Video" } },
+    { "code": "document",      "label": { "tr": "Belge / PDF",     "en": "Document" } }
+  ],
+
+  "accessibility_status": [
+    { "code": "yes",     "label": { "tr": "Var",       "en": "Yes" } },
+    { "code": "partial", "label": { "tr": "Kısmen",    "en": "Partial" } },
+    { "code": "no",      "label": { "tr": "Yok",       "en": "No" } },
+    { "code": "unknown", "label": { "tr": "Bilinmiyor","en": "Unknown" } }
+  ],
+
+  "record_status": [
+    { "code": "draft",     "label": { "tr": "Taslak",       "en": "Draft" } },
+    { "code": "in_review", "label": { "tr": "İncelemede",   "en": "In review" } },
+    { "code": "published", "label": { "tr": "Yayında",      "en": "Published" } }
+  ]
+}

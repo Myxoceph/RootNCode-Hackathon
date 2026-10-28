@@ -1,0 +1,653 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-devlet-hatun-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yeşil Çelebi Mehmed Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yeşil Çelebi Mehmed Külliyesi bölümünden (Part B) yapay zekâ ile özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar eklenmeli (location.coordinates kaynakta yok, uydurulmadı).",
+      "Fotoğraflar eklenmeli (media, archive_media boş; media_folder henüz yok, match_photos.py ile bağlanacak).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Hundi Hatun / Hundi Kadın sokak adı ve konum bilgisi kaynakta iki farklı biçimde; saha teyidi gerekli.",
+      "Devlet Hatun'un kimliği (Germiyanoğlu'nun kızı mı, devşirme Abdullah'ın kızı mı) kaynakta çelişkili; kaynak vakfiyeyi esas alıyor.",
+      "'Ebe Hatun Türbesi' ilçesi metinde yok (yalnızca 'Muradiye semti'); mevcut bursa-osmangazi-ebe-hatun-turbesi kaydıyla aynı olduğu teyit edilmeli.",
+      "Saraylılar (Akile Hatun, Bosfor Belkıs Hatun), Umur Bey ve Abdüllatîf-i Kudsî türbelerinin ilçesi kaynakta yok; ilişki yazılmadı.",
+      "Emîr Sultan Türbesi ve Devlengeç suyu için ilişki hedefi ve ilçe kaynakta yok; yazılmadı.",
+      "Vakfiye metni kitapta yok; 'waqf.deed' boş.",
+      "Mimar adı kaynakta geçmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.address",
+        "note": "Kitap konumu önce 'Hundi Hatun Sokağı', ardından kabri 'Hundi Kadın Sokağı' üzerinde göstermektedir (Türkçe ve İngilizce metinde aynı). Aynı sokak için iki ad kullanılmış olabilir; adres ilk anılan biçimle yazıldı."
+      },
+      {
+        "field": "sections[devlet-hatun]",
+        "note": "Çelebi Mehmed'in annesinin kimliği tartışmalıdır: uzun yıllar Germiyanoğlu Süleyman Şah'ın kızı kabul edilmiş, kitap ise vakfiyeye dayanarak Abdullah adlı devşirmenin kızı olduğunu söyler. Kitap aynı paragrafta Yıldırım Bayezid'in eşlerinden birini 'Germiyanoğlu Süleyman Şah'ın kızı Devlet Hatun' diye anıp hemen ardından vakfiyeye dayanarak bu bağın olmadığını söyler; iki ifade birbiriyle çelişir."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Türbe bir yerde 'sivri külahla örtülen' (s. 154), başka yerde 'on iki kenarlı ve yüksek kasnaklı piramidal kurşun kaplamalı' (s. 157) olarak anlatılır. Kaynağa sadık kalınarak ikisi de korundu."
+      },
+      {
+        "field": "dating",
+        "note": "Ayakucundaki kitabe 'Şevvâl 816' tarihini türbenin tarihi olarak verir; kitap aynı zamanda Devlet Hatun'un ölümünü Aralık 1413-Ocak 1414 olarak yazar. Hicri-Miladi karşılık tutarlıdır. Kitabenin tarihi ölüm tarihi mi inşa tarihi mi olduğu açıkça ayrılmaz."
+      },
+      {
+        "field": "relations[bursa-yildirim-yesil-kulliyesi]",
+        "note": "Çelebi Mehmed vakfiyesinin hangi vakıf kaydı olduğu (Yeşil Külliye vakfiyesiyle aynı mı) kitapta açıkça yazılmaz; ilişki probable işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Devlet Hatun Türbesi",
+    "en": "Devlet Hatun Tomb"
+  },
+  "subtitle": {
+    "tr": "Çelebi Mehmed'in annesinin mermer açık türbesi",
+    "en": "The open marble tomb of Çelebi Mehmed's mother"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hundî Sultan Türbesi",
+      "en": "Hundi Sultan Tomb",
+      "note": "Bazı tarihî belgelerde"
+    },
+    {
+      "tr": "Aktürbe",
+      "en": "Aktürbe",
+      "note": "Bazı tarihî belgelerde"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-yesil-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "açık türbe",
+    "baldaken",
+    "mermer",
+    "Devlet Hatun",
+    "Çelebi Mehmed",
+    "Meydancık"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Meydancık",
+    "address": "Hundi Hatun Sokağı, Meydancık Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "154"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.181698,
+      "lng": 29.074368,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-yildirim-yesil-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "summary": {
+    "tr": "Yıldırım Bayezid'in eşi ve Çelebi Mehmed'in annesi Devlet Hatun için yapılan türbe, tamamen mermerden, baldaken planlı bir açık türbedir. Kitabesine göre H. Şevval 816 / M. Aralık 1413-Ocak 1414 tarihlidir.",
+    "en": "The tomb of Devlet Hatun, wife of Yıldırım Bayezid and mother of Çelebi Mehmed, is an open, baldachin-plan tomb built entirely of marble. Its inscription gives AH Shawwal 816 / AD December 1413 - January 1414."
+  },
+  "legends": [
+    {
+      "id": "hundi-hatun-banisi",
+      "title": {
+        "tr": "Türbeyi Hundi Hatun'un yaptırdığı kanaati",
+        "en": "Belief that Hundi Hatun built the tomb"
+      },
+      "body": {
+        "tr": "Halk arasında annenin ve kızın adları karıştırılmış ya da türbenin Hundi Hatun tarafından yaptırıldığı kanaati yayılmış olabilir. Kitap, Usûl-i Mi'mârî-i Osmânî'nin banî olarak Çelebi Mehmed'i vermesinin bu halk rivayetini geçersiz kıldığını belirtir.",
+        "en": "The public may have confused the names of mother and daughter, or a belief spread that Hundi Hatun built the tomb. The book says Usûl-i Mi'mârî-i Osmânî naming Çelebi Mehmed as founder invalidates this popular narrative."
+      },
+      "source_verdict": "refuted_by_source",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "154-155"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kenar_olcusu",
+      "label": {
+        "tr": "Kenar ölçüsü",
+        "en": "Side dimension"
+      },
+      "value": "5,75 x 5,75",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "154"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_dilim_sayisi",
+      "label": {
+        "tr": "İç kubbe dilim sayısı",
+        "en": "Inner dome segments"
+      },
+      "value": 32,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_kenar_sayisi",
+      "label": {
+        "tr": "Kasnak/örtü kenar sayısı",
+        "en": "Drum/roof sides"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ],
+      "note": {
+        "tr": "On iki kenarlı piramidal kurşun kaplı örtü",
+        "en": "Twelve-sided pyramidal lead-covered roof"
+      }
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Türbedeki sanduka sayısı",
+        "en": "Sarcophagi in the tomb"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Devlet Hatun",
+      "role": {
+        "tr": "Yıldırım Bayezid'in eşi, Çelebi Mehmed'in annesi; türbenin sahibi",
+        "en": "Wife of Yıldırım Bayezid, mother of Çelebi Mehmed; owner of the tomb"
+      }
+    },
+    {
+      "name": "Sultan Çelebi Mehmed",
+      "role": {
+        "tr": "Türbenin banisi (Usûl-i Mi'mârî-i Osmânî'ye göre)",
+        "en": "Founder of the tomb (according to Usûl-i Mi'mârî-i Osmânî)"
+      }
+    },
+    {
+      "name": "Yıldırım Bayezid",
+      "role": {
+        "tr": "Devlet Hatun'un eşi",
+        "en": "Husband of Devlet Hatun"
+      }
+    },
+    {
+      "name": "Hundi Hatun",
+      "role": {
+        "tr": "Yıldırım Bayezid ile Devlet Hatun'un kızı, Emîr Sultan'ın eşi; Emîr Sultan'ın türbesinde medfundur",
+        "en": "Daughter of Yıldırım Bayezid and Devlet Hatun, wife of Emir Sultan; buried in his tomb"
+      }
+    },
+    {
+      "name": "Devletşah Hatun",
+      "role": {
+        "tr": "Yıldırım Bayezid'in devşirme kökenli diğer eşi",
+        "en": "Yıldırım Bayezid's other wife, of devshirme origin"
+      }
+    },
+    {
+      "name": "Abdullah",
+      "role": {
+        "tr": "Devlet Hatun'un vakfiyesine göre babası (devşirme)",
+        "en": "Father of Devlet Hatun according to her charter (devshirme)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "lahit-basucu-kitabesi",
+      "location": {
+        "tr": "Lahdin başucu",
+        "en": "Headboard of the sarcophagus"
+      },
+      "language": "ar",
+      "script": "Celi sülüs (kabartma)",
+      "transliteration": "Hâzihî’t-türbetü’ş-şerîfetü es-Seyyidetü’l-Muhadderât Sultânu’l-Havâtîn Devlet Hâtûn ve hiye vâlidetü Sultânu’l-A‘zam Mehmed bin Bâyezîd Hân halleda’llâhu mülkehû",
+      "translation": {
+        "tr": "Bu şerefli türbe, hanımefendilerin sultanı, mümin kadınların önderi, büyük sultan Bayezid oğlu Mehmed Han’ın -mülkü daim olsun- annesi Devlet Hatun’a aittir.",
+        "en": "This honorable tomb belongs to Devlet Hatun, the sultan of ladies, the leader of the believing women, the mother of Mehmed Han, the son of the great sultan Bayezid -may her estate be eternal."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "id": "lahit-ayakucu-kitabesi",
+      "location": {
+        "tr": "Lahdin ayakucu",
+        "en": "Footboard of the sarcophagus"
+      },
+      "language": "ar",
+      "script": "Celi sülüs (kabartma)",
+      "transliteration": "Fî târîhi şehri Şevvâl li-seneti sitte ve aşera ve semâne mi’e",
+      "translation": {
+        "tr": "(H. Şevval 816 / M. Aralık 1413-Ocak 1414)",
+        "en": "(AH Shawwal 816 / AD December 1413 - January 1414)"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 816,
+        "gregorian": "1413-12 / 1414-01"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ],
+      "note": {
+        "tr": "Kitaptaki Türkçe 'meal' yalnızca tarih karşılığıdır.",
+        "en": "The book's rendering gives only the date equivalent."
+      }
+    },
+    {
+      "id": "lahit-besmele-ayet-el-kursi",
+      "location": {
+        "tr": "Lahdin kuzey ve güney yüzleri",
+        "en": "North and south faces of the sarcophagus"
+      },
+      "language": "ar",
+      "script": "Celi sülüs (kabartma)",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ],
+      "note": {
+        "tr": "Kuzey yüzde Besmele ile başlar, Âyetü'l-kürsî yarıya kadar yazıldıktan sonra güney yüzde devam eder; kitap metni vermez.",
+        "en": "Starts with the Basmala on the north face and continues on the south face after Ayat al-Kursi is written halfway; the book gives no text."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "devlet-hatun-olumu-1413",
+      "year": 1413,
+      "date": null,
+      "hijri": "Şevval 816",
+      "type": "record",
+      "title": {
+        "tr": "Devlet Hatun'un ölümü (Aralık 1413-Ocak 1414)",
+        "en": "Death of Devlet Hatun (December 1413 - January 1414)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "154-155"
+        }
+      ]
+    },
+    {
+      "id": "devlengec-suyu-1615",
+      "year": 1615,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1615 belgeleri: Çelebi Mehmed'in yapıya Devlengeç suyunu bağladığını belirtir",
+        "en": "1615 documents state that Çelebi Mehmed connected the Devlengeç water to the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon",
+        "en": "Comprehensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2020",
+      "year": 2020,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi'nin basit onarımı ve çevre düzenlemesi",
+        "en": "Simple repair and landscaping by Bursa Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "baldaken",
+      "title": {
+        "tr": "Açık mermer türbe",
+        "en": "Open marble tomb"
+      },
+      "hint": {
+        "tr": "İkiz sivri kemerleri ve ince mermer sütunları inceleyin.",
+        "en": "Look at the twin pointed arches and slender marble columns."
+      },
+      "section_id": "mimari"
+    },
+    {
+      "feature": "lahit-kitabesi",
+      "title": {
+        "tr": "Lahit kitabesi",
+        "en": "Sarcophagus inscription"
+      },
+      "hint": {
+        "tr": "Başucunda Devlet Hatun'un adı ve ayakucunda tarih yazılıdır.",
+        "en": "Her name is on the headboard and the date on the footboard."
+      },
+      "section_id": "sanduka-kitabe"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yesil-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "İç kubbenin göbeği Yeşil Cami'nin tabhane kubbelerindeki gibi otuz iki helezoni dilimle tasarlanmıştır.",
+        "en": "The dome centre has thirty-two helical segments like the hospice domes of the Green Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-yesil-kulliyesi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Çelebi Mehmed vakfiyesinde bu türbede cüz okunması için görevlendirme ve ödenek ayrılmıştır; kayıt kitapta Yeşil Külliye'nin alt kesiminde konumlandırılır.",
+        "en": "Çelebi Mehmed's charter provides staff and funds for Quran reading at this tomb; the book places it in the lower part of the Yeşil Complex."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "154"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ebe-hatun-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Aynı baldaken plan şemasındaki Bursa açık türbeleri arasında anılan 'Muradiye'deki Ebe Hatun Türbesi'; ilçesi metinde belirtilmemiş, mevcut kayıtla aynı yapı olduğu varsayıldı.",
+        "en": "Named among Bursa's open tombs with the same baldachin plan ('Ebe Hatun Tomb in Muradiye'); the district is not given, assumed to be the existing record."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "154-155"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Devlet Hatun Türbesi, kare planlı, tamamen mermerden yapılmış açık bir türbedir; dört yanı duvarla kapalı değil, açıktır. Köşelerde mermer payeler, cephelerde ince mermer sütunların taşıdığı ikiz sivri kemerler yer alır. Üstte on iki kenarlı, yüksek kasnaklı, kurşun kaplı piramit bir örtü yükselir. İçeride, otuz iki dilimli bir kubbe vardır ve ortada Devlet Hatun'a ait tek bir mermer lahit durur.",
+      "en": "The Devlet Hatun Tomb is a square, open tomb built entirely of marble; its sides are open rather than walled. Marble piers stand at the corners and twin pointed arches on thin marble columns frame each side. Above rises a twelve-sided, lead-covered pyramidal roof on a tall drum. Inside is a thirty-two-segment dome and a single marble sarcophagus belonging to Devlet Hatun in the centre."
+    },
+    "audio_description_source": "source_text"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": [],
+  "dating": {
+    "display": {
+      "tr": "H. Şevval 816 / M. Aralık 1413-Ocak 1414",
+      "en": "AH Shawwal 816 / AD December 1413 - January 1414"
+    },
+    "start_year": 1413,
+    "end_year": 1414,
+    "hijri_year": 816,
+    "century": 15,
+    "basis": {
+      "tr": "Sandukanın ayakucundaki kitabe 'Şevvâl, sene 816' tarihini verir ve kitap bunu türbenin tarihi olarak okur; Devlet Hatun'un ölümü de Aralık 1413-Ocak 1414 olarak verilir.",
+      "en": "The inscription at the sarcophagus foot gives 'Shawwal, year 816', read by the book as the date of the tomb; Devlet Hatun's death is also given as December 1413 - January 1414."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "154, 157"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Çelebi Mehmed",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "154"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Çelebi Mehmed vakfı",
+    "deed": null,
+    "conditions": {
+      "tr": "Çelebi Mehmed vakfiyesinde annesi Devlet Hatun'un türbesinde cüz okunması için görevlendirme yapılmış ve ödenek ayrılmıştır.",
+      "en": "In his endowment charter Çelebi Mehmed assigned people to read the Quran (cüz) at his mother's tomb and allocated funds for this."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "154"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "konum",
+      "order": 1,
+      "title": {
+        "tr": "Konum",
+        "en": "Location"
+      },
+      "body": {
+        "tr": "Yapı, Bursa'nın Yıldırım ilçesi Meydancık Mahallesi'nde, Hundi Hatun Sokağı üzerinde yer alır. Kitabın başka bir yerinde kabrin Yeşil Külliye'nin alt kesiminde, Meydancık Mahallesi'ndeki Hundi Kadın Sokağı üzerinde bir bahçe içinde bulunduğu yazılır.",
+        "en": "The building is on Hundi Hatun Street in the Meydancık neighbourhood of Yıldırım, Bursa. Elsewhere the book places the grave in a garden on Hundi Kadın Street in Meydancık, in the lower part of the Yeşil Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "154"
+        }
+      ]
+    },
+    {
+      "id": "devlet-hatun",
+      "order": 2,
+      "title": {
+        "tr": "Devlet Hatun Kimdir?",
+        "en": "Who Was Devlet Hatun?"
+      },
+      "body": {
+        "tr": "Devlet Hatun, Yıldırım Bayezid'in hanımı ve Çelebi Sultan Mehmed'in annesidir. Yıldırım Bayezid'in biri Germiyanoğlu Süleyman Şah'ın kızı olan Devlet Hatun, diğeri devşirme kökenli Devletşah Hatun olmak üzere iki eşi olduğu bilinir. Osmanlı kaynaklarında padişah eşleri ve hanedan kızları çoğu zaman asıl adlarıyla değil 'Şah Sultan', 'Sultan Hatun' ya da 'Devlet Hatun' gibi unvanlarla anıldığından gerçek adlarını belirlemek güçtür. Uzun yıllar Çelebi Mehmed'in annesinin, Germiyanoğlu Süleyman Şah ile Mevlânâ'nın oğlu Sultan Veled'in torunu Mutahhara Hatun'dan doğan Devlet Hatun olduğu kabul edilmiştir; ancak Devlet Hatun'un vakfiyesindeki kayıtlar onun Abdullah adında bir devşirmenin kızı olduğunu, dolayısıyla Germiyanoğulları ya da Mevlânâ soyuyla bağı bulunmadığını göstermiştir. Devlet Hatun Aralık 1413-Ocak 1414 arasında vefat etmiştir.",
+        "en": "Devlet Hatun was the wife of Yıldırım Bayezid and the mother of Çelebi Sultan Mehmed. Bayezid had two wives: Devlet Hatun, said to be a daughter of Süleyman Shah of Germiyan, and Devletşah Hatun, of devshirme origin. Ottoman sources often name sultans' wives and dynasty daughters by titles such as 'Şah Sultan', 'Sultan Hatun' or 'Devlet Hatun', making real names hard to establish. For many years Çelebi Mehmed's mother was believed to be Devlet Hatun, born of Mutahhara Hatun (granddaughter of Sultan Veled, son of Mevlânâ) and Süleyman Shah of Germiyan; but the records in Devlet Hatun's endowment charter show she was the daughter of a devshirme named Abdullah, with no link to the Germiyanid dynasty or Mevlânâ's line. She died between December 1413 and January 1414."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "154-155"
+        }
+      ]
+    },
+    {
+      "id": "adlandirma",
+      "order": 3,
+      "title": {
+        "tr": "Adlandırma ve Banî",
+        "en": "Naming and Founder"
+      },
+      "body": {
+        "tr": "Türbe bazı tarihî belgelerde 'Hundî Sultan Türbesi' veya 'Aktürbe' adlarıyla geçer; bulunduğu sokağın adı da 'Hundi Kadın'dır. Hundi Hatun, Yıldırım Bayezid ile Devlet Hatun'un kızı ve Emîr Sultan'ın eşidir; kitap, halkın anne ile kızın adlarını karıştırmış olabileceğini ya da türbenin Hundi Hatun'a yaptırıldığı yönünde bir kanaatin yayıldığını söyler. Ancak Usûl-i Mi'mârî-i Osmânî türbenin banisi olarak Çelebi Mehmed'in adını verir ve kitap bu bilginin söz konusu halk rivayetini geçersiz kıldığını belirtir. Hundi Hatun eşi Emîr Sultan'ın türbesinde medfundur. Çelebi Mehmed vakfiyesinde annesinin türbesinde cüz okunması için görevlendirme yapmış ve ödenek ayırmıştır.",
+        "en": "In some historical documents the tomb is called 'Hundi Sultan Tomb' or 'Aktürbe', and the street is named 'Hundi Kadın'. Hundi Hatun was the daughter of Yıldırım Bayezid and Devlet Hatun and wife of Emir Sultan; the book says the public may have confused mother and daughter, or a belief spread that Hundi Hatun built the tomb. But Usûl-i Mi'mârî-i Osmânî names Çelebi Mehmed as the founder, which the book says invalidates that popular narrative. Hundi Hatun is buried in her husband Emir Sultan's tomb. In his charter Çelebi Mehmed provided for Quran reading at his mother's tomb and allocated funds."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "154-155"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Devlet Hatun'un türbesi açık türbe formunda, her kenarı 5,75 x 5,75 m ölçüsünde ve bütünüyle mermer malzemeyle yapılmıştır. Selçuklu türbe mimarisinin Osmanlı dönemine uzanan son örneklerinden biri sayılır. Sivri külahla örtülen türbe içten kubbelidir ve yan cepheleri bütünüyle açıktır. Kare planlı yapının her cephesi çökertme silmelerle hareketlendirilmiş, köşeler mermer payelere oturmuş, cepheleri sınırlayan ikiz sivri kemerler ince mermer sütunlarla taşınmıştır; bu kurgu literatürde 'baldaken plan şeması' olarak adlandırılır. Bursa'da benzer plana sahip birçok açık türbe vardır; Muradiye'deki Ebe Hatun ve Saraylılar (Akile Hatun ve Bosfor Belkıs Hatun) türbeleri, Umur Bey Türbesi ve Zeynîler'deki Abdüllatîf-i Kudsî Türbesi bunların öne çıkan örnekleridir. Türbe on iki kenarlı ve yüksek kasnaklı piramidal kurşun kaplamalı bir örtü sistemine sahiptir; içten otuz iki dilimli, Türk üçgenlerine oturan bir kubbeyle örtülüdür ve göbek kısmı Yeşil Cami'nin tabhane kubbelerindeki gibi otuz iki helezoni dilimle tasarlanmıştır. Kubbenin iç yüzeyi son dönemde yapılan sade ve niteliksiz kalem işi süslemelerle bezelidir. Mermer payeler, sütunlar ve başlıklar yüksek nitelikli taş işçiliğine sahiptir; bazı bloklar devşirme olsa da mimari elemanlar bu yapı için özel hazırlanmış izlenimi verir.",
+        "en": "Devlet Hatun's tomb is an open tomb, 5.75 x 5.75 m per side, built entirely of marble. It is considered one of the last examples of Seljuk tomb architecture extending into the Ottoman period. Covered by a pointed cone, it is domed inside with fully open side façades. Each façade of the square plan is enlivened by sunken mouldings, the corners rest on marble piers, and twin pointed arches carried by thin marble columns border the façades, a scheme the literature calls the 'baldachin plan'. Bursa has many similar open tombs, such as the Ebe Hatun and Saraylılar (Akile Hatun and Bosfor Belkıs Hatun) tombs in Muradiye, the Umur Bey Tomb and the Abdüllatîf-i Kudsî Tomb in Zeynîler. The tomb has a twelve-sided pyramidal lead-covered roof on a tall drum and a thirty-two-segmented dome inside, on Turkish triangles, with a centre of thirty-two helical segments like the hospice domes of the Green Mosque. The dome's inner surface bears simple, poor-quality recent hand-painted decoration. The marble piers, columns and capitals are finely worked; some blocks are spolia but the elements seem prepared specially for this building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "154-155, 157"
+        }
+      ]
+    },
+    {
+      "id": "sanduka-kitabe",
+      "order": 5,
+      "title": {
+        "tr": "Sanduka ve Kitabeler",
+        "en": "Sarcophagus and Inscriptions"
+      },
+      "body": {
+        "tr": "Türbede yalnızca Devlet Hatun'a ait mermer bir lahit bulunur. Üzerinde celi sülüs hatla kabartma bir inşa kitabesi vardır: metin kuzey yüzünde Besmele ile başlar, Âyetü'l-kürsî yarıya kadar yazıldıktan sonra güney yüzde devam eder. Başucundaki kitabe Devlet Hatun'u ve Sultan Mehmed'in annesi olduğunu belirtir; ayakucundaki kitabe Şevvâl 816 tarihini verir.",
+        "en": "The tomb holds only Devlet Hatun's marble sarcophagus, bearing a relief construction inscription in jali thuluth: it starts with the Basmala on the north face and continues on the south face after Ayat al-Kursi is written halfway. The headboard inscription names Devlet Hatun as Sultan Mehmed's mother; the footboard inscription gives the date Shawwal 816."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 6,
+      "title": {
+        "tr": "Onarımlar ve Çeşme",
+        "en": "Repairs and Fountain"
+      },
+      "body": {
+        "tr": "Türbe zaman içinde çeşitli onarımlar geçirmiş; harap hale gelmesinin ardından 1957'de kapsamlı bir restorasyon yapılmış, 2020'de Bursa Büyükşehir Belediyesi basit bir onarım ve çevre düzenlemesi gerçekleştirmiştir. Girişteki çeşme bugün akmamaktadır; oysa 1615 tarihli belgeler, yapıya Çelebi Mehmed tarafından Devlengeç suyunun bağlandığını açıkça belirtir.",
+        "en": "The tomb has been repaired over time; after falling into disrepair it was comprehensively restored in 1957, and in 2020 Bursa Metropolitan Municipality did a simple repair and landscaping. The fountain at the entrance does not flow today, but documents from 1615 state that Çelebi Mehmed had the Devlengeç water connected to the building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "157"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-molla-gurani-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yeşil Mescit'in kayıt adı/id'si belirsiz (bursa-osmangazi-molla-gurani-mescidi tahmini).",
+      "Türbenin ölçüleri kitapta yok.",
+      "Aynı alandaki iki kabrin kimliği verilmiyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türbenin yapım yılı verilmiyor; tarih Hüseyin Erzincanî'nin vefat yılına dayanıyor (probable)."
+      },
+      {
+        "field": "sections[kisi]",
+        "note": "Kitap 'Kanûnî döneminde (1520-1566) göç etti' diyor ve vefatı H. 1003 / M. 1595; ikisi uyumlu ama göç yılı belirtilmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Molla Gürani (Yeşil Güranlı) Türbesi",
+    "en": "Molla Gürani (Yeşil-Güranlı) Tomb"
+  },
+  "subtitle": {
+    "tr": "Yeşil Mescit'in arkasındaki, cami içinden girilen türbe",
+    "en": "Tomb behind the Green Masjid, entered through the mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yeşil Güranlı Türbesi",
+      "en": "Yeşil Güranlı Tomb"
+    },
+    {
+      "tr": "Seyyid Hüseyin Erzincanî Türbesi",
+      "en": "Seyyid Hüseyin Erzincanî Tomb",
+      "note": "Kitaba göre türbenin sahibi"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Seyyid Hüseyin Erzincanî",
+    "Yeşil Mescit",
+    "Erzincan",
+    "Güran köyü"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollagürani Mahallesi",
+    "address": "Güranlı Sokak ile 2. Tahtalı Sokak'ın kesişimi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "509"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1003 / M. 1595 (vefat)",
+      "en": "AH 1003 / AD 1595 (death)"
+    },
+    "start_year": 1595,
+    "end_year": 1595,
+    "hijri_year": 1003,
+    "century": 16,
+    "basis": {
+      "tr": "Hüseyin Erzincanî'nin vefat yılı; defin, H. 1002 / M. 1594'te yapılan caminin arkasına yapıldı.",
+      "en": "Year of Hüseyin Erzincanî's death; he was buried behind the mosque built in AH 1002 / AD 1594."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "509"
+      }
+    ]
+  },
+  "founder": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mollagürani Mahallesi'nde, Seyyid Hüseyin Erzincanî bin Seyyid Abdurrahim Efendi'ye ait, konik biçimli ve taş-tuğla almaşık örgülü türbe. H. 1002 / M. 1594'te yapılan caminin (halk arasında Yeşil Mescit) arkasındadır; türbeye cami içinden geçilir.",
+    "en": "A conical tomb in alternating stone-brick masonry in Mollagürani, belonging to Seyyid Hüseyin Erzincanî bin Seyyid Abdurrahim Efendi. It stands behind the mosque built in AH 1002 / AD 1594 (popularly the Green Masjid) and is reached through the mosque."
+  },
+  "sections": [
+    {
+      "id": "kisi",
+      "order": 1,
+      "title": {
+        "tr": "Seyyid Hüseyin Erzincanî",
+        "en": "Seyyid Hüseyin Erzincanî"
+      },
+      "body": {
+        "tr": "Türbe, Kanûnî Sultan Süleyman döneminde (1520-1566) Erzincan'ın Güran köyünden Bursa'ya göç eden Seyyid Hüseyin Erzincanî bin Seyyid Abdurrahim Efendi'ye aittir. H. 1003 / M. 1595'teki vefatından sonra, H. 1002 / M. 1594'te yapılan caminin arka kısmına defnedilmiştir. Aynı alanda iki kabir daha vardır.",
+        "en": "The tomb belongs to Seyyid Hüseyin Erzincanî bin Seyyid Abdurrahim Efendi, who migrated to Bursa from Güran village in Erzincan in the reign of Suleiman the Magnificent (1520-1566). After his death in AH 1003 / AD 1595 he was buried behind the mosque built in AH 1002 / AD 1594. There are two more graves in the same area."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    },
+    {
+      "id": "cami",
+      "order": 2,
+      "title": {
+        "tr": "Yeşil Mescit",
+        "en": "The Green Masjid"
+      },
+      "body": {
+        "tr": "Cami, dış cephesindeki yeşil sıva nedeniyle halk arasında 'Yeşil Mescit' diye anılmıştır. Uzun yıllar farklı amaçlarla kullanılmış, 1978'de Vakıflar Genel Müdürlüğü tarafından kamulaştırılarak özgün işlevine uygun düzenlenmiştir.",
+        "en": "The mosque was popularly called the 'Green Masjid' for the green plaster on its exterior. It was used for other purposes for many years and in 1978 was expropriated by the General Directorate of Foundations and rearranged for its original function."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Konik biçimli, taş-tuğla almaşık örgüyle yapılan türbe Osmanlı Dönemi'nin yerel mimari özellikleriyle uyum gösterir. Üst örtüsü kiremit çatıdır. Türbeye cami içinden geçilerek ulaşılır.",
+        "en": "The conical tomb, built in alternating stone-brick masonry, is in harmony with the local architecture of the Ottoman period. Its upper cover is a tile roof. It is reached by passing through the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "soyu",
+      "title": {
+        "tr": "Hz. Muhammed'in soyundan gelme rivayeti",
+        "en": "Tradition of descent from the Prophet"
+      },
+      "body": {
+        "tr": "Seyyid Hüseyin Erzincanî'nin Hz. Muhammed'in (sav) soyundan geldiği rivayet edilir.",
+        "en": "Seyyid Hüseyin Erzincanî is said to be a descendant of the Prophet Muhammad (pbuh)."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "cami_insa",
+      "label": {
+        "tr": "Caminin yapım yılı",
+        "en": "Year the mosque was built"
+      },
+      "value": "H. 1002 / M. 1594",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    },
+    {
+      "key": "vefat",
+      "label": {
+        "tr": "Hüseyin Erzincanî'nin vefatı",
+        "en": "Death of Hüseyin Erzincanî"
+      },
+      "value": "H. 1003 / M. 1595",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    },
+    {
+      "key": "ek_kabir",
+      "label": {
+        "tr": "Aynı alandaki ek kabir sayısı",
+        "en": "Additional graves in the same area"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    },
+    {
+      "key": "kamulastirma",
+      "label": {
+        "tr": "Caminin kamulaştırıldığı yıl",
+        "en": "Year the mosque was expropriated"
+      },
+      "value": 1978,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyyid Hüseyin Erzincanî",
+      "role": {
+        "tr": "Türbenin sahibi; Erzincan Güran köyünden göç eden seyyid",
+        "en": "Occupant of the tomb; sayyid who migrated from Güran village, Erzincan"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "cami-insa",
+      "year": 1594,
+      "date": null,
+      "hijri": "1002",
+      "type": "construction",
+      "title": {
+        "tr": "Cami (Yeşil Mescit) yapıldı",
+        "en": "Mosque (Green Masjid) built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    },
+    {
+      "id": "vefat",
+      "year": 1595,
+      "date": null,
+      "hijri": "1003",
+      "type": "record",
+      "title": {
+        "tr": "Seyyid Hüseyin Erzincanî vefat etti, caminin arkasına defnedildi",
+        "en": "Seyyid Hüseyin Erzincanî died and was buried behind the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    },
+    {
+      "id": "kamulastirma-1978",
+      "year": 1978,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Cami Vakıflar Genel Müdürlüğü'nce kamulaştırılıp özgün işlevine döndürüldü",
+        "en": "Mosque expropriated by the General Directorate of Foundations and returned to its original function"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-molla-gurani-mescidi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe, caminin (Yeşil Mescit) arkasında yer alır ve cami içinden girilir.",
+        "en": "The tomb stands behind the mosque (Green Masjid) and is entered through it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "509"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Molla Gürani Türbesi, konik biçimli, taş ve tuğla sıralı duvarlı ve kiremit çatılı bir yapıdır. Yeşil sıvalı caminin arkasında yer alır ve cami içinden geçilerek girilir. Aynı alanda iki kabir daha bulunur.",
+      "en": "Molla Gürani Tomb is a conical building with stone-and-brick walls and a tile roof. It stands behind the green-plastered mosque and is entered through it. Two more graves are in the same area."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

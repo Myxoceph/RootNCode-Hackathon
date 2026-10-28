@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-seyh-kutbuddin-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İznik bölümünden (vk-bursa-c3) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapının mimari betimi, yapım tarihi, yaptıranı ve geçirdiği onarımlar kitap metninde yok (bölüm yalnızca şeyhin biyografisini veriyor); sayfa 447 metinde boş görünüyor. Kitap sayfaları gözden geçirilmeli.",
+      "Kitap yapıyı 'cami' başlığı altında veriyor; zaviye ile caminin aynı yapı olup olmadığı metinden anlaşılmıyor (secondary_types 'tekke' tahmini).",
+      "Dönem (era) belirlenemedi.",
+      "Koordinat kitapta yok; sahada ya da harita üzerinden doğrulanıp eklenmeli.",
+      "Fotoğraflar (güncel ve arşiv) henüz eşleştirilmedi; match_photos.py ile eklenecek; media_folder atanacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) kitapta yok; sahada teyit edilmeli.",
+      "Ambient ses (ambient_sound) ve ziyaretçi ipuçları henüz hazırlanmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Başlık 'Şeyh Kutbüddin Camii' ama metin zaviyeyi anlatıyor; ikisinin aynı yapı olduğu kaynakta açıkça söylenmiyor."
+      },
+      {
+        "field": "timeline[vefat]",
+        "note": "8 Zilkade 821 H. ile 7 Aralık 1418 M. tutarlı görünüyor; TR ve EN metinler aynı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Kutbüddin Camii",
+    "en": "Shaykh Kutbüddin Mosque"
+  },
+  "subtitle": {
+    "tr": "İznikli mutasavvıf Şeyh Kutbüddin'in zaviyesiyle anılan cami",
+    "en": "Mosque associated with the lodge of the Iznik Sufi Shaykh Kutbüddin"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "tasavvuf",
+    "zaviye",
+    "Kutbüddin İznikî",
+    "İznik"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Eşrefzâde Mahallesi",
+    "address": "Alaaddin Mısri Sokağı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "446"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi kitapta belirtilmemiş",
+      "en": "Construction date not stated in the book"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitaptaki metin yapının inşa tarihini ve yaptıranını vermiyor; yalnızca Şeyh Kutbüddin'in 1418'deki vefatı belirtiliyor.",
+      "en": "The text gives no construction date or founder; only the shaykh's death in 1418 is stated."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "446"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kitaptaki bölüm yapıdan çok, İznik'te zaviyesi bulunan ve kendi zaviyesine defnedilen Şeyh Kutbüddin İznikî'nin hayatını anlatır.",
+    "en": "The book's section mainly describes the life of Shaykh Kutbüddin Iznikî, who had a lodge in Iznik and was buried in it."
+  },
+  "sections": [
+    {
+      "id": "sahsiyet",
+      "order": 1,
+      "title": {
+        "tr": "Şeyh Kutbüddin İznikî",
+        "en": "Shaykh Kutbüddin Iznikî"
+      },
+      "body": {
+        "tr": "Oğlu Kutbüddinzâde Mehmed İznikî'ye ait bir risaledeki kayda göre Şeyh Kutbüddin aslen Niğde doğumludur ve sonradan İznik'e göç etmiştir; babasının adı Mehmed'dir. Osmanlı veziri ve Arap dili âlimi Niksârî Hasan Paşa'nın da aralarında bulunduğu hocalardan ders almış, şer'î ilimlerdeki bilgisi ve tasavvuftaki yüksek dereceleriyle tanınmıştır. Evliya Çelebi'ye göre İznik'te bir asitanesi (zaviyesi) vardır ve tarikat faaliyetlerini orada yürütür. 8 Zilkade 821 / 7 Aralık 1418'de İznik'te vefat etmiş, kendi zaviyesine defnedilmiştir.",
+        "en": "According to a record in a treatise by his son Kutbüddinzâde Mehmed Iznikî, the shaykh was born in Niğde and later migrated to Iznik; his father was Mehmed. He studied under teachers including the Ottoman vizier and Arabic scholar Niksârî Hasan Paşa and was known for his religious learning and high Sufi degrees. According to Evliya Çelebi he had a lodge in Iznik where the order's activities took place. He died in Iznik on 8 Dhu al-Kha'dah AH 821 / 7 December AD 1418 and was buried in his own zawiya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "446"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "timur-gorusmesi",
+      "title": {
+        "tr": "Timur ile görüşme rivayeti",
+        "en": "Account of the meeting with Timur"
+      },
+      "body": {
+        "tr": "Bazı tarihî kaynaklarda, Timur'un Anadolu'yu işgali sırasında Kutbüddin İznikî'nin onunla görüşüp haksız yere kan dökmekten vazgeçmesi yönünde uyardığı; Yıldırım Bayezid'in oğlu Îsâ Çelebi'nin Timur'a bağlılık bildirmek üzere elçi gönderildiği ve Timur'un Kutbüddin aracılığıyla Çelebi'ye kemer, külah ve çeşitli hediyeler yolladığı rivayet edilmektedir.",
+        "en": "Some historical sources narrate that during Timur's invasion of Anatolia, Kutbüddin Iznikî met him and warned him to stop shedding blood unjustly; that Yıldırım Bayezid's son Îsâ Çelebi was sent as ambassador to declare allegiance to Timur; and that Timur sent Çelebi a belt, a hat and gifts through Kutbüddin."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "446"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "dogum_yeri",
+      "label": {
+        "tr": "Doğum yeri",
+        "en": "Birthplace"
+      },
+      "value": "Niğde",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "446"
+        }
+      ]
+    },
+    {
+      "key": "vefat",
+      "label": {
+        "tr": "Vefat tarihi",
+        "en": "Date of death"
+      },
+      "value": "8 Zilkade 821 / 7 Aralık 1418",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "446"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Kutbüddin İznikî",
+      "role": {
+        "tr": "Zaviye sahibi mutasavvıf",
+        "en": "Sufi shaykh, lodge owner"
+      }
+    },
+    {
+      "name": "Kutbüddinzâde Mehmed İznikî",
+      "role": {
+        "tr": "Oğlu; risalesi kaynak",
+        "en": "His son; author of the treatise used as source"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Zaviyeyi anan seyyah",
+        "en": "Traveller who mentions the lodge"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat",
+      "year": 1418,
+      "date": null,
+      "hijri": "8 Zilkade 821",
+      "type": "record",
+      "title": {
+        "tr": "Şeyh Kutbüddin İznikî vefat etti ve kendi zaviyesine defnedildi",
+        "en": "Shaykh Kutbüddin Iznikî died and was buried in his own zawiya"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "446"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

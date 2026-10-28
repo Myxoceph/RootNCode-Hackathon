@@ -1,0 +1,687 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ismail-hakki-tekkesi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 350-356) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Tekke yapılarından yıkılan ev ve konukevi ile çilehane, misafirhane için ayrı kayıt gerekip gerekmediği veri ekibince karara bağlanmalı.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Çağ (era): 1723 tarihi nedeniyle 'gec-osmanli' girildi (enums'ta tanımlı sınır yok), veri ekibi gözden geçirmeli.",
+      "Çeşme kitabesinin yazarı kitapta belirtilmiyor; author alanı mahlastan çıkarıldı, doğrulanmalı.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[tarihce]",
+        "note": "s. 351 'son tamir 2005', s. 352 'en son 2017'de esaslı şekilde onarılmıştır' der; ayrıca s. 351 yalnızca 1843 ve 1900 onarımlarını, s. 352 ayrıca 1740'ı sayar. Kitabın iki değeri de korundu, ilgili zaman çizelgesi olayları 'disputed' işaretlendi."
+      },
+      {
+        "field": "dating",
+        "note": "Metin yapıyı ve çeşmeyi 1723'e tarihler; çeşme kitabesi H. 1135 / M. 1722–23'tür. H. 1135 yılı 1722-23'e denk geldiği için 1723 değeri korunmuş, yalnızca ayrıntı notlandı."
+      },
+      {
+        "field": "inscriptions[mezar-tasi-kitabesi]",
+        "note": "Türkçe Mealen sonu 'M. 1725', İngilizce çeviri sonu '1724–1725 AD' yazar; vefat yılı H. 1137 / M. 1725 olarak verilmiştir."
+      },
+      {
+        "field": "inscriptions[sebeke-levhasi-siir]",
+        "note": "Kitaptaki İngilizce 'Meaning' metni, bu şiirin değil mezar taşı kitabesinin çevirisini aynen tekrar eder; baskı hatası olabilir. İngilizce çeviri boş bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İsmail Hakkı Tekkesi Camii",
+    "en": "İsmail Hakkı Sufi Lodge Mosque"
+  },
+  "subtitle": {
+    "tr": "Şeyh İsmail Hakkı Bursevî'nin 1723'te yaptırdığı tekke yapıları topluluğu, camisi ve haziresi",
+    "en": "Sufi lodge complex, mosque and graveyard built in 1723 by Shaykh İsmail Hakkı Bursevî"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hikmetizâde Tekkesi",
+      "en": "Hikmetizâde Sufi Lodge"
+    },
+    {
+      "tr": "Cami-i Muhammedî",
+      "en": "Cami-i Muhammedî"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "tekke",
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "tekke",
+    "dergâh",
+    "Celvetî",
+    "İsmail Hakkı Bursevî",
+    "semahane",
+    "çilehane",
+    "hazire",
+    "çeşme",
+    "kitabeli"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tuzpazarı",
+    "address": "Hoşgör Sokak, No: 4",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "350"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.186181,
+      "lng": 29.06561,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/699099605 ('İsmail Hakkı Bursevi Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1723",
+      "en": "1723"
+    },
+    "start_year": 1723,
+    "end_year": 1723,
+    "hijri_year": null,
+    "century": 18,
+    "basis": {
+      "tr": "Kitap, yapılar topluluğunun Şeyh İsmail Hakkı Bursevî tarafından 1723'te inşa ettirildiğini; çeşmenin de camiyle aynı tarihte yapıldığını belirtir. Çeşme kitabesi H. 1135 / M. 1722-23'tür.",
+      "en": "The book states the building group was built in 1723 by Shaykh İsmail Hakkı Bursevî and that the fountain was built in the same year as the mosque. The fountain inscription is dated AH 1135 / AD 1722-23."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "350, 352"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şeyh İsmail Hakkı Bursevî (1653-1725)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "350"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Büyük mutasavvıf İsmail Hakkı Bursevî'nin 1723'te yaptırdığı tekke, semahane, çilehane, misafirhane ve müştemilat topluluğunun, 1925'ten sonra camiye çevrilen tevhidhane bölümü. Güneyindeki hazirede Bursevî'nin kabri ve dergâh mensuplarının mezarları bulunur; kitabeli çeşmesi vardır.",
+    "en": "The prayer-hall section, converted into a mosque after 1925, of the lodge, semahane, ascetic cell, guesthouse and outbuildings built in 1723 by the great mystic İsmail Hakkı Bursevî. The graveyard to its south holds Bursevî's tomb and the graves of lodge members; it also has an inscribed fountain."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yapı, Tuzpazarı Mahallesi, Hoşgör Sokak No:4'te yer almaktadır. 1653-1725 yılları arasında yaşamış büyük Osmanlı mutasavvıfı Şeyh İsmail Hakkı Bursevî tarafından 1723'te inşa ettirilen bu yapılar topluluğu; tekke, semahane, çilehane, misafirhane ve müştemilattan oluşur. Burası Hikmetizâde Tekkesi ve Cami-i Muhammedî olarak da anılır.",
+        "en": "The building is at Hoşgör Street No. 4, Tuzpazarı Neighborhood. This group of buildings, built in 1723 by the great Ottoman mystic Shaykh İsmail Hakkı Bursevî (1653-1725), consists of a lodge, a semahane, an ascetic cell, a guesthouse and an outbuilding. It is also called Hikmetizâde Tekke and Cami-i Muhammedî."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "350"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe ve Onarımlar",
+        "en": "History and Repairs"
+      },
+      "body": {
+        "tr": "Yapı 1843'te diğer dergâhlarla birlikte onarılmış, 1900'de II. Abdülhamid devrinin ileri gelenlerinden Hacı Ali Paşa'nın öncülüğünde yeniden mükemmel bir onarım görmüştür. 1925'te tekke ve zaviyeler kapatılınca dergâhın tevhidhane bölümü camiye dönüştürülmüş, diğer binalar Kur'an kursu olarak hizmet vermeye devam etmiştir. Cumhuriyet ile Haşim İşcan Caddeleri arasındaki ev ve konukevi yıkılmış, semahane mescit olarak kullanılmaya başlanmıştır. 1970'li yıllardaki onarımlar yapıyı tamamen betonlaştırmış ve pencere aynalarındaki nefis yazılar kaybolmuştur. Kitap bir yerde 2005'teki son tamirle özgün yapısını koruduğunu, başka bir yerde camiyi 1740, 1843 ve 1900'de onarım gördüğünü ve en son 2017'de esaslı şekilde onarıldığını belirtir.",
+        "en": "The building was repaired in 1843 along with other lodges and underwent a splendid restoration in 1900 under the leadership of Hacı Ali Paşa, a leading figure of the reign of Abdülhamid II. When the Sufi lodges and zawiyas were closed in 1925, the prayer-hall section was converted into a mosque while the other buildings continued as a Quran school. The house and guesthouse between Cumhuriyet and Haşim İşcan Streets were demolished and the semahane began to be used as a masjid. Renovations in the 1970s concreted the building and the exquisite inscriptions on the window panels disappeared. The book says in one place that it maintains its original structure from its last renovation in 2005, and in another that the mosque was repaired in 1740, 1843 and 1900 and last thoroughly restored in 2017."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "351, 352"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzey tarafından çift taraflı merdivenlerle çıkılan geniş saçaklı caminin üzeri ahşap çatıyla kaplanmış ve kiremitle örtülmüştür. Cephesi ve çatısı 18. yüzyıl özellikleri taşır. Ahşap minarenin yerine sonradan taştan bir minare yapılmıştır, ancak bu minare tekkenin mimari üslubuna uymaz. Kemerli kapıdan girilen, tonozlu çilehanenin yanındaki ve üzerindeki odalar öğrenci yurdu ve Kur'an kursu olarak kullanılmaktadır.",
+        "en": "The mosque, reached from the north by double-sided stairs, has wide eaves and a wooden roof covered with tiles. Its façade and roof bear 18th-century characteristics. A stone minaret was later built in place of the wooden one, but it does not comply with the lodge's architectural style. The rooms next to and above the vaulted ascetic cell, entered through an arched door, are used as a student dormitory and Quran school."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "351"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 4,
+      "title": {
+        "tr": "Çeşme",
+        "en": "Fountain"
+      },
+      "body": {
+        "tr": "Yine İsmail Hakkı Bursevî'nin inşası olan çeşme, camiyle aynı tarihte, 1723'te yapılmıştır. Üzerinde talik hatla yazılmış mermer bir kitabe bulunur (H. 1135 / M. 1722-23).",
+        "en": "The fountain, also built by İsmail Hakkı Bursevî, was built in 1723, the same date as the mosque. It bears a marble inscription in Ta'liq script (AH 1135 / AD 1722-23)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "352"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 5,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Hazire caminin güney tarafındadır. Burada İsmail Hakkı Bursevî'nin, etrafı demir parmaklıklarla çevrili ve üstü açık kabri vardır; kabirde H. 1137 / M. 1725'te vefatını bildiren Celvetî sarıklı mezar taşı şahidesi ve ayak taşı bulunur. Parmaklıkların dışında, Bursevî'nin ölümünden üç yıl önce yazdığı ve ölüm tarihini bildiren on mısralık şiir mermer levhaya yazılmış olarak şebekeye asılmıştır. Hazirede ayrıca eşi Ayşe Hatun, dergâh şeyhlerinden Mehmed Hikmet Efendi, Hikmetîzâde Mehmed Emin Efendi, Hikmetîzâde Hacı İsmail Efendi, Şeyh Bahâeddin Efendi, Dâye Mehmed Şah, Hacı Ahmed Efendi, Hüdâvendigâr Müşiri Mustafa Nuri Paşa'nın kızı Cüveyriye Hayriye Hanım ve oğlu Mehmed Bahâeddin Efendi'nin kabirleri bulunur. Eskiden biri tekkenin kıble tarafında, diğeri Bâb-ı dergâh karşısındaki çeşmeye nazır iki ayrı hazire varken, bunlar sonradan güneyde birleştirilmiş ve kuzeydeki hazire yok edilmiştir; kaynaklarda adı geçen dergâh mensuplarına ait taşların şu anda var olmayan kısımda olduğu anlaşılmaktadır.",
+        "en": "The graveyard is on the south side of the mosque. It holds the tomb of İsmail Hakkı Bursevî, an open-topped grave surrounded by iron bars, with a Jelveti-turbaned headstone and a footstone announcing his death in AH 1137 / AD 1725. Outside the bars, a ten-line poem written by him three years before his death announcing the date of his death is hung on the grille on a marble plaque. Also buried here are his wife Ayşe Hatun, lodge shaykh Mehmed Hikmet Efendi, Hikmetizâde Mehmed Emin Efendi, Hikmetizâde Hacı İsmail Efendi, Shaykh Bahâeddin Efendi, Dâye Mehmed Şah, Hacı Ahmed Efendi, Cüveyriye Hayriye Hanım (daughter of Hudâvendigâr Marshal Mustafa Nuri Paşa) and his son Mehmed Bahâeddin Efendi. There used to be two separate graveyards, one on the qibla side of the lodge and the other overlooking the fountain opposite the lodge gate; later they were combined on the south side and the northern one was destroyed. The stones of the lodge members named in the sources are understood to be in the part that no longer exists."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "353-355"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hazire_konum",
+      "label": {
+        "tr": "Hazirenin konumu",
+        "en": "Graveyard location"
+      },
+      "value": "Caminin güney tarafı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "353"
+        }
+      ]
+    },
+    {
+      "key": "bursevi_vefat_yili",
+      "label": {
+        "tr": "İsmail Hakkı Bursevî'nin vefat yılı",
+        "en": "Death year of İsmail Hakkı Bursevî"
+      },
+      "value": "H. 1137 / M. 1725",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "353"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İsmail Hakkı Bursevî",
+      "role": {
+        "tr": "Banî; Osmanlı mutasavvıfı (1653-1725); hazirede medfun",
+        "en": "Founder; Ottoman mystic (1653-1725); buried in the graveyard"
+      }
+    },
+    {
+      "name": "Hacı Ali Paşa",
+      "role": {
+        "tr": "II. Abdülhamid devri ileri gelenlerinden; 1900 onarımına öncülük etti",
+        "en": "Leading figure of Abdülhamid II's reign; led the 1900 restoration"
+      }
+    },
+    {
+      "name": "Ayşe Hatun",
+      "role": {
+        "tr": "İsmail Hakkı Bursevî'nin eşi; hazirede medfun",
+        "en": "Wife of İsmail Hakkı Bursevî; buried in the graveyard"
+      }
+    },
+    {
+      "name": "Mehmed Hikmet Efendi",
+      "role": {
+        "tr": "Dergâh şeyhlerinden; hazirede medfun",
+        "en": "One of the lodge shaykhs; buried in the graveyard"
+      }
+    },
+    {
+      "name": "Hikmetîzâde Mehmed Emin Efendi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Hikmetîzâde Hacı İsmail Efendi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Şeyh Bahâeddin Efendi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Dâye Mehmed Şah",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Hacı Ahmed Efendi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Cüveyriye Hayriye Hanım",
+      "role": {
+        "tr": "Hüdâvendigâr Müşiri Mustafa Nuri Paşa'nın kızı; hazirede medfun",
+        "en": "Daughter of Hudâvendigâr Marshal Mustafa Nuri Paşa; buried in the graveyard"
+      }
+    },
+    {
+      "name": "Mehmed Bahâeddin Efendi",
+      "role": {
+        "tr": "İsmail Hakkı Bursevî'nin oğlu; hazirede medfun",
+        "en": "Son of İsmail Hakkı Bursevî; buried in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cesme-kitabesi",
+      "location": {
+        "tr": "Çeşmenin üzerinde, mermer",
+        "en": "On the fountain, marble"
+      },
+      "language": "tr-ottoman",
+      "script": "Ta'lik",
+      "transliteration": "Kâle mecrâ’l mâi Hakkî fî’s-sebîl\nHâzihî aynu’l-mâi selsebîl\nPîşgâh-ı ma’bed-i rûşende bu\nSu çemenzâr-ı safânın zeynidir\nNûş iden dil-teşneler dîr Hakkıyâ\nÇeşme-i âb-ı hayâtın aynîdir H. 1135",
+      "translation": {
+        "tr": "Hakkî der ki:\n“Bu su, Allah yolunda bir sebildir.\nBurası, cennet çeşmesi Selsebîl’den bir pınardır.\nAydınlık bir ibadethanenin önündedir.\nBerrak çayırlığın ziynetidir bu su.\nSusuz gönüller ondan içtikçe Hakk’a yaklaşır.\nBu çeşme, âb-ı hayâtın kendisidir.\nH.1135 / 1722–23.”",
+        "en": "Hakki says:\n“This water is a fountain in the way of Allah.\nThis is a spring from the fountain of heaven, Salsabil.\nIt is in front of a bright place of worship.\nThis water is the ornament of a clear meadow.\nAs thirsty hearts drink from it, they come closer to Allah.\nThis fountain is the water of life itself.\nAH 1135 / AD 1722–23.”"
+      },
+      "author": "İsmail Hakkı Bursevî",
+      "date": {
+        "hijri_year": 1135,
+        "gregorian": "1722-23"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "352"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yazarı belirtmez; 'Hakkî der ki' ifadesi ve mahlas nedeniyle author alanı doldurulmuştur. İlk satır Arapça, diğerleri Osmanlı Türkçesidir.",
+        "en": "The book does not name an author; the author field is inferred from the pen-name 'Hakkî'. The first line is Arabic, the rest Ottoman Turkish."
+      }
+    },
+    {
+      "id": "mezar-tasi-kitabesi",
+      "location": {
+        "tr": "İsmail Hakkı Bursevî'nin kabrindeki şahide",
+        "en": "Headstone of İsmail Hakkı Bursevî's grave"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Hüve ni’me’I-Ğafûr\nKutb-ı zamâne Şeyh İsma’il Hakkı hak bu kim\nİrişdi ilm-i zâhir ü bâtında hakkâ gâyete\nOldı behişte tâir kudsi ruhu per-efşân\nMüsterşidânın eyledi üftâde hâk-i firkate\nTahrîr itdim Hâdiyâ târîh-i sâl-i rıhletin\nHak Hak dedi ‘azm eyledi Hakkî Efendi cennete sene 1137 H.",
+      "translation": {
+        "tr": "“Allah en güzel bağışlayandır.\nBu kimse zamanın kutbu olan İsmail Hakkı’dır\nHem zahir hem de bâtın ilimlerinde hakikate etmiştir.\nRuhu kanat çırparak cennete ulaştı\nOnun yolunda olanlar onu toprağa verdiler\nŞair Hâdi olarak onun vefatına tarih yazdım\nİsmail Hakkı “Hak Hak” diyerek cennete azm eyledi.\nM. 1725”",
+        "en": "“How wonderfully forgiving He is.\nThe qutb of time is Shaykh İsmail Hakki; this is the truth itself.\nHe had reached the highest point in both external and internal sciences.\nHis soul fluttered like a sacred bird in heaven.\nThose who sought guidance from him fell sadly in the soil of separation.\nHe was called Hadi; this is how I recorded the year of his death.\n“Haqq! Hakki Efendi turned towards heaven with dhikr, saying “Haqq! Haqq!”\n1724–1725 AD.”"
+      },
+      "author": "Hâdî (şair; ölüm tarihi mısraının yazarı)",
+      "date": {
+        "hijri_year": 1137,
+        "gregorian": "1725"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "353-355"
+        }
+      ],
+      "note": {
+        "tr": "İlk satır ('Hüve ni’me’I-Ğafûr') Arapçadır, geri kalanı Osmanlı Türkçesidir. Türkçe Mealen 'M. 1725', İngilizce metin '1724–1725 AD' der; çelişki data_quality_notes'ta.",
+        "en": "The first line is Arabic; the rest is Ottoman Turkish. The Turkish translation ends 'AD 1725' while the English says '1724–1725 AD'; see data_quality_notes."
+      }
+    },
+    {
+      "id": "sebeke-levhasi-siir",
+      "location": {
+        "tr": "Parmaklıkların dışında, şebekeye asılı mermer levha",
+        "en": "Marble plaque hung on the grille outside the railings"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "İsmail Hakkı Hazretlerinin irtihalinden üç sene evvel\n(Nakdü’l-Hal) kitabında vefatı tarihini müş’ir nutk-ı âlileridir\nAşk ile tut kûşe-i dâmân-ı şer’-i Ahmed’i\nAbd-i mahz ol bulmak istersen felâh-ı sermedi\nCâm-ı feyz-i vahdet-i zâtiyyeden nûş eyle kim\nOlasın bu bezm-i hâsân içre merd-i evhadi\nSidre vü tûbayı kılma cilvegâh-ı cân u dil\nÂlem-i ervâha irgör tâ ser-i serv-i kadi\nÂşıka zâhid göziyle eyleme hergiz nazar\nÂlim ü dânâ ile bir görme tıfl-ı ebcedi\nÂteş-i tevhîdi her kim yakdı kânûn-ı dile\nHakkîyâ envâr-ı Hak ile pür oldı merkadi.",
+      "translation": {
+        "tr": "Aşk ile Hz. Muhammed’in şeriatına sımsıkı sarıl.\nEbedî kurtuluşu arıyorsan, tam anlamıyla kul ol.\nVarlığın birliğinden gelen feyiz kadehinden iç ki,\nSeçilmişler meclisinde tek ve yüce biri olabilesin.\nSidre ve Tûbâ gibi cennet nimetlerini gönlünün gözdesi yapma.\nRuhlar âlemine yönel, orada yücelerin yücesine kavuşmayı um.\nÂşığa, zâhidin yargılayıcı bakışıyla asla bakma.\nÂlim birini, sadece harf tanıyan bir çocukla bir tutma.\nKalbin ocağında tevhid ateşini kim yakarsa,\nEy Hakkî, onun kabri Allah’ın nurlarıyla dolacaktır.",
+        "en": null
+      },
+      "author": "İsmail Hakkı Bursevî",
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "354-355"
+        }
+      ],
+      "note": {
+        "tr": "Kitap, vefatından üç yıl önce yazılan ve ölüm tarihini bildiren on mısralık şiir olduğunu söyler. Kitaptaki İngilizce 'Meaning' metni bu şiirin değil mezar taşı kitabesinin çevirisini tekrar ettiği için İngilizce çeviri boş bırakıldı.",
+        "en": "The book says it is a ten-line poem written three years before his death announcing the date of his death. The English 'Meaning' printed in the book repeats the gravestone translation instead of translating this poem, so en was left empty."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1723",
+      "year": 1723,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Tekke yapıları topluluğu ve çeşme inşa ettirildi",
+        "en": "Lodge buildings and fountain built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "350, 352"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1740",
+      "year": 1740,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami onarım gördü",
+        "en": "Mosque repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "352"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1843",
+      "year": 1843,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Diğer dergâhlarla birlikte onarıldı",
+        "en": "Repaired along with other lodges"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "351-352"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1900",
+      "year": 1900,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Hacı Ali Paşa öncülüğünde mükemmel bir onarım",
+        "en": "Splendid restoration led by Hacı Ali Paşa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "351-352"
+        }
+      ]
+    },
+    {
+      "id": "kapanma-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tekkeler kapatıldı; tevhidhane camiye dönüştürüldü",
+        "en": "Lodges closed; prayer hall converted to a mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "351"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1725",
+      "year": 1725,
+      "date": null,
+      "hijri": "1137",
+      "type": "record",
+      "title": {
+        "tr": "İsmail Hakkı Bursevî vefat etti",
+        "en": "İsmail Hakkı Bursevî died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "353"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2005",
+      "year": 2005,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son tamir; özgün yapı sürdürülüyor (s. 351)",
+        "en": "Latest repair; original structure maintained (p. 351)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "351"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Esaslı restorasyon (s. 352'de 'en son')",
+        "en": "Thorough restoration (the 'latest' on p. 352)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "352"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İsmail Hakkı Tekkesi Camii, Tuzpazarı Mahallesi'nde, kuzey yanından çift taraflı merdivenle çıkılan, geniş saçaklı, ahşap çatılı ve kiremit örtülü bir yapıdır. Cephesi ve çatısı 18. yüzyıl özellikleri taşır; taş minaresi sonradan eklenmiştir. Yanında tonozlu çilehane ve öğrenci yurdu olarak kullanılan odalar vardır. Güneyindeki hazirede İsmail Hakkı Bursevî'nin demir parmaklıklı, üstü açık kabri bulunur.",
+      "en": "İsmail Hakkı Sufi Lodge Mosque in Tuzpazarı Neighborhood is reached by double-sided stairs on its north side and has wide eaves, a wooden roof and tiles. Its façade and roof bear 18th-century features; the stone minaret was added later. Beside it are a vaulted ascetic cell and rooms used as a student dormitory. In the graveyard to its south is the open-topped tomb of İsmail Hakkı Bursevî, surrounded by iron bars."
+    }
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ismail-hakki-tekkesi-camii/p081-1.jpg",
+        "original_name": "İsmail Hakkı Tekkesi Camii ve Haziresi 1.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "350"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tekke camisi ve minaresi, yukarıdan",
+        "en": "The tekke mosque and minaret from above"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı yapılar ve yüksek, ince bir minare; önünde dar bir avlu var. Arkada şehir ve dağ silsilesi uzanıyor.",
+        "en": "Tile-roofed buildings and a tall, thin minaret with a narrow courtyard in front. The city and a mountain range extend behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ismail-hakki-tekkesi-camii/p083-1.jpg",
+        "original_name": "ismail hakkı kitabe.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "352"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Yeşil zeminli altın yazılı kitabe levhası",
+        "en": "Gold-lettered inscription on green ground"
+      },
+      "alt": {
+        "tr": "Yeşil bir levha üzerinde dört satır halinde altın renkli Arapça yazı yer alıyor. Yazılar düzenli aralıklarla sıralanmış.",
+        "en": "A green panel bearing four rows of gold Arabic script in regular spacing."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ismail-hakki-tekkesi-camii/p085-2.jpg",
+        "original_name": "İsmail Hakkı Tekkesi Camii ve Haziresi 4.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "354"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yeşil demir kafesli kabir, yukarıdan",
+        "en": "Grave under a green iron cage, from above"
+      },
+      "alt": {
+        "tr": "Beyaz mezar yapısı, yeşil ışınsal demir kafesle örtülü; ortada altın renkli bir madalyon var. Çevresinde taş zemin, ahşap banklar ve küçük bir yeşil alan görünüyor.",
+        "en": "A white grave structure covered by a green radiating iron cage with a gold medallion at the centre. Stone paving, wooden benches and a small green patch surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

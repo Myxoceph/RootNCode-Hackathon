@@ -1,0 +1,477 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-araplar-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 262-263) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Yapım yılı kitapta yok.",
+      "Haziredeki mezar taşı sayısı/kitabeleri kitapta yok.",
+      "Acem Reis Camii kaydı henüz yok olabilir; relation hedefi önceden açılacak kayda işaret ediyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap caminin banisini yalnızca 'tüccar bir kişi' olarak anar; hazire bölümünde 'Arap Mehmed' adı geçer. Arap Mehmet Camii'ndeki Arap Mehmed ile aynılığı açıkça söylenmez."
+      },
+      {
+        "field": "name",
+        "note": "Sayfa 262'de mahalle 'Alipaşa (Araplar)', cami 'Arap Dede Camii' olarak da anılır; hazire başlığı 'Arap Dede Haziresi' ama bu isim aynı zamanda Acem Reis Camii'nin yakınındaki ayrı bir kabir için de kullanılır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Araplar Camii",
+    "en": "Araplar Mosque"
+  },
+  "subtitle": {
+    "tr": "Minaresiz, kagir Araplar Camii; doğusunda banisinin kabri",
+    "en": "The masonry, minaret-less Araplar Mosque, with its founder's grave to the east"
+  },
+  "alternate_names": [
+    {
+      "tr": "Arap Dede Camii",
+      "en": "Arap Dede Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "minaresiz cami",
+    "kalem işleri",
+    "1858 onarımı",
+    "hazire",
+    "Arap Dede"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alipaşa (Araplar)",
+    "address": "Alipaşa (Araplar) Mahallesi, Alper Sokak No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "262"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.180131,
+      "lng": 29.058586,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1369658042 ('Araplar Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1490 öncesi (banî tarihi); H. 1275 / M. 1858 onarım",
+      "en": "Founder lived before 1490; repair dated AH 1275 / AD 1858"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, camiyi yaptıran tüccarın 1490'dan önce yaşadığını söyler; yapının yapım yılı verilmez. Kapı levhasındaki H. 1275 / M. 1858 onarım yılı olarak düşünülür.",
+      "en": "The book says the merchant who built the mosque lived before 1490; no construction year is given. The AH 1275 / AD 1858 plaque date is thought to be a repair year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "262-263"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Arap Mehmed (tüccar)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "263"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Halk arasında Arap Dede Camii de denen, kagir duvarlı, minaresiz, ahşap tavanlı cami; doğusundaki kabirde banisi olan 1490 öncesi yaşamış bir tüccar yatar.",
+    "en": "A masonry mosque, also called Arap Dede Mosque, with a wooden ceiling and no minaret; a merchant who lived before 1490 and had it built lies in the grave to its east."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Plan",
+        "en": "Structure and Plan"
+      },
+      "body": {
+        "tr": "Kagir duvarlı mabet; ahşap tavanlı harim ile kuzeydeki son cemaat yeri birleşerek dikdörtgen plan oluşturur, üstü ahşap çatıyla örtülüdür. Yuvarlak kemerli, üç gözlü son cemaat yeri camekânla kapatılmıştır; orta bölümü dar, yan bölümleri geniştir. Kot farkı nedeniyle son cemaat yerine iki yönlü çifte merdivenle çıkılır. Yığma taş duvarlar sıvadan arındırılmış, ahşap iç tavan kiremit çatıyla örtülüdür. Cami minaresizdir ve ibadete açıktır.",
+        "en": "A masonry place of worship; the wooden-ceilinged prayer hall and the narthex to the north form a rectangular plan under a wooden roof. The round-arched three-bay narthex is closed with glass; its middle bay is narrow and the side bays wider. Because of the elevation difference it is reached by a two-way double staircase. The stone walls have been stripped of plaster and the roof is tiled. The mosque has no minaret and is open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "id": "pencere-ic",
+      "order": 2,
+      "title": {
+        "tr": "Pencereler ve İç Mekân",
+        "en": "Windows and Interior"
+      },
+      "body": {
+        "tr": "Harim kuzeyde iki, doğuda üç yuvarlak kemerli alt pencere ve üst sırada 10 dikdörtgen çerçeveli pencereyle aydınlanır. Çini mihrap ile ahşap minber uyumsuz bir görüntü oluşturur; iç mekândaki levhalar son döneme aittir.",
+        "en": "The hall is lit by two round-arched lower windows to the north, three to the east and ten rectangular-framed windows in the upper row. The tiled mihrab and wooden minbar look incongruous; the interior panels belong to the latest period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 3,
+      "title": {
+        "tr": "Onarım ve Kalem İşleri",
+        "en": "Repair and Hand-painted Ornament"
+      },
+      "body": {
+        "tr": "Kapı üzerindeki, günümüze ulaşmayan levhada H. 1275 / M. 1858 yazılıydı; bu tarihin onarım yılı olduğu düşünülür. Kalem işleri büyük ihtimalle aynı döneme aittir ve son onarımda yeniden elden geçirilmiştir. Cami son yıllarda aslına uygun onarılmıştır.",
+        "en": "A plaque above the door, now lost, bore the date AH 1275 / AD 1858, thought to be the repair year. The hand-painted ornament probably dates from the same period and was renewed in the latest repair. The mosque was repaired in recent years in accordance with the original."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Arap Dede Haziresi",
+        "en": "Arap Dede Graveyard"
+      },
+      "body": {
+        "tr": "Caminin doğusundaki kabirde camiyi yaptıran tüccar medfundur. 1490'dan önce yaşayan bu kişinin Mehmed Çelebi, Hoca Ahmed ve Mahmud Çelebi adlı üç oğlu vardı; oğlu Ahmed Çelebi yıllarca babasının vakıflarının mütevelliliğini yapmıştır. Arap Dede adıyla anılan başka bir kabir Acem Reis Camii'nin güneyindedir ve Acem Reis Camii'nin banisine ait olduğu rivayet edilir.",
+        "en": "The merchant who had the mosque built is buried in the grave east of it. He lived before 1490 and had three sons, Mehmed Çelebi, Hoca Ahmed and Mahmud Çelebi; his son Ahmed Çelebi served for years as trustee of his father's endowments. Another tomb known as Arap Dede lies south of the Acem Reis Mosque and is rumored to belong to that mosque's founder."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "263"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "arap-dede-acem-reis",
+      "title": {
+        "tr": "Acem Reis Camii yakınındaki Arap Dede kabri",
+        "en": "Arap Dede tomb near Acem Reis Mosque"
+      },
+      "body": {
+        "tr": "Acem Reis Camii'nin güneyindeki Arap Dede adlı kabrin Acem Reis Camii'nin banisine ait olduğu rivayet edilir.",
+        "en": "The tomb called Arap Dede south of the Acem Reis Mosque is rumored to belong to the founder of the Acem Reis Mosque."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "263"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "alt_pencere_kuzey",
+      "label": {
+        "tr": "Kuzey alt pencere",
+        "en": "North lower windows"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "alt_pencere_dogu",
+      "label": {
+        "tr": "Doğu alt pencere",
+        "en": "East lower windows"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "ust_pencere",
+      "label": {
+        "tr": "Üst sıra pencere",
+        "en": "Upper-row windows"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bay count"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "minare",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "Yok",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "262"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Arap Mehmed",
+      "role": {
+        "tr": "Camiyi yaptıran tüccar, haziresinde yatar",
+        "en": "Merchant who built the mosque; buried in the graveyard"
+      }
+    },
+    {
+      "name": "Ahmed Çelebi",
+      "role": {
+        "tr": "Arap Mehmed'in oğlu, vakıflarının mütevellisi",
+        "en": "Son of Arap Mehmed; trustee of his endowments"
+      }
+    },
+    {
+      "name": "Mehmed Çelebi",
+      "role": {
+        "tr": "Arap Mehmed'in oğlu",
+        "en": "Son of Arap Mehmed"
+      }
+    },
+    {
+      "name": "Hoca Ahmed",
+      "role": {
+        "tr": "Arap Mehmed'in oğlu",
+        "en": "Son of Arap Mehmed"
+      }
+    },
+    {
+      "name": "Mahmud Çelebi",
+      "role": {
+        "tr": "Arap Mehmed'in oğlu",
+        "en": "Son of Arap Mehmed"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1858",
+      "year": 1858,
+      "date": null,
+      "hijri": "1275",
+      "type": "repair",
+      "title": {
+        "tr": "Kapı levhasındaki tarih (H. 1275 / M. 1858): onarım yılı olduğu düşünülür",
+        "en": "Plaque date (AH 1275 / AD 1858), thought to be a repair year"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "262"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "cift-merdiven",
+      "title": {
+        "tr": "Çifte merdiven",
+        "en": "Double staircase"
+      },
+      "hint": {
+        "tr": "Kot farkı nedeniyle son cemaat yerine iki yönlü çifte merdivenle çıkılır.",
+        "en": "The narthex is reached by a two-way double staircase because of the elevation difference."
+      },
+      "section_id": "yapi"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-acem-reis-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Acem Reis Camii'nin güneyinde Arap Dede adlı başka bir kabir vardır; rivayete göre o caminin banisine aittir.",
+        "en": "Another tomb called Arap Dede lies south of the Acem Reis Mosque; rumored to belong to that mosque's founder."
+      },
+      "confidence": "legend",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "263"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-arap-mehmet-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Arap Mehmet Camii'ni 1490 öncesinde yaptıran Arap Mehmed ile aynı kişi olabilir; kitap açıkça belirtmez.",
+        "en": "May be the same Arap Mehmed who built the Arap Mehmet Mosque before 1490; the book does not state it."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kagir duvarlı, minaresiz bir camidir; ahşap çatı kiremitle örtülüdür. Kuzeyde yuvarlak kemerli, camekânla kapatılmış üç gözlü son cemaat yeri vardır; ona iki yönlü çifte merdivenle çıkılır. Taş duvarlar sıvasızdır. Doğusunda banisinin kabri bulunur.",
+      "en": "A masonry mosque without a minaret under a tiled wooden roof. To the north is a round-arched, glass-enclosed three-bay narthex reached by a two-way double staircase. The stone walls are unplastered. The founder's grave lies to its east."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-araplar-camii/p039-1.jpg",
+        "original_name": "01_6.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "262"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin cephesi ve avlusu",
+        "en": "Mosque facade and yard"
+      },
+      "alt": {
+        "tr": "Tuğla duvarlı, kiremit çatılı minaresiz cami; ahşap kafesli kemerli bir revak ve merdivenle girişe çıkılır. Önünde büyük bir ağaç ve küçük bir meydan vardır.",
+        "en": "A brick-walled, tile-roofed mosque with no minaret, with a wooden-lattice arched porch reached by steps. A large tree and small square are in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-araplar-camii/p039-2.jpg",
+        "original_name": "araplarcamii02.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "262"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Çatı, kuşbakışı",
+        "en": "Roof from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan çekilmiş görüntüde kırmızı kiremitli, dört eğimli çatı ve çevresindeki sokak ile komşu çatılar görünür.",
+        "en": "A view from above of the red-tiled hipped roof, with the street and neighbouring roofs around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
+  "archive_media": []
+}

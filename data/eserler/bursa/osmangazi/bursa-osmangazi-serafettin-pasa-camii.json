@@ -1,0 +1,525 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-serafettin-pasa-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 431-432) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Yapım yılı kitapta verilmiyor (yalnızca 15. yüzyıl); kesin tarih araştırılmalı.",
+      "Hazire için ayrı bir kayıt açılmadı; hazire bu kaydın bölümüdür.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "alternate_names",
+        "note": "Kitap 'Okçular' ve 'Nalıncılar Mescidi' adlarını aynı yapı için veriyor; ikincisinin neden 'mescit' dendiği açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şerafettin Paşa (Okçular) Camii",
+    "en": "Şerafettin Paşa (Okçular) Mosque"
+  },
+  "subtitle": {
+    "tr": "Okçular Çarşısı'nda, çarşı dükkânlarıyla çevrili 15. yüzyıl camisi ve haziresi",
+    "en": "15th-century mosque and graveyard inside the Okçular Bazaar, surrounded by shops"
+  },
+  "alternate_names": [
+    {
+      "tr": "Okçular Camii",
+      "en": "Okçular Mosque"
+    },
+    {
+      "tr": "Nalıncılar Mescidi",
+      "en": "Nalıncılar Masjid"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tek kubbeli",
+    "Okçular Çarşısı",
+    "Türk üçgenleri",
+    "stalaktitli yaşmak",
+    "hazire",
+    "1916 kitabesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alacamescid",
+    "address": "4. Okul Sokak, No: 14",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "431"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.184269,
+      "lng": 29.068009,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/343392184 ('Şerafettin Paşa Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "15. yüzyıl",
+      "en": "15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap yapının 15. yüzyılda yaptırıldığını söyler; kesin yıl vermez.",
+      "en": "The book says it was built in the 15th century; no exact year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "431"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şerafettin Paşa (II. Murad'ın beylerinden)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "431"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Okçular Çarşısı içinde, dükkânlarla çevrili olduğu için dışarıdan kolay fark edilmeyen cami, II. Murad'ın beylerinden Şerafettin Paşa tarafından 15. yüzyılda yaptırılmıştır. Banisinin kabri haziresindedir. Sekiz köşe kasnaklı kubbesi, stalaktitli yaşmaklı cümle kapısı ve tuğla minaresiyle erken Osmanlı özellikleri taşır; 1916'da Ahmet Faik Efendi tarafından yeniden yaptırılmıştır.",
+    "en": "Located in the Okçular Bazaar and hard to notice because shops surround it, the mosque was built in the 15th century by Şerafettin Paşa, one of Murad II's beys. The founder's grave is in its graveyard. It has early Ottoman features: an octagonal-drum dome, a main door with a stalactite surround and a brick minaret. It was rebuilt in 1916 by Ahmet Faik Efendi."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Cami Okçular Çarşısı'nda yer alır ve II. Murad'ın beylerinden Şerafettin Paşa tarafından 15. yüzyılda inşa ettirilmiştir. Banisinin kabri caminin haziresindedir. 'Okçular' veya 'Nalıncılar Mescidi' adlarıyla da bilinir. Çarşı ve dükkânlarla çevrili olduğu için dışarıdan kolayca fark edilemez.",
+        "en": "The mosque is in the Okçular Bazaar and was built in the 15th century by Şerafettin Paşa, one of the beys of Sultan Murad II. The founder's grave is in the mosque's graveyard. It is also known as the 'Okçular' or 'Nalıncılar Masjid'. Being surrounded by bazaars and shops, it cannot easily be noticed from outside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "431-432"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Taş ve tuğladan yapılmış olup kemerli ve kalkan duvarlı bir son cemaat yeri varken bu bölüm yıkılmış ve ahşap olarak yeniden yapılmıştır. Her kenarı 8,80 m olan kare planlı ana mekân, Türk üçgenlerine oturan, sekiz köşe kasnaklı ve iki sıra kirpi saçaklı kubbeyle örtülüdür. Bir sıra kırma taş ve üç sıra tuğlayla örülen beden duvarlarında sekiz alt, altı üst ve üç kasnak penceresi vardır; kasnakta bir sıra kesme taş ve üç sıra tuğla kullanılmıştır. Cümle kapısının sağır kemerli ve yedi sıra stalaktitli yaşmağı dikkat çekicidir; sivri kemerli mihrabın yaşmağı beş sıra stalaktitlidir.",
+        "en": "Built of stone and brick, it had a narthex with arches and a parapet wall, but this section was demolished and rebuilt in wood. The square main hall, 8.80 m per side, is covered by a dome with an octagonal drum and two rows of sawteeth, resting on Turkish triangles. The walls, of one row of crushed stone and three rows of brick, have eight lower, six upper and three drum windows; the drum uses one row of cut stone and three of brick. The main door's blind arch and seven-row stalactite surround is striking; the pointed mihrab has a five-row stalactite surround."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare, Bursa'daki erken Osmanlı mimarisinin bir örneği olarak sekizgen kaide üzerine kuruludur. Tuğladan üçgenli küp kısmı, tuğla silindirik gövdesi, bileziği ve şerefe altındaki beş sıra testere dişiyle zarif bir görünümü vardır.",
+        "en": "The minaret is built on an octagonal base as an example of early Ottoman architecture in Bursa. It has an elegant look with its brick transition with triangles, brick cylindrical shaft, decorative band and five rows of sawteeth under the balcony."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Yapı 1694 ve 1758'de tamir edilmiş, 1855 depreminde şerefesi yıkılmış ve ustaca onarılmıştır. 1916'da Ahmet Faik Efendi tarafından yeniden inşa ettirildiğini bildiren mermer bir kitabe giriştedir. Cami bakımlıdır ve ibadete açıktır.",
+        "en": "The building was repaired in 1694 and 1758; its balcony collapsed in the 1855 earthquake and was skillfully repaired. A marble inscription at the entrance records that it was rebuilt by Ahmet Faik Efendi in 1916. The mosque is maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 5,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Banisi Şerafettin Paşa'nın kabri caminin haziresinde yer almaktadır. Ta'lik yazılı mezar taşı kitabesi H. 1312 / M. 1894'te yeniden yazılmıştır.",
+        "en": "The grave of the founder, Şerafettin Paşa, is in the mosque's graveyard. The gravestone inscription, in Ta'liq script, was rewritten in AH 1312 / AD 1894."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "431"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ana_mekan_kenar",
+      "label": {
+        "tr": "Ana mekân kenar uzunluğu",
+        "en": "Main hall side length"
+      },
+      "value": "8,80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı (alt / üst / kasnak)",
+        "en": "Windows (lower / upper / drum)"
+      },
+      "value": "8 / 6 / 3",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_stalaktit",
+      "label": {
+        "tr": "Mihrap yaşmağı stalaktit sırası",
+        "en": "Mihrab surround stalactite rows"
+      },
+      "value": 5,
+      "unit": "sıra",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "key": "cumle_kapisi_stalaktit",
+      "label": {
+        "tr": "Cümle kapısı yaşmağı stalaktit sırası",
+        "en": "Main door surround stalactite rows"
+      },
+      "value": 7,
+      "unit": "sıra",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şerafettin Paşa",
+      "role": {
+        "tr": "Banî; II. Murad'ın beylerinden, kabri haziredir",
+        "en": "Founder; one of Murad II's beys, buried in the graveyard"
+      }
+    },
+    {
+      "name": "Ahmet Faik Efendi",
+      "role": {
+        "tr": "1916'da camiyi yeniden yaptıran kişi",
+        "en": "Person who had the mosque rebuilt in 1916"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-1916-kitabesi",
+      "location": {
+        "tr": "Caminin girişinde, mermer",
+        "en": "At the mosque entrance, marble"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1916"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap yalnızca kitabenin 1916'da Ahmet Faik Efendi'nin yeniden yaptırdığını belirttiğini söyler; metin ve dil verilmiyor.",
+        "en": "The book only says an inscription records the 1916 rebuilding by Ahmet Faik Efendi; text and language are not given."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "mezar-tasi-kitabesi",
+      "location": {
+        "tr": "Banisinin mezar taşı (hazire)",
+        "en": "Founder's gravestone (graveyard)"
+      },
+      "language": "other",
+      "script": "ta'lik",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1312,
+        "gregorian": "1894"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap, kitabenin H. 1312 / M. 1894'te yeniden yazıldığını söyler; metin verilmiyor.",
+        "en": "The book says the inscription was rewritten in AH 1312 / AD 1894; no text is given."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "431"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1694",
+      "year": 1694,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir edildi",
+        "en": "Repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1758",
+      "year": 1758,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir edildi",
+        "en": "Repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Şerefe yıkıldı ve ustaca onarıldı",
+        "en": "Balcony collapsed and was skillfully repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1916",
+      "year": 1916,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Ahmet Faik Efendi tarafından yeniden inşa ettirildi",
+        "en": "Rebuilt by Ahmet Faik Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "mezar-kitabe-1894",
+      "year": 1894,
+      "date": null,
+      "hijri": "1312",
+      "type": "record",
+      "title": {
+        "tr": "Banisinin mezar taşı kitabesi yeniden yazıldı",
+        "en": "Founder's gravestone inscription rewritten"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "431"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şerafettin Paşa Camii, Okçular Çarşısı'nın dükkânları arasında kalmış, kare planlı bir camidir. Sekiz köşe kasnaklı bir kubbeyle örtülüdür; ahşap yeniden yapılmış bir son cemaat yeri vardır. Cümle kapısının yedi sıra stalaktitli yaşmağı dikkat çeker. Sekizgen kaideli tuğla bir minaresi vardır. Haziresinde banisinin kabri bulunur.",
+      "en": "Şerafettin Paşa Mosque is a square-plan mosque tucked among the shops of the Okçular Bazaar. It is covered by a dome on an octagonal drum and has a rebuilt wooden narthex. The main door has a striking seven-row stalactite surround. It has a brick minaret on an octagonal base. The founder's grave lies in its graveyard."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-serafettin-pasa-camii/p038-1.jpg",
+        "original_name": "01 Kapak_7.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "431"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Şerafettin Paşa Camii'nin kubbesi ve minaresi",
+        "en": "Dome and minaret of Şerafettin Paşa Mosque"
+      },
+      "alt": {
+        "tr": "Çarşı çatılarının arasında gri kurşun kubbe ve ince tuğla minare yükselir. Çevresinde kiremit çatılar, cam örtülü pasajlar ve ağaçlar, uzakta şehir görünür.",
+        "en": "A grey lead dome and slender brick minaret rise among market roofs. Tiled roofs, glass-covered passages and trees surround it, with the city in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-serafettin-pasa-camii/p039-1.jpg",
+        "original_name": "03_5.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "432"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şerafettin Paşa Camii'nin çinili iç mekânı",
+        "en": "Tiled interior of Şerafettin Paşa Mosque"
+      },
+      "alt": {
+        "tr": "Alt duvarları mavi çinilerle kaplı salonda çinili mihrap ve minber ile ortadaki avize öne çıkar. Pencereler kırmızı çerçeveli, zemin kırmızı halıyla örtülüdür.",
+        "en": "A hall with lower walls covered in blue tiles, a tiled mihrab and minbar and a central chandelier. The windows have red frames and a red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,715 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ii-murad-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Mimar kitapta belirtilmemiş.",
+      "Kapı alınlığının iç sıvasındaki onarım tarihi kitapta verilmemiş.",
+      "'bursa-osmangazi-orhan-gazi-turbesi' ve 'bursa-osmangazi-i-murad-hudavendigar-turbesi' hedeflerinin ilçeleri metinde yok; Osmangazi varsayıldı, doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[vasiyet]",
+        "note": "Metin türbeyi 'üstü açık' diye tanımlar; sonraki mimari betimleme ise sekizgen kasnaklı bir kubbeden söz eder. İkisi de saklandı."
+      },
+      {
+        "field": "summary",
+        "note": "Türbe bir yerde 'Muradiye türbelerinin en görkemli yapısı', başka yerde 'padişah türbeleri arasında en sade' olarak tanımlanır; ikisi kaynağın ifadesidir (görkem: türbeler topluluğu içinde; sadelik: padişah türbeleri içinde)."
+      },
+      {
+        "field": "inscriptions[turbe-kitabesi]",
+        "note": "Kitabedeki 'dahvetü'l-erba'a' (çarşamba, kuşluk) tarihi vefat tarihidir. Kitabe tarihi türbenin yapım tarihi değil, vefat tarihidir; türbenin yapımı için kitap H. 855 / M. 1451 der."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sultan II. Murad Türbesi",
+    "en": "Sultan Murad II Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "II. Murad Türbesi",
+      "en": "Tomb of Murad II"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "padişah türbesi",
+    "sandukasız",
+    "çıtakâri",
+    "Edirnekâri",
+    "Ebu'l-vakf"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "Kaplıca Caddesi, No: 62",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "130"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.190654,
+      "lng": 29.046329,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/472072853 ('II. Murad Külliyesi Sultan Türbeleri'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 855 / M. 1451",
+      "en": "AH 855 / AD 1451"
+    },
+    "start_year": 1451,
+    "end_year": 1451,
+    "hijri_year": 855,
+    "century": 15,
+    "basis": {
+      "tr": "Sultan II. Murad'ın 1451'deki vefatının ardından oğlu II. Mehmed'in yaptırdığı bildirilir; kitabe tarihi 1 Muharrem 855 / 3 Şubat 1451'dir.",
+      "en": "Reported to have been built by his son Mehmed II after Murad II's death in 1451; the inscription is dated 1 Muharram AH 855 / 3 February AD 1451."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "131-133"
+      }
+    ]
+  },
+  "founder": {
+    "name": "II. Mehmed",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "131"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Muradiye türbelerinin en görkemlisi; Osmanlı padişah türbeleri içinde en sade olanı ve Bursa'da sanduka ya da lahit kullanılmayan tek padişah mezarı. II. Mehmed babasının vasiyetine uyarak 1451'de yaptırmıştır; saçağı çıtakâri ve Edirnekâri süslemeleriyle bilinir.",
+    "en": "The most magnificent of the Muradiye tombs, yet the simplest of the Ottoman sultans' tombs and the only sultan's tomb in Bursa without a coffin or sarcophagus. Mehmed II had it built in 1451 in keeping with his father's will; its canopy is known for çıtakâri and Edirnekâri decoration."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Muradiye Mahallesi, Kaplıca Caddesi No:62'de, Muradiye Külliyesi içinde yer alır. Türbeler topluluğunun içindeki en görkemli yapıdır; caminin güneybatısında, türbelerin bulunduğu bahçe girişinin tam karşısındadır. Temeli cami zemininden biraz yüksekte inşa edilmiştir. Osmanlı padişah mezarları arasında en sade türbe olarak yapılmış olması ve Bursa'da sanduka veya lahit kullanılmayan tek padişah mezarı olması da dikkat çeker.",
+        "en": "The tomb is within the Muradiye Complex on Kaplıca Street No. 62. It is the most magnificent structure in the group of tombs, southwest of the mosque, just opposite the entrance to the tomb garden; its foundation is slightly higher than the mosque floor. Built as the simplest of the Ottoman sultans' tombs, it is also the only sultan's tomb in Bursa that does not use a coffin or sarcophagus."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "130"
+        }
+      ]
+    },
+    {
+      "id": "vasiyet",
+      "order": 2,
+      "title": {
+        "tr": "Vasiyet ve Yapılışı",
+        "en": "The Will and Construction"
+      },
+      "body": {
+        "tr": "\"Ebu'l-vakf\" olarak anılan ve vakıf eserlerine büyük önem veren Sultan II. Murad 1451'de Edirne'de vefat etmiş, cenazesi Bursa'ya getirilerek Muradiye Camii bahçesindeki mütevazı türbesine defnedilmiştir. Vasiyetnamesinde türbenin Peygamber'in sünnetine uygun tasarlanmasını istemiş; \"kripta\" denilen yeraltı mezar odası yapılmamış, naaşı doğrudan toprakla buluşturulmuştur. Türbeye kendisinden başka kimse defnedilmemiştir. Oğlu II. Mehmed babasının vasiyetine sadık kalarak H. 855 / M. 1451'de kare planlı, üstü açık, dört yönden sofalı ve hafızların Kur'an okuyabileceği bir türbe yaptırmıştır.",
+        "en": "Sultan Murad II, known as \"Ebu'l-vakf\", died in Edirne in 1451, and his body was brought to Bursa and buried in his modest tomb in the Muradiye Mosque garden. In his will he asked that the tomb be designed in accordance with the Prophet's Sunnah, so no underground burial chamber (crypt) was made and his body was buried directly in the ground. No one else was buried in the tomb. His son Mehmed II, remaining faithful to the will, had a tomb built in AH 855 / AD 1451 with a square plan, an open roof and a gallery on four sides where hafiz could recite the Quran."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "131"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 3,
+      "title": {
+        "tr": "Kitabe",
+        "en": "Inscription"
+      },
+      "body": {
+        "tr": "Kapı üzerinde mermer zemine celi sülüs hatla yazılmış, 0,52 × 1,68 m ölçülerinde üç satırlık bir kitabe bulunur. Kitabe Sultan Murad'ın vefatını anar ve H. 855 Muharrem ayının ilk çarşamba günü (3 Şubat 1451) kuşluk vakti ebedi âleme göçtüğünü bildirir. Metni bu kaydın kitabeler bölümündedir.",
+        "en": "Above the door is a three-line inscription in Jeli Thuluth on marble, measuring 0.52 × 1.68 m, aesthetically elegant yet intricately arranged. It commemorates Sultan Murad's death at dawn on the first Wednesday of Muharram AH 855 (3 February AD 1451)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "131-133"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe bir sıra kesme taş ve iki sıra tuğlanın almaşık kullanıldığı Bursa üslubunda inşa edilmiştir. Kuzey cephedeki taç kapı dikkat çekici bir saçakla örtülüdür: ahşap zemin üzerine yerleştirilen tuval bezine klasik üslupta bezemeler işlenmiş, çıtakâri işçiliğiyle on iki kollu yıldızlardan geometrik bir düzen oluşturulmuştur. Saçağın ortasında mukarnas dolgulu çökertmeler, sarkıtlar ve kabaralar bulunur; içten ve dıştan ahşap mukarnaslı bir friz saçağı çevreler, dışta Edirnekâri üslupta ikinci bir ahşap saçak daha vardır. Kare planlı yapı, köşelerdeki payeler ve aralarındaki mermer sütunlarla taşınan sivri kemerler üzerine oturan tromplar ve sekizgen kasnaklı bir kubbeyle örtülmüştür; merkezî alanı beşik tonozlu bir sofa çevreler. Türbe iç içe geçmiş 13,45 × 13,45 m ve 6,90 × 6,90 m ölçülerinde iki kareden oluşur. Sütun kaide ve başlıkları Bizans dönemine ait devşirme malzemedir. Kapının bulunduğu duvar ile karşısındaki duvarda ikişer, diğer duvarlarda üçer pencere vardır. Planıyla Sultan Osman, Orhan ve I. Murad türbelerine benzer.",
+        "en": "The tomb is built with one row of cut stone alternating with two rows of brick. The north portal is covered by a magnificent canopy: a canvas on a wooden base decorated in classical style, with çıtakâri craftsmanship forming a geometric pattern of twelve-pointed stars, muqarnas-filled recesses, stalactites and bosses, a muqarnas wooden frieze around it, and outside a second wooden canopy in the Edirnekâri style. The square building is covered with a dome on an octagonal drum and squinches resting on pointed arches supported by corner piers and marble columns, surrounded by a gallery with barrel vaults. It consists of two interlocking squares of 13.45 × 13.45 m and 6.90 × 6.90 m; the bases and capitals of the columns are Byzantine spolia. The door wall and the opposite wall have two windows each and the other walls three. In plan it resembles the tombs of Sultan Osman, Orhan and Murad I."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "133-134"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Sultan II. Murad ve Şehzade Alâaddin türbelerinin ilk büyük tamiratı 1742'de yapılmış, kurşun örtü 1781 ve 1844'te, kalem işi süslemeler 1790'da yenilenmiştir. 1850 tarihli bir Osmanlı arşiv belgesinde cami, medrese ve türbenin kurşun örtülerinin harap olduğu ve genel onarım için 25.600 kuruş ayrıldığı belirtilir. Yapı 1855 depreminde ciddi hasar almamış, bazı basit onarımlar geçirmiş, kapı alınlığının iç kısmındaki sıvaya onarım tarihi düşülmüştür. 2014'teki son restorasyonda türbe içinde çeşitli dönemlere ait kalem işleri ortaya çıkarılmış; yıllar önce önündeki çınar ağacının devrilmesiyle kırık kalan saçak elden geçirilmiş, yalıtım sağlanmış, derzler Horasan harcıyla yenilenmiş ve kubbe kurşunları değiştirilmiştir.",
+        "en": "The first major repair of the tombs of Sultan Murad II and Şehzade Alâaddin was in 1742; the lead covering was renewed in 1781 and 1844 and the hand-painted decorations in 1790. A document of 1850 in the Ottoman Archives says the lead coverings of the mosque, madrasa and tomb were dilapidated and a budget of 25,600 kuruş was allocated. The tomb did not suffer serious damage in the 1855 earthquake. In the 2014 restoration hand-painted ornamentation of various periods was revealed; the canopy, broken years earlier when a plane tree fell, was refurbished and insulated, plaster joints renewed with Khorasan mortar and the dome lead replaced."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "134, 137"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_kare",
+      "label": {
+        "tr": "Dış kare ölçüsü",
+        "en": "Outer square"
+      },
+      "value": "13,45 × 13,45",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "134"
+        }
+      ]
+    },
+    {
+      "key": "ic_kare",
+      "label": {
+        "tr": "İç kare ölçüsü",
+        "en": "Inner square"
+      },
+      "value": "6,90 × 6,90",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "134"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcusu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription size"
+      },
+      "value": "0,52 × 1,68",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "131"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_satir",
+      "label": {
+        "tr": "Kitabe satır sayısı",
+        "en": "Inscription lines"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "131"
+        }
+      ]
+    },
+    {
+      "key": "vefat_tarihi",
+      "label": {
+        "tr": "Vefat tarihi",
+        "en": "Date of death"
+      },
+      "value": "1 Muharrem 855 / 3 Şubat 1451",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "132-133"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan II. Murad",
+      "role": {
+        "tr": "Türbede yatan padişah; \"Ebu'l-vakf\"",
+        "en": "Sultan buried in the tomb; \"Ebu'l-vakf\""
+      }
+    },
+    {
+      "name": "II. Mehmed",
+      "role": {
+        "tr": "Türbeyi yaptıran oğul",
+        "en": "Son who had the tomb built"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-kitabesi",
+      "location": {
+        "tr": "Türbenin kapısı üzerinde, mermer zemin",
+        "en": "Above the tomb door, on marble"
+      },
+      "language": "ar",
+      "script": "celi sülüs",
+      "transliteration": "Bismillâhirrahmânirrahîm El-hamdu lillâhi’l-mütevahhidi bi’l-bekâi’l-münezzehi ani’z-zevâli ve’l-gayzâi ve alâ men erselehû bi’l-hanîfiyyeti’l-beyzâi ve âlihî ve sahbihi’l-kirâm emmâ ba’dü fe-kad intekale min dâri’l-fenâi ve’l-gurûri ilâ dâri’l-bekâi ve’s-sürûr. Ve min menzili’l-anâi ve’t-terâhi ilâ mahfili ’l-gınâi ve’l-ferâhi sultânu selâtîni’d-dehr mâliki memâliki’l-berri ve’l-bahri sultânu’l-guzâtı ve’l-mücâhidîn melceü’z-zuafâi ve’l-mesâkîn fahrı selâtîni âli Osmân el-mahsûs bi-inâyeti’l-Meliki’l-Mennân es-sultân bin es-sultân es-sultân Murad bin es-sultân Mehmed bin es-sultân Bâyezîd Hân, bevve’ehû’llâhu teâlâ alâ gurafi’l-cinânî ve efâde aleyhi şebîbe’l-gufrân. Dahvetü’l-erba‘a, gurretu Muharremi’l-Harâm, sene 855.",
+      "translation": {
+        "tr": "Rahman ve Rahîm olan Allah’ın adıyla. Hamd, yokluktan ve yok oluşun her türünden münezzeh, baki ve tek olan Allah’adır. Bu baki ve münezzeh olan Allah’ın, tertemiz Hanif dini getiren Peygamberine, onun ailesine ve yüce sahabesine salât ve selâm olsun. İmdi: Bu dünyadan, yani fâniyetin ve aldanışın diyarından, bekanın ve huzurun yurduna göç eden Sultan Murad; elem ve yorgunluk menzilinden, zenginlik ve ferahlık mahalline intikal etmiştir. O ki, çağların sultanlar sultanı; kara ve denizler memleketlerinin hâkimi; gazilerin ve mücahitlerin öncüsü; zayıf ve yoksulların sığınağı; Osmanlı hanedanının övünç kaynağı; Melik ve Mennan olan Allah’ın inayetiyle seçilmiş; padişah oğlu padişah oğlu padişah, Bayezid Han oğlu, Sultan Mehmed oğlu Sultan Murad’dır. Allah Teala onu cennet odalarına yerleştirsin, mağfiret damlalarını üzerine yağdırsın. Hicrî 855 yılı Muharrem ayının ilk çarşamba günü (3 Şubat 1451) kuşluk vakti, ebedi âleme göçmüştür.",
+        "en": "In the name of Allah, the Most Gracious, the Most Merciful. Praise be to Allah, the One and Only, who is free from all non-existence and destruction. Peace and blessings upon the Prophet who brought the pure Hanif religion, his family and noble companions. Sultan Murad has migrated from the land of mortality and delusion to the land of eternity and peace, from the abode of pain and fatigue to the place of wealth and comfort. He is the sultan of sultans of the ages, ruler of the lands and seas, leader of the warriors and mujahids, shelter of the weak and the poor, source of pride of the Ottoman dynasty, chosen by the grace of Allah; the son of a sultan, son of a sultan, son of Sultan Mehmed, son of Bayezid Han, Sultan Murad. May Allah place him in the chambers of Paradise. He passed away to the eternal realm at dawn on the first Wednesday of Muharram AH 855 (3 February AD 1451)."
+      },
+      "date": {
+        "hijri_year": 855,
+        "gregorian": "3 Şubat 1451"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "131-133"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vefat-1451",
+      "year": 1451,
+      "date": "1451-02-03",
+      "hijri": "1 Muharrem 855",
+      "type": "record",
+      "title": {
+        "tr": "Sultan II. Murad Edirne'de vefat etti; Bursa'ya getirilip defnedildi",
+        "en": "Sultan Murad II died in Edirne; his body was brought to Bursa and buried"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "131-133"
+        }
+      ]
+    },
+    {
+      "id": "insa-1451",
+      "year": 1451,
+      "date": null,
+      "hijri": "855",
+      "type": "construction",
+      "title": {
+        "tr": "II. Mehmed türbeyi yaptırdı",
+        "en": "Mehmed II had the tomb built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "131"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1742",
+      "year": 1742,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "İlk büyük onarım",
+        "en": "First major repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "id": "kursun-1781",
+      "year": 1781,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kurşun örtü yenilendi",
+        "en": "Lead covering renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "id": "kalemisi-1790",
+      "year": 1790,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kalem işi süslemeler yenilendi",
+        "en": "Hand-painted decorations renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "id": "kursun-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kurşun örtü yenilendi",
+        "en": "Lead covering renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "id": "belge-1850",
+      "year": 1850,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Osmanlı arşivinde kurşun örtülerin harap olduğunu bildiren, 25.600 kuruş ödenek ayıran belge",
+        "en": "Ottoman Archives document on dilapidated lead coverings, allocating 25,600 kuruş"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "137"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük depremde ciddi hasar almadı; basit onarımlar yapıldı",
+        "en": "No serious damage in the earthquake; simple repairs made"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "134"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son restorasyon: kalem işleri açığa çıktı, saçak ve kubbe kurşunları yenilendi",
+        "en": "Latest restoration: hand-painted work revealed, canopy and dome lead renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "134, 137"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "130"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-huma-hatun-turbesi",
+      "type": "same_founder",
+      "description": {
+        "tr": "İkisini de II. Mehmed yaptırmıştır (biri babası, biri annesi için).",
+        "en": "Both were built by Mehmed II (one for his father, one for his mother)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "131, 152"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sehzade-alaaddin-ali-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Şehzade Alâaddin Türbesi bu türbenin doğu duvarına bitişiktir.",
+        "en": "The Şehzade Alâaddin Tomb is adjacent to the east wall of this tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "136"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-muradiye-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Caminin güneybatısındadır.",
+        "en": "It lies southwest of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "130"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-osman-gazi-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Plan özellikleri bakımından Sultan Osman, Orhan ve I. Murad türbelerine benzer.",
+        "en": "In plan it resembles the tombs of Sultan Osman, Orhan and Murad I."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "134"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-gazi-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Plan olarak Orhan'ın türbesine benzer.",
+        "en": "Similar in plan to Orhan's tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "134"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Plan olarak I. Murad'ın türbesine benzer.",
+        "en": "Similar in plan to Murad I's tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "134"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, bir sıra kesme taş ve iki sıra tuğla almaşık duvarlı, kare planlı bir yapıdır. Kuzeydeki taç kapının üstünde ahşap, çıtakâri on iki kollu yıldız desenli geniş bir saçak uzanır. İçeride mermer sütunlar ve payelerle taşınan sivri kemerler, tromplu bir kubbeyi taşır; kubbe sekizgen bir kasnaktan yükselir. Mezar, kitaba göre sandukasızdır ve doğrudan toprağın üzerindedir.",
+      "en": "The tomb is a square-plan building of one row of cut stone alternating with two rows of brick. Above the north portal extends a broad wooden canopy with a çıtakâri pattern of twelve-pointed stars. Inside, pointed arches on marble columns and piers carry a squinched dome rising from an octagonal drum. According to the book, the grave has no sarcophagus and lies directly in the earth."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ii-murad-turbesi/p021-1.jpg",
+        "original_name": "ERD00808 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "130"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Türbenin ahşap saçaklı girişi",
+        "en": "The tomb's entrance with its carved timber canopy"
+      },
+      "alt": {
+        "tr": "Yuvarlak, oymalı ve yaldızlı ahşap saçak, beyaz mermer çerçeveli sivri kemerli girişin üzerine uzanıyor. Duvarlar tuğla ve taş sıralı, pencereler demir parmaklıklı.",
+        "en": "A rounded carved and gilded timber canopy extends over a pointed-arch entrance framed in white marble. The walls are banded brick and stone, with barred windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ii-murad-turbesi/p024-3.jpg",
+        "original_name": "ERD00801 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "133"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbe cephesi ve merdivenli giriş",
+        "en": "Tomb façade and the stepped entrance"
+      },
+      "alt": {
+        "tr": "Kubbeli tuğla türbelerin önünde ahşap saçaklı bir giriş ve taş basamaklar var. Basamakların yanında kırmızı kahverengi çiçeklikler, önünde taş döşeli alan görünüyor.",
+        "en": "Brick tombs with domes, with an entrance under a timber canopy and stone steps. Brown wooden planters with flowers line the steps, and a paved area lies in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-18"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ii-murad-turbesi/p023-1.jpg",
+        "original_name": "DJI_20241025180240_0184_D_ODAK.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "132"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Türbeler arasındaki mezarlık bahçesi",
+        "en": "The cemetery garden among the tombs"
+      },
+      "alt": {
+        "tr": "Çimenlik alanda sıralanmış gri mezar taşlarının ardında kubbeli tuğla türbeler yükseliyor. Servi ağaçları ve mavi gökyüzü görünüyor.",
+        "en": "Rows of grey gravestones on a lawn, with domed brick tombs rising behind. Cypress trees and blue sky are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": []
+}

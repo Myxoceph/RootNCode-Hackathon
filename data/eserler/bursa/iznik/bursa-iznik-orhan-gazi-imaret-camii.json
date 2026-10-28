@@ -1,0 +1,439 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-orhan-gazi-imaret-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İznik bölümünden (vk-bursa-c3) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabe (İznik Türk İslam Eserleri Müzesi'nde) için ayrı kayıt/AR hedefi ve metni kitapta yok; bulunursa eklenmeli.",
+      "Bilecik Orhan Gazi İmareti ile benzerlik ilişkisi için hedef kayıt kitapta ilçesi belirtilmediğinden yazılmadı.",
+      "Orhan Gazi Hamamı kaydı henüz yok; relation hedefi (bursa-iznik-orhan-gazi-hamami) tahmini kimliktir.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita üzerinden doğrulanıp eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) kitapta yok; sahada teyit edilmeli.",
+      "Ambient ses (ambient_sound) ve ziyaretçi ipuçları henüz hazırlanmadı.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap (TR s.445 ve EN) tarihi 'H. 725 / M. 1325 veya H. 735 / M. 1335' diye iki seçenekli veriyor; tek tarih belirlenemediği için disputed işaretlendi."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Kitap kitabenin 'bir köşesi kırık' olduğunu belirtiyor; iki tarih seçeneğinin nedeni bu olabilir ama kitap açıklamıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Orhan Gazi (İmaret) Camii",
+    "en": "Orhan Gazi (Imaret) Mosque"
+  },
+  "subtitle": {
+    "tr": "İznik'te zeytinlikler içinde kalan, yalnızca temelleri günümüze ulaşmış cami",
+    "en": "Mosque in the olive groves of Iznik, of which only foundation traces survive"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kazı",
+    "temel kalıntısı",
+    "zaviyeli/tabhaneli plan",
+    "çini",
+    "Orhan Gazi",
+    "İznik"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Yeni Mahalle",
+    "address": "Rauf Denktaş Caddesi'nin doğusu, zeytin bahçeleri içinde",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "444-445"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.420395,
+      "lng": 29.719883,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 725 / M. 1325 veya H. 735 / M. 1335",
+      "en": "AH 725 / AD 1325 or AH 735 / AD 1335"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitabedeki tarih iki seçenekli okunmuştur (H. 725 veya H. 735); tek yıl belirlenemediği için başlangıç/bitiş yılı girilmedi.",
+      "en": "The inscription date is given as two alternatives (AH 725 or AH 735); no single year, so no start/end year was entered."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "445"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Orhan Gazi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "445"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Orhan Gazi'nin yaptırdığı, bugün yalnızca temel izleri kalan İmaret Camii; zaviyeli/tabhaneli planı, altıgen çinileri ve alçı mihrap süslemesiyle bilinir. 1963-1964'teki kazılarla ortaya çıkarılmıştır.",
+    "en": "The Imaret Mosque built by Orhan Gazi, of which only foundation traces remain today; known for its zawiya/hospice plan, hexagonal tiles and plaster mihrab decoration. Unearthed in the 1963-1964 excavations."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Cami, İznik surlarının Yenişehir Kapısı güneyinde yer alır; günümüze yalnızca plan şeması belirlenebilen temel izleri kalmıştır. Prof. Dr. Oktay Aslanapa'nın 1963-1964 kazılarıyla ortaya çıkarılmıştır. Bir köşesi kırık kitabesi İznik Türk İslam Eserleri Müzesi'nde sergilenmektedir ve kitabeye göre cami Orhan Gazi tarafından H. 725 / M. 1325 veya H. 735 / M. 1335'te yaptırılmıştır. 2010-2011'de Uludağ Üniversitesi kazıları yürütmüş, kazılar aralıklarla sürmektedir. Aynı dönemde yapıldığı kabul edilen Orhan Gazi Hamamı kalıntısı caminin güneydoğusundadır.",
+        "en": "The mosque lies south of the Yenişehir Gate of the Iznik walls; only foundation traces whose plan can be determined survive. It was unearthed in the 1963-1964 excavations of Prof. Dr. Oktay Aslanapa. Its inscription, one corner broken, is exhibited in the Iznik Turkish Islamic Arts Museum and states that Orhan Gazi built the mosque in AH 725 / AD 1325 or AH 735 / AD 1335. Uludağ University excavated in 2010-2011 and the excavations continue at intervals. The ruins of the Orhan Gazi Bath, accepted as built in the same period, lie southeast of the mosque."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "444-445"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Ölçüler",
+        "en": "Plan and Dimensions"
+      },
+      "body": {
+        "tr": "Cami zaviyeli/tabhaneli plan tipindedir ve plan bakımından Bilecik Orhan Gazi İmareti'ne benzer. Kuzeyde altı mermer direkle taşınan, 24,70 × 3,00 m ölçülerinde revaklı son cemaat mahalli; 10 × 8,30 m harim ön mekânı; bunun iki yanında 6,18 × 12,35 m tabhane mekânları; iki basamakla çıkılan, mihraba yönelen 7,45 × 9,85 m asıl ibadet bölümü bulunur. Tabhanelerde ikişer, asıl ibadet mekânında yan duvarlarda birer pencere vardır. Harim ön mekânı mermer döşeli, mihrap bölümü 29 × 29 cm tuğla kaplıdır.",
+        "en": "The mosque is of the zawiya/hospice type and is similar in plan to the Bilecik Orhan Gazi Imaret. In the north was a narthex with a portico on six marble pillars (24.70 × 3.00 m); a front area of the prayer hall (10 × 8.30 m); hospice areas (6.18 × 12.35 m) on either side; and the main prayer area (7.45 × 9.85 m), reached by two steps and facing the mihrab. The hospices had two windows each, the main prayer area one in each side wall. The front area was marble-floored; the mihrab section was covered with 29 × 29 cm bricks."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "id": "suslemeler",
+      "order": 3,
+      "title": {
+        "tr": "Süsleme ve Örtü",
+        "en": "Decoration and Roofing"
+      },
+      "body": {
+        "tr": "Harim bölümünün tamamen altıgen çinilerle kaplı olduğu, mihrap çevresinde gösterişli bir alçı süsleme bulunduğu anlaşılmaktadır. Yapının bazı araştırmacılara göre kubbeyle, bazılarına göre kırma çatıyla örtülü olduğu yönünde farklı görüşler vardır; minarenin konumu kesin tespit edilememiştir.",
+        "en": "The prayer hall was completely covered with hexagonal tiles, with ornate plaster decoration around the mihrab. Researchers disagree whether it was covered by a dome or a hipped roof; the minaret's location has not been determined with certainty."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "id": "seyyahlar",
+      "order": 4,
+      "title": {
+        "tr": "Seyyahların Anlatımları",
+        "en": "Travellers' Accounts"
+      },
+      "body": {
+        "tr": "Evliya Çelebi yapının terk edilmiş hâlini 'Cümleden kadîmi Yenikapı hâricinde Orhan Gâzi Mescidi'dir, cema'atdan garîb acîb bir mescid'dir' diyerek dile getirir. Bazı Batılı seyyahlar çini kaplamaların bolluğu bakımından yapının İznik Yeşil Camii ile yarışabileceğini, bazıları ise ustalıkla yapılmış ahşap kapısını ve zengin iç süslemeleri belirtmiştir; bu bulguların birçoğu kazılarda tespit edilmiştir.",
+        "en": "Evliya Çelebi expresses its abandoned state: 'The oldest of all is the Orhan Gazi Mosque, except for Yenikapı, it is a strange mosque for the congregation.' Some Western travellers said its tile coverings could rival the Green Mosque of Iznik; others mentioned its skilfully made wooden door and rich interior decoration. Many of these findings were confirmed in the excavations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat mahalli ölçüsü",
+        "en": "Narthex dimensions"
+      },
+      "value": "24,70 × 3,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "key": "harim_ibadet_olcu",
+      "label": {
+        "tr": "Asıl ibadet bölümü ölçüsü",
+        "en": "Main prayer area dimensions"
+      },
+      "value": "7,45 × 9,85",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "key": "tabhane_olcu",
+      "label": {
+        "tr": "Tabhane mekânı ölçüsü (her biri)",
+        "en": "Hospice area dimensions (each)"
+      },
+      "value": "6,18 × 12,35",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "key": "mermer_direk",
+      "label": {
+        "tr": "Son cemaat revağını taşıyan mermer direk sayısı",
+        "en": "Marble pillars of the portico"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Orhan Gazi",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Oktay Aslanapa",
+      "role": {
+        "tr": "1963-1964 kazılarını yürüttü",
+        "en": "Led the 1963-1964 excavations"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Yapının terk edilmiş hâlini anlatan seyyah",
+        "en": "Traveller who described its abandoned state"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1325,
+      "date": null,
+      "hijri": "725 veya 735",
+      "type": "construction",
+      "title": {
+        "tr": "Orhan Gazi tarafından yaptırıldı (H. 725 / M. 1325 veya H. 735 / M. 1335)",
+        "en": "Built by Orhan Gazi (AH 725 / AD 1325 or AH 735 / AD 1335)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ],
+      "note": {
+        "tr": "Kitap iki seçenek veriyor: H. 725 / M. 1325 veya H. 735 / M. 1335; yıl alanına ilk seçenek yazıldı.",
+        "en": "The book gives two alternatives: AH 725 / AD 1325 or AH 735 / AD 1335; the first is entered in the year field."
+      }
+    },
+    {
+      "id": "kazi-1963",
+      "year": 1963,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Oktay Aslanapa başkanlığında kazılarla ortaya çıkarıldı (1963-1964)",
+        "en": "Unearthed in excavations led by Oktay Aslanapa (1963-1964)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "id": "kazi-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Uludağ Üniversitesi kazıları (2010-2011); kazılar aralıklarla sürüyor",
+        "en": "Uludağ University excavations (2010-2011); continuing at intervals"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "445"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "temeller",
+      "title": {
+        "tr": "Temel izleri",
+        "en": "Foundation traces"
+      },
+      "hint": {
+        "tr": "Yalnızca plan şeması okunabilen temeller kalmıştır.",
+        "en": "Only foundations with a legible plan remain."
+      },
+      "section_id": "plan"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-orhan-gazi-hamami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Aynı dönemde yapıldığı kabul edilen Orhan Gazi Hamamı kalıntısı caminin güneydoğusundadır.",
+        "en": "The ruins of the Orhan Gazi Bath, accepted as built in the same period, lie southeast of the mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "444"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "visitor_tips": [],
+    "notes": {
+      "tr": "Arkeolojik alan; kazılar sürmektedir.",
+      "en": "Archaeological site; excavations are ongoing."
+    },
+    "notes_source": "source"
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mimari kalıntı: zeytinliklerin arasında, yalnızca temel izleri görülen bir yapı. Kuzeyde altı mermer direkli bir revak, ardından ortada geniş bir ön mekân ve iki yanında birer tabhane, güneyde mihraba dönük asıl ibadet bölümü planı okunur.",
+      "en": "An archaeological site among olive groves where only foundation traces are visible. The plan reads as a six-pillar portico on the north, a broad front area flanked by two hospice rooms, and the main prayer area facing the mihrab to the south."
+    }
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "444-445"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1FrjHpeuzdev09q6Q-uKsNJ7Z1iF_qDpS",
+        "original_name": "DJI_20241020204810_0284_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "444"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Orhan Gazi (İmaret) Camii (kitap s. 444)",
+        "en": "Orhan Gazi (Imaret) Mosque (book p. 444)"
+      },
+      "alt": {
+        "tr": "Orhan Gazi (İmaret) Camii fotoğrafı",
+        "en": "Photo of Orhan Gazi (Imaret) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

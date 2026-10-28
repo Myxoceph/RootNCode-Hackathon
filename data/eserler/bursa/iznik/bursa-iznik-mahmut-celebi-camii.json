@@ -1,0 +1,605 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-mahmut-celebi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Aşhane-imaret yapısı için ayrı kayıt gerekip gerekmediği değerlendirilmeli (kitapta yalnızca izlerinden söz ediliyor).",
+      "Hazire ve Mahmut Çelebi'nin kabri için ayrı kayıt açılmadı; cami kaydında anlatıldı.",
+      "'bursa-iznik-yesil-camii' hedef kaydı yoksa oluşturulmalı.",
+      "Era alanı kitapta açıkça verilmedi; 15. yy Osmanlı denildiği için erken-osmanli girildi, teyit edilmeli.",
+      "Koordinat bulunmalı (kitapta yok).",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap taç kapıyı Selçuklu taç kapılarıyla karşılaştırıp 'Beylikler döneminde daha sade örneklerin tercih edildiğini' söyler; yapı ise H. 846 / M. 1442 (II. Murad dönemi) tarihlidir. İfade kaynağa sadık aktarıldı; dönem adlandırması çelişkili olabilir."
+      },
+      {
+        "field": "inscriptions[cami-kitabesi]",
+        "note": "İngilizce çeviri Hicri yıl için 'after hijra hijra' ifadesini tekrarlar (baskı hatası). Türkçe mealde Murad 'Muhammed Han oğlu' denmiştir. Çeviri alanında İngilizce metin kısaltılmıştır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mahmut Çelebi Camii",
+    "en": "Mahmut Çelebi Mosque"
+  },
+  "subtitle": {
+    "tr": "Osmanlı döneminde İznik'te yapılan son cami",
+    "en": "The last mosque built in Iznik in the Ottoman period"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Yakup Ecezade",
+    "Çandarlı",
+    "kitabe",
+    "firuze sırlı tuğla minare",
+    "duvar yazıları",
+    "aşhane-imaret",
+    "hazire"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Mahmut Çelebi Mahallesi",
+    "address": "Atatürk Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "436"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.428052,
+      "lng": 29.719814,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/310139582 ('Mahmut Çelebi Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 846 / M. 1442 (vakfiye H. 851 / M. 1447)",
+      "en": "AH 846 / AD 1442 (endowment charter AH 851 / AD 1447)"
+    },
+    "start_year": 1442,
+    "end_year": 1442,
+    "hijri_year": 846,
+    "century": 15,
+    "basis": {
+      "tr": "Kitabedeki H. 846 tarihi ve metindeki H. 846 / M. 1442 ifadesi.",
+      "en": "The AH 846 date of the inscription and the text's AH 846 / AD 1442."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "436, 440"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mahmut Çelebi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "436, 440"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Mahmut Çelebi vakfı",
+    "deed": {
+      "date_display": "H. 851 / M. 1447",
+      "excerpt": {
+        "tr": "Vakfiyede yapı \"bukâ-i meymûne\" olarak tanımlanır; mescidin yakınında iki ev, bir mutfak, bir kiler, bir yemekhane ve bir avlu bulunduğu belirtilir.",
+        "en": "The charter describes the building as \"bukâ-i meymûne\"; near the mosque are two houses, a kitchen, a cellar, a dining hall and a courtyard."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "436"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "436"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Çandarlı ailesinden vezir İbrahim Paşa'nın oğlu Mahmut Çelebi'nin H. 846 / M. 1442'de yaptırdığı kare planlı, tek kubbeli cami; Osmanlı döneminde İznik'te inşa edilen son camidir. Sıva üzeri duvar yazıları ve firuze sırlı tuğla minaresiyle dikkat çeker.",
+    "en": "A square single-domed mosque built in AH 846 / AD 1442 by Mahmut Çelebi, son of the Çandarlı vizier İbrahim Paşa; the last mosque built in Iznik in the Ottoman period. Notable for its wall inscriptions on plaster and turquoise glazed-brick minaret."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Vakıf",
+        "en": "History and Endowment"
+      },
+      "body": {
+        "tr": "Banisi, Çandarlı ailesinden II. Murad'ın (1424-1451) sadrazamı İbrahim Paşa'nın oğlu Mahmut Çelebi'dir; cami bulunduğu mahalleye de adını vermiştir ve \"Mahmut Çelebi Mescidi\" ya da \"Yakub Ecezade Mescidi\" olarak da anılır. Vakfiyede yapı \"bukâ-i meymûne\" olarak tanımlanır; mescidin yakınında iki ev, bir mutfak, bir kiler, bir yemekhane ve bir avlu olduğu belirtilir; bu aşhane-imaret yapısının izleri bugün çevrede görülebilir. Mahmut Çelebi mescit ve çevresindeki hayratlar için önemli sayıda akar vakfetmiştir. Cami H. 846 / M. 1442'de inşa edilmiş, vakfiyesi H. 851 / M. 1447 tarihlidir. Osmanlı döneminde İznik'te inşa edilen son camidir.",
+        "en": "Its benefactor was Mahmut Çelebi, son of İbrahim Paşa, grand vizier of Murad II (1424-1451) from the Çandarlı family; the mosque gave its name to the neighborhood and is also known as \"Mahmut Çelebi Mosque\" or \"Yakub Ecezade Masjid\". The charter describes it as \"bukâ-i meymûne\" with two houses, a kitchen, a cellar, a dining hall and a courtyard nearby; traces of this kitchen-imaret remain. Mahmut Çelebi donated a significant number of real estates. Built AH 846 / AD 1442, charter AH 851 / AD 1447, it is the last mosque built in Iznik in the Ottoman period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "436"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Tipolojik olarak İznik Yeşil Camii'ne benzer. 8 m yüksekliğindeki tek kubbe altında kare planlı harim ve kuzeyde dikdörtgen planlı, üç gözlü son cemaat yeri vardır; kubbeye geçiş üçgenlerle sağlanır. Giriş kapısı Bursa kemerli bir eyvanın yaklaşık 2 m gerisindedir. Son cemaat yerinin kuzey cephesindeki ahşap kanatlı kapıda siyah-beyaz taşlı iki renkli dilimli kemer, Bursa dışından -özellikle güney kökenli- ustaların çalıştığını gösterir. Girişin iki yanındaki nişler XV. yüzyıl Bursa sultan camilerinde de görülür. Duvarlar tuğla ve taş almaşıktır; kubbe kasnağı, revak sütunları, pencere lentoları, söveler ve korkuluklar mermerden, nişler kesme taştandır. Pencereler dikdörtgendir; giriş cephesi ve kasnaktakiler sivri kemerlidir. Güney duvarın ortasında beş cepheli mihrap nişi, batısında yakın döneme ait ahşap minber vardır. Kesme taştan taç kapı dikkat çekicidir; Selçuklu taç kapılarına kıyasla daha sade oluşu kaynakta ekonomik imkânlarla ilişkilendirilir.",
+        "en": "Typologically similar to the Green Mosque of Iznik. Under a single dome 8 m high there is a square prayer hall and a rectangular three-bay narthex to the north; the dome transition is by triangles. The entrance is about 2 m behind a Bursa-arched iwan. The wooden-leaved door of the narthex has a two-color segmented arch of black and white stones, showing masters from outside Bursa, especially of southern origin. The niches beside the entrance are also seen in 15th-century Bursa sultan mosques. Walls alternate brick and stone; the drum, arcade columns, lintels, jambs and railings are marble, the niches cut stone. Windows are rectangular, those on the entrance façade and drum pointed. A five-sided mihrab niche is in the middle of the south wall with a recent wooden minbar to its west. The cut-stone portal is striking; its simplicity compared with Seljuk portals is attributed in the source to economic means."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "440-442"
+        }
+      ]
+    },
+    {
+      "id": "duvar-yazilari",
+      "order": 3,
+      "title": {
+        "tr": "Duvar Yazıları ve Kalem İşleri",
+        "en": "Wall Inscriptions and Painted Decoration"
+      },
+      "body": {
+        "tr": "İç mekân sıvalıdır ve İznik'te sıva üzeri duvar yazıları bakımından en zengin örneklerden biridir. Mihrabın doğu cephesinden başlayarak Haşr suresinin 10. ayetinin başından 18. ayetin sonuna kadar yazılmıştır; mihrabın solunda esmâ-i hüsnâ vardır. Kubbede kûfi ve celi sülüs hatla yazılmış paftalar içinde Tevbe suresinin 18-22. ayetleri bulunur. Yazılar 1976-1977'de yenilenmiştir. Kubbe kasnağında ve doğu, batı, güney duvarlardaki pencere kemerlerinde kalem işi süslemeler görülür.",
+        "en": "The plastered interior is one of the richest in Iznik for wall inscriptions on plaster. The Quranic text runs from verse 10 to the end of verse 18 of Surah Al-Hashr starting east of the mihrab; the Asma'ul-Husna is left of the mihrab. The dome has verses 18-22 of Surah At-Tawbah in Kufic and jeli thuluth. The inscriptions were renewed in 1976-1977. There are hand-painted decorations on the drum and window arches."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "440-441"
+        }
+      ]
+    },
+    {
+      "id": "minare-hazire",
+      "order": 4,
+      "title": {
+        "tr": "Minare ve Hazire",
+        "en": "Minaret and Graveyard"
+      },
+      "body": {
+        "tr": "Minare yuvarlak gövdeli, tek şerefeli ve sivri külahlıdır; gövde firuze renkli sırlı tuğlalarla örülmüş, iki bilezikle sınırlandırılmış, şerefe altı on iki sıra testere dişi dolguyla süslenmiştir. 1967 depreminden etkilenmiştir. Evliya Çelebi camiyi kurşun kaplı ve sağlam, abdesthanelerini harap olarak tarif eder; halk onardırmasını rica etmiş, o misafir olduğunu söyleyerek kabul etmemiştir. Son cemaat yerinin yan revakları bir dönem camekânla kapatılmış, 2008 çevre düzenlemesinde kaldırılmıştır. 2025'te Bursa Büyükşehir Belediyesi cami haziresinde düzenleme yapmıştır. Mahmut Çelebi, caminin güneyindeki on bir mezarlı hazirede demir parmaklıkla çevrili kabre defnedilmiştir.",
+        "en": "The minaret has a round shaft, a single balcony and a pointed spire, built with turquoise glazed bricks, bordered by two bands, with twelve rows of sawtooth inlay under the balcony. It was affected by the 1967 earthquake. Evliya Çelebi describes the mosque as lead-covered and solid but its ablution facilities as dilapidated; locals asked him to repair them but he said he was a guest. The narthex side arcades were once glazed and cleared in the 2008 landscaping. In 2025 the Bursa Metropolitan Municipality arranged the graveyard. Mahmut Çelebi is buried in a grave surrounded by iron railings in the eleven-grave graveyard south of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "441-442"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe_yuksekligi",
+      "label": {
+        "tr": "Kubbe yüksekliği",
+        "en": "Dome height"
+      },
+      "value": 8,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "440"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_sayisi",
+      "label": {
+        "tr": "Hazirede mezar sayısı",
+        "en": "Graves in the graveyard"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "442"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "440"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mahmut Çelebi",
+      "role": {
+        "tr": "Banî; caminin güneyindeki hazirede defnedildi",
+        "en": "Founder; buried in the graveyard south of the mosque"
+      }
+    },
+    {
+      "name": "İbrahim Paşa",
+      "role": {
+        "tr": "Banînin babası, II. Murad'ın sadrazamı (Çandarlı ailesi)",
+        "en": "Founder's father, grand vizier of Murad II (Çandarlı family)"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Camiyi kurşun kaplı ve sağlam olarak tarif eden seyyah",
+        "en": "Traveler who described the mosque as lead-covered and solid"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cami-kitabesi",
+      "location": {
+        "tr": "Giriş kapısının üzerinde, celi sülüs hatla",
+        "en": "Above the entrance door, in jeli thuluth calligraphy"
+      },
+      "language": "other",
+      "script": "celi sülüs",
+      "note": {
+        "tr": "Kitap dili belirtmez; metin Arapça ibareler içerir.",
+        "en": "The book does not name the language; the text contains Arabic phrases."
+      },
+      "transliteration": "Benâ hâza’l-mescide kurretu’l-ayni’l-emârahû ve semeratü’d-devhatü’l-vezâreti sâhibu’l-hayrât ve’l-müberrât ve sâhibu’l-mevâidi ve’l-meserrât Mahmûd Çelebi li-izâleti’l-hayrâtihî’l-mütevâliye ve devleti’l-müteâliye ibni sâhibu’l-a’zâm ve’l-menâsıbu’l-efham el-merhûm es-saîd ve’l-mağfûr eş-şehîd İbrahim Paşa nevvera’llâhu medceahû zamânı devletü’l-mülki ve âvân es-sultânu nâsıbu râyâti’l-hedyi ve’l-îmân ve hâfidi menâbiru’l-küfri ve’t-tuğyân hâfizu’l-bilâdi bâsitu’l-emn-i ve’l-emân Murâd bin Mehmed Hân hallede memleketehû ve ebbede devletehû fî seneti sitte ve erbaine ve semâne mieti’l-hicriyyeti ve’l-hamdulillâhi vahdehû.",
+      "translation": {
+        "tr": "Bu mescidi, emirliğin göz bebeği ve vezirlik ağacının meyvesi, hayırlı işler ve iyilikler sahibi, sofralar ve sevindirici işler sahibi, ulu vezir, merhum, said, mağfur ve şehit İbrahim Paşa -Allah yattığı yeri nurlandırsın- oğlu Mahmut Çelebi, -hayırlı işleri devamlı ve devleti yüce olsun- doğruluk ve iman sancaklarını diken, küfür ve isyankârlığın minberlerini yıkan ve güvenlik döşeğini yayan beldelerin koruyucusu Muhammed Han oğlu Murad-memleketi ebedî ve sonsuz olsun- devleti zamanında, hicri sekiz yüz kırk altı senesinde bina etti, hamd sadece Allah'a mahsustur.",
+        "en": "This mosque was built by Mahmut Çelebi, son of the great vizier İbrahim Paşa, in the time of Murad, son of Muhammad Han, in the year eight hundred and forty-six after hijra; praise be to Allah alone. (Condensed from the book's English translation.)"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 846,
+        "gregorian": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "440-441"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1442",
+      "year": 1442,
+      "date": null,
+      "hijri": "846",
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa edildi",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "436"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1447",
+      "year": 1447,
+      "date": null,
+      "hijri": "851",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi",
+        "en": "Endowment charter dated"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "436"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1967",
+      "year": 1967,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Minare depremden etkilendi",
+        "en": "Minaret affected by earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "442"
+        }
+      ]
+    },
+    {
+      "id": "duvar-yazilari-1976",
+      "year": 1976,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Duvar yazıları yenilendi (1976-1977)",
+        "en": "Wall inscriptions renewed (1976-1977)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "441"
+        }
+      ],
+      "note": {
+        "tr": "Çalışma 1976-1977'yi kapsar.",
+        "en": "The work spans 1976-1977."
+      }
+    },
+    {
+      "id": "cevre-duzenleme-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Çevre düzenlemesinde son cemaat yeri camekânı kaldırıldı",
+        "en": "Glazing of the narthex arcades removed during landscaping"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "442"
+        }
+      ]
+    },
+    {
+      "id": "hazire-duzenleme-2025",
+      "year": 2025,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi hazire düzenlemesi",
+        "en": "Graveyard arrangement by the Bursa Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "442"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "duvar-yazilari",
+      "title": {
+        "tr": "Sıva üzeri duvar yazıları",
+        "en": "Wall inscriptions on plaster"
+      },
+      "hint": {
+        "tr": "Mihrabın solundaki esmâ-i hüsnâ ve kubbedeki paftalara bakın.",
+        "en": "Look at the Asma'ul-Husna left of the mihrab and the cartouches in the dome."
+      },
+      "section_id": "duvar-yazilari"
+    },
+    {
+      "feature": "minare",
+      "title": {
+        "tr": "Firuze sırlı tuğla minare",
+        "en": "Turquoise glazed-brick minaret"
+      },
+      "hint": {
+        "tr": "Şerefe altındaki testere dişi dolgulara bakın.",
+        "en": "Look at the sawtooth inlay under the balcony."
+      },
+      "section_id": "minare-hazire"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-yesil-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kaynak, camiyi tipolojik olarak İznik Yeşil Camii'ne benzetir.",
+        "en": "The source says the mosque is typologically similar to the Green Mosque of Iznik."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "440"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mahmut Çelebi Camii, İznik'te Atatürk Caddesi üzerinde, kare planlı ve tek kubbeli bir yapıdır. Duvarlar sıralı tuğla ve taştan örülmüştür. Kuzeyde üç gözlü bir son cemaat yeri ve girişte siyah-beyaz taşlı dilimli kemer görülür. Kesme taştan taç kapı sadedir. Yuvarlak gövdeli, tek şerefeli minarenin gövdesi firuze renkli sırlı tuğladandır. İç mekân sıvalıdır; mihrabın doğu yanından başlayan ve kubbede devam eden duvar yazıları dikkat çeker. Caminin güneyinde on bir mezarlı bir hazire vardır.",
+      "en": "Mahmut Çelebi Mosque stands on Atatürk Street in Iznik, a square building with a single dome. Its walls are of alternating brick and stone. To the north is a three-bay narthex and, at the entrance, a segmented arch of black and white stones. The cut-stone portal is plain. The round minaret with a single balcony has a shaft of turquoise glazed brick. The interior is plastered, with wall inscriptions beginning east of the mihrab and continuing in the dome. South of the mosque is a graveyard of eleven graves."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (s. 440-442)"
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "436-442"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1MWuIM4ospMaSeUg6AWWk1CUH30ox5blf",
+        "original_name": "07 ERD01170 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "443"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Mahmut Çelebi Camii (kitap s. 443)",
+        "en": "Mahmut Çelebi Mosque (book p. 443)"
+      },
+      "alt": {
+        "tr": "Mahmut Çelebi Camii fotoğrafı",
+        "en": "Photo of Mahmut Çelebi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1HmCtqHkKYncsIxMRYjLw4rFAZ6KYuJSA",
+        "original_name": "08 ERD01195 kopya 2.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "443"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Mahmut Çelebi Camii (kitap s. 443)",
+        "en": "Mahmut Çelebi Mosque (book p. 443)"
+      },
+      "alt": {
+        "tr": "Mahmut Çelebi Camii fotoğrafı",
+        "en": "Photo of Mahmut Çelebi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1WWSjQtY6ui-f2-wX2vq-WEd3hjPXjE8v",
+        "original_name": "ERD01182 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "443"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Mahmut Çelebi Camii (kitap s. 443)",
+        "en": "Mahmut Çelebi Mosque (book p. 443)"
+      },
+      "alt": {
+        "tr": "Mahmut Çelebi Camii fotoğrafı",
+        "en": "Photo of Mahmut Çelebi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,663 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-nakkas-ali-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mescidin 'dating' yılı kitapta yok (yalnızca II. Murad dönemi); yıllar null bırakıldı.",
+      "Mimar bilgisi kitapta yok.",
+      "Yeşil Cami ve Türbe (Nakkaş Ali'nin nakkaşbaşılık yaptığı yapı) ile ilişki için hedef id'nin ilçesi kitapta yok; ilişki yazılmadı, kayıtlar tamamlandığında same_craftsman eklenebilir.",
+      "Mescit için vakıf bilgisi kitapta yok; 'waqf' null."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location",
+        "note": "Mescit için Türkçe metin 'Mollagürânî Mahallesi, Satı Caddesi No: 22', İngilizce metin 'Şehreküstü Mahallesi, Uzuncarsi Street No. 22' diyor. Hazire bölümünde Türkçe metin yine 'Mollagürani Mahallesi, Satı Caddesi No: 22', İngilizce metin 'Kiremitçi Mahallesi, Doğanbey Street No. 22' veriyor. Türkçe metin esas alındı; İngilizce adresler kaynakta çelişki olarak saklanıyor, sahada doğrulanmalı."
+      },
+      {
+        "field": "facts[eski_ic_olcu]",
+        "note": "5,54 × 6,63 m (eski yapı) ile 10,00 × 13,00 m (yeniden inşa) ölçüleri aynı mescit için ayrı dönemlere aittir; kitap farkı açıklamıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Nakkaş Ali Mescidi",
+    "en": "Nakkaş Ali Masjid"
+  },
+  "subtitle": {
+    "tr": "Nakkaşbaşı Ali'nin mescidi ve Lâmiî Çelebi'nin yattığı hazire",
+    "en": "Masjid of Head Muralist Ali and the graveyard of Lâmiî Çelebi"
+  },
+  "alternate_names": [
+    {
+      "tr": "Baba Nakkaş Ali Mescidi",
+      "en": "Baba Nakkaş Ali Masjid",
+      "note": "Zaman içinde bilinen ad"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Nakkaş Ali",
+    "Lâmiî Çelebi",
+    "hazire",
+    "çıtakârî",
+    "yeniden inşa",
+    "Satı Caddesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollagürânî Mahallesi",
+    "address": "Satı Caddesi, No: 22",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "399"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185581,
+      "lng": 29.053675,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Murad dönemi (yıl belirtilmemiş)",
+      "en": "Reign of Murad II (year not given)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap ilk inşanın Sultan II. Murad döneminde Nakkaş Ali tarafından yapıldığını yazar; yıl vermez.",
+      "en": "The book says the first construction was carried out by Nakkaş Ali in the reign of Sultan Murad II; no year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "399"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Nakkaş Ali (Ali bin İlyas)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "399"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Yeşil Cami ve Türbe'nin nakkaşbaşısı Nakkaş Ali'nin II. Murad döneminde yaptırdığı mescit. 1855 depreminden sonra harap olan yapı 2010'da Vakıflar Genel Müdürlüğü tarafından yeniden ayağa kaldırılmıştır. Hazirede Nakkaş Ali'nin torunu şair ve mutasavvıf Lâmiî Çelebi yatar.",
+    "en": "A masjid built in the reign of Murad II by Nakkaş Ali, head muralist of the Yeşil Mosque and Tomb. Ruined after the 1855 earthquake, it was rebuilt in 2010 by the General Directorate of Foundations. The graveyard holds Nakkaş Ali's grandson, the poet and mystic Lâmiî Çelebi."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "İlk inşası, Yıldırım Bayezid ve Çelebi Mehmed döneminin ünlü nakkaşlarından, Yeşil Cami ve Türbe'nin Nakkaşbaşısı Nakkaş Ali tarafından Sultan II. Murad döneminde gerçekleştirilmiştir. Çelebi Mehmed'in yaptırdığı Yeşil Cami'deki kitabede 'Ali bin İlyas' olarak geçer ve Bursa Şehrengizi müellifi Lâmiî Çelebi'nin dedesidir. Mescit zaman içinde 'Baba Nakkaş Ali' adıyla da bilinmiştir.",
+        "en": "The first construction was carried out in the reign of Sultan Murad II by Nakkaş Ali, a famous muralist of the Yıldırım Bayezid and Çelebi Mehmed period and head muralist of the Yeşil Mosque and Tomb. He appears as 'Ali bin İlyas' in the inscription in the Yeşil Mosque built by Çelebi Mehmed, and was the grandfather of Lâmiî Çelebi, author of the Bursa Şehrengizi. The masjid has also been known as 'Baba Nakkaş Ali'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "1855 depreminde ağır hasar alan yapı bir süre kullanılamamış, basit onarımlarla ayakta tutulmuştur. Mısrî Tekkesi Şeyhi ve müellif M. Şemseddin Efendi onarım sonrası yapıyı şöyle tarif eder: 'Moloz taşla yapılmış, dört duvar, üstü ahşap ve yerli kiremitli, minaresiz, minbersiz, kitabesiz, kadro dışı, cemaat elinde ramazanlarda namaza açıktır.' Belgelerde H. 1111 / M. 1699'da mescide günlük 2 akçe ücretle imam tayin edildiği, H. 1205 / M. 1790'da onarıldığı kayıtlıdır. 1965'ten sonra tamamen terk edilen yapı harabeye dönmüş, yalnızca temel kalıntıları kalmıştır. Kaynaklara göre iç ölçüleri 5,54 × 6,63 m, kuzeydeki son cemaat yeri 4,20 × 8,99 m idi.",
+        "en": "The building was severely damaged in the 1855 earthquake, was unusable for a while and was kept standing with simple repairs. The Shaykh of the Mısrî Lodge and author M. Şemseddin Efendi described it afterwards: 'built with rubble stone, four walls, wooden and local-tiled roof, no minaret, no minbar, no inscription, not staffed, open for prayers in the hands of the congregation during Ramadan.' Documents record an imam appointed at 2 akçe per day in AH 1111 / AD 1699 and a repair in AH 1205 / AD 1790. After 1965 it was abandoned, fell into ruin and only foundation remains were left. According to sources its interior was 5.54 × 6.63 m and the north narthex 4.20 × 8.99 m."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa",
+      "order": 3,
+      "title": {
+        "tr": "Yeniden İnşa",
+        "en": "Reconstruction"
+      },
+      "body": {
+        "tr": "2008'de sivil toplum kuruluşları ve duyarlı vatandaşların desteğiyle Osmangazi Belediyesi mimari uygulama projelerini hazırlamış, mescit 2010'da Vakıflar Genel Müdürlüğü tarafından yeniden ayağa kaldırılmıştır. Kuzeydoğudaki tek katlı 80 m²'lik yapı kamulaştırılarak avluya katılmış ve müştemilat yapılmıştır. Avlu duvarları moloz taşla yenilenmiş, batı duvarına bitişik çeşmenin yerine mermer, tek kurnalı yeni bir çeşme yapılmıştır.",
+        "en": "In 2008, with the support of NGOs and citizens, Osmangazi Municipality prepared implementation projects and the General Directorate of Foundations rebuilt the masjid in 2010. The single-storey 80 m² building to the northeast was expropriated, added to the courtyard and used as the mosque's annex. The courtyard walls were renewed in rubble stone and a new marble single-basin fountain replaced the one against the west wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399-400"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari Özellikler (Yeniden İnşa Sonrası)",
+        "en": "Architecture (After Reconstruction)"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı mescit 10,00 × 13,00 m ölçülerindedir. Kuzeyindeki 3 m derinliğindeki son cemaat mahalli altı ahşap direkle taşınır; harimle birlikte üç tarafı açıktır ve kiremit kaplı ahşap çatıyla örtülüdür. Çift kanatlı ahşap kapıdan girilen, ahşap tavanlı kare planlı harim toplam 18 pencereyle aydınlanır: alt pencereler ahşap söveli ve lokma demirli, üst pencereler sivri kemerli ve alçı şebekelidir. Çıtakârî süslemeli ahşap tavan ile duvar arasında bordür bezemeli kuşak bulunur. Minber ve kürsü ahşaptır; dikdörtgen çerçeveli mihrap nişi beyaz sıvalı ve sadedir.",
+        "en": "The rectangular masjid measures 10.00 × 13.00 m. The 3 m deep narthex on the north is carried by six wooden posts, open on three sides and covered by a tiled wooden roof. The square, wooden-ceilinged prayer hall, entered through a double-leaf wooden door, is lit by 18 windows: lower ones with wooden frames and iron grilles, upper ones pointed-arched with plaster grilles. A decorated border band runs between the çıtakârî-ornamented wooden ceiling and the walls. The minbar and pulpit are wooden; the rectangular-framed mihrab niche is plain white plaster."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 5,
+      "title": {
+        "tr": "Nakkaş Ali Mescidi Haziresi",
+        "en": "Nakkaş Ali Masjid Graveyard"
+      },
+      "body": {
+        "tr": "Hazire mescidin doğu ve güneyinde yer alır ve taş duvarlarla çevrilidir; özellikle Nakkaş Ali'nin neslinden aile bireylerinin gömüldüğü küçük bir kabristandır. 2011'de Bursa Büyükşehir Belediyesi tarafından kapsamlı bakım ve onarımdan geçirilmiştir. En ünlü sakinlerinden biri, 1479'da Bursa'da doğan, 1532'de Bursa'da vefat eden şair, müellif ve mutasavvıf Lâmiî Çelebi'dir (asıl adı Mahmud); Nakkaş Ali'nin torunudur. Muradiye Medresesi'nde ders almış, Molla Câmî'nin eserlerini Türkçeye çevirmesiyle 'Molla-i Rûm' ve 'Câmî-i Rûm' unvanlarını almış, 'Nübüvve' ve 'Şehrengiz-i Bursa' başta olmak üzere yaklaşık otuz eseri vardır. Mezar taşı tespit edilebilen isimler: Şeyh Lâmiî bin Osman Efendi, Mahmud Çavuş bin Ahmed Efendi, Seyyid Molla İshak, Seyyid Abdurrahman bin Mustafa, Fazlullah bin Seccac, Ahmed Çelebi, Müderris Seyyid Mehmed Kemâleddin Efendi, Nakkaş Ali Camii İmamı Mehmed Efendi. Kaynaklarda gömülü olduğu belirtilen ama taşı bulunmayanlar: Lâmiî Çelebi'nin dedesi Nakkaş Ali Çelebi, Derviş Mehmed bin Lâmiî (Lem'î Çelebi), Yemen Kadısı Nalbandzâde Seyyid Mehmed Efendi.",
+        "en": "The graveyard lies east and south of the masjid, surrounded by stone walls; it is a small cemetery where especially Nakkaş Ali's descendants are buried. It was extensively repaired by the Bursa Metropolitan Municipality in 2011. One of its most famous burials is the poet, author and mystic Lâmiî Çelebi (real name Mahmud), grandson of Nakkaş Ali, born in Bursa in 1479 and died there in 1532. He studied at the Muradiye Madrasa, received the titles 'Molla-i Rum' and 'Cami-i Rum' for translating Molla Jami's works into Turkish, and wrote about thirty works, notably 'Nübüvve' and 'Şehrengiz-i Bursa'. Gravestones identified today: Shaykh Lâmiî bin Osman Efendi, Mahmud Çavuş bin Ahmed Efendi, Seyyid Molla İshak, Seyyid Abdurrahman bin Mustafa, Fazlullah bin Seccac, Ahmed Çelebi, Lecturer Seyyid Mehmed Kemâleddin Efendi, Imam of Nakkaş Ali Mosque Mehmed Efendi. Recorded in sources as buried here but without surviving stones: Lâmiî Çelebi's grandfather Nakkaş Ali Çelebi, Dervish Mehmed bin Lâmiî (Lem'î Çelebi), and the Qadi of Yemen Nalbandzâde Seyyid Mehmed Efendi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399-401"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "eski_ic_olcu",
+      "label": {
+        "tr": "Eski iç ölçüler (harap öncesi)",
+        "en": "Former interior dimensions (before ruin)"
+      },
+      "value": "5,54 × 6,63",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399"
+        }
+      ]
+    },
+    {
+      "key": "eski_son_cemaat",
+      "label": {
+        "tr": "Eski son cemaat yeri",
+        "en": "Former narthex"
+      },
+      "value": "4,20 × 8,99",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399"
+        }
+      ]
+    },
+    {
+      "key": "yeni_olcu",
+      "label": {
+        "tr": "Yeniden inşa sonrası ölçüler",
+        "en": "Dimensions after reconstruction"
+      },
+      "value": "10,00 × 13,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 18,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_direk",
+      "label": {
+        "tr": "Son cemaat ahşap direk sayısı",
+        "en": "Narthex wooden posts"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "key": "mustemilat_alani",
+      "label": {
+        "tr": "Kamulaştırılıp müştemilat yapılan bina",
+        "en": "Expropriated annex building"
+      },
+      "value": 80,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "400"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Nakkaş Ali (Ali bin İlyas)",
+      "role": {
+        "tr": "Banî; Yeşil Cami ve Türbe nakkaşbaşısı",
+        "en": "Founder; head muralist of the Yeşil Mosque and Tomb"
+      }
+    },
+    {
+      "name": "Lâmiî Çelebi (Mahmud)",
+      "role": {
+        "tr": "Şair, müellif, mutasavvıf; Nakkaş Ali'nin torunu; hazirede medfun",
+        "en": "Poet, author and mystic; grandson of Nakkaş Ali; buried in the graveyard"
+      }
+    },
+    {
+      "name": "M. Şemseddin Efendi",
+      "role": {
+        "tr": "Mısrî Tekkesi Şeyhi ve müellif; onarım sonrası yapıyı tarif etti",
+        "en": "Shaykh of the Mısrî Lodge and author; described the building after the repairs"
+      }
+    },
+    {
+      "name": "Şeyh Lâmiî bin Osman Efendi",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan",
+        "en": "Gravestone in the graveyard"
+      }
+    },
+    {
+      "name": "Mahmud Çavuş bin Ahmed Efendi",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan",
+        "en": "Gravestone in the graveyard"
+      }
+    },
+    {
+      "name": "Seyyid Molla İshak",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan",
+        "en": "Gravestone in the graveyard"
+      }
+    },
+    {
+      "name": "Seyyid Abdurrahman bin Mustafa",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan",
+        "en": "Gravestone in the graveyard"
+      }
+    },
+    {
+      "name": "Fazlullah bin Seccac",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan",
+        "en": "Gravestone in the graveyard"
+      }
+    },
+    {
+      "name": "Ahmed Çelebi",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan",
+        "en": "Gravestone in the graveyard"
+      }
+    },
+    {
+      "name": "Müderris Seyyid Mehmed Kemâleddin Efendi",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan",
+        "en": "Gravestone in the graveyard"
+      }
+    },
+    {
+      "name": "Mehmed Efendi (Nakkaş Ali Camii imamı)",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan",
+        "en": "Gravestone in the graveyard"
+      }
+    },
+    {
+      "name": "Derviş Mehmed bin Lâmiî (Lem'î Çelebi)",
+      "role": {
+        "tr": "Kaynaklara göre hazirede medfun; taşı yok",
+        "en": "Recorded as buried here; no stone survives"
+      }
+    },
+    {
+      "name": "Nalbandzâde Seyyid Mehmed Efendi",
+      "role": {
+        "tr": "Yemen Kadısı; kaynaklara göre hazirede medfun; taşı yok",
+        "en": "Qadi of Yemen; recorded as buried here; no stone survives"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "imam-tayini-1699",
+      "year": 1699,
+      "date": null,
+      "hijri": "1111",
+      "type": "record",
+      "title": {
+        "tr": "Mescide günlük 2 akçe ücretle imam tayin edildi",
+        "en": "An imam was appointed at 2 akçe per day"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1790",
+      "year": 1790,
+      "date": null,
+      "hijri": "1205",
+      "type": "repair",
+      "title": {
+        "tr": "Mescit onarıldı",
+        "en": "The masjid was repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük depremde ağır hasar aldı",
+        "en": "Severely damaged in the great earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399"
+        }
+      ]
+    },
+    {
+      "id": "terk-1965",
+      "year": 1965,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1965'ten sonra tamamen terk edilip harabeye döndü",
+        "en": "Abandoned after 1965 and fell into ruin"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "399"
+        }
+      ]
+    },
+    {
+      "id": "proje-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Osmangazi Belediyesi mimari uygulama projelerini hazırladı",
+        "en": "Osmangazi Municipality prepared architectural implementation projects"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından yeniden ayağa kaldırıldı",
+        "en": "Rebuilt by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "id": "hazire-onarim-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Hazire alanı Bursa Büyükşehir Belediyesi tarafından kapsamlı onarımdan geçirildi",
+        "en": "Graveyard area extensively repaired by the Bursa Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "id": "lamii-vefat-1532",
+      "year": 1532,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Lâmiî Çelebi vefat etti ve dedesinin mescidi haziresine defnedildi",
+        "en": "Lâmiî Çelebi died and was buried in his grandfather's masjid graveyard"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "401"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, ahşap çatılı ve kiremit örtülü, 2010'da yeniden inşa edilmiş bir mescittir. Kuzeyinde altı ahşap direkli, üç yanı açık bir son cemaat yeri vardır. Çift kanatlı ahşap kapıdan girilen kare planlı iç mekân ahşap tavanlıdır; tavan çıtakârî süslemelidir ve toplam 18 pencereyle aydınlanır. Minber ve kürsü ahşaptır, mihrap beyaz sıvalı ve sadedir. Taş duvarlı avluda tek kurnalı mermer bir çeşme bulunur; mescidin doğu ve güneyindeki taş duvarlı küçük hazirede mezar taşları yer alır.",
+      "en": "A rectangular masjid with a tiled wooden roof, rebuilt in 2010. On the north is a narthex with six wooden posts, open on three sides. The square interior, entered through a double-leaf wooden door, has a wooden ceiling with çıtakârî ornament and 18 windows. The minbar and pulpit are wooden and the mihrab is plain white plaster. The stone-walled courtyard has a single-basin marble fountain; a small stone-walled graveyard with gravestones lies east and south of the masjid."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nakkas-ali-mescidi/p006-2.jpg",
+        "original_name": "1_1.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "399"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Nakkaş Ali Mescidi'nin ahşap sundurmalı cephesi",
+        "en": "Facade of Nakkaş Ali Masjid with its wooden porch"
+      },
+      "alt": {
+        "tr": "Taş ve ahşap hatıllı duvarlı yapının önünde geniş saçaklı, ahşap direkli bir sundurma bulunur. Sundurma demir korkuluklarla çevrilidir; arkada mavi bir apartman görünür.",
+        "en": "A stone building with timber bands and a wide-eaved porch on wooden posts at the front. Iron railings surround the porch, and a blue apartment block stands behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nakkas-ali-mescidi/p006-1.jpg",
+        "original_name": "2_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "399"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Nakkaş Ali Mescidi'nin içi, mihrap ve minber",
+        "en": "Interior of Nakkaş Ali Masjid with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı tavanı ve sarı duvarları olan sade salonda beyaz mihrap, sağda oyma ahşap minber vardır. Tavan kenarında yeşil bitkisel bordür, zeminde yeşilimsi halı görünür.",
+        "en": "A simple hall with a wooden ceiling and yellow walls, a white mihrab and a carved wooden minbar on the right. A green floral border runs under the ceiling and the carpet is greenish."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nakkas-ali-mescidi/p008-1.jpg",
+        "original_name": "5_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "401"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Haziredeki başlıklı mezar taşı",
+        "en": "Turbaned gravestone in the graveyard"
+      },
+      "alt": {
+        "tr": "Üstünde başlık biçimli taş bulunan, yazıtlı bir mezar taşı yeşil bitkilerin arasında durur. Yüzeyinde kabartma yazı satırları seçilir.",
+        "en": "A gravestone topped with a carved headdress stands among green plants. Lines of carved script cover its face."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

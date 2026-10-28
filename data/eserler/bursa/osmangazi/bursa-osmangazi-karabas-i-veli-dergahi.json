@@ -1,0 +1,523 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-karabas-i-veli-dergahi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Tekke ve Zaviyeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Tekkeler ve Zaviyeler (Osmangazi) bölümünden yapay zekâ ile özetlenerek taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; saha/GPS ile eklenip doğrulanmalı (in_review öncesi zorunlu).",
+      "Fotoğraf ve arşiv fotoğrafı yok; Drive klasörü belirlenip media[] ve media_folder doldurulmalı. Kitapta yapıya ait görsel sayfalar (metinsiz PDF sayfaları) vardı, içerikleri okunamadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgisi (ücret, saat, süre) kitapta yok.",
+      "Dergâhın kuruluş tarihi kitapta yok; mevcut semahane 1822 tarihli, özgün kuruluş dönemi unsurları korunmamış.",
+      "Kubbe kasnağındaki Mehmed Karamânî imzasının metni/konumu kitapta aktarılmamış; AR için kitabe/imza fotoğrafı gerekirse çekilmeli.",
+      "Vakıf/vakfiye bilgisi kitapta yok.",
+      "Mimar kitapta belirtilmiyor (yalnızca kubbe kasnağındaki Mehmed Karamânî imzası anılıyor; rolü belirtilmemiş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "alternate_names / founder",
+        "note": "Kurucu Türkçe metinde 'Şeyh Yakub Çelebi', mezar taşında 'Piri Yakup Çelebi', asıl adı 'Alâaddin Ali' olarak geçiyor; tapu kayıtlarında dergâh 'Pir Ali Çelebi Dergâhı'. Yazım ve ad farkları kaynağa sadık bırakıldı."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Kitap, mevcut semahanenin H. 1238 / M. 1822'de yapıldığını kubbe kasnağındaki Fetih suresi sonundaki imzadan çıkarıyor; 'imzadan anlaşılmaktadır' dendiği için çıkarım niteliğindedir."
+      },
+      {
+        "field": "facts[alan]",
+        "note": "1.380 + 110 + 230 = 1.720 m²; toplam ile parçalar tutarlı. Not: İngilizce metinde 'v building' yazım hatası var (tekke binası)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Karabaş-ı Velî Dergâhı",
+    "en": "Karabaş-ı Velî Sufi Lodge"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Pir Ali Çelebi Dergâhı",
+      "en": "Pir Ali Çelebi Lodge"
+    }
+  ],
+  "type": "tekke",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "dergah",
+    "Halvetiyye",
+    "semahane",
+    "ampir",
+    "kalem işi",
+    "hazire",
+    "kültür merkezi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Maksem",
+    "address": "5. Çardak Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "589"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Mevcut semahane H. 1238 / M. 1822",
+      "en": "Current semahane AH 1238 / AD 1822"
+    },
+    "start_year": 1822,
+    "end_year": null,
+    "hijri_year": 1238,
+    "century": 19,
+    "basis": {
+      "tr": "Kubbe kasnağında Fetih suresinin sonundaki Mehmed Karamânî imzasından çıkarılan tarih; kuruluş tarihi kitapta verilmiyor.",
+      "en": "Date inferred from Mehmed Karamânî's signature at the end of the Surah al-Fath on the dome drum; the founding date is not given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "590-591"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şeyh Yakub Çelebi",
+    "role": "kurucu (Halvetiyye tarikatı mensubu)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "589-591"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Maksem'de, Halvetî şeyh Yakub Çelebi'nin kurduğu dergâh. Mevcut semahane 1822 tarihli ampir üslubunda; ahşap kubbesi ve kalem işleri döneminin en nitelikli örneklerinden sayılıyor. 2002-2005'te kültür merkezi olarak restore edildi.",
+    "en": "A lodge founded by the Halvetî shaykh Yakub Çelebi in Maksem. The current semahane dates from 1822 in the empire style; its wooden dome and hand-painted ornament are among the finest of their period. Restored 2002-2005 as a cultural center."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yapı Bursa, Osmangazi, Maksem Mahallesi, 5. Çardak Sokak'ta yer alır. Dergâh, eski kaynaklarda 'Veli Şemseddin', bugün 'İbrahim Paşa Mahallesi' olarak bilinen Maksem bölgesinde kurulmuştur. Kurucusu Halvetiyye tarikatına mensup Şeyh Yakub Çelebi'dir. Siyah sarık sarması nedeniyle halk arasında 'Karabaş-ı Velî' olarak tanınan dergâh, tapu kayıtlarında 'Pir Ali Çelebi Dergâhı' adıyla da geçer.",
+        "en": "The building is located in Osmangazi District, Maksem Neighborhood, 5th Çardak Street. The lodge was established in the Maksem region, known as 'Veli Şemseddin' in old sources and 'İbrahim Paşa Mahallesi' today. Its founder was Shaykh Yakub Çelebi of the Halvetiyye order. Known among the public as 'Karabaş-ı Velî' because of the black turban he wore, it is also listed as 'Pir Ali Çelebi Lodge' in land registry records."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "589"
+        }
+      ]
+    },
+    {
+      "id": "kurucu",
+      "order": 2,
+      "title": {
+        "tr": "Kurucu Yakub Çelebi",
+        "en": "The Founder Yakub Çelebi"
+      },
+      "body": {
+        "tr": "Asıl adı Alâaddin Ali olan Yakub Çelebi, boyunun uzunluğu nedeniyle 'Atvel', siyah Halveti tacı sardığı için 'Karabaş' ve kerametlerine duyulan inanç sebebiyle 'Velî' lakaplarıyla tanınmıştır. Hakkında fazla bilgi yoktur. Dergâhın haziresindeki mezar taşına göre adı Piri Yakup Çelebi'dir ve H. 957 / M. 1550'de vefat etmiştir. Mehmed Şemseddin Efendi, onun dinî ilimleri tahsil ettiğini, kıraat ilminde emsallerinden çok ileride olduğunu, sonra tasavvuf yolunu seçerek Bursa'da bir zaviye inşa ettiğini yazar.",
+        "en": "Yakub Çelebi, whose real name was Alâaddin Ali, was known as 'Atvel' because of his height, 'Karabaş' because he wore the black Halveti cap, and 'Velî' because of the belief in his miracles. Little is known about him. According to his tombstone in the lodge's graveyard, his name is Piri Yakup Çelebi and he died in AH 957 / AD 1550. Mehmed Şemseddin Efendi writes that he studied religious sciences, was far ahead of his peers in the science of recitation, and later chose Sufism and built a hermitage in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 3,
+      "title": {
+        "tr": "Tarihçe ve Kullanım",
+        "en": "History and Use"
+      },
+      "body": {
+        "tr": "Tekke ve semahane, geçirdikleri yangının ardından 2002-2005 arasında kültür merkezi işleviyle restore edilmiştir. 1925'te tekkelerin kapatılmasının ardından semahane bir süre idman yurdu, diğer bölümler konut olarak kullanılmıştır. Bursa'da günümüze ulaşan nadir dergâh yapılarından olmakla birlikte kuruluş dönemine ait özgün unsurlar korunmamıştır. Mevcut semahane, kubbe kasnağında Fetih suresinin sonundaki Mehmed Karamânî imzasından anlaşıldığına göre H. 1238 / M. 1822'de inşa edilmiştir. H. 1267 / M. 1851 tarihli kayıtlara göre dergâh; semahane, şeyh odaları, iki derviş odası, misafir odaları, sofa ve abdesthaneden oluşuyordu. Semahane ve diğer bölümlerin çeşitli dönemlerde onarıldığı arşiv kayıtlarından anlaşılır.",
+        "en": "After a fire, the lodge and semahane were restored between 2002 and 2005 for use as a cultural center. After the lodges were closed in 1925, the semahane was used for a while as a training dormitory and the other sections as residences. Although among the rare lodge structures surviving in Bursa, the original elements of its founding period have not been preserved. The current semahane was built in AH 1238 / AD 1822, as understood from Mehmed Karamânî's signature at the end of the Surah al-Fath on the dome drum. Records dated AH 1267 / AD 1851 show a semahane, shaykh's quarters, two dervish rooms, guest rooms, a hall and a washroom. Archive records show repairs at various periods."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapılar geniş bir bahçe içindedir. Tekke dikdörtgen bir alan üzerine, semahane ile aynı yapı tekniğiyle inşa edilmiştir. Semahane, II. Mahmud dönemi mimari akımlarından ampir üslubundadır; 9,33 × 11,52 m ölçülerindeki ana duvarlar ahşap dikmeler, payandalar ve çatkılarla oluşturulmuştur. İç mekân küpeşte parmaklıklarla dairesel bir form kazanır ve sekiz ahşap sütunla desteklenen ahşap kubbe ile zenginleşir. Kubbe ve çevresindeki ahşap üzerine kalem işleri döneminin en nitelikli örnekleri arasında değerlendirilir.",
+        "en": "The buildings stand in a large garden. The lodge was built on a rectangular area using the same technique as the semahane. The semahane is in the empire style of the Mahmud II period; its main walls, measuring 9.33 × 11.52 m, are formed with wooden posts, buttresses and framing. Balustrade railings give the interior a circular form, enriched by a wooden dome supported by eight wooden columns. The hand-painted ornament on wood in and around the dome is considered among the best of its period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 5,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Semahanenin doğu tarafındaki hazirede dergâhta görev yapmış meşâyihin yanı sıra Bursa'da resmî görevlerde bulunmuş çeşitli şahıslar ile eşlerine ait kabirler bulunur.",
+        "en": "In the graveyard on the east side of the semahane are the graves of the shaykhs who served in the lodge, as well as various people who held official positions in Bursa, and their wives."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    },
+    {
+      "id": "gunumuz",
+      "order": 6,
+      "title": {
+        "tr": "Günümüzde",
+        "en": "Today"
+      },
+      "body": {
+        "tr": "Restorasyonu 2005'te tamamlanan dergâh, ince ahşap işçiliğiyle dikkat çeken iç kubbesiyle öne çıkar. Toplam 1.720 m²'lik alanın 1.380 m²'si bahçe, 110 m²'si tekke binasıdır; dış bölümde toplam 230 m²'lik iki küçük birim daha vardır. Dergâhta bugün tasavvufî programlar icra edilmekte, ziyaretçilere geçmişin otantik atmosferi yaşatılmakta ve çeşitli eğitim faaliyetleri yürütülmektedir.",
+        "en": "The lodge, whose restoration was completed in 2005, stands out with its interior dome and fine woodwork. Of the total 1,720 m², 1,380 m² is garden and 110 m² the lodge building; the outer section has two smaller units totalling 230 m². Sufi programs are performed here today, giving visitors an authentic atmosphere of the past, and various training activities are carried out."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "592"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "karabas-tecvidi",
+      "title": {
+        "tr": "Karabaş Tecvidi ilişkisi",
+        "en": "The Karabaş Tajwid attribution"
+      },
+      "body": {
+        "tr": "Kur'an kıraat esaslarını özetleyen ve yaygın okunan Karabaş Tecvidi, zamanla bu şahısla ilişkilendirilmiştir; kitap bu eserin doğrudan bir bağlantısı bulunmadığını belirtir. Tecvid'in müellifi 1498'de vefat eden Abdurrahman Karabaşî'dir.",
+        "en": "The widely read Karabaş Tajwid, which summarizes the principles of Quran recitation, has been associated with this person over time; the book states there is no direct connection. Its author is Abdurrahman Karabaşî, who died in 1498."
+      },
+      "source_verdict": "refuted_by_source",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "589-590"
+        }
+      ]
+    },
+    {
+      "id": "kerametler",
+      "title": {
+        "tr": "Kerametlerine duyulan inanç",
+        "en": "Belief in his miracles"
+      },
+      "body": {
+        "tr": "'Velî' lakabı, Yakub Çelebi'nin kerametlerine duyulan inanca dayandırılır; kitap kerametlerin kendisini aktarmaz.",
+        "en": "The epithet 'Velî' is attributed to belief in Yakub Çelebi's miracles; the book does not narrate the miracles themselves."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "semahane_olcu",
+      "label": {
+        "tr": "Semahane ana duvar ölçüsü",
+        "en": "Semahane main wall dimensions"
+      },
+      "value": "9,33 × 11,52",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_destek",
+      "label": {
+        "tr": "Kubbeyi taşıyan ahşap sütun",
+        "en": "Wooden columns supporting the dome"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    },
+    {
+      "key": "toplam_alan",
+      "label": {
+        "tr": "Toplam alan",
+        "en": "Total area"
+      },
+      "value": 1720,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "592"
+        }
+      ]
+    },
+    {
+      "key": "bahce_alani",
+      "label": {
+        "tr": "Bahçe",
+        "en": "Garden"
+      },
+      "value": 1380,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "592"
+        }
+      ]
+    },
+    {
+      "key": "tekke_binasi_alani",
+      "label": {
+        "tr": "Tekke binası",
+        "en": "Lodge building"
+      },
+      "value": 110,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "592"
+        }
+      ]
+    },
+    {
+      "key": "dis_birimler_alani",
+      "label": {
+        "tr": "Dış bölümdeki iki küçük birim",
+        "en": "Two small outer units"
+      },
+      "value": 230,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "592"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Yakub Çelebi (Piri Yakup Çelebi, Alâaddin Ali)",
+      "role": {
+        "tr": "Kurucu, Halvetî şeyhi",
+        "en": "Founder, Halvetî shaykh"
+      }
+    },
+    {
+      "name": "Mehmed Karamânî",
+      "role": {
+        "tr": "Kubbe kasnağındaki imzanın sahibi (rolü kitapta belirtilmiyor)",
+        "en": "Signatory on the dome drum (role not stated in the book)"
+      }
+    },
+    {
+      "name": "Mehmed Şemseddin Efendi",
+      "role": {
+        "tr": "Yakub Çelebi hakkında yazan kaynak",
+        "en": "Source writing about Yakub Çelebi"
+      }
+    },
+    {
+      "name": "Abdurrahman Karabaşî",
+      "role": {
+        "tr": "Karabaş Tecvidi'nin müellifi (v. 1498)",
+        "en": "Author of the Karabaş Tajwid (d. 1498)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kurucu-vefat",
+      "year": 1550,
+      "date": null,
+      "hijri": "957",
+      "type": "record",
+      "title": {
+        "tr": "Kurucu Piri Yakup Çelebi'nin vefatı (mezar taşına göre)",
+        "en": "Death of the founder Piri Yakup Çelebi (per tombstone)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    },
+    {
+      "id": "semahane-insa",
+      "year": 1822,
+      "date": null,
+      "hijri": "1238",
+      "type": "construction",
+      "title": {
+        "tr": "Mevcut semahanenin inşası",
+        "en": "Construction of the current semahane"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ],
+      "note": {
+        "tr": "Tarih, kubbe kasnağındaki imzadan çıkarılmıştır.",
+        "en": "Dated from the signature on the dome drum."
+      }
+    },
+    {
+      "id": "kayit-1851",
+      "year": 1851,
+      "date": null,
+      "hijri": "1267",
+      "type": "record",
+      "title": {
+        "tr": "Dergâhın bölümlerini sıralayan kayıt",
+        "en": "Record listing the lodge's sections"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    },
+    {
+      "id": "kapatilma-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Tekkelerin kapatılması; semahane idman yurdu, diğer bölümler konut oldu",
+        "en": "Lodges closed; semahane became a training dormitory, other sections residences"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-591"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2002",
+      "year": 2002,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yangın sonrası restorasyon (2002-2005), kültür merkezi işlevi",
+        "en": "Post-fire restoration (2002-2005) for use as a cultural center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "590-592"
+        }
+      ],
+      "note": {
+        "tr": "Yangının tarihi kitapta verilmiyor.",
+        "en": "The date of the fire is not given."
+      }
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Karabaş-ı Velî Dergâhı, geniş bir bahçenin içinde duran, ahşap ağırlıklı bir dergâhtır. Dikdörtgen planlı semahanenin ana duvarları ahşap dikmeler ve payandalarla örülmüştür. İçeride küpeşte parmaklıklarla dairesel bir mekân oluşur; sekiz ahşap sütun, kalem işi süslemelerle bezeli ahşap bir kubbeyi taşır. Semahanenin doğu tarafında, şeyhlere ve Bursa'da görev yapmış kişilere ait mezarların bulunduğu bir hazire uzanır.",
+      "en": "The Karabaş-ı Velî Lodge is a mostly wooden lodge standing in a large garden. The main walls of the rectangular semahane are built of wooden posts and buttresses. Inside, balustrade railings form a circular space; eight wooden columns carry a wooden dome decorated with hand-painted ornament. A graveyard with the graves of shaykhs and officials who served in Bursa lies on the east side of the semahane."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt'teki mimari anlatımdan derlendi; yalnızca kitapta yazanlar."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "visit": {
+    "setting": "mixed",
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Dergâhta tasavvufî programlar yapılıyor ve eğitim faaliyetleri yürütülüyor.",
+      "en": "Sufi programs and training activities are held at the lodge."
+    },
+    "notes_source": "source",
+    "visitor_tips": []
+  }
+}

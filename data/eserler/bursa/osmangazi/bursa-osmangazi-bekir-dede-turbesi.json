@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-bekir-dede-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Büyükşehir Belediyesi onarımının yılı kitapta verilmiyor.",
+      "Mescidin ilçesi (Reyhan Mahallesi, Osmangazi) metinden; hedef id doğrulanmalı.",
+      "Türbenin yapım tarihi kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Yapım yılı verilmiyor; tarih yalnızca Bekir Dede'nin vefat yılına dayanıyor (probable)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Bekir Dede Türbesi",
+    "en": "Bekir Dede Tomb"
+  },
+  "subtitle": {
+    "tr": "Zağferanlık Mescidi'nin kıblesindeki ahşap türbe",
+    "en": "Wooden tomb on the qibla side of the Zağferanlık Masjid"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Bekir Dede",
+    "musiki",
+    "Zağferanlık Mescidi",
+    "ahşap"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Reyhan Mahallesi",
+    "address": "Tekir Çıkmazı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "496"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.188008,
+      "lng": 29.062784,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/10134881964 ('Bekir Dede Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1666 (Bekir Dede'nin vefat yılı)",
+      "en": "1666 (year of Bekir Dede's death)"
+    },
+    "start_year": 1666,
+    "end_year": 1666,
+    "hijri_year": null,
+    "century": 17,
+    "basis": {
+      "tr": "Bekir Dede 1666'da vefat edip mescidin yanına defnedildi; türbenin yapım yılı verilmiyor.",
+      "en": "Bekir Dede died in 1666 and was buried next to the masjid; the tomb's construction date is not given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "496"
+      }
+    ]
+  },
+  "founder": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Reyhan Mahallesi'nde, Zağferanlık Mescidi'nin kıble yönünde yer alan, 1666'da vefat eden Bekir Dede'nin ahşap türbesi. 1946'da onarılmıştır.",
+    "en": "The wooden tomb of Bekir Dede, who died in 1666, on the qibla side of the Zağferanlık Masjid in Reyhan Neighborhood. It was repaired in 1946."
+  },
+  "sections": [
+    {
+      "id": "kisi",
+      "order": 1,
+      "title": {
+        "tr": "Bekir Dede",
+        "en": "Bekir Dede"
+      },
+      "body": {
+        "tr": "Burada medfun Bekir Dede, musikiyle ilgilenen ve irşat faaliyetlerinde bulunan bir zattır. Zağferanlık Mescidi'nde görev yaparken 1666'da vefat etmiş ve mescidin yanına defnedilmiştir.",
+        "en": "Bekir Dede, buried here, was interested in music and engaged in spiritual guidance. He died in 1666 while serving at the Zağferanlık Masjid and was buried next to it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "496"
+        }
+      ]
+    },
+    {
+      "id": "deprem",
+      "order": 2,
+      "title": {
+        "tr": "1855 depremi",
+        "en": "The 1855 earthquake"
+      },
+      "body": {
+        "tr": "1855 depreminde mescit ve minaresi tamamen yıkılmış, sonradan yeniden yapılmıştır. Bu, türbenin de afetten etkilenmiş olabileceğini düşündürmektedir.",
+        "en": "The masjid and its minaret were completely destroyed in the 1855 earthquake and later rebuilt. This suggests the tomb may also have been affected."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "496"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Yapı ve onarımlar",
+        "en": "Structure and repairs"
+      },
+      "body": {
+        "tr": "1946'da onarılan türbe ahşaptır ve kiremit örtülüdür; içinde ahşap bir sanduka vardır. Uzun yıllar bakımsız kalan yapı, Bursa Büyükşehir Belediyesi çalışmalarıyla Zağferanlık Mescidi ile birlikte onarılmıştır. Türbe bakımlıdır ve ziyarete açıktır.",
+        "en": "The tomb, repaired in 1946, is of wood with a tile covering and holds a wooden sarcophagus. Neglected for many years, it was repaired together with the Zağferanlık Masjid by the Bursa Metropolitan Municipality. It is well kept and open to visitors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "496"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "496"
+        }
+      ]
+    },
+    {
+      "key": "vefat_yili",
+      "label": {
+        "tr": "Bekir Dede'nin vefat yılı",
+        "en": "Year of Bekir Dede's death"
+      },
+      "value": 1666,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "496"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Bekir Dede",
+      "role": {
+        "tr": "Musikiyle ilgilenen, irşat faaliyetinde bulunan zat; türbede medfun",
+        "en": "Man interested in music and spiritual guidance; buried in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat",
+      "year": 1666,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bekir Dede vefat etti, mescidin yanına defnedildi",
+        "en": "Bekir Dede died and was buried next to the masjid"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "496"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde mescit ve minaresi yıkıldı; türbenin etkilenmiş olabileceği düşünülüyor",
+        "en": "Masjid and minaret destroyed in an earthquake; the tomb may also have been affected"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "496"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1946",
+      "year": 1946,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Türbe onarıldı",
+        "en": "Tomb repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "496"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-zagferanlik-mescidi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Türbe mescidin kıble yönünde yer alır; Bekir Dede bu mescitte görev yaparken vefat etmiştir; ikisi birlikte onarılmıştır.",
+        "en": "The tomb lies on the masjid's qibla side; Bekir Dede served at this masjid, and the two were repaired together."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "496"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Bekir Dede Türbesi ahşaptan yapılmış, üzeri kiremit kaplı küçük bir yapıdır ve Zağferanlık Mescidi'nin kıble yönündedir. İçinde ahşap bir sanduka bulunur.",
+      "en": "Bekir Dede Tomb is a small wooden building with a tiled roof, on the qibla side of the Zağferanlık Masjid. A wooden sarcophagus stands inside."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bekir-dede-turbesi/p007-1.jpg",
+        "original_name": "01 Kapak_2.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "496"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Bekir Dede Türbesi ve çevresi",
+        "en": "Bekir Dede Tomb and its surroundings"
+      },
+      "alt": {
+        "tr": "Turuncu sıvalı, köşeleri açık renkli taşla çerçevelenmiş küçük ahşap türbe yapısı. Kafesli pencereleri var; yanında taş duvar ve kaldırım taşlı bir sokak görünür.",
+        "en": "A small tomb building with orange plaster walls and pale stone corners. It has grilled windows, with a stone wall and a cobbled lane beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bekir-dede-turbesi/p007-2.jpg",
+        "original_name": "03-2.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "496"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi, yeşil örtülü sanduka",
+        "en": "Inside the tomb, the green-covered sarcophagus"
+      },
+      "alt": {
+        "tr": "Yeşil kumaşla örtülü uzun bir sanduka ve başucunda yeşil sarık var. Duvarda demir kafesli iki pencere, zeminde bordo desenli halı görünür.",
+        "en": "A long sarcophagus covered in green cloth with a green turban at its head. Two grilled windows with green curtains are on the wall, and a patterned red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bekir-dede-turbesi/p007-3.jpg",
+        "original_name": "02.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "496"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Türbenin kuşbakışı görünümü",
+        "en": "Aerial view of the tomb"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında sekizgen, açık gri kaplamalı bir çatı, yanında kiremit kırmızısı büyük bir çatı ve ağaçlar görünür.",
+        "en": "Seen from above, an octagonal pale grey roof sits beside a large red-tiled roof, with trees and neighbouring buildings around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,433 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ataturk-ilkogretim-okulu",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Eğitim Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
+      "Mevcut binanın mimarı ve ilk yapıya ait vakıf bilgisi kaynakta yok.",
+      "Okulun tür kodu enums.json'da yok; geçici olarak 'diger' kullanıldı (mektep/okul türü eklenebilir).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap ilk yapıyı 'H. 914 / M. 1439' veriyor; H. 914 yılı M. 1508-1509'a denk gelir, M. 1439 için Hicri yıl yaklaşık 842-843 olmalı. Hicri ve miladi yıldan biri hatalı olabilir; iki değer de kaynağa sadık kalınarak saklandı."
+      },
+      {
+        "field": "timeline[insa-1915]",
+        "note": "Kitap mevcut binayı 'H. 1331–1333 / M. 1915–1917' veriyor; H. 1331-1333 yılları yaklaşık M. 1913-1915'e denk gelir (1915-1917 Rumi 1331-1333 ile uyuşur). Kaynak değerleri korundu, kayıt 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Atatürk İlköğretim Okulu",
+    "en": "Atatürk Primary School"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Hoca Alizâde Mektebi",
+      "en": "Hoca Alizâde School"
+    },
+    {
+      "tr": "Hoca Alizâde Muallimhanesi",
+      "en": "Hoca Alizâde Muallimhane (Teachers' School)"
+    },
+    {
+      "tr": "Birinci İlkokul",
+      "en": "First Primary School"
+    },
+    {
+      "tr": "Atatürk İlkokulu",
+      "en": "Atatürk Primary School"
+    }
+  ],
+  "type": "mektep",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mektep",
+    "okul",
+    "Hoca Alizâde",
+    "1915-1917",
+    "Hocaalizade"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hocaalizade",
+    "address": "Hocaalizade Sokak, No: 29",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "554"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk yapı H. 914 / M. 1439; mevcut bina H. 1331–1333 / M. 1915–1917",
+      "en": "First building AH 914 / AD 1439; present building AH 1331–1333 / AD 1915–1917"
+    },
+    "start_year": 1915,
+    "end_year": 1917,
+    "hijri_year": 1331,
+    "century": 20,
+    "basis": {
+      "tr": "Batı cephesindeki balkon üzerindeki kitabe; ilk yapının tarihi kitapta H. 914 / M. 1439 olarak verilir.",
+      "en": "Inscription above the balcony on the west façade; the first building is dated AH 914 / AD 1439 in the book."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "554-555"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Alizâde",
+    "role": "banî (ilk yapı)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "554"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hoca Alizâde Mektebi'nin yerine 1915-1917'de yeniden inşa edilen, bugün Atatürk İlköğretim Okulu olarak kullanılan iki katlı mektep binası.",
+    "en": "A two-storey school building rebuilt in 1915-1917 on the site of Hoca Alizâde's school and used today as the Atatürk Primary School."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Mektep, Osmangazi ilçesi, Hocaalizade Mahallesi, Hocaalizade Sokak No: 29 adresindedir. İlk olarak Hoca Alizâde tarafından H. 914 / M. 1439'da inşa edilmiştir; ilk dönemine ait hiçbir görüntü ya da kitabe günümüze ulaşmamıştır. Kaynaklarda 'Hoca Alizâde Mektebi' ya da 'Muallimhanesi' olarak geçen yapı 1938'de Birinci İlkokul, 1948'den itibaren Atatürk İlkokulu adıyla hizmet vermiştir.",
+        "en": "The school is on Hocaalizade Street No. 29, Hocaalizade Neighborhood, Osmangazi. It was first built by Hoca Alizâde in AH 914 / AD 1439; no images or inscriptions from its first period survive. Referred to in the sources as 'Hoca Alizâde School' or 'Muallimhane', it served as the First Primary School in 1938 and as the Atatürk Primary School from 1948."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "554-555"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Bugünkü bina özgün yapının yerine yeniden inşa edilmiştir ve iki katlıdır. Çatısı Marsilya kiremidiyle örtülüdür; duvarlarda küfeki taşı ve tuğla sıralarıyla Erken Osmanlı mimarisi taklit edilmiştir. Tuğla izlenimi veren kırmızı alanlarda gerçek tuğla yerine boya kullanılmıştır. Batı cephesindeki balkonun üzerindeki kitabe, yapının önceki Hoca Alizâde Muallimhanesi'nin yerine H. 1331–1333 / M. 1915–1917 arasında inşa edildiğini belirtir.",
+        "en": "The present building was rebuilt on the site of the original and has two floors. The roof is covered with Marseille tiles and the walls imitate early Ottoman architecture with rows of limestone and bricks; the red areas that look like brick are painted. The inscription on the west façade balcony states that it was built in AH 1331–1333 / AD 1915–1917 on the site of the earlier Hoca Alizâde Muallimhane."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "555"
+        }
+      ]
+    },
+    {
+      "id": "bugun",
+      "order": 3,
+      "title": {
+        "tr": "Bugünkü Durum",
+        "en": "Today"
+      },
+      "body": {
+        "tr": "Eser bugün 'Atatürk İlköğretim Okulu' adıyla kullanılmakta ve 1915-1917 yıllarındaki mimari özelliklerini korumaktadır.",
+        "en": "The building is used today as the 'Atatürk Primary School' and preserves its architectural features from 1915-1917."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "555"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "555"
+        }
+      ]
+    },
+    {
+      "key": "cati_ortusu",
+      "label": {
+        "tr": "Çatı örtüsü",
+        "en": "Roof covering"
+      },
+      "value": "Marsilya kiremidi",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "555"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Alizâde",
+      "role": {
+        "tr": "İlk mektebin yaptırıcısı",
+        "en": "Builder of the first school"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "balkon-kitabesi",
+      "location": {
+        "tr": "Batı cephesi, balkonun üzerinde",
+        "en": "West façade, above the balcony"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1331,
+        "gregorian": "1915-1917"
+      },
+      "note": {
+        "tr": "Kitapta yalnızca içeriği özetlenir: yapının önceki Hoca Alizâde Muallimhanesi'nin yerine H. 1331–1333 / M. 1915–1917 arasında yapıldığı belirtilir. Metin ve dili verilmemiştir.",
+        "en": "The book only summarises its content: the building was built in AH 1331–1333 / AD 1915–1917 on the site of the former Hoca Alizâde Muallimhane. The text and language are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "555"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1439",
+      "year": 1439,
+      "date": null,
+      "hijri": "914",
+      "type": "construction",
+      "title": {
+        "tr": "İlk mektep yaptırıldı",
+        "en": "First school built"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "554"
+        }
+      ],
+      "note": {
+        "tr": "H. 914 ile M. 1439 uyuşmuyor; veri kalite notuna bakınız.",
+        "en": "AH 914 and AD 1439 do not match; see the data-quality note."
+      }
+    },
+    {
+      "id": "ilkokul-1938",
+      "year": 1938,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Birinci İlkokul olarak hizmet",
+        "en": "Served as the First Primary School"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "554-555"
+        }
+      ]
+    },
+    {
+      "id": "ataturk-1948",
+      "year": 1948,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Atatürk İlkokulu adını aldı",
+        "en": "Became the Atatürk Primary School"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "554-555"
+        }
+      ]
+    },
+    {
+      "id": "insa-1915",
+      "year": 1915,
+      "date": null,
+      "hijri": "1331-1333",
+      "type": "construction",
+      "title": {
+        "tr": "Mevcut bina inşa edildi (1915-1917)",
+        "en": "Present building constructed (1915-1917)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "555"
+        }
+      ],
+      "note": {
+        "tr": "Hicri 1331-1333 ve miladi 1915-1917 tam uyuşmuyor; veri kalite notuna bakınız.",
+        "en": "AH 1331–1333 and AD 1915–1917 do not fully match; see the data-quality note."
+      }
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Atatürk İlköğretim Okulu iki katlı bir okul binasıdır. Çatı Marsilya kiremitlidir; duvarlarda küfeki taşı ve tuğla sıraları görülür, kırmızı tuğla gibi görünen bölümler boyayla yapılmıştır. Batı cephesinde bir balkon ve üzerinde yapım tarihini belirten kitabe bulunur.",
+      "en": "The Atatürk Primary School is a two-storey school building. The roof is covered with Marseille tiles; the walls show rows of limestone and brick, with the brick-red areas painted. On the west façade there is a balcony with an inscription above it giving the construction date."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ataturk-ilkogretim-okulu/p003-1.jpg",
+        "original_name": "ATATÜRK İO 3.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "554"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Okul binası ve yanındaki kubbeli yapı",
+        "en": "School building and nearby domed structure"
+      },
+      "alt": {
+        "tr": "İki katlı, kırmızı kiremitli çatılı tuğla ve taş okul binası yukarıdan görünüyor. Sağda kurşun kubbeli küçük bir yapı ve minare, arkada yamaçtaki şehir vardır.",
+        "en": "A two-storey brick and stone school with a red-tiled roof seen from above. On the right a small lead-domed building and a minaret, with the town on the hillside behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ataturk-ilkogretim-okulu/p004-2.jpg",
+        "original_name": "ATATÜRK İO 1.jpeg.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "555"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Okul binasının ön cephesi ve bahçesi",
+        "en": "School facade and yard"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremitli çatılı, sivri kemerli pencereleri tuğla çerçeveli bina taş merdivenli bir girişe sahiptir. Önünde ağaçlı okul bahçesi, arkasında yamaçtaki şehir görünür.",
+        "en": "A building with a red-tiled roof and pointed-arch windows framed in brick, with a stone stairway to the entrance. A tree-lined schoolyard is in front and the hillside town behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ataturk-ilkogretim-okulu/p004-1.jpg",
+        "original_name": "ATATÜRK İO 7.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "555"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Yüksek pencereli sınıf",
+        "en": "Classroom with tall windows"
+      },
+      "alt": {
+        "tr": "Sivri kemerli iki yüksek pencereli sınıfta sıralar halinde metal ayaklı masalar ve ahşap oturaklar dizilidir. Solda tahta, duvarlarda gri ve beyaz boya vardır.",
+        "en": "A classroom with two tall pointed-arch windows and rows of metal-legged desks with wooden seats. A blackboard is on the left; walls are painted grey and white."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
+  "archive_media": []
+}

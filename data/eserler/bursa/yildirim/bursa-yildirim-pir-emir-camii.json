@@ -1,0 +1,330 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-pir-emir-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Mescidin/camiin kesin inşa tarihi kitapta yok; dating alanı boş bırakıldı, kaynak taranmalı.",
+      "era alanı boş: inşa tarihi bilinmediği için dönem seçilemedi.",
+      "Hoca Alizâde'nin 'banî' olarak yazılması mescit ve zaviyeyi 'inşa ettirmiştir' ifadesine dayanır; mevcut caminin banisi sayılmamalı, veri ekibi teyit etmeli.",
+      "Kitap Pir Emir'in türbesinden söz ediyor ama türbe için ayrı bölüm yok; ayrı kayıt açılıp açılmayacağına veri ekibi karar vermeli (ilişki kaydı açılmadı).",
+      "Pir Emir'in hak iddia ettiği dergâhın hangi yapı olduğu kitapta belirtilmiyor (Emîr Sultan'la ilgili olduğu anlaşılıyor); ilişki kaydı açılmadı.",
+      "Minber ve diğer iç mekân ayrıntıları kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Metin 'cami Pir Emir Mehmed adına inşa edilmiştir' der; mescit ve zaviyeyi Hoca Alizâde'nin 'inşa ettirdiğini' belirtir. Camiye dönüştüren Eyyühüm Ahmed Efendi banî sayılmadı (people/timeline'a yazıldı)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Pir Emir Camii",
+    "en": "Pir Emir Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Pir Emir Mehmed",
+    "mescitten camiye",
+    "hazire",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Piremir",
+    "address": "Piremir Mahallesi, Okul Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "257"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kesin inşa yılı verilmemiş; Pir Emir H. 900 / M. 1495 dolaylarında Bursa'ya gelmiştir",
+      "en": "Construction year not given; Pir Emir arrived in Bursa around AH 900 / AD 1495"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap mescidin inşa yılını vermiyor; yalnızca Pir Emir'in H. 900 / M. 1495 dolaylarında Bursa'ya geldiğini söylüyor. Bu bilgiden inşa yılı çıkarılmadı.",
+      "en": "The book does not give the masjid's construction year; it only says Pir Emir arrived around AH 900 / AD 1495. No construction year is inferred."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "257"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Alizâde",
+    "role": "banî (mescit ve zaviye)",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "257"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Buharalı Pir Emir Mehmed adına, dostu Hoca Alizâde'nin yaptırdığı mescit ve zaviyeden dönüşen cami. Kare harimli, tek kubbeli yapının kuzeyindeki hazirede Pir Emir'in türbesi bulunur.",
+    "en": "A mosque that grew out of the masjid and lodge that Hoca Alizâde had built for his friend Pir Emir Mehmed of Bukhara. It has a square, single-domed prayer hall; Pir Emir's tomb stands in the graveyard to the north."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Piremir Mahallesi, Okul Sokak'ta yer alan cami, aslen Buharalı olan Pir Emir Mehmed adına inşa edilmiştir.",
+        "en": "The mosque in Piremir Neighborhood, Okul Street, was built in the name of Pir Emir Mehmed, originally from Bukhara."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "H. 900 / M. 1495 dolaylarında Bursa'ya gelen Pir Emir, Emîr Sultan'ın akrabası olduğunu öne sürerek dergâh üzerinde hak iddia etmiş, ancak dönemin dergâh yöneticileriyle yaşanan anlaşmazlık sonucunda bu talebi kabul görmemiştir. Bunun üzerine dostu Hoca Alizâde adlı bir hayırsever, Musa Baba Mevkii'nde onun adına bir mescit ve zaviye inşa ettirmiştir. Pir Emir bir süre burada irşat faaliyetlerinde bulunmuş, vefat ettiğinde mescidin kuzeyindeki, bugün türbesinin bulunduğu hazireye defnedilmiştir. Başlangıçta mescit olan yapı, sonradan Molla Yegân ailesinden Eyyühüm Ahmed Efendi tarafından camiye dönüştürülmüş, ayrıca Pir Emir'in kabri üzerine bir türbe inşa ettirilmiştir.",
+        "en": "Pir Emir, who arrived in Bursa around AH 900 / AD 1495, claimed ownership of the Sufi lodge by claiming to be a relative of Emîr Sultan, but his claim was rejected after disagreements with the lodge administrators. His friend and philanthropist Hoca Alizâde then had a small mosque and Sufi lodge built in his name at the Musa Baba location. Pir Emir preached here for a time and was buried in the cemetery north of the mosque, where his tomb now stands. Originally a masjid, the building was later converted into a mosque by Eyyühüm Ahmed Efendi of the Molla Yegân family, and a mausoleum was built over Pir Emir's grave."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-ortu",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Örtü",
+        "en": "Plan and Roofing"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı yapının harimi kare formdadır; iç ölçüleri 10,35 × 10,35 m'dir. Tonoz örtülü son cemaat mahalli 5,17 × 10,70 m ölçülerindedir. Derinlik kazandırılmış üç gözlü son cemaat yerinin yan hacimleri daha geniştir ve aynalı tonozla örtülüdür; orta bölüm daha dardır ve yarım daire kesitli tonozla örtülüdür. Yanlarda tuğladan sivri kemer alınlıklı birer pencere vardır. Ayaklar üç sıra tuğla ve bir sıra moloz taşla örülmüştür; son cemaat yeri sofalarının yüksekliği dikkat çekicidir.",
+        "en": "The prayer hall of the rectangular building is square, measuring 10.35 × 10.35 m inside. The vaulted narthex measures 5.17 × 10.70 m. The side sections of the three-bay narthex are wider and covered with a flattened barrel vault; the narrower central section has a semicircular vault. Each side has a brick window with a pointed-arch pediment. The piers are three courses of brick and one of rubble stone, and the height of the narthex halls is striking."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "257-258"
+        }
+      ]
+    },
+    {
+      "id": "duvar-ve-harim",
+      "order": 4,
+      "title": {
+        "tr": "Duvarlar ve Harim",
+        "en": "Walls and Prayer Hall"
+      },
+      "body": {
+        "tr": "Beden duvarlarında moloz taş ve üç sıra tuğla işçiliği kullanılmış, kalkan duvar ile kubbe kasnağı kesme taştan inşa edilmiştir. Harime mukarnas bezemeli bir kapıdan girilir. Sekizgen kasnağa oturtulan kubbe ana ibadet mekânını örter. İç mekân alt sırada sekiz, üst sırada altı ve kubbe kasnağında dört sivri kemerli pencereyle aydınlatılır. Beş köşeli mihrap alçıdan yapılmıştır; 0,65 m derinliğe ve 1,45 m genişliğe sahiptir.",
+        "en": "The main walls are rubble stone and three courses of brickwork, while the parapet wall and dome drum are cut stone. The prayer hall is entered through a muqarnas-decorated door; a dome on an octagonal drum covers it. Eight pointed-arch windows in the lower row, six in the upper row and four in the drum light the interior. The pentagonal plaster mihrab is 0.65 m deep and 1.45 m wide."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "258"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 5,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Ana ibadet mekânının batı duvarına bitişik minareye içeriden açılan bir kapıyla ulaşılır. Altı köşeli kaidesi moloz taş ve tuğla örgülüdür ve kubbe saçağına kadar yükselir. Silindirik tuğla gövde, tuğla Türk üçgenleriyle kaideden ayrılır ve üç bileziklidir. Şerefe altı altı sıra stalaktitlidir, korkuluklar mermerdir. Peteği on iki kenarlıdır ve miğfer biçimli külahla örtülüdür.",
+        "en": "The minaret, adjacent to the west wall of the prayer hall, is reached through an internal door. Its hexagonal rubble-and-brick base rises to the dome eaves. The cylindrical brick shaft is separated from the base by brick Turkish triangles and has three decorative bands. Below the balcony are six rows of stalactites, and the balcony railings are marble. The neck is twelve-sided and topped with a helmet-shaped spire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "258"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Piremir Mahallesi, Okul Sokak",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcusu",
+      "label": {
+        "tr": "Harim iç ölçüsü",
+        "en": "Prayer hall interior size"
+      },
+      "value": "10,35 × 10,35",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcusu",
+      "label": {
+        "tr": "Son cemaat yeri ölçüsü",
+        "en": "Narthex size"
+      },
+      "value": "5,17 × 10,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_olcusu",
+      "label": {
+        "tr": "Mihrap derinlik × genişlik",
+        "en": "Mihrab depth × width"
+      },
+      "value": "0,65 × 1,45",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "258"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Pir Emir Mehmed",
+      "role": {
+        "tr": "Buharalı, adına cami yapılan şahıs",
+        "en": "Man of Bukhara in whose name the building was made"
+      }
+    },
+    {
+      "name": "Hoca Alizâde",
+      "role": {
+        "tr": "Mescit ve zaviyeyi inşa ettiren hayırsever",
+        "en": "Philanthropist who had the masjid and lodge built"
+      }
+    },
+    {
+      "name": "Eyyühüm Ahmed Efendi",
+      "role": {
+        "tr": "Mescidi camiye dönüştüren, türbeyi yaptıran (Molla Yegân ailesinden)",
+        "en": "Converted the masjid to a mosque and had the tomb built (Molla Yegân family)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "pir-emir-bursaya-geldi",
+      "year": 1495,
+      "date": null,
+      "hijri": "900",
+      "type": "record",
+      "title": {
+        "tr": "Pir Emir Mehmed Bursa'ya geldi (yaklaşık)",
+        "en": "Pir Emir Mehmed arrived in Bursa (approx.)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "257"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'H. 900 / M. 1495 yılı dolaylarında' der.",
+        "en": "The book says 'around AH 900 / AD 1495'."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Pir Emir Camii, Piremir Mahallesi'nde Okul Sokak üzerindedir. Dikdörtgen planlı yapının harimi kare biçimlidir ve sekizgen bir kasnağa oturan bir kubbe ile örtülüdür. Önünde üç gözlü, tonoz örtülü bir son cemaat yeri vardır; harime mukarnas bezemeli bir kapıdan girilir. Duvarlar moloz taş ve üç sıra tuğladan örülmüştür. Batı duvarına bitişik, tuğladan silindirik gövdeli minarenin külahı miğfer biçimindedir. Caminin kuzeyinde, Pir Emir'in türbesinin bulunduğu hazire yer alır.",
+      "en": "Pir Emir Mosque stands on Okul Street in Piremir Neighborhood. Its rectangular building has a square prayer hall covered by a dome on an octagonal drum. In front is a vaulted three-bay narthex, and the prayer hall is entered through a door decorated with muqarnas. The walls are rubble stone with three courses of brick. Beside the west wall rises a cylindrical brick minaret with a helmet-shaped spire. To the north of the mosque lies the graveyard with Pir Emir's tomb."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

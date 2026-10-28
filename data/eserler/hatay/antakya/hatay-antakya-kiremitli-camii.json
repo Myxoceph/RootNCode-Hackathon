@@ -1,0 +1,561 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-kiremitli-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Kiremitli Camii bölümünden (s. 253-257) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "İlk yapım tarihi ve banî kaynakta yok; 16. yüzyıl bilgisi yalnızca 'mümkündür' düzeyinde.",
+      "Era (dönem) ilk yapım tarihi bilinmediği için null bırakıldı.",
+      "Yanındaki sokak çeşmesi kitapta ayrı başlık olarak yer almıyor; ids.md'de karşılığı yok. Ayrı eser kaydı gerekiyorsa veri ekibi karar vermeli.",
+      "Çeşme kitabesinin (iki satır) Osmanlıca metni kaynakta verilmiyor.",
+      "Mimar ve vakıf bilgisi kaynakta yok.",
+      "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[cesme]",
+        "note": "Türkçe ve İngilizce metinde son paragraf 'minare' (minaret) diye başlar, ancak devamı (tek cepheli sokak çeşmesi, musluklar, 1914 kitabesi) çeşmeyi anlatır; ilk sayfadaki 'çeşme ise 1914'te su vermeye başladı' cümlesiyle de uyumludur. Bu bölümde 'minare' sözcüğü çeşme olarak yorumlandı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kiremitli Camii",
+    "en": "Kiremitli Mosque"
+  },
+  "subtitle": {
+    "tr": "Şemsiyeli minaresi ve bitişik sokak çeşmesiyle bilinen beyaz kesme taş cami",
+    "en": "A white cut-stone mosque known for its umbrella minaret and adjoining street fountain"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "şemsiyeli minare",
+    "çeşme",
+    "yamuk plan",
+    "son cemaat yeri",
+    "kesme taş"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 259 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "253-257"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "16. yüzyıla kadar gidebilir; 1842'de tamir edildi",
+      "en": "May go back to the 16th century; repaired in 1842"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap eserin tarihini 16. yüzyıla kadar geriye götürmenin mümkün olduğunu söyler; cami 1842'de, minare 1844'te tamir edilerek bugünkü şeklini almıştır. İlk yapım yılı verilmediği için yıllar boş bırakıldı.",
+      "en": "The book says the history of the work can be taken back to the 16th century; the mosque was repaired in 1842 and the minaret in 1844, taking its present form. No original construction year is given, so the years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "253"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Üç tarafı sokakla çevrili bu cami 1842'de, minaresi 1844'te tamir edilerek bugünkü şeklini almıştır; tarihi 16. yüzyıla kadar gidebilir. Avlunun güneybatı köşesinde, çokgen gövdeli ve şemsiye biçimli ahşap külahlı minare bulunur. Yan tarafındaki sokak çeşmesi H. 1333 / M. 1914 tarihinde Hubbizzade Hacı Sadık tarafından yaptırılmıştır. Cami 2008'de Vakıflar Bölge Müdürlüğü'nce tamir edilmiştir.",
+    "en": "Surrounded by streets on three sides, the mosque took its present form when it was repaired in 1842 and its minaret in 1844; its history may go back to the 16th century. At the south-west corner of the courtyard stands a minaret with a polygonal body and an umbrella-shaped wooden cone. The street fountain at its side was built in H. 1333 / A.D. 1914 by Hubbizzade Hacı Sadık. The mosque was repaired in 2008 by the Regional Directorate of Foundations."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Üç tarafı sokakla çevrili bu şirin cami, hemen yanında bulunan çeşmesiyle geçmişten günümüze uzanır. Cami 1842, minare de 1844 yılında tamir edilerek bugünkü şeklini almıştır. Eserin tarihini 16. yüzyıla kadar geriye götürmek mümkündür. Çeşme ise ilk olarak 1914 yılında su vermeye başlamıştır.",
+        "en": "Surrounded by streets on three sides, this charming mosque extends from the past to the present with its fountain right beside it. The mosque was repaired in 1842 and the minaret in 1844, taking their present form. It is possible to take the history of the work back to the 16th century. The fountain began giving water in 1914."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-minare",
+      "order": 2,
+      "title": {
+        "tr": "Avlu ve Şemsiyeli Minare",
+        "en": "Courtyard and Umbrella Minaret"
+      },
+      "body": {
+        "tr": "Avlu, doğu ve batısındaki birer sade kapıdan girilen, geniş ama pek muntazam olmayan bir biçimdedir. Avlunun güneybatı köşesinde, kare kaide üzerine çokgen gövdeli, şemsiye biçimli ahşap külahlı ve fazla yüksek olmayan minare yükselir; Gaziantep, Kahramanmaraş ve bir ölçüde Kilis'i içine alan bölgede yaygın şemsiyeli minare geleneğini temsil eder. Minare gövdesindeki altı kollu ışıklık gökteki yıldızları çağrıştırır.",
+        "en": "The courtyard is wide but not very regular and is entered through a plain door on the east and one on the west. At its south-west corner rises a not very high minaret with a polygonal body on a square base and an umbrella-shaped wooden cone, representing the umbrella-minaret tradition common in the region including Gaziantep, Kahramanmaraş and, to some extent, Kilis. The six-armed skylight on the minaret body evokes the stars in the sky."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-yeri",
+      "order": 3,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "Avlunun güneyinde camiye bitişik, ahşap direkler üzerine oturan sade bir gölgelikten ibaret son cemaat yeri bulunur. Burası geç gelenlerin ibadet yeri olduğu gibi yazlık namazgâh işlevi için de planlanmıştır. Burada bir mihrabiye, camiye açılan üç pencere ve bir kapı vardır; hepsi oldukça sade görünümlüdür.",
+        "en": "To the south of the courtyard, adjoining the mosque, is the narthex, a plain canopy resting on wooden posts. It is both a place of worship for latecomers and planned as a summer prayer area. Here are a mihrabiye and three windows and a door opening to the mosque, all very plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mekan",
+      "order": 4,
+      "title": {
+        "tr": "Plan ve İç Mekân",
+        "en": "Plan and Interior"
+      },
+      "body": {
+        "tr": "Tamamen beyaz kesme taşla inşa edilen cami doğu-batı ekseninde uzanan dikdörtgen plana sahiptir. Doğu duvarı güneydoğuda geniş, kuzeydoğuda dar açılı olduğu için plan yamuk görünür. Ortada zarif bir sütun üzerine oturan iki sivri kemerle kıbleye paralel iki sahına bölünmüştür; kuzey ve güney duvarlarından biraz yüksek bu kemerler kırma çatıyı taşır ve çatıya iki yönde meyil verir. Mihrap yalın bir niştir ve dışarıda hafif çıkıntı yapar; içeride sade ahşap bir minber vardır. Camide tezyinat yoktur. Kuzeyde üç, batı ve güney duvarlarında ikişer pencere vardır; doğuda ev bulunduğu için pencere yoktur.",
+        "en": "Built entirely of white cut stone, the mosque has a rectangular plan extending on an east-west axis. Because the east wall is at a wide angle in the south-east corner and a narrow angle in the north-east, the plan appears trapezoidal. It is divided into two naves parallel to the qibla by two pointed arches resting on an elegant central column; these arches, slightly higher than the north and south walls, carry the hipped roof and give it a slope in both directions. The mihrab is a plain niche protruding slightly outward; inside is a simple wooden minbar. There is no ornament. There are three windows in the north and two each in the west and south walls; none in the east because a house stands there."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "253, 255"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 5,
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "body": {
+        "tr": "Eser 2008 yılında Vakıflar Bölge Müdürlüğü tarafından tamir edilmiştir.",
+        "en": "The work was repaired in 2008 by the Regional Directorate of Foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "255"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 6,
+      "title": {
+        "tr": "Yanındaki Sokak Çeşmesi",
+        "en": "The Adjoining Street Fountain"
+      },
+      "body": {
+        "tr": "Yan tarafında tek cepheli sokak çeşmesi özelliği taşıyan yapı, iki satırlık kitabesine göre H. 1333 / M. 1914 yılında Hubbizzade Hacı Sadık adında bir şahıs tarafından yapılmıştır. Sepet kulpu kemer biçimli bir kaval silmeyle çerçevelenen ikiz sağır kemer ve bu üç kemer arasına yerleştirilen kitabe dikkat çeker. İki sağır nişteki iki musluk \"suyun yaşamsal döngüsüne\" işaret eder. Üç kemerin kilit taşlarının hafifçe dışa taşkın olması Batılılaşma Dönemi Osmanlı mimari üslubunun Antakya'da da sürdüğünü gösterir.",
+        "en": "The structure, which functions as a single-sided street fountain at the side, was built by a person named Hubbizzade Hacı Sadık in H. 1333 / A.D. 1914 according to its two-line inscription. It is notable for the twin blind arches framed by a basket-handle arch-shaped moulding and the inscription between these three arches. The two faucets in the two blind niches refer to the \"vital cycle of water\". The slightly protruding keystones of the three arches show that the Ottoman architectural style of the Westernization Period continued in Antakya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "256-257"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Cami pencere sayısı",
+        "en": "Mosque windows"
+      },
+      "value": 7,
+      "unit": null,
+      "note": {
+        "tr": "Kuzey 3, batı 2, güney 2; doğuda yok. Son cemaat yerinde ayrıca üç pencere var.",
+        "en": "North 3, west 2, south 2; none on the east. The narthex has three further windows."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "255"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "key": "cesme_yili",
+      "label": {
+        "tr": "Sokak çeşmesi yapım yılı",
+        "en": "Street fountain year"
+      },
+      "value": 1914,
+      "unit": null,
+      "note": {
+        "tr": "H. 1333 / M. 1914",
+        "en": "H. 1333 / A.D. 1914"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "256-257"
+        }
+      ]
+    },
+    {
+      "key": "minare_govdesi",
+      "label": {
+        "tr": "Minare gövdesi",
+        "en": "Minaret body"
+      },
+      "value": "Çokgen gövde, ahşap şemsiye külah",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "253"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hubbizzade Hacı Sadık",
+      "role": {
+        "tr": "Yan sokak çeşmesinin yaptırıcısı (kitabeye göre)",
+        "en": "Builder of the adjoining street fountain (per inscription)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cesme-kitabesi",
+      "location": {
+        "tr": "Sokak çeşmesi; üç kemer arasında, iki satır",
+        "en": "Street fountain; between the three arches, two lines"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1333,
+        "gregorian": "1914"
+      },
+      "note": {
+        "tr": "Metin ve dil kaynakta verilmiyor; kitabe, çeşmeyi Hubbizzade Hacı Sadık'ın yaptırdığını bildirir.",
+        "en": "Text and language are not given; the inscription states the fountain was built by Hubbizzade Hacı Sadık."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "256-257"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1842",
+      "year": 1842,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami tamir edilerek bugünkü şeklini aldı",
+        "en": "Mosque repaired, taking its present form"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Minare tamir edildi",
+        "en": "Minaret repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "cesme-1914",
+      "year": 1914,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Yan sokak çeşmesi yapıldı (H. 1333)",
+        "en": "Adjoining street fountain built (H. 1333)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "256-257"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tamiri",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "255"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "semsiyeli-minare",
+      "title": {
+        "tr": "Şemsiyeli minare",
+        "en": "Umbrella minaret"
+      },
+      "hint": {
+        "tr": "Avlunun köşesindeki şemsiye biçimli ahşap külahlı minareyi arayın.",
+        "en": "Look for the minaret with its umbrella-shaped wooden cone at the courtyard corner."
+      },
+      "section_id": "avlu-ve-minare"
+    },
+    {
+      "feature": "cesme",
+      "title": {
+        "tr": "İkiz sağır kemerli çeşme",
+        "en": "Fountain with twin blind arches"
+      },
+      "hint": {
+        "tr": "İki musluklu ikiz sağır kemerli sokak çeşmesine bakın.",
+        "en": "Look at the street fountain with twin blind arches and two faucets."
+      },
+      "section_id": "cesme"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kiremitli Camii, üç tarafı sokakla çevrili, beyaz kesme taştan yapılmış bir camidir. Avlusuna doğu ve batıdaki sade kapılardan girilir. Avlunun güneybatı köşesinde, kare kaide üzerinde çokgen gövdeli ve şemsiye biçimli ahşap külahlı bir minare yükselir. Avlunun güneyinde ahşap direkli bir gölgelik biçiminde son cemaat yeri vardır. Cami yamuk planlıdır; ortadaki zarif bir sütun üzerindeki iki sivri kemer, içeriyi kıbleye paralel iki sahına böler. Mihrap yalın bir niştir, yanında sade ahşap minber vardır. Camide süsleme yoktur. Yanında iki sağır kemerli ve iki musluklu bir sokak çeşmesi bulunur.",
+      "en": "Kiremitli Mosque is built of white cut stone and surrounded by streets on three sides. Plain doors on the east and west lead into its courtyard. At the south-west corner of the courtyard a minaret rises, with a polygonal body on a square base and an umbrella-shaped wooden cone. South of the courtyard the narthex is a shade structure on wooden posts. The mosque has a trapezoidal plan; two pointed arches on an elegant central column divide the interior into two naves parallel to the qibla. The mihrab is a plain niche beside a simple wooden minbar. There is no ornament. Beside it is a street fountain with twin blind arches and two faucets."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 253-257) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p126-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "250-251"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kiremitli Camii'nin avlusu ve minaresi",
+        "en": "Courtyard and minaret of the Kiremitli Mosque"
+      },
+      "alt": {
+        "tr": "Taş döşeli geniş avlu; solda ahşap direkli gölgeliği olan kesme taş cami cephesi, uzakta ahşap çatılı, çokgen gövdeli minare ve banklar.",
+        "en": "A wide stone-paved courtyard with a cut-stone mosque façade and a wooden-post canopy on the left, and a polygonal minaret with a wooden roof in the distance, plus benches."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p129-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "257"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Çokgen gövdeli şemsiyeli minare",
+        "en": "Polygonal umbrella-roofed minaret"
+      },
+      "alt": {
+        "tr": "Kesme taştan, kare kaideli, çokgen gövdeli minare; üstte ahşap korkuluklu şerefe ve çatı. Sokağın ucunda, mavi gökyüzü önünde.",
+        "en": "A cut-stone minaret on a square base with a polygonal shaft, topped by a wooden-railed balcony and roof, at the end of a street against a blue sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p127-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "252"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yeri ve cami kapısı",
+        "en": "Narthex and mosque door"
+      },
+      "alt": {
+        "tr": "Ahşap direkli gölgelikten görünen kesme taş cephe; ortada ahşap kapı, iki yanında yuvarlak kemerli pencere, üstte kitabe ve kırmızı halı.",
+        "en": "Seen through the wooden posts of the canopy, a cut-stone façade with a wooden door in the middle, round-arched windows on both sides, an inscription above and a red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p128-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "254-255"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sütunlu iç mekân ve minber",
+        "en": "Interior with column and minbar"
+      },
+      "alt": {
+        "tr": "Turkuaz halılı, ahşap tavanlı uzun salon; sağda sivri kemerleri taşıyan sütun, ileride ahşap minber ve soldaki pencereler.",
+        "en": "A long hall with turquoise carpet and a wooden ceiling, a column carrying pointed arches on the right, a wooden minbar ahead and windows on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kiremitli-camii/p129-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "256-257"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Minare yanındaki iki gözlü sokak çeşmesi",
+        "en": "Street fountain with two niches beside the minaret"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarda geniş kemer içinde iki sivri nişli çeşme ve ortada kitabe; altlarında musluklar, üstte ahşap saçak.",
+        "en": "A cut-stone wall with a broad arch framing two niches with taps and an inscription between them, beneath a wooden eave."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

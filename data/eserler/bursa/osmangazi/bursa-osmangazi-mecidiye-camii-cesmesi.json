@@ -1,0 +1,272 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-mecidiye-camii-cesmesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 691) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Çeşmenin banisi kaynakta yok; 'founder' boş.",
+      "Mecidiye Camii kaydı ('bursa-osmangazi-mecidiye-camii') henüz yoksa oluşturulmalı.",
+      "Pınarbaşı Mezarlığı ile konumsal ilişki için ayrı kayıt varsa relation eklenebilir.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "meta",
+        "note": "Türkçe metin çeşmenin konumunu 'Hamam, Osmangazi ilçesi, ...' diye başlatıyor; İngilizce metin 'The fountain ...' diyor ve içerik çeşmeyi anlatıyor. Bu bir yazım hatası sayıldı; kayıt 'cesme' olarak tutuldu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mecidiye Camii Çeşmesi",
+    "en": "Mecidiye Mosque Fountain"
+  },
+  "alternate_names": [
+    {
+      "tr": "Mecidiye Çeşmesi",
+      "en": "Mecidiye Fountain",
+      "note": "Çeşme üzerindeki beyitte geçen ad"
+    }
+  ],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "çeşme",
+    "Kırım muhacirleri",
+    "beyit",
+    "cami çeşmesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "İvazpaşa Mahallesi",
+    "address": "İvazpaşa Caddesi, Eski Yol Sokağı (Pınarbaşı Mezarlığı'nın üst kısmı), Mecidiye Camii avlu duvarı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "691"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.179619,
+      "lng": 29.055,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1323-1325 / M. 1905-1907 (caminin tarihi; çeşme eş zamanlı sanılıyor)",
+      "en": "AH 1323-1325 / AD 1905-1907 (the mosque's date; fountain thought contemporary)"
+    },
+    "start_year": 1905,
+    "end_year": 1907,
+    "hijri_year": 1323,
+    "century": 20,
+    "basis": {
+      "tr": "Çeşmenin kendi tarihi yok; caminin yapım tarihi esas alınmış ve eş zamanlı yapıldığı düşünülmüştür.",
+      "en": "The fountain has no date of its own; the mosque's date is used on the assumption that both were built at the same time."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "691"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kırım muhacirleri için yapılan Mecidiye Camii'nin avlu duvarındaki, caminin 1905-1907 yapımıyla eş zamanlı olduğu düşünülen çeşme. Beş köşeli mermer yalağı vardır; 1985 onarımında cami ile birlikte yenilenmiştir.",
+    "en": "The fountain in the courtyard wall of the Mecidiye Mosque, built for Crimean immigrants, thought to be contemporary with the mosque (1905-1907). It has a pentagonal marble trough and was renewed with the mosque in 1985."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarih",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Çeşme, Osmangazi ilçesi İvazpaşa Mahallesi İvazpaşa Caddesi Eski Yol Sokağı'nda, Pınarbaşı Mezarlığı'nın üst kısmında bulunan Mecidiye Camii'nin avlu duvarında yer alır. Kırım muhacirleri için inşa edilen caminin yapım tarihi H. 1323-1325 / M. 1905-1907 olarak verilir; çeşmenin de cami ile eş zamanlı inşa edildiği düşünülmektedir. Yapının özgün haline dair bilgi yoktur.",
+        "en": "The fountain is in the courtyard wall of the Mecidiye Mosque, situated in the upper part of the Pınarbaşı Cemetery, on Eski Yol Street, İvazpaşa Avenue, İvazpaşa Neighborhood, Osmangazi. The mosque was built for Crimean immigrants, and its construction date is given as AH 1323-1325 / AD 1905-1907; the fountain is thought to have been built at the same time. There is no information on its original state."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "691"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler ve Beyit",
+        "en": "Architecture and Couplet"
+      },
+      "body": {
+        "tr": "Günümüzde taş duvarların arasında yer alan, mermer malzemeden yapılmış ve beş köşeli yalağa sahip bir çeşme mevcuttur. Çeşmenin üzerinde Latin harfleriyle işlenmiş bir beyit bulunur. 1985'teki büyük onarımda çeşme de camiyle birlikte yenilenmiştir.",
+        "en": "Today there is a marble fountain with a pentagonal trough set between stone walls. A couplet in Latin letters is written above it. During the major renovation of 1985 the fountain was renewed along with the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "691"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "cesme-beyti",
+      "location": {
+        "tr": "Çeşmenin üzerinde, Latin harfli",
+        "en": "Above the fountain, in Latin letters"
+      },
+      "language": "tr",
+      "script": "latin",
+      "transliteration": "Mecidiye Çeşmesi; Bu çeşme nasıl çeşme, su içecek tası yok; kırma kimsenin kalbini, yapacak ustası yok.",
+      "translation": {
+        "tr": "Mecidiye Çeşmesi; Bu çeşme nasıl çeşme, su içecek tası yok; kırma kimsenin kalbini, yapacak ustası yok.",
+        "en": "Mecidiye Fountain; What kind of a fountain is this, there is no drinking bowl; do not break anyone's heart, there is no master to fix it"
+      },
+      "date": null,
+      "note": {
+        "tr": "Metin zaten Türkçe ve Latin harfli; 'translation.tr' aynı metindir, 'en' kitabın İngilizcesidir.",
+        "en": "The text is already Turkish in Latin letters; 'translation.tr' repeats it and 'en' is the book's English."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "691"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "cami-1905",
+      "year": 1905,
+      "date": null,
+      "hijri": "1323-1325",
+      "type": "construction",
+      "title": {
+        "tr": "Mecidiye Camii (ve eş zamanlı olduğu düşünülen çeşme) yapıldı (H. 1323-1325 / M. 1905-1907)",
+        "en": "Mecidiye Mosque (and the fountain, thought contemporary) built (AH 1323-1325 / AD 1905-1907)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "691"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Büyük onarımda cami ile birlikte çeşme de yenilendi",
+        "en": "Fountain renewed with the mosque in the major renovation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "691"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-mecidiye-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Çeşme Mecidiye Camii'nin avlu duvarında yer alır ve onunla eş zamanlı yapıldığı düşünülür.",
+        "en": "The fountain is in the courtyard wall of the Mecidiye Mosque and is thought to be contemporary with it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "691"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çeşme, bir caminin avlu duvarında, taş duvarlar arasında yer alan mermer bir yapıdır. Beş köşeli bir yalağı vardır; üzerinde Latin harfleriyle yazılmış bir beyit bulunur.",
+      "en": "The fountain is a marble structure set between stone walls in a mosque's courtyard wall. It has a five-sided trough and, above it, a couplet written in Latin letters."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mecidiye-camii-cesmesi/p012-2.jpg",
+        "original_name": "2 MECDİYE CAMİİ ÇEŞME İÇİN.jpeg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "691"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Mecidiye Camii ve çevresinin kuşbakışı",
+        "en": "Aerial view of the Mecidiye Mosque area"
+      },
+      "alt": {
+        "tr": "Yukarıdan görülen koyu kırmızı kiremitli büyük bir çatı ve yanında beyaz kaplamalı bir minare var. Çevresinde dar sokaklar ve turuncu çatılı evler yer alır.",
+        "en": "From above: a large dark-red tiled roof with a white-clad minaret beside it. Narrow streets and orange-roofed houses surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    }
+  ],
+  "archive_media": []
+}

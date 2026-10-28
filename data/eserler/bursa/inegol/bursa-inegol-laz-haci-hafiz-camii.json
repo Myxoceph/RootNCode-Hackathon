@@ -1,0 +1,417 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-laz-haci-hafiz-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "1940 yapısını kimin yaptırdığı kitapta belirtilmiyor; founder yalnızca ilk cami için belli (probable).",
+      "Aşağıballık Köyü'ndeki Laz Çeşmesi için ilişki kurulabilir (hedef kayıt 'bursa-inegol-laz-cesmesi' olarak varsayılmadı; kitapta ayrı bölümü yok).",
+      "Tescil kurumu/numarası kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap 1890-1895'te Mehmet Özsaraç'ın cami yaptırdığını söyler; mevcut betonarme yapı 1940'ta 'yaptırılmıştır' ancak yaptıranı belirtilmez. Banî alanı bu nedenle 'probable' ve ilk cami için yazıldı."
+      },
+      {
+        "field": "sections[ad]",
+        "note": "Türkçe metin 'adının verilmesi ile ilişkilidir' diyor; adlandırmanın nasıl olduğu ayrıntılandırılmıyor, İngilizce metin de aynı şekilde 'named after' diyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Laz-Hacı Hafız (Lazlar) Camii",
+    "en": "Laz-Hacı Hafız (Lazlar) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hacı Hafız Camii",
+      "en": "Hacı Hafız Mosque"
+    },
+    {
+      "tr": "Lazlar Camii",
+      "en": "Lazlar Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "Laz İsmail Efendi",
+    "Hacı Hafız",
+    "1940",
+    "tescilli"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Kemalpaşa Mahallesi",
+    "address": "Atatürk Bulvarı, No: 26",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "378"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.078182,
+      "lng": 29.509098,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir. OSM way/745318414 ile arası 41 m."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1940 (yıkılan 1890-1895 tarihli caminin yerine)",
+      "en": "1940 (replacing the mosque of 1890-1895)"
+    },
+    "start_year": 1940,
+    "end_year": 1940,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap 1940'ta eski caminin yıkılıp yenisinin yapıldığını ve aynı yıl ibadete açıldığını belirtir.",
+      "en": "The book says the old mosque was demolished in 1940, a new one built and opened the same year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "378"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mehmet Özsaraç (Hacı Hafız)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "378"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1890-1895'te Mehmet Özsaraç (Hacı Hafız) tarafından yaptırılan caminin yerine 1940'ta inşa edilen, iki katlı betonarme, 1989'da tescilli cami.",
+    "en": "A two-storey reinforced-concrete mosque built in 1940 on the site of a mosque commissioned by Mehmet Özsaraç (Hacı Hafız) in 1890-1895; registered in 1989."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "İnegöl Kemalpaşa Mahallesi, Atatürk Bulvarı No: 26'dadır. Hacı Hafız adıyla bilinen Mehmet Özsaraç 1890-1895 yıllarında bir cami yaptırmış ve ona Hacı Hafız adını vermiştir. Zamanla ihtiyaca cevap veremeyen cami 1940'ta yıkılarak yerine yenisi yaptırılmış ve aynı yıl ibadete açılmıştır. Bina 1989'da tescil edilmiştir.",
+        "en": "It is at Kemalpaşa Neighborhood, Atatürk Boulevard No. 26, İnegöl. Mehmet Özsaraç, known as Hacı Hafız, had a mosque built in 1890-1895 and named it Hacı Hafız. When it could no longer meet demand it was demolished in 1940 and a new one was built and opened for worship the same year. It was registered in 1989."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami ve müştemilatı 450 m², iç alanı 192 m²'dir. İki katlı, kırma çatılı ve betonarmedir. Uzun kenarda altta dört, üstte dört; kısa kenarda altta üç, üstte üç pencere vardır; mihrap yönündeki kısa kenarda ikişer pencere bulunur. Son cemaat yeri camiyle uyumsuz biçimde sonradan eklenmiştir; minare son cemaat yerinden yükselen, demir doğramadan, tek şerefelidir. İçeride ahşap tavan, alçı mukarnaslı beyaz mihrap, ahşap minber ve vaiz kürsüsü vardır.",
+        "en": "The mosque with its annexes measures 450 m² and its interior area is 192 m². It is two-storey, hipped-roofed and of reinforced concrete. There are four windows below and four above on the long side and three below and three above on the short side, with two on each of the short side towards the mihrab. The narthex was added later and is incompatible with the mosque; the single-balcony ironwork minaret rises from the narthex. Inside are a wooden ceiling, a white mihrab with plaster muqarnas, a wooden minbar and a preaching pulpit."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    },
+    {
+      "id": "ad",
+      "order": 3,
+      "title": {
+        "tr": "Adı ve Laz İsmail Efendi",
+        "en": "The Name and Laz İsmail Efendi"
+      },
+      "body": {
+        "tr": "Camiye \"Laz\" ya da \"Lazlar Camii\" denmesi, İnegöl'ün ilk belediye başkanlarından Rize Çayeli doğumlu Laz İsmail Efendi'nin (İsmail Zühtü Bilgili) adıyla ilişkilidir. Laz İsmail Efendi 1920-1922 arasında belediye başkanlığı yapmış, 20 Temmuz 1922'de Yunan işgal kuvvetlerince esir alınmış, 22 Kasım 1922'deki esir değişiminde serbest bırakılmış ve 1954'te İnegöl'de vefat etmiştir. Evinin bulunduğu caddeye adı verilmiş, ayrıca Aşağıballık Köyü'ne \"Laz Çeşmesi\" adıyla anılan bir çeşme yaptırmıştır. 2006'da cemaatin namazda cep telefonu kullanımından rahatsız olması üzerine camiye sinyal kesici cihaz yerleştirilmesi kamuoyunun dikkatini çekmiştir.",
+        "en": "The mosque is called \"Laz\" or \"Lazlar Mosque\" in connection with Laz İsmail Efendi (İsmail Zühtü Bilgili), born in Rize Çayeli, one of İnegöl's first mayors. He served as mayor in 1920-1922, was taken prisoner by Greek occupation forces on 20 July 1922, was released in the prisoner exchange of 22 November 1922 and died in İnegöl in 1954. The street where his house stands was named after him, and he had a fountain called \"Laz Çeşmesi\" built in Aşağıballık Village. In 2006 the mosque drew public attention when a signal-blocking device was installed after worshippers were disturbed by mobile phone use during prayers."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "alan_toplam",
+      "label": {
+        "tr": "Cami ve müştemilat alanı",
+        "en": "Mosque and annexes area"
+      },
+      "value": 450,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    },
+    {
+      "key": "alan_ic",
+      "label": {
+        "tr": "İç alan",
+        "en": "Interior area"
+      },
+      "value": 192,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    },
+    {
+      "key": "kat",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of storeys"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    },
+    {
+      "key": "tescil",
+      "label": {
+        "tr": "Tescil yılı",
+        "en": "Year of registration"
+      },
+      "value": 1989,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    },
+    {
+      "key": "serefe",
+      "label": {
+        "tr": "Şerefe sayısı",
+        "en": "Number of balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mehmet Özsaraç (Hacı Hafız)",
+      "role": {
+        "tr": "1890-1895'teki ilk caminin yaptıranı",
+        "en": "Commissioner of the first mosque of 1890-1895"
+      }
+    },
+    {
+      "name": "Laz İsmail Efendi (İsmail Zühtü Bilgili)",
+      "role": {
+        "tr": "İnegöl'ün ilk belediye başkanlarından; caminin adının kaynağı (1920-1922)",
+        "en": "One of İnegöl's first mayors; source of the mosque's name (1920-1922)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "ilk-cami",
+      "year": 1890,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İlk Hacı Hafız Camii yaptırıldı",
+        "en": "First Hacı Hafız Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ],
+      "note": {
+        "tr": "1890-1895 arası (tam yıl belirtilmiyor); yıl alanı aralığın başıdır.",
+        "en": "Between 1890 and 1895 (exact year not given); year field is the start of the range."
+      }
+    },
+    {
+      "id": "yeni-cami-1940",
+      "year": 1940,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Eski cami yıkıldı, yenisi yapıldı ve aynı yıl ibadete açıldı",
+        "en": "Old mosque demolished, new one built and opened the same year"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    },
+    {
+      "id": "tescil-1989",
+      "year": 1989,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tescil edildi",
+        "en": "Registered"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    },
+    {
+      "id": "sinyal-kesici-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Cep telefonu nedeniyle sinyal kesici yerleştirildi",
+        "en": "Signal-blocking device installed because of mobile phone use"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "378"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, Atatürk Bulvarı üzerinde, iki katlı, betonarme, kırma çatılı bir yapıdır. Uzun cephelerde altlı üstlü dörder pencere sıralanır. Önündeki son cemaat yeri sonradan eklenmiştir ve minare buradan yükselir. İçeride ahşap tavan, alçı mukarnaslı beyaz mihrap ve ahşap minber bulunur.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "378-378"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1LmqNC241XWRNadrh8pJrP2jDTgjHxXh-",
+        "original_name": "01 DJI_20241112163108_0061_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "378"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Laz-Hacı Hafız (Lazlar) Camii (kitap s. 378)",
+        "en": "Laz-Hacı Hafız (Lazlar) Mosque (book p. 378)"
+      },
+      "alt": {
+        "tr": "Laz-Hacı Hafız (Lazlar) Camii fotoğrafı",
+        "en": "Photo of Laz-Hacı Hafız (Lazlar) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,647 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ali-pasa-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 251-257) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Caminin batısındaki medrese ve imaretin adı kitapta yok; bu yüzden relation eklenmedi.",
+      "Hamam Tekke'nin hangi ilçede/hangi kayıtta olduğu belirtilmiyor; relation eklenmedi.",
+      "Kâzerûniyye tarikatı iddiası 'bazı kaynaklara göre' olarak verilmiş; ek kaynak aranmalı.",
+      "Kitabenin Türkçe meali kitapta yok; translation boş bırakıldı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline.vefat-ali-pasa",
+        "note": "s. 252'de vefat tarihi H. 7 Recep 809 / M. 18 Aralık 1406, s. 256-257'de makam taşına göre H. 703 / M. 1303 (kaynak bunu hatalı bulur) ve 'asıl vefat tarihi H. 807 / M. 1404' denir. Üç ayrı tarih var; kaynağın değerleri korundu."
+      },
+      {
+        "field": "inscriptions.makam-tasi",
+        "note": "Taşta H. 703 / M. 1303 yazması kaynak tarafından hata olarak belirtilmiştir."
+      },
+      {
+        "field": "sections.banisi",
+        "note": "Metin 'Kara Halil Hayreddin Paşa'yı 'Fatih Sultan Mehmed döneminin etkili vezirlerinden' diye anarken oğlu Ali Paşa'nın I. Murad ve Yıldırım Bayezid dönemlerinde vezir olduğunu söyler; kronolojik olarak çelişkili görünür, kaynak olduğu gibi korundu."
+      },
+      {
+        "field": "dating",
+        "note": "İngilizce metin 'H. 796 / M. 1394' vakfiyesini inşa için üst sınır olarak alır; ayrıca H. 788 / M. 1386'dan önce kazaskerlik denir (tarih mevcut inşa tarihiyle ilgisiz)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ali Paşa Camii",
+    "en": "Ali Paşa Mosque"
+  },
+  "subtitle": {
+    "tr": "Çandarlı Ali Paşa'nın zaviyeli camisi; kuzeydoğusunda makam kabirli hazire",
+    "en": "Çandarlı Ali Paşa's zawiya mosque, with a graveyard holding his representative tomb to the northeast"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ali Paşa Camii ve Haziresi",
+      "en": "Ali Paşa Mosque and Graveyard"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "zaviyeli cami",
+    "Çandarlı Ali Paşa",
+    "vakfiye",
+    "1855 depremi",
+    "hazire",
+    "kalem işleri"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alipaşa",
+    "address": "Alipaşa Mahallesi, Yüceyer Caddesi No: 37",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "251"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.179654,
+      "lng": 29.059496,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/343400198 ('Ali Paşa Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 796 / M. 1394 öncesi (vakfiye tarihi)",
+      "en": "Before AH 796 / AD 1394 (date of endowment charter)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 796,
+    "century": 14,
+    "basis": {
+      "tr": "Kesin inşa tarihi bilinmiyor; vakfiyesi H. 796 / M. 1394 tarihli olduğundan yapının bu tarihten önce inşa edildiği anlaşılıyor.",
+      "en": "The exact construction date is unknown; since the endowment charter is dated AH 796 / AD 1394, the building was built before that date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "253"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Çandarlı Ali Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "251"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Çandarlı Ali Paşa vakıfları (mescit ve zaviye)",
+    "deed": {
+      "date_display": "H. 796 / M. 1394 ve H. 808 / M. 1406 tarihli iki vakfiye",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "252"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "252"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Yıldırım Bayezid'in veziri Çandarlı Ali Paşa'nın yaptırdığı, Orhan Camii ile başlayan zaviyeli cami tipinden yapı; 1855 depreminde büyük hasar görmüş, 1958 ve 1999-2004 restorasyonlarıyla bugünkü hâlini almıştır. Kuzeydoğusundaki haziresinde Ali Paşa'nın makam kabri bulunur.",
+    "en": "A zawiya-type mosque, the type that began with the Orhan Mosque, built by Çandarlı Ali Paşa, vizier of Yıldırım Bayezid; badly damaged in the 1855 earthquake and given its present form by the 1958 and 1999-2004 restorations. Its graveyard to the northeast holds Ali Paşa's representative tomb."
+  },
+  "sections": [
+    {
+      "id": "banisi",
+      "order": 1,
+      "title": {
+        "tr": "Banisi Çandarlı Ali Paşa",
+        "en": "Founder Çandarlı Ali Paşa"
+      },
+      "body": {
+        "tr": "Cami, Yıldırım Bayezid'in veziri Çandarlı Ali Paşa tarafından yaptırılmıştır. Ali Paşa, Fatih Sultan Mehmed döneminin etkili vezirlerinden Kara Halil Hayreddin Paşa'nın büyük oğludur. Doğum yeri ve tarihi bilinmez; medrese eğitimi almış, ilmiye sınıfına girmiş ve H. 788 / M. 1386'dan önce kazaskerlik yapmıştır. I. Murad döneminde vezirliğe getirilmiş, Kosova Meydan Muharebesi'nde önemli rol oynamış, Yıldırım Bayezid döneminde veziriazam olmuştur. Timur tehlikesi ve Ankara Savaşı sürecinde kritik kararlar almış, Fetret Devri'nde Şehzade Süleyman Çelebi'yi desteklemiştir. H. 7 Recep 809 / M. 18 Aralık 1406'da vefat etmiş ve İznik'te babasının türbesine defnedilmiştir.",
+        "en": "The mosque was built by Çandarlı Ali Paşa, vizier of Yıldırım Bayezid, eldest son of Kara Halil Hayreddin Paşa, an influential vizier of Fâtih Sultan Mehmed's reign. His birthplace and date are unknown; he studied in a madrasa, joined the ulema and served as kazasker before AH 788 / AD 1386. Made vizier under Murad I, he played an important role at Kosovo and became Grand Vizier under Yıldırım Bayezid. He took critical decisions during the Timur threat and the Battle of Ankara and supported Şehzade Süleyman Çelebi in the Interregnum. He died on 7 Rajab AH 809 / 18 December AD 1406 and was buried in his father's tomb in Iznik."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "251-252"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 2,
+      "title": {
+        "tr": "Vakıflar",
+        "en": "Foundations"
+      },
+      "body": {
+        "tr": "Ali Paşa Bursa'da bir mescit ve bir zaviye yaptırmıştır; bunlarla ilgili H. 796 / M. 1394 ve H. 808 / M. 1406 tarihli iki vakfiye vardır. Vakfiyeler gelirlerin kimlere ve nasıl tahsis edileceğini ayrıntılı belirtir. Vakıflar dönemin sosyal ve ekonomik yapısına katkı sağlamış, misafirler ve ihtiyaç sahipleri için bir dayanışma merkezi olmuştur.",
+        "en": "Ali Paşa had a mosque and a zawiya built in Bursa, with two endowment charters dated AH 796 / AD 1394 and AH 808 / AD 1406. They specify in detail to whom and how the income would be allocated. The foundations contributed to the social and economic structure of the period and became a center of solidarity for guests and those in need."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "252-253"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Orhan Camii ile başlayan zaviyeli cami tipindeki yapı, bazı kaynaklara göre Kâzerûniyye tarikatı dervişleri için zaviye olarak yapılmıştır. Son cemaat yeri beş kemerlidir; izlerden bölümlerin kubbeli olduğu anlaşılır. Oldukça süslemeli kapı nişi on bir sıra mukarnaslı, iki yanındaki hücreler beşer sıra mukarnaslıdır. Tavanla örtülü harimin ana eksende iki kubbeli olduğu, tamamen yıkılan yan kanatların daire tonozlarla örtüldüğü anlaşılmaktadır.",
+        "en": "Of the zawiya-mosque type that started with the Orhan Mosque, it was built, according to some sources, as a zawiya for dervishes of the Kâzerûniyye order. The narthex has five arches, and traces show the sections were domed. The highly ornamented door niche has eleven rows of muqarnas, the recesses on either side five rows. Traces show the ceiling-covered prayer hall had two domes on the main axis and the collapsed side wings were covered with circular vaults."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "253-255"
+        }
+      ]
+    },
+    {
+      "id": "deprem-onarim",
+      "order": 4,
+      "title": {
+        "tr": "Deprem ve Onarımlar",
+        "en": "Earthquake and Repairs"
+      },
+      "body": {
+        "tr": "1855 depreminde kubbeler, tabhane odalı yan kanatlar ve özgün minare yıkılmış, mihrap tarafında gözle görülür değişiklik olmuştur; cami bugünkü şeklini deprem sonrası büyük onarımda almıştır. 1958'de Bursa Eski Eserleri Kurumu kapsamlı restore etmiş, 1999'da Vakıflar tarafından başlatılan onarımda zengin kalem işleri ortaya çıkarılmış, onarılamayan bölümler orijinal plana uygun yeniden inşa edilmiştir. Son cemaat yerinin ana giriş kapısı korunmuş, doğu kanadı dışında kuzey cephesi yeniden yapılmıştır. Restorasyon 2004'te tamamlanmıştır.",
+        "en": "In the 1855 earthquake the domes, the side wings with guest rooms and the original minaret collapsed and the mihrab side visibly changed; the mosque took its present form in the major post-earthquake repair. In 1958 the Bursa Association for the Appreciation of Antiquities restored it comprehensively; in the 1999 restoration begun by the General Directorate of Foundations, rich hand-painted ornament was revealed and sections beyond repair were rebuilt to the original plan. The narthex main door was preserved and the north façade except the east wing rebuilt. The restoration was completed in 2004."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "255"
+        }
+      ]
+    },
+    {
+      "id": "cevre",
+      "order": 5,
+      "title": {
+        "tr": "Çevre",
+        "en": "Surroundings"
+      },
+      "body": {
+        "tr": "Caminin batısında olması gereken medrese ve imaret zamanla yıkılmış, yerlerine evler yapılmıştır. 'Alipaşa Çınarı' olarak bilinen büyük çınar yakın zamanda kesilmiştir. Cami günümüzde sağlam durumda ve ibadete açıktır.",
+        "en": "The madrasa and imaret assumed to have stood west of the mosque were demolished and houses built in their place. The large plane tree known as the 'Alipaşa Plane Tree' was recently cut down. The mosque is in good condition and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "255"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 6,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Hazire caminin kuzeydoğusundaki bahçededir. Cami görevlileri, yakındaki Hamam Tekke şeyhleri ve farklı şahıslar medfundur. Banisinin mezarı İznik'te olmasına rağmen burada makam kabri yer alır. Günümüze ulaşan toplam on altı mezar taşı tespit edilmiştir. Niyâzî-i Mısrî'nin müritlerinden, hayatını yazan İbrahim Râkım Efendi (v. H. 1163 / M. 1749) ile Hamam Tekke meşayihinden beş kişi daha buraya gömülmüştür; ancak bunların mezar taşları günümüze ulaşmamıştır.",
+        "en": "The graveyard lies in the garden northeast of the mosque. Mosque officials, shaykhs of the nearby Hamam Lodge and various individuals are buried here. Although the founder's tomb is in Iznik, his representative tomb is here. Sixteen gravestones have survived. İbrahim Râkım Efendi (d. AH 1163 / AD 1749), a disciple of Niyâzî-i Mısrî who wrote his life, and five more shaykhs of the Hamam Lodge are buried here, but their gravestones have not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "256-257"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_kemer",
+      "label": {
+        "tr": "Son cemaat yeri kemer sayısı",
+        "en": "Narthex arch count"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "key": "kapi_nisi_mukarnas",
+      "label": {
+        "tr": "Kapı nişi mukarnas sırası",
+        "en": "Door niche muqarnas rows"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "key": "yan_hucre_mukarnas",
+      "label": {
+        "tr": "Yan hücre mukarnas sırası",
+        "en": "Side recess muqarnas rows"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_tasi",
+      "label": {
+        "tr": "Haziredeki günümüze ulaşan mezar taşı",
+        "en": "Surviving gravestones in graveyard"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "256"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon_sure",
+      "label": {
+        "tr": "1999-2004 restorasyonu",
+        "en": "1999-2004 restoration"
+      },
+      "value": "1999-2004",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "255"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Çandarlı Ali Paşa",
+      "role": {
+        "tr": "Banî; Yıldırım Bayezid'in veziri",
+        "en": "Founder; vizier of Yıldırım Bayezid"
+      }
+    },
+    {
+      "name": "Kara Halil Hayreddin Paşa",
+      "role": {
+        "tr": "Banînin babası",
+        "en": "Father of the founder"
+      }
+    },
+    {
+      "name": "İbrahim Râkım Efendi",
+      "role": {
+        "tr": "Haziresine defnedilen, Niyâzî-i Mısrî'nin müridi, şair ve yazar (v. H. 1163 / M. 1749)",
+        "en": "Buried in the graveyard; disciple of Niyâzî-i Mısrî, poet and writer (d. AH 1163 / AD 1749)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "makam-tasi",
+      "location": {
+        "tr": "Haziredeki Ali Paşa makam taşı",
+        "en": "Ali Paşa's representative headstone in the graveyard"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Hüve’l-Hayyü’l-Bâkî\nCennet-mekân firdevs-âşiyan\nmerhûm ve mağfûrün leh Ali\nPaşa bin Hayreddin Paşa\nrûh-ı şerifiyçün el-Fâtiha\nSene 703.",
+      "translation": null,
+      "note": {
+        "tr": "Kitapta Türkçe meal verilmemiştir. Kitabın İngilizce çevirisi: 'He is Allah, who is ever-living and everlasting. His station is in Paradise; his abode is in Firdaws; the deceased and forgiven Ali Paşa is the son of Hayreddin Paşa. A Fatiha for his holy soul… AH 703.' Taşta H. 703 / M. 1303 yazar; kaynak bunun yanlış olduğunu, gerçek vefat tarihinin H. 807 / M. 1404 olduğunu belirtir.",
+        "en": "The book gives no Turkish translation. The book's English translation: 'He is Allah, who is ever-living and everlasting. His station is in Paradise; his abode is in Firdaws; the deceased and forgiven Ali Paşa is the son of Hayreddin Paşa. A Fatiha for his holy soul… AH 703.' The stone reads AH 703 / AD 1303; the source says this is wrong and the real death date is AH 807 / AD 1404."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 703,
+        "gregorian": "1303"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "256-257"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vakfiye-1394",
+      "year": 1394,
+      "date": null,
+      "hijri": "796",
+      "type": "record",
+      "title": {
+        "tr": "Birinci vakfiye (H. 796 / M. 1394); cami bu tarihten önce yapılmıştır",
+        "en": "First endowment charter (AH 796 / AD 1394); the mosque was built before this date"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "252-253"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1406",
+      "year": 1406,
+      "date": null,
+      "hijri": "808",
+      "type": "record",
+      "title": {
+        "tr": "İkinci vakfiye (H. 808 / M. 1406)",
+        "en": "Second endowment charter (AH 808 / AD 1406)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "252"
+        }
+      ]
+    },
+    {
+      "id": "vefat-ali-pasa",
+      "year": 1406,
+      "date": null,
+      "hijri": "809",
+      "type": "record",
+      "title": {
+        "tr": "Çandarlı Ali Paşa'nın vefatı (7 Recep 809 / 18 Aralık 1406)",
+        "en": "Death of Çandarlı Ali Paşa (7 Rajab 809 / 18 Dec 1406)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "252"
+        }
+      ],
+      "note": {
+        "tr": "Makam taşında H. 703 / M. 1303, kaynağın başka yerinde H. 807 / M. 1404 yazar.",
+        "en": "The headstone says AH 703 / AD 1303, another passage says AH 807 / AD 1404."
+      }
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde kubbeler, yan kanatlar ve özgün minare yıkıldı",
+        "en": "1855 earthquake destroyed the domes, side wings and original minaret"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "255"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Kurumu kapsamlı restorasyon yaptı",
+        "en": "Comprehensive restoration by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "255"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1999",
+      "year": 1999,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar tarafından esaslı onarım başladı (2004'te tamamlandı)",
+        "en": "Major restoration by the Foundations began (completed 2004)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "255"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kapi-nisi",
+      "title": {
+        "tr": "Mukarnaslı kapı nişi",
+        "en": "Muqarnas door niche"
+      },
+      "hint": {
+        "tr": "On bir sıra mukarnaslı kapı nişine ve iki yanındaki beşer sıralı hücrelere bakın.",
+        "en": "Look at the door niche with eleven muqarnas rows and the five-row recesses beside it."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Bursa'da Orhan Camii ile başlayan zaviyeli cami tipinin devamıdır.",
+        "en": "Continues the zawiya-mosque type that began with the Orhan Mosque in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "253"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Caminin önündeki son cemaat yeri beş kemerlidir; kapı nişi on bir sıra mukarnasla işlenmiştir. Harim tavanla örtülüdür ve ana eksende iki kubbesi olduğu anlaşılır. Kuzeydoğudaki bahçede mezar taşlarının bulunduğu hazire vardır.",
+      "en": "The mosque has a five-arched narthex in front and a door niche worked with eleven rows of muqarnas. The prayer hall is ceiling-covered and traces show two domes on the main axis. In the northeast garden is a graveyard with gravestones."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ali-pasa-camii/p032-3.jpg",
+        "original_name": "ERD00321 kopya.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "255"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yeri ve kemerli revak",
+        "en": "Narthex with arched portico"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla bantlı, dört kemerli bir revak, önünde merdivenler ve demir korkuluk bulunur. Yüksek servi ağaçları ve sonbahar yaprakları cepheyi çerçeveler.",
+        "en": "A portico of four arches in stone with brick bands, with steps and an iron railing in front. Tall cypress trees and autumn leaves frame the facade."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ali-pasa-camii/p029-1.jpg",
+        "original_name": "DJI_20241010204437_0171_D-Edit.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "252"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin havadan görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı, birden çok küçük kubbeli yapı ve minaresi, yoğun yerleşimin ortasında yeşil ağaçlarla çevrili durur. Çevrede renkli evler sıralanır.",
+        "en": "A tiled mosque with several small domes and a minaret stands among green trees in a dense neighbourhood of colourful houses."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ali-pasa-camii/p031-2.jpg",
+        "original_name": "07.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "254"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Kiremit çatılar ve minare, kuşbakışı",
+        "en": "Tiled roofs and minaret from above"
+      },
+      "alt": {
+        "tr": "Doğrudan yukarıdan çekilmiş görüntüde sekizgen ve piramit biçimli kırmızı kiremitli çatılar görünür. Sol üstte minarenin külahı ve çevrede ağaçlar vardır.",
+        "en": "A straight-down view of octagonal and pyramid-shaped red-tiled roofs. The cap of the minaret is at upper left, with trees around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    }
+  ],
+  "archive_media": []
+}

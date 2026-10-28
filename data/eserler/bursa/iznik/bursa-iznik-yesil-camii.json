@@ -1,0 +1,1060 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-yesil-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İznik bölümünden (vk-bursa-c3) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yeşil Cami çevresindeki yapıların (Nilüfer Hatun İmareti, Çandarlı İbrahim Paşa Camii, Hayreddin Paşa türbesi) kayıtlarıyla ilişkilendirme yapılmalı.",
+      "Vakfiyenin (Halil Paşa bin İbrahim Paşa) bu caminin vakfı olup olmadığı metinde açıkça söylenmiyor; confidence probable bırakıldı.",
+      "Vakıf adı resmi olarak kitapta verilmiyor; 'waqf.name' vakfiye sahibine göre yazıldı, kontrol edilmeli.",
+      "Koordinat kitapta yok; sahada ya da harita üzerinden doğrulanıp eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) kitapta yok; sahada teyit edilmeli.",
+      "Ambient ses (ambient_sound) ve ziyaretçi ipuçları henüz hazırlanmadı.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitabelerin giriş metni (TR s.453) yapıyı Hayreddin Paşa'nın yaptırdığını söyler; ancak harim kapısındaki kitabenin Türkçe meali yapının 'Sultan Murad Bey döneminde ve Hayreddin Paşa'nın izniyle' inşa ettirildiğini söyler. Banî olarak Hayreddin Paşa alındı; Murad I dönem/izin veren olarak notlandı."
+      },
+      {
+        "field": "dating",
+        "note": "Giriş metni H. 780 / M. 1378-79 der; harim kapısı kitabesinin meali 'H. 780 - M. 1378'. M. 1378 ile 1378-79 küçük bir farktır; başlangıç yılı olarak 1378 alındı. Tamamlanma H. 794 / M. 1392 (H. 794 yaklaşık M. 1391-92'ye denk gelir, kitaptaki değer korundu)."
+      },
+      {
+        "field": "inscriptions[harim-kapi-insa-kitabesi]",
+        "note": "Bu kitabenin kaynak transliterasyonunda 'Murâd Bey ibni merhûm Orhân Bey' ve 'Mevlâ el-Cenderî' geçer; Türkçe meal 'Cendereli Ali oğlu Hayreddin Paşa' diyor. Giriş metni ve s. 453 ise Hayreddin Paşa'yı 'Çendere köyünde doğmuş' diye anlatır ve oğlunun adının Ali Paşa olduğunu söyler; kitabede 'Çendereli Ali oğlu' ifadesi ile Ali'nin babası mı oğlu mu olduğu tutarsız görünür. Kitaptaki ifade korundu."
+      },
+      {
+        "field": "sections[yapim] ve inscriptions",
+        "note": "Kitap s.455/457 'ikinci inşa' kitabesinden söz eder (tek satırlık H. 794 kitabesi); yapının ikinci bir inşa evresi olup olmadığı metinde açıklanmıyor."
+      },
+      {
+        "field": "architect",
+        "note": "İngilizce çeviride 'Bânîhi Hacı Bin Musâ' ibaresi 'Architect: Hacı, son of Musa' diye verilmiş; Arapça metindeki 'Bânîhi' sözcüğü 'yapıcısı' anlamındadır, kitabın çevirisi esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii",
+    "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+  },
+  "subtitle": {
+    "tr": "Sırlı tuğla ve çinilerle bezeli minaresiyle ünlü, Çandarlı Halil Hayreddin Paşa'nın yaptırdığı İznik camii",
+    "en": "Iznik mosque built by Çandarlı Halil Hayreddin Paşa, famed for its glazed brick and tile minaret"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yeşil Camii",
+      "en": "Green Mosque",
+      "note": "Minaresindeki sırlı tuğla ve çiniden"
+    },
+    {
+      "tr": "Hayreddin Paşa Camii",
+      "en": "Hayreddin Paşa Mosque",
+      "note": "Evliya Çelebi'nin anışı"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "çini minare",
+    "sırlı tuğla",
+    "mermer cephe",
+    "mukarnas",
+    "kubbe",
+    "Çandarlı",
+    "Murad I",
+    "İznik"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Yeşil Cami Mahallesi",
+    "address": "Yeşil Cami Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "452-453"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.42985,
+      "lng": 29.726893,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "7 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir. OSM way/310108583 ile arası 13 m."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 780-794 / M. 1378-79 - 1392",
+      "en": "AH 780-794 / AD 1378-79 - 1392"
+    },
+    "start_year": 1378,
+    "end_year": 1392,
+    "hijri_year": 780,
+    "century": 14,
+    "basis": {
+      "tr": "Kitabelere göre yapı H. 780 / M. 1378-79'da başlamış, Hayreddin Paşa'nın ölümünden sonra oğlu Ali Paşa tarafından H. 794 / M. 1392'de tamamlanmıştır. Bir kitabe M. 1378, kitap giriş metni M. 1378-79 diyor.",
+      "en": "Per the inscriptions construction began AH 780 / AD 1378-79 and was completed by his son Ali Paşa in AH 794 / AD 1392 after Hayreddin Paşa's death. One inscription translation says AD 1378, the book's intro says AD 1378-79."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "453, 459-460"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Çandarlı Halil Hayreddin Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "453, 459-460"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Hacı bin Musa (Musa oğlu Hacı)",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "455, 458-459"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Halil Paşa bin İbrahim Paşa'nın vakfiyesi (H. 841 / M. 1436-37; yeni sureti H. 903 / M. 1498)",
+    "deed": {
+      "date_display": "H. 841 / M. 1436-37 (yeni sureti Zilhicce H. 903 / M. 1498)",
+      "excerpt": {
+        "tr": "Aslı kaybolan vakfiyenin yeni sureti oğlu İbrahim Paşa tarafından hazırlanmış; Yakup Efendi yazmış, Kazasker Molla Hüsrev onaylamıştır.",
+        "en": "A new copy of the lost original charter was prepared by his son İbrahim Paşa, written by Yakup Efendi and approved by Kazasker Molla Hüsrev."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "454"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakfiye kapsamında Bursa ve İznik merkezlerinde dükkânlar, değirmenler, evler, odalar, çevre köyler, bağlar ve bahçeler; Yalova'da köyler; Beypazarı, Gelibolu, Babaeski ve Edirne'de hamamlar ve kervansaray; Akhisar ve Bolu çevresinde köy, kasaba ve araziler vakfedilmiştir.",
+      "en": "The charter endowed shops, mills, houses, rooms, surrounding villages, vineyards and gardens in the centres of Bursa and Iznik; villages in Yalova; baths and caravanserais in Beypazarı, Gelibolu, Babaeski and Edirne; and villages, towns and lands around Akhisar and Bolu."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "454"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan I. Murad döneminde Çandarlı Halil Hayreddin Paşa'nın H. 780'de başlattığı, ölümünden sonra oğlu Ali Paşa'nın H. 794'te tamamladığı cami; minaresindeki sırlı tuğla ve çiniyle ünlüdür. Mimarı Musa oğlu Hacı'dır.",
+    "en": "A mosque begun in AH 780 by Çandarlı Halil Hayreddin Paşa under Sultan Murad I and completed in AH 794 by his son Ali Paşa; famed for its glazed brick and tile minaret. Its architect was Hacı, son of Musa."
+  },
+  "sections": [
+    {
+      "id": "yapim",
+      "order": 1,
+      "title": {
+        "tr": "Yapım ve Banî",
+        "en": "Construction and Founder"
+      },
+      "body": {
+        "tr": "Caminin ana giriş kapısı üzerindeki 57 × 51 cm ölçülerinde üç satırlık ve son cemaat yeri giriş kapısı lentosundaki 57 × 287 cm ölçülerinde tek satırlık iki kitabesi vardır. Kitabelere göre yapı Sultan I. Murad döneminde Çandarlı Halil Hayreddin Paşa tarafından H. 780 / M. 1378-79'da inşa edilmeye başlanmış, Hayreddin Paşa'nın vefatının ardından oğlu Ali Paşa tarafından H. 794 / M. 1392'de tamamlanmıştır. Kitabelerden mimarının 'Musa oğlu Hacı' olduğu anlaşılır. Evliya Çelebi camiden 'Hayrüddin Paşa Camii \"Yeşil Camii\" diye şöhret bulmuş bir cami-i zîbâdır' diye söz eder.",
+        "en": "The mosque has two inscriptions: a three-line one (57 × 51 cm) over the main entrance and a single-line one (57 × 287 cm) over the lintel of the narthex entrance. According to them construction began under Sultan Murad I by Çandarlı Halil Hayreddin Paşa in AH 780 / AD 1378-79 and was completed by his son Ali Paşa in AH 794 / AD 1392 after the Paşa's death. The architect was 'Hacı, son of Musa'. Evliya Çelebi calls it 'Hayrüddin Paşa Mosque, a beautiful mosque famed as the Yeşil (Green) Mosque'."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "453-455, 458"
+        }
+      ]
+    },
+    {
+      "id": "banisi",
+      "order": 2,
+      "title": {
+        "tr": "Çandarlı Halil Hayreddin Paşa",
+        "en": "Çandarlı Halil Hayreddin Paşa"
+      },
+      "body": {
+        "tr": "Hayreddin Paşa Sivrihisar'a bağlı Çendere köyünde doğmuş, Anadolu ahi teşkilatına mensup Kara Halil Efendi'dir; vezirlik göreviyle 'Hayreddin' unvanını almıştır. Tâceddin Kürdî'nin kızıyla evlenerek Şeyh Edebâli'nin bacanağı olmuş; Osman Gazi'nin son yıllarında Bilecik, Orhan Gazi döneminde İznik, 1348'de Bursa kadılığını yapmış, I. Murad devrinde kazaskerlik görevini yürütmüş, sonra vezir ve beylerbeyi olmuştur. İlmiye sınıfından bu unvana sahip ilk vezirdir; yaya teşkilatını yeniden düzenlemiş, Acemi Ocağı ve Yeniçeri Ocağı'nın kuruluşuna öncülük etmiştir. H. 789 / M. 1387'de vefat edince oğlu Ali Paşa tarafından Lefke Kapısı yakınındaki türbesine defnedilmiştir.",
+        "en": "Hayreddin Paşa was born in the village of Çendere in Sivrihisar, a member of the Anatolian Akhi organization, known as Kara Halil Efendi; he took the title 'Hayreddin' as vizier. By marrying the daughter of Tâceddin Kürdî he became brother-in-law of Shaykh Edebâli. He served as qadi of Bilecik, of Iznik under Orhan Gazi and of Bursa in 1348, as kazasker under Murad I, then as vizier and beylerbeyi. He was the first vizier from the ilmiye class, reorganized the infantry and pioneered the Corps of Recruits and Janissary Corps. He died in AH 789 / AD 1387 and was buried by his son Ali Paşa in his tomb near the Lefke Gate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "454-455"
+        }
+      ]
+    },
+    {
+      "id": "vakiflar",
+      "order": 3,
+      "title": {
+        "tr": "Vakfiye",
+        "en": "Endowment Charter"
+      },
+      "body": {
+        "tr": "Halil Paşa bin İbrahim Paşa'nın H. 841 / M. 1436-37 tarihli vakfiyesinin aslı kaybolduktan sonra oğlu İbrahim Paşa tarafından Zilhicce H. 903 / M. 1498'de yeni bir sureti hazırlanmıştır. İznik ve Bursa ulema, ahi ve eşrafından çok sayıda şahidin huzurunda Yakup Efendi tarafından yazılmış, Kazasker Molla Hüsrev'in tasdikiyle resmiyet kazanmıştır. Bursa ve İznik'te dükkân, değirmen, ev ve oda; çevre köyler, bağ ve bahçeler; Yalova'da köyler; Beypazarı, Gelibolu, Babaeski ve Edirne'de hamam ve kervansaray; Akhisar ve Bolu çevresinde köy, kasaba ve araziler vakfedilmiştir.",
+        "en": "After the original charter of Halil Paşa bin İbrahim Paşa (AH 841 / AD 1436-37) was lost, his son İbrahim Paşa had a new copy prepared in Dhul-Hijjah AH 903 / AD 1498, written by Yakup Efendi before many witnesses from Iznik and Bursa and approved by Kazasker Molla Hüsrev. It endowed shops, mills, houses and rooms, villages, vineyards and gardens in Bursa and Iznik; villages in Yalova; baths and caravanserais in Beypazarı, Gelibolu, Babaeski and Edirne; and villages, towns and lands around Akhisar and Bolu."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "genel-mimari",
+      "order": 4,
+      "title": {
+        "tr": "Genel Mimari",
+        "en": "General Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı, 15 × 27 m ölçülerindeki cami kuzey-güney doğrultusunda uzanan harim ve son cemaat mahallinden oluşur. Adını sırlı tuğla ve çinilerle bezeli minaresinden alan caminin beden duvarları açık sarıya yakın renkte kesme blok mermerlerle kaplıdır. Selçuklu mimarisinin izlerini taşıyan plan tekniğine sahiptir. Kuzeydeki 4 × 2,5 m ölçülerinde, mermer lentolu ve mukarnas çerçeveli taç kapıdan son cemaat mahalline geçilir.",
+        "en": "The rectangular 15 × 27 m mosque consists of a prayer hall and narthex extending north-south. It takes its name from its minaret decorated with glazed brick and tiles; its walls are clad in light yellow cut-block marble. Its plan technique bears traces of Seljuk architecture. The narthex is entered through a 4 × 2.5 m muqarnas-framed portal with a marble lintel on the north."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "454, 457-458"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 5,
+      "title": {
+        "tr": "Son Cemaat Mahalli",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "12,59 × 6,45 m'lik dikdörtgen planlı, sofalı son cemaat mahalli yanlarda ikişer, önde üç sivri kemerli bölmeyle sona erer; kemerler arasında meşe kütüğü gergiler vardır, ortadaki kemer yan kemerlerden yaklaşık 80 cm daha geniştir. Yan bölümler orta sahanlıktan yaklaşık 0,50 m yüksektir ve 90 cm yüksekliğinde bezemeli mermer korkuluklarla sınırlandırılmıştır. Devşirme sütunların başlıkları mukarnaslıdır. İki giriş kapısı arasındaki 3,93 × 6,5 m'lik sahanlık, mukarnas geçişli sekizgen kasnağa oturan, 3 m çaplı, zeminden 14,84 m yükseklikte, 16 dilimli kurşun kaplı bir kubbeyle örtülüdür; yanlardaki 3,65 × 6,45 m'lik bölümler 9,97 m yüksekliğinde aynalı tonozludur. Pencere alınlıklarında hatayi ve rumi taş oymalar, bir madalyonda sekiz bölmeli yıldız ve gül motifi, rumi çiçekli besmele kuşağı görülür. Sivri kemerli, çift kanatlı ahşap harim kapısı mukarnaslı konsola oturur; üstündeki mermer alınlıkta üç satırlık ilk inşa kitabesi vardır.",
+        "en": "The 12.59 × 6.45 m rectangular narthex ends in two pointed-arch sections on each side and three in front; oak tie beams run between the arches and the middle arch is about 80 cm wider. The side sections are about 0.50 m higher than the central landing and are bordered by 90 cm high decorated marble railings. Spolia columns have muqarnas capitals. The 3.93 × 6.5 m landing between the two doors is covered by a 16-segment lead-covered dome, 3 m in diameter and 14.84 m high, on an octagonal drum with muqarnas transitions; flanking 3.65 × 6.45 m sections have flattened barrel vaults 9.97 m high. Window pediments carry hatayi and rumi carving, an eight-part star-and-rose medallion and a Basmala band with rumi flowers. The double-leaf pointed-arch wooden prayer-hall door rests on a muqarnas console; the original three-line inscription is on the marble pediment above."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "458-460"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 6,
+      "title": {
+        "tr": "Harim ve Süslemeler",
+        "en": "Prayer Hall and Decoration"
+      },
+      "body": {
+        "tr": "11 × 15,56 m ölçülerindeki harime iki basamakla girilir; ortada iri gövdeli, mukarnas başlıklı iki sütun ve bunlara bağlanan üç sivri kemerle iki bölüme ayrılır. Kuzey giriş bölümü, 3,40 × 3,40 m kare kasnağa oturan sekiz dilimli kubbeyle örtülüdür; yanları aynalı tonozludur, tüm örtüler kurşun kaplıdır. Müezzin mahfilinden minareye çıkan merdivenlere ulaşılır. 11 × 11 m'lik kare mihrap bölümü, 11 m çaplı, 17,85 m iç yüksekliğinde, merkezinde kalem işi bezemeler bulunan kurşun kaplı kubbeyle örtülüdür. Duvarlar 3,87 m yüksekliğe kadar gri damarlı mermer levhalarla kaplıdır. Selçuklu üslubunu yansıtan 3 × 6,7 m'lik beşgen planlı mermer mihrabın kavsarası altı sıra mukarnaslı, üstünde üç dilimli palmet taçlıdır; üstteki yaşmakta 'Bismi'l-meliki'l-aliyyi'l-âlî el-müteâlî' ibaresi yer alır. Ahşap minber ve vaaz kürsüsü yakın dönemde yenilenmiştir. Harim, güney ve yan duvarlardaki pencerelerle ve kasnaktaki dört pencereyle aydınlanır; alt sıra pencere alınlıkları farklı motifli kabartma mermer madalyonlarla süslüdür.",
+        "en": "The 11 × 15.56 m prayer hall is entered by two steps and divided in two by two large columns with muqarnas capitals and three pointed arches. The northern entrance section has an eight-segment dome on a 3.40 × 3.40 m square drum with vaulted sides, all lead-covered. Stairs to the minaret are reached from the muezzin's platform. The 11 × 11 m mihrab section is covered by an 11 m diameter dome, 17.85 m high inside, with hand-painted decoration at its centre. Walls are clad in grey veined marble up to 3.87 m. The Seljuk-style marble mihrab (3 × 6.7 m, pentagonal) has a six-row muqarnas hood and a three-lobed palmette crown, with a muqarnas hood bearing the inscription 'Bismi'l-meliki'l-aliyyi'l-âlî el-müteâlî'. The wooden minbar and pulpit were recently renovated. Windows include four in the dome drum; lower-row pediments have relief marble medallions with differing motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "460-463"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 7,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Harimin kuzeybatı köşesindeki minare, cami duvarları üzerine oturan onikigen mermer kaideye sahiptir. Silindirik gövde yer yer renkli taş ve çiniyle geometrik desenlerle, yer yer sırlı tuğla üzerinde firuze çinilerle bezelidir; tek şerefenin altında çini kaplı mukarnaslar vardır, külah kurşun kaplıdır. Sanat tarihi literatüründe şaheser sayılan minarenin, Anadolu mimarisinde camiyle bütünleşik tasarlanan ilk örneklerden olduğu ve süslemelerinin Selçuklu etkisinin önemli yansımalarından biri olduğu belirtilir. Çinilerin önemli bölümü restorasyonlarda yenilenmiştir.",
+        "en": "The minaret in the northwest corner of the prayer hall has a dodecagonal marble base on the mosque walls. The cylindrical shaft is decorated with geometric patterns of coloured stone and tile and with turquoise tiles on glazed brick; tile-covered muqarnas lie under the single balcony and the spire is lead-covered. Considered a masterpiece in art-history literature, it is said to be among the first minarets designed integrally with a mosque in Anatolia, its decoration a major reflection of Seljuk influence. Much of the tile covering was renewed in restorations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "465-466"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 8,
+      "title": {
+        "tr": "Hasar ve Onarımlar",
+        "en": "Damage and Restorations"
+      },
+      "body": {
+        "tr": "Depremler başta olmak üzere çeşitli nedenlerle zarar gören cami XIX. yüzyıl sonlarında bakımsızlıktan harap hâle gelmiştir. Yunan işgali sırasında halılar ve levhalar çalınmış, harimdeki mermer sütunlara yağ dökülüp yakılarak çatlatılmaya çalışılmış, son cemaat mahallindeki mermer korkuluklar tahrip edilmiştir. Yapı 1956, 1960, 1961 ve 1965'te kapsamlı onarım görmüş; 2015-2016'da Bursa Büyükşehir Belediyesi ile Vakıflar Genel Müdürlüğü iş birliğiyle yapı ve çevresi yeniden düzenlenmiştir.",
+        "en": "Damaged by earthquakes and other causes, the mosque fell into disrepair through neglect at the end of the 19th century. During the Greek occupation carpets and plaques were stolen, oil was poured on the marble columns of the prayer hall and burned to crack them, and the narthex marble railings were destroyed. It underwent extensive restorations in 1956, 1960, 1961 and 1965; in 2015-2016 the building and its surroundings were renovated by the Bursa Metropolitan Municipality with the General Directorate of Foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "466"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "boyut",
+      "label": {
+        "tr": "Plan boyutu",
+        "en": "Plan dimensions"
+      },
+      "value": "15 × 27",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "454, 457"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "11 × 15,56",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "460"
+        }
+      ]
+    },
+    {
+      "key": "ana_kubbe_cap",
+      "label": {
+        "tr": "Mihrap kubbesi çapı",
+        "en": "Mihrab dome diameter"
+      },
+      "value": 11,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "460"
+        }
+      ]
+    },
+    {
+      "key": "ana_kubbe_yukseklik",
+      "label": {
+        "tr": "Mihrap kubbesi iç yüksekliği",
+        "en": "Mihrab dome interior height"
+      },
+      "value": 17.85,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "460"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat mahalli ölçüsü",
+        "en": "Narthex dimensions"
+      },
+      "value": "12,59 × 6,45",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "459"
+        }
+      ]
+    },
+    {
+      "key": "sahanlik_kubbe_yukseklik",
+      "label": {
+        "tr": "Sahanlık kubbesi yüksekliği (zeminden)",
+        "en": "Landing dome height (from floor)"
+      },
+      "value": 14.84,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "460"
+        }
+      ]
+    },
+    {
+      "key": "tacikapi_olcu",
+      "label": {
+        "tr": "Taç kapı ölçüsü",
+        "en": "Portal dimensions"
+      },
+      "value": "4 × 2,5",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "458"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_olcu",
+      "label": {
+        "tr": "Mermer mihrap ölçüsü",
+        "en": "Marble mihrab dimensions"
+      },
+      "value": "3 × 6,7",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "463"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Çandarlı Halil Hayreddin Paşa",
+      "role": {
+        "tr": "Banî; I. Murad'ın veziri ve kazaskeri",
+        "en": "Founder; vizier and kazasker of Murad I"
+      }
+    },
+    {
+      "name": "Ali Paşa",
+      "role": {
+        "tr": "Hayreddin Paşa'nın oğlu; yapıyı H. 794'te tamamladı",
+        "en": "Son of Hayreddin Paşa; completed the building in AH 794"
+      }
+    },
+    {
+      "name": "Hacı bin Musa",
+      "role": {
+        "tr": "Mimar",
+        "en": "Architect"
+      }
+    },
+    {
+      "name": "İbrahim Paşa",
+      "role": {
+        "tr": "H. 903 / M. 1498'de vakfiyenin yeni suretini hazırlattı",
+        "en": "Had a new copy of the endowment charter made in AH 903 / AD 1498"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Camiyi anan seyyah",
+        "en": "Traveller who described the mosque"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "son-cemaat-lento-kitabesi",
+      "location": {
+        "tr": "Son cemaat yeri giriş kapısı lentosu üzerinde, tek satır (57 × 287 cm); caminin ikinci inşasına dair",
+        "en": "Over the lintel of the narthex entrance, single line (57 × 287 cm); concerning the mosque's second construction"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Emera bi-binâi hâze’l-mescid Melikü’l-ulemâi ve’l-vüzerâ nüvvire merkaduhû sene semânîne ve seb’a mietin vaka’a itmamuhû sene erba’a ve tis’îne ve seb’a mietin 794. Bânîhi Hacı Bin Musâ",
+      "translation": {
+        "tr": "Bu mescidin yapılmasını, âlimlerin ve vezirlerin meliki olan Hayreddin Paşa (kabri nurlansın) emretmiş; inşasına H. 780 yılında başlanmış ve H. 794 yılında tamamlanmıştır. Mimar: Musa oğlu Hacı.",
+        "en": "The construction of this mosque was ordered by Hayreddin Paşa (may his grave be illuminated), the king of scholars and viziers; its construction began in AH 780 and was completed in AH 794. Architect: Hacı, son of Musa."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 794,
+        "gregorian": "1392"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "457-459"
+        }
+      ]
+    },
+    {
+      "id": "harim-kapi-insa-kitabesi",
+      "location": {
+        "tr": "Harim giriş kapısı üzerindeki sivri kemerli mermer alınlıkta, üç satır (57 × 51 cm); ilk inşa kitabesi",
+        "en": "On the pointed-arch marble pediment above the prayer-hall door, three lines (57 × 51 cm); original construction inscription"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Bismillâhirrahmânirrahîm. Elhamdü li veliyyihi’l-hamdü benâ ve’ammere hâzihi’l-imâreti’ş-şerîfete hâlisen lillâhi teâlâ fî zemâni’l-kebîr Şihâbü’d-dünyâ ve’d-dîn Murâd Bey ibni merhûm Orhân Bey, afallâhu anhümâ ve bi-icâzeti Mevlâ el-Cenderî, gafarallâhu lehümâ ve limen yusallî fîhâ, ve zâlike fî seneti semânîne ve seb’a mietin. Ve’l-hamdü lillâhi vahdehû. H.780.",
+      "translation": {
+        "tr": "Rahman ve Rahim olan Allah'ın adıyla. Hamd, kendisine hamd edilmeye layık olan Allah'adır. Bu şerefli imaret, yalnızca Allah rızası gözetilerek; büyük melik, din ve dünya yıldızı merhum Orhan Bey'in oğlu Sultan Murad Bey'in döneminde ve Cendereli Ali oğlu Hayreddin Paşa'nın izniyle inşa ve imar ettirilmiştir. Allah, onlara ve bu camide namaz kılanlara rahmet etsin. Bu yapının inşa yılı H. 780 - M. 1378'dir.",
+        "en": "This honorable imaret was built and reconstructed for the sake of Allah alone, during the reign of Sultan Murad Bey, son of the great king, religion and world star, the late Orhan Bey, and with the permission of Hayreddin Paşa, son of Çendereli Ali. May Allah have mercy on them and those who pray in this mosque. The construction year of this structure is AH 780 - AD 1378."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 780,
+        "gregorian": "1378"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "459-460"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-yasmak-ibaresi",
+      "location": {
+        "tr": "Mermer mihrabın üstündeki mukarnaslı yaşmakta",
+        "en": "On the muqarnas hood above the marble mihrab"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Bismi’l-meliki’l-aliyyi’l-âlî el-müteâlî",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap bu ibare için ayrı bir meal vermiyor.",
+        "en": "The book gives no separate translation for this phrase."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "463"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "baslangic-780",
+      "year": 1378,
+      "date": null,
+      "hijri": "780",
+      "type": "construction",
+      "title": {
+        "tr": "İnşasına Çandarlı Halil Hayreddin Paşa tarafından başlandı",
+        "en": "Construction begun by Çandarlı Halil Hayreddin Paşa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "453, 459-460"
+        }
+      ]
+    },
+    {
+      "id": "vefat-789",
+      "year": 1387,
+      "date": null,
+      "hijri": "789",
+      "type": "record",
+      "title": {
+        "tr": "Hayreddin Paşa vefat etti ve Lefke Kapısı yakınındaki türbesine defnedildi",
+        "en": "Hayreddin Paşa died and was buried in his tomb near the Lefke Gate"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "tamam-794",
+      "year": 1392,
+      "date": null,
+      "hijri": "794",
+      "type": "construction",
+      "title": {
+        "tr": "Oğlu Ali Paşa tarafından tamamlandı",
+        "en": "Completed by his son Ali Paşa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "453, 459"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-841",
+      "year": 1436,
+      "date": null,
+      "hijri": "841",
+      "type": "record",
+      "title": {
+        "tr": "Halil Paşa bin İbrahim Paşa'nın vakfiyesi (aslı sonradan kayboldu)",
+        "en": "Endowment charter of Halil Paşa bin İbrahim Paşa (original later lost)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-903",
+      "year": 1498,
+      "date": null,
+      "hijri": "903",
+      "type": "record",
+      "title": {
+        "tr": "İbrahim Paşa vakfiyenin yeni suretini hazırlattı",
+        "en": "İbrahim Paşa had a new copy of the charter prepared"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar-1956",
+      "year": 1956,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami ve minarede kapsamlı onarımlar (1956, 1960, 1961, 1965)",
+        "en": "Extensive repairs to mosque and minaret (1956, 1960, 1961, 1965)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "466"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi ve VGM iş birliğiyle restorasyon (2015-2016)",
+        "en": "Restoration by Bursa Metropolitan Municipality and VGM (2015-2016)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "466"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "minare",
+      "title": {
+        "tr": "Çini minare",
+        "en": "Tiled minaret"
+      },
+      "hint": {
+        "tr": "Firuze çiniler ve sırlı tuğla; caminin adını bu minareden alır.",
+        "en": "Turquoise tiles and glazed brick; the mosque takes its name from it."
+      },
+      "section_id": "minare"
+    },
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Mermer mihrap",
+        "en": "Marble mihrab"
+      },
+      "hint": {
+        "tr": "Altı sıra mukarnas ve palmet taç.",
+        "en": "Six rows of muqarnas and a palmette crown."
+      },
+      "section_id": "harim"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Açık sarıya yakın kesme mermer bloklarla kaplı, dikdörtgen planlı bir cami. Kuzeyde mukarnaslı çerçeveli mermer taç kapıdan, devşirme sütunlu ve sivri kemerli bir revaklı son cemaat yerine girilir; yanındaki köşede firuze çini ve sırlı tuğlayla bezeli, onikigen mermer kaideli bir minare yükselir. İçeride iki büyük sütunla bölünmüş, geniş bir kubbeli harim ve gri damarlı mermerle kaplı duvarlar vardır; güneydeki mermer mihrap mukarnaslı bir kavsara ile taçlanır.",
+      "en": "A rectangular mosque clad in light-yellow cut marble blocks. A muqarnas-framed marble portal on the north leads into an arcaded narthex of pointed arches on spolia columns; at the corner rises a minaret on a twelve-sided marble base, decorated with turquoise tile and glazed brick. Inside, a broad domed prayer hall divided by two large columns has walls clad in grey veined marble; the marble mihrab to the south is crowned with a muqarnas hood."
+    }
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "452-466"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1DK4ShpddGx7cA5s1Q23EDZLEdsPIwhiG",
+        "original_name": "04 DJI_20241018175730_0300_D_ODAK-Enhanced-NR-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "454"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 454)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 454)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1tcvL83qiV1wbpdq_D4cc66bFdvXmlMje",
+        "original_name": "01 DJI_20241018183002_0379_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "455"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 455)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 455)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1rq5i-oSTtqg3FTfVfe_3idD2p-AmfimT",
+        "original_name": "03 DJI_20241018175526_0294_D_ODAK-Enhanced-NR-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "455"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 455)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 455)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1CQ1IcN0P4EeG9GcmC3S2C0Q7zbngW8dm",
+        "original_name": "06 DJI_20241018180151_0312_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "458"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 458)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 458)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "14pv74pKyqozna1REiWhn4j9o6JjbHc1k",
+        "original_name": "13 DJI_20241018181235_0337_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "458"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 458)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 458)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1penUncLwe_AEt8GXWcLmtk9rSmFZ6-oK",
+        "original_name": "15 DJI_20241018181508_0344_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "460"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 460)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 460)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1amYeoyA8ol1jdO0NzPvvUrxcPMtW_Lgw",
+        "original_name": "ERD00843 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "461"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 461)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 461)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1vvKHHswy_O-cTP8g_o2A9A3VGowe8YFq",
+        "original_name": "ERD00850 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "461"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 461)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 461)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1Jp1_CnRNocMLKBhhtJoebryzERj3ywrt",
+        "original_name": "16 DJI_20241018181552_0345_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "464"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 464)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 464)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1uAnZIsgEIvswiDLmem8zZ1gp6lsD83DQ",
+        "original_name": "36 ERD00853 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "465"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii (kitap s. 465)",
+        "en": "Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque (book p. 465)"
+      },
+      "alt": {
+        "tr": "Yeşil (İmaret-Çandarlı Halil Paşa) Camii fotoğrafı",
+        "en": "Photo of Yeşil/Green (İmaret-Çandarlı Halil Paşa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

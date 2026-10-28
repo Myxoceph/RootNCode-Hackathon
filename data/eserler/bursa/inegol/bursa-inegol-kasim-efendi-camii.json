@@ -1,0 +1,420 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-kasim-efendi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi yalnızca modern bir levhaya dayanıyor; özgün kitabe ya da belge aranmalı.",
+      "Camiyi H. 927 / M. 1521'de kimin yaptırdığı net değil; Kasım Efendi'nin H. 942'de öldüğü ve 'banisi' olduğu belirtiliyor, ek teyit gerekir.",
+      "Kestel Vânî Mehmet Efendi Camii ile kitaptaki karşılaştırma için ilişki kurulmadı (hedef kaydın kimliği ve tür uygunluğu belirsiz).",
+      "Dönem ('era') kodu, tarih yalnızca modern levhadan geldiği için boş bırakıldı.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Yapım tarihi H. 927 / M. 1521 yalnızca iç mekândaki modern bir levhaya dayanıyor; kayıt bu nedenle 'probable'. 1955 yenilemesinde yapı bugünkü görünümünü almıştır, özgün yapıya ait kalıntı belirtilmemiştir."
+      },
+      {
+        "field": "sections[kabirler]",
+        "note": "Yazım farkı: Türkçe 'İnegöl Yenice' ve 'İshakpaşa Medresesi'; İngilizce 'İnegöl Yenice' ve 'İshakpaşa Madrasa'. Çelişki yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kasım Efendi (Yenice) Camii",
+    "en": "Kasım Efendi (Yenice) Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Noktacı Kasım Efendi",
+    "türbe içeren cami",
+    "Cevâhirü'l-Ahbâr",
+    "1955 yenileme"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Cuma Mahallesi (Sarraflar Çarşısı)",
+    "address": "Kasım Efendi Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "374"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.077174,
+      "lng": 29.512645,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 927 / M. 1521 (iç mekândaki modern levhaya göre)",
+      "en": "AH 927 / AD 1521 (according to a modern plaque in the interior)"
+    },
+    "start_year": 1521,
+    "end_year": 1521,
+    "hijri_year": 927,
+    "century": 16,
+    "basis": {
+      "tr": "Tarih iç mekândaki modern bir levhadan aktarılıyor; özgün kitabe kitapta anılmıyor.",
+      "en": "The date is taken from a modern plaque in the interior; no original inscription is mentioned."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "374"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kasım Efendi (Noktacı Kasım Efendi)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "375"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Âlim Kasım Efendi'nin kabrini ve Cırğıt Hoca Hacı Hasan Efendi'nin türbesini içinde barındıran, 1955'te kapsamlı yenilenen cami.",
+    "en": "A mosque, comprehensively renovated in 1955, containing the tomb of the scholar Kasım Efendi and that of Hacı Hasan Efendi, known as Cırğıt Hoca."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapı Tarihi",
+        "en": "Location and Building History"
+      },
+      "body": {
+        "tr": "Cami İnegöl'de Sarraflar Çarşısı, Cuma Mahallesi, Kasım Efendi Caddesi üzerindedir. 1955'te geçirdiği kapsamlı yenilemeyle bugünkü görünümünü kazanmıştır. İç mekândaki modern bir levhaya göre yapım tarihi H. 927 / M. 1521'dir. Mabet inşa edildiği dönemde dergâh işlevi de görmüş, eğitim faaliyetlerinin yürütüldüğü ve öğrencilerin yetiştirildiği bir mekân olmuştur.",
+        "en": "The mosque is on Kasım Efendi Street in Sarraflar Bazaar, Cuma Neighborhood, İnegöl. It gained its current appearance after a comprehensive renovation in 1955. According to a modern plaque in the interior its construction date is AH 927 / AD 1521. The sanctuary also served as a Sufi lodge when it was built and was a place where education was given and students were trained."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "374-375"
+        }
+      ]
+    },
+    {
+      "id": "bani",
+      "order": 2,
+      "title": {
+        "tr": "Banî Kasım Efendi",
+        "en": "The Founder Kasım Efendi"
+      },
+      "body": {
+        "tr": "Banisi Kasım Efendi'nin doğum tarihi kesin bilinmez; Fâtih Sultan Mehmed devrinden Kanûnî Sultan Süleyman dönemine uzanan, uzun ömürlü bir şahsiyet olduğu anlaşılır. Abdülkâdir-i Geylânî'nin torunlarındandır, dönemin önde gelen âlimlerindendir; Antakya'dan Bursa'ya, oradan İnegöl'e göç etmiş, vakıfların işleyişini denetleyen \"noktacı\" unvanıyla Osmanlı vakıf sisteminde görev almıştır. H. 942 / M. 1535'te vefat etmiş, İnegöl'de çok öğrenci yetiştirmiş, 32 bölüm ve 675 sayfalık Cevâhirü'l-Ahbâr adlı eseri bırakmıştır.",
+        "en": "The birth date of the founder Kasım Efendi is not known for sure; he lived a long life from the reign of Fâtih Sultan Mehmed to that of Kanûnî Sultan Süleyman. A descendant of Abdülkâdir-i Geylânî and one of the leading scholars of his time, he migrated from Antakya to Bursa and then İnegöl and served in the Ottoman foundation system as the \"noktacı\" (overseer) supervising foundations. He died in AH 942 / AD 1535, trained many students in İnegöl and left the work Cevâhirü'l-Ahbâr of 32 chapters and 675 pages."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "id": "kabirler",
+      "order": 3,
+      "title": {
+        "tr": "Kabirler",
+        "en": "Tombs"
+      },
+      "body": {
+        "tr": "Cami içinde Kasım Efendi'nin kabrine ek olarak ikinci bir türbe daha vardır; bu, 1908'den itibaren Yenice'deki Noktacı Kasım Efendi Tekke Mescidi'nde halk mektebi açarak eğitim veren, \"Cırğıt Hoca\" lakaplı Hacı Hasan Efendi'ye aittir. İshakpaşa Medresesi mezunu olan Hacı Hasan Efendi, 1924'te yürürlüğe giren Tevhid-i Tedrisat Kanunu'na kadar burada öğretime devam etmiş, vefatında Kasım Efendi'nin yanına gömülmüştür. Kasım Efendi'nin kabri başlangıçta cami bahçesindeki hazirede iken caminin genişletilmesiyle yapı içine alınmıştır; ahşap kubbeli ve iki sandukalı bu bölüm sınırlandırılmış özel bir mekândır. Yapı, Kestel Vânî Mehmet Efendi Camii ile birlikte Bursa'da içinde kabir barındıran nadir camilerdendir.",
+        "en": "Inside the mosque, in addition to Kasım Efendi's tomb there is a second tomb belonging to Hacı Hasan Efendi, known as \"Cırğıt Hoca\", who from 1908 gave education by opening a public school in the Noktacı Kasım Efendi Sufi Lodge Masjid in Yenice. A graduate of İshakpaşa Madrasa, he taught here until the Tevhid-i Tedrisat Law of 1924 and was buried next to Kasım Efendi. Kasım Efendi's tomb was originally in the graveyard in the mosque garden and was included in the structure when the mosque was enlarged; this wooden-domed area with two sarcophagi is a limited, private space. Together with Kestel Vânî Mehmet Efendi Mosque it is one of the rare mosques in Bursa containing a tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mimari açıdan cami, günümüz camilerinde görülen dikdörtgen planı ve betonarme yapısıyla dikkat çeker. Yapıda tek minare bulunur.",
+        "en": "Architecturally the mosque draws attention with its rectangular plan and reinforced-concrete structure as seen in today's mosques. There is a single minaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "375"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "key": "eser_bolum",
+      "label": {
+        "tr": "Cevâhirü'l-Ahbâr bölüm sayısı",
+        "en": "Chapters of Cevâhirü'l-Ahbâr"
+      },
+      "value": 32,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "key": "eser_sayfa",
+      "label": {
+        "tr": "Cevâhirü'l-Ahbâr sayfa sayısı",
+        "en": "Pages of Cevâhirü'l-Ahbâr"
+      },
+      "value": 675,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "key": "sanduka",
+      "label": {
+        "tr": "Kabir bölümündeki sanduka sayısı",
+        "en": "Sarcophagi in the tomb area"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "375"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kasım Efendi",
+      "role": {
+        "tr": "Banî; âlim, 'noktacı', Cevâhirü'l-Ahbâr'ın yazarı (ö. H. 942 / M. 1535)",
+        "en": "Founder; scholar, 'noktacı', author of Cevâhirü'l-Ahbâr (d. AH 942 / AD 1535)"
+      }
+    },
+    {
+      "name": "Hacı Hasan Efendi (Cırğıt Hoca)",
+      "role": {
+        "tr": "1908'den itibaren halk mektebi açan, camide gömülü öğretmen",
+        "en": "Teacher who ran a public school from 1908, buried in the mosque"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yapim-1521",
+      "year": 1521,
+      "date": null,
+      "hijri": "927",
+      "type": "construction",
+      "title": {
+        "tr": "Yapım (modern levhaya göre H. 927 / M. 1521)",
+        "en": "Construction (AH 927 / AD 1521 according to a modern plaque)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "374"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1535",
+      "year": 1535,
+      "date": null,
+      "hijri": "942",
+      "type": "record",
+      "title": {
+        "tr": "Kasım Efendi'nin vefatı (H. 942 / M. 1535)",
+        "en": "Death of Kasım Efendi (AH 942 / AD 1535)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "375"
+        }
+      ]
+    },
+    {
+      "id": "yenileme-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı yenileme; bugünkü görünüm",
+        "en": "Comprehensive renovation; present appearance"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "374"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, Sarraflar Çarşısı'nda Kasım Efendi Caddesi üzerinde yer alan, dikdörtgen planlı, betonarme bir yapıdır ve tek minaresi vardır. İçeride, ahşap kubbeli, sınırlanmış özel bir bölümde iki sanduka bulunur; bunlar Kasım Efendi ile Hacı Hasan Efendi'ye aittir.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "374-375"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1pSML6uG4SxqTKVHYEJUJb_XHNPnSr7yN",
+        "original_name": "01 DJI_20241113181749_0002_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "374"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kasım Efendi (Yenice) Camii (kitap s. 374)",
+        "en": "Kasım Efendi (Yenice) Mosque (book p. 374)"
+      },
+      "alt": {
+        "tr": "Kasım Efendi (Yenice) Camii fotoğrafı",
+        "en": "Photo of Kasım Efendi (Yenice) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1XEkfaFZOmEyQy8ZGC5s8_4m2rXY5zBLI",
+        "original_name": "02 DJI_20241113181827_0005_D_ODAK-Edit.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "375"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kasım Efendi (Yenice) Camii (kitap s. 375)",
+        "en": "Kasım Efendi (Yenice) Mosque (book p. 375)"
+      },
+      "alt": {
+        "tr": "Kasım Efendi (Yenice) Camii fotoğrafı",
+        "en": "Photo of Kasım Efendi (Yenice) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

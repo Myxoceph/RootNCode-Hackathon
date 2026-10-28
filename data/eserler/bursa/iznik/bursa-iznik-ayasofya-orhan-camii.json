@@ -1,0 +1,865 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-ayasofya-orhan-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabındaki İznik bölümünden (Ayasofya (Orhan) Camii, s. 407-421) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mimar Sinan onarımının tarihi kaynakta verilmediği için timeline şeması (year zorunlu) nedeniyle zaman çizelgesine eklenmedi; yalnızca sections içinde anlatılıyor.",
+      "Koordinat kaynakta yok; location.coordinates eklenmeli.",
+      "Yapının özgün (Bizans dönemi) banisi kaynakta belirtilmiyor; founder null bırakıldı.",
+      "era: yapı Bizans kilisesi kökenli, enums.json'da uygun kod yok; null bırakıldı.",
+      "Mimar adı kaynakta yok (yalnızca Mimar Sinan'ın onarımı anılıyor).",
+      "Vakfiye/vakıf bilgisi kaynakta yok; waqf null.",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "414-415. sayfalarda metin yok (yalnızca görsel); orada ek bilgi olup olmadığı PDF'ten kontrol edilmeli.",
+      "Hammer'in gördüğü tuğra/kitabe günümüzde yok; kitabe verisi yok.",
+      "Ziyaret süresi, giriş ücreti ve ziyaretçi ipuçları kaynakta yok.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap inşa tarihini iki yerde farklı veriyor: yapının ilk döneminin 'V. ve VI. yüzyıl' olduğu, ancak genel kanaatin 'IV. ya da V. yüzyıl' olduğu (bazı yapı tekniklerine göre VIII. yüzyıl da olabileceği) söyleniyor. Kesin tarih yok (kitabe yok); disputed işaretlendi, yıl alanları null bırakıldı."
+      },
+      {
+        "field": "sections[osmanli-donemi]",
+        "note": "Evliya Çelebi'ye göre Orhan Gazi'nin koyduğu bir kitabe var; Hammer 1804'te giriş kapısında Orhan Gazi'ye ait bir tuğra görmüş. Bugün ikisinin de izi yok. Kitap 'tuğra ya da kitabe' diyerek ikisini birbirine yakın kullanıyor."
+      },
+      {
+        "field": "timeline[sinan-onarimi]",
+        "note": "Sinan onarımının tarihi verilmiyor; yalnızca 'Kanûnî Sultan Süleyman döneminde' yangın sonrası yapıldığı ve Evliya'nın aktarımına dayandığı belirtiliyor. Minare gövdesinin XVI. yüzyıla ve Sinan onarımına bağlanması ise 'görüş' olarak veriliyor."
+      },
+      {
+        "field": "sections[fetih]",
+        "note": "Türkçe metinde fetih 'H. 731 / M. 1331-32' ve 'üçüncü dönem 1331' olarak veriliyor; tutarlı. İngilizce 'Seventh Council' ifadesi Türkçe 'Yedinci Konsil' ile uyumlu (787, İznik 2. Konsili)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ayasofya (Orhan) Camii",
+    "en": "Ayasofya (Orhan) Mosque"
+  },
+  "subtitle": {
+    "tr": "İznik'in Bizans Kilisesi Kökenli Camii",
+    "en": "The Mosque of Iznik with Byzantine Church Origins"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ayasofya Kilisesi",
+      "en": "Hagia Sophia Church",
+      "note": "Yapının kilise dönemi adı"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Ayasofya",
+    "bazilika",
+    "kilise-cami",
+    "İznik Konsili",
+    "Orhan Gazi",
+    "Mimar Sinan",
+    "opus sectile",
+    "Bizans"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Mahmut Çelebi Mahallesi",
+    "address": "Atatürk Caddesi ile Kılıçaslan Caddesi kesişiminin güneydoğu köşesi, No: 163",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "407"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.429135,
+      "lng": 29.720209,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir. OSM way/192225327 ile arası 6 m."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "IV.-V. yüzyıl (genel kanaat); H. 731 / M. 1331-32'de camiye çevrildi",
+      "en": "4th-5th century (general opinion); converted to a mosque in AH 731 / AD 1331-32"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitabe yoktur; mimari özellikler ve yapı tekniğine göre üç dönem ayrılır. Genel kanaat IV. ya da V. yüzyıldır, bazı değerlendirmeler VIII. yüzyılı öne sürer; kitap ayrıca ilk dönemi V.-VI. yüzyıla tarihler. Yıl aralığı kaynakta verilmediği için boş bırakıldı.",
+      "en": "There is no inscription; three periods are distinguished by architectural features and technique. The general opinion is 4th or 5th century, some evaluations suggest the 8th; the book also dates the first period to the 5th-6th century. No year range is given."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "408, 409"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "İznik şehir merkezinde, bugünkü yol kotunun yaklaşık 2,8 m altında yer alan, kiliseden camiye çevrilmiş üç nefli bazilika planlı yapı. Birinci İznik Konsili'ne (325) ev sahipliği yaptığı aktarılır; Orhan Gazi 1331-32'de camiye çevirtmiş, Mimar Sinan onarmış, 2007-2009 restorasyonunun ardından 2011'de ibadete açılmıştır.",
+    "en": "A three-nave basilica-plan building in the centre of Iznik, about 2.8 m below the present road level, converted from a church to a mosque. It is said to have hosted the First Council of Nicaea (325); Orhan Gazi had it converted in 1331-32, Mimar Sinan repaired it, and it was opened for worship in 2011 after the 2007-2009 restoration."
+  },
+  "sections": [
+    {
+      "id": "konum",
+      "order": 1,
+      "title": {
+        "tr": "Konum",
+        "en": "Location"
+      },
+      "body": {
+        "tr": "Yapı İznik'te Mahmut Çelebi Mahallesi'nde, Atatürk Caddesi ile Kılıçaslan Caddesi'nin kesişim noktasının güneydoğu köşesinde, No: 163'tedir. Şehir merkezinde olup bugünkü yol kotunun yaklaşık 2,8 m altında kalmaktadır; çevresi park alanı olarak düzenlenmiştir. Yapının Roma dönemine ait bir tapınak ya da gymnasion temelleri üzerine inşa edildiği yönünde farklı görüşler vardır; mevcut kalıntılar bir tapınak üzerine inşa edilmiş olma ihtimalini daha güçlü gösterir.",
+        "en": "The structure is in Iznik, Mahmut Çelebi Neighborhood, at the southeast corner of the intersection of Atatürk and Kılıçaslan Streets, No. 163. It lies in the city centre about 2.8 m below the current road level, and its surroundings are a park. There are different opinions that it was built on the foundations of a Roman temple or gymnasium; the remains make a temple more likely."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "407"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe ve Dönemler",
+        "en": "History and Periods"
+      },
+      "body": {
+        "tr": "Kitabe bulunmadığından kesin inşa tarihi yoktur. Yapı üç dönemde değerlendirilir: V.-VI. yüzyıl (özgün inşa), 1065 depremi sonrası kapsamlı müdahaleler ve 1331'de Osmanlıların İznik'i fethinden sonraki değişiklikler. Genel kanaat IV. ya da V. yüzyılda inşa edildiği yönündedir; bazı tekniklere göre VIII. yüzyıl da öne sürülür. Özgün formunun sütunlarla ayrılmış üç nefli bazilikal planlı bir kilise olduğu konusunda görüş birliği vardır. Yapı 325'te İmparator Konstantinos'un himayesinde toplanan Birinci İznik Konsili'ne (300'ü aşkın din adamı) ve ikonoklazmı sona erdiren 787 Yedinci Konsili'ne (yaklaşık 350 piskopos) ev sahipliği yapmıştır. 740 ve 1065 depremlerinde ciddi zarar görmüş; sonrasında yaklaşık 1,40 m yükseltilmiş, sütunların yerine payeler eklenmiş, batı duvarı yeniden örülmüş ve pastoforion hücreleri eklenmiştir.",
+        "en": "There is no inscription, hence no definite date. The building is considered in three periods: 5th-6th century (original), extensive interventions after the 1065 earthquake, and changes after the Ottoman conquest of Iznik in 1331. The general opinion is that it was built in the 4th or 5th century; some techniques suggest the 8th. Researchers agree that its original form was a three-nave basilican church with columns. It hosted the First Council of Nicaea (325, under Emperor Constantine, over 300 clergymen) and the Seventh Council of 787 that ended iconoclasm (about 350 bishops). Damaged by earthquakes in 740 and 1065, it was raised about 1.40 m, piers replaced columns, the west wall was rebuilt and pastophoria were added."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408, 409"
+        }
+      ],
+      "confidence": "disputed"
+    },
+    {
+      "id": "osmanli-donemi",
+      "order": 3,
+      "title": {
+        "tr": "Osmanlı Dönemi",
+        "en": "Ottoman Period"
+      },
+      "body": {
+        "tr": "Orhan Gazi, H. 731 / M. 1331-32'de İznik'i fethettikten hemen sonra, şehrin en büyük kilisesi olması nedeniyle yapının camiye dönüştürülmesini emretmiştir. Evliya Çelebi, yapının kurşun kaplı olduğunu, bir minaresi bulunduğunu ve Orhan Gazi tarafından bir kitabe konulduğunu, yangın sonrasında Kanûnî Sultan Süleyman'ın Mimar Sinan'ı görevlendirerek onarttığını aktarır. Sinan onarımında üçlü kemer dizisi kaldırılıp yerine geniş atkılar konmuş, mihrap ve minare eklenmiştir. Hammer-Purgstall 1804'te girişte Orhan Gazi'ye ait bir tuğra gördüğünü, duvarların sağlam, çatının çökmüş, zeminin molozla kaplı olduğunu yazar; bugün tuğradan ya da kitabeden iz yoktur.",
+        "en": "Immediately after conquering Iznik in AH 731 / AD 1331-32, Orhan Gazi ordered the building, the city's largest church, converted into a mosque. Evliya Çelebi reports it was lead-covered, had a minaret and an inscription placed by Orhan Gazi, and that after a fire Süleyman the Magnificent had Mimar Sinan repair it. In Sinan's repair the triple arch series was replaced with wide arches, and a mihrab and minaret were added. Hammer-Purgstall noted in 1804 a tughra of Orhan Gazi at the entrance, intact walls, a collapsed roof and a rubble-covered floor; no trace of the tughra or inscription survives."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408, 409, 412"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "gezgin-notlari",
+      "order": 4,
+      "title": {
+        "tr": "Gezginlerin Notları ve Yakın Dönem",
+        "en": "Travellers' Notes and Recent Period"
+      },
+      "body": {
+        "tr": "Texier (1830) naosun kubbeyle örtülü olduğunu, Moltke (1836) yapının harap olduğunu, Poujoulat (1837) yarıya kadar toprağa gömülü olduğunu, Naumann (1890) harabe olduğunu ve içinde dilenciler bulunduğunu, von der Goltz (1891) kubbenin çöktüğünü, Launay ise (XX. yüzyıl başı) duvarların, küçük kubbelerin ve minarenin ayakta olduğunu kaydeder. Yunan işgali sırasında yakılmak istendiğine dair rivayetler vardır. 1935'te Schneider başkanlığında Alman Arkeoloji Enstitüsü sondaj, kazı ve temizlik çalışmaları başlatmış; 1955, 1971, 1979, 1981, 1985, 1988 ve 1997'de müdahaleler yapılmıştır.",
+        "en": "Texier (1830) noted a dome over the naos, Moltke (1836) a ruin, Poujoulat (1837) a building half buried, Naumann (1890) a ruin with beggars, von der Goltz (1891) a collapsed dome, and Launay (early 20th c.) standing walls, small domes and minaret. There are rumours of an attempt to burn it during the Greek occupation. In 1935 the German Archaeological Institute under Schneider began soundings, excavation and cleaning; interventions followed in 1955, 1971, 1979, 1981, 1985, 1988 and 1997."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408, 409, 411"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "mimari",
+      "order": 5,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Doğu-batı ekseninde 37 × 19,80 m ölçülerinde, üç nefli ve narteksli bazilika planlıdır; atriumu yoktur. Güneydoğuya sonradan eklenen 5,70 × 6,00 m'lik şapel yapıya dahil edilmiştir. Zeminden yaklaşık 1 m yüksekliğe kadar düzgün kesme taş, üstünde tuğla ve harçlı duvar kullanılmış; 1065 sonrası onarımlarda duvar ve apsiste 'gizli tuğla' tekniği uygulanmıştır. Narteksten yalnızca güney duvarı kalmıştır. Naos, iki dikdörtgen paye ile doğu ve batı duvar payelerine oturan kemerlerle 9,45 m genişliğinde orta nef ve her biri 4,15 m genişliğinde iki yan nefe ayrılır. İçeride alttaki pembe sıva Bizans'a, üstteki kirli beyaz sıva Türk dönemine aittir. 1065 sonrası eklenen pastoforion odaları altıgen kasnaklı, kiremit kaplı kubbelerle örtülüdür. Orta nefteki içten yuvarlak, dıştan yedi cepheli apsis özgün planın parçası değildir, muhtemelen sonradan eklenmiştir.",
+        "en": "It is built on an east-west axis, 37 × 19.80 m, a three-nave basilica with narthex and no atrium. A 5.70 × 6.00 m chapel added to the southeast is incorporated. Regular cut stone is used to about 1 m above ground, brick and mortar above; after 1065 'concealed brick' repairs were made in walls and apse. Only the south wall of the narthex survives. Arches on two rectangular piers and wall piers divide the naos into a 9.45 m central nave and two 4.15 m side naves. The lower pink plaster is Byzantine, the upper dirty-white plaster Turkish. The pastophoria added after 1065 have tiled domes on hexagonal drums. The apse, round inside and seven-sided outside, is not part of the original plan and was probably added later."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "411, 412, 413, 416"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "suslemeler",
+      "order": 6,
+      "title": {
+        "tr": "Döşeme, Fresk ve Süslemeler",
+        "en": "Floors, Frescoes and Decoration"
+      },
+      "body": {
+        "tr": "Apsis, bema ve sonradan eklenen şapelde farklı dönemlere ait mozaik döşemeler tespit edilmiştir. Orta nefin batısında, imparatorların taç giyme törenlerinde kullanıldığı düşünülen, 3,70 × 3,70 m ölçülerinde opus sectile mozaik döşeme en dikkat çekici zemin süslemesidir. Duvarlarda pandantif ve kemer altlarında celi sülüs yazı izleri, ayak ve kemer köşelerinde kalem işi bezeme izleri vardır. Mihrabın beşgen nişi beş sıra mukarnaslıdır ve geç dönem Osmanlı taş işçiliğini yansıtır; özgün minber ve mahfil korunamamış, sade ahşap bir minber konmuştur.",
+        "en": "Mosaic floors of different periods were found in the apse, bema and later chapel. The 3.70 × 3.70 m opus sectile floor in the west of the central nave, thought to have been used in imperial coronations, is the most striking. Traces of jeli thuluth calligraphy remain under pendentives and arches, and of hand-painted decoration on the piers. The pentagonal mihrab niche has five rows of muqarnas reflecting late Ottoman stonework; the original minbar and gallery are lost and a simple wooden minbar is used."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "416, 420"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "minare",
+      "order": 7,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Osmanlı döneminde eklenen tek şerefeli minare kuzeybatı köşededir; özgün hali korunmamıştır. Kare kaide tabanda üç sıra kesme blok taş, üstünde bir sıra kesme taş ve iki sıra tuğla almaşık örülüdür; gövde çokgen tuğla örgüdür, şerefe altında tuğla bezemeler bulunur. Kurşun kaplı konik külah yakın dönem restorasyonunda yenilenmiştir. Kesin tarihi bilinmez; kaidenin Orhan Gazi dönemine, gövdenin Mimar Sinan onarımına bağlanan XVI. yüzyıla ait olduğu yönünde görüşler vardır.",
+        "en": "The single-balcony minaret added in the Ottoman period stands at the northwest corner; its original form has not survived. The square base alternates cut stone and brick, the shaft is polygonal brick with brick ornament under the balcony, and the lead-covered conical spire was renewed in recent restoration. Its date is unknown; opinions place the base in Orhan Gazi's time and the shaft in the 16th century, attributed to Sinan's repair."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "420"
+        }
+      ],
+      "confidence": "disputed"
+    },
+    {
+      "id": "restorasyon",
+      "order": 8,
+      "title": {
+        "tr": "Restorasyon ve Günümüz",
+        "en": "Restoration and Present"
+      },
+      "body": {
+        "tr": "Çevre 1998'de düzenlemeyle park alanına dönüştürülmüştür. Vakıflar Genel Müdürlüğü'nün 2006'da hazırladığı restorasyon projesi doğrultusunda 2007'de başlayan uygulamalar 2009'da tamamlanmış; yapı ahşap kırma çatıyla örtülüp kiremitle kaplanmış, kapatılmış pencereler açılmış, zemin döşemeleri onarılmış, minarenin eksik kısımları tamamlanmıştır. 2009 restorasyonu sonrası 2011'de cami olarak ibadete açılmıştır.",
+        "en": "The surroundings became a park in 1998. Under a restoration project prepared by the General Directorate of Foundations in 2006, works began in 2007 and finished in 2009: a tiled wooden hipped roof was added, closed windows reopened, floors repaired and the minaret completed. After the 2009 restoration it opened for worship as a mosque in 2011."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "420, 421"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "boyut",
+      "label": {
+        "tr": "Boyutlar (doğu-batı × kuzey-güney)",
+        "en": "Dimensions"
+      },
+      "value": "37 × 19,80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "key": "sapel_boyut",
+      "label": {
+        "tr": "Şapel boyutu",
+        "en": "Chapel dimensions"
+      },
+      "value": "5,70 × 6,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "key": "orta_nef_genislik",
+      "label": {
+        "tr": "Orta nef genişliği",
+        "en": "Central nave width"
+      },
+      "value": 9.45,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "413"
+        }
+      ]
+    },
+    {
+      "key": "yan_nef_genislik",
+      "label": {
+        "tr": "Yan nef genişliği (her biri)",
+        "en": "Side nave width (each)"
+      },
+      "value": 4.15,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "413"
+        }
+      ]
+    },
+    {
+      "key": "yol_kotu_farki",
+      "label": {
+        "tr": "Yol kotuna göre derinlik",
+        "en": "Depth below road level"
+      },
+      "value": 2.8,
+      "unit": "m",
+      "confidence": "certain",
+      "note": {
+        "tr": "Yaklaşık değer.",
+        "en": "Approximate."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "407"
+        }
+      ]
+    },
+    {
+      "key": "yukseltme",
+      "label": {
+        "tr": "1065 sonrası yükseltme",
+        "en": "Raising after 1065"
+      },
+      "value": 1.4,
+      "unit": "m",
+      "confidence": "certain",
+      "note": {
+        "tr": "Yaklaşık.",
+        "en": "Approximate."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "key": "opus_sectile_boyut",
+      "label": {
+        "tr": "Opus sectile döşeme",
+        "en": "Opus sectile floor"
+      },
+      "value": "3,70 × 3,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "416"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "420"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Orhan Gazi",
+      "role": {
+        "tr": "İznik'i fetheden; yapının camiye çevrilmesini emreden",
+        "en": "Conquered Iznik; ordered conversion to a mosque"
+      }
+    },
+    {
+      "name": "Mimar Sinan",
+      "role": {
+        "tr": "Yangın sonrası onarımı yapan (Evliya Çelebi'ye göre)",
+        "en": "Repaired the building after a fire (per Evliya Çelebi)"
+      }
+    },
+    {
+      "name": "Kanûnî Sultan Süleyman",
+      "role": {
+        "tr": "Onarımı görevlendiren padişah",
+        "en": "Sultan who commissioned the repair"
+      }
+    },
+    {
+      "name": "İmparator Konstantinos",
+      "role": {
+        "tr": "325 Birinci İznik Konsili'nin himayecisi",
+        "en": "Patron of the First Council of Nicaea, 325"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Yapıyı Seyahatnâme'de anlatan seyyah",
+        "en": "Traveller who described the building"
+      }
+    },
+    {
+      "name": "Joseph von Hammer-Purgstall",
+      "role": {
+        "tr": "1804'te girişte tuğra gördüğünü kaydeden tarihçi",
+        "en": "Historian who noted a tughra in 1804"
+      }
+    },
+    {
+      "name": "Schneider",
+      "role": {
+        "tr": "1935 Alman Arkeoloji Enstitüsü kazı başkanı",
+        "en": "Head of the 1935 German Archaeological Institute excavation"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "konsil-325",
+      "year": 325,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Birinci İznik Konsili yapıda toplandı",
+        "en": "First Council of Nicaea held in the building"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "deprem-740",
+      "year": 740,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem",
+        "en": "Earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "konsil-787",
+      "year": 787,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İkonoklazmı bitiren Yedinci Konsil yapıda toplandı",
+        "en": "Seventh Council ending iconoclasm held in the building"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1065",
+      "year": 1065,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük deprem; sonrasında yapı yükseltildi, payeler ve pastoforion eklendi",
+        "en": "Great earthquake; building raised, piers and pastophoria added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408, 413"
+        }
+      ]
+    },
+    {
+      "id": "camiye-cevirme",
+      "year": 1331,
+      "date": null,
+      "hijri": "731",
+      "type": "addition",
+      "title": {
+        "tr": "Orhan Gazi'nin emriyle camiye dönüştürüldü",
+        "en": "Converted into a mosque by order of Orhan Gazi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "hammer-1804",
+      "year": 1804,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hammer-Purgstall ziyareti; çatı çökmüş",
+        "en": "Hammer-Purgstall's visit; roof collapsed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "kazi-1935",
+      "year": 1935,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Alman Arkeoloji Enstitüsü sondaj, kazı ve temizlik çalışmaları",
+        "en": "German Archaeological Institute soundings, excavation and cleaning"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "id": "park-1998",
+      "year": 1998,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Çevre düzenlemesiyle park alanı yapıldı",
+        "en": "Surroundings turned into a park"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "420"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2007-2009",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM restorasyonu (2007-2009; proje 2006)",
+        "en": "Restoration by the General Directorate of Foundations (2007-2009; project 2006)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "420, 421"
+        }
+      ]
+    },
+    {
+      "id": "ibadet-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Cami olarak ibadete açıldı",
+        "en": "Opened for worship as a mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "420, 421"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yapı, şehir merkezinde yol seviyesinin yaklaşık iki buçuk metre altında, park alanı içinde duran, doğu-batı doğrultulu uzun bir bazilika yapısıdır. Duvarların alt kısmı düzgün kesme taş, üst kısmı tuğla ve harçla örülüdür. Kuzeybatı köşede tuğla gövdeli, tek şerefeli bir minare yükselir. İçeride iki sıra paye ve kemerle üç nefe bölünmüş geniş bir mekân vardır; ortadaki nef yan neflerin iki katından geniştir. Doğu ucunda içten yuvarlak apsis ve iki yanında kiremit kubbeli küçük odalar bulunur.",
+      "en": "The building is a long east-west basilica sunk about two and a half metres below road level in a park in the city centre. The lower walls are regular cut stone, the upper walls brick and mortar. A single-balcony minaret with a brick shaft rises at the northwest corner. Inside, piers and arches divide a broad space into three naves, the central one more than twice the width of the side naves. At the east end is an apse, round inside, with small tile-domed rooms on either side."
+    }
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "407-421"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1KRBT2Wl3rGZGRjDmZtdhYjPFVddlX62z",
+        "original_name": "06 DJI_20241017191757_0066_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "412"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ayasofya (Orhan) Camii (kitap s. 412)",
+        "en": "Ayasofya (Orhan) Mosque (book p. 412)"
+      },
+      "alt": {
+        "tr": "Ayasofya (Orhan) Camii fotoğrafı",
+        "en": "Photo of Ayasofya (Orhan) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "15hV8etsLNRjIuIqNY6RzdxsQVw3lGgOH",
+        "original_name": "05 DJI_20241017193109_0099_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "413"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ayasofya (Orhan) Camii (kitap s. 413)",
+        "en": "Ayasofya (Orhan) Mosque (book p. 413)"
+      },
+      "alt": {
+        "tr": "Ayasofya (Orhan) Camii fotoğrafı",
+        "en": "Photo of Ayasofya (Orhan) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1c67DnN_PeuQG3fFVlTEyBWx1a0JZ3HUw",
+        "original_name": "11 ERD00225 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "416"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ayasofya (Orhan) Camii (kitap s. 416)",
+        "en": "Ayasofya (Orhan) Mosque (book p. 416)"
+      },
+      "alt": {
+        "tr": "Ayasofya (Orhan) Camii fotoğrafı",
+        "en": "Photo of Ayasofya (Orhan) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1Kv-y7fnn3aeC74X8jy9a4sGV-8OT99ZE",
+        "original_name": "29 ERD00366 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "420"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ayasofya (Orhan) Camii (kitap s. 420)",
+        "en": "Ayasofya (Orhan) Mosque (book p. 420)"
+      },
+      "alt": {
+        "tr": "Ayasofya (Orhan) Camii fotoğrafı",
+        "en": "Photo of Ayasofya (Orhan) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "184FqopY5qHZUUhnPXQ683oe3NBp0wdNV",
+        "original_name": "20 DJI_20241017204248_0141_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "422"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ayasofya (Orhan) Camii (kitap s. 422)",
+        "en": "Ayasofya (Orhan) Mosque (book p. 422)"
+      },
+      "alt": {
+        "tr": "Ayasofya (Orhan) Camii fotoğrafı",
+        "en": "Photo of Ayasofya (Orhan) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1QN9WQ6Upn87y5QcVApATLP-msBOyz__c",
+        "original_name": "28 ERD00361 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "422"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ayasofya (Orhan) Camii (kitap s. 422)",
+        "en": "Ayasofya (Orhan) Mosque (book p. 422)"
+      },
+      "alt": {
+        "tr": "Ayasofya (Orhan) Camii fotoğrafı",
+        "en": "Photo of Ayasofya (Orhan) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

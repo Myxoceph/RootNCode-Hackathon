@@ -1,0 +1,558 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-esrefzade-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Cami/asitane için kesin inşa yılı kitapta yok; era boş bırakıldı.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa 'waqf.deed' genişletilecek.",
+      "Yaptıran kişi kitapta belirtilmediği için founder boş.",
+      "İznik Türk İslam Eserleri Müzesi'ndeki çini parçaları için ilgili kayıt id'si belirlenmeli (varsa).",
+      "Koordinat bulunmalı (kitapta yok).",
+      "Erişilebilirlik bilgileri sahada teyit edilmeli.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap Mükrime Hatun'un vefatını 1518 verir ve vakfiyesini H. 890 / M. 1485 tarihler; yapının '1518'den önce' inşa edildiği ifadesi ile vakfiye tarihi birlikte okunduğunda tarih belirsizdir. Kaynağa sadık kalındı."
+      },
+      {
+        "field": "timeline[mukrime-vakfiye]",
+        "note": "İngilizce metinde 'AD 485' yazıyor (baskı hatası olasılığı); Türkçe metin M. 1485. Hicri 890 = M. 1485 ile uyumlu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Eşrefzâde Camii",
+    "en": "Eşrefzâde Mosque"
+  },
+  "subtitle": {
+    "tr": "Eşrefoğlu Rûmî'nin asitanesinin camisi ve minaresi",
+    "en": "Mosque and minaret of the Eşrefoğlu Rûmî lodge"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Eşrefzâde",
+    "Eşref-i Rumi",
+    "Kadiriye",
+    "çini",
+    "minare",
+    "asitane",
+    "Yunan işgali"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Eşrefzâde Mahallesi",
+    "address": "Kılıçaslan Caddesi, Eşrefoğlu Sokak No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "425"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.430452,
+      "lng": 29.723737,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir. OSM way/310138771 ile arası 76 m."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 874 / M. 1469'dan sonra, Mükrime Hatun'un vefatından (1518) önce",
+      "en": "After AH 874 / AD 1469 and before the death of Mükrime Hatun (1518)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kaynak kesin tarih vermez; genel kabul gören görüşe göre Eşrefzâde'nin vefatından (1469) sonra, Mükrime Hatun'un vefatından önce yapılmıştır. İnşa tarihine dair farklı görüşler vardır; yıl aralığı kaynakta verilmediği için yıllar boş bırakıldı.",
+      "en": "The source gives no exact date; the generally accepted view is that it was built after Eşrefzâde's death (1469) and before the death of Mükrime Hatun. There are different views; no year range is stated, so years are left empty."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "425"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Mükrime Hatun vakfiyesi",
+    "deed": {
+      "date_display": "H. 890 / M. 1485",
+      "excerpt": {
+        "tr": "Eşrefzâde'nin ruhuna Kur'an okunması ve kandil yağ bedelinin karşılanması için çeşitli düzenlemeler yapılmıştır.",
+        "en": "Various arrangements were made for reading the Quran for Eşrefzâde's soul and paying the cost of lamp oil."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "425"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "425"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "İznik'te Eşrefoğlu Rûmî'nin asitanesinin camisi; Yunan işgalinde yanmış, 1950'de yeniden yapılmış, bugünkü yapı 2015-2017'de Vakıflar tarafından baştan inşa edilmiştir. Kuzeybatıdaki çini bezemeli minare günümüze ulaşmıştır.",
+    "en": "The mosque of the Eşrefoğlu Rûmî lodge in Iznik. Burned in the Greek occupation, rebuilt in 1950 and again in 2015-2017 by the Foundations Directorate. Its tiled minaret in the northwest corner survives."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "\"Eşrefzâde\" ya da \"Eşref-i Rumi\" olarak anılan cami Yunan işgali sırasında tamamen yanmış, günümüze yalnızca minaresi ile Eşrefoğlu Rûmî'nin kabrinin yer aldığı hazire kısmı ulaşabilmiştir. Asitanenin inşa tarihine ilişkin farklı görüşler olmakla birlikte genel kabul gören kanaat, Eşrefzâde'nin H. 874 / M. 1469'daki vefatından sonra, camiye dair vakfiye düzenlemiş olan Fâtih Sultan Mehmed'in eşi ve II. Bayezid'in annesi Mükrime Hatun'un 1518'deki vefatından önce inşa edildiği yönündedir. Mükrime Hatun'un H. 890 / M. 1485 tarihli vakfiyesinde Eşrefzâde'nin ruhuna Kur'an okunması ve kandil yağ bedeli için düzenlemeler yer alır. Kaynaklarda, IV. Murad'ın 1633'te İznik'e uğradığı ve postnişin Şeyh Sırrı Ali Efendi'nin talebi üzerine dergâhın tamiri için irade çıkardığı ifade edilmektedir.",
+        "en": "The mosque, known as \"Eşrefzâde\" or \"Eşref-i Rumi\", was completely burned during the Greek occupation; only its minaret and the graveyard with Eşrefoğlu Rûmî's tomb survive. Although views differ on the date of the lodge, the generally accepted view is that it was built after Eşrefzâde's death in AH 874 / AD 1469 and before the death in 1518 of Mükrime Hatun, wife of Fâtih Sultan Mehmed and mother of Bayezid II, who arranged the endowment charter. Her charter of AH 890 / AD 485 [sic] provides for Quran recitation and lamp oil. Sources state that Murad IV stopped at Iznik in 1633 and issued a decree for repair of the lodge at the request of Shaykh Sırrı Ali Efendi."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "425-426"
+        }
+      ]
+    },
+    {
+      "id": "asitane",
+      "order": 2,
+      "title": {
+        "tr": "Asitane ve Eski Yapı",
+        "en": "The Lodge and the Former Building"
+      },
+      "body": {
+        "tr": "Eski fotoğraflara göre asitane şadırvanlı bir avlu içinde yer alır; bitişiğinde dikdörtgen planlı, büyük bir türbe bulunur. Türbenin batı cephesindeki kapı, güney duvarında mihrap nişi olan revaklı küçük bir avluya açılır. Eski kaynaklara göre yapı dikdörtgen planlı, ahşap kırma çatılı ve kiremit kaplıdır; duvarlar küfeki taşı ve tuğla almaşık örgülüdür; son cemaat yeri yanlardan kapalı olup ön cephesi devşirme beş sütuna oturan kemerli açıklıklıdır. İç mekânda sekiz ahşap direkli müezzin mahfili ve mukarnaslı kavsaralı, yüzeyi tamamen çini kaplı mihrap bulunur. Harim ve son cemaatte yoğun İznik çinisi kullanılmıştır; yıkılmadan önce ziyaret eden gezginler camiyi İznik çinilerinin en zengin örneklerinin görüldüğü camilerden biri olarak tanımlamıştır. Günümüze ulaşan çini parçaları İznik Türk İslam Eserleri Müzesi'nde sergilenir. Yapı IV. Murad döneminde kapsamlı onarım geçirmiş, çini bezemeler bu sırada eklenmiştir.",
+        "en": "According to old photographs, the lodge stood in a courtyard with a shadirvan, next to a large rectangular tomb. A door on the tomb's west side opened to a small arcaded courtyard with a mihrab niche on the south wall. Old sources describe a rectangular building with a tiled wooden hipped roof, alternating limestone and brick walls, a narthex closed at the sides with arched openings on five spolia columns, a muezzin's platform on eight wooden posts, and a mihrab with muqarnas hood entirely covered in tiles. Iznik tiles were used extensively; travelers called it one of the mosques with the richest Iznik tiles. Surviving tile pieces are in the Iznik Turkish Islamic Arts Museum. The building was extensively restored under Murad IV, when the tiles were added."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "425-427"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Günümüzdeki Yapı",
+        "en": "The Present Building"
+      },
+      "body": {
+        "tr": "Cami 1950'de bir dernek tarafından eski ölçüler esas alınarak basit, kâgir bir mimariyle yeniden yapılmış, minaresi onarılmış, hazire ve kabirler düzenlenmiştir. Bugünkü yapı 2015-2017'de Vakıflar Bölge Müdürlüğü tarafından baştan inşa edilmiştir. Kuzey-güney yönelimli, dikdörtgen planlı, ahşap çatılı ve kiremit kaplıdır. Duvarlar üç sıra tuğla ile iki sıra küfeki kesme taşın almaşığıdır; köşelerde beyaz kesme taş kullanılmıştır. İki yanı duvarlı son cemaat yeri dört taş sütuna oturan beş sivri kemerli açıklıkla sonlanır; açıklıklar ahşap doğrama ve camla kapatılmıştır. Göbekli ahşap tavanlı harim toplam 24 pencereyle aydınlanır (yan duvarlarda sekizer, mihrap cephesinde dört, giriş kapısının iki yanında ikişer). Mihrap, minber ve kürsü tamamen ahşaptır; harimde büyük çini panolar vardır; girişin üzerindeki kadınlar mahfili de ahşaptır.",
+        "en": "The mosque was rebuilt in 1950 by an association in simple masonry based on its old dimensions; its minaret was repaired and the graveyard arranged. The current building was rebuilt by the Foundations Regional Directorate in 2015-2017. It is north-south oriented, rectangular, with a tiled wooden roof. Walls alternate three brick rows with two rows of cut limestone, with white cut stone at the corners. The narthex ends in five pointed arches on four stone columns, glazed with wooden frames. The prayer hall has a ribbed wooden ceiling and 24 windows. Mihrab, minbar and pulpit are wooden; large tile panels are placed in the hall; the women's gallery above the entrance is wooden."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "428-429"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Ana yapıdan bağımsız olarak caminin kuzeybatı köşesinde, geçmişte bilinen türbenin köşesine inşa edilmiştir. Üç sıra tuğla ve bir sıra kesme taştan sekizgen kaide üzerinde on iki kenarlı tuğla gövdeye sahiptir. Tek şerefesi mukarnaslı ve çini bezemelidir; gövdede beş çini bilezik motifi vardır. Konik sivri külahı kurşun kaplıdır. 1967 depreminde külah yıkılmış, 1972'deki teknik incelemeden sonra gövdeye çelik çemberler takılmıştır.",
+        "en": "Located independently in the northwest corner of the mosque, built at the corner of the formerly known tomb. It stands on an octagonal base of three brick rows and one cut-stone row, with a twelve-sided brick shaft. Its single balcony is muqarnas and tile decorated; the shaft has five tile band motifs. The conical spire is lead-covered. The spire fell in the 1967 earthquake; after a technical examination in 1972 steel bands were attached to the shaft."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "428-429"
+        }
+      ]
+    },
+    {
+      "id": "asitane-yazisi",
+      "order": 5,
+      "title": {
+        "tr": "Asitane Çini Yazısı ve Beyit",
+        "en": "Lodge Tile Text and Couplet"
+      },
+      "body": {
+        "tr": "Kaynaklarda aktarılan metne göre Eşrefzâde, kale içinde caminin bitişiğindeki büyük bir asitanede medfundur; asitanenin dört cephesinde çini üzerine esmâ-i hüsnâ ve süslemelerle birlikte \"Âsitâne-i Şeyh-i Rûmî bûd\" ifadesi ve bir beyit yazılıdır. Alıntının kaynağı kitapta adlandırılmamıştır.",
+        "en": "According to the quoted text, Eşrefzâde is buried in a large lodge inside the castle next to the mosque; on its four sides the Asma'ul-Husna, ornaments, the phrase \"Âsitâne-i Şeyh-i Rûmî bûd\" and a couplet are written on tiles. The book does not name the quoted source."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "426"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı (günümüzdeki yapı)",
+        "en": "Number of windows (present building)"
+      },
+      "value": 24,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "428-429"
+        }
+      ],
+      "note": {
+        "tr": "Yan duvarlarda sekizer, mihrap cephesinde dört, giriş kapısının iki yanında ikişer.",
+        "en": "Eight on each side wall, four on the mihrab side, two on each side of the entrance."
+      }
+    },
+    {
+      "key": "minare_govde_kenar",
+      "label": {
+        "tr": "Minare gövde kenar sayısı",
+        "en": "Minaret shaft sides"
+      },
+      "value": 12,
+      "unit": "kenar",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "429"
+        }
+      ]
+    },
+    {
+      "key": "hazire_kabir_sayisi",
+      "label": {
+        "tr": "Hazirede kabir sayısı",
+        "en": "Graves in the graveyard"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Eşrefoğlu Rûmî (Eşrefzâde)",
+      "role": {
+        "tr": "Şeyh; asitanenin sahibi, sandukası hazirede",
+        "en": "Shaykh; the lodge's namesake, buried in the graveyard"
+      }
+    },
+    {
+      "name": "Mükrime Hatun",
+      "role": {
+        "tr": "Camiye dair vakfiye düzenleyen, Fâtih'in eşi ve II. Bayezid'in annesi",
+        "en": "Arranged the mosque's endowment charter; wife of Fâtih and mother of Bayezid II"
+      }
+    },
+    {
+      "name": "IV. Murad",
+      "role": {
+        "tr": "1633'te dergâhın tamiri için irade çıkardığı belirtilir; döneminde kapsamlı onarım ve çini bezeme",
+        "en": "Said to have issued a repair decree in 1633; extensive repair and tiling in his reign"
+      }
+    },
+    {
+      "name": "Şeyh Sırrı Ali Efendi",
+      "role": {
+        "tr": "Postnişin; onarım talebinde bulundu",
+        "en": "Shaykh of the lodge; requested the repair"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "esrefzade-vefat",
+      "year": 1469,
+      "date": null,
+      "hijri": "874",
+      "type": "record",
+      "title": {
+        "tr": "Eşrefzâde (Eşrefoğlu Rûmî) vefat etti",
+        "en": "Eşrefzâde (Eşrefoğlu Rûmî) died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "425"
+        }
+      ]
+    },
+    {
+      "id": "mukrime-vakfiye",
+      "year": 1485,
+      "date": null,
+      "hijri": "890",
+      "type": "record",
+      "title": {
+        "tr": "Mükrime Hatun vakfiyesi",
+        "en": "Endowment charter of Mükrime Hatun"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "425"
+        }
+      ],
+      "note": {
+        "tr": "İngilizce metin 'AD 485' yazıyor; Türkçe metin ve Hicri yıl 1485'i destekler.",
+        "en": "English text reads 'AD 485'; the Turkish text and Hijri year support 1485."
+      }
+    },
+    {
+      "id": "murad4-tamir-1633",
+      "year": 1633,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "IV. Murad dergâh tamiri için irade çıkardı",
+        "en": "Murad IV issued a decree for repair of the lodge"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "426"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bir dernek camiyi yeniden inşa etti, minareyi onardı",
+        "en": "An association rebuilt the mosque and repaired the minaret"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "428"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1967",
+      "year": 1967,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde minare külahı yıkıldı",
+        "en": "Minaret spire collapsed in the earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "428"
+        }
+      ]
+    },
+    {
+      "id": "minare-guclendirme-1972",
+      "year": 1972,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Teknik inceleme; minare gövdesine çelik çember takıldı",
+        "en": "Technical examination; steel bands attached to the minaret shaft"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "428"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü camiyi baştan inşa etti (2015-2017)",
+        "en": "Foundations Regional Directorate rebuilt the mosque (2015-2017)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "428"
+        }
+      ],
+      "note": {
+        "tr": "Çalışma 2015-2017 yıllarını kapsar.",
+        "en": "The work spans 2015-2017."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "minare",
+      "title": {
+        "tr": "Çini bezemeli minare",
+        "en": "The tiled minaret"
+      },
+      "hint": {
+        "tr": "Mukarnaslı şerefeye ve gövdedeki beş çini bileziğe bakın.",
+        "en": "Look at the muqarnas balcony and the five tile bands on the shaft."
+      },
+      "section_id": "minare"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Eşrefzâde Camii, İznik'te dikdörtgen planlı, ahşap çatılı ve kiremit kaplı bir yapıdır. Duvarları üç sıra tuğla ve iki sıra kesme taşın almaşığıyla örülmüştür; köşelerde beyaz taşlar görülür. Girişte beş sivri kemerli bir son cemaat yeri vardır. Kuzeybatı köşesinde ana yapıdan ayrı duran, sekizgen kaideli, on iki kenarlı tuğla gövdeli, çini bezemeli şerefeli ve kurşun kaplı sivri külahlı bir minare yükselir. İç mekân ahşap tavanlıdır; mihrap, minber ve kürsü ahşaptır.",
+      "en": "Eşrefzâde Mosque in Iznik is a rectangular building with a tiled wooden roof. Its walls alternate three brick rows and two cut-stone rows with white stones at the corners. The entrance has a narthex of five pointed arches. A detached minaret rises in the northwest corner, with an octagonal base, a twelve-sided brick shaft, a tile-decorated balcony and a lead-covered spire. The interior has a wooden ceiling; mihrab, minbar and pulpit are wooden."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (s. 428-429)"
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "425-430"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1LOs9A06oGErpwpDII8Lgzym8j2dThtWx",
+        "original_name": "08 DJI_20241017174120_0036_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "427"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Eşrefzâde Camii (kitap s. 427)",
+        "en": "Eşrefzâde Mosque (book p. 427)"
+      },
+      "alt": {
+        "tr": "Eşrefzâde Camii fotoğrafı",
+        "en": "Photo of Eşrefzâde Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1lICawY0KTeLXtHFoPgLy41JCfAgTpfr3",
+        "original_name": "14 ERD00057 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "429"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Eşrefzâde Camii (kitap s. 429)",
+        "en": "Eşrefzâde Mosque (book p. 429)"
+      },
+      "alt": {
+        "tr": "Eşrefzâde Camii fotoğrafı",
+        "en": "Photo of Eşrefzâde Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

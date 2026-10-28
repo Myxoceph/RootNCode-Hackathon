@@ -1,0 +1,284 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-hurriyet-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yeni caminin yapım yılı, banisi ve mimarı kitapta yok.",
+      "Eski yapının tarihi ve banisi kitapta yok.",
+      "Cami adındaki 'Hürriyet' seçiminin nedeni kitapta açıklanmıyor.",
+      "Kitapta PDF s. 33'e (basılı 370) denk gelen sayfa boş; bölümün giriş sayfası olabilir, teyit edilmeli.",
+      "Dönem ('era') belirlenemedi; yapım yılı bilinmiyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hürriyet (Sarı) Camii",
+    "en": "Hürriyet (Sarı) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sarı Camii",
+      "en": "Sarı (Yellow) Mosque",
+      "note": "Dış cephesi sarı boyalı olduğu için"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Sarı Camii",
+    "kubbeli cami",
+    "Mahmudiye"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Mahmudiye Mahallesi",
+    "address": "Kasım Efendi Caddesi, No: 135",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "371"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.071151,
+      "lng": 29.516308,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/314247287 ('Hürriyet Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Eski yapının yerine, yanındaki geniş bahçede kesme taştan inşa edilen, büyük kubbeli ve dört küçük kubbeli yeni cami.",
+    "en": "A new cut-stone mosque with a large dome and four small domes, built in the garden next to the old building it replaced."
+  },
+  "sections": [
+    {
+      "id": "konum-ad",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Adı",
+        "en": "Location and Name"
+      },
+      "body": {
+        "tr": "Yapı İnegöl'de Mahmudiye Mahallesi, Kasım Efendi Caddesi No: 135 adresindedir. Bugün \"Hürriyet Camii\" adıyla anılan eser, dış cephesi sarıya boyalı olduğu için halk arasında \"Sarı Camii\" olarak da bilinir.",
+        "en": "The building is at Mahmudiye Neighborhood, Kasım Efendi Street No. 135, İnegöl. Known today as the \"Hürriyet Mosque\", it is also called the \"Sarı (Yellow) Mosque\" among the public because its exterior is painted yellow."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "371"
+        }
+      ]
+    },
+    {
+      "id": "yeni-yapi",
+      "order": 2,
+      "title": {
+        "tr": "Yeni Yapı",
+        "en": "The New Building"
+      },
+      "body": {
+        "tr": "Caminin yanındaki geniş bahçeye, eski yapının yerine tamamen yeni bir cami yapılmıştır. Önceki yapı çatılıyken yeni yapı kubbeli plana sahiptir; kesme taştan yapılmış, daha büyük ve işlevsel bir hacme kavuşturulmuştur. Kuzey cephesindeki son cemaat yeri dört küçük kubbeyle, ana ibadet mekânı bir büyük ana kubbe ve çevresindeki dört küçük kubbeyle örtülüdür. Yeni yapı ibadete açıldıktan sonra eski cami ve minaresi tamamen yıkılmıştır; eski yapı daha küçüktü ve yola taşarak ulaşımı kısıtlıyordu.",
+        "en": "A completely new mosque was built in the large garden next to the old structure, replacing it. The previous structure had a roof whereas the current one has a domed plan; it is built of cut stone and given a larger, more functional volume. The narthex on the north side is covered with four small domes; the main prayer hall has a large main dome and four small domes around it. After the new building opened for worship the old mosque and its minaret were completely demolished; the old building was smaller and extended into the road, restricting traffic."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "372"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minareler ve Bugünkü Durum",
+        "en": "Minarets and Present Condition"
+      },
+      "body": {
+        "tr": "Eski minare kesme taştan, tek şerefeli olup caminin kuzeybatı köşesindeydi. Yeni minare caminin batı cephesine bitişik inşa edilmiştir; kaidesi taş, gövdesi betonarme briketle örülmüş ve iki şerefelidir. Yeni cami düzenli bakım görmekte ve aktif olarak ibadete açıktır.",
+        "en": "The old minaret was of cut stone with a single balcony, at the northwest corner of the mosque. The new minaret is built adjacent to the west façade; its base is stone, its shaft reinforced-concrete briquettes, and it has two balconies. The new mosque is regularly maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "373"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ana_kubbe",
+      "label": {
+        "tr": "Ana kubbe sayısı",
+        "en": "Main domes"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "372"
+        }
+      ]
+    },
+    {
+      "key": "kucuk_kubbe_harim",
+      "label": {
+        "tr": "Harimdeki küçük kubbe sayısı",
+        "en": "Small domes around the main dome"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "372"
+        }
+      ]
+    },
+    {
+      "key": "kucuk_kubbe_son_cemaat",
+      "label": {
+        "tr": "Son cemaat yerindeki kubbe sayısı",
+        "en": "Domes over the narthex"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "372"
+        }
+      ]
+    },
+    {
+      "key": "serefe",
+      "label": {
+        "tr": "Yeni minarenin şerefe sayısı",
+        "en": "Balconies of the new minaret"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "373"
+        }
+      ]
+    },
+    {
+      "key": "eski_serefe",
+      "label": {
+        "tr": "Eski minarenin şerefe sayısı",
+        "en": "Balconies of the old minaret"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "373"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, Kasım Efendi Caddesi üzerinde, sarıya boyalı dış cepheli, kesme taştan bir yapıdır. Kuzey yüzündeki son cemaat yeri dört küçük kubbeyle örtülüdür. Ana ibadet mekânının üzerinde bir büyük kubbe ve çevresinde dört küçük kubbe yükselir. Batı yüzüne bitişik, iki şerefeli bir minare vardır; kaidesi taş, gövdesi betonarme briketten yapılmıştır.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1YPEsWEvscuzDGcGI-WscV0TPld-ydvlL",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+    "book_layout_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+    "links_folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+    "book_pdf_name": "4-İnegöl.pdf",
+    "book_pages": "371-373"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1ph6aLm-oMJSkcVZujT-KKbFcQ57uWJdU",
+        "original_name": "08 ERD08018 kopya.jpg",
+        "folder_id": "1cx-G89427WoppOOs6BQR8y0tOXLQX-1H",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 4-İnegöl Klasörü / Links",
+        "book_pdf_file_id": "1GZqh2cghu6FBHRtDrBQaRaigzKFLoGjb",
+        "book_pdf_name": "4-İnegöl.pdf",
+        "book_page": "373"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hürriyet (Sarı) Camii (kitap s. 373)",
+        "en": "Hürriyet (Sarı) Mosque (book p. 373)"
+      },
+      "alt": {
+        "tr": "Hürriyet (Sarı) Camii fotoğrafı",
+        "en": "Photo of Hürriyet (Sarı) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

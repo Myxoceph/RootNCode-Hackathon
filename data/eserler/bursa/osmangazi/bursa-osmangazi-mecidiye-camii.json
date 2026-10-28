@@ -1,0 +1,384 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-mecidiye-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Mahalle adı kitapta verilmiyor; location.neighborhood boş.",
+      "Doğu duvarındaki H. 1323-1325 / M. 1905-1907 tarihlerinin anlamı (inşa mı, onarım mı) kitapta belirtilmiyor.",
+      "Ahmet Vefik Paşa'nın valilik dönemi ve yapım yılı kitapta verilmiyor.",
+      "Pınarbaşı Mezarlığı için ayrı kayıt yok.",
+      "Bursa Ahmet Vefik Paşa Tiyatrosu kaydına bağlantı kitapta kurulmuyor; yalnızca aynı kişi anılıyor (same_founder eklenmedi).",
+      "Bu bölümün başlığı sayfa altında (s. 393) basılı olduğundan, bu metnin Mecidiye Camii'ne ait olduğu sayfa sırasından çıkarıldı; PDF sayfası 124 ile eşleştirilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap camiyi 1877-1878 savaşı sonrası yaptırılmış olarak anlatır; aynı metin son cemaat yerinin doğu duvarında H. 1323-1325 / M. 1905-1907 tarihlerinin yazılı olduğunu belirtir. İki tarih aralığı arasındaki yaklaşık otuz yıllık fark kitapta açıklanmıyor (ör. inşa, tamamlanma ya da onarım)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mecidiye Camii",
+    "en": "Mecidiye Mosque"
+  },
+  "subtitle": {
+    "tr": "93 Harbi sonrası Kırım-Tatar göçmenleri için yaptırılan cami",
+    "en": "Mosque built for Crimean-Tatar immigrants after the War of 93"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Kırım Tatar göçmenleri",
+    "93 Harbi",
+    "Pınarbaşı Mezarlığı",
+    "ahşap minare"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": "İvazpaşa Caddesi, Eski Yol Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "393"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.179673,
+      "lng": 29.054771,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1877-1878 savaşı sonrası; doğu duvarında H. 1323-1325 / M. 1905-1907 tarihleri",
+      "en": "After the 1877-1878 war; dates AH 1323-1325 / AD 1905-1907 on the east wall"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapıyı '93 Harbi' sonrası Vali Ahmet Vefik Paşa'ya bağlar; son cemaat yerinin doğu duvarında H. 1323-1325 / M. 1905-1907 tarihleri yazılıdır. Bu tarihlerin neye (inşa, onarım) işaret ettiği ve savaş sonrası dönemle ilişkisi kitapta açıklanmaz.",
+      "en": "The book ties the building to Governor Ahmet Vefik Paşa after the 'War of 93'; the east wall of the narthex bears the dates AH 1323-1325 / AD 1905-1907. The book does not explain what the dates refer to or how they relate to the post-war period."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "393"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ahmet Vefik Paşa (Bursa Valisi)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "393"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1877-1878 Osmanlı-Rus Savaşı ('93 Harbi') sonrasında Bursa Valisi Ahmet Vefik Paşa tarafından Romanya Köstence'den gelen Kırım-Tatar göçmenleri için yaptırılan, Pınarbaşı Mezarlığı'nın üstündeki cami. Ahşap tavanlı 5,70 × 8,10 m'lik ibadet mekânı, kapalı son cemaat yeri ve ahşap gövdeli minaresi vardır; 1985'te büyük onarım görmüş, 1988'de mahfil eklenmiştir.",
+    "en": "A mosque above the Pınarbaşı Cemetery built by the Bursa Governor Ahmet Vefik Paşa for Crimean-Tatar immigrants from Constanța, Romania, after the 1877-1878 Ottoman-Russian War ('War of 93'). It has a 5.70 × 8.10 m prayer room with a wooden ceiling, an enclosed narthex and a short wooden minaret; it had a major renovation in 1985 and a gallery was added in 1988."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapım",
+        "en": "Location and Construction"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, İvazpaşa Caddesi, Eski Yol Sokak'ta yer alır. Pınarbaşı Mezarlığı'nın üstünde bulunan cami, \"93 Harbi\" olarak bilinen 1877-1878 Osmanlı-Rus Savaşı sonrasında Bursa Valisi Ahmet Vefik Paşa tarafından Romanya Köstence'den gelen Kırım-Tatar göçmenleri için yaptırılmıştır.",
+        "en": "The mosque is in Osmangazi District, İvazpaşa Avenue, Eski Yol Street. Located above the Pınarbaşı Cemetery, it was built by the Bursa Governor Ahmet Vefik Paşa for the Crimean-Tatar immigrants arriving from Constanța, Romania, after the 1877-1878 Ottoman-Russian War, known as the 'War of 93'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "393"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Son cemaat yerinin kuzey, doğu ve batı yönleri kapalıdır; doğu duvarı üzerinde H. 1323-1325 / M. 1905-1907 tarihleri yer alır. Caminin ibadet mekânı 5,70 × 8,10 m ölçülerindedir ve tavanı ahşapla örtülüdür; yanları ve önü çift taraflı merdivenlerle kapanmıştır. Aydınlatma altı pencereyle sağlanır; mihrabın iki yanındaki pencereler dolap hâline getirilmiştir. Kuzeybatı köşedeki minareye son cemaat yerinden çıkılır; dıştan tamamen sıvalı minare kısa, ahşap, silindirik gövdeli ve sivri külahlıdır.",
+        "en": "The north, east and west sides of the narthex are closed and the dates AH 1323-1325 / AD 1905-1907 appear on the east wall. The prayer room measures 5.70 × 8.10 m and has a wooden ceiling; its sides and front are enclosed by double-sided staircases. Six windows light it; the windows on both sides of the mihrab have been turned into cupboards. The minaret in the northwest corner is entered from the narthex; completely plastered outside, it is short, wooden, cylindrical-shafted, with a pointed spire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "393"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Cami 1985'te büyük bir onarım görmüş, 1988'de mahfil kısmı eklenmiştir.",
+        "en": "The mosque underwent a major renovation in 1985 and its gallery section was added in 1988."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "393"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ibadet_mekani_olcu",
+      "label": {
+        "tr": "İbadet mekânı ölçüsü",
+        "en": "Prayer room size"
+      },
+      "value": "5,70 × 8,10",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "393"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "393"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ahmet Vefik Paşa",
+      "role": {
+        "tr": "Banî; Bursa Valisi",
+        "en": "Founder; Governor of Bursa"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "son-cemaat-tarih",
+      "location": {
+        "tr": "Son cemaat yerinin doğu duvarı",
+        "en": "East wall of the narthex"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1323,
+        "gregorian": "1905-1907"
+      },
+      "note": {
+        "tr": "Duvarda H. 1323-1325 / M. 1905-1907 tarihleri yazılıdır; metin ve dil kitapta verilmiyor.",
+        "en": "The dates AH 1323-1325 / AD 1905-1907 are written on the wall; the book gives neither text nor language."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "393"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Büyük onarım",
+        "en": "Major renovation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "393"
+        }
+      ]
+    },
+    {
+      "id": "mahfil-1988",
+      "year": 1988,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Mahfil kısmı eklendi",
+        "en": "Gallery section added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "393"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mecidiye Camii, İvazpaşa Caddesi'nde, Pınarbaşı Mezarlığı'nın üstünde küçük bir camidir. Kapalı bir son cemaat yeri, ahşap tavanlı ibadet mekânı ve kuzeybatı köşede son cemaat yerinden çıkılan, dıştan sıvalı, kısa ahşap silindirik gövdeli ve sivri külahlı minaresi vardır. İbadet mekânının yanları ve önü çift taraflı merdivenlerle kapanmıştır.",
+      "en": "Mecidiye Mosque is a small mosque on İvazpaşa Avenue above the Pınarbaşı Cemetery. It has an enclosed narthex, a prayer room with a wooden ceiling, and a short, plastered, wooden cylindrical minaret with a pointed spire in the northwest corner, entered from the narthex. The sides and front of the prayer room are enclosed by double-sided staircases."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mecidiye-camii/p124-1.jpg",
+        "original_name": "Mecidiye Camii 1.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "393"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Mecidiye Camii'nin minaresi ve çevresindeki mahalle",
+        "en": "Minaret of Mecidiye Mosque among the neighbourhood houses"
+      },
+      "alt": {
+        "tr": "Yüksekten bakıldığında dar bir sokağın kenarında ince, açık renkli bir minare yükselir. Çevrede kırmızı kiremitli çatılar, çok katlı evler ve arkada dağ eteği görünür.",
+        "en": "Seen from above, a slim pale minaret rises beside a narrow street. Red-tiled roofs, multi-storey houses and a mountain slope fill the surroundings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mecidiye-camii/p124-2.jpg",
+        "original_name": "Mecidiye Camii 3.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "393"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mecidiye Camii'nin iç mekânı, mihrap ve minber",
+        "en": "Interior of Mecidiye Mosque with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Kemerli büyük pencereleri ve tahta kaplı tavanı olan ibadet salonunun ortasında avizeli mihrap, sağda ahşap minber var. Alt duvarlar ahşap lambriyle kaplı, zeminde kırmızı desenli halı serilidir.",
+        "en": "A prayer hall with large arched windows and a panelled ceiling. A chandelier hangs before the mihrab, a wooden minbar stands on the right, and a red patterned carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mecidiye-camii/p124-3.jpg",
+        "original_name": "DJI_20241012200104_0573_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "393"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Mecidiye Camii'nin kuşbakışı çatı görünümü",
+        "en": "Aerial view of the roof of Mecidiye Mosque"
+      },
+      "alt": {
+        "tr": "Kuşbakışı çekilen karede koyu kırmızı kiremitli büyük bir çatı, yanındaki beyaz ve kiremit çatılarla sıkışık bir mahalle dokusunun içinde durur. Üst köşede minarenin tepesi seçilir.",
+        "en": "From directly above, a large dark red tiled roof sits among white and tiled roofs of a dense neighbourhood. The top of the minaret is visible in the upper corner."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    }
+  ],
+  "archive_media": []
+}

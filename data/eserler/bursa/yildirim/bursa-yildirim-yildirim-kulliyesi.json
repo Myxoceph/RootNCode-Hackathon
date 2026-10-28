@@ -1,0 +1,501 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-yildirim-kulliyesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Külliyesi",
+    "text_origin": "Bursa Vakıf Eserleri II. Cilt, Yıldırım Külliyesi bölümünden (s. 161-209) yapay zekâ (Sonnet) ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kalealtı'ndaki 'Yeni Bedesten'in, kayıtlı 'bursa-osmangazi-yildirim-bayezid-bedesteni' ile aynı yapı olup olmadığı teyit edilmeli (ilçe kitapta yok).",
+      "Yıldırım Hamamı için bu bölükte ayrı bölüm yok; hamam kaydının hangi bölükte olduğu ve ilçesi ('bursa-yildirim-yildirim-hamami' id'si tahmindir) kontrol edilmeli.",
+      "Orhan Gazi Vakfı bağı için hedefin 'bursa-osmangazi-orhan-bey-kulliyesi' olup olmadığı teyit edilmeli.",
+      "Külliyenin mimarı kitapta belirtilmiyor.",
+      "Hamam, imaret, han, ahır ve su kemerleri günümüze ulaşmamıştır/ayrı bölümleri yoktur; ayrı kayıt açılıp açılmayacağı veri ekibince karar verilmeli.",
+      "Koordinatlar kitapta yok; sahadan ya da fotoğraf EXIF'inden eklenmeli.",
+      "Fotoğraflar eklenmeli (media_folder ve media), match_photos.py ile bağlanacak; arşiv fotoğrafı (Zaman Perdesi) bulunmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Adres kitapta külliye için değil, cami (Yardım Sokak No: 10) için verilmiş; külliye adresi boş bırakıldı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Giriş bölümü vakfiyeyi 'H. 802 / M. 1399' olarak, sonraki sayfalar 'H. Ramazan 802 / M. Mayıs 1400' olarak verir. H. 802 yılı Ramazan'ı Mayıs 1400'e denk gelir; 1399 ile 1400 arasındaki fark kaynaktaki tutarsızlık olarak korunmuştur."
+      },
+      {
+        "field": "dating",
+        "note": "Giriş bölümü külliyenin H. 793-797 / M. 1391-1395 arasında inşa ettirildiğini kesin dille söyler; cami bölümü ise kitabe olmadığını ve kesin inşa tarihinin bilinmediğini, vakfiyeye dayanılarak birkaç yıl önce yapılmış olabileceğini yazar. Bu yüzden güven düzeyi 'probable' bırakıldı."
+      },
+      {
+        "field": "people[bayezid]",
+        "note": "Kitap Yıldırım Bayezid'in H. 755 / M. 1354'te doğduğunu ve H. 805 / M. 1403'te '43 yaşında' öldüğünü yazar; bu tarihlerle yaş yaklaşık 49 eder. Kaynağa sadık kalındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yıldırım Bayezid Külliyesi",
+    "en": "Yıldırım Bayezid Complex"
+  },
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "külliye",
+    "Yıldırım Bayezid",
+    "UNESCO",
+    "darüşşifa",
+    "Akçağlayan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Yıldırım",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "161"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.187906,
+      "lng": 29.081997,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-yildirim-yildirim-darussifasi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 793-797 / M. 1391-1395",
+      "en": "AH 793-797 / AD 1391-1395"
+    },
+    "start_year": 1391,
+    "end_year": 1395,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitabın giriş bölümü külliyenin bu yıllar arasında inşa ettirildiğini söyler. Camide kitabe yoktur, vakfiyeye dayanılarak birkaç yıl önce yapılmış olabileceği öne sürülür; darüşşifa için farklı tarih görüşleri vardır.",
+      "en": "The chapter introduction says the complex was built in these years. The mosque has no inscription and, based on the endowment charter, is suggested to have been built a few years earlier; other views exist for the hospital."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "161, 164-165"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Yıldırım Bayezid (I. Bayezid)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "161, 164-165"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Yıldırım Bayezid Vakfı",
+    "deed": {
+      "date_display": "H. Ramazan 802 / M. Mayıs 1400",
+      "excerpt": {
+        "tr": "\"Mahrûse-i Burûsa'da Yıldırım Sultan Hân'ın vakıfnâmesidir.\" Külliye; mutfaklar, mahzenler, bir hamam, iki medrese, bir han, hizmetliler için evler, Akçağlayan'dan su getiren kemerler ve ahırlardan oluşur; etrafı duvarla çevrilidir, küçük bir tepede darüşşifa da inşa edilmiştir.",
+        "en": "\"This is the endowment charter of Yıldırım Sultan Han in Mahrûse-i Burûsa.\" The complex consists of kitchens, cellars, a bath, two madrasas, a han, houses for servants, aqueducts bringing water from Akçağlayan and stables; it is walled, and a hospital was built on a small hill."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "164-165, 185"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Vakfedilen mülklerden elde edilen gelir zaviye, iki medrese ve diğer bölümlerin onarımı ile işletme giderlerine ayrılacaktır.",
+      "en": "The income from the endowed properties is to be allocated to the maintenance and operating expenses of the zawiya, the two madrasas and other sections."
+    },
+    "land_note": {
+      "tr": "Külliyenin arsası Orhan Gazi Vakfı'na aitken, H. 802 / M. 1399 tarihli vakfiyeden anlaşıldığına göre Ortakızık Köyü ile takas yoluyla temin edilmiştir.",
+      "en": "The site belonged to the Orhan Gazi Foundation and, as understood from the endowment charter dated AH 802 / AD 1399, was acquired by exchange with Ortakızık Village."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "161, 164-165"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan Yıldırım Bayezid'in şehrin en doğusundaki bir tepeye kurdurduğu, surları andıran yüksek duvarlarla çevrili külliye; cami, medrese, türbe ve darüşşifa günümüze ulaşmıştır. 2014'te UNESCO Dünya Mirası Alanı olarak tescil edilmiştir.",
+    "en": "The complex Sultan Yıldırım Bayezid had built on a hill dominating the easternmost part of the city, surrounded by high rampart-like walls. The mosque, tomb, madrasa and hospital survive. It was registered as a UNESCO World Heritage Site in 2014."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, Yıldırım Mahallesi'nde, H. 793-797 / M. 1391-1395 yılları arasında Sultan Yıldırım Bayezid tarafından inşa ettirilen külliyenin parçasıdır. Külliye, şehrin en doğusuna hâkim bir tepeye kurulmuştur. Çevresi surları andıran yüksek duvarlarla kuşatılmıştır ve bu duvarlara ait bazı kalıntılar günümüze ulaşmıştır. Külliye bünyesinde cami, medrese, hamam, imaret, han, ahır, su kemerleri ve darüşşifa yer almış; bunlardan cami, türbe, hamam, medrese ve darüşşifa günümüze ulaşabilmiştir.",
+        "en": "The mosque is part of the complex commissioned by Sultan Yıldırım Bayezid between AH 793-797 / AD 1391-1395 in the Yıldırım Neighborhood. It was built on a hill dominating the easternmost part of the city and is surrounded by high walls resembling ramparts, some remains of which survive. The complex included a mosque, madrasa, bath, imaret, han, stable, aqueducts and a hospital; of these, the mosque, tomb, bath, madrasa and hospital have survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "161"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "order": 2,
+      "title": {
+        "tr": "Vakfiye ve Vakfedilen Mülkler",
+        "en": "The Endowment Charter and Endowed Properties"
+      },
+      "body": {
+        "tr": "Orijinal vakfiyenin başında \"Mahrûse-i Burûsa'da Yıldırım Sultan Hân'ın vakıfnâmesidir\" ifadesi yer alır. Sultan Bayezid Han bin Murad Han bin Orhan adına düzenlenen ve H. Ramazan 802 / M. Mayıs 1400 tarihli belge, Bursa Kadısı Mehmed bin Hamza bin Mehmed (Molla Fenârî) tarafından tasdik edilmiştir. Nesih hatla yazılmış, 240 satırdan oluşan ve 6,5 metre uzunluğundaki vakfiyenin sağ kenarında Emir Süleyman'ın imzası bulunur; Mehmed Cezerî de dâhil toplam 22 kişi şahit olarak anılır. Vakfedilen mülkler arasında Kalealtı'ndaki dört yanı dükkânlarla çevrili \"Yeni Bedesten\", kıble kapısından doğu duvarına uzanan dükkânlar (önce Orhan Gazi Vakfı'na ait olup sonradan Yıldırım Külliyesi'ne tahsis edilmiştir), külliyenin duvarları içindeki Yıldırım Hamamı, Buğday Pazarı'ndaki başçı dükkânı, bağ, bahçe ve mezralar ile çok sayıda büyük ve küçükbaş hayvan sürüsü vardır.",
+        "en": "The original charter opens with \"This is the endowment charter of Yıldırım Sultan Han in Mahrûse-i Burûsa.\" Prepared in the name of Sultan Bayezid Han bin Murad Han bin Orhan and dated AH Ramadan 802 / AD May 1400, it was certified by Bursa Qadi Mehmed bin Hamza bin Mehmed (Molla Fenârî). Written in Naskh, with 240 lines and 6.5 m long, it bears the signature of Emir Süleyman on its right side, and 22 people including Mehmed Cezerî are listed as witnesses. Endowed properties include the \"New Bedesten\" in Kalealtı, surrounded by shops on four sides, the shops from the qibla gate to the eastern wall (first belonging to the Orhan Gazi Foundation, later allocated to the complex), the Yıldırım Bath inside the walls, a master's shop in the Buğday Bazaar, vineyards, gardens, hamlets and many herds."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "164-165"
+        }
+      ]
+    },
+    {
+      "id": "bayezid",
+      "order": 3,
+      "title": {
+        "tr": "Sultan Yıldırım Bayezid",
+        "en": "Sultan Yıldırım Bayezid"
+      },
+      "body": {
+        "tr": "Yıldırım Bayezid, I. Murad Hudâvendigâr ile Gülçiçek Hatun'un oğlu olarak H. 755 / M. 1354'te Bursa'da doğmuştur. H. 783 / M. 1381'de Germiyanoğlu Süleyman Şah'ın kızı Devlet Hatun ile evlenmiş ve çeyiz olarak verilen topraklara sancakbeyi atanmıştır. \"Yıldırım\" lakabı, H. 788-789 / M. 1386-1387'de Karamanoğulları ile yapılan Frenkyazısı Muharebesi'ndeki cesareti nedeniyle verilmiştir. H. 791 / M. 1389'da babasının Kosova'da şehit düşmesi üzerine tahta çıkmış, H. 804 / M. 1402'de Ankara Muharebesi'nde Timur'a yenilerek esir düşmüş ve yedi ay on iki gün esaret altında kalmıştır. H. 805 / M. 1403'te vefat etmiştir; naaşı bir süre Akhisar'da Şeyh Mahmûd-ı Hayrânî Türbesi'nde tutulmuş, sonra oğlu Çelebi Mehmed tarafından Bursa'ya nakledilip külliyesindeki türbeye defnedilmiştir.",
+        "en": "Yıldırım Bayezid was born in Bursa in AH 755 / AD 1354, son of Murad I Hudâvendigâr and Gülçiçek Hatun. In AH 783 / AD 1381 he married Devlet Hatun, daughter of Suleyman Shah of Germiyan, and was appointed sanjakbey of the lands given as dowry. He earned the nickname \"Yıldırım\" (Thunderbolt) at the Battle of Frenkyazısı against the Karamanids in AH 788-789 / AD 1386-1387. He ascended the throne in AH 791 / AD 1389 after his father fell at Kosovo, was defeated and captured by Timur at Ankara in AH 804 / AD 1402 and remained captive for seven months and twelve days. He died in AH 805 / AD 1403; his body was kept for a time in Akhisar in the Tomb of Shaykh Mahmûd-ı Hayrânî, then brought to Bursa by his son Çelebi Mehmed and buried in the tomb within his complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "162-163"
+        }
+      ]
+    },
+    {
+      "id": "su-yolu",
+      "order": 4,
+      "title": {
+        "tr": "Akçağlayan Suyu",
+        "en": "The Akçağlayan Water"
+      },
+      "body": {
+        "tr": "Sultan Yıldırım Bayezid, Uludağ eteklerinden çıkan Akçağlayan suyunu terazi ve kemerlerle külliyeye getirtmiştir. Kemerler 1900'lü yılların başına ait eski fotoğraflarda görülmekte, sonraki dönemde çevrede inşaatlar yükseldikçe yavaş yavaş ortadan kaldırılmıştır.",
+        "en": "Sultan Yıldırım Bayezid had the Akçağlayan water, originating from the foothills of Uludağ, brought to the complex with channels and arches. The arches can be seen in early 1900s photographs but were gradually removed as construction rose in the area."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "161"
+        }
+      ]
+    },
+    {
+      "id": "yapilar",
+      "order": 5,
+      "title": {
+        "tr": "Külliyenin Günümüze Ulaşan Yapıları",
+        "en": "Surviving Buildings of the Complex"
+      },
+      "body": {
+        "tr": "Kitap bu külliye için dört yapıyı ayrı bölümlerde ele alır: Yıldırım Bayezid Camii, Yıldırım Medresesi, Yıldırım Darüşşifası ve Yıldırım Bayezid Türbesi. Hamamın ayrı bir bölümü bu bölükte yoktur. Darüşşifa, cami ve medresenin bulunduğu yüksek duvarların dışında, külliyenin yaklaşık 300 m doğusundadır; medrese ise caminin yaklaşık 80 m aşağı kotunda, kuzeydoğusundadır. Külliye 2014'te Bursa Tarihi Hanlar Bölgesi ve Cumalıkızık ile birlikte UNESCO Dünya Mirası Alanı olarak tescillenmiştir.",
+        "en": "The book treats four buildings of this complex in separate sections: the Yıldırım Bayezid Mosque, the Yıldırım Madrasa, the Yıldırım Hospital and the Yıldırım Bayezid Tomb. There is no separate section on the bath in this chapter. The hospital lies about 300 m east of the complex, outside the high walls enclosing the mosque and madrasa; the madrasa lies about 80 m lower, northeast of the mosque. The complex was registered as a UNESCO World Heritage Site in 2014 together with the Bursa Historical Hans District and Cumalıkızık Village."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "161, 180, 185, 193"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "unesco_yili",
+      "label": {
+        "tr": "UNESCO Dünya Mirası tescili",
+        "en": "UNESCO World Heritage registration"
+      },
+      "value": 2014,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "key": "vakfiye_satir",
+      "label": {
+        "tr": "Vakfiye satır sayısı",
+        "en": "Endowment charter lines"
+      },
+      "value": 240,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "164-165"
+        }
+      ]
+    },
+    {
+      "key": "vakfiye_uzunluk",
+      "label": {
+        "tr": "Vakfiye uzunluğu",
+        "en": "Endowment charter length"
+      },
+      "value": 6.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "164-165"
+        }
+      ]
+    },
+    {
+      "key": "sahit_sayisi",
+      "label": {
+        "tr": "Vakfiyedeki şahit sayısı",
+        "en": "Witnesses named in charter"
+      },
+      "value": 22,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "164-165"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Yıldırım Bayezid",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Emir Süleyman",
+      "role": {
+        "tr": "Vakfiyeyi imzalayan oğul",
+        "en": "Son who signed the endowment charter"
+      }
+    },
+    {
+      "name": "Molla Fenârî (Mehmed bin Hamza bin Mehmed)",
+      "role": {
+        "tr": "Vakfiyeyi tasdik eden Bursa Kadısı",
+        "en": "Bursa Qadi who certified the charter"
+      }
+    },
+    {
+      "name": "Mehmed Cezerî",
+      "role": {
+        "tr": "Vakfiyede şahit",
+        "en": "Witness in the charter"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1391,
+      "date": null,
+      "hijri": "793-797",
+      "type": "construction",
+      "title": {
+        "tr": "Külliyenin inşa edildiği yıllar başlıyor (H. 793-797 / M. 1391-1395)",
+        "en": "Construction years of the complex begin (AH 793-797 / AD 1391-1395)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "161"
+        }
+      ],
+      "note": {
+        "tr": "Kitap camide kitabe olmadığını, kesin inşa tarihinin bilinmediğini belirtir.",
+        "en": "The book states the mosque has no inscription and its exact construction date is unknown."
+      }
+    },
+    {
+      "id": "vakfiye",
+      "year": 1400,
+      "date": null,
+      "hijri": "Ramazan 802",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi (H. Ramazan 802 / M. Mayıs 1400)",
+        "en": "Endowment charter drawn up (AH Ramadan 802 / AD May 1400)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "164-165"
+        }
+      ],
+      "note": {
+        "tr": "Giriş bölümü vakfiyeyi H. 802 / M. 1399 olarak verir; bkz. veri kalitesi notları.",
+        "en": "The introduction gives AH 802 / AD 1399; see data quality notes."
+      }
+    },
+    {
+      "id": "unesco",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "UNESCO Dünya Mirası Alanı olarak tescil",
+        "en": "Registered as UNESCO World Heritage Site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "180"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "vakfiye",
+      "title": {
+        "tr": "6,5 metrelik vakfiye",
+        "en": "The 6.5 m endowment charter"
+      },
+      "hint": {
+        "tr": "240 satırlık nesih vakfiyede külliyenin tüm yapıları sayılır.",
+        "en": "The 240-line Naskh charter lists all buildings of the complex."
+      },
+      "section_id": "vakfiye"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "same_founder",
+      "description": {
+        "tr": "Kitap, Yıldırım Bayezid'in vakıf eserleri arasında başta Bursa Ulucami olmak üzere birçok yapının günümüze ulaştığını belirtir.",
+        "en": "The book says many of Yıldırım Bayezid's foundation works survive, especially the Bursa Ulucami."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "164"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-kulliyesi",
+      "type": "waqf_land",
+      "description": {
+        "tr": "Külliyenin arsası Orhan Gazi Vakfı'na aitti ve Ortakızık Köyü ile takas yoluyla temin edildi; vakıf, Orhan Bey'in külliyesiyle ilişkilendirildi.",
+        "en": "The site belonged to the Orhan Gazi Foundation and was acquired by exchange with Ortakızık Village; the foundation is linked here to Orhan Bey's complex."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "161"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-yildirim-bayezid-bedesteni",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Vakfiye, Kalealtı'ndaki dört yanı dükkânlı \"Yeni Bedesten\"i külliye vakfına dâhil eder.",
+        "en": "The charter includes the \"New Bedesten\" in Kalealtı, with shops on all four sides, in the complex's endowment."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "164-165"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-yildirim-hamami",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Külliye duvarları içindeki Yıldırım Hamamı vakfa dâhildir.",
+        "en": "The Yıldırım Bath inside the complex walls is included in the foundation."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "164-165"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "source",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yıldırım Bayezid Külliyesi, şehrin en doğusunda bir tepede, surları andıran yüksek duvarlarla çevrili bir yapılar topluluğudur. Bu duvarların içinde cami, medrese ve türbe bulunur; darüşşifa ise duvarların yaklaşık 300 metre doğusunda, ayrı duran büyük bir yapıdır. Külliyeye Uludağ eteklerinden kemerlerle su getirilmiştir; kemerler günümüzde yoktur.",
+      "en": "The Yıldırım Bayezid Complex is a group of buildings on a hill in the far east of the city, once surrounded by high rampart-like walls. Within these walls stand the mosque, madrasa and tomb; the hospital is a separate large building about 300 metres east of the walls. Water was brought to the complex from the foothills of Uludağ by arches, which no longer survive."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

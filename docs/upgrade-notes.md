@@ -1,0 +1,409 @@
+# Güncelleme Notları
+
+`dev`'i çektikten sonra **bir kez** yapılması gereken adımlar. En yeni not en üstte.
+Yeni bir kurulum gerekiyorsa (paket, ortam değişkeni, migration…) PR'ı açan kişi buraya bir madde ekler.
+
+Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten yeni bir not var mı?
+
+---
+
+## 2026-10-25 · Ziyaretçi Nabzı uygulamada (expo-secure-store)
+
+Kimler: **uygulama ekibi**
+
+1. Yeni paket (`expo-secure-store`, Expo Go'da hazır):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Eser sayfasının "Ziyaretçi Notları" sekmesi API'nin nabzını gösteriyor ve "Not bırak" formu var; Profil'de
+  "Notlarım" listeleniyor (ayrıntı `apps/app/README.md` "Veri"). `DataSource`'a `getPulse` eklendi: kendi
+  kaynağını yazan varsa onu da eklemeli.
+
+## 2026-10-25 · Çevrimdışı veriler (AsyncStorage)
+
+Kimler: **uygulama ekibi**
+
+1. Yeni paket (`@react-native-async-storage/async-storage`):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- API yanıtları cihazda saklanıyor; bağlantı yoksa ya da yavaşsa ekranlar saklanan veriyle açılıyor ve üstte
+  "Çevrimdışı" şeridi çıkıyor (`apps/app/src/data/cached-source.ts`, ayrıntı `apps/app/README.md` "Veri").
+  Ekranların veri kullanımı değişmedi.
+
+## 2026-10-25 · Ses Kapsülü telefonda sesli (expo-audio)
+
+Kimler: **uygulama ekibi**, **ses kayıtlarını ekleyecek veri ekibi (H9)**
+
+1. Yeni paket (`expo-audio`):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Kapsüller telefonda da ses çalıyor. Gerçek kayıt yokken web'de ses yine canlı sentezleniyor; telefonda aynı sesin
+  kaydı (`apps/app/src/audio/stand-ins/`, `npm run audio:stand-ins --workspace @vagabonds/app`) çalıyor, ekranda
+  "canlandırılmış ses" notu var.
+- **Gerçek kayıtlar (H9):** `sounds/<ses anahtarı>.mp3` olarak medya bucket'ına yüklenince uygulama onları
+  kendiliğinden çalar (`https://media.allbytech.com/sounds/<anahtar>.mp3`). Anahtarlar `data/enums.json`'daki
+  `ambient_sound` değerleri (`darussifa`, `han`, `medrese`, `hamam`, …). Kapsül 24 sn; dosya 24–25 sn, mono, CC0.
+  Altyazılar şimdilik `apps/app/src/content/capsules.ts`'de; `sounds.json` gelince oradan okunacak.
+
+## 2026-10-24 · AR hedefleri veriden (sözleşme 0.3.1)
+
+Kimler: **herkes** (sözleşme değişti), **AR hedefi ekleyen veri ekibi**
+
+1. Paketleri güncelle (sözleşme paketi 0.3.1):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Kitabelerde yeni `arTarget: { mindUrl, mindarVersion } | null` alanı (Y13). Taşın Dili hedefi buradan alıyor; yoksa uygulamadaki test görsellerine dönüyor.
+- Bir kitabeye `ar_target_media_id` bağlayan, `media_pipeline.py`'den sonra `npm run data:ar-targets` çalıştırıp `data/build/ar-targets.json`'u commit eder; `.mind` dosyası fotoğraflarla aynı `rclone copy` komutuyla R2'ye gider ([`data/README.md`](../data/README.md) §8).
+- Derleme Chrome gerektiriyor (macOS dışında `CHROME_PATH`); MindAR uygulamaya gömülü kopyadan geliyor, jsDelivr gerekmiyor. `npm run ar:targets` (uygulamanın test hedefleri) de artık internetsiz çalışıyor.
+
+## 2026-10-23 · Görseller kendi alan adımızdan (`media.allbytech.com`)
+
+Kimler: **API'yi ya da demo sunucusunu çalıştıranlar**
+
+1. `apps/api/.env`'de (sunucuda `deploy/.env`) `MEDIA_BASE_URL` tanımlıysa yeni adrese çevir; tanımlı değilse bir şey yapma, varsayılan değer değişti:
+   ```bash
+   MEDIA_BASE_URL=https://media.allbytech.com
+   ```
+2. API'yi yeniden başlat.
+
+Değişenler:
+- `r2.dev` Türk operatörlerinde engelli olduğu için görseller artık `https://media.allbytech.com` adresinden geliyor (Y14). Bu adres, R2 bucket'ının önündeki küçük bir Worker (`deploy/media-worker/`, Yiğit'in Cloudflare hesabında). Görseller bucket'ta kalıyor; R2'ye yükleme düzeni değişmedi.
+- Uygulamanın örnek verisindeki (`EXPO_PUBLIC_DATA_SOURCE=mock`) görsel adresleri de yeni adrese çevrildi.
+- Kurulum ve sorun giderme: [`docs/deploy.md`](deploy.md#görsellerin-alan-adı).
+
+## 2026-10-23 · AR ve harita kütüphaneleri uygulamayla birlikte
+
+Kimler: **uygulamayı çalıştıranlar**
+
+1. Paketleri güncelle (`esbuild` geliştirme bağımlılığı olarak eklendi):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- MindAR ve MapLibre artık jsDelivr'den indirilmiyor, uygulamanın içinde geliyor (Y12). AR ve haritanın kütüphaneleri için internet gerekmiyor; harita karoları hâlâ OpenFreeMap'ten.
+- Sürüm değişince kütüphaneleri yeniden paketlemek için: `npm run vendor --workspace @vagabonds/app` (internet gerekir). Çıktı `apps/app/src/vendor/`'da; elle düzenlenmez.
+
+## 2026-10-22 · Harita prototipi
+
+Kimler: **uygulamayı çalıştıranlar**
+
+Kurulum adımı yok (harita, AR ile gelen `react-native-webview`'ı kullanıyor).
+
+Değişenler:
+- Geliştirme modunda `Kamera` sekmesinde **Harita prototipi** var: API'deki koordinatlarla MapLibre haritası (Y6, [ADR 0003](decisions/0003-map-approach.md)).
+- API'nin çalışıyor olması ve internet gerekir (MapLibre jsDelivr'den, harita karoları OpenFreeMap'ten gelir).
+## 2026-10-22 · Yeni eser türleri (E2)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- `data/enums.json` → `asset_types`: `makam`, `kilise`, `kutuphane`, `namazgah`, `kopru`, `degirmen`, `hoyuk`.
+- 18 kaydın türü değişti (çoğu `diger`'den). `/meta/enums` ve `/assets?type=` yeni kodları döndürüyor; sözleşme değişmedi.
+- Planner bu türler için de varsayılan ziyaret süresi ve iç/dış mekân tahmini kullanıyor.
+
+## 2026-10-22 · Sözleşme v0.3.0: eski `Monument` şeması kaldırıldı
+
+Kimler: **sözleşmeyi kullananlar** (kurulum adımı yok)
+
+Değişenler:
+- `packages/contracts`'tan `Monument`, `MonumentsPayloadSchema`, `MONUMENTS_CONTRACT_VERSION` ve `mock_monuments.json` kaldırıldı. Uygulama bunları #48'den beri kullanmıyordu.
+- `npm run contracts:validate` artık uygulamanın fixture'larını (`apps/app/src/data/fixtures`) doğruluyor. Sözleşme sürümü değişince fixture'ları API'den yeniden al:
+  ```bash
+  npm run fixtures --workspace @vagabonds/app   # API çalışırken
+  ```
+
+## 2026-10-22 · AR prototipi için WebView
+
+Kimler: **uygulamayı çalıştıranlar**
+
+1. Yeni paketleri kur (`react-native-webview`, `expo-camera`):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Geliştirme modunda `Kamera` sekmesinde **AR prototipi** var: MindAR ile gerçek kitabe takibi (Y5, [ADR 0002](decisions/0002-ar-approach.md)). Test görselleri `apps/app/src/ar/test-targets/` altında; birini bilgisayar ekranında açıp telefonla tara.
+- Prototip MindAR'ı jsDelivr'den indirir, bu yüzden internet gerekir.
+
+## 2026-10-22 · Bursa'da 238 kayda kitap fotoğrafları
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- Fotoğraflı Bursa kaydı 49'dan 287'ye çıktı (506 yeni fotoğraf, altyazı ve alt metinleriyle); sürümleri R2'de.
+
+## 2026-10-22 · Drive fotoğraflarından 87 koordinat daha
+
+Kimler: **API'yi yerelde çalıştıranlar**; veri araçlarını kullananlar için 2. adım
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+2. (Yalnızca `drive_photo_map.py` ya da `match_photos.py` çalıştıracaksan) yeni Python paketini kur:
+   ```bash
+   python3 -m pip install -r data/requirements.txt   # pymupdf eklendi
+   ```
+
+Değişenler:
+- Koordinatlı eser sayısı 216'dan 303'e çıktı (Bursa 272/356). Yeni noktalar Drive arşivindeki fotoğrafların EXIF GPS'inden; hepsi `verified: false`.
+
+## 2026-10-22 · Hayrat arayüzü, temalar ve yeni istemci paketleri
+
+Kimler: **istemci tarafında çalışan herkes** (Yiğit, Kübra)
+
+1. Yeni paketleri kur (`react-native-svg`, `expo-speech`; `@vagabonds/ui` için `@types/react`):
+   ```bash
+   npm install
+   ```
+
+Değişenler:
+- Sekmeler Hayrat tasarımına geçti: Harita (`/`), Rotalar (`/route`), Kamera (`/camera`), Kapsül (`/capsule`),
+  Profil (`/settings`). Eser listesi `/monuments` adresinde kaldı; haritadaki "Tüm eserler" ve "Eser kartı" ile açılıyor.
+- Renkler artık `useColors()` ile temadan geliyor (`apps/app/src/theme/colors.ts` silindi). Ekranlarda
+  `@vagabonds/ui`'nin `Text`, `Button`, `Card` bileşenlerini kullan.
+- Harita, rota, lezzet, ses kapsülü ve kamera ekranlarındaki içerik `apps/app/src/content/` altında
+  **tasarım örnek içeriği**; gerçek veri geldikçe oradaki dosyalar değiştirilir.
+
+---
+
+## 2026-10-21 · Uygulama `/assets` API'sinden okuyor
+
+Kimler: **uygulamayı çalıştıranlar** (Yiğit, Kübra) ve **demo sunucusunu kuranlar** (Ahmet)
+
+1. Paketleri güncelle (`tsx` uygulamaya eklendi):
+   ```bash
+   npm install
+   ```
+2. Uygulama artık veri için API'ye ihtiyaç duyuyor. Ya API'yi aç (`npm run dev --workspace @vagabonds/api`),
+   ya da API olmadan çalışmak için örnek veriyi seç:
+   ```bash
+   EXPO_PUBLIC_DATA_SOURCE=mock npm run app
+   ```
+3. Telefonda (Expo Go) API adresi otomatik bulunur: Expo sunucusunun çalıştığı bilgisayarın `:3000` portu.
+   Telefon ile bilgisayar aynı ağda olmalı. Başka bir API için `EXPO_PUBLIC_API_URL` ver.
+
+Değişenler:
+- Eser detay adresi `/monuments/<eser id>` oldu (ör. `/monuments/bursa-osmangazi-ulucami`).
+- `deploy/Caddyfile`: her `/monuments/<id>` adresi web çıktısındaki `monuments/[id].html` kabuğuna yönleniyor.
+  Demo sunucusunda web imajını yeniden derle (`docs/deploy.md`).
+- Uygulama `Monument` sözleşmesini ve `mock_monuments.json`'u artık kullanmıyor.
+
+---
+
+## 2026-10-21 · Eser koordinatları
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- 472 eserin 216'sında artık koordinat var (Bursa 185, Hatay 31); harita ve `/assets/:id/nearby` dolu dönüyor.
+- Yeni noktaların hepsi `verified: false`. Kaynakları: fotoğraf EXIF'i, OpenStreetMap ya da bağlı olunan yapı (`data/tools/geocode.py`).
+- OSM'den gelen noktalar ODbL lisanslı: uygulamada "© OpenStreetMap katkıcıları" atfı gösterilmeli (Kübra).
+
+## 2026-10-21 · Hatay kayıtları yayında
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veritabanını güncelle:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- 116 Hatay kaydı `published` oldu; API artık 472 eser döndürüyor (`/assets?city=hatay`).
+- Hatay kayıtlarının 109'unda kitaptan fotoğraf var (348 fotoğraf, sürümleri R2'de).
+- Koordinat henüz yok; Hatay eserleri haritada ve yakındaki eserlerde görünmez.
+
+## 2026-10-21 · Fotoğraflar R2'de
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Yeni manifesti veritabanına al:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- Kayıtlara bağlı 174 fotoğrafın sürümleri R2'de; API'nin döndürdüğü görsel adresleri artık açılıyor.
+- Orijinaller R2'ye yüklenmiyor, kaynağında kalıyor (Drive / kitap PDF'i). Ayrıntı: `data/README.md` §8.
+
+---
+
+## 2026-10-20 · Ziyaretçi Nabzı: anonim oturum, katkılar, moderasyon (sözleşme v0.2.2)
+
+Kimler: **herkes** (migration ve sözleşme paketi)
+
+1. Paketleri güncelle ve yeni migration'ı uygula (`app_user` tablosu):
+   ```bash
+   npm install
+   npm run db:deploy --workspace @vagabonds/api
+   ```
+2. Moderasyonu denemek istersen bir moderatör oluştur; token bir kez yazdırılır:
+   ```bash
+   npm run moderator:create --workspace @vagabonds/api -- "Adın"
+   ```
+
+Değişenler:
+- Yeni uçlar: `POST /auth/anonymous`, `GET /me`, `GET /me/contributions`, `POST /assets/:id/contributions`,
+  `GET /assets/:id/pulse` ve `/admin/...` moderasyon uçları. Ayrıntılar [`packages/contracts/README.md`](../packages/contracts/README.md)'de.
+- **Veri ekibi:** `import_to_db.py --verify` artık `contribution` satırlarını karşılaştırmıyor; bu satırları API yazıyor.
+  `app_user` tablosu içe aktarılmıyor (`data/README.md` §5'teki DDL'e eklendi).
+
+---
+
+## 2026-10-20 · API güvenliği: hız sınırı ve güvenlik başlıkları
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Yeni paketleri kur (`@fastify/rate-limit`, `@fastify/helmet`):
+   ```bash
+   npm install
+   ```
+2. İsteğe bağlı yeni ortam değişkenleri (`apps/api/.env`); varsayılanlar yeterli:
+   - `RATE_LIMIT_MAX`: IP başına dakikadaki istek sınırı (varsayılan 120, `0` kapatır).
+   - `TRUST_PROXY`: API bir proxy arkasındaysa proxy'nin adresleri ya da `uniquelocal`. Yerelde gerekmez.
+
+Değişenler:
+- Sınır aşılınca API `429` ve `{ error: { code: "RATE_LIMITED" } }` döner; `Retry-After` başlığı kaç saniye bekleneceğini söyler. İstemci bu hatayı ayrı gösterebilir.
+- İstek gövdesi 16 KB ile sınırlı.
+
+---
+
+## 2026-10-16 · `/assets` API'si ve sözleşme v0.2.0
+
+Kimler: **herkes** (sözleşme paketi güncellendi)
+
+1. Paketleri güncelle (`@vagabonds/contracts` 0.2.0):
+   ```bash
+   npm install
+   ```
+2. İsteğe bağlı yeni ortam değişkenleri (`apps/api/.env`); varsayılanlar yeterli:
+   - `MEDIA_BASE_URL`: görsellerin genel adresi (varsayılan: R2 bucket'ı).
+   - `ASSET_VISIBILITY=published|preview`: `preview`, `in_review` kayıtları da gösterir; taslaklar hiçbir zaman dönmez.
+
+Değişenler:
+- Yeni uçlar: `GET /assets` ve `GET /assets/:id`; belge `http://localhost:3000/docs`.
+- `Monument` sözleşmesi ve mock kullanımdan kalkacak; uygulama `/assets`'e geçince (Y8) silinecek.
+  Eski `CONTRACT_VERSION` adı yeni sözleşmenin sürümü oldu; eski sürüm `MONUMENTS_CONTRACT_VERSION`.
+
+---
+
+## 2026-10-16 · Tüm eserler yayında, koordinat isteğe bağlı
+
+Kimler: **backend ve veri** (Ahmet, Hüseyin); yerelde veritabanı çalıştıran herkes
+
+1. Yeni migration (`asset.lat` / `lng` artık boş olabilir):
+   ```bash
+   npm run db:deploy --workspace @vagabonds/api
+   ```
+2. Veriyi yeniden içe aktar; 356 eserin hepsi `published` olarak girer:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- Kayıtlar kaynakla teyit edildiği için hepsi `published`, `meta.reviewed_by` dolu.
+- Koordinat ve fotoğraf hiçbir durumda zorunlu değil. Koordinatı olmayan eser haritada ve yakındaki
+  eserlerde görünmez; `validate.py` eksikleri uyarı olarak listeler.
+- `media_pipeline.py`'den henüz geçmemiş görseller (manifestte olmayanlar) içe aktarmada atlanır ve
+  sayısı yazdırılır. Görseller işlenip yeniden içe aktarılınca kendiliğinden eklenir.
+
+---
+
+## 2026-10-15 · Expo uygulaması (`@vagabonds/app`)
+
+Kimler: **herkes** (paketler kökten kurulduğu için)
+
+1. Expo SDK 57 ve bağımlılıkları eklendi; kurmak için:
+   ```bash
+   npm install
+   ```
+2. Uygulamayı açmak için `npm run app`. Telefonda **Expo Go**'nun güncel sürümü gerekir (SDK 57).
+
+Değişenler:
+- Kök `package.json`'a `overrides` ile `react` / `react-dom` **19.2.3**'e sabitlendi. React Native
+  bu sürümü birebir istiyor; Prisma Studio'nun çektiği 19.3.0 ikinci bir React kopyası oluşturup
+  uygulamayı çalışma anında bozuyordu. Bu satırları kaldırma.
+
+---
+
+## 2026-10-15 · Tasarım token'ları (`@vagabonds/ui`)
+
+Kimler: **istemci tarafı** (Yiğit, Kübra)
+
+1. Yeni workspace paketi eklendi; bağlamak için:
+   ```bash
+   npm install
+   ```
+2. Token'lar ve kontrast tablosu: [`packages/ui/README.md`](../packages/ui/README.md)
+
+---
+
+## 2026-10-14 · Bölüklerden yapay zekâ destekli taslak üretimi
+
+Kimler: **veri girişi yapanlar** (Ahmet, Hüseyin)
+
+1. Veri araçlarının bağımlılıklarını güncelle (`pypdf` eklendi):
+   ```bash
+   python3 -m pip install -r data/requirements.txt
+   ```
+2. Süreç: [`data/tools/extract/README.md`](../data/tools/extract/README.md) · kim hangi bölükte: [`data/kapsam.md`](../data/kapsam.md)
+
+Değişenler:
+- `data/eserler/` artık `draft` kayıtları da içerebilir: koordinat ve fotoğraf taslaklarda zorunlu değil, `in_review` öncesi eklenir. `npm run db:import` taslakları atlar.
+
+---
+
+## 2026-10-14 · Veri ekibinin modeline geçiş ([PR #9](https://github.com/Myxoceph/RootNCode-Hackathon/pull/9))
+
+Kimler: **herkes**
+
+1. **Python veri araçlarını kur** (doğrulama, içe aktarma, görsel hattı):
+   ```bash
+   python3 -m pip install -r data/requirements.txt
+   ```
+2. **`apps/api/.env` içindeki `DATABASE_URL`'den `?schema=public` kısmını sil.** Python sürücüsü bu parametreyi kabul etmiyor.
+   ```diff
+   - DATABASE_URL="postgresql://vagabonds:vagabonds@localhost:5432/vagabonds?schema=public"
+   + DATABASE_URL="postgresql://vagabonds:vagabonds@localhost:5432/vagabonds"
+   ```
+3. **Veritabanını yeni şemaya taşı ve veriyi yükle:**
+   ```bash
+   npm install                                   # Prisma client yeni şemayla yeniden üretilir
+   npm run db:up
+   npm run db:deploy --workspace @vagabonds/api  # eski monuments tabloları kalkar, yeni tablolar kurulur
+   npm run db:import                             # data/ veri setini içe aktarır ve şemayla uyumunu doğrular
+   ```
+   `db:import` sonunda `✓ DB = görüntüleyici: tüm tablolar ve satırlar birebir aynı` görmelisin.
+
+Değişenler:
+- `npm run db:seed` kaldırıldı; yerine `npm run db:import` (gerçek veri seti).
+- `/monuments` uçları kaldırıldı; yerine `/assets` uçları geliyor.
+- Veri araçlarını çalıştırırken `--create-schema` kullanma; şema Prisma migration'larıyla kuruluyor.

@@ -1,0 +1,603 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-kozahan-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Mescidin kendi yapım tarihi ve banisi kitapta verilmiyor; dating ve founder boş. Yalnızca Koza Hanı'nın Ekim 1491 tarihi var.",
+      "Mescit-han ilişkisi (same_complex) 'probable' olarak girildi; kitap mescidi han avlusunda anar ama aynı anda yapıldığını açıkça söylemez.",
+      "Fidan Hanı hedefi: kitap 'Fidan Hanı Köşk Mescidi'nden söz eder; hedef id han kaydıdır.",
+      "Era 'erken-osmanli': han tarihi 1491'e dayanılarak girildi, gözden geçirilmeli.",
+      "Adres numarası (No. 59) Koza Hanı'nın adresi olabilir; saha doğrulaması gerekli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap yalnızca Koza Hanı'nın Ekim 1491'de inşa edildiğini bildirir; mescidin han ile aynı tarihli olup olmadığı belirtilmez."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kozahan Mescidi",
+    "en": "Kozahan Masjid"
+  },
+  "subtitle": {
+    "tr": "Koza Hanı avlusunun ortasındaki sekizgen köşk mescit",
+    "en": "Octagonal pavilion masjid in the middle of the Koza Han courtyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Koza Han Köşk Mescidi",
+      "en": "Kozahan Pavilion Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "köşk mescit",
+    "sekizgen plan",
+    "şadırvan",
+    "Koza Hanı",
+    "UNESCO",
+    "Uzunçarşı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Şehreküstü",
+    "address": "Uzunçarşı Caddesi, No. 59",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "385"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.184361,
+      "lng": 29.063522,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1271698329 ('Koza Han Mescidi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Kitaba göre Koza Hanı, II. Bayezid'in İstanbul'da yaptırdığı eserlere vakıf olarak Ekim 1491'de inşa edilmiştir.",
+      "en": "According to the book, Koza Han was built in October 1491 by Bayezid II as a foundation for his works in Istanbul."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "385"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Koza Hanı avlusunun ortasında yer alan, Bursa'da han avlusu köşk mescitlerinin özgün olarak günümüze ulaşan nadir örneklerinden biri. Sekizgen planlı, sekiz altıgen ayaklı, kurşun kubbeli mescidin altında on altıgen şekilli bir şadırvan bulunur. 1948'de kubbeli hâline restore edilmiş, 2008'de özel bir kuruluşça yeniden restore edilmiştir; Bursa'nın Tarihi Çarşı ve Hanlar Bölgesi'nin parçası olarak 2014'te UNESCO Dünya Mirası Listesi'ne girmiştir.",
+    "en": "A pavilion masjid in the middle of the Koza Han courtyard, one of the rare han-courtyard pavilion masjids in Bursa to survive in original form. The octagonal, lead-domed masjid stands on eight hexagonal piers over a sixteen-sided shadirvan. It was restored to its domed form in 1948 and again by a private organization in 2008, and is part of Bursa's Historical Bazaar and Hans District, inscribed on the UNESCO World Heritage List in 2014."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Han",
+        "en": "Location and Han"
+      },
+      "body": {
+        "tr": "Mescit, Osmangazi ilçesi, Şehreküstü Mahallesi, Uzunçarşı Caddesi, No. 59'da yer alır. Koza Hanı, 1491 yılı Ekim ayında Sultan II. Bayezid tarafından İstanbul'da yaptırdığı eserlerine vakıf olarak inşa edilmiştir. Yapı günümüze kadar önemini kaybetmemiş, işlek bir ticaret merkezi olarak kalmıştır. Koza Han Köşk Mescidi, Bursa'da han avlularının ortasında inşa edilen köşk mescitler arasında günümüze özgün ulaşan nadir yapılardan biridir; bir diğeri Fidan Hanı Köşk Mescidi'dir. Pirinç Hanı ve Balibey Hanı'nın mescitleri günümüzde mevcut değildir.",
+        "en": "The masjid is in Osmangazi District, Şehreküstü Neighborhood, Uzunçarşı Street, No. 59. Koza Han was built in October 1491 by Sultan Bayezid II as a foundation for his works in Istanbul. The building has not lost its importance and remains a busy trade centre. The Kozahan Pavilion Masjid is one of the rare pavilion masjids built in the middle of Bursa's han courtyards that survive in original form; another is the Fidan Han Pavilion Masjid. The masjids of Pirinç Han and Balibey Han no longer exist."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "385-386"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Sekizgen planlı yapının bir yüzünde kapı, diğer yüzünde mukarnas kavsaralı alçı mihrap bulunur. Mescit kesme taşla inşa edilmiş ve sekiz altıgen ayak üzerinde yükselen yuvarlak kemerlere oturur. Her yüzünde bir alt pencere vardır; kemer aynaları şebekelidir. Kubbe kurşunla örtülüdür. Diğer altı köşede alçı pencereler bulunur; dıştan demir parmaklıkla kapalı pencerelerin üzerinde, beşgenlerden oluşan petekle bezeli sivri kemerli bir alınlık vardır. On dört basamaklı mermer merdivenle çıkılır; merdiven korkulukları mermerdir ve geometrik şebekelidir. Ahşap kapılı mescidin zemini ahşap kaplıdır.",
+        "en": "The octagonal building has a door on one side and a plaster mihrab with muqarnas hood on another. It is built of cut stone and sits on round arches rising from eight hexagonal piers. There is a lower window on each side and the arch panels are latticed. The dome is covered with lead. On the other six corners are plaster windows, closed outside with iron grilles, each topped by a pointed-arch pediment decorated with a honeycomb of pentagons. It is reached by a fourteen-step marble staircase with marble geometric-lattice railings. The door is wooden and the floor wood-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan",
+      "order": 3,
+      "title": {
+        "tr": "Şadırvan",
+        "en": "Shadirvan"
+      },
+      "body": {
+        "tr": "Yapının altındaki havuz on altıgen şekilli bir şadırvandır; alt kenarlarında musluklar vardır. Havuzun ortasında sekiz kenarlı, stalaktik başlıklı bir ayak yer alır ve her yüzeyinde bir boru bulunur; su bu borulardan havuza dökülür. Şadırvanın merdiven boşluğunun olduğu, mihrabın altına denk gelen kısmında abdest muslukları vardır.",
+        "en": "The pool below the building is a sixteen-sided shadirvan with taps on its lower edges. In the middle of the pool stands an eight-sided pier with a stalactite capital, with a pipe on each face pouring water into the pool. Ablution taps are located in the part of the shadirvan at the stairwell, beneath the mihrab."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs and Restorations"
+      },
+      "body": {
+        "tr": "Bir dönem cemaatin artması nedeniyle Hoca Mir tarafından mescidin yanına ilave bir ahşap mescit yapılmış, ancak bu yapı günümüze ulaşmamıştır. Mescit 1584, 1627, 1643, 1671 ve 1778'de tamir görmüştür. En kapsamlı onarım 1948'de tüccarların yardımıyla Bursa Eski Eserleri Sevenler Kurumu tarafından yapılmıştır; şeriyye sicillerine göre o dönemde ahşap çatılı olan mescit aslında kubbeli olduğundan, Tahtakale (Bayezid Paşa) Hanı enkazından alınan tuğlalarla kubbeli hâline restore edilmiştir. Bu çalışma kurumun ilk ciddi çalışmasıdır. Dış pencerelerden yalnızca ikisi özgün kalabildiği için diğerleri bunlar örnek alınarak yapılmış, pencere çerçeveleri ceviz ağacından yapılmıştır. İçerideki vitraylı pencerelerin ustası İsmail Sönmez'dir. Mescit 2008'de özel bir kuruluş tarafından restore edilmiştir.",
+        "en": "At one time, because the congregation grew, Hoca Mir built an additional wooden masjid next to it, which has not survived. The masjid was repaired in 1584, 1627, 1643, 1671 and 1778. The most comprehensive restoration was carried out in 1948 by the Bursa Association for the Appreciation of Antiquities with merchants' help; since the sharia records showed that the masjid, then under a wooden roof, was originally domed, it was restored to its domed form using bricks from the ruins of Tahtakale (Bayezid Paşa) Han. This was the association's first serious work. Only two of the outer windows were original, so the others were made after them, with walnut frames. The master of the stained-glass windows inside is İsmail Sönmez. The masjid was restored by a private organization in 2008."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386-387"
+        }
+      ]
+    },
+    {
+      "id": "miras",
+      "order": 5,
+      "title": {
+        "tr": "Dünya Mirası ve Mimari Değer",
+        "en": "World Heritage and Architectural Value"
+      },
+      "body": {
+        "tr": "2014'te UNESCO Dünya Mirası Listesi'ne dâhil edilen bu zarif yapı, Bursa'nın Tarihi Çarşı ve Hanlar Bölgesi'nin önemli bir parçasıdır. Kitaba göre eser, Anadolu Selçuklu mimarisinin zarif izlerini taşırken erken Osmanlı döneminin en güzel örneklerinden biridir.",
+        "en": "Included in the UNESCO World Heritage List in 2014, this elegant building is an important part of Bursa's Historical Bazaar and Hans District. The book says the work bears elegant traces of Anatolian Seljuk architecture while being one of the most beautiful examples of the early Ottoman period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "387"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "merdiven_basamak",
+      "label": {
+        "tr": "Merdiven basamak sayısı",
+        "en": "Number of steps"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Altıgen ayak sayısı",
+        "en": "Hexagonal piers"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "key": "sadirvan_kenar",
+      "label": {
+        "tr": "Şadırvan kenar sayısı",
+        "en": "Sides of the shadirvan"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "key": "alcipencere_sayisi",
+      "label": {
+        "tr": "Diğer köşelerdeki alçı pencere sayısı",
+        "en": "Plaster windows on the other corners"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "II. Bayezid",
+      "role": {
+        "tr": "Koza Hanı'nı İstanbul eserlerine vakıf olarak yaptıran sultan",
+        "en": "Sultan who had Koza Han built as a foundation for his Istanbul works"
+      }
+    },
+    {
+      "name": "Hoca Mir",
+      "role": {
+        "tr": "Yanına ilave ahşap mescidi yaptıran kişi (günümüze ulaşmamış)",
+        "en": "Person who built the additional wooden masjid (not surviving)"
+      }
+    },
+    {
+      "name": "İsmail Sönmez",
+      "role": {
+        "tr": "Vitraylı pencerelerin ustası",
+        "en": "Master of the stained-glass windows"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "han-insa-1491",
+      "year": 1491,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Koza Hanı Ekim ayında II. Bayezid tarafından vakıf olarak inşa edildi (mescidin kendi tarihi verilmiyor)",
+        "en": "Koza Han built in October by Bayezid II as a foundation (the masjid's own date is not given)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "385"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1584",
+      "year": 1584,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1627",
+      "year": 1627,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1643",
+      "year": 1643,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1671",
+      "year": 1671,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1778",
+      "year": 1778,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1948",
+      "year": 1948,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu en kapsamlı onarımı yaptı; kubbeli hâline restore edildi",
+        "en": "Most comprehensive restoration by the Bursa Association for the Appreciation of Antiquities; restored to its domed form"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386-387"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Özel bir kuruluş tarafından restore edildi",
+        "en": "Restored by a private organization"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "387"
+        }
+      ]
+    },
+    {
+      "id": "unesco-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "UNESCO Dünya Mirası Listesi'ne dâhil edildi",
+        "en": "Included in the UNESCO World Heritage List"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "387"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-koza-hani",
+      "type": "same_complex",
+      "description": {
+        "tr": "Köşk mescit Koza Hanı'nın avlusunun ortasında yer alır.",
+        "en": "The pavilion masjid stands in the courtyard of Koza Han."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "385-387"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-tahtakale-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "1948 restorasyonunda Tahtakale (Bayezid Paşa) Hanı enkazından alınan tuğlalar kullanılmıştır.",
+        "en": "Bricks from the ruins of Tahtakale (Bayezid Paşa) Han were used in the 1948 restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-fidan-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Fidan Hanı Köşk Mescidi, han avlusu köşk mescitlerinin günümüze ulaşan diğer özgün örneğidir.",
+        "en": "The Fidan Han Pavilion Masjid is the other surviving original example of a han-courtyard pavilion masjid."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "386"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kozahan Mescidi, han avlusunun ortasında yükselen sekizgen planlı bir köşk mescittir. Kesme taştan yapılmış, sekiz altıgen ayak üzerindeki yuvarlak kemerlere oturur ve üstü kurşun kaplı bir kubbeyle örtülüdür. Altındaki on altıgen şadırvandan ortadaki sekiz kenarlı bir ayaktaki borularla havuza su akar. Mescide on dört basamaklı, geometrik şebekeli mermer korkuluklu bir merdivenle çıkılır. Bir yüzünde ahşap kapı, karşısında mukarnas kavsaralı alçı mihrap vardır.",
+      "en": "Kozahan Masjid is an octagonal pavilion masjid rising in the middle of a han courtyard. Built of cut stone, it rests on round arches over eight hexagonal piers and is covered by a lead-covered dome. Below it is a sixteen-sided shadirvan with water running into the pool from pipes on an eight-sided central pier. The masjid is reached by a fourteen-step marble staircase with geometric-lattice marble railings. It has a wooden door on one side and, opposite, a plaster mihrab with a muqarnas hood."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kozahan-mescidi/p116-1.jpg",
+        "original_name": "DJI_20241023131734_0288_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "385"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Han avlusundaki mescit ve şadırvan",
+        "en": "The mescit and fountain in the han courtyard"
+      },
+      "alt": {
+        "tr": "Han avlusunun ortasında sekizgen, kurşun kubbeli mescit; altında şadırvan, yanında taş merdiven var. Çevrede kemerli han galerileri ve açık hava masaları görünüyor.",
+        "en": "An octagonal lead-domed mescit in the middle of a han courtyard, with a fountain beneath and a stone staircase beside it. Arched han galleries and outdoor tables are around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kozahan-mescidi/p117-1.jpg",
+        "original_name": "ERD04309 kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "386"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescidin içi ve mihrap",
+        "en": "Interior and mihrab"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı sekizgen mekânda sade bir mukarnaslı mihrap var. İki yanda vitraylı pencereler, tablolar ve kırmızı seccadeli halı görünüyor.",
+        "en": "A white-walled octagonal room with a plain muqarnas mihrab. Stained-glass windows, framed pictures and a red prayer-rug carpet are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kozahan-mescidi/p118-1.jpg",
+        "original_name": "DJI_20241023134840_0356_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "387"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Mescidin kuşbakışı kubbesi ve avlu",
+        "en": "Aerial view of the mescit dome and courtyard"
+      },
+      "alt": {
+        "tr": "Sekizgen kubbe yukarıdan görünüyor; çevresinde taş döşeli avluda masalar ve sandalyeler ile ağaçlar var.",
+        "en": "The octagonal dome seen from above, with tables and chairs on the stone courtyard and trees around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    }
+  ],
+  "archive_media": []
+}

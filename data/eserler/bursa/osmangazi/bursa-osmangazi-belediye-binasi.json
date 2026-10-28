@@ -1,0 +1,586 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-belediye-binasi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Sivil Mimari",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Sivil Mimari (Osmangazi) bölümünden (s. 723-743) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir. İngilizce alanlar kitabın İngilizce çevirisinden kısaltılmıştır.",
+    "todos": [
+      "Harîr Dâru't-ta'lîmi (İpekçilik Mektebi) ilişki hedefinin ilçesi metinde yok; id 'osmangazi' varsayımıyla yazıldı, doğrulanmalı.",
+      "Mimar bilgisi kaynaklarda kesin değil (Şehbender yalnızca 'mimar kalfası'); Hüseyin Hüsnü Efendi ve inşayı yaptıran kurum için ek kaynak aranmalı.",
+      "Dönem (era) ve 'yaptıran' alanları kitaba göre dolduruldu; yaptıran kişi/kurum kitapta açıkça belirtilmiyor.",
+      "Koordinat kitapta yok; sahadan veya haritadan doğrulanmış koordinat eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kepecioğlu 'yarısından fazlası tevsi edildi' der; kitabın diğer bölümü ve bazı kaynaklar 'yarısı genişletildi' der. Kaynağa sadık kalındı. H. 1297 = M. 1879-1880 ve H. 1320 = M. 1902-1903 tutarlıdır."
+      },
+      {
+        "field": "architect",
+        "note": "Kepecioğlu mimar veya inşa süreci hakkında bilgi vermez; Kazım Baykal 'mimar kalfası Kütahyalı Şehbender' der. Mimar adı kesinleşmediği için 'disputed' ve name=null."
+      },
+      {
+        "field": "sections[kaynaklar-ve-tarih]",
+        "note": "Giriş bölümü 'sınırlı bilgi bulunduğunu' belirtirken sonraki sayfalarda ayrıntılı tarih, mimar kalfası ve başkan adı verilir; bu kaynak-içi gerilim işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Belediye Binası",
+    "en": "Town Hall"
+  },
+  "subtitle": {
+    "tr": "Bursa Büyükşehir Belediyesi Başkanlık makamı",
+    "en": "Bursa Metropolitan Municipality Mayor's office"
+  },
+  "alternate_names": [
+    {
+      "tr": "Bursa Belediye Binası",
+      "en": "Bursa Town Hall"
+    }
+  ],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "belediye",
+    "cihannüma",
+    "Neo-Osmanlı",
+    "kırmızı ateş tuğlası",
+    "II. Abdülhamid",
+    "Ahmet Vefik Paşa"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Orhanbey",
+    "address": "6. Uçak Sokak No: 3",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "727"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1297 / M. 1879-1880 (inşa); H. 1320 / M. 1902-1903 (yarısı genişletme)",
+      "en": "AH 1297 / AD 1879-1880 (built); AH 1320 / AD 1902-1903 (half expanded)"
+    },
+    "start_year": 1879,
+    "end_year": 1903,
+    "hijri_year": 1297,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap, bazı kaynaklara göre H. 1297 / M. 1879-1880'de inşa edildiğini ve H. 1320 / M. 1902-1903'te yarısının genişletildiğini; Kepecioğlu ve Kazım Baykal'ın da 1879 ve 1902 tarihlerini verdiğini belirtir. Osmanlı arşivlerinde inşa/onarım belgesi bulunamamıştır.",
+      "en": "The book states that according to some sources it was built in AH 1297 / AD 1879-1880 and half of it was expanded in AH 1320 / AD 1902-1903; Kepecioğlu and Kazım Baykal give 1879 and 1902. No archive document on construction or repair was found."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "727-729"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Bilinmiyor (inşa Hudâvendigâr Valisi Ahmet Vefik Paşa döneminde, belediye başkanı Hüseyin Hüsnü Efendi iken gerçekleştirildi)",
+    "role": "yaptıran kesin belirtilmemiş",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "730"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [
+      {
+        "name": "Kütahyalı Şehbender",
+        "note": "Kazım Baykal'a göre 'mimar kalfası'; Kepecioğlu mimarı vermez"
+      }
+    ],
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "728"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "19. yüzyılda Ahmet Vefik Paşa'nın valiliği sırasında inşa edilen, 1902'de büyük ve süslü salonla genişletilen tarihî belediye binası; ahşap karkas arası kırmızı ateş tuğlası dolgusu, geniş saçakları ve sekizgen cihannümasıyla dikkat çeker. Bugün Bursa Büyükşehir Belediyesi Başkanlık makamı olarak kullanılmaktadır.",
+    "en": "The historical town hall, built in the 19th century during Governor Ahmet Vefik Paşa's term and enlarged in 1902 with a large ornate hall, stands out for its red fire-brick infill between a timber frame, wide eaves and octagonal cihannüma. Today it serves as the Bursa Metropolitan Municipality Mayor's office."
+  },
+  "sections": [
+    {
+      "id": "belediye-teskilati",
+      "order": 1,
+      "title": {
+        "tr": "Bursa'da belediye teşkilatı",
+        "en": "Municipal organization in Bursa"
+      },
+      "body": {
+        "tr": "Tanzimat öncesinde belediye hizmetlerini kadılar ve muhtesipler yürütmüş, 1854'te Şehremaneti'nin kurulmasıyla yerel yönetimlerin kurumsallaşması hız kazanmıştır. Bursa'da belediye teşkilatı H. 1284 / M. 1867'de kurulmuş, ancak o tarihte idari bir binası bulunmamıştır.",
+        "en": "Before the Tanzimat, municipal services were carried out by qadis and muhtasibs; the establishment of the Şehremaneti in 1854 accelerated the institutionalization of local government. The municipal organization in Bursa was set up in AH 1284 / AD 1867 but had no administrative building at that date."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "727"
+        }
+      ]
+    },
+    {
+      "id": "kaynaklar-ve-tarih",
+      "order": 2,
+      "title": {
+        "tr": "Yapının tarihi ve kaynaklar",
+        "en": "Dating and sources"
+      },
+      "body": {
+        "tr": "Yapı hakkında sınırlı bilgi vardır; Osmanlı arşivlerinde inşa ya da onarımıyla ilgili belge bulunamamıştır. Kepecioğlu 'Bursa Belediye binası 1879 yılında inşa edilmiş, 1902'de yarısından fazlası tevsi edilmiştir' der; Kazım Baykal 'mimar kalfası Kütahyalı Şehbender'dir, büyük salonu 1902'de yapılmıştır' notunu düşer. Bazı kaynaklara göre H. 1297 / M. 1879-1880'de inşa edilmiş, H. 1320 / M. 1902-1903'te yarısı genişletilmiştir.",
+        "en": "Little information exists; no document about its construction or repair was found in Ottoman archives. Kepecioğlu says it was built in 1879 and more than half was expanded in 1902; Kazım Baykal says the architect's apprentice was Şehbender from Kütahya and the great hall was built in 1902. According to some sources it was built AH 1297 / AD 1879-1880 and half expanded in AH 1320 / AD 1902-1903."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "727-728"
+        }
+      ]
+    },
+    {
+      "id": "uslup",
+      "order": 3,
+      "title": {
+        "tr": "Üslup",
+        "en": "Style"
+      },
+      "body": {
+        "tr": "Dönemin Türk mimari anlayışını yansıtan yapı geleneksel işçilikle, geniş saçaklı, ahşap çatkılı ve kırmızı tuğla duvarlı inşa edilmiştir; aynı dönemdeki 'Harîr Dâru't-ta'lîmi' (İpekçilik Mektebi) ile benzer üslup taşır. Nafia Nazırı İbrahim Ethem Paşa'nın 1873 Viyana Uluslararası Sergisi için hazırlattığı 'Usûl-i Mimâri-i Osmâni'de savunulan 'Neo-Osmanlı' görüşünü ve geleneksel Osmanlı konak planlarını yansıtan bir örnek olarak tanımlanmıştır.",
+        "en": "Reflecting the Turkish architectural style of the period, it was built with traditional workmanship, wide eaves, wooden frames and red brick walls, in a style similar to the contemporary 'Harîr Dâru't-ta'lîmi' (Silk School). It has been described as an example of the 'Neo-Ottoman' approach advocated in İbrahim Ethem Paşa's 'Usûl-i Mimâri-i Osmâni' prepared for the 1873 Vienna International Exhibition, as well as of traditional Ottoman mansion plans."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "728"
+        }
+      ]
+    },
+    {
+      "id": "insa-ve-1902-salonu",
+      "order": 4,
+      "title": {
+        "tr": "İnşa dönemi ve 1902 salonu",
+        "en": "Construction period and the 1902 hall"
+      },
+      "body": {
+        "tr": "Yapı, Hudâvendigâr Valisi Ahmet Vefik Paşa döneminde, belediye başkanlığını Hüseyin Hüsnü Efendi'nin yürüttüğü süreçte inşa edilmiştir. Zamanla Bursa'nın başlıca kamusal yapılarından biri olmuş; özellikle resmî günlerdeki törenler, 1902'de eklenen ve II. Abdülhamid'in doğum günü vesilesiyle açılan büyük ve süslü salonda yapılmıştır.",
+        "en": "It was built in the period of Hudâvendigâr Governor Ahmet Vefik Paşa when Hüseyin Hüsnü Efendi was mayor. It became one of Bursa's main public buildings; ceremonies on official days were held in the large ornate hall added in 1902 and opened on the occasion of Abdulhamid II's birthday."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "729"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mekan",
+      "order": 5,
+      "title": {
+        "tr": "Plan ve mekân düzeni",
+        "en": "Plan and layout"
+      },
+      "body": {
+        "tr": "Doğu-batı ekseninde iki girişi olan yapı 28 x 22 m ölçülerindedir ve yüksek bodrum üzerine iki kattır; geniş saçaklı, kiremit kaplı çatısı vardır. Doğu cephesindeki ana giriş sekiz sütunun taşıdığı çıkmalı salonun altındadır ve birkaç basamakla çıkılır; batı girişi dört sütunun taşıdığı çıkmanın altındadır ve iki kollu yüksek bir merdivenle ulaşılır. Kesme taş bodrumda farklı boyutlarda odalar, tuvaletler ve doğal aydınlatma pencereleri vardır. Zemin kat planı merkezdeki geniş bir holün çevresinde odalardan oluşur; üst kata holün kuzey ve güney aksındaki simetrik merdivenlerle çıkılır. 1902 düzenlemeleriyle birinci kat yeni işlevine göre yeniden düzenlenmiştir; planı zemin katla benzerdir, alt ve üst kat pencereleri basık kemerlidir.",
+        "en": "The building, 28 x 22 m with two entrances on the east-west axis, has two floors on a high basement and a wide-eaved tiled roof. The main east entrance is under a projecting hall supported by eight columns, reached by a few steps; the west entrance is under a projection carried by four columns, reached by a grand double-flight staircase. The cut-stone basement has rooms, toilets and windows; the ground floor rooms are arranged around a central hall, with symmetrical stairs on the north and south axes leading up. In 1902 the first floor was reorganized for its new function; its plan resembles the ground floor and its windows are depressed-arched."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "729-730"
+        }
+      ]
+    },
+    {
+      "id": "cephe-ve-cihannuma",
+      "order": 6,
+      "title": {
+        "tr": "Cepheler, tuğla motifler ve cihannüma",
+        "en": "Façades, brick motifs and the cihannüma"
+      },
+      "body": {
+        "tr": "Kuzey cephede bazı pencere üstlerinde, batı cephede pencere aralıklarında ve üst kısımlarında tuğladan stilize servi ağaçları, güneş kursları, gülbezek motifleri, geometrik desenler ve Davut yıldızı sembolleri vardır. Doğu cephede dışa taşkın bölümün 1902'de eklendiği belgelenmiştir. Tanzimat döneminde yangına karşı alınan önlemler doğrultusunda ahşap karkas arasına ana dolgu olarak kırmızı ateş tuğlası konmuştur. En dikkat çekici öğe, geniş saçaklı ahşap çatı üzerindeki sekizgen planlı, sekiz pencereli aydınlık fenerli cihannümadır.",
+        "en": "Stylized cypress trees, sun disks, rosettes, geometric patterns and star of David symbols in brick appear on the north and west façades. The outward-projecting mass on the east façade is documented as added in 1902. Red fire bricks fill the timber frame in line with Tanzimat-era fire precautions. The most striking element is the cihannüma, an octagonal lantern with eight windows on the wide-eaved wooden roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "730"
+        }
+      ]
+    },
+    {
+      "id": "bugun",
+      "order": 7,
+      "title": {
+        "tr": "Bugünkü kullanım",
+        "en": "Present use"
+      },
+      "body": {
+        "tr": "Yapı günümüzde Bursa Büyükşehir Belediyesi Başkanlık makamı olarak kullanılmaktadır.",
+        "en": "Today the building is used as the Bursa Metropolitan Municipality Mayor's office."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "730"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Plan ölçüleri",
+        "en": "Plan dimensions"
+      },
+      "value": "28 x 22",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "729"
+        }
+      ]
+    },
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat düzeni",
+        "en": "Floor arrangement"
+      },
+      "value": "Yüksek bodrum üzerine iki kat",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "729"
+        }
+      ]
+    },
+    {
+      "key": "ana_giris_sutun",
+      "label": {
+        "tr": "Doğu girişi sütun sayısı",
+        "en": "Columns at east entrance"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "729"
+        }
+      ]
+    },
+    {
+      "key": "bati_giris_sutun",
+      "label": {
+        "tr": "Batı girişi sütun sayısı",
+        "en": "Columns at west entrance"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "729"
+        }
+      ]
+    },
+    {
+      "key": "cihannuma_pencere",
+      "label": {
+        "tr": "Cihannüma pencere sayısı",
+        "en": "Cihannüma windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "730"
+        }
+      ],
+      "note": {
+        "tr": "Sekizgen planlı aydınlık feneri.",
+        "en": "Octagonal lantern."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Ahmet Vefik Paşa",
+      "role": {
+        "tr": "İnşa sırasında Hudâvendigâr Valisi",
+        "en": "Hudâvendigâr Governor during construction"
+      }
+    },
+    {
+      "name": "Hüseyin Hüsnü Efendi",
+      "role": {
+        "tr": "İnşa sırasında belediye başkanı",
+        "en": "Mayor during construction"
+      }
+    },
+    {
+      "name": "Şehbender (Kütahyalı)",
+      "role": {
+        "tr": "Kazım Baykal'a göre mimar kalfası",
+        "en": "Architect's apprentice according to Kazım Baykal"
+      }
+    },
+    {
+      "name": "İbrahim Ethem Paşa",
+      "role": {
+        "tr": "'Usûl-i Mimâri-i Osmâni' eserini hazırlatan Nafia Nazırı (üslup referansı)",
+        "en": "Minister of Public Works who commissioned 'Usûl-i Mimâri-i Osmâni' (stylistic reference)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "belediye-teskilati-1867",
+      "year": 1867,
+      "date": null,
+      "hijri": "H. 1284",
+      "type": "record",
+      "title": {
+        "tr": "Bursa belediye teşkilatı kuruldu (binası yok)",
+        "en": "Bursa municipal organization established (no building yet)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "727"
+        }
+      ],
+      "note": {
+        "tr": "Kurum tarihi; yapı değil.",
+        "en": "Date of the institution, not of the building."
+      }
+    },
+    {
+      "id": "insa-1879",
+      "year": 1879,
+      "date": null,
+      "hijri": "H. 1297",
+      "type": "construction",
+      "title": {
+        "tr": "Belediye binasının inşası",
+        "en": "Construction of the town hall"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "728"
+        }
+      ],
+      "note": {
+        "tr": "Kepecioğlu ve Baykal 1879; bazı kaynaklar M. 1879-1880.",
+        "en": "Kepecioğlu and Baykal: 1879; some sources AD 1879-1880."
+      }
+    },
+    {
+      "id": "genisletme-1902",
+      "year": 1902,
+      "date": null,
+      "hijri": "H. 1320",
+      "type": "addition",
+      "title": {
+        "tr": "Büyük salon ve doğu cephe çıkması eklendi; bina genişletildi",
+        "en": "Great hall and east projection added; building expanded"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "728-730"
+        }
+      ],
+      "note": {
+        "tr": "Salon II. Abdülhamid'in doğum günü vesilesiyle açıldı.",
+        "en": "The hall was opened for Abdulhamid II's birthday."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "cihannuma",
+      "title": {
+        "tr": "Çatıdaki sekizgen cihannüma",
+        "en": "The octagonal cihannüma on the roof"
+      },
+      "hint": {
+        "tr": "Geniş saçaklı çatının üzerindeki sekiz pencereli aydınlık feneri.",
+        "en": "An eight-windowed lantern above the wide-eaved roof."
+      },
+      "section_id": "cephe-ve-cihannuma"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-harir-daru-t-talimi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Aynı dönemde yapılan Harîr Dâru't-ta'lîmi (İpekçilik Mektebi) ile benzer üslup taşır.",
+        "en": "Shares a similar style with the contemporary Harîr Dâru't-ta'lîmi (Silk School)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "728"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yapı, yüksek bir kesme taş bodrum üzerinde iki katlıdır ve dikdörtgen planlıdır. Geniş saçaklı, kiremit kaplı ahşap çatısının tepesinde sekizgen planlı, sekiz pencereli bir cihannüma yükselir. Doğu cephesinde sekiz sütunun taşıdığı çıkmalı bir giriş, batı cephesinde dört sütunlu bir çıkma ve iki kollu yüksek bir merdiven vardır. Cepheler ahşap karkas arası kırmızı tuğla dolguludur; bazı pencere üstlerinde tuğladan servi, güneş kursu, gülbezek, geometrik desen ve Davut yıldızı motifleri görülür.",
+      "en": "The building is rectangular, two storeys over a high cut-stone basement. A wide-eaved tiled wooden roof carries an octagonal cihannüma with eight windows. The east façade has an entrance under a projection on eight columns; the west has a four-column projection and a grand double-flight staircase. The façades are red brick infill between timber frame, with brick motifs of cypresses, sun disks, rosettes, geometric patterns and stars of David above some windows."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesi (vk-bursa-c1, s. 729-730)"
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1C_DxmRm7tS_2mJUgiSLEM4k4jQUxTen3",
+    "book_layout_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+    "book_pdf_name": "3-Sivil Mimari.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-belediye-binasi/p009-1.jpg",
+        "original_name": "08-3.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "728"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Bezemeli tören salonu",
+        "en": "Ornate reception hall"
+      },
+      "alt": {
+        "tr": "Altın yaldızlı kabartmalı tavanı olan geniş salon. Altın çerçeveli beyaz koltuklar, turkuaz perdeler, kristal avize, Türk bayrağı ve duvarda portre bulunur.",
+        "en": "A wide hall with a gold-trimmed ceiling, gilded white armchairs, turquoise curtains, a crystal chandelier, a Turkish flag and a portrait on the wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-belediye-binasi/p010-2.jpg",
+        "original_name": "05-2.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "729"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kat holü ve oymalı ahşap merdivenler",
+        "en": "Hall with carved timber stairs"
+      },
+      "alt": {
+        "tr": "Orta holde yuvarlak ahşap masa, iki yanda kafes işlemeli ahşap korkuluklu merdivenler ve ince sütunlar var. Tavan ahşap çıtalıdır.",
+        "en": "A central hall with a round wooden table, two staircases with lattice-work timber balustrades, slim columns and a slatted timber ceiling."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-belediye-binasi/p010-1.jpg",
+        "original_name": "10.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "729"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Merdiven ve kat holü",
+        "en": "Staircase and landing"
+      },
+      "alt": {
+        "tr": "Kıvrımlı, kafes işlemeli ahşap korkuluklu merdiven ve beyaz sütunlu hol. Duvarda tablolar, büyük pencere ve bir avize görülür.",
+        "en": "A curving staircase with lattice-work timber balustrade in a hall with white columns, paintings, a large window and a chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    }
+  ],
+  "archive_media": []
+}

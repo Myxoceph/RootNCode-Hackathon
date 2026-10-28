@@ -1,0 +1,619 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-i-murad-hudavendigar-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "I. Murat Hüdavendigar Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor.",
+      "Türbenin ilk yapım yılı kitapta yok; dating 1863 yeniden inşasını gösteriyor.",
+      "Orhan Gazi Türbesi ve II. Murad Türbesi'nin ilçesi bu bölümde belirtilmiyor (ilişki hedefleri Osmangazi varsayımıyla yazıldı); teyit edilmeli.",
+      "Kitabenin dili kitapta belirtilmiyor; language 'other' bırakıldı.",
+      "Sandukası bilinmeyen iki kişinin kimliği kitapta belirsiz."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.neighborhood",
+        "note": "Cami ve türbe için 'Çekirge Mahallesi', imaret için 'Hudâvendigâr Mahallesi' (Çekirge Caddesi) veriliyor. Kitap farkı açıklamıyor; her kayıtta kitabın o yapı için verdiği ad kullanıldı."
+      },
+      {
+        "field": "dating",
+        "note": "Türbenin 'Yıldırım Bayezid tarafından yaptırıldığı kabul edilmektedir' (probable); 1741'de I. Mahmud döneminde onarıldığı kitabeden, 1855'te tamamen yıkıldığı ve 1863'te yeniden yapıldığı metinden anlaşılıyor. dating.start_year bu nedenle 1863."
+      },
+      {
+        "field": "sections[sandukalar]",
+        "note": "Metne göre sandukaların biri I. Murad'a, diğer beşi adı sayılan şehzade ve torunlara aittir; iki sandukanın sahibi bilinmiyor. Toplam sanduka sayısı kitapta açıkça verilmiyor."
+      },
+      {
+        "field": "sections[turbe-ve-sanduka-ortusu]",
+        "note": "Sanduka örtüsü 1855 sonrası Saray-ı Hümayun'da üretilmiş ve Muradiye El Yazmaları Müzesi'nde sergileniyor; türbe içindeki değil, müze koleksiyonundaki bir obje olduğundan ayrıca not edildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Murad Hudâvendigâr Türbesi",
+    "en": "Murad Hudâvendigâr Tomb"
+  },
+  "subtitle": {
+    "tr": "Savaş meydanında şehit düşen tek Osmanlı sultanının türbesi",
+    "en": "Tomb of the only Ottoman sultan martyred on the front line"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hudâvendigâr Türbesi",
+      "en": "Hudâvendigâr Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "I. Murad",
+    "Çekirge",
+    "türbe",
+    "1855 depremi",
+    "Sultan Abdülaziz",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Çekirge",
+    "address": "22. Cami Sokak, No: 4",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "103"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.202222,
+      "lng": 29.021099,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/13385771379 ('I. Murat (Hüdavendigar) Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yıldırım Bayezid dönemi (yıl belirtilmemiş); bugünkü yapı 1863",
+      "en": "Reign of Yıldırım Bayezid (year not given); present building 1863"
+    },
+    "start_year": 1863,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Türbe 1855 depreminde tamamen yıkılmış, 1863'te Sultan Abdülaziz tarafından eski temelleri üzerine yeniden inşa edilmiştir. İlk yapım yılı kitapta verilmiyor.",
+      "en": "The tomb was completely destroyed in the 1855 earthquake and rebuilt by Sultan Abdülaziz in 1863 on its old foundations. The original construction year is not given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "103"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yıldırım Bayezid",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "103"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin kuzeybatı köşesinde, yolun karşısında yer alan, I. Murad'ın sandukasını barındıran türbe. Yıldırım Bayezid'in yaptırdığı kabul edilir; 1855 depreminde tamamen yıkılmış, 1863'te Sultan Abdülaziz tarafından yeniden inşa edilmiştir. Savaş cephesinde şehit düşen tek Osmanlı hükümdarının türbesi olarak önemli bir ziyaretgâhtır.",
+    "en": "The tomb housing Murad I's sarcophagus stands across the road at the mosque's northwest corner. It is accepted to have been built by Yıldırım Bayezid; it was completely destroyed in the 1855 earthquake and rebuilt by Sultan Abdülaziz in 1863. It is an important place of visitation as the tomb of the only Ottoman sultan martyred on the front line."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Türbe, Osmangazi ilçesi, Çekirge Mahallesi, 22. Cami Sokak No: 4'te yer alır. I. Murad'ın Bursa'da kendi adına yaptırdığı külliyenin en belirgin parçalarından biri olan türbe, aynı isimli caminin kuzeybatı köşesinde, yolun karşısında konumlanır ve Bursa UNESCO Dünya Mirası Alanı içindedir. İnşa kitabesi olmayan türbenin I. Murad'ın oğlu Yıldırım Bayezid tarafından yaptırıldığı kabul edilmektedir.",
+        "en": "The tomb is at 22. Cami Street No. 4, Çekirge Neighborhood, Osmangazi District. One of the most prominent parts of the complex Murad I built in Bursa in his name, it lies across the road at the northwest corner of the mosque of the same name, within the Bursa UNESCO World Heritage Site. With no construction inscription, it is accepted to have been built by Yıldırım Bayezid, the son of Murad I."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "id": "yikilma-ve-yeniden-insa",
+      "order": 2,
+      "title": {
+        "tr": "Yıkılma ve Yeniden İnşa",
+        "en": "Destruction and Rebuilding"
+      },
+      "body": {
+        "tr": "Ana hatları bakımından Orhan Gazi Türbesi'ne benzeyen türbe, 1855'teki büyük Bursa depreminde tamamen yıkılmıştır. 1863'te Sultan Abdülaziz tarafından eski temelleri üzerine, II. Murad Türbesi'nden de esinlenilerek dönemin sanat anlayışı doğrultusunda yeniden inşa edilmiştir. Avlu kapısı üzerindeki talik hatlı kitabede türbenin 1741'de, I. Mahmud döneminde onarıldığı belirtilir.",
+        "en": "Resembling the Tomb of Orhan Gazi in outline, the tomb was completely destroyed in the great Bursa earthquake of 1855. It was rebuilt by Sultan Abdülaziz in 1863 on its original foundations, inspired by the Tomb of Murad II and the artistic taste of the time. The Ta'liq inscription above the courtyard door states that it was repaired in 1741 under Sultan Mahmud I."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103-104"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Girişe doğu beden duvarındaki, dışa taşan bir sundurmanın altından iki kanatlı ahşap kapıyla girilir. Yapı 17.60 x 17.60 m ölçülerinde kare planlıdır. İçeride sekiz sütun üzerinde yükselen kemerler tek kubbeyi taşır; dört köşedeki tonozlar yükü beden duvarlarıyla zemine aktarır. Korint düzenindeki, akantus yapraklı sütun başlıkları özgün değildir; yıkılmadan önce devşirme başlıkların kullanıldığı düşünülmektedir, onarım sonrasında benzer yeni başlıklar eklenmiştir. Orhan Gazi ve II. Murad türbelerinde olduğu gibi sekiz sütunlu bir galeri oluşturulmuş, ziyaretçilerin sandukaları her açıdan görmesi sağlanmıştır.",
+        "en": "Entry is through a two-leafed wooden door under a projecting porch on the east wall. The building is square, 17.60 x 17.60 m. Inside, arches on eight columns carry the single dome, and vaults at the four corners pass the load to the ground through the walls. The Corinthian capitals with acanthus leaves are not original; spolia capitals are thought to have been used before the destruction, and similar new ones were added after the repair. As in the tombs of Orhan Gazi and Murad II, an eight-column gallery lets visitors see the sarcophagi from every angle."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "105"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 4,
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbenin ortasında pirinç parmaklıklarla çevrili büyük sanduka I. Murad'a aittir. Diğer sandukalar, onunla birlikte Kosova'da şehit düşen oğlu Şehzade Yakup Çelebi'ye, torunu Süleyman Çelebi ve onun oğlu Orhan'a, Yıldırım Bayezid'in oğlu Musa Çelebi ve Şehzade Mehmed'e aittir. İki sandukanın kimlere ait olduğu bilinmemektedir. Bahçede sonraki dönemlere ait kabirler de vardır.",
+        "en": "The large sarcophagus surrounded by brass railings in the middle belongs to Murad I. The others belong to his son Şehzade Yakup Çelebi, martyred with him in Kosovo, his grandson Süleyman Çelebi and Süleyman's son Orhan, Yıldırım Bayezid's son Musa Çelebi, and Şehzade Mehmed. It is not known whom two of the sarcophagi belong to. The garden also has graves of later periods."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "105-106"
+        }
+      ]
+    },
+    {
+      "id": "turbe-ve-sanduka-ortusu",
+      "order": 5,
+      "title": {
+        "tr": "Sanduka Örtüsü",
+        "en": "Sarcophagus Cover"
+      },
+      "body": {
+        "tr": "I. Murad'a ait, 1855 depremi sonrası Saray-ı Hümayun'da üretilen sanduka örtüsü günümüzde Muradiye El Yazmaları Müzesi'nde sergilenmektedir.",
+        "en": "The sarcophagus cover of Murad I, produced in the Saray-ı Hümayun after the 1855 earthquake, is currently exhibited in the Muradiye Manuscripts Museum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "106-107"
+        }
+      ]
+    },
+    {
+      "id": "suslemeler",
+      "order": 6,
+      "title": {
+        "tr": "Kalem İşi Süslemeler",
+        "en": "Hand-Painted Decoration"
+      },
+      "body": {
+        "tr": "Türbe içinde deprem sonrasında yapılmış, dönemin Barok üslubunu taşıyan kalem işi süslemeler vardır; benzer özellikler Ulucami, Üftâde Camii ve I. Murad Hudâvendigâr Camii'nde de görülür. Kubbe tavan göbeği başta olmak üzere kubbe çemberi, kemer içleri ve beden duvarlarının üst kısmında bordür kuşağı biçiminde süslemeler kullanılmıştır. Güney duvarın ortasındaki mihrap nişinin içi ve dış yüzeyleri de bordür biçimli kalem işiyle bezelidir; rumi-palmet motifleri, yapraklar, sarı dallar ve doğal desenler öne çıkar. 1998'de cami ile birlikte türbenin örtü sistemindeki kurşun kaplamalar yenilenmiştir.",
+        "en": "Inside the tomb are hand-painted decorations made after the earthquake, bearing the Baroque style of the period; similar features are seen in the Ulucami, Üftâde Mosque and Murad I Hudâvendigâr Mosque. Border-band decoration is used at the dome centre, dome ring, inside the arches and upper parts of the walls. The mihrab niche in the middle of the south wall is also adorned inside and out with border-form painting; rumi-palmette motifs, leaves, yellow branches and natural patterns stand out. In 1998 the lead roofing of the tomb and mosque was renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "106-107"
+        }
+      ]
+    },
+    {
+      "id": "ziyaret",
+      "order": 7,
+      "title": {
+        "tr": "Ziyaret",
+        "en": "Visitation"
+      },
+      "body": {
+        "tr": "Türbe, I. Murad Osmanlı sultanları arasında savaş ortamında cephede şehit düşen tek hükümdar olduğu için önemli bir ziyaretgâh olmuştur. Halk arasında Çekirge Sultan olarak bilinen kişinin de türbenin bahçesinde medfun olduğu söylenmektedir (bkz. rivayetler).",
+        "en": "The tomb became an important place of visitation because Murad I was the only Ottoman sultan martyred on the front line in war. The person known popularly as Çekirge Sultan is also said to be buried in the tomb garden (see legends)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "106-107"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "cekirge-sultan",
+      "title": {
+        "tr": "Çekirge Sultan",
+        "en": "Çekirge Sultan"
+      },
+      "body": {
+        "tr": "Halk arasında Çekirge Sultan olarak bilinen kişinin de türbenin bahçesinde medfun olduğu söylenmektedir.",
+        "en": "The person known among the public as Çekirge Sultan is said to be buried in the garden of the tomb."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "106-107"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "plan_olcusu",
+      "label": {
+        "tr": "Kare plan ölçüsü",
+        "en": "Square plan dimensions"
+      },
+      "value": "17.60 × 17.60",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "105"
+        }
+      ]
+    },
+    {
+      "key": "sutun_sayisi",
+      "label": {
+        "tr": "İç mekândaki sütun sayısı",
+        "en": "Columns inside"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "105"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_insa_yili",
+      "label": {
+        "tr": "Yeniden inşa yılı",
+        "en": "Year of rebuilding"
+      },
+      "value": 1863,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan I. Murad Hudâvendigâr",
+      "role": {
+        "tr": "Türbede gömülü; büyük sandukanın sahibi",
+        "en": "Buried in the tomb; owner of the large sarcophagus"
+      }
+    },
+    {
+      "name": "Yıldırım Bayezid",
+      "role": {
+        "tr": "Türbeyi yaptırdığı kabul edilir",
+        "en": "Accepted as the builder of the tomb"
+      }
+    },
+    {
+      "name": "Sultan Abdülaziz",
+      "role": {
+        "tr": "1863'te türbeyi yeniden inşa ettirdi",
+        "en": "Had the tomb rebuilt in 1863"
+      }
+    },
+    {
+      "name": "Şehzade Yakup Çelebi",
+      "role": {
+        "tr": "I. Murad'ın oğlu; Kosova'da onunla birlikte şehit düştü",
+        "en": "Murad I's son, martyred with him in Kosovo"
+      }
+    },
+    {
+      "name": "Süleyman Çelebi",
+      "role": {
+        "tr": "I. Murad'ın torunu",
+        "en": "Murad I's grandson"
+      }
+    },
+    {
+      "name": "Orhan",
+      "role": {
+        "tr": "Süleyman Çelebi'nin oğlu",
+        "en": "Son of Süleyman Çelebi"
+      }
+    },
+    {
+      "name": "Musa Çelebi",
+      "role": {
+        "tr": "Yıldırım Bayezid'in oğlu",
+        "en": "Son of Yıldırım Bayezid"
+      }
+    },
+    {
+      "name": "Şehzade Mehmed",
+      "role": {
+        "tr": "Türbede sandukası bulunan şehzade",
+        "en": "Prince with a sarcophagus in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "onarim-kitabesi-1741",
+      "location": {
+        "tr": "Avlu kapısının üzerinde",
+        "en": "Above the courtyard door"
+      },
+      "language": "other",
+      "script": "Ta'lik",
+      "transliteration": "Hıdîv-i gazâ pîşe Sultân Murâd\nŞeh-i dâd-güster-i Hudâvendigâr\nŞehîd-i mübeşşer bilâ-irtiyâb\nVeliyy-i menkabet zıll-i perverdigâr\nBu şâh-ı melek-haslet ve âdilin\nOlunca der-türbesi üstüvâr\nDedim gördüğüm birle tarihini\nZehî sakf-ı bâb-ı Hudâvendigâr. H. 1154 (M. 1741)",
+      "translation": {
+        "tr": "Gazâyı huy edinmiş büyük hükümdar Sultan Murad, Hudâvendigâr, adaletiyle temayüz etmiş bir padişahtır. Hiç şüphe yoktur ki şehitliği müjdelenmiş, menkıbeleri anlatılan bir veli, Allah'ın gölgesi kabul edilen bir hükümdardır o. Melek tabiatlı ve adaletli bu sultanın türbesi sağlamlaştırıldığında, gördüklerime binaen tarihini şöyle söyledim: Ne güzeldir Hudâvendigâr'ın kapısının çatısı! H. 1154 / M. 1741",
+        "en": "The great ruler Sultan Murad Hudavendigar, who made military campaigns his habit, is a sultan distinguished by his justice. There is no doubt that he is a sultan whose martyrdom was heralded, whose divine stories were told, a ruler accepted as the shadow of Allah. When the tomb of this angelic and just sultan was fortified, based on what I saw, I gave the date as follows: How beautiful is the roof of the gate of the Hudavendigar! AH 1154 (AD 1741)"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1154,
+        "gregorian": "1741"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "104-105"
+        }
+      ],
+      "note": {
+        "tr": "Türbenin 1741'de I. Mahmud döneminde onarıldığını bildiren manzum kitabe.",
+        "en": "A verse inscription recording the repair of the tomb in 1741 under Mahmud I."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1741",
+      "year": 1741,
+      "date": null,
+      "hijri": "1154",
+      "type": "repair",
+      "title": {
+        "tr": "I. Mahmud döneminde onarıldı",
+        "en": "Repaired in the reign of Mahmud I"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "104"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük Bursa depreminde tamamen yıkıldı",
+        "en": "Completely destroyed in the great Bursa earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Sultan Abdülaziz tarafından eski temelleri üzerine yeniden inşa edildi",
+        "en": "Rebuilt by Sultan Abdülaziz on its old foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "id": "kursun-1998",
+      "year": 1998,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Cami ile birlikte türbenin kurşun örtüsü yenilendi",
+        "en": "Lead roofing renewed together with the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "107"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sandukalar",
+      "title": {
+        "tr": "Sekiz sütunlu galeri ve sandukalar",
+        "en": "Eight-column gallery and sarcophagi"
+      },
+      "hint": {
+        "tr": "Pirinç parmaklıklı büyük sanduka I. Murad'a aittir.",
+        "en": "The large sarcophagus with brass railings belongs to Murad I."
+      },
+      "section_id": "sandukalar"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe külliyenin en belirgin parçalarından biridir.",
+        "en": "The tomb is one of the most prominent parts of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe caminin kuzeybatı köşesinde, yolun karşısındadır.",
+        "en": "The tomb is across the road at the mosque's northwest corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-gazi-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Ana hatlarıyla Orhan Gazi Türbesi'ne benzer; sekiz sütunlu galeri düzeni ortaktır.",
+        "en": "Similar in outline to the Tomb of Orhan Gazi; both share the eight-column gallery."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103, 105"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ii-murad-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "1863'teki yeniden inşada II. Murad Türbesi'nden esinlenilmiştir.",
+        "en": "The 1863 rebuilding drew inspiration from the Tomb of Murad II."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, caminin kuzeybatı köşesinde, yolun karşısında duran 17,60 x 17,60 metrelik kare planlı bir yapıdır. Girişe doğu duvardaki çıkıntılı bir sundurmanın altından iki kanatlı ahşap kapıyla girilir. İçeride sekiz sütunun taşıdığı kemerler tek bir kubbeyi destekler; ortada pirinç parmaklıkla çevrili büyük sanduka I. Murad'a aittir. Duvarlarda ve kubbede Barok üslupta kalem işi süslemeler, güney duvarın ortasında bir mihrap nişi vardır.",
+      "en": "The tomb is a square-planned building of 17.60 x 17.60 metres across the road at the mosque's northwest corner. It is entered by a two-leafed wooden door under a projecting porch on the east wall. Inside, arches on eight columns support a single dome; the large sarcophagus in the middle, surrounded by brass railings, belongs to Murad I. The walls and dome have Baroque-style hand-painted decoration, and there is a mihrab niche in the middle of the south wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1Nh5U0z8qZBwN7XodcyZLe_IqCfD3wrcx",
+    "book_layout_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+    "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-turbesi/p030-2.jpg",
+        "original_name": "DJI_20240929130549_0387_D-Enhanced-NR-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "105"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Türbenin üstten görünümü",
+        "en": "Top-down view of the tomb"
+      },
+      "alt": {
+        "tr": "Kare planlı türbenin gri kurşun çatısı ve ortasındaki yuvarlak kubbe tepeden görülüyor. Çevresinde ağaçlar ve bir yol var.",
+        "en": "The grey lead roof of the square tomb and its round central dome seen from directly above. Trees and a road surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-29"
+    }
+  ],
+  "archive_media": []
+}

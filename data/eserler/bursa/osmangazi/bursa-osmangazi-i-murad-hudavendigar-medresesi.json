@@ -1,0 +1,464 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-i-murad-hudavendigar-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "I. Murat Hüdavendigar Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki I. Murad Hudâvendigâr Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor.",
+      "Medresede ders gören öğrenci sayısı arşiv belgelerinden tespit edilebilir deniyor ama sayı kitapta verilmiyor.",
+      "Müderrislerin görev yıllarına dair bilgi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Külliye için s. 79'da H. 767 / M. 1365-66 öngörülüyor; imaret bölümü (s. 97) külliyenin H. 768-787 / M. 1367-1385 arasında yapıldığını söylüyor. İki aralık tam örtüşmüyor; kaynağın değerleri korundu."
+      },
+      {
+        "field": "facts[muderris_odasi_olcu]",
+        "note": "Türkçe metin ve İngilizce metin '5.40 x 280' yazıyor (muhtemelen 2.80 m'nin yazım hatası). Kaynağın değeri aynen korundu; ölçü ayrıca 5.40 x 2.50 m verilen ikinci oda ile birlikte anılıyor."
+      },
+      {
+        "field": "sections[muderrisler]",
+        "note": "Geniş odaların müderris odası olabileceği 'düşünülmektedir'; kesin bilgi değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hudâvendigâr Medresesi",
+    "en": "Hudâvendigâr Madrasa"
+  },
+  "subtitle": {
+    "tr": "Caminin üst katındaki medrese",
+    "en": "The madrasa on the upper floor of the mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hudâvendigâr Camii'nin Medresesi",
+      "en": "Madrasa of the Hudâvendigâr Mosque"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "I. Murad",
+    "Çekirge",
+    "medrese",
+    "ikiz sivri kemer",
+    "Molla Gürânî"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Çekirge",
+    "address": "I. Murad Caddesi, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "79"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.202366,
+      "lng": 29.021103,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-osmangazi-i-murad-hudavendigar-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 767 / M. 1365-66 (öngörülen)",
+      "en": "AH 767 / AD 1365-66 (presumed)"
+    },
+    "start_year": 1365,
+    "end_year": 1366,
+    "hijri_year": 767,
+    "century": 14,
+    "basis": {
+      "tr": "Günümüze ulaşan inşa kitabesi yoktur; yapının bu tarihte yapıldığı öngörülmektedir ve tarihin sultanın çocukları için düzenlenen sünnet düğününe denk geldiği ifade edilmektedir.",
+      "en": "No construction inscription has survived; the building is presumed to date to this year, which is said to coincide with the circumcision ceremony held for the sultan's children."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "79"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan I. Murad Hudâvendigâr",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "80"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin üst katında, kuzeyde Bursa Ovası'na bakan ikiz sivri kemerli revaklı avlusu ve 'n' planlı koridorun iki yanında on iki öğrenci hücresiyle Osmanlı mimarisinde ilk ve tek örnek olarak anılan medrese.",
+    "en": "The madrasa on the upper floor of the mosque, with an arcaded courtyard of twin pointed arches facing the Bursa Plain to the north and twelve student cells along an 'n'-plan corridor; described as the first and only example in Ottoman architecture."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Medrese, caminin üst katındadır ve taş bir silmeyle alt kattan ayrılır. Medresenin caminin üzerinde planlanması Osmanlı mimarisinde görülen ilk ve tek örnektir.",
+        "en": "The madrasa is on the mosque's upper floor, separated from the lower floor by a stone molding. Planning the madrasa above the mosque is the first and only example in Ottoman architecture."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80, 92"
+        }
+      ]
+    },
+    {
+      "id": "erisim",
+      "order": 2,
+      "title": {
+        "tr": "Erişim",
+        "en": "Access"
+      },
+      "body": {
+        "tr": "Medrese katına cami giriş holünden iki yana açılan ve duvar kalınlığı içine yerleştirilmiş taş merdivenlerle çıkılır. Buradan alt giriş koridoru üzerindeki tonozlu bir sahanlığa, ardından son cemaat mekânı üzerindeki beş bölümlü revaklı sahanlığa geçilir. İki yandaki bölümler aynalı tonozla, diğerleri kubbelerle örtülüdür; mermer sütunlarla ikiye bölünen açıklıklar ikiz sivri kemerlidir.",
+        "en": "The madrasa floor is reached from the mosque entrance hall by stone stairs opening to both sides, set within the wall thickness. From there a vaulted landing above the lower entrance corridor leads to the five-part arcaded landing above the narthex. The side sections have flattened barrel vaults and the others domes; openings divided by marble columns have twin pointed arches."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "92"
+        }
+      ]
+    },
+    {
+      "id": "avlu",
+      "order": 3,
+      "title": {
+        "tr": "Medrese Avlusu",
+        "en": "Madrasa Courtyard"
+      },
+      "body": {
+        "tr": "Kuzeye bakan ve Bursa Ovası'nın seyredilebildiği büyük sivri kemerli revaklı avlu farklı bir mimari özellik taşır. Doğu ve batı cephelerinde de büyük sivri kemerler mermer sütunlarla ikiye ayrılmıştır. Alt kattaki kemer sistemi üst katta da sürdürülmüş, duvarlar kesme taş ve tuğlanın birlikte kullanıldığı karma teknikle örülmüştür.",
+        "en": "The courtyard faces north with a view of the Bursa Plain behind a large pointed-arch arcade. On the east and west façades large pointed arches are divided in two by marble columns. The lower-floor arch system continues on the upper floor, and the walls use a mixed cut stone and brick technique."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "92-93"
+        }
+      ]
+    },
+    {
+      "id": "koridor-ve-hucreler",
+      "order": 4,
+      "title": {
+        "tr": "Koridor ve Hücreler",
+        "en": "Corridor and Cells"
+      },
+      "body": {
+        "tr": "Medrese katında harim mekânının üzerinden geçen, 'n' planlı, 3.50 m genişliğinde uzun bir koridor vardır. Koridorun iki yanında birer pencereyle aydınlanan, birbirine yakın ölçüde altışar, toplam on iki medrese hücresi sıralanır. Koridor harimin çevresinde 80 cm genişliğindeki dar dehlizlerle sürüp büyük mihrap nişinin içindeki küçük kubbeli mekânda son bulur; buradaki bir açıklıktan harim görülebilir. İki yan koridor ortadaki büyük kubbeli mekâna ikişer pencereyle açılır; talebe odaları iç mekândan görünmez.",
+        "en": "On the madrasa floor a long 'n'-plan corridor, 3.50 m wide, passes above the prayer hall. Along it, six cells on each side, all of similar size and lit by a window, make twelve rooms in total. The corridor continues around the prayer hall in 80 cm narrow passages and ends in the small domed space inside the large mihrab niche, from which the prayer hall can be seen. The two side corridors open onto the large central domed space with two windows each; the student rooms are not visible from the interior."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "92-93"
+        }
+      ]
+    },
+    {
+      "id": "muderris-odalari",
+      "order": 5,
+      "title": {
+        "tr": "Olası Müderris Odaları",
+        "en": "Possible Teachers' Rooms"
+      },
+      "body": {
+        "tr": "Medrese merdivenlerinin sağında ve solunda, bir ucu galeri alanına kapıyla bağlanan, diğer ucu 'n' planlı koridora açılan 6.00 x 1.80 m ölçülerinde tonozlu hollere açılan odalar vardır. Aynı hollere açılan 5.40 x 280 ve 5.40 x 2.50 m ölçülerinde ikişer oda daha mevcuttur. Öğrenci odalarına kıyasla daha geniş olan bu odaların müderris odaları olabileceği düşünülmektedir.",
+        "en": "To the right and left of the stairs are rooms opening onto vaulted halls of 6.00 x 1.80 m, one end connected to the gallery by a door and the other opening onto the 'n' corridor. Two more rooms each, measuring 5.40 x 280 and 5.40 x 2.50 m, open onto the same halls. These rooms, larger than the student rooms, are thought possibly to be teachers' rooms."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "93"
+        }
+      ]
+    },
+    {
+      "id": "muderrisler",
+      "order": 6,
+      "title": {
+        "tr": "Müderrisler",
+        "en": "Teachers"
+      },
+      "body": {
+        "tr": "Osmanlı tarihinde önemli bir yere sahip olan Hudâvendigâr Medresesi'nde Molla Gürânî, Zenbilli Ali Efendi, Tâcîzâde Câfer Çelebi gibi değerli müderrisler görev yapmıştır. Arşiv belgelerinden hareketle medresede ders gören öğrenci sayısını tespit etmek de mümkündür.",
+        "en": "Valued teachers such as Molla Gürânî, Zenbilli Ali Efendi and Tâcîzâde Cafer Çelebi served in the Hudâvendigâr Madrasa, which was highly noteworthy in Ottoman history. It is also possible to determine the number of students from archive documents."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "93, 95"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hucre_sayisi",
+      "label": {
+        "tr": "Medrese hücre sayısı",
+        "en": "Number of madrasa cells"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "92"
+        }
+      ]
+    },
+    {
+      "key": "koridor_genisligi",
+      "label": {
+        "tr": "'n' planlı koridor genişliği",
+        "en": "'n'-plan corridor width"
+      },
+      "value": 3.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "92"
+        }
+      ]
+    },
+    {
+      "key": "dar_dehliz_genisligi",
+      "label": {
+        "tr": "Harim çevresindeki dar dehliz genişliği",
+        "en": "Width of narrow passages around the prayer hall"
+      },
+      "value": 80,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "93"
+        }
+      ]
+    },
+    {
+      "key": "hol_olcusu",
+      "label": {
+        "tr": "Merdiven yanındaki hol ölçüsü",
+        "en": "Hall beside the stairs"
+      },
+      "value": "6.00 × 1.80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "93"
+        }
+      ]
+    },
+    {
+      "key": "muderris_odasi_olcu",
+      "label": {
+        "tr": "Olası müderris odası ölçüleri",
+        "en": "Possible teachers' room dimensions"
+      },
+      "value": "5.40 × 280; 5.40 × 2.50",
+      "unit": "m",
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "93"
+        }
+      ],
+      "note": {
+        "tr": "Kaynakta '5.40 x 280' basılı; yazım hatası olabilir.",
+        "en": "Printed as '5.40 x 280' in the source; may be a typo."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Molla Gürânî",
+      "role": {
+        "tr": "Müderris",
+        "en": "Teacher"
+      }
+    },
+    {
+      "name": "Zenbilli Ali Efendi",
+      "role": {
+        "tr": "Müderris",
+        "en": "Teacher"
+      }
+    },
+    {
+      "name": "Tâcîzâde Câfer Çelebi",
+      "role": {
+        "tr": "Müderris",
+        "en": "Teacher"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1365",
+      "year": 1365,
+      "date": null,
+      "hijri": "767",
+      "type": "construction",
+      "title": {
+        "tr": "Medrese yapıldığı öngörülüyor (camiyle birlikte)",
+        "en": "Madrasa presumed built (together with the mosque)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "79"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Külliye binaları kısmen hasar gördü",
+        "en": "Complex buildings partly damaged"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1904",
+      "year": 1904,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "II. Abdülhamid döneminde külliye onarımı",
+        "en": "Complex repaired under Abdulhamid II"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "n-plan-koridor",
+      "title": {
+        "tr": "'n' planlı koridor",
+        "en": "'n'-plan corridor"
+      },
+      "hint": {
+        "tr": "Harimin üstünden geçen koridorda iki yanda altışar hücre.",
+        "en": "The corridor above the prayer hall with six cells on each side."
+      },
+      "section_id": "koridor-ve-hucreler"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Medrese külliyenin parçasıdır.",
+        "en": "The madrasa is part of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Medrese caminin üst katındadır; aynı yapıdır.",
+        "en": "The madrasa is on the mosque's upper floor; they are the same building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80, 92"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese, caminin üst katındadır ve giriş holünden duvar kalınlığındaki taş merdivenlerle çıkılır. Kuzeye bakan, ikiz sivri kemerli revaklı bir avlu ovaya açılır. Harimin üzerinden geçen 'n' planlı koridorun iki yanında pencereli on iki küçük hücre sıralanır.",
+      "en": "The madrasa is on the mosque's upper floor, reached from the entrance hall by stone stairs set in the wall thickness. A north-facing arcaded courtyard with twin pointed arches opens to the plain. Twelve small windowed cells line both sides of an 'n'-plan corridor passing above the prayer hall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

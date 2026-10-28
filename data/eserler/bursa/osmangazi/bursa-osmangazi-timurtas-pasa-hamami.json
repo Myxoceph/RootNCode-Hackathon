@@ -1,0 +1,529 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-timurtas-pasa-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Timurtaş Paşa Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Timurtaş Paşa Külliyesi bölümünden (s. 215-222) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor.",
+      "Hamamın adresi/mahallesi kitapta yok.",
+      "Kaynakta Yeni Kaplıca (Rüstem Paşa vakfı) ve Hisar'daki Kapamalı Mektep için ilçe bilgisi yok; ilişki kaydı açılmadı, hedef id'leri veri ekibi belirlemeli.",
+      "Hubbî Hatun'un hamamı satın alma tarihi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "s. 220 hamamı Oruç Bey'in babası adına yaptırdığını söylerken s. 222 'Kara Demirtaş Paşa tarafından inşa ettirilen bu hamam' ve 'Oruç Bey'in vakfı' ifadelerini birlikte kullanıyor. Kitaba sadık kalındı, 'disputed'."
+      },
+      {
+        "field": "dating",
+        "note": "s. 215 hamamı 1390 külliyesinin parçası sayarken s. 220 'Oruç Bey tarafından 1420 yılından önce' diyor."
+      },
+      {
+        "field": "timeline[fetva-1552]",
+        "note": "H. 959 s. 222'de M. 1552 olarak veriliyor; cami bölümünde (s. 217) aynı H. 959 için M. 1551 yazılı. Kaynağa sadık kalındı."
+      },
+      {
+        "field": "sections[plan]",
+        "note": "Kitap 'kavsarası yedi sıra stalaktitli' diyor; İngilizce metin 'the hood over its entrance' diyor. Anlam aynı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Timurtaş Paşa Hamamı",
+    "en": "Timurtaş Paşa Bath"
+  },
+  "subtitle": {
+    "tr": "Oruç Bey'in babası adına yaptırdığı, camiye vakfedilen hamam",
+    "en": "Bath built by Oruç Bey on behalf of his father and endowed to the mosque"
+  },
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-timurtas-pasa-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "Oruç Bey",
+    "hamam",
+    "vakıf",
+    "fetva",
+    "Rüstem Paşa",
+    "Hubbî Hatun"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "220"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.268497,
+      "lng": 29.099166,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-osmangazi-timurtas-pasa-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1420'den önce",
+      "en": "Before 1420"
+    },
+    "start_year": null,
+    "end_year": 1420,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap hamamın Oruç Bey tarafından 1420 yılından önce yaptırıldığını söylüyor.",
+      "en": "The book says the bath was built by Oruç Bey before 1420."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "220"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Oruç Bey (Timurtaş oğlu)",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "220, 222"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Oruç Bey vakfı (Timurtaşpaşa Camii'ne vakfedilmiştir)",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "220, 222"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Oruç Bey'in babası adına 1420'den önce yaptırıp kardeşi Ali Bey'in camisine vakfettiği hamam. 1552 fetvasıyla mermerleri satılmış, çeşitli kullanımlar görmüş, 1957'de onarılmış, 2010'da restore edilmiş ve bugün işlevini sürdürmektedir.",
+    "en": "A bath built by Oruç Bey before 1420 on behalf of his father and endowed to his brother Ali Bey's mosque. Its marbles were sold under a 1552 fatwa; after various uses it was repaired in 1957, restored in 2010 and still functions today."
+  },
+  "sections": [
+    {
+      "id": "yapim",
+      "order": 1,
+      "title": {
+        "tr": "Yapım ve Vakıf",
+        "en": "Construction and Endowment"
+      },
+      "body": {
+        "tr": "Timurtaş oğlu Oruç Bey tarafından babası adına 1420'den önce yaptırılan hamam, kardeşi Ali Bey'in yaptırdığı Timurtaşpaşa Camii'ne vakfedilmiştir. Oruç Bey 1426'da vefat etmiş ve Hisar'da yaptırdığı Kapamalı Mektep'e defnedilmiştir.",
+        "en": "The bath, built by Oruç Bey, son of Timurtaş, on behalf of his father before 1420, was endowed to the Timurtaş Paşa Mosque built by his brother Ali Bey. Oruç Bey died in 1426 and was buried in the Kapamalı School he built in Hisar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Mekânlar",
+        "en": "Plan and Spaces"
+      },
+      "body": {
+        "tr": "Giriş kapısı kuzeyde olan hamam doğu-batı eksenli dikdörtgen bir alana kuruludur; kavsarası yedi sıra stalaktitlidir. Soğukluk iç ölçüleri 15.75 x 17.85 m olup kubbeyle örtülüdür. Soğukluğun doğusundaki kapıdan geçilen ılıklık tonoz ve kubbeyle örtülüdür; ılıklığa bağlı halvet ve hela de kubbelidir. Kemerli bir geçitle göbek taşının bulunduğu sıcaklığa geçilir; sıcaklıktaki iki büyük halvet kubbelidir. Külhan doğudadır. Duvarlar bir sıra tuğla, bir sıra moloz taşla örülmüştür.",
+        "en": "The bath, entered from the north, stands on a rectangular area on the east-west axis; the hood over its entrance has seven rows of stalactites. The frigidarium measures 15.75 x 17.85 m inside and is domed. The tepidarium, reached by a door east of the frigidarium, is covered with a vault and a dome; a bathing cell and toilet attached to it are also domed. An arched passage leads to the caldarium with the central hot slab; its two large bathing cells are domed. The furnace is on the east. Walls are of alternating rows of brick and rubble stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "id": "fetva",
+      "order": 3,
+      "title": {
+        "tr": "1552 Fetvası ve Mermerlerin Satışı",
+        "en": "The 1552 Fatwa and Sale of Marbles"
+      },
+      "body": {
+        "tr": "Zengin bir süsleme programına sahip hamam uzun süre kullanılmadığından harap olmuş; H. 959 / M. 1552'de enkazının satılıp gelirin kamu yararına kullanılması yönünde fetva verilmiştir. Bunun üzerine Oruç Bey vakfı olan hamamın halvet ve camekân döşemeleri ile şadırvan çanağı hariç tüm döşeme mermerleri, kapı sövelerindeki mermerler ve kaygan taşlar 123 Floriye Rüstem Paşa'nın vekili Kerim Bey'e satılmıştır. Kaygan taşlar ayrıca beş Floriye satılmış ve Rüstem Paşa bunları kendi vakfı Yeni Kaplıca'nın inşaatında kullanmıştır.",
+        "en": "The bath, which had a rich decoration program, fell into ruin from long disuse; in AH 959 / AD 1552 a fatwa was issued to sell its ruins and use the proceeds for public benefit. Accordingly, the floor marbles of the bathing cells and glazed sections (except the fountain basin), the marbles on the door frames and the slippery stones were sold to Kerim Bey, deputy of Rüstem Paşa, for 123 florins. The slippery stones were also sold for five florins and Rüstem Paşa used them in building his foundation, the New Thermal Spring."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "id": "sonraki-kullanim",
+      "order": 4,
+      "title": {
+        "tr": "Sonraki Kullanımlar",
+        "en": "Later Uses"
+      },
+      "body": {
+        "tr": "Hamamı şair ve saray mensubu Hubbî Hatun satın alıp onartarak yeniden faaliyete geçirmiştir. H. 979 / M. 1571'de vakıf mütevellileri hamamın suyunu farklı kişilere sattığından su kaynağı kesilmiştir. Hamam tekrar Oruç Bey vakfına geçmiş ama eski haline kavuşamamıştır. Bir dönem hapishaneye çevrilmek istenmiş, kanunen mümkün görülmediğinden uygulanamamıştır; bir müddet belediyenin gaz deposu olarak kullanılmıştır.",
+        "en": "Hubbî Hatun, a poet and palace member, bought the bath, had it renovated and put it into operation. In AH 979 / AD 1571 its water supply was cut off because the foundation's trustees sold the bath's water to various people. The bath returned to the Oruç Bey foundation but never regained its former state. An attempt to convert it into a prison was not carried out as it was not deemed legally possible; it was used as the municipality's gas depot for a time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "id": "onarim-restorasyon",
+      "order": 5,
+      "title": {
+        "tr": "Onarım ve Restorasyon",
+        "en": "Repair and Restoration"
+      },
+      "body": {
+        "tr": "Hamam 1957'de kapsamlı onarım geçirmiş, en son 2010'da restore edilmiş ve bugün de işlevini sürdürmektedir.",
+        "en": "The bath underwent extensive repairs in 1957, was last restored in 2010 and continues to function today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "222"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "soguklik_olcu",
+      "label": {
+        "tr": "Soğukluk iç ölçüsü",
+        "en": "Interior size of frigidarium"
+      },
+      "value": "15.75 x 17.85",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "key": "kavsara_stalaktit",
+      "label": {
+        "tr": "Kavsara stalaktit sırası",
+        "en": "Rows of stalactites in the hood"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "key": "giris_yonu",
+      "label": {
+        "tr": "Giriş yönü",
+        "en": "Entrance side"
+      },
+      "value": "Kuzey",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "key": "mermer_satis_bedeli",
+      "label": {
+        "tr": "Mermer satış bedeli (1552)",
+        "en": "Sale price of marbles (1552)"
+      },
+      "value": 123,
+      "unit": "floriye",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "key": "kaygan_tas_bedeli",
+      "label": {
+        "tr": "Kaygan taşların ayrı satış bedeli",
+        "en": "Separate sale price of slippery stones"
+      },
+      "value": 5,
+      "unit": "flori",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Wall masonry"
+      },
+      "value": "Bir sıra tuğla, bir sıra moloz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Oruç Bey",
+      "role": {
+        "tr": "Banî; 1426'da vefat etti",
+        "en": "Founder; died in 1426"
+      }
+    },
+    {
+      "name": "Ali Bey",
+      "role": {
+        "tr": "Hamamın vakfedildiği camiyi yaptıran kardeş",
+        "en": "Brother who built the mosque to which the bath was endowed"
+      }
+    },
+    {
+      "name": "Kerim Bey",
+      "role": {
+        "tr": "Rüstem Paşa'nın vekili; mermerleri satın aldı",
+        "en": "Deputy of Rüstem Paşa; bought the marbles"
+      }
+    },
+    {
+      "name": "Rüstem Paşa",
+      "role": {
+        "tr": "Kaygan taşları Yeni Kaplıca'da kullandı",
+        "en": "Used the slippery stones in New Thermal Spring"
+      }
+    },
+    {
+      "name": "Hubbî Hatun",
+      "role": {
+        "tr": "Hamamı satın alıp onartan şair ve saray mensubu",
+        "en": "Poet and palace member who bought and renovated the bath"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1420-oncesi",
+      "year": 1420,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Oruç Bey tarafından babası adına yaptırıldı (1420'den önce)",
+        "en": "Built by Oruç Bey on behalf of his father (before 1420)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ],
+      "note": {
+        "tr": "Yıl üst sınırdır: kitap yalnızca 1420 öncesi der.",
+        "en": "Year is an upper bound: the book only says before 1420."
+      }
+    },
+    {
+      "id": "oruc-bey-vefat-1426",
+      "year": 1426,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Oruç Bey vefat etti",
+        "en": "Oruç Bey died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "id": "fetva-1552",
+      "year": 1552,
+      "date": null,
+      "hijri": "959",
+      "type": "removal",
+      "title": {
+        "tr": "Enkazın satılması yönünde fetva verildi; mermerler satıldı (H. 959 / M. 1552)",
+        "en": "Fatwa issued to sell the ruins; marbles sold (AH 959 / AD 1552)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "id": "su-kesildi-1571",
+      "year": 1571,
+      "date": null,
+      "hijri": "979",
+      "type": "record",
+      "title": {
+        "tr": "Mütevellilerin suyu satması nedeniyle su kaynağı kesildi (H. 979 / M. 1571)",
+        "en": "Water supply cut as trustees sold the water (AH 979 / AD 1571)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım geçirdi",
+        "en": "Underwent extensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son olarak restore edildi",
+        "en": "Last restored"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "222"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-timurtas-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamam Timurtaş Paşa Külliyesi'nin parçasıdır.",
+        "en": "The bath is part of the Timurtaş Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215, 220"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-demirtas-camii",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Hamam Timurtaşpaşa Camii'ne vakfedilmiştir.",
+        "en": "The bath was endowed to the Timurtaş Paşa Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamamın girişi kuzeydedir. Doğu-batı eksenli dikdörtgen planlıdır; giriş kavsarası yedi sıra stalaktitlidir. Kubbeli soğukluktan doğudaki kapıyla ılıklığa, kemerli bir geçitle göbek taşlı sıcaklığa geçilir. Külhan yapının doğu tarafındadır.",
+      "en": "The bath is entered from the north. It has a rectangular plan on an east-west axis, and the entrance hood has seven rows of stalactites. From the domed frigidarium a door to the east leads to the tepidarium, and an arched passage to the caldarium with its central hot slab. The furnace is on the east side."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

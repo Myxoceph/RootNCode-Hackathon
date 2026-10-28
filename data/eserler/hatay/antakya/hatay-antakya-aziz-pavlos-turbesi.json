@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-aziz-pavlos-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Türbenin ilk yapım tarihi ve banîsi kitapta yok.",
+      "Metinde 'Yahya Peygamber' (Türkçe) ve 'Prophet John' (İngilizce) kullanılırken s. 59'da elçi olarak 'Yuhanna' anılıyor; kişilerin aynı olup olmadığı kitapta belirtilmiyor.",
+      "Kitaba göre Aziz Pavlos mezarı s. 59'da 'cami içinde' anılıyor, s. 70'te ise doğu girişinin güneyinde ayrı bir yapı olarak anlatılıyor; netleştirilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "legends",
+        "note": "S. 59 elçilerin (Yuhanna, Pavlos, Şem'un Safa) mezarlarının cami içinde olduğuna inanıldığını söyler; s. 70 ise Pavlos ve Yahya Peygamber'e atfedilen iki sandukayı külliyenin doğu girişinin yanındaki ayrı türbede gösterir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Aziz Pavlos'un Türbesi",
+    "en": "Tomb of St. Paul"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+  "era": null,
+  "tags": [
+    "türbe",
+    "antakya",
+    "pavlos",
+    "sanduka"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "70"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.201547,
+      "lng": 36.165527,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (hatay-antakya-habib-i-neccar-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Külliyenin doğu girişinin hemen güneyindeki, dikdörtgen planlı ve aynalı tonozlu türbe. İçindeki iki sandukadan birinin Yahya Peygamber'e, ötekinin Paulos'a ait olduğuna inanılır.",
+    "en": "The rectangular, mirrored-vault tomb just south of the complex's eastern entrance. Of its two sarcophagi, one is believed to belong to Prophet John and the other to Paul."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Külliyenin doğu girişinin hemen güneyinde, dikdörtgen alan üzerine kurulu türbenin içinde yan yana iki sanduka bulunur. Dikdörtgen planlı alanın aynalı tonozla örtülü olması dikkat çeken bir uygulamadır. Türbenin ilk inşasına dair net bilgi yoktur; sandukaların konumuna bakıldığında İslam inançları esas alınarak yerleştirildikleri fark edilmektedir.",
+        "en": "Just south of the eastern entrance of the complex, the tomb on a rectangular plan holds two sarcophagi side by side. The rectangular area is covered with a mirrored vault. There is no clear information about the first construction; the sarcophagi's placement suggests they were placed on the basis of Islamic beliefs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "70"
+        }
+      ],
+      "order": 1
+    }
+  ],
+  "legends": [
+    {
+      "id": "sandukalarin-sahipleri",
+      "title": {
+        "tr": "Sandukaların sahipleri",
+        "en": "Owners of the sarcophagi"
+      },
+      "body": {
+        "tr": "İki sandukadan birinin Yahya Peygamber'e, diğerinin Paulos'a ait olduğuna inanılmaktadır. Kitap bunu inanç olarak aktarır.",
+        "en": "One sarcophagus is believed to belong to Prophet John and the other to Paul. The book reports this as belief."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "70"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "70"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Cover"
+      },
+      "value": "Aynalı tonoz",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "70"
+        }
+      ],
+      "note": {
+        "tr": "Aynalı tonoz",
+        "en": "Mirrored vault"
+      }
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Habib-i Neccar Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Habib-i Neccar Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, külliyenin doğu girişinin hemen güneyindedir ve dikdörtgen planlıdır. Aynalı bir tonozla örtülüdür. İçinde yan yana iki sanduka durur.",
+      "en": "The tomb is just south of the complex's eastern entrance, on a rectangular plan, covered with a mirrored vault. Two sarcophagi stand side by side inside."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Habib-i Neccar Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p036-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "70"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin bulunduğu giriş ve kapı",
+        "en": "The entrance passage and the tomb door"
+      },
+      "alt": {
+        "tr": "Kesme taş bir cephede solda tonozlu bir geçit, sağda kemerli ahşap bir kapı ve yanında küçük bir tabela; duvarda boş bir taş pano.",
+        "en": "A cut-stone façade with a vaulted passage on the left and an arched wooden door with a small sign beside it on the right; an empty stone panel on the wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p036-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "71"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbe içindeki sanduka",
+        "en": "The cenotaph inside the tomb"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı küçük bir oda; kırmızı halı üzerinde ahşap parmaklıkla çevrili, başlık taşlı bir sanduka ve yanında bilgi panosu; arkada taş duvarda küçük bir pencere.",
+        "en": "A small white-walled room; a cenotaph with headstones, enclosed by a wooden railing, on a red carpet, with an information board beside it; a small window in the stone wall behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

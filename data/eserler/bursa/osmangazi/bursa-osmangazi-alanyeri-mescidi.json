@@ -1,0 +1,320 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-alanyeri-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 249) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi kesin değil (Fatih dönemi tahmini); yıl ve dönem kitapta verilmiyor.",
+      "Banî bilinmiyor.",
+      "Haziresinin bugünkü durumu kitapta belirtilmiyor ('bir zamanlar' denmiş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "era",
+        "note": "'erken-osmanli' dönem kodu Fatih dönemi tahminine dayanılarak ekip tarafından atandı; kitap dönem etiketi vermiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Alanyeri Mescidi",
+    "en": "Alanyeri Masjid"
+  },
+  "subtitle": {
+    "tr": "Ayrık minareli, Akçeli Bekir Vakfı'ndan intikal eden küçük mescit",
+    "en": "Small masjid with a detached minaret, inherited from the Akçeli Bekir Foundation"
+  },
+  "alternate_names": [
+    {
+      "tr": "Tekke Mescit",
+      "en": "Tekke Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mescit",
+    "Akçeli Bekir Vakfı",
+    "ayrık minare"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tuzpazarı",
+    "address": "Tuzpazarı Mahallesi, Tekkeciler Çıkmazı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "249"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Fatih Sultan Mehmed dönemi (tahmini)",
+      "en": "Reign of Fâtih Sultan Mehmed (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapının Fatih Sultan Mehmed döneminde inşa edildiğini 'düşünülmektedir' diyerek verir.",
+      "en": "The book says the building is thought to have been built in the reign of Fâtih Sultan Mehmed."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "249"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Bilinmiyor",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "249"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Akçeli Bekir Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakıf kayıtlarına göre yapı Akçeli Bekir Vakfı'ndan intikal etmiştir.",
+      "en": "According to foundation records the structure was inherited from the Akçeli Bekir Foundation."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "249"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Fatih Sultan Mehmed döneminde inşa edildiği düşünülen, 'Tekke Mescit' adıyla da anılan, son cemaat yeri olmayan, ayrık minareli mescit. Eskiden haziresi vardı.",
+    "en": "A masjid thought to date from the reign of Fâtih Sultan Mehmed, also called 'Tekke Masjid', with no narthex and a detached minaret. It once had a graveyard."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Plan",
+        "en": "Structure and Plan"
+      },
+      "body": {
+        "tr": "Son cemaat yeri bulunmayan mescidin güneybatı kısmı evlerin arasında kalmıştır. Ahşap çatı kiremitle kaplıdır; beden duvarları moloz taşla örülmüş ve iki sıra kirpi saçakla tamamlanmıştır. Batıya açılan bir kapıdan girilir. Ahşap tavanlı ana mekân altlı üstlü on altı pencereyle aydınlanır; mihrap sade bir niştir, pencerelerde demir parmaklık vardır.",
+        "en": "The southwestern part of the masjid, which has no narthex, is hemmed in by houses. The wooden roof is tile-covered; the walls are rubble stone with a two-row sawtooth cornice. It is entered through a door opening west. The wooden-ceilinged main space is lit by sixteen windows, upper and lower; the mihrab is a simple niche and the windows have iron bars."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 2,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare ana yapıdan ayrı olarak güneybatıda yer alır. Kaide kısmı orijinaldir ve moloz taş ile tuğladan örülmüştür.",
+        "en": "The minaret stands southwest, separate from the main building. Its base is original, built of rubble stone and brick."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 3,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Banisi bilinmemektedir; vakıf kayıtlarına göre yapı Akçeli Bekir Vakfı'ndan intikal etmiştir. Zaman içinde çeşitli onarımlar geçirmiş, günümüzde ibadete açıktır.",
+        "en": "Its founder is unknown; foundation records show it passed from the Akçeli Bekir Foundation. It has been repaired several times and is open for worship today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Bir zamanlar haziresi olduğu bilinmektedir. Kayıtlara göre buraya Muallim Ali Efendi, Acem Abdülgani Efendi ve Süleyman Baba gibi şahıslar defnedilmiştir.",
+        "en": "It is known to have once had a graveyard. According to records, persons such as Muallim Ali Efendi, Acem Abdülgani Efendi and Süleyman Baba were buried here."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "249"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Window count"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat",
+      "label": {
+        "tr": "Son cemaat yeri",
+        "en": "Narthex"
+      },
+      "value": "Yok",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "249"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Muallim Ali Efendi",
+      "role": {
+        "tr": "Haziresine defnedilen",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Acem Abdülgani Efendi",
+      "role": {
+        "tr": "Haziresine defnedilen",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Süleyman Baba",
+      "role": {
+        "tr": "Haziresine defnedilen",
+        "en": "Buried in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "minare",
+      "title": {
+        "tr": "Ayrık minare",
+        "en": "Detached minaret"
+      },
+      "hint": {
+        "tr": "Minare ana yapıdan ayrıdır; özgün moloz taş ve tuğla kaideyi arayın.",
+        "en": "The minaret is separate from the building; look for the original rubble-stone and brick base."
+      },
+      "section_id": "minare"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Küçük bir mescittir; son cemaat yeri yoktur ve güneybatısı evler arasında kalmıştır. Moloz taş duvarlar iki sıra kirpi saçakla biter, kiremitli ahşap çatıyla örtülüdür. Minare ana yapıdan ayrı, güneybatıdadır.",
+      "en": "A small masjid with no narthex, its southwest side among houses. The rubble stone walls end in a two-row sawtooth cornice under a tiled wooden roof. The minaret is separate, to the southwest."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-alanyeri-mescidi/p026-1.jpg",
+        "original_name": "01-3.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "249"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Mescit, avlusu ve minaresi",
+        "en": "Masjid, its yard and minaret"
+      },
+      "alt": {
+        "tr": "Yüksekten bakıldığında kırmızı kiremitli, geniş saçaklı mescit ile yanındaki tuğla minare ve ahşap külahı görünür. Çevresinde apartmanlar ve evler, uzakta dağ vardır.",
+        "en": "From above, the red-tiled masjid with wide eaves and a brick minaret with a wooden cap beside it. Apartment buildings and houses surround it, with a mountain in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-08"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,553 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-fidan-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Ticari Yapılar",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 633-635) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
+      "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
+      "Hanın kim tarafından ve ne zaman inşa edildiği kitapta belirtilmiyor; 'dating' null bırakıldı, 'founder' yalnızca vakfeden olarak (probable) yazıldı.",
+      "Adres ve mahalle kitapta yok (yalnızca 'Uzun Çarşı').",
+      "İlişki hedefi 'istanbul-mahmutpasa-kulliyesi': İstanbul ilçesi kitapta yok; id kuralı (il-ilçe-ad) gereği ilçe eklenmeli. İstanbul enums.json 'cities' listesinde de yok.",
+      "Kitapta İngilizce/Türkçe çelişki yok; 'İç Fidan Han' ayrı kayıt yapılmadı, bölüm olarak eklendi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap hanı kimin yaptırdığını söylemez; yalnızca Mahmud Paşa'nın gelir amacıyla vakfettiğini belirtir. 'founder' bu nedenle 'probable' ve rol 'vâkıf' olarak yazıldı."
+      },
+      {
+        "field": "sections[avlular]",
+        "note": "İkinci avludaki ahır/seyis odası/mahzen bilgisi kitapta 'tahmin edilmektedir' diye geçer; bölüm 'probable' işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "Kitap başlığında 'Mahmutpaşa' ile 'Mahmud Paşa' yazımları karışık kullanılıyor; kaynaktaki yazımlar korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Fidan Hanı",
+    "en": "Fidan Han"
+  },
+  "subtitle": {
+    "tr": "Uzun Çarşı'da, Mahmud Paşa'nın İstanbul külliyesine vakfedilmiş han",
+    "en": "A han in the Uzun Bazaar endowed to Mahmud Paşa's complex in Istanbul"
+  },
+  "alternate_names": [
+    {
+      "tr": "Saman Pazarı Hanı",
+      "en": "Saman (Straw) Market Han"
+    },
+    {
+      "tr": "Mahmud Paşa Hanı",
+      "en": "Mahmud Paşa Han"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "han",
+    "Uzun Çarşı",
+    "Mahmud Paşa",
+    "iki avlulu",
+    "mescit",
+    "şadırvan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "633"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185142,
+      "lng": 29.064113,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap relation/2368801 ('Fidan Han'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Mahmud Paşa (Fâtih Sultan Mehmed'in sadrazamı)",
+    "role": "vâkıf",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "633"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "633-635"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Mahmutpaşa Külliyesi vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "633"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Bursa Çarşısı ve Hanlar Bölgesi'nde, Uzun Çarşı'da yer alan, iki katlı ve sivri kemerli revaklarla çevrili büyük bir han. Gelirleri Fâtih'in sadrazamı Mahmud Paşa'nın İstanbul'daki külliyesine vakfedilmiştir; avlusunda on iki köşeli şadırvan üzerinde yükselen bir mescit vardır.",
+    "en": "A large two-storey han with pointed-arched arcades in the Uzun Bazaar of Bursa. Its income was endowed to the Istanbul complex of Mahmud Paşa, grand vizier of Fâtih Sultan Mehmed; its courtyard holds a masjid raised over a twelve-sided shadirvan."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Adlar",
+        "en": "Overview and Names"
+      },
+      "body": {
+        "tr": "Fidan Hanı, Bursa Çarşısı ve Hanlar Bölgesi'nde, Uzun Çarşı'da yer alır. İçinde fidan satışı yapıldığı için bu adı almıştır; bulunduğu bölgede bir dönem saman satıldığı için \"Saman Pazarı Hanı\" olarak da anılmıştır. Fâtih Sultan Mehmed'in sadrazamı Mahmut Paşa'nın 1463'te İstanbul'da yaptırdığı Mahmutpaşa Külliyesi'ne gelir getirmesi için vakfedildiğinden \"Mahmud Paşa Hanı\" adıyla da bilinir.",
+        "en": "The Fidan Han lies in the Uzun Bazaar within the Bursa Bazaar and Hans Area. It is named for the saplings (fidan) sold there, and is also known as the \"Saman (Straw) Market Han\" because straw was sold in the area for a while. It is also called the \"Mahmud Paşa Han\" because it was endowed to provide income to the Mahmutpaşa Complex built in Istanbul in 1463 by Mahmut Paşa, grand vizier of Fâtih Sultan Mehmed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "633"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 2,
+      "title": {
+        "tr": "Mahmud Paşa ve Vakıf Gelirleri",
+        "en": "Mahmud Paşa and the Endowment"
+      },
+      "body": {
+        "tr": "Mahmud Paşa İstanbul'da cami, medrese, mektep ve kütüphane gibi yapılar inşa ettirmiş; bunların giderleri için Fidan Hanı ve çevresindeki dükkânlar başta olmak üzere İstanbul ve Ankara'da çok sayıda emlak gelirini vakfetmiştir. Paşa'nın bugünkü Bulgaristan sınırları içinde de hayır eserleri vardır.",
+        "en": "Mahmud Paşa had mosques, madrasas, schools and libraries built in Istanbul and endowed the income of many properties in Istanbul and Ankara, especially the Fidan Han and the shops around it, to cover their expenses. The Paşa also had charitable works in regions within the borders of today's Bulgaria."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "633"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-malzeme",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Yapım Tekniği",
+        "en": "Plan and Construction"
+      },
+      "body": {
+        "tr": "Bursa hanlarının büyüklerinden biri olan Fidan Hanı kareye yakın dikdörtgen planlıdır; yapımında iki sıra tuğla ve bir sıra küfeki taşı kullanılmıştır. Bursa şehir içi hanları gibi iki katlıdır, katların çevresi revaklarla kuşatılmış, ortada geniş bir avlu bırakılmıştır. Avluda bir mescit ve anıt niteliğinde ağaçlar bulunur. Hanın revakları sivri kemerlidir; alt kat revakları tonoz, üst kat revakları kubbe ile örtülüdür. Üst kata girişin doğu ve batısındaki merdivenlerle çıkılır.",
+        "en": "The Fidan Han, one of the largest of Bursa's hans, has a near-square rectangular plan built with two rows of brick and one row of limestone. It has two storeys surrounded by arcades around a large courtyard, in which stand a masjid and monumental trees. The arcades have pointed arches; the lower arcades are vaulted and the upper ones domed. The upper floor is reached by stairs on the east and west sides of the entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "634-635"
+        }
+      ]
+    },
+    {
+      "id": "avlular",
+      "order": 4,
+      "title": {
+        "tr": "İki Avlu ve İç Fidan Han",
+        "en": "Two Courtyards and the Inner Fidan Han"
+      },
+      "body": {
+        "tr": "Çoğu Bursa hanından farklı olarak han başlangıçta iki avluluydu. İlk evrede, Koza Hanı'nda olduğu gibi birinci avludan ikinciye doğrudan geçilebiliyordu; sonra kemer ayakları tahrip edilmiş, kapılar geçit genişliğine çıkarılmıştır. İkinci avluda geçmişte ahırlar, seyis odaları ve eşya mahzenlerinin bulunduğu tahmin edilir; \"İç Fidan Han\" denen bu bölüm tek katlıydı, bugün eski yapılar kalkmış ve yerlerine modern dükkânlar yapılmıştır. Birinci avluda hücreler, mahzenler ve on iki köşeli bir şadırvanın üzerinde yükselen mescit bulunur; alt katta 48, üst katta 50 oda vardır.",
+        "en": "Unlike most Bursa hans, it initially had two courtyards; at first a direct passage led from the first to the second, as in the Koza Han, but later the arch piers were destroyed and the doors widened. The second courtyard, called the \"Inner Fidan Han\", is thought to have held stables, grooms' rooms and storerooms; today modern shops stand in its place. The first courtyard contains cells, cellars and a masjid rising on a twelve-sided shadirvan; there are 48 rooms on the lower and 50 on the upper floor."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "634-635"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar-ve-bugun",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar ve Bugünkü Kullanım",
+        "en": "Repairs and Present Use"
+      },
+      "body": {
+        "tr": "Han 1561, 1603, 1656 ve 1760'ta onarılmış; 1855 depremi ve 1958 Çarşı Yangı'nında ağır hasar görmüş, 1965'te Bursa Eski Eserleri Sevenler Kurumu tarafından onarılmıştır. Bugün handa 105 dükkân vardır ve ağırlıklı olarak tekstil esnafınca kullanılır; avluda çay bahçeleri ve lokantalar yer alır.",
+        "en": "The han was repaired in 1561, 1603, 1656 and 1760; it was heavily damaged in the 1855 earthquake and the 1958 Bazaar Fire and restored in 1965 by the Bursa Association for the Appreciation of Antiquities. Today it has 105 shops, used mainly by textile tradesmen, with tea gardens and restaurants in the courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "635"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "634"
+        }
+      ]
+    },
+    {
+      "key": "avlu_sayisi",
+      "label": {
+        "tr": "Avlu sayısı (başlangıçta)",
+        "en": "Courtyards (originally)"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "634"
+        }
+      ]
+    },
+    {
+      "key": "oda_alt_kat",
+      "label": {
+        "tr": "Birinci avlu alt kat oda sayısı",
+        "en": "Rooms on lower floor (first courtyard)"
+      },
+      "value": 48,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "634"
+        }
+      ]
+    },
+    {
+      "key": "oda_ust_kat",
+      "label": {
+        "tr": "Birinci avlu üst kat oda sayısı",
+        "en": "Rooms on upper floor (first courtyard)"
+      },
+      "value": 50,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "634"
+        }
+      ]
+    },
+    {
+      "key": "dukkan_sayisi",
+      "label": {
+        "tr": "Günümüzde dükkân sayısı",
+        "en": "Shops today"
+      },
+      "value": 105,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "635"
+        }
+      ]
+    },
+    {
+      "key": "sadirvan_kose",
+      "label": {
+        "tr": "Şadırvan köşe sayısı",
+        "en": "Shadirvan corners"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "634"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mahmud Paşa",
+      "role": {
+        "tr": "Fâtih Sultan Mehmed'in sadrazamı; vakıf sahibi",
+        "en": "Grand vizier of Fâtih Sultan Mehmed; endower"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1561",
+      "year": 1561,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "635"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1603",
+      "year": 1603,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "635"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1656",
+      "year": 1656,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "635"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1760",
+      "year": 1760,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "635"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük depremde ağır hasar",
+        "en": "Heavily damaged in the great earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "635"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Çarşı Yangını'nda ağır hasar",
+        "en": "Heavily damaged in the Bazaar Fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "635"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1965",
+      "year": 1965,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından onarıldı",
+        "en": "Restored by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "635"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "istanbul-mahmutpasa-kulliyesi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Han ve çevresindeki dükkânların geliri Mahmud Paşa'nın İstanbul'daki külliyesinin giderlerine vakfedilmiştir.",
+        "en": "The income of the han and nearby shops was endowed to cover the expenses of Mahmud Paşa's complex in Istanbul."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "633"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-koza-hani",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kitap, ilk evrede iki avlu arasındaki geçişi Koza Hanı'ndaki düzenle karşılaştırır.",
+        "en": "The book compares the original passage between the two courtyards to that of the Koza Han."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "634"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Fidan Hanı, Uzun Çarşı'da, tuğla ve küfeki taşı sıralarıyla örülmüş, kareye yakın planlı iki katlı bir handır. Ortadaki geniş avluyu sivri kemerli revaklar çevreler; alt katta tonozlu, üstte kubbeli revaklar sıralanır. Avlunun ortasında on iki köşeli bir şadırvanın üzerinde bir mescit yükselir; avluda anıt ağaçlar, çay bahçeleri ve lokantalar bulunur. Üst kata girişin iki yanındaki merdivenlerle çıkılır.",
+      "en": "The Fidan Han is a near-square, two-storey han built of alternating brick and limestone courses. Pointed-arched arcades surround a large central courtyard, vaulted below and domed above. In the middle rises a masjid on a twelve-sided shadirvan, with monumental trees, tea gardens and restaurants around it. Stairs on either side of the entrance lead to the upper floor."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-fidan-hani/p006-1.jpg",
+        "original_name": "ERD02386 kopya.tif",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "635"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avludaki ağaçlar ve köşkvari mescit",
+        "en": "Trees and the small domed pavilion in the courtyard"
+      },
+      "alt": {
+        "tr": "Çıplak ağaç dallarının arasından yeşil çimenli bir avlu görünür. Ortada çok köşeli, kurşun kaplı çatılı küçük bir yapı var; çevresinde kırmızı şemsiyeler ve masalar yer alır.",
+        "en": "A grassy courtyard seen through bare tree branches. A small polygonal building with a lead-covered roof stands in the middle, surrounded by red umbrellas and tables."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

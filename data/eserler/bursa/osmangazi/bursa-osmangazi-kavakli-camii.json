@@ -1,0 +1,562 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-kavakli-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Koca Nâib'in Muradiye'de yaptırdığı cami için hedef kayıt belirtilmedi (kitap adını vermiyor).",
+      "Koca Nâib'in türbesinin şimdiki yeri kitapta yok.",
+      "Hisar kapısı içindeki iki vakıf dükkânı kayboldu; vakıf adı/vakfiye kitapta yok.",
+      "Ayetü'l-kürsî ve esmâ-i hüsna yazılarının metni kitapta verilmiyor; transliterasyon eklenmeli.",
+      "Minaresi için '1890 tuğla' ve 'çift bilezikli' ayrıntıları kitaptan; ölçü verilmiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Türkçe metin Koca Nâib'i Devlet Hatun'un 'dünür başı' olarak verir; İngilizce metin 'nephew of Devlet Hatun' (yeğeni) der. Ayrıca Türkçe metin Yıldırım Bayezid'in eşi Devlet Hatun'dan söz ederken Koca Nâib'i I. Murad dönemi kadısı olarak anar; zamanlar arası ilişki kitapta açıklanmıyor."
+      },
+      {
+        "field": "founder",
+        "note": "Kavaklı Camii bölümü Koca Nâib'in 1329'da kazasker olduğunu söyler; Koca Naip Camii bölümü (s. 382) aynı kişinin 1360'ta Çandarlı Kara Halil yerine kadı nâibi olduğunu söyler. İki ifade kitapta uzlaştırılmıyor."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "İngilizce metinde 'The tomb of Koca Naib, who died in 1372, was located in Pınarbaşı Square' ifadesi Türkçedeki 'Pınarbaşı Meydanı'nda ve Mevlevîhane'nin karşısındayken günümüzde mevcut yerinde değildir' ile aynı anlamdadır; Koca Naip Camii bölümü ise türbeyi 'Pınarbaşı Caddesi'nde, Mevlevihane karşısında' diye anar."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kavaklı Camii",
+    "en": "Kavaklı Mosque"
+  },
+  "subtitle": {
+    "tr": "Kadı Koca Nâib'in 1370'te yaptırdığı, yeniden inşa edilmiş cami",
+    "en": "Mosque built in 1370 by the qadi Koca Nâib, rebuilt after a fire"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tek kubbeli",
+    "Koca Nâib",
+    "Kütahya çinisi",
+    "ahşap çatılı son cemaat",
+    "kurşun kubbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kavaklı",
+    "address": "Kavaklı Caddesi, No. 19",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "371"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.184204,
+      "lng": 29.057326,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/407490660 ('Kavaklı Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1370 (kayıtlardan çıkarım)",
+      "en": "1370 (inferred from the records)"
+    },
+    "start_year": 1370,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kayıtlardaki 'Merhum Koca Efendi'nin bina ve ihya buyurdukları mescit' ibaresinden 1370'te inşa ettirildiği anlaşılmaktadır.",
+      "en": "The year 1370 is understood from the record phrase 'the mosque built and revived by the late Koca Efendi'."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "371"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Koca Nâib",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "371"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Hisar kapısı içinde camiye ait iki vakıf dükkânı bulunuyordu; diğer vakıf dükkânları gibi kaybolmuştur. Kitap Koca Nâib'in Muradiye'de de bir cami yaptırıp vakıflar kurduğunu belirtir.",
+      "en": "The mosque owned two foundation shops inside the fortress gate; they have disappeared like the other foundation shops. The book also notes that Koca Nâib built a mosque in Muradiye and established foundations."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "371, 373"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "I. Murad Hudâvendigâr dönemi Bursa kadısı Koca Nâib'in 1370'te yaptırdığı anlaşılan, adını Geyikli Baba'nın dikmiş olduğu kavak ağacından alan cami. 1598 yangınından sonra yeniden inşa edilmiş, minaresi 1890'da tuğla olarak yenilenmiş, 1989 onarımında kubbe içi 14. yüzyıl üslubuna uygun yenilenip mihrap ve duvarlar Kütahya çinileriyle kaplanmıştır.",
+    "en": "A mosque understood to have been built in 1370 by Koca Nâib, Bursa qadi under Murad I Hudâvendigâr, named after a poplar tree planted by Geyikli Baba. Rebuilt after a fire in 1598, its minaret was renewed in brick in 1890; in the 1989 repairs the dome interior was redecorated in 14th-century style and the mihrab and walls were covered with Kütahya tiles."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banisi",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Kavaklı Mahallesi, Kavaklı Caddesi, No. 19'da yer alır. Kayıtlardaki \"Kavaklı Mahallesi'nde Merhum Koca Efendi'nin bina ve ihya buyurdukları mescit\" ibaresinden, 1370 yılında I. Murad Hudâvendigâr devrinin Bursa kadısı Koca Nâib tarafından inşa ettirildiği anlaşılmaktadır. Yapı, Geyikli Baba'nın caminin önüne dikmiş olduğu ağaca telmihle Kavaklı adıyla anılır. Koca Nâib, Yıldırım Bayezid'in eşi Devlet Hatun'un dünür başıdır; 1329'da kazasker olmuş, Muradiye'de de bir cami yaptırıp vakıflar kurmuştur. 1372'de vefat eden Koca Nâib'in türbesi, Pınarbaşı Meydanı'nda Mevlevîhane'nin karşısındayken bugün mevcut yerinde değildir.",
+        "en": "The mosque is in Osmangazi District, Kavaklı Neighborhood, Kavaklı Street, No. 19. From the record phrase \"the mosque built and revived by the late Koca Efendi in Kavaklı District\" it is understood to have been built in 1370 by Koca Naib, Qadi of Bursa under Murad I Hudâvendigâr. The building is called Kavaklı after the poplar (kavak) planted in front of it by Geyikli Baba. Koca Naib became kazasker in 1329, also had a mosque built in Muradiye and established foundations. His tomb (he died in 1372) stood in Pınarbaşı Square opposite the Mevlevi Lodge but is no longer at its former place."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "371"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami, yerden üç metre yüksekliğe kadar moloz taş ve tuğlayla işlenen duvarlara sahiptir; sonrasında bir sıra kesme taş ve bir sıra tuğla, daha yukarıda üç sıra tuğla kullanılmıştır. Kuzeybatı köşede beden duvarı üzerinden yükselen minare mütevazıdır; tuğla silindirik gövdeli, çift bilezikli, şerefe altı mukarnas dolguludur, külahı kurşun kaplıdır ve çatı üstünden yükselen nadir örneklerden biridir. Son cemaat yeriyle dıştan 15 × 10,5 m olan caminin 8,85 × 8,85 m boyutlarındaki harim kubbesi Türk üçgenleri üzerine oturur ve kurşun kaplıdır. Batıda yer alan beş gözlü, sivri kemerli son cemaat yeri revakı ahşap çatılı ve kiremit örtülüdür; kapı kuzeyden değil batı yan cepheden açılır. Aydınlatma, doğu ve batı duvarlarında demir parmaklıklı dört, kasnakta üç olmak üzere yedi pencereyle sağlanır.",
+        "en": "The mosque has walls of rubble stone and brick up to three metres above the ground, then one row of cut stone and one of brick, and higher up three rows of brick. The minaret rising above the main wall in the northwest corner is modest, with a cylindrical brick shaft, two bands and muqarnas filling under the balcony, and a lead-covered spire; it is one of the rare minarets rising from the roof. The external size including the narthex is 15 × 10.5 m; the lead-covered prayer hall dome (8.85 × 8.85 m) rests on Turkish triangles. Unusually, the five-bay pointed-arch narthex portico lies on the west side, has a tiled wooden roof, and the door opens from the west side rather than the north. Seven windows light the building: four with iron grilles on the east and west walls and three in the drum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "371-372"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Çeşitli dönemlerde tamir gören cami, 1598'de yandıktan sonra yeniden inşa edilerek ihya edilmiştir. Önceleri ahşap olan minaresi 1890'da tuğla olarak yenilenmiştir. Uzun süre kapalı kalan cami, 1970'li yıllarda mahalle halkının desteğiyle hemen her bölümünün bakımı yapılarak ibadete açılmıştır. 1989'daki tamirlerde kubbe içi tezyinatı Mimar M. Semih İrteş tarafından 14. yüzyıl dinî mimari tarzına uygun olarak yenilenmiş, mihrap ve duvarlar Kütahya çinileriyle kaplanmıştır. Minber ahşaptır ve oldukça sadedir.",
+        "en": "The mosque, repaired in various periods, was rebuilt after burning in 1598. Its previously wooden minaret was renewed in brick in 1890. Closed for a long time, it was reopened for worship in the 1970s with the support of local people, with almost every part maintained. In the 1989 repairs the dome interior decoration was renewed by architect M. Semih İrteş in the style of 14th-century religious architecture, and the mihrab and walls were covered with Kütahya tiles. The minbar is wooden and very plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "372-373"
+        }
+      ]
+    },
+    {
+      "id": "suslemeler",
+      "order": 4,
+      "title": {
+        "tr": "Mihrap ve Kubbe Süslemeleri",
+        "en": "Mihrab and Dome Decoration"
+      },
+      "body": {
+        "tr": "Çini kaplamalı mihrapta lacivert zemin üzerine beyaz celi sülüs yazıyla Bakara suresinin 149. ayeti yazılıdır. Mihrabı üç taraftan dolanan yazı kuşağında Âyetü'l-kürsî bulunur. Kubbe eteğindeki kuşakta kûfî hatla esmâ-i hüsna sıralanmış, üzerinde kalem işi yarım şemseli salbek motifleri, Türk üçgenlerinde de rozetler ve yarım şemseler işlenmiştir.",
+        "en": "On the tile-covered mihrab the 149th verse of Surah Al-Baqara is written in white jeli thuluth on a dark blue ground. The band surrounding the mihrab on three sides carries Ayat al-Kursi. On the band at the foot of the dome the Asma'ul-Husna are lined up in Kufic calligraphy; above them are hand-painted half-shamsa 'salbek' motifs, and rosettes and half-shamsas are worked inside the Turkish triangles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "373"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Dış ölçüler (son cemaat yeri dahil)",
+        "en": "External size (including narthex)"
+      },
+      "value": "15 × 10,5",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "372"
+        }
+      ]
+    },
+    {
+      "key": "harim_kubbe_olcu",
+      "label": {
+        "tr": "Harim kubbesi ölçüsü",
+        "en": "Prayer hall dome size"
+      },
+      "value": "8,85 × 8,85",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "372"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "372"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total windows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "372"
+        }
+      ]
+    },
+    {
+      "key": "duvar_taban_yuksekligi",
+      "label": {
+        "tr": "Moloz taş-tuğla duvar yüksekliği",
+        "en": "Height of rubble stone and brick wall"
+      },
+      "value": 3,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "371"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Koca Nâib",
+      "role": {
+        "tr": "Banî; I. Murad döneminde Bursa kadısı (v. 1372)",
+        "en": "Founder; qadi of Bursa under Murad I (d. 1372)"
+      }
+    },
+    {
+      "name": "Geyikli Baba",
+      "role": {
+        "tr": "Caminin önüne kavak ağacı diken kişi",
+        "en": "Person who planted the poplar in front of the mosque"
+      }
+    },
+    {
+      "name": "Mimar M. Semih İrteş",
+      "role": {
+        "tr": "1989 onarımında kubbe içi tezyinatını yenileyen mimar",
+        "en": "Architect who renewed the dome interior decoration in the 1989 repairs"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mihrap-bakara-149",
+      "location": {
+        "tr": "Çini kaplı mihrap",
+        "en": "Tile-covered mihrab"
+      },
+      "language": "ar",
+      "script": "celi sülüs",
+      "transliteration": "Fevelli vecheke şatra’l-Mescidi’l-Harâm",
+      "translation": {
+        "tr": "Öyleyse yüzünü Mescid-i Harâm’a çevir.",
+        "en": "So turn your face towards the Masjid al-Haram"
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Bakara suresi 149. ayet; lacivert zemin üzerine beyaz renk.",
+        "en": "Surah Al-Baqara, verse 149; white on a dark blue ground."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "373"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-ayetel-kursi",
+      "location": {
+        "tr": "Mihrabı üç taraftan dolanan yazı kuşağı",
+        "en": "Inscription band around three sides of the mihrab"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Bakara suresi 255. ayet (Âyetü'l-kürsî); kitap metni vermiyor.",
+        "en": "Surah Al-Baqara, verse 255 (Ayat al-Kursi); the book does not give the text."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "373"
+        }
+      ]
+    },
+    {
+      "id": "kubbe-esma-i-husna",
+      "location": {
+        "tr": "Kubbe eteğindeki kuşak",
+        "en": "Band at the foot of the dome"
+      },
+      "language": "ar",
+      "script": "kûfî",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Esmâ-i hüsna sıralanmıştır; kitap metni vermiyor.",
+        "en": "The Asma'ul-Husna are lined up; the book does not give the text."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "373"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1370",
+      "year": 1370,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Koca Nâib tarafından inşa ettirildiği anlaşılmaktadır",
+        "en": "Understood to have been built by Koca Nâib"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "371"
+        }
+      ]
+    },
+    {
+      "id": "koca-naib-vefat-1372",
+      "year": 1372,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Koca Nâib vefat etti",
+        "en": "Koca Nâib died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "371"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1598",
+      "year": 1598,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Cami yandı; yeniden inşa edilerek ihya edildi",
+        "en": "The mosque burned and was rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "373"
+        }
+      ]
+    },
+    {
+      "id": "minare-1890",
+      "year": 1890,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Ahşap minare tuğla olarak yenilendi",
+        "en": "The wooden minaret was renewed in brick"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "373"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1989",
+      "year": 1989,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kubbe içi tezyinatı yenilendi, mihrap ve duvarlar Kütahya çinisiyle kaplandı",
+        "en": "Dome interior renewed; mihrab and walls covered with Kütahya tiles"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "373"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kavaklı Camii, Kavaklı Mahallesi'nde tek kubbeli bir yapıdır. Kubbe kurşunla kaplıdır. Beş gözlü, sivri kemerli son cemaat yeri caminin batısındadır; ahşap çatılı ve kiremitle örtülüdür, kapı batı yan cepheden açılır. Kuzeybatı köşede çatının üstünden yükselen, tuğla gövdeli, kurşun külahlı bir minare vardır. İçeride mihrap ve duvarlar Kütahya çinileriyle kaplıdır.",
+      "en": "Kavaklı Mosque in Kavaklı Neighborhood is a single-domed building with a lead-covered dome. The five-bay pointed-arch narthex lies on the west side of the mosque, with a tiled wooden roof; the door opens from the west side. In the northwest corner a brick-shafted minaret with a lead spire rises above the roof. Inside, the mihrab and walls are covered with Kütahya tiles."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kavakli-camii/p104-2.jpg",
+        "original_name": "ERD03098-Geliştirilmiş-NR kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "373"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe içi ve avize",
+        "en": "Inside the dome with chandelier"
+      },
+      "alt": {
+        "tr": "Kalem işi süslü kubbenin içinde, merkezde büyük bir avize, çevresinde ışınsal bezeme ve yazı kuşağı bulunuyor. Kenarlarda madalyonlar ve vitraylı pencereler görünüyor.",
+        "en": "The painted inside of the dome with a large chandelier at the centre, radiating ornament and a ring of script. Medallions and stained-glass windows appear at the edges."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kavakli-camii/p104-3.jpg",
+        "original_name": "ERD03111-Geliştirilmiş-NR kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "373"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Kubbe göbeğindeki kalem işi rozet",
+        "en": "Painted rosette on the ceiling"
+      },
+      "alt": {
+        "tr": "Açık zeminde mavi, kırmızı ve yeşil tonlarında girift bitkisel bir rozet; etrafında dağınık palmet motifleri yer alıyor.",
+        "en": "An intricate floral rosette in blue, red and green on a pale ground, surrounded by scattered palmette motifs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    }
+  ],
+  "archive_media": []
+}

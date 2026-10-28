@@ -1,0 +1,459 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-davut-kadi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' Yıldırım Camiler bölümünden yapay zekâ ile özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabe yok; mimar ve vakıf bilgisi kitapta yok.",
+      "Caminin 1885 sonrası minaresiz olup olmadığı 'bu dönemde' ifadesiyle verilmiş; günümüzdeki durumu kitapta açık değil, sahada teyit edilmeli.",
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Cami 'Hacı Emin tarafından Davut Kadı adına' yaptırılmıştır; banî olarak Hacı Emin yazıldı, Davut Kadı kişiler listesinde. 1885 yeniden inşası Emine Hanım'a aittir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Davut Kadı Camii",
+    "en": "Davut Kadı (Eski-Ortayol) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Eski-Ortayol Camii",
+      "en": "Eski-Ortayol Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Davut Kadı",
+    "İbn-i Kemal",
+    "1885",
+    "hazire",
+    "kabir"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Hacıseyfettin",
+    "address": "Karadavut Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "219"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1517 (1885'te yeniden inşa)",
+      "en": "1517 (rebuilt 1885)"
+    },
+    "start_year": 1517,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap camiyi 1517'de yaptırıldı diye veriyor; 1885'te yeniden inşa edildi.",
+      "en": "The book gives 1517 as the year of construction; rebuilt in 1885."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "219-220"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Emin",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "219"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1517'de hayırsever Hacı Emin tarafından Davut Kadı adına yaptırılan, 1885'te Emine Hanım tarafından yeniden inşa ettirilen sade bir mahalle camisidir; Davut Kadı'nın kabri bitişiğindedir.",
+    "en": "A plain neighbourhood mosque built in 1517 by the philanthropist Hacı Emin in the name of Davut Kadı and rebuilt in 1885 by Emine Hanım; Davut Kadı's grave lies adjacent."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Davut Kadı Camii, 1517 yılında Hacı Emin adlı bir hayırsever tarafından Davut Kadı adına yaptırılmıştır. Zamanla harap hale gelen cami, 'Emine Hanım' adında bir hayırsever tarafından 1885'te yeniden inşa ettirilmiştir. 1953'te betonarme bir son cemaat mahalli eklenmiş, 1970'te bir kez daha onarılmış ve çatısı ile son cemaat mahalli kiremitle örtülerek bugünkü görünümünü kazanmıştır.",
+        "en": "Davut Kadı Mosque was built in 1517 by a philanthropist named Hacı Emin in the name of Davut Kadı. Having fallen into disrepair, it was rebuilt in 1885 by a philanthropist named Emine Hanım. A reinforced concrete narthex was added in 1953, and in a 1970 repair the roof and narthex were covered with tiles, giving the mosque its current appearance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "219-220"
+        }
+      ]
+    },
+    {
+      "id": "davut-kadi",
+      "order": 2,
+      "title": {
+        "tr": "Davut Kadı",
+        "en": "Davut Kadı"
+      },
+      "body": {
+        "tr": "'Kara Davut' ve 'İbn-i Kemal' unvanlarıyla tanınan Davut Kadı, Emirsultan Medresesi başta olmak üzere çeşitli medreselerde müderrislik yapmıştır. 1523'te Koca Naib vakıflarının mütevelliliğini üstlenmiş, 1533'te Bursa kadılığına atanmıştır. Kadılığı döneminde Kanûnî Sultan Süleyman'ın emriyle Bursa vakıflarını tespit ederek kayıt altına almıştır. 1541'de vefat eden Davut Kadı kendi camisinin bitişiğine defnedilmiştir. Kabri 2017'de Bursa Büyükşehir Belediyesi tarafından tamamen yenilenmiş ve mezar taşları eklenmiştir.",
+        "en": "Known by the titles 'Kara Davut' and 'İbn-i Kemal', Davut Kadı taught at various madrasas, most notably the Emir Sultan Madrasa. In 1523 he became trustee of the Koca Naib foundations and in 1533 was appointed Qadi of Bursa, during which he identified and recorded Bursa's foundations on the orders of Kanûnî Sultan Süleyman. He died in 1541 and was buried adjacent to his mosque. His tomb was completely renovated by the Bursa Metropolitan Municipality in 2017 and gravestones were added."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "219-220"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "1885'te caminin yaklaşık 7,5 × 8 m ölçülerinde olduğu, harimde müezzinlere ayrılmış iki maksure bulunduğu ve 3,75 × 7,5 m büyüklüğünde bir son cemaat mahallinin yer aldığı anlaşılmaktadır. Bu dönemde minaresi yoktur. Ahşap tavanlı, moloz taş örgülü ve kiremit örtülüdür. Kitabesi bulunmayan yapının minber ve mihrabı oldukça sadedir.",
+        "en": "In 1885 the mosque measured approximately 7.5 × 8 m, with two maqsuras reserved for muezzins in the prayer hall and a narthex of 3.75 × 7.5 m. It had no minaret at that time. It has a wooden ceiling, rubble stone masonry and a tile roof. The building has no inscription, and its minbar and mihrab are quite plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "220"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "cami_olcu",
+      "label": {
+        "tr": "Cami ölçüsü (1885)",
+        "en": "Mosque size (1885)"
+      },
+      "value": "yaklaşık 7,5 × 8",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat mahalli (1885)",
+        "en": "Narthex (1885)"
+      },
+      "value": "3,75 × 7,5",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "key": "maksure_sayisi",
+      "label": {
+        "tr": "Müezzin maksuresi",
+        "en": "Muezzin maqsuras"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "220"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Emin",
+      "role": {
+        "tr": "Camiyi Davut Kadı adına yaptıran hayırsever",
+        "en": "Philanthropist who built the mosque in Davut Kadı's name"
+      }
+    },
+    {
+      "name": "Emine Hanım",
+      "role": {
+        "tr": "1885'te camiyi yeniden inşa ettiren hayırsever",
+        "en": "Philanthropist who rebuilt the mosque in 1885"
+      }
+    },
+    {
+      "name": "Davut Kadı (Kara Davut, İbn-i Kemal)",
+      "role": {
+        "tr": "Müderris ve Bursa kadısı; 1541'de vefat etti",
+        "en": "Teacher and Qadi of Bursa; died 1541"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1517",
+      "year": 1517,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Hacı Emin tarafından Davut Kadı adına yaptırıldı",
+        "en": "Built by Hacı Emin in the name of Davut Kadı"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "219"
+        }
+      ]
+    },
+    {
+      "id": "naib-1523",
+      "year": 1523,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Davut Kadı Koca Naib vakıflarının mütevellisi oldu",
+        "en": "Davut Kadı became trustee of the Koca Naib foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "219"
+        }
+      ]
+    },
+    {
+      "id": "kadilik-1533",
+      "year": 1533,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Davut Kadı Bursa kadılığına atandı",
+        "en": "Davut Kadı appointed Qadi of Bursa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "219"
+        }
+      ]
+    },
+    {
+      "id": "olum-1541",
+      "year": 1541,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Davut Kadı vefat etti, camiye bitişik defnedildi",
+        "en": "Davut Kadı died, buried adjacent to the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "219-220"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1885",
+      "year": 1885,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Emine Hanım tarafından yeniden inşa ettirildi",
+        "en": "Rebuilt by Emine Hanım"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-1953",
+      "year": 1953,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Betonarme son cemaat mahalli eklendi",
+        "en": "Reinforced concrete narthex added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1970",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarıldı; çatı ve son cemaat yeri kiremitle örtüldü",
+        "en": "Repaired; roof and narthex covered with tiles"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "id": "kabir-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Davut Kadı'nın kabri Bursa Büyükşehir Belediyesi tarafından yenilendi",
+        "en": "Davut Kadı's tomb renovated by the Bursa Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "220"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Moloz taştan örülmüş, kiremit örtülü küçük bir camidir. Betonarme son cemaat mahalli sonradan eklenmiştir; minare yoktur. Minber ve mihrap sadedir. Caminin bitişiğinde Davut Kadı'nın yenilenmiş kabri bulunur.",
+      "en": "A small rubble-stone mosque with a tile roof. The reinforced concrete narthex was added later and there is no minaret. The minbar and mihrab are plain. Davut Kadı's renovated grave lies next to the mosque."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-davut-kadi-camii/p008-1.jpg",
+        "original_name": "ERD04605 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "219"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Davut Kadı Camii ve minaresi",
+        "en": "Davut Kadı Mosque and minaret"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı, kırmızı kenarlı kemerli pencereleri olan cami ve tuğla minare görünür. Cami bir sokak köşesinde, apartmanların yanındadır.",
+        "en": "A whitewashed mosque with arched windows edged in red and a brick minaret. It stands at a street corner beside apartment blocks."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-davut-kadi-camii/p009-1.jpg",
+        "original_name": "04 ERD04574 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "220"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Mosque interior, mihrab and minber"
+      },
+      "alt": {
+        "tr": "Çini desenli mihrap duvarının sağında kırmızı ahşap minber var. Ahşap tavandan büyük bir avize sarkar; zemin kırmızı halıyla kaplıdır.",
+        "en": "A red wooden minber stands to the right of the tile-patterned mihrab wall. A large chandelier hangs from the wooden ceiling above a red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

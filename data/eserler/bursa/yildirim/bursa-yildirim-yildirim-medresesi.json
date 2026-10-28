@@ -1,0 +1,725 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-yildirim-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Külliyesi",
+    "text_origin": "Bursa Vakıf Eserleri II. Cilt, Yıldırım Külliyesi bölümünden (s. 161-209) yapay zekâ (Sonnet) ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mimar kitapta belirtilmiyor.",
+      "Medresenin güncel kullanımı belirsiz: Yıldırım Belediyesi'ne devredilmiş, yeni işlev çalışmaları sürüyor; ziyaret imkânı sahadan öğrenilmeli.",
+      "Vakfiyedeki 'iki medrese' ifadesinden diğer medresenin hangisi olduğu kitapta yok; kontrol edilmeli.",
+      "Koordinatlar kitapta yok; sahadan ya da fotoğraf EXIF'inden eklenmeli.",
+      "Fotoğraflar eklenmeli (media_folder ve media), match_photos.py ile bağlanacak; arşiv fotoğrafı (Zaman Perdesi) bulunmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Medrese bölümü H. 793-797 / M. 1391-1395 aralığını kesin dille verir; cami bölümü ise külliyenin kesin inşa tarihinin bilinmediğini ve vakfiye tarihine (H. 802) dayanılarak birkaç yıl önce yapılmış olabileceğini yazar. Güven düzeyi 'probable' bırakıldı."
+      },
+      {
+        "field": "dating",
+        "note": "Vakfiye tarihi bu bölümde 'H. Ramazan 802 / M. Mayıs 1400' olarak geçer; kitabın giriş bölümü 'H. 802 / M. 1399' der. Kaynak değerleri korundu."
+      },
+      {
+        "field": "facts[oda_sayisi]",
+        "note": "Türkçe metin 'giriş eyvanının kuzey ve güneyine yerleştirilen ... ikişer müderris odası' (4 oda) der; İngilizce metin 'two larger teachers' rooms located to the north and south' (2 oda) der. Bileşenler (müderris odaları + sekizer talebe odası x 2 + dershane) 19 ya da 21 eder, kitabın toplamı 'yirmi oda'dır. Kaynak değeri (20) korundu, 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yıldırım Medresesi",
+    "en": "Yıldırım Madrasa"
+  },
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-yildirim-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "medrese",
+    "revaklı avlu",
+    "dershane",
+    "Verem Savaş Dispanseri",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Yıldırım",
+    "address": "Amaç Sokak, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "185"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.187906,
+      "lng": 29.081997,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap relation/16793779 ('Yıldırım Medresesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 793-797 / M. 1391-1395",
+      "en": "AH 793-797 / AD 1391-1395"
+    },
+    "start_year": 1391,
+    "end_year": 1395,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Medrese bölümü yapının bu yıllar arasında Sultan Yıldırım Bayezid tarafından külliye bünyesinde inşa ettirildiğini yazar; cami bölümü ise külliyenin kesin inşa tarihinin bilinmediğini belirtir.",
+      "en": "The madrasa section says it was built by Sultan Yıldırım Bayezid within the complex between these years; the mosque section says the exact construction date of the building is unknown."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "185"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Yıldırım Bayezid (I. Bayezid)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "185"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Yıldırım Bayezid Vakfı",
+    "deed": {
+      "date_display": "H. Ramazan 802 / M. Mayıs 1400",
+      "excerpt": {
+        "tr": "Külliye mutfaklar, mahzenler, bir hamam, iki medrese, bir han, hizmetlilere ait konutlar, Akçağlayan'dan su getiren kemerler ve ahırlardan oluşur; gelir zaviye, her iki medrese ve diğer yapıların onarım ve işletme giderlerine ayrılacaktır.",
+        "en": "The complex consists of kitchens, cellars, a bath, two madrasas, a han, residences for servants, aqueducts bringing water from Akçağlayan, and stables; income will be allocated to the maintenance and operating expenses of the zawiya, both madrasas and other structures."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "185"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "185"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Külliyenin bir birimi olarak inşa edilen, revaklı iç avlulu ve toplam yirmi odalı medrese. 1953-2016 arasında Verem Savaş Dispanseri olarak kullanılmış, 2021-2023'te restore edilmiştir.",
+    "en": "A madrasa built as a unit of the complex, with an arcaded inner courtyard and twenty rooms in total. It served as a Tuberculosis Dispensary from 1953 to 2016 and was restored in 2021-2023."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-plan",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Plan",
+        "en": "Location and Plan"
+      },
+      "body": {
+        "tr": "Medrese, caminin kuzeydoğusunda, yaklaşık 80 m aşağı kotta bulunan bir düzlüktedir. Sivri kemerli yüksek bir kapıdan girilen dikdörtgen planlı iç avlunun üç cephesini revaklar çevreler; revakların arkasında talebe ve müderris hücreleri yer alır. Girişin tam karşısında, batıda, dört basamaklı merdivenle çıkılan dershane bulunur. Taç kapıdan girildiğinde kubbeli dikdörtgen bir eyvana ulaşılır; eyvandan basık kemerli bir kapıyla revaklı alana ve iç avluya geçilir. Eyvanın iki yanındaki odalar müderrislere ayrılmıştır; medresede mihrap yoktur. Plan şeması Selçuklu medrese mimarisinin izlerini taşır ve dengeli boyutlarıyla örnek bir yapı sayılır.",
+        "en": "The madrasa lies on a flat area about 80 m below and northeast of the mosque. Arcades surround three sides of the rectangular inner courtyard, entered through a high pointed-arch gate; behind them are the student and professor cells. Directly opposite the entrance on the west is the classroom, reached by a four-step staircase. The portal leads to a domed rectangular iwan, from which a low-arched door gives access to the arcaded area and the courtyard. The rooms beside the iwan are for the teachers; there is no mihrab. The plan carries traces of Seljuk madrasa architecture and is considered exemplary for its balanced dimensions."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "185-187"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-odalar",
+      "order": 2,
+      "title": {
+        "tr": "Avlu, Revaklar ve Odalar",
+        "en": "Courtyard, Arcades and Rooms"
+      },
+      "body": {
+        "tr": "Revaklı alanlar, ortasında fıskiyeli sekizgen bir havuz bulunan 200 m²'lik avludan iki basamak yüksektedir; sivri kemerli revaklar tuğla örgülü beşik tonozla örtülü ve kurşun kaplıdır (geçmişte kiremitle kaplıydı). Doğu-batı doğrultusundaki medrese, giriş eyvanının kuzey ve güneyindeki ikişer büyük müderris odası, sağlı sollu sekizer talebe odası ve bir dershaneyle toplam yirmi odadan oluşur. Talebe odalarının her birinde bir veya iki niş ile bir ocak vardır; köşe odalar ikişer, diğerleri birer pencerelidir. Pencereler sivri kemerli alınlıklıdır; kuzey cephede bir güneş kursu motifi, pencere aynalarında altıgen yıldız ve düz tuğladan bezemeler vardır. Odalar boydan boya tuğla örgülü beşik tonozla örtülüdür; tonoz önce kurşunla, sonra kiremitle kaplanmış, son restorasyonda yeniden kurşuna dönülmüştür.",
+        "en": "The arcades stand two steps above the 200 m² courtyard, which has an octagonal fountain pool in the middle; the pointed-arch arcades are covered with brick barrel vaults with lead (formerly tiles). Extending east-west, the madrasa has twenty rooms: two larger teachers' rooms north and south of the entrance iwan, eight student rooms on each side, and a classroom. Each student room has one or two niches and a hearth; corner rooms have two windows, others one. Windows have pointed-arch pediments; there is a sun disk motif on the north façade and hexagonal star and flat brick decoration on window panels. The rooms are covered by longitudinal brick barrel vaults, first lead-covered, later tiled, and returned to lead in the last restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "dershane",
+      "order": 3,
+      "title": {
+        "tr": "Dershane ve Yapı Malzemesi",
+        "en": "Classroom and Building Materials"
+      },
+      "body": {
+        "tr": "İçten 8,65 x 8,86 m ölçülerindeki kare planlı dershane, Türk üçgenleri ve on üç sıra mukarnaslı pandantiflerle sekizgen kasnağa oturan, kurşun kaplı bir kubbeyle örtülüdür. Beden duvarlarının ön cephesi tamamen kesme beyaz kireç taşından, diğer cepheler bir sıra kesme küfeki taşı ile iki veya üç sıra tuğlanın almaşık düzenindendir. Kuzey duvarları yamacın eğimi nedeniyle payandalarla desteklenmiştir.",
+        "en": "The square classroom, 8.65 x 8.86 m inside, is covered by a lead-covered dome on an octagonal drum with Turkish triangles and pendentives of thirteen rows of muqarnas. The front façade is entirely cut white limestone; the other façades alternate one row of cut limestone with two or three rows of brick. The north walls are supported by buttresses because of the slope."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "185-187"
+        }
+      ]
+    },
+    {
+      "id": "mudderrisler",
+      "order": 4,
+      "title": {
+        "tr": "Müderrisler",
+        "en": "Lecturers"
+      },
+      "body": {
+        "tr": "Son yüzyıllarda burada görev yapan müderrislere \"Reîsü'l-Müderrisîn\" unvanı verildiği belirtilir. Molla Gürânî, Seyyid Ali Acemî, Fudayl Çelebi, Şeyhülislam Abdülkadir Şeyhî Efendi, Ebüssuûd Efendi ve Hoca Sâdeddin Efendi gibi birçok tanınmış âlimin burada ders verdiği bilinir. Son müderris Reîsü'l-Müderrisîn Begavizâde Hasan Sadık Efendi H. 1350 / M. 1931'de 87 yaşında vefat etmiş ve Emir Sultan Kabristanı'na defnedilmiştir.",
+        "en": "The title \"Reisü'l-Müderrisîn\" (Head Teacher) was given to lecturers in recent centuries. Many well-known scholars such as Molla Gürânî, Seyyid Ali Acemî, Fudayl Çelebi, Shaykh al-Islam Abdülkadir Şeyhî Efendi, Ebüssuûd Efendi and Hoca Sâdeddin Efendi are known to have taught here. The last lecturer, Begavizâde Hasan Sadık Efendi, died in AH 1350 / AD 1931 aged 87 and was buried in the Emir Sultan Cemetery."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-islev",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar ve İşlev Değişikliği",
+        "en": "Repairs and Changes of Function"
+      },
+      "body": {
+        "tr": "Medrese 1618, 1640, 1649, 1669, 1671, 1825 ve 1849'da farklı kapsamlarda onarılmış; 1855 depreminden büyük ölçüde etkilenmemiş, yalnızca güneydeki bazı hücre kubbeleri yıkılmıştır. Yunan işgali sırasında işgal askerleri burada konaklamış, 1924'te medreseler kapatılınca yapı uzun yıllar harap kalmıştır. 1947-1948'de Albert Gabriel'in görüşü alınarak Saim Ülgen denetiminde Sıhhiye Vekâleti tarafından restore edilmiş, 1953'te Verem Savaş Dispanseri olarak açılmış ve bu işlevini 2016'ya kadar sürdürmüştür. 2021-2023'te Vakıflar Genel Müdürlüğü kapsamlı restorasyon ve güçlendirme yapmıştır; yapı Yıldırım Belediyesi'ne devredilmiş olup yeni işlev çalışmaları sürmektedir.",
+        "en": "The madrasa was repaired to varying extents in 1618, 1640, 1649, 1669, 1671, 1825 and 1849; the 1855 earthquake largely spared it, with only some south cell domes collapsing. Occupying soldiers stayed here during the Greek occupation, and after the madrasas were closed in 1924 it lay ruinous for years. In 1947-1948 the Ministry of Health restored it under Saim Ülgen, consulting the French architect Albert Gabriel; it opened as a Tuberculosis Dispensary in 1953 and kept this function until 2016. In 2021-2023 the General Directorate of Foundations carried out comprehensive restoration and reinforcement; the building has been transferred to Yıldırım Municipality and work on a new function continues."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187, 190"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "oda_sayisi",
+      "label": {
+        "tr": "Toplam oda sayısı",
+        "en": "Total rooms"
+      },
+      "value": 20,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ],
+      "note": {
+        "tr": "Kitap: iki büyük müderris odası, sağlı sollu sekizer talebe odası ve bir dershane; toplam yirmi oda.",
+        "en": "The book: two larger teachers' rooms, eight student rooms on each side and a classroom; twenty rooms in total."
+      }
+    },
+    {
+      "key": "avlu_alan",
+      "label": {
+        "tr": "Avlu alanı",
+        "en": "Courtyard area"
+      },
+      "value": 200,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "key": "dershane_olcu",
+      "label": {
+        "tr": "Dershane (iç ölçü)",
+        "en": "Classroom (interior)"
+      },
+      "value": "8,65 x 8,86",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "key": "dershane_mukarnas",
+      "label": {
+        "tr": "Dershane pandantifleri mukarnas sırası",
+        "en": "Muqarnas rows of classroom pendentives"
+      },
+      "value": 13,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "key": "kota_farki",
+      "label": {
+        "tr": "Caminin aşağısındaki kot farkı",
+        "en": "Elevation below the mosque"
+      },
+      "value": 80,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "185"
+        }
+      ],
+      "note": {
+        "tr": "Yaklaşık değer.",
+        "en": "Approximate."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Yıldırım Bayezid",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Begavizâde Hasan Sadık Efendi",
+      "role": {
+        "tr": "Son müderris (Reîsü'l-Müderrisîn), 1931'de vefat etti",
+        "en": "Last lecturer (Reisü'l-Müderrisîn), died 1931"
+      }
+    },
+    {
+      "name": "Rıza Efendi",
+      "role": {
+        "tr": "1895'te medreseye tayin edilen Ulucami imamı; bakım ve onarımla ilgilendi",
+        "en": "Ulucami imam appointed to the madrasa in 1895; oversaw maintenance and repair"
+      }
+    },
+    {
+      "name": "Saim Ülgen",
+      "role": {
+        "tr": "1947-1948 restorasyonunu denetleyen Anıtlar Şubesi Müdürü",
+        "en": "Director of the Monuments Department who supervised the 1947-1948 restoration"
+      }
+    },
+    {
+      "name": "Albert Gabriel",
+      "role": {
+        "tr": "Restorasyonda görüşü alınan Fransız mimar",
+        "en": "French architect consulted for the restoration"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1391,
+      "date": null,
+      "hijri": "793-797",
+      "type": "construction",
+      "title": {
+        "tr": "Külliyenin bir birimi olarak inşa edildi (H. 793-797 / M. 1391-1395)",
+        "en": "Built as a unit of the complex (AH 793-797 / AD 1391-1395)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "185"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1618",
+      "year": 1618,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Farklı kapsamlarda onarım",
+        "en": "Repair of varying extent"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1640",
+      "year": 1640,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Farklı kapsamlarda onarım",
+        "en": "Repair of varying extent"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1649",
+      "year": 1649,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Farklı kapsamlarda onarım",
+        "en": "Repair of varying extent"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1669",
+      "year": 1669,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Farklı kapsamlarda onarım",
+        "en": "Repair of varying extent"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1671",
+      "year": 1671,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Farklı kapsamlarda onarım",
+        "en": "Repair of varying extent"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1825",
+      "year": 1825,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Farklı kapsamlarda onarım",
+        "en": "Repair of varying extent"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1849",
+      "year": 1849,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Farklı kapsamlarda onarım",
+        "en": "Repair of varying extent"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminden büyük ölçüde etkilenmedi; yalnızca güneydeki bazı hücre kubbeleri yıkıldı",
+        "en": "Largely unaffected by the 1855 earthquake; only some cell domes on the south side collapsed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "riza-efendi-1895",
+      "year": 1895,
+      "date": null,
+      "hijri": "1313",
+      "type": "record",
+      "title": {
+        "tr": "Ulucami İmamı Rıza Efendi medreseye tayin edildi, bakım ve onarımıyla ilgilendi",
+        "en": "Ulucami Imam Rıza Efendi appointed to the madrasa and looked after its maintenance and repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "kapanis-1924",
+      "year": 1924,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Medreselerin kapatılması; yapı uzun yıllar terk edilmiş ve harap kaldı",
+        "en": "Madrasas closed; the building was abandoned and ruinous for many years"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "190"
+        }
+      ]
+    },
+    {
+      "id": "son-muderris-1931",
+      "year": 1931,
+      "date": null,
+      "hijri": "1350",
+      "type": "record",
+      "title": {
+        "tr": "Son müderris Begavizâde Hasan Sadık Efendi 87 yaşında vefat etti",
+        "en": "Last lecturer Begavizâde Hasan Sadık Efendi died aged 87"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "186-187"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1947",
+      "year": 1947,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "1947-1948 restorasyonu (Sıhhiye Vekâleti, Saim Ülgen denetiminde); çatı ve kubbeler kurşunla kaplandı",
+        "en": "1947-1948 restoration (Ministry of Health, supervised by Saim Ülgen); roof and domes covered with lead"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "190"
+        }
+      ]
+    },
+    {
+      "id": "dispanser-1953",
+      "year": 1953,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Verem Savaş Dispanseri olarak hizmete açıldı",
+        "en": "Opened as a Tuberculosis Dispensary"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "190"
+        }
+      ]
+    },
+    {
+      "id": "unesco",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Külliye UNESCO Dünya Mirası Alanı olarak tescillendi",
+        "en": "Complex registered as UNESCO World Heritage Site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "190"
+        }
+      ]
+    },
+    {
+      "id": "dispanser-sonu-2016",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Dispanser başka bir binaya taşındı; yapı bir süre boş kaldı",
+        "en": "Dispensary moved to another building; the structure stood empty for a time"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "190"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2021",
+      "year": 2021,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "2021-2023 Vakıflar Genel Müdürlüğü kapsamlı restorasyon ve güçlendirme",
+        "en": "2021-2023 comprehensive restoration and reinforcement by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "190"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "avlu-havuz",
+      "title": {
+        "tr": "Sekizgen havuz",
+        "en": "Octagonal pool"
+      },
+      "hint": {
+        "tr": "Avlunun ortasındaki fıskiyeli sekizgen havuza ve revakların iki basamak yüksekliğine bakın.",
+        "en": "Note the octagonal fountain pool in the courtyard and the arcades raised by two steps."
+      },
+      "section_id": "avlu-ve-odalar"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yildirim-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Yıldırım Bayezid Külliyesi'nin bir birimidir; vakfiyedeki iki medreseden biri olarak anlaşılır.",
+        "en": "A unit of the Yıldırım Bayezid Complex; the charter mentions two madrasas."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "185"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Yıldırım Belediyesi'ne devredilmiştir; yeni bir işlev kazandırılması için çalışmalar sürmektedir.",
+      "en": "Transferred to Yıldırım Municipality; work to give it a new function is ongoing."
+    },
+    "notes_source": "source",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese, sivri kemerli yüksek bir kapıdan girilen dikdörtgen bir avlunun etrafında dizilmiştir. Avlunun ortasında sekizgen bir havuz vardır ve üç yanını iki basamak yüksekteki revaklar çevreler. Revakların arkasında, tuğla tonozlarla örtülü talebe ve müderris odaları sıralanır; girişin karşısında dört basamakla çıkılan, kubbeli kare bir dershane bulunur. Dış duvarların ön yüzü beyaz kireç taşıdır, diğer yüzlerde taş ve tuğla sıraları dönüşümlü uzanır.",
+      "en": "The madrasa is arranged around a rectangular courtyard entered through a tall pointed-arch gate. An octagonal pool stands in the middle, and arcades two steps higher surround three sides. Behind the arcades, student and professor rooms covered with brick vaults line up; opposite the entrance, up four steps, is a square domed classroom. The front of the outer walls is white limestone, and on the other sides rows of stone and brick alternate."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

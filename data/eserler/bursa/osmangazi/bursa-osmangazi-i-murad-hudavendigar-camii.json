@@ -1,0 +1,1109 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-i-murad-hudavendigar-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "I. Murat Hüdavendigar Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki I. Murad Hudâvendigâr Külliyesi bölümünden (s. 79-107) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; yabancı usta/mimar olasılığı yalnızca 'düşünülmektedir' diye anılıyor (architect.name null).",
+      "Kitabelerin dili kitapta belirtilmiyor; inscriptions[].language 'other' bırakıldı, teyit edilmeli.",
+      "Cami kitabesindeki H. 18 Cemaziyelahir 1322 ile M. 15 Ağustos 1904 karşılığının uyumu doğrulanmadı.",
+      "1855 depremi dışında camiye ait hasar/onarım ayrıntısı yok; 1520-1635 onarımlarını yapan kişiler kitapta belirtilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Külliye için s. 79'da H. 767 / M. 1365-66 öngörülüyor; imaret bölümü (s. 97) külliyenin H. 768-787 / M. 1367-1385 arasında yapıldığını söylüyor. İki aralık tam örtüşmüyor; kaynağın değerleri korundu."
+      },
+      {
+        "field": "location.neighborhood",
+        "note": "Cami ve türbe için 'Çekirge Mahallesi', imaret için 'Hudâvendigâr Mahallesi' (Çekirge Caddesi) veriliyor. Kitap farkı açıklamıyor; her kayıtta kitabın o yapı için verdiği ad kullanıldı."
+      },
+      {
+        "field": "sections[minare]",
+        "note": "Minarenin 19. yüzyılda eskisinin yerine yapıldığı 'belirtilmektedir' (kaynak kesin dil kullanmıyor); 1855 depreminde ayakta kaldığı da söyleniyor. Başka yerde 1957'de yıldırım düşmesiyle minarenin zarar gördüğü yazılı. Kitap bunları ayrıca açıklamıyor."
+      },
+      {
+        "field": "inscriptions[abdulhamid-kitabesi]",
+        "note": "Kitabe metni iki kez basılmış ve iki kopya arasında küçük yazım farkları var ('el-Gâzî' / 'El-Gâzî'); Türkçe sütundaki metin esas alındı. Kitabe 'ihyâ ve inşâ' ifadesi kullanırken bölüm metni 'restorasyon' diyor."
+      },
+      {
+        "field": "sections[yapinin-kimligi]",
+        "note": "Yabancı gezginlerin 'kiliseden çevrilme Bizans yapısı' ya da 'Frenk mimar eseri' iddiaları kitapta aktarılıyor ve Niğde Akmedrese/Dülgerzâde benzetmeleri reddediliyor; Bizans/Frenk iddiası kesin olarak çürütülmüyor, bu yüzden 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "I. Murad Hudâvendigâr Camii",
+    "en": "Murad I Hudâvendigâr Mosque"
+  },
+  "subtitle": {
+    "tr": "Zaviyeli/tabhaneli erken Osmanlı camisi; üstünde medrese",
+    "en": "An early Ottoman zawiya/hospice mosque with a madrasa above"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hudâvendigâr Camii",
+      "en": "Hudâvendigâr Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "I. Murad",
+    "Çekirge",
+    "zaviyeli cami",
+    "tabhaneli cami",
+    "almaşık duvar",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Çekirge",
+    "address": "I. Murad Caddesi, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "79"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.202366,
+      "lng": 29.021103,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/566744652 ('Hüdavendigar Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 767 / M. 1365-66 (öngörülen)",
+      "en": "AH 767 / AD 1365-66 (presumed)"
+    },
+    "start_year": 1365,
+    "end_year": 1366,
+    "hijri_year": 767,
+    "century": 14,
+    "basis": {
+      "tr": "Günümüze ulaşan inşa kitabesi yoktur; yapının bu tarihte yapıldığı öngörülmektedir ve tarihin sultanın çocukları için düzenlenen sünnet düğününe denk geldiği ifade edilmektedir.",
+      "en": "No construction inscription has survived; the building is presumed to date to this year, which is said to coincide with the circumcision ceremony held for the sultan's children."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "79"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan I. Murad Hudâvendigâr",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "80"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "95"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. Cemaziyelahir 787 / M. Temmuz 1385",
+      "excerpt": {
+        "tr": "Sultan Murad Han bin Sultan Orhan adına düzenlenmiş Arapça vakfiye. İlk vakfiyeden 15 yıl sonra, H. 802 / M. 1400'de Yıldırım Bayezid döneminde bir suretinin çıkarıldığı bilinmektedir. Kâtipliğini Bursa Kadısı Molla Fenârî olarak tanınan Mehmed bin Hamza bin Mehmed yaptırmıştır. Kitaptaki özet; vakfiye metni değildir.",
+        "en": "Arabic endowment charter prepared in the name of Sultan Murad Han bin Sultan Orhan. A copy is known to have been issued 15 years after the first charter, in AH 802 / AD 1400 under Yıldırım Bayezid. The clerk was Mehmed bin Hamza bin Mehmed, known as the Judge of Bursa Molla Fenârî. (Summary given in the book; not the deed text.)"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakfiyeye göre sultan, külliyeye Uludağ yamaçlarından başlayıp Mudanya'ya doğru uzanan bölgede birçok yer vakfetmiştir.",
+      "en": "According to the charter, the sultan endowed many places in the region from the slopes of Uludağ towards Mudanya to the complex."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "81"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Alt katı cami, üst katı medrese olan, kesme taş ve tuğlanın almaşık kullanıldığı iki katlı yapı. Kuzeyde ovaya bakan beş bölümlü son cemaat yeri, kubbeli şadırvanlı harim ön mekânı ve mihrabı II. Abdülhamid dönemindeki 1904 onarımıyla bugünkü görünümünü almıştır.",
+    "en": "A two-storey building with a mosque on the lower floor and a madrasa above, built with alternating cut stone and brick. Its five-part narthex facing the plain to the north, domed shadirvan forecourt, and mihrab took their present look in the 1904 repair under Abdülhamid II."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, külliyenin merkezidir. Alt katta cami, üst katta medrese bulunur; medresenin caminin üst katında planlanması Osmanlı mimarisinde ilk ve tek örnektir. Yapının inşa kitabesi yoktur; H. 767 / M. 1365-66'da yapıldığı öngörülmektedir.",
+        "en": "The mosque is the centre of the complex, with the mosque on the lower floor and the madrasa above; placing a madrasa on the upper floor of a mosque is the first and only example in Ottoman architecture. It has no construction inscription; it is presumed to have been built in AH 767 / AD 1365-66."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "79-80"
+        }
+      ]
+    },
+    {
+      "id": "yapinin-kimligi",
+      "order": 2,
+      "title": {
+        "tr": "Yapının Kimliği Üzerine Görüşler",
+        "en": "Views on the Building's Identity"
+      },
+      "body": {
+        "tr": "16-19. yüzyıllar arasında camiyi gören yabancı gezgin ve yazarlar, apsidal planlı mihrabı ve ikiz kemerleri gibi bazı mimari elemanları nedeniyle yapının kiliseden çevrilme bir Bizans yapısı veya Frenk bir mimarın eseri olduğunu iddia etmiştir. Evliya Çelebi, alt katı cami üst katı medrese olan yapının hiçbir camiye benzemeyen, görülmeye değer bir sanat ustalığına sahip olduğunu belirtmiştir. Yapı, çift katlı olması, Gotik etkili sivri ikiz kemerleri ve galerileri nedeniyle Niğde Akmedrese'ye benzetilse de kendinden sonra 1409'da yapılan bu yapıyla bir bağlantısı yoktur. İstanbul Dülgerzâde Camii'yle de medresenin altta, caminin üstte olması dışında benzerlik yoktur. Yabancı ustaların, hatta Türk olmayan mimarların inşada görev almış olabileceği düşünülmektedir; XIV. yüzyıldan itibaren Batı'dan Doğu'ya yayılan sanat ve mimari kültürün etkilerinin yapıda gözlemlenebileceği vurgulanmaktadır.",
+        "en": "Between the 16th and 19th centuries, foreign travelers and writers claimed, because of elements such as the apsidal mihrab and twin arches, that the building was a Byzantine church converted into a mosque or the work of a Frankish architect. Evliya Çelebi stated that the building, with a mosque below and a madrasa above, has an artistic mastery worth seeing, unlike any other mosque. Although it resembles the Niğde Ak Madrasa in its double storey, Gothic twin pointed arches and galleries, it has no connection with that later building of 1409. The Istanbul Dülgerzâde Mosque likewise resembles it only in having the madrasa below and the mosque above. It is thought that foreign masters, even non-Turkish architects, may have worked on its construction; the effects of art and architectural culture spreading from West to East from the 14th century are said to be observable."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "81-82, 95"
+        }
+      ]
+    },
+    {
+      "id": "malzeme-ve-duvar-orgusu",
+      "order": 3,
+      "title": {
+        "tr": "Malzeme ve Duvar Örgüsü",
+        "en": "Materials and Masonry"
+      },
+      "body": {
+        "tr": "Bazı yerlerinde devşirme malzeme kullanılan yapının ilk katı, kemer başlangıç silmelerine kadar kesme taşla inşa edilmiştir; buradan birinci kat silmesine kadar iki sıra tuğla ve bir sıra kesme taş düzeni medrese katına kadar sürer. Yapı, kesme taş ve tuğla işçiliğinin bir arada kullanıldığı almaşık düzenin en güzel örneklerinden biridir; örgü üç sıra tuğla ve bir sıra kesme taştan oluşur. Caminin birçok yerinde yapraklı Korint ve Kompozit sütun başlıkları ile devşirme malzeme kullanılmıştır; kaynağı kesin bilinmemekle birlikte Bursa'daki Roma/Bizans yapılarından getirildiği düşünülmektedir.",
+        "en": "The first floor, where spolia was used in places, is built of cut stone up to the arch-springing moldings; from there to the first-floor molding the pattern of two rows of brick and one row of cut stone continues up to the madrasa floor. It is one of the best examples of the alternating stone-and-brick system, with three rows of brick to one row of cut stone. Leafy Corinthian and Composite capitals and spolia were used in many parts; the source is not exactly known but they are thought to have been brought from Roman/Byzantine structures in Bursa."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "82-83"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Caminin tek minaresi, kuzeydoğu köşesinde beden duvarları üzerinde yaklaşık 34 m yüksekliğindedir. Kaidesi düzgün kesme taştan, silindirik gövdesi tuğladandır; tuğla kısımda geometrik motifler, tek şerefenin altında mukarnas dizisi bulunur. 19. yüzyılda eskisinin yerine inşa edildiği belirtilen minare 1855 depreminde ayakta kalarak günümüze ulaşmıştır.",
+        "en": "The single minaret rises about 34 m above the main walls at the northeast corner. Its base is cut stone and its cylindrical shaft is brick with geometric motifs, with a row of muqarnas under the single balcony. Said to have been built in the 19th century to replace the old one, it survived the 1855 earthquake."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "83"
+        }
+      ]
+    },
+    {
+      "id": "kuzey-cephe-ve-son-cemaat-yeri",
+      "order": 5,
+      "title": {
+        "tr": "Kuzey Cephe ve Son Cemaat Yeri",
+        "en": "North Façade and Narthex"
+      },
+      "body": {
+        "tr": "Ovaya hâkim kuzey ön cephe anıtsal biçimde düzenlenmiştir; giriş bu cephededir ve son cemaat yeri beş bölümlüdür. Düzgün kesme taştan kalın ayaklara oturan revaklar kubbelerle örtülüdür; kubbeler üst kat nedeniyle dışarıdan görünmez. Ön cephedeki kemerler iki kademelidir ve aralarında ahşap gergiler vardır; ortadaki üç kemerin üzerine küçük pencere açıklıkları eklenmiştir (kuş evi olarak tasarlandığı belirtilir). Doğu ve batı cephelerde ikiz kemer uygulanmıştır. Giriş sağ ve solunda bir metreden biraz yüksek sekiler vardır. 28.65 x 3.60 m ebatlarındaki revaklı avlu iki katlıdır: alt kat son cemaat yeri, üst kat medrese avlusudur. Orta bölümün kubbe yüzeyinde yuvarlak madalyon içinde rumi ve palmet bezemeleri vardır; buradan ahşap çift kanatlı, dikdörtgen mermer söveli kapıyla ana mekâna girilir.",
+        "en": "The monumental north front façade overlooks the plain; the entrance is here and the narthex has five sections. The arcades of cut stone on thick piers are all domed, but the domes are invisible from outside because of the upper floor. The front arches are two-stage with wooden tie-beams; small window openings above the three middle arches were designed as birdhouses. Twin arches are used on the east and west façades. There are raised platforms a little over one metre high on both sides of the entrance. The rectangular arcaded courtyard, 28.65 x 3.60 m, has two floors: the lower is the narthex, the upper is the madrasa courtyard. The middle dome has rumi and palmette decoration in a round medallion; from here a wooden double-leafed door with a rectangular marble frame leads into the main space."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "83-85"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 6,
+      "title": {
+        "tr": "Plan ve Kurgu",
+        "en": "Plan and Layout"
+      },
+      "body": {
+        "tr": "Orta Asya geleneğinden gelen dört eyvanlı şemanın kapalı avlulu türü burada da görülür; iki katlı oluşuyla cesametli bir kütle izlenimi verir. Yapının ortasında kubbeli bir iç avlu, iki yanında beşik tonozlu eyvanlar ve bu eyvanlara bitişik altı oda bulunur. Orta kubbe aydınlık feneriyle aydınlanır, altında 19. yüzyıl onarımından kalan köşeli şadırvan vardır. Orta kubbenin güneydoğu ve güneybatısındaki küçük bölmeler tedrisat odası, kuzeydoğu ve kuzeybatıdaki odalar cami personeli ve dervişlere ayrılmış zaviye/tabhane bölmeleridir. Giriş sağ ve solundaki kapılardan 38 basamaklı merdivenlerle üst kata çıkılır.",
+        "en": "The covered-courtyard variety of the four-iwan scheme from the Central Asian tradition is also evident here, and the two-storey structure gives an imposing mass. In the middle is a domed inner courtyard, flanked by barrel-vaulted iwans with six rooms adjacent to them. The central dome is lit by a roof lantern, with an angular shadirvan from the 19th-century repair below. The small chambers southeast and southwest of the central dome are teaching rooms; those to the northeast and northwest are zawiya/hospice chambers for the mosque staff and dervishes. Staircases of 38 steps rise to the upper floor from doors on both sides of the entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "87-88"
+        }
+      ]
+    },
+    {
+      "id": "harim-on-mekani",
+      "order": 7,
+      "title": {
+        "tr": "Harim Ön Mekânı",
+        "en": "Forecourt of the Prayer Hall"
+      },
+      "body": {
+        "tr": "Geçiş holüyle ulaşılan, altıgen fıskiyeli şadırvanlı, 12.67 x 11.00 m ölçüsündeki harim ön mekânı, içeride aslan göğüsleri, dışarıda on altı kenarlı kasnağa oturan ve tepesinde aydınlık feneri bulunan 15.00 m yüksekliğindeki büyük kubbeyle örtülüdür. Pandantif alınları bezemesizdir, köşelerinde rumili kandil motifleri vardır; kubbe göbeğinde sekiz kandil ve sekiz madalyon palmetlerle sonlanır. Şadırvan 1904'te bir miktar büyütülmüştür. İki yanda birer basamakla çıkılan 5.29 x 7.49 m beşik tonozlu yan eyvanlar vardır; güney duvarlarında ortasında kandil sarkan perde motifi bulunur, sağdaki eyvanda müezzin mahfili yer alır. Eyvanların güneyinde şadırvanlı mekândan girilen yaklaşık 3.90 x 5.60 m tabhane odaları bulunur.",
+        "en": "The forecourt, 12.67 x 11.00 m with a hexagonal fountain with water jet, is covered by a 15.00 m high dome with lion corbels inside, resting outside on a sixteen-sided drum and topped by a roof lantern. The pendentive faces are undecorated but have rumi lamp motifs at the corners; the dome centre has eight lamps and eight medallions ending in palmettes. The shadirvan was somewhat enlarged in 1904. On both sides are barrel-vaulted side iwans of 5.29 x 7.49 m reached by a single step, with a curtain motif and hanging lamp on their south walls; the right iwan holds the muezzin's platform. South of the iwans are guest rooms of about 3.90 x 5.60 m entered from the shadirvan area."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "88-89"
+        }
+      ]
+    },
+    {
+      "id": "asil-ibadet-mekani",
+      "order": 8,
+      "title": {
+        "tr": "Asıl İbadet Mekânı ve Mihrap",
+        "en": "Main Prayer Hall and Mihrab"
+      },
+      "body": {
+        "tr": "Şadırvanlı mekândan iki basamakla, 12.50 x 9.50 m ölçülerinde, dikdörtgen planlı, tonoz örtülü, mescit ve minberin yer aldığı asıl ibadet mekânına çıkılır; merdivenlerin iki yanında pabuçluklar vardır. Mekân, 2.50 x 4.22 m ölçülerinde, dışa taşan ve dışarıdan beş cepheli görünen mihrap nişiyle sona erer. Bazı müelliflerin 'Ulu Camii mihrabının küçük bir modeli' olarak nitelendirdiği mihrabın ortasında altın varak kandil motifi içinde müsenna sülüs hatla İsrâ suresi 84. ayet yazılıdır; çevresinde kûfi hatla on bir kez 'Yâ Mâlike'l-Mülk, Yâ Ze'l-Celâl-i ve'l-İkrâm' ve ortasında Âl-i İmrân 37'den bir bölüm yer alır. Mihrap nişi dokuz sıra mukarnasla şekillenmiş ve altın yaldızla süslenmiştir; 1904 onarımından sonra bugünkü görünümüne kavuşmuştur. Mekân güneyde bir, yan duvarların üst kısmında birer, alt kısmında ikişer pencereyle aydınlanır; üst pencereler dışarıdan dar, içeriden geniş mazgal biçimindedir.",
+        "en": "From the shadirvan area two steps lead to the main prayer hall, 12.50 x 9.50 m, rectangular, vaulted, with the masjid and minbar; shoe racks stand on both sides of the stairs. It ends in a mihrab niche of 2.50 x 4.22 m that projects outward and looks pentagonal from outside. In the middle of the mihrab, which some authors call a 'small model of the Ulucami mihrab', verse 84 of Surah al-Isra is written in muthanna Thuluth within a gold-leaf lamp motif; around it eleven phrases of 'Yâ Mâlike'l-Mülk, Yâ Ze'l-Celâl-i ve'l-İkrâm' are in Kufic, with a section of Al-i Imran 37 in the middle. The niche has nine rows of muqarnas and gilding, and gained its present appearance after the 1904 repair. The hall is lit by one window on the south, one in the upper and two in the lower parts of each side wall; the upper windows are loophole-style, narrow outside and wide inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "89-91"
+        }
+      ]
+    },
+    {
+      "id": "minber",
+      "order": 9,
+      "title": {
+        "tr": "Minber",
+        "en": "Minbar"
+      },
+      "body": {
+        "tr": "Ahşap minber kabartma geometrik ve bitkisel motiflerle süslenmiştir; alınlığında ışınsal motifli bir göbek vardır. Kürsü sade ve ahşap bir yapıdadır.",
+        "en": "The wooden minbar is decorated with geometric and floral motifs in relief, with a central radiating medallion on the pediment. The pulpit is simple and wooden."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "91"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 10,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Yapı 1520, 1563, 1616 ve 1635'te bakım ve onarımdan geçmiştir. 1855 depreminde kısmen hasar alan külliye binaları II. Abdülhamid döneminde onarılmıştır (cümle kapısı üzerindeki kitabe, H. 1322 tarihli restorasyonla ilgilidir). 1957'de yıldırım düşmesiyle minaresi zarar gören cami 1960'ta Bursa Eski Eserleri Sevenler Kurumu tarafından genel onarıma alınmış; 1975-1976, 1998 ve 2006'da Vakıflar Genel Müdürlüğü tarafından restore edilmiştir. 1998'de cami ve türbenin örtü sistemindeki kurşun kaplamalar yenilenmiştir.",
+        "en": "The building underwent maintenance and repair in 1520, 1563, 1616 and 1635. The complex buildings, partly damaged in the 1855 earthquake, were repaired under Abdülhamid II (the inscription above the main door concerns the restoration of AH 1322). The mosque, whose minaret was damaged by lightning in 1957, had a general restoration by the Bursa Association for the Appreciation of Antiquities in 1960, and was restored by the General Directorate of Foundations in 1975-1976, 1998 and 2006. In 1998 the lead coverings of the mosque and tomb roofs were renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "85, 87, 95, 107"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan-ve-cevre",
+      "order": 11,
+      "title": {
+        "tr": "Karşısındaki Şadırvan ve Mektep",
+        "en": "Fountain and School Opposite"
+      },
+      "body": {
+        "tr": "Caminin karşısındaki bahçede yer alan fıskiyeli şadırvan, altı ahşap direk üzerine oturtulmuş, ahşap çatılı ve üzeri kurşun kaplı bir yapıdır. Eski fotoğraflarda cami karşısında tek katlı bir mektep binası görülmektedir.",
+        "en": "The fountain with water jet in the garden opposite the mosque is a structure with a lead-covered wooden roof on six wooden columns. Old photographs show a single-storey school building opposite the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_yuksekligi",
+      "label": {
+        "tr": "Minare yüksekliği",
+        "en": "Minaret height"
+      },
+      "value": 34,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "83"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık 34 m' diyor.",
+        "en": "The book says 'approximately 34 m'."
+      }
+    },
+    {
+      "key": "son_cemaat_olcusu",
+      "label": {
+        "tr": "Revaklı avlu ölçüsü",
+        "en": "Arcaded courtyard dimensions"
+      },
+      "value": "28.65 × 3.60",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_bolum",
+      "label": {
+        "tr": "Son cemaat yeri bölüm sayısı",
+        "en": "Narthex sections"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "83"
+        }
+      ]
+    },
+    {
+      "key": "ust_kat_merdiven",
+      "label": {
+        "tr": "Üst kata çıkan merdiven basamağı",
+        "en": "Steps to the upper floor"
+      },
+      "value": 38,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "key": "harim_on_mekan_olcu",
+      "label": {
+        "tr": "Harim ön mekânı ölçüsü",
+        "en": "Forecourt dimensions"
+      },
+      "value": "12.67 × 11.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "key": "buyuk_kubbe_yuksekligi",
+      "label": {
+        "tr": "Büyük kubbe yüksekliği",
+        "en": "Main dome height"
+      },
+      "value": 15.0,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_kenar",
+      "label": {
+        "tr": "Kubbe kasnağının kenar sayısı",
+        "en": "Sides of the dome drum"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "key": "yan_eyvan_olcu",
+      "label": {
+        "tr": "Yan eyvan ölçüsü",
+        "en": "Side iwan dimensions"
+      },
+      "value": "5.29 × 7.49",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "key": "asil_ibadet_olcu",
+      "label": {
+        "tr": "Asıl ibadet mekânı ölçüsü",
+        "en": "Main prayer hall dimensions"
+      },
+      "value": "12.50 × 9.50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "89"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_nisi_olcu",
+      "label": {
+        "tr": "Mihrap nişi ölçüsü",
+        "en": "Mihrab niche dimensions"
+      },
+      "value": "2.50 × 4.22",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "89"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas_sira",
+      "label": {
+        "tr": "Mihrap mukarnas sırası",
+        "en": "Mihrab muqarnas rows"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "90"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan I. Murad Hudâvendigâr",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "II. Abdülhamid",
+      "role": {
+        "tr": "1904 onarımını/yeniden inşayı yaptıran sultan (kitabeye göre)",
+        "en": "Sultan who had the 1904 repair/rebuilding done (according to the inscription)"
+      }
+    },
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "Yapının eşsiz sanat ustalığını belirten seyyah",
+        "en": "Traveler who noted the building's unique craftsmanship"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "abdulhamid-kitabesi",
+      "location": {
+        "tr": "Ana kapının (cümle kapısı) üzerinde, mermer üzerine 60 x 120 cm",
+        "en": "Above the main door, on marble, 60 x 120 cm"
+      },
+      "language": "other",
+      "script": "Ta'lik",
+      "transliteration": "Ziynet-bahş-ı makâm-ı akdes-i Hilâfet-i Seniyye es-Sultân ibnu’s- Sultân es-Sultân\nEl-Gâzî Abdülhamîd Han halleda’llâhu saltanatahû ilâ âhiri’d-deverân efendimiz hazretleri meâsir-i\nCelile-i Hilâfet-penâhîlerine zamîme olmak üzere ecdâd-ı izâm-ı hümâyûnla-\nrından cennetmekân Hudâvendigâr\nGâzî hazretlerinin işbu câmi-i şerîflerini tecdîden ihyâ ve inşâ buyurmuşlardır.\n18 Cemâziye’l-âhir sene 1322.",
+      "translation": {
+        "tr": "Yüce hilafet makamının süsleyicisi, Sultanlar oğlu Sultan, Gazi Abdülhamid Han – Allah saltanatını zamanın sonuna dek daim kılsın – hazretleri, şanlı hilâfet gölgesindeki yüce eserlerine bir ek olarak, büyük ataları arasında yer alan cennetmekân Hudâvendigâr Gazi hazretlerinin bu şerefli camiini yeniden ihya ve inşa ettirmişlerdir. Tarih: 18 Cemaziyelahir 1322 (Miladi: 15 Ağustos 1904).",
+        "en": "The adorner of the sublime seat of the caliphate, the Sultan, son of Sultans, his excellency Ghazi Abdulhamid Han - may Allah make his reign permanent until the end of time, in addition to his sublime works under the shadow of the glorious caliphate, revived and rebuilt this honorable mosque of the heavenly Hudavendigar Gazi, who is among his great ancestors. 18 Jumada al-Akhir 1322 (15 August 1904)."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1322,
+        "gregorian": "15 Ağustos 1904"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "85, 87"
+        }
+      ],
+      "note": {
+        "tr": "Dört satırlık nesir kitabe; cami inşa kitabesi olmadığından II. Abdülhamid dönemi restorasyonuyla ilgilidir.",
+        "en": "Four-line prose inscription; as the mosque has no construction inscription, it concerns the restoration under Abdulhamid II."
+      }
+    },
+    {
+      "id": "mihrap-israsuresi",
+      "location": {
+        "tr": "Mihrabın ortasında, altın varaklı kandil motifi içinde",
+        "en": "In the middle of the mihrab, in a gold-leaf lamp motif"
+      },
+      "language": "ar",
+      "script": "Müsenna sülüs",
+      "transliteration": "Kul küllün ya’melu alâ şâkiletihî fe rabbukum a’lemu bimen hüve ehdâ sebîlen",
+      "translation": {
+        "tr": "De ki: Herkes kendi yapısına uygun işler görür. Rabbiniz, en doğru yolda olanı daha iyi bilir.",
+        "en": "Say: Everyone does work that suits their own nature. Your Lord knows best who is on the right path."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "89"
+        }
+      ],
+      "note": {
+        "tr": "İsrâ suresi 84. ayet.",
+        "en": "Surah al-Isra, verse 84."
+      }
+    },
+    {
+      "id": "mihrap-kufi-bordur",
+      "location": {
+        "tr": "Mihrap çevresinde (kûfi hatla on bir kez tekrar) ve ortasında",
+        "en": "Around the mihrab (eleven repetitions in Kufic) and in its middle"
+      },
+      "language": "ar",
+      "script": "Kûfi",
+      "transliteration": "Yâ Mâlike’l-Mülk, Yâ Ze’l-Celâl-i ve’l-İkrâm\nKüllemâ dehale aleyhâ Zekeriyya’l-mihrâb",
+      "translation": {
+        "tr": "(Zekeriya ne zaman mihraba girse)",
+        "en": "(Whenever Zakariya enters the mihrab)"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "90"
+        }
+      ],
+      "note": {
+        "tr": "Ortadaki yazı Âl-i İmrân suresi 37. ayetten bir bölümdür.",
+        "en": "The middle text is part of Surah Al-i Imran, verse 37."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1365",
+      "year": 1365,
+      "date": null,
+      "hijri": "767",
+      "type": "construction",
+      "title": {
+        "tr": "Cami/medrese yapıldığı öngörülüyor",
+        "en": "Mosque/madrasa presumed built"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "79"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1520",
+      "year": 1520,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bakım ve onarım",
+        "en": "Maintenance and repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1563",
+      "year": 1563,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bakım ve onarım",
+        "en": "Maintenance and repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1616",
+      "year": 1616,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bakım ve onarım",
+        "en": "Maintenance and repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1635",
+      "year": 1635,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bakım ve onarım",
+        "en": "Maintenance and repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Bursa depreminde külliye binaları kısmen hasar gördü",
+        "en": "Complex buildings partly damaged in the Bursa earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1904",
+      "year": 1904,
+      "date": null,
+      "hijri": "18 Cemaziyelahir 1322",
+      "type": "restoration",
+      "title": {
+        "tr": "II. Abdülhamid döneminde cami restore edildi (kitabeye göre yeniden ihya ve inşa); şadırvan büyütüldü, mihrap bugünkü görünümünü aldı",
+        "en": "Mosque restored under Abdulhamid II (revived and rebuilt according to the inscription); shadirvan enlarged, mihrab took its present appearance"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "85, 88, 90"
+        }
+      ]
+    },
+    {
+      "id": "yildirim-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yıldırım düşmesiyle minare zarar gördü",
+        "en": "Minaret damaged by lightning"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu genel onarım yaptı",
+        "en": "General repair by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1975",
+      "year": 1975,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü restorasyonu (1975-1976)",
+        "en": "General Directorate of Foundations restoration (1975-1976)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1998",
+      "year": 1998,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü restorasyonu; cami ve türbenin kurşun örtüleri yenilendi",
+        "en": "General Directorate of Foundations restoration; lead roofing of mosque and tomb renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95, 107"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü restorasyonu",
+        "en": "General Directorate of Foundations restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "95"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Mihrap",
+        "en": "Mihrab"
+      },
+      "hint": {
+        "tr": "Dokuz sıra mukarnas, altın varaklı kandil içinde İsrâ suresi 84. ayet ve kûfi yazı bordürü.",
+        "en": "Nine rows of muqarnas, Surah al-Isra verse 84 in a gold-leaf lamp, and a Kufic border."
+      },
+      "section_id": "asil-ibadet-mekani"
+    },
+    {
+      "feature": "son-cemaat-yeri",
+      "title": {
+        "tr": "Beş bölümlü son cemaat yeri",
+        "en": "Five-part narthex"
+      },
+      "hint": {
+        "tr": "Ovaya bakan kuzey cephede orta kemerlerin üstündeki kuş evi pencereleri.",
+        "en": "The birdhouse windows above the middle arches on the north façade facing the plain."
+      },
+      "section_id": "kuzey-cephe-ve-son-cemaat-yeri"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami, I. Murad Hudâvendigâr Külliyesi'nin merkezidir.",
+        "en": "The mosque is the centre of the Murad I Hudâvendigâr Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-medresesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Medrese caminin üst katında yer alır; aynı yapıdır.",
+        "en": "The madrasa is on the upper floor of the mosque; they are the same building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "80, 92"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe caminin kuzeybatı köşesinde, yolun karşısındadır.",
+        "en": "The tomb is across the road at the mosque's northwest corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-imareti",
+      "type": "same_complex",
+      "description": {
+        "tr": "İmaret caminin batısındadır.",
+        "en": "The soup kitchen lies west of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-cikcik-hamami",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cıkcık Hamamı cami ve medresenin hemen doğusundadır.",
+        "en": "The Cıkcık Bath is just east of the mosque and madrasa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "100"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Bazı müellifler mihrabı 'Ulu Camii mihrabının küçük bir modeli' olarak niteler.",
+        "en": "Some authors describe the mihrab as a 'small model of the Ulucami mihrab'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "89"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, ovaya bakan kuzey cepheden girilen iki katlı bir yapıdır. Cephede kesme taş ile tuğlanın sıralı örüldüğü, kalın ayaklara oturan beş bölümlü bir son cemaat yeri vardır; kuzeydoğu köşede yaklaşık 34 metrelik tuğla gövdeli tek minare yükselir. İçeride kubbeli bir orta mekânda altıgen şadırvan, iki yanında beşik tonozlu eyvanlar ve güneyde iki basamakla çıkılan, mihrap nişiyle biten dikdörtgen ibadet mekânı bulunur. Giriş sağındaki ve solundaki kapılardan 38 basamaklı merdivenle üst kattaki medreseye çıkılır.",
+      "en": "The mosque is a two-storey building entered from the north façade facing the plain. The façade has a five-part narthex on thick piers, built of alternating cut stone and brick, and a single minaret about 34 metres high with a brick shaft at the northeast corner. Inside, a domed central space holds a hexagonal fountain, with barrel-vaulted iwans on both sides and, to the south, a rectangular prayer hall reached by two steps and ending in the mihrab niche. Doors on either side of the entrance lead to 38-step staircases up to the madrasa."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca metne dayalı) yazılmıştır."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1Nh5U0z8qZBwN7XodcyZLe_IqCfD3wrcx",
+    "book_layout_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+    "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-camii/p009-1.jpg",
+        "original_name": "DJI_20240928225847_0264_D-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "84"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin revaklı kemerli cephesi ve yan sokak",
+        "en": "The arcaded façade of the mosque beside the street"
+      },
+      "alt": {
+        "tr": "İki katlı, tuğla ve taşın almaşık sıralandığı cephede alt katta sivri kemerli revaklar, üst katta beyaz korkuluklu galeri var. Yanında kaldırım taşlı dar bir sokak uzanıyor.",
+        "en": "A two-storey façade of alternating brick and stone, with pointed-arch arcades below and a gallery with white railings above. A narrow cobbled street runs alongside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-camii/p007-2.jpg",
+        "original_name": "DJI_20240928230508_0277_D-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "82"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Üst kat galerisi ve süslemeli kemer",
+        "en": "Upper gallery and the decorated arch"
+      },
+      "alt": {
+        "tr": "Beyaz korkuluklu üst kat galerisi, ortadaki ince sütun ve iki sivri kemerle bölünüyor. Üstünde geometrik tuğla süslemeli büyük bir kemer ve saçak sırası var.",
+        "en": "An upper gallery with white railings, divided by a slim central column and two pointed arches. Above is a large arch with geometric brick patterns and a row of cornice teeth."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-i-murad-hudavendigar-camii/p007-1.jpg",
+        "original_name": "DJI_20240928220949_0216_D-Edit.jpg",
+        "book_pdf_file_id": "1V1f-LMrSd_jJCFDx2Tp5HA6xekzxJgwW",
+        "book_pdf_name": "3-I. Murat Hüdavendigar Külliyesi.pdf",
+        "book_page": "82"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tuğla ve taş duvarlar, saçak ve kubbe",
+        "en": "Brick and stone walls, cornice and dome"
+      },
+      "alt": {
+        "tr": "Yakından görülen duvarlarda tuğla ve taş sıraları, küçük kör kemerler ve dişli saçak süslemesi var. Arka planda bir kubbenin kenarı ve mavi gökyüzü görünüyor.",
+        "en": "A close view of walls with courses of brick and stone, small blind arches and a toothed cornice. The edge of a dome and a blue sky are visible behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    }
+  ],
+  "archive_media": []
+}

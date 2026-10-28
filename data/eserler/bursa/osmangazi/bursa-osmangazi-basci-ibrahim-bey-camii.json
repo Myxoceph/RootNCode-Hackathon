@@ -1,0 +1,776 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-basci-ibrahim-bey-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 271-278) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Kitabeli mektep ve medreseye çevrilen zaviye gibi yapıların bugünkü durumu/konumu kitapta belirsiz; kayıt gerekirse eklenmeli.",
+      "Doğangözü Hanı ilişkisinde hedef kaydın ilçesi kitapta belirtilmiyor (Çakır Ağa Hamamı'nın kuzeyi); id bursa-osmangazi-dogangozu-hani varsayımdır.",
+      "Başçı İbrahim'in yaptırdığı hamam, zaviye/dergâh ve mektep ile İstanbul'daki medrese için ayrı kayıt/hedef yok; ilçeleri kitapta belirtilmiyor.",
+      "Mektebin bugün var olup olmadığı belirtilmiyor; kitabe mektep için verilmiştir, cami kitabesi yoktur.",
+      "Caminin yapım tarihi kitapta verilmiyor (dating null).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder / sections[han-hamam-zaviye]",
+        "note": "Giriş bölümü mektebi de Başçı İbrahim'in yaptırdıkları arasında sayar, mezar bölümü ve kitabe ise mektebi oğlu Mehmed Çelebi'nin yaptırdığını söyler (kitabe: Mehmed Çelebi ibn-i Hacı İbrahim, H. 896 / M. 1490). Kitaba sadık kalındı; mektep için banî Mehmed Çelebi olarak yazıldı."
+      },
+      {
+        "field": "sections[deprem-onarim]",
+        "note": "Kadı sicillerine göre zaviye 1869'dan sonra medreseye çevrilmiştir; ancak kitap revakların arkasında hücre bulunmadığından bunun mimari açıdan mümkün gözükmediğini belirtir. Zaman çizelgesindeki kayıt bu nedenle 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[mezar]",
+        "note": "Baş taşı metninde tırnak kapanışı eksik ve EN çevirisi 'The following expressions' cümlesinden sonra kesiliyor; kitaptaki hâli korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Başçı İbrahim Bey Camii",
+    "en": "Başçı İbrahim Bey Mosque"
+  },
+  "subtitle": {
+    "tr": "Başçı İbrahim Bey'in yaptırdığı, geniş hazireli cami",
+    "en": "Mosque built by Başçı İbrahim Bey, with a large graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Başçı İbrahim Camii",
+      "en": "Başçı İbrahim Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hazire",
+    "kalkan duvar",
+    "şadırvan",
+    "son cemaat yeri",
+    "tuğla minare",
+    "Maksem"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Maksem",
+    "address": "Maksem Mahallesi, No: 17",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "271"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.178403,
+      "lng": 29.063057,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/946406459 ('Başçı İbrahim Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Başçı Hacı İbrahim Bey bin Abdullah",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "271"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 12 Muharrem 872 / M. 14 Ağustos 1467",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Yazıcıkızı Bahçesi olarak bilinen bölgede 62 oda, birkaç fırın ve birçok ev vakfedilmiştir; 27 Kasım 1471'de cami civarındaki büyük hamam da vakfa eklenmiştir.",
+      "en": "62 rooms, several furnaces and many houses in the area known as Yazıcıkızı Garden were endowed; on 27 November 1471 the large bathhouse near the mosque was added to the foundation."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "272"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Maksem Mahallesi'ndeki cami, Abdal Mehmed Camii'ni de yaptıran Başçı İbrahim Bey tarafından yaptırılmıştır; bahçesinde banisi ve ailesinden başlayarak yirminci yüzyıl başına kadar defin yapılan geniş bir hazire vardır. Bani 1481'de vefat etmiş, caminin doğu tarafına defnedilmiştir.",
+    "en": "The mosque was built by Başçı İbrahim Bey, who also built the Abdal Mehmed Mosque. Its garden holds a large graveyard in which burials continued from the founder and his family until the early twentieth century. The founder died in 1481 and was buried on the east side of the mosque."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banî",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Başçı İbrahim Camii ve Haziresi, Osmangazi ilçesi, Maksem Mahallesi, No: 17'de yer almaktadır. Cami, Abdal Mehmed Camii'ni de inşa eden Başçı İbrahim Bey tarafından yaptırılmıştır. Abdullah adlı bir kimsenin oğlu olan İbrahim Bey, başçılık mesleğiyle geçimini sağladığı için \"Başçı İbrahim\" olarak tanınmıştır. Adıyla anılan mahallede bir zaviye, hamam ve mektep inşa ettirdiği gibi, Çakır Hamam yakınına bir han yaptırarak hayırseverliğini göstermiştir. Ayrıca İstanbul'da bir medrese inşa ettirdiği bilinmektedir. 1481 yılında vefat eden Başçı İbrahim, caminin doğu tarafına defnedilmiştir.",
+        "en": "Başçı İbrahim Mosque and Graveyard is located in Osmangazi District, Maksem Neighborhood, No. 17. The mosque was built by Başçı İbrahim Bey, who also built the Abdal Mehmed Mosque. İbrahim Bey, the son of a person named Abdullah, was known as \"Başçı İbrahim\" because he earned his living as a head soup cook. He demonstrated his philanthropy by having a zawiya, a bathouse, and a school built in the neighborhood named after him, and by having a han built near Çakır Bath. It is also known that he also had a madrasa built in Istanbul. Başçı İbrahim, who died in 1481, was buried on the east side of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf",
+        "en": "Endowment"
+      },
+      "body": {
+        "tr": "Başçı İbrahim, H. 12 Muharrem 872 / M. 14 Ağustos 1467 tarihli vakfiyesi ile Yazıcıkızı Bahçesi olarak bilinen bölgede 62 oda, birkaç fırın ve birçok evi vakfetmiştir. Vakfiye, dönemin Bursa kadısı Ahmed oğlu Şeyh Mehmed Efendi tarafından düzenlenmiştir. 27 Kasım 1471 tarihinde cami civarındaki büyük hamamı da vakfa eklemiştir.",
+        "en": "With his endowment charter dated 12 Muharram AH 872 / 14 August AD 1467, Başçı İbrahim endowed 62 rooms, several furnaces and many houses in the area known as Yazıcıkızı Bahçesi (Garden). This endowment charter was issued by the Bursa qadi of the period, Ahmed's son, Shaykh Mehmed Efendi. He also added the large bathhouse near the mosque to the foundation on 27 November 1471."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    {
+      "id": "han-hamam-zaviye",
+      "order": 3,
+      "title": {
+        "tr": "Han, Hamam, Zaviye ve Mektep",
+        "en": "Han, Bath, Zawiya and School"
+      },
+      "body": {
+        "tr": "Başçı İbrahim tarafından inşa edilen han, Çakır Ağa Hamamı'nın kuzeyindeki bölgede bulunmakta ve \"Doğangözü Hanı\" olarak bilinmektedir; 1516 yılında çıkan bir yangında zarar görmüş, birçok kez onarıldıktan sonra zamanla ortadan kalkmıştır. Hamam yıllar önce satılarak dokuma fabrikasına dönüştürülmüştür ve günümüzde kültürel amaçlı kullanılmaktadır. Cami civarındaki zaviye 1869 yılında medreseye dönüştürülmüş, ancak daha sonra yıkılarak harap olmuştur. Mektebin kitabesinde Mehmed Çelebi ibn-i Hacı İbrahim adı ve H. 896 / M. 1490 tarihi yer alır. Oğlu Mehmed Çelebi bir mektep yaptırarak ailesinin eğitime verdiği önemi ve hayırseverlik anlayışını sürdürmüştür.",
+        "en": "The han, built by Başçı İbrahim, is located in the area north of Çakır Ağa Bath, and is known as the \"Doğangözü Han\". It was damaged in a fire in 1516 and disappeared over time after being repaired many times. The bath was sold years ago and converted into a weaving factory and is now used for cultural purposes. The zawiya located near the mosque was converted into a madrasa in 1869, but was later demolished and became a ruin. The inscription of the school names Mehmed Çelebi, the son of Hacı İbrahim, and dates it AH 896 / AD 1490. His son, Mehmed Çelebi, continued his family's emphasis on education and philanthropy by building a school."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272, 278"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari: Ana Mekân ve Son Cemaat Yeri",
+        "en": "Architecture: Prayer Hall and Narthex"
+      },
+      "body": {
+        "tr": "Caminin ana mekânı 10.00 × 9.95 m ebatlarındadır. Beş gözlü son cemaat yerinin üzeri ortada tekne tonoz, diğer dört birimde ise kubbe ile örtülmüştür. Caminin önündeki, Bursa camilerine özgü bir mimari unsur olan kalkan duvar, ortadaki üç sahın kubbesiyle ana kubbeyi perdelemiştir.",
+        "en": "The main room of the mosque measures 10.00 × 9.95 m. The five-bay narthex is covered with a trough vault in the middle and the other four units are covered with domes. The parapet wall, an architectural element unique to Bursa mosques and located in front of the mosque, screens the main dome with the three nave domes in the middle."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272-273"
+        }
+      ]
+    },
+    {
+      "id": "avlu",
+      "order": 5,
+      "title": {
+        "tr": "Avlu",
+        "en": "Courtyard"
+      },
+      "body": {
+        "tr": "Caminin avlusu kare şeklindedir ve ortasında bir şadırvan bulunmaktadır. Doğu ve batı kanatlarında üzerleri kubbe ile örtülü üçer sahından oluşan revaklar yer almakta, kuzey kanadındaki avlu kapısının iki yanında ise beşik tonozlu iki oda bulunmaktadır. Klasik dönem Osmanlı mimarisine uygun tasarlanan bu kapı, bekçi veya kayyım odası olarak düşünülmüştür. Doğu ve batıdaki bu iki odanın zaviye olarak kullanıldığı tahmin edilmektedir. Avludaki sekizgen şadırvan sonraki dönemlerde eklenmiştir.",
+        "en": "The courtyard of the mosque is square-shaped and has a shadirvan in the middle. On the east and west wings, there are arcades consisting of three naves each covered with domes, and on either side of the courtyard door on the north wing, there are two-barrel vaulted rooms. Designed in accordance with the classical Ottoman architecture, this door was intended as a guard or trustee room. It is estimated that these two rooms in the east and west were used as zawiya. The octagonal shadirvan in the courtyard was added in later periods."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "273, 276"
+        }
+      ]
+    },
+    {
+      "id": "deprem-onarim",
+      "order": 6,
+      "title": {
+        "tr": "1855 Depremi ve Onarımlar",
+        "en": "1855 Earthquake and Repairs"
+      },
+      "body": {
+        "tr": "1855 Bursa Depremi sonrası tutulan kayıtlarda caminin büyük bir hasar almadığı, ancak minaresinde bir miktar çatlak olduğu ve tamir edilebileceği belirtilmiştir. Aynı raporda cami ile birlikte \"medrese\" ifadesi geçmekte, Bursa Kadı Sicilleri'nde 1869'dan sonra medreseye çevrildiğine dair kayıtlar bulunmaktadır. Ancak revakların arkasında hücreler bulunmadığından buranın medrese olarak kullanılması mimari açıdan mümkün gözükmemektedir. 1950'li yıllarda avludaki zaviye bölümünün kubbelerinin çöktüğü, yalnızca revak kemerleri ile ayakların kaldığı tespit edilmiş; daha sonra yapı yeniden onarılarak ihya edilmiştir.",
+        "en": "In the records after the 1855 Bursa Earthquake, it was stated that the mosque did not suffer major damage, but there were some cracks in its minaret and it could be repaired. In the same report, the expression \"madrasa\" is included together with the mosque, and there are records in the Bursa Qadi Registers indicating that it was converted into a madrasa after 1869. However, since there are no cells behind the arcades, it does not seem possible from an architectural point of view to use this place as a madrasa. In the 1950s, it was determined that the domes of the zawiya section in the courtyard had collapsed, and only the arcade arches and piers remained. Later, the building was repaired and revived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "273, 276"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber-minare",
+      "order": 7,
+      "title": {
+        "tr": "Mihrap, Minber, Minare ve Duvarlar",
+        "en": "Mihrab, Minbar, Minaret and Walls"
+      },
+      "body": {
+        "tr": "Mihrap fazla derin değildir ve yan dış köşeliklerinde kalın sütunçeleri bulunmaktadır; başlıkları yaprak motifleriyle süslenmiştir. Minber ince işçiliği ve estetik görünümüyle dikkat çekicidir. Minare son cemaat yerinin girişinde batı yönünde konumlandırılmıştır; sekizgen kaideli, silindirik gövdeli ve tuğladandır, şerefesi altı sıra kirpi saçaklıdır. Petek, külah ve şerefe onarımlar sırasında yenilenmiştir. Duvarlar tuğla ve taş örgülüdür; pencere alınlıklarına daire biçiminde mermer parçalar yerleştirilmiştir. Cami bakımlı bir haldedir ve ibadete açıktır.",
+        "en": "The mihrab is not very deep and has thick colonettes on its outer corners. Their heads are decorated with leaf motifs. The minbar is a striking element with its fine craftsmanship and aesthetic appearance. The minaret of the mosque is positioned towards the west at the entrance of the narthex. It has an octagonal base and cylindrical shaft and is constructed of brick. The balcony has rows of sawteeth beneath. The neck, spire and balcony were renewed during the restoration. The walls of the mosque are made of brick and stone. Circular marble pieces are placed on the window pediments. The mosque is well-maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "276"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 8,
+      "title": {
+        "tr": "Başçı İbrahim Bey Haziresi",
+        "en": "Başçı İbrahim Bey Graveyard"
+      },
+      "body": {
+        "tr": "Cami bahçesinde genişçe bir hazire bulunmakta; banî ve aile bireylerinden başlayarak yirminci yüzyılın başlarına kadar defin yapılmıştır. Hazire alanı üzerinde ve civarındaki yapılaşmalarla eski zenginliğini kaybetmiştir. Uzun süre cami lojmanı olarak kullanılan binanın alanı önceleri hazireye dahildi; ihata duvarı yapımı sırasında hazire alanı yola katıldığından birçok mezar yeri ve taşı yok olmuştur. Güney ihata duvarı altında kalmış mezarların varlığı duvardan taşan uzantılarından fark edilebilir. Son yıllarda Bursa Büyükşehir Belediyesi kapsamlı bir düzenleme yapmış, imam ve müezzin lojmanı kaldırılarak altındaki taşlarla birlikte büyük bir kabristan haline getirilmiştir. Mezar taşı günümüze gelenler arasında Başçı Hacı İbrahim Bey bin Abdullah, kızı Aynişah Hatun, oğlu Mehmed Çelebi, Katırcızâde Hacı Ali Paşa ve Keskinzâde Seyyid Hacı Yahya Bey yer alır. Şeyh Alâeddin Efendi, İshak Efendi, Paşa Baba Salih Efendi, Çolak Kadı Galib Efendi gibi kişilerin ise burada medfun olduğu fakat kabirlerinin zamanla yok olduğu belirtilir.",
+        "en": "It can be seen that there was a large graveyard in the mosque garden and that burials continued here, starting with the founder of the mosque and his family members, until the beginning of the twentieth century. Over time, the graveyard lost its former richness due to the construction on and around the graveyard area. The area where the building used as a mosque residence for a long time is located was previously included in the graveyard; when the surrounding wall was pulled back during construction, many graves and stones in the area included in the street were destroyed. The presence of graves under the southern enclosing wall can be noticed from their extensions protruding from the wall. In recent years, the Bursa Metropolitan Municipality has made a comprehensive arrangement in the mosque and graveyard area, and the imam and muezzin lodges have been removed and turned into a large cemetery with the stones underneath. Among those whose gravestones have survived are Başçı Hacı İbrahim Bey bin Abdullah, his daughter Aynişah Hatun, his son Mehmed Çelebi, Katırcızâde Hacı Ali Paşa and Keskinzâde Seyyid Hacı Yahya Bey. Shaykh Alâeddin Efendi, İshak Efendi, Paşa Baba Salih Efendi and the Çolak Qadi Galib Efendi, among others, are buried here but their graves have disappeared."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "277"
+        }
+      ]
+    },
+    {
+      "id": "mezar",
+      "order": 9,
+      "title": {
+        "tr": "Başçı İbrahim Bey Mezarı",
+        "en": "Başçı İbrahim Bey Grave"
+      },
+      "body": {
+        "tr": "Başçı İbrahim Bey'in kabri caminin doğu tarafındaki hazire içindedir. Başçı İbrahim, günümüzde kelle çorbacılığı olarak bilinen başçılık mesleğiyle geçimini sağlamış, alimleri seven ve destekleyen bir şahsiyet olarak tanınmıştır. H. 11 Zilhicce 885 / M. 11 Şubat 1481 tarihinde vefat etmiştir. Zamanla mezarının çevresinde yapılan definlerle geniş bir hazire oluşmuştur. Mezar taşı klasik Osmanlı süsleme anlayışına göre son derece süslü bir formdadır; hem baş taşı hem ayak taşı iki yüzünde de Arapça kitabeler içerecek şekilde işlenmiştir.",
+        "en": "The grave of Başçı İbrahim Bey is located in the cemetery on the east side of the mosque. He earned his living as a başçı, known today as head soup cook, and is known as a person who loved and supported scholars. He passed away on 11 Dhul-Hijjah AH 885 / 11 February AD 1481. Over time, a large cemetery was formed around his grave with the burials that took place there. The gravestone has a highly ornamented form, designed according to the classical Ottoman period decorative approach. Both the headstone and footstone are carved to include Arabic inscriptions on both sides."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "278"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ana_mekan_olcu",
+      "label": {
+        "tr": "Ana mekân ölçüleri",
+        "en": "Main room dimensions"
+      },
+      "value": "10,00 × 9,95",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    {
+      "key": "vakfiye_oda",
+      "label": {
+        "tr": "Vakfedilen oda sayısı",
+        "en": "Rooms endowed"
+      },
+      "value": 62,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    {
+      "key": "vefat_yili",
+      "label": {
+        "tr": "Banînin vefat yılı",
+        "en": "Founder's year of death"
+      },
+      "value": 1481,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "271, 278"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Başçı Hacı İbrahim Bey bin Abdullah",
+      "role": {
+        "tr": "Banî; başçı (kelle çorbacısı)",
+        "en": "Founder; head soup cook"
+      }
+    },
+    {
+      "name": "Mehmed Çelebi",
+      "role": {
+        "tr": "Banînin oğlu; mektebi yaptıran",
+        "en": "Founder's son; had the school built"
+      }
+    },
+    {
+      "name": "Şeyh Mehmed Efendi",
+      "role": {
+        "tr": "Ahmed oğlu; vakfiyeyi düzenleyen dönemin Bursa kadısı",
+        "en": "Son of Ahmed; Bursa qadi who issued the endowment charter"
+      }
+    },
+    {
+      "name": "Aynişah Hatun",
+      "role": {
+        "tr": "Başçı İbrahim'in kızı; hazirede",
+        "en": "Daughter of Başçı İbrahim; buried in the graveyard"
+      }
+    },
+    {
+      "name": "Şeyh Alâeddin Efendi",
+      "role": {
+        "tr": "Ali Semerkandi'nin halifesi, Kanuni Sultan Süleyman'ın şeyhi olarak bilinir; kabri yok olmuş",
+        "en": "Known as caliph of Ali Semerkandi and shaykh of Süleyman the Magnificent; grave lost"
+      }
+    },
+    {
+      "name": "İshak Efendi",
+      "role": {
+        "tr": "Başçı Camii imamı; kabri yok olmuş",
+        "en": "Imam of the Başçı Mosque; grave lost"
+      }
+    },
+    {
+      "name": "Paşa Baba Salih Efendi",
+      "role": {
+        "tr": "Dergâh şeyhi ve musikişinas; kabri yok olmuş",
+        "en": "Shaykh of the lodge and musician; grave lost"
+      }
+    },
+    {
+      "name": "Katırcızâde Hacı Ali Paşa",
+      "role": {
+        "tr": "Bursa eşrafından; mezar taşı günümüzde",
+        "en": "Among Bursa notables; gravestone survives"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mektep-kitabesi",
+      "location": {
+        "tr": "Başçı İbrahim mektebi kitabesi",
+        "en": "Inscription of the Başçı İbrahim school"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Fe sübhânellezî bi-yedihî melekûtü külli şey’in ve ileyhi turce’ûn, Mehmed Çelebi ibn-i Hacı İbrahim sene H. 896 / M. 1490.",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 896,
+        "gregorian": "1490"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ],
+      "note": {
+        "tr": "Kitap Türkçe meal vermez, yalnızca İngilizce çeviriyi verir (en alanında). Dil kitapta belirtilmemiş (metin Arapça ifadeler içerir); 'other' girildi, doğrulanmalı. Kitabe, caminin değil mektebin kitabesidir.",
+        "en": "Glory be to Allah in whose hand is the sovereignty of all things! To Him you shall return. This structure was built by Mehmed Çelebi, the son of Hacı İbrahim, in 896 AH / 1490 AD."
+      }
+    },
+    {
+      "id": "bas-tasi-kitabesi",
+      "location": {
+        "tr": "Başçı İbrahim Bey mezarı baş taşı (iki yüzünde Arapça)",
+        "en": "Headstone of Başçı İbrahim Bey's grave (Arabic, both faces)"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "\"Müminler ölmezler, aksine fâni dünyadan ebedî âleme göç ederler. Allah'ın rahmetine muhtaç Abdullah oğlu İbrahim...\nEy insanlar! Ölüm, insanları ve kardeşleri ayıran bir gerçektir. Peygamberler, evliyalar, ârifler ve zahitler şimdi nerede?\"",
+        "en": "Believers do not die, but rather migrate from the mortal world to the eternal world. Abdullah's son Ibrahim, in need of Allah's mercy… O people! Death is a reality that separates people and brothers. Where are the prophets, saints, wise men and ascetics now?"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 885,
+        "gregorian": "1481"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "278"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca meali verir; Arapça asıl metin ve transliterasyon kitapta yok. Tarih, kabir sahibinin vefat tarihidir (taşın üzerindeki yazı olarak belirtilmemiştir).",
+        "en": "The book gives only the meaning; the Arabic original and transliteration are not printed. The date is the owner's date of death, not stated as written on the stone."
+      }
+    },
+    {
+      "id": "ayak-tasi-kitabesi",
+      "location": {
+        "tr": "Başçı İbrahim Bey mezarı ayak taşı (iki yüzünde Arapça)",
+        "en": "Footstone of Başçı İbrahim Bey's grave (Arabic, both faces)"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "\"Resûlullah (s.a.v.) şöyle buyurmuştur: Dünya hayatının başlangıcı ağlamak, ortası meşakkat, sonu ise yok oluştur. Dünya bir leş gibidir, ona ancak köpekler talip olur. Dünya ömrü bir saatliktir; onu da Allah'a itaatle geçirmek gerekir. Dünya fânidir, âhiret ise bâkidir.\"",
+        "en": "The Messenger of Allah (PBUH) said: The beginning of worldly life is crying, its middle is hardship, and its end is destruction. The world is like a carcass, only dogs would want to eat it. The life of this world is but an hour; it must be spent in obedience to Allah. The world is mortal, but the hereafter is eternal."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "278"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca meali verir; Arapça asıl metin ve transliterasyon kitapta yok.",
+        "en": "The book gives only the meaning; the Arabic original and transliteration are not printed."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vakfiye-1467",
+      "year": 1467,
+      "date": "1467-08-14",
+      "hijri": "12 Muharrem 872",
+      "type": "record",
+      "title": {
+        "tr": "Başçı İbrahim'in vakfiyesi (H. 12 Muharrem 872 / 14 Ağustos 1467)",
+        "en": "Başçı İbrahim's endowment charter (12 Muharram AH 872 / 14 August 1467)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    {
+      "id": "hamam-vakfa-1471",
+      "year": 1471,
+      "date": "1471-11-27",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Cami civarındaki büyük hamam vakfa eklendi",
+        "en": "Large bathhouse near the mosque added to the foundation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1481",
+      "year": 1481,
+      "date": "1481-02-11",
+      "hijri": "11 Zilhicce 885",
+      "type": "record",
+      "title": {
+        "tr": "Başçı İbrahim vefat etti ve caminin doğusuna defnedildi",
+        "en": "Başçı İbrahim died and was buried east of the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "271, 278"
+        }
+      ]
+    },
+    {
+      "id": "mektep-1490",
+      "year": 1490,
+      "date": null,
+      "hijri": "896",
+      "type": "construction",
+      "title": {
+        "tr": "Mehmed Çelebi'nin mektebi (kitabe tarihi H. 896 / M. 1490)",
+        "en": "School of Mehmed Çelebi (inscription date AH 896 / AD 1490)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    {
+      "id": "han-yangin-1516",
+      "year": 1516,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Doğangözü Hanı yangında zarar gördü",
+        "en": "Doğangözü Han damaged in a fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 Bursa Depremi; minarede çatlak, büyük hasar yok",
+        "en": "1855 Bursa Earthquake; cracks in the minaret, no major damage"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "273, 276"
+        }
+      ]
+    },
+    {
+      "id": "medrese-1869",
+      "year": 1869,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Zaviyenin medreseye çevrildiğine dair kadı sicili kayıtları (mimari olarak mümkün görünmüyor)",
+        "en": "Qadi register records of conversion of the zawiya into a madrasa (seems architecturally impossible)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272-273, 276"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-abdal-mehmet-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Abdal Mehmed Camii'ni de Başçı İbrahim Bey yaptırmıştır.",
+        "en": "The Abdal Mehmed Mosque was also built by Başçı İbrahim Bey."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-dogangozu-hani",
+      "type": "same_founder",
+      "description": {
+        "tr": "Çakır Ağa Hamamı'nın kuzeyindeki Doğangözü Hanı da Başçı İbrahim tarafından yaptırılmıştır (günümüzde yok).",
+        "en": "The Doğangözü Han north of Çakır Ağa Bath was also built by Başçı İbrahim (no longer exists)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "272"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Başçı İbrahim Camii, Maksem Mahallesi'nde bir son cemaat yeri, kubbeli revaklı kare bir avlu ve avlu ortasında sekizgen şadırvanı olan bir camidir. Ana mekân yaklaşık 10 × 10 metredir. Beş gözlü son cemaat yerinin önünde Bursa camilerine özgü kalkan duvar yükselir. Batıdaki tuğla minarenin sekizgen kaidesi ve silindirik gövdesi vardır. Bahçede geniş bir hazire bulunur.",
+      "en": "Başçı İbrahim Mosque in Maksem Neighborhood has a five-bay narthex, a square courtyard with domed arcades and an octagonal shadirvan in the middle. The main room measures about 10 by 10 metres. A parapet wall characteristic of Bursa mosques rises in front of the narthex. The brick minaret to the west has an octagonal base and cylindrical shaft. A large graveyard lies in the garden."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-basci-ibrahim-bey-camii/p004-1.jpg",
+        "original_name": "02-4.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "273"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin havadan görünümü ve avlusu",
+        "en": "Aerial view of the mosque and yard"
+      },
+      "alt": {
+        "tr": "Yukarıdan, açık mavi-gri kurşun kaplı kubbe ve çatılar ile ortada ağaçlı bir avlu görünür. Çevresinde kiremitli evler ve sokaklar yer alır.",
+        "en": "From above, pale blue-grey lead-covered domes and roofs with a courtyard containing trees in the middle. Tiled houses and streets surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-basci-ibrahim-bey-camii/p003-1.jpg",
+        "original_name": "04-6.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "272"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Süslemeli harim ve mihrap duvarı",
+        "en": "Decorated prayer hall and mihrab wall"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı harimde pencere kemerleri mavi, turuncu ve altın renkli bezemelidir. Ortada sarkıtlı mihrap, sağda koyu ahşap minber ve geniş bir avize vardır.",
+        "en": "A white prayer hall with window arches painted in blue, orange and gold. A mihrab with a stalactite niche at the centre, a dark wooden minbar on the right and a large chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-basci-ibrahim-bey-camii/p007-1.jpg",
+        "original_name": "DJI_20241015212514_0839_D-Edit.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "276"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap ve çevresindeki kalem işleri",
+        "en": "Mihrab and surrounding painted decoration"
+      },
+      "alt": {
+        "tr": "Mavi çerçeveli mihrap nişinde kıvrımlı altın renkli mukarnas ve üstünde yazılı bir kuşak vardır. Yanlarda süslemeli pencereler ve yuvarlak hat levhaları görünür.",
+        "en": "A blue-framed mihrab niche with a curved gilded stalactite vault and a band of script above. Decorated windows and round calligraphy panels flank it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    }
+  ],
+  "archive_media": []
+}

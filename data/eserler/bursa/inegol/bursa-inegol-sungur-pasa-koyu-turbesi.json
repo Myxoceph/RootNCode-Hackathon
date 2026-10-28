@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-inegol-sungur-pasa-koyu-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İnegöl",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yenişehir'deki Sungur Paşa Camii için hedef kimlik 'bursa-yenisehir-sungur-pasa-camii' tahminidir; kayıt varsa düzeltilmeli.",
+      "Yapım yılı ve yapanı kitapta yok (yakın dönem).",
+      "Köyün hamamı (100 m doğu) için ayrı kayıt olup olmadığı bilinmiyor; ilişki kurulmadı.",
+      "'Sungur Paşa' kimliği (banî) kitapta adıyla açılmıyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraflar (media) ve media_folder henüz eşlenmedi; match_photos.py ile eklenecek. Arşiv fotoğrafı (archive_media) yok.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) derlenmedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "relations[0]",
+        "note": "Kitap 'kabul edilmektedir' diyor; kesin bilgi değil, bu nedenle 'probable'. 'same_founder' bu yüzden yalnızca camiyi yaptıranla gömülü kişinin aynı olduğu iddiasını temsil eder."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sungur Paşa Köyü Türbesi",
+    "en": "Sungur Paşa Village Tomb"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Sungur Paşa",
+    "yeni türbe",
+    "köy"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İnegöl",
+    "neighborhood": "Sungur Paşa Köyü",
+    "address": "Sungur Paşa Köyü (hamamın yaklaşık 100 m batısı, yeni caminin yanı)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "394"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sungur Paşa köyünde, yeni caminin yanında yer alan, yakın dönemde yapılmış, içinde yalnızca bir sanduka bulunan türbe.",
+    "en": "A recently built tomb in Sungur Paşa Village next to the new mosque, containing only one sarcophagus."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapı",
+        "en": "Location and Structure"
+      },
+      "body": {
+        "tr": "Türbe, Sungur Paşa köyünde hamamın yaklaşık 100 m batısında, yeni inşa edilen caminin hemen yanında yer alır ve yakın dönemde yapılmıştır. Yenişehir'deki Sungur Paşa Camii'nin banisinin doğduğu köydeki bu türbeye defnedildiği kabul edilmektedir. Türbe yeni olduğu için özgün tarihî değer taşımaz. Yapıda yalnızca bir sanduka vardır; baş ve ayak taşları kitabesizdir ve Sungur Paşa dönemine ait olma ihtimalleri oldukça düşüktür.",
+        "en": "The tomb is in Sungur Paşa Village, about 100 m west of the bath, right next to the newly built mosque, and is a recent structure. It is accepted that the founder of the Sungur Paşa Mosque in Yenişehir was buried in this tomb in the village where he was born. As it is new, it has no original historical value. There is only one sarcophagus; the head and foot stones bear no inscription and are very unlikely to belong to the Sungur Paşa period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "394"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "394"
+        }
+      ]
+    },
+    {
+      "key": "hamam_mesafe",
+      "label": {
+        "tr": "Hamama uzaklık (batısında)",
+        "en": "Distance west of the bath"
+      },
+      "value": 100,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "394"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık' diyor.",
+        "en": null
+      }
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yenisehir-sungur-pasa-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Türbede, Yenişehir'deki Sungur Paşa Camii'nin banisinin gömülü olduğu kabul edilir.",
+        "en": "The founder of the Sungur Paşa Mosque in Yenişehir is accepted to be buried in this tomb."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "394"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": null,
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, köyde yeni yapılmış caminin hemen yanında duran küçük, yakın dönem yapısıdır. İçinde kitabesiz baş ve ayak taşlı tek bir sanduka bulunur.",
+      "en": null
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

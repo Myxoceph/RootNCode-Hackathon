@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-buyuk-hamam",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Yapım tarihi kaynakta yok; dating null.",
+      "Restorasyon ve müze açılış yılları kaynakta verilmemiş.",
+      "Müzenin güncel adı ve işleyişi kaynakta belirtilmemiş.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.address",
+        "note": "Bu bölümde Büyük Hamam 'Beyler Mahallesi, Atatürk Caddesi No: 88' adresindedir; Hacı Hamza (II. Murad) Hamamı bölümünde ise Evliya Çelebi'nin kaydı aktarılırken I. Murad (Büyük Hamam)'ın 'Maltepe Caddesi üzerinde' olduğu yazılıdır. Caddesi adı çelişkili; her iki ifade de kaynağa sadık saklandı (bu kayıt 486. sayfadaki adresi kullanır)."
+      },
+      {
+        "field": "founder",
+        "note": "Kaynak 'I. Murad tarafından yaptırıldığı bilinen' der ama kitabe yoktur; kesin belge gösterilmemiştir, bu yüzden probable işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Büyük (Eski - I. Murad - Meydan - Tekke) Hamamı",
+    "en": "Great (Old - Murad I - Meydan - Tekke) Bath"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "çifte hamam",
+    "I. Murad",
+    "Roma yolu",
+    "müze"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Beyler Mahallesi",
+    "address": "Atatürk Caddesi No: 88",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "486"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.431782,
+      "lng": 29.720682,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "I. Murad",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "486"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "I. Murad'ın yaptırdığı bilinen, kitabesiz, çifte hamam tipinde erken Osmanlı hamamı; bugün müze olarak hizmet vermektedir.",
+    "en": "An early Ottoman double bath known to have been built by Murad I, without inscription; today it serves as a museum."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Beyler Mahallesi, Atatürk Caddesi No: 88'deki yapı, I. Murad tarafından yaptırıldığı bilinir ve halk arasında I. Murad Hamamı, Büyük Hamam, Eski Hamam, Meydan Hamamı ve Tekke Hamamı adlarıyla anılır. Kitabesi yoktur.",
+        "en": "Located at Atatürk Street No. 88, Beyler Neighborhood, the building is known to have been built by Murad I and is called Murad I Bath, Great Bath, Old Bath, Meydan Bath and Tekke Bath. It has no inscription."
+      },
+      "confidence": "certain",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "486"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Erken dönem Osmanlı hamamları tarzında dikdörtgen planlı, kadınlar ve erkekler bölümü ayrı 'çifte hamam' tipindedir; iki bölümün mimari özellikleri büyük ölçüde benzerdir. Erkekler bölümüne batı cephesinde, eksenin güneyindeki kapıdan girilir. Kadınlar bölümü daha küçüktür; doğudaki kapıdan soyunmalığa girilir. Kapı ve pencere kemerleri tuğladan, iç duvarlar sıva ve badanalıdır. Alt yapı düzensiz almaşık teknikte kesme taş, moloz taş ve tuğla ile yapılmıştır.",
+        "en": "Built in the early Ottoman bath style, it is a rectangular 'double bath' with separate men's and women's sections of largely similar features. The men's section is entered from a door south of the axis on the west façade. The women's section is smaller, entered through a door on the east into the changing room. Door and window arches are brick, interior walls plastered and whitewashed. The substructure uses irregular alternating courses of cut stone, rubble stone and brick."
+      },
+      "confidence": "certain",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "487"
+        }
+      ]
+    },
+    {
+      "id": "cevre-kullanim",
+      "title": {
+        "tr": "Çevre ve Kullanım",
+        "en": "Setting and Use"
+      },
+      "body": {
+        "tr": "Hamamın temelleri yanından geçen Atatürk Caddesi'nin zemininden yaklaşık 3 m aşağıda kalmıştır. Batı cephesinin önünden İstanbul Kapı ile Yenişehir Kapı'yı birbirine bağlayan şehrin ana yolu geçer; bu yolun 4 m altında eski Roma yolu kalıntıları ortaya çıkarılmıştır. Hayli harap durumdaki yapı 1970'lerde belediye deposu olarak kullanılmış, tarihî ve mimari değeri ortaya konunca restorasyona alınmış ve müze olarak hizmete açılmıştır.",
+        "en": "The foundations lie about 3 m below Atatürk Street. The city's main road linking the Istanbul Gate and the Yenişehir Gate passes in front of the west façade; remains of an old Roman road were found 4 m below it. The very dilapidated building was a municipal warehouse in the 1970s; after research revealed its value it was restored and opened as a museum."
+      },
+      "confidence": "certain",
+      "order": 3,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "487"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "temel_derinlik",
+      "label": {
+        "tr": "Temel düzeyi (cadde zemininden)",
+        "en": "Foundation level below street"
+      },
+      "value": 3,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "487"
+        }
+      ],
+      "note": {
+        "tr": "Yaklaşık.",
+        "en": "Approximate."
+      }
+    },
+    {
+      "key": "roma_yolu_derinlik",
+      "label": {
+        "tr": "Roma yolu kalıntısı (ana yoldan aşağıda)",
+        "en": "Roman road remains below main road"
+      },
+      "value": 4,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "487"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "I. Murad",
+      "role": {
+        "tr": "Hamamı yaptırdığı bilinen hükümdar",
+        "en": "Ruler known to have had the bath built"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "belediye-deposu-1970",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1970'lerde belediye deposu olarak kullanıldı; sonra restore edilip müze oldu",
+        "en": "Used as municipal warehouse in the 1970s; later restored and opened as museum"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "487"
+        }
+      ],
+      "note": {
+        "tr": "Yıl belirtilmeden '1970'li yıllar'.",
+        "en": "Given only as 'the 1970s'."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, sıva ve badana kaplı iç duvarları olan, dikdörtgen planlı, erkekler ve kadınlar için ayrı bölümleri bulunan bir yapıdır. Kapı ve pencere kemerleri tuğladandır. Temelleri yan taraftaki caddenin yaklaşık üç metre altındadır.",
+      "en": "The bath is a rectangular building with separate men's and women's sections and plastered, whitewashed interior walls. Door and window arches are brick. Its foundations lie about three metres below the adjacent street."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "486-487"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1JYRlyWMe1JzBSZ_GoNHbCzdpLeNnIPnp",
+        "original_name": "DJI_20241020211115_0315_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "486"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Büyük (Eski - I. Murad - Meydan - Tekke) Hamamı (kitap s. 486)",
+        "en": "Great (Old - Murad I - Meydan - Tekke) Bath (book p. 486)"
+      },
+      "alt": {
+        "tr": "Büyük (Eski - I. Murad - Meydan - Tekke) Hamamı fotoğrafı",
+        "en": "Photo of Great (Old - Murad I - Meydan - Tekke) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1Eblba3bK9IvV76xVV1ihnwPQQQSft_jU",
+        "original_name": "08 ERD01698 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "487"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Büyük (Eski - I. Murad - Meydan - Tekke) Hamamı (kitap s. 487)",
+        "en": "Great (Old - Murad I - Meydan - Tekke) Bath (book p. 487)"
+      },
+      "alt": {
+        "tr": "Büyük (Eski - I. Murad - Meydan - Tekke) Hamamı fotoğrafı",
+        "en": "Photo of Great (Old - Murad I - Meydan - Tekke) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1xqO_g7m5OlThss-kr8c6pzsmt-eqW-CR",
+        "original_name": "09 ERD01700 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "487"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Büyük (Eski - I. Murad - Meydan - Tekke) Hamamı (kitap s. 487)",
+        "en": "Great (Old - Murad I - Meydan - Tekke) Bath (book p. 487)"
+      },
+      "alt": {
+        "tr": "Büyük (Eski - I. Murad - Meydan - Tekke) Hamamı fotoğrafı",
+        "en": "Photo of Great (Old - Murad I - Meydan - Tekke) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

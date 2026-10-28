@@ -1,0 +1,586 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-haci-hamza-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Yapımcı ve yapım yılı kaynakta yok (founder, dating yıllar null).",
+      "Eski Kaplıca'nın ilçesi/adı metinde belirtilmiyor; relations hedef id'si 'bursa-iznik-eski-kaplica' tahminidir ve doğrulanmalı.",
+      "Hacı Hamza Bey Mescidi'nin kaydı kapsam dışı; hedef id doğrulanmalı.",
+      "Hamamın erkekler kısmı için açık gün/saat bilgisi kaynakta yok (haftanın belirli günleri erkek, bazı günleri kadın).",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlıkta ve metinde 'II. Murad Hamamı' denir; ancak aynı bölümde 'kim tarafından yaptırıldığı bilinmemektedir' yazılıdır. II. Murad adı bu yüzden bir yaptıran bilgisi olarak alınmadı; founder null."
+      },
+      {
+        "field": "relations",
+        "note": "Metin 'Hacı Hamza Bey Mescidi evkafına ait olduğu ileri sürülerek' der; bu iddia kaynakta doğrulanmamıştır (disputed)."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Bu bölüm Evliya Çelebi'nin kaydını aktarırken 'I. Murad (Büyük Hamam)' için 'Maltepe Caddesi üzerinde' der; Büyük Hamam bölümü adresi 'Atatürk Caddesi No: 88' olarak verir. Çelişki kaynağa sadık saklandı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Hamza (II. Murad) Hamamı",
+    "en": "Hacı Hamza (Murad II) Bath"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "çifte hamam",
+    "Belediye Hamamı",
+    "Evliya Çelebi",
+    "çini atölyesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Mahmut Çelebi Mahallesi",
+    "address": "Maltepe Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "489"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.428329,
+      "lng": 29.720272,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIV. yüzyıl sonu - XV. yüzyıl başı (tahmini)",
+      "en": "Late 14th - early 15th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitabe yok; plan, yapım tekniği ve mimari unsurlardaki benzerliklere dayanan tahmin. Yıl verilmemiştir.",
+      "en": "No inscription; estimate based on similarities in plan, technique and elements. No year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "489"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Hacı Hamza Bey Mescidi evkafı (ileri sürülüyor)",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "489"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Yapımcısı ve tarihi bilinmeyen, XIV. yüzyıl sonu ile XV. yüzyıl başına tahmin edilen çifte hamam; erkekler bölümü hâlen hamam olarak kullanılır.",
+    "en": "A double bath of unknown builder and date, estimated late 14th or early 15th century; the men's section is still in use as a bath."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "title": {
+        "tr": "Genel Bakış ve Adlar",
+        "en": "Overview and Names"
+      },
+      "body": {
+        "tr": "İznik'teki ilk Türk eseri olan Hacı Hamza Bey Mescidi evkafına ait olduğu ileri sürüldüğünden 'Hacı Hamza Hamamı' adıyla da anılır. Başka adlar II. Murad Hamamı ve 'Belediye Hamamı'dır. Kitabesi olmadığından kim tarafından ve ne zaman yaptırıldığı bilinmez; plan, yapım tekniği ve mimari unsurlardaki benzerlikler nedeniyle XIV. yüzyıl sonu - XV. yüzyıl başında inşa edildiği tahmin edilmektedir. Erkekler kısmının giriş eyvanı Yeşil Camii'ne, soğukluktaki kubbe kasnağı Eski Kaplıca'ya benzer.",
+        "en": "It is also called 'Hacı Hamza Bath' since it is claimed to belong to the foundations of the Hacı Hamza Bey Mosque, the first Turkish building in Iznik; other names are Murad II Bath and 'Municipal Bath'. With no inscription, its builder and date are unknown; because of similarities in plan, technique and elements it is estimated to date from the late 14th or early 15th century. The men's entrance iwan resembles the Green Mosque and the frigidarium dome drum resembles the Eski Kaplıca."
+      },
+      "confidence": "probable",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Evliya Çelebi 1648'de İznik'te iki çifte hamam bulunduğunu kaydeder. Osmanlı dönemi boyunca kesintisiz kullanılan hamam 1930'larda Vakıflar İdaresince belediyeye devredilmiş, belediye bir süre depo olarak kullanmış, sonra yeniden hamam olarak işletmeye açmıştır. 1987'de dış yüzeylerdeki süslemeli mermer kurnalar söküldü ve iç mekânda tarihî yapıya aykırı müdahaleler yapıldı. 2006'daki yangın sonrası yapı onarılmış, 2010'da genel tadilattan geçmiştir. Erkekler bölümü hâlen hamamdır; kadınlar bölümü çini atölyesi olarak kullanılır.",
+        "en": "Evliya Çelebi, visiting in 1648, recorded two double baths in Iznik. Used continuously in the Ottoman period, it was transferred by the Foundations Administration to the municipality in the 1930s, used for a time as a warehouse and then reopened as a bath. In 1987 the ornamented marble basins on the exterior were removed and interior interventions contrary to the historic building were made. It was repaired after a fire in 2006 and renovated in 2010. The men's section still works as a bath; the women's section is a tile workshop."
+      },
+      "confidence": "certain",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "490, 492"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "title": {
+        "tr": "Plan ve Mekânlar",
+        "en": "Plan and Spaces"
+      },
+      "body": {
+        "tr": "Doğu-batı doğrultulu hamamın erkekler kısmı doğuda kare planlı soğukluk, batıda ılıklık ve dört eyvanlı sıcaklıktan oluşur. Kadınlar kısmı doğuda kare planlı soğukluk, batıda sıcaklık, tuvalet ve iki eş kare halvet mekânından oluşur. Erkekler soyunmalığı yaklaşık 9,50 m çapında, büyük kubbeli, ortasında fıskiyeli şadırvan olan kare mekândır; kubbeye geçiş dilimli tromplarla, mukarnaslı pandantiflerle sağlanır. Erkekler sıcaklığı dört eyvanlı, köşelerde dört halvet hücreli, sekizgen göbek taşlı, sekizgen kasnaklı alçak kubbelidir. Batı cephesine bitişik dikdörtgen planlı bir su deposu vardır.",
+        "en": "The men's section comprises a square frigidarium in the east, a tepidarium in the west and a four-iwan caldarium; the women's section has a square frigidarium in the east, a caldarium, toilet and two equal square bathing cells in the west. The men's changing room, about 9.50 m across, is a square space under a large dome with a fountain jet at the centre; transition is by segmented squinches with muqarnas pendentives. The men's caldarium has four iwans, four corner bathing cells, an octagonal central slab and a low dome on an octagonal drum. A rectangular water tank adjoins the west façade."
+      },
+      "confidence": "certain",
+      "order": 3,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "490-492"
+        }
+      ]
+    },
+    {
+      "id": "cepheler",
+      "title": {
+        "tr": "Cepheler",
+        "en": "Façades"
+      },
+      "body": {
+        "tr": "Cephe duvarları moloz taş ve tuğlanın harçla birlikte kullanılmasıyla örülmüş, köşelerde kesme taş ve mermer bloklar tercih edilmiştir. Pencere kemerleri taş ve tuğlayla sivri kemer biçimindedir. Kadınlar kısmı girişi üzerindeki alınlık kemeri, saçak altı testere dişi silmeler ve tüm örtü sistemi tuğladandır. Kapı mermer lento ve kemerle sınırlanmış, üstteki çökertme alınlık mermer kaplamayla vurgulanmıştır.",
+        "en": "Façade walls are rubble stone and brick with mortar, with cut stone and marble blocks at the corners, a technique also seen in 15th-century Bursa buildings. Window arches are pointed, in stone and brick. The pediment arch over the women's entrance, the sawtooth mouldings and the whole roof system are brick. The door has a marble lintel and arch, and the recessed pediment is emphasised with marble cladding."
+      },
+      "confidence": "certain",
+      "order": 4,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "492"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "soyunmalik_cap",
+      "label": {
+        "tr": "Erkekler soyunmalığı çapı",
+        "en": "Men's changing room diameter"
+      },
+      "value": 9.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "491"
+        }
+      ],
+      "note": {
+        "tr": "Yaklaşık.",
+        "en": "Approximate."
+      }
+    },
+    {
+      "key": "halvet_erkek",
+      "label": {
+        "tr": "Erkekler kısmı halvet hücresi",
+        "en": "Men's bathing cells"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "491"
+        }
+      ]
+    },
+    {
+      "key": "halvet_kadin",
+      "label": {
+        "tr": "Kadınlar kısmı halvet hücresi",
+        "en": "Women's bathing cells"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "490, 492"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Evliya Çelebi",
+      "role": {
+        "tr": "1648'de İznik'te iki çifte hamam kaydeden seyyah",
+        "en": "Traveller who recorded two double baths in Iznik in 1648"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "evliya-1648",
+      "year": 1648,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Evliya Çelebi İznik'te iki çifte hamam kaydetti",
+        "en": "Evliya Çelebi recorded two double baths in Iznik"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "490"
+        }
+      ]
+    },
+    {
+      "id": "devir-1930",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıflar İdaresince belediyeye devredildi (1930'lar)",
+        "en": "Transferred to the municipality by the Foundations Administration (1930s)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "490"
+        }
+      ],
+      "note": {
+        "tr": "Yıl belirtilmeden '1930'lu yıllar'.",
+        "en": "Given only as 'the 1930s'."
+      }
+    },
+    {
+      "id": "mudahale-1987",
+      "year": 1987,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Dış yüzeydeki süslemeli mermer kurnalar söküldü, iç mekânda uygunsuz müdahaleler yapıldı",
+        "en": "Ornamented marble basins removed; unsuitable interior interventions"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "490"
+        }
+      ]
+    },
+    {
+      "id": "yangin-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangın sonrası onarım",
+        "en": "Repair after a fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "493"
+        }
+      ]
+    },
+    {
+      "id": "tadilat-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Genel tadilat",
+        "en": "General renovation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "493"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-haci-hamza-bey-mescidi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Hamamın Hacı Hamza Bey Mescidi evkafına ait olduğu ileri sürülmektedir.",
+        "en": "The bath is claimed to belong to the foundations of the Hacı Hamza Bey Mosque."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-iznik-yesil-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Erkekler kısmının giriş eyvanı Yeşil Camii'ne benzer.",
+        "en": "The entrance iwan of the men's section resembles the Green Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "489"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-iznik-eski-kaplica",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Soğukluk bölümündeki kubbe kasnağı Eski Kaplıca'ya benzer.",
+        "en": "The dome drum of the frigidarium resembles the Eski Kaplıca."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "489"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, doğu-batı doğrultulu, erkekler ve kadınlar için ayrı bölümleri bulunan, taş ve tuğla örgülü kubbeli bir yapıdır. Erkekler soyunmalığı yaklaşık dokuz buçuk metre çapında büyük bir kubbeyle örtülüdür ve ortasında fıskiyeli bir şadırvan bulunur. Batı cephesine bitişik dikdörtgen bir su deposu vardır.",
+      "en": "The bath is a domed stone-and-brick building on an east-west axis with separate men's and women's sections. The men's changing room is covered by a large dome about nine and a half metres across and has a fountain jet at its centre. A rectangular water tank adjoins the west façade."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "489-493"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1-NnbtdK6n3reHAZHriLic3EddPubz_hL",
+        "original_name": "02 DJI_20241020195221_0233_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "490"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı (kitap s. 490)",
+        "en": "Hacı Hamza (Murad II) Bath (book p. 490)"
+      },
+      "alt": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı fotoğrafı",
+        "en": "Photo of Hacı Hamza (Murad II) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1O-my1qngDNEKzAUFVSYeF2c0UnhTMt2f",
+        "original_name": "03 DJI_20241020195845_0256_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "491"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı (kitap s. 491)",
+        "en": "Hacı Hamza (Murad II) Bath (book p. 491)"
+      },
+      "alt": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı fotoğrafı",
+        "en": "Photo of Hacı Hamza (Murad II) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1YJEy7kXkY_ganOBogKGfZyWrZDjv408c",
+        "original_name": "10 ERD01592-Geliştirilmiş-NR kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "492"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı (kitap s. 492)",
+        "en": "Hacı Hamza (Murad II) Bath (book p. 492)"
+      },
+      "alt": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı fotoğrafı",
+        "en": "Photo of Hacı Hamza (Murad II) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1rJE7IWYjkNOOJ78rnSIiTmuGLahp9BPt",
+        "original_name": "07 DJI_20241020200642_0273_D_ODAK kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "493"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı (kitap s. 493)",
+        "en": "Hacı Hamza (Murad II) Bath (book p. 493)"
+      },
+      "alt": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı fotoğrafı",
+        "en": "Photo of Hacı Hamza (Murad II) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1ootTGuTo6AR2tZgtAbNuMV0vRtUei-7F",
+        "original_name": "15 ERD01660-Geliştirilmiş-NR kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "493"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı (kitap s. 493)",
+        "en": "Hacı Hamza (Murad II) Bath (book p. 493)"
+      },
+      "alt": {
+        "tr": "Hacı Hamza (II. Murad) Hamamı fotoğrafı",
+        "en": "Photo of Hacı Hamza (Murad II) Bath"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

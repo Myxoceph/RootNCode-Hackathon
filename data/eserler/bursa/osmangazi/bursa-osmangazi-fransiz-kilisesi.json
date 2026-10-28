@@ -1,0 +1,593 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-fransiz-kilisesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Sivil Mimari",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Sivil Mimari (Osmangazi) bölümünden (s. 723-743) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir. İngilizce alanlar kitabın İngilizce çevirisinden kısaltılmıştır.",
+    "todos": [
+      "Mimar kitapta yok (architect = null).",
+      "Kilisenin 'Bursa Protestan Kilisesi' adıyla da anıldığı kitapta belirtiliyor ancak Katolik rahibelerce yapıldığı anlatılıyor; ad bilgisi doğrulanmalı.",
+      "Tonozdaki dört İncil yazarı figürünün neden kaybolduğu kitapta yok.",
+      "1856 arsa devrinin gerçekte satış mı bağış mı olduğu kitapta belirsiz.",
+      "Koordinat kitapta yok; sahadan veya haritadan doğrulanmış koordinat eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[arsa-1856]",
+        "note": "Kitap 'satılmış veya bağışlanmıştır' diyerek iki olasılık verir; güven 'disputed' işaretlendi."
+      },
+      {
+        "field": "alternate_names",
+        "note": "Kitap yapıya 'Bursa Protestan Kilisesi' de der; ancak yapı Katolik 'Filles de la Charité' rahibelerince inşa edilmiştir. Çelişki olduğu gibi aktarıldı, düzeltilmedi."
+      },
+      {
+        "field": "dating",
+        "note": "Kutsama 14 Aralık 1879, ibadete açılış 11 Ağustos 1880; arsa devri 1856. Kitap inşa başlangıç tarihini vermez; temel atma tarihi de belirtilmemiştir."
+      },
+      {
+        "field": "sections[yapi-ve-mimari]",
+        "note": "'1950'lerde ... tanımlanmıştır' ifadesi bir dönem tarifi olup yapının o dönemde değiştirildiği anlamına gelmeyebilir; Türkçe metin esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Fransız Kilisesi",
+    "en": "French Church"
+  },
+  "subtitle": {
+    "tr": "Santa Maria Kilisesi",
+    "en": "Church of Santa Maria"
+  },
+  "alternate_names": [
+    {
+      "tr": "Santa Maria Kilisesi",
+      "en": "Santa Maria Church",
+      "note": "Yapının aslî adı"
+    },
+    {
+      "tr": "Bursa Protestan Kilisesi",
+      "en": "Bursa Protestant Church",
+      "note": "Kitapta bu adla da bilindiği belirtilir"
+    }
+  ],
+  "type": "kilise",
+  "secondary_types": [
+    "sivil"
+  ],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kilise",
+    "Gotik",
+    "Santa Maria",
+    "Filles de la Charité",
+    "Pantokrator",
+    "çokkültürlü Bursa"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hocaalizade",
+    "address": "Rakım Efendi Sokak (Necatibey Kız Meslek Lisesi'nin karşısı)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "737"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.180391,
+      "lng": 29.066062,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/999362153 ('Bursa Protestan Kilisesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Temel atma ve kutsama 14 Aralık 1879; ibadete açılış 11 Ağustos 1880",
+      "en": "Consecrated 14 December 1879; opened for worship 11 August 1880"
+    },
+    "start_year": 1879,
+    "end_year": 1880,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap kutsama (14 Aralık 1879) ve ibadete açılış (11 Ağustos 1880) tarihlerini verir. Arsa Eylül 1856 tarihli bir devirle ilişkilidir.",
+      "en": "The book gives the consecration (14 December 1879) and opening for worship (11 August 1880); the land is tied to a September 1856 transfer."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "737"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Fransa'dan gelen Katolik 'Filles de la Charité' tarikatına bağlı rahibeler",
+    "role": "inşa eden",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "737"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Gotik üslubu ve sarı dış cephesiyle ayırt edilen tek nefli kilise, Fransa'dan gelen Katolik 'Filles de la Charité' rahibeleri tarafından inşa edilmiş, 11 Ağustos 1880'de ibadete açılmıştır. 1960'tan sonra kullanılmamış, 2004 ve 2017'de restore edilmiş; bugün Fransız Kültür Merkezi tarafından ibadete açık işletilmektedir.",
+    "en": "Distinguished by its Gothic style and yellow exterior, this single-nave church was built by Catholic 'Filles de la Charité' nuns from France and opened for worship on 11 August 1880. Unused after 1960, it was restored in 2004 and 2017 and is today operated as a place of worship by the French Cultural Center."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-ad",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve ad",
+        "en": "Location and name"
+      },
+      "body": {
+        "tr": "Kilise Osmangazi ilçesi Hocaalizade Mahallesi Rakım Efendi Sokak'ta, Necatibey Kız Meslek Lisesi'nin karşısındadır. Bursa Protestan Kilisesi olarak da bilinen yapı aslen 'Santa Maria Kilisesi' adını taşır; Gotik üslubu ve sarı dış cephesiyle kolayca ayırt edilir.",
+        "en": "The church is on Rakım Efendi Street, Hocaalizade Neighborhood, opposite Necatibey Girls' Vocational High School. Also known as the Bursa Protestant Church, it was originally named 'Santa Maria Church' and is easily recognized by its Gothic style and yellow exterior."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "737"
+        }
+      ]
+    },
+    {
+      "id": "arsa-ve-insa",
+      "order": 2,
+      "title": {
+        "tr": "Arsa ve inşa",
+        "en": "Land and construction"
+      },
+      "body": {
+        "tr": "1925 tarihli emlak senedine göre kilisenin arsası Eylül 1856'da mülk sahibi Hacı Hüsniye Hanım tarafından Latin kökenli Seur Mari binti Losiyord'a satılmış veya bağışlanmıştır. Santa Maria Kilisesi, Fransa'dan gelen Katolik 'Filles de la Charité' tarikatı rahibelerince inşa edilmiştir; temel taşını Peder Thomas atmış, 14 Aralık 1879'da Monsenyör Giacomo Testa kutsamış, 11 Ağustos 1880'de ibadete açılmıştır.",
+        "en": "According to a 1925 property deed, the land was sold or endowed in September 1856 by owner Hacı Hüsniye Hanım to Seur Mari binti Losiyord, of Latin origin. The Church of Santa Maria was built by nuns of the Catholic order 'Filles de la Charité' from France; Father Thomas laid the foundation stone, Monsignor Giacomo Testa consecrated it on 14 December 1879, and it opened for worship on 11 August 1880."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "737"
+        }
+      ]
+    },
+    {
+      "id": "kompleks",
+      "order": 3,
+      "title": {
+        "tr": "Kiliseyle birlikte inşa edilen kompleks",
+        "en": "The complex built with the church"
+      },
+      "body": {
+        "tr": "Dönemin kaynaklarında kiliseyle birlikte inşa edilen komplekste bir dispanser, işlik, yetimhane, okul ve hastane bulunduğu belirtilir. Lozan Antlaşması uyarınca Fransız Büyükelçiliği'nin hazırladığı Türkiye'deki Fransız mülkleri listesinde Bursa'da bir manastır, kilise, dispanser, kimsesiz çocuklar yurdu, pansiyon ve Yardımsever Kızlar Hastanesi kayıtlıdır.",
+        "en": "Sources of the period state that the complex built with the church included a dispensary, workshop, orphanage, school and hospital. The French Embassy's list of French properties in Türkiye under the Treaty of Lausanne records in Bursa a monastery, church, dispensary, home for orphans, boarding house and the Charitable Girls Hospital."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "737-738"
+        }
+      ]
+    },
+    {
+      "id": "ic-dekorasyon",
+      "order": 4,
+      "title": {
+        "tr": "İç dekorasyon",
+        "en": "Interior decoration"
+      },
+      "body": {
+        "tr": "Kilisenin iç dekorasyonu 1927'de Assomptionist tarikatından Rahip Lamerand ve bir Rus ressam tarafından yapılmıştır. Tonozun ortasında Pantokrator İsa tasviri, iki yanında altı kanatlı melek betimleri vardır. Tonozun dört köşesinde bulunması gereken, İncil yazarlarını (Matta, Markos, Luka, Yuhanna) temsil eden figürler günümüze ulaşmamıştır.",
+        "en": "The interior decoration was done in 1927 by Assumptionist priest Lamerand and a Russian painter. The center of the vault has a depiction of Christ Pantocrator with six-winged angels on either side. The figures of the Gospel writers Matthew, Mark, Luke and John, which should be at the vault's four corners, have not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "738"
+        }
+      ]
+    },
+    {
+      "id": "yapi-ve-mimari",
+      "order": 5,
+      "title": {
+        "tr": "Yapı ve mimari",
+        "en": "Structure and architecture"
+      },
+      "body": {
+        "tr": "Yapı 1950'lerde, apsis ve ambon kısımları ayrı odacıklara bölünmüş, üstü ahşap örtülü, Marsilya tipi kiremitle kaplı kâgir bir bina olarak tanımlanmıştır; dönem kaynakları geleneksel kilise mimarisinden ayrışan bir plan ve dış görünüşü olduğunu belirtir. Kilise dikdörtgen formlu ve tek nefli olup cepheleri oldukça sadedir. Beden duvarı üzerinde yükselen kademeli kuleler ve sivri kemerli pencere açıklıkları yapıya Gotik karakter verir.",
+        "en": "In the 1950s the structure was described as a masonry building with the apse and ambo divided into separate rooms, a wooden roof and Marseille-type tiles; sources of the period say its plan and exterior differed from traditional church architecture. The church is rectangular with a single nave and quite plain façades; stepped towers rising on the main wall and pointed-arched windows give it a Gothic character."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "738-739"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-ve-restorasyon",
+      "order": 6,
+      "title": {
+        "tr": "Kullanım ve restorasyon",
+        "en": "Use and restoration"
+      },
+      "body": {
+        "tr": "1960'tan sonra kullanılmayan kilise 1971'de kısa bir süreliğine özgün işlevini yeniden üstlenmiştir. Bursa'nın çokkültürlü kimliğini yansıtmak amacıyla 2004'te Bursa Büyükşehir Belediyesi, 2017'de Bursa Vakıflar Bölge Müdürlüğü tarafından restore edilmiş; yapının ibadet ile kültürel ve sosyal amaçlarla kullanılabilmesi hedeflenmiştir. Bugün Fransız Kültür Merkezi tarafından ibadete açık işletilir; ziyaretler salı, perşembe ve cumartesi günleri yapılabilir.",
+        "en": "Unused after 1960, the church briefly resumed its original function in 1971. To reflect Bursa's multicultural identity it was restored by the Metropolitan Municipality in 2004 and the Bursa Regional Directorate of Foundations in 2017, aiming at use for both worship and cultural and social purposes. Today it is operated as a place of worship by the French Cultural Center; visits can be made on Tuesdays, Thursdays and Saturdays."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "739"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ziyaret_gunleri",
+      "label": {
+        "tr": "Ziyaret günleri",
+        "en": "Visiting days"
+      },
+      "value": "Salı, perşembe, cumartesi",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "739"
+        }
+      ]
+    },
+    {
+      "key": "nef_sayisi",
+      "label": {
+        "tr": "Nef sayısı",
+        "en": "Number of naves"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "739"
+        }
+      ]
+    },
+    {
+      "key": "ic_dekorasyon_yili",
+      "label": {
+        "tr": "İç dekorasyon yılı",
+        "en": "Interior decoration year"
+      },
+      "value": 1927,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "738"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Peder Thomas",
+      "role": {
+        "tr": "Temel taşını atan",
+        "en": "Laid the foundation stone"
+      }
+    },
+    {
+      "name": "Monsenyör Giacomo Testa",
+      "role": {
+        "tr": "Kiliseyi 14 Aralık 1879'da kutsayan",
+        "en": "Consecrated the church on 14 December 1879"
+      }
+    },
+    {
+      "name": "Rahip Lamerand",
+      "role": {
+        "tr": "1927 iç dekorasyonunu yapan Assomptionist rahip",
+        "en": "Assumptionist priest who carried out the 1927 interior decoration"
+      }
+    },
+    {
+      "name": "Hacı Hüsniye Hanım",
+      "role": {
+        "tr": "Arsayı Eylül 1856'da devreden mülk sahibi",
+        "en": "Owner who transferred the land in September 1856"
+      }
+    },
+    {
+      "name": "Seur Mari binti Losiyord",
+      "role": {
+        "tr": "Arsayı alan/bağış alan Latin kökenli kişi",
+        "en": "Latin-origin person to whom the land was sold or endowed"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "arsa-1856",
+      "year": 1856,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Arsanın satışı veya bağışı",
+        "en": "Land sold or endowed"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "737"
+        }
+      ],
+      "note": {
+        "tr": "1925 tarihli emlak senedine göre Eylül 1856.",
+        "en": "September 1856 according to a 1925 property deed."
+      }
+    },
+    {
+      "id": "kutsama-1879",
+      "year": 1879,
+      "date": "1879-12-14",
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kilise kutsandı (Monsenyör Giacomo Testa)",
+        "en": "Church consecrated (Monsignor Giacomo Testa)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "737"
+        }
+      ]
+    },
+    {
+      "id": "acilis-1880",
+      "year": 1880,
+      "date": "1880-08-11",
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "İbadete açıldı",
+        "en": "Opened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "737"
+        }
+      ]
+    },
+    {
+      "id": "ic-dekorasyon-1927",
+      "year": 1927,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "İç dekorasyon (Rahip Lamerand ve bir Rus ressam)",
+        "en": "Interior decoration (Father Lamerand and a Russian painter)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "738"
+        }
+      ]
+    },
+    {
+      "id": "kullanimdan-kalkis-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1960'tan sonra kullanılmadı",
+        "en": "Not used after 1960"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "739"
+        }
+      ]
+    },
+    {
+      "id": "ibadet-1971",
+      "year": 1971,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kısa süreliğine özgün işlevine döndü",
+        "en": "Briefly resumed its original function"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "739"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi tarafından restorasyon",
+        "en": "Restoration by the Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "739"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Vakıflar Bölge Müdürlüğü tarafından restorasyon",
+        "en": "Restoration by the Bursa Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "739"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "interior",
+      "title": {
+        "tr": "Tonozdaki Pantokrator İsa tasviri",
+        "en": "Christ Pantocrator on the vault"
+      },
+      "hint": {
+        "tr": "Tonozun ortasında Pantokrator, iki yanında altı kanatlı melekler; köşelerdeki dört İncil yazarı figürü günümüze ulaşmamıştır.",
+        "en": "Pantocrator at the vault's center flanked by six-winged angels; the four Gospel-writer figures at the corners have not survived."
+      },
+      "section_id": "ic-dekorasyon"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kilise dikdörtgen planlı ve tek neflidir. Sade cepheler üzerinde kademeli kuleler yükselir, pencereler sivri kemerlidir; dış cephe sarı renklidir. Üstü ahşap çatılı ve Marsilya tipi kiremit kaplıdır. İçeride tonozun ortasında Pantokrator İsa tasviri ve iki yanında altı kanatlı melek betimleri vardır.",
+      "en": "The church is rectangular with a single nave. Stepped towers rise over plain yellow façades, and the windows are pointed-arched. The wooden roof is covered with Marseille-type tiles. Inside, the vault's center shows Christ Pantocrator with six-winged angels on either side."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesi (vk-bursa-c1, s. 738-739)"
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1C_DxmRm7tS_2mJUgiSLEM4k4jQUxTen3",
+    "book_layout_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+    "book_pdf_name": "3-Sivil Mimari.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-fransiz-kilisesi/p019-1.jpg",
+        "original_name": "4.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "738"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kilise nefi ve mahfil",
+        "en": "Church nave and gallery"
+      },
+      "alt": {
+        "tr": "Sıra sıra mor sandalyeler, sivri kemerli pencereler, krem duvarlar, ahşap korkuluklu bir mahfil ve avize görülür. Ön solda bir vaaz kürsüsü var.",
+        "en": "Rows of purple chairs, pointed-arch windows, cream walls, a wooden-railed gallery and a chandelier. A lectern stands at front left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-fransiz-kilisesi/p020-1.jpg",
+        "original_name": "5.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "739"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Tavandaki boyalı süsleme",
+        "en": "Painted ceiling decoration"
+      },
+      "alt": {
+        "tr": "Sekizgen tavan çerçevesi içinde mavi, turuncu ve altın renklerle boyalı süslemeler ve ortada madalyon içinde bir figür vardır. İki avize görünür.",
+        "en": "A painted octagonal ceiling in blue, orange and gold with a figure in a central medallion, seen with two hanging chandeliers."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    }
+  ],
+  "archive_media": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "source",
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Ziyaretler salı, perşembe ve cumartesi günleri yapılabilir; yapı Fransız Kültür Merkezi tarafından ibadete açık işletilir.",
+      "en": "Visits can be made on Tuesdays, Thursdays and Saturdays; the building is operated as a place of worship by the French Cultural Center."
+    },
+    "notes_source": "source",
+    "visitor_tips": []
+  }
+}

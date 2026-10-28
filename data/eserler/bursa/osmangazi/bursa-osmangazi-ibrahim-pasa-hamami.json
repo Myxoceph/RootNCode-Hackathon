@@ -1,0 +1,496 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ibrahim-pasa-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 693-695) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Banî İbrâhim Paşa'nın Mahkeme Hamamı'nın banisi Çandarlı İbrâhim Paşa ile aynı kişi olup olmadığı kaynakta belirtilmiyor; 'same_founder' ilişkisi 'probable' ve doğrulanmalı.",
+      "Hamamın kesin yapım tarihi kaynakta yok ('1485'ten önce').",
+      "Hamamın bugünkü müze adı ve işletmesi kaynakta verilmiyor.",
+      "Vakfın adı ve vakfiye bilgisi kaynakta yok.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kaynak 'Sadrazam Çandarlı Halil Paşa'nın oğlu Sadrazam İbrâhim Paşa' diyor; Mahkeme Hamamı bölümünde ise 'Halil Hayreddin Paşa'nın oğlu Çandarlı İbrâhim Paşa' ve H. 825 / M. 1421 vakfiyesi geçiyor. İki ifade aynı kişiyi mi anlatıyor kitap belirtmiyor, bu nedenle ilişki 'probable' tutuldu."
+      },
+      {
+        "field": "founder",
+        "note": "İngilizce metin 'Grand Sadrazam İbrâhim Paşa' diyor; Türkçe metinde 'Sadrazam'. Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İbrahim Paşa (Hatice Hatun) Hamamı",
+    "en": "İbrahim Paşa (Hatice Hatun) Bath"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hatice Hanım Hamamı",
+      "en": "Hatice Hanım Bath",
+      "note": "Halk arasındaki ad"
+    },
+    {
+      "tr": "İbrahim Paşa (Hatice Hatun) Hamamı",
+      "en": "İbrahim Paşa (Hatice Hatun) Bath",
+      "note": "Kaynaktaki tam başlık"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "tek hamam",
+    "Çandarlı",
+    "stalaktit",
+    "müze",
+    "Hatice Hanım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alaaddin Bey Mahallesi",
+    "address": "1. Menekşe Sokak, No: 2-1 (Tophane Endüstri Meslek Lisesi bahçesi)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "693"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.186856,
+      "lng": 29.053633,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1485'ten önce",
+      "en": "Before 1485"
+    },
+    "start_year": null,
+    "end_year": 1485,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kaynak yapının 1485'ten önce yaptırıldığının 'anlaşıldığını' söylüyor; kesin yapım tarihi verilmiyor.",
+      "en": "The source says it is 'understood' to have been built before 1485; no exact date is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "693"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sadrazam İbrâhim Paşa (Çandarlı Halil Paşa'nın oğlu)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "693"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Hamam, İbrâhim Paşa'nın eşi Hatice Hanım'a gelir sağlamak amacıyla yaptırılmıştır; vakfiye kaynakta anılmaz.",
+      "en": "The bath was built to provide income for İbrâhim Paşa's wife Hatice Hanım; no endowment charter is mentioned in the source."
+    },
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "693"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sadrazam İbrâhim Paşa'nın eşi Hatice Hanım'a gelir sağlamak amacıyla 1485'ten önce yaptırdığı anlaşılan tek hamam. 1960'larda büyük ölçüde yıkılmış, 1981'de istimlâk edilip onarılmış, 2012'de restore edilerek müze olarak yeniden işlevlendirilmiştir.",
+    "en": "A single bath understood to have been built before 1485 by Grand Vizier İbrâhim Paşa to provide income for his wife Hatice Hanım. Largely destroyed by the 1960s, expropriated and repaired from 1981, it was restored in 2012 and re-purposed as a museum."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-banisi",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banisi",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Hamam, Osmangazi ilçesi Alaaddin Bey Mahallesi 1. Menekşe Sokak No: 2-1 adresinde, Tophane Endüstri Meslek Lisesi'nin bahçesindedir. Yapının, Sadrazam Çandarlı Halil Paşa'nın oğlu Sadrazam İbrâhim Paşa tarafından, eşi Fenârî Şah-Beyzâde Muhittin Bey'in kızı Hatice Hanım'a gelir sağlamak amacıyla 1485'ten önce yaptırıldığı anlaşılmaktadır. Bu nedenle halk arasında “Hatice Hanım Hamamı” olarak da anılır.",
+        "en": "The bath is at 1. Menekşe Street No. 2-1, Alaaddin Bey Neighborhood, Osmangazi, in the garden of Tophane Industrial Vocational High School. It is understood to have been built before 1485 by Grand Vizier İbrâhim Paşa, son of Grand Vizier Çandarlı Halil Paşa, to provide income for his wife Hatice Hanım, daughter of Fenârî Şah-Beyzâde Muhittin Bey. For this reason it is also known as the “Hatice Hanım Bath”."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "693"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-soyunmalik",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Soyunmalık",
+        "en": "Plan and Dressing Room"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı, orta büyüklükteki yapı tek hamam tipinde düzenlenmiştir. Soyunmalık, ılıklık, sıcaklık, su deposu ve külhan birimleri aynı eksen üzerinde sıralanır. Duvarlar bir sıra moloz taş ve üç sıra tuğladan almaşık örgüyle yapılmış, taş aralarına düşey tuğlalar yerleştirilmiştir. Hamamın ilk yapıldığında kiremit örtülü olduğu, sonradan kurşunla kaplandığı tespit edilmektedir. Kare planlı soyunmalığa doğu cephedeki taç kapıdan girilir; bölüm yaklaşık 8,10 m çapında, ortasında aydınlık feneri bulunan, Türk üçgenleriyle duvarlara oturtulmuş bir kubbeyle örtülüdür.",
+        "en": "The rectangular, medium-sized building is a single bath. The changing room, tepidarium, caldarium, water tank and furnace are on the same axis. The walls are alternating bond of one row of rubble stone and three of brick, with vertical bricks between stones. The bath was tile-covered when first built and later covered with lead. The square changing room is entered through the crown portal on the east side; it is covered by a dome about 8.10 m in diameter with a central lantern, resting on Turkish triangles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "693-694"
+        }
+      ]
+    },
+    {
+      "id": "ilik-ve-sicaklik",
+      "order": 3,
+      "title": {
+        "tr": "Ilıklık ve Sıcaklık Bölümleri",
+        "en": "Tepidarium and Caldaria"
+      },
+      "body": {
+        "tr": "Ilıklığa geçişi sağlayan kapının iki yanında soğuk hava akışını engellemek için duvar içine açılmış yarıklar vardır; kaynağa göre bu, Osmanlı hamamlarında istisnai olarak rastlanan teknik bir çözümdür. Ilıklık bir tam ve iki yarım kubbeyle örtülüdür, geçişler stalaktit süslemelidir. Çapraz geçişlerle ulaşılan iki sıcaklıktan doğudaki kare planlıdır, yedi sıra stalaktitle geçiş sağlanan bir kubbeyle örtülüdür ve her cephesinde üç dilimli nişler vardır. Batıdaki sıcaklık dikdörtgen planlıdır; arka kısmındaki kemer baştan sona stalaktitlidir ve kubbesi sekiz dilimli kasnağa oturur.",
+        "en": "On both sides of the door to the tepidarium there are slits in the wall to prevent cold air flow, which the source calls an exceptional technical solution in Ottoman baths. The tepidarium is covered by one full and two half domes with stalactite transitions. Of the two caldaria reached by diagonal passages, the eastern is square with a dome on seven rows of stalactites and three-lobed niches on each façade; the western is rectangular, with a fully stalactite-decorated arch at its back and a dome on an eight-lobed drum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "694-695"
+        }
+      ]
+    },
+    {
+      "id": "tahribat-ve-kullanim",
+      "order": 4,
+      "title": {
+        "tr": "Tahribat, Onarım ve Müze Kullanımı",
+        "en": "Damage, Repair and Museum Use"
+      },
+      "body": {
+        "tr": "1960'lı yıllarda yapı büyük ölçüde tahrip olmuş; kubbeler ve üzerlerindeki fil gözleri ile aydınlık fenerleri çökmüş, soğukluk bölümünün iki duvarı yıkılmış, mülkiyeti Alman uyruklu kişilere geçmiştir. 1981'de Bursa Eski Eserleri Sevenler Kurumu tarafından istimlâk edilen yapı sonrasında onarılmıştır. Uzun süre Tophane Endüstri Meslek Lisesi'nin deposu olarak kullanılan hamam, 2012'de kapsamlı restorasyondan geçerek müze olarak yeniden işlevlendirilmiştir.",
+        "en": "By the 1960s the building was largely destroyed: domes with their oculi and lanterns had collapsed, two walls of the frigidarium fell, and ownership passed to German nationals. Expropriated by the Bursa Association for the Appreciation of Antiquities in 1981, it was repaired afterwards. Long used as a warehouse by Tophane Industrial Vocational High School, it was comprehensively restored in 2012 and re-functioned as a museum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "695"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "soyunmalik_kubbe_capi",
+      "label": {
+        "tr": "Soyunmalık kubbe çapı",
+        "en": "Changing-room dome diameter"
+      },
+      "value": "~8,10",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "694"
+        }
+      ]
+    },
+    {
+      "key": "plan_tipi",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "tek hamam, dikdörtgen planlı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "693"
+        }
+      ]
+    },
+    {
+      "key": "sicaklik_sayisi",
+      "label": {
+        "tr": "Sıcaklık bölümü sayısı",
+        "en": "Number of caldarium sections"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "694-695"
+        }
+      ]
+    },
+    {
+      "key": "istimlak_yili",
+      "label": {
+        "tr": "İstimlâk yılı",
+        "en": "Year of expropriation"
+      },
+      "value": 1981,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "695"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sadrazam İbrâhim Paşa",
+      "role": {
+        "tr": "Hamamı yaptıran; Çandarlı Halil Paşa'nın oğlu",
+        "en": "Founder; son of Çandarlı Halil Paşa"
+      }
+    },
+    {
+      "name": "Hatice Hanım",
+      "role": {
+        "tr": "İbrâhim Paşa'nın eşi, Fenârî Şah-Beyzâde Muhittin Bey'in kızı; hamamın geliri ona ayrılmıştır",
+        "en": "İbrâhim Paşa's wife, daughter of Fenârî Şah-Beyzâde Muhittin Bey; the bath's income was meant for her"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1485-oncesi",
+      "year": 1485,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Hamam 1485'ten önce yaptırıldı (tam yıl bilinmiyor)",
+        "en": "Bath built before 1485 (exact year unknown)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "693"
+        }
+      ]
+    },
+    {
+      "id": "tahribat-1960lar",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük ölçüde tahrip oldu; kubbeler ve duvarlar çöktü",
+        "en": "Largely destroyed; domes and walls collapsed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "695"
+        }
+      ],
+      "note": {
+        "tr": "Kaynak yalnızca '1960'lı yıllar' diyor; 1960 ondalık başlangıcı olarak girildi.",
+        "en": "The source only says 'the 1960s'; 1960 is entered as the start of the decade."
+      }
+    },
+    {
+      "id": "istimlak-1981",
+      "year": 1981,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından istimlâk edildi; sonra onarıldı",
+        "en": "Expropriated by the Bursa Association for the Appreciation of Antiquities; repaired afterwards"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "695"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon; müze olarak yeniden işlevlendirildi",
+        "en": "Comprehensive restoration; re-functioned as a museum"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "695"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-mahkeme-hamami",
+      "type": "same_founder",
+      "description": {
+        "tr": "İki hamam da 'Çandarlı Halil Paşa'nın oğlu İbrâhim Paşa' ile ilişkilendirilir; kitap bunların aynı kişi olup olmadığını açıkça söylemez.",
+        "en": "Both baths are linked to 'İbrâhim Paşa, son of Çandarlı Halil Paşa'; the book does not state outright whether he is the same person."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "693, 697"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, bir meslek lisesinin bahçesinde duran, taş ve tuğlanın dönüşümlü dizildiği duvarlara sahip, dikdörtgen planlı orta büyüklükte bir yapıdır. Doğu cephedeki taç kapıdan, yaklaşık sekiz metre çapında, ortasında aydınlık feneri bulunan bir kubbeyle örtülü kare soyunmalığa girilir. Ardından bir tam ve iki yarım kubbeli ılıklık ve stalaktit süslemeli kubbelere sahip iki sıcaklık bölümü gelir; aynı eksenin sonunda su deposu ve külhan yer alır.",
+      "en": "The bath is a medium-sized rectangular building in the garden of a vocational school, with walls of alternating stone and brick. A crown portal on the east leads into a square changing room covered by a dome about eight metres across with a central lantern. Beyond it come a tepidarium with one full and two half domes and two caldarium rooms with stalactite-decorated domes; the water tank and furnace lie at the end of the same axis."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ibrahim-pasa-hamami/p015-2.jpg",
+        "original_name": "2_1.jpeg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "694"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "İbrahim Paşa Hamamı'nın kiremit kubbeleri",
+        "en": "Tiled domes of the İbrahim Paşa Bath"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında büyük bir kiremit kubbe ve yanında ışıklıklı daha küçük iki kubbe görünür. Yapı ağaçlar ile bir apartmanın arasında kalmıştır.",
+        "en": "Seen from directly above: a large tiled dome with two smaller domes beside it, each with a small skylight. The building sits between trees and an apartment block."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-22"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ibrahim-pasa-hamami/p015-1.jpg",
+        "original_name": "5_1.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "694"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Müzeye dönüşen hamamın sergi salonu",
+        "en": "The bath's main hall used as a museum"
+      },
+      "alt": {
+        "tr": "Yüksek tavanlı beyaz bir salonun ortasında sekizgen mermer bir havuz ve fıskiye durur. Duvarlar boyunca eski fotoğraflar, bir top ve eski makineler sergilenir; üst duvarlarda sivri kemerli pencereler vardır.",
+        "en": "In a tall white hall, an octagonal marble pool with a fountain stands in the centre. Old photographs, a cannon and old machines are displayed along the walls, and pointed-arch windows run along the top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-22"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ibrahim-pasa-hamami/p015-3.jpg",
+        "original_name": "9.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "694"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe ve mukarnaslı geçiş bölgesi",
+        "en": "The dome and muqarnas transition zone"
+      },
+      "alt": {
+        "tr": "Aşağıdan yukarı bakıldığında ortada fil gözleriyle oyulmuş, ışık alan bir kubbe görünür. İki yanda krem renkli mukarnas dizileri kubbeye geçişi sağlar.",
+        "en": "Looking straight up: a dome with a ring of small openings letting in light in the centre. Cream-coloured muqarnas tiers on both sides form the transition to the dome."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-22"
+    }
+  ],
+  "archive_media": []
+}

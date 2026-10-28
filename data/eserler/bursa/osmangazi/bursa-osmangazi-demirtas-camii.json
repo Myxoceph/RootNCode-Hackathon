@@ -1,0 +1,559 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-demirtas-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Timurtaş Paşa Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Timurtaş Paşa Külliyesi bölümünden (s. 215-222) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki ilgili klasörden seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor.",
+      "Caminin mimarı ve ilk şadırvanın yapım tarihi kitapta yok.",
+      "Hazire mezar taşı kitabeleri kitapta basılmamış; kitabe eklenmedi. Gerekirse sahadan okunmalı.",
+      "Hazirenin ayrı kayıt olarak açılması yerine cami kaydında bölüm olarak tutuldu (toplu kural)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "s. 215'te inşa ettiren 'Ali Paşa', s. 218'de 'Ali Bey' olarak anılıyor; aynı kişi olduğu varsayıldı ama kitap açıkça söylemiyor."
+      },
+      {
+        "field": "dating",
+        "note": "H. 959 onarımı s. 217'de M. 1551 olarak veriliyor, hamam bölümünde (s. 222) aynı H. 959 için M. 1552 yazıyor. H. 959 iki miladî yıla denk geldiğinden bu bir çelişki olmayabilir; kaynağa sadık kalındı."
+      },
+      {
+        "field": "location.neighborhood",
+        "note": "Cami 'Demirtaşpaşa Mahallesi'nde (s. 215) denirken hazire bölümünde 'Timurtaş Paşa Mahallesi' (s. 218) geçiyor; aynı mahalle olup olmadığı kitapta açık değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Demirtaş (Timurtaş) Camii",
+    "en": "Demirtaş (Timurtaş) Mosque"
+  },
+  "subtitle": {
+    "tr": "Şadırvanlı minaresiyle mahallenin simgesi, mescitten dönüştürülmüş cami",
+    "en": "A mosque converted from a masjid, symbol of the neighborhood with its shadirvan minaret"
+  },
+  "alternate_names": [
+    {
+      "tr": "Demirtaşpaşa Camii",
+      "en": "Demirtaşpaşa Mosque"
+    },
+    {
+      "tr": "Timurtaş Paşa Camii",
+      "en": "Timurtaş Paşa Mosque"
+    },
+    {
+      "tr": "Demirtaş (Timurtaş) Camii ve Şadırvanı",
+      "en": "Demirtaş (Timurtaş) Mosque and Shadirvan"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": "bursa-osmangazi-timurtas-pasa-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "zaviyeli plan",
+    "tuğla minare",
+    "şadırvan",
+    "hazire",
+    "1855 depremi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Demirtaşpaşa",
+    "address": "Demirtaşpaşa Mahallesi, Demirtaşpaşa Sokak No: 8",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "215"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.268497,
+      "lng": 29.099166,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/375347327 ('Timurtaş Paşa Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 792 / M. 1390 (mescit); H. 981 / M. 1573'te camiye dönüştürüldü",
+      "en": "AH 792 / AD 1390 (masjid); converted to mosque in AH 981 / AD 1573"
+    },
+    "start_year": 1390,
+    "end_year": null,
+    "hijri_year": 792,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap yapıyı H. 792 / M. 1390'da mescit olarak inşa edilmiş, H. 981 / M. 1573'te camiye dönüştürülmüş olarak veriyor.",
+      "en": "The book gives the building as built as a masjid in AH 792 / AD 1390 and converted to a mosque in AH 981 / AD 1573."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "217"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ali Bey (Kara Timurtaş Paşa'nın oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "218"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Timurtaş Paşa Camii vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Hamam, kardeşi Oruç Bey tarafından bu camiye vakfedilmiştir.",
+      "en": "The bath was endowed to this mosque by his brother Oruç Bey."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "220"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kara Timurtaş Paşa'nın oğlu Ali Bey'in 1390'da mescit olarak yaptırdığı, 1573'te camiye dönüştürülen yapı; altı payeli tuğla minaresi ve şadırvanıyla mahallenin simgesidir. Doğusunda XV. yüzyıla uzanan bir hazire bulunur.",
+    "en": "A structure built by Ali Bey, son of Kara Timurtaş Paşa, as a masjid in 1390 and converted to a mosque in 1573; with its six-pier brick minaret and shadirvan it is the symbol of the neighborhood. A graveyard dating back to the 15th century lies to its east."
+  },
+  "sections": [
+    {
+      "id": "plan",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve Duvarlar",
+        "en": "Plan and Walls"
+      },
+      "body": {
+        "tr": "Üç sıra tuğla, bir sıra kesme taş ile örülen duvarlara sahip cami zaviyeli plan şemasındadır ve beş gözlü son cemaat yeri vardır. Doğu ve batı yönlerinde zaviye/tabhaneler yer alır; batıda günümüze ulaşmayan, yuvarlak kemerli beşik tonozlu bir imaret bulunuyordu. Hamam imaretin ilerisindedir.",
+        "en": "The mosque, with walls built of three rows of brick and one row of cut stone, has a zawiya-based plan and a five-bay narthex. There are zawiya/hospices on the east and west sides, and on the west an imaret with a round-arched barrel vault that has not survived. The bath is ahead of the imaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "216-217"
+        }
+      ]
+    },
+    {
+      "id": "ortu",
+      "order": 2,
+      "title": {
+        "tr": "Örtü Sistemi",
+        "en": "Roofing"
+      },
+      "body": {
+        "tr": "Beş gözlü son cemaat yerinin daha geniş ve yüksek kemerli orta hacmi Türk üçgenleri üzerine oturan kubbeyle örtülüdür. Yanındaki mekânlar aslan göğsü kemeriyle taşınan küçük kubbelerle, en dıştaki iki hacim çapraz tonozla örtülmüştür. Harimdeki iç avlu kubbesi tromplarla taşınır; dikdörtgen planlı zaviye/tabhaneler ve mihraplı asıl ibadet mekânı beşik tonozludur.",
+        "en": "The wider, higher-arched central bay of the five-bay narthex is covered with a dome on Turkish triangles. The bays beside it have small domes carried by lion corbel arches and the outermost two have cross vaults. The dome over the inner courtyard of the prayer hall is carried by squinches; the rectangular zawiya/hospices and the main prayer hall with mihrab are covered with barrel vaults."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "216-217"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve Şadırvan",
+        "en": "Minaret and Shadirvan"
+      },
+      "body": {
+        "tr": "Yapının en göze çarpan elemanı minaresidir. Tuğladan örülen minare, kemerlerle birbirine bağlı altı paye üzerine kuruludur; gövdesi ve şerefesi altıgen kasnak üzerinde yine tuğladandır. Altındaki şadırvanla birlikte mahallenin simgesi olmuştur.",
+        "en": "The most striking element is its minaret. Built of brick, it rises on six piers connected by arches; its shaft and balcony, on a hexagonal drum, are also of brick. Together with the shadirvan beneath it, it has become the symbol of the neighborhood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "216-217"
+        }
+      ]
+    },
+    {
+      "id": "mescitten-camiye",
+      "order": 4,
+      "title": {
+        "tr": "Mescitten Camiye",
+        "en": "From Masjid to Mosque"
+      },
+      "body": {
+        "tr": "Cami H. 792 / M. 1390'da mescit olarak inşa edilmiştir. Şehre uzak olması ve Cuma namazı kılınacak bir camiye ihtiyaç duyulması nedeniyle şeyhülislâmdan izin alınarak H. 981 / M. 1573'te, Derviş Çelebi adlı bir hayırseverin minber masraflarını karşılamasıyla camiye dönüştürülmüştür.",
+        "en": "The building was built as a masjid in AH 792 / AD 1390. Because of its distance from the city and the need for a mosque for Friday prayers, it was converted to a mosque in AH 981 / AD 1573 with permission from the Shaykh al-Islam, a benefactor named Dervish Çelebi covering the minbar expenses."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 5,
+      "title": {
+        "tr": "Hasar ve Onarımlar",
+        "en": "Damage and Repairs"
+      },
+      "body": {
+        "tr": "H. 959 / M. 1551'de mescit, şadırvan, zaviye matbahı, odalar, evler ve su yolu harap olduğundan 46.972 akçe harcanarak kapsamlı onarım yapılmıştır. Bir kayıt, caminin 1855 depreminden etkilendiğini, minare şerefesinin düşüp ortasında şakk bulunduğunu, onarımının mümkün olduğunu ve imaretin harap olduğunu bildirir. Şadırvanlı minare yıkılmasının ardından 1966'da yeniden inşa edilmiş, 2017'de Bursa Büyükşehir Belediyesi tarafından restore edilmiştir.",
+        "en": "In AH 959 / AD 1551 the mosque, shadirvan, zawiya kitchen, rooms, houses and water channel were extensively repaired for 46,972 akçes because they were in ruins. A record says the mosque was affected by the 1855 earthquake: the minaret balcony fell and cracked in the middle but could be repaired, and the imaret was ruined. The minaret with shadirvan was rebuilt in 1966 after its collapse and restored by the Bursa Metropolitan Municipality in 2017."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 6,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Caminin doğusundaki hazire Bursa'nın en eski hazirelerinden biridir. Kara Timurtaş Paşa H. 806 / M. 1404'te vefat ettiğinden ilk definler XV. yüzyıl başına tarihlenebilir; mezarların önemli kısmı Timurtaş Paşa ailesine aittir. Yakın tarihte yok edilen Deveciler Mezarlığı bu bölgede olduğundan oradan getirildiği anlaşılan bazı taşlar vardır, ancak kesin ayırt edilemez. Taşların çoğu yerinden oynamış, yeniden düzenlemede hatalı yerleştirilmiştir. Mezar taşı kitabeleri XV. yüzyıl geleneğine uygun olarak Arapçadır.",
+        "en": "The graveyard east of the mosque is one of the oldest in Bursa. As Kara Timurtaş Paşa died in AH 806 / AD 1404, first burials can be dated to the early 15th century; a significant part of the graves belong to the Timurtaş Paşa family. Because the recently destroyed Deveciler Cemetery was in this area, some stones appear to have been brought from there, but they cannot be told apart with certainty. Most stones have moved and were mis-placed during rearrangement. The gravestone inscriptions are in Arabic, in line with 15th-century tradition."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "218-219"
+        }
+      ]
+    },
+    {
+      "id": "hazire-defin",
+      "order": 7,
+      "title": {
+        "tr": "Haziredeki İsimler",
+        "en": "People Buried in the Graveyard"
+      },
+      "body": {
+        "tr": "Kara Timurtaş Paşa, Timur Bey bin Ali Bey, Ali Beg bin Timurtaş, İklime Hatun bint-i Oruç Bey, Mustafa Çelebi bin Oruç, Şemseddin Çelebi bin Mehmed bin Oruç, Ayşe bint-i Mahmud Çelebi, Hanım bint-i Murad Çelebi, Hundi Hatun bint-i Mahmud Çelebi, Karabağlı Harikoğlu Hacı Mehmed, Molla Ali, Said Bey bin Ahmed Bey, Ahmed Çelebi bin Ali Bey bin Timurtaş, Fatma bint-i Ali, Hatice Nimetullah Hatun bint-i Abdullah ve Mehmed Çelebi bin Hızır Çelebi.",
+        "en": "Kara Timurtaş Paşa, Timur Bey bin Ali Bey, Ali Beg bin Timurtaş, İklime Hatun bint-i Oruç Bey, Mustafa Çelebi bin Oruç, Şemseddin Çelebi bin Mehmed bin Oruç, Ayşe bint-i Mahmud Çelebi, Hanım bint-i Murad Çelebi, Hundi Hatun bint-i Mahmud Çelebi, Karabağlı Harikoğlu Hacı Mehmed, Molla Ali, Said Bey bin Ahmed Bey, Ahmed Çelebi bin Ali Bey bin Timurtaş, Fatma bint-i Ali, Hatice Nimetullah Hatun bint-i Abdullah and Mehmed Çelebi bin Hızır Çelebi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "218-219"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bay count"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "216"
+        }
+      ]
+    },
+    {
+      "key": "minare_paye",
+      "label": {
+        "tr": "Minare paye sayısı",
+        "en": "Minaret pier count"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "216"
+        }
+      ]
+    },
+    {
+      "key": "onarim_1551_bedel",
+      "label": {
+        "tr": "H. 959 onarım bedeli",
+        "en": "Cost of AH 959 repair"
+      },
+      "value": 46972,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "key": "hazire_kayitli_kisi",
+      "label": {
+        "tr": "Haziredeki adı sayılan kişi sayısı",
+        "en": "Named persons in graveyard"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "218-219"
+        }
+      ]
+    },
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Wall masonry"
+      },
+      "value": "Üç sıra tuğla, bir sıra kesme taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "216"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ali Bey",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Derviş Çelebi",
+      "role": {
+        "tr": "Mescidin camiye dönüştürülmesinde minber masraflarını karşılayan hayırsever",
+        "en": "Benefactor who paid for the minbar when the masjid became a mosque"
+      }
+    },
+    {
+      "name": "Kara Timurtaş Paşa",
+      "role": {
+        "tr": "Haziresinde yatan, Ali Bey'in babası",
+        "en": "Buried in the graveyard; father of Ali Bey"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "mescit-1390",
+      "year": 1390,
+      "date": null,
+      "hijri": "792",
+      "type": "construction",
+      "title": {
+        "tr": "Mescit olarak inşa edildi (H. 792 / M. 1390)",
+        "en": "Built as a masjid (AH 792 / AD 1390)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1551",
+      "year": 1551,
+      "date": null,
+      "hijri": "959",
+      "type": "repair",
+      "title": {
+        "tr": "Mescit, şadırvan, matbah ve su yolu 46.972 akçe ile onarıldı (H. 959 / M. 1551)",
+        "en": "Masjid, shadirvan, kitchen and water channel repaired for 46,972 akçes (AH 959 / AD 1551)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "cami-1573",
+      "year": 1573,
+      "date": null,
+      "hijri": "981",
+      "type": "record",
+      "title": {
+        "tr": "Mescitten camiye dönüştürüldü (H. 981 / M. 1573)",
+        "en": "Converted from masjid to mosque (AH 981 / AD 1573)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde zarar gördü; minare şerefesi düştü",
+        "en": "Damaged in the 1855 earthquake; minaret balcony fell"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "minare-1966",
+      "year": 1966,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Yıkılan şadırvanlı minare yeniden inşa edildi",
+        "en": "Collapsed minaret with shadirvan rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "217"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi tarafından restore edildi",
+        "en": "Restored by the Bursa Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "217"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "minare",
+      "title": {
+        "tr": "Tuğla minare ve şadırvan",
+        "en": "Brick minaret and shadirvan"
+      },
+      "hint": {
+        "tr": "Altı payenin kemerlerle bağlandığı minareyi ve altındaki şadırvanı gözleyin.",
+        "en": "Observe the minaret on six arched-connected piers and the shadirvan under it."
+      },
+      "section_id": "minare"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-timurtas-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami, Timurtaş Paşa Külliyesi'nin parçasıdır.",
+        "en": "The mosque is part of the Timurtaş Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-timurtas-pasa-hamami",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Hamam bu camiye vakfedilmiştir.",
+        "en": "The bath was endowed to this mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "220"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami tuğla ve kesme taş sıralı duvarlıdır. Önünde beş gözlü son cemaat yeri vardır; ortadaki göz daha geniş ve yüksektir ve kubbeyle örtülüdür. Tuğladan minare altı payenin üzerinde yükselir, altında şadırvan bulunur. Caminin doğusunda hazire yer alır.",
+      "en": "The mosque has walls of alternating brick and cut stone. In front is a five-bay narthex whose wider, higher central bay is domed. The brick minaret rises on six piers with a shadirvan beneath it. A graveyard lies on the east side of the mosque."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

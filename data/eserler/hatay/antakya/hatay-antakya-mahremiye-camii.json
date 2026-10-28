@@ -1,0 +1,506 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-mahremiye-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Mahremiye Camii bölümünden (s. 278-283) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Kesin yapım tarihi bilinmiyor; kitap '1720'den beri, kimi görüşlere göre 16. yüzyıldan beri' diyor. Arşiv belgesiyle teyit edilmeli.",
+      "Eskiden var olan medrese kitapta yalnızca avlunun doğusundaki bir oda olarak anılıyor; ayrı kayıt açılmadı.",
+      "Uzun Çarşı bir eser olarak kitapta ayrı kayıtlıysa urban_context ilişkisi eklenmeli; hedef id kaynak metinde yok.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Metin camiyi '1720 senesinden, hatta kimi görüşlere göre 16. yüzyıldan beri' var olarak gösterir; İngilizce metin 'at least 1720 ... although not as old as they are' diye devam eder (anlamsız bir ek). Kaynağın iki görüşü korundu, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[minare]",
+        "note": "'Hatay'da bulunan toplam yedi camiden başka Aydın İsa Bey ve Gaziantep Tekke Camii' cümlesi hem Türkçe hem İngilizce metinde belirsizdir; sayı bu haliyle aktarıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mahremiye Camii",
+    "en": "Mahremiye Mosque"
+  },
+  "subtitle": {
+    "tr": "Uzun Çarşı'da kapı üstü minareli, 'deprem terazisi' sütuncelerle bilinen cami",
+    "en": "A mosque on Uzun Bazaar with a minaret above the street door and rotating 'earthquake scale' colonnettes"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "Uzun Çarşı",
+    "kapı üstü minare",
+    "deprem terazisi",
+    "mukarnas",
+    "1872 depremi"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "5. Mıntıka, 1911 Parsel; Uzun Çarşı'da",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "282"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1720'den beri var; kimi görüşlere göre 16. yüzyıldan",
+      "en": "Existing since at least 1720; according to some opinions since the 16th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapım yılı vermiyor; camiyi '1720 senesinden, hatta kimi görüşlere göre 16. yüzyıldan beri' var olan bir yapı olarak anlatıyor. Kesin yapım yılı olmadığı için başlangıç ve bitiş yılı boş bırakıldı.",
+      "en": "The book gives no construction year; it says the mosque has existed since at least 1720 and, according to some opinions, since the 16th century. With no exact year, start and end years are left empty."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "282"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Uzun Çarşı'da, eğimli bir arazide yer alan Mahremiye Camii, kapı üstü minaresi, sathi mukarnaslı mihrap nişi ve nişin iki yanındaki dönebilen 'deprem terazisi' sütuncelerle öne çıkar. 1872 depreminde ağır hasar almış, sonradan onarılarak günümüze ulaşmıştır.",
+    "en": "The Mahremiye Mosque, on a sloping site in the Uzun Bazaar, stands out with its minaret above the street door, its niche with surface muqarnas and the rotating 'earthquake scale' colonnettes on both sides of the niche. It was heavily damaged in the 1872 earthquake and recovered."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Eski Antakya'ya bereket taşıyan Uzun Çarşı'da yer alan cami, 1720'den, hatta kimi görüşlere göre 16. yüzyıldan beri varlığını sürdürmektedir. 1872 Antakya depreminde ağır hasar almış, sonradan toparlanmıştır. Taç kapısı, minaresi, mihrabı, minberi, müezzin mahfili ve taş süslemeleriyle Antakya'daki İslam mimarisinin önemli örneklerindendir.",
+        "en": "The mosque, in the Uzun Bazaar that carries abundance to the old city of Antakya, has existed since at least 1720 and, according to some opinions, since the 16th century. It was heavily damaged in the 1872 Antakya earthquake and recovered. With its portal, minaret, mihrab, minbar, muezzin's mahfil and stone decorations it is an honor for Islamic architecture in Antakya."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "id": "arazi-dehliz-avlu",
+      "order": 2,
+      "title": {
+        "tr": "Arazi, Dehliz ve Avlu",
+        "en": "Site, Corridor and Courtyard"
+      },
+      "body": {
+        "tr": "Eser güneyden kuzeye doğru alçalan eğimli bir arazide yapılmıştır. Camiye beşik tonoz örtülü bir dehlizin sonundaki on bir basamaklı merdivenle çıkılır. Dehlizin sokağa bakan kapısının sivri kemerli cephesi, 16. yüzyılı anımsatan yüzeysel ama zarif mukarnaslarla bezelidir. Eskiden var olan medresenin tek işareti avlunun doğusundaki bir odadır. Avlunun doğusundaki kısa gövdeli sade sekizgen şadırvan ise cami ile aynı döneme ait olmalıdır.",
+        "en": "The work was built on a sloping land descending from south to north. The mosque is reached by an eleven-step stair at the end of a barrel-vaulted corridor. The pointed-arch façade of the corridor door facing the street is decorated with superficial but elegant muqarnas reminiscent of the 16th century. The only sign of the madrasa that used to exist is a room to the east of the courtyard. The plain octagonal shadirvan with a short body in the east of the courtyard must belong to the same period as the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Kapı Üstü Minare",
+        "en": "Minaret above the Door"
+      },
+      "body": {
+        "tr": "Caminin batısındaki minare sokak kapısının tam üstünde yükselir; kapı üstü minare, camiin en önemli özelliklerinden biridir. Kitap, Hatay'daki yedi camide ve Aydın İsa Bey ile Gaziantep Tekke camilerinde benzer örneklerin bulunduğunu söyler. Yuvarlak kısa gövde, ahşap direkler üzerine oturan külah örtülü bir şerefeyle sona erer.",
+        "en": "The minaret to the west of the mosque rises just above the street door and is one of the most important features of the mosque. The book says this type is seen in a total of seven mosques in Hatay and in a few works such as the Aydın İsa Bey and Gaziantep Tekke mosques. The round short body ends with a conical balcony resting on wooden poles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-giris",
+      "order": 4,
+      "title": {
+        "tr": "Son Cemaat Yeri ve Giriş",
+        "en": "Narthex and Entrance"
+      },
+      "body": {
+        "tr": "Harime bitişik son cemaat yeri, öne doğru hafif meyilli, kiremit örtülü gösterişsiz bir sundurmadır. Kıble duvarındaki mihrabiye kavsarası istiridye biçiminde yivlidir. Cami, mihrap eksenindeki sivri baş kemer içine alınmış basık kemerli kapıdan girilen, kıbleye paralel düzgün dikdörtgen planlıdır. Kapı kemerinin cephesi siyah yarım dairelerden oluşan çelenk benzeri süslemelerle, üstündeki siyah taşlı düğümlü silme ise Halep ve Şam'daki Zengi düğümlerinin esintisini taşıyan, ancak onlar kadar girift olmayan bir düğümle dikkat çeker.",
+        "en": "The narthex, adjacent to the sanctuary, is a modest, slightly forward-sloping porch covered with tiles. The mihrabiye cavity on the qibla wall is grooved in the shape of an oyster. The mosque has a regular rectangular plan parallel to the qibla and is entered through a low-arched door enclosed in a pointed arch on the mihrab axis. The door arch has wreath-like decoration of black semicircles, and a knotted molding of black stones above it is inspired by the Zengi knots of Aleppo and Damascus though not as intricate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 5,
+      "title": {
+        "tr": "Harim",
+        "en": "Sanctuary"
+      },
+      "body": {
+        "tr": "Harim beyaz kesme taştan yapılmıştır. İki sütun üzerine oturan üç kemer gözüyle kıbleye paralel iki sahına bölünür. Cami batıda dört, güneyde beş, kuzeyde altı pencereden ışık alır; ayrıca mihrap nişinde imamın tam karşısına gelecek şekilde küçük bir pencere vardır. Taştan zarif minber ile kuzeydeki ahşap müezzin mahfili de anılması gereken öğelerdir.",
+        "en": "The sanctuary is built of white cut stone. It is divided into two naves parallel to the qibla by three arches resting on two columns. The mosque receives light from four windows in the west, five in the south and six in the north; a small window in the mihrab niche is placed directly opposite the imam. The elegant stone minbar and the wooden muezzin's mahfil in the north are also worth mentioning."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-deprem-terazisi",
+      "order": 6,
+      "title": {
+        "tr": "Mihrap ve 'Deprem Terazisi'",
+        "en": "Mihrab and 'Earthquake Scales'"
+      },
+      "body": {
+        "tr": "Caminin belki de en ilgi çekici yönü, mihrap nişi kavsarasındaki sathi mukarnaslar ile nişin iki yanında 'deprem terazisi' denilen ve dikey ekseni etrafında dönebilen sütuncelerdir. Şehirde pek çok şiddetli depremde binalar yıkılmış olmasına rağmen bu sütuncelerin hâlâ dönüyor olması kitapta ayrıca vurgulanır.",
+        "en": "Perhaps the most interesting aspect of the mosque is the surface muqarnas of the mihrab niche and the colonnettes on both sides of the niche, called 'earthquake scales', which can rotate around their vertical axis. The book stresses that these colonnettes are still spinning although buildings were destroyed in many severe earthquakes in the city."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "283"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "merdiven_basamak",
+      "label": {
+        "tr": "Dehliz sonundaki merdiven basamağı",
+        "en": "Steps at the end of the corridor"
+      },
+      "value": 11,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "key": "pencere_bati",
+      "label": {
+        "tr": "Batı pencere sayısı",
+        "en": "Windows on the west"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "pencere_guney",
+      "label": {
+        "tr": "Güney pencere sayısı",
+        "en": "Windows on the south"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "pencere_kuzey",
+      "label": {
+        "tr": "Kuzey pencere sayısı",
+        "en": "Windows on the north"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "sutun_sayisi",
+      "label": {
+        "tr": "Harimdeki sütun sayısı",
+        "en": "Columns in the sanctuary"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "kemer_gozu",
+      "label": {
+        "tr": "Kemer gözü sayısı",
+        "en": "Number of arch openings"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "minare_konumu",
+      "label": {
+        "tr": "Minare konumu",
+        "en": "Minaret position"
+      },
+      "value": "Batıda, sokak kapısının üstünde",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "282"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "deprem-1872",
+      "year": 1872,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1872 Antakya depreminde ağır hasar",
+        "en": "Heavy damage in the 1872 Antakya earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "282"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "deprem-terazisi",
+      "title": {
+        "tr": "Dönen 'deprem terazisi' sütunceleri",
+        "en": "Rotating 'earthquake scale' colonnettes"
+      },
+      "hint": {
+        "tr": "Mihrap nişinin iki yanındaki sütunceler dikey eksenleri etrafında dönebilir.",
+        "en": "The colonnettes beside the mihrab niche can turn around their vertical axis."
+      },
+      "section_id": "mihrap-deprem-terazisi"
+    },
+    {
+      "feature": "kapi-ustu-minare",
+      "title": {
+        "tr": "Kapı üstü minare",
+        "en": "Minaret above the door"
+      },
+      "hint": {
+        "tr": "Sokak kapısının tam üstünde yükselen minareye bakın.",
+        "en": "Look at the minaret rising directly above the street door."
+      },
+      "section_id": "minare"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mahremiye Camii, Uzun Çarşı'da, güneyden kuzeye alçalan eğimli bir arazidedir. Sokaktan, beşik tonoz örtülü bir dehlize girilir; dehlizin sonunda on bir basamaklı bir merdiven avluya çıkar. Caminin batısındaki kısa, yuvarlak gövdeli minare sokak kapısının tam üstünde yükselir. Harimin önünde kiremit örtülü, gösterişsiz bir son cemaat yeri vardır. Cami, kıbleye paralel düzgün dikdörtgen planlı, beyaz kesme taştan yapılmıştır; iki sütun üzerinde üç kemer harimi iki sahına böler. Mihrap nişinin üstünde sathi mukarnaslar, iki yanında ise dikey eksenleri etrafında dönebilen sütuncelerden oluşan deprem terazisi bulunur. Taştan bir minber ve kuzeyde ahşap bir müezzin mahfili vardır.",
+      "en": "The Mahremiye Mosque stands in the Uzun Bazaar on sloping land that descends from south to north. From the street a barrel-vaulted corridor leads in; at its end an eleven-step stair rises to the courtyard. The short, round-bodied minaret on the west rises directly above the street door. In front of the sanctuary is a plain, tile-covered narthex. The mosque, of white cut stone on a regular rectangle parallel to the qibla, is divided into two naves by three arches on two columns. Above the mihrab niche are surface muqarnas, and on both sides are colonnettes, the 'earthquake scales', that rotate around their vertical axes. There is a stone minbar and, in the north, a wooden muezzin's mahfil."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 282-283) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-mahremiye-camii/p140-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "278-279"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu ve revaklı cephe",
+        "en": "Courtyard and arcaded side"
+      },
+      "alt": {
+        "tr": "Taş döşeli avluda ortada bir ağaç ve alçak taş blok, çevrede ahşap banklar; kiremit çatılı revaklı yapı ve arkada küçük bir minare.",
+        "en": "A stone-paved courtyard with a tree and a low stone block, wooden benches around, a tiled-roof building with a portico and a small minaret behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-mahremiye-camii/p140-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "279"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Siyah-beyaz taşlı giriş kapısı",
+        "en": "Entrance with black and white stonework"
+      },
+      "alt": {
+        "tr": "Sivri kemerli girişte siyah-beyaz taş süslemeler ve yuvarlak madalyonlar; içeride merdivenle çıkılan ahşap kapı, üstte avize ve iki pencere.",
+        "en": "A pointed-arch entrance with black and white stone decoration and round medallions; inside a wooden doorway reached by steps, a chandelier and two windows above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-mahremiye-camii/p141-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "280-281"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İbadet salonu ve taş sütunlar",
+        "en": "Prayer hall and stone columns"
+      },
+      "alt": {
+        "tr": "Kalın taş sütunlar ve kemerlerle bölünmüş salon; sağda taş minber, bordo halı, avize ve ahşap tavan; duvarda küçük pencereler.",
+        "en": "A hall divided by thick stone columns and arches; a stone minbar on the right, red carpet, a chandelier and a wooden ceiling, with small windows in the walls."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-mahremiye-camii/p141-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "281"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Taş mihrap ve minber",
+        "en": "Stone mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Sivri kemerli taş mihrap nişi ve sağında taş minberin merdiveni; mihrabın içinde dar bir ışıklı aralık, solda duvar saati, zeminde bordo halı.",
+        "en": "A pointed-arch stone mihrab niche with the stone minbar stairs to its right; a narrow lit slit inside the niche, a wall clock on the left and red carpet on the floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

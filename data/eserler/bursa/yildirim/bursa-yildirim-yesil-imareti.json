@@ -1,0 +1,811 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-yesil-imareti",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yeşil Çelebi Mehmed Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yeşil Çelebi Mehmed Külliyesi bölümünden (Part B) yapay zekâ ile özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar eklenmeli (location.coordinates kaynakta yok, uydurulmadı).",
+      "Fotoğraflar eklenmeli (media, archive_media boş; media_folder henüz yok, match_photos.py ile bağlanacak).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Mahalle ve açık adres kaynakta yok; sahadan/resmî kayıttan eklenmeli.",
+      "Vakfiye metni kitapta yok; 'waqf.deed' alanı boş bırakıldı.",
+      "Mimar adı kaynakta geçmiyor.",
+      "Ziyaret süresi, giriş ücreti ve ziyaretçi ipuçları derlenmedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf.conditions",
+        "note": "Kitap vakfiye koşullarını özetler; 'zaviye, medrese ve müsakkafat' ifadesi Türkçe ve İngilizce metinde aynıdır. Vakfiye metninin kendisi kitapta yoktur."
+      },
+      {
+        "field": "relations[bursa-yildirim-yesil-medresesi]",
+        "note": "İmaret gelirlerinin medreseye de gittiği doğrudan değil, vakfiye özetinden dolaylı çıkarılmıştır (probable)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yeşil İmareti",
+    "en": "Yeşil Imaret"
+  },
+  "subtitle": {
+    "tr": "Çelebi Mehmed Külliyesi'nin aşevi",
+    "en": "The soup kitchen of the Çelebi Mehmed Complex"
+  },
+  "alternate_names": [],
+  "type": "imaret",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-yesil-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "imaret",
+    "aşevi",
+    "Çelebi Mehmed",
+    "Yeşil Külliye",
+    "vakıf",
+    "çift kubbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "119"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.181698,
+      "lng": 29.074368,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-yildirim-yesil-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "summary": {
+    "tr": "Sultan Çelebi Mehmed'in külliyesi için H. 817-822 / M. 1414-1419 arasında yaptırılan imaret, mutfak ve yemek ikram mekânı olmak üzere art arda iki bölümden oluşur. Vakfiyeye göre günde iki öğün yemek, zengin fakir ayrımı yapılmadan halka sunulacaktı; yapı bugün yeniden aşevi olarak kullanılmaktadır.",
+    "en": "Built for Sultan Çelebi Mehmed's complex in AH 817-822 / AD 1414-1419, the imaret has two successive sections, a kitchen and a serving hall. According to the endowment charter two meals a day were to be served to all, rich or poor; today it again serves as a soup kitchen."
+  },
+  "legends": [
+    {
+      "id": "cuma-yemek-dagitimi",
+      "title": {
+        "tr": "Sultanın Cuma günü yemek dağıtması",
+        "en": "The Sultan distributing food on Fridays"
+      },
+      "body": {
+        "tr": "Kaynaklarda Sultan Çelebi Mehmed'in Cuma günleri bizzat yemek dağıttığına dair rivayetlere rastlanır.",
+        "en": "Sources contain rumors that Sultan Çelebi Mehmed personally distributed food on Fridays."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "mutfak_olcu",
+      "label": {
+        "tr": "Mutfak bölümü ölçüsü",
+        "en": "Kitchen section size"
+      },
+      "value": "26,00 x 10,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "119"
+        }
+      ]
+    },
+    {
+      "key": "ikram_mekani_olcu",
+      "label": {
+        "tr": "İkram bölümü ölçüsü",
+        "en": "Serving section size"
+      },
+      "value": "16,30 x 10,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "119"
+        }
+      ]
+    },
+    {
+      "key": "firin_sayisi",
+      "label": {
+        "tr": "Fırın sayısı",
+        "en": "Number of ovens"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120"
+        }
+      ],
+      "note": {
+        "tr": "Yuvarlak kemerli",
+        "en": "Round-arched"
+      }
+    },
+    {
+      "key": "gunluk_ogun",
+      "label": {
+        "tr": "Günlük öğün sayısı",
+        "en": "Meals per day"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120"
+        }
+      ]
+    },
+    {
+      "key": "gunluk_et",
+      "label": {
+        "tr": "Günlük et miktarı",
+        "en": "Daily meat"
+      },
+      "value": 16,
+      "unit": "vukıyye",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120"
+        }
+      ],
+      "note": {
+        "tr": "1 vukıyye 400 dirhem",
+        "en": "1 vukiyye = 400 dirhams"
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Çelebi Mehmed",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Osman Ağa (Gazanfer oğlu)",
+      "role": {
+        "tr": "1631'de ödünç zahire sağlayan vakıf mütevellisi",
+        "en": "Trustee who loaned grain in 1631"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1414-1419",
+      "year": 1414,
+      "date": null,
+      "hijri": "817-822",
+      "type": "construction",
+      "title": {
+        "tr": "İmaretin inşası (H. 817-822 / M. 1414-1419)",
+        "en": "Construction of the imaret (AH 817-822 / AD 1414-1419)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "119"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı; inşa 1419'a kadar sürmüştür.",
+        "en": "Start year; construction lasted until 1419."
+      }
+    },
+    {
+      "id": "zahire-krizi-1631",
+      "year": 1631,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mahsul yetersizliği, imaretin işlevini sürdürememesi",
+        "en": "Crop shortage halts the imaret; loaned grain revives it"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1580",
+      "year": 1580,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1580)",
+        "en": "Repair (1580)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1630",
+      "year": 1630,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1630)",
+        "en": "Repair (1630)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1644",
+      "year": 1644,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1644)",
+        "en": "Repair (1644)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1693",
+      "year": 1693,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1693)",
+        "en": "Repair (1693)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1743",
+      "year": 1743,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1743)",
+        "en": "Repair (1743)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1775",
+      "year": 1775,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1775)",
+        "en": "Repair (1775)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1840",
+      "year": 1840,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1840)",
+        "en": "Repair (1840)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1854",
+      "year": 1854,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1854)",
+        "en": "Repair (1854)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1861",
+      "year": 1861,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1861)",
+        "en": "Repair (1861)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1871",
+      "year": 1871,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1871)",
+        "en": "Repair (1871)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "onarim-1879",
+      "year": 1879,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1879)",
+        "en": "Repair (1879)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Kitap müdahalenin kapsamını belirtmez.",
+        "en": "The book does not specify the scope."
+      }
+    },
+    {
+      "id": "satis-1930",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Evkaf Müdürlüğü imareti özel şahıslara sattı",
+        "en": "Sold to private individuals by the Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ]
+    },
+    {
+      "id": "harap-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yalnızca yan duvarlar ve kubbelerin bir kısmı ayakta",
+        "en": "Only side walls and part of the domes standing"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Çatı başta olmak üzere birçok bölüm kaybedilmişti.",
+        "en": "Many parts, especially the roof, had been lost."
+      }
+    },
+    {
+      "id": "onarim-1975-1977",
+      "year": 1975,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarım (1975-1977)",
+        "en": "Repair (1975-1977)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı.",
+        "en": "Start year."
+      }
+    },
+    {
+      "id": "restorasyon-2000-2002",
+      "year": 2000,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon (2000-2002)",
+        "en": "Restoration (2000-2002)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı; sonrasında kafeterya olarak kiralandı.",
+        "en": "Start year; afterwards rented as a cafeteria."
+      }
+    },
+    {
+      "id": "onarim-2010-2011",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bakım ve onarım, aşevi olarak hizmete başlaması (2010-2011)",
+        "en": "Renovation; opened as soup kitchen (2010-2011)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı.",
+        "en": "Start year."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "cift-kubbe",
+      "title": {
+        "tr": "Kiremit kaplı çift kubbe",
+        "en": "Tiled double dome"
+      },
+      "hint": {
+        "tr": "Mutfak bölümünün kubbesine dışarıdan bakın.",
+        "en": "Look at the kitchen section's dome from outside."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yesil-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Caminin güneydoğusunda yer alan külliye yapısı.",
+        "en": "A building of the complex, southeast of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "119"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-yesil-medresesi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Aynı vakfın gelirleri zaviye, medrese ve müsakkafatın bakımına ayrılmıştır.",
+        "en": "The same endowment's income was allotted to the zawiya, madrasa and revenue properties."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "119"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Bugün aşevi olarak kullanılmaktadır.",
+      "en": "Used today as a soup kitchen."
+    },
+    "visitor_tips": [],
+    "notes_source": "source"
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yeşil İmareti, art arda dizilmiş iki uzun bölümden oluşan, kırma çatılı ve kiremit kaplı bir yapıdır. Kuzeydoğudaki mutfak bölümünün üzerinde kiremit kaplı çift kubbe yükselir ve bölüme sivri kemerli dört açıklıktan girilir. Duvarlar moloz taş ve tuğla sıralarından örülmüştür; beş yuvarlak kemerli pencere ve geniş, anıtsal bir giriş kapısı vardır. Girişin sağında sivri tuğla kemerli bir nişte mermer yalaklı bir çeşme bulunur.",
+      "en": "The Yeşil Imaret has two long sections in a row, with a hipped, tiled roof. A tiled double dome rises over the northeast kitchen section, which is entered through four pointed-arched openings. The walls are laid in alternating rubble stone and brick, with five round-arched windows and a wide monumental entrance door. To the right of the entrance a marble-troughed fountain sits in a pointed brick-arched niche."
+    },
+    "audio_description_source": "source_text"
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": [],
+  "dating": {
+    "display": {
+      "tr": "H. 817-822 / M. 1414-1419",
+      "en": "AH 817-822 / AD 1414-1419"
+    },
+    "start_year": 1414,
+    "end_year": 1419,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap yapının bu yıllar arasında inşa edildiğini belirtir.",
+      "en": "The book states the building was built between these years."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "119"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Çelebi Mehmed",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "119"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Çelebi Mehmed Külliyesi vakfı",
+    "deed": null,
+    "conditions": {
+      "tr": "Vakfedilen taşınmazların gelirleri zaviye, medrese ve müsakkafatın bakım ve onarımında kullanılacaktır. İmaret yıkılır ve yeniden inşası mümkün olmazsa gelirler doğrudan fakirlere ve miskinlere dağıtılacaktır. Günde iki öğün yemek için günde 16 vukıyye et (1 vukıyye = 400 dirhem), yeterli pirinç ve ekmek sağlanacak; yemek zengin fakir ayrımı yapılmadan halka sunulacak; Ramazan geceleri, bayram günleri ve mütevelli ile yöneticinin uygun gördüğü zamanlarda dağıtım sürecek; Cuma geceleri, bayram geceleri ve Ramazan'da tatlı ve meyve eklenecek; dağıtım öncelikle imaret çevresindeki yoksullar, köleler ve hizmetlileri kapsayacaktır.",
+      "en": "Income from the donated properties would maintain the zawiya, madrasa and revenue properties. If the imaret were demolished and could not be rebuilt, the income would go directly to the poor and needy. Two meals a day: 16 vukiyyes of meat (1 vukiyye = 400 dirhams), sufficient rice and bread, served to all regardless of wealth; distribution also on Ramadan nights, holidays and when the trustee and administrator saw fit; dessert and fruit added on Friday nights, holiday nights and in Ramadan; priority to the poor, slaves and servants living around the imaret."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "119-120"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yeşil İmareti, Sultan Çelebi Mehmed tarafından inşa ettirilen Çelebi Mehmed Külliyesi'nin bir parçası olarak caminin güneydoğusunda yer alır. Yapı H. 817-822 / M. 1414-1419 yılları arasında inşa edilmiştir.",
+        "en": "The Yeşil Imaret lies southeast of the mosque as part of the Çelebi Mehmed Complex built by Sultan Çelebi Mehmed. It was built between AH 817-822 / AD 1414-1419."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "119"
+        }
+      ]
+    },
+    {
+      "id": "vakif-ve-isleyis",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf ve İşleyiş",
+        "en": "Endowment and Operation"
+      },
+      "body": {
+        "tr": "Külliyenin finansmanı için Sultan Çelebi Mehmed çeşitli taşınmazlar vakfetmiştir; gelirler zaviye, medrese ve müsakkafatın bakım ve onarımında kullanılacaktır. İmarette günlük iki öğün yemek pişirilmesi öngörülmüş, her gün 16 vukıyye et, yeterli pirinç ve ekmek sağlanması şart koşulmuştur. Yemekler zengin fakir ayrımı yapılmaksızın tüm halka sunulacak; Ramazan geceleri, bayram günleri ve mütevelli ile yöneticinin uygun gördüğü zamanlarda dağıtım sürecektir. Cuma geceleri, bayram geceleri ve Ramazan ayında tatlı ve meyve eklenecektir. Dağıtım öncelikle çevredeki yoksulları, köleleri ve hizmetlileri kapsayacaktır. İmarethanede toplam yedi fırın bulunur.",
+        "en": "Sultan Çelebi Mehmed donated various properties to finance the complex; the income was to maintain the zawiya, madrasa and revenue properties. Two meals a day were planned, with 16 vukiyyes of meat, rice and bread daily. Meals were to be served to everyone regardless of wealth, with distribution on Ramadan nights, holidays and when the trustee and administrator saw fit. Dessert and fruit were added on Friday nights, holiday nights and in Ramadan. Distribution would primarily cover the poor, slaves and servants nearby. The imaret has seven ovens in total."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "119-120"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yeşil İmareti art arda konuşlanmış iki bölümden oluşur. 26,00 x 10,00 m ölçüsündeki ilk bölüm yemeklerin hazırlandığı mutfak, 16,30 x 10,00 m ölçüsündeki ikinci bölüm yemeklerin ikram edildiği mekândır. İki bölümün üzeri kırma çatıyla örtülmüş ve kiremit kaplanmıştır. Kuzeydoğudaki matbah kısmına sivri kemerli dört ayrı açıklıktan girilir; bu bölüm dışarıdan kiremit kaplı çift kubbesiyle dikkat çeker. Girişin sağında sivri tuğla kemerli bir niş içinde mermer yalaklı bir çeşme vardır, ancak çeşmenin özgün aynası ve kitabesi günümüze ulaşmamıştır. Beden duvarları moloz taş ve tuğladan almaşık sistemle örülmüş, yapı beş yuvarlak kemerli pencereyle aydınlatılmış ve geniş, anıtsal bir giriş kapısına sahiptir. Günümüze ulaşmayan ambarın caminin doğusundaki çay bahçesi alanında bulunduğu tahmin edilmektedir.",
+        "en": "The Yeşil Imaret consists of two successive sections. The first, 26.00 x 10.00 m, is the kitchen; the second, 16.30 x 10.00 m, is where meals were served. Both have tiled hipped roofs. The kitchen in the northeast is entered through four pointed-arch openings and is notable for its tiled double dome. To the right of the entrance a fountain with a marble trough sits in a pointed brick-arch niche, but its original back panel and inscription have not survived. The walls are alternating rubble stone and brick, lit by five round-arched windows, with a wide monumental entrance. The vanished warehouse is assumed to have stood where the café east of the mosque is today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "119-120"
+        }
+      ]
+    },
+    {
+      "id": "tarihce-ve-kullanim",
+      "order": 4,
+      "title": {
+        "tr": "Tarihçe ve Kullanım",
+        "en": "History and Use"
+      },
+      "body": {
+        "tr": "1631'de mahsulün yetersizliği yüzünden mutasarrıflardan yeterli zahire sağlanamaması imaretin işlevini sürdürememesine yol açmış; vakıf mütevellisi Rikâb-ı Hümayun kapıcıbaşılarından Gazanfer oğlu Osman Ağa ödünç zahire temin ederek imareti yeniden hizmete sokmuştur. Yapı 1580, 1630, 1644, 1693, 1743, 1775, 1840, 1854, 1861, 1871 ve 1879'da onarılmıştır. XX. yüzyıl başlarına kadar işlevini sürdüren imaret 1930'da Evkaf Müdürlüğü tarafından özel şahıslara satılmış, yerine apartman yapma girişimi türbenin silüetini kapatacağı gerekçesiyle uygun bulunmamıştır. 1957'de yalnızca yan duvarları ve kubbelerinin bir kısmı ayaktaydı. Vakıflar Genel Müdürlüğü mülkiyetine geçen yapı 1975-1977'de onarılmış, 2000-2002 restorasyonundan sonra uzun yıllar kafeterya olarak kiralanmış; 2010-2011'de Bursa Büyükşehir Belediyesi ve Vakıflar Genel Müdürlüğü iş birliğiyle yeniden onarılıp aşevi olarak hizmete girmiştir ve bugün bir vakıf tarafından aynı işlevle kullanılmaktadır.",
+        "en": "In 1631 crop failure left the revenue properties unable to supply grain and the imaret stopped working; the trustee, Osman Ağa son of Gazanfer, a gatekeeper of the Imperial Palace, loaned grain so it could serve again. It was repaired in 1580, 1630, 1644, 1693, 1743, 1775, 1840, 1854, 1861, 1871 and 1879. Used until the early 20th century, it was sold to private individuals by the Directorate of Foundations in 1930; a plan to replace it with an apartment block was refused because it would block the tomb's silhouette. By 1957 only the side walls and part of the domes stood. Returned to the General Directorate of Foundations, it was repaired in 1975-1977, restored in 2000-2002 and rented out as a cafeteria for years; in 2010-2011 it was renovated by Bursa Metropolitan Municipality and the General Directorate of Foundations and became a soup kitchen again, run today by a foundation."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "120-121"
+        }
+      ]
+    }
+  ]
+}

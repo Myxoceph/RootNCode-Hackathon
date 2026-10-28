@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-kumlu-kircaoglu-hoyugu",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – İş Yeri ve Diğerleri",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Kırcaoğlu Höyüğü bölümünden (s. 474-475) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Höyüğün kesin kronolojisi (alt dönemler) kaynakta yok; yalnızca 'Prehistorik ve Tunç Çağı'.",
+      "Höyüğün vakıfla bağı kaynakta açıklanmıyor.",
+      "Yüzey buluntularının kimin tarafından, ne zaman toplandığı kaynakta yok.",
+      "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
+      "Dönem (era) için uygun kod yok (tarih öncesi/Tunç Çağı); null bırakıldı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kırcaoğlu Höyüğü",
+    "en": "Kırcaoğlu Mound"
+  },
+  "subtitle": {
+    "tr": "Prehistorik ve Tunç Çağı seramikleri bulunan konik höyük",
+    "en": "A conical mound with Prehistoric and Bronze Age ceramics"
+  },
+  "alternate_names": [],
+  "type": "hoyuk",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "höyük",
+    "Kumlu",
+    "Tunç Çağı",
+    "arkeolojik alan"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Kumlu",
+    "neighborhood": null,
+    "address": "Kumlu, Kırcaoğlu köyü yolu üzerinde; 23 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "475"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Prehistorik ve Tunç Çağı (seramik buluntulara göre)",
+      "en": "Prehistoric and Bronze Age (from ceramic finds)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yalnızca yüzeyde bulunan seramik parçalarının Prehistorik ve Tunç Çağı'na ait olduğunu söylüyor; yıl aralığı yok.",
+      "en": "The book only says the found ceramic sherds belong to the Prehistoric and Bronze Ages; no year range."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "475"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "15-20 metre yüksekliğinde ve 200 metre genişliğindeki konik höyüğün üstü düzdür, eteklerinde birkaç konut vardır. Henüz aşırı tahribata uğramamıştır; batı yamacında mezarlar yer alır. Prehistorik ve Tunç çağına ait seramik parçaları bulunmuştur.",
+    "en": "The conical mound is 15-20 metres high and 200 metres wide, with a flat top and a few houses on its skirts. It has not yet been severely damaged; tombs lie on the west slope. Ceramic sherds of the Prehistoric and Bronze Ages have been found."
+  },
+  "sections": [
+    {
+      "id": "tanim",
+      "order": 1,
+      "title": {
+        "tr": "Tanım ve Durum",
+        "en": "Description and Condition"
+      },
+      "body": {
+        "tr": "Kumlu ilçesi, Kırcaoğlu köyü yolu üzerindeki höyük 15-20 metre yüksekliğinde, 200 metre genişliğindedir ve konik biçimlidir. Etekleri yayvan biçimde ovaya yayılır ve içinde birkaç konut yer alır. Henüz aşırı tahribata uğramamıştır; batı yamacında mezarlar vardır, eteklerde tarımsal etkinlikler nedeniyle aşınma görülür. Höyüğün üstü düzdür ve yağmur suları kimi yerlerde oluklar oluşturmuştur.",
+        "en": "On the road to Kırcaoğlu village in Kumlu district, the mound is 15-20 metres high, 200 metres wide and conical. Its skirts spread widely over the plain with a few houses. It is not yet severely damaged; tombs lie on the west slope, and the skirts show erosion from agriculture. The top is flat and rain water has formed grooves in places."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "475"
+        }
+      ]
+    },
+    {
+      "id": "buluntular",
+      "order": 2,
+      "title": {
+        "tr": "Buluntular",
+        "en": "Finds"
+      },
+      "body": {
+        "tr": "Höyükte Prehistorik ve Tunç Çağı'na ait seramik parçaları bulunmuştur.",
+        "en": "Ceramic sherds of the Prehistoric and Bronze Ages were found on the mound."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "475"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yukseklik",
+      "label": {
+        "tr": "Yükseklik",
+        "en": "Height"
+      },
+      "value": "15-20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "475"
+        }
+      ]
+    },
+    {
+      "key": "genislik",
+      "label": {
+        "tr": "Genişlik",
+        "en": "Width"
+      },
+      "value": 200,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "475"
+        }
+      ]
+    },
+    {
+      "key": "bicim",
+      "label": {
+        "tr": "Biçim",
+        "en": "Shape"
+      },
+      "value": "Konik, üstü düz",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "475"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kırcaoğlu Höyüğü, Kumlu'da Kırcaoğlu köyü yolu üzerinde yükselen konik bir tepedir. 15 ile 20 metre yüksekliğinde, 200 metre genişliğindedir. Etekleri ovaya yayvan biçimde yayılır ve birkaç ev bulunur. Üstü düzdür; batı yamacında mezarlar yer alır. Burada Prehistorik ve Tunç Çağı'na ait seramik parçaları bulunmuştur.",
+      "en": "Kırcaoğlu Mound is a conical hill on the road to Kırcaoğlu village in Kumlu. It is 15 to 20 metres high and 200 metres wide. Its skirts spread widely over the plain with a few houses. The top is flat and tombs lie on the west slope. Ceramic sherds of the Prehistoric and Bronze Ages were found here."
+    },
+    "audio_description_source": "Kitabın tarifinden (vk-hatay, s. 475) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-kumlu-kircaoglu-hoyugu/p238-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "474-475"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Konik höyük ve eteğindeki mezarlık",
+        "en": "The conical mound and the cemetery at its foot"
+      },
+      "alt": {
+        "tr": "Çalı ve otlarla kaplı geniş bir arazinin ortasında konik bir höyük; ön planda beyaz mermer mezarlar, tepede birkaç ağaç, üstte açık mavi gökyüzü.",
+        "en": "A conical mound rising from scrubland and grass; white marble graves in the foreground, a few trees on top and a clear blue sky above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

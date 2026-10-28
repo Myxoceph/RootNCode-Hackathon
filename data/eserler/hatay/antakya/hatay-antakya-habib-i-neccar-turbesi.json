@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-habib-i-neccar-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Kitap yapının ilk yapım tarihini ve banîsini vermiyor.",
+      "Sanduka sayısı çelişkisi (dört mü, iki mi) sahada/kaynakta netleştirilmeli.",
+      "Dönem (era) metinde verilmediği için null."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[sanduka_sayisi]",
+        "note": "S. 68 iki katın her birinde ikişer sanduka olduğunu söyler (dört); s. 69 'bugünkü türbe içinde bulunan lahitlerden biri ... diğeri ...' diyerek iki lahitten söz eder. Kitaptaki iki ifade korundu; disputed."
+      },
+      {
+        "field": "dating",
+        "note": "'Cami tarihini 1. yüzyıla götürür' ifadesi türbenin Hıristiyanlarca kutsal sayılmasından yapılan bir çıkarımdır, belge verilmemiştir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Habib-i Neccar Türbesi",
+    "en": "Habib-i Neccar Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+  "era": null,
+  "tags": [
+    "türbe",
+    "antakya",
+    "habib-i-neccar",
+    "sanduka"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "68-69"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.19688,
+      "lng": 36.174051,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1102942245 ('Habîb-i Neccâr Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk yapım tarihi bilinmiyor; kitap 1. yüzyıl ve öncesini işaret eder; en eski onarım belgesi 1857",
+      "en": "First construction unknown; the book points to the 1st century or earlier; oldest repair document 1857"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yüzyıl ve yıl vermiyor; 'cami tarihini 1. yüzyıla kadar geriye götürür' ve 'ilk yapım yılı bu tarihten de eski olmalı' diyor. Bu çıkarım olduğu için sayısal yıl yazılmadı.",
+      "en": "The book gives no firm date; it says the history goes back to the 1st century and the first construction must be older. As this is an inference, no numeric year is entered."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "68-69"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin doğu yanındaki, çapraz tonoz örtülü, yamuk planlı, merdivenle inilen iki katlı türbe. Habib-i Neccar'a atfedilir; Hıristiyanlarca da kutsal sayıldığı için tarihinin 1. yüzyıla uzandığı söylenir.",
+    "en": "The two-storey tomb east of the mosque, trapezoidal, cross-vaulted and reached by stairs. Associated with Habib-i Neccar, whom Christians also consider holy, so its history is traced back to the 1st century."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "title": {
+        "tr": "Yapı ve mekân",
+        "en": "Structure and spaces"
+      },
+      "body": {
+        "tr": "Caminin doğu yanındaki çapraz tonoz örtülü, yamuk planlı türbe, zemin katı doğu ve güney yönlere ikişer pencere ile açılan, merdivenle inilen iki kattan oluşur. Tonoz örtülü bu mekânlarda ikişer sanduka bulunur; sandukalar tam ortada olmayıp biraz kenara alınmıştır. Bugünkü türbe içindeki lahitlerden biri güney-kuzey, diğeri doğu-batı ekseninde yerleştirilmiştir.",
+        "en": "The trapezoidal, cross-vaulted tomb east of the mosque has two floors reached by stairs, the ground floor with two windows each to east and south. Each vaulted space has two sarcophagi, set a little off-centre. One of the sarcophagi in today's tomb lies on a south-north axis, the other east-west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "68-69"
+        }
+      ],
+      "order": 1
+    },
+    {
+      "id": "kutsiyet-ve-tarih",
+      "title": {
+        "tr": "Kutsiyeti ve tarih tahmini",
+        "en": "Sanctity and estimated age"
+      },
+      "body": {
+        "tr": "Habib-i Neccar'ın Hıristiyanlar tarafından da kutsal sayılması cami tarihinin 1. yüzyıla kadar geriye götürülmesine sebep olur; türbenin Hıristiyanlarca ziyaret edilmesi ilk yapım yılının bu tarihten de eski olması gerektiğine işaret eder. Türbeye özgü en eski onarım belgesi 1857 tarihlidir.",
+        "en": "That Habib-i Neccar is also holy to Christians leads to tracing the mosque's history to the 1st century; the tomb being visited by Christians indicates its first construction must be older. The oldest repair document specific to the tomb dates from 1857."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "68-69"
+        }
+      ],
+      "order": 2
+    }
+  ],
+  "legends": [
+    {
+      "id": "habib-i-neccar-mezari",
+      "title": {
+        "tr": "Habib-i Neccar'ın mezarı",
+        "en": "Tomb of Habib-i Neccar"
+      },
+      "body": {
+        "tr": "Habib-i Neccar'ın Hz. İsa'nın havarilerine inanan ilk kişi ve bir şehit olduğu, mezarının bu türbede bulunduğu aktarılır; kitap bunu bir inanç olarak sunar, kanıt vermez.",
+        "en": "Habib-i Neccar is said to be the first believer in Jesus's apostles and a martyr, with his tomb here; the book presents this as belief without proof."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "59,68"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": "kat",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "68"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": "Her katta ikişer (toplam dört); s. 69'da iki lahit",
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "68-69"
+        }
+      ],
+      "note": {
+        "tr": "Her katta ikişer (toplam dört); s. 69'da iki lahit",
+        "en": "Two per floor (four in total); two sarcophagi on p. 69"
+      }
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-belgesi-1857",
+      "year": 1857,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Türbeye özgü en eski onarım belgesi",
+        "en": "Oldest repair document specific to the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "69"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Habib-i Neccar Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Habib-i Neccar Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe caminin doğu yanındadır; yamuk planlıdır ve çapraz tonozla örtülüdür. Merdivenle inilen iki kattan oluşur. Zemin katın doğu ve güney yüzlerinde ikişer pencere vardır. Tonozlu mekânlarda sandukalar tam ortada değil, biraz kenardadır; lahitlerden biri güney-kuzey, diğeri doğu-batı doğrultusundadır.",
+      "en": "The tomb is east of the mosque, trapezoidal and covered with cross vaults. It has two floors reached by stairs. The ground floor has two windows each on its east and south sides. The sarcophagi sit slightly off-centre in the vaulted spaces; one lies south-north, the other east-west."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Habib-i Neccar Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p035-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "69"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbe içindeki sandukalar",
+        "en": "Cenotaphs inside the tomb"
+      },
+      "alt": {
+        "tr": "Kaba taş tonozlu bir oda; kırmızı halı üzerinde yeşil, yazı işlemeli örtülerle kaplı iki ahşap sanduka.",
+        "en": "A room with a rough stone vault; two wooden cenotaphs covered with green, embroidered cloths on a red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p035-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "68"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Türbenin girişi",
+        "en": "Entrance of the tomb"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarda açık duran ahşap çift kanatlı bir kapı, üstünde küçük bir tabela; içeride kırmızı halılı bir koridor; solda demir parmaklıklı pencere ve ayakkabılık.",
+        "en": "An open double wooden door in a cut-stone wall with a small sign above; a red-carpeted corridor inside; a barred window and a shoe rack on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p035-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "69"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tonozdaki yazılı örtü",
+        "en": "Inscribed cloth under the vault"
+      },
+      "alt": {
+        "tr": "Moloz taş tonozun altında, kenarları sırmalı yeşil bir örtü üzerinde Arapça harfli yazı; üstte küçük çerçeveli bir tabela.",
+        "en": "Under a rubble-stone vault, Arabic-script writing on a green cloth with gold-embroidered edges; a small framed sign above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

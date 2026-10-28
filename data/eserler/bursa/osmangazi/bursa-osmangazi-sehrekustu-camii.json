@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sehrekustu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 427-428) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Pars Bey zaviyesi (Ulu Camii Caddesi'nde, Vakıflar Bankası yerinde) ve Pars Bey türbesi için hedef kayıt bilinmiyor.",
+      "Vakfiye (1445) metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Yazır ve Umurbey köylerinin bugünkü yerleri/ilçeleri kitapta belirtilmiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline",
+        "note": "Ahmed Baba Efendi'nin yeniden inşası (1801 sonrası) ve 1980'lerdeki yıkım/yeniden yapım için kitap kesin yıl vermediğinden zaman çizelgesine eklenmedi; bölümlerde anlatılıyor. 1445 olayı vakfiye tarihine dayanan en geç tarihtir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şehreküstü (Pars Bey) Camii",
+    "en": "Şehreküstü (Pars Bey) Mosque"
+  },
+  "subtitle": {
+    "tr": "Pars Bey'in zaviyesi olarak kurulan, bugünkü yapısı 1980'lerde yenilenen cami",
+    "en": "Mosque founded as Pars Bey's zawiya; the present building dates from the 1980s"
+  },
+  "alternate_names": [
+    {
+      "tr": "Pars Bey Camii",
+      "en": "Pars Bey Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "zaviye",
+    "Pars Bey",
+    "1801 yangını",
+    "1855 depremi",
+    "yenilenmiş yapı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Şehreküstü",
+    "address": "1. Yurdakul Sokak, No: 4",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "427"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.187643,
+      "lng": 29.060724,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/343187091 ('Şehreküstü Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1445 öncesi",
+      "en": "Before 1445"
+    },
+    "start_year": null,
+    "end_year": 1445,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Vakfiyesi 1445 tarihli olduğu için yapının bu tarihten önce inşa edildiği anlaşılmaktadır; kitabesi yoktur.",
+      "en": "Its endowment charter is dated 1445, showing it was built before then; it has no inscription."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "427"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Bedreddin Pars Bey bin Abdullah",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "427"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "1445",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "427"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Pars Bey zaviyesine bağ, bahçe ve değirmenlerle birlikte Yazır ve Umurbey köylerini vakfetmiştir.",
+      "en": "Pars Bey endowed the villages of Yazır and Umurbey, along with vineyards, gardens and mills, to his zawiya."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "427"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "II. Murad'ın saray adamlarından Bedreddin Pars Bey'in zaviye olarak yaptırdığı yapı, 1801 yangınında zaviye ve türbeyle birlikte yanmış, cami ve türbe aynı yerde yeniden yapılmıştır. 1980'lerde eski cami tamamen yıkılıp yerine bugünkü kâgir, kubbeli cami yapılmıştır; bugünkü yapının tarihî bir özelliği yoktur.",
+    "en": "Built as a zawiya by Bedreddin Pars Bey, one of the courtiers of Murad II, the complex burned in 1801 together with its mosque and tomb; the mosque and tomb were rebuilt on the same site. In the 1980s the old mosque was demolished and replaced by the present masonry domed mosque, which has no historical features."
+  },
+  "sections": [
+    {
+      "id": "kurulus",
+      "order": 1,
+      "title": {
+        "tr": "Kuruluş ve Vakıf",
+        "en": "Foundation and Endowment"
+      },
+      "body": {
+        "tr": "Kitabesi bulunmayan cami, Sultan II. Murad'ın saray adamlarından Bedreddin Pars Bey bin Abdullah tarafından zaviye olarak yaptırılmıştır. Pars Bey zaviyesine bağ, bahçe, değirmenlerle birlikte Yazır ve Umurbey köylerini vakfetmiştir. Vakfiyesinin 1445 tarihli olması yapının bu tarihten önce inşa edildiğini gösterir.",
+        "en": "The mosque, which has no inscription, was built as a zawiya by Bedreddin Pars Bey bin Abdullah, one of the courtiers of Sultan Murad II. Pars Bey endowed the villages of Yazır and Umurbey, with vineyards, gardens and mills, to his zawiya. Its endowment charter being dated 1445 shows it was built before that date."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "427"
+        }
+      ]
+    },
+    {
+      "id": "yangin-ve-yeniden-insa",
+      "order": 2,
+      "title": {
+        "tr": "1801 Yangını ve Yeniden İnşa",
+        "en": "1801 Fire and Rebuilding"
+      },
+      "body": {
+        "tr": "1801'de zaviye ile birlikte cami ve türbe yanmış; Pars Bey'in akrabalarından Ahmed Baba Efendi zaviyeyi bugün Ulu Camii Caddesi'nde Vakıflar Bankası'nın bulunduğu yere taşımış, cami ve türbeyi Şehreküstü'ndeki eski yerinde yeniden yaptırmıştır. Yeniden yapılan cami kırma ahşap çatılı ve alaturka kiremit kaplıdır; son cemaat yeri ve zemini de ahşaptır.",
+        "en": "In 1801 the mosque and tomb burned together with the zawiya. Ahmed Baba Efendi, a relative of Pars Bey, moved the zawiya to the site where the Vakıflar Bank stands today on Ulu Camii Street and rebuilt the mosque and tomb on their old site in Şehreküstü. The rebuilt mosque had a hipped wooden roof covered with Turkish-style tiles; its narthex and floor were also of wood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "427"
+        }
+      ]
+    },
+    {
+      "id": "sonraki-donem",
+      "order": 3,
+      "title": {
+        "tr": "Deprem ve Yenileme",
+        "en": "Earthquake and Renewal"
+      },
+      "body": {
+        "tr": "1855 depreminde caminin kıble ve batı duvarları zarar görmüş, minaresinin şerefesi yıkılmış, gövdesi onarılamayacak ölçüde hasar görmüştür. 1950'li yıllarda minare ve diğer bölümler sağlamdı, duvarlar moloz taştandı. Mevcut minare 1974'te yeniden yapılmıştır. 1980'lerde eski cami tamamen yıkılmış, yerine bugünkü kâgir, kubbeli cami yapılmıştır. Bugünkü yapının herhangi bir tarihî özelliği yoktur. Cami bakımlıdır ve ibadete açıktır.",
+        "en": "In the 1855 earthquake the qibla and west walls were damaged, the minaret balcony collapsed and the shaft was damaged beyond repair. In the 1950s the minaret and other sections were intact, with walls of rubble stone. The present minaret was rebuilt in 1974. In the 1980s the old mosque was completely demolished and the present masonry, domed mosque was built. The present structure has no historical features. The mosque is maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "428"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "vakfiye_yili",
+      "label": {
+        "tr": "Vakfiye yılı",
+        "en": "Endowment charter year"
+      },
+      "value": 1445,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "427"
+        }
+      ]
+    },
+    {
+      "key": "minare_yeniden_insa",
+      "label": {
+        "tr": "Mevcut minarenin yapım yılı",
+        "en": "Year present minaret was rebuilt"
+      },
+      "value": 1974,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "428"
+        }
+      ]
+    },
+    {
+      "key": "mevcut_yapi",
+      "label": {
+        "tr": "Mevcut yapı",
+        "en": "Present building"
+      },
+      "value": "Kâgir, kubbeli (1980'ler)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "428"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Bedreddin Pars Bey bin Abdullah",
+      "role": {
+        "tr": "Banî; II. Murad'ın saray adamı",
+        "en": "Founder; courtier of Murad II"
+      }
+    },
+    {
+      "name": "Ahmed Baba Efendi",
+      "role": {
+        "tr": "Pars Bey'in akrabası; 1801 yangınından sonra cami ve türbeyi yeniden yaptırdı",
+        "en": "Relative of Pars Bey; rebuilt the mosque and tomb after the 1801 fire"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1445-oncesi",
+      "year": 1445,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Pars Bey tarafından zaviye olarak yaptırıldı (en geç 1445'te mevcut)",
+        "en": "Built as a zawiya by Pars Bey (existed by 1445 at the latest)"
+      },
+      "note": {
+        "tr": "Vakfiye tarihi 1445 olduğundan en geç bu tarihte var olduğu anlaşılır.",
+        "en": "Existed by the 1445 date of the endowment charter at the latest."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "427"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1801",
+      "year": 1801,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Zaviye, cami ve türbe yandı",
+        "en": "Zawiya, mosque and tomb burned"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "427"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Kıble ve batı duvarları zarar gördü, minare şerefesi yıkıldı",
+        "en": "Qibla and west walls damaged, minaret balcony collapsed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "428"
+        }
+      ]
+    },
+    {
+      "id": "minare-1974",
+      "year": 1974,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Mevcut minare yeniden inşa edildi",
+        "en": "Present minaret rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "428"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şehreküstü Camii, 1. Yurdakul Sokak'ta, 1980'lerde yapılmış kâgir ve kubbeli bir camidir. Tarihî özelliği kalmamıştır; 1974'te yeniden yapılan bir minaresi vardır. Bakımlıdır ve ibadete açıktır.",
+      "en": "Şehreküstü Mosque on 1. Yurdakul Street is a masonry, domed mosque built in the 1980s. It retains no historical features and has a minaret rebuilt in 1974. It is maintained and open for worship."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehrekustu-camii/p035-2.jpg",
+        "original_name": "10_2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "428"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şehreküstü Camii'nde minber ve pencereler",
+        "en": "Minbar and windows in Şehreküstü Mosque"
+      },
+      "alt": {
+        "tr": "Çinili gövdeli minberin ahşap külahı, vitraylı kemerli pencereler arasında yükselir. Duvarlarda mavi, turuncu ve altın bitkisel bezemeler, üst kısımda siyah zeminli yazı kuşağı görünür.",
+        "en": "A tiled minbar with a wooden cap rises between arched stained-glass windows. Blue, orange and gold floral decoration covers the walls, with a band of script on black above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehrekustu-camii/p035-3.jpg",
+        "original_name": "4.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "428"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Şehreküstü Camii'nin vitraylı pencereleri",
+        "en": "Stained-glass windows of Şehreküstü Mosque"
+      },
+      "alt": {
+        "tr": "Kemer içinde üç vitraylı pencere sıralanır; altlarında mavi ve kırmızı bezemeli bir pano ile ortada siyah zeminli altın yazılı yuvarlak levha vardır.",
+        "en": "Three stained-glass windows sit under a large arch. Below them is a decorated blue and red panel with a round gold-on-black inscription in the centre."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    }
+  ],
+  "archive_media": []
+}

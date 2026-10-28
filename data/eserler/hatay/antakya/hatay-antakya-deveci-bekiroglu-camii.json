@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-deveci-bekiroglu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Deveci Bekiroğlu Camii bölümünden (s. 225) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi, banî, mimar ve vakıf bilgisi kaynakta yok; era null bırakıldı.",
+      "Metin çok kısa: plan, harim, minare, pencere ve mihrap tarifi kaynakta yok.",
+      "Nişteki kitabenin metni, dili ve tarihi kaynakta verilmiyor; sahada okunmalı.",
+      "Çeşmenin yapım tarihi ve adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Deveci Bekiroğlu Camii",
+    "en": "Deveci Bekiroğlu Mosque"
+  },
+  "subtitle": {
+    "tr": "Kesme taştan, kurnalı kemerli nişi ve tarihî çeşmesi olan küçük cami",
+    "en": "A small cut-stone mosque with an arched niche holding a basin and a historic fountain"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "kesme taş",
+    "kurna",
+    "çeşme",
+    "tescilli"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": "İplik Pazarı",
+    "address": "İplik Pazarı Mahallesi, Gökşen Sokak, 1485 Parsel (4. Mıntıka)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "225"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "İplik Pazarı Mahallesi'nde Gökşen Sokak'taki 1485 numaralı parselde bulunan, kesme taştan yapılmış camidir. Kemerli bir nişinin içinde kurna ve kitabe vardır; duvarına düzgün kesme taştan tarihî bir çeşme yerleştirilmiştir. 15.11.1985 tarihli 1558 sayılı kurul kararıyla tescil edilmiştir.",
+    "en": "A cut-stone mosque on plot 1485 on Gökşen Street in the İplik Pazarı neighbourhood. An arched niche holds a basin and an inscription, and a historic fountain of smooth cut stones is set into its wall. It was registered by Board decision no. 1558 of 15 November 1985."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapı",
+        "en": "Location and Structure"
+      },
+      "body": {
+        "tr": "İplik Pazarı Mahallesi, Gökşen Sokak, 1485 numaralı parsel üzerinde bulunan cami kesme taştan yapılmıştır. Kemerli bir nişi vardır ve nişin iç kısmında bir kurna ile kitabe bulunmaktadır. Niş kemerinin başladığı yerde taştan kornişler yapılmıştır; üst kısımda ahşaptan bir sundurma vardır. Cami duvarına yerleştirilmiş düzgün kesme taşlardan yapılmış tarihî bir çeşme de mevcuttur.",
+        "en": "The mosque, on plot 1485 on Gökşen Street in the İplik Pazarı neighbourhood, is built of cut stone. It has an arched niche with a basin and an inscription inside. Stone cornices are made where the niche arch begins, and there is a wooden porch above. A historic fountain of smooth cut stones is also set into the mosque wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    },
+    {
+      "id": "tescil",
+      "order": 2,
+      "title": {
+        "tr": "Koruma Altına Alınması",
+        "en": "Registration"
+      },
+      "body": {
+        "tr": "Cami, Kültür ve Tabiat Varlıklarını Koruma Kurulu'nun 15.11.1985 tarihinde aldığı 1558 sayılı kararla tescil edilerek korumaya alınmıştır.",
+        "en": "The mosque was registered and placed under protection by decision no. 1558 of the Cultural and Natural Heritage Preservation Board dated 15 November 1985."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Kesme taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    },
+    {
+      "key": "parsel",
+      "label": {
+        "tr": "Parsel",
+        "en": "Plot"
+      },
+      "value": "1485",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    },
+    {
+      "key": "tescil_karari",
+      "label": {
+        "tr": "Tescil kararı",
+        "en": "Registration decision"
+      },
+      "value": "KTVKK, 15.11.1985, karar no. 1558",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "nis-kitabesi",
+      "location": {
+        "tr": "Kemerli niş içi, kurnanın yanında",
+        "en": "Inside the arched niche, with the basin"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Metin, dil ve tarih kaynakta verilmiyor.",
+        "en": "Text, language and date are not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "tescil-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kültür ve Tabiat Varlıklarını Koruma Kurulu 1558 sayılı kararla tescil etti",
+        "en": "Registered by Cultural and Natural Heritage Preservation Board decision no. 1558"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kemerli-nis",
+      "title": {
+        "tr": "Kurnalı kemerli niş",
+        "en": "Arched niche with basin"
+      },
+      "hint": {
+        "tr": "Duvardaki niş içinde kurna ve kitabeyi arayın.",
+        "en": "Look for the basin and inscription inside the wall niche."
+      },
+      "section_id": "genel-bakis"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Deveci Bekiroğlu Camii kesme taştan yapılmış küçük bir camidir. Duvarında kemerli bir niş vardır; nişin içinde bir kurna ve bir kitabe bulunur. Niş kemerinin başladığı yerde taştan kornişler, üstte ise ahşap bir sundurma yer alır. Cami duvarına düzgün kesme taşlardan yapılmış tarihî bir çeşme yerleştirilmiştir.",
+      "en": "Deveci Bekiroğlu Mosque is a small mosque built of cut stone. Its wall has an arched niche holding a basin and an inscription. Stone cornices run where the niche arch begins, with a wooden porch above. A historic fountain of smooth cut stones is set into the mosque wall."
+    },
+    "audio_description_source": "Kitabın kısa yapı tarifinden (vk-hatay, s. 225) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p112-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "222-223"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Caminin avlusu ve yan yapıları",
+        "en": "Courtyard and adjoining buildings"
+      },
+      "alt": {
+        "tr": "Toprak zeminli avluda turuncu-sarı sıvalı alçak yapılar, beyaz kapılar ve pencereler; ön planda banklar ve her iki yanda yapraklı ağaçlar.",
+        "en": "A courtyard with orange-yellow plastered low buildings, white doors and windows, benches in the foreground and leafy trees on both sides."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "224"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Yuvarlak gövdeli minare",
+        "en": "Round-bodied minaret"
+      },
+      "alt": {
+        "tr": "Alttan bakılan, dairesel gövdeli taş minare; şerefe kısmı süslü, tabanında küçük bir kapı, arkada bulutlu gökyüzü.",
+        "en": "A round stone minaret seen from below, with a decorated balcony, a small door at its base and a cloudy sky behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "224"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Minare kapısı ve kitabesi",
+        "en": "Minaret door and inscription"
+      },
+      "alt": {
+        "tr": "Sıvalı minare gövdesinde taş çerçeveli mavi renkli ahşap kapı; üstünde yazılı dikdörtgen bir kitabe.",
+        "en": "A blue wooden door in a stone frame on the plastered minaret shaft, with a rectangular inscription above it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "225"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sıra ve masalarla düzenlenmiş iç mekân",
+        "en": "Interior arranged with desks and tables"
+      },
+      "alt": {
+        "tr": "Şeftali rengi duvarlı, beyaz kirişli tavanlı salonda örtülü masalar ve sıralar; solda kemerli bir niş, camlı bir dolap ve klima.",
+        "en": "A peach-coloured hall with white beams on the ceiling, covered tables and desks, an arched niche on the left, a glazed cabinet and an air conditioner."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "225"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İç mekânın diğer köşesi",
+        "en": "Another view of the interior"
+      },
+      "alt": {
+        "tr": "Beyaz kirişli tavanın altında sıralanmış masalar; duvarda çerçeveli levhalar, bir niş ve mavi-beyaz camlı dolap.",
+        "en": "Rows of tables beneath a ceiling with white beams, with framed panels on the wall, a niche and a blue-and-white glazed cabinet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-deveci-bekiroglu-camii/p113-5.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "225"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Kemerli niş ve pencere",
+        "en": "Arched niche and window"
+      },
+      "alt": {
+        "tr": "Şeftali rengi duvarda ortada yuvarlak kemerli, küçük pencereli bir niş; solda beyaz panjurlar, sağda mavi kanatlı açık bir pencere ve bir duvar saati.",
+        "en": "A rounded niche with a small window in the middle of a peach wall, white shutters on the left, an open blue-shuttered window on the right and a wall clock."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

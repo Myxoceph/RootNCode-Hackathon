@@ -1,0 +1,312 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hayrettin-pasa-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Yapım yılı kitapta yok (yalnızca I. Murad dönemi).",
+      "Dârülhadis medresesi ve imaret için id belirsiz, relation kurulmadı.",
+      "Minarenin yapı tarihi kitapta belirtilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location",
+        "note": "Başlıkta Alacamescit Mahallesi, Çandarlı Sokak No:3; metinde caminin 'Bursa Tuz Pazarı semtinde' olduğu söyleniyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hayrettin Paşa Camii",
+    "en": "Hayrettin Paşa Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Çandarlı Kara Halil Hayreddin Paşa Camii",
+      "en": "Çandarlı Kara Halil Hayreddin Paşa Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "minare özgün",
+    "vezir camii",
+    "Çandarlı",
+    "betonarme"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alacamescit",
+    "address": "Çandarlı Sokak, No: 3",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "335"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18517,
+      "lng": 29.066789,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/247424182 ('Hayrettin Paşa Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Sultan I. Murad dönemi",
+      "en": "Reign of Sultan Murad I"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yalnızca hükümdar dönemini veriyor; yıl yok.",
+      "en": "The book gives only the sultan's reign; no year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "335"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Çandarlı Kara Halil (Hayreddin) Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "335"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sultan I. Murad döneminde Çandarlı Kara Halil (Hayreddin) Paşa'nın yaptırdığı cami; 1863'te yeniden yapılıp sonradan betonarme hâle getirilmiş, yalnızca minaresi özgün kalmıştır.",
+    "en": "A mosque built by Çandarlı Kara Halil (Hayreddin) Paşa in the reign of Sultan Murad I; rebuilt in 1863 and later made of reinforced concrete, with only its minaret surviving in original form."
+  },
+  "sections": [
+    {
+      "id": "bani",
+      "order": 1,
+      "title": {
+        "tr": "Banisi",
+        "en": "Founder"
+      },
+      "body": {
+        "tr": "Cami, Sultan I. Murad döneminde Çandarlı Kara Halil (Hayreddin) Paşa tarafından yaptırılmıştır. Halil Paşa vezirlik öncesi \"Kara\" ve \"Karaca\" lakaplarıyla, vezirliğinde \"Hayreddin\" unvanıyla anılmıştır. Karaman'a bağlı Sivrihisar kazasının Çendere köyünde doğmuş, babasının adı Ali'dir. İznik Medresesi müderrislerinden Tâceddin Kürdî'nin kızıyla evlenerek Şeyh Edebâli'nin bacanağı olmuş ve Osman Gazi ile akrabalık bağı kurmuştur. Ahi teşkilatına bağlılığı nedeniyle hızla yükselmiş; önce Bilecik'e, İznik'in fethinden sonra İznik'e, sonra Bursa'ya kadı tayin edilmiş; I. Murad döneminde kazaskerliğe, ardından vezirliğe yükselmiştir. H. 789 / M. 1387'de vefat etmiş, naaşı büyük oğlu Ali Paşa tarafından İznik'te Lefke Kapısı dışındaki türbeye defnedilmiştir. İznik'te Yeşil Camii, yanında Dârülhadis medresesi ve imaret, Serez'de Kurşunlu Camii'ni yaptırmıştır.",
+        "en": "The mosque was built by Çandarlı Kara Halil (Hayreddin) Paşa in the reign of Sultan Murad I. Before the vizierate he was known as Kara and Karaca, as vizier by the title Hayreddin. Born in Çendere village of Sivrihisar district in Karaman, his father's name was Ali. He married the daughter of Tâceddin Kürdî, a lecturer at the İznik Madrasa, becoming brother-in-law of Shaykh Edebâli and related to Osman Gazi. He rose quickly through the Ahi organization, serving as qadi of Bilecik, İznik after its conquest, then Bursa; under Murad I he became kazasker and then vizier. He died in AH 789 / AD 1387 and his eldest son Ali Paşa buried him in the tomb outside the Lefke Gate in İznik. He also built the Green Mosque in İznik, a madrasa called Dârülhadis and an imaret next to it, and the Kurşunlu Mosque in Serez."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "335-336"
+        }
+      ]
+    },
+    {
+      "id": "yapi",
+      "order": 2,
+      "title": {
+        "tr": "Yapının Durumu",
+        "en": "Condition of the Building"
+      },
+      "body": {
+        "tr": "Bursa Tuz Pazarı semtinde yaptırdığı cami, ahşap çatılıyken yıkılmış, H. 1280 / M. 1863'te mütevellisi Salih Efendi tarafından yeniden inşa edilmiştir. Sonraki müdahalelerle tamamen yenilenip betonarme hâle getirilmiştir. Günümüzde yalnızca minaresi özgün yapısını korumaktadır.",
+        "en": "The mosque he built in the Tuz Pazarı district of Bursa collapsed when it had a wooden roof and was rebuilt by its trustee Salih Efendi in AH 1280 / AD 1863. It was completely renewed and made of reinforced concrete by later interventions. Today only its minaret has preserved its original structure."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "336"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minarenin kare kaidesi üç sıra tuğla, bir sıra kesme taş ve aralarına tek tuğla yerleştirilerek inşa edilmiştir. Gövde tuğlaların çeşitli dizilimleriyle süslenmiştir. Şerefe altı altı sıra tuğla stalaktitli tasarlanmış olup Yarhisar ve Yenişehir minareleriyle benzerlik gösterir.",
+        "en": "The minaret's square base is built of three rows of brick, one row of cut stone and a single brick between them. The shaft is decorated with various brick arrangements. The underside of the balcony has six rows of brick stalactites, similar to the Yarhisar and Yenişehir minarets."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "336"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "serefe_alti_stalaktit_sirasi",
+      "label": {
+        "tr": "Şerefe altı stalaktit sırası",
+        "en": "Stalactite rows under balcony"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "336"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Çandarlı Kara Halil Hayreddin Paşa",
+      "role": {
+        "tr": "Banî; kadı, kazasker, vezir (ö. H. 789 / M. 1387)",
+        "en": "Founder; qadi, kazasker, vizier (d. AH 789 / AD 1387)"
+      }
+    },
+    {
+      "name": "Salih Efendi",
+      "role": {
+        "tr": "1863'te yeniden inşa ettiren mütevelli",
+        "en": "Trustee who had it rebuilt in 1863"
+      }
+    },
+    {
+      "name": "Ali Paşa",
+      "role": {
+        "tr": "Banînin büyük oğlu",
+        "en": "Founder's eldest son"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "olum-1387",
+      "year": 1387,
+      "date": null,
+      "hijri": "789",
+      "type": "record",
+      "title": {
+        "tr": "Banisi Halil Hayreddin Paşa vefat etti (H. 789)",
+        "en": "Founder Halil Hayreddin Paşa died (AH 789)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "336"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": "1280",
+      "type": "restoration",
+      "title": {
+        "tr": "Mütevelli Salih Efendi tarafından yeniden inşa edildi (H. 1280)",
+        "en": "Rebuilt by trustee Salih Efendi (AH 1280)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "336"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-yesil-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Aynı kişi (Çandarlı Halil Hayreddin Paşa) İznik'te Yeşil Camii'yi de yaptırmıştır.",
+        "en": "The same person (Çandarlı Halil Hayreddin Paşa) also had the Green Mosque built in İznik."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "336"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hayrettin Paşa Camii'nin bugünkü gövdesi betonarmedir; yalnızca minaresi özgündür. Minare kare bir kaide üzerinde yükselir; kaide üç sıra tuğla, bir sıra kesme taş ve aralarında tek tuğladan örülmüştür. Tuğla gövde çeşitli dizilimlerle süslüdür ve şerefenin altında altı sıra tuğla stalaktit vardır.",
+      "en": "The present body of the Hayrettin Paşa Mosque is reinforced concrete; only its minaret is original. The minaret rises from a square base built of three rows of brick, one row of cut stone and single bricks between. The brick shaft is decorated with various patterns, and six rows of brick stalactites sit beneath the balcony."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hayrettin-pasa-camii/p067-2.jpg",
+        "original_name": "7-4.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "336"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve mahfil katı",
+        "en": "Interior with mihrab and gallery"
+      },
+      "alt": {
+        "tr": "Yüksek kubbeli, açık renkli bir iç mekân; ortada çinili mihrap, sağda minber ve iki yanda korkuluklu mahfil katları var. Zeminde mavi halı, kubbe eteğinde pencereler görünüyor.",
+        "en": "A tall, light-coloured domed interior with a tiled mihrab in the centre, a minber on the right and railed galleries on both sides. A blue carpet covers the floor and windows ring the dome."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-08"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

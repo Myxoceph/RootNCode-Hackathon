@@ -1,0 +1,398 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sehzade-ahmet-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Şehzade Ahmet'in babası ve ölüm tarihi kitapta belirtilmemiş.",
+      "Diğer iki sandukanın sahipleri tartışmalı; teyit edilmeli.",
+      "Şehzade Korkut'un burada mı Mükrime Hatun Türbesi'nde mi yattığı teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mezarlar-onarim]",
+        "note": "Türkçe metin yalnızca beş kişiyi sayar; İngilizce metin ek olarak 'diğer iki sandukanın Sofu Sultan ve Kamer Hatun'a ait olduğunun düşünüldüğünü ve bunun tartışmalı olduğunu' söyler. Türkçe ve İngilizce metin birbirini tutmuyor; İngilizce ek 'disputed' olarak saklandı."
+      },
+      {
+        "field": "people[Şehzade Korkut]",
+        "note": "Mükrime Hatun Türbesi'nde de Şehzade Korkut'un (1465-1513) sandukası olduğu söylenir; çelişki o kayıtta ayrıca not edildi."
+      },
+      {
+        "field": "title",
+        "note": "Başlık Türkçe 'Şehzade Ahmet Türbesi'dir; İngilizce 'Şehzade Ahmet Tomb'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şehzade Ahmet Türbesi",
+    "en": "Şehzade Ahmet Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "türbe",
+    "sekizgen plan",
+    "kündekâri kapı",
+    "Yavuz Sultan Selim"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "Sedat Sokak, No: 1/3",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "158"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.190684,
+      "lng": 29.046268,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/2796344227 ('Şehzade Ahmet Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 919 / M. 1513",
+      "en": "AH 919 / AD 1513"
+    },
+    "start_year": 1513,
+    "end_year": 1513,
+    "hijri_year": 919,
+    "century": 16,
+    "basis": {
+      "tr": "Yavuz Sultan Selim'in H. 919 / M. 1513 tarihli fermanıyla inşa edilmiştir.",
+      "en": "Built by the decree of Yavuz Sultan Selim dated AH 919 / AD 1513."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "158-159"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yavuz Sultan Selim",
+    "role": "banî (fermanla)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "158-159"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Alâaddin",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "158-159"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Yavuz Sultan Selim'in 1513 tarihli fermanıyla, Muradiye Camii ile II. Murad Türbesi arasında yaptırılan sekizgen planlı türbe. Şehzade Ahmet, annesi Bülbül Hatun, kardeşi Şehinşah ve Şehinşah'ın oğlu Mehmed ile Şehzade Korkut burada yatar; kapısı kündekâri tekniğindedir.",
+    "en": "An octagonal tomb built by the decree of Yavuz Sultan Selim in 1513 between the Muradiye Mosque and the tomb of Murad II. Şehzade Ahmet, his mother Bülbül Hatun, his brother Şehinşah, Şehinşah's son Mehmed and Şehzade Korkut are buried here; its door is in kündekâri technique."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Şehzade Ahmet Türbesi, Sedat Sokak No: 1/3'te yer alır. Yavuz Sultan Selim'in H. 919 / M. 1513 tarihli fermanıyla inşa edilen türbenin mimarı Alâaddin, bina emini Bedreddin Mahmud Bey'dir; kâtipleri Ali, Yusuf, Muhiddin ve Mehmed Efendi'dir. Muradiye Camii ile II. Murad Türbesi arasında konumlanan yapı sekizgen planlıdır.",
+        "en": "The Şehzade Ahmet Tomb is on Sedat Street No. 1/3. The architect of the tomb, built by the decree of Yavuz Sultan Selim dated AH 919 / AD 1513, was Alâaddin and the building supervisor Bedreddin Mahmud Bey; his clerks were Ali, Yusuf, Muhiddin and Mehmed Efendi. The octagonal building lies between the Muradiye Mosque and the Tomb of Murad II."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "158-159"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Duvar örgüsü bir sıra kesme taş ve iki sıra tuğladır. Her cephede üç pencere bulunur ve pencere kemerleri tuğla çerçeveyle belirginleştirilmiştir. Girişte Bursa kemerli mermer bir saçak vardır. Kündekâri tekniğiyle işlenmiş kapısı sanat değeri açısından dikkat çekicidir.",
+        "en": "The wall is one row of cut stone and two rows of brick. There are three windows on each façade, the window arches highlighted with brick frames. At the entrance is a marble portico with Bursa arches. Its door, crafted in the kündekâri technique, is remarkable in artistic value."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "158-159"
+        }
+      ]
+    },
+    {
+      "id": "mezarlar-onarim",
+      "order": 3,
+      "title": {
+        "tr": "Defnedilenler ve Restorasyon",
+        "en": "Burials and Restoration"
+      },
+      "body": {
+        "tr": "Türbede Şehzade Ahmet, annesi Bülbül Hatun, kardeşi Şehinşah, Şehinşah'ın oğlu Mehmed ve Yavuz Sultan Selim'in kardeşi Şehzade Korkut medfundur. İngilizce metne göre diğer iki sandukanın II. Bayezid'in kızı Sofu Sultan ve Şehzade Ahmet'in kızı Kamer Hatun'a ait olduğu düşünülmektedir, ancak bu tartışmalı bir konudur. 2014 restorasyonunda temel yalıtımı yapılmış, kubbenin kurşun örtüsü yenilenmiş, çini ve kalem işleri ihya edilmiştir.",
+        "en": "Şehzade Ahmet, his mother Bülbül Hatun, his brother Şehinşah, Şehinşah's son Mehmed and Yavuz Sultan Selim's brother Şehzade Korkut are buried here. The other two sarcophagi are thought to belong to Sofu Sultan, daughter of Bayezid II, and Kamer Hatun, daughter of Şehzade Ahmet, although this remains controversial. In the 2014 restoration foundation insulation was provided, the dome's lead cover renewed and the tile and hand-painted works revived."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "158-159"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_per_cephe",
+      "label": {
+        "tr": "Cephe başına pencere",
+        "en": "Windows per façade"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "158-159"
+        }
+      ]
+    },
+    {
+      "key": "kose_sayisi",
+      "label": {
+        "tr": "Plan köşe sayısı",
+        "en": "Number of sides (octagon)"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "158-159"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Yavuz Sultan Selim",
+      "role": {
+        "tr": "Fermanla türbeyi yaptıran padişah",
+        "en": "Sultan who ordered the tomb by decree"
+      }
+    },
+    {
+      "name": "Alâaddin",
+      "role": {
+        "tr": "Türbenin mimarı",
+        "en": "Architect of the tomb"
+      }
+    },
+    {
+      "name": "Bedreddin Mahmud Bey",
+      "role": {
+        "tr": "Bina emini",
+        "en": "Building supervisor"
+      }
+    },
+    {
+      "name": "Şehzade Ahmet",
+      "role": {
+        "tr": "Türbede yatar",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Bülbül Hatun",
+      "role": {
+        "tr": "Şehzade Ahmet'in annesi; türbede yatar",
+        "en": "Mother of Şehzade Ahmet; buried here"
+      }
+    },
+    {
+      "name": "Şehinşah",
+      "role": {
+        "tr": "Şehzade Ahmet'in kardeşi; türbede yatar",
+        "en": "Brother of Şehzade Ahmet; buried here"
+      }
+    },
+    {
+      "name": "Şehzade Korkut",
+      "role": {
+        "tr": "Yavuz Sultan Selim'in kardeşi; türbede yatar",
+        "en": "Brother of Yavuz Sultan Selim; buried here"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "ferman-1513",
+      "year": 1513,
+      "date": null,
+      "hijri": "919",
+      "type": "construction",
+      "title": {
+        "tr": "Yavuz Sultan Selim'in fermanıyla inşa edildi",
+        "en": "Built by the decree of Yavuz Sultan Selim"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "158-159"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon: temel yalıtımı, kubbe kurşunu, çini ve kalem işleri",
+        "en": "Restoration: foundation insulation, dome lead, tile and painted work"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "158-159"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "158"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ii-murad-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Türbe, Muradiye Camii ile II. Murad Türbesi arasında yer alır.",
+        "en": "The tomb lies between the Muradiye Mosque and the Tomb of Murad II."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "158-159"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-mukrime-hatun-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Şehzade Korkut ve Şehinşah ailesiyle bağlantılı; Mükrime Hatun Şehinşah'ın hanımıdır.",
+        "en": "Linked to Şehzade Korkut and Şehinşah's family; Mükrime Hatun was Şehinşah's wife."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "155, 158"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe sekizgen planlıdır; duvarları bir sıra kesme taş ve iki sıra tuğla ile örülmüştür. Her cephede tuğla çerçeveli üç pencere vardır. Girişin üzerinde Bursa kemerli bir mermer saçak bulunur; kapısı kündekâri tekniğiyle yapılmıştır. Muradiye Camii ile II. Murad Türbesi arasında durur.",
+      "en": "The tomb is octagonal, with walls of one row of cut stone and two of brick. Each façade has three windows framed in brick. Above the entrance is a marble canopy with Bursa arches, and the door is in the kündekâri technique. It stands between the Muradiye Mosque and the Tomb of Murad II."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sehzade-ahmet-turbesi/p046-1.jpg",
+        "original_name": "ERD02758 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "155"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şehzade Ahmet Türbesi'nin dıştan görünümü",
+        "en": "Exterior of the Şehzade Ahmet Tomb"
+      },
+      "alt": {
+        "tr": "Sekizgen gövdeli, kubbeli tuğla ve taş türbe ağaçların ve çimenliğin arasında duruyor. Duvarlarında demir parmaklıklı pencereler ve bir aydınlatma direği görünüyor.",
+        "en": "An octagonal domed tomb of brick and stone among trees and lawn. Its walls have barred windows, and a lamp post stands in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": []
+}

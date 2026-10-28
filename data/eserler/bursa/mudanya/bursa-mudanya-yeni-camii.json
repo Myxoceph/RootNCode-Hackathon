@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-mudanya-yeni-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Mudanya",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
+      "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
+      "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
+      "Doğu eklemesinin yılı kitapta yok ('sonraki yıllarda'). Cephenin mozaikle yenilendiği yıl da belirtilmemiş."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Yeni Camii",
+    "en": "Yeni (New) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "Girit göçmenleri",
+    "1958"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Mudanya",
+    "neighborhood": "Halitpaşa",
+    "address": "Fevzi Paşa Caddesi, No: 19",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "596"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.380192,
+      "lng": 28.879576,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1377879787 ('Yeni Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1958",
+      "en": "1958"
+    },
+    "start_year": 1958,
+    "end_year": 1958,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap 1958'de Girit göçmeni mahalle sakinlerinin katkılarıyla inşa edildiğini belirtir.",
+      "en": "The book states it was built in 1958 with contributions of neighborhood residents who were immigrants from Crete."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "596"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1958'de Girit göçmeni mahalle sakinlerinin katkılarıyla yapılan, kare planlı, sonradan doğuya genişletilen ve cephesi mozaikle yenilenen cami.",
+    "en": "Square-plan mosque built in 1958 with contributions of Cretan immigrant residents, later enlarged to the east and with its exterior renewed in mosaic."
+  },
+  "sections": [
+    {
+      "id": "tarihce-plan",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Plan",
+        "en": "History and Plan"
+      },
+      "body": {
+        "tr": "Cami 1958'de Girit göçmeni mahalle sakinlerinin katkılarıyla inşa edilmiştir. Yaklaşık 126 m²'lik ibadet alanı kare planlıdır, kiremit kaplı kırma çatıyla örtülüdür; sonraki yıllarda doğu cephesine yapılan eklemeyle genişletilmiştir.",
+        "en": "The mosque was built in 1958 with the contributions of neighborhood residents who were immigrants from Crete. Its prayer area of about 126 m² is square, covered by a tiled hipped roof, and was expanded later with an addition on the east façade."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "596"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 2,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Dört basamakla çıkılan son cemaat mahalli ara sahanlık biçimindedir. Harim, orijinal bölüm ile doğuda sonradan eklenen ve yaklaşık 1 m daha yüksekte yer alan bölümden oluşur; kadınlar mahfili kuzeydedir. Ahşap tavanlı harim mihrap duvarında altlı üstlü dört, doğu ve batıda üçer, kuzeyde beş pencereyle aydınlanır. Mihrap nişi sekiz sıra mukarnaslıdır, çevresi Âyetü’l-kürsî ayetleriyle bezelidir; minber ve kürsü ahşaptır.",
+        "en": "The narthex, reached by four steps, is an intermediate landing. The prayer hall consists of the original part and an eastern part added later about 1 m higher; the women's section is to the north. The wooden-ceilinged hall is lit by four windows on the mihrab wall, three on the east and west and five on the north. The mihrab niche ends with eight rows of muqarnas and is decorated with verses from the Ayat al-Kursi; minbar and pulpit are wooden."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "597"
+        }
+      ]
+    },
+    {
+      "id": "minare-cephe",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve Cephe",
+        "en": "Minaret and Exterior"
+      },
+      "body": {
+        "tr": "Kuzeybatı köşedeki minare silindirik gövdeli ve tek şerefelidir; gövde beyaz sıvalıdır, şerefe altında iki sıra testere dişli tuğla bezeme, külahta beton sıva vardır. Dış cephe mozaik malzemeyle yenilenmiş, bu müdahaleyle cami mimari ve sanatsal özgünlüğünü büyük ölçüde kaybetmiştir.",
+        "en": "The minaret in the northwest corner has a cylindrical shaft and a single balcony, white plastered, with two rows of sawtooth brick under the balcony and a concrete-plastered spire. The exterior was renewed with mosaic material, after which the mosque lost much of its architectural and artistic originality."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "597"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ibadet_alani",
+      "label": {
+        "tr": "İbadet alanı",
+        "en": "Prayer area"
+      },
+      "value": 126,
+      "unit": "m²",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "596"
+        }
+      ]
+    },
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapım yılı",
+        "en": "Year built"
+      },
+      "value": 1958,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "596"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Girit göçmeni mahalle sakinlerinin katkılarıyla inşa edildi",
+        "en": "Built with contributions of Cretan immigrant residents"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "596"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, kiremit kaplı kırma çatılı bir camidir; dış cephesi mozaik malzemeyle kaplıdır. Dört basamakla çıkılan bir son cemaat yeri, ahşap tavanlı harim ve kuzeybatı köşede beyaz sıvalı tek şerefeli minare vardır.",
+      "en": "A square mosque with a tiled hipped roof and an exterior clad in mosaic. A narthex reached by four steps leads to a wooden-ceilinged hall; a white-plastered single-balcony minaret is in the northwest corner."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

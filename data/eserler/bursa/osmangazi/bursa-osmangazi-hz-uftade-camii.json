@@ -1,0 +1,784 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hz-uftade-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 449-454) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Dating: kitap 1579'u veriyor ama yapı 1670 ve 1866'da yeniden yapıldı; mevcut yapı büyük oranda 19. yüzyıl.",
+      "Doğanbey Mescidi, Aziz Mahmud Hüdâyî ve Hızır Dede için hedef kayıt bilinmiyor.",
+      "Hasan Rıza Paşa vakfı için vakfiye bilgisi yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 1579 yılını 'Kanûnî Sultan Süleyman'ın izniyle' vermekte; kitapta Kanûnî'nin saltanat yılları verilmediği için padişah-yıl eşleşmesi doğrulanamadı, kaynağa sadık kalındı. Ayrıca Üftâde H. 988 / M. 1580'de ölmüştür."
+      },
+      {
+        "field": "people",
+        "note": "Kitap 1843 onarımını 'Vali Rıza Paşa', 1866 onarımını 'Serasker Hasan Rıza Paşa' ve kitabede 'Rızâ Paşa' olarak anar; bunların aynı kişi olup olmadığı belirtilmiyor."
+      },
+      {
+        "field": "timeline[kurulus-1579]",
+        "note": "Kitabe Üftâde'nin camiyi kurduğunu söyler, ancak metinde 'inşa ettirilmiştir' fiilinin öznesi açıkça belirtilmez; kitabe esas alınmıştır."
+      },
+      {
+        "field": "inscriptions[cumle-kapisi-kitabesi]",
+        "note": "Kitabede kuruluş (Üftâde) ve yeniden inşa (Rıza Paşa, H. 1283 / M. 1866) birlikte anlatılır; yazılı tarih 1866 onarımına aittir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hz. Üftâde Camii",
+    "en": "Hz. Üftâde Mosque"
+  },
+  "subtitle": {
+    "tr": "Hisar'da, Üftâde Hazretleri'nin 1579'da kurduğu, 1866'da Rıza Paşa'nın yeniden yaptırdığı cami",
+    "en": "Mosque in the Hisar district founded by Hazrat Üftâde in 1579 and rebuilt by Rıza Paşa in 1866"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Üftâde",
+    "Hisar",
+    "kalem işi",
+    "1855 depremi",
+    "tek kubbe",
+    "kitabe",
+    "türbe yanında"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kavaklı",
+    "address": "Üftade Sokak, No: 10",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "449"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1579 (kuruluş); 1670 ve 1866 yeniden inşa",
+      "en": "1579 (foundation); rebuilt 1670 and 1866"
+    },
+    "start_year": 1579,
+    "end_year": 1579,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap camiyi 1579'da inşa ettirildiğini söyler; yapı 1670'te temelden, 1866'da baştan sona yeniden yaptırılmıştır.",
+      "en": "The book says the mosque was built in 1579; it was rebuilt from its foundations in 1670 and entirely in 1866."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "449, 454"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Üftâde Hazretleri (Mehmed Muhyiddin)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "450-451"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Hasan Rıza Paşa cami ve türbe için büyük miktarda para vakfetmiş, her yıl 10.000 kuruş gönderilmesini istemiştir.",
+      "en": "Hasan Rıza Paşa donated a large amount of money for the mosque and the tomb and requested that 10,000 kuruş be sent every year."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "452"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hisar semtinde, dik bir yamacın dibindeki cami, kitabesine göre Üftâde Hazretleri'nin kurduğu ve inşa ettirdiği, 1866'da Rıza Paşa'nın baştan yaptırdığı yapıdır. Kitaba göre 1579'da Kanûnî Sultan Süleyman'ın izniyle inşa ettirilmiştir. Dört ayak üzerine oturan sekizgen tek kubbesi, üç gözlü son cemaat yeri ve 19. yüzyıl kalem işi bezemeleriyle dikkat çeker; doğusunda Üftâde'nin türbesi vardır.",
+    "en": "The mosque at the foot of a steep slope in the Hisar district was, according to its inscription, founded and built by Hazrat Üftâde and rebuilt from scratch by Rıza Paşa in 1866. The book says it was built in 1579 with the permission of Suleiman the Magnificent. It stands out for its octagonal single dome on four piers, a three-bay narthex and 19th-century hand-painted decoration; Üftâde's tomb lies to its east."
+  },
+  "sections": [
+    {
+      "id": "uftade",
+      "order": 1,
+      "title": {
+        "tr": "Üftâde Hazretleri",
+        "en": "Hazrat Üftâde"
+      },
+      "body": {
+        "tr": "Asıl adı Mehmed Muhyiddin olan Üftâde Hazretleri, Bursa'da her dönem saygı görmüş büyük evliyalardandır. H. 894 / M. 1489'da Bursa'da doğmuştur. Ulucami'de müezzinlik, Doğanbey Mescidi'nde hem müezzinlik hem imamlık yapmıştır. Hızır Dede'den aldığı icazetle Uludağ yamacında kurduğu dergâhında başta Aziz Mahmud Hüdâyî olmak üzere birçok kişiyi irşat etmiştir. H. 988 / M. 1580'de yaklaşık doksan yaşında vefat etmiş ve kendi adıyla anılan camisinin doğusundaki türbesine defnedilmiştir.",
+        "en": "Hazrat Üftâde, whose real name was Mehmed Muhyiddin, was one of the great saints always respected in Bursa. He was born in Bursa in AH 894 / AD 1489. He served as muezzin at the Ulucami and as both muezzin and imam at Doğanbey Masjid. With the permission he received from Hızır Dede he guided many people, especially Aziz Mahmud Hüdâyî, in the Sufi lodge he established on the slopes of Uludağ. He died in AH 988 / AD 1580 aged about ninety and was buried in his tomb east of the mosque named after him."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "449"
+        }
+      ]
+    },
+    {
+      "id": "kurulus",
+      "order": 2,
+      "title": {
+        "tr": "Kuruluş",
+        "en": "Foundation"
+      },
+      "body": {
+        "tr": "Bursa'nın tarihî Hisar semtinde, dik bir yamacın dibinde bulunan cami, dönemin padişahı Kanûnî Sultan Süleyman'ın izni ve devlet büyüklerinin desteğiyle 1579'da inşa ettirilmiştir. Cümle kapısındaki kitabeye göre Üftâde Efendi bu camiyi kurmuş ve inşa etmiştir.",
+        "en": "Located at the bottom of a steep slope in the historical Hisar district of Bursa, the mosque was built in 1579 with the permission of the sultan of the period, Suleiman the Magnificent, and with the support of state officials. According to the inscription on the main door, Üftâde Efendi founded and built this mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "449, 451"
+        }
+      ]
+    },
+    {
+      "id": "kilise-rivayeti",
+      "order": 3,
+      "title": {
+        "tr": "Kilise İddiası",
+        "en": "Church Claim"
+      },
+      "body": {
+        "tr": "Caminin yerinde daha önce bir kilise yapısı bulunduğuna dair rivayetler olsa da temelden yeniden inşa sırasında bu bilgiyi doğrulayacak mimari bir iz bulunmamıştır. Yalnızca doğu duvarında tek bir devşirme malzeme vardır.",
+        "en": "Although there are accounts that a church building stood on the site, no architectural trace confirming this was found during the reconstruction. There is only one spolia element on the east wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "450"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Başlangıçtaki mimari şema, erken Osmanlı yapılarına ve Bursa eserlerine uygun şekilde tek kubbeli ve üç bölümlü son cemaat yerinden oluşur; bu yüzden şehirde yaygın almaşık duvar örgüsü 19. yüzyıl onarımlarından sonra da korunmuştur. 13,00 × 13,00 m kare planlı yapı, dört ayak üzerine oturan sekizgen tek kubbe ve üç gözlü son cemaat yerinden oluşur. Kubbenin üzerinde 2,00 m yüksekliğinde kasnaklı bir aydınlık feneri vardır. Kubbe dışındaki alanlar beden duvarlarına bağlanan tonozlarla örtülüdür; kubbe geçişi pandantiflerle sağlanmış, dışı kurşunla kaplanmıştır. Dört ayak 19. yüzyıl özelliği gösteren İyon tarzı başlıklarla süslüdür. Kubbe basık kemerli sekiz pencereyle aydınlanır. Kuzeydeki son cemaat yerinin üç bölümü kubbeli ve kurşun kaplıdır; ortadaki kubbe yan kubbelerden yüksek ve sivri kemerlidir, yan bölümler yuvarlak kemerlidir. Mihrap dikdörtgen çerçeve içinde beş köşeli nişlidir; sarı yaldızlı siyah yazı kuşakları dikkat çeker. Mihrabın batısında ahşap minber, doğusunda vaaz kürsüsü vardır; bunlar özgün değildir, 20. yüzyılda yenilenmiştir.",
+        "en": "The initial architectural scheme, in line with early Ottoman structures and Bursa works, is a single dome with a three-part narthex, so the alternating wall construction common in the city was preserved after the 19th-century repairs. The square building, 13.00 × 13.00 m, consists of a single octagonal dome on four piers and a three-bay narthex. A roof lantern with a 2.00 m high drum stands on the dome. Areas outside the dome are covered with vaults connected to the main walls; the dome transition is by pendentives and its exterior is lead-covered. The four piers have Ionic-style capitals reflecting 19th-century features. The dome is lit by eight depressed-arch windows. The three sections of the narthex on the north are domed and lead-covered; the middle dome is higher and pointed-arched, the side ones round-arched. The mihrab has a five-sided niche within a rectangular frame, with black inscription bands mostly gilded in yellow. A wooden minbar stands west of the mihrab and a preaching pulpit to its east; these are not original and were renewed in the 20th century."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "452-453"
+        }
+      ]
+    },
+    {
+      "id": "susleme",
+      "order": 5,
+      "title": {
+        "tr": "Kalem İşi Bezemeler",
+        "en": "Hand-Painted Decoration"
+      },
+      "body": {
+        "tr": "Kubbe göbeği ve bazı bölümlerdeki kalem işi süslemeler 19. yüzyıl işçiliğinin önemli örnekleridir; Geç Dönem Osmanlı üslubu ve Türk Barok sanatının özelliklerini taşır. Çiçek, yaprak, demet motifleri ile kahverengi ve gri tonlar hâkimdir; Ulucami'deki aynı döneme ait kalem işlerini hatırlatır. 2004 restorasyonunda sıva altından 19. yüzyıla ait kalem işi bezemeler ortaya çıkarılmış ve yenilenmiştir.",
+        "en": "The hand-painted ornamentation on the dome and other sections is an important example of 19th-century workmanship, with Late Ottoman and Turkish Baroque characteristics. Flower, leaf and bunch motifs and brown and grey tones dominate, recalling the contemporary hand-painted works in the Ulucami. In the 2004 restoration 19th-century decorations were revealed under the plaster and renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "453-454"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 6,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Kuzeydoğuda, son cemaat yerinin üst örtüsünden başlayan, taş kaideli ve silindirik tuğla gövdeli bir minare vardır. Şerefe altı beş sıra tuğla dizisiyle süslenmiş, şerefe metal korkuluklarla çevrilmiştir.",
+        "en": "In the northeast, starting from the upper cover of the narthex, there is a minaret with a stone base and cylindrical brick shaft. The section below the balcony is decorated with five rows of bricks and the balcony has metal railings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 7,
+      "title": {
+        "tr": "Onarım Tarihi",
+        "en": "Repair History"
+      },
+      "body": {
+        "tr": "Üftâde'nin torunu Kutub İbrahim Efendi, kendi gelirleriyle H. 1081 / M. 1670'te camiyi temelden yeniden yaptırmış, yanındaki türbeyi onartmıştır. Vali Rıza Paşa H. 1259 / M. 1843'te cami ve türbede bir onarım daha yaptırmıştır. 1855 Bursa Depremi'nde ana kubbe ve minare şerefesi yıkılmış, son cemaat yerindeki kubbe ve kemerlerle minare gövdesi çatlamıştır. Serasker Hasan Rıza Paşa H. 1283 / M. 1866'da camiyi yeniden onarmıştır. Türbe 1961'de, cami 1969'da Bursa Eski Eserleri Sevenler Kurumu tarafından restore edilmiş; 1975-1977'de onarımları Vakıflar Genel Müdürlüğü sürdürmüştür. 1969 onarımında özgün düzen tam korunamamış, bugünkü görünüm kazandırılmıştır. 2009'da Bursa Vakıflar Bölge Müdürlüğü kapsamlı bir onarım yapmıştır.",
+        "en": "Kutub İbrahim Efendi, Üftâde's grandson, rebuilt the mosque from its foundations with his own income in AH 1081 / AD 1670 and repaired the neighboring tomb. Governor Rıza Paşa had another repair done on the mosque and tomb in AH 1259 / AD 1843. In the great Bursa earthquake of 1855 the main dome and the minaret balcony collapsed, and the narthex dome and arches and the minaret shaft cracked. Serasker Hasan Rıza Paşa repaired the mosque in AH 1283 / AD 1866. The tomb was restored in 1961 and the mosque in 1969 by the Bursa Association for the Appreciation of Antiquities; the General Directorate of Foundations continued repairs in 1975-1977. The 1969 restoration could not fully preserve the original layout but gave the present appearance. In 2009 the Bursa Regional Directorate of Foundations carried out a comprehensive repair."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "kilise-uzerine-yapildi",
+      "title": {
+        "tr": "Yerinde kilise bulunduğu rivayeti",
+        "en": "Rumor of a church on the site"
+      },
+      "body": {
+        "tr": "Caminin yerinde daha önce bir kilise yapısı bulunduğuna dair rivayetler vardır; ancak temelden yeniden inşa sırasında bu bilgiyi doğrulayacak mimari bir izle karşılaşılmamıştır.",
+        "en": "There are accounts that a church building previously stood on the site; however, no architectural trace confirming this was found during the reconstruction."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "450"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "Plan ölçüleri",
+        "en": "Plan dimensions"
+      },
+      "value": "13,00 × 13,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "key": "fener_kasnak_yuksekligi",
+      "label": {
+        "tr": "Aydınlık feneri kasnak yüksekliği",
+        "en": "Lantern drum height"
+      },
+      "value": "2,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_pencere",
+      "label": {
+        "tr": "Kubbe pencere sayısı",
+        "en": "Dome windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "453"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Cümle kapısı kitabe ölçüsü",
+        "en": "Main door inscription size"
+      },
+      "value": "75 × 120",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "450"
+        }
+      ]
+    },
+    {
+      "key": "yillik_odenek",
+      "label": {
+        "tr": "Hasan Rıza Paşa'nın istediği yıllık gönderim",
+        "en": "Annual sum requested by Hasan Rıza Paşa"
+      },
+      "value": "10.000",
+      "unit": "kuruş",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "452"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Üftâde Hazretleri (Mehmed Muhyiddin)",
+      "role": {
+        "tr": "Caminin kurucusu; evliya, müezzin ve imam",
+        "en": "Founder of the mosque; saint, muezzin and imam"
+      }
+    },
+    {
+      "name": "Kutub İbrahim Efendi",
+      "role": {
+        "tr": "Üftâde'nin torunu; 1670'te camiyi temelden yeniden yaptırdı",
+        "en": "Grandson of Üftâde; rebuilt the mosque in 1670"
+      }
+    },
+    {
+      "name": "Rıza Paşa (Vali)",
+      "role": {
+        "tr": "1843'te cami ve türbede onarım yaptıran vali",
+        "en": "Governor who had the mosque and tomb repaired in 1843"
+      }
+    },
+    {
+      "name": "Hasan Rıza Paşa (Serasker)",
+      "role": {
+        "tr": "1866'da camiyi yeniden yaptıran; cami ve türbe için vakıf yapan",
+        "en": "Had the mosque rebuilt in 1866; made an endowment for mosque and tomb"
+      }
+    },
+    {
+      "name": "Şeyh Saîd Efendi",
+      "role": {
+        "tr": "Kitabe manzumesinin şairi",
+        "en": "Poet of the inscription poem"
+      }
+    },
+    {
+      "name": "Mehmed Rıfat Efendi",
+      "role": {
+        "tr": "Kitabenin hattatı",
+        "en": "Calligrapher of the inscription"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cumle-kapisi-kitabesi",
+      "location": {
+        "tr": "Cümle kapısında, mermer üzerine talik hatla (75 × 120 cm)",
+        "en": "On the main door, Ta'liq on marble (75 × 120 cm)"
+      },
+      "language": "tr-ottoman",
+      "script": "talik",
+      "transliteration": "Şehinşâh-ı cihân Abdü’l-azîz Hânı Hüdâvendâ\nHemîşe eyle iclâl-i müebbetle serir-ârâ\nZamân-ı şevketinde ser-te-ser âbâd olup âlem\nNice âsâr-ı hayriyyet-disâr olmaktadır peydâ\nCenâb-ı kutb-ı devrân pîr Üftâde Efendi kim\nÇeküp bir dâire pergâr-ı himmet ile ol dânâ\nEdüp nakdîne-i derc-i kerâmâtın o dem masrûf\nBu zîbâ cami’i te’sis edip kılmış idi inşâ\nZamânından berû ma’mûr-ı âbâdân iken âhir,\nHarâb-ı âfet-i nâgeh zuhûr oldu o sertâpâ\nBurusâ’yı ziyâret kasdı ile eyleyüp teşrîf,\nHarâbe gördü bu cây-ı ferahzâyı Rızâ Paşa,\nTevessül eyleyüp kalben Cenâb-ı Pîr’den ol ân\nİcâzet aldığın i’mârına etmiş idi îmâ\nNihâyet ol sipeh-sâlâr-ı devrân eyleyüp himmet,\nRasânet ile yaptı ez ser nev câmi’-i vâlâ.\nNamâz-ı pencgâne tâ ki oldukça edâ bunda,\nOla ol dâverin reşk-âver-i ikbâli hep dünyâ.\nHüdâ ihsân edip âmâli mâ fil-bâlini yekser,\nOla her ân şahsı şöhret ü şânı cihân-peymâ\nSa’îdâ söyledim târîh-i cevherdâr-ı ta’mirîn\nBu zîbâ cami’i kıldı Rızâ Paşa zehî ihyâ\nH. 1283 / M. 1866",
+      "translation": {
+        "tr": "Cihan padişahı Sultan Abdülaziz Han’ı -Allah daim ve sonsuz bir ihtişamla tahta oturtsun-\nOnun azamet dolu devrinde, yeryüzü baştan başa bayındır olmuş, hayırlarla dolu nice eser birbiri ardına ortaya çıkmıştır.\nDevrinin manevî önderi olan büyük zat Üftâde Efendi, himmet pergeliyle bir daire çizerek, kerametlerle dolu hikmetini nakde çevirip bu güzel camiyi kurmuş ve inşa ettirmiştir.\nBu cami, onun zamanından beri mamur ve işlevini sürdüren bir ibadet mekânı iken, sonunda bir felaketin ansızın ortaya çıkmasıyla baştan sona harap olmuştur.\nBursa’yı ziyaret kastıyla şehre gelen Rızâ Paşa, bu ferahlık veren mekânın harap hâlini görünce, kalben Pîr Efendi’ye yönelerek, onun ruhaniyetinden yardım dileyip yeniden imar iznini almıştır.\nBunun ardından o devrin komutanı olan Rızâ Paşa, azim ve gayretle bu ulu camiyi baştan sona yeniden inşa ettirmiştir.\nBeş vakit namaz bu mekânda eda edildikçe, dünya onun talihini kıskanacak derecede yüce bahtına tanıklık etsin.\nAllah ona lütfedip tüm arzularını gerçekleştirsin, şöhreti ve şanı her an dünyaya yayılsın.\nSaîdî, bu onarıma dair tarih düşürdü ve şöyle dedi: ‘Bu güzel camiyi Rızâ Paşa ne güzel ihya etti.’",
+        "en": "The world sultan, Sultan Abdulaziz Khan -may Allah enthrone him with eternal and endless glory-\nDuring his glorious era, the whole world flourished and many works full of goodness emerged one after another.\nThe spiritual leader of his era, the great person Üftâde Efendi, drew a circle with his compass, turned his wisdom full of miracles into cash and established and built this beautiful mosque.\nThis mosque, which had been a place of worship that had prospered and continued its function since his time, was eventually completely ruined by the sudden appearance of a disaster.\nWhen Rıza Paşa, who came to Bursa with the intention of visiting the city, saw the ruined state of this refreshing place, he turned to Pîr Efendi with his heart, asked for help from his spirituality and received permission for reconstruction.\nAfter this, Rıza Paşa, the commander of that era, rebuilt this grand mosque from beginning to end with determination and effort.\nAs long as the five daily prayers are performed in this place, may the world witness his great fortune to the point of envy.\nMay Allah grant him the grace to fulfill all his desires; may his fame and glory spread throughout the world at every moment.\nSaidi recorded the date of this restoration and said: 'How beautifully Riza Pasha revived this beautiful mosque.'"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1283,
+        "gregorian": "1866"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Şair Şeyh Saîd Efendi, hattat Mehmed Rıfat Efendi'dir. Kitap dilini belirtmiyor; manzume Osmanlı Türkçesi olarak kabul edildi. Meal iki sayfaya bölündüğü için birleştirilmiştir.",
+        "en": "Poet: Shaykh Saîd Efendi; calligrapher: Mehmed Rıfat Efendi. The book does not name the language; the poem is treated as Ottoman Turkish. The meaning, split across two pages, has been joined."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "450-452"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kurulus-1579",
+      "year": 1579,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Üftâde tarafından kurulduğu / inşa ettirildiği bildirilir",
+        "en": "Reported as founded/built by Üftâde"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "449"
+        }
+      ]
+    },
+    {
+      "id": "uftade-vefat-1580",
+      "year": 1580,
+      "date": null,
+      "hijri": "988",
+      "type": "record",
+      "title": {
+        "tr": "Üftâde Hazretleri vefat etti ve doğudaki türbesine defnedildi",
+        "en": "Hazrat Üftâde died and was buried in his tomb to the east"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "449"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1670",
+      "year": 1670,
+      "date": null,
+      "hijri": "1081",
+      "type": "construction",
+      "title": {
+        "tr": "Kutub İbrahim Efendi camiyi temelden yeniden yaptırdı, türbeyi onarttı",
+        "en": "Kutub İbrahim Efendi rebuilt the mosque from its foundations and repaired the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1843",
+      "year": 1843,
+      "date": null,
+      "hijri": "1259",
+      "type": "repair",
+      "title": {
+        "tr": "Vali Rıza Paşa cami ve türbeyi onarttı",
+        "en": "Governor Rıza Paşa repaired the mosque and tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Ana kubbe ve minare şerefesi yıkıldı; son cemaat yeri ve minare gövdesi çatladı",
+        "en": "Main dome and minaret balcony collapsed; narthex and minaret shaft cracked"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1866",
+      "year": 1866,
+      "date": null,
+      "hijri": "1283",
+      "type": "restoration",
+      "title": {
+        "tr": "Serasker Hasan Rıza Paşa camiyi baştan sona yeniden yaptırdı",
+        "en": "Serasker Hasan Rıza Paşa had the mosque rebuilt entirely"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "450-452"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1961",
+      "year": 1961,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Türbe Bursa Eski Eserleri Sevenler Kurumu tarafından restore edildi",
+        "en": "Tomb restored by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1969",
+      "year": 1969,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Cami Bursa Eski Eserleri Sevenler Kurumu tarafından restore edildi",
+        "en": "Mosque restored by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1975-1977",
+      "year": 1975,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımları (1975-1977)",
+        "en": "Repairs by the General Directorate of Foundations (1975-1977)"
+      },
+      "note": {
+        "tr": "1975-1977 arası; olay yılı başlangıç alınmıştır.",
+        "en": "Spans 1975-1977; year is the start."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Sıva altından 19. yüzyıl kalem işleri ortaya çıkarıldı ve yenilendi",
+        "en": "19th-century hand-painted decorations revealed under plaster and renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2009",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Vakıflar Bölge Müdürlüğü kapsamlı onarım",
+        "en": "Comprehensive repair by the Bursa Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "454"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hz-uftade-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Üftâde Hazretleri camisinin doğu tarafındaki türbesine defnedilmiştir; cami ve türbe birlikte onarılmıştır.",
+        "en": "Hazrat Üftâde is buried in his tomb on the east side of the mosque; mosque and tomb were repaired together."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "449, 454"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hz-uftade-tekke-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Her iki cami de Üftâde Hazretleri'nin adıyla anılan ve onun tarafından kurulan yapılardır (tekke camisi tevhidhane olarak yaptırılmıştır).",
+        "en": "Both are associated with Hazrat Üftâde as founder (the lodge mosque was built as the lodge's prayer hall)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "449, 457"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hz. Üftâde Camii, Hisar semtinde dik bir yamacın dibindedir. 13 × 13 metrelik kare planlı yapı, dört ayağa oturan sekizgen, kurşun kaplı tek kubbeyle örtülüdür ve kuzeyinde üç kubbeli bir son cemaat yeri vardır. İç mekânda 19. yüzyıldan çiçek ve yaprak motifli kahverengi-gri tonlu kalem işi bezemeler görülür. Kuzeydoğuda tuğla gövdeli bir minare yükselir; doğusunda Üftâde'nin türbesi bulunur.",
+      "en": "Hz. Üftâde Mosque stands at the foot of a steep slope in the Hisar district. The 13 × 13 metre square building has a lead-covered octagonal single dome on four piers and a three-domed narthex to the north. Inside are 19th-century hand-painted decorations with flower and leaf motifs in brown and grey tones. A brick-shafted minaret rises in the northeast, and Üftâde's tomb lies to the east."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-camii/p059-1.jpg",
+        "original_name": "05_4.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "452"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hz. Üftâde Camii'nin harimi, mihrap ve minber",
+        "en": "Prayer hall of Hz. Üftâde Mosque with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "İki beyaz ayağın arasında, karşıda süslü mihrap ve sağda oyma ahşap minber görünür. Duvarlarda kalem işi bezemeler, tavandan sarkan avize ve kırmızı halı öne çıkar.",
+        "en": "Between two white piers, an ornate mihrab faces the viewer with a carved wooden minbar on its right. Painted wall decoration, a chandelier and a red carpet stand out."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-camii/p060-2.jpg",
+        "original_name": "10_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "453"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Hz. Üftâde Camii mihrabının yakın görünümü",
+        "en": "Close view of the mihrab of Hz. Üftâde Mosque"
+      },
+      "alt": {
+        "tr": "Mihrap nişi altın sarısı sarkıtlı (mukarnas) bir yarım kubbeyle örtülü. Çevresinde kırmızı, mavi, yeşil ve altın renkli bitkisel ve yazılı bezemeler, aşağıda beyaz kemerli bölümler vardır.",
+        "en": "The mihrab niche is topped by a golden stalactite-vaulted hood. Red, blue, green and gold floral and calligraphic decoration surrounds it, with white arched panels below."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-camii/p061-1.jpg",
+        "original_name": "06_3.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "454"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hz. Üftâde Camii'nde mahfiller ve girişe bakış",
+        "en": "Galleries and entrance side of Hz. Üftâde Mosque"
+      },
+      "alt": {
+        "tr": "Mihrabın karşı yönünde, ahşap korkuluklu ve ahşap kafesli mahfiller sıralanır. Ortada beyaz ayaklar ve kemerler, zeminde kırmızı halı görünür.",
+        "en": "On the side opposite the mihrab, wooden galleries with railings and lattice screens line the wall. White piers and arches stand in the middle, and a red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-18"
+    }
+  ],
+  "archive_media": []
+}

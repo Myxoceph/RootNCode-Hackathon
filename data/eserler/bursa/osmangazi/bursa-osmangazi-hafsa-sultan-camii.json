@@ -1,0 +1,577 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hafsa-sultan-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Babasultan köyündeki cami (benzerlik) ve Yeşil Türbe için relation kurulmadı: Babasultan köyünün ilçesi metinde yok.",
+      "Hazire için ayrı kayıt gerekirse mezar taşı yazıları kitapta verilmiyor.",
+      "Vakıf adı/vakfiye kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitabe Sultan Mehmed bin Bayezid'in hükümdarlığında yazılmıştır; kitap metni ise 'II. Murad döneminde' diyor. Hükümdar adı arasındaki fark işaretlendi, kitap değerleri korundu."
+      },
+      {
+        "field": "inscriptions[kitabe]",
+        "note": "İngilizce metin yapının 'seven months' / 'Muharrem 847 / Mayıs 1443' - 'Receb 847 / Ekim 1443' arasında inşa edildiğini yazıyor; Türkçe metin ay-yıl aralığını veriyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hafsa Sultan (Bedreddin) Camii ve Haziresi",
+    "en": "Hafsa Sultan (Bedreddin) Mosque and Graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Bedreddin Camii",
+      "en": "Bedreddin Mosque"
+    },
+    {
+      "tr": "Bedreddin Oğlu Camii",
+      "en": "Bedreddin Oğlu Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kare planlı",
+    "kitabeli",
+    "Hafsa Sultan",
+    "hazire",
+    "Bedreddin Camii"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kayhan",
+    "address": "Azık Sokağı, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "328"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18359,
+      "lng": 29.071718,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 847 / M. 1443",
+      "en": "AH 847 / AD 1443"
+    },
+    "start_year": 1443,
+    "end_year": 1443,
+    "hijri_year": 847,
+    "century": 15,
+    "basis": {
+      "tr": "Kitabe yapının Muharrem 847 başında başlayıp aynı yılın Receb ayında tamamlandığını belgeler.",
+      "en": "The inscription documents construction beginning in early Muharram 847 and completed in Rajab of the same year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "329"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hafsa Sultan (Hafsa Hatun)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "328-329"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "II. Murad'ın verdiği Gemlik'e bağlı Karacalar, Mahmud Kumlası ve Karacaali köyleri (Nısf-ı Kumla) Hafsa Hatun tarafından mescidin inşası ve giderleri için vakfedilmiştir.",
+      "en": "The Gemlik villages of Karacalar, Mahmud Kumla and Karacaali (Nısf-ı Kumla), given by Murad II, were endowed by Hafsa Hatun for the construction and expenses of the mosque."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "329"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Çelebi Mehmed'in kızı Hafsa Sultan'ın H. 847 / M. 1443'te yaptırdığı, kitabeli, kare planlı ve Bursa'nın en güzel örneklerinden sayılan cami. Kıble tarafındaki bahçede tek mezarlık hazire vardır.",
+    "en": "A square-plan mosque with an inscription, built in AH 847 / AD 1443 by Hafsa Sultan, daughter of Çelebi Mehmed, regarded as one of the most beautiful Bursa mosques. A single-grave graveyard lies in its qibla-side garden."
+  },
+  "sections": [
+    {
+      "id": "adlar",
+      "order": 1,
+      "title": {
+        "tr": "Adı",
+        "en": "Name"
+      },
+      "body": {
+        "tr": "Cami banisi Hafsa Sultan olmasına rağmen \"Bedreddin Camii\" olarak bilinir. Bazı rivayetlere göre mahalle adı \"Bedreddin Mahallesi\" olup bu ismin meşhur Şeyh Bedreddin Simavi'den geldiği düşünülür. Kâzım Baykal caminin Emir Sultan'ın halifesi Mahmud Bedreddin Efendi adına yapıldığını belirtir; Kâmil Kepecioğlu ise o dönemde Mahmud yerine Bedreddin adının yaygın kullanıldığını, caminin Hafsa Hatun'un eşi Mahmud Çelebi nedeniyle \"Bedreddin Camii\" veya \"Bedreddin Oğlu Camii\" diye anıldığını söyler.",
+        "en": "Although the founder is Hafsa Sultan, the mosque is known as the Bedreddin Mosque. By some accounts the neighborhood is Bedreddin Neighborhood, thought to derive from the famous Shaykh Bedreddin Simavi. Kâzım Baykal states it was built in the name of Mahmud Bedreddin Efendi, caliph of Emir Sultan; Kâmil Kepecioğlu says Bedreddin was commonly used instead of Mahmud then, and that the mosque was called Bedreddin or Bedreddin Oğlu Mosque because of Hafsa Hatun's husband Mahmud Çelebi."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "328-329"
+        }
+      ]
+    },
+    {
+      "id": "banisi",
+      "order": 2,
+      "title": {
+        "tr": "Banisi Hafsa Sultan",
+        "en": "Founder Hafsa Sultan"
+      },
+      "body": {
+        "tr": "Cami, II. Murad döneminde Sultan Çelebi Mehmed'in kızı Hafsa Sultan tarafından H. 847 / M. 1443'te yaptırılmıştır. Hafsa Sultan, Çandarlı İbrahim Paşa'nın oğlu Mahmud Çelebi ile evlenmiş, İsfahanşah, Ali, Hüseyin, Mustafa, Hasan ve Mehmed Çelebi adlı altı çocuğu olmuştur. II. Murad kız kardeşi Hafsa Hatun'a \"Nısf-ı Kumla\" olarak bilinen Gemlik'e bağlı Karacalar, Mahmud Kumlası ve Karacaali köylerini mülk olarak vermiş; Hafsa Hatun bu köylerin gelirlerini Bursa'da yaptırdığı mescidin inşası ve giderleri için vakfetmiştir. Vefat ettiğinde babası Çelebi Mehmed'in yanına, Yeşil Türbe'ye defnedilmiştir.",
+        "en": "The mosque was built in AH 847 / AD 1443 by Hafsa Sultan, daughter of Sultan Çelebi Mehmed, in the reign of Murad II. She married Mahmud Çelebi, son of Çandarlı İbrahim Paşa, and had six children: İsfahanşah, Ali, Hüseyin, Mustafa, Hasan and Mehmed Çelebi. Murad II gave his sister the Gemlik villages of Karacalar, Mahmud Kumla and Karacaali, known as Nısf-ı Kumla; she endowed their income for the construction and expenses of her mosque. At her death she was buried beside her father Çelebi Mehmed in the Yeşil Tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "329"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Cami kare planlıdır ve Bursa camilerinin en güzel örneklerinden sayılır; Orhan devri eserlerinden Babasultan köyündeki camiye büyük benzerlik gösterir. Geniş yan bölümleri ve ortada daralan sivri kemerli son cemaat mahalli ile harimden oluşur. Beden duvarları iki sıra tuğla, bir sıra moloz taşla örülmüş, cephenin üst kısmında ve sekizgen kubbe kasnağında kesme taş kullanılmıştır. Harim içten 8,85 × 8,85 m'dir; kubbe silmeli bir korniş ile Türk üçgenlerine oturur. İç mekân on yedi pencereyle aydınlanır.",
+        "en": "The mosque has a square plan and is considered one of the most beautiful Bursa mosques, closely resembling the mosque in Babasultan village, an Orhan-period work. It consists of a prayer hall and a narthex with wide side sections and a narrow pointed arch in the middle. The walls are two rows of brick and one of rubble stone, with cut stone on the upper façade and octagonal drum. The hall is 8.85 × 8.85 m inside; the dome rests on Turkish triangles with a molded cornice. Seventeen windows light the interior."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "329-330"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 4,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "Son cemaat mahalli iki yanda aynalı tonoz, ortada yuvarlak tonozla örtülüdür. Yan bölümleri kapalıdır; kesme taş ve tuğla birlikte kullanılarak zarif bir süsleme yapılmıştır. Saçak silmesi altında ufak pahlı ve dikine konumlu tuğlalar ile taşlardan bir çerçeve yanlara dönerek kemerlerin üzengi seviyesine uzanır.",
+        "en": "The narthex is covered with flattened vaults on the two sides and a round vault in the middle. The side parts are closed and elegantly decorated with cut stone and brick together. Under the cornice a frame of small beveled, vertically set bricks and stones turns to the sides to the level of the arch springers."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 5,
+      "title": {
+        "tr": "Mihrap",
+        "en": "Mihrab"
+      },
+      "body": {
+        "tr": "Mihrap alçıdandır ve sade tasarımlıdır. Yüksekçe bir çerçeve içinde, sekiz sıra stalaktitli kavsaranın iki yanında iki sıra stalaktitli üzengiler bulunur. Orijinal hâlini koruyan mihrabın tamamı yağlı boyayla boyanmıştır.",
+        "en": "The mihrab is of plaster with a simple design: a high frame, an eight-row stalactite hood and two-row stalactite springers on either side. It retains its original state but is entirely painted in oil paint."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 6,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Batı cephesindeki sekizgen kaideli minareye son cemaat mahallinden çıkılır. Kaideden tuğla örgülü silindirik gövdeye Türk üçgenleriyle geçilir; şerefe altı dört sıra kirpi saçakla doldurulmuştur.",
+        "en": "The minaret on the west façade, with an octagonal base, is reached from the narthex. A Turkish-triangle transition leads from the base to the brick cylindrical shaft; under the balcony four rows of sawteeth fill the space."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 7,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Zaman içinde birçok kez onarım geçiren cami 1888'de kapsamlı bir restorasyon görmüştür. Bugün bakımlı ve ibadete açıktır.",
+        "en": "Repaired many times, the mosque had a comprehensive restoration in 1888. Today it is well maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 8,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Caminin kıble tarafındaki bahçedeki hazirede tek mezar bulunur. Baş ve ayak taşlarındaki yazılardan, H. Zilkade 955 / M. Kasım 1548'de vefat eden Mahmud Çelebi bin Halil'e ait olduğu anlaşılır.",
+        "en": "The graveyard in the garden on the qibla side holds a single grave. The inscriptions on its head and foot stones show it belongs to Mahmud Çelebi bin Halil, who died in Dhu al-Qa'da AH 955 / November AD 1548."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim iç ölçüleri",
+        "en": "Interior dimensions"
+      },
+      "value": "8.85 × 8.85",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 17,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription size"
+      },
+      "value": "49 × 88",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "329"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_kavsara",
+      "label": {
+        "tr": "Mihrap kavsarası stalaktit sırası",
+        "en": "Mihrab hood stalactite rows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hafsa Sultan (Hafsa Hatun)",
+      "role": {
+        "tr": "Banî; Çelebi Mehmed'in kızı",
+        "en": "Founder; daughter of Çelebi Mehmed"
+      }
+    },
+    {
+      "name": "Mahmud Çelebi",
+      "role": {
+        "tr": "Hafsa Sultan'ın eşi; Çandarlı İbrahim Paşa'nın oğlu",
+        "en": "Husband of Hafsa Sultan; son of Çandarlı İbrahim Paşa"
+      }
+    },
+    {
+      "name": "II. Murad",
+      "role": {
+        "tr": "Hafsa Hatun'a köyleri veren kardeşi",
+        "en": "Her brother who gave her the villages"
+      }
+    },
+    {
+      "name": "Mahmud Çelebi bin Halil",
+      "role": {
+        "tr": "Hazirede medfun (ö. Zilkade 955 / Kasım 1548)",
+        "en": "Buried in the graveyard (d. Dhu al-Qa'da 955 / Nov. 1548)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kitabe",
+      "location": {
+        "tr": "Camide, mermer üzerine girift istifli sülüs hatla (49 × 88 cm)",
+        "en": "On marble in intricately stacked thuluth (49 × 88 cm)"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "Emirat bi-binâi hâzâ’l-mescidi Hafsa Hâtûn bint-i Sultân Mehmed bin Bâyezîd Hân-ı Gâzî, fî eyyâmi devleti’s-Sultân Mehmed bin Bâyezîd Hân, halledallâhu memleketehû ve eyyede devletehû, müftehaten min evâili şehri’l-Muharrem, fî âm-i seb’a ve erba’îne ve semâne mi’e ve muhtatimen min Receb, fî âm-i seb’a ve erba’îne ve semâne mi’e.",
+      "translation": {
+        "tr": "Bu mescidin inşasını emreden kişi, Gazi Sultan Bayezid’in torunu ve Sultan Mehmed’in kızı Hafsa Hatun’dur. Yapı, Sultan Mehmed bin Bayezid’in hüküm-darlığı döneminde inşa edilmiştir. Allah devletini daim, saltanatını yüce kılsın. İnşaat, Hicrî 847 yılının Muharrem ayının başlarında başlamış ve aynı yılın Receb ayında tamamlanmıştır.",
+        "en": "The person who ordered the construction of this mosque was Hafsa Hatun, the granddaughter of Gazi Sultan Bayezid and the daughter of Sultan Mehmed. The structure was built during the reign of Sultan Mehmed bin Bayezid. May Allah make his state permanent and his sultanate exalted. The construction started at the beginning of the month of Muharram in the year 847 AH and was completed in the month of Rajab of the same year."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 847,
+        "gregorian": "1443"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "329"
+        }
+      ],
+      "note": {
+        "tr": "Kitap iki biraz farklı transkripsiyon basıyor; Türkçe metindeki ilki alındı. Meal metnindeki 'hüküm-darlığı' satır sonu tirelemesi kaynakta olduğu gibi bırakıldı; 'hükümdarlığı' olarak okunmalı.",
+        "en": "Two slightly different transcriptions are printed; the first (Turkish text) was used. The line-end hyphenation in the meal text is kept as printed."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1443",
+      "year": 1443,
+      "date": null,
+      "hijri": "847",
+      "type": "construction",
+      "title": {
+        "tr": "Hafsa Sultan tarafından yaptırıldı (Muharrem-Receb 847)",
+        "en": "Built by Hafsa Sultan (Muharram-Rajab 847)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "329"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1888",
+      "year": 1888,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon",
+        "en": "Comprehensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    },
+    {
+      "id": "hazire-1548",
+      "year": 1548,
+      "date": null,
+      "hijri": "955",
+      "type": "record",
+      "title": {
+        "tr": "Hazirede yatan Mahmud Çelebi bin Halil vefat etti (Zilkade 955)",
+        "en": "Mahmud Çelebi bin Halil, buried in the graveyard, died (Dhu al-Qa'da 955)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "330"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hafsa Sultan Camii, kare planlı harimi ve önünde ortası daralan, yanları kapalı sivri kemerli son cemaat yeri olan bir camidir. Duvarlar iki sıra tuğla ve bir sıra moloz taştan örülmüştür; sekizgen kasnaklı kubbe Türk üçgenlerine oturur. Batı cephesinde sekizgen kaideli, tuğla gövdeli minare yükselir. Kıble tarafındaki bahçede tek bir mezarın bulunduğu küçük bir hazire vardır.",
+      "en": "Hafsa Sultan Mosque has a square prayer hall and a narthex with pointed arches that narrows in the middle, with closed sides. The walls are two rows of brick and one of rubble stone; the dome on an octagonal drum rests on Turkish triangles. On the west façade rises a minaret with an octagonal base and brick shaft. In the garden on the qibla side is a small graveyard with a single grave."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hafsa-sultan-camii/p059-1.jpg",
+        "original_name": "1_2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "328"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi, minaresi ve duvarları",
+        "en": "The mosque's dome, minaret and walls"
+      },
+      "alt": {
+        "tr": "Yukarıdan görünen cami; tuğla ve taş almaşık duvarlı, kurşun kaplı kubbeli ve ince tuğla minareli. Arkada ağaçlar ve dağ yamacındaki mahalle yer alıyor.",
+        "en": "The mosque seen from above, with brick and stone walls, a lead-covered dome and a slender brick minaret. Trees and a hillside neighbourhood lie behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hafsa-sultan-camii/p060-1.jpg",
+        "original_name": "2_1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "329"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, yüksek bir harim; ortada yeşil çerçeveli mihrap, sağda ahşap minber. Tavandan büyük bir avize sarkıyor, zeminde kırmızı halı var.",
+        "en": "A tall white-walled prayer hall with a green-framed mihrab at the centre and a wooden minber on the right. A large chandelier hangs from above over a red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hafsa-sultan-camii/p061-1.jpg",
+        "original_name": "02 ERD07923 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "330"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Haziredeki ayakta mezar taşı",
+        "en": "Upright gravestone in the cemetery"
+      },
+      "alt": {
+        "tr": "Tuğla duvarın yanında, yazıt işlemeli uzun gri bir mezar taşı; çevresinde otlar ve yeşil bitkiler var. Arka planda başka bir mezar taşı seçiliyor.",
+        "en": "A tall grey gravestone with carved script beside a brick wall, surrounded by weeds and green plants. Another gravestone can be seen in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-mesut-makramavi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 233-234) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir. Hazire kitapta cami bölümüyle birlikte (Mesut Makramavi Camii ve Haziresi) ele alındığı için bu kayıtta bir bölüm olarak yer alır.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Caminin inşa yılı kitapta yok; yalnızca II. Murad dönemi (ve İbn Bezzâz / Şeker Hoca Camileri ile aynı dönem) belirtiliyor.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "İbn Bezzâz ve Şeker Hoca Camilerinin ilçesi metinde belirtilmediği için ilişki kaydı açılmadı.",
+      "Tipi: kitap başlığında 'Camii' diyor, metinde 'mescit' olarak anlatıyor; mescit olarak işaretlendi, veri ekibi teyit etmeli.",
+      "Yıl verilmeyen olaylar (inşa öncesi tarih aralığı, yol/afet vb.) zaman çizelgesine girilmedi; bilgi bölüm metinlerinde yer alır."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Kitap başlığı 'Mesut Makramavî Mosque and Graveyard / Camii' der; metin ise yapıyı 'Cuma namazı kılınmayan ... mescit' olarak anlatır. Metne uyularak type 'mescit' seçildi, id başlığa göre 'camii' olarak bırakıldı."
+      },
+      {
+        "field": "facts[hazire_mezar_tasi_sayisi]",
+        "note": "Kitap 'altı mezar taşından beşi Hoca Mehmed ailesine ait' der; ancak ardından yalnızca dört aile taşı sayılır (Hoca Mehmed bin Sarı Yusuf, yazısız bir taş, Mustafa, Aişe). Satı Hanım'a ait taş ve bir başka yazısız taş 'ek olarak' anıldığı için toplam sayı belirsizdir. Kitaptaki 'altı' değeri saklandı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mesut Makramavi Camii",
+    "en": "Mesut Makramavi Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Makramavi",
+    "Hasırcıoğlu Mesud",
+    "Emîr Sultan",
+    "hazire",
+    "1965 yenilemesi",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Namazgâh",
+    "address": "Namazgâh Mahallesi, Havlucu Sokak, No: 9",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "233"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.179478,
+      "lng": 29.07451,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "3 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Murad dönemi (yıl belirtilmemiş)",
+      "en": "Reign of Murad II (year not given)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap yalnızca II. Murad dönemini ve İbn Bezzâz ile Şeker Hoca Camileri ile aynı dönemde yapıldığının kabul edildiğini söyler; yıl vermez.",
+      "en": "The book says only that it was built in the reign of Murad II, believed to be the same period as the İbn Bezzâz and Şeker Hoca Mosques; no year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "233"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hasırcıoğlu Mesud Makramavî",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "233"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "II. Murad döneminde Emîr Sultan'ın mensubu Hasırcıoğlu Mesud Makramavî'nin yaptırdığı, Cuma namazı kılınmayan mescit. 1965'te betonarme olarak küçültülerek yenilenmiş, özgün hali kalmamıştır; kıble yönünde küçük bir haziresi vardır.",
+    "en": "A masjid, not used for Friday prayers, built in the reign of Murad II by Hasırcıoğlu Mesud Makramavî, a follower of Emîr Sultan. It was rebuilt smaller in reinforced concrete in 1965 and its original form is lost; a small graveyard lies on its qibla side."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yıldırım ilçesi Namazgâh Mahallesi, Havlucu Sokak, No: 9'da yer alır. II. Murad döneminde Emîr Sultan Hazretlerinin mensubu ve peşkircisi olarak bilinen Hasırcıoğlu Mesud Makramavî tarafından yaptırılmıştır. İbn Bezzâz ve Şeker Hoca Camileri ile aynı dönemde yapıldığı kabul edilir. 'Makramavî' adı makrame (oyalı veya nakışlı mendil ya da peşkir) anlamındadır ve mescidin bulunduğu sokağın adı da buradan gelir.",
+        "en": "It is at No. 9 Havlucu Street, Namazgâh Neighborhood, Yıldırım District. It was built in the reign of Murad II by Hasırcıoğlu Mesud Makramavi, known as a follower and towel maker of Emîr Sultan. It is believed to date from the same period as the İbn Bezzâz and Şeker Hoca Mosques. The name 'Makramavî' refers to macrame (a lace or embroidered handkerchief or towel), and the street name derives from it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "233"
+        }
+      ]
+    },
+    {
+      "id": "yikim-ve-yenileme",
+      "order": 2,
+      "title": {
+        "tr": "Yıkım ve 1965 Yenilemesi",
+        "en": "Collapse and 1965 Renovation"
+      },
+      "body": {
+        "tr": "Cuma namazı kılınmayan, ahşap çatılı, büyükçe bir mescit olarak inşa edilen yapı yıldırım gibi doğal afetlerden etkilenerek yıkılmış ve kullanılamaz hale gelmiştir. 1965'te betonarme olarak, daha küçük ebatlarda tamamen yenilenmiş; bu yenilemede minaresi doğudan batıya alınmıştır. Günümüze özgün hali ulaşmamıştır.",
+        "en": "Originally built as a large wooden-roofed masjid not used for Friday prayers, the building was damaged by natural disasters such as lightning and became unusable. It was completely renovated in 1965 in reinforced concrete on a smaller scale, and during this the minaret was moved from the east to the west. Its original form has not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "233"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Genel olarak dikdörtgen planlı yapının duvarları 0,75 m kalınlığında ve üzeri çatıyla örtülüdür. Ev görünümündeki mescidin ibadet mekânı ve son cemaat yeri duvarları tamamen sıvanmış, dışı onarım dönemine uygun biçimde mozaik kaplanmış ve 1991'de tescil edilmiştir. Minarenin kare kaidesi, silindirik gövdesi, peteği ve sivri külahı da tamamen sıvalıdır.",
+        "en": "The building has a generally rectangular plan with 0.75 m thick walls and a roof. The prayer area and narthex, which look like a house, are fully plastered and the exterior is covered with mosaic tiles in keeping with the restoration period; it was registered in 1991. The minaret's square base, cylindrical shaft, neck and pointed spire are also fully plastered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "233-234"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Yapının kıble yönünde küçük ama tarihî bir hazire vardır. Altı mezar taşından beşi Hoca Mehmed ailesinin fertlerine aittir; hepsinin vefat tarihi H. 935 / M. 1529'a işaret eder. Taşlarda Hoca Mehmed bin Sarı Yusuf, Mustafa bin Hoca Mehmed ve Aişe bint-i Hoca Mehmed'in adları yazılıdır; bir taş yazısızdır. Ayrıca hazirede, Satı Hanım'a ait olduğu bilinen ama tarih içermeyen bir mezar taşı ile yazısız bir başka taş daha bulunur.",
+        "en": "A small but historically significant graveyard lies on the qibla side of the building. Five of its six gravestones belong to members of the Hoca Mehmed family; all dates of death point to AH 935 / AD 1529. The names Hoca Mehmed bin Sarı Yusuf, Mustafa bin Hoca Mehmed and Aişe bint-i Hoca Mehmed appear on the stones; one stone is uninscribed. The graveyard also holds an undated stone known to belong to Satı Hanım and another uninscribed stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "234"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Namazgâh Mahallesi, Havlucu Sokak, No: 9",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "233"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 0.75,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "233"
+        }
+      ]
+    },
+    {
+      "key": "tescil_yili",
+      "label": {
+        "tr": "Tescil yılı",
+        "en": "Year registered"
+      },
+      "value": 1991,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "234"
+        }
+      ]
+    },
+    {
+      "key": "yenileme_yili",
+      "label": {
+        "tr": "Betonarme yenileme yılı",
+        "en": "Year of reinforced-concrete renovation"
+      },
+      "value": 1965,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "233"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_tasi_sayisi",
+      "label": {
+        "tr": "Hazirede mezar taşı sayısı",
+        "en": "Number of gravestones in the graveyard"
+      },
+      "value": 6,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "234"
+        }
+      ],
+      "note": {
+        "tr": "Beşi Hoca Mehmed ailesine ait; Satı Hanım'a ait taş ve bir yazısız taş ayrıca anılır (kitap sayıyı açıkça toplamaz).",
+        "en": "Five belong to the Hoca Mehmed family; the Satı Hanım stone and another uninscribed stone are mentioned separately (the book does not clearly total the count)."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Hasırcıoğlu Mesud Makramavî",
+      "role": {
+        "tr": "Banî; Emîr Sultan'ın mensubu ve peşkircisi",
+        "en": "Founder; follower and towel maker of Emîr Sultan"
+      }
+    },
+    {
+      "name": "Hoca Mehmed bin Sarı Yusuf",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan; vefat tarihi H. 935 / M. 1529",
+        "en": "Gravestone in the graveyard; died AH 935 / AD 1529"
+      }
+    },
+    {
+      "name": "Mustafa bin Hoca Mehmed",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan; vefat tarihi H. 935 / M. 1529",
+        "en": "Gravestone in the graveyard; died AH 935 / AD 1529"
+      }
+    },
+    {
+      "name": "Aişe bint-i Hoca Mehmed",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan; vefat tarihi H. 935 / M. 1529",
+        "en": "Gravestone in the graveyard; died AH 935 / AD 1529"
+      }
+    },
+    {
+      "name": "Satı Hanım",
+      "role": {
+        "tr": "Hazirede (tarihsiz) mezar taşı bulunan",
+        "en": "Undated gravestone in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yenileme-1965",
+      "year": 1965,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Betonarme olarak, daha küçük ebatlarda tamamen yenilendi; minare doğudan batıya alındı",
+        "en": "Completely renovated in reinforced concrete on a smaller scale; minaret moved from east to west"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "233"
+        }
+      ]
+    },
+    {
+      "id": "tescil-1991",
+      "year": 1991,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tescil edildi",
+        "en": "Registered"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "234"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mesut Makramavi Camii, Namazgâh Mahallesi'nde Havlucu Sokak'ta, bir eve benzeyen dikdörtgen planlı küçük bir mescittir. Duvarları sıvalı, dışı mozaikle kaplı ve üzeri çatıyla örtülüdür. Minaresi de sıvalıdır; kare kaidesi, silindirik gövdesi, peteği ve sivri külahı vardır. Kıble yönünde, yaklaşık altı mezar taşının bulunduğu küçük bir hazire yer alır.",
+      "en": "The Mesut Makramavi Mosque is a small rectangular masjid on Havlucu Street in Namazgâh Neighborhood that looks like a house. Its walls are plastered, the exterior is covered with mosaic tile and it is roofed. The minaret is also plastered, with a square base, cylindrical shaft, neck and pointed spire. On the qibla side is a small graveyard with about six gravestones."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mesut-makramavi-camii/p022-2.jpg",
+        "original_name": "DJI_20240925205524_0796_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "233"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Caminin minaresi",
+        "en": "The minaret of the mosque"
+      },
+      "alt": {
+        "tr": "Mavi gökyüzüne karşı yükselen, açık gri renkli, sivri külahlı ve tek şerefeli bir minare. Alt kısımda çevre evlerin kiremit çatıları görünür.",
+        "en": "A light grey minaret with a single balcony and a pointed cap, rising against a deep blue sky. Neighbouring tile roofs and houses appear at the bottom."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mesut-makramavi-camii/p022-1.jpg",
+        "original_name": "01 DJI_20240925205249_0792_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "233"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Minare ve çevresindeki çatılar, kuşbakışı",
+        "en": "Minaret and surrounding rooftops, aerial view"
+      },
+      "alt": {
+        "tr": "Yukarıdan görünen mahallede kiremit çatılı evler ve apartmanlar sıkışık düzende dizilmiştir. Çatıların arasında yeşil külahlı ince bir minare seçilir.",
+        "en": "An aerial view of a dense neighbourhood of tile-roofed houses and apartment blocks. A slim minaret with a green cap stands among the roofs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mesut-makramavi-camii/p023-2.jpg",
+        "original_name": "ERD04062 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "234"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mihrap, minber ve avizeli ibadet alanı",
+        "en": "Mihrab, minbar and chandelier in the prayer hall"
+      },
+      "alt": {
+        "tr": "Açık yeşil duvarlı küçük salonda yeşil çerçeveli mihrap ve üzerinde altın renkli bir avize durur. Sağda ahşap minber, yerde kırmızı seccade desenli halı vardır.",
+        "en": "In a small light-green hall, a mihrab in a green frame hangs beneath a gold chandelier. A wooden minbar is on the right and the floor has a red prayer-rug-pattern carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    }
+  ],
+  "archive_media": []
+}

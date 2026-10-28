@@ -1,0 +1,512 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-cinarli-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yenişehir",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Yenişehir bölümünden (s. 686-688) özetlenerek derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Gerçek banî kaynakta kesinleşmiyor; tevcih kayıtlarının incelenmesi gerekiyor.",
+      "Yangının tam yılı (1920 öncesi/sonrası) belirsiz.",
+      "Era: XV. yüzyıl Erken/Klasik Osmanlı ayrımı kitapta yok; era boş bırakıldı.",
+      "media_folder (Drive klasörü) henüz eşleştirilmedi.",
+      "Koordinat girilmedi; sahada ya da harita kaynağından doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Vakfiye kayıtları Sungur Paşa'yı, başka kaynaklar Yenişehir Voyvodası Ahmet Bey'i banî olarak veriyor; ad 'Karabaçak-Voyvoda' da bu ikilik ile ilişkili görünüyor. İki görüş saklandı, kayıt 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çınarlı (Karabaçak-Voyvoda) Camii",
+    "en": "Çınarlı (Karabaçak-Voyvoda) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "zaviyeli plan",
+    "ahşap kubbe",
+    "cihannüma",
+    "Sungur Paşa"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Gündoğan Mahallesi",
+    "address": "Yağhane Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "686"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.263273,
+      "lng": 29.650803,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyıl",
+      "en": "15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Mimari özellikler ve tarihsel verilere göre XV. yüzyıla tarihlendirilir; kesin yıl verilmez. Bilinen en erken belge 1786 tarihli bir tamirat kaydıdır.",
+      "en": "Dated to the 15th century from architectural features and historical data; no exact year. Earliest known document is a repair record of 1786."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "687"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sungur Paşa",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "686-687"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "686-688"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Sungur Paşa vakıfları",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "686-687"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "XV. yüzyıla tarihlenen, vakfiye kayıtlarına göre Sungur Paşa'nın yaptırdığı zaviyeli planlı cami; ahşap çatılı, cihannüma biçimli ahşap kubbeli yapı 2016'da kapsamlı biçimde restore edilmiştir.",
+    "en": "A 15th-century zawiya-plan mosque attributed to Sungur Paşa by endowment records; its wooden roof and gazebo-form wooden dome took their present form in the comprehensive 2016 restoration."
+  },
+  "sections": [
+    {
+      "id": "bani",
+      "order": 1,
+      "title": {
+        "tr": "Banî Sorunu",
+        "en": "Question of the Founder"
+      },
+      "body": {
+        "tr": "Vakfiye kayıtlarından caminin banisinin Sungur Paşa olduğu ve yapının zaviyeli plan şemasında inşa edildiği anlaşılmaktadır. Farklı kaynaklar caminin Yenişehir Voyvodası Ahmet Bey tarafından yaptırıldığını da yazar; XVIII. yüzyıl sonlarında vakfın mütevellisi olarak aynı adlı bir başka Ahmet Bey görev yapmıştır. Bu kişilerle Sungur Paşa vakıfları arasındaki tevcih ilişkileri incelendiğinde gerçek banî hakkında daha net sonuçlara ulaşılabilir.",
+        "en": "Endowment records show the founder was Sungur Paşa and that the building follows a zawiya plan scheme. Other sources say it was built by Ahmet Bey, Voivode of Yenişehir; another Ahmet Bey of the same name served as trustee in the late 18th century. Examining the conferral relations between these people and the Sungur Paşa endowments could give clearer conclusions about the real founder."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "686-687"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Yapı XV. yüzyıla tarihlenir ve zaman içinde çok sayıda onarım geçirmiştir. En erken belge 1786 tarihli bir tamirat kaydıdır. 1855 depreminden sonra büyük oranda yıkılmış, halkın desteğiyle yeniden yapılmış; çatı ve kubbe ahşapla yenilenmiş, üstü kiremitle kaplanmıştır. 1920'ye kadar bu haliyle ulaşmış, Yunan işgalinde kasabayı terk eden Rumlarca yakılmıştır. 1930'da ahşap çatılı ve ahşap kubbeli olarak onarılıp ibadete açılmış; 1967 depreminde minarenin harim üzerine yıkılmasıyla oluşan hasar cemaat katkısıyla giderilmiştir. 1985'te tadilat görmüş, 2016'da kapsamlı restorasyonla bugünkü biçimini almıştır.",
+        "en": "The building dates to the 15th century and has been repaired many times. The earliest document is a 1786 repair record. Largely destroyed after the 1855 earthquake, it was rebuilt with public support, with roof and dome renewed in wood and tiled. It survived until 1920 when it was burned by Greeks leaving the town during the occupation. It was repaired and reopened in 1930 with wooden roof and dome; damage from the minaret collapsing onto the prayer hall in the 1967 earthquake was repaired by the congregation. Altered in 1985, it took its present form in the comprehensive 2016 restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "687-688"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Ahşap kırma çatılı caminin cihannüma biçiminde yükselen ahşap bir kubbesi vardır. Son cemaat yeri, ahşap kaplamalı direkler ve ahşap sivri kemerlerle taşınan düz tavanla örtülüdür. Doğu ve batı cephelerinde üçer altlık ve üstlük, kıble duvarında ikişer, kuzey cephesinde iki altlık ve üç üstlük pencere ile kasnakta dört pencere vardır. Maksureler, kadınlar mahfili ve kubbeyi taşıyan strüktür tamamen ahşaptır. Mihrap tamamen çini kaplıdır; ahşap minber yakın döneme aittir. Batıdaki minare kesme taş kaideli, tuğla silindirik gövdeli ve çift bilezikli, şerefe altı tuğla dolguludur.",
+        "en": "The mosque has a wooden hipped roof and a wooden dome rising in gazebo form. The narthex has a flat ceiling on wood-clad posts and wooden pointed arches. There are three lower and three upper windows on the east and west façades, two each on the qibla wall, two lower and three upper on the north, and four in the dome drum. The maqsuras, women's gallery and the structure carrying the dome are wholly wooden. The mihrab is fully tiled; the wooden minbar is recent. The west minaret has a cut-stone base, cylindrical brick shaft and double band; the area below the balcony is brick-filled."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "688"
+        }
+      ]
+    },
+    {
+      "id": "benzer",
+      "order": 4,
+      "title": {
+        "tr": "Benzer Örnekler",
+        "en": "Comparable Examples"
+      },
+      "body": {
+        "tr": "Ahşap çatılı ve Bağdadi sistemli kubbeli bu yapı tipine Bursa'da Üftade ve Kaygan camileri ile Mustafakemalpaşa'daki Şeyh Müftü Camii gibi örneklerde de rastlanır.",
+        "en": "This type with wooden roof and Baghdad-style dome system also occurs in the Üftade and Kaygan mosques in Bursa and the Shaykh Mufti Mosque in Mustafakemalpaşa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "688"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe_kasnak_pencere",
+      "label": {
+        "tr": "Kasnak penceresi sayısı",
+        "en": "Dome drum windows"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "688"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "688"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sungur Paşa",
+      "role": {
+        "tr": "Vakfiye kayıtlarına göre banî",
+        "en": "Founder per endowment records"
+      }
+    },
+    {
+      "name": "Ahmet Bey (Yenişehir Voyvodası)",
+      "role": {
+        "tr": "Bazı kaynaklara göre yaptıran",
+        "en": "Builder according to some sources"
+      }
+    },
+    {
+      "name": "Ahmet Bey (mütevelli)",
+      "role": {
+        "tr": "XVIII. yüzyıl sonunda vakıf mütevellisi",
+        "en": "Trustee in the late 18th century"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1786",
+      "year": 1786,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bilinen en erken belge: tamirat kaydı",
+        "en": "Earliest known document: repair record"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "687"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem sonrası büyük oranda yıkıldı; halk desteğiyle yeniden yapıldı",
+        "en": "Largely destroyed after earthquake; rebuilt with public support"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "687"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1920",
+      "year": 1920,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yunan işgali sırasında Rumlarca yakıldı",
+        "en": "Burned by Greeks during the Greek occupation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "687"
+        }
+      ],
+      "note": {
+        "tr": "Metin 'cami 1920 yılına kadar ulaşabilmiş' diyor; yangın yılı tam bu yıl olarak verilmiyor.",
+        "en": "Text says the mosque survived 'until 1920'; the fire's exact year is not given."
+      }
+    },
+    {
+      "id": "onarim-1930",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Ahşap çatı ve kubbeyle yeniden onarılıp ibadete açıldı",
+        "en": "Repaired with wooden roof and dome and reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "687"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1967",
+      "year": 1967,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde minare harim üzerine yıkıldı; hasar cemaat katkısıyla giderildi",
+        "en": "Minaret fell on the prayer hall in earthquake; damage repaired by congregation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "687-688"
+        }
+      ]
+    },
+    {
+      "id": "tadilat-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Çeşitli tadilatlar; mimari özelliklerde değişiklikler",
+        "en": "Various alterations changing architectural features"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "688"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2016",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyonla bugünkü biçimini aldı",
+        "en": "Took present form in comprehensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "688"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, kırma çatılı ve ortasında sekizgen bir gözetleme köşkünü andıran ahşap kubbeli bir yapıdır. Önünde ahşap direkli, düz tavanlı bir son cemaat yeri bulunur. İç mekânda ahşap maksureler ve kadınlar mahfili, çini kaplı bir mihrap vardır. Batı köşesinde tuğladan silindirik bir minare yükselir.",
+      "en": "A hipped-roof mosque with a wooden dome resembling a gazebo. In front is a flat-ceilinged narthex on wooden posts. Inside are wooden maqsuras and a women's gallery and a fully tiled mihrab. A cylindrical brick minaret rises at the west corner."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "686-688"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1hyw6xDWziVmN-E3kFJFsT4I81PouAzg6",
+        "original_name": "01 DJI_20241115194746_0119_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "686"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çınarlı (Karabaçak-Voyvoda) Camii (kitap s. 686)",
+        "en": "Çınarlı (Karabaçak-Voyvoda) Mosque (book p. 686)"
+      },
+      "alt": {
+        "tr": "Çınarlı (Karabaçak-Voyvoda) Camii fotoğrafı",
+        "en": "Photo of Çınarlı (Karabaçak-Voyvoda) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1O6QpxUvXkzrZJiYo3UkWmLznZ0exOWVk",
+        "original_name": "04 ERD08990 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "687"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çınarlı (Karabaçak-Voyvoda) Camii (kitap s. 687)",
+        "en": "Çınarlı (Karabaçak-Voyvoda) Mosque (book p. 687)"
+      },
+      "alt": {
+        "tr": "Çınarlı (Karabaçak-Voyvoda) Camii fotoğrafı",
+        "en": "Photo of Çınarlı (Karabaçak-Voyvoda) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1RSVCL8FgwIlCJsr4Pdf_EP31VLZnlWWK",
+        "original_name": "09 ERD09030 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "688"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çınarlı (Karabaçak-Voyvoda) Camii (kitap s. 688)",
+        "en": "Çınarlı (Karabaçak-Voyvoda) Mosque (book p. 688)"
+      },
+      "alt": {
+        "tr": "Çınarlı (Karabaçak-Voyvoda) Camii fotoğrafı",
+        "en": "Photo of Çınarlı (Karabaçak-Voyvoda) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

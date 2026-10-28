@@ -1,0 +1,326 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-kestel-eski-vani-mehmed-sifa-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Kestel",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hamamın külliye vakfındaki 'Kestel köyündeki hamam' ile aynı olduğu kitapta açıkça yazmıyor; parent_id verilmedi.",
+      "Mimar kitapta yok.",
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.neighborhood",
+        "note": "Hamam 'Vanimehmet Mahallesi'nde, cami 'Kale Mahallesi'nde; kitaptaki adreslere sadık kalındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Eski (Vanî Mehmed Şifa) Hamamı",
+    "en": "Eski (Vanî Mehmed Şifa) Bath"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Şifa Hamamı",
+      "en": "Şifa (Healing) Hamamı"
+    },
+    {
+      "tr": "Eski Hamam",
+      "en": "Eski (Old) Hamam"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "hamam",
+    "Vanî Mehmed Efendi",
+    "Şifa Hamamı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Kestel",
+    "neighborhood": "Vanimehmet Mahallesi",
+    "address": "Cuma Caddesi, No:24",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "567"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.200453,
+      "lng": 29.213285,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1673'ten önce",
+      "en": "Before 1673"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap 'tarihinden önce inşa ettirilmiştir' diyor; kesin yıl yok",
+      "en": "The book says it was built before 1673; no exact year"
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "567"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Vanî Mehmed Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "567"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Halk arasında 'Şifa Hamamı' ya da 'Eski Hamam' denen, Vanî Mehmed Efendi tarafından 1673'ten önce yaptırılan; soğukluk, ılıklık, sıcaklık, halvet ve külhandan oluşan kubbeli hamam. 2015'te restore edilmiştir, günümüzde kullanıma kapalıdır.",
+    "en": "Popularly called 'Şifa Hamamı' or 'Eski Hamam', built before 1673 by Vanî Mehmed Efendi, with frigidarium, tepidarium, caldarium, bathing cells and furnace. Restored in 2015, it is currently closed."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Halk arasında 'Şifa Hamamı' veya 'Eski Hamam' olarak anılan yapı, IV. Mehmed devrinin tanınmış mutasavvıflarından Vanî Mehmed Efendi tarafından 1673'ten önce yaptırılmıştır. Yakın zamana kadar işlevini sürdürmüş, 1980'li yıllarda kadınlar hamamı olarak kullanılmıştır. 2015'teki kapsamlı restorasyonun ardından kısa süre hizmet vermiş, günümüzde kapalıdır.",
+        "en": "Popularly known as 'Şifa Hamamı' or 'Eski Hamam', it was built before 1673 by Vanî Mehmed Efendi, a prominent Sufi of Mehmed IV's reign. It functioned until recently and was a women's bath in the 1980s. After extensive restoration in 2015 it briefly reopened but is currently closed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "567"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Beden duvarları moloz taş ve tuğladan yapılmış, 2015 restorasyonunda bazalt taş ve iki sıra tuğla ile kaplanmıştır. Kuzey-güney doğrultulu dikdörtgen planlıdır; ahşap kırma çatılı ve kiremit örtülü soğukluğun yanında kubbeyle örtülü ılıklık, sıcaklık ve halvet mekânları bulunur. Soğukluğun doğu ve güneyi sonradan yapılan bir apartmanla kapanmıştır. Ilıklık kare kasnaklı kurşun kaplı kubbelidir; sıcaklık sekizgen kasnaklı kurşun kaplı kubbeyle örtülü olup konik bir aydınlatma fenerine sahiptir. Sıcaklığın doğu ve batısında iki halvet hücresi ve en batıda külhan yer alır; bunlar kurşun kaplı kubbelidir ve fil gözü açıklıklarla aydınlanır.",
+        "en": "The walls of rubble stone and brick were clad with basalt and two rows of brick in the 2015 restoration. The rectangular plan runs north-south, with a frigidarium under a tiled wooden hipped roof and domed tepidarium, caldarium and bathing cells. The frigidarium's east and south sides are blocked by a later apartment building. The tepidarium has a lead-lined dome on a square drum; the caldarium a lead-lined dome on an octagonal drum with a conical lantern. Two bathing cells east and west of the caldarium and a furnace room at the far west have lead-covered domes with oculi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "567"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ust_pencere_sayisi",
+      "label": {
+        "tr": "Soğukluk üst sıra büyük pencere",
+        "en": "Large upper windows of frigidarium"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "567"
+        }
+      ]
+    },
+    {
+      "key": "alt_pencere_sayisi",
+      "label": {
+        "tr": "Soğukluk alt sıra küçük pencere",
+        "en": "Small lower windows of frigidarium"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "567"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon",
+        "en": "Extensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "567"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-kestel-vani-mehmed-efendi-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Vanî Mehmed Efendi hem hamamı hem Vanî Mehmed Efendi Camii'ni yaptırmıştır.",
+        "en": "Vanî Mehmed Efendi built both this bathhouse and the Vanî Mehmed Efendi Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "554-555, 567"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kuzey-güney doğrultulu dikdörtgen planlı hamamda ahşap çatılı soğukluk, kubbeli ılıklık, sekizgen kasnaklı kubbeli sıcaklık ve iki halvet hücresi ile külhan bulunur. Kubbeler kurşun kaplıdır.",
+      "en": "A north-south rectangular bathhouse with a wooden-roofed frigidarium, domed tepidarium, a caldarium on an octagonal drum, two bathing cells and a furnace room. The domes are lead-covered."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1cxeDobWd9zo-NOT3PQQ4p-OdJNj-7SA2",
+    "book_layout_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+    "book_pdf_name": "7-Kestel.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-eski-vani-mehmed-sifa-hamami/p013-1.jpg",
+        "original_name": "DJI_20241107220432_0136_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "554"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın ahşap kapılı cephesi",
+        "en": "Façade with wooden door"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı, ahşap çerçeveli cepheli yapının kiremit çatısı vardır. Ortada oyma ahşap bir kapı, önünde mezar taşlı küçük bir alan görülür.",
+        "en": "A white-plastered, timber-framed façade with a tiled roof. A carved wooden door is at the centre and a small area with gravestones in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-eski-vani-mehmed-sifa-hamami/p014-1.jpg",
+        "original_name": "02 DJI_20241107212533_0113_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "555"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Yapının kuşbakışı çatısı",
+        "en": "Aerial view of the roof"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında koyu kiremit kaplı kırma çatı, ağaçlar ve bitişikteki cadde görülür.",
+        "en": "From above, a dark tiled hipped roof with trees and an adjacent street."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-eski-vani-mehmed-sifa-hamami/p014-2.jpg",
+        "original_name": "04 ERD07616 kopya.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "555"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İç mekân, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Ahşap kasetli tavanlı, beyaz duvarlı salonda ortada mihrap, sağda minber ve duvarlarda hat levhaları vardır. Zemin açık renkli halıdır.",
+        "en": "A white hall with a coffered wooden ceiling, a mihrab at the centre, a minber at right and calligraphy plates on the walls. The floor has a light carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    }
+  ],
+  "archive_media": []
+}

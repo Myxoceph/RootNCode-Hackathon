@@ -1,0 +1,386 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-postinpus-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yenişehir",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Yenişehir bölümünden (s. 705-707) özetlenerek derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kaynakta yok; era 'erken-osmanli' kitabın Orhan Gazi/Murad ataması üzerinden verildi.",
+      "Postinpûş Baba'nın 19. yüzyıl kaynağındaki adı ile Ayverdi notu iyi anlaşılmalı: kitap metni 'asıl adı Seyyid Mehmed Hammârî' diyor.",
+      "Vakıf bilgisi kaynakta yok.",
+      "media_folder (Drive klasörü) henüz eşleştirilmedi.",
+      "Koordinat girilmedi; sahada ya da harita kaynağından doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder/dating",
+        "note": "Kronikler (Âşıkpaşazâde dahil) yaptıranı I. Murad olarak verir; Ayverdi ve Eyice Orhan Gazi dönemine tarihler. Kitap bu iki görüşü 'örtüşen görüş' sayıp Orhan Gazi dönemi faaliyetleri kapsamında kabul edilebileceğini söyler; ancak I. Murad (1362-1389) Orhan Gazi'nin ardılıdır, aralarındaki çelişki tam çözülmemiştir. Her ikisi saklandı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "Başlık 'Postinpûş Camii' ve İngilizce ilk cümle 'The mosque' diyor, ancak içerik zaviye/tabhaneli cami tipidir; tür 'tekke' olarak girildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Postinpûş Camii (Seyyid Mehmet Dede Zaviyesi)",
+    "en": "Postinpûş Mosque (Seyyid Mehmet Dede Zawiya)"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Baba Sultan Zaviyesi",
+      "en": "Baba Sultan Zawiya"
+    },
+    {
+      "tr": "Seyyid Mehmed Dede Zaviyesi",
+      "en": "Seyyid Mehmed Dede Zawiya"
+    },
+    {
+      "tr": "Postinpûş Baba Sultan İmareti",
+      "en": "Postinpûş Baba Sultan Imaret"
+    }
+  ],
+  "type": "tekke",
+  "secondary_types": [
+    "cami"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tabhaneli cami",
+    "zaviye",
+    "Postinpûş Baba",
+    "Baba Sultan Parkı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Yenigün Mahallesi",
+    "address": "Baba Sultan Parkı içinde",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "705"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.266653,
+      "lng": 29.64579,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Orhan Gazi dönemi (I. Murad'a atfı da var)",
+      "en": "Orhan Gazi's period (also attributed to Murad I)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapının Orhan Gazi dönemi faaliyetleri kapsamında yapıldığının kabul edilebileceğini söylüyor; kesin yıl verilmiyor.",
+      "en": "The book says the building can be accepted as built within the architectural activities of Orhan Gazi's period; no exact year given."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "705-706"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan I. Murad Hudâvendigâr",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "705-706"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "705-707"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Postinpûş Baba (Seyyid Mehmed Hammârî) adına yaptırılan, 'tabhaneli cami' tipinin özgün örneği zaviye; 1905-1906'da ihya edilmiş, 2010'da ibadete yeniden açılmıştır.",
+    "en": "Zawiya built in the name of Postinpûş Baba (Seyyid Mehmed Hammârî), an original example of the 'mosque with hospice' type; revived in 1905-1906 and reopened for worship in 2010."
+  },
+  "sections": [
+    {
+      "id": "adlar-ve-bani",
+      "order": 1,
+      "title": {
+        "tr": "Adlar ve Banî",
+        "en": "Names and Founder"
+      },
+      "body": {
+        "tr": "Kaynaklarda yapı 'Baba Sultan Zaviyesi', 'Seyyid Mehmed Dede Zaviyesi' ve 'Postinpûş Baba Sultan İmareti' gibi adlarla anılır. Güneyinde bir dönem küçük bir mescit ve türbe bulunduğu aktarılır, izleri kalmamıştır. Osmanlı dönemi kaynakları yapıyı Horasan erenlerinden Seyyid Mehmed Hammârî (Postinpûş Baba) adına yaptırılan zaviye olarak tanımlar. Kroniklerde genellikle I. Murad Hudâvendigâr'ın yaptırdığı belirtilir; Âşıkpaşazâde Sultan Murad'ın Yenişehir'de Postinpûş Baba için zaviye yaptırdığını açıkça söyler. Ekrem Hakkı Ayverdi ise inşa tarihini Orhan Gazi devrine tarihlemiş; Semavi Eyice de yapının Orhan Gazi dönemine ait olduğunu belirtmiştir. Kitaba göre yapının Orhan Gazi dönemi faaliyetleri kapsamında inşa edildiği kabul edilebilir.",
+        "en": "The structure is called 'Baba Sultan Zawiya', 'Seyyid Mehmed Dede Zawiya' and 'Postinpûş Baba Sultan Imaret'. A small masjid and tomb once stood to its south; no traces survive. Ottoman sources describe it as a zawiya built in the name of Seyyid Mehmed Hammârî (Postinpûş Baba), one of the Khorasan saints. Chronicles generally say Murad I Hudâvendigâr built it, and Âşıkpaşazâde says explicitly that Sultan Murad had a zawiya built for Postinpûş Baba in Yenişehir. Ekrem Hakkı Ayverdi dated it to Orhan Gazi's period, and Semavi Eyice also placed it there. The book says it can be accepted as built within architectural activities of Orhan Gazi's period."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "705-706"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "İlçenin kuzeybatısında hâkim bir tepede yer alan zaviye, erken Osmanlı 'tabhaneli cami' tipinin özgün örneklerindendir: kuzeyde büyük bir ibadet mekânı, güneyinde bitişik simetrik iki tabhane kanadı. Kare planlı harim büyük bir kubbeyle örtülüdür; giriş eyvanının iki yanındaki dar koridorlardan kubbeli misafirhane birimlerine geçilir. Mihrap nişi eksenden sapmış, girişin solunda doğu duvarındadır. Harimde sade bir mihrap, yeşil boyalı bezemesiz ahşap minber ve güneydoğu köşede ahşap vaaz kürsüsü vardır. Doğu cephedeki son cemaat yeri kalmamış, yalnız bir kemer parçası ayaktadır.",
+        "en": "Standing on a dominant hill in the district's northwest, the zawiya is an original early Ottoman 'mosque with hospice' example: a large prayer room in the north with two symmetrical hospice wings in the south. The square prayer room has a large dome; narrow corridors beside the entrance iwan lead to domed guest units. The mihrab niche is off-axis on the east wall to the left of the entrance. The hall has a plain mihrab, an undecorated green-painted wooden minbar and a wooden preaching platform in the southeast corner. The narthex has not survived except a piece of an arch."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "706"
+        }
+      ]
+    },
+    {
+      "id": "cephe",
+      "order": 3,
+      "title": {
+        "tr": "Cephe ve Süsleme",
+        "en": "Façades and Ornament"
+      },
+      "body": {
+        "tr": "Doğu cephesi dışında bir sıra kesme taş ve üç sıra tuğladan almaşık duvar örgüsü görülür; giriş cephesi hariç tüm cephelerde küfeki taşı ve yassı tuğlayla yatay balıksırtı, hasır örgüsü ve rozet gibi geometrik desenler oluşturulmuştur. Güney duvarında testere dişi bordürlü iki kör kemer arasındaki yürek biçimli niş geç Bizans yapılarına özgü özellikler taşır; alınlık dolgularında erken Osmanlı süslemesi izlenir.",
+        "en": "Except on the east façade there is alternating masonry of one row of cut stone and three rows of brick; on all façades except the entrance, limestone and flat brick form herringbone, wickerwork and rosette patterns. The heart-shaped niche between two blind arches on the south wall has features specific to late Byzantine buildings; the pediment fillings show early Ottoman ornament."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "707"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Yıkım, Kullanım ve Onarımlar",
+        "en": "Destruction, Use and Repairs"
+      },
+      "body": {
+        "tr": "Yapının muhtemelen XIX. yüzyıl sonlarında depremle yıkılıp kullanılamaz hale geldiği, 1905-1906'da ihya edildiği değerlendirilmektedir. 1950'lerin başında harim bir süre su deposu olarak kullanılmış, 1965'te VGM restorasyona başlamış, yapı yeniden cami işlevi kazanmış, çevresi park olarak düzenlenmiştir. 2010'da çevresiyle birlikte kapsamlı onarım görüp ibadete açılmıştır.",
+        "en": "The building is thought to have been destroyed by an earthquake in the late 19th century and revived in 1905-1906. In the early 1950s the prayer hall served as a water tank; restoration by the General Directorate of Foundations began in 1965, it regained mosque function and its surroundings became a park. In 2010 it was extensively restored with its surroundings and reopened for worship."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "707"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Seyyid Mehmed Hammârî (Postinpûş Baba)",
+      "role": {
+        "tr": "Zaviyenin adına yapıldığı Horasan erenlerinden sufi",
+        "en": "Khorasan saint in whose name the zawiya was built"
+      }
+    },
+    {
+      "name": "Sultan I. Murad Hudâvendigâr",
+      "role": {
+        "tr": "Kroniklere göre yaptıran",
+        "en": "Builder according to chronicles"
+      }
+    },
+    {
+      "name": "Âşıkpaşazâde",
+      "role": {
+        "tr": "Murad'ın zaviye yaptırdığını yazan kronikçi",
+        "en": "Chronicler recording Murad's zawiya"
+      }
+    },
+    {
+      "name": "Ekrem Hakkı Ayverdi",
+      "role": {
+        "tr": "Yapıyı Orhan Gazi devrine tarihleyen araştırmacı",
+        "en": "Researcher dating it to Orhan Gazi's period"
+      }
+    },
+    {
+      "name": "Semavi Eyice",
+      "role": {
+        "tr": "Yapının Orhan Gazi dönemine ait olduğunu belirten araştırmacı",
+        "en": "Researcher stating it belongs to Orhan Gazi's period"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "ihya-1905",
+      "year": 1905,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yeniden ihya edildi (1905-1906)",
+        "en": "Revived (1905-1906)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "707"
+        }
+      ]
+    },
+    {
+      "id": "su-deposu-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1950'lerin başında harim su deposu olarak kullanıldı",
+        "en": "Prayer hall used as a water tank in the early 1950s"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "707"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yılın başlarında' diyor; 1950 yaklaşıktır.",
+        "en": "Book says 'early 1950s'; year approximate."
+      }
+    },
+    {
+      "id": "restorasyon-1965",
+      "year": 1965,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM restorasyonu başladı",
+        "en": "Restoration by General Directorate of Foundations began"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "707"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Çevresiyle birlikte kapsamlı onarım; ibadete açıldı",
+        "en": "Extensive restoration with surroundings; reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "707"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Zaviye, kuzeybatıdaki bir tepede, Baba Sultan Parkı içinde durur. Kuzeyde kubbeli, kare planlı büyük bir ibadet mekânı, güneyinde iki simetrik kubbeli kanat yer alır. Duvarlar bir sıra kesme taş, üç sıra tuğladan almaşık örülmüştür; cephelerde balıksırtı, hasır ve rozet desenleri görülür. Son cemaat yeri yıkılmış, yalnız bir kemer parçası kalmıştır.",
+      "en": "The zawiya stands on a hilltop in the northwest, inside Baba Sultan Park. A large domed square prayer room lies to the north with two symmetrical domed wings to the south. Walls alternate one row of cut stone with three of brick; façades show herringbone, wickerwork and rosette patterns. The narthex is gone, with only a piece of an arch left."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "705-707"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1iyae29ZlgOKYvKgwcOkWsUJLzxpv01wD",
+        "original_name": "05 DJI_20241117003836_0216_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "706"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Postinpûş Camii (Seyyid Mehmet Dede Zaviyesi) (kitap s. 706)",
+        "en": "Postinpûş Mosque (Seyyid Mehmet Dede Zawiya) (book p. 706)"
+      },
+      "alt": {
+        "tr": "Postinpûş Camii (Seyyid Mehmet Dede Zaviyesi) fotoğrafı",
+        "en": "Photo of Postinpûş Mosque (Seyyid Mehmet Dede Zawiya)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

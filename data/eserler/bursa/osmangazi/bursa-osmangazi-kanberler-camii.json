@@ -1,0 +1,656 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-kanberler-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 359-362) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Sitti Hatun'un yaptırdığı sıbyan mektebi (bursa-osmangazi-sitti-hatun-mektebi kaydı mevcut) ve çeşme bu kayıttan ayrıca bağlanmadı; ilişki o kayıtlarda tutuluyor, birleştirme veri ekibince kontrol edilmeli.",
+      "Mimar kitapta belirtilmiyor.",
+      "Zağanos Mehmed Paşa için ayrı kayıt varsa bağlanmalı.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[insa-kitabesi]",
+        "note": "Kitap yazımı: Türkçe mealde 've Müslümanların menfaati için' ifadesi s. 361'de devam eder; çeviri iki sayfadan birleştirilmiştir. Vakıf şartındaki 'su doldurulmayacak' cümlesi kitaptaki gibi bırakılmıştır (anlamı belirsiz)."
+      },
+      {
+        "field": "dating",
+        "note": "Türkçe metin 'M. 1459-60', kitabe ve vakfiye H. 864 / M. 1459-60 der; çelişki yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kanberler (Sitti Hatun) Camii",
+    "en": "Kanberler (Sitti Hatun) Mosque"
+  },
+  "subtitle": {
+    "tr": "Fâtih devrinde Sitti Hatun'un yaptırdığı, tuğla tezyinatıyla bilinen cami",
+    "en": "Mosque built by Sitti Hatun in Fâtih's reign, known for its brick decoration"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sitti Hatun Camii",
+      "en": "Sitti Hatun Mosque",
+      "note": "Kitapta metin içinde 'Sitt Hatun Camii' yazımı da geçer"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tuğla tezyinat",
+    "kalkan duvar",
+    "kitabeli",
+    "Fâtih devri",
+    "mihrap",
+    "Kanberler Parkı",
+    "vakfiyeli"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Ebu İshak",
+    "address": "Yeni Cumhuriyet Caddesi, Kemal Bengü Caddesi, Sıdıka Hatun Caddesi ve Gökdere Bulvarı'nın oluşturduğu ada içinde",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "359"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18586,
+      "lng": 29.073199,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/343624984 ('Kanberler Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 864 / M. 1459-60",
+      "en": "AH 864 / AD 1459-60"
+    },
+    "start_year": 1459,
+    "end_year": 1460,
+    "hijri_year": 864,
+    "century": 15,
+    "basis": {
+      "tr": "Mermer üzerine kabartma sülüs kitabe ve vakfiye ibaresi caminin M. 1459-60'ta inşa edildiğini bildirir.",
+      "en": "The Thuluth relief inscription on marble and the endowment text state the mosque was built in AD 1459-60."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "360"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sitti Hatun (Oruç Bey'in kızı, Zağanos Mehmed Paşa'nın eşi)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "359-361"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Sitti Hatun vakfı",
+    "deed": {
+      "date_display": "H. 864 / M. 1459-60",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "360-361"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Üç su yolu ve üç kuyu Müslümanların menfaati için vakfedilmiştir; bunlardan ne su doldurulacak ne de başka amaç için kullanılacaktır. Bu hükmü değiştirenin hasmı Allah olacaktır.",
+      "en": "Three waterways and three wells were endowed for the benefit of the Muslims, on the condition that they will neither be filled with water nor used for any other purpose. Whoever changes this provision, Allah will be his enemy."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "360-361"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Oruç Bey'in kızı, Fâtih'in veziri Zağanos Mehmed Paşa'nın eşi Sitti Hatun'un M. 1459-60'ta yaptırdığı, 11 × 11 m kare harimli, kubbeli cami. Yanındaki sıbyan mektebi ve çeşmesiyle birlikte Fâtih devri Bursa eserlerinin en dikkat çekicilerindendir; cephesindeki tuğla tezyinatla ünlüdür.",
+    "en": "A domed mosque with an 11 × 11 m square prayer hall, built in AD 1459-60 by Sitti Hatun, daughter of Oruç Bey and wife of Fâtih's vizier Zağanos Mehmed Pasha. With the school and fountain beside it, it is among the most striking works of Fâtih's reign in Bursa, known for its brick façade decoration."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Banî ve Konum",
+        "en": "Founder and Location"
+      },
+      "body": {
+        "tr": "Cami, Ebu İshak Mahallesi'nde Yeni Cumhuriyet Caddesi, Kemal Bengü Caddesi, Sıdıka Hatun Caddesi ve Gökdere Bulvarı'nın oluşturduğu bir adanın içinde yer almaktadır. Sitti Hatun, Timurtaş Bey oğlu Oruç Bey'in kızı ve Fâtih'in vezirlerinden Zağanos Mehmed Paşa'nın karısıdır. Bursa'da Kanberler Mahallesi'nde cami, sıbyan mektebi ve bir de çeşme yaptırmış, çeşmesine de su getirmiştir. Bulunduğu mahalleye nispetle yapıya Kanberler Camii denilmiştir.",
+        "en": "The mosque is located in Ebu İshak Neighborhood within an island formed by Yeni Cumhuriyet Avenue, Kemal Bengü Avenue, Sıdıka Hatun Avenue and Gökdere Boulevard. Sitti Hatun was the daughter of Oruç Bey, son of Timurtaş Bey, and the wife of Zağanos Mehmed Pasha, one of Fâtih's viziers. She had a mosque, a primary school and a fountain built in the Kanberler Neighborhood of Bursa and also brought water to the fountain. The building is called Kanberler Mosque after its neighborhood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "359"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Harim 11 × 11 m ölçülerinde tam kare plana sahiptir ve Türk üçgenli kasnağa oturan 9,50 m çaplı bir kubbeyle örtülüdür. Son cemaat yeri 4,35 m derinliğindedir. Duvarlar iki sıra tuğla ve bir sıra moloz taşla işlenmiş, aralara belirli aralıklarla düşey tuğlalar konulmuştur; kubbe kasnağı kesme taştır. Tipik kalkan duvarlı Bursa mescitleri tarzındaki cephe oldukça gösterişlidir. Üç gözlü son cemaat yerinin orta hacmi dar tutulmuş ve yuvarlak kemerli beşik tonozla, daha geniş yan hacimler aynalı tonozla örtülmüştür. Harimde sekiz altlık, altı üstlük, kasnakta üç olmak üzere toplam on yedi pencere vardır.",
+        "en": "The prayer hall has a perfectly square plan of 11 × 11 m and is covered with a dome of 9.50 m diameter on a drum with Turkish-triangle transition. The narthex is 4.35 m deep. The walls are of two rows of brick and one row of rubble stone with vertical bricks at intervals; the dome drum is of cut stone. The façade, in the typical parapet-walled style of Bursa masjids, is very impressive. The central bay of the three-bay narthex is narrow and covered with a round-arched barrel vault, while the wider side bays have flattened barrel vaults. There are seventeen windows in the prayer hall: eight lower, six upper and three on the drum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "361"
+        }
+      ]
+    },
+    {
+      "id": "tugla-tezyinat",
+      "order": 3,
+      "title": {
+        "tr": "Tuğla Tezyinat",
+        "en": "Brick Decoration"
+      },
+      "body": {
+        "tr": "Cephedeki tuğla tezyinat Bursa yapılarındaki işçiliğin en nadide örneklerindendir: tuğla dilimleriyle üçgenler oluşturulmuş, aralarına kakma taşlar yerleştirilmiştir. Yan pencerelerde de tuğla dizilerinden süslemeler yapılmıştır.",
+        "en": "The brick decoration on the façade is among the finest examples of craftsmanship in Bursa buildings: triangles formed with brick slices have inlaid stones between them. The side windows also have decorations of brick rows."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "361"
+        }
+      ]
+    },
+    {
+      "id": "kapi-minare-mihrap",
+      "order": 4,
+      "title": {
+        "tr": "Kapı, Minare ve Mihrap",
+        "en": "Door, Minaret and Mihrab"
+      },
+      "body": {
+        "tr": "Harime girişi sağlayan ahşap kapılar sivri kemerli bir nişin içindeki basık kemer altındadır; bazı parçaları tamir görmüşse de özgün halleriyle yapının en önemli öğelerindendir. Rumili kıvrık dallı kabartma kitabe kartuşlarında sağda \"Yâ Hafiyye’l-eltâf\", solda \"Neccinâ mimmâ nehâf\" yazılıdır. 1855 depreminde minare gövdesinde derin yarılmalar oluştuğu için kaidesine kadar sökülüp yeniden inşa edilmiştir; sekizgen kaide, mermer Türk üçgenli papuç ve silindirik gövdenin alt ve üstündeki iki bilezik Bursa'ya özgüdür. Mihrap 6,10 m yüksekliktedir; yedi sıra mukarnaslı yaşmağı mukarnas başlıklı kalın sütunçelere oturur. Alınlığında Âl-i İmrân suresi 37. ayetten bir parça, nişte askılı kandil motifi içinde kelime-i tevhid yazılıdır; mihrap çevresindeki Âyetü’l-kürsî frizinden iz kalmamıştır. Mihrabın 1956'da yapılan kalem işi tezyinatı zamanla zarar görünce onarılmıştır.",
+        "en": "The wooden doors lie under a depressed arch in a pointed arched niche that gives entrance to the prayer hall; although some parts were repaired, they are among the most important original elements. The relief cartouches with curving rumi branches read \"Yâ Hafiyye’l-eltâf\" on the right and \"Neccinâ mimmâ nehâf\" on the left. After deep cracks formed in the minaret shaft in the 1855 earthquake it was dismantled to its base and rebuilt; the octagonal base, marble Turkish-triangle transition and the two bands on the cylindrical shaft are typical of Bursa. The mihrab is 6.10 m high; its hood with seven rows of muqarnas sits on thick colonettes with muqarnas capitals. The pediment carries part of verse 37 of Surah Al-i Imran, and the hanging lamp motif in the niche contains the shahada; no trace remains of the Ayat al-Kursi frieze that should surround the mihrab. The hand-painted decoration made in 1956 was repaired after it was damaged."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Cami 1950'li yıllarda harabe duruma düşmüş, bakımsız minberi yok olmuş ve ibadete kapalı kalmıştır; 1956'da Bursa Eski Eserleri Sevenler Kurumu tarafından aslına uygun onarılarak yeniden ibadete açılmıştır. En son 2014'te esaslı bir tamirat geçirmiştir. Sıbyan mektebi ve çeşmesiyle Kanberler Parkı'nın siluetine katkı verir.",
+        "en": "The mosque fell into ruin in the 1950s, its neglected minbar disappeared and it was closed to worship; in 1956 it was restored faithfully by the Bursa Association for the Appreciation of Antiquities and reopened. It last underwent a major renovation in 2014. Together with its primary school and fountain it contributes to the silhouette of Kanberler Park."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "11 × 11",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "361"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_cap",
+      "label": {
+        "tr": "Kubbe çapı",
+        "en": "Dome diameter"
+      },
+      "value": 9.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "361"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 4.35,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "361"
+        }
+      ]
+    },
+    {
+      "key": "pencere_toplam",
+      "label": {
+        "tr": "Harim pencere sayısı (8 alt, 6 üst, 3 kasnak)",
+        "en": "Prayer hall windows (8 lower, 6 upper, 3 drum)"
+      },
+      "value": 17,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "361"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_yukseklik",
+      "label": {
+        "tr": "Mihrap yüksekliği",
+        "en": "Mihrab height"
+      },
+      "value": 6.1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas_sirasi",
+      "label": {
+        "tr": "Mihrap yaşmağı mukarnas sırası",
+        "en": "Mihrab hood muqarnas rows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sitti Hatun",
+      "role": {
+        "tr": "Banî; Oruç Bey'in kızı",
+        "en": "Founder; daughter of Oruç Bey"
+      }
+    },
+    {
+      "name": "Oruç Bey",
+      "role": {
+        "tr": "Sitti Hatun'un babası; Timurtaş Bey oğlu",
+        "en": "Father of Sitti Hatun; son of Timurtaş Bey"
+      }
+    },
+    {
+      "name": "Zağanos Mehmed Paşa",
+      "role": {
+        "tr": "Sitti Hatun'un eşi; Fâtih'in vezirlerinden",
+        "en": "Husband of Sitti Hatun; one of Fâtih's viziers"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Caminin mermer kitabesi",
+        "en": "Marble inscription of the mosque"
+      },
+      "language": "ar",
+      "script": "Sülüs",
+      "transliteration": "Emera bi-imâreti hâzâ’l-mescidi’ş-şerîfi’l-mubârek el-merhûme ve’l-mağfûre ilâ rahmeti’llâhi ta’âlâ Sittî Hâtûn bint-i Oruc Bey afâ’llâhu anhümâ âmîn Yâ Rabb / sümme evkafet li-mesâlihi’l-Müslimîn selâsete kasâtile ve selâse hâbiye mahfiyyun lâ yümlâ ve lâ yüsta’mel minhâ fe men gayyere zâlike kâne’llâhu hasmuhû li-seneti erba’a ve sittîne ve semâne mâye H. 864 / M. 1459-60.",
+      "translation": {
+        "tr": "Bu mübarek mescid-i şerif’in inşasını, Allah’ın rahmetine kavuşmuş olan merhume ve mağfiret olunmuş, Oruç Bey’in kızı Sittî Hatun (Allah ikisinin taksiratını affetsin, âmin yâ Rab) emretmiştir. Daha sonra bu mescidin masrafları ve Müslümanların menfaati için üç su yolu ve üç kuyuyu vakfetmiştir. Şu şartla ki bunlardan ne su doldurulacak ne de başka amaç için kullanılacaktır. Kim bu hükmü değiştirirse Allah onun hasmı olur. Bu vakfiye Hicrî 864 (Miladî 1459/60) yılında düzenlenmiştir.",
+        "en": "The construction of this blessed mosque was ordered by the late and pardoned Oruç Bey’s daughter Sitti Hatun (May Allah forgive the shortcomings of both, amen, O Lord) who has passed to Allah’s mercy. Later, she endowed three waterways and three wells for the expenses of this mosque and for the benefit of the Muslims. On the condition that they will neither be filled with water nor used for any other purpose. Whoever changes this provision, Allah will be his enemy. This endowment charter was drawn up in the year AH 864 (AD 1459/60)."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 864,
+        "gregorian": "1459-60"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "360-361"
+        }
+      ]
+    },
+    {
+      "id": "kapi-kartuslari",
+      "location": {
+        "tr": "Harime giren ahşap kapının kabartma kitabe kartuşları",
+        "en": "Relief inscription cartouches on the wooden door into the prayer hall"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Yâ Hafiyye’l-eltâf / Neccinâ mimmâ nehâf",
+      "translation": {
+        "tr": "Sağdaki kartuş: Ey gizli lütuflar sahibi. Soldaki kartuş: Bizi korktuklarımızdan muhafaza buyur.",
+        "en": "Right cartouche: O owner of hidden blessings. Left cartouche: Protect us from what we fear."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ],
+      "note": {
+        "tr": "Aynı yazılar Bursa'daki birçok caminin kapı kanatlarında da görülür.",
+        "en": "The same phrases appear on the doors of many mosques in Bursa."
+      }
+    },
+    {
+      "id": "mihrap-alinlik",
+      "location": {
+        "tr": "Mihrap alınlığı",
+        "en": "Mihrab pediment"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "…küllemâ dehale aleyhâ Zekeriyya’l-mihrâb",
+      "translation": {
+        "tr": "Zekeriya ne zaman mihraba girse (Âl-i İmrân suresi 37. ayetten bir parça)",
+        "en": "Whenever Zechariah enters the mihrab (part of verse 37 of Surah Al-i Imran)"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-kandil",
+      "location": {
+        "tr": "Mihrap nişindeki askılı kandil motifinin içinde",
+        "en": "Inside the hanging lamp motif in the mihrab niche"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Lâ ilâhe illallah Muhammedun Resulullah",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1459",
+      "year": 1459,
+      "date": null,
+      "hijri": "864",
+      "type": "construction",
+      "title": {
+        "tr": "İnşa edildi, vakfiye düzenlendi (kitabe)",
+        "en": "Built; endowment charter drawn up (inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "360-361"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde minare gövdesi yarıldı; kaidesine kadar sökülüp yeniden yapıldı",
+        "en": "Minaret shaft cracked in the 1855 earthquake; dismantled to its base and rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    },
+    {
+      "id": "harabe-1950ler",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1950'li yıllarda harabe durumuna düştü, minberi yok oldu, ibadete kapandı (yaklaşık on yıl)",
+        "en": "Fell into ruin in the 1950s, minbar lost, closed to worship (approximate decade)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1956",
+      "year": 1956,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından aslına uygun onarıldı; mihrap kalem işi yapıldı",
+        "en": "Faithfully restored by the Bursa Association for the Appreciation of Antiquities; mihrab painted decoration made"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Esaslı tamirat",
+        "en": "Major renovation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "362"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kanberler Camii, Kanberler Parkı çevresinde, kare harimli ve tek kubbeli bir yapıdır. Üç gözlü son cemaat yerinin kalkan duvarlı cephesi iki sıra tuğla ve bir sıra moloz taşla örülmüş, üçgenler ve kakma taşlardan oluşan tuğla süslemelerle bezenmiştir. Sekizgen kaideli minaresi 1855 depreminden sonra yeniden yapılmıştır. İçeride yedi sıra mukarnaslı, altı metreyi aşan yüksek bir mihrap bulunur.",
+      "en": "Kanberler Mosque near Kanberler Park is a single-domed building with a square prayer hall. The parapet-walled façade of its three-bay narthex is built of two rows of brick and one of rubble stone and decorated with brick triangles and inlaid stones. Its octagonal-based minaret was rebuilt after the 1855 earthquake. Inside is a tall mihrab, over six metres high, with seven rows of muqarnas."
+    }
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kanberler-camii/p091-1.jpg",
+        "original_name": "kamberler camii 2.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "360"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kemerli cephesi, kubbesi ve minaresi",
+        "en": "The mosque's arched front, dome and minaret"
+      },
+      "alt": {
+        "tr": "Tuğla cepheli, sivri kemerli girişleri olan cami; gri kubbe ve yüksek tuğla minare yükseliyor. Önünde ağaçlar, arkasında şehir ve dağ var.",
+        "en": "A brick-fronted mosque with pointed-arch openings, a grey dome and a tall brick minaret. Trees stand in front, and the city and mountain lie behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kanberler-camii/p090-1.jpg",
+        "original_name": "kamberler camii 1.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "359"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin park içindeki havadan görünümü",
+        "en": "Aerial view of the mosque in the park"
+      },
+      "alt": {
+        "tr": "Parkın içinde yer alan kubbeli cami ve yanındaki küçük kubbeli yapılar. Çevrede çimenlikler, yollar, ağaçlar, şehir ve dağ silsilesi görünüyor.",
+        "en": "A domed mosque and nearby small domed buildings set in a park. Lawns, paths, trees, the city and a mountain range surround them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-kanberler-camii/p092-1.jpg",
+        "original_name": "kamberler camii 3.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "361"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami ve çevre yapıların kuşbakışı çatıları",
+        "en": "Rooftops of the mosque and nearby buildings"
+      },
+      "alt": {
+        "tr": "Camiye ait büyük gri kubbe ve yanında minare tabanı yukarıdan görünüyor; sağ üstte iki kubbeli ayrı bir yapı var. Taş döşemeli meydan ve ağaçlar çevreler.",
+        "en": "A large grey dome and a minaret base seen from above, with a separate two-domed building at top right. A stone-paved plaza and trees surround them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

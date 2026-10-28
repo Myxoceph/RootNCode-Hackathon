@@ -1,0 +1,268 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-kestel-aksu-koyu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Kestel",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banisi kitapta bilinmiyor (founder: null); hazire bölümü Hacı Murad'ı 'caminin banisi olarak kabul edilen' kişi diye anıyor, ayrıca doğrulanmalı.",
+      "Caminin dönem (era) bilgisi kitapta kesin değil; era boş bırakıldı.",
+      "Çiçek Dede ve Sâmit Dede ile caminin ilişkisi kitapta yalnızca iskân bağlamında anlatılıyor.",
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Camii bölümü banisinin bilinmediğini söylerken hazire bölümü (s. 548) Hacı Murad'ı 'caminin banisi olarak kabul edilen' kişi olarak anar. Kaynağa sadık kalınarak founder boş bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Aksu Köyü Camii",
+    "en": "Aksu Village Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "köy camii",
+    "Aksu",
+    "moloz taş"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Kestel",
+    "neighborhood": "Aksu Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "545"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kesin tarih bilinmiyor; XIV. yüzyıl sonu ya da XV. yüzyıl başı olabileceği değerlendirilmektedir",
+      "en": "Exact date unknown; possibly late 14th or early 15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "1487 tahrir kayıtlarındaki iskân bilgisi",
+      "en": "Settlement information in the 1487 census records"
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "545-546"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kestel Aksu Mahallesi'nde, yatay dikdörtgen planlı, kırma çatılı moloz taş bir köy camii. İnşa tarihi ve banisi kesin bilinmez; köyün iskân sürecine bağlı olarak XIV. yüzyıl sonu veya XV. yüzyıl başında yapılmış olabileceği değerlendirilmektedir.",
+    "en": "A rubble-stone village mosque with a horizontal rectangular plan and hipped roof in the Aksu Neighborhood of Kestel. Its date and founder are not definitively known; it may have been built in the late 14th or early 15th century in connection with the village's settlement."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve İskân",
+        "en": "History and Settlement"
+      },
+      "body": {
+        "tr": "Caminin inşa tarihine ve banisine dair kesin bilgi yoktur; yapıda açıklayıcı bir kitabe de bulunmaz. Köyün kuruluşuna dair rivayete göre bölgeyi ilk olarak 'Çiçek Dede' adlı bir kişi mesken tutmuştur. 1487 tarihli tahrir defterlerinde Aksu Köyü, XIV. yüzyılda 'derbentçilik' hizmeti karşılığında Sâmit Dede'ye tahsis edilmiş bir yerleşim olarak kayıtlıdır. Köy halkı, civardaki kervansarayı onarmaları ve yolları açık tutarak güvenliği sağlamaları şartıyla vergiden muaf tutulmuş, bölgedeki yörük aileleri de köye yerleştirilmiştir. Bu kayıtlara bakılarak caminin XIV. yüzyıl sonlarında ya da XV. yüzyıl başlarında inşa edilmiş olabileceği değerlendirilmektedir.",
+        "en": "There is no definitive information on the mosque's date or founder, and no inscription. According to accounts of the village's founding, the area was first inhabited by 'Çiçek Dede'. The 1487 census records list Aksu as a settlement allocated to Sâmit Dede in the 14th century in return for mountain-pass guardian duties; villagers were tax-exempt on condition of repairing the nearby caravanserai and keeping the roads open, and some yörük families were settled there. In light of these records the mosque may have been built in the late 14th or early 15th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "545-546"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı yatay dikdörtgen planlı, kırma çatılı ve kiremit örtülüdür; duvarlar sıvalı moloz taş örgüdür. Kuzey ve batı cephelerinde iki girişi vardır. Kuzeydeki kapı, ahşap konstrüksiyonlu, altlı üstlü iki katlı son cemaat yerinin içinde yer alır ve iç kapı işlevi görür. Güney cephede mihrap, sağ önde minber, sol ön köşede vaaz kürsüsü bulunur; mihrabın üstünde çok renkli geometrik süslemeler vardır.",
+        "en": "The building has a horizontal rectangular plan and a tiled hipped roof; walls are plastered rubble stone. It has two entrances, on the north and west. The north door lies within a two-story wooden narthex and acts as an interior door. The mihrab is on the south, the minbar at the right front, the sermon platform at the left front corner; polychrome geometric ornament appears above the mihrab."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "546-547"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 3,
+      "title": {
+        "tr": "Yenileme",
+        "en": "Renovation"
+      },
+      "body": {
+        "tr": "Batı cephesindeki minare, cami ile birlikte 2013 yılında tamamen yenilenmiştir. Bahçedeki şadırvan zamanla özgün niteliğini yitirmiştir.",
+        "en": "The minaret on the west façade was completely renovated together with the mosque in 2013. The shadirvan in the garden has lost its original character over time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "546-547"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "ciceksdede-rivayeti",
+      "title": {
+        "tr": "Çiçek Dede rivayeti",
+        "en": "Çiçek Dede account"
+      },
+      "body": {
+        "tr": "Köyün kuruluşuna dair aktarılan rivayetlere göre bölge ilk olarak 'Çiçek Dede' isimli bir şahıs tarafından mesken tutulmuştur.",
+        "en": "According to accounts of the village's founding, the area was first inhabited by an individual named 'Çiçek Dede'."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "545"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "giris_sayisi",
+      "label": {
+        "tr": "Giriş sayısı",
+        "en": "Number of entrances"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "546-547"
+        }
+      ]
+    },
+    {
+      "key": "minare_yenileme_yili",
+      "label": {
+        "tr": "Minare ve caminin yenilendiği yıl",
+        "en": "Year of renovation"
+      },
+      "value": 2013,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "546-547"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yenileme-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Minare ve caminin tamamen yenilenmesi",
+        "en": "Complete renovation of minaret and mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "546-547"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yatay dikdörtgen planlı, kırma çatılı, sıvalı moloz taş duvarlı küçük bir köy camii. Kuzeyde ahşap, iki katlı bir son cemaat yeri vardır; buradan ana ibadet mekânına geçilir. Güney duvarda mihrap, sağda minber, solda vaaz kürsüsü bulunur. Batıda yenilenmiş bir minare ve bahçede bir şadırvan yer alır.",
+      "en": "A small village mosque on a horizontal rectangular plan with a hipped roof and plastered rubble walls. A two-story wooden narthex on the north leads into the prayer hall. The mihrab is on the south wall, with the minbar on the right and the sermon platform on the left. A renovated minaret stands on the west and a shadirvan in the garden."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1cxeDobWd9zo-NOT3PQQ4p-OdJNj-7SA2",
+    "book_layout_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+    "book_pdf_name": "7-Kestel.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-aksu-koyu-camii/p006-2.jpg",
+        "original_name": "05 ERD07453 kopya.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "547"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin minaresi ve köy sokağı",
+        "en": "Mosque minaret and village street"
+      },
+      "alt": {
+        "tr": "Tuğla gövdeli ince minare, krem renkli caminin yanında yükselir. Kaldırım taşlı sokakta ahşap evler ve ağaçlar görülür.",
+        "en": "A slender brick minaret rises beside a cream-coloured mosque. A cobbled street runs past timber houses and trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    }
+  ],
+  "archive_media": []
+}

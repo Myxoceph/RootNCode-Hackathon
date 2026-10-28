@@ -1,0 +1,872 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hamza-bey-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hamzabey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Hamza Bey Külliyesi bölümünden (s. 173-185) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
+      "Caminin yapım yılı kitapta verilmiyor.",
+      "Mimar adı kitapta verilmiyor.",
+      "1874 onarımında cümle kapısı üzerine eklenen kitabenin metni kitapta yok; kapı üzerindeki Fetih suresi yazısıyla aynı olup olmadığı belirsiz. Metin bulunursa inscriptions'a eklenecek.",
+      "Minare 'sonradan eklenmiş' deniyor ama eklenme tarihi verilmiyor.",
+      "Tabhanelerin eyvana dönüştürülmesi için 'muhtemelen II. Abdülhamid devrinde' deniyor; kesin tarih araştırılmalı.",
+      "Muradiye Camii'nin ilçesi metinde yazmıyor; ilişki hedefi 'bursa-osmangazi-muradiye-camii' varsayımsaldır, kayıt açılırken teyit edilecek."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis] / location",
+        "note": "Külliye anlatımında Hamza Bey, eşleri ve Kara Mustafa Paşa türbeleri 'cami bahçesinin kuzeybatısında' (s. 175) deniyor; türbe bölümlerinde Hamza Bey Türbesi 'cami avlusunun güneybatı köşesinde' (s. 180), Hamza Bey Ailesi Türbesi 'caminin batı köşesine bitişik' (s. 182), Kara Mustafa Paşa Türbesi 'avlunun kuzey ucunda' (s. 184) olarak veriliyor. Konum bilgileri tam örtüşmüyor; kaynağa sadık kalınarak her kayıtta kendi bölümündeki ifade esas alındı."
+      },
+      {
+        "field": "timeline[tamir-1959-1962]",
+        "note": "Kurum adı kitapta iki farklı biçimde geçiyor: 'Bursa Eski Eser Sevenler Derneği' (cami bölümü, s. 179) ve 'Bursa Eski Eserleri Sevenler Kurumu' (türbe bölümleri, s. 180, 185). Aynı kurum olduğu varsayıldı, ifadeler kaynaktaki biçimleriyle korundu."
+      },
+      {
+        "field": "timeline[tamir-1959-1962]",
+        "note": "Cami bölümü onarımı 1959-1962 olarak verirken türbe bölümleri 1962'de camiyle birlikte kapsamlı onarım yapıldığını söylüyor; çelişki yok ama kapsamlar farklı ifade edilmiş."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hamza Bey Camii",
+    "en": "Hamza Bey Mosque"
+  },
+  "subtitle": {
+    "tr": "Fâtih döneminin büyük camilerinden",
+    "en": "One of the great mosques of Fâtih's reign"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-hamza-bey-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "Hamza Bey",
+    "tabhaneli/zaviyeli cami",
+    "Fetih suresi",
+    "Kaplıca Caddesi",
+    "Hamzabey Mahallesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hamzabey",
+    "address": "Kaplıca Caddesi, No: 55",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "173"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.192718,
+      "lng": 29.041733,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-osmangazi-hamza-bey-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "summary": {
+    "tr": "Hamza Bey tarafından yaptırılan, tabhaneli/zaviyeli planlı külliyenin ana yapısı. Başlangıçta mescit olarak inşa edilmiş, 1614'te camiye çevrilmiştir; 2011'de kapsamlı restore edilmiş ve halen ibadete açıktır.",
+    "en": "The main structure of the complex, built by Hamza Bey on a hospice/zawiya plan. Originally built as a masjid, it was converted into a mosque in 1614; comprehensively restored in 2011, it is still open for worship."
+  },
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe_capi_hazirlik",
+      "label": {
+        "tr": "Hazırlık mekânı kubbe çapı",
+        "en": "Preparation-area dome diameter"
+      },
+      "value": 8.1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "177"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex portico bays"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "176"
+        }
+      ]
+    },
+    {
+      "key": "hazirlik_kasnak_pencere",
+      "label": {
+        "tr": "Hazırlık mekânı kasnak penceresi",
+        "en": "Preparation-area drum windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "177"
+        }
+      ],
+      "note": {
+        "tr": "Ayrıca on iki niş vardır.",
+        "en": "Plus twelve niches."
+      }
+    },
+    {
+      "key": "hazirlik_kasnak_nis",
+      "label": {
+        "tr": "Hazırlık mekânı kasnak nişi",
+        "en": "Preparation-area drum niches"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "177"
+        }
+      ]
+    },
+    {
+      "key": "orta_ayak_tasma",
+      "label": {
+        "tr": "İki orta ayağın dışa taşması",
+        "en": "Projection of the two middle piers"
+      },
+      "value": 80,
+      "unit": "cm",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "176"
+        }
+      ],
+      "note": {
+        "tr": "Kaynak 'yaklaşık 80 cm' diyor.",
+        "en": "The source says 'approximately 80 cm'."
+      }
+    },
+    {
+      "key": "kemer_yuksekligi",
+      "label": {
+        "tr": "İki kubbe arası kemer üzengisi yüksekliği",
+        "en": "Height of arch springing between the two domes"
+      },
+      "value": 1.75,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "177-178"
+        }
+      ],
+      "note": {
+        "tr": "Sofadan yüksekliktir.",
+        "en": "Measured from the floor."
+      }
+    },
+    {
+      "key": "minare_serefe",
+      "label": {
+        "tr": "Şerefe sayısı",
+        "en": "Number of minaret balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "178"
+        }
+      ]
+    },
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Wall coursing"
+      },
+      "value": "3 sıra tuğla + 1 sıra moloz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "176"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hamza Bey (Yahşi Beyzade Hamza Bey)",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Kazasker Muallimzâde Ahmed Efendi",
+      "role": {
+        "tr": "1614'te mescidi minber ekleyerek camiye çevirdi",
+        "en": "Converted the masjid into a mosque in 1614 by adding a minbar"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cumle-kapisi-fetih-suresi",
+      "location": {
+        "tr": "Cümle kapısının üzerinde",
+        "en": "Above the main door"
+      },
+      "language": "ar",
+      "script": "celi sülüs",
+      "transliteration": "İnnâ fetahnâ leke fethan mübînen",
+      "translation": {
+        "tr": "Şüphesiz biz sana apaçık bir fetih verdik (Fetih suresi, 1. ayet)",
+        "en": "We have surely given you a clear victory (Surah Al-Fath, verse 1)"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "177"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "mescit-camiye-1614",
+      "year": 1614,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Mescit, minber eklenerek camiye çevrildi (Haziran 1614)",
+        "en": "Masjid converted into a mosque by adding a minbar (June 1614)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175-176"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1826",
+      "year": 1826,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "179"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1855-deprem",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Bursa depreminde büyük zarar görmedi; minare şerefesi zedelendi",
+        "en": "No major damage in the Bursa earthquake; minaret balcony damaged"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "179"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1874",
+      "year": 1874,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım; cümle kapısı üzerine kitabe eklendi",
+        "en": "Repair; inscription added above the main door"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "179"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1959-1962",
+      "year": 1959,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eser Sevenler Derneği onarımı (1959-1962)",
+        "en": "Repair by the Bursa Association for the Appreciation of Antiquities (1959-1962)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "179"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1969",
+      "year": 1969,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "179"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son kapsamlı restorasyon (Vakıflar Genel Müdürlüğü)",
+        "en": "Latest comprehensive restoration (General Directorate of Foundations)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "179"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "cumle-kapisi",
+      "title": {
+        "tr": "Fetih suresi yazısı",
+        "en": "Surah Al-Fath inscription"
+      },
+      "hint": {
+        "tr": "Cümle kapısının üzerinde celi sülüs hatla yazılmış ayete bakın.",
+        "en": "Look for the verse in Jeli Thuluth above the main door."
+      },
+      "section_id": "cumle-kapisi"
+    },
+    {
+      "feature": "eyvanlar",
+      "title": {
+        "tr": "Eski tabhaneler",
+        "en": "Former hospices"
+      },
+      "hint": {
+        "tr": "İki yandaki eyvanlar bir zamanlar ayrı tabhane odalarıydı.",
+        "en": "The iwans on both sides were once separate hospice rooms."
+      },
+      "section_id": "eyvanlar"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami, Hamza Bey Külliyesi'nin ana yapısıdır.",
+        "en": "The mosque is the main structure of the Hamza Bey Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "173"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamza Bey Türbesi cami avlusundadır.",
+        "en": "The Hamza Bey Tomb is in the mosque courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-ailesi-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamza Bey Ailesi Türbesi caminin batı köşesine bitişiktir.",
+        "en": "The Hamza Bey Family Tomb adjoins the west corner of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "182"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-kara-mustafa-pasa-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kara Mustafa Paşa Türbesi cami avlusunun kuzey ucundadır.",
+        "en": "The Kara Mustafa Paşa Tomb is at the northern end of the mosque courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "184"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Tabhanelerin eyvana dönüştürülmesi Gazi Orhan Bey ve Muradiye camilerindeki gibi yapılmıştır.",
+        "en": "The conversion of the hospices into iwans was done as in the Gazi Orhan Bey and Muradiye mosques."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "178-179"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-muradiye-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Tabhanelerin eyvana dönüştürülmesi Gazi Orhan Bey ve Muradiye camilerindeki gibi yapılmıştır; Muradiye'nin batı semtleri caminin etrafında toplanmıştır.",
+        "en": "Conversion of the hospices into iwans followed the Muradiye and Gazi Orhan Bey mosques; the western districts of Muradiye gathered around this mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175, 178-179"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1q5tdZZqn4SpOpp6Nlka4iS0c3_UDyFZZ",
+    "book_layout_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+    "book_pdf_name": "5-Hamzabey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hamza-bey-camii/p006-1.jpg",
+        "original_name": "DJI_20240929195324_0501_D-Edit-2.jpg",
+        "book_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+        "book_pdf_name": "5-Hamzabey Külliyesi.pdf",
+        "book_page": "177"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hamza Bey Camii kuşbakışı",
+        "en": "Aerial view of Hamza Bey Mosque"
+      },
+      "alt": {
+        "tr": "Gri kubbeli birimlerden oluşan cami ve yanındaki küçük kubbeli yapılar yukarıdan görünür. Çevrede ağaçlar ve kırmızı çatılı evler vardır.",
+        "en": "A mosque of several grey domes with small domed buildings beside it, seen from above. Trees and red-roofed houses surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hamza-bey-camii/p005-1.jpg",
+        "original_name": "ERD05899 kopya-2.jpg",
+        "book_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+        "book_pdf_name": "5-Hamzabey Külliyesi.pdf",
+        "book_page": "176"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamza Bey Camii iç mekânı",
+        "en": "Hamza Bey Mosque interior"
+      },
+      "alt": {
+        "tr": "Geniş kemerlerle bölünmüş beyaz iç mekânda mihrap ve minber uzakta görünür. Zeminde desenli halılar, duvarlarda renkli camlı pencereler vardır.",
+        "en": "A white interior divided by wide arches, with the mihrab and minber in the distance. Patterned carpets cover the floor and windows with coloured glass line the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-29"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hamza-bey-camii/p006-2.jpg",
+        "original_name": "ERD06174 kopya-2.jpg",
+        "book_pdf_file_id": "1t5cjvhDBvKbfUgsTrCu5EiJdLqDtWuom",
+        "book_pdf_name": "5-Hamzabey Külliyesi.pdf",
+        "book_page": "177"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Altın yazılı mermer kitabe",
+        "en": "Gold-lettered marble inscription"
+      },
+      "alt": {
+        "tr": "Açık renkli mermer üzerinde altın renkli Arap harfli, tek satırlık bir yazı bulunur.",
+        "en": "A single line of gold-coloured Arabic script on light marble."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-29"
+    }
+  ],
+  "archive_media": [],
+  "dating": {
+    "display": {
+      "tr": "Fâtih Sultan Mehmed dönemi (kesin yıl belirtilmemiş)",
+      "en": "Reign of Fâtih Sultan Mehmed (exact year not given)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap, camiyi 'Fatih devrinde Bursa'da yapılan en büyük camilerden' biri olarak anıyor; yıl verilmiyor.",
+      "en": "The book says the mosque was one of the largest built in Bursa during Fâtih's reign; no year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "175"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hamza Bey (Yahşi Beyzade Hamza Bey)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "173"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Hamza Bey Camii, Hamzabey Mahallesi, Kaplıca Caddesi No:55'te bulunan külliyenin ana yapısıdır. Cami, I. Mehmed ve II. Murad'ın veziriazamı Bayezid Paşa'nın kardeşi olan 'İzmir Fâtihi' lakaplı Hamza Bey tarafından inşa edilmiştir. Fatih devrinde Bursa'da yapılan en büyük camilerdendi; Muradiye'nin batı semtleri caminin etrafında toplanmıştır. Ovaya hâkim konumu nedeniyle Bursa'nın en güzel manzarasına sahip eserlerden biridir.",
+        "en": "Hamza Bey Mosque is the main structure of the complex at Kaplıca Street No. 55, Hamzabey Neighborhood. It was built by Hamza Bey, known as the 'Conqueror of İzmir', brother of Bayezid Paşa, grand vizier of Mehmed I and Murad II. It was one of the largest mosques built in Bursa in Fâtih's reign, and the western districts of Muradiye gathered around it. Its position commanding the plain gives it one of the most beautiful views of Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "173, 175"
+        }
+      ]
+    },
+    {
+      "id": "mescitten-camiye",
+      "order": 2,
+      "title": {
+        "tr": "Mescitten Camiye",
+        "en": "From Masjid to Mosque"
+      },
+      "body": {
+        "tr": "Başlangıçta mescit olarak inşa edilen yapı, 'Müslümanların cuma namazlarında uzak yerlere gitmekte zorluk çekmeleri nedeniyle camiye çevrilmesi için arz-ı hâl verilmiş' ve Şeyhülislamlık makamının izniyle, Haziran 1614'te Kazasker Muallimzâde Ahmed Efendi tarafından minber ilâve edilerek camiye dönüştürülmüştür.",
+        "en": "Initially built as a masjid, the building was converted into a mosque by Kazasker Muallimzâde Ahmed Efendi in June 1614, with the permission of the Shaykh al-Islam, after a request 'was made to convert it into a mosque because Muslims had difficulty in going to distant places for Friday prayers.' A minbar was added."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175-176"
+        }
+      ]
+    },
+    {
+      "id": "duvar-orgusu",
+      "order": 3,
+      "title": {
+        "tr": "Duvar Örgüsü",
+        "en": "Wall Construction"
+      },
+      "body": {
+        "tr": "Cami duvarları üç sıra tuğla ve bir sıra moloz taşından inşa edilmiş, aralara düşey beslemeler eklenmiştir. Büyük kubbenin kasnağı tamamen tuğladandır. Eyvan kubbelerinin kasnakları ikişer üçer sıra düşey tuğladan oluşur. Saçak altında ve kubbe eteğinde testere dişi sıraları bulunur.",
+        "en": "The walls are built with three rows of bricks and one row of rubble stone with vertical reinforcements between. The drum of the large dome is entirely brick; the drums of the iwan domes are of two or three rows of vertical bricks. Sawtooth patterns run under the eaves and at the base of the dome."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "176, 178"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 4,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "The Narthex Portico"
+      },
+      "body": {
+        "tr": "Beş gözlü son cemaat yeri revakının orta kubbesi diğerlerinden daha büyük ve yüksektir. Kubbeye geçiş elemanı olarak Türk üçgenleri kullanılmıştır. Kenarlardaki kubbeler sekiz köşeli kaideye otururken en uçtaki kubbelerde üçlü yelpazeli pandantifler yer alır; ortadaki kubbe tromp geçişlidir. İki orta ayak yaklaşık 80 cm dışarı taşırılarak taka görünümü elde edilmiş; kemeri taşıyan payelerin iç yüzlerinde mihrabiyeler vardır.",
+        "en": "The central dome of the five-bayed narthex portico is larger and higher than the others. Turkish triangles serve as transition elements; the side domes sit on an octagonal base, the end domes have triple fan-shaped pendentives, and the middle dome has a squinch transition. The two middle piers protrude about 80 cm to give a prow-like appearance, and the inner faces of the piers carry side niches."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "176"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 5,
+      "title": {
+        "tr": "Plan ve Örtü Sistemi",
+        "en": "Plan and Covering"
+      },
+      "body": {
+        "tr": "Tabhaneli/zaviyeli plan şemasında inşa edilen cami; son cemaat mahalli, kubbeli iç avlu, bunun iki yanında yer alan dikdörtgen planlı tabhaneler ve ana ibadet mekânından oluşur. İç avlu, aynı zamanda 'hazırlık mekânı' olarak da adlandırılır ve bir büyük kubbe ile örtülüdür; dikdörtgen planlı tabhaneler birer kubbe ve beşik tonozla örtülmüştür. Hazırlık mekânına girişi örten 8.10 m çapındaki kubbe önce sekizgen, ardından on altıgen biçimli kasnağa oturur; kasnakta renkli camlı altı pencere ve on iki niş vardır. Sekizgen alt kasnağın köşelikleri dokuz sıra tuğladan, on altıgen kasnağın köşeleri üç sıra mukarnaslıdır.",
+        "en": "Built on the hospice/zawiya plan, the mosque consists of the narthex, a domed inner courtyard, rectangular hospices on both sides and the main prayer hall. The inner courtyard, also called the 'preparation area', is covered by a large dome; the rectangular hospices are covered by a dome and a barrel vault. The 8.10 m dome over the entrance to the preparation area sits on a drum designed first octagonal and then hexadecagonal, with six windows with colored glass and twelve niches. The corners of the octagonal lower drum are of nine rows of bricks; those of the hexadecagonal drum are of three rows of muqarnas."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "176-177"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-onu",
+      "order": 6,
+      "title": {
+        "tr": "Mihrap Önü ve Mihrap",
+        "en": "Mihrab Bay and Mihrab"
+      },
+      "body": {
+        "tr": "Mihrap önü kubbesi, belirgin çıkıntıya sahip geniş bir kuşak üzerine oturtulmuş Türk üçgenlerinden meydana gelir. Kasnaktaki üç pencere sivri kemerli ve alçı taklidi beton şebekelidir; bu bölümde altlı üstlü altışar adet sivri kemerli pencere bulunur. Geniş bir çerçeve içine alınan mihrap nişinin kavsarası altı sıra mukarnaslıdır. İki kubbe arasındaki büyük kemer üzengisi sofadan yalnızca 1.75 m yükseklikte olduğu için, iç mekândaki basık görünümü gidermek amacıyla kubbe yüksek kuşaklarla havalandırılmıştır.",
+        "en": "The dome over the mihrab bay is composed of Turkish triangles on a wide band with a distinct protrusion. Three drum windows have pointed arches and a concrete grille imitating plaster; there are six pointed-arched windows one above the other here. The hood of the mihrab niche, within a wide frame, has six rows of muqarnas. Because the great arch springing between the two domes is only 1.75 m above the floor, the dome is ventilated with high bands to counteract the flat appearance inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "177-178"
+        }
+      ]
+    },
+    {
+      "id": "eyvanlar",
+      "order": 7,
+      "title": {
+        "tr": "Eyvanlar (Eski Tabhaneler)",
+        "en": "Iwans (Former Hospices)"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı tabhaneler, muhtemelen II. Abdülhamid devrinde, Gazi Orhan Bey ve Muradiye camilerinde olduğu gibi ara duvarları kaldırılarak camiye katılmış ve eyvan şekline dönüştürülmüştür. Batıdaki eyvan, geçiş pandantiflerinde beş sıra mukarnas bulunan sekizgen kasnaklı bir kubbeyle örtülüdür; güney duvarındaki mihrap yarı silindirik, sivri alınlıklı bir nişdir. Nişin içinde dökümlü bir perde tasviri, çerçeve ve alınlıkta bitkisel motiflerin hâkim olduğu malakârî bezemeler vardır. Doğudaki eyvanın kubbesi iki sıra iri bademden oluşan bir kasnak üzerine oturur; buradaki mihrabın önceden ocak olarak kullanılmış olabileceği düşünülmektedir.",
+        "en": "The rectangular hospices were probably incorporated into the mosque in the reign of Abdulhamid II by removing their partition walls and turning them into iwans, as in the Gazi Orhan Bey and Muradiye mosques. The western iwan is covered by a dome with an octagonal drum and five rows of muqarnas on the pendentives; its mihrab on the south wall is a semi-cylindrical niche with a pointed pediment, with a flowing curtain depicted inside and malakâri decoration dominated by vegetal motifs on frame and pediment. The dome of the eastern iwan sits on a drum of two rows of large almond motifs; its mihrab may previously have been used as a hearth."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "178-179"
+        }
+      ]
+    },
+    {
+      "id": "suslemeler",
+      "order": 8,
+      "title": {
+        "tr": "İç Mekân ve Süsleme",
+        "en": "Interior and Decoration"
+      },
+      "body": {
+        "tr": "Yapının iç mekânı süsleme açısından oldukça sadedir. Eski kalem işi bezemelerden hiçbir iz kalmamış, günümüzdeki süslemeler ve renkli cam sonradan eklenmiştir. Batı eyvanındaki mihrabın alçı bezemeleri ve ceviz ağacından yapılmış ahşap pencere kanatları orijinaldir.",
+        "en": "The interior is rather plain. No trace remains of the old hand-painted decoration; present decoration and colored glass were added later. The plaster decoration of the mihrab in the western iwan and the walnut window shutters are original."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "178-179"
+        }
+      ]
+    },
+    {
+      "id": "cumle-kapisi",
+      "order": 9,
+      "title": {
+        "tr": "Cümle Kapısı",
+        "en": "Main Door"
+      },
+      "body": {
+        "tr": "Camiye girişi sağlayan cümle kapısının üzerinde, celi sülüs hatla Fetih suresinin birinci ayeti yazılıdır. 1874 onarımı sırasında cümle kapısının üzerine bir kitabe eklenmiştir.",
+        "en": "Above the main door, the first verse of Surah Al-Fath is written in Jeli Thuluth calligraphy. An inscription was added above the main door during the 1874 repair."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "177-178"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 10,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Son cemaat yeri ile doğu tabhane duvarının bitiştiği noktadaki minare orijinal değildir. Tek şerefelidir; kaidesi tuğla ve kesme taştan, gövdesi tuğladandır; şerefenin altına iki sıra çini levha yerleştirilmiştir. Minare sonradan eklenmiş, biçimsiz bir şekilde revakın sol kemerine taşmaktadır. Batı eyvanının kuzeydoğu köşesindeki kurşunluğa çıkan merdiven mevcut minareye ulaşmaz; eski minarenin doğu köşede, duvar üzerinde olduğu düşünülmektedir.",
+        "en": "The minaret where the narthex meets the eastern hospice wall is not original. It has a single balcony; its base is of brick and cut stone, the shaft of brick, with two rows of tile panels under the balcony. Added later, it sticks out awkwardly over the left arch of the portico. The staircase in the north-east corner of the western iwan cannot reach the existing minaret; the old minaret is thought to have stood on the wall in the eastern corner."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "178-179"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 11,
+      "title": {
+        "tr": "Onarımlar ve Bugünkü Durum",
+        "en": "Repairs and Present Condition"
+      },
+      "body": {
+        "tr": "Zaman içinde defalarca harap duruma gelen caminin 1855 Bursa depreminde büyük zarar görmediği anlaşılmaktadır: 'Hamzabey Câmi-i Şerîfi'nin bir zararı olmayub, fakat minâresinin şerefesi zedelendiği ve türbesinin kubbesi iki tarafından münşakk oldığı' kaydı durumu belgeler. Cami 1826 ve 1874'te tamirat görmüştür. 1959-1962 arasında Bursa Eski Eser Sevenler Derneği, 1969'da Vakıflar Genel Müdürlüğü tarafından onarılmış, en son 2011'de kapsamlı restorasyon geçirmiştir. Cami halen ibadete açıktır ve türbelerle birlikte oldukça bakımlı durumdadır.",
+        "en": "The mosque, which fell into disrepair many times, did not suffer major damage in the 1855 Bursa earthquake, as the record documents: the mosque was undamaged but the balcony of its minaret was damaged and the dome of its tomb was broken on two sides. It was repaired in 1826 and 1874. It was repaired by the Bursa Association for the Appreciation of Antiquities in 1959-1962 and by the General Directorate of Foundations in 1969, and last underwent a comprehensive restoration in 2011. It is still open for worship and, with the tombs, in very well-maintained condition."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "179"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamza Bey Camii, ovaya hâkim bir yamaçta duran, tuğla ve moloz taş sıralarıyla örülmüş bir camidir. Önünde beş gözlü, kubbeli bir son cemaat yeri revakı vardır; ortadaki kubbe diğerlerinden daha büyük ve yüksektir. Revakın bir ucunda tek şerefeli bir minare yükselir. Cümle kapısından girince büyük bir kubbeyle örtülü iç avluya, yani hazırlık mekânına ulaşılır; iki yanında eskiden ayrı oda olan, bugün eyvan biçiminde camiye katılmış kubbeli mekânlar bulunur. İç mekân oldukça sadedir; kıble tarafında mihrap yer alır.",
+      "en": "Hamza Bey Mosque stands on a slope commanding the plain, built of courses of brick and rubble stone. In front is a five-bayed domed narthex portico whose central dome is larger and higher than the others. A single-balconied minaret rises at one end of the portico. Through the main door one enters the inner courtyard, the preparation area, covered by a large dome; on either side are domed spaces that were once separate rooms and are now joined to the mosque as iwans. The interior is quite plain, with the mihrab on the qibla side."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tasvirden yapay zekâ taslağı olarak yazıldı; saha ve fotoğrafla doğrulanmadı."
+  }
+}

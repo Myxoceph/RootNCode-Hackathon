@@ -1,0 +1,533 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-seyh-konevi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 435-436) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Pınarbaşı kabristanı için hedef kayıt bilinmiyor.",
+      "Camii önündeki yeni kitabenin metni kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[onarim-kitabesi-orta]",
+        "note": "Türkçe metin 'cemîlun', İngilizce metin 'cemîlün' yazıyor; Türkçe metin aynen alındı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metinde 'turned into a and' ifadesi kaynakta bozuk (Türkçesi 'dolap haline getirilmiştir'); Türkçe esas alındı."
+      },
+      {
+        "field": "inscriptions[onarim-kitabesi-bati]",
+        "note": "Türkçe metinde batı kitabesinin parantezi kapanmıyor ('(M. 1856-'); metin kitaptaki gibi bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Konevi Camii",
+    "en": "Shaykh Konevi Mosque"
+  },
+  "subtitle": {
+    "tr": "Konyalı Hacı Sinan'ın 1550'de tamamlattığı, kitabeli cami",
+    "en": "Mosque completed in 1550 by Hacı Sinan of Konya, with a door inscription"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "kitabeli",
+    "Kütahya çinisi mihrap",
+    "almaşık duvar",
+    "Pınarbaşı",
+    "Konyalı Hacı Sinan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "İvazpaşa",
+    "address": "1. Konyalı Sokak, No: 14",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "435"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.178722,
+      "lng": 29.057262,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/254374471 ('Şeyh Konevi Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 957 / M. 1550",
+      "en": "AH 957 / AD 1550"
+    },
+    "start_year": null,
+    "end_year": 1550,
+    "hijri_year": 957,
+    "century": 16,
+    "basis": {
+      "tr": "Kapı üzerindeki kitabedeki beyit yapının tamamlanma tarihini H. 957 / M. 1550 olarak verir.",
+      "en": "The verse on the door inscription gives the completion date as AH 957 / AD 1550."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "435"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Konyalı Hacı Sinan",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "435"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Pınarbaşı kabristanının doğusundaki cami, Konyalı Hacı Sinan'ın yaptırması nedeniyle 'Konevi' adıyla anılır. Kapısı üzerindeki sülüs kitabe H. 957 / M. 1550'de tamamlandığını bildirir; 1856'da (H. 1273) onarım kayıtları eklenmiştir. 7,00 × 7,00 m kare planlı, kubbeli, kurşun kaplı yapı almaşık duvar tekniğiyle örülmüştür.",
+    "en": "The mosque east of the Pınarbaşı cemetery is called 'Konevi' because Hacı Sinan of Konya had it built. The Thuluth inscription over its door gives its completion as AH 957 / AD 1550, and repair records of 1856 (AH 1273) were added later. The 7.00 × 7.00 m square, domed, lead-covered building is of alternating stone and brick."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Pınarbaşı kabristanının doğusunda yer alır; iki sıra moloz taş ve yer yer iki veya üç sıra tuğla örgülü almaşık duvar tekniğiyle inşa edilmiştir. Kubbeli ve kurşun kaplıdır. Son cemaat yeri sade, ahşap çatılı ve yarı açıktır; kubbenin iç tarafına sonradan yeni bir tavan eklenmiştir. Konyalı Hacı Sinan tarafından yaptırıldığı için 'Konevi' adı verilmiştir.",
+        "en": "The mosque lies east of the Pınarbaşı cemetery and is built in alternating courses of two rows of rubble stone and, in places, two or three rows of brick. It is domed and covered with lead. The narthex is simple, wood-roofed and semi-open; a new ceiling was later added inside the dome. It is called 'Konevi' because it was built by Hacı Sinan from Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "435"
+        }
+      ]
+    },
+    {
+      "id": "kitabeler",
+      "order": 2,
+      "title": {
+        "tr": "Kitabeler",
+        "en": "Inscriptions"
+      },
+      "body": {
+        "tr": "Kapı üzerinde, sivri kemer içinde sülüs hatla mermere yazılmış kitabede bir hadis ve H. 957 / M. 1550 tarihli beyit yer alır. Kitabenin alınlığında 1856'ya (H. 1273) ait onarım kayıtları vardır: batı cephesinde mütevelli Kutbî'nin, doğu cephesinde Hacı Ağa Hüseyin'in adı geçer; ortada 'Allah güzeldir, güzeli sever' yazılıdır. Caminin önündeki yeni kitabe yapım tarihini 1550 olarak belirtir.",
+        "en": "Inside the pointed arch above the door, a marble Thuluth inscription contains a hadith and a verse dated AH 957 / AD 1550. The pediment of the inscription carries repair records of 1856 (AH 1273): the trustee Kutbî on the west side and Hacı Ağa Hüseyin on the east, and in the middle 'God is beautiful and loves the beautiful'. A new inscription in front of the mosque states the construction date as 1550."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "435-436"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "7,00 × 7,00 m kare planlı caminin girişinde 3,40 m derinliğinde bir son cemaat yeri vardır; ön cephe sıvalıdır. Yapıya sonradan yapılan eklerle tarihî doku kısmen bozulmuştur. Kuzey hariç her cephede ikişer alt ve ikişer üst pencere açılmıştır; alt pencereler söveli, sivri kemerli ve alınlıkları tuğla dolguludur, üsttekiler sivri kemerli sağır pencerelerdir. Kıble duvarındaki alt pencereler kapatılıp dolap haline getirilmiştir. Mihrap Kütahya çinileriyle kaplıdır; minber yeni ve ahşaptır.",
+        "en": "The 7.00 × 7.00 m square mosque has a 3.40 m deep narthex at the entrance; the front façade is plastered. Later additions have partly damaged the historical fabric. Each façade except the north has two lower and two upper windows; the lower ones have frames, pointed arches and brick-infill pediments, the upper ones are blind pointed-arch windows. The lower windows on the qibla wall were closed and turned into cupboards. The mihrab is covered with Kütahya tiles; the minbar is new and of wood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "436"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Doğudaki minareye asıl ibadet mekânının doğusundaki bir kapıdan çıkılır. Taş ve tuğladan, sekizgen kaideli, silindirik tuğla gövdeli, tek şerefeli ve sivri külahlıdır; şerefe altı beş sıra kirpi saçaklıdır. Cami bakımlıdır ve ibadete açıktır.",
+        "en": "The minaret on the east is reached through a door east of the main prayer hall. It is of stone and brick with an octagonal base, a cylindrical brick shaft, a single balcony and a pointed spire, with five rows of sawteeth under the balcony. The mosque is maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "436"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "Ölçüler",
+        "en": "Dimensions"
+      },
+      "value": "7,00 × 7,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "436"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": "3,40",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "436"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Konyalı Hacı Sinan",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Kutbî",
+      "role": {
+        "tr": "1856 (H. 1273) onarımında mütevelli",
+        "en": "Trustee at the 1856 (AH 1273) repair"
+      }
+    },
+    {
+      "name": "Hacı Ağa Hüseyin",
+      "role": {
+        "tr": "1856 (H. 1273) onarım işini üstlenen kişi",
+        "en": "Person who undertook the 1856 (AH 1273) repair work"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi-hadis",
+      "location": {
+        "tr": "Kapı üzerinde, sivri kemer içinde, mermer (1. bölüm)",
+        "en": "Above the door, inside the pointed arch, marble (part 1)"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "Kâle'n-nebiyyu aleyhi's-selâm accilû bi's-salâti kable'l-fevti ve accilû bi't-tevbeti kable'l-mevti",
+      "translation": {
+        "tr": "Nebi aleyhisselam buyurdu ki: Vakti geçmeden namaz için acele ediniz, ölüm gelmeden de tevbe etmekte acele ediniz.",
+        "en": "The Prophet (PBUH) said: Hurry to pray before the time is too late, and hurry to repent before death comes."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "435"
+        }
+      ]
+    },
+    {
+      "id": "kapi-kitabesi-beyit",
+      "location": {
+        "tr": "Kapı üzerinde, sivri kemer içinde, mermer (2. bölüm: tarih beyti)",
+        "en": "Above the door, inside the pointed arch, marble (part 2: chronogram verse)"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": "Bu binâ itmâmına târîh-i zîbâ pür-sürûr / Secdegâh-ı âm u hâssın itdi hâtifden südûr H. 957 / M. 1550",
+      "translation": {
+        "tr": "Bu yapının tamamlanma tarihi, güzel ve sevinç dolu bir tarih idi. Halkın ve seçkinlerin ibadet yeri olduğu, gökten gelen manevi bir sesle ifade edildi.",
+        "en": "The date of completion of this structure was a beautiful and joyful date. It was expressed by a spiritual voice from heaven that it was a place of worship for the people and the elite."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 957,
+        "gregorian": "1550"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap dilini belirtmiyor; beyit Osmanlı Türkçesi olarak kabul edildi.",
+        "en": "The book does not name the language; the verse is treated as Ottoman Turkish."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "435"
+        }
+      ]
+    },
+    {
+      "id": "onarim-kitabesi-bati",
+      "location": {
+        "tr": "Kitabe alınlığı, batı cephesi",
+        "en": "Pediment of the inscription, west side"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Gayret ta'mîre Mütevellî Kutbî sene H. 1273 (M. 1856",
+      "translation": {
+        "tr": "Bu yapının onarımına gayret eden, mütevellî Kutbî'dir.",
+        "en": "The trustee who made efforts to repair this structure was Kutbi in year AH 1273 (AD 1856)."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1273,
+        "gregorian": "1856"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Dil kitapta belirtilmiyor; metin Osmanlı Türkçesi görünümünde.",
+        "en": "Language not stated in the book."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "436"
+        }
+      ]
+    },
+    {
+      "id": "onarim-kitabesi-dogu",
+      "location": {
+        "tr": "Kitabe alınlığı, doğu cephesi",
+        "en": "Pediment of the inscription, east side"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Gayret güzâr Hacı Ağa Hüseyin sene H. 1273 (M. 1856)",
+      "translation": {
+        "tr": "Onarım işini üstlenen kişi Hacı Ağa Hüseyin'dir.",
+        "en": "The person who undertook the repair work was Hacı Ağa Hüseyin in year AH 1273 (AD 1856)."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1273,
+        "gregorian": "1856"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Dil kitapta belirtilmiyor.",
+        "en": "Language not stated in the book."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "436"
+        }
+      ]
+    },
+    {
+      "id": "onarim-kitabesi-orta",
+      "location": {
+        "tr": "Kitabe alınlığı, orta kısım",
+        "en": "Pediment of the inscription, middle"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "İnne'llâhe cemîlun yuhibbu'l-cemâl",
+      "translation": {
+        "tr": "Allah güzeldir, güzeli sever.",
+        "en": "Allah is beautiful, loves the beautiful."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "436"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1550",
+      "year": 1550,
+      "date": null,
+      "hijri": "957",
+      "type": "construction",
+      "title": {
+        "tr": "Yapının tamamlanması",
+        "en": "Completion of the building"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "435"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1856",
+      "year": 1856,
+      "date": null,
+      "hijri": "1273",
+      "type": "repair",
+      "title": {
+        "tr": "Mütevelli Kutbî ve Hacı Ağa Hüseyin onarımı",
+        "en": "Repair by trustee Kutbî and Hacı Ağa Hüseyin"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "436"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeyh Konevi Camii kare planlı, tek kubbeli bir camidir. Duvarlar iki sıra moloz taş ve yer yer tuğladan örülüdür; kubbe kurşunla kaplıdır. Önünde sade, yarı açık ahşap çatılı bir son cemaat yeri vardır. Kapı üzerinde sivri kemer içinde mermer bir kitabe, içeride Kütahya çinili mihrap bulunur. Doğuda tuğla gövdeli, tek şerefeli bir minare yükselir.",
+      "en": "Şeyh Konevi Mosque is a square, single-domed mosque. Walls are of two rows of rubble stone with brick in places; the dome is lead-covered. In front is a simple, semi-open narthex with a wooden roof. A marble inscription in a pointed arch sits over the door and the mihrab inside is covered in Kütahya tiles. A single-balcony minaret with a brick shaft rises on the east."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyh-konevi-camii/p042-2.jpg",
+        "original_name": "02_4.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "435"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Şeyh Konevi Camii'nin çatısı kuşbakışı",
+        "en": "Aerial view of the roof of Shaykh Konevi Mosque"
+      },
+      "alt": {
+        "tr": "Kuşbakışı karede turuncu kiremitli kırma çatı ile yanındaki koyu kırmızı çatı ve üstünde küçük bir kubbecik görünür. Çevresinde yakın evler ve dar sokaklar yer alır.",
+        "en": "From above, an orange hipped tile roof beside a darker red roof and a small cupola. Close houses and narrow streets surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyh-konevi-camii/p043-1.jpg",
+        "original_name": "ERD00975 kopya.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "436"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeyh Konevi Camii'nin son cemaat yeri ve mahfili",
+        "en": "Narthex and gallery of Shaykh Konevi Mosque"
+      },
+      "alt": {
+        "tr": "İki ayağın taşıdığı ahşap mahfilin altında giriş kapısı ve pencereler var. Duvarlar turuncu ve mavi boyalı, zemin kırmızı halıyla örtülüdür.",
+        "en": "A wooden gallery on two posts, with an entrance door and windows below it. Walls are painted orange and blue and a red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyh-konevi-camii/p043-2.jpg",
+        "original_name": "ERD00984 kopya 2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "436"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Şeyh Konevi Camii'nin yeşil kapısı ve kitabesi",
+        "en": "Green door and inscription of Shaykh Konevi Mosque"
+      },
+      "alt": {
+        "tr": "Beyaz ve yeşil boyalı kemerli çift kanatlı kapı, mermer çerçeve içinde durur. Üstte siyah yazılı bir kitabe şeridi vardır.",
+        "en": "An arched white and green double door set in a marble frame. A black inscription band runs along the top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    }
+  ],
+  "archive_media": []
+}

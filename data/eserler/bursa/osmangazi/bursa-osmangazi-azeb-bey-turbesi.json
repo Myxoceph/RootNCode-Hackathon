@@ -1,0 +1,416 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-azeb-bey-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Camiden (Azeb Bey Camii) kitapta adı ve ilçesi açıkça verilmiyor; ilişki hedef id'si tahmini ve ilçe doğrulanmalı.",
+      "Türbenin plan şekli ve ölçüleri kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitabe H. 854 diyor (= M. 1450-51), kitabın meali ise M. 1449 veriyor; iki değer uyuşmuyor. Kaynağa sadık kalınarak ikisi de saklandı, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "timeline[cami-insa]",
+        "note": "Cami yılı kitapta verilmiyor; 'yaklaşık altı yıl sonra' ifadesinden 1449+6 olarak türetilmiştir (probable)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Azeb Bey Türbesi",
+    "en": "Azeb Bey Tomb"
+  },
+  "subtitle": {
+    "tr": "Camisinden yaklaşık altı yıl önce yapılan türbe",
+    "en": "A tomb built about six years before its mosque"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Azeb Bey",
+    "kitabe",
+    "hazire",
+    "Türk üçgenleri"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kocanaip Mahallesi",
+    "address": "Soğukçeşme Sokak No: 23",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "495"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 854 / M. 1449 (kitabe)",
+      "en": "AH 854 / AD 1449 (inscription)"
+    },
+    "start_year": 1449,
+    "end_year": 1450,
+    "hijri_year": 854,
+    "century": 15,
+    "basis": {
+      "tr": "Kapı üzerindeki Arapça kitabe H. 854 diyor; kitabın meali M. 1449 veriyor.",
+      "en": "The Arabic inscription over the door reads AH 854; the book's rendering gives AD 1449."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "495"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Azeb Bey bin Abdullah",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "495"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Kocanaip Mahallesi'nde, Azeb Bey'in camisine bitişik izlenimi veren türbesi. Kitabeye göre Azeb Bey önce türbeyi, yaklaşık altı yıl sonra camiyi yaptırmıştır.",
+    "en": "Azeb Bey's tomb in Kocanaip Neighborhood, which looks adjacent to his mosque. According to the inscription he built the tomb first and the mosque about six years later."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve hazire",
+        "en": "Location and graveyard"
+      },
+      "body": {
+        "tr": "Türbe, cami yapısına çok yakın inşa edilmiş ve adeta onunla bitişik izlenimi vermektedir. Türbeye ait hazire geniş bir alan kaplar. Cephelerinde sekiz pencere vardır; duvardan kubbeye geçiş Türk üçgenleriyle sağlanır.",
+        "en": "The tomb was built very close to the mosque and gives the impression of being adjacent to it. Its graveyard covers a large area. It has eight windows on its façades and the transition from walls to dome is made with Turkish triangles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "495"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe ve inşa sırası",
+        "en": "Inscription and construction order"
+      },
+      "body": {
+        "tr": "Kitabedeki tarihe göre Azeb Bey önce türbeyi, yaklaşık altı yıl sonra camisini yaptırmıştır. Genellikle önce camilerin, ardından türbelerin yapıldığı düşünüldüğünde bu alışılmışın dışında bir sıralamadır.",
+        "en": "According to the date on the inscription, Azeb Bey first built the tomb and about six years later the mosque. Since mosques were generally built first and tombs afterwards, this is an unusual order."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "495"
+        }
+      ]
+    },
+    {
+      "id": "mezarlar",
+      "order": 3,
+      "title": {
+        "tr": "Mezar taşları",
+        "en": "Gravestones"
+      },
+      "body": {
+        "tr": "Türbede Azeb Bey'in oğlu Turahan Bey ile Abdulvahhab oğlu Mehmet Bey'e ait mezar taşları vardır; Azeb Bey'e ait taş günümüze ulaşmamıştır.",
+        "en": "The tomb contains gravestones of Turahan Bey, son of Azeb Bey, and Mehmet Bey, son of Abdulvahhab. No stone of Azeb Bey has survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "495"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Yapı ayrıntıları ve bugün",
+        "en": "Details and present state"
+      },
+      "body": {
+        "tr": "Kapı aynalığında altı köşeli tuğla süslemeler vardır. Yapının döşeme seviyesinin altı moloz taşla örülmüştür. Türbe bakımlı durumdadır ve ziyarete açıktır.",
+        "en": "There are hexagonal brick decorations on the door panel. The part below floor level is built of rubble stone. The tomb is well maintained and open to visits."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "495"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Cephelerdeki pencere sayısı",
+        "en": "Windows on the façades"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "495"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Azeb Bey bin Abdullah",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Turahan Bey",
+      "role": {
+        "tr": "Azeb Bey'in oğlu; mezar taşı türbede",
+        "en": "Son of Azeb Bey; gravestone in the tomb"
+      }
+    },
+    {
+      "name": "Mehmet Bey bin Abdulvahhab",
+      "role": {
+        "tr": "Mezar taşı türbede",
+        "en": "Gravestone in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Türbe kapısı üzerinde",
+        "en": "Above the tomb door"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Emâre binâi’d-dâri’l-âhireti hâzihi’l-imâreti’ş-şerîfeti mefharu’l-ümerâi ve’l-ekâbir Azeb Bey bin Abdullah li-seneti erbâe ve hamsîne ve semânie mi’e.",
+      "translation": {
+        "tr": "Bu şerefli yapının, yani ahiret yurdunun (türbenin) inşasını, emirler ve büyükler arasında öne çıkan Abdullah oğlu Azeb Bey, M. 1449 yılında yaptırmıştır.",
+        "en": "The construction of this honorable structure, that is, the house of afterlife (mausoleum), was commissioned by Abdullah's son Azeb Bey, who was prominent among the emirs and elders, in AD 1449."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 854,
+        "gregorian": "1449"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "495"
+        }
+      ],
+      "note": {
+        "tr": "Kitabenin sonunda '(H. 854)' notu var.",
+        "en": "The inscription is followed by the note '(AH 854)'."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1449,
+      "date": null,
+      "hijri": "854",
+      "type": "construction",
+      "title": {
+        "tr": "Türbe yaptırıldı",
+        "en": "Tomb built"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "495"
+        }
+      ]
+    },
+    {
+      "id": "cami-insa",
+      "year": 1455,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Azeb Bey Camii yaptırıldı (türbeden yaklaşık altı yıl sonra)",
+        "en": "Azeb Bey's mosque built (about six years after the tomb)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "495"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-azeb-bey-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Aynı banî Azeb Bey'in, türbeden yaklaşık altı yıl sonra yaptırdığı ve türbeye çok yakın duran cami.",
+        "en": "The mosque Azeb Bey built about six years after the tomb, standing very close to it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "495"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Azeb Bey Türbesi, camiye çok yakın duran, kubbeli bir yapıdır. Cephelerinde sekiz pencere vardır; duvardan kubbeye geçiş Türk üçgenleriyle sağlanmıştır. Kapı aynalığında altı köşeli tuğla süslemeler bulunur; kapının üzerinde Arapça bir kitabe yer alır. Çevresinde geniş bir hazire uzanır.",
+      "en": "Azeb Bey Tomb is a domed building standing very close to the mosque. It has eight windows on its façades and Turkish triangles carry the dome. The door panel has hexagonal brick decorations and an Arabic inscription above the door. A large graveyard surrounds it."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-azeb-bey-turbesi/p006-1.jpg",
+        "original_name": "ERD06562 kopya-2.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "495"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Azeb Bey Türbesi'nin tuğla-taş cephesi",
+        "en": "Brick-and-stone front of Azeb Bey Tomb"
+      },
+      "alt": {
+        "tr": "Almaşık tuğla ve taş örgülü, kırmızımsı iki katlı bir türbe cephesi. Önünde yeşil tenteli bir saçak, kapı ve ızgaralı pencereler vardır.",
+        "en": "A reddish tomb front of alternating brick and stone courses. A green awning, a door and grilled windows are in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-azeb-bey-turbesi/p006-2.jpg",
+        "original_name": "ERD06566 kopya.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "495"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbe içindeki ahşap sandukalar",
+        "en": "Wooden sarcophagi inside the tomb"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla duvarlı, beyaz kubbeli odada koyu kahverengi ahşap üç sanduka yer alır. Zemin turuncu fayanstır; ızgaralı pencerelerden ışık girer.",
+        "en": "In a room with red brick walls and a white dome stand three dark brown wooden sarcophagi. The floor is orange tile and light enters through grilled windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-azeb-bey-turbesi/p006-3.jpg",
+        "original_name": "ERD06577 kopya.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "495"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Duvardaki mermer kitabe",
+        "en": "Marble inscription on the wall"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş duvarda sivri kemerli bir niş içinde kare, beyaz mermer bir kitabe levhası var. Levhada yazı satırları işlenmiştir.",
+        "en": "In the brick-and-stone wall, a square white marble inscription panel is set in a pointed-arch niche. Lines of script are carved on it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

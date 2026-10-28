@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-kestel-vani-mehmed-efendi-kulliyesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Kestel",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Külliyenin han ve dükkânlarının, medrese/imaret/mektebin ayrı kaydı yok: günümüze ulaşmamış ve kitapta ayrı başlıkları yok.",
+      "Vakfedilen Kestel hamamının 'Eski (Vanî Mehmed Şifa) Hamamı' ile aynı yapı olduğu kitapta açıkça söylenmiyor; hamam kaydı parent_id olmadan bırakıldı.",
+      "Ada ve Koyun Hisar köylerindeki vakıf mülklerinin ilçesi kitapta yok.",
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "death_date",
+        "note": "Türkçe biyografide (s. 555) Vanî Mehmed Efendi'nin vefatı 10 Ekim 1685; türbedeki ayak taşında (s. 562) 'H. 13 Zilkade 1096 / M. 11 Ekim 1685' yazıyor. Bir günlük fark var; her iki değer de korundu."
+      },
+      {
+        "field": "timeline[vani-vefat].date",
+        "note": "1685-10-10 Türkçe biyografiden alındı; ayak taşı 11 Ekim 1685 diyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Vanî Mehmed Efendi Külliyesi (Kestel Külliyesi)",
+    "en": "Vanî Mehmed Efendi Complex (Kestel Complex)"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "külliye",
+    "Vanî Mehmed Efendi",
+    "IV. Mehmed"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Kestel",
+    "neighborhood": "Kale Mahallesi",
+    "address": "Cuma Caddesi, No:11",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "554-557"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.200328,
+      "lng": 29.213046,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-kestel-vani-mehmed-efendi-camii-haziresi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1084 / M. 1673",
+      "en": "AH 1084 / AD 1673"
+    },
+    "start_year": 1673,
+    "end_year": 1673,
+    "hijri_year": 1084,
+    "century": 17,
+    "basis": {
+      "tr": "Cami giriş kapısı kitabesi ve 1673 tarihli vakfiye",
+      "en": "Mosque entrance inscription and the 1673 waqf deed"
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "555-557"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Vanî Mehmed Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "554-555"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Vanî Mehmed Efendi Vakfı (Kestel Külliyesi vakfiyesi)",
+    "deed": {
+      "date_display": "1673",
+      "excerpt": {
+        "tr": "Cenâb-ı Hakk’ın fazlu keremiyle bana ihsan buyurduğu helal malım ile Bursa Livası köylerinden Kestel köyünde, müminlerin farz namazlarını, cuma ve bayram namazlarını eda edebilmeleri için bir cami-i şerif inşa ettirdim.",
+        "en": "With my lawful wealth, which God Almighty bestowed upon me through His gracious generosity, I built a mosque in the village of Kestel, one of the villages in the District of Bursa, so that believers could perform their obligatory prayers, Friday prayers, and Eid prayers."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "556-557"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "İmaret, medresede okuyan öğrencilere yemek sağlayacak, artan yemekler yoksullara dağıtılacaktır. Bu şartlar için Kestel köyünde bir han, bir hamam, altı dükkân ve bir bahçe; Ada köyünde bir bahçe ve bir hamam; Koyun Hisar köyünde bir mera vakfedilmiştir.",
+      "en": "The imaret would provide meals for students at the madrasa and surplus food would go to the poor. To ensure this, a han, a bathhouse, six shops and a garden in Kestel village, a garden and a bathhouse in Ada village and a pasture in Koyun Hisar village were endowed."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "555-557"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Vanî Mehmed Efendi'nin kendi imkânlarıyla Kestel'de yaptırdığı; cami, hamam, han, altı dükkân, bahçe, imarethane ve yedi odalı ilim evinden oluşan külliye. Cami, hazire ve türbe günümüze ulaşmıştır; medrese, imaret, mektep, han ve dükkânlar ulaşmamıştır.",
+    "en": "The complex built by Vanî Mehmed Efendi with his own resources in Kestel, comprising the mosque, a bathhouse, a large caravanserai, six shops, a garden, an imaret and a seven-room house of learning. The mosque, graveyard and tomb survive; the madrasa, imaret, school, han and shops do not."
+  },
+  "sections": [
+    {
+      "id": "kulliye",
+      "order": 1,
+      "title": {
+        "tr": "Külliye ve Yerleşimi",
+        "en": "The Complex and Its Layout"
+      },
+      "body": {
+        "tr": "Külliye Vanî Mehmed Camii, bir hamam, büyük bir han, altı dükkân, geniş bir bahçe, bir imarethane ve yedi odalı bir ilim evinden oluşur. Vakfiyeye göre caminin bitişiğinde biri medrese biri zaviye iki kısımlı bir bina, içinde dershane ve yemek pişirilen ayrı bir bölüm yer alır. Günümüze ulaşmayan yapıların caminin doğusunda güneyden kuzeye medrese, imaret ve mektep olarak dizildiği, han ve dükkânların caminin batısında bugünkü meydanın çevresinde bulunduğu eski fotoğraflardan anlaşılmaktadır.",
+        "en": "The complex comprised the Vanî Mehmed Mosque, a bathhouse, a large caravanserai, six shops, a large garden, an imaret and a seven-room house of learning. The waqf deed describes a building adjoining the mosque with a madrasa and a zawiya, a classroom and a separate cooking section. Old photographs show the vanished structures lined up as madrasa, imaret and school from south to north east of the mosque, and the han and shops west of it around today's square."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "555-557"
+        }
+      ]
+    },
+    {
+      "id": "vani",
+      "order": 2,
+      "title": {
+        "tr": "Vanî Mehmed Efendi",
+        "en": "Vanî Mehmed Efendi"
+      },
+      "body": {
+        "tr": "IV. Mehmed döneminde 'Hünkâr Şeyhi' unvanıyla tanınan, Peygamber soyundan bir seyyid olan Vanî Mehmed Efendi, Van'ın Hoşap ilçesinden geldiği için 'Vanî' lakabıyla anılmıştır. Tebriz, Gence ve Karabağ'da öğrenim görmüş, Erzurum'da Köprülüzâde Fâzıl Ahmed Paşa'nın takdirini kazanmış, İstanbul'a davet edilip IV. Mehmed'e tanıtılmıştır. II. Mustafa'nın hocası olmuş, Yeni Cami minberinden ilk vaazı veren vaiz olarak bilinmektedir. İstanbul Vaniköy'de ve Kestel'de camiler yaptırmıştır. 1682'deki Viyana kuşatmasının ardından Kestel çiftliğine çekilmiş ve 10 Ekim 1685'te orada vefat etmiş, kendi yaptırdığı caminin içine defnedilmiştir.",
+        "en": "A sayyid descended from the Prophet, known as 'Sultan's Shaykh' under Mehmed IV, he was called 'Vanî' as he came from the Hoşap district of Van. He studied in Tabriz, Ganja and Karabakh, won the admiration of Köprülüzâde Fâzıl Ahmed Paşa in Erzurum, and was invited to Istanbul and introduced to Mehmed IV. He tutored Mustafa II and is known as the first preacher from the minbar of the Yeni Mosque. He built mosques in Vaniköy, Istanbul, and in Kestel. After the 1682 siege of Vienna he retired to his farm in Kestel and died there on 10 October 1685, buried in the mosque he built."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "554-555"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dukkan_sayisi",
+      "label": {
+        "tr": "Dükkân sayısı",
+        "en": "Number of shops"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "555"
+        }
+      ]
+    },
+    {
+      "key": "ilim_evi_oda_sayisi",
+      "label": {
+        "tr": "İlim evi oda sayısı",
+        "en": "Rooms of the house of learning"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "555-556"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Vanî Mehmed Efendi",
+      "role": {
+        "tr": "Banî; Hünkâr Şeyhi",
+        "en": "Founder; Sultan's Shaykh"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1673",
+      "year": 1673,
+      "date": null,
+      "hijri": "1084",
+      "type": "construction",
+      "title": {
+        "tr": "Cami ve külliyenin yapımı / vakfiye tarihi",
+        "en": "Mosque and complex built / waqf deed date"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "555-557"
+        }
+      ]
+    },
+    {
+      "id": "vani-vefat",
+      "year": 1685,
+      "date": "1685-10-10",
+      "hijri": "13 Zilkade 1096",
+      "type": "record",
+      "title": {
+        "tr": "Vanî Mehmed Efendi'nin vefatı",
+        "en": "Death of Vanî Mehmed Efendi"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "555, 562"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliyenin ayakta kalan unsurları cami, kuzeybatısındaki hazire ve caminin son cemaat yerinin batı kenarındaki türbedir. Medrese, imaret, mektep, han ve dükkânlar günümüze ulaşmamıştır.",
+      "en": "The surviving parts are the mosque, the graveyard to its northwest and the tomb at the west edge of the mosque's narthex. The madrasa, imaret, school, han and shops have not survived."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

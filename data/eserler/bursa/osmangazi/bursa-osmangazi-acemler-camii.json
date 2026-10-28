@@ -1,0 +1,295 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-acemler-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 232) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Reyhan Paşa'nın Bursa'daki hanı, hamamı ve cami yanındaki imareti için kitapta isim verilmiyor; hedef kayıt bağlanamadı.",
+      "Yenişehir'deki zaviye, imaret ve türbe için kitapta isim yok.",
+      "Tam inşa yılı kitapta yok (yalnızca 15. yüzyıl); vakfiye/kitabe aranmalı.",
+      "Kitapta caminin onarım/restorasyon geçmişi yer almıyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.neighborhood",
+        "note": "Kitap adresi 'Reyhan Mahallesi' olarak verir; ilçe adı metinde geçmez, Osmangazi bölümü olduğundan ilçe Osmangazi alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Acemler Camii",
+    "en": "Acemler Mosque"
+  },
+  "subtitle": {
+    "tr": "Reyhan Paşa'nın yaptırdığı, Acemlerin Muharrem ayinleriyle anılan cami",
+    "en": "Mosque of Reyhan Paşa, known through the Muharram gatherings of the Acemler"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "harem ağası",
+    "dikdörtgen plan",
+    "ahşap çatı",
+    "tuğla minare",
+    "Reyhan Paşa"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Reyhan",
+    "address": "Haşim İşcan Caddesi, Cami Çıkmazı, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "232"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.188286,
+      "lng": 29.064028,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "15. yüzyıl",
+      "en": "15th century"
+    },
+    "start_year": 1401,
+    "end_year": 1500,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, caminin 15. yüzyılda II. Murad'ın harem ağalarından Reyhan Paşa tarafından yaptırıldığını belirtir; kesin yıl verilmez.",
+      "en": "The book says the mosque was built in the 15th century by Reyhan Paşa, one of Murad II's harem eunuchs; no exact year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "232"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Reyhan Paşa (Sultan II. Murad'ın harem ağalarından)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "232"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sultan II. Murad'ın harem ağalarından Reyhan Paşa'nın 15. yüzyılda yaptırdığı, ahşap çatılı dikdörtgen planlı cami. Acemlerin Muharrem ayinlerini yaptığı hanenin aynı mahallede olması nedeniyle halk arasında 'Acemler Camii' diye anılmıştır.",
+    "en": "A rectangular, timber-roofed mosque built in the 15th century by Reyhan Paşa, one of Murad II's harem eunuchs. It is known as 'Acemler Mosque' because the house where the Acemler (Persians) held Muharram rituals stood in the same neighborhood."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Adı",
+        "en": "Overview and Name"
+      },
+      "body": {
+        "tr": "Acemler Camii, Reyhan Mahallesi, Haşim İşcan Caddesi, Cami Çıkmazı, No: 2'de yer almaktadır. Cami, Sultan II. Murad'ın harem ağalarından Reyhan Paşa tarafından 15. yüzyılda inşa ettirilmiştir. Acemlerin Muharrem ayinlerini icra ettikleri hanenin aynı mahallede bulunması ve bu camide bir araya gelmeleri nedeniyle halk arasında \"Acemler Camii\" adıyla anılmıştır.",
+        "en": "Acemler Mosque is located in Reyhan District, Haşim İşcan Street, Cami Cul-de-Sac, No. 2. It was built in the 15th century by Reyhan Paşa, one of the harem eunuchs of Sultan Murad II. It is known among the public as the \"Acemler Mosque\" because the house where the Acemler (Persians) performed their Muharram rituals was in the same neighborhood and they gathered in this mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "id": "bani",
+      "order": 2,
+      "title": {
+        "tr": "Banisi Reyhan Paşa",
+        "en": "The Founder Reyhan Paşa"
+      },
+      "body": {
+        "tr": "Reyhan Paşa, Bursa'da bir han ve hamam inşa ettirmiş, caminin yanına bir imaret yaptırmış, ayrıca Yenişehir'de bir zaviye ve bir imaret daha yaptırarak hayır faaliyetlerini sürdürmüştür. Vefatının ardından Yenişehir'deki türbesine defnedilmiştir. Türbe zamanla yıkılmışsa da kendisine ait zarif mezar taşı günümüze ulaşmıştır.",
+        "en": "Reyhan Paşa had a han and a bathhouse built in Bursa and an imaret next to the mosque, and continued his charitable activities with a further zawiya and almshouse in Yenişehir. After his death he was buried in his tomb in Yenişehir. The tomb was destroyed over time, but his elegant gravestone has survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami, 6,35 × 9,30 m iç ölçülerinde, dikdörtgen planlıdır ve ahşap çatısı kiremit ile kaplanmıştır. Beden duvarlarının kalınlığı 85 cm, son cemaat yerinin derinliği 4,25 m'dir. Kuzeydoğu köşede cami bünyesinde inşa edilen tuğla minare silindirik bir gövdeye sahiptir. Acemler Camii, Vakıflar Bölge Müdürlüğü tarafından koruma altına alınmıştır.",
+        "en": "The mosque has a rectangular plan with interior dimensions of 6.35 × 9.30 m and a wooden roof covered with tiles. The main walls are 85 cm thick and the narthex is 4.25 m deep. The brick minaret, built into the mosque in the northeast corner, has a cylindrical shaft. The mosque has been taken under protection by the Regional Directorate of Foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "232"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "6,35 × 9,30",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 85,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 4.25,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "232"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "232"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Reyhan Paşa",
+      "role": {
+        "tr": "Banî; II. Murad'ın harem ağası",
+        "en": "Founder; harem eunuch of Murad II"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Acemler Camii, Reyhan Mahallesi'nde bir çıkmaz sokaktadır. Dikdörtgen planlı, ahşap çatılı ve kiremit örtülü sade bir yapıdır; önünde derin bir son cemaat yeri bulunur. Kuzeydoğu köşesinde silindirik gövdeli bir tuğla minare yükselir.",
+      "en": "Acemler Mosque stands on a cul-de-sac in Reyhan Neighborhood. It is a plain rectangular building with a timber roof covered in tiles and a deep narthex in front. A brick minaret with a cylindrical shaft rises at the northeast corner."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-acemler-camii/p009-1.jpg",
+        "original_name": "DJI_20241007204410_0786_D-Edit.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "232"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Acemler Camii ve beyaz minare",
+        "en": "Acemler Mosque and its white minaret"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı caminin yanında beyaz boyalı yüksek bir minare duruyor. Ön cephede koyu ahşap kemerli pencereler, çevrede eski evler ve arkada tepeler var.",
+        "en": "A tile-roofed mosque with a tall white-painted minaret beside it. The front has dark wooden arched windows, with old houses around and hills behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-07"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,47 @@
+# SITE_ADDRESS: a domain (e.g. vagabonds.example.com) gets automatic HTTPS from Let's Encrypt;
+# ":80" serves plain HTTP on any host name or IP (no certificate).
+
+{
+	servers {
+		# Proxies whose X-Forwarded-For / Cf-Connecting-IP are believed. Default: none (a request
+		# from 127.0.0.1 inside this container never comes). Behind Cloudflare Tunnel (docs/deploy.md)
+		# every request arrives from cloudflared on a private address: set TRUSTED_PROXIES=private_ranges,
+		# so the API's rate limit counts visitors, not the tunnel. Only with the ports bound to 127.0.0.1;
+		# on a server, Docker may hand over clients from a private address too, and they could fake their IP.
+		trusted_proxies static {$TRUSTED_PROXIES:127.0.0.1/32}
+		client_ip_headers Cf-Connecting-IP X-Forwarded-For
+	}
+}
+
+{$SITE_ADDRESS::80} {
+	encode zstd gzip
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		X-Frame-Options DENY
+		Permissions-Policy "camera=(self), microphone=(), geolocation=(self)"
+		-Server
+	}
+
+	# API: /api/assets → api:3000/assets. Swagger UI at /api/docs.
+	handle_path /api/* {
+		request_body {
+			max_size 64KB
+		}
+		reverse_proxy api:3000
+	}
+
+	# Web app (Expo static export). Hashed bundles are cached for a year.
+	handle {
+		root * /srv/web
+		@hashed path /_expo/static/*
+		header @hashed Cache-Control "public, max-age=31536000, immutable"
+		# Asset details are rendered in the browser from the API, so the export has one shell
+		# page for all of them. Only one rewrite runs: a detail URL skips try_files below.
+		@assetDetail path_regexp ^/monuments/[^/]+/?$
+		rewrite @assetDetail "/monuments/[id].html"
+		try_files {path} {path}.html {path}/index.html /index.html
+		file_server
+	}
+}

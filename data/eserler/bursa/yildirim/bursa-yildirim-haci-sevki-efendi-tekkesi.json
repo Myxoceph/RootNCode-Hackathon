@@ -1,0 +1,590 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-haci-sevki-efendi-tekkesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 299-303) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Tekkenin kitapta verilen adresi 'Kurtoğlu Mahallesi'; mahalle adı kitapta başka bir yerde (Irgandı Köprüsü) 'Kurdoğlu' yazılıyor, doğru yazım teyit edilmeli.",
+      "Mezar taşı kitabesinin yazı türü ve Emir Sultan Mezarlığı'ndaki kabrin yeri kitapta yok; sahada teyit edilmeli.",
+      "Tekkenin güncel kullanım durumu (2019 sonrası) kaynakta belirsiz; güncel kaynaktan teyit edilmeli.",
+      "Yeşil Camii ile ilişki (Hacı Şevki Efendi imamlık yapmıştır; Mehmed Şevki Efendi hatlarıyla anılır) 'people' içinde; ilişki olarak bağlanmadı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap dergâha dönüştürmeyi H. 1268 / M. 1852, vakfiyeyi ise H. 1268 / M. 1851 tarihleriyle veriyor. Aynı Hicri yıl iki farklı Miladi yıla bağlanmış (H. 1268, Ekim 1851 - Ekim 1852'yi kapsar); iki değer de kaynakta yazıldığı gibi saklandı."
+      },
+      {
+        "field": "inscriptions[mezar-tasi-manzumesi]",
+        "note": "Türkçe ve İngilizce sayfalardaki manzume aynıdır; çeviri kitaptaki 'Mealen' / 'Translation' metninden alınmıştır. Çeşme beytinde Türkçe sayfada 'kor mu', İngilizce sayfada 'kormu' yazılmıştır (yalnızca yazım farkı)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Şevki Efendi Tekkesi",
+    "en": "Hacı Şevki Efendi Sufi Lodge"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şabaniye Tekkesi",
+      "en": "Şabaniye Sufi Lodge"
+    },
+    {
+      "tr": "Hacı Şevki Efendi (Şabaniye) Tekkesi",
+      "en": "Hacı Şevki Efendi (Şabaniye) Sufi Lodge"
+    }
+  ],
+  "type": "tekke",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "tekke",
+    "Şâbâniyye",
+    "Hacı Şevki Efendi",
+    "Kuşadalı Seyyid İbrahim Efendi",
+    "ahşap karkas",
+    "Geleneksel Sanatlar Merkezi",
+    "rekonstrüksiyon"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Kurtoğlu Mahallesi",
+    "address": "Namazgâh Caddesi, No: 25",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "299"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1268 / M. 1852 (dergâha dönüştürülme)",
+      "en": "AH 1268 / AD 1852 (converted into a lodge)"
+    },
+    "start_year": 1852,
+    "end_year": null,
+    "hijri_year": 1268,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap, satın alınan evin H. 1268 / M. 1852'de eklerle dergâh hâline getirildiğini yazar; vakfiye H. 1268 / M. 1851 tarihlidir.",
+      "en": "The book says the purchased house was turned into a lodge in AH 1268 / AD 1852 with additions; the endowment charter is dated AH 1268 / AD 1851."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "299-300"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Şevki Efendi",
+    "role": "banî (kurucu)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "299"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Es-Seyyid Eş-Şeyh el-Hâc Hâfız Mehmed Şevki Efendi ibn Osman Efendi vakfı",
+    "deed": {
+      "date_display": "H. 1268 / M. 1851 (Vakıflar İdaresi 1588 numaralı defter, s. 1)",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Yapı dergâh olarak kullanılacak; dinî ve tasavvufi eğitimin yanı sıra her cuma gecesi Halveti zikri icra edilecektir.",
+      "en": "The structure is to be used as a Sufi lodge; besides religious and mystical education, Halveti dhikr is to be performed every Friday night."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "300"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Şâbâniyye tarikatından Hacı Şevki Efendi'nin Namazgâh yokuşunda satın aldığı evi 1852'de dergâha çevirdiği tekke. Farsça dersleriyle uzun yıllar ilim merkezi olmuş, 1925'te tekkelerin kapatılmasına kadar şeyhlik görevleri sürmüştür. Bugünkü yapı 1997'de yıkılan binanın yeniden inşasıdır.",
+    "en": "A lodge founded when Hacı Şevki Efendi of the Şâbâniyye order turned a house bought on the Namazgah slope into a dervish lodge in 1852. It was a center of learning with its Persian lessons until the lodges were closed in 1925. The present building is a reconstruction of the one demolished in 1997."
+  },
+  "sections": [
+    {
+      "id": "kurulus",
+      "order": 1,
+      "title": {
+        "tr": "Kuruluş ve Hacı Şevki Efendi",
+        "en": "Foundation and Hacı Şevki Efendi"
+      },
+      "body": {
+        "tr": "Tekke, Şâbâniyye tarikatına mensup Hacı Şevki Efendi tarafından kurulmuştur. Kuşadalı Seyyid İbrahim Efendi'den ders almış, bu efendinin en çok mektup gönderdiği isimlerden biri olmuştur. Mürşidinden aldığı izinle Bursa'ya gelerek Namazgâh Yokuşu'ndaki bir evi satın almış ve burada ikamete başlamıştır. H. 1268 / M. 1852'de eve yaptığı ilavelerle yapıyı dergâh hâline getirmiş, Farsça dersler vermiş, dergâhı uzun yıllar ilim ve irfan merkezi yapmıştır; Yeşil Cami'de imamlık da yapmıştır. H. 1275 / M. 1858'de vefat etmiş, Emir Sultan Mezarlığı'nda \"Sancaktar Baba\" olarak anılan Nimetullah Efendi'nin kabrinin karşısına defnedilmiştir.",
+        "en": "The lodge was founded by Hacı Şevki Efendi, a member of the Şâbâniyye order, who took lessons from Kuşadalı Seyyid İbrahim Efendi, one of whose most frequent correspondents he was. Coming to Bursa with his guide's permission, he bought a house on the Namazgah slope and began to reside there. In AH 1268 / AD 1852 he turned it into a Sufi lodge by additions, gave lessons in Persian, made it a center of knowledge for many years, and also served as imam of the Green Mosque. He died in AH 1275 / AD 1858 and was buried opposite the grave of Nimetullah Efendi, known as \"Sancaktar Baba\", in the Emir Sultan Cemetery."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "299"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-ve-seyhler",
+      "order": 2,
+      "title": {
+        "tr": "Vakfiye ve Şeyhler",
+        "en": "Endowment Charter and Sheikhs"
+      },
+      "body": {
+        "tr": "Vakıflar İdaresi'nin 1588 numaralı defterinin 1. sayfasında Hacı Şevki Efendi adına H. 1268 / M. 1851 tarihli bir vakfiye bulunur; buna göre yapı dergâh olarak kullanılacak, dinî ve tasavvufi eğitimin yanı sıra her cuma gecesi Halveti zikri yapılacaktır. Hacı Şevki Efendi'den sonra damadı Kütahyalı İbrahim Efendi (v. 1888), Yeşil Cami ve Yıldırım Camii duvarlarındaki hatlarıyla tanınan hattat Mehmed Şevki Efendi (v. 1908), Şeyh Süleyman Bâkî Efendi (v. 1918) ile oğulları Mehmed Şevki ve Necmeddin Efendi, 1925'te tekkelerin kapatılmasına kadar irşat görevini sürdürmüştür.",
+        "en": "Page 1 of Register No. 1588 of the Foundations Administration holds an endowment charter dated AH 1268 / AD 1851 in Hacı Şevki Efendi's name; the structure was to be a Sufi lodge with religious and mystical education and Halveti dhikr every Friday night. After him his son-in-law İbrahim Efendi of Kütahya (d. 1888), the calligrapher Mehmed Şevki Efendi (d. 1908), known for his calligraphy on the walls of the Green Mosque and Yıldırım Mosque, Shaykh Süleyman Bâkî Efendi (d. 1918) and his sons Mehmed Şevki and Necmeddin Efendi continued the guidance duties until the lodges were closed in 1925."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300-301"
+        }
+      ]
+    },
+    {
+      "id": "sonraki-donem",
+      "order": 3,
+      "title": {
+        "tr": "Kapanıştan Bugüne",
+        "en": "From Closure to Today"
+      },
+      "body": {
+        "tr": "Tekkelerin kapatılmasından sonra yapı uzun yıllar konut olarak kullanılmış, 1997'de bakımsızlık nedeniyle yıkılmıştır. 2006'da başlatılan rekonstrüksiyon projesinde 2007'de uygulamaya geçilmiş, süreç 2010'da tamamlanmıştır. Büyükşehir Belediyesi ile iş birliği sonucu 2011'den itibaren \"Geleneksel Sanatlar Merkezi\" olarak hizmet vermiş, 2019'da Vakıflar İdaresi ile yapılan sözleşme feshedilince sahipsiz kalmıştır. Sonradan çeşitli sivil toplum kuruluşlarına tahsis edilse de beklenen işlevsellik sağlanamamış, yapı yıpranmaya başlamıştır.",
+        "en": "After the lodges were closed, the building served as a residence for many years and was demolished in 1997 due to lack of maintenance. Implementation of the reconstruction project begun in 2006 started in 2007 and was completed in 2010. Through cooperation with the Metropolitan Municipality it served as a \"Traditional Arts Center\" from 2011; when the contract with the Foundations Administration was terminated in 2019 it was left virtually ownerless. It was later allocated to civil society organizations but the expected functionality was not achieved and it began to deteriorate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300-302"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Ahşap karkaslı, kırma çatılı ve kiremit örtülü yapı kompleksi, aynı avluya bakan selamlık, semahane-tevhidhane ve harem bölümlerinden oluşur. Giriş, Namazgâh Caddesi üzerindeki çift kanatlı ahşap kapıdandır; girişte solda, merdivenli orta sofaya açılan iki selamlık odası yer alır. Çift kanatlı ahşap kapıdan girilen tevhidhane-semahane bölümü iki katlıdır. Batıda, yan sokaktan ayrı girişi olan iki katlı harem kısmı zaman içinde en çok değişikliğe uğrayan alandır. 2007'deki ihya çalışmalarında selamlık dışındaki birimler birbiriyle geçişli hâle getirilmiştir. Bugünkü yapı özgün mimarisinden iz taşımaz; yalnızca yol kenarında kime ait olduğu bilinmeyen Zeynî taşlı tek bir mezar günümüze ulaşmıştır. Eski fotoğraflarda görülen, giriş kapısının iki yanında selamlık avlusuna bakan iki çeşme tamamen ortadan kalkmıştır; bu çeşmelerin aynalarında vazo formunda istiflenmiş müsennâ girift sülüsle besmeleler bulunduğu bilinmektedir.",
+        "en": "The wooden-framed, hipped-roof, tiled building complex consists of selamlık, semahane-tevhidhane and harem sections facing the same courtyard. It is entered through a double-leafed wooden door on Namazgah Street; on the left are two selamlık rooms opening onto a central hall with stairs. The tevhidhane-semahane section is two-storey. To the west, the two-storey harem section with a separate entrance from the side street has changed the most. In the 2007 works the units other than the selamlık were made interconnected. The present building bears no trace of the original architecture; only a single grave with Zeynî stones, owner unknown, survives by the road. The two fountains on both sides of the entrance gate facing the selamlık courtyard have disappeared; their back panels are known to have had Basmalas in intricate muthanna Thuluth arranged in a vase form."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "302-303"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "cesme-beyti",
+      "title": {
+        "tr": "Çeşme Aynasındaki Beyit",
+        "en": "The Couplet on a Fountain Panel"
+      },
+      "body": {
+        "tr": "Rivayete göre kaybolan çeşmelerden birinin mermer aynasında \"Dergâh-ı Hazret-i Şabân'a gelen atşânı kandırır; Pîr-i tarîkat ânı hiç kor mu susuz\" beyti okunurmuş. Kaynak bunu rivayet olarak aktarır.",
+        "en": "According to legend, a couplet could be read on the marble back panel of one of the vanished fountains: \"He who comes to the Dergah of Hazret-i Şabân quenches his thirst; the head of the order never lets him remain thirsty.\""
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "303"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "tevhidhane_kat",
+      "label": {
+        "tr": "Tevhidhane-semahane kat sayısı",
+        "en": "Floors of the tevhidhane-semahane"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "303"
+        }
+      ]
+    },
+    {
+      "key": "harem_kat",
+      "label": {
+        "tr": "Harem kat sayısı",
+        "en": "Floors of the harem section"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "303"
+        }
+      ]
+    },
+    {
+      "key": "selamlik_oda",
+      "label": {
+        "tr": "Girişteki selamlık odası sayısı",
+        "en": "Selamlık rooms at the entrance"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "302-303"
+        }
+      ]
+    },
+    {
+      "key": "yikilis_yili",
+      "label": {
+        "tr": "Yıkılış yılı",
+        "en": "Year of demolition"
+      },
+      "value": 1997,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300-301"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Şevki Efendi",
+      "role": {
+        "tr": "Kurucu; Şâbâniyye şeyhi, Farsça hocası, Yeşil Cami imamı",
+        "en": "Founder; Şâbâniyye sheikh, Persian teacher, imam of the Green Mosque"
+      }
+    },
+    {
+      "name": "Kuşadalı Seyyid İbrahim Efendi",
+      "role": {
+        "tr": "Hacı Şevki Efendi'nin mürşidi",
+        "en": "Spiritual guide of Hacı Şevki Efendi"
+      }
+    },
+    {
+      "name": "Nimetullah Efendi (Sancaktar Baba)",
+      "role": {
+        "tr": "Emir Sultan Mezarlığı'nda kabri Hacı Şevki Efendi'nin kabrinin karşısında",
+        "en": "Buried opposite Hacı Şevki Efendi in the Emir Sultan Cemetery"
+      }
+    },
+    {
+      "name": "Safvet Efendi",
+      "role": {
+        "tr": "Mezar taşı manzumesinin yazarı",
+        "en": "Author of the tombstone poem"
+      }
+    },
+    {
+      "name": "Kütahyalı İbrahim Efendi",
+      "role": {
+        "tr": "Damat; Hacı Şevki Efendi'den sonra tekkede görev yaptı (v. 1888)",
+        "en": "Son-in-law; served at the lodge after him (d. 1888)"
+      }
+    },
+    {
+      "name": "Mehmed Şevki Efendi",
+      "role": {
+        "tr": "Hattat; tekkede görev yaptı (v. 1908)",
+        "en": "Calligrapher; served at the lodge (d. 1908)"
+      }
+    },
+    {
+      "name": "Şeyh Süleyman Bâkî Efendi",
+      "role": {
+        "tr": "Tekkede görev yaptı (v. 1918)",
+        "en": "Served at the lodge (d. 1918)"
+      }
+    },
+    {
+      "name": "Mehmed Şevki ve Necmeddin Efendi",
+      "role": {
+        "tr": "Süleyman Bâkî Efendi'nin oğulları; 1925'e kadar görev yaptılar",
+        "en": "Sons of Süleyman Bâkî Efendi; served until 1925"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mezar-tasi-manzumesi",
+      "location": {
+        "tr": "Hacı Şevki Efendi'nin mezar taşı (Emir Sultan Mezarlığı); bina üzerinde değil",
+        "en": "Tombstone of Hacı Şevki Efendi (Emir Sultan Cemetery); not on the building"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Lâ mevcûde illâ HÛ\nHacı Şevkî Efendi mahv idüp cismin Muharremde\nİnâyet-hâh-ı sultân-ı şehîd-i Kerbelâ oldı\nMukaddem bi’l-inâbe Kuşadalı’dan görüp irşâd\nO ârif “en temûtû” âşiyânında hümâ oldı\nİderdi neşr-i ilm-i Fârisî dergâh-ı pâkinde\nGöçüp halvet-nişîn-i tekye-i dârü’l-bekâ oldı\nO pîrin himmetiyle kesb-i irfân eylemişlerdi\nVefâtıyla Burûsa halkının kârı bükâ oldı\nOla mahşerde hem-nâmı Muhammed zâtına şâfî\nBu maksad şeyh ü dervişâna aksa’l-mültecâ oldı\nOkı târîh-i fevtin yazdı Safvet eşk-i rahmetle\nHacı Şevki Efendi vâsıl-ı kurb-i Hudâ oldı\nFî 7 Muharrem sene 1275 / M. 1858.",
+      "translation": {
+        "tr": "Allah’tan başka gerçek varlık yoktur.\nHacı Şevkî Efendi, Muharrem ayında bedenini fâni kılıp yokluk makamına ulaştı.\nKerbela’nın şehit sultanından (Hz. Hüseyin) inayet dileyen biri oldu.\nKuşadalı’dan manevi izin alarak irşada erişti.\n“Ölmeden önce ölünüz” sırrını yaşayarak manevi yüceliğe ulaştı.\nDergâhında Farsça ilim yayardı.\nBu dünyadan göçüp ebedî yurttaki tekkede inzivaya çekildi.\nOnun sayesinde birçok kişi irfan sahibi oldu.\nVefatı Bursa halkı için gözyaşı ve matem sebebi oldu.\nMahşer günü Peygamber Efendimiz’e şefaatçi olması temenni edilir.\nBu dua, şeyhlerin ve dervişlerin en büyük sığınma umudu oldu.\nSafvet, vefat tarihini rahmet gözyaşlarıyla böyle yazdı:\nHacı Şevki Efendi Allah’a yakınlığa erişti.\n7 Muharrem 1275 / Miladi 1858.",
+        "en": "There is no real being other than Allah.\nHacı Şevki Efendi made his body perishable in the month of Muharram and reached the station of non-existence.\nHe became someone begging for help from the sultan of the martyrs of Karbala (Hazrat Hüseyin).\nHe received spiritual permission and guidance from Kuşadalı.\nHe attained spiritual greatness by living the secret of 'Die before you die.'\nHe disseminated Persian knowledge in his lodge.\nHe passed away from this world and retired into seclusion in the Sufi lodge in the eternal homeland.\nThanks to him, many people became wise.\nHis death was a cause for tears and mourning for the people of Bursa.\nHe is wished for assistance from our Prophet on the Day of Judgment.\nThis prayer became the greatest hope of refuge for shaykhs and dervishes.\nSafvet wrote the date of his death with tears of mercy:\nHacı Şevki Efendi attained closeness to Allah.\n7 Muharram 1275 / Gregorian 1858."
+      },
+      "author": "Safvet Efendi",
+      "date": {
+        "hijri_year": 1275,
+        "gregorian": "1858"
+      },
+      "note": {
+        "tr": "Kitap, kitabenin hangi yazı türüyle yazıldığını belirtmez; dil Osmanlı Türkçesi (Arapça ve Farsça ifadelerle) olarak işaretlendi, kaynakta dil adı geçmez.",
+        "en": "The book does not say the script; language marked Ottoman Turkish (with Arabic and Persian phrases), not named in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300-301"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vakfiye-1851",
+      "year": 1851,
+      "date": null,
+      "hijri": "1268",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi",
+        "en": "Endowment charter issued"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300"
+        }
+      ],
+      "note": {
+        "tr": "Vakıflar İdaresi 1588 numaralı defter, s. 1.",
+        "en": "Foundations Administration Register No. 1588, p. 1."
+      }
+    },
+    {
+      "id": "dergah-1852",
+      "year": 1852,
+      "date": null,
+      "hijri": "1268",
+      "type": "construction",
+      "title": {
+        "tr": "Ev, eklerle dergâh hâline getirildi",
+        "en": "House turned into a lodge with additions"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "299"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1858",
+      "year": 1858,
+      "date": null,
+      "hijri": "7 Muharrem 1275",
+      "type": "record",
+      "title": {
+        "tr": "Hacı Şevki Efendi vefat etti",
+        "en": "Death of Hacı Şevki Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "299-300"
+        }
+      ]
+    },
+    {
+      "id": "kapanis-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tekkelerin kapatılması; dergâh görevi sona erdi",
+        "en": "Closure of the lodges; lodge duties ended"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300"
+        }
+      ]
+    },
+    {
+      "id": "yikilis-1997",
+      "year": 1997,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Bakımsızlık nedeniyle yıkıldı",
+        "en": "Demolished due to lack of maintenance"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300-301"
+        }
+      ]
+    },
+    {
+      "id": "rekonstruksiyon-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Rekonstrüksiyon tamamlandı (proje 2006, uygulama 2007)",
+        "en": "Reconstruction completed (project 2006, works 2007)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300-301"
+        }
+      ]
+    },
+    {
+      "id": "sanat-merkezi-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "\"Geleneksel Sanatlar Merkezi\" olarak hizmete başladı",
+        "en": "Began serving as a \"Traditional Arts Center\""
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "300-302"
+        }
+      ]
+    },
+    {
+      "id": "sozlesme-2019",
+      "year": 2019,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıflar İdaresi ile sözleşme feshedildi",
+        "en": "Contract with the Foundations Administration terminated"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "302"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tekke, Namazgâh Caddesi üzerinde, aynı avluya bakan selamlık, semahane-tevhidhane ve harem bölümlerinden oluşan ahşap karkaslı, kırma çatılı ve kiremit örtülü bir yapı kompleksidir. Girişte çift kanatlı ahşap kapıdan geçilir; solda merdivenli orta sofaya açılan iki selamlık odası vardır. Tevhidhane-semahane ve batıdaki harem bölümü iki katlıdır.",
+      "en": "The lodge is a wooden-framed, hipped-roof, tiled complex on Namazgah Street made up of selamlık, semahane-tevhidhane and harem sections facing one courtyard. A double-leafed wooden door leads in; on the left two selamlık rooms open onto a central hall with stairs. The tevhidhane-semahane and the harem section to the west are two-storey."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-haci-sevki-efendi-tekkesi/p024-3.jpg",
+        "original_name": "06 ERD04905 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "303"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sedirli ve ahşap tavanlı oda",
+        "en": "Room with benches and wooden ceiling"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı, beyaz duvarlı odada üç duvar boyunca alçak sedirler uzanır. Pencerelerde beyaz tül perdeler, zeminde ahşap döşeme vardır.",
+        "en": "A white-walled room with a wooden ceiling and low built-in benches along three walls. White lace curtains hang at the windows and the floor is wooden."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-28"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

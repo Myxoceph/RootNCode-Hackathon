@@ -1,0 +1,644 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ipek-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Ticari Yapılar",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 643-647) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
+      "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
+      "Hedef 'bursa-yildirim-yesil-kulliyesi': kitapta ilçe adı yok; ilçe, mevcut Ulucami kaydındaki 'bursa-yildirim-yesil-camii' hedefinden alındı, doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap bir yerde 'özgün yapıdan yalnızca batı bölümü ayakta', bir sonraki paragrafta 'yalnızca batı cephesi özgün özelliklerini koruyor' der. Bölüm ile cephe farkı korunarak aktarıldı."
+      },
+      {
+        "field": "sections[baglam-ve-plan]",
+        "note": "Ana kapının ilk yapımda taç kapı olması 'mümkündür' diye geçer; bölüm 'probable' işaretlendi."
+      },
+      {
+        "field": "founder",
+        "note": "Metin hanı 'Çelebi Mehmed tarafından inşa ettirilmiş' ve mimarını Hacı İvaz Paşa olarak verir; banî Çelebi Mehmed olarak yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İpek Hanı",
+    "en": "İpek Han"
+  },
+  "subtitle": {
+    "tr": "Yeşil Külliye ile eş zamanlı yapılan, ipek ticaretinin han'ı",
+    "en": "A han built simultaneously with the Yeşil Complex, home of the silk trade"
+  },
+  "alternate_names": [
+    {
+      "tr": "Eski İpek Hanı",
+      "en": "Eski İpek Han"
+    },
+    {
+      "tr": "Yeni İpek Hanı",
+      "en": "Yeni İpek Han"
+    },
+    {
+      "tr": "Sultan Hanı",
+      "en": "Sultan Han"
+    },
+    {
+      "tr": "Arabacılar Hanı",
+      "en": "Arabacılar Han"
+    },
+    {
+      "tr": "Faytoncular Hanı",
+      "en": "Faytoncular Han"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "han",
+    "ipek",
+    "Hacı İvaz Paşa",
+    "Çelebi Mehmed",
+    "Yeşil Külliye vakfı",
+    "1958 yangını",
+    "Kazazhane"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Şehreküstü",
+    "address": "Ulucami Caddesi No: 77",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "643"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185192,
+      "lng": 29.060956,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap relation/13407128 ('İpek Han'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1425",
+      "en": "1425"
+    },
+    "start_year": 1425,
+    "end_year": 1425,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap hanın 1425'te Yeşil Külliye ile eş zamanlı yaptırıldığını belirtir.",
+      "en": "The book states it was built in 1425 simultaneously with the Yeşil Complex."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "643"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Çelebi Mehmed",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "643"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Hacı İvaz Paşa",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "643"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Yeşil Külliye vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "643"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Çelebi Mehmed'in 1425'te Yeşil Külliye'ye gelir sağlamak için yaptırıp vakfettiği, mimarı Hacı İvaz Paşa olan han. Ortası açık avlulu, çift katlı galerili plana sahiptir; özgün yapıdan yalnızca batı bölümü ayaktadır, 1958 yangınından sonra 1972-1973'te onarılmıştır.",
+    "en": "A han built and endowed by Çelebi Mehmed in 1425 to provide income to the Yeşil Complex, designed by Hacı İvaz Paşa. It has an open courtyard ringed by two-storey galleries; only the western part of the original building survives, and it was restored in 1972-1973 after the 1958 fire."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Yapımı ve Adları",
+        "en": "Location, Construction and Names"
+      },
+      "body": {
+        "tr": "Han Şehreküstü Mahallesi, Ulucami Caddesi No: 77'dedir. 1425'te Çelebi Mehmed tarafından Yeşil Külliye ile eş zamanlı olarak, külliyeye gelir sağlaması için yaptırılıp vakfedilmiştir. Duvarları taş ve tuğla ile örülü yapının mimarı, külliyeyi de üstlenen Hacı İvaz Paşa'dır. Tarih boyunca \"Eski İpek Hanı\", \"Yeni İpek Hanı\", \"Sultan Hanı\", \"Arabacılar Hanı\" ve yangın öncesi kullanımı nedeniyle \"Faytoncular Hanı\" adlarıyla da anılmıştır. Asıl adı \"İpek Hanı\", burada bir dönem ipek ticaretinin yoğun yapıldığını yansıtır.",
+        "en": "The han is at Ulucami Street No. 77, Şehreküstü Neighborhood. It was built and endowed in 1425 by Çelebi Mehmed simultaneously with the Yeşil Complex to provide it with income. Its walls are stone and brick; its architect was Hacı İvaz Paşa, who also built the complex. It has been known as \"Eski İpek Han\", \"Yeni İpek Han\", \"Sultan Han\", \"Arabacılar Han\" and, from its pre-fire use, \"Faytoncular Han\". Its real name, \"İpek (Silk) Han\", reflects that silk trade was intense here for a period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "643"
+        }
+      ]
+    },
+    {
+      "id": "baglam-ve-plan",
+      "order": 2,
+      "title": {
+        "tr": "Çarşı Bağlamı ve Plan",
+        "en": "Bazaar Context and Plan"
+      },
+      "body": {
+        "tr": "Fetihten sonra Bursa başkent olarak düzenlenirken hanın bulunduğu bölge Hacı İvaz Paşa Çarşısı veya Kazazhane adlı büyük bir ticaret merkezine dönüşmüştür. İpek Hanı kervanların konaklaması ve yerli tacirlerin iş yeri olarak yapılmıştır. Özgün bölüm çift katlı batı kısmıdır; restorasyon bu bölüm esas alınarak şehir içi hanlarına uygun yenilenmiştir. Plan, ortasında açık avlu bulunan, dört yanı çift katlı galerilerle çevrili, kareye yakın bir düzendir. Ana kapı doğu cephesindedir; Koza Hanı'nda olduğu gibi ilk yapımda taç kapı biçiminde olması mümkündür, ancak bugünkü kapı restorasyonda yapılmıştır ve özgün değildir. Güneydoğudaki ikinci kapı yan sokaktan üst kata doğrudan geçiş sağlar.",
+        "en": "After the conquest, as Bursa was reorganised as capital, the han's district became a large trade centre called the Hacı İvaz Paşa Bazaar or Kazazhane. The İpek Han was built to lodge caravans and serve local merchants. The original part is the double-storey western section, on which the restoration was based. The plan is an almost square layout around an open courtyard with double-storey galleries on four sides. The main gate is on the east; it may originally have been a portal like the Koza Han's, but the present gate was built in the restoration and is not original. A second gate in the southeast gives direct access to the upper floor from the side street."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "644-645"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Han, alışverişin yanında ipek tüccarlarının konaklaması için planlanmıştır; zemin katta 39, üst katta 42 oda revaklara açılır. Özgün yapıdan yalnızca batı bölümü ayaktadır: alt kat revakları çapraz tonozlu, üst kat revakları kubbeli, odalar beşik tonozludur. Beden duvarları kaba yontma taş ve tuğla ile örülmüştür. Zemin kat ayakları ve yuvarlak kemerleri taş-tuğla, üst kat ayakları ve kemerleri tamamen tuğladır. Yalnızca batı cephesi özgün özelliklerini korumuş, diğer bölümler farklı dönemlerdeki müdahalelerle bu niteliğini büyük ölçüde yitirmiştir.",
+        "en": "Planned for shopping and for lodging silk merchants, the han has 39 rooms on the ground floor and 42 on the upper floor opening to the arcades. Only the western part of the original structure stands: lower arcades are cross-vaulted, upper arcades domed, rooms barrel-vaulted. The main walls are roughly hewn stone and brick; ground-floor piers and round arches are stone and brick, upper-floor piers and arches entirely brick. Only the western façade keeps its original character; the other parts have largely lost it through interventions."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "644-646"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Bugün",
+        "en": "Repairs and Today"
+      },
+      "body": {
+        "tr": "Bilinen ilk onarım 1556'dadır (on altı oda, çatı ve saçaklar). 1632'de üst kattaki otuz sekiz hücrenin ocakları, avluya bakan kapının kemeri ve merdivenler onarılmış, dengesini yitiren avludaki mescit kaldıraçla düzeltilmiştir. 1737'de mescidin altındaki oda, üst yapı ve şadırvan; H. 1155 / M. 1742'de şadırvan, suyolları, mescit, merdivenler, duvarlar ve camlar; 1775'te mescit ve ahır bölümleri onarılmıştır. Yapı bir dönem oto tamirhanelerince işgal edilmiş, 1958 yangınında tamamen harap olmuş, 1972-1973'te kapsamlı biçimde restore edilmiştir. Bugün çok sayıda dükkânı olan, bakımlı ve aktif bir ticari yapıdır; ancak bütünlüğü bakımından diğer Bursa hanlarının gerisinde olup kapsamlı bir restorasyon projesine ihtiyaç duyduğu belirtilir.",
+        "en": "The first known repair dates to 1556 (sixteen rooms, roof and eaves). In 1632 the hearths of thirty-eight upper cells, the courtyard gate's arch and the stairs were repaired, and the courtyard masjid, which had lost its balance, was straightened with a lever. In 1737 the room under the masjid, its superstructure and the shadirvan were repaired; in AH 1155 / AD 1742 the shadirvan, water channels, masjid, stairs, walls and windows; in 1775 the masjid and stables. The building was for a time occupied by car repair shops, was wrecked in the great fire of 1958 and comprehensively restored in 1972-1973. Today it is a well-kept, active commercial building with many shops, though it lags behind other Bursa hans in integrity and is said to need a comprehensive restoration project."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "646-647"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "644"
+        }
+      ]
+    },
+    {
+      "key": "oda_alt_kat",
+      "label": {
+        "tr": "Zemin kat oda sayısı",
+        "en": "Rooms on ground floor"
+      },
+      "value": 39,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "644-646"
+        }
+      ]
+    },
+    {
+      "key": "oda_ust_kat",
+      "label": {
+        "tr": "Üst kat oda sayısı",
+        "en": "Rooms on upper floor"
+      },
+      "value": 42,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "644-646"
+        }
+      ]
+    },
+    {
+      "key": "ana_kapi_yonu",
+      "label": {
+        "tr": "Ana kapı yönü",
+        "en": "Direction of main gate"
+      },
+      "value": "doğu",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "644"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Çelebi Mehmed",
+      "role": {
+        "tr": "Hanı yaptıran ve vakfeden",
+        "en": "Commissioner and endower"
+      }
+    },
+    {
+      "name": "Hacı İvaz Paşa",
+      "role": {
+        "tr": "Mimar; Yeşil Külliye'nin de inşasını üstlendi",
+        "en": "Architect; also built the Yeşil Complex"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1425",
+      "year": 1425,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Çelebi Mehmed tarafından Yeşil Külliye ile eş zamanlı yaptırıldı ve vakfedildi",
+        "en": "Built and endowed by Çelebi Mehmed simultaneously with the Yeşil Complex"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "643"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1556",
+      "year": 1556,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "İlk bilinen onarım: on altı oda, çatı ve saçaklar yenilendi",
+        "en": "First known repair: sixteen rooms, roof and eaves renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "646-647"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1632",
+      "year": 1632,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Üst kattaki 38 hücrenin ocakları, kapı kemeri ve merdivenler onarıldı; mescit kaldıraçla düzeltildi",
+        "en": "Hearths of 38 upper cells, gate arch and stairs repaired; masjid straightened with a lever"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "647"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1737",
+      "year": 1737,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Mescidin altındaki oda, üst yapısı ve şadırvan onarıldı",
+        "en": "Room under the masjid, its superstructure and the shadirvan repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "647"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1742",
+      "year": 1742,
+      "date": null,
+      "hijri": "1155",
+      "type": "repair",
+      "title": {
+        "tr": "Şadırvan, suyolları, mescit, merdivenler, duvarlar ve camlar elden geçirildi",
+        "en": "Shadirvan, water channels, masjid, stairs, walls and windows renovated"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "647"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1775",
+      "year": 1775,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Mescit ve ahır bölümleri onarıldı",
+        "en": "Masjid and stable sections repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "647"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük yangında tamamen harap oldu",
+        "en": "Completely wrecked in the great fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "647"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1972",
+      "year": 1972,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon (1972-1973)",
+        "en": "Comprehensive restoration (1972-1973)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "647"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-yesil-kulliyesi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Han, Yeşil Külliye'ye gelir sağlamak için yaptırılmış ve vakfedilmiştir.",
+        "en": "The han was built and endowed to provide income to the Yeşil Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "643"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-yesil-kulliyesi",
+      "type": "same_architect",
+      "description": {
+        "tr": "Hanın mimarı Hacı İvaz Paşa, külliyenin inşasını da üstlenmiştir.",
+        "en": "The han's architect Hacı İvaz Paşa also undertook the construction of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "643"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-geyve-hani",
+      "type": "same_architect",
+      "description": {
+        "tr": "Geyve Hanı'nı da Hacı İvaz Paşa yaptırmıştır.",
+        "en": "The Geyve Han was also built by Hacı İvaz Paşa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "639, 643"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-koza-hani",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kitap, ana kapının ilk yapımda Koza Hanı'ndaki gibi taç kapı olabileceğini söyler.",
+        "en": "The book suggests the main gate may originally have been a portal like the Koza Han's."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "644"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İpek Hanı, Ulucami Caddesi'nde, kareye yakın planlı iki katlı bir handır. Ortada üstü açık bir avlu, dört yanında çift katlı galeriler vardır. Alt kat revakları çapraz tonozlu, üst kat revakları kubbelidir; zemin kat ayakları taş-tuğla, üst kat ayakları ve kemerleri tuğladır. Ana kapı doğu cephesindedir, güneydoğudaki ikinci kapı yan sokaktan üst kata geçiş sağlar. Han bugün dükkânlarla doludur.",
+      "en": "The İpek Han is a near-square, two-storey han on Ulucami Street. An open-air courtyard lies in the middle with double-storey galleries on all four sides. The lower arcades are cross-vaulted and the upper ones domed; ground-floor piers are stone and brick, upper piers and arches brick. The main gate is on the east, with a second southeast gate giving direct access to the upper floor from the side street. Today the han is filled with shops."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ipek-hani/p017-2.jpg",
+        "original_name": "DJI_20241201091939_0515_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "646"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "İpek Hanı ve çevresinin kuşbakışı",
+        "en": "Aerial view of İpek Han"
+      },
+      "alt": {
+        "tr": "Yukarıdan, ortasında ağaçlı bir avlu bulunan çok kubbeli kare bir han ve sağda başka bir han görünür. Arada minareli bir cami ve kırmızı çatılı yapılar vardır.",
+        "en": "From above: a square han with many small domes around a tree-filled courtyard, and another han on the right. A mosque with a minaret and red-roofed buildings lie between them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ipek-hani/p017-3.jpg",
+        "original_name": "ERD02565 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "646"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Hanın tuğla kemerli üst kat galerisi",
+        "en": "Brick-arched upper gallery"
+      },
+      "alt": {
+        "tr": "Tuğla payelerin taşıdığı uzun kemerli bir galeri, gri zeminde uzar. Sağda galerinin dışa açılan kemerleri ve uzakta avlunun karşı kanadı görünür.",
+        "en": "A long gallery of brick arches on piers stretches over a grey floor. Open arches on the right look outward, with the far wing of the courtyard in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-28"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ipek-hani/p017-1.jpg",
+        "original_name": "ERD02547 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "646"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Galeride kemerli geçit",
+        "en": "Arched passage in the gallery"
+      },
+      "alt": {
+        "tr": "Tuğla kemerli dar bir galeri uzaklaşırken sağdaki açıklıktan çıplak ağaçlar ve karşıdaki revaklar görünür. Zemin yıpranmış gri taştır, üstte beyaz bir tonoz yer alır.",
+        "en": "A narrow brick-arched gallery recedes into the distance; through the opening on the right are bare trees and the arcades opposite. The floor is weathered grey stone with a white vault above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-28"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

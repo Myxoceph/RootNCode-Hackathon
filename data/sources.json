@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "_aciklama": "Kaynak kayıtları. Eser JSON'ları kaynağı tekrar yazmaz, buradaki 'id' ile referans verir: { \"source_id\": \"vk-bursa-c1\", \"pages\": \"37-39\" }. Bir kitap yüzlerce esere kaynak olacağı için tek yerde tutulur.",
+  "sources": [
+    {
+      "id": "vk-bursa-c1",
+      "type": "book",
+      "title": { "tr": "Bursa Vakıf Eserleri – I. Cilt", "en": "Foundation Buildings of Bursa – Volume I" },
+      "publisher": "Vakıf Katılım",
+      "year": 2026,
+      "isbn": "978-625-99247-6-2",
+      "authors": ["Prof. Dr. Hasan Basri Öcalan", "Dr. Öğr. Üyesi Doğan Yavaş", "Dr. Öğr. Üyesi Sezai Sevim", "Fikret Alkan", "Aziz Elbas"],
+      "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf",
+      "is_official": true,
+      "_not": "Sayfa numaraları kitabın BASILI sayfa numaralarıdır (PDF sayfa sırası değil)."
+    },
+    {
+      "id": "vk-bursa-c2",
+      "type": "book",
+      "title": { "tr": "Bursa Vakıf Eserleri – II. Cilt", "en": "Foundation Buildings of Bursa – Volume II" },
+      "publisher": "Vakıf Katılım",
+      "year": 2026,
+      "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-2.pdf",
+      "is_official": true
+    },
+    {
+      "id": "vk-bursa-c3",
+      "type": "book",
+      "title": { "tr": "Bursa Vakıf Eserleri – III. Cilt", "en": "Foundation Buildings of Bursa – Volume III" },
+      "publisher": "Vakıf Katılım",
+      "year": 2026,
+      "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-3.pdf",
+      "is_official": true
+    },
+    {
+      "id": "vk-hatay",
+      "type": "book",
+      "title": { "tr": "Hatay Vakıf Eserleri", "en": "Foundation Buildings of Hatay" },
+      "publisher": "Vakıf Katılım",
+      "year": 2022,
+      "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/hatay-vakif-eserleri.pdf",
+      "is_official": true
+    },
+    {
+      "id": "vk-konya-c1",
+      "type": "book",
+      "title": { "tr": "Konya Vakıf Eserleri – I. Cilt", "en": "Foundation Buildings of Konya – Volume I" },
+      "publisher": "Vakıf Katılım",
+      "year": 2024,
+      "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/konya-envanteri-1_cilt-web.pdf",
+      "is_official": true
+    },
+    {
+      "id": "vk-konya-c2",
+      "type": "book",
+      "title": { "tr": "Konya Vakıf Eserleri – II. Cilt", "en": "Foundation Buildings of Konya – Volume II" },
+      "publisher": "Vakıf Katılım",
+      "year": 2024,
+      "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/konya-envanteri-2_cilt-web.pdf",
+      "is_official": true
+    },
+    {
+      "id": "vk-bursa-foto-arsivi",
+      "type": "photo_archive",
+      "title": { "tr": "Vakıf Eserleri Envanteri – Bursa Fotoğraf Arşivi", "en": "Foundation Works Inventory – Bursa Photo Archive" },
+      "publisher": "Vakıf Katılım",
+      "photographers": ["Erdin Hasdemir", "Özkan Yenihayat"],
+      "url": "https://drive.google.com/drive/folders/1U-C6TeECHhlx5C15G_rhgx5f_-iJbXlM",
+      "is_official": true
+    }
+  ]
+}

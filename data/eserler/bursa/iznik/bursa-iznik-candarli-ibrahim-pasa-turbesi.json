@@ -1,0 +1,371 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-candarli-ibrahim-pasa-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Türbenin yapım tarihi ve yaptıranı kaynakta yok; dating ve founder null bırakıldı.",
+      "Kitabenin metni kaynakta verilmemiş.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[sanduka_sayisi]",
+        "note": "'Beş sanduka' deniyor ancak 'mevcut dört mezar' ifadesi kullanılıyor; beşinci sandukanın durumu açık değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çandarlı İbrahim Paşa Türbesi",
+    "en": "Çandarlı İbrahim Paşa Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "Çandarlı",
+    "sadrazam",
+    "kitabeli sanduka"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Yeşilcami Mahallesi",
+    "address": "Kasabanın doğusunda, Lefke Kapısı istikametinde yolun sol tarafı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "472"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.428975,
+      "lng": 29.728471,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir. OSM way/408816899 ile arası 9 m."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sadrazam Çandarlı İbrahim Paşa'nın (ö. H. 832 / M. 1429) ve ailesinin gömülü olduğu, özgünlüğünü büyük ölçüde yitirmiş türbe.",
+    "en": "The tomb of Grand Vizier Çandarlı İbrahim Paşa (d. AH 832 / AD 1429) and his family, which has largely lost its originality."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzey-güney yönünde dikdörtgen planlı yapının ahşap örtü sistemi 1949'da tamamen yıkılmıştır. İlk inşada kesme taş, sonraki onarımlarda moloz taş ve kerpiç kullanılmıştır; duvar kalınlıkları değişkendir. Günümüze yalnızca güney cephesi ile doğu ve batı cephelerinin bir bölümü özgün haliyle ulaşmıştır. Güney duvarı ile doğu ve batı cephelerinin güney kısımları yenilenmiştir; doğu cephedeki güney penceresi ile güney cephedeki açıklıklar dışa doğru daralır. Kuzey duvarı ile doğu ve batı cephelerinin özgün kısımları kesme taştandır.",
+        "en": "The rectangular building on a north-south axis lost its wooden roof system entirely in 1949. Cut stone was used in the first phase, rubble stone and adobe in later repairs; wall thicknesses vary. Only the south façade and parts of the east and west façades survive in original form. The south wall and southern parts of the east and west façades have been renewed; the south window of the east façade and openings of the south façade narrow outwards. The original parts of the north wall and east and west façades are cut stone."
+      },
+      "confidence": "certain",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "472-473"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "title": {
+        "tr": "Sandukalar ve İbrahim Paşa",
+        "en": "Sarcophagi and İbrahim Paşa"
+      },
+      "body": {
+        "tr": "Türbede beş sanduka, Çandarlı Halil Hayrettin Paşa'nın oğlu Sadrazam İbrahim Paşa, torunu Hayreddin Paşa, kızları Fatma ve Saide Hatunlar ile Çandarlı Ali Paşa'ya aittir. Mevcut dört mezardan kitabeli olanların en büyüğü İbrahim Paşa'ya aittir; mermer sandukanın baş taşı 48 × 136 cm, ayak taşı 41 × 127 cm'dir ve kitabede ölüm tarihi H. 832 / M. 1429'dur. İbrahim Paşa Bursa'da kadılık, 1415'te kazaskerlik, 1421'de vezirlik yapmış, 1429'da vefat etmiş ve bu türbeye defnedilmiştir. Mezarlık başlangıçta alçak duvarla çevriliyken sonraki müdahalelerle çevre duvarları örülmüş ve üzerine ahşap çatı eklenmiştir.",
+        "en": "Five sarcophagi belong to Grand Vizier İbrahim Paşa, son of Çandarlı Halil Hayrettin Paşa, his grandson Hayreddin Paşa, his daughters Fatma and Saide Hatun, and Çandarlı Ali Paşa. The largest of the four existing inscribed tombs is İbrahim Paşa's; the marble sarcophagus headstone is 48 × 136 cm, the footstone 41 × 127 cm, and the inscription gives his death as AH 832 / AD 1429. İbrahim Paşa served as qadi in Bursa, kazasker in 1415 and vizier in 1421; he died in 1429 and was buried here. The burial ground, at first surrounded by a low wall, was later enclosed by walls and given a wooden roof."
+      },
+      "confidence": "certain",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "473"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "472"
+        }
+      ],
+      "note": {
+        "tr": "Mevcut mezar sayısı dört olarak verilir.",
+        "en": "Source gives four existing graves."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Çandarlı İbrahim Paşa",
+      "role": {
+        "tr": "Sadrazam; türbede gömülü (ö. 1429)",
+        "en": "Grand vizier; buried here (d. 1429)"
+      }
+    },
+    {
+      "name": "Çandarlı Halil Hayrettin Paşa",
+      "role": {
+        "tr": "İbrahim Paşa'nın babası",
+        "en": "Father of İbrahim Paşa"
+      }
+    },
+    {
+      "name": "Hayreddin Paşa",
+      "role": {
+        "tr": "Torunu; sandukası türbede",
+        "en": "Grandson; sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Fatma Hatun ve Saide Hatun",
+      "role": {
+        "tr": "Kızları; sandukaları türbede",
+        "en": "Daughters; sarcophagi in the tomb"
+      }
+    },
+    {
+      "name": "Çandarlı Ali Paşa",
+      "role": {
+        "tr": "Sandukası türbede",
+        "en": "Sarcophagus in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "ibrahim-pasa-sanduka-kitabesi",
+      "location": {
+        "tr": "İbrahim Paşa'nın mermer sandukası",
+        "en": "İbrahim Paşa's marble sarcophagus"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 832,
+        "gregorian": "1429"
+      },
+      "note": {
+        "tr": "Kitabenin metni ve dili kaynakta verilmemiş; yalnızca ölüm tarihi belirtilmiş.",
+        "en": "Text and language of the inscription are not given; only the death date is stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "473"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kazasker-1415",
+      "year": 1415,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İbrahim Paşa kazasker oldu",
+        "en": "İbrahim Paşa became kazasker"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "473"
+        }
+      ]
+    },
+    {
+      "id": "vezir-1421",
+      "year": 1421,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İbrahim Paşa vezir oldu",
+        "en": "İbrahim Paşa became vizier"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "473"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1429",
+      "year": 1429,
+      "date": null,
+      "hijri": "832",
+      "type": "record",
+      "title": {
+        "tr": "İbrahim Paşa vefat etti ve türbeye defnedildi",
+        "en": "İbrahim Paşa died and was buried in the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "472-473"
+        }
+      ]
+    },
+    {
+      "id": "cati-yikim-1949",
+      "year": 1949,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Ahşap örtü sistemi tamamen yıkıldı",
+        "en": "Wooden roof system completely demolished"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "472"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "outdoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, kuzey-güney doğrultulu dikdörtgen bir yapıdır. Özgün kısımlar kesme taştan, sonradan yenilenen kısımlar moloz taş ve kerpiçtendir. İçinde beş sanduka vardır; en büyük kitabeli mermer sanduka İbrahim Paşa'ya aittir.",
+      "en": "The tomb is a rectangular building on a north-south axis. Original parts are cut stone, later repairs rubble stone and adobe. It holds five sarcophagi; the largest inscribed marble one belongs to İbrahim Paşa."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "472-473"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1pQQqSwGZm-oluOp_3XekuaWGxrTU79c-",
+        "original_name": "01 DJI_20241017235654_0281_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "472"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çandarlı İbrahim Paşa Türbesi (kitap s. 472)",
+        "en": "Çandarlı İbrahim Paşa Tomb (book p. 472)"
+      },
+      "alt": {
+        "tr": "Çandarlı İbrahim Paşa Türbesi fotoğrafı",
+        "en": "Photo of Çandarlı İbrahim Paşa Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "147w32xkIk_xqyb1u5HhkNLEx6UOLx_mf",
+        "original_name": "02 .jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "473"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çandarlı İbrahim Paşa Türbesi (kitap s. 473)",
+        "en": "Çandarlı İbrahim Paşa Tomb (book p. 473)"
+      },
+      "alt": {
+        "tr": "Çandarlı İbrahim Paşa Türbesi fotoğrafı",
+        "en": "Photo of Çandarlı İbrahim Paşa Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

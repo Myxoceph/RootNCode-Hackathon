@@ -1,0 +1,484 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-daye-hatun-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 294-297) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Dâye Hatun'un Yeşil Türbe'de gömülü olması Yeşil Türbe kaydına bağlanabilir (ilçesi kitapta yok; ilişki eklenmedi).",
+      "Camiyle birlikte anılan çeşme için ayrı kayıt yok.",
+      "Hisar'daki Nakşibendî-i Atîk Dergâhı için kayıt yok.",
+      "Kitabenin okunaklı olmayan kısımları ve doğru okunuşu uzman tarafından teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating / inscriptions",
+        "note": "1421 inşa tarihi hazire bölümünde verilir; cami kitabesi H. 1062 / M. 1651-52 'tamir'ini kaydeder, ancak son beyitte 'Dâye Hatun yapdı tecdîd olub' geçer. Kitap bunu tamir olarak yorumlar; 1421 ile kitabe arasındaki ilişki açıklanmaz."
+      },
+      {
+        "field": "inscriptions",
+        "note": "Kitabe tarihi metinde 'H. 1062 / M. 1651-52', hemen altında 'H. 1062 / M. 1652' olarak iki farklı biçimde verilir. Kitaptaki hâli korundu."
+      },
+      {
+        "field": "location",
+        "note": "Cami başlıkta 'Dâye Hatun' mahallesi diye geçer, adreste 'Taya Kadın Mahallesi' kullanılır; ikisi aynı mahalle olarak aktarılmıştır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Dâye Hatun (Dâye Kadın - Taya Kadın) Camii",
+    "en": "Dâye Hatun (Dâye Kadın - Taya Kadın) Mosque"
+  },
+  "subtitle": {
+    "tr": "Çelebi Sultan Mehmed'in süt annesinin 1421'de yaptırdığı mahalle camisi ve haziresi",
+    "en": "Neighborhood mosque and graveyard built in 1421 by the wet nurse of Çelebi Sultan Mehmed"
+  },
+  "alternate_names": [
+    {
+      "tr": "Dâye Kadın Camii",
+      "en": "Dâye Kadın Mosque"
+    },
+    {
+      "tr": "Taya Kadın Camii",
+      "en": "Taya Kadın Mosque",
+      "note": "halk arasında"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle camisi",
+    "hazire",
+    "çeşme",
+    "ta‘lik kitabe",
+    "Taya Kadın",
+    "Nisârî"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Taya Kadın",
+    "address": "11. Fırın Sokak, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "294"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.188544,
+      "lng": 29.066002,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/328018255 ('Daye Hatun Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1421",
+      "en": "1421"
+    },
+    "start_year": 1421,
+    "end_year": 1421,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Hazire bölümü cami ve haziresinin Dâye Hatun tarafından 1421'de inşa ettirildiğini belirtir. Kitabe ise H. 1062 / M. 1651-52 tamirini kaydeder.",
+      "en": "The graveyard section states the mosque and graveyard were built by Dâye Hatun in 1421. The inscription records a repair in AH 1062 / AD 1651-52."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "296"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Dâye Hatun",
+    "role": "banî; Çelebi Sultan Mehmed'in süt annesi",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "294, 296"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Çelebi Sultan Mehmed'in süt annesi Dâye Hatun'un 1421'de yaptırdığı, dikdörtgen planlı, ahşap çatılı mahalle camisi. Küçük bir meydanda, ihata duvarı, hazire ve çeşmeyle bir mahalle camisinin bütün özelliklerini taşır. Kitabesi H. 1062 / M. 1651-52 tamirini kaydeder; hazirede en erken 1534, en geç 1904 tarihli mezar taşları vardır.",
+    "en": "A rectangular, wooden-roofed neighborhood mosque built in 1421 by Dâye Hatun, the wet nurse of Çelebi Sultan Mehmed. In a small square, with an enclosing wall, graveyard and fountain, it has all the characteristics of a neighborhood mosque. Its inscription records a repair in AH 1062 / AD 1651-52; the graveyard has gravestones dated from 1534 to 1904."
+  },
+  "sections": [
+    {
+      "id": "adlandirma",
+      "order": 1,
+      "title": {
+        "tr": "Adı ve Mahalle",
+        "en": "Name and Neighborhood"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Taya Kadın Mahallesi, 11. Fırın Sokak, No: 1'de yer almaktadır. Bursa'nın kuruluş ve gelişme dönemlerinde mahalleler, orada bulunan dînî yapılar yahut o yapıları inşa ettirenlerin adlarıyla anılmıştır. Haşim İşcan Caddesi'ne yakın konumdaki Dâye Hatun Mahallesi'nde Çelebi Sultan Mehmed'in süt annesi tarafından yaptırılan bir cami bulunmaktadır. Süt annelere \"dâye\" adı verildiği için cami bu adla anılmış ve zamanla mahalleye de ismini vermiştir. Bu isim zamanla \"Taya Kadın\" şekline dönüşmüş, halk arasında da böyle söylenegelmiştir.",
+        "en": "The mosque is located in Osmangazi District, Taya Kadın Neighborhood, 11th Fırın Street, No. 1. During the establishment and development periods of Bursa, neighborhoods were named after the religious buildings located there or the people who had those buildings built. In the Dâye Hatun Neighborhood, close to Haşim İşcan Street, there is a mosque built by the wet nurse of Çelebi Sultan Mehmed. The mosque was called by this name because wet nurses were called \"daye\" and over time it also gave its name to the neighborhood. This name evolved into \"Taya Kadın\" over time and came to be still spoken this way among the public."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "294-295"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Küçük bir meydanda yer alan bina, çevresindeki ihata duvarı, küçük bir kabristan niteliğindeki haziresi ve çeşmesiyle bir mahalle camisinin bütün özelliklerini yansıtır. Cami dikdörtgen planlıdır; iç ölçüleri 10.45 × 14.75 m'dir. Ahşap çatılı ve Alaturka kiremit kaplıdır. Son cemaat yeri mahfili daha da derinleştirilmiştir. Minberi oldukça eski ve kayda değer bir imalâttır. Minaresi sade olmakla birlikte, Bursa minareleri gibi şerefesi tuğla süslemelidir ve nispetleri gayet ölçülüdür.",
+        "en": "The building, located in a small square, has an enclosing wall around it, a small cemetery-like graveyard and a fountain, thus reflecting all the characteristics of a neighbourhood mosque. The mosque has a rectangular plan; its interior measures 10.45 × 14.75 m. It has a wooden roof covered with traditional Turkish tiles. The narthex gallery has been further deepened. Its minbar is a very old and noteworthy production. Its minaret has a plain structure, but like the minarets of Bursa, its balcony is decorated with bricks beneath and its proportions are very measured."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 3,
+      "title": {
+        "tr": "Kitabe",
+        "en": "Inscription"
+      },
+      "body": {
+        "tr": "Caminin küçük boy ta‘lik hatla yazılmış 25 × 110 cm ebadındaki kitabesi zamanla tahribata uğramış ve okunaklılığını büyük ölçüde kaybetmiştir. Son beyitten şairinin Nisârî olduğu anlaşılmakta, ebcet hesabıyla H. 1062 / M. 1651-52 yılında tamir edildiği görülmektedir.",
+        "en": "The mosque's inscription, written in small Ta'liq script and measuring 25 × 110 cm, has been damaged over time and has lost much of its legibility. From the last couplet, it is understood that its poet is Nisari, and when calculated with the abjad calculation, it can be seen that it was repaired in AH 1062 / AD 1651-52."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Dâye Hatun (Taya Kadın) Camii Haziresi",
+        "en": "Dâye Hatun (Taya Kadın) Mosque Graveyard"
+      },
+      "body": {
+        "tr": "Hazire, caminin güney ve batı taraflarındaki bahçede yer alır. Cami ve hazire Çelebi Sultan Mehmed'in süt annesi Dâye Hatun tarafından 1421 yılında inşa ettirilmiştir. Dâye Hatun, Yeşil Türbe'de Çelebi Mehmed'in ayak ucunda medfundur. Cami çevresindeki geniş hazirede başta Açıkbaş Mahmud olmak üzere Hisar'daki Nakşibendî-i Atîk Dergâhı şeyhleri ve camiye hizmet eden bazı önemli şahsiyetlerin kabirleri bulunur. En erken tarihli mezar taşı 1534, en geç tarihli 1904 yılına aittir. Medfunlar arasında Seyyid İsmail Ağa, Mehmed bin Abdülkerim, Nakşibendî Açıkbaş Şeyh Mahmud Efendi, Seyyid Ahmed Ağa, Yeniçeri Ağası Eyüp Ağa ve eşi Hatice Hanım, Nakşibendî-i Atîk Dergâhı Şeyhi Seyyid Mustafa Efendi ve cami imamlarından Hacı Ahmed Efendi vardır. Hazirede mezar taşı bulunmayanlar da mevcuttur.",
+        "en": "The graveyard is located in the garden on the south and west sides of the mosque. The mosque and its graveyard were built in 1421 by Dâye Hatun, the wet nurse of Çelebi Sultan Mehmed. Dâye Hatun is buried at the feet of Çelebi Mehmed in the Yeşil Türbe. In the large cemetery surrounding the mosque, there are the tombs of Açıkbaş Mahmud, the şeyhs of the Nakşibendî-i Atîk Dergah in Hisar, and some important figures who served the mosque. The earliest dated gravestone is from 1534, the latest from 1904. Among the persons buried are Seyyid İsmail Ağa, Mehmed bin Abdulkerim, Nakşibendî Açıkbaş Şeyh Mahmud Efendi, Seyyid Ahmed Ağa the Janissary Agha, Eyüp Ağa and his wife Hatice Hanım, Seyyid Mustafa Efendi, the şeyh of the Nakşibendî-i Atîk Dergah, and Hacı Ahmed Efendi, the imam of the Daye Hatun Mosque. There are also those in the graveyard who do not have any gravestones."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "296-297"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "10,45 × 14,75",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription size"
+      },
+      "value": "25 × 110",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "295"
+        }
+      ]
+    },
+    {
+      "key": "en_eski_mezar_tasi",
+      "label": {
+        "tr": "En erken tarihli mezar taşı",
+        "en": "Earliest dated gravestone"
+      },
+      "value": 1534,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "296"
+        }
+      ]
+    },
+    {
+      "key": "en_gec_mezar_tasi",
+      "label": {
+        "tr": "En geç tarihli mezar taşı",
+        "en": "Latest dated gravestone"
+      },
+      "value": 1904,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "296"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Dâye Hatun",
+      "role": {
+        "tr": "Banî; Çelebi Sultan Mehmed'in süt annesi; Yeşil Türbe'de medfun",
+        "en": "Founder; wet nurse of Çelebi Sultan Mehmed; buried in the Yeşil Türbe"
+      }
+    },
+    {
+      "name": "Nisârî",
+      "role": {
+        "tr": "Kitabenin şairi",
+        "en": "Poet of the inscription"
+      }
+    },
+    {
+      "name": "Seyyid İsmail",
+      "role": {
+        "tr": "Kitabe beyitinde adı geçen kişi",
+        "en": "Person named in the inscription couplet"
+      }
+    },
+    {
+      "name": "Açıkbaş Mahmud",
+      "role": {
+        "tr": "Nakşibendî şeyh; hazirede medfun",
+        "en": "Naqshbandi shaykh; buried in the graveyard"
+      }
+    },
+    {
+      "name": "Hacı Ahmed Efendi",
+      "role": {
+        "tr": "Dâye Hatun Camii imamı; hazirede medfun",
+        "en": "Imam of the Dâye Hatun Mosque; buried in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tamir-kitabesi",
+      "location": {
+        "tr": "Caminin ta‘lik hatlı tamir kitabesi",
+        "en": "Ta‘liq-script repair inscription of the mosque"
+      },
+      "language": "other",
+      "script": "ta‘lik",
+      "transliteration": "Hakîkat Seyyid İsmail’in ey dil\nCihânda nîk nâmı oldı şâyi’\nDâye Hatun yapdı tecdîd olub\nEcr ü sevâb mertebe tâbi’\nGüzel câ-yı ibâdet itdi bünyâd\nOlub cân u gönülden hayra tama’\nDidim târîh anın ey Nisârî\nOla a‘lâ makâm u hûb câmi.",
+      "translation": null,
+      "author": "Nisârî",
+      "date": {
+        "hijri_year": 1062,
+        "gregorian": "1651-52"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "295"
+        }
+      ],
+      "note": {
+        "tr": "Kitap dili belirtmez (metin Osmanlıca beyit biçimindedir); Türkçe meal/çeviri verilmez, 'other' girildi. Kitap tarihi bir yerde 'H. 1062 / M. 1651-52', metnin altında 'H. 1062 / M. 1652' olarak yazar.",
+        "en": "The book does not name the language (the text is an Ottoman-style couplet poem); no translation is given. The book writes the date as 'AH 1062 / AD 1651-52' in the prose and 'AH 1062 / AD 1652' beneath the text."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1421",
+      "year": 1421,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami ve hazire Dâye Hatun tarafından inşa ettirildi",
+        "en": "Mosque and graveyard built by Dâye Hatun"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "296"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1652",
+      "year": 1652,
+      "date": null,
+      "hijri": "1062",
+      "type": "repair",
+      "title": {
+        "tr": "Kitabeye göre tamir (H. 1062 / M. 1651-52)",
+        "en": "Repair according to the inscription (AH 1062 / AD 1651-52)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "295"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dâye Hatun Camii, Taya Kadın Mahallesi'nde küçük bir meydanda, ihata duvarıyla çevrili, dikdörtgen planlı ve ahşap çatılı bir mahalle camisidir. Çatısı Alaturka kiremit kaplıdır. Yanında bir çeşme ve güney ve batı bahçelerinde geniş bir hazire bulunur. Sade minaresinin şerefesi altında tuğla süsleme vardır.",
+      "en": "Dâye Hatun Mosque in Taya Kadın Neighborhood is a rectangular, wooden-roofed neighborhood mosque in a small square surrounded by an enclosing wall. Its roof is covered with traditional Turkish tiles. A fountain stands beside it and a large graveyard lies in its south and west gardens. The plain minaret has brick decoration beneath its balcony."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-daye-hatun-camii/p025-1.jpg",
+        "original_name": "1_1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "294"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami, ahşap sundurması ve minaresi",
+        "en": "Mosque, wooden porch and minaret"
+      },
+      "alt": {
+        "tr": "Geniş kiremitli, dört eğimli çatı altında camekânlı ahşap cephe görünür. Arkasında uzun tuğla minare, dağlar ve eski evler yer alır.",
+        "en": "A glazed wooden front beneath a broad tiled hipped roof. A tall brick minaret, mountains and old houses are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-03"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-daye-hatun-camii/p026-1.jpg",
+        "original_name": "ERD07713 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "295"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap tavanlı harim ve mahfil",
+        "en": "Prayer hall with wooden ceiling and gallery"
+      },
+      "alt": {
+        "tr": "Uzun harimde ahşap tavan, sağda ahşap sütunlu mahfil ve zeminde kırmızı üzerine mavi şeritli halı vardır. Sarkan büyük bir avize görünür.",
+        "en": "A long prayer hall with a wooden ceiling, a gallery on wooden posts on the right and a red carpet with blue stripes. A large chandelier hangs overhead."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-03"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-daye-hatun-camii/p026-2.jpg",
+        "original_name": "ERD07734 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "295"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Ahşap üzerinde üçgen hat levhası",
+        "en": "Triangular calligraphy panel"
+      },
+      "alt": {
+        "tr": "Bej zeminli kare levhada siyah, üçgen biçimde düzenlenmiş hat yazısı ve içinde kahverengi baklava motifleri görünür.",
+        "en": "A square panel on a beige ground with black calligraphy arranged in a triangle, containing brown diamond motifs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-03"
+    }
+  ],
+  "archive_media": []
+}

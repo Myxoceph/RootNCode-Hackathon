@@ -1,0 +1,357 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-karisdiran-suleyman-bey-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı/banisi kitapta yok; dönem (erken-osmanli) Fâtih dönemi görevine dayanan çıkarımdır, doğrulanmalı.",
+      "Muradiye Külliyesi'nin kayıt id'si tahmini.",
+      "Kriptaya erişim/kullanım bilgisi yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "era",
+        "note": "Dönem 'erken-osmanli', Süleyman Bey'in Fâtih dönemi görevinden çıkarıldı; kitap yapım tarihi vermiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Karışdıran (Karşıduran) Süleyman Bey Türbesi",
+    "en": "Karışdıran (Karşıduran) Süleyman Bey Tomb"
+  },
+  "subtitle": {
+    "tr": "Muradiye Külliyesi ihata duvarının batısındaki kriptalı türbe",
+    "en": "Tomb with a crypt level on the west side of the Muradiye Complex enclosure wall"
+  },
+  "alternate_names": [
+    {
+      "tr": "Karşıduran Süleyman Bey Türbesi",
+      "en": "Karşıduran Süleyman Bey Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Süleyman Bey",
+    "Fâtih Sultan Mehmed",
+    "Muradiye Külliyesi",
+    "kripta",
+    "defterdar"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye Mahallesi",
+    "address": "Kaplıca Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "507"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.190411,
+      "lng": 29.045358,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Muradiye Külliyesi'ni çevreleyen ihata duvarının batısında, Fâtih döneminde defterdarlık yapmış Süleyman Bey'in kare planlı, kubbeli türbesi. Altında kripta ya da mumyalık katı vardır; 1949 ve 2010'da onarılmıştır.",
+    "en": "The square domed tomb of Süleyman Bey, treasurer under Fâtih, on the west side of the enclosure wall around the Muradiye Complex. It has a crypt or mummification level below and was repaired in 1949 and 2010."
+  },
+  "sections": [
+    {
+      "id": "kisi",
+      "order": 1,
+      "title": {
+        "tr": "Süleyman Bey",
+        "en": "Süleyman Bey"
+      },
+      "body": {
+        "tr": "Türbe, Bursa ve İstanbul subaşılığı görevlerinde bulunmuş ve Fâtih Sultan Mehmed döneminde defterdarlık yapmış Süleyman Bey'e aittir. Muradiye Külliyesi'ni çevreleyen ihata duvarının batı kesiminde yer alır.",
+        "en": "The tomb belongs to Süleyman Bey, who served as subashi of Bursa and Istanbul and as treasurer under Fâtih Sultan Mehmed. It stands in the western part of the enclosure wall around the Muradiye Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kare planlı türbe 6,14 × 6,20 m ölçülerindedir ve yaklaşık 38 m²'lik alan kaplar; üzeri kubbeyle örtülüdür. Çift sıra kirpi saçakla biten yapı, bir sıra kesme kalkerli küfeki taşı ile iki sıra tuğla arasına dikey tuğla yerleştirilen düzgün bir örgüyle yapılmıştır. Altında kriptalık ya da mumyalık katı bulunması yüksekliği artırmış, girişe merdivenle çıkılmasını gerektirmiştir.",
+        "en": "The square tomb measures 6.14 × 6.20 m, covering about 38 m², and is domed. It ends with a double row of sawteeth at the eaves and is built of regular masonry with vertical bricks between a row of cut limestone and two rows of brick. A crypt or mummification level below raised the structure, so the entrance is reached by stairs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ]
+    },
+    {
+      "id": "pencereler",
+      "order": 3,
+      "title": {
+        "tr": "Cepheler ve pencereler",
+        "en": "Façades and windows"
+      },
+      "body": {
+        "tr": "Kuzey cephesi dışındaki yüzeylerde sivri kemerli büyük silmeler içinde, sivri kemer alınlıklı ve mermer söveli pencereler vardır. Üç cephede üçer alt ve üçer üst pencere bulunur.",
+        "en": "On all surfaces except the north façade, windows with pointed-arch pediments and marble frames sit within large pointed-arch moldings. There are three lower and three upper windows on each of three façades."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Yapı 1949 ve 2010'da onarım görmüştür.",
+        "en": "The building was repaired in 1949 and 2010."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Ölçüler",
+        "en": "Dimensions"
+      },
+      "value": "6,14 × 6,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ]
+    },
+    {
+      "key": "alan",
+      "label": {
+        "tr": "Kapladığı alan",
+        "en": "Area covered"
+      },
+      "value": 38,
+      "unit": "m²",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık 38 m²' diyor.",
+        "en": "The book says approximately 38 m²."
+      }
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": "3 alt + 3 üst (üç cephede)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Süleyman Bey",
+      "role": {
+        "tr": "Bursa ve İstanbul subaşısı, Fâtih döneminde defterdar; türbenin sahibi",
+        "en": "Subashi of Bursa and Istanbul, treasurer under Fâtih; owner of the tomb"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1949",
+      "year": 1949,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Türbe, Muradiye Külliyesi'ni çevreleyen ihata duvarının batı kesiminde yer alır.",
+        "en": "The tomb stands in the western part of the enclosure wall surrounding the Muradiye Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "507"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Karışdıran Süleyman Bey Türbesi, Kaplıca Caddesi üzerinde kare planlı ve kubbeli bir yapıdır. Altındaki kripta katı nedeniyle yüksektir ve girişine merdivenle çıkılır. Duvarlar taş ve tuğla sıralarının dönüşümüyle örülmüştür; üç cephesinde mermer söveli, sivri kemer alınlıklı alt ve üst pencereler vardır.",
+      "en": "Karışdıran Süleyman Bey Tomb is a square domed building on Kaplıca Street. A crypt level below makes it tall, and its entrance is reached by stairs. The walls alternate rows of stone and brick; three façades have lower and upper windows with marble frames and pointed-arch pediments."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-karisdiran-suleyman-bey-turbesi/p018-1.jpg",
+        "original_name": "DJI_20241026165223_0388_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "507"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Süleyman Bey Türbesinin taş ve tuğla cephesi",
+        "en": "Stone and brick façade of Süleyman Bey Tomb"
+      },
+      "alt": {
+        "tr": "Kare planlı türbenin kahverengi taş ve tuğla örgülü cephesinde iki küçük pencere, üstte kemer içinde bir kafesli pencere var. Tepede küçük bir kubbe görünür.",
+        "en": "The square tomb has a brown stone and brick façade with two small windows and a lattice window set in an arch above. A small dome is visible on top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-karisdiran-suleyman-bey-turbesi/p018-2.jpg",
+        "original_name": "ERD03449 kopya.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "507"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi ve yeşil örtülü sanduka",
+        "en": "Inside the tomb, the green-covered sarcophagus"
+      },
+      "alt": {
+        "tr": "Ahşap gövdeli sanduka yeşil bir örtüyle kaplı. Duvarlarda ahşap çerçeveli pencereler, üstte sivri kemerli açıklıklar ve kubbe görünür.",
+        "en": "A wooden sarcophagus with a green cover. The walls have wood-framed windows and pointed-arch recesses below the dome."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

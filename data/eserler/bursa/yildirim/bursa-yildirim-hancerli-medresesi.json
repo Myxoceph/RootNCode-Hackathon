@@ -1,0 +1,432 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-hancerli-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
+      "Sıbyan mektebi ve türbe için kayıt oluşturulmadı (yok olmuş/iz kalmış); hamam kaydı başka bölümde (bursa-yildirim-hancerli-fatma-sultan-hamami).",
+      "Külliyenin vakfiyesinin kendi metni/şartları kitapta verilmiyor.",
+      "Binanın mimari betimlemesi (plan, malzeme, örtü) kitapta yok; yalnızca oda sayısı ve yeniden işlevlendirme anlatılıyor.",
+      "Fatma Sultan'ın Bursa dışındaki vakıfları için hedef kayıt id'si yok; ilişki kurulmadı.",
+      "Mimar kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Fatma Sultan'ın vefatı H. 939 / M. 1533 ve medresenin 'H. 939 / M. 1532'den önce' tamamlandığı yazıyor; H. 939 yılı M. 1532-1533'e denk geldiğinden tarihler uyumlu, ancak 1532/1533 ayrımı kitapta iki yerde farklı veriliyor."
+      },
+      {
+        "field": "relations",
+        "note": "Külliyenin ayrı bir üst (külliye) kaydı bu bölümde oluşturulmadı; çocuk yapılar arasında same_complex ile bağ kuruldu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hançerli Medresesi",
+    "en": "Hançerli Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "medrese",
+    "Hançerli Fatma Sultan",
+    "külliye",
+    "rekonstrüksiyon",
+    "kültür merkezi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Davutkadı",
+    "address": "Davutkadı Mahallesi, Musababa Caddesi No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "291-293"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Vakfiye H. 938 / M. 1531; medrese H. 939 / M. 1532'den önce tamamlanmış",
+      "en": "Charter AH 938 / AD 1531; madrasa completed before AH 939 / AD 1532"
+    },
+    "start_year": null,
+    "end_year": 1532,
+    "hijri_year": 938,
+    "century": null,
+    "basis": {
+      "tr": "Vakfiye tarihi H. 938 / M. 1531; medresenin H. 939 / M. 1532'den önce tamamlandığı vakfiyeden anlaşılıyor. Yapım başlangıcı belirtilmemiş; bu yüzden start_year boş, end_year 1532 olarak verildi.",
+      "en": "The charter is dated AH 938 / AD 1531 and the madrasa was completed before AH 939 / AD 1532. The start of construction is not stated, so start_year is empty and end_year is 1532."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "291-292"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hançerli Fatma Sultan",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "291"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Hançerli Fatma Sultan Vakfı",
+    "deed": {
+      "date_display": "H. 938 / M. 1531",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "291"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Müderris için günlük 40 akçe ücret belirlenmiştir.",
+      "en": "A daily payment of 40 akçe was set for the teacher."
+    },
+    "land_note": {
+      "tr": "Bursa'daki yapıların yanı sıra İstanbul, Kayseri ve Mudanya gibi yerlerde çok sayıda gayrimenkul vakfedilmiştir.",
+      "en": "Many properties in Istanbul, Kayseri, Mudanya and elsewhere were endowed."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "291-292"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hançerli Fatma Sultan'ın H. 938 / M. 1531 vakfiyeli külliyesinin medresesi; 14 öğrenci odası ve bir dershaneden oluşan yapı yıkılmış, 2017'de rekonstrüksiyonla yeniden inşa edilerek Hançerli Kültür Merkezi olmuştur.",
+    "en": "The madrasa of the complex of Hançerli Fatma Sultan (endowment charter AH 938 / AD 1531); with 14 student rooms and a classroom, it was demolished and rebuilt by reconstruction in 2017 as the Hançerli Cultural Center."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-banisi",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banisi",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Yıldırım ilçesi, Davutkadı Mahallesi, Musababa Caddesi No: 2'de yer alır. Medrese, Hançerli Fatma Sultan tarafından bir külliye içinde yaptırılmıştır. Sultan II. Bayezid'in torunu, Şehzade Mahmud'un kızı olan Fatma Sultan 1490'ların ortalarında Kastamonu'da doğmuştur; arşiv kayıtlarında 'Hanzâde' ve 'Hançerli' unvanlarıyla da anılır. Çandarlı ailesinden Sadrazam İbrahim Paşa'nın oğlu Mehmed Bey ile evlenmiş, hayırsever kişiliğiyle tanınmıştır. H. 939 / M. 1533'te vefat etmiş, İstanbul Eyüp'teki türbesine defnedilmiştir.",
+        "en": "Located in Yıldırım District, Davutkadı Neighborhood, Musababa Street No. 2. The madrasa was built by Hançerli Fatma Sultan within a complex. Fatma Sultan, granddaughter of Sultan Bayezid II and daughter of Şehzade Mahmud, was born in Kastamonu in the mid-1490s; she is also called 'Hanzâde' and 'Hançerli' in archive records. She married Mehmed Bey, son of Grand Vizier İbrahim Paşa of the Çandarlı family, and is known for her charity. She died in AH 939 / AD 1533 and was buried in her tomb in Eyüp, Istanbul."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "291"
+        }
+      ]
+    },
+    {
+      "id": "kulliye-ve-vakif",
+      "order": 2,
+      "title": {
+        "tr": "Külliye ve Vakıf",
+        "en": "Complex and Endowment"
+      },
+      "body": {
+        "tr": "Külliyenin vakfiyesi H. 938 / M. 1531 tarihlidir. Vakfiye kayıtlarına göre yapı topluluğu bir hamam, bir medrese, bir sıbyan mektebi ve türbeden oluşur. Zamanla yapıların çoğu ortadan kalkmış; bugün yalnızca hamam özgün haliyle ayaktadır, medrese temellerine sadık kalınarak yeniden inşa edilmiştir. Sıbyan mektebi tamamen yok olmuş, türbeden yalnızca bazı izler ve mezar kalıntıları günümüze ulaşmıştır. Fatma Sultan bu külliyeye ek olarak Bursa'da Sarı Abdullah Mahallesi'nde bir mektep, Çekirge'de bir medrese ve mescit, Kayseri'de Çardak ve Mükrimin Mescitleri ile Sâdıka Hatun Mektebi'ni yaptırmış; ihtiyaçlarını karşılamak için İstanbul, Kayseri ve Mudanya gibi yerlerde çok sayıda gayrimenkul vakfetmiştir.",
+        "en": "The endowment charter of the complex is dated AH 938 / AD 1531. According to it, the complex consisted of a bath, a madrasa, a primary school and a tomb. Over time most buildings disappeared; only the bath stands in its original form, the madrasa has been rebuilt faithfully to its foundations, the primary school has completely vanished and only traces of the tomb and grave remains survive. In addition, Fatma Sultan had a school built in Sarı Abdullah Neighborhood in Bursa, a madrasa and masjid in Çekirge, and the Çardak and Mükrimin Masjids and Sâdıka Hatun School in Kayseri; she endowed many properties in Istanbul, Kayseri, Mudanya and elsewhere to support them."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "291-292"
+        }
+      ]
+    },
+    {
+      "id": "medrese",
+      "order": 3,
+      "title": {
+        "tr": "Medrese",
+        "en": "The Madrasa"
+      },
+      "body": {
+        "tr": "Vakfiyeye göre 14 öğrenci odası ve bir dershaneden oluşan medresenin H. 939 / M. 1532'den önce tamamlandığı anlaşılmaktadır. Müderris için belirlenen günlük 40 akçe, medresenin 'kırklı medreseler' sınıfında değerlendirilebileceğini gösterir. Medrese uzun yıllar eğitim yapmış, vakıf mütevellilerinin ihmaliyle bakımsız kalıp harap olmuş; yangın ve depremlerde ciddi zarar görmüş, müdahale edilmeyince tamamen yıkılmıştır. Alan bir dönem kütüphane binası olarak kullanılmıştır.",
+        "en": "According to the charter, the madrasa, consisting of 14 student rooms and a classroom, was completed before AH 939 / AD 1532. The daily payment of 40 akçe for the teacher indicates it can be classed among the 'forty-akçe madrasas'. It hosted education for many years but fell into disrepair through the negligence of the trustees; seriously damaged by fires and earthquakes and left unattended, it was eventually completely demolished. The site was used as a library building for a time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "id": "rekonstruksiyon",
+      "order": 4,
+      "title": {
+        "tr": "Rekonstrüksiyon ve Yeniden İşlevlendirme",
+        "en": "Reconstruction and Re-use"
+      },
+      "body": {
+        "tr": "Mülkiyeti Vakıflar Genel Müdürlüğü'ne ait alan, onarım karşılığı Bursa Büyükşehir Belediyesi'ne devredilmiştir. Bursa Müze Müdürlüğü denetimindeki araştırma kazılarıyla temel izleri ortaya çıkarılmış, plan şeması bulgulara göre belirlenmiştir. Rölöve ve rekonstrüksiyon projeleri Anıtlar Kurulu onayına sunulmuş, izinler alınınca yapı özgün mimarisine uygun biçimde yeniden inşa edilmiştir. 2017'de tamamlanan rekonstrüksiyonla medrese 'Hançerli Kültür Merkezi' adıyla Yıldırım Belediyesi'ne bağlı idare merkezi ve kültürel mekân olarak hizmete açılmıştır. Dershane sergi salonu, talebe hücreleri idari birimler olarak düzenlenmiş; orta avlu, yapının geleneksel formuna müdahale etmeyecek biçimde çelik konstrüksiyon ve camla kapatılarak kapalı bir kültürel etkinlik alanı yapılmıştır.",
+        "en": "The site, owned by the General Directorate of Foundations, was taken over by Bursa Metropolitan Municipality in return for repairs. Research excavations supervised by the Bursa Museum Directorate revealed foundation traces and the plan was determined from the findings. Survey and reconstruction projects were submitted to the Council of Monuments and, once permits were obtained, the building was rebuilt in accordance with its original architecture. After the reconstruction was completed in 2017, the madrasa opened as the 'Hançerli Cultural Center' under Yıldırım Municipality as an administrative and cultural venue. The classroom became an exhibition hall and the student cells administrative units; the central courtyard was enclosed with steel and glass without interfering with the traditional form, making a closed space for cultural events."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "292-293"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ogrenci_odasi",
+      "label": {
+        "tr": "Öğrenci odası sayısı",
+        "en": "Number of student rooms"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "key": "dershane",
+      "label": {
+        "tr": "Dershane sayısı",
+        "en": "Number of classrooms"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "key": "gunluk_ucret",
+      "label": {
+        "tr": "Müderris günlük ücreti",
+        "en": "Daily teacher payment"
+      },
+      "value": 40,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "key": "rekonstruksiyon_yili",
+      "label": {
+        "tr": "Rekonstrüksiyonun tamamlanması",
+        "en": "Reconstruction completed"
+      },
+      "value": 2017,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "293"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hançerli Fatma Sultan",
+      "role": {
+        "tr": "Banî; II. Bayezid'in torunu, Şehzade Mahmud'un kızı",
+        "en": "Founder; granddaughter of Bayezid II, daughter of Şehzade Mahmud"
+      }
+    },
+    {
+      "name": "Mehmed Bey",
+      "role": {
+        "tr": "Fatma Sultan'ın eşi, Sadrazam İbrahim Paşa'nın oğlu",
+        "en": "Husband of Fatma Sultan, son of Grand Vizier İbrahim Paşa"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1531",
+      "year": 1531,
+      "date": null,
+      "hijri": "938",
+      "type": "record",
+      "title": {
+        "tr": "Külliyenin vakfiyesi düzenlendi",
+        "en": "Endowment charter of the complex issued"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "291"
+        }
+      ]
+    },
+    {
+      "id": "tamamlanma-1532",
+      "year": 1532,
+      "date": null,
+      "hijri": "939",
+      "type": "construction",
+      "title": {
+        "tr": "Medresenin bu tarihten önce tamamlandığı anlaşılıyor",
+        "en": "The madrasa was completed before this date"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "id": "fatma-sultan-vefat",
+      "year": 1533,
+      "date": null,
+      "hijri": "939",
+      "type": "record",
+      "title": {
+        "tr": "Fatma Sultan vefat etti, Eyüp'teki türbesine defnedildi",
+        "en": "Fatma Sultan died and was buried in her tomb in Eyüp"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "291"
+        }
+      ]
+    },
+    {
+      "id": "rekonstruksiyon-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Rekonstrüksiyon tamamlandı; Hançerli Kültür Merkezi olarak açıldı",
+        "en": "Reconstruction completed; opened as the Hançerli Cultural Center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "293"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-hancerli-fatma-sultan-hamami",
+      "type": "same_complex",
+      "description": {
+        "tr": "Vakfiyeye göre külliye bir hamam, medrese, sıbyan mektebi ve türbeden oluşur; yalnızca hamam özgün halde ayaktadır.",
+        "en": "According to the charter the complex consists of a bath, madrasa, primary school and tomb; only the bath stands in original form."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "291"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hançerli Medresesi 14 öğrenci odası ve bir dershaneden oluşan bir medresedir. Orijinali yıkıldıktan sonra temel izlerine dayanılarak yeniden inşa edilmiştir. Orta avlu çelik konstrüksiyon ve camla kapatılmış, dershane sergi salonuna, hücreler idari birimlere dönüştürülmüştür.",
+      "en": "The Hançerli Madrasa has 14 student rooms and a classroom. After the original was demolished it was rebuilt from the foundation traces. The central courtyard is closed with steel and glass, the classroom serves as an exhibition hall and the cells as administrative units."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hancerli-medresesi/p014-1.jpg",
+        "original_name": "03 ERD03546 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "293"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Cam çatılı avlu ve toplantı masası",
+        "en": "Glass-roofed courtyard and meeting table"
+      },
+      "alt": {
+        "tr": "Tuğla kemerli revaklarla çevrili avlunun üstü cam kubbeyle örtülüdür. Ortada U biçiminde uzun bir masa ve çevresinde mavi ile yeşil sandalyeler vardır.",
+        "en": "A courtyard ringed by brick arches is covered with a glass vault. A long U-shaped table with blue and green chairs fills the centre."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    }
+  ],
+  "archive_media": []
+}

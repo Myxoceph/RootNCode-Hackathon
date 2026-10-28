@@ -1,0 +1,701 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-eyne-bey-subasi-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Eğitim Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
+      "Medresenin mimarı kaynakta yok.",
+      "Vakfiyede geçen Bursa'daki hamamın, zaviyenin ve diğer vakıf mallarının adı/ilçesi kaynakta verilmiyor; ilişki kaydı eklenemedi.",
+      "1960'lı yıllardaki onarımın kesin yılı verilmiyor; zaman çizelgesine eklenmedi.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[ogrenci_odasi_sayisi]",
+        "note": "Vakfiye on iki odada kalacak on iki öğrenciden söz eder; kitabın mimari tarifi bugün revakların arkasında dokuz öğrenci odası olduğunu söyler. Aradaki farkın nedeni kaynakta açıklanmıyor."
+      },
+      {
+        "field": "timeline",
+        "note": "Kütüphane 1674'te medreseye kazandırılmış, sonra Orhan Camii'ne taşınmış, 1969'da bu kütüphanedeki eserler tekrar medreseye getirilmiştir. İlk taşınmanın tarihi kitapta verilmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Eyne Bey Subaşı Medresesi",
+    "en": "Eyne Bey Subaşı Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Merdivenli Medrese",
+      "en": "Merdivenli Madrasa"
+    },
+    {
+      "tr": "Büyük İnebey Medresesi",
+      "en": "Büyük İnebey Madrasa"
+    },
+    {
+      "tr": "Hüseyin Çelebi Medresesi",
+      "en": "Hüseyin Çelebi Madrasa"
+    },
+    {
+      "tr": "Amcazâde Hüseyin Çelebi Medresesi",
+      "en": "Amcazâde Hüseyin Çelebi Madrasa"
+    },
+    {
+      "tr": "Bursa İnebey Yazma Eser Kütüphanesi",
+      "en": "Bursa İnebey Manuscript Library"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "medrese",
+    "revaklı avlu",
+    "kütüphane",
+    "Eyne Bey",
+    "İnebey",
+    "yazma eser",
+    "vakfiye"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tahtakale",
+    "address": "İnebey Caddesi, İnebey Sokak, No: 5",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "557"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.182794,
+      "lng": 29.061322,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "15. yüzyıl başları (vakfiye: H. 3 Şaban 804 / M. 8 Mart 1402)",
+      "en": "Early 15th century (endowment charter: 3 Sha'ban AH 804 / 8 March AD 1402)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap yapının 15. yüzyıl başlarında inşa ettirildiğini söyler; 1402 tarihli vakfiye medreseden 'inşa ettirdiği' yapı olarak söz eder. Kitabe günümüze ulaşmamıştır.",
+      "en": "The book says it was built in the early 15th century; the 1402 endowment charter refers to the madrasa he had built. No inscription survives."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "557-559"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Eyne Bey b. Feleküddin",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "557-559"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Subaşı Eyne Bey bin Feleküddin Vakfı",
+    "deed": {
+      "date_display": "H. 3 Şaban 804 / M. 8 Mart 1402",
+      "excerpt": {
+        "tr": "Bursa Kadısı Mehmed bin Hamza bin Mehmed (Molla Fenârî) tarafından tasdik edilen vakfiyeye göre Bursa, Balıkesir, Bergama, Susurluk ve Ankara'daki hamamlar, değirmenler, bağ bahçeler, araziler ve köyler ile Bursa'daki medrese ve Balıkesir'deki zaviye vakıf gelirleriyle desteklenmek üzere tahsis edilmiştir.",
+        "en": "According to the charter approved by the Qadi of Bursa Mehmed bin Hamza bin Mehmed (Molla Fenârî), bathhouses, mills, vineyards, lands and villages in Bursa, Balıkesir, Bergama, Susurluk and Ankara, together with the Bursa madrasa and the zawiya in Balıkesir, were allocated to be supported by the foundation revenues."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-559"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Müderrise Bursa'daki hamamın gelirinden günlük 10 dirhem; medresedeki on iki odada kalacak on iki öğrenciye günlük birer buçuk dirhem. Eyne Bey'in kölelerinden beş hafız medrese bahçesindeki vakıf türbede her gün Kur'an okuyacak ve ikişer dirhem (toplam 10 dirhem) alacaktır.",
+      "en": "The teacher is paid 10 dirhams daily from the income of the Bursa bathhouse; twelve students in twelve rooms receive 1.5 dirhams daily each. Five hafiz from among Eyne Bey's slaves read the Quran daily in the foundation tomb in the madrasa garden and receive 2 dirhams each (10 in total)."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "558-559"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "15. yüzyıl başında subaşı Eyne Bey'in yaptırdığı, merdivenli girişli ve revaklı avlulu medrese. 1969'dan beri yazma eser kütüphanesi olarak hizmet veriyor.",
+    "en": "A madrasa with a staircase entrance and an arcaded courtyard, built in the early 15th century by Subaşı Eyne Bey; since 1969 it has served as a manuscript library."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Medrese Osmangazi ilçesi, Tahtakale Mahallesi, İnebey Caddesi'ndedir; literatürde 'Merdivenli Medrese', 'Büyük İnebey Medresesi' ve 'Hüseyin Çelebi Medresesi' adlarıyla da anılır. Yapıya ait kitabe günümüze ulaşmamıştır.",
+        "en": "The madrasa is on İnebey Street, Tahtakale Neighborhood, Osmangazi; in the literature it is also called 'Merdivenli Madrasa', 'Büyük İnebey Madrasa' and 'Hüseyin Çelebi Madrasa'. No inscription has survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "557"
+        }
+      ]
+    },
+    {
+      "id": "banisi",
+      "order": 2,
+      "title": {
+        "tr": "Banisi Eyne Bey",
+        "en": "The Founder Eyne Bey"
+      },
+      "body": {
+        "tr": "Eser, I. Murad Hudâvendigâr devrinde Karesi Sancak Beyi, Yıldırım Bayezid ve oğulları döneminde subaşı olarak görev yapan Eyne Bey b. Feleküddin tarafından 15. yüzyıl başlarında yaptırılmıştır. Kosova Meydan Muharebesi başta olmak üzere birçok savaşa katılan Eyne Bey, Fetret Devri'nde Mehmed Çelebi'nin yanında yer almış; İsa Çelebi'nin yenilgisiyle biten savaşta aldığı kılıç yarası sonrası ölmüştür. Mezarı Balıkesir Kepsut ilçesi Tekke köyündedir.",
+        "en": "It was built in the early 15th century by Eyne Bey b. Feleküddin, Sanjak Bey of Karasi under Murad I and Subaşı under Yıldırım Bayezid and his sons. He fought in many battles, notably Kosovo, sided with Mehmed Çelebi in the Interregnum and died of a sword wound in the war that ended with İsa Çelebi's defeat. His grave is in Tekke village, Kepsut, Balıkesir."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "557-559"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "order": 3,
+      "title": {
+        "tr": "Vakfiye ve Vakıf Şartları",
+        "en": "Endowment Charter"
+      },
+      "body": {
+        "tr": "Bursa Kadısı Molla Fenârî tarafından tasdik edilen H. 3 Şaban 804 / M. 8 Mart 1402 tarihli vakfiyeye göre Bursa, Balıkesir, Bergama, Susurluk ve Ankara'daki hamamlar, değirmenler, bağ bahçeler, araziler ve köyler; Bursa'daki medrese ve Balıkesir'deki zaviye ile birlikte vakfedilmiştir. Müderrise günlük 10 dirhem, on iki öğrenciye günlük birer buçuk dirhem ayrılmış; beş hafızın medrese bahçesindeki vakıf türbede her gün Kur'an okuması şart koşulmuştur.",
+        "en": "Under the endowment charter of 3 Sha'ban AH 804 / 8 March AD 1402, approved by Molla Fenârî, the Qadi of Bursa, bathhouses, mills, gardens, lands and villages in Bursa, Balıkesir, Bergama, Susurluk and Ankara were endowed together with the Bursa madrasa and the Balıkesir zawiya. The teacher received 10 dirhams a day, twelve students 1.5 dirhams each; five hafiz were to read the Quran daily in the foundation tomb in the garden."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-559"
+        }
+      ]
+    },
+    {
+      "id": "onarim-kutuphane",
+      "order": 4,
+      "title": {
+        "tr": "1674 Onarımı ve Kütüphane",
+        "en": "The 1674 Repair and the Library"
+      },
+      "body": {
+        "tr": "Medrese H. 1085 / M. 1674'te Veziriazam Köprülü Fazıl Ahmed Paşa'nın ve Niyâzî-i Mısrî'nin akrabası Hüseyin Çelebi Paşa tarafından kapsamlı biçimde onarılmış, bu sırada döneme göre çok kıymetli bir kütüphane kazandırılmıştır. Kütüphane sonradan Orhan Camii'ne taşınmış; medrese bu tarihten itibaren literatürde 'Amcazâde Hüseyin Çelebi Medresesi' adıyla anılmıştır. Kütüphane, medresenin kuzeybatı köşesinde, 7.00 × 6.00 m ölçülerindedir.",
+        "en": "In AH 1085 / AD 1674 the madrasa was extensively repaired by Hüseyin Çelebi (Paşa), a relative of Grand Vizier Köprülü Fazıl Ahmed Paşa and of the Sufi Niyâzî-i Mısrî, and a library, quite valuable for its time, was added. The library was later moved to the Orhan Mosque, and from then on the madrasa is known in the literature as 'Amcazâde Hüseyin Çelebi Madrasa'. The library, 7.00 × 6.00 m, is at the northwest corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-561"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 5,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzey-güney yönünde uzanan dikdörtgen planlı yapının duvarları moloz taş ve tuğla almaşık örgülüdür. Kuzey cephesindeki basık kemerli girişe iki yanda yedişer basamaklı merdivenle çıkılır. Ortadaki 8.00 × 10.00 m ölçülü dikdörtgen avluda sekizgen, fıskiyeli bir şadırvan vardır. Avlu, on iki küfeki taş sütunun taşıdığı sivri kemerli revaklarla çevrilidir; revakların arkasında dokuz öğrenci odası, bir ana derslik ve sonradan eklenen bir kütüphane bulunur. Derslik 6.20 × 6.20 m kare planlıdır, sekizgen kasnaklı kurşun kaplı kubbeyle örtülüdür ve içinde kalem işi süslemeler vardır. Çatı kenarlarında kirpi saçak uygulanmıştır.",
+        "en": "The rectangular building extends north-south; its walls are of alternating rubble stone and brick. The depressed-arch entrance on the north façade is reached by a seven-step staircase on each side. The 8.00 × 10.00 m courtyard has an octagonal shadirvan with a fountain jet and is surrounded by arcades of pointed arches on twelve limestone columns; behind them are nine student rooms, a main classroom and a later library. The 6.20 × 6.20 m square classroom has a lead-covered dome on an octagonal drum and hand-painted decoration inside. Sawtooth eaves are used."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-561"
+        }
+      ]
+    },
+    {
+      "id": "ogrenci-odalari",
+      "order": 6,
+      "title": {
+        "tr": "Öğrenci Odaları ve Cepheler",
+        "en": "Student Rooms and Façades"
+      },
+      "body": {
+        "tr": "Öğrenci odaları ortalama 3.10 × 3.45 m ölçülerindedir; her hücrede dolap, ocak, iki raf nişi ve kandillik bulunur. Odalar ve revakların çatıları kurşunla kaplıdır. Güney cephesinde dört pencere vardır (üçü alt sırada, biri ana derslik cephesinin ortasında); tümü taş söveli, tuğla sivri kemer alınlıklı ve demir parmaklıklıdır. Cephenin batısında sonradan tuğlayla örülmüş büyük bir kapı yeri görülür; bunun medresenin küçük bahçesine açılan kapı olduğu değerlendirilmektedir. Kütüphanenin doğu cephesinde yuvarlak kemerli bir nişte özgün öğeleri kalmamış bir çeşme yeri bulunur.",
+        "en": "The student rooms average 3.10 × 3.45 m; each cell has a cupboard, hearth, two shelf niches and a lamp holder. The roofs of the cells and arcades are lead-covered. The south façade has four windows with stone frames, brick pointed-arch pediments and iron grilles. West of them is a large, later bricked-up doorway considered to be the passage to the madrasa's small garden. On the east façade of the library, a fountain in a round-arched niche has lost its original elements."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "559-561"
+        }
+      ]
+    },
+    {
+      "id": "sonraki-donem",
+      "order": 7,
+      "title": {
+        "tr": "Sonraki Kullanım ve Onarımlar",
+        "en": "Later Use and Repairs"
+      },
+      "body": {
+        "tr": "1924'te medreseler kapatıldıktan sonra yapı Evkaf İdaresi tarafından satılmış ve 1962'ye kadar konserve fabrikası olarak kullanılmıştır; Vakıflar İdaresi bu tasarrufun hatalı olduğunu kabul ederek yapıyı yeniden satın almıştır. 1969'da Orhan Camii'ndeki yazma ve basma eserlerin medreseye taşınmasıyla 'Bursa Yazma ve Eski Basma Eserler Kütüphanesi' olmuştur; 2010'dan itibaren Türkiye Yazma Eserler Kurumu İstanbul Bölge Müdürlüğü'ne bağlı 'Bursa İnebey Yazma Eser Kütüphanesi Müdürlüğü' adıyla hizmet verir. En kapsamlı onarımlar 1683'te ve 1960'lı yıllarda yapılmış, 2007–2010 arasında yeniden ayrıntılı restorasyon geçirilmiştir.",
+        "en": "After the madrasas were closed in 1924 the building was sold by the Foundations Administration and used as a canning factory until 1962; the Foundations Administration then admitted the mistake and bought it back. In 1969, when manuscripts and printed works of the Orhan Mosque library were moved here, it became the 'Bursa Library of Manuscripts and Old Printed Works'; since 2010 it has operated as the 'Bursa İnebey Manuscript Library Directorate' under the Turkish Manuscripts Institution. The most comprehensive repairs were in 1683 and the 1960s, with a detailed restoration in 2007–2010."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "560-561"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "avlu_olculeri",
+      "label": {
+        "tr": "Avlu ölçüleri",
+        "en": "Courtyard dimensions"
+      },
+      "value": "8.00 × 10.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "560"
+        }
+      ]
+    },
+    {
+      "key": "ogrenci_odasi_sayisi",
+      "label": {
+        "tr": "Öğrenci odası sayısı (bugün)",
+        "en": "Student rooms (today)"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "559-560"
+        }
+      ],
+      "note": {
+        "tr": "Vakfiyede on iki oda geçer.",
+        "en": "The endowment charter mentions twelve rooms."
+      }
+    },
+    {
+      "key": "ogrenci_odasi_vakfiye",
+      "label": {
+        "tr": "Vakfiyedeki öğrenci odası sayısı",
+        "en": "Student rooms in the charter"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-559"
+        }
+      ]
+    },
+    {
+      "key": "revak_sutun_sayisi",
+      "label": {
+        "tr": "Revak sütun sayısı",
+        "en": "Number of arcade columns"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "560"
+        }
+      ]
+    },
+    {
+      "key": "ogrenci_odasi_ortalama",
+      "label": {
+        "tr": "Öğrenci odası ortalama ölçüsü",
+        "en": "Average student room size"
+      },
+      "value": "3.10 × 3.45",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "560-561"
+        }
+      ]
+    },
+    {
+      "key": "derslik_olculeri",
+      "label": {
+        "tr": "Derslik iç ölçüleri",
+        "en": "Classroom interior size"
+      },
+      "value": "6.20 × 6.20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "560-561"
+        }
+      ]
+    },
+    {
+      "key": "kutuphane_olculeri",
+      "label": {
+        "tr": "Kütüphane ölçüleri",
+        "en": "Library size"
+      },
+      "value": "7.00 × 6.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "560-561"
+        }
+      ]
+    },
+    {
+      "key": "giris_basamak",
+      "label": {
+        "tr": "Giriş merdiveni (her yanda basamak)",
+        "en": "Entrance steps on each side"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-559"
+        }
+      ]
+    },
+    {
+      "key": "mudderis_maasi",
+      "label": {
+        "tr": "Müderris günlük maaşı",
+        "en": "Teacher's daily salary"
+      },
+      "value": 10,
+      "unit": "dirhem",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-559"
+        }
+      ]
+    },
+    {
+      "key": "ogrenci_yevmiyesi",
+      "label": {
+        "tr": "Öğrenci günlük yevmiyesi",
+        "en": "Student daily allowance"
+      },
+      "value": 1.5,
+      "unit": "dirhem",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-559"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Eyne Bey b. Feleküddin",
+      "role": {
+        "tr": "Banî; Karesi Sancak Beyi ve subaşı",
+        "en": "Founder; Sanjak Bey of Karasi and Subaşı"
+      }
+    },
+    {
+      "name": "Molla Fenârî (Mehmed bin Hamza bin Mehmed)",
+      "role": {
+        "tr": "Vakfiyeyi tasdik eden Bursa Kadısı",
+        "en": "Qadi of Bursa who approved the charter"
+      }
+    },
+    {
+      "name": "Hüseyin Çelebi Paşa",
+      "role": {
+        "tr": "1674 onarımını yaptıran; Köprülü Fazıl Ahmed Paşa ve Niyâzî-i Mısrî'nin akrabası",
+        "en": "Patron of the 1674 repair; relative of Köprülü Fazıl Ahmed Paşa and Niyâzî-i Mısrî"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vakfiye-1402",
+      "year": 1402,
+      "date": null,
+      "hijri": "3 Şaban 804",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye tasdik edildi",
+        "en": "Endowment charter approved"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-559"
+        }
+      ],
+      "note": {
+        "tr": "8 Mart 1402. Medrese bu tarihte zaten yapılmış olarak anılır.",
+        "en": "8 March 1402. The madrasa is already mentioned as built at this date."
+      }
+    },
+    {
+      "id": "onarim-1674",
+      "year": 1674,
+      "date": null,
+      "hijri": "1085",
+      "type": "repair",
+      "title": {
+        "tr": "Hüseyin Çelebi Paşa onarımı ve kütüphane eklenmesi",
+        "en": "Repair by Hüseyin Çelebi Paşa; library added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-561"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1683",
+      "year": 1683,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "561"
+        }
+      ]
+    },
+    {
+      "id": "kapatilma-1924",
+      "year": 1924,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Medreseler kapatıldı; yapı Evkaf İdaresi'nce satıldı",
+        "en": "Madrasas closed; building sold by the Foundations Administration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "560-561"
+        }
+      ]
+    },
+    {
+      "id": "konserve-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Konserve fabrikası kullanımı sona erdi; Vakıflar yapıyı yeniden satın aldı",
+        "en": "Canning-factory use ended; Foundations bought it back"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "560-561"
+        }
+      ],
+      "note": {
+        "tr": "Kitap '1962 yılına kadar' der; yeniden satın alma tarihi belirtilmez.",
+        "en": "The book says 'until 1962'; the repurchase date is not stated."
+      }
+    },
+    {
+      "id": "kutuphane-1969",
+      "year": 1969,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bursa Yazma ve Eski Basma Eserler Kütüphanesi olarak işlevlendirildi",
+        "en": "Repurposed as the Bursa Library of Manuscripts and Old Printed Works"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "560-561"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Ayrıntılı restorasyon (2007–2010)",
+        "en": "Detailed restoration (2007–2010)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "561"
+        }
+      ]
+    },
+    {
+      "id": "yazma-eser-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bursa İnebey Yazma Eser Kütüphanesi Müdürlüğü adıyla yeniden yapılandırıldı",
+        "en": "Restructured as the Bursa İnebey Manuscript Library Directorate"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "561"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Medresenin 1674'te kazandırılan kütüphanesi sonradan Orhan Camii'ne taşınmış; 1969'da oradaki eserler medreseye getirilmiştir.",
+        "en": "The library added to the madrasa in 1674 was later moved to the Orhan Mosque; in 1969 its holdings were brought back to the madrasa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "558-561"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Eyne Bey Subaşı Medresesi kuzey-güney doğrultulu dikdörtgen planlı bir yapıdır. Kuzeydeki basık kemerli girişe iki yandan yedişer basamaklı merdivenle çıkılır. İçeride ortasında sekizgen, fıskiyeli bir şadırvan bulunan dikdörtgen bir avlu ve onu çevreleyen sivri kemerli revaklar vardır. Revakların arkasında öğrenci odaları, kubbeli kare bir derslik ve kuzeybatı köşede sonradan eklenmiş bir kütüphane yer alır. Duvarlar taş ve tuğla almaşıktır, çatılar kurşun kaplıdır.",
+      "en": "The Eyne Bey Subaşı Madrasa is a rectangular building oriented north-south. The depressed-arch entrance on the north is reached by seven steps from each side. Inside is a rectangular courtyard with an octagonal fountain-jet shadirvan in the centre, surrounded by pointed-arch arcades. Behind the arcades are student rooms, a square domed classroom and, at the northwest corner, a later library. Walls are alternating stone and brick; roofs are covered with lead."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-subasi-medresesi/p008-2.jpg",
+        "original_name": "DJI_20241021221026_0066_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "559"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Eyne Bey Subaşı Medresesi kuşbakışı",
+        "en": "Aerial view of Eyne Bey Subaşı Madrasa"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı çatılı, içte revaklı avlusu olan tuğla ve taş medrese yukarıdan görünür. Sol köşede kubbeli bir bölüm, çevrede renkli şehir evleri vardır.",
+        "en": "A brick and stone madrasa with lead-covered roofs and an inner arcaded courtyard seen from above. A domed section stands in the left corner, surrounded by colourful town houses."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    }
+  ],
+  "archive_media": []
+}

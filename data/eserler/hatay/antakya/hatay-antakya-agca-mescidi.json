@@ -1,0 +1,452 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-agca-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Ağca Mescidi bölümünden (s. 209-210) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapılış tarihi ve yaptıranı kaynakta yok; 13. yüzyıl, 17. yüzyıl ve 1842 bilgileri arşivle ve kitabeyle teyit edilmeli.",
+      "Era (dönem) alanı, yapının ilk yapım tarihi bilinmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Kitabenin metni ve yazı dili kaynakta verilmiyor; sahada okunmalı.",
+      "Çörten heykelinin (pars/aslan) kendi yapısına mı ait olduğu yoksa devşirme mi olduğu kaynakta kesinleşmiyor.",
+      "Kitapta anılan Adana'daki Ağca Bey Camii ile bir ilişki kurulmadı (farklı il, id tabloda yok).",
+      "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kaynak tarih için üç ayrı ipucu verir: 13. yüzyıl (çörten heykeli, devşirme olabilir), en az 17. yüzyıl (arşiv kayıtları) ve 1842 (kitabeye göre yenileme, kesin). Aralık verilmediği için kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[plan-ve-mekan]",
+        "note": "İngilizce metin 'plain minbars' ifadesini sıcak iklim cümlesinde kullanır (Türkçesi 'sade mihraplar'); Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ağca Mescidi",
+    "en": "Ağca Masjid"
+  },
+  "subtitle": {
+    "tr": "Meyilli arazide, yazlık avlu mihrabıyla bilinen mahalle mescidi",
+    "en": "A neighbourhood masjid on sloping land, known for its summer-prayer courtyard"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "yazlık mescit",
+    "çörten",
+    "mezene",
+    "mahalle mescidi"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 1409 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "209-210"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.198921,
+      "lng": 36.168253,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1141939357 ('Ağca Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapılış tarihi bilinmiyor; 1842'de yenilendi; arşiv kayıtlarına göre en az 17. yüzyıl",
+      "en": "Date of construction unknown; renovated in 1842; archive records indicate at least the 17th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitabeye göre eser eskiden camiydi ve 1842'de yenilendi (kesin bilgi). Arşiv kayıtları tarihi en az 17. yüzyıla götürüyor. Pars veya aslan heykelli çörten 13. yüzyıla işaret edebilir, ancak heykel başka bir yapıdan devşirilmiş olabilir. Birbirinden farklı bu görüşler nedeniyle başlangıç ve bitiş yılı boş bırakıldı.",
+      "en": "According to the inscription the building was formerly a mosque and was renovated in 1842 (a definite fact). Archive records take its history back to at least the 17th century. The leopard or lion gargoyle may point to the 13th century, but the statue may have been taken from another building. Because of these differing views the start and end years are left empty."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "209"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'nın en eski yerleşim alanlarından birinde, meyilli arazide ve kuzeyindeki yüksek bir merdivenle ulaşılan küçük bir mescittir. Yapılış tarihi bilinmez; kitabesine göre 1842'de yenilenmiştir. Çörten olarak kullanılan pars veya aslan heykeli ve sıcağa karşı yazlık mescit olarak kullanılan ağaçlı avlusu dikkat çeker.",
+    "en": "A small masjid on sloping land in one of Antakya's oldest quarters, reached by a high staircase on its north. Its construction date is unknown; according to its inscription it was renovated in 1842. Its leopard or lion gargoyle and its tree-shaded courtyard used as a summer masjid stand out."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Antakya'nın en eski mekânlarından birinde meyilli arazi üzerine inşa edilen ve kuzeyindeki yüksek bir merdivenle ulaşılan Ağca Mescidi, Adana'daki adaşının aksine yapılış tarihi meçhul bir eserdir. Kitabesine göre eserin eskiden cami olduğu ve 1842 yılında yenilendiği kesin bir bilgidir. Arşiv kayıtları mescit tarihinin en az 17. yüzyıla kadar gittiğini göstermektedir.",
+        "en": "Built on sloping land in one of the oldest places of Antakya and reached by a high staircase on the north, Ağca Masjid is, unlike its namesake in Adana, a work of unknown construction date. According to its inscription it is definite that it was formerly a mosque and was renovated in 1842. Archive records show that its history goes back at least to the 17th century."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "cortenle-tarih",
+      "order": 2,
+      "title": {
+        "tr": "Çörten Heykeli ve Olası Tarih",
+        "en": "The Gargoyle Statue and Possible Date"
+      },
+      "body": {
+        "tr": "Ağca Bey Camii'nde portale kuş figürleri işlenirken bu eserde Baybars devrini hatırlatan pars veya aslan heykeli çörten olarak kullanılmıştır. Bundan dolayı mescidin tarihini 13. yüzyıla götürmek belki mümkündür; ancak heykelin başka bir eserden, kaleden veya şehir surlarından devşirilmiş olabileceği de hesaba katılmalıdır.",
+        "en": "While bird figures were carved on the portal of the Ağca Bey Mosque, a leopard or lion statue reminiscent of the Baybars era was used as a gargoyle here. For this reason it may be possible to take the date of the masjid back to the 13th century, but it must be considered that the statue may have been taken from another building, the castle or the city walls."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mekan",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mekân",
+        "en": "Plan and Interior"
+      },
+      "body": {
+        "tr": "Mescit, mihrap duvarına paralel iki sahından oluşan ve içten düz ahşap tavan, dıştan kırma çatıyla örtülen küçük bir harim ile onun kuzey ve batısında yer alan gayrimuntazam bir avludan meydana gelir. Mihrabı, minberi, dolap nişleri ve kemerleri oldukça sadedir. Küçük boyutuna rağmen özellikle batı tarafında altlı üstlü sekiz pencere ile dikkati çeker. Kıble ve kuzey duvarındaki pencerelerin sebebi içeriye ışıktan çok hava akımı sağlamaktır.",
+        "en": "The masjid consists of a small sanctuary of two naves parallel to the mihrab wall, covered with a flat wooden ceiling inside and a hipped roof outside, and an irregular courtyard to its north and west. Its mihrab, minbar, cabinet niches and arches are quite plain. Although small, it is notable for eight windows stacked one above the other, especially on the west side. The windows on the qibla and north walls are there to provide air flow rather than light."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "id": "yazlik-mescit",
+      "order": 4,
+      "title": {
+        "tr": "Yazlık Mescit Olarak Avlu",
+        "en": "The Courtyard as a Summer Masjid"
+      },
+      "body": {
+        "tr": "Antakya'nın şiddetli sıcağına karşı asıl çözüm, ağaçların serinlettiği avluyu yazlık mescit gibi kullanmak olmuştur. Bu maksatla batıdaki avlunun kıble yönü için çok uygun olmayan güneybatı duvarına eğreti görünümlü de olsa bir mihrap eklenmiştir. Bu tür yazlık mescitler yalnızca Antakya'da değil Akdeniz bölgesinde de çoktur; sıcak havalarda akşam ve yatsı namazları için ve mahalle halkının sohbet mekânı olarak kullanılırdı. Avlunun batısındaki küçük ve sade mezene (ezanlık) buranın dinî ve tarihî bir mekân olduğunu ilan eder gibidir.",
+        "en": "The main solution against Antakya's intense heat was to use the courtyard, cooled by trees, as a summer masjid. For this purpose a makeshift mihrab was added to the south-west wall of the western courtyard, which is not very suitable for the qibla direction. Such summer masjids are numerous not only in Antakya but across the Mediterranean region; in hot weather they served for the evening and night prayers and as a place for neighbourhood chat. The small, plain mezene (adhan place) on the west of the courtyard seems to declare this a religious and historical place."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 5,
+      "title": {
+        "tr": "Son Onarım",
+        "en": "Latest Repair"
+      },
+      "body": {
+        "tr": "Yapıda son onarım 2018 yılında Vakıflar Genel Müdürlüğü'nce uygulanmıştır.",
+        "en": "The last repair of the building was carried out in 2018 by the General Directorate of Foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "210"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi_bati",
+      "label": {
+        "tr": "Batı cephesindeki pencere sayısı (altlı üstlü)",
+        "en": "Windows on the west side (stacked)"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "key": "tavan",
+      "label": {
+        "tr": "Tavan",
+        "en": "Ceiling"
+      },
+      "value": "İçten düz ahşap, dıştan kırma çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "210"
+        }
+      ]
+    },
+    {
+      "key": "yenileme_yili",
+      "label": {
+        "tr": "Kitabeye göre yenileme yılı",
+        "en": "Renovation year per inscription"
+      },
+      "value": 1842,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "209"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kitabe",
+      "location": {
+        "tr": "Kitabe; konumu kaynakta belirtilmiyor",
+        "en": "Inscription; location not stated in the source"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1842"
+      },
+      "note": {
+        "tr": "Kitabenin metni ve dili kaynakta yok; yalnızca eserin eskiden cami olduğunu ve 1842'de yenilendiğini bildirdiği söyleniyor.",
+        "en": "Text and language are not given; the source says only that it states the building was formerly a mosque and renovated in 1842."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "209"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yenileme-1842",
+      "year": 1842,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kitabeye göre eser yenilendi (eskiden cami)",
+        "en": "Renovated according to the inscription (formerly a mosque)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü'nce son onarım",
+        "en": "Latest repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "210"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "corten-heykeli",
+      "title": {
+        "tr": "Pars veya aslan heykelli çörten",
+        "en": "Leopard or lion gargoyle"
+      },
+      "hint": {
+        "tr": "Yağmur suyunu atan çörtendeki hayvan heykeline bakın.",
+        "en": "Look at the animal statue serving as the rain gargoyle."
+      },
+      "section_id": "cortenle-tarih"
+    },
+    {
+      "feature": "yazlik-avlu",
+      "title": {
+        "tr": "Yazlık mescit avlusu",
+        "en": "Summer-masjid courtyard"
+      },
+      "hint": {
+        "tr": "Batı avlusunun güneybatı duvarındaki ek mihrabı arayın.",
+        "en": "Look for the added mihrab on the south-west wall of the west courtyard."
+      },
+      "section_id": "yazlik-mescit"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ağca Mescidi, meyilli bir arazide yer alır ve kuzeyindeki yüksek bir merdivenle çıkılır. Küçük harimi, mihrap duvarına paralel iki sahından oluşur; içten düz ahşap tavan, dıştan kırma çatı ile örtülüdür. Mihrap, minber, dolap nişleri ve kemerler oldukça sadedir. Batı cephesinde altlı üstlü sekiz pencere sıralanır. Harimin kuzey ve batısında düzensiz biçimli bir avlu uzanır; ağaçların serinlettiği bu avlu yazın mescit olarak kullanılır ve güneybatı duvarında eklenmiş bir mihrabı vardır. Avlunun batısında ahşap, küçük ve sade bir mezene (ezanlık) bulunur. Çörten olarak bir pars veya aslan heykeli kullanılmıştır.",
+      "en": "Ağca Masjid stands on sloping land and is reached by a high staircase on its north. Its small sanctuary has two naves parallel to the mihrab wall, covered with a flat wooden ceiling inside and a hipped roof outside. The mihrab, minbar, cabinet niches and arches are quite plain. Eight windows are stacked one above the other on the west side. An irregular courtyard extends to the north and west of the sanctuary; shaded by trees, it is used as a summer masjid and has an added mihrab on its south-west wall. A small, plain mezene (adhan place) stands on the west of the courtyard. A leopard or lion statue is used as a gargoyle."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 209-210) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-agca-mescidi/p104-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "206-207"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Ağca Mescidi'nin avlusu ve cephesi",
+        "en": "Courtyard and façade of the Ağca Masjid"
+      },
+      "alt": {
+        "tr": "Açık renkli taş ve koyu karolarla döşeli avlu; sağda kırma çatılı taş mescit cephesi, turuncu kapılı sivri kemerli girişi, solda ahşap kapılı yan bölüm ve bir bank.",
+        "en": "A courtyard paved with light stone and dark slabs; on the right the stone masjid façade with a hipped roof and an orange door in a pointed arch, a wooden-doored annex on the left and a bench."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-agca-mescidi/p105-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "208-209"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescidin iç mekânı, minber ve ortadaki sütun",
+        "en": "Interior with the minbar and central column"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı salonda ortada taş bir sütun, solda ahşap minber; duvarlarda sivri kemerli ahşap çerçeveli pencereler, tavanda açık ahşap kirişler ve mavi desenli halı.",
+        "en": "In a white-walled hall, a stone column stands in the centre with a wooden minbar on the left; arched wooden windows line the wall, exposed wooden beams cross the ceiling and a patterned blue carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-agca-mescidi/p106-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "211"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Avluda ahşap ezanlık ve merdiven",
+        "en": "Wooden adhan platform and stairs in the courtyard"
+      },
+      "alt": {
+        "tr": "Taş bir kaide üzerinde, turuncu-kahverengi ahşap korkuluklu ve çatılı küçük bir köşk; yanında taş merdiven, önünde bankların durduğu avlu.",
+        "en": "A small wooden pavilion with railings and a pointed roof on a stone base, with stone steps beside it and benches in the courtyard in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

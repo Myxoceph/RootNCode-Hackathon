@@ -1,0 +1,184 @@
+/**
+ * Route planner rules and the cities it knows. Sample content (see ./README.md):
+ * the stops, weather and food are from the Hayrat design, the rules are its
+ * prototype rule engine.
+ */
+export type RegionKey = "bursa" | "edirne";
+export type Region = RegionKey | "both";
+export type Duration = "half" | "1" | "2";
+
+export interface Weather {
+  day: string;
+  high: number;
+  low: number;
+  sky: string;
+  /** Chance of rain, percent. */
+  rain: number;
+  /** Rain is expected in the afternoon: open-air stops move to the morning. */
+  afternoonRain: boolean;
+  icon: "cloud" | "sunny";
+}
+
+export interface RouteStop {
+  name: string;
+  /** Higher comes first when the time budget is short. */
+  importance: number;
+  hours: number;
+  /** Share of the visit spent outdoors, 0–1. */
+  outdoor: number;
+  tag: string;
+}
+
+interface CityRoute {
+  city: string;
+  title: string;
+  weather: [Weather, Weather];
+  stops: RouteStop[];
+  lunch: { name: string; where: string };
+  dessert: { name: string; where: string };
+}
+
+export const cityRoutes: Record<RegionKey, CityRoute> = {
+  bursa: {
+    city: "Bursa",
+    title: "Bursa Erken Dönem Külliyeler Rotası",
+    weather: [
+      { day: "12 Eki Pzt", high: 19, low: 11, sky: "Parçalı bulutlu", rain: 40, afternoonRain: true, icon: "cloud" },
+      { day: "13 Eki Sal", high: 21, low: 12, sky: "Güneşli", rain: 5, afternoonRain: false, icon: "sunny" },
+    ],
+    stops: [
+      { name: "Ulu Cami", importance: 10, hours: 0.75, outdoor: 0.1, tag: "Cami" },
+      { name: "Yeşil Cami ve Yeşil Türbe", importance: 9, hours: 1, outdoor: 0.3, tag: "Cami, türbe" },
+      { name: "Koza Han", importance: 8, hours: 0.5, outdoor: 0.85, tag: "Han, açık avlu" },
+      { name: "Orhan Gazi Külliyesi ve Emir Han", importance: 8, hours: 0.75, outdoor: 0.5, tag: "Külliye" },
+      { name: "Muradiye Külliyesi", importance: 7, hours: 1.5, outdoor: 0.6, tag: "Külliye, türbe bahçesi" },
+      { name: "Yıldırım Külliyesi", importance: 6, hours: 0.75, outdoor: 0.4, tag: "Külliye" },
+    ],
+    lunch: { name: "İskender", where: "Hanlar Bölgesi" },
+    dessert: { name: "Kestane şekeri", where: "Koza Han avlusu" },
+  },
+  edirne: {
+    city: "Edirne",
+    title: "Edirne Sultan Külliyeleri Rotası",
+    weather: [
+      { day: "12 Eki Pzt", high: 17, low: 8, sky: "Güneşli", rain: 0, afternoonRain: false, icon: "sunny" },
+      { day: "13 Eki Sal", high: 16, low: 9, sky: "Parçalı bulutlu", rain: 20, afternoonRain: false, icon: "cloud" },
+    ],
+    stops: [
+      { name: "Selimiye Camii", importance: 10, hours: 1.25, outdoor: 0.2, tag: "Cami" },
+      { name: "II. Bayezid Külliyesi (Sağlık Müzesi)", importance: 9, hours: 1.5, outdoor: 0.5, tag: "Külliye, darüşşifa" },
+      { name: "Üç Şerefeli Camii", importance: 8, hours: 0.75, outdoor: 0.3, tag: "Cami" },
+      { name: "Eski Cami", importance: 7, hours: 0.5, outdoor: 0.1, tag: "Cami" },
+      { name: "Rüstem Paşa Kervansarayı", importance: 6, hours: 0.5, outdoor: 0.7, tag: "Kervansaray, avlu" },
+      { name: "Selimiye Arastası", importance: 6, hours: 0.5, outdoor: 0, tag: "Arasta" },
+    ],
+    lunch: { name: "Tava ciğer", where: "Saraçlar Caddesi" },
+    dessert: { name: "Badem ezmesi", where: "Selimiye Arastası" },
+  },
+};
+
+export type PlanItem =
+  | { kind: "stop"; minutes: number; stop: RouteStop }
+  | { kind: "food"; minutes: number; label: "Öğle molası" | "Tatlı durağı" | "Lezzet durağı"; name: string; where: string };
+
+export interface DayPlan {
+  city: string;
+  weather: Weather;
+  items: PlanItem[];
+  stops: RouteStop[];
+  /** Share of the day spent outdoors, 0–1. */
+  outdoorShare: number;
+}
+
+export interface RoutePlan {
+  title: string;
+  /** Set when the choice cannot be planned as asked, e.g. both cities in half a day. */
+  notice: string | null;
+  days: DayPlan[];
+}
+
+const DAY_START = 9 * 60;
+const WALK_MINUTES = 15;
+
+function planDay(route: CityRoute, stops: RouteStop[], weather: Weather, budgetHours: number): DayPlan {
+  let used = 0;
+  const picked: RouteStop[] = [];
+  for (const stop of [...stops].sort((a, b) => b.importance - a.importance)) {
+    if (used + stop.hours + WALK_MINUTES / 60 <= budgetHours) {
+      picked.push(stop);
+      used += stop.hours + WALK_MINUTES / 60;
+    }
+  }
+  // Rain in the afternoon: the most open-air stops go first.
+  if (weather.afternoonRain) picked.sort((a, b) => b.outdoor - a.outdoor);
+
+  const items: PlanItem[] = [];
+  let t = DAY_START;
+  let hadLunch = budgetHours < 5;
+  for (const stop of picked) {
+    items.push({ kind: "stop", minutes: t, stop });
+    t += Math.round(stop.hours * 60) + WALK_MINUTES;
+    if (!hadLunch && t >= 12 * 60) {
+      items.push({ kind: "food", minutes: t, label: "Öğle molası", ...route.lunch });
+      t += 60;
+      hadLunch = true;
+    }
+  }
+  items.push({ kind: "food", minutes: t, label: "Tatlı durağı", ...route.dessert });
+
+  const allHours = picked.reduce((sum, s) => sum + s.hours, 0);
+  const outdoorHours = picked.reduce((sum, s) => sum + s.hours * s.outdoor, 0);
+  return { city: route.city, weather, items, stops: picked, outdoorShare: allHours ? outdoorHours / allHours : 0 };
+}
+
+export function planRoute(region: Region, duration: Duration): RoutePlan {
+  const budget = duration === "half" ? 4.5 : 7.5;
+  const bursa = cityRoutes.bursa;
+  const edirne = cityRoutes.edirne;
+
+  if (region === "both") {
+    if (duration !== "2") {
+      return {
+        title: bursa.title,
+        notice:
+          "Bursa ile Edirne arası yaklaşık 4 saat yol. İki şehir için en az 2 gün öneriyoruz; şimdilik yalnızca Bursa planlandı.",
+        days: [planDay(bursa, bursa.stops, bursa.weather[0], budget)],
+      };
+    }
+    return {
+      title: "İki Başkent: Bursa ve Edirne",
+      notice: null,
+      days: [planDay(bursa, bursa.stops, bursa.weather[0], budget), planDay(edirne, edirne.stops, edirne.weather[1], budget)],
+    };
+  }
+
+  const route = cityRoutes[region];
+  if (duration === "2") {
+    const sorted = [...route.stops].sort((a, b) => b.importance - a.importance);
+    const half = Math.ceil(sorted.length / 2);
+    return {
+      title: route.title,
+      notice: null,
+      days: [
+        planDay(route, sorted.slice(0, half), route.weather[0], budget),
+        planDay(route, sorted.slice(half), route.weather[1], budget),
+      ],
+    };
+  }
+  return { title: route.title, notice: null, days: [planDay(route, route.stops, route.weather[0], budget)] };
+}
+
+/** One sentence on how the weather shaped the day. */
+export function weatherAdvice(day: DayPlan): string {
+  const w = day.weather;
+  if (w.afternoonRain) {
+    const open = day.stops.filter((s) => s.outdoor >= 0.5).map((s) => s.name.split(" ").slice(0, 2).join(" "));
+    return `Öğleden sonra %${w.rain} yağış ihtimali var. Açık avlulu duraklar${open.length ? ` (${open.join(", ")})` : ""} sabaha alındı, kapalı mekânlar öğleden sonraya.`;
+  }
+  if (w.rain > 15) return `Hafif yağış ihtimali (%${w.rain}). Avlu duraklarında küçük bir şemsiye yeter.`;
+  return "Hava açık. Avlular ve türbe bahçeleri için iyi bir gün.";
+}
+
+export function formatClock(minutes: number): string {
+  return `${String(Math.floor(minutes / 60)).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}`;
+}

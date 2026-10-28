@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ebu-ishak-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin yapım tarihi ve banisi kitapta yok; dönem (era) bu yüzden boş bırakıldı.",
+      "Kitabın kimlik anlatımı tutarsız: gerçek sahip Seyyid Nattâ mı, Seyyid Mahmud mu, şahidedeki 'Abdullah Mustafa' mı? Uzman teyidi gerekli.",
+      "Ebu İshak Camii ve İshâkıyye zaviyesinin ilçesi/konumu metinde yok; ilişki hedef id'si tahmini.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "identity",
+        "note": "Metin önce türbenin 'gerçekte Seyyid Nattâ'ya ait' olduğunu söylüyor, sonra Seyyid Mahmud'un vefatında bu türbeye defnedildiğini anlatıyor (Seyyid Muhammed Nattâ ile Seyyid Mahmud ayrı kişiler gibi sunuluyor), lahit şahidesinde ise 'Abdullah Mustafa' okunuyor. Çelişki olduğu gibi saklandı."
+      },
+      {
+        "field": "sections[nakibulesraf]",
+        "note": "Metin hem Seyyid Muhammed Nattâ'nın ilk atanan olduğunu hem de Seyyid Mahmud'un 'nakibüleşraf unvanını kullanan ilk kişi' olduğunu söylüyor; fark unvanı kullanma ile makama atanma arasındaki ayrım olabilir, kitap açıklamıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ebû İshak Türbesi",
+    "en": "Ebû İshak Tomb"
+  },
+  "subtitle": {
+    "tr": "Halk arasında Ebû İshak adıyla bilinen, nakibüleşraf Seyyid Nattâ ile ilişkilendirilen türbe",
+    "en": "Tomb popularly known as Ebû İshak, linked to the naqib al-ashraf Seyyid Nattâ"
+  },
+  "alternate_names": [
+    {
+      "tr": "Seyyid Nattâ Türbesi",
+      "en": "Seyyid Nattâ Tomb",
+      "note": "Kitaba göre türbe gerçekte Seyyid Nattâ'ya aittir"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "nakibüleşraf",
+    "seyyid",
+    "İshâkıyye zaviyesi",
+    "Yıldırım Bayezid",
+    "2013 onarımı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollafenari Mahallesi",
+    "address": "Seyyid Nasır Caddesi No: 91",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "497"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mollafenari'de, Ebu İshak Camii'nin karşısında yer alan küçük türbe. Halk arasında Ebû İshak adıyla bilinse de kitaba göre Seyyid Nattâ'ya aittir; nakibüleşraflık makamının Bursa'daki geçmişiyle birlikte anlatılır. 2013'te kapsamlı onarım görmüştür.",
+    "en": "A small tomb across from the Ebu İshak Mosque in Mollafenari. Known popularly as Ebû İshak, the book says it actually belongs to Seyyid Nattâ; it is presented together with the history of the office of naqib al-ashraf in Bursa. It was comprehensively repaired in 2013."
+  },
+  "sections": [
+    {
+      "id": "kimlik",
+      "order": 1,
+      "title": {
+        "tr": "Kime ait?",
+        "en": "Whose tomb?"
+      },
+      "body": {
+        "tr": "Halk arasında Ebû İshak Türbesi olarak bilinen mekân, kitaba göre gerçekte Seyyid Nattâ adlı kişiye aittir. Metin ayrıca Seyyid Mahmud'un 1537'deki vefatında Ebu İshak Camii karşısındaki küçük mütevazı türbesine defnedildiğini belirtir; lahit şahidesinde ise yalnızca 'Abdullah Mustafa' adı okunabilmektedir.",
+        "en": "Known popularly as the Tomb of Ebû İshak, the book says it actually belongs to a person named Seyyid Nattâ. The text also says Seyyid Mahmud was buried in 1537 in his small modest tomb across from the Ebu İshak Mosque, while the sarcophagus inscription shows only the name 'Abdullah Mustafa'."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    },
+    {
+      "id": "nakibulesraf",
+      "order": 2,
+      "title": {
+        "tr": "Nakibüleşraflık makamı",
+        "en": "The office of naqib al-ashraf"
+      },
+      "body": {
+        "tr": "İslam ülkelerinde nakibüleşraflık, Hz. Hasan ve Hüseyin soyundan gelenlerin (seyit ve şeriflerin) nesebini kaydeden, onlara yönelik gelir düzenlemelerini yapan ve ticaret yapanlara vergi muafiyeti tanıyan bir kurumdur. Osmanlı'da benzer teşkilata ilişkin ilk bilgiler Yıldırım Bayezid dönemine uzanır. H. 802 Ramazan / M. Mayıs 1400'de Yıldırım Bayezid seyit ve şeriflerle ilgilenmek üzere bir makam ihdas etmiş; bu makama Bağdat eşrafından ve Bursa'daki İshâkıyye (Kâzerûniyye) zaviyesinin postnişini Seyyid Muhammed Nattâ el-Hüseynî getirilmiştir.",
+        "en": "In Islamic countries the naqib al-ashraf office recorded the lineage of descendants of Hazrat Hasan and Hüseyin (sayyids and sheriffs), arranged income for them and granted tax exemption to traders. The first information on a similar Ottoman organisation dates to Yıldırım Bayezid. In Ramadan AH 802 / May AD 1400 he established an office for sayyids and sheriffs; the first appointee was Seyyid Muhammed Nattâ al-Husayni, a Baghdad notable and shaykh of the İshâkıyye (Kâzerûniyye) zawiya in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    },
+    {
+      "id": "seyyid-natta-hayat",
+      "order": 3,
+      "title": {
+        "tr": "Seyyid Muhammed Nattâ ve halefleri",
+        "en": "Seyyid Muhammed Nattâ and his successors"
+      },
+      "body": {
+        "tr": "Ankara Savaşı'ndan sonra Timur'un orduları tarafından esir alınan Seyyid Muhammed Nattâ, serbest bırakılınca Hicaz'a gitmiş, II. Murad döneminde Bursa'ya dönüp eski görevine başlamıştır. Vefatından sonra yerine büyük oğlu Zeynelâbidîn tayin edilmiştir. Nakibüleşraf unvanını kullanan ilk kişi olan Seyyid Mahmud 1537'deki vefatına kadar görevde kalmıştır.",
+        "en": "After the Battle of Ankara Seyyid Muhammed Nattâ was captured by Timur's armies, went to the Hejaz when released, and returned to Bursa in the reign of Murad II to resume his duty. After his death his eldest son Zeynelâbidîn was appointed. Seyyid Mahmud, the first to use the title naqib al-ashraf, remained in the post until his death in 1537."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Yapı ve onarım",
+        "en": "Structure and repair"
+      },
+      "body": {
+        "tr": "Moloz taş duvarlı, ahşap çatılı ve Alaturka kiremit örtülü türbe, uzun yıllar su deposunu andıran bir görünüme sahipti. Duvar örgüsünde bir sıra kesme taş ve üç sıra tuğla kullanılmıştır. 2013'teki kapsamlı onarımla tamamen yenilenmiş, iki eğimli çatıyla örtülmüş ve yeniden Alaturka kiremit kaplanmıştır. İçerideki lahdin üzerinde bazı çini parçacıkları görülür.",
+        "en": "With rubble stone walls, a wooden roof and Turkish tiles, the tomb looked like a water depot for many years. The masonry uses one row of cut stone and three rows of brick. A comprehensive repair in 2013 completely renewed it, with a double-pitched roof re-covered in Turkish tiles. Some tile fragments are visible on the sarcophagus inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "onarim_yili",
+      "label": {
+        "tr": "Kapsamlı onarım yılı",
+        "en": "Year of comprehensive repair"
+      },
+      "value": 2013,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    },
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Wall masonry"
+      },
+      "value": "1 sıra kesme taş, 3 sıra tuğla",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyyid Nattâ",
+      "role": {
+        "tr": "Kitaba göre türbenin gerçek sahibi",
+        "en": "According to the book, the tomb's true occupant"
+      }
+    },
+    {
+      "name": "Seyyid Muhammed Nattâ el-Hüseynî",
+      "role": {
+        "tr": "İlk nakibüleşraf; İshâkıyye zaviyesi postnişini",
+        "en": "First naqib al-ashraf; shaykh of the İshâkıyye zawiya"
+      }
+    },
+    {
+      "name": "Seyyid Mahmud",
+      "role": {
+        "tr": "Nakibüleşraf unvanını kullanan ilk kişi; 1537'de vefat etti",
+        "en": "First to use the title naqib al-ashraf; died 1537"
+      }
+    },
+    {
+      "name": "Zeynelâbidîn",
+      "role": {
+        "tr": "Seyyid Muhammed Nattâ'nın büyük oğlu ve halefi",
+        "en": "Eldest son and successor of Seyyid Muhammed Nattâ"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "lahit-sahidesi",
+      "location": {
+        "tr": "İçerideki lahdin şahidesi",
+        "en": "Headstone of the sarcophagus inside"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Abdullah Mustafa",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ],
+      "note": {
+        "tr": "Şahidede yalnızca bu isim okunabiliyor.",
+        "en": "Only this name can be read on the headstone."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "makam-1400",
+      "year": 1400,
+      "date": null,
+      "hijri": "802 Ramazan",
+      "type": "record",
+      "title": {
+        "tr": "Yıldırım Bayezid seyit ve şeriflerle ilgilenecek makamı ihdas etti",
+        "en": "Yıldırım Bayezid established the office for sayyids and sheriffs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1537",
+      "year": 1537,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Seyyid Mahmud vefat etti, küçük türbesine defnedildi",
+        "en": "Seyyid Mahmud died and was buried in his small tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı onarımla tamamen yenilendi",
+        "en": "Completely renewed in a comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-ebu-ishak-kazeruni-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Seyyid Mahmud'un türbesi Ebu İshak Camii'nin karşısında yer alır.",
+        "en": "Seyyid Mahmud's tomb is located across from the Ebu İshak Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "497"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ebû İshak Türbesi, Seyyid Nasır Caddesi'nde, Ebu İshak Camii'nin karşısında yer alan küçük bir yapıdır. Üzeri iki eğimli, Alaturka kiremit kaplı bir çatıyla örtülüdür; duvarlarında bir sıra kesme taş ile üç sıra tuğla dönüşümlü kullanılmıştır. İçeride, üzerinde bazı çini parçaları görülen bir lahit vardır.",
+      "en": "Ebû İshak Tomb is a small building on Seyyid Nasır Street across from the Ebu İshak Mosque. It has a double-pitched roof covered with Turkish tiles; its walls use one row of cut stone and three rows of brick. Inside is a sarcophagus bearing some tile fragments."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

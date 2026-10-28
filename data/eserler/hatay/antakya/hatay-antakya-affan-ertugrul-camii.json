@@ -1,0 +1,708 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-affan-ertugrul-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Affan (Ertuğrul) Camii bölümünden (s. 200-205) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapının ayrıntılı adresi (mahalle, sokak) kaynakta yok; adres bölüm özeti sayfasından.",
+      "Tuğralı kitabenin ve kelime-i tevhid yazısının metni kaynakta verilmiyor; sahada okunmalı.",
+      "Hızır Peygamber makamının yeri ve işlevi (harim içinde mi, ayrı mı) kaynakta net değil; teyit edilmeli.",
+      "Caminin vakıf bilgisi, mimarı ve Affan'ın kimliği kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Şadırvanın ve minarenin yapım tarihi kaynakta verilmiyor.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin harimi 'dikdörtgen planlı ... küçük fakat huzurlu' diye tarif eder; İngilizce metin aynı yeri 'small but hidden sanctuary with a messy plan' diye çevirmiştir. Türkçe değer esas alındı. Ayrıca cümlenin sonundaki pencere tarifinde 'aydınlanan' öznesi belirsizdir (harim mi, Hızır makamı mı); pencere sayısı fact olarak yazılmadı."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "İngilizce metin caminin tuğrasını 'monogram' diye, yapıyı ise 'new Ottoman work' diye çevirir; Türkçe metin 'Osmanlı eseri' der. Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Affan (Ertuğrul) Camii",
+    "en": "Affan (Ertuğrul) Mosque"
+  },
+  "subtitle": {
+    "tr": "Tuğralı kitabeli, sade ve mütevazı mahalle camii",
+    "en": "A plain, modest neighbourhood mosque with a tughra inscription"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ertuğrul Camii",
+      "en": "Ertuğrul Mosque",
+      "note": "Kitap caminin Affan ve Ertuğrul adlarıyla bilindiğini söyler."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "II. Abdülhamid tuğrası",
+    "Hızır makamı",
+    "1894/95",
+    "mahalle camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "3. Mıntıka, 1253-1254 Parseller",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "200-205"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1894/95",
+      "en": "1894/95"
+    },
+    "start_year": 1894,
+    "end_year": 1895,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "II. Abdülhamid'in tuğrasının taçlandırdığı kitabeden caminin 1894/95 tarihinde yapıldığı anlaşılıyor.",
+      "en": "The inscription crowned with Abdulhamid II's tughra indicates that the mosque was built in 1894/95."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "200-201"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Affan",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "200-201"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'nın en eski mahallelerinden birinde, üç tarafı sokakla çevrili dikdörtgen bir alanda yer alan tek mekânlı sade bir Osmanlı camisidir. Tuğralı kitabesine göre 1894/95'te Affan adlı bir hayırsever tarafından yaptırılmış, 2008'de Hatay Vakıflar Bölge Müdürlüğü tarafından restore edilmiştir.",
+    "en": "A plain single-space Ottoman mosque on a rectangular plot surrounded by streets on three sides, in one of the oldest neighbourhoods of Antakya. According to its tughra inscription it was built in 1894/95 by a philanthropist named Affan and was restored in 2008 by the Hatay Foundations Regional Directorate."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Affan ve Ertuğrul adlarıyla bilinen cami, üç tarafı sokakla çevrili, yatay, dikdörtgen alan üzerindeki tek mekânlı sade ve mütevazı görünümüyle Antakya'nın en eski mahalleleri arasında bir Osmanlı eseridir. II. Abdülhamid'in tuğrasının taçlandırdığı caminin kitabesinden mabedin 1894/95 tarihinde yapıldığı anlaşılıyor. Affan isminde bir hayırseverin bina ettirdiği caminin aynı zamanda Ertuğrul adıyla da anılması, Sultan Abdülhamid'in köklerine özlemin ve saygının bir hatırası olarak yorumlanmaktadır.",
+        "en": "Known as Affan and Ertuğrul, the mosque is an Ottoman work among the oldest neighbourhoods of Antakya, with a plain and modest appearance and a single space on a horizontal rectangular plot surrounded by streets on three sides. The inscription, crowned with the tughra of Abdulhamid II, indicates that it was built in 1894/95. The mosque was built by a philanthropist named Affan; its also being called Ertuğrul is interpreted as a symbol of longing and respect for the roots of Sultan Abdulhamid."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "ertugrul-adi",
+      "order": 2,
+      "title": {
+        "tr": "Ertuğrul Adının Yorumu",
+        "en": "Interpretation of the Name Ertuğrul"
+      },
+      "body": {
+        "tr": "Caminin Ertuğrul adıyla da anılmasının sebebi kaynakta yorum olarak sunulur: Sultan Abdülhamid'in köklerine duyduğu özlem ve saygının bir hatırası olarak değerlendirilmektedir.",
+        "en": "The reason the mosque is also called Ertuğrul is presented in the source as an interpretation: a memento of Sultan Abdulhamid's longing and respect for his roots."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami, evlerin ve diğer sivil yapıların arasına sıkışmış küçük ve süslemenin uygulanmadığı bir mimariye sahiptir. Sade iki kapı ile küçük bir avluya girilir. Avludan sonra tuğralı kitabenin altındaki bir kapıdan girilen, dikdörtgen planlı, ahşap düz tavanlı küçük ama huzurlu bir harime ulaşılır. Kıbleyi işaret eden mütevazı bir mihrabın sağında sade ve gösterişsiz ahşap bir minber vardır. Mihrabın bulunduğu duvarda bir, yan duvarlarda karşılıklı birer pencere bulunur; Hızır Peygamber'in hatırasına yapılmış bir makam da yapıda yer alır.",
+        "en": "The mosque has a small, unadorned architecture tucked between houses and other civil buildings. A small courtyard is entered through two plain doors. After the courtyard, a door under the inscription with the tughra leads into a small but peaceful sanctuary (harim) on a rectangular plan with a flat wooden ceiling. A plain, unpretentious wooden minbar stands to the right of the modest mihrab pointing to the qibla. There is one window on the mihrab wall and one facing window on each side wall; a maqam built in memory of the Prophet Khidr is also part of the building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "id": "cesme-sadirvan-minare",
+      "order": 4,
+      "title": {
+        "tr": "Çeşme, Şadırvan ve Minare",
+        "en": "Fountain, Shadirvan and Minaret"
+      },
+      "body": {
+        "tr": "Avlunun güneyine bakan duvarda, 1926 yılında düzgün kesme taşlarla yapılmış, susayanlara su veren bir çeşme bulunur. Avlunun ortasında şadırvan vardır. Cami kapısında iki satırlık kelime-i tevhid yazısı bulunur; yuvarlak gövdeli minare burada bir mabedin varlığını uzaktakilere hissettirir.",
+        "en": "On the wall facing the south of the courtyard there is a fountain built in 1926 of smooth cut stones, giving water to the thirsty. A shadirvan stands in the middle of the courtyard. The mosque door carries a two-line kelime-i tevhid inscription, and the round-bodied minaret makes the presence of a mosque felt from afar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "205"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Caminin tavanı 1995 yılında yapılan onarımda hasır örgü ile kaplanmış, aynı teknik harimin duvarlarında da uygulanmıştır. Cami 2008 yılında Hatay Vakıflar Bölge Müdürlüğü tarafından restore edilmiştir.",
+        "en": "The ceiling was covered with wicker-weave technique in the repair of 1995 and the same technique was applied to the walls of the sanctuary. It was restored by the Hatay Foundations Regional Directorate in 2008."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "205"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapım yılı (kitabeye göre)",
+        "en": "Year of construction (per inscription)"
+      },
+      "value": "1894/95",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "key": "cesme_yili",
+      "label": {
+        "tr": "Çeşme yapım yılı",
+        "en": "Fountain construction year"
+      },
+      "value": 1926,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "205"
+        }
+      ]
+    },
+    {
+      "key": "tavan",
+      "label": {
+        "tr": "Tavan",
+        "en": "Ceiling"
+      },
+      "value": "Ahşap düz tavan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "key": "avlu_kapi_sayisi",
+      "label": {
+        "tr": "Avlu kapı sayısı",
+        "en": "Number of courtyard doors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "key": "minare_govdesi",
+      "label": {
+        "tr": "Minare gövdesi",
+        "en": "Minaret body"
+      },
+      "value": "Yuvarlak",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "205"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "tuglali-kitabe",
+      "location": {
+        "tr": "Cami kapısının üstü; II. Abdülhamid tuğrasıyla taçlanmış",
+        "en": "Above the mosque door; crowned with the tughra of Abdulhamid II"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1894/95"
+      },
+      "note": {
+        "tr": "Kitabenin dili ve metni kaynakta verilmiyor.",
+        "en": "The language and text of the inscription are not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "kelime-i-tevhid",
+      "location": {
+        "tr": "Cami kapısı; iki satır",
+        "en": "Mosque door; two lines"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Metin kaynakta verilmiyor; kelime-i tevhid yazısı olarak anılır.",
+        "en": "The text is not given; described as a kelime-i tevhid inscription."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "205"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1894",
+      "year": 1894,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı (kitabeye göre 1894/95)",
+        "en": "Mosque built (1894/95 per inscription)"
+      },
+      "note": {
+        "tr": "Kitabe 1894/95 tarihini verir.",
+        "en": "The inscription gives 1894/95."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "cesme-1926",
+      "year": 1926,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Avlu duvarındaki çeşme yapıldı",
+        "en": "Courtyard fountain built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "205"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1995",
+      "year": 1995,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tavan ve harim duvarları hasır örgü ile kaplandı",
+        "en": "Ceiling and sanctuary walls covered with wicker-weave"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "205"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Hatay Vakıflar Bölge Müdürlüğü restorasyonu",
+        "en": "Restoration by the Hatay Foundations Regional Directorate"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "205"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "tugrali-kitabe",
+      "title": {
+        "tr": "Tuğralı kitabe",
+        "en": "Tughra inscription"
+      },
+      "hint": {
+        "tr": "Cami kapısının üstündeki II. Abdülhamid tuğrasını arayın.",
+        "en": "Look for the tughra of Abdulhamid II above the mosque door."
+      },
+      "section_id": "genel-bakis"
+    },
+    {
+      "feature": "hizir-makami",
+      "title": {
+        "tr": "Hızır Peygamber makamı",
+        "en": "Maqam of the Prophet Khidr"
+      },
+      "hint": {
+        "tr": "Harimde Hızır Peygamber'in hatırasına yapılmış makamı arayın.",
+        "en": "Look for the maqam made in memory of the Prophet Khidr in the sanctuary."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Affan (Ertuğrul) Camii, evlerin ve sivil yapıların arasına sıkışmış küçük bir camidir. Süsleme yoktur. İki sade kapıdan küçük bir avluya girilir. Avlunun güneyine bakan duvarda 1926 tarihli kesme taş bir çeşme, ortasında ise bir şadırvan bulunur. Tuğralı kitabenin altındaki kapıdan, dikdörtgen planlı ve ahşap düz tavanlı küçük harime girilir. Kıbleyi gösteren mütevazı mihrabın sağında sade ahşap bir minber vardır. Hızır Peygamber'in anısına yapılmış bir makam da burada yer alır. Cami kapısında iki satırlık kelime-i tevhid yazısı, yanında yuvarlak gövdeli bir minare vardır.",
+      "en": "Affan (Ertuğrul) Mosque is a small mosque tucked between houses and civil buildings. It has no ornament. Two plain doors lead into a small courtyard, which has a cut-stone fountain dated 1926 on its south-facing wall and a shadirvan in the middle. A door under the tughra inscription opens into the small sanctuary, which is rectangular with a flat wooden ceiling. A plain wooden minbar stands to the right of the modest mihrab pointing to the qibla. A maqam built in memory of the Prophet Khidr is also here. The mosque door carries a two-line kelime-i tevhid inscription, and a round-bodied minaret rises beside it."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 200-205) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p100-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "198-199"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Affan (Ertuğrul) Camii'nin minaresi ve avlusu",
+        "en": "Minaret and courtyard of the Affan (Ertuğrul) Mosque"
+      },
+      "alt": {
+        "tr": "Bulutlu mavi gökyüzüne yükselen taş gövdeli, ince külahlı minare; önünde kiremit çatılı, yeşilimsi sıvalı küçük bir yapı ve sokağa açılan avlu. Sağda çok katlı sivil binalar görünür.",
+        "en": "A slender stone minaret with a pointed cap rises into a cloudy blue sky; in front are a small green-plastered building with a tiled roof and the open courtyard. Multi-storey houses stand on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p103-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "204-205"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Caminin yuvarlak gövdeli minaresi",
+        "en": "The mosque's round-bodied minaret"
+      },
+      "alt": {
+        "tr": "Açık gökyüzüne uzanan, krem renkli taştan yuvarlak gövdeli minare; şerefe altında noktalı süs kuşağı var. Çevresinde ahşap saçaklar ve apartman cepheleri görünür.",
+        "en": "A round cream-coloured stone minaret reaches into a clear sky, with a dotted decorative band below its balcony. Wooden eaves and apartment façades surround it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p102-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "202"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Tuğralı kitabenin altındaki cami kapısı",
+        "en": "Mosque door beneath the inscription with the tughra"
+      },
+      "alt": {
+        "tr": "Yeşil sıvalı duvarda taş çerçeveli sivri kemerli, çift kanatlı ahşap kapı; üstünde küçük bir tuğralı levha, yanlarda ahşap korkuluklar ve zeminde siyah-beyaz geometrik karolar.",
+        "en": "A double-leaf wooden door in a pointed stone arch set in a green plastered wall, with a small plaque bearing a tughra above, wooden railings at the sides and black-and-white geometric tiles on the floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p101-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "200-201"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Düz ahşap tavanlı harim",
+        "en": "Prayer hall with a flat wooden ceiling"
+      },
+      "alt": {
+        "tr": "Koyu kahverengi ahşap tavanlı, beyaz duvarlı geniş bir salon; zeminde mavi-yeşil halı, tavandan sarkan avizeler ve karşı duvarda kapalı ahşap panjurlu bir pencere.",
+        "en": "A wide hall with a dark brown wooden ceiling and white walls; a blue-green carpet covers the floor, chandeliers hang from the ceiling and a window with closed wooden shutters is on the far wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p101-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "201"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harimin yan duvarı ve pencereleri",
+        "en": "Side wall and windows of the prayer hall"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı salonda turkuaz halı serili zemin; solda ahşap korkuluklu minber, sağda ahşap çerçeveli bir pencere ve duvarda asılı levhalar.",
+        "en": "In a hall with a wooden ceiling and a turquoise carpet, a pulpit with a wooden balustrade is on the left, a wooden-framed window on the right and framed panels hang on the wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p103-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "205"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap duvarı",
+        "en": "The mihrab wall"
+      },
+      "alt": {
+        "tr": "Düz, krem rengi bir duvarın ortasında sade, sivri kemerli bir mihrap nişi; iki yanında ahşap çerçeveli pencereler, üstte yazılı levhalar ve bir duvar saati.",
+        "en": "A plain niche with a pointed arch in the middle of a flat cream wall, flanked by wooden-framed windows, with calligraphic panels and a wall clock above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p102-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "203"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Avlunun ortasındaki şadırvan",
+        "en": "The şadırvan in the middle of the courtyard"
+      },
+      "alt": {
+        "tr": "Taş döşeli avluda gri çatılı, sekizgen gövdeli şadırvan; sağda saksıda yeşil bir ağaç, arkada evler ve tepe görünür.",
+        "en": "In the stone-paved courtyard stands an octagonal ablution fountain with a grey roof; a leafy tree grows in a stone planter on the right, with houses and a hill behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p101-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "201"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Avlu duvarındaki kesme taş çeşme",
+        "en": "Cut-stone fountain on the courtyard wall"
+      },
+      "alt": {
+        "tr": "Yeşil sıvalı duvara yerleştirilmiş, kesme taştan yuvarlak kemerli bir çeşme nişi; ortada küçük bir yazı levhası, altta taş yalak, üstte demir korkuluk.",
+        "en": "A round-arched fountain niche of cut stone set into a green plastered wall, with a small inscription plate in the centre, a stone basin below and an iron railing above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p102-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "202"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minare kaidesi ve niş",
+        "en": "Minaret base with a niche"
+      },
+      "alt": {
+        "tr": "Gökyüzüne yükselen ince taş minare; altında yeşil sıvalı duvar üzerinde süslemeli, yuvarlak rozetli bir taş niş ve demir korkuluk.",
+        "en": "A slender stone minaret rising into the sky; below it, on a green plastered wall, an ornamented stone niche with a round rosette and an iron railing."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-affan-ertugrul-camii/p103-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "205"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minarenin kapısı ve kitabesi",
+        "en": "The minaret's door and inscription"
+      },
+      "alt": {
+        "tr": "Yuvarlak taş minare kaidesinde sivri kemerli ahşap bir kapı; üstünde yazılı küçük bir levha ve bir duvar feneri.",
+        "en": "A pointed-arch wooden door at the foot of the round stone minaret, with a small inscribed plate and a wall lantern above it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

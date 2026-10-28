@@ -1,0 +1,261 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-veled-i-sarayi-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 465) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Fotoğraflar eklenmeli: media ve archive_media boş, media_folder null; fotoğraflar match_photos.py ile bağlanacak. Zaman Perdesi için arşiv fotoğrafı da aranmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Banisi, vakfı ve mimarı kitapta yok.",
+      "Hazire için kayıtlı kişi/mezar taşı bilgisi yok; Sarıyol Mehmed Dede'nin mezarının bugün nerede olduğu belirtilmemiş.",
+      "Kesin inşa yılı yok; II. Murad dönemi yıl aralığı bu metinde verilmediği için start/end_year boş bırakıldı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Veled-i Sarayi Mescidi",
+    "en": "Veled-i Sarayi Masjid"
+  },
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle mescidi",
+    "II. Murad",
+    "Şehreküstü",
+    "Bursa tipi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Şehreküstü",
+    "address": "Ahmet Hamdi Tanpınar Caddesi No: 34",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "465"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Murad dönemi (15. yüzyıl)",
+      "en": "Period of Murad II (15th century)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Banisi bilinmeyen yapı “II. Murad dönemi yapısı olarak değerlendirilmektedir”; kitap bu metinde kesin bir yıl vermiyor. Tuğla minare dışında özgün yapı kaybolmuş.",
+      "en": "The founder is unknown and the structure “is considered to be from the period of Murad II”; the book gives no exact year in this text."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "465"
+      }
+    ]
+  },
+  "founder": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Şehreküstü Mahallesi'nde, banisi bilinmeyen, II. Murad dönemi yapısı sayılan Bursa tipi mahalle mescidi. Tuğla minaresi dışında özgün kimliğini büyük ölçüde yitirmiş, 2019'da Bursa Vakıflar Bölge Müdürlüğü'nce kapsamlı restore edilmiştir.",
+    "en": "A Bursa-type neighbourhood masjid in Şehreküstü whose founder is unknown, considered a work of the period of Murad II. Apart from its brick minaret it has largely lost its original identity; it was comprehensively restored by the Bursa Regional Directorate of Foundations in 2019."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Adı",
+        "en": "Overview and Name"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Şehreküstü Mahallesi, Ahmet Hamdi Tanpınar Caddesi No: 34'tedir. Banisi kesin olarak bilinmemekle birlikte II. Murad dönemi yapısı olarak değerlendirilmektedir. Osmanlı döneminde “Sarayoğlu Mahallesi” adıyla bilinen bölgeye zamanla “İbn-i Saray” ve “Veled-i Saray” gibi isimler de verilmiştir. Cami adını bulunduğu mahalleden almaktadır; H. 918 / M. 1512 tarihli kadı sicillerinde mahallenin bu adla anıldığı kayıtlıdır.",
+        "en": "The masjid is located in Osmangazi District, Şehreküstü Neighborhood, on Ahmet Hamdi Tanpinar Street No. 34. Although its founder is not known for sure, it is considered a structure from the period of Murad II. The area, known as the “Sarayoğlu Neighborhood” in the Ottoman period, was given names such as “İbn-i Saray” and “Veled-i Saray” over time. The mosque takes its name from its neighborhood; qadi records dated AH 918 / AD 1512 show the neighborhood called by this name."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "465"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Onarımlar",
+        "en": "Architecture and Repairs"
+      },
+      "body": {
+        "tr": "Tuğla minaresi dışında özgün kimliğini büyük ölçüde yitirmiş olan yapı, yakın dönemdeki yenilemelerle 15. yüzyıl Bursa tipi mahalle mescitlerine uygun şekilde yeniden düzenlenmiştir. Ahşap tavanlı ve iki kademeli, sivri kemerli on iki pencereyle aydınlanan ana mekâna üç bölümlü son cemaat yerinden girilir. Kareye yakın dikdörtgen planlıdır. 20. yüzyıl ortalarına kadar moloz taş örgülü, kırma kiremit çatılı, minaresi yıkık ve harap durumdayken Bursa Eski Eserleri Sevenler Kurumu ve mahalle sakinlerince onarılmıştır; kurum kayıtlarına göre 1958'de minare tamir edilmiş ve çevresi açılmıştır. 2019'da Bursa Vakıflar Bölge Müdürlüğü kapsamlı bir restorasyon yapmıştır.",
+        "en": "The building, which has lost much of its original identity except for its brick minaret, has been remodeled through recent renovations in accordance with 15th-century Bursa-style neighbourhood masjids. The main room, with a wooden ceiling and twelve two-stage pointed-arched windows, is entered through a three-part narthex. The plan is a rectangle close to a square. Until the mid-20th century it was a rubble-stone building with a hipped tile roof and a ruined minaret, until repaired by the Bursa Association for the Appreciation of Antiquities and the neighborhood's residents; according to the institution's records the minaret was repaired and its surroundings opened in 1958. A comprehensive restoration was carried out by the Bursa Regional Directorate of Foundations in 2019."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "465"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 3,
+      "title": {
+        "tr": "Avlu ve Hazire",
+        "en": "Courtyard and Graveyard"
+      },
+      "body": {
+        "tr": "Caminin küçük avlusunda kitabesiz iki mezar bulunmaktadır.",
+        "en": "There are two tombs without inscriptions in the small courtyard of the masjid."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "465"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "sariyol-mehmed-dede",
+      "title": {
+        "tr": "Mahalle Adının Kökeni Rivayeti",
+        "en": "Legend of the Neighborhood's Name"
+      },
+      "body": {
+        "tr": "Rivayete göre mahalle adını, caminin haziresinde medfun Sarıyol Mehmed Dede'den almış, zamanla bu ad “Sarayoğlu” şekline dönüşmüştür.",
+        "en": "According to legend, the neighborhood took its name from Sarıyol Mehmed Dede, who is buried in the graveyard of the mosque, and over time this name turned into “Sarayoğlu”."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "465"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "465"
+        }
+      ],
+      "note": {
+        "tr": "İki kademeli, sivri kemerli.",
+        "en": "Two-stage, pointed arched."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Sarıyol Mehmed Dede",
+      "role": {
+        "tr": "Rivayete göre mescit haziresinde medfun",
+        "en": "Said to be buried in the mosque's graveyard"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kadi-sicili-1512",
+      "year": 1512,
+      "date": null,
+      "hijri": "918",
+      "type": "record",
+      "title": {
+        "tr": "Kadı sicillerinde mahalle bu adla anıldı",
+        "en": "Qadi records mention the neighborhood by this name"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "465"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu minareyi tamir etti, çevresini açtı",
+        "en": "The minaret was repaired and its surroundings opened by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "465"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2019",
+      "year": 2019,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Vakıflar Bölge Müdürlüğü kapsamlı restorasyon",
+        "en": "Comprehensive restoration by the Bursa Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "465"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Veled-i Sarayi Mescidi, Şehreküstü'nde küçük, kareye yakın dikdörtgen planlı bir mahalle mescididir. Ahşap tavanlı ana mekâna üç bölümlü bir son cemaat yerinden girilir; iç mekân iki kademeli, sivri kemerli on iki pencereyle aydınlanır. Yapının en eski ögesi tuğladan yapılmış minaresidir. Küçük avluda kitabesiz iki mezar vardır.",
+      "en": "Veled-i Sarayi Masjid is a small neighbourhood masjid in Şehreküstü with a nearly square rectangular plan. The wooden-ceilinged main room is entered through a three-part narthex and is lit by twelve two-stage pointed-arched windows. The brick minaret is its oldest surviving element. Two tombs without inscriptions lie in the small courtyard."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

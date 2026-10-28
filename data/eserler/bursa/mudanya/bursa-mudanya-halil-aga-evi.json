@@ -1,0 +1,363 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-mudanya-halil-aga-evi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Mudanya",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
+      "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
+      "Yapım yılı ve yaptıran kitapta yok.",
+      "Restorasyonun yılı ve kurumu kitapta yok (yalnızca '1994 yangınından sonra').",
+      "Hazire (mezar taşı) için ayrı bölüm yok; ayrı kayıt açılmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[avlu-hazire]",
+        "note": "Çeşme bu bölümde 1645 olarak verilir; çeşmenin kendi bölümünde kitabeye göre 1642'dir (bkz. bursa-mudanya-sinan-bey-cesmesi)."
+      },
+      {
+        "field": "sections[plan]",
+        "note": "Metin 'alt kat' ve 'zemin kat' için ayrı mekânlar sayar (alt katta mutfak, banyo, tuvalet, iki oda; zemin katta iki depo); TR ve EN aynıdır, kat adlandırması belirsiz."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Halil Ağa Evi",
+    "en": "Halil Ağa House"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "sivil mimari",
+    "meşruta ev",
+    "ahşap",
+    "Bursa kemeri"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Mudanya",
+    "neighborhood": "Şükrüçavuş",
+    "address": "Mustafakemalpaşa Caddesi, 3. Cami Sokak, No: 35",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "598"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım yılı verilmemiş; XVII. yüzyıldan itibaren gelişen Müslüman mahalle yapılanmasının ilk örneklerinden",
+      "en": "No construction date given; one of the first examples of the Muslim neighborhood structure developing from the 17th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap kesin yıl vermez; evi XVII. yüzyıldan itibaren gelişen mahalle yapılanmasının ilk örneklerinden biri sayar.",
+      "en": "The book gives no year; it counts the house among the first examples of the neighborhood structure developing from the 17th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "598"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Kitapta 'meşruta ev' (mortmain house) olarak anılır; vakfa ilişkin ayrıntı verilmemiştir.",
+      "en": "Called a 'mortmain house' (meşruta) in the book; no waqf details are given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "599"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Mudanya'nın günümüze ulaşan en eski geleneksel evlerinden biri; Cami-i Atik avlusunu paylaşan, iki katlı, taş ve kerpiç dolgulu ahşap iskeletli meşruta ev.",
+    "en": "One of Mudanya's oldest surviving traditional houses; a two-storey mortmain house with stone and adobe-filled timber frame sharing the Cami-i Atik courtyard."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Önemi",
+        "en": "Location and Significance"
+      },
+      "body": {
+        "tr": "Ev, “Eski Cami” olarak bilinen ve H. 1053 / M. 1643-44'te Kethüda Halil Ağa tarafından ihya edilen caminin avlusunu paylaşır. XVII. yüzyıldan itibaren bu bölgede gelişen Müslüman mahalle yapılanmasının ilk örneklerinden biri sayılır ve Mudanya'nın günümüze ulaşan en eski geleneksel evlerinden biridir. 1994 yangınından sonra kapsamlı restorasyon geçirmiştir.",
+        "en": "The house shares the courtyard with the mosque known as “Eski Cami”, revived by Kethüda Halil Ağa in AH 1053 / AD 1643-44. It is considered one of the first examples of the Muslim neighborhood structure developing from the 17th century and one of the oldest surviving traditional houses of Mudanya. After the 1994 fire it underwent a comprehensive restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "598"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Mekânlar",
+        "en": "Plan and Spaces"
+      },
+      "body": {
+        "tr": "Kuzey-güney yönlü, dikdörtgene yakın planlı yapı 13 m uzunluğunda, ön cephesi 10 m, arka cephesi 8 m'dir. Giriş kuzeydeki cami avlusundan yapılır. Alt katta mutfak, banyo, tuvalet ve iki oda; zemin katta iki depo; üst katta başodanın da bulunduğu üç oda ve sofa yer alır. Başodada ocak ve sedirler vardır. Sofanın iki ucunda Bursa kemerleriyle ayrılmış iki sekilik ve iki oda arasında penceresiz bir eyvan bulunur.",
+        "en": "The north-south, nearly rectangular building is 13 m long, with a 10 m front and an 8 m rear façade. Entrance is from the mosque courtyard in the north. The lower floor has a kitchen, bathroom, toilet and two rooms; the ground floor two storage areas; the upper floor three rooms including the main room, and a hall. The main room has a fireplace and sofas. At both ends of the hall are raised seating areas separated by Bursa arches, and a windowless iwan lies between two rooms."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "598, 599"
+        }
+      ]
+    },
+    {
+      "id": "cephe-yapim",
+      "order": 3,
+      "title": {
+        "tr": "Cepheler ve Yapım Tekniği",
+        "en": "Façades and Construction"
+      },
+      "body": {
+        "tr": "Cami avlusuna bakan cephede ahşap direklerle taşınan, “eli böğründe” destek elemanlı çıkma ve toplam 18 pencere vardır. Zemin kat moloz taşla örülüp taş örgü arasına ahşap hatıl ve dikmeler yerleştirilmiş, üst kat kerpiç dolgulu ahşap iskeletle yapılmıştır. Ön cephe dışında zemin kat sıvasızdır. Güney ve doğudaki bahçe taş duvarla çevrilidir.",
+        "en": "The façade facing the mosque courtyard has a projection carried by wooden posts with “eli böğründe” (angle brace) supports and 18 windows in total. The ground floor is rubble stone with wooden beams and posts inside the masonry; the upper floor is a timber frame filled with adobe. Façades other than the front are unplastered on the ground floor. The garden on the south and east is enclosed by stone walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "598-599"
+        }
+      ]
+    },
+    {
+      "id": "avlu-hazire",
+      "order": 4,
+      "title": {
+        "tr": "Avlu ve Hazire",
+        "en": "Courtyard and Graveyard"
+      },
+      "body": {
+        "tr": "Ortak ön avluda yaşlı bir çınar ve dibek taşı olarak kullanılmış devşirme antik mermer blok vardır. Doğuda hazire alanında yedisi kitabeli, biri yazısız sekiz mezar taşı bulunur; caminin banisi olduğu düşünülen Hoca Hacı Ali bin Muhammed ez-Zâbeli'nin mezarı demir parmaklıkla çevrilidir ve ihya kitabesinden 111 yıl öncesine tarihlenir. Kuzey avlu duvarına bitişik çeşmenin 1645'te Sinan Bey tarafından yaptırıldığı belirtilir.",
+        "en": "The shared front courtyard has an old plane tree and a spolia ancient marble block used as a mortar. In the burial area to the east are eight gravestones, seven inscribed and one not; the grave of Hoca Hacı Ali bin Muhammed ez-Zâbeli, thought to be the founder of the mosque, is surrounded by iron railings and dates 111 years before the revival inscription. The fountain adjacent to the north courtyard wall is said to have been built by Sinan Bey in 1645."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "598-599"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "uzunluk",
+      "label": {
+        "tr": "Uzunluk",
+        "en": "Length"
+      },
+      "value": 13,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "598"
+        }
+      ]
+    },
+    {
+      "key": "on_cephe",
+      "label": {
+        "tr": "Ön (kuzey) cephe genişliği",
+        "en": "Front (north) façade width"
+      },
+      "value": 10,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "598"
+        }
+      ]
+    },
+    {
+      "key": "arka_cephe",
+      "label": {
+        "tr": "Arka (güney) cephe genişliği",
+        "en": "Rear (south) façade width"
+      },
+      "value": 8,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "598"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Avlu cephesindeki pencere sayısı",
+        "en": "Windows on courtyard façade"
+      },
+      "value": 18,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "598-599"
+        }
+      ]
+    },
+    {
+      "key": "mezar_tasi",
+      "label": {
+        "tr": "Hazirede mezar taşı sayısı",
+        "en": "Gravestones in the graveyard"
+      },
+      "value": 8,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "599"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Hacı Ali bin Muhammed ez-Zâbeli",
+      "role": {
+        "tr": "Cami-i Atik'in banisi olduğu düşünülen kişi",
+        "en": "Person thought to be the founder of the mosque"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yangin-1994",
+      "year": 1994,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangın; ardından kapsamlı restorasyon (restorasyon yılı kitapta yok)",
+        "en": "Fire; followed by comprehensive restoration (restoration year not given)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "599"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-mudanya-sinan-bey-cesmesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Çeşme kuzey avlu duvarına bitişiktir.",
+        "en": "The fountain is adjacent to the north courtyard wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "599"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İki katlı, ahşap iskeletli bir evdir; zemin kat moloz taş, üst kat kerpiç dolgudur. Avluya bakan cephede ahşap direklerle taşınan bir çıkma ve çok sayıda pencere vardır. Üst katta sofa çevresinde üç oda, başodada ocak ve sedirler bulunur.",
+      "en": "A two-storey timber-framed house, with a rubble-stone ground floor and adobe-filled upper floor. The courtyard façade has a projection on wooden posts and many windows. On the upper floor three rooms open off a hall, and the main room has a fireplace and sofas."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MSAPwPYfleCJID7tsM2Cex8h9sx8r_PW",
+    "book_layout_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+    "book_pdf_name": "8-Mudanya.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-halil-aga-evi/p030-1.jpg",
+        "original_name": "03 ERD05576 kopya.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "599"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Halil Ağa Evi'nin avludan görünümü",
+        "en": "Halil Ağa House seen from the courtyard"
+      },
+      "alt": {
+        "tr": "İki katlı, sarı sıvalı evin alt katı düz, üst katı sokağa taşan ahşap çıkmalıdır. Üst kat pencereleri koyu kahverengi ahşap çerçeveli, üstlerinde sivri kemerli küçük pencereler var. Önü taş döşeli avludur.",
+        "en": "A two-storey cream-plastered house with dark brown timber framing and an overhanging upper floor. Small pointed-arch windows sit above the rectangular ones. A stone-paved courtyard lies in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

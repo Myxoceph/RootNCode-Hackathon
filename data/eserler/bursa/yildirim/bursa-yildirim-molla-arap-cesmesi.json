@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-molla-arap-cesmesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 316) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Mollaarap Camii için kayıt yok; 'bursa-yildirim-mollaarap-camii' hedef id'si camii adı kitaptaki yazımla ('Mollaarap Camii') üretildi, kayıt oluşunca teyit edilmeli.",
+      "Çeşmenin kitabesi ya da banisi kaynakta yok.",
+      "Çeşme için vakıf bilgisi kaynakta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel]",
+        "note": "Kitap, cami hakkındaki kaynaklarda çeşmeden söz edilmediğini, 1954 yayınlarında ise onarım sırasında inşa edildiğini yazıyor; kitap bu iki bilgiyi birlikte verir, çelişki sayılmadı ve 1954 tarihi yayına dayanarak alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Molla Arap Çeşmesi",
+    "en": "Molla Arab Fountain"
+  },
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "çeşme",
+    "duvar çeşmesi",
+    "Mollaarap Camii",
+    "küfeki taşı",
+    "1954 onarımı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Mollaarap Mahallesi",
+    "address": "Balabancık Caddesi, No: 35 (Mollaarap Camii'nin kuzeydoğu köşesi)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "316"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1954 (caminin onarımı sırasında)",
+      "en": "1954 (during the mosque's repair)"
+    },
+    "start_year": 1954,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Bursa Eski Eserleri Sevenler Kurumu'nun 1954 onarımlarına ilişkin yayınlarına göre çeşme, caminin kubbe ve minare tamiratı sırasında yapılmıştır.",
+      "en": "According to the publications of the Bursa Association for the Appreciation of Antiquities on the 1954 repairs, the fountain was built during the repair of the mosque's dome and minaret."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "316"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mollaarap Camii'nin kuzeydoğu köşesinde, caddeye cepheli, 1954'teki cami onarımı sırasında eklenen tek yüzlü duvar çeşmesi. Küfeki taşı, tuğla ve mermerden yapılmıştır; musluğundan su hâlâ akmaktadır.",
+    "en": "A single-sided wall fountain on the northeast corner of the Mollaarap Mosque facing the street, added during the mosque's 1954 repair. Built of limestone, brick and marble, it still flows from its tap."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapım",
+        "en": "Location and Construction"
+      },
+      "body": {
+        "tr": "Çeşme, Mollaarap Camii'nin kuzeydoğu köşesinde, caddeye cepheli konumdadır ve cami yapısına sonradan eklenmiştir. Cami hakkında yazılan kaynaklarda çeşmeden söz edilmez; Bursa Eski Eserleri Sevenler Kurumu'nun 1954 onarımlarına ilişkin yayınlarında ise caminin kubbe ve minare tamiratı sırasında çeşmenin de inşa edildiği belirtilir.",
+        "en": "The fountain stands on the northeast corner of the Mollaarap Mosque facing the street and was attached to the mosque afterwards. Sources on the mosque do not mention it; publications of the Bursa Association for the Appreciation of Antiquities on the 1954 repairs state that it was built during the repair of the dome and minaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "316"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yaklaşık 3,60 x 2,50 m ölçülerinde ve 60 cm derinliğinde, sırtı cami duvarına dayalı tek yüzlü bir duvar çeşmesidir. Kesme küfeki taşı, tuğla ve mermer kullanılmış, malzeme tercihi camiyle bütünlük sağlamıştır. Çeşme nişi bir sıra taş, bir sıra tuğla ile örülmüş yuvarlak kemerle çevrilidir. Oval ayna taşı ve 1,50 x 0,30 m su teknesi mermerdir; ayna taşında ışınsal bezeme dışında süs yoktur ve ortadaki musluktan su hâlâ akar. Arazi kot farkı nedeniyle kemer yüksekliğine kadar bir alınlık oluşturulmuştur. Üst kısım caminin bahçe duvarıyla birleştirilip beton örtüyle kapatılmıştır.",
+        "en": "About 3.60 x 2.50 m and 60 cm deep, it is a single-sided wall fountain leaning against the mosque wall. Cut limestone, brick and marble give it structural integrity with the mosque. The niche is surrounded by a round arch of alternating stone and brick rows. The oval back panel and the 1.50 x 0.30 m basin are marble; apart from a radial motif the panel is plain and water still flows from the central tap. A pediment up to the arch height was formed because of the difference in ground level. The top joins the mosque's garden wall and is closed with a concrete cover."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "316"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Çeşme ölçüsü (yaklaşık)",
+        "en": "Fountain size (approx.)"
+      },
+      "value": "3,60 × 2,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "316"
+        }
+      ]
+    },
+    {
+      "key": "derinlik",
+      "label": {
+        "tr": "Derinlik",
+        "en": "Depth"
+      },
+      "value": 60,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "316"
+        }
+      ]
+    },
+    {
+      "key": "tekne_olcu",
+      "label": {
+        "tr": "Su teknesi ölçüsü",
+        "en": "Basin size"
+      },
+      "value": "1,50 × 0,30",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "316"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Malzeme",
+        "en": "Materials"
+      },
+      "value": "kesme küfeki taşı, tuğla, mermer",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "316"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1954",
+      "year": 1954,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Caminin kubbe ve minare tamiratı sırasında inşa edildi",
+        "en": "Built during the repair of the mosque's dome and minaret"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "316"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-molla-arap-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Çeşme, Mollaarap Camii'nin kuzeydoğu köşesine sonradan eklenmiştir.",
+        "en": "The fountain was later attached to the northeast corner of the Mollaarap Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "316"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çeşme, caddeye bakan ve sırtı cami duvarına dayalı, yaklaşık 3,60 x 2,50 m'lik tek yüzlü bir duvar çeşmesidir. Nişi, taş ve tuğla sıralı yuvarlak bir kemerle çevrilidir. Oval mermer ayna taşında yalnızca ışınsal bir bezeme vardır; ortadaki musluktan su akar, altında mermer bir tekne bulunur.",
+      "en": "The fountain is a single-sided wall fountain about 3.60 x 2.50 m facing the street with its back against the mosque wall. Its niche is framed by a round arch of alternating stone and brick. The oval marble back panel has only a radial motif; water flows from the central tap above a marble basin."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

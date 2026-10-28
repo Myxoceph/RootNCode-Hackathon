@@ -1,0 +1,395 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-mukrime-hatun-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Mimar kitapta belirtilmemiş.",
+      "Türbenin tam yapım yılı yok.",
+      "Şehzade Korkut'un hangi türbede yattığı (burada mı, Şehzade Ahmet Türbesi'nde mi) teyit edilmeli.",
+      "Timeline'daki 1910 yılı '20. yüzyıl başları' için yaklaşık yer tutucudur."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people[Şehzade Korkut]",
+        "note": "Bu türbede Şehzade Korkut'un (1465-1513) sandukasının bulunduğu söylenir; Şehzade Ahmet Türbesi bölümü de 'Yavuz Sultan Selim'in kardeşi Şehzade Korkut'un' orada medfun olduğunu söyler. İki ifade birbirini tutmuyor; kaynağa sadık kalındı."
+      },
+      {
+        "field": "dating",
+        "note": "Yapım yılı yok; yalnızca 'Mükrime Hatun'un vefatından (1517) önce' denir."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Metin 'tarihî kaynaklarda çini satın alındığına dair kayıt' der ancak yapıda bugün çini izi yoktur; kaynağa sadık kalındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mükrime Hatun Türbesi",
+    "en": "Mükrime Hatun Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "türbe",
+    "kalem işi",
+    "kündekâri kapı",
+    "Âyetü'l-kürsî"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "Kaplıca Caddesi, No: 1/5",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "155"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.19033,
+      "lng": 29.045512,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/2796344234 ('Mükrime Hatun Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1517 öncesi",
+      "en": "Before 1517"
+    },
+    "start_year": null,
+    "end_year": 1517,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Şehzade Şehinşah tarafından Mükrime Hatun'un (v. 1517) vefatından önce yaptırılmıştır.",
+      "en": "Built by Şehzade Şehinşah before the death of Mükrime Hatun (d. 1517)."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "155"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şehzade Şehinşah",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "155"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "II. Bayezid'in oğlu Şehinşah'ın hanımı Mükrime Hatun'a atfedilen, 12 pencereli, kurşun kubbeli kare planlı türbe. Celi sülüs Âyetü'l-kürsî ve Fatiha frizi, mukarnaslı mihrabı ve zengin kalem işleriyle 2012'de restore edilip ziyarete açılmıştır.",
+    "en": "A square tomb with a lead dome and twelve windows, attributed to Mükrime Hatun, wife of Bayezid II's son Şehinşah. With its Jeli Thuluth Ayat al-Kursi and Fatiha frieze, muqarnas mihrab and rich hand-painted work, it was restored and opened to visitors in 2012."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Defnedilenler",
+        "en": "Overview and Burials"
+      },
+      "body": {
+        "tr": "Kaplıca Caddesi No: 1/5'te yer alan türbe, II. Bayezid'in oğlu Şehinşah'ın hanımı ve Şehzade Mehmed'in annesi Mükrime Hatun'a (v. 1517) atfedilmektedir. Şehzade Şehinşah tarafından Mükrime Hatun'un vefatından önce yaptırılmıştır. Türbede ortada Mükrime Hatun, solda Şehzade Alemşah'ın kızı Fatma Hatun (1495-1522), sağda Sultan II. Bayezid'in oğlu Şehzade Korkut'un (1465-1513) sandukaları bulunur. Şeriye sicillerinde Şehzade Sultan Mehmed bin Sultan Şehinşah'ın validesi \"El-merhûme muhtereme Hatun\" olarak kaydedilmiştir.",
+        "en": "The tomb at Kaplıca Street No. 1/5 is attributed to Mükrime Hatun (d. 1517), wife of Şehinşah, son of Bayezid II, and mother of Şehzade Mehmed. It was built by Şehzade Şehinşah before her death. Inside are the sarcophagi of Mükrime Hatun in the middle, Fatma Hatun (1495-1522), daughter of Şehzade Alemşah, on the left, and Şehzade Korkut (1465-1513), son of Bayezid II, on the right. The Sharia records record the mother of Şehzade Sultan Mehmed bin Sultan Şehinşah as \"El-merhûme muhtereme Hatun\" (the Late, Revered Lady)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "155"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbeye doğuda, dikdörtgen planlı, sivri kemerli ve altı sıra mukarnaslı taç kapıdan girilir. Mermer söveli, basık kemerli giriş kapısı ahşap kündekâri tekniğiyle yapılmıştır; iki yanında yuvarlak kemerli nişler vardır. Kare planlı türbenin duvarları bir sıra taş ve üç sıra tuğladandır. Sekizgen kasnağa oturan kurşun kaplı kubbeyle örtülü yapı toplam on iki pencereyle aydınlanır; alt pencereler dikdörtgen planlı, mermer söveli, ahşap çerçeveli ve sivri kemerli alınlıklıdır, kasnaktakiler sivri kemerli ve alçı şebekelidir. Tarihî kaynaklarda yapıda kullanılmak üzere çini satın alındığına dair kayıt vardır ancak bugün buna dair iz yoktur.",
+        "en": "The tomb is entered through a rectangular, pointed-arched portal with six rows of muqarnas on the east side. The entrance door with a marble frame and depressed arch is made with wooden kündekâri, with round-arched niches on both sides. The square building's walls are one row of stone and three rows of brick. Covered by a lead-coated dome on an octagonal drum, it is lit by twelve windows; the lower ones are rectangular with marble sills, wooden frames and pointed-arch pediments, those on the drum pointed-arched with plaster lattices. Historical sources record that tiles were purchased for use in the building, but no trace of them remains."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "155-156"
+        }
+      ]
+    },
+    {
+      "id": "susleme",
+      "order": 3,
+      "title": {
+        "tr": "Süsleme ve Restorasyon",
+        "en": "Decoration and Restoration"
+      },
+      "body": {
+        "tr": "İç mekân zengin kalem işleriyle bezenmiştir. Geniş bir yazı kuşağında celi sülüsle kırmızı zemin üzerine Âyetü'l-kürsî ve Fatiha suresi tüm duvarları dolaşır. Güney duvarındaki beş dilimli, mukarnaslı mihrap nişi kavsarasıyla birlikte zengin süslüdür; mihrabın üzerinde dairevi ve dilimli madalyonlar içinde Âl-i İmrân suresi 18. ayet vardır: \"Şehidallâhu ennehû lâ ilâhe illâ hüve ve'l-melâiketu\" kısmı beyaz sülüsle, devamı yeşil kûfî hatla yazılmış, süslemenin bittiği yerde damla biçimli motif içinde kûfî hatla \"hüve'llâh lâ ilâhe illallah\" yer alır. Girişin tam karşısında aynı istifle Rahman suresi 26. ayet vardır; sağ duvardaki madalyonda \"Ya Rezzak\" ve \"Ya Vehhab\" altışar kez tekrar edilmiştir. 20. yüzyıl başındaki onarımda özgün doku badanayla sıvanıp basit kalem işiyle kaplanmış; 2012'de Bursa Büyükşehir Belediyesi'nin restorasyonuyla özgün kimliğine kavuşturulup ziyarete açılmıştır.",
+        "en": "The interior is decorated with rich hand-painted work. In a wide inscription band the Ayat al-Kursi and Surah al-Fatiha in Jeli Thuluth on a red background run around all walls. The five-lobed muqarnas mihrab niche on the south wall is richly decorated; above it, in circular and segmented medallions, is Surah Al-i Imran verse 18 (the first part in large white Thuluth, the rest in green Kufic), with \"Hüve'llâh lâ ilâhe illallah\" in Kufic within a drop-shaped motif. Opposite the entrance, verse 26 of Surah ar-Rahman is arranged the same way; on the right wall \"Ya Rezzak\" and \"Ya Vehhab\" are written six times each in a medallion. In an early 20th-century repair the original texture was whitewashed and covered with simple painted work; the tomb was restored to its original identity and opened to visitors in 2012."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "156-157"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "156"
+        }
+      ]
+    },
+    {
+      "key": "mukarnas_sirasi",
+      "label": {
+        "tr": "Taç kapıdaki mukarnas sırası",
+        "en": "Muqarnas rows on the portal"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "155"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "155"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mükrime Hatun",
+      "role": {
+        "tr": "Şehinşah'ın hanımı, Şehzade Mehmed'in annesi (v. 1517); türbe ona atfedilir",
+        "en": "Wife of Şehinşah, mother of Şehzade Mehmed (d. 1517); the tomb is attributed to her"
+      }
+    },
+    {
+      "name": "Şehzade Şehinşah",
+      "role": {
+        "tr": "Türbeyi yaptıran",
+        "en": "Had the tomb built"
+      }
+    },
+    {
+      "name": "Fatma Hatun",
+      "role": {
+        "tr": "Şehzade Alemşah'ın kızı (1495-1522); türbede yatar",
+        "en": "Daughter of Şehzade Alemşah (1495-1522); buried here"
+      }
+    },
+    {
+      "name": "Şehzade Korkut",
+      "role": {
+        "tr": "II. Bayezid'in oğlu (1465-1513); burada yattığı belirtilir",
+        "en": "Son of Bayezid II (1465-1513); stated to be buried here"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "al-i-imran-18",
+      "location": {
+        "tr": "Mihrabın üzerinde, dairevi ve dilimli madalyonlar",
+        "en": "Above the mihrab, circular and segmented medallions"
+      },
+      "language": "ar",
+      "script": "beyaz sülüs ve yeşil kûfî",
+      "transliteration": "Şehidallâhu ennehû lâ ilâhe illâ hüve ve’l-melâiketu ve ulû’l-ilmi kâimen bi’l-kısti lâ ilâhe illâ hüve’l-azîzü’l-hakîm",
+      "translation": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "157"
+        }
+      ],
+      "note": {
+        "tr": "Âl-i İmrân 18. ayet; çevirisi kitapta verilmemiştir.",
+        "en": "Al-i Imran 18; translation not given in the book."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1517-oncesi",
+      "year": 1517,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Türbe Mükrime Hatun'un vefatından önce yaptırıldı (en geç 1517)",
+        "en": "Tomb built before Mükrime Hatun's death (by 1517 at the latest)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "155"
+        }
+      ]
+    },
+    {
+      "id": "onarim-20yy",
+      "year": 1910,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "20. yüzyıl başında onarım; özgün iç mekân badanayla örtüldü (yaklaşık)",
+        "en": "Early 20th-century repair; original interior whitewashed (approx.)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi restorasyonu; ziyarete açıldı",
+        "en": "Restoration by Bursa Metropolitan Municipality; opened to visitors"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "157"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "155"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sirin-hatun-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Şirin Hatun Türbesi'nin kalem işi süslemeleri ve yazı frizi bu türbeyle birebir aynıdır.",
+        "en": "The hand-painted decoration and inscription frieze of the Şirin Hatun Tomb are exactly the same as this one."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "168"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sehzade-ahmet-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Şehzade Korkut bu türbede ve Şehzade Ahmet Türbesi'nde medfun olarak anılır; Şehinşah ile oğlu Mehmed Şehzade Ahmet Türbesi'nde yatar.",
+        "en": "Şehzade Korkut is named as buried both here and in the Şehzade Ahmet Tomb; Şehinşah and his son Mehmed lie in the Şehzade Ahmet Tomb."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "155, 158"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe kare planlıdır; duvarları bir sıra taş ve üç sıra tuğladandır. Doğudaki dikdörtgen taç kapının üstünde altı sıra mukarnas görülür; mermer söveli kapı kündekâri ahşaptır. Kurşun kaplı kubbe sekizgen kasnağa oturur. İçeride duvarları saran kırmızı zeminli geniş bir yazı kuşağı, güneyde beş dilimli mukarnaslı mihrap ve zengin kalem işi bezemeler bulunur.",
+      "en": "The tomb is square, with walls of one row of stone and three of brick. The rectangular portal on the east has six rows of muqarnas, and the marble-framed door is kündekâri woodwork. The lead-clad dome sits on an octagonal drum. Inside, a wide red-ground inscription band runs around the walls, with a five-lobed muqarnas mihrab on the south and rich hand-painted decoration."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

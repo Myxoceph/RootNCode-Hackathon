@@ -1,0 +1,672 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-nilufer-hatun-imareti",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Yeşil Camii'nin kaydı kapsam dışı; relations hedef id'si 'bursa-iznik-yesil-camii' doğrulanmalı.",
+      "Kitabenin iki basılı biçimi arasındaki yazım farkı kontrol edilmeli (bkz. data_quality_notes).",
+      "Müzenin güncel çalışma düzeni ve giriş ücreti kaynakta yok.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[insa-kitabesi]",
+        "note": "Aynı kitabe iki yerde basılı: İngilizce metin içinde (s. 502) 'ma’mûre-ti’l-melikü’l-mu’azzam ... tis’în ve seb’a mi’eti', Türkçe metin içinde ise 'mamûre-ti’l-melikü’l-muazzam ... tisîn ve seba mi’eti' (apostrofsuz). Transliterasyon Türkçe kısımdan alındı; satır sonu tireleri birleştirildi."
+      },
+      {
+        "field": "sections[islev-tarihce]",
+        "note": "Yapının işlevi için kaynak iki görüş (aşevi/imaret ya da zaviye/konaklama yapısı) aktarır; kesin hüküm vermez."
+      },
+      {
+        "field": "timeline[nakliyeci-1950]",
+        "note": "Yunan işgali sonrası kullanım dönemlerinin yılları verilmemiştir; yalnızca '1950'ye kadar' ve 1955 restorasyonu belirtilmiştir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Nilüfer Hatun İmareti (İznik Müzesi)",
+    "en": "Nilüfer Hatun Imaret (Iznik Museum)"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "imaret",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "imaret",
+    "zaviye",
+    "tabhane",
+    "Nilüfer Hatun",
+    "I. Murad",
+    "müze",
+    "İznik çinisi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Eşrefoğlu Mahallesi",
+    "address": "Müze Sokak No: 11, Yeşil Camii'nin batısı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "501"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.43014,
+      "lng": 29.72567,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "3 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 790 / M. 1388",
+      "en": "AH 790 / AD 1388"
+    },
+    "start_year": 1388,
+    "end_year": 1388,
+    "hijri_year": 790,
+    "century": 14,
+    "basis": {
+      "tr": "Cümle kapısı üzerindeki inşa kitabesi (Cemaziyelevvel ayının başı).",
+      "en": "Construction inscription above the main gate (beginning of Jumada al-Awwal)."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "501, 503"
+      }
+    ]
+  },
+  "founder": {
+    "name": "I. Murad",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "501, 503"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "I. Murad'ın annesi Nilüfer Hatun adına H. 790 / M. 1388'de yaptırdığı, zaviyeli/tabhaneli plan tipinde erken Osmanlı yapısı; bugün Türk İslam Eserleri Müzesi olarak hizmet verir.",
+    "en": "An early Ottoman zawiya/hospice-plan building commissioned by Murad I in AH 790 / AD 1388 in the name of his mother Nilüfer Hatun; today the Turkish Islamic Arts Museum."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cümle kapısı üzerindeki kitabeye göre H. 790 / M. 1388'de I. Murad tarafından annesi Nilüfer Hatun adına yaptırılan imaret, Osmanlı'nın ilk dönem zaviyeli/tabhaneli yapılar grubundandır. Merkezde büyük kubbeli ana mekân, batıda art arda iki kubbeli bölüm, kuzey ve güneyde tabhane odaları, doğuda ise ortası kubbeli, yanları ayna tonozlu beş sivri kemerli bir son cemaat yeri vardır.",
+        "en": "According to the inscription over the main gate, the imaret was built by Murad I in AH 790 / AD 1388 in the name of his mother Nilüfer Hatun and belongs to the early Ottoman zawiya/hospice group. It has a large domed main space at the centre, two consecutive domed sections to the west, guest rooms north and south, and an east narthex of five pointed arches with a central dome and mirror-vaulted sides."
+      },
+      "confidence": "certain",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "501"
+        }
+      ]
+    },
+    {
+      "id": "revak",
+      "title": {
+        "tr": "Revaklı Bölüm ve Cephe",
+        "en": "Arcade and Façade"
+      },
+      "body": {
+        "tr": "Doğuda taş duvarlarla çevrili geniş bir avludan 25 × 8 m'lik dikdörtgen revaklı bölüme geçilir; bu alan 1,41 × 1,41 m'lik dört yığma paye ve 65 cm çaplı mukarnas başlıklı dört mermer sütunla bölünür. Sivri kemerler üç sıra tuğla ve bir sıra küfeki taşla örülmüştür; kubbelerin içi palmet motifleriyle süslüdür. Orta bölümün zemini yanlardan 52 cm alçaktır. Girişte iki kademeli kemer içinde mermer söveli, Bursa kemerli bir kapı ve her iki yanında mermer söveli, sivri kemer alınlıklı birer pencere bulunur; kapı alınlığında kitabe yer alır.",
+        "en": "From a large courtyard enclosed by stone walls on the east one passes to the 25 × 8 m rectangular arcade, divided by four 1.41 × 1.41 m masonry piers and four 65 cm marble columns with muqarnas capitals. The pointed arches are three rows of brick and one of limestone; the domes are painted with palmette motifs. The middle section floor is 52 cm lower than the sides. The entrance is a marble-framed Bursa-arch door in a two-stage arch, flanked by marble-framed windows with pointed-arch pediments; the inscription is above the door."
+      },
+      "confidence": "certain",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "501-502"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "title": {
+        "tr": "İç Mekânlar",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Çift kanatlı ahşap kapıdan 10,2 × 10,2 m'lik kare planlı sofaya geçilir; sofa Türk üçgenleriyle geçilen onikigen kasnaklı, kiremit kaplı bir kubbeyle örtülüdür. Batıda iki geniş sivri kemerle bağlanan, toplam 13,28 × 8,94 m'lik art arda iki mekân yer alır; doğudakinin güney duvarında sade, beyaz sıvalı bir mihrap nişi vardır ve sekizgen kasnaklı sekiz dilimli kubbe ile örtülüdür. Sofanın sağında ve solunda 7,61 × 11,77 m'lik, ocak nişli, on kenarlı kasnaklı kubbeli tabhaneli mekânlar bulunur. İç duvarları yerden yaklaşık 2 m yüksekte alçı kabartma bir tezyinat kuşağı dolaşır.",
+        "en": "A double-leaf wooden door leads to the 10.2 × 10.2 m square hall, covered by a tiled dome on a dodecagonal drum reached by Turkish triangles. West of it, two consecutive spaces joined by wide pointed arches measure 13.28 × 8.94 m in total; the eastern one has a plain white-plastered mihrab niche and an eight-segment dome on an octagonal drum. On either side of the hall are 7.61 × 11.77 m hospice spaces with hearth niches under tiled domes on ten-sided drums. A plaster relief band runs around the interior walls about 2 m above the floor."
+      },
+      "confidence": "certain",
+      "order": 3,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "503-504"
+        }
+      ]
+    },
+    {
+      "id": "malzeme",
+      "title": {
+        "tr": "Malzeme ve Ustalar",
+        "en": "Materials and Craftsmen"
+      },
+      "body": {
+        "tr": "Beden duvarları yerden yaklaşık 50 cm yüksekliğe kadar blok mermerle, sonrasında üç sıra tuğla ve bir sıra küfeki taşla örülmüştür; çatı altları ve kasnaklar üç sıra kirpi saçakla sonlanır. Cephelerin bazı yerlerinde renkli sır ve sır altı tekniğinde küçük çini parçaları serpiştirilmiştir. Duvar örgüsü, cephe süslemeleri ve payelerin biçimi yapının inşasında İznik'te yaşayan Bizanslı ustaların çalışmış olabileceğini düşündürür.",
+        "en": "The walls are block marble to about 50 cm and then three rows of brick and one of limestone; eaves and drums end in three rows of sawteeth. Small coloured-glaze and underglaze tile pieces are scattered on parts of the façades. Wall technique, façade decoration and pier forms suggest that Byzantine masters living in Iznik may have worked on it."
+      },
+      "confidence": "probable",
+      "order": 4,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "504"
+        }
+      ]
+    },
+    {
+      "id": "islev-tarihce",
+      "title": {
+        "tr": "İşlev ve Tarihçe",
+        "en": "Function and History"
+      },
+      "body": {
+        "tr": "Yapının işlevi konusunda farklı görüşler vardır: bazı araştırmacılar 'imaret' adına dayanarak yoksullara ve yolculara hizmet veren bir aşevi olduğunu, bazıları erken Osmanlı zaviye anlayışıyla dervişlerin konaklayabileceği çok işlevli bir yapı olarak tasarlandığını savunur. Yapı uzun süre harap kalmış, Yunan işgalinde ağır hasar görmüş, sonra imalathane, ahır ve depo olarak kullanılmış, 1950'ye kadar nakliyecilerin geçici barınağı olmuştur. 1955'teki kapsamlı restorasyondan sonra 'İznik Müzesi' olarak açılmış, bugün 'Türk İslam Eserleri Müzesi' adıyla işlevini sürdürür; İznik çinileri, sikkeler ve etnografik malzeme sergilenir, avluda Osmanlı mezar taşları, çeşme ve kitabeler ile Roma-Bizans lahitleri yer alır.",
+        "en": "There are different views on the function: some researchers, from the name 'imaret', see a soup kitchen for the poor and travellers; others argue it was designed as a multifunctional building where dervishes could stay, in line with the early Ottoman zawiya concept. The building lay in ruins for long, was heavily damaged during the Greek occupation, then used as a workshop, barn and warehouse, and until 1950 as a temporary shelter for hauliers. After comprehensive restoration in 1955 it opened as the 'Iznik Museum' and today continues as the 'Turkish Islamic Arts Museum'; Iznik tiles, coins and ethnographic material are displayed, and the courtyard holds Ottoman gravestones, fountains and inscriptions and Roman-Byzantine sarcophagi."
+      },
+      "confidence": "disputed",
+      "order": 5,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "506"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sofa_olcu",
+      "label": {
+        "tr": "Sofa boyutu",
+        "en": "Hall dimensions"
+      },
+      "value": "10,2 × 10,2",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "504"
+        }
+      ]
+    },
+    {
+      "key": "revak_olcu",
+      "label": {
+        "tr": "Revaklı bölüm boyutu",
+        "en": "Arcade dimensions"
+      },
+      "value": "25 × 8",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "502"
+        }
+      ]
+    },
+    {
+      "key": "iki_mekan_olcu",
+      "label": {
+        "tr": "Batıdaki iki mekân (toplam)",
+        "en": "Two western spaces (total)"
+      },
+      "value": "13,28 × 8,94",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "504"
+        }
+      ]
+    },
+    {
+      "key": "tabhane_olcu",
+      "label": {
+        "tr": "Tabhaneli mekân boyutu",
+        "en": "Hospice space dimensions"
+      },
+      "value": "7,61 × 11,77",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "505"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_levha",
+      "label": {
+        "tr": "Kitabe levhası",
+        "en": "Inscription slab"
+      },
+      "value": "0,48 × 1,51",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "503"
+        }
+      ]
+    },
+    {
+      "key": "revak_taban_farki",
+      "label": {
+        "tr": "Orta bölüm zemini yanlardan alçak",
+        "en": "Middle section floor lower than sides"
+      },
+      "value": 52,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "502"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "I. Murad",
+      "role": {
+        "tr": "Yaptıran hükümdar",
+        "en": "Ruler who commissioned the building"
+      }
+    },
+    {
+      "name": "Nilüfer Hatun",
+      "role": {
+        "tr": "I. Murad'ın annesi; yapı adına yaptırılmıştır",
+        "en": "Mother of Murad I; the building is in her name"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Cümle kapısının üzerindeki sivri kemerli mermer alınlık, koyu mermer levha (0,48 × 1,51 m), üç satır",
+        "en": "Pointed-arch marble pediment above the main gate; dark marble slab (0.48 × 1.51 m), three lines"
+      },
+      "language": "ar",
+      "script": "celi sülüs",
+      "transliteration": "Emere bi-binâ’i hâzihi’l-imâreti’l-mübâreketi’ş-şerîfeti li-izâleti mamûreti’l-melikü’l-muazzam el-hâkânü’l-mükerrem Sultân bin Sultân Murâd bin Orhan halledallâhu memleketühû li-vâlidetihi’l-merhûmeti nâşiretü’l-hayrâti seyyidetü’l-muhadderât Nilüfer Hâtûn tegammedehâ bi’l-gufrâni fî evvel-i cemâziye’l-evvel li-seneti tisîn ve seba mi’eti.",
+      "translation": {
+        "tr": "Bu mamur olarak sürecek olan mübarek ve şerefli imaretin inşasını, büyük hükümdar, kerem sahibi hakan, Sultan oğlu Sultan, Orhan Gazi'nin oğlu Sultan Murad, -Allah mülkünü daim kılsın- annesi, hayırları yayan hanımefendilerin seyyidesi, merhume Nilüfer Hatun'un ruhu için, H. 790 / M. 1388 yılı Cemaziyelevvel ayının başında emretmiştir. Allah onu bağışlayıp rahmetine gark eylesin.",
+        "en": "The construction of this blessed and honorable imaret, which will continue to thrive, was ordered by the great ruler, the generous khan, the son of Sultan, the son of Orhan Gazi, Sultan Murad, for the soul of his mother, the most worthy of ladies who spread goodness, the late Nilüfer Hatun, at the beginning of the month of Jumada al-Awwal in the year 790 AH / 1388 AD. May Allah forgive her and immerse her in His mercy."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 790,
+        "gregorian": "1388"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "502-503"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1388",
+      "year": 1388,
+      "date": null,
+      "hijri": "790",
+      "type": "construction",
+      "title": {
+        "tr": "I. Murad annesi Nilüfer Hatun adına imaretin yapımını emretti (Cemaziyelevvel başı)",
+        "en": "Murad I ordered construction in the name of his mother Nilüfer Hatun (start of Jumada al-Awwal)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "501-503"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon; 'İznik Müzesi' olarak ziyarete açıldı",
+        "en": "Comprehensive restoration; opened to visitors as the 'Iznik Museum'"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "506"
+        }
+      ]
+    },
+    {
+      "id": "nakliyeci-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1950'ye kadar nakliyecilerin geçici barınağı olarak kullanıldı",
+        "en": "Used as a temporary shelter for hauliers until 1950"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "506"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-yesil-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "İmaret, İznik'te Yeşil Camii'nin batısında yer alır.",
+        "en": "The imaret stands to the west of the Green Mosque in Iznik."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "501"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yapı, doğu yönünde taş duvarlı geniş bir avluya bakan, kare planlı, üstü büyük bir kiremit kaplı kubbeyle örtülü bir yapıdır. Önünde beş sivri kemerli bir revak yer alır; giriş kapısı mermer çerçevelidir ve üzerinde üç satırlık koyu mermer bir kitabe levhası bulunur. İçeride merkezde büyük kubbeli bir sofa, batıda mihraplı iki kubbeli bölüm ve kuzey ile güneyde ocak nişli kubbeli odalar vardır.",
+      "en": "The building faces a large stone-walled courtyard to the east: a square-plan structure under a large tiled dome, with a five-arched pointed arcade in front. The entrance door has a marble frame and, above it, a three-line dark marble inscription slab. Inside are a large domed hall at the centre, two domed spaces with a mihrab to the west, and domed rooms with hearth niches to the north and south."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "501-506"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1RaZTUEARbmYEBduGLh5pTPP18zvO7fFs",
+        "original_name": "03 DJI_20241020164909_0106_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "502"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) (kitap s. 502)",
+        "en": "Nilüfer Hatun Imaret (Iznik Museum) (book p. 502)"
+      },
+      "alt": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) fotoğrafı",
+        "en": "Photo of Nilüfer Hatun Imaret (Iznik Museum)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1-rBjtk8eWYcuyxxIi_vy3vTfsjt8kf0B",
+        "original_name": "25 ERD01335-Geliştirilmiş-NR kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "503"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) (kitap s. 503)",
+        "en": "Nilüfer Hatun Imaret (Iznik Museum) (book p. 503)"
+      },
+      "alt": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) fotoğrafı",
+        "en": "Photo of Nilüfer Hatun Imaret (Iznik Museum)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1k_TYLTr5YdafG4RgRp0JbN-_2oQpCf0j",
+        "original_name": "27 ERD01416 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "503"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) (kitap s. 503)",
+        "en": "Nilüfer Hatun Imaret (Iznik Museum) (book p. 503)"
+      },
+      "alt": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) fotoğrafı",
+        "en": "Photo of Nilüfer Hatun Imaret (Iznik Museum)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1Isly22CPhWJ0-YtaAmNTtfFASrKIunVM",
+        "original_name": "35 ERD01560 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "503"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) (kitap s. 503)",
+        "en": "Nilüfer Hatun Imaret (Iznik Museum) (book p. 503)"
+      },
+      "alt": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) fotoğrafı",
+        "en": "Photo of Nilüfer Hatun Imaret (Iznik Museum)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1LDuItziH4UPI8nqweRUXOXChPIDesYF3",
+        "original_name": "05 DJI_20241020170054_0151_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "504"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) (kitap s. 504)",
+        "en": "Nilüfer Hatun Imaret (Iznik Museum) (book p. 504)"
+      },
+      "alt": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) fotoğrafı",
+        "en": "Photo of Nilüfer Hatun Imaret (Iznik Museum)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1z5Ndyb7Z79UNiwVCK9C15lAbyah8sbiA",
+        "original_name": "07 DJI_20241020170713_0175_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "504"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) (kitap s. 504)",
+        "en": "Nilüfer Hatun Imaret (Iznik Museum) (book p. 504)"
+      },
+      "alt": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) fotoğrafı",
+        "en": "Photo of Nilüfer Hatun Imaret (Iznik Museum)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1R7WwfptOhM1EW7mC4vQP-wALEwrj7IXM",
+        "original_name": "16 ERD01289 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "505"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) (kitap s. 505)",
+        "en": "Nilüfer Hatun Imaret (Iznik Museum) (book p. 505)"
+      },
+      "alt": {
+        "tr": "Nilüfer Hatun İmareti (İznik Müzesi) fotoğrafı",
+        "en": "Photo of Nilüfer Hatun Imaret (Iznik Museum)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,435 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-halil-aga-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Halil Ağa Camii bölümünden (s. 241-243) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabenin Arapça/Osmanlıca metni ve dili kaynakta verilmiyor; Hicri yıl kitapta '119' diye eksik basılmış, sahada okunmalı.",
+      "Parsel numarası belirsiz: bölüm özetinde 4. mıntıka 1253 parsel, metinde 1276 parsel yazıyor; tapu kaydından doğrulanmalı.",
+      "Camiden yalnızca kitabenin özgün kaldığı belirtiliyor; mevcut yapının ne zaman ve nasıl yenilendiği kaynakta yok.",
+      "Medeni Halil Ağa hakkında başka bilgi, mimar ve vakıf bilgisi kaynakta yok.",
+      "Era (dönem) 1729 tarihi enums.json'daki dönem sınırlarına net oturmadığı için null bırakıldı.",
+      "Metindeki 'minber de avluda bulunmaktadır' ifadesi olağan dışı; sahada teyit edilmeli.",
+      "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitabe tarihi Türkçe metinde '119 (M. 1729)' olarak yazılıdır. '119' Hicri yılı eksiktir (1729 Miladi yıla karşılık gelen Hicri yıl dört haneli olmalıdır). Kaynaktaki değerler korundu, hijri_year boş bırakıldı ve kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "location.address",
+        "note": "Bölüm özeti sayfası '4. mıntıka 1253 parsel' der; metin '4. mıntıka 1276 parsel' der. Her iki değer de korunmuştur."
+      },
+      {
+        "field": "sections[yapi]",
+        "note": "Türkçe metin çatıyı 'kiremit tavanı ise betonarmedir' diye anlatır; çatı kiremit, tavan betonarme olarak yorumlandı (İngilizce metin de böyle)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Halil Ağa Camii",
+    "en": "Halil Agha Mosque"
+  },
+  "subtitle": {
+    "tr": "Medeni Halil Ağa'nın 1729'da yaptırdığı, yalnızca kitabesi özgün kalan cami",
+    "en": "Built by Medeni Halil Ağa in 1729; only its door inscription survives from the original"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "Medeni Halil Ağa",
+    "1729",
+    "kitabe",
+    "betonarme tavan"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 1253 Parsel (bölüm özeti); metinde 1276 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "241-243"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1729",
+      "en": "1729"
+    },
+    "start_year": 1729,
+    "end_year": 1729,
+    "hijri_year": null,
+    "century": 18,
+    "basis": {
+      "tr": "Kapı üstündeki dört satırlık kitabeye göre Medeni Halil Ağa camiyi Hicri '119' (M. 1729) yılında yaptırmıştır. Kitapta Hicri yıl eksik basılmıştır; Miladi yıl esas alındı.",
+      "en": "According to the four-line inscription above the door, Medeni Halil Ağa had the mosque built in '119' (A.D. 1729). The Hijri year is printed incomplete in the book; the Gregorian year is used."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "241"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Medeni Halil Ağa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "241"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kapı üstündeki dört satırlık kitabeye göre Medeni Halil Ağa tarafından 1729'da yaptırılan cami, günümüze yalnızca bu kitabeyi özgün öge olarak ulaştırmıştır. Kâgir yapının çatısı kiremit kaplı, tavanı betonarmedir; minare caminin solundadır. Eserin 1930 tarihli tapu senedinde adı Halil Ağa Camii olarak geçer.",
+    "en": "Built in 1729 by Medeni Halil Ağa according to the four-line inscription above its door, the mosque has only this inscription as an original element surviving today. The masonry building has a tiled roof and a reinforced-concrete ceiling; the minaret is to the left of the mosque. Its 1930 title deed records its name as Halil Agha Mosque."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Kitabe",
+        "en": "Overview and Inscription"
+      },
+      "body": {
+        "tr": "Camiden günümüze ulaşan tek orijinal öge, kapı üstünde duran dört satırlık kitabedir. Kitabede bu camiyi Medeni Halil Ağa'nın 119 (M. 1729) yılında yaptırdığı belirtilmektedir. Eserin 1930 tarihli tapu senedinde de adı Halil Ağa Camii olarak geçmektedir.",
+        "en": "The only original element surviving from the mosque is the four-line inscription above the door. It states that Medeni Halil Ağa had this mosque built in 119 (A.D. 1729). In the title deed of the work dated 1930 its name is also given as Halil Agha Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "241, 243"
+        }
+      ]
+    },
+    {
+      "id": "yapi",
+      "order": 2,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Camiye ön cephedeki kapıdan girilir. Kâgir bir yapı olan caminin çatı örtüsü kiremit, tavanı betonarmedir. Minare caminin solunda yer alır. Avlu kesme taş döşelidir ve kaynağa göre minber de burada bulunmaktadır. Avluya bakan kuzey cephenin ortasında bir kapı, onun solunda bir mihrabiye ve iki yanda birer pencere görülür.",
+        "en": "The mosque is entered through the front door. A masonry building, it has a tiled roof and a reinforced-concrete ceiling. The minaret is on the left side of the mosque. The courtyard is paved with cut stone, and the source says the minbar is also there. On the north façade facing the courtyard there is a door in the middle, a mihrabiye to its left and a window on each side."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "241, 243"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Kitabeye göre yapım yılı",
+        "en": "Construction year per inscription"
+      },
+      "value": 1729,
+      "unit": null,
+      "note": {
+        "tr": "Hicri yıl kitapta '119' diye eksik basılmış.",
+        "en": "The Hijri year is printed incomplete as '119'."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_satir",
+      "label": {
+        "tr": "Kapı üstü kitabe satır sayısı",
+        "en": "Lines of the door inscription"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "key": "tapu_yili",
+      "label": {
+        "tr": "Tapu senedi tarihi",
+        "en": "Title deed date"
+      },
+      "value": 1930,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "243"
+        }
+      ]
+    },
+    {
+      "key": "tavan",
+      "label": {
+        "tr": "Tavan",
+        "en": "Ceiling"
+      },
+      "value": "Betonarme",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "key": "cati",
+      "label": {
+        "tr": "Çatı örtüsü",
+        "en": "Roof covering"
+      },
+      "value": "Kiremit",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "241"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Kapının üstü; dört satır",
+        "en": "Above the door; four lines"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1729"
+      },
+      "note": {
+        "tr": "Metin ve dil kaynakta verilmiyor; Hicri yıl '119' diye eksik yazılıyor.",
+        "en": "Text and language are not given; the Hijri year is given incompletely as '119'."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "241"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1729",
+      "year": 1729,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami Medeni Halil Ağa tarafından yaptırıldı (kitabeye göre)",
+        "en": "Mosque built by Medeni Halil Ağa (per inscription)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "id": "tapu-1930",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tapu senedinde adı Halil Ağa Camii olarak geçiyor",
+        "en": "Title deed records the name as Halil Agha Mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "243"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "Tek özgün öge: kapı kitabesi",
+        "en": "The sole original element: door inscription"
+      },
+      "hint": {
+        "tr": "Kapının üstündeki dört satırlık kitabeye bakın.",
+        "en": "Look at the four-line inscription above the door."
+      },
+      "section_id": "genel-bakis"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Halil Ağa Camii kâgir bir yapıdır. Avluya bakan kuzey cephesinin ortasında bir kapı bulunur; kapının solunda bir mihrabiye, iki yanında ise birer pencere vardır. Kapının üstünde dört satırlık kitabe yer alır. Çatı kiremit kaplıdır, tavan betonarmedir. Minare caminin solundadır. Avlu kesme taşla döşelidir.",
+      "en": "Halil Ağa Mosque is a masonry building. The north façade facing the courtyard has a door in the middle, a mihrabiye to its left and a window on each side. A four-line inscription is set above the door. The roof is tiled and the ceiling is reinforced concrete. The minaret stands to the left of the mosque. The courtyard is paved with cut stone."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 241-243) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-halil-aga-camii/p120-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "238-239"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Halil Ağa Camii'nin minaresi ve avlusu",
+        "en": "Minaret and courtyard of the Halil Ağa Mosque"
+      },
+      "alt": {
+        "tr": "Bulutlu gökyüzüne yükselen ince taş minare; önünde geniş taş avlu, solda demir korkuluklu yapı, uzakta evler ve tepeler.",
+        "en": "A slender stone minaret rises into a dramatic cloudy sky, with a wide stone courtyard before it, a building with iron railings on the left and houses and hills beyond."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-halil-aga-camii/p122-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "242"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Minare ve avludaki kiremit çatılı yapılar",
+        "en": "Minaret and tile-roofed buildings in the courtyard"
+      },
+      "alt": {
+        "tr": "Mavi gökyüzünde ince minare; altında kiremit çatılı, kremli taş yapı ve geniş avlu, arkada dağlar ve yerleşim.",
+        "en": "A slender minaret against a blue sky, with a cream tile-roofed building and a wide courtyard below and mountains and houses behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-halil-aga-camii/p121-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "240-241"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Ahşap direkli girişte kapı ve kitabe",
+        "en": "Entrance with wooden posts, door and inscription"
+      },
+      "alt": {
+        "tr": "Ahşap direkli, düz tavanlı girişte kesme taş duvarın ortasında ahşap kapı; üzerinde cami adını gösteren levha, iki yanda kafesli pencereler ve ahşap korkuluklu banklar.",
+        "en": "An entrance with wooden posts, in the middle of a cut-stone wall a wooden door with a name plate above it, lattice windows on both sides and wooden-railed benches."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-halil-aga-camii/p122-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "243"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minarenin kapısı",
+        "en": "The minaret's door"
+      },
+      "alt": {
+        "tr": "Kesme taş minare kaidesinde sivri kemerli ahşap kapı; üzerinde küçük kitabe ve duvar feneri, önünde basamaklar.",
+        "en": "A pointed-arch wooden door in the cut-stone minaret base, with a small inscription and a lantern above and steps in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

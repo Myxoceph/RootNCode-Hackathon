@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-candarli-halil-pasa-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Türbenin yapım tarihi ve yaptıranı kaynakta yok; dating ve founder null bırakıldı.",
+      "Halil Paşa'nın görev tarihleri ve kızlarının ölüm yılı kaynakta çelişkili (bkz. data_quality_notes); kaynak metne/kitabelere bakılarak teyit edilmeli.",
+      "Mezar taşı kitabelerinin metinleri kaynakta verilmemiş.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[halil-pasa]",
+        "note": "Kaynak 'I. Murat döneminde 1421-1389 kazaskerlik baş vezirlik' diyor: aralık ters yazılmış ve 1421, I. Murat'ın (ö. 1389) dönemine uymuyor. Hem Türkçe hem İngilizce metinde aynı (1421-1389 / 1421-1389). Kaynağa sadık kalındı."
+      },
+      {
+        "field": "sections[mezarlar]",
+        "note": "Halil Paşa 1453'te ölmüşken kızlarının '1566 yılında vefat ettiği' yazıyor (TR ve EN aynı); tarih şüpheli. Ayrıca 'altı kitabe' denmesine rağmen sayılan kişiler 3 oğul + İbrahim Çelebi + 3 kız = 7."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çandarlı Halil Paşa Türbesi",
+    "en": "Çandarlı Halil Paşa Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "Çandarlı",
+    "başvezir",
+    "lahit"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Beyler Mahallesi",
+    "address": "Kılıçaslan Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "469"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kuzey-güney doğrultulu, üst örtüsü yıkılmış, on iki lahdi barındıran Çandarlı Halil Paşa ve ailesinin türbesi.",
+    "en": "The north-south tomb of Çandarlı Halil Paşa and his family, with its upper cover collapsed and twelve sarcophagi."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzey-güney doğrultusunda dikdörtgen planlı yapının üst örtüsü tamamen yıkılmıştır. Batı cephesi kesme taşla, diğer cepheler moloz taş ve kerpiçle inşa edilmiştir; üzerinin ahşap çatıyla örtülü olduğu düşünülmektedir. Eski plan ve çizimlere göre doğu ve batı duvarlarında ikişer, kuzey duvarında bir, giriş yönü olan güney cephesinde iki pencere vardır; güney cephesi tamamen yola gitmiş ve günümüze ulaşmamıştır.",
+        "en": "The rectangular building on a north-south axis has completely lost its upper cover. The west façade is cut stone; the others are rubble stone and adobe. It is thought to have had a wooden roof. According to old plans and drawings there were two windows each on the east and west walls, one on the north and two on the south entrance side; the south side has been lost to the road."
+      },
+      "confidence": "probable",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "469"
+        }
+      ]
+    },
+    {
+      "id": "mezarlar",
+      "title": {
+        "tr": "Lahitler ve Kitabeler",
+        "en": "Sarcophagi and Inscriptions"
+      },
+      "body": {
+        "tr": "Türbede büyük kısmı tahrip olmuş on iki lahit vardır. Batıdaki kitabeli mezar taşı İbrahim oğlu Halil Paşa'ya aittir. Altı kitabenin üçü Halil Paşa'nın oğulları Yusuf Çelebi, Süleyman Çelebi ve II. İbrahim Paşa'ya, diğerleri İbrahim Çelebi ile 1566'da vefat etmiş kızları Nefise, Sitti ve Hatice'ye aittir.",
+        "en": "There are twelve heavily damaged sarcophagi. The inscribed gravestone on the west side belongs to Halil Paşa, son of İbrahim. Three of the six inscriptions belong to Halil Paşa's sons Yusuf Çelebi, Süleyman Çelebi and İbrahim Paşa II; the others belong to İbrahim Çelebi and his daughters Nefise, Sitti and Hatice, who died in 1566."
+      },
+      "confidence": "disputed",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "469-470"
+        }
+      ]
+    },
+    {
+      "id": "halil-pasa",
+      "title": {
+        "tr": "Halil Paşa",
+        "en": "Halil Paşa"
+      },
+      "body": {
+        "tr": "Paşa, I. Murat döneminde kazaskerlik ve başvezirlik görevlerinde bulunmuş, İstanbul kuşatmasına taraftar olmamış, 1453 Temmuz'unda katledilmiş ve İznik'teki türbesine gömülmüştür.",
+        "en": "Paşa served as kazasker and grand vizier under Murad I, did not support the siege of Istanbul, was murdered in July 1453 and buried in his tomb in Iznik."
+      },
+      "confidence": "disputed",
+      "order": 3,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "470"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "lahit_sayisi",
+      "label": {
+        "tr": "Lahit sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "469"
+        }
+      ],
+      "note": {
+        "tr": "Büyük kısmı tahrip olmuş.",
+        "en": "Mostly destroyed."
+      }
+    },
+    {
+      "key": "kitabe_sayisi",
+      "label": {
+        "tr": "Kitabe sayısı",
+        "en": "Number of inscriptions"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "470"
+        }
+      ],
+      "note": {
+        "tr": "Kaynak 6 kitabe der ama sayılan adlar 7 kişidir.",
+        "en": "Source says 6 but lists 7 persons."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Çandarlı Halil Paşa (İbrahim oğlu)",
+      "role": {
+        "tr": "Türbede gömülü; kazasker ve başvezir",
+        "en": "Buried here; kazasker and grand vizier"
+      }
+    },
+    {
+      "name": "Yusuf Çelebi",
+      "role": {
+        "tr": "Halil Paşa'nın oğlu",
+        "en": "Son of Halil Paşa"
+      }
+    },
+    {
+      "name": "Süleyman Çelebi",
+      "role": {
+        "tr": "Halil Paşa'nın oğlu",
+        "en": "Son of Halil Paşa"
+      }
+    },
+    {
+      "name": "II. İbrahim Paşa",
+      "role": {
+        "tr": "Halil Paşa'nın oğlu",
+        "en": "Son of Halil Paşa"
+      }
+    },
+    {
+      "name": "İbrahim Çelebi",
+      "role": {
+        "tr": "Kitabesi türbede",
+        "en": "Inscription in the tomb"
+      }
+    },
+    {
+      "name": "Nefise, Sitti, Hatice",
+      "role": {
+        "tr": "Kızları; 1566'da vefat",
+        "en": "Daughters; died in 1566"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "katliam-1453",
+      "year": 1453,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Halil Paşa Temmuz'da katledildi ve türbeye gömüldü",
+        "en": "Halil Paşa murdered in July and buried in the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "470"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-candarli-ibrahim-pasa-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Halil Paşa 'İbrahim oğlu' olarak anılır; Çandarlı İbrahim Paşa türbesi aynı ailenin başka bir türbesidir. Kaynak iki İbrahim'in aynı kişi olduğunu açıkça söylemez.",
+        "en": "Halil Paşa is called 'son of İbrahim'; the Çandarlı İbrahim Paşa tomb is another tomb of the same family. The source does not state outright that the two İbrahims are the same person."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "469, 472"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "outdoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, kuzey-güney doğrultulu, çatısı yıkılmış dikdörtgen bir yapıdır. Batı duvarı kesme taştan, diğer duvarlar moloz taş ve kerpiçtendir. İçinde çoğu hasarlı on iki lahit bulunur.",
+      "en": "The tomb is a rectangular, roofless building on a north-south axis. The west wall is cut stone, the others rubble and adobe. It contains twelve mostly damaged sarcophagi."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "469-472"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1zwzRvzShtVTtmxh1WclcugPgTSO-h1tC",
+        "original_name": "01 ERD01041 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "469"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çandarlı Halil Paşa Türbesi (kitap s. 469)",
+        "en": "Çandarlı Halil Paşa Tomb (book p. 469)"
+      },
+      "alt": {
+        "tr": "Çandarlı Halil Paşa Türbesi fotoğrafı",
+        "en": "Photo of Çandarlı Halil Paşa Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-defne-el-arabi-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Türbenin sahibi (El-Arabi), yapım tarihi ve banîsi kitapta yok.",
+      "Dilek ağacı geleneğinin içeriği kitapta açıklanmıyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "El-Arabi Türbesi",
+    "en": "El-Arabi Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "dilek ağacı",
+    "Zülfikar",
+    "Nahırlı",
+    "ziyaretgâh"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Defne",
+    "neighborhood": "Nahırlı",
+    "address": "Nahırlı Köyü, 27 ada 555 parsel (bölüm özeti)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "412"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Defne’nin Nahırlı Köyü’nde yüksekçe bir tepede, beyaz boyalı yuvarlak kubbeli, sade türbe. İçinde Arapça yazıtlar ve Hz. Ali’nin Zülfikar kılıcını simgeleyen semboller görülür; çevresinde dilek ağacı ve mezarlar bulunur.",
+    "en": "A plain tomb with a white-painted round dome on a high hill in Nahırlı Village, Defne. Inside are Arabic inscriptions and symbols of Ali’s sword Zülfikar; a wishing tree and graves surround it."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Kareye yakın dikdörtgen planlı türbe sundurmalı girişlidir ve beyaz boyalı yuvarlak bir kubbeyle örtülüdür; geniş saçaklıdır. Her cephesinde bir pencere vardır. Ortadaki mermer kaplı sanduka yüksek bir kaide üzerinde, oldukça sadedir. İçeride çeşitli Arapça yazıtlar ve Hz. Ali’nin Zülfikar kılıcını simgeleyen semboller dikkat çeker.",
+        "en": "Built on a rectangular plan close to a square, the tomb has a porch entrance, wide eaves and a white-painted round dome. Each façade has one window. The marble-covered sarcophagus in the middle sits on a high pedestal and is very plain. Inside, various Arabic inscriptions and symbols of Ali’s sword Zülfikar stand out."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "412"
+        }
+      ]
+    },
+    {
+      "id": "cevre",
+      "order": 2,
+      "title": {
+        "tr": "Çevre ve dilek ağacı",
+        "en": "Surroundings and wishing tree"
+      },
+      "body": {
+        "tr": "Türbenin çevresinde ibadet ve toplantı için kullanılan bir yapı ile kesim ve pişirme yerleri bulunur. Dilek ağacı ve mezarlar da türbenin çevresindedir.",
+        "en": "Around the tomb are a building used for worship and meetings and slaughtering and cooking places. A wishing tree and graves are also part of the site."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kareye yakın dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "ic-mekan-yazitlari",
+      "location": {
+        "tr": "Türbenin içi",
+        "en": "Inside the tomb"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "note": {
+        "tr": "Kitap yalnızca 'çeşitli Arapça yazıtlar' olduğunu söylüyor; metinleri verilmiyor.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, yüksekçe bir tepede, beyaz boyalı yuvarlak kubbeli, sundurmalı girişli ve geniş saçaklı bir yapıdır. Her cephesinde bir pencere vardır. İçinde yüksek bir kaide üzerinde sade, mermer kaplı bir sanduka bulunur; duvarlarda Arapça yazıtlar ve Zülfikar sembolleri görülür.",
+      "en": "The tomb is on a high hill, a building with a white-painted round dome, a porch entrance and wide eaves. Each façade has a window. Inside, a plain marble-covered sarcophagus stands on a high pedestal; Arabic inscriptions and Zülfikar symbols appear on the walls."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-defne-el-arabi-turbesi/p207-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "413"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbe yapısı ve önündeki açık alan",
+        "en": "The tomb building and the open ground in front"
+      },
+      "alt": {
+        "tr": "Beyaz badanalı, yeşil çatılı sundurmalı bir yapı; çevresinde zeytin ve çam ağaçları, önünde ağaç gölgeleri düşen toprak bir meydan ve beyaz bir duvar.",
+        "en": "A whitewashed building with a green-roofed porch among olive and pine trees; in front, a dirt plaza with tree shadows and a white low wall."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

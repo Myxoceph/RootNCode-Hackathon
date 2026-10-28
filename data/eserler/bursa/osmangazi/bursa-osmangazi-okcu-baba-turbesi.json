@@ -1,0 +1,408 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-okcu-baba-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Nusret Paşa'nın kim olduğu, yaşadığı dönem ve vakfın adı kitapta verilmiyor.",
+      "Balibey Hanı'nın kayıt id'si tahmini.",
+      "Türbenin tam yapım yılı yok (yalnızca XIV. yüzyıl).",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[kimlik]",
+        "note": "Başlıkta ve metinde 'Okçu Baba' adı kullanılırken içerik bunun yanlış olduğunu söylüyor; ad kitaptaki bölüm başlığı olduğu için korundu. Nusret Paşa'nın gömülü olduğu 'anlaşılmaktadır' denerek veriliyor (probable)."
+      },
+      {
+        "field": "legends[okcu-baba]",
+        "note": "İngilizce metin '720 silver coins' diyor, Türkçe metin '720 akçe'; akçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Okçu Baba Türbesi",
+    "en": "Okçu Baba Tomb"
+  },
+  "subtitle": {
+    "tr": "Halk arasında yanlışlıkla 'Okçu Baba' denen, Nusret Paşa'ya atfedilen türbe",
+    "en": "Tomb mistakenly called 'Okçu Baba', attributed to Nusret Paşa"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Nusret Paşa",
+    "Balibey Hanı",
+    "şeriyye sicili",
+    "surlar",
+    "basamakla inilen türbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Osmangazi Mahallesi",
+    "address": "Osmangazi Caddesi No: 16",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "510"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185315,
+      "lng": 29.058444,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1271724738 ('Okçu Baba Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIV. yüzyıl",
+      "en": "14th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitap 'XIV. yüzyılda inşa edilen türbe' diyor.",
+      "en": "The book says the tomb was built in the 14th century."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "510"
+      }
+    ]
+  },
+  "founder": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Türbenin hemen altındaki Balibey Hanı, Nusret Paşa'ya ait bir vakıf arazisi üzerine yapılmıştır; bu vakfa her yıl 720 akçe zemin mukataası ödenmiştir.",
+      "en": "The Balibey Han just below the tomb was built on waqf land belonging to Nusret Paşa; 720 akçe of ground rent was paid to this waqf every year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "510"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Surlara yakın, çevresinde biriken dolgu nedeniyle 12 basamakla inilen, kare planlı ve kubbeli türbe. Halk arasında 'Okçu Baba' diye anılsa da belgeler Nusret Paşa'yı işaret eder. Altındaki Balibey Hanı, Nusret Paşa'ya ait vakıf arazisi üzerindedir.",
+    "en": "A square domed tomb near the city walls, reached by descending 12 steps because of accumulated fill. Popularly called 'Okçu Baba', documents point to Nusret Paşa. The Balibey Han below stands on Nusret Paşa's waqf land."
+  },
+  "sections": [
+    {
+      "id": "kimlik",
+      "order": 1,
+      "title": {
+        "tr": "Türbenin gerçek kimliği",
+        "en": "The tomb's real identity"
+      },
+      "body": {
+        "tr": "Halk arasında yanlışlıkla 'Okçu Baba' denen türbe, Bursa'nın fethine katıldığı rivayet edilen bir zata atfedilmiştir. Bursa şeriyye sicilleri ve Osmanlı arşiv belgeleri ise farklı bir kimliğe işaret eder: Türbenin hemen altındaki Balibey Hanı, Nusret Paşa'ya ait bir vakıf arazisi üzerine yapılmıştır ve bu vakfa her yıl 720 akçe zemin mukataası ödenmiştir. Nusret Paşa'nın ölümünden sonra bu türbeye defnedildiği anlaşılmaktadır. Türbe surlara çok yakın olduğundan tarihî bilgi unutulmuş ve 'Okçu Baba' gibi hayalî bir kimlik ortaya çıkmıştır.",
+        "en": "Mistakenly called 'Okçu Baba' by the public, the tomb was attributed to a person said to have taken part in the conquest of Bursa. Bursa qadi records and Ottoman archive documents point to a different identity: the Balibey Han just below the tomb was built on waqf land belonging to Nusret Paşa, to which 720 akçe of ground rent was paid yearly. It is understood that Nusret Paşa was buried in this tomb after his death. Because the tomb is very close to the city walls, the historical information was forgotten and an imaginary identity like 'Okçu Baba' emerged."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapının duvarları 0,50 m kalınlıktadır; kesme taş ve tuğla ile almaşık örülmüştür. İç ölçüleri 3,45 × 3,45 m'dir. Üst örtü, içten tromplarla geçilen kare planlı kasnak üzerine oturan bir kubbedir; dışı kiremit kaplı kırma çatıyla örtülüdür.",
+        "en": "The walls are 0.50 m thick, built in alternating cut stone and brick. The interior is 3.45 × 3.45 m. The cover is a dome on a square drum reached by squinches inside; outside it is a tiled hipped roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    },
+    {
+      "id": "giris",
+      "order": 3,
+      "title": {
+        "tr": "Giriş",
+        "en": "Entrance"
+      },
+      "body": {
+        "tr": "Çevresine zamanla dolgu yığıldığı için türbeye ara sahanlıklı 12 basamaklı bir merdivenle inilir. Kuzeydeki 2,00 × 1,50 m'lik giriş bölümü dışa 40 cm taşar; kesme taş ve tuğlayla örülmüş, üzeri kiremit kaplı kirpi saçakla tamamlanmıştır. İçeriye yuvarlak kemerli bir kapıdan girilir; üç yuvarlak kemerli pencere ışık verir. Türbede yalnızca Nusret Paşa'ya ait bir sanduka vardır.",
+        "en": "Because fill accumulated around it, the tomb is reached by descending 12 steps with a landing. The 2.00 × 1.50 m entrance on the north projects 40 cm, built of cut stone and brick and finished with a tile-covered sawtooth eave. A round-arched door leads in, and three round-arched windows give light. There is only one sarcophagus, belonging to Nusret Paşa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Türbe 2012'deki çevre düzenlemesi kapsamında onarılmış ve ziyarete açılmıştır.",
+        "en": "The tomb was repaired as part of landscaping in 2012 and opened to visitors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "511"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "okcu-baba",
+      "title": {
+        "tr": "'Okçu Baba' rivayeti",
+        "en": "The 'Okçu Baba' tradition"
+      },
+      "body": {
+        "tr": "Türbe halk arasında Bursa'nın fethine katıldığı rivayet edilen 'Okçu Baba' adlı bir zata atfedilmiştir; kitap bunu yanlış bulur ve belgelere dayanarak Nusret Paşa'yı işaret eder.",
+        "en": "The tomb was attributed among the public to 'Okçu Baba', said to have joined the conquest of Bursa; the book considers this mistaken and points to Nusret Paşa based on documents."
+      },
+      "source_verdict": "refuted_by_source",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "3,45 × 3,45",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 0.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    },
+    {
+      "key": "basamak",
+      "label": {
+        "tr": "Giriş merdiveni basamak sayısı",
+        "en": "Number of entrance steps"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    },
+    {
+      "key": "giris_olcu",
+      "label": {
+        "tr": "Giriş bölümü",
+        "en": "Entrance section"
+      },
+      "value": "2,00 × 1,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    },
+    {
+      "key": "zemin_mukataasi",
+      "label": {
+        "tr": "Yıllık zemin mukataası",
+        "en": "Annual ground rent"
+      },
+      "value": 720,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Nusret Paşa",
+      "role": {
+        "tr": "Belgelere göre türbede medfun; vakıf arazisi sahibi",
+        "en": "Per documents buried in the tomb; owner of the waqf land"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Çevre düzenlemesi kapsamında onarıldı ve ziyarete açıldı",
+        "en": "Repaired within landscaping and opened to visitors"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "511"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-bali-bey-hani",
+      "type": "waqf_land",
+      "description": {
+        "tr": "Türbenin hemen altındaki Balibey Hanı, Nusret Paşa'ya ait vakıf arazisi üzerine yapılmıştır; bu vakfa yılda 720 akçe zemin mukataası ödenmiştir.",
+        "en": "The Balibey Han just below the tomb was built on waqf land belonging to Nusret Paşa, to which 720 akçe ground rent was paid yearly."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "510"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Okçu Baba Türbesi, çevresindeki dolgu nedeniyle zemin seviyesinin altında kalmıştır; ara sahanlıklı 12 basamakla inilir. Kuzeydeki yuvarlak kemerli kapıdan girilen kare planlı mekânı bir kubbe örter, dışı kiremit kaplı kırma çatılıdır. Üç yuvarlak kemerli pencere ışık verir. İçeride tek sanduka bulunur.",
+      "en": "Okçu Baba Tomb lies below the surrounding ground level because of accumulated fill and is reached by 12 steps with a landing. Its square room, entered through a round-arched door on the north, is covered by a dome, with a tiled hipped roof outside. Three round-arched windows give light. There is a single sarcophagus."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-okcu-baba-turbesi/p021-2.jpg",
+        "original_name": "02_4.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "510"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Okçu Baba Türbesinin içi",
+        "en": "Inside Okçu Baba Tomb"
+      },
+      "alt": {
+        "tr": "Sanduka kırmızı beyaz bir bayrak ve yeşil örtüyle kaplı; başucunda yeşil sarık var. Beyaz kubbeli odada perdeli pencereler, duvarda çerçeveli levhalar ve mavi halı görünür.",
+        "en": "The sarcophagus is covered with a red and white flag and a green cloth, with a green turban at its head. The white domed room has curtained windows, framed panels and a blue carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

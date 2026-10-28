@@ -1,0 +1,369 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-uctum-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Uçtum Mescidi bölümünden (s. 338-341) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "1876 tarihinin dayanağı (kitabe, belge) kaynakta belirtilmiyor; teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Uçtum Mescidi",
+    "en": "Uçtum Masjid"
+  },
+  "subtitle": {
+    "tr": "İki sokağın kesiştiği noktadaki küçük mahalle mescidi",
+    "en": "A small neighborhood masjid where two streets meet"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mescit",
+    "mahalle mescidi",
+    "ahşap sivri kemer",
+    "1876",
+    "1990 onarımı"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 512 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "341"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1876",
+      "en": "1876"
+    },
+    "start_year": 1876,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap yapının tarihinin 1876 yılına uzandığını söylüyor.",
+      "en": "The book says the building dates back to 1876."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "341"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1876'ya uzanan, içten düz ahşap tavanlı, dıştan kırma çatılı küçük taş mahalle mescididir. İki ahşap sivri kemerle kıbleye paralel iki sahına ayrılır. 1990'daki onarımla örtüsü değiştirilmiştir.",
+    "en": "A small stone neighborhood masjid dating back to 1876, with a flat wooden ceiling inside and a hipped roof outside. Two wooden pointed arches divide it into two naves parallel to the qibla. Its cover was changed in the 1990 restoration."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Tarihi 1876 yılına uzanan, içten düz ahşap tavanlı, dıştan kırma çatı örtülü bu küçük mahalle mescidi iki sokağın kesiştiği noktadadır. Taştan yapılan mescit, doğu-batı yönünde uzanan iki ahşap sivri kemerle kıbleye paralel iki sahına bölünmüştür. Doğu, batı ve kuzeyde ikişer, güneyde üç pencereden ışık alır. En önemli ayrıntıları dikdörtgen pervazlı pencereleri, sokağa uyum gösterip hafifçe kıvrılan avlu duvarı, basık kemerli harim kapısı ve sade bir nişten ibaret mihrabıdır.",
+        "en": "This small neighborhood masjid, dating back to 1876 with a flat wooden ceiling inside and a hipped roof outside, stands where two streets intersect. The stone masjid is divided into two naves parallel to the qibla by two wooden pointed arches running east-west. It receives light from two windows in the east, west and north and three in the south. Its most significant details are the rectangular-silled windows, the courtyard wall slightly curved in harmony with the street, the low-arched sanctuary door and the plain niche mihrab."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "341"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 2,
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "body": {
+        "tr": "Yapının örtüsü 1990 yılındaki onarımla değiştirilmiştir.",
+        "en": "The building's cover was changed with the restoration in 1990."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "341"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_dogu",
+      "label": {
+        "tr": "Doğu pencere sayısı",
+        "en": "Windows on the east"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "341"
+        }
+      ]
+    },
+    {
+      "key": "pencere_bati",
+      "label": {
+        "tr": "Batı pencere sayısı",
+        "en": "Windows on the west"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "341"
+        }
+      ]
+    },
+    {
+      "key": "pencere_kuzey",
+      "label": {
+        "tr": "Kuzey pencere sayısı",
+        "en": "Windows on the north"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "341"
+        }
+      ]
+    },
+    {
+      "key": "pencere_guney",
+      "label": {
+        "tr": "Güney pencere sayısı",
+        "en": "Windows on the south"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "341"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "341"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1990",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarımla örtü değiştirildi",
+        "en": "Cover changed with the restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "341"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Uçtum Mescidi, iki sokağın kesiştiği noktada duran küçük bir mahalle mescididir. Taştan yapılmıştır; içi düz ahşap tavanlı, dışı kırma çatılıdır. Doğu-batı yönündeki iki ahşap sivri kemer, iç mekânı kıbleye paralel iki sahına böler. Doğu, batı ve kuzeyde ikişer, güneyde üç pencere vardır; pencereler dikdörtgen pervazlıdır. Avlu duvarı sokağa uyarak hafifçe kıvrılır. Harim kapısı basık kemerlidir, mihrap sade bir nişten ibarettir.",
+      "en": "The Uçtum Masjid is a small neighborhood masjid standing where two streets meet. It is built of stone with a flat wooden ceiling inside and a hipped roof outside. Two wooden pointed arches running east-west divide the interior into two naves parallel to the qibla. There are two windows each in the east, west and north and three in the south, all with rectangular frames. The courtyard wall curves slightly to follow the street. The sanctuary door is low-arched and the mihrab is a plain niche."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 341) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p171-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "340-341"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mescidin taş cephesi ve ahşap minaresi",
+        "en": "Masjid's stone façade and wooden minaret"
+      },
+      "alt": {
+        "tr": "Kesme taştan örülü köşe yapısında kemerli, demir parmaklıklı pencereler var. Çatının köşesinde ahşap şerefeli küçük bir minare yükseliyor; arkada dağ görülüyor.",
+        "en": "A stone corner building with arched, barred windows. A small minaret with a wooden balcony rises from the roof corner, with a mountain behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p170-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "338-339"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dar sokaktan mescit ve minaresi",
+        "en": "The masjid and minaret from a narrow street"
+      },
+      "alt": {
+        "tr": "Taş duvarlı dar bir sokakta uzakta küçük ahşap minare ve eski taş yapılar görülüyor. Solda ahşap pencereli balkonlu bir ev var.",
+        "en": "In a narrow street between stone walls, a small wooden minaret and old stone buildings in the distance. A house with a wooden-windowed balcony is on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p171-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "340-341"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescit içi, mihrap ve ahşap tavan",
+        "en": "Masjid interior, mihrab and wooden ceiling"
+      },
+      "alt": {
+        "tr": "Ahşap kirişli tavanlı, beyaz duvarlı salonda taş çerçeveli mihrap ve ahşap kaplı alt duvarlar görülüyor. Zemin koyu desenli halıyla kaplı.",
+        "en": "A hall with a wooden-beamed ceiling, white walls, a stone-framed mihrab and wood-panelled lower walls. The floor has a dark patterned carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p171-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "341"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Taş çerçeveli mihrap",
+        "en": "Stone-framed mihrab"
+      },
+      "alt": {
+        "tr": "Beyaz duvarda açık renkli taşla çerçevelenmiş sivri kemerli mihrap nişi var; üstünde yazılı bir levha asılı. İki yanında ahşap pencereler bulunuyor.",
+        "en": "A pointed-arch mihrab niche framed in light stone on a white wall with a lettered panel above it. Wooden windows flank it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-uctum-mescidi/p171-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "341"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Namaz salonu ve ahşap minber",
+        "en": "Prayer hall and wooden minbar"
+      },
+      "alt": {
+        "tr": "Uzun salonda ortada koyu halı, uzakta yeşil kısmı olan ahşap bir minber var. Solda mihrap, üstte ahşap kirişli tavan görülüyor.",
+        "en": "A long hall with a dark carpet, a wooden minbar with a green part in the distance, the mihrab on the left and a wooden-beamed ceiling above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

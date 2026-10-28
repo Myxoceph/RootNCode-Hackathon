@@ -1,0 +1,276 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-iskenderun-rum-katolik-kilisesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Kiliseler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Rum Katolik Kilisesi bölümünden (s. 448-449) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi, yaptıran ve mimar kaynakta yok ('herhangi bir yazılı bilgi yoktur'); 19. yüzyıl tarihlemesi yalnızca kitabın genel bağlam cümlesinden çıkarıldı.",
+      "Kuzey girişi üzerindeki Arapça kitabenin metni kaynakta yok; yerinde okunup inscriptions'a eklenmeli.",
+      "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location",
+        "note": "Bölüm özeti sayfasının İngilizce sütunu (s. 455) Greek Orthodox Church'ü de 'İskenderun District 2, Plot 1647' olarak yazıyor; Türkçe özet (s. 454) Rum Katolik için 2. Mıntıka 1647 Parsel, Rum Ortodoks için Yayladağı 113 ada 1 parsel veriyor. Türkçe değer korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Rum Katolik Kilisesi",
+    "en": "Greek Catholic Church"
+  },
+  "subtitle": {
+    "tr": "Savaş Mahallesi'nde, bugün ibadete açık olmayan bazilika planlı kilise",
+    "en": "A basilica-plan church in Savaş Mahallesi, no longer used for worship"
+  },
+  "alternate_names": [],
+  "type": "kilise",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kilise",
+    "İskenderun",
+    "bazilika plan",
+    "devşirme kitabe"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "İskenderun",
+    "neighborhood": "Savaş Mahallesi",
+    "address": "İskenderun, Savaş Mahallesi, Ziya Gökalp Caddesi; 2. Mıntıka, 1647 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "449"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "19. yüzyıl (tahmini)",
+      "en": "19th century (probable)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap yalnızca kilisenin 19. yüzyıl fermanlarından sonra sayıları artan kiliselerden biri olduğunu söylüyor; yapıya özgü tarih yok.",
+      "en": "The book only says it is one of the churches that multiplied after the 19th-century edicts; no building-specific date is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "449"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Tek ana mekândan oluşan sade, bazilika planlı kilise bugün ibadethane olarak kullanılmamaktadır. Doğu duvarında üçlü yarım daire apsis izleri vardır; kuzey girişi üzerindeki Arapça kitabe devşirmedir. Kiliseyle ilgili yazılı bilgi yoktur.",
+    "en": "A simple basilica-plan church of a single main space, no longer used for worship. Traces of a triple semicircular apse remain on the east wall; the Arabic inscription over the north entrance is spolia. There is no written information about the church."
+  },
+  "sections": [
+    {
+      "id": "plan-ve-cephe",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve Cepheler",
+        "en": "Plan and Façades"
+      },
+      "body": {
+        "tr": "Kilise İskenderun'da Savaş Mahallesi, Ziya Gökalp Caddesi'ndedir. Oldukça sade düzenlenmiş, tek ana mekândan oluşan yapı bazilika plana sahiptir. Bugün ibadethane olarak kullanılmayan yapının batı yönünde sonradan açılmış bir girişi vardır. Kuzey cephedeki pencere özgün halini korumuştur; girişin doğusunda ve batısında ikişerden dört pencere güney cephede de aynı biçimdedir. Kapı ve pencere açıklıklarında düzgün kesme taş işçiliği görülür. Başka bir yapıya bitişik doğu duvarında, her biri yarım daire planlı üçlü apsisin izleri seçilir.",
+        "en": "The church is in Savaş Mahallesi, Ziya Gökalp Street, Iskenderun. Arranged quite simply with a single main space, it has a basilical plan. Not used for worship today, it has a later-opened entrance on the west. The window on the north façade preserves its original form; the four windows, two each east and west of the entrance, are the same on the south façade. Smooth cut stone is seen in the door and window openings. On the east wall, adjacent to another building, traces of a triple apse, each semicircular, can be seen."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "449"
+        }
+      ]
+    },
+    {
+      "id": "cati-ve-eklentiler",
+      "order": 2,
+      "title": {
+        "tr": "Çatı, Eklentiler ve Kitabe",
+        "en": "Roof, Additions and Inscription"
+      },
+      "body": {
+        "tr": "Üzeri dört eğimli ahşap çatılı ve kiremit kaplıdır. Güneyindeki dükkânların kilisenin yapımından sonra eklendiği düşünülmekte, kuzeyde farklı malzemeyle yapılan mekânların da muhdes olduğu tahmin edilmektedir. Kuzey girişi üzerindeki Arapça kitabe, yapıya sonradan yapılan sıva sırasında devşirme olarak yerleştirilmiştir. Kitap, Rum Katolik Kilisesi'ni 19. yüzyıldaki Tanzimat ve Islahat fermanlarından sonra sayıları hızla artan kiliselerden biri olarak anar.",
+        "en": "It has a four-pitched wooden roof covered with tiles. The shops to the south are thought to have been added after the church was built, and the spaces of different material to the north are estimated to be later additions. The Arabic inscription over the north entrance was placed as spolia during later plastering. The book describes it as one of the churches whose numbers rose rapidly after the 19th-century Tanzimat and Islahat edicts."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "449"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Bazilika, tek ana mekân",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "449"
+        }
+      ]
+    },
+    {
+      "key": "cati",
+      "label": {
+        "tr": "Çatı",
+        "en": "Roof"
+      },
+      "value": "Dört eğimli ahşap çatı, kiremit kaplı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "449"
+        }
+      ]
+    },
+    {
+      "key": "guney_cephe_pencere",
+      "label": {
+        "tr": "Güney cephedeki pencere",
+        "en": "Windows on south façade"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "449"
+        }
+      ],
+      "note": {
+        "tr": "Girişin doğusunda ve batısında ikişer",
+        "en": "Two on each side of the entrance"
+      }
+    },
+    {
+      "key": "apsis",
+      "label": {
+        "tr": "Apsis izi",
+        "en": "Apse traces"
+      },
+      "value": "Doğu duvarında üçlü yarım daire apsis izleri",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "449"
+        }
+      ]
+    },
+    {
+      "key": "kullanim",
+      "label": {
+        "tr": "Güncel kullanım",
+        "en": "Current use"
+      },
+      "value": "İbadethane olarak kullanılmıyor",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "449"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "uclu-apsis",
+      "title": {
+        "tr": "Üçlü apsis izleri",
+        "en": "Traces of triple apse"
+      },
+      "hint": {
+        "tr": "Doğu duvarında yarım daire planlı üç apsisin izlerine bakın.",
+        "en": "Look for the traces of three semicircular apses on the east wall."
+      },
+      "section_id": "plan-ve-cephe"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Rum Katolik Kilisesi, İskenderun'da Savaş Mahallesi'nde Ziya Gökalp Caddesi üzerindedir. Tek ana mekânlı, sade bir bazilika planı vardır. Batıda sonradan açılmış bir giriş bulunur. Güney cephede girişin her iki yanında ikişer pencere sıralanır. Başka bir yapıya bitişik doğu duvarında üç yarım daire apsisin izleri görülür. Üzeri dört eğimli, kiremit kaplı ahşap bir çatıyla örtülüdür. Kapı ve pencere açıklıklarında düzgün kesme taş işçiliği vardır.",
+      "en": "The Greek Catholic Church is on Ziya Gökalp Street in Savaş Mahallesi, Iskenderun. It is a simple basilica plan with a single main space. A later entrance opens on the west. On the south façade two windows flank each side of the entrance. On the east wall, adjacent to another building, traces of three semicircular apses are visible. It is covered by a four-pitched, tiled wooden roof. Door and window openings show smooth cut stonework."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 449) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-rum-katolik-kilisesi/p225-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "448"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kilisenin sokağa bakan yan cephesi",
+        "en": "Side façade of the church facing the street"
+      },
+      "alt": {
+        "tr": "Pembemsi sıvalı uzun duvarda taş çerçeveli, kemerli ve panjurlu iki yüksek pencere; sağda demir kapılı taş giriş, kenarda saçaklı kiremit çatı ve kaldırım.",
+        "en": "A long pinkish plastered wall with two tall arched shuttered windows in stone frames; on the right a stone gateway with an iron gate, a tiled eave above and a paved sidewalk."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

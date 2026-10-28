@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-sofular-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Sofular Camii bölümünden (s. 321) 'Türbe' alt başlığından özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Kitapta bu yapıya ait ayrı bir fotoğraf yok; fotoğraf sahada çekilmeli ya da başka bir kaynaktan eklenmeli.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Türbede yatan kişilerin kimliği kaynakta yok; sandukalar kimlik bilgisiyle verilmiyor.",
+      "Yapım tarihi kaynakta yok; yalnızca camiyle eş zamanlı olduğu tahmin ediliyor.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Sofular Türbesi",
+    "en": "Sofular Tomb"
+  },
+  "subtitle": {
+    "tr": "Sofular Camii'nin doğusunda, iç içe iki bölümlü kubbeli türbe",
+    "en": "A domed tomb of two connected sections east of the Sofular Mosque"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "türbe",
+    "kubbe",
+    "sekizgen kasnak",
+    "sanduka"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "5. Mıntıka, 1711 Parsel; Sofular Camii'nin doğusu",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "321"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Cami ile eş zamanlı olduğu tahmin ediliyor",
+      "en": "Estimated to be contemporary with the mosque"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap türbenin yapım tarihine dair bilgi bulunmadığını, cami ile eş zamanlı yapıldığının tahmin edildiğini söylüyor. Caminin kendi tarihi de belirsiz olduğundan yıl yazılmadı.",
+      "en": "The book says there is no information on the tomb's construction date and that it is estimated to be contemporary with the mosque. The mosque's own date is also uncertain, so no year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "321"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin doğusundaki kare planlı, içten kubbeli, dıştan yüksek sekizgen kasnaklı türbedir. Eski camiden kalan bir koridorla geçilir; kuzeyindeki kapıdan ikinci bir türbeye geçilir. İki bölümde de verev yerleştirilmiş sandukalar vardır.",
+    "en": "The square-plan tomb east of the mosque is domed inside with a high octagonal drum outside. It is reached by a corridor left from the old mosque; a door on the north leads to a second tomb. Both sections have obliquely placed sarcophagi."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Caminin doğusunda yer alan kare planlı türbe içeriden kubbe ile örtülüdür, dıştan yüksek sekizgen kasnağa sahiptir. Doğusunda sokağa bir pencere ile açılan türbeye eski camiden geriye kalan bir koridorla geçilir. İç mekân genişletme kemerleriyle ferah bir hava kazanır; türbenin kuzeyindeki kapıdan ikinci bir türbeye geçilir. Her iki bölümde de verev olarak yerleştirilmiş sandukalar bulunur. Yapım tarihine dair bilgi yoktur; türbenin cami ile eş zamanlı yapıldığı tahmin edilmektedir.",
+        "en": "The square-plan tomb east of the mosque is covered with a dome inside and has a high octagonal drum outside. It opens with a window to the street on the east and is reached through a corridor left from the old mosque. The interior gains a spacious feel with widening arches; a door on the north leads to a second tomb. Both sections have sarcophagi placed obliquely. There is no information on the construction date; it is estimated that the tomb was built simultaneously with the mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "321"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "bolum_sayisi",
+      "label": {
+        "tr": "Bölüm sayısı",
+        "en": "Number of sections"
+      },
+      "value": 2,
+      "unit": null,
+      "note": {
+        "tr": "Kuzeydeki kapıyla ikinci türbeye geçilir.",
+        "en": "A door on the north leads to the second tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "321"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Cover"
+      },
+      "value": "İçten kubbe, dıştan yüksek sekizgen kasnak",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "321"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-sofular-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Sofular Camii çevresindeki yapılar topluluğunun (manzumenin) bir parçasıdır.",
+        "en": "Part of the group of buildings (manzume) around the Sofular Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "319, 321"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sofular Türbesi, caminin doğusunda yer alır. Kare planlıdır; içeriden kubbeyle örtülüdür, dışarıdan yüksek sekizgen bir kasnağı vardır. Doğu yüzünde sokağa bakan bir pencere bulunur. Türbeye eski camiden kalan bir koridorla geçilir. Kuzeydeki kapıdan ikinci bir türbeye girilir. İki bölümde de sandukalar verev biçimde yerleştirilmiştir.",
+      "en": "The Sofular Tomb is east of the mosque. It has a square plan, is domed inside and has a high octagonal drum outside. On its east face is a window looking onto the street. The tomb is reached through a corridor left from the old mosque. A door on the north leads to a second tomb. In both sections the sarcophagi are placed obliquely."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 321) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

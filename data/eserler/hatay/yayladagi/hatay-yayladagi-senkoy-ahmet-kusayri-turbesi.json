@@ -1,0 +1,349 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-yayladagi-senkoy-ahmet-kusayri-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Şenköy Ahmet Kusayri Camii bölümünden (s. 329-333) ('Türbe' alt başlığı) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Türbede yatan kişilerin kimliği kaynakta açıklanmıyor; sandukalar kimlik bilgisiyle verilmiyor.",
+      "Kitap giriş bölümünde türbeyi 'avlunun kuzeydoğu köşesinde' ve iki kapılı (doğuda eski, batıda yeni) olarak anlatıyor; 'Türbe' alt başlığında ise caminin kuzeyinde düz alanda. Bu ifadelerin uyumu yerinde doğrulanmalı.",
+      "Kitabelerin (özellikle H. 1011 / M. 1602 tarihli üç satırlık Arapça kitabe) metni ve çevirisi kaynakta yok.",
+      "Türbenin ilk yapım yılı kaynakta yok; cami ile aynı topluluk.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitabın başlığı 'ŞENKÖY AHMET KUSAYRİ CAMİİ'dir; bölüm özeti sayfasında ad 'ŞENKÖY ŞEYH AHMET KUSEYRİ CAMİİ' yazılmıştır. Metin içinde ayrıca 'Kusayri' ve 'Kuseyr (Çayı)' yazımları geçer. İki yazım da alternate_names'e alındı; kayıt adı başlıktaki yazımla verildi."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Giriş metni türbenin 'avlunun kuzeydoğu köşesinde' olduğunu ve iki ayrı kapısı (doğuda sade-eski, batıda gösterişli-yeni) bulunduğunu söyler; 'Türbe' bölümü ise iki mekânlı bir yapıyı ve güneye bakan tek kapıyı anlatır. İkisi çelişkili ya da farklı yapıları kastediyor olabilir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şenköy Ahmet Kusayri Türbesi",
+    "en": "Şenköy Ahmet Kusayri Tomb"
+  },
+  "subtitle": {
+    "tr": "Çok sandukalı, kubbeli iki bölümlü türbe",
+    "en": "A domed two-section tomb with many sarcophagi"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "türbe",
+    "sanduka",
+    "sekizgen kasnak",
+    "tarikat sancakları",
+    "ejder alem",
+    "Kusayri"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Yayladağı",
+    "neighborhood": null,
+    "address": "Cumhuriyet, 183 Ada 7 Parsel; Şenköy köyü (Antakya'nın 35 km güneyi)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "333"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Cami ile aynı topluluk; kitabe H. 1011 (M. 1602) yenileme gösteriyor",
+      "en": "Same group as the mosque; inscription shows renewal in 1011 H (1602 A.D.)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Türbede H. 1011 (M. 1602) tarihli kabul edilen kitabe, türbenin Ahmed Kusayri'nin torunu tarafından yenilendiğini gösteriyor. İlk yapım yılı kitapta verilmiyor; büyük batı bölümünün yapının en eski kısmı olduğu 'düşünülüyor'.",
+      "en": "The inscription accepted as 1011 H (1602 A.D.) shows the tomb was renewed by Ahmed Kusayri's grandson. The first construction year is not given; the large west section is 'thought' to be the oldest part."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "331, 333"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin kuzeyinde düz alanda, sekiz kenarlı kasnak üzerinde kiremit çatılı, biri büyük biri küçük iki mekândan oluşan türbedir. Büyük batı bölümünde, kubbenin altında on dört, doğuya eklenen dikdörtgen bölümde iki sanduka vardır. Sandukaların yanındaki bazı tarikat sancaklarının madeni alemlerinde ejder figürleri bulunur.",
+    "en": "A tomb on flat ground north of the mosque, with a tiled roof on an eight-sided drum, consisting of one large and one small space. Fourteen sarcophagi are under the dome of the large west section and two in the rectangular section added to the east. Some cult banners beside the sarcophagi have dragon figures on their metal finials."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari ve Plan",
+        "en": "Architecture and Plan"
+      },
+      "body": {
+        "tr": "Caminin kuzeyinde düz alanda kurulan türbe, camide mihrap önündeki kubbenin ikizi gibi sekiz kenarlı kasnak üzerindeki kiremit çatısıyla dikkat çeker. Biri büyük, diğeri küçük iki mekândan oluşur. Yapının en eski kısmı olduğu düşünülen batıdaki büyük bölüme birkaç basamaklı merdivenle çıkılarak güneye bakan bir kapıdan girilir; kapının yanında bir pencere, tam karşısında bir pencere daha vardır. İç mekân taştandır; köşelerdeki kalın gömme ayaklar nedeniyle sandukaların bulunduğu alan '+' işaretine benzer bir plan gösterir. Kapının karşısındaki kemer gözü, beşik tonozlu bir eyvan görüntüsü verecek kadar derindir. Pandantiflerle geçilen kubbenin örttüğü merkezi alanda on dört sanduka bulunur; yetersiz kalınca doğuya ara kapıyla bağlanan dikdörtgen bir mekân eklenmiş, burada halen iki sanduka vardır.",
+        "en": "The tomb, built on flat ground north of the mosque, draws attention with its tiled roof on an eight-sided drum, like a twin of the dome before the mihrab in the mosque. It consists of one large and one small space. The large west section, thought to be the oldest part, is entered by a few steps through a south-facing door; there is a window next to the door and another directly opposite. The interior is of stone; thick buried piers at the corners give the area with sarcophagi a '+'-shaped plan. The archway opposite the door is deep enough to look like an iwan with a barrel vault. Fourteen sarcophagi are in the central area covered by a dome on pendentives; when this became insufficient a rectangular space connected by a door was added to the east, where two sarcophagi remain."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "333"
+        }
+      ]
+    },
+    {
+      "id": "kapi-mihrabiye",
+      "order": 2,
+      "title": {
+        "tr": "Kapı Yönü ve Caminin Varlığı",
+        "en": "Door Direction and the Mosque's Existence"
+      },
+      "body": {
+        "tr": "Türbelerin kapısı genelde kıble tarafında olmaz, çünkü o yönde sembolik bir mihrabiye bulunur. Bu türbede böyle bir mihrabın bulunmaması, mescit görevi gören başka bir yapının, yani şimdiki caminin o zamanda da var olduğunu gösterir. Caminin yapımına da bir ölçüde ışık tutan kitabeler batıdaki türbenin güney duvarındadır.",
+        "en": "The doors of tombs are generally not on the qibla side, because a symbolic mihrabiye is in that direction. The absence of such a mihrab in this tomb indicates that another structure serving as a masjid, namely the current mosque, was also present at that time. The inscriptions that shed some light on the mosque's construction are on the south wall of the west tomb."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "333"
+        }
+      ]
+    },
+    {
+      "id": "sancaklar",
+      "order": 3,
+      "title": {
+        "tr": "Tarikat Sancakları",
+        "en": "Cult Banners"
+      },
+      "body": {
+        "tr": "Türbede dikkati çeken en önemli ayrıntı, sandukaların yanına dikilen bazı tarikat sancaklarının madeni alem kısımlarında ejder figürlerinin bulunmasıdır. Kitap, bu tür alemlere başta Bektaşilik olmak üzere değişik adlardaki tarikatlarda da rastlandığını belirtir.",
+        "en": "The most striking detail in the tomb is the presence of dragon figures on the metal finials of some cult banners erected beside the sarcophagi. The book notes such banners are also met in sects of different names, especially Bektashism."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "333"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_buyuk",
+      "label": {
+        "tr": "Büyük bölümdeki sanduka sayısı",
+        "en": "Sarcophagi in the large section"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "333"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_kucuk",
+      "label": {
+        "tr": "Doğudaki ek bölümdeki sanduka sayısı",
+        "en": "Sarcophagi in the east section"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "333"
+        }
+      ]
+    },
+    {
+      "key": "mekan_sayisi",
+      "label": {
+        "tr": "Mekân sayısı",
+        "en": "Number of spaces"
+      },
+      "value": 2,
+      "unit": null,
+      "note": {
+        "tr": "Biri büyük, biri küçük.",
+        "en": "One large, one small."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "333"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "turbe-kitabesi-1602",
+      "location": {
+        "tr": "Türbe içi (üç satır, Arapça)",
+        "en": "Inside the tomb (three lines, Arabic)"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1011,
+        "gregorian": "1602"
+      },
+      "note": {
+        "tr": "Üç satırlık Arapça kitabe; H. 1011'e (M. 1602) ait kabul edilir ve türbenin Ahmed Kusayri'nin torunu tarafından yenilendiğini gösterir. Metin ve çeviri verilmez.",
+        "en": "Three-line Arabic inscription; accepted as belonging to 1011 H (1602 A.D.) and showing that the tomb was renewed by Ahmed Kusayri's grandson. Text and translation are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yenileme-1602",
+      "year": 1602,
+      "date": null,
+      "hijri": "1011",
+      "type": "repair",
+      "title": {
+        "tr": "Türbe Ahmed Kusayri'nin torunu tarafından yenilendi (kitabeye göre H. 1011)",
+        "en": "Tomb renewed by Ahmed Kusayri's grandson (1011 H per the inscription)"
+      },
+      "note": {
+        "tr": "Kitabe tarihi 'kabul edilen' H. 1011 / M. 1602.",
+        "en": "The inscription date is the 'accepted' 1011 H / 1602 A.D."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "331"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "hatay-yayladagi-senkoy-ahmet-kusayri-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Şenköy Ahmet Kusayri cami-zaviye-türbe topluluğunun (kitabın 'külliye' dediği yapıların) bir parçasıdır.",
+        "en": "Part of the Şenköy Ahmet Kusayri mosque-zawiya-tomb group (called a complex by the book)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "329, 331"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şenköy Ahmet Kusayri Türbesi, caminin kuzeyinde, düz bir alandadır. Sekiz kenarlı bir kasnak üzerinde kiremit kaplı çatısıyla, camideki mihrap önü kubbesinin ikizi gibi görünür. Büyük batı bölümüne birkaç basamakla çıkılır, kapı güneye bakar. İçerisi taştır; köşelerdeki kalın ayaklar sandukaların bulunduğu alana artı işaretine benzer bir plan verir. Pandantifli kubbenin altında on dört sanduka vardır. Doğuda ara kapıyla bağlanan küçük dikdörtgen bölümde iki sanduka daha bulunur. Sandukaların yanında ejder figürlü madeni alemleri olan tarikat sancakları dikilidir.",
+      "en": "The Şenköy Ahmet Kusayri Tomb stands on flat ground north of the mosque. With its tiled roof on an eight-sided drum it looks like a twin of the dome before the mihrab in the mosque. The large west section is reached by a few steps; its door faces south. The interior is stone; thick piers at the corners give the area with sarcophagi a plus-sign plan. Under the dome on pendentives are fourteen sarcophagi. In the small rectangular section connected by a door on the east are two more. Beside the sarcophagi stand cult banners with metal finials bearing dragon figures."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 333) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-senkoy-ahmet-kusayri-camii/p167-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "332"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Türbenin kiremit çatılı sekizgen gövdesi",
+        "en": "The tomb's octagonal body with tiled roof"
+      },
+      "alt": {
+        "tr": "Mezarlık içinde taş duvarlı, sekizgen kasnaklı ve kiremit çatılı bir türbe yükseliyor. Önünde ağaçlar, mezar taşları ve gül çalıları, solda kırmızı bir bayrak var.",
+        "en": "A stone tomb with an octagonal drum and a tiled roof stands in a cemetery. Trees, gravestones and rose bushes are in front, and a red flag hangs on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-senkoy-ahmet-kusayri-camii/p167-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "332"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbe içinde yeşil örtülü sandukalar",
+        "en": "Green-covered sarcophagi inside the tomb"
+      },
+      "alt": {
+        "tr": "Yeşil üzerine altın yaldızlı yazılarla bezeli büyük bir sanduka, üzerinde uzun bir tespih ile görülüyor. Arkada daha küçük sandukalar ve bir Türk bayrağı var; zemin halıyla kaplı.",
+        "en": "A large sarcophagus covered in green cloth with gold lettering, with a long string of prayer beads draped over it. Smaller covered sarcophagi and a Turkish flag stand behind, and the floor is carpeted."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

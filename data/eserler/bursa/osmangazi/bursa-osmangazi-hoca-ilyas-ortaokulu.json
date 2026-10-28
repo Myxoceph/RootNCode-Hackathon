@@ -1,0 +1,507 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hoca-ilyas-ortaokulu",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Eğitim Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
+      "Mevcut binanın mimarı kaynakta yok.",
+      "Vakıf bilgisi (Hoca İlyaszâde Vakıf Mektebi) kitapta ayrıntılandırılmıyor.",
+      "Okulun tür kodu enums.json'da yok; 'diger' kullanıldı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap girişteki ibareyi 'Müdafaa-i Milliye- Rumi 1330 / Hoca İlyaszâde Vakıf Mektebi- Hicri 1332' diye verir; 1912–1914 yapım tarihi ile Rumi 1330 (M. 1914) ve Hicri 1332 (M. 1913-14) kabaca uyumludur ancak tam örtüşmez. Kaynak değerleri korundu."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Kitap 1468'deki özgün binanın günümüze ulaşmadığını söylerken 1855 depreminde 'kısmen yıkılan binanın aynı yerde yeniden inşa edildiğini' de anlatır; hangi binadan söz edildiği ve yeniden inşa tarihi belirtilmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hoca İlyas Ortaokulu",
+    "en": "Hoca İlyas Middle School"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Kümbetli Mektep",
+      "en": "Kümbetli Mektep (School)"
+    },
+    {
+      "tr": "Hoca İlyaszâde Vakıf Mektebi",
+      "en": "Hoca İlyaszâde Vakif Mektep"
+    },
+    {
+      "tr": "Hususi Reyhanpaşa Mektebi",
+      "en": "Hususi Reyhanpaşa Mektep"
+    },
+    {
+      "tr": "Hacı İlyasoğlu",
+      "en": "Hacı İlyasoğlu"
+    },
+    {
+      "tr": "Hoca Muhyiddin",
+      "en": "Hoca Muhyiddin"
+    },
+    {
+      "tr": "Hoca Mehmed",
+      "en": "Hoca Mehmed"
+    },
+    {
+      "tr": "Müdafaa-i Milliye Hoca İlyaszâde Vakıf Mektebi",
+      "en": "Müdafaa-i Milliye Hoca İlyaszâde Foundation School"
+    },
+    {
+      "tr": "Hocailyas İlkokulu",
+      "en": "Hocailyas Primary School"
+    }
+  ],
+  "type": "mektep",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mektep",
+    "okul",
+    "I. Ulusal Mimarlık Akımı",
+    "Kütahya çinisi",
+    "Hoca İlyaszâde",
+    "Şehreküstü"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Şehreküstü",
+    "address": "Dinlendi Sokak, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "574"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk yapı H. 872 / M. 1468; mevcut bina 1912–1914",
+      "en": "First building AH 872 / AD 1468; present building 1912–1914"
+    },
+    "start_year": 1912,
+    "end_year": 1914,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Mevcut bina 1912–1914'te inşa edilmiştir; giriş üzerindeki ibare Rumi 1330 / Hicri 1332 tarihini verir. Kâgir ilk mektep H. 872 / M. 1468'de yapılmış, günümüze ulaşmamıştır.",
+      "en": "The present building was built in 1912–1914; the phrase over the entrance gives Rumi 1330 / Hijri 1332. The original masonry school of AH 872 / AD 1468 has not survived."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "574-575"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Muhyiddin Mehmed Çelebi (Hoca İlyas oğlu)",
+    "role": "banî (ilk mektep)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "574"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1468'de Hoca Muhyiddin Mehmed Çelebi'nin yaptırdığı mektebin yerinde 1912-1914'te yeniden inşa edilen, I. Ulusal Mimarlık Akımı çizgili iki katlı okul; 2012'den beri ortaokul.",
+    "en": "A two-storey school with First National Architecture Movement features, rebuilt in 1912-1914 on the site of the 1468 school of Hoca Muhyiddin Mehmed Çelebi; a middle school since 2012."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Adları",
+        "en": "Overview and Names"
+      },
+      "body": {
+        "tr": "Okul Osmangazi ilçesi, Şehreküstü Mahallesi, Dinlendi Sokak No: 1'dedir. Hoca İlyas oğlu Hoca Muhyiddin Mehmed Çelebi tarafından yaptırıldığı için bu adla anılır. H. 872 / M. 1468'de kâgir olarak inşa edilen mektebin özgün binası günümüze ulaşmamıştır. Zaman içinde 'Kümbetli Mektep', 'Hoca İlyaszâde Vakıf Mektebi', 'Hususi Reyhanpaşa Mektebi', 'Hacı İlyasoğlu', 'Hoca Muhyiddin' ve 'Hoca Mehmed' gibi adlarla da anılmıştır.",
+        "en": "The school is at Dinlendi Street No. 1, Şehreküstü Neighborhood, Osmangazi. It is named after its builder Hoca Muhyiddin Mehmed Çelebi, son of Hoca İlyas. The original masonry building of AH 872 / AD 1468 has not survived. It has also been known as 'Kümbetli Mektep', 'Hoca İlyaszâde Vakif Mektep', 'Hususi Reyhanpaşa Mektep', 'Hacı İlyasoğlu', 'Hoca Muhyiddin' and 'Hoca Mehmed'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "574"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "1912–1914 arasında inşa edilen yeni bina iki katlıdır ve o dönemde 'Müdafaa-i Milliye Hoca İlyaszâde Vakıf Mektebi' adını almıştır; giriş kapısı üzerinde 'Müdafaa-i Milliye- Rumi 1330 / Hoca İlyaszâde Vakıf Mektebi- Hicri 1332' ibaresi yer alır. Cumhuriyet döneminde bir süre 15. Mektep, ardından uzun yıllar 'Hocailyas İlkokulu' adıyla eğitim vermiş; 1997–2012 arasında ilköğretim okulu, 2012'den itibaren ortaokul olarak kullanılmaktadır. 1855 Bursa Depremi'nde kısmen yıkılan bina aynı yerde yeniden inşa edilmiştir. Bahçedeki Hoca İlyaszâde Mehmed Çelebi ailesine ait mezarlar 1933'te kaldırılmış, mezar taşları Bursa Arkeoloji Müzesi'ne taşınmıştır. Bursa'nın en eski eğitim yapılarından biri olan mektep çok sayıda tanınmış mezun yetiştirmiştir.",
+        "en": "The new building, built in 1912–1914, has two floors and took the name 'Müdafaa-i Milliye Hoca İlyaszâde Foundation School'; over the entrance is inscribed 'Müdafaa-i Milliye- Rumi 1330 / Hoca İlyaszâde Vakıf Mektebi- Hijri 1332'. In the Republic period it was the 15th Mektep for a time, then for many years the 'Hocailyas Primary School'; it was a primary school in 1997–2012 and has been a middle school since 2012. Partly destroyed in the 1855 Bursa earthquake, it was rebuilt on the same site. The Hoca İlyaszâde Mehmed Çelebi family graves in the garden were removed in 1933 and the gravestones moved to the Bursa Archaeological Museum. One of Bursa's oldest educational buildings, it has educated many well-known graduates."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dış cephe özellikleriyle I. Ulusal Mimarlık Akımı çizgilerini taşıyan mektep iki katlıdır. Zemin katı kâgir, üst katı ahşap çatkılı ve tuğla dolgulu duvar işçiliğiyle yapılmışken, 1912–1914'te tamamen taş malzemeyle yenilenmiş ve cephesi çeşitli değişikliklere uğramıştır. Yapıda 10 derslik ve çeşitli hizmet odaları ile geniş bir bahçe vardır. Girişteki taç kapı alınlığında Kütahyalı usta Mehmed Emin'in imzasını taşıyan, 20. yüzyıl başına ait firuze renkli Kütahya çinileri bulunuyordu; yakın dönem onarımlarında bu özgün çiniler kırılarak yok olmuştur. Yapı bugün bakımlı durumdadır ve eğitim kurumu olarak kullanılmaya devam etmektedir.",
+        "en": "With its façade features the school reflects the First National Architecture Movement and has two floors. The ground floor was masonry and the upper floor timber-framed with brick infill, then completely renewed in stone in 1912–1914 with changes to the façade. It has 10 classrooms, service rooms and a large garden. The entrance pediment once held turquoise early-20th-century Kütahya tiles signed by the master Mehmed Emin of Kütahya, which were broken and lost in recent repairs. The building is well kept and still used as an educational institution."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    },
+    {
+      "key": "derslik_sayisi",
+      "label": {
+        "tr": "Derslik sayısı",
+        "en": "Number of classrooms"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    },
+    {
+      "key": "ilk_yapi_yili",
+      "label": {
+        "tr": "İlk mektebin yapım yılı (Miladi)",
+        "en": "First school built (AD)"
+      },
+      "value": 1468,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "574"
+        }
+      ],
+      "note": {
+        "tr": "Hicri 872.",
+        "en": "AH 872."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Muhyiddin Mehmed Çelebi",
+      "role": {
+        "tr": "İlk mektebin yaptırıcısı; Hoca İlyas'ın oğlu",
+        "en": "Builder of the first school; son of Hoca İlyas"
+      }
+    },
+    {
+      "name": "Mehmed Emin",
+      "role": {
+        "tr": "Taç kapı Kütahya çinilerinin ustası",
+        "en": "Master of the entrance Kütahya tiles"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-ibaresi",
+      "location": {
+        "tr": "Giriş kapısının üzerinde",
+        "en": "Above the entrance door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Müdafaa-i Milliye- Rumi 1330 / Hoca İlyaszâde Vakıf Mektebi- Hicri 1332",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1332,
+        "gregorian": "1912-1914"
+      },
+      "note": {
+        "tr": "Kitap ibareyi bu biçimde aktarır; yazı türü ve dili belirtilmemiştir.",
+        "en": "The book quotes the phrase in this form; script and language are not stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1468",
+      "year": 1468,
+      "date": null,
+      "hijri": "872",
+      "type": "construction",
+      "title": {
+        "tr": "İlk mektep kâgir olarak yaptırıldı",
+        "en": "Original masonry school built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "574"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 Bursa Depremi'nde kısmen yıkıldı; aynı yerde yeniden inşa edildi",
+        "en": "Partly destroyed in the 1855 Bursa earthquake; rebuilt on the same site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1912",
+      "year": 1912,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Yeni bina inşa edildi (1912–1914)",
+        "en": "New building constructed (1912–1914)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    },
+    {
+      "id": "mezar-1933",
+      "year": 1933,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Bahçedeki aile mezarları kaldırıldı; taşlar Arkeoloji Müzesi'ne taşındı",
+        "en": "Garden family graves removed; stones moved to the Archaeological Museum"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    },
+    {
+      "id": "ilkokul-1997",
+      "year": 1997,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1997–2012 arasında ilköğretim okulu olarak hizmet verdi",
+        "en": "Served as a primary school in 1997–2012"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    },
+    {
+      "id": "ortaokul-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Ortaokul olarak kullanılmaya başlandı",
+        "en": "Began to be used as a middle school"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "575"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hoca İlyas Ortaokulu iki katlı, taş cepheli bir okul binasıdır; I. Ulusal Mimarlık Akımı çizgileri taşır. Giriş kapısının üzerinde Müdafaa-i Milliye ve Hoca İlyaszâde Vakıf Mektebi yazılı bir ibare vardır. Binada on derslik ve hizmet odaları bulunur; geniş bir bahçesi vardır.",
+      "en": "The Hoca İlyas Middle School is a two-storey school building with stone façades in the style of the First National Architecture Movement. Over the entrance door is an inscription naming the Müdafaa-i Milliye and Hoca İlyaszâde Foundation School. It has ten classrooms and service rooms, and a large garden."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1EtvmFREkJmI-_kGAJWoV1WjW1vCWmF04",
+    "book_layout_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+    "book_pdf_name": "2-Eğitim Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hoca-ilyas-ortaokulu/p024-1.jpg",
+        "original_name": "ERD02018 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "575"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hoca İlyas Ortaokulu ön cephesi",
+        "en": "Front facade of Hoca İlyas Middle School"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı iki katlı binada kırmızı tuğla çerçeveli sivri kemerli pencereler ve ortada balkonlu giriş vardır. Önünde geniş bir okul bahçesi ve bir büst bulunur.",
+        "en": "A white-plastered two-storey building with pointed-arch windows framed in red brick and a central entrance with a balcony. A wide schoolyard and a bust stand in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hoca-ilyas-ortaokulu/p023-1.jpg",
+        "original_name": "DJI_20241016165750_0937_D-Edit.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "574"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Okul binasının yandan kuşbakışı görünümü",
+        "en": "Aerial side view of the school"
+      },
+      "alt": {
+        "tr": "Büyük kırmızı kiremitli kırma çatılı, bacalı iki katlı bina yukarıdan görünür. Çevresinde ağaçlar ve şehrin yüksek binaları vardır.",
+        "en": "A two-storey building with a large red-tiled hipped roof and chimneys seen from above, surrounded by trees and taller city buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hoca-ilyas-ortaokulu/p024-2.jpg",
+        "original_name": "ERD02027 kopya.jpg",
+        "book_pdf_file_id": "1bLkVWKgyTyMyQL8G3X-oIJJEhB-VHsso",
+        "book_pdf_name": "2-Eğitim Yapıları.pdf",
+        "book_page": "575"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Balkonlu giriş kapısı",
+        "en": "Entrance door with balcony"
+      },
+      "alt": {
+        "tr": "Siyah demir kapılı girişin üstünde ahşap kafesli bir balkon vardır. Sivri kemerli pencereler kırmızı tuğla çerçevelerle çevrilidir; en üstte yeşil zeminli yazı levhası görünür.",
+        "en": "An entrance with a black iron door under a lattice wooden balcony. Pointed-arch windows have red-brick frames, and a green inscription plaque is at the top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
+  "archive_media": []
+}

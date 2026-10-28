@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-sinan-pasa-kulliyesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yenişehir",
+    "text_origin": "Bursa Vakıf Eserleri III. Cilt, Yenişehir bölümünden (s. 667-683) yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da doğrulanmış bir kaynaktan eklenmeli (location.coordinates eklenmedi).",
+      "Fotoğraflar henüz eşleştirilmedi; match_photos.py ile eklenecek (media: [], media_folder: null).",
+      "Erişilebilirlik bilgileri kitapta yok; sahada doğrulanmalı.",
+      "Bu eser için Hicri/Miladi tarihli kitabe kitapta yok ('Yapıların hiçbirinde kitabe bulunmamaktadır', s. 668).",
+      "Vakfiye metni/şartları kitapta yalnızca özetlenmiş; VGM Arşivi K. 77 numaralı vakfiyeden tam metin bulunursa waqf.deed alanına eklenmeli.",
+      "Vakfiyede anılan mektep ve ikinci han günümüze ulaşmamış; kayıt açılırsa kitaptaki konumları bulunmalı.",
+      "Külliyenin ana giriş/taç kapısı ve camiye geçiş kapısı için ayrı kayıt gerekip gerekmediği veri ekibince karara bağlanmalı (kitapta ayrı bölüm yok)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf.deed.date_display",
+        "note": "Vakfiye tarihi külliye (s. 668), imaret (s. 678) bölümlerinde 'H. Rebiyülahir 998 / M. Şubat 1590', medrese bölümünde (s. 675) 'H. Rebiyülevvel 998 / M. Şubat 1590' olarak geçiyor; Hicri ay adı tutarsız (Rebiyülahir / Rebiyülevvel), Miladi ay aynı. Kaynağa sadık kalındı; ay kesin değil."
+      },
+      {
+        "field": "dating",
+        "note": "Yapım yılları kitapta 'anlaşılmaktadır' diye veriliyor, kitabe yok; 'probable' işaretlendi. Külliyenin başlangıcı (1572-73) ile vakfiye (1590) arasında 17 yıl var; kaynak bunu açıklamıyor."
+      },
+      {
+        "field": "summary",
+        "note": "Sinan Paşa'nın yaşam aralığı '(1520-1596)' kitapta padişah dönemleriyle birlikte parantez içinde verilmiş; 1520 doğum yılı olarak açıkça belirtilmiyor, o yüzden facts/people'a yazılmadı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sinan Paşa Külliyesi",
+    "en": "Sinan Paşa Complex"
+  },
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "arastalı külliye",
+    "Koca Sinan Paşa"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Ulucami Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "667"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.261278,
+      "lng": 29.654028,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-yenisehir-sinan-pasa-arastasi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 980-981 / M. 1572-1573 (başlangıç) - H. 990 / M. 1582 (tamamlanma)",
+      "en": "AH 980-981 / AD 1572-1573 (start) - AH 990 / AD 1582 (completion)"
+    },
+    "start_year": 1572,
+    "end_year": 1582,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap, inşaatın bu yıllarda başlayıp bittiğinin 'anlaşıldığını' söylüyor (s. 668).",
+      "en": "The book says it is 'understood' that construction began and ended in these years (p. 668)."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "668"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Koca Sinan Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "667"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Koca Sinan Paşa vakfı (Sinan Paşa Vakfiyesi)",
+    "deed": {
+      "date_display": "H. Rebiyülahir 998 / M. Şubat 1590",
+      "excerpt": {
+        "tr": "Vakıflar Genel Müdürlüğü Arşivi'nde K. 77 numarada kayıtlı, 132 sayfalık defter halinde vakfiye; ilk sayfasında III. Murad'a ait tuğra bulunur.",
+        "en": "Registered in the General Directorate of Foundations Archives under no. K. 77; a 132-page register whose first page bears the tughra of Murad III."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668-669"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "668-669"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Yenişehir'de, Yemen Fâtihi Koca Sinan Paşa'nın H. 980-981 / M. 1572-1573'te başlatıp H. 990 / M. 1582'de tamamlattığı külliye. Vakfiyede cami, imaret, iki büyük han, medrese ve mektepten söz edilir; günümüze cami, medrese ve ona bağlı birimler, imaret, arasta kalıntıları, ana giriş ve camiye geçiş kapısı ulaşmıştır.",
+    "en": "A complex in Yenişehir begun in AH 980-981 / AD 1572-1573 and completed in AH 990 / AD 1582 by Koca Sinan Paşa, the Conqueror of Yemen. The endowment charter mentions a mosque, imaret, two large hans, a madrasa and a school; the mosque, madrasa and attached units, imaret, arasta ruins, main entrance and the gate to the mosque survive."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Külliye Yenişehir ilçesi, Ulucami Mahallesi'ndedir. Kanûnî Sultan Süleyman, II. Selim, III. Murad ve III. Mehmed dönemlerinde yaşamış (1520-1596) ve 'Yemen Fâtihi' unvanıyla tanınan Koca Sinan Paşa tarafından inşa ettirilmiştir. Vakfiyede külliye bünyesinde bir cami, imaret, iki büyük han, bir medrese ve bir mektepten söz edilir. Vakfiyedeki hanlardan biri ile mektep günümüze ulaşmamıştır. Yapıların hiçbirinde kitabe yoktur.",
+        "en": "The complex is in the Ulucami Neighborhood of Yenişehir. It was built by Koca Sinan Paşa, known as the Conqueror of Yemen, who lived under Süleyman the Magnificent, Selim II, Murad III and Mehmed III (1520-1596). The endowment charter mentions a mosque, an imaret, two large hans, a madrasa and a school. One of the hans and the school have not survived. There are no inscriptions on any of the structures."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "667-669"
+        }
+      ]
+    },
+    {
+      "id": "bani",
+      "order": 2,
+      "title": {
+        "tr": "Banî Koca Sinan Paşa",
+        "en": "The Founder, Koca Sinan Paşa"
+      },
+      "body": {
+        "tr": "Aslen Arnavut kökenli Sinan Paşa küçük yaşta saraya alınmış, Şam ve Mısır valiliklerinde bulunmuş; Malatya, Kastamonu, Gazze ve Nablus'ta sancak beyliği, Erzurum, Halep ve Mısır'da beylerbeylik yapmıştır. 1569'da Aden ve Sana'yı fethederek 'Yemen Fâtihi' unvanını almış, Tunus'un fethiyle vezirlik rütbesine yükselmiş, beş kez sadrazam olmuştur. 5 Şaban 1004 / 4 Nisan 1596'da vefat etmiş, İstanbul Çemberlitaş'taki camisinin yanındaki türbesine defnedilmiştir. Arşiv kayıtlarına göre toplam 13 cami/mescit, 7 imarethane, 5 medrese, 7 mektep/dârülkurrâ, 11 hamam ve 13 han/kervansaray yaptırmıştır.",
+        "en": "Of Albanian origin, Sinan Paşa was taken to the palace young, served as governor of Damascus and Egypt, sanjakbey of Malatya, Kastamonu, Gaza and Nablus and beylerbey of Erzurum, Aleppo and Egypt. In 1569 he conquered Aden and Sana and earned the title Conqueror of Yemen; he rose to vizier with the conquest of Tunisia and was Grand Vizier five times. He died on 5 Sha'ban AH 1004 / 4 April AD 1596 and was buried in his tomb next to his mosque in Çemberlitaş, Istanbul. Archive records show he had 13 mosques/masjids, 7 imarets, 5 madrasas, 7 schools, 11 baths and 13 hans built."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "667-668"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "order": 3,
+      "title": {
+        "tr": "Vakfiye",
+        "en": "The Endowment Charter"
+      },
+      "body": {
+        "tr": "Vakfiye H. Rebiyülahir 998 / M. Şubat 1590 tarihlidir; VGM Arşivi'nde K. 77 numarada kayıtlıdır, 132 sayfalık defterdir ve ilk sayfasında III. Murad'ın tuğrası vardır. Sinan Paşa'ya 'Ebu'l-Fütûh ve'l-Megâzî Hazretü'l-Vezîrü'l-A'zam Sinan Paşa' unvanı verilmiştir. Paşa, hayır kurumlarının idamesi için 113 ayrı kalemde han, hamam, tarla, ev, çiftlik, bağ ve bahçeyle birlikte 100.000 akçe nakit vakfetmiş, yüzlerce çalışana ayrı ücretler tahsis etmiştir. Vakfiyede İstanbul ve Malkara'daki yapıların kayıtları da vardır.",
+        "en": "The charter is dated Rabi al-Ahir AH 998 / February AD 1590, registered under no. K. 77 in the General Directorate of Foundations Archives; a 132-page register with the tughra of Murad III on its first page. With it the Paşa endowed 100,000 silver coins in cash along with 113 separate items (hans, baths, fields, houses, farms, vineyards, gardens) and allocated salaries to hundreds of employees. It also records buildings in Istanbul and Malkara."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668-669"
+        }
+      ]
+    },
+    {
+      "id": "insa-ve-mimari-program",
+      "order": 4,
+      "title": {
+        "tr": "İnşa Süreci ve Mimari Program",
+        "en": "Construction and Architectural Program"
+      },
+      "body": {
+        "tr": "İnşaata H. 980-981 / M. 1572-1573'te başlandığı, H. 990 / M. 1582'de tamamlandığı anlaşılmaktadır. Dükkânların karşılıklı sıralanarak sokak oluşturması ve caminin ayrı bir avluda bulunması, külliyenin arastalı külliyeler grubunda değerlendirilebileceğini gösterir; kervansaray arastanın doğusunda, külliyeden ayrı bir blokta yer alır ve arastanın doğusundaki kalıntıların bu kervansaraya ait olma ihtimali kuvvetlidir. Külliye, camisi ve minaresindeki XVI. yüzyılın en parlak çini örnekleriyle dikkat çeker.",
+        "en": "Construction is understood to have begun in AH 980-981 / AD 1572-1573 and ended in AH 990 / AD 1582. Shops facing each other form a street and the mosque stands in a separate courtyard, so the complex can be placed in the group of complexes with an arasta; the caravanserai stands in a separate block east of the arasta and the ruins seen there are highly likely to belong to it. The complex is notable for the most brilliant 16th-century tiles in its mosque and minaret."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668, 682"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "vakfiye_kalem_sayisi",
+      "label": {
+        "tr": "Vakfiyedeki kalem sayısı",
+        "en": "Items in the charter"
+      },
+      "value": 113,
+      "unit": "kalem",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668"
+        }
+      ]
+    },
+    {
+      "key": "vakfedilen_nakit",
+      "label": {
+        "tr": "Vakfedilen nakit",
+        "en": "Endowed cash"
+      },
+      "value": 100000,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668"
+        }
+      ]
+    },
+    {
+      "key": "vakfiye_sayfa",
+      "label": {
+        "tr": "Vakfiye sayfa sayısı",
+        "en": "Charter page count"
+      },
+      "value": 132,
+      "unit": "sayfa",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668"
+        }
+      ]
+    },
+    {
+      "key": "arasta_dukkan_sayisi",
+      "label": {
+        "tr": "Arastada tespit edilen birim",
+        "en": "Arasta units identified"
+      },
+      "value": 27,
+      "unit": "birim (doğu ve batıda ayrı ayrı)",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "681"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Koca Sinan Paşa",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "III. Murad",
+      "role": {
+        "tr": "Vakfiyenin ilk sayfasındaki tuğranın sahibi",
+        "en": "Owner of the tughra on the charter's first page"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-baslangic",
+      "year": 1572,
+      "date": null,
+      "hijri": "980-981",
+      "type": "construction",
+      "title": {
+        "tr": "İnşaata başlandı (H. 980-981 / M. 1572-1573)",
+        "en": "Construction began (AH 980-981 / AD 1572-1573)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668"
+        }
+      ]
+    },
+    {
+      "id": "insa-bitis",
+      "year": 1582,
+      "date": null,
+      "hijri": "990",
+      "type": "construction",
+      "title": {
+        "tr": "İnşaat tamamlandı (H. 990 / M. 1582)",
+        "en": "Construction completed (AH 990 / AD 1582)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "year": 1590,
+      "date": null,
+      "hijri": "Rebiyülahir 998",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi (H. Rebiyülahir 998 / M. Şubat 1590)",
+        "en": "Endowment charter drawn up (Rabi al-Ahir AH 998 / Feb. AD 1590)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "668"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliye, Yenişehir'in çarşısında; kuzeyde sekiz kubbeli L planlı imaret, güneyinde tek kubbeli ve tek minareli cami, caminin kuzeyinde üç eyvanlı medrese, doğuda arastanın dükkân sıraları ve kalıntıları yer alır.",
+      "en": "The complex stands in Yenişehir's bazaar: an L-shaped imaret of eight domes to the north, a single-domed mosque with one minaret, a three-iwan madrasa north of the mosque, and arasta shop rows and ruins to the east."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden (Bursa Vakıf Eserleri III. Cilt, Yenişehir) yazıldı; yalnızca metindeki bilgiler kullanıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

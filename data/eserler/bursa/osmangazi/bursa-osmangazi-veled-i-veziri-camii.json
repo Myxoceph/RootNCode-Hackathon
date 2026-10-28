@@ -1,0 +1,539 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-veled-i-veziri-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 470-471) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Kitap diğer caminin adını vermiyor; Veziri (Konuralp-Üç Kurnalı) Camii ile ilişki çıkarımdır (aynı cadde, No: 35 ve No: 43), doğrulanmalı.",
+      "Kesin inşa yılı yok; start/end_year yalnızca II. Bayezid'in saltanat aralığıdır.",
+      "Vakfiye ve mimar kitapta yok.",
+      "Hazire kayıtları (mezar taşı metinleri) kitapta verilmiyor; yalnızca isimler var.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Metin önce banisinin kimliği hakkında 'açık bilgi bulunmadığını', hemen ardından vakıf kayıtlarına göre Vezirî oğlu Mehmed Efendi'nin yaptırdığını söylüyor. Vakıf kayıtlarına dayalı bilgi esas alındı, güven 'probable' işaretlendi."
+      },
+      {
+        "field": "hazire",
+        "note": "Kitap, hazire için 'toplam beş mezar taşı' diyor; sayılan adlar dört kişi + yazısı tahrip olmuş bir taştır, yazısız taş ayrıca belirtilmemiş. Sayım kitaptaki gibi bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Veled-i Veziri Camii",
+    "en": "Veled-i Veziri Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle mescidi",
+    "kalkan duvarlı",
+    "II. Bayezid",
+    "Ali Paşa",
+    "hazire"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Ali Paşa",
+    "address": "Veziri Caddesi No: 35",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "470"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.181968,
+      "lng": 29.05845,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Bayezid dönemi (1481-1512)",
+      "en": "Reign of Bayezid II (1481-1512)"
+    },
+    "start_year": 1481,
+    "end_year": 1512,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "İnşa tarihi kesin bilinmiyor; vakıf kayıtlarına göre yapı II. Bayezid döneminde (1481-1512) görev yapmış Vezirî oğlu Mehmed Efendi tarafından inşa ettirilmiş. Yıllar hükümdarın saltanat aralığıdır, inşa yılı değildir.",
+      "en": "The construction date is not known; per foundation records the building was had built by Mehmed Efendi son of Vezirî, who served in Bayezid II's reign (1481-1512). The years are the sultan's reign, not a construction date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "470"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Vezirî oğlu Mehmed Efendi",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "470"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Ali Paşa Mahallesi'nde, aynı adı taşıyan iki camiden biri olan kalkan duvarlı Bursa mahalle mescidi. Vakıf kayıtlarına göre II. Bayezid döneminde Vezirî oğlu Mehmed Efendi tarafından yaptırılmıştır; kubbe eteğinde 19. yüzyıl barok kalem işleri ve doğusunda küçük bir hazire vardır.",
+    "en": "A parapet-walled Bursa neighbourhood masjid in the Ali Paşa Neighborhood, one of two mosques of the same name. Foundation records say it was built in the reign of Bayezid II by Mehmed Efendi, son of Vezirî; it has 19th-century Baroque hand-painted ornament at the dome skirt and a small graveyard to the east."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Ali Paşa Mahallesi, Veziri Caddesi No: 35'te yer alır; aynı adı taşıyan ve birbirine yakın konumlanan iki camiden biridir. Pınarbaşı'ndan Tahtakale'ye inen yol üzerinde, İvaz Paşa Caddesi ile kesiştiği noktadadır. Yapının inşa tarihi kesin olarak bilinmemekte, banisinin kimliği hakkında da açık bilgi bulunmamaktadır. Ancak camiye ait vakıf kayıtlarından elde edilen verilere göre yapı, Sultan II. Bayezid döneminde (1481-1512) görev yapmış Vezirî oğlu Mehmed Efendi tarafından inşa ettirilmiştir.",
+        "en": "The mosque is at Veziri Street No. 35, Ali Paşa Neighborhood, Osmangazi District; it is one of two mosques with the same name close to each other, at the intersection with İvaz Paşa Street on the road from Pınarbaşı to Tahtakale. The exact date of construction is not known and there is no clear information on who had it built. However, information from the mosque's foundation records indicates that it was built by Mehmed Efendi, son of Vezirî, who served during the reign of Sultan Bayezid II (r. 1481-1512)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "470"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı kalkan duvarlı “Bursa mahalle mescidi” tipindedir; yaklaşık 10,00 × 14,00 m ölçülerinde dikdörtgen planlıdır, ibadet mekânı 8,00 × 8,00 m kare formundadır. 11 m yüksekliğe ulaşan kubbe prizmatik Türk üçgenleriyle taşınır; kubbe eteğinde XIX. yüzyıla ait barok üsluptaki kalem işi bezemeler dikkat çeker. Kubbe dıştan kirpi saçaklıdır ve kurşunla kaplıdır. Beden duvarlarında üç sıra tuğla, bir sıra kesme taş almaşığı hâkimdir; kubbe kasnağı iki sıra tuğlayla örülmüştür. Yapı toplam on beş pencereyle aydınlanır: üçü kubbe kasnağında, altısı beden duvarlarının üst kesiminde, altısı alt seviyededir. Cephelerde pencere aynaları boşaltılmış, kemerlerin üzerine beton saçaklar yerleştirilmiştir. Güney cephesi çevre yapılaşma nedeniyle dışarıdan algılanamaz.",
+        "en": "It is a Bursa neighbourhood masjid with a parapet wall, rectangular and approximately 10 x 14 m; the worship area is a square of 8 x 8 m. The dome, about 11 m high, is carried on prismatic Turkish triangles; 19th-century hand-painted Baroque-style ornament on the dome skirt is an important aesthetic detail. The dome has sawteeth at the eaves and is lead-covered. The walls have an alternating order of three rows of brick and one row of cut stone, with two rows of brick on the dome drum. It is lit by fifteen windows: three on the drum, six on the upper part of the walls and six on the lower. The window recesses on the façades have been emptied and concrete eaves added over the arches. The south façade cannot be perceived because of surrounding buildings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "470-471"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-ve-ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "Son Cemaat Yeri, Mihrap ve Minber",
+        "en": "Narthex, Mihrab and Minbar"
+      },
+      "body": {
+        "tr": "8,00 × 4,00 m ölçülerindeki son cemaat yerinin üzerine ahşap mahfil katı eklenmiştir. Revak ayakları tamamen yıkılmış, yerine giriş cephesine üç kemerli görünümlü, ahşap dikmelerle taşınan, metal çerçeveli camekânlı bir bölüm yapılmıştır. Ana ibadet mekânındaki mukarnaslı mihrap boyalıdır; ayrıca sonradan eklenmiş bir ahşap minber vardır.",
+        "en": "A wooden gallery floor was added above the 8.00 x 4.00 m narthex. The portico piers were completely demolished and replaced by a triple-arched glass casement with wooden posts and a metal frame. The muqarnas mihrab in the main prayer area is painted, and a later wooden minbar has been added."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "471"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minareye son cemaat mahallinden çıkılır. Minarenin kaideden sonraki bölümü 1890-1894 yılları arasında yeniden inşa edilmiştir. Sekizgen planlı kaide üzerine oturan minarede üç sıra tuğla ve bir sıra kesme küfeki taşı örgü düzeni kullanılmıştır; petek kısmı moloz taş, gövdesi tamamen tuğladır. Gövdede iki bilezik, şerefe altında tuğladan mukarnas dizisi vardır.",
+        "en": "Access to the minaret is from the narthex. The minaret above the plinth was rebuilt between 1890 and 1894 on an octagonal base, with three rows of brick and one row of cut limestone; the neck is rubble stone and the shaft entirely brick. There are two decorative bands on the shaft and a brick muqarnas series under the balcony."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "471"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 5,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Caminin doğu cephesinde küçük bir hazire yer alır. Geçmişte burada bulunan Hamza Bâlî'ye ait mezar taşı yakın zamanda Pınarbaşı Mezarlığı'na nakledilmiştir; kaldırılan diğer bazı taşların da oraya taşınmış olma ihtimali vardır. Bugün hazirede dört yazılı ve bir yazısız olmak üzere beş mezar taşı bulunur. Mezar taşları günümüze ulaşan kişiler: Fatma Hanım, Hacı Emin Ağa, Hafız Mehmed Çelebi bin Mustafa Çelebi, Kemal bin Resûl; ayrıca yazısı tahrip olmuş bir taş vardır. Hazireye defnedildiği bilinen ancak taşlarına ulaşılamayan kişiler: Hamza Bâlî bin Mahmud Belhî, Hoca Mehmed Efendi, Abdullah el-Hindî, Hindîzâde Ramazan Efendi ve Hacı Ali Efendi.",
+        "en": "The mosque has a small graveyard on its east side. The stone of Hamza Bâlî that was here until recently was moved to the Pınarbaşı Cemetery; other removed stones may also have been moved there. Four of the five stones in the graveyard are inscribed and one is uninscribed. People whose stones survive: Fatma Hanım, Hacı Emin Ağa, Hafız Mehmed Çelebi bin Mustafa Çelebi and Kemal bin Resûl, plus a stone with an erased inscription. People known to be buried here whose stones have not been found: Hamza Bâlî bin Mahmud Belhî, Hoca Mehmed Efendi, Abdullah el-Hindî, Hindîzâde Ramazan Efendi and Hacı Ali Efendi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "471"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Dış ölçü",
+        "en": "External dimensions"
+      },
+      "value": "10 × 14",
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "470"
+        }
+      ],
+      "note": {
+        "tr": "Kitap “yaklaşık” diyor.",
+        "en": "The book says “approximately”."
+      }
+    },
+    {
+      "key": "ibadet_mekani",
+      "label": {
+        "tr": "İbadet mekânı",
+        "en": "Prayer space"
+      },
+      "value": "8 × 8",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "470"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_yuksekligi",
+      "label": {
+        "tr": "Kubbe yüksekliği",
+        "en": "Dome height"
+      },
+      "value": 11,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "470"
+        }
+      ],
+      "note": {
+        "tr": "Kitap “yaklaşık” (İngilizce) veya “11 m'ye ulaşan” (Türkçe) diyor.",
+        "en": "English says “approximately 11 m”; Turkish says “reaches 11 m”."
+      }
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 15,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "470-471"
+        }
+      ],
+      "note": {
+        "tr": "Üç kasnakta, altı üst, altı alt seviyede.",
+        "en": "Three on the drum, six upper, six lower."
+      }
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri",
+        "en": "Narthex"
+      },
+      "value": "8.00 × 4.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "471"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_tasi",
+      "label": {
+        "tr": "Hazire mezar taşı sayısı",
+        "en": "Gravestones in the graveyard"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "471"
+        }
+      ],
+      "note": {
+        "tr": "Dördü yazılı, biri yazısız.",
+        "en": "Four inscribed, one uninscribed."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Vezirî oğlu Mehmed Efendi",
+      "role": {
+        "tr": "Vakıf kayıtlarına göre camiyi yaptıran",
+        "en": "Had the mosque built, according to foundation records"
+      }
+    },
+    {
+      "name": "Fatma Hanım",
+      "role": {
+        "tr": "Hazirede mezar taşı günümüze ulaşan",
+        "en": "Buried in the graveyard; gravestone survives"
+      }
+    },
+    {
+      "name": "Hacı Emin Ağa",
+      "role": {
+        "tr": "Hazirede mezar taşı günümüze ulaşan",
+        "en": "Buried in the graveyard; gravestone survives"
+      }
+    },
+    {
+      "name": "Hafız Mehmed Çelebi bin Mustafa Çelebi",
+      "role": {
+        "tr": "Hazirede mezar taşı günümüze ulaşan",
+        "en": "Buried in the graveyard; gravestone survives"
+      }
+    },
+    {
+      "name": "Kemal bin Resûl",
+      "role": {
+        "tr": "Hazirede mezar taşı günümüze ulaşan",
+        "en": "Buried in the graveyard; gravestone survives"
+      }
+    },
+    {
+      "name": "Hamza Bâlî bin Mahmud Belhî",
+      "role": {
+        "tr": "Hazireye defnedildiği bilinir; taşı Pınarbaşı Mezarlığı'na nakledildi",
+        "en": "Known to be buried here; his stone was moved to the Pınarbaşı Cemetery"
+      }
+    },
+    {
+      "name": "Hoca Mehmed Efendi",
+      "role": {
+        "tr": "Hazireye defnedildiği bilinir; taşına ulaşılamamıştır",
+        "en": "Known to be buried here; stone not found"
+      }
+    },
+    {
+      "name": "Abdullah el-Hindî",
+      "role": {
+        "tr": "Hazireye defnedildiği bilinir; taşına ulaşılamamıştır",
+        "en": "Known to be buried here; stone not found"
+      }
+    },
+    {
+      "name": "Hindîzâde Ramazan Efendi",
+      "role": {
+        "tr": "Hazireye defnedildiği bilinir; taşına ulaşılamamıştır",
+        "en": "Known to be buried here; stone not found"
+      }
+    },
+    {
+      "name": "Hacı Ali Efendi",
+      "role": {
+        "tr": "Hazireye defnedildiği bilinir; taşına ulaşılamamıştır",
+        "en": "Known to be buried here; stone not found"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "minare-yenileme-1890",
+      "year": 1890,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Minarenin kaideden sonraki bölümü yeniden inşa edildi (1890-1894)",
+        "en": "Minaret above the plinth rebuilt (1890-1894)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "471"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 1890-1894 aralığını veriyor.",
+        "en": "The book gives the range 1890-1894."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-veziri-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Aynı adı taşıyan ve birbirine yakın konumlanan iki camiden biridir; diğerinin Veziri Caddesi'ndeki Veziri (Konuralp-Üç Kurnalı) Camii olması muhtemeldir.",
+        "en": "One of two mosques with the same name close to each other; the other is probably the Veziri (Konuralp-Üç Kurnalı) Mosque on Veziri Street."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "470"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Veled-i Veziri Camii, Veziri Caddesi üzerinde, kalkan duvarlı, kare ibadet mekânlı bir mahalle mescididir. Duvarlar üç sıra tuğla, bir sıra kesme taştan oluşur; üzerinde kurşun kaplı kubbe yükselir ve kubbe eteğinde 19. yüzyıl kalem işi süslemeler görülür. Giriş cephesinde ahşap direkli, camekânla kapatılmış bir son cemaat bölümü vardır. Minareye bu bölümden çıkılır. Doğu tarafında küçük bir hazire bulunur ve burada beş mezar taşı durur.",
+      "en": "Veled-i Veziri Mosque is a parapet-walled neighbourhood masjid on Veziri Street with a square prayer hall. Its walls are built of three rows of brick and one of cut stone, topped by a lead-covered dome with 19th-century hand-painted ornament at its skirt. The entrance front has a glass-enclosed narthex on wooden posts, from which the minaret is reached. A small graveyard on the east side holds five gravestones."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-veziri-camii/p077-1.jpg",
+        "original_name": "01 Kapak_18.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "470"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, havadan",
+        "en": "Aerial view of the mosque dome and minaret"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı kubbeli cami, tuğla örgülü minaresi ve çevresindeki kiremit çatılı evler. Arka planda kent, selvi ağaçları ve uzaktaki bir başka cami görünür.",
+        "en": "A lead-domed mosque with a brick minaret among tiled-roof houses. Cypress trees, the city and another mosque in the distance are visible behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-veziri-camii/p077-3.jpg",
+        "original_name": "4_2.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "470"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yeri ve kubbe",
+        "en": "Covered porch and dome"
+      },
+      "alt": {
+        "tr": "Turuncu duvarlı, beyaz çerçeveli geniş pencereli kapalı son cemaat yeri. Üstünde kurşun kaplı kubbe, sağda tuğla minare ve ağaçlar var.",
+        "en": "An enclosed porch with orange walls and large white-framed windows with fan-shaped tops. A lead dome rises behind it, with a brick minaret and trees to the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-veziri-camii/p077-2.jpg",
+        "original_name": "02_9.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "470"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kubbe ve çatı, kuşbakışı",
+        "en": "Dome and roof from directly above"
+      },
+      "alt": {
+        "tr": "Tepeden görünen gri kurşun kaplı kubbe ve onu çevreleyen kırma çatı bölümleri. Yanında minare kaidesi; çevrede kiremit çatılı evler ve dar sokaklar var.",
+        "en": "A top-down view of a grey lead dome and its surrounding roof sections, with a minaret base beside it. Tiled roofs and narrow streets lie around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    }
+  ],
+  "archive_media": []
+}

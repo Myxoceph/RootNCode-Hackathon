@@ -1,0 +1,8 @@
+# Python dependencies of data/tools (validate, media pipeline, import, PDF text and photo extraction).
+# Install: python3 -m pip install -r data/requirements.txt
+jsonschema>=4.25,<5
+pillow>=11,<13
+certifi>=2025.1
+psycopg[binary]>=3.2,<4
+pypdf>=5,<7
+pymupdf>=1.24,<2

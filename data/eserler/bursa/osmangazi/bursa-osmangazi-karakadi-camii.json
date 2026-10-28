@@ -1,0 +1,417 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-karakadi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Yapım tarihi kitapta verilmiyor; dating boş bırakıldı (yalnızca banînin ölüm yılı H. 888 / M. 1483 veriliyor).",
+      "Banî adları sayfalar arasında farklı (Mehmed Hüseyin Çelebi / Seyyid Hüseyin Hüsameddin Karakâdî); aynı kişi olup olmadığı ve 'iki banî' ifadesi netleştirilmeli.",
+      "Minarenin 'yarım hâlde' olması ve sonraki onarım tarihi kitapta belirtilmiyor.",
+      "Era kitapta açıkça belirtilmiyor; banînin Fâtih dönemi hizmeti ve 1483 vefatına dayanarak 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Vakıf bilgisi kitapta yok; waqf boş.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "S. 367'de banî Mehmed Hüseyin Çelebi (Seyyid Çelebi, Hüsameddin Çelebi), s. 369'da Seyyid Hüseyin Hüsameddin Karakâdî olarak verilir; s. 369 ayrıca hazirede 'caminin iki banisi'nin medfun olduğunu söyler. Kitap bu farkı açıklamıyor; ad varyantları aynı kişi varsayımıyla (probable) birleştirildi."
+      },
+      {
+        "field": "hazire",
+        "note": "S. 369'da şeyhlere ait 13 kabir ve bahçede işaretli 14 kabir yeri belirtilir; iki sayının ilişkisi kitapta açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Karakâdî Camii",
+    "en": "Karakâdî Mosque"
+  },
+  "subtitle": {
+    "tr": "Tuz Pazarı yakınında, haziresi ve dergâh geçmişi olan küçük cami",
+    "en": "Small mosque near Tuz Pazarı with a graveyard and a Sufi lodge past"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tek kubbeli",
+    "almaşık duvar",
+    "Türk üçgenleri",
+    "hazire",
+    "dergâh",
+    "Tuz Pazarı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Karakâdî",
+    "address": "Tuz Pazarı, Kütahya Hanı (Çukur Han) yakını",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "367"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.184855,
+      "lng": 29.068059,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/343212610 ('Karakadı Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Mehmed Hüseyin Çelebi (Seyyid Çelebi, Hüsameddin Çelebi; ayrıca Seyyid Hüseyin Hüsameddin Karakâdî)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "367, 369"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Osmangazi'de Tuz Pazarı'nda, Kütahya Hanı yakınında yer alan, Fâtih döneminde kilerci başılık yapmış Mehmed Hüseyin Çelebi tarafından yaptırılan küçük, tek kubbeli cami. Bir dönem Halvetiyye, Kâdiriyye ve Celvetiyye tarikatlarına bağlı dergâh olarak hizmet vermiş, 1950'lerde depo iken onarılıp yeniden ibadete açılmıştır; doğusunda hazire bulunur.",
+    "en": "A small single-domed mosque near Kütahya Han in Tuz Pazarı, Osmangazi, built by Mehmed Hüseyin Çelebi, who served as chief butler under Fâtih. It served for a period as a Sufi lodge of the Halvetiyye, Qadiriyya and Celvetiyye orders; used as a warehouse in the 1950s, it was repaired and reopened for worship. A graveyard lies to its east."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banisi",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Tuz Pazarı'nda, Kütahya Hanı (Çukur Han) yakınında yer almakta ve Karakâdî Mahallesi adıyla anılmaktadır. Tarihî kayıtlara göre camiyi inşa ettiren kişi, Seyyid Çelebi ve Hüsameddin Çelebi adlarıyla da bilinen Mehmed Hüseyin Çelebi'dir. Yemen'in Karakâd köyündendir; halk arasında \"Karakedi\" ya da \"Karagidi\" olarak anılmıştır. Fâtih döneminde kilerci başı olarak görev yapmış, H. 888 / M. 1483'te vefat ederek cami haziresine defnedilmiştir. Kâdiriyye tarikatına mensup olduğundan camide Kâdirî ayinlerini icra etmiş ve imamlık yapmıştır.",
+        "en": "The mosque is located in Osmangazi District, near Tuz Pazarı and Kütahya Han (Çukur Han), and is named after the Karakâdî Neighborhood. According to historical records the mosque was built by Mehmed Hüseyin Çelebi, also known as Seyyid Çelebi and Hüsameddin Çelebi. He was from the Karakâd village of Yemen and popularly known as \"Karakedi\" or \"Karagidi\". He served as chief butler under Fâtih, died in AH 888 / AD 1483 and was buried in the mosque's graveyard. As a member of the Qadiriyya order he performed Qadiri rituals in the mosque and served as imam."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "367-368"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "İçten içe 5,50 × 5,50 m boyutlarındaki cami, bir sıra kesme taş ve üç sıra tuğla ile aralarda ikişer düşey tuğladan oluşan almaşık duvar işçiliğine sahiptir. Üç gözlü son cemaat yerinin orta hacmi daha dar ve yüksektir; sivri kemer içine basık bir tahfif kemeri yapılmış, arada kalan alınlık altıgen döşeme tuğlalarıyla süslenmiştir. Cepheyi anıtsallaştıran kalkan duvar kirpi saçakla sonlanır. Son cemaat yerinin doğu, batı ve kuzey cepheleri camekânla kapatılmıştır. Kareye yakın planlı harimi örten kubbeye geçiş Türk üçgenleriyle sağlanmıştır; kubbe, sekizgen kasnağa oturur ve kasnakta üç pencere vardır.",
+        "en": "The mosque measures 5.50 × 5.50 m inside and has alternating masonry of one row of cut stone and three rows of brick with two vertical bricks between. The middle bay of the three-bay narthex is narrower and higher; a depressed relief arch is set into the pointed arch and the pediment between is decorated with hexagonal paving bricks. The parapet wall ending in a sawtooth cornice monumentalizes the façade. The east, west and north sides of the narthex are enclosed with glass panels. The dome over the nearly square prayer hall rests on Turkish triangles and an octagonal drum with three windows."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber-minare",
+      "order": 3,
+      "title": {
+        "tr": "Mihrap, Minber ve Minare",
+        "en": "Mihrab, Minbar and Minaret"
+      },
+      "body": {
+        "tr": "Mihrap kavsarası beş sıra mukarnaslıdır. Mihrabın iki yanındaki pencereler dolap hâline getirilmiş, mabedin içi karanlık kalmıştır. Ahşap mihrap ve minber mütevazı ölçülerde ve yeni imalattır. Minarenin kaidesi kalkan duvar hizasına kadar çıkar; Türk üçgenli küpten tuğla silindirik gövdeye geçilir. Kaide ve küpün yüksekliği gövde ve peteğin yüksekliğine eşittir; kitap bunu nadir görülen örneklerden biri olarak niteler.",
+        "en": "The mihrab hood has five rows of muqarnas. The windows on both sides have been turned into cupboards, leaving the interior dark. The wooden mihrab and minbar are modest and of recent manufacture. The minaret base rises to the parapet wall and a Turkish-triangle transition leads to the cylindrical brick shaft. The base and transition equal the shaft and neck in height, which the book calls one of the rare examples of this form."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-onarim",
+      "order": 4,
+      "title": {
+        "tr": "Kullanım ve Onarım",
+        "en": "Use and Repair"
+      },
+      "body": {
+        "tr": "Camide 1930'lu yıllara kadar imam ve müezzin bulunmuştur; minaresi de yarım hâldedir. 1950'li yıllarda önceleri ev olarak kullanılan, sonradan depo hâline gelen yapı oldukça harabe durumdaydı; sonra mükemmel bir işçilikle onarılarak yeniden ibadete açılmıştır.",
+        "en": "The mosque had an imam and a muezzin until the 1930s, and its minaret is incomplete. In the 1950s the building, first used as a house and later a warehouse, was very dilapidated; it was later repaired with excellent craftsmanship and reopened for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 5,
+      "title": {
+        "tr": "Hazire ve Dergâh Geçmişi",
+        "en": "Graveyard and Lodge History"
+      },
+      "body": {
+        "tr": "Hazire, caminin bahçesinin doğu tarafındadır. Cami bir süre Halvetiyye, Kâdiriyye ve Celvetiyye tarikatlarına bağlı dergâh olarak hizmet vermiştir. Hazirede dergâh şeyhlerine ait olması gereken 13 kabir vardır; bahçede işaretli 14 kabir yeri bulunur. Hazirede medfun olduğu bilinen caminin iki banisi ve şeyhlerinden yalnızca birinin mezar taşından bir parça korunabilmiş, diğer taşlar yok olmuştur. Taşları bulunanlar arasında Mustafa Bey bin Mehmed Bey, Mehmed bin Ali, Mustafa bin Satılmış ve Seyyid Şeyh Süleyman Himmetî Efendi (v. H. 1290 / M. 1873) vardır.",
+        "en": "The graveyard lies on the east side of the garden. The mosque served for a period as a Sufi lodge of the Halvetiyye, Qadiriyya and Celvetiyye orders. There are 13 graves that must have belonged to the lodge's shaykhs, and 14 marked grave sites in the garden. Of the two founders and shaykhs known to be buried there, only a fragment of one tombstone survives; the other stones have disappeared. Those with stones include Mustafa Bey bin Mehmed Bey, Mehmed bin Ali, Mustafa bin Satılmış and Seyyid Shaykh Süleyman Himmetî Efendi (d. AH 1290 / AD 1873)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "369"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "5,50 × 5,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnaktaki pencere sayısı",
+        "en": "Windows in the drum"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas_sirasi",
+      "label": {
+        "tr": "Mihrap kavsarası mukarnas sırası",
+        "en": "Muqarnas rows of the mihrab hood"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "368"
+        }
+      ]
+    },
+    {
+      "key": "hazire_kabir_sayisi",
+      "label": {
+        "tr": "Hazirede şeyhlere ait olması gereken kabir",
+        "en": "Graves in the graveyard (shaykhs)"
+      },
+      "value": 13,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "369"
+        }
+      ]
+    },
+    {
+      "key": "hazire_isaretli_kabir_yeri",
+      "label": {
+        "tr": "Bahçedeki işaretli kabir yeri",
+        "en": "Marked grave sites in the garden"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "369"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mehmed Hüseyin Çelebi",
+      "role": {
+        "tr": "Banî; Fâtih döneminde kilerci başı, imam (v. H. 888 / M. 1483)",
+        "en": "Founder; chief butler under Fâtih, imam (d. AH 888 / AD 1483)"
+      }
+    },
+    {
+      "name": "Seyyid Şeyh Süleyman Himmetî Efendi",
+      "role": {
+        "tr": "Hazirede taşı bulunan şeyh (v. H. 1290 / M. 1873)",
+        "en": "Shaykh with a stone in the graveyard (d. AH 1290 / AD 1873)"
+      }
+    },
+    {
+      "name": "Mustafa Bey bin Mehmed Bey",
+      "role": {
+        "tr": "Hazirede taşı bulunan kişi",
+        "en": "Person with a stone in the graveyard"
+      }
+    },
+    {
+      "name": "Mehmed bin Ali",
+      "role": {
+        "tr": "Hazirede taşı bulunan kişi",
+        "en": "Person with a stone in the graveyard"
+      }
+    },
+    {
+      "name": "Mustafa bin Satılmış",
+      "role": {
+        "tr": "Hazirede taşı bulunan kişi",
+        "en": "Person with a stone in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "bani-vefat-1483",
+      "year": 1483,
+      "date": null,
+      "hijri": "888",
+      "type": "record",
+      "title": {
+        "tr": "Banî Mehmed Hüseyin Çelebi vefat etti ve hazireye defnedildi",
+        "en": "Founder Mehmed Hüseyin Çelebi died and was buried in the graveyard"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "367-368"
+        }
+      ]
+    },
+    {
+      "id": "suleyman-himmeti-vefat-1873",
+      "year": 1873,
+      "date": null,
+      "hijri": "1290",
+      "type": "record",
+      "title": {
+        "tr": "Seyyid Şeyh Süleyman Himmetî Efendi vefat etti",
+        "en": "Seyyid Shaykh Süleyman Himmetî Efendi died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "369"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Karakâdî Camii küçük, tek kubbeli, kareye yakın planlı bir yapıdır. Duvarları bir sıra kesme taş ve üç sıra tuğlanın almaşık örgüsüyle yapılmıştır. Önünde üç gözlü, orta gözü daha dar ve yüksek bir son cemaat yeri ile kirpi saçaklı kalkan duvar bulunur. Tuğladan silindirik gövdeli minaresi vardır. Doğusunda bahçede küçük bir hazire yer alır.",
+      "en": "Karakâdî Mosque is a small single-domed building on a nearly square plan. Its walls are of alternating courses of one row of cut stone and three rows of brick. In front is a three-bay narthex with a narrower, higher middle bay, and a parapet wall ending in a sawtooth cornice. It has a minaret with a cylindrical brick shaft. A small graveyard lies in the garden to its east."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-karakadi-camii/p098-1.jpg",
+        "original_name": "Karakadi Camii ve Haziresi 1.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "367"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, şehir içinde",
+        "en": "The mosque's dome and minaret in the city"
+      },
+      "alt": {
+        "tr": "Kubbeli küçük cami ve yüksek tuğla minare, yoğun çatılar arasında yükseliyor. Arkada şehir ve dağ silsilesi görünüyor.",
+        "en": "A small domed mosque and a tall brick minaret rising among dense rooftops. The city and a mountain range lie behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    }
+  ],
+  "archive_media": []
+}

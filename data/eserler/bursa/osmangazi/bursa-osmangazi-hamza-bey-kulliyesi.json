@@ -1,0 +1,409 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hamza-bey-kulliyesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hamzabey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Hamza Bey Külliyesi bölümünden (s. 173-185) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media boş, archive_media boş); Drive klasöründen seçilecek, alt metinleri yazılacak.",
+      "media_folder bilgisi (Drive klasörü) eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; bulunursa waqf.deed alanına eklenecek.",
+      "Külliyenin kendi adresi verilmiyor; ana yapı olan caminin adresi (Kaplıca Caddesi No: 55) kullanıldı.",
+      "Külliyenin kuruluş/inşa yılı kitapta verilmiyor; yalnızca 'Fâtih devrinde yapılan en büyük camilerden' deniyor. Dating alanı tahmini bırakıldı.",
+      "Yok olmuş imaret ve medrese için ayrı kayıt açılıp açılmayacağına veri ekibi karar vermeli (medrese: caminin kuzeydoğusunda, duvar kalıntıları; imaret: caminin yakınında, iz kalmamış).",
+      "Hamza Bey'in Manisa ve Niğde'de yaptırdığı hamam ve medreseler kitapta yalnızca adıyla anılıyor (ilçe ve ad yok); ilişki hedefi kurulamadı, kaynak taranırsa eklenecek.",
+      "Külliyedeki 'tabhane'lerin (iki adet) ayrı kayıt gerektirip gerektirmediği belirlenmeli; kitapta ayrı bölümleri yok, cami kaydında anlatılıyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis] / location",
+        "note": "Külliye anlatımında Hamza Bey, eşleri ve Kara Mustafa Paşa türbeleri 'cami bahçesinin kuzeybatısında' (s. 175) deniyor; türbe bölümlerinde Hamza Bey Türbesi 'cami avlusunun güneybatı köşesinde' (s. 180), Hamza Bey Ailesi Türbesi 'caminin batı köşesine bitişik' (s. 182), Kara Mustafa Paşa Türbesi 'avlunun kuzey ucunda' (s. 184) olarak veriliyor. Konum bilgileri tam örtüşmüyor; kaynağa sadık kalınarak her kayıtta kendi bölümündeki ifade esas alındı."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap külliyenin yapım yılını vermiyor. Hamza Bey 1462'de Eflak'ta öldürülüp Bursa'daki türbesine gömüldüğü için cami bu tarihten önce yapılmış olabilir, ancak bu çıkarım kitapta açıkça yazmıyor; kesin tarih verilmedi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hamza Bey Külliyesi",
+    "en": "Hamza Bey Complex"
+  },
+  "subtitle": {
+    "tr": "Bursa'nın ovaya hâkim külliyesi",
+    "en": "A complex commanding the Bursa plain"
+  },
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Hamza Bey",
+    "külliye",
+    "türbe",
+    "Hamzabey Mahallesi",
+    "Fâtih dönemi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Hamzabey",
+    "address": "Kaplıca Caddesi, No: 55",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "173"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.192718,
+      "lng": 29.041733,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-osmangazi-kara-mustafa-pasa-turbesi) noktası kullanıldı."
+    }
+  },
+  "summary": {
+    "tr": "Hamza Bey Camii'nin ana yapı olduğu külliye; cami, tabhaneler, medrese, imaret ve türbelerden oluşur. İmaret yok olmuş, medresenin yalnızca duvar kalıntıları ayaktadır; cami ve üç türbe günümüze ulaşmıştır.",
+    "en": "A complex whose main structure is the Hamza Bey Mosque; it consists of a mosque, hospices, a madrasa, an imaret and tombs. The imaret is gone and only wall ruins of the madrasa remain; the mosque and three tombs survive."
+  },
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapi_sayisi_ayakta",
+      "label": {
+        "tr": "Günümüze ulaşan yapı",
+        "en": "Surviving structures"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ],
+      "note": {
+        "tr": "Cami ve üç türbe (Hamza Bey, Hamza Bey ailesi, Kara Mustafa Paşa).",
+        "en": "The mosque and three tombs."
+      }
+    },
+    {
+      "key": "yok_olan_yapilar",
+      "label": {
+        "tr": "Yok olan yapılar",
+        "en": "Lost structures"
+      },
+      "value": "imaret, medrese",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ],
+      "note": {
+        "tr": "İmaretin izi yok; medresenin yalnızca duvar kalıntıları var.",
+        "en": "No trace of the imaret; only wall ruins of the madrasa."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Hamza Bey (Yahşi Beyzade)",
+      "role": {
+        "tr": "Banî; donanma kumandanı",
+        "en": "Founder; naval commander"
+      }
+    },
+    {
+      "name": "Bayezid Paşa",
+      "role": {
+        "tr": "Hamza Bey'in kardeşi, I. Mehmed ve II. Murad'ın veziriazamı",
+        "en": "Hamza Bey's brother, grand vizier of Mehmed I and Murad II"
+      }
+    },
+    {
+      "name": "Kara Mustafa Paşa",
+      "role": {
+        "tr": "Hamza Bey'in torunu, vezir",
+        "en": "Hamza Bey's grandson, vizier"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "1417-lapseki",
+      "year": 1417,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Venedikliler Lapseki'yi topa tuttu; Hamza Bey karada savaştı",
+        "en": "Venetians bombarded Lapseki; Hamza Bey fought on land"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "173"
+        }
+      ]
+    },
+    {
+      "id": "eflak-1462",
+      "year": 1462,
+      "date": null,
+      "hijri": "866",
+      "type": "record",
+      "title": {
+        "tr": "Hamza Bey Eflak'a giden heyetle öldürüldü; Bursa'daki türbesine defnedildi",
+        "en": "Hamza Bey killed with the delegation to Wallachia; buried in his tomb in Bursa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü külliyenin tüm yapılarını restore etti",
+        "en": "General Directorate of Foundations restored all structures of the complex"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "179, 185"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "manzara",
+      "title": {
+        "tr": "Ovaya hâkim konum",
+        "en": "Position commanding the plain"
+      },
+      "hint": {
+        "tr": "Cami, Bursa'nın en güzel manzarasına sahip eserlerden biridir.",
+        "en": "The mosque has one of the most beautiful views of Bursa."
+      },
+      "section_id": "genel-bakis"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamza Bey Camii bu külliyenin parçasıdır.",
+        "en": "Hamza Bey Camii is part of this complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamza Bey Türbesi bu külliyenin parçasıdır.",
+        "en": "Hamza Bey Türbesi is part of this complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-hamza-bey-ailesi-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamza Bey Ailesi Türbesi bu külliyenin parçasıdır.",
+        "en": "Hamza Bey Ailesi Türbesi is part of this complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-kara-mustafa-pasa-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kara Mustafa Paşa Türbesi bu külliyenin parçasıdır.",
+        "en": "Kara Mustafa Paşa Türbesi is part of this complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "dating": {
+    "display": {
+      "tr": "Fâtih Sultan Mehmed dönemi (kesin yıl belirtilmemiş)",
+      "en": "Reign of Fâtih Sultan Mehmed (exact year not given)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap, camiyi 'Fatih devrinde Bursa'da yapılan en büyük camilerden' biri olarak tanımlıyor; kesin yıl yok.",
+      "en": "The book calls the mosque 'one of the largest mosques built in Bursa during the reign of Fâtih'; no exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "175"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hamza Bey (Yahşi Beyzade Hamza Bey)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "173, 175"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "175"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Hamza Bey Camii, Osmangazi İlçesi, Hamzabey Mahallesi, Kaplıca Caddesi No:55'te bulunan külliyenin ana yapısıdır. Bursa'da aynı adla anılan mahallede yer alan külliye; cami, tabhaneler, medrese, imaret ve türbelerden oluşmaktadır. Cami, Fatih devrinde Bursa'da yapılan en büyük camilerden biriydi ve Muradiye'nin batı semtleri caminin etrafında toplanmıştır. Tamamen ovaya hâkim konumda yer aldığı için Bursa'nın en güzel manzarasına sahip eserlerden birisidir.",
+        "en": "Hamza Bey Mosque is the main structure of the complex at Kaplıca Street No. 55, Hamzabey Neighborhood, Osmangazi District. The complex, in the neighborhood of the same name in Bursa, consists of a mosque, hospices, a madrasa, an imaret and tombs. The mosque was one of the largest built in Bursa during the reign of Fâtih, and the western districts of Muradiye gathered around it. Since it commands the plain, it is one of the works with the most beautiful view of Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "173, 175"
+        }
+      ]
+    },
+    {
+      "id": "hamza-bey",
+      "order": 2,
+      "title": {
+        "tr": "Hamza Bey",
+        "en": "Hamza Bey"
+      },
+      "body": {
+        "tr": "Hamza Bey, aslen Arnavut'tur; Vezir Bayezid Paşa'nın kardeşi, babasının adı Yahşi Bey'dir. Çelebi Mehmed döneminde önemli devlet adamlarından biri olarak görev yapmıştır. Bayezid Paşa'nın vezirliği sırasında donanmada görev almış; 1417'de Venedikliler Çanakkale Boğazı'na girerek Lapseki'yi topa tuttuğunda karada 10.000'den fazla askeriyle Venedik kuvvetlerine karşı mücadele etmiştir. İstanbul'un fethi sırasında Baltaoğlu Süleyman Bey'in yerine donanma kumandanı olarak atanmıştır. H. 866 / M. 1462'de Fâtih'in Eflak'a gönderdiği heyette yer almış, Voyvoda Vlad Tepeş (Kazıklı Voyvoda, Drakula) tarafından heyetin diğer üyeleriyle birlikte öldürtülmüştür; naaşı İstanbul'a getirilip Bursa'daki türbesine defnedilmiştir. Bursa'nın yanı sıra Manisa ve Niğde'de de hamam ve medrese yaptırmıştır.",
+        "en": "Hamza Bey was originally Albanian; he was the brother of Vizier Bayezid Paşa and his father's name was Yahşi Bey. He served as an important statesman under Çelebi Mehmed. He served in the navy during Bayezid Paşa's vizierate and in 1417, when the Venetians entered the Dardanelles and bombarded Lapseki, fought them on land with more than 10,000 soldiers. During the conquest of Istanbul he was appointed naval commander replacing Baltaoğlu Süleyman Bey. A member of the delegation Fâtih sent to Wallachia in AH 866 / AD 1462, he was killed with the other members by Voivode Vlad Tepeş (the Impaler, Dracula); his body was brought to Istanbul and buried in his tomb in Bursa. He also had bathhouses and madrasas built in Manisa and Niğde."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "173, 175"
+        }
+      ]
+    },
+    {
+      "id": "yapilar",
+      "order": 3,
+      "title": {
+        "tr": "Külliyenin Yapıları",
+        "en": "Buildings of the Complex"
+      },
+      "body": {
+        "tr": "Külliyeyi oluşturan yapılardan imaret, belgelerden camiye yakın bir yerde konumlandığı anlaşılsa da tamamen yıkılmış ve günümüze ulaşan bir izi kalmamıştır. Caminin kuzeydoğusunda yer alan medrese zamanla yok olmuş, yalnızca bir takım duvar kalıntıları günümüze ulaşabilmiştir. Cami bahçesinin kuzeybatısında yer alan Hamza Bey'e, eşlerine ve Kara Mustafa Paşa'ya ait türbeler ise halen ayaktadır. Kitap türbeleri ayrı bölümlerde ele alır: Hamza Bey Türbesi, Hamza Bey Ailesi Türbesi ve Kara Mustafa Paşa Türbesi.",
+        "en": "The imaret, which the documents show stood close to the mosque, has been completely destroyed and no trace survives. The madrasa to the north-east of the mosque has disappeared over time, with only some wall ruins remaining. The tombs of Hamza Bey, his wives and Kara Mustafa Paşa, in the northwest of the mosque garden, still stand. The book treats the tombs in separate sections: the Hamza Bey Tomb, the Hamza Bey Family Tomb and the Kara Mustafa Paşa Tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "175"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamza Bey Külliyesi, Bursa'da Hamzabey Mahallesi'nde, ovaya hâkim bir konumda yer alır. Külliyenin ana yapısı olan cami, tuğla ve moloz taştan örülmüş duvarlara ve büyük bir kubbeye sahiptir. Cami bahçesinde üç türbe bulunur. Külliyenin imareti ve medresesi yok olmuş, medreseden yalnızca bazı duvar kalıntıları kalmıştır.",
+      "en": "Hamza Bey Complex stands in the Hamzabey Neighborhood of Bursa, in a position commanding the plain. Its main structure, the mosque, has walls of brick and rubble stone and a large dome. Three tombs stand in the mosque garden. The complex's imaret and madrasa are lost; only some wall ruins of the madrasa remain."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tasvirden yapay zekâ taslağı olarak yazıldı; saha ve fotoğrafla doğrulanmadı."
+  }
+}

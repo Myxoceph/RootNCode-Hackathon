@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-selimiye-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kuzeye eklenen geniş mekân ve asma katın eklenme tarihi kitapta yok.",
+      "Mektebin yıkılış tarihi ve şadırvanın taşınma tarihi kitapta yok.",
+      "Mimar ve vakıf bilgisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[harim-kapisi-kitabesi]",
+        "note": "Kitabenin dil/yazı: kitap yalnızca 'nesih hatla yazılmış dörtlük manzum kitabe' diyor; dil Osmanlı Türkçesi olarak kodlandı ama kitap dili belirtmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Selimiye Camii",
+    "en": "Selimiye Mosque"
+  },
+  "subtitle": {
+    "tr": "Tırnovalı Hacı Ahmed'in 1892 tarihli manzum kitabeli camii",
+    "en": "The 1892 mosque of Hacı Ahmed of Tirnova with a verse inscription"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Tırnovalı Hacı Ahmed",
+    "manzum kitabe",
+    "1892",
+    "Marsilya kiremidi",
+    "2015 restorasyon"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Selimiye Mahallesi",
+    "address": "Değirmen Caddesi, No: 53/1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "413"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.191601,
+      "lng": 29.053411,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/342927385 ('Selimiye Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1310 / M. 1892",
+      "en": "AH 1310 / AD 1892"
+    },
+    "start_year": 1892,
+    "end_year": 1892,
+    "hijri_year": 1310,
+    "century": 19,
+    "basis": {
+      "tr": "Harim kapısı üzerindeki manzum kitabe ve kitabın H. 1310 / M. 1892 kaydı.",
+      "en": "The verse inscription above the prayer hall door and the book's AH 1310 / AD 1892 statement."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "413"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Tırnovalı Hacı Ahmed bin Abdullah",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "413"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Tırnovalı Abdullah oğlu Hacı Ahmed'in H. 1310 / M. 1892'de yaptırdığı, harim kapısı üzerinde dörtlük manzum kitabesi bulunan cami. Kuzeye sonradan geniş bir mekân ve asma kat eklenmiştir; yalnızca minaresi özgün özelliklerini korur. 2015'te Bursa Büyükşehir Belediyesi tarafından aslına uygun restore edilmiştir.",
+    "en": "A mosque built in AH 1310 / AD 1892 by Hacı Ahmed, son of Abdullah of Tirnova, with a four-line verse inscription above the prayer hall door. A large space and mezzanine were later added to the north; only the minaret keeps its original features. It was restored faithfully by the Bursa Metropolitan Municipality in 2015."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, Tırnovalı Abdullah oğlu Hacı Ahmed tarafından H. 1310 / M. 1892'de inşa edilmiştir. Hacı Ahmed, camiyle birlikte bir ilim mektebi de kurmuş ve tatlı suyla ihya etmiştir. Caminin önündeki şadırvan ve mektepten, mektep yıkılmış, şadırvan doğu bahçesine taşınmıştır.",
+        "en": "The mosque was built in AH 1310 / AD 1892 by Hacı Ahmed, son of Abdullah from Tirnova. He also founded a school of learning and revived it with fresh water. Of the shadirvan and school in front of the mosque, the school was demolished and the shadirvan was moved to the east garden."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "413"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe",
+        "en": "Inscription"
+      },
+      "body": {
+        "tr": "Harim mekânının kapısı üzerindeki mermer, nesih hatlı dörtlük manzum kitabe caminin Hacı Ahmed tarafından Hicrî 1310'da yapıldığını ve bir ilim mektebi de kurulduğunu bildirir. Tam metin 'inscriptions' bölümündedir.",
+        "en": "The four-line verse inscription in naskh on marble above the prayer hall door states that Hacı Ahmed built the mosque in AH 1310 and also founded a school. The full text is in the inscriptions entry."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "413"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzey-güney doğrultusunda dikdörtgen plan üzerine inşa edilen cami toplam 220 m²'lik bir alanı kapsar. Sonradan kuzey yönüne geniş bir mekân eklenmiş ve bu bölüme asma kat yapılmıştır. İç ve dış mimarisinde kayda değer süsleme yoktur. Cami taş ve tuğladan yapılmıştır; ahşap çatısı Marsilya kiremidiyle kaplıdır. Son cemaat mahalli doğu ve batıda birer, kuzeyde ortada küçük bir kemerle, toplam üç kemerle desteklenen, tamamen dışa açık eyvan biçimindedir.",
+        "en": "Built on a north-south rectangular plan, the mosque covers 220 m². A large space was later added to the north with a mezzanine floor. There is no notable decoration inside or out. It is built of stone and brick with a wooden roof covered in Marseille tiles. The narthex is a fully open iwan-like space supported by three arches: one each on east and west and a small one in the middle on the north."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "413-414"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Yalnızca minare yapıldığı dönemin özgün özelliklerini korur. Ahşap merdivenle çıkılan minare asıl ibadet mekânının kuzeybatısındadır; sıvalı sekizgen kaide üzerinde silindirik tuğla gövde yükselir, şerefe altında beş sıra kirpi saçak, petek üstünde kurşun kaplama ve sivri külah vardır.",
+        "en": "Only the minaret preserves the original features of its period. Reached by a wooden staircase, it stands northwest of the main prayer space: a cylindrical brick shaft on a plastered octagonal base, five rows of sawtooth under the balcony, a lead-covered section above the neck and a pointed spire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "414"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 5,
+      "title": {
+        "tr": "Restorasyon",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Son restorasyonda duvarlar sıvanmış ve caminin çevresi düzenlenmiştir. Cami 2015'te Bursa Büyükşehir Belediyesi tarafından aslına uygun biçimde restore edilmiş olup ibadete açıktır.",
+        "en": "In the last restoration the walls were plastered and the surroundings reorganized. The mosque was restored faithfully by the Bursa Metropolitan Municipality in 2015 and is open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "414"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "alan",
+      "label": {
+        "tr": "Kapladığı alan",
+        "en": "Area covered"
+      },
+      "value": 220,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "413"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_kemer",
+      "label": {
+        "tr": "Son cemaat yeri kemer sayısı",
+        "en": "Narthex arches"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "414"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "414"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Tırnovalı Hacı Ahmed bin Abdullah",
+      "role": {
+        "tr": "Banî; bir ilim mektebi de kurdu",
+        "en": "Founder; also established a school of learning"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "harim-kapisi-kitabesi",
+      "location": {
+        "tr": "Harim mekânının kapısı üzerinde, mermer",
+        "en": "Above the prayer hall door, marble"
+      },
+      "language": "tr-ottoman",
+      "script": "nesih",
+      "transliteration": "Esâsen Tırnovalı Hacı Ahmed ibn-i Abdullah mevâli himmet\nBin üçyüz onda bu beyt-i Hudâ’yı eyledi inşâ\nZamîm-i hüsn-i hayrât olmak üzere mekteb-i irfân\nDahî tes’sîs idüb mâ-i lezîzle eyledi ihyâ",
+      "translation": {
+        "tr": "Tırnovalı Hacı Ahmed bin Abdullah, hayırseverliğiyle\nHicrî 1310 yılında bu Allah’ın evini (mescidi) inşa etti.\nHayır güzelliklerine bir yenisini eklemek üzere,\nBir ilim mektebi de kurarak, tatlı suyla birlikte ihya etti.",
+        "en": "Hajji Ahmed bin Abdullah from Tirnova, with his philanthropy, built this house of Allah (mosque) in the year AH 1310.\nTo add to his charitable works, he also established a school of learning and revived it with fresh water."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1310,
+        "gregorian": "1892"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "413"
+        }
+      ],
+      "note": {
+        "tr": "Dört mısralı manzum kitabe; dil kitapta adlandırılmamış, metin Osmanlı Türkçesidir.",
+        "en": "Four-line verse; the book does not name the language, the text is Ottoman Turkish."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1892",
+      "year": 1892,
+      "date": null,
+      "hijri": "1310",
+      "type": "construction",
+      "title": {
+        "tr": "Tırnovalı Hacı Ahmed tarafından inşa edildi",
+        "en": "Built by Hacı Ahmed of Tirnova"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "413"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi tarafından aslına uygun restore edildi",
+        "en": "Restored faithfully by the Bursa Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "414"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kuzey-güney doğrultulu dikdörtgen planlı, taş ve tuğladan yapılmış, Marsilya kiremitli ahşap çatılı bir camidir; gösterişli süslemesi yoktur. Kuzeybatıda sıvalı sekizgen kaideli, tuğla gövdeli ve sivri külahlı bir minare yükselir. Üç kemerle taşınan son cemaat yeri tamamen dışa açık eyvan biçimindedir. Harim kapısının üstünde mermer bir manzum kitabe, doğu bahçesinde şadırvan bulunur.",
+      "en": "A rectangular stone-and-brick mosque aligned north-south with a Marseille-tiled wooden roof and no showy decoration. A minaret with a plastered octagonal base, brick shaft and pointed spire rises at the northwest. The narthex, carried on three arches, is an open iwan-like space. A marble verse inscription is above the prayer hall door and a shadirvan stands in the east garden."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-selimiye-camii/p020-1.jpg",
+        "original_name": "01 Kapak_3.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "413"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Selimiye Camii'nin kiremit çatılı cephesi",
+        "en": "Tiled-roof facade of Selimiye Mosque"
+      },
+      "alt": {
+        "tr": "Krem sıvalı, kırmızı kiremitli kırma çatılı yapının önünde ahşap doğramalı kemerli camlı bir bölüm yer alır. Taş döşeli avlu ve etrafında sonbahar yapraklı ağaçlar görünür.",
+        "en": "A cream-plastered building with a red hipped tile roof and a glazed arched section with wooden frames in front. A paved yard and autumn trees surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-selimiye-camii/p020-2.jpg",
+        "original_name": "04.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "413"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Selimiye Camii'nin ahşap tavanlı iç mekânı",
+        "en": "Interior of Selimiye Mosque with wooden ceiling"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı tavanı olan salonda kemerli pencereler, mihrap ve sağda minber vardır. Zeminde kırmızı halının ortasında mavi geometrik bir rozet göze çarpar.",
+        "en": "A hall with a wooden ceiling, arched windows, a mihrab and a minbar on the right. A blue geometric rosette stands out on the red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-selimiye-camii/p021-1.jpg",
+        "original_name": "07.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "414"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Selimiye Camii'nin tuğla minaresi",
+        "en": "Brick minaret of Selimiye Mosque"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğlalı, kurşun kaplı sivri külahlı minare şerefesi demir korkuluklu olarak ağaçların arasından görünür. Arkada mavi gökyüzü ve çatılar vardır.",
+        "en": "A red brick minaret with a pointed lead cap and an iron-railed balcony seen through the trees. Blue sky and rooftops are behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

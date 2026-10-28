@@ -1,0 +1,484 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-abdullatif-kudsi-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
+      "Türbenin yapım yılı kaynakta yok; 'dating.start_year' boş bırakıldı.",
+      "Bölüm önceki bölümün son sayfasında (s. 279) başlıyor; konum/yaptıran bilgisi s. 279'dan, devamı s. 280'den alındı.",
+      "Önceki bölümün (Zeyniler Camii) metninde Abdüllâtif Makdisî adı geçiyor; bu kişinin Kudsî ile aynı olup olmadığı kaynakta belirtilmiyor, ilişki kurulmadı.",
+      "Mimar kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Abdüllatif Kudsî Türbesi",
+    "en": "Tomb of Abdüllatif Kudsî"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "Zeyniyye",
+    "Abdüllatîf el-Kudsî",
+    "Sultan II. Murad"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Emirsultan",
+    "address": "Emirsultan Mahallesi, Gündoğdu Sokak, No: 20",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "279-280"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.180323,
+      "lng": 29.083383,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/679377939 ('Abdullatif Kudsi Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım yılı belirtilmemiş; Abdüllatîf el-Kudsî H. 856 / M. 1452'de vefat etmiş, türbeye defnedilmiştir",
+      "en": "Construction year not given; Abdüllatîf el-Kudsî died in AH 856 / AD 1452 and was buried here"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapım yılını vermiyor; yalnızca yaptıranın Sultan II. Murad olduğunu ve Kudsî'nin 1452'de vefat edip bu türbeye gömüldüğünü söylüyor.",
+      "en": "The book gives no construction year; it only says the founder was Sultan Murad II and that Kudsî died in 1452 and was buried in this tomb."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "279-280"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan II. Murad",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "279"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Zeyniyye tarikatının Anadolu'daki ilk temsilcisi Abdüllatîf el-Kudsî için Sultan II. Murad tarafından yaptırılan, kare planlı, tek kubbeli türbe. Bugün çoğunlukla ziyarete kapalıdır.",
+    "en": "A square-plan, single-domed tomb built by Sultan Murad II for Abdüllatîf el-Kudsî, the first representative of the Zeyniyye order in Anatolia. Today it is mostly closed to visitors."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-yaptiran",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yaptıran",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Türbe Yıldırım ilçesi, Emirsultan Mahallesi, Gündoğdu Sokak, No: 20'dedir. Sultan II. Murad tarafından Abdüllatîf el-Kudsî adına yaptırılmıştır.",
+        "en": "The tomb is located in Yıldırım District, Emirsultan Neighborhood, Gündoğdu Street, No. 20. It was built by Sultan Murad II in the name of Abdüllatîf el-Kudsî."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "279-280"
+        }
+      ]
+    },
+    {
+      "id": "abdullatif-kudsi",
+      "order": 2,
+      "title": {
+        "tr": "Abdüllatîf el-Kudsî",
+        "en": "Abdüllatîf el-Kudsî"
+      },
+      "body": {
+        "tr": "H. 786 / M. 1384'te Kudüs'te doğduğu için 'Kudsî' lakabıyla anılır. İlk eğitimini doğduğu şehirde aldı, tasavvufa yöneldi, Şeyh Abdülaziz Gaznevî'ye intisap edip icazet aldı. H. 825 / M. 1422'de Kudüs'e uğrayan Zeynüddin el-Hâfî ile tanışıp birlikte Horasan'a gitti; eğitimini tamamlayıp ikinci icazetini aldıktan sonra Kudüs'e döndü. Daha sonra Anadolu'ya gelip Bursa'ya yerleşti, Zeyniler semtinde kurduğu zaviyede irşad faaliyetlerine başladı ve Zeyniyye tarikatını bu topraklara taşıdı. Müridleriyle Uludağ eteklerindeki yaylalara çıktı; Zeyniler Mahallesi adını bu tarikattan alır. H. 1 Rebiyülevvel 856 / M. 22 Mart 1452'de vefat etti ve adına yapılan bu türbeye defnedildi.",
+        "en": "Born in Jerusalem in AH 786 / AD 1384, hence the nickname 'Kudsî'. He studied in his birth city, turned to Sufism, joined Shaykh Abdülaziz Gaznevî and received an ijazah. In AH 825 / AD 1422 he met Zeynüddin el-Hâfî, who visited Jerusalem, and went with him to Khorasan; after completing his training and receiving a second ijazah he returned to Jerusalem. Later he came to Anatolia and settled in Bursa, began guidance in the zawiya he founded in the Zeyniler district and brought the Zeyniyye order here. He went with his disciples to the plateaus on the skirts of Uludağ; the Zeyniler District takes its name from the order. He died on 1 Rabi al-Awwal AH 856 / 22 March AD 1452 and was buried in this tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "279-280"
+        }
+      ]
+    },
+    {
+      "id": "muridleri",
+      "order": 3,
+      "title": {
+        "tr": "Müritleri",
+        "en": "Disciples"
+      },
+      "body": {
+        "tr": "Dönemin münevver çevrelerinde yaygın olan Zeyniyye'nin Anadolu'daki ilk temsilcisi Kudsî'nin müritleri arasında Osmanlı tarih yazımının öncülerinden Âşıkpaşazâde, İstanbul Vefa'da medfun Şeyh Vefâ ve Osmanlılar'ın ilk şeyhülislamı Molla Fenârî bulunmaktadır.",
+        "en": "Among the disciples of Kudsî, first representative of the Zeyniyye order in Anatolia, were Âşıkpaşazâde, one of the pioneers of Ottoman historiography, Shaykh Vefâ, buried in the Vefa district of Istanbul, and Molla Fenârî, the first Shaykh al-Islam of the Ottomans."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe başlangıçta kâgir olarak inşa edilmiştir. Yapı, dışa taşkın bir kemerin oluşturduğu küçük bir eyvan görünümündedir; kare planlı ve tek kubbelidir. Duvarlar pencere seviyesine kadar moloz taşla, sonrasında iki sıra tuğla ve bir sıra moloz taşla örülmüştür. Pencereler ile giriş kapısı mermerden ve sivri kemer formludur. Pencere çevreleri farklı biçimlerde zencirek motifleriyle bezelidir. Alınlıklar tuğla malzemeyle deniz dalgası ve zikzak motifleriyle süslenmiştir. İki sıralı kirpi saçakların altında tuğladan kuş gagası ve zencirek motifleri vardır.",
+        "en": "The tomb was initially built of stone. It looks like a small iwan formed by an arch protruding outwards, with a square plan and a single dome. The walls are rubble stone up to window level, then two rows of brick and one row of rubble stone. The windows and entrance door are marble with pointed arches; window surrounds have guilloche motifs. The pediments are decorated in brick with sea wave and zigzag motifs; below the two rows of sawteeth at the eaves are brick bird beak and guilloche motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan-ve-kullanim",
+      "order": 5,
+      "title": {
+        "tr": "İç Mekân ve Günümüzdeki Durum",
+        "en": "Interior and Present State"
+      },
+      "body": {
+        "tr": "Alt katta Abdüllatîf el-Kudsî ile birlikte toplam altı lahit bulunur. Üst kat bir süre Kur'an kursu olarak kullanılmıştır. Yapı birçok kez onarılmış, son olarak Bursa Eski Eserleri Sevenler Kurumu tarafından kapsamlı biçimde restore edilmiş, 2012'de Bursa Büyükşehir Belediyesi tarafından yeniden restore edilmiş ve çevresi demir parmaklıklarla sınırlandırılmıştır. Güvenliği sağlanamadığından türbe çoğunlukla ziyarete kapalıdır.",
+        "en": "The lower floor has six sarcophagi in total, including that of Abdüllatîf el-Kudsî. The upper floor was used as a Quran school for a period. The building has been repaired many times; it was comprehensively restored by the Bursa Association for the Appreciation of Antiquities, restored again by Bursa Metropolitan Municipality in 2012 and surrounded by iron railings. Because its security cannot be ensured it is mostly closed to visitors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "280"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "ust-ortu-cokmesi",
+      "title": {
+        "tr": "Üst örtünün çökmesi",
+        "en": "Collapse of the upper cover"
+      },
+      "body": {
+        "tr": "Bazı rivayetlerde türbenin üst örtüsünün birkaç kez kapatılmasına rağmen her seferinde çöktüğü aktarılır.",
+        "en": "According to some narrations, although the tomb's upper cover was covered several times, it collapsed each time."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "280"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "lahit_sayisi",
+      "label": {
+        "tr": "Alt kattaki lahit sayısı",
+        "en": "Sarcophagi on lower floor"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "280"
+        }
+      ],
+      "note": {
+        "tr": "Abdüllatîf el-Kudsî'nin lahdi dahil.",
+        "en": "Including that of Abdüllatîf el-Kudsî."
+      }
+    },
+    {
+      "key": "plan_tipi",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "Kare planlı, tek kubbeli",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "key": "dogum_hicri",
+      "label": {
+        "tr": "Abdüllatîf el-Kudsî'nin doğumu",
+        "en": "Birth of Abdüllatîf el-Kudsî"
+      },
+      "value": "H. 786 / M. 1384",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "key": "vefat",
+      "label": {
+        "tr": "Abdüllatîf el-Kudsî'nin vefatı",
+        "en": "Death of Abdüllatîf el-Kudsî"
+      },
+      "value": "H. 1 Rebiyülevvel 856 / M. 22 Mart 1452",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "280"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Abdüllatîf el-Kudsî",
+      "role": {
+        "tr": "Türbede yatan Zeyniyye şeyhi",
+        "en": "Zeyniyye shaykh buried in the tomb"
+      }
+    },
+    {
+      "name": "Sultan II. Murad",
+      "role": {
+        "tr": "Türbeyi yaptıran",
+        "en": "Founder of the tomb"
+      }
+    },
+    {
+      "name": "Zeynüddin el-Hâfî",
+      "role": {
+        "tr": "Kudsî'nin Horasan'a birlikte gittiği şeyh",
+        "en": "Shaykh with whom Kudsî went to Khorasan"
+      }
+    },
+    {
+      "name": "Âşıkpaşazâde",
+      "role": {
+        "tr": "Kudsî'nin müridi",
+        "en": "Disciple of Kudsî"
+      }
+    },
+    {
+      "name": "Şeyh Vefâ",
+      "role": {
+        "tr": "Kudsî'nin müridi",
+        "en": "Disciple of Kudsî"
+      }
+    },
+    {
+      "name": "Molla Fenârî",
+      "role": {
+        "tr": "Kudsî'nin müridi, Osmanlıların ilk şeyhülislamı",
+        "en": "Disciple of Kudsî, first Shaykh al-Islam of the Ottomans"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kudsi-dogum",
+      "year": 1384,
+      "date": null,
+      "hijri": "786",
+      "type": "record",
+      "title": {
+        "tr": "Abdüllatîf el-Kudsî Kudüs'te doğdu",
+        "en": "Abdüllatîf el-Kudsî born in Jerusalem"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "id": "kudsi-horasan",
+      "year": 1422,
+      "date": null,
+      "hijri": "825",
+      "type": "record",
+      "title": {
+        "tr": "Kudsî, Zeynüddin el-Hâfî ile tanışıp Horasan'a gitti",
+        "en": "Kudsî met Zeynüddin el-Hâfî and went to Khorasan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "id": "kudsi-vefat",
+      "year": 1452,
+      "date": null,
+      "hijri": "856",
+      "type": "record",
+      "title": {
+        "tr": "Abdüllatîf el-Kudsî vefat etti ve türbesine defnedildi (22 Mart 1452)",
+        "en": "Abdüllatîf el-Kudsî died and was buried in the tomb (22 March 1452)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi yeniden restore etti; çevresi demir parmaklıkla sınırlandı",
+        "en": "Restored again by Bursa Metropolitan Municipality; surroundings fenced with iron railings"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "280"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Abdüllatif Kudsî Türbesi kare planlı, tek kubbeli, dışa taşkın bir kemerle küçük bir eyvan görünümü veren bir yapıdır. Duvarlar alt kısımda moloz taş, üstte iki sıra tuğla ve bir sıra moloz taşla örülmüştür. Mermer giriş kapısı ve pencereleri sivri kemerlidir; pencere çevrelerinde zencirek, alınlıklarda deniz dalgası ve zikzak, saçak altında kuş gagası motifleri yer alır. Alt katta altı lahit bulunur. Türbe çoğunlukla ziyarete kapalıdır.",
+      "en": "The Tomb of Abdüllatif Kudsî is a square-plan, single-domed building that looks like a small iwan formed by a protruding arch. The walls are rubble stone below and alternating brick and rubble above. The marble door and windows have pointed arches, with guilloche around the windows, sea wave and zigzag motifs on the pediments and bird beak motifs below the eaves. Six sarcophagi lie on the lower floor. The tomb is mostly closed to visitors."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-abdullatif-kudsi-turbesi/p001-2.jpg",
+        "original_name": "01 DJI_20240919200957_0105_D-Edit.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "280"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Abdüllatif Kudsî Türbesi, genel görünüm",
+        "en": "Tomb of Abdüllatif Kudsî, general view"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla ve taş sıralı, kare gövdeli ve gri kubbeli türbe; sivri kemerli pencereleri vardır. Etrafı demir korkuluk ve yüksek ağaçlarla çevrilidir.",
+        "en": "A square red brick and stone tomb with a grey dome and pointed-arch windows. It is enclosed by iron railings and tall trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-abdullatif-kudsi-turbesi/p001-1.jpg",
+        "original_name": "DJI_20240919200812_0102_D-Edit.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "280"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Türbenin kubbesi, kuşbakışı",
+        "en": "Dome of the tomb, aerial view"
+      },
+      "alt": {
+        "tr": "Yukarıdan, mavimsi gri kurşun kaplı çok kenarlı bir kubbe görünür. Çevresinde koyu yeşil ağaçlar ve sol tarafta yol vardır.",
+        "en": "From above, a bluish-grey lead-covered polygonal dome. Dark green trees surround it and a road runs along the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    }
+  ],
+  "archive_media": []
+}

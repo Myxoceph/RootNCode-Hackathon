@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-hizir-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Kitabe metni ve Hicri karşılığı kitapta yok.",
+      "Sandukası, kapı dışındaki mimari ayrıntılar (malzeme, örtü) kitapta anlatılmıyor.",
+      "Kayıt id'si ids.md'ye göre 'hatay-antakya-hizir-turbesi'; 905 parsel Şeyh Hıdır Türbesi ile aynı parsel numarasıyla geçiyor, netleştirilmeli.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "5. Mıntıka 905 Parsel Hızır Türbesi",
+    "en": "District 5 Plot 905 Hızır Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Antakya Hızır Türbesi",
+      "en": "Hızır Tomb of Antakya"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "türbe",
+    "Hızır",
+    "Beşirzâde Mustafa Efendi",
+    "kitabe",
+    "1876"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "5. Mıntıka 905 parsel (bölüm özeti)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "430"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "5 Kasım 1876",
+      "en": "5 November 1876"
+    },
+    "start_year": 1876,
+    "end_year": 1876,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Basık kemerli kapı üzerindeki kitabe.",
+      "en": "Inscription over the low-arched door."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "430"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Beşirzâde Mustafa Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "430"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya’daki Hızır Türbesi, banisi ve yapım tarihi belli olan sade bir eserdir; kare planlı, kubbeli küçük yapıyı kapı kitabesine göre Beşirzâde Mustafa Efendi 5 Kasım 1876’da yaptırmıştır.",
+    "en": "The Hızır Tomb in Antakya is a plain work whose founder and date are known: a small square-plan domed building which, per the door inscription, Beşirzâde Mustafa Efendi had built on 5 November 1876."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve banî",
+        "en": "Structure and founder"
+      },
+      "body": {
+        "tr": "Antakya’daki Hızır Türbesi, banisi de yapıldığı tarih de belli olan oldukça sade bir eserdir. Kare planlı küçük yapı, Hızır’ın manevi zuhuru ve huzuru için hazırlanmış olup kubbeyle örtülüdür. Basık kemerli kapının üzerindeki kitabeden türbenin Beşirzâde Mustafa Efendi tarafından 5 Kasım 1876’da yaptırıldığı anlaşılır.",
+        "en": "The Hızır Tomb in Antakya is a very simple work with a known founder and date. The small square-plan building, covered with a dome, was prepared for Hızır’s spiritual appearance and presence. The inscription above the low-arched door shows it was built by Beşirzâde Mustafa Efendi on 5 November 1876."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "hizir-inanci",
+      "title": {
+        "tr": "Hızır inancı ve Hatay’daki Hızır türbeleri",
+        "en": "Belief in Hızır and Hızır tombs in Hatay"
+      },
+      "body": {
+        "tr": "Kitaba göre kişiliği kimse tarafından bilinmeyen ama pek çok kişinin gönlünde gerçek varlığının ötesinde kabul gören Hızır’ın İslam âleminde en çok benimsendiği yer belki de Hatay bölgesidir. Türbe denilen bu makamların büyük kısmı ismi meçhul kimselerce yapılmış gösterişsiz küçük binalar veya bir bina içindeki sandukalardır.",
+        "en": "According to the book, Hızır, whose personality is unknown but who is accepted in many hearts beyond his real existence, is perhaps most embraced in the Hatay region in the Islamic world. Most of these maqams called tombs are modest small buildings, or sarcophagi within a building, built by unknown people."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Beşirzâde Mustafa Efendi",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Basık kemerli kapının üzerinde",
+        "en": "Above the low-arched door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "note": {
+        "tr": "Kitabın metni ve dili verilmiyor; yalnızca banî ve 5 Kasım 1876 tarihinin bu kitabeden anlaşıldığı söyleniyor.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "430"
+        }
+      ],
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1876-11-05"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1876",
+      "year": 1876,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Türbenin Beşirzâde Mustafa Efendi tarafından yaptırılması",
+        "en": "Tomb built by Beşirzâde Mustafa Efendi"
+      },
+      "note": {
+        "tr": "Tarih: 5 Kasım 1876 (kapı kitabesi).",
+        "en": "Date: 5 November 1876 (door inscription)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, kare planlı, kubbeyle örtülü küçük ve sade bir yapıdır. Basık kemerli kapısının üzerinde banisini ve yapım tarihini belirten bir kitabe vardır.",
+      "en": "The tomb is a small, plain, square-plan building covered with a dome. An inscription above its low-arched door records its founder and date of construction."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-5-mintika-905-parsel-hizir-turbesi/p216-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "431"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin girişi ve fayanslı duvarı",
+        "en": "Entrance and tiled wall of the tomb"
+      },
+      "alt": {
+        "tr": "Seramik kaplı bir duvarda renkli çini çerçeveli küçük kemerli kapı; yanında yeşil parmaklıklı bir pencere ve iki mezar levhası, solda demir korkuluk, zemin asfalt.",
+        "en": "A small arched door with a coloured tile frame in a tiled wall; beside it a green-barred window and two memorial plaques, an iron railing on the left and asphalt ground."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,330 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-orhangazi-muradiye-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Orhangazi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Orhangazi bölümünden (s. 652-653) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
+      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
+      "Arşiv fotoğrafı (archive_media) elimizde yok.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
+      "Kesin yapım tarihi, banî ve mimar kitapta yok (kitabe yok); yalnızca ihtimaller verilmiş.",
+      "Yangın sonrası onarımın ve yeni minarenin tarihi kitapta belirtilmemiş.",
+      "Eski minarenin yıkılma/yeni minarenin yapım yılı ve vakıf bilgisi (vakfiye) kitapta yok.",
+      "Kitap 'vakıf eseri olması ihtimali'nden söz ediyor; vakıf adı/vakfiye belirtilmemiş, waqf.name boş bırakıldı.",
+      "Zaman çizelgesinde yılsız olay atlandı (metinde bölümlerde var): Yangın sonrası müdahalelerle duvarlar korunup cami yeniden ibadete açıldı",
+      "Zaman çizelgesinde yılsız olay atlandı (metinde bölümlerde var): Özgün minare yakın geçmişte yıkıldı, yenisi yapıldı",
+      "era boş: tarih XVII-XVIII. yüzyıl ile I./II. Murad dönemi arasında tartışmalı olduğundan dönem seçilmedi."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kaynak XVII-XVIII. yüzyıl, IV. Murad (1812 belgeleri) ve I./II. Murad olmak üzere birden çok görüş verir; hepsi kayıtlı, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "founder",
+        "note": "Banî kitapta kesin değil: 1812 belgelerindeki IV. Murad iddiası zayıf bulunmuş, I. Murad Hudâvendigâr ya da II. Murad ihtimali daha güçlü kabul edilmiştir. Founder alanı şemada aday listesi taşımadığı için boş bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Muradiye Camii",
+    "en": "Muradiye Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Çarşı Camii",
+      "en": "Çarşı (Market) Mosque",
+      "note": "Yerel halk arasında"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "çarşı camii"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Orhangazi",
+    "neighborhood": "Muradiye",
+    "address": "Turist Yolu Caddesi No: 101 A",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "652"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XVII. ya da XVIII. yüzyıl (kitabe yok); I. Murad ya da II. Murad dönemi ihtimali de ileri sürülmektedir",
+      "en": "17th or 18th century (no inscription); a Murad I or Murad II era foundation is also considered more likely"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "İnşa kitabesi yok; mimari özellikler ve arşiv belgelerine göre XVII. ya da XVIII. yüzyıl değerlendirmesi. 1812 tarihli belgelerdeki IV. Murad iddiası zayıf bulunmakta, I. Murad Hudâvendigâr ya da II. Murad dönemi vakıf eseri olma ihtimali daha güçlü kabul edilmektedir.",
+      "en": "No construction inscription; 17th or 18th century based on architectural features and archival documents. The claim in 1812 documents about Murad IV is considered weak; a foundation of Murad I Hudâvendigâr or Murad II is considered more likely."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "652-653"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "652-653"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Orhangazi'nin (eski adıyla Pazarköy) en eski ibadet yapılarından biri sayılan, yerel halk arasında 'Çarşı Camii' de denen cami; kitabesi yoktur. 1921'de Yunan işgalinde üst örtüsü yıkılmış, beden duvarları korunarak yeniden ibadete açılmıştır.",
+    "en": "Regarded as one of the oldest places of worship in Orhangazi (formerly Pazarköy) and known locally as the 'Çarşı (Market) Mosque'; it has no inscription. Its roof was destroyed during the 1921 Greek occupation; the main walls were preserved and it was reopened for worship."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Muradiye Camii, Muradiye Mahallesi, Turist Yolu Caddesi No: 101 A'dadır. Yerel halk arasında 'Çarşı Camii' olarak anılır ve ilçenin en eski ibadet yapılarından biri kabul edilir. İnşa kitabesi yoktur; mimari özellikler ve arşiv belgelerine göre XVII. ya da XVIII. yüzyılda inşa edildiği değerlendirilmektedir. 1812 tarihli bazı belgeler caminin Sultan IV. Murad'ın Bursa seyahati sırasında yaptırıldığını ileri sürse de bu görüş tarihsel bağlam açısından zayıf bulunmakta; I. Murad Hudâvendigâr ya da II. Murad döneminde vakıf eseri olarak inşa edilmiş olma ihtimali daha güçlü kabul edilmektedir.",
+        "en": "The mosque is at Muradiye Neighborhood, Turist Yolu Street, No. 101 A. Known locally as the 'Çarşı (Market) Mosque', it is considered one of the district's oldest places of worship. No inscription exists; architectural features and archival documents suggest the 17th or 18th century. Although some 1812 documents claim it was built during Sultan Murad IV's visit to Bursa, this view is considered weak; it is more likely a foundation of Murad I Hudâvendigâr or Murad II."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "652-653"
+        }
+      ]
+    },
+    {
+      "id": "1921-tahribat",
+      "order": 2,
+      "title": {
+        "tr": "1921 Tahribatı",
+        "en": "The 1921 Destruction"
+      },
+      "body": {
+        "tr": "Eski adı 'Pazarköy' olan Orhangazi, 1921'de Yunan işgali sırasında büyük yıkıma uğramış, Muradiye Camii de ağır hasar almıştır. Üst örtü tamamen yıkılmış, yangın sonrası müdahalelerle beden duvarları korunarak yapı yeniden ibadete açılmıştır. Özgün niteliğini taşıyan bu duvarlar yapının tarihî karakterine dair ipuçları barındırır.",
+        "en": "Orhangazi, formerly 'Pazarköy', suffered extensive destruction during the 1921 Greek occupation, and the mosque was severely damaged. The roof was completely destroyed, but post-fire interventions preserved the main walls and reopened the building for worship. These walls retain their original character and provide clues to its historical character."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "653"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mülkiyeti Vakıflar Genel Müdürlüğü'ne aittir; toplam müştemilatı 520 m², iç kullanım alanı 282 m²'dir. Dikdörtgen planlı yapı moloz taş örgülü beden duvarları ve çatıyla sade bir mimariye sahiptir; kuzeydoğu köşesine sonradan bir eklenti yapılmıştır. En dikkat çekici özelliği, pencerelerinin benzer yapılara oranla daha yükseğe konumlandırılmış olmasıdır. Özgün minare yakın geçmişte yıkılmış, yerine yenisi yapılmıştır. İç ve dış duvarlar sıvalıdır; cami düzenli olarak ibadete açıktır.",
+        "en": "Owned by the General Directorate of Foundations, it has a total outbuilding area of 520 m² and an interior area of 282 m². The rectangular building is simple, with rubble stone main walls and a tiled roof; an extension was added later on the northeast corner. Its most striking feature is its windows set higher than in similar buildings. The original minaret was recently demolished and replaced with a new one. Interior and exterior walls are plastered; it is used regularly for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "653"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "toplam_mustemilat",
+      "label": {
+        "tr": "Toplam müştemilat alanı",
+        "en": "Total outbuilding area"
+      },
+      "value": 520,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "653"
+        }
+      ]
+    },
+    {
+      "key": "ic_alan",
+      "label": {
+        "tr": "İç kullanım alanı",
+        "en": "Interior usable area"
+      },
+      "value": 282,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "653"
+        }
+      ]
+    },
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "Dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "653"
+        }
+      ]
+    },
+    {
+      "key": "duvar",
+      "label": {
+        "tr": "Duvar malzemesi",
+        "en": "Wall material"
+      },
+      "value": "Moloz taş örgü",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "653"
+        }
+      ]
+    },
+    {
+      "key": "mulkiyet",
+      "label": {
+        "tr": "Mülkiyet",
+        "en": "Ownership"
+      },
+      "value": "Vakıflar Genel Müdürlüğü",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "653"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "1812-belge",
+      "year": 1812,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1812 tarihli belgeler caminin IV. Murad'ın Bursa seyahatinde yapıldığını ileri sürer",
+        "en": "1812 documents claim the mosque was built during Murad IV's Bursa visit"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "652-653"
+        }
+      ]
+    },
+    {
+      "id": "1921-hasar",
+      "year": 1921,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yunan işgalinde ağır hasar; üst örtü tamamen yıkıldı",
+        "en": "Severe damage in the Greek occupation; roof completely destroyed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "653"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "pencereler",
+      "title": {
+        "tr": "Yüksek konumlu pencereler",
+        "en": "High-set windows"
+      },
+      "hint": {
+        "tr": "Pencerelerin benzer yapılara göre daha yüksekte olduğuna dikkat edin.",
+        "en": "Note that the windows sit higher than in similar buildings."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Muradiye Camii dikdörtgen planlı, sade bir yapıdır. Duvarları moloz taştan örülmüş, üzeri çatıyla örtülmüştür; iç ve dış duvarlar sıvalıdır. Pencereleri benzer yapılara göre daha yüksekte yer alır. Kuzeydoğu köşesinde sonradan yapılmış bir eklenti vardır; minaresi yenidir.",
+      "en": "Muradiye Mosque is a simple rectangular building. Its walls are of rubble stone and it is covered by a roof; interior and exterior walls are plastered. Its windows are set higher than in similar buildings. A later extension stands at the northeast corner; the minaret is new."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Mahalle camisinden gelen sakin ortam sesi]",
+      "en": "[Quiet ambience of a neighborhood mosque]"
+    }
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

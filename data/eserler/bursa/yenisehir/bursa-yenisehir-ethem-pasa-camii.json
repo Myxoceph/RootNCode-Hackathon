@@ -1,0 +1,422 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-ethem-pasa-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yenişehir",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Yenişehir bölümünden (s. 689-691) özetlenerek derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türkçe metinde 'konak' denmesinin metin hatası olup olmadığı kitap editörlerine sorulmalı.",
+      "Ethem Paşa'nın vakfı/vakfiyesi kitapta anılmıyor.",
+      "media_folder (Drive klasörü) henüz eşleştirilmedi.",
+      "Koordinat girilmedi; sahada ya da harita kaynağından doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name/type",
+        "note": "Türkçe metin ilk paragrafta 'Konağın inşası, 1900 yılında ... Ethem Paşa tarafından' yazıyor; İngilizce metin aynı cümlede 'The construction of the mosque' diyor. Bölüm başlığı ve diğer paragraflar camiden söz ettiği için 'cami' esas alındı; kaynağa sadık kalınarak çelişki not edildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ethem Paşa Camii",
+    "en": "Ethem Paşa Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Ethem Paşa",
+    "Yenişehir Belediye Başkanı",
+    "II. Abdülhamid"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Tabakhane Mahallesi",
+    "address": "Ethem Paşa Sokak No: 19",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "689"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.257832,
+      "lng": 29.653208,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "3 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1900",
+      "en": "1900"
+    },
+    "start_year": 1900,
+    "end_year": 1900,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap 1900 yılını yapım yılı olarak veriyor (Türkçe metin 'konağın inşası' diyor; bkz. data_quality_notes).",
+      "en": "The book gives 1900 as construction year (Turkish text says 'the mansion's construction'; see data_quality_notes)."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "689"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ethem Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "689"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "689-691"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "1900'de Yenişehir'in önde gelen isimlerinden Ethem Paşa'nın yaptırdığı dikdörtgen planlı cami; 1999 depreminde hasar görüp 2015'te VGM'ce restore edilerek ibadete açılmıştır.",
+    "en": "Rectangular-plan mosque built in 1900 by Ethem Paşa, a leading figure of Yenişehir; damaged in the 1999 earthquake and reopened in 2015 after restoration by the General Directorate of Foundations."
+  },
+  "sections": [
+    {
+      "id": "bani",
+      "order": 1,
+      "title": {
+        "tr": "Banî Ethem Paşa",
+        "en": "Founder Ethem Paşa"
+      },
+      "body": {
+        "tr": "Ethem Paşa, geniş çiftlik ve arazileriyle bölgenin en büyük toprak sahiplerindendir; arazileri üzerinde bugün beş-altı köy kurulu olduğu söylenir. II. Abdülhamid'e yakınlığıyla bilinen Ethem Bey'e 19 Mayıs 1897'de 'Istabl-ı Âmire' Müdürlüğü payesi verilmiş, 1900'de 'Mîrü'l-ümerâ' rütbesiyle 'Alaylı Paşalar' sınıfına alınmış, 8 Ocak 1904'te 'Mîr-i mîrân' unvanına yükseltilmiştir. 16 Kasım 1902'den 1908'e kadar Yenişehir Belediye Başkanlığı yapmıştır. II. Meşrutiyet sonrası soruşturmalar nedeniyle Midilli'ye sürgün edilmiş, affedilince Yenişehir'e dönmüş; Millî Mücadele'de suçlamalara uğramış ve 1922'de ölmüştür.",
+        "en": "Ethem Paşa was one of the region's largest landowners; five to six villages are said to stand on his lands today. Known for closeness to Abdülhamid II, he was made Director of the Royal Stables on 19 May 1897, ranked 'Mîrü'l-ümerâ' among the 'Regimental Pashas' in 1900 and promoted 'Mîr-i mîrân' on 8 January 1904. He was Mayor of Yenişehir from 16 November 1902 to 1908. Exiled to Midilli after investigations following the Second Constitutional Era, he returned after a pardon, faced accusations in the War of Independence and died in 1922."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "689-690"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kuzey-güney doğrultulu, 13 × 20 m dikdörtgen planlıdır; beden duvarları kâgir ve sıvalı, üstü kiremitli kırma çatılıdır. Ahşap direkli, kiremit kaplı son cemaat yeri açıktır. Kuzey cephedeki ahşap çift kanatlı kapı mermer söveli, iki yanında ikişer dikdörtgen formlu yuvarlak kemerli pencere vardır. Ahşap tavanlı harim, tüm cephelerdeki yuvarlak kemerli pencerelerle aydınlanır. Mihrap beyaz sıvalı sade bir niştir, çerçevesinde yazı veya süsleme yoktur; minber ve kürsü yakın dönemde yenilenmiş ahşaptır.",
+        "en": "The mosque has a north-south rectangular plan of 13 × 20 m; masonry plastered walls and a tiled hipped roof. The narthex on wooden posts, tiled, is open. The north façade has a wooden double-leaf door with marble frame flanked by two round-arched windows on each side. The wooden-ceilinged prayer hall is lit by round-arched windows on all façades. The mihrab is a plain white plastered niche without inscription or decoration; the minbar and pulpit are recently renovated wood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "690-691"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Batı köşedeki minare kare kaideli, silindirik gövdeli ve nispeten kısadır; şerefe altı dört sıra testere dişi biçiminde tuğla kirpi saçakla hareketlendirilmiştir, konik külahı kurşun kaplıdır.",
+        "en": "The minaret at the west corner has a square base and cylindrical shaft and is relatively short; below the balcony are four rows of sawtooth brick, and its conical spire is lead-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "691"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Hasar ve Restorasyon",
+        "en": "Damage and Restoration"
+      },
+      "body": {
+        "tr": "1999 depreminde hasar gören cami yaklaşık on beş yıl ibadete kapalı kalmış, 2015'te Vakıflar Genel Müdürlüğü'nün restorasyonuyla yeniden ibadete açılmıştır.",
+        "en": "Damaged in the 1999 earthquake, the mosque stayed closed about fifteen years and was reopened in 2015 after restoration by the General Directorate of Foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "691"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan dimensions"
+      },
+      "value": "13 × 20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "690"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ethem Paşa",
+      "role": {
+        "tr": "Banî; Yenişehir Belediye Başkanı (1902-1908)",
+        "en": "Founder; Mayor of Yenişehir (1902-1908)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1900",
+      "year": 1900,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami Ethem Paşa tarafından yaptırıldı",
+        "en": "Built by Ethem Paşa"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "689"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1999",
+      "year": 1999,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde hasar gördü; yaklaşık 15 yıl ibadete kapalı kaldı",
+        "en": "Damaged in earthquake; closed for about 15 years"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "691"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM restorasyonu; ibadete yeniden açıldı",
+        "en": "Restored by General Directorate of Foundations; reopened"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "691"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, kuzey-güney yönünde uzanan dikdörtgen planlı, kiremitli kırma çatılı ve sıvalı duvarlı bir yapıdır. Önünde ahşap direkli açık bir son cemaat yeri, batı köşesinde kısa, silindirik gövdeli bir minare vardır. İç mekân ahşap tavanlı ve yuvarlak kemerli pencerelidir.",
+      "en": "A rectangular-plan mosque running north-south with plastered walls and a tiled hipped roof. It has an open narthex on wooden posts and a short cylindrical minaret at the west corner. The interior has a wooden ceiling and round-arched windows."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "689-691"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1DIV-3iUlKyCXc6xPxwTlf0m0dKkDfyfz",
+        "original_name": "01 DJI_20241116210307_0027_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "689"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ethem Paşa Camii (kitap s. 689)",
+        "en": "Ethem Paşa Mosque (book p. 689)"
+      },
+      "alt": {
+        "tr": "Ethem Paşa Camii fotoğrafı",
+        "en": "Photo of Ethem Paşa Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1HDCLbkx3zSHP9SqiiyIyoAPAJPLa0ewX",
+        "original_name": "03 ERD09643 kopya.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "690"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ethem Paşa Camii (kitap s. 690)",
+        "en": "Ethem Paşa Mosque (book p. 690)"
+      },
+      "alt": {
+        "tr": "Ethem Paşa Camii fotoğrafı",
+        "en": "Photo of Ethem Paşa Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1DyooEO8oBFmY3dFaAZdjkvFMo2ptNRyM",
+        "original_name": "04 DJI_20241116210348_0029_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "691"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ethem Paşa Camii (kitap s. 691)",
+        "en": "Ethem Paşa Mosque (book p. 691)"
+      },
+      "alt": {
+        "tr": "Ethem Paşa Camii fotoğrafı",
+        "en": "Photo of Ethem Paşa Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1gcjM3qfP6NAyC1DAZ5k051mLi6MS2WNx",
+        "original_name": "DJI_20241116210251_0026_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "691"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ethem Paşa Camii (kitap s. 691)",
+        "en": "Ethem Paşa Mosque (book p. 691)"
+      },
+      "alt": {
+        "tr": "Ethem Paşa Camii fotoğrafı",
+        "en": "Photo of Ethem Paşa Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

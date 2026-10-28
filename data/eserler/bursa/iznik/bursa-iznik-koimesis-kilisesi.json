@@ -1,0 +1,608 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-iznik-koimesis-kilisesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "İznik",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (location.coordinates); kaynakta koordinat yok, uydurulmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Era (Bizans) enums.json'da yok; era null.",
+      "Mozaiklerin güncel yeri (Nilüfer Hatun Müzesi'ndeki durum) kaynakta ayrıntılı değil.",
+      "Yazıların asıl dili ve metni kaynakta yok.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[yikim-1922]",
+        "note": "Sayfa 495 yapının '1920 ya da 1922'de yıkıldığını', sayfa 496 ise '1922'de Türk-Yunan Savaşı sırasında büyük ölçüde yıkıldığını' söyler. Yıl kaynağa sadık saklandı, disputed işaretlendi."
+      },
+      {
+        "field": "dating",
+        "note": "Kaynak yaklaşık 750 / VIII. yüzyıl başı tarihini apsis ve bema'daki erken figürlü mozaiklere dayandırır; aynı kaynak bu figürlü mozaiklerin İkonoklazma'da tahrip edilip 843'te yeniden yaptırıldığını söyler. Tarih tahmini bu nedenle kesin değildir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Koimesis (Tes Theotokos Hyakinthos) Manastırı Kilisesi",
+    "en": "Koimesis (Tes Theotokos Hyakinthos) Monastery Church"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "kilise",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kilise",
+    "Bizans",
+    "Koimesis",
+    "mozaik",
+    "Hyakinthos Manastırı",
+    "harabe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "İznik",
+    "neighborhood": "Yeni Mahalle",
+    "address": "Yalçın Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "494"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.426452,
+      "lng": 29.72444,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "750 civarı ya da VIII. yüzyıl başı (tahmini)",
+      "en": "Around 750 or early 8th century (estimated)"
+    },
+    "start_year": 750,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 8,
+    "basis": {
+      "tr": "Apsis ve bema'daki erken dönem figürlü mozaik parçalarına dayanan tahmin; kesin inşa tarihi bilinmez.",
+      "en": "Estimate based on early figural mosaic fragments in the apse and bema; the exact date is unknown."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "494"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Piskopos Hyakinthos",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "494"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hyakinthos Manastırı'na ait, üç nefli kubbeli bazilika planlı Bizans kilisesi; büyük ölçüde yıkılmış harabe halindedir.",
+    "en": "A Byzantine church of the Hyakinthos Monastery, a three-nave domed basilica, now largely destroyed and in ruins."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Hazreti Meryem'in ölümü anlamına gelen 'Koimesis' adını taşıyan kilisenin tam adı 'Tes Theotokos Hyakinthos'tur ve Hyakinthos Manastırı'na aittir. Piskopos Hyakinthos tarafından 750 civarında ya da VIII. yüzyılın başında yaptırıldığı kabul edilir; kesin tarih bilinmez ve tahmin apsis ile bema'daki erken dönem figürlü mozaik parçalarına dayanır.",
+        "en": "Named 'Koimesis', meaning the death of the Virgin Mary, with the full name 'Tes Theotokos Hyakinthos', it belongs to the Hyakinthos Monastery. It is accepted as built by Bishop Hyakinthos around 750 or in the early 8th century; the exact date is unknown and the estimate rests on early figural mosaic fragments in the apse and bema."
+      },
+      "confidence": "probable",
+      "order": 1,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "494"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "title": {
+        "tr": "Plan ve Süslemeler",
+        "en": "Plan and Decoration"
+      },
+      "body": {
+        "tr": "Üç nefli, kubbeli bazilika planlıdır. Batıda yanlarda merdiven kuleleriyle sınırlı narteks, ortada üç nefli naos, doğuda bema, apsis ve pastoforion bulunur. Bema'nın iki yan duvarında labarum taşıyan dört melek figürü yer alır; altlarında 'Gökler onunla sevinsin ve tüm melekler önünde huşu ile eğilsin' yazılıdır. Zemin bordürlü mozaiklerle kaplıdır; mermer korkuluk levhaları monogramlar ve stilize bitki motifleriyle bezelidir. Apsis yarım kubbesinde altın zemin üzerine kucağında İsa'yı taşıyan büyük bir Meryem mozaiği ve iki yanında imparator giysili dört başmelek betimi vardı.",
+        "en": "A three-nave domed basilica: a narthex flanked by stair towers in the west, a three-nave naos in the middle and the bema, apse and pastophorion in the east. On the bema's side walls are four angels holding labarum flags; beneath them is written 'May the heavens rejoice in him and all the angels bow in awe before him'. The floor was covered with bordered mosaics and marble balustrade slabs were decorated with monograms and stylised vegetal motifs. The apse semi-dome had a large gold-ground mosaic of the Virgin with Jesus on her lap, flanked by four archangels in imperial dress."
+      },
+      "confidence": "certain",
+      "order": 2,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "494-496"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Manastır XIII. yüzyılda İznik İmparatorluğu döneminde önem kazanmıştır; Laskaris sülalesinden ilk İznik İmparatoru I. Theodoros 1222'de ölünce eşi Anna'nın yanına buraya gömülmüştür. Apsis ve bema tonozundaki figürlü mozaikler İkonoklazma döneminde tahrip edilmiş, 843'te Naukratios tarafından yeniden yaptırılmıştır; narteks mozaikleri 1065 depreminden sonra düzenlenmiştir. Seyyahlara göre kubbe 1740-1779 arasında çökmüş, ibadet yalnızca pastoforionda sürmüştür. 1807'de Piskopos Daniel kubbeyi yeniden yaptırmış, 1833-1834'te kilise onarılıp fresklerle bezenmiştir. 1920 ya da 1922'de yıkılmış ve harap kalmıştır.",
+        "en": "The monastery gained importance in the 13th-century Nicaean Empire; Theodoros I, first Nicaean emperor of the Laskaris dynasty, was buried here beside his wife Anna on his death in 1222. The figural mosaics of the apse and bema vault were destroyed in the Iconoclasm and rebuilt by Naukratios in 843; the narthex mosaics were rearranged after the 1065 earthquake. Travellers report the dome collapsed between 1740 and 1779, worship continuing only in the pastophorion. Bishop Daniel rebuilt the dome in 1807, and in 1833-1834 the whole church was repaired and frescoed. It is said to have collapsed in 1920 or 1922 and remained in ruins."
+      },
+      "confidence": "disputed",
+      "order": 3,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "495-496"
+        }
+      ]
+    },
+    {
+      "id": "gunumuz",
+      "title": {
+        "tr": "Keşif ve Günümüz",
+        "en": "Rediscovery and Present"
+      },
+      "body": {
+        "tr": "Kilise ilk kez 1898'de belgelenmiş, kapsamlı araştırma 14 yıl sonra yapılabilmiştir. 1922'de Türk-Yunan Savaşı sırasında büyük ölçüde yıkılmıştır. 1955'te moloz ve topraktan arındırılarak ortaya çıkarılmış, sağlam kalan bazı mozaikler 1950'lerde İznik Nilüfer Hatun Müzesi tarafından korumaya alınmıştır. Narteks duvarlarının bugün yalnızca 1 m yüksekliğindeki kısmı ayaktadır. Kilise harabe halindedir ve çocuklar tarafından oyun alanı olarak kullanılmaktadır.",
+        "en": "The church was first documented in 1898, with comprehensive research only 14 years later. It was largely destroyed in 1922 during the Greco-Turkish War. Cleared of rubble and soil in 1955, some surviving mosaics were taken under protection by the Iznik Nilüfer Hatun Museum in the 1950s. Only a 1 m high section of the narthex walls stands today. The ruin is used by children as a playground."
+      },
+      "confidence": "certain",
+      "order": 4,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "495-496"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "narteks_yukseklik",
+      "label": {
+        "tr": "Ayakta kalan narteks duvarı yüksekliği",
+        "en": "Surviving narthex wall height"
+      },
+      "value": 1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "495"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Piskopos Hyakinthos",
+      "role": {
+        "tr": "Kilisenin yaptıranı sayılır",
+        "en": "Accepted founder of the church"
+      }
+    },
+    {
+      "name": "Naukratios",
+      "role": {
+        "tr": "843'te mozaikleri yeniden yaptırdı",
+        "en": "Had the mosaics rebuilt in 843"
+      }
+    },
+    {
+      "name": "I. Theodoros (Laskaris)",
+      "role": {
+        "tr": "İlk İznik İmparatoru; 1222'de buraya gömüldü",
+        "en": "First Nicaean emperor; buried here in 1222"
+      }
+    },
+    {
+      "name": "Anna",
+      "role": {
+        "tr": "I. Theodoros'un eşi; yanına gömüldü",
+        "en": "Wife of Theodoros I; buried beside him"
+      }
+    },
+    {
+      "name": "Piskopos Daniel",
+      "role": {
+        "tr": "1807'de kubbeyi yeniden yaptırdı",
+        "en": "Rebuilt the dome in 1807"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "bema-melek-yazisi",
+      "location": {
+        "tr": "Bema'nın yan duvarlarındaki dört melek figürünün altı",
+        "en": "Beneath the four angel figures on the bema side walls"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Gökler onunla sevinsin ve tüm melekler önünde huşu ile eğilsin",
+        "en": "May the heavens rejoice in him and all the angels bow in awe before him"
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Orijinal metin ve dili kaynakta verilmemiş; verilen metin kitabın çevirisidir.",
+        "en": "The original text and language are not given; the text is the book's rendering."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "494"
+        }
+      ]
+    },
+    {
+      "id": "hyakinthos-monogrami",
+      "location": {
+        "tr": "Nefleri ayıran paye başlıkları",
+        "en": "Capitals of the piers separating the naves"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "'Hyakinthos' adının monogramları; yalnızca bir örnek günümüze ulaşmıştır. Dili kaynakta belirtilmemiş.",
+        "en": "Monograms of the name 'Hyakinthos'; only one survives. The language is not stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "496"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-750",
+      "year": 750,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Piskopos Hyakinthos'a atfedilen inşa (750 civarı)",
+        "en": "Construction attributed to Bishop Hyakinthos (around 750)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "494"
+        }
+      ]
+    },
+    {
+      "id": "mozaik-843",
+      "year": 843,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "İkonoklazma sonrası figürlü mozaikler Naukratios tarafından yeniden yaptırıldı",
+        "en": "Figural mosaics rebuilt by Naukratios after Iconoclasm"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "496"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1065",
+      "year": 1065,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem; narteks mozaikleri sonrasında düzenlendi",
+        "en": "Earthquake; narthex mosaics rearranged afterwards"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "496"
+        }
+      ]
+    },
+    {
+      "id": "defin-1222",
+      "year": 1222,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "I. Theodoros ölünce buraya, eşi Anna'nın yanına gömüldü",
+        "en": "Theodoros I buried here beside his wife Anna on his death"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "495"
+        }
+      ]
+    },
+    {
+      "id": "kubbe-1740",
+      "year": 1740,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Kubbe çöktü (1740-1779 arası)",
+        "en": "Dome collapsed (between 1740 and 1779)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "495"
+        }
+      ],
+      "note": {
+        "tr": "Seyyah kayıtlarına göre aralık verilir.",
+        "en": "A range from travellers' accounts."
+      }
+    },
+    {
+      "id": "kubbe-1807",
+      "year": 1807,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Piskopos Daniel kubbeyi yeniden yaptırdı",
+        "en": "Bishop Daniel rebuilt the dome"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "495"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1833",
+      "year": 1833,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kilise onarıldı ve fresklerle bezendi (1833-1834)",
+        "en": "Church repaired and decorated with frescoes (1833-1834)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "495"
+        }
+      ]
+    },
+    {
+      "id": "belge-1898",
+      "year": 1898,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kilise ilk kez belgelendi",
+        "en": "Church first documented"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "496"
+        }
+      ]
+    },
+    {
+      "id": "yikim-1922",
+      "year": 1922,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yapı Türk-Yunan Savaşı sırasında büyük ölçüde yıkıldı (1920 ya da 1922)",
+        "en": "Building largely destroyed during the Greco-Turkish War (1920 or 1922)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "495-496"
+        }
+      ]
+    },
+    {
+      "id": "kazi-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Moloz ve topraktan arındırılarak gün yüzüne çıkarıldı",
+        "en": "Cleared of rubble and soil and brought to light"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "495"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "outdoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kilise, bugün yalnızca alçak duvar kalıntıları ve temellerden oluşan bir harabedir. Plan üç nefli, doğuda apsisli bir bazilikadır; batı ucunda narteks ve iki yanında merdiven kuleleri yer alırdı. Narteks duvarlarının yalnızca yaklaşık bir metrelik kısmı ayaktadır.",
+      "en": "The church today is a ruin of low wall remains and foundations. Its plan was a three-nave basilica with an apse in the east and a narthex in the west flanked by stair towers. Only about one metre of the narthex walls stands."
+    },
+    "audio_description_source": "Kitap metninden yazıldı (mimari betimleme, yalnızca kaynaktaki bilgiler)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1yQ-DZdnNfn0eHIlnd6kPePwz5jpFGUUE",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+    "book_layout_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+    "links_folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+    "book_pdf_name": "1-İznik.pdf",
+    "book_pages": "494-496"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1K-aos2YP_UinUZ78hvWZ1lNpxtlllxhx",
+        "original_name": "06 ERD00891 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "496"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Koimesis (Tes Theotokos Hyakinthos) Manastırı Kilisesi (kitap s. 496)",
+        "en": "Koimesis (Tes Theotokos Hyakinthos) Monastery Church (book p. 496)"
+      },
+      "alt": {
+        "tr": "Koimesis (Tes Theotokos Hyakinthos) Manastırı Kilisesi fotoğrafı",
+        "en": "Photo of Koimesis (Tes Theotokos Hyakinthos) Monastery Church"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1BEX-XT7xOTUg0ERpTSfmbT3vsmmJ1FIY",
+        "original_name": "03 DJI_20241018200752_0420_D_ODAK-Edit.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "497"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Koimesis (Tes Theotokos Hyakinthos) Manastırı Kilisesi (kitap s. 497)",
+        "en": "Koimesis (Tes Theotokos Hyakinthos) Monastery Church (book p. 497)"
+      },
+      "alt": {
+        "tr": "Koimesis (Tes Theotokos Hyakinthos) Manastırı Kilisesi fotoğrafı",
+        "en": "Photo of Koimesis (Tes Theotokos Hyakinthos) Monastery Church"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1gEdWIyKoLCGKheGW-L6X2JdaWL6WKLOu",
+        "original_name": "07 ERD00894 kopya.jpg",
+        "folder_id": "1qvo66QwGOZ0byESRnfR3dCHo-H8AUEaB",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 1-İznik Klasörü / Links",
+        "book_pdf_file_id": "1E7mG6njgoLwSfQQ4y7dD0GvMOxLUlkfI",
+        "book_pdf_name": "1-İznik.pdf",
+        "book_page": "497"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Koimesis (Tes Theotokos Hyakinthos) Manastırı Kilisesi (kitap s. 497)",
+        "en": "Koimesis (Tes Theotokos Hyakinthos) Monastery Church (book p. 497)"
+      },
+      "alt": {
+        "tr": "Koimesis (Tes Theotokos Hyakinthos) Manastırı Kilisesi fotoğrafı",
+        "en": "Photo of Koimesis (Tes Theotokos Hyakinthos) Monastery Church"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

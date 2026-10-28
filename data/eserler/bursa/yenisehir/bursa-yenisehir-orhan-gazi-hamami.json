@@ -1,0 +1,387 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yenisehir-orhan-gazi-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yenişehir",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Yenişehir bölümünden (s. 713-716) özetlenerek derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı ve banî kaynakta kesin değil; vakıf kaydı (1890) ve vakfiye aranmalı.",
+      "'Orhan Gazi Camii Vakfı'nın Yenişehir Ulucamisi'ne (bursa-yenisehir-orhan-gazi-camii) mi Yarhisar'daki camiye mi ait olduğu kitaptan anlaşılmıyor; bu yüzden ilişki kurulmadı.",
+      "media_folder (Drive klasörü) henüz eşleştirilmedi.",
+      "Koordinat girilmedi; sahada ya da harita kaynağından doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar Drive Links klasöründen kitap sayfalarıyla otomatik eşlenerek eklendi; başlık ve alt metinler genel (otomatik). Her fotoğrafa bakılıp açıklayıcı caption/alt yazılmalı, subject ve kapak seçimi yapılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap iki görüş veriyor: Orhan Gazi Camii Vakfı'na ait olduğu için Orhan Gazi dönemi; ya da I. Murad'ın aynı kasabada yaptırdığı camiye vakfedilmiş olması. Yapım yılı yok; ikisi de saklandı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin 'Orhan Gazi Camii Vakfı' diyor, İngilizce 'Orhan Gazi Mosque Foundation'; tutarlı. İngilizce giriş 'Cami-i Şerif, Çavuş, Muhtesib ve Süle Paşa' dört mahalleyi sayar, Türkçe metin tırnakları 'Çavuş, Muhtesib' tek tırnağa almıştır (basım biçimi); dört mahalle olarak alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Orhan Gazi Hamamı (Yarhisar)",
+    "en": "Orhan Gazi Bath (Yarhisar)"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Yarhisar",
+    "Nilüfer Hatun",
+    "Türk üçgeni",
+    "alçı süsleme"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yenişehir",
+    "neighborhood": "Yarhisar Köyü",
+    "address": "Yarhisar Köyü",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "713"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.182854,
+      "lng": 29.732488,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Orhan Gazi veya I. Murad dönemi (tartışmalı)",
+      "en": "Orhan Gazi's or Murad I's period (disputed)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap hamamın Orhan Gazi Camii Vakfı'na ait olduğu görüşünü 1890 tarihli vakıf kaydına dayandırır; başka bir görüş I. Murad'ın camiye vakfettiğini söyler. Kesin yıl yoktur.",
+      "en": "The book bases the view that the bath belongs to the Orhan Gazi Mosque Foundation on an 1890 record; another view says it was endowed to a mosque of Murad I. No exact year."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "715"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "713-716"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Orhan Gazi Camii Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "715"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Yarhisar Köyü'nde, dere yatağı üzerinde kurulu, kareye yakın planlı, kubbeli küçük bir Osmanlı hamamı; 2007-2009'da VGM'ce restore edilmiştir ve işlevsizdir.",
+    "en": "A small domed Ottoman bath in Yarhisar Village built over a stream bed on a nearly square plan; restored by the General Directorate of Foundations in 2007-2009 and currently functionless."
+  },
+  "sections": [
+    {
+      "id": "yarhisar",
+      "order": 1,
+      "title": {
+        "tr": "Yarhisar ve Konum",
+        "en": "Yarhisar and Location"
+      },
+      "body": {
+        "tr": "Hamam Yenişehir ilçesi Yarhisar Köyü'ndedir. Yarhisar, Orhan Gazi'nin eşi ve Tekfur'un kızı Nilüfer Hatun'un (Holifera) memleketidir. Köy şelaleden akan suyun oluşturduğu derenin iki yakasında kurulmuştur; cami üst yakada, hamam derenin doğusunda dere yatağı üzerindedir. Fetihten sonra uzun yıllar kaza merkezi olan Yarhisar bu özelliğini XVIII. yüzyıla kadar korumuş; 1478 ve 1521 tahrir defterlerinde 'Cami-i Şerif', 'Çavuş', 'Muhtesib' ve 'Süle Paşa' adlı dört mahalleli kaza merkezi olarak kayıtlıdır.",
+        "en": "The bath is in Yarhisar Village, Yenişehir. Yarhisar was the homeland of Nilüfer Hatun (Holifera), wife of Orhan Gazi and daughter of the Tekfur. The village lies on both banks of a stream formed by water from a waterfall; the mosque is on the upper bank and the bath on the east of the stream, over the stream bed. Yarhisar was a district centre for many years after the conquest until the 18th century; in the 1478 and 1521 census records it is a district centre of four neighborhoods: 'Cami-i Şerif', 'Çavuş', 'Muhtesib' and 'Süle Paşa'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "713-714"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf ve Tarihleme",
+        "en": "Foundation and Dating"
+      },
+      "body": {
+        "tr": "Hamamın Orhan Gazi Camii Vakfı'na ait olduğu, bu nedenle Orhan Gazi döneminde yapılmış olabileceği görüşü 1890 tarihli bir vakıf kaydına dayanır. Alternatif görüşe göre yapı I. Murad'ın aynı kasabada yaptırdığı bir camiye vakfedilmiştir; bu caminin bugünkü yapı olmadığı, hamamın karşı yakasında olduğu öne sürülse de bunu destekleyen somut iz yoktur. Hamamın güneyinde hazire olabilecek bazı mezar taşlarına rastlanmıştır.",
+        "en": "The view that the bath belongs to the Orhan Gazi Mosque Foundation and may thus date to Orhan Gazi's time rests on an 1890 foundation record. An alternative view says it was endowed to a mosque Murad I built in the same town; although that mosque is said to be not the present one and to stand on the opposite bank, there is no concrete trace of it. Some gravestones that may indicate a burial area were found south of the bath."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "714-715"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yaklaşık 13 × 14 m'lik kareye yakın alandaki yapı soğukluk, ılıklık, sıcaklık, halvet, külhan ve odunluktan oluşur. Duvarlar moloz taş ve tuğla almaşık örülmüş, dış cephede iki sıra tuğla testere dişi kirpi saçak vardır. Güneydeki tuğla örgülü sivri kemerli kapıdan kare planlı soğukluğa girilir; batısında 5 × 5 m kare halvet, kuzeyinde 5,50 × 5,50 m sıcaklık, onun kuzeyinde külhan ve en kuzeyde cephe boyunca odunluk yer alır. Ilıklık, sıcaklık ve halvet basit tuğla kubbelerle, külhan tonozla örtülüdür; hepsi kiremit kaplıdır. Kubbe geçişlerinde Türk üçgenleri, kubbelerde fil gözleri kullanılmış; kapı nişleri ve kemerlerde alçı lale, palmet ve ok ucu motifleri vardır.",
+        "en": "On a nearly square area of about 13 × 14 m, the bath has frigidarium, tepidarium, caldarium, bathing cells, furnace and woodshed. Walls alternate rubble stone and brick, with two rows of sawtooth eaves outside. The square frigidarium is entered through a brick pointed-arched door on the south; to its west is a 5 × 5 m bathing cell, to its north a 5.50 × 5.50 m caldarium, north of that the furnace and along the north a woodshed. Tepidarium, caldarium and cells have simple brick domes and the furnace is vaulted, all tiled. Turkish triangles form the dome transitions, oculi light the domes, and plaster tulip, palmette and arrowhead motifs decorate door niches and arches."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "714-716"
+        }
+      ]
+    },
+    {
+      "id": "durum",
+      "order": 4,
+      "title": {
+        "tr": "Restorasyon",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Hamam 2007-2009'da Vakıflar Genel Müdürlüğü'nce restore edilmiştir; bugün işlevsizdir ancak varlığını sürdürmektedir.",
+        "en": "The bath was restored by the General Directorate of Foundations in 2007-2009; it is currently functionless but survives."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "716"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan dimensions"
+      },
+      "value": "13 × 14",
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "714"
+        }
+      ],
+      "note": {
+        "tr": "'Yaklaşık' denmiştir.",
+        "en": "Described as approximate."
+      }
+    },
+    {
+      "key": "halvet_olcu",
+      "label": {
+        "tr": "Halvet ölçüsü",
+        "en": "Bathing cell size"
+      },
+      "value": "5 × 5",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "714"
+        }
+      ]
+    },
+    {
+      "key": "sicaklik_olcu",
+      "label": {
+        "tr": "Sıcaklık ölçüsü",
+        "en": "Caldarium size"
+      },
+      "value": "5,50 × 5,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "714"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Nilüfer Hatun (Holifera)",
+      "role": {
+        "tr": "Yarhisar'ın memleketi olduğu, Orhan Gazi'nin eşi; hayırseverliğiyle tanınır (hamamı yaptırdığı söylenmez)",
+        "en": "Orhan Gazi's wife, native of Yarhisar, known for philanthropy (not stated to have built the bath)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakif-kaydi-1890",
+      "year": 1890,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hamamın Orhan Gazi Camii Vakfı'na ait olduğunu gösteren vakıf kaydı",
+        "en": "Foundation record showing the bath belongs to the Orhan Gazi Mosque Foundation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "715"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM restorasyonu (2007-2009)",
+        "en": "Restoration by General Directorate of Foundations (2007-2009)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "716"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, derenin doğu yakasında, dere yatağı üzerinde yer alan kareye yakın planlı, küçük bir yapıdır. Duvarları taş ve tuğlanın almaşık örgüsüdür; üstü kiremitli tuğla kubbelerle örtülüdür. Kubbelerde yuvarlak aydınlık delikleri bulunur. İç mekânda kapı nişleri ve kemerlerde alçı lale ve palmet süslemeleri vardır.",
+      "en": "A small, nearly square bath on the east side of the stream, built over the stream bed. Walls alternate stone and brick and the roof has tiled brick domes pierced with round lights. Inside, door niches and arches carry plaster tulip and palmette ornament."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı; yalnızca kaynaktaki bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "folder_id": "1NDJapw_ktP-8a8r1fYPxwxb8GHj1hu3-",
+    "path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+    "book_layout_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+    "links_folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+    "book_pdf_name": "12-Yenişehir.pdf",
+    "book_pages": "713-716"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "16u_9De4nVikPN5qU0cqAw1--XufncV2V",
+        "original_name": "01 DJI_20241116010206_0231_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "713"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Orhan Gazi Hamamı (Yarhisar) (kitap s. 713)",
+        "en": "Orhan Gazi Bath (Yarhisar) (book p. 713)"
+      },
+      "alt": {
+        "tr": "Orhan Gazi Hamamı (Yarhisar) fotoğrafı",
+        "en": "Photo of Orhan Gazi Bath (Yarhisar)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "google_drive",
+        "file_id": "1lRgefgWUnVnqmEjNuHc3J2m1HbdXro-1",
+        "original_name": "02 DJI_20241116010058_0229_D_ODAK-Edit.jpg",
+        "folder_id": "10uvzxppF5gGgx0-LcAzF7E8KsWrGGdTL",
+        "folder_path": "Bursa Fotoğraf Arşivi / III. Cilt - Diğer İlçeler / 12-Yenişehir Klasörü / Links",
+        "book_pdf_file_id": "1tUpiwVfAWr6y1Hl4Sk3qzr1JcQVRtfzS",
+        "book_pdf_name": "12-Yenişehir.pdf",
+        "book_page": "716"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Orhan Gazi Hamamı (Yarhisar) (kitap s. 716)",
+        "en": "Orhan Gazi Bath (Yarhisar) (book p. 716)"
+      },
+      "alt": {
+        "tr": "Orhan Gazi Hamamı (Yarhisar) fotoğrafı",
+        "en": "Photo of Orhan Gazi Bath (Yarhisar)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

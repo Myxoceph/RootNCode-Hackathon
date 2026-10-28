@@ -1,0 +1,409 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-haci-seyfeddin-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' Yıldırım Camiler bölümünden yapay zekâ ile özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kitapta yok; dating.start_year null.",
+      "Mimar ve vakıf bilgisi yok.",
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hacı Seyfeddin Camii",
+    "en": "Hacı Seyfeddin Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Fâtih dönemi",
+    "kubbeli",
+    "kirpi saçak",
+    "revaklı son cemaat",
+    "mukarnas"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Hacıseyfettin",
+    "address": "İncirli Caddesi, No: 80",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "222"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.183425,
+      "lng": 29.081925,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Fâtih Sultan Mehmed dönemi (banî 1487'de öldü)",
+      "en": "Reign of Fâtih Sultan Mehmed (founder died 1487)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap banisinin Fâtih devrinde yaşadığını ve 1487'de öldüğünü söylüyor; yapım yılı verilmiyor.",
+      "en": "The book says the founder lived in Fâtih's reign and died in 1487; no construction year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "222"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Seyfeddin",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "222"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Fâtih devrinde hayırsever Hacı Seyfeddin'in yaptırdığı, kubbeli, kare planlı cami; iki sıra kirpi saçaklı kalkan duvarlı iki gözlü son cemaat yeri Bursa camileri arasında nadirdir.",
+    "en": "A domed, square-plan mosque built by the philanthropist Hacı Seyfeddin in Fâtih's time; its two-bay narthex with a parapet wall with two rows of sawteeth is rare among Bursa mosques."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Fâtih devrinde yaşamış hayırsever Hacı Seyfeddin tarafından inşa edilen cami, banisinin 1487'de vefat etmesi üzerine Mevlânâ Hayreddin tarafından tamir ettirilmiştir. Cami 1962'de kapsamlı bir onarımdan geçirilmiştir ve günümüzde ibadete açıktır.",
+        "en": "Built by the philanthropist Hacı Seyfeddin, who lived in Fâtih's reign, the mosque was repaired by Mevlânâ Hayreddin upon the death of its patron in 1487. It underwent extensive restoration in 1962 and is open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "222-223"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-son-cemaat",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Son Cemaat Yeri",
+        "en": "Plan and Narthex"
+      },
+      "body": {
+        "tr": "Yapı içten içe 6,72 × 6,72 m ölçülerinde kare planlıdır. Kubbe, Türk üçgenleriyle geçiş sağlanan bir örtü sistemine sahiptir. Son cemaat yerinin revak derinliği 4,73 m, duvar kalınlıkları 0,97 m'dir. Duvarlar moloz taşla örülmüş, revak üç sıra tuğla ve bir sıra kesme küfeki taşıyla inşa edilmiştir. İki sıra kirpi saçaklı kalkan duvarlara sahip son cemaat yeri Bursa camileri arasında nadir görülen bir özellik taşır. İki yanı kapalı olan bu bölüm, ön cephede ortada yığma bir ayak ve yan duvarlara bağlanan iki büyük sivri kemerden oluşan iki gözlü bir düzene sahiptir ve aynalı tonozla örtülmüştür. İki sivri kemerin ortasında bir niş açılmış, tuğlaların farklı dizilimleriyle cephe hareketlendirilmiştir.",
+        "en": "The building is square, 6.72 × 6.72 m internally, with a dome whose transition is provided by Turkish triangles. The portico of the narthex is 4.73 m deep and the walls 0.97 m thick. The walls are rubble stone; the narthex is three rows of brick and one row of cut limestone. The narthex, with a parapet wall with two rows of sawteeth at the eaves, is a rare feature among Bursa mosques. Enclosed on both sides, it has a two-bay front of a central masonry pier and two large pointed arches, covered by a flattened barrel vault. A niche is opened between the arches and the façade is enlivened by different brick arrangements."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan-ve-minare",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân ve Minare",
+        "en": "Interior and Minaret"
+      },
+      "body": {
+        "tr": "Giriş mihrapla aynı hizada olmayıp revakın doğu köşesindedir. İç mekân altta sekiz, üstte altı ve kasnakta üç pencereyle aydınlanır; tamir sırasında değişen söveli alt sıra pencereler basık kemerli üst pencerelerden farklı tasarlanmıştır. Mihrap çerçevesi geniş ve özenlidir; nişin derinliği 0,82 m'dir, iki yanındaki yarım sütunceler beş sıralı mukarnas dizisiyle kurulan nişi destekler. Ahşap mahfile son cemaat yerinden çıkılır. Ahşap minber ve mermer vaaz kürsüsü yakın dönemde yenilenmiştir. Batı kenarında duvara bitişik minare moloz taşla onikigen kaide üzerindedir; ana mekândaki bir kapıdan girilir. Geçiş tuğla Türk üçgenleriyle sağlanır; çift bilezikli minarenin şerefesi altı sıra tuğla stalaktitle çevrilidir, korkuluk ve petek yakın dönemde yenilenmiş, sivri külah sıvanmıştır.",
+        "en": "The entrance, not aligned with the mihrab, is at the eastern corner of the portico. The interior is lit by eight windows below, six above and three on the drum; the framed lower windows, modified in restoration, differ from the upper flat-arched ones. The mihrab frame is wide and meticulous; the niche is 0.82 m deep, with half-colonettes supporting a five-row muqarnas niche. The wooden muezzin's platform is reached from the narthex. The wooden minbar and marble sermon platform were recently renovated. The minaret, adjacent to the west wall, has a dodecagonal rubble-stone base entered through a door in the main area, brick Turkish-triangle transition, double bands, six rows of brick stalactites below the balcony; the balustrade and neck are recently renewed and the pointed spire plastered over."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "223"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Plan ölçüsü (içten)",
+        "en": "Plan size (internal)"
+      },
+      "value": "6,72 × 6,72",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "key": "revak_derinlik",
+      "label": {
+        "tr": "Revak derinliği",
+        "en": "Portico depth"
+      },
+      "value": 4.73,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 0.97,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "222"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_nis_derinlik",
+      "label": {
+        "tr": "Mihrap nişi derinliği",
+        "en": "Mihrab niche depth"
+      },
+      "value": 0.82,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "223"
+        }
+      ]
+    },
+    {
+      "key": "pencere_alt",
+      "label": {
+        "tr": "Alt sıra pencere",
+        "en": "Lower windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "223"
+        }
+      ]
+    },
+    {
+      "key": "pencere_ust",
+      "label": {
+        "tr": "Üst sıra pencere",
+        "en": "Upper windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "223"
+        }
+      ]
+    },
+    {
+      "key": "pencere_kasnak",
+      "label": {
+        "tr": "Kasnak penceresi",
+        "en": "Drum windows"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "223"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Seyfeddin",
+      "role": {
+        "tr": "Banî; 1487'de vefat etti",
+        "en": "Founder; died 1487"
+      }
+    },
+    {
+      "name": "Mevlânâ Hayreddin",
+      "role": {
+        "tr": "Banisinin ölümü üzerine camiyi tamir ettirdi",
+        "en": "Had the mosque repaired after the founder's death"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "olum-1487",
+      "year": 1487,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Banî Hacı Seyfeddin vefat etti; ardından Mevlânâ Hayreddin camiyi tamir ettirdi",
+        "en": "Founder Hacı Seyfeddin died; Mevlânâ Hayreddin then had the mosque repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "222"
+        }
+      ],
+      "note": {
+        "tr": "Tamirin yılı kitapta ayrıca verilmiyor; 'ölümü üzerine' deniyor.",
+        "en": "The year of the repair is not separately given; the book says 'upon his death'."
+      }
+    },
+    {
+      "id": "onarim-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Extensive restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "223"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, kubbeli, moloz taş duvarlı bir camidir. Önünde iki yanı kapalı, iki sivri kemerli, aynalı tonozlu bir son cemaat yeri vardır; üstündeki kalkan duvar iki sıra kirpi saçaklıdır. Minare batı duvarına bitişik, tuğla gövdelidir.",
+      "en": "A square, domed mosque of rubble stone. In front is a narthex enclosed on both sides, with two pointed arches and a flattened barrel vault, topped by a parapet wall with two rows of sawteeth. The brick minaret is adjacent to the west wall."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-haci-seyfeddin-camii/p011-1.jpg",
+        "original_name": "02 DJI_20240925125754_0660_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "222"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Yukarıdan gri kurşun kaplı kubbe ve yanında minare görünür. Cami bir caddenin kenarındadır ve çevresinde bahçe ile komşu çatılar vardır.",
+        "en": "From above, a grey lead-covered dome and a minaret. The mosque lies beside a road, with gardens and neighbouring roofs around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-haci-seyfeddin-camii/p012-2.jpg",
+        "original_name": "3 ERD04804 kopya 2.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "223"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mermer mihrap ve kitabe",
+        "en": "Marble mihrab and inscription"
+      },
+      "alt": {
+        "tr": "Beyaz mermer mihrap nişinin üstünde yeşil zeminli bir yazı levhası var. Yanlarda pencereler, altın renkli şamdanlar ve kırmızı halı görünür.",
+        "en": "A white marble mihrab niche with a green inscription panel above it. Windows, golden candlesticks and a red carpet are at the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

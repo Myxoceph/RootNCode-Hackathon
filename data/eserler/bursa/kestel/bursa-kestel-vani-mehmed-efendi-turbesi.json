@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-kestel-vani-mehmed-efendi-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Kestel",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin yapım tarihi/banisi kitapta yok (dating: null, founder: null).",
+      "Ayak taşı ve beyit kitabelerinin dili belirtilmiyor; 'other'.",
+      "Beyitin ebced tarih hesabı kitapta yok.",
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
+      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "death_date",
+        "note": "Türkçe biyografide (s. 555) Vanî Mehmed Efendi'nin vefatı 10 Ekim 1685; türbedeki ayak taşında (s. 562) 'H. 13 Zilkade 1096 / M. 11 Ekim 1685' yazıyor. Bir günlük fark var; her iki değer de korundu."
+      },
+      {
+        "field": "inscriptions[sahide-kitabesi]",
+        "note": "Türkçe metin 'eyalet üslubunda ve bozulmuş sülüs hatla', İngilizce metin 'in an official style' diyor ('eyalet' = provincial); Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Vanî Mehmed Efendi Türbesi",
+    "en": "Shaykh Vanî Mehmed Efendi Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-kestel-vani-mehmed-efendi-kulliyesi",
+  "era": null,
+  "tags": [
+    "türbe",
+    "Vanî Mehmed Efendi",
+    "kitabe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Kestel",
+    "neighborhood": "Kale Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c3",
+        "pages": "562"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.200328,
+      "lng": 29.213046,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-kestel-vani-mehmed-efendi-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Vanî Mehmed Efendi'nin kabri caminin son cemaat yerinin batı kenarındadır. Kabir aslında cami haziresindeyken sonradan inşa edilen son cemaat yeri ile yapının içine dâhil olmuştur.",
+    "en": "The grave of Vanî Mehmed Efendi lies at the west edge of the mosque's narthex; originally in the graveyard, it was later incorporated into the structure with the narthex."
+  },
+  "sections": [
+    {
+      "id": "turbe",
+      "order": 1,
+      "title": {
+        "tr": "Kabir ve Şahide",
+        "en": "The Grave and Tombstone"
+      },
+      "body": {
+        "tr": "Vanî Mehmed Efendi'nin kabri caminin son cemaat yerinin batı kenarında yer alır. Eski fotoğraflardan, kabrin aslında cami haziresinde bulunduğu, sonradan yapılan son cemaat yeriyle yapının içine dâhil olduğu anlaşılır. Şahidedeki Arapça kitabe eyalet üslubunda ve bozulmuş sülüs hatla yazılmıştır; ayak taşında vefat tarihi H. 13 Zilkade 1096 / M. 11 Ekim 1685 olarak verilir. Ayrıca vefatına bir beyitle tarih düşürülmüştür.",
+        "en": "The grave is at the west edge of the mosque's narthex. Old photographs show it was originally in the mosque graveyard and was incorporated with the later narthex. The Arabic inscription on the headstone is in an official/provincial style and distorted Thuluth script; the footstone gives the death date as 13 Dhu al-Qa'dah AH 1096 / 11 October AD 1685. His death is also dated by a couplet."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "562"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Vanî Mehmed Efendi",
+      "role": {
+        "tr": "Kabri türbededir",
+        "en": "Buried here"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "sahide-kitabesi",
+      "location": {
+        "tr": "Kabrin şahidesi",
+        "en": "Headstone of the grave"
+      },
+      "language": "ar",
+      "script": "Sülüs (bozulmuş)",
+      "transliteration": "Subhânallah. Kıdvetü’l-ulemâi’l-âmilîn. Zübdetü’l-fudalâi’l-kâmilîn. El-nâtıku bi’l-hakk. El-vâizu li’l-halk. Ed-dâî-i ilâ’llah. El-mültecâ ilâ civârullâh. Muhammedü’l-Vanî. Revvaha’llâhu rûhahû.",
+      "translation": {
+        "tr": "Allah her şeyden münezzehtir. İlmiyle amel eden âlimlerin önderi. Kâmil ve faziletli insanların özü. Hakikati dillendiren. Halka vaaz eden. Allah’a davet eden. Allah’ın huzuruna sığınan. Muhammed Vanî. Allah ruhunu yüceltsin.",
+        "en": "God is above all. The leader of scholars who act upon their knowledge. The essence of perfect and virtuous people. The speaker of the truth. The preacher of the people. The one who calls to God. The one who takes refuge in God’s presence. Muhammed Vanî. May God exalt his soul."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "562"
+        }
+      ]
+    },
+    {
+      "id": "ayak-tasi-kitabesi",
+      "location": {
+        "tr": "Kabrin ayak taşı",
+        "en": "Footstone of the grave"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Fî yevmi’l-cum’ati s-sâlisi aşere min Zîl-ka’deti’l-mübâreketi fî şuhûri seneti sitte ve tis’îne ve elf H. 13 Zilkade 1096 / M. 11 Ekim 1685.",
+      "translation": {
+        "tr": "Bin doksan altı senesi aylarından mübarek Zilkade ayının on üçüncü cuma günü.",
+        "en": "Friday the thirteenth of the blessed month of Dhu al-Qa’dah in the year one thousand ninety-six."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1096,
+        "gregorian": "11 Ekim 1685"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "562"
+        }
+      ]
+    },
+    {
+      "id": "tarih-beyti",
+      "location": {
+        "tr": "Vefat tarihini bildiren beyit",
+        "en": "Couplet dating the death"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "O âlî-câh-ı efdâlin melekler fevt-i târîhin / Didiler kürsîye Vanî Efendi çıkdı cennetde.",
+      "translation": {
+        "tr": "O yüksek makam sahibi faziletli kişinin ölüm tarihini melekler şöyle söyledi: ‘Vanî Efendi cennette kürsüye çıktı.’",
+        "en": "The angels announced the death date of that virtuous person who held a high position as follows: ‘Vanî Efendi ascended to the minbar in heaven.’"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "562"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vefat-1685",
+      "year": 1685,
+      "date": "1685-10-11",
+      "hijri": "13 Zilkade 1096",
+      "type": "record",
+      "title": {
+        "tr": "Vanî Mehmed Efendi'nin vefatı (ayak taşı kaydı)",
+        "en": "Death of Vanî Mehmed Efendi (footstone record)"
+      },
+      "note": {
+        "tr": "Türkçe biyografi 10 Ekim 1685 der (s. 555).",
+        "en": "The biography says 10 October 1685 (p. 555)."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "562"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-kestel-vani-mehmed-efendi-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin parçasıdır.",
+        "en": "Part of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c3",
+          "pages": "562"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kabir, caminin son cemaat yerinin batı kenarında yer alır ve üzerinde şahide bulunur.",
+      "en": "The grave is at the west edge of the mosque's narthex and carries a headstone."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

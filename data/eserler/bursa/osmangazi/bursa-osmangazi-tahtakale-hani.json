@@ -1,0 +1,424 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-tahtakale-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Ticari Yapılar",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 668-669) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
+      "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
+      "Kitap hanın mimarını, plan, malzeme ve mimari özelliklerini anlatmıyor; yalnızca adlar, oda sayısı ve tarihçe var.",
+      "Vakfın hedefi 'Yeşil semtindeki cami ve medrese' olarak verilmiş, adı ve kimliği belirtilmemiş; 'relations' içinde hedef yazılmadı.",
+      "Adres kitapta yok (yalnızca Tahtakale Mahallesi).",
+      "Han mı çarşı mı restore edildi? Metin 'çarşı ... 2018'de yeniden faaliyete açılmıştır' diyor; han ile çarşı ayrımı doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlık 'Tahtakale Hanı (Davutpaşa Hanı-Yoğurt Hanı)' ama metin hanı yaptıran olarak Bayezid Paşa'yı verir; 'Davutpaşa' adının nedeni açıklanmıyor. Üç ad kaynaktaki gibi korundu."
+      },
+      {
+        "field": "sections[yikim-ve-restorasyon]",
+        "note": "'1958 yangınında tamamen yanmış, uzun süre harap kalan çarşı' ifadesi han ile çarşıyı birlikte anıyor; 2018 restorasyonunun hanı mı çarşıyı mı kapsadığı net değil."
+      },
+      {
+        "field": "sections[tahtakale-carsisi]",
+        "note": "Tahtakale adının 'tahta'l-kal'a'dan türediği kitapta 'kabul edilmektedir' diye geçer; bölüm 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tahtakale Hanı",
+    "en": "Tahtakale Han"
+  },
+  "subtitle": {
+    "tr": "Bursa'nın en eski ticaret alanlarından Tahtakale Çarşısı'ndaki han",
+    "en": "A han in the Tahtakale Bazaar, one of Bursa's oldest trade areas"
+  },
+  "alternate_names": [
+    {
+      "tr": "Davutpaşa Hanı",
+      "en": "Davutpaşa Han"
+    },
+    {
+      "tr": "Yoğurt Hanı",
+      "en": "Yoğurt Han"
+    },
+    {
+      "tr": "Bayezid Paşa Hanı",
+      "en": "Bayezid Paşa Han",
+      "note": "Literatürde"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "han",
+    "Tahtakale",
+    "Bayezid Paşa",
+    "1855 depremi",
+    "1958 yangını",
+    "2018 restorasyonu"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tahtakale",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "668"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.183356,
+      "lng": 29.060503,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyılın ilk çeyreği",
+      "en": "First quarter of the 15th century"
+    },
+    "start_year": 1401,
+    "end_year": 1425,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap hanın Bayezid Paşa tarafından XV. yüzyılın ilk çeyreğinde yaptırıldığını belirtir.",
+      "en": "The book states Bayezid Paşa had the han built in the first quarter of the 15th century."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "668"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Bayezid Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "668"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "668"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Yeşil semtindeki cami ve medrese vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "668"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Bayezid Paşa'nın XV. yüzyılın ilk çeyreğinde Yeşil semtindeki cami ve medreseye gelir sağlamak için yaptırdığı han; 1855 depreminden sonra yeniden inşa edilmiş, 1958 yangınında yanmış ve Osmangazi Belediyesi'nin restorasyonuyla 2018'de yeniden açılmıştır.",
+    "en": "A han built by Bayezid Paşa in the first quarter of the 15th century to provide income to the mosque and madrasa in the Yeşil district; rebuilt after the 1855 earthquake, burned in 1958 and reopened in 2018 after restoration by the Osmangazi Municipality."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Han ve Adları",
+        "en": "The Han and Its Names"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesindeki Tahtakale Mahallesi'nde yer alan han, Bayezid Paşa tarafından XV. yüzyılın ilk çeyreğinde Yeşil semtindeki cami ve medreseye gelir sağlamak amacıyla yaptırılmıştır. Literatürde \"Bayezid Paşa Hanı\" ya da \"Yoğurt Hanı\" adlarıyla da anılır. Çeşitli belgelerde alt katta 21, üst katta 25 oda bulunduğu belirtilir. Günümüzde korunabilen bölümleri dükkân olarak kullanılır.",
+        "en": "The han stands in the Tahtakale Neighborhood of Osmangazi District and was built by Bayezid Paşa in the first quarter of the 15th century to provide income to the mosque and madrasa in the Yeşil district. It is also known in the literature as \"Bayezid Paşa Han\" or \"Yoğurt Han\". Various documents state that it had 21 rooms on the lower floor and 25 on the upper floor. Its preserved parts are used as shops today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "668"
+        }
+      ]
+    },
+    {
+      "id": "tahtakale-carsisi",
+      "order": 2,
+      "title": {
+        "tr": "Tahtakale Çarşısı",
+        "en": "The Tahtakale Bazaar"
+      },
+      "body": {
+        "tr": "Çelebi Mehmed dönemine uzanan Tahtakale Çarşısı Bursa'nın en eski ticaret alanlarından biridir; mahalleye adını vermiş ve eski Köylü Pazarı'nın kurulduğu yerdir. Tahtakale adının \"tahta'l-kal'a\" (kalenin altı) ifadesinden türediği kabul edilir. Sebze, soğan ve meyve satılan yerler için kullanılan terim bugünkü \"hal\" kavramına karşılık gelir. Bursa'da zamanla \"Davutpaşa Hanı\", \"Yoğurt Hanı\" ve \"Pirinç Hanı\" gibi farklı yapılar da \"Tahtakale\" adıyla anılmıştır. Osmanlı öncesinde, Bizans döneminde bu bölge atların bağlandığı, onlar için bir tür revir işlevi gören bir alan olarak kullanılmıştır.",
+        "en": "Dating to the time of Çelebi Mehmed, the Tahtakale Bazaar is one of Bursa's oldest trade areas; it gave its name to the neighborhood and was the site of the old Village Market. The name Tahtakale is accepted to derive from \"tahta'l-kal'a\" (under the castle); the term for places selling vegetables, onions and fruit corresponds to today's \"wholesale market\". In Bursa, structures such as the \"Davutpaşa Han\", \"Yoğurt Han\" and \"Pirinç Han\" also came to be called \"Tahtakale\". In the pre-Ottoman Byzantine period the area was used for tethering horses and as a kind of infirmary for them."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "669"
+        }
+      ]
+    },
+    {
+      "id": "yikim-ve-restorasyon",
+      "order": 3,
+      "title": {
+        "tr": "Deprem, Yangın ve Restorasyon",
+        "en": "Earthquake, Fire and Restoration"
+      },
+      "body": {
+        "tr": "Tahtakale Hanı 1855 Bursa Depremi'nin ardından yeniden inşa edilmiştir. 1958'de çıkan büyük yangında tamamen yanmış, uzun süre harap kalmış; Osmangazi Belediyesi'nin yürüttüğü restorasyon 2018'de tamamlanarak yeniden faaliyete açılmıştır.",
+        "en": "The Tahtakale Han was rebuilt after the 1855 Bursa Earthquake. It burned down completely in the great fire of 1958 and remained in ruins for a long time; the restoration by the Osmangazi Municipality was completed in 2018 and it reopened."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "669"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "oda_alt_kat",
+      "label": {
+        "tr": "Alt kat oda sayısı",
+        "en": "Rooms on lower floor"
+      },
+      "value": 21,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "668"
+        }
+      ],
+      "note": {
+        "tr": "Çeşitli belgelere göre.",
+        "en": "According to various documents."
+      }
+    },
+    {
+      "key": "oda_ust_kat",
+      "label": {
+        "tr": "Üst kat oda sayısı",
+        "en": "Rooms on upper floor"
+      },
+      "value": 25,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "668"
+        }
+      ],
+      "note": {
+        "tr": "Çeşitli belgelere göre.",
+        "en": "According to various documents."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Bayezid Paşa",
+      "role": {
+        "tr": "Hanı yaptıran",
+        "en": "Commissioner"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-15yy",
+      "year": 1401,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Bayezid Paşa tarafından XV. yüzyılın ilk çeyreğinde yaptırıldı",
+        "en": "Built by Bayezid Paşa in the first quarter of the 15th century"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "668"
+        }
+      ],
+      "note": {
+        "tr": "Kesin yıl yok; 1401 yalnızca çeyreğin başlangıcıdır.",
+        "en": "No exact year; 1401 is only the start of the quarter-century."
+      }
+    },
+    {
+      "id": "yeniden-insa-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 Bursa Depremi'nin ardından han yeniden inşa edildi",
+        "en": "Han rebuilt after the 1855 Bursa Earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "669"
+        }
+      ],
+      "note": {
+        "tr": "Deprem yılı olarak verildi; yeniden inşa tarihi kitapta belirtilmiyor.",
+        "en": "Year given is the earthquake's; the rebuilding date is not stated in the book."
+      }
+    },
+    {
+      "id": "yangin-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük yangında tamamen yandı",
+        "en": "Burned down completely in the great fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "669"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Osmangazi Belediyesi'nin restorasyonu tamamlandı; yeniden faaliyete açıldı",
+        "en": "Osmangazi Municipality's restoration completed; reopened"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "669"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-pirinc-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Pirinç Hanı da zamanla 'Tahtakale' adıyla anılmıştır.",
+        "en": "The Pirinç Han also came to be called 'Tahtakale' over time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "669"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tahtakale Hanı, Tahtakale Mahallesi'nde, tarihî Tahtakale Çarşısı'nın içinde yer alan iki katlı bir handır. Belgelere göre alt katta 21, üst katta 25 oda bulunur. Han 1958 yangınında tamamen yanmış, 2018'de restore edilerek yeniden açılmıştır; korunabilen bölümleri bugün dükkân olarak kullanılır.",
+      "en": "The Tahtakale Han is a two-storey han within the historic Tahtakale Bazaar in the Tahtakale Neighborhood. According to documents it has 21 rooms on the lower floor and 25 on the upper floor. It burned down completely in 1958 and reopened after restoration in 2018; its preserved parts are used as shops today."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-tahtakale-hani/p039-1.jpg",
+        "original_name": "tahtakale01 Kapak.jpeg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "668"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tahtakale Hanı ve önündeki kafeler",
+        "en": "Tahtakale Han and the cafés in front"
+      },
+      "alt": {
+        "tr": "Krem sıvalı, kiremit çatılı ve ahşap bölümlü alçak bir yapı, önünde dev bir çınar ağacı var. Meydanda masalar, sarı şemsiye ve yeşil tenteler yer alır.",
+        "en": "A low cream-plastered building with a tiled roof and wooden sections, with a large plane tree before it. Tables, a yellow umbrella and green awnings fill the square."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-07"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

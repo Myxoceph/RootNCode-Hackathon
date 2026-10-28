@@ -1,0 +1,488 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-altinozu-fatikli-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Kitabelerin metni, dili ve yerleri kaynakta verilmemiş; yerinde okunup eklenmeli.",
+      "Yapının asıl yapım dönemi (16. yüzyıl mı, 1875 mi) araştırılmalı.",
+      "Era alanı 'gec-osmanli' yalnızca 1875 kitabesine dayanır; tarihleme tartışmalıdır.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kaynak iki görüş verir: bazı sanat tarihçilerinin 16. yüzyıl tarihlemesi ve en eski kitabenin 1875 tarihi. Tarihleme 'disputed' işaretlendi; era alanı (gec-osmanli) 1875 kitabesine göre verildi."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Türkçe metin 1875'i '1872 depreminin hemen sonrası' olarak anar; 1872 ile 1875 arasında üç yıl vardır. Kaynağın ifadesi korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Fatikli Camii",
+    "en": "Fatikli Mosque"
+  },
+  "subtitle": {
+    "tr": "Altınözü'ndeki Fatikli köyünde çapraz tonozlu, beş kemerli son cemaat yerli cami",
+    "en": "A village mosque in Fatikli, Altınözü, with cross vaults and a five-arched narthex"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "köy camii",
+    "çapraz tonoz",
+    "serbest minare",
+    "1875 kitabesi"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Altınözü",
+    "neighborhood": null,
+    "address": "Fatikli köyü; 97 Ada 1 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "356-359, 399"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "En eski kitabe 1875; 16. yüzyıl tarihlemesi de var",
+      "en": "Oldest inscription 1875; a 16th-century dating is also proposed"
+    },
+    "start_year": 1875,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Bazı sanat tarihçileri üslup özelliklerine bakarak 16. yüzyıla tarihleme eğilimindedir; kitap ise en eski kitabenin 1875 tarihli olduğunu, yapının 1872 depreminden sonra yenilenmiş olabileceğini söyler. 1875 yılı kitabe tarihidir, yapım yılı olarak kesinleşmemiştir; bitiş yılı verilmedi.",
+      "en": "Some art historians date the work to the 16th century on stylistic grounds; the book notes that the oldest inscription is dated 1875 and that the building may have been renewed after the 1872 earthquake. 1875 is the inscription date, not a confirmed construction year; no end year is given."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "356"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Altınözü'ne bağlı Fatikli köyündeki cami, planı Antakya merkezdeki camilerden esinlenmiş olsa da minaresi ve tonoz örtüsüyle bu örneklerden ayrılır. Kitaba göre bazı sanat tarihçileri 16. yüzyıla tarihler; en eski kitabesi 1875'tir ve 1929'da onarım gördüğünü gösteren bir kitabesi daha vardır.",
+    "en": "The mosque in Fatikli village in Altınözü took its plan from the mosques of central Antakya, but its minaret and vault cover set it apart. Some art historians date it to the 16th century; its oldest inscription is of 1875 and another inscription records a repair in 1929."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Tarihleme",
+        "en": "History and Dating"
+      },
+      "body": {
+        "tr": "Altınözü'ne bağlı Fatikli köyündeki bu cami plan olarak ilhamını Antakya merkezdeki camilerden almış olsa dahi minaresi ve tonoz örtüsü bu öykünmeyle bağdaşmaz. Kimi sanat tarihçileri yapıdaki bir takım üslup özelliklerini dikkate alarak eseri 16. yüzyıla tarihleme eğilimindedir. Oysa eserin en eski kitabesi 1872 depreminin hemen sonrasına, yani 1875 yılına aittir. Bu sebeple yapının depremden sonra yenilendiğini düşünmek mümkündür. Eserin diğer bir kitabesi yapının 1929'da onarıldığını gösterir.",
+        "en": "Even if this mosque in Fatikli village of Altınözü took its inspiration from the mosques in the center of Antakya, its minaret and vault cover are incompatible with this imitation. Some art historians tend to date the work to the 16th century on stylistic features. However, the oldest inscription of the work belongs to 1875, just after the earthquake of 1872, so it is possible to think the building was renovated after the earthquake. Another inscription shows that the building was repaired in 1929."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "356"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-ic-mekan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve İç Mekân",
+        "en": "Plan and Interior"
+      },
+      "body": {
+        "tr": "Önünde beş kemerli son cemaat mahalli bulunan cami, dikdörtgen plan üzerine iki sahınlı harimden meydana gelir. Cami kısa sütunlar üzerine oturan sivri kemerlerin taşıdığı ahşap çatıyla örtülmüştür. Harime basık kemerli kapıdan girilir. Harim kenarlardan gömme payelerle, ortada ise köşeleri mukarnaslarla yumuşatılmış başlıklara sahip sütunlarla taşınan çapraz tonozlarla örtülüdür. Mihrap gibi minber de taştandır ve sade görünümlüdür. Mahfil girişin hemen üzerinde ahşap konsollarla taşınır ve basit bir merdivenle çıkılır.",
+        "en": "The mosque has a five-arched narthex in front and a sanctuary of two naves on a rectangular plan. It is covered with a wooden roof carried by pointed arches resting on short columns. The sanctuary is entered through a low-arched door. It is covered with cross vaults carried by built-in piers on the sides and, in the middle, by columns whose capitals have corners softened with muqarnas. Like the mihrab, the minbar is of stone and plain. The mahfil is carried by wooden consoles just above the entrance and is reached by a simple staircase."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "356"
+        }
+      ]
+    },
+    {
+      "id": "cepheler-ve-minare",
+      "order": 3,
+      "title": {
+        "tr": "Cepheler ve Minare",
+        "en": "Facades and Minaret"
+      },
+      "body": {
+        "tr": "Doğu cephesinde iç mekândaki her sahına açılan, basık kemerli dikdörtgen çerçeveli iki pencere vardır. Güney cephesinde aynı üslupta üç pencere ve mihrap nişinde küçük bir pencere daha bulunur. Batı cephesindeki üç pencereden ikisi iç mekâna, biri son cemaat mahalline açılır. Caminin kuzeydoğu köşesinden yaklaşık on metre uzakta serbest yükselen minare, kısa kare kaide üzerinde çokgen gövdelidir; yakın zamanda onarım gördüğü belli olan şerefenin biraz altı yuvarlaktır. Şerefeden sonra yuvarlak petek ve konik külahla alemde son bulur, şemsiye bölümü yoktur; bu özelliği onu Antakya merkezdeki diğer minare tiplerinden ayırır.",
+        "en": "On the east facade there are two rectangular-framed, low-arched windows opening to each nave. The south facade has three windows in the same style and a small window in the mihrab niche. Of the three windows on the west facade, two open to the interior and one to the narthex. The minaret rises freely about ten meters from the northeast corner of the mosque on a short square base with a polygonal body; just below the balcony, which was evidently repaired recently, it turns round. After the balcony it continues as a round honeycomb and conical cone ending in the alem, and has no umbrella section, which distinguishes it from the other minaret types of central Antakya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "359"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "nef_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "356"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_kemer",
+      "label": {
+        "tr": "Son cemaat yeri kemer sayısı",
+        "en": "Arches of the narthex"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "356"
+        }
+      ]
+    },
+    {
+      "key": "minare_mesafesi",
+      "label": {
+        "tr": "Minarenin camiye uzaklığı",
+        "en": "Distance of minaret from mosque"
+      },
+      "value": 10,
+      "unit": "m",
+      "note": {
+        "tr": "Kuzeydoğu köşeden 'on metre kadar'.",
+        "en": "'About ten meters' from the northeast corner."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "359"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Cover"
+      },
+      "value": "Çapraz tonoz; ahşap çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "356"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kitabe-1875",
+      "location": {
+        "tr": "Cami (kitabenin yeri kaynakta belirtilmemiş)",
+        "en": "Mosque (location of the inscription is not given)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1875"
+      },
+      "note": {
+        "tr": "Kitabenin dili ve metni kaynakta verilmemiştir.",
+        "en": "The language and text of the inscription are not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "356"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-1929",
+      "location": {
+        "tr": "Cami (kitabenin yeri kaynakta belirtilmemiş)",
+        "en": "Mosque (location of the inscription is not given)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1929"
+      },
+      "note": {
+        "tr": "Kitabenin dili ve metni kaynakta verilmemiştir.",
+        "en": "The language and text of the inscription are not given in the source."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "356"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kitabe-1875",
+      "year": 1875,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "En eski kitabe tarihi",
+        "en": "Date of the oldest inscription"
+      },
+      "note": {
+        "tr": "Kitap yapının 1872 depreminden sonra yenilenmiş olabileceğini düşünür.",
+        "en": "The book considers that the building may have been renewed after the 1872 earthquake."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "356"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1929",
+      "year": 1929,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (kitabeye göre)",
+        "en": "Repair (according to an inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "356"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Fatikli Camii, Altınözü'ne bağlı Fatikli köyündedir. Önünde beş kemerli bir son cemaat yeri vardır. Dikdörtgen planlı harim iki sahınlıdır; ortada başlıkları mukarnaslı sütunlar, yanlarda gömme payeler çapraz tonozları taşır. Taş mihrap ve minber sadedir. Girişin üzerinde ahşap konsollu bir mahfil vardır. Çokgen gövdeli minare camiden yaklaşık on metre uzakta, kuzeydoğuda ayrı yükselir ve şemsiyesizdir.",
+      "en": "Fatikli Mosque is in Fatikli village, Altınözü. It has a five-arched narthex in front. The rectangular sanctuary has two naves; columns with muqarnas capitals in the middle and built-in piers at the sides carry cross vaults. The stone mihrab and minbar are plain. A mahfil on wooden consoles sits above the entrance. The polygonal-bodied minaret stands separately about ten meters to the northeast and has no umbrella section."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p178-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "354-355"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kemerli revakı ve minaresi",
+        "en": "Mosque's arched portico and minaret"
+      },
+      "alt": {
+        "tr": "Taş cephede geniş sivri kemerli bir revak, solda yüksek ve ince taş minare var. Önünde taş döşeli bir meydan uzanıyor; gökyüzü bulutlu mavi.",
+        "en": "A stone façade with a wide pointed-arch portico and a tall slender stone minaret on the left. A paved square stretches in front under a cloudy blue sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p179-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "356"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Taş minare",
+        "en": "The stone minaret"
+      },
+      "alt": {
+        "tr": "Taş örgülü, silindirik gövdeli ve sivri külahlı minare mavi gökyüzüne yükseliyor. Dibinde alçak taş duvar ve kemerli bir geçit var.",
+        "en": "A cylindrical stone minaret with a pointed cap rises into a blue sky. A low stone wall and an arched passage are at its foot."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p179-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "357"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Cami girişi ve kitabe levhası",
+        "en": "Mosque entrance and inscription plaque"
+      },
+      "alt": {
+        "tr": "Taş duvarda sivri kemerli, iki kanatlı ahşap bir kapı ve basamaklar var. Kapının üstünde küçük bir kitabe levhası bulunuyor.",
+        "en": "A pointed-arch double wooden door set in a stone wall, with steps in front. A small inscription plaque is above the door."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p180-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "358-359"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sütunlu ve çapraz tonozlu namaz salonu",
+        "en": "Prayer hall with column and cross vaults"
+      },
+      "alt": {
+        "tr": "Kalın taş sütun ve tonozlu bölümlerle bölünen salonda solda taş minber, sağda ahşap mahfil var. Zemin turkuaz halıyla kaplı, avizeler sarkıyor.",
+        "en": "A hall divided by a thick stone column and vaulted bays, with a stone minbar on the left and a wooden loft on the right. The floor has turquoise carpet and chandeliers hang above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p180-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "358-359"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kemer üstündeki kitabe ve rozet",
+        "en": "Inscription and rosette above an arch"
+      },
+      "alt": {
+        "tr": "Taş duvarda siyah zeminli, Arapça yazılı dikdörtgen bir kitabe ve altında bitkisel kabartmalı bir rozet var. Altta bir kemerin üst kısmı görülüyor.",
+        "en": "A rectangular black inscription with Arabic lettering on a stone wall, with a carved floral rosette below it. The top of an arch is visible beneath."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-altinozu-fatikli-camii/p180-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "359"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap ve taş minber",
+        "en": "Mihrab and stone minbar"
+      },
+      "alt": {
+        "tr": "Taş çerçeveli mihrap nişinin yanında, kapılı ve yazıtlı taş bir minber yükseliyor. Üstte altıgen bir avize ve sağda ahşap pencere görülüyor.",
+        "en": "Next to a stone-framed mihrab niche, a stone minbar with a doorway and an inscription. A hexagonal chandelier hangs above and a wooden window is on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}
