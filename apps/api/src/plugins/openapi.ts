@@ -47,6 +47,7 @@ export function registerOpenApi(app: FastifyInstance): void {
         { name: "planner", description: "Vakıf Travel Planner: tematik yürüyüş rotası ve hava durumu" },
         { name: "gastronomy", description: "Yöresel Kültür & Gastronomi: ilin coğrafi işaretli yöresel lezzetleri" },
         { name: "community", description: "Ziyaretçi Nabzı: anonim oturum, katkılar, nabız akışı" },
+        { name: "assistant", description: "AI asistan: veri setinden, kaynaklı cevaplar" },
         { name: "moderation", description: "Katkı moderasyonu (moderatör token'ı gerekir)" },
         { name: "system", description: "Sunucu durumu" },
       ],

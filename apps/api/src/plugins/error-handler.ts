@@ -1,5 +1,6 @@
 import type { FastifyError, FastifyInstance } from "fastify";
 import { z } from "zod";
+import { HttpError } from "../lib/http-error.ts";
 
 /** Every error response has this shape, so clients handle failures in one place. */
 export const ErrorResponseSchema = z.strictObject({
@@ -28,7 +29,8 @@ export function registerErrorHandlers(app: FastifyInstance): void {
     const statusCode = error.statusCode ?? 500;
 
     // Server errors are logged in full but never leak internals to the client.
-    if (statusCode >= 500) {
+    // An HttpError is expected and safe to show, e.g. 503 when the assistant is unavailable.
+    if (statusCode >= 500 && !(error instanceof HttpError)) {
       request.log.error({ err: error }, "Unhandled error");
       const body: ErrorResponse = {
         error: { code: "INTERNAL_ERROR", message: "An unexpected error occurred" },

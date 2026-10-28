@@ -1,6 +1,7 @@
 import { buildApp } from "./app.ts";
 import { loadEnv } from "./config/env.ts";
 import { createPrismaClient } from "./db/prisma.ts";
+import { createChatModel } from "./modules/assistant/assistant.model.ts";
 import { createWeatherService } from "./modules/weather/weather.service.ts";
 
 const env = loadEnv();
@@ -19,6 +20,10 @@ const app = buildApp({
         onError: (err) => app.log.warn({ err }, "Weather provider failed; serving without weather"),
       })
     : undefined,
+  assistantModel:
+    env.ASSISTANT_BASE_URL && env.ASSISTANT_MODEL
+      ? createChatModel({ baseUrl: env.ASSISTANT_BASE_URL, model: env.ASSISTANT_MODEL, apiKey: env.ASSISTANT_API_KEY || undefined })
+      : null,
 });
 
 async function shutdown(signal: NodeJS.Signals): Promise<void> {
