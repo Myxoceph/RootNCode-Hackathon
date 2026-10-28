@@ -1,6 +1,7 @@
 import type { Prisma, PrismaClient } from "../../generated/prisma/client.ts";
 import type { Point } from "../assets/assets.network.ts";
 import { summarySelect, visibleStatuses, type AssetVisibility, type LabelRecord } from "../assets/assets.repository.ts";
+import type { ImportanceSignals } from "./trip.ts";
 
 export const candidateSelect = {
   ...summarySelect,
@@ -28,6 +29,8 @@ export interface PlannerRepository {
   isVisible(id: string): Promise<boolean>;
   /** Ids of the assets linked to `id` in either direction (Kentsel Ağ). */
   findLinkedIds(id: string): Promise<string[]>;
+  /** What the trip planner ranks sites by; every id gets an entry. */
+  findImportanceSignals(ids: string[]): Promise<Map<string, ImportanceSignals>>;
 }
 
 function median(values: number[]): number {
@@ -83,6 +86,23 @@ export function createPlannerRepository(prisma: PrismaClient, visibility: AssetV
         select: { source_asset_id: true, target_asset_id: true },
       });
       return [...new Set(rows.map((r) => (r.source_asset_id === id ? r.target_asset_id : r.source_asset_id)))];
+    },
+
+    async findImportanceSignals(ids) {
+      const [outgoing, incoming, highlights, media] = await Promise.all([
+        prisma.asset_relation.groupBy({ by: ["source_asset_id"], where: { source_asset_id: { in: ids } }, _count: true }),
+        prisma.asset_relation.groupBy({ by: ["target_asset_id"], where: { target_asset_id: { in: ids } }, _count: true }),
+        prisma.asset_highlight.groupBy({ by: ["asset_id"], where: { asset_id: { in: ids } }, _count: true }),
+        prisma.asset_media.groupBy({ by: ["asset_id"], where: { asset_id: { in: ids } }, _count: true }),
+      ]);
+      const signals = new Map<string, ImportanceSignals>(
+        ids.map((id) => [id, { relationCount: 0, highlightCount: 0, hasPhoto: false }]),
+      );
+      for (const row of outgoing) signals.get(row.source_asset_id)!.relationCount += row._count;
+      for (const row of incoming) signals.get(row.target_asset_id)!.relationCount += row._count;
+      for (const row of highlights) signals.get(row.asset_id)!.highlightCount = row._count;
+      for (const row of media) signals.get(row.asset_id)!.hasPhoto = row._count > 0;
+      return signals;
     },
   };
 }
