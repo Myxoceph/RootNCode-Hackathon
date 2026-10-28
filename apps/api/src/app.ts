@@ -6,6 +6,8 @@ import { createAssetsRepository, type AssetVisibility } from "./modules/assets/a
 import { createCommunityRepository } from "./modules/community/community.repository.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
+import { createGastronomyRepository } from "./modules/gastronomy/gastronomy.repository.ts";
+import { gastronomyRoutes } from "./modules/gastronomy/gastronomy.routes.ts";
 import { createMetaRepository } from "./modules/meta/meta.repository.ts";
 import { metaRoutes } from "./modules/meta/meta.routes.ts";
 import { createPlannerRepository } from "./modules/planner/planner.repository.ts";
@@ -63,14 +65,17 @@ export function buildApp({
   app.register(healthRoutes, { prisma });
   const assetsRepository = createAssetsRepository(prisma, assetVisibility);
   app.register(assetsRoutes, { repository: assetsRepository, mediaBaseUrl, visibility: assetVisibility });
+  const gastronomyRepository = createGastronomyRepository(prisma, assetVisibility);
   app.register(plannerRoutes, {
     repository: createPlannerRepository(prisma, assetVisibility),
     assets: assetsRepository,
     weather,
     mediaBaseUrl,
     visibility: assetVisibility,
+    gastronomy: gastronomyRepository,
   });
   app.register(metaRoutes, { repository: createMetaRepository(prisma, assetVisibility) });
+  app.register(gastronomyRoutes, { repository: gastronomyRepository });
   const communityRepository = createCommunityRepository(prisma);
   app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility });
   app.register(moderationRoutes, { repository: communityRepository });

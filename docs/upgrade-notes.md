@@ -7,6 +7,23 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-28 · Yöresel lezzetler (migration, sözleşme 0.3.3)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **veri ekibi**, **uygulama ekibi**
+
+1. Migration'ı uygula ve veriyi içe aktar:
+   ```bash
+   npm run db:deploy --workspace @vagabonds/api
+   npm run db:import
+   ```
+2. API'yi yeniden başlat.
+
+Değişenler:
+- Yeni veri dosyası `data/sehirler/<il>.json` (şema `data/schema/sehir.schema.json`). Bursa için 9, Hatay için 10 yöresel lezzet var; hepsi Türk Patent coğrafi işaret tescilli ve sicil belgesiyle kaynaklı. `validate.py` bu dosyaları da kontrol ediyor.
+- Yeni tablo `city_dish`, yeni uç `GET /cities/:code/dishes`.
+- `/routes/trip`'te öğle ve tatlı molalarında artık `dish` dolu: önce ilçenin, sonra ilin lezzeti; gezi boyunca tekrar etmeden.
+- Uygulama: Lezzet Durakları ekranı (`content/food.ts`) bu uca bağlanabilir. Örnek içerikteki "nerede, kaç dakika" bilgisi kaynaksız olduğu için veride yok; onun yerine ilçe ve tescil bilgisi var.
+
 ## 2026-10-28 · Rotalar için çok günlük gezi ve hava tahmini (sözleşme 0.3.2)
 
 Kimler: **uygulama ekibi** (Rotalar ekranı), **API'yi yerelde çalıştıranlar**

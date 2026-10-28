@@ -24,6 +24,11 @@ TABLES = {
     "relation_type": ["code", "label_tr", "label_en"],
     "timeline_event_type": ["code", "label_tr", "label_en"],
     "source": ["id", "type", "title_tr", "title_en", "publisher", "year", "isbn", "url", "is_official", "extra"],
+    "city_dish": [
+        "id", "city_code", "sort_order", "kind", "name_tr", "name_en", "description_tr", "description_en", "story_tr", "story_en",
+        "district", "gi_portal_id", "gi_registration_number", "gi_registered_on", "gi_type", "gi_registrant", "gi_document_url",
+        "source_id", "source_url", "confidence", "status",
+    ],
     # eser
     "asset": [
         "id", "status", "type_code", "secondary_types", "parent_id", "era_code", "tags",
@@ -79,7 +84,7 @@ ASSET_TABLES = [
     "asset_highlight", "asset_relation", "visitor_tip", "exhibition", "source_citation",
     "media", "media_variant", "asset_media", "inscription", "contribution", "asset_revision",
 ]
-SHARED_TABLES = ["region", "city", "asset_type", "era", "relation_type", "timeline_event_type", "source"]
+SHARED_TABLES = ["region", "city", "asset_type", "era", "relation_type", "timeline_event_type", "source", "city_dish"]
 
 ENUM_TABLES = {
     "region": "regions", "era": "eras", "relation_type": "relation_types", "timeline_event_type": "timeline_event_types",
@@ -118,7 +123,28 @@ def shared_rows():
         }
         for s in sources
     ]
+    rows["city_dish"] = city_dish_rows()
     return {t: rows[t] for t in SHARED_TABLES}
+
+
+def city_dish_rows():
+    """sehirler/<il>.json → city_dish. Taslaklar da girer; API yalnızca görünür durumdakileri verir."""
+    rows = []
+    for path in sorted((DATA / "sehirler").glob("*.json")):
+        city = json.loads(path.read_text(encoding="utf-8"))
+        for order, d in enumerate(city["dishes"]):
+            gi, ref = d["geographical_indication"], d["source_refs"][0]
+            rows.append({
+                "id": d["id"], "city_code": city["city"], "sort_order": order, "kind": d["kind"],
+                "name_tr": d["name"]["tr"], "name_en": d["name"].get("en"),
+                "description_tr": d["description"]["tr"], "description_en": d["description"].get("en"),
+                "story_tr": _t(d["story"], "tr"), "story_en": _t(d["story"], "en"), "district": d["district"],
+                "gi_portal_id": gi["portal_id"], "gi_registration_number": gi["registration_number"],
+                "gi_registered_on": gi["registered_on"], "gi_type": gi["type"], "gi_registrant": gi["registrant"],
+                "gi_document_url": gi["document_url"], "source_id": ref["source_id"], "source_url": ref.get("url"),
+                "confidence": d["confidence"], "status": d["status"],
+            })
+    return rows
 
 
 @lru_cache(maxsize=None)
