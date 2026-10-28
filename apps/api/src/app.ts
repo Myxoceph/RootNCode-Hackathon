@@ -2,6 +2,9 @@ import cors from "@fastify/cors";
 import Fastify, { type FastifyInstance, type FastifyServerOptions } from "fastify";
 import type { PrismaClient } from "./db/prisma.ts";
 import { assetsRoutes } from "./modules/assets/assets.routes.ts";
+import type { ChatModel } from "./modules/assistant/assistant.model.ts";
+import { createAssistantRepository } from "./modules/assistant/assistant.repository.ts";
+import { assistantRoutes } from "./modules/assistant/assistant.routes.ts";
 import { createAssetsRepository, type AssetVisibility } from "./modules/assets/assets.repository.ts";
 import { createCommunityRepository } from "./modules/community/community.repository.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
@@ -35,6 +38,8 @@ export interface BuildAppOptions {
   rateLimit?: RateLimitOptions | false;
   /** Current-weather provider; by default weather is unavailable (tests never reach the network). */
   weather?: WeatherService;
+  /** Model behind the AI assistant (`POST /chat`); without one the assistant reports itself unavailable. */
+  assistantModel?: ChatModel | null;
 }
 
 const NO_WEATHER: WeatherService = { current: async () => null, forecast: async () => null };
@@ -56,6 +61,7 @@ export function buildApp({
   trustProxy = false,
   rateLimit = DEFAULT_RATE_LIMIT,
   weather = NO_WEATHER,
+  assistantModel = null,
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
 
@@ -83,6 +89,7 @@ export function buildApp({
   const communityRepository = createCommunityRepository(prisma);
   app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility });
   app.register(moderationRoutes, { repository: communityRepository });
+  app.register(assistantRoutes, { model: assistantModel, repository: createAssistantRepository(prisma, assetVisibility) });
 
   return app;
 }

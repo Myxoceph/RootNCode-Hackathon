@@ -1,12 +1,13 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.4`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.5`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
 - `src/planner.schema.ts`: `/weather`, `/routes/plan` ve `/routes/trip` (Vakıf Travel Planner & Hava Durumu)
 - `src/gastronomy.schema.ts`: `/cities/:code/dishes` (Yöresel Kültür & Gastronomi)
 - `src/sound.schema.ts`: `/meta/sounds` (Sesli Zaman Kapsülü); kaydın kendisi `asset.schema.ts`'te (`SoundRecordingSchema`)
+- `src/chat.schema.ts`: `POST /chat` ve `GET /chat/status` (AI asistan)
 - `scripts/validate-fixtures.ts`: uygulamanın örnek verisini (`apps/app/src/data/fixtures`) bu şemalarla doğrular
 
 v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı; uygulama `/assets` uçlarını kullanıyor (Y8).
@@ -25,6 +26,8 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `GET /cities/:code/dishes?lang=` | `CityDishesResponseSchema` (ilin yöresel lezzetleri, veri ekibinin sırasıyla; lezzeti olmayan ilde `dishes: []`) |
 | `GET /routes/trip?city=&duration=&theme=&start=&date=&lang=` | `TripPlanResponseSchema` (`duration`: `half`, `1` (varsayılan) ya da `2`; `theme`: `type:<kod>` ya da `era:<kod>`, verilmezse bütün eserler; `date`: 1. günün tarihi, bugünden tahmin aralığının sonuna kadar) |
 | `GET /routes/plan?city=&theme=&start=&maxMinutes=&lang=` | `RoutePlanResponseSchema` (`theme`: `type:<kod>`, `era:<kod>` ya da `network:<eser id>`; `start`: `lat,lng`; `maxMinutes` 15–600, varsayılan 120) |
+| `GET /chat/status` | `ChatStatusResponseSchema` (`available: false` iken sohbet girişleri gizlenir) |
+| `POST /chat` | İstek `ChatRequestSchema` (`message` 1–500 karakter, `assetId?`, `history` en çok 6 tur, `lang?`), yanıt `ChatResponseSchema` (`answer` içindeki `[n]` işaretleri `citations[].ref`'e karşılık gelir; `grounded: false` ise cevap kaynaksızdır; gezi sorusunda `attachments.trip`) |
 | `POST /auth/anonymous` | İstek `AnonymousSessionRequestSchema` (`nickname`), yanıt `AnonymousSessionResponseSchema` (`user`, `token`) |
 | `GET /me` 🔒 | `AppUserSchema` |
 | `GET /me/contributions?limit=` 🔒 | `MyContributionsResponseSchema` (kendi katkıların ve moderasyon durumu) |
@@ -41,6 +44,7 @@ Hata yanıtları her zaman `{ error: { code, message } }` biçimindedir: `INVALI
 Ziyaretçi Nabzı uçlarında ayrıca: `INVALID_BODY` (400), `UNAUTHORIZED` (401: token yok ya da geçersiz),
 `USER_BANNED`, `FORBIDDEN` (403), `CONTRIBUTION_NOT_FOUND`, `USER_NOT_FOUND` (404), `ALREADY_REVIEWED` (409),
 `CONTRIBUTION_LIMIT` (429: kullanıcı başına saatte 5 katkı).
+Asistanda ayrıca: `INVALID_BODY` (400), `RATE_LIMITED` (429: IP başına dakikada 10 soru), `ASSISTANT_UNAVAILABLE` (503: model tanımlı değil ya da cevap vermiyor), `ASSISTANT_BUSY` (503: aynı anda en çok 2 soru işlenir; biraz sonra tekrar denenir).
 Ayrıntılı ve denenebilir belge: API çalışırken `http://localhost:3000/docs`.
 
 ## İstemci için hızlı başlangıç

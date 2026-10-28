@@ -51,6 +51,13 @@ services:
       ASSET_VISIBILITY: published
       # Only Caddy reaches the API (private Docker network); the rate limit keys on the client IP it forwards.
       TRUST_PROXY: uniquelocal
+      # AI assistant; empty turns it off. Ollama on the same machine: http://host.docker.internal:11434/v1
+      ASSISTANT_BASE_URL: ${ASSISTANT_BASE_URL:-}
+      ASSISTANT_MODEL: ${ASSISTANT_MODEL:-}
+      ASSISTANT_API_KEY: ${ASSISTANT_API_KEY:-}
+    # Lets the container reach a model served on the host (Docker Desktop has it already; Linux needs this).
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     read_only: true
     tmpfs:
       - /tmp

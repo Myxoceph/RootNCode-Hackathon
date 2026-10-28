@@ -53,6 +53,12 @@ const EnvSchema = z.object({
   RATE_LIMIT_MAX: z.coerce.number().int().min(0).default(120),
   // Open-Meteo base URL for current weather (no API key); empty turns weather off.
   OPEN_METEO_URL: z.union([z.literal(""), z.url()]).default("https://api.open-meteo.com"),
+  // AI assistant: an OpenAI-compatible endpoint (Ollama: http://<host>:11434/v1) and its model name.
+  // Empty turns the assistant off; GET /chat/status then reports it unavailable.
+  ASSISTANT_BASE_URL: z.union([z.literal(""), z.url()]).default(""),
+  ASSISTANT_MODEL: z.string().default(""),
+  // Only for hosted providers; Ollama needs none. Never logged.
+  ASSISTANT_API_KEY: z.string().default(""),
 });
 
 export type Env = z.infer<typeof EnvSchema>;
