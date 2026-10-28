@@ -11,7 +11,7 @@ import {
   walkMinutes,
   type PlannerCandidate,
 } from "../src/modules/planner/planner.ts";
-import { adviceFor, conditionOf, createWeatherService } from "../src/modules/weather/weather.service.ts";
+import { adviceFor, conditionOf, createWeatherService, forecastDays } from "../src/modules/weather/weather.service.ts";
 
 const ORIGIN: Point = { lat: 40.18, lng: 29.06 };
 
@@ -197,5 +197,62 @@ describe("weather", () => {
 
     const malformed = createWeatherService({ baseUrl: "https://weather.test", fetch: async () => new Response("{}") });
     expect(await malformed.current(ORIGIN)).toBeNull();
+  });
+
+  const hours = (date: string, probabilities: Array<number | null>) => ({
+    time: probabilities.map((_, h) => `${date}T${String(h).padStart(2, "0")}:00`),
+    precipitation_probability: probabilities,
+  });
+  // Rain at 06:00 and 70% at 15:00 on the first day; 10% all day on the second.
+  const day1 = hours("2026-10-28", Array.from({ length: 24 }, (_, h) => (h === 15 ? 70 : h === 6 ? 90 : 0)));
+  const day2 = hours("2026-10-29", Array.from({ length: 24 }, () => 10));
+  const forecastBody = {
+    daily: {
+      time: ["2026-10-28", "2026-10-29", "2026-10-30"],
+      weather_code: [61, 2, null],
+      temperature_2m_max: [17.4, 21, 19],
+      temperature_2m_min: [10.3, 12, 11],
+      precipitation_probability_max: [90, 10, 5],
+    },
+    hourly: {
+      time: [...day1.time, ...day2.time],
+      precipitation_probability: [...day1.precipitation_probability, ...day2.precipitation_probability],
+    },
+  };
+
+  it("reads the daily forecast and the afternoon chance of rain", () => {
+    // The third day has no weather code and is dropped.
+    expect(forecastDays(forecastBody)).toEqual([
+      {
+        date: "2026-10-28", highC: 17.4, lowC: 10.3, precipitationProbability: 90, condition: "rain", weatherCode: 61,
+        afternoonPrecipitationProbability: 70, afternoonRain: true,
+      },
+      {
+        date: "2026-10-29", highC: 21, lowC: 12, precipitationProbability: 10, condition: "cloudy", weatherCode: 2,
+        afternoonPrecipitationProbability: 10, afternoonRain: false,
+      },
+    ]);
+  });
+
+  it("fetches the forecast once per hour and never throws", async () => {
+    const fetch = vi.fn(async (_url: URL | RequestInfo, _init?: RequestInit) => new Response(JSON.stringify(forecastBody)));
+    let clock = 0;
+    const service = createWeatherService({ baseUrl: "https://weather.test", fetch, now: () => clock, forecastTtlMs: 1_000 });
+
+    expect(await service.forecast(ORIGIN)).toHaveLength(2);
+    const url = new URL(String(fetch.mock.calls[0]?.[0]));
+    expect(url.searchParams.get("hourly")).toBe("precipitation_probability");
+    expect(url.searchParams.get("forecast_days")).toBe("3");
+    await service.forecast(ORIGIN);
+    expect(fetch).toHaveBeenCalledTimes(1);
+    clock = 1_001;
+    await service.forecast(ORIGIN);
+    expect(fetch).toHaveBeenCalledTimes(2);
+
+    const failing = createWeatherService({
+      baseUrl: "https://weather.test",
+      fetch: async () => new Response("down", { status: 503 }),
+    });
+    expect(await failing.forecast(ORIGIN)).toBeNull();
   });
 });
