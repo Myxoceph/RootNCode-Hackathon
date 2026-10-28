@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { AssetSummarySchema, ContractVersionSchema, LabeledCodeSchema, LangSchema } from "./asset.schema";
+import { CityDishSchema } from "./gastronomy.schema";
 
 /**
  * Vakıf Travel Planner & Hava Durumu (module 4): current weather for a city
@@ -153,8 +154,8 @@ export const TripMealItemSchema = z.strictObject({
   /** "Öğle molası" / "Tatlı durağı" in the response language. */
   label: z.string().min(1),
   minutes: z.int().positive(),
-  /** The city's dish for this break; null until the gastronomy data is in. */
-  dish: z.null(),
+  /** A local dish for this break (a `main` for lunch, a `dessert` for dessert); null when the city has none. */
+  dish: CityDishSchema.nullable(),
 });
 
 export const TripItemSchema = z.discriminatedUnion("kind", [TripStopItemSchema, TripMealItemSchema]);
