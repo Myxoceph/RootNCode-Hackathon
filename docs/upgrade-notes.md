@@ -7,6 +7,24 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-28 · Ortam sesi kayıtları için altyapı (migration, sözleşme 0.3.4)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **veri ekibi (H9)**, **uygulama ekibi**
+
+1. Migration'ı uygula ve veriyi içe aktar:
+   ```bash
+   npm run db:deploy --workspace @vagabonds/api
+   npm run db:import
+   ```
+
+Değişenler:
+- Yeni veri dosyası `data/sounds.json` (şema `data/schema/sound.schema.json`). Şimdilik boş.
+  - Bir kayıt eklemek için: dosyayı `sounds/<anahtar>.mp3` olarak bucket'a yükle (`rclone copy`, `data/README.md` §8), sonra `sounds.json`'a ekle.
+  - Eklenecek bilgiler: başlık, süre, kayda göre yazılmış zamanlı altyazılar, lisans (CC0 ya da CC BY), yazar, kaynak sayfası.
+  - Son olarak `validate.py` ve `db:import` çalıştır.
+- Eser detayında `ambientSound.recording` (`url`, `captions`, `credit`), ayrıca yeni uç `GET /meta/sounds`.
+- Uygulama: Kayıt gelince ses adresi ve altyazılar API'den alınabilir. O zaman `audio/sounds.ts`'deki adres kurma ve `content/capsules.ts`'deki altyazılar kaldırılabilir. `recording` `null` iken yedek ses aynen çalışır.
+
 ## 2026-10-28 · Yöresel lezzetler (migration, sözleşme 0.3.3)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **veri ekibi**, **uygulama ekibi**

@@ -95,6 +95,7 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 | `GET /meta/enums` | Filtre ve rozet kod listeleri |
 | `GET /routes/plan`, `GET /weather` | Vakıf Travel Planner: tematik yürüyüş rotası, anlık hava durumu ve 3 günlük tahmin (Open-Meteo) |
 | `GET /routes/trip` | Yarım, bir ya da iki günlük gezi: önemli eserler önce, hava tahminine göre sıralı, öğle ve tatlı molalarında yöresel lezzetlerle |
+| `GET /meta/sounds` | Sesli Zaman Kapsülü: yayındaki ortam sesi kayıtları (altyazı ve lisansla); eser detayında `ambientSound.recording` |
 | `GET /cities/:code/dishes` | Yöresel Kültür & Gastronomi: ilin coğrafi işaret tescilli yöresel lezzetleri, kaynaklı |
 | `POST /auth/anonymous`, `GET /me` | Takma adla anonim oturum (token) |
 | `POST /assets/:id/contributions`, `GET /assets/:id/pulse` | Ziyaretçi Nabzı: katkı gönderme ve onaylanmış katkılar |
