@@ -25,7 +25,7 @@ from psycopg.types.json import Jsonb
 from db_rows import (ASSET_TABLES, DATA, GENERATED, SHARED_TABLES, TABLES, asset_rows_processed_media, load_all, shared_rows)
 
 PK = {"region": ["code"], "city": ["code"], "asset_type": ["code"], "era": ["code"], "relation_type": ["code"],
-      "timeline_event_type": ["code"], "source": ["id"]}
+      "timeline_event_type": ["code"], "source": ["id"], "city_dish": ["id"]}
 # Bir eser yeniden içe aktarılınca silinip yeniden yazılan alt tablolar (FK sırasına göre silme sırası)
 DB_GENERATED = {"asset": {"created_at", "updated_at"}, "media": {"id", "created_at", "updated_at"},
                 "media_variant": {"media_id"}, "asset_media": {"media_id"}, "source_citation": {"id"},
@@ -76,6 +76,8 @@ def import_all(con):
     for table, rows in shared_rows().items():
         for row in rows:
             insert(cur, types, table, row, conflict=PK[table])
+    # Şehir dosyasından çıkarılan lezzet DB'de de kalmasın (başka tablo ona bağlı değil).
+    cur.execute("DELETE FROM city_dish WHERE NOT (id = ANY(%s))", ([r["id"] for r in shared_rows()["city_dish"]],))
 
     skipped_media = 0
     for a in assets:

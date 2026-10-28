@@ -264,13 +264,14 @@ model asset_type {
 }
 
 model city {
-  code        String  @id
+  code        String      @id
   region_code String
-  plate       Int?    @db.SmallInt
+  plate       Int?        @db.SmallInt
   label_tr    String
   label_en    String?
   asset       asset[]
-  region      region  @relation(fields: [region_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  region      region      @relation(fields: [region_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  city_dish   city_dish[]
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
@@ -406,6 +407,7 @@ model source {
   url             String?
   is_official     Boolean           @default(false)
   extra           Json              @default("{}")
+  city_dish       city_dish[]
   media           media[]
   source_citation source_citation[]
 }
@@ -472,4 +474,33 @@ model app_user {
   banned_at             DateTime?      @db.Timestamptz(6)
   reviewedContributions contribution[] @relation("contribution_reviewed_byToapp_user")
   contributions         contribution[] @relation("contribution_user_idToapp_user")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model city_dish {
+  id                     String   @id
+  city_code              String
+  sort_order             Int      @db.SmallInt
+  kind                   String
+  name_tr                String
+  name_en                String?
+  description_tr         String
+  description_en         String?
+  story_tr               String?
+  story_en               String?
+  district               String?
+  gi_portal_id           Int
+  gi_registration_number String
+  gi_registered_on       DateTime @db.Date
+  gi_type                String
+  gi_registrant          String
+  gi_document_url        String
+  source_id              String
+  source_url             String?
+  confidence             String
+  status                 String
+  city                   city     @relation(fields: [city_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  source                 source   @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([city_code, sort_order], map: "city_dish_city_idx")
 }

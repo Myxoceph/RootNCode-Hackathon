@@ -71,7 +71,9 @@ data/
 ├── enums.json                 # sabit listeler → lookup tabloları
 ├── sources.json               # kaynaklar (kitaplar, foto arşivi) → source tablosu
 ├── schema/eser.schema.json    # eser JSON'unun JSON Schema tanımı
+├── schema/sehir.schema.json   # şehir dosyasının (yöresel lezzetler) JSON Schema tanımı
 ├── eserler/<il>/<ilçe>/<id>.json   # her eser bir dosya → asset + alt tablolar
+├── sehirler/<il>.json         # ilin yöresel lezzetleri, coğrafi işaret tesciliyle → city_dish
 ├── tools/
 │   ├── validate.py            # şema + çapraz kontrol (veri ekibi her değişiklikte çalıştırır)
 │   ├── media_pipeline.py      # fotoğrafları indirir, sürümlerini üretir, manifesti yazar
@@ -254,6 +256,32 @@ CREATE TABLE source (
   is_official boolean NOT NULL DEFAULT false,
   extra       jsonb   NOT NULL DEFAULT '{}' -- yazarlar, fotoğrafçılar vb.
 );
+
+-- ─────────────────────────────── Yöresel lezzetler (sehirler/<il>.json)
+CREATE TABLE city_dish (
+  id                     text PRIMARY KEY CHECK (id ~ '^[a-z]+-[a-z0-9]+(-[a-z0-9]+)*$'),  -- 'bursa-pideli-kofte'
+  city_code              text NOT NULL REFERENCES city(code),
+  sort_order             smallint NOT NULL,          -- dosyadaki sıra
+  kind                   text NOT NULL CHECK (kind IN ('main','meze','dessert','street')),
+  name_tr                text NOT NULL,
+  name_en                text,
+  description_tr         text NOT NULL,
+  description_en         text,
+  story_tr               text,                       -- geçmişi / hangi günlerde yapıldığı
+  story_en               text,
+  district               text,                       -- coğrafi sınırı bir ilçeyse
+  gi_portal_id           integer NOT NULL,           -- ci.turkpatent.gov.tr/cografi-isaretler/detay/<id>
+  gi_registration_number text NOT NULL,
+  gi_registered_on       date NOT NULL,
+  gi_type                text NOT NULL CHECK (gi_type IN ('mense','mahrec')),
+  gi_registrant          text NOT NULL,
+  gi_document_url        text NOT NULL,              -- sicil belgesi (PDF)
+  source_id              text NOT NULL REFERENCES source(id),
+  source_url             text,
+  confidence             confidence NOT NULL,
+  status                 text NOT NULL CHECK (status IN ('draft','in_review','published'))
+);
+CREATE INDEX city_dish_city_idx ON city_dish (city_code, sort_order);
 
 -- ─────────────────────────────── Eser
 CREATE TABLE asset (
@@ -642,6 +670,7 @@ Bir tabloya sütun eklemek ya da yeni tablo açmak için:
 |---|---|
 | `enums.json` → `regions`, `cities`, `asset_types`, `eras`, `relation_types`, `timeline_event_types` | aynı adlı lookup tabloları (`code`, `label.tr` → `label_tr`…) |
 | `sources.json` → `sources[]` | `source` (tanımsız alanlar `extra` jsonb'ye) |
+| `sehirler/<il>.json` → `dishes[]` | `city_dish` (`city` → `city_code`, dizideki sıra → `sort_order`, `geographical_indication.*` → `gi_*`, `source_refs[0]` → `source_id`, `source_url`). Taslaklar da içe aktarılır; dosyadan çıkarılan lezzet DB'den silinir. |
 | `id`, `meta.status`, `type`, `era`, `parent_id`, `tags`, `secondary_types` | `asset.id`, `status`, `type_code`, `era_code`, `parent_id`, `tags`, `secondary_types` |
 | `name`, `subtitle`, `summary` | `asset.name_tr/en`, `subtitle_tr/en`, `summary_tr/en` |
 | `alternate_names` | `asset.alternate_names` (jsonb, olduğu gibi) |
