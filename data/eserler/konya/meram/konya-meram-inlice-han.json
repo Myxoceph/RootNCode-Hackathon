@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-inlice-han",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi, banî ve dönemi kitapta yok (dating: null, era: null); inşa kitâbesi Kokar Çeşmesi'nde olduğundan oradan okunmalı.",
+      "Kokar Çeşmesi'nin kaydı ids.md'de yok; ilişki yazılmadı ve kitâbenin metni kitapta verilmiyor.",
+      "Yapının ölçüleri kitapta yok."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "İnlice Han",
+    "en": "İnlice Inn"
+  },
+  "subtitle": {
+    "tr": "Yalnızca batı duvarı ayakta kalan, \"Yıkık Han\" olarak da bilinen kalıntı han",
+    "en": "Ruined inn of which only the west wall stands, also known as the \"Ruined Inn\""
+  },
+  "alternate_names": [
+    {
+      "tr": "Yıkık Han",
+      "en": "The Ruined Inn"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "han",
+    "yıkık",
+    "kalıntı",
+    "moloz taş",
+    "İnlice"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Mesudiye Mevkii, İnlice Kasabası",
+    "address": "İnlice Kasabası yolu üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "254"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram'da Mesudiye Mevkii'nde, İnlice Kasabası yolu üzerindeki kalıntı han. Günümüze yalnızca batı duvarı ulaşmıştır; temel izlerinden dikdörtgen planlı ve moloz taştan yapıldığı anlaşılır. İnşa kitâbesi İnlice'deki Kokar Çeşmesi üzerindedir.",
+    "en": "A ruined inn on the road to İnlice Town at the Mesudiye locality in Meram. Only its west wall survives; foundation traces show a rectangular plan and rubble stone construction. Its construction inscription is on the Kokar Fountain in İnlice."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Durum",
+        "en": "Location and Condition"
+      },
+      "body": {
+        "tr": "Han, Meram'da Mesudiye Mevkii'nde İnlice Kasabası yolu üzerindedir. Günümüzde kalıntı hâlinde olduğundan \"Yıkık Han\" olarak da bilinir. Yapının inşa kitâbesi hanın üzerinde değil, İnlice'deki Kokar Çeşmesi üzerindedir.",
+        "en": "The inn is on the İnlice Town road at the Mesudiye locality in Meram. It is in ruins today and is also known as the \"Ruined Inn\". Its construction inscription is not on the inn itself but on the Kokar Fountain in İnlice."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "254"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Kalıntılar",
+        "en": "Remains"
+      },
+      "body": {
+        "tr": "Handan günümüze yalnızca batı duvarı ulaşmıştır. Temel seviyesindeki izlerden hanın dikdörtgen planlı olduğu, mevcut duvarlardan da moloz taştan yapıldığı anlaşılır.",
+        "en": "Only the west wall of the inn has survived. Traces at foundation level show a rectangular plan and the existing walls show it was built of rubble stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "254"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "254"
+        }
+      ]
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Moloz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "254"
+        }
+      ]
+    },
+    {
+      "key": "ayakta_kalan",
+      "label": {
+        "tr": "Ayakta kalan bölüm",
+        "en": "Surviving part"
+      },
+      "value": "Batı duvarı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "254"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han yıkık durumdadır; ayakta kalan tek bölüm, moloz taştan örülmüş batı duvarıdır. Zemin düzeyindeki izler yapının dikdörtgen planlı olduğunu gösterir.",
+      "en": "The inn is in ruins; the only standing part is the west wall of rubble stone. Traces at ground level show a rectangular plan."
+    },
+    "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
