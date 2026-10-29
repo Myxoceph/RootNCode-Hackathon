@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-karatay-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Eğitim Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kitâbenin metni ve mealı kitapta yok; fotoğraftan okunmalı.",
+      "Alâeddin Camii ve Aksaray Sultan Hanı ids tablosunda yok; same_architect ilişkisi yazılmadı.",
+      "Celaleddin Karatay türbesi ids tablosunda ayrı bir kayıt olarak yok; bu kayıtta anlatılıyor, ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
+      "Müzenin ziyaret bilgileri (saat, bilet) kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architect",
+        "note": "Kitap, mimarın Muhammed bin Havlan el-Dımışkî olduğunu kesin söylemiyor ('çalıştığı düşünülmektedir'); bu yüzden 'probable'."
+      },
+      {
+        "field": "dating",
+        "note": "Kitâbe tarihi H. 649 / M. 1251; vakfiye H. 651 / M. 1253-54'tür. İkisi ayrı olaylar olarak saklandı, çelişki yok."
+      },
+      {
+        "field": "location.district",
+        "note": "Kitabın içindekiler sayfası eseri Karatay başlığı altında veriyor; eserin kendi sayfasındaki adres Selçuklu. Adrese göre Selçuklu yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Karatay Medresesi",
+    "en": "Karatay Madrasa"
+  },
+  "subtitle": {
+    "tr": "Emir Celaleddin Karatay'ın çini mozaik kubbeli medresesi; bugün Çini Eserler Müzesi",
+    "en": "Emir Celaleddin Karatay's tile-mosaic domed madrasa, now the Museum of Tile Works"
+  },
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "medrese",
+    "Selçuklu",
+    "Celaleddin Karatay",
+    "taçkapı",
+    "çini mozaik",
+    "Çini Eserler Müzesi",
+    "kapalı avlulu",
+    "türbe",
+    "Alâeddin Tepesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": null,
+    "address": "Ankara Caddesi No. 1, Alâeddin Tepesi'nin kuzey eteği",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "87"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 649 / M. 1251",
+      "en": "AH 649 / AD 1251"
+    },
+    "start_year": 1251,
+    "end_year": 1251,
+    "hijri_year": 649,
+    "century": 13,
+    "basis": {
+      "tr": "Taçkapısı üzerindeki kitâbeye göre H. 649 / M. 1251'de inşa edilmiştir; vakfiyesi H. 651 / M. 1253-54 tarihlidir.",
+      "en": "Built in AH 649 / AD 1251 according to the inscription on its portal; its foundation deed is dated AH 651 / AD 1253-54."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "87-88"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Emir Celaleddin Karatay",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "87"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Muhammed bin Havlan el-Dımışkî",
+    "candidates": [],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "87"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 651 / M. 1253-54",
+      "excerpt": {
+        "tr": "'binası yüksek, sahası geniş, zemini güzel, göze ferahlık, insana neşe verici, sanki cennetin köşklerinde bulunan bir medrese'",
+        "en": "'a madrasa with a high building, a wide area, a beautiful ground, a relief to the eye, a joy to the person, as if located in the mansions of heaven'"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "87-88"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Müderris (hoca) ve muid'in (yardımcı) Hanefî mezhebinden olması şart koşulmuş, şeriat, hadis, usûl, fürû ve hilaf ilimlerine hâkim olmaları istenmiştir. Öğrenciler için mezhep şartı yoktur. Haftanın beş günü ders yapılır, Salı ve Cuma tatildir.",
+      "en": "The mudarris (teacher) and muid (assistant) were required to be Hanafi and to have command of sharia, hadith, usul, furu and khilaf sciences. There is no sect requirement for students. Classes are held five days a week, with Tuesday and Friday as holidays."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "88"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Emir Celaleddin Karatay'ın atabeylik döneminde H. 649 / M. 1251'de, ağabeyi Kemaleddin Rumtaş'ın Kemaliye Medresesi'nin karşısında yaptırdığı, tek eyvanlı, kapalı avlulu medrese. Suriye etkili mermer taçkapısı ve 12 m çaplı çini mozaik kubbesiyle tanınır; 1955'ten beri Çini Eserler Müzesi'dir. Güneybatı köşedeki oda banînin türbesidir.",
+    "en": "A single-iwan madrasa with a closed courtyard built in AH 649 / AD 1251 by Emir Celaleddin Karatay during his atabey period, across from his elder brother Kemaleddin Rumtaş's Kemaliye Madrasa. It is known for its Syrian-influenced marble portal and its 12 m wide tile-mosaic dome; it has been the Museum of Tile Works since 1955. The room in the southwest corner is the founder's tomb."
+  },
+  "sections": [
+    {
+      "id": "konum-tarih",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Banî ve Tarih",
+        "en": "Location, Founder and Date"
+      },
+      "body": {
+        "tr": "Medrese, Ankara Caddesi No. 1'de, Alâeddin Tepesi'nin kuzey eteğindedir; bu çevre Selçuklu çağında iç kaleye ait Sultan Kapısı ve yakındaki diğer eğitim yapılarıyla birlikte önemli bir merkez-meydan oluşturuyordu. Taçkapısı üzerindeki kitâbeye göre H. 649 / M. 1251'de inşa edilmiştir. Banisi Emir Celaleddin Karatay, kendi adını taşıyan medreseyi atabeyliği zamanında, büyük kardeşi Emir Sipehsâlar Kemaleddin Rumtaş'a ait Kemaliye Medresesi'nin hemen karşısında yaptırmıştır.",
+        "en": "The madrasa is at Ankara Street No. 1, at the northern foot of Alâeddin Hill; in the Seljuk period this area formed an important central square together with the Sultan Gate of the inner castle and other nearby educational buildings. According to the inscription on its portal it was built in AH 649 / AD 1251. Its founder Emir Celaleddin Karatay had the madrasa bearing his name built during his atabey period, right across from the Kemaliye Madrasa of his elder brother Emir-Sipehsalar Kemaleddin Rumtaş."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "87"
+        }
+      ]
+    },
+    {
+      "id": "mimar",
+      "order": 2,
+      "title": {
+        "tr": "Mimar Üzerine",
+        "en": "On the Architect"
+      },
+      "body": {
+        "tr": "Medresenin sanatçı kitâbesi bulunmamasına karşın inşasında Alâeddin Camii'nin de mimarı olan Muhammed bin Havlan el-Dımışkî'nin çalıştığı düşünülmektedir. Alâeddin Camii kuzey taçkapısında izlenen iki renkli mermer kullanımı, 'zengi düğümleri' ve kapı sövelerinin süsleme kompozisyonu Karatay Medresesi taçkapısında da izlenir. Yine bu Şamlı mimarın eseri olan Aksaray Sultan Hanı'nın avlu girişindeki yan nişler de Karatay Medresesi taçkapısıyla benzer tasarım anlayışına sahiptir.",
+        "en": "Although the madrasa has no artist inscription, Muhammed bin Havlan el-Dımışkî, who was also the architect of the Alâeddin Mosque, is thought to have worked on its construction. The two-color marble, 'zengi knots' and ornamental composition of the door jambs seen on the northern portal of the Alâeddin Mosque are also seen on the portal of the Karatay Madrasa. The side niches at the courtyard entrance of the Aksaray Sultan Inn, also the work of this Damascene architect, have a similar design approach to the Karatay Madrasa portal."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "87-88"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "order": 3,
+      "title": {
+        "tr": "Vakfiye ve Eğitim Şartları",
+        "en": "Foundation Deed and Teaching Conditions"
+      },
+      "body": {
+        "tr": "H. 651 / M. 1253-54 tarihli vakfiyede Celaleddin Karatay'ın 'binası yüksek, sahası geniş, zemini güzel, göze ferahlık, insana neşe verici, sanki cennetin köşklerinde bulunan bir medrese' bina ettiği belirtilir. Müderris (hoca) ve muid'in (yardımcı) Hanefî mezhebinden olması şart koşulmuş, şeriat, hadis, usûl, fürû ve hilaf ilimlerine hâkim olmaları istenmiştir. Öğrenciler için mezhep şartı yoktur; medresede haftanın beş günü ders ve iki gün (Salı ve Cuma) tatil yapılması kurala bağlanmıştır.",
+        "en": "The foundation deed dated AH 651 / AD 1253-54 states that Celaleddin Karatay built 'a madrasa with a high building, a wide area, a beautiful ground, a relief to the eye, a joy to the person, as if located in the mansions of heaven'. The mudarris (teacher) and muid (assistant) were required to be Hanafi and to have command of sharia, hadith, usul, furu and khilaf sciences. There is no sect requirement for students; the madrasa's rule is classes five days a week and two days of holiday (Tuesday and Friday)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "87-88"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari ve Süsleme",
+        "en": "Architecture and Decoration"
+      },
+      "body": {
+        "tr": "Karışık taş ve tuğla kâgir duvarlarda bağlayıcı olarak harç ve hatıl niteliğinde ahşap kullanılmıştır; özgün kubbe ve geçiş elemanlarında tuğla işçiliği görülür. Taçkapıdaki beyaz ve gri mermerlerden oyma, kakma ve geçme tekniğiyle oluşturulmuş süsleme Suriye etkisindedir. Göz alıcı iç dekorasyonda çini mozaik, ajur ve plaka kaplama olarak kullanılmıştır. Kapalı avlulu medrese, avlu duvarlarına oturan 12 m çaplı yarım küre bir kubbeyle örtülüdür; kubbeye köşelerden yelpaze biçimli pandantiflerle geçilir ve ortasında aydınlık feneri vardır. Tek eyvanlı medresede taçkapı doğu cephenin güney köşesine çekilmiş, böylece eyvan-taçkapı simetri ekseninin dışına çıkılmıştır; doğu cephe kuzey kenarındaki içe doğru bir pahla kırılır.",
+        "en": "Mortar and wood used as tie beams serve as binding material in the masonry walls of mixed stone and brick; brickwork is seen in the original dome and transition elements. The decoration on the portal, in white and gray marble with carving, inlay and interlocking, is under Syrian influence. In the eye-catching interior decoration, tile is used as mosaic, openwork lattice and plate covering. The closed-courtyard madrasa is covered by a 12 m diameter hemispherical dome resting on the courtyard walls; the dome is reached from the corners through fan-shaped pendentives and has a lantern in its centre. In this single-iwan madrasa the portal is moved to the southern corner of the east façade, outside the iwan-portal axis of symmetry; the east façade is broken by an inward chamfer on its north edge."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "88-89"
+        }
+      ]
+    },
+    {
+      "id": "turbe-muze",
+      "order": 5,
+      "title": {
+        "tr": "Türbe ve Müze",
+        "en": "Tomb and Museum"
+      },
+      "body": {
+        "tr": "XX. yüzyıl başlarında medresenin avlu, eyvan ve güneybatı köşedeki türbe bölümü dışındaki mekânları yıkılmış durumdaydı. Onarım ve değişikliklerle bugüne gelen yapının kuzey ve güney kenarlarında karşılıklı dörder öğrenci odası, bölme duvarları kaldırılarak beşik tonozlu sergi salonları hâline gelmiştir. Eyvanın güneyindeki oda Celaleddin Karatay'ın türbesidir ve Türk üçgenleriyle geçilen balıksırtı istifli tuğla kubbeyle kapalıdır. Yapı 1955'ten beri 'Çini Eserler Müzesi' olarak kullanılmaktadır; müzede II. Kılıçarslan Köşkü, Kubadabad Sarayı ve Konya'daki bazı Selçuklu yapılarına (Sırçalı Medrese ve Abdülaziz Mescidi gibi) ait çini, alçı ve cam eserler ile Kütahya ve Çanakkale seramiklerinden örnekler sergilenir.",
+        "en": "By the beginning of the 20th century the madrasa's spaces other than the courtyard, the iwan and the tomb section in the southwest corner had been demolished. The four facing student rooms on the north and south sides of the building, which survives with repairs and changes, are now barrel-vaulted exhibition halls with the partition walls removed. The room south of the iwan is the tomb of Celaleddin Karatay, covered by a herringbone-laid brick dome on Turkish triangles. The building has been the 'Museum of Tile Works' since 1955; it displays tile, plaster and glass works from the Kılıçarslan II Mansion, Kubadabad Palace and some Seljuk buildings in Konya (such as Sırçalı Madrasa and Abdülaziz Masjid), as well as examples of Kütahya and Çanakkale ceramics."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "90"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe_capi",
+      "label": {
+        "tr": "Kubbe çapı",
+        "en": "Dome diameter"
+      },
+      "value": 12,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "89"
+        }
+      ]
+    },
+    {
+      "key": "ogrenci_odasi_her_kenar",
+      "label": {
+        "tr": "Kuzey ve güney kenarlardaki öğrenci odası (her kenarda)",
+        "en": "Student rooms on each of north and south sides"
+      },
+      "value": 4,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "90"
+        }
+      ]
+    },
+    {
+      "key": "haftalik_ders_gunu",
+      "label": {
+        "tr": "Haftalık ders günü",
+        "en": "Class days per week"
+      },
+      "value": 5,
+      "unit": "gün",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "88"
+        }
+      ],
+      "note": {
+        "tr": "Salı ve Cuma tatil.",
+        "en": "Tuesday and Friday are holidays."
+      }
+    },
+    {
+      "key": "muze_yili",
+      "label": {
+        "tr": "Çini Eserler Müzesi olarak kullanıma başlama yılı",
+        "en": "Year it began to be used as the Museum of Tile Works"
+      },
+      "value": 1955,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "90"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Emir Celaleddin Karatay",
+      "role": {
+        "tr": "Banî (atabey); türbesi medresededir",
+        "en": "Patron (atabey); his tomb is in the madrasa"
+      }
+    },
+    {
+      "name": "Kemaleddin Rumtaş",
+      "role": {
+        "tr": "Banînin ağabeyi; karşıdaki Kemaliye Medresesi'nin banisi",
+        "en": "Founder's elder brother; patron of the Kemaliye Madrasa across the street"
+      }
+    },
+    {
+      "name": "Muhammed bin Havlan el-Dımışkî",
+      "role": {
+        "tr": "Muhtemel mimar (Alâeddin Camii mimarı)",
+        "en": "Probable architect (architect of the Alâeddin Mosque)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tackapi-kitabesi",
+      "location": {
+        "tr": "Taçkapısı üzerinde",
+        "en": "Above the portal"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 649,
+        "gregorian": "1251"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "87"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca kitâbenin H. 649 / M. 1251 tarihini verdiğini aktarıyor; metni, dili, yazısı ve mealı yok.",
+        "en": "The book only reports that the inscription gives the date AH 649 / AD 1251; its text, language, script and translation are not given."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1251",
+      "year": 1251,
+      "date": null,
+      "hijri": "649",
+      "type": "construction",
+      "title": {
+        "tr": "Medrese inşa edildi (H. 649 / M. 1251)",
+        "en": "The madrasa was built (AH 649 / AD 1251)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "87"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1253",
+      "year": 1253,
+      "date": null,
+      "hijri": "651",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi (H. 651 / M. 1253-54)",
+        "en": "The foundation deed was drawn up (AH 651 / AD 1253-54)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "88"
+        }
+      ],
+      "note": {
+        "tr": "Kitap M. 1253-54 aralığını veriyor; yıl aralığın ilk yılıdır.",
+        "en": "The book gives the range 1253-54; the year is the start of that range."
+      }
+    },
+    {
+      "id": "muze-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Çini Eserler Müzesi olarak kullanılmaya başlandı",
+        "en": "Began to be used as the Museum of Tile Works"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "90"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "tackapi",
+      "title": {
+        "tr": "Suriye etkili taçkapı",
+        "en": "Syrian-influenced portal"
+      },
+      "hint": {
+        "tr": "Beyaz ve gri mermerde oyma, kakma, geçme; iki renkli mermer ve zengi düğümleri.",
+        "en": "Carving, inlay and interlocking in white and gray marble; two-colour marble and 'zengi knots'."
+      },
+      "section_id": "mimar"
+    },
+    {
+      "feature": "kubbe",
+      "title": {
+        "tr": "12 m'lik çini mozaik kubbe",
+        "en": "12 m tile-mosaic dome"
+      },
+      "hint": {
+        "tr": "Yelpaze pandantifli, ortasında fenerli yarım küre kubbe.",
+        "en": "Hemispherical dome with fan pendentives and a central lantern."
+      },
+      "section_id": "mimari"
+    },
+    {
+      "feature": "turbe",
+      "title": {
+        "tr": "Celaleddin Karatay'ın türbesi",
+        "en": "Tomb of Celaleddin Karatay"
+      },
+      "hint": {
+        "tr": "Eyvanın güneyindeki oda; balıksırtı tuğla kubbe.",
+        "en": "The room south of the iwan; herringbone brick dome."
+      },
+      "section_id": "turbe-muze"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-karatay-kemaliye-kucuk-karatay-medresesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Banînin ağabeyi Kemaleddin Rumtaş'ın Kemaliye Medresesi'nin hemen karşısında yaptırılmıştır.",
+        "en": "Built right across from the Kemaliye Madrasa of the founder's elder brother Kemaleddin Rumtaş."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "87"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese, Alâeddin Tepesi'nin kuzey eteğinde, kapalı avlulu ve tek eyvanlıdır. Taçkapı beyaz ve gri mermerle bezelidir ve doğu cephenin güney köşesine çekilmiştir. Avlu, 12 m çaplı fenerli yarım küre bir kubbeyle örtülüdür; kuzey ve güneyde karşılıklı dörder öğrenci odası beşik tonozlu sergi salonlarıdır. Eyvanın güneyindeki oda, balıksırtı tuğla kubbeli Celaleddin Karatay türbesidir.",
+      "en": "The madrasa lies at the northern foot of Alâeddin Hill, with a closed courtyard and a single iwan. The portal is decorated in white and gray marble and is set at the southern corner of the east façade. The courtyard is covered by a 12 m hemispherical dome with a lantern; four facing student rooms on the north and south are barrel-vaulted exhibition halls. The room south of the iwan is the tomb of Celaleddin Karatay with a herringbone brick dome."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-tas-medrese",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Eğitim Yapıları",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 108-109 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Taçkapı kitâbesinin Arapça metni ve meali kitapta yok; eklenmeli.",
+      "Yaptıran 'Emir-i Dad Hüseyin oğlu Ali' ile vezir Sahip Ata Fahreddin Ali'nin aynı kişi olup olmadığı kitapta açıkça söylenmiyor (başlıkta ve s. 109'da 'Sahip Ata' deniyor); gözden geçirilmeli.",
+      "Vakfiyesi yok; waqf alanı boş bırakıldı.",
+      "Medresenin türbesi (üst örtüsünde çiniden söz ediliyor) ve darülkurra/darülhuffaz için ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
+      "Mimar kitapta belirtilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Taçkapı kitâbesi yaptıranı 'Emir-i Dad Hüseyin oğlu Ali' olarak verir; başlık ve s. 109 yapıyı vezir Sahip Ata Fahreddin Ali'nin medresesi olarak anar. İkisinin özdeşliği kitapta açıkça yazılmadığı için founder kitâbedeki ad ile yazıldı, Sahip Ata ile bağ ilişkide 'probable' olarak işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Taş Medrese",
+    "en": "Taş Madrasa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Halkalı Medrese",
+      "en": "Halkalı Madrasa"
+    },
+    {
+      "tr": "Atabek Gazi Medresesi",
+      "en": "Atabek Gazi Madrasa"
+    },
+    {
+      "tr": "Sahip Ata Medresesi (Akşehir)",
+      "en": "Sahip Ata Madrasa (Akşehir)"
+    },
+    {
+      "tr": "Akşehir Arkeoloji Müzesi",
+      "en": "Akşehir Archaeology Museum"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [
+    "mescit"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "dört eyvanlı",
+    "açık avlulu",
+    "taçkapı",
+    "Sahip Ata",
+    "Akşehir Arkeoloji Müzesi",
+    "Friedrich Sarre"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Altunkalem",
+    "address": "Altunkalem Mahallesi, Dr. Aziz Perkûn Sokak, No. 8",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "108"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 648 Muharrem / M. 1250 Nisan-Mayıs",
+      "en": "Muharram 648 AH / April-May 1250 AD"
+    },
+    "start_year": 1250,
+    "end_year": 1250,
+    "hijri_year": 648,
+    "century": 13,
+    "basis": {
+      "tr": "Taçkapı üzerindeki üç satırlık Arapça inşa kitâbesi.",
+      "en": "Three-line Arabic construction inscription on the portal."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "108"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ali (Emir-i Dad Hüseyin oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "108"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Akşehir'de, taçkapıdaki kitâbeye göre 1250'de Emir-i Dad Hüseyin oğlu Ali'nin yaptırdığı, dört eyvanlı ve açık avlulu medrese. 2012-2016 restorasyonunda giriş cephesi ve taçkapısı yeniden kurulan yapı, Akşehir Arkeoloji Müzesi olarak kullanılmıştır.",
+    "en": "A four-iwan, open-courtyard madrasa in Akşehir built in 1250 by Ali, son of Emir-i Dad Hüseyin, according to the portal inscription. Its entrance façade and portal were reconstructed in the 2012-2016 restoration; it has served as the Akşehir Archaeology Museum."
+  },
+  "sections": [
+    {
+      "id": "yapim",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapımı",
+        "en": "Location and Construction"
+      },
+      "body": {
+        "tr": "Medrese Altunkalem Mahallesi, Dr. Aziz Perkûn Sokak No. 8'dedir; \"Halkalı\", \"Atabek Gazi\" veya \"Taş Medrese\" adlarıyla da bilinir. Taçkapısı üzerindeki üç satırlık Arapça inşa kitâbesine göre H. 648 Muharrem / M. 1250 Nisan-Mayıs tarihinde Emir-i Dad (Adliye Bakanı) Hüseyin oğlu Ali tarafından yaptırılmıştır. Vakfiyesi bulunmayan medrese, XVI. yüzyıl Osmanlı belgelerinde hankâh, türbe, mescit, çeşme ve imaretten oluşan bir külliye içinde zikredilir; bugün mevcut olmayan hankâh, imaret ve çeşme medresenin tam karşısında yer alıyordu.",
+        "en": "The madrasa is at Altunkalem Neighbourhood, Dr. Aziz Perkûn Street No. 8, and is also known as \"Halkalı\", \"Atabek Gazi\" or \"Taş\" Madrasa. According to the three-line Arabic construction inscription on its portal it was built in Muharram 648 AH / April-May 1250 AD by Ali, son of Emir-i Dad (Minister of Justice) Hüseyin. It has no foundation charter; 16th-century Ottoman documents mention it within a complex of khanikah, tomb, masjid, fountain and soup kitchen. The khanikah, soup kitchen and fountain, no longer extant, stood directly opposite the madrasa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "108"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-restorasyon",
+      "order": 2,
+      "title": {
+        "tr": "Onarımlar ve Restorasyon",
+        "en": "Repairs and Restoration"
+      },
+      "body": {
+        "tr": "Medrese birçok onarım ve değişiklikle günümüze gelmiş, özellikle giriş cephesi ve bu bölümdeki mekânlar özgün özelliklerini büyük ölçüde yitirmiştir. 1895'te Friedrich Sarre'nin bir bütün olarak fotoğrafladığı taçkapı, 1910'da dönemin müftüsü Hacı Efendi'nin onarım girişimi sırasında numaralandırılarak söktürülmüş, ancak yeniden kurulamadan kendi hâline bırakılmıştır. Giriş cephesi ve taçkapı rekonstrüksiyonu bir asır sonra, 2012-2016 arasındaki geniş kapsamlı restorasyonda gerçekleştirilmiştir.",
+        "en": "The madrasa has come down with many repairs and changes and has largely lost its original features, especially the entrance façade and the spaces in that section. The portal, photographed as a whole by Friedrich Sarre in 1895, was numbered and dismantled in 1910 during the repair attempt of the then müftü Hacı Efendi, but was abandoned before it could be rebuilt. The reconstruction of the entrance façade and portal was carried out only a century later, in the comprehensive restoration of 2012-2016."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "108"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Malzeme",
+        "en": "Plan and Materials"
+      },
+      "body": {
+        "tr": "Doğu-batı doğrultusunda uzunlamasına dikdörtgen bir alana oturan medrese açık avlulu, dört eyvanlı ve tek katlıdır. Avlunun güney kanadı bilinmeyen bir tarihte değiştiği için plan simetrik değildir. Batıda giriş cephesinin kuzey köşesine bitişik mescit ve minare, güney köşeye eklenmiş bir darülkurra/darülhuffaz bulunur. Taş ve tuğlayla yapılmış medresenin revak kemerlerini taşıyan sütun ve başlıklar devşirmedir. Giriş ve ana eyvan cephelerinde yoğun mermer kullanılmış; türbenin üst örtüsünde, mescit mihrabında ve minare gövdesinde çini görülür. Özgün hâlinde dört eyvanlı olduğu anlaşılan avlunun giriş eyvanı ve iki yanındaki muhtemel servis odaları son restorasyona kadar tamamen yıkıktı.",
+        "en": "The madrasa sits on a rectangular area elongated east-west, with an open courtyard, four iwans and a single storey. The south wing of the courtyard was altered at an unknown date, so the plan is not symmetrical. In the west there is a masjid and minaret adjoining the northern corner of the entrance façade and a darülkurra/darülhuffaz added at the southern corner. Built of stone and brick, the columns and capitals supporting the portico arches are spolia. Marble is used extensively on the entrance and main iwan façades; tile is seen on the upper cover of the tomb, the masjid mihrab and the minaret shaft. The entrance iwan and the likely service rooms on both sides were completely ruined until the last restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "109"
+        }
+      ]
+    },
+    {
+      "id": "kullanim",
+      "order": 4,
+      "title": {
+        "tr": "Kullanım ve Müzecilik",
+        "en": "Use and Museum"
+      },
+      "body": {
+        "tr": "Osmanlı belgelerine göre Akşehir Sahip Ata Medresesi 1522-1538 yıllarında fıkıh, kelâm ve hadis bilimlerinin okutulduğu elli akçeli bir harici medreseydi. Eğitim XIX. yüzyıl ortalarına kadar sürmüş, sonra 1922'ye kadar bir tür yurt/yatakhane olarak kullanılmıştır. 1950'de İmaret Camii'nde toplanan eski eserlerin buraya getirilmesiyle sergi alanı olmuş, 8 Haziran 1965'te \"Akşehir Arkeoloji Müzesi\" olarak hizmete başlamıştır. Anadolu Selçuklu Devleti'nin son dönemine damgasını vuran vezir Sahip Ata Fahreddin Ali'nin Akşehir'deki medresesi olarak anılan yapı, vakıf yapıları arasında Konya'da açık avlulu plan tipinin günümüzde mevcut bir diğer örneğidir.",
+        "en": "According to Ottoman documents, Akşehir Sahip Ata Madrasa was an external (harici) madrasa with a fifty-akçe stipend where fiqh, theology and hadith were taught between 1522 and 1538. Education continued until the mid-19th century, after which it served as a kind of dormitory until 1922. In 1950 the old artefacts collected in the İmaret Mosque were brought here, making it an exhibition space, and on 8 June 1965 it began to serve as the \"Akşehir Archaeology Museum\". Described as the Akşehir madrasa of Sahip Ata Fahreddin Ali, the famous vizier of the last period of the Anatolian Seljuk State, it is another extant example in Konya of the open-courtyard plan among foundation buildings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "109"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Eyvan sayısı",
+        "en": "Number of iwans"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "109"
+        }
+      ],
+      "note": {
+        "tr": "Özgün hâlinde dört eyvanlı olduğu anlaşılıyor.",
+        "en": "Understood to have been four-iwan originally."
+      }
+    },
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of storeys"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "109"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_satir_sayisi",
+      "label": {
+        "tr": "İnşa kitâbesi satır sayısı",
+        "en": "Construction inscription lines"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "108"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ali (Emir-i Dad Hüseyin oğlu)",
+      "role": {
+        "tr": "Banî; kitâbeye göre yaptıran",
+        "en": "Founder according to the inscription"
+      }
+    },
+    {
+      "name": "Friedrich Sarre",
+      "role": {
+        "tr": "1895'te taçkapıyı bir bütün olarak fotoğrafladı",
+        "en": "Photographed the portal as a whole in 1895"
+      }
+    },
+    {
+      "name": "Hacı Efendi",
+      "role": {
+        "tr": "Müftü; 1910'da taçkapıyı söktüren onarım girişimini yaptı",
+        "en": "Müftü; undertook the 1910 repair attempt in which the portal was dismantled"
+      }
+    },
+    {
+      "name": "Sahip Ata Fahreddin Ali",
+      "role": {
+        "tr": "Selçuklu veziri; kitap medreseyi onun Akşehir'deki medresesi olarak anar",
+        "en": "Seljuk vizier; the book calls this his madrasa in Akşehir"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Taçkapı üzerinde, üç satır",
+        "en": "On the portal, three lines"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 648,
+        "gregorian": "1250 Nisan-Mayıs"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "108"
+        }
+      ],
+      "note": {
+        "tr": "Kitâbe metni ve meali kitapta verilmiyor; yalnızca yaptıranın ve tarihin bilgisi aktarılıyor.",
+        "en": "The book gives neither the text nor a translation; only the builder and date are reported."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1250,
+      "date": null,
+      "hijri": "648 Muharrem",
+      "type": "construction",
+      "title": {
+        "tr": "Medrese inşa edildi",
+        "en": "Madrasa built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "108"
+        }
+      ]
+    },
+    {
+      "id": "sarre-1895",
+      "year": 1895,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Friedrich Sarre taçkapıyı bir bütün olarak fotoğrafladı",
+        "en": "Friedrich Sarre photographed the portal as a whole"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "108"
+        }
+      ]
+    },
+    {
+      "id": "tackapi-sokum-1910",
+      "year": 1910,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Taçkapı numaralandırılarak söküldü, yeniden kurulmadı",
+        "en": "Portal numbered and dismantled, not rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "108"
+        }
+      ]
+    },
+    {
+      "id": "harici-medrese-1522",
+      "year": 1522,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Osmanlı belgelerinde elli akçeli harici medrese (1522-1538)",
+        "en": "Recorded in Ottoman documents as an external madrasa (1522-1538)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "109"
+        }
+      ],
+      "note": {
+        "tr": "Belgeler 1522-1538 yıllarını kapsıyor.",
+        "en": "The documents cover 1522-1538."
+      }
+    },
+    {
+      "id": "sergi-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İmaret Camii'ndeki eski eserler buraya getirilerek sergi alanı oldu",
+        "en": "Became an exhibition space when old artefacts from the İmaret Mosque were brought here"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "109"
+        }
+      ]
+    },
+    {
+      "id": "muze-1965",
+      "year": 1965,
+      "date": "1965-06-08",
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "\"Akşehir Arkeoloji Müzesi\" olarak hizmete başladı",
+        "en": "Opened as the \"Akşehir Archaeology Museum\""
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "109"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Giriş cephesi ve taçkapı rekonstrüksiyonunu içeren geniş restorasyon (2012-2016)",
+        "en": "Comprehensive restoration including reconstruction of the entrance façade and portal (2012-2016)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "108"
+        }
+      ],
+      "note": {
+        "tr": "Restorasyon 2012-2016 arasında yürütüldü.",
+        "en": "The restoration ran from 2012 to 2016."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Taş Medrese, doğu-batı doğrultusunda uzanan dikdörtgen bir alanda, ortasında açık bir avlu bulunan tek katlı bir yapıdır. Avlunun etrafında dört eyvan ve revaklar yer alır; revakları taşıyan sütunlar eski yapılardan devşirmedir. Giriş cephesinin batıdaki kuzey köşesine bitişik bir mescit ve minare, güney köşesine eklenmiş bir darülhuffaz vardır. Giriş ve ana eyvan cephelerinde bol mermer, mescit mihrabı ve minare gövdesinde çini kullanılmıştır. Taçkapı yüzyıl önce sökülmüş, 2012-2016 restorasyonunda yeniden kurulmuştur.",
+      "en": "The Taş Madrasa is a single-storey building on a rectangular plot elongated east-west, with an open courtyard in the middle. Four iwans and porticoes surround the courtyard; the columns carrying the porticoes are spolia. A masjid and minaret adjoin the northern corner of the western entrance façade and a darülhuffaz is attached at the southern corner. Marble is used extensively on the entrance and main iwan façades, and tile on the masjid mihrab and the minaret shaft. The portal was dismantled a century ago and rebuilt in the 2012-2016 restoration."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

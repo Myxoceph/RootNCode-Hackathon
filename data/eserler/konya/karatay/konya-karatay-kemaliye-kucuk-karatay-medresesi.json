@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-kemaliye-kucuk-karatay-medresesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Eğitim Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye, kitabe ve mimar bilgisi kitapta yok.",
+      "Kemaliye'nin tam dönemi (XIII. yüzyıl 2. çeyrek) tahmin; Karatay Medresesi vakfiyesindeki yer tarifine dayanıyor.",
+      "Konya Mevlevî Dergâhı ve Kız Öğretmen Okulu (Taş Bina) ids tablosunda yok; ilişki yazılmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architect",
+        "note": "Mimar kitapta belirtilmiyor; name null bırakıldı ('confidence' alanı bilinmeme durumunu ifade eder)."
+      },
+      {
+        "field": "name",
+        "note": "Bölüm başlığı 'Kemaliye (Küçük Karatay) Medresesi'; ana ad 'Kemaliye Medresesi', parantez içi 'Küçük Karatay' alternate_names'e alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kemaliye Medresesi",
+    "en": "Kemaliye Madrasa"
+  },
+  "subtitle": {
+    "tr": "Kemaleddin Rumtaş'ın medresesinden günümüze kalan tek eyvan",
+    "en": "The only surviving iwan of Kemaleddin Rumtaş's madrasa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Küçük Karatay Medresesi",
+      "en": "Küçük Karatay Madrasa",
+      "note": "Kitapta parantez içinde verilen ad"
+    },
+    {
+      "tr": "Kemaliye (Küçük Karatay) Medresesi",
+      "en": "Kemaliye (Küçük Karatay) Madrasa",
+      "note": "Bölüm başlığı"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "medrese",
+    "Selçuklu",
+    "eyvan kalıntısı",
+    "mescit eyvanı",
+    "çini",
+    "Karatay kardeşler",
+    "Ankara Caddesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Ankara Caddesi üzerinde, Kız Öğretmen Okulu'nun (Konya Büyükşehir Belediyesi Taş Bina) güneybatı köşesi; (Büyük) Karatay Medresesi'nin karşısı",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "82"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyılın ikinci çeyreği (muhtemelen); 1251'den önce",
+      "en": "Probably the second quarter of the 13th century; before 1251"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "(Büyük) Karatay Medresesi'nin (1251) vakfiyesindeki yer tarifine göre Karatay Medresesi'nden önce ve muhtemelen XIII. yüzyılın ikinci çeyreğinde inşa edilmiştir.",
+      "en": "According to the location description in the foundation charter of the (Great) Karatay Madrasa (1251), it was built before the Karatay Madrasa, probably in the second quarter of the 13th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "82"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kemaleddin Rumtaş (Turumtaş)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "82"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "82"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Selçuklu sipehsâları Kemaleddin Rumtaş'ın yaptırdığı, kardeşi Emir Celaleddin Karatay'ın Karatay Medresesi'nin karşısındaki medresenin günümüze kalan tek ana eyvanı (mescit eyvanı). 1939'da yol genişletmesiyle avlusu kaldırılmış, eyvan bugün turistik eşya satış mağazası olarak kullanılmaktadır.",
+    "en": "The only surviving main iwan (masjid iwan) of the madrasa built by the Seljuk sipehsalar Kemaleddin Rumtaş, across from the Karatay Madrasa of his brother Emir Celaleddin Karatay. Its courtyard was removed in 1939 for road widening; the iwan is now used as a tourist goods shop."
+  },
+  "sections": [
+    {
+      "id": "tarih-bani",
+      "order": 1,
+      "title": {
+        "tr": "Banî, Konum ve Tarih",
+        "en": "Founder, Location and Date"
+      },
+      "body": {
+        "tr": "'Kemaliye' ya da 'Küçük Karatay' olarak da bilinen Selçuklu devri medresesinden günümüze gelebilen tek eyvan kalıntısı, Karatay'da Ankara Caddesi üzerinde Kız Öğretmen Okulu'nun (Konya Büyükşehir Belediyesi Taş Bina) güneybatı köşesindedir. Selçuklu Devleti'nde sipehsâlarlık (ordu komutanı) görevinde bulunmuş Kemaleddin Rumtaş (Turumtaş) tarafından yaptırılan medrese, hemen karşısındaki, ağabeyi Emir Celaleddin Karatay'a ait (Büyük) Karatay Medresesi'nin (1251) vakfiyesindeki yer tarifine göre ondan önce ve muhtemelen XIII. yüzyılın ikinci çeyreğinde inşa edilmiştir.",
+        "en": "The only surviving iwan ruin of the Seljuk-period madrasa also known as 'Kemaliye' or 'Küçük Karatay' stands on Ankara Street in Karatay, at the southwest corner of the Girls' Teacher Training School (Konya Metropolitan Municipality Stone Building). The madrasa was built by Kemaleddin Rumtaş (Turumtaş), who served as sipehsalar (army commander) in the Seljuk State; according to the location description in the foundation charter of the (Great) Karatay Madrasa (1251), belonging to his elder brother Emir Celaleddin Karatay right across the street, it was built before it, probably in the second quarter of the 13th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "82"
+        }
+      ]
+    },
+    {
+      "id": "gecmis",
+      "order": 2,
+      "title": {
+        "tr": "Geçmiş ve Kaybolan Bölümler",
+        "en": "History and Lost Parts"
+      },
+      "body": {
+        "tr": "Alâeddin Tepesi'nden çekilmiş XX. yüzyıl başlarına ait bir fotoğrafta, bugünkü eyvanın önünde batıya doğru uzanan dikdörtgen planlı bir avlu ile çevresinde sıralanan kerpiçten tek katlı medrese odaları görülür. XIX. yüzyılın sonlarında müderrisliğin Konya Mevlevî Dergâhı'na geçtiği ve Postnişin Abdülvahid Çelebi'nin (1858-1907) müderrisliği sırasında metruk haldeki öğrenci hücrelerinin yenilendiği bilinmektedir. 1939'da Ankara Caddesi'ni genişletmek için avlu bölümü tamamen kaldırılmış, yalnız yol kenarındaki özgün ana eyvan korunmuştur.",
+        "en": "A photograph from the beginning of the 20th century taken from Alâeddin Hill shows a rectangular courtyard extending west in front of today's iwan and single-storey adobe madrasa rooms lined up around it. It is known that at the end of the 19th century the teaching post of the madrasa passed to the Konya Mevlevi Dervish Lodge and that the abandoned student cells were renewed during the tenure of Postnişin Abdülvahid Çelebi (1858-1907). In 1939 the courtyard was completely removed to widen Ankara Street; only the original main iwan at the roadside was preserved."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "82-83"
+        }
+      ]
+    },
+    {
+      "id": "eyvan",
+      "order": 3,
+      "title": {
+        "tr": "Eyvan",
+        "en": "The Iwan"
+      },
+      "body": {
+        "tr": "Eyvan içten 4,70 x 5,40 m ölçülerinde kareye yakın dikdörtgen planlıdır ve beşik tonozu yıkılmıştır. 1,30 m kalınlığındaki kâgir duvarlar moloz ağırlıklı taş ve tuğladandır. Güney duvarı ortasındaki yarım daire planlı mihrap nişine göre mevcut kalıntı medresenin mescit eyvanı olmalıdır. Duvarların üst kısmı tuğla ve çinilerle süslüdür: turkuaz sırlı dikdörtgen çinilerle diyagonal kırık hatlı geometrik istif; pencere kemerinin köşeliklerinde patlıcan moru ve turkuaz çini mozaik süsleme dikkat çeker. Eyvan günümüzde turistik eşya satış mağazası olarak kullanılmaktadır; Konya'nın kaybolan Selçuklu kent dokusu ve eğitim yapılarına dair önemli bir arkeolojik belgedir.",
+        "en": "Inside, the iwan is a near-square rectangle of 4.70 x 5.40 m and its barrel vault has collapsed. The 1.30 m thick masonry walls are of rubble-based stone and brick. According to the semicircular mihrab niche in the middle of the south wall, the surviving remains must be the madrasa's masjid iwan. The upper walls are decorated with brick and tile: a geometric arrangement of turquoise glazed rectangular tiles in diagonal broken lines, and eggplant-purple and turquoise tile mosaic in the spandrels of the window arch. The iwan is used today as a tourist goods shop; it is an important archaeological document of Konya's lost Seljuk urban fabric and educational buildings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "83"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "eyvan_olcusu",
+      "label": {
+        "tr": "Eyvanın iç ölçüsü",
+        "en": "Interior size of the iwan"
+      },
+      "value": "4,70 x 5,40",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "83"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 1.3,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "83"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kaldirma_yili",
+      "label": {
+        "tr": "Avlunun kaldırıldığı yıl",
+        "en": "Year the courtyard was removed"
+      },
+      "value": 1939,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "83"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kemaleddin Rumtaş (Turumtaş)",
+      "role": {
+        "tr": "Banî; Selçuklu sipehsâları (ordu komutanı)",
+        "en": "Patron; Seljuk sipehsalar (army commander)"
+      }
+    },
+    {
+      "name": "Emir Celaleddin Karatay",
+      "role": {
+        "tr": "Banînin ağabeyi; karşıdaki Karatay Medresesi'nin banisi",
+        "en": "Elder brother of the founder; founder of the Karatay Madrasa across the street"
+      }
+    },
+    {
+      "name": "Abdülvahid Çelebi (1858-1907)",
+      "role": {
+        "tr": "Mevlevî postnişin; müderrisliği sırasında öğrenci hücreleri yenilendi",
+        "en": "Mevlevi postnişin; student cells renewed during his tenure as teacher"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "avlu-kaldirildi-1939",
+      "year": 1939,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Ankara Caddesi'ni genişletmek için avlu bölümü tamamen kaldırıldı; yalnız ana eyvan kaldı",
+        "en": "The courtyard was completely removed to widen Ankara Street; only the main iwan remained"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "83"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Mescit eyvanının mihrabı",
+        "en": "Mihrab of the masjid iwan"
+      },
+      "hint": {
+        "tr": "Güney duvarın ortasında yarım daire planlı mihrap nişi.",
+        "en": "Semicircular mihrab niche in the middle of the south wall."
+      },
+      "section_id": "eyvan"
+    },
+    {
+      "feature": "cini",
+      "title": {
+        "tr": "Turkuaz ve patlıcan moru çini",
+        "en": "Turquoise and eggplant-purple tile"
+      },
+      "hint": {
+        "tr": "Pencere kemerinin köşeliklerine bakın.",
+        "en": "Look at the spandrels of the window arch."
+      },
+      "section_id": "eyvan"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Günümüze yalnız medresenin ana eyvanı kalmıştır; Ankara Caddesi'nin kenarında, iç ölçüsü yaklaşık 4,70 x 5,40 m olan, kareye yakın dikdörtgen planlı bir mekândır. Güney duvarın ortasında yarım daire mihrap nişi vardır; üst duvarlarda turkuaz çinilerle geometrik süsleme görülür. Bugün turistik eşya satan bir mağaza olarak kullanılmaktadır.",
+      "en": "Only the madrasa's main iwan survives: a near-square room about 4.70 x 5.40 m inside, at the edge of Ankara Street. A semicircular mihrab niche is in the middle of the south wall; the upper walls carry geometric decoration in turquoise tile. It is used today as a tourist goods shop."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

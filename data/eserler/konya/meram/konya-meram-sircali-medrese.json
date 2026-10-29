@@ -1,0 +1,592 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-sircali-medrese",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Eğitim Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Tokat Gök Medrese kayıtlı olmadığından ilişki yazılmadı; bilgi bölüm metninde.",
+      "Berlin'deki kitabenin (Env. No. I. 907) transliterasyonu kitapta yok; müze kaydından bulunabilir.",
+      "İnşa kitâbesinin (7 satır, Arapça) metni ve mealı kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[usta-kitabesi-sag-berlin].translation",
+        "note": "Kitap Farsça beyti meal başlığıyla değil, anlatım içinde 'yazmaktadır' diyerek aktarıyor; bu aktarım meal olarak alındı."
+      },
+      {
+        "field": "inscriptions[usta-kitabesi-sag-berlin]",
+        "note": "İngilizce metin 'Env. No I 907' yerine envanter numarasını 'EnV' diye yazıyor; Türkçe 'Env. No. I. 907' esas alındı."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap 'M. 1242-43' veriyor; başlangıç 1242, bitiş 1243 olarak alındı (yıllık aralık)."
+      },
+      {
+        "field": "sections[mimari].materials",
+        "note": "İngilizce metin 'mainly decorative bricks and tiles, also known as Kiçi Muhsine or Sille, were used as stone materials' diye bozuk bir cümle kuruyor; Türkçe esas alındı (taş ocaklarının adı Kiçi Muhsine/Sille)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sırçalı Medrese",
+    "en": "Sırçalı Madrasa"
+  },
+  "subtitle": {
+    "tr": "Tus'lu Mehmed'in çini mozaik eyvanıyla ünlü Selçuklu fıkıh medresesi",
+    "en": "A Seljuk fiqh madrasa famed for Mehmed of Tus's tile-mosaic iwan"
+  },
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "medrese",
+    "Selçuklu",
+    "çini mozaik",
+    "açık avlulu",
+    "iki eyvanlı",
+    "usta kitabesi",
+    "Tus'lu Mehmed",
+    "fıkıh"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Gazi Alemşah",
+    "address": "Gazi Alemşah Mahallesi, Sırçalı Medrese Caddesi No. 16",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "75"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 640 / M. 1242-43",
+      "en": "AH 640 / AD 1242-43"
+    },
+    "start_year": 1242,
+    "end_year": 1243,
+    "hijri_year": 640,
+    "century": 13,
+    "basis": {
+      "tr": "Taçkapısı üzerindeki yedi satırlık inşa kitâbesindeki H. 640 / M. 1242-43 tarihi; Sultan II. Gıyaseddin Keyhüsrev (1236-1246) dönemi.",
+      "en": "The date AH 640 / AD 1242-43 in the seven-line construction inscription above the portal; reign of Sultan Gıyaseddin Keyhüsrev II (1236-1246)."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "75"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Emir Bedreddin Müslih",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "75"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Mehmed bin Mehmed bin Osman el-Tûsi (Tus'lu Mehmet)",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "75"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "İnşa kitâbesine göre medrese yalnızca Hanefî mezhebine mensup âlim ve talebeler için vakfedilmiştir. Medresenin vakfiyesi yoktur.",
+      "en": "According to the construction inscription the madrasa was dedicated only to scholars and students of the Hanafi sect. The madrasa has no foundation charter."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "75, 77"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan II. Gıyaseddin Keyhüsrev döneminde (H. 640 / M. 1242-43) Emir Bedreddin Müslih'in fıkıh eğitimi için yaptırdığı, açık avlulu ve iki eyvanlı Selçuklu medresesi. Çini mozaik süslemesi ve Tus'lu Mehmed'in usta kitâbesiyle tanınır; 1955-1960 arasında kapsamlı restorasyon-rekonstrüksiyon geçirmiştir.",
+    "en": "An open-courtyard, two-iwan Seljuk madrasa built in AH 640 / AD 1242-43 by Emir Bedreddin Müslih for fiqh education under Sultan Gıyaseddin Keyhüsrev II. It is known for its tile-mosaic decoration and the master inscription of Mehmed of Tus; it underwent extensive restoration-reconstruction in 1955-1960."
+  },
+  "sections": [
+    {
+      "id": "tarih-banisi",
+      "order": 1,
+      "title": {
+        "tr": "Yapılışı, Banî ve Kitâbeler",
+        "en": "Construction, Founder and Inscriptions"
+      },
+      "body": {
+        "tr": "Taçkapısı üzerindeki H. 640 / M. 1242-43 tarihli inşa kitâbesine göre medrese Sultan II. Gıyaseddin Keyhüsrev (1236-1246) döneminde Emir Bedreddin Müslih tarafından fıkıh eğitimi için yaptırılmıştır. Selçuklu sülüsüyle hakkedilen yedi satırlık Arapça kitâbe, medresenin yalnız Hanefî mezhebine mensup âlim ve talebeler için vakfedildiğini bildirir. Eyvan kemerinin sol kanadındaki 'Amel-i Mehmed bin Mehmed bin Osman el-Tûsi' kitâbesi, mimari tasarım ve dekorasyonun 'Tus'lu Mehmet' adlı sanatçıya ait olduğunu belgeler. Sağ taraftaki, Farsça bir beyitten oluşan kitâbe Osmanlı'nın son yıllarında yerinden sökülüp yurt dışına çıkarılmış olup bugün Berlin İslam Eserleri Müzesi'ndedir (Env. No. I. 907); Tus'lu Mehmet'in ağzından 'dünyada bir eşi olmayan bu nakşı ben yaptım. Ben kalmıyorum, fakat bu eser hatıra olarak kalacak' der. Bu ifade yapının o zamana kadar benzerinin bulunmadığına da işaret eder.",
+        "en": "According to the construction inscription dated AH 640 / AD 1242-43 on its portal, the madrasa was built by Emir Bedreddin Müslih for fiqh education during the reign of Sultan Gıyaseddin Keyhüsrev II (1236-1246). The seven-line Arabic inscription in Seljuk thuluth states that the madrasa was dedicated only to scholars and students of the Hanafi sect. The inscription 'Amel-i Mehmed bin Mehmed bin Osman el-Tûsi' on the left wing of the iwan arch documents that the architectural design and decoration belong to the artist 'Mehmet of Tus'. The inscription on the right, a Persian couplet, was removed in the last years of the Ottoman Empire and taken abroad; it is now in the Berlin Museum of Islamic Art (Inv. No. I. 907). In it Mehmet of Tus says: 'I made this embroidery, which has no equal in the world. I shall not remain, but this work will remain as a memory.' This also indicates that no similar structure existed before it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "75"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Malzeme",
+        "en": "Architecture and Materials"
+      },
+      "body": {
+        "tr": "Medrese günümüze 1955-1960 arasındaki kapsamlı restorasyon-rekonstrüksiyonla ulaşmıştır. Yaklaşık 25,00 x 30,00 m ölçülerinde, doğu-batı doğrultusunda uzun dikdörtgen bir alana oturur; açık avlulu ve iki katlıdır, biri giriş, diğeri mescit eyvanı olmak üzere iki eyvanlıdır. Konya'nın yaklaşık 5 km batısındaki ('Kiçi Muhsine' veya 'Sille') ocaklardan çıkarılan taş ağırlıklı olup dekoratif amaçlı tuğla ve çini de kullanılmıştır; temel, dış duvarlar ve ayaklarda taş, revak ve eyvan cephelerinde tuğla ile çini egemendir. Taçkapı nitelikli taş süslemesiyle dikkat çeker; doğu cephenin ortasında yukarı ve öne taşırılmıştır, sivri kemerli giriş sahanlığı etrafında geometrik ve bitkisel motifli dört sıra bordürden oluşan ters 'U' biçimli bir çerçeveyle kuşatılmıştır. Giriş dışındaki cepheler kaba yonu ve moloz karışık taş örgülüdür; kuzey ve güney cephelerde beşer mazgal tipi zemin kat penceresi kesme taşla çerçevelenmiştir, üzerlerinde birinci kat odalarının büyük dikdörtgen pencereleri yekpare taş sövelerle kuşatılmıştır.",
+        "en": "The madrasa has survived thanks to the extensive restoration and reconstruction of 1955-1960. It sits on a longitudinal rectangular east-west area of about 25.00 x 30.00 m, with an open courtyard, two floors and two iwans, one the entrance and the other the masjid iwan. Stone from the quarries about 5 km west of Konya (known as 'Kiçi Muhsine' or 'Sille') predominates, with decorative brick and tile; stone dominates the foundation, outer walls and piers, while brick and tile dominate the portico and iwan façades. The portal stands out with fine stone decoration; it projects upward and forward in the middle of the east façade and is framed by an inverted U-shaped frame of four rows of geometric and floral borders around the pointed-arched entrance landing. The façades other than the entrance are of mixed rough-hewn and rubble stone; five loophole-type ground-floor windows on each of the north and south façades are framed with cut stone, and above them the large rectangular windows of the first-floor rooms are surrounded by monolithic stone jambs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "76-77"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ic",
+      "order": 3,
+      "title": {
+        "tr": "Avlu ve Eyvanlar",
+        "en": "Courtyard and Iwans"
+      },
+      "body": {
+        "tr": "Kareye yakın dikdörtgen planlı avlunun kuzey ve güney kanatlarında iki katlı revaklar, batıda mescit/yazlık dershane işlevli ana eyvan, eyvanın iki yanında kubbeyle örtülü birer oda/kışlık dershane yer alır. Avlunun ortasında klasik bir su ögesi olarak havuz bulunur. Konya Sırçalı Medrese İran geleneğine bağlı açık avlulu ve eyvanlı plan kurgusunu simetri ilkesiyle eksiksiz yansıtırken çini mozaik dekorasyonuyla Anadolu'ya has özellikler de ortaya koyar.",
+        "en": "The courtyard, of near-square rectangular plan, has two-storey porticoes on its north and south wings, a main iwan in the west serving as masjid/summer classroom, and a domed room/winter classroom on each side of the iwan. A pool stands in the middle of the courtyard as a classical water feature. Konya Sırçalı Madrasa fully reflects the Iranian-tradition open-courtyard, iwan plan with the principle of symmetry, while its tile-mosaic decoration shows features unique to Anatolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "77, 80"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Onarım ve Restorasyon Geçmişi",
+        "en": "Repair and Restoration History"
+      },
+      "body": {
+        "tr": "Sırçalı Medrese kâgir olmasına karşın açık avlulu planı nedeniyle doğal tahribata açık bir yapıdır. Vakfiyesi bulunmayan medresenin Konya Şer'iye sicillerinde XVII. yüzyıl başlarından itibaren büyük onarımlara ihtiyaç duyduğu, 1629'da tamir gördüğü halde 1645'te ders yapılamaz duruma geldiği belirtilir. XIX. yüzyılda kuzey ve güney kanatlardaki öğrenci odaları kerpiçten yeniden inşa edilmiştir. Tevhid-i Tedrisat Kanunu'nun (1924) ilanından sonra kendi kaderine terk edilen medrese ancak 1954'ten sonra restore edilebilmiştir.",
+        "en": "Despite its masonry structure, Sırçalı Madrasa is vulnerable to natural destruction because of its open-courtyard plan. The Konya Shariyya records state that the madrasa, which has no foundation charter, needed major repairs from the beginning of the 17th century and, although repaired in 1629, became unfit for classes in 1645. In the 19th century the student rooms in the north and south wings were rebuilt in mud brick. Abandoned to its fate after the Tevhid-i Tedrisat Law (1924), it could be restored only after 1954."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "77"
+        }
+      ]
+    },
+    {
+      "id": "sanat-tarihi",
+      "order": 5,
+      "title": {
+        "tr": "Sanat Tarihindeki Yeri",
+        "en": "Place in Art History"
+      },
+      "body": {
+        "tr": "Mimari ve süsleme tarzı olarak yapıya en benzer örnek, medreseden otuz yıl kadar sonra inşa edilen Tokat Gök Medrese'dir (1270-77). Ana eyvandaki usta kitâbesi, 1235-1255 arasında Konya'da yapılan çok sayıdaki çinili eserin sanatçı sorunu için önemli bir referanstır. Aynı üslup özelliklerini gösteren Karatay Medresesi ana eyvanı (1251) ve Sırçalı Mescit mihrabı (XIII. yy. ortası) gibi eşsiz çini mozaik üretimlerin bu tarihlerde Konya'da kurulmuş bir atölye ortamında Horasanlı sanatçılarca geliştirildiği düşünülmektedir.",
+        "en": "The most similar example in architecture and decoration is the Tokat Gök Madrasa, built about thirty years after this one (1270-77). The master inscription on the main iwan is an important reference on the artist question of the many tiled works made in Konya between 1235 and 1255. Unique tile-mosaic works showing the same style, such as the main iwan of the Karatay Madrasa (1251) and the mihrab of the Sırçalı Masjid (mid-13th century), are thought to have been developed by Khorasan artists in a workshop environment set up in Konya at that time."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "80"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "alan",
+      "label": {
+        "tr": "Yaklaşık ölçü (doğu-batı x kuzey-güney)",
+        "en": "Approximate dimensions"
+      },
+      "value": "25,00 x 30,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "76"
+        }
+      ]
+    },
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "76"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Eyvan sayısı",
+        "en": "Number of iwans"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "76"
+        }
+      ]
+    },
+    {
+      "key": "mazgal_penceresi_her_cephe",
+      "label": {
+        "tr": "Kuzey ve güney cephelerde (her birinde) mazgal tipi zemin kat penceresi",
+        "en": "Loophole-type ground-floor windows on each of north and south façades"
+      },
+      "value": 5,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "76"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon_yillari",
+      "label": {
+        "tr": "Kapsamlı restorasyon-rekonstrüksiyon yılları",
+        "en": "Years of extensive restoration-reconstruction"
+      },
+      "value": "1955-1960",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "76"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Emir Bedreddin Müslih",
+      "role": {
+        "tr": "Banî",
+        "en": "Patron"
+      }
+    },
+    {
+      "name": "Mehmed bin Mehmed bin Osman el-Tûsi (Tus'lu Mehmet)",
+      "role": {
+        "tr": "Mimari tasarım ve dekorasyonun sanatçısı",
+        "en": "Artist of the architectural design and decoration"
+      }
+    },
+    {
+      "name": "Sultan II. Gıyaseddin Keyhüsrev",
+      "role": {
+        "tr": "Medresenin yapıldığı dönemin Selçuklu sultanı (1236-1246)",
+        "en": "Seljuk sultan at the time of construction (1236-1246)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Taçkapısı üzerinde",
+        "en": "Above the portal"
+      },
+      "language": "ar",
+      "script": "Selçuklu sülüsü",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 640,
+        "gregorian": "1242-43"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "75"
+        }
+      ],
+      "note": {
+        "tr": "Yedi satırlık inşa kitâbesi; kitapta yalnızca içeriği aktarılıyor (Sultan II. Gıyaseddin Keyhüsrev döneminde Emir Bedreddin Müslih'in fıkıh eğitimi için yaptırdığı, yalnız Hanefî âlim ve talebeler için vakfedildiği). Metni ve mealı verilmiyor.",
+        "en": "Seven-line construction inscription; the book gives only its content (built by Emir Bedreddin Müslih for fiqh education in the reign of Gıyaseddin Keyhüsrev II, dedicated only to Hanafi scholars and students). Its text and translation are not given."
+      }
+    },
+    {
+      "id": "usta-kitabesi-sol",
+      "location": {
+        "tr": "Eyvan kemerinin sol kanadında",
+        "en": "On the left wing of the iwan arch"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Amel-i Mehmed bin Mehmed bin Osman el-Tûsi",
+      "translation": null,
+      "author": "Mehmed bin Mehmed bin Osman el-Tûsi",
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "75"
+        }
+      ],
+      "note": {
+        "tr": "Usta kitâbesi; yapının mimari tasarım ve dekorasyonunun 'Tus'lu Mehmet'e ait olduğunu belgeler. Dili kitapta belirtilmiyor. Kitap ayrıca bir meal vermiyor.",
+        "en": "Master inscription documenting that the architectural design and decoration belong to 'Mehmet of Tus'. Its language is not named in the book, and the book gives no translation."
+      }
+    },
+    {
+      "id": "usta-kitabesi-sag-berlin",
+      "location": {
+        "tr": "Eyvan kemerinin sağ tarafında (sökülmüş; bugün Berlin İslam Eserleri Müzesi, Env. No. I. 907)",
+        "en": "On the right side of the iwan arch (removed; now Berlin Museum of Islamic Art, Inv. No. I. 907)"
+      },
+      "language": "fa",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Dünyada bir eşi olmayan bu nakşı ben yaptım. Ben kalmıyorum, fakat bu eser hatıra olarak kalacak.",
+        "en": "I made this embroidery, which has no equal in the world. I shall not remain, but this work will remain as a memory."
+      },
+      "author": "Tus'lu Mehmet",
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "75"
+        }
+      ],
+      "note": {
+        "tr": "Farsça bir beyitten oluşur; Osmanlı'nın son yıllarında yerinden sökülüp yurt dışına çıkarılmıştır. Çeviri kitabın verdiği anlatımdır, transliterasyonu kitapta yok.",
+        "en": "A Persian couplet, removed and taken abroad in the last years of the Ottoman Empire. The translation is the book's rendering; no transliteration is given in the book."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1242",
+      "year": 1242,
+      "date": null,
+      "hijri": "640",
+      "type": "construction",
+      "title": {
+        "tr": "Medrese yaptırıldı (H. 640 / M. 1242-43)",
+        "en": "The madrasa was built (AH 640 / AD 1242-43)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "75"
+        }
+      ],
+      "note": {
+        "tr": "Kitap M. 1242-43 aralığını veriyor; yıl aralığın ilk yılıdır.",
+        "en": "The book gives the range 1242-43; the year is the start of that range."
+      }
+    },
+    {
+      "id": "onarim-1629",
+      "year": 1629,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Medrese tamir gördü (Konya Şer'iye sicilleri)",
+        "en": "The madrasa was repaired (Konya Shariyya records)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "77"
+        }
+      ]
+    },
+    {
+      "id": "ders-yapilamaz-1645",
+      "year": 1645,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Medrese ders yapılamaz duruma geldi",
+        "en": "The madrasa became unfit for classes"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "77"
+        }
+      ]
+    },
+    {
+      "id": "tevhid-i-tedrisat-1924",
+      "year": 1924,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tevhid-i Tedrisat Kanunu sonrası medrese kendi kaderine terk edildi",
+        "en": "The madrasa was abandoned after the Tevhid-i Tedrisat Law"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "77"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon-rekonstrüksiyon (1955-1960)",
+        "en": "Extensive restoration and reconstruction (1955-1960)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "76-77"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 1955-1960 aralığını veriyor (s. 77'de 'ancak 1954'ten sonra restore edilebilmiştir'); yıl aralığın ilk yılıdır.",
+        "en": "The book gives 1955-1960 (p. 77 says 'restored only after 1954'); the year is the start of that range."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "usta-kitabesi",
+      "title": {
+        "tr": "Tus'lu Mehmed'in imzası",
+        "en": "Mehmed of Tus's signature"
+      },
+      "hint": {
+        "tr": "Ana eyvan kemerinin sol kanadında usta kitâbesini arayın.",
+        "en": "Look for the master inscription on the left wing of the main iwan arch."
+      },
+      "section_id": "tarih-banisi"
+    },
+    {
+      "feature": "tacikapi",
+      "title": {
+        "tr": "Taçkapı",
+        "en": "Portal"
+      },
+      "hint": {
+        "tr": "Ters 'U' biçimli, dört sıra bordürlü taş çerçeve.",
+        "en": "Inverted U-shaped stone frame with four rows of borders."
+      },
+      "section_id": "mimari"
+    },
+    {
+      "feature": "havuz",
+      "title": {
+        "tr": "Avlu havuzu",
+        "en": "Courtyard pool"
+      },
+      "hint": {
+        "tr": "Avlunun ortasında klasik su ögesi.",
+        "en": "A classical water feature in the courtyard centre."
+      },
+      "section_id": "avlu-ic"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-selcuklu-karatay-medresesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kitaba göre aynı üslup özelliklerini gösteren Karatay Medresesi ana eyvanı çini mozaiği, Konya'da kurulmuş bir atölyede Horasanlı sanatçılarca geliştirilmiş olabilir.",
+        "en": "According to the book, the tile mosaic of the Karatay Madrasa's main iwan, showing the same style, may have been developed by Khorasan artists in a workshop set up in Konya."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "80"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese doğu-batı doğrultulu dikdörtgen bir alandadır; doğu cephenin ortasındaki taçkapıdan girilir. Açık avlunun kuzey ve güneyinde iki katlı revaklar, batısında mescit işlevli ana eyvan ve iki yanında kubbeli birer oda yer alır; avlunun ortasında bir havuz vardır.",
+      "en": "The madrasa occupies an east-west rectangular plot and is entered through the portal in the middle of the east façade. The open courtyard has two-storey porticoes to the north and south, a masjid-function main iwan to the west with a domed room on each side, and a pool at its centre."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

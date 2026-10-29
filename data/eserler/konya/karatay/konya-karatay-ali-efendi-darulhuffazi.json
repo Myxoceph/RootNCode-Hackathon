@@ -1,0 +1,366 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-ali-efendi-darulhuffazi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Eğitim Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Şerafettin Camii ids tablosunda yok; ilişki yazılmadı.",
+      "Kitabe yok; vakfiye metni (VGM) elde edilirse waqf.deed genişletilmeli.",
+      "Yapının XV. yüzyıldaki işlevi (hafızlık/medrese) kitapta belge adlarından çıkarılıyor; kesin işlev teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "era",
+        "note": "Kitap yapıyı 'Beylikler dönemi mimarisinin genel hatlarını yansıtan' olarak niteliyor; enums.json'daki 'beylikler' kodu seçildi (1429 tarihli yapı için kesin dönem adı kitapta verilmiyor)."
+      },
+      {
+        "field": "dating",
+        "note": "Yapının kendi tarihi kitapta kesin değil; vakfiye tarihi (1429) yalnızca vakıf tarihidir ve yapı XV. yüzyılın ikinci çeyreğine tarihlendiriliyor. Bu yüzden start_year/end_year ve hijri_year boş bırakıldı."
+      },
+      {
+        "field": "name",
+        "note": "Bölüm başlığındaki 'Muallimhâne', belgelerdeki 'darülkurra' ve 'medrese' adları alternate_names'e alındı; tür 'mektep' seçildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ali Efendi Darülhuffazı",
+    "en": "Ali Efendi Darülhuffaz"
+  },
+  "subtitle": {
+    "tr": "Tek kubbeli, Beylikler dönemi planında XV. yüzyıl hafızlık eğitim yapısı",
+    "en": "A 15th-century single-domed Quran-memorization school in the Beylik-period plan"
+  },
+  "alternate_names": [
+    {
+      "tr": "Muallimhâne",
+      "en": "Muallimhâne",
+      "note": "Bölüm başlığında parantez içinde"
+    },
+    {
+      "tr": "Darülkurra",
+      "en": "Darülkurra",
+      "note": "Belgelerde yapıya verilen adlardan"
+    },
+    {
+      "tr": "Medrese",
+      "en": "Madrasa",
+      "note": "Belgelerde yapıya verilen adlardan"
+    }
+  ],
+  "type": "mektep",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "darülhuffaz",
+    "muallimhane",
+    "tek kubbeli",
+    "sekizgen kasnak",
+    "kurşun kaplı kubbe",
+    "Şerefşirin",
+    "XV. yüzyıl"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Şerefşirin",
+    "address": "Şerefşirin Mahallesi; Şerafettin Camii'nin hemen kuzeydoğusu",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "94"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyılın ikinci çeyreği (vakfiye: 832 Recep / Nisan 1429)",
+      "en": "Second quarter of the 15th century (foundation deed: 832 Rajab / April 1429)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Yapının kitâbesi yoktur; 832 Recep / 1429 Nisan tarihli vakfiyesi ile mimari özellikleri dikkate alınarak XV. yüzyılın ikinci çeyreğine tarihlendirilmektedir.",
+      "en": "The building has no inscription; considering its foundation deed of 832 Rajab / April 1429 and its architectural features, it is dated to the second quarter of the 15th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "94"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Ali (Salihoğlu Mehmet oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "94"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "94"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "832 Recep / 1429 Nisan",
+      "excerpt": {
+        "tr": "Vakfiyeye göre yapı Salihoğlu Mehmet oğlu Hacı Ali tarafından yaptırılmıştır.",
+        "en": "According to the foundation deed, the building was built by Hacı Ali, son of Salihoğlu Mehmet."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "94"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "94"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Salihoğlu Mehmet oğlu Hacı Ali'nin 832 Recep / Nisan 1429 tarihli vakfiyesine göre yaptırdığı, kare planlı, sekizgen kasnaklı tek kubbeli darülhuffaz. Sonraki dönemlerde sağlık müzesi, müftülük, çocuk kütüphanesi ve turizm polisi bürosu olarak kullanılmış, 2015'te Konya İl Müftülüğü'ne Kur'an hizmetleri için tahsis edilmiştir.",
+    "en": "A square-plan darülhuffaz with a single dome on an octagonal drum, built by Hacı Ali, son of Salihoğlu Mehmet, according to his foundation deed of 832 Rajab / April 1429. It later served as a health museum, mufti's office, children's library and tourism police office, and in 2015 was allocated to the Konya Provincial Mufti's Office for Quran services."
+  },
+  "sections": [
+    {
+      "id": "konum-banisi",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Banî ve Tarih",
+        "en": "Location, Founder and Date"
+      },
+      "body": {
+        "tr": "Belgelerde darülhuffaz, darülkurra, medrese veya muallimhane adlarıyla anılan yapı, Karatay'da Şerefşirin Mahallesi'nde, Şerafettin Camii'nin (XVII. yy. başı) hemen kuzeydoğusundadır. Herhangi bir kitâbesi bulunmayan Ali Efendi Darülhuffazı, 832 Recep / 1429 Nisan tarihli vakfiyesine göre Salihoğlu Mehmet oğlu Hacı Ali tarafından yaptırılmıştır. Vakıf tarihi ve mimari özellikleri dikkate alınarak XV. yüzyılın ikinci çeyreğine tarihlendirilmektedir.",
+        "en": "The building, referred to in documents as darülhuffaz, darülkurra, madrasa or muallimhane, is in Karatay, Şerefşirin Neighborhood, just northeast of the Şerafettin Mosque (early 17th century). Ali Efendi Darülhuffaz, which has no inscription, was built by Hacı Ali, son of Salihoğlu Mehmet, according to its foundation deed dated 832 Rajab / April 1429. Considering the date of the foundation and its architectural features, it is dated to the second quarter of the 15th century."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "94"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dışta kenar uzunlukları yaklaşık 10 m olan kare planlı yapı, sekizgen kasnağa oturan kubbeyle örtülüdür. Kübik gövde ve yüksek kasnak yukarıda içbükey-dışbükey silmeli birer korniş ile nihayetlenir. Gövde ve kasnak düzgün kesme taştandır; tuğla örgülü kubbe dıştan kurşunla kaplıdır ve tepesinde alem vardır. Basık kemerli kapıdan sonra, ortada dilimli ve içte sivri tipte bitişik iki kemerle örtülü dehliz tarzı bir girişle geçilen iç mekân tamamen sıvalıdır. Güney duvarı ortasında yarım daire planlı ocak nişi vardır; kubbeye geçişte istiridye kabuğu biçiminde dilimlenmiş, sivri kemerli tromplar görülür.",
+        "en": "The square-plan building, about 10 m on each side outside, is covered by a dome on an octagonal drum. The cubic body and high drum are each finished above with a cornice of concave-convex moldings. The body and drum are of smooth cut stone; the brick dome is covered with lead from the outside and has an alem at its top. After the low-arched door, the interior is reached through a cloister-style entrance covered by two adjoining arches, segmented in the middle and pointed on the inside, and is completely plastered. There is a semicircular hearth niche in the middle of the south wall; at the transition to the dome, pointed-arched squinches segmented like oyster shells are seen."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "94-95"
+        }
+      ]
+    },
+    {
+      "id": "kullanim",
+      "order": 3,
+      "title": {
+        "tr": "Dönemsel Yeri ve Kullanım",
+        "en": "Period Character and Use"
+      },
+      "body": {
+        "tr": "Kübik gövde üzerinde sekizgen yüksek kasnağa oturan tek kubbeli strüktürüyle Beylikler dönemi mimarisinin genel hatlarını yansıtır; bu plan anlayışı cami-mescit ve türbelerden sonra küçük ölçekli eğitim yapılarında da görülmeye başlanmıştır. Eski kent meydanında konumlanan yapı bir dönem sağlık müzesi, müftülük, çocuk kütüphanesi ve uzun süre turizm polisine ait büro olarak hizmet vermiştir. 2015'te Vali Muammer Erol tarafından Kur'an hizmetlerinde kullanılmak üzere Konya İl Müftülüğü'ne tahsis edilmiştir.",
+        "en": "With its single-domed structure on a high octagonal drum over a cubic body, it reflects the general lines of Beylik-period architecture; this planning concept began to appear in small-scale educational buildings after mosques, masjids and tombs. Located in the old city square, the building has served as a health museum, mufti's office, children's library and, for a long time, a tourism police office. In 2015 Governor Muammer Erol allocated it to the Konya Provincial Mufti's Office for use in Quran services."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "95"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kenar_uzunlugu",
+      "label": {
+        "tr": "Dıştan kenar uzunluğu (yaklaşık)",
+        "en": "Outer side length (approx.)"
+      },
+      "value": 10,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "94"
+        }
+      ]
+    },
+    {
+      "key": "vakfiye_tarihi",
+      "label": {
+        "tr": "Vakfiye tarihi",
+        "en": "Foundation deed date"
+      },
+      "value": "832 Recep / 1429 Nisan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "94"
+        }
+      ]
+    },
+    {
+      "key": "tahsis_yili",
+      "label": {
+        "tr": "İl Müftülüğü'ne tahsis yılı",
+        "en": "Year allocated to the Provincial Mufti's Office"
+      },
+      "value": 2015,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "95"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Ali (Salihoğlu Mehmet oğlu)",
+      "role": {
+        "tr": "Banî",
+        "en": "Patron"
+      }
+    },
+    {
+      "name": "Muammer Erol",
+      "role": {
+        "tr": "Vali; 2015'te yapıyı Konya İl Müftülüğü'ne tahsis etti",
+        "en": "Governor; allocated the building to the Konya Provincial Mufti's Office in 2015"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1429",
+      "year": 1429,
+      "date": null,
+      "hijri": "832 Recep",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi (832 Recep / Nisan 1429)",
+        "en": "The foundation deed was drawn up (832 Rajab / April 1429)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "94"
+        }
+      ]
+    },
+    {
+      "id": "tahsis-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vali Muammer Erol tarafından Konya İl Müftülüğü'ne Kur'an hizmetleri için tahsis edildi",
+        "en": "Allocated by Governor Muammer Erol to the Konya Provincial Mufti's Office for Quran services"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "95"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kubbe",
+      "title": {
+        "tr": "Kurşun kaplı kubbe",
+        "en": "Lead-covered dome"
+      },
+      "hint": {
+        "tr": "Sekizgen kasnağa oturan tuğla kubbe; tepesinde alem.",
+        "en": "Brick dome on an octagonal drum, with an alem on top."
+      },
+      "section_id": "mimari"
+    },
+    {
+      "feature": "tromp",
+      "title": {
+        "tr": "İstiridye kabuğu biçimli tromplar",
+        "en": "Oyster-shell squinches"
+      },
+      "hint": {
+        "tr": "Kubbeye geçişte dilimli, sivri kemerli tromplar.",
+        "en": "Segmented pointed-arch squinches at the transition to the dome."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yapı, dışta yaklaşık 10 m kenarlı kare planlı, kübik gövdeli ve sekizgen yüksek kasnaklıdır; tepede kurşun kaplı bir kubbe ve alem bulunur. Basık kemerli kapıdan, iki kemerli dehliz benzeri bir girişle sıvalı iç mekâna geçilir; güney duvarda yarım daire ocak nişi vardır.",
+      "en": "The building is square in plan, about 10 m on a side outside, with a cubic body and a high octagonal drum, topped by a lead-covered dome and alem. A low-arched door leads through a two-arched, corridor-like entrance into the plastered interior; the south wall has a semicircular hearth niche."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
