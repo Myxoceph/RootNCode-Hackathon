@@ -1,0 +1,371 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-akyokus-hoca-cihan-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Hanın yaptırıcısı için kitap yalnızca Altunapa Hanı vakfiyesindeki kayda dayanıyor; bu vakfiyedeki kervansarayın Hoca Cihan Hanı olduğu açıkça yazılmıyor, banî probable bırakıldı.",
+      "Altunapa Hanı'nın ayrı bir kaydı ids.md'de yok; ilişki yazılmadı.",
+      "Vakfiyeyi yazan/bırakan Hacı İbrahim'in kimliği kitapta açıklanmıyor.",
+      "s. 246 metin içermiyor (yalnızca görsel); fotoğraf/çizim sonra eklenmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap iki görüş veriyor: XIII. yüzyıl sonu - XIV. yüzyıl başı ve (Altunapa vakfiyesine göre) XII. yüzyıl. Ayrıca vakfiye tarihi M. 1201-1202 olarak veriliyor; bu yıllar XIII. yüzyılın başına denk gelir, ama kitap hanı XII. yüzyıla koyuyor. Kitaba sadık kalındı, disputed işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "Hocacihan Sarnıcı metni aynı han için \"Hocacihan Hanı (Dibidelik Han)\" der; bu kayıttaki ad \"Akyokuş (Hoca Cihan) Hanı\"dır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Akyokuş (Hoca Cihan) Hanı",
+    "en": "Akyokuş (Hoca Cihan) Inn"
+  },
+  "subtitle": {
+    "tr": "Konya-Beyşehir yolunda, 2009-2010'da onarılıp restoran yapılan erken Selçuklu hanı",
+    "en": "Early Seljuk inn on the Konya-Beyşehir road, repaired in 2009-2010 and now a restaurant"
+  },
+  "alternate_names": [
+    {
+      "tr": "Dibidelik Han",
+      "en": "Dibidelik Inn"
+    },
+    {
+      "tr": "Hocacihan Hanı",
+      "en": "Hocacihan Inn",
+      "note": "Hocacihan Sarnıcı metninde bu adla geçer"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "han",
+    "Selçuklu hanı",
+    "üç sahınlı",
+    "sağır duvar",
+    "restoran",
+    "Konya-Beyşehir yolu",
+    "vakfiye"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Yunus Emre Mahallesi",
+    "address": "Konya-Beyşehir yolu üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "244"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XII. yüzyıl (vakfiyeye göre); bazılarına göre XIII. yüzyıl sonu - XIV. yüzyıl başı",
+      "en": "12th century (per the foundation charter); some date it to the late 13th - early 14th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 12,
+    "basis": {
+      "tr": "İnşa kitâbesi yoktur. Altunapa Hanı vakfiyesindeki (M. 1201-1202) kayda dayanılarak XII. yüzyıl denir; yapıyı XIII. yüzyıl sonu - XIV. yüzyıl başına tarihleyenler de vardır.",
+      "en": "There is no construction inscription. The 12th century is based on a record in the Altunapa Inn foundation charter (1201-1202 AD); others date the building to the late 13th - early 14th century."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "244-245"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Tebrizli Tacir Hacı Bahtiyar b. Abdullah",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "244-245"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "20 Ağustos 1701 (Hacı İbrahim vakfiyesi, en eski Osmanlı kaydı)",
+      "excerpt": {
+        "tr": "Vakfiye içeriğinden hana zengin vakıflar tahsis edildiği ve bu vakıfların hanın bakım ve onarımına sarf edilmesi şartı konulduğu anlaşılmaktadır.",
+        "en": "It is understood from the foundation charter that rich foundations were allocated to the inn and that they were required to be spent on its maintenance and repair."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "244"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Tahsis edilen vakıf gelirlerinin hanın bakım ve onarımına harcanması.",
+      "en": "Allocated foundation revenues to be spent on the inn's maintenance and repair."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "244"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Meram Yunus Emre Mahallesi'nde Konya-Beyşehir yolu üzerindeki, tek bölümlü, beşer ayaklı iki sıra ile üç sahına ayrılmış, sağır duvarlı erken dönem Selçuklu hanı. 1940'lara kadar kullanılmış, 2009-2010'da onarılarak restoran yapılmıştır. Yapım tarihi tartışmalıdır.",
+    "en": "An early Seljuk inn on the Konya-Beyşehir road in Meram's Yunus Emre Neighborhood: a single closed section divided into three aisles by two rows of five pillars, with blind walls. Used until the 1940s, it was repaired in 2009-2010 and made a restaurant. Its date is disputed."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Adı",
+        "en": "Location and Name"
+      },
+      "body": {
+        "tr": "Han, Meram Yunus Emre Mahallesi'nde Konya-Beyşehir yolu üzerindedir ve \"Dibidelik Han\" olarak da bilinir. İnşasına ait kitâbe yoktur.",
+        "en": "The inn is on the Konya-Beyşehir road in Meram's Yunus Emre Neighborhood and is also known as \"Dibidelik Inn\". It has no construction inscription."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Kayıtlar ve Tarihleme",
+        "en": "Records and Dating"
+      },
+      "body": {
+        "tr": "Hoca Cihan Hanı hakkında Selçuklu kayıtlarında Altun-Aba (Altınapa Hanı) vakfiyesi dışında bilgi bulunmamıştır. Osmanlı döneminde en eski kayıt 20 Ağustos 1701 tarihli Hacı İbrahim vakfiyesidir; içeriğinden hana zengin vakıflar tahsis edildiği ve bunların hanın bakım ve onarımına harcanması şartının konulduğu anlaşılır. Yapıyı XIII. yüzyıl sonları ile XIV. yüzyıl başlarına tarihleyenler vardır; ancak M. 1201-1202'de tescil ettirilen Altunapa Hanı vakfiyesinde \"Konya ile Gorgorum arasındaki yolda, Tebrizli Tacir Hacı Bahtiyar b. Abdullah adlı birisinin bu kervansarayı yaptırdığı\" kaydı bulunur ve buna göre han XII. yüzyılda inşa edilmiştir. 1940'lı yıllara kadar kullanılan yapı 2009-2010'da tamir edilmiş ve restoran olarak kullanılmaya başlanmıştır.",
+        "en": "The Seljuk records contain no information on the Hoca Cihan Inn other than the Altun-Aba (Altınapa Inn) foundation charter. In the Ottoman period the oldest record is the Hacı İbrahim charter of 20 August 1701, from which it is understood that rich foundations were allocated to the inn with the condition that they be spent on its maintenance and repair. Some date the building to the late 13th - early 14th century, but the Altunapa Inn charter registered in 1201-1202 AD records that a merchant, Hacı Bahtiyar b. Abdullah of Tabriz, had this caravanserai built on the road between Konya and Gorgorum; accordingly the inn was built in the 12th century. Used until the 1940s, it was repaired in 2009-2010 and began to be used as a restaurant."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "244-245"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Han doğu-batı doğrultulu, derinlemesine dikdörtgen planlı, iki yöne eğimli kırma çatılı tek bölümden oluşur; yalnızca kapalı bölümü vardır ve moloz taştan yapılmıştır. Beden duvarları tamamen sağırdır, giriş açıklıkları doğu ve batı cephelerine eklenmiştir. İç mekân, yuvarlak kemerlerle birbirine bağlı beşerli iki sıra ayakla üç sahına ayrılır; mekân sadedir ve kemer karınlarında düzgün kesme taş kullanılmıştır. Üstü ahşap kirişlerle örtülü düz damdır. Kitaba göre mimari özellikleriyle Anadolu'daki erken dönem Selçuklu hanlarından bir örnektir.",
+        "en": "The inn is a single section on an east-west deep rectangular plan under a hipped roof sloping in two directions; it has only a closed part and is built of rubble stone. The walls are completely blind, with entrance openings added on the east and west façades. Inside, two rows of five pillars linked by round arches divide it into three aisles; the space is plain, with smooth cut stone used on the arch soffits, and the roof is flat, covered with wooden beams. By its architecture it is an example of early Seljuk inns in Anatolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "245"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Ayak sayısı",
+        "en": "Number of pillars"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "245"
+        }
+      ],
+      "note": {
+        "tr": "Beşerli iki sıra.",
+        "en": "Two rows of five."
+      }
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "245"
+        }
+      ]
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Moloz taş; kemer karınlarında düzgün kesme taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "245"
+        }
+      ]
+    },
+    {
+      "key": "onarim_yili",
+      "label": {
+        "tr": "Onarım yılları",
+        "en": "Repair years"
+      },
+      "value": "2009-2010",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "245"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı İbrahim",
+      "role": {
+        "tr": "1701 tarihli vakfiyenin vakfedeni",
+        "en": "Donor of the 1701 foundation charter"
+      }
+    },
+    {
+      "name": "Tebrizli Tacir Hacı Bahtiyar b. Abdullah",
+      "role": {
+        "tr": "Altunapa Hanı vakfiyesinde kervansarayı yaptıran kişi olarak geçer",
+        "en": "Named in the Altunapa Inn charter as having built the caravanserai"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1201",
+      "year": 1201,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Altunapa Hanı vakfiyesi tescil edildi; han kaydı XII. yüzyıl için dayanak alınır",
+        "en": "Altunapa Inn foundation charter registered; basis for the 12th-century dating"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "244-245"
+        }
+      ],
+      "note": {
+        "tr": "Kitap M. 1201-1202 verir; yıl olarak 1201 alındı. Hanın bu vakfiyedeki kervansaray olduğu kitapta dolaylı olarak bağlanıyor.",
+        "en": "The book gives 1201-1202; 1201 is used. The link between this inn and the charter's caravanserai is only implied."
+      }
+    },
+    {
+      "id": "vakfiye-1701",
+      "year": 1701,
+      "date": "1701-08-20",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hacı İbrahim vakfiyesi (en eski Osmanlı kaydı)",
+        "en": "Hacı İbrahim foundation charter (oldest Ottoman record)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2009",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Han tamir edilip restoran olarak kullanılmaya başlandı",
+        "en": "Inn repaired and put to use as a restaurant"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "245"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 2009-2010 verir.",
+        "en": "The book gives 2009-2010."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, uzun ve dikdörtgen planlı, düz taş duvarlı tek katlı bir yapıdır; duvarlarda pencere yoktur, girişler doğu ve batı uçlarındadır. İçeride iki sıra halinde dizilmiş toplam on taş ayak, yuvarlak kemerlerle birbirine bağlanarak mekânı üç uzun koridora ayırır. Üst örtü ahşap kirişlidir.",
+      "en": "The inn is a long rectangular single-storey building with plain stone walls and no windows; entrances are at the east and west ends. Inside, ten stone pillars in two rows are linked by round arches, dividing the space into three long aisles. The roof is of wooden beams."
+    },
+    "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

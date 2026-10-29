@@ -1,0 +1,357 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-sut-tekkesi-ve-keykavus-kizi-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kayıt iki yapıyı birlikte anlatıyor; ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
+      "Kitabenin metni ve dili kitapta yok.",
+      "Dönem (era) kitapta belirtilmiyor; mevcut yapı 1909 yenilemesidir.",
+      "Hijri takvimle H. 700 ve Rumi 1325 tarihleri kitapta 'R.' ile gösteriliyor; Rumi takvim olarak yorumlandı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türkçe metin 'R. 1325 / M. 1909' diyor; R. Rumi takvim olarak okundu (Hicri değil). Hicri 1325 miladi 1907'ye denk gelir; Rumi 1325 = 1909 olduğundan çelişki yok ama kısaltma kitapta açıklanmıyor."
+      },
+      {
+        "field": "name",
+        "note": "Başlıkta 'Keykavus', İngilizce başlıkta 'Keykavuz Kızı'; metinde 'II. İzzeddin Keykavus'un kızı Fatma Hatun'. 'Hond Fatma Hatun' kitapta kısaca 'Fatma Hatun' ile aynı kişi olarak geçiyor."
+      },
+      {
+        "field": "sections[sandukalik]",
+        "note": "Kitabe 'atfedilmiştir' dediği için sandukaların kimlere ait olduğu bilgisi kitabeye dayanıyor; başka bir doğrulama yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Süt Tekkesi (Ferhuniye Mescidi) ve Keykavus Kızı Türbesi",
+    "en": "Süt Tekke (Ferhuniye Masjid) and Keykavuz Kızı Tomb"
+  },
+  "subtitle": {
+    "tr": "Sütü kesilen kadınların dua ettiği tekke ve türbe",
+    "en": "A tekke and tomb where women whose milk has dried pray"
+  },
+  "alternate_names": [
+    {
+      "tr": "Süt Tekkesi",
+      "en": "Süt Tekke"
+    },
+    {
+      "tr": "Ferhuniye Mescidi",
+      "en": "Ferhuniye Masjid"
+    },
+    {
+      "tr": "Ferhuniye Tekkesi",
+      "en": "Ferhuniye Tekke"
+    },
+    {
+      "tr": "Keykavus Kızı Türbesi",
+      "en": "Keykavuz Kızı Tomb"
+    }
+  ],
+  "type": "tekke",
+  "secondary_types": [
+    "turbe",
+    "mescit"
+  ],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "tekke",
+    "türbe",
+    "Ferhuniye",
+    "Fatma Hatun",
+    "Keykavus kızı",
+    "süt duası",
+    "1909 yenileme"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Ferhuniye Mahallesi",
+    "address": "Sultan Mesut Sokak üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "162"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 700 / M. 1300; R. 1325 / M. 1909'da yeniden inşa",
+      "en": "700 AH / 1300 AD; rebuilt 1325 Rumi / 1909 AD"
+    },
+    "start_year": 1300,
+    "end_year": 1300,
+    "hijri_year": 700,
+    "century": 14,
+    "basis": {
+      "tr": "Türbe giriş kapısı üzerindeki kitabeye göre H. 700 / M. 1300'de yaptırılmış, vakıf mütevellisi Paşazade İbrahim Bey tarafından R. 1325 / M. 1909'da yeniden inşa ettirilmiştir.",
+      "en": "According to the inscription above the tomb's entrance it was built in 700 AH / 1300 AD and rebuilt in 1325 Rumi / 1909 AD by Paşazade İbrahim Bey, the waqf trustee."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "162"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "II. İzzeddin Keykavus'un kızı Fatma Hatun'a atfedilen, kitabesine göre H. 700 / M. 1300'de yaptırılıp 1909'da yeniden inşa edilen türbe ve tekke. Halk arasında sütü kesilen kadınların ziyaret edip dua ettiği bir mekândır.",
+    "en": "A tomb and tekke attributed to Fatma Hatun, daughter of İzzeddin Keykavus II, built in 700 AH / 1300 AD per its inscription and rebuilt in 1909. Popularly, women whose breast milk has dried visit and pray here."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe Ferhuniye Mahallesi'nde Sultan Mesut Sokak üzerindedir. Giriş kapısı üzerindeki kitabeye göre H. 700 / M. 1300'de yaptırılmış, vakfın mütevellisi Paşazade İbrahim Bey tarafından R. 1325 / M. 1909'da yeniden inşa ettirilmiş ve II. İzzeddin Keykavus'un kızı Fatma Hatun'a atfedilmiştir. Bazı kayıtlarda 'Ferhuniye Tekkesi' olarak da geçer. Kaynaklar yapının 1909'da yenilendiğini belirtir.",
+        "en": "The tomb is on Sultan Mesut Street in Ferhuniye Neighborhood. According to the inscription over its entrance gate it was built in 700 AH / 1300 AD, rebuilt in 1325 Rumi / 1909 AD by Paşazade İbrahim Bey, the waqf trustee, and attributed to Fatma Hatun, daughter of İzzeddin Keykavus II. Some records call it 'Ferhuniye Tekke'. Sources state the building was renewed in 1909."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ]
+    },
+    {
+      "id": "sandukalik",
+      "order": 2,
+      "title": {
+        "tr": "Sandukalık Bölümü",
+        "en": "Sarcophagus Section"
+      },
+      "body": {
+        "tr": "Tekkenin sandukalık bölümüne güneydeki bir kapıdan girilir; burada ana girişin arkasında üç sanduka bulunur. Mevcut kitabeye göre sandukalar Hond Fatma Hatun, annesi ve sütannesine aittir.",
+        "en": "The sarcophagus section of the tekke is entered by a door in the south; three sarcophagi stand behind the main entrance. According to the existing inscription they belong to Hond Fatma Hatun, her mother and her wet nurse."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe doğu-batı doğrultusunda dikdörtgen planlıdır ve kırma çatılıdır. Cepheler taştan yapılmış ve yenilenmiştir. Tekkenin hariciyesi XX. yüzyıl başında inşa edilmiş iç sofalı plan tipindedir; ev etrafı kamulaştırılırken yıkılmış, aynı mimari özelliklere bağlı kalınarak yeniden yapılmıştır.",
+        "en": "The tomb is rectangular in an east-west direction with a hipped roof. The facades are stone and have been renewed. The tekke's exterior building was built in the early 20th century with an inner-hall plan; the house was demolished when the surroundings were expropriated and rebuilt to the same architectural features."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "sut-duasi",
+      "title": {
+        "tr": "Sütü kesilen kadınların ziyareti",
+        "en": "Visits by women whose milk has dried"
+      },
+      "body": {
+        "tr": "Tekkenin en önemli özelliği, halk arasında sütü kesilen kadınların burayı ziyaret ederek dua ettikleri bir mekân olmasıdır.",
+        "en": "The most important feature of the tekke is that, among the people, it is a place women whose breast milk has dried visit and pray."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "sanduka",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ]
+    },
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Doğu-batı doğrultulu dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Roof"
+      },
+      "value": "Kırma çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Fatma Hatun (Hond Fatma Hatun)",
+      "role": {
+        "tr": "II. İzzeddin Keykavus'un kızı; türbe ona atfedilir",
+        "en": "Daughter of İzzeddin Keykavus II; the tomb is attributed to her"
+      }
+    },
+    {
+      "name": "II. İzzeddin Keykavus",
+      "role": {
+        "tr": "Fatma Hatun'un babası",
+        "en": "Father of Fatma Hatun"
+      }
+    },
+    {
+      "name": "Paşazade İbrahim Bey",
+      "role": {
+        "tr": "Vakfın mütevellisi; 1909'da yeniden inşa ettirdi",
+        "en": "Waqf trustee; had it rebuilt in 1909"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Türbe giriş kapısının üzerinde",
+        "en": "Above the tomb's entrance gate"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 700,
+        "gregorian": "1300"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ],
+      "note": {
+        "tr": "Kitabenin metni ve dili kitapta verilmiyor; H. 700 / M. 1300 yapım, R. 1325 / M. 1909 yeniden inşa tarihleri ve Fatma Hatun'a atfı aktarılıyor.",
+        "en": "The text and language are not given; the book reports the construction date 700 AH / 1300 AD, the rebuilding date 1325 Rumi / 1909 AD and the attribution to Fatma Hatun."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1300",
+      "year": 1300,
+      "date": null,
+      "hijri": "700",
+      "type": "construction",
+      "title": {
+        "tr": "Kitabeye göre yaptırıldı (H. 700 / M. 1300)",
+        "en": "Built per the inscription (700 AH / 1300 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-1909",
+      "year": 1909,
+      "date": null,
+      "hijri": "1325 (Rumi)",
+      "type": "restoration",
+      "title": {
+        "tr": "Mütevelli Paşazade İbrahim Bey tarafından yeniden inşa ettirildi (R. 1325 / M. 1909)",
+        "en": "Rebuilt by the trustee Paşazade İbrahim Bey (1325 Rumi / 1909 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "162"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yapı, doğu-batı doğrultusunda uzanan dikdörtgen planlı, kırma çatılı, taş cepheli bir türbedir; cepheleri yenilenmiştir. Sandukalık bölümüne güneydeki bir kapıdan girilir ve içeride üç sanduka yan yana durur. Yanında XX. yüzyıl başında yapılmış, iç sofalı bir tekke evi vardır.",
+      "en": "The building is a rectangular tomb running east-west with a hipped roof and stone facades that have been renewed. The sarcophagus section is entered by a door in the south and holds three sarcophagi. Beside it stands an early 20th-century tekke house with an inner hall."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

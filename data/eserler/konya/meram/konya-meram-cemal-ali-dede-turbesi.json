@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-cemal-ali-dede-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 119-123 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Mescit/semahane kitapta ayrı bir yapı olarak anılıyor; ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
+      "Bânî, mimar ve yapım tarihi kitapta yok (kitâbe yok); founder/architect boş bırakıldı.",
+      "Eyvan cephesindeki çini bordürlerin fotoğrafları eklenmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[kimlik]",
+        "note": "Cemal Ali Dede'nin Bahaeddin Veled'in müridi olması 'rivayete göre' verilmiştir; Hoca Ali ile özdeşlik İ. H. Konyalı'nın tahminidir. Bu nedenle bölüm 'probable' işaretlendi."
+      },
+      {
+        "field": "location.district",
+        "note": "İngilizce metin 'Meram Neighborhood, Yaka Neighborhood' yazıyor; Türkçe metin 'Meram İlçesi, Yaka Mahallesi' diyor. Türkçe metin esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Cemal Ali Dede Türbesi",
+    "en": "Cemal Ali Dede Tomb"
+  },
+  "alternate_names": [
+    {
+      "tr": "Cemal Ali Dede (Turut) Türbesi",
+      "en": "Cemal Ali Dede (Turut) Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "eyvanlı türbe",
+    "çini",
+    "Mevlevî",
+    "semahane",
+    "Şeyh Turut",
+    "devşirme sütun başlığı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Yaka",
+    "address": "Yaka Mahallesi, Dere Caddesi, No. 13",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "119"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyılın sonlarına doğru (tahmini)",
+      "en": "Towards the end of the 13th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Selçuklu dönemi yapı özelliklerini ve üslubunu taşıdığı için XIII. yüzyılın sonlarına doğru yaptırılmış olabileceği tahmin edilmektedir; kitâbesi yoktur, yapım tarihi bilinmemektedir.",
+      "en": "It is estimated to have been built towards the end of the 13th century because it carries the structural features and style of the Seljuk period; it has no inscription and its construction date is unknown."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "120"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram'da, Mevlâna'nın çağdaşı Cemal Ali Dede'ye atfedilen, Anadolu Selçuklu eyvanlı türbelerinin önemli bir örneği. Eyvan kemeri ve köşelikleri çinilerle kaplı yapının içinde yedi çinili sanduka bulunur; eski Mevlevî zaviyesinden günümüze yalnızca semahane (mescit) ve türbe ulaşmıştır.",
+    "en": "In Meram, an important example of Anatolian Seljuk iwan-type tombs attributed to Cemal Ali Dede, a contemporary of Mevlâna. The iwan arch and corners are covered with tiles, and seven tiled sarcophagi stand inside; of the former Mevlevi zawiya only the semahane (masjid) and the tomb have survived."
+  },
+  "sections": [
+    {
+      "id": "kimlik",
+      "order": 1,
+      "title": {
+        "tr": "Cemal Ali Dede",
+        "en": "Cemal Ali Dede"
+      },
+      "body": {
+        "tr": "Cemal Ali Dede, Mevlâna'nın çağdaşıdır ve rivayete göre Bahaeddin Veled'in müritlerindendir. Mevlâna'ya duyduğu derin saygı ve sevgiden dolayı onu deve taklidi yaparak sırtında taşıdığı için kendisine \"deve\" anlamına gelen \"cemel\" lakabı takılmış, sonrasında bu adla anılmıştır. İbrahim Hakkı Konyalı, Mevlâna'nın mektuplarında adı geçen Hoca Ali'nin Cemel Ali olabileceğini tahmin eder. Türbenin şeyhliğini yapan Şeyh Turut, tekkede şeyhlik, türbe mektebinde de hocalık yapmıştır.",
+        "en": "Cemal Ali Dede is a contemporary of Mevlâna and, according to narrations, one of the disciples of Bahaeddin Veled. Out of deep respect and love for Mevlâna he carried him on his back, imitating a camel, and was therefore nicknamed \"cemel\" (camel), later being known by that name. İbrahim Hakkı Konyalı speculates that the Hoca Ali mentioned in Mevlâna's letters may be Cemel Ali. Şeyh Turut, who was the şeyh of the tomb, served as şeyh in the tekke and as teacher in the tomb school."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "119-120"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Yapı Topluluğu ve Onarımlar",
+        "en": "Building Group and Repairs"
+      },
+      "body": {
+        "tr": "Türbenin kitâbesi yoktur; bânîsi, mimarı ve yapım tarihi bilinmemektedir. Hemen bitişiğinde mescit vardır; mescidin yanında yakın zamana kadar ayakta olan bir mektep ve konak XX. yüzyılda yıkılmıştır. Yer, daha önce çeşitli yapılardan oluşan bir Mevlevî zaviyesiydi; günümüze yalnızca semahane (mescit) ve türbe gelmiş, aynı yerdeki sıbyan mektebi ulaşamamıştır. Arşiv kayıtlarına göre türbe, mescit ve mektep H. 1311 / M. 1893'te 86.700 kuruşa tamir ettirilmiş, mescit bânîsinin Cemal Ali olduğu anlaşılmıştır. 1961 onarımında duvarların üst kısımları yenilenmiş, eyvan cephesi sivri kemer içine yerleştirilen bir pencereyle kapatılmış, mescitle bağlantı kesilmiş, batı duvarı yenilenip payandayla desteklenmiştir. Restorasyonu 2016'da Konya Büyükşehir Belediyesi yapmıştır.",
+        "en": "The tomb has no inscription; its builder, architect and date are unknown. A masjid adjoins it; a school and a mansion next to the masjid, standing until recently, were demolished in the 20th century. The site was previously a Mevlevi zawiya of various buildings; only the semahane (masjid) and the tomb survive, and the primary school there has not. According to archive records the tomb, masjid and school were repaired in 1311 AH / 1893 AD for 86,700 kuruş, and the masjid's builder is understood to be Cemal Ali. In the 1961 repairs the upper parts of the walls were renewed, the iwan façade was closed with a window set in the pointed arch, the connection with the masjid was cut, and the west wall was renewed and buttressed. It was restored by Konya Metropolitan Municipality in 2016."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "120-121"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe doğu tarafından mescide bitişik inşa edilmiştir; sivri kemerli tonozlu eyvanı kuzeye açılır. Cenazelik katının kapısı güneydedir; türbeye güney duvarının batı ucundaki küçük dikdörtgen kapıdan geçilir. Mescide bitişik cephe iki kemerli bir açıklıkla bağlanır; ortada devşirme bitkisel başlıklı silindirik gövdeli mermer bir sütun, yanlarda duvarlara oturan sivri kemerler vardır. Yapıda taş ve tuğla kullanılmıştır; eyvan kemerleri ve köşelikleri tuğla örgülü ve çini bezemelidir. Eyvanı çevreleyen dikdörtgen cephenin tuğla yan yüzeyleri çini kaplıdır; bordürde siyaha yakın koyu mor üstüne turkuaz sekiz köşeli yıldızlar, iç tuğla örgüde patlıcan moru altıgen çini levhalar ve turkuaz papyon dolgular görülür. İçerisi sivri beşik tonozludur.",
+        "en": "The tomb was built adjoining the masjid on its east; its pointed-vaulted iwan opens to the north. The door of the funeral floor is in the south; the tomb is entered through a small rectangular door at the west end of the south wall. The façade adjoining the masjid is connected by an opening with two arches, with a cylindrical marble column topped by a spolia vegetal capital in the middle and pointed arches on the walls at the sides. Stone and brick are used; the iwan arches and corners are of brick, decorated with tiles. The brick side surfaces of the rectangular façade around the iwan are tiled; the border shows turquoise eight-pointed stars on near-black dark purple, and the inner brickwork aubergine-purple hexagonal tiles with turquoise bow-tie fillers. The interior has a pointed barrel vault."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "121-123"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 4,
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbede kuzey-güney doğrultusunda yan yana dizilmiş yedi sanduka vardır. Baş ve ayak taşları hariç bütün yüzeyleri çini kaplıdır; düz plaka çinilerin dışında süsleme yoktur. Güneydeki sanduka duvara bitişiktir. Diğerlerinden büyük ve yüksek olan ortadaki sandukanın Cemal Ali Dede'ye, yandakilerin karısı, kızı ve aşçısına ait olduğu rivayet edilir, ancak bu kesin bir bilgi değildir. Eser, Selçuklu döneminin özgün plan şemasının uygulandığı en önemli eyvan tipi türbe örneklerinden biridir.",
+        "en": "Inside are seven sarcophagi lined up side by side north-south. Except for the head and foot stones, all their surfaces are covered with tiles, with no ornament other than flat plate tiles. The southern sarcophagus abuts the wall. It is narrated that the larger, higher middle sarcophagus belongs to Cemal Ali Dede and those beside it to his wife, daughter and cook, but this is not certain. The work is one of the most important examples of iwan-type tombs applying the original plan scheme of the Seljuk period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "122-123"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "cemel-lakabi",
+      "title": {
+        "tr": "\"Cemel\" lakabı",
+        "en": "The \"Cemel\" nickname"
+      },
+      "body": {
+        "tr": "Mevlâna'ya duyduğu saygı ve sevgi nedeniyle onu deve taklidi yaparak sırtında taşıyan Cemal Ali Dede'ye \"deve\" anlamına gelen \"cemel\" lakabı takılmıştır.",
+        "en": "Because of his respect and love for Mevlâna, Cemal Ali Dede carried him on his back imitating a camel and was nicknamed \"cemel\", meaning \"camel\"."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "119"
+        }
+      ]
+    },
+    {
+      "id": "sanduka-sahipleri",
+      "title": {
+        "tr": "Sandukaların sahipleri",
+        "en": "Owners of the sarcophagi"
+      },
+      "body": {
+        "tr": "Ortadaki büyük sandukanın Cemal Ali Dede'ye, yanlardakilerin karısı, kızı ve aşçısına ait olduğu rivayet edilir; kitap bunun kesin bir bilgi olmadığını belirtir.",
+        "en": "The large middle sarcophagus is said to belong to Cemal Ali Dede and the ones beside it to his wife, daughter and cook; the book states that this is not certain."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "122-123"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "122-123"
+        }
+      ]
+    },
+    {
+      "key": "onarim_bedeli_1893",
+      "label": {
+        "tr": "1893 onarım bedeli",
+        "en": "Cost of the 1893 repair"
+      },
+      "value": 86700,
+      "unit": "kuruş",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "120-121"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_yonu",
+      "label": {
+        "tr": "Eyvanın açıldığı yön",
+        "en": "Direction the iwan opens"
+      },
+      "value": "kuzey",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "121"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Cemal Ali Dede",
+      "role": {
+        "tr": "Türbede yattığı belirtilen, Mevlâna'nın çağdaşı",
+        "en": "Said to be buried here; contemporary of Mevlâna"
+      }
+    },
+    {
+      "name": "Şeyh Turut",
+      "role": {
+        "tr": "Türbenin şeyhi; tekkede şeyh, türbe mektebinde hoca",
+        "en": "Şeyh of the tomb; şeyh in the tekke and teacher in the tomb school"
+      }
+    },
+    {
+      "name": "İbrahim Hakkı Konyalı",
+      "role": {
+        "tr": "Hoca Ali'nin Cemel Ali olabileceğini tahmin eden araştırmacı",
+        "en": "Researcher who speculates that Hoca Ali may be Cemel Ali"
+      }
+    },
+    {
+      "name": "Cemal Ali",
+      "role": {
+        "tr": "Mescidin bânîsi (1893 arşiv kayıtlarına göre)",
+        "en": "Builder of the masjid (according to 1893 archive records)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1893",
+      "year": 1893,
+      "date": null,
+      "hijri": "1311",
+      "type": "repair",
+      "title": {
+        "tr": "Türbe, mescit ve mektep 86.700 kuruşa tamir ettirildi",
+        "en": "Tomb, masjid and school repaired for 86,700 kuruş"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "120-121"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1961",
+      "year": 1961,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Duvarların üst kısımları yenilendi, eyvan cephesi pencereyle kapatıldı, mescitle bağlantı kesildi",
+        "en": "Upper walls renewed, iwan façade closed with a window, link with the masjid cut"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "121"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2016",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Konya Büyükşehir Belediyesi restorasyonu",
+        "en": "Restoration by Konya Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "121"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, Meram'da bir caddenin kenarında, doğu tarafından mescide bitişik duran taş ve tuğla bir yapıdır. Kuzeye açılan sivri kemerli eyvanın çevresi turkuaz ve patlıcan moru çinilerle, sekiz köşeli yıldız ve altıgen desenlerle kaplıdır. Eyvan önü iki basamaklı bir platformla yükseltilmiş ve demir kafesli dikdörtgen bir pencereyle kapatılmıştır. Türbeye güney duvarının batı ucundaki küçük dikdörtgen kapıdan girilir. İçeride sivri beşik tonozun altında, kuzey-güney doğrultusunda yan yana dizili, yüzeyleri çinili yedi sanduka bulunur.",
+      "en": "The tomb is a stone and brick building in Meram, beside a street, adjoining the masjid on its east. The pointed-arched iwan opening to the north is framed with turquoise and aubergine-purple tiles in eight-pointed star and hexagon patterns. The front of the iwan has been raised by a two-step platform and closed with a rectangular, iron-barred window. The tomb is entered through a small rectangular door at the west end of the south wall. Inside, under a pointed barrel vault, seven tile-covered sarcophagi are lined up side by side north-south."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

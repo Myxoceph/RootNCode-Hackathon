@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-eregli-rustem-pasa-sifa-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Su Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Hamamın yaptıranı kitapta yok; founder boş. 'Rüstem Paşa' adının hamamla bağı kitapta açıklanmıyor.",
+      "Ulu Camii (Ereğli) ids.md tablosunda yok; vakıf ilişkisi yazılmadı.",
+      "Vakıf defterindeki 'Eski Hamam'ın bu hamam olup olmadığı belirsiz; kaynaklara bakılmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating / sections[konum-tarihce]",
+        "note": "Kaynak 'Eski Hamam'ın Hamam-ı Köhne, Hamam-ı Nev ve Hamam-ı Atik'ten hangisi olduğunu şüpheli sayıyor; XV. yüzyıl tarihi yalnızca 'bazı araştırmacılar'ın görüşüdür, bu yüzden bölüm 'disputed', tarihleme 'probable' işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "Kitapta başlıkta 'Rüstem Paşa (Şifa) Hamamı' geçiyor; 'Rüstem Paşa' ve 'Şifa' adlarının kaynağı metinde açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Rüstem Paşa (Şifa) Hamamı",
+    "en": "Rüstem Paşa (Şifa) Bath"
+  },
+  "subtitle": {
+    "tr": "Konya hamamları içinde yıldızvari sıcaklıklı tek örnek",
+    "en": "The only star-shaped hot-room bath among Konya's baths"
+  },
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "yıldızvari sıcaklık",
+    "sekiz eyvan",
+    "Karamanoğulları",
+    "vakıf hamamı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ereğli",
+    "neighborhood": "Selçuklu Mahallesi",
+    "address": "Hamam Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "223"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyıl (Karamanoğulları dönemi) olduğu kabul ediliyor",
+      "en": "Considered to date from the 15th century (Karamanoğulları period)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitabe yok. Karamanoğlu Mehmet Bey'in hamamı Ulu Camii'ye vakfettiği bilgisinden hareketle bazı araştırmacılar hamamın XV. yüzyılda Karamanoğulları zamanında yapıldığını kabul eder.",
+      "en": "There is no inscription. From the information that Karamanoğlu Mehmet Bey endowed the bath to the Grand Mosque, some researchers accept that it was built in the 15th century in the Karamanoğulları period."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "223"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Hamam, Karamanoğlu Mehmet Bey tarafından Ulu Camii'ye vakfedilmiştir.",
+      "en": "The bath was endowed by Karamanoğlu Mehmet Bey to the Grand Mosque."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "223"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Ereğli'de Hamam Sokak üzerindeki, Konya hamamları içinde 'yıldızvari sıcaklıklı' tipin tek örneği olan hamam. Sıcaklığı sekiz eyvanla çevrilidir; Karamanoğlu Mehmet Bey'in Ulu Camii'ye vakfettiği bilinir. Bugün hâlâ kullanılmaktadır.",
+    "en": "A bath on Hamam Street in Ereğli, the only example of the 'star-shaped hot room' type among Konya's baths. Its hot room is surrounded by eight iwans; Karamanoğlu Mehmet Bey is known to have endowed it to the Grand Mosque. It is still in use today."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Hamam Ereğli'de, Selçuklu Mahallesi'nde, Hamam Sokak üzerindedir. Üzerinde kitabe yoktur. II. Beyazıt adına Karaman vakıflarını tespit eden vakıf defterlerinde İbrahim Bey'in vakıfları sayılırken 'Eski Hamam' adlı bir yapı kaydedilmiş, arşiv belgelerinde ayrıca Hamam-ı Köhne, Hamam-ı Nev ve Hamam-ı Atik adlı hamamlar anılmıştır; ancak 'Eski Hamam'ın bunlardan hangisi olduğu şüphelidir. Hamam Karamanoğlu Mehmet Bey tarafından Ulu Camii'ye vakfedilmiştir; bazı araştırmacılar bu bilgiden hareketle XV. yüzyılda Karamanoğulları zamanında yapıldığını kabul eder.",
+        "en": "The bath is in Ereğli, Selçuklu District, on Hamam Street. It has no inscription. In the foundation books identifying the Karaman waqfs in the name of Beyazıt II, a building named 'Old Bath' was recorded among İbrahim Bey's foundations; archive documents also mention baths named Hamam-ı Köhne, Hamam-ı Nev and Hamam-ı Atik, but which of these the 'Old Bath' is remains doubtful. The bath was endowed to the Grand Mosque by Karamanoğlu Mehmet Bey; from this some researchers accept that it was built in the 15th century in the Karamanoğulları period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "223"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan, Soyunmalık ve Ilıklık",
+        "en": "Plan, Dressing Room and Tepidarium"
+      },
+      "body": {
+        "tr": "Kuzeydoğu-güneybatı doğrultulu hamam 'yıldızvari sıcaklıklı' tipte inşa edilmiştir; Konya hamamları içinde bu tipolojideki tek örnektir. Malzeme moloz ve kesme taştır, cepheyi profilli bir saçak çevreler. Giriş kuzeybatı cephesindeki kapıdandır; soyunmalığa basık kemerli, tek kanatlı kapıdan girilir. Soyunmalığın kubbesi dıştan sekizgen kasnağa oturur, geçiş tromplarladır; ortasında şadırvan vardır. Ilıklık yanlarda iki sivri tonozlu, ortada kubbeli üç bölümlüdür; orta kubbeye prizmatik üçgenlerle geçilir.",
+        "en": "The northeast-southwest bath is built in the 'star-shaped hot-room' type, the only example of this typology among Konya's baths. It is built of rubble and cut stone with a profiled eave around the building. Entry is through a door on the northwest facade; the dressing room is entered through a low-arched single-winged door. Its dome sits on an octagonal drum outside with squinch transitions, and a fountain stands in the middle. The tepidarium has three parts: two pointed-vaulted on the sides and a domed middle part with prismatic-triangle transitions."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "224"
+        }
+      ]
+    },
+    {
+      "id": "sicaklik",
+      "order": 3,
+      "title": {
+        "tr": "Sıcaklık, Halvetler ve Su Deposu",
+        "en": "Hot Room, Halvets and Water Tank"
+      },
+      "body": {
+        "tr": "Yıldızvari düzenlenen sıcaklık toplam sekiz eyvanla çevrilidir. Kuzeybatı ve güneydoğudaki eyvanların ortası kubbeli, yanları sivri tonozludur; diğer altı eyvan daha sığdır ve sivri tonozludur. Eyvanlarla oluşan ortadaki sekizgen bölüm kubbeyle örtülüdür ve ışıklıkların sayısı kubbe eteğine doğru artar. Sıcaklığın ortasında sekizgen göbek taşı bulunur; güneybatı eyvandan su deposuna bir buhar penceresi açılır. Halvetlere açılan kapılar da dilimli kemerli niş içindeki tam kemerli geçişlerdir; halvetler kareye yakın planlı, pandantif geçişli kubbelidir. Güneybatıdaki su deposu ve külhan sivri tonozludur ve üzerinde üç aydınlatma gözü vardır. Hamam günümüzde kullanılmaktadır.",
+        "en": "The star-shaped hot room is surrounded by a total of eight iwans. The iwans in the northwest and southeast have a dome in the middle with pointed vaults on the sides; the other six are shallower and pointed-vaulted. The central octagonal part formed by the iwans is domed, with skylights increasing in number towards the dome foot. An octagonal navel stone lies in the middle, and a steam window opens from the southwest iwan to the water tank. Doors to the halvets are full-arched passages within segmented-arch niches; the halvets are almost square with pendentive domes. The water tank and furnace on the southwest are pointed-vaulted with three lighting holes. The bath is in use today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "224-225"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Sıcaklığı çevreleyen eyvan sayısı",
+        "en": "Iwans around the hot room"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "224"
+        }
+      ]
+    },
+    {
+      "key": "su_deposu_isik_gozu",
+      "label": {
+        "tr": "Su deposu tonozundaki aydınlatma gözü",
+        "en": "Lighting holes on the water-tank vault"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "yildizvari-sicaklik",
+      "title": {
+        "tr": "Yıldızvari sıcaklık",
+        "en": "Star-shaped hot room"
+      },
+      "hint": {
+        "tr": "Sekiz eyvanla çevrili sekizgen sıcaklık; Konya'da tek örnek.",
+        "en": "Octagonal hot room ringed by eight iwans; unique in Konya."
+      },
+      "section_id": "sicaklik"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam kuzeydoğu-güneybatı doğrultusunda uzanır. Kuzeybatıdaki kapıdan girilir; soyunmalığın ortasında şadırvan, kubbesi sekizgen kasnaklıdır. Ilıklık üç bölümlüdür. Sıcaklık sekiz eyvanla çevrili yıldız biçimindedir, ortasında sekizgen göbek taşı vardır. Güneybatıda su deposu ve külhan bulunur.",
+      "en": "The bath runs northeast to southwest. It is entered from the northwest; a fountain stands in the middle of the dressing room, whose dome has an octagonal drum. The tepidarium has three parts. The hot room is star-shaped, ringed by eight iwans, with an octagonal navel stone in the middle. The water tank and furnace lie to the southwest."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

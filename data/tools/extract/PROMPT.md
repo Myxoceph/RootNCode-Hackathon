@@ -32,12 +32,13 @@ the same id already exists, stop and report it.
 ## Rules
 - Only information stated in the chapter text. No outside knowledge. Unknown → `null` /
   `"unknown"` and a line in `meta.todos`.
-- `confidence`: `certain` when the source states it plainly, `probable` for estimates or links
-  the book implies but does not state, `disputed` when the source gives multiple views or
-  contradicts itself, `legend` only for legends. Legends/folk beliefs go to `legends[]`.
-- Source contradictions — including between the Turkish and English text, and Hijri/Gregorian
-  dates that do not match — keep the source's values, mark `disputed`, and explain in
-  `meta.data_quality_notes` (`[{field, note}]`).
+- `confidence`: `certain` for what the book states, `probable` for estimates or links the book
+  implies but does not state ("tahmin edilmektedir", "olmalıdır"), `legend` only for legends.
+  Legends/folk beliefs go to `legends[]`. Do not use `disputed`: there is no human review step,
+  the book is the source.
+- Dates and numbers exactly as the book prints them. Never convert Hijri/Gregorian dates or check
+  them yourself. If the Turkish and English text disagree, use the Turkish value; a one-line note
+  in `meta.data_quality_notes` (`[{field, note}]`) is enough.
 - Every section/fact/timeline event/inscription/relation needs `source_refs` with printed pages.
 - Text fields are `{ "tr": ..., "en": ... }`; use the book's English translation for `en`
   (condense, do not invent).
@@ -83,8 +84,8 @@ inscriptions, relations), and the points you were least sure about.
   `null` and a todo.
 - **Language of inscriptions.** Use the schema codes; when the text does not name the language
   use `"other"` and explain in `note`.
-- **Dates that disagree** (Hijri vs Gregorian, Turkish vs English text, two pages) → keep both in
-  `data_quality_notes`, set `confidence: disputed`.
+- **Dates that disagree** (Hijri vs Gregorian, Turkish vs English text, two pages) → use the
+  book's (Turkish) value as printed, `confidence: certain`; no conversion, no `disputed`.
 - **`meta.from`** = the chapter PDF name without number and `.pdf` (e.g. `İznik`), directly after
   `reviewed_by`.
 - **District folder.** Write into `data/eserler/<il>/<ilçe-slug>/` and set `location.district`

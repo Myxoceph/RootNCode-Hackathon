@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-seyfettin-kara-sungur-kumbeti",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Vefat ve yapım yılı kitapta verilmiyor (yalnızca 1266-1284 yaşadığı yıllar).",
+      "Mezarın bulunduğu yer kitapta yok: içeride sanduka yok, kripta kapalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap 'Türbe Seyfettin Karasungur'un vefatından önce yaptırılmıştır' diyor ama yaptıranı açıkça adlandırmıyor; bani olarak Seyfettin Karasungur 'probable' yazıldı."
+      },
+      {
+        "field": "location.address",
+        "note": "İngilizce 'moved onto the street' ifadesi Türkçe 'sokak üzerine çıkarılmıştır' ile aynı anlamda; yapının gerçekten taşındığı mı yoksa sokağın değiştiği mi belirsiz."
+      },
+      {
+        "field": "sections[ic-mekan]",
+        "note": "Türkçe 'on altıgen' (16 kenar) ifadesi esas alındı; İngilizce metin 'hexagon' diyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Seyfettin Kara Sungur Kümbeti",
+    "en": "Seyfettin Kara Sungur Kumbet"
+  },
+  "subtitle": {
+    "tr": "Selçuklu türbe geleneğinin en güzel örneklerinden",
+    "en": "One of the finest examples of the Seljuk tomb tradition"
+  },
+  "alternate_names": [
+    {
+      "tr": "Seyfettin Karasungur Türbesi",
+      "en": "Seyfettin Karasungur Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "kümbet",
+    "sekizgen plan",
+    "Selçuklu",
+    "kripta",
+    "tuğla bezeme",
+    "devşirme sütun",
+    "Karatay'ın kardeşi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Şems Mahallesi",
+    "address": "Mehterhane Sokak üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "153"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Seyfettin Karasungur'un vefatından önce (yaşadığı yıllar 1266-1284)",
+      "en": "Before the death of Seyfettin Karasungur (lived 1266-1284)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kümbet, III. Keyhüsrev döneminde 1266-1284 yılları arasında yaşadığı bilinen Seyfettin Karasungur'un vefatından önce yaptırılmıştır; kesin yıl verilmiyor.",
+      "en": "The kumbet was built before the death of Seyfettin Karasungur, known to have lived 1266-1284 under Keyhüsrev III; no exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "153"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Seyfettin Karasungur",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "153"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Celaleddin Karatay'ın kardeşi Seyfettin Karasungur'un vefatından önce yaptırılan, sekizgen planlı, içten kubbeli dıştan külahlı kümbet. Tuğla örgülü cephe süslemeleri ve Bizans devşirme sütunlu mazgal pencereleriyle Selçuklu türbe geleneğini yansıtır.",
+    "en": "An octagonal kumbet with an inner dome and outer cone, built before the death of Seyfettin Karasungur, brother of Celaleddin Karatay. With brickwork facade ornament and loophole windows using Byzantine spolia columns, it reflects the Seljuk tomb tradition."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Kümbet Şems Mahallesi'nde Mehterhane Sokak üzerindedir; önceden Dibi Çıkmaz Sokak üzerindeyken sonradan sokak üzerine çıkarılmıştır. Seyfettin Karasungur'un 1266-1284 arasında III. Keyhüsrev döneminde yaşadığı bilinir; Celaleddin Karatay'ın kardeşidir. Türbe vefatından önce yaptırılmıştır. Bir dönem ahır olarak kullanılan yapı 1960'lı yıllarda Konya ve Mülhakatı Eski Eserler Sevenler Derneği tarafından onarılmış, adliye deposu olarak kullanılmış, 1998'de Vakıflar Bölge Müdürlüğü tarafından onarılmıştır.",
+        "en": "The kumbet is on Mehterhane Street in Şems Neighborhood; it was previously on Dibi Çıkmaz Street and later brought onto the street. Seyfettin Karasungur is known to have lived 1266-1284 under Keyhüsrev III and was the brother of Celaleddin Karatay. The tomb was built before his death. Once used as a barn, it was repaired in the 1960s by the Konya Antiquities Lovers' Association, used as a courthouse warehouse, and restored by the Regional Directorate of Foundations in 1998."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "153"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Cepheler",
+        "en": "Plan and Facades"
+      },
+      "body": {
+        "tr": "Sekizgen planlı türbe içten kubbe, dıştan külahla örtülüdür; alt katta kripta, üst katta sembolik sanduka vardır. Ana giriş doğu cephededir; bu cephe bir dönem kapatılmış, girişler batı cephedeki küçük bir kapıdan sağlanmış, bu kapının üzerine tadilatta pencere açılmıştır. Gövdede taş ve tuğla birlikte kullanılmış, giriş cephesi mermer, kubbe ve külah tuğladır. Cepheler köşelerdeki tuğla örgülü plasterlerle dikdörtgen panolara bölünmüş; bu panolar külah eteğine kadar yükselir. Panolarda iç içe geçen sekizgenler, bunların merkezlerinde küçük kareler, kare kenarlarında altıgenler ana kompozisyonu oluşturur; bazı cephelerde eşkenar dörtgen kompozisyonlar vardır. Diğer panolarda kemerler içine mazgal pencereler yerleştirilmiş; pencereler Bizans dönemi devşirme sütunlarından derlenmiştir.",
+        "en": "The octagonal tomb is covered by an inner dome and outer cone; a crypt lies on the lower floor and a symbolic sarcophagus on the upper. The main entrance is on the east facade, which was once closed so that entry was through a small door on the west facade, above which a window was opened during renovations. Stone and brick are used in the body, the entrance facade is marble, and the dome and cone are brick. Brickwork pilasters at the corners divide the facades into rectangular panels rising to the base of the cone. Interlaced octagons form the main composition, with small squares at their centers and hexagons on the square edges; some facades have rhombus compositions. Other panels hold loophole windows within arches; the windows use columns collected from Byzantine-period spolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "153-154"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "İçte sekizgen gövde iki merkezli kemerlerle on altıgene dönüştürülmüş ve kubbe oturtulmuştur. Türbe içinde sanduka yoktur; kriptaya inen merdivenler günümüzde kapalıdır. Kitaba göre türbe, Selçuklu türbe geleneğini yansıtan en güzel örneklerden biridir.",
+        "en": "Inside, the octagonal body is turned into a sixteen-sided form with two-centered arches and the dome placed on it. There is no sarcophagus in the tomb; the stairs down to the crypt are closed today. According to the book it is one of the most beautiful examples reflecting the Seljuk tomb tradition."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "154"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Sekizgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "153"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Roof"
+      },
+      "value": "İçten kubbe, dıştan külah",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "153"
+        }
+      ]
+    },
+    {
+      "key": "kat",
+      "label": {
+        "tr": "Kat",
+        "en": "Floors"
+      },
+      "value": "Alt katta kripta, üst katta sembolik sanduka",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "153"
+        }
+      ]
+    },
+    {
+      "key": "sanduka",
+      "label": {
+        "tr": "Sanduka",
+        "en": "Sarcophagus"
+      },
+      "value": "Türbe içinde sanduka yok",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "154"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyfettin Karasungur",
+      "role": {
+        "tr": "Türbenin sahibi; III. Keyhüsrev döneminde yaşadı (1266-1284)",
+        "en": "Occupant of the tomb; lived under Keyhüsrev III (1266-1284)"
+      }
+    },
+    {
+      "name": "Celaleddin Karatay",
+      "role": {
+        "tr": "Seyfettin Karasungur'un kardeşi",
+        "en": "Brother of Seyfettin Karasungur"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1998",
+      "year": 1998,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı",
+        "en": "Restoration by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "153"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "cephe",
+      "title": {
+        "tr": "Tuğla örgülü sekizgen bezeme",
+        "en": "Octagon brickwork ornament"
+      },
+      "hint": {
+        "tr": "Köşelerdeki plasterler ve devşirme sütunlu mazgal pencerelere bakın.",
+        "en": "Look at the corner pilasters and the loophole windows with spolia columns."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kümbet, sekiz kenarlı bir plana sahip, taş ve tuğladan yapılmış, tepesi koni biçimli bir külahla bitmektedir. Giriş cephesi mermerdir. Cepheler köşelerdeki tuğla şeritlerle dikdörtgen panolara bölünmüş, panolarda iç içe geçmiş sekizgenlerden oluşan tuğla bezemeler ve kemer içine yerleştirilmiş küçük ince pencereler vardır. Pencerelerin sütunları eski dönemden devşirilmiştir. İçeride sanduka yoktur.",
+      "en": "The kumbet has an eight-sided plan, is built of stone and brick, and ends in a conical roof. The entrance facade is marble. The facades are divided by brick strips at the corners into rectangular panels with brick ornament of interlaced octagons and small narrow windows set inside arches. The window columns are reused from an earlier period. There is no sarcophagus inside."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,243 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-altinekin-dedeler-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapının banisi/ustası kitapta bilinmiyor.",
+      "Türkçe metindeki \"kuşunla\" ifadesi \"kurşunla\" olarak yorumlandı (İngilizce metin \"lead\")."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metinde \"kuşunla kaplanmıştır\" yazıyor; İngilizce metin \"lead\" dediği için \"kurşun\" olarak alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Dedeler Hanı",
+    "en": "Dedeler Inn"
+  },
+  "subtitle": {
+    "tr": "1868-69 tarihli, üç sahınlı kasaba hanı",
+    "en": "A town inn dated 1868-69, with three bays"
+  },
+  "alternate_names": [],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "han",
+    "kasaba hanı",
+    "ahşap direk",
+    "Maşallah kitabesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Altınekin",
+    "neighborhood": null,
+    "address": "Dedeler Kasabası merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "270"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1285 / M. 1868-69",
+      "en": "AH 1285 / AD 1868-69"
+    },
+    "start_year": 1868,
+    "end_year": 1869,
+    "hijri_year": 1285,
+    "century": 19,
+    "basis": {
+      "tr": "Giriş açıklığı üzerindeki taşta \"Maşallah H. 1285\" yazısı.",
+      "en": "Inscription \"Maşallah H 1285\" on a stone above the entrance opening."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "270"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "270"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Altınekin'in Dedeler Kasabası merkezinde, 1868-69 tarihli han. İki sıra ahşap direkle üç sahına ayrılır; 2000'li yıllarda onarılmıştır.",
+    "en": "An inn in the center of Dedeler Town in Altınekin, dated 1868-69. Two rows of wooden posts divide it into three bays; it was repaired in the 2000s."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Hanın banisi veya ustası bilinmemektedir. Giriş açıklığı üstündeki taşta bulunan \"Maşallah H. 1285\" yazısından yapının M. 1868-69'da yapıldığı anlaşılmaktadır. Harap hâlde olan yapı 2000'li yıllarda onarılmıştır.",
+        "en": "The owner or master of the inn is unknown. The inscription \"Maşallah H 1285\" on a stone above the entrance shows it was built in 1868-69. The dilapidated building was repaired in the 2000s."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "270"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Hana kuzey cephesindeki düz atkı kemerle oluşturulmuş kapı açıklığından girilir. İç kısım doğu-batı doğrultusunda iki sıra ahşap direkle üç sahına ayrılmıştır. İç mekânın güney batı köşesinde bir ocak, hemen karşısında bir dolap yer alır. Hanın üst örtüsü kurşunla kaplıdır.",
+        "en": "The inn is entered through a door opening formed by a flat lintel arch on the north facade. The interior is divided into three bays by two rows of wooden posts in the east-west direction. There is a stove in the southwest corner and a cabinet right opposite. The upper cover is lead."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "270"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of bays"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "270"
+        }
+      ]
+    },
+    {
+      "key": "direk_sirasi",
+      "label": {
+        "tr": "Ahşap direk sırası",
+        "en": "Rows of wooden posts"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "270"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "masallah-kitabesi",
+      "location": {
+        "tr": "Giriş açıklığının üstündeki taş",
+        "en": "Stone above the entrance opening"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Maşallah H. 1285",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1285,
+        "gregorian": "1868-69"
+      },
+      "note": {
+        "tr": "Kitap dili belirtmiyor; metin kitapta Türkçe yazımla aktarılmıştır. Meal verilmemiştir.",
+        "en": "The book does not name the language; the text is given in Turkish spelling. No translation is given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "270"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1868,
+      "date": null,
+      "hijri": "1285",
+      "type": "construction",
+      "title": {
+        "tr": "Han yapıldı",
+        "en": "Inn built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "270"
+        }
+      ],
+      "note": {
+        "tr": "Kitap M. 1868-69 verir.",
+        "en": "The book gives AD 1868-69."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, Dedeler Kasabası'nın ortasında, kuzey yüzünde düz kemerli bir kapısı olan, kurşun örtülü bir yapıdır. İçeride iki sıra ahşap direk mekânı üç bölüme ayırır; güney batı köşede bir ocak, karşısında bir dolap bulunur.",
+      "en": "The inn stands in the middle of Dedeler Town, a lead-roofed building with a flat-arched door on its north side. Inside, two rows of wooden posts divide the space into three bays; a stove is in the southwest corner and a cabinet opposite."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

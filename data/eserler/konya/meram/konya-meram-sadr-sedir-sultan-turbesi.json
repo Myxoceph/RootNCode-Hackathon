@@ -1,0 +1,281 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-sadr-sedir-sultan-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapım yılı ve banisi kitapta yok; yalnızca Sadır Sultan'ın vefat tarihi veriliyor.",
+      "Dönem (era) kitapta belirtilmiyor; XIV. yüzyıl dışında bilgi yok.",
+      "Onarım yılı kitapta verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlık 'Sadr (Sedir) Sultan'; metin gövdesinde 'Sadır Sultan' ve 'Sadr Sultan' biçimleri karışık kullanılıyor."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce 'the rough side is covered with stone' ifadesi Türkçe 'kaba yonu taşla örgülüdür' ile uyumlu olmayacak kadar belirsiz; Türkçe metin esas alındı."
+      },
+      {
+        "field": "location.district",
+        "note": "Kitabın içindekiler sayfası eseri Karatay başlığı altında veriyor; eserin kendi sayfasındaki adres Meram. Adrese göre Meram yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sadr (Sedir) Sultan Türbesi",
+    "en": "Sadr (Sedir) Sultan Tomb"
+  },
+  "subtitle": {
+    "tr": "Yok olmuş bir zaviyenin günümüze kalan türbesi",
+    "en": "The surviving tomb of a vanished zawiya"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sadır Sultan Türbesi",
+      "en": "Sadır Sultan Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "zaviye kalıntısı",
+    "Sadr Sultan",
+    "kırma çatı",
+    "Sedirler"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Köprübaşı Mahallesi",
+    "address": "Sedirler Caddesi üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "148"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIV. yüzyıl",
+      "en": "14th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kâtip Çelebi, Sadır Sultan'ın vefat tarihini H. 794 / M. 1391-92 olarak verir; bundan yapının XIV. yüzyılda inşa edildiği anlaşılmaktadır. Yapım yılı kitapta verilmiyor.",
+      "en": "Kâtip Çelebi gives the death date of Sadır Sultan as 794 AH / 1391-92 AD, from which the building is understood to date to the 14th century. No construction year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "148"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mezarı Kâtip Çelebi'nin H. 794 / M. 1391-92'de öldüğünü yazdığı şair-hekim Sadr Sultan'a ait olan, bugün yok olmuş bir zaviyenin parçası kare planlı türbe. Kırma çatılı yapının zemin katı yolun altında kalmıştır.",
+    "en": "A square-planned tomb, part of a now-vanished zawiya, belonging to the poet-physician Sadr Sultan, whose death Kâtip Çelebi gives as 794 AH / 1391-92 AD. The hipped-roof building's ground floor lies below street level."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Kâtip Çelebi, Sadır Sultan'ın vefat tarihi olarak H. 794 / M. 1391-92 yıllarını belirtmektedir; buna dayanarak yapının XIV. yüzyılda inşa edildiği anlaşılmaktadır. Yapı günümüze ulaşmamış bir zaviyenin parçasıdır. Türbe zamanla harap hâle gelmiş, onarımı Karatay Belediyesi tarafından yapılmıştır.",
+        "en": "Kâtip Çelebi gives the death date of Sadır Sultan as 794 AH / 1391-92 AD, from which the building is understood to have been built in the 14th century. It is part of a zawiya that has not survived. The tomb fell into disrepair over time and was repaired by Karatay Municipality."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "148"
+        }
+      ]
+    },
+    {
+      "id": "sadr-sultan",
+      "order": 2,
+      "title": {
+        "tr": "Sadr Sultan",
+        "en": "Sadr Sultan"
+      },
+      "body": {
+        "tr": "Sadır Sultan'ın esas adı Ebubekir Bin Zeki El Konevi'dir; dönemin âlimlerinden, şair ve aynı zamanda hekim bir zattır. Yanında Sadr-ı Hâkim-i Tirmizi ve Zeyneddin Sadaka yatmaktadır.",
+        "en": "Sadır Sultan's real name is Ebubekir Bin Zeki El Konevi; he was a scholar of his time, a poet and also a physician. Sadr-ı Hâkim-i Tirmizi and Zeyneddin Sadaka lie beside him."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "148"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kare planlı türbe eskiden düz toprak örtülüyken günümüzde kırma çatıyla örtülüdür; zemin katı aşağıda kalmıştır. Cephe sarıya boyalıdır; ana giriş cephesi belirli seviyeye kadar kesme taş ve kaba yonu taşla örülmüştür. Bu cephede dikdörtgen sivri kemerli bir niş ve yanında yuvarlak bir pencere vardır. İçeride iki mezar taşı bulunur.",
+        "en": "The square-planned tomb used to have a flat earth roof and now has a hipped roof; its ground floor remains below ground. The facade is painted yellow, and the main entrance facade is built of cut stone and rough-hewn stone up to a certain height. This facade has a rectangular niche with a pointed arch and a round window beside it. There are two gravestones inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "148"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "148"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Roof"
+      },
+      "value": "Kırma çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "148"
+        }
+      ]
+    },
+    {
+      "key": "mezar_tasi",
+      "label": {
+        "tr": "Mezar taşı sayısı",
+        "en": "Number of gravestones"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "148"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sadr Sultan (Ebubekir Bin Zeki El Konevi)",
+      "role": {
+        "tr": "Türbenin sahibi; şair, hekim, âlim",
+        "en": "Occupant of the tomb; poet, physician, scholar"
+      }
+    },
+    {
+      "name": "Sadr-ı Hâkim-i Tirmizi",
+      "role": {
+        "tr": "Sadr Sultan'ın yanında yatar",
+        "en": "Lies beside Sadr Sultan"
+      }
+    },
+    {
+      "name": "Zeyneddin Sadaka",
+      "role": {
+        "tr": "Sadr Sultan'ın yanında yatar",
+        "en": "Lies beside Sadr Sultan"
+      }
+    },
+    {
+      "name": "Kâtip Çelebi",
+      "role": {
+        "tr": "Vefat tarihini veren kaynak",
+        "en": "Source of the death date"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1391",
+      "year": 1391,
+      "date": null,
+      "hijri": "794",
+      "type": "record",
+      "title": {
+        "tr": "Kâtip Çelebi'ye göre Sadır Sultan'ın vefatı (H. 794 / M. 1391-92)",
+        "en": "Death of Sadır Sultan according to Kâtip Çelebi (794 AH / 1391-92 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "148"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, Sedirler Caddesi üzerinde, kare planlı ve kırma çatılı küçük bir yapıdır. Zemin katı yol seviyesinin altında kalmıştır. Cephesi sarıya boyalıdır; giriş cephesi belirli bir yüksekliğe kadar taş örgülüdür ve burada sivri kemerli dikdörtgen bir niş ile yanında yuvarlak bir pencere vardır. İçeride iki mezar taşı bulunur.",
+      "en": "The tomb is a small square-planned building with a hipped roof on Sedirler Street. Its ground floor lies below street level. The facade is painted yellow; the entrance facade is stone-built up to a certain height and has a rectangular pointed-arch niche with a round window beside it. Inside there are two gravestones."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,511 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-ali-gav-zaviyesi-mahmudiye-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Eğitim Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kayıt iki yapıyı birlikte anlatıyor; ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
+      "Yapıyı ilk yaptıran kitapta belirtilmiyor (banî null); kaynak/arşiv belgesi aranmalı.",
+      "Kitâbenin metni kitapta yok; fotoğraftan okunmalı.",
+      "Adres bilgisi: mahalle ve sokak kitapta yok.",
+      "İstanbul Türk-İslam Eserleri Müzesi'ndeki çini parçalarının envanter bilgisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Bölüm başlığı 'Ali Gav (Zaviyesi) Mahmudiye Medresesi'; kayıt iki adı (Ali Gav Zaviyesi ve Mahmudiye Medresesi) birlikte anlatıyor. Ana ad 'Ali Gav Medresesi' (metindeki kullanım), diğer adlar alternate_names'e alındı."
+      },
+      {
+        "field": "type",
+        "note": "Yapı metinde hem 'zaviye' hem 'medrese' diye anılıyor; kapalı avlulu medrese planı ve 'Mahmudiye Medresesi' adı nedeniyle tür 'medrese', ikincil tür 'tekke' seçildi."
+      },
+      {
+        "field": "founder",
+        "note": "Kitap ilk yaptıranı belirtmez; Vali Mehmet Ferid Paşa yalnızca onaran/yeniden hizmete açandır, bu yüzden founder.name null, Paşa 'people' ve 'timeline'da."
+      },
+      {
+        "field": "dating",
+        "note": "Selçuklu çağı tarihlemesi ve XIII. yüzyılın ilk çeyreği ifadesi karşılaştırmaya dayalı bir tahmindir ('düşünülmektedir'); başlangıç/bitiş yılı boş bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ali Gav Medresesi",
+    "en": "Ali Gav Madrasa"
+  },
+  "subtitle": {
+    "tr": "Selçuklu çağından kalma, 1899'da 'Mahmudiye Medresesi' adıyla yenilenen kapalı avlulu medrese",
+    "en": "A closed-courtyard madrasa from the Seljuk era, renewed in 1899 as the 'Mahmudiye Madrasa'"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ali Gav Zaviyesi",
+      "en": "Ali Gav Zawiya",
+      "note": "Kayıt iki yapı adını birlikte anlatıyor"
+    },
+    {
+      "tr": "Mahmudiye Medresesi",
+      "en": "Mahmudiye Madrasa",
+      "note": "1899-1900'de onarımla hizmete açıldığı ad"
+    },
+    {
+      "tr": "Ali Gav (Zaviyesi) Mahmudiye Medresesi",
+      "en": "Ali Gav (Zawiya) Mahmudiye Madrasa",
+      "note": "Bölüm başlığı"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "medrese",
+    "zaviye",
+    "Selçuklu",
+    "kapalı avlulu",
+    "Mahmudiye",
+    "rekonstrüksiyon",
+    "Yılmaz Önge",
+    "Alâeddin Tepesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": null,
+    "address": "Alâeddin Tepesi'nin kuzeyi; Karatay Medresesi'ne yaklaşık 150 m",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "96"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Selçuklu çağı (XIII. yüzyılın ilk çeyreği, tahmin); H. 1317 / M. 1899-1900 onarımı",
+      "en": "Seljuk era (probably first quarter of the 13th century); repaired AH 1317 / AD 1899-1900"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Yapı Selçuklu çağına tarihlenir; kubbesi desteklere oturan kapalı avlulu Afyon Boyalıköy ve Isparta Atabey Ertokuş (1224) medreseleriyle çağdaş olduğu ve XIII. yüzyılın ilk çeyreğinde inşa edildiği düşünülmektedir. Giriş kapısı kitâbesine göre H. 1317 / M. 1899-1900'de onarılmıştır.",
+      "en": "The building dates to the Seljuk era; it is thought to be contemporary with the closed-courtyard Afyon Boyalıköy and Isparta Atabey Ertokuş (1224) madrasas, whose domes rest on supports, and built in the first quarter of the 13th century. According to the entrance-gate inscription it was repaired in AH 1317 / AD 1899-1900."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "96, 98"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "96"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Alâeddin Tepesi'nin kuzeyinde, Selçuklu çağına tarihlenen kapalı avlulu medrese; adını Ali Gav Baba'dan ya da Ali adlı bir askerden aldığı rivayet edilir. H. 1317 / M. 1899-1900'de Vali Mehmet Ferid Paşa onarımıyla 'Mahmudiye Medresesi' adıyla hizmete açılmış, 2012'ye kadar büyük ölçüde yıkık kalmış ve 2013'te Konya Büyükşehir Belediyesi'nce rekonstrükte edilmiştir.",
+    "en": "A closed-courtyard madrasa dating to the Seljuk era, north of Alâeddin Hill; rumour says it took its name from Ali Gav Baba or from a soldier named Ali. Repaired by Governor Mehmet Ferid Paşa in AH 1317 / AD 1899-1900 and opened as the 'Mahmudiye Madrasa', it lay largely in ruins until 2012 and was reconstructed by Konya Metropolitan Municipality in 2013."
+  },
+  "sections": [
+    {
+      "id": "ad-onarim",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Ad ve 1899 Onarımı",
+        "en": "Location, Name and the 1899 Repair"
+      },
+      "body": {
+        "tr": "Yapı Alâeddin Tepesi'nin kuzeyinde, Karatay Medresesi'ne yaklaşık 150 m uzaklıktadır. Selçuklu çağına tarihlenen Ali Gav Zaviyesi, giriş kapısı üzerindeki kitâbeye göre H. 1317 / M. 1899-1900'de Vali (Avlonyalı) Mehmet Ferid Paşa tarafından tamir ve ihya ettirilerek 'Mahmudiye Medresesi' adıyla hizmete açılmıştır. Adının kökeni için iki rivayet aktarılır (bkz. rivayetler).",
+        "en": "The building is north of Alâeddin Hill, about 150 m from the Karatay Madrasa. Dating to the Seljuk era, the Ali Gav Zawiya was, according to the inscription above its entrance gate, repaired and revived by Governor (Avlonian) Mehmet Ferid Paşa in AH 1317 / AD 1899-1900 and opened under the name 'Mahmudiye Madrasa'. Two rumours about the origin of its name are reported (see legends)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "96"
+        }
+      ]
+    },
+    {
+      "id": "yikim-rekonstruksiyon",
+      "order": 2,
+      "title": {
+        "tr": "Yıkım, Kazı ve Rekonstrüksiyon",
+        "en": "Ruin, Excavation and Reconstruction"
+      },
+      "body": {
+        "tr": "Medresenin güneydeki ana eyvanı ve iki yanındaki kubbeli birer oda dışındaki tüm bölümleri 2012'ye kadar tamamen yıkık durumdaydı; yapı bugünkü şeklini Konya Büyükşehir Belediyesi'nin 2013'te tamamladığı rekonstrüksiyonla almıştır. Vakıflar Genel Müdürlüğü adına Yılmaz Önge'nin 1965'te yürüttüğü kazı ve onarım çalışmaları, 19,70 x 23,50 m'lik bir alanı kaplayan medresenin kapalı avlulu olduğunu, kare planlı avlunun ortada dört bağımsız sütuna dayanan 6 m çaplı bir kubbeyle örtülü olduğunu göstermiştir. Fenerli kubbeye geçiş yelpaze biçimli pandantiflerledir.",
+        "en": "All parts of the madrasa except the main iwan in the south and a domed room on each side were completely ruined until 2012; the building took its present form with the reconstruction completed by Konya Metropolitan Municipality in 2013. Excavation and repair carried out by Yılmaz Önge in 1965 on behalf of the General Directorate of Foundations showed that the madrasa, covering 19.70 x 23.50 m, had a closed courtyard, whose square plan was covered by a 6 m diameter dome supported by four free-standing columns in the centre. The transition to the dome, which has a lantern, is by fan-shaped pendentives."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "id": "plan-malzeme",
+      "order": 3,
+      "title": {
+        "tr": "Plan, Malzeme ve Buluntular",
+        "en": "Plan, Materials and Finds"
+      },
+      "body": {
+        "tr": "Avlunun güneyinde mescit/dershane, kuzeyinde giriş eyvanı ve sivri beşik tonozlu iki eyvan, doğu-batı kanatlarında tonozlu öğrenci odaları yer alır; rekonstrüksiyonda giriş eyvanının iki yanına birer köşe odası yerleştirilmiştir. Kuzeybatı köşedeki odada Kemter Baba'ya ait H. 1261 / M. 1845 tarihli, Bektaşi serpuşlu bir mezar taşı vardır. Cephe köşelerinde kesme, orta kısımlarda kaba yonu ve moloz ağırlıklı taş kullanılmış; örtü elemanları tuğladır. Güney duvar boyunca devam eden su künklerinin avlu ortasındaki bir havuza ait olduğu düşünülmektedir. 1965 kazısında avlu bölümünde çok sayıda devşirme malzeme bulunmuş; özgün güneybatı köşe odasının zemininde pişmiş topraktan bir tandır (Selçuklu medreselerinin ısıtma sorununa dair önemli bir bulgu), güneydoğu köşe odası ile avlunun kuzeybatısında turkuaz ve lacivert sırlı dikdörtgen, sekiz köşeli yıldız ve haçvari çiniler çıkarılmış, güneydoğu köşe odasında ayrıca bir Selçuklu kandili bulunmuştur. Çini parçaları bugün İstanbul Türk-İslam Eserleri Müzesi'nde sergilenmektedir.",
+        "en": "South of the courtyard are a masjid/classroom, to the north an entrance iwan and two pointed barrel-vaulted iwans, and on the east and west wings vaulted student rooms; in the reconstruction a corner room was placed on each side of the entrance iwan. In the northwest corner room is a tombstone with Bektashi headgear, dated AH 1261 / AD 1845, belonging to Kemter Baba. Cut stone was used at the façade corners and rough-hewn stone and rubble in the middle sections; the roofing elements are brick. The water pipes found along the south wall are thought to belong to a pool that must have been in the middle of the courtyard. The 1965 excavation found many reused materials in the courtyard; on the floor of the original southwest corner room, a terracotta tandoor (an important find about the heating of Seljuk madrasas); in the southeast corner room and the northwest of the courtyard, rectangular, eight-pointed-star and cross-shaped tiles glazed in turquoise and dark blue; and a Seljuk oil lamp in the southeast corner room. The tile pieces are exhibited today in the Istanbul Turkish-Islamic Arts Museum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "97-99"
+        }
+      ]
+    },
+    {
+      "id": "tarihleme",
+      "order": 4,
+      "title": {
+        "tr": "Tarihleme",
+        "en": "Dating"
+      },
+      "body": {
+        "tr": "Konya Ali Gav Medresesi'nin, kubbesi desteklere oturan kapalı avlulu Selçuklu medreselerinden Afyon Boyalıköy (XIII. yüzyıl başı) ve Isparta Atabey Ertokuş (1224) medreseleriyle çağdaş olduğu ve XIII. yüzyılın ilk çeyreğinde inşa edildiği düşünülmektedir.",
+        "en": "Konya Ali Gav Madrasa is thought to be contemporary with the closed-courtyard Seljuk madrasas whose domes rest on supports, Afyon Boyalıköy (early 13th century) and Isparta Atabey Ertokuş (1224), and to have been built in the first quarter of the 13th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "98-99"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "adin-kokeni-ali-gav-baba",
+      "title": {
+        "tr": "Adı: Ali Gav Baba rivayeti",
+        "en": "Name: the Ali Gav Baba rumour"
+      },
+      "body": {
+        "tr": "Bir rivayete göre yapı adını, XV. yüzyılda medresede şeyhlik yapmış, Hacı Bayram-ı Veli ahfadından Ali Gav Baba'dan almıştır.",
+        "en": "According to one rumour, the building took its name from Ali Gav Baba, a descendant of Hacı Bayram-ı Veli, who was a sheikh in the madrasa in the 15th century."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "96"
+        }
+      ]
+    },
+    {
+      "id": "adin-kokeni-ali-askeri",
+      "title": {
+        "tr": "Adı: Ali adlı Türk askeri rivayeti",
+        "en": "Name: the rumour of a Turkish soldier named Ali"
+      },
+      "body": {
+        "tr": "Başka bir rivayete göre ad, Konya'nın Selçuklu ordusu tarafından fethi sırasında sur içine sızan Ali adlı bir Türk askerinden gelir.",
+        "en": "According to another rumour, the name comes from a Turkish soldier named Ali who infiltrated the city walls during the Seljuk army's conquest of Konya."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "96"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "alan",
+      "label": {
+        "tr": "Medresenin kapladığı alan",
+        "en": "Area covered by the madrasa"
+      },
+      "value": "19,70 x 23,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_capi",
+      "label": {
+        "tr": "Avlu kubbesinin çapı",
+        "en": "Diameter of the courtyard dome"
+      },
+      "value": 6,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "key": "sutun_sayisi",
+      "label": {
+        "tr": "Avlu kubbesini taşıyan bağımsız sütun",
+        "en": "Free-standing columns carrying the courtyard dome"
+      },
+      "value": 4,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "key": "rekonstruksiyon_yili",
+      "label": {
+        "tr": "Rekonstrüksiyonun tamamlandığı yıl",
+        "en": "Year the reconstruction was completed"
+      },
+      "value": 2013,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "97"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mehmet Ferid Paşa (Avlonyalı)",
+      "role": {
+        "tr": "Vali; H. 1317 / M. 1899-1900'de yapıyı tamir ve ihya ettirdi",
+        "en": "Governor; had the building repaired and revived in AH 1317 / AD 1899-1900"
+      }
+    },
+    {
+      "name": "Yılmaz Önge",
+      "role": {
+        "tr": "1965 kazı ve onarım çalışmalarını VGM adına yürüttü",
+        "en": "Directed the 1965 excavation and repair for the General Directorate of Foundations"
+      }
+    },
+    {
+      "name": "Kemter Baba",
+      "role": {
+        "tr": "Kuzeybatı köşe odasındaki H. 1261 / M. 1845 tarihli mezar taşının sahibi",
+        "en": "Owner of the tombstone dated AH 1261 / AD 1845 in the northwest corner room"
+      }
+    },
+    {
+      "name": "Ali Gav Baba",
+      "role": {
+        "tr": "Rivayete göre XV. yüzyılda medresede şeyh; Hacı Bayram-ı Veli ahfadından",
+        "en": "According to rumour a sheikh in the madrasa in the 15th century; a descendant of Hacı Bayram-ı Veli"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde",
+        "en": "Above the entrance gate"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1317,
+        "gregorian": "1899-1900"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "96"
+        }
+      ],
+      "note": {
+        "tr": "Kitap kitâbenin metnini ve dilini vermiyor; yalnızca H. 1317 / M. 1899-1900'de Vali Mehmet Ferid Paşa tarafından tamir ve ihya ettirildiğini ve 'Mahmudiye Medresesi' adıyla hizmete açıldığını bildirdiğini aktarıyor.",
+        "en": "The book does not give the inscription's text or language; it only reports that it records the repair and revival by Governor Mehmet Ferid Paşa in AH 1317 / AD 1899-1900 and the opening as the 'Mahmudiye Madrasa'."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1899",
+      "year": 1899,
+      "date": null,
+      "hijri": "1317",
+      "type": "repair",
+      "title": {
+        "tr": "Vali Mehmet Ferid Paşa tarafından tamir ve ihya ettirilip 'Mahmudiye Medresesi' adıyla hizmete açıldı (H. 1317 / M. 1899-1900)",
+        "en": "Repaired and revived by Governor Mehmet Ferid Paşa and opened as the 'Mahmudiye Madrasa' (AH 1317 / AD 1899-1900)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "96"
+        }
+      ],
+      "note": {
+        "tr": "Kitap M. 1899-1900 aralığını veriyor; yıl aralığın ilk yılıdır.",
+        "en": "The book gives the range 1899-1900; the year is the start of that range."
+      }
+    },
+    {
+      "id": "kazi-1965",
+      "year": 1965,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM adına Yılmaz Önge'nin kazı ve onarım çalışmaları",
+        "en": "Excavation and repair by Yılmaz Önge on behalf of the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "id": "yikik-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Ana eyvan ve iki yanındaki kubbeli odalar dışında yapı 2012'ye kadar tamamen yıkıktı",
+        "en": "Apart from the main iwan and its two flanking domed rooms the building lay completely in ruins until 2012"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "id": "rekonstruksiyon-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Konya Büyükşehir Belediyesi rekonstrüksiyonu tamamladı",
+        "en": "Konya Metropolitan Municipality completed the reconstruction"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "97"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "tandir",
+      "title": {
+        "tr": "Selçuklu tandırı",
+        "en": "Seljuk tandoor"
+      },
+      "hint": {
+        "tr": "Güneybatı köşe odasında pişmiş topraktan tandır bulundu; medreselerin ısıtmasına dair önemli bulgu.",
+        "en": "A terracotta tandoor was found in the southwest corner room; an important finding on heating in madrasas."
+      },
+      "section_id": "plan-malzeme"
+    },
+    {
+      "feature": "kemter-baba",
+      "title": {
+        "tr": "Kemter Baba'nın mezar taşı",
+        "en": "Kemter Baba's tombstone"
+      },
+      "hint": {
+        "tr": "Kuzeybatı köşe odasında Bektaşi serpuşlu, H. 1261 tarihli taş.",
+        "en": "In the northwest corner room, a stone with Bektashi headgear dated AH 1261."
+      },
+      "section_id": "plan-malzeme"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-selcuklu-karatay-medresesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Karatay Medresesi'ne yaklaşık 150 m uzaklıkta, Alâeddin Tepesi'nin kuzeyinde yer alır.",
+        "en": "Located about 150 m from the Karatay Madrasa, north of Alâeddin Hill."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "96"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese kapalı avlulu ve yaklaşık 19,70 x 23,50 m ölçülerindedir. Kare planlı avlunun ortasında, dört sütuna oturan 6 m çaplı fenerli bir kubbe vardır. Güneyde mescit/dershane, kuzeyde giriş eyvanı ve iki eyvan, doğu ve batı kanatlarında tonozlu öğrenci odaları yer alır. Kuzeybatı köşe odasında Kemter Baba'nın mezar taşı bulunur.",
+      "en": "The madrasa has a closed courtyard and measures about 19.70 x 23.50 m. In the centre of the square courtyard is a 6 m diameter domed lantern resting on four columns. To the south are a masjid/classroom, to the north an entrance iwan and two iwans, and on the east and west wings vaulted student rooms. The northwest corner room holds Kemter Baba's tombstone."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

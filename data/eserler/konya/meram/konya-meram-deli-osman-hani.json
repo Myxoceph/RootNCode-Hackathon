@@ -1,0 +1,294 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-deli-osman-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Hanı kimin yaptırdığı kitapta yok; Osman Ağa yalnızca hana adını veren kişi olarak geçiyor (founder: null).",
+      "Hanın yapım tarihi için yalnızca üslup tahmini var.",
+      "Bozağaç Camii'nin kayıt id'si ids.md'de yok; ilişki yazılmadı.",
+      "Mahalle bilgisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metinde \"Before the restoration, the carpet was covered with soil\" yazıyor; Türkçe metin \"hâlin üzeri toprak damlı\" diyor (hâl = salon/ana mekân). Türkçe metin esas alındı, İngilizce çeviri hatası olarak not edildi."
+      },
+      {
+        "field": "legends[deli-lakabi]",
+        "note": "Hikâye yeğenin sözlü anlatımı olarak aktarılıyor; kaynak doğruluğunu teyit etmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Deli Osman Hanı",
+    "en": "Deli Osman Inn"
+  },
+  "subtitle": {
+    "tr": "Bozağaç Camii yakınında, 2007'de restore edilen ve restoran olarak kullanılan sade han",
+    "en": "Plain inn near the Bozağaç Mosque, restored in 2007 and now a restaurant"
+  },
+  "alternate_names": [],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "han",
+    "kare plan",
+    "moloz taş",
+    "ahşap hatıl",
+    "restoran",
+    "Meram-Seydişehir yolu"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": null,
+    "address": "Meram-Seydişehir yolu üzerinde, Bozağaç Camii yakınında",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "242-243"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl sonu ya da XX. yüzyıl başı (düşünülmektedir)",
+      "en": "End of the 19th or beginning of the 20th century (thought to be)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "İnşa kitâbesi yoktur; tarih hanın mimari özelliklerinden hareketle tahmin edilmiştir. İki yüzyıla birden işaret ettiği için yüzyıl alanı boş bırakıldı.",
+      "en": "There is no construction inscription; the date is inferred from architectural features. Since it points to two centuries, the century field is left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "242-243"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram'da Seydişehir yolu üzerinde, Bozağaç Camii yakınındaki, tek mekânlı, sağır duvarlı, kare planlı han. XIX. yüzyıl sonu ya da XX. yüzyıl başına tarihlenir; adını \"Deli\" lakaplı Osman Ağa'dan alır. VGM 2007'de restore etmiş, bugün restoran olarak kullanılmaktadır.",
+    "en": "A square-plan, single-space inn with blind walls on the Seydişehir road in Meram, near the Bozağaç Mosque. Dated to the late 19th or early 20th century, it is named after Osman Ağa, nicknamed \"Deli\". Restored by the General Directorate of Foundations in 2007, it now serves as a restaurant."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Tarih ve Adı",
+        "en": "Location, Date and Name"
+      },
+      "body": {
+        "tr": "Han, Meram'da Seydişehir yolu üzerindeki Bozağaç Camii'nin yakınındadır. Yapıya ait inşa kitâbesi yoktur; mimari özelliklerinden XIX. yüzyıl sonu ya da XX. yüzyıl başında yapıldığı düşünülmektedir. Hana adını veren kişi \"Deli Osman\" lakaplı Osman Ağa'dır. Osman Ağa Konya Bâb-ı Aksaray Mahallesi'nde H. 1257 / M. 1841'de doğmuştur; babası Seyit Mehmet Ağa, annesi Rabia (halk arasında \"Rabiş Kadın\") Hanım'dır. Canlı hayvan alım satımı yaptığı için \"cambaz\" diye de anılmıştır.",
+        "en": "The inn is near the Bozağaç Mosque on the Meram-Seydişehir road. There is no construction inscription; from its architecture it is thought to date from the end of the 19th or the start of the 20th century. It takes its name from Osman Ağa, nicknamed \"Deli Osman\", born in Konya's Bâb-ı Aksaray Neighborhood in 1257 AH / 1841 AD; his father was Seyit Mehmet Ağa and his mother Rabia Hanım (popularly \"Rabiş Kadın\"). He was also called \"acrobat\" because he traded live animals."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "242-243"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Han genel olarak kare planlıdır; giriş açıklığı güney cephenin doğu köşesindedir. Moloz taşla yapılmış beden duvarlarında belirli aralıklarla ahşap hatıllar kullanılmıştır. Duvarlar sağırdır, yani aydınlatma açıklığı yoktur; iç kısım tek mekândan oluşur. İçeriden iki ahşap direk üzerindeki mertekler ve ahşap kirişlerle düz dam biçiminde kapatılmıştır; restorasyondan önce hanın üstü toprak damlıydı. Son hâliyle moloz taştan, aralarda ahşap hatıllı, dört yöne eğimli kırma çatılıdır.",
+        "en": "The inn has a generally square plan with its entrance at the east corner of the south façade. The rubble-stone walls use wooden tie-beams at intervals. The walls are blind, with no lighting openings, and the interior is a single space, covered internally as a flat roof of wooden beams on rafters resting on two wooden posts; before restoration the roof was earth-covered. In its present form it is rubble stone with timber tie-beams under a hipped roof sloping in four directions."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "242-243"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-ve-kullanim",
+      "order": 3,
+      "title": {
+        "tr": "Restorasyon ve Kullanım",
+        "en": "Restoration and Use"
+      },
+      "body": {
+        "tr": "Han Vakıflar Genel Müdürlüğü tarafından 2007'de restore edilmiştir. Sade biçimli yapı günümüzde restoran olarak kullanılmaktadır.",
+        "en": "The inn was restored by the General Directorate of Foundations in 2007. The plain building is used as a restaurant today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "242-243"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "deli-lakabi",
+      "title": {
+        "tr": "\"Deli\" lakabının hikâyesi",
+        "en": "The story of the nickname \"Deli\""
+      },
+      "body": {
+        "tr": "Osman Ağa'nın yeğeni Mehmet Ali Apalı'ya göre, un öğütmek için eşeğine buğday yükleyip değirmene giderken yolda anasını izlemeyen sıpayı öfkeyle Meram Çayı'na atmış; görenler \"Vay deli vay!\" demiş ve \"Cambaz Osman Ağa\" o günden sonra \"Cambaz Deli Osman Ağa\" olarak anılmıştır.",
+        "en": "According to his nephew Mehmet Ali Apalı, while taking wheat to the mill on his donkey, Osman Ağa angrily threw the foal that would not follow its mother into the Meram Stream; onlookers cried \"Wow, crazy, wow!\" and from then on \"Cambaz Osman Ağa\" was known as \"Cambaz Deli Osman Ağa\"."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "242-243"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare plan, tek mekân",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "242-243"
+        }
+      ]
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Moloz taş, ahşap hatıl",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "242-243"
+        }
+      ]
+    },
+    {
+      "key": "direk_sayisi",
+      "label": {
+        "tr": "İç mekândaki ahşap direk",
+        "en": "Wooden posts inside"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "242-243"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon_yili",
+      "label": {
+        "tr": "Restorasyon yılı",
+        "en": "Restoration year"
+      },
+      "value": 2007,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "242-243"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Osman Ağa (Deli Osman, Cambaz Osman Ağa)",
+      "role": {
+        "tr": "Hana adını veren kişi; 1841 doğumlu, Konyalı hayvan tüccarı",
+        "en": "Person who gave the inn its name; born 1841, Konya livestock trader"
+      }
+    },
+    {
+      "name": "Mehmet Ali Apalı",
+      "role": {
+        "tr": "Osman Ağa'nın yeğeni; lakap hikâyesini anlatan kişi",
+        "en": "Osman Ağa's nephew; narrator of the nickname story"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü han'ı restore etti",
+        "en": "Restored by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "242-243"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, sade, kare planlı ve moloz taştan yapılmış tek katlı bir yapıdır; aralarda ahşap hatıllar görünür. Duvarlarda pencere yoktur, giriş güney cephenin doğu köşesindedir. Üstü dört yöne eğimli bir çatıyla kaplıdır. İçeride tek bir geniş mekân ve iki ahşap direk vardır.",
+      "en": "The inn is a plain, square, single-storey building of rubble stone with timber tie-beams visible between the courses. The walls have no windows and the entrance is at the east corner of the south façade. A hipped roof slopes in four directions. Inside is one large space with two wooden posts."
+    },
+    "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

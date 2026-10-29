@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-altinekin-zivarik-han",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi tartışmalı (Erdmann XIII. yy.; kitap XIV-XV. yy.; vakfiyeden XV. yy.); başka kaynakla netleştirilmeli.",
+      "Bani bilinmiyor. Sultan Hatun vakfiyesi hanı değil köyün yarısını anıyor.",
+      "Kitabın 275. sayfası metin içermiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Üç görüş aktarılıyor: Erdmann (taç kapıya göre XIII. yy.), kitap (mimariye göre XIV. yy. ortası-XV. yy. ortası), vakfiyeye dayalı kabul (XV. yy., Karamanoğlu devri). Çelişki 'disputed' olarak işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "Vakfiyede yer adı \"Sıfaruk-Zıvarık\" olarak geçiyor; hanın bu köyle ilişkisi çıkarımdır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Zıvarık Han",
+    "en": "Zıvarık Inn"
+  },
+  "subtitle": {
+    "tr": "Beş sahınlı, beşik tonozlu, bugün restoran olarak kullanılan han",
+    "en": "A five-nave barrel-vaulted inn now used as a restaurant"
+  },
+  "alternate_names": [],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "han",
+    "Karamanoğlu",
+    "Turgutoğulları",
+    "beşik tonoz",
+    "devşirme malzeme",
+    "restoran"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Altınekin",
+    "neighborhood": null,
+    "address": "Altınekin ilçe merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "273"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyıl, Karamanoğlu devri (Erdmann: XIII. yüzyıl)",
+      "en": "15th century, Karamanid period (Erdmann: 13th century)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitâbe yoktur. Kurt Erdmann taç kapıdan hareketle XIII. yüzyıla tarihler; kitap mimari ve inşaat özelliklerine göre XIV. yüzyıl ortası ile XV. yüzyıl ortasını daha uygun bulur. 1446 tarihli Sultan Hatun vakfiyesinden hareketle yapının XV. yüzyılda Karamanoğlu devrinde inşa edildiği kabul edilir.",
+      "en": "There is no inscription. Kurt Erdmann dates it to the 13th century from the crown gate; the book finds the mid-14th to mid-15th century more suitable on architectural grounds. Based on the 1446 charter it is accepted as built in the 15th century under the Karamanids."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "273"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "273"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Sultan Hatun vakfı (1446 tarihli vakfiye)",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Esere ait vakfiye yoktur; ancak Turgutoğullarından Yusuf Şah Bey'in kızı Sultan Hatun'un 1446 tarihli vakfiyesinde Sıfaruk-Zıvarık köyünün yarısı vakıf gösterilmiştir.",
+      "en": "There is no charter for the building, but in the 1446 charter of Sultan Hatun, daughter of Yusuf Şah Bey of the Turgutoğulları, half of the village of Sıfaruk-Zıvarık is shown as a waqf."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "273"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Altınekin merkezindeki, kuzey-güney doğrultulu dikdörtgen planlı han. Dört sıra ayakla beş sahına bölünür, orta sahın beşik tonozludur; 2000'li yıllardaki yenilemeden sonra restoran olarak kullanılmaktadır.",
+    "en": "A rectangular inn in the center of Altınekin, running north-south. Four rows of piers divide it into five naves, the middle one barrel-vaulted; after renovation in the 2000s it is used as a restaurant."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Tarihleme",
+        "en": "History and Dating"
+      },
+      "body": {
+        "tr": "Kitâbesi bulunmayan hanın kim tarafından ve ne zaman yaptırıldığı bilinmemektedir. Kurt Erdmann hanı taç kapısından hareketle XIII. yüzyıla tarihlese de mimari ve inşaat özellikleri bakımından XIV. yüzyıl ortaları ile XV. yüzyıl ortalarına tarihlendirmek daha uygundur. Esere ait vakfiye yoktur; ancak Turgutoğullarından Yusuf Şah Bey'in kızı Sultan Hatun'un Sıfaruk-Zıvarık köyünün yarısını vakıf gösterdiği 1446 tarihli vakfiyeden hareketle yapının XV. yüzyılda, Karamanoğlu devrinde inşa edildiği kabul edilmektedir. Han 2000'li yıllarda oldukça harap bir hâldeyken yenileme çalışmalarından sonra restoran olarak kullanılmaya başlanmıştır.",
+        "en": "It is not known by whom and when the inn, which has no inscription, was built. Although Kurt Erdmann dated it to the 13th century from its crown gate, it is more appropriate to date it to the mid-14th to mid-15th century on architectural grounds. There is no charter for the work, but based on the 1446 charter in which Sultan Hatun, daughter of Yusuf Şah Bey of the Turgutoğulları, shows half of the village of Sıfaruk-Zıvarık as a waqf, it is accepted as built in the 15th century under the Karamanids. Very dilapidated in the 2000s, it began to be used as a restaurant after renovation."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "273"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Han kuzey-güney doğrultusunda dikdörtgen planlıdır ve iki yöne eğimli çatıyla örtülüdür; dam kısmı onarımdan önce toprakla örtülüyken bugün kurşunla kaplıdır. Cephe düzenlemeleri sadedir; iç mekân kuzey cephenin üst kısımlarındaki mazgal pencerelerle aydınlanır. İnşada kaba yonu taş, moloz taş ve çok sayıda devşirme malzeme kullanılmıştır. Giriş, güneydoğu cephenin ortasındaki, beden duvarından taşıntılı taç kapıdandır. İç mekân dört sıra ayakla beş sahına ayrılmıştır. Orta sahın yan sahınlardan yüksek ve geniştir, beşik tonozla örtülüdür ve tonozu desteklemek için altı yarım daire takviye kemeri kullanılmıştır. Orta sahının iki yanında ona dik uzanan, her iki tarafta yedişer adet olan yan sahınlar beşik tonozludur; geçişler yarım daire kemerlerle sağlanır.",
+        "en": "The inn has a rectangular plan in the north-south direction with a roof sloping in two directions; the roof was covered with soil before repairs and is now lead. The facade is simple; the interior is lit by loophole windows in the upper part of the north facade. Rough-cut stone, rubble and many spolia were used. Entrance is through the crown gate in the middle of the southeast facade, projecting from the body wall. The interior is divided into five aisles by four rows of pillars. The middle nave is higher and wider than the side naves, barrel-vaulted, with six semicircular reinforcement arches supporting the vault. On both sides, perpendicular to the middle nave, are seven side aisles each, barrel-vaulted, with semicircular arches at the transitions."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "274"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "key": "ayak_sirasi",
+      "label": {
+        "tr": "Ayak sırası",
+        "en": "Rows of pillars"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "key": "takviye_kemeri",
+      "label": {
+        "tr": "Orta sahın takviye kemeri sayısı",
+        "en": "Reinforcement arches of the middle nave"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "key": "yan_sahin",
+      "label": {
+        "tr": "Her yandaki yan sahın sayısı",
+        "en": "Side aisles on each side"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "274"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kurt Erdmann",
+      "role": {
+        "tr": "Hanı taç kapısından hareketle XIII. yüzyıla tarihleyen araştırmacı",
+        "en": "Researcher who dated the inn to the 13th century from the crown gate"
+      }
+    },
+    {
+      "name": "Sultan Hatun (Turgutoğullarından Yusuf Şah Bey'in kızı)",
+      "role": {
+        "tr": "1446 vakfiyesinde Sıfaruk-Zıvarık köyünün yarısını vakfeden",
+        "en": "Endowed half of Sıfaruk-Zıvarık village in the 1446 charter"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1446",
+      "year": 1446,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Sultan Hatun vakfiyesinde Sıfaruk-Zıvarık köyünün yarısı vakıf gösterildi",
+        "en": "Half of Sıfaruk-Zıvarık village shown as waqf in Sultan Hatun's charter"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "273"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, Altınekin'in ortasında, kuzey-güney doğrultulu uzun dikdörtgen, kurşun kaplı çatılı bir yapıdır. Duvarlar kaba taş, moloz ve devşirme parçalarla örülmüştür. Giriş güneydoğudaki öne çıkan taç kapıdandır. İçeride dört sıra ayak mekânı beş bölüme ayırır; ortadaki bölüm daha yüksek ve geniştir, beşik tonozla örtülüdür ve altı yarım daire kemerle desteklenir. Bugün restoran olarak kullanılmaktadır.",
+      "en": "The inn stands in the middle of Altınekin, a long rectangular building running north-south with a lead-covered roof. The walls are built of rough stone, rubble and reused pieces. Entry is through a projecting crown gate on the southeast. Inside, four rows of pillars divide the space into five parts; the middle one is higher, wider, barrel-vaulted and supported by six semicircular arches. It is used as a restaurant today."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

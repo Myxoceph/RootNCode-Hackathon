@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karapinar-sultan-ii-selim-imareti",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kayıt iki yapıyı birlikte anlatıyor (imaret ve tabhane/misafirhane); ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
+      "Banî, üst eser (külliye) kaydından aktarıldı; yapı kaydında ayrıca belirtilmiyor.",
+      "İmaretin yapım/onarım tarihleri ve ölçüleri kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Tabhane / misafirhane mekânları imaretle aynı kayıtta anlatıldığı için tek kayıt yazıldı; tür 'imaret' bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sultan II. Selim Külliyesi İmareti",
+    "en": "Imarat of the Sultan Selim II Complex"
+  },
+  "subtitle": {
+    "tr": "Külliyenin aşevi ve konaklama yapısı; büyük kısmı kaybolmuş",
+    "en": "The complex's soup kitchen and lodging; largely lost"
+  },
+  "alternate_names": [
+    {
+      "tr": "Tabhane / Misafirhane",
+      "en": "Tabhane / Guesthouse",
+      "note": "Kayıt imaretle birlikte tabhane (misafirhane) mekânlarını da anlatıyor"
+    }
+  ],
+  "type": "imaret",
+  "secondary_types": [],
+  "parent_id": "konya-karapinar-sultan-ii-selim-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "imaret",
+    "tabhane",
+    "misafirhane",
+    "menzil külliyesi",
+    "kubbeli eyvan",
+    "kazı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karapınar",
+    "neighborhood": null,
+    "address": "Cami avlusunun kuzeyi ve kuzeybatısı",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "42"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Külliye ile birlikte (1560-1563)",
+      "en": "With the complex (1560-1563)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Bu kayıtta ayrıca tarih verilmiyor; külliyenin tarihi (1560-1563) geçerli kabul edildi.",
+      "en": "No separate date is given here; the complex's date (1560-1563) is assumed."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "42"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şehzade II. Selim (Sultan II. Selim)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "42"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [
+      {
+        "name": "Cemaleddin (Halepli eyalet mimarı, Hassa Mimarlar Teşkilatı'na bağlı)",
+        "note": "Arşiv belgesinde adı geçer"
+      },
+      {
+        "name": "Mimar Sinan",
+        "note": "Cami, imaret, hamam ve han Sinan'la ilgili tezkerelerde anılır; proje/onarım katkısı varsayılıyor"
+      }
+    ],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "37"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Arşiv bilgisine göre imaret, vakfın giderleri arasında ikinci sırada yer alır.",
+      "en": "According to archive information, the imarat ranks second among the foundation's expenses."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "42"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Cami avlusunun kuzeyinde 'U' biçiminde yer alan imaret; fırın, mutfak, kiler, yemekhane, ambar ve odun deposundan oluşuyordu. Yolculara ve muhtaç insanlara da hizmet verirdi. Bugüne büyük mekân kayıplarıyla ulaşmıştır.",
+    "en": "The imarat, in a 'U' shape north of the mosque courtyard, originally had a bakery, kitchen, cellar, dining hall, warehouse and wood storage. It also served passers-by and people in need. It has reached us with great loss of space."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "İşlev ve Konum",
+        "en": "Function and Location"
+      },
+      "body": {
+        "tr": "İmaret, cami avlusunun kuzeyinde 'U' şeklinde avluyu kısmen çevreler. Orijinalde fırın, mutfak, kiler, yemekhane, ambar ve odun deposu bölümleriyle külliyede önemli bir sosyal işleve sahipti. Arşiv bilgisine göre vakfın giderleri arasında ikinci sırada yer alır; kayıtlardan yalnızca kendi bünyesine değil, gelip geçene ve yardıma muhtaç insanlara yerleşim sağladığı, halkına da hizmet verdiği anlaşılır. Yeri cami ile ortak kullanılan iç avlunun kuzeyi ve kuzeybatısıdır.",
+        "en": "The imarat partially surrounds the courtyard in a 'U' shape north of the mosque courtyard. Originally it had an important social function with a bakery, kitchen, cellar, dining hall, warehouse and wood storage. According to archive information it ranks second among the foundation's expenses; records show it served not only its own organization but also gave lodging to passers-by and people in need, and served the local people. It lies north and northwest of the inner courtyard shared with the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "42"
+        }
+      ]
+    },
+    {
+      "id": "mevcut-durum",
+      "order": 2,
+      "title": {
+        "tr": "Günümüze Ulaşan Bölümler",
+        "en": "Surviving Parts"
+      },
+      "body": {
+        "tr": "Bugüne ancak imaretin üzeri kubbelerle örtülü bazı eyvanları gelebilmiştir. Kazıyla ortaya çıkarılan mutfak, batı yönde birbiriyle ilişkili iki mekândır. Tabhane / misafirhaneyi oluşturan mekânlar düzgün sıralı moloz taştan yapılmış, üst örtüleri tuğladır. Doğu ve batı köşelerde birbirine bağlı üçerli kubbeli odalar, köşelerde beşik tonozlu iki oda bulunur; bu odalara bitişik odalar ocaklıdır. Odaların iç duvarları ve kubbeleri harap durumdadır.",
+        "en": "Only some of the domed iwans of the imarat survive. The kitchen unearthed in excavations consists of two interconnected spaces in the west. The tabhane / guesthouse spaces are built of regular rubble stone with brick covers. There are three interconnected domed rooms in each of the east and west corners and two barrel-vaulted rooms at the corners; the rooms adjacent to these have hearths. The inner walls and domes of the rooms are dilapidated."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "42"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "gider_sirasi",
+      "label": {
+        "tr": "Vakıf giderleri içindeki sırası",
+        "en": "Rank among the foundation's expenses"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "42"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "mutfak",
+      "title": {
+        "tr": "Kazıyla çıkarılan mutfak",
+        "en": "Excavated kitchen"
+      },
+      "hint": {
+        "tr": "Batı yönde birbirine bağlı iki mekân.",
+        "en": "Two interconnected spaces to the west."
+      },
+      "section_id": "mevcut-durum"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-karapinar-sultan-ii-selim-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Sultan II. Selim Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Sultan Selim II Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "42"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İmaretin ayakta kalan kısımları, cami avlusunun kuzeyinde ve kuzeybatısında, kubbeli eyvanlar ile moloz taştan örülü, tuğla örtülü odalardır. Kazıyla ortaya çıkarılan mutfak batıda iki bağlantılı mekândan oluşur. Odaların iç yüzleri harap durumdadır.",
+      "en": "The surviving parts of the imarat, north and northwest of the mosque courtyard, are domed iwans and rooms of rubble stone with brick covers. The excavated kitchen in the west consists of two connected spaces. The interior of the rooms is dilapidated."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

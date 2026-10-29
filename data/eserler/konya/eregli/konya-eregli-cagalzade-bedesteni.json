@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-eregli-cagalzade-bedesteni",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi/bânisi bilinmiyor; \"XVI.-XV. yüzyıl\" ifadesi kitapta bu sırayla yazıyor (olasılıkla XV.-XVI. yy.); era bu yüzden null bırakıldı.",
+      "Bedestenin adındaki Cağalzade kişisi hakkında kitapta bilgi yok.",
+      "Kitabın 276. sayfasında yalnızca başlık var."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap \"XVI.-XV. yüzyıl\" yazıyor (İngilizce \"16-15th century\"); sıra ters görünüyor. Kaynağa sadık kalındı, yıl verilmedi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Cağalzade Bedesteni",
+    "en": "Cağalzade Bedesten"
+  },
+  "subtitle": {
+    "tr": "Ereğli çarşısındaki tonozlu bedesten",
+    "en": "A barrel-vaulted bedesten in the Ereğli bazaar"
+  },
+  "alternate_names": [],
+  "type": "bedesten",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "bedesten",
+    "çarşı",
+    "beşik tonoz",
+    "VGM onarımı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ereğli",
+    "neighborhood": null,
+    "address": "Ereğli çarşısı içinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "277"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XVI.-XV. yüzyıl (mimari özelliklerine göre)",
+      "en": "16th-15th century (by architectural features)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitâbe yoktur; yapı mimari özelliklerinden hareketle \"XVI.-XV. yüzyıla\" tarihlendirilmektedir.",
+      "en": "There is no inscription; the building is dated to the \"16th-15th century\" by its architectural features."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "277"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "277"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Ereğli çarşısı içinde, doğu-batı yönünde uzanan dikdörtgen planlı, beşik tonozlu bedesten. Üç kapısı vardır; çevresi yeni ticarethanelerle çevrilmiştir.",
+    "en": "A rectangular, barrel-vaulted bedesten in the Ereğli bazaar, extending east-west. It has three doors and is surrounded by newly built shops."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Bedesten Ereğli'de çarşı içindedir. Üzerinde kitâbe bulunmadığından yapım tarihi ve bânisi hakkında bilgi yoktur; mimari özelliklerinden hareketle XVI.-XV. yüzyıla tarihlendirilmektedir. Osmanlı döneminde birçok kez yenilenmiş, Vakıflar Genel Müdürlüğü tarafından da onarılmıştır. Çevresi yeni inşa edilen ticarethanelerle çevrilmiştir.",
+        "en": "The bedesten is in the bazaar in Ereğli. With no inscription there is no information on its date or patron; it is dated to the 16th-15th century on architectural features. It was renovated many times in the Ottoman period and also repaired by the General Directorate of Foundations. It is surrounded by newly built shops."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "277"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı doğu-batı yönde uzanan dikdörtgen planlıdır ve beşik tonozla örtülüdür. İnşasında düzgün kesme taş ve kaba yonu taş kullanılmıştır. Bedestenin oval kemerli üç kapısı vardır.",
+        "en": "The building has a rectangular plan extending east-west and is covered with a barrel vault. Smooth cut stone and rough cut stone were used. The bedesten has three doors with oval arches."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "277"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kapi_sayisi",
+      "label": {
+        "tr": "Kapı sayısı",
+        "en": "Number of doors"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "277"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Bedesten, Ereğli çarşısının içinde, doğu-batı yönünde uzanan dikdörtgen, taş yapılı, beşik tonozlu bir yapıdır. Oval kemerli üç kapısı vardır ve çevresi sonradan yapılmış dükkânlarla sarılmıştır.",
+      "en": "The bedesten sits inside the Ereğli bazaar, a stone rectangular building extending east-west with a barrel vault. It has three oval-arched doors and is surrounded by shops built later."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

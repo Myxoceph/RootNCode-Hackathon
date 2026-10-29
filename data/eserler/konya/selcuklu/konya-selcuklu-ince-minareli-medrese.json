@@ -1,0 +1,580 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-ince-minareli-medrese",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Eğitim Yapıları",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 102-105 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Taçkapının üst kısmında olabilecek yapı kitâbesi günümüze ulaşmamış; vakfiye metni ve akar listesi için VGM arşivi taranmalı.",
+      "Taçkapı sure bordürlerinin Arapça metni ve meali kitapta yok; eklenmeli.",
+      "Karşılaştırma örnekleri olarak anılan Konya Karatay ve Afyon Çay Taş medreseleri ids.md'de olmadığı için ilişki yazılmadı.",
+      "Mescit ve minarenin ayrı kayıt gerektirip gerektirmediği gözden geçirilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap inşa kitâbesi olmadığını, H. 662 / M. 1264 tarihli vakfiyeden hareketle 1261-62'de hizmete açıldığının 'kabul edildiğini' söyler; bu yüzden 'probable' işaretlendi. Hizmete açılışın vakfiye tarihinden önce olması kitabın ifadesidir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İnce Minareli Medrese",
+    "en": "İnce Minareli Madrasa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sahip Ata Darülhadis",
+      "en": "Sahip Ata Darülhadis"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [
+    "mescit"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "darülhadis",
+    "taçkapı",
+    "Sahip Ata",
+    "çini",
+    "Taş ve Ahşap Eserler Müzesi",
+    "Kelûk"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Beyhekim",
+    "address": "Alâeddin Bulvarı No. 15",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "101"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 662 / M. 1264 tarihli vakfiye; 1261-62'de hizmete açıldığı kabul edilir",
+      "en": "Foundation charter of 662 AH / 1264 AD; accepted to have opened in 1261-62"
+    },
+    "start_year": 1261,
+    "end_year": 1262,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "İnşa kitâbesi yoktur; H. 662 / M. 1264 tarihli vakfiyeden hareketle 1261-62'de hizmete açıldığı kabul edilmektedir.",
+      "en": "It has no construction inscription; based on the foundation charter of 662 AH / 1264 AD it is accepted to have opened in 1261-62."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "102"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sahip Ata Fahreddîn Ali",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "102"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Abdullah oğlu Kelûk",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "102"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 662 / M. 1264 (zeyiller 1265 ve 1280)",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Arapça vakfiyede medrese, mescit ve minaresiyle birlikte bir \"imaret\" olarak ihdas edilmiş ve zengin akarlarla desteklenmiştir. Vakfiye 1265 ve 1280'de iki zeyille genişletilmiştir.",
+      "en": "In the Arabic foundation deed the building was established as an \"imarat\" with its masjid and minaret and supported by rich estates; the deed was expanded by two addenda in 1265 and 1280."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "102"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Selçuklu veziri Sahip Ata'nın hadis öğretimi için yaptırdığı ihtisas medresesi (darülhadis). Tek eyvanlı, kapalı avlulu yapının \"barok\" üslubuyla dikkat çeken taçkapısında Fetih ve Yasin surelerinden sülüs bordürler bulunur; bugün Taş ve Ahşap Eserler Müzesi olarak kullanılmaktadır.",
+    "en": "A specialised madrasa (darülhadis) built by the Seljuk vizier Sahip Ata for teaching hadith. The portal of the single-iwan, closed-courtyard building, notable for its \"baroque\" character, carries thuluth borders from the Surahs Al-Fath and Ya-Sin; today it serves as the Museum of Stone and Wooden Works."
+  },
+  "sections": [
+    {
+      "id": "yapim-ve-vakif",
+      "order": 1,
+      "title": {
+        "tr": "Yapımı, Banisi ve Vakfı",
+        "en": "Construction, Founder and Endowment"
+      },
+      "body": {
+        "tr": "Medresenin inşa kitâbesi yoktur; H. 662 / M. 1264'te düzenlenen vakfiyesinden hareketle 1261-62'de hizmete açıldığı kabul edilir. Selçuklu veziri Sahip Ata Fahreddîn Ali, burayı hadis ilminin öğretilmesine yönelik bir ihtisas medresesi olarak yaptırmıştır. 1265 ve 1280'de iki zeyille genişletilen Arapça vakfiyede yapı, mescit ve minaresiyle birlikte bir \"imaret\" olarak ihdas edilmiş ve zengin akarlarla desteklenmiştir. Mimarı, taçkapıdaki iki madalyonda sağda (kuzey) \"Amel-i Kelük\", solda (güney) \"bin Abdullah\" olarak adı geçen Abdullah oğlu Kelûk'tur.",
+        "en": "The madrasa has no construction inscription; based on the foundation charter drawn up in 662 AH / 1264 AD it is accepted to have opened in 1261-62. The Seljuk Vizier Sahip Ata Fahreddin Ali built it as a specialised madrasa for teaching hadith. The Arabic deed, expanded with two addenda in 1265 and 1280, established it as an \"imarat\" with its masjid and minaret, supported by rich estates. The architect is \"Abdullah's son Keluk\", named as \"Amel-i Keluk\" on the right (north) and \"bin Abdullah\" on the left (south) medallion of the portal."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 2,
+      "title": {
+        "tr": "Hasar ve Onarımlar",
+        "en": "Damage and Repairs"
+      },
+      "body": {
+        "tr": "Yapı bugünkü şeklini Osmanlı ve Cumhuriyet dönemlerindeki onarımlarla almıştır. Osmanlı kayıtlarına göre 26 Aralık 1706 depreminde ağır hasar görmüştür. Ferit Paşa'nın Konya valiliği sırasındaki tamirde (1900) ana eyvana batı yönde payandalar vurulmuş, bunlardan ikisi bugün de durmaktadır. 15 Şaban 1319 / 27 Kasım 1901'de üst üste iki yıldırım düşmesiyle minare birinci şerefeden itibaren yıkılmış, mescit kubbesi de çökmüştür. Kışlık dershane işlevli kubbeli odalar ve öğrenci hücreleri erken Cumhuriyet dönemi onarımlarında ayağa kaldırılmış, mescit 2000-2002 restorasyonunda ele alınmıştır.",
+        "en": "The building took its present shape after Ottoman and Republican period repairs. According to Ottoman records it was severely damaged in the earthquake of 26 December 1706. During the repair under Governor Ferit Paşa (1900) buttresses were added to the main iwan on the west side, two of which still stand. On 15 Şaban 1319 / 27 November 1901 two consecutive lightning strikes brought down the minaret from the first balcony and collapsed the masjid dome. The domed rooms and student cells that served as winter classrooms were restored in the early Republican period, and the masjid in the 2000-2002 restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102-104"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Malzeme ve Mimari",
+        "en": "Materials and Architecture"
+      },
+      "body": {
+        "tr": "Yapıda taş ve tuğlanın yanı sıra çini de dekoratif malzeme olarak kullanılmıştır. Giriş cephesi düzgün kesme Kiçi Muhsine/Sille taşıyla kaplıdır; diğer cepheler köşelerde kaba yonu, orta kısımlarda moloz taş örgülüdür. İç mekân 2-2,5 m kotundan sonra tamamen tuğladır. Avluyu örten 11 m çapındaki kubbede dekoratif istifli tuğla ve çini kullanılmış; pencere köşelik ve alınlıkları ile kubbe geçişleri çini mozaikle süslenmiştir. Tek eyvanlı, kapalı avlulu medresenin kuzeybatı köşesine bitişik, tek kubbeli ve doğuda son cemaat yeri olan bir mescit vardır. Kare kaideli, dilimlenmiş silindirik gövdeli minare son cemaat yerinin güneydoğu köşesinde yükselir. Avluya çapraz tonozlu bir holden girilir; avlunun ortasında kare planlı bir havuz bulunur.",
+        "en": "Tile was used as decorative material along with stone and brick. The entrance façade is covered with smooth cut Kiçi Muhsine/Sille stone; the other façades have rough-cut stone at the corners and rubble stone in the middle parts. The interior is entirely brick above the 2-2.5 m level. The 11 m diameter dome over the courtyard uses decorative stacked brick and tile; window corners, pediments and dome transitions are decorated with tile mosaic. Adjacent to the northwest corner of the single-iwan, closed-courtyard madrasa is a single-domed masjid with a narthex on its east side. The minaret, with a sliced cylindrical body on a square base, rises at the southeast corner of the narthex. The courtyard is entered through a cross-vaulted hall and has a square pool in the middle."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "id": "tackapi",
+      "order": 4,
+      "title": {
+        "tr": "Taçkapı",
+        "en": "Portal"
+      },
+      "body": {
+        "tr": "Anadolu Selçuklu mimarisinde \"barok\" karakteriyle dikkat çeken taçkapının, muhtemel bir yapı kitâbesini de içeren üst kısmı eksiktir. Dıştan içe üçlü kaval silmeler, çift dal üzerinde gelişen rûmi yaprak ve meandır bordürleri çerçeveyi kuşatır; bezemede baskın unsur, ortada iki ayrı düğüm yaparak çerçeveyi düşey bölümlere ayıran sülüs yazı bordürleridir. Çerçevenin sağ (kuzey) kuşağında başlayıp kapı kemerinin sol (güney) üzengisinde biten bordürde Fetih Suresi 1-13. ayetler, kapı kemerinin sağ üzengisinden başlayıp çerçevenin sol kuşağında biten diğer bordürde Yasin Suresi 3-31. ayetler yer alır. Fetih Suresi'nin eksik 6-10. ve Yasin Suresi'nin 13-19. ayetlerinin günümüze ulaşmayan üst kısımda bulunduğu düşünülmektedir.",
+        "en": "The upper part of the portal, notable for its \"baroque\" character in Anatolian Seljuk architecture and possibly containing a building inscription, is missing. Triple pipe mouldings, rumi leaves on double branches and meander borders surround the frame; the dominant decoration is thuluth script borders that divide the frame into vertical sections with two knots in the middle. One border, starting on the right (north) belt of the frame and ending at the left (south) stirrup of the arch, carries verses 1-13 of Surah Al-Fath (48); the other, from the right stirrup of the arch to the left belt of the frame, carries verses 3-31 of Surah Ya-Sin (36). The missing verses 6-10 of Al-Fath and 13-19 of Ya-Sin are thought to have been in the lost upper part."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "103-104"
+        }
+      ]
+    },
+    {
+      "id": "islev-ve-onem",
+      "order": 5,
+      "title": {
+        "tr": "İşlev ve Önemi",
+        "en": "Function and Significance"
+      },
+      "body": {
+        "tr": "Avlu, Konya Karatay (1251) ve Afyon Çay Taş (1278) medreselerine benzer bir mekânsal etki taşır. İnce Minareli Medrese, Mevlâna Celaleddin Rûmi'nin hocası Sadreddin Konevi'nin de ders verdiği bir darülhadis idi. Özgün plan ve cephe özelliklerini büyük oranda yitirmiş olarak günümüze ulaşan yapı, giriş cephesi medrese, minare ve mescit üçlüsüyle düzenlenen, Sahip Ata'ya ait Akşehir Taş Medrese'den sonraki ikinci örnektir. Bugün Taş ve Ahşap Eserler Müzesi olarak eğitim hizmetini sürdürmekte; Konya surlarına ait kitâbe ve figürlü plastik parçalarla bölgedeki diğer Orta Çağ yapılarından kalan taş ve ahşap eserleri sergilemektedir.",
+        "en": "The courtyard has a spatial effect similar to the Konya Karatay (1251) and Afyon Çay Taş (1278) madrasas. İnce Minareli was a darülhadis where Sadreddin Konevi, the teacher of Mevlâna Celaleddin Rûmi, also taught. Having lost its original plan and façade features, it is the second example, after Sahip Ata's Akşehir Taş Madrasa, whose entrance façade is arranged with the trio of madrasa, minaret and masjid. It continues its educational role as the Museum of Stone and Wooden Works, exhibiting inscriptions and figured plastic pieces from the Konya walls as well as stone and wooden works from other medieval buildings of the region."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "104-105"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "avlu_kubbe_capi",
+      "label": {
+        "tr": "Avlu kubbesi çapı",
+        "en": "Courtyard dome diameter"
+      },
+      "value": 11,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Eyvan sayısı",
+        "en": "Number of iwans"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "key": "hizmete_acilis",
+      "label": {
+        "tr": "Hizmete açılış",
+        "en": "Opening year"
+      },
+      "value": "1261-62",
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ],
+      "note": {
+        "tr": "Vakfiyeden hareketle kabul edilen tarih.",
+        "en": "Date accepted on the basis of the foundation charter."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Sahip Ata Fahreddîn Ali",
+      "role": {
+        "tr": "Banî, Selçuklu veziri",
+        "en": "Founder, Seljuk vizier"
+      }
+    },
+    {
+      "name": "Abdullah oğlu Kelûk",
+      "role": {
+        "tr": "Mimar",
+        "en": "Architect"
+      }
+    },
+    {
+      "name": "Sadreddin Konevi",
+      "role": {
+        "tr": "Burada ders veren, Mevlâna'nın hocası",
+        "en": "Taught here; teacher of Mevlâna"
+      }
+    },
+    {
+      "name": "Ferit Paşa",
+      "role": {
+        "tr": "Konya valisi; 1900 tamirinin yaptırıcısı",
+        "en": "Governor of Konya; repair of 1900"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tackapi-fetih-bordur",
+      "location": {
+        "tr": "Taçkapı çerçevesi, sağ (kuzey) kuşaktan sol (güney) üzengiye",
+        "en": "Portal frame, from the right (north) belt to the left (south) stirrup"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "103-104"
+        }
+      ],
+      "note": {
+        "tr": "Fetih Suresi (Kur'an 48) 1-13. ayetler; metin kitapta verilmiyor, kitap meal de vermiyor.",
+        "en": "Surah Al-Fath (Quran 48) verses 1-13; the book gives neither the text nor a translation."
+      }
+    },
+    {
+      "id": "tackapi-yasin-bordur",
+      "location": {
+        "tr": "Taçkapı çerçevesi, kapı kemerinin sağ üzengisinden sol kuşağa",
+        "en": "Portal frame, from the right stirrup of the arch to the left belt"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "104"
+        }
+      ],
+      "note": {
+        "tr": "Yasin Suresi (Kur'an 36) 3-31. ayetler; metin kitapta verilmiyor, kitap meal de vermiyor.",
+        "en": "Surah Ya-Sin (Quran 36) verses 3-31; the book gives neither the text nor a translation."
+      }
+    },
+    {
+      "id": "tackapi-mimar-madalyonlari",
+      "location": {
+        "tr": "Taçkapıdaki iki madalyon: sağda (kuzey) ve solda (güney)",
+        "en": "Two medallions on the portal: right (north) and left (south)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Amel-i Kelük; bin Abdullah",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ],
+      "note": {
+        "tr": "Mimar adı: sağ madalyonda \"Amel-i Kelük\", sol madalyonda \"bin Abdullah\". Kitap yazı dilini belirtmiyor.",
+        "en": "Architect's name: \"Amel-i Keluk\" on the right medallion, \"bin Abdullah\" on the left. The book does not name the language."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "hizmete-acilis",
+      "year": 1261,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Medresenin hizmete açıldığı kabul edilir (1261-62)",
+        "en": "Accepted to have opened to service (1261-62)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ],
+      "note": {
+        "tr": "Yıl aralığı 1261-62; vakfiyeden hareketle kabul edilen tarih.",
+        "en": "Range 1261-62; date accepted from the foundation charter."
+      }
+    },
+    {
+      "id": "vakfiye",
+      "year": 1264,
+      "date": null,
+      "hijri": "662",
+      "type": "record",
+      "title": {
+        "tr": "Arapça vakfiye düzenlendi",
+        "en": "Arabic foundation deed drawn up"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ]
+    },
+    {
+      "id": "zeyil-1265",
+      "year": 1265,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakfiyeye birinci zeyil eklendi",
+        "en": "First addendum to the foundation deed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ]
+    },
+    {
+      "id": "zeyil-1280",
+      "year": 1280,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakfiyeye ikinci zeyil eklendi",
+        "en": "Second addendum to the foundation deed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1706",
+      "year": 1706,
+      "date": "1706-12-26",
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde ağır hasar gördü",
+        "en": "Severely damaged in an earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1900",
+      "year": 1900,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Ferit Paşa'nın valiliğinde tamir; ana eyvana payandalar vuruldu",
+        "en": "Repair under Governor Ferit Paşa; buttresses added to the main iwan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ]
+    },
+    {
+      "id": "yildirim-1901",
+      "year": 1901,
+      "date": "1901-11-27",
+      "hijri": "15 Şaban 1319",
+      "type": "damage",
+      "title": {
+        "tr": "Üst üste iki yıldırımla minare ve mescit kubbesi yıkıldı",
+        "en": "Minaret and masjid dome collapsed after two lightning strikes"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2000",
+      "year": 2000,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mescit restorasyonu (2000-2002)",
+        "en": "Restoration of the masjid (2000-2002)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "104"
+        }
+      ],
+      "note": {
+        "tr": "Restorasyon 2000-2002 arasında yürütüldü.",
+        "en": "The restoration ran from 2000 to 2002."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-aksehir-tas-medrese",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Giriş cephesi medrese, minare ve mescit üçlüsüyle düzenlenen, Sahip Ata'ya ait Akşehir Taş Medrese'den sonraki ikinci örnektir.",
+        "en": "It is the second example, after Sahip Ata's Akşehir Taş Madrasa, whose entrance façade is arranged with the madrasa-minaret-masjid trio."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "105"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İnce Minareli Medrese, düzgün kesme taşla kaplı giriş cephesi, tek eyvanlı kapalı avlusu ve çinili tuğla kubbesiyle duran bir yapıdır. Cephenin sol tarafında, kuzeybatı köşede tek kubbeli bir mescit ve ona bitişik, kare kaideli, dilimlenmiş gövdeli bir minare vardır. Taçkapı çok süslüdür; kapı kemerini ve çerçeveyi saran rûmi yaprak, meandır ve sülüs yazı bordürleri vardır, ancak üst kısmı eksiktir. Çapraz tonozlu bir holden geçilen avlunun ortasında kare bir havuz, üzerinde 11 metre çapında bir kubbe bulunur.",
+      "en": "The İnce Minareli Madrasa has an entrance façade of smooth cut stone, a single-iwan closed courtyard and a tiled brick dome. At the northwest corner stands a single-domed masjid with a minaret of sliced cylindrical body on a square base. The portal is richly decorated with rumi leaves, meander and thuluth script borders around the arch and frame, but its upper part is missing. Beyond a cross-vaulted hall, the courtyard has a square pool in the middle and an 11 m diameter dome above."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

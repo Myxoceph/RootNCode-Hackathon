@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-vakif-is-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Aynı yerdeki İrfaniye Medresesi'nin ayrı kaydı ids.md'de yok; ilişki yazılmadı.",
+      "Tarihî Buğday Pazarı köşesindeki ikinci Vakıf İşhanı'nın kaydı ids.md'de yok.",
+      "Hanın yaptıranı/vakıf bilgisi kitapta yok.",
+      "Konum ilçesi: içindekiler/üstlük Karatay, metin Meram diyor; sahada/idari sınırdan doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin zemin kat revak kemerleri için 'basık kemer' der, İngilizce metin 'flat arches' yazar. Türkçe esas alındı."
+      },
+      {
+        "field": "tags",
+        "note": "Metin 'İkinci Ulusalcı Mimarlık' yazar, İngilizce metin 'Second Nationalist Architecture'; etiketlerde yaygın ad 'ikinci ulusal mimarlık' kullanıldı."
+      },
+      {
+        "field": "location.district",
+        "note": "Kitabın içindekiler sayfası eseri Karatay başlığı altında veriyor; eserin kendi sayfasındaki adres Meram. Adrese göre Meram yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Vakıf İş Hanı (Vakıflar Bölge Müdürlüğü Hizmet Binası)",
+    "en": "Foundation Plaza (Regional Directorate of Foundations Service Building)"
+  },
+  "subtitle": {
+    "tr": "1953-1955'te İrfaniye Medresesi'nin yerine yapılan, İkinci Ulusal Mimarlık üslubunda iş hanı",
+    "en": "Business building of 1953-1955 on the site of the İrfaniye Madrasa, in the Second National Architecture style"
+  },
+  "alternate_names": [
+    {
+      "tr": "Konya Vakıf İşhanı",
+      "en": "Konya Foundation Office Inn",
+      "note": "2009 tescil adı"
+    },
+    {
+      "tr": "Birinci Vakıf İşhanı",
+      "en": "First Foundation Office Inn"
+    }
+  ],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "is-hani",
+    "ikinci ulusal mimarlık",
+    "betonarme",
+    "Sille taşı",
+    "tescilli",
+    "Vakıflar Bölge Müdürlüğü"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Şems-i Tebrizi Mahallesi",
+    "address": "Mevlâna Caddesi, Hükümet Konağı'nın kuzeyi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "256-257"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1953-1955",
+      "en": "1953-1955"
+    },
+    "start_year": 1953,
+    "end_year": 1955,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap günümüzdeki yapının 1953-1955 yılları arasında inşa edildiğini söyler.",
+      "en": "The book says the present building was built between 1953 and 1955."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "256-257"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "256-257"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Konya'da Mevlâna Caddesi'nde, Hükümet Konağı'nın kuzeyinde, aynı yerdeki İrfaniye Medresesi'nin yerine 1953-1955'te yapılan betonarme iş hanı. 2009'da tescil edilmiş, bugün Vakıflar Bankası, Koruma Bölge Kurulu ve Vakıflar Bölge Müdürlüğü tarafından kullanılmaktadır.",
+    "en": "A reinforced-concrete business building of 1953-1955 on Mevlâna Street, north of the Government House, on the site of the İrfaniye Madrasa. Registered in 2009, it is used today by Vakıflar Bankası, the Conservation Regional Board and the Regional Directorate of Foundations."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Tescil ve Kullanım",
+        "en": "Location, Registration and Use"
+      },
+      "body": {
+        "tr": "Han, Mevlâna Caddesi'nde, Şems-i Tebrizi Mahallesi'nde, Hükümet Konağı'nın kuzeyindedir. Günümüzdeki yapı 1953-1955 yılları arasında inşa edilmiştir; ancak aynı yerde İrfaniye Medresesi'nin bulunduğu bilinmektedir. Han, 21.12.2009 tarih ve 3486 sayılı kararla \"Konya Vakıf İşhanı\" olarak tescillenmiştir ve İkinci Ulusal Mimarlık üslubu döneminin bir örneği sayılır. Mimarı bilinmemektedir. Kamusal ticari kullanım için yaptırılan han, Tarihî Buğday Pazarı köşesinde aynı adı taşıyan bir iş hanı daha yapıldığı için \"Birinci Vakıf İşhanı\" diye anılmıştır. Zemin ve 1. katı Vakıflar Bankası, 2. katı Konya Kültür Varlıklarını Koruma Bölge Kurulu Müdürlüğü, 3. katı Konya Vakıflar Bölge Müdürlüğü hizmet binası olarak kullanılır.",
+        "en": "The building stands on Mevlâna Street in Şems-i Tebrizi Neighborhood, north of the Government House. The present building was built between 1953 and 1955, but the İrfaniye Madrasa is known to have stood on the same spot. It was registered as \"Konya Foundation Office Inn\" by decision dated 21.12.2009 no. 3486 and is seen as an example of the Second National Architecture style. Its architect is unknown. Built for public commercial use, it was called the \"First Foundation Office Inn\" because another business building of the same name was later built at the corner of the Historical Wheat Market. The ground and first floors are used by Vakıflar Bankası, the second floor by the Konya Cultural Heritage Preservation Regional Board Directorate and the third floor by the Konya Foundations Regional Directorate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "256-257"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Han bodrum kat dahil dört katlı, kuzey-güney doğrultulu dikdörtgen planlıdır; üzeri dört yöne eğimli Marsilya çatıyla kaplıdır. Betonarme karkas olarak yapılan bina özgün hâlinde koridorlar çevresinde odaların sıralandığı \"U\" planlıdır. Katlar arası geçiş merdiven ve asansörle sağlanır. Cephelerde pencereler ilk katlarda ikili, yan yana; son katta tekli sıra hâlindedir. Batı ve güney cephelerde zemin kattaki revak düzeni, bölgede sık kullanılan Sille taşından basık kemerlerle tamamlanmıştır.",
+        "en": "The building has four floors including the basement, on a north-south rectangular plan, under a Marseille-tile hipped roof sloping four ways. Built as a reinforced-concrete frame, it originally had a \"U\" plan with rooms around corridors. Floors are connected by stairs and elevators. Window arrangements are in side-by-side pairs on the lower floors and a single row on the top floor. The ground-floor portico on the west and south façades is completed with arches of Sille stone, commonly used in the region."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "256-257"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı (bodrum dahil)",
+        "en": "Number of floors (including basement)"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "256-257"
+        }
+      ]
+    },
+    {
+      "key": "tasiyici_sistem",
+      "label": {
+        "tr": "Taşıyıcı sistem",
+        "en": "Structural system"
+      },
+      "value": "Betonarme karkas",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "256-257"
+        }
+      ]
+    },
+    {
+      "key": "cati",
+      "label": {
+        "tr": "Çatı",
+        "en": "Roof"
+      },
+      "value": "Dört yöne eğimli Marsilya çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "256-257"
+        }
+      ]
+    },
+    {
+      "key": "tescil",
+      "label": {
+        "tr": "Tescil",
+        "en": "Registration"
+      },
+      "value": "21.12.2009, karar no 3486",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "256-257"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1953",
+      "year": 1953,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Günümüzdeki bina inşa edildi (1953-1955)",
+        "en": "The present building constructed (1953-1955)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "256-257"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 1953-1955 aralığını verir; başlangıç yılı alındı.",
+        "en": "The book gives 1953-1955; the start year is used."
+      }
+    },
+    {
+      "id": "tescil-2009",
+      "year": 2009,
+      "date": "2009-12-21",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "\"Konya Vakıf İşhanı\" olarak tescillendi",
+        "en": "Registered as \"Konya Foundation Office Inn\""
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "256-257"
+        }
+      ],
+      "note": {
+        "tr": "Kitaptaki \"21.12.2009-3486\" ifadesi tarih ve karar sayısı olarak okundu.",
+        "en": "\"21.12.2009-3486\" in the book was read as date and decision number."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Bina, dört katlı, kuzey-güney doğrultulu dikdörtgen planlı, betonarme bir iş hanıdır. Çatısı dört yöne eğimlidir ve Marsilya kiremitiyle kaplıdır. Alt kattaki batı ve güney cephelerinde, Sille taşından basık kemerli bir revak yürüyüş yolu boyunca uzanır. Üst katlardaki pencereler ilk katlarda ikişerli, son katta tek sıra hâlindedir.",
+      "en": "The building is a four-storey, north-south rectangular reinforced-concrete business block. Its roof slopes in four directions and is covered with Marseille tiles. On the ground floor of the west and south sides a portico of low Sille-stone arches runs along the walkway. Windows are in pairs on the lower floors and in a single row on the top floor."
+    },
+    "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

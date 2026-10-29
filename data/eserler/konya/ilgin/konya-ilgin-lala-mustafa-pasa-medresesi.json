@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ilgin-lala-mustafa-pasa-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Banî ve mimar bilgisi (Lala Mustafa Paşa, Mimar Sinan) üst eser (külliye) kaydından aktarıldı; yapı metninde ayrıca belirtilmiyor.",
+      "Mahalle/cadde bilgisi kitapta yok; adres sahadan teyit edilmeli.",
+      "Kayıt başlığı 'Medrese (Sıbyan Mektebi)'; metin yalnızca sıbyan mektebini anlatıyor, medrese işlevi ayrıca doğrulanmalı.",
+      "Vakfiye metni (Konya Yusuf Ağa Kütüphanesi, defter 7710) yerinde okunursa kütüphane bilgisi teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Başlıkta 'Medrese' yazsa da metin yapıyı sıbyan mektebi olarak anlattığı için tür 'mektep' seçildi."
+      },
+      {
+        "field": "sections[amac-plan]",
+        "note": "Kütüphane/mektep özdeşleştirmesi kitapta 'düşünülmektedir' ifadesiyle geçtiği için 'probable'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Lala Mustafa Paşa Külliyesi Medresesi (Sıbyan Mektebi)",
+    "en": "Madrasa (Primary School) of the Lala Mustafa Paşa Complex"
+  },
+  "subtitle": {
+    "tr": "Caminin batısındaki, fakir çocuklarına Kur'an öğretmek için yapılmış sıbyan mektebi",
+    "en": "The primary school west of the mosque, built to teach the Quran to poor children"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sıbyan Mektebi",
+      "en": "Primary School",
+      "note": "Metin yapıyı 'sıbyan mektebi' olarak anlatıyor; başlıkta 'Medrese' yazıyor"
+    }
+  ],
+  "type": "mektep",
+  "secondary_types": [],
+  "parent_id": "konya-ilgin-lala-mustafa-pasa-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "sıbyan mektebi",
+    "medrese",
+    "kütüphane",
+    "aynalı tonoz",
+    "menzil külliyesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ilgın",
+    "neighborhood": null,
+    "address": "Caminin batısı",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "69"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Külliye ile birlikte (H. 984 / M. 1576)",
+      "en": "With the complex (AH 984 / AD 1576)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Bu yapı için kitapta ayrı tarih verilmiyor; külliyenin tarihi (H. 984 / M. 1576) geçerli kabul edildi.",
+      "en": "No separate date is given for this building; the complex's date (AH 984 / AD 1576) is assumed."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "69"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Lala Mustafa Paşa",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "69"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Mimar Sinan",
+    "candidates": [],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "55"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Vakfiyesinde fakir ve miskinlerin çocuklarına Kur'an-ı Kerim öğretmek için inşa edildiği, 'içinde kütüphanesi olan' bir sıbyan mektebi olarak adının geçtiği belirtilir.",
+      "en": "Its foundation charter states that it was built to teach the Quran to the children of the poor and destitute, and mentions it as a primary school 'with a library inside'."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "69"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Caminin batısındaki dikdörtgen planlı, aynalı tonozlu sıbyan mektebi. Vakfiyeye göre fakir ve miskinlerin çocuklarına Kur'an öğretmek için yapılmıştır; vakfiyede geçen kütüphanenin de burası olduğu düşünülmektedir.",
+    "en": "A rectangular, mirror-vaulted primary school west of the mosque. According to its charter it was built to teach the Quran to the children of the poor and destitute; the library mentioned in the charter is thought to be here as well."
+  },
+  "sections": [
+    {
+      "id": "amac-plan",
+      "order": 1,
+      "title": {
+        "tr": "Amaç ve Plan",
+        "en": "Purpose and Plan"
+      },
+      "body": {
+        "tr": "Vakfiyesinde fakir ve miskinlerin çocuklarına Kur'an-ı Kerim öğretmek için inşa edildiği belirtilen sıbyan mektebi, caminin batı yönünde yer alır. Vakfiyede 'içinde kütüphanesi olan' bir sıbyan mektebi olarak anıldığından, adı geçen kütüphane ve sıbyan mektebinin burası olduğu düşünülmektedir. Mektep dikdörtgen planlıdır ve üzeri aynalı tonoz örtülüdür.",
+        "en": "The primary school, stated in its charter to have been built to teach the Quran to the children of the poor and destitute, is west of the mosque. As the charter mentions it as a primary school 'with a library', this is thought to be the library and primary school it names. The school has a rectangular plan and is covered with a mirrored vault."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "69"
+        }
+      ]
+    },
+    {
+      "id": "acikliklar",
+      "order": 2,
+      "title": {
+        "tr": "Açıklıklar",
+        "en": "Openings"
+      },
+      "body": {
+        "tr": "Aynalı tonozun güney ucunda yuvarlak kemerli, tuğla örgülü bir aydınlık penceresi göze çarpar. Mektebin avluya açılan tarafında bir kapı açıklığı ve bir pencere vardır; güney cephede iki, batı cephede bir pencere iç mekânı aydınlatır.",
+        "en": "At the southern end of the mirrored vault a round-arched brickwork light window stands out. On the courtyard side of the school are a door opening and a window; two windows on the south façade and one on the west façade light the interior."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "69"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi_guney",
+      "label": {
+        "tr": "Güney cephedeki pencere sayısı",
+        "en": "Windows on the south façade"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "69"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi_bati",
+      "label": {
+        "tr": "Batı cephedeki pencere sayısı",
+        "en": "Windows on the west façade"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "69"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-ilgin-lala-mustafa-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Lala Mustafa Paşa Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Lala Mustafa Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "69"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mektep, caminin batısında dikdörtgen planlı, aynalı tonozlu bir yapıdır. Avluya açılan yüzünde bir kapı ve bir pencere, güney cephesinde iki, batı cephesinde bir pencere vardır; tonozun güney ucunda yuvarlak kemerli tuğla bir aydınlık penceresi görülür.",
+      "en": "The school is a rectangular, mirror-vaulted building west of the mosque. Its courtyard side has a door and a window, the south façade two windows and the west façade one; a round-arched brick light window is seen at the southern end of the vault."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

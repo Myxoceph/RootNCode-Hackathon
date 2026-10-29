@@ -1,0 +1,434 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-emir-kandemir-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Banî kitâbe (Emir Kandemir) ile bazı kaynaklar (Emir Tuluğ bin Mehmet) arasında ayrışıyor; founder disputed bırakıldı.",
+      "Kitâbenin metni ve dili kitapta yok.",
+      "Altunapa Hanı için ids.md'de kayıt yok; ilişki yazılmadı.",
+      "Osmanlı dönemi onarımlarının tarihleri kitapta verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kapalı bölüm giriş kapısındaki kitâbe yaptıranı Emir Kandemir olarak verir; bazı kaynaklara göre yaptıran Emir Tuluğ bin Mehmet'tir. Kitaba sadık kalınarak Emir Kandemir founder yazıldı, ikinci görüş people ve notta tutuldu, disputed işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Emir Kandemir Hanı",
+    "en": "Emir Kandemir Inn"
+  },
+  "subtitle": {
+    "tr": "Konya-Beyşehir yolunda, H. 603 / M. 1206-07 tarihli kırmızı tüf taşlı Selçuklu hanı",
+    "en": "Seljuk inn of red tuff on the Konya-Beyşehir road, dated 603 AH / 1206-07 AD"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kızılören Hanı",
+      "en": "Kızılören Inn"
+    },
+    {
+      "tr": "Kızılviran",
+      "en": "Kızılviran"
+    },
+    {
+      "tr": "Yazı Önü",
+      "en": "Yazı Önü"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "han",
+    "Selçuklu hanı",
+    "karma tip",
+    "kırmızı tüf",
+    "iki katlı giriş cephesi",
+    "mescit",
+    "Konya-Beyşehir yolu"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Kızılören Köyü yakını",
+    "address": "Konya-Beyşehir yolu üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "251"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 603 / M. 1206-07",
+      "en": "603 AH / 1206-07 AD"
+    },
+    "start_year": 1206,
+    "end_year": 1207,
+    "hijri_year": 603,
+    "century": 13,
+    "basis": {
+      "tr": "Kapalı bölüm giriş kapısı üzerindeki kitâbe; I. Gıyâseddin Keyhüsrev zamanı.",
+      "en": "Inscription above the entrance door to the closed section; during the time of Gıyâseddin Keyhüsrev I."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "251"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Emir Kandemir",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "251"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram Kızılören Köyü yakınında, Konya-Beyşehir yolunda Altunapa ve Kuruçeşme hanlarından sonra gelen karma tipte Anadolu Selçuklu hanı. Kitâbesine göre H. 603 / M. 1206-07'de Emir Kandemir yaptırmıştır; kırmızı tüf taşıyla yapılan, iki katlı gösterişli batı cephesi vardır. 2008-2010'da tamir edilmiştir.",
+    "en": "A mixed-type Anatolian Seljuk inn near Kızılören Village, Meram, on the Konya-Beyşehir road after the Altunapa and Kuruçeşme inns. By its inscription it was built by Emir Kandemir in 603 AH / 1206-07 AD; it is of red tuff with a showy two-storey west façade. It was repaired in 2008-2010."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Adı ve Yaptıran",
+        "en": "Location, Names and Patron"
+      },
+      "body": {
+        "tr": "Han, Meram'da Kızılören Köyü yakınında, Konya-Beyşehir yolu üzerinde Altunapa ve Kuruçeşme hanlarından sonra gelir; \"Kızılören, Kızılviran, Yazı Önü, Emir Kandemir\" adlarıyla da anılır. Kapalı bölüme giriş kapısının üzerindeki kitâbe, hanın H. 603 / M. 1206-07'de, I. Gıyâseddin Keyhüsrev zamanında Emir Kandemir tarafından yaptırıldığını bildirir. Bazı kaynaklar ise yine I. Gıyâseddin Keyhüsrev zamanında Emir Tuluğ bin Mehmet tarafından yaptırıldığını söyler.",
+        "en": "The inn comes after the Altunapa and Kuruçeşme inns on the Konya-Beyşehir road near Kızılören Village, Meram, and is also known as \"Kızılören, Kızılviran, Yazı Önü, Emir Kandemir\". The inscription above the entrance to the closed section states that it was built by Emir Kandemir in 603 AH / 1206-07 AD during the time of Gıyâseddin Keyhüsrev I. Some sources say it was built by Emir Tuluğ bin Mehmet, also in the time of Gıyâseddin Keyhüsrev I."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "251"
+        }
+      ]
+    },
+    {
+      "id": "durum",
+      "order": 2,
+      "title": {
+        "tr": "Durumu, Yıkıntılar ve Onarım",
+        "en": "Condition, Losses and Repair"
+      },
+      "body": {
+        "tr": "Konya-Beyşehir güzergâhındaki diğer kervansaraylara göre hanın durumu oldukça iyidir; birçok Anadolu Selçuklu hanı gibi Osmanlı döneminde de kullanılmış ve onarım görmüştür. Yine de kapalı mekân orta sahınının tonoz örtüsü ve yan sahınların bazı yerleri, kapalı mekân doğu duvarının orta sahına denk gelen bölümü, taç kapının bazı kısımları, avluya girişi sağlayan beşik tonozun üstündeki mescit ve yanındaki iki mekânın örtüleri, mescidin mihrabı, üst kata çıkan kuzey ve güneydeki iki merdiven ile doğu cephenin bazı kısımları yıkılmıştır. Yapı 2008-2010'da tamir edilmiştir.",
+        "en": "Compared to other caravanserais on the Konya-Beyşehir route the inn is in very good condition; like many Anatolian Seljuk inns it was used and repaired in the Ottoman period. Even so, the vault of the middle nave of the closed space and parts of the side naves, the part of the closed space's east wall facing the middle nave, parts of the crown gate, the masjid above the barrel vault leading to the courtyard with the covers of the two spaces beside it, the masjid's mihrab, the north and south stairs to the upper floor and parts of the east façade had collapsed. The building was repaired in 2008-2010."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "251-252"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-malzeme",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Malzeme",
+        "en": "Plan and Material"
+      },
+      "body": {
+        "tr": "Doğu-batı yönünde dikdörtgen planlı, kapalı ve açık bölümlerden oluşan karma tipte bir Anadolu Selçuklu hanıdır. Yakın çevredeki ocaklardan sağlanan kırmızı renkli tüf taşı kullanılmıştır; yer yer devşirme malzeme de vardır. Beden duvarları sekizgen prizmal ve kare payandalarla desteklenir.",
+        "en": "A mixed-type Anatolian Seljuk inn on a rectangular east-west plan with closed and open sections. Red tuff from nearby quarries was used, with spolia in places. The walls are supported by octagonal-prismatic and square buttresses."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "252-253"
+        }
+      ]
+    },
+    {
+      "id": "bati-cephe",
+      "order": 4,
+      "title": {
+        "tr": "Batı Cephe ve Giriş",
+        "en": "West Façade and Entrance"
+      },
+      "body": {
+        "tr": "Batı cephedeki dışa taşıntılı bölüm müstakil bir kütle olarak cepheye eklenmiş, üç bölümlü ve fevkanî görünümlüdür; giriş cephesi iki katlı tasarlanmıştır. Cephenin ortasında giriş eyvanı, kuzeyinde çeşme yapısı, batısında kapalı bir görevli odası bulunur. Giriş eyvanı beşik tonozludur; çeşme revakının \"L\" biçimli iki bağımsız ayağı vardır ve çapraz tonozla örtülüdür. Hana giriş batı cephedeki basık kemerli kapıdan sağlanır. Yapının en gösterişli bölümü batı cephesidir; gösterişi taş işçiliğinden ve iki katlı düzenden gelir. Girişin kuzeyinde merdivenle çıkılan kare planlı, beşik tonozlu bir mescit, güneyinde ise merdivenle çıkılan, beşik tonozlu iki bağlantılı oda yer alır; mescidin kıble duvarının ortasında mihrap nişi bulunur.",
+        "en": "The outward-projecting part of the west façade is attached as a detached mass, with a three-part, towering look; the entrance façade is designed on two floors. In the middle of the façade are the entrance iwan, a fountain structure to the north and a closed attendant's room to the west. The iwan is barrel-vaulted; the fountain portico has two L-shaped independent piers and a cross vault. Entry is through the low-arched door on the west façade. The west façade is the most striking part, through its stonework and two-storey arrangement. North of the entrance is a square, barrel-vaulted masjid reached by stairs, with a mihrab niche in the middle of its qibla wall; south of it are two connected, barrel-vaulted rooms also reached by stairs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-kapali-bolum",
+      "order": 5,
+      "title": {
+        "tr": "Avlu ve Kapalı Bölüm",
+        "en": "Courtyard and Closed Section"
+      },
+      "body": {
+        "tr": "Açık avlu kapalı bölümden büyüktür ve derinlemesine dikdörtgen planlıdır; kuzey ve güney tarafında beşik tonozlu dörder eyvan yer alır. Batı duvarındaki kapıyla kapalı bölüme geçilir. Kapalı mekân doğu-batı doğrultusunda beşerli iki sıra ayakla üç sahına ayrılır; orta sahın daha geniştir ve zemini seki biçiminde yüksek tutulmuştur. Yan sahınlar yükler ve hayvanlar içindir.",
+        "en": "The open courtyard is larger than the closed section and has a deep rectangular plan, with four barrel-vaulted iwans on each of the north and south sides. A door in the west wall leads to the closed section. The closed space is divided east-west into three aisles by two rows of five piers; the middle aisle is wider and its floor is raised as a platform. The side aisles are for loads and animals."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "253"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Kapalı bölümde ayak",
+        "en": "Pillars in the closed section"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "253"
+        }
+      ],
+      "note": {
+        "tr": "Beşerli iki sıra.",
+        "en": "Two rows of five."
+      }
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Kapalı bölümde sahın sayısı",
+        "en": "Number of aisles in the closed section"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "key": "avlu_eyvan",
+      "label": {
+        "tr": "Avluda eyvan sayısı",
+        "en": "Iwans in the courtyard"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "253"
+        }
+      ],
+      "note": {
+        "tr": "Kuzey ve güney tarafında dörder.",
+        "en": "Four on each of the north and south sides."
+      }
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Kırmızı tüf taşı; yer yer devşirme",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "252"
+        }
+      ]
+    },
+    {
+      "key": "tamir_yillari",
+      "label": {
+        "tr": "Tamir yılları",
+        "en": "Repair years"
+      },
+      "value": "2008-2010",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "252"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Emir Kandemir",
+      "role": {
+        "tr": "Kitâbeye göre hanı yaptıran emir",
+        "en": "Emir who built the inn according to its inscription"
+      }
+    },
+    {
+      "name": "Emir Tuluğ bin Mehmet",
+      "role": {
+        "tr": "Bazı kaynaklara göre hanı yaptıran emir",
+        "en": "Emir who built the inn according to some sources"
+      }
+    },
+    {
+      "name": "I. Gıyâseddin Keyhüsrev",
+      "role": {
+        "tr": "Hanın yapıldığı dönemin sultanı",
+        "en": "Sultan at the time of construction"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Kapalı bölüme giriş kapısının üzeri",
+        "en": "Above the entrance door to the closed section"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 603,
+        "gregorian": "1206-07"
+      },
+      "note": {
+        "tr": "Kitâbenin metni ve dili kitapta verilmiyor; içeriğinin özeti (yapan, tarih, hükümdar) metinde aktarılıyor.",
+        "en": "The text and language are not given; the book only summarises its content (builder, date, ruler)."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "251"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1206",
+      "year": 1206,
+      "date": null,
+      "hijri": "603",
+      "type": "construction",
+      "title": {
+        "tr": "Han Emir Kandemir tarafından yaptırıldı (H. 603 / M. 1206-07)",
+        "en": "Inn built by Emir Kandemir (603 AH / 1206-07 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "251"
+        }
+      ],
+      "note": {
+        "tr": "Bazı kaynaklar yaptıranı Emir Tuluğ bin Mehmet olarak verir. Kitâbe M. 1206-07 aralığını verir; yıl olarak 1206 alındı.",
+        "en": "Some sources name Emir Tuluğ bin Mehmet as the builder. The inscription gives 1206-07; 1206 is used."
+      }
+    },
+    {
+      "id": "tamir-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Han tamir edildi",
+        "en": "Inn repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "252"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 2008-2010 verir.",
+        "en": "The book gives 2008-2010."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-kiziloren-kurucesme-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Han, Konya-Beyşehir yolunda Altunapa ve Kuruçeşme hanlarından sonra gelir.",
+        "en": "The inn follows the Altunapa and Kuruçeşme inns on the Konya-Beyşehir road."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "251"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, kırmızımsı tüf taşından yapılmış, doğu-batı doğrultulu geniş bir yapıdır. Batı yüzü iki katlı ve en gösterişli cephedir: ortada girişe açılan bir eyvan, kuzeyinde çeşme revakı, yukarıda merdivenle çıkılan mescit ve odalar vardır. İçeride önce büyük bir açık avlu, ardından beşerli iki sıra ayakla üç koridora ayrılmış kapalı bölüm gelir; ortadaki koridor daha geniş ve yüksektir.",
+      "en": "The inn is a large east-west building of reddish tuff. The two-storey west side is the most striking façade: an entrance iwan in the middle, a fountain portico to its north, and above, a masjid and rooms reached by stairs. Inside, a big open courtyard is followed by a closed hall divided by two rows of five piers into three aisles, the middle one wider and raised."
+    },
+    "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

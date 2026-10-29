@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-eregli-rustem-pasa-kervansarayi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kitap \"eyvanın iki yanında ikişer küçük eyvan ve üç adet tabhane odası\" diyor; sayıların her yan için mi toplam mı olduğu belirsiz, olduğu gibi aktarıldı.",
+      "Rüstem Paşa Hamamı (konya-eregli-rustem-pasa-sifa-hamami) ids.md'de var; kitap bu bölümde ilişkiden söz etmiyor, ilişki yazılmadı. Kontrol edilmeli.",
+      "Mimar bilgisi kitapta yok. Kitabın 280-281. sayfaları metin içermiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[kapilar-mekanlar]",
+        "note": "İngilizce metin \"tabhane\" yerine bir yerde \"slab rooms\" yazıyor (çeviri hatası); Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Rüstem Paşa Kervansarayı",
+    "en": "Rüstem Paşa Caravanserai"
+  },
+  "subtitle": {
+    "tr": "Hac yolu üzerindeki 1561 tarihli Osmanlı kervansarayı; bugün millet kıraathanesi",
+    "en": "An Ottoman caravanserai of 1561 on the pilgrimage route, now a public coffee house"
+  },
+  "alternate_names": [],
+  "type": "kervansaray",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "kervansaray",
+    "hac yolu",
+    "tabhane",
+    "Bağdat Kapısı",
+    "Konya Kapısı",
+    "millet kıraathanesi",
+    "mukarnas"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ereğli",
+    "neighborhood": null,
+    "address": "Ereğli",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "278"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1561",
+      "en": "1561"
+    },
+    "start_year": 1561,
+    "end_year": 1561,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap yapının Veziriazam Rüstem Paşa'nın vasiyeti üzerine vefatından sonra 1561'de yaptırıldığını söyler; yapıda kitâbe yoktur.",
+      "en": "The book says it was built in 1561 after the death of Grand Vizier Rüstem Paşa, on his will; the building has no inscription."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "278"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Veziriazam Rüstem Paşa",
+    "role": "banî (vasiyetiyle)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "278"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "278"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Ereğli'de hac yolu güzergâhında, 1561'de Rüstem Paşa'nın vasiyeti üzerine yaptırılan, açık avlulu ve kapalı bölümlü kervansaray. 2017-2019 restorasyonundan sonra millet kıraathanesi olarak kullanılmaktadır.",
+    "en": "A caravanserai with open courtyard and closed section in Ereğli on the pilgrimage route, built in 1561 on the will of Rüstem Paşa. Since the 2017-2019 restoration it has been used as a public coffee house."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Kervansaray Ereğli'dedir. Yapıya ait kitâbe yoktur. Veziriazam Rüstem Paşa'nın vasiyeti üzerine vefatından sonra 1561'de yaptırılmıştır. Ereğli hac yolu güzergâhında olduğu için önemli bir uğrak noktasıdır. 2017 ve 2019 arasında restorasyon çalışmaları yapılan han günümüzde millet kıraathanesi olarak kullanılmaktadır. Yapı, bölgedeki Osmanlı dönemine ait önemli kervansaraylardan biridir.",
+        "en": "The caravanserai is in Ereğli. It has no inscription. It was built in 1561 after the death of Grand Vizier Rüstem Paşa, upon his will. Ereğli is an important stopover as it lies on the pilgrimage route. Restored between 2017 and 2019, the inn is now used as a public coffee house. It is one of the important Ottoman caravanserais of the region."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "278-279"
+        }
+      ]
+    },
+    {
+      "id": "plan-cephe",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Cephe",
+        "en": "Plan and Facade"
+      },
+      "body": {
+        "tr": "Kervansaray doğu-batı doğrultusunda dikdörtgen planlıdır ve açık-kapalı bölümlerden oluşur; iki bölümlü plan kütleye de yansıtılmıştır. Güney cephede tabhane odaları, giriş eyvanı ve yanındaki küçük eyvanların bulunduğu kısım kademeli olarak yükseltilmiş, böylece cephe hareketlendirilmiş ve giriş vurgulanmıştır. Beden duvarlarında düzgün kesme taş, tonozlarda tuğla kullanılmıştır. Kuzey batı köşe pahlanarak altı sıra mukarnas dizisiyle düzenlenmiştir. Tüm cepheleri çevreleyen koyu renkli taş kuşaklardan biri tabhanenin saçak hattında, diğeri tonozların alt hizasındadır.",
+        "en": "The caravanserai has a rectangular plan in the east-west direction with open and closed sections; the two-part plan is reflected in the mass. On the south facade the section with the tabhane rooms, entrance iwan and small iwans beside it is raised in steps, enlivening the facade and emphasizing the entrance. Smooth cut stone was used for the walls and brick for the vaults. The northwest corner is chamfered and arranged with six rows of muqarnas. Of the dark-stone belts around all facades, one is at the eaves line of the tabhane and the other at the bottom level of the vaults."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "278-279"
+        }
+      ]
+    },
+    {
+      "id": "kapilar-mekanlar",
+      "order": 3,
+      "title": {
+        "tr": "Kapılar ve Mekânlar",
+        "en": "Gates and Spaces"
+      },
+      "body": {
+        "tr": "Kervansarayın doğuda \"Bağdat Kapısı\", batıda \"Konya Kapısı\" olarak bilinen iki kapısı vardır; bunlardan açık avluya girilir. Avlunun kuzeyinde hem konaklama yapılan tabhane bölümüne hem hayvanların barındığı ahıra geçiş sağlayan basık kemerli giriş eyvanı bulunur. Eyvanın iki yanında ikişer küçük eyvan ve üç tabhane odası vardır; bunlar beşik tonozla örtülüdür ve her tabhane odasında bir ocak nişi ile güney cepheye açılan küçük mazgal pencereler bulunur. Tabhane odalarının kuzeyine bitişik, ahır ve konaklama için kullanılan ana mekân dikdörtgen planlıdır; dört ayağın birbirine ve duvarlara iki yönlü sivri kemerlerle bağlanmasıyla oluşan beşik tonozla örtülüdür.",
+        "en": "The caravanserai has two gates, the eastern known as the \"Baghdad Gate\" and the western as the \"Konya Gate\"; they open to the open courtyard. North of the courtyard is a low-arched entrance iwan giving access both to the tabhane section for guests and to the stable for animals. Beside the iwan are two small iwans and three tabhane rooms; these are barrel-vaulted, and each tabhane room has a hearth niche and small loophole windows opening to the south facade. The rectangular main space adjoining the north of the tabhane rooms, used as stable and lodging, is covered by a barrel vault formed by connecting four pillars to each other and to the walls with two-way pointed arches."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "279"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kapi_sayisi",
+      "label": {
+        "tr": "Kapı sayısı",
+        "en": "Number of gates"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "key": "mukarnas_sirasi",
+      "label": {
+        "tr": "Kuzey batı köşedeki mukarnas sırası",
+        "en": "Muqarnas rows at the northwest corner"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Ana mekândaki ayak sayısı",
+        "en": "Pillars in the main space"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "key": "guncel_kullanim",
+      "label": {
+        "tr": "Günümüzdeki kullanım",
+        "en": "Current use"
+      },
+      "value": "Millet kıraathanesi",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "278"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Veziriazam Rüstem Paşa",
+      "role": {
+        "tr": "Vasiyetiyle kervansarayın yapılmasını sağlayan",
+        "en": "Whose will led to the caravanserai being built"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1561,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Rüstem Paşa'nın vasiyeti üzerine, vefatından sonra yaptırıldı",
+        "en": "Built after the death of Rüstem Paşa, on his will"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "278"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon çalışmaları (2017-2019)",
+        "en": "Restoration work (2017-2019)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "278"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 2017 ve 2019 arası der.",
+        "en": "The book says between 2017 and 2019."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mukarnas-kose",
+      "title": {
+        "tr": "Mukarnaslı pahlı köşe",
+        "en": "Chamfered muqarnas corner"
+      },
+      "hint": {
+        "tr": "Kuzey batı köşedeki altı sıra mukarnas.",
+        "en": "Six rows of muqarnas at the northwest corner."
+      },
+      "section_id": "plan-cephe"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kervansaray, Ereğli'de doğu-batı yönünde uzanan dikdörtgen bir yapıdır; düzgün kesme taştan duvarları tuğla tonozlarla örtülüdür. Doğu ve batıdaki iki kapıdan açık avluya girilir. Avlunun kuzeyinde basık kemerli bir eyvan, iki yanında küçük eyvanlar ve ocak nişli konaklama odaları vardır; eyvanın ardında dört ayaklı, tonozlu geniş bir ahır ve konaklama salonu uzanır. Kuzey batı köşesi pahlıdır ve altı sıra mukarnasla süslüdür. Bugün kıraathane olarak kullanılmaktadır.",
+      "en": "The caravanserai is a rectangular building in Ereğli extending east-west, with smooth cut stone walls and brick vaults. Two gates, east and west, lead into an open courtyard. North of the courtyard is a low-arched iwan with small iwans and lodging rooms with hearth niches on its sides; behind it lies a large vaulted stable and lodging hall on four pillars. The northwest corner is chamfered and decorated with six rows of muqarnas. Today it serves as a coffee house."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

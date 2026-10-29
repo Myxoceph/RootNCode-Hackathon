@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ahirli-emirgazi-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Emir (Emrullah) Gazi'nin kimliği ve yaşadığı dönem kitapta verilmiyor.",
+      "Dönem (era) kodu: kitap yalnızca XIV. yüzyıl sonu - XV. yüzyıl başı diyor, uygun bir dönem kodu seçilemedi; null bırakıldı.",
+      "Türbeyi yaptıran ve mimar kitapta yok.",
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlıkta \"Emirgazi (Emrullah Gazi)\" ve metinde \"Emir (Emrullah) Gazi\" biçimleri kullanılıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Emirgazi (Emrullah Gazi) Türbesi",
+    "en": "Emirgazi (Emrullah Gazi) Tomb"
+  },
+  "subtitle": {
+    "tr": "İlçeye adını veren Emir Gazi'nin sade türbesi",
+    "en": "The plain tomb of Emir Gazi, who gave the district its name"
+  },
+  "alternate_names": [
+    {
+      "tr": "Emrullah Gazi Türbesi",
+      "en": "Emrullah Gazi Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "konik külah",
+    "moloz taş",
+    "Emirgazi Şehitliği"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ahırlı",
+    "address": "Emirgazi, 87036 Sokak, Emirgazi Şehitliği içi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "186"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIV. yüzyıl sonu - XV. yüzyıl başı (tahmini)",
+      "en": "Late 14th - early 15th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitâbesi olmadığı için kesin tarih yok; plan, üst örtü ve malzemeden XIV. yüzyıl sonları ve XV. yüzyıl başı olduğu düşünülmektedir.",
+      "en": "With no inscription an exact date is impossible; judging by plan, cover and material, thought to be late 14th and early 15th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "186"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Emirgazi Şehitliği içinde yer alan, ilçeye adını veren Emir (Emrullah) Gazi'nin tek katlı, daire planlı, konik külahlı türbesi. 2007'de Vakıflar Bölge Müdürlüğü tarafından onarılmış, külahı kurşunla kaplanmıştır.",
+    "en": "The single-storey, circular-plan, conical-roofed tomb of Emir (Emrullah) Gazi, who gave the district its name, in the Emirgazi Cemetery of Martyrs. Repaired in 2007 by the Regional Directorate of Foundations, with its roof covered in lead."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe, Emirgazi'de 87036 Sokak üzerinde, Emirgazi Şehitliği içinde yer alır. Emir (Emrullah) Gazi ilçeye ismini veren zattır. Kitâbesi bulunmadığı için tam tarihlenemez; plan, üst örtü ve malzemeden XIV. yüzyıl sonları ve XV. yüzyıl başında yapıldığı düşünülür. Vakıflar Bölge Müdürlüğü tarafından 2007'de onarılmış, üst örtü bu tarihte kurşunla kaplanmıştır.",
+        "en": "The tomb is in Emirgazi on 87036 Street, inside the Emirgazi Cemetery of Martyrs. Emir (Emrullah) Gazi is the person who gave his name to the district. With no inscription it cannot be dated exactly; judging by plan, cover and material it is thought to have been built in the late 14th and early 15th centuries. It was repaired by the Regional Directorate of Foundations in 2007, when the cover was covered with lead."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "186"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe tek katlı, daire planlı ve konik külahla örtülüdür; moloz taştan yığma olarak inşa edilmiştir. Cepheler sadedir. Doğu cephedeki tek kanatlı kapıdan girilir; girişin arka cephesinde küçük kare bir pencere vardır. İçeride ayak ve baş taşı olan bir mezar bulunur.",
+        "en": "The tomb is single-storey, circular in plan and covered with a conical roof; it is built of rubble stone masonry. The facades are plain. It is entered through a single-winged door on the east facade; on the rear side opposite the entrance is a small square window. Inside is a grave with foot and head stones."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "186"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "mezar_sayisi",
+      "label": {
+        "tr": "Mezar sayısı",
+        "en": "Number of graves"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "186"
+        }
+      ]
+    },
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "186"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Emir (Emrullah) Gazi",
+      "role": {
+        "tr": "İlçeye adını veren zat; türbenin sahibi olarak anılır",
+        "en": "Person who gave the district its name; the tomb is named after him"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı; üst örtü kurşunla kaplandı",
+        "en": "Repair by the Regional Directorate of Foundations; cover lead-plated"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "186"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe Emirgazi Şehitliği içindedir. Tek katlı, daire planlı, moloz taştan bir yapıdır ve üstü kurşun kaplı konik bir külahla örtülüdür. Cepheler sadedir; doğuda tek kanatlı bir kapı, arkada küçük kare bir pencere vardır. İçeride baş ve ayak taşlı tek bir mezar bulunur.",
+      "en": "The tomb is inside the Emirgazi Cemetery of Martyrs. It is a single-storey, circular rubble-stone building topped with a lead-covered conical roof. The facades are plain; there is a single-winged door on the east and a small square window at the back. Inside is a single grave with head and foot stones."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

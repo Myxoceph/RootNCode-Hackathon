@@ -1,0 +1,294 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-kesikbas-kumbeti",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Banisi, mimarı ve medfun kişi kitapta bilinmiyor.",
+      "Kitapta s. 172 yalnızca başlık, s. 174 metinsiz; eksik metin varsa kontrol edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[ad]",
+        "note": "İsim üzerine görüş yalnızca İ. Hakkı Konyalı'ya atfedilen bir tahmindir; kesin bilgi olarak sunulmadı."
+      },
+      {
+        "field": "name",
+        "note": "Kitapta 'Kalenderbaba Türbesi' ve 'Kalenderhane (Kalender Baba) Türbesi' adları aynı yapı için kullanılıyor; ilişki Kalenderhane Türbesi id'sine yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kesikbaş Kümbeti",
+    "en": "Kesikbaş Kumbet"
+  },
+  "subtitle": {
+    "tr": "Çifte Kümbetler'in tuğla örgülü sekizgen kümbeti",
+    "en": "The brick-faced octagonal kumbet of the Double Kumbets"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kesikbaş Türbesi",
+      "en": "Kesikbaş Tomb"
+    },
+    {
+      "tr": "Çifte Kümbetler",
+      "en": "Double Kumbets"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "kümbet",
+    "türbe",
+    "Çifte Kümbetler",
+    "sekizgen plan",
+    "tuğla",
+    "kripta",
+    "piramidal külah",
+    "Kesikbaş"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Feritpaşa Mahallesi",
+    "address": "Ankara Caddesi üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "173"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl",
+      "en": "13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitabesi yoktur; plan, malzeme ve örtü sisteminden XIII. yüzyılda yapılmış bir Anadolu Selçuklu eseri olduğu anlaşılmaktadır.",
+      "en": "It has no inscription; from its plan, material and covering system it is understood to be an Anatolian Seljuk work built in the 13th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "173"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Banisi, mimarı ve içinde yatan kişi bilinmeyen, XIII. yüzyıla ait Anadolu Selçuklu kümbeti. Sekizgen planlı, tuğla örgü görünümlü cepheli yapı Kalenderbaba Türbesi ile birlikte 'Çifte Kümbetler' olarak bilinir.",
+    "en": "A 13th-century Anatolian Seljuk kumbet whose founder, architect and occupant are unknown. The octagonal, brick-faced building is known with the Kalenderbaba Tomb as the 'Double Kumbets'."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Kümbet Feritpaşa Mahallesi'nde Ankara Caddesi üzerindedir. Kitabesi yoktur; plan, malzeme ve örtü sisteminden XIII. yüzyıl Anadolu Selçuklu eseri olduğu anlaşılır. Birçok onarım geçirmiş, çevre düzenlemesi 2000'den itibaren Selçuklu Belediyesi tarafından yeniden yapılmıştır. Banisi, mimarı veya içinde kimin medfun olduğu hakkında bilgi yoktur. Kalenderbaba Türbesi ile birlikte 'Çifte Kümbetler' olarak bilinir.",
+        "en": "The kumbet is on Ankara Street in Feritpaşa Neighborhood. It has no inscription; from its plan, material and covering system it is understood to be a 13th-century Anatolian Seljuk work. It has undergone many repairs and its landscaping has been redone by Selçuklu Municipality since 2000. There is no information about the founder, architect or who is buried inside. It is known with the Kalenderbaba Tomb as the 'Double Kumbets'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "173"
+        }
+      ]
+    },
+    {
+      "id": "ad",
+      "order": 2,
+      "title": {
+        "tr": "Adın Kökeni Üzerine Görüş",
+        "en": "On the Origin of the Name"
+      },
+      "body": {
+        "tr": "İ. Hakkı Konyalı'ya göre idam edilenlere 'Kesikbaş' lakabı takıldığı için türbe, adından hareketle idam edilen birine ait olabilir. Bu bir görüştür; kitap kesin bilgi vermemektedir.",
+        "en": "According to İ. Hakkı Konyalı, since those executed were nicknamed 'Kesikbaş', the tomb may, judging by its name, belong to someone who was executed. This is an opinion; the book gives no firm information."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "173"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı genel olarak tuğladan yapılmış, yer yer taş kullanılmıştır; kripta taştandır. Sekizgen planlıdır ve içten kubbe, dıştan piramidal külahla örtülüdür. Cepheler tuğla örgü görünümündedir; sekizgen cephelerin üst bölümlerindeki küçük dikdörtgen mazgal pencerelerle aydınlanır. Giriş kuzey cephedendir. Kriptaya giriş zamanla bozulmuş ve üstü çapraz tonozla örtülmüştür; cenazelik yandan üç mazgal pencereyle aydınlanır. Sekizgen gövdeli ikinci katı kubbe örter.",
+        "en": "The building is generally of brick with stone in places; the crypt is stone. It is octagonal with an inner dome and outer pyramidal cone. The facades look like brickwork and the interior is lit by small rectangular loophole windows in the upper parts of the octagonal faces. The entrance is on the north. The crypt entrance has deteriorated over time and its top is covered with a cross vault; the funerary chamber is lit from the side by three loophole windows. A dome covers the octagonal second floor."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "173"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Sekizgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "173"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Roof"
+      },
+      "value": "İçten kubbe, dıştan piramidal külah",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "173"
+        }
+      ]
+    },
+    {
+      "key": "kripta_pencere",
+      "label": {
+        "tr": "Cenazelik mazgal penceresi",
+        "en": "Loophole windows of the funerary chamber"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "173"
+        }
+      ]
+    },
+    {
+      "key": "giris",
+      "label": {
+        "tr": "Giriş",
+        "en": "Entrance"
+      },
+      "value": "Kuzey cephe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "173"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İbrahim Hakkı Konyalı",
+      "role": {
+        "tr": "Kesikbaş adı üzerine görüş bildiren kaynak",
+        "en": "Source offering an opinion on the name Kesikbaş"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "cevre-2000",
+      "year": 2000,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "2000'den itibaren Selçuklu Belediyesi çevre düzenlemesi",
+        "en": "Landscaping by Selçuklu Municipality from 2000"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "173"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-selcuklu-kalenderhane-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Kalenderbaba Türbesi ile birlikte 'Çifte Kümbetler' olarak bilinir.",
+        "en": "Known together with the Kalenderbaba Tomb as the 'Double Kumbets'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "173"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kümbet, sekiz kenarlı, çoğunlukla tuğladan yapılmış, tepesi piramit biçimli bir külahla biten yapıdır. Cepheleri tuğla örgü görünümlüdür; sekizgen yüzlerin üst bölümünde küçük ince pencereler bulunur. Giriş kuzeydedir. Altta taştan yapılmış bir cenazelik, üstte kubbeyle örtülü ikinci bir kat vardır.",
+      "en": "The kumbet is an eight-sided building, mostly brick, ending in a pyramid-shaped cone. Its facades look like brickwork and small narrow windows sit high on the octagonal faces. The entrance is on the north. Below is a stone funerary chamber and above a second floor covered by a dome."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
