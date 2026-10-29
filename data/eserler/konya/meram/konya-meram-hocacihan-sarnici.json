@@ -1,0 +1,295 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-hocacihan-sarnici",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Su Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Sarnıcın yapım yılı kitapta yok; yalnızca yüzyıl veriliyor ve Türkçe ile İngilizce metin çelişiyor.",
+      "Hocacihan Hanı ile aynı banî (Hacı Bahtiyar) olup olmadığı kitapta açık değil; Hoca Cihan Hanı kaydıyla birlikte gözden geçirilmeli.",
+      "Sarnıcın vakıf bilgisi kitapta yok.",
+      "s. 240 metin içermiyor (yalnızca görsel); fotoğraf/çizim sonra eklenmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türkçe metin sarnıcı XII. yüzyıla tarihlendirir; İngilizce metin \"17th century\" yazar. İkisi de korundu, kayıt disputed işaretlendi. Banî Hacı Bahtiyar'ın vakfiyesi Hoca Cihan Hanı kaydında M. 1201-1202 olarak geçtiğinden XII. yüzyıl daha olası görünür ama bu kitapta sarnıç için açıkça bağlanmamıştır."
+      },
+      {
+        "field": "name",
+        "note": "Türkçe metinde \"Hocacihan Hanı (Dibidelik Han)\" geçer; han kaydının adı \"Akyokuş (Hoca Cihan) Hanı\"dır. İlişki bu kayda kuruldu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hocacihan Sarnıcı",
+    "en": "Hocacihan Cistern"
+  },
+  "subtitle": {
+    "tr": "Hocacihan Hanı'na su sağlayan tam gömme sarnıç",
+    "en": "Fully buried cistern that supplied the Hocacihan Inn"
+  },
+  "alternate_names": [
+    {
+      "tr": "Devler Sarnıcı",
+      "en": "Giants Cistern"
+    }
+  ],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "sarnic",
+    "tam gömme sarnıç",
+    "Sille taşı",
+    "beşik tonoz",
+    "kültürel etkinlik mekânı",
+    "Dibidelik Han"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Yaka Mahallesi",
+    "address": "Aziz Mahmut Hüdai Caddesi ile Ezgi Sokak'ın birleştiği köşe",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "239"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XII. yüzyıl (İngilizce metinde 17. yüzyıl)",
+      "en": "12th century (17th century in the English text)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 12,
+    "basis": {
+      "tr": "Türkçe metin \"XII. yüzyıla tarihlendirilen\" der; İngilizce metin \"17th century\" yazar. Yıl verilmemiştir.",
+      "en": "The Turkish text says \"dated to the 12th century\"; the English text says \"17th century\". No year is given."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "239"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Tebrizli Hacı Bahtiyar",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "239"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram Yaka Mahallesi'nde, Tebrizli Hacı Bahtiyar'ın yaptırdığı, bölgenin en eski ve en büyük sarnıçlarından biri. Hocacihan Irmağı'nın bahar suyuyla doldurulur, yakındaki Hocacihan Hanı'na su sağlardı; bugün kültürel etkinlik mekânı olarak kullanılmaktadır.",
+    "en": "One of the oldest and largest cisterns of the area, in Meram's Yaka Neighborhood, built by Hacı Bahtiyar of Tabriz. Filled in spring from the Hocacihan River, it supplied the nearby Hocacihan Inn; today it serves as a venue for cultural events."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Banî ve İşlev",
+        "en": "Location, Founder and Function"
+      },
+      "body": {
+        "tr": "Sarnıç, Meram Yaka Mahallesi'nde Aziz Mahmut Hüdai Caddesi ile Ezgi Sokak'ın birleştiği köşededir. Banisi, sarnıcın yakınında bir de kervansarayı bulunan Tebrizli Hacı Bahtiyar'dır. Önemli özelliklerinden biri, yakındaki Hocacihan Hanı'na (Dibidelik Han) su sağlamasıdır. \"Devler Sarnıcı\" adıyla da anılır.",
+        "en": "The cistern stands where Aziz Mahmut Hüdai Street and Ezgi Street meet in Meram's Yaka Neighborhood. Its patron is Hacı Bahtiyar of Tabriz, who also has a caravanserai near the cistern. One of its important features is that it supplied water to the nearby Hocacihan Inn (Dibidelik Inn). It is also called the \"Giants Cistern\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "239"
+        }
+      ]
+    },
+    {
+      "id": "su-kaynagi",
+      "order": 2,
+      "title": {
+        "tr": "Su Kaynağı ve Kullanımı",
+        "en": "Water Source and Use"
+      },
+      "body": {
+        "tr": "Bölgenin en eski ve en büyük sarnıçlarından biri olan yapı, Yaka Meram'dan gelip Konya-Beyşehir yolunun doğusundan geçen Hocacihan Irmağı'ndan beslenirdi. Yazın ırmak suyu kuruyunca yaşanan su sıkıntısını gidermek için bahar aylarında ırmaktan alınan suyla doldurulurdu. Bugün sarnıcı besleyen kanal izlenememektedir. Kullanıldığı dönemlerde su, bileziğin güneyine yerleştirilmiş seren ağaçlarının üzerindeki tapındırık ağacıyla alınırdı; seren ağaçlarından yalnızca biri ayaktadır.",
+        "en": "One of the oldest and largest cisterns of the region, it was fed by the Hocacihan River, which comes from Yaka Meram and passes east of the Konya-Beyşehir road. It was filled in spring with river water to ease the water shortage when the river dried up in summer. The channel that fed it can no longer be traced. While in use, water was drawn with the tapındırık (tapindirik) tree placed on seren trees south of the well-head; only one of the seren trees survives."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "239"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı \"tam gömme sarnıç\" tipindedir. Geniş bir hazneye sahiptir ve haznenin yapımında Sille taşı kullanılmıştır. Toprak altındaki su haznesi doğu-batı doğrultusunda inşa edilmiş, üzeri beşik tonozla örtülmüştür. Hazne bugün kültürel etkinliklerin yapıldığı bir mekân olarak yeniden işlevlendirilmiştir ve girişi muhdes bir girişten sağlanır.",
+        "en": "The building belongs to the \"fully buried cistern\" type. It has a large chamber built of Sille stone. The underground reservoir was built in the east-west direction and is covered with a barrel vault. The reservoir has been re-functioned as a venue for cultural events and is reached through a newly built entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "239"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sarnic_tipi",
+      "label": {
+        "tr": "Sarnıç tipi",
+        "en": "Cistern type"
+      },
+      "value": "Tam gömme sarnıç",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "239"
+        }
+      ]
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Sille taşı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "239"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Cover"
+      },
+      "value": "Beşik tonoz; hazne doğu-batı doğrultulu",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "239"
+        }
+      ]
+    },
+    {
+      "key": "su_kaynagi",
+      "label": {
+        "tr": "Su kaynağı",
+        "en": "Water source"
+      },
+      "value": "Hocacihan Irmağı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "239"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Tebrizli Hacı Bahtiyar",
+      "role": {
+        "tr": "Sarnıcın banisi; yakınında bir kervansarayı da vardır",
+        "en": "Patron of the cistern; also has a caravanserai nearby"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-akyokus-hoca-cihan-hani",
+      "type": "water_supply",
+      "description": {
+        "tr": "Sarnıç, yakınındaki Hocacihan Hanı'na (Dibidelik Han) su sağlıyordu.",
+        "en": "The cistern supplied water to the nearby Hocacihan Inn (Dibidelik Inn)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "239"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-meram-akyokus-hoca-cihan-hani",
+      "type": "same_founder",
+      "description": {
+        "tr": "Sarnıcın banisi Hacı Bahtiyar'ın yakınında bir kervansarayı olduğu söylenir; Hoca Cihan Hanı kaydı da vakfiyeye dayanarak han'ı Tebrizli Tacir Hacı Bahtiyar'a bağlar. İki kaydın aynı kişiyi kastettiği kitapta açıkça söylenmiyor.",
+        "en": "The cistern's patron Hacı Bahtiyar is said to have a caravanserai nearby, and the Hoca Cihan Inn entry ties the inn to the merchant Hacı Bahtiyar of Tabriz through a foundation charter. The book does not explicitly say the two refer to the same person."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "239"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sarnıç yerin altındadır; yüzeyde yalnızca yeni yapılmış bir giriş ve bileziğin yanında kalan tek bir ahşap seren ağacı görülür. İçeride Sille taşından örülmüş, doğu-batı doğrultusunda uzanan geniş bir hazne beşik tonozla örtülüdür.",
+      "en": "The cistern lies underground; at the surface only a newly built entrance and a single surviving wooden seren beam beside the well-head are seen. Inside, a wide chamber of Sille stone runs east-west under a barrel vault."
+    },
+    "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

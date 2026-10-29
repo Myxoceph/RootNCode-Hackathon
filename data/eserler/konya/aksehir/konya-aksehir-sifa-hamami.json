@@ -1,0 +1,358 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-sifa-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Su Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Dönem (era) kitapta adlandırılmıyor (1329-30); era boş bırakıldı.",
+      "Kitabenin mealini kitap vermiyor; translation boş bırakıldı.",
+      "Mâruf Köyü'ndeki Şeyh Hacı İbrahim Zaviyesi için ids.md'de kayıt yok; ilişki yazılmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[kadinlar-su-deposu]",
+        "note": "s. 221'deki İngilizce metin ('The iwans are each covered with a semi-dome…') Türkçe metindeki sayfa 222 paragrafına karşılık geliyor; sayfa kaydırması baskı düzeninden kaynaklanıyor. Türkçe sayfa numaraları esas alındı."
+      },
+      {
+        "field": "sections[plan-erkekler]",
+        "note": "İngilizce metindeki 'elephant eyes' ifadesi Türkçe 'filgözü' (kubbe ışık gözü) karşılığıdır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şifa Hamamı",
+    "en": "Şifa Bath"
+  },
+  "subtitle": {
+    "tr": "1329-30'da Subaşı Emir Şerafeddin Ahmet Bey'in yaptırdığı, kitabeli çifte hamam",
+    "en": "Inscribed double bath built in 1329-30 by Subaşı Emir Şerafeddin Ahmet Bey"
+  },
+  "alternate_names": [
+    {
+      "tr": "Cumhuriyet Meydan Hamamı",
+      "en": "Cumhuriyet Meydan Bath"
+    },
+    {
+      "tr": "Subaşı Hamamı",
+      "en": "Subaşı Bath"
+    },
+    {
+      "tr": "Emir Şerafeddin Hamamı",
+      "en": "Emir Şerafeddin Bath"
+    },
+    {
+      "tr": "Hacı İbrahim-i Veli Hamamı",
+      "en": "Hacı İbrahim-i Veli Bath"
+    },
+    {
+      "tr": "Çarşı Hamamı",
+      "en": "Çarşı Bath"
+    },
+    {
+      "tr": "Aşağı Hamam",
+      "en": "Aşağı Bath"
+    },
+    {
+      "tr": "Meydan Hamamı",
+      "en": "Meydan Bath"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "çifte hamam",
+    "kitabeli",
+    "devşirme malzeme",
+    "dört eyvanlı sıcaklık",
+    "vakıf hamamı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Selçuk Mahallesi",
+    "address": "Müze Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "220"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 730 / M. 1329-30",
+      "en": "730 AH / 1329-30 AD"
+    },
+    "start_year": 1329,
+    "end_year": 1330,
+    "hijri_year": 730,
+    "century": 14,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki inşa kitabesine göre Şevval 730 / 1329-30.",
+      "en": "According to the construction inscription over the entrance, Şevval 730 / 1329-30."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "220"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Subaşı Emir Şerafeddin Ahmet Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "220"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Mâruf Köyü'ndeki Şeyh Hacı İbrahim Zaviyesi",
+    "deed": null,
+    "conditions": {
+      "tr": "Şeyh Hacı İbrahim hamamı satın alıp H. 776 / M. 1374-75'te Mâruf Köyü'ndeki kendi adıyla bilinen zaviyeye vakfetmiştir.",
+      "en": "Şeyh Hacı İbrahim bought the bath and endowed it in 776 AH / 1374-75 AD to the hermitage known by his name in Mâruf Village."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "220"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Akşehir Müze Caddesi'ndeki, devşirme ve moloz taşla yapılmış, batısı erkekler doğusu kadınlar bölümü olan simetrik çifte hamam. Kitabesine göre 1329-30'da Subaşı Emir Şerafeddin Ahmet Bey yaptırmış, Şeyh Hacı İbrahim 1374-75'te satın alıp vakfetmiştir. Her iki bölüm de bugün hizmet vermektedir.",
+    "en": "A symmetrical double bath on Müze Street in Akşehir, built of spolia and rubble stone, with the men's section in the west and the women's in the east. According to its inscription it was built in 1329-30 by Subaşı Emir Şerafeddin Ahmet Bey; Şeyh Hacı İbrahim bought and endowed it in 1374-75. Both sections are in service today."
+  },
+  "sections": [
+    {
+      "id": "konum-adlar",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Adlar",
+        "en": "Location and Names"
+      },
+      "body": {
+        "tr": "Hamam Akşehir'de, Selçuk Mahallesi'nde, Müze Caddesi'ndedir. Üzerindeki tabelada XX. yüzyılın ortasına kadar 'Cumhuriyet Meydan Hamamı' yazan yapı, arşiv kaynaklarında Subaşı Hamamı, Emir Şerafeddin Hamamı, Hacı İbrahim-i Veli Hamamı, Çarşı Hamamı, Aşağı Hamam ve Meydan Hamamı adlarıyla da geçer.",
+        "en": "The bath is in Akşehir, Selçuk District, on Müze Street. Its signboard read 'Cumhuriyet Meydan Hamamı' until the mid-20th century; archive sources also call it Subaşı Bath, Emir Şerafeddin Bath, Hacı İbrahim-i Veli Bath, Çarşı Bath, Aşağı Bath and Meydan Bath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe ve Vakıf",
+        "en": "History and Waqf"
+      },
+      "body": {
+        "tr": "Giriş kapısı üzerindeki, tek satır Arapça, kabartma ve sülüs hatlı inşa kitabesine göre hamam H. 730 / M. 1329-30'da Subaşı Emir Şerafeddin Ahmet Bey tarafından yaptırılmıştır. Sonrasında Şeyh Hacı İbrahim tarafından satın alınmış ve H. 776 / M. 1374-75'te Mâruf Köyü'ndeki kendi adıyla bilinen zaviyeye vakfedilmiştir.",
+        "en": "According to the single-line Arabic relief construction inscription in thuluth above the entrance, the bath was built in 730 AH / 1329-30 AD by Subaşı Emir Şerafeddin Ahmet Bey. It was later bought by Şeyh Hacı İbrahim and endowed in 776 AH / 1374-75 AD to the hermitage known by his name in Mâruf Village."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "220"
+        }
+      ]
+    },
+    {
+      "id": "plan-erkekler",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Erkekler Bölümü",
+        "en": "Plan and Men's Section"
+      },
+      "body": {
+        "tr": "Kuzey-güney doğrultulu çifte hamamın batı kanadı erkekler, doğu kanadı kadınlar bölümüdür; yapı devşirme ve moloz taştandır. Aralık, ılıklık ve sıcaklık mekânları iki bölümde tamamen simetriktir. Güneydeki dikdörtgen planlı, iki katlı soyunmalığa, güney cephenin batısındaki üç basamaklı merdivenle çıkılan, silmelerle hareketlendirilmiş çerçeveli kapıdan girilir; kemer üstü ile çerçeve arasında kitabe vardır. Soyunmalık dört sütunla üç bölüme ayrılmış, sütun kaideleri akant yapraklı devşirme başlıklardandır; düz ahşap tavanı taşırlar. Ortadaki sekizgen şadırvan sonradan betonla yapılmış, özgün şadırvan aralık girişinin yanına bırakılmıştır. Kare planlı ılıklık Türk üçgeni geçişli kubbelidir; sıcaklık dört eyvanlı ve köşe halvetlidir, ortadaki kare mekân pandantif geçişli kubbeli ve altında mermer sekizgen göbek taşı vardır.",
+        "en": "The north-south double bath has the men's section in the west wing and the women's in the east; it is built of spolia and rubble stone. The passage, tepidarium and hot rooms of the two sections are fully symmetrical. The rectangular two-storey dressing room in the south is entered through a framed, moulded door reached by a three-step stair on the west of the south facade, with the inscription between the arch and frame. Four columns divide the dressing room into three parts, their bases formed of spolia capitals with acanthus leaves, carrying a flat wooden ceiling. The central octagonal fountain was made later in concrete; the original was left beside the passage entrance. The square tepidarium has a Turkish-triangle dome; the hot room has four iwans and corner halvets, the central square with a pendentive dome and a marble octagonal navel stone beneath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "220-221"
+        }
+      ]
+    },
+    {
+      "id": "kadinlar-su-deposu",
+      "order": 4,
+      "title": {
+        "tr": "Kadınlar Bölümü ve Su Deposu",
+        "en": "Women's Section and Water Tank"
+      },
+      "body": {
+        "tr": "Kadınlar bölümüne doğu cephedeki, güneye yakın kapıdan girilir; ilk ulaşılan yamuk planlı mekân sonradan eklenmiştir. Düzgün olmayan dörtgen planlı, düz ahşap tavanlı soyunmalığın ortasında elips biçimli dilimli bir şadırvan ve üç yanında sekiler vardır. Aralık, ılıklık ve sıcaklık erkekler bölümünün simetriğidir, ancak güneydeki halvette kubbeye tromplarla geçilir; ılıklıkla sıcaklığı bağlayan giriş güney eyvana açılır ve sıcaklıkla su deposu arasında açıklık yoktur. Kuzey duvar boyunca uzanan su deposu ve külhan sivri tonozludur, dört sivri destek kemeriyle güçlendirilmiştir. Her iki bölüm de günümüzde hizmet verir.",
+        "en": "The women's section is entered through a door on the east facade near the south; the trapezoidal first space was added later. The dressing room, of irregular quadrangular plan with a flat wooden ceiling, has benches on three sides and an elliptical segmented fountain in the middle. The passage, tepidarium and hot room are symmetrical with the men's, though the dome of the southern halvet is reached by squinches, the tepidarium-to-hot-room entrance opens to the south iwan, and there is no opening between hot room and water tank. The water tank and furnace along the north wall are pointed-vaulted, reinforced by four pointed arches. Both sections continue to serve today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "221-222"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sutun_sayisi",
+      "label": {
+        "tr": "Erkekler soyunmalığındaki sütun sayısı",
+        "en": "Columns in the men's dressing room"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "221"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Hacı İbrahim",
+      "role": {
+        "tr": "Hamamı satın alıp H. 776 / M. 1374-75'te Mâruf Köyü'ndeki zaviyeye vakfeden kişi",
+        "en": "Bought the bath and endowed it in 776 AH / 1374-75 AD to the zaviye in Mâruf Village"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Erkekler bölümü giriş kapısının üzerinde, kemer ile çerçeve arasında",
+        "en": "Above the men's entrance, between the arch and the frame"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "Emere bi inşaa imârete’l-hamam el-emîr el-kebîr el müeyyed Şerâfed / dîn Emîr Ahmed el-subaşı … fî’ş-şevvâl sene selâsîne ve seb’amie.",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 730,
+        "gregorian": "1329-30"
+      },
+      "note": {
+        "tr": "Tek satır, kabartma. Kitap yalnızca okunuşu veriyor; meal vermiyor. Metinde bir bölüm okunamamıştır (…).",
+        "en": "Single line, in relief. The book gives only the reading, no translation. A portion of the text is unread (…)."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "220-221"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1329",
+      "year": 1329,
+      "date": null,
+      "hijri": "Şevval 730",
+      "type": "construction",
+      "title": {
+        "tr": "Subaşı Emir Şerafeddin Ahmet Bey tarafından yaptırıldı (Şevval 730)",
+        "en": "Built by Subaşı Emir Şerafeddin Ahmet Bey (Şevval 730)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "220"
+        }
+      ],
+      "note": {
+        "tr": "H. 730 yılı M. 1329-30'a denk gelir.",
+        "en": "730 AH corresponds to 1329-30 AD."
+      }
+    },
+    {
+      "id": "vakif-1374",
+      "year": 1374,
+      "date": null,
+      "hijri": "776",
+      "type": "record",
+      "title": {
+        "tr": "Şeyh Hacı İbrahim satın alıp Mâruf Köyü'ndeki zaviyeye vakfetti (H. 776)",
+        "en": "Şeyh Hacı İbrahim bought and endowed it to the zaviye in Mâruf Village (776 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "220"
+        }
+      ],
+      "note": {
+        "tr": "H. 776 yılı M. 1374-75'e denk gelir.",
+        "en": "776 AH corresponds to 1374-75 AD."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "İnşa kitabesi",
+        "en": "Construction inscription"
+      },
+      "hint": {
+        "tr": "Erkekler girişinde kemer üstünde tek satır Arapça kitabe.",
+        "en": "Single-line Arabic inscription above the arch of the men's entrance."
+      },
+      "section_id": "tarihce"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam kuzey-güney doğrultusunda uzanır; batıda erkekler, doğuda kadınlar bölümü vardır. Erkekler bölümüne güneyde üç basamaklı merdivenle çıkılan kapıdan girilir; kapının üstünde kitabe bulunur. İki katlı soyunmalıkta dört sütun ve ahşap soyunma kabinleri vardır. Sıcaklık dört eyvanlı ve köşe halvetlidir, ortasında mermer göbek taşı bulunur. Kuzeyde su deposu ve külhan uzanır.",
+      "en": "The bath runs north to south, with the men's section in the west and the women's in the east. The men's section is entered by a door reached by a three-step stair on the south, with an inscription above it. The two-storey dressing room has four columns and wooden changing cabins. The hot room has four iwans and corner halvets with a marble navel stone in the middle. The water tank and furnace run along the north."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

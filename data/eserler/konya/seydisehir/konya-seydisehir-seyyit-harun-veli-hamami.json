@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-seydisehir-seyyit-harun-veli-hamami",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Su Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Dönem (era) kitapta adlandırılmıyor; era boş bırakıldı.",
+      "Hamamı yaptıran kişi kitapta belirtilmiyor; founder boş. Seyyid Harun Veli'nin ölüm tarihi bu metinde verilmiyor (başka bölümden doğrulanmalı).",
+      "Hamamın Seyit Harun Veli Türbesi/külliyesiyle bağı kitapta açıkça kurulmuyor; ilişki yazılmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlık ve id 'Seyyit', metin gövdesi 'Seyyid Harun Veli' yazıyor; id değiştirilmedi."
+      },
+      {
+        "field": "sections[erkekler]",
+        "note": "Türkçe metin erkekler bölümünün ilk mekânına 'soğukluk' (soyunmalık işlevli) diyor ve aynı cümlede 'soyunmalığın orta kısmında' havuzdan söz ediyor; soğukluk ve soyunmalık terimleri birbirinin yerine kullanılmış."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Seyyit Harun Veli Hamamı",
+    "en": "Seyyit Harun Veli Bath"
+  },
+  "subtitle": {
+    "tr": "Konya'da sıcaklığı tek eyvanlı ve iki köşe hücreli planla yapılmış tek hamam",
+    "en": "The only Konya bath with a hot room of a single iwan and two corner cells"
+  },
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "çifte hamam",
+    "tek eyvanlı sıcaklık",
+    "köşe hücreli",
+    "moloz taş",
+    "XIV. yüzyıl"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Seydişehir",
+    "neighborhood": "Keçikapı Mahallesi",
+    "address": "1608. Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "227"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIV. yüzyılın ilk çeyreği (H. 702-720 / M. 1302-03 ve 1320-21 arası) olması kuvvetle muhtemel",
+      "en": "Very probably first quarter of the 14th century (between 702-720 AH / 1302-03 and 1320-21 AD)"
+    },
+    "start_year": 1302,
+    "end_year": 1321,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitabe yok. İlçenin kurucusu Seyyid Harun Veli'nin bilinen ölüm tarihinden hareketle külliyenin (dolayısıyla hamamın) 702-720 / 1302-03 ve 1320-21 arasında inşa edilmiş olması kuvvetle muhtemeldir.",
+      "en": "There is no inscription. From the known death date of Seyyid Harun Veli, founder of the district, the complex (and thus the bath) was very probably built between 702-720 / 1302-03 and 1320-21."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "227"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Seydişehir Keçikapı Mahallesi'ndeki, kuzeydoğu-güneybatı konumlu, moloz taştan çifte hamam. Sıcaklığı 'tek eyvanlı ve iki köşe hücreli' tipte olup Konya hamamları içinde tek örnektir; erkekler bölümünün yalnızca soğukluk ve sıcaklığı özgünlüğünü korumuştur. Bugün her iki kısım kullanılmaktadır.",
+    "en": "A double bath of rubble stone in Keçikapı District, Seydişehir, on a northeast-southwest axis. Its hot room is of the 'single iwan and two corner cells' type, the only example among Konya's baths; only the frigidarium and hot room of the men's section keep their originality. Both parts are in use today."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Hamam Seydişehir'de, Keçikapı Mahallesi'nde, 1608. Sokak üzerindedir. Kitabesi yoktur; ilçenin kurucusu Seyyid Harun Veli'nin bilinen ölüm tarihinden hareketle külliyenin ve dolayısıyla hamamın, diğer yapı grupları gibi XIV. yüzyılın ilk çeyreğinde, 702-720 / 1302-03 ve 1320-21 arasında inşa edilmiş olması kuvvetle muhtemeldir. Sonradan yapılan eklemeler ve onarımlar nedeniyle erkekler kısmının yalnızca soğukluk ve sıcaklık bölümleri özgünlüğünü korumuştur.",
+        "en": "The bath is in Seydişehir, Keçikapı District, on 1608th Street. It has no inscription; from the known death date of Seyyid Harun Veli, founder of the district, the complex and thus the bath were very probably built in the first quarter of the 14th century, between 702-720 / 1302-03 and 1320-21, like the other building groups. Because of later additions and repairs only the frigidarium and calidarium of the men's section retain their originality."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Tipoloji",
+        "en": "Plan and Typology"
+      },
+      "body": {
+        "tr": "Yapı çifte hamam olarak, kuzeydoğu-güneybatı konumunda ve moloz taştan inşa edilmiştir. Planlama açısından 'tek eyvanlı ve iki köşe hücreli hamam tipolojisi' grubundandır ve Konya hamamları içinde sıcaklığı bu planla yapılmış tek örnektir. Hem kadınlar hem erkekler kısmında soyunmalıkların üzeri kırma çatıyla, diğer mekânlar tonoz ve kubbelerle örtülüdür.",
+        "en": "The building is a double bath on a northeast-southwest axis, built of rubble stone. In plan it falls into the 'single iwan and two corner cells' bath typology group and is the only example among Konya's baths whose hot room is built to this plan. In both the women's and men's sections the dressing rooms have hipped roofs, and the other spaces vaults and domes."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "227"
+        }
+      ]
+    },
+    {
+      "id": "erkekler",
+      "order": 3,
+      "title": {
+        "tr": "Erkekler Bölümü",
+        "en": "Men's Section"
+      },
+      "body": {
+        "tr": "Erkekler bölümüne kuzeybatı cephedeki kapıdan girilir. Kare planlı, düz damlı soğukluk ahşap, iki katlı düzenlidir; ortasında mermer sekizgen bir havuz vardır. Ilıklık Türk üçgeni geçişli kubbelidir ve tepedeki feneriyle aydınlanır. Sıcaklığın ortası kareye yakın dikdörtgen olup 16 dilimli kubbelidir; güneydoğu ve kuzeybatıda iki küçük eyvan, girişin karşısında kubbeli ana eyvan bulunur. Ana eyvanın iki yanında pandantif geçişli kubbelerle örtülü iki halvet vardır. Sıcaklığın ortasında köşeleri pahlı dikdörtgen mermer göbek taşı yer alır; ana eyvanın kuzeydoğusundaki küçük pencere su deposuna bağlanır. Su deposu yamuk dörtgen planlı, beşik tonozludur; arkasında külhan vardır.",
+        "en": "The men's section is entered through the door on the northwest facade. The square, flat-roofed frigidarium has a two-storey wooden arrangement with a marble octagonal pool in the middle. The tepidarium has a Turkish-triangle dome with a lantern at its top. The middle of the hot room is almost-square rectangular with a 16-segment dome; two small iwans lie to the southeast and northwest, and the main domed iwan faces the entrance. Two halvets with pendentive domes flank the main iwan. A rectangular marble navel stone with chamfered corners lies in the middle; a small window northeast of the main iwan connects to the water tank. The tank has a trapezoidal plan and a barrel vault, with the furnace behind."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "228-229"
+        }
+      ]
+    },
+    {
+      "id": "kadinlar",
+      "order": 4,
+      "title": {
+        "tr": "Kadınlar Bölümü",
+        "en": "Women's Section"
+      },
+      "body": {
+        "tr": "Kadınlar bölümü erkeklerinkinin güneydoğusundadır; soyunmalığa avludan güneybatı duvarındaki kapıyla girilir, önündeki küçük mekân sonradan yapılmış rüzgârlıktır. Dikdörtgen planlı, düz damlı soğukluğun ortasında daha üst kottaki ılıklık ve sıcaklığa bağlayan merdiven vardır. Ilıklık beşik tonozludur. Hafif yamuk planlı sıcaklık ortadaki büyük bir kemerle ikiye ayrılmış, her iki kısım Türk üçgeni geçişli kubbelidir; kuzeybatıdaki sivri kemerli kapıdan kubbeli bir halvete girilir. Sıcaklığın penceresi 'L' planlı, beşik tonozlu su deposuna bakar; depoların arkasında iki bölümü ısıtan külhan vardır. Hamamın her iki kısmı bugün kullanılmaktadır.",
+        "en": "The women's section lies southeast of the men's; its dressing room is entered from the courtyard through a door in the southwest wall, with a small later-built windbreak in front. In the middle of the rectangular flat-roofed frigidarium a stair connects to the higher-level tepidarium and hot room. The tepidarium is barrel-vaulted. The slightly trapezoidal hot room is divided in two by a large arch, each part with a Turkish-triangle dome; a pointed-arched door in the northwest leads to a domed halvet. The hot room's window looks onto an L-plan barrel-vaulted water tank; behind the tanks a furnace heats both sections. Both parts of the bath are in use today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "229-230"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sicaklik_kubbe_dilim",
+      "label": {
+        "tr": "Erkekler sıcaklığı orta kubbesinin dilim sayısı",
+        "en": "Segments of the men's hot-room central dome"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "228"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "tek-eyvan",
+      "title": {
+        "tr": "Tek eyvanlı sıcaklık",
+        "en": "Single-iwan hot room"
+      },
+      "hint": {
+        "tr": "Konya hamamları içinde bu planla yapılmış tek sıcaklık.",
+        "en": "The only hot room built to this plan among Konya's baths."
+      },
+      "section_id": "plan"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam kuzeydoğu-güneybatı doğrultusunda uzanan çifte yapıdır. Erkekler bölümüne kuzeybatıdaki kapıdan girilir; soğukluğun ortasında mermer sekizgen havuz vardır. Sıcaklıkta 16 dilimli kubbe, ana eyvan ve iki halvet bulunur. Kadınlar bölümü güneydoğudadır ve avludan girilir. Arkada su depoları ve külhan yer alır.",
+      "en": "The bath is a double structure on a northeast-southwest axis. The men's section is entered from the northwest door; the frigidarium has a marble octagonal pool in its middle. The hot room has a 16-segment dome, a main iwan and two halvets. The women's section is to the southeast and is entered from the courtyard. Water tanks and the furnace lie at the back."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
