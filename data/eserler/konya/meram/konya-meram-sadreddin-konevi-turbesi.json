@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-sadreddin-konevi-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 98) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin mimari tanımı kitapta yok; kayıt çok kısa. Plan, örtü, sanduka vb. bilgiler eklenecekse başka kaynak gerekir.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "meta.text_origin / konya-envanteri-1_cilt",
+        "note": "Kitabın İngilizce metni 'Manzumeye vakıflar ihdas edilmiş' cümlesini 'Poetry foundations were established' diye vermiş ('manzume' burada yapı topluluğu anlamında); Türkçe metne göre vakıflar külliye için kurulmuştur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sadreddin Konevi Türbesi",
+    "en": "Sadreddin Konevi Tomb"
+  },
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "konya-meram-sadreddin-konevi-kulliyesi",
+  "era": "selcuklu",
+  "tags": [
+    "türbe",
+    "Sadreddin Konevi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Şeyh Sadreddin Mahallesi",
+    "address": "Turgutoğlu Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "98"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 673 / M. 1274",
+      "en": "AH 673 / AD 1274"
+    },
+    "start_year": 1274,
+    "end_year": 1274,
+    "hijri_year": 673,
+    "century": 13,
+    "basis": {
+      "tr": "Taç kapı kitâbesi türbenin H. 673 / M. 1274 tarihli yapımla birlikte anıldığını gösterir; Konevî 1274 Eylül'ünde ölmüş ve bugünkü türbenin yerine defnedilmiştir.",
+      "en": "The crown gate inscription mentions the tomb together with the AH 673 / AD 1274 construction; Konevî died in September 1274 and was buried where the tomb stands today."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "98"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Sadreddin Konevî'nin 1274'te defnedildiği yerdeki türbe; külliyenin bir parçasıdır. Kitap türbenin mimarisini ayrıca anlatmaz; 1899'da vali Mehmed Ferid Paşa tarafından onarıldığını bildirir.",
+    "en": "The tomb on the spot where Sadreddin Konevî was buried in 1274, part of the complex. The book does not describe its architecture separately; it records its repair by Governor Mehmed Ferid Paşa in 1899."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Sadreddin Konevî, Hz. Mevlâna'nın vefatından dokuz ay sonra 1274 Eylül'ünde Konya'da vefat etmiş ve bugünkü türbesinin bulunduğu yere defnedilmiştir. Türbe külliyenin cami, zaviye ve kütüphane bölümleriyle birlikte anılır; taç kapıdaki birinci kitâbe onu \"medfun olduğu türbe\" olarak anar. Cami ve türbe H. 1317 / M. 1899'da vali Mehmed Ferid Paşa tarafından tamir ettirilmiştir. Kitap türbenin planı, örtüsü ve süslemesi hakkında bilgi vermez.",
+        "en": "Sadreddin Konevî died in Konya in September 1274, nine months after Mevlâna, and was buried where his tomb now stands. The tomb is named with the mosque, zawiya and library of the complex; the first crown gate inscription calls it \"the tomb where he is buried.\" The mosque and tomb were repaired in AH 1317 / AD 1899 by Governor Mehmed Ferid Paşa. The book gives no information on the tomb's plan, covering or decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Sadreddin Konevî",
+      "role": {
+        "tr": "Türbede yatan âlim (ö. 1274)",
+        "en": "Scholar buried in the tomb (d. 1274)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "defin-1274",
+      "year": 1274,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Sadreddin Konevî vefat etti ve bugünkü türbenin yerine defnedildi (Eylül)",
+        "en": "Sadreddin Konevî died and was buried where the tomb stands (September)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1899",
+      "year": 1899,
+      "date": null,
+      "hijri": "1317",
+      "type": "repair",
+      "title": {
+        "tr": "Cami ile birlikte vali Mehmed Ferid Paşa tarafından onarıldı",
+        "en": "Repaired with the mosque by Governor Mehmed Ferid Paşa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-sadreddin-konevi-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe, Sadreddin Konevi Külliyesi'nin bir parçasıdır.",
+        "en": "The tomb is part of the Sadreddin Konevi Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sadreddin Konevi Türbesi, ünlü âlim Sadreddin Konevî'nin gömülü olduğu, külliyenin cami ile birlikte anılan bölümüdür. Kitap türbenin görünümü hakkında ayrıntı vermemektedir.",
+      "en": "The Sadreddin Konevi Tomb is the part of the complex, named together with the mosque, where the famous scholar Sadreddin Konevî is buried. The book gives no detail of its appearance."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 98)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "98-98"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=324",
+        "original_name": "pdf-s51-xref324",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "98"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sadreddin Konevi Türbesi (kitap s. 98)",
+        "en": "Sadreddin Konevi Tomb (book p. 98)"
+      },
+      "alt": {
+        "tr": "Sadreddin Konevi Türbesi fotoğrafı",
+        "en": "Photo of Sadreddin Konevi Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

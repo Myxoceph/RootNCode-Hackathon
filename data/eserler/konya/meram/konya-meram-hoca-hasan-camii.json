@@ -1,0 +1,329 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-hoca-hasan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî ve kesin yapım tarihi kitapta yok; founder null.",
+      "Minare konumu Türkçe metinde 'kuzeybatı' ve 'kuzeydoğu' diye çelişkili geçiyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf şartları kitapta yok (aksi belirtilmedikçe); VGM arşivinden bulunabilir.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[minare]",
+        "note": "Türkçe metin önce minareyi 'son cemaat yerinin kuzeybatısında', sonra 'kuzeydoğusunda' diyor; İngilizce metin de aynı iki ifadeyi içeriyor. Kaynağa sadık kalındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hoca Hasan Camii",
+    "en": "Hoca Hasan Mosque"
+  },
+  "subtitle": {
+    "tr": "İç içe iki mihraplı, XIII. yüzyıla tarihlenen cami",
+    "en": "Mosque dated to the 13th century with two interlocking mihrabs"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "iç içe mihrap",
+    "mihrabiye",
+    "tuğla ve firuze çini",
+    "kare gövdeli minare"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Abdülaziz Mahallesi",
+    "address": "Kazım Karabekir Caddesi No. 15",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "116"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl (Anadolu Selçukluları)",
+      "en": "13th century (Anatolian Seljuks)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "İnşa tekniği ve mozaik çini süslemelerine bakılarak XIII. yüzyıl Anadolu Selçukluları zamanında inşa edildiği 'düşünülmektedir'. Kesin yıl yok.",
+      "en": "Considering construction technique and mosaic tiles it 'is thought' to be built in the 13th-century Anatolian Seljuk period. No exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "116"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Abdülaziz Mahallesi'ndeki cami, XIII. yüzyıl Anadolu Selçuklu dönemine tarihlenir; kare planlı tek kubbeli harim, son cemaat yeri ve kare gövdeli minareden oluşur. Kıble duvarındaki iç içe iki mihrap uygulaması dikkat çeker.",
+    "en": "The mosque in Abdülaziz Neighborhood is dated to the 13th-century Anatolian Seljuk period and consists of a square single-domed harim, narthex and a square-bodied minaret. Its two interlocking mihrabs are notable."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Onarımlar",
+        "en": "Overview and Repairs"
+      },
+      "body": {
+        "tr": "Cami Meram'da Abdülaziz Mahallesi, Kazım Karabekir Caddesi No. 15'tedir. İnşa tekniği ve mozaik çini süslemelerine bakılarak XIII. yüzyıl Anadolu Selçukluları zamanında yapıldığı düşünülmektedir. Osmanlılar zamanında H. 1185 / M. 1771'de, sonra 1990 ve 2007'de onarım görmüştür. 1990 restorasyonu kazılarında alçı ve çini parçaları ile alçı pencere kafesi parçaları bulunmuş, bunlar Karatay Medresesi Çini Eserleri Müzesi'ne nakledilmiştir.",
+        "en": "The mosque is at Abdülaziz Neighborhood, Kazım Karabekir Street No. 15, Meram. From its construction technique and mosaic tiles it is thought to date from the 13th-century Anatolian Seljuks. It was repaired in 1185 AH / 1771 AD in the Ottoman period and again in 1990 and 2007. Excavations during the 1990 restoration yielded plaster and tile pieces and parts of a plaster window grille, moved to the Karatay Madrasa Tile Works Museum."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "116-117"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Plan, Cepheler ve Son Cemaat Yeri",
+        "en": "Plan, Facades and Narthex"
+      },
+      "body": {
+        "tr": "Cami kare planlı tek kubbeli harim, son cemaat yeri ve minareden oluşur. Alt kısımlar taş, üst kısımlar tuğladır. Son cemaat yeri kuzeydedir. Doğu ve batı cephelerde altta düz lentolu, üstte yarım daire formlu iki katlı birer pencere vardır. Son cemaat yerinin ortasında sivri kemerli niş içinde üç dilimli bir mihrabiye bulunur; sırsız tuğla ve firuze çinilerle süslüdür, içinde tam ve yarım sekizgenler yer alır.",
+        "en": "The mosque has a square single-domed harim, narthex and minaret, stone below and brick above. The narthex lies to the north. East and west facades have two-storey windows with flat lintels below and semicircular tops. In the centre of the narthex is a three-lobed mihrabiye in a pointed-arch niche, decorated with unglazed brick and turquoise tile, with full and half octagons inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "116-117"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare kare gövdelidir, taş ve tuğladır; gövde köşelerde üçgen, orta eksenlerde yarım daire formunda yivli düzenlenmiştir. Gövdenin üst kısmını firuze çiniden sade bir kuşak dolanır. Şerefe altı iki sıra mukarnaslıdır; mukarnas içleri firuze çinilidir. Şerefe üstündeki yivli petek gövdeye göre daha incedir. Konum Türkçe metinde 'kuzeybatı' ve 'kuzeydoğu' olarak iki farklı biçimde geçer.",
+        "en": "The minaret has a square body of stone and brick with triangular corners and semicircular grooves on the axes. A plain turquoise tile band wraps the upper body. The balcony underside has two rows of muqarnas whose interiors were turquoise-tiled. The grooved honeycomb above the balcony is thinner than the body. The text places the minaret both northwest and northeast."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "116-117"
+        }
+      ]
+    },
+    {
+      "id": "harim-ve-mihrap",
+      "order": 4,
+      "title": {
+        "tr": "Harim ve İç İçe Mihrap",
+        "en": "Harim and Interlocking Mihrab"
+      },
+      "body": {
+        "tr": "Harim kare planlı ve tromp geçişli kubbelidir. Kıble duvarının ortasındaki mihrapta iç içe iki mihrap uygulaması dikkat çeker: dikdörtgen mihrap nişi sekiz sıra mukarnas kavsaralıdır, köşelerinde silindirik gövdeli sütunceler vardır; bunun ortasında ilk mukarnas dizisine kadar yükseltilmiş, basık kemerli niş içinde üç dilimli, mukarnas kavsaralı ikinci bir mihrap nişi bulunur. 1990 restorasyonunda mihrabın aslında çiniyle kaplı ve mevcuttan büyük olduğu, pencerelerin de alçı kaplı olduğu anlaşılmıştır.",
+        "en": "The square harim has a squinch-supported dome. The qibla wall's mihrab is notable for two interlocking mihrabs: a rectangular niche with an eight-row muqarnas hood and cylindrical corner colonnettes contains a second, three-lobed muqarnas-hooded niche in a low-arched frame rising to the first muqarnas row. The 1990 restoration showed the mihrab was originally tile-covered and larger, and the windows plaster-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "116-117"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1771",
+      "year": 1771,
+      "date": null,
+      "hijri": "1185",
+      "type": "repair",
+      "title": {
+        "tr": "Osmanlı dönemi onarımı",
+        "en": "Ottoman-period repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "116"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1990",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü restorasyonu; alçı ve çini parçaları bulundu",
+        "en": "Restoration by the General Directorate of Foundations; plaster and tile pieces found"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "116"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "116"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hoca Hasan Camii, alt kısmı taş, üst kısmı tuğla olan kare planlı, tek kubbeli bir yapıdır. Kuzeyinde bir son cemaat yeri ve kare gövdeli, yivli bir minare bulunur; minarenin gövdesini firuze çini bir kuşak dolanır. Son cemaat yerinde sivri kemerli nişte üç dilimli bir mihrabiye vardır. İçeride kıble duvarında bir mihrabın içinde ikinci bir mihrap yer alır.",
+      "en": "Hoca Hasan Mosque is a square, single-domed building, stone below and brick above. It has a narthex to the north and a grooved, square-bodied minaret wrapped by a turquoise tile band. The narthex has a three-lobed mihrabiye in a pointed-arch niche. Inside, a second mihrab sits within the mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Konya Vakıf Eserleri I. Cilt) esas alınarak yazılmıştır."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "116-117"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=399",
+        "original_name": "pdf-s60-xref399",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "116"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hoca Hasan Camii (kitap s. 116)",
+        "en": "Hoca Hasan Mosque (book p. 116)"
+      },
+      "alt": {
+        "tr": "Hoca Hasan Camii fotoğrafı",
+        "en": "Photo of Hoca Hasan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=401",
+        "original_name": "pdf-s60-xref401",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "116"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hoca Hasan Camii (kitap s. 116)",
+        "en": "Hoca Hasan Mosque (book p. 116)"
+      },
+      "alt": {
+        "tr": "Hoca Hasan Camii fotoğrafı",
+        "en": "Photo of Hoca Hasan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=403",
+        "original_name": "pdf-s60-xref403",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "117"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hoca Hasan Camii (kitap s. 117)",
+        "en": "Hoca Hasan Mosque (book p. 117)"
+      },
+      "alt": {
+        "tr": "Hoca Hasan Camii fotoğrafı",
+        "en": "Photo of Hoca Hasan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

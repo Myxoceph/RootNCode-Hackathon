@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-tarhana-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Yapım yılı ve banisi kitapta yok; vakıf kayıtlarından araştırılmalı.",
+      "Era (XX. yüzyıl başı) enum'larda tek koda oturmadığı için boş bırakıldı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metin 'The borders of the minbar have floral decorations' diyor; Türkçe metin 'Mihrabın bordürleri' diyor. Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tarhana Mescidi",
+    "en": "Tarhana Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "mahalle mescidi",
+    "ahşap direkli",
+    "kırma çatı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Hacı Fettah Mahallesi",
+    "address": "Tahtatepen Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "145"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl başı (mimari özelliklere göre)",
+      "en": "Early 20th century (based on architectural features)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitabe yok; tarih yalnızca mimari özelliklerden çıkarılmıştır, yıl verilmemiştir.",
+      "en": "No inscription; dated only from architectural features, no year given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "145"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Meram'da Hacı Fettah Mahallesi, Tahtatepen Sokak üzerinde, kırma çatılı, dikdörtgen planlı küçük bir mahalle mescidi. Kitabesi yoktur; XX. yüzyıl başına tarihlenir, 2007'de Vakıflar Genel Müdürlüğü onarmıştır.",
+    "en": "A small rectangular masjid with a hipped roof on Tahtatepen Street, Hacı Fettah Neighborhood, Meram. It has no inscription, dates to the early 20th century and was restored by the General Directorate of Foundations in 2007."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit Meram, Hacı Fettah Mahallesi, Tahtatepen Sokak üzerinde yer almaktadır. Mescide ait bir kitâbe bulunmamaktadır. Yapı mimari özelliklerinden hareketle XX. yüzyıl başlarına tarihlendirilebilir. Vakıflar Genel Müdürlüğü tarafından 2007 senesinde onarılmıştır.",
+        "en": "The masjid is located on Tahtatepen Street, Hacı Fettah Neighborhood, Meram. There is no inscription. The building can be dated to the early 20th century based on its architectural features. It was restored in 2007 by the General Directorate of Foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "145"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit dikdörtgen planlıdır ve üzeri kırma çatı ile örtülüdür. Batı cephesi imam evi ile bitişiktir; güney cephe sağır bırakılmıştır. Harime giriş kuzey cephesindeki kapıdan sağlanır. Merkezde iki ahşap direğin taşıdığı, ahşap tavanlı harimin kuzey bölümünde mahfil, kıble duvarında mihrap yer alır. Mihrap ahşap kaplamalı dikdörtgen formdadır; bordürleri bitkisel süslemelidir.",
+        "en": "The masjid has a rectangular plan and a hipped roof. Its west facade is adjacent to the imam's house and the south facade is blind. Entrance to the harim is through the north door. The harim has a wooden ceiling carried by two wooden poles in the centre, a mahfil in the north and a wood-covered rectangular mihrab on the qibla wall with floral borders."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "145"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Restoration by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "145"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Küçük, dikdörtgen planlı, kırma çatılı bir mahalle mescididir. Batı yanı imam evine bitişiktir, güney duvarı pencereziz bırakılmıştır. Kuzeydeki kapıdan girilince ortada iki ahşap direğin taşıdığı ahşap tavanlı bir harim vardır; kuzey ucunda mahfil, karşıda ahşap kaplı dikdörtgen mihrap bulunur.",
+      "en": "A small rectangular neighborhood masjid with a hipped roof. Its west side adjoins the imam's house and its south wall has no windows. Entering from the north, the prayer hall has a wooden ceiling on two wooden poles, a gallery at the north end and a wood-covered rectangular mihrab opposite."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "145-145"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=528",
+        "original_name": "pdf-s74-xref528",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "145"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tarhana Mescidi (kitap s. 145)",
+        "en": "Tarhana Masjid (book p. 145)"
+      },
+      "alt": {
+        "tr": "Tarhana Mescidi fotoğrafı",
+        "en": "Photo of Tarhana Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=530",
+        "original_name": "pdf-s74-xref530",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "145"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tarhana Mescidi (kitap s. 145)",
+        "en": "Tarhana Masjid (book p. 145)"
+      },
+      "alt": {
+        "tr": "Tarhana Mescidi fotoğrafı",
+        "en": "Photo of Tarhana Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=532",
+        "original_name": "pdf-s74-xref532",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "145"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tarhana Mescidi (kitap s. 145)",
+        "en": "Tarhana Masjid (book p. 145)"
+      },
+      "alt": {
+        "tr": "Tarhana Mescidi fotoğrafı",
+        "en": "Photo of Tarhana Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

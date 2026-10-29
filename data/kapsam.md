@@ -33,3 +33,28 @@ Bölük numaraları her ciltte 1'den başlar; bu yüzden `#` sütununda cilt de 
 | C3-10 | Nilüfer | 627-647 | 5 | `bursa-nilufer-demirci-koyu-camii`, `-golyazi-camii`, `-golyazi-hamami`, `-golyazi-sur-duvarlari`, `-ozluce-kilisesi-camii` | Hüseyin (ajan) | draft |
 | C3-11 | Orhangazi | 653-663 | 3 | `bursa-orhangazi-muradiye-camii`, `-orhan-gazi-camii-gurle`, `-gurle-koyu-hamami` | Hüseyin (ajan) | draft |
 | C3-12 | Yenişehir | 667-717 | 17 | `bursa-yenisehir-*` (17 kayıt): `bali-bey-camii`, `carsi-hamami`, `cinarli-camii`, `ethem-pasa-camii`, `haci-hasan-camii`, `kursunlu-han`, `murat-pasa-camii`, `orhan-gazi-camii`, `orhan-gazi-hamami`, `postinpus-camii`, `semakizade-haci-huseyin-efendi-camii`, `sinan-pasa-arastasi`, `sinan-pasa-camii`, `sinan-pasa-imareti`, `sinan-pasa-kulliyesi`, `sinan-pasa-medresesi`, `yarhisar-koyu-cesmesi` | Hüseyin (ajan) | draft |
+
+
+## Konya (`vk-konya-c1`: Konya Vakıf Eserleri I. Cilt, tek PDF)
+
+Kaynak: `konya-envanteri-1_cilt-web.pdf`; metin `build/cache/text/konya-1.txt` (246 PDF sayfası = çift sayfa; her PDF sayfasının sonunda basılı sayfa numarası). Bölükler PDF sayfa aralığıdır. Drive fotoğraf arşivi yok (media boş).
+
+| # | Bölük | PDF sayfa | Kayıtlar | Kim | Durum |
+|---|---|---|---|---|---|
+| K1-1 | Mevlâna Külliyesi (Karatay) | 16-37 | 15 kayıt: `konya-karatay-mevlana-*` (külliye + 14 alt kayıt) | Hüseyin (ajan) | draft |
+| K1-2 | Meram I | 38-51 | 19 kayıt: `anber-reis-feridiye-camii`, `askan-camii`, `ayanbey-camii`, `bulgur-dede-mescidi`, `buyukkovanagzi-haci-haydar-efendi-camii`, `dayhane-camii-ve-mustemilati`, `ekmekkocu-mescidi`, `furgan-dede-mescidi`, `gazezler-camii`, `karaagac-koyu-camii`, `karakurt-camii`, `komurculer-camii`, `sadreddin-konevi-camii`, `sadreddin-konevi-kulliyesi`, `sadreddin-konevi-kutuphanesi`, `sadreddin-konevi-turbesi`, `seyh-ebul-vefa-camii`, `sukran-mescidi`, `yukari-camii-ve-haziresi` | Hüseyin (ajan) | draft |
+| K1-3 | Meram II | 52-60 | 7 kayıt: `abdulaziz-camii`, `hoca-fakih-camii-ve-turbesi`, `hoca-hasan-camii`, `karatay-mescidi`, `saatci-camii`, `tahir-ile-zuhre-mescidi-ve-turbesi`, `tahir-pasa-camii` | Hüseyin (ajan) | draft |
+| K1-4 | Meram III | 61-73 | 9 kayıt: `abdulmumin-mescidi`, `gokyurt-koyu-camii`, `haci-hasan-camii`, `ihtiyarettin-mescidi`, `iplikci-camii`, `kapu-camii`, `sahip-ata-camii`, `seyh-osman-rumi-camii`, `tellioglu-camii` | Hüseyin (ajan) | draft |
+| K1-5 | Meram IV | 74-88 | 16 kayıt: `aksinne-kumbetli-gunbentli-mescidi`, `asagi-mahalle-kiziloren-kandemir-mescidi`, `emir-halil-camii`, `erdemsah-kale-i-cerp-mescidi`, `fahrunnisa-caybasi-mescit-ve-turbesi`, `gurb-i-cedidi-kosova-mescidi`, `hasbey-darul-huffaz-mescidi`, `kadi-mursel-camii`, `kalecik-mescidi`, `kurkcu-mescidi`, `nasuh-bey-camii`, `salih-pasa-dedemoglu-camii`, `tahtatepen-haci-adil-camii`, `tarhana-mescidi`, `veznedar-huseyin-efendi-asri-camii`, `yolcuoglu-gazioglu-camii` | Hüseyin (ajan) | draft |
+| K1-6 | Karatay I | 89-101 | | | sırada |
+| K1-7 | Karatay II | 102-114 | | | sırada |
+| K1-8 | Karatay III | 115-128 | | | sırada |
+| K1-9 | Karatay IV | 129-141 | | | sırada |
+| K1-10 | Karatay V | 142-146 | | | sırada |
+| K1-11 | Selçuklu I | 147-159 | | | sırada |
+| K1-12 | Selçuklu II / Akşehir | 160-170 | | | sırada |
+| K1-13 | Akşehir / Altınekin / Beyşehir | 171-192 | | | sırada |
+| K1-14 | Bozkır / Çeltik / Çumra / Derbent / Doğanhisar | 193-207 | | | sırada |
+| K1-15 | Doğanhisar / Ereğli / Hüyük / Ilgın | 208-223 | | | sırada |
+| K1-16 | Kadınhanı / Karapınar / Sarayönü / Seydişehir | 224-235 | | | sırada |
+| K1-17 | Taşkent / Yunak ve sonu | 236-246 | | | sırada |

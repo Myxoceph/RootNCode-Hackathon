@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-karaagac-koyu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 96) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Karaağaç Köyü Camii",
+    "en": "Karaağaç Village Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "köy camii",
+    "kerpiç",
+    "ahşap köşk minare",
+    "1905",
+    "1966 onarımı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Karaağaç Köyü",
+    "address": "Karaağaç Köyü merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "96"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1905 (1966'da büyük ölçüde yenilendi)",
+      "en": "1905 (largely renewed in 1966)"
+    },
+    "start_year": 1905,
+    "end_year": 1905,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Üzerindeki Latin harfli kitâbede 1905'te yaptırıldığı yazıyor; mihrapta onarım tarihi olarak 1966 yazıyor.",
+      "en": "The Latin-letter inscription on it says it was built in 1905; the mihrab gives 1966 as the repair date."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "96"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Kitâbesine göre 1905'te yaptırılmış, 1966 onarımında büyük kısmı yenilenmiş, kerpiç duvarlı, ahşap köşk minareli klasik küçük mahalle mescidi biçiminde köy camii.",
+    "en": "A village mosque built in 1905 according to its inscription, largely renewed in a 1966 repair, with adobe walls and a wooden pavilion minaret; one of the classic small neighbourhood masjids."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Meram, Karaağaç Köyü merkezindedir. Bânîsinin kim olduğu bilinmemektedir. Üzerindeki Latin harfli kitâbede 1905'te yaptırıldığı belirtilir; mihrapta tamirat tarihi olarak 1966 yazar ve bu onarımda yapının büyük kısmı yenilenmiştir. Cami derinlemesine dikdörtgen planlı ve dört yöne eğimli kırma çatılıdır. Beden duvarları taş temel üzerine ahşap hatıllarla desteklenmiş kerpiçtendir. Cepheler sadedir, duvarlarda dikdörtgen pencereler vardır. Harime doğu cephenin kuzey köşesindeki kapıdan girilir; harim ahşap tavanlıdır. Giriş kapısının üzerinde beden duvarına oturan, silindirik gövdeli, köşk tipi şerefeli ahşap minare yükselir. Kuzey duvarında mahfil, kıble duvarında mihrap ve minber vardır; mihrap dikdörtgen formlu, üçgen alınlıklı ve yarım daire planlıdır, minber basit ahşaptır. Cami klasik, küçük boyutlu mahalle mescitlerindendir.",
+        "en": "The mosque is at the centre of Karaağaç Village, Meram. Its builder is unknown. The Latin-letter inscription on it states it was built in 1905; the mihrab gives 1966 as a repair date, when most of the building was renewed. It is deeply rectangular with a hipped roof sloping four ways. The walls are adobe supported by wooden beams on a stone foundation. Facades are plain with rectangular windows. The harim is entered by a door in the north corner of the east facade and has a wooden ceiling. A wooden minaret with cylindrical body and pavilion-type balcony sits on the wall above the entrance. There is a gallery on the north wall and a mihrab and minbar on the qibla wall; the mihrab is rectangular with a triangular pediment and semicircular plan, the minbar a simple wooden one. It is one of the classic small neighbourhood masjids."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "96"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapım yılı (kitâbe)",
+        "en": "Year built (inscription)"
+      },
+      "value": 1905,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "96"
+        }
+      ]
+    },
+    {
+      "key": "onarim_yili",
+      "label": {
+        "tr": "Onarım yılı (mihrap yazısı)",
+        "en": "Repair year (mihrab text)"
+      },
+      "value": 1966,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "96"
+        }
+      ]
+    },
+    {
+      "key": "duvar_malzemesi",
+      "label": {
+        "tr": "Duvar malzemesi",
+        "en": "Wall material"
+      },
+      "value": "kerpiç (ahşap hatıllı, taş temelli)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "96"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Caminin üzerinde",
+        "en": "On the mosque"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1905"
+      },
+      "note": {
+        "tr": "Latin harfli kitâbe; kitap metni vermiyor, yalnızca 1905'te yaptırıldığını bildiriyor. Mihrapta ayrıca 1966 onarım tarihi yazılıdır.",
+        "en": "A Latin-letter inscription; the book gives no text, only that it was built in 1905. The mihrab also bears the repair date 1966."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "96"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1905",
+      "year": 1905,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami yaptırıldı (kitâbeye göre)",
+        "en": "Mosque built (according to the inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "96"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1966",
+      "year": 1966,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Büyük ölçüde yenileyen onarım (mihrapta yazılı)",
+        "en": "Repair that renewed most of the building (written on the mihrab)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "96"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Karaağaç Köyü Camii, kerpiç duvarlı, dört yöne eğimli kırma çatılı, derinlemesine dikdörtgen küçük bir camidir. Giriş kapısının üzerinde ahşap, silindirik gövdeli bir minare yükselir. İçeride ahşap tavan, kuzeyde mahfil, kıble duvarında üçgen alınlıklı mihrap ve sade ahşap bir minber vardır.",
+      "en": "Karaağaç Village Mosque is a small, deeply rectangular building with adobe walls and a hipped roof sloping in four directions. A wooden cylindrical minaret rises above the entrance door. Inside are a wooden ceiling, a gallery to the north, a mihrab with a triangular pediment and a simple wooden minbar on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 96)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "96-96"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=314",
+        "original_name": "pdf-s50-xref314",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "96"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Karaağaç Köyü Camii (kitap s. 96)",
+        "en": "Karaağaç Village Mosque (book p. 96)"
+      },
+      "alt": {
+        "tr": "Karaağaç Köyü Camii fotoğrafı",
+        "en": "Photo of Karaağaç Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=316",
+        "original_name": "pdf-s50-xref316",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "96"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Karaağaç Köyü Camii (kitap s. 96)",
+        "en": "Karaağaç Village Mosque (book p. 96)"
+      },
+      "alt": {
+        "tr": "Karaağaç Köyü Camii fotoğrafı",
+        "en": "Photo of Karaağaç Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

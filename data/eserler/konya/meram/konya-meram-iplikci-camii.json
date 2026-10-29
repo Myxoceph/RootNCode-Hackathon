@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-iplikci-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 142-144) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hicri 947'nin miladi karşılığı kitapta verilmiyor.",
+      "Batı duvar kitâbesinin dili metinde belirtilmiyor.",
+      "Caminin ilk inşa yılı belli değil; yalnızca 'H. 598 / M. 1201'den önce' deniyor.",
+      "Dönemin ulu cami işlevi ve Altınapa adının kaynağı kitapta açıklanmıyor.",
+      "Mescidin yanındaki medrese kalıntısı kitapta 'düşünülmektedir' diye geçiyor.",
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Zaman çizelgesi: yılı kesin olmayan olaylar (yangın 'XIX. yüzyıl sonlarına doğru' / ilk inşa 'H. 598 öncesi' / H. 947 onarımı) şema yıl istediği için timeline'a yazılmadı; bölüm metninde anlatılıyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions.yenileme-kitabesi-733",
+        "note": "Kitâbede banî 'İplikçi adıyla bilinen Mes'ud oğlu Hacı Ebûbekir' olarak geçerken, açıklamada 'Samurcu (Kişçi) Mes'ud oğlu Hacı Ebubekir' deniyor; lakap farkı açıklanmıyor. Ayrıca Recep 733'ün ortası miladi olarak 1333'e yakın düşer; kitap 1332 veriyor. Kaynağa sadık kalındı."
+      },
+      {
+        "field": "timeline[ihya-1430]",
+        "note": "İngilizce metinde '834 AH / 430-31 AD' yazılmış (baştaki 1 eksik, yazım hatası); Türkçe M. 1430-31 esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İplikçi (Altınapa) Camii",
+    "en": "İplikçi (Altınapa) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Altınapa Camii",
+      "en": "Altınapa Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu",
+    "ulu cami işlevi",
+    "çapraz tonoz",
+    "mozaik çini mihrap kalıntısı",
+    "kitabe",
+    "Konya Müzesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Kürkçü Mahallesi",
+    "address": "Mevlâna Caddesi, No. 16",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "142-143"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 598 / M. 1201 öncesi; H. 733 / M. 1332 yenileme",
+      "en": "before 598 AH / 1201 AD; renovated 733 AH / 1332 AD"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 12,
+    "basis": {
+      "tr": "Kitap caminin H. 598 / M. 1201'den önce Tebrizli Ebu Fazl Abdulcabbar tarafından yaptırıldığının kabul edildiğini söylüyor; kesin yıl yok. 1332 tarihi yenilemeye aittir.",
+      "en": "The book says the mosque is accepted to have been built before 598 AH / 1201 AD by Abu Fazl Abdulcabbar of Tabriz; no exact year is given. 1332 is the renovation date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "142-143"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Tebrizli Ebu Fazl Abdulcabbar",
+    "role": "banî (kabul edilen)",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "142"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakfiyeye göre cami yangın nedeniyle H. 992 / M. 1584'te tüccar Hacı Emrullah tarafından onarılmıştır; vakfiye metni kitapta verilmez.",
+      "en": "According to its foundation charter the mosque was repaired after a fire in 992 AH / 1584 AD by the merchant Hacı Emrullah; the charter's text is not given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "144"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Konya'nın ilk Selçuklu eserlerinden biri sayılan cami, Alâeddin Camii iç kalede, İplikçi Camii ticaret merkezine yakın olduğu için Selçuklu ve Beylikler döneminde ulu cami işlevi görmüştür. H. 733 / M. 1332 kitâbesine göre Hacı Ebubekir tarafından yenilenmiş, sonraki yüzyıllarda birçok kez onarılmış, 1945'te Müzeler Umum Müdürlüğü tarafından bugünkü şekliyle onarılmıştır.",
+    "en": "Considered one of the first Seljuk works in Konya, the mosque functioned as a grand mosque in the Seljuk and Beylik periods, since Alaaddin Mosque is inside the inner castle and İplikçi Mosque is near the trade centre. Renovated by Hacı Ebubekir according to the inscription of 733 AH / 1332 AD, it was repaired many times and restored to its present form by the General Directorate of Museums in 1945."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Kitâbeler",
+        "en": "History and Inscriptions"
+      },
+      "body": {
+        "tr": "Cami, H. 598 / M. 1201'den önce Tebrizli Ebu Fazl Abdulcabbar tarafından yaptırılmış kabul edilir. Giriş kapısı üstündeki H. 733 / M. 1332 tarihli dört satırlık Arapça kitâbeye göre 'İplikçi' adıyla bilinen Mes'ud oğlu Hacı Ebûbekir caminin yenilenmesini yaptırmıştır; kitap onu 'Samurcu (Kişçi) Mes'ud oğlu Hacı Ebubekir' olarak anar ve caminin genişletildiğini belirtir. Başka bir kitâbeye göre Turgut oğlu Ebul Fazl Ahmet Bey H. 834 / M. 1430-31'de camiyi ihya etmiştir. Batı duvarı üzerindeki iki satırlık kitâbe Kur'an'dan ayetler içerir; kuzey girişin üzerindeki Osmanlı dönemine ait iki satırlık kitâbe H. 947'de Şeyh Bedrettin oğlu Abdullah oğlu Abdurrahman tarafından onarım yaptırıldığını bildirir. Vakfiyesine göre yangın nedeniyle H. 992 / M. 1584'te tüccar Hacı Emrullah onarımı yaptırmıştır.",
+        "en": "The mosque is accepted to have been built before 598 AH / 1201 AD by Abu Fazl Abdulcabbar of Tabriz. According to the four-line Arabic inscription of 733 AH / 1332 AD above the entrance, Hacı Ebu Bekir, son of Mes'ud, known as İplikçi, renovated it; the book names him Hacı Ebubekir, son of Samurcu (Kişçi) Mes'ud, and says he expanded it. According to another inscription, Ebul Fazl Ahmet Bey, son of Turgut, revived the mosque in 834 AH / 1430-31 AD. The two-line inscription on the west wall contains Quranic verses; the Ottoman-period two-line repair inscription above the north entrance records a repair in 947 by Abdurrahman, son of Abdullah, son of Şeyh Bedrettin. Per its foundation charter, the merchant Hacı Emrullah repaired it after a fire in 992 AH / 1584 AD."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "142-144"
+        }
+      ]
+    },
+    {
+      "id": "modern-donem",
+      "order": 2,
+      "title": {
+        "tr": "Müze Dönemi ve Onarımlar",
+        "en": "Museum Period and Repairs"
+      },
+      "body": {
+        "tr": "Cami 1945'te Müzeler Umum Müdürlüğü tarafından bugünkü şekliyle onarılmış, 1951'de Konya Müzesi Klasik Eserler Şubesi hâline getirilerek İslam öncesi eserler burada sergilenmiş, 1961'de yeniden ibadete açılmıştır. 1945 restorasyonundan sonra parapet duvarları yükseltilerek örtü sistemi görünmez hâle getirilmiştir.",
+        "en": "The mosque was repaired in its current form by the General Directorate of Museums in 1945, turned into the Konya Museum Classical Works Branch in 1951 where pre-Islamic artifacts were exhibited, and reopened for worship in 1961. After the 1945 restoration the parapet walls were raised so that the cover system became invisible."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami enine dikdörtgen planlıdır ve kıble duvarına paralel üç sahından oluşur; beden duvarları ve minare tamamen tuğladan, payeler tuğla ve taştandır. Haluk Karamağaralı'ya göre özgün plan mihrap duvarına dik yedi sahınlıydı; mihrap önü kubbesi ve önündeki eyvanın örtü sistemi beşik tonozludur. Cepheler süslemesizdir; kuzey, doğu ve batı cephelerde üç basık kemerli giriş kapısı vardır. Güney cepheye bitişik kubbeli kare mekânın bugün mevcut olmayan cami medresesine ait olduğu düşünülmektedir. İç mekânda mihrap önündeki iki sahın 'T' biçimlidir, kare kesitli payelere oturan sivri kemerlerle ayrılır; güneyden ilk sahın beşik, diğerleri çapraz tonozludur. Mihrap ve giriş eksenindeki üç bölüm kubbelidir: mihrap önündeki kubbe daire, diğer ikisi elips biçimlidir. Mihrap sonradan eklenmiş siyah mermerdendir, çokgen nişi sekiz sıra mukarnaslıdır; alt bölümünde Selçuklu döneminden firuze ve patlıcan moru mozaik çinili mihrap kalıntısı bulunur.",
+        "en": "The mosque has a transverse rectangular plan with three aisles parallel to the qibla wall; the walls and minaret are entirely brick and the piers brick and stone. According to Haluk Karamağaralı, the original plan had seven aisles perpendicular to the mihrab wall; the dome in front of the mihrab and the iwan before it are barrel vaulted. The facades are undecorated, with three low-arched entrance doors on the north, east and west. The domed square space adjacent to the south facade is thought to belong to the mosque's madrasa, which no longer exists. Inside, the two aisles before the mihrab are T-shaped and separated by pointed arches on square piers; the first aisle from the south has barrel vaults and the others cross vaults. The three bays on the mihrab-entrance axis are domed: the dome before the mihrab is circular and the other two elliptical. The mihrab is a later addition of black marble with a polygonal niche of eight rows of muqarnas; in its lower part are the remains of a Seljuk mihrab in turquoise and eggplant-purple mosaic tile."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "saha",
+      "label": {
+        "tr": "Sahın sayısı (bugün)",
+        "en": "Aisles (present)"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "key": "ozgun_saha",
+      "label": {
+        "tr": "Özgün plandaki sahın sayısı (Karamağaralı'ya göre)",
+        "en": "Aisles in original plan (per Karamağaralı)"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "key": "giris_kapisi",
+      "label": {
+        "tr": "Giriş kapısı sayısı",
+        "en": "Entrance doors"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "key": "kuzey_pencere",
+      "label": {
+        "tr": "Kuzey cephe pencere sayısı",
+        "en": "North facade windows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Tebrizli Ebu Fazl Abdulcabbar",
+      "role": {
+        "tr": "Camiyi yaptırdığı kabul edilen kişi",
+        "en": "Person accepted as the builder"
+      }
+    },
+    {
+      "name": "Hacı Ebubekir (İplikçi), Mes'ud oğlu",
+      "role": {
+        "tr": "1332'de camiyi genişleten ve yenileyen",
+        "en": "Expanded and renovated the mosque in 1332"
+      }
+    },
+    {
+      "name": "Turgut oğlu Ebul Fazl Ahmet Bey",
+      "role": {
+        "tr": "1430-31'de camiyi ihya eden",
+        "en": "Revived the mosque in 1430-31"
+      }
+    },
+    {
+      "name": "Abdurrahman (Şeyh Bedrettin oğlu Abdullah oğlu)",
+      "role": {
+        "tr": "H. 947'de onarım yaptıran",
+        "en": "Had the repair of 947 AH made"
+      }
+    },
+    {
+      "name": "Hacı Emrullah",
+      "role": {
+        "tr": "1584'te yangın sonrası onarımı yaptıran tüccar",
+        "en": "Merchant who repaired the mosque after the fire in 1584"
+      }
+    },
+    {
+      "name": "Haluk Karamağaralı",
+      "role": {
+        "tr": "Yapının özgün şekli üzerine araştırma yapan",
+        "en": "Researched the building's original form"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "yenileme-kitabesi-733",
+      "location": {
+        "tr": "Giriş kapısının üstünde, celî sülüs, dört satır",
+        "en": "Above the entrance gate, celi thuluth, four lines"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu mübarek mescidi, Allah'ın rahmetine muhtaç, zayıf kul, hacıların ziyneti olan, İplikçi adıyla bilinen Mes'ud oğlu Hacı Ebûbekir, 733 yılı Recep Ayı'nın ortasında yaptı ve yeniledi. Allah hayırlarını kabul etsin ve iyiliklerini arttırsın.",
+        "en": "This blessed mosque was built and renovated by Mes'ud's son, Hacı Ebu Bekir, known as İplikçi, who was a weak servant in need of God's mercy, an adornment of pilgrims, in the middle of the month of Rajab in 733. May Allah accept his charity and increase his good deeds."
+      },
+      "date": {
+        "hijri_year": 733,
+        "gregorian": "1332"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "142-143"
+        }
+      ],
+      "note": {
+        "tr": "Arapça transkripsiyon kitapta verilmiyor.",
+        "en": "Arapça transkripsiyon kitapta verilmiyor."
+      }
+    },
+    {
+      "id": "insa-kitabesi-bati",
+      "location": {
+        "tr": "Batı duvarın üstünde, iki satır",
+        "en": "Above the west wall, two lines"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Allah'ın mescitlerini yalnız Allah'a, ahiret gününe iman getirip, namazı dosdoğru kılan, zekâtını veren, din babından ancak Allah'tan korkan kimse mamur kılar, işte bunlar yol bulanlardan olabilir. Secde edilen yerler (mescitler) Allah'ındır. Onun için oralarda Allah'la beraber hiç kimseye ibadet etmeyiniz.",
+        "en": "The mosques of Allah are built only by those who believe in Allah and the Last Day, duly perform prayers, pay zakat, and fear only from Allah religion-wise, those shall be the true finders of the path. The places of prostration (masjids) belong to Allah. Therefore, do not worship anyone with Allah there."
+      },
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "143-144"
+        }
+      ],
+      "note": {
+        "tr": "Dili kitapta açıkça belirtilmiyor; Kur'an ayetleri içerdiği için Arapça olması beklenir, 'other' kullanıldı. Transkripsiyon yok.",
+        "en": "Dili kitapta açıkça belirtilmiyor; Kur'an ayetleri içerdiği için Arapça olması beklenir, 'other' kullanıldı. Transkripsiyon yok."
+      }
+    },
+    {
+      "id": "onarim-kitabesi-947",
+      "location": {
+        "tr": "Kuzey duvar üzerindeki girişin üstünde, iki satır, Osmanlı dönemi",
+        "en": "Above the entrance on the north wall, two lines, Ottoman period"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu mescid-i şerifi 947 yılında Lâtif, Malik ve Rahman olan Tanrı'nın rızası için Şeyh Bedrettin oğlu Abdullah oğlu Abdurrahman tamir ettirmiştir.",
+        "en": "This Masjid al-Sharif was repaired in 947 by Abdurrahman, son of Abdullah, son of Şeyh Bedrettin, for the sake of God, the Latif, Malik and Rahman."
+      },
+      "date": {
+        "hijri_year": 947,
+        "gregorian": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "143-144"
+        }
+      ],
+      "note": {
+        "tr": "Arapça transkripsiyon kitapta verilmiyor.",
+        "en": "Arapça transkripsiyon kitapta verilmiyor."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yenileme-1332",
+      "year": 1332,
+      "date": null,
+      "hijri": "733",
+      "type": "restoration",
+      "title": {
+        "tr": "Hacı Ebubekir camiyi genişletti, yeniledi ve imar etti",
+        "en": "Hacı Ebubekir expanded, renovated and reconstructed the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "142-143"
+        }
+      ]
+    },
+    {
+      "id": "ihya-1430",
+      "year": 1430,
+      "date": null,
+      "hijri": "834",
+      "type": "repair",
+      "title": {
+        "tr": "Turgut oğlu Ebul Fazl Ahmet Bey camiyi ihya etti",
+        "en": "Ebul Fazl Ahmet Bey, son of Turgut, revived the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "143"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1584",
+      "year": 1584,
+      "date": null,
+      "hijri": "992",
+      "type": "repair",
+      "title": {
+        "tr": "Yangın nedeniyle tüccar Hacı Emrullah onarım yaptırdı",
+        "en": "Repair by merchant Hacı Emrullah after a fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1945",
+      "year": 1945,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Müzeler Umum Müdürlüğü bugünkü şekliyle onardı",
+        "en": "Repaired in its present form by the General Directorate of Museums"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "id": "muze-1951",
+      "year": 1951,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Konya Müzesi Klasik Eserler Şubesi yapıldı, İslam öncesi eserler sergilendi",
+        "en": "Became Konya Museum Classical Works Branch exhibiting pre-Islamic artifacts"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "id": "ibadete-1961",
+      "year": 1961,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Yeniden ibadete açıldı",
+        "en": "Reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "144"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İplikçi Camii, tamamen tuğladan örülmüş, süslemesiz cepheli, enine dikdörtgen planlı geniş bir yapıdır. Kuzey, doğu ve batıdan basık kemerli üç kapıyla girilir. İçeride kıble duvarına paralel üç sahın, kare pâyelere oturan sivri kemerlerle ayrılır; mihrap ve giriş eksenindeki üç bölüm kubbeyle, diğerleri çapraz ve beşik tonozlarla örtülüdür. Kıble duvarının ortasında sonradan eklenmiş siyah mermer mihrap, altında ise Selçuklu mozaik çinisinden mihrap kalıntısı bulunur.",
+      "en": "İplikçi Mosque is a broad transverse rectangular building of brick with undecorated facades, entered through three low-arched doors from the north, east and west. Inside, three aisles parallel to the qibla wall are separated by pointed arches on square piers; the three bays on the mihrab-entrance axis are domed, the others covered with cross and barrel vaults. In the middle of the qibla wall is a later black marble mihrab, with the remains of a Seljuk mosaic tile mihrab beneath it."
+    }
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]",
+      "en": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "142-144"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=520",
+        "original_name": "pdf-s73-xref520",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "142"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Altınapa) Camii (kitap s. 142)",
+        "en": "İplikçi (Altınapa) Mosque (book p. 142)"
+      },
+      "alt": {
+        "tr": "İplikçi (Altınapa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Altınapa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=522",
+        "original_name": "pdf-s73-xref522",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "143"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Altınapa) Camii (kitap s. 143)",
+        "en": "İplikçi (Altınapa) Mosque (book p. 143)"
+      },
+      "alt": {
+        "tr": "İplikçi (Altınapa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Altınapa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=526",
+        "original_name": "pdf-s74-xref526",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "144"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Altınapa) Camii (kitap s. 144)",
+        "en": "İplikçi (Altınapa) Mosque (book p. 144)"
+      },
+      "alt": {
+        "tr": "İplikçi (Altınapa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Altınapa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

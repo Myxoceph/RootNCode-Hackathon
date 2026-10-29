@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-sukran-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 79) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Era kodu atanmadı: yapı XX. yüzyıl başına tarihleniyor ve enums.json'daki kodlardan hangisine girdiği kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şükran Mescidi",
+    "en": "Şükran Masjid"
+  },
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "çarşı içi mescit",
+    "baldaken minare",
+    "kerpiç",
+    "sokak çeşmesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Şükran Mahallesi",
+    "address": "Hotuz Sokak, No. 2",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "79"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyılın başları (olası); yerinde daha önce Selçuklu mescidi olabilir",
+      "en": "Early 20th century (thought); a Seljuk-period masjid may have stood here earlier"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitabe yok; mimari özelliklerine bakıldığında XX. yüzyıl başlarında yapıldığı, daha önce de aynı yerde Selçuklu dönemine ait bir mescit bulunmuş olabileceği düşünülmektedir. Kesin yıl yok.",
+      "en": "No inscription; judging by its architecture it is thought to be early 20th century, and there may have been a Seljuk-period masjid on the site earlier. No exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "79"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Konya surlarının doğuya açılan kapılarından birine çok yakın, bedestenlerin bulunduğu ticari dokunun içindeki mescit. Altında dükkân, üstünde mektep ve harim bulunur; ahşap baldaken minaresi ve bitişik sokak çeşmesi vardır.",
+    "en": "A masjid in the commercial quarter of the covered bazaars, very close to one of the east-facing gates of the Konya city walls. It has a shop below and a school and harim above, a wooden baldachin minaret and an adjoining street fountain."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit, Meram ilçesi, Şükran Mahallesi, Hotuz Sokak No. 2'dedir ve Konya surlarının doğuya açılan kapılarından birine çok yakındır. Kitâbesi yoktur; mimari özelliklerinden XX. yüzyıl başlarında yapıldığı, daha önce aynı yerde Selçuklu dönemine ait bir mescit bulunmuş olabileceği düşünülmektedir. Bedestenlerin bulunduğu ticari dokunun içinde yer alır; alt katında dükkân, üst katında mektep ve harim vardır.",
+        "en": "The masjid is at Hotuz Street No. 2, Şükran Neighborhood, Meram District, very close to one of the east-facing gates of the city walls. It has no inscription; its architecture suggests an early 20th century date, and a Seljuk-period masjid may have stood here before. It lies in the commercial area of the covered bazaars, with a shop on the lower floor and a school and harim above."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "79"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescidin ahşap, baldaken tarzında bir minaresi ve beden duvarına bitişik bir sokak çeşmesi vardır. Zemin moloz taştan, beden duvarları kerpiçtendir. Harim kare planlı ve iki sahınlıdır. Kıble duvarı ortasındaki mihrap yarım daire planlı ve yarım kubbe kavsaralıdır; mihrap tepeliğinde merkezden yayılan ışınsal bir süsleme vardır.",
+        "en": "The masjid has a wooden baldachin-style minaret and a street fountain adjoining its wall. The ground is rubble stone and the walls are adobe. The harim is square with two aisles. The mihrab in the middle of the qibla wall is semicircular with a half-dome; its top has radial decoration radiating from the centre."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "79"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "mahalle-adi",
+      "title": {
+        "tr": "Mahalle adının kökeni",
+        "en": "Origin of the neighbourhood name"
+      },
+      "body": {
+        "tr": "Halk arasında yaygın inanışa göre mahalle ismini Şükran Mescidi'nden almıştır. Rivayete göre şehre uzak mesafelerden gelen konuklar işlerine gitmeden önce bu mescitte iki rekât şükür namazı kılardı.",
+        "en": "According to popular belief the neighbourhood took its name from Şükran Masjid. According to narrations, guests arriving from far away performed a two-rakat prayer of thanksgiving here before going to work."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "79"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "harim_plani",
+      "label": {
+        "tr": "Harim planı",
+        "en": "Harim plan"
+      },
+      "value": "kare, iki sahınlı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "79"
+        }
+      ]
+    },
+    {
+      "key": "zemin_malzemesi",
+      "label": {
+        "tr": "Zemin malzemesi",
+        "en": "Floor/base material"
+      },
+      "value": "moloz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "79"
+        }
+      ]
+    },
+    {
+      "key": "duvar_malzemesi",
+      "label": {
+        "tr": "Beden duvarı malzemesi",
+        "en": "Wall material"
+      },
+      "value": "kerpiç",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "79"
+        }
+      ]
+    },
+    {
+      "key": "minare_tipi",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "ahşap, baldaken tarzı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "79"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "minare",
+      "title": {
+        "tr": "Ahşap baldaken minare",
+        "en": "Wooden baldachin minaret"
+      },
+      "hint": {
+        "tr": "Beden duvarına bitişik sokak çeşmesini de arayın.",
+        "en": "Look also for the street fountain beside the wall."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şükran Mescidi, bedesten çevresindeki çarşı dokusunun içinde yer alan küçük bir yapıdır. Alt katta dükkân, üst katta mektep ve ibadet mekânı vardır. Ahşap, dört ayaklı baldaken tarzında bir minaresi ve duvarına bitişik bir sokak çeşmesi bulunur. İç mekân kare planlı ve iki sahınlıdır; yarım daire planlı mihrabın tepesinde ışınsal bir süsleme görülür.",
+      "en": "Şükran Masjid is a small building set into the bazaar quarter around the bedesten. A shop occupies the lower floor, with a school and prayer space above. It has a wooden baldachin-style minaret and a street fountain against its wall. The interior is square with two aisles; the semicircular mihrab has a radiating decoration at its top."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 79)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "79-79"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=232",
+        "original_name": "pdf-s41-xref232",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "79"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şükran Mescidi (kitap s. 79)",
+        "en": "Şükran Masjid (book p. 79)"
+      },
+      "alt": {
+        "tr": "Şükran Mescidi fotoğrafı",
+        "en": "Photo of Şükran Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-tahtatepen-haci-adil-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Karamanoğlu dönemindeki ilk yapımın yılı ve banisi kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metin 'a wooden mihrab just above the entrance on the north side' diyor; Türkçe metin 'ahşap mahfil' diyor. Türkçe esas alındı."
+      },
+      {
+        "field": "name",
+        "note": "İçindekiler 'Tahtatepen (Hacı Adil) Camii', sayfa başlığı 'Tahtatepen Ubeyt (Hacı Adil) Camii'. Sayfa başlığı esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tahtatepen Ubeyt (Hacı Adil) Camii",
+    "en": "Tahtatepen Ubeyt (Hacı Adil) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Tahtatepen (Hacı Adil) Camii",
+      "en": "Tahtatepen (Hacı Adil) Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "ahşap destekli",
+    "kerpiç",
+    "1860 yeniden yapım"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Ubeyt Mahallesi",
+    "address": "Tahtatepen Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "157"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Karamanoğlu dönemi; 1860'ta yeniden inşa",
+      "en": "Karamanoğlu period; rebuilt in 1860"
+    },
+    "start_year": 1860,
+    "end_year": 1860,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Metin, Karamanoğlu döneminde yapılan camii Osmanlı döneminde 1860'ta yeniden inşa edildiğini söyler; ilk yapım yılı verilmez. start_year yeniden inşa yılıdır.",
+      "en": "The text says the Karamanoğlu-period mosque was rebuilt in 1860; no original year. start_year is the rebuild year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "157"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hacı Fettah Mezarlığı'nın doğusunda, Karamanoğlu döneminde yapılmış, 1860'ta yeniden inşa edilmiş, ahşap destekli, kerpiç duvarlı cami. XIX. yüzyıl özellikli ahşap minberi vardır.",
+    "en": "A wood-supported adobe mosque east of Hacı Fettah Cemetery, built in the Karamanoğlu period and rebuilt in 1860. It has a 19th-century-style wooden minbar."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami Meram, Ubeyt Mahallesi, Tahtatepen Caddesi üzerinde ve Hacı Fettah Mezarlığı'nın doğusunda yer almaktadır. Karamanoğlu döneminde yapılan cami Osmanlı döneminde 1860 senesinde yeniden inşa edilmiştir.",
+        "en": "The mosque is on Tahtatepen Street, Ubeyt Neighborhood, Meram, east of Hacı Fettah Cemetery. Built in the Karamanoğlu period, it was rebuilt in 1860 in the Ottoman period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kuzey-güney yönünde uzanan dikdörtgen planlı, ahşap destekli camilerdendir. Beden duvarları subasman kotuna kadar moloz taş, üzerinde kerpiçtir. Cepheler sadedir; yapı kuzeyden komşu eve bitişiktir. Güney ve batı cephelerde ikişer, doğu cephede biri kapı üzerinde olmak üzere iki düz lentolu pencere vardır; pencerelerin üzerinde ahşap üçgen alınlıklar görülür. Giriş kapısı düz lentolu ve kuzeydoğu cephededir. Üst örtü ahşap desteklerle taşınan düz damdır, dıştan kiremit kaplı kırma çatıyla örtülüdür. Kuzeyde girişin hemen üzerinde ahşap mahfil vardır. Kıble duvarı ortasındaki yarım daire mihrabın kavsarası mukarnas dizisini anımsatır; nişin üzerinde iki sıra mukarnaslı bir kuşak vardır. Mihrabın sağında XIX. yüzyıl özellikli, orta boy ahşap minber bulunur.",
+        "en": "The mosque is rectangular, extending north-south, and is a wood-supported mosque. Walls are rubble stone up to the plinth level and adobe above. Facades are plain and the north side adjoins a neighboring house. There are flat-lintel windows with wooden triangular pediments; the entrance is flat-lintel on the northeast facade. The flat roof on wooden supports is covered outside by a tiled hipped roof. A semicircular mihrab with a muqarnas-like hood has a belt of two muqarnas rows above the niche, and to its right is a medium-sized wooden minbar with 19th-century features."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "157"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yeniden-insa-1860",
+      "year": 1860,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Osmanlı döneminde yeniden inşa",
+        "en": "Rebuilt in the Ottoman period"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "157"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kuzey-güney doğrultusunda uzanan, alt kısmı moloz taş üst kısmı kerpiç duvarlı, ahşap destekli bir camidir; kuzeyde komşu eve bitişiktir. Pencerelerin üstünde ahşap üçgen alınlıklar vardır. İçeride girişin üzerinde ahşap bir mahfil, kıble duvarında mukarnas benzeri kavsaralı yarım daire mihrap ve sağında ahşap bir minber bulunur.",
+      "en": "A wood-supported mosque extending north-south, with rubble-stone lower walls and adobe above, attached to a neighboring house on the north. Wooden triangular pediments sit over the windows. Inside, a wooden gallery lies above the entrance, and the qibla wall has a semicircular mihrab with a muqarnas-like hood and a wooden minbar to its right."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "157-157"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=596",
+        "original_name": "pdf-s80-xref596",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "157"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tahtatepen Ubeyt (Hacı Adil) Camii (kitap s. 157)",
+        "en": "Tahtatepen Ubeyt (Hacı Adil) Mosque (book p. 157)"
+      },
+      "alt": {
+        "tr": "Tahtatepen Ubeyt (Hacı Adil) Camii fotoğrafı",
+        "en": "Photo of Tahtatepen Ubeyt (Hacı Adil) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=598",
+        "original_name": "pdf-s80-xref598",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "157"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tahtatepen Ubeyt (Hacı Adil) Camii (kitap s. 157)",
+        "en": "Tahtatepen Ubeyt (Hacı Adil) Mosque (book p. 157)"
+      },
+      "alt": {
+        "tr": "Tahtatepen Ubeyt (Hacı Adil) Camii fotoğrafı",
+        "en": "Photo of Tahtatepen Ubeyt (Hacı Adil) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

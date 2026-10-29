@@ -1,0 +1,416 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-mevlana-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Külliyenin vakıf bilgisi (vakfiye, gelir) bu bölümde yok; bulunursa waqf alanı doldurulmalı",
+      "Külliye için 'banî' tek kişi olarak belirtilmemiş; founder null bırakıldı",
+      "Mahalle/adres kitapta yok (kitapta yalnızca 'Karatay')",
+      "Kıbab-ul Aktap, tilavet odası, İhtisas Kütüphanesi, Şeb-i Arus çeşmesi ve selsebil kitapta ayrı bölüm almadığı için kaydedilmedi",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[gelisim] / TR-EN",
+        "note": "Türbeyi yaptıranlar s.30-31'de 'Gürcü Hatun ile Sultan Veled', s.32'de 'Alameddin Kayser, Muinuddin Pervane ve Gürcü Hatun (Sultan Veled'in izniyle)' olarak veriliyor; kaynağa sadık kalınarak ikisi de bırakıldı. Ayrıntı Mevlâna Türbesi kaydında."
+      },
+      {
+        "field": "sections[donemler] TR/EN",
+        "note": "Türkçe metin Halepli Abdurrahman'ı 'nakkaş', İngilizce metin 'miniaturist' olarak veriyor; kalem işi süslemeler İngilizce metinde 'hand-carved' diye çevrilmiş. Türkçe esas alındı."
+      },
+      {
+        "field": "sections[donemler]",
+        "note": "'XIX. yüzyıl' Meydan-ı Şerif için burada, 'ilk yapım III. Murat' ise s.48'de veriliyor; bkz. Meydan-ı Şerif Odası kaydı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mevlâna Külliyesi",
+    "en": "Mevlâna Complex"
+  },
+  "subtitle": {
+    "tr": "Mevlâna Türbesi ve Müştemilatı (Mevlâna Müzesi)",
+    "en": "Mevlâna Tomb and Its Premises (Mevlâna Museum)"
+  },
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [
+    "turbe",
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Mevlâna",
+    "Mevlevi",
+    "dergâh",
+    "müze",
+    "türbe",
+    "semahane",
+    "Gül Bahçesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "29"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Çekirdek yapı (türbe): 1274; külliye XVI.-XIX. yüzyıllarda genişlemiştir",
+      "en": "Core structure (tomb): 1274; complex expanded in the 16th-19th centuries"
+    },
+    "start_year": 1274,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Külliyenin çekirdeği olan türbenin Mevlâna'nın vefatından (17 Aralık 1273) bir yıl sonra yaptırıldığı belirtilir; semahane, mescit, hücreler XVI., Şeb-i Arûs Havuzu, Meydan-ı Şerif ve Çelebi Konağı XIX. yüzyıldadır. Bitiş yılı tek bir tarih olmadığından verilmedi.",
+      "en": "The core tomb is said to have been built a year after Mevlâna's death (17 December 1273); semahane, masjid and cells date to the 16th century, the Şeb-i Arûs Pool, Meydan-ı Şerif and Çelebi Mansion to the 19th. No single end year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "30-31"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hz. Mevlâna'nın türbesi etrafında gelişen; semahane, mescit, derviş hücreleri, matbah-ı şerif, meydan-ı şerif, şadırvan, Şeb-i Arus çeşmesi, selsebil ve bahçedeki altı türbeden oluşan külliye. Sultan Alâeddin Keykubat'ın bağışladığı gül bahçesinde, Bahaeddin Veled'in mezarı çevresinde doğmuştur.",
+    "en": "A complex that grew around the tomb of Mevlâna: semahane, masjid, dervish lodges, matbah-ı şerif, meydan-ı şerif, shadirvan, Şeb-i Arus fountain, selsebil and six tombs in the garden. It arose in the rose garden donated by Sultan Alâeddin Keykubat, around the grave of Bahaeddin Veled."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Mevlâna Külliyesi, Hz. Mevlâna'nın türbesinin etrafında yaptırılmış olan semahane, mescit, derviş hücreleri, matbah-ı şerif, meydan-ı şerif, şadırvan, Şeb-i Arus çeşmesi, selsebil ile bahçede yer alan altı adet türbeden oluşmaktadır. Sultan Alâeddin Keykubat'ın Konya surlarının dışında yer alan gül bahçesini Anadolu Selçukluları döneminde, 1230'lu yıllarda Mevlâna'nın babası Sultanu'l Ulema Bahaeddin Veled'e bağışladığı bilinmektedir.",
+        "en": "The Mevlâna Complex consists of a semahane, masjid, dervish lodges, matbah-ı şerif, meydan-ı şerif, shadirvan, Şeb-i Arus fountain, selsebil built around the tomb of Mevlâna and six tombs located in the garden. It is known that Sultan Alâeddin Keykubat donated the rose garden outside the walls of Konya to Mevlâna's father, Sultanu'l Ulema Bahaeddin Veled, in the 1230s, during the Anatolian Seljuk period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "29"
+        }
+      ]
+    },
+    {
+      "id": "gelisim",
+      "order": 2,
+      "title": {
+        "tr": "Külliyenin Gelişimi",
+        "en": "Development of the Complex"
+      },
+      "body": {
+        "tr": "1231 senesinde vefat eden Bahaeddin Veled gül bahçesine yapılan ilk defindir. Mevlevi kaynaklarında, Hz Mevlâna'nın, mezarı üzerine türbe yapılmasına izin vermediği anlatılmaktadır. Babasından 42 yıl sonra 17 Aralık 1273 tarihinde vefat eden Mevlâna, babasının mezarının baş ucuna defnedilmiştir. Mevlâna'nın mezarı üzerine bir yıl sonra Selçuklu Sarayı'ndan Gürcü Hatun ile büyük oğlu Sultan Veled tarafından külliyenin çekirdek yapısı olan türbe yaptırılmıştır. Mevlâna'nın hocalarından, arkadaşlarından ve ailesinden vefat edenlerin bir kısmının türbenin iki yanına defnedilmesiyle Mevlevi Mezarlığı teşekkül etmeye başlamıştır. Selçuklular döneminde türbenin yakınına bir küçük semahane ile mescit yapılmışsa da günümüze ulaşmamıştır. 1996'da Müze Müdürlüğü'nün kurtarma kazılarında açığa çıkarılan mescit ve semahane temel izleri ve döşemeleri semahanenin zemininde koruma altına alınmıştır.",
+        "en": "Bahaeddin Veled, who died in 1231, was the first to be buried in the rose garden. Mevlevi sources state that Mevlâna did not allow a tomb to be built on his grave. Mevlâna, who died 42 years after his father on December 17, 1273, was buried at the head of his father's grave. A year later a mausoleum, the core structure of the complex, was built over Mevlâna's grave by Gürcü Hatun of the Seljuk Palace and Mevlâna's eldest son Sultan Veled. The Mevlevi Cemetery began to form as some of Mevlâna's teachers, friends and family were buried on both sides of the tomb. A small semahane and masjid built near the tomb in the Seljuk period have not survived; their foundation traces and floors, unearthed in the 1996 rescue excavation by the Museum Directorate, are preserved under the floor of the semahane."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "30-31"
+        }
+      ]
+    },
+    {
+      "id": "donemler",
+      "order": 3,
+      "title": {
+        "tr": "Yapım Dönemleri",
+        "en": "Building Periods"
+      },
+      "body": {
+        "tr": "Mevlâna Türbesi Karamanoğlu Alâeddin Ali Bey zamanında bugünkü dilimli şeklini almış ve ilk kez çinilerle kaplanmıştır. Türbenin doğu ve batısında yer alan ve 'Kıbab-ul Aktap' olarak adlandırılan mezarları örten kubbeler ile Ahmet Eflaki Türbesi'nin bu dönemde yapılmış olabileceği düşünülmektedir. Türbenin kitâbeli ilk onarımı kalem işi süslemelerdir; II. Bayezid zamanında Halepli Abdurrahman isimli bir nakkaşa yaptırılmıştır. Semahane, mescit, derviş hücreleri, şadırvan ile Hasan Paşa, Sinan Paşa, Hürrem Paşa, Fatma Hatun ve Mehmet Bey türbeleri XVI. yüzyılda; Şeb-i Arûs Havuzu, Meydan-ı Şerif ile Çelebi Konağı XIX. yüzyılda yaptırılmıştır.",
+        "en": "Mevlâna Tomb took its current segmented shape in the time of Karamanoğlu Alâeddin Ali Bey and was covered with tiles for the first time. The domes over the tombs called 'Kıbab-ul Aktap' east and west of the tomb and the Ahmet Eflaki Tomb may have been built in this period. The first inscribed repair of the tomb is its hand-carved decorations, made in the reign of Bayezid II by a miniaturist named Abdurrahman from Aleppo. The semahane, masjid, dervish cells, shadirvan and the tombs of Hasan Paşa, Sinan Paşa, Hürrem Paşa, Fatma Hatun and Mehmet Bey were built in the 16th century; the Şeb-i Arûs Pool, Meydan-ı Şerif and Çelebi Mansion in the 19th."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "31"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "bahce_turbe_sayisi",
+      "label": {
+        "tr": "Bahçedeki türbe sayısı",
+        "en": "Number of tombs in the garden"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "29"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Bahaeddin Veled",
+      "role": {
+        "tr": "Mevlâna'nın babası; gül bahçesine ilk defnedilen (1231)",
+        "en": "Mevlâna's father; first buried in the rose garden (1231)"
+      }
+    },
+    {
+      "name": "Sultan Alâeddin Keykubat",
+      "role": {
+        "tr": "Gül bahçesini Bahaeddin Veled'e bağışlayan Selçuklu sultanı",
+        "en": "Seljuk sultan who donated the rose garden to Bahaeddin Veled"
+      }
+    },
+    {
+      "name": "Sultan Veled",
+      "role": {
+        "tr": "Mevlâna'nın büyük oğlu",
+        "en": "Mevlâna's eldest son"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "gul-bahcesi-bagis",
+      "year": 1230,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Alâeddin Keykubat gül bahçesini Bahaeddin Veled'e bağışladı",
+        "en": "Alâeddin Keykubat donated the rose garden to Bahaeddin Veled"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "29"
+        }
+      ],
+      "note": {
+        "tr": "Kitap '1230'lu yıllar' diyor; 1230 yaklaşık değerdir.",
+        "en": "The book says 'the 1230s'; 1230 is approximate."
+      }
+    },
+    {
+      "id": "bahaeddin-veled-vefat",
+      "year": 1231,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bahaeddin Veled vefat etti, gül bahçesine ilk defnedilen oldu",
+        "en": "Bahaeddin Veled died and was the first buried in the rose garden"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "30-31"
+        }
+      ]
+    },
+    {
+      "id": "mevlana-vefat",
+      "year": 1273,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mevlâna 17 Aralık'ta vefat etti, babasının başucuna defnedildi",
+        "en": "Mevlâna died on 17 December and was buried at his father's head"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "30-31"
+        }
+      ]
+    },
+    {
+      "id": "turbe-1274",
+      "year": 1274,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Mevlâna'nın mezarı üzerine külliyenin çekirdeği olan türbe yaptırıldı",
+        "en": "The tomb, core of the complex, was built over Mevlâna's grave"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "30-31"
+        }
+      ]
+    },
+    {
+      "id": "kazi-1996",
+      "year": 1996,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Müze Müdürlüğü kurtarma kazısında Selçuklu mescit ve semahane izleri açığa çıkarıldı",
+        "en": "Museum Directorate rescue excavation uncovered Seljuk masjid and semahane traces"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "30-31"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mevlâna Külliyesi, Konya surlarının dışında eski bir gül bahçesinde yükselir. Ortada, on altı dilimli gövdesi ve külahı çinilerle kaplı Mevlâna Türbesi (Kubbe-i Hadra) bulunur. Türbenin kuzeyinde kubbeli semahane, onun batısında mescit yer alır. Ön avluyu kuzey ve batıdan L biçiminde kubbeli derviş hücreleri çevreler; avlunun güneydoğusunda mutfak (matbah-ı şerif) bulunur. Bahçede altı küçük türbe ve bir şadırvan vardır.",
+      "en": "The Mevlâna Complex rises in an old rose garden outside the walls of Konya. At its centre stands the Tomb of Mevlâna (Kubbe-i Hadra), whose sixteen-segmented body and cone are covered with tiles. North of the tomb is the domed semahane, with the masjid to its west. Domed dervish cells enclose the front courtyard in an L shape on the north and west; the kitchen (matbah-ı şerif) lies at the southeast. The garden holds six small tombs and a shadirvan."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "28-30"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=54",
+        "original_name": "pdf-s16-xref54",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "28"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Mevlâna Külliyesi (kitap s. 28)",
+        "en": "Mevlâna Complex (book p. 28)"
+      },
+      "alt": {
+        "tr": "Mevlâna Külliyesi fotoğrafı",
+        "en": "Photo of Mevlâna Complex"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=56",
+        "original_name": "pdf-s16-xref56",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "29"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Mevlâna Külliyesi (kitap s. 29)",
+        "en": "Mevlâna Complex (book p. 29)"
+      },
+      "alt": {
+        "tr": "Mevlâna Külliyesi fotoğrafı",
+        "en": "Photo of Mevlâna Complex"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=61",
+        "original_name": "pdf-s17-xref61",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "30"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Mevlâna Külliyesi (kitap s. 30)",
+        "en": "Mevlâna Complex (book p. 30)"
+      },
+      "alt": {
+        "tr": "Mevlâna Külliyesi fotoğrafı",
+        "en": "Photo of Mevlâna Complex"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

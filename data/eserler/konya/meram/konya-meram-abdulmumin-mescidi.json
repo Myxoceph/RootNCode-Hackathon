@@ -1,0 +1,390 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-abdulmumin-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 118-121) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mescidin ilk inşa tarihi ve Megaribe Mescidi'nin banisi kitapta bilinmiyor.",
+      "Mezardan (kime ait olduğu) kitapta söz edilmiyor; mezarın kime ait olduğu ve yeri sahada/başka kaynaktan belirlenmeli.",
+      "Abdülmümin Halife'nin yaşadığı yıllar kitapta yok; 'Karamanoğulları döneminde' deniyor.",
+      "Türkçe metinde Emirülhac, kitâbe mealinde Emîrü'l-Hac geçiyor; aynı kişi olduğu varsayıldı.",
+      "Kitâbenin Arapça transkripsiyonu kitapta yok; sahadan okunmalı.",
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap Mahmut bin Emirülhac'ı yeniden inşa ettiren olarak veriyor; mescidin ilk (Megaribe Mescidi) banisi bilinmiyor, bu yüzden 'founder' yeniden inşa edene göre dolduruldu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Abdulmümin (Yediler-Megaribe) Mescidi ve Mezarı",
+    "en": "Abdulmümin (Yediler-Megaribe) Masjid and Tomb"
+  },
+  "alternate_names": [
+    {
+      "tr": "Megaribe Mescidi",
+      "en": "Megaribe Masjid"
+    },
+    {
+      "tr": "Yediler Mescidi",
+      "en": "Yediler Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu",
+    "mescit",
+    "Karamanoğulları",
+    "Kâdiri tekke",
+    "kitabe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Abdülaziz Mahallesi",
+    "address": "Aslanağzı Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "118"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 674 / M. 1275 (yeniden inşa); ilk inşa tarihi bilinmiyor",
+      "en": "674 AH / 1275 AD (rebuilt); first construction date unknown"
+    },
+    "start_year": 1275,
+    "end_year": 1275,
+    "hijri_year": 674,
+    "century": 13,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki kitâbede geçen yenileme tarihi (H. 674 / M. 1275). Megaribe Mescidi'nin ilk inşa tarihi kitapta verilmiyor.",
+      "en": "Renovation date on the entrance gate inscription (674 AH / 1275 AD). The first construction date of Megaribe Masjid is not given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "118-120"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mahmut bin Emirülhac (Emîrü'l-Hac oğlu Mahmud)",
+    "role": "banî (yeniden inşa ettiren)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "118-120"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Külliyenin dükkân, ev, fırın, hamam, tarla, değirmen, su dolabı yerleri, bağ, köy, tuz pazarı ve çiftlikler gibi zengin gelirli vakıf mülkleri vardı. Abdülmümin Halife de mescit ve tekke için zengin vakıflar tahsis etmiştir.",
+      "en": "The complex had rich foundation properties such as shops, houses, bakeries, baths, fields, mills, water closets, vineyards, villages, salt markets and farms. Abdülmümin Halife also allocated rich foundations for the mosque and the tekke."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "118-119"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Selçuklu döneminden kalma Megaribe Mescidi, H. 674 / M. 1275'te Mahmut bin Emirülhac tarafından yeniden yaptırılmış; yanındaki külliyenin yapıları yıkılmış, tek kubbeli mescit günümüze ulaşmıştır. Karamanoğulları döneminde burada şeyhlik yapan Abdülmümin Halife'nin adıyla anılır.",
+    "en": "The Megaribe Masjid, dating from the Seljuk period, was rebuilt by Mahmut bin Emirülhac in 674 AH / 1275 AD. The structures of the adjoining complex have been destroyed and the single-domed masjid survives. It is known by the name of Abdülmümin Halife, who served as sheikh here in the Karamanid period."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Külliye",
+        "en": "History and Complex"
+      },
+      "body": {
+        "tr": "Selçuklular döneminde yapılmış, ilk inşa tarihi bilinmeyen Megaribe Mescidi, III. Gıyaseddin Keyhüsrev zamanında H. 674 / M. 1275'te Mahmut bin Emirülhac tarafından yeniden inşa ettirilmiştir. Mescidin yanına hanikâh, mektep ve dar'ul fukaha eklenerek külliye hâline getirilmiştir. Kitâbeye göre yenileme sebebi, aynı yerdeki Megaribe Mescidi'nin kullanılamayacak derecede kötü durumda olmasıdır. Külliyenin yapıları zamanla yıkılmış, buradaki mezardan da günümüze fazla bir bulgu ulaşmamıştır.",
+        "en": "The Megaribe Masjid, built in the Seljuk period with an unknown first construction date, was rebuilt by Mahmut bin Emirülhac in 674 AH / 1275 AD during the reign of Gıyaseddin Keyhüsrev III. A khanikah, school and dar'ul fuqaha were added next to the masjid, turning it into a complex. According to the inscription, the renovation was needed because the Megaribe Masjid on the site was in too poor a condition to be used. The structures of the complex were destroyed over time and little has survived from the tomb found here."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "118-120"
+        }
+      ]
+    },
+    {
+      "id": "abdulmumin-halife",
+      "order": 2,
+      "title": {
+        "tr": "Abdülmümin Halife",
+        "en": "Abdülmümin Halife"
+      },
+      "body": {
+        "tr": "Karamanoğulları döneminde külliyede görev yapan Kâdiri şeyhlerinden Abdülmümin Halife bilgin ve musikişinas bir şahsiyetti; sesi güzeldi ve ney üflerdi. İnce Minare Medresesi'nde de müderrislik yapmış, büyük bir ilim otoritesi sayılmıştır. Karamanoğlu İbrahim Bey ona büyük saygı göstermiş, Konya'daki dervişlerine onları her türlü divani teklifden ve vergiden muaf tutan bir belge vermiştir; II. Beyazıt da bu hükmü aynen tanımıştır. Abdülmümin Halife varlıklı biriydi, mescit ve tekke için vakıflar tahsis etmiş ve tekkede uzun yıllar şeyhlik yapmıştır. Bu tarihten itibaren mescit onun adıyla anılmaya başlamış, halk arasında 'Yediler Mescidi' olarak da anılmıştır.",
+        "en": "Abdülmümin Halife, one of the Qadiri sheikhs who served in the complex in the Karamanid period, was a scholar and musician with a beautiful voice who played the nay. He was also a professor at the İnce Minare Madrasa and was regarded as a great scholar. Karamanoğlu İbrahim Bey showed him great respect and gave the Halife's dervishes in Konya a document exempting them from all public obligations and taxes; Beyazıt II also recognized this ruling. He was wealthy, allocated foundations for the mosque and tekke, and served as sheikh of the tekke for many years. From then on the masjid was known by his name, and also publicly as the 'Yediler Masjid'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "118-119"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kuzey-güney yönünde uzanan dikdörtgen planlıdır; harim tek kubbeyle örtülüdür. Beden duvarlarının alt kısımları ve köşelerinde düzgün kesme taş, giriş kapısında mermer, diğer yerlerde moloz taş, kubbede tuğla kullanılmıştır. Harime, kuzeydoğu cephedeki mermer, basık kemerli sade kapıdan girilir; iç mekân beden duvarlarındaki pencerelerle aydınlanır, duvarlar sonradan belirli bir yüksekliğe kadar mermerle kaplanmıştır. Kubbe güney, doğu ve batıda doğrudan beden duvarlarına, kuzeyde 1.08 m ebadındaki büyük bir sivri kemere oturur ve pandantiflerle geçilir; dıştan kurşun kaplıdır. Yarım daire nişli mihrap kıble duvarının ortasındadır ve sonradan mermerle kaplanmıştır.",
+        "en": "The masjid has a rectangular plan extending north-south, with a single dome over the harim. Smooth cut stone was used in the lower parts and corners of the walls, marble at the entrance, rubble stone elsewhere and brick in the dome. The harim is entered through a plain low-arched marble door on the northeastern facade and lit by windows; the walls were later covered with marble up to a certain height. The dome sits directly on the walls to the south, east and west and on a large pointed arch of 1.08 m to the north, with a transition on pendentives; it is lead-covered outside. The mihrab with a semicircular niche is in the middle of the qibla wall and was later covered with marble."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120-121"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Dikdörtgen, kuzey-güney yönlü, tek kubbeli",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_kemer",
+      "label": {
+        "tr": "Kuzeydeki kubbe kemeri",
+        "en": "Dome arch to the north"
+      },
+      "value": "1.08",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mahmut bin Emirülhac",
+      "role": {
+        "tr": "Yeniden inşa ettiren",
+        "en": "Rebuilder"
+      }
+    },
+    {
+      "name": "Abdülmümin Halife",
+      "role": {
+        "tr": "Kâdiri şeyhi, müderris (Karamanoğulları dönemi)",
+        "en": "Qadiri sheikh and professor (Karamanid period)"
+      }
+    },
+    {
+      "name": "Karamanoğlu İbrahim Bey",
+      "role": {
+        "tr": "Abdülmümin Halife'nin dervişlerine muafiyet belgesi veren",
+        "en": "Granted exemption document to Abdülmümin Halife's dervishes"
+      }
+    },
+    {
+      "name": "II. Beyazıt",
+      "role": {
+        "tr": "Muafiyet hükmünü tanıyan",
+        "en": "Recognized the exemption ruling"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, mermer üzerine kabartma",
+        "en": "On the entrance gate, relief on marble"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Megâribe Mescidi adıyla anılan bu mübarek mescidin yenilenmesini, büyük sultan, âlemlerde Allah'ın gölgesi, Gıyâsü'd-Dünyâ ve'd-Dîn, İslâm ve Müslümanların sultanı, fetihler babası, Kılıç Arslan oğlu Keyhüsrev'in saltanatı günlerinde -Allah devletini ebedi ve üstün kılsın- Allah'ın rahmetine muhtaç, Allah'ın af ve ihsanını dileyen zayıf kulu, Emîrü'l-Hac oğlu Mahmud, 674 yılı aylarında emretti. Allah saadetini daim ve hayatının sonunu iyi etsin. Hamd bir olan Allah'adır. Allah, Muhammed'e selâmet versin.",
+        "en": "The renovation of this blessed mosque, which is called Megaribe Mosque, was ordered during the reign of the great sultan, the shadow of Allah in the worlds, Gıyâsü'd-Dünyâ ve'd-Dîn, the sultan of Islam and Muslims, the father of conquests, the son of Kılıç Arslan, Keyhüsrev - may Allah make his state eternal and prevailing - by Mahmud, the son of Emîrü'l-Hajj, his weak servant in need of God's mercy, in the months of 674. May God always give him happiness and a good end to his life. Praise be to Allah, the One. May Allah give peace to Muhammad."
+      },
+      "date": {
+        "hijri_year": 674,
+        "gregorian": "1275"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120"
+        }
+      ],
+      "note": {
+        "tr": "İki satırlık Arapça onarım kitâbesi, celî sülüs hatla. Kitapta Arapça metnin transkripsiyonu verilmiyor; yalnızca meal var.",
+        "en": "İki satırlık Arapça onarım kitâbesi, celî sülüs hatla. Kitapta Arapça metnin transkripsiyonu verilmiyor; yalnızca meal var."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yeniden-insa",
+      "year": 1275,
+      "date": null,
+      "hijri": "674",
+      "type": "construction",
+      "title": {
+        "tr": "Megaribe Mescidi Mahmut bin Emirülhac tarafından yeniden inşa ettirildi, külliyeye dönüştürüldü",
+        "en": "Megaribe Masjid rebuilt by Mahmut bin Emirülhac and turned into a complex"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "118-120"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Abdulmümin Mescidi, kuzey-güney yönünde uzanan küçük, dikdörtgen planlı taş bir yapıdır. Üzerini tek bir kubbe örter; kubbe dışarıdan kurşunla kaplıdır. Kuzeydoğu cephesindeki basık kemerli, mermer sade kapıdan girilir. İçeride duvarlar belirli bir yüksekliğe kadar mermerle kaplıdır; kıble duvarının ortasında yarım daire nişli, mermer kaplı mihrap bulunur.",
+      "en": "Abdülmümin Masjid is a small rectangular stone building extending north-south, covered by a single dome that is lead-covered on the outside. It is entered through a plain low-arched marble door on the northeastern facade. Inside, the walls are covered with marble up to a certain height, and in the middle of the qibla wall is a marble-covered mihrab with a semicircular niche."
+    }
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]",
+      "en": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "118-119"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=407",
+        "original_name": "pdf-s61-xref407",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "118"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Abdulmümin (Yediler-Megaribe) Mescidi ve Mezarı (kitap s. 118)",
+        "en": "Abdulmümin (Yediler-Megaribe) Masjid and Tomb (book p. 118)"
+      },
+      "alt": {
+        "tr": "Abdulmümin (Yediler-Megaribe) Mescidi ve Mezarı fotoğrafı",
+        "en": "Photo of Abdulmümin (Yediler-Megaribe) Masjid and Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=409",
+        "original_name": "pdf-s61-xref409",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "119"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Abdulmümin (Yediler-Megaribe) Mescidi ve Mezarı (kitap s. 119)",
+        "en": "Abdulmümin (Yediler-Megaribe) Masjid and Tomb (book p. 119)"
+      },
+      "alt": {
+        "tr": "Abdulmümin (Yediler-Megaribe) Mescidi ve Mezarı fotoğrafı",
+        "en": "Photo of Abdulmümin (Yediler-Megaribe) Masjid and Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

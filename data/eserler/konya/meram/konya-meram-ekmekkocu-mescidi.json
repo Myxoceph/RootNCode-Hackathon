@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-ekmekkocu-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 91) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hazirenin mezar taşları hakkında ayrıntı kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Ekmekkoçu Mescidi",
+    "en": "Ekmekkoçu Masjid"
+  },
+  "type": "mescit",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "hazire",
+    "mezar taşları",
+    "tamirat"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Ekmekkoçu Mahallesi",
+    "address": "Kubbeli Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "91"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl",
+      "en": "19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Mescit hakkında kaynak yok; plan özellikleri ve mimari elemanlarından XIX. yüzyılda inşa edildiği anlaşılıyor. Yıl yok.",
+      "en": "No sources exist; plan features and architectural elements indicate the 19th century. No year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "91"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Hakkında kaynak bulunmayan, plan özelliklerinden XIX. yüzyıla tarihlenen mescit. Son cemaat yeri 1986'da yıkılmış, 1987'den sonra esaslı tamir görmüştür; doğusundaki hazirede tarihî mezar taşları vardır.",
+    "en": "A masjid with no available sources, dated to the 19th century from its plan. Its narthex was demolished in 1986 and the building underwent major repair after 1987; historic gravestones stand in the burial ground to its east."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Mescit Meram, Ekmekkoçu Mahallesi, Kubbeli Sokak'tadır. Mescit hakkında bilgi edinilebilecek kaynak bulunmadığından bilgiler sınırlıdır; bânîsiyle ilgili de bilgiye rastlanmamıştır. Plan özellikleri ve mimari elemanlarından XIX. yüzyılda inşa edildiği anlaşılmaktadır. Son cemaat yeri 1986'da yıkılmıştır. 1987'den sonra yapı esaslı tamirat geçirmiş, bu tamirde son cemaat yeri onarılmamıştır. Mescidin doğusundaki hazirede tarihî mezar taşları vardır. Mescit dikdörtgen planlıdır ve son tamiratında kırma çatıyla örtülmüştür. Harim sadedir; kıble duvarında yarım daire planlı mihrap nişi vardır.",
+        "en": "The masjid is on Kubbeli Street, Ekmekkoçu Neighborhood, Meram. No source on the masjid exists, so information is limited, and nothing has been found about its builder. Its plan and architectural elements show it was built in the 19th century. The narthex was demolished in 1986. After 1987 the building underwent major repairs, in which the narthex was not repaired. Historic gravestones stand in the burial ground east of the masjid. The masjid is rectangular and was given a hipped roof in its last repair. The harim is plain, with a semicircular mihrab niche on the qibla wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "91"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_yikim",
+      "label": {
+        "tr": "Son cemaat yerinin yıkıldığı yıl",
+        "en": "Year the narthex was demolished"
+      },
+      "value": 1986,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "91"
+        }
+      ]
+    },
+    {
+      "key": "esasli_tamir",
+      "label": {
+        "tr": "Esaslı tamirat (sonrası)",
+        "en": "Major repair (after)"
+      },
+      "value": 1987,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "91"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "son-cemaat-yikim-1986",
+      "year": 1986,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Son cemaat yeri yıkıldı",
+        "en": "The narthex was demolished"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "91"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1987",
+      "year": 1987,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "1987'den sonra esaslı tamirat; son cemaat yeri onarılmadı",
+        "en": "Major repairs after 1987; the narthex was not repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "91"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ekmekkoçu Mescidi dikdörtgen planlı, kırma çatılı küçük bir mescittir. Son cemaat yeri yıkıldığı için girişi sadedir. İçeride düz, süssüz bir harim ve kıble duvarında yarım daire bir mihrap nişi vardır. Doğusundaki hazirede eski mezar taşları görülür.",
+      "en": "Ekmekkoçu Masjid is a small rectangular building with a hipped roof. Its narthex has been demolished, so the entrance is plain. Inside, a plain harim has a semicircular mihrab niche in the qibla wall. Old gravestones can be seen in the burial ground to its east."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 91)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "91-91"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=296",
+        "original_name": "pdf-s47-xref296",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "91"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ekmekkoçu Mescidi (kitap s. 91)",
+        "en": "Ekmekkoçu Masjid (book p. 91)"
+      },
+      "alt": {
+        "tr": "Ekmekkoçu Mescidi fotoğrafı",
+        "en": "Photo of Ekmekkoçu Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=294",
+        "original_name": "pdf-s47-xref294",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "91"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ekmekkoçu Mescidi (kitap s. 91)",
+        "en": "Ekmekkoçu Masjid (book p. 91)"
+      },
+      "alt": {
+        "tr": "Ekmekkoçu Mescidi fotoğrafı",
+        "en": "Photo of Ekmekkoçu Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

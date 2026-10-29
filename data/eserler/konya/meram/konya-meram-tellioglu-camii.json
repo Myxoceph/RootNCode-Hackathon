@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-tellioglu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 122-123) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "İnşa tarihi ve banisi kitapta 'bilinmemektedir'.",
+      "Başlıkta 'Camii', metinde 'mescit' deniyor; tür mescit alındı.",
+      "Era alanı: yapı XX. yüzyıl eseri, hangi döneme girdiği (Geç Osmanlı/Cumhuriyet) belli olmadığı için null bırakıldı.",
+      "Onarım yılı kitapta 'yakın zamanda' olarak geçiyor, yıl yok.",
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Tellioğlu (Sungurbey) Camii",
+    "en": "Tellioğlu (Sungurbey) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Tellioğlu Mescidi",
+      "en": "Tellioğlu Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "küçük ahşap minare",
+    "kırma çatı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Sungur Mahallesi",
+    "address": "Telli Mescit Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "122"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl (inşa tarihi bilinmiyor)",
+      "en": "20th century (construction date unknown)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap yalnızca 'günümüzdeki yapı XX. yüzyıl eseridir' diyor; kesin yıl verilmiyor.",
+      "en": "The book only says the current building is a 20th-century work; no exact year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "122"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sungur Mahallesi'nde, Hacı Fettah Mezarlığı'nın kuzeydoğusunda yer alan küçük bir mescittir. İnşa tarihi ve banisi bilinmez; bugünkü yapı XX. yüzyıl eseridir ve Vakıflar Bölge Müdürlüğü tarafından yakın zamanda onarılmıştır.",
+    "en": "A small masjid in Sungur Neighborhood, northeast of Hacı Fettah Cemetery. Its construction date and builder are unknown; the current building is a 20th-century work recently repaired by the Regional Directorate of Foundations."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit dikdörtgen planlıdır ve kırma çatıyla örtülüdür. Giriş kapısının üzerinde küçük, ahşap bir minare bulunur. Harim dikdörtgen planlıdır; mihrap ve minber sade tutulmuştur.",
+        "en": "The masjid has a rectangular plan covered with a hipped roof. There is a small wooden minaret above the entrance gate. The harim is rectangular and the mihrab and minbar are kept simple."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "122"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "Giriş kapısı üzerinde küçük ahşap minare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "122"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tellioğlu Mescidi, kırma çatılı, dikdörtgen planlı küçük bir yapıdır. Giriş kapısının üzerinde ahşap, küçük bir minare yükselir. İçeride dikdörtgen bir harim ve sade bir mihrapla minber bulunur.",
+      "en": "Tellioğlu Masjid is a small rectangular building with a hipped roof. A small wooden minaret rises above the entrance gate. Inside are a rectangular harim and a plain mihrab and minbar."
+    }
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]",
+      "en": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "122-122"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=421",
+        "original_name": "pdf-s63-xref421",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "122"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tellioğlu (Sungurbey) Camii (kitap s. 122)",
+        "en": "Tellioğlu (Sungurbey) Mosque (book p. 122)"
+      },
+      "alt": {
+        "tr": "Tellioğlu (Sungurbey) Camii fotoğrafı",
+        "en": "Photo of Tellioğlu (Sungurbey) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=423",
+        "original_name": "pdf-s63-xref423",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "122"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tellioğlu (Sungurbey) Camii (kitap s. 122)",
+        "en": "Tellioğlu (Sungurbey) Mosque (book p. 122)"
+      },
+      "alt": {
+        "tr": "Tellioğlu (Sungurbey) Camii fotoğrafı",
+        "en": "Photo of Tellioğlu (Sungurbey) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

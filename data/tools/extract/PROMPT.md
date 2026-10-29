@@ -91,3 +91,17 @@ inscriptions, relations), and the points you were least sure about.
   to the proper district name (e.g. `İznik`).
 - **Photos.** Do not add media; photos are attached later by `match_photos.py`. Keep
   `media: []`, `media_folder: null`, and the todo.
+
+## Konya Vakıf Eserleri I. Cilt (source `vk-konya-c1`) — differences
+- One single PDF for the whole volume: `data/build/cache/text/konya-1.txt` (not one file per chapter).
+  You get a PDF-page range; handle only buildings whose heading STARTS inside it.
+- A PDF page is a book spread: the text of the left and right page is interleaved, Turkish and
+  English blocks alternate. The printed page number(s) stand alone at the END of the PDF page
+  (`75`, or two numbers like `76 77`). Use the printed numbers of the PDF pages a section spans
+  for `source_refs[].pages` (e.g. `76-77`). Photo-only pages have no text.
+- The table of contents (PDF pages 6-7 of the same file) lists each building's start page; use it
+  to find building boundaries.
+- Region `ic-anadolu`, city `konya`, ids `konya-<ilçe>-<ad>`, folder `data/eserler/konya/<ilçe>/`.
+- There is no Drive photo archive for this volume: keep `media: []`, `media_folder: null`.
+- `meta.from` = `"konya-envanteri-1_cilt-web"`.
+

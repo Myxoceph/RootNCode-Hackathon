@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-abdulaziz-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Mahalle adı kitapta verilmiyor (yalnızca mahalle adının Abdülaziz'den geldiği söyleniyor); location.neighborhood null.",
+      "Kitabenin metni/meali kitapta yok; translation null.",
+      "Abdülaziz Sultan ile kitabeyi yaptıran Abdülaziz'in aynı kişi olup olmadığı kitapta açıkça belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf şartları kitapta yok (aksi belirtilmedikçe); VGM arşivinden bulunabilir.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people / sections[genel-bakis]",
+        "note": "Kitap, Osman Gazi'ye bağımsızlık alametleri gönderildiği ve eşi Rabia'nın Abdülaziz Sultan'ın kızı olabileceği rivayetini aktarır; rivayet olduğu için legends[] altına alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Abdülaziz Camii",
+    "en": "Abdülaziz Mosque"
+  },
+  "subtitle": {
+    "tr": "1253'te Abdülaziz tarafından yaptırılan tek kubbeli Selçuklu camisi",
+    "en": "Single-domed Seljuk mosque built by Abdülaziz in 1253"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu",
+    "tromp",
+    "çini mihrap kitabesi",
+    "yığma yapı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": null,
+    "address": "Kadı İzzet Sokak No. 20",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "108"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 651 / M. 1253",
+      "en": "AH 651 / AD 1253"
+    },
+    "start_year": 1253,
+    "end_year": 1253,
+    "hijri_year": 651,
+    "century": 13,
+    "basis": {
+      "tr": "Çini mihraptan çıkan kitabeye göre H. 651 / M. 1253'te II. İzzeddin Keykavus döneminde yapılmıştır.",
+      "en": "According to the inscription from the tile mihrab, built in 651 AH / 1253 AD under Izzeddin Keykavus II."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "109"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Abdülaziz",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "109"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kadı İzzet Sokak'taki kare planlı, tek kubbeli cami, 1962 restorasyonunda çıkan çini mihrap kitabesine göre 1253'te Abdülaziz tarafından yaptırılmıştır; mahalle adını bu camiden ve Selçuklu devlet adamı Abdülaziz Sultan'dan alır.",
+    "en": "The square, single-domed mosque on Kadı İzzet Street was built by Abdülaziz in 1253 according to the tile-mihrab inscription found in the 1962 restoration; the neighborhood is named after it and the Seljuk statesman Abdülaziz Sultan."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Adı",
+        "en": "Overview and Name"
+      },
+      "body": {
+        "tr": "Cami Meram'da Kadı İzzet Sokak No. 20'dedir. Mahalle adını Selçuklu döneminin ileri gelen din ve devlet adamlarından Abdülaziz Sultan'dan ve onun adının verildiği tarihî camiden alır. Kitaba göre Abdülaziz Sultan III. Alâeddin Keykubat tahta geçince maliyeden sorumlu devlet görevlisi atanmıştır.",
+        "en": "The mosque is at Kadı İzzet Street No. 20, Meram. The neighborhood takes its name from Abdülaziz Sultan, a leading Seljuk religious figure and statesman, and from the historic mosque named after him. According to the book he was appointed finance official when Alâeddin Keykubat III ascended the Seljuk throne."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "108-109"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami taş ve tuğla ile yığma tekniğinde yapılmıştır. Kare planlı ve tek kubbelidir; kubbeye geçiş tromplarla sağlanır. Beden duvarlarında kesme taş, kubbe ve köşe tromplarında tuğla kullanılmıştır. Dört tarafta pencereler vardır; girişte kapının hemen üzerinde enlemesine ahşap bir mahfil bulunur. Duvarların alt kısımları mermerle çevrilidir; mihrapta mermer ve beton görülür.",
+        "en": "Built by masonry using stone and brick. It is square with a single dome on squinches; cut stone is used for the walls, brick for the dome and squinches. There are windows on all four sides and a transverse wooden gallery above the entrance door. The lower walls are marble-lined; the mihrab shows marble and concrete."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "108-109"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-ve-restorasyon",
+      "order": 3,
+      "title": {
+        "tr": "Kitabe ve Restorasyon",
+        "en": "Inscription and Restoration"
+      },
+      "body": {
+        "tr": "1962 restorasyonunda çini mihrapta bulunan cami kitabesi ortaya çıkarılmıştır. Kitabe Karatay Medresesi, Çini Eserleri Müzesi'nde 914 envanter numarasıyla kayıtlıdır, 1,00 x 0,85 m ölçülüdür; lacivert zemin üzerine beyaz renkli, beş satırlık Arapça yazı yer yer bozulmuş ve siliktir. Kitabeden caminin Sultan II. Gıyaseddin Keyhüsrev'in oğlu II. İzzeddin Keykavus döneminde H. 651 / M. 1253'te Abdülaziz tarafından yaptırıldığı anlaşılır. Cami Vakıflar Genel Müdürlüğü tarafından 1991'de restore edilmiştir ve ibadete açıktır.",
+        "en": "During the 1962 restoration the mosque inscription on the tile mihrab was unearthed. It is registered at the Karatay Madrasa Tile Works Museum, inventory no. 914, measuring 1.00 x 0.85 m; the five-line Arabic text, white on dark blue, is damaged and faded. It shows the mosque was built by Abdülaziz in 651 AH / 1253 AD under Izzeddin Keykavus II, son of Sultan Gıyaseddin Keyhüsrev II. The General Directorate of Foundations restored it in 1991 and it is open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "109"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "osman-gazi-rabia",
+      "title": {
+        "tr": "Osman Gazi'ye bağımsızlık alametleri ve Rabia",
+        "en": "Signs of independence to Osman Gazi and Rabia"
+      },
+      "body": {
+        "tr": "Alâeddin Keykubat'ın Abdülaziz Sultan vasıtasıyla Osman Gazi'ye bağımsızlık alametleri gönderdiği ve Osman Gazi'nin Rabia adındaki eşinin Abdülaziz Sultan'ın kızı olabileceği rivayet edilir.",
+        "en": "It is rumored that Alâeddin Keykubat sent signs of independence to Osman Gazi through Abdülaziz Sultan, and that Osman Gazi's wife Rabia could be Abdülaziz Sultan's daughter."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "108"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kitabe_olculeri",
+      "label": {
+        "tr": "Kitabe ölçüleri",
+        "en": "Inscription dimensions"
+      },
+      "value": "1,00 x 0,85",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "109"
+        }
+      ]
+    },
+    {
+      "key": "muze_envanter_no",
+      "label": {
+        "tr": "Kitabenin müze envanter no",
+        "en": "Museum inventory number of the inscription"
+      },
+      "value": 914,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "109"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Abdülaziz (Abdülaziz Sultan)",
+      "role": {
+        "tr": "Kitabeye göre caminin banisi; Selçuklu maliye görevlisi",
+        "en": "Founder per the inscription; Seljuk finance official"
+      }
+    },
+    {
+      "name": "II. İzzeddin Keykavus",
+      "role": {
+        "tr": "Caminin yapıldığı dönemin sultanı",
+        "en": "Sultan at the time of construction"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cami-kitabesi",
+      "location": {
+        "tr": "Çini mihrapta bulunmuş; bugün Karatay Medresesi Çini Eserleri Müzesi'nde (env. 914)",
+        "en": "Found on the tile mihrab; now in the Karatay Madrasa Tile Works Museum (inv. 914)"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 651,
+        "gregorian": "1253"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "109"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1253",
+      "year": 1253,
+      "date": null,
+      "hijri": "651",
+      "type": "construction",
+      "title": {
+        "tr": "Abdülaziz tarafından yaptırıldı",
+        "en": "Built by Abdülaziz"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "109"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyonda çini mihraptaki kitabe ortaya çıkarıldı",
+        "en": "Inscription on tile mihrab unearthed during restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "109"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1991",
+      "year": 1991,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü restorasyonu",
+        "en": "Restoration by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "109"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Abdülaziz Camii, kare planlı, tek kubbeli, taş ve tuğladan yapılmış küçük bir Selçuklu camisidir. Beden duvarları kesme taştır; kubbe ve köşelerdeki trompler tuğladır. Dört yanında pencere vardır, girişin üstünde enlemesine ahşap bir mahfil uzanır. Duvarların alt kısmı mermerle kaplıdır.",
+      "en": "Abdülaziz Mosque is a small Seljuk mosque of stone and brick, square with a single dome. The walls are cut stone, while the dome and corner squinches are brick. It has windows on all four sides and a transverse wooden gallery above the entrance. The lower walls are marble-clad."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Konya Vakıf Eserleri I. Cilt) esas alınarak yazılmıştır."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "109-110"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=370",
+        "original_name": "pdf-s56-xref370",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "109"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Abdülaziz Camii (kitap s. 109)",
+        "en": "Abdülaziz Mosque (book p. 109)"
+      },
+      "alt": {
+        "tr": "Abdülaziz Camii fotoğrafı",
+        "en": "Photo of Abdülaziz Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=372",
+        "original_name": "pdf-s56-xref372",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "109"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Abdülaziz Camii (kitap s. 109)",
+        "en": "Abdülaziz Mosque (book p. 109)"
+      },
+      "alt": {
+        "tr": "Abdülaziz Camii fotoğrafı",
+        "en": "Photo of Abdülaziz Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=376",
+        "original_name": "pdf-s57-xref376",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "110"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Abdülaziz Camii (kitap s. 110)",
+        "en": "Abdülaziz Mosque (book p. 110)"
+      },
+      "alt": {
+        "tr": "Abdülaziz Camii fotoğrafı",
+        "en": "Photo of Abdülaziz Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}
