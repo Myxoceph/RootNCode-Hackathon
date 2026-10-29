@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-atesbaz-veli-kumbeti-ve-zaviyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 125-127 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kayıt iki yapıyı birlikte anlatıyor; ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
+      "Kümbeti kimin yaptırdığı kitapta belirtilmiyor (kitâbe yalnızca kime ait olduğunu ve tarihi bildiriyor); founder boş bırakıldı.",
+      "Zaviye kapısındaki kıtanın düzyazı anlamı kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kümbet kitâbesi H. 685 / M. 1285 verir; H. 685 yılı M. 1286-87'ye denk gelir (H. 684 ≈ M. 1285-86). Kitap vefat tarihini H. 684 / M. 1285 olarak verir; bu tarih miladi 1285 ile uyumludur. İki Hicri tarih (685 ve 684) arasındaki fark ve kitâbenin vefattan önce mi sonra mı yapıldığı belirsizdir; kitabın değerleri korundu, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[kumbet-ve-zaviye]",
+        "note": "Türkçe ve İngilizce metin 'zamanla harap hâle gelen türbenin yerine 1897'de yeni bir zaviye' diyor; s. 127 harap olanın önceki zaviye (Çelebi Abdüssamet'in yaptırdığı) olduğunu açıkça söylüyor. s. 127 esas alındı."
+      },
+      {
+        "field": "dating",
+        "note": "Hicri 1315 yılı Miladi 1897'ye uygun (1315 ≈ 1897-98); sorun yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ateşbaz Veli Kümbeti ve Zaviyesi",
+    "en": "Ateşbaz Veli Kumbet and Zawiya"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ateşbaz Veli Türbesi",
+      "en": "Ateşbaz Veli Tomb"
+    },
+    {
+      "tr": "Ateşbaz Veli Zaviyesi",
+      "en": "Ateşbaz Veli Zawiya"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Mevlâna'nın aşçısı",
+    "sekizgen kümbet",
+    "zaviye",
+    "Mevlevî",
+    "Abdülvahit Çelebi",
+    "nadir plan"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Ateşbaz Veli",
+    "address": "Ateşbaz Veli Mahallesi, Ateşbaz Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "125"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 685 / M. 1285 (kümbet kitâbesi); zaviye H. 1315 / M. 1897",
+      "en": "685 AH / 1285 AD (kumbet inscription); zawiya 1315 AH / 1897 AD"
+    },
+    "start_year": 1285,
+    "end_year": 1285,
+    "hijri_year": 685,
+    "century": 13,
+    "basis": {
+      "tr": "Kümbetin güney cephesindeki Arapça kitâbe H. 685 / M. 1285'i verir. Mevcut zaviye H. 1315 / M. 1897'de yaptırılmıştır.",
+      "en": "The Arabic inscription on the south façade of the kumbet gives 685 AH / 1285 AD. The present zawiya was built in 1315 AH / 1897 AD."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "125-127"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mevlâna'nın aşçısı Mevlevî dervişi Yusuf bin İzzeddin'e (Ateşbaz Veli) ait, kitâbesine göre H. 685 / M. 1285'te inşa edilen sekizgen gövdeli Selçuklu kümbeti ve batısındaki 1897 tarihli zaviye. İçten kare, dıştan sekizgen planıyla Anadolu'da tek örnek olduğu belirtilir.",
+    "en": "A Seljuk kumbet with an octagonal body, built in 685 AH / 1285 AD according to its inscription, belonging to Yusuf bin İzzeddin (Ateşbaz Veli), a Mevlevi dervish and Mevlâna's cook, and the zawiya of 1897 to its west. Its plan, square inside and octagonal outside, is said to be the only example in Anatolia."
+  },
+  "sections": [
+    {
+      "id": "kumbet-ve-zaviye",
+      "order": 1,
+      "title": {
+        "tr": "Kümbet ve Zaviye",
+        "en": "Kumbet and Zawiya"
+      },
+      "body": {
+        "tr": "Anadolu Selçuklu dönemi eseri olan türbe, güney cephesindeki Arapça kitâbeye göre İzzettin oğlu Yusuf Ateşbaz'a aittir ve H. 685 / M. 1285'te inşa edilmiştir. Türbenin batısında bir zaviye vardı; Çelebi Abdüssamet'in yaptırdığı bu zaviye zamanla harap olunca, H. 1315 / M. 1897'de postnişin Abdülvahit Çelebi yenisini yaptırmıştır. Türbe, bitişiğindeki türbedar yapısı ve çevresinin restorasyonunu Konya Büyükşehir Belediyesi yapmıştır.",
+        "en": "According to the Arabic inscription on its south façade, the tomb, a work of the Anatolian Seljuk period, belongs to Yusuf Ateşbaz, son of İzzettin, and was built in 685 AH / 1285 AD. There was a zawiya to the west of the tomb; when this zawiya, built by Çelebi Abdüssamet, fell into ruin, the postnishin Abdülvahit Çelebi had a new one built in 1315 AH / 1897 AD. The restoration of the tomb, the adjacent türbedar building and the surroundings was carried out by Konya Metropolitan Municipality."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "125, 127"
+        }
+      ]
+    },
+    {
+      "id": "atesbaz-veli",
+      "order": 2,
+      "title": {
+        "tr": "Ateşbaz Veli",
+        "en": "Ateşbaz Veli"
+      },
+      "body": {
+        "tr": "Asıl adı Yusuf bin İzzeddin olan Ateşbaz Veli'nin Horasan'dan geldiği tahmin edilmektedir. Mevlevî dervişi ve Mevlâna'nın aşçısıdır. H. 684 / M. 1285'te vefat eden İzzeddin oğlu Yusuf kendi türbesinde medfundur.",
+        "en": "Ateşbaz Veli, whose real name is Yusuf bin İzzeddin, is estimated to have come from Khorasan. He was a Mevlevi dervish and Mevlâna's cook. Izzeddin's son Yusuf, who died in 684 AH / 1285 AD, is buried in his own tomb."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "125-126"
+        }
+      ]
+    },
+    {
+      "id": "kumbet-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Kümbetin Mimarisi",
+        "en": "Architecture of the Kumbet"
+      },
+      "body": {
+        "tr": "Gövde dışarıdan sekizgen, içeriden kare planlıdır; sekizgen gövde külahla örtülüdür. Eser moloz ve kesme taştan yapılmıştır. Cenazelik ve sanduka bölümüne giriş kuzey cephede altlı üstlü tasarlanmıştır; cenazelik beşik kemerli tonozla örtülüdür, üst kata beşer basamaklı merdivenlerle çıkılır ve basık kemerli bir kapıdan sandukalı bölüme geçilir. İç mekân tuğla kubbeyle örtülüdür ve kıble duvarındaki bir pencereyle aydınlanır; ortada bir sanduka vardır. Kitaba göre bu plan tipi çok nadirdir ve Anadolu'da uygulanan tek örnektir.",
+        "en": "The body is octagonal outside and square inside, with the octagonal body covered by a cone. It is built of rubble and cut stone. The entrance to the funeral and sarcophagus sections is designed in an upper and lower arrangement on the north façade; the funeral section has a barrel vault, the upper floor is reached by stairs of five steps each, and a low-arched door leads into the sarcophagus section. The interior is covered by a brick dome and lit by a window in the qibla wall; there is one sarcophagus in the middle. According to the book this plan type is very rarely applied and is the only example in Anatolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "126-127"
+        }
+      ]
+    },
+    {
+      "id": "zaviye-mimari",
+      "order": 4,
+      "title": {
+        "tr": "Zaviye",
+        "en": "The Zawiya"
+      },
+      "body": {
+        "tr": "Zaviye türbenin batısında yola nazırdır. Taş temel üzerine kerpiç ve tuğlayla yapılmış, iki katlı ve kırma çatılıdır. Avlu kapısı üzerindeki talik hatlı mermer kitâbede Mesnevihan Sıtkı Dede'ye ait bir kıta yazılıdır. Zaviye asırlar boyunca türbeyi ziyarete gelenlerin misafir edildiği, sohbet ettiği, sema ve zikir meclislerinin yapıldığı bir mekân olmuştur.",
+        "en": "The zawiya overlooks the road to the west of the tomb. Built of adobe and brick on a stone foundation, it has two floors and a hipped roof. The marble inscription in talik calligraphy over the courtyard gate carries a stanza by Mesnevihan Sıtkı Dede. For centuries the zawiya served as a place where visitors to the tomb were hosted, conversed, and held sema and dhikr assemblies."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "127"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "atesbaz-lakabi",
+      "title": {
+        "tr": "\"Ateşbaz\" lakabının hikâyesi",
+        "en": "The story of the \"Ateşbaz\" epithet"
+      },
+      "body": {
+        "tr": "Rivayete göre Yusuf bin İzzeddin mutfakta odun kalmadığını söylemek için Mevlâna'nın huzuruna gider. Mevlâna şaka yollu \"Kazanın altına ayaklarını sokarak kazanı kaynat!\" der; o da öyle yapar ve yemeği ayak parmaklarından çıkan alevlerle pişirir. Kerametinin açıklanmasını istemeyen Mevlâna \"Hay Ateşbaz, hay!\" der ve Yusuf bin İzzeddin bu olaydan sonra \"Ateşbaz\" unvanıyla anılır.",
+        "en": "According to the rumour, Yusuf bin Izzeddin went to Mevlâna to report that there was no wood left in the kitchen. Mevlâna joked, \"Bring the cauldron to boil by putting your feet under it!\" He did so and cooked the food with flames coming from his toes. Mevlâna, not wanting his miracle to be explained, said \"Hay Ateşbaz, hay!\", and from then on Yusuf bin Izzeddin was known as \"Ateşbaz\"."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "125-126"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "govde_plani",
+      "label": {
+        "tr": "Gövde planı",
+        "en": "Body plan"
+      },
+      "value": "dıştan sekizgen, içten kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "126"
+        }
+      ]
+    },
+    {
+      "key": "zaviye_kat_sayisi",
+      "label": {
+        "tr": "Zaviye kat sayısı",
+        "en": "Zawiya storeys"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "key": "merdiven_basamak",
+      "label": {
+        "tr": "Üst kata çıkan merdiven basamağı",
+        "en": "Steps of the stairs to the upper floor"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "126"
+        }
+      ],
+      "note": {
+        "tr": "Beşer basamaklı merdivenler.",
+        "en": "Stairs of five steps each."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Yusuf bin İzzeddin (Ateşbaz Veli)",
+      "role": {
+        "tr": "Mevlevî dervişi, Mevlâna'nın aşçısı; kümbette medfun",
+        "en": "Mevlevi dervish and Mevlâna's cook; buried in the kumbet"
+      }
+    },
+    {
+      "name": "Abdülvahit Çelebi",
+      "role": {
+        "tr": "Postnişin; 1897 zaviyesini yaptıran",
+        "en": "Postnishin; had the 1897 zawiya built"
+      }
+    },
+    {
+      "name": "Çelebi Abdüssamet",
+      "role": {
+        "tr": "Önceki zaviyeyi yaptıran",
+        "en": "Had the earlier zawiya built"
+      }
+    },
+    {
+      "name": "Mesnevihan Sıtkı Dede",
+      "role": {
+        "tr": "Zaviye kapısındaki kıtanın şairi",
+        "en": "Poet of the stanza on the zawiya gate"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kumbet-kitabesi",
+      "location": {
+        "tr": "Kümbetin güney cephesinde",
+        "en": "On the south façade of the kumbet"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 685,
+        "gregorian": "1285"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "125"
+        }
+      ],
+      "note": {
+        "tr": "Kitâbe, kümbetin İzzettin oğlu Yusuf Ateşbaz'a ait olduğunu ve H. 685 / M. 1285'te inşa edildiğini bildirir; metin ve meal kitapta verilmiyor.",
+        "en": "The inscription states the kumbet belongs to Yusuf Ateşbaz, son of İzzettin, and was built in 685 AH / 1285 AD; neither text nor translation is given in the book."
+      }
+    },
+    {
+      "id": "zaviye-kapi-kitabesi",
+      "location": {
+        "tr": "Zaviyenin avlu kapısı üzerinde, mermer",
+        "en": "On the courtyard gate of the zawiya, marble"
+      },
+      "language": "tr-ottoman",
+      "script": "talik",
+      "transliteration": "Bir nihâl-i şecer-i Hazret-i Mevlâna kim\nPost-nişîn-i dergeh-i cedd-i o Vâhid Çelebi\nArz-ı hidmet eyleyüb Hazret-i Âteş-bâz’a\nİtdi nezdinde binâ tekke rızâdır talebi\nÇâker-i kemter-i Sıdkî ederek arz-ı niyâz\nDidi târîhini ‘bu gülşen-i feyz-i edebî’1315",
+      "translation": null,
+      "author": "Mesnevihan Sıtkı Dede",
+      "date": {
+        "hijri_year": 1315,
+        "gregorian": "1897"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "127"
+        }
+      ],
+      "note": {
+        "tr": "Kitap kıtanın düzyazı çevirisini vermiyor; son mısra ebced tarihi olarak 1315'i bildirir.",
+        "en": "The book gives no prose rendering of the stanza; the last line gives the chronogram date 1315."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kumbet-1285",
+      "year": 1285,
+      "date": null,
+      "hijri": "685",
+      "type": "construction",
+      "title": {
+        "tr": "Kümbet inşa edildi (kitâbeye göre H. 685)",
+        "en": "Kumbet built (685 AH according to the inscription)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "125"
+        }
+      ],
+      "note": {
+        "tr": "Hicri 685 ile miladi 1285 uyuşmuyor (bkz. data_quality_notes).",
+        "en": "685 AH and AD 1285 do not match (see data_quality_notes)."
+      }
+    },
+    {
+      "id": "vefat-1285",
+      "year": 1285,
+      "date": null,
+      "hijri": "684",
+      "type": "record",
+      "title": {
+        "tr": "Yusuf bin İzzeddin vefat etti (H. 684)",
+        "en": "Yusuf bin İzzeddin died (684 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "126"
+        }
+      ]
+    },
+    {
+      "id": "zaviye-1897",
+      "year": 1897,
+      "date": null,
+      "hijri": "1315",
+      "type": "construction",
+      "title": {
+        "tr": "Postnişin Abdülvahit Çelebi yeni zaviyeyi yaptırdı",
+        "en": "Postnishin Abdülvahit Çelebi had the new zawiya built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "127"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kümbet, dıştan sekizgen gövdeli, konik külahlı, moloz ve kesme taştan bir yapıdır; içi kare planlıdır ve tuğla bir kubbeyle örtülüdür. Kuzey cephedeki girişten altlı üstlü iki bölüme geçilir: altta beşik tonozlu cenazelik, beşer basamaklı merdivenle çıkılan üstte ortasında bir sanduka bulunan kubbeli oda. Batısında yola bakan, iki katlı, kırma çatılı, kerpiç ve tuğla zaviye yer alır; avlu kapısı üzerinde mermer bir kitâbe vardır.",
+      "en": "The kumbet is an octagonal-bodied, cone-roofed building of rubble and cut stone, square inside and covered with a brick dome. The entrance on the north façade leads to two levels: a barrel-vaulted funeral chamber below and, up stairs of five steps each, a domed room with a single sarcophagus in the middle. To its west, facing the road, is the two-storey, hipped-roof zawiya of adobe and brick, with a marble inscription over its courtyard gate."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

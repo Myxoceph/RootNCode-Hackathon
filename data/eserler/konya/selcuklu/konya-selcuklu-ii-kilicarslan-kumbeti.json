@@ -1,0 +1,525 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-ii-kilicarslan-kumbeti",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Kitâbelerin okunuşu ve mealleri kitapta yalnızca kısmen veriliyor; beden, taş üstü ve Ayet'el-Kürsi kitâbelerinin metni eklenmeli.",
+      "Mimar kitâbesi (Bursa kemeri üstü) ile pencere kemeri üstündeki Abdülgaffar oğlu Yusuf kitâbesinin aynı olup olmadığı netleştirilmeli.",
+      "1960'lı yıllardaki temizlik/restorasyonun kesin yılı kitapta yok; zaman çizelgesine eklenmedi.",
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitap adı \"II. Kılıçarslan\", metinde ve kitâbede \"Kılıçaslan/KılıçArslan\" biçimleri de geçer; yazım farkı."
+      },
+      {
+        "field": "founder",
+        "note": "Türkçe metin \"II. Kılıçaslan tarafından Yusuf İbn-i Abdülgaffar El-Cuhi'ye yaptırılmıştır\" diyor; cümle yaptıranı II. Kılıçarslan, ustayı Yusuf olarak yorumlandı. Mimar bilgisi bu yoruma dayandığı için probable."
+      },
+      {
+        "field": "sandukalar",
+        "note": "Kitap sekiz sanduka olduğunu söylüyor, ancak burada yatan dokuz sultanı sayıyor (I. Rükneddin Mesut'un burada olup olmadığı tartışmalı). Sayılar kaynağa göre korundu."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap \"imaret\" geçen kitâbe ile türbe kitâbesini aynı yapıya bağlıyor; kitâbedeki imaret ifadesi nedeniyle yapının ilk işlevi konusunda kitapta açıklama yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "II. Kılıçarslan Kümbeti",
+    "en": "Kılıçarslan II Kumbet"
+  },
+  "subtitle": {
+    "tr": "Selçuklu sultanlarının yattığı ongen planlı kümbet",
+    "en": "Decagonal tomb of the Seljuk sultans"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kümbet-Hane",
+      "en": "Kumbet-Khane"
+    },
+    {
+      "tr": "Kümbet-Saray",
+      "en": "Kumbet-Saray"
+    },
+    {
+      "tr": "Sultanlar Türbesi",
+      "en": "Tomb of Sultans"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "kümbet",
+    "ongen plan",
+    "Anadolu Selçuklu",
+    "Sultanlar Türbesi",
+    "çini sanduka",
+    "Alâeddin Tepesi",
+    "kitabe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "address": "Alâeddin Tepesi, Alaaddin Camii avlusu",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "175"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 594 / M. 1197",
+      "en": "AH 594 / AD 1197"
+    },
+    "start_year": 1197,
+    "end_year": 1197,
+    "hijri_year": 594,
+    "century": 12,
+    "basis": {
+      "tr": "Türbe kitâbesine göre H. 594 / M. 1197'de inşa edilmiştir.",
+      "en": "According to the tomb inscription it was built in AH 594 / AD 1197."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "176"
+      }
+    ]
+  },
+  "founder": {
+    "name": "II. Kılıçarslan",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "175-176"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Yusuf İbn-i Abdülgaffar El-Cuhi",
+    "candidates": [],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "175-176"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Alâeddin Tepesi'ndeki Alaaddin Camii avlusunda yer alan, Anadolu Selçuklu sultanlarının yattığı türbe. Ongen planlı tek örnek olması, çinili sandukaları ve kapı kanadı işlemeleriyle öne çıkar.",
+    "en": "A tomb in the courtyard of Alâeddin Mosque on Alâeddin Hill where Anatolian Seljuk sultans are buried. It stands out as the only example with a decagonal plan, with its tiled sarcophagi and door-wing carvings."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe, Alâeddin Tepesi'nde, Alaaddin Camii avlusunda yer almaktadır. Türbe kitâbesine göre H. 594 / M. 1197 yılında inşa edilmiştir ve Anadolu Selçuklu dönemine aittir; II. Kılıçarslan tarafından Yusuf İbn-i Abdülgaffar El-Cuhi'ye yaptırılmıştır. Kümbet-Hane veya Kümbet-Saray adıyla da anılan yapı, içinde yatan Selçuklu sultanlarının hatırasına izafeten daha çok \"Sultanlar Türbesi\" olarak bilinir. Anadolu'daki Selçuklu türbelerinin en büyük ve anıtsal örneklerinden biridir.",
+        "en": "The tomb is located on Alâeddin Hill, in the courtyard of Alâeddin Mosque. According to the tomb inscription it was built in AH 594 / AD 1197 and belongs to the Anatolian Seljuk period; it was built by Yusuf İbn-i Abdülgaffar El-Cuhi under the order of Kılıçarslan II. Also called Kumbet-Khane or Kumbet-Saray, it is better known as the \"Tomb of Sultans\" in memory of the Seljuk sultans buried inside. It is one of the largest and most monumental Seljuk tombs in Anatolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "175-176, 181"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Selçuklu kümbet geleneğine göre yapı üç bölümlüdür: cenazelik-oturtmalık ve kripta (mezar odası) bölümlerinden oluşan alt kat, sembolik sandukaların yer aldığı ve ziyaretgâh olan üst kat ve üst örtü. Sandukaların bulunduğu mekâna kuzeydoğudaki kapıdan girilir. Kripta dairevi planlı, yarım küre kubbeli ve moloz taş örgülüdür; üst kısımlarına aynı aralıklarla dört hava deliği açılmıştır. Ana gövde zeminden bir metre yükseklikteki kare bir kaideye oturur; dışa taşkın gövde ongen planlı ve muntazam kesme taştandır, içten dairevidir. Asıl ziyaret edilen bölüme iki yandan basamaklarla çıkılır. Giriş açıklığı Bursa kemeri biçimindedir, çevresi bitkisel motiflerle işlenmiştir; kapının üstünde sivri kemerli bir niş içinde Bizans dönemine ait işlemeli mermer bir pano vardır. Duvarlar yarım daire sağır nişlerle hareketlendirilmiş, nişler trompa benzeri kürelerle sonlanmıştır. Üst örtü içten kubbe, dıştan piramidal külahtır; külah bugün çinko kaplıdır, onarımlarda bulunan malzeme kubbenin eskiden tuğla ve üçgen çinilerden oluştuğunu göstermiştir.",
+        "en": "In line with the Seljuk kumbet tradition the building has three parts: a lower floor of funeral-seating and crypt (grave room) sections, an upper floor with symbolic sarcophagi that serves as the place of visit, and the upper cover. The sarcophagi chamber is entered through the northeast door. The crypt is circular, covered with a hemispherical dome and built of rubble stone, with four air holes at equal intervals in its upper part. The main body sits on a square plinth one metre above the ground; the outward-protruding body is decagonal and of regular cut stone, circular inside. The main visited section is reached by stairs rising from two sides. The entrance opening is a Bursa arch with floral motifs around it; above the door, in a pointed-arch niche, is an engraved marble panel from the Byzantine period. The walls are animated by semicircular blind niches ending in globes resembling squinches. The cover is a dome inside and a pyramidal cone outside; the cone is covered with zinc today, and material found during repairs shows that the dome was once of brick and triangular tiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "178-179"
+        }
+      ]
+    },
+    {
+      "id": "kapi-sanduka",
+      "order": 3,
+      "title": {
+        "tr": "Kapı Kanatları ve Sandukalar",
+        "en": "Door Wings and Sarcophagi"
+      },
+      "body": {
+        "tr": "Ahşap kapı kanatları günümüze sağlam ulaşmıştır ve türbeyle eş zamanlı yapıldığı tahmin edilir; dört panoya ayrılmış, yüzeylerinde eğri kesim tekniğinde stilize motifler, diğer yüzeylerde oyma ve kabartma uygulamalar vardır. Türbede toplam sekiz sanduka bulunur; ilk altısı girişten güneye doğru sıralanmış, ilki bağımsız, diğerleri iki platform üzerinde bitişiktir; diğer ikisi batı yönünde dizilidir. Dikdörtgen kaide üzerindeki yarım silindirik sandukaların yüzeyleri çini kaplıdır; bazıları çinisiz düz sıvalıdır ve çini kaplı olduğu düşünülmektedir. Çinilerde kare ve altıgen plakalar bazen boş bırakılmış, bazen bitkisel motiflerle bezenmiştir. Yazılar lacivert üstüne beyaz kabartmadır; ayet ve sureler ile Osmanlı dönemine ait renkli sır tekniğinde eklemeler görülür. Giriş sırasındaki ikinci sandukada II. Kılıçarslan'ın adı yazılıdır.",
+        "en": "The wooden door wings have survived intact and are thought to date from the same time as the tomb; they are divided into four panels, with stylised motifs in curved-cut technique and carving and relief elsewhere. The tomb contains eight sarcophagi in total; the first six are arranged southwards from the entrance, the first free-standing and the others adjoining on two platforms; the other two are arranged to the west. The semi-cylindrical sarcophagi on rectangular bases are covered with tiles; some have plain plaster without tiles and are thought to have been tiled. In the tiles, square and hexagonal plates are sometimes left blank and sometimes decorated with floral motifs. The inscriptions are in white relief on dark blue and contain verses and surahs, with Ottoman-period additions in coloured glaze. The name of Kılıçarslan II is written on the second sarcophagus at the entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "179, 181"
+        }
+      ]
+    },
+    {
+      "id": "yatanlar",
+      "order": 4,
+      "title": {
+        "tr": "Burada Yatan Sultanlar",
+        "en": "The Sultans Buried Here"
+      },
+      "body": {
+        "tr": "Kitaba göre burada I. Rükneddin Mesut, II. Kılıçarslan, I. Gıyaseddin Keyhüsrev, II. Rükneddin Süleyman, III. İzzettin Kılıçarslan, I. Alâeddin Keykubat, II. Gıyaseddin Keyhüsrev, IV. Rükneddin Kılıçarslan ve III. Gıyaseddin Keyhüsrev yatmaktadır. I. Rükneddin Mesut'un burada medfun olup olmadığı tartışmalıdır.",
+        "en": "According to the book, the following lie here: Rükneddin Mesut I, Kılıçarslan II, Gıyaseddin Keyhüsrev I, Rükneddin Süleyman II, İzzettin Kılıçarslan III, Alâeddin Keykubat I, Gıyaseddin Keyhüsrev II, Rükneddin Kılıçarslan IV and Gıyaseddin Keyhüsrev III. It is controversial whether Rükneddin Mesut I is buried here."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "181"
+        }
+      ]
+    },
+    {
+      "id": "yakin-tarih",
+      "order": 5,
+      "title": {
+        "tr": "Yağma, Onarım ve Yeniden Defin",
+        "en": "Plunder, Repairs and Reburial"
+      },
+      "body": {
+        "tr": "Millî Mücadele'den sonra bakımsız bırakılan türbede sultanların mumyaları art niyetli kişilerce yağmalanmış, parçaları etrafa atılıp ayaklar altında bırakılmıştır. 1944'te Türk Tarih Kurumu türbeye tahtadan bir kapı yaptırmıştır. 1960'lı yıllardaki temizlik ve restorasyon sırasında sultanların kemikleri toplanıp torbaya konmuş, torbadaki kemikleri köpekler alıp götürmüştür; kemikler sonradan yeniden toplanmış ancak defnedilmeyip farklı yerlere taşınmıştır. DNA analizleri ve kafataslarından yola çıkılarak ayrılan kemikler yeniden kefenlenmiş ve İslami usullerle türbenin cenazeliğine defnedilmiştir. Türbe Vakıflar Bölge Müdürlüğü tarafından 2014-2019 arasında onarılmıştır.",
+        "en": "After the War of Independence the tomb was neglected; the mummies of the sultans were plundered by ill-intentioned people and their pieces were thrown around and trampled. In 1944 the Turkish Historical Society had a wooden door built. During cleaning and restoration in the 1960s the sultans' bones were collected in a bag and the dogs took them away; the bones were later recollected but not buried and were moved to different places. Separated by DNA analysis and skulls, the sultans were shrouded again and reburied by Islamic rites in the tomb's funeral chamber. The tomb was repaired by the Regional Directorate of Foundations between 2014 and 2019."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "176"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "179"
+        }
+      ]
+    },
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Dış plan",
+        "en": "Exterior plan"
+      },
+      "value": "ongen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "178-179"
+        }
+      ]
+    },
+    {
+      "key": "tasima_kaide_yuksekligi",
+      "label": {
+        "tr": "Kare kaide yüksekliği",
+        "en": "Height of square plinth"
+      },
+      "value": 1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "178"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Yusuf İbn-i Abdülgaffar El-Cuhi",
+      "role": {
+        "tr": "Mimar; kitâbede \"Abdülgaffar oğlu Yusuf'un eseri\" yazar",
+        "en": "Architect; the inscription reads \"The work of Yusuf, son of Abdulgaffar\""
+      }
+    },
+    {
+      "name": "II. Kılıçarslan",
+      "role": {
+        "tr": "Türbeyi yaptıran sultan; ikinci sandukada adı yazılıdır",
+        "en": "Sultan who ordered the tomb; his name is on the second sarcophagus"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kilicarslan-kitabesi",
+      "location": {
+        "tr": "Beden duvarında, çini yazı kuşağının altında, iki satır",
+        "en": "On the body wall under the tile writing belt, two lines"
+      },
+      "language": "ar",
+      "script": "other",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap bu kitâbenin metnini vermiyor; \"II. Kılıçarslan'ın kitâbesi\" olarak anıyor.",
+        "en": "The book does not give the text; it calls it the inscription of Kılıçarslan II."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "id": "kule-kitabesi",
+      "location": {
+        "tr": "Doğu taraftaki külah kısmı",
+        "en": "Cone section on the east side"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu imaretin yapılmasını, ulu sultan, din ve dünyanın azizi, İslam ve Müslümanların direği, meliklerin ve sultanların medârı iftiharı, müşriklerin katili, Rum ve Şam beldelerinin sultanı, fetih babası, mü’minlerin emirinin yardımcısı KılıçArslan oğlu Mesud oğlu KılıçArslan -Allah onu aziz kılsın- emretti",
+        "en": "The construction of this imarat was ordered by Kılıçarslan, son of Mesud, son of Kılıçarslan, the saint of religion and the world, the pillar of Islam and Muslims, the source of pride of kings and sultans, the murderer of polytheists, the sultan of the Greek and Damascus regions, the father of conquest, the helper of the commander of the believers."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap dilini belirtmez; Arapça kabul edilmiştir (beden kitâbesi Arapça). Metinde \"imaret\" geçer; yapı türbedir.",
+        "en": "The book does not name the language; Arabic assumed. The text says \"imarat\" although the building is a tomb."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "id": "mimar-kitabesi",
+      "location": {
+        "tr": "Girişin üstündeki pencere kemerinin yukarısında, iki satır celî sülüs",
+        "en": "Above the window arch over the entrance, two lines in celi thuluth"
+      },
+      "language": "ar",
+      "script": "sülüs (celî)",
+      "transliteration": null,
+      "translation": {
+        "tr": "Abdülgaffar oğlu Yusuf’un eseri. Allah onu ve bütün Müslümanları bağışlasın",
+        "en": "The work of Yusuf, son of Abdulgaffar. May Allah forgive him and all Muslims."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Giriş cephesinde Bursa kemeri üstündeki iki satırlık sülüs mimar kitâbesi ile aynı olup olmadığı kitapta açık değil.",
+        "en": "The book does not make clear whether this is the same as the two-line thuluth architect's inscription above the Bursa arch."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "175-176"
+        }
+      ]
+    },
+    {
+      "id": "tas-uzeri-kitabe",
+      "location": {
+        "tr": "Çininin altında, türbenin kendi taşı üzerinde",
+        "en": "Under the tile, on the tomb's own stone"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Metni kitapta verilmiyor; çiçekli ve geometrik süslü zemin üzerine sülüs hatla yazılmıştır.",
+        "en": "Text not given; written in thuluth on a ground decorated with flowers and geometric shapes."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "id": "ayetel-kursi-kusagi",
+      "location": {
+        "tr": "Külahın altındaki çini kitâbenin altında, kabartma yazı kuşağı",
+        "en": "Relief writing band under the tile inscription below the cone"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Lacivert zemin üstünde beyaz çini kabartma; Ayet'el-Kürsi yazılıdır.",
+        "en": "White tile relief on dark blue; the Ayat al-Kursi is written."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "178-179"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1197",
+      "year": 1197,
+      "date": null,
+      "hijri": "594",
+      "type": "construction",
+      "title": {
+        "tr": "Türbe inşa edildi",
+        "en": "The tomb was built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "176"
+        }
+      ]
+    },
+    {
+      "id": "kapi-1944",
+      "year": 1944,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Türk Tarih Kurumu türbeye tahtadan kapı yaptırdı",
+        "en": "The Turkish Historical Society had a wooden door built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "176"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı (2014-2019)",
+        "en": "Repair by the Regional Directorate of Foundations (2014-2019)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "176"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sanduka",
+      "title": {
+        "tr": "Çinili sandukalar",
+        "en": "Tiled sarcophagi"
+      },
+      "hint": {
+        "tr": "Sekiz sanduka, Selçuklu dönemi çinili sandukalarının en güzel örneklerinden sayılır.",
+        "en": "Eight sarcophagi, among the finest of the Seljuk period."
+      },
+      "section_id": "kapi-sanduka"
+    },
+    {
+      "feature": "plan",
+      "title": {
+        "tr": "Ongen plan",
+        "en": "Decagonal plan"
+      },
+      "hint": {
+        "tr": "Ongen plan şemasının uygulandığı tek örnek.",
+        "en": "The only example with a decagonal plan."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe Alâeddin Tepesi'nde, Alaaddin Camii avlusundadır. Dışarıdan ongen, içeriden dairevi planlıdır ve kare bir kaideye oturur. Girişin etrafı Bursa kemeri biçimindedir; üstünde Bizans dönemine ait işlemeli bir mermer pano görülür. Üst örtü içten kubbe, dıştan pramidal külahtır. İçeride Selçuklu sultanlarına ait sekiz sanduka yer alır; yüzeyleri çinilerle kaplıdır.",
+      "en": "The tomb stands in the courtyard of Alâeddin Mosque on Alâeddin Hill. It is decagonal outside and circular inside, resting on a square plinth. The entrance is framed by a Bursa arch with an engraved Byzantine-period marble panel above. The cover is a dome inside and a pyramidal cone outside. Inside are eight sarcophagi of the Seljuk sultans, their surfaces covered with tiles."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

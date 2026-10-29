@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-ic-karaaslan-kumbeti",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapım yılı ve banisi kitapta yok (kitabede yalnızca türbenin kime ait olduğu yazıyor).",
+      "Kitabenin Arapça/Farsça orijinal okunuşu ve dili eklenmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlıkta 'Necmettin Karaarslan', metinde 'Necmüd-din / Ziyaed-din Karaarslan'; İngilizce metinde 'Izzettin Keykavus I (1211-1222)'. Adlar kitapta farklı yazılmış."
+      },
+      {
+        "field": "inscriptions[giris-kitabesi]",
+        "note": "Türkçe 'sait' (mutlu), İngilizce 'saint' (aziz) olarak çevrilmiş; İngilizce 'son of Abraham' Türkçe 'İbrahim oğlu'; her iki çeviri de kitaptan alındı."
+      },
+      {
+        "field": "sections[sanduka]",
+        "note": "İngilizce 'border made of zenith' Türkçe 'zincirek' (chain motif) çevirisi hatalı; Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İç Karaaslan Kümbeti",
+    "en": "İç Karaaslan Kumbet"
+  },
+  "subtitle": {
+    "tr": "Çini mozaikli, özgün Selçuklu sandukalı kümbet",
+    "en": "A kumbet with a tile-mosaic Seljuk sarcophagus"
+  },
+  "alternate_names": [
+    {
+      "tr": "Necmettin Karaarslan Kümbeti",
+      "en": "Necmettin Karaarslan Kumbet"
+    },
+    {
+      "tr": "Karaaslan Türbesi",
+      "en": "Karaaslan Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "kümbet",
+    "sekizgen plan",
+    "çini sanduka",
+    "Ayet-el Kürsi",
+    "celî sülüs kitabe",
+    "Selçuklu",
+    "kripta"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Şems Tebrizi Mahallesi",
+    "address": "Yeşilgözler Sokak üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "156"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl",
+      "en": "13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitabede inşa tarihi yoktur; kitap, mimari özelliklerine bakarak XIII. yüzyılda yapılmış tipik bir Selçuklu türbesi olduğunu belirtir.",
+      "en": "The inscription gives no construction date; the book describes it as a typical Seljuk tomb of the 13th century on the basis of its architecture."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "156"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Giriş kapısındaki celî sülüs kitabeye göre İbrahim oğlu Karaarslan'a ait, XIII. yüzyılda yapıldığı anlaşılan sekizgen planlı kümbet. Mavi zeminli rozet bezemeli çini sandukası günümüze ulaşmış en özgün Anadolu Selçuklu sandukalarından biridir.",
+    "en": "An octagonal kumbet belonging, per the celî thuluth inscription on its door, to Karaarslan son of İbrahim, understood to date to the 13th century. Its tiled sarcophagus with rosettes on a blue ground is one of the most original Anatolian Seljuk sarcophagi to survive."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Kümbet Şems Tebrizi Mahallesi'nde Yeşilgözler Sokak üzerindedir. Giriş kapısının üzerindeki iki satırlık celî sülüs kitabede 'Bu türbe sait, şehit, dinin yıldızı, İslam'ın direği, İbrahim oğlu Karaarslan'ındır. Allah onun kabrini nurlu kılsın' yazar; inşa tarihi verilmez. Ziyaeddin Karaarslan adıyla da anılan Necmeddin Karaarslan, I. İzzettin Keykavus (1211-1222) ve I. Alaaddin Keykubat döneminde hizmet etmiş önemli bir devlet adamıdır. XIII. yüzyıl yapısı olan türbe 1951'de Konya ve Mülhakatı Eski Eserleri Sevenler Derneği tarafından onarılmış, 1980'li yıllarda bitişiğindeki evin istimlakiyle çevresi açılmıştır.",
+        "en": "The kumbet stands on Yeşilgözler Street in Şems Tebrizi Neighborhood. The two-line celî thuluth inscription above the entrance door reads 'This tomb belongs to Karaarslan son of İbrahim, the happy one, the martyr, the star of religion, the pillar of Islam. May God make his grave bright'; it gives no construction date. Necmeddin Karaarslan, also called Ziyaeddin Karaarslan, was an important statesman who served under İzzettin Keykavus I (1211-1222) and Alaaddin Keykubat I. The 13th-century tomb was repaired in 1951 by the Konya Antiquities Lovers' Association, and its surroundings were opened in the 1980s by expropriating the adjoining house."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "156"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe sekizgen planlıdır; üzeri içten kubbe, dıştan külahla örtülüdür. Gövdede muntazam yonu taş, saçak ve külahta tuğla kullanılmıştır. Kripta ve türbe girişi aynı cephededir; kripta kapısının iki yanından yedişer basamakla ana kapıya çıkılır. Kapı açıklığında bir niş ve nişin üzerinde sivri kemerle oluşturulmuş dekoratif bir düzenleme vardır.",
+        "en": "The tomb is octagonal with an inner dome and outer cone. Regularly dressed stone is used in the body, brick in the eaves and cone. The crypt and tomb entrances are on the same facade; the main door is reached by seven steps on each side of the crypt door. The door opening has a niche with a decorative pointed arch above it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "id": "sanduka",
+      "order": 3,
+      "title": {
+        "tr": "Çini Sanduka",
+        "en": "Tile Sarcophagus"
+      },
+      "body": {
+        "tr": "Kubbeyle örtülü iç mekânda dikdörtgen prizma bir kaide üzerinde semerdam çatılı, çini mozaikli bir sanduka bulunur. Kaidedeki çiniler mavi zemin üzerine kabartma ve kalıplama tekniğiyle rozet motifleriyle yapılmıştır; üzerinde zincirek bordür ve bordürde Ayet-el Kürsi yer alır. Çiniler zamanla dökülmüştür. Sanduka günümüze ulaşmış en özgün Anadolu Selçuklu sandukalarından biridir.",
+        "en": "In the domed interior stands a saddle-roofed, tile-mosaic sarcophagus on a rectangular prism base. The base tiles show rosette motifs on a blue ground in relief and molding technique, with a chain border above that carries the Ayat al-Kursi. The tiles have fallen off over time. The sarcophagus is one of the most original Anatolian Seljuk sarcophagi to survive."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "157"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Sekizgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "key": "kripta_basamak",
+      "label": {
+        "tr": "Ana kapıya çıkan basamak (her yanda)",
+        "en": "Steps to the main door (each side)"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "157"
+        }
+      ]
+    },
+    {
+      "key": "sanduka",
+      "label": {
+        "tr": "Sanduka",
+        "en": "Sarcophagus"
+      },
+      "value": "Semerdam çatılı, çini mozaikli",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "157"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Necmeddin (Ziyaeddin) Karaarslan, İbrahim oğlu",
+      "role": {
+        "tr": "Türbenin sahibi; I. İzzettin Keykavus ve I. Alaaddin Keykubat devri devlet adamı",
+        "en": "Occupant of the tomb; statesman under İzzettin Keykavus I and Alaaddin Keykubat I"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, iki satır celî sülüs",
+        "en": "Above the entrance door, two lines in celî thuluth"
+      },
+      "language": "other",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu türbe sait, şehit, dinin yıldızı, İslam'ın direği, İbrahim oğlu Karaarslan'ındır. Allah onun kabrini nurlu kılsın",
+        "en": "This tomb belongs to Karaarslan, the son of Abraham, the saint, the martyr, the star of religion, the pillar of Islam. May God make his grave bright."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "156"
+        }
+      ],
+      "note": {
+        "tr": "Kitabenin dili metinde belirtilmiyor; okunuşu verilmiyor. İnşa tarihi içermez.",
+        "en": "The language of the inscription is not stated and no transliteration is given. It contains no construction date."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1951",
+      "year": 1951,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Konya ve Mülhakatı Eski Eserleri Sevenler Derneği onarımı",
+        "en": "Repair by the Konya Antiquities Lovers' Association"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "156"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sanduka",
+      "title": {
+        "tr": "Çini mozaikli sanduka",
+        "en": "Tile-mosaic sarcophagus"
+      },
+      "hint": {
+        "tr": "Mavi zemin üzerinde rozetler ve Ayet-el Kürsi yazılı bordür.",
+        "en": "Rosettes on a blue ground and a border inscribed with the Ayat al-Kursi."
+      },
+      "section_id": "sanduka"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kümbet, sekiz kenarlı, taş gövdeli ve tuğla külahlı bir yapıdır. Kripta ve türbe girişi aynı cephededir; kripta kapısının iki yanından yedişer basamakla ana kapıya çıkılır. Kapının üzerinde iki satırlık yazılı bir kitabe vardır. İçeride kubbenin altında, dikdörtgen bir kaide üzerinde, eğimli çatılı, mavi ve rozetli çinilerle kaplı bir sanduka bulunur.",
+      "en": "The kumbet is an eight-sided building with a stone body and a brick cone. The crypt and tomb entrances are on the same facade; the main door is reached by seven steps on either side of the crypt door. A two-line inscription is above the door. Inside, under the dome, a saddle-roofed sarcophagus covered in blue rosette tiles stands on a rectangular base."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

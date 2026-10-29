@@ -1,0 +1,204 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-arap-dede-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi, bani ve türbede yatan kişi kitapta yok.",
+      "Dönem (era) kitapta belirtilmiyor.",
+      "Arap Kızı Mezarı ve Yediler Mezarlığı ile ilişki için kayıt id'si yok; ilişki yazılmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "legends[arap-kizi]",
+        "note": "Rivayet 'Arap Kızı Mezarı' ile Arap Dede Türbesi arasındaki bağı açıkça kurmuyor; metin 'türbe ile ilgili farklı rivayetler' diyerek bu hikâyeyi aktarıyor. İngilizce metin 'after the Arap Kızı was built' diyor (Türkçe: 'Arap Kızı Mezarı yapıldıktan sonra')."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Arap Dede Türbesi",
+    "en": "Arap Dede Tomb"
+  },
+  "subtitle": {
+    "tr": "Sedirler'de mahalle halkının baktığı küçük türbe",
+    "en": "A small tomb in Sedirler cared for by locals"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "Arap Kızı rivayeti",
+    "sanduka",
+    "Sedirler",
+    "XIX. yüzyıl"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Sedirler Mahallesi",
+    "address": "Sedirler Sarnıç Camii'nin doğusunda",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "152"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl olabilir",
+      "en": "Possibly 19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Yapım tarihi hakkında bilgi yoktur; mimari özelliklere bakılarak XIX. yüzyılda yapılmış olabileceği düşünülmektedir.",
+      "en": "There is no information about the construction date; judging by its architectural features it may have been built in the 19th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "152"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Yapım tarihi ve banisi bilinmeyen, mimari özelliklerine göre XIX. yüzyıla ait olabileceği düşünülen, tek mekânlı, sandukalı türbe. Onarım ve bakımı halk tarafından sağlanır; çevresinde Arap Kızı rivayeti anlatılır.",
+    "en": "A single-space tomb with a sarcophagus whose date and builder are unknown, thought to possibly date to the 19th century. Its repair and care are provided by locals; a rumor about the 'Arap Kızı' is told around it."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe Sedirler Mahallesi'nde Sedirler Sarnıç Camii'nin doğusundadır. Yapım tarihiyle ilgili bilgi bulunmamakta, mimari özellikleri nedeniyle XIX. yüzyılda yapılmış olabileceği düşünülmektedir. Halk arasında Arap Dede Türbesi olarak bilinen yapının onarım ve bakımı vatandaşlar tarafından sağlanmaktadır.",
+        "en": "The tomb is in Sedirler Neighborhood, east of Sedirler Sarnıç Mosque. There is no information about its date; given its architectural features it may have been built in the 19th century. The tomb, popularly known as Arap Dede Tomb, is repaired and maintained by citizens."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "152"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe kareye yakın dikdörtgen planlı ve tek mekânlıdır. Çeşitli onarımlar geçirmiş olan cepheler sıvalı ve boyalıdır. Giriş cephesinde tek kanatlı bir kapı, sağında kareye yakın dikdörtgen bir pencere ve demir korkuluk vardır. Tavan sonradan ahşap kaplama yapılmıştır. İçeride bir sanduka bulunur.",
+        "en": "The tomb has an almost square rectangular plan and a single space. The facades, which have undergone various repairs, are plastered and painted. The entrance facade has a single-leaf door with an almost square rectangular window and an iron railing to its right. The ceiling was later made as wood veneer. There is a sarcophagus inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "152"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "arap-kizi",
+      "title": {
+        "tr": "Arap Kızı rivayeti",
+        "en": "The Arap Kızı rumor"
+      },
+      "body": {
+        "tr": "Mahalle halkı, çarşaflı ve yüzü görülmeyen bir kadının Arap Kızı Mezarı olarak bilinen yerden Yediler Mezarlığı'na yürüdüğünü ve Arap Kızı Mezarı yapıldıktan sonra kadının ortadan kaybolduğunu rivayet eder. Türbe ile ilgili farklı rivayetler anlatılmaktadır.",
+        "en": "Neighborhood people say that a veiled woman whose face could not be seen walked from the place known as Arap Kızı Grave to Yediler Cemetery, and that she disappeared after the Arap Kızı Grave was built. Different rumors are told about the tomb."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "152"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kareye yakın dikdörtgen, tek mekân",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "152"
+        }
+      ]
+    },
+    {
+      "key": "cephe",
+      "label": {
+        "tr": "Cephe kaplaması",
+        "en": "Facade finish"
+      },
+      "value": "Sıvalı ve boyalı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "152"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, Sedirler Sarnıç Camii'nin doğusunda, kareye yakın dikdörtgen planlı, tek odalı küçük bir yapıdır. Cepheleri sıvalı ve boyalıdır. Giriş cephesinde tek kanatlı bir kapı, sağında demir korkuluklu bir pencere vardır. İçeride bir sanduka bulunur; tavan ahşap kaplamadır.",
+      "en": "The tomb is a small single-room building, almost square in plan, east of Sedirler Sarnıç Mosque. Its facades are plastered and painted. The entrance facade has a single-leaf door and, to its right, a window with an iron railing. Inside is a sarcophagus; the ceiling is covered in wood."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

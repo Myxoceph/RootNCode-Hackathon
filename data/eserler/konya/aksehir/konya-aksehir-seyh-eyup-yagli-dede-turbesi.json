@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-seyh-eyup-yagli-dede-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Dönem (era) kodu: Akşehir'de 1367-68; kitap dönem adı vermiyor, uygun kod seçilemedi, null.",
+      "Sandukadaki tarihin okunuşu ve kitâbe metni kitapta yok.",
+      "Şeyh Eyyüb Efendi'nin yaşadığı dönem kitapta verilmiyor.",
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlıkta \"Şeyh Eyüp\", metinde \"Şeyh Eyyüb Efendi\"; İngilizce başlıkta \"Şey Eyüp\" yazım hatası var."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Eyüp (Yağlı Dede) Türbesi",
+    "en": "Şeyh Eyüp (Yağlı Dede) Tomb"
+  },
+  "subtitle": {
+    "tr": "Dışı kapalı, içi baldaken düzenli türbe",
+    "en": "A tomb closed on the outside with a baldachin interior arrangement"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şeyh Eyyüb Efendi Türbesi",
+      "en": "Şeyh Eyyüb Efendi Tomb"
+    },
+    {
+      "tr": "Yağlı Dede Türbesi",
+      "en": "Yağlı Dede Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "baldaken",
+    "pandantif",
+    "devşirme malzeme",
+    "Yağlı Dede",
+    "ahşap sanduka"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "address": "Kızılca Mahallesi, Mektep Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "196"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 769 / M. 1367-1368 (tahmini)",
+      "en": "AH 769 / AD 1367-1368 (estimated)"
+    },
+    "start_year": 1367,
+    "end_year": 1368,
+    "hijri_year": 769,
+    "century": 14,
+    "basis": {
+      "tr": "İnşa kitâbesi yok; Akşehir Müzesi'ndeki ahşap sanduka üzerindeki tarihe göre türbe H. 769 / M. 1367-1368'de yapılmış olmalıdır.",
+      "en": "No construction inscription; according to the date on the wooden sarcophagus in the Akşehir Museum the tomb must have been built in AH 769 / AD 1367-1368."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "196"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Akşehir'de Kızılca Mahallesi'ndeki, kare planlı, içten kubbeli türbe. Dıştan kapalı görünse de üst kat iç mekânı dört köşe ayağı sivri kemerlerle bağlı eski baldaken düzenini gösterir.",
+    "en": "A square-plan, internally domed tomb in Kızılca Neighborhood, Akşehir. Though closed from outside, the upper floor interior shows an earlier baldachin arrangement with four corner piers linked by pointed arches."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe Akşehir Kızılca Mahallesi, Mektep Sokak'ta yer alır. İnşa kitâbesi yoktur. Türbeye ait ahşap sanduka Akşehir Müzesi'ndedir; üzerindeki tarihe göre türbe H. 769 / M. 1367-1368'de yapılmış olmalıdır. Şeyh Eyyüb Efendi halk arasında Yağlı Dede olarak da anılır; kendini ilme ve ibadete adamış, geceleri sabaha kadar çalışan bir velidir.",
+        "en": "The tomb is in Akşehir, Kızılca Neighborhood, Mektep Street. There is no construction inscription. The wooden sarcophagus of the tomb is in the Akşehir Museum; according to the date on it the tomb must have been built in AH 769 / AD 1367-1368. Şeyh Eyyüb Efendi is also called Yağlı Dede among the public; he is a saint devoted to knowledge and worship, working all night until morning."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "196-197"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kaynaklara göre türbenin asıl planı baldaken tarzındaydı ve tuğladan yapılmıştı. Bugün kare planlıdır; üst örtü içten kubbe, dıştan külahtır ve kurşunla kaplıdır. Beden duvarları moloz taş, kaba yonu taş ve devşirme malzemeyle örülmüştür. Giriş kuzey cephenin ortasındaki bir kapıdandır. Sandukanın bulunduğu üst kat, dış görünüşünden farklı düzenlenmiştir: dört köşede ayaklar sivri kemerlerle birbirine bağlıdır, bu da yapının önceden baldaken planlı olduğunu düşündürür. İç mekân kubbeli olup kubbeye pandantifle geçilir. Akşehir Müzesi'ne kaldırılan ahşap sanduka bitkisel süslemelidir. Dış cephe ile iç mekân plan düzeni arasındaki fark yapıyı önemli kılar.",
+        "en": "According to sources the original plan was baldachin style and built of brick. Today it is square in plan; the cover is a dome inside and a cone outside, covered with lead. The body walls are built of rubble stone, rough-hewn stone and spoliated material. The entrance is a door in the middle of the north facade. The upper floor with the sarcophagus is arranged differently from its exterior: piers at the four corners are linked by pointed arches, suggesting the building was earlier a baldachin. The interior is domed with pendentives for the transition. The wooden sarcophagus, now in the Akşehir Museum, has floral decoration. The difference between the exterior plan and interior arrangement makes the building important."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "196-197"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "yagli-dede-adi",
+      "title": {
+        "tr": "\"Yağlı Dede\" adının kökeni",
+        "en": "Origin of the name \"Yağlı Dede\""
+      },
+      "body": {
+        "tr": "Rivayete göre kandilleri sabaha kadar yansın diye sürekli yağ istediği için halk ona \"Yağlı Dede\" demiştir. Başka bir rivayete göre türbede uzun yıllar mum yakma âdeti olduğundan yerler mum artığıyla dolup yağlandığı için Akşehirliler bu adı vermiştir.",
+        "en": "It is rumoured that people called him \"Yağlı (Oily) Dede\" because he constantly asked for oil for his lamps so they would burn until morning. According to another rumour, because candles were burned in the tomb for many years and the floors were filled with candle residue, the people of Akşehir gave him this name."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "196-197"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kat_plani",
+      "label": {
+        "tr": "Mevcut plan",
+        "en": "Current plan"
+      },
+      "value": "kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "196"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_malzeme",
+      "label": {
+        "tr": "Sanduka malzemesi",
+        "en": "Sarcophagus material"
+      },
+      "value": "ahşap (Akşehir Müzesi'nde)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "196-197"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Eyyüb Efendi (Yağlı Dede)",
+      "role": {
+        "tr": "Türbede yatan veli",
+        "en": "Saint buried in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1367",
+      "year": 1367,
+      "date": null,
+      "hijri": "769",
+      "type": "construction",
+      "title": {
+        "tr": "Türbe yapıldı (sanduka tarihine göre, 1367-1368)",
+        "en": "Tomb built (per sarcophagus date, 1367-1368)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "196"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "baldaken",
+      "title": {
+        "tr": "Dışı kapalı, içi baldaken",
+        "en": "Closed outside, baldachin inside"
+      },
+      "hint": {
+        "tr": "Dört köşe ayağı sivri kemerlerle bağlı eski baldaken düzeni iç mekânda görülür.",
+        "en": "The older baldachin arrangement of four corner piers linked by pointed arches is visible inside."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe kare planlıdır; içten kubbe, dıştan kurşun kaplı bir külahla örtülüdür. Beden duvarları moloz ve kaba yonu taş ile devşirme malzemedir. Giriş kuzey cephenin ortasındadır. İçeride dört köşede, sivri kemerlerle bağlı ayaklar eski bir baldaken düzenini düşündürür; kubbeye pandantiflerle geçilir.",
+      "en": "The tomb is square in plan, with a dome inside and a lead-covered cone outside. The walls are of rubble and rough-hewn stone and spoliated material. The entrance is in the middle of the north facade. Inside, piers at the four corners linked by pointed arches suggest an earlier baldachin; the dome is reached through pendentives."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

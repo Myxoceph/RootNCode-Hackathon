@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-i-izzettin-keykavus-kumbeti",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Yapı tarihine dair yıl kitapta yok; yalnızca XIII. yüzyıl deniyor.",
+      "Sultanın Sivas'taki ölüm/defin tarihi kitapta verilmiyor.",
+      "Kitap \"iki türbe\"den diğerini (II. Kılıçarslan Kümbeti) adlandırmıyor; ilişki yazılmadı.",
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Banî kitapta açıkça \"yaptıran\" diye belirtilmiyor; türbenin I. İzzeddin Keykavus'a ait olduğu söyleniyor, bu yüzden probable."
+      },
+      {
+        "field": "dating",
+        "note": "İngilizce metinde \"Izzeddin Keykavus I\" yazımı kullanılıyor; başlıktaki \"Yarım-Anonim\" adı yapının yarım kalmasına gönderme yapıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Birinci İzzettin Keykavus (Yarım-Anonim) Kümbeti",
+    "en": "İzzettin Keykavus I (Half-Anonymous) Kumbet"
+  },
+  "subtitle": {
+    "tr": "Alaaddin Camii avlusundaki yarım kalmış Selçuklu kümbeti",
+    "en": "The unfinished Seljuk kumbet in the courtyard of Alâeddin Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "I. İzzettin Keykavus Kümbeti",
+      "en": "İzzettin Keykavus I Kumbet"
+    },
+    {
+      "tr": "Yarım-Anonim Kümbet",
+      "en": "Half-Anonymous Kumbet"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "kümbet",
+    "yarım kalmış",
+    "Anadolu Selçuklu",
+    "Alâeddin Tepesi",
+    "mihrap",
+    "sekizgen"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "address": "Alâeddin Tepesi, Alâeddin Camii avlusu",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "182"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl",
+      "en": "13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitap yalnızca \"XIII. yüzyıl Anadolu Selçuklu eseri\" diyor; yıl verilmiyor.",
+      "en": "The book only says \"13th century Anatolian Seljuk work\"; no year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "182"
+      }
+    ]
+  },
+  "founder": {
+    "name": "I. İzzeddin Keykavus",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "182"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Alâeddin Camii avlusundaki iki türbeden yapımı yarım bırakılmış olanı. Selçuklu Sultanı I. İzzeddin Keykavus'a aittir; sultan Sivas'ta ölüp şifahanesine gömülünce tamamlanmamıştır.",
+    "en": "The unfinished one of the two tombs in the courtyard of Alâeddin Mosque. It belongs to Seljuk Sultan İzzeddin Keykavus I and was left incomplete when the sultan died in Sivas and was buried in his healing centre."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe, Alâeddin Tepesi'ndeki Alâeddin Camii avlusunda yer alan iki türbeden yapımı yarım bırakılmış olanıdır. Selçuklu Sultanı I. İzzeddin Keykavus'a aittir; sultan Sivas'ta hastalanarak vefat etmiş ve vasiyeti üzerine aynı yerdeki şifahanesine defnedilmiş, bu yüzden türbe tamamlanmamıştır. XIII. yüzyıl Anadolu Selçuklu eseridir.",
+        "en": "The tomb is the unfinished one of the two tombs in the courtyard of Alâeddin Mosque on Alâeddin Hill. It belongs to Seljuk Sultan İzzeddin Keykavus I, who fell ill and died in Sivas and, by his will, was buried in his healing centre there; the tomb therefore remained incomplete. It is a 13th-century Anatolian Seljuk work."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "182-183"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe bugün altta kripta, üstte kare bir kaideye oturan sekizgen prizmatik bir gövdeden oluşur; özgün örtüsü günümüzde yoktur. Dış cephede muntazam kesilmiş mermer kullanılmıştır. Kripta bölümüne kuzeydeki bir kapıdan merdivenle inilir; haçvari planlı cenazelik çapraz tonozla örtülüdür. Üst kata iki yandaki merdivenlerle çıkılır. Giriş kemerli bir niş içindedir; niş profilli lento ve sövelerle çerçevelenmiş, köşe sütunceleriyle bezenmiş, diş şeklinde dilimlenmiştir. Yapı dıştan sekizgen, içten onikigen planlıdır; kenarlardan birinde giriş, ikisinde pencere, diğerlerinde sağır nişler vardır. Kıble yönündeki tamamlanmış mihrap yarım daire planlıdır; köşeleri sütunceli, kavsarası mukarnas dolguludur, niş içine yarım silindirik bir niş daha oyulmuş, geometrik zincir örgüsü mihrap çerçevesini dolaşır.",
+        "en": "Today the tomb consists of a crypt below and an octagonal prismatic body on a square base above; the original cover does not survive. Regularly cut marble was used on the exterior. The crypt is reached by stairs from a door in the north; the cruciform funeral section is covered with a cross vault. The upper floor is reached by stairs on both sides. The entrance is in an arched niche framed by profiled lintel and jambs, decorated with corner colonnettes and toothed in shape. The plan is octagonal outside and dodecagonal inside; one side has the entrance, two have windows, the others carved blind niches. The completed mihrab facing the qibla is semicircular, with colonnettes at the corners and a muqarnas-filled hood; a further half-cylindrical niche is carved inside the niche and a geometric chain weave runs around the frame."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "183"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_plan",
+      "label": {
+        "tr": "Dış plan",
+        "en": "Exterior plan"
+      },
+      "value": "sekizgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "183"
+        }
+      ]
+    },
+    {
+      "key": "ic_plan",
+      "label": {
+        "tr": "İç plan",
+        "en": "Interior plan"
+      },
+      "value": "onikigen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "183"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "I. İzzeddin Keykavus",
+      "role": {
+        "tr": "Türbenin sahibi Selçuklu sultanı; Sivas'taki şifahanesine gömülmüştür",
+        "en": "Seljuk sultan for whom the tomb was made; buried in his healing centre in Sivas"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "yapi",
+      "title": {
+        "tr": "Yarım kalmış türbe",
+        "en": "Unfinished tomb"
+      },
+      "hint": {
+        "tr": "Sultan Sivas'ta gömüldüğü için tamamlanamamış kümbet; mihrabı tamamlanmıştır.",
+        "en": "Left unfinished as the sultan was buried in Sivas; its mihrab was completed."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe Alâeddin Camii avlusundadır. Altta kripta, üstte kare bir kaideye oturan sekizgen prizma biçimli bir gövde vardır; özgün üst örtüsü yoktur. Dış cephe düzgün kesilmiş mermerdir. Girişin etrafı dişli bir nişle çerçevelenmiştir. İçeride kıble yönünde yarım daire planlı, mukarnaslı bir mihrap bulunur.",
+      "en": "The tomb stands in the courtyard of Alâeddin Mosque. It has a crypt below and an octagonal prismatic body on a square base above; the original cover is missing. The exterior is of neatly cut marble. The entrance is framed by a toothed niche. Inside, on the qibla side, is a semicircular mihrab with muqarnas."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

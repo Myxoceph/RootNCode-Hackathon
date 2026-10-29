@@ -1,0 +1,327 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-ulas-baba-kumbeti",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Dönem (era) kitapta açıkça tek bir döneme bağlanmıyor (XIII. yy. sonu - XIV. yy. başı).",
+      "Kitapta s. 168, 170 ve 171 metinsiz görünüyor (muhtemelen yalnızca görsel); eksik metin varsa kontrol edilmeli.",
+      "Banisi ve yapım yılı kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location / dating",
+        "note": "Konum, tarihleme ve onarım bilgileri metin dosyasında s. 166'da (Ulaş Baba başlığıyla) ve önceki kaydın dosyasının sonunda geliyor; başlık sayfaları '167-171' diyor. Kayıt s. 166-169'a dayanıyor."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metinde 'Derviş Ulaş' ve 'Ulaş Baba' adları aynı kişi için kullanılıyor; Konyalı'nın aktardığı cenazelik bilgileri bir ikinci el kaynak anlatımıdır, yazarların kendi gözlemi değildir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ulaş Baba Kümbeti",
+    "en": "Ulaş Baba Kumbet"
+  },
+  "subtitle": {
+    "tr": "Zikzak tuğla bezemeli kubbesiyle Kalenderî şeyhinin kümbeti",
+    "en": "The kumbet of a Kalenderî sheikh with a zigzag brick dome"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kümbet",
+    "türbe",
+    "Kalenderî",
+    "Derviş Ulaş",
+    "zigzaklı tuğla kubbe",
+    "Sille taşı",
+    "Gödene taşı",
+    "ahşap sanduka"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Ferhuniye Mahallesi",
+    "address": "Parsana Caddesi üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "166"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyılın sonu - XIV. yüzyılın başı",
+      "en": "End of the 13th - beginning of the 14th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitabesi yoktur; plan, malzeme ve örtü sisteminden XIII. yüzyılın sonu ile XIV. yüzyılın başına tarihlendirilir.",
+      "en": "It has no inscription; from its plan, material and covering system it is dated to the end of the 13th and beginning of the 14th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "166"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Selçuklu döneminde yaşamış Kalenderî şeyhi Derviş Ulaş'a ('Ulaş Baba') ait, XIII. yüzyıl sonu - XIV. yüzyıl başına tarihlenen, iki katlı kümbet. Yer altında kalan cenazeliği, beyaz mermer sövelileri ve sarı-kırmızı tuğlalardan zikzak desenli kubbesiyle dikkat çeker.",
+    "en": "A two-storey kumbet of Derviş Ulaş ('Ulaş Baba'), a Kalenderî sheikh who lived in the Seljuk period, dated to the end of the 13th to early 14th century. Notable for its underground funerary chamber, white marble jambs and a dome with zigzag patterns in yellow and reddish bricks."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe Ferhuniye Mahallesi'nde Parsana Caddesi üzerindedir. Kitabesi yoktur; plan, malzeme ve örtü sisteminden XIII. yüzyılın sonu ile XIV. yüzyılın başına tarihlendirilir. 1951'de Eski Eserleri Sevenler Derneği tarafından onarılmış, 1993'te Selçuklu Belediyesi çevre düzenlemesi yapmış ve temizlik çalışmalarını tamamlamıştır. Osmanlı belgelerinde 'Ulaş Baba' olarak geçen Derviş Ulaş, Selçuklu döneminde yaşamış bir Kalenderî şeyhidir.",
+        "en": "The tomb is on Parsana Street in Ferhuniye Neighborhood. It has no inscription; from its plan, materials and covering system it is dated to the end of the 13th and beginning of the 14th century. It was repaired in 1951 by the Association of Lovers of Antiquities, and in 1993 Selçuklu Municipality landscaped it and completed cleaning. Derviş Ulaş, called 'Ulaş Baba' in Ottoman documents, was a Kalenderî sheikh who lived in the Seljuk period."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "166-167"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe kare planlıdır; üzeri içten kubbe, dıştan külahla örtülüdür. Kare planlı cenazelik bölümü toprak altında kalmıştır; İ. Hakkı Konyalı oraya on bir basamaklı bir merdivenle inildiğini, burada bir tabut ve dört duvarda mazgal pencereler bulunduğunu, üzerinin kubbeyle örtülü olduğunu belirtir. Beden duvarlarında kesme taş, yer yer kırmızımsı Sille taşı ve beyaz Gödene taşı, üst örtüde tuğla kullanılmıştır. Cephelerin üst bölümlerinde dikdörtgen mazgal pencereler, kuzey, güney ve batı cephelerin alt bölümlerinde büyük dikdörtgen pencereler vardır; pencereler mermerle vurgulanmıştır.",
+        "en": "The tomb is square with an inner dome and outer cone. The square funerary section lies underground; İ. Hakkı Konyalı states it is reached by an eleven-step staircase, contains a coffin, has loophole windows on its four walls and is covered with a dome. Cut stone, in places reddish Sille stone and white Gödene stone, is used in the body walls and brick in the upper cover. Rectangular loophole windows are in the upper parts of the facades and large rectangular windows in the lower parts of the north, south and west facades, emphasized with marble."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "167"
+        }
+      ]
+    },
+    {
+      "id": "giris-kubbe",
+      "order": 3,
+      "title": {
+        "tr": "Giriş ve Kubbe",
+        "en": "Entrance and Dome"
+      },
+      "body": {
+        "tr": "Üst kat girişi doğudadır; buraya iki yönlü, cephesi profilli, üçer basamaklı merdivenlerle çıkılır. Giriş dışa taşıntılıdır ve beyaz mermerden bir tabla içine alınmıştır. Sivri kemerli kapının kemeri oyuktur, kavak silmelerle çerçevelenmiştir ve kapı üzeri yarım nar motifiyle süslüdür; kapı ve pencere söveleri ile merdivenler beyaz mermerdendir. Sekizgen gövdeli ikinci katı Türk üçgeniyle geçilen bir kubbe örter; kubbe sarı ve kırmızımtırak tuğlaların dikey ve çapraz dizilmesiyle elde edilen zikzak örgülerle süslüdür. Sekiz kollu yıldız biçimindeki bu zikzak daireler eteklerden kubbe merkezine doğru iç içe dizilir.",
+        "en": "The upper-floor entrance is on the east, reached by two-way, three-step stairs with profiled faces. The entrance projects outward and is framed in a white marble plate. The pointed-arch door's arch is hollow, framed with poplar moldings, and the door is decorated with a half-pomegranate motif; door and window jambs and the stairs are white marble. The octagonal second floor is covered by a dome reached by Turkish triangles, decorated with zigzag patterns made by laying yellow and reddish bricks vertically and diagonally. These zigzag circles, shaped like eight-pointed stars, nest from the skirts toward the dome's center."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "167-169"
+        }
+      ]
+    },
+    {
+      "id": "sanduka",
+      "order": 4,
+      "title": {
+        "tr": "Sanduka",
+        "en": "Sarcophagus"
+      },
+      "body": {
+        "tr": "Türbenin sandukası ahşaptır ve yapıya adını veren Ulaş Baba'ya ait olmalıdır.",
+        "en": "The tomb's sarcophagus is of wood and must belong to Ulaş Baba, who gave the building its name."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "169"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare (üst kat gövdesi sekizgen)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "167"
+        }
+      ]
+    },
+    {
+      "key": "cenazelik_basamak",
+      "label": {
+        "tr": "Cenazeliğe inen merdiven basamağı (Konyalı'ya göre)",
+        "en": "Steps down to the funerary section (per Konyalı)"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "167"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Malzeme",
+        "en": "Material"
+      },
+      "value": "Kesme taş, Sille taşı, Gödene taşı; üst örtü tuğla",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "167"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_malzeme",
+      "label": {
+        "tr": "Sanduka malzemesi",
+        "en": "Sarcophagus material"
+      },
+      "value": "Ahşap",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "169"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Derviş Ulaş (Ulaş Baba)",
+      "role": {
+        "tr": "Selçuklu döneminde yaşamış Kalenderî şeyhi; kümbetin adını aldığı kişi",
+        "en": "Kalenderî sheikh of the Seljuk period; namesake of the kumbet"
+      }
+    },
+    {
+      "name": "İbrahim Hakkı Konyalı",
+      "role": {
+        "tr": "Cenazelik bölümünü anlatan kaynak",
+        "en": "Source describing the funerary section"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1951",
+      "year": 1951,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Eski Eserleri Sevenler Derneği onarımı",
+        "en": "Repair by the Association of Lovers of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "166"
+        }
+      ]
+    },
+    {
+      "id": "cevre-1993",
+      "year": 1993,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Selçuklu Belediyesi çevre düzenlemesi ve temizlik",
+        "en": "Landscaping and cleaning by Selçuklu Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "166"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kubbe",
+      "title": {
+        "tr": "Zikzak tuğla kubbe",
+        "en": "Zigzag brick dome"
+      },
+      "hint": {
+        "tr": "Sarı ve kırmızımsı tuğlalarla sekiz kollu yıldız biçiminde iç içe geçen zikzak halkalar.",
+        "en": "Nested zigzag rings in yellow and reddish bricks forming eight-armed stars."
+      },
+      "section_id": "giris-kubbe"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kümbet iki katlıdır. Alt kat, toprak altında kalmış kare planlı cenazeliktir. Üst katın gövdesi sekizgendir ve tepesi bir külahla biter. Duvarlar kesme taştan; yer yer kırmızımsı ve beyaz taşlar kullanılmıştır. Doğudaki giriş, iki yandan üçer basamaklı merdivenle çıkılan ve beyaz mermerle çerçevelenen sivri kemerli bir kapıdır; kapı üzerinde yarım nar motifi vardır. Kubbenin içi sarı ve kırmızımsı tuğlalardan zikzak desenlidir. Sanduka ahşaptır.",
+      "en": "The kumbet has two floors. The lower floor is a square funerary chamber buried underground. The upper floor has an octagonal body and ends in a cone. The walls are cut stone with reddish and white stones in places. The east entrance is a pointed-arch door framed in white marble, reached by three-step stairs from both sides, with a half-pomegranate motif above. The dome interior has a zigzag pattern in yellow and reddish bricks. The sarcophagus is wooden."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

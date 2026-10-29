@@ -1,0 +1,442 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-seydisehir-sultan-hatun-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Seyyid Harun Veli Camii (türbenin güneyinde) ids.md tablosunda yok; ilişki yazılmadı.",
+      "Türbeyi yaptıran kişi metinde açıkça belirtilmiyor ('adına yaptırılmıştır'); founder boş bırakıldı.",
+      "Mezar taşı kitabelerinin metni ve dili kitapta yok; gerekirse sahadan okunmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people / sections[mezarlar]",
+        "note": "Sultan Hatun'un babası s. 208'de 'Emir Şah Bey', s. 209'da 'Turgutoğlu Emir Bey' olarak geçiyor; kaynağa sadık kalındı."
+      },
+      {
+        "field": "dating",
+        "note": "Tarih yalnızca en eski mezar taşından çıkarılıyor; kitap 'bu tarihlerde yapılmış olmalı' diyor, kesin inşa yılı yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sultan Hatun Türbesi",
+    "en": "Sultan Hatun Tomb"
+  },
+  "subtitle": {
+    "tr": "Beş mezarlı, baldaken biçimli Turgutoğulları türbesi",
+    "en": "Baldachin-type tomb of the Turgutoğulları with five graves"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "türbe",
+    "baldaken",
+    "Turgutoğulları",
+    "sanduka",
+    "mezar taşı kitabesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Seydişehir",
+    "neighborhood": "Seyitharun Mahallesi",
+    "address": "153096 Sokak üzerinde, Seyyid Harun Veli Camii'nin kuzeyinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "208"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1422 tarihli mezar taşına göre bu tarihlerde yapılmış olmalı (XV. yüzyıl)",
+      "en": "Must have been built around the date of the 1422 tombstone (15th century)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Yapıda inşa kitabesi yok; içindeki en eski mezar taşı 8 Şaban 825 / 28 Temmuz 1422 tarihlidir ve kitap türbenin bu tarihlerde yapılmış olması gerektiğini söylüyor. Kesin inşa yılı verilmediği için başlangıç/bitiş yılı boş bırakıldı.",
+      "en": "There is no construction inscription; the oldest tombstone inside is dated 8 Şaban 825 / 28 July 1422 and the book says the tomb must have been built around then. No exact construction year is given, so start/end years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "208-209"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Turgutoğullarından Emir Şah Bey'in kızı Sultan Hatun ile Halil Bey oğlu Rüstem Bey adına yaptırılan, kare planlı, baldaken biçimli, içte kubbe dışta piramidal külahla örtülü türbe. İçinde beş mezar bulunur.",
+    "en": "A square-planned, baldachin-shaped tomb, covered by a dome inside and a pyramidal cone outside, built in the name of Sultan Hatun, daughter of Emir Şah Bey of the Turgutoğulları, and Rüstem Bey, son of Halil Bey. It holds five graves."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Türbe Seydişehir'de, Seyitharun Mahallesi'nde 153096 Sokak üzerinde, Seyyid Harun Veli Camii'nin kuzeyinde yer alır. İnşa kitabesi yoktur; içindeki mezar taşı kitabelerinden en eskisi 1422 tarihlidir ve türbenin bu tarihlerde yapılmış olması gerektiği belirtilir. Türbe, Turgutoğullarından Emir Şah Bey'in kızı Sultan Hatun ile Halil Bey oğlu Rüstem Bey adına yaptırılmıştır. 1982 ve 1988'de onarıldığı bilinir; Vakıflar Bölge Müdürlüğü 2006'da tamir etmiştir.",
+        "en": "The tomb stands in Seydişehir, Seyitharun District, on 153096 Street, north of Seyyid Harun Veli Mosque. It has no construction inscription; the oldest tombstone inside is dated 1422 and the tomb must have been built around then. It was built in the name of Sultan Hatun, daughter of Emir Şah Bey of the Turgutoğulları, and Rüstem Bey, son of Halil Bey. It was repaired in 1982 and 1988 and by the Regional Directorate of Foundations in 2006."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "208"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kare planlı, baldaken biçimli yapı içte kubbe, dışta piramidal külahla örtülüdür. Malzeme kesme taştır; kubbe kasnağı ve külah tuğladandır. Cephelere sivri kemerli nişler açılmış, bu nişlerin içine pencereler yerleştirilmiştir. Giriş doğu cephedeki kemer içinde tek kanatlı bir kapıdandır. Kübik gövdeden kubbeye geçiş pandantiflerle sağlanır. Türbe, uygulanan plan özellikleri bakımından farklı örneklerden biridir.",
+        "en": "The square-planned, baldachin-shaped building is covered by a dome inside and a pyramidal cone outside. It is built of cut stone; the dome drum and cone are brick. Pointed-arched niches with windows are opened in the facades. Entry is through a single-winged door in an arch on the east facade. Pendentives make the transition from the cubic body to the dome. The tomb is one of the different examples in terms of its plan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "208-209"
+        }
+      ]
+    },
+    {
+      "id": "mezarlar",
+      "order": 3,
+      "title": {
+        "tr": "Mezarlar",
+        "en": "Graves"
+      },
+      "body": {
+        "tr": "Türbede beş mezar vardır: Turgutoğlu Emir Bey'in kızı Sultan Hatun, Halil Bey oğlu Rüstem Bey, Rüstem Bey'in oğlu Ali Bey, Rüstem Bey'in kızı Dürrühant Hatun ve akrabalığı şüpheli, 1590'da ölmüş Mustafa oğlu Yusuf. En güneydeki mezar Sultan Hatun'undur; beyaz mermerden işlenmiş, yanları burmalı sütuncelerle ve çeşitli motiflerle bezelidir. Diğer dört mezar Selçuklu dönemi tarzında sandukadır. Kaynaklarda gömülü kişilerin tamamının Turgutoğulları Beyliği'ne bağlı olduğu belirtilir.",
+        "en": "There are five graves: Sultan Hatun, daughter of Turgutoğlu Emir Bey; Rüstem Bey, son of Halil Bey; Ali Bey, son of Rüstem Bey; Dürrühant Hatun, daughter of Rüstem Bey; and Yusuf, son of Mustafa, whose kinship is questionable and who died in 1590. The southernmost grave is Sultan Hatun's, of white marble with twisted-sided colonnettes and various motifs. The other four are sarcophagi in the Seljuk-period style. The sources state that all those buried were affiliated with the Turgutoğulları Beylik."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "209"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "mezar_sayisi",
+      "label": {
+        "tr": "Türbedeki mezar sayısı",
+        "en": "Number of graves in the tomb"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "key": "en_eski_mezar_tasi_yili",
+      "label": {
+        "tr": "En eski mezar taşının tarihi (Sultan Hatun)",
+        "en": "Date of oldest tombstone (Sultan Hatun)"
+      },
+      "value": 1422,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "208-209"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Hatun",
+      "role": {
+        "tr": "Emir Şah (Emir) Bey'in kızı; türbe adına yaptırılan kişilerden biri; en güneydeki mezarda yatar",
+        "en": "Daughter of Emir Şah (Emir) Bey; one of those in whose name the tomb was built; buried in the southernmost grave"
+      }
+    },
+    {
+      "name": "Rüstem Bey",
+      "role": {
+        "tr": "Halil Bey oğlu; türbe adına yaptırılan kişilerden biri",
+        "en": "Son of Halil Bey; one of those in whose name the tomb was built"
+      }
+    },
+    {
+      "name": "Ali Bey",
+      "role": {
+        "tr": "Rüstem Bey'in oğlu; sandukası Rebiülevvel 843 / Eylül-Ekim 1439 tarihli",
+        "en": "Son of Rüstem Bey; sarcophagus dated Rebiülevvel 843 / September-October 1439"
+      }
+    },
+    {
+      "name": "Dürrühant Hatun",
+      "role": {
+        "tr": "Rüstem Bey'in kızı; sandukası Muharrem 832 / Ekim-Kasım 1428 tarihli",
+        "en": "Daughter of Rüstem Bey; sarcophagus dated Muharrem 832 / October-November 1428"
+      }
+    },
+    {
+      "name": "Yusuf bin Mustafa",
+      "role": {
+        "tr": "Akrabalığı şüpheli; 1590'da vefat etmiş",
+        "en": "Kinship questionable; died in 1590"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "sultan-hatun-mezar-tasi",
+      "location": {
+        "tr": "Sultan Hatun'un mezarı (en güneydeki)",
+        "en": "Sultan Hatun's grave (southernmost)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 825,
+        "gregorian": "1422-07-28"
+      },
+      "note": {
+        "tr": "Kitap kitabenin metnini vermiyor; yalnızca tarihi (8 Şaban 825 / 28 Temmuz 1422) belirtiyor. Dil kitapta belirtilmiyor.",
+        "en": "The book does not give the text, only the date (8 Şaban 825 / 28 July 1422). The language is not named."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "dyrruhant-hatun-sandukasi",
+      "location": {
+        "tr": "Dürrühant Hatun'un sandukası",
+        "en": "Dürrühant Hatun's sarcophagus"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 832,
+        "gregorian": "1428-10/11"
+      },
+      "note": {
+        "tr": "Metin verilmiyor; tarih Muharrem 832 / Ekim-Kasım 1428. Dil belirtilmiyor.",
+        "en": "Text not given; date Muharrem 832 / October-November 1428. Language not named."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "ali-bey-sandukasi",
+      "location": {
+        "tr": "Ali Bey'in sandukası (soldan birinci)",
+        "en": "Ali Bey's sarcophagus (first from the left)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 843,
+        "gregorian": "1439-09/10"
+      },
+      "note": {
+        "tr": "Metin verilmiyor; tarih Rebiülevvel 843 / Eylül-Ekim 1439. Dil belirtilmiyor.",
+        "en": "Text not given; date Rebiülevvel 843 / September-October 1439. Language not named."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "209"
+        }
+      ]
+    },
+    {
+      "id": "yusuf-bin-mustafa-sandukasi",
+      "location": {
+        "tr": "Küçük sandukalardan ikincisi",
+        "en": "Second of the small sarcophagi"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Yusuf bin Mustafa",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 999,
+        "gregorian": "1590-91"
+      },
+      "note": {
+        "tr": "Kitap yalnızca 'Yusuf bin Mustafa' adının ve H. 999 / M. 1590-91 tarihinin okunduğunu belirtiyor. Dil belirtilmiyor.",
+        "en": "The book only says the name 'Yusuf bin Mustafa' and the date H. 999 / 1590-91 can be read. Language not named."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "209"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "mezar-tasi-1422",
+      "year": 1422,
+      "date": null,
+      "hijri": "8 Şaban 825",
+      "type": "record",
+      "title": {
+        "tr": "En eski mezar taşı (Sultan Hatun): 8 Şaban 825 / 28 Temmuz 1422",
+        "en": "Oldest tombstone (Sultan Hatun): 8 Şaban 825 / 28 July 1422"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "208-209"
+        }
+      ],
+      "note": {
+        "tr": "Kitap türbenin bu tarihlerde yapılmış olması gerektiğini söyler; inşa yılı olarak verilmemiştir.",
+        "en": "The book says the tomb must have been built around this time; it is not given as the construction year."
+      }
+    },
+    {
+      "id": "onarim-1982",
+      "year": 1982,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "208"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1988",
+      "year": 1988,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "208"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından tamir",
+        "en": "Repaired by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "208"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mezarlar",
+      "title": {
+        "tr": "Beş mezar",
+        "en": "Five graves"
+      },
+      "hint": {
+        "tr": "Sultan Hatun'un beyaz mermer mezarı ve dört sanduka.",
+        "en": "Sultan Hatun's white marble grave and four sarcophagi."
+      },
+      "section_id": "mezarlar"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, kare planlı ve baldaken biçimlidir; üzeri içte kubbe, dışta piramidal külahla örtülüdür. Cephelerde sivri kemerli nişler ve içlerinde pencereler vardır. Giriş doğu cephededir. İçeride beş mezar bulunur: en güneydeki beyaz mermer, burmalı sütuncelerle işlenmiş Sultan Hatun mezarı ile Selçuklu tarzında dört sanduka.",
+      "en": "The tomb is square-planned and baldachin-shaped, covered with a dome inside and a pyramidal cone outside. The facades have pointed-arched niches with windows, and the entrance is on the east. Inside are five graves: the southernmost is Sultan Hatun's, of white marble with twisted colonnettes, and four sarcophagi in the Seljuk style."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

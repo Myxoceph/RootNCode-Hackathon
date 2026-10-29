@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-seyh-hasan-i-rumi-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 144 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi, bani ve kimin için yaptırıldığı kitapta yok; founder boş bırakıldı.",
+      "Üst katın Vakıflar Genel Müdürlüğü izniyle ne zaman inşa edildiği kitapta belirtilmiyor; tarih araştırılmalı.",
+      "Osman Rûmi Camii kitapta ayrıca anlatılmıyor; ids.md'de yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[sahsiyet]",
+        "note": "Kardeşlik bağı bu kayıtta 'rivayet edilir' ile veriliyor; Şeyh Osman Rûmi kaydında (s. 145) ise 'Hasan Rûmi de Osman Rûmi'nin kardeşidir' düz cümleyle yazılıyor. İfade farkı korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Hasan-ı Rûmi Türbesi",
+    "en": "Şeyh Hasan-ı Rûmi Tomb"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şeyh Hasan Rûmi Türbesi",
+      "en": "Şeyh Hasan Rûmi Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "cenazelik",
+    "piramidal külah",
+    "yıldız tonoz",
+    "Kalenderî",
+    "Osman Rûmi Camii avlusu"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": null,
+    "address": "Gülbahçe Sokak; Osman Rûmi Camii ve Türbesi'nin de bulunduğu geniş avlunun güneydoğu köşesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "144"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl – XIV. yüzyıl başı (mimari özelliklerine göre)",
+      "en": "13th century to early 14th century (by architectural features)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Yapım tarihi bilinmiyor; mimari özellikleri göz önüne alındığında XIII. ve XIV. yüzyıl başına tarihlendirilebilir.",
+      "en": "The construction date is unknown; considering its architectural features it can be dated to the 13th and early 14th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "144"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram'da Sahip Ata Külliyesi'nin kuzeyinde, Osman Rûmi Camii ve Türbesi'nin bulunduğu avlunun güneydoğu köşesinde yer alan, altta cenazelik, üstte kubbe ve piramidal külahlı bir kat taşıyan türbe. Yapım tarihi ve banisi bilinmez; Şeyh Osman Rûmi'nin kardeşi olduğu rivayet edilen Şeyh Hasan Rûmi'ye aittir.",
+    "en": "A tomb in Meram, north of the Sahip Ata Complex, in the southeast corner of the courtyard that also contains the Osman Rûmi Mosque and Tomb, with a funeral section below and an upper floor with a dome and pyramidal cone. Its date and founder are unknown; it belongs to Şeyh Hasan Rûmi, rumoured to be the brother of Şeyh Osman Rûmi."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-tarih",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarih",
+        "en": "Location and Date"
+      },
+      "body": {
+        "tr": "Türbe Meram'da, Sahip Ata Külliyesi'nin kuzeyinde, Gülbahçe Sokak üzerindedir; Osman Rûmi Camii ve Türbesi'nin de içinde bulunduğu geniş bir avlunun güneydoğu köşesinde yer alır. Yapım tarihi, banisi ve kimin için yaptırıldığı hakkında bilgi yoktur. Birçok onarım geçirmiş ve epeyce değişikliğe uğramış olan türbe mimari özelliklerine göre XIII. ve XIV. yüzyıl başına tarihlenebilir. Cenazeliğin üzerine Vakıflar Genel Müdürlüğü'nün izniyle kübik gövdeli, sekizgen kasnaklı bir üst kat inşa edilmiştir.",
+        "en": "The tomb is in Meram, north of the Sahip Ata Complex on Gülbahçe Street, in the southeast corner of a large courtyard that also contains the Osman Rûmi Mosque and Tomb. There is no information about its construction date, builder or for whom it was built. Having undergone many repairs and considerable change, it can be dated by its architectural features to the 13th and early 14th century. An upper floor with a cubic body and octagonal drum was built over the funeral section with the permission of the General Directorate of Foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "id": "sahsiyet",
+      "order": 2,
+      "title": {
+        "tr": "Şeyh Hasan Rûmi",
+        "en": "Şeyh Hasan Rûmi"
+      },
+      "body": {
+        "tr": "Hayatı hakkında fazla bilgi bulunmayan Şeyh Hasan Rûmi'nin Şeyh Osman Rûmi'nin kardeşi olduğu rivayet edilir.",
+        "en": "Little is known about the life of Şeyh Hasan Rûmi, who is rumoured to be the brother of Şeyh Osman Rûmi."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı kare planlıdır; içten kubbe, dıştan piramidal külahla örtülüdür. Altta cenazelik, üstte dikdörtgenden sekizgene dönüşen bir gövde ve külah bulunur. Türbe taştan yapılmış, içten ve dıştan tamamen sıvalıdır; külah kurşunla kaplıdır. Cenazelik bölümüne giriş Osman Rûmi Camii'nin giriş bölümünün yanından sağlanır; merdivenle inilen cenazelik yarım daire kemerli bir açıklıktan geçilir ve beşik tonozludur, içinde Şeyh Hasan Rûmi'ye ait bir mezar vardır. Üst kata caminin son cemaat mahallinin doğusundaki üç basamaklı merdivenle çıkılır. Güney duvarında harime giriş kapısı, doğu duvarında bir pencere bulunur; sıvalı duvarlar üzerinde tromplarla geçilen yıldız tonoz yapıyı örter. Mermer döşeli zeminde Şeyh Hasan Rûmi'ye ait tek sanduka vardır; kaidesi mermer, sandukası ahşap kaplıdır.",
+        "en": "The building has a square plan, covered by a dome inside and a pyramidal cone outside. It consists of a funeral section below and, above, a body turning from rectangular to octagonal and a cone. It is built of stone, completely plastered inside and out, and the cone is lead-covered. The funeral section is entered from beside the entrance part of the Osman Rûmi Mosque; reached by stairs and a semicircular-arched opening, it has a barrel vault and contains the grave of Şeyh Hasan Rûmi. The upper floor is reached by a three-step staircase east of the mosque's narthex. The south wall has the door into the harim and the east wall a window; a star vault on squinches covers the plastered interior. On the marble floor stands a single sarcophagus of Şeyh Hasan Rûmi, with a marble base and wooden covering."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "144"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "kardes-rivayeti",
+      "title": {
+        "tr": "Osman Rûmi ile kardeşlik",
+        "en": "Brotherhood with Osman Rûmi"
+      },
+      "body": {
+        "tr": "Şeyh Hasan Rûmi'nin, Şeyh Osman Rûmi'nin kardeşi olduğu rivayet edilir.",
+        "en": "Şeyh Hasan Rûmi is rumoured to have been the brother of Şeyh Osman Rûmi."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "144"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Üst kattaki sanduka sayısı",
+        "en": "Sarcophagi on the upper floor"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "key": "ust_kat_merdiven",
+      "label": {
+        "tr": "Üst kata çıkan merdiven basamağı",
+        "en": "Steps of the staircase to the upper floor"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "key": "ust_ortu",
+      "label": {
+        "tr": "Üst kat örtüsü",
+        "en": "Upper floor covering"
+      },
+      "value": "yıldız tonoz, dıştan piramidal külah",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "144"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Hasan Rûmi",
+      "role": {
+        "tr": "Türbede medfun; Osman Rûmi'nin kardeşi olduğu rivayet edilir",
+        "en": "Buried in the tomb; rumoured brother of Osman Rûmi"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-seyh-osman-rumi-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Türbe, Osman Rûmi Camii ve Türbesi'nin de bulunduğu geniş avlunun güneydoğu köşesindedir; Hasan Rûmi'nin Osman Rûmi'nin kardeşi olduğu rivayet edilir.",
+        "en": "The tomb is in the southeast corner of the large courtyard that also holds the Osman Rûmi Mosque and Tomb; Hasan Rûmi is rumoured to be Osman Rûmi's brother."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "144"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-meram-sahip-ata-hanikahi-ve-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Türbe, Sahip Ata Külliyesi'nin kuzeyinde yer alır.",
+        "en": "The tomb lies north of the Sahip Ata Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "144"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, kare planlı, taştan ve tamamen sıvalı bir yapıdır. Altta merdivenle inilen, beşik tonozlu cenazelik; üstünde dikdörtgenden sekizgene dönüşen, kurşun kaplı piramidal külahlı bir gövde vardır. Üst kata üç basamaklı merdivenle çıkılır. Sade, sıvalı iç mekânı tromplarla geçilen yıldız tonoz örter; mermer döşeli zeminde mermer kaideli, ahşap kaplı tek sanduka durur.",
+      "en": "The tomb is a square-plan stone building, completely plastered. Below is a barrel-vaulted funeral section reached by stairs; above it a body turning from rectangular to octagonal carries a lead-covered pyramidal cone. The upper floor is reached by a three-step staircase. A star vault on squinches covers the plain plastered interior, where a single wood-covered sarcophagus on a marble base stands on a marble floor."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

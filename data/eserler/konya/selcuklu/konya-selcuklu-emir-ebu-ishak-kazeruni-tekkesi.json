@@ -1,0 +1,327 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-emir-ebu-ishak-kazeruni-tekkesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kitabenin metni ve dili kitapta yok; eklenmeli.",
+      "Vakıf bilgisi ve bani kitapta yok.",
+      "Onarım yılı kitapta verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Zaviye 'Ebu İshak İbrahim Kazerûnî adına' ve Karamanoğlu Mehmet Bey döneminde yaptırılmış deniyor; yaptıran kişi açıkça belirtilmiyor, bani boş bırakıldı."
+      },
+      {
+        "field": "name",
+        "note": "İngilizce metin ilk cümlede 'The masjid is located' diyor (Türkçe: 'Türbe'); yapı başlıkta tekke/türbe olarak adlandırılıyor."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "'Düz dam' İngilizce metinde 'flat water' olarak çevrilmiş (çeviri hatası); Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Emir Ebu İshak Kazerûni Tekkesi (Türbesi)",
+    "en": "Emir Ebu İshak Kazerûni Tekke (Tomb)"
+  },
+  "subtitle": {
+    "tr": "Hem zaviye hem türbe olarak günümüze ulaşan Karamanoğlu eseri",
+    "en": "A Karamanid work surviving as both zawiya and tomb"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ebu İshak Kazerûni Zaviyesi",
+      "en": "Ebu İshak Kazerûni Zawiya"
+    }
+  ],
+  "type": "tekke",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "tekke",
+    "zaviye",
+    "türbe",
+    "Kazerûni tarikatı",
+    "Karamanoğlu",
+    "şeyh evi",
+    "zikir mekânı",
+    "İhsaniye"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "İhsaniye Mahallesi",
+    "address": "Ertuğrul Sokak üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "160"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 821 / M. 1418",
+      "en": "AH 821 / AD 1418"
+    },
+    "start_year": 1418,
+    "end_year": 1418,
+    "hijri_year": 821,
+    "century": 15,
+    "basis": {
+      "tr": "Zaviyenin iki satırlık kitabesinde yapım tarihi H. 821 / M. 1418 olarak belirtilir.",
+      "en": "The two-line inscription of the zawiya gives the construction date as 821 AH / 1418 AD."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "160"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karamanoğlu Mehmet Bey döneminde, Ebu İshak İbrahim Kazerûnî adına H. 821 / M. 1418'de yaptırılan zaviye. Şeyh Hacı Hasan'ın medfun olduğu türbe, eski zikir mekânı ve şeyh evi ile birlikte günümüze ulaşmıştır; onarılarak ziyarete açılmıştır.",
+    "en": "A zawiya built in 821 AH / 1418 AD in the name of Ebu İshak İbrahim Kazerûnî during the reign of Karamanoğlu Mehmet Bey. With the tomb of Şeyh Hacı Hasan, the former dhikr hall and the sheikh's house, it survives, repaired and open to visitors."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Yapı Selçuklu ilçesi İhsaniye Mahallesi'nde Ertuğrul Sokak üzerindedir. Ebu İshak Kazerûni, Çin, Hindistan, İran ve Anadolu'da İslamiyet'in yayılmasına önemli katkıları olan bir âlimdir; İbrahim Hakkı Konyalı onun birçok yerde (Konya, Erzurum, Bursa, Edirne, Malazgirt) hânikahlar yaptırdığını belirtir. Zaviye Karamanoğlu Mehmet Bey döneminde Ebu İshak İbrahim Kazerûnî adına yaptırılmıştır; iki satırlık kitabesinde tarih H. 821 / M. 1418'dir. Türbede Kazerûnî tarikatı halifelerinden, Karamanoğlu devri meşâyihinden Şeyh Hacı Hasan medfundur. Konya Büyükşehir Belediyesi tarafından onarılan türbe ziyarete açılmıştır.",
+        "en": "The building is in İhsaniye Neighborhood of Selçuklu on Ertuğrul Street. Ebu Ishak Kazerûni was a scholar who contributed much to the spread of Islam in China, India, Iran and Anatolia; İbrahim Hakkı Konyalı states he had khanikahs built in many places (Konya, Erzurum, Bursa, Edirne, Malazgirt). The zawiya was built in his name during Karamanoğlu Mehmet Bey's reign; its two-line inscription gives 821 AH / 1418 AD. Şeyh Hacı Hasan, a caliph of the Kazerûnî order and a sheikh of the Karamanid period, is buried in the tomb. Repaired by Konya Metropolitan Municipality, the tomb is open to visitors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "160"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı kuzey-güney doğrultusunda dikdörtgen planlıdır; moloz taştan yapılmış ve çamur sıvalıdır. İlk dönemlerde düz damlı iken günümüzde çatıyla kapatılmıştır. Cepheler oldukça sadedir: kuzey cephede giriş, iki yanında birer pencere ve üstünde kitabe, doğu cephede demir parmaklıklı büyük bir pencere vardır.",
+        "en": "The building is rectangular in a north-south direction, made of rubble stone and mud-plastered. It had a flat roof originally and is now covered with a pitched roof. The facades are quite plain: the north facade has the entrance with a window on either side and the inscription above, and the east facade has a large iron-barred window."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "160-161"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "Zikir Mekânı, Türbe ve Şeyh Evi",
+        "en": "Dhikr Hall, Tomb and Sheikh's House"
+      },
+      "body": {
+        "tr": "Uzun dikdörtgen mekânda ahşap düz dam vardır; burası eskiden zikir yapılan yer olarak kullanılmıştır. Doğu duvarında iki kapı bulunur: güneydeki kapıdan türbeye geçilir, türbede bir sanduka vardır. Diğer kapıdan, şeyh evi olarak kullanılan hol bölümüne geçilir; ev geleneksel Konya evlerindeki gibi hol ve iki odadan oluşur. Zaviye ve türbe olma özelliğiyle günümüze ulaşan önemli bir Karamanoğlu eseridir.",
+        "en": "The long rectangular space has a wooden flat roof and was formerly used for dhikr. Two doors on its east wall lead, the southern to the tomb, which holds a sarcophagus, and the other to the hall used as the sheikh's house; the house has a hall and two rooms as in traditional Konya houses. With its character as both zawiya and tomb, it is one of the important Karamanid works to survive."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "161"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kuzey-güney doğrultulu dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "160"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Malzeme",
+        "en": "Material"
+      },
+      "value": "Moloz taş, çamur sıva",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "160"
+        }
+      ]
+    },
+    {
+      "key": "sanduka",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "161"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ebu İshak İbrahim Kazerûnî",
+      "role": {
+        "tr": "Zaviyenin adına yapıldığı âlim",
+        "en": "Scholar in whose name the zawiya was built"
+      }
+    },
+    {
+      "name": "Karamanoğlu Mehmet Bey",
+      "role": {
+        "tr": "Zaviyenin yapıldığı dönemin hükümdarı",
+        "en": "Ruler at the time the zawiya was built"
+      }
+    },
+    {
+      "name": "Şeyh Hacı Hasan",
+      "role": {
+        "tr": "Türbede medfun; Kazerûnî tarikatı halifesi",
+        "en": "Buried in the tomb; caliph of the Kazerûnî order"
+      }
+    },
+    {
+      "name": "İbrahim Hakkı Konyalı",
+      "role": {
+        "tr": "Kazerûni'nin vakıf eserleri yaptırdığını belirten kaynak",
+        "en": "Source stating that Kazerûni had foundation works built"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "zaviye-kitabesi",
+      "location": {
+        "tr": "Kuzey cephede girişin üstünde, iki satır",
+        "en": "Above the entrance on the north facade, two lines"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 821,
+        "gregorian": "1418"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "160-161"
+        }
+      ],
+      "note": {
+        "tr": "Kitabenin metni ve dili kitapta verilmiyor; yalnızca H. 821 / M. 1418 tarihi aktarılıyor.",
+        "en": "The text and language of the inscription are not given; only the date 821 AH / 1418 AD is reported."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1418",
+      "year": 1418,
+      "date": null,
+      "hijri": "821",
+      "type": "construction",
+      "title": {
+        "tr": "Zaviye yaptırıldı (H. 821 / M. 1418)",
+        "en": "The zawiya was built (821 AH / 1418 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "160"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sofa",
+      "title": {
+        "tr": "Zikir mekânı ve şeyh evi",
+        "en": "Dhikr hall and sheikh's house"
+      },
+      "hint": {
+        "tr": "Türbenin yanında eski zikir mekânı ve hol-iki odalı şeyh evi görülebilir.",
+        "en": "Beside the tomb, the former dhikr hall and the sheikh's hall-and-two-rooms house can be seen."
+      },
+      "section_id": "ic-mekan"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yapı, kuzey-güney doğrultusunda uzanan dikdörtgen, sade bir taş yapıdır; çamur sıvalı duvarlarının üzeri çatıyla örtülüdür. Kuzey cephedeki girişin iki yanında birer pencere, üstünde iki satırlık bir kitabe bulunur. İçeride uzun bir ahşap tavanlı salon, onun güney ucunda sandukalı türbe ve diğer kapıdan geçilen, bir hol ile iki odadan oluşan şeyh evi vardır.",
+      "en": "The building is a plain rectangular stone structure running north-south, with mud-plastered walls under a pitched roof. The north entrance has a window on each side and a two-line inscription above. Inside are a long hall with a wooden ceiling, the tomb with a sarcophagus at its south end, and, through the other door, the sheikh's house of one hall and two rooms."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

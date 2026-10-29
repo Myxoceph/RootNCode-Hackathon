@@ -1,0 +1,394 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-turgutoglu-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 131-133 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kitâbenin Arapça metni kitapta yok; Mevlâna Müzesi'ndeki kitâbenin okunuşu eklenmeli.",
+      "Türbedeki sandukaların sayısı ve sahipleri kaynaklara göre değişiyor; sahada sayım yapılmalı.",
+      "Sadreddin Konevi Camii ve Türbesi ids.md'de olmadığı için ilişki yazılmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[sandukalar]",
+        "note": "Kitap sandukalar için farklı sayılar aktarır: Konyalı 6 (3 büyük, 3 küçük), Önder 12 sanduka yeri (2 kitâbeli mermer sanduka yerinde), 1923 Konya Rehberi ve M. Zeki Oral farklı kişi listeleri verir; ayrıca metin 'türbede sanduka bulunmamaktadır' der. Hepsi kaynağa sadık aktarıldı, bölüm 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[sandukalar]",
+        "note": "M. Zeki Oral'a göre sandukası buradaki Pir Hüseyin Beyoğlu Hasan Bey'in ölüm tarihi 1409'dur; bu, türbe kitâbesindeki 1432 yapım tarihinden öncedir. Kitap bunu açıklamıyor."
+      },
+      {
+        "field": "founder",
+        "note": "Gövde metni 'Emir Şahoğlu Pir Hüseyin Bey' der; kitâbe mealinde 'Turgutoğlu Emir Şahzade ... Pir Hüseyin Bey' geçer, İngilizce metin 'Turgutoğlu Prince Emir' der. Ad biçimleri kitaptaki gibi korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Turgutoğlu Türbesi",
+    "en": "Turgutoğlu Tomb"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "Turgutoğulları",
+    "Pir Hüseyin Bey",
+    "kubbeli türbe",
+    "kitâbe",
+    "Sadreddin Konevi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Konevi",
+    "address": "Konevi Mahallesi, Turgutoğlu Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "131"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 835 Şevval / M. 1432",
+      "en": "Shawwal 835 AH / 1432 AD"
+    },
+    "start_year": 1432,
+    "end_year": 1432,
+    "hijri_year": 835,
+    "century": 15,
+    "basis": {
+      "tr": "Mevlâna Müzesi bahçesine kaldırılmış olan celi sülüs hatlı Arapça kitâbe.",
+      "en": "The Arabic inscription in celi thuluth, now placed in the garden of the Mevlâna Museum."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "131-132"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Emir Şahoğlu Pir Hüseyin Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "131-132"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Konya'da Sadreddin Konevi Camii ve Türbesi'nin doğusunda, kitâbesine göre 1432'de Turgutoğulları Beyliği hükümdarı Pir Hüseyin Bey'in yaptırdığı, büyük tuğla kubbeli kare planlı türbe. İçindeki sandukaların sayısı ve sahipleri kaynaklarda farklı aktarılmaktadır.",
+    "en": "A square-plan tomb with a large brick dome east of the Sadreddin Konevi Mosque and Tomb in Konya, built in 1432 according to its inscription by Pir Hüseyin Bey, ruler of the Turgutoğulları Principality. Sources report the number and owners of the sarcophagi differently."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-yapim",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yapımı",
+        "en": "Location and Construction"
+      },
+      "body": {
+        "tr": "Türbe Meram, Konevi Mahallesi, Turgutoğlu Sokak üzerindedir; Sadreddin Konevi Camii ve Türbesi'nin doğusunda kalır ve yapıdan bir avlu duvarıyla ayrılır. Çevresinin dolması nedeniyle zemin kotunun altında kalmıştır; çevresinde bir mezarlık olduğu bilinmektedir. Bugün Mevlâna Müzesi bahçesine kaldırılmış kitâbesine göre Emir Şahoğlu Pir Hüseyin Bey tarafından H. 835 / M. 1432'de yaptırılmıştır. Celi sülüs hatlı, üç satırlık Arapça kitâbe, 835 yılı Şevval ayında Karamanzade Mehmet oğlu Sultan İbrahim'in hükümdarlığı zamanında Turgutoğlu Pir Hüseyin Bey'in yapılmasını emrettiğini bildirir.",
+        "en": "The tomb stands on Turgutoğlu Street in Konevi Neighbourhood, east of the Sadreddin Konevi Mosque and Tomb, separated from it by a courtyard wall. It lies below ground level because the surroundings have been filled in, and a cemetery is known to have surrounded it. According to its inscription, now in the garden of the Mevlâna Museum, it was built by Emir Şahoğlu Pir Hüseyin Bey in 835 AH / 1432 AD. The three-line Arabic inscription in celi thuluth records that Pir Hüseyin Bey ordered its construction in Shawwal 835, during the reign of Sultan İbrahim, son of Karamanzade Mehmet."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "131-132"
+        }
+      ]
+    },
+    {
+      "id": "pir-huseyin-bey",
+      "order": 2,
+      "title": {
+        "tr": "Pir Hüseyin Bey",
+        "en": "Pir Hüseyin Bey"
+      },
+      "body": {
+        "tr": "Pir Hüseyin Bey, Konya, Ilgın, Kadınhanı, Sarayönü ve Lâdik yöresinde hüküm süren Turgutoğulları Beyliği'nin sultanıdır. Ilgın ve Sarayönü'nde kendi adıyla anılan camileri ve başka eserleri vardır. Karamanoğulları ile yakın ilişkileri olmuş, Osmanlı-Karamanoğlu mücadelesi sırasında vefat edip buraya defnedilmiştir.",
+        "en": "Pir Hüseyin Bey is the sultan of the Turgutoğulları Principality, which ruled over the Konya, Ilgın, Kadınhanı, Sarayönü and Ladik regions. Mosques and other works bear his name in Ilgın and Sarayönü. He had close relations with the Karamanoğulları and died during the Ottoman-Karamanoğlu struggle and was buried here."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "132"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Türbenin etrafındaki mezarlar 1940'lı yıllarda kaldırılmış, türbe 1958'de halk tarafından tamir edilmiştir; bu onarımda kitâbenin yerinden sökülmüş olabileceği düşünülmektedir. 1998'de Vakıflar Genel Müdürlüğü tarafından tamir edilmiştir. Kitâbe önceleri kapının üzerinde iken onarım sırasında avlu kapısının üstüne konmuş, kapı kapatılınca buradan da alınıp müzeye kaldırılmıştır.",
+        "en": "The graves around the tomb were removed in the 1940s and the tomb was repaired by the public in 1958; the inscription may have been removed during this repair. It was repaired by the General Directorate of Foundations in 1998. The inscription, formerly over the door, was moved over the courtyard gate during the repair and, when the door was closed, taken from there to the museum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "132-133"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe, kare planlı bir yapı üzerinde büyük bir kubbeyle örtülüdür. Güney, batı ve kuzey cephelerinde basık yuvarlak kemerli boşluklar içinde altta taş söveli dikdörtgen pencereler, üstte kemer aynasının boş bırakılmasıyla oluşan tepe pencereleri vardır; pencerelerin önünde basit demir parmaklıklar bulunur. Doğrudan duvarlara oturan tuğla örgülü yüksek kubbenin yüzeyinde üçgen formlu dört sıra tuğla çıkıntı, kubbe eteğinin hemen üstünden başlayıp tepeye yakın bir alanda biter. İçeriye alçak bir eşikle girilir; duvarlar harç ve beyaz badanalıdır, zemin düzgün taşla kaplıdır, pandantiflerle geçilen kubbe sade tuğla örgülüdür.",
+        "en": "The tomb is covered with a large dome on a square-plan structure. On the south, west and north façades, within flat round-arched recesses, are rectangular windows with stone jambs below and skylights formed by leaving the arch tympanum empty above, with simple iron bars in front. On the surface of the high brick dome, which sits directly on the walls, four rows of triangular brick projections start just above the dome skirt and end near the top. The interior is entered over a low threshold; the walls are plastered with mortar and whitewash, the floor is paved with smooth stones, and the dome, reached by pendentives, is plainly built of smooth bricks."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "132-133"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 5,
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbede sanduka yoktur; ancak ortada sanduka büyüklüğünde geometrik süslemeli bir alan sandukanın burada olabileceğini düşündürür. İ. H. Konyalı, İbrahim Demirtaş'tan rivayetle burada üçü büyük, üçü küçük altı sanduka olduğunu söyler. M. Önder, türbede on iki sanduka yeri bulunduğunu, kitâbeli iki mermer sandukanın yerinde bırakıldığını, diğerlerinin ihmal yüzünden kaybolduğunu ya da kırıldığını yazar. 1923 tarihli Konya Rehberi, Pir Hüseyin Beyoğlu Ahmet Bey ile Nefise Hatun, Bağdat Hatun, Sultan Hatun, Hondi Hatun ve Ömer Bey'in de burada yattığını belirtir. M. Zeki Oral ise Pir Hüseyin Beyoğlu Hasan Bey (ö. 1409), Erdoğan Bey kızı Fatma Hatun (ö. 1469), Süleymanşah kızı Cihanşah Hatun (ö. 1470) ve Mehmet Şah'a ait sandukaların bulunduğunu kaydeder.",
+        "en": "There is no sarcophagus in the tomb, but an area of sarcophagus size with geometric decoration in the middle suggests there may have been one. İ. H. Konyalı, relaying İbrahim Demirtaş, says there are six sarcophagi here, three large and three small. M. Önder writes that there are twelve sarcophagus places in the tomb, that two marble sarcophagi with inscriptions were left in place and the others were lost or broken through neglect. The 1923 Konya Guide states that Pir Hüseyin's son Ahmet Bey, Nefise Hatun, Bağdat Hatun, Sultan Hatun, Hondi Hatun and Ömer Bey are also buried here. M. Zeki Oral records sarcophagi of Pir Hüseyin's son Hasan Bey (d. 1409), Erdoğan Bey's daughter Fatma Hatun (d. 1469), Süleymanşah's daughter Cihanşah Hatun (d. 1470) and Mehmet Şah."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "133"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kitabe_satir_sayisi",
+      "label": {
+        "tr": "Kitâbe satır sayısı",
+        "en": "Inscription lines"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "131"
+        }
+      ]
+    },
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "132"
+        }
+      ]
+    },
+    {
+      "key": "tugla_cikinti_sirasi",
+      "label": {
+        "tr": "Kubbe yüzeyindeki üçgen tuğla çıkıntı sırası",
+        "en": "Rows of triangular brick projections on the dome"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "133"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Emir Şahoğlu Pir Hüseyin Bey",
+      "role": {
+        "tr": "Banî; Turgutoğulları Beyliği hükümdarı, burada defnedildiği belirtilir",
+        "en": "Founder; ruler of the Turgutoğulları Principality, said to be buried here"
+      }
+    },
+    {
+      "name": "Sultan İbrahim (Karamanzade Mehmet oğlu)",
+      "role": {
+        "tr": "Kitâbede adı geçen hükümdar",
+        "en": "Ruler named in the inscription"
+      }
+    },
+    {
+      "name": "Hasan Bey",
+      "role": {
+        "tr": "Pir Hüseyin Beyoğlu; M. Zeki Oral'a göre sandukası burada (ö. 1409)",
+        "en": "Pir Hüseyin's son; according to M. Zeki Oral his sarcophagus is here (d. 1409)"
+      }
+    },
+    {
+      "name": "Fatma Hatun",
+      "role": {
+        "tr": "Erdoğan Bey kızı; M. Zeki Oral'a göre sandukası burada (ö. 1469)",
+        "en": "Daughter of Erdoğan Bey; according to M. Zeki Oral her sarcophagus is here (d. 1469)"
+      }
+    },
+    {
+      "name": "Cihanşah Hatun",
+      "role": {
+        "tr": "Süleymanşah kızı; M. Zeki Oral'a göre sandukası burada (ö. 1470)",
+        "en": "Daughter of Süleymanşah; according to M. Zeki Oral her sarcophagus is here (d. 1470)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Önceleri kapının üzerinde; bugün Mevlâna Müzesi bahçesinde",
+        "en": "Formerly over the door; now in the garden of the Mevlâna Museum"
+      },
+      "language": "ar",
+      "script": "celi sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu makberin, bu mübarek türbe-i şerifin yapılmasını 835 yılı Şevval ayında büyük sultan, muazzam şehinşah, bendelerin maliki, Arap ve Acem sultanlarının seyyidi, Karamanzade Mehmet'in oğlu Sultan İbrahim'in hükümdarlığı zamanında, Turgutoğlu Emir Şahzade yüksek haysiyetli büyük emir Pir Hüseyin Bey emretti.",
+        "en": "Emir Pir Hüseyin Bey, a highly dignified grand man, ordered the building of this mausoleum, this holy shrine, in the month of Shawwal in 835, during the reign of the great sultan, the magnificent prince, the lord of the lands, the lord of the Arab and Persian sultans, the son of Karamanzade Mehmet, Sultan İbrahim, Turgutoğlu Prince Emir."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 835,
+        "gregorian": "1432"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "131-132"
+        }
+      ],
+      "note": {
+        "tr": "Üç satır; Arapça metin kitapta verilmiyor. Meal kitaptaki 'mealen' metnidir; İngilizce metin sıralamayı farklı aktarır.",
+        "en": "Three lines; the Arabic text is not given in the book. The translation is the book's 'mealen' text; the English text orders the clauses differently."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1432",
+      "year": 1432,
+      "date": null,
+      "hijri": "835 Şevval",
+      "type": "construction",
+      "title": {
+        "tr": "Pir Hüseyin Bey türbeyi yaptırdı (Şevval 835)",
+        "en": "Pir Hüseyin Bey had the tomb built (Shawwal 835)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "131-132"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Halk tarafından tamir edildi; kitâbe bu sırada sökülmüş olabilir",
+        "en": "Repaired by the public; the inscription may have been removed then"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "132"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1998",
+      "year": 1998,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tamiri",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "132"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, kare planlı ve büyük tuğla kubbeli bir yapıdır; çevresi dolduğu için zemin kotunun altında kalmıştır. Kubbenin yüzeyinde dört sıra üçgen tuğla çıkıntı yer alır. Üç cephede demir parmaklıklı küçük pencereler vardır. Alçak bir eşikten girilen içeride duvarlar beyaz badanalı, zemin taş döşelidir; kubbe pandantiflerle geçilen sade bir tuğla örgüdür. Ortada sanduka büyüklüğünde geometrik süslemeli bir alan vardır, sanduka yoktur.",
+      "en": "The tomb is a square-plan building with a large brick dome and, because the surroundings were filled in, lies below ground level. Four rows of triangular brick projections decorate the dome surface. Three façades have small iron-barred windows. Inside, entered over a low threshold, the walls are whitewashed and the floor stone-paved; the dome, reached by pendentives, is plain brickwork. In the middle is a sarcophagus-sized area with geometric decoration, but no sarcophagus."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-seydisehir-seyit-harun-veli-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Seyyid Harun Veli Camii'nin kaydı ids.md'de yok; ilişki yazılmadı (Halife Sultan Türbesi kaydında Harun Veli türbesine ilişki var).",
+      "Seyyid Harun Veli'nin kurduğu medrese kitapta anılıyor ama kaydı ids.md'de yok.",
+      "Dönem (era) kodu: kitap dönem adı vermiyor; null bırakıldı.",
+      "Yaptıran kişi kitapta belirtilmiyor; founder null.",
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architecture",
+        "note": "Türkçe metin türbeyi \"dikdörtgen planlı\" diye tanımlarken aynı paragrafta \"kare planlı gövde\" diyor; ikisi birlikte korundu."
+      },
+      {
+        "field": "dating",
+        "note": "Kitâbe 720'de ölümü verir; kitap \"1320'li yıllarda yaptırıldı\" der. Kesin yapım yılı verilmediğinden start_year/end_year null bırakıldı."
+      },
+      {
+        "field": "name",
+        "note": "Kitâbede \"Seydi Harun\", metinde \"Seyid/Seyyid/Seyyit Harun Veli\" geçer."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Seyit Harun Veli Türbesi",
+    "en": "Seyit Harun Veli Tomb"
+  },
+  "subtitle": {
+    "tr": "Seydişehir'in kurucusu Seyyid Harun Veli'nin H. 720 tarihli türbesi",
+    "en": "The AH 720 tomb of Seyyid Harun Veli, founder of Seydişehir"
+  },
+  "alternate_names": [
+    {
+      "tr": "Seyyid Harun Veli Türbesi",
+      "en": "Seyyid Harun Veli Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "Seydişehir kurucusu",
+    "ahşap kapı kanatları",
+    "çini şahide",
+    "Bizans devşirme",
+    "kitabe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Seydişehir",
+    "address": "Seyitharun Mahallesi, 153096 Sokak, Seyyid Harun Veli Camii'nin kuzey cephesinin batı köşesine bitişik",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "205"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 720 / 1320'li yıllar",
+      "en": "AH 720 / 1320s"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 720,
+    "century": 14,
+    "basis": {
+      "tr": "Kitâbe, türbenin Seydi Harun'un 23 Rebiülevvel 720'deki (Nisan 1320) ölümü üzerine inşa edildiğini bildirir; kitap 1320'li yıllarda yaptırıldığını söyler.",
+      "en": "The inscription says the tomb was built upon the death of Seydi Harun on 23 Rabi al-Awwal 720 (April 1320); the book says it was built in the 1320s."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "205"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Seydişehir'in kurucusu Seyyid Harun Veli'nin ölümü üzerine 1320'li yıllarda, Seyyid Harun Veli Camii'ne bitişik yaptırılan türbe. Kesme taştan, içten kubbeli ve dıştan çokgen külahlıdır; çinili şahideli sandukası ve nadide ahşap kapı kanatlarıyla bilinir.",
+    "en": "A tomb built in the 1320s against Seyyid Harun Veli Mosque after the death of Seyyid Harun Veli, founder of Seydişehir. It is of cut stone with a dome inside and a polygonal cone outside, known for its tile-covered sarcophagus headstone and rare wooden door wings."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe Seydişehir, Seyitharun Mahallesi, 153096 Sokak üzerindedir; Seyyid Harun Veli Camii'nin kuzey cephesinin batı köşesine bitişik inşa edilmiştir. Kapısı üzerindeki kitâbe mealen şöyledir: \"Bu kutlu türbe, yoksulların efendisi, Allah'ın rahmetine kavuşmuş ve günahları bağışlanmış olan Seydi Harun'un 23 Rebiülevvel 720'de (Nisan 1320) ölümü üzerine inşa edildi.\" Buna göre türbe 1320'li yıllarda yaptırılmıştır. Nadide ahşap kapı kanatları yerinden alınıp Konya'daki Sahip Ata Vakıf Müzesi'ne nakledilmiştir. Türbe 1970, 1980 ve 2006'da Vakıflar Genel Müdürlüğü tarafından onarılmıştır.",
+        "en": "The tomb is in Seydişehir, Seyitharun Neighborhood, Street 153096, built against the western corner of the northern facade of Seyyid Harun Veli Mosque. The inscription over its door reads: \"This holy tomb was built upon the death of Seydi Harun, the lord of the poor, who had attained the mercy of Allah and whose sins were forgiven, on 23 Rabi al-Awwal 720 (April 1320).\" Accordingly it was built in the 1320s. The rare wooden door wings were removed and transferred to the Sahip Ata Foundation Museum in Konya. It was repaired by the General Directorate of Foundations in 1970, 1980 and 2006."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "205-206"
+        }
+      ]
+    },
+    {
+      "id": "kisi",
+      "order": 2,
+      "title": {
+        "tr": "Seyyid Harun Veli",
+        "en": "Seyyid Harun Veli"
+      },
+      "body": {
+        "tr": "Seyyid Harun Veli XIII. yüzyılda Horasan'dan gelip Seydişehir'e yerleşmiş büyük velilerdendir ve Seydişehir'in kurucusudur. Seydişehir'de kurduğu medresede âlimler ve veliler yetiştirilmiştir. Bir döneme damgasını vuran önemli âlim ve mutasavvıflardandır.",
+        "en": "Seyyid Harun Veli is one of the great saints who came from Khorasan in the 13th century and settled in Seydişehir, and is the founder of Seydişehir. Scholars and saints were trained in the madrasa he founded there. He is one of the important scholars and Sufis who left his mark on an era."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "206"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe dikdörtgen planlıdır; üzeri içten kubbe, dıştan çokgen külahla kapatılmıştır. Kare planlı gövdenin üst kısmına bir sıra silmeli taş yerleştirilmiştir. Malzeme kesme taştır. Üst örtü çok yüksek değildir, külah içe doğru kıvrılır. Kuzey cephedeki basık kemerli çift kanatlı ahşap kapıdan girilir; kapı üstünde tek satırlık yatay dikdörtgen bir kitâbe vardır. Batı ve doğu cephelerinde pencereler bulunur; doğudaki pencerede Bizans dönemine ait devşirme bir malzeme atkı taşı olarak kullanılmıştır. İçeride tuğladan bir sanduka vardır; şahidesi farklı biçimlerde kesilmiş firuze-mor çini plakalarla kaplıdır, kemerli kısmında alçı baskı tekniğinde rûmi ve palmet frizi görülür.",
+        "en": "The tomb has a rectangular plan; it is covered with a dome inside and a polygonal cone outside. A row of moulded stone is set on the upper part of the square body. The material is cut stone. The cover is not very high and the cone curves inwards. It is entered through a flat-arched double-winged wooden door on the north facade, above which is a single-line horizontal rectangular inscription. There are windows on the west and east facades; in the east window Byzantine-period spoliated material is used as lintel. Inside is a brick sarcophagus; its headstone is covered with turquoise-purple tile plates cut in different forms, with a frieze of rumi and palmettes in plaster printing technique on its arched part."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "206"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "onarim_yillari",
+      "label": {
+        "tr": "Onarım yılları",
+        "en": "Repair years"
+      },
+      "value": "1970, 1980, 2006",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "206"
+        }
+      ]
+    },
+    {
+      "key": "kapi_muze",
+      "label": {
+        "tr": "Ahşap kapı kanatlarının bulunduğu yer",
+        "en": "Where the wooden door wings are"
+      },
+      "value": "Sahip Ata Vakıf Müzesi, Konya",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "205-206"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyyid Harun Veli (Seydi Harun)",
+      "role": {
+        "tr": "Türbenin sahibi; Seydişehir'in kurucusu; 23 Rebiülevvel 720'de (Nisan 1320) öldü",
+        "en": "Occupant; founder of Seydişehir; died 23 Rabi al-Awwal 720 (April 1320)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Kapı üzerinde, tek satırlık yatay dikdörtgen",
+        "en": "Above the door, single-line horizontal rectangle"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu kutlu türbe, yoksulların efendisi, Allah’ın rahmetine kavuşmuş ve günahları bağışlanmış olan Seydi Harun’un 23 Rebiülevvel 720’de (Nisan 1320) ölümü üzerine inşa edildi",
+        "en": "This holy tomb was built upon the death of Seydi Harun, the lord of the poor, who had attained the mercy of Allah and whose sins were forgiven, on 23 Rabi al-Awwal 720 (April 1320)."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 720,
+        "gregorian": "1320-04"
+      },
+      "note": {
+        "tr": "Dili ve orijinal okunuşu kitapta verilmiyor; meal kitabın \"mealen\" aktarımıdır.",
+        "en": "Language and original reading are not given; the translation is the book's own rendering."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "205-206"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vefat-1320",
+      "year": 1320,
+      "date": null,
+      "hijri": "720",
+      "type": "record",
+      "title": {
+        "tr": "Seyyid Harun Veli vefat etti; türbe bunun üzerine yaptırıldı",
+        "en": "Seyyid Harun Veli died; the tomb was built on that occasion"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "205"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1970",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "206"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1980",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "206"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "206"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sahide",
+      "title": {
+        "tr": "Çinili şahide",
+        "en": "Tiled headstone"
+      },
+      "hint": {
+        "tr": "Şahide firuze-mor çini plakalarla kaplı; kemerli kısımda alçı baskı rûmi-palmet frizi var.",
+        "en": "The headstone is covered with turquoise-purple tile plates with a plaster-printed rumi-palmette frieze on its arch."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, Seyyid Harun Veli Camii'nin kuzey cephesinin batı köşesine bitişiktir. Kesme taştan yapılmıştır; içten kubbe, dıştan çokgen, içe kıvrılan alçak bir külah örter. Girişi kuzey cephededir; kapı üzerinde tek satırlık bir kitâbe bulunur. İçeride tuğladan bir sanduka vardır ve şahidesi firuze-mor çini plakalarla kaplıdır.",
+      "en": "The tomb is attached to the western corner of the north facade of Seyyid Harun Veli Mosque. It is of cut stone, with a dome inside and a low, inward-curving polygonal cone outside. The entrance is on the north facade with a single-line inscription above the door. Inside is a brick sarcophagus whose headstone is covered with turquoise-purple tile plates."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

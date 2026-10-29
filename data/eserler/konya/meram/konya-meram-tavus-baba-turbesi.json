@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-tavus-baba-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Türbeler",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 128-129 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Türbede yatan kişinin kimliği (Tavus Baba/Tavus Hanım/Şeyh Tavus Mehmet) kitapta kesinleşmiyor; araştırılmalı.",
+      "Menkıbelerin içeriği kitapta aktarılmıyor; yalnızca varlıkları belirtiliyor.",
+      "Yakındaki darülhuffaz ve cami kitapta ayrıca anlatılmıyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Metin önce banisinin bilinmediğini, sonra 'Tavus Hanım'ın türbenin banisi olarak kabul gördüğünü' söylüyor; kimliği ve cinsiyeti de tartışmalı olduğundan founder 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[kimlik]",
+        "note": "Kaynaklar Tavus Baba'yı erkek (Şeyh Tavus Mehmet; Hindistan menşeli) ya da hanım (Tavus Hanım) olarak veriyor. Kitap görüşlerin hangisinin doğru olduğunu kesinleştirmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tavus Baba Türbesi",
+    "en": "Tavus Baba Tomb"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "eyvan tarzı türbe",
+    "cenazelik",
+    "Tavus Hanım",
+    "Tavus Baba Tepesi",
+    "tartışmalı kimlik"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Durunday",
+    "address": "Durunday Mahallesi, Tavusbaba Sokak (Tavus Baba Tepesi)",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "128"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl (olabilir)",
+      "en": "13th century (possibly)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Yapının mevcut hâline bakılarak XIII. yüzyılda yapılmış olabileceği düşünülmektedir; inşa tarihini veren kitâbe veya belge yoktur.",
+      "en": "Judging by its present state, it can be thought to have been built in the 13th century; no inscription or document gives its construction date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "128"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Tavus Hanım (Tavus Baba)",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "128-129"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram'da, Tavus Baba Tepesi'nde, darülhuffaz ve caminin batısında yer alan, yalnızca cenazelik katı günümüze ulaşmış Selçuklu dönemi türbesi. Kimliği ve cinsiyeti tartışmalı Tavus Baba'ya ait olduğu söylenir; çapraz tonozlu cenazelik katından özgün hâlinin eyvan tarzı bir türbe olduğu anlaşılır.",
+    "en": "A Seljuk-period tomb in Meram on Tavus Baba Hill, west of the darülhuffaz and the mosque, of which only the funeral floor survives. It is said to belong to Tavus Baba, whose identity and gender are disputed; the cross-vaulted funeral floor shows that it was originally an iwan-style tomb."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-tarih",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarih",
+        "en": "Location and Date"
+      },
+      "body": {
+        "tr": "Türbe Meram, Durunday Mahallesi, Tavusbaba Sokak üzerinde, Tavus Baba Tepesi'nde, darülhuffaz ve caminin batısındadır. İnşa tarihi, banisi, ustası ve türbede yatan kişi hakkında bilgi veren herhangi bir kitâbe veya belge yoktur; mevcut hâliyle XIII. yüzyılda yapılmış olabileceği düşünülebilir.",
+        "en": "The tomb stands on Tavus Baba Hill in Durunday Neighbourhood, on Tavusbaba Street, west of the daru'l-huffaz and the mosque. No inscription or document gives information about the construction date, the founder, the master or the person buried; in its present form it can be thought to date from the 13th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "128"
+        }
+      ]
+    },
+    {
+      "id": "kimlik",
+      "order": 2,
+      "title": {
+        "tr": "Tavus Baba'nın Kimliği",
+        "en": "The Identity of Tavus Baba"
+      },
+      "body": {
+        "tr": "Tavus Baba'nın kimliği kesin olarak bilinmemektedir. İbrahim Hakkı Konyalı, Hatamu Dede Zaviyesi'nin Meram'da, Tavus Baba Türbesi'nin yanında olduğunu ve Tavus Baba'nın bu zaviyenin şeyhlerinden biri olabileceğini tahmin eder; M. Mesut Koman ve Mehmet Önder de türbede yatanın Şeyh Tavus Mehmet olabileceği görüşündedir. Başka bir rivayete göre asıl adı Mehmet'tir, memleketi Hindistan'dır ve Rüknettin Süleyman ile I. Alâeddin Keykubat dönemlerinde yaşamış önemli şeyhlerdendir. Eflaki'nin eserinde bir Tavus Hanım'dan söz edilir. Kitâbe veya yazılı belge olmadığı için Tavus Baba'nın erkek mi kadın mı olduğu açıklığa kavuşmamıştır; kaynaklara ve genel görüşe göre Mevlâna zamanında yaşamış olan Tavus Baba'nın hanım olduğu, Tavus Hanım'ın da türbenin banisi sayıldığı belirtilir.",
+        "en": "The identity of Tavus Baba is not known for certain. İbrahim Hakkı Konyalı estimates that the Hatamu Dede Zawiya was in Meram next to the Tavus Baba Tomb and that Tavus Baba may have been one of its şeyhs; M. Mesut Koman and Mehmet Önder also hold that the person buried may be Şeyh Tavus Mehmet. According to another rumour his real name is Mehmet, his homeland is India, and he was an important şeyh who lived under the Anatolian Seljuk Sultan Rüknettin Süleyman and Alâeddin Keykubat I. A Tavus Hanım is mentioned in Eflaki's work. Since there is no inscription or written document, it has not been clarified whether Tavus Baba was a man or a woman; according to the sources and general opinion, Tavus Baba, who lived in the time of Mevlâna, was a lady, and Tavus Hanım is accepted as the patron of the tomb."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "128-129"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar ve Mimari",
+        "en": "Repairs and Architecture"
+      },
+      "body": {
+        "tr": "Türbe 1905'te Abdülvahit Çelebi tarafından tamir ettirilmiş, 1958'de bir hayırseverin himayesinde onarılıp duvarları çimentoyla derzlenmiş, en son 1998'de Vakıflar Bölge Müdürlüğü'nce restore edilmiştir. Özgün hâlinden yalnızca cenazelik katı günümüze gelmiş, üst kısmı tamamen yıkılmıştır. Cenazelik katı dikdörtgen planlıdır; içte tuğla, dışta moloz taşla örülmüş, üstü çapraz tonozla örtülmüştür; buradan eserin özgün hâlinin eyvan tarzında bir türbe olduğu anlaşılır. Sanduka özgün değildir; harçla sıvanmış sade bir görünümdedir. Batı duvarındaki pencere aşağı indirilip dolap hâline getirilmiştir.",
+        "en": "The tomb was repaired by Abdülvahit Çelebi in 1905, again in 1958 under the auspices of a philanthropist, when its walls were grouted with cement, and last restored by the Regional Directorate of Foundations in 1998. Of the original, only the funeral floor has survived; the upper part has completely collapsed. The funeral floor has a rectangular plan, built of brick inside and rubble stone outside, with a cross vault above; it shows that the original was an iwan-style tomb. The sarcophagus is not original and looks plain, plastered with mortar. The window in the west wall was lowered and turned into a closet."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "129"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "tavus-baba-rivayeti",
+      "title": {
+        "tr": "Tavus Baba'nın kökeni",
+        "en": "The origin of Tavus Baba"
+      },
+      "body": {
+        "tr": "Bir rivayete göre Tavus Baba'nın asıl adı Mehmet'tir, memleketi Hindistan'dır; Selçuklu sultanlarının kültür insanlarına ve tasavvuf ehline gösterdiği hürmet üzerine Konya'ya gelip yerleşmiştir. Kitap, Tavus Baba ile ilgili farklı menkıbelerin anlatıldığını belirtir.",
+        "en": "According to one rumour Tavus Baba's real name is Mehmet and his homeland is India; he came and settled in Konya because of the respect the Seljuk sultans showed to cultured people and Sufis. The book notes that different legends have been narrated about Tavus Baba."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "128-129"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "hayatta_kalan_bolum",
+      "label": {
+        "tr": "Günümüze ulaşan bölüm",
+        "en": "Surviving part"
+      },
+      "value": "yalnızca cenazelik katı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "129"
+        }
+      ]
+    },
+    {
+      "key": "cenazelik_ortu",
+      "label": {
+        "tr": "Cenazelik katı örtüsü",
+        "en": "Funeral floor covering"
+      },
+      "value": "çapraz tonoz",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "129"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Tavus Baba / Tavus Hanım",
+      "role": {
+        "tr": "Türbede yattığı söylenen kişi; kimliği ve cinsiyeti tartışmalı",
+        "en": "Person said to be buried here; identity and gender disputed"
+      }
+    },
+    {
+      "name": "Abdülvahit Çelebi",
+      "role": {
+        "tr": "1905'te türbeyi tamir ettirdi",
+        "en": "Had the tomb repaired in 1905"
+      }
+    },
+    {
+      "name": "İbrahim Hakkı Konyalı",
+      "role": {
+        "tr": "Tavus Baba'nın Hatamu Dede Zaviyesi şeyhlerinden olabileceğini tahmin etti",
+        "en": "Estimated that Tavus Baba may have been a şeyh of the Hatamu Dede Zawiya"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1905",
+      "year": 1905,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Abdülvahit Çelebi türbeyi tamir ettirdi",
+        "en": "Abdülvahit Çelebi had the tomb repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "129"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bir hayırseverin himayesinde onarıldı, duvarlar çimentoyla derzlendi",
+        "en": "Repaired under a philanthropist's auspices; walls grouted with cement"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "129"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1998",
+      "year": 1998,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü restorasyonu",
+        "en": "Restoration by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "129"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, Tavus Baba Tepesi'nde, bir darülhuffaz ve caminin batısında duran, kalın taş duvarlı alçak bir yapıdır. Özgün üst kısmı yıkılmış, yalnızca dikdörtgen planlı, içte tuğla dışta moloz taşla örülü, çapraz tonozlu cenazelik katı kalmıştır. İçeride harçla sıvanmış sade bir sanduka vardır; batı duvarındaki pencere alçaltılarak dolap hâline getirilmiştir.",
+      "en": "The tomb is a low, thick stone-walled building on Tavus Baba Hill, west of a darülhuffaz and a mosque. Its original upper part has collapsed and only the rectangular funeral floor remains, built of brick inside and rubble stone outside, with a cross vault. Inside is a plain sarcophagus plastered with mortar; the window in the west wall has been lowered and turned into a closet."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
