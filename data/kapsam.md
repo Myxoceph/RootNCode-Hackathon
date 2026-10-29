@@ -43,6 +43,21 @@ Fotoğraflar 2023 depremlerinden önce çekilmiştir.
 | 47–63 | Türbeler / Ziyaretler | 17 (eser başına 1 sayfa) | 404–441 | 18 | Ahmet (ajan) | published (fotoğraflar bağlı) |
 | 64–78 | Kiliseler, İş Yeri ve Diğerleri, Eski Evler ve Konaklar | 14 kayıt + Kurşunlu Han'ın 2 alt yapısı (#69 eser değil: ticari iş yerleri listesi) | 444–487 | 20 | Ahmet (ajan) | published (fotoğraflar bağlı) |
 
+## Konya II. Cilt (tek kitap, 93 eser)
+
+Kaynak: `vk-konya-c2`. Kitap tek PDF; eser metinleri ve fotoğraflar `konya_book.py` ile çıkarılır
+([`tools/extract/README.md`](tools/extract/README.md#konya-ii-cilt-tek-pdf)). `#` sütunu
+`data/build/cache/konya-c2/index.md` dizinindeki sıra numaralarıdır. I. Cilt (`vk-konya-c1`) henüz işlenmedi.
+
+| # | Bölüm | Kayıtlar | Basılı s. | Foto | Kim | Durum |
+|---|---|---|---|---|---|---|
+| 1–19 | Külliyeler | 19 kayıt: 3 külliye + alt yapıları (Eşrefoğlu Süleyman Bey 5, Sultan II. Selim 7, Lala Mustafa Paşa 7) | 11–72 | sırada | Ahmet (ajan) | published |
+| 20–27 | Eğitim Yapıları | 8 medrese ve mektep | 75–116 | sırada | Ahmet (ajan) | published |
+| 28–60 | Türbeler | 33 türbe, kümbet ve zaviye | 119–210 | sırada | Ahmet (ajan) | published |
+| 61–73 | Su Yapıları | 13 hamam, çeşme ve sarnıç | 212–240 | sırada | Ahmet (ajan) | published |
+| 74–91 | Ticari Yapılar | 18 han, kervansaray, bedesten ve iş yeri | 242–286 | sırada | Ahmet (ajan) | published |
+| 92–93 | Sivil Mimari | Yusuf Ağa Kütüphanesi, Akşehir'de bir konut | 288–296 | sırada | Ahmet (ajan) | published |
+
 ### Cilt 2: Yıldırım (`vk-bursa-c2`)
 
 | # | Bölük | Sayfa | Kayıtlar | Kim | Durum |

@@ -7,6 +7,22 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-30 · Konya II. Cilt: 93 yeni eser
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. Veriyi içe aktar:
+   ```bash
+   npm run db:import
+   ```
+
+Değişenler:
+- `data/eserler/konya/` altında Konya Vakıf Eserleri II. Cilt'ten 93 yayınlanmış kayıt var (kaynak `vk-konya-c2`).
+  - Yeni il: Konya. `/assets?city=konya` ile listelenir.
+  - Koordinat ve fotoğraf henüz yok; fotoğraflar ayrı bir PR'da eklenecek.
+- Kitaptan çıkarma aracı: `data/tools/extract/konya_book.py`.
+- Ajan talimatı (`PROMPT.md`) artık `disputed` kullanmıyor. Tarihler ve sayılar kitapta yazıldığı gibi alınıyor.
+
 ## 2026-10-28 · AI asistan: `POST /chat` (sözleşme 0.3.5)
 
 Kimler: **uygulama ekibi**, **demoyu yayınlayan**. API'yi yerelde çalıştıranlar için zorunlu adım yok: model tanımlı değilse asistan kapalıdır.
