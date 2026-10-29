@@ -1,0 +1,265 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-konut",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Sivil Mimari",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Konutun sahibi/yaptıranı, vakıf ilişkisi (VGM'ye neden dahil olduğu) ve tam adresi kitapta yok.",
+      "Ayasofya Mescidi ids.md'de yok (tabloda yalnızca 'Küçük Ayasofya Mescidi Çeşmesi' var); kitap bu mescidin adının 'Küçük' olup olmadığını belirtmiyor, ilişki yazılmadı.",
+      "Kitabın 294-296. sayfaları metin içermiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[plan]",
+        "note": "Türkçe metin \"yüklük\" ve \"çiçeklik\" diyor, İngilizce metin bunları \"closet\" ve \"chest of drawers/flower beds\" olarak çeviriyor; Türkçe esas alındı. İngilizce \"cross-like plan\" Türkçe \"haçvari\" karşılığı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Konut",
+    "en": "Residence"
+  },
+  "subtitle": {
+    "tr": "Ayasofya Mescidi yanında, üç katlı, iç sofalı geç Osmanlı evi",
+    "en": "A three-storey late Ottoman house with an inner hall, beside the Hagia Sophia Masjid"
+  },
+  "alternate_names": [],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "konut",
+    "ev",
+    "iç sofalı plan",
+    "haçvari çatı katı",
+    "kerpiç",
+    "ahşap çıkma",
+    "seyir balkonu",
+    "Eski Kale Mahallesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Eski Kale Mahallesi",
+    "address": "Eski Kale Mahallesi, Ayasofya Mescidi'nin yanı",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "291"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl sonu - XX. yüzyıl ilk yarısı",
+      "en": "Late 19th - first half of the 20th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Mimari ve teknik özelliklerinden anlaşıldığı kadarıyla; kitabe ya da belge belirtilmemiştir.",
+      "en": "As understood from its architectural and technical features; no inscription or document is mentioned."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "291"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "291"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Akşehir Eski Kale Mahallesi'nde Ayasofya Mescidi'nin yanında, zemin, birinci kat ve çatı katından oluşan, arkasında bahçesi olan kerpiç ve taş yığma konut. İlk iki katı iç sofalı, çatı katı haçvari planlıdır; ahşap işçiliği en süslü bölümleridir.",
+    "en": "A masonry and adobe house in the Eski Kale Neighborhood of Akşehir beside the Hagia Sophia Masjid, with ground, first and attic floors and a garden at the back. The first two floors have an inner hall plan and the attic a cross-like plan; its woodwork is the most decorated part."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Tarih ve Yapım",
+        "en": "Location, Date and Construction"
+      },
+      "body": {
+        "tr": "Konut Akşehir'de Eski Kale Mahallesi'nde, Ayasofya Mescidi'nin yanındadır. Mimari ve teknik özelliklerine bakıldığında XIX. yüzyılın sonları ve XX. yüzyılın ilk yarısında inşa edildiği anlaşılmaktadır. Yapı zemin, birinci kat ve çatı katından oluşan üç katlıdır; arka cephesinde bahçesi bulunur. Evin temeli ve duvarları belli bir seviyeye kadar kaba yontu taşla yığma tekniğinde, duvarların üst kısımları kerpiçle örülmüştür. Merdivenlerde, üst örtüde, kapı, dolap ve yüklüklerde, saçaklarda, balkonda, çıkmada ve çıkmanın altında kaplama ve taşıyıcı eleman olarak ahşap kullanılmıştır.",
+        "en": "The residence is in the Eski Kale Neighborhood of Akşehir next to the Hagia Sophia Masjid. Its architectural and technical features indicate it was built in the late 19th and first half of the 20th century. It has three floors (ground, first and attic) and a garden at the back. The foundation and walls are built of rough-hewn stone in masonry technique up to a certain level, with the upper parts of adobe. Wood is used as covering and load-bearing element on stairs, the roof, doors, cabinets and wardrobes, eaves, balcony, overhang and under the overhang."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "291"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "body": {
+        "tr": "Yapı Konya ve Akşehir'de sık görülen plan tipindedir: ilk iki katta iç sofalı plan, çatı katında haçvari plan şeması uygulanmıştır. Zemin kat sofasına iki kanatlı kapıdan girilir; odalar sofanın sağ ve solundadır ve sofaya açılır. Üst kata zemin kat sofasının sağ köşesindeki ahşap merdivenle çıkılır; üst katın planı zemin katla aynıdır, sofanın iki yanında ikişer oda bulunur. İç sofanın kuzeyindeki odalar, oda çıkmasıyla birlikte başoda olarak kullanılır; çıkmalar oda genişliğindedir. Çatı katına odalardan birindeki yüklüğün içinden çıkılır; merdiven doğrudan sofaya açılır. Bu kat bir sofa, iki oda ve seyir balkonu olmak üzere üç bölümlüdür; odalar sofanın iki ucundadır, sofa alt kattaki sofanın üzerine doğru taşırılmıştır. Cumba bölümünde sedir vardır. Bahçeye açılan seyir balkonunun (köşkün) önü açıktır. İkinci kat sofasının iki yanına oda çıkılması ve çatı katı sofasının dışarı çıkma yapması ana cepheyi hareketlendirir.",
+        "en": "The building follows a plan type common in Konya and Akşehir: an inner hall plan on the first two floors and a cross-like plan on the attic. The ground floor hall is entered through a double-winged door; rooms are on either side and open to the hall. The upper floor is reached by wooden stairs at the right corner of the ground floor hall and has the same plan, with two rooms on each side of the hall. The rooms north of the inner hall, with their overhangs, serve as head rooms; the overhangs are room-wide. The attic is entered through the closet of one of the rooms; the stairs open directly onto the hall. This floor has three parts: a hall, two rooms and a viewing balcony; the rooms are at both ends of the hall, which projects over the lower hall. The bay has a divan. The viewing balcony (pavilion) opening to the garden is open in front. Rooms projecting on either side of the second-floor hall and the attic hall projecting outward enliven the main facade."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "293"
+        }
+      ]
+    },
+    {
+      "id": "cephe-suslemeler",
+      "order": 3,
+      "title": {
+        "tr": "Cepheler ve Süsleme",
+        "en": "Facades and Decoration"
+      },
+      "body": {
+        "tr": "Cephelerde parmaklıklı dikdörtgen pencereler vardır; saçaklar sadedir. Osmanlı'nın son dönemlerinde inşa edilen konut süsleme açısından sadedir. Ahşap elemanlardan yüklük, çiçeklik, merdiven korkulukları ve zemin kat döşemeleri yapının en süslemeli bölümleridir. Çiçeklik altlarında dışta geometrik süslemeli bir bordür, bordürün içinde altı kollu yıldız motifleri bulunur.",
+        "en": "The facades have rectangular windows with bars; the eaves are simple. The house, built in the last period of the Ottoman Empire, is plain in decoration. Among its wooden elements the closets, flower stands, stair railings and ground-floor flooring are the most decorated parts. Under the flower stands is a border with geometric ornament outside and six-pointed star motifs inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "293"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "291"
+        }
+      ],
+      "note": {
+        "tr": "Zemin, birinci kat ve çatı katı.",
+        "en": "Ground, first and attic floors."
+      }
+    },
+    {
+      "key": "plan_tipi",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "Alt iki katta iç sofalı; çatı katında haçvari",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "293"
+        }
+      ]
+    },
+    {
+      "key": "duvar_malzemesi",
+      "label": {
+        "tr": "Duvar malzemesi",
+        "en": "Wall material"
+      },
+      "value": "Alt kısım kaba yontu taş (yığma); üst kısım kerpiç",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "291"
+        }
+      ]
+    },
+    {
+      "key": "sus_motif",
+      "label": {
+        "tr": "Çiçeklik altı motifi",
+        "en": "Motif under the flower stands"
+      },
+      "value": "Geometrik bordür ve altı kollu yıldız",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "293"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "seyir-balkonu",
+      "title": {
+        "tr": "Çatı katındaki seyir balkonu",
+        "en": "Viewing balcony on the attic floor"
+      },
+      "hint": {
+        "tr": "Bahçeye açılan, önü açık balkon (köşk).",
+        "en": "An open-fronted balcony (pavilion) overlooking the garden."
+      },
+      "section_id": "plan"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Konut, Akşehir'de Ayasofya Mescidi'nin yanında, üç katlı bir evdir. Alt kısmı taş, üst kısmı kerpiç duvarlıdır; saçaklar, balkon ve çıkmalar ahşaptır. Zemin ve birinci katta ortada bir sofa, iki yanında odalar bulunur; kuzeydeki odalar öne çıkmalıdır. Çatı katında sofa, iki oda ve bahçeye bakan önü açık bir seyir balkonu vardır. Pencereleri parmaklıklı, süslemesi sadedir.",
+      "en": "The residence is a three-storey house beside the Hagia Sophia Masjid in Akşehir. Its lower walls are stone, the upper ones adobe; eaves, balcony and overhangs are wooden. On the ground and first floors a hall in the middle has rooms on both sides, the northern rooms projecting forward. The attic has a hall, two rooms and an open-fronted viewing balcony facing the garden. Windows are barred and the decoration is plain."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
