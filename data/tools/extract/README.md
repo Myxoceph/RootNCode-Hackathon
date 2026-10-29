@@ -84,6 +84,28 @@ Bilinenler:
 - Bölüm özetindeki "Geleneksel Ev (İskenderun 3. Mıntıka 159 Parsel)" için kitapta ayrı sayfa yok.
 - Başlıklarda PDF'ten gelen küçük yazım hataları var (ör. `PAŞACAMİİ`); kayıtta düzeltin.
 
+## Konya II. Cilt (tek PDF)
+
+Konya Vakıf Eserleri II. Cilt de tek bir PDF'tir (`konya-envanteri-2_cilt-web.pdf`, 167 sayfa).
+Sayfalar Hatay'daki gibi karşılıklı iki kitap sayfası, metin Türkçe + İngilizcedir. Bu kitabın
+içindekiler sayfası eksiksiz olduğu için `konya_book.py` eserleri yazı biçiminden tahmin etmez;
+93 eser, ilçeleri, başlangıç sayfaları ve külliye bağları aracın içindeki `CONTENTS` listesindedir.
+
+1. PDF'i repo köküne koyun ve aracı çalıştırın (~5 saniye):
+   ```bash
+   python3 data/tools/extract/konya_book.py konya-envanteri-2_cilt-web.pdf
+   ```
+   `data/build/cache/konya-c2/` altına yazar: `index.md`/`index.json` (eser dizini), `ids.md`
+   (ajanların kullanacağı id'ler), `text/NN-<ad>.txt` (sayfa işaretleri `--- s. 85 (PDF 44, sağ) ---`)
+   ve `images/<id>/` (gömülü fotoğraflar).
+2. Ajanları Hatay'daki gibi çalıştırın: `PROMPT.md` + `build/cache/konya-c2/AGENT-KONYA.md`, kaynak
+   `vk-konya-c2`. Kayıtlar `data/eserler/konya/<ilçe>/` altına yazılır.
+
+Bilinenler:
+- İçindekiler sayfasında "Hoca Fatih Çeşmesi" yazıyor; eserin sayfasında ve cadde adında "Hoca Fakih".
+  Kayıt "Hoca Fakih" adıyla.
+- Bazı girişler iki yapıyı birlikte anlatıyor (ör. "Sahip Ata Hanikahı ve Türbesi"); bunlar tek kayıt.
+
 ## Bursa kitap fotoğrafları (fotoğrafı olmayan kayıtlar)
 
 Bursa'nın Drive'daki orijinalleri büyük (ortalama 18 MB). Fotoğrafı olmayan kayıtlar için kitapta basılı
