@@ -46,6 +46,9 @@ CHAPTERS = [
 
 # (basılı başlangıç sayfası, id'nin ad kısmı, Türkçe ad, İngilizce ad, ilçe, üst eserin id'sindeki ad kısmı)
 # Adlar içindekiler sayfasından; külliyenin alt yapılarında ("Hamam", "Çeşme") külliyenin adı eklendi.
+# İçindekilerden ayrılan yerler eserin kendi sayfasına göre düzeltildi: İnce Minareli Medrese ve
+# Ulaş Baba Kümbeti birer sayfa önce başlıyor; Karatay Medresesi'nin adresi Selçuklu, Sadr Sultan
+# Türbesi'nin ve Vakıf İş Hanı'nın adresi Meram (içindekilerde üçü de Karatay başlığı altında).
 CONTENTS = [
     # Külliyeler
     (11, "esrefoglu-suleyman-bey-kulliyesi", "Eşrefoğlu Süleyman Bey Külliyesi", "Eşrefoğlu Süleyman Bey Complex", "Beyşehir", None),
@@ -70,10 +73,10 @@ CONTENTS = [
     # Eğitim yapıları
     (75, "sircali-medrese", "Sırçalı Medrese", "Sırçalı Madrasa", "Meram", None),
     (82, "kemaliye-kucuk-karatay-medresesi", "Kemaliye (Küçük Karatay) Medresesi", "Kemaliye (Küçük Karatay) Madrasa", "Karatay", None),
-    (85, "karatay-medresesi", "Karatay Medresesi", "Karatay Madrasa", "Karatay", None),
+    (85, "karatay-medresesi", "Karatay Medresesi", "Karatay Madrasa", "Selçuklu", None),
     (93, "ali-efendi-darulhuffazi", "Ali Efendi Darülhuffazı (Muallimhâne)", "Ali Efendi Darülhuffaz (Muallimhâne)", "Karatay", None),
     (96, "ali-gav-zaviyesi-mahmudiye-medresesi", "Ali Gav (Zaviyesi) Mahmudiye Medresesi", "Ali Gav (Zawiya) Mahmudiye Madrasa", "Selçuklu", None),
-    (102, "ince-minareli-medrese", "İnce Minareli Medrese (Sahip Ata Darülhadis)", "İnce Minareli Madrasa (Sahip Ata Darülhadis)", "Selçuklu", None),
+    (101, "ince-minareli-medrese", "İnce Minareli Medrese (Sahip Ata Darülhadis)", "İnce Minareli Madrasa (Sahip Ata Darülhadis)", "Selçuklu", None),
     (108, "tas-medrese", "Taş (Halkalı – Sahip Ata) Medrese", "Taş (Halkalı – Sahip Ata) Madrasa", "Akşehir", None),
     (112, "ismail-aga-medresesi", "İsmail Ağa Medresesi (Taş Medrese)", "İsmail Ağa Madrasa (Taş Madrasa)", "Beyşehir", None),
     # Türbeler
@@ -85,7 +88,7 @@ CONTENTS = [
     (144, "seyh-hasan-i-rumi-turbesi", "Şeyh Hasan-ı Rûmi Türbesi", "Şeyh Hasan-ı Rûmi Tomb", "Meram", None),
     (145, "seyh-osman-rumi-turbesi", "Şeyh Osman Rûmi Türbesi", "Şeyh Osman Rûmi Tomb", "Meram", None),
     (146, "emir-nurettin-sephevan-kumbeti", "Emir Nurettin (Sephevan) Kümbeti", "Emir Nurettin (Sephevan) Kumbet", "Meram", None),
-    (148, "sadr-sedir-sultan-turbesi", "Sadr (Sedir) Sultan Türbesi", "Sadr (Sedir) Sultan Tomb", "Karatay", None),
+    (148, "sadr-sedir-sultan-turbesi", "Sadr (Sedir) Sultan Türbesi", "Sadr (Sedir) Sultan Tomb", "Meram", None),
     (149, "seyh-aliman-yahsi-turbesi", "Şeyh Aliman (Alaman – İşgalaman) Yahşi Türbesi", "Şeyh Aliman (Alaman – İşgalaman) Yahşi Tomb", "Karatay", None),
     (152, "arap-dede-turbesi", "Arap Dede Türbesi", "Arap Dede Tomb", "Karatay", None),
     (153, "seyfettin-kara-sungur-kumbeti", "Seyfettin Kara Sungur Kümbeti", "Seyfettin Kara Sungur Kumbet", "Karatay", None),
@@ -95,7 +98,7 @@ CONTENTS = [
     (160, "emir-ebu-ishak-kazeruni-tekkesi", "Emir Ebu İshak Kazerûni Tekkesi (Türbesi)", "Emir Ebu İshak Kazerûni Tekke (Tomb)", "Selçuklu", None),
     (162, "sut-tekkesi-ve-keykavus-kizi-turbesi", "Süt Tekkesi (Ferhuniye Mescidi) ve Keykavus Kızı Türbesi", "Süt Tekke (Ferhuniye Masjid) and Keykavuz Kızı Tomb", "Selçuklu", None),
     (163, "kalenderhane-turbesi", "Kalenderhane (Kalender Baba) Türbesi", "Kalenderhane (Kalender Baba) Tomb", "Selçuklu", None),
-    (167, "ulas-baba-kumbeti", "Ulaş Baba Kümbeti", "Ulaş Baba Kumbet", "Selçuklu", None),
+    (166, "ulas-baba-kumbeti", "Ulaş Baba Kümbeti", "Ulaş Baba Kumbet", "Selçuklu", None),
     (172, "kesikbas-kumbeti", "Kesikbaş Kümbeti", "Kesikbaş Kumbet", "Selçuklu", None),
     (175, "ii-kilicarslan-kumbeti", "II. Kılıçarslan Kümbeti (Kümbet-Hane)", "Kılıçarslan II Kumbet (Kumbet-Khane)", "Selçuklu", None),
     (182, "i-izzettin-keykavus-kumbeti", "Birinci İzzettin Keykavus (Yarım-Anonim) Kümbeti", "Birinci İzzettin Keykavus (Half-Anonymous) Kumbet", "Selçuklu", None),
@@ -131,7 +134,7 @@ CONTENTS = [
     (251, "emir-kandemir-hani", "Emir Kandemir Hanı", "Emir Kandemir Inn", "Meram", None),
     (254, "inlice-han", "İnlice Han", "İnlice Inn", "Meram", None),
     (255, "sukran-mescidi-dukkan-ve-magaza", "Şükran Mescidi Zemin Kat Dükkân ve Mağaza", "Şükran Masjid Ground Floor Shop and Store", "Meram", None),
-    (256, "vakif-is-hani", "Vakıf İş Hanı (Vakıflar Bölge Müdürlüğü Hizmet Binası)", "Foundation Plaza Inn (Regional Directorate of Foundations Service Building)", "Karatay", None),
+    (256, "vakif-is-hani", "Vakıf İş Hanı (Vakıflar Bölge Müdürlüğü Hizmet Binası)", "Foundation Plaza Inn (Regional Directorate of Foundations Service Building)", "Meram", None),
     (258, "elikesik-han", "Elikesik Han", "Elikesik Inn", "Selçuklu", None),
     (260, "dokuzun-hani", "Dokuzun (Derbent-Şadiye-İğdişleri) Hanı", "Dokuzun (Derbent-Şadiye-İğdişleri) Inn", "Selçuklu", None),
     (262, "zazadin-hani", "Zazadin (Saadettin Köpek) Hanı", "Zazadin (Saadettin Köpek) Inn", "Selçuklu", None),
