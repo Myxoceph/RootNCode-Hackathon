@@ -1,0 +1,359 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ilgin-lala-mustafa-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Banî ve mimar bilgisi (Lala Mustafa Paşa, Mimar Sinan) üst eser (külliye) kaydından aktarıldı; yapı metninde ayrıca belirtilmiyor.",
+      "Mahalle/cadde bilgisi kitapta yok; adres sahadan teyit edilmeli.",
+      "Kitabe metni ve mealı kitapta yok; fotoğraftan okunmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architect",
+        "note": "Mimar Sinan bilgisi yalnızca külliye metninde (s. 55) geçiyor; bu yüzden 'probable'."
+      },
+      {
+        "field": "text",
+        "note": "Türkçe metin doğudaki yapıyı 'tophâne', İngilizce 'armory' diyor; külliye metni ise 'tabhane odaları' sayıyor. Tabhane/tophâne ayrımı kaynakta net değil, Türkçe sözcük korundu."
+      },
+      {
+        "field": "text",
+        "note": "Minarenin konumu ('kuzeybatı') s. 58'de iki kez tekrarlanıyor; tek kez yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Lala Mustafa Paşa Camii",
+    "en": "Lala Mustafa Paşa Mosque"
+  },
+  "subtitle": {
+    "tr": "Külliyenin merkezindeki tek minareli, tek kubbeli 'Kurşunlu' cami",
+    "en": "The single-minaret, single-domed 'Kurşunlu' mosque at the center of the complex"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kurşunlu Camii",
+      "en": "Kurşunlu Mosque",
+      "note": "Kitapta bölüm başlığı olarak geçer"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "konya-ilgin-lala-mustafa-pasa-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "cami",
+    "kurşunlu",
+    "tek kubbeli",
+    "mukarnas",
+    "ajur minber",
+    "şadırvan",
+    "menzil külliyesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ilgın",
+    "neighborhood": null,
+    "address": "Külliyenin merkezinde; avlu ve şadırvanı ile",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "57"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 984 / M. 1576",
+      "en": "AH 984 / AD 1576"
+    },
+    "start_year": 1576,
+    "end_year": 1576,
+    "hijri_year": 984,
+    "century": 16,
+    "basis": {
+      "tr": "Külliye metnine göre caminin giriş kapısı üzerindeki celî sülüs kitâbe H. 984 / M. 1576 tarihini verir; bu yapının kendi metninde tarih yoktur.",
+      "en": "According to the complex text, the Celi Thuluth inscription above the mosque's entrance gives AH 984 / AD 1576; this building's own text gives no date."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "54"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Lala Mustafa Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "54"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Mimar Sinan",
+    "candidates": [],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "55"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Külliyenin merkezindeki kare planlı, tek kubbeli, tek minareli cami. Üç bölümlü son cemaat yeri mermer sütunlu kubbelerle örtülüdür; mihrap nişi kum saati biçimindedir, ahşap ajur minberi geometrik düzenlemelidir.",
+    "en": "The square-plan, single-domed, single-minaret mosque at the center of the complex. Its three-section narthex is covered by domes on marble columns; the mihrab niche is hourglass-shaped and the wooden minbar has openwork geometric patterns."
+  },
+  "sections": [
+    {
+      "id": "dis-mimari",
+      "order": 1,
+      "title": {
+        "tr": "Dış Mimari ve Avlu",
+        "en": "Exterior and Courtyard"
+      },
+      "body": {
+        "tr": "Cami, üç bölümlü son cemaat mahalline sahip, tek minareli ve kare planlı harimlidir. Son cemaat yerini örten kubbeleri mermer sütunlar taşır; sütun başlıkları mukarnaslı ve eşkenar dörtgen biçimlidir. Düzgün kesme taştan örülü beden duvarları dıştan iki kademeli düzenlenmiştir. Son cemaat mahallinin önündeki şadırvanın kurşun kaplı olduğu, sonra yenilendiği anlaşılır; kurnalardan birindeki hayat ağacı motifi bunu gösterir. Cami avlusunun güneybatısında beşik tonozlu dikdörtgen sıbyan mektebi, batıda iki bölümlü kubbeli imâret ve kubbeli mutfak, kuzeyde odunluk ve fırın, doğuda kubbeli ve tonozlu tophâne, samanlık ve depo yer alır.",
+        "en": "The mosque has a three-section narthex, a single minaret and a square-plan harim. The domes over the narthex are supported by marble columns with muqarnas, rhombus-shaped capitals. The main walls of smooth cut stone are arranged in two stages on the outside. The fountain in front of the narthex was evidently covered with lead and renewed later, as the tree-of-life motif on one of its basins shows. In the southwest of the courtyard stands a rectangular barrel-vaulted primary school; to the west a two-section domed imarat and a domed kitchen; to the north a woodshed and oven; to the east a domed and vaulted tophâne (armory), hayloft and warehouse."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "57"
+        }
+      ]
+    },
+    {
+      "id": "minare-kapi",
+      "order": 2,
+      "title": {
+        "tr": "Minare ve Taç Kapı",
+        "en": "Minaret and Portal"
+      },
+      "body": {
+        "tr": "Caminin kuzeybatısındaki minare kare planlı, prizmal kâideli ve silindirik gövdelidir. Taç kapı dıştan silmelerle sınırlandırılmış, dikdörtgen görünüşlüdür; eyvan türü formda, sivri kemerle sonlanır ve köşelerde kum saati ile biter. Asıl kapı açıklığı basık kemerli iki mermerle süslenmiştir.",
+        "en": "The minaret in the northwest of the mosque has a square plan, a prismatic base and a cylindrical shaft. The portal is rectangular, bounded by exterior moldings; it is iwan-shaped, ends in a pointed arch and finishes with hourglass shapes at the corners. The actual door opening is decorated with two marble arches."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "58"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân, Mihrap ve Minber",
+        "en": "Interior, Mihrab and Minbar"
+      },
+      "body": {
+        "tr": "Kare planlı harim tek kubbeyle örtülüdür. Kıble duvarının ortasında mihrap, sağında minber, güneydoğuda vaaz kürsüsü, giriş bölümünde mahfil yer alır. Beden duvarlarında ve kubbede bitkisel, geometrik ve yazı ile tezyînâta rastlanır. Giriş eksenindeki mihrap iki yandan sütuncelerle sınırlanır; mihrap nişi kum saati biçiminde ve yarım ongen planlıdır, sekiz sıra mukarnasla biter, en üstte üçgen biçimli yekpâre bir taç vardır. Ahşap minber ajur tekniğiyle geometrik düzenlemelere sahiptir; Bursa kemerli köşk kısmı yüksek kasnaklı ve külahlıdır.",
+        "en": "The square-plan harim is covered by a single dome. There is a mihrab in the middle of the qibla wall, a minbar to its right, a preaching platform in the southeast and a mahfil in the entrance section. Floral, geometric and script decoration appears on the walls and dome. The mihrab on the entrance axis is flanked by colonnettes; its niche is hourglass-shaped with a semi-decagonal plan, ends in eight rows of muqarnas and is crowned by a triangular monolithic piece. The wooden minbar is of openwork geometric composition; its Bursa-arched kiosk has a high drum and a conical cap."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "58"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "57"
+        }
+      ]
+    },
+    {
+      "key": "harim_kubbe_sayisi",
+      "label": {
+        "tr": "Harim kubbesi sayısı",
+        "en": "Number of harim domes"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "58"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas_sirasi",
+      "label": {
+        "tr": "Mihrap nişi mukarnas sırası",
+        "en": "Mihrab niche muqarnas rows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "58"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_bolum",
+      "label": {
+        "tr": "Son cemaat yeri bölüm sayısı",
+        "en": "Narthex sections"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "57"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Caminin giriş kapısı üzerinde",
+        "en": "Above the mosque's entrance gate"
+      },
+      "language": "ar",
+      "script": "Celî sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 984,
+        "gregorian": "1576"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ],
+      "note": {
+        "tr": "Üç satırlık, mermere kabartma tekniğiyle işlenmiş kitâbe; kitapta yalnızca bilgisi (külliye metninde, s. 54) verilmiş, metni ve mealı yok. Kıbrıs Fâtihi Lala Mustafa Paşa'nın Sultan Murad zamanında yaptırdığını bildirir.",
+        "en": "A three-line inscription worked in relief on marble; the book (complex text, p. 54) gives only its content, not its text or translation. It records that Lala Mustafa Paşa, Conqueror of Cyprus, had the mosque built in the reign of Sultan Murad."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1576",
+      "year": 1576,
+      "date": null,
+      "hijri": "984",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yaptırıldı (H. 984 / M. 1576)",
+        "en": "The mosque was built (AH 984 / AD 1576)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Kum saati biçimli mihrap",
+        "en": "Hourglass-shaped mihrab"
+      },
+      "hint": {
+        "tr": "Yarım ongen planlı nişe sekiz sıra mukarnas iner.",
+        "en": "The semi-decagonal niche ends in eight rows of muqarnas."
+      },
+      "section_id": "ic-mekan"
+    },
+    {
+      "feature": "minber",
+      "title": {
+        "tr": "Ajur ahşap minber",
+        "en": "Openwork wooden minbar"
+      },
+      "hint": {
+        "tr": "Bursa kemerli, yüksek kasnaklı köşk.",
+        "en": "Bursa-arched kiosk with a high drum."
+      },
+      "section_id": "ic-mekan"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-ilgin-lala-mustafa-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Lala Mustafa Paşa Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Lala Mustafa Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "57"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, kare planlı ve tek kubbelidir; önünde mermer sütunlu, kubbeli üç bölümlü son cemaat yeri ve kurşun kaplı bir şadırvan bulunur. Kuzeybatıdaki minare kare kâideli, silindirik gövdelidir. İçeride kıble duvarında kum saati biçimli mihrap, sağında ajur ahşap minber, girişte mahfil vardır.",
+      "en": "The mosque has a square plan and a single dome; in front are a three-section domed narthex on marble columns and a lead-covered fountain. The northwest minaret has a square base and cylindrical shaft. Inside, on the qibla wall is an hourglass-shaped mihrab with an openwork wooden minbar to its right and a mahfil at the entrance."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

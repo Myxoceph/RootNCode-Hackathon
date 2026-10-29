@@ -1,0 +1,673 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-beysehir-esrefoglu-suleyman-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kitabelerin Arapça okunuşları ve mealleri kitapta yok (giriş ve harim kitabeleri, Âyet-el Kürsî); kitabe fotoğraflarından okunup eklenmeli.",
+      "Mihrap ve minberin tarihi/ustası dışında mimar kitapta yok; mimar bilinmiyor.",
+      "Caminin minber taç kapısı kitabesinin konumu (minber kapısı mı, caminin taç kapısı mı) kitap metninde belirsiz; fotoğraf/saha ile teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[onarim-1900]",
+        "note": "Türkçe metin 'Cami, 1900 ve 2005 senelerinde onarım görmüştür' diyor; sayfa 16'daki İngilizce metin 'repaired between 1900 and 2005' (1900 ile 2005 arasında) diyor. Türkçe metin esas alındı; iki ayrı onarım yılı olarak kaydedildi."
+      },
+      {
+        "field": "inscriptions[minber-taccapi-kitabe]",
+        "note": "'Taç kapı alınlığı' ifadesi caminin taç kapısı olarak da okunabilir; kitabın içeriği (minberin yapılması) ve s. 23'teki ifade minber kapısına işaret ettiği için bu şekilde kaydedildi."
+      },
+      {
+        "field": "inscriptions[minber-usta-kitabesi]",
+        "note": "Türkçe metin 'amelû' ve 'İsa' sözcüklerini veriyor; baskıdaki Arapça harfler bozuk olduğundan transliterasyon kitaptaki Latin harfli yazımla bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Eşrefoğlu Süleyman Bey Camii",
+    "en": "Eşrefoğlu Süleyman Bey Mosque"
+  },
+  "subtitle": {
+    "tr": "Anadolu'nun en büyük ve özgün ahşap direkli camii",
+    "en": "The largest and most original wooden-pillared mosque in Anatolia"
+  },
+  "alternate_names": [
+    {
+      "tr": "Eşrefoğlu Camii",
+      "en": "Eşrefoğlu Mosque",
+      "note": "Metinde kısaltma olarak geçiyor"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "konya-beysehir-esrefoglu-suleyman-bey-kulliyesi",
+  "era": "beylikler",
+  "tags": [
+    "ahşap direkli cami",
+    "ulu camii",
+    "kündekâri minber",
+    "çinili mihrap",
+    "Selçuklu geleneği",
+    "karlık",
+    "Eşrefoğlu Beyliği"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Beyşehir",
+    "neighborhood": "İçeri Şehir Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "16"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 696-699 / M. 1296-1300",
+      "en": "AH 696-699 / AD 1296-1300"
+    },
+    "start_year": 1296,
+    "end_year": 1299,
+    "hijri_year": 696,
+    "century": 13,
+    "basis": {
+      "tr": "Giriş kapısı kitabesinde H. 696 / M. 1296-97, harime giriş üzerindeki ikinci kitabede H. 699 / M. 1299-1300 okunur; yapının yaklaşık 3 yılda yapıldığı söylenir. Kitap 'Türkçe metinde 1296-99' ifadesini kullanır.",
+      "en": "The entrance door inscription reads AH 696 / AD 1296-97 and the second inscription above the harim entrance reads AH 699 / AD 1299-1300; the building was built in about 3 years. The book uses '1296-99'."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "16"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Eşrefoğlu Seyfeddin Süleyman Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "16"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [
+      {
+        "name": "İsa",
+        "note": "Minberin taç kapısındaki kitabede 'amelû / İsa' (İsa'nın işi) yazar; bu ibare ustayı gösterir, kitap bunu caminin mimarı olarak sunmaz."
+      }
+    ],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "23"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "1296-99'da Eşrefoğlu Süleyman Bey'in yaptırdığı, Selçuklu geleneğinde ulu camii tarzında bir yapı. Anadolu'daki ahşap direkli camilerin en büyüğü ve en özgünüdür; kündekâri ceviz minberi ve Konya çevresinin en büyük çinili mihrabıyla öne çıkar.",
+    "en": "Built in 1296-99 by Eşrefoğlu Süleyman Bey in the style of a Seljuk grand mosque. It is the largest and most original wooden-pillared mosque in Anatolia, notable for its kündekâri walnut minbar and the largest tiled mihrab in the Konya region."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Beyşehir İçeri Şehir Mahallesi'nde 1296-99'da Eşrefoğlu Süleyman Bey tarafından yaptırılan cami, Selçuklu geleneğinde ulu camii tarzında inşa edilmiştir. Semerkant ve Buhara gibi eski Türkistan şehirlerinde görülen ahşap direkli camilerin Anadolu'daki en önemli örneği olan yapı aynı zamanda en büyüğü ve orijinalidir. Beyşehir'in kuruluşunda ve gelişmesinde merkez olan şehir, Eşrefoğlu Camii çevresinde büyümüştür.",
+        "en": "Built by Eşrefoğlu Süleyman Bey in 1296-99 in the İçeri Şehir Neighborhood of Beyşehir, the mosque follows the Seljuk grand mosque tradition. It is the most important example in Anatolia of the wooden-pillared mosques seen in ancient Turkistan cities such as Samarkand and Bukhara, and also the largest and most original. The city, which was the center of Beyşehir's establishment and development, grew around it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16"
+        }
+      ]
+    },
+    {
+      "id": "tarihce-onarim",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe ve Onarımlar",
+        "en": "History and Repairs"
+      },
+      "body": {
+        "tr": "Caminin iki kitabesi vardır: giriş kapısı üzerindeki H. 696 / M. 1296-97, harime giriş üzerindeki kemerli kısımdaki H. 699 / M. 1299-1300 tarihlidir. Kitabelerden yapının yaklaşık 3 yılda yapıldığı söylenebilir. Yapı ilk inşasından bu yana birçok tamirat görmüş, sütun ve kirişleri orijinal hâlde günümüze ulaşmıştır. Cami 1900 ve 2005 yıllarında onarım görmüştür. 2014'te yapılan restorasyon projesi kapsamında harimde 300'ün üzerinde bitkisel motif tespit edilmiştir.",
+        "en": "The mosque has two inscriptions: AH 696 / AD 1296-97 above the entrance door and AH 699 / AD 1299-1300 on the arched section above the harim entrance, showing that it was built in about 3 years. It has undergone many repairs; its columns and beams survive in original condition. It was repaired in 1900 and 2005 (the English text says 'between 1900 and 2005'). In the restoration project of 2014, more than 300 floral motifs were found in the harim."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16, 22-23"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mekân",
+        "en": "Plan and Space"
+      },
+      "body": {
+        "tr": "Cami kuzey-güney yönde derinlemesine dörtgen planlı, ahşap direkli ve ahşap tavanlıdır. Harim yedi sahına ayrılmış, orta sahın yanlardan daha geniş ve yüksektir. Taş kaidelere oturan silindirik ve çokgen gövdeli ahşap sütunların başlıkları mukarnaslıdır. Mihrap önü Selçuklu dönemine özgü 'mihrap önü kubbeli' düzenlenmiştir; kubbe çokgen bir kaide üzerinde yükselir, içten kubbe dıştan konik külahla tamamlanır. İçerisi beden duvarlarındaki 35 pencereyle aydınlanır. Harimin ortasında 'karlık' denilen bir havuz vardır; su ihtiyacını karşılamak ve iç mekândaki ahşap direklerin nem dengesini sağlamak için yapılmıştır.",
+        "en": "The mosque has a deeply quadrangular plan in the north-south direction with wooden pillars and ceiling. The harim is divided into seven aisles, the middle one wider and higher. The capitals of the wooden columns on stone bases have muqarnas. The front of the mihrab is domed in the Seljuk manner, the dome rising on a polygonal base with an inner dome and a conical roof outside. The interior is lit by 35 windows in the main walls. In the middle of the harim is a pool called 'karlık' ('snow depot'), made to meet water needs and to balance the moisture of the wooden poles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16, 19, 22"
+        }
+      ]
+    },
+    {
+      "id": "tac-kapi",
+      "order": 4,
+      "title": {
+        "tr": "Taç Kapı ve Girişler",
+        "en": "Crown Gate and Entrances"
+      },
+      "body": {
+        "tr": "Minareye bitişik taç kapı dışa taşıntılıdır ve yoğun taş kabartmalarla doludur. Dıştan içe palmet ve rûmilerden oluşan bordür, bitkisel içerikli ikinci bordür ve dilimli sağır kemer tasvirleri; merkezde iki renkli taş işçilikli basık kemerli kapı açıklığı, üstte mukarnaslı alınlık ve köşebentlerde geometrik gülbezekler yer alır. Taç kapı cepheden yaklaşık 1 m yüksektir. Doğu ve batıdaki tâli girişler daha sadedir; batıdaki bey mahfiline açıldığı için nispeten daha özenlidir. Taç kapıdan 4 m uzunluğundaki tuğla ve çinilerle kaplı sivri kemerli iç portalle orta sahına ulaşılır. Doğu cephenin ortasında türbe ile harime geçişi sağlayan bir kapı, batıda harime üçüncü bir giriş vardır.",
+        "en": "The crown gate, adjacent to the minaret, projects outward and is filled with intense stone relief. From outside in: a band of palmettes and rumi, a second floral border with segmented blind arches; in the center a door opening of two-colored stonework with flat arches, a muqarnas pediment above and geometric rosettes in the spandrels. The gate stands about 1 m higher than the facade. The east and west side entrances are simpler; the western one is more elaborate as it opens to the bey's mahfil. A 4 m long pointed-arched inner portal covered with bricks and tiles leads to the central nave. A door in the middle of the east facade connects the tomb and harim, and a third entrance was added on the west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16, 19, 22"
+        }
+      ]
+    },
+    {
+      "id": "susleme-mihrap-minber",
+      "order": 5,
+      "title": {
+        "tr": "Süsleme, Mihrap ve Minber",
+        "en": "Decoration, Mihrab and Minbar"
+      },
+      "body": {
+        "tr": "Ahşap direklerin mukarnas başlıkları ve kirişleri üzerinde zengin bitkisel kalem işleri görülür; mahfillerde de bitkisel ve geometrik süslemeler yoğundur. Süslemelerde kündekâri, eğri kesim, kakma, ajur ve kalem işi teknikleri kullanılmıştır. Özgün mihrap, Konya ve çevresindeki çinili mihraplar içinde ölçü bakımından en büyüğüdür; firuze, lacivert ve mor mozaik çinilerle süslüdür. Minber tamamen ceviz ağacından kündekâri tekniğiyle yapılmış; yıldız ve geometrik parçalara kakma ve eğri kesim uygulanmıştır. Kapı kanatları baklava dilimi, üçgen ve beşgen parçalarla ve rûmi dal ve yapraklarla süslüdür. Kubbe içi tuğla ve çinilerle yoğun biçimde tezyin edilmiştir.",
+        "en": "Rich floral hand-carved work covers the muqarnas capitals and beams of the wooden poles; the mahfils also carry dense floral and geometric decoration. Techniques include kündekâri, curved cutting, inlay, openwork and hand-carving. The original mihrab is the largest among tiled mihrabs in Konya and its surroundings, decorated with turquoise, dark blue and purple mosaic tiles. The minbar is made entirely of walnut in the kündekâri technique, with inlay and curved cutting on star and geometric pieces; the door wings are decorated with diamond, triangular and pentagonal pieces and rumi branches and leaves. The interior of the dome is heavily decorated with bricks and tiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "19, 22-24"
+        }
+      ]
+    },
+    {
+      "id": "minare-malzeme",
+      "order": 6,
+      "title": {
+        "tr": "Minare ve Malzeme",
+        "en": "Minaret and Materials"
+      },
+      "body": {
+        "tr": "Minare taç kapının batısına bitişik, kare kaideli, silindirik gövdeli ve tek şerefelidir. Kaidedeki sivri kemerli nişte bir sebil vardır ve sebilin haznesinde lahit parçası kullanılmıştır. Minarenin devamındaki özgün duvar yapısından burada daha önce bir kütüphane bulunduğu anlaşılmaktadır. Malzeme olarak beden duvarlarında moloz taş, taç kapıda düzgün kesme taş, minare ve kubbede tuğla, harimde ahşap ve çini kullanılmıştır. Güney cephede mihrap beden duvarından dışa taşıntılıdır.",
+        "en": "The minaret, adjacent to the west of the crown gate, has a square base, cylindrical body and a single balcony. A fountain (sebil) sits in the pointed-arch niche of the base and a sarcophagus piece was used in its chamber. The original wall next to the minaret shows that a library stood here earlier. Rubble stone was used in the main walls, cut stone in the crown gate, brick in the minaret and dome, and wood and tiles in the harim. On the south facade the mihrab projects out from the main wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16, 24"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 35,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "19"
+        }
+      ]
+    },
+    {
+      "key": "saha_sayisi",
+      "label": {
+        "tr": "Harimdeki saha sayısı",
+        "en": "Number of aisles in the harim"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "19"
+        }
+      ]
+    },
+    {
+      "key": "tac_kapi_yukseklik_farki",
+      "label": {
+        "tr": "Taç kapı cepheden yüksekliği",
+        "en": "Crown gate height above the facade"
+      },
+      "value": 1,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "22"
+        }
+      ],
+      "note": {
+        "tr": "Metin 'yaklaşık 1 m' diyor.",
+        "en": "The text says 'approximately 1 m'."
+      }
+    },
+    {
+      "key": "ic_portal_uzunluk",
+      "label": {
+        "tr": "İç portal uzunluğu",
+        "en": "Length of the inner portal"
+      },
+      "value": 4,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "22"
+        }
+      ]
+    },
+    {
+      "key": "bitkisel_motif",
+      "label": {
+        "tr": "Harimde tespit edilen bitkisel motif",
+        "en": "Floral motifs identified in the harim"
+      },
+      "value": "300+",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "22-23"
+        }
+      ],
+      "note": {
+        "tr": "2014 restorasyon projesinde tespit edildi.",
+        "en": "Identified in the 2014 restoration project."
+      }
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "24"
+        }
+      ],
+      "note": {
+        "tr": "Tek şerefeli.",
+        "en": "Single balcony."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Eşrefoğlu Süleyman Bey",
+      "role": {
+        "tr": "Caminin yaptıranı",
+        "en": "Founder of the mosque"
+      }
+    },
+    {
+      "name": "İsa",
+      "role": {
+        "tr": "Minber taç kapısındaki kitabede adı geçen usta ('İsa yaptı')",
+        "en": "Master named in the inscription on the minbar's crown gate ('Isa did it')"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kapisi-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde",
+        "en": "Above the entrance door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 696,
+        "gregorian": "1296-97"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16"
+        }
+      ],
+      "note": {
+        "tr": "Kitabın metni ve dili verilmemiş; yalnızca H. 696 / M. 1296-97 tarihi okunur. Cami taç kapısındaki bir kitabede bedestenin 'Bezziye Hanı' olarak zikredildiği bedesten kaydında belirtiliyor; bu kitabeyle ilişkisi metinde açık değil.",
+        "en": "The text and language are not given; only the date AH 696 / AD 1296-97 is read. The bedesten record notes that an inscription on the mosque's crown gate mentions the bedesten as 'Bezziye Inn'; its relation to this inscription is not clear in the text."
+      }
+    },
+    {
+      "id": "harim-giris-kitabesi",
+      "location": {
+        "tr": "Harime giriş üzerindeki kemerli kısım",
+        "en": "Arched section above the harim entrance"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 699,
+        "gregorian": "1299-1300"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16"
+        }
+      ],
+      "note": {
+        "tr": "Metni ve dili verilmemiş; yalnızca H. 699 / M. 1299-1300 tarihi okunur.",
+        "en": "Text and language not given; only the date AH 699 / AD 1299-1300 is read."
+      }
+    },
+    {
+      "id": "minber-taccapi-kitabe",
+      "location": {
+        "tr": "Minberin taç kapı alınlığı",
+        "en": "Pediment of the minbar's crown gate"
+      },
+      "language": "ar",
+      "script": "mâkılî",
+      "transliteration": null,
+      "translation": {
+        "tr": "Taht gibi yüce minberin yapılmasını adaletli emir Eşrefoğlu kahraman Süleyman emretti.",
+        "en": "The just ruler Eşrefoğlu hero Süleyman ordered the construction of the lofty minbar like a throne."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "23-24"
+        }
+      ],
+      "note": {
+        "tr": "Arapça okunuşu kitapta verilmemiş. Kitap 'taç kapısının alınlık bölümü' diyor; s. 23'teki 'minber üzerinde... taç kapı alınlığında mâkıli hatla kitâbe' ifadesine göre minber kapısı kastedilmiş görünüyor.",
+        "en": "Arabic reading not given. The book says 'pediment of the crown gate'; judging by the preceding page, the minbar's door seems intended."
+      }
+    },
+    {
+      "id": "minber-ayet-el-kursi",
+      "location": {
+        "tr": "Minber kapısı sövesi: sağdan başlayıp üstten devam eder, sol altta biter",
+        "en": "Minbar door jamb: starts at right, continues above, ends at lower left"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "24"
+        }
+      ],
+      "note": {
+        "tr": "Âyet-el Kürsî (Bakara, 255). Okunuş ve meal kitapta verilmemiş.",
+        "en": "Ayat al-Kursi (Al-Baqara, 255). Reading and translation not given."
+      }
+    },
+    {
+      "id": "minber-usta-kitabesi",
+      "location": {
+        "tr": "Minber kapısı kemerinin köşe dolguları arasında",
+        "en": "Among the corner fillings of the minbar door arch"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "amelû (sağ köşe) / İsa (sol köşe)",
+      "translation": {
+        "tr": "İsa'nın işidir; İsa yaptı.",
+        "en": "This is the work of Isa; Isa did it."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "23"
+        }
+      ],
+      "note": {
+        "tr": "Metin 'amelû' (işçi/yapan) ve 'İsa' sözcüklerini verir; Arapça harfleri baskıda bozuk görünüyor.",
+        "en": "The text gives the words 'amelû' (worker/doer) and 'İsa'; the Arabic letters appear garbled in the print."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1296",
+      "year": 1296,
+      "date": null,
+      "hijri": "696",
+      "type": "construction",
+      "title": {
+        "tr": "Camii yapımı başladı (giriş kapısı kitabesi H. 696 / M. 1296-97)",
+        "en": "Construction of the mosque (entrance inscription AH 696 / AD 1296-97)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16"
+        }
+      ],
+      "note": {
+        "tr": "Kitabe yapım ya da tamamlanma tarihi olabilir; kitap 'yaklaşık 3 yıl' diyor.",
+        "en": "The inscription may mark construction or completion; the book says 'about 3 years'."
+      }
+    },
+    {
+      "id": "insa-1299",
+      "year": 1299,
+      "date": null,
+      "hijri": "699",
+      "type": "construction",
+      "title": {
+        "tr": "Harim girişi kitabesi (H. 699 / M. 1299-1300)",
+        "en": "Harim entrance inscription (AH 699 / AD 1299-1300)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1900",
+      "year": 1900,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami onarım gördü",
+        "en": "The mosque was repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2005",
+      "year": 2005,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami onarım gördü",
+        "en": "The mosque was repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-projesi-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon projesi kapsamında harimde 300'ün üzerinde bitkisel motif tespit edildi",
+        "en": "Over 300 floral motifs were identified in the harim within the restoration project"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "22-23"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "minber",
+      "title": {
+        "tr": "Kündekâri ceviz minber",
+        "en": "Kündekâri walnut minbar"
+      },
+      "hint": {
+        "tr": "Kapı köşesinde ustanın adını arayın: 'amelû İsa'.",
+        "en": "Look at the door's corner for the master's name: 'amelû İsa'."
+      },
+      "section_id": "susleme-mihrap-minber"
+    },
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Konya çevresinin en büyük çinili mihrabı",
+        "en": "Largest tiled mihrab around Konya"
+      },
+      "hint": {
+        "tr": "Firuze, lacivert ve mor mozaik çiniler.",
+        "en": "Turquoise, dark blue and purple mosaic tiles."
+      },
+      "section_id": "susleme-mihrap-minber"
+    },
+    {
+      "feature": "direkler",
+      "title": {
+        "tr": "Ahşap direkler",
+        "en": "Wooden pillars"
+      },
+      "hint": {
+        "tr": "Mukarnaslı başlıklar ve kirişlerdeki bitkisel kalem işi.",
+        "en": "Muqarnas capitals and floral hand-carving on the beams."
+      },
+      "section_id": "plan"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-beysehir-esrefoglu-suleyman-bey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Eşrefoğlu Süleyman Bey Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Eşrefoğlu Süleyman Bey Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "16"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, taş kaideler üzerinde çok sayıda ahşap direğin taşıdığı, ahşap tavanlı geniş bir salondan oluşur; direkler yedi sıra halinde dizilidir ve ortadaki sıra yanlardan daha geniş ve yüksektir. Direklerin üst başlıkları mukarnaslı, kirişleri bitki motifleriyle süslüdür. Salonun ortasında karlık adı verilen bir havuz, güney duvarında çinilerle kaplı büyük bir mihrap, yanında ceviz ağacından oyma bir minber vardır. Dışarıda minareye bitişik, taşla işlenmiş yüksek bir taç kapıdan girilir.",
+      "en": "The mosque is a broad hall with a wooden ceiling carried by many wooden pillars on stone bases, arranged in seven aisles, the middle one wider and higher. The pillar capitals have muqarnas and the beams carry floral motifs. In the middle of the hall is a pool called karlık; on the south wall is a large tiled mihrab with a carved walnut minbar beside it. Outside, one enters through a tall, richly carved stone crown gate adjoining the minaret."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

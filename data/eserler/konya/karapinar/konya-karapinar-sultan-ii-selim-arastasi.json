@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karapinar-sultan-ii-selim-arastasi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Arastanın yapım tarihi ve ölçüleri kitapta yok.",
+      "Banî, üst eser (külliye) kaydından aktarıldı; yapı kaydında ayrıca belirtilmiyor.",
+      "Yeniden yapım/onarım tarihi kitapta verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Yapı türü arasta olduğundan enums'taki 'diger' kodu kullanıldı; 'arasta' tags içinde."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sultan II. Selim Külliyesi Arastası",
+    "en": "Bazaar of the Sultan Selim II Complex"
+  },
+  "subtitle": {
+    "tr": "Çifte han ile tabhane arasındaki dükkân sıraları; yeniden inşa edildi",
+    "en": "Rows of shops between the double inn and the tabhane; rebuilt"
+  },
+  "alternate_names": [],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": "konya-karapinar-sultan-ii-selim-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "arasta",
+    "dükkân",
+    "çarşı",
+    "Konya-Ereğli kervan yolu",
+    "menzil külliyesi",
+    "yeniden inşa"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karapınar",
+    "neighborhood": null,
+    "address": "Konya-Ereğli tarihî kervan yolu üzerinde, çifte han ile tabhane arasında",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "47"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Külliye ile birlikte (1560-1563)",
+      "en": "With the complex (1560-1563)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Bu kayıtta ayrıca tarih verilmiyor; külliyenin tarihi (1560-1563) geçerli kabul edildi.",
+      "en": "No separate date is given here; the complex's date (1560-1563) is assumed."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "47"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şehzade II. Selim (Sultan II. Selim)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "47"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Külliyenin ticari yapılarından olan arasta, Konya-Ereğli kervan yolu üzerinde, bir sokağın iki yanında sıralanan 39 dükkândan oluşuyordu. Dükkânların yıkılmasıyla işlevini yitirmiş; kazı ve onarımla temelleri ortaya çıkarılıp dükkânlar yeniden inşa edilmiştir.",
+    "en": "The bazaar, a commercial building of the complex, originally consisted of 39 shops lined on both sides of a street on the Konya-Ereğli caravan route. It lost its function when the shops were demolished; excavation and repair uncovered the foundations and the shops were rebuilt."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve Konum",
+        "en": "Plan and Location"
+      },
+      "body": {
+        "tr": "Konya-Ereğli tarihî kervan yolu üzerinde, çifte hanla tabhane arasında iki sıra hâlinde yer alan arasta külliyenin bir diğer ticari amaçlı yapısıdır. Külliyeyi doğu-batı doğrultusunda ortadan bölen dikdörtgen bir sokağın karşılıklı iki yanına dükkânların yerleştirildiği bir plana sahiptir; orijinalde dükkân sayısı 39'dur. Bir kapıyla hana, diğer bir kapıyla ortak kullanımlı cami avlusuna açılır.",
+        "en": "Lying in two rows between the double inn and the tabhane on the historical Konya-Ereğli caravan route, the bazaar is another commercial building of the complex. Its plan has shops on both sides of a rectangular street dividing the complex east-west; originally there were 39 shops. It opens to the inn with one door and to the shared mosque courtyard with another."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "47"
+        }
+      ]
+    },
+    {
+      "id": "durum",
+      "order": 2,
+      "title": {
+        "tr": "Kayıp ve Yeniden Yapım",
+        "en": "Loss and Rebuilding"
+      },
+      "body": {
+        "tr": "Zamanla dükkânların yıkılması ve zeminin dolması nedeniyle arasta işlevini ve görünümünü yitirmiştir. Orijinal kalan değerler bazı duvar izleri ve aynı yerde yüzyıllardır geleneksel pazar kurulmasıydı. Kazı ve onarımla temellerine ulaşılmış, dükkânlar geçmişin izini hatırlatacak şekilde yeniden inşa edilip üzerleri kaplanmış, ortadaki yolun taşları değiştirilmiştir. Dükkânlar bugün çeşitli esnaflarca kullanılmaktadır.",
+        "en": "Over time the demolition of the shops and filling of the ground made the bazaar lose its function and appearance. The original remaining values were some wall traces and the centuries-old tradition of a market on the same spot. Excavation and repair reached its foundations; the shops were rebuilt in a way recalling the past and covered, and the stones of the middle road were replaced. The shops are used today by various tradesmen."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "47"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dukkan_sayisi",
+      "label": {
+        "tr": "Orijinal dükkân sayısı",
+        "en": "Original number of shops"
+      },
+      "value": 39,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "47"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "pazar",
+      "title": {
+        "tr": "Yüzyıllık pazar yeri",
+        "en": "Centuries-old market site"
+      },
+      "hint": {
+        "tr": "Aynı yerde geleneksel pazar yüzyıllardır kurulur.",
+        "en": "A traditional market has been held on this spot for centuries."
+      },
+      "section_id": "durum"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-karapinar-sultan-ii-selim-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Sultan II. Selim Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Sultan Selim II Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "47"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Arasta, ortada taş döşeli bir sokağın iki yanında sıralanan küçük dükkânlardan oluşur. Bir ucu hana, diğer ucu cami avlusuna açılır. Dükkânlar yeniden yapılmıştır ve bugün esnaf tarafından kullanılır.",
+      "en": "The bazaar consists of small shops lined on both sides of a stone-paved street. One end opens to the inn and the other to the mosque courtyard. The shops have been rebuilt and are used by tradesmen today."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

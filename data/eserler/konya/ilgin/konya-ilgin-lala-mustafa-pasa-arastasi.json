@@ -1,0 +1,267 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ilgin-lala-mustafa-pasa-arastasi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Banî ve mimar bilgisi (Lala Mustafa Paşa, Mimar Sinan) üst eser (külliye) kaydından aktarıldı; yapı metninde ayrıca belirtilmiyor.",
+      "Mahalle/cadde bilgisi kitapta yok; adres sahadan teyit edilmeli.",
+      "Dükkân sayısı Türkçe ve İngilizce metinde farklı; sahada sayılarak teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[dukkan_sayisi]",
+        "note": "Türkçe 'birbirine bakar vaziyette düzenlenmiş 23'er dükkânı vardır' (karşılıklı sıralarda 23'er), İngilizce 'Arasta has 23 shops, each arranged facing each other' (toplam 23). İkisi de korundu, değer 23 olarak 'disputed' işaretlendi."
+      },
+      {
+        "field": "type",
+        "note": "Arasta için enums.json'da ayrı tür yok; 'diger' kullanıldı, asıl tür 'arasta' etiketlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Lala Mustafa Paşa Külliyesi Arastası",
+    "en": "Bazaar of the Lala Mustafa Paşa Complex"
+  },
+  "subtitle": {
+    "tr": "Külliyenin kuzeyini kaplayan açık ve kapalı bölümlü 'kapalı çarşı'",
+    "en": "The 'covered bazaar' with open and closed parts across the north of the complex"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kapalı Çarşı",
+      "en": "Covered Bazaar",
+      "note": "Halk arasında bilinen ad"
+    }
+  ],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": "konya-ilgin-lala-mustafa-pasa-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "arasta",
+    "kapalı çarşı",
+    "dükkân",
+    "beşik tonoz",
+    "menzil külliyesi",
+    "bekçi odası"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ilgın",
+    "neighborhood": null,
+    "address": "Külliyenin kuzeyi; doğu-batı doğrultusunda",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "64"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Külliye ile birlikte (H. 984 / M. 1576)",
+      "en": "With the complex (AH 984 / AD 1576)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Bu yapı için kitapta ayrı tarih verilmiyor; külliyenin tarihi (H. 984 / M. 1576) geçerli kabul edildi.",
+      "en": "No separate date is given for this building; the complex's date (AH 984 / AD 1576) is assumed."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "64"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Lala Mustafa Paşa",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "64"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Mimar Sinan",
+    "candidates": [],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "55"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Külliyenin kuzeyini kaplayan, dört yönden girişli ve halk arasında 'kapalı çarşı' diye bilinen arasta. Doğu-batı doğrultulu dikdörtgen planda, ortası ve batısı kapalı, doğusu açık bölümlüdür; beşik tonozlu dükkânlar karşılıklı sıralanır.",
+    "en": "The bazaar covering the north of the complex has entrances from four sides and is known to the public as the 'covered bazaar'. On an east-west rectangular plan, its middle and west are closed and its east open; barrel-vaulted shops face each other."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Düzen",
+        "en": "General Layout"
+      },
+      "body": {
+        "tr": "Külliyenin kuzeyini kaplayan arastanın dört taraftan girişi vardır. Açık ve kapalı kısımdan oluşan arasta, halk arasında 'kapalı çarşı' olarak da bilinir; doğu-batı yönde uzanan dikdörtgen plandadır. Kapalı bölümün ortasında, eyvanlı biçimdeki mekândan câmiye bir kapı ve bunun karşısında ayrı, tonozlu küçük bir kapı daha açılmıştır. Dükkânlar beşik tonozla örtülüdür. Kapalı bölümün iki yanındaki kapılar akşamları kapatılır; kuzeye çıkışı sağlayan kapının üzerinde bekçi odası bulunur.",
+        "en": "The bazaar covering the north of the complex has entrances from four sides. Consisting of open and closed parts, it is also known as the 'covered bazaar' and has a rectangular plan extending east-west. In the middle of the closed section a door opens from the iwan-shaped space to the mosque, and opposite it a separate small vaulted door. The shops are covered with barrel vaults. The doors on both sides of the closed section are closed in the evenings, and above the door leading north is a guard room."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "64"
+        }
+      ]
+    },
+    {
+      "id": "kapali-acik",
+      "order": 2,
+      "title": {
+        "tr": "Kapalı ve Açık Bölüm",
+        "en": "Closed and Open Sections"
+      },
+      "body": {
+        "tr": "Arastanın orta ve batı kısmını oluşturan kapalı bölümde koridorun kuzeyinde ve güneyinde karşılıklı dükkânlar vardır. Koridorun üzerinde doğu-batı yönünde, aralarına gergiler yerleştirilmiş sivri beşik tonozlu kemerler bulunur; sivri kemerli eyvanlar biçiminde koridora açılan dükkânlar kuzey-güney yönünde atılan sivri beşik tonozlarla örtülüdür. Doğudaki açık bölümün üzeri örtülü değildir ve kuzey-güney yönlü dükkân sıralarından oluşur; buradaki mekânlar daha küçüktür, yine beşik tonozludur ve çatı seviyesi kapalı bölümden alçaktır.",
+        "en": "In the closed section forming the middle and west of the bazaar, shops face each other north and south of the corridor. Over the corridor, arches carrying pointed barrel vaults, with tie rods between them, run east-west; the shops open onto the corridor as pointed-arch iwans and are covered with pointed barrel vaults running north-south. The open section in the east is uncovered and consists of north-south rows of shops; its spaces are smaller, also barrel-vaulted, and its roof level is lower than that of the closed section."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "65"
+        }
+      ]
+    },
+    {
+      "id": "cepheler",
+      "order": 3,
+      "title": {
+        "tr": "Cepheler ve Malzeme",
+        "en": "Façades and Materials"
+      },
+      "body": {
+        "tr": "Batı cephe sokağa bakar; ekseninde iki renkli taşla örülmüş basık kemerli bir kapı düzenlemesi görülür. Kuzey cephe yapının en serbest bölümüdür; caddeye bakan sağır cephenin örtü sistemi bacalardır. Doğu cephe arastanın sokakla bağlantısını sağlayan cephelerden biridir ve açık kısım bu yöndedir. Hem kapalı hem açık çarşıda kesme taş ve tuğla karışık kullanılmıştır; özellikle kapalı çarşının doğu ve batı giriş kapısı kemerlerinde tuğla karışık kullanılmıştır.",
+        "en": "The west façade faces the street; on its axis is a low-arched door of two-colored stone. The north façade is the freest part of the building, a blind façade facing the street whose roofing system consists of chimneys. The east façade is one of those connecting the bazaar to the street, and the open section lies in that direction. Cut stone and brick were used mixed in both the closed and open bazaars, especially in the arches of the east and west entrance gates of the covered bazaar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "65"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dukkan_sayisi",
+      "label": {
+        "tr": "Karşılıklı dükkân sayısı (her sırada)",
+        "en": "Shops facing each other (per row)"
+      },
+      "value": 23,
+      "unit": "adet",
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "64"
+        }
+      ],
+      "note": {
+        "tr": "Türkçe metin '23'er dükkân' (her sırada 23) diyor; İngilizce metin 'Arasta has 23 shops' diyor.",
+        "en": "The Turkish text says 23 shops each (per row); the English says 'Arasta has 23 shops'."
+      }
+    },
+    {
+      "key": "giris_sayisi",
+      "label": {
+        "tr": "Giriş yönü sayısı",
+        "en": "Number of entrance directions"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "64"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "bekci",
+      "title": {
+        "tr": "Bekçi odası",
+        "en": "Guard room"
+      },
+      "hint": {
+        "tr": "Kuzeye çıkış kapısının üstünde; akşamları yan kapılar kapatılırdı.",
+        "en": "Above the north exit door; the side doors were closed in the evenings."
+      },
+      "section_id": "genel"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-ilgin-lala-mustafa-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Lala Mustafa Paşa Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Lala Mustafa Paşa Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "64"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Arasta, külliyenin kuzeyinde doğu-batı doğrultulu uzun bir dikdörtgendir. Batı ve orta bölümü kapalı bir koridor ve iki yanında tonozlu dükkânlardan, doğu bölümü üstü açık dükkân sıralarından oluşur. Dört yönden girişi vardır; kuzey kapının üzerinde bekçi odası bulunur.",
+      "en": "The bazaar is a long east-west rectangle north of the complex. Its west and middle parts are a covered corridor with vaulted shops on both sides; its east part is open rows of shops. It has entrances from four directions, with a guard room above the north door."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

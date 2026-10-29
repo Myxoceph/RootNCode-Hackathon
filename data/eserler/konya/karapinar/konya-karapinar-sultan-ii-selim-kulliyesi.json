@@ -1,0 +1,415 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karapinar-sultan-ii-selim-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Külliyenin sıbyan mektebi, tabhane, ikinci han ve iki yel değirmeni bu partide yok; kayıtları ayrıca eklenmeli.",
+      "Vakfiye, kitabe ve arşiv belgeleri kitaba göre bulunamamış; arşiv kaynakları araştırılmalı.",
+      "Hicri-miladi gün dönüşümü (18 Şâban 967 = 14 Mayıs 1560) uzman tarafından kontrol edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.district",
+        "note": "Metin 'Karatay ilçe merkezinde' diyor (hem Türkçe hem İngilizce), ancak külliye Karapınar ilçesindedir (başlık ve içindekiler). Karatay ifadesi hata gibi görünüyor; ilçe Karapınar olarak yazıldı."
+      },
+      {
+        "field": "architect",
+        "note": "Metnin ilk cümlesi 'Mimar Sinan'ın Karapınar'da inşa ettiği' derken sonraki bölümler mimarın Sinan'a bağlı eyalet mimarı Halepli Cemaleddin olduğunu, Sinan'ın katkısının varsayım olduğunu söylüyor; bu yüzden 'disputed' işaretlendi."
+      },
+      {
+        "field": "dating",
+        "note": "Yapım 1560-1563 olarak verilirken imar eylemi için 1560-69 aralığı da veriliyor (çeşme kitabesi H. 977 / M. 1569). Çelişki değil, kapsam farkıdır; yapılar için 1563 esas alındı."
+      },
+      {
+        "field": "founder",
+        "note": "Kitap iki banî veriyor (görünürde II. Selim, arka planda Kanûni). 'founder' alanı tek ad aldığından iki ad birlikte yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sultan II. Selim Külliyesi",
+    "en": "Sultan Selim II Complex"
+  },
+  "subtitle": {
+    "tr": "Karapınar'ın çekirdeğini oluşturan menzil külliyesi",
+    "en": "The range complex that formed the core of Karapınar"
+  },
+  "alternate_names": [
+    {
+      "tr": "Karapınar Selimiye Külliyesi",
+      "en": "Karapınar Selimiye Complex",
+      "note": "Metinde bu adla da geçiyor"
+    },
+    {
+      "tr": "Sultaniye",
+      "en": "Sultaniye",
+      "note": "Karapınar'ın XVI. yüzyıl ortasından erken Cumhuriyet yıllarına kadar bilinen adı"
+    }
+  ],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "menzil külliyesi",
+    "selâtin külliyesi",
+    "Mimar Sinan",
+    "Karapınar",
+    "Kanûni Sultan Süleyman",
+    "İstanbul-Hicaz yolu"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karapınar",
+    "neighborhood": null,
+    "address": "Konya Caddesi ve Sultan Selim Sokağı arasında",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "33"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "18 Şâban 967 / 14 Mayıs 1560 başlangıç; H. 971 / M. 1563 tamamlanma",
+      "en": "Started 18 Shaban 967 / 14 May 1560; completed AH 971 / AD 1563"
+    },
+    "start_year": 1560,
+    "end_year": 1563,
+    "hijri_year": 971,
+    "century": 16,
+    "basis": {
+      "tr": "Yapımına II. Selim'in Konya valiliği sırasında 14 Mayıs 1560'ta başlanmış, H. 971 / M. 1563'te tamamlanıp hizmete açılmıştır. Metin ayrıca imar eyleminin 1560-69 arasında gerçekleştiğini söyler.",
+      "en": "Construction began on 14 May 1560 during Selim II's governorship of Konya and was completed in AH 971 / AD 1563. The text also says the whole development took place in 1560-69."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "33, 37"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şehzade II. Selim (Sultan II. Selim)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "35-37"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Halepli Cemaleddin",
+    "candidates": [
+      {
+        "name": "Mimar Sinan",
+        "note": "Baş mimar; proje çizimi, onarım ve ikinci mimar gönderilmesinde katkısı olabileceği varsayılıyor"
+      }
+    ],
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "33, 36-37"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "37"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Şehzade II. Selim ile Kanûni Sultan Süleyman'ın ortak baniliğinde 1560-69'da Karapınar'da yaptırılan menzil külliyesi. Cami, sıbyan mektebi, imaret, tabhane, arasta, iki han, çeşme, hamam ve iki yel değirmeninden oluşur; Orta Anadolu'daki en önemli selâtin külliyelerindendir.",
+    "en": "A range complex built in Karapınar in 1560-69 under the joint patronage of Prince Selim II and Suleyman the Magnificent. It comprises a mosque, primary school, imarat, tabhane, bazaar, two inns, fountain, bath and two windmills, and is one of the most important sultanic complexes in Central Anatolia."
+  },
+  "sections": [
+    {
+      "id": "karapinar-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Karapınar'ın Dönüşümü",
+        "en": "The Transformation of Karapınar"
+      },
+      "body": {
+        "tr": "XVI. yüzyılda Yavuz Sultan Selim'in Çaldıran (1514) ve Mercidabık (1516) seferleri, ardından Kanûni'nin Irakeyn (1533-34) ve İran (1543 / 1553) seferleri Karapınar'ın kaderini değiştirmiş; Anadolu'nun Sağ Yolu / Hac / Ulu Yol olarak kullanılması eski Bizans yolunun önemini artırmıştır. Yavuz Selim Çaldıran Seferi sonrasında sur içinde köysel bir yerleşim kurdurmuş, ancak zor koşullar nedeniyle bu yerleşim kısa sürede terk edilmiştir (metin 'yüksek ihtimalle' diyor). Asıl değişim, Şehzade II. Selim'in ikinci kez Konya Sancak Beyliği'ne atanmasına rastlar. 1558'de kardeşi Şehzade Bayezid ile Konya topraklarındaki iç savaş sırasında bölgeyi tanıyan Selim, Karapınar'ın yol üzerinde olduğu hâlde ıssız, susuz ve tehlikeli bir derbent olmasından etkilenmiş; babasına ve Saray Divanı'na menzil külliyesi kurma, su getirtme ve kent kurma isteğini bildiren bir yazı göndermiştir. Kanûni ve Divan, kapsamlı bir vakıf eserinin yolu kullananlara güven sağlayacağı, ekonomik refahı ve sosyal ilişkileri düzenleyeceği ve siyasi/prestij faydası olacağı düşüncesiyle onaylamıştır.",
+        "en": "In the 16th century Yavuz Sultan Selim's Çaldıran (1514) and Mercidabık (1516) campaigns and then Suleyman's Irakeyn (1533-34) and Iran (1543 / 1553) campaigns changed Karapınar's fate; the use of Anatolia's Right Way / Pilgrimage / Great Way increased the importance of the old Byzantine road. Yavuz Selim had a village settlement set up within walls after Çaldıran, which was probably abandoned soon because of harsh conditions. The second and main change came when Prince Selim II was appointed Sanjak Bey of Konya for the second time. Having got to know the area during the 1558 civil war with his brother Prince Bayezid, Selim was struck that Karapınar was a deserted, waterless and dangerous pass on the road, and wrote to his father and the Palace Council proposing a range complex, water supply and a new town. Kanuni and the Council approved, believing a comprehensive foundation would give confidence to travelers, regulate economic prosperity and social relations, and bring political and prestige benefits."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "35"
+        }
+      ]
+    },
+    {
+      "id": "kurgu",
+      "order": 2,
+      "title": {
+        "tr": "Külliyenin Kurgusu",
+        "en": "Layout of the Complex"
+      },
+      "body": {
+        "tr": "Şehzade II. Selim hem yeni yerleşimin çekirdeğini oluşturmak hem de kent içinden geçen İstanbul-Hicaz yolunu kullanacakları düşünerek kapsamlı bir menzil külliyesi tasarlatmıştır. Külliye cami, sıbyan mektebi, imaret, tabhane, arasta, iki han, çeşme, hamam ve iki yel değirmeninden oluşur. Genelde menzil külliyelerinde ikinci planda kalan cami, çift minaresiyle dikeyde vurgulanmış, kaliteli malzeme ve bezemeyle önemsenmiştir. Yapılar arasında işlevselliğin ve mekân kurgusunun gözetildiği düzgün planlı, geometrik bir düzen uygulanmıştır. Külliye Konya Caddesi ile Sultan Selim Sokağı arasında yer alır.",
+        "en": "Prince Selim II had a comprehensive range complex designed both to form the core of the new settlement and for travelers on the Istanbul-Hijaz road passing through. It comprises a mosque, primary school, imarat, tabhane, bazaar, two inns, fountain, bath and two windmills. The mosque, usually secondary in range complexes, is emphasized vertically with double minarets and given importance with quality materials and decoration. A well-planned, geometric order was applied between the buildings. The complex lies between Konya Street and Sultan Selim Street."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "33, 36"
+        }
+      ]
+    },
+    {
+      "id": "banilik",
+      "order": 3,
+      "title": {
+        "tr": "İki Banî ve 'Sultaniye' Adı",
+        "en": "Two Patrons and the Name 'Sultaniye'"
+      },
+      "body": {
+        "tr": "Külliyenin iki banisi vardır: görünürde Şehzade Sultan II. Selim, arka planda kalmayı tercih eden Kanûni Sultan Süleyman. Bu nedenle Karapınar, XVI. yüzyıl ortasından erken Cumhuriyet yıllarına kadar 'Sultaniye' adıyla anılmıştır.",
+        "en": "The complex has two patrons: ostensibly Prince Selim II, and Suleyman the Magnificent, who preferred to remain in the background. For this reason Karapınar was known as 'Sultaniye' from the mid-16th century until the early Republic."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "36"
+        }
+      ]
+    },
+    {
+      "id": "mimar",
+      "order": 4,
+      "title": {
+        "tr": "Mimar",
+        "en": "Architect"
+      },
+      "body": {
+        "tr": "Arşiv belgesinde adı geçen Halepli mimar Cemaleddin, Hassa Mimarlar Teşkilatı'nın ser mimarı Mimar Sinan'ın eyalet mimarıdır; külliye bu mimarın sorumluluğunda inşa edilmiştir. Cemaleddin'in görevlendirilmesinin Sinan'ın bilgisi dahilinde olması gerektiği, cami, imaret, hamam ve han yapılarının Sinan'la ilgili tezkerelerde adının geçtiği ve Sinan'ın proje çiziminde, onarımda ve ikinci mimar gönderilmesinde katkısı olabileceği varsayılır. Usta, kalfa ve çırakların çevre yerleşimlerdeki zanaatkârlardan seçilmesi doğal bir gelişme olarak görülür. Vakfiye, kitabeler ve arşiv belgeleri bulunamamıştır.",
+        "en": "Cemaleddin of Aleppo, named in an archive document, is the provincial architect of Mimar Sinan, chief of the Hassa Architects Organization; the complex was built under his responsibility. His appointment must have been known to Sinan; the mosque, imarat, bath and inn appear in memoranda related to Sinan, and Sinan may have contributed to the project drawing, repair and sending of the second architect. Masters, journeymen and apprentices being chosen from craftsmen of nearby settlements is seen as natural. The foundation charter, inscriptions and archive documents could not be found."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "36-37"
+        }
+      ]
+    },
+    {
+      "id": "onem",
+      "order": 5,
+      "title": {
+        "tr": "Önemi",
+        "en": "Significance"
+      },
+      "body": {
+        "tr": "Karapınar / Sultaniye Osmanlı şehirciliğine iyi bir örnektir. Dönemin halef ve selefi Şehzade Sultan II. Selim ile Kanûni'nin ortak baniliğinde programlanan menzil külliyesi ve imar eylemi 1560-69 arasında gerçekleşmiştir. Külliye, Osmanlı mimarisinin Orta Anadolu'daki en önemli selâtin külliyelerinden biridir.",
+        "en": "Karapınar / Sultaniye is a good example of Ottoman urbanism. The range complex and development planned under the joint patronage of Prince Selim II and Suleyman was carried out in 1560-69. It is one of the most important sultanic complexes of Ottoman architecture in Central Anatolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "37"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "han_sayisi",
+      "label": {
+        "tr": "Han sayısı",
+        "en": "Number of inns"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "36"
+        }
+      ]
+    },
+    {
+      "key": "yel_degirmeni",
+      "label": {
+        "tr": "Yel değirmeni sayısı",
+        "en": "Number of windmills"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "36"
+        }
+      ]
+    },
+    {
+      "key": "imar_suresi",
+      "label": {
+        "tr": "İmar eyleminin yılları",
+        "en": "Years of the development"
+      },
+      "value": "1560-69",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "37"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şehzade II. Selim (Sultan II. Selim)",
+      "role": {
+        "tr": "Görünürdeki banî; Konya sancak beyi",
+        "en": "Ostensible patron; Sanjak Bey of Konya"
+      }
+    },
+    {
+      "name": "Kanûni Sultan Süleyman",
+      "role": {
+        "tr": "Arka plandaki ikinci banî",
+        "en": "Second patron in the background"
+      }
+    },
+    {
+      "name": "Cemaleddin",
+      "role": {
+        "tr": "Halepli eyalet mimarı",
+        "en": "Provincial architect from Aleppo"
+      }
+    },
+    {
+      "name": "Mimar Sinan",
+      "role": {
+        "tr": "Hassa Mimarlar Teşkilatı ser mimarı; olası katkı",
+        "en": "Chief architect of the Hassa Architects Organization; possible contribution"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "savas-1558",
+      "year": 1558,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Şehzade Selim ile Bayezid arasındaki iç savaş sırasında Selim bölgeyi tanıdı",
+        "en": "During the civil war between princes Selim and Bayezid, Selim got to know the region"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "35"
+        }
+      ]
+    },
+    {
+      "id": "baslangic-1560",
+      "year": 1560,
+      "date": "1560-05-14",
+      "hijri": "18 Şâban 967",
+      "type": "construction",
+      "title": {
+        "tr": "Yapımına başlandı (18 Şâban 967 / 14 Mayıs 1560)",
+        "en": "Construction began (18 Shaban 967 / 14 May 1560)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "33"
+        }
+      ]
+    },
+    {
+      "id": "tamam-1563",
+      "year": 1563,
+      "date": null,
+      "hijri": "971",
+      "type": "opening",
+      "title": {
+        "tr": "Tamamlanıp hizmete açıldı (H. 971)",
+        "en": "Completed and opened for service (AH 971)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "33"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "menzil",
+      "title": {
+        "tr": "Menzil külliyesi",
+        "en": "Range complex"
+      },
+      "hint": {
+        "tr": "Yol üstündeki yolculara hizmet için tasarlanan cami, imaret, han, hamam ve arasta bütünü.",
+        "en": "A set of mosque, imarat, inn, bath and bazaar designed to serve travelers on the road."
+      },
+      "section_id": "kurgu"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliye düzgün planlı, geometrik bir kurgudadır. Güney ucunda çift minareli cami, iç avlunun kuzeyinde imaret, doğuda hamam, kuzey ucunda çeşme ve han yer alır; arasta iki sıra dükkânla külliyeyi doğu-batı doğrultusunda böler.",
+      "en": "The complex follows a regular, geometric plan. The double-minareted mosque is at the south end, the imarat north of the inner courtyard, the bath in the east, and the fountain and inn at the north end; the bazaar divides the complex east-west with two rows of shops."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

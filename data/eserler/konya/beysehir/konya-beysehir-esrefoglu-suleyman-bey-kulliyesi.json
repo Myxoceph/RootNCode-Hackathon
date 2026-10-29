@@ -1,0 +1,337 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-beysehir-esrefoglu-suleyman-bey-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; hamamın vakfiyede 'Hamam-ı Kebir' diye geçtiği hamam kaydında belirtiliyor. Vakfiye bulunursa waqf alanı doldurulmalı.",
+      "Kitapta külliyenin yapılarının konumları (hamam: kale kapısı ile cami arası; bedesten: caminin kuzeyi) alt kayıtlarda; külliye planı için kaynak aranmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[vefat-1302]",
+        "note": "Kitap vefatı '2 Muharrem 702 / 27 Ağustos 1302 Pazartesi' olarak veriyor (İngilizce metin aynı). H. 702 Muharrem'i genel olarak Eylül 1302'ye denk geldiğinden hicri ve miladi gün uyuşmayabilir; kaynağa sadık kalınarak değerler korundu ve olay 'disputed' işaretlendi. Gün-ay dönüşümü uzman tarafından kontrol edilmeli."
+      },
+      {
+        "field": "dating",
+        "note": "Türbe metni (s. 26) türbenin H. 701 / M. 1301'de yaptırıldığını, 'vefatından bir yıl önce' olduğunu söylüyor; vefat yılı 1302 ile tutarlı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Eşrefoğlu Süleyman Bey Külliyesi",
+    "en": "Eşrefoğlu Süleyman Bey Complex"
+  },
+  "subtitle": {
+    "tr": "Eşrefoğlu Beyliği'nin günümüze ulaşan en önemli eseri",
+    "en": "The most important surviving work of the Eşrefoğlu Beylik"
+  },
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "Eşrefoğlu Beyliği",
+    "ahşap direkli cami",
+    "külliye",
+    "Beyşehir"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Beyşehir",
+    "neighborhood": null,
+    "address": "Beyşehir ilçe merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "12"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Son yapı (türbe) M. 1301; yapıların tarihleri ayrı kayıtlarda",
+      "en": "Last building (tomb) AD 1301; dates of the buildings in their own records"
+    },
+    "start_year": null,
+    "end_year": 1301,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Külliye metni yalnızca son yapı olan türbenin M. 1301'de yaptırıldığını söyler; camii (H. 696-699) ve diğer yapıların tarihleri alt kayıtlardadır. Başlangıç yılı bu metinde verilmiyor.",
+      "en": "The complex text only states that the last building, the tomb, was built in 1301; the mosque (AH 696-699) and the other buildings are dated in the child records. No start year is given here."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "13"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Eşrefoğlu Seyfeddin Süleyman Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "12-13"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "28"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Beyşehir'de Eşrefoğlu Süleyman Bey'in yaptırdığı külliye; camii, türbe, bedesten ve hamamdan oluşur. En önemli yapısı ahşap direkli camidir.",
+    "en": "A complex built by Eşrefoğlu Süleyman Bey in Beyşehir, consisting of a mosque, tomb, bedesten and bath. Its most important building is the wooden-pillared mosque."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Külliye Beyşehir ilçe merkezinde yer alır ve Eşrefoğlu Süleyman Bey tarafından yaptırılmıştır. Camii, türbe, bedesten ve hamamdan oluşur. Seyfeddin Süleyman Bey son yapı olarak M. 1301'de caminin doğu tarafına bitişik türbeyi yaptırmış, vefat ettiğinde bu külliyeye defnedilmiştir. Külliye içindeki en önemli mimari unsur şüphesiz camidir.",
+        "en": "The complex is located in the Beyşehir district center and was built by Eşrefoğlu Süleyman Bey. It consists of a mosque, tomb, bedesten and bath. Seyfeddin Süleyman Bey had the last structure, the tomb adjacent to the east side of the mosque, built in 1301 AD and was buried in this complex. The most important architectural element within it is undoubtedly the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "12-13"
+        }
+      ]
+    },
+    {
+      "id": "beylik",
+      "order": 2,
+      "title": {
+        "tr": "Eşrefoğlu Beyliği",
+        "en": "The Eşrefoğlu Beylik"
+      },
+      "body": {
+        "tr": "Eşrefoğlu Beyliği, XIII. yüzyıl sonunda (M. 1277-1282) Eşref Bey tarafından Beyşehir ve Seydişehir bölgesinde kurulmuş ve yaklaşık 50 yıl hüküm sürmüştür. Eşref Bey'in Bizanslılarla yapılan bir muharebe sırasında vefat etmesi üzerine 1284'te yerine oğlu Seyfettin Süleyman Bey geçmiştir. Süleyman Bey, 1290'da Beyşehir'deki kale imârı ile başlayan faaliyetleriyle birçok önemli eser yaptırmıştır; vefatının ardından beyliğin başına Mübarizüddin Mehmet Bey geçmiştir. Ömrü kısa süren bu beylik geride bıraktığı eşsiz mimari eserlerle yaşamaktadır.",
+        "en": "The Eşrefoğlu Beylik was founded by Eşref Bey in the Beyşehir and Seydişehir regions at the end of the 13th century (1277-1282 AD) and ruled for about 50 years. After Eşref Bey died in a battle with the Byzantines, his son Seyfettin Süleyman Bey took his place in 1284. Süleyman Bey had many important works built, starting with the castle construction in Beyşehir in 1290; after his death Mübarizüddin Mehmed Bey succeeded him. This short-lived principality lives on through its unique architectural works."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "12-13"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "beylik_hukum_suresi",
+      "label": {
+        "tr": "Beyliğin hüküm süresi",
+        "en": "Rule of the beylik"
+      },
+      "value": 50,
+      "unit": "yıl",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "12"
+        }
+      ],
+      "note": {
+        "tr": "Metin 'yaklaşık 50 yıl' diyor.",
+        "en": "The text says 'about 50 years'."
+      }
+    },
+    {
+      "key": "yapi_sayisi",
+      "label": {
+        "tr": "Külliyedeki yapı sayısı",
+        "en": "Number of buildings"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "13"
+        }
+      ],
+      "note": {
+        "tr": "Camii, türbe, bedesten, hamam.",
+        "en": "Mosque, tomb, bedesten, bath."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Eşref Bey",
+      "role": {
+        "tr": "Eşrefoğlu Beyliği'nin kurucusu",
+        "en": "Founder of the Eşrefoğlu Beylik"
+      }
+    },
+    {
+      "name": "Seyfettin Süleyman Bey",
+      "role": {
+        "tr": "Külliyeyi yaptıran bey; 1284'te babasının yerine geçti",
+        "en": "The bey who built the complex; succeeded his father in 1284"
+      }
+    },
+    {
+      "name": "Mübarizüddin Mehmet Bey",
+      "role": {
+        "tr": "Süleyman Bey'den sonra beyliğin başına geçti",
+        "en": "Succeeded Süleyman Bey as head of the beylik"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "beylik-kurulus",
+      "year": 1282,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Eşref Bey Eşrefoğlu Beyliği'ni kurdu (M. 1277-1282 aralığı)",
+        "en": "Eşref Bey founded the Eşrefoğlu Beylik (range 1277-1282)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "12"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'M. 1277-1282' aralığını veriyor; yıl aralığın son yılıdır.",
+        "en": "The book gives the range 1277-1282; the year is the end of that range."
+      }
+    },
+    {
+      "id": "suleyman-bey-1284",
+      "year": 1284,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Seyfettin Süleyman Bey babasının yerine geçti",
+        "en": "Seyfettin Süleyman Bey succeeded his father"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "12"
+        }
+      ]
+    },
+    {
+      "id": "kale-1290",
+      "year": 1290,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Süleyman Bey Beyşehir'de kale imârıyla yapı faaliyetlerine başladı",
+        "en": "Süleyman Bey began his building activity with the castle construction in Beyşehir"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "13"
+        }
+      ]
+    },
+    {
+      "id": "turbe-1301",
+      "year": 1301,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Son yapı olarak türbe yaptırıldı",
+        "en": "The tomb was built as the last structure"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "13"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1302",
+      "year": 1302,
+      "date": "1302-08-27",
+      "hijri": "2 Muharrem 702",
+      "type": "record",
+      "title": {
+        "tr": "Seyfettin Süleyman Bey vefat etti ve külliyeye defnedildi",
+        "en": "Seyfettin Süleyman Bey died and was buried in the complex"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "13"
+        }
+      ],
+      "note": {
+        "tr": "Hicri ve miladi tarihin uyuşması kontrol edilmeli (bkz. meta.data_quality_notes).",
+        "en": "Match of Hijri and Gregorian date should be checked (see meta.data_quality_notes)."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Beyşehir'in merkezinde, ahşap direkli büyük bir cami ile ona bitişik türbe, yakınında bir bedesten ve eski bir hamamdan oluşan külliye. Kitapta külliyenin bütünü için ayrıntılı bir mimari betimleme yoktur.",
+      "en": "A complex in the center of Beyşehir made up of a large wooden-pillared mosque with an adjoining tomb, a nearby bedesten and an old bath. The book gives no detailed architectural description of the complex as a whole."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}
