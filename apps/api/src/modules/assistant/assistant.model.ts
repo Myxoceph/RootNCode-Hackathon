@@ -103,6 +103,19 @@ export interface ModelClientOptions {
   fetchImpl?: typeof fetch;
 }
 
+/**
+ * Joins every system message into one, first. Some chat templates (Qwen on EVREN) refuse a
+ * second system message, or one after the first turn, with 400.
+ */
+export function oneSystemMessage(messages: ChatMessage[]): ChatMessage[] {
+  const system = messages.filter((m): m is { role: "system"; content: string } => m.role === "system");
+  if (system.length === 0 || (system.length === 1 && messages[0]!.role === "system")) return messages;
+  return [
+    { role: "system", content: system.map((m) => m.content).join("\n\n") },
+    ...messages.filter((m) => m.role !== "system"),
+  ];
+}
+
 export function createChatModel({ baseUrl, model, apiKey, fetchImpl = fetch }: ModelClientOptions): ChatModel {
   const root = baseUrl.replace(/\/+$/, "");
   const headers: Record<string, string> = { "content-type": "application/json" };
@@ -115,7 +128,7 @@ export function createChatModel({ baseUrl, model, apiKey, fetchImpl = fetch }: M
     async complete(messages, tools, signal) {
       const body = {
         model,
-        messages,
+        messages: oneSystemMessage(messages),
         temperature: TEMPERATURE,
         max_tokens: MAX_ANSWER_TOKENS,
         ...(tools.length > 0 && {

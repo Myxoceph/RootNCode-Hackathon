@@ -220,11 +220,20 @@ ASSISTANT_API_KEY=
 
 Anahtar yalnızca `.env` dosyasında durur; git'e, PR'a ya da sohbete yazılmaz.
 
+**Gizlilik.** Ziyaretçinin soruları ve son altı turu EVREN'e gönderilir. EVREN'in kullanım şartları
+2026-10-30'da okundu ve demoda kullanımı onaylandı; şartların yeni sürümü (`GET /v1/terms/status`,
+`current_version`) çıkarsa yeniden okunmalı. Uygulama sohbet ekranında kişisel bilgi yazılmamasını hatırlatır.
+
 Sonra `docker compose … up -d` ile API'yi yeniden başlat ve kontrol et:
 `curl https://vagabonds.allbytech.com/api/chat/status` → `"available": true`.
 
 Sınırlar: günde 15 milyon token (bütün anahtarlar ve modeller toplamı), aşılınca `429`. Kalan kota
 `GET /v1/quota` ile görülür.
+
+**Dış bağımlılık.** Asistan, sitenin dışarıdaki bir servise bağlı tek parçasıdır. EVREN'e ulaşılamazsa,
+kota dolarsa ya da ücretsiz dönem (2026-12-01) biterse `/chat/status` `available: false` döner ve
+uygulama sohbet girişlerini gizler; eserler, harita ve rotalar etkilenmez. Asistan demoda gösterilecekse
+öncesinde `/chat/status`'a bak; gerekirse aşağıdaki yerel model yedeğine geç.
 
 **Model seçimi.** Bir soru en çok dört model çağrısıdır (üç araç + cevap) ve 60 saniyede kesilir.
 Düşünen (reasoning) modellerde düşünme hem süreyi hem `max_tokens` bütçesini yer. 2026-10-30
