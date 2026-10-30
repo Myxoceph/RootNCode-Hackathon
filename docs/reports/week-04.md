@@ -1,11 +1,11 @@
 # Haftalık Rapor · Hafta 4 (30 Ekim – 5 Kasım 2026)
 
-> Görevler: [`docs/sprints/week-04.md`](../sprints/week-04.md). Hafta 3 raporundan sonra birleşen PR'lar (#82–#102) bu raporda.
+> Görevler: [`docs/sprints/week-04.md`](../sprints/week-04.md). Hafta 3 raporundan sonra birleşen PR'lar (#82–#102, #104, #105) bu raporda.
 
 ## Haftanın özeti
-Bu hafta uygulama bir "eser rehberi" olmaktan çıkıp kullanıcısı olan bir ürüne dönüştü. Ziyaretçiler artık kullanıcı adı ve parolayla hesap açabiliyor, eserlere not ve fotoğraf önerebiliyor; moderatörler bunları inceliyor, adminler panelden yeni eser, başarım ve ödül ekleyebiliyor. Eserleri gezdikçe başarım ve puan kazanılıyor; Zaman Perdesi'nde eser kamerada tanınınca ziyaret "kanıtlanmış" sayılıyor ve puanlar ortak kurumların (örnek olarak Vakıf Katılım ve VGM) ödüllerine harcanabiliyor. Konya II. Cilt'ten 93 eser eklendi ve yayına alındı; koordinat çalışmasıyla haritadaki eser sayısı 565'in 496'sına çıktı. Rotalar çok günlük gezi planı ve hava tahmini aldı, yöresel lezzetler ve ses kayıtları için uçlar hazır. AI asistan EVREN üzerinde (`qwen3.8-flash-next`) yalnızca veri setinden ve kaynak göstererek cevap veriyor.
+Bu hafta uygulama bir "eser rehberi" olmaktan çıkıp kullanıcısı olan bir ürüne dönüştü. Ziyaretçiler artık kullanıcı adı ve parolayla hesap açabiliyor, eserlere not ve fotoğraf önerebiliyor; moderatörler bunları inceliyor, adminler panelden yeni eser, başarım ve ödül ekleyebiliyor. Eserleri gezdikçe başarım ve puan kazanılıyor; Zaman Perdesi'nde eser kamerada tanınınca ziyaret "kanıtlanmış" sayılıyor ve puanlar ortak kurumların (örnek olarak Vakıf Katılım ve VGM) ödüllerine harcanabiliyor. Konya II. Cilt'ten 93 eser eklendi ve yayına alındı; koordinat çalışmasıyla haritadaki eser sayısı 565'in 496'sına çıktı. Rotalar çok günlük gezi planı ve hava tahmini aldı, yöresel lezzetler ve ses kayıtları için uçlar hazır. AI asistan EVREN üzerinde (`qwen3.8-flash-next`) yalnızca veri setinden ve kaynak göstererek cevap veriyor; uygulamada haritadan ve eser sayfasından açılan bir sohbet ekranı var.
 
-Demo edilebilir olanlar: üç şehirli yeni harita (Türkiye görünümü, şehir görünümü, mühürlü eserler), açık/koyu tema, asistanın kaynaklı cevapları, gezi planı ve bütün yeni uçlar Swagger'dan (`/docs`). Hesap, fotoğraf, başarım, cüzdan ve panel ekranları uygulamaya bağlanmayı bekliyor; yapılacaklar [`YIGIT.md`](../../YIGIT.md)'de.
+Demo edilebilir olanlar: üç şehirli yeni harita (Türkiye görünümü, şehir görünümü, mühürlü eserler), açık/koyu tema, asistan ekranı (kaynaklı cevaplar, "Bu eser hakkında sor"), gezi planı ve bütün yeni uçlar Swagger'dan (`/docs`). Hesap, fotoğraf, başarım, cüzdan ve panel ekranları uygulamaya bağlanmayı bekliyor; yapılacaklar [`YIGIT.md`](../../YIGIT.md)'de.
 
 ## Ekip
 
@@ -46,7 +46,9 @@ Demo edilebilir olanlar: üç şehirli yeni harita (Türkiye görünümü, şehi
 - **Tamamlananlar:**
   - **Uygulama testlerinin gözden geçirilmesi:** Kitabe testleri örnek veriden bağımsız, test kısayolları ve typecheck düzeltmeleri ([#95](https://github.com/Myxoceph/RootNCode-Hackathon/pull/95)).
   - **SDK 58 sonrası web derlemesi:** Dışa aktarılan web sürümü betikleri yüklemiyordu; `+html.tsx` düzeltildi, demo sunucusu yeniden derlendi ([#96](https://github.com/Myxoceph/RootNCode-Hackathon/pull/96)).
-  - **Asistan EVREN'de:** Asistan EVREN'in OpenAI uyumlu API'sine (`qwen3.8-flash-next`) bağlandı; Qwen'in "system mesajı başta olmalı" hatası düzeltildi, model karşılaştırması ve kurulum `docs/deploy.md`'de ([#100](https://github.com/Myxoceph/RootNCode-Hackathon/pull/100), [#102](https://github.com/Myxoceph/RootNCode-Hackathon/pull/102)). 22 soruda ortanca 5,5 sn.
+  - **Asistan EVREN'de:** Asistan EVREN'in OpenAI uyumlu API'sine (`qwen3.8-flash-next`) bağlandı; Qwen'in "system mesajı başta olmalı" hatası düzeltildi, model karşılaştırması ve kurulum `docs/deploy.md`'de ([#100](https://github.com/Myxoceph/RootNCode-Hackathon/pull/100), [#102](https://github.com/Myxoceph/RootNCode-Hackathon/pull/102)). 22 soruda ortanca 5,5 sn; `glm-5.3` uzun düşündüğü için (ortanca ~21 sn, 60 sn'de zaman aşımı) elendi.
+  - **Asistan ekranı:** Haritadan ve eser sayfasındaki "Bu eser hakkında sor"dan açılan sohbet. `[n]` kaynakları eser, lezzet ve rota sayfalarına götürüyor; gezi planı cevabın altında saatleriyle; asistan kapalıyken girişler gizli; ekran okuyucu "Yanıt hazırlanıyor"u ve cevabı duyuruyor ([#104](https://github.com/Myxoceph/RootNCode-Hackathon/pull/104)). Code review düzeltmeleri: "Temizle" bekleyen isteği iptal ediyor, durum kontrolü hatada yeniden soruluyor, zaman aşımı mesajı ([#105](https://github.com/Myxoceph/RootNCode-Hackathon/pull/105)).
+  - **Demo sunucusu güncellendi:** Sözleşme 0.3.11, yeni migration'lar ve asistan canlıda (`/api/chat/status` → `available: true`); güncellemeden önce yedek alındı.
 - **Devam edenler:**
   - Y13 (gerçek AR hedefi), Y15 (iOS testi), Y16 ve Y17'nin gerçek içerikle tamamlanması.
 - **Engeller / ihtiyaçlar:**
@@ -67,10 +69,10 @@ Demo edilebilir olanlar: üç şehirli yeni harita (Türkiye görünümü, şehi
 ## Metrikler
 | Metrik | Değer |
 |---|---|
-| Birleşen PR sayısı | 21 (#82–#102) |
+| Birleşen PR sayısı | 23 (#82–#102, #104, #105) |
 | Veri setindeki eser sayısı (taslak / incelemede / yayında) | 565 (0 / 0 / 565): Bursa 356, Hatay 116, Konya 93 |
 | Haritada (koordinatlı) eser | 496 / 565 (41'i yaklaşık konum) |
-| API testleri / uygulama testleri | 191 / 52 |
+| API testleri / uygulama testleri | 193 / 72 |
 | Tamamlanan modüller (1-8) | Backend tarafında sekizi de hazır; uygulamada Zaman Perdesi (1) ve Kapsül (7) gerçek içerik bekliyor |
 
 ## Alınan kararlar
@@ -89,4 +91,5 @@ Demo edilebilir olanlar: üç şehirli yeni harita (Türkiye görünümü, şehi
 | MindAR bina cephelerini her zaman tanımayabilir | Kitap fotoğrafı farklı açı ya da ışıkta çekildiyse kanıt verilemez | Ulucami ile sahada denenecek; tanımayan eserde zeminden çekilmiş fotoğraf şablon yapılacak |
 | 69 eserin hâlâ noktası yok | Haritada görünmüyorlar | Ziyaretleri konumsuz kabul ediliyor; kalanlar sahada ya da Hüseyin'le elle eklenebilir |
 | Gerçek içerik eksik (H7, H8, H9) | Demoda test görseli, kapak fotoğrafı ve canlandırılmış sesler | Altyapı hazır, dosyalar gelince kod değişmeden devreye giriyor |
+| Asistan dış bir servise (EVREN) bağlı | EVREN'e ulaşılamazsa, günlük 15 milyon token kotası dolarsa ya da ücretsiz dönem (1 Aralık) biterse asistan kapanır | Uygulama `/chat/status` ile girişleri gizliyor, geri kalan her şey çalışıyor; demodan önce durum kontrol ediliyor, yerel model (Ollama) yedeği `docs/deploy.md`'de |
 | Demo tek bilgisayara bağlı (tünel) | Bilgisayar kapalıyken demo adresi açılmaz | Demo ve provalarda MacBook açık, uyku kapalı; uygulamanın çevrimdışı önbelleği kısa kesintileri karşılıyor |
