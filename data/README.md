@@ -644,18 +644,27 @@ CREATE TABLE contribution (
   asset_id       text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
   user_id        uuid NOT NULL REFERENCES app_user(id) ON DELETE CASCADE,
   kind           text NOT NULL CHECK (kind IN ('photo','memory','tip','correction')),
-  media_id       uuid REFERENCES media(id),            -- kind = photo ise
+  media_id       uuid REFERENCES media(id),            -- kullanılmıyor; fotoğraf photo_upload'da
   body           text,
   status         text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')),
   reviewed_by    uuid REFERENCES app_user(id),         -- moderatör
   reviewed_at    timestamptz,
   reject_reason  text,
   created_at     timestamptz NOT NULL DEFAULT now(),
-  CHECK (kind <> 'photo' OR media_id IS NOT NULL),
   CHECK (status = 'pending' OR (reviewed_by IS NOT NULL AND reviewed_at IS NOT NULL))
 );
 CREATE INDEX contribution_queue_idx ON contribution (created_at) WHERE status = 'pending';
 CREATE INDEX contribution_approved_idx ON contribution (asset_id, created_at DESC) WHERE status = 'approved';
+
+CREATE TABLE photo_upload (                           -- ziyaretçi fotoğrafı (kind = photo), meta verisi silinmiş
+  contribution_id  uuid PRIMARY KEY REFERENCES contribution(id) ON DELETE CASCADE,
+  content_type     text NOT NULL CHECK (content_type IN ('image/jpeg', 'image/png')),
+  bytes            bytea NOT NULL CHECK (octet_length(bytes) BETWEEN 1 AND 5242880),
+  width            integer NOT NULL CHECK (width > 0),
+  height           integer NOT NULL CHECK (height > 0),
+  sha256           text NOT NULL CHECK (sha256 ~ '^[0-9a-f]{64}$'),
+  created_at       timestamptz NOT NULL DEFAULT now()
+);
 CREATE INDEX contribution_user_idx ON contribution (user_id, created_at DESC);
 
 -- ─────────────────────────────── Değişiklik geçmişi (admin panelde her kayıt)
