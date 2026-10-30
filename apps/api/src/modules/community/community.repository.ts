@@ -20,6 +20,7 @@ const contributionSelect = {
   created_at: true,
   reviewed_at: true,
   reject_reason: true,
+  photo: { select: { width: true, height: true } },
 } satisfies Prisma.contributionSelect;
 
 export type ContributionRecord = Prisma.contributionGetPayload<{ select: typeof contributionSelect }>;
@@ -39,6 +40,31 @@ const pulseSelect = {
 } satisfies Prisma.contributionSelect;
 
 export type PulseContributionRecord = Prisma.contributionGetPayload<{ select: typeof pulseSelect }>;
+
+const photoSelect = {
+  contribution_id: true,
+  width: true,
+  height: true,
+  contribution: { select: { body: true, created_at: true, user: { select: { nickname: true } } } },
+} satisfies Prisma.photo_uploadSelect;
+
+export type PhotoRecord = Prisma.photo_uploadGetPayload<{ select: typeof photoSelect }>;
+
+/** The file of a photo, with what decides who may see it. */
+export interface PhotoFileRecord {
+  contentType: string;
+  bytes: Uint8Array;
+  /** Approved, its author not banned and its asset visible: anyone may see it. */
+  public: boolean;
+}
+
+export interface NewPhoto {
+  contentType: string;
+  bytes: Buffer;
+  width: number;
+  height: number;
+  sha256: string;
+}
 
 export interface VisibleAsset {
   id: string;
@@ -82,9 +108,16 @@ export interface CommunityRepository {
   ): Promise<UserRecord | "username_taken" | "has_account">;
   /** The asset if clients may see it (and so may contribute to it), otherwise null. */
   findVisibleAsset(id: string, statuses: string[]): Promise<VisibleAsset | null>;
+  /** Text contributions (not photos) since `since`. */
   countContributionsSince(userId: string, since: Date): Promise<number>;
   createContribution(data: { assetId: string; userId: string; kind: string; body: string }): Promise<ContributionRecord>;
   listUserContributions(userId: string, limit: number): Promise<ContributionRecord[]>;
+  countPhotosSince(userId: string, since: Date): Promise<number>;
+  /** A pending `photo` contribution with its file, in one transaction. */
+  createPhotoContribution(data: { assetId: string; userId: string; caption: string; photo: NewPhoto }): Promise<ContributionRecord>;
+  /** Approved photos of an asset whose authors are not banned, newest first. */
+  findApprovedPhotos(assetId: string, limit: number): Promise<{ items: PhotoRecord[]; total: number }>;
+  findPhotoFile(id: string, statuses: string[]): Promise<PhotoFileRecord | null>;
   findPulse(assetId: string, limit: number): Promise<PulseRecords>;
   findQueue(query: { status: ContributionStatus; limit: number; offset: number }): Promise<{
     total: number;
@@ -173,7 +206,8 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
     },
 
     countContributionsSince(userId, since) {
-      return prisma.contribution.count({ where: { user_id: userId, created_at: { gte: since } } });
+      // Photos have their own daily limit.
+      return prisma.contribution.count({ where: { user_id: userId, kind: { not: "photo" }, created_at: { gte: since } } });
     },
 
     createContribution({ assetId, userId, kind, body }) {
@@ -190,6 +224,61 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
         take: limit,
         select: contributionSelect,
       });
+    },
+
+    countPhotosSince(userId, since) {
+      return prisma.contribution.count({ where: { user_id: userId, kind: "photo", created_at: { gte: since } } });
+    },
+
+    createPhotoContribution({ assetId, userId, caption, photo }) {
+      return prisma.contribution.create({
+        data: {
+          asset_id: assetId,
+          user_id: userId,
+          kind: "photo",
+          body: caption,
+          photo: {
+            create: {
+              content_type: photo.contentType,
+              bytes: new Uint8Array(photo.bytes),
+              width: photo.width,
+              height: photo.height,
+              sha256: photo.sha256,
+            },
+          },
+        },
+        select: contributionSelect,
+      });
+    },
+
+    async findApprovedPhotos(assetId, limit) {
+      const where: Prisma.photo_uploadWhereInput = {
+        contribution: { asset_id: assetId, status: "approved", user: { banned_at: null } },
+      };
+      const [items, total] = await Promise.all([
+        prisma.photo_upload.findMany({ where, orderBy: { created_at: "desc" }, take: limit, select: photoSelect }),
+        prisma.photo_upload.count({ where }),
+      ]);
+      return { items, total };
+    },
+
+    async findPhotoFile(id, statuses) {
+      const row = await prisma.photo_upload.findUnique({
+        where: { contribution_id: id },
+        select: {
+          content_type: true,
+          bytes: true,
+          contribution: { select: { status: true, user: { select: { banned_at: true } }, asset: { select: { status: true } } } },
+        },
+      });
+      if (!row) return null;
+      const { contribution } = row;
+      return {
+        contentType: row.content_type,
+        bytes: row.bytes,
+        public:
+          contribution.status === "approved" && contribution.user.banned_at === null && statuses.includes(contribution.asset.status),
+      };
     },
 
     async findPulse(assetId, limit) {

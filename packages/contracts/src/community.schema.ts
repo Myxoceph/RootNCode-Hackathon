@@ -106,14 +106,43 @@ export const UpgradeAccountRequestSchema = z.strictObject({
 /** Response of register and login: the token is shown once, as for anonymous sessions. */
 export const SessionResponseSchema = AnonymousSessionResponseSchema;
 
-/** Photo contributions need the upload pipeline (R2) and are not accepted yet. */
-export const ContributionKindSchema = z.enum(["tip", "memory", "correction"]);
+/** `photo` is sent with `POST /assets/:id/photos`; the others are text (`POST /assets/:id/contributions`). */
+export const ContributionKindSchema = z.enum(["tip", "memory", "correction", "photo"]);
+export const TextContributionKindSchema = z.enum(["tip", "memory", "correction"]);
 export const ContributionStatusSchema = z.enum(["pending", "approved", "rejected"]);
 
 /** `POST /assets/:id/contributions` */
 export const CreateContributionRequestSchema = z.strictObject({
-  kind: ContributionKindSchema,
+  kind: TextContributionKindSchema,
   body: ContributionTextSchema,
+});
+
+/** Largest photo upload, in bytes; the API answers 413 above it. */
+export const PHOTO_MAX_BYTES = 5 * 1024 * 1024;
+/** Photos one user may send per day. */
+export const PHOTOS_PER_DAY = 10;
+/** Shorter side of a photo, in pixels: smaller ones are icons or thumbnails. */
+export const PHOTO_MIN_SIDE = 300;
+
+/**
+ * `caption` of `POST /assets/:id/photos` (query parameter): what the photo shows, cleaned
+ * like contribution text. It is also the photo's alt text for screen readers.
+ */
+export const PHOTO_CAPTION_MIN = 3;
+export const PHOTO_CAPTION_MAX = 200;
+export const PhotoCaptionSchema = z
+  .string()
+  .transform(normalizeContributionText)
+  .pipe(z.string().min(PHOTO_CAPTION_MIN).max(PHOTO_CAPTION_MAX));
+
+/**
+ * A visitor photo file. `path` is relative to the API base URL (e.g. `${apiUrl}${path}`);
+ * for photos that are not approved it is signed and expires within a day.
+ */
+export const PhotoFileSchema = z.strictObject({
+  path: z.string().startsWith("/photos/"),
+  width: z.int().positive(),
+  height: z.int().positive(),
 });
 
 /** A contribution as its author sees it (`POST` response, `GET /me/contributions`). */
@@ -121,7 +150,10 @@ export const ContributionSchema = z.strictObject({
   id: z.uuid(),
   assetId: AssetIdSchema,
   kind: ContributionKindSchema,
+  /** The text, or a photo's caption. */
   body: z.string().min(1),
+  /** Set for `kind: "photo"`. The default keeps answers of an API before 0.3.7 readable. */
+  photo: PhotoFileSchema.nullable().default(null),
   status: ContributionStatusSchema,
   createdAt: z.iso.datetime(),
   reviewedAt: z.iso.datetime().nullable(),
@@ -161,6 +193,23 @@ export const PulseResponseSchema = z.strictObject({
   communityTotal: z.int().min(0),
 });
 
+/** An approved visitor photo of an asset. Show it apart from the dataset's gallery, with the author's nickname. */
+export const CommunityPhotoSchema = PhotoFileSchema.extend({
+  id: z.uuid(),
+  /** Also the alt text. */
+  caption: z.string().min(1),
+  author: z.string().min(1),
+  date: z.iso.date(),
+});
+
+/** `GET /assets/:id/photos`: newest first. */
+export const CommunityPhotosResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  assetId: AssetIdSchema,
+  items: z.array(CommunityPhotoSchema),
+  total: z.int().min(0),
+});
+
 export const ModerationItemSchema = ContributionSchema.extend({
   asset: z.strictObject({ id: AssetIdSchema, name: z.string().min(1) }),
   author: z.strictObject({ id: z.uuid(), nickname: z.string().min(1), banned: z.boolean() }),
@@ -189,6 +238,10 @@ export type LoginRequest = z.infer<typeof LoginRequestSchema>;
 export type UpgradeAccountRequest = z.infer<typeof UpgradeAccountRequestSchema>;
 export type SessionResponse = z.infer<typeof SessionResponseSchema>;
 export type ContributionKind = z.infer<typeof ContributionKindSchema>;
+export type TextContributionKind = z.infer<typeof TextContributionKindSchema>;
+export type PhotoFile = z.infer<typeof PhotoFileSchema>;
+export type CommunityPhoto = z.infer<typeof CommunityPhotoSchema>;
+export type CommunityPhotosResponse = z.infer<typeof CommunityPhotosResponseSchema>;
 export type ContributionStatus = z.infer<typeof ContributionStatusSchema>;
 export type CreateContributionRequest = z.input<typeof CreateContributionRequestSchema>;
 export type Contribution = z.infer<typeof ContributionSchema>;

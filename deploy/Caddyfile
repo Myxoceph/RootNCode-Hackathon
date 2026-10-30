@@ -26,7 +26,19 @@
 
 	# API: /api/assets → api:3000/assets. Swagger UI at /api/docs.
 	handle_path /api/* {
-		request_body {
+		# Photo suggestions send the image itself (the API allows 5 MB); everything else is small JSON.
+		@photoUpload {
+			method POST
+			path_regexp ^/assets/[^/]+/photos$
+		}
+		@smallBody not {
+			method POST
+			path_regexp ^/assets/[^/]+/photos$
+		}
+		request_body @photoUpload {
+			max_size 6MB
+		}
+		request_body @smallBody {
 			max_size 64KB
 		}
 		reverse_proxy api:3000

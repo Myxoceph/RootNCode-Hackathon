@@ -56,6 +56,7 @@ describe("pulse items", () => {
         created_at: new Date("2026-10-19T08:00:00Z"),
         reviewed_at: new Date("2026-10-19T09:00:00Z"),
         reject_reason: null,
+        photo: null,
         user: { nickname: "Gezgin" },
       },
     ],

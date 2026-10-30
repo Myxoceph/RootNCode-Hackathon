@@ -5,7 +5,7 @@ import {
   ContributionTextSchema,
   NicknameSchema,
   normalizeContributionText,
-  type ContributionKind,
+  type TextContributionKind,
 } from "@vagabonds/contracts";
 import { Button, fontFamily, radius, spacing, Text, useTheme, useUi } from "@vagabonds/ui";
 import { useState } from "react";
@@ -15,7 +15,7 @@ import { Segmented } from "@/components/segmented";
 import { communityAvailable, DataError, sendContribution, useCommunity } from "@/data";
 import { announce } from "@/lib/announce";
 
-const kinds: ReadonlyArray<{ value: ContributionKind; label: string; hint: string }> = [
+const kinds: ReadonlyArray<{ value: TextContributionKind; label: string; hint: string }> = [
   { value: "tip", label: "İpucu", hint: "Ziyarete yarayan bir bilgi: giriş, saatler, kalabalık, rampa…" },
   { value: "memory", label: "Anı", hint: "Bu eserle ilgili bir anın ya da duyduğun bir hikâye." },
   { value: "correction", label: "Düzeltme", hint: "Sayfadaki bir bilgi yanlışsa doğrusunu ve kaynağını yaz." },
@@ -32,7 +32,7 @@ export function ContributionForm({ asset }: { asset: { id: string; name: string 
   const { colors: c } = useTheme();
   const { user } = useCommunity();
   const [phase, setPhase] = useState<Phase>("closed");
-  const [kind, setKind] = useState<ContributionKind>("tip");
+  const [kind, setKind] = useState<TextContributionKind>("tip");
   const [body, setBody] = useState("");
   const [nickname, setNickname] = useState("");
   const [error, setError] = useState<string | null>(null);
