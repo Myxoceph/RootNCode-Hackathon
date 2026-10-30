@@ -40,6 +40,16 @@ const stripMarkers = (text: string) => text.replace(/\s*\[\d+(?:\s*,\s*\d+)*\]/g
 const stripThinking = (text: string) => text.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
 
 /**
+ * The app shows plain text, and small models use Markdown despite the prompt: bold and
+ * headings are removed and `*` bullets become `-`.
+ */
+export const plainText = (text: string) =>
+  text
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/^(\s*)\* /gm, "$1- ");
+
+/**
  * Keeps only markers that point at a source of this question, written as `[1][2]`,
  * and returns the cited sources in `ref` order.
  */
@@ -131,6 +141,6 @@ export async function ask(
     }
   }
 
-  const { answer, citations } = resolveCitations(stripThinking(text ?? ""), context.sources);
+  const { answer, citations } = resolveCitations(plainText(stripThinking(text ?? "")), context.sources);
   return answer ? { answer, citations, trip } : { answer: FALLBACK_ANSWER[lang], citations: [], trip };
 }
