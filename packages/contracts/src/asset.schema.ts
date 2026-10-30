@@ -70,6 +70,11 @@ export const CoordinatesSchema = z.strictObject({
   /** False for coordinates taken from photo GPS or geocoding that nobody has checked on site. */
   verified: z.boolean(),
   source: z.string().min(1).nullable(),
+  /**
+   * True when the point is only the centre of the asset's neighbourhood or village (`source: "osm_area"`):
+   * show the asset as roughly there, e.g. with a different marker. Visits to it are not position-checked.
+   */
+  approximate: z.boolean().default(false),
 });
 
 export const ImageSourceSchema = z.strictObject({
