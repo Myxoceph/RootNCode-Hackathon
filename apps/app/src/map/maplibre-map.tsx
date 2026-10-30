@@ -8,7 +8,8 @@ import { useMapPage } from "./use-map-page";
 
 /** The MapLibre map in a WebView (ADR 0003). Hidden from screen readers, like every map. */
 export function MapLibreMap(props: AssetMapProps) {
-  const webView = useRef<WebView>(null);
+  // react-native-webview 14 defaults the class's extra-props parameter to `undefined`, which turns its props into `never`.
+  const webView = useRef<WebView<object>>(null);
   const send = useCallback((command: MapPageCommand) => {
     webView.current?.injectJavaScript(`window.vagabondsMap && window.vagabondsMap.receive(${JSON.stringify(command)}); true;`);
   }, []);
