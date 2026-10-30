@@ -17,7 +17,7 @@
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
-    "moderator:create": "tsx src/scripts/create-moderator.ts",
+    "account:create": "tsx src/scripts/create-account.ts",
     "assistant:eval": "tsx src/scripts/assistant-eval.ts"
   },
   "dependencies": {

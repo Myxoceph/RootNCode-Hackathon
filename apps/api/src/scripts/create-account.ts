@@ -1,34 +1,49 @@
 /**
- * Creates a moderator and prints its bearer token once (only the hash is stored).
+ * Creates a moderator or admin account and prints its password once (only a scrypt hash is stored).
+ * Sign in with it in the app, or at `POST /auth/login`.
  *
- *   npm run moderator:create -w @vagabonds/api -- "Ahmet"
- *   docker compose -f deploy/compose.yml exec api npx --no-install tsx src/scripts/create-moderator.ts "Ahmet"
+ *   npm run account:create -w @vagabonds/api -- ahmet admin
+ *   npm run account:create -w @vagabonds/api -- huseyin moderator "Hüseyin"
+ *   docker compose -f deploy/compose.yml exec api npx --no-install tsx src/scripts/create-account.ts ahmet admin
  *
- * Losing the token means creating a new moderator; there is no recovery.
+ * A lost password means creating a new account; there is no recovery.
  */
-import { NicknameSchema } from "@vagabonds/contracts";
+import { randomBytes } from "node:crypto";
+import { NicknameSchema, UsernameSchema } from "@vagabonds/contracts";
+import { z } from "zod";
 import { loadEnv } from "../config/env.ts";
 import { createPrismaClient } from "../db/prisma.ts";
-import { hashToken, newToken } from "../modules/community/auth.ts";
+import { hashPassword, hashToken, newToken } from "../modules/community/auth.ts";
 import { createCommunityRepository } from "../modules/community/community.repository.ts";
 
-const nickname = NicknameSchema.safeParse(process.argv[2] ?? "");
-if (!nickname.success) {
-  console.error("Usage: create-moderator <nickname>  (2-32 letters, digits, space, '.', '_', '-')");
+const args = z
+  .tuple([UsernameSchema, z.enum(["moderator", "admin"]), NicknameSchema.optional()])
+  .safeParse(process.argv.slice(2));
+if (!args.success) {
+  console.error("Usage: create-account <username> <moderator|admin> [nickname]");
+  console.error("  username: 3-32 lowercase letters, digits, '_' or '.'; nickname defaults to the username");
   process.exit(1);
 }
+const [username, role, nickname] = args.data;
 
 const prisma = createPrismaClient(loadEnv().DATABASE_URL);
 try {
-  const token = newToken();
+  const password = randomBytes(15).toString("base64url");
   const user = await createCommunityRepository(prisma).createUser({
-    nickname: nickname.data,
-    role: "moderator",
-    tokenHash: hashToken(token),
+    nickname: nickname ?? username,
+    role,
+    // The account signs in with its password; this first session is never handed out.
+    tokenHash: hashToken(newToken()),
+    credentials: { username, passwordHash: await hashPassword(password) },
   });
-  console.log(`Moderator "${user.nickname}" created (id ${user.id}).`);
-  console.log("Token (shown once; send it as `Authorization: Bearer <token>`):");
-  console.log(token);
+  if (user === "username_taken") {
+    console.error(`Username "${username}" is already taken.`);
+    process.exitCode = 1;
+  } else {
+    console.log(`${role === "admin" ? "Admin" : "Moderator"} "${user.username}" created (id ${user.id}).`);
+    console.log("Password (shown once; change by creating a new account):");
+    console.log(password);
+  }
 } finally {
   await prisma.$disconnect();
 }
