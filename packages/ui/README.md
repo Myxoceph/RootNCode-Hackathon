@@ -41,6 +41,10 @@ Tasarımdaki açık zemin altını (#9C7424) metin olarak 4.5:1'i tutturmuyor; y
 kullanılır, altın renkli metin için bir ton koyusu (`altin700`) var. Firuze de aynı nedenle tasarımdakinden
 (#0A7F7B) biraz koyu.
 
+Türkiye haritasında eser bulunan illerin sınırı `mapProvince` rolüdür: koyu temada varak altın (`altin300`),
+açık temada daha canlı bir firuze (`firuze500` #0F9A93; yalnızca çizgi, metin değil), açık yüksek kontrastta
+`firuze700`.
+
 | Yazı tipi | Kullanım | Expo paketi |
 |---|---|---|
 | Marcellus | Başlıklar (`display`, `title`, `heading`): oyma taş yazıt hissi | `@expo-google-fonts/marcellus` |
@@ -56,7 +60,8 @@ Yazı tipleri `apps/app` açılırken `useFonts` ile yüklenir; `fontFamily` de�
 Her tema bir rol → palet rengi eşlemesidir (`text`, `textSecondary`, `surface`, `primary`, `highlight`,
 `focusRing`, `fog`…). Yüksek kontrast, ikincil metni ve çizgileri ana metin rengine çeker.
 
-Tema tek noktadan seçilir: `getTheme(sistemŞeması, yüksekKontrastAçıkMı)`. Kamera ekranları (Zaman Perdesi,
+Tema tek noktadan seçilir: `getTheme(şema, yüksekKontrastAçıkMı)`. Uygulama varsayılan olarak **aydınlık** açılır;
+şema Profil'deki "Tema" seçiminden gelir (Aydınlık / Koyu / Sistem, `apps/app/src/theme/theme-preference.ts`). Kamera ekranları (Zaman Perdesi,
 Taşın Dili, Ses Kapsülü) her temada karanlıktır ve `cameraColors` kullanır.
 
 ## Bileşenler

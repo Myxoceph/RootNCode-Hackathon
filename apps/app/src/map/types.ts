@@ -1,5 +1,8 @@
 import type { StyleProp, ViewStyle } from "react-native";
 
+import type { MapCategory } from "./asset-category";
+import type { LngLatBounds } from "./dense-area";
+
 export interface MapPadding {
   top: number;
   right: number;
@@ -39,6 +42,44 @@ export interface MapNetwork {
   motion: boolean;
 }
 
+/** A province with assets: outlined in color and named on the map. */
+export interface MapProvince {
+  /** Licence plate code (16 = Bursa). */
+  plate: number;
+  name: string;
+  /** When names would overlap, the higher rank is shown (the asset count). */
+  rank?: number;
+}
+
+/** One asset of the chosen city, marked and named above the fog. */
+export interface MapCityAsset {
+  id: string;
+  title: string;
+  lat: number;
+  lng: number;
+  /** The kind of place: the icon on its seal. */
+  category: MapCategory;
+  /** The city's best-known asset, where the camera opens: drawn larger, its name shown first. */
+  landmark?: boolean;
+}
+
+/** The chosen city: the whole map under fog, its assets marked above it. */
+export interface MapCity {
+  plate: number;
+  assets: MapCityAsset[];
+  /** Where the camera flies: the landmark and its streets. `null` frames the whole province. */
+  focus: LngLatBounds | null;
+}
+
+/** Turkey's provinces: every border drawn quietly, the ones with assets outlined in color and named. */
+export interface MapProvinces {
+  highlighted: MapProvince[];
+  /** Set while a city is chosen; `null` is the Turkey view. */
+  city?: MapCity | null;
+  /** Turkey rises out of the fog the first time the map opens. False when "Hareketi azalt" is on. */
+  reveal: boolean;
+}
+
 /**
  * The map every screen uses (ADR 0003). Screens pass pins and the selection and
  * never see which renderer draws them. The map is visual only: whatever a
@@ -56,5 +97,9 @@ export interface AssetMapProps {
   fitPadding?: MapPadding;
   /** Fog and links over the map; without it the map is plain. */
   network?: MapNetwork | null;
+  /** Turkey with its province outlines; without pins the map frames the whole country. */
+  provinces?: MapProvinces | null;
+  /** A highlighted province (or its name) was tapped in the Turkey view. */
+  onSelectProvince?: (plate: number) => void;
   style?: StyleProp<ViewStyle>;
 }

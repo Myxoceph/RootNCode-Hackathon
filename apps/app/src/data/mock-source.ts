@@ -12,6 +12,9 @@ import { DataError, type SchemaParser } from "./errors";
 import { pulseItemsFromTips } from "./pulse";
 import type { DataSource } from "./source";
 
+/** The fixtures are all in Bursa; the plate code finds its province on the map. */
+const FIXTURE_PLATES: Record<string, number> = { bursa: 16 };
+
 /** Raw fixture files, captured from a local API with `npm run fixtures --workspace @vagabonds/app`. */
 export interface MockFixtures {
   list: unknown;
@@ -85,7 +88,7 @@ export function createMockSource(load: () => Promise<MockFixtures> = loadBundled
       for (const { city } of parsedList.items) {
         counts.set(city.code, { label: city.label, count: (counts.get(city.code)?.count ?? 0) + 1 });
       }
-      return [...counts].map(([code, { label, count }]) => ({ code, label, assetCount: count }));
+      return [...counts].map(([code, { label, count }]) => ({ code, label, assetCount: count, plate: FIXTURE_PLATES[code] ?? null }));
     },
   };
 }

@@ -11,6 +11,8 @@ export interface CityOption {
   code: string;
   label: string;
   assetCount: number;
+  /** The province's licence plate code (16 = Bursa); it finds the province on the map. */
+  plate: number | null;
 }
 
 export interface AssetListQuery {

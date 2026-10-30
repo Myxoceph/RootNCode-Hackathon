@@ -1,2 +1,4 @@
+export { assetCategory, type MapCategory } from "./asset-category";
+export { areaAround, cityLandmark, type LngLatBounds } from "./dense-area";
 export { MapLibreMap } from "./maplibre-map";
-export type { AssetMapProps, MapLink, MapNetwork, MapPin } from "./types";
+export type { AssetMapProps, MapLink, MapNetwork, MapCity, MapCityAsset, MapPin, MapProvince, MapProvinces } from "./types";

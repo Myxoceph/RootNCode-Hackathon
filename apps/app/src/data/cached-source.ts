@@ -4,7 +4,7 @@ import {
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
   CONTRACT_VERSION,
-  CountedCodeSchema,
+  MetaEnumsResponseSchema,
   PulseResponseSchema,
 } from "@vagabonds/contracts";
 
@@ -31,7 +31,9 @@ interface Entry {
 }
 
 /** `listCities` returns the cities of `/meta/enums` cut down to these fields. */
-const CitiesSchema: SchemaParser<CityOption[]> = CountedCodeSchema.array();
+const CitiesSchema: SchemaParser<CityOption[]> = MetaEnumsResponseSchema.shape.cities.element
+  .pick({ code: true, label: true, assetCount: true, plate: true })
+  .array();
 
 /**
  * The API, with every answer kept on the device. When the network fails,

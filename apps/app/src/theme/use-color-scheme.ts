@@ -1,8 +1,8 @@
 import { useColorScheme as useSystemColorScheme } from "react-native";
 
-type ColorScheme = "light" | "dark";
+import type { ColorScheme } from "./theme-preference";
 
-/** The visual identity is dark first, so dark is the fallback when the system has no preference. */
+/** The device's scheme; light when the system has no preference. */
 export function useColorScheme(): ColorScheme {
-  return useSystemColorScheme() === "light" ? "light" : "dark";
+  return useSystemColorScheme() === "dark" ? "dark" : "light";
 }

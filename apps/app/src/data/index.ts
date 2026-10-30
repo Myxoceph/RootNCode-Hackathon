@@ -7,6 +7,7 @@ export {
   useAssetList,
   useAssetRelations,
   useCities,
+  useCityMapAssets,
   useMapAssets,
   useMyContributions,
   usePulse,
@@ -16,5 +17,6 @@ export {
   type Resource,
   type ResourceWithRetry,
 } from "./hooks";
+export { CITY_LANDMARKS } from "./landmarks";
 export { pulseItemsFromTips } from "./pulse";
 export type { AssetListQuery, CityOption, DataSource } from "./source";

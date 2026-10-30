@@ -139,12 +139,25 @@ export function useRelationsOf(ids: string[]): RelationsOf {
   return { byId, loading, failed, retry };
 }
 
+async function loadMapAssets(city?: string): Promise<{ located: AssetSummary[]; total: number }> {
+  const page = await dataSource.listAssets({ city, limit: 500, offset: 0 }, LANG);
+  return { located: page.items.filter((asset) => asset.coordinates !== null), total: page.total };
+}
+
 /** Every published asset that has coordinates, in one request (the API allows 500), for the map. */
 export function useMapAssets(city?: string): ResourceWithRetry<{ located: AssetSummary[]; total: number }> {
-  const load = useCallback(async () => {
-    const page = await dataSource.listAssets({ city, limit: 500, offset: 0 }, LANG);
-    return { located: page.items.filter((asset) => asset.coordinates !== null), total: page.total };
-  }, [city]);
+  const load = useCallback(() => loadMapAssets(city), [city]);
+  return useResource(load);
+}
+
+/**
+ * The same for one chosen city; `null` (and no request) while none is chosen. The answer
+ * names its city: right after a new choice the previous answer is still in for a render.
+ */
+export function useCityMapAssets(
+  city: string | null,
+): ResourceWithRetry<{ city: string; located: AssetSummary[]; total: number } | null> {
+  const load = useCallback(async () => (city ? { city, ...(await loadMapAssets(city)) } : null), [city]);
   return useResource(load);
 }
 
