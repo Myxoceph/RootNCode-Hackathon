@@ -1,37 +1,57 @@
-import { AR_MINDAR_VERSION, AssetDetailSchema, type AssetDetail, type InscriptionV2 } from "@vagabonds/contracts";
+import { AR_MINDAR_VERSION, type AssetDetail, type InscriptionV2 } from "@vagabonds/contracts";
 import { describe, expect, it } from "vitest";
 
 import { featuredInscription, INSCRIPTION_ASSET, isTrackable } from "../src/ar/inscription-targets";
 import { capsuleForSoundKey, captionAt, capsules, formatSeconds } from "../src/content/capsules";
-import details from "../src/data/fixtures/details.json";
 import { pulseItemsFromTips } from "../src/data/pulse";
 import { formatDate } from "../src/lib/format-date";
 
-const ulucami = AssetDetailSchema.parse((details as Record<string, unknown>)[INSCRIPTION_ASSET]);
-const orhanBey = AssetDetailSchema.parse((details as Record<string, unknown>)["bursa-osmangazi-orhan-bey-camii"]);
-
 const target = (mindarVersion = AR_MINDAR_VERSION) => ({ mindUrl: "https://media.allbytech.com/x.mind", mindarVersion });
-const withTarget = (asset: AssetDetail, index: number, arTarget = target()): AssetDetail => ({
-  ...asset,
-  inscriptions: asset.inscriptions.map((i, n): InscriptionV2 => (n === index ? { ...i, arTarget } : i)),
-});
+
+function inscription(id: string, fields: Partial<InscriptionV2> = {}): InscriptionV2 {
+  return {
+    id,
+    location: null,
+    language: "ar",
+    script: null,
+    transliteration: null,
+    translation: null,
+    author: null,
+    hijriYear: null,
+    gregorian: null,
+    note: null,
+    arTargetMediaKey: null,
+    arTarget: null,
+    sources: [],
+    ...fields,
+  };
+}
+
+/** Only the fields Taşın Dili reads; built here so a re-recorded fixture cannot break the tests. */
+const asset = (id: string, inscriptions: InscriptionV2[]) => ({ id, inscriptions }) as unknown as AssetDetail;
 
 describe("Taşın Dili inscription choice", () => {
+  const untranslated = inscription("untranslated");
+  const translated = inscription("translated", { translation: "Bu kapıyı ... yaptırdı." });
+
   it("picks the inscription with an AR target first", () => {
-    const asset = withTarget(orhanBey, 2);
-    expect(featuredInscription(asset)?.id).toBe(asset.inscriptions[2]!.id);
+    const tracked = inscription("tracked", { arTarget: target() });
+    expect(featuredInscription(asset("x", [untranslated, translated, tracked]))?.id).toBe("tracked");
   });
 
-  it("falls back to the demo's inscription, then the first with a text", () => {
-    expect(featuredInscription(ulucami)?.id).toBe("minber-kapi-kitabesi");
-    expect(featuredInscription(orhanBey)?.id).toBe("onarim-kitabesi-1417");
+  it("falls back to the demo's inscription, then the first with a text, then the first", () => {
+    const demo = inscription("minber-kapi-kitabesi");
+    expect(featuredInscription(asset("x", [translated, demo]))?.id).toBe("minber-kapi-kitabesi");
+    expect(featuredInscription(asset("x", [untranslated, translated]))?.id).toBe("translated");
+    expect(featuredInscription(asset("x", [untranslated]))?.id).toBe("untranslated");
+    expect(featuredInscription(asset("x", []))).toBeUndefined();
   });
 
   it("opens the camera for Ulucami (test targets) and for assets with a target of this MindAR", () => {
-    expect(isTrackable(ulucami)).toBe(true);
-    expect(isTrackable(orhanBey)).toBe(false);
-    expect(isTrackable(withTarget(orhanBey, 0))).toBe(true);
-    expect(isTrackable(withTarget(orhanBey, 0, target("1.1.0")))).toBe(false);
+    expect(isTrackable(asset(INSCRIPTION_ASSET, []))).toBe(true);
+    expect(isTrackable(asset("x", [translated]))).toBe(false);
+    expect(isTrackable(asset("x", [inscription("t", { arTarget: target() })]))).toBe(true);
+    expect(isTrackable(asset("x", [inscription("t", { arTarget: target("1.1.0") })]))).toBe(false);
   });
 });
 

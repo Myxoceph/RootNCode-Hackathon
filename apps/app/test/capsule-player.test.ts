@@ -1,5 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { capsules } from "../src/content/capsules";
+import { recordingUrl } from "../src/audio/sounds";
 import type { FakePlayer } from "./mocks/expo-audio";
 
 vi.mock("../src/audio/stand-ins", () => ({
@@ -26,12 +28,11 @@ afterEach(() => {
 });
 
 const last = (): FakePlayer => audio.players.at(-1)!;
-const isRecording = (p: FakePlayer) => (p.source as { uri?: string }).uri?.startsWith("https://media.allbytech.com/sounds/");
 
 describe("capsule player", () => {
   it("plays the recording, and starts the captions once it is audible", () => {
     player.playCapsule("hamam");
-    expect(isRecording(last())).toBe(true);
+    expect(last().source).toEqual({ uri: recordingUrl(capsules.hamam.soundKey) });
     expect(player.getPlayerState()).toMatchObject({ type: "hamam", loading: true, source: null });
 
     last().emit(playing);

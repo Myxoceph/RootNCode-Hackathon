@@ -10,6 +10,8 @@ const path = (relative: string) => fileURLToPath(new URL(relative, import.meta.u
 export default defineConfig({
   resolve: {
     alias: {
+      // Same as tsconfig's paths; the longer prefix first.
+      "@/assets/": path("./assets/"),
       "@/": path("./src/"),
       "react-native": path("./test/mocks/react-native.ts"),
       "@react-native-async-storage/async-storage": path("./test/mocks/async-storage.ts"),
