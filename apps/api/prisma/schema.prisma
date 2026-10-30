@@ -276,21 +276,22 @@ model city {
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model contribution {
-  id            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id            String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   asset_id      String
-  user_id       String    @db.Uuid
+  user_id       String        @db.Uuid
   kind          String
-  media_id      String?   @db.Uuid
+  media_id      String?       @db.Uuid
   body          String?
-  status        String    @default("pending")
-  reviewed_by   String?   @db.Uuid
-  reviewed_at   DateTime? @db.Timestamptz(6)
+  status        String        @default("pending")
+  reviewed_by   String?       @db.Uuid
+  reviewed_at   DateTime?     @db.Timestamptz(6)
   reject_reason String?
-  created_at    DateTime  @default(now()) @db.Timestamptz(6)
-  asset         asset     @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  media         media?    @relation(fields: [media_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  reviewer      app_user? @relation("contribution_reviewed_byToapp_user", fields: [reviewed_by], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  user          app_user  @relation("contribution_user_idToapp_user", fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  created_at    DateTime      @default(now()) @db.Timestamptz(6)
+  asset         asset         @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  media         media?        @relation(fields: [media_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  reviewer      app_user?     @relation("contribution_reviewed_byToapp_user", fields: [reviewed_by], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  user          app_user      @relation("contribution_user_idToapp_user", fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  photo         photo_upload?
 
   @@index([created_at], map: "contribution_queue_idx", where: raw("(status = 'pending'::text)"))
   @@index([asset_id, created_at(sort: Desc)], map: "contribution_approved_idx", where: raw("(status = 'approved'::text)"))
@@ -530,4 +531,16 @@ model user_session {
   user       app_user @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@index([user_id], map: "user_session_user_idx")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model photo_upload {
+  contribution_id String       @id @db.Uuid
+  content_type    String
+  bytes           Bytes
+  width           Int
+  height          Int
+  sha256          String
+  created_at      DateTime     @default(now()) @db.Timestamptz(6)
+  contribution    contribution @relation(fields: [contribution_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 }

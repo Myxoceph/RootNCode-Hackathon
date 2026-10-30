@@ -16,6 +16,7 @@ import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { requireUser } from "./auth.ts";
 import { toModerationItem } from "./community.mapper.ts";
+import type { PhotoUrls } from "./photo-urls.ts";
 import type { CommunityRepository, ReviewDecision } from "./community.repository.ts";
 
 const QueueQuerySchema = z.object({
@@ -31,10 +32,12 @@ const bearer = [{ bearerAuth: [] }];
 
 export interface ModerationRoutesOptions {
   repository: CommunityRepository;
+  /** Signs the paths of photos waiting for review. */
+  photoUrls: PhotoUrls;
 }
 
 /** Moderation queue. Every route requires a moderator or admin (`npm run account:create`). */
-export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = async (app, { repository }) => {
+export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = async (app, { repository, photoUrls }) => {
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
   const authErrors = { 400: errorSchema, 401: errorSchema, 403: errorSchema };
 
@@ -60,7 +63,7 @@ export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = asy
       total,
       limit: query.limit,
       offset: query.offset,
-      items: items.map((item) => toModerationItem(item, lang)),
+      items: items.map((item) => toModerationItem(item, lang, photoUrls)),
     });
   });
 
@@ -75,7 +78,7 @@ export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = asy
     if (result === "already_reviewed") {
       throw new HttpError(409, "ALREADY_REVIEWED", `Contribution "${id}" has already been reviewed`);
     }
-    return ModerationItemSchema.parse(toModerationItem(result, lang));
+    return ModerationItemSchema.parse(toModerationItem(result, lang, photoUrls));
   }
 
   const reviewResponses = { 200: toOpenApiSchema(ModerationItemSchema), ...authErrors, 404: errorSchema, 409: errorSchema };

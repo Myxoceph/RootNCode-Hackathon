@@ -31,6 +31,7 @@ import { visibleStatuses, type AssetVisibility } from "../assets/assets.reposito
 import { bearerToken, hashPassword, hashToken, newToken, requireUser, verifyPassword } from "./auth.ts";
 import { toAppUser, toContribution, toPulseItems } from "./community.mapper.ts";
 import type { CommunityRepository } from "./community.repository.ts";
+import type { PhotoUrls } from "./photo-urls.ts";
 
 /** Contributions one user may send per hour, across all assets. */
 export const CONTRIBUTIONS_PER_HOUR = 5;
@@ -58,10 +59,12 @@ function assetNotFound(id: string): HttpError {
 
 export interface CommunityRoutesOptions {
   repository: CommunityRepository;
+  /** Signs the paths of the author's own photos. */
+  photoUrls: PhotoUrls;
   visibility: AssetVisibility;
 }
 
-export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async (app, { repository, visibility }) => {
+export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async (app, { repository, visibility, photoUrls }) => {
   const statuses = visibleStatuses(visibility);
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
 
@@ -190,7 +193,7 @@ export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async
     const items = await repository.listUserContributions(user.id, limit);
 
     reply.header("cache-control", "no-store");
-    return MyContributionsResponseSchema.parse({ items: items.map(toContribution) });
+    return MyContributionsResponseSchema.parse({ items: items.map((item) => toContribution(item, photoUrls)) });
   });
 
   app.post("/assets/:id/contributions", {
@@ -223,7 +226,7 @@ export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async
     const contribution = await repository.createContribution({ assetId: id, userId: user.id, kind, body });
 
     reply.code(201).header("cache-control", "no-store");
-    return ContributionSchema.parse(toContribution(contribution));
+    return ContributionSchema.parse(toContribution(contribution, photoUrls));
   });
 
   app.get("/assets/:id/pulse", {

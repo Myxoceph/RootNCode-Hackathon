@@ -16,6 +16,7 @@ const kinds: Record<Contribution["kind"], string> = {
   tip: "İpucu",
   memory: "Anı",
   correction: "Düzeltme",
+  photo: "Fotoğraf",
 };
 
 /** Profil · Notlarım (module 6): the notes the visitor sent and what the moderators decided. */

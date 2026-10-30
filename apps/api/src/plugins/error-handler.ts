@@ -12,6 +12,12 @@ export const ErrorResponseSchema = z.strictObject({
 
 export type ErrorResponse = z.infer<typeof ErrorResponseSchema>;
 
+/** Fastify's own client errors under names like the API's (e.g. a photo over 5 MB). */
+const FRAMEWORK_CODES: Record<string, string> = {
+  FST_ERR_CTP_BODY_TOO_LARGE: "PAYLOAD_TOO_LARGE",
+  FST_ERR_CTP_INVALID_MEDIA_TYPE: "UNSUPPORTED_MEDIA_TYPE",
+};
+
 export function registerErrorHandlers(app: FastifyInstance): void {
   app.setNotFoundHandler((request, reply) => {
     const body: ErrorResponse = {
@@ -38,7 +44,8 @@ export function registerErrorHandlers(app: FastifyInstance): void {
       return reply.code(500).send(body);
     }
 
-    const body: ErrorResponse = { error: { code: error.code ?? "REQUEST_ERROR", message: error.message } };
+    const code = FRAMEWORK_CODES[error.code] ?? error.code ?? "REQUEST_ERROR";
+    const body: ErrorResponse = { error: { code, message: error.message } };
     return reply.code(statusCode).send(body);
   });
 }

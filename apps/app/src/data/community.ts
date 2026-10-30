@@ -6,7 +6,7 @@ import {
   type AnonymousSessionResponse,
   type AppUser,
   type Contribution,
-  type ContributionKind,
+  type TextContributionKind,
 } from "@vagabonds/contracts";
 import { useEffect, useSyncExternalStore } from "react";
 
@@ -133,7 +133,7 @@ function errorFor(status: number, code: string | null, details: string[]): DataE
  */
 export async function sendContribution(
   asset: { id: string; name: string },
-  note: { kind: ContributionKind; body: string },
+  note: { kind: TextContributionKind; body: string },
   nickname?: string,
 ): Promise<Contribution> {
   if (!communityAvailable) throw new DataError("unavailable", "Not göndermek için sunucu gerekiyor.");
