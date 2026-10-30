@@ -16,6 +16,8 @@ export interface RequestOptions {
   errorFor?: (status: number, code: string | null, details: string[]) => DataError;
   /** How long to wait for the answer; 10 s by default. The assistant needs longer. */
   timeoutMs?: number;
+  /** Cancels the request, e.g. when the visitor clears the conversation it belongs to. */
+  signal?: AbortSignal;
 }
 
 /**
@@ -27,7 +29,14 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
   if (options.body !== undefined) headers["Content-Type"] = "application/json";
   if (options.token) headers.Authorization = `Bearer ${options.token}`;
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), options.timeoutMs ?? TIMEOUT_MS);
+  let timedOut = false;
+  const timer = setTimeout(() => {
+    timedOut = true;
+    controller.abort();
+  }, options.timeoutMs ?? TIMEOUT_MS);
+  const cancel = () => controller.abort();
+  if (options.signal?.aborted) cancel();
+  options.signal?.addEventListener("abort", cancel);
 
   let response: Response;
   try {
@@ -38,6 +47,9 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
       signal: controller.signal,
     });
   } catch (error) {
+    if (options.signal?.aborted) throw new DataError("unavailable", "İstek iptal edildi.", [url]);
+    // The connection works but the answer is late: "check your internet" would send the visitor the wrong way.
+    if (timedOut) throw new DataError("unavailable", "Sunucu zamanında cevap vermedi. Biraz sonra tekrar dene.", [url]);
     throw new DataError(
       "unavailable",
       "Sunucuya ulaşılamıyor. İnternet bağlantını kontrol edip tekrar dene.",
@@ -45,6 +57,7 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
     );
   } finally {
     clearTimeout(timer);
+    options.signal?.removeEventListener("abort", cancel);
   }
 
   if (!response.ok) {

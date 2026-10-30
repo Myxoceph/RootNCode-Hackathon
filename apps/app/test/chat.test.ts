@@ -120,14 +120,40 @@ describe("asking", () => {
     expect(entries).toEqual([]);
   });
 
-  it("drops the answer of a conversation cleared while it was on its way", async () => {
+  it("cancels the question on its way when the conversation is cleared", async () => {
     const { calls } = scriptedFetch();
     const asked = chat.ask("general", "Merhaba");
     await flush();
     chat.clearConversation("general");
+    expect(calls[0]!.init.signal?.aborted).toBe(true);
     calls[0]!.reply(response("Merhaba!"));
     expect(await asked).toBeNull();
-    expect(readConversation("general").entries).toEqual([]);
+    expect(readConversation("general")).toEqual({ entries: [], pending: null, failed: null });
+  });
+
+  it("does not give a cleared question's answer to the same question asked again", async () => {
+    const { calls } = scriptedFetch();
+    const first = chat.ask("general", "Bu eserin hikâyesi nedir?");
+    await flush();
+    calls[0]!.reply(response("Eski cevap [1].", [ULUCAMI]));
+    await first;
+    const cancelled = chat.ask("general", "Bu eserin hikâyesi nedir?");
+    await flush();
+    chat.clearConversation("general");
+    const again = chat.ask("general", "Bu eserin hikâyesi nedir?");
+    await flush();
+
+    // The cancelled request answers late, with the old conversation behind it.
+    calls[1]!.reply(response("Geç gelen cevap."));
+    expect(await cancelled).toBeNull();
+    expect(readConversation("general").pending).toBe("Bu eserin hikâyesi nedir?");
+    expect(sent(calls[2]!.init).history).toEqual([]);
+    calls[2]!.reply(response("Yeni cevap."));
+    await again;
+    expect(readConversation("general").entries.map((entry) => (entry.role === "user" ? entry.text : entry.response.answer))).toEqual([
+      "Bu eserin hikâyesi nedir?",
+      "Yeni cevap.",
+    ]);
   });
 });
 
@@ -147,17 +173,34 @@ describe("assistant status", () => {
     await assistant.checkAssistant();
     expect(calls).toHaveLength(1);
 
+    // Building the message changes nothing; the failed question does.
     expect(assistant.chatError(503, "ASSISTANT_UNAVAILABLE", []).message).toContain("cevap veremiyor");
+    expect(readAvailable()).toBe(true);
+    const asked = assistant.askAssistant({ message: "Merhaba" });
+    await flush();
+    calls[1]!.reply({ error: { code: "ASSISTANT_UNAVAILABLE", message: "down" } }, 503);
+    await expect(asked).rejects.toThrow("cevap veremiyor");
     expect(readAvailable()).toBe(false);
+
+    // Not cached: the next screen asks again, and a model that is back shows up at once.
+    const rechecked = assistant.checkAssistant();
+    await flush();
+    expect(calls[2]!.url).toBe(`${API}/chat/status`);
+    calls[2]!.reply({ version: "0.3.11", available: true, model: "qwen3.8-flash-next" });
+    await rechecked;
+    expect(readAvailable()).toBe(true);
   });
 
-  it("counts a failed check as not available, and never asks with the mock source", async () => {
+  it("hides the assistant after a failed check but asks again next time, and never asks with the mock source", async () => {
     const { calls } = scriptedFetch();
     const checked = assistant.checkAssistant();
     await flush();
     calls[0]!.reply({ error: { code: "INTERNAL_ERROR" } }, 500);
     await checked;
     expect(readAvailable()).toBe(false);
+    void assistant.checkAssistant();
+    await flush();
+    expect(calls).toHaveLength(2);
 
     await load("mock");
     const mockFetch = scriptedFetch();
