@@ -12,6 +12,8 @@ export interface VisitFact {
   type: string;
   era: string | null;
   at: Date;
+  /** Proven with a recognised photo. */
+  proven: boolean;
 }
 
 export interface UserFacts {
@@ -74,6 +76,10 @@ export function progressOf(rule: AchievementRule, facts: UserFacts): Progress {
       if (children.length === 0) return { current: 0, target: 1 };
       const visited = new Set(facts.visits.map((v) => v.assetId));
       return { current: children.filter((id) => visited.has(id)).length, target: children.length };
+    }
+    case "proven_visits": {
+      const proven = facts.visits.filter((v) => v.proven && (!rule.city || v.city === rule.city));
+      return capped(proven.length, rule.count);
     }
     case "contributions": {
       const { notes, photos } = facts.approved;
