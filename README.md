@@ -100,6 +100,7 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 | `POST /auth/anonymous`, `GET /me` | Takma adla anonim oturum (token) |
 | `POST /auth/register`, `/auth/login`, `/auth/logout`, `/auth/upgrade` | Kullanıcı adı + parolayla hesap; anonim ziyaretçi hesap açınca notları kendisinde kalır |
 | `POST /assets/:id/contributions`, `GET /assets/:id/pulse` | Ziyaretçi Nabzı: katkı gönderme ve onaylanmış katkılar |
+| `POST /assets/:id/photos`, `GET /assets/:id/photos`, `GET /photos/:id` | Ziyaretçi fotoğraf önerileri: yükleme (meta verisi silinir), onaylananların listesi ve dosyası |
 | `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör ya da admin hesabı: `npm run account:create --workspace @vagabonds/api -- <kullanıcı-adı> <moderator\|admin>`) |
 
 Yanıt şemaları ve istemci örnekleri: [`packages/contracts/README.md`](packages/contracts/README.md).

@@ -7,6 +7,26 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-30 · Ziyaretçi fotoğraf önerileri (migration, sözleşme 0.3.7)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**, **demoyu yayınlayan**
+
+1. Migration'ı uygula:
+   ```bash
+   npm run db:deploy --workspace @vagabonds/api
+   ```
+2. Demo makinesinde web imajını yeniden derle (`docker compose … up -d --build`). Caddy artık fotoğraf yükleme yolunda 6 MB'a kadar gövde kabul ediyor; diğer yollarda sınır 64 KB.
+
+Değişenler:
+- `POST /assets/:id/photos?caption=`: gövde fotoğrafın kendisi (JPEG ya da PNG, en çok 5 MB).
+  - Sunucu dosya türünü baytlardan kontrol eder ve konum dahil meta verileri siler.
+  - Kullanıcı başına günde 10 fotoğraf.
+  - Fotoğraf bir katkıdır (`kind: "photo"`); moderasyon kuyruğunda ve "Notlarım"da imzalı adresiyle görünür.
+- `GET /assets/:id/photos`: onaylanmış ziyaretçi fotoğrafları. Eserin kendi galerisinden ayrı gösterilir, çünkü veri içe aktarması galeriyi her seferinde yeniden kurar.
+- `GET /photos/:id`: dosya. Yanıtlardaki `path` API'nin taban adresine eklenir.
+- `Contribution` alanına `photo` eklendi (fotoğraf değilse `null`).
+- Uygulama: "Fotoğraf öner" düğmesi ve ziyaretçi fotoğrafları bölümü ayrı bir PR'da gelecek.
+
 ## 2026-10-30 · Hesaplar: kayıt, giriş, admin rolü (migration, sözleşme 0.3.6)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**, **demoyu yayınlayan**
