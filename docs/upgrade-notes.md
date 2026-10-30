@@ -23,6 +23,26 @@ Değişenler:
   - Veri setine almak için: `python3 data/tools/export_panel_assets.py --write`, sonra `validate.py`, eksik bilgileri tamamla ve PR aç. Dışa aktarılan eser artık `data/` üzerinden düzenlenir.
 - Uygulama: admin ekranları ayrı bir PR'da gelecek.
 
+## 2026-10-30 · Expo SDK 58
+
+Kimler: **uygulamayı çalıştıranlar** (Yiğit, Kübra)
+
+1. Bağımlılıkları yeniden kur. Eski kopyalar kalmasın diye önce `node_modules` klasörlerini sil:
+   ```bash
+   rm -rf node_modules apps/*/node_modules packages/*/node_modules
+   npm install
+   ```
+2. Telefonda **Expo Go**'yu güncelle (SDK 58). iOS'ta eski Expo Go kurulamadığı için SDK 57'deki proje güncel Expo Go'da açılmıyordu.
+3. `expo: command not found` görürsen 1. adımı tekrarla.
+
+Değişenler:
+- Expo 58, React Native 0.88, React 19.3 (kökteki `overrides` da 19.3.0). Tüm Expo paketleri `npx expo install --fix` ile hizalandı; `expo-doctor` temiz.
+- `react-native-webview` 14 ve `react-native-gesture-handler` 3'e geçti. Haritadaki WebView ref'i ve sekme ikonlarının rengi yeni tiplere göre düzeltildi.
+- `app.json`'a SDK 58'in istediği `expo-font`, `expo-image`, `expo-status-bar` eklentileri eklendi.
+- expo-router 58'de `href: null` ile gizlenen sekmeye gidilince ilk sekmeye yönlendiriliyor; "Tüm eserler" bu yüzden haritaya geri atıyordu. Eserler sekmesi artık yalnızca düğmesi çizilmeden gizleniyor.
+
+---
+
 ## 2026-10-30 · Ziyaretçi fotoğraf önerileri (migration, sözleşme 0.3.7)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**, **demoyu yayınlayan**
