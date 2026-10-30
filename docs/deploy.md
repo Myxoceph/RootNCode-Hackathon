@@ -269,15 +269,18 @@ dc exec -T postgres pg_restore -U vagabonds -d vagabonds --clean --if-exists < v
 > (`contribution`) yalnızca veritabanında durur; eserler gibi içe aktarmayla yeniden kurulamaz.
 > `down -v` bunları siler. Sürüm güncellemesinden önce yedek al.
 
-### Moderatör oluşturma
+### Moderatör ve admin hesabı
 
-Moderasyon uçları (`/api/admin/...`) moderatör token'ı ister. Token yalnızca bir kez yazdırılır, kaybolursa yeni moderatör oluşturulur:
+Moderasyon uçları (`/api/admin/...`) moderatör ya da admin ister. Hesap komut satırından açılır; parola
+yalnızca bir kez yazdırılır, kaybolursa yeni hesap açılır:
 
 ```bash
-dc exec api npx --no-install tsx src/scripts/create-moderator.ts "Ahmet"
+dc exec api npx --no-install tsx src/scripts/create-account.ts ahmet admin
+dc exec api npx --no-install tsx src/scripts/create-account.ts huseyin moderator "Hüseyin"
 ```
 
-Kuyruk Swagger'dan yönetilebilir: `/api/docs` → **Authorize** → token → `GET /admin/contributions`.
+Uygulamadan kullanıcı adı ve parolayla giriş yapılır. Swagger'da (`/api/docs`) önce `POST /auth/login`
+ile token alınır, sonra **Authorize** → token → `GET /admin/contributions`.
 
 | Belirti | Neden / çözüm |
 |---|---|

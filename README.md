@@ -98,8 +98,9 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 | `GET /meta/sounds` | Sesli Zaman Kapsülü: yayındaki ortam sesi kayıtları (altyazı ve lisansla); eser detayında `ambientSound.recording` |
 | `GET /cities/:code/dishes` | Yöresel Kültür & Gastronomi: ilin coğrafi işaret tescilli yöresel lezzetleri, kaynaklı |
 | `POST /auth/anonymous`, `GET /me` | Takma adla anonim oturum (token) |
+| `POST /auth/register`, `/auth/login`, `/auth/logout`, `/auth/upgrade` | Kullanıcı adı + parolayla hesap; anonim ziyaretçi hesap açınca notları kendisinde kalır |
 | `POST /assets/:id/contributions`, `GET /assets/:id/pulse` | Ziyaretçi Nabzı: katkı gönderme ve onaylanmış katkılar |
-| `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör token'ı: `npm run moderator:create --workspace @vagabonds/api -- "<ad>"`) |
+| `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör ya da admin hesabı: `npm run account:create --workspace @vagabonds/api -- <kullanıcı-adı> <moderator\|admin>`) |
 
 Yanıt şemaları ve istemci örnekleri: [`packages/contracts/README.md`](packages/contracts/README.md).
 
