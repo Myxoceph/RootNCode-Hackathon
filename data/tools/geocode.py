@@ -13,7 +13,11 @@ Kaynaklar, öncelik sırasıyla:
   2. osm: OpenStreetMap'te (Hatay'da 2023 depremleri öncesi veri de) aynı ilçede, adı ve türü tutan TEK aday. İlçe başına bir Overpass
      sorgusu atılır, yanıt build/cache/osm/ altında saklanır; tekrar çalıştırmak ağa çıkmaz
      (yenilemek için önbelleği silin). Veri © OpenStreetMap katkıcıları, ODbL.
-  3. parent: kendi eşleşmesi olmayan külliye alt yapısı, parent'ın noktasını alır.
+  3. wikidata: OSM'de bulunamayan eser, Wikidata'da aynı ilde adı ve türü tutan TEK öğenin koordinatını
+     alır (P625; veri CC0). İl başına bir SPARQL sorgusu, yanıt build/cache/osm/ altında.
+  4. parent: kendi eşleşmesi olmayan külliye alt yapısı, parent'ın noktasını alır.
+  5. address: hâlâ noktası olmayan, kitapta adresi yazan eser için adres OSM Nominatim'de aranır (saniyede
+     bir istek, önbellekli). Sonuç ilçenin içindeyse alınır; cadde düzeyinde yaklaşık bir noktadır.
 Elle girilmiş koordinatlara dokunulmaz. Yazılan her koordinat `verified: false`'tur.
 """
 import json
@@ -40,7 +44,9 @@ PRE_QUAKE = {"hatay": "2023-02-01T00:00:00Z"}
 
 # Kayıttaki ilçe → OSM'deki ilçe (admin_level 6) adı
 OSM_DISTRICT = {"Payas": "Dörtyol"}
-PROVINCE = {"bursa": "Bursa", "hatay": "Hatay"}
+PROVINCE = {"bursa": "Bursa", "hatay": "Hatay", "konya": "Konya"}
+WIKIDATA = "https://query.wikidata.org/sparql"
+NOMINATIM = "https://nominatim.openstreetmap.org/search"
 
 # Ad tam tutmadığı için otomatik eşleşmeyen, OSM'deki ad ve ilçeyle elle teyit edilmiş eşleşmeler
 OSM_PICK = {
@@ -115,6 +121,65 @@ out center tags;"""
     return out
 
 
+def curl_json(args, what):
+    """GET/POST with curl (the old Python TLS on macOS fails on these hosts), with retries."""
+    for attempt in range(1, 6):
+        res = subprocess.run(["curl", "-sfG", "--max-time", "120", "-A", USER_AGENT, *args], capture_output=True)
+        if res.returncode == 0:
+            return json.loads(res.stdout)
+        print(f"  {what}: curl {res.returncode}, {attempt * 10} sn sonra tekrar", file=sys.stderr)
+        time.sleep(attempt * 10)
+    sys.exit(f"{what}: yanıt alınamadı")
+
+
+def wikidata(city):
+    """İldeki (P131*) koordinatlı öğeler, Türkçe adlarıyla; OSM öğeleriyle aynı biçimde (önbellekli)."""
+    f = CACHE / f"{city}-wikidata.json"
+    if f.exists():
+        return json.loads(f.read_text(encoding="utf-8"))
+    q = f"""SELECT ?item ?label ?coord WHERE {{
+  ?il wdt:P31 wd:Q48336; rdfs:label "{PROVINCE[city]}"@tr.
+  ?item wdt:P131+ ?il; wdt:P625 ?coord; rdfs:label ?label. FILTER(LANG(?label) = "tr")
+}}"""
+    rows = curl_json(["-H", "Accept: application/sparql-results+json", "--data-urlencode", f"query={q}", WIKIDATA],
+                     f"wikidata {city}")["results"]["bindings"]
+    out = []
+    for r in rows:
+        m = re.match(r"Point\(([-\d.]+) ([-\d.]+)\)", r["coord"]["value"])
+        if m:
+            out.append({"osm": "wikidata/" + r["item"]["value"].rsplit("/", 1)[-1], "lat": float(m[2]),
+                        "lng": float(m[1]), "tags": {"name": r["label"]["value"]}})
+    CACHE.mkdir(parents=True, exist_ok=True)
+    f.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    return out
+
+
+def nominatim(rec):
+    """Kitaptaki adresin noktası, sonuç kaydın ilçesindeyse; yoksa None (önbellekli, saniyede bir istek)."""
+    loc = rec["location"]
+    parts = [p for p in (loc.get("neighborhood"), loc.get("address")) if p]
+    if not parts:
+        return None
+    query = ", ".join(parts + [loc["district"], PROVINCE[loc["city"]], "Türkiye"])
+    f = CACHE / "nominatim" / f"{slug(query)[:150]}.json"
+    if f.exists():
+        res = json.loads(f.read_text(encoding="utf-8"))
+    else:
+        res = curl_json(["--data-urlencode", f"q={query}", "-d", "format=jsonv2", "-d", "addressdetails=1",
+                         "-d", "limit=1", "-d", "countrycodes=tr", NOMINATIM], "nominatim")
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(json.dumps(res, ensure_ascii=False), encoding="utf-8")
+        time.sleep(1.1)  # Nominatim kullanım kuralı: en çok saniyede bir istek
+    if not res:
+        return None
+    hit = res[0]
+    addr = hit.get("address", {})
+    places = " ".join(slug(v) for k, v in addr.items() if k in ("county", "town", "city_district", "municipality", "city"))
+    if slug(loc["district"]) not in places or hit.get("addresstype") in ("province", "state", "county", "town", "city"):
+        return None  # ilçe dışında ya da yalnızca ilçe/il merkezini bulmuş: işe yaramaz
+    return float(hit["lat"]), float(hit["lon"]), hit.get("display_name", "")
+
+
 def slug(s):
     s = s.replace("ı", "i").replace("İ", "i")
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
@@ -152,9 +217,9 @@ def exif_point(manifest, drive_map, asset_id):
 # Ad içindeki tür sözcüğü → kategori. Cami ve mescit aynı kategoridir (adlar ikisi arasında değişebiliyor).
 KIND_WORDS = {
     "M": ("camii", "cami", "camisi", "mescidi", "mescid", "mescit", "mosque"),
-    "T": ("turbesi", "turbe", "turbeleri", "kumbeti", "makami", "ziyareti", "turbes"),
+    "T": ("turbesi", "turbe", "turbeleri", "kumbeti", "kumbet", "makami", "ziyareti", "turbes"),
     "H": ("hamami", "hamam", "kaplicasi"),
-    "C": ("cesmesi", "cesme", "cesmeleri", "sebili"),
+    "C": ("cesmesi", "cesme", "cesmeleri", "sebili", "sarnici"),
     "HAN": ("hani", "han", "kervansarayi", "bedesteni", "bedesten", "arastasi", "carsisi"),
     "MED": ("medresesi", "medrese", "darussifasi", "imareti", "mektebi", "kutuphanesi", "tekkesi", "zaviyesi", "dergahi"),
     "K": ("kulliyesi",),
@@ -245,7 +310,7 @@ def main(argv):
     files = sorted((DATA / "eserler").rglob("*.json"))
     recs = {f: json.loads(f.read_text(encoding="utf-8")) for f in files}
     by_id = {r["id"]: r for r in recs.values()}
-    idx_cache = {}
+    idx_cache, wd_cache = {}, {}
     result, ambiguous, deltas = {}, {}, []
     for r in recs.values():
         loc = r["location"]
@@ -279,6 +344,17 @@ def main(argv):
                                "osm")
         elif cands:
             ambiguous[r["id"]] = cands
+        else:
+            city = loc["city"]
+            if city not in wd_cache:
+                wd_cache[city] = osm_index(wikidata(city))
+            wd_hit, wd_cands = osm_match(r, wd_cache[city])
+            if wd_hit:
+                result[r["id"]] = ("wikidata", wd_hit["lat"], wd_hit["lng"],
+                                   f"Wikidata {wd_hit['osm'].split('/')[1]} ('{wd_hit['tags']['name']}'), ad ve il eşleşmesiyle; sahada doğrulanmalı.",
+                                   "wikidata")
+            elif wd_cands:
+                ambiguous[r["id"]] = wd_cands
     # Kendi noktası olmayan alt yapı parent'ınkini, külliye de ilk alt yapısınınkini alır
     for _ in range(2):
         for r in recs.values():
@@ -295,6 +371,16 @@ def main(argv):
                 result[r["id"]] = ("parent", src[1], src[2],
                                    f"Kendi konumu bulunamadı; bağlı olduğu yapının ({pid}) noktası kullanıldı.",
                                    src[4])
+
+    # Hâlâ noktası olmayan ve kitapta adresi yazan eserler: adresin yaklaşık noktası
+    for r in recs.values():
+        if r["id"] in result:
+            continue
+        hit = nominatim(r)
+        if hit:
+            result[r["id"]] = ("address", hit[0], hit[1],
+                               f"Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('{hit[2][:120]}'); cadde düzeyinde yaklaşık, sahada doğrulanmalı.",
+                               "osm")
 
     # Rapor
     import collections
