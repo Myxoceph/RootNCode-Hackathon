@@ -14,6 +14,8 @@ export interface RequestOptions {
   token?: string;
   /** The error for an answer that is not 2xx; `statusError` by default. */
   errorFor?: (status: number, code: string | null, details: string[]) => DataError;
+  /** How long to wait for the answer; 10 s by default. The assistant needs longer. */
+  timeoutMs?: number;
 }
 
 /**
@@ -25,7 +27,7 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
   if (options.body !== undefined) headers["Content-Type"] = "application/json";
   if (options.token) headers.Authorization = `Bearer ${options.token}`;
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  const timer = setTimeout(() => controller.abort(), options.timeoutMs ?? TIMEOUT_MS);
 
   let response: Response;
   try {
