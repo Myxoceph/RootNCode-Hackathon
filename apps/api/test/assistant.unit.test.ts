@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createChatModel } from "../src/modules/assistant/assistant.model.ts";
 import { searchTerms } from "../src/modules/assistant/assistant.repository.ts";
-import { resolveCitations } from "../src/modules/assistant/assistant.ts";
+import { plainText, resolveCitations } from "../src/modules/assistant/assistant.ts";
 import { SourceRegistry } from "../src/modules/assistant/assistant.tools.ts";
 
 describe("resolveCitations", () => {
@@ -59,9 +59,28 @@ describe("createChatModel", () => {
     expect(JSON.stringify(body)).not.toContain("secret");
   });
 
+  it("keeps a tool call's provider data (Gemini's thought signature) to send it back", async () => {
+    const extra = { google: { thought_signature: "sig" } };
+    const fetchImpl = (async () =>
+      new Response(
+        JSON.stringify({
+          choices: [{ message: { tool_calls: [{ id: "c1", extra_content: extra, function: { name: "weather", arguments: "{}" } }] } }],
+        }),
+      )) as unknown as typeof fetch;
+    const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl });
+    const reply = await model.complete([], [], AbortSignal.timeout(1_000));
+    expect(reply.toolCalls[0]?.extraContent).toEqual(extra);
+  });
+
   it("turns a provider error into a ModelError that names only the status", async () => {
     const fetchImpl = (async () => new Response("prompt was: secret question", { status: 500 })) as unknown as typeof fetch;
     const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl });
     await expect(model.complete([], [], AbortSignal.timeout(1_000))).rejects.toThrow(/^Model returned HTTP 500$/);
+  });
+});
+
+describe("plainText", () => {
+  it("removes bold and headings and turns * bullets into -", () => {
+    expect(plainText("## Başlık\n* **Kubbe:** kiremit kaplı [1]\n  * iç madde")).toBe("Başlık\n- Kubbe: kiremit kaplı [1]\n  - iç madde");
   });
 });

@@ -196,45 +196,50 @@ makinesi bozulup açılmayabilir; derlemeden önce en az 10 GB boş yer bırak.
 
 ## AI asistan
 
-Asistan (`POST /chat`) yerel bir dil modeliyle çalışır. Model, yayını yapan makinede Ollama ile
-servis edilir (Mac mini M4, 16 GB). API modele OpenAI uyumlu `/v1/chat/completions` ile bağlanır.
+Asistan (`POST /chat`) EVREN'in dil modeliyle çalışır (`evren.ssyz.org.tr`, yurt içinde barınan kamu
+platformu, 2026-12-01'e kadar ücretsiz). API modele OpenAI uyumlu `/v1/chat/completions` ile bağlanır.
 Bu yüzden model ya da sağlayıcı değiştirmek yalnızca üç ortam değişkenini değiştirmek demektir.
 Model tanımlı değilse ya da cevap vermiyorsa `GET /chat/status` `available: false` döner, uygulama
 sohbet girişlerini gizler; sitenin geri kalanı etkilenmez.
 
 ```
-API (Docker) ──► host.docker.internal:11434 (Ollama, Mac) ──► model (bellekte)
+API (Docker) ──► evren-llmapi.ssyz.org.tr/v1 ──► qwen3.8-flash-next
 ```
 
-Kurulum (bir kez, Mac mini'de):
+Kurulum (bir kez):
 
-```bash
-brew install ollama
-ollama pull qwen3:8b          # aday 1; Gemma'nın araç çağırabilen sürümü de denenebilir
-```
-
-Demo boyunca modelin bellekte kalması ve aynı anda iki soruya bakabilmesi için Ollama'yı şöyle başlat:
-
-```bash
-OLLAMA_KEEP_ALIVE=-1 OLLAMA_NUM_PARALLEL=2 caffeinate -i ollama serve
-```
-
-`deploy/.env`'e ekle:
+1. EVREN'de `/api-keys` sayfasından bir anahtar oluştur.
+2. Kullanım şartlarını kabul et; kabul edilmezse her istek `403 terms_not_accepted` döner.
+3. `deploy/.env`'e (yerelde `apps/api/.env`'e) ekle:
 
 ```dotenv
-ASSISTANT_BASE_URL=http://host.docker.internal:11434/v1
-ASSISTANT_MODEL=qwen3:8b
+ASSISTANT_BASE_URL=https://evren-llmapi.ssyz.org.tr/v1
+ASSISTANT_MODEL=qwen3.8-flash-next
+ASSISTANT_API_KEY=
 ```
+
+Anahtar yalnızca `.env` dosyasında durur; git'e, PR'a ya da sohbete yazılmaz.
 
 Sonra `docker compose … up -d` ile API'yi yeniden başlat ve kontrol et:
 `curl https://vagabonds.allbytech.com/api/chat/status` → `"available": true`.
 
-Model seçimi: Aday modelleri aynı sorularla karşılaştır. Sorular şu gruplarda: eser, gezi, yemek ve
-veri setinde cevabı olmayan ya da konu dışı sorular.
+Sınırlar: günde 15 milyon token (bütün anahtarlar ve modeller toplamı), aşılınca `429`. Kalan kota
+`GET /v1/quota` ile görülür.
+
+**Model seçimi.** Bir soru en çok dört model çağrısıdır (üç araç + cevap) ve 60 saniyede kesilir.
+Düşünen (reasoning) modellerde düşünme hem süreyi hem `max_tokens` bütçesini yer. 2026-10-30
+karşılaştırması (22 soru):
+
+| Model | Ortanca | En yavaş | Not |
+|---|---|---|---|
+| `qwen3.8-flash-next` | 5,5 sn | 11,6 sn | Seçilen. Kaynak işaretleri ve "bilgi yok" cevapları doğru. |
+| `glm-5.3` | ~21 sn | 60 sn (zaman aşımı) | Kısa bir soruda bile 600+ token düşünüyor; demoya uygun değil. |
+
+Aday modelleri aynı sorularla karşılaştır. Sorular şu gruplarda: eser, gezi, yemek ve veri setinde
+cevabı olmayan ya da konu dışı sorular. `.env`'i değiştirmeden model komut satırından verilebilir:
 
 ```bash
-# apps/api/.env içinde ASSISTANT_BASE_URL=http://localhost:11434/v1 ve ASSISTANT_MODEL=<model>
-npm run assistant:eval --workspace @vagabonds/api
+ASSISTANT_MODEL=<model> npm run assistant:eval --workspace @vagabonds/api
 ```
 
 Karşılaştırırken şunlara bak:
@@ -242,15 +247,11 @@ Karşılaştırırken şunlara bak:
 - Cevabı olmayan soruda model "bilgi yok" diyor mu, uydurmuyor mu?
 - Cevaplar kaç saniyede geliyor? Sonuç özetinde ortanca ve en yavaş süre yazar.
 
-Ollama'yı `0.0.0.0`'a açma; parolası yoktur, yalnızca aynı makinedeki API'ye hizmet etmelidir.
-
-**Barındırılan model ile deneme (isteğe bağlı):** Mac mini gelmeden akışı denemek için OpenAI uyumlu
-bir uç sunan barındırılan bir model kullanılabilir. Örneğin Gemini:
-`ASSISTANT_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai`. `ASSISTANT_MODEL`
-alanına sağlayıcının sayfasındaki model adı, `ASSISTANT_API_KEY` alanına anahtar yazılır. Anahtar
-yalnızca `.env` dosyasında durur; git'e, PR'a ya da sohbete yazılmaz. Ücretsiz katmanlar
-gönderilen soruları kendi amaçları için kullanabilir. Bu yüzden barındırılan model yalnızca
-geliştirmede kullanılır, demoda yerel model çalışır.
+**Yerel model (yedek).** EVREN'e ulaşılamazsa aynı değişkenlerle Ollama'ya geçilebilir:
+`brew install ollama`, `ollama pull qwen3:8b`, sonra
+`OLLAMA_KEEP_ALIVE=-1 OLLAMA_NUM_PARALLEL=2 caffeinate -i ollama serve` ve
+`ASSISTANT_BASE_URL=http://host.docker.internal:11434/v1`, `ASSISTANT_MODEL=qwen3:8b`,
+`ASSISTANT_API_KEY` boş. Ollama'yı `0.0.0.0`'a açma; parolası yoktur.
 
 ## Kayıtlar, yedek, sorun giderme
 

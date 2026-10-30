@@ -7,6 +7,59 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-31 · Ödüller, cüzdan ve kanıtlanmış ziyaret (migration, sözleşme 0.3.11)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md))
+
+1. `npm run db:deploy --workspace @vagabonds/api`. Migration'lar 6 örnek ödülü, 120 örnek kodu ve 2 yeni başarımı ekler.
+
+Değişenler:
+- `POST /assets/:id/visit/proof`: Zaman Perdesi eserin fotoğrafını kamerada tanıyınca ziyaret "kanıtlanmış" olur. Yeni başarım kuralı `proven_visits` ve iki başarım ("Zaman Yolcusu", "Zaman Ustası").
+- `GET /rewards`, `GET /me/wallet`, `POST /rewards/:code/redeem`: puanla ortak kurumların tek kullanımlık kodları alınır. Puan parayla alınmaz, paraya çevrilmez.
+- Admin: `/admin/rewards` ile ödül ekleme ve düzenleme, kod yükleme.
+- Ayrıntı: [`docs/rewards.md`](rewards.md), [`docs/achievements.md`](achievements.md).
+
+## 2026-10-30 · AI asistan EVREN'e geçiyor
+
+Kimler: **asistanı yerelde deneyenler**, **demo sunucusu**
+
+1. EVREN'de bir anahtar oluştur ve kullanım şartlarını kabul et (`docs/deploy.md`, "AI asistan").
+2. `apps/api/.env` (demoda `deploy/.env`):
+   `ASSISTANT_BASE_URL=https://evren-llmapi.ssyz.org.tr/v1`, `ASSISTANT_MODEL=qwen3.8-flash-next`,
+   `ASSISTANT_API_KEY=<anahtar>`. Anahtar git'e, PR'a ya da sohbete yazılmaz.
+3. Kontrol: `GET /chat/status` → `"available": true`.
+
+Değişenler:
+- Demoda yerel Ollama yerine EVREN kullanılıyor; Ollama yedek olarak kaldı.
+- Eser sayfasından sorulan sorular Qwen'de `400` veriyordu (ikinci `system` mesajı); düzeltildi.
+- Cevap sınırı 2048 token (düşünen modeller 800'de yarım kalıyordu); cevaplardaki Markdown sunucuda temizlenir.
+
+## 2026-10-30 · Yaklaşık koordinatlar (sözleşme 0.3.10)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. `npm run db:import` (52 esere yeni koordinat).
+
+Değişenler:
+- `coordinates.approximate`: `true` ise nokta yalnızca eserin mahallesinin ya da köyünün merkezidir (`source: "osm_area"`).
+  - Haritada eser "yaklaşık burada" diye, örneğin farklı bir işaretle gösterilmeli.
+  - Bu eserlerde ziyaret konumla doğrulanmaz.
+- Haritadaki eser sayısı: Bursa 333/356, Hatay 73/116, Konya 62/93. 41'i yaklaşık nokta.
+
+## 2026-10-30 · Ziyaretler ve başarımlar (migration, sözleşme 0.3.9)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. `npm run db:deploy --workspace @vagabonds/api`. Migration 32 başlangıç başarımını da ekler.
+
+Değişenler:
+- `POST /assets/:id/visit`: ziyaret kaydı.
+  - Eserin noktası varsa ziyaretçi 200 m içinde olmalı; noktası yoksa ziyaret doğrulanmadan kabul edilir.
+  - Yanıtta kazanılan başarımlar (`newAchievements`) döner; uygulama bunları rozet bildirimi olarak gösterebilir.
+- `GET /achievements` başarım listesini, `GET /me/achievements` ilerlemeyi, kazanılanları ve toplam puanı verir. Onaylanan katkılar bu çağrıda sayılır.
+- Admin: `/admin/achievements` ile başarım ekleme, düzenleme, kapatma ve silme. Kural türleri `docs/achievements.md`'de.
+- Puanlar parayla alınmaz ve paraya çevrilmez; ödül kataloğu sonraki bir aşamada.
+
 ## 2026-10-30 · Yönetim paneli uçları (sözleşme 0.3.8)
 
 Kimler: **uygulama ekibi**, **veri ekibi**. Migration yok.

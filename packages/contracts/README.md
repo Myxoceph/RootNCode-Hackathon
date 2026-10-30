@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.8`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.11`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -8,6 +8,8 @@ Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan v
 - `src/gastronomy.schema.ts`: `/cities/:code/dishes` (Yöresel Kültür & Gastronomi)
 - `src/sound.schema.ts`: `/meta/sounds` (Sesli Zaman Kapsülü); kaydın kendisi `asset.schema.ts`'te (`SoundRecordingSchema`)
 - `src/chat.schema.ts`: `POST /chat` ve `GET /chat/status` (AI asistan)
+- `src/achievement.schema.ts`: ziyaretler ve başarımlar (`/assets/:id/visit`, `/achievements`, `/me/achievements`, `/admin/achievements`); liste `docs/achievements.md`
+- `src/reward.schema.ts`: ödül kataloğu ve cüzdan (`/rewards`, `/me/wallet`, `/rewards/:code/redeem`, `/admin/rewards`); anlatım `docs/rewards.md`
 - `src/admin.schema.ts`: yönetim paneli (`/admin/summary`, `/admin/users`, `/admin/assets`); moderasyon kuyruğu `community.schema.ts`'te
 - `scripts/validate-fixtures.ts`: uygulamanın örnek verisini (`apps/app/src/data/fixtures`) bu şemalarla doğrular
 
@@ -40,6 +42,13 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `POST /assets/:id/photos?caption=` 🔒 | Gövde fotoğrafın kendisi (`Content-Type: image/jpeg` ya da `image/png`, en çok `PHOTO_MAX_BYTES` = 5 MB, kısa kenar en az 300 px); `caption` 3–200 karakter, alternatif metin olarak da kullanılır. Yanıt `ContributionSchema` (`kind: "photo"`, `photo.path` imzalı). Konum dahil meta veriler sunucuda silinir. Kullanıcı başına günde `PHOTOS_PER_DAY` (10) fotoğraf |
 | `GET /assets/:id/photos?limit=` | `CommunityPhotosResponseSchema`: onaylanmış ziyaretçi fotoğrafları, yeniden eskiye; eserin kendi galerisinden (`media`) ayrı gösterilir, yazarın takma adıyla |
 | `GET /photos/:id` | Fotoğraf dosyası. `path` alanları API'nin taban adresine eklenir (`${apiUrl}${path}`); onaylanmamış fotoğraf yalnızca yanıttaki imzalı adresle (1 gün geçerli) açılır |
+| `POST /assets/:id/visit?lang=` 🔒 | İstek `VisitRequestSchema` (`lat`, `lng`; eserin noktası varsa zorunlu ve `VISIT_RADIUS_METERS` = 200 m içinde olmalı), yanıt `VisitResponseSchema` (`verified`, `distanceMeters`, `firstVisit`, `newAchievements`). Noktası olmayan eserin ziyareti doğrulanmadan kabul edilir. Kullanıcı başına günde 60 ziyaret |
+| `POST /assets/:id/visit/proof?lang=` 🔒 | İstek `VisitProofRequestSchema` (`mediaKey`: eserin kamerada tanınan fotoğrafının `media[].key` değeri, `method: "device_recognition"`, konum ziyaretteki kuralla), yanıt `VisitResponseSchema` (`proven: true`). Ziyaret yoksa kaydedilir ve kanıtlanmış olarak işaretlenir; `UNKNOWN_MEDIA` (400) anahtar bu eserin değilse |
+| `GET /rewards?lang=` | `RewardsResponseSchema`: etkin ödüller (`costPoints`, `minProvenVisits`, `stock`, örnekse `sample: true`) |
+| `GET /me/wallet?lang=` 🔒 | `WalletResponseSchema`: `balance`, `earned`, `spent`, `provenVisits`, alınan kodlar |
+| `POST /rewards/:code/redeem?lang=` 🔒 | `RedeemResponseSchema`: tek kullanımlık kod ve yeni bakiye; `INSUFFICIENT_POINTS`, `PROVEN_VISITS_REQUIRED`, `OUT_OF_STOCK` (409) |
+| `GET /achievements?lang=` | `AchievementsResponseSchema`: etkin başarımlar, kurallarıyla (`rule.kind`: `visit_count`, `districts`, `cities`, `within`, `complex`, `contributions`) |
+| `GET /me/achievements?lang=` 🔒 | `MyAchievementsResponseSchema`: her başarımda ilerleme (`progress.current/target`), `earnedAt`, toplam puan ve ziyaret sayısı |
 | `GET /assets/:id/pulse?lang=&limit=` | `PulseResponseSchema` (veri setindeki ipuçları + onaylanmış topluluk katkıları) |
 | `GET /admin/contributions?status=&kind=&limit=&offset=` 🛡️ | `ModerationListResponseSchema` (`kind`: `notes` ya da `photos`; verilmezse hepsi) |
 | `GET /admin/summary` 🛡️ | `AdminSummaryResponseSchema` (bekleyen notlar ve fotoğraflar, kullanıcı sayıları, panelden eklenen eserler) |
@@ -50,6 +59,9 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `POST /admin/assets` 👑 | İstek `AdminAssetInputSchema` (ad, tür, il, ilçe, dönem, özet, tanıtım metni, tarih, bani, adres, koordinat, `status`), yanıt `AdminAssetSchema`; id addan üretilir (`<il>-<ilçe>-<ad>`). Kayıt veri setindeki JSON biçiminde saklanır ve `data/tools/export_panel_assets.py` ile `data/eserler`'e yazılabilir |
 | `PATCH /admin/assets/:id` 👑 | İstek `AdminAssetPatchSchema` (alanlardan herhangi biri; yayına almak için `status: "published"`); yalnızca panelden eklenen eserler, id değişmez |
 | `DELETE /admin/assets/:id` 👑 | `204`; yalnızca panelden eklenen eserler |
+| `GET /admin/rewards` 🛡️, `POST /admin/rewards` 👑, `PATCH /admin/rewards/:code` 👑, `POST /admin/rewards/:code/codes` 👑 | `AdminRewardsResponseSchema`, `AdminRewardInputSchema` / `AdminRewardPatchSchema` → `AdminRewardSchema`, `AddRewardCodesRequestSchema` → `AddRewardCodesResponseSchema` (`added`, `duplicates`, `stock`) |
+| `GET /admin/achievements` 🛡️ | `AdminAchievementsResponseSchema` (kapalılar dahil, kaç kişinin kazandığıyla) |
+| `POST /admin/achievements` 👑, `PATCH /admin/achievements/:code` 👑, `DELETE …` 👑 | İstek `AdminAchievementInputSchema` / `AdminAchievementPatchSchema`, yanıt `AdminAchievementSchema`; kuraldaki il, dönem ve külliye id'si kontrol edilir (`UNKNOWN_CODE`). Kapatmak için `active: false` |
 | `POST /admin/contributions/:id/approve` 🛡️, `…/reject` 🛡️ | `ModerationItemSchema`; reddetmede istek `RejectContributionRequestSchema` (`reason`) |
 | `POST /admin/users/:id/ban` 🛡️ | `204` |
 
@@ -60,6 +72,7 @@ Hata yanıtları her zaman `{ error: { code, message } }` biçimindedir: `INVALI
 Ziyaretçi Nabzı uçlarında ayrıca: `INVALID_BODY` (400), `UNAUTHORIZED` (401: token yok ya da geçersiz),
 `USER_BANNED`, `FORBIDDEN` (403), `CONTRIBUTION_NOT_FOUND`, `USER_NOT_FOUND` (404), `ALREADY_REVIEWED` (409),
 `CONTRIBUTION_LIMIT` (429: kullanıcı başına saatte 5 katkı).
+Ziyaret ve başarımlarda ayrıca: `POSITION_REQUIRED`, `TOO_FAR` (400), `VISIT_LIMIT` (429), `ACHIEVEMENT_EXISTS` (409), `ACHIEVEMENT_NOT_FOUND` (404).
 Panelde ayrıca: `OWN_ROLE` (400), `UNKNOWN_CODE` (400: tür, il ya da dönem kodu yok), `ASSET_EXISTS` (409: aynı id'li eser var), `USER_NOT_FOUND`, `ASSET_NOT_FOUND` (404: id panelden eklenmiş bir eser değil).
 Fotoğraflarda ayrıca: `INVALID_IMAGE` (400: JPEG/PNG değil ya da kenarı 300 px'ten kısa), `PAYLOAD_TOO_LARGE` (413), `UNSUPPORTED_MEDIA_TYPE` (415), `PHOTO_LIMIT` (429), `PHOTO_NOT_FOUND` (404).
 Hesaplarda ayrıca: `USERNAME_TAKEN`, `ALREADY_REGISTERED` (409), `INVALID_CREDENTIALS` (401: kullanıcı adı ya da parola yanlış; hangisi olduğu söylenmez), `RATE_LIMITED` (429: IP başına 15 dakikada 10 giriş, saatte 10 kayıt).
@@ -92,7 +105,7 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
 - **Dil:** Metinler tek dilde gelir. `?lang=tr|en` verilmezse `Accept-Language`, o da yoksa Türkçe. İngilizcesi olmayan metin Türkçe döner. Yanıtın dili `Content-Language` başlığındadır.
 - **Güven düzeyi:** Bölüm, bilgi, zaman çizelgesi olayı, tarihleme, banî, mimar ve vakıf bilgisi `confidence: { code, label }` taşır. `probable`, `disputed` ve `legend` rozetle gösterilir; hiçbiri kesin bilgi gibi sunulmaz. Rivayetler (`legends[]`) tarihçe bölümlerinden ayrıdır.
 - **Kaynak:** Aynı öğeler `sources: [{ sourceId, title, pages, url }]` taşır ("Kaynak: Bursa Vakıf Eserleri – I. Cilt, s. 52-55"). `sources` (detayın kökünde) eserde geçen tüm kaynakların listesidir.
-- **Koordinat** (`coordinates`) yoksa `null`: eser haritada gösterilmez. `verified: false`, konumun yerinde doğrulanmadığını söyler.
+- **Koordinat** (`coordinates`) yoksa `null`: eser haritada gösterilmez. `verified: false`, konumun yerinde doğrulanmadığını söyler. `approximate: true` (`source: "osm_area"`) noktanın yalnızca eserin mahallesinin ya da köyünün merkezi olduğunu söyler: eseri "yaklaşık burada" diye, örneğin farklı bir işaretle göster. Bu eserlerde ziyaret konumla doğrulanmaz.
 - **Görsel** (`cover`, `media[]`) yoksa `cover: null`: yer tutucu görsel gösterilir. Kutu `aspectRatio` ile çizilip `dominantColor` ile boyanır, `lqip` bulanık önizlemedir; `sources.webp` / `sources.jpg` farklı genişlikleri verir. Fotoğrafın çekildiği konum hiçbir yanıtta yer almaz.
 - **Erişilebilirlik** değerleri `yes | partial | no | unknown`; `unknown` "Bilgi yok" demektir, "erişilebilir" değil.
 - **Bağlar** (`/relations`) iki yönlüdür: `direction: "outgoing"` bağ bu eserin kaydında, `"incoming"` karşı eserin kaydında yazılıdır. İki eserde de yazılı aynı bağ bir kez döner. Karşı eser henüz yayında değilse bağ dönmez, yalnızca `unavailableCount` içinde sayılır ("+3 bağ yakında" gibi gösterilebilir). Her bağın `confidence` ve `sources` alanı vardır.
