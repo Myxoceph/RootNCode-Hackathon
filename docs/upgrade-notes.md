@@ -19,6 +19,21 @@ Değişenler:
 - Admin: `/admin/rewards` ile ödül ekleme ve düzenleme, kod yükleme.
 - Ayrıntı: [`docs/rewards.md`](rewards.md), [`docs/achievements.md`](achievements.md).
 
+## 2026-10-30 · AI asistan EVREN'e geçiyor
+
+Kimler: **asistanı yerelde deneyenler**, **demo sunucusu**
+
+1. EVREN'de bir anahtar oluştur ve kullanım şartlarını kabul et (`docs/deploy.md`, "AI asistan").
+2. `apps/api/.env` (demoda `deploy/.env`):
+   `ASSISTANT_BASE_URL=https://evren-llmapi.ssyz.org.tr/v1`, `ASSISTANT_MODEL=qwen3.8-flash-next`,
+   `ASSISTANT_API_KEY=<anahtar>`. Anahtar git'e, PR'a ya da sohbete yazılmaz.
+3. Kontrol: `GET /chat/status` → `"available": true`.
+
+Değişenler:
+- Demoda yerel Ollama yerine EVREN kullanılıyor; Ollama yedek olarak kaldı.
+- Eser sayfasından sorulan sorular Qwen'de `400` veriyordu (ikinci `system` mesajı); düzeltildi.
+- Cevap sınırı 2048 token (düşünen modeller 800'de yarım kalıyordu); cevaplardaki Markdown sunucuda temizlenir.
+
 ## 2026-10-30 · Yaklaşık koordinatlar (sözleşme 0.3.10)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**

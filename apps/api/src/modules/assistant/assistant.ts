@@ -92,18 +92,17 @@ export async function ask(
   signal: AbortSignal,
 ): Promise<AskResult> {
   const context: ToolContext = { ...tools, sources: new SourceRegistry(), lang };
-  const messages: ChatMessage[] = [{ role: "system", content: systemPrompt(lang, today) }];
+  let system = systemPrompt(lang, today);
 
   if (assetId) {
     const page = await runTool("asset_details", JSON.stringify({ id: assetId }), context);
     if (!page.content.startsWith('{"error"')) {
       const { ref } = JSON.parse(page.content) as { ref: number };
-      messages.push({
-        role: "system",
-        content: `Ziyaretçi bu eserin sayfasından soruyor. Bu eser kaynak [${ref}]; ondan aldığın her bilginin sonuna [${ref}] yaz:\n${page.content}`,
-      });
+      system += `\n\nZiyaretçi bu eserin sayfasından soruyor. Bu eser kaynak [${ref}]; ondan aldığın her bilginin sonuna [${ref}] yaz:\n${page.content}`;
     }
   }
+  // One system message, first: some chat templates (Qwen) refuse a second one with 400.
+  const messages: ChatMessage[] = [{ role: "system", content: system }];
   for (const turn of history) {
     messages.push({ role: turn.role, content: turn.role === "assistant" ? stripMarkers(turn.content) : turn.content });
   }

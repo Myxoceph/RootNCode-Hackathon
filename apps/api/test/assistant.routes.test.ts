@@ -185,9 +185,11 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
       ],
     });
     const sent = calls[0]!.messages;
-    const page = sent.find((m) => m.role === "system" && m.content.includes(`"id":"${HAMAM}"`));
+    // The page goes into the one system message, which comes first: Qwen refuses a second one.
+    expect(sent.filter((m) => m.role === "system")).toHaveLength(1);
+    expect(sent[0]).toMatchObject({ role: "system", content: expect.stringContaining(`"id":"${HAMAM}"`) });
     // The page's asset is source [1], and the model is told to cite it.
-    expect(page?.content).toContain("kaynak [1]");
+    expect(sent[0]!.content).toContain("kaynak [1]");
     expect(sent.find((m) => m.role === "assistant")).toMatchObject({ content: "Merhaba, eski cevap." });
     expect(sent.at(-1)).toEqual({ role: "user", content: "Bu eser ne zaman yapılmış?" });
   });
