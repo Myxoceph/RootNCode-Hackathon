@@ -43,7 +43,11 @@ export interface MapPageColors {
 }
 
 /** Messages the map page posts to the app. */
-export type MapPageEvent = { type: "ready" } | { type: "select"; id: string | null } | { type: "error"; message: string };
+export type MapPageEvent =
+  | { type: "ready" }
+  | { type: "select"; id: string | null }
+  | { type: "province"; plate: number }
+  | { type: "error"; message: string };
 
 /** Messages the app sends to the map page. */
 export type MapPageCommand =
@@ -132,12 +136,22 @@ window.vagabondsMap = {
       pending.push(command);
       return;
     }
-    if (command.type === "pins") actions.showPins(command.pins, command.padding);
-    if (command.type === "select") actions.select(command.id);
-    if (command.type === "network") actions.showNetwork(command.network);
-    if (command.type === "provinces") actions.showProvinces(command.provinces);
+    // A failure here would vanish inside the WebView; report it so the screen can show it.
+    try {
+      if (command.type === "pins") actions.showPins(command.pins, command.padding);
+      if (command.type === "select") actions.select(command.id);
+      if (command.type === "network") actions.showNetwork(command.network);
+      if (command.type === "provinces") actions.showProvinces(command.provinces);
+    } catch (error) {
+      reportError(command.type, error);
+    }
   },
 };
+
+function reportError(where, error) {
+  post({ type: "error", message: where + ": " + String((error && error.message) || error) });
+}
+window.addEventListener("error", (event) => reportError("page", event.error || event.message));
 
 if (!window.maplibregl) {
   post({ type: "error", message: "MapLibre did not load" });
@@ -264,12 +278,100 @@ function start() {
       "clusters",
     );
 
+    // The chosen city's fog: a textured veil over the whole map, under the borders and the assets.
+    map.addImage("fog-texture", fogTexture());
+    map.addSource("veil", { type: "geojson", data: { type: "Feature", geometry: { type: "Polygon", coordinates: [[[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]]] } } });
+    map.addLayer(
+      { id: "veil", type: "fill", source: "veil", paint: { "fill-pattern": "fog-texture", "fill-opacity": 0, "fill-opacity-transition": { duration: 1200 } } },
+      "province-borders",
+    );
+    // Invisible, only to find the tapped province.
+    map.addLayer(
+      { id: "province-hit", type: "fill", source: "provinces", filter: ["in", ["get", "plate"], ["literal", []]], paint: { "fill-color": colors.province, "fill-opacity": 0 } },
+      "province-borders",
+    );
+    // The chosen city's assets: every one a drop pin; their names come up as chips once the map
+    // is close enough to read them, and only where they fit. The landmark's pin is larger and
+    // its name always wins.
+    map.addSource("city-assets", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+    map.addImage("asset-pin", pinImage(true), { pixelRatio: PIN_RATIO });
+    map.addImage("asset-pin-hollow", pinImage(false), { pixelRatio: PIN_RATIO });
+    map.addImage("name-chip", chipImage(), {
+      pixelRatio: PIN_RATIO,
+      stretchX: [[CHIP_RADIUS * PIN_RATIO, CHIP_SIZE * PIN_RATIO - CHIP_RADIUS * PIN_RATIO]],
+      stretchY: [[CHIP_RADIUS * PIN_RATIO, CHIP_SIZE * PIN_RATIO - CHIP_RADIUS * PIN_RATIO]],
+      // The whole chip holds the text; its room around the name is icon-text-fit-padding.
+      content: [PIN_RATIO, PIN_RATIO, (CHIP_SIZE - 1) * PIN_RATIO, (CHIP_SIZE - 1) * PIN_RATIO],
+    });
+    // Under the pins in drawing; placed after them, so a name never covers a pin.
+    map.addLayer({
+      id: "city-asset-names",
+      type: "symbol",
+      source: "city-assets",
+      minzoom: NAMES_ZOOM,
+      layout: {
+        "text-field": ["case", ["get", "landmark"], ["format", ["get", "title"], { "text-font": ["literal", ["Noto Sans Bold"]] }], ["get", "title"]],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": 12,
+        "text-anchor": "top",
+        // Clear of its own pin's shadow, which would otherwise hide it.
+        "text-offset": ["case", ["get", "landmark"], ["literal", [0, 1.3]], ["literal", [0, 0.9]]],
+        "text-max-width": 11,
+        "text-padding": 2,
+        "icon-image": "name-chip",
+        "icon-text-fit": "both",
+        "icon-text-fit-padding": [3, 8, 3, 8],
+        "symbol-sort-key": ["case", ["get", "landmark"], -1, ["get", "verified"], 0, 1],
+      },
+      paint: { "text-color": colors.labelText, "text-opacity": 0, "icon-opacity": 0, "text-opacity-transition": { duration: 700 }, "icon-opacity-transition": { duration: 700 } },
+    });
+    map.addLayer({
+      id: "city-asset-pins",
+      type: "symbol",
+      source: "city-assets",
+      layout: {
+        // Unverified coordinates get a hollow pin: the place is approximate.
+        "icon-image": ["case", ["get", "verified"], "asset-pin", "asset-pin-hollow"],
+        "icon-anchor": "bottom",
+        "icon-offset": [0, PIN_SHADOW],
+        // Small while many share the screen, full size once the streets are close.
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 11, ["case", ["get", "landmark"], 0.6, 0.38], 15, ["case", ["get", "landmark"], 1.05, 0.62], 17, ["case", ["get", "landmark"], 1.25, 0.85]],
+        // The landmark on top of the pins that share its place.
+        "symbol-sort-key": ["case", ["get", "landmark"], 1, 0],
+        // Every pin shows, and the names keep clear of them.
+        "icon-allow-overlap": true,
+      },
+      paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 700 } },
+    });
+
     map.on("click", "clusters", async (event) => {
       const feature = event.features[0];
       const zoom = await map.getSource("assets").getClusterExpansionZoom(feature.properties.cluster_id);
       map.easeTo({ center: feature.geometry.coordinates, zoom });
     });
     map.on("click", (event) => {
+      try {
+        onTap(event);
+      } catch (error) {
+        reportError("tap", error);
+      }
+    });
+    function onTap(event) {
+      // A finger is wider than a pixel.
+      const around = [[event.point.x - 12, event.point.y - 12], [event.point.x + 12, event.point.y + 12]];
+      if (cityPlate !== null) {
+        const asset = map.queryRenderedFeatures(around, { layers: ["city-asset-pins"] })[0];
+        if (asset) post({ type: "select", id: asset.properties.id });
+        return;
+      }
+      if (provincesShown) {
+        const province = map.queryRenderedFeatures(around, { layers: ["province-names", "province-hit"] })[0];
+        if (province) {
+          const plate = province.properties.plate;
+          if (plate) post({ type: "province", plate });
+          return;
+        }
+      }
       const mark = markAt(event.point);
       if (mark) {
         select(mark.id);
@@ -284,8 +386,8 @@ function start() {
         select(null);
         post({ type: "select", id: null });
       }
-    });
-    for (const layer of ["clusters", "pins"]) {
+    }
+    for (const layer of ["clusters", "pins", "province-hit", "province-names", "city-asset-pins"]) {
       map.on("mouseenter", layer, () => (map.getCanvas().style.cursor = "pointer"));
       map.on("mouseleave", layer, () => (map.getCanvas().style.cursor = ""));
     }
@@ -362,6 +464,7 @@ function start() {
   function showProvinces(provinces) {
     if (!provinces) {
       setLabels([]);
+      showCity(null);
       map.setPaintProperty("province-lines", "line-opacity", 0);
       map.setPaintProperty("province-borders", "line-opacity", 0);
       setBaseBorders(true);
@@ -374,7 +477,10 @@ function start() {
     const plates = provinces.highlighted.map((province) => province.plate);
     map.setFilter("province-lines", ["in", ["get", "plate"], ["literal", plates]]);
     map.setFilter("province-glow", ["in", ["get", "plate"], ["literal", plates]]);
+    map.setFilter("province-hit", ["in", ["get", "plate"], ["literal", plates]]);
     setLabels(provinces.highlighted);
+    motion = provinces.reveal;
+    if (provincesShown) showCity(provinces.city || null);
     if (provincesShown) return;
     provincesShown = true;
     setBaseBorders(false);
@@ -404,17 +510,158 @@ function start() {
       features: highlighted.flatMap((province) => {
         const point = labelPoints.get(province.plate);
         return point
-          ? [{ type: "Feature", geometry: { type: "Point", coordinates: point }, properties: { name: province.name.toLocaleUpperCase("tr-TR"), rank: province.rank || 0 } }]
+          ? [{ type: "Feature", geometry: { type: "Point", coordinates: point }, properties: { name: province.name.toLocaleUpperCase("tr-TR"), rank: province.rank || 0, plate: province.plate } }]
           : [];
       }),
     });
   }
 
   /** Once every line is drawn, the names fade in. */
+  let labelsRevealed = false;
   function revealLabels() {
-    map.setPaintProperty("province-names", "text-opacity", 1);
+    labelsRevealed = true;
+    if (cityPlate === null) map.setPaintProperty("province-names", "text-opacity", 1);
   }
 
+  // A chosen city.
+  /** Plate of the chosen city; null in the Turkey view. */
+  let cityPlate = null;
+  /** False when "Hareketi azalt" is on: the camera jumps instead of flying. */
+  let motion = true;
+  const FLY_MS = 2600;
+
+  /**
+   * Into a city: the fog closes over the whole map, the camera flies to where its assets
+   * crowd (or to the whole province), and the assets come up above the fog with their names.
+   * Back out: the fog lifts and the camera returns to Turkey.
+   */
+  function showCity(city) {
+    const plate = city ? city.plate : null;
+    map.getSource("city-assets").setData({
+      type: "FeatureCollection",
+      features: city
+        ? city.assets.map((asset) => ({
+            type: "Feature",
+            geometry: { type: "Point", coordinates: [asset.lng, asset.lat] },
+            properties: { id: asset.id, title: asset.title, verified: asset.verified, landmark: Boolean(asset.landmark) },
+          }))
+        : [],
+    });
+    if (plate === cityPlate) return;
+    cityPlate = plate;
+    const shown = plate !== null;
+    map.setPaintProperty("veil", "fill-opacity", shown ? 0.9 : 0);
+    map.setPaintProperty("province-names", "text-opacity", !shown && labelsRevealed ? 1 : 0);
+    setCityAssetsShown(false);
+    const options = { padding: cityPadding(), duration: motion ? FLY_MS : 0, linear: false, essential: true };
+    if (shown) {
+      map.fitBounds(city.focus || provinceBounds(plate), { ...options, maxZoom: 16 });
+      // The assets come up as the camera lands.
+      setTimeout(() => {
+        if (cityPlate === plate) setCityAssetsShown(true);
+      }, motion ? FLY_MS * 0.75 : 0);
+    } else if (turkeyView) {
+      map.fitBounds([[turkeyView.west, turkeyView.south], [turkeyView.east, turkeyView.north]], { ...options, padding: 0 });
+    }
+  }
+
+  function setCityAssetsShown(shown) {
+    const on = shown ? 1 : 0;
+    map.setPaintProperty("city-asset-names", "text-opacity", on);
+    map.setPaintProperty("city-asset-names", "icon-opacity", on);
+    map.setPaintProperty("city-asset-pins", "icon-opacity", on);
+  }
+
+  // The city's marks, drawn once into images: a drop pin and the rounded chip behind a name.
+  /** Image pixels per screen point, so the marks stay sharp on phone screens. */
+  const PIN_RATIO = 2;
+  /** Room under the pin's tip for its shadow, in points. */
+  const PIN_SHADOW = 3;
+  const CHIP_SIZE = 24;
+  const CHIP_RADIUS = 9;
+  /** Names come up from this zoom; further out only the pins show. */
+  const NAMES_ZOOM = 14;
+
+  function drawImage(width, height, paint) {
+    const canvas = document.createElement("canvas");
+    canvas.width = width * PIN_RATIO;
+    canvas.height = height * PIN_RATIO;
+    const context = canvas.getContext("2d");
+    context.scale(PIN_RATIO, PIN_RATIO);
+    paint(context);
+    return context.getImageData(0, 0, canvas.width, canvas.height);
+  }
+
+  /** A drop pin with a white dot; hollow (white with a colored dot) for an approximate place. */
+  function pinImage(filled) {
+    const width = 30;
+    const height = 38 + PIN_SHADOW;
+    return drawImage(width, height, (context) => {
+      const x = width / 2;
+      const top = 4;
+      const r = 11;
+      const tip = height - PIN_SHADOW - 1;
+      context.shadowColor = "rgba(0, 0, 0, 0.28)";
+      context.shadowBlur = 4;
+      context.shadowOffsetY = 1.5;
+      context.beginPath();
+      context.moveTo(x, tip);
+      context.bezierCurveTo(x - 4, tip - 7, x - r, top + r + 7, x - r, top + r);
+      context.arc(x, top + r, r, Math.PI, 0);
+      context.bezierCurveTo(x + r, top + r + 7, x + 4, tip - 7, x, tip);
+      context.closePath();
+      context.fillStyle = filled ? colors.province : colors.label;
+      context.fill();
+      context.shadowColor = "transparent";
+      context.lineWidth = 2;
+      context.strokeStyle = filled ? colors.label : colors.province;
+      context.stroke();
+      context.beginPath();
+      context.arc(x, top + r, 4.2, 0, Math.PI * 2);
+      context.fillStyle = filled ? colors.label : colors.province;
+      context.fill();
+    });
+  }
+
+  /** A rounded chip with a hairline edge; stretched around each name. */
+  function chipImage() {
+    return drawImage(CHIP_SIZE, CHIP_SIZE, (context) => {
+      const inset = 0.75;
+      const size = CHIP_SIZE - inset * 2;
+      const r = CHIP_RADIUS - inset;
+      const end = inset + size;
+      // By hand: roundRect is missing on older Android WebViews.
+      context.beginPath();
+      context.moveTo(inset + r, inset);
+      context.arcTo(end, inset, end, end, r);
+      context.arcTo(end, end, inset, end, r);
+      context.arcTo(inset, end, inset, inset, r);
+      context.arcTo(inset, inset, end, inset, r);
+      context.closePath();
+      context.fillStyle = colors.label;
+      context.globalAlpha = 0.94;
+      context.fill();
+      context.globalAlpha = 1;
+      context.lineWidth = 1;
+      context.strokeStyle = colors.border;
+      context.stroke();
+    });
+  }
+
+  /** Room for the names around the framed assets, inside the screen's own panels. */
+  function cityPadding() {
+    return { top: lastPadding.top + 24, right: lastPadding.right + 24, bottom: lastPadding.bottom + 24, left: lastPadding.left + 24 };
+  }
+
+  function provinceBounds(plate) {
+    const feature = PROVINCES.features.find((candidate) => candidate.properties.plate === plate);
+    const bounds = new maplibregl.LngLatBounds();
+    const visit = (coordinates) => (typeof coordinates[0] === "number" ? bounds.extend(coordinates) : coordinates.forEach(visit));
+    if (feature) visit(feature.geometry.coordinates);
+    return bounds;
+  }
+
+  const OWN_SOURCES = new Set(["assets", "provinces", "province-names", "city-assets"]);
   /** Each base label layer's own filter and text, to put back when the provinces go away. */
   const baseLabels = new Map();
 
@@ -426,7 +673,7 @@ function start() {
   function setBaseLabelsTurkeyOnly(turkeyOnly) {
     const turkey = { type: "MultiPolygon", coordinates: OUTLINE.map((ring) => [ring]) };
     for (const layer of map.getStyle().layers) {
-      if (layer.type !== "symbol" || layer.source === "provinces" || layer.id === "province-names" || layer.id === "cluster-count") continue;
+      if (layer.type !== "symbol" || OWN_SOURCES.has(layer.source)) continue;
       if (!baseLabels.has(layer.id)) baseLabels.set(layer.id, { filter: layer.filter, text: layer.layout && layer.layout["text-field"] });
       const original = baseLabels.get(layer.id);
       if (turkeyOnly) {
@@ -493,6 +740,30 @@ function start() {
   function fogLayer(seed, options) {
     const canvas = document.createElement("canvas");
     return { ...options, noise: tileableNoise(seed), canvas, context: canvas.getContext("2d"), image: null };
+  }
+
+  /**
+   * The chosen city's fog as a repeating image for the veil layer: the same noise as the
+   * opening, stretched into soft clouds, thicker and lighter where the noise is high.
+   */
+  function fogTexture() {
+    const size = 256;
+    const noise = tileableNoise(37);
+    const fog = rgb(colors.fog);
+    const light = mix(fog, [255, 255, 255], DARK ? 0.12 : 0.5);
+    const data = new Uint8Array(size * size * 4);
+    const step = NOISE_SIZE / size;
+    for (let y = 0; y < size; y++) {
+      for (let x = 0; x < size; x++) {
+        const n = sampleNoise(noise, x * step, y * step);
+        const k = (y * size + x) * 4;
+        data[k] = fog[0] + (light[0] - fog[0]) * n;
+        data[k + 1] = fog[1] + (light[1] - fog[1]) * n;
+        data[k + 2] = fog[2] + (light[2] - fog[2]) * n;
+        data[k + 3] = 255 * (0.72 + 0.28 * n);
+      }
+    }
+    return { width: size, height: size, data };
   }
 
   /** Repeating value noise in four octaves, 0..1, so the clouds can drift forever without a seam. */

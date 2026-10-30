@@ -1,5 +1,7 @@
 import type { StyleProp, ViewStyle } from "react-native";
 
+import type { LngLatBounds } from "./dense-area";
+
 export interface MapPadding {
   top: number;
   right: number;
@@ -48,9 +50,31 @@ export interface MapProvince {
   rank?: number;
 }
 
+/** One asset of the chosen city, marked and named above the fog. */
+export interface MapCityAsset {
+  id: string;
+  title: string;
+  lat: number;
+  lng: number;
+  /** False for coordinates nobody has checked on site; drawn hollow. */
+  verified: boolean;
+  /** The city's best-known asset, where the camera opens: drawn larger, its name always shown. */
+  landmark?: boolean;
+}
+
+/** The chosen city: the whole map under fog, its assets marked above it. */
+export interface MapCity {
+  plate: number;
+  assets: MapCityAsset[];
+  /** Where the camera flies: the landmark and its streets. `null` frames the whole province. */
+  focus: LngLatBounds | null;
+}
+
 /** Turkey's provinces: every border drawn quietly, the ones with assets outlined in color and named. */
 export interface MapProvinces {
   highlighted: MapProvince[];
+  /** Set while a city is chosen; `null` is the Turkey view. */
+  city?: MapCity | null;
   /** Turkey rises out of the fog the first time the map opens. False when "Hareketi azalt" is on. */
   reveal: boolean;
 }
@@ -74,5 +98,7 @@ export interface AssetMapProps {
   network?: MapNetwork | null;
   /** Turkey with its province outlines; without pins the map frames the whole country. */
   provinces?: MapProvinces | null;
+  /** A highlighted province (or its name) was tapped in the Turkey view. */
+  onSelectProvince?: (plate: number) => void;
   style?: StyleProp<ViewStyle>;
 }
