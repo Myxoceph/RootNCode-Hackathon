@@ -41,7 +41,10 @@ describe.skipIf(!DATABASE_URL)("achievements (PostgreSQL)", () => {
   beforeAll(async () => {
     prisma = createPrismaClient(DATABASE_URL as string);
     app = buildApp({ prisma, rateLimit: false });
-    const withPoint = await prisma.asset.findFirstOrThrow({ where: { status: "published", city_code: "bursa", lat: { not: null } } });
+    // An exact point: approximate ones (osm_area) are not position-checked.
+    const withPoint = await prisma.asset.findFirstOrThrow({
+      where: { status: "published", city_code: "bursa", lat: { not: null }, NOT: { coord_source: "osm_area" } },
+    });
     located = { id: withPoint.id, lat: withPoint.lat!, lng: withPoint.lng! };
     unlocated = await prisma.asset.findFirstOrThrow({
       where: { status: "published", lat: null, city_code: { not: "bursa" } },
