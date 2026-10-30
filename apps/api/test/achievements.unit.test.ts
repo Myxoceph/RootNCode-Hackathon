@@ -9,6 +9,7 @@ const visit = (assetId: string, city: string, district: string, type = "cami", e
   type,
   era,
   at: at(hours),
+  proven: false,
 });
 const facts = (visits: VisitFact[], extra: Partial<UserFacts> = {}): UserFacts => ({
   visits,
@@ -58,5 +59,13 @@ describe("achievement rules", () => {
     const f = facts([], { approved: { notes: 2, photos: 1 } });
     expect(progressOf({ kind: "contributions", count: 1, contribution: "photos" }, f).current).toBe(1);
     expect(progressOf({ kind: "contributions", count: 5, contribution: "any" }, f).current).toBe(3);
+  });
+});
+
+describe("proven visits", () => {
+  it("counts only proven visits, by city when given", () => {
+    const f = facts([{ ...visit("a", "bursa", "Osmangazi"), proven: true }, visit("b", "bursa", "Yıldırım"), { ...visit("c", "konya", "Karatay"), proven: true }]);
+    expect(progressOf({ kind: "proven_visits", count: 5 }, f).current).toBe(2);
+    expect(progressOf({ kind: "proven_visits", count: 1, city: "konya" }, f)).toEqual({ current: 1, target: 1 });
   });
 });
