@@ -32,6 +32,8 @@ const roles = [
   "mapRoadEdge",
   /** Outline of a province with assets on the Turkey map. */
   "mapProvince",
+  /** Every other province border on the Turkey map: quiet, for orientation only. */
+  "mapBorder",
 ] as const;
 
 export type ThemeRole = (typeof roles)[number];
@@ -56,6 +58,7 @@ const lightSpec: ThemeSpec = {
   mapRoad: "white",
   mapRoadEdge: "gece200",
   mapProvince: "firuze500",
+  mapBorder: "gece300",
 };
 
 const darkSpec: ThemeSpec = {
@@ -77,6 +80,7 @@ const darkSpec: ThemeSpec = {
   mapRoad: "gece700",
   mapRoadEdge: "gece1000",
   mapProvince: "altin300",
+  mapBorder: "gece600",
 };
 
 /** High contrast: secondary text and borders take the full text color. */
@@ -87,8 +91,8 @@ function highContrast(spec: ThemeSpec, overrides: Partial<ThemeSpec> = {}): Them
 export const themeSpecs = {
   light: lightSpec,
   dark: darkSpec,
-  lightHighContrast: highContrast(lightSpec, { mapProvince: "firuze700" }),
-  darkHighContrast: highContrast(darkSpec),
+  lightHighContrast: highContrast(lightSpec, { mapProvince: "firuze700", mapBorder: "gece600" }),
+  darkHighContrast: highContrast(darkSpec, { mapBorder: "gece400" }),
 } as const;
 
 export type ThemeName = keyof typeof themeSpecs;
