@@ -119,7 +119,7 @@ export interface CommunityRepository {
   findApprovedPhotos(assetId: string, limit: number): Promise<{ items: PhotoRecord[]; total: number }>;
   findPhotoFile(id: string, statuses: string[]): Promise<PhotoFileRecord | null>;
   findPulse(assetId: string, limit: number): Promise<PulseRecords>;
-  findQueue(query: { status: ContributionStatus; limit: number; offset: number }): Promise<{
+  findQueue(query: { status: ContributionStatus; kind?: "notes" | "photos" | undefined; limit: number; offset: number }): Promise<{
     total: number;
     items: ModerationRecord[];
   }>;
@@ -299,8 +299,11 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
       return { tips, community, communityTotal };
     },
 
-    async findQueue({ status, limit, offset }) {
-      const where = { status };
+    async findQueue({ status, kind, limit, offset }) {
+      const where: Prisma.contributionWhereInput = {
+        status,
+        ...(kind && { kind: kind === "photos" ? "photo" : { not: "photo" } }),
+      };
       const [total, items] = await Promise.all([
         prisma.contribution.count({ where }),
         prisma.contribution.findMany({
