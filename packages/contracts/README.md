@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.7`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.8`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -8,6 +8,7 @@ Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan v
 - `src/gastronomy.schema.ts`: `/cities/:code/dishes` (Yöresel Kültür & Gastronomi)
 - `src/sound.schema.ts`: `/meta/sounds` (Sesli Zaman Kapsülü); kaydın kendisi `asset.schema.ts`'te (`SoundRecordingSchema`)
 - `src/chat.schema.ts`: `POST /chat` ve `GET /chat/status` (AI asistan)
+- `src/admin.schema.ts`: yönetim paneli (`/admin/summary`, `/admin/users`, `/admin/assets`); moderasyon kuyruğu `community.schema.ts`'te
 - `scripts/validate-fixtures.ts`: uygulamanın örnek verisini (`apps/app/src/data/fixtures`) bu şemalarla doğrular
 
 v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı; uygulama `/assets` uçlarını kullanıyor (Y8).
@@ -40,17 +41,26 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `GET /assets/:id/photos?limit=` | `CommunityPhotosResponseSchema`: onaylanmış ziyaretçi fotoğrafları, yeniden eskiye; eserin kendi galerisinden (`media`) ayrı gösterilir, yazarın takma adıyla |
 | `GET /photos/:id` | Fotoğraf dosyası. `path` alanları API'nin taban adresine eklenir (`${apiUrl}${path}`); onaylanmamış fotoğraf yalnızca yanıttaki imzalı adresle (1 gün geçerli) açılır |
 | `GET /assets/:id/pulse?lang=&limit=` | `PulseResponseSchema` (veri setindeki ipuçları + onaylanmış topluluk katkıları) |
-| `GET /admin/contributions?status=&limit=&offset=` 🛡️ | `ModerationListResponseSchema` |
+| `GET /admin/contributions?status=&kind=&limit=&offset=` 🛡️ | `ModerationListResponseSchema` (`kind`: `notes` ya da `photos`; verilmezse hepsi) |
+| `GET /admin/summary` 🛡️ | `AdminSummaryResponseSchema` (bekleyen notlar ve fotoğraflar, kullanıcı sayıları, panelden eklenen eserler) |
+| `GET /admin/users?q=&role=&limit=&offset=` 🛡️ | `AdminUsersResponseSchema` (takma ad ya da kullanıcı adıyla arama) |
+| `POST /admin/users/:id/role` 👑 | İstek `SetUserRoleRequestSchema`, yanıt `AdminUserSchema`; kendi rolüne uygulanamaz (`OWN_ROLE`) |
+| `POST /admin/users/:id/unban` 🛡️ | `AdminUserSchema` |
+| `GET /admin/assets` 👑 | `AdminAssetsResponseSchema`: panelden eklenen eserler (taslak ve yayında) |
+| `POST /admin/assets` 👑 | İstek `AdminAssetInputSchema` (ad, tür, il, ilçe, dönem, özet, tanıtım metni, tarih, bani, adres, koordinat, `status`), yanıt `AdminAssetSchema`; id addan üretilir (`<il>-<ilçe>-<ad>`). Kayıt veri setindeki JSON biçiminde saklanır ve `data/tools/export_panel_assets.py` ile `data/eserler`'e yazılabilir |
+| `PATCH /admin/assets/:id` 👑 | İstek `AdminAssetPatchSchema` (alanlardan herhangi biri; yayına almak için `status: "published"`); yalnızca panelden eklenen eserler, id değişmez |
+| `DELETE /admin/assets/:id` 👑 | `204`; yalnızca panelden eklenen eserler |
 | `POST /admin/contributions/:id/approve` 🛡️, `…/reject` 🛡️ | `ModerationItemSchema`; reddetmede istek `RejectContributionRequestSchema` (`reason`) |
 | `POST /admin/users/:id/ban` 🛡️ | `204` |
 
-🔒 `Authorization: Bearer <token>` gerekir; 🛡️ moderatör ya da admin gerekir (`npm run account:create`, sonra `POST /auth/login`).
+🔒 `Authorization: Bearer <token>` gerekir; 🛡️ moderatör ya da admin gerekir (`npm run account:create`, sonra `POST /auth/login`); 👑 yalnızca admin.
 
 Hata yanıtları her zaman `{ error: { code, message } }` biçimindedir: `INVALID_QUERY`, `INVALID_ID` (400), `ASSET_NOT_FOUND`, `CITY_NOT_FOUND` (404),
 `RATE_LIMITED` (429: IP başına dakikada 120 istek aşıldı; kaç saniye bekleneceği `Retry-After` başlığında).
 Ziyaretçi Nabzı uçlarında ayrıca: `INVALID_BODY` (400), `UNAUTHORIZED` (401: token yok ya da geçersiz),
 `USER_BANNED`, `FORBIDDEN` (403), `CONTRIBUTION_NOT_FOUND`, `USER_NOT_FOUND` (404), `ALREADY_REVIEWED` (409),
 `CONTRIBUTION_LIMIT` (429: kullanıcı başına saatte 5 katkı).
+Panelde ayrıca: `OWN_ROLE` (400), `UNKNOWN_CODE` (400: tür, il ya da dönem kodu yok), `ASSET_EXISTS` (409: aynı id'li eser var), `USER_NOT_FOUND`, `ASSET_NOT_FOUND` (404: id panelden eklenmiş bir eser değil).
 Fotoğraflarda ayrıca: `INVALID_IMAGE` (400: JPEG/PNG değil ya da kenarı 300 px'ten kısa), `PAYLOAD_TOO_LARGE` (413), `UNSUPPORTED_MEDIA_TYPE` (415), `PHOTO_LIMIT` (429), `PHOTO_NOT_FOUND` (404).
 Hesaplarda ayrıca: `USERNAME_TAKEN`, `ALREADY_REGISTERED` (409), `INVALID_CREDENTIALS` (401: kullanıcı adı ya da parola yanlış; hangisi olduğu söylenmez), `RATE_LIMITED` (429: IP başına 15 dakikada 10 giriş, saatte 10 kayıt).
 Asistanda ayrıca: `INVALID_BODY` (400), `RATE_LIMITED` (429: IP başına dakikada 10 soru), `ASSISTANT_UNAVAILABLE` (503: model tanımlı değil ya da cevap vermiyor), `ASSISTANT_BUSY` (503: aynı anda en çok 2 soru işlenir; biraz sonra tekrar denenir).
