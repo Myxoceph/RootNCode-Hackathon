@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-30 · Ziyaretler ve başarımlar (migration, sözleşme 0.3.9)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. `npm run db:deploy --workspace @vagabonds/api`. Migration 32 başlangıç başarımını da ekler.
+
+Değişenler:
+- `POST /assets/:id/visit`: ziyaret kaydı.
+  - Eserin noktası varsa ziyaretçi 200 m içinde olmalı; noktası yoksa ziyaret doğrulanmadan kabul edilir.
+  - Yanıtta kazanılan başarımlar (`newAchievements`) döner; uygulama bunları rozet bildirimi olarak gösterebilir.
+- `GET /achievements` başarım listesini, `GET /me/achievements` ilerlemeyi, kazanılanları ve toplam puanı verir. Onaylanan katkılar bu çağrıda sayılır.
+- Admin: `/admin/achievements` ile başarım ekleme, düzenleme, kapatma ve silme. Kural türleri `docs/achievements.md`'de.
+- Puanlar parayla alınmaz ve paraya çevrilmez; ödül kataloğu sonraki bir aşamada.
+
 ## 2026-10-30 · Yönetim paneli uçları (sözleşme 0.3.8)
 
 Kimler: **uygulama ekibi**, **veri ekibi**. Migration yok.
