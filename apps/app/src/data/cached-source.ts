@@ -14,7 +14,7 @@ import type { CityOption, DataSource } from "./source";
 
 /** Answers of another contract version are never read; they are cleared on the first save. */
 const PREFIX = "vagabonds-cache:";
-const VERSION_PREFIX = `${PREFIX}${CONTRACT_VERSION}:`;
+export const VERSION_PREFIX = `${PREFIX}${CONTRACT_VERSION}:`;
 const INDEX_KEY = `${VERSION_PREFIX}index`;
 /**
  * Kept by size, not count: the fog map stores a small relations answer per found asset, and a

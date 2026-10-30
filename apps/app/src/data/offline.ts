@@ -60,9 +60,9 @@ export function getOfflineState(): OfflineState {
 }
 
 export function useOfflineSince(): number | null {
-  return useSyncExternalStore(subscribe, () => getOfflineState().since, () => null);
+  return useSyncExternalStore(subscribe, () => state.since, () => null);
 }
 
 export function useRefreshEpoch(): number {
-  return useSyncExternalStore(subscribe, () => getOfflineState().epoch, () => 0);
+  return useSyncExternalStore(subscribe, () => state.epoch, () => 0);
 }
