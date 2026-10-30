@@ -4,9 +4,11 @@ import { DarkTheme, DefaultTheme, Stack, ThemeProvider, type Theme } from "expo-
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
+import { Platform } from "react-native";
 
 import { OfflineBanner } from "@/components/offline-banner";
 import { A11ySettingsProvider } from "@/settings/a11y-settings";
+import { useStoredThemePreference } from "@/theme";
 import { fontFiles } from "@/theme/fonts";
 
 SplashScreen.preventAutoHideAsync();
@@ -31,7 +33,10 @@ function navigationTheme(theme: UiTheme): Theme {
 export default function RootLayout() {
   // On failure the app still opens with system fonts instead of hanging on the splash screen.
   const [fontsLoaded, fontError] = useFonts(fontFiles);
-  const ready = fontsLoaded || fontError !== null;
+  const storedThemePreference = useStoredThemePreference();
+  // On the phone the splash screen waits for the saved theme too, so a dark choice never opens light
+  // for a moment. Web pages are rendered ahead of time and cannot wait; the saved theme follows.
+  const ready = (fontsLoaded || fontError !== null) && (storedThemePreference !== undefined || Platform.OS === "web");
 
   useEffect(() => {
     if (ready) SplashScreen.hideAsync();
@@ -40,7 +45,7 @@ export default function RootLayout() {
   if (!ready) return null;
 
   return (
-    <A11ySettingsProvider>
+    <A11ySettingsProvider storedThemePreference={storedThemePreference}>
       <ThemedStack />
     </A11ySettingsProvider>
   );

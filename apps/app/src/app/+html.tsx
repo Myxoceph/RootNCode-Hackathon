@@ -8,7 +8,7 @@ import type { PropsWithChildren } from "react";
  *
  * - `lang="tr"` makes screen readers pronounce the content as Turkish.
  * - The viewport must allow zooming (WCAG 1.4.4), so no `user-scalable=no`.
- * - The background is set before React loads to avoid a white flash in dark mode.
+ * - The background is set before React loads, in the light theme the app opens with.
  */
 export default function Root({ children }: PropsWithChildren) {
   return (
@@ -25,8 +25,4 @@ export default function Root({ children }: PropsWithChildren) {
   );
 }
 
-const background = `
-body { background-color: ${palette.gece950}; }
-@media (prefers-color-scheme: light) {
-  body { background-color: ${palette.gece50}; }
-}`;
+const background = `body { background-color: ${palette.gece50}; }`;

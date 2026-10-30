@@ -6,9 +6,11 @@ import { Platform, ScrollView, StyleSheet, Switch, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { MyContributions } from "@/components/my-contributions";
+import { Segmented } from "@/components/segmented";
 import { timeCurtain } from "@/content/camera";
 import { speak } from "@/lib/speak";
 import { useA11ySettings, type A11ySettings } from "@/settings/a11y-settings";
+import { themePreferenceOptions } from "@/theme";
 
 const switches: Array<{ key: keyof A11ySettings; icon: ComponentProps<typeof Ionicons>["name"]; title: string; detail: string }> = [
   { key: "audioDescription", icon: "volume-high-outline", title: "Sesli mimari betimleme", detail: "Kamera açmadan dün ile bugünü dinle" },
@@ -18,10 +20,10 @@ const switches: Array<{ key: keyof A11ySettings; icon: ComponentProps<typeof Ion
   { key: "strongFocusRing", icon: "scan-outline", title: "Belirgin odak halkası", detail: "Klavye ve anahtar erişimi için" },
 ];
 
-/** Profil: Erişilebilirlik (module 8; every switch applies to all screens at once) and Notlarım (module 6). */
+/** Profil: Tema, Erişilebilirlik (module 8; every switch applies to all screens at once) and Notlarım (module 6). */
 export default function SettingsScreen() {
   const { colors: c } = useTheme();
-  const { settings, setSetting } = useA11ySettings();
+  const { settings, setSetting, themePreference, setThemePreference } = useA11ySettings();
   const insets = useSafeAreaInsets();
 
   return (
@@ -36,6 +38,20 @@ export default function SettingsScreen() {
         Erişilebilirlik
       </Text>
       <Text color="textSecondary">Buradaki ayarlar uygulamadaki tüm ekranlara uygulanır.</Text>
+
+      <View style={styles.section}>
+        {/* The radio group below carries the name for screen readers; this is its visible label. */}
+        <Text variant="label" accessibilityElementsHidden importantForAccessibility="no">
+          Tema
+        </Text>
+        <Segmented
+          label="Tema"
+          look="track"
+          options={themePreferenceOptions}
+          value={themePreference}
+          onChange={setThemePreference}
+        />
+      </View>
 
       <View style={[styles.group, { backgroundColor: c.surface, borderColor: c.border }]}>
         {switches.map(({ key, icon, title, detail }, i) => (
@@ -109,6 +125,9 @@ const styles = StyleSheet.create({
   },
   flex: {
     flex: 1,
+  },
+  section: {
+    gap: spacing.sm,
   },
   group: {
     borderRadius: radius.xl,
