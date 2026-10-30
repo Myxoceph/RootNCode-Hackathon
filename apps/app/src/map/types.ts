@@ -39,6 +39,14 @@ export interface MapNetwork {
   motion: boolean;
 }
 
+/** Turkey's provinces: the ones with assets are outlined, the others carry no mark at all. */
+export interface MapProvinces {
+  /** Licence plate codes of the provinces to outline (16 = Bursa). */
+  plates: number[];
+  /** Turkey rises out of the fog the first time the map opens. False when "Hareketi azalt" is on. */
+  reveal: boolean;
+}
+
 /**
  * The map every screen uses (ADR 0003). Screens pass pins and the selection and
  * never see which renderer draws them. The map is visual only: whatever a
@@ -56,5 +64,7 @@ export interface AssetMapProps {
   fitPadding?: MapPadding;
   /** Fog and links over the map; without it the map is plain. */
   network?: MapNetwork | null;
+  /** Turkey with its province outlines; without pins the map frames the whole country. */
+  provinces?: MapProvinces | null;
   style?: StyleProp<ViewStyle>;
 }

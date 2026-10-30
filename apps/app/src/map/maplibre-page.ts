@@ -1,4 +1,6 @@
-import type { MapNetwork, MapPadding, MapPin } from "./types";
+import turkeyOutline from "./turkey-outline.json";
+import turkeyProvinces from "./turkey-provinces.json";
+import type { MapNetwork, MapPadding, MapPin, MapProvinces } from "./types";
 
 /**
  * MapLibre GL JS, bundled into the app by scripts/vendor-web-libs.mts: the same renderer
@@ -14,6 +16,12 @@ export const MAPLIBRE_VERSION = "5.24.0";
 const TILES = "https://tiles.allbytech.com";
 const STYLE_URL = { light: `${TILES}/styles/positron`, dark: `${TILES}/styles/dark` };
 
+/** Turkey from its westernmost to its easternmost province ([west, south], [east, north]). */
+const TURKEY_BOUNDS = [
+  [25.66, 35.82],
+  [44.8, 42.1],
+];
+
 export interface MapPageColors {
   /** Land, from the theme's `mapBackground`. */
   land: string;
@@ -28,6 +36,8 @@ export interface MapPageColors {
   markText: string;
   label: string;
   labelText: string;
+  /** Outline of a province with assets. */
+  province: string;
 }
 
 /** Messages the map page posts to the app. */
@@ -37,7 +47,8 @@ export type MapPageEvent = { type: "ready" } | { type: "select"; id: string | nu
 export type MapPageCommand =
   | { type: "pins"; pins: MapPin[]; padding: MapPadding }
   | { type: "select"; id: string | null }
-  | { type: "network"; network: MapNetwork | null };
+  | { type: "network"; network: MapNetwork | null }
+  | { type: "provinces"; provinces: MapProvinces | null };
 
 export function parseMapPageEvent(data: unknown): MapPageEvent | null {
   if (typeof data !== "string") return null;
@@ -57,16 +68,28 @@ export function parseMapPageEvent(data: unknown): MapPageEvent | null {
  *
  * The network (fog, links, marked pins) is drawn on a canvas above the map, so
  * overlapping clearings simply merge and their edges stay soft.
+ *
+ * Provinces (./turkey-provinces.json: Natural Earth admin-1, public domain, simplified)
+ * are a line layer: only the plates asked for are outlined, and the base style's own
+ * province borders are hidden so the others carry no mark. The first time they are shown
+ * with `reveal`, Turkey rises out of drifting fog on the same canvas (see `startIntro`);
+ * ./turkey-outline.json is the country's border for the gold trace.
  */
 export function mapPageHtml({
   scheme,
   colors,
   maplibre,
+  opening = null,
 }: {
   scheme: "light" | "dark";
   colors: MapPageColors;
   /** MapLibre inlined, so the page needs no network for it (`loadMaplibre` in @/vendor). */
   maplibre: { script: string; css: string };
+  /**
+   * Set when the map shows Turkey's provinces: it opens on the whole country instead of a
+   * city, and with `reveal` under closed fog, so no tile shows before the fog starts to lift.
+   */
+  opening?: { reveal: boolean } | null;
 }): string {
   return `<!doctype html>
 <html>
@@ -89,6 +112,11 @@ const post = (event) => {
   else window.parent.postMessage(data, "*");
 };
 const colors = ${JSON.stringify(colors)};
+const PROVINCES = ${JSON.stringify(turkeyProvinces)};
+const TURKEY_BOUNDS = ${JSON.stringify(TURKEY_BOUNDS)};
+const OPENING = ${JSON.stringify(opening)};
+const OUTLINE = ${JSON.stringify(turkeyOutline)};
+const DARK = ${scheme === "dark"};
 let pending = [];
 let loaded = false;
 let fitted = false;
@@ -104,6 +132,7 @@ window.vagabondsMap = {
     if (command.type === "pins") actions.showPins(command.pins, command.padding);
     if (command.type === "select") actions.select(command.id);
     if (command.type === "network") actions.showNetwork(command.network);
+    if (command.type === "provinces") actions.showProvinces(command.provinces);
   },
 };
 
@@ -117,8 +146,7 @@ function start() {
   const map = new maplibregl.Map({
     container: "map",
     style: ${JSON.stringify(STYLE_URL[scheme])},
-    center: [29.06, 40.19],
-    zoom: 11,
+    ...(OPENING ? { bounds: TURKEY_BOUNDS, fitBoundsOptions: { padding: 24 } } : { center: [29.06, 40.19], zoom: 11 }),
     attributionControl: { compact: true },
   });
   window.vagabondsMap.map = map;
@@ -163,6 +191,32 @@ function start() {
       },
     });
 
+    map.addSource("provinces", { type: "geojson", data: PROVINCES });
+    // Below the pins, so a pin on a border stays tappable.
+    map.addLayer(
+      {
+        id: "province-lines",
+        type: "line",
+        source: "provinces",
+        filter: ["in", ["get", "plate"], ["literal", []]],
+        layout: { "line-join": "round", "line-cap": "round" },
+        paint: { "line-color": colors.province, "line-width": 2, "line-opacity": 0, "line-opacity-transition": { duration: 900 } },
+      },
+      "clusters",
+    );
+    // A wide, soft copy under the outlines: it flashes once when they appear.
+    map.addLayer(
+      {
+        id: "province-glow",
+        type: "line",
+        source: "provinces",
+        filter: ["in", ["get", "plate"], ["literal", []]],
+        layout: { "line-join": "round", "line-cap": "round" },
+        paint: { "line-color": colors.province, "line-width": 10, "line-blur": 7, "line-opacity": 0, "line-opacity-transition": { duration: 700 } },
+      },
+      "province-lines",
+    );
+
     map.on("click", "clusters", async (event) => {
       const feature = event.features[0];
       const zoom = await map.getSource("assets").getClusterExpansionZoom(feature.properties.cluster_id);
@@ -195,6 +249,8 @@ function start() {
   });
 
   function showPins(pins, padding) {
+    lastPadding = padding;
+    hasPins = pins.length > 0;
     marks = pins.filter((pin) => pin.mark);
     draw();
     map.getSource("assets").setData({
@@ -221,6 +277,245 @@ function start() {
     map.setPaintProperty("pins", "circle-stroke-color", ["case", ["==", ["get", "id"], id || ""], colors.pinSelected, ["case", ["get", "verified"], colors.outline, colors.pin]]);
   }
 
+  // Provinces and the opening fog.
+  /** The fog lifts over this long once the tiles are drawn. */
+  const INTRO_MS = 4200;
+  /** Tiles get this long to arrive before the fog lifts anyway; the fog keeps drifting meanwhile. */
+  const INTRO_WAIT_MS = 2000;
+  /** Fog cells across the screen; the browser smooths them up into soft clouds. */
+  const FOG_CELLS = 72;
+  /** Side of the repeating noise the clouds are cut from. */
+  const NOISE_SIZE = 64;
+  /** Middle of Turkey: the fog parts from here outwards. */
+  const TURKEY_MIDDLE = [35.2, 39.1];
+  let lastPadding = { top: 48, right: 48, bottom: 48, left: 48 };
+  let hasPins = false;
+  let provincesShown = false;
+  /** While Turkey rises out of the fog. start is Infinity while waiting for tiles. */
+  let intro = null;
+
+  function showProvinces(provinces) {
+    if (!provinces) {
+      map.setPaintProperty("province-lines", "line-opacity", 0);
+      setBaseBorders(true);
+      return;
+    }
+    map.setFilter("province-lines", ["in", ["get", "plate"], ["literal", provinces.plates]]);
+    map.setFilter("province-glow", ["in", ["get", "plate"], ["literal", provinces.plates]]);
+    if (provincesShown) return;
+    provincesShown = true;
+    setBaseBorders(false);
+    if (!hasPins) {
+      map.fitBounds(TURKEY_BOUNDS, { padding: lastPadding, duration: 0 });
+      fitted = true;
+    }
+    if (provinces.reveal) startIntro();
+    else map.setPaintProperty("province-lines", "line-opacity", 1);
+  }
+
+  /** The base style draws every province border; with ours on, only country borders stay. */
+  function setBaseBorders(visible) {
+    for (const layer of map.getStyle().layers) {
+      if (layer["source-layer"] === "boundary" && !/country|boundary_2|disputed/.test(layer.id)) {
+        map.setLayoutProperty(layer.id, "visibility", visible ? "visible" : "none");
+      }
+    }
+  }
+
+  /**
+   * The opening: drifting fog, Turkey's border traced in glowing gold through it, then the
+   * fog breaks up from the middle of the country outwards while the camera comes down from
+   * a tilted, turned view. The provinces with assets light up last, with one pulse.
+   */
+  function startIntro() {
+    const zoom = map.getZoom();
+    map.jumpTo({ zoom: zoom - 0.9, pitch: 48, bearing: -16 });
+    intro = intro || newIntro();
+    const begin = () => {
+      if (!intro || intro.start !== Infinity) return;
+      intro.start = performance.now();
+      map.easeTo({ zoom, pitch: 0, bearing: 0, duration: INTRO_MS, easing: (t) => 1 - Math.pow(1 - t, 3) });
+      setTimeout(() => {
+        map.setPaintProperty("province-lines", "line-opacity", 1);
+        map.setPaintProperty("province-glow", "line-opacity", 0.8);
+        setTimeout(() => map.setPaintProperty("province-glow", "line-opacity", 0), 1000);
+      }, INTRO_MS * 0.6);
+      animate();
+    };
+    map.once("idle", begin);
+    setTimeout(begin, INTRO_WAIT_MS);
+    animate();
+  }
+
+  function newIntro() {
+    const fog = rgb(colors.fog);
+    const land = rgb(colors.land);
+    const light = mix(fog, [255, 255, 255], DARK ? 0.14 : 0.55);
+    return {
+      start: Infinity,
+      born: performance.now(),
+      // A far layer, large and slow, and a near one, finer and faster: the depth of real fog.
+      layers: [
+        fogLayer(11, { scale: 0.55, speed: 1.6, angle: 0.4, opacity: 0.9, dark: mix(fog, land, 0.35), light }),
+        fogLayer(23, { scale: 1.05, speed: 4.2, angle: 2.6, opacity: 0.8, dark: fog, light }),
+      ],
+    };
+  }
+
+  function fogLayer(seed, options) {
+    const canvas = document.createElement("canvas");
+    return { ...options, noise: tileableNoise(seed), canvas, context: canvas.getContext("2d"), image: null };
+  }
+
+  /** Repeating value noise in four octaves, 0..1, so the clouds can drift forever without a seam. */
+  function tileableNoise(seed) {
+    let state = seed;
+    const random = () => ((state = (state * 16807) % 2147483647) / 2147483647);
+    const out = new Float32Array(NOISE_SIZE * NOISE_SIZE);
+    let amplitude = 1;
+    for (let period = 4; period <= 32; period *= 2) {
+      const lattice = Array.from({ length: period * period }, random);
+      const at = (x, y) => lattice[(y % period) * period + (x % period)];
+      for (let y = 0; y < NOISE_SIZE; y++) {
+        const fy = (y / NOISE_SIZE) * period;
+        const y0 = Math.floor(fy);
+        const ty = ease(fy - y0);
+        for (let x = 0; x < NOISE_SIZE; x++) {
+          const fx = (x / NOISE_SIZE) * period;
+          const x0 = Math.floor(fx);
+          const tx = ease(fx - x0);
+          const top = at(x0, y0) + (at(x0 + 1, y0) - at(x0, y0)) * tx;
+          const bottom = at(x0, y0 + 1) + (at(x0 + 1, y0 + 1) - at(x0, y0 + 1)) * tx;
+          out[y * NOISE_SIZE + x] += (top + (bottom - top) * ty) * amplitude;
+        }
+      }
+      amplitude *= 0.5;
+    }
+    let min = Infinity;
+    let max = -Infinity;
+    for (const value of out) {
+      min = Math.min(min, value);
+      max = Math.max(max, value);
+    }
+    for (let i = 0; i < out.length; i++) out[i] = (out[i] - min) / (max - min);
+    return out;
+  }
+
+  function ease(t) {
+    return t * t * (3 - 2 * t);
+  }
+
+  function smoothstep(from, to, value) {
+    return ease(Math.min(1, Math.max(0, (value - from) / (to - from))));
+  }
+
+  /** The noise between its points, wrapping around. */
+  function sampleNoise(noise, u, v) {
+    const x = ((u % NOISE_SIZE) + NOISE_SIZE) % NOISE_SIZE;
+    const y = ((v % NOISE_SIZE) + NOISE_SIZE) % NOISE_SIZE;
+    const x0 = Math.floor(x);
+    const y0 = Math.floor(y);
+    const x1 = (x0 + 1) % NOISE_SIZE;
+    const y1 = (y0 + 1) % NOISE_SIZE;
+    const tx = x - x0;
+    const ty = y - y0;
+    const top = noise[y0 * NOISE_SIZE + x0] * (1 - tx) + noise[y0 * NOISE_SIZE + x1] * tx;
+    const bottom = noise[y1 * NOISE_SIZE + x0] * (1 - tx) + noise[y1 * NOISE_SIZE + x1] * tx;
+    return top * (1 - ty) + bottom * ty;
+  }
+
+  function rgb(hex) {
+    const value = hex.replace("#", "");
+    const n = parseInt(value.length === 3 ? value.replace(/./g, "$&$&") : value.slice(0, 6), 16);
+    return [n >> 16, (n >> 8) & 255, n & 255];
+  }
+
+  function mix(a, b, t) {
+    return a.map((channel, i) => Math.round(channel + (b[i] - channel) * t));
+  }
+
+  function drawIntro(now, width, height) {
+    const elapsed = intro.start === Infinity ? 0 : Math.min(1, (now - intro.start) / INTRO_MS);
+    // The border is traced first, in the closed fog; the fog parts after.
+    const opening = smoothstep(0.3, 1, elapsed);
+    const middle = map.project(TURKEY_MIDDLE);
+    // An even veil under the clouds at first, so nothing shows through before the fog parts.
+    const veil = 1 - smoothstep(0.28, 0.5, elapsed);
+    if (veil > 0) {
+      const [r, g, b] = rgb(colors.fog);
+      context.fillStyle = "rgba(" + r + "," + g + "," + b + "," + veil + ")";
+      context.fillRect(0, 0, width, height);
+    }
+    for (const layer of intro.layers) drawFogLayer(layer, opening, now, width, height, middle);
+    drawOutline(elapsed);
+    if (elapsed >= 1) intro = null;
+  }
+
+  /**
+   * One fog layer, cut from the noise: a cell is fog where the noise is above the line that
+   * rises with the progress. The line rises first in the middle of Turkey, so the fog tears
+   * open there and the opening spreads outwards in wisps.
+   */
+  function drawFogLayer(layer, progress, now, width, height, middle) {
+    const cols = FOG_CELLS;
+    const rows = Math.max(1, Math.ceil((cols * height) / width));
+    if (layer.canvas.width !== cols || layer.canvas.height !== rows) {
+      layer.canvas.width = cols;
+      layer.canvas.height = rows;
+      layer.image = layer.context.createImageData(cols, rows);
+    }
+    const data = layer.image.data;
+    const seconds = (now - intro.born) / 1000;
+    const du = Math.cos(layer.angle) * layer.speed * seconds;
+    const dv = Math.sin(layer.angle) * layer.speed * seconds;
+    const diagonal = Math.hypot(width, height);
+    const fade = 1 - smoothstep(0.82, 1, progress);
+    for (let j = 0; j < rows; j++) {
+      for (let i = 0; i < cols; i++) {
+        const n = sampleNoise(layer.noise, i * layer.scale + du, j * layer.scale + dv);
+        const distance = Math.hypot(((i + 0.5) / cols) * width - middle.x, ((j + 0.5) / rows) * height - middle.y) / diagonal;
+        const line = progress * 1.8 - 0.3 - distance * 0.9;
+        const alpha = smoothstep(line, line + 0.25, n) * layer.opacity * fade;
+        const k = (j * cols + i) * 4;
+        // Thicker fog is lighter on top, like clouds catching the light.
+        data[k] = layer.dark[0] + (layer.light[0] - layer.dark[0]) * n;
+        data[k + 1] = layer.dark[1] + (layer.light[1] - layer.dark[1]) * n;
+        data[k + 2] = layer.dark[2] + (layer.light[2] - layer.dark[2]) * n;
+        data[k + 3] = 255 * alpha;
+      }
+    }
+    layer.context.putImageData(layer.image, 0, 0);
+    context.imageSmoothingEnabled = true;
+    context.imageSmoothingQuality = "high";
+    context.drawImage(layer.canvas, 0, 0, width, height);
+  }
+
+  /** Turkey's border, drawn in glowing gold through the fog, then handed over to the map. */
+  function drawOutline(elapsed) {
+    const traced = smoothstep(0, 0.36, elapsed);
+    const alpha = 1 - smoothstep(0.66, 0.92, elapsed);
+    if (traced <= 0 || alpha <= 0) return;
+    context.save();
+    context.globalAlpha = alpha;
+    context.strokeStyle = colors.province;
+    context.lineWidth = 2.5;
+    context.lineJoin = "round";
+    context.lineCap = "round";
+    context.shadowColor = colors.province;
+    context.shadowBlur = 16;
+    for (const ring of OUTLINE) {
+      if (ring.length < 10) continue;
+      const points = ring.map((point) => map.project(point));
+      let length = 0;
+      for (let i = 1; i < points.length; i++) length += Math.hypot(points[i].x - points[i - 1].x, points[i].y - points[i - 1].y);
+      context.setLineDash([length * traced, length + 1]);
+      context.beginPath();
+      points.forEach((point, i) => (i === 0 ? context.moveTo(point.x, point.y) : context.lineTo(point.x, point.y)));
+      context.stroke();
+    }
+    context.restore();
+  }
+
   // The network layer.
   const canvas = document.createElement("canvas");
   canvas.id = "network";
@@ -235,6 +530,16 @@ function start() {
   /** When each clearing started to grow; the ones present at the start are already open. */
   const clearedAt = new Map();
   let looping = false;
+
+  // The fog is closed from the first frame; it lifts once the provinces arrive and the tiles are drawn.
+  if (OPENING && OPENING.reveal) {
+    intro = newIntro();
+    animate();
+    // Never left closed if the provinces do not come.
+    setTimeout(() => {
+      if (!provincesShown) startIntro();
+    }, INTRO_WAIT_MS * 2);
+  }
 
   function showNetwork(next) {
     const now = performance.now();
@@ -256,7 +561,7 @@ function start() {
       draw(now);
       const growing = network && network.clearings.some((clearing) => now - clearedAt.get(clearing.id) < GROW_MS);
       const pulsing = network && network.motion && marks.some((pin) => pin.mark === "hint");
-      if (growing || pulsing) requestAnimationFrame(frame);
+      if (growing || pulsing || intro) requestAnimationFrame(frame);
       else looping = false;
     };
     requestAnimationFrame(frame);
@@ -301,6 +606,7 @@ function start() {
       for (const link of network.links) drawLink(link);
     }
     for (const pin of marks) drawMark(pin, now);
+    if (intro) drawIntro(now, width, height);
   }
 
   function drawLink(link) {
@@ -395,6 +701,7 @@ function start() {
   actions.showPins = showPins;
   actions.select = select;
   actions.showNetwork = showNetwork;
+  actions.showProvinces = showProvinces;
 }
 </script>
 </body>

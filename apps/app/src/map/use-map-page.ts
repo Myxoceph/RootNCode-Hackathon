@@ -13,11 +13,14 @@ const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
  * the commands sent to it when pins or the selection change, and its events.
  */
 export function useMapPage(
-  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null }: AssetMapProps,
+  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null }: AssetMapProps,
   send: (command: MapPageCommand) => void,
 ) {
   const { scheme, colors: c } = useTheme();
   const maplibre = useVendored(loadMaplibre);
+  // Only whether and how the map opens is baked into the page; the outlined plates are sent as commands.
+  const showsProvinces = provinces !== null;
+  const reveal = provinces?.reveal ?? false;
   /** `null` until MapLibre is loaded. */
   const html = useMemo(
     () =>
@@ -35,11 +38,13 @@ export function useMapPage(
               markText: c.highlight,
               label: c.surface,
               labelText: c.text,
+              province: c.mapProvince,
             },
             maplibre,
+            opening: showsProvinces ? { reveal } : null,
           })
         : null,
-    [scheme, c, maplibre],
+    [scheme, c, maplibre, showsProvinces, reveal],
   );
   const ready = useRef(false);
 
@@ -50,6 +55,8 @@ export function useMapPage(
   // Same for the network, which screens rebuild on every render.
   const networkJson = JSON.stringify(network);
   useEffect(() => send({ type: "network", network: JSON.parse(networkJson) }), [networkJson, send]);
+  const provincesJson = JSON.stringify(provinces);
+  useEffect(() => send({ type: "provinces", provinces: JSON.parse(provincesJson) }), [provincesJson, send]);
 
   const onMessage = (data: unknown) => {
     const event = parseMapPageEvent(data);
@@ -66,6 +73,7 @@ export function useMapPage(
     send({ type: "pins", pins, padding: fitPadding });
     send({ type: "select", id: selectedId });
     send({ type: "network", network });
+    send({ type: "provinces", provinces });
   };
 
   return { html, onMessage, replay };

@@ -36,7 +36,7 @@ export function createApiSource(baseUrl: string): DataSource {
       const enums = (await request(`/meta/enums?lang=${lang}`, MetaEnumsResponseSchema))!;
       return enums.cities
         .filter((city) => city.assetCount > 0)
-        .map(({ code, label, assetCount }) => ({ code, label, assetCount }));
+        .map(({ code, label, assetCount, plate }) => ({ code, label, assetCount, plate }));
     },
   };
 }
