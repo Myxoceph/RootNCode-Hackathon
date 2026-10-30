@@ -18,7 +18,7 @@ npm install                                  # kökten; tüm workspace'ler
 npm run app                                  # Expo geliştirme sunucusu
 ```
 
-- **Telefon:** Expo Go uygulamasıyla terminaldeki QR kodu okut (SDK 57).
+- **Telefon:** Expo Go uygulamasıyla terminaldeki QR kodu okut (SDK 58).
 - **Tarayıcı:** sunucu açıkken `w` tuşu, ya da `npm run web --workspace @vagabonds/app`.
 - **Kontrol:** `npm run typecheck --workspace @vagabonds/app` ve
   `npm run export --workspace @vagabonds/app` (üç platformun paketini derler).
