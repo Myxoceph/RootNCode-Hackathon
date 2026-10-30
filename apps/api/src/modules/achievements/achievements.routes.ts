@@ -28,6 +28,7 @@ import { pick, resolveLang } from "../../lib/lang.ts";
 import { parseWith } from "../../lib/validate.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
+import { APPROXIMATE_SOURCE } from "../assets/assets.mapper.ts";
 import { distanceMeters } from "../assets/assets.network.ts";
 import { requireUser } from "../community/auth.ts";
 import type { CommunityRepository } from "../community/community.repository.ts";
@@ -119,9 +120,10 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     const asset = await repository.findAsset(id);
     if (!asset) throw new HttpError(404, "ASSET_NOT_FOUND", `Asset "${id}" not found`);
 
-    // An asset with a point needs the visitor near it; one without a point takes the visit unchecked.
+    // An asset with a point needs the visitor near it; one without a point, or with only its
+    // neighbourhood's centre, takes the visit unchecked.
     let distance: number | null = null;
-    if (asset.lat !== null && asset.lng !== null) {
+    if (asset.lat !== null && asset.lng !== null && asset.coord_source !== APPROXIMATE_SOURCE) {
       if (position.lat === undefined || position.lng === undefined) {
         throw new HttpError(400, "POSITION_REQUIRED", "This asset has a location: send lat and lng");
       }

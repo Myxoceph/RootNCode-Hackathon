@@ -7,6 +7,18 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-30 · Yaklaşık koordinatlar (sözleşme 0.3.10)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. `npm run db:import` (52 esere yeni koordinat).
+
+Değişenler:
+- `coordinates.approximate`: `true` ise nokta yalnızca eserin mahallesinin ya da köyünün merkezidir (`source: "osm_area"`).
+  - Haritada eser "yaklaşık burada" diye, örneğin farklı bir işaretle gösterilmeli.
+  - Bu eserlerde ziyaret konumla doğrulanmaz.
+- Haritadaki eser sayısı: Bursa 333/356, Hatay 73/116, Konya 62/93. 41'i yaklaşık nokta.
+
 ## 2026-10-30 · Ziyaretler ve başarımlar (migration, sözleşme 0.3.9)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**

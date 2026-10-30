@@ -91,6 +91,20 @@ describe.skipIf(!DATABASE_URL)("achievements (PostgreSQL)", () => {
     expect(mine.items.find((a) => a.code === "uc-sehir")).toMatchObject({ earnedAt: null, progress: { current: 1, target: 3 } });
   });
 
+  it("does not position-check an asset whose point is only its neighbourhood's centre", async () => {
+    const token = await createUser();
+    const before = await prisma.asset.findUniqueOrThrow({ where: { id: unlocated.id }, select: { lat: true, lng: true, coord_source: true } });
+    await prisma.asset.update({ where: { id: unlocated.id }, data: { lat: 36.2, lng: 36.16, coord_source: "osm_area" } });
+    try {
+      const detail = await app.inject({ method: "GET", url: `/assets/${unlocated.id}` });
+      expect(detail.json().coordinates).toMatchObject({ approximate: true, source: "osm_area" });
+      const res = VisitResponseSchema.parse((await visit(token, unlocated.id)).json());
+      expect(res).toMatchObject({ verified: false, distanceMeters: null });
+    } finally {
+      await prisma.asset.update({ where: { id: unlocated.id }, data: before });
+    }
+  });
+
   it("lets an admin add, change and remove achievements, with checked rules", async () => {
     const admin = await createUser("admin");
     const visitor = await createUser();

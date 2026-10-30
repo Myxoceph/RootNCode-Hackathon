@@ -18,6 +18,11 @@ Kaynaklar, öncelik sırasıyla:
   4. parent: kendi eşleşmesi olmayan külliye alt yapısı, parent'ın noktasını alır.
   5. address: hâlâ noktası olmayan, kitapta adresi yazan eser için adres OSM Nominatim'de aranır (saniyede
      bir istek, önbellekli). Sonuç ilçenin içindeyse alınır; cadde düzeyinde yaklaşık bir noktadır.
+  6. name: eserin adı ilçe ve ille birlikte Nominatim'de aranır; sonuç ilçenin içinde bir yapı ya da
+     tarihî yerse (sokak, mahalle değil) alınır. Eşleştiricinin kaçırdığı yazım farklarını yakalar.
+  7. osm_area: hâlâ noktası olmayan eserin kitaptaki mahallesi ya da köyü Nominatim'de aranır, merkezi
+     alınır. Bu nokta YAKLAŞIKTIR (eser o mahallede, ama binanın kendisi değil); kaynak `osm_area`
+     yazılır, API bunu `approximate: true` diye sunar ve ziyarette 200 m kuralını uygulamaz.
 Elle girilmiş koordinatlara dokunulmaz. Yazılan her koordinat `verified: false`'tur.
 """
 import json
@@ -152,6 +157,57 @@ def wikidata(city):
     CACHE.mkdir(parents=True, exist_ok=True)
     f.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out
+
+
+AREA_TYPES = {"neighbourhood", "suburb", "quarter", "village", "hamlet", "isolated_dwelling", "city_block"}
+NOT_A_BUILDING = {"highway", "place", "boundary", "landuse", "natural", "waterway", "railway"}
+
+
+def nominatim_search(query):
+    """Nominatim'in ilk sonucu (önbellekli, saniyede bir istek) ya da None."""
+    f = CACHE / "nominatim" / f"{slug(query)[:150]}.json"
+    if f.exists():
+        res = json.loads(f.read_text(encoding="utf-8"))
+    else:
+        res = curl_json(["--data-urlencode", f"q={query}", "-d", "format=jsonv2", "-d", "addressdetails=1",
+                         "-d", "limit=1", "-d", "countrycodes=tr", NOMINATIM], "nominatim")
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(json.dumps(res, ensure_ascii=False), encoding="utf-8")
+        time.sleep(1.1)  # Nominatim kullanım kuralı: en çok saniyede bir istek
+    return res[0] if res else None
+
+
+def in_district(hit, district):
+    addr = hit.get("address", {})
+    places = " ".join(slug(v) for k, v in addr.items()
+                      if k in ("county", "town", "city_district", "municipality", "city", "district"))
+    return slug(district) in places
+
+
+def name_search(rec):
+    """Eserin adıyla bulunan yapı (ilçenin içinde, sokak ya da yer adı değil) ya da None."""
+    loc = rec["location"]
+    for name in dict.fromkeys(name_variants(rec)):
+        hit = nominatim_search(f"{name}, {loc['district']}, {PROVINCE[loc['city']]}")
+        if not hit or hit.get("category") in NOT_A_BUILDING or not in_district(hit, loc["district"]):
+            continue
+        # Nominatim may answer with a nearby, differently named place: the names must share a word.
+        ours, theirs = set(parse(name)[1].split()), set(parse(hit.get("name") or "")[1].split())
+        if ours & theirs:
+            return float(hit["lat"]), float(hit["lon"]), hit.get("display_name", "")
+    return None
+
+
+def area_centroid(rec):
+    """Kitaptaki mahalle ya da köyün merkezi (yaklaşık) ya da None."""
+    loc = rec["location"]
+    areas = [loc.get("neighborhood")] + re.findall(r"([\wÇĞİÖŞÜçğıöşüÂâÎîÛû.' -]+?(?:Mahallesi|Köyü|Mah\.))",
+                                                     loc.get("address") or "")
+    for area in dict.fromkeys(a.strip(" ,") for a in areas if a):
+        hit = nominatim_search(f"{area}, {loc['district']}, {PROVINCE[loc['city']]}")
+        if hit and hit.get("addresstype") in AREA_TYPES and in_district(hit, loc["district"]):
+            return float(hit["lat"]), float(hit["lon"]), hit.get("display_name", "")
+    return None
 
 
 def nominatim(rec):
@@ -388,6 +444,21 @@ def main(argv):
             result[r["id"]] = ("address", hit[0], hit[1],
                                f"Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('{hit[2][:120]}'); cadde düzeyinde yaklaşık, sahada doğrulanmalı.",
                                "osm")
+
+    # Hâlâ noktası olmayanlar: adla arama, en son mahalle ya da köyün merkezi (yaklaşık)
+    for r in recs.values():
+        if r["id"] in result:
+            continue
+        hit = name_search(r)
+        if hit:
+            result[r["id"]] = ("name", hit[0], hit[1],
+                               f"Adıyla OpenStreetMap Nominatim'de bulundu ('{hit[2][:120]}'); sahada doğrulanmalı.", "osm")
+            continue
+        hit = area_centroid(r)
+        if hit:
+            result[r["id"]] = ("osm_area", hit[0], hit[1],
+                               f"YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('{hit[2][:120]}'); binanın kendisi değil.",
+                               "osm_area")
 
     # Rapor
     import collections

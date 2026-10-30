@@ -32,6 +32,9 @@ import {
   type LabelRecord,
 } from "./assets.repository.ts";
 
+/** `coord_source` of a point that is only the neighbourhood's or village's centre (data/tools/geocode.py). */
+export const APPROXIMATE_SOURCE = "osm_area";
+
 export interface MapperContext {
   lang: Lang;
   mediaBaseUrl: string;
@@ -75,6 +78,7 @@ export function toCoordinates(
     lng: record.lng,
     verified: record.coord_verified,
     source: nonEmpty(record.coord_source),
+    approximate: record.coord_source === APPROXIMATE_SOURCE,
   };
 }
 

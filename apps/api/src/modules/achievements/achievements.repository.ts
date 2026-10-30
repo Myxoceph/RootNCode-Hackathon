@@ -5,7 +5,7 @@ export type AchievementRecord = Prisma.achievementGetPayload<object>;
 
 export interface AchievementsRepository {
   /** A visible asset's point (null lat/lng when it has none), or null when it is not visible. */
-  findAsset(id: string): Promise<{ id: string; lat: number | null; lng: number | null } | null>;
+  findAsset(id: string): Promise<{ id: string; lat: number | null; lng: number | null; coord_source: string | null } | null>;
   /** Records the first visit; false when the user had already visited the asset. */
   recordVisit(data: { userId: string; assetId: string; verified: boolean; distance: number | null }): Promise<boolean>;
   countVisitsSince(userId: string, since: Date): Promise<number>;
@@ -26,7 +26,7 @@ export interface AchievementsRepository {
 export function createAchievementsRepository(prisma: PrismaClient, statuses: string[]): AchievementsRepository {
   return {
     findAsset(id) {
-      return prisma.asset.findFirst({ where: { id, status: { in: statuses } }, select: { id: true, lat: true, lng: true } });
+      return prisma.asset.findFirst({ where: { id, status: { in: statuses } }, select: { id: true, lat: true, lng: true, coord_source: true } });
     },
 
     async recordVisit({ userId, assetId, verified, distance }) {
