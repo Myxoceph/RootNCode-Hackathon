@@ -190,6 +190,8 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     expect(sent[0]).toMatchObject({ role: "system", content: expect.stringContaining(`"id":"${HAMAM}"`) });
     // The page's asset is source [1], and the model is told to cite it.
     expect(sent[0]!.content).toContain("kaynak [1]");
+    // The page is fenced as data, and the system message ends where the fence closes.
+    expect(sent[0]!.content).toMatch(/<eser_sayfasi>\n\{[\s\S]*\}\n<\/eser_sayfasi>$/);
     expect(sent.find((m) => m.role === "assistant")).toMatchObject({ content: "Merhaba, eski cevap." });
     expect(sent.at(-1)).toEqual({ role: "user", content: "Bu eser ne zaman yapılmış?" });
   });

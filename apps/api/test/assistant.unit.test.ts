@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createChatModel } from "../src/modules/assistant/assistant.model.ts";
+import { createChatModel, oneSystemMessage } from "../src/modules/assistant/assistant.model.ts";
 import { searchTerms } from "../src/modules/assistant/assistant.repository.ts";
 import { plainText, resolveCitations } from "../src/modules/assistant/assistant.ts";
 import { SourceRegistry } from "../src/modules/assistant/assistant.tools.ts";
@@ -76,6 +76,33 @@ describe("createChatModel", () => {
     const fetchImpl = (async () => new Response("prompt was: secret question", { status: 500 })) as unknown as typeof fetch;
     const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl });
     await expect(model.complete([], [], AbortSignal.timeout(1_000))).rejects.toThrow(/^Model returned HTTP 500$/);
+  });
+});
+
+describe("oneSystemMessage", () => {
+  it("joins every system message into one, first, and keeps the other turns in order", () => {
+    expect(
+      oneSystemMessage([
+        { role: "system", content: "rules" },
+        { role: "user", content: "q1" },
+        { role: "system", content: "note" },
+        { role: "assistant", content: "a1" },
+        { role: "user", content: "q2" },
+      ]),
+    ).toEqual([
+      { role: "system", content: "rules\n\nnote" },
+      { role: "user", content: "q1" },
+      { role: "assistant", content: "a1" },
+      { role: "user", content: "q2" },
+    ]);
+  });
+
+  it("leaves a conversation with one leading system message as it is", () => {
+    const messages = [
+      { role: "system" as const, content: "rules" },
+      { role: "user" as const, content: "q" },
+    ];
+    expect(oneSystemMessage(messages)).toBe(messages);
   });
 });
 
