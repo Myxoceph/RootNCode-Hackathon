@@ -7,6 +7,22 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-30 · Yönetim paneli uçları (sözleşme 0.3.8)
+
+Kimler: **uygulama ekibi**, **veri ekibi**. Migration yok.
+
+Değişenler:
+- Yeni uçlar (moderatör ya da admin; rol ve eser işlemleri yalnızca admin):
+  - `GET /admin/summary`: bekleyen notlar ve fotoğraflar, kullanıcı sayıları.
+  - `GET /admin/users`: kullanıcı listesi ve arama.
+  - `POST /admin/users/:id/role` ve `POST /admin/users/:id/unban`: rol verme ve engel kaldırma.
+  - `GET`, `POST`, `PATCH`, `DELETE` `/admin/assets`: panelden eser ekleme, düzenleme, yayına alma ve silme.
+- `GET /admin/contributions?kind=notes|photos`: notlar ve fotoğraflar ayrı listelenebilir.
+- Panelden eklenen eser veritabanında veri setindeki JSON biçiminde durur (`prepared_by: admin:<kullanıcı>`).
+  - `import_to_db.py` bu eserlere dokunmaz.
+  - Veri setine almak için: `python3 data/tools/export_panel_assets.py --write`, sonra `validate.py`, eksik bilgileri tamamla ve PR aç. Dışa aktarılan eser artık `data/` üzerinden düzenlenir.
+- Uygulama: admin ekranları ayrı bir PR'da gelecek.
+
 ## 2026-10-30 · Ziyaretçi fotoğraf önerileri (migration, sözleşme 0.3.7)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**, **demoyu yayınlayan**
