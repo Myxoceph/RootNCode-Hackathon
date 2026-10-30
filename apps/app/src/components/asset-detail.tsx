@@ -30,6 +30,7 @@ import { BuildingIllustration } from "@/components/building-illustration";
 import { VisitorPulse } from "@/components/visitor-pulse";
 import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds } from "@/content/capsules";
 import { useAssetRelations, type ResourceWithRetry } from "@/data";
+import { useAssistantAvailable } from "@/data/assistant";
 import { transliterationLanguage } from "@/lib/language";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -84,6 +85,7 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
         </View>
 
         <Experiences asset={asset} />
+        <AskAboutAsset asset={asset} />
 
         <View accessibilityRole="tablist" style={[styles.tabs, { borderBottomColor: c.border }]}>
           {tabs.map(({ key, label }) => {
@@ -192,6 +194,31 @@ function Experiences({ asset }: { asset: AssetDetail }) {
         </Link>
       ))}
     </View>
+  );
+}
+
+/** "Bu eser hakkında sor": the assistant, told which asset the visitor is reading. Hidden while no model answers. */
+function AskAboutAsset({ asset }: { asset: AssetDetail }) {
+  const { colors: c } = useTheme();
+  const available = useAssistantAvailable();
+  if (available !== true) return null;
+  return (
+    <Link href={{ pathname: "/assistant", params: { asset: asset.id, name: asset.name } }} asChild>
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={`Bu eser hakkında sor: ${asset.name}, asistanı açar`}
+        style={StyleSheet.flatten([styles.ask, { backgroundColor: c.surface, borderColor: c.border }])}
+      >
+        <Ionicons name="chatbubbles-outline" size={22} color={c.primary} />
+        <View style={styles.askText}>
+          <Text variant="label">Bu eser hakkında sor</Text>
+          <Text variant="caption" color="textSecondary">
+            Asistan eserin kaydından, kaynağıyla cevaplar
+          </Text>
+        </View>
+        <Ionicons name="chevron-forward" size={20} color={c.textSecondary} />
+      </Pressable>
+    </Link>
   );
 }
 
@@ -645,6 +672,18 @@ const styles = StyleSheet.create({
     padding: spacing.sm,
     borderRadius: radius.lg,
     borderWidth: StyleSheet.hairlineWidth,
+  },
+  ask: {
+    minHeight: touchTarget.min,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    padding: spacing.sm,
+    borderRadius: radius.lg,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
+  askText: {
+    flex: 1,
   },
   tabs: {
     flexDirection: "row",
