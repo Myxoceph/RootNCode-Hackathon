@@ -4,6 +4,8 @@ import type { PrismaClient } from "./db/prisma.ts";
 import { createAchievementsRepository } from "./modules/achievements/achievements.repository.ts";
 import { achievementsRoutes } from "./modules/achievements/achievements.routes.ts";
 import { createAdminRepository } from "./modules/admin/admin.repository.ts";
+import { createRewardsRepository } from "./modules/rewards/rewards.repository.ts";
+import { rewardsRoutes } from "./modules/rewards/rewards.routes.ts";
 import { adminRoutes } from "./modules/admin/admin.routes.ts";
 import { assetsRoutes } from "./modules/assets/assets.routes.ts";
 import type { ChatModel } from "./modules/assistant/assistant.model.ts";
@@ -103,6 +105,7 @@ export function buildApp({
     repository: createAchievementsRepository(prisma, visibleStatuses(assetVisibility)),
     community: communityRepository,
   });
+  app.register(rewardsRoutes, { repository: createRewardsRepository(prisma), community: communityRepository });
   app.register(photosRoutes, { repository: communityRepository, visibility: assetVisibility, urls: photoUrls });
   app.register(assistantRoutes, { model: assistantModel, repository: createAssistantRepository(prisma, assetVisibility) });
 

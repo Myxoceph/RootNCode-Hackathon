@@ -9,6 +9,10 @@ export interface AchievementsRepository {
   /** Records the first visit; false when the user had already visited the asset. */
   recordVisit(data: { userId: string; assetId: string; verified: boolean; distance: number | null }): Promise<boolean>;
   countVisitsSince(userId: string, since: Date): Promise<number>;
+  /** Whether the asset has a photo with this media key. */
+  hasMedia(assetId: string, mediaKey: string): Promise<boolean>;
+  /** Records the visit if new and marks it proven; false for `firstVisit` when it existed. */
+  proveVisit(data: { userId: string; assetId: string; verified: boolean; distance: number | null; method: string }): Promise<boolean>;
   facts(userId: string, complexIds: string[]): Promise<UserFacts>;
   listAchievements(options: { activeOnly: boolean }): Promise<AchievementRecord[]>;
   earnedCounts(): Promise<Map<string, number>>;
@@ -37,6 +41,20 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
       return count > 0;
     },
 
+    async hasMedia(assetId, mediaKey) {
+      return (await prisma.asset_media.count({ where: { asset_id: assetId, media_key: mediaKey } })) > 0;
+    },
+
+    async proveVisit({ userId, assetId, verified, distance, method }) {
+      const firstVisit = await this.recordVisit({ userId, assetId, verified, distance });
+      // The first proof counts; a verified position upgrades an earlier unchecked visit.
+      await prisma.visit.updateMany({
+        where: { user_id: userId, asset_id: assetId, proven_at: null },
+        data: { proven_at: new Date(), proof_method: method, ...(verified && { verified: true, distance_m: distance }) },
+      });
+      return firstVisit;
+    },
+
     countVisitsSince(userId, since) {
       return prisma.visit.count({ where: { user_id: userId, visited_at: { gte: since } } });
     },
@@ -47,6 +65,7 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
           where: { user_id: userId, asset: { status: { in: statuses } } },
           select: {
             visited_at: true,
+            proven_at: true,
             asset: { select: { id: true, city_code: true, district: true, type_code: true, era_code: true } },
           },
         }),
@@ -65,13 +84,14 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
         complexChildren.set(parent, [...(complexChildren.get(parent) ?? []), child.id]);
       }
       return {
-        visits: visits.map(({ visited_at, asset }) => ({
+        visits: visits.map(({ visited_at, proven_at, asset }) => ({
           assetId: asset.id,
           city: asset.city_code,
           district: asset.district,
           type: asset.type_code,
           era: asset.era_code,
           at: visited_at,
+          proven: proven_at !== null,
         })),
         approved: { notes, photos },
         complexChildren,

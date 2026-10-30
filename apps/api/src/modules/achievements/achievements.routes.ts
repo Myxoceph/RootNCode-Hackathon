@@ -10,6 +10,7 @@ import {
   LangSchema,
   MyAchievementsResponseSchema,
   VISIT_RADIUS_METERS,
+  VisitProofRequestSchema,
   VisitRequestSchema,
   VisitResponseSchema,
   type Achievement,
@@ -95,6 +96,31 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     if (missing.length > 0) throw new HttpError(400, "UNKNOWN_CODE", `Unknown ${missing.join(", ")}`);
   }
 
+  /**
+   * The checked distance to the asset, or null when it cannot be checked: an asset without a
+   * point, or with only its neighbourhood's centre, takes the visit unchecked.
+   */
+  function checkPosition(
+    asset: { lat: number | null; lng: number | null; coord_source: string | null },
+    position: { lat?: number | undefined; lng?: number | undefined },
+  ): number | null {
+    if (asset.lat === null || asset.lng === null || asset.coord_source === APPROXIMATE_SOURCE) return null;
+    if (position.lat === undefined || position.lng === undefined) {
+      throw new HttpError(400, "POSITION_REQUIRED", "This asset has a location: send lat and lng");
+    }
+    const distance = Math.round(distanceMeters({ lat: position.lat, lng: position.lng }, { lat: asset.lat, lng: asset.lng }));
+    if (distance > VISIT_RADIUS_METERS) {
+      throw new HttpError(400, "TOO_FAR", `You are ${distance} m away; come within ${VISIT_RADIUS_METERS} m`);
+    }
+    return distance;
+  }
+
+  async function checkDailyLimit(userId: string) {
+    if ((await repository.countVisitsSince(userId, new Date(Date.now() - DAY_MS))) >= VISITS_PER_DAY) {
+      throw new HttpError(429, "VISIT_LIMIT", `At most ${VISITS_PER_DAY} visits per day`);
+    }
+  }
+
   app.post("/assets/:id/visit", {
     config: { rateLimit: { max: 60, timeWindow: 60 * 60 * 1000 } },
     schema: {
@@ -120,21 +146,8 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     const asset = await repository.findAsset(id);
     if (!asset) throw new HttpError(404, "ASSET_NOT_FOUND", `Asset "${id}" not found`);
 
-    // An asset with a point needs the visitor near it; one without a point, or with only its
-    // neighbourhood's centre, takes the visit unchecked.
-    let distance: number | null = null;
-    if (asset.lat !== null && asset.lng !== null && asset.coord_source !== APPROXIMATE_SOURCE) {
-      if (position.lat === undefined || position.lng === undefined) {
-        throw new HttpError(400, "POSITION_REQUIRED", "This asset has a location: send lat and lng");
-      }
-      distance = Math.round(distanceMeters({ lat: position.lat, lng: position.lng }, { lat: asset.lat, lng: asset.lng }));
-      if (distance > VISIT_RADIUS_METERS) {
-        throw new HttpError(400, "TOO_FAR", `You are ${distance} m away; come within ${VISIT_RADIUS_METERS} m`);
-      }
-    }
-    if ((await repository.countVisitsSince(user.id, new Date(Date.now() - DAY_MS))) >= VISITS_PER_DAY) {
-      throw new HttpError(429, "VISIT_LIMIT", `At most ${VISITS_PER_DAY} visits per day`);
-    }
+    const distance = checkPosition(asset, position);
+    await checkDailyLimit(user.id);
     const firstVisit = await repository.recordVisit({ userId: user.id, assetId: id, verified: distance !== null, distance });
     const { fresh } = await evaluate(user.id);
 
@@ -144,6 +157,56 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
       verified: distance !== null,
       distanceMeters: distance,
       firstVisit,
+      newAchievements: fresh.map((r) => toAchievement(r, lang)),
+    });
+  });
+
+  app.post("/assets/:id/visit/proof", {
+    config: { rateLimit: { max: 30, timeWindow: 60 * 60 * 1000 } },
+    schema: {
+      tags: ["community"],
+      summary: "Ziyareti kanıtla: uygulama eserin bir fotoğrafını kamerada tanıdı (Zaman Perdesi); konum kuralı ziyaretteki gibi",
+      security: bearer,
+      params: toOpenApiSchema(AssetParamsSchema, "input"),
+      querystring: toOpenApiSchema(LangQuerySchema, "input"),
+      body: toOpenApiSchema(VisitProofRequestSchema, "input"),
+      response: {
+        200: toOpenApiSchema(VisitResponseSchema),
+        400: errorSchema,
+        404: errorSchema,
+        429: errorSchema,
+        ...denied,
+      },
+    },
+  }, async (request): Promise<VisitResponse> => {
+    const user = await requireUser(request, community);
+    const { id } = parseWith(AssetParamsSchema, request.params, "INVALID_ID");
+    const proof = parseWith(VisitProofRequestSchema, request.body, "INVALID_BODY");
+    const lang = langOf(request);
+    const asset = await repository.findAsset(id);
+    if (!asset) throw new HttpError(404, "ASSET_NOT_FOUND", `Asset "${id}" not found`);
+    // The recognised photo must be one of this asset's, not a photo of another site.
+    if (!(await repository.hasMedia(id, proof.mediaKey))) {
+      throw new HttpError(400, "UNKNOWN_MEDIA", `"${proof.mediaKey}" is not a photo of this asset`);
+    }
+    const distance = checkPosition(asset, proof);
+    await checkDailyLimit(user.id);
+    const firstVisit = await repository.proveVisit({
+      userId: user.id,
+      assetId: id,
+      verified: distance !== null,
+      distance,
+      method: proof.method,
+    });
+    const { fresh } = await evaluate(user.id);
+
+    return VisitResponseSchema.parse({
+      version: CONTRACT_VERSION,
+      assetId: id,
+      verified: distance !== null,
+      distanceMeters: distance,
+      firstVisit,
+      proven: true,
       newAchievements: fresh.map((r) => toAchievement(r, lang)),
     });
   });

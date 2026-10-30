@@ -39,6 +39,8 @@ export const AchievementRuleSchema = z.discriminatedUnion("kind", [
   }),
   /** Visit every building of a complex (the parent asset's children). */
   z.strictObject({ kind: z.literal("complex"), parentId: AssetIdSchema }),
+  /** Prove `count` visits (position plus recognising the site in Zaman Perdesi), in `city` when given. */
+  z.strictObject({ kind: z.literal("proven_visits"), count: Count, city: CodeSchema.optional() }),
   /** Have `count` contributions approved: `notes` (tips, memories, corrections), `photos` or `any`. */
   z.strictObject({
     kind: z.literal("contributions"),
@@ -91,6 +93,23 @@ export const VisitRequestSchema = z
   .strictObject({ lat: z.number().min(-90).max(90).optional(), lng: z.number().min(-180).max(180).optional() })
   .refine((v) => (v.lat === undefined) === (v.lng === undefined), "send both lat and lng, or neither");
 
+/** How a visit was proven: on the phone (MindAR recognised the photo) or, later, by the server. */
+export const ProofMethodSchema = z.enum(["device_recognition", "server_match"]);
+
+/**
+ * `POST /assets/:id/visit/proof`: the app recognised one of the asset's photos (`mediaKey`, e.g.
+ * the Zaman Perdesi template) through the camera. The position follows the same rule as a visit.
+ */
+export const VisitProofRequestSchema = z
+  .strictObject({
+    lat: z.number().min(-90).max(90).optional(),
+    lng: z.number().min(-180).max(180).optional(),
+    /** `key` of the asset's photo that was recognised (`media[].key` of the asset detail). */
+    mediaKey: z.string().min(1).max(300),
+    method: z.literal("device_recognition"),
+  })
+  .refine((v) => (v.lat === undefined) === (v.lng === undefined), "send both lat and lng, or neither");
+
 export const VisitResponseSchema = z.strictObject({
   version: ContractVersionSchema,
   assetId: AssetIdSchema,
@@ -99,6 +118,8 @@ export const VisitResponseSchema = z.strictObject({
   distanceMeters: z.int().min(0).nullable(),
   /** False when the visitor had been here before; the first visit is the one that counts. */
   firstVisit: z.boolean(),
+  /** True once the visit is proven (`POST /assets/:id/visit/proof`). */
+  proven: z.boolean().default(false),
   /** Achievements this visit earned. */
   newAchievements: z.array(AchievementSchema),
 });
@@ -154,6 +175,8 @@ export type MyAchievement = z.infer<typeof MyAchievementSchema>;
 export type MyAchievementsResponse = z.infer<typeof MyAchievementsResponseSchema>;
 export type VisitRequest = z.infer<typeof VisitRequestSchema>;
 export type VisitResponse = z.infer<typeof VisitResponseSchema>;
+export type ProofMethod = z.infer<typeof ProofMethodSchema>;
+export type VisitProofRequest = z.infer<typeof VisitProofRequestSchema>;
 export type AdminAchievementInput = z.input<typeof AdminAchievementInputSchema>;
 export type AdminAchievementPatch = z.input<typeof AdminAchievementPatchSchema>;
 export type AdminAchievement = z.infer<typeof AdminAchievementSchema>;

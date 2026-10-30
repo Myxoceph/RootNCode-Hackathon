@@ -8,7 +8,7 @@ adminler panelden yeni başarım ekleyebilir, düzenleyebilir ya da kapatabilir 
   Koordinatı olmayan eserin ziyareti doğrulanmadan kabul edilir ve başarımlara yine sayılır. Her eser kullanıcı başına bir kez (ilk ziyaret) sayılır.
 - **İlerleme** `GET /me/achievements` ile okunur; kazanılan başarımlar bu çağrıda ve ziyaret yanıtında kaydedilir.
 
-Toplam: **32 başarım**, en çok **1210 puan**.
+Toplam: **34 başarım**, en çok **1350 puan**. Puanlar cüzdana yazılır ve ödüllere harcanabilir ([`rewards.md`](rewards.md)).
 
 ## İlk adımlar
 
@@ -87,6 +87,15 @@ Toplam: **32 başarım**, en çok **1210 puan**.
 | 📸 | **İlk Fotoğraf**<br>Önerdiğin bir fotoğraf onaylansın. | 1 onaylanan fotoğraf | 20 | `ilk-fotograf` |
 | 🤝 | **Katkıcı**<br>5 notun ya da fotoğrafın onaylansın. | 5 onaylanan not ya da fotoğraf | 50 | `katkici` |
 
+## Kanıtlanmış ziyaretler
+
+Ziyaretçi Zaman Perdesi'nde eserin fotoğrafını kamerada tanıtınca ziyaret "kanıtlanmış" olur (`POST /assets/:id/visit/proof`).
+
+| Rozet | Başarım | Gereksinim | Puan | Kod |
+|---|---|---|---|---|
+| ⏳ | **Zaman Yolcusu**<br>Zaman Perdesi'nde bir eseri kamerada tanıtarak ziyaretini kanıtla. | 1 kanıtlanmış ziyaret | 40 | `zaman-yolcusu` |
+| 🕰️ | **Zaman Ustası**<br>5 eserde ziyaretini Zaman Perdesi ile kanıtla. | 5 kanıtlanmış ziyaret | 100 | `zaman-ustasi` |
+
 ## Kural türleri (admin için)
 
 Yeni başarım eklerken `rule` alanı aşağıdakilerden biridir. Doğrulanmayan kural API'de reddedilir.
@@ -98,6 +107,7 @@ Yeni başarım eklerken `rule` alanı aşağıdakilerden biridir. Doğrulanmayan
 | `cities` | `count` | `count` farklı ilde eser ziyaret et |
 | `within` | `level` (`district` ya da `city`), `count` (2–20), `hours` (1–720), isteğe bağlı `city` | `hours` saat içinde `count` farklı ilçe ya da il gez |
 | `complex` | `parentId` (külliye id'si) | Külliyenin bütün alt yapılarını ziyaret et |
+| `proven_visits` | `count`, isteğe bağlı `city` | `count` ziyaretini Zaman Perdesi ile kanıtla |
 | `contributions` | `count`, `contribution` (`notes`, `photos`, `any`) | `count` katkın onaylansın |
 
 Örnek:

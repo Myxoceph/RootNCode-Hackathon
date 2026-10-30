@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.10`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.11`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -9,6 +9,7 @@ Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan v
 - `src/sound.schema.ts`: `/meta/sounds` (Sesli Zaman Kapsülü); kaydın kendisi `asset.schema.ts`'te (`SoundRecordingSchema`)
 - `src/chat.schema.ts`: `POST /chat` ve `GET /chat/status` (AI asistan)
 - `src/achievement.schema.ts`: ziyaretler ve başarımlar (`/assets/:id/visit`, `/achievements`, `/me/achievements`, `/admin/achievements`); liste `docs/achievements.md`
+- `src/reward.schema.ts`: ödül kataloğu ve cüzdan (`/rewards`, `/me/wallet`, `/rewards/:code/redeem`, `/admin/rewards`); anlatım `docs/rewards.md`
 - `src/admin.schema.ts`: yönetim paneli (`/admin/summary`, `/admin/users`, `/admin/assets`); moderasyon kuyruğu `community.schema.ts`'te
 - `scripts/validate-fixtures.ts`: uygulamanın örnek verisini (`apps/app/src/data/fixtures`) bu şemalarla doğrular
 
@@ -42,6 +43,10 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `GET /assets/:id/photos?limit=` | `CommunityPhotosResponseSchema`: onaylanmış ziyaretçi fotoğrafları, yeniden eskiye; eserin kendi galerisinden (`media`) ayrı gösterilir, yazarın takma adıyla |
 | `GET /photos/:id` | Fotoğraf dosyası. `path` alanları API'nin taban adresine eklenir (`${apiUrl}${path}`); onaylanmamış fotoğraf yalnızca yanıttaki imzalı adresle (1 gün geçerli) açılır |
 | `POST /assets/:id/visit?lang=` 🔒 | İstek `VisitRequestSchema` (`lat`, `lng`; eserin noktası varsa zorunlu ve `VISIT_RADIUS_METERS` = 200 m içinde olmalı), yanıt `VisitResponseSchema` (`verified`, `distanceMeters`, `firstVisit`, `newAchievements`). Noktası olmayan eserin ziyareti doğrulanmadan kabul edilir. Kullanıcı başına günde 60 ziyaret |
+| `POST /assets/:id/visit/proof?lang=` 🔒 | İstek `VisitProofRequestSchema` (`mediaKey`: eserin kamerada tanınan fotoğrafının `media[].key` değeri, `method: "device_recognition"`, konum ziyaretteki kuralla), yanıt `VisitResponseSchema` (`proven: true`). Ziyaret yoksa kaydedilir ve kanıtlanmış olarak işaretlenir; `UNKNOWN_MEDIA` (400) anahtar bu eserin değilse |
+| `GET /rewards?lang=` | `RewardsResponseSchema`: etkin ödüller (`costPoints`, `minProvenVisits`, `stock`, örnekse `sample: true`) |
+| `GET /me/wallet?lang=` 🔒 | `WalletResponseSchema`: `balance`, `earned`, `spent`, `provenVisits`, alınan kodlar |
+| `POST /rewards/:code/redeem?lang=` 🔒 | `RedeemResponseSchema`: tek kullanımlık kod ve yeni bakiye; `INSUFFICIENT_POINTS`, `PROVEN_VISITS_REQUIRED`, `OUT_OF_STOCK` (409) |
 | `GET /achievements?lang=` | `AchievementsResponseSchema`: etkin başarımlar, kurallarıyla (`rule.kind`: `visit_count`, `districts`, `cities`, `within`, `complex`, `contributions`) |
 | `GET /me/achievements?lang=` 🔒 | `MyAchievementsResponseSchema`: her başarımda ilerleme (`progress.current/target`), `earnedAt`, toplam puan ve ziyaret sayısı |
 | `GET /assets/:id/pulse?lang=&limit=` | `PulseResponseSchema` (veri setindeki ipuçları + onaylanmış topluluk katkıları) |
@@ -54,6 +59,7 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `POST /admin/assets` 👑 | İstek `AdminAssetInputSchema` (ad, tür, il, ilçe, dönem, özet, tanıtım metni, tarih, bani, adres, koordinat, `status`), yanıt `AdminAssetSchema`; id addan üretilir (`<il>-<ilçe>-<ad>`). Kayıt veri setindeki JSON biçiminde saklanır ve `data/tools/export_panel_assets.py` ile `data/eserler`'e yazılabilir |
 | `PATCH /admin/assets/:id` 👑 | İstek `AdminAssetPatchSchema` (alanlardan herhangi biri; yayına almak için `status: "published"`); yalnızca panelden eklenen eserler, id değişmez |
 | `DELETE /admin/assets/:id` 👑 | `204`; yalnızca panelden eklenen eserler |
+| `GET /admin/rewards` 🛡️, `POST /admin/rewards` 👑, `PATCH /admin/rewards/:code` 👑, `POST /admin/rewards/:code/codes` 👑 | `AdminRewardsResponseSchema`, `AdminRewardInputSchema` / `AdminRewardPatchSchema` → `AdminRewardSchema`, `AddRewardCodesRequestSchema` → `AddRewardCodesResponseSchema` (`added`, `duplicates`, `stock`) |
 | `GET /admin/achievements` 🛡️ | `AdminAchievementsResponseSchema` (kapalılar dahil, kaç kişinin kazandığıyla) |
 | `POST /admin/achievements` 👑, `PATCH /admin/achievements/:code` 👑, `DELETE …` 👑 | İstek `AdminAchievementInputSchema` / `AdminAchievementPatchSchema`, yanıt `AdminAchievementSchema`; kuraldaki il, dönem ve külliye id'si kontrol edilir (`UNKNOWN_CODE`). Kapatmak için `active: false` |
 | `POST /admin/contributions/:id/approve` 🛡️, `…/reject` 🛡️ | `ModerationItemSchema`; reddetmede istek `RejectContributionRequestSchema` (`reason`) |

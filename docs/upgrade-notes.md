@@ -7,6 +7,18 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-31 · Ödüller, cüzdan ve kanıtlanmış ziyaret (migration, sözleşme 0.3.11)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md))
+
+1. `npm run db:deploy --workspace @vagabonds/api`. Migration'lar 6 örnek ödülü, 120 örnek kodu ve 2 yeni başarımı ekler.
+
+Değişenler:
+- `POST /assets/:id/visit/proof`: Zaman Perdesi eserin fotoğrafını kamerada tanıyınca ziyaret "kanıtlanmış" olur. Yeni başarım kuralı `proven_visits` ve iki başarım ("Zaman Yolcusu", "Zaman Ustası").
+- `GET /rewards`, `GET /me/wallet`, `POST /rewards/:code/redeem`: puanla ortak kurumların tek kullanımlık kodları alınır. Puan parayla alınmaz, paraya çevrilmez.
+- Admin: `/admin/rewards` ile ödül ekleme ve düzenleme, kod yükleme.
+- Ayrıntı: [`docs/rewards.md`](rewards.md), [`docs/achievements.md`](achievements.md).
+
 ## 2026-10-30 · Yaklaşık koordinatlar (sözleşme 0.3.10)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
