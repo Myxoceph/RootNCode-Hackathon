@@ -43,6 +43,8 @@ export const palette = {
   /** Firuze: open / confirmed, focus ring. */
   firuze300: "#4FC6BE",
   firuze700: "#0A7A76",
+  /** A brighter firuze for map outlines on light land; marks only, not text (3.2:1 on gece50). */
+  firuze500: "#0F9A93",
   /** Mercan: local food stops, warnings. */
   mercan300: "#EE7B64",
   mercan700: "#BE3A26",

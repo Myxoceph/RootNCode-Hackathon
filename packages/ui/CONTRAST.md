@@ -29,6 +29,7 @@ Eşikler (WCAG 2.1 AA): metin **4.5:1** (1.4.3), ikon / odak halkası **3:1** (1
 | `firuze700` #0A7A76 | `white` #FFFFFF | **5.17:1** ✅ | 3:1 | Focus ring on cards (light) |
 | `altin600` #9C7424 | `white` #FFFFFF | **4.25:1** ✅ | 3:1 | Star, tab underline (light) |
 | `altin600` #9C7424 | `gece50` #F5F7FA | **3.96:1** ✅ | 3:1 | Star on the map (light) |
+| `firuze500` #0F9A93 | `gece50` #F5F7FA | **3.23:1** ✅ | 3:1 | Province with assets on the Turkey map (light) |
 | `kobalt700` #1E4AA0 | `white` #FFFFFF | **8.26:1** ✅ | 3:1 | Icons, switch thumb track (light) |
 | `firuze700` #0A7A76 | `gece100` #E6EBF2 | **4.32:1** ✅ | 3:1 | Switch on (light) |
 | `gece600` #566174 | `white` #FFFFFF | **6.25:1** ✅ | 3:1 | Control borders (light) |

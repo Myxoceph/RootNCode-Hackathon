@@ -30,6 +30,8 @@ const roles = [
   "mapBackground",
   "mapRoad",
   "mapRoadEdge",
+  /** Outline of a province with assets on the Turkey map. */
+  "mapProvince",
 ] as const;
 
 export type ThemeRole = (typeof roles)[number];
@@ -53,6 +55,7 @@ const lightSpec: ThemeSpec = {
   mapBackground: "gece50",
   mapRoad: "white",
   mapRoadEdge: "gece200",
+  mapProvince: "firuze500",
 };
 
 const darkSpec: ThemeSpec = {
@@ -73,17 +76,18 @@ const darkSpec: ThemeSpec = {
   mapBackground: "gece950",
   mapRoad: "gece700",
   mapRoadEdge: "gece1000",
+  mapProvince: "altin300",
 };
 
 /** High contrast: secondary text and borders take the full text color. */
-function highContrast(spec: ThemeSpec): ThemeSpec {
-  return { ...spec, textSecondary: spec.text, border: spec.text };
+function highContrast(spec: ThemeSpec, overrides: Partial<ThemeSpec> = {}): ThemeSpec {
+  return { ...spec, textSecondary: spec.text, border: spec.text, ...overrides };
 }
 
 export const themeSpecs = {
   light: lightSpec,
   dark: darkSpec,
-  lightHighContrast: highContrast(lightSpec),
+  lightHighContrast: highContrast(lightSpec, { mapProvince: "firuze700" }),
   darkHighContrast: highContrast(darkSpec),
 } as const;
 
@@ -161,6 +165,7 @@ const nonTextOn: Array<[ThemeRole, ThemeRole, string]> = [
   ["focusRing", "surface", "Focus ring on cards"],
   ["highlightMark", "surface", "Star, tab underline"],
   ["highlightMark", "mapBackground", "Star on the map"],
+  ["mapProvince", "mapBackground", "Province with assets on the Turkey map"],
   ["primary", "surface", "Icons, switch thumb track"],
   ["success", "surfaceRaised", "Switch on"],
   ["textSecondary", "surface", "Control borders"],
