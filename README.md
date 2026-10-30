@@ -101,6 +101,7 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 | `POST /auth/register`, `/auth/login`, `/auth/logout`, `/auth/upgrade` | Kullanıcı adı + parolayla hesap; anonim ziyaretçi hesap açınca notları kendisinde kalır |
 | `POST /assets/:id/contributions`, `GET /assets/:id/pulse` | Ziyaretçi Nabzı: katkı gönderme ve onaylanmış katkılar |
 | `POST /assets/:id/photos`, `GET /assets/:id/photos`, `GET /photos/:id` | Ziyaretçi fotoğraf önerileri: yükleme (meta verisi silinir), onaylananların listesi ve dosyası |
+| `POST /assets/:id/visit`, `GET /achievements`, `GET /me/achievements` | Ziyaretler ve başarımlar: rozet ve puan; liste [`docs/achievements.md`](docs/achievements.md) |
 | `GET /admin/summary`, `/admin/users`, `/admin/assets` | Yönetim paneli: özet, kullanıcılar ve roller, panelden eser ekleme |
 | `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör ya da admin hesabı: `npm run account:create --workspace @vagabonds/api -- <kullanıcı-adı> <moderator\|admin>`) |
 
