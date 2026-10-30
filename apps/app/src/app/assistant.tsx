@@ -1,4 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { AssetIdSchema } from "@vagabonds/contracts";
 import { Button, fontFamily, radius, spacing, Text, touchTarget, useTheme, useUi } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
@@ -45,10 +46,10 @@ export default function AssistantScreen() {
   const { textScale } = useUi();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { asset, name } = useLocalSearchParams<{
-    asset?: string;
-    name?: string;
-  }>();
+  const params = useLocalSearchParams<{ asset?: string; name?: string }>();
+  // The id comes from the address: one the API would refuse makes it a general conversation.
+  const asset = AssetIdSchema.safeParse(params.asset).success ? params.asset : undefined;
+  const name = asset ? params.name : undefined;
   const key = asset ?? "general";
   const conversation = useConversation(key);
   const available = useAssistantAvailable();
@@ -59,16 +60,18 @@ export default function AssistantScreen() {
 
   const busy = conversation.pending !== null;
   const empty = conversation.entries.length === 0 && !busy && !conversation.failed;
+  // One rule for every way to send (typing, suggestions, "Tekrar dene"): everything is locked only
+  // while the assistant is off and there is no conversation yet; otherwise one question at a time.
   const closed = available === false && empty;
   const length = draft.trim().length;
-  const canSend = !busy && length > 0 && length <= QUESTION_MAX && available !== false;
+  const canSend = !closed && !busy && length > 0 && length <= QUESTION_MAX;
 
   useEffect(() => {
     scroll.current?.scrollToEnd({ animated: true });
   }, [conversation.entries.length, busy]);
 
   async function send(question: string) {
-    if (busy || question.trim().length === 0) return;
+    if (closed || busy || question.trim().length === 0) return;
     setDraft("");
     setStatus("Yanıt hazırlanıyor.");
     announce("Yanıt hazırlanıyor.");
@@ -163,7 +166,7 @@ export default function AssistantScreen() {
                     key={suggestion}
                     label={suggestion}
                     variant="ghost"
-                    disabled={available !== true}
+                    disabled={closed || busy}
                     onPress={() => void send(suggestion)}
                     style={styles.suggestion}
                   />
@@ -235,7 +238,7 @@ export default function AssistantScreen() {
                 accessibilityHint={`En çok ${QUESTION_MAX} karakter`}
                 multiline
                 maxLength={QUESTION_MAX + 100}
-                editable={available !== false}
+                editable={!closed}
                 style={[
                   styles.input,
                   {

@@ -58,6 +58,8 @@ export function historyFor(entries: readonly ChatEntry[]): ChatTurn[] {
  */
 const EMPTY: Conversation = { entries: [], pending: null, failed: null };
 const conversations = new Map<string, Conversation>();
+/** The question on its way in each conversation: its number and how to cancel it. */
+const inFlight = new Map<string, { id: number; controller: AbortController }>();
 const listeners = new Set<() => void>();
 let nextId = 1;
 
@@ -82,7 +84,10 @@ export function useConversation(key: string): Conversation {
   return useSyncExternalStore(subscribe, read, read);
 }
 
+/** Empties the conversation and cancels its question on the way, so the API is free for the next one. */
 export function clearConversation(key: string) {
+  inFlight.get(key)?.controller.abort();
+  inFlight.delete(key);
   update(key, EMPTY);
 }
 
@@ -95,18 +100,28 @@ export async function ask(key: string, question: string, assetId?: string): Prom
   const text = question.trim();
   if (before.pending !== null || text.length === 0) return null;
 
+  // Answers are matched by request, not by text: the same question asked again after "Temizle"
+  // must not take the cancelled one's answer.
+  const id = nextId++;
+  const controller = new AbortController();
+  const current = () => inFlight.get(key)?.id === id;
+  inFlight.set(key, { id, controller });
   update(key, { pending: text, failed: null });
   try {
-    const response = await askAssistant({ message: text, assetId, history: historyFor(before.entries), lang: "tr" });
-    // "Temizle" while the answer was on its way: the answer goes with the conversation.
-    if (conversations.get(key)?.pending !== text) return null;
+    const response = await askAssistant(
+      { message: text, assetId, history: historyFor(before.entries), lang: "tr" },
+      controller.signal,
+    );
+    if (!current()) return null;
+    inFlight.delete(key);
     update(key, {
       entries: [...before.entries, { id: nextId++, role: "user", text }, { id: nextId++, role: "assistant", response }],
       pending: null,
     });
     return response;
   } catch (error) {
-    if (conversations.get(key)?.pending !== text) return null;
+    if (!current()) return null;
+    inFlight.delete(key);
     const message = error instanceof DataError ? error.message : "Soru gönderilemedi. Tekrar dene.";
     update(key, { pending: null, failed: { question: text, message } });
     return null;

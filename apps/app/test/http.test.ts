@@ -72,7 +72,29 @@ describe("request", () => {
     );
     const pending = failure(request(URL, schema));
     await vi.advanceTimersByTimeAsync(10_000);
-    expect((await pending).kind).toBe("unavailable");
+    const error = await pending;
+    expect(error.kind).toBe("unavailable");
+    // A late answer is not a broken connection.
+    expect(error.message).toMatch(/zamanında cevap vermedi/);
+  });
+
+  it("waits as long as asked, and stops when the caller cancels", async () => {
+    vi.useFakeTimers();
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(
+        (_url: string, init: RequestInit) =>
+          new Promise((_, reject) => init.signal?.addEventListener("abort", () => reject(new Error("aborted")))),
+      ),
+    );
+    const slow = failure(request(URL, schema, { timeoutMs: 65_000 }));
+    await vi.advanceTimersByTimeAsync(10_000);
+    const cancel = new AbortController();
+    const cancelled = failure(request(URL, schema, { signal: cancel.signal }));
+    cancel.abort();
+    expect((await cancelled).message).toBe("İstek iptal edildi.");
+    await vi.advanceTimersByTimeAsync(55_000);
+    expect((await slow).message).toMatch(/zamanında cevap vermedi/);
   });
 
   it("takes a body that is not JSON for a Wi-Fi login page, not for broken data", async () => {

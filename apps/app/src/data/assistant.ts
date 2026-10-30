@@ -28,21 +28,25 @@ let checkedAt: number | null = null;
 let checking: Promise<void> | null = null;
 const listeners = new Set<() => void>();
 
-function setAvailable(next: boolean) {
-  checkedAt = Date.now();
+/**
+ * Only the API's own answer is kept for `STATUS_TTL_MS`. A failed check (no network, a Wi-Fi
+ * login page) or a model that just failed is not: the next screen that opens asks again.
+ */
+function setAvailable(next: boolean, trusted: boolean) {
+  checkedAt = trusted ? Date.now() : null;
   if (next === available) return;
   available = next;
   listeners.forEach((listener) => listener());
 }
 
-/** Asks `GET /chat/status` once per `STATUS_TTL_MS`; a failed check counts as "not available". */
+/** Asks `GET /chat/status` once per `STATUS_TTL_MS`; until it answers, the entry points stay hidden. */
 export function checkAssistant(): Promise<void> {
   if (!assistantConfigured) return Promise.resolve();
   if (checkedAt !== null && Date.now() - checkedAt < STATUS_TTL_MS) return Promise.resolve();
   checking ??= request(`${resolveApiUrl()}/chat/status`, ChatStatusResponseSchema)
     .then(
-      (status) => setAvailable(status?.available ?? false),
-      () => setAvailable(false),
+      (status) => setAvailable(status?.available ?? false, true),
+      () => setAvailable(false, false),
     )
     .finally(() => {
       checking = null;
@@ -72,12 +76,20 @@ export function useAssistantAvailable(): boolean | null {
   return useSyncExternalStore(subscribe, assistantAvailable, assistantAvailable);
 }
 
-/** Sends one question with the last turns; every failure is a `DataError` with a message to show. */
-export async function askAssistant(body: ChatRequest): Promise<ChatResponse> {
+/**
+ * Sends one question with the last turns; every failure is a `DataError` with a message to show.
+ * `signal` cancels it, e.g. when the conversation is cleared.
+ */
+export async function askAssistant(body: ChatRequest, signal?: AbortSignal): Promise<ChatResponse> {
   const answer = await request(`${resolveApiUrl()}/chat`, ChatResponseSchema, {
     body,
+    signal,
     timeoutMs: CHAT_TIMEOUT_MS,
-    errorFor: chatError,
+    errorFor: (status, code, details) => {
+      // The model stopped answering: hide the entry points, and let the next screen ask /chat/status again.
+      if (code === "ASSISTANT_UNAVAILABLE") setAvailable(false, false);
+      return chatError(status, code, details);
+    },
   });
   // Never null: `allowNotFound` is not set.
   return answer!;
@@ -88,10 +100,8 @@ export function chatError(status: number, code: string | null, details: string[]
     return new DataError("unavailable", "Asistan şu an başka sorulara bakıyor. Birkaç saniye sonra tekrar dene.", details);
   }
   if (code === "ASSISTANT_UNAVAILABLE") {
-    // The model stopped answering: hide the entry points until the next status check says otherwise.
-    setAvailable(false);
     return new DataError("unavailable", "Asistan şu an cevap veremiyor. Biraz sonra tekrar dene.", details);
   }
-  if (status === 400) return new DataError("rejected", "Soru gönderilemedi. Daha kısa yazıp tekrar dene.", details);
+  if (status === 400) return new DataError("rejected", "Soru gönderilemedi. Soruyu değiştirip tekrar dene.", details);
   return statusError(status, code, details);
 }

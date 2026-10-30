@@ -5,6 +5,7 @@ import { useRouter, type Href } from "expo-router";
 import type { ComponentProps } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
+import { formatClock } from "@/content/routes";
 import { answerParts } from "@/lib/chat";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -117,8 +118,6 @@ function SourceChip({ citation }: { citation: ChatCitation }) {
   );
 }
 
-const hhmm = (minute: number) => `${String(Math.floor(minute / 60)).padStart(2, "0")}:${String(minute % 60).padStart(2, "0")}`;
-
 /** The plan behind a trip answer, day by day; the answer itself only sums it up. */
 function TripSummary({ trip }: { trip: TripPlanResponse }) {
   const { colors: c } = useTheme();
@@ -140,10 +139,11 @@ function TripSummary({ trip }: { trip: TripPlanResponse }) {
               {day.weatherNote.text}
             </Text>
           )}
-          {day.items.map((item) => (
-            <View key={`${item.kind}-${item.at}`} style={styles.tripRow}>
+          {day.items.map((item, i) => (
+            // Two items can start in the same minute; the position keeps the key unique.
+            <View key={`${i}-${item.kind}-${item.at}`} style={styles.tripRow}>
               <Text variant="caption" style={styles.mono}>
-                {hhmm(item.at)}
+                {formatClock(item.at)}
               </Text>
               <Text variant="caption" style={styles.flex}>
                 {item.kind === "stop" ? item.asset.name : item.dish ? `${item.label}: ${item.dish.name}` : item.label}
