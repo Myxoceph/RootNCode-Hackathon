@@ -5,13 +5,15 @@ import {
   PulseOriginSchema,
   UserRoleSchema,
   type AppUser,
+  type CommunityPhoto,
   type Contribution,
   type Lang,
   type ModerationItem,
   type PulseItem,
 } from "@vagabonds/contracts";
 import { pick } from "../../lib/lang.ts";
-import type { ContributionRecord, ModerationRecord, PulseRecords, UserRecord } from "./community.repository.ts";
+import type { ContributionRecord, ModerationRecord, PhotoRecord, PulseRecords, UserRecord } from "./community.repository.ts";
+import type { PhotoUrls } from "./photo-urls.ts";
 
 /** A `@db.Date` column: a day without a time, read back as UTC midnight. */
 function isoDate(date: Date | null): string | null {
@@ -41,13 +43,14 @@ export function toAppUser(record: UserRecord): AppUser {
   };
 }
 
-export function toContribution(record: ContributionRecord): Contribution {
+/** As its author or a moderator sees it: a photo comes with a signed path, approved or not. */
+export function toContribution(record: ContributionRecord, urls: PhotoUrls): Contribution {
   return {
     id: record.id,
     assetId: record.asset_id,
-    // `photo` rows cannot be created through the API yet, so every row here has a text kind.
     kind: ContributionKindSchema.parse(record.kind),
     body: record.body ?? "",
+    photo: record.photo ? { path: urls.signedPath(record.id), width: record.photo.width, height: record.photo.height } : null,
     status: ContributionStatusSchema.parse(record.status),
     createdAt: record.created_at.toISOString(),
     reviewedAt: record.reviewed_at?.toISOString() ?? null,
@@ -55,9 +58,9 @@ export function toContribution(record: ContributionRecord): Contribution {
   };
 }
 
-export function toModerationItem(record: ModerationRecord, lang: Lang): ModerationItem {
+export function toModerationItem(record: ModerationRecord, lang: Lang, urls: PhotoUrls): ModerationItem {
   return {
-    ...toContribution(record),
+    ...toContribution(record, urls),
     asset: { id: record.asset.id, name: pick(record.asset.name_tr, record.asset.name_en, lang) },
     author: { id: record.user.id, nickname: record.user.nickname, banned: record.user.banned_at !== null },
     reviewer: record.reviewer ? { id: record.reviewer.id, nickname: record.reviewer.nickname } : null,
@@ -84,4 +87,17 @@ export function toPulseItems({ tips, community }: PulseRecords, lang: Lang): Pul
       date: turkeyDate(item.created_at),
     })),
   ];
+}
+
+/** An approved photo in an asset's public list. */
+export function toCommunityPhoto(record: PhotoRecord, urls: PhotoUrls): CommunityPhoto {
+  return {
+    id: record.contribution_id,
+    path: urls.publicPath(record.contribution_id),
+    width: record.width,
+    height: record.height,
+    caption: record.contribution.body ?? "",
+    author: record.contribution.user.nickname,
+    date: turkeyDate(record.contribution.created_at),
+  };
 }

@@ -9,6 +9,8 @@ import { createAssetsRepository, type AssetVisibility } from "./modules/assets/a
 import { createCommunityRepository } from "./modules/community/community.repository.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
+import { createPhotoUrls, type PhotoUrls } from "./modules/community/photo-urls.ts";
+import { photosRoutes } from "./modules/community/photos.routes.ts";
 import { createGastronomyRepository } from "./modules/gastronomy/gastronomy.repository.ts";
 import { gastronomyRoutes } from "./modules/gastronomy/gastronomy.routes.ts";
 import { createMetaRepository } from "./modules/meta/meta.repository.ts";
@@ -38,6 +40,8 @@ export interface BuildAppOptions {
   rateLimit?: RateLimitOptions | false;
   /** Current-weather provider; by default weather is unavailable (tests never reach the network). */
   weather?: WeatherService;
+  /** Paths of visitor photos; by default signed with a random key per process. */
+  photoUrls?: PhotoUrls;
   /** Model behind the AI assistant (`POST /chat`); without one the assistant reports itself unavailable. */
   assistantModel?: ChatModel | null;
 }
@@ -62,6 +66,7 @@ export function buildApp({
   rateLimit = DEFAULT_RATE_LIMIT,
   weather = NO_WEATHER,
   assistantModel = null,
+  photoUrls = createPhotoUrls(),
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
 
@@ -87,8 +92,9 @@ export function buildApp({
   app.register(gastronomyRoutes, { repository: gastronomyRepository });
   app.register(soundsRoutes, { repository: soundsRepository, mediaBaseUrl });
   const communityRepository = createCommunityRepository(prisma);
-  app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility });
-  app.register(moderationRoutes, { repository: communityRepository });
+  app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility, photoUrls });
+  app.register(moderationRoutes, { repository: communityRepository, photoUrls });
+  app.register(photosRoutes, { repository: communityRepository, visibility: assetVisibility, urls: photoUrls });
   app.register(assistantRoutes, { model: assistantModel, repository: createAssistantRepository(prisma, assetVisibility) });
 
   return app;
