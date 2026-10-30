@@ -310,7 +310,7 @@ def main(argv):
     files = sorted((DATA / "eserler").rglob("*.json"))
     recs = {f: json.loads(f.read_text(encoding="utf-8")) for f in files}
     by_id = {r["id"]: r for r in recs.values()}
-    idx_cache, wd_cache = {}, {}
+    idx_cache, wd_cache, box_cache = {}, {}, {}
     result, ambiguous, deltas = {}, {}, []
     for r in recs.values():
         loc = r["location"]
@@ -326,6 +326,10 @@ def main(argv):
                 els = els + [e for e in overpass(loc["city"], loc["district"], PRE_QUAKE[loc["city"]])
                              if e["osm"] not in seen]
             idx_cache[key] = osm_index(els)
+            # İlçenin kabaca sınırı: OSM'deki adlı yapılarının kapladığı kutu (Wikidata eşleşmesini sınamak için)
+            if els:
+                box_cache[key] = (min(e["lat"] for e in els) - 0.02, min(e["lng"] for e in els) - 0.02,
+                                  max(e["lat"] for e in els) + 0.02, max(e["lng"] for e in els) + 0.02)
         hit, cands = osm_match(r, idx_cache[key])
         if r["id"] in OSM_PICK:
             hit = next(e for es in idx_cache[key].values() for e in es if e["osm"] == OSM_PICK[r["id"]])
@@ -349,6 +353,9 @@ def main(argv):
             if city not in wd_cache:
                 wd_cache[city] = osm_index(wikidata(city))
             wd_hit, wd_cands = osm_match(r, wd_cache[city])
+            box = box_cache.get(key)
+            if wd_hit and box and not (box[0] <= wd_hit["lat"] <= box[2] and box[1] <= wd_hit["lng"] <= box[3]):
+                wd_hit = None  # aynı adlı başka ilçedeki bir yapı
             if wd_hit:
                 result[r["id"]] = ("wikidata", wd_hit["lat"], wd_hit["lng"],
                                    f"Wikidata {wd_hit['osm'].split('/')[1]} ('{wd_hit['tags']['name']}'), ad ve il eşleşmesiyle; sahada doğrulanmalı.",
