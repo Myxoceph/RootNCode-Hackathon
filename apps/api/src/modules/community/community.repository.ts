@@ -3,6 +3,7 @@ import type { Prisma, PrismaClient } from "../../generated/prisma/client.ts";
 const userSelect = {
   id: true,
   nickname: true,
+  username: true,
   role: true,
   created_at: true,
   banned_at: true,
@@ -54,9 +55,31 @@ export interface PulseRecords {
 export type ContributionStatus = "pending" | "approved" | "rejected";
 export type ReviewDecision = { status: "approved" } | { status: "rejected"; reason: string };
 
+export type UserRole = "visitor" | "moderator" | "admin";
+
+export interface NewUser {
+  nickname: string;
+  role: UserRole;
+  /** The first session's token hash. */
+  tokenHash: string;
+  /** Both or neither: an account, or an anonymous visitor. */
+  credentials?: { username: string; passwordHash: string };
+}
+
 export interface CommunityRepository {
-  createUser(data: { nickname: string; role: "visitor" | "moderator"; tokenHash: string }): Promise<UserRecord>;
+  /** Creates the user with one session; "username_taken" when the username exists. */
+  createUser(data: NewUser): Promise<UserRecord | "username_taken">;
   findUserByTokenHash(tokenHash: string): Promise<UserRecord | null>;
+  /** The account with this (lowercase) username and its password hash, or null. */
+  findAccount(username: string): Promise<(UserRecord & { password_hash: string | null }) | null>;
+  createSession(userId: string, tokenHash: string): Promise<void>;
+  /** Ends one session (sign-out on this device). */
+  deleteSession(tokenHash: string): Promise<void>;
+  /** Gives an anonymous visitor a username and password; "has_account" when it already has one. */
+  addCredentials(
+    userId: string,
+    credentials: { username: string; passwordHash: string },
+  ): Promise<UserRecord | "username_taken" | "has_account">;
   /** The asset if clients may see it (and so may contribute to it), otherwise null. */
   findVisibleAsset(id: string, statuses: string[]): Promise<VisibleAsset | null>;
   countContributionsSince(userId: string, since: Date): Promise<number>;
@@ -73,6 +96,10 @@ export interface CommunityRepository {
   banVisitor(id: string): Promise<boolean>;
 }
 
+function isUniqueViolation(err: unknown): boolean {
+  return typeof err === "object" && err !== null && "code" in err && err.code === "P2002";
+}
+
 /** Only these kinds appear in the public pulse; corrections go to the editors only. */
 const PULSE_KINDS = ["tip", "memory"];
 
@@ -85,12 +112,57 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
   });
 
   return {
-    createUser({ nickname, role, tokenHash }) {
-      return prisma.app_user.create({ data: { nickname, role, token_hash: tokenHash }, select: userSelect });
+    async createUser({ nickname, role, tokenHash, credentials }) {
+      try {
+        return await prisma.app_user.create({
+          data: {
+            nickname,
+            role,
+            username: credentials?.username ?? null,
+            password_hash: credentials?.passwordHash ?? null,
+            sessions: { create: { token_hash: tokenHash } },
+          },
+          select: userSelect,
+        });
+      } catch (err) {
+        if (isUniqueViolation(err)) return "username_taken";
+        throw err;
+      }
     },
 
-    findUserByTokenHash(tokenHash) {
-      return prisma.app_user.findUnique({ where: { token_hash: tokenHash }, select: userSelect });
+    async findUserByTokenHash(tokenHash) {
+      const session = await prisma.user_session.findUnique({
+        where: { token_hash: tokenHash },
+        select: { user: { select: userSelect } },
+      });
+      return session?.user ?? null;
+    },
+
+    findAccount(username) {
+      return prisma.app_user.findUnique({ where: { username }, select: { ...userSelect, password_hash: true } });
+    },
+
+    async createSession(userId, tokenHash) {
+      await prisma.user_session.create({ data: { user_id: userId, token_hash: tokenHash } });
+    },
+
+    async deleteSession(tokenHash) {
+      await prisma.user_session.deleteMany({ where: { token_hash: tokenHash } });
+    },
+
+    async addCredentials(userId, { username, passwordHash }) {
+      try {
+        // The username filter makes two concurrent upgrades of one visitor safe.
+        const { count } = await prisma.app_user.updateMany({
+          where: { id: userId, username: null },
+          data: { username, password_hash: passwordHash },
+        });
+        if (count === 0) return "has_account";
+        return await prisma.app_user.findUniqueOrThrow({ where: { id: userId }, select: userSelect });
+      } catch (err) {
+        if (isUniqueViolation(err)) return "username_taken";
+        throw err;
+      }
     },
 
     findVisibleAsset(id, statuses) {

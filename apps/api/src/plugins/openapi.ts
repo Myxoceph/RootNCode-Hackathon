@@ -56,7 +56,7 @@ export function registerOpenApi(app: FastifyInstance): void {
           bearerAuth: {
             type: "http",
             scheme: "bearer",
-            description: "`POST /auth/anonymous` ya da `npm run moderator:create` ile alınan token",
+            description: "`POST /auth/anonymous`, `/auth/register` ya da `/auth/login` ile alınan token",
           },
         },
       },

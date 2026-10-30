@@ -33,7 +33,7 @@ export interface ModerationRoutesOptions {
   repository: CommunityRepository;
 }
 
-/** Moderation queue. Every route requires a moderator token (`npm run moderator:create`). */
+/** Moderation queue. Every route requires a moderator or admin (`npm run account:create`). */
 export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = async (app, { repository }) => {
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
   const authErrors = { 400: errorSchema, 401: errorSchema, 403: errorSchema };

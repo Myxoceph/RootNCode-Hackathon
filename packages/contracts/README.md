@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.5`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.6`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -29,7 +29,11 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `GET /chat/status` | `ChatStatusResponseSchema` (`available: false` iken sohbet girişleri gizlenir) |
 | `POST /chat` | İstek `ChatRequestSchema` (`message` 1–500 karakter, `assetId?`, `history` en çok 6 tur, `lang?`), yanıt `ChatResponseSchema` (`answer` içindeki `[n]` işaretleri `citations[].ref`'e karşılık gelir; `grounded: false` ise cevap kaynaksızdır; gezi sorusunda `attachments.trip`) |
 | `POST /auth/anonymous` | İstek `AnonymousSessionRequestSchema` (`nickname`), yanıt `AnonymousSessionResponseSchema` (`user`, `token`) |
-| `GET /me` 🔒 | `AppUserSchema` |
+| `POST /auth/register` | İstek `RegisterRequestSchema` (`username`, `password` 8–128, isteğe bağlı `nickname`), yanıt `SessionResponseSchema` (`user`, `token`) |
+| `POST /auth/login` | İstek `LoginRequestSchema` (`username` büyük/küçük harf duyarsız, `password`), yanıt `SessionResponseSchema`; her giriş bu cihaz için yeni token verir |
+| `POST /auth/logout` 🔒 | `204`; yalnızca bu token geçersiz olur |
+| `POST /auth/upgrade` 🔒 | İstek `UpgradeAccountRequestSchema` (`username`, `password`), yanıt `AppUserSchema`; anonim ziyaretçi hesap açar, token'ı ve katkıları korunur |
+| `GET /me` 🔒 | `AppUserSchema` (`username` anonimde `null`; `role`: `visitor`, `moderator`, `admin`) |
 | `GET /me/contributions?limit=` 🔒 | `MyContributionsResponseSchema` (kendi katkıların ve moderasyon durumu) |
 | `POST /assets/:id/contributions` 🔒 | İstek `CreateContributionRequestSchema` (`kind`, `body`), yanıt `ContributionSchema` (`status: "pending"`) |
 | `GET /assets/:id/pulse?lang=&limit=` | `PulseResponseSchema` (veri setindeki ipuçları + onaylanmış topluluk katkıları) |
@@ -37,13 +41,14 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `POST /admin/contributions/:id/approve` 🛡️, `…/reject` 🛡️ | `ModerationItemSchema`; reddetmede istek `RejectContributionRequestSchema` (`reason`) |
 | `POST /admin/users/:id/ban` 🛡️ | `204` |
 
-🔒 `Authorization: Bearer <token>` gerekir; 🛡️ moderatör token'ı gerekir (`npm run moderator:create`).
+🔒 `Authorization: Bearer <token>` gerekir; 🛡️ moderatör ya da admin gerekir (`npm run account:create`, sonra `POST /auth/login`).
 
 Hata yanıtları her zaman `{ error: { code, message } }` biçimindedir: `INVALID_QUERY`, `INVALID_ID` (400), `ASSET_NOT_FOUND`, `CITY_NOT_FOUND` (404),
 `RATE_LIMITED` (429: IP başına dakikada 120 istek aşıldı; kaç saniye bekleneceği `Retry-After` başlığında).
 Ziyaretçi Nabzı uçlarında ayrıca: `INVALID_BODY` (400), `UNAUTHORIZED` (401: token yok ya da geçersiz),
 `USER_BANNED`, `FORBIDDEN` (403), `CONTRIBUTION_NOT_FOUND`, `USER_NOT_FOUND` (404), `ALREADY_REVIEWED` (409),
 `CONTRIBUTION_LIMIT` (429: kullanıcı başına saatte 5 katkı).
+Hesaplarda ayrıca: `USERNAME_TAKEN`, `ALREADY_REGISTERED` (409), `INVALID_CREDENTIALS` (401: kullanıcı adı ya da parola yanlış; hangisi olduğu söylenmez), `RATE_LIMITED` (429: IP başına 15 dakikada 10 giriş, saatte 10 kayıt).
 Asistanda ayrıca: `INVALID_BODY` (400), `RATE_LIMITED` (429: IP başına dakikada 10 soru), `ASSISTANT_UNAVAILABLE` (503: model tanımlı değil ya da cevap vermiyor), `ASSISTANT_BUSY` (503: aynı anda en çok 2 soru işlenir; biraz sonra tekrar denenir).
 Ayrıntılı ve denenebilir belge: API çalışırken `http://localhost:3000/docs`.
 

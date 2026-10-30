@@ -7,6 +7,31 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-30 · Hesaplar: kayıt, giriş, admin rolü (migration, sözleşme 0.3.6)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**, **demoyu yayınlayan**
+
+1. Migration'ı uygula:
+   ```bash
+   npm run db:deploy --workspace @vagabonds/api
+   ```
+   Mevcut token'lar yeni `user_session` tablosuna taşınır; uygulamada açık anonim oturumlar geçerli kalır.
+2. `npm run moderator:create` kaldırıldı. Moderatör ya da admin hesabı artık şöyle açılır, parola bir kez yazdırılır:
+   ```bash
+   npm run account:create --workspace @vagabonds/api -- <kullanıcı-adı> admin
+   ```
+   Eski moderatör token'ları çalışmaya devam eder.
+
+Değişenler:
+- Yeni uçlar:
+  - `POST /auth/register` ve `POST /auth/login`: kullanıcı adı + parola; her giriş bu cihaz için yeni bir token verir.
+  - `POST /auth/logout`: yalnızca bu cihazın token'ını geçersiz kılar.
+  - `POST /auth/upgrade`: anonim ziyaretçi hesap açar; token'ı ve notları korunur.
+- `AppUser` alanına `username` eklendi (anonim ziyaretçide `null`); `role` artık `admin` de olabilir.
+  - Admin, moderatörün bütün uçlarını kullanabilir.
+  - Uygulamanın telefonda sakladığı eski oturumlar okunmaya devam eder (`username` yoksa `null` sayılır).
+- Uygulama: giriş, kayıt ve "hesap aç" ekranları ayrı bir PR'da gelecek.
+
 ## 2026-10-30 · Konya II. Cilt: 93 yeni eser
 
 Kimler: **API'yi yerelde çalıştıranlar**

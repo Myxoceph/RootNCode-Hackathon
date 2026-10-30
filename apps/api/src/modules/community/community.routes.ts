@@ -7,13 +7,18 @@ import {
   ContributionSchema,
   CreateContributionRequestSchema,
   LangSchema,
+  LoginRequestSchema,
   MyContributionsResponseSchema,
   PulseResponseSchema,
+  RegisterRequestSchema,
+  SessionResponseSchema,
+  UpgradeAccountRequestSchema,
   type AnonymousSessionResponse,
   type AppUser,
   type Contribution,
   type MyContributionsResponse,
   type PulseResponse,
+  type SessionResponse,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync } from "fastify";
 import { z } from "zod";
@@ -23,7 +28,7 @@ import { parseWith } from "../../lib/validate.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { visibleStatuses, type AssetVisibility } from "../assets/assets.repository.ts";
-import { hashToken, newToken, requireUser } from "./auth.ts";
+import { bearerToken, hashPassword, hashToken, newToken, requireUser, verifyPassword } from "./auth.ts";
 import { toAppUser, toContribution, toPulseItems } from "./community.mapper.ts";
 import type { CommunityRepository } from "./community.repository.ts";
 
@@ -40,6 +45,11 @@ const MyContributionsQuerySchema = z.object({
 });
 
 const HOUR_MS = 60 * 60 * 1000;
+// Per IP: room for a family on one connection, too little for password guessing.
+const LOGIN_RATE_LIMIT = { max: 10, timeWindow: 15 * 60 * 1000 };
+const REGISTER_RATE_LIMIT = { max: 10, timeWindow: HOUR_MS };
+
+const usernameTaken = () => new HttpError(409, "USERNAME_TAKEN", "This username is already taken");
 const bearer = [{ bearerAuth: [] }];
 
 function assetNotFound(id: string): HttpError {
@@ -68,9 +78,89 @@ export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async
     const { nickname } = parseWith(AnonymousSessionRequestSchema, request.body, "INVALID_BODY");
     const token = newToken();
     const user = await repository.createUser({ nickname, role: "visitor", tokenHash: hashToken(token) });
+    if (user === "username_taken") throw new Error("An anonymous user has no username");
 
     reply.code(201).header("cache-control", "no-store");
     return AnonymousSessionResponseSchema.parse({ user: toAppUser(user), token });
+  });
+
+  app.post("/auth/register", {
+    config: { rateLimit: REGISTER_RATE_LIMIT },
+    schema: {
+      tags: ["community"],
+      summary: "Kullanıcı adı ve parolayla hesap aç; token yalnızca bir kez gösterilir",
+      body: toOpenApiSchema(RegisterRequestSchema, "input"),
+      response: { 201: toOpenApiSchema(SessionResponseSchema), 400: errorSchema, 409: errorSchema, 429: errorSchema },
+    },
+  }, async (request, reply): Promise<SessionResponse> => {
+    const { username, password, nickname } = parseWith(RegisterRequestSchema, request.body, "INVALID_BODY");
+    const token = newToken();
+    const user = await repository.createUser({
+      nickname: nickname ?? username,
+      role: "visitor",
+      tokenHash: hashToken(token),
+      credentials: { username, passwordHash: await hashPassword(password) },
+    });
+    if (user === "username_taken") throw usernameTaken();
+
+    reply.code(201).header("cache-control", "no-store");
+    return SessionResponseSchema.parse({ user: toAppUser(user), token });
+  });
+
+  app.post("/auth/login", {
+    config: { rateLimit: LOGIN_RATE_LIMIT },
+    schema: {
+      tags: ["community"],
+      summary: "Kullanıcı adı ve parolayla giriş; her giriş bu cihaz için yeni bir token verir",
+      body: toOpenApiSchema(LoginRequestSchema, "input"),
+      response: { 200: toOpenApiSchema(SessionResponseSchema), 400: errorSchema, 401: errorSchema, 403: errorSchema, 429: errorSchema },
+    },
+  }, async (request, reply): Promise<SessionResponse> => {
+    const { username, password } = parseWith(LoginRequestSchema, request.body, "INVALID_BODY");
+    const account = await repository.findAccount(username);
+    // One message for both cases, so the response does not reveal which usernames exist.
+    if (!(await verifyPassword(password, account?.password_hash ?? null)) || account === null) {
+      throw new HttpError(401, "INVALID_CREDENTIALS", "Wrong username or password");
+    }
+    if (account.banned_at !== null) throw new HttpError(403, "USER_BANNED", "This user can no longer sign in");
+    const token = newToken();
+    await repository.createSession(account.id, hashToken(token));
+
+    reply.header("cache-control", "no-store");
+    return SessionResponseSchema.parse({ user: toAppUser(account), token });
+  });
+
+  app.post("/auth/logout", {
+    schema: {
+      tags: ["community"],
+      summary: "Bu cihazdaki oturumu kapat (token geçersiz olur)",
+      security: bearer,
+      response: { 204: { type: "null" }, 401: errorSchema },
+    },
+  }, async (request, reply) => {
+    await requireUser(request, repository);
+    await repository.deleteSession(hashToken(bearerToken(request)!));
+    return reply.code(204).send();
+  });
+
+  app.post("/auth/upgrade", {
+    config: { rateLimit: REGISTER_RATE_LIMIT },
+    schema: {
+      tags: ["community"],
+      summary: "Anonim ziyaretçiyi hesaba çevir; katkıları ve bu oturum korunur",
+      security: bearer,
+      body: toOpenApiSchema(UpgradeAccountRequestSchema, "input"),
+      response: { 200: toOpenApiSchema(AppUserSchema), 400: errorSchema, 401: errorSchema, 403: errorSchema, 409: errorSchema, 429: errorSchema },
+    },
+  }, async (request, reply): Promise<AppUser> => {
+    const user = await requireUser(request, repository);
+    const { username, password } = parseWith(UpgradeAccountRequestSchema, request.body, "INVALID_BODY");
+    const result = await repository.addCredentials(user.id, { username, passwordHash: await hashPassword(password) });
+    if (result === "username_taken") throw usernameTaken();
+    if (result === "has_account") throw new HttpError(409, "ALREADY_REGISTERED", "This user already has an account");
+
+    reply.header("cache-control", "no-store");
+    return AppUserSchema.parse(toAppUser(result));
   });
 
   app.get("/me", {

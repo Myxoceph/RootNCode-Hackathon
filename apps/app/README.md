@@ -122,7 +122,7 @@ const asset = useAsset("bursa-osmangazi-ulucami");
   "Not bırak" ilk gönderimde takma ad sorar ve anonim oturum açar (`src/data/community.ts`); token telefonda
   `expo-secure-store`'da, web'de tarayıcı deposunda durur. Notlar moderatör onayından sonra görünür; durumları
   Profil → "Notlarım"da. Not göndermek her zaman API ister (mock'ta da). Yerelde onaylamak için:
-  `npm run moderator:create -w @vagabonds/api -- "Ad"` ve `POST /admin/contributions/:id/approve`
+  `npm run account:create -w @vagabonds/api -- <kullanıcı-adı> moderator`, `POST /auth/login` ve `POST /admin/contributions/:id/approve`
   (API'nin `/docs` sayfası).
 - Her kaynak veriyi sözleşmeyle doğrular; uymazsa `DataError` fırlatır. `ResourceView` bunu
   "Tekrar dene" düğmeli bir hata ekranı olarak gösterir (geliştirmede hangi adresin ya da

@@ -35,6 +35,7 @@ export function toAppUser(record: UserRecord): AppUser {
   return {
     id: record.id,
     nickname: record.nickname,
+    username: record.username,
     role: UserRoleSchema.parse(record.role),
     createdAt: record.created_at.toISOString(),
   };
