@@ -621,14 +621,22 @@ CREATE TABLE inscription (
 );
 
 -- ─────────────────────────────── Topluluk katkısı ve moderasyon
--- Bu iki tabloyu yalnızca API yazar; içe aktarma bunlara dokunmaz.
-CREATE TABLE app_user (                               -- anonim ziyaretçi (takma ad) ya da moderatör
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  nickname    text NOT NULL CHECK (char_length(nickname) BETWEEN 2 AND 32),
-  role        text NOT NULL DEFAULT 'visitor' CHECK (role IN ('visitor','moderator')),
-  token_hash  text NOT NULL UNIQUE CHECK (token_hash ~ '^[0-9a-f]{64}$'),  -- token'ın SHA-256'sı
-  created_at  timestamptz NOT NULL DEFAULT now(),
-  banned_at   timestamptz
+-- Bu tabloları yalnızca API yazar; içe aktarma bunlara dokunmaz.
+CREATE TABLE app_user (                               -- ziyaretçi (anonim ya da hesaplı), moderatör, admin
+  id             uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  nickname       text NOT NULL CHECK (char_length(nickname) BETWEEN 2 AND 32),
+  role           text NOT NULL DEFAULT 'visitor' CHECK (role IN ('visitor','moderator','admin')),
+  created_at     timestamptz NOT NULL DEFAULT now(),
+  banned_at      timestamptz,
+  username       text UNIQUE CHECK (username ~ '^[a-z0-9][a-z0-9_.]{2,31}$'),  -- anonimde NULL
+  password_hash  text CHECK (password_hash LIKE 'scrypt$%'),
+  CHECK ((username IS NULL) = (password_hash IS NULL))
+);
+
+CREATE TABLE user_session (                           -- cihaz başına oturum; çıkış yalnızca onu siler
+  token_hash  text PRIMARY KEY CHECK (token_hash ~ '^[0-9a-f]{64}$'),  -- token'ın SHA-256'sı
+  user_id     uuid NOT NULL REFERENCES app_user(id) ON DELETE CASCADE,
+  created_at  timestamptz NOT NULL DEFAULT now()
 );
 
 CREATE TABLE contribution (
@@ -747,7 +755,7 @@ Notlar:
 
 `--verify` seçeneği içe aktarmadan sonra iki şeyi kontrol eder:
 - DB'deki her tablonun sütunları `db_rows.TABLES` ile aynı mı? (Şemaya sütun eklenip eşleme unutulursa yakalar.)
-- Her eserin DB'deki satırları `db_rows` çıktısıyla birebir aynı mı? (Görüntüleyicide görünen = DB'de olan.) API'nin yazdığı `contribution` satırları bu karşılaştırmaya girmez; `app_user` hiç denetlenmez.
+- Her eserin DB'deki satırları `db_rows` çıktısıyla birebir aynı mı? (Görüntüleyicide görünen = DB'de olan.) API'nin yazdığı `contribution` satırları bu karşılaştırmaya girmez; `app_user` ve `user_session` hiç denetlenmez.
 
 PostgreSQL 16'da test edildi: iki kez üst üste içe aktarma aynı sonucu verdi. Elle değiştirilmiş bir metin, silinmiş bir satır ve fazladan eklenmiş bir sütun `--verify` ile yakalandı.
 
