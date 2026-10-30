@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.6`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.7`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -36,6 +36,9 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `GET /me` 🔒 | `AppUserSchema` (`username` anonimde `null`; `role`: `visitor`, `moderator`, `admin`) |
 | `GET /me/contributions?limit=` 🔒 | `MyContributionsResponseSchema` (kendi katkıların ve moderasyon durumu) |
 | `POST /assets/:id/contributions` 🔒 | İstek `CreateContributionRequestSchema` (`kind`, `body`), yanıt `ContributionSchema` (`status: "pending"`) |
+| `POST /assets/:id/photos?caption=` 🔒 | Gövde fotoğrafın kendisi (`Content-Type: image/jpeg` ya da `image/png`, en çok `PHOTO_MAX_BYTES` = 5 MB, kısa kenar en az 300 px); `caption` 3–200 karakter, alternatif metin olarak da kullanılır. Yanıt `ContributionSchema` (`kind: "photo"`, `photo.path` imzalı). Konum dahil meta veriler sunucuda silinir. Kullanıcı başına günde `PHOTOS_PER_DAY` (10) fotoğraf |
+| `GET /assets/:id/photos?limit=` | `CommunityPhotosResponseSchema`: onaylanmış ziyaretçi fotoğrafları, yeniden eskiye; eserin kendi galerisinden (`media`) ayrı gösterilir, yazarın takma adıyla |
+| `GET /photos/:id` | Fotoğraf dosyası. `path` alanları API'nin taban adresine eklenir (`${apiUrl}${path}`); onaylanmamış fotoğraf yalnızca yanıttaki imzalı adresle (1 gün geçerli) açılır |
 | `GET /assets/:id/pulse?lang=&limit=` | `PulseResponseSchema` (veri setindeki ipuçları + onaylanmış topluluk katkıları) |
 | `GET /admin/contributions?status=&limit=&offset=` 🛡️ | `ModerationListResponseSchema` |
 | `POST /admin/contributions/:id/approve` 🛡️, `…/reject` 🛡️ | `ModerationItemSchema`; reddetmede istek `RejectContributionRequestSchema` (`reason`) |
@@ -48,6 +51,7 @@ Hata yanıtları her zaman `{ error: { code, message } }` biçimindedir: `INVALI
 Ziyaretçi Nabzı uçlarında ayrıca: `INVALID_BODY` (400), `UNAUTHORIZED` (401: token yok ya da geçersiz),
 `USER_BANNED`, `FORBIDDEN` (403), `CONTRIBUTION_NOT_FOUND`, `USER_NOT_FOUND` (404), `ALREADY_REVIEWED` (409),
 `CONTRIBUTION_LIMIT` (429: kullanıcı başına saatte 5 katkı).
+Fotoğraflarda ayrıca: `INVALID_IMAGE` (400: JPEG/PNG değil ya da kenarı 300 px'ten kısa), `PAYLOAD_TOO_LARGE` (413), `UNSUPPORTED_MEDIA_TYPE` (415), `PHOTO_LIMIT` (429), `PHOTO_NOT_FOUND` (404).
 Hesaplarda ayrıca: `USERNAME_TAKEN`, `ALREADY_REGISTERED` (409), `INVALID_CREDENTIALS` (401: kullanıcı adı ya da parola yanlış; hangisi olduğu söylenmez), `RATE_LIMITED` (429: IP başına 15 dakikada 10 giriş, saatte 10 kayıt).
 Asistanda ayrıca: `INVALID_BODY` (400), `RATE_LIMITED` (429: IP başına dakikada 10 soru), `ASSISTANT_UNAVAILABLE` (503: model tanımlı değil ya da cevap vermiyor), `ASSISTANT_BUSY` (503: aynı anda en çok 2 soru işlenir; biraz sonra tekrar denenir).
 Ayrıntılı ve denenebilir belge: API çalışırken `http://localhost:3000/docs`.
