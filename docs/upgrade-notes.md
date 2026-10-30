@@ -31,8 +31,7 @@ Kimler: **asistanı yerelde deneyenler**, **demo sunucusu**
 
 Değişenler:
 - Demoda yerel Ollama yerine EVREN kullanılıyor; Ollama yedek olarak kaldı.
-- Eser sayfasından sorulan sorular Qwen'de `400` veriyordu (ikinci `system` mesajı); düzeltildi.
-- Cevap sınırı 2048 token (düşünen modeller 800'de yarım kalıyordu); cevaplardaki Markdown sunucuda temizlenir.
+- Eser sayfasından sorulan sorular Qwen'de `400` veriyordu (ikinci `system` mesajı). Model istemcisi artık bütün `system` mesajlarını tek mesajda birleştirerek gönderir.
 
 ## 2026-10-30 · Yaklaşık koordinatlar (sözleşme 0.3.10)
 
