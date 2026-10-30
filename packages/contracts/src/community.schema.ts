@@ -5,9 +5,10 @@ import { AssetIdSchema, ContractVersionSchema, LangSchema } from "./asset.schema
  * Topluluk Ziyaretçi Nabzı (module 6): anonymous sessions, visitor contributions,
  * the per-asset pulse feed and the moderation queue.
  *
- * Visitors are anonymous: they pick a nickname and get an opaque bearer token
- * (`Authorization: Bearer <token>`). Contributions are plain text and appear in
- * the pulse only after a moderator approves them.
+ * Visitors start anonymous: they pick a nickname and get an opaque bearer token
+ * (`Authorization: Bearer <token>`). They may later create an account (username +
+ * password) to sign in on other devices; an anonymous visitor who signs up keeps
+ * their contributions. Contributions appear in the pulse only after a moderator approves them.
  */
 
 /** 2–32 characters: letters, digits, space, `.`, `_`, `-`; starts with a letter or digit. */
@@ -48,11 +49,28 @@ export const ContributionTextSchema = z
       .max(CONTRIBUTION_TEXT_MAX, `at most ${CONTRIBUTION_TEXT_MAX} characters`),
   );
 
-export const UserRoleSchema = z.enum(["visitor", "moderator"]);
+/** `moderator` reviews contributions; `admin` also adds assets and manages roles. */
+export const UserRoleSchema = z.enum(["visitor", "moderator", "admin"]);
+
+/** 3–32 characters: lowercase letters, digits, `_` and `.`, starting with a letter or digit. Sign-in ignores case. */
+export const UsernameSchema = z
+  .string()
+  .trim()
+  .toLowerCase()
+  .regex(/^[a-z0-9][a-z0-9_.]{2,31}$/, "username may contain lowercase letters, digits, '_' and '.' (3-32 characters)");
+
+export const PASSWORD_MIN = 8;
+export const PASSWORD_MAX = 128;
+export const PasswordSchema = z.string().min(PASSWORD_MIN).max(PASSWORD_MAX);
 
 export const AppUserSchema = z.strictObject({
   id: z.uuid(),
   nickname: z.string().min(1),
+  /**
+   * Null for an anonymous visitor who has not created an account. The API always sends it;
+   * the default keeps sessions the app stored before 0.3.6 readable.
+   */
+  username: z.string().min(1).nullable().default(null),
   role: UserRoleSchema,
   createdAt: z.iso.datetime(),
 });
@@ -65,6 +83,28 @@ export const AnonymousSessionResponseSchema = z.strictObject({
   user: AppUserSchema,
   token: z.string().min(32),
 });
+
+/** `POST /auth/register`: a new account. Without `nickname`, the username is shown as the nickname. */
+export const RegisterRequestSchema = z.strictObject({
+  username: UsernameSchema,
+  password: PasswordSchema,
+  nickname: NicknameSchema.optional(),
+});
+
+/** `POST /auth/login` */
+export const LoginRequestSchema = z.strictObject({
+  username: z.string().trim().toLowerCase().min(1).max(32),
+  password: z.string().min(1).max(PASSWORD_MAX),
+});
+
+/** `POST /auth/upgrade`: the signed-in anonymous visitor becomes an account and keeps their contributions. */
+export const UpgradeAccountRequestSchema = z.strictObject({
+  username: UsernameSchema,
+  password: PasswordSchema,
+});
+
+/** Response of register and login: the token is shown once, as for anonymous sessions. */
+export const SessionResponseSchema = AnonymousSessionResponseSchema;
 
 /** Photo contributions need the upload pipeline (R2) and are not accepted yet. */
 export const ContributionKindSchema = z.enum(["tip", "memory", "correction"]);
@@ -143,6 +183,11 @@ export const RejectContributionRequestSchema = z.strictObject({
 export type AppUser = z.infer<typeof AppUserSchema>;
 export type AnonymousSessionRequest = z.infer<typeof AnonymousSessionRequestSchema>;
 export type AnonymousSessionResponse = z.infer<typeof AnonymousSessionResponseSchema>;
+export type UserRole = z.infer<typeof UserRoleSchema>;
+export type RegisterRequest = z.infer<typeof RegisterRequestSchema>;
+export type LoginRequest = z.infer<typeof LoginRequestSchema>;
+export type UpgradeAccountRequest = z.infer<typeof UpgradeAccountRequestSchema>;
+export type SessionResponse = z.infer<typeof SessionResponseSchema>;
 export type ContributionKind = z.infer<typeof ContributionKindSchema>;
 export type ContributionStatus = z.infer<typeof ContributionStatusSchema>;
 export type CreateContributionRequest = z.input<typeof CreateContributionRequestSchema>;
