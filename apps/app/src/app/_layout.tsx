@@ -62,6 +62,8 @@ function ThemedStack() {
           {/* Camera screens are full screen and always dark; they draw their own back button. */}
           <Stack.Screen name="time-curtain" options={{ headerShown: false, title: "Zaman Perdesi" }} />
           <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
+          {/* Draws its own header, with "Temizle" next to the title. */}
+          <Stack.Screen name="assistant" options={{ headerShown: false, title: "Asistan" }} />
           <Stack.Screen name="ar-prototype" options={{ headerShown: false, title: "AR prototipi" }} />
           <Stack.Screen name="map-prototype" options={{ headerShown: false, title: "Harita prototipi" }} />
           <Stack.Screen name="+not-found" options={{ title: "Sayfa bulunamadı" }} />

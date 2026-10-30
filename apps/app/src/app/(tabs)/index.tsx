@@ -8,6 +8,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CityAssetCards } from "@/components/city-asset-cards";
 import { CITY_LANDMARKS, useCities, useCityMapAssets } from "@/data";
+import { useAssistantAvailable } from "@/data/assistant";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { areaAround, assetCategory, cityLandmark, MapLibreMap, type MapCity, type MapPin, type MapProvince, type MapProvinces } from "@/map";
@@ -40,6 +41,7 @@ export default function MapScreen() {
   const reduceMotion = useReducedMotion();
   const router = useRouter();
   const cities = useCities();
+  const assistant = useAssistantAvailable();
   const [mapError, setMapError] = useState<string | null>(null);
   const [selectedPlate, setSelectedPlate] = useState<number | null>(null);
   const [chosenAsset, setChosenAsset] = useState<string | null>(null);
@@ -176,6 +178,7 @@ export default function MapScreen() {
                 {cityStatus}
               </Text>
             </View>
+            {assistant === true && <AssistantButton />}
             {cityAssets.status === "error" ? (
               <Button label="Tekrar dene" variant="ghost" onPress={cityAssets.retry} />
             ) : (
@@ -203,6 +206,7 @@ export default function MapScreen() {
             <Text variant="heading" headingLevel={1} style={styles.flex}>
               Türkiye
             </Text>
+            {assistant === true && <AssistantButton />}
             {cities.status === "success" && (
               <View style={[styles.count, { backgroundColor: c.surfaceRaised }]}>
                 <Text variant="caption" style={styles.mono}>
@@ -260,6 +264,23 @@ export default function MapScreen() {
         </View>
       )}
     </View>
+  );
+}
+
+/** Opens the assistant; shown only while a model answers (`/chat/status`). */
+function AssistantButton() {
+  const { colors: c } = useTheme();
+  const router = useRouter();
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel="Asistana sor"
+      onPress={() => router.push("/assistant")}
+      hitSlop={4}
+      style={[styles.round, { backgroundColor: c.surfaceRaised }]}
+    >
+      <Ionicons name="chatbubbles-outline" size={20} color={c.text} />
+    </Pressable>
   );
 }
 
