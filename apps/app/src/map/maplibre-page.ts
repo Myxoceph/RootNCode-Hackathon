@@ -38,6 +38,8 @@ export interface MapPageColors {
   labelText: string;
   /** Outline of a province with assets. */
   province: string;
+  /** Every other province border, quiet. */
+  border: string;
 }
 
 /** Messages the map page posts to the app. */
@@ -70,10 +72,11 @@ export function parseMapPageEvent(data: unknown): MapPageEvent | null {
  * overlapping clearings simply merge and their edges stay soft.
  *
  * Provinces (./turkey-provinces.json: Natural Earth admin-1, public domain, simplified)
- * are a line layer: only the plates asked for are outlined, and the base style's own
+ * are line layers: every border drawn quietly, the highlighted ones in color; the base style's own
  * province borders are hidden so the others carry no mark. The first time they are shown
  * with `reveal`, Turkey rises out of drifting fog on the same canvas (see `startIntro`);
- * ./turkey-outline.json is the country's border for the gold trace.
+ * ./turkey-outline.json is the country's border for the gold trace. The provinces with
+ * assets are named by a symbol layer, which hides names that would overlap.
  */
 export function mapPageHtml({
   scheme,
@@ -192,6 +195,22 @@ function start() {
     });
 
     map.addSource("provinces", { type: "geojson", data: PROVINCES });
+    // All 81 borders, thin and quiet, so the country reads as provinces; the ones with assets are drawn over them.
+    map.addLayer(
+      {
+        id: "province-borders",
+        type: "line",
+        source: "provinces",
+        layout: { "line-join": "round" },
+        paint: {
+          "line-color": colors.border,
+          "line-width": ["interpolate", ["linear"], ["zoom"], 4, 0.6, 8, 1.2],
+          "line-opacity": 0,
+          "line-opacity-transition": { duration: 1200 },
+        },
+      },
+      "clusters",
+    );
     // Below the pins, so a pin on a border stays tappable.
     map.addLayer(
       {
@@ -215,6 +234,34 @@ function start() {
         paint: { "line-color": colors.province, "line-width": 10, "line-blur": 7, "line-opacity": 0, "line-opacity-transition": { duration: 700 } },
       },
       "province-lines",
+    );
+
+    // Capitals (upper-cased the Turkish way in setLabels: i → İ) with a halo, no boxes: calm enough for all 81. Names that would overlap are
+    // left out until the map is zoomed in; the province with more assets wins.
+    map.addSource("province-names", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+    map.addLayer(
+      {
+        id: "province-names",
+        type: "symbol",
+        source: "province-names",
+        layout: {
+          "text-field": ["get", "name"],
+          "text-font": ["Noto Sans Bold"],
+          "text-size": ["interpolate", ["linear"], ["zoom"], 4, 10, 8, 13],
+          "text-letter-spacing": 0.12,
+          "text-padding": 6,
+          "symbol-sort-key": ["-", 0, ["get", "rank"]],
+        },
+        paint: {
+          "text-color": colors.labelText,
+          "text-halo-color": colors.land,
+          "text-halo-width": 1.6,
+          "text-halo-blur": 0.5,
+          "text-opacity": 0,
+          "text-opacity-transition": { duration: 800 },
+        },
+      },
+      "clusters",
     );
 
     map.on("click", "clusters", async (event) => {
@@ -293,24 +340,103 @@ function start() {
   let provincesShown = false;
   /** While Turkey rises out of the fog. start is Infinity while waiting for tiles. */
   let intro = null;
+  /** The framed Turkey view; zooming out and panning are kept close to it. */
+  let turkeyView = null;
+  /** How far past the framed view the map may zoom out (zoom levels) and pan (share of the view). */
+  const ZOOM_OUT_ROOM = 0.25;
+  const PAN_ROOM = 0.3;
+
+  /** Keeps Turkey on screen: no zooming out far past it, no dragging it away. */
+  function lockToTurkey() {
+    if (!turkeyView) return;
+    const { zoom, west, south, east, north } = turkeyView;
+    const width = east - west;
+    const height = north - south;
+    map.setMinZoom(zoom - ZOOM_OUT_ROOM);
+    map.setMaxBounds([
+      [west - width * PAN_ROOM, south - height * PAN_ROOM],
+      [east + width * PAN_ROOM, north + height * PAN_ROOM],
+    ]);
+  }
 
   function showProvinces(provinces) {
     if (!provinces) {
+      setLabels([]);
       map.setPaintProperty("province-lines", "line-opacity", 0);
+      map.setPaintProperty("province-borders", "line-opacity", 0);
       setBaseBorders(true);
+      setBaseLabelsTurkeyOnly(false);
+      turkeyView = null;
+      map.setMinZoom(null);
+      map.setMaxBounds(null);
       return;
     }
-    map.setFilter("province-lines", ["in", ["get", "plate"], ["literal", provinces.plates]]);
-    map.setFilter("province-glow", ["in", ["get", "plate"], ["literal", provinces.plates]]);
+    const plates = provinces.highlighted.map((province) => province.plate);
+    map.setFilter("province-lines", ["in", ["get", "plate"], ["literal", plates]]);
+    map.setFilter("province-glow", ["in", ["get", "plate"], ["literal", plates]]);
+    setLabels(provinces.highlighted);
     if (provincesShown) return;
     provincesShown = true;
     setBaseBorders(false);
+    setBaseLabelsTurkeyOnly(true);
     if (!hasPins) {
       map.fitBounds(TURKEY_BOUNDS, { padding: lastPadding, duration: 0 });
       fitted = true;
+      const view = map.getBounds();
+      turkeyView = { zoom: map.getZoom(), west: view.getWest(), south: view.getSouth(), east: view.getEast(), north: view.getNorth() };
     }
     if (provinces.reveal) startIntro();
-    else map.setPaintProperty("province-lines", "line-opacity", 1);
+    else {
+      map.setPaintProperty("province-names", "text-opacity-transition", { duration: 0 });
+      map.setPaintProperty("province-borders", "line-opacity", 1);
+      map.setPaintProperty("province-lines", "line-opacity", 1);
+      revealLabels();
+      lockToTurkey();
+    }
+  }
+
+  /** Where each province's name goes: a point inside it, from the data. */
+  const labelPoints = new Map(PROVINCES.features.map((feature) => [feature.properties.plate, feature.properties.label]));
+
+  function setLabels(highlighted) {
+    map.getSource("province-names").setData({
+      type: "FeatureCollection",
+      features: highlighted.flatMap((province) => {
+        const point = labelPoints.get(province.plate);
+        return point
+          ? [{ type: "Feature", geometry: { type: "Point", coordinates: point }, properties: { name: province.name.toLocaleUpperCase("tr-TR"), rank: province.rank || 0 } }]
+          : [];
+      }),
+    });
+  }
+
+  /** Once every line is drawn, the names fade in. */
+  function revealLabels() {
+    map.setPaintProperty("province-names", "text-opacity", 1);
+  }
+
+  /** Each base label layer's own filter and text, to put back when the provinces go away. */
+  const baseLabels = new Map();
+
+  /**
+   * In the Turkey view no place outside Turkey is named: every base label layer only keeps the
+   * labels that lie within the country, and those use the local (Turkish) name instead of the
+   * English one ("Türkiye", "İstanbul").
+   */
+  function setBaseLabelsTurkeyOnly(turkeyOnly) {
+    const turkey = { type: "MultiPolygon", coordinates: OUTLINE.map((ring) => [ring]) };
+    for (const layer of map.getStyle().layers) {
+      if (layer.type !== "symbol" || layer.source === "provinces" || layer.id === "province-names" || layer.id === "cluster-count") continue;
+      if (!baseLabels.has(layer.id)) baseLabels.set(layer.id, { filter: layer.filter, text: layer.layout && layer.layout["text-field"] });
+      const original = baseLabels.get(layer.id);
+      if (turkeyOnly) {
+        map.setFilter(layer.id, original.filter ? ["all", original.filter, ["within", turkey]] : ["within", turkey]);
+        if (original.text) map.setLayoutProperty(layer.id, "text-field", ["coalesce", ["get", "name:tr"], ["get", "name"], original.text]);
+      } else {
+        map.setFilter(layer.id, original.filter || null);
+        if (original.text) map.setLayoutProperty(layer.id, "text-field", original.text);
+      }
+    }
   }
 
   /** The base style draws every province border; with ours on, only country borders stay. */
@@ -335,6 +461,8 @@ function start() {
       if (!intro || intro.start !== Infinity) return;
       intro.start = performance.now();
       map.easeTo({ zoom, pitch: 0, bearing: 0, duration: INTRO_MS, easing: (t) => 1 - Math.pow(1 - t, 3) });
+      // The provinces show as the fog parts; the ones with assets light up a moment later.
+      setTimeout(() => map.setPaintProperty("province-borders", "line-opacity", 1), INTRO_MS * 0.42);
       setTimeout(() => {
         map.setPaintProperty("province-lines", "line-opacity", 1);
         map.setPaintProperty("province-glow", "line-opacity", 0.8);
@@ -448,7 +576,13 @@ function start() {
     }
     for (const layer of intro.layers) drawFogLayer(layer, opening, now, width, height, middle);
     drawOutline(elapsed);
-    if (elapsed >= 1) intro = null;
+    if (elapsed >= 1) {
+      intro = null;
+      // Tied to the last frame, not a timer: the names never come before the lines.
+      revealLabels();
+      // The opening starts further out than the limit; the limits apply once it is over.
+      lockToTurkey();
+    }
   }
 
   /**

@@ -39,10 +39,18 @@ export interface MapNetwork {
   motion: boolean;
 }
 
-/** Turkey's provinces: the ones with assets are outlined, the others carry no mark at all. */
+/** A province with assets: outlined in color and named on the map. */
+export interface MapProvince {
+  /** Licence plate code (16 = Bursa). */
+  plate: number;
+  name: string;
+  /** When names would overlap, the higher rank is shown (the asset count). */
+  rank?: number;
+}
+
+/** Turkey's provinces: every border drawn quietly, the ones with assets outlined in color and named. */
 export interface MapProvinces {
-  /** Licence plate codes of the provinces to outline (16 = Bursa). */
-  plates: number[];
+  highlighted: MapProvince[];
   /** Turkey rises out of the fog the first time the map opens. False when "Hareketi azalt" is on. */
   reveal: boolean;
 }

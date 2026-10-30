@@ -39,6 +39,7 @@ export function useMapPage(
               label: c.surface,
               labelText: c.text,
               province: c.mapProvince,
+              border: c.mapBorder,
             },
             maplibre,
             opening: showsProvinces ? { reveal } : null,

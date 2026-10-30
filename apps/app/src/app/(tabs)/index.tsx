@@ -7,15 +7,15 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useCities } from "@/data";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { MapLibreMap, type MapPin, type MapProvinces } from "@/map";
+import { MapLibreMap, type MapPin, type MapProvince, type MapProvinces } from "@/map";
 
 /** Room kept free for the header card when framing Turkey. */
 const HEADER_SPACE = 120;
 const NO_PINS: MapPin[] = [];
 
 /**
- * Harita: Turkey rises out of the fog, and the provinces with assets are outlined
- * in gold. Provinces without assets carry no mark at all.
+ * Harita: Turkey rises out of the fog with every province border drawn quietly;
+ * the provinces with assets are outlined in color and named.
  *
  * The map is visual only (ADR 0003): the header says the same in words
  * (which cities have assets), and "Tüm eserler" is the map-free list.
@@ -28,12 +28,14 @@ export default function MapScreen() {
   const [mapError, setMapError] = useState<string | null>(null);
 
   const withAssets = cities.status === "success" ? cities.data.filter((city) => city.assetCount > 0) : [];
-  const plates = withAssets.flatMap((city) => (city.plate === null ? [] : [city.plate]));
-  const plateKey = plates.join(",");
+  const highlighted: MapProvince[] = withAssets.flatMap((city) =>
+    city.plate === null ? [] : [{ plate: city.plate, name: city.label, rank: city.assetCount }],
+  );
+  const highlightedKey = JSON.stringify(highlighted);
   // A new object only when the outlined provinces change; the fog rises once either way.
   const provinces = useMemo<MapProvinces>(
-    () => ({ plates: plateKey === "" ? [] : plateKey.split(",").map(Number), reveal: !reduceMotion }),
-    [plateKey, reduceMotion],
+    () => ({ highlighted: JSON.parse(highlightedKey) as MapProvince[], reveal: !reduceMotion }),
+    [highlightedKey, reduceMotion],
   );
   const total = withAssets.reduce((sum, city) => sum + city.assetCount, 0);
 
