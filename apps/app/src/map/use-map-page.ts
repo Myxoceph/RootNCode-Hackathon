@@ -1,4 +1,4 @@
-import { useTheme } from "@vagabonds/ui";
+import { palette, useTheme } from "@vagabonds/ui";
 import { useEffect, useMemo, useRef } from "react";
 
 import { loadMaplibre, useVendored } from "@/vendor";
@@ -40,6 +40,16 @@ export function useMapPage(
               labelText: c.text,
               province: c.mapProvince,
               border: c.mapBorder,
+              // Night blue and leaf gold, the same in both themes.
+              seal: {
+                from: palette.gece700,
+                to: palette.gece900,
+                ring: palette.altin300,
+                icon: palette.altin200,
+                lock: palette.altin300,
+                lockIcon: palette.gece900,
+                halo: palette.altin300,
+              },
             },
             maplibre,
             opening: showsProvinces ? { reveal } : null,

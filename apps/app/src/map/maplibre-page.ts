@@ -40,6 +40,8 @@ export interface MapPageColors {
   province: string;
   /** Every other province border, quiet. */
   border: string;
+  /** The city map's seals: the disc (a gradient), its ring, its icon and its lock. */
+  seal: { from: string; to: string; ring: string; icon: string; lock: string; lockIcon: string; halo: string };
 }
 
 /** Messages the map page posts to the app. */
@@ -290,56 +292,90 @@ function start() {
       { id: "province-hit", type: "fill", source: "provinces", filter: ["in", ["get", "plate"], ["literal", []]], paint: { "fill-color": colors.province, "fill-opacity": 0 } },
       "province-borders",
     );
-    // The chosen city's assets: every one a drop pin; their names come up as chips once the map
-    // is close enough to read them, and only where they fit. The landmark's pin is larger and
-    // its name always wins.
+    // The chosen city's assets are still locked: each sits in its own thick cloud, sealed with
+    // the icon of its kind and a small lock; the names stand beside them once the streets are
+    // close, where they fit. The landmark's seal is gold and larger; the chosen one pulses.
     map.addSource("city-assets", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
-    map.addImage("asset-pin", pinImage(true), { pixelRatio: PIN_RATIO });
-    map.addImage("asset-pin-hollow", pinImage(false), { pixelRatio: PIN_RATIO });
-    map.addImage("name-chip", chipImage(), {
-      pixelRatio: PIN_RATIO,
-      stretchX: [[CHIP_RADIUS * PIN_RATIO, CHIP_SIZE * PIN_RATIO - CHIP_RADIUS * PIN_RATIO]],
-      stretchY: [[CHIP_RADIUS * PIN_RATIO, CHIP_SIZE * PIN_RATIO - CHIP_RADIUS * PIN_RATIO]],
-      // The whole chip holds the text; its room around the name is icon-text-fit-padding.
-      content: [PIN_RATIO, PIN_RATIO, (CHIP_SIZE - 1) * PIN_RATIO, (CHIP_SIZE - 1) * PIN_RATIO],
+    for (const category of GLYPHS) {
+      map.addImage("seal-" + category, sealImage(category, false), { pixelRatio: SEAL_RATIO });
+      map.addImage("seal-" + category + "-landmark", sealImage(category, true), { pixelRatio: SEAL_RATIO });
+    }
+    // The fog gathers where the assets are: a cloud around each, thickest where many crowd.
+    map.addLayer({
+      id: "city-fog",
+      type: "heatmap",
+      source: "city-assets",
+      paint: {
+        // About 80 metres around each asset, whatever the zoom: a cloud each, not one blanket.
+        "heatmap-radius": ["interpolate", ["exponential", 2], ["zoom"], 10, 3, 16, 200],
+        // On light land a white cloud needs more weight to show.
+        "heatmap-intensity": ["interpolate", ["linear"], ["zoom"], 10, DARK ? 0.3 : 0.45, 16, DARK ? 0.55 : 0.8],
+        "heatmap-color": fogRamp(),
+        "heatmap-opacity": 0,
+        "heatmap-opacity-transition": { duration: 1400 },
+      },
     });
-    // Under the pins in drawing; placed after them, so a name never covers a pin.
+    map.addLayer({
+      id: "city-asset-halo",
+      type: "circle",
+      source: "city-assets",
+      filter: ["==", ["get", "id"], ""],
+      paint: { "circle-radius": haloRadius(1), "circle-color": colors.seal.halo, "circle-opacity": 0, "circle-blur": 0.35 },
+    });
+    // Below the badges, so a badge stays whole where a name runs under it.
     map.addLayer({
       id: "city-asset-names",
       type: "symbol",
       source: "city-assets",
       minzoom: NAMES_ZOOM,
       layout: {
-        "text-field": ["case", ["get", "landmark"], ["format", ["get", "title"], { "text-font": ["literal", ["Noto Sans Bold"]] }], ["get", "title"]],
+        "text-field": ["get", "title"],
         "text-font": ["Noto Sans Regular"],
         "text-size": 12,
-        "text-anchor": "top",
-        // Clear of its own pin's shadow, which would otherwise hide it.
-        "text-offset": ["case", ["get", "landmark"], ["literal", [0, 1.3]], ["literal", [0, 0.9]]],
-        "text-max-width": 11,
-        "text-padding": 2,
-        "icon-image": "name-chip",
-        "icon-text-fit": "both",
-        "icon-text-fit-padding": [3, 8, 3, 8],
-        "symbol-sort-key": ["case", ["get", "landmark"], -1, ["get", "verified"], 0, 1],
+        "text-max-width": 8,
+        "text-line-height": 1.15,
+        // Beside the badge where there is room, else under or over it.
+        "text-variable-anchor": ["left", "right", "top", "bottom"],
+        "text-radial-offset": 1.35,
+        "text-justify": "auto",
+        "text-padding": 5,
+        "symbol-sort-key": ["case", ["get", "landmark"], -1, 0],
       },
-      paint: { "text-color": colors.labelText, "text-opacity": 0, "icon-opacity": 0, "text-opacity-transition": { duration: 700 }, "icon-opacity-transition": { duration: 700 } },
+      paint: {
+        "text-color": colors.labelText,
+        "text-halo-color": colors.land,
+        "text-halo-width": 1.6,
+        "text-halo-blur": 0.4,
+        "text-opacity": 0,
+        "text-opacity-transition": { duration: 700 },
+      },
     });
+    // Invisible, the size of a plain badge whatever the zoom: what the names keep clear of. The
+    // badges themselves cannot be: a size that also depends on the asset gives them collision boxes
+    // far larger than they look.
     map.addLayer({
-      id: "city-asset-pins",
+      id: "city-asset-room",
       type: "symbol",
       source: "city-assets",
       layout: {
-        // Unverified coordinates get a hollow pin: the place is approximate.
-        "icon-image": ["case", ["get", "verified"], "asset-pin", "asset-pin-hollow"],
-        "icon-anchor": "bottom",
-        "icon-offset": [0, PIN_SHADOW],
-        // Small while many share the screen, full size once the streets are close.
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 11, ["case", ["get", "landmark"], 0.6, 0.38], 15, ["case", ["get", "landmark"], 1.05, 0.62], 17, ["case", ["get", "landmark"], 1.25, 0.85]],
-        // The landmark on top of the pins that share its place.
-        "symbol-sort-key": ["case", ["get", "landmark"], 1, 0],
-        // Every pin shows, and the names keep clear of them.
+        // The seal itself, without its glow.
+        "icon-image": "seal-other",
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 11, 0.32, 14, 0.52, 16, 0.68],
         "icon-allow-overlap": true,
+        "icon-padding": 0,
+      },
+      paint: { "icon-opacity": 0 },
+    });
+    map.addLayer({
+      id: "city-asset-badges",
+      type: "symbol",
+      source: "city-assets",
+      layout: {
+        "icon-image": ["case", ["get", "landmark"], ["concat", "seal-", ["get", "category"], "-landmark"], ["concat", "seal-", ["get", "category"]]],
+        "icon-allow-overlap": true,
+        // The names keep clear of city-asset-room instead.
+        "icon-ignore-placement": true,
+        ...badgeLayout(null),
       },
       paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 700 } },
     });
@@ -360,7 +396,7 @@ function start() {
       // A finger is wider than a pixel.
       const around = [[event.point.x - 12, event.point.y - 12], [event.point.x + 12, event.point.y + 12]];
       if (cityPlate !== null) {
-        const asset = map.queryRenderedFeatures(around, { layers: ["city-asset-pins"] })[0];
+        const asset = map.queryRenderedFeatures(around, { layers: ["city-asset-badges"] })[0];
         if (asset) post({ type: "select", id: asset.properties.id });
         return;
       }
@@ -387,7 +423,7 @@ function start() {
         post({ type: "select", id: null });
       }
     }
-    for (const layer of ["clusters", "pins", "province-hit", "province-names", "city-asset-pins"]) {
+    for (const layer of ["clusters", "pins", "province-hit", "province-names", "city-asset-badges"]) {
       map.on("mouseenter", layer, () => (map.getCanvas().style.cursor = "pointer"));
       map.on("mouseleave", layer, () => (map.getCanvas().style.cursor = ""));
     }
@@ -420,6 +456,11 @@ function start() {
   }
 
   function select(id) {
+    if (cityPlate !== null) {
+      selectCityAsset(id);
+      return;
+    }
+    citySelected = id;
     selected = id;
     draw();
     map.setPaintProperty("pins", "circle-radius", ["case", ["==", ["get", "id"], id || ""], 12, 8]);
@@ -543,22 +584,28 @@ function start() {
         ? city.assets.map((asset) => ({
             type: "Feature",
             geometry: { type: "Point", coordinates: [asset.lng, asset.lat] },
-            properties: { id: asset.id, title: asset.title, verified: asset.verified, landmark: Boolean(asset.landmark) },
+            properties: { id: asset.id, title: asset.title, category: asset.category, landmark: Boolean(asset.landmark) },
           }))
         : [],
     });
+    cityAssets = city ? city.assets : [];
     if (plate === cityPlate) return;
     cityPlate = plate;
+    cityLanded = false;
     const shown = plate !== null;
-    map.setPaintProperty("veil", "fill-opacity", shown ? 0.9 : 0);
+    showCitySelection();
+    // Lighter over the open streets, so the clouds over the assets stand out.
+    map.setPaintProperty("veil", "fill-opacity", shown ? (DARK ? 0.6 : 0.45) : 0);
     map.setPaintProperty("province-names", "text-opacity", !shown && labelsRevealed ? 1 : 0);
     setCityAssetsShown(false);
     const options = { padding: cityPadding(), duration: motion ? FLY_MS : 0, linear: false, essential: true };
     if (shown) {
       map.fitBounds(city.focus || provinceBounds(plate), { ...options, maxZoom: 16 });
-      // The assets come up as the camera lands.
+      // The assets come up as the camera lands; from then on a new choice moves the camera.
       setTimeout(() => {
-        if (cityPlate === plate) setCityAssetsShown(true);
+        if (cityPlate !== plate) return;
+        setCityAssetsShown(true);
+        cityLanded = true;
       }, motion ? FLY_MS * 0.75 : 0);
     } else if (turkeyView) {
       map.fitBounds([[turkeyView.west, turkeyView.south], [turkeyView.east, turkeyView.north]], { ...options, padding: 0 });
@@ -568,87 +615,232 @@ function start() {
   function setCityAssetsShown(shown) {
     const on = shown ? 1 : 0;
     map.setPaintProperty("city-asset-names", "text-opacity", on);
-    map.setPaintProperty("city-asset-names", "icon-opacity", on);
-    map.setPaintProperty("city-asset-pins", "icon-opacity", on);
+    map.setPaintProperty("city-asset-badges", "icon-opacity", on);
+    map.setPaintProperty("city-fog", "heatmap-opacity", shown ? 1 : 0);
+    haloShown = shown;
+    pulse();
   }
 
-  // The city's marks, drawn once into images: a drop pin and the rounded chip behind a name.
-  /** Image pixels per screen point, so the marks stay sharp on phone screens. */
-  const PIN_RATIO = 2;
-  /** Room under the pin's tip for its shadow, in points. */
-  const PIN_SHADOW = 3;
-  const CHIP_SIZE = 24;
-  const CHIP_RADIUS = 9;
-  /** Names come up from this zoom; further out only the pins show. */
-  const NAMES_ZOOM = 14;
+  /** The fog's color by how many assets crowd a spot: clear, then thicker and lighter. */
+  function fogRamp() {
+    const fog = rgb(colors.fog);
+    // On the dark map the fog is a pale mist, so it shows against the night.
+    const light = DARK ? mix(fog, rgb(colors.labelText), 0.3) : mix(fog, rgb(colors.label), 0.3);
+    const rgba = (c, a) => "rgba(" + c.map(Math.round).join(",") + "," + a + ")";
+    return ["interpolate", ["linear"], ["heatmap-density"], 0, rgba(fog, 0), 0.12, rgba(mix(fog, light, 0.3), 0.3), 0.45, rgba(mix(fog, light, 0.6), 0.6), 1, rgba(light, 0.85)];
+  }
 
-  function drawImage(width, height, paint) {
+  function haloRadius(scale) {
+    return ["interpolate", ["linear"], ["zoom"], 12, 15 * scale, 16, 26 * scale];
+  }
+
+  /** The chosen seal's ring widens and fades, over and over; still when "Hareketi azalt" is on. */
+  let haloShown = false;
+  let pulsing = false;
+  const SEAL_PULSE_MS = 1800;
+  function pulse() {
+    if (!haloShown || !motion) {
+      map.setPaintProperty("city-asset-halo", "circle-radius", haloRadius(1.15));
+      map.setPaintProperty("city-asset-halo", "circle-opacity", haloShown ? 0.3 : 0);
+      return;
+    }
+    if (pulsing) return;
+    pulsing = true;
+    const step = (now) => {
+      if (!haloShown || !motion) {
+        pulsing = false;
+        pulse();
+        return;
+      }
+      const t = (now % SEAL_PULSE_MS) / SEAL_PULSE_MS;
+      map.setPaintProperty("city-asset-halo", "circle-radius", haloRadius(1 + 0.55 * t));
+      map.setPaintProperty("city-asset-halo", "circle-opacity", 0.45 * (1 - t));
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  /** The chosen city's assets, to find where a chosen one is. */
+  let cityAssets = [];
+  /** The asset chosen in the city, on the map or in the screen's cards. */
+  let citySelected = null;
+  /** False while the camera is still flying in. */
+  let cityLanded = false;
+
+  /** A chosen asset grows and gets a ring; once the camera has landed, it moves to it. */
+  function selectCityAsset(id) {
+    if (id === citySelected) return;
+    citySelected = id;
+    showCitySelection();
+    const asset = cityAssets.find((candidate) => candidate.id === id);
+    if (!asset || !cityLanded) return;
+    map.easeTo({ center: [asset.lng, asset.lat], zoom: Math.max(map.getZoom(), SELECT_ZOOM), padding: cityPadding(), duration: motion ? 650 : 0, essential: true });
+  }
+
+  function showCitySelection() {
+    for (const [property, value] of Object.entries(badgeLayout(citySelected))) map.setLayoutProperty("city-asset-badges", property, value);
+    map.setFilter("city-asset-halo", ["==", ["get", "id"], citySelected || ""]);
+    // The chosen asset's name is placed first and set in bold, further out for its larger badge.
+    const chosen = ["==", ["get", "id"], citySelected || ""];
+    map.setLayoutProperty("city-asset-names", "symbol-sort-key", ["case", chosen, -2, ["get", "landmark"], -1, 0]);
+    map.setLayoutProperty("city-asset-names", "text-field", ["case", ["any", chosen, ["get", "landmark"]], ["format", ["get", "title"], { "text-font": ["literal", ["Noto Sans Bold"]], "font-scale": 1.1 }], ["get", "title"]]);
+    map.setLayoutProperty("city-asset-names", "text-radial-offset", ["case", ["any", chosen, ["get", "landmark"]], 1.75, 1.35]);
+  }
+
+  /** Badge size by zoom: small while many share the screen; the landmark and the chosen one larger. */
+  function badgeLayout(selectedId) {
+    const chosen = ["==", ["get", "id"], selectedId || ""];
+    const size = (normal, landmark, selected) => ["case", chosen, selected, ["get", "landmark"], landmark, normal];
+    return {
+      "icon-size": ["interpolate", ["linear"], ["zoom"], 11, size(0.42, 0.7, 0.8), 14, size(0.68, 1, 1.15), 16, size(0.9, 1.25, 1.4)],
+      // The chosen one above all, then the landmark, above the badges that share its place.
+      "symbol-sort-key": ["case", chosen, 2, ["get", "landmark"], 1, 0],
+    };
+  }
+
+  // The city's seals, drawn once per kind of place.
+  const GLYPHS = ["worship", "tomb", "school", "trade", "water", "charity", "other"];
+  /** Image pixels per screen point, so the seals stay sharp on 3x phone screens. */
+  const SEAL_RATIO = 3;
+  /** The seal's diameter at full size, in points, and the room around it for its glow. */
+  const SEAL_SIZE = 26;
+  const SEAL_ROOM = 6;
+  /** Names come up from this zoom; further out only the seals show. */
+  const NAMES_ZOOM = 15;
+  /** Choosing an asset brings the camera at least this close. */
+  const SELECT_ZOOM = 15.5;
+
+  /**
+   * A locked asset: a night-blue disc in a fine gold ring, the kind of place drawn in gold inside
+   * and a small gold lock at its edge (colors.seal). The landmark's ring is doubled.
+   */
+  function sealImage(category, landmark) {
+    const side = SEAL_SIZE + SEAL_ROOM * 2;
     const canvas = document.createElement("canvas");
-    canvas.width = width * PIN_RATIO;
-    canvas.height = height * PIN_RATIO;
+    canvas.width = side * SEAL_RATIO;
+    canvas.height = side * SEAL_RATIO;
     const context = canvas.getContext("2d");
-    context.scale(PIN_RATIO, PIN_RATIO);
-    paint(context);
+    context.scale(SEAL_RATIO, SEAL_RATIO);
+    const middle = side / 2;
+    const r = SEAL_SIZE / 2;
+    const look = colors.seal;
+    // The landmark's seal is ringed once more.
+    if (landmark) {
+      context.beginPath();
+      context.arc(middle, middle, r + 3, 0, Math.PI * 2);
+      context.lineWidth = 1.2;
+      context.strokeStyle = look.halo;
+      context.stroke();
+    }
+    // The disc, lit from the top left, on a soft shadow.
+    context.shadowColor = "rgba(0, 0, 0, " + (DARK ? 0.5 : 0.22) + ")";
+    context.shadowBlur = 4;
+    context.shadowOffsetY = 1.2;
+    context.beginPath();
+    context.arc(middle, middle, r, 0, Math.PI * 2);
+    const face = context.createLinearGradient(middle - r, middle - r, middle + r, middle + r);
+    face.addColorStop(0, look.from);
+    face.addColorStop(1, look.to);
+    context.fillStyle = face;
+    context.fill();
+    context.shadowColor = "transparent";
+    context.lineWidth = landmark ? 1.8 : 1.4;
+    context.strokeStyle = look.ring;
+    context.beginPath();
+    context.arc(middle, middle, r - 0.8, 0, Math.PI * 2);
+    context.stroke();
+    // The icons are drawn in a 32-point box centred on 16,16; their cut-outs take the disc's color.
+    context.save();
+    context.translate(middle - 16, middle - 16);
+    context.fillStyle = look.icon;
+    drawGlyph(context, category, look.to);
+    context.restore();
+    // The lock, small, on the lower right edge.
+    const x = middle + r * 0.7;
+    const y = middle + r * 0.7;
+    context.beginPath();
+    context.arc(x, y, 4.8, 0, Math.PI * 2);
+    context.fillStyle = look.lock;
+    context.fill();
+    context.lineWidth = 1;
+    context.strokeStyle = look.ring;
+    context.stroke();
+    context.beginPath();
+    context.arc(x, y - 0.8, 1.4, Math.PI, 0);
+    context.strokeStyle = look.lockIcon;
+    context.stroke();
+    context.fillStyle = look.lockIcon;
+    context.fillRect(x - 2, y - 0.8, 4, 3);
     return context.getImageData(0, 0, canvas.width, canvas.height);
   }
 
-  /** A drop pin with a white dot; hollow (white with a colored dot) for an approximate place. */
-  function pinImage(filled) {
-    const width = 30;
-    const height = 38 + PIN_SHADOW;
-    return drawImage(width, height, (context) => {
-      const x = width / 2;
-      const top = 4;
-      const r = 11;
-      const tip = height - PIN_SHADOW - 1;
-      context.shadowColor = "rgba(0, 0, 0, 0.28)";
-      context.shadowBlur = 4;
-      context.shadowOffsetY = 1.5;
+  function drawGlyph(context, category, color) {
+    const shape = (points) => {
       context.beginPath();
-      context.moveTo(x, tip);
-      context.bezierCurveTo(x - 4, tip - 7, x - r, top + r + 7, x - r, top + r);
-      context.arc(x, top + r, r, Math.PI, 0);
-      context.bezierCurveTo(x + r, top + r + 7, x + 4, tip - 7, x, tip);
+      points.forEach(([x, y], index) => (index === 0 ? context.moveTo(x, y) : context.lineTo(x, y)));
       context.closePath();
-      context.fillStyle = filled ? colors.province : colors.label;
       context.fill();
-      context.shadowColor = "transparent";
-      context.lineWidth = 2;
-      context.strokeStyle = filled ? colors.label : colors.province;
-      context.stroke();
+    };
+    const disc = (x, y, r, from = 0, to = Math.PI * 2) => {
       context.beginPath();
-      context.arc(x, top + r, 4.2, 0, Math.PI * 2);
-      context.fillStyle = filled ? colors.label : colors.province;
+      context.arc(x, y, r, from, to);
+      context.closePath();
       context.fill();
-    });
+    };
+    if (category === "worship") {
+      // A dome on its drum and a minaret.
+      disc(14.6, 17.6, 5, Math.PI, 0);
+      context.fillRect(9.6, 17.6, 10, 3.6);
+      context.fillRect(14.1, 11, 1, 2);
+      context.fillRect(20.8, 11.2, 1.8, 10);
+      shape([[20.6, 11.4], [21.7, 8.4], [22.8, 11.4]]);
+    } else if (category === "tomb") {
+      // A kümbet: a pointed roof over an eight-sided body, with its door.
+      shape([[11.4, 14.6], [16, 7.6], [20.6, 14.6]]);
+      context.fillRect(12.2, 14.6, 7.6, 7.8);
+      context.fillStyle = color;
+      context.fillRect(11.4, 14.2, 9.2, 1);
+      disc(16, 19.2, 1.5, Math.PI, 0);
+      context.fillRect(14.5, 19.2, 3, 3.2);
+    } else if (category === "school") {
+      // An open book.
+      shape([[9, 11.2], [15.3, 12.6], [15.3, 21.8], [9, 20.4]]);
+      shape([[16.7, 12.6], [23, 11.2], [23, 20.4], [16.7, 21.8]]);
+    } else if (category === "trade") {
+      // A han's front: a wall with a great arched gate.
+      context.fillRect(9.2, 11.5, 13.6, 10.7);
+      for (const x of [9.2, 12.8, 16.4, 20]) context.fillRect(x, 9.8, 2.8, 1.8);
+      context.fillStyle = color;
+      disc(16, 17, 2.6, Math.PI, 0);
+      context.fillRect(13.4, 17, 5.2, 5.2);
+    } else if (category === "water") {
+      // A drop.
+      context.beginPath();
+      context.moveTo(16, 8.6);
+      context.bezierCurveTo(16, 8.6, 21.6, 14.4, 21.6, 17.6);
+      context.arc(16, 17.6, 5.6, 0, Math.PI);
+      context.bezierCurveTo(10.4, 14.4, 16, 8.6, 16, 8.6);
+      context.closePath();
+      context.fill();
+    } else if (category === "charity") {
+      // A külliye: a large dome and a small one on a shared base.
+      disc(18.2, 17.4, 4.6, Math.PI, 0);
+      disc(11.8, 18.4, 3.2, Math.PI, 0);
+      context.fillRect(8.4, 17.4, 15.2, 4.4);
+      context.fillRect(17.7, 11, 1, 2.2);
+    } else {
+      // The eight-pointed star of the Hayrat design.
+      context.save();
+      context.translate(16, 16);
+      for (const turn of [0, Math.PI / 4]) {
+        context.rotate(turn);
+        context.fillRect(-4.6, -4.6, 9.2, 9.2);
+      }
+      context.restore();
+    }
   }
 
-  /** A rounded chip with a hairline edge; stretched around each name. */
-  function chipImage() {
-    return drawImage(CHIP_SIZE, CHIP_SIZE, (context) => {
-      const inset = 0.75;
-      const size = CHIP_SIZE - inset * 2;
-      const r = CHIP_RADIUS - inset;
-      const end = inset + size;
-      // By hand: roundRect is missing on older Android WebViews.
-      context.beginPath();
-      context.moveTo(inset + r, inset);
-      context.arcTo(end, inset, end, end, r);
-      context.arcTo(end, end, inset, end, r);
-      context.arcTo(inset, end, inset, inset, r);
-      context.arcTo(inset, inset, end, inset, r);
-      context.closePath();
-      context.fillStyle = colors.label;
-      context.globalAlpha = 0.94;
-      context.fill();
-      context.globalAlpha = 1;
-      context.lineWidth = 1;
-      context.strokeStyle = colors.border;
-      context.stroke();
-    });
-  }
-
-  /** Room for the names around the framed assets, inside the screen's own panels. */
+  /** Room around the framed assets, inside the screen's own panels. */
   function cityPadding() {
     return { top: lastPadding.top + 24, right: lastPadding.right + 24, bottom: lastPadding.bottom + 24, left: lastPadding.left + 24 };
   }

@@ -1,5 +1,6 @@
 import type { StyleProp, ViewStyle } from "react-native";
 
+import type { MapCategory } from "./asset-category";
 import type { LngLatBounds } from "./dense-area";
 
 export interface MapPadding {
@@ -56,9 +57,9 @@ export interface MapCityAsset {
   title: string;
   lat: number;
   lng: number;
-  /** False for coordinates nobody has checked on site; drawn hollow. */
-  verified: boolean;
-  /** The city's best-known asset, where the camera opens: drawn larger, its name always shown. */
+  /** The kind of place: the icon on its seal. */
+  category: MapCategory;
+  /** The city's best-known asset, where the camera opens: drawn larger, its name shown first. */
   landmark?: boolean;
 }
 
