@@ -61,18 +61,22 @@ export default function TabLayout() {
           options={{
             title,
             headerShown: !ownHeader,
-            tabBarIcon: ({ color, focused }) =>
+            tabBarIcon: ({ focused }) =>
               name === "camera" ? (
                 <View style={[styles.cameraButton, { backgroundColor: c.primary }]}>
                   <Ionicons name={focused ? iconFocused : icon} size={TAB_ICON_SIZE} color={c.onPrimary} />
                 </View>
               ) : (
-                <Ionicons name={focused ? iconFocused : icon} size={TAB_ICON_SIZE} color={color} />
+                <Ionicons name={focused ? iconFocused : icon} size={TAB_ICON_SIZE} color={focused ? c.primary : c.textSecondary} />
               ),
           }}
         />
       ))}
-      <Tabs.Screen name="monuments" options={{ href: null, headerShown: false, title: "Eserler" }} />
+      {/* No tab button, but still a tab: since expo-router 58, `href: null` hides the screen and redirects away from it. */}
+      <Tabs.Screen
+        name="monuments"
+        options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: "Eserler" }}
+      />
     </Tabs>
   );
 }
