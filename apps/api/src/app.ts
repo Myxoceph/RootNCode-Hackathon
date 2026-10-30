@@ -1,6 +1,8 @@
 import cors from "@fastify/cors";
 import Fastify, { type FastifyInstance, type FastifyServerOptions } from "fastify";
 import type { PrismaClient } from "./db/prisma.ts";
+import { createAdminRepository } from "./modules/admin/admin.repository.ts";
+import { adminRoutes } from "./modules/admin/admin.routes.ts";
 import { assetsRoutes } from "./modules/assets/assets.routes.ts";
 import type { ChatModel } from "./modules/assistant/assistant.model.ts";
 import { createAssistantRepository } from "./modules/assistant/assistant.repository.ts";
@@ -94,6 +96,7 @@ export function buildApp({
   const communityRepository = createCommunityRepository(prisma);
   app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility, photoUrls });
   app.register(moderationRoutes, { repository: communityRepository, photoUrls });
+  app.register(adminRoutes, { repository: createAdminRepository(prisma), community: communityRepository });
   app.register(photosRoutes, { repository: communityRepository, visibility: assetVisibility, urls: photoUrls });
   app.register(assistantRoutes, { model: assistantModel, repository: createAssistantRepository(prisma, assetVisibility) });
 

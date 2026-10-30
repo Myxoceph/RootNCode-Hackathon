@@ -21,6 +21,7 @@ import type { CommunityRepository, ReviewDecision } from "./community.repository
 
 const QueueQuerySchema = z.object({
   status: ContributionStatusSchema.default("pending"),
+  kind: z.enum(["notes", "photos"]).optional().describe("notes: ipucu, anı, düzeltme; photos: fotoğraf önerileri; verilmezse hepsi"),
   lang: LangSchema.optional(),
   limit: z.coerce.number().int().min(1).max(100).default(50),
   offset: z.coerce.number().int().min(0).default(0),
