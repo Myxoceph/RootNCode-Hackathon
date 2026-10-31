@@ -7,6 +7,15 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-01 · Konya'da 7 eserin konumu
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import`.
+
+Değişenler:
+- Konya'da konumu olmayan 17 eserden 7'si noktasını aldı (kitaptaki tarif ve OpenStreetMap ile): 3'ü yapının kendisi ya da hemen önü (`osm`), 4'ü kitapta yanında olduğu yazan yapının noktası (`osm_area`, haritada yaklaşık, ziyarette 200 m kuralı yok). Bu eserlere artık toplu taşıma rotası da çıkıyor.
+
 ## 2026-11-01 · Konya'da toplu taşıma rotası (OpenTripPlanner, sözleşme 0.3.14)
 
 Kimler: **demo yığınını çalıştıran** (Ahmet), **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md) 11. madde)
