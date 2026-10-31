@@ -52,6 +52,8 @@ export type MapPageEvent =
   | { type: "select"; id: string | null }
   | { type: "province"; plate: number }
   | { type: "leaveCity" }
+  /** The camera has landed on the chosen city, its flight over. */
+  | { type: "cityLanded"; plate: number }
   | { type: "error"; message: string };
 
 /** Messages the app sends to the map page. */
@@ -672,6 +674,10 @@ function start() {
         setCityAssetsShown(true);
         cityLanded = true;
       }, motion ? FLY_MS * 0.75 : 0);
+      // The flight over, the screen brings in what goes with the city (its cards).
+      setTimeout(() => {
+        if (cityPlate === plate) post({ type: "cityLanded", plate });
+      }, motion ? FLY_MS : 0);
     } else if (turkeyView) {
       // Exactly the view the map opened on, whatever padding choosing an asset left on the camera.
       map.flyTo({ center: turkeyView.center, zoom: turkeyView.zoom, padding: { top: 0, right: 0, bottom: 0, left: 0 }, duration: options.duration, essential: true });
