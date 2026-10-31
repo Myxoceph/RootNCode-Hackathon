@@ -9,6 +9,7 @@ import {
   AdminAchievementSchema,
   AdminAchievementsResponseSchema,
   MyAchievementsResponseSchema,
+  MyVisitsResponseSchema,
   VisitResponseSchema,
 } from "@vagabonds/contracts";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
@@ -92,6 +93,21 @@ describe.skipIf(!DATABASE_URL)("achievements (PostgreSQL)", () => {
     expect(mine.totalPoints).toBe(10);
     expect(mine.items.find((a) => a.code === `${unlocated.city_code}-ilk-adim`)?.earnedAt).not.toBeNull();
     expect(mine.items.find((a) => a.code === "uc-sehir")).toMatchObject({ earnedAt: null, progress: { current: 1, target: 3 } });
+  });
+
+  it("lists my visits newest first, with how each was checked", async () => {
+    const token = await createUser();
+    const mine = () => app.inject({ method: "GET", url: "/me/visits", headers: auth(token) });
+    expect((await app.inject({ method: "GET", url: "/me/visits" })).statusCode).toBe(401);
+    expect(MyVisitsResponseSchema.parse((await mine()).json()).items).toEqual([]);
+
+    await visit(token, located.id, { lat: located.lat, lng: located.lng });
+    await visit(token, unlocated.id);
+    const body = MyVisitsResponseSchema.parse((await mine()).json());
+    expect(body.items.map(({ assetId, verified, proven }) => ({ assetId, verified, proven }))).toEqual([
+      { assetId: unlocated.id, verified: false, proven: false },
+      { assetId: located.id, verified: true, proven: false },
+    ]);
   });
 
   it("does not position-check an asset whose point is only its neighbourhood's centre", async () => {
