@@ -67,6 +67,23 @@ services:
       seed:
         condition: service_completed_successfully
 
+  # Konya transit pilot: OpenTripPlanner serves the graph deploy/otp/prepare.sh built (docs/deploy.md).
+  otp:
+    image: opentripplanner/opentripplanner:2.10.0
+    restart: unless-stopped
+    command: ["--load", "--serve"]
+    environment:
+      JAVA_TOOL_OPTIONS: -Xmx2g
+    volumes:
+      - ./otp/data:/var/opentripplanner:ro
+    # The image has no curl; the port opens once the graph is loaded.
+    healthcheck:
+      test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/127.0.0.1/8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+
   web:
     build:
       context: ..
