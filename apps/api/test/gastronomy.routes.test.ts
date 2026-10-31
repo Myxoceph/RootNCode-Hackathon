@@ -63,7 +63,8 @@ describe.skipIf(!DATABASE_URL)("gastronomy routes (PostgreSQL)", () => {
   });
 
   it("returns an empty list for a city without dishes and 404 for an unknown city", async () => {
-    const empty = CityDishesResponseSchema.parse((await get("/cities/konya/dishes")).json());
+    // A city in the code list that has no dishes in the dataset yet.
+    const empty = CityDishesResponseSchema.parse((await get("/cities/izmir/dishes")).json());
     expect(empty.dishes).toEqual([]);
     expect((await get("/cities/atlantis/dishes", 404)).json().error.code).toBe("CITY_NOT_FOUND");
     expect((await get("/cities/Bursa1/dishes", 400)).json().error.code).toBe("INVALID_QUERY");

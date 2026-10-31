@@ -7,6 +7,16 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-01 · Konya'nın yöresel lezzetleri
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import`.
+
+Değişenler:
+- `data/sehirler/konya.json`: Türk Patent coğrafi işaret sicilinden 10 lezzet (Etliekmek, Fırın Kebabı, Tirit, Etli Düğün Pilavı, Bamya Çorbası, Güneyik Salatası, Bıçakarası, Höşmerim, Sille Kurabiyesi, Akşehir Peynir Baklavası). Açıklamalar tescil belgesinin "Ürünün Tanımı" bölümünden.
+- `GET /cities/konya/dishes` artık boş değil; Konya rotalarında öğle yemeği ve tatlı durakları çıkıyor, asistan Konya'da ne yeneceğini söyleyebiliyor.
+
 ## 2026-11-01 · Güvenlik turu: yerel veritabanı yalnızca bu bilgisayarda, Fastify 5.12.7
 
 Kimler: **herkes** (yerel PostgreSQL), **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
