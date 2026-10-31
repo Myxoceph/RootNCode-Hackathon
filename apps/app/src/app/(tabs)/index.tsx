@@ -9,6 +9,7 @@ import { BackHandler, Platform, Pressable, StyleSheet, View } from "react-native
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CityAssetCards } from "@/components/city-asset-cards";
+import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapSearch } from "@/components/map-search";
 import { CITY_LANDMARKS, useCities, useCityMapAssets } from "@/data";
 import { useAssistantAvailable } from "@/data/assistant";
@@ -18,8 +19,8 @@ import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, useMapS
 
 /** Room kept free for the search bar when framing Turkey. */
 const HEADER_SPACE = 72;
-/** Room kept free for the search bar over a city, and for its cards. */
-const CITY_TOP_SPACE = 72;
+/** Room kept free for the search bar over a city and the chosen asset's buttons under it, and for its cards. */
+const CITY_TOP_SPACE = 118;
 const CITY_CARDS_SPACE = 112;
 const NO_PINS: MapPin[] = [];
 
@@ -198,6 +199,9 @@ export default function MapScreen() {
     return () => subscription.remove();
   }, [selectedPlate]);
 
+  // The asset chosen in the open city, for the buttons under the search bar.
+  const chosen = selectedCity ? (located.find(({ asset }) => asset.id === chosenAsset)?.asset ?? null) : null;
+
   // Only what went wrong is said over the map; the rest is in the cards and the search.
   const notice = mapError
     ? { message: `Harita çizilemedi: ${mapError}` }
@@ -243,6 +247,7 @@ export default function MapScreen() {
         onPickAsset={pickAsset}
         trailing={assistant === true ? <AssistantButton /> : null}
         notice={notice}
+        below={chosen ? <MapAssetActions asset={chosen} /> : null}
       />
     </View>
   );

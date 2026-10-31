@@ -29,6 +29,8 @@ interface MapSearchProps {
   trailing?: React.ReactNode;
   /** Something went wrong (the map, the city's assets): said under the field, with a retry. */
   notice?: { message: string; onRetry?: () => void } | null;
+  /** Shown right under the field while the search is closed: the chosen asset's buttons. */
+  below?: React.ReactNode;
 }
 
 /**
@@ -40,7 +42,7 @@ interface MapSearchProps {
  * For screen readers this is also the map in words: the cities and assets are buttons in the list,
  * and how many were found is said as the list changes.
  */
-export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, trailing, notice }: MapSearchProps) {
+export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, trailing, notice, below }: MapSearchProps) {
   const { colors: c } = useTheme();
   const { textScale } = useUi();
   const input = useRef<ComponentRef<typeof TextInput>>(null);
@@ -152,6 +154,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
           {!open && trailing}
         </View>
 
+        {!open && below}
         {open ? (
           <View style={[styles.panel, shadow, { backgroundColor: c.surface }]}>
             <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={styles.panelContent}>
