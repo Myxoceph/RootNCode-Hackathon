@@ -138,6 +138,8 @@ export function toAssetSummary(
     summary: pick(record.summary_tr, record.summary_en, lang),
     datingDisplay: pick(record.dating_display_tr, record.dating_display_en, lang),
     cover: cover ? toMedia(cover, context) : null,
+    parentId: record.parent_id && record.asset && context.statuses.includes(record.asset.status) ? record.parent_id : null,
+    prominence: Object.values(record._count).reduce((sum, count) => sum + count, 0),
   };
 }
 
@@ -257,7 +259,22 @@ export function toAssetDetail(
   const founderName = nonEmpty(record.founder_name);
 
   return {
-    ...toAssetSummary(record, cover, context),
+    // The detail has the lists the summary only counts.
+    ...toAssetSummary(
+      {
+        ...record,
+        _count: {
+          asset_section: record.asset_section.length,
+          asset_highlight: record.asset_highlight.length,
+          asset_legend: record.asset_legend.length,
+          asset_person: record.asset_person.length,
+          timeline_event: record.timeline_event.length,
+          inscription: record.inscription.length,
+        },
+      },
+      cover,
+      context,
+    ),
     alternateNames,
     secondaryTypes: secondaryTypes.map((t) => label(t, lang)),
     tags: record.tags,

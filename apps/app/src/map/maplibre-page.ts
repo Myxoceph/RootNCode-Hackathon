@@ -40,8 +40,10 @@ export interface MapPageColors {
   province: string;
   /** Every other province border, quiet. */
   border: string;
-  /** The city map's seals: the disc (a gradient), its ring, its icon and its lock. */
-  seal: { from: string; to: string; ring: string; icon: string; lock: string; lockIcon: string; halo: string };
+  /** The city map's seals: the disc (a gradient), its ring, its icon, its lock and the lock's outline, and the chosen one's halo. */
+  seal: { from: string; to: string; ring: string; icon: string; lock: string; lockEdge: string; halo: string };
+  /** The fog bank each locked asset hides in: where it faces the sky, its body, and where it turns away. */
+  cloud: { top: string; middle: string; bottom: string };
 }
 
 /** Messages the map page posts to the app. */
@@ -49,6 +51,7 @@ export type MapPageEvent =
   | { type: "ready" }
   | { type: "select"; id: string | null }
   | { type: "province"; plate: number }
+  | { type: "leaveCity" }
   | { type: "error"; message: string };
 
 /** Messages the app sends to the map page. */
@@ -280,19 +283,12 @@ function start() {
       "clusters",
     );
 
-    // The chosen city's fog: a textured veil over the whole map, under the borders and the assets.
-    map.addImage("fog-texture", fogTexture());
-    map.addSource("veil", { type: "geojson", data: { type: "Feature", geometry: { type: "Polygon", coordinates: [[[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]]] } } });
-    map.addLayer(
-      { id: "veil", type: "fill", source: "veil", paint: { "fill-pattern": "fog-texture", "fill-opacity": 0, "fill-opacity-transition": { duration: 1200 } } },
-      "province-borders",
-    );
     // Invisible, only to find the tapped province.
     map.addLayer(
       { id: "province-hit", type: "fill", source: "provinces", filter: ["in", ["get", "plate"], ["literal", []]], paint: { "fill-color": colors.province, "fill-opacity": 0 } },
       "province-borders",
     );
-    // The chosen city's assets are still locked: each sits in its own thick cloud, sealed with
+    // The chosen city's assets are still locked: each hides in the fog, sealed with
     // the icon of its kind and a small lock; the names stand beside them once the streets are
     // close, where they fit. The landmark's seal is gold and larger; the chosen one pulses.
     map.addSource("city-assets", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
@@ -300,27 +296,73 @@ function start() {
       map.addImage("seal-" + category, sealImage(category, false), { pixelRatio: SEAL_RATIO });
       map.addImage("seal-" + category + "-landmark", sealImage(category, true), { pixelRatio: SEAL_RATIO });
     }
-    // The fog gathers where the assets are: a cloud around each, thickest where many crowd.
+    // The city's fog, in two parts drawn by the map itself, so it stays fixed to the ground as the
+    // map moves. Its own copy of the assets, cut into tiles no smaller than zoom 12's (about 10 km)
+    // with a wide margin: the map draws a point only from the tiles on screen, and up close a fog
+    // bank reaches far past its asset, so with street-sized tiles it would vanish the moment its
+    // asset's tile left the screen.
+    map.addSource("city-fog", { type: "geojson", data: { type: "FeatureCollection", features: [] }, maxzoom: 12, buffer: 512 });
+    // A light haze joins the assets into one fog over the quarters where they crowd...
     map.addLayer({
-      id: "city-fog",
+      id: "city-haze",
       type: "heatmap",
-      source: "city-assets",
+      source: "city-fog",
       paint: {
-        // About 80 metres around each asset, whatever the zoom: a cloud each, not one blanket.
-        "heatmap-radius": ["interpolate", ["exponential", 2], ["zoom"], 10, 3, 16, 200],
-        // On light land a white cloud needs more weight to show.
-        "heatmap-intensity": ["interpolate", ["linear"], ["zoom"], 10, DARK ? 0.3 : 0.45, 16, DARK ? 0.55 : 0.8],
-        "heatmap-color": fogRamp(),
+        // Wide from afar, so it covers whole districts; closer in it grows a little faster each level,
+        // never by a jump, up to where it gets costly to draw.
+        "heatmap-radius": ["interpolate", ["exponential", 2], ["zoom"], ...HAZE_RADIUS.flat()],
+        // As the map zooms out its assets close up on screen faster than the haze shrinks, so more of
+        // them pile onto each spot; each weighs that much less, and the haze stays as thick at every
+        // zoom instead of swelling into a glare.
+        "heatmap-intensity": ["interpolate", ["exponential", 2], ["zoom"], ...hazeWeights().flat()],
+        "heatmap-color": hazeRamp(),
         "heatmap-opacity": 0,
-        "heatmap-opacity-transition": { duration: 1400 },
+        "heatmap-opacity-transition": { duration: 1200 },
+      },
+    });
+    // ...and each locked asset hides in a thick bank of its own, standing out in the haze.
+    for (let shape = 0; shape < CLOUD_SHAPES.length; shape++) map.addImage("cloud-" + shape, cloudImage(CLOUD_SHAPES[shape]), { pixelRatio: CLOUD_RATIO });
+    map.addLayer({
+      id: "city-clouds",
+      type: "symbol",
+      source: "city-fog",
+      layout: {
+        "icon-image": ["concat", "cloud-", ["to-string", ["get", "cloud"]]],
+        "icon-rotate": ["get", "turn"],
+        "icon-rotation-alignment": "map",
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        // The bank keeps its ground: it grows and shrinks exactly as the map does, so zooming either
+        // way never thins it, piles it into a glare or changes it by a jump.
+        "icon-size": ["interpolate", ["exponential", 2], ["zoom"], 10, BANK_SIZE / 32, 20, BANK_SIZE * 32],
+      },
+      paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 900 } },
+    });
+    // Further out the seals turn into gold dots, and the dots thin out (see dotOpacity).
+    map.addLayer({
+      id: "city-asset-dots",
+      type: "circle",
+      source: "city-assets",
+      maxzoom: SEALS_ZOOM,
+      paint: {
+        // A seal too small for its icon: a gold heart in a broad navy rim.
+        "circle-color": colors.seal.lock,
+        "circle-stroke-color": colors.seal.to,
+        "circle-stroke-width": ["interpolate", ["linear"], ["zoom"], 7, 1.2, DOTS_ZOOM, DOT_RIM],
+        "circle-opacity": 0,
+        "circle-stroke-opacity": 0,
+        "circle-opacity-transition": { duration: 700 },
+        "circle-stroke-opacity-transition": { duration: 700 },
       },
     });
     map.addLayer({
       id: "city-asset-halo",
       type: "circle",
       source: "city-assets",
+      minzoom: DOTS_ZOOM,
       filter: ["==", ["get", "id"], ""],
-      paint: { "circle-radius": haloRadius(1), "circle-color": colors.seal.halo, "circle-opacity": 0, "circle-blur": 0.35 },
+      // The chosen seal's outer ring, beating (see pulse).
+      paint: { "circle-radius": haloRadius(1), "circle-color": "rgba(0, 0, 0, 0)", "circle-stroke-color": colors.seal.halo, "circle-stroke-width": 1.6, "circle-stroke-opacity": 0 },
     });
     // Below the badges, so a badge stays whole where a name runs under it.
     map.addLayer({
@@ -392,11 +434,19 @@ function start() {
         reportError("tap", error);
       }
     });
+    /** Of the features near a tap, the one closest to it: dots far out sit almost on each other. */
+    function nearest(point, features) {
+      const away = (feature) => map.project(feature.geometry.coordinates).dist(point);
+      return features.reduce((best, feature) => (!best || away(feature) < away(best) ? feature : best), undefined);
+    }
     function onTap(event) {
       // A finger is wider than a pixel.
       const around = [[event.point.x - 12, event.point.y - 12], [event.point.x + 12, event.point.y + 12]];
       if (cityPlate !== null) {
-        const asset = map.queryRenderedFeatures(around, { layers: ["city-asset-badges"] })[0];
+        const zoom = map.getZoom();
+        const asset = zoom >= (SEALS_ZOOM + DOTS_ZOOM) / 2
+          ? map.queryRenderedFeatures(around, { layers: ["city-asset-badges"] })[0]
+          : nearest(event.point, map.queryRenderedFeatures(around, { layers: ["city-asset-dots"] }).filter((dot) => dot.properties.id === citySelected || dot.properties.tier >= tierShownAt(zoom)));
         if (asset) post({ type: "select", id: asset.properties.id });
         return;
       }
@@ -423,10 +473,20 @@ function start() {
         post({ type: "select", id: null });
       }
     }
-    for (const layer of ["clusters", "pins", "province-hit", "province-names", "city-asset-badges"]) {
+    for (const layer of ["clusters", "pins", "province-hit", "province-names", "city-asset-badges", "city-asset-dots"]) {
       map.on("mouseenter", layer, () => (map.getCanvas().style.cursor = "pointer"));
       map.on("mouseleave", layer, () => (map.getCanvas().style.cursor = ""));
     }
+
+    // Let go of near the Turkey view, the city lets go too: the screen goes back to Turkey.
+    let movedByHand = false;
+    map.on("movestart", (event) => (movedByHand = Boolean(event.originalEvent)));
+    map.on("moveend", (event) => {
+      if (!(movedByHand || event.originalEvent) || cityPlate === null || !cityLanded || leaving) return;
+      if (map.getZoom() >= outerZoom() + LEAVE_ROOM) return;
+      leaving = true;
+      post({ type: "leaveCity" });
+    });
 
     loaded = true;
     pending.forEach((command) => window.vagabondsMap.receive(command));
@@ -530,7 +590,7 @@ function start() {
       map.fitBounds(TURKEY_BOUNDS, { padding: lastPadding, duration: 0 });
       fitted = true;
       const view = map.getBounds();
-      turkeyView = { zoom: map.getZoom(), west: view.getWest(), south: view.getSouth(), east: view.getEast(), north: view.getNorth() };
+      turkeyView = { zoom: map.getZoom(), center: map.getCenter(), west: view.getWest(), south: view.getSouth(), east: view.getEast(), north: view.getNorth() };
     }
     if (provinces.reveal) startIntro();
     else {
@@ -578,25 +638,30 @@ function start() {
    */
   function showCity(city) {
     const plate = city ? city.plate : null;
-    map.getSource("city-assets").setData({
+    const assets = {
       type: "FeatureCollection",
       features: city
         ? city.assets.map((asset) => ({
             type: "Feature",
             geometry: { type: "Point", coordinates: [asset.lng, asset.lat] },
-            properties: { id: asset.id, title: asset.title, category: asset.category, landmark: Boolean(asset.landmark) },
+            properties: { id: asset.id, title: asset.title, category: asset.category, landmark: Boolean(asset.landmark), tier: asset.tier, cloud: cloudOf(asset.id), turn: cloudTurn(asset.id) },
           }))
         : [],
-    });
+    };
+    map.getSource("city-assets").setData(assets);
+    map.getSource("city-fog").setData(assets);
     cityAssets = city ? city.assets : [];
     if (plate === cityPlate) return;
     cityPlate = plate;
     cityLanded = false;
+    leaving = false;
     const shown = plate !== null;
     showCitySelection();
-    // Lighter over the open streets, so the clouds over the assets stand out.
-    map.setPaintProperty("veil", "fill-opacity", shown ? (DARK ? 0.6 : 0.45) : 0);
-    map.setPaintProperty("province-names", "text-opacity", !shown && labelsRevealed ? 1 : 0);
+    // Lighter over the open streets, so the clouds over the assets stand out; it thins as the map
+    // zooms out and is gone, the province names back, by the Turkey view.
+    if (shown) wholeZoom = map.cameraForBounds(provinceBounds(plate), { padding: cityPadding() }).zoom;
+    const names = labelsRevealed ? 1 : 0;
+    map.setPaintProperty("province-names", "text-opacity", shown ? ["interpolate", ["linear"], ["zoom"], outerZoom() + LEAVE_ROOM, names, outerZoom() + LEAVE_ROOM + 0.75, 0] : names);
     setCityAssetsShown(false);
     const options = { padding: cityPadding(), duration: motion ? FLY_MS : 0, linear: false, essential: true };
     if (shown) {
@@ -608,40 +673,123 @@ function start() {
         cityLanded = true;
       }, motion ? FLY_MS * 0.75 : 0);
     } else if (turkeyView) {
-      map.fitBounds([[turkeyView.west, turkeyView.south], [turkeyView.east, turkeyView.north]], { ...options, padding: 0 });
+      // Exactly the view the map opened on, whatever padding choosing an asset left on the camera.
+      map.flyTo({ center: turkeyView.center, zoom: turkeyView.zoom, padding: { top: 0, right: 0, bottom: 0, left: 0 }, duration: options.duration, essential: true });
     }
   }
 
   function setCityAssetsShown(shown) {
-    const on = shown ? 1 : 0;
-    map.setPaintProperty("city-asset-names", "text-opacity", on);
-    map.setPaintProperty("city-asset-badges", "icon-opacity", on);
-    map.setPaintProperty("city-fog", "heatmap-opacity", shown ? 1 : 0);
+    citySealsShown = shown;
+    map.setPaintProperty("city-asset-names", "text-opacity", shown ? 1 : 0);
+    map.setPaintProperty("city-asset-badges", "icon-opacity", shown ? shownFrom(DOTS_ZOOM, SEALS_ZOOM, 1) : 0);
+    // The haze thins with the dots and is gone by the Turkey view.
+    map.setPaintProperty("city-haze", "heatmap-opacity", shown ? shownFrom(outerZoom() + LEAVE_ROOM, wholeZoom, 1) : 0);
+    // The banks thin out slowly around the seals' turn into dots, so the fog does not jump.
+    map.setPaintProperty("city-clouds", "icon-opacity", shown ? shownFrom(DOTS_ZOOM - 1, SEALS_ZOOM + 0.6, DARK ? 0.7 : 0.88) : 0);
+    showDots();
     haloShown = shown;
     pulse();
   }
 
-  /** The fog's color by how many assets crowd a spot: clear, then thicker and lighter. */
-  function fogRamp() {
-    const fog = rgb(colors.fog);
-    // On the dark map the fog is a pale mist, so it shows against the night.
-    const light = DARK ? mix(fog, rgb(colors.labelText), 0.3) : mix(fog, rgb(colors.label), 0.3);
-    const rgba = (c, a) => "rgba(" + c.map(Math.round).join(",") + "," + a + ")";
-    return ["interpolate", ["linear"], ["heatmap-density"], 0, rgba(fog, 0), 0.12, rgba(mix(fog, light, 0.3), 0.3), 0.45, rgba(mix(fog, light, 0.6), 0.6), 1, rgba(light, 0.85)];
+  // Zooming out of a city: from SEALS_ZOOM out the seals turn into dots, every one of them until
+  // the whole province is in view, so it shows where all its assets are. Further out the dots thin
+  // out, the least known first (MapCityAsset.tier), and the fog lifts; by the Turkey view the last
+  // dots are gone, and let go of there, the city closes.
+  /**
+   * Seals from here in, dots from DOTS_ZOOM out. The seals shrink to the dots' size by DOTS_ZOOM,
+   * so in the short step between them one turns into the other in place.
+   */
+  const SEALS_ZOOM = 12.4;
+  const DOTS_ZOOM = 12;
+  /** The dots' navy rim at DOTS_ZOOM, in points. */
+  const DOT_RIM = 2;
+  /** Above the Turkey view, in zoom levels: the last dots and the fog are gone, and letting go leaves. */
+  const LEAVE_ROOM = 2.25;
+  /** However close the whole province comes to the Turkey view, the dots get this many zoom levels to thin out. */
+  const MIN_THINNING = 0.8;
+  /** The zoom that frames the open city's whole province. */
+  let wholeZoom = DOTS_ZOOM;
+  let citySealsShown = false;
+  /** Set once the map has asked the screen to leave the city, until it has. */
+  let leaving = false;
+
+  /** The Turkey view's zoom; a phone's when the map never framed Turkey. */
+  function outerZoom() {
+    return turkeyView ? turkeyView.zoom : 5;
   }
 
+  /** 0 at from and further out, value at to and in. */
+  function shownFrom(from, to, value) {
+    return ["interpolate", ["linear"], ["zoom"], from, 0, Math.max(to, from + 0.01), value];
+  }
+
+  /**
+   * Between the whole province and the Turkey view the dots thin out in four even steps: the
+   * zoom from which all of a tier's dots show (tier 0 at the whole province), and how far below
+   * it they are gone.
+   */
+  function thinning() {
+    const last = outerZoom() + LEAVE_ROOM;
+    const whole = Math.min(Math.max(wholeZoom, last + MIN_THINNING), DOTS_ZOOM);
+    const step = (whole - last) / 4;
+    return { last, step, zooms: [0, 1, 2, 3].map((tier) => whole - tier * step) };
+  }
+
+  /** The lowest tier whose dots show at a zoom: they are the ones a tap may choose. */
+  function tierShownAt(zoom) {
+    const { step, zooms } = thinning();
+    for (let tier = 0; tier < zooms.length; tier++) if (zoom >= zooms[tier] - step / 2) return tier;
+    return Infinity;
+  }
+
+  /**
+   * The dots' opacity by zoom: all of them down to the whole province, then each tier fades out
+   * over one step, tier 3 down to the Turkey view. The chosen place stays as long as the best
+   * known. Under the seals the dots stay whole: a seal fading over its dot turns into it, with
+   * no moment where both show through.
+   */
+  function dotOpacity() {
+    const tier = ["case", ["==", ["get", "id"], citySelected || ""], 3, ["get", "tier"]];
+    const from = (lowest) => ["case", [">=", tier, lowest], 1, 0];
+    const { last, zooms } = thinning();
+    // From the Turkey view in, each step brings one more tier: 3, then 2, 1 and 0.
+    const stops = [[last, 0], ...[3, 2, 1, 0].map((lowest) => [zooms[lowest], from(lowest)]), [DOTS_ZOOM, 1], [SEALS_ZOOM, 1]];
+    // Stops must climb; a province as large as the screen folds its last ones together.
+    const climbing = stops.filter(([zoom], i) => stops.slice(0, i).every(([before]) => before < zoom));
+    return ["interpolate", ["linear"], ["zoom"], ...climbing.flat()];
+  }
+
+  function showDots() {
+    const opacity = citySealsShown ? dotOpacity() : 0;
+    map.setPaintProperty("city-asset-dots", "circle-opacity", opacity);
+    map.setPaintProperty("city-asset-dots", "circle-stroke-opacity", opacity);
+    // At DOTS_ZOOM each dot is as wide as its seal there (badgeLayout), rim and all; the landmark and the chosen one larger.
+    const chosen = ["==", ["get", "id"], citySelected || ""];
+    const heart = (sizes) => ["case", chosen, sizes.chosen, ["get", "landmark"], sizes.landmark, sizes.normal];
+    const atDots = Object.fromEntries(Object.entries(SEALS_AT_DOTS).map(([kind, size]) => [kind, (SEAL_SIZE * size) / 2 - DOT_RIM]));
+    map.setPaintProperty("city-asset-dots", "circle-radius", ["interpolate", ["linear"], ["zoom"], 7, heart({ chosen: 2.6, landmark: 2.2, normal: 1.6 }), DOTS_ZOOM, heart(atDots)]);
+    map.setLayoutProperty("city-asset-dots", "circle-sort-key", ["case", chosen, 2, ["get", "landmark"], 1, [">=", ["get", "tier"], 3], 0.5, 0]);
+  }
+
+  /**
+   * The chosen seal's outer ring, in points from its middle, by zoom: where the landmark's second
+   * ring is drawn in its image (sealImage), at the chosen seal's size (badgeLayout), so on the
+   * landmark it lies over the ring already there. A circle's stroke is drawn outside its radius.
+   */
   function haloRadius(scale) {
-    return ["interpolate", ["linear"], ["zoom"], 12, 15 * scale, 16, 26 * scale];
+    const inner = (SEAL_SIZE / 2 + LANDMARK_RING - 0.8) * scale;
+    return ["interpolate", ["linear"], ["zoom"], DOTS_ZOOM, inner * CHOSEN_SIZES[0], 14, inner * CHOSEN_SIZES[1], 16, inner * CHOSEN_SIZES[2]];
   }
 
-  /** The chosen seal's ring widens and fades, over and over; still when "Hareketi azalt" is on. */
+  /** The chosen seal's outer navy ring beats gently, thicker and back; still when "Hareketi azalt" is on. */
   let haloShown = false;
   let pulsing = false;
   const SEAL_PULSE_MS = 1800;
   function pulse() {
     if (!haloShown || !motion) {
-      map.setPaintProperty("city-asset-halo", "circle-radius", haloRadius(1.15));
-      map.setPaintProperty("city-asset-halo", "circle-opacity", haloShown ? 0.3 : 0);
+      map.setPaintProperty("city-asset-halo", "circle-radius", haloRadius(1));
+      map.setPaintProperty("city-asset-halo", "circle-stroke-width", 2);
+      map.setPaintProperty("city-asset-halo", "circle-stroke-opacity", haloShown ? shownFrom(DOTS_ZOOM, SEALS_ZOOM, 1) : 0);
       return;
     }
     if (pulsing) return;
@@ -652,9 +800,11 @@ function start() {
         pulse();
         return;
       }
-      const t = (now % SEAL_PULSE_MS) / SEAL_PULSE_MS;
-      map.setPaintProperty("city-asset-halo", "circle-radius", haloRadius(1 + 0.55 * t));
-      map.setPaintProperty("city-asset-halo", "circle-opacity", 0.45 * (1 - t));
+      const beat = 0.5 - 0.5 * Math.cos(((now % SEAL_PULSE_MS) / SEAL_PULSE_MS) * Math.PI * 2);
+      map.setPaintProperty("city-asset-halo", "circle-radius", haloRadius(1 + 0.04 * beat));
+      map.setPaintProperty("city-asset-halo", "circle-stroke-width", 1.4 + 1.6 * beat);
+      // It goes with the seal as the seal turns into a dot.
+      map.setPaintProperty("city-asset-halo", "circle-stroke-opacity", shownFrom(DOTS_ZOOM, SEALS_ZOOM, 0.55 + 0.45 * beat));
       requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
@@ -678,8 +828,11 @@ function start() {
   }
 
   function showCitySelection() {
-    for (const [property, value] of Object.entries(badgeLayout(citySelected))) map.setLayoutProperty("city-asset-badges", property, value);
+    for (const [property, value] of Object.entries(badgeLayout(citySelected))) {
+      map.setLayoutProperty("city-asset-badges", property, value);
+    }
     map.setFilter("city-asset-halo", ["==", ["get", "id"], citySelected || ""]);
+    showDots();
     // The chosen asset's name is placed first and set in bold, further out for its larger badge.
     const chosen = ["==", ["get", "id"], citySelected || ""];
     map.setLayoutProperty("city-asset-names", "symbol-sort-key", ["case", chosen, -2, ["get", "landmark"], -1, 0]);
@@ -687,12 +840,17 @@ function start() {
     map.setLayoutProperty("city-asset-names", "text-radial-offset", ["case", ["any", chosen, ["get", "landmark"]], 1.75, 1.35]);
   }
 
+  /** The seals' sizes at DOTS_ZOOM, where they meet the dots: small enough to be one. */
+  const SEALS_AT_DOTS = { normal: 0.36, landmark: 0.44, chosen: 0.5 };
+  /** The chosen seal's size at DOTS_ZOOM, 14 and 16. */
+  const CHOSEN_SIZES = [SEALS_AT_DOTS.chosen, 1.15, 1.4];
+
   /** Badge size by zoom: small while many share the screen; the landmark and the chosen one larger. */
   function badgeLayout(selectedId) {
     const chosen = ["==", ["get", "id"], selectedId || ""];
     const size = (normal, landmark, selected) => ["case", chosen, selected, ["get", "landmark"], landmark, normal];
     return {
-      "icon-size": ["interpolate", ["linear"], ["zoom"], 11, size(0.42, 0.7, 0.8), 14, size(0.68, 1, 1.15), 16, size(0.9, 1.25, 1.4)],
+      "icon-size": ["interpolate", ["linear"], ["zoom"], DOTS_ZOOM, size(SEALS_AT_DOTS.normal, SEALS_AT_DOTS.landmark, CHOSEN_SIZES[0]), 14, size(0.68, 1, CHOSEN_SIZES[1]), 16, size(0.9, 1.25, CHOSEN_SIZES[2])],
       // The chosen one above all, then the landmark, above the badges that share its place.
       "symbol-sort-key": ["case", chosen, 2, ["get", "landmark"], 1, 0],
     };
@@ -705,14 +863,21 @@ function start() {
   /** The seal's diameter at full size, in points, and the room around it for its glow. */
   const SEAL_SIZE = 26;
   const SEAL_ROOM = 6;
+  /** A fog bank's size at zoom 15, where it is as wide as at a city's opening it should be. */
+  const BANK_SIZE = 0.78;
+  /** How far outside the disc the landmark's second ring is drawn, and the chosen one's beats. */
+  const LANDMARK_RING = 3;
+  /** The icon's size inside the disc: room between it and the ring. */
+  const GLYPH_SCALE = 0.84;
   /** Names come up from this zoom; further out only the seals show. */
   const NAMES_ZOOM = 15;
   /** Choosing an asset brings the camera at least this close. */
   const SELECT_ZOOM = 15.5;
 
   /**
-   * A locked asset: a night-blue disc in a fine gold ring, the kind of place drawn in gold inside
-   * and a small gold lock at its edge (colors.seal). The landmark's ring is doubled.
+   * A locked asset: a night-blue disc in a navy ring, the kind of place drawn in gold inside and a
+   * gold padlock over its lower right edge, outlined in navy so it stands out on the fog
+   * (colors.seal). The landmark's ring is doubled.
    */
   function sealImage(category, landmark) {
     const side = SEAL_SIZE + SEAL_ROOM * 2;
@@ -727,9 +892,9 @@ function start() {
     // The landmark's seal is ringed once more.
     if (landmark) {
       context.beginPath();
-      context.arc(middle, middle, r + 3, 0, Math.PI * 2);
-      context.lineWidth = 1.2;
-      context.strokeStyle = look.halo;
+      context.arc(middle, middle, r + LANDMARK_RING, 0, Math.PI * 2);
+      context.lineWidth = 1.6;
+      context.strokeStyle = look.ring;
       context.stroke();
     }
     // The disc, lit from the top left, on a soft shadow.
@@ -744,34 +909,147 @@ function start() {
     context.fillStyle = face;
     context.fill();
     context.shadowColor = "transparent";
-    context.lineWidth = landmark ? 1.8 : 1.4;
+    context.lineWidth = landmark ? 2 : 1.6;
     context.strokeStyle = look.ring;
     context.beginPath();
     context.arc(middle, middle, r - 0.8, 0, Math.PI * 2);
     context.stroke();
-    // The icons are drawn in a 32-point box centred on 16,16; their cut-outs take the disc's color.
+    // The icons are drawn in a 32-point box centred on 16,16, a little smaller than that so they
+    // keep clear of the ring; their cut-outs take the disc's color.
     context.save();
-    context.translate(middle - 16, middle - 16);
+    context.translate(middle, middle);
+    context.scale(GLYPH_SCALE, GLYPH_SCALE);
+    context.translate(-16, -16);
     context.fillStyle = look.icon;
     drawGlyph(context, category, look.to);
     context.restore();
-    // The lock, small, on the lower right edge.
-    const x = middle + r * 0.7;
-    const y = middle + r * 0.7;
-    context.beginPath();
-    context.arc(x, y, 4.8, 0, Math.PI * 2);
+    // The padlock, over the lower right edge: a shackle and a body with a keyhole, each drawn
+    // first wide in navy and then in gold, so a navy outline keeps it clear of the disc and the fog.
+    const x = middle + r * 0.66;
+    const y = middle + r * 0.6;
+    const shackle = new Path2D();
+    shackle.arc(x, y - 1.6, 2.7, Math.PI, 0);
+    const body = new Path2D();
+    body.roundRect(x - 4.4, y - 1.8, 8.8, 7, 1.6);
+    context.lineCap = "round";
+    context.strokeStyle = look.lockEdge;
+    context.lineWidth = 4;
+    context.stroke(shackle);
+    context.lineWidth = 2.4;
+    context.stroke(body);
+    context.strokeStyle = look.lock;
+    context.lineWidth = 1.7;
+    context.stroke(shackle);
     context.fillStyle = look.lock;
-    context.fill();
-    context.lineWidth = 1;
-    context.strokeStyle = look.ring;
-    context.stroke();
+    context.fill(body);
+    context.fillStyle = look.lockEdge;
     context.beginPath();
-    context.arc(x, y - 0.8, 1.4, Math.PI, 0);
-    context.strokeStyle = look.lockIcon;
-    context.stroke();
-    context.fillStyle = look.lockIcon;
-    context.fillRect(x - 2, y - 0.8, 4, 3);
+    context.arc(x, y + 1.2, 1.05, 0, Math.PI * 2);
+    context.fill();
+    context.fillRect(x - 0.45, y + 1.2, 0.9, 2);
     return context.getImageData(0, 0, canvas.width, canvas.height);
+  }
+
+  /** The haze's radius in screen points by zoom. */
+  const HAZE_RADIUS = [[10, 14], [11, 24], [12, 41], [13, 70], [14, 115], [15, 180], [16, 290], [17, 500], [18, 880]];
+  /** How much one asset weighs in the haze at zoom 16. */
+  const HAZE_WEIGHT = 0.35;
+
+  /**
+   * The haze's weight by zoom: how many assets fall within its radius on screen grows with the
+   * square of the radius over the map's scale; the weight follows the other way, so the pile-up
+   * is the same at every zoom as at 16.
+   */
+  function hazeWeights() {
+    const crowd = ([zoom, radius]) => (radius * radius) / Math.pow(4, zoom);
+    const at16 = crowd(HAZE_RADIUS.find(([zoom]) => zoom === 16));
+    return HAZE_RADIUS.map((stop) => [stop[0], (HAZE_WEIGHT * at16) / crowd(stop)]);
+  }
+
+  /** The haze's color by how many assets crowd a spot: clear, then a light fog, never thick. */
+  function hazeRamp() {
+    const middle = rgb(colors.cloud.middle);
+    const top = rgb(colors.cloud.top);
+    const rgba = (c, a) => "rgba(" + c.map(Math.round).join(",") + "," + a + ")";
+    const strong = DARK ? 0.37 : 0.53;
+    return ["interpolate", ["linear"], ["heatmap-density"], 0, rgba(middle, 0), 0.15, rgba(middle, strong * 0.35), 0.5, rgba(mix(middle, top, 0.5), strong * 0.75), 1, rgba(top, strong)];
+  }
+
+  // The fog over each locked asset, drawn once per shape: spreading from the seal at the middle of
+  // a box CLOUD_W by CLOUD_H points, frayed by the opening's noise; each shape from its own seed.
+  const CLOUD_W = 220;
+  const CLOUD_H = 150;
+  const CLOUD_SHAPES = [11, 23, 37, 41, 53];
+  /** Each asset's bank is also turned, by up to this many degrees either way, so no two look alike. */
+  const CLOUD_TURN = 40;
+  /** Fog is soft: fewer image pixels than the seals', and it is drawn faster when the map opens. */
+  const CLOUD_RATIO = 2;
+
+  /** Which bank an asset hides in, and how it is turned: the same every time, from its id. */
+  function cloudOf(id) {
+    let hash = 0;
+    for (let i = 0; i < id.length; i++) hash = (hash * 31 + id.charCodeAt(i)) | 0;
+    return Math.abs(hash) % CLOUD_SHAPES.length;
+  }
+  function cloudTurn(id) {
+    let hash = 7;
+    for (let i = 0; i < id.length; i++) hash = (hash * 17 + id.charCodeAt(i)) | 0;
+    return ((Math.abs(hash) % 1000) / 1000 - 0.5) * 2 * CLOUD_TURN;
+  }
+
+  /**
+   * The fog over a locked asset: thickest at the asset itself and spreading out from it, thinning
+   * as it goes. It reaches further one way than another, so it is never a circle, and away from
+   * the middle the noise frays it into wisps, while the heart stays whole (colors.cloud).
+   */
+  let cloudNoise = null;
+  function cloudImage(seed) {
+    cloudNoise = cloudNoise || tileableNoise(59);
+    const width = CLOUD_W * CLOUD_RATIO;
+    const height = CLOUD_H * CLOUD_RATIO;
+    const look = { top: rgb(colors.cloud.top), middle: rgb(colors.cloud.middle), bottom: rgb(colors.cloud.bottom) };
+    const nx = seed * 3.7;
+    const ny = seed * 1.3;
+    /** How far the fog reaches from the asset, in points, before the noise stretches it. */
+    const reach = 60;
+    // How thick the fog is at a point, in points from the middle: 1 at the asset, 0 clear.
+    const thickness = (x, y) => {
+      const angle = Math.atan2(y, x);
+      // Around the asset the reach rises and falls with the noise, read along a circle so it closes.
+      const far = reach * (0.6 + 0.8 * sampleNoise(cloudNoise, nx + Math.cos(angle) * 5, ny + Math.sin(angle) * 5));
+      const out = Math.hypot(x / 1.3, y) / far;
+      const spread = Math.exp(-1.5 * out * out);
+      // The further out, the more it frays; the heart stays whole.
+      const torn = 0.7 * sampleNoise(cloudNoise, nx + 13 + x * 0.18, ny + 41 + y * 0.24) + 0.3 * sampleNoise(cloudNoise, nx + 17 + x * 0.6, ny + 29 + y * 0.8);
+      const fray = smoothstep(0.15, 1, out);
+      // Gone before the edge of the image, so no wisp is cut off straight.
+      const edge = smoothstep(0, 20, CLOUD_W / 2 - Math.abs(x)) * smoothstep(0, 16, CLOUD_H / 2 - Math.abs(y));
+      return spread * Math.max(0, 1 - fray * (0.95 - 1.2 * torn)) * edge;
+    };
+    const grid = new Float32Array(width * height);
+    for (let py = 0; py < height; py++) {
+      for (let px = 0; px < width; px++) grid[py * width + px] = thickness(px / CLOUD_RATIO - CLOUD_W / 2, py / CLOUD_RATIO - CLOUD_H / 2);
+    }
+    const above = 4 * CLOUD_RATIO;
+    const data = new Uint8ClampedArray(width * height * 4);
+    for (let py = 0; py < height; py++) {
+      for (let px = 0; px < width; px++) {
+        const here = grid[py * width + px];
+        // A long, soft fade from clear to thick: fog has no edge.
+        const alpha = smoothstep(0.04, 0.85, here);
+        if (alpha <= 0) continue;
+        // Lit from above: brighter where the fog thickens downwards, darker where it thins.
+        const facing = here - (py >= above ? grid[(py - above) * width + px] : 0);
+        const light = Math.min(1, Math.max(0, 0.6 + facing * 1.4));
+        const color = light > 0.5 ? mix(look.middle, look.top, (light - 0.5) * 2) : mix(look.bottom, look.middle, light * 2);
+        const k = (py * width + px) * 4;
+        data[k] = color[0];
+        data[k + 1] = color[1];
+        data[k + 2] = color[2];
+        data[k + 3] = 255 * alpha * 0.92;
+      }
+    }
+    return { width, height, data };
   }
 
   function drawGlyph(context, category, color) {
@@ -853,7 +1131,7 @@ function start() {
     return bounds;
   }
 
-  const OWN_SOURCES = new Set(["assets", "provinces", "province-names", "city-assets"]);
+  const OWN_SOURCES = new Set(["assets", "provinces", "province-names", "city-assets", "city-fog"]);
   /** Each base label layer's own filter and text, to put back when the provinces go away. */
   const baseLabels = new Map();
 
@@ -932,30 +1210,6 @@ function start() {
   function fogLayer(seed, options) {
     const canvas = document.createElement("canvas");
     return { ...options, noise: tileableNoise(seed), canvas, context: canvas.getContext("2d"), image: null };
-  }
-
-  /**
-   * The chosen city's fog as a repeating image for the veil layer: the same noise as the
-   * opening, stretched into soft clouds, thicker and lighter where the noise is high.
-   */
-  function fogTexture() {
-    const size = 256;
-    const noise = tileableNoise(37);
-    const fog = rgb(colors.fog);
-    const light = mix(fog, [255, 255, 255], DARK ? 0.12 : 0.5);
-    const data = new Uint8Array(size * size * 4);
-    const step = NOISE_SIZE / size;
-    for (let y = 0; y < size; y++) {
-      for (let x = 0; x < size; x++) {
-        const n = sampleNoise(noise, x * step, y * step);
-        const k = (y * size + x) * 4;
-        data[k] = fog[0] + (light[0] - fog[0]) * n;
-        data[k + 1] = fog[1] + (light[1] - fog[1]) * n;
-        data[k + 2] = fog[2] + (light[2] - fog[2]) * n;
-        data[k + 3] = 255 * (0.72 + 0.28 * n);
-      }
-    }
-    return { width: size, height: size, data };
   }
 
   /** Repeating value noise in four octaves, 0..1, so the clouds can drift forever without a seam. */

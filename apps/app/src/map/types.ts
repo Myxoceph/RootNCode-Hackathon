@@ -2,6 +2,7 @@ import type { StyleProp, ViewStyle } from "react-native";
 
 import type { MapCategory } from "./asset-category";
 import type { LngLatBounds } from "./dense-area";
+import type { MapTier } from "./prominence";
 
 export interface MapPadding {
   top: number;
@@ -61,9 +62,11 @@ export interface MapCityAsset {
   category: MapCategory;
   /** The city's best-known asset, where the camera opens: drawn larger, its name shown first. */
   landmark?: boolean;
+  /** How long it stays as the map zooms out (`mapTiers`): 3 to the last, 0 first to go. */
+  tier: MapTier;
 }
 
-/** The chosen city: the whole map under fog, its assets marked above it. */
+/** The chosen city: a light mist over the map, each of its assets on its own cloud. */
 export interface MapCity {
   plate: number;
   assets: MapCityAsset[];
@@ -101,5 +104,7 @@ export interface AssetMapProps {
   provinces?: MapProvinces | null;
   /** A highlighted province (or its name) was tapped in the Turkey view. */
   onSelectProvince?: (plate: number) => void;
+  /** The city was zoomed out to the Turkey view: the map has let go of it, the screen should too. */
+  onLeaveCity?: () => void;
   style?: StyleProp<ViewStyle>;
 }

@@ -27,6 +27,11 @@ export const summarySelect = {
   asset_type: { select: labelSelect },
   era: { select: labelSelect },
   city: { select: labelSelect },
+  // The complex this asset belongs to, and whether it may be shown.
+  parent_id: true,
+  asset: { select: { status: true } },
+  // What the record tells about it: the asset's prominence.
+  _count: { select: { asset_section: true, asset_highlight: true, asset_legend: true, asset_person: true, timeline_event: true, inscription: true } },
 } satisfies Prisma.assetSelect;
 
 /**

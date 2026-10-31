@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-31 · Külliyenin yapıları ve eserin tanınırlığı listede (sözleşme 0.3.12)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. API'yi yeniden başlat. Migration ya da veri içe aktarma gerekmez; iki alan da veritabanındaki mevcut verilerden hesaplanıyor.
+
+Değişenler:
+- Eser listesindeki her eserde `parentId`: eser bir külliyenin yapısıysa külliyenin id'si, değilse ya da külliye yayında değilse `null`.
+- Eser listesindeki her eserde `prominence`: kayıtta eserin ne kadar anlatıldığı (bölüm, öne çıkan, rivayet, kişi, zaman çizelgesi olayı ve kitabe sayılarının toplamı).
+- Harita bir külliyenin yapılarını ayrı ayrı göstermiyor; külliye tek mühürle çıkıyor, kartında kaç yapısı olduğu yazıyor (Bursa'da 272 konumlu eserden 209 mühür).
+- Kilitli eserlerin sisi iki katman: şehirde eserlerin çevresini birbirine bağlayan hafif bir pus ve her kilitli eserin üstünde kendi yoğun sis kümesi; ikisi de haritanın kendi katmanı, harita hareket ederken yerinde kalıyor. Haritanın tamamını örten sis perdesi kalktı.
+- Şehirden uzaklaşınca mühürler noktaya dönüşüyor; ilin tamamı ekrana sığana kadar bütün noktalar görünüyor, sonra `prominence` sırasıyla en az bilinenden başlayarak azalıyor; Türkiye görünümüne inince sis kalkıyor ve harita şehirden çıkıyor.
+- Uygulamanın önbelleği sözleşme sürümüyle anahtarlandığı için eski kayıtlar kendiliğinden yenilenir.
+
 ## 2026-10-31 · Ödüller, cüzdan ve kanıtlanmış ziyaret (migration, sözleşme 0.3.11)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md))

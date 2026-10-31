@@ -122,6 +122,17 @@ export const AssetSummarySchema = z.strictObject({
   datingDisplay: z.string().min(1).nullable(),
   /** Null when the asset has no processed photo yet; show a placeholder. */
   cover: MediaSchema.nullable(),
+  /**
+   * The complex (külliye) this asset is a building of; null when it stands on its own or its
+   * complex is not published. The map shows a complex's buildings as the complex alone.
+   */
+  parentId: AssetIdSchema.nullable(),
+  /**
+   * How much the record tells about the asset: its sections, highlights, legends, people,
+   * timeline events and inscriptions, counted. The data has no measure of fame; this stands in
+   * for it, and the map keeps the better-known assets longest as it zooms out.
+   */
+  prominence: z.number().int().min(0),
 });
 
 export const AssetRefSchema = z.strictObject({
