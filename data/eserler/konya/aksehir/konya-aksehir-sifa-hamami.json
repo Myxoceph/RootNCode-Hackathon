@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Su Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Dönem (era) kitapta adlandırılmıyor (1329-30); era boş bırakıldı.",
@@ -359,7 +358,128 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-sifa-hamami/p112-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "220"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şifa Hamamı'nın giriş cephesi",
+        "en": "Entrance front of the Şifa Bath"
+      },
+      "alt": {
+        "tr": "İki katlı, krem sıvalı, kırma kiremit çatılı bina. Zemin katta taş çerçeveli küçük bir giriş ve kemerli pencereler, üstte \"Şifa Hamamı\" tabelası var. Sağda bir taş yazıt levhası duruyor.",
+        "en": "Two-storey cream-plastered building with a tiled hip roof. A small stone-framed entrance and arched windows are on the ground floor, with a \"Şifa Hamamı\" sign above. An inscribed stone slab stands at right."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-sifa-hamami/p112-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "221"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Soyunmalık ve ortadaki şadırvan",
+        "en": "Dressing hall and central fountain"
+      },
+      "alt": {
+        "tr": "Geniş soyunma salonunun ortasında sekizgen beyaz mermer bir şadırvan var. Sağda beyaz kapılı soyunma kabinleri, yerde siyah beyaz geometrik desenli zemin ve beyaz sütunlar görülüyor.",
+        "en": "A white octagonal marble fountain stands in the middle of a large dressing hall. White-doored cabins line the right side, with a black and white geometric floor and white columns."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-sifa-hamami/p112-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "221"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamamın havuzu ve sütunlu salon",
+        "en": "Pool and columned hall of the bath"
+      },
+      "alt": {
+        "tr": "Pembe ve beyaz boyalı sütunlu bir salonda beyaz mermer bir havuz yer alıyor. Duvar boyunca ahşap bankler, zeminde damalı taş döşeme var.",
+        "en": "A white marble pool in a hall with pink and white painted columns. Wooden benches run along the wall and the floor is a checkered stone pavement."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-sifa-hamami/p113-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "222"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Mermer çeşme ve oymalı sütun başlığı",
+        "en": "Marble fountain and carved capital basin"
+      },
+      "alt": {
+        "tr": "Mermer plakalı bir duvar çeşmesi, altında bitki motifleriyle oyulmuş, eski bir sütun başlığından yapılmış taş bir yalak var. Duvarın alt kısmı pembe boyalı.",
+        "en": "A wall fountain with a marble panel and a tap, above a stone basin made from an old carved capital with leaf motifs. The lower wall is painted pink."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-sifa-hamami/p113-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "222"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Oymalı sütun başlığı",
+        "en": "Carved column capital"
+      },
+      "alt": {
+        "tr": "Beyaza boyanmış kalın bir sütun, tabanında bitki motifli oymalı bir başlık üzerinde duruyor. Arkada soyunma kabinleri, zeminde desenli döşeme görülüyor.",
+        "en": "A thick whitewashed column rests on a carved capital with leaf motifs at its base. Changing cabins and a patterned floor are visible behind it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

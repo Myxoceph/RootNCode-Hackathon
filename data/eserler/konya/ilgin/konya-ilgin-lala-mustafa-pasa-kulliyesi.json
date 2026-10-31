@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Külliyenin yapı listesi s. 54 ve s. 55'te farklı veriliyor (bedesten/kapalı çarşı, iki han, arasta); gözden geçirilmeli.",
@@ -467,7 +466,128 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p028-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "52-53"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliyenin uzun yapıları ve camisi, havadan",
+        "en": "Long buildings and mosque of the complex, aerial"
+      },
+      "alt": {
+        "tr": "Mavi çatılı uzun tonozlu yapılar ve arkasında kubbeli, tek minareli cami; çevrede evler ve uzakta tepeler görülüyor.",
+        "en": "Long vaulted buildings with blue roofs and a domed mosque with one minaret behind them, surrounded by houses, with hills in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p029-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "54"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Camiye ve çevre yapılara havadan bakış",
+        "en": "Aerial view of the mosque and surrounding buildings"
+      },
+      "alt": {
+        "tr": "Orta yerde kubbeli ve tek minareli cami, çevresinde kurşun kaplı küçük kubbeler ve uzun çatılı yapılar; arkada kent görülüyor.",
+        "en": "A domed mosque with one minaret at the centre, with small lead-covered domes and long-roofed buildings around it and the town behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p029-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "55"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami ve avlunun kuşbakışı görünüşü",
+        "en": "Bird's-eye view of the mosque and courtyard"
+      },
+      "alt": {
+        "tr": "Sağda büyük kubbeli cami ve minare, solda ağaçlı avlu; çevrede küçük kubbeler ve mavi kurşun çatılar yer alıyor.",
+        "en": "A large domed mosque and minaret on the right and a tree-filled courtyard on the left, surrounded by small domes and blue lead roofs."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p029-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "55"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Caminin son cemaat yeri",
+        "en": "The mosque's portico"
+      },
+      "alt": {
+        "tr": "Taş sütunlara oturan, kırmızı ve beyaz taşlı kemerlerle örtülü son cemaat yeri; arkada ahşap kapılı duvar, önde ahşap banklar var.",
+        "en": "A portico of stone columns carrying arches of red and white stone, with a wall with wooden doors behind and wooden benches in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p030-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "56"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Mukarnaslı taş bezeme",
+        "en": "Carved stone muqarnas"
+      },
+      "alt": {
+        "tr": "Yukarıdan aşağıya sıralanan sivri uçlu taş mukarnas dolgusu; kabartmalı yüzey gri ve yer yer yeşilimsi.",
+        "en": "Rows of pointed stone muqarnas cells arranged from top to bottom, on a grey, slightly greenish carved surface."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

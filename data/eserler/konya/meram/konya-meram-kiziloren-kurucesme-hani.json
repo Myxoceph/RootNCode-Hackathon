@@ -9,12 +9,10 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Hanı yaptıranın adı kitapta verilmiyor; kitâbeden yalnızca hükümdar ve tarih çıkarılıyor (founder: null).",
-      "Kitâbenin metni ve dili kitapta yok.",
-      "s. 250 metin içermiyor (yalnızca görsel); fotoğraf/çizim sonra eklenmeli."
+      "Kitâbenin metni ve dili kitapta yok."
     ],
     "data_quality_notes": [
       {
@@ -336,7 +334,128 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-kiziloren-kurucesme-hani/p126-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "248"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Han, havadan görünüm",
+        "en": "The inn, aerial view"
+      },
+      "alt": {
+        "tr": "Havadan çekilmiş fotoğrafta mavi metal çatılı taş bir han, girişte kemerli bir kapı ve yanında kiremit çatılı küçük bir bina var. Çevrede çam ağaçları ve uzakta yol görülüyor.",
+        "en": "Aerial view of a stone inn with a blue metal roof and an arched entrance, with a small tiled-roof building beside it, surrounded by pine trees and a distant road."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-kiziloren-kurucesme-hani/p126-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "248"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Han ve çevresi, havadan görünüm",
+        "en": "The inn and its surroundings, aerial"
+      },
+      "alt": {
+        "tr": "Mavi çatılı uzun taş han yapısı ve yanındaki kiremit çatılı küçük bina, kurak tepelerle çevrili açık arazide duruyor.",
+        "en": "A long stone inn with a blue roof and a small tiled building beside it, in open land surrounded by dry hills."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-kiziloren-kurucesme-hani/p125-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "246-247"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Revaklı avlu ve portal",
+        "en": "Arcaded courtyard and portal"
+      },
+      "alt": {
+        "tr": "Gri taş revaklarla çevrili açık bir avlu. Yanlarda sivri kemerli arkadlar, karşıda çerçeveli bir portal ve kapalı kapı var.",
+        "en": "An open courtyard of grey stone arcades with pointed arches on both sides and a framed portal with a closed door at the end."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-kiziloren-kurucesme-hani/p126-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "249"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kemerli ahır bölümü",
+        "en": "Arched stable section"
+      },
+      "alt": {
+        "tr": "Karanlık bir mekânın içinden kemerli açıklıktan bakıldığında, ortada kısa taş ayaklara oturan üç kemer ve arkada taş bir duvar görülüyor.",
+        "en": "Looking through a large arch from a dark space towards three arches resting on short stone piers, with a stone wall behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-kiziloren-kurucesme-hani/p126-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "249"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Taş süsleme ayrıntısı",
+        "en": "Carved stone ornament detail"
+      },
+      "alt": {
+        "tr": "Taş bir köşe elemanı üzerinde sütunçe ve oyma geometrik kabartma süslemeler görülüyor. Yüzeyde küçük delikler var.",
+        "en": "A stone corner element with a small carved column and incised geometric relief decoration, with small holes in the surface."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

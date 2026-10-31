@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Hanın bânisi ve tarihi kitâbe olmadığı için kesin değil; Emir Câmedâr Esedüddin Rûzbe bilgisi kitapta \"düşünülmektedir\" ile verilmiş (probable).",
@@ -347,7 +346,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-horozlu-han/p136-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "268"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Horozlu Han'ın kuşbakışı görünüşü",
+        "en": "Aerial view of Horozlu Han"
+      },
+      "alt": {
+        "tr": "Şehir içinde, çevresi yapılarla çevrili taş han. Önde geniş bir avlu, ortada kemerli giriş cephesi ve arkasında küçük bir kule gibi çıkıntı var; yan taraflarda kırmızı ve gri çatılar görülüyor.",
+        "en": "A stone han surrounded by buildings in a city, with a wide courtyard in front and an arched entrance façade in the centre. Red and grey roofs stand on both sides."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-horozlu-han/p136-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "269"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hanın içi, kemerler ve masalar",
+        "en": "Interior arches and tables"
+      },
+      "alt": {
+        "tr": "Taş kemerli ve tonozlu bir iç mekânda, duvar lambalarıyla aydınlatılmış masalar ve katlanmış kumaşlar görülüyor. Kemerler iri kesme taşlardan yapılmış.",
+        "en": "An interior with stone arches and vaults lit by wall lamps. Tables with folded cloths stand in the foreground, and the arches are of large cut stone."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-horozlu-han/p136-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "269"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Tonozlu duvarda dar pencere",
+        "en": "Narrow window in the vaulted wall"
+      },
+      "alt": {
+        "tr": "Kesme taş tonozlu bir duvarın ortasında, sivri kemerli, dar ve uzun bir pencere açıklığı var. Pencereden dışarıdan gelen beyaz ışık içeri vuruyor.",
+        "en": "A narrow, tall arched window opening in the middle of a cut-stone vaulted wall, letting in bright white light."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

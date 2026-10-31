@@ -9,13 +9,11 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Su Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Sarnıcın yapım yılı kitapta yok; yalnızca yüzyıl veriliyor ve Türkçe ile İngilizce metin çelişiyor.",
       "Hocacihan Hanı ile aynı banî (Hacı Bahtiyar) olup olmadığı kitapta açık değil; Hoca Cihan Hanı kaydıyla birlikte gözden geçirilmeli.",
-      "Sarnıcın vakıf bilgisi kitapta yok.",
-      "s. 240 metin içermiyor (yalnızca görsel); fotoğraf/çizim sonra eklenmeli."
+      "Sarnıcın vakıf bilgisi kitapta yok."
     ],
     "data_quality_notes": [
       {
@@ -296,7 +294,80 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-hocacihan-sarnici/p121-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "238"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Sarnıç girişindeki cam kapılı yapı",
+        "en": "Glass-doored entrance building of the cistern"
+      },
+      "alt": {
+        "tr": "Tuğla örgülü, kemerli bir giriş yapısı; cam kapıdan içeriye merdiven görülüyor. Yanda eğimli bir cam çatı ve bilgi panosu var.",
+        "en": "A brick entrance structure with a round arch and a glass door through which stairs can be seen. A sloping glass roof and an information stand are beside it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-hocacihan-sarnici/p121-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "239"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sarnıca inen taş merdiven",
+        "en": "Stone stairs down to the cistern"
+      },
+      "alt": {
+        "tr": "Kaba taş duvarlar arasında aşağı inen dar bir merdiven; iki yanda metal tutamaklar var.",
+        "en": "A narrow staircase descending between rough stone walls, with metal handrails on both sides."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-hocacihan-sarnici/p121-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "239"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sarnıcın tonozlu mekânı",
+        "en": "Vaulted hall of the cistern"
+      },
+      "alt": {
+        "tr": "Uzun, beşik tonozlu bir yeraltı mekânı turuncu ışıkla aydınlatılmış. Sıralı sandalyeler sona doğru küçük bir sahneye uzanıyor.",
+        "en": "A long barrel-vaulted underground hall lit in orange, with rows of chairs leading to a small stage at the end."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

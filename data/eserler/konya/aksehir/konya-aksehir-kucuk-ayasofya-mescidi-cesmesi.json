@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Su Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Çeşmenin bağlı olduğu Küçük Ayasofya Mescidi hakkında kitapta bilgi yok; mescit kaydı gerekip gerekmediği kontrol edilmeli.",
@@ -285,7 +284,56 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-kucuk-ayasofya-mescidi-cesmesi/p120-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "237"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Küçük Ayasofya Mescidi Çeşmesi",
+        "en": "Küçük Ayasofya Mosque Fountain"
+      },
+      "alt": {
+        "tr": "Taş duvar köşesine yaslanmış, tuğla sivri kemerli bir çeşme. Nişin içinde taş dolgu, ortada küçük bir kitabe levhası ve altında ızgaralı yer var; arkada dağlık manzara görülüyor.",
+        "en": "A fountain with a pointed brick arch against a stone wall corner. The niche is filled with stone and has a small plaque; a drain grate is below and hills are behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-kucuk-ayasofya-mescidi-cesmesi/p120-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "237"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Duvara yerleştirilmiş kitabe",
+        "en": "Inscription slab set in a wall"
+      },
+      "alt": {
+        "tr": "Kaba taş duvara gömülmüş dikdörtgen bir mermer levhada iki satır halinde, kabartma Arapça harfli kitabe var.",
+        "en": "A rectangular slab set in a rough stone wall, carrying two lines of raised Arabic-script inscription."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

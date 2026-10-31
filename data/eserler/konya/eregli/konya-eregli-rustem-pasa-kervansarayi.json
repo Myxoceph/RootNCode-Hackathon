@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kitap \"eyvanın iki yanında ikişer küçük eyvan ve üç adet tabhane odası\" diyor; sayıların her yan için mi toplam mı olduğu belirsiz, olduğu gibi aktarıldı.",
@@ -320,7 +319,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-eregli-rustem-pasa-kervansarayi/p141-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "278"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Rüstem Paşa Kervansarayı'nın kuşbakışı",
+        "en": "Aerial view of Rüstem Paşa Caravanserai"
+      },
+      "alt": {
+        "tr": "Gri kurşun kaplı, bitişik beşik çatılı uzun taş yapı; çatıda kırmızı tuğla bacalar sıralanıyor. Yanında ağaçlar, bir meydan ve uzakta ince bir minare görülüyor.",
+        "en": "A long stone building with grey lead-covered adjoining vaulted roofs and rows of red brick chimneys. Trees and a square lie beside it, with a slender minaret in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-eregli-rustem-pasa-kervansarayi/p142-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "280-281"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Tuğla bacalı çatı kemerleri",
+        "en": "Roof vaults with brick chimneys"
+      },
+      "alt": {
+        "tr": "Açık renkli taş duvarın üstünde kırmızı tuğladan yapılmış kemerli çatı alınlıkları ve sıralı tuğla bacalar yükseliyor. Çatılar mavi-gri metalle kaplı.",
+        "en": "Red brick arched gables and a row of brick chimneys rise above a pale stone wall, with roofs covered in blue-grey metal."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-eregli-rustem-pasa-kervansarayi/p141-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "279"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kütüphane olarak kullanılan iç mekân",
+        "en": "Interior used as a library"
+      },
+      "alt": {
+        "tr": "Büyük taş kemerli bir salonda ahşap masalar, yeşil sandalyeler ve duvar boyunca kitap rafları var. Ortada bir avize asılı, kemerler turuncu ışıkla aydınlanıyor.",
+        "en": "A large hall with big stone arches, wooden tables, green chairs and bookshelves along the walls. A chandelier hangs in the centre and the arches are lit in orange."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

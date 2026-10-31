@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Yapım tarihi ve bânisi bilinmiyor; Selçuklu dönemi bilgisi \"düşünülmektedir\" ile veriliyor.",
@@ -182,7 +181,32 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-kazan-hoyugu-koyu-tas-han/p144-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "284-285"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Taş Han kalıntısı tarla içinde",
+        "en": "Ruins of the Taş Han in a field"
+      },
+      "alt": {
+        "tr": "Mısır tarlasının ortasında duran, kaba taşlarla örülmüş dikdörtgen bir yapı kalıntısı. Duvarda küçük kemerli açıklıklar var; arkada yol ve dağlar uzanıyor.",
+        "en": "A rectangular ruin of rough stone standing among cornfields, with small arched openings in the wall. A road and mountains lie behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Yapım tarihi tartışmalı (Erdmann XIII. yy.; kitap XIV-XV. yy.; vakfiyeden XV. yy.); başka kaynakla netleştirilmeli.",
@@ -281,7 +280,104 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-altinekin-zivarik-han/p138-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "272-273"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Zıvarık Han'ın dıştan görünüşü",
+        "en": "Exterior of Zıvarık Han"
+      },
+      "alt": {
+        "tr": "Düz, kaba kesme taş uzun bir duvar ve ortasında küçük çıkıntılı, kemerli bir giriş var. Duvarda devşirme taş levhalar seçiliyor; önde asfalt bir yol uzanıyor.",
+        "en": "A long plain wall of rough cut stone with a small projecting arched entrance. Several stone slabs are set in the wall, and a paved road runs in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-altinekin-zivarik-han/p139-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "274"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Hanın sivri kemerli girişi",
+        "en": "The han's pointed-arch entrance"
+      },
+      "alt": {
+        "tr": "Sivri kemerli taş girişte kahverengi ahşap çift kanatlı kapı var. Kapının iki yanında geometrik kabartmalı taş levhalar, üstünde ise bezemeli bir alınlık görülüyor.",
+        "en": "A pointed-arch stone entrance with a brown double wooden door. Stone panels with geometric reliefs flank the door, and a decorated lintel panel sits above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-altinekin-zivarik-han/p139-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "274"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Duvara yerleştirilmiş bezemeli taş levha",
+        "en": "Decorated stone panel set in the wall"
+      },
+      "alt": {
+        "tr": "Kaba taş duvara yerleştirilmiş dikdörtgen çerçeveli, yüzeyi işlemeli bir taş levha. Çevresinde düzensiz biçimli gözenekli taşlar var.",
+        "en": "A rectangular framed stone panel with a worked surface set into a rough stone wall, surrounded by irregular porous stones."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-altinekin-zivarik-han/p139-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "275"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hanın tonozlu iç mekânı",
+        "en": "Vaulted interior of the han"
+      },
+      "alt": {
+        "tr": "Kemerlerle birbirine açılan taş tonozlu bölümler. Önde açık renkli taş kemerler, ardında sıvasız taş duvar ve uzaktaki başka bir mekân görülüyor.",
+        "en": "Vaulted stone sections opening onto one another through arches. Light stone arches stand in front, with a bare stone wall and another space further back."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

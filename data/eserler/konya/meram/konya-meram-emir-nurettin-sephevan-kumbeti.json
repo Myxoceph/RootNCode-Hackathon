@@ -10,7 +10,6 @@
     "from": "Konya II. Cilt – Türbeler",
     "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 146 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kümbette kimin yattığı kitapta belirtilmiyor; Emir Nurettin ile kitâbedeki Nureddin İbrahim bin Celal arasındaki bağ açıklanmalı.",
@@ -264,7 +263,128 @@
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "146"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Emir Nurettin Kümbeti'nin dış görünümü",
+        "en": "Exterior of Emir Nurettin Kumbet"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş örgülü gövdesi üzerinde yüksek piramit çatısı olan kümbet. Köşede kemerli küçük bir giriş ve çevresinde demir korkuluk vardır.",
+        "en": "A brick and stone tomb tower with a tall pyramidal roof. A small arched entrance is at the corner and an iron railing surrounds it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kümbetin kemerli girişi",
+        "en": "Arched entrance of the kumbet"
+      },
+      "alt": {
+        "tr": "Taş çerçeveli sivri kemerli kapıda ahşap kapı kanadı, üstünde yazılı bir bölüm ve sivri kemerli küçük pencere vardır.",
+        "en": "A wooden door in a pointed-arch stone frame, with a small pointed-arch window above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kapı kemerinin üzerindeki kitabe",
+        "en": "Inscription above the door arch"
+      },
+      "alt": {
+        "tr": "Kemerin içinde, çiçek biçimli bir rozet ve altında tek satır Arapça yazı bulunan taş yüzey görünür.",
+        "en": "Within the arch is a stone surface with a flower-shaped rosette and a single line of Arabic script beneath it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kümbetin içinde sanduka ve ışık",
+        "en": "Sarcophagus and light inside the kumbet"
+      },
+      "alt": {
+        "tr": "Tuğla örgülü duvarlı odada açık renkli bir sanduka durur. Karşıda açık kapıdan ve yukarıdaki pencereden ışık girer.",
+        "en": "A light-coloured sarcophagus in a room with brick walls. Light enters through the open door at the far end and a window above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tuğla duvar önündeki taş sanduka",
+        "en": "Stone sarcophagus before a brick wall"
+      },
+      "alt": {
+        "tr": "Tuğla örgülü yuvarlak duvarın önünde, sade, açık renkli bir sanduka yer alır. Zemin ahşaptır.",
+        "en": "A plain light-coloured sarcophagus in front of a round brick wall, on a timber floor."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

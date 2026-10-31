@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Vakfiye metni kitapta yok; hamamın vakfiyede 'Hamam-ı Kebir' diye geçtiği hamam kaydında belirtiliyor. Vakfiye bulunursa waqf alanı doldurulmalı.",
@@ -338,7 +337,104 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-kulliyesi/p007-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "10-11"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliyenin gün batımında havadan görünüşü",
+        "en": "Aerial view of the complex at sunset"
+      },
+      "alt": {
+        "tr": "Gölün kıyısındaki kasabanın üzerinden çekilmiş havadan görüntü. Mavi gri çatılı taş cami, yanında sivri külahlı türbe ve yüksek bir minare görülüyor; arkada göl ve dağlar var.",
+        "en": "Aerial view over the lakeside town. A stone mosque with a blue-grey roof stands beside a conical-roofed tomb and a tall minaret, with the lake and mountains behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-kulliyesi/p008-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "12"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin cephesi, minaresi ve türbesi",
+        "en": "The mosque facade, minaret and tomb"
+      },
+      "alt": {
+        "tr": "Düz kesme taştan yapılmış cami cephesi; sağda tuğla örgülü uzun bir minare, solda konik külahlı türbe yükseliyor. Arka planda göl ve dağlar görünüyor.",
+        "en": "The mosque facade of cut stone, with a tall brick minaret on the right and a conical-roofed tomb on the left. The lake and mountains lie in the background."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-kulliyesi/p008-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "13"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Taç kapının mukarnaslı niş kemeri",
+        "en": "Muqarnas niche arch of the crown portal"
+      },
+      "alt": {
+        "tr": "Kabartma geometrik ve bitkisel bezemeli bir çerçevenin içinde, inci dizisi gibi bir kuşakla çevrili sivri kemer. Kemerin içinde basamaklı mukarnas dolgu var; köşelerde yuvarlak madalyonlar yer alıyor.",
+        "en": "A pointed arch inside a frame of carved geometric and floral relief, edged by a beaded band. The arch is filled with stepped muqarnas, with round medallions in the corners."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-kulliyesi/p009-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "14-15"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap direkli cami içi",
+        "en": "Prayer hall with wooden columns"
+      },
+      "alt": {
+        "tr": "Çok sayıda kalın ahşap direğin taşıdığı geniş bir ibadet mekânı. Zeminde mavi halı ve ortada kırmızı bir göbek deseni, uzakta mihrap yönünde ahşap korkuluklu bir bölüm ve avizeler görülüyor.",
+        "en": "A wide prayer hall carried by many thick wooden columns. A blue carpet with a red medallion covers the floor; a railed wooden section and chandeliers are visible toward the far wall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

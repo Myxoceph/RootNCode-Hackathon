@@ -10,7 +10,6 @@
     "from": "Konya II. Cilt – Eğitim Yapıları",
     "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 102-105 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Taçkapının üst kısmında olabilecek yapı kitâbesi günümüze ulaşmamış; vakfiye metni ve akar listesi için VGM arşivi taranmalı.",
@@ -581,7 +580,248 @@
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p053-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "102"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "İnce Minareli Medrese ve minaresi",
+        "en": "İnce Minareli Madrasa and its minaret"
+      },
+      "alt": {
+        "tr": "Solda işlemeli taş portal, ortada çinili uzun ve ince minare, sağda kubbeli taş cephe görünür. Önde yuvarlak taçlı bir ağaç vardır.",
+        "en": "An ornate stone portal on the left, a tall slender tiled minaret in the middle and a domed stone facade on the right, with a round-crowned tree in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p053-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "103"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Medresenin işlemeli taç kapısı",
+        "en": "Carved main portal of the madrasa"
+      },
+      "alt": {
+        "tr": "Yüksek taş kapı yüzeyi kabartmalar, yazı kuşakları ve sütunçelerle kaplıdır. Altta ahşap kapılı sivri kemerli bir açıklık bulunur.",
+        "en": "A tall stone portal covered with reliefs, script bands and small columns. A pointed-arch opening with a wooden door lies at the bottom."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p054-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "105"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kapı kemerindeki yazı kuşağı",
+        "en": "Inscription band around the door arch"
+      },
+      "alt": {
+        "tr": "Sivri kemerin çevresinde birbirine dolanan bitkisel kıvrımlar ve Arapça yazılarla bezeli taş bezeme. Köşelerde küçük küre biçimli çıkıntılar vardır.",
+        "en": "Intertwined plant scrolls and Arabic script carved around a pointed arch, with small spherical bosses in the corners."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p053-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "103"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minare gövdesinde çini ve tuğla süsleme",
+        "en": "Tile and brick decoration on the minaret shaft"
+      },
+      "alt": {
+        "tr": "Minare gövdesinde turkuaz çini şeritler ve aralarında tuğla ile koyu tuğla kullanılarak oluşturulmuş zikzaklı desenler görünür.",
+        "en": "Turquoise tile bands on the minaret shaft with zigzag patterns formed of bricks between them."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p054-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "104"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kubbeli ana mekânın iç görünümü",
+        "en": "Interior of the domed main hall"
+      },
+      "alt": {
+        "tr": "Kubbeye geçişi sağlayan üçgen bölmeler ve kafes pencereli yüksek duvarlar. Ortada korkuluklu bir havuz, karşıda geniş bir eyvan görünür.",
+        "en": "High walls with lattice windows and triangular transition pieces lead up to the dome. A railed pool sits in the centre and a wide iwan faces it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p055-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "106-107"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe göbeğinin içten görünüşü",
+        "en": "Inner view of the dome crown"
+      },
+      "alt": {
+        "tr": "Ortada turuncu ahşap bir kubbe başlığı, çevresinde turkuaz çini izli koyu kubbe yüzeyi ve kafes pencereler görülür.",
+        "en": "An orange wooden crown at the centre, surrounded by a dark dome surface with traces of turquoise tile and lattice windows."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p054-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "105"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Yapının çatılarının kuşbakışı",
+        "en": "Aerial view of the roofs"
+      },
+      "alt": {
+        "tr": "Ortada büyük, dilimli bir kubbe, çevresinde daha küçük kubbeler ve düz çatılı bölümler tepeden görünür.",
+        "en": "A large ribbed dome in the middle, with smaller domes and flat-roofed sections seen from above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p052-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "100-101"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Medresenin şehir içindeki kuşbakışı görünümü",
+        "en": "Aerial view of the madrasa in the city"
+      },
+      "alt": {
+        "tr": "Yeşil bir parkın kenarında kubbeli taş yapı ve yanında ince minare görülür. Çevresinde evler ve yol vardır.",
+        "en": "A domed stone building with a slender minaret beside a green park, surrounded by houses and a road."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p054-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "105"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ortasında taş çerçeve bulunan oda",
+        "en": "Room with a stone-framed area in the centre"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap tavanlı odada iki pencere ve kafesli üst pencereler vardır. Zeminin ortasında taş çerçeveli, içi dolu dikdörtgen bir alan bulunur.",
+        "en": "A white-walled room with a wooden ceiling, two windows and lattice upper windows. A stone-framed rectangular area filled with earth sits in the middle of the floor."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ince-minareli-medrese/p054-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "105"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tuğla tonozlu uzun salon",
+        "en": "Long brick-vaulted hall"
+      },
+      "alt": {
+        "tr": "Beyaz yan duvarlı, tuğla beşik tonozlu uzun mekânda sivri kemerli nişler ve küçük pencereler yer alır. Soldaki duvarda kapılar vardır.",
+        "en": "A long hall with white side walls and a brick barrel vault, with pointed-arch niches and small windows. Doors are set in the left wall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

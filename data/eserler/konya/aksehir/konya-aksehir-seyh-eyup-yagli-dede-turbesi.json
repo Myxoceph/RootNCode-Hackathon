@@ -12,7 +12,6 @@
       "Dönem (era) kodu: Akşehir'de 1367-68; kitap dönem adı vermiyor, uygun kod seçilemedi, null.",
       "Sandukadaki tarihin okunuşu ve kitâbe metni kitapta yok.",
       "Şeyh Eyyüb Efendi'nin yaşadığı dönem kitapta verilmiyor.",
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
     ],
@@ -253,7 +252,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyh-eyup-yagli-dede-turbesi/p100-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "196"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin dıştan görünüşü",
+        "en": "Exterior of the tomb"
+      },
+      "alt": {
+        "tr": "Moloz ve devşirme taşlarla örülü, yeşil boyalı çatılı küçük yapının önünde koyu renkli bir kapı var. Çevresinde ağaçlar görülüyor.",
+        "en": "A small building of rubble and reused stones with a green metal roof and a dark door. Trees surround it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyh-eyup-yagli-dede-turbesi/p100-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "196-197"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi ve sanduka",
+        "en": "Inside the tomb with the sarcophagus"
+      },
+      "alt": {
+        "tr": "Tuğla örgülü, kemerli odada yeşil yazılı örtülü sanduka duruyor. Başında beyaz sarık, arkada küçük bir pencere var.",
+        "en": "In a brick-vaulted room, a sarcophagus lies under a green cover with gold script. A white turban sits at its head and a small window is behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyh-eyup-yagli-dede-turbesi/p100-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "197"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Sarıklı mezar taşı",
+        "en": "Turbaned gravestone"
+      },
+      "alt": {
+        "tr": "Ağaçların arasında, başlığında sarık biçimi bulunan taş bir mezar taşı duruyor. Gövdesinde yazı bölümleri var.",
+        "en": "Among trees, a stone gravestone topped with a carved turban shape. Its shaft carries panels of lettering."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

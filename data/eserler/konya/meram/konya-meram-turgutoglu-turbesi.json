@@ -10,7 +10,6 @@
     "from": "Konya II. Cilt – Türbeler",
     "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 131-133 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kitâbenin Arapça metni kitapta yok; Mevlâna Müzesi'ndeki kitâbenin okunuşu eklenmeli.",
@@ -395,7 +394,80 @@
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-turgutoglu-turbesi/p067-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "131"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Turgutoğlu Türbesi'nin dış görünümü",
+        "en": "Exterior of Turgutoğlu Tomb"
+      },
+      "alt": {
+        "tr": "Kare gövdeli taş yapının üzerinde, çıkıntılı taşlarla bezeli tuğla bir kubbe yükselir. Gövdede kemerli küçük bir pencere vardır, arkada apartmanlar görünür.",
+        "en": "A square stone body topped with a brick dome studded with protruding stones. A small arched window is on the wall, with apartment blocks behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-turgutoglu-turbesi/p068-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "133"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kubbenin ve çevresinin kuşbakışı",
+        "en": "Aerial view of the dome and surroundings"
+      },
+      "alt": {
+        "tr": "Alçak bir duvarla çevrili alanın ortasında yuvarlak, taş ve tuğla örgülü kubbe tepeden görülür. Yanında patikalar ve ağaçlar vardır.",
+        "en": "A round stone and brick dome inside a low wall, seen from above, with paths and trees alongside."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-turgutoglu-turbesi/p068-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "132"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içinde taş döşeme ve pencere",
+        "en": "Stone floor and window inside the tomb"
+      },
+      "alt": {
+        "tr": "Sıvalı duvarlı sade odada taş döşeme ve bir bölümünde geometrik desenli döşeme parçaları görünür. Duvarda tek bir kemerli pencere vardır.",
+        "en": "A plain plastered room with a stone floor, part of which has geometric patterned paving. A single arched window is in the wall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

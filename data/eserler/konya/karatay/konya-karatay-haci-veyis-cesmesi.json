@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Su Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Adını aldığı Hacı Veyis Camii'nin adı/konumu metinde açıkça verilmiyor ve ids.md tablosunda yok; ilişki yazılmadı.",
@@ -146,7 +145,56 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-haci-veyis-cesmesi/p119-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "234"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hacı Veyis Çeşmesi ve yanındaki yapı",
+        "en": "Hacı Veyis Fountain beside its building"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı, ahşap saçaklı ve küçük kubbeli bir ahşap külahlı yapının yan duvarına bitişik sivri kemerli bir taş çeşme var. Önünde sokak ve demir korkuluk görülüyor.",
+        "en": "A pointed-arch stone fountain set against the side wall of a yellow plastered building with wide wooden eaves and a small wooden cupola. A street and iron railing are in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-haci-veyis-cesmesi/p118-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "233"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Hacı Veyis Çeşmesi",
+        "en": "Hacı Veyis Fountain"
+      },
+      "alt": {
+        "tr": "Sivri kemerli, taş çerçeveli büyük bir çeşme. Kemerin içinde bir kitabe levhası, altında yalak ve çevrede alçak taş duvar bulunuyor; arkada ağaçlar var.",
+        "en": "A large stone-framed pointed-arch fountain with a small inscription plaque in the arch, a trough below and a low stone wall around it, with trees behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

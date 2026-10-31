@@ -9,10 +9,8 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
-      "Kitabın tam metni/transliterasyonu ve meali kitapta yok; kitâbe fotoğrafından okunmalı.",
       "Râziye Hatun'un I. İzzeddin Keykavus ile ilişkisi kitapta \"muhtemelen\" ile veriliyor; teyit edilmeli.",
       "Mimar bilgisi kitapta yok."
     ],
@@ -371,7 +369,56 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-kadinhani-raziye-sultan-kervansarayi/p143-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "282"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kervansarayın kuşbakışı görünüşü",
+        "en": "Aerial view of the caravanserai"
+      },
+      "alt": {
+        "tr": "Yerleşim içinde duran, çatısı kısmen açık dikdörtgen taş yapı. Ön cephede kemerli bir giriş çıkıntısı var; çevresinde evler ve ağaçlar görülüyor.",
+        "en": "A rectangular stone building with a partly open roof standing among houses and trees. An arched entrance projects from its front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-kadinhani-raziye-sultan-kervansarayi/p143-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "283"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kervansarayın taç kapısı",
+        "en": "The caravanserai's main portal"
+      },
+      "alt": {
+        "tr": "Kahverengi ve gri taşlardan örülmüş duvarın ortasında, yüksek bir kemerle çerçevelenen, çıkıntılı giriş bölümü var. İçerisi karanlık, üstünde ise basit bir silme uzanıyor.",
+        "en": "A projecting entrance in the middle of a wall of brown and grey stone, framed by a tall arch. The interior is dark and a plain moulding runs along the top."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

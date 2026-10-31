@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Su Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Dönem (era) kitapta adlandırılmıyor; era boş bırakıldı.",
@@ -217,7 +216,104 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-seyyit-harun-veli-hamami/p115-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "226-227"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hamam ve çevresindeki şehir manzarası",
+        "en": "The bath and the surrounding town"
+      },
+      "alt": {
+        "tr": "Yüksekten çekilmiş geniş görüntüde kiremit çatılı ve kubbeli hamam ağaçların arasında, arkada minareli bir cami ve dağlar görülüyor.",
+        "en": "A wide elevated view of the tiled, domed bath among trees, with a mosque and minaret and mountains behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-seyyit-harun-veli-hamami/p117-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "230"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Hamamın çatısı ve kubbeleri",
+        "en": "Roof and domes of the bath"
+      },
+      "alt": {
+        "tr": "Yukarıdan çekilmiş fotoğrafta kırma kiremit çatılı yapılar ve yanlarında dizili kiremit kaplı birçok küçük kubbe görülüyor.",
+        "en": "Top-down view of hip-roofed buildings with several small tiled domes arranged beside them."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-seyyit-harun-veli-hamami/p116-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "228"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap galerili soyunma salonu",
+        "en": "Dressing hall with a wooden gallery"
+      },
+      "alt": {
+        "tr": "Ahşap kaplamalı yüksek bir salonda ortada sekizgen mermer bir şadırvan var. Üst katta ahşap korkuluklu galeri, çevrede kanepeler ve koltuklar bulunuyor.",
+        "en": "A tall wood-clad hall with an octagonal marble fountain in the middle, a wooden gallery above, and sofas and chairs around."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-seyyit-harun-veli-hamami/p116-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "229"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sıcaklık bölümü ve göbek taşı",
+        "en": "Hot room with the central platform"
+      },
+      "alt": {
+        "tr": "Siyah beyaz fotoğrafta sivri kemerli nişleri olan kubbeli bir mekân ve ortada sekizgen, mermer kaplı büyük bir göbek taşı görülüyor.",
+        "en": "Black and white view of a domed room with pointed-arch niches and a large octagonal marble platform in the centre."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

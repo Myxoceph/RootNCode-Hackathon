@@ -12,7 +12,6 @@
       "Emir (Emrullah) Gazi'nin kimliği ve yaşadığı dönem kitapta verilmiyor.",
       "Dönem (era) kodu: kitap yalnızca XIV. yüzyıl sonu - XV. yüzyıl başı diyor, uygun bir dönem kodu seçilemedi; null bırakıldı.",
       "Türbeyi yaptıran ve mimar kitapta yok.",
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
     ],
@@ -208,7 +207,32 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ahirli-emirgazi-turbesi/p095-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "186"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Türbenin havadan görünüşü",
+        "en": "Aerial view of the tomb"
+      },
+      "alt": {
+        "tr": "Kuşbakışı görüntüde, yeşil kubbeli küçük taş türbe ağaçlarla çevrili bir tepede duruyor. Çevresinde bayrak direkleri ve yuvarlak bir yürüyüş yolu var; arka planda tarlalar görülüyor.",
+        "en": "From above, a small stone tomb with a green dome stands on a hill among trees. Flagpoles and a curved footpath surround it, with fields beyond."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

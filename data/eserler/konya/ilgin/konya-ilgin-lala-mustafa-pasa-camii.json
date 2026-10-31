@@ -9,12 +9,10 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Banî ve mimar bilgisi (Lala Mustafa Paşa, Mimar Sinan) üst eser (külliye) kaydından aktarıldı; yapı metninde ayrıca belirtilmiyor.",
-      "Mahalle/cadde bilgisi kitapta yok; adres sahadan teyit edilmeli.",
-      "Kitabe metni ve mealı kitapta yok; fotoğraftan okunmalı."
+      "Mahalle/cadde bilgisi kitapta yok; adres sahadan teyit edilmeli."
     ],
     "data_quality_notes": [
       {
@@ -360,7 +358,152 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-camii/p030-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "57"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mihrap ve minberiyle cami içi",
+        "en": "Mosque interior with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Mavi halılı ibadet mekânında ahşap minber, mihrap ve nakışlı pencere üstleri görülüyor; tavandan çok sayıda kandil sarkıyor.",
+        "en": "A prayer hall with blue carpet, a wooden minbar, the mihrab and painted window surrounds, with many lamps hanging from above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-camii/p031-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "59"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mermer mihrap nişi",
+        "en": "The marble mihrab niche"
+      },
+      "alt": {
+        "tr": "Gri mermerden, basamaklı mukarnaslı mihrap nişi; üstünde ahşap oymalı bir alınlık, önünde sarkan kandiller var.",
+        "en": "A mihrab niche of grey marble with stepped muqarnas, a carved wooden pediment above it and hanging lamps in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-camii/p031-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "59"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Halka tokmaklı ahşap kapı",
+        "en": "Wooden door with ring knockers"
+      },
+      "alt": {
+        "tr": "Koyu ahşap bir kapının kanadında dövme demir halka tokmaklar, zincir ve kilit parçaları; yüzeyde mıh başları var.",
+        "en": "A dark wooden door leaf with wrought iron ring knockers, a chain and lock parts, and studs on its surface."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-camii/p031-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "59"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Kapı üstündeki çiçek nakışlı alınlık",
+        "en": "Floral painted lunette above a door"
+      },
+      "alt": {
+        "tr": "Tuğla kemerli bir kapı üstü yarım daire alanında, soluk kırmızı ve yeşil çiçek motifleri görülüyor.",
+        "en": "A semicircular area above a door under a brick arch, with faded red and green flower motifs."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-camii/p031-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "59"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Mavi akantus kıvrımlı kapı alınlığı",
+        "en": "Lunette with blue scrolling leaves"
+      },
+      "alt": {
+        "tr": "Altın tonlu zemin üzerinde mavi kıvrık yapraklar ve ortada oval bir çiçek madalyonu bulunan yarım daire panel.",
+        "en": "A semicircular panel with blue scrolling leaves on a golden ground and an oval flower medallion at the centre."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-camii/p031-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "58"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Boyalı sütun ve sarkıt başlık",
+        "en": "Painted pier and pendant capital"
+      },
+      "alt": {
+        "tr": "Taş sütunun üzerinde kırmızı, yeşil ve turuncu bezemeli, aşağı doğru sivrilen çok yüzlü bir sütun başlığı; üstte çiçek nakışlı kemer görülüyor.",
+        "en": "A many-sided capital tapering downward with red, green and orange decoration on a stone pier, with a flower-painted arch above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

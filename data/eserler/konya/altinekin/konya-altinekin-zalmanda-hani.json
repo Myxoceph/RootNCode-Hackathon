@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Yapım tarihi/bânisi bilinmiyor; XV. yüzyıl ilk yarısı bilgisi yalnızca vakfiyeden çıkarım (probable).",
@@ -257,7 +256,32 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-altinekin-zalmanda-hani/p137-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "271"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Zalmanda Hanı'nın dıştan görünüşü",
+        "en": "Exterior of Zalmanda Han"
+      },
+      "alt": {
+        "tr": "Kuru bozkırda duran, kırmızı kiremitli çatılı küçük taş yapı. Öne çıkan kemerli bir giriş bölümü ve altında ahşap bir kapı var; arkada tepeler görülüyor.",
+        "en": "A small stone building with a red tiled roof on a dry steppe. A projecting arched entrance with a wooden door stands at the front, with hills behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

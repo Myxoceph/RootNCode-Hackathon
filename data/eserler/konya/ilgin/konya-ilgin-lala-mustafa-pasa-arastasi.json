@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Banî ve mimar bilgisi (Lala Mustafa Paşa, Mimar Sinan) üst eser (külliye) kaydından aktarıldı; yapı metninde ayrıca belirtilmiyor.",
@@ -268,7 +267,104 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-arastasi/p034-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "64"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Arastanın uzun taş duvarı ve bacaları",
+        "en": "Long stone wall and chimneys of the arasta"
+      },
+      "alt": {
+        "tr": "Moloz taş duvarlı uzun yapının çatısında tuğla bacalar sıralanıyor; sağda kemerli cam giriş, arkada kubbe ve minare görülüyor.",
+        "en": "A long rubble-stone building with a row of brick chimneys on its roof, an arched glazed entrance on the right, and a dome and minaret behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-arastasi/p034-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "65"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Taş duvarlı kahve köşesi",
+        "en": "Café corner with stone walls"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla duvar önünde ahşap masalar, mavi minderli oturaklar; duvarda halı ve resimler asılı.",
+        "en": "Wooden tables and blue-cushioned seats before a stone and brick wall, with a rug and pictures hanging on it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-arastasi/p034-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "65"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Taş ve tuğla örgünün birleşimi",
+        "en": "Junction of stone and brick masonry"
+      },
+      "alt": {
+        "tr": "Moloz taş duvarların ortasında kesişen, tuğla örgülü bir kemer köşesi.",
+        "en": "The corner of a brick-laid arch meeting rubble stone walls."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-arastasi/p035-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "66-67"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Tuğla kubbenin içi",
+        "en": "Interior of the brick dome"
+      },
+      "alt": {
+        "tr": "Dairesel örgülü tuğla kubbenin ortasında ışık açıklığı ve etrafında demir bir avize; kenarlarda taş ve tuğla yüzeyler var.",
+        "en": "A brick dome with concentric courses, a light opening at its centre with an iron chandelier, and stone and brick surfaces at the edges."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

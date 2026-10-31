@@ -9,13 +9,11 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Külliye metni 'iki han' diyor; bu kayıt tek bir hanı anlatıyor. Diğer hanın kaydı bu partide yok; kontrol edilmeli.",
       "Hanın yapım tarihi, ölçüleri ve kitabesi kitapta yok.",
-      "Banî, üst eser (külliye) kaydından aktarıldı; yapı kaydında ayrıca belirtilmiyor.",
-      "Sayfa 49-52 metin içermiyor (yalnızca görsel); fotoğraf/çizim sonra eklenmeli."
+      "Banî, üst eser (külliye) kaydından aktarıldı; yapı kaydında ayrıca belirtilmiyor."
     ],
     "data_quality_notes": [
       {
@@ -256,7 +254,152 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hani/p027-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "50-51"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliye ve çevresinin havadan görünüşü",
+        "en": "Aerial view of the complex and its surroundings"
+      },
+      "alt": {
+        "tr": "Gri çatılı uzun yapılar, küçük kubbeli bölümler ve minareli cami; çevresinde sokaklar ve kırmızı çatılı evler var.",
+        "en": "Long grey-roofed buildings, small domed sections and a mosque with a minaret, surrounded by streets and red-roofed houses."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hani/p026-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "49"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliyenin kuşbakışı görünüşü",
+        "en": "Bird's-eye view of the complex"
+      },
+      "alt": {
+        "tr": "Yukarıdan görülen külliyede solda uzun çatılı yapı, ortada küçük kubbeli yapılar ve sağda bahçe içinde kubbeli cami yer alıyor.",
+        "en": "The complex from above, with a long-roofed building on the left, small domed buildings in the middle and a domed mosque in a garden on the right."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hani/p026-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "48"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Camlı girişli taş yapı",
+        "en": "Stone building with glazed entrance"
+      },
+      "alt": {
+        "tr": "Taş duvarlı yapının ortasında, kırmızı saçaklı ve camlı yüksek bir giriş bölümü var; iki yanda kısa bölümler ve üstte uydu antenleri görülüyor.",
+        "en": "A stone-walled building with a tall glazed entrance bay under a red eave at the centre, short sections on both sides and satellite dishes above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hani/p026-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "49"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Çatı arasından girişe bakış",
+        "en": "The entrance seen from the roofs"
+      },
+      "alt": {
+        "tr": "Gri metal kaplı geniş çatıların ortasında, taş duvarlı ve camlı bir giriş bölümü ve arkasında bacalar görülüyor.",
+        "en": "A stone entrance bay with glazing in the middle of wide grey metal roofs, with chimneys behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hani/p026-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "48"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Taş duvar ve tuğla bacalar",
+        "en": "Stone wall and brick chimneys"
+      },
+      "alt": {
+        "tr": "Moloz taş örgülü duvarda iki kafesli sivri pencere ve çatıda üç tuğla baca görülüyor; gökyüzü mavi.",
+        "en": "A rubble stone wall with two lattice-filled pointed windows and three brick chimneys on the roof, against a blue sky."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hani/p026-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "49"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kapıdan çarşı içine bakış",
+        "en": "Looking through the doorway into the market"
+      },
+      "alt": {
+        "tr": "Siyah beyaz taşlı sivri kemerli kapıdan içeri, merdivenli ve dükkânlı bir hol görülüyor; iki yanda çerçeveli yazı levhaları var.",
+        "en": "Through a pointed-arch doorway of black and white stones, a hall with stairs and shops is visible, with framed text panels on both sides."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }
