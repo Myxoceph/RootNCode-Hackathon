@@ -1,5 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
+import { useSegments } from "expo-router";
 import { BottomTabBarHeightCallbackContext, type BottomTabBarProps } from "expo-router/js-tabs";
 import { useContext, type ComponentProps } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
@@ -15,6 +16,8 @@ export interface TabItem {
 
 /** The tab that floats its bar over the screen: the map runs on under it. */
 const FLOATS_ON = "index";
+/** Screens that fill the whole screen, the bar hidden: an asset's story. */
+const HIDDEN_ON = new Set(["[id]"]);
 const ICON_SIZE = 22;
 /** Every item is this tall, Kamera's disc too: the capsule's inset is then the same on all sides. */
 const ITEM_SIZE = 48;
@@ -35,6 +38,8 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
   const onHeight = useContext(BottomTabBarHeightCallbackContext);
   const focusedName = state.routes[state.index]?.name;
   const floats = focusedName === FLOATS_ON;
+  const segments = useSegments();
+  if (HIDDEN_ON.has(segments.at(-1) ?? "")) return null;
 
   return (
     <View
