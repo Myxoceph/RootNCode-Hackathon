@@ -87,6 +87,13 @@ await check("assistant", async () => {
   return [status === 200, `${status} ${s.body.model} ${seconds} s${status === 200 ? "" : ` ${body.error?.code ?? ""}`}`];
 });
 
+await check("transit (Konya pilot)", async () => {
+  // Konya Garı to Karatay Medresesi; at night the API searches from the morning.
+  const { status, body } = await get(`${BASE}/api/transit/plan?from=konya-gari&to=konya-selcuklu-karatay-medresesi`);
+  const options = body.itineraries?.length ?? 0;
+  return [status === 200 && options > 0, `${status} ${options} options${status === 200 ? "" : ` ${body.error?.code ?? ""}`}`];
+});
+
 await check("free disk", async () => {
   const fs = statfsSync("/");
   const gb = (fs.bavail * fs.bsize) / 1e9;

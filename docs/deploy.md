@@ -322,6 +322,44 @@ Karşılaştırırken şunlara bak:
 `ASSISTANT_BASE_URL=http://host.docker.internal:11434/v1`, `ASSISTANT_MODEL=qwen3:8b`,
 `ASSISTANT_API_KEY` boş. Ollama'yı `0.0.0.0`'a açma; parolası yoktur.
 
+## Toplu taşıma (Konya pilotu)
+
+Asistanın "nasıl giderim" cevabı ve `GET /transit/plan`, Konya'da otobüs ve tramvayla rota verir. Rotayı
+[OpenTripPlanner](https://www.opentripplanner.org/) 2.10.0 hesaplar; veri Konya Büyükşehir Belediyesi'nin
+[GTFS paketi](https://acikveri.konya.bel.tr/dataset/toplu-tasima-gtfs-verileri) (Kasım 2025, CC BY 4.0) ve
+OpenStreetMap'in Konya kesiti. Diğer illerde toplu taşıma verisi yok; API `TRANSIT_NOT_AVAILABLE_HERE` döner.
+
+```
+API ──► otp:8080 (/otp/gtfs/v1) ──► deploy/otp/data/graph.obj
+```
+
+Kurulum (bir kez, Konya yeni tarife yayınlayınca yeniden):
+
+```bash
+deploy/otp/prepare.sh        # GTFS ve OSM'yi indirir, Konya'yı keser, grafiği kurar (~2 dk, geçici ~650 MB)
+deploy/demo.sh up            # otp servisi grafiği yükler (~6 sn, ~600 MB bellek); API onu bekler
+```
+
+- Grafik ve indirilen dosyalar `deploy/otp/data/` altında, git dışında. `demo.sh up` grafik yoksa durur.
+- Ön kontrol (`demo.sh check`) Konya Garı → Karatay Medresesi rotasını sorar.
+- Rotanın başlayabileceği yerler: ziyaretçinin konumu, bir eser ve üç giriş noktası (Konya Garı, Selçuklu YHT
+  Garı, Otogar tramvay durağı). Otogar'ın noktası terminal binası değil tramvay durağıdır: OSM'de binadan perona
+  yaya yolu yok, binadan rota 1 km yürütüyordu.
+- Belediyenin Kasım 2025 dışa aktarımında ana tramvayın (150-B) 435 seferi Belediye durağında kesik: Zafer, Alaaddin ve
+  dönüş yok. Bütün tramvaylar hattın sonuna kadar gider; `deploy/otp/fix_gtfs.py` bu seferleri aynı hattın eksiksiz
+  seferlerinin durak sırası ve süreleriyle tamamlar (`prepare.sh` kendisi çağırır, asıl dosya `konya-gtfs-original.zip`).
+  Yeni bir tarife gelince çıktıdaki "completed N cut tram trips" sayısına bak; 0 ise belediye düzeltmiş demektir.
+- Havalimanına belediye hattı yok; asistan taksiyle Otogar tramvay durağına ya da doğrudan esere gitmeyi önerir.
+- Tarife Kasım 2025 tarihli; ekranda kaynak ve tarih yazar (`source`).
+
+Yerelde (demo yığını olmadan) API'yi OTP'yle denemek için:
+
+```bash
+docker run -d --name otp -p 127.0.0.1:8090:8080 -e JAVA_TOOL_OPTIONS=-Xmx2g \
+  -v "$PWD/deploy/otp/data:/var/opentripplanner:ro" opentripplanner/opentripplanner:2.10.0 --load --serve
+# apps/api/.env: OTP_URL=http://localhost:8090
+```
+
 ## Kayıtlar, yedek, sorun giderme
 
 ```bash

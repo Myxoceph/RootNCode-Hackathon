@@ -1,4 +1,4 @@
-import type { ChatCitation, ChatTurn, Lang, TripPlanResponse } from "@vagabonds/contracts";
+import type { ChatCitation, ChatTurn, Lang, TransitPlanResponse, TripPlanResponse } from "@vagabonds/contracts";
 import type { ChatMessage, ChatModel } from "./assistant.model.ts";
 import { runTool, SourceRegistry, TOOL_SPECS, type ToolContext } from "./assistant.tools.ts";
 
@@ -31,6 +31,7 @@ export function systemPrompt(lang: Lang, today: string, cities: string[]): strin
     "7. Kısa ve sade yaz: en çok 8 cümle ya da kısa bir liste. Uygulama düz metin gösterir: Markdown kullanma (**, #, tablo yok); liste satırlarını \"- \" ile başlat.",
     "8. Gezi isteğinde plan_trip'i kullan; uygulama planın tamamını saatleriyle ayrıca gösterir, sen yalnızca 2-3 cümleyle özetle (hangi eserler, hava, öğle yemeği); durakları tek tek sayma.",
     "9. Erişilebilirlik (tekerlekli sandalye, rampa, tuvalet) için yalnızca kayıttaki değeri söyle; 'unknown' ise bilgi olmadığını söyle, tahmin etme ve öneri uydurma.",
+    "10. Konya'da bir yere nasıl gidileceği sorulursa transit_route'u kullan (önce search_assets ile eserin id'sini bul). Başlangıç ziyaretçinin konumu (current), konya-gari, selcuklu-yht-gari, konya-otogari ya da bir eser olabilir. Uygulama rotayı haritada ayrıca gösterir; sen 2-3 cümleyle hangi hatta nereden binip nerede inileceğini ve saatleri söyle. Toplu taşıma rotası şimdilik yalnızca Konya'da (pilot); başka ilde bunu söyle. Ziyaretçi havalimanından geliyorsa belediye tarifesinde havalimanı hattı olmadığını söyle; taksiyle Otogar tramvay durağına ya da doğrudan esere gitmesini öner, istersen oradan konya-otogari ile rota ver. Taksi ücreti ya da süresi uydurma.",
     `Bugünün tarihi: ${today}. Cevap dili: ${LANGUAGE_NAME[lang]}.`,
   ].join("\n");
 }
@@ -80,12 +81,15 @@ export interface AskInput {
   today: string;
   /** Local hour, 0-23: a trip asked for in the evening starts tomorrow. */
   hour: number;
+  /** The visitor's position, for directions from where they are. */
+  origin?: { lat: number; lng: number } | undefined;
 }
 
 export interface AskResult {
   answer: string;
   citations: ChatCitation[];
   trip: TripPlanResponse | null;
+  transit: TransitPlanResponse | null;
 }
 
 /**
@@ -102,11 +106,11 @@ async function servedCities(api: ToolContext["api"], lang: Lang): Promise<string
 /** Answers one question: the model may call up to `MAX_TOOL_CALLS` tools, then writes the answer. */
 export async function ask(
   model: ChatModel,
-  { message, history, assetId, lang, today, hour }: AskInput,
-  tools: Omit<ToolContext, "sources" | "lang" | "today" | "hour">,
+  { message, history, assetId, lang, today, hour, origin }: AskInput,
+  tools: Omit<ToolContext, "sources" | "lang" | "today" | "hour" | "origin">,
   signal: AbortSignal,
 ): Promise<AskResult> {
-  const context: ToolContext = { ...tools, sources: new SourceRegistry(), lang, today, hour };
+  const context: ToolContext = { ...tools, sources: new SourceRegistry(), lang, today, hour, origin };
   let system = systemPrompt(lang, today, await servedCities(tools.api, lang));
 
   if (assetId) {
@@ -127,6 +131,7 @@ export async function ask(
 
   let calls = 0;
   let trip: TripPlanResponse | null = null;
+  let transit: TransitPlanResponse | null = null;
   let text: string | null;
   for (;;) {
     const toolsLeft = calls < MAX_TOOL_CALLS;
@@ -153,10 +158,11 @@ export async function ask(
           : { content: JSON.stringify({ error: "Tool limit reached; answer with what you have." }) };
       calls += 1;
       if ("trip" in result && result.trip) trip = result.trip;
+      if (result.transit) transit = result.transit;
       messages.push({ role: "tool", tool_call_id: call.id, content: result.content });
     }
   }
 
   const { answer, citations } = resolveCitations(plainText(stripThinking(text ?? "")), context.sources);
-  return answer ? { answer, citations, trip } : { answer: FALLBACK_ANSWER[lang], citations: [], trip };
+  return answer ? { answer, citations, trip, transit } : { answer: FALLBACK_ANSWER[lang], citations: [], trip, transit };
 }

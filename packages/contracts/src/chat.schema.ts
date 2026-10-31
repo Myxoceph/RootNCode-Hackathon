@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { AssetIdSchema, ContractVersionSchema, LangSchema } from "./asset.schema";
 import { TripPlanResponseSchema } from "./planner.schema";
+import { TransitPlanResponseSchema } from "./transit.schema";
 
 /**
  * AI asistan: questions about the sites, trip planning and local food (`POST /chat`).
@@ -22,10 +23,12 @@ export const ChatRequestSchema = z.strictObject({
   history: z.array(ChatTurnSchema).max(6).default([]),
   /** Answer language; without it, Accept-Language, then Turkish. */
   lang: LangSchema.optional(),
+  /** The visitor's position, when they allowed it; "how do I get there" starts from here. Never stored. */
+  origin: z.strictObject({ lat: z.number().min(-90).max(90), lng: z.number().min(-180).max(180) }).optional(),
 });
 
 /** What a citation points at; the app opens the asset or dish page for `asset` and `dish`. */
-export const ChatCitationKindSchema = z.enum(["asset", "dish", "trip", "weather"]);
+export const ChatCitationKindSchema = z.enum(["asset", "dish", "trip", "weather", "transit"]);
 
 export const ChatCitationSchema = z.strictObject({
   /** The `[n]` marker in `answer`. */
@@ -49,6 +52,8 @@ export const ChatResponseSchema = z.strictObject({
   attachments: z.strictObject({
     /** The plan behind a trip answer, for the Rotalar screen; null otherwise. */
     trip: TripPlanResponseSchema.nullable(),
+    /** Bus and tram directions behind a "how do I get there" answer (Konya pilot), for the route map; null otherwise. */
+    transit: TransitPlanResponseSchema.nullable().default(null),
   }),
   /** The model that wrote the answer, e.g. "qwen3:8b". */
   model: z.string().min(1),

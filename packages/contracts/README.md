@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.13`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.14`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -8,6 +8,7 @@ Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan v
 - `src/gastronomy.schema.ts`: `/cities/:code/dishes` (Yöresel Kültür & Gastronomi)
 - `src/sound.schema.ts`: `/meta/sounds` (Sesli Zaman Kapsülü); kaydın kendisi `asset.schema.ts`'te (`SoundRecordingSchema`)
 - `src/chat.schema.ts`: `POST /chat` ve `GET /chat/status` (AI asistan)
+- `src/transit.schema.ts`: `/transit/plan` ve `/transit/entry-points` (toplu taşıma, Konya pilotu)
 - `src/achievement.schema.ts`: ziyaretler ve başarımlar (`/assets/:id/visit`, `/achievements`, `/me/achievements`, `/me/visits`, `/admin/achievements`); liste `docs/achievements.md`
 - `src/reward.schema.ts`: ödül kataloğu ve cüzdan (`/rewards`, `/me/wallet`, `/rewards/:code/redeem`, `/admin/rewards`); anlatım `docs/rewards.md`
 - `src/admin.schema.ts`: yönetim paneli (`/admin/summary`, `/admin/users`, `/admin/assets`); moderasyon kuyruğu `community.schema.ts`'te
@@ -30,7 +31,9 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `GET /routes/trip?city=&duration=&theme=&start=&date=&lang=` | `TripPlanResponseSchema` (`duration`: `half`, `1` (varsayılan) ya da `2`; `theme`: `type:<kod>` ya da `era:<kod>`, verilmezse bütün eserler; `date`: 1. günün tarihi, bugünden tahmin aralığının sonuna kadar) |
 | `GET /routes/plan?city=&theme=&start=&maxMinutes=&lang=` | `RoutePlanResponseSchema` (`theme`: `type:<kod>`, `era:<kod>` ya da `network:<eser id>`; `start`: `lat,lng`; `maxMinutes` 15–600, varsayılan 120) |
 | `GET /chat/status` | `ChatStatusResponseSchema` (`available: false` iken sohbet girişleri gizlenir) |
-| `POST /chat` | İstek `ChatRequestSchema` (`message` 1–500 karakter, `assetId?`, `history` en çok 6 tur, `lang?`), yanıt `ChatResponseSchema` (`answer` içindeki `[n]` işaretleri `citations[].ref`'e karşılık gelir; `grounded: false` ise cevap kaynaksızdır; gezi sorusunda `attachments.trip`) |
+| `POST /chat` | İstek `ChatRequestSchema` (`message` 1–500 karakter, `assetId?`, `history` en çok 6 tur, `lang?`), yanıt `ChatResponseSchema` (`answer` içindeki `[n]` işaretleri `citations[].ref`'e karşılık gelir; `grounded: false` ise cevap kaynaksızdır; gezi sorusunda `attachments.trip`; Konya'da "nasıl giderim" sorusunda `attachments.transit`, `TransitPlanResponseSchema`). İstekte isteğe bağlı `origin: { lat, lng }`: ziyaretçinin konumu, saklanmaz |
+| `GET /transit/entry-points?lang=` | `TransitEntryPointsResponseSchema`: rotanın başlayabileceği yerler (`konya-gari`, `selcuklu-yht-gari`, `konya-otogari`) |
+| `GET /transit/plan?from=&to=&at=&lang=` | `TransitPlanResponseSchema`: en çok 3 seçenek; her bacakta `mode` (`walk`, `bus`, `tram`), biniş ve iniş durağı, saatler, hat (`line.name`, ör. `56-A`), yön, aradaki durak sayısı ve çizim için `path` ([lat, lng]). `from`: `lat,lng`, giriş noktası kodu ya da eser id; `to`: eser id ya da `lat,lng`. Gece sefer yoksa arama sabah 06:00'dan yapılır (`searchedFrom`). Konya dışı `TRANSIT_NOT_AVAILABLE_HERE` (400), OTP yoksa `TRANSIT_UNAVAILABLE` (503) |
 | `POST /auth/anonymous` | İstek `AnonymousSessionRequestSchema` (`nickname`), yanıt `AnonymousSessionResponseSchema` (`user`, `token`) |
 | `POST /auth/register` | İstek `RegisterRequestSchema` (`username`, `password` 8–128, isteğe bağlı `nickname`), yanıt `SessionResponseSchema` (`user`, `token`) |
 | `POST /auth/login` | İstek `LoginRequestSchema` (`username` büyük/küçük harf duyarsız, `password`), yanıt `SessionResponseSchema`; her giriş bu cihaz için yeni token verir |

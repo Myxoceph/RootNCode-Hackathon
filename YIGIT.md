@@ -221,4 +221,34 @@ sisi kalkmalı, mühür açılmalı; ziyaret edilmemişler kilitli kalır.
 
 ---
 
+## 11. Asistanda toplu taşıma rotası (Konya pilotu)
+
+**Ne:** Konya'da "Karatay Medresesi'ne nasıl giderim?" sorusunun cevabının altında tıklanabilir küçük bir rota
+önizlemesi; tıklanınca Konya haritası açılır pencerede açılır, üstünde yürüme, otobüs ve tramvay bacakları,
+binilecek ve inilecek duraklar ve saatler görünür. Diğer illerde rota yok (asistan "pilot Konya'da" der).
+
+- **Konum:** izin varsa `POST /chat` isteğine `origin: { lat, lng }` ekle (saklanmaz). Yoksa asistan nereden
+  başlanacağını sorar; kullanıcı gar, YHT garı, otogar ya da bir eser söyleyebilir.
+- **Veri:** yanıttaki `attachments.transit` (`TransitPlanResponseSchema`), `null` değilse önizlemeyi göster.
+  `itineraries[]` en çok 3 seçenek, soonest first; her birinde `departure`, `arrival`, `durationMinutes`,
+  `walkMeters`, `transfers`, `legs[]`.
+- **Bacak:** `mode` (`walk`, `bus`, `tram`), `from` / `to` (`name`, `lat`, `lng`, durakta `stopCode`),
+  `departure` / `arrival` (ISO, +03:00), `line` (`name`: gösterilecek ad, otobüste `56-A`, tramvayda "Alaaddin – Selçuk
+  Üniversitesi tramvayı" ya da "Adliye – Alaaddin tramvayı"; `code`: tarifedeki kod, `color` varsa), `headsign` (yön),
+  `stopsBetween`, `path` (çizim için `[lat, lng]` noktaları).
+- **Önizleme (sohbet balonu):** harita karosu gerekmez; seçilen seçeneğin `path`'lerini küçük bir SVG'ye çiz
+  (yürüme kesikli gri, otobüs ve tramvay `line.color` ya da tema rengi), yanına "56-A · 21 dk · 10:05" gibi bir satır.
+- **Açılır pencere:** mevcut MapLibre haritası; bacakları çiz, biniş ve iniş duraklarına işaret koy, başlangıç ve
+  hedefe ayrı işaret. Altta adım adım liste: "10:05 Millet durağında 56-A'ya bin (Alaaddin yönü), 3 durak,
+  10:19 Alaaddin Turnike 1'de in, 370 m yürü". Seçenekler arasında geçiş (sekme ya da kaydırma).
+- **Sabah:** `searchedFrom` sorulan saatten farklıysa (gece sefer yok) "İlk seferler sabah" notu göster.
+- **Kaynak:** altta `source.name` · `source.timetable` · `source.license` (ör. "Konya Büyükşehir Belediyesi Açık
+  Veri · Kasım 2025 tarifesi · CC BY 4.0").
+- **Yenile:** "Sonraki seferler" için `GET /transit/plan?from=<lat,lng|konya-gari|eser id>&to=<eser id>&at=<ISO>`
+  aynı şemayı döner. Giriş noktaları `GET /transit/entry-points`.
+- **Erişilebilirlik:** önizlemeye `accessibilityLabel` ("Karatay Medresesi'ne rota: 56-A otobüsü, 21 dakika"),
+  adım listesi ekran okuyucuyla okunabilir olsun; haritasız da anlaşılır.
+
+---
+
 Takıldığın bir yer, eksik ya da garip bir yanıt olursa bana yaz; API'de değişiklik gerekirse hemen yaparım.

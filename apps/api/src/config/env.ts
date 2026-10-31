@@ -59,6 +59,9 @@ const EnvSchema = z.object({
   ASSISTANT_MODEL: z.string().default(""),
   // Only for hosted providers; Ollama needs none. Never logged.
   ASSISTANT_API_KEY: z.string().default(""),
+  // OpenTripPlanner serving the Konya graph (deploy/otp/prepare.sh), e.g. http://otp:8080; empty turns
+  // transit directions off and GET /transit/plan answers 503.
+  OTP_URL: z.union([z.literal(""), z.url()]).default(""),
 });
 
 export type Env = z.infer<typeof EnvSchema>;

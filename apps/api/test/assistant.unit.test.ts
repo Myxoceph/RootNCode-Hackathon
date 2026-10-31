@@ -183,6 +183,33 @@ describe("city_dishes tool", () => {
   });
 });
 
+describe("transit_route tool", () => {
+  function context(api: ToolContext["api"], origin?: { lat: number; lng: number }): ToolContext {
+    return { api, repository: { searchAssets: async () => [] }, sources: new SourceRegistry(), lang: "tr", today: "2026-11-01", hour: 10, origin };
+  }
+
+  it("asks where the visitor is when the app sent no position", async () => {
+    let called = false;
+    const { content } = await runTool("transit_route", JSON.stringify({ to: "konya-selcuklu-karatay-medresesi" }), context(async () => {
+      called = true;
+      return { statusCode: 200, body: {} };
+    }));
+    expect(JSON.parse(content).error).toMatch(/position is unknown/);
+    expect(called).toBe(false);
+  });
+
+  it("sends the position as the start, and says the pilot is Konya's elsewhere", async () => {
+    let query: Record<string, string> = {};
+    const outside = context(async (_path, q) => {
+      query = q;
+      return { statusCode: 400, body: { error: { code: "TRANSIT_NOT_AVAILABLE_HERE", message: "x" } } };
+    }, { lat: 40.18, lng: 29.06 });
+    const { content } = await runTool("transit_route", JSON.stringify({ to: "bursa-osmangazi-ulucami" }), outside);
+    expect(query.from).toBe("40.18,29.06");
+    expect(JSON.parse(content).error).toMatch(/Konya only/);
+  });
+});
+
 describe("plan_trip tool", () => {
   async function plannedDate(hour: number, date?: string) {
     let query: Record<string, string> = {};
