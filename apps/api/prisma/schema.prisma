@@ -223,6 +223,8 @@ model asset_relation {
   description_tr  String
   description_en  String?
   confidence      String
+  target_name_tr  String?
+  target_name_en  String?
   asset           asset         @relation(fields: [source_asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
   relation_type   relation_type @relation(fields: [type_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
 
