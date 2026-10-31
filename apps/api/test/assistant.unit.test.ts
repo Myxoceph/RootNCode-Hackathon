@@ -168,6 +168,21 @@ describe("systemPrompt", () => {
   });
 });
 
+describe("city_dishes tool", () => {
+  it("says a city has no dishes yet, so the model does not retry every kind", async () => {
+    const context: ToolContext = {
+      api: async () => ({ statusCode: 200, body: { version: "0.3.13", lang: "tr", city: { code: "konya", label: "Konya" }, dishes: [] } }),
+      repository: { searchAssets: async () => [] },
+      sources: new SourceRegistry(),
+      lang: "tr",
+      today: "2026-11-01",
+      hour: 10,
+    };
+    const { content } = await runTool("city_dishes", JSON.stringify({ city: "konya" }), context);
+    expect(JSON.parse(content)).toMatchObject({ dishes: [], note: expect.stringContaining("no registered dishes") });
+  });
+});
+
 describe("plan_trip tool", () => {
   async function plannedDate(hour: number, date?: string) {
     let query: Record<string, string> = {};

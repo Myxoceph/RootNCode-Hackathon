@@ -263,6 +263,10 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
     const { statusCode, body } = await api(`/cities/${encodeURIComponent(city)}/dishes`, { lang });
     if (statusCode === 400 || statusCode === 404) return failure(`Unknown city "${city}".`);
     const { dishes } = CityDishesResponseSchema.parse(body);
+    // Without the note the model retried with every `kind` until the tool limit.
+    if (dishes.length === 0) {
+      return { content: JSON.stringify({ dishes: [], note: "The dataset has no registered dishes for this city yet; say so." }) };
+    }
     return {
       content: JSON.stringify({
         dishes: dishes
