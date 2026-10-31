@@ -13,7 +13,7 @@ const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
  * the commands sent to it when pins or the selection change, and its events.
  */
 export function useMapPage(
-  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince }: AssetMapProps,
+  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity }: AssetMapProps,
   send: (command: MapPageCommand) => void,
 ) {
   const { scheme, colors: c } = useTheme();
@@ -44,12 +44,14 @@ export function useMapPage(
               seal: {
                 from: palette.gece700,
                 to: palette.gece900,
-                ring: palette.altin300,
+                ring: palette.gece950,
                 icon: palette.altin200,
                 lock: palette.altin300,
-                lockIcon: palette.gece900,
-                halo: palette.altin300,
+                lockEdge: palette.gece950,
+                halo: palette.gece950,
               },
+              // White fog on the day map, moonlit fog on the night map.
+              cloud: scheme === "dark" ? { top: palette.gece100, middle: palette.gece300, bottom: palette.gece600 } : { top: palette.white, middle: palette.gece200, bottom: palette.gece400 },
             },
             maplibre,
             opening: showsProvinces ? { reveal } : null,
@@ -73,6 +75,7 @@ export function useMapPage(
     const event = parseMapPageEvent(data);
     if (event?.type === "select") onSelect(event.id);
     if (event?.type === "province") onSelectProvince?.(event.plate);
+    if (event?.type === "leaveCity") onLeaveCity?.();
     if (event?.type === "error") onError?.(event.message);
     if (event?.type === "ready" && !ready.current) {
       ready.current = true;
