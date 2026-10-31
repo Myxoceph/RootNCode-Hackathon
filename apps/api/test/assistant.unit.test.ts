@@ -77,6 +77,55 @@ describe("createChatModel", () => {
     const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl });
     await expect(model.complete([], [], AbortSignal.timeout(1_000))).rejects.toThrow(/^Model returned HTTP 500$/);
   });
+
+  describe("ping", () => {
+    const ANSWER = JSON.stringify({ choices: [{ message: { content: "ok" } }] });
+    /** `/models` always answers; completions answer with `completion` (a status, or 200 with ANSWER). */
+    function provider() {
+      const state = { completion: 200, clock: 0 };
+      const fetchImpl = (async (url: string) =>
+        url.endsWith("/models")
+          ? new Response("{}")
+          : new Response(state.completion === 200 ? ANSWER : "busy", { status: state.completion })) as unknown as typeof fetch;
+      const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl, now: () => state.clock });
+      const ask = () => model.complete([], [], AbortSignal.timeout(1_000)).catch(() => null);
+      return { state, model, ask };
+    }
+
+    it("reports unavailable after the model fails on its side, though /models answers", async () => {
+      const { state, model, ask } = provider();
+      expect(await model.ping()).toBe(true);
+      state.completion = 503;
+      await ask();
+      expect(await model.ping()).toBe(false);
+    });
+
+    it("asks the provider again a minute after the failure", async () => {
+      const { state, model, ask } = provider();
+      state.completion = 429;
+      await ask();
+      state.clock = 59_000;
+      expect(await model.ping()).toBe(false);
+      state.clock = 61_000;
+      expect(await model.ping()).toBe(true);
+    });
+
+    it("is available again as soon as an answer comes back", async () => {
+      const { state, model, ask } = provider();
+      state.completion = 503;
+      await ask();
+      state.completion = 200;
+      await ask();
+      expect(await model.ping()).toBe(true);
+    });
+
+    it("stays available after a fault in our own request (400)", async () => {
+      const { state, model, ask } = provider();
+      state.completion = 400;
+      await ask();
+      expect(await model.ping()).toBe(true);
+    });
+  });
 });
 
 describe("oneSystemMessage", () => {

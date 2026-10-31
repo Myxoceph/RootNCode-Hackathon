@@ -52,7 +52,10 @@ export interface ChatModel {
   readonly name: string;
   /** One completion; empty `tools` asks for a plain answer. Throws `ModelError` on any failure. */
   complete(messages: ChatMessage[], tools: ToolSpec[], signal: AbortSignal): Promise<ModelReply>;
-  /** Whether the provider answers at all (cached briefly); never throws. */
+  /**
+   * Whether the provider answers at all (cached briefly) and the last answer did not fail on its
+   * side (overloaded, out of quota, key refused) within a minute; never throws.
+   */
   ping(): Promise<boolean>;
 }
 
@@ -90,6 +93,13 @@ export class ModelError extends Error {
 
 const PING_TIMEOUT_MS = 3_000;
 const PING_TTL_MS = 30_000;
+// `/models` still answers while the model itself is overloaded (Gemini's 503 "high demand"), so a
+// provider-side failure marks the assistant unavailable for this long and the app hides the chat.
+const OUTAGE_TTL_MS = 60_000;
+/** Statuses that say the provider cannot answer now; anything else in 4xx is a fault in our request. */
+function isProviderFailure(status: number): boolean {
+  return status >= 500 || status === 429 || status === 401 || status === 403;
+}
 // Low temperature: answers should stay close to the tool results.
 const TEMPERATURE = 0.2;
 // Thinking models (Gemini 3, Qwen 3) spend part of this on reasoning; 800 cut answers short.
@@ -101,6 +111,7 @@ export interface ModelClientOptions {
   /** Sent as a bearer token when set; never logged. */
   apiKey?: string | undefined;
   fetchImpl?: typeof fetch;
+  now?: () => number;
 }
 
 /**
@@ -116,11 +127,18 @@ export function oneSystemMessage(messages: ChatMessage[]): ChatMessage[] {
   ];
 }
 
-export function createChatModel({ baseUrl, model, apiKey, fetchImpl = fetch }: ModelClientOptions): ChatModel {
+export function createChatModel({
+  baseUrl,
+  model,
+  apiKey,
+  fetchImpl = fetch,
+  now = Date.now,
+}: ModelClientOptions): ChatModel {
   const root = baseUrl.replace(/\/+$/, "");
   const headers: Record<string, string> = { "content-type": "application/json" };
   if (apiKey) headers.authorization = `Bearer ${apiKey}`;
   let lastPing: { at: number; ok: boolean } | null = null;
+  let lastOutage: number | null = null;
 
   return {
     name: model,
@@ -145,11 +163,16 @@ export function createChatModel({ baseUrl, model, apiKey, fetchImpl = fetch }: M
           signal,
         });
       } catch (err) {
+        lastOutage = now();
         if (signal.aborted) throw new ModelError("Model call timed out");
         throw new ModelError(`Model unreachable (${(err as Error).name})`);
       }
-      // The provider's error body may echo the request, so only the status is kept.
-      if (!response.ok) throw new ModelError(`Model returned HTTP ${response.status}`);
+      if (!response.ok) {
+        if (isProviderFailure(response.status)) lastOutage = now();
+        // The provider's error body may echo the request, so only the status is kept.
+        throw new ModelError(`Model returned HTTP ${response.status}`);
+      }
+      lastOutage = null;
 
       const parsed = CompletionSchema.safeParse(await response.json().catch(() => null));
       if (!parsed.success) throw new ModelError("Model returned an unexpected response");
@@ -167,7 +190,8 @@ export function createChatModel({ baseUrl, model, apiKey, fetchImpl = fetch }: M
     },
 
     async ping() {
-      if (lastPing && Date.now() - lastPing.at < PING_TTL_MS) return lastPing.ok;
+      if (lastOutage !== null && now() - lastOutage < OUTAGE_TTL_MS) return false;
+      if (lastPing && now() - lastPing.at < PING_TTL_MS) return lastPing.ok;
       let ok = false;
       try {
         const response = await fetchImpl(`${root}/models`, { headers, signal: AbortSignal.timeout(PING_TIMEOUT_MS) });
@@ -175,7 +199,7 @@ export function createChatModel({ baseUrl, model, apiKey, fetchImpl = fetch }: M
       } catch {
         ok = false;
       }
-      lastPing = { at: Date.now(), ok };
+      lastPing = { at: now(), ok };
       return ok;
     },
   };
