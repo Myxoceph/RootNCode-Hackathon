@@ -233,7 +233,8 @@ binilecek ve inilecek duraklar ve saatler görünür. Diğer illerde rota yok (a
   `itineraries[]` en çok 3 seçenek, soonest first; her birinde `departure`, `arrival`, `durationMinutes`,
   `walkMeters`, `transfers`, `legs[]`.
 - **Bacak:** `mode` (`walk`, `bus`, `tram`), `from` / `to` (`name`, `lat`, `lng`, durakta `stopCode`),
-  `departure` / `arrival` (ISO, +03:00), `line` (`name` ör. `56-A`, `color` varsa), `headsign` (yön),
+  `departure` / `arrival` (ISO, +03:00), `line` (`name`: gösterilecek ad, otobüste `56-A`, tramvayda "Alaaddin – Selçuk
+  Üniversitesi tramvayı" ya da "Adliye – Alaaddin tramvayı"; `code`: tarifedeki kod, `color` varsa), `headsign` (yön),
   `stopsBetween`, `path` (çizim için `[lat, lng]` noktaları).
 - **Önizleme (sohbet balonu):** harita karosu gerekmez; seçilen seçeneğin `path`'lerini küçük bir SVG'ye çiz
   (yürüme kesikli gri, otobüs ve tramvay `line.color` ya da tema rengi), yanına "56-A · 21 dk · 10:05" gibi bir satır.
