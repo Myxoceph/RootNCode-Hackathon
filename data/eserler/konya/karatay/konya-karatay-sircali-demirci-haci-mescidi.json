@@ -1,0 +1,496 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-sircali-demirci-haci-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banisi ve inşa tarihi kitapta yok",
+      "Kitabedeki/çinideki ayet yazılarının transkripsiyonu kitapta yok; inscriptions boş bırakıldı",
+      "Yapının vakfı kitapta anlatılmıyor",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[onarim-1848]",
+        "note": "Kitap H. 1275 / M. 1848 veriyor; H. 1275 normalde M. 1858-59'a denk gelir. Hicri/miladi uyuşmazlığı: kitaptaki değerler korundu, olay disputed işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "Halk arasındaki 'Sırçalı Medrese' adı aynı mahalledeki ayrı bir yapı olan Sırçalı Medrese ile karıştırılmamalı; kitap mihrap çinilerini o yapıyla yalnızca karşılaştırıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sırçalı (Demirci Hacı) Mescidi",
+    "en": "Sırçalı (Demirci Hacı) Masjid"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Kubbeli Mescit",
+      "en": "Kubbeli Mescit",
+      "note": "II. Bayezid, Kanuni ve III. Murat dönemi tahrir kayıtlarına göre"
+    },
+    {
+      "tr": "Sırçalı Medrese",
+      "en": "Sırçalı Medrese",
+      "note": "Halk arasında zengin çinilerine atıfla"
+    },
+    {
+      "tr": "Debbağlar Mescidi",
+      "en": "The Tanners Mosque",
+      "note": "Bölgede debbağlar bulunduğu için"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu",
+    "çini mihrap",
+    "kubbeli mescit",
+    "kalem işi",
+    "Karatay"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Sırçalı Mescit Mahallesi",
+    "address": "Kuzgunkavak Caddesi, İsmet Paşa İlkokulu'nun kuzeyi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "234-237"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Bilinmiyor; XIII. yüzyıl (Selçuklu) olabileceği düşünülür",
+      "en": "Unknown; possibly 13th century (Seljuk)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Banisi ve yapım tarihi bilinmiyor; plan ve mimari elemanlara bakılarak XIII. yüzyılda yapılmış olabileceği düşünülüyor. Kesin yıl yok.",
+      "en": "Founder and date unknown; from plan and architectural elements possibly built in the 13th century. No exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "234"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karatay'da, kare planlı, kubbeli, üç gözlü son cemaat yeri ve minaresi olan mescit. Banisi ve inşa tarihi bilinmez; planı ve mimari öğeleri nedeniyle XIII. yüzyıl Selçuklu eseri olabileceği düşünülür. Son cemaat kemerlerindeki çiniler ve çini mihrabıyla öne çıkar.",
+    "en": "A masjid in Karatay with a square plan, a dome, a three-bay narthex and a minaret. Its founder and date are unknown; from its plan and architectural elements it may be a 13th-century Seljuk work. It stands out for the tiles on the narthex arches and its tiled mihrab."
+  },
+  "sections": [
+    {
+      "id": "genel-ve-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Adlar ve Tarihçe",
+        "en": "Location, Names and History"
+      },
+      "body": {
+        "tr": "Mescit Karatay, Sırçalı Mescit Mahallesi, Kuzgunkavak Caddesi üzerinde, İsmet Paşa İlkokulu'nun kuzeyindedir. Banisi ve inşa tarihi bilinmemektedir; planından ve mimari elemanlarından hareketle Selçuklu döneminde, XIII. yüzyılda yapılmış olabileceği düşünülmektedir. II. Bayezid, Kanuni ve III. Murat dönemi tahrir kayıtlarına göre diğer adı Kubbeli Mescit'tir. Müderris Sarı Hafız Süleyman tarafından H. 1275 / M. 1848'de tamir edilmiş ve yanına bir medrese eklenmiştir; bu medrese 1931'de yıkılmıştır. Şer'iyye sicil kayıtlarına göre bir de zaviyesi vardır ve burada bir dönem cüzzam hastaları muhafaza edilmiştir; zaviye H. 1280 / M. 1863'te yıldırım düşmesiyle yıkılmış, sonra yeniden yapılmıştır. Vakıflar Bölge Müdürlüğü 2007-2008'de tamir etmiştir. Halk çiniye 'sırça' dediği için zengin çinilerine atfen 'Sırçalı Medrese', bölgede debbağlar bulunduğu için 'Debbağlar Mescidi' adlarıyla da anılmıştır.",
+        "en": "The masjid is in Karatay, Sırçalı Mescit Neighborhood, on Kuzgunkavak Street, north of İsmet Paşa Primary School. Its owner and date are unknown; from its plan and architectural elements it may have been built in the Seljuk period, in the 13th century. According to survey records of the periods of Bayezid II, Suleyman the Magnificent and Murat III its other name is Kubbeli Mescit. It was repaired by Müderris Sarı Hafız Süleyman in 1275 AH / 1848 AD and a madrasa was added next to it; this madrasa was demolished in 1931. According to the Konya Sharia registry it also has a lodge where leprosy patients were kept for a while; the lodge was destroyed by lightning in 1280 AH / 1863 AD and rebuilt. The Regional Directorate of Foundations repaired the masjid in 2007-2008. Because the people call tile 'sırça' it was named 'Sırçalı Medrese' after its rich tiles, and because of the tanners in the area it was also called 'The Tanners Mosque'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "234-235"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlıdır; kubbeyle örtülü harim, üç gözlü son cemaat yeri ve minareden oluşur. Yapıda kesme taş, moloz taş ve tuğla kullanılmıştır. Cepheler sadedir; harim sonradan açılmış sivri kemerli, alçı şebekeli pencerelerle aydınlanır. Doğudaki üç gözlü son cemaat yerinin kemerlerinin dış yüzü tamamen çiniyle bezenmişti, büyük kısmı dökülmüştür; kemerlerde Bakara Suresi'nin 255-256. ayetleri yazılıydı, yazılar zamanla tahrip olmuş, 2007-2008 restorasyonunda dökülen kısımlar boyama tekniğiyle tamamlanmıştır. Son cemaat pencerelerinin üzerinde siyah ve firuze çiniler, sivri kemerli pencerelerin alınlıklarında kûfi hattan gelişmiş geometrik düzenlemeler, ortada 'Mühr-ü Süleyman' ve alt-üstlerinde rûmi dizileri vardır. Kuzeydoğu köşedeki minare tuğladan, kare kaideli, sekizgen gövdeli ve tek şerefelidir.",
+        "en": "The masjid has a square plan; it consists of a domed harim, a three-bay narthex and a minaret. Cut stone, rubble stone and brick were used. The facades are simple; the harim is lit by later-opened pointed-arched windows with plaster grilles. The outer surface of the arches of the three-bay narthex on the east was entirely tiled, but most has fallen away; verses 255-256 of Surah Al-Baqara were written on the arches, the writing was destroyed over time and in the 2007-2008 restoration the missing parts were completed by painting. Above the windows opening to the narthex are black and turquoise tiles; the pediments of the pointed-arched windows have geometric arrangements developed from Kufic calligraphy with a 'Seal of Suleyman' in the middle and rumi series above and below. The minaret in the northeast corner is of brick with a square base, an octagonal body and a single balcony."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "234-235"
+        }
+      ]
+    },
+    {
+      "id": "harim-ve-mihrap",
+      "order": 3,
+      "title": {
+        "tr": "Harim ve Mihrap",
+        "en": "Harim and Mihrab"
+      },
+      "body": {
+        "tr": "Son cemaat yerinden harime geçilir. Harim kare planlı ve kubbelidir; kubbeye geçiş Türk üçgenleriyledir. Kubbe içindeki yıldız kompozisyonlu madalyon sonradan bozulmuş, son restorasyonda son cemaat kemerleriyle birlikte kalem işi tekniğinde yağlı boyayla tamamlanmıştır. Harimin beden duvarlarında taş, kubbe ve geçiş elemanlarında tuğla kullanılmıştır. Kıble duvarı ortasındaki dikdörtgen formlu mihrap yapının en önemli unsurlarındandır: birinci bordürde küçük kare kesilmiş çinilerle geometrik düzenleme, ikinci sırada rûmi şeritleri, üçüncü sırada iç bükey Selçuklu sülüsüyle Âl-i İmrân Suresi'nin 18-19 ve 26. ayetlerinin bir bölümü yer alır; devamında rûmi süslemeler vardır. Dış bordür Alâeddin Camii mihrabındaki, Karatay Medresesi ve Sırçalı Medrese eyvanlarındaki çinilere benzer. Güneybatı köşedeki XX. yüzyıl minberi özgün değildir. Kitaba göre mescit Selçuklu dönemi mescitleri içinde plan, örtü sistemi ve çini kullanımı açısından en özgün eserlerden biridir.",
+        "en": "You pass from the narthex to the harim, which has a square plan and a dome on Turkish triangles. The star-composition medallion inside the dome was later damaged; in the last restoration it was completed with oil paint in the hand-drawn technique together with the narthex arches. Stone was used in the harim walls and brick in the dome and transition elements. The rectangular mihrab in the middle of the qibla wall is one of the most important elements: the first border has geometric arrangements of tiles cut into small squares, the second rumi strips, and the third part of verses 18-19 and 26 of Surah Al-i Imran in concave Seljuk thuluth, followed by rumi decorations. The outer border resembles the tiles of the Alâeddin Mosque mihrab and the iwans of Karatay Madrasa and Sırçalı Madrasa. The 20th-century minbar in the southwest corner is not original. According to the book the masjid is one of the most original Seljuk masjids in terms of plan, covering system and use of tiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "235, 237"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare planlı, kubbeli harim",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "234-235"
+        }
+      ]
+    },
+    {
+      "key": "minare_serefe",
+      "label": {
+        "tr": "Minare şerefe sayısı",
+        "en": "Minaret balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "234-235"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Müderris Sarı Hafız Süleyman",
+      "role": {
+        "tr": "H. 1275 / M. 1848'de mescidi tamir ettirdi, medrese ekletti",
+        "en": "Repaired the masjid in 1848 and added a madrasa"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1848",
+      "year": 1848,
+      "date": null,
+      "hijri": "H. 1275",
+      "type": "repair",
+      "title": {
+        "tr": "Müderris Sarı Hafız Süleyman tamir ettirdi, yanına medrese eklendi",
+        "en": "Repaired by Müderris Sarı Hafız Süleyman; a madrasa was added"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "234-235"
+        }
+      ]
+    },
+    {
+      "id": "zaviye-yildirim-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": "H. 1280",
+      "type": "damage",
+      "title": {
+        "tr": "Zaviye yıldırım düşmesiyle yıkıldı, sonra yeniden yapıldı",
+        "en": "Lodge destroyed by lightning and rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "234-235"
+        }
+      ]
+    },
+    {
+      "id": "medrese-yikim-1931",
+      "year": 1931,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Eklenen medrese yıkıldı",
+        "en": "The added madrasa was demolished"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "234-235"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tamiri (2007-2008)",
+        "en": "Repair by the Regional Directorate of Foundations (2007-2008)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "234-235"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, kubbeli bir mescit. Doğuda üç gözlü, çinili kemerli bir son cemaat yeri, kuzeydoğu köşede tuğladan sekizgen gövdeli tek şerefeli minare vardır. İçeride kıble duvarının ortasında çini bordürlerle çevrili dikdörtgen bir mihrap bulunur.",
+      "en": "A square, domed masjid. On the east is a three-bay narthex with tiled arches; in the northeast corner a brick minaret with an octagonal body and one balcony. Inside, the middle of the qibla wall has a rectangular mihrab framed by tile borders."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "234-237"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=932",
+        "original_name": "pdf-s119-xref932",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "234"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi (kitap s. 234)",
+        "en": "Sırçalı (Demirci Hacı) Masjid (book p. 234)"
+      },
+      "alt": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi fotoğrafı",
+        "en": "Photo of Sırçalı (Demirci Hacı) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=934",
+        "original_name": "pdf-s119-xref934",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "235"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi (kitap s. 235)",
+        "en": "Sırçalı (Demirci Hacı) Masjid (book p. 235)"
+      },
+      "alt": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi fotoğrafı",
+        "en": "Photo of Sırçalı (Demirci Hacı) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=938",
+        "original_name": "pdf-s120-xref938",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "236"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi (kitap s. 236)",
+        "en": "Sırçalı (Demirci Hacı) Masjid (book p. 236)"
+      },
+      "alt": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi fotoğrafı",
+        "en": "Photo of Sırçalı (Demirci Hacı) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=940",
+        "original_name": "pdf-s120-xref940",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "236"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi (kitap s. 236)",
+        "en": "Sırçalı (Demirci Hacı) Masjid (book p. 236)"
+      },
+      "alt": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi fotoğrafı",
+        "en": "Photo of Sırçalı (Demirci Hacı) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=942",
+        "original_name": "pdf-s120-xref942",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "237"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi (kitap s. 237)",
+        "en": "Sırçalı (Demirci Hacı) Masjid (book p. 237)"
+      },
+      "alt": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi fotoğrafı",
+        "en": "Photo of Sırçalı (Demirci Hacı) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=944",
+        "original_name": "pdf-s120-xref944",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "237"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi (kitap s. 237)",
+        "en": "Sırçalı (Demirci Hacı) Masjid (book p. 237)"
+      },
+      "alt": {
+        "tr": "Sırçalı (Demirci Hacı) Mescidi fotoğrafı",
+        "en": "Photo of Sırçalı (Demirci Hacı) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

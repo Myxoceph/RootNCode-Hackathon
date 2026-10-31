@@ -1,0 +1,434 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-kinaci-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 214-215) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Bugünkü yapı 1943 betonarme yeniden inşadır; özgün yapıdan ne kaldığı kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kınacı Camii (Mescit)",
+    "en": "Kınacı Mosque (Masjid)"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "I. Gıyaseddin Keyhüsrev",
+    "1943 yeniden inşa"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Mihmandar Mahallesi",
+    "address": "Şerafettin Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "214-215"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 604 / M. 1207 (özgün yapı); 1943'te yeniden inşa",
+      "en": "604 AH / 1207 AD (original); rebuilt in 1943"
+    },
+    "start_year": 1207,
+    "end_year": 1207,
+    "hijri_year": 604,
+    "century": 13,
+    "basis": {
+      "tr": "Kitâbeye göre I. Gıyaseddin Keyhüsrev döneminde H. 604 / M. 1207'de yaptırılmıştır; yapı 1943'te yeniden inşa edilmiştir.",
+      "en": "According to the inscription it was built in 604 AH / 1207 AD during the reign of Gıyaseddin Keyhüsrev I; the building was rebuilt in 1943."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "214-215"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yusuf oğlu Mahmut",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "214-215"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mihmandar Mahallesi'ndeki cami, kitâbesine göre I. Gıyaseddin Keyhüsrev döneminde Yusuf oğlu Mahmut tarafından H. 604 / M. 1207'de yaptırılmıştır. Hasar gören yapı 1943'te mahalleli tarafından betonarme olarak yeniden inşa edilmiştir.",
+    "en": "The mosque in Mihmandar Neighborhood was built, per its inscription, by Mahmut son of Yusuf in 604 AH / 1207 AD in the reign of Gıyaseddin Keyhüsrev I. The damaged building was rebuilt in reinforced concrete by the locals in 1943."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Kitâbesindeki bilgilere göre I. Gıyaseddin Keyhüsrev döneminde, Yusuf oğlu Mahmut tarafından H. 604 / M. 1207'de inşa ettirilmiştir. Zamanla hasar gören yapı 1943'te mahalleli tarafından betonarme malzemeden, yığma teknikte yeniden inşa ettirilmiştir.",
+        "en": "According to its inscription it was built by Mahmut, son of Yusuf, in 604 AH / 1207 AD during the reign of Gıyaseddin Keyhüsrev I. Damaged over time, it was rebuilt by the locals in 1943 in reinforced concrete using the masonry technique."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "214-215"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cephelerde dikdörtgen formlu pencere açıklıkları vardır. Harim derinlemesine dikdörtgen planlıdır ve batı cephedeki kapıdan girilir. Kıble duvarı ortasındaki mihrap yarım daire planlıdır. Mahfil ve minber yenilenmiştir.",
+        "en": "The facades have rectangular window openings. The harim is deeply rectangular and entered through the west door. The mihrab in the middle of the qibla wall is semicircular. The mahfil and minbar were renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "214-215"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Mahmut (Yusuf oğlu)",
+      "role": {
+        "tr": "Kitâbeye göre bânî",
+        "en": "Founder according to the inscription"
+      }
+    },
+    {
+      "name": "I. Gıyaseddin Keyhüsrev",
+      "role": {
+        "tr": "Yapının inşa edildiği dönemin Selçuklu hükümdarı",
+        "en": "Seljuk ruler at the time of construction"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Yapının kitâbesi (yeri kitapta belirtilmiyor)",
+        "en": "The building's inscription (location not stated)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 604,
+        "gregorian": "1207"
+      },
+      "note": {
+        "tr": "Kitap kitâbe metnini vermiyor; I. Gıyaseddin Keyhüsrev dönemi ve bânî Yusuf oğlu Mahmut bilgisini aktarıyor.",
+        "en": "The book does not give the inscription text; it relays the reign of Gıyaseddin Keyhüsrev I and the founder Mahmut son of Yusuf."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "214-215"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1207",
+      "year": 1207,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami Mahmut b. Yusuf tarafından yaptırıldı",
+        "en": "Mosque built by Mahmut b. Yusuf"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "214-215"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1943",
+      "year": 1943,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mahalleli tarafından betonarme olarak yeniden inşa edildi",
+        "en": "Rebuilt in reinforced concrete by the locals"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "214-215"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kınacı Camii derinlemesine dikdörtgen planlı bir mahalle camisidir. 1207 tarihli özgün yapının yerine 1943'te betonarme olarak yeniden yapılmıştır. Girişi batı cephededir.",
+      "en": "Kınacı Mosque is a deeply rectangular neighborhood mosque. It was rebuilt in reinforced concrete in 1943 on the site of the original building of 1207. The entrance is on the west facade."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 214-215)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "214-215"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=849",
+        "original_name": "pdf-s109-xref849",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "214"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kınacı Camii (Mescit) (kitap s. 214)",
+        "en": "Kınacı Mosque (Masjid) (book p. 214)"
+      },
+      "alt": {
+        "tr": "Kınacı Camii (Mescit) fotoğrafı",
+        "en": "Photo of Kınacı Mosque (Masjid)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=851",
+        "original_name": "pdf-s109-xref851",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "214"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kınacı Camii (Mescit) (kitap s. 214)",
+        "en": "Kınacı Mosque (Masjid) (book p. 214)"
+      },
+      "alt": {
+        "tr": "Kınacı Camii (Mescit) fotoğrafı",
+        "en": "Photo of Kınacı Mosque (Masjid)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=855",
+        "original_name": "pdf-s109-xref855",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "214"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kınacı Camii (Mescit) (kitap s. 214)",
+        "en": "Kınacı Mosque (Masjid) (book p. 214)"
+      },
+      "alt": {
+        "tr": "Kınacı Camii (Mescit) fotoğrafı",
+        "en": "Photo of Kınacı Mosque (Masjid)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=857",
+        "original_name": "pdf-s109-xref857",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "215"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kınacı Camii (Mescit) (kitap s. 215)",
+        "en": "Kınacı Mosque (Masjid) (book p. 215)"
+      },
+      "alt": {
+        "tr": "Kınacı Camii (Mescit) fotoğrafı",
+        "en": "Photo of Kınacı Mosque (Masjid)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=859",
+        "original_name": "pdf-s109-xref859",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "215"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kınacı Camii (Mescit) (kitap s. 215)",
+        "en": "Kınacı Mosque (Masjid) (book p. 215)"
+      },
+      "alt": {
+        "tr": "Kınacı Camii (Mescit) fotoğrafı",
+        "en": "Photo of Kınacı Mosque (Masjid)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=861",
+        "original_name": "pdf-s109-xref861",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "215"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kınacı Camii (Mescit) (kitap s. 215)",
+        "en": "Kınacı Mosque (Masjid) (book p. 215)"
+      },
+      "alt": {
+        "tr": "Kınacı Camii (Mescit) fotoğrafı",
+        "en": "Photo of Kınacı Mosque (Masjid)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=863",
+        "original_name": "pdf-s109-xref863",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "215"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kınacı Camii (Mescit) (kitap s. 215)",
+        "en": "Kınacı Mosque (Masjid) (book p. 215)"
+      },
+      "alt": {
+        "tr": "Kınacı Camii (Mescit) fotoğrafı",
+        "en": "Photo of Kınacı Mosque (Masjid)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

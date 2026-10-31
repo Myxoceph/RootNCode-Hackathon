@@ -1,0 +1,339 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-eregli-zengen-beldesi-eski-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî kitapta belirtilmiyor.",
+      "Vakıf/vakfiye bilgisi kitapta yok.",
+      "'Kaynaklarda' denen usta bilgisinin kaynağı kitapta gösterilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Zengen Beldesi Eski Camii",
+    "en": "Zengen Settlement Old Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "çardak minare",
+    "ahşap mahfil",
+    "kalem işi",
+    "Zengen"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ereğli",
+    "neighborhood": "Mustafa Kemal Paşa Mahallesi (Zengen Köyü)",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "432-435"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl sonu - XX. yüzyıl başı",
+      "en": "late 19th - early 20th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitâbe yok; mimari özelliklerine göre XIX. yüzyılın sonları ve XX. yüzyılın başlarına tarihleniyor. Kesin yıl verilmiyor.",
+      "en": "No inscription; dated to the late 19th and early 20th century from architectural features. No exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "432-435"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Niğde Fertekli Nafi Usta",
+    "candidates": [],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "432-433"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Ereğli Zengen Köyü Mustafa Kemal Paşa Mahallesi'nde, XIX. yüzyıl sonu - XX. yüzyıl başında Niğdeli Nafi Usta'nın yaptığı belirtilen, 1945'te Tahir Usta nakışlarıyla bezenen, 2007'de onarılan çardak minareli cami.",
+    "en": "A mosque with a pergola-type minaret in Zengen Village, Ereğli, reportedly built by master Nafi of Niğde in the early 20th century, embroidered by master Tahir in 1945, repaired in 2007."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Ereğli, Zengen Köyü, Mustafa Kemal Paşa Mahallesindedir. İnşasına ait kitâbe yoktur; mimari özelliklerine göre XIX. yüzyılın sonları ve XX. yüzyılın başlarına tarihlenir. Kaynaklarda Niğde Fertekli Nafi Usta tarafından XX. yüzyıl başlarında yapıldığı belirtilir. Harimdeki nakışlar 1945'te Çanakkale Bigalı Tahir Usta tarafından yapılmıştır. Zamanla tahrip olan yapı 2007'de Vakıflar Genel Müdürlüğü tarafından onarılmış, nakışları yenilenmiş ve ibadete açılmıştır.",
+        "en": "The mosque is in Zengen Village, Mustafa Kemal Paşa Neighborhood, Ereğli. There is no construction inscription; it is dated to the late 19th - early 20th century by its architecture. Sources say it was built by master Nafi of Niğde Fertek in the early 20th century. The embroideries in the harim were made in 1945 by master Tahir of Bigalı, Çanakkale. The building, which decayed over time, was repaired in 2007 by the General Directorate of Foundations, its embroidery renewed, and opened for worship."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami genel olarak derinlemesine dikdörtgen planlıdır ve son cemaat yeri ile harimden oluşur. Kuzeybatı köşede dört sütun üzerinde konik külahla biten çardak tipi minare vardır. Kesme taş, moloz taş ve ahşap kullanılmıştır. Güney, doğu ve batı beden duvarlarında ikişer yuvarlak kemerli, düz lentolu dikdörtgen pencere vardır. Kuzey cephede üç bölümlü son cemaat yeri bulunur; harime düz lentolu dikdörtgen kapıdan girilir. Harim, mihraba paralel iki sıra dört sütunla üç sahına ayrılmıştır; kuzeyde ahşap direkler üzerinde ahşap mahfil, kıble duvarında yarım daire planlı mihrap vardır, mihrabın sağındaki minber sonradan eklenmiştir.",
+        "en": "Generally deeply rectangular, consisting of a narthex and a harim. A pergola-type minaret with a conical cap on four columns stands in the northwest corner. Cut stone, rubble and wood are used. The south, east and west walls each have two rectangular round-arched windows with flat lintels. The north facade has a three-section narthex; the harim is entered by a flat-lintelled rectangular door. The harim is divided into three aisles by four columns in two rows parallel to the mihrab, with a wooden gallery on wooden posts in the north and a semicircular mihrab; the minbar to its right was added later."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "432-435"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_bolum",
+      "label": {
+        "tr": "Son cemaat yeri bölüm sayısı",
+        "en": "Narthex sections"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "434-435"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Nafi Usta (Niğde Fertekli)",
+      "role": {
+        "tr": "Kaynaklara göre camiyi yapan usta",
+        "en": "Master who reportedly built the mosque"
+      }
+    },
+    {
+      "name": "Tahir Usta (Çanakkale Bigalı)",
+      "role": {
+        "tr": "1945'te harim nakışlarını yapan usta",
+        "en": "Master who made the harim embroidery in 1945"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "nakis-1945",
+      "year": 1945,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Harimdeki nakışların Tahir Usta tarafından yapılması",
+        "en": "Embroidery in the harim made by master Tahir"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "432"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM onarımı, nakışların yenilenmesi ve ibadete açılması",
+        "en": "GDF repair, embroidery renewed, opened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "432"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Derinlemesine dikdörtgen planlı, kesme taş ve moloz taştan bir camidir. Kuzeyde üç bölümlü son cemaat yeri, kuzeybatıda dört sütunlu çardak tipi bir minare vardır. Harim dört sütunla üç sahına bölünmüş, kuzeyde ahşap mahfil bulunur. Harim nakışları 1945'te yapılmış, 2007'de yenilenmiştir.",
+      "en": "A deeply rectangular mosque of cut and rubble stone. A three-section narthex lies on the north and a pergola-type minaret with four columns in the northwest. Four columns divide the harim into three aisles, with a wooden gallery in the north. The harim embroidery dates from 1945 and was renewed in 2007."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "432-435"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1891",
+        "original_name": "pdf-s218-xref1891",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "432"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Zengen Beldesi Eski Camii (kitap s. 432)",
+        "en": "Zengen Settlement Old Mosque (book p. 432)"
+      },
+      "alt": {
+        "tr": "Zengen Beldesi Eski Camii fotoğrafı",
+        "en": "Photo of Zengen Settlement Old Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1893",
+        "original_name": "pdf-s218-xref1893",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "432"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Zengen Beldesi Eski Camii (kitap s. 432)",
+        "en": "Zengen Settlement Old Mosque (book p. 432)"
+      },
+      "alt": {
+        "tr": "Zengen Beldesi Eski Camii fotoğrafı",
+        "en": "Photo of Zengen Settlement Old Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1903",
+        "original_name": "pdf-s219-xref1903",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "434"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Zengen Beldesi Eski Camii (kitap s. 434)",
+        "en": "Zengen Settlement Old Mosque (book p. 434)"
+      },
+      "alt": {
+        "tr": "Zengen Beldesi Eski Camii fotoğrafı",
+        "en": "Photo of Zengen Settlement Old Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1905",
+        "original_name": "pdf-s219-xref1905",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "435"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Zengen Beldesi Eski Camii (kitap s. 435)",
+        "en": "Zengen Settlement Old Mosque (book p. 435)"
+      },
+      "alt": {
+        "tr": "Zengen Beldesi Eski Camii fotoğrafı",
+        "en": "Photo of Zengen Settlement Old Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

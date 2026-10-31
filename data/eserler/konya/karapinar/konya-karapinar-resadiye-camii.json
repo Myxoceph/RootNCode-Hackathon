@@ -1,0 +1,300 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karapinar-resadiye-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 464) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banî kitapta belirtilmiyor.",
+      "Mahalle adı kitapta verilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Reşadiye Camii",
+    "en": "Reşadiye Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "tek kubbeli",
+    "1911",
+    "Fertekli Nazif Usta",
+    "2019 tamir"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karapınar",
+    "address": "Adalet Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "464"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1329 / M. 1911",
+      "en": "AH 1329 / AD 1911"
+    },
+    "start_year": 1911,
+    "end_year": 1911,
+    "hijri_year": 1329,
+    "century": 20,
+    "basis": {
+      "tr": "Minare kapısı üzerindeki kitabeye göre H. 1329 / M. 1911'de yapılmıştır.",
+      "en": "According to the inscription on the minaret door it was built in AH 1329 / AD 1911."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "464"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": "Fertekli Nazif Usta",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "464"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Karapınar Adalet Sokak'ta, 1911'de Fertekli Nazif Usta'nın yaptığı belirtilen, düzgün kesme taştan kare planlı, tek kubbeli; 2019'da tamir edilip ibadete açılan cami.",
+    "en": "A square, single-domed mosque of smooth cut stone on Adalet Street, Karapınar, built in 1911 by master Fertekli Nazif according to sources; repaired and reopened in 2019."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Karapınar, Adalet Sokak'ta yer almaktadır. İlk inşasına dair kitâbe yoktur; minare kapısı üzerindeki kitâbeye göre H. 1329 / M. 1911'de yapılmıştır. Kaynaklarda yapının ustasının Niğde Fertek yöresinden Fertekli Nazif Usta olduğu belirtilir. 2019'da Vakıflar Bölge Müdürlüğü tarafından tamir edilerek ibadete açılmıştır. Cami kare planlı ve tek kubbelidir; düzgün kesme taştan yapılmıştır. Kubbe sekizgen kasnak üzerinde oturur, kasnağın dört cephesinde dairesel pencereler vardır. Kuzeydoğu köşedeki minare kare kaideli, silindirik gövdeli ve tek şerefelidir. Harime kuzey cephedeki basık kemerli kapıdan girilir; harim kare planlı ve kubbeyle örtülüdür. Restorasyondan sonra harim tamamen sıvanmış, mihrap ve minber yüzeyi beyaz ve yeşil fayansla kaplanmıştır.",
+        "en": "The mosque is on Adalet Street, Karapınar. There is no inscription for its first construction; according to the inscription on the minaret door it was built in 1329 AH / 1911 AD. Sources state that its master was Fertekli Nazif Usta from the Fertek region of Niğde. It was repaired by the Regional Directorate of Foundations and opened for worship in 2019. It has a square plan and a single dome, built of smooth cut stone. The dome sits on an octagonal drum with circular windows on all four sides. The minaret in the northeast corner has a square base, cylindrical body and single balcony. The harim, entered through a low arched door on the north façade, is square and domed. After the restoration it was completely plastered and the mihrab and minbar surfaces were covered with white and green tiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "464"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Fertekli Nazif Usta",
+      "role": {
+        "tr": "Niğde Fertek yöresinden yapı ustası",
+        "en": "Master builder from the Fertek region of Niğde"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "minare-kapisi-kitabesi",
+      "location": {
+        "tr": "Minare kapısı üzerinde",
+        "en": "Above the minaret door"
+      },
+      "language": "other",
+      "note": {
+        "tr": "Kitap yalnızca H. 1329 / M. 1911 tarihini belirtiyor; metin ve dil verilmiyor.",
+        "en": "The book only states the date AH 1329 / AD 1911; text and language are not given."
+      },
+      "date": {
+        "hijri_year": 1329,
+        "gregorian": "1911"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "464"
+        }
+      ],
+      "ar_target_media_id": null,
+      "script": null,
+      "transliteration": null,
+      "translation": null
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1911",
+      "year": 1911,
+      "hijri": "1329",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı",
+        "en": "Mosque built"
+      },
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "464"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "tamir-2019",
+      "year": 2019,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tamiri; ibadete açıldı",
+        "en": "Repaired by the Regional Directorate of Foundations; opened for worship"
+      },
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "464"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Reşadiye Camii, Karapınar'da düzgün kesme taştan yapılmış, kare planlı, tek kubbeli bir camidir. Kubbe sekizgen bir kasnağa oturur; kasnağın dört yüzünde yuvarlak pencereler vardır. Kuzeydoğuda tek şerefeli bir minare yükselir. İçeride mihrap ve minber beyaz ve yeşil fayansla kaplıdır.",
+      "en": "Reşadiye Mosque in Karapınar is a square, single-domed building of smooth cut stone. The dome rests on an octagonal drum with round windows on four sides. A single-balcony minaret rises in the northeast. Inside, the mihrab and minbar are covered in white and green tiles."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 464)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "464-464"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2055",
+        "original_name": "pdf-s234-xref2055",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "464"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Reşadiye Camii (kitap s. 464)",
+        "en": "Reşadiye Mosque (book p. 464)"
+      },
+      "alt": {
+        "tr": "Reşadiye Camii fotoğrafı",
+        "en": "Photo of Reşadiye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2057",
+        "original_name": "pdf-s234-xref2057",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "464"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Reşadiye Camii (kitap s. 464)",
+        "en": "Reşadiye Mosque (book p. 464)"
+      },
+      "alt": {
+        "tr": "Reşadiye Camii fotoğrafı",
+        "en": "Photo of Reşadiye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2059",
+        "original_name": "pdf-s234-xref2059",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "464"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Reşadiye Camii (kitap s. 464)",
+        "en": "Reşadiye Mosque (book p. 464)"
+      },
+      "alt": {
+        "tr": "Reşadiye Camii fotoğrafı",
+        "en": "Photo of Reşadiye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,332 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-kadi-mursel-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "II. Bayezit onarımının yılı kitapta yok (zaman çizelgesine eklenmedi).",
+      "Mahalle adı metinde yok.",
+      "Kitabenin bugünkü yeri (Hacı Hasan Camii cephesi) teyit edilmeli.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[insa-kitabesi].location",
+        "note": "Metin kitabenin 'Hacı Hasan Camisi'nin güney cephesinde güneş saatinin yanında' bulunduğunu söylüyor; bu Kadı Mürsel Camii'nin kendi yüzü olmayabilir (kitabe başka yapıya taşınmış olabilir). Kaynağa sadık kalındı."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Kitabede 'Mehmed ibn-i Alâeddin', metinde 'Karamanoğlu Mehmet Bey' geçiyor; aynı kişi olduğu varsayımı kitabın akışına dayanır, açıkça söylenmemiştir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kadı Mürsel Camii",
+    "en": "Kadı Mürsel Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "cami",
+    "Karamanoğulları",
+    "kitabeli",
+    "1907 yeniden yapım"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": null,
+    "address": "Mimar Muzaffer Caddesi No: 5",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "147"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 812 / M. 1409 (mevcut yapı 1907)",
+      "en": "812 AH / 1409 AD (present building 1907)"
+    },
+    "start_year": 1409,
+    "end_year": 1409,
+    "hijri_year": 812,
+    "century": 15,
+    "basis": {
+      "tr": "Kitabede 812 yılı; 1409 tarihi Karamanoğlu Mehmet Bey dönemi olarak verilir. Bugünkü yapı 1907'de yeniden yaptırılmıştır.",
+      "en": "Inscription gives 812; 1409 is given in the reign of Karamanoğlu Mehmet Bey. The present building was rebuilt in 1907."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "147"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Mustafa oğlu Mürsel",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "147"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kitabesine göre 812 / 1409'da Karamanoğlu Mehmet Bey zamanında Hacı Mustafa oğlu Mürsel'in yaptırdığı cami; II. Bayezit'in onardığı yapı 1907'de Hacı Halil Ağa'nın yıktırıp yeniden yaptırmasıyla bugünkü şeklini aldı.",
+    "en": "According to its inscription, the mosque was built by Mürsel, son of Hacı Mustafa, in 812 AH / 1409 AD under Karamanoğlu Mehmet Bey; repaired by Bayezid II, it was demolished and rebuilt in 1907 by Hacı Halil Ağa."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Kitâbe",
+        "en": "History and Inscription"
+      },
+      "body": {
+        "tr": "Cami, Meram İlçesi, Mimar Muzaffer Caddesi No: 5'de bulunmaktadır. Kitâbesine göre 812 / 1409 yılında Karamanoğlu Mehmet Bey zamanında, Hacı Mustafa oğlu Mürsel tarafından yaptırılmıştır. Karamanoğulları döneminde harap hâle gelen cami, Osmanlı Devrinde Sultan II. Bayezit tarafından tamir ettirilmiştir. Son olarak II. Abdülhamit zamanında, 1907 yılında, \"Gözlülü\" şöhretli Konyalı Hacı Halil Ağa tarafından yıktırılarak bugünkü yapı yaptırılmıştır.",
+        "en": "The mosque is on Mimar Muzaffer Street No: 5, Meram. According to its inscription it was built by Mürsel, son of Hacı Mustafa, in 812 AH / 1409 AD during the reign of Karamanoğlu Mehmet Bey. It fell into ruin in the Karamanoğulları period and was repaired by Sultan Bayezid II. In 1907, under Abdülhamid II, it was demolished and the present structure built by the famous Konyalı Hacı Halil Ağa, called Gözlülü."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "147"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami güney-kuzey yönünde uzanan dikdörtgen planlıdır; içten düz dam, dıştan kırma çatıyla örtülüdür. Beden duvarları moloz taştır ve cepheler sade olup ahşap hatıllarla desteklenmiştir. Güney cephe sağırdır; doğu ve batı cephelerinde düz lentolu, iki katlı ikişer pencere, kuzey cephede ortada düz lentolu giriş kapısı, altta iki, üstte üç pencere vardır. İç mekân sadedir, süsleme yoktur; kuzeyde ahşap desteklerle taşınan bir mahfil bulunur. Kıble duvarı ortasındaki mihrap nişi orijinal olmayıp mermerden ve yarım daire formludur.",
+        "en": "The mosque has a rectangular plan extending south-north, with a flat roof inside and a hipped roof outside. Walls are rubble stone with plain facades supported by wooden beams. The south facade is blind; the east and west have two two-storey flat-lintel windows each; the north has a central flat-lintel door with two lower and three upper windows. The interior is plain with a mahfil on wooden supports in the north; the marble semicircular mihrab niche is not original."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "147"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Hacı Mustafa oğlu Mürsel",
+      "role": {
+        "tr": "Banî (kitabeye göre)",
+        "en": "Founder (per inscription)"
+      }
+    },
+    {
+      "name": "Sultan II. Bayezit",
+      "role": {
+        "tr": "Osmanlı döneminde camiyi tamir ettirdi",
+        "en": "Had the mosque repaired in the Ottoman period"
+      }
+    },
+    {
+      "name": "Hacı Halil Ağa (Gözlülü)",
+      "role": {
+        "tr": "1907'de camiyi yıktırıp yeniden yaptırdı",
+        "en": "Demolished and rebuilt the mosque in 1907"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Hacı Hasan Camisi'nin güney cephesinde, güneş saatinin yanında (metne göre)",
+        "en": "On the south facade of the Hacı Hasan Mosque, next to the sundial (per the text)"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Allah buyurdu ki 'Allah'ın Mescitlerini ancak Allah'a ve ahiret gününe inananlar, namaz kılanlar imar eder.' Bu mübarek cami, büyük sultan, muazzam şehinşah sultan Mehmed ibn-i Alâeddin'in hükümdarlığı zamanında; 812 yılında -Allah mülkünü muhalled ve saltanatını müebbet kılsın- yapılmıştır. Günahlarını itiraf eden Hacı Mustafa oğlu Mürsel bina ve inşa etmiştir. Allah onu emellerine kavuştursun ve dilediği şeylerle rızıklandırsın.",
+        "en": "Allah said: Only those who believe in Allah and the Last Day and those who perform prayer can repair and build the Mosques of Allah. This blessed mosque was built by Mürsel, son of Hacı Mustafa, who confessed his sins, in 812, during the reign of the great sultan, the great shahinshah, Sultan Mehmed ibn-i Alâeddin, may Allah make his power eternal and his reign unending. May Allah help him achieve his goals and provide him with what he wishes."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 812,
+        "gregorian": "1409"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Dört satırdır. Kitapta transliterasyon verilmemiştir.",
+        "en": null
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "147"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1409",
+      "year": 1409,
+      "date": null,
+      "hijri": "812",
+      "type": "construction",
+      "title": {
+        "tr": "Hacı Mustafa oğlu Mürsel tarafından yapımı",
+        "en": "Built by Mürsel, son of Hacı Mustafa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "147"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-yapim-1907",
+      "year": 1907,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Hacı Halil Ağa'nın yıktırıp yeniden yaptırması",
+        "en": "Demolished and rebuilt by Hacı Halil Ağa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "147"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-haci-hasan-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Kitâbe, metne göre Hacı Hasan Camisi'nin güney cephesinde durmaktadır.",
+        "en": "According to the text, the inscription is on the south facade of the Hacı Hasan Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "147"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Güney-kuzey doğrultusunda uzanan dikdörtgen planlı, moloz taş duvarlı, sade bir camidir; dışarıdan kırma çatıyla örtülüdür. Kuzey cephesinde ortada düz lentolu bir kapı, kapının iki yanında ve üstünde pencereler bulunur. İçeride duvarlar süslemesizdir; kuzeyde ahşap direkli bir mahfil, kıble duvarında yarım daire biçimli mermer bir mihrap yer alır.",
+      "en": "A plain rectangular mosque of rubble stone, extending south to north, with a hipped roof outside. The north facade has a central flat-lintel door with windows below and above. Inside, the walls are undecorated; there is a gallery on wooden supports in the north and a semicircular marble mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "147-147"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=540",
+        "original_name": "pdf-s75-xref540",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kadı Mürsel Camii (kitap s. 147)",
+        "en": "Kadı Mürsel Mosque (book p. 147)"
+      },
+      "alt": {
+        "tr": "Kadı Mürsel Camii fotoğrafı",
+        "en": "Photo of Kadı Mürsel Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=542",
+        "original_name": "pdf-s75-xref542",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kadı Mürsel Camii (kitap s. 147)",
+        "en": "Kadı Mürsel Mosque (book p. 147)"
+      },
+      "alt": {
+        "tr": "Kadı Mürsel Camii fotoğrafı",
+        "en": "Photo of Kadı Mürsel Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

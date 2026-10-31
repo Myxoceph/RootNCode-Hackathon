@@ -1,0 +1,639 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ilgin-beykonak-dedigi-sultan-mescit-ve-tekkesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Vakfiyenin tarihi ve metni kitapta yok; deed null bırakıldı (yalnızca bağış kapsamı land_note'ta).",
+      "Pir Hüseyin Bey'in dönemi kitapta belirtilmiyor.",
+      "Kitâbenin Arapça özgün metni ve transliterasyonu kitapta verilmiyor.",
+      "Kitap 'Mealen' etiketi kullanmıyor; translation alanı kitabın Türkçe aktarımıdır.",
+      "Kitapta yer alan Mahmuthisar ve Karasevinç köylerinin yeri/ilçesi tam belirtilmiyor (Ilgın ve Kadınhanı'na bağlı).",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Metin başında yapı 'II. Kılıç Arslan'ın oğlu I. Keyhüsrev zamanına' atfedilir; kitâbede 'Gıyâseddin Keyhüsrev' anılır. H. 576 / M. 1180 eşleşmesi tutarlıdır."
+      },
+      {
+        "field": "sections[dedigi-sultan]",
+        "note": "Dediği Sultan'ın soyu ve yaşam bilgisi kitapta menkıbevi biçimde verilir; asa hikâyesi legends[]'e alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi",
+    "en": "Beykonak Dediği Sultan Masjid and Tekke"
+  },
+  "alternate_names": [
+    {
+      "tr": "Dediği Dede Tekkesi",
+      "en": "Dediği Dede Tekke"
+    }
+  ],
+  "type": "tekke",
+  "secondary_types": [
+    "mescit",
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Anadolu Selçuklu",
+    "mescit-tekke",
+    "kitâbe",
+    "Sanavber Hatun",
+    "hazire",
+    "devşirme malzeme"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ilgın",
+    "neighborhood": "Beykonak (Tekke) kasabası, 1 km güneydoğudaki tepe",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "440-444"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 576 / M. 1180",
+      "en": "576 AH / 1180 AD"
+    },
+    "start_year": 1180,
+    "end_year": 1180,
+    "hijri_year": 576,
+    "century": 12,
+    "basis": {
+      "tr": "İnşa kitâbesine göre mescit 576 / 1180 yılının Receb ayında tamamlanmıştır.",
+      "en": "Per the construction inscription the masjid was completed in the month of Rajab 576 / 1180."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "440-444"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sanavber Hâtun",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "443"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Emînüddîn Mirgün",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "443"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Turgutoğlu Pir Hüseyin Bey'in Şeyh Dediği Zâviyesi vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Pir Hüseyin Bey; Âb-ı Germ'e (Ilgın) bağlı Akdağ, Yarıklıdere, Çelebi Yaylası, Doğan Yuvası, Bahadır Kayası ve Beyderesi ile çevrili Mahmuthisar Köyü'nün yarısını, Kadınhanı'na bağlı Karasevinç Köyü'nün yarısını mezralar, hak, ek ve bölükleriyle Şeyh Dediği Zâviyesi'ne vakfetmiştir. Vakfiyenin üç sûreti vardır.",
+      "en": "Pir Hüseyin Bey endowed half of Mahmuthisar Village (surrounded by Akdağ, Yarıklıdere, Çelebi plateau, Doğan Yuvası, Bahadır Kayası and Beyderesi, attached to Âb-ı Germ/Ilgın) and half of Karasevinç Village (attached to Kadınhanı), with hamlets, rights, annexes and divisions, to the Şeyh Dediği Zawiya. There are three copies of the deed."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "441-443"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Ilgın'da Beykonak (Tekke) kasabasının güneydoğusundaki tepede, kitâbesine göre II. Kılıç Arslan'ın azatlı câriyesi Sanavber Hâtun'un mimar Emînüddîn Mirgün'e H. 576 / M. 1180'de yaptırdığı mescit ve tekke; Dediği Sultan ve iki dedenin mezarlarını barındırır.",
+    "en": "A masjid and tekke on the hill southeast of Beykonak (Tekke) town in Ilgın, built per its inscription in 576 AH / 1180 AD by Sanavber Hâtun, freed handmaid of Kılıç Arslan II, through architect Emînüddîn Mirgün; it houses the tombs of Dediği Sultan and two dedes."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi, Anadolu Selçuklu Sultanı II. Kılıç Arslan'ın oğlu I. Keyhüsrev zamanına, H. 576 / M. 1180 yılına ait önemli bir yapıdır. Bölgenin Türkleşmesi ve İslamlaşmasında önemli bir yeri vardır. Mescit-tekke olarak yapılan eserin genel kurgusu, erken Osmanlı mimarisindeki zaviyeli cami planını hatırlatır; yapının kitâbesi, Anadolu Selçuklu dönemi celî sülüs karakterini yansıtması bakımından yazı tarihi açısından önemlidir.",
+        "en": "The Beykonak Dediği Sultan Masjid and Tekke is an important building from the time of Keyhusrev I, son of Anatolian Seljuk Sultan Kılıç Arslan II, dated 576 AH / 1180 AD. It has an important place in the Turkification and Islamization of the region. Built as a masjid-tekke, its general layout recalls the zawiya mosque plan of early Ottoman architecture; its inscription is important for the history of writing as it reflects the Celi Thuluth character of the Anatolian Seljuk period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "440"
+        }
+      ]
+    },
+    {
+      "id": "dedigi-sultan",
+      "order": 2,
+      "title": {
+        "tr": "Dediği Sultan",
+        "en": "Dediği Sultan"
+      },
+      "body": {
+        "tr": "Dediği Sultan, Horasan'da Ahmed Yesevî'nin neslindendir. Mahmuthisar Köyü'ne gelmiş, birçok kerâmet gösterdikten sonra hayatının sonuna kadar bu köyde yaşamıştır.",
+        "en": "Dediği Sultan is from the lineage of Ahmed Yesevî in Khorasan. He came to Mahmuthisar village and, after performing many miracles, lived there until the end of his life."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "440"
+        }
+      ]
+    },
+    {
+      "id": "vakif-ve-tarihce",
+      "order": 3,
+      "title": {
+        "tr": "Vakıf ve tarihçe",
+        "en": "Foundation and history"
+      },
+      "body": {
+        "tr": "Yapı Beykonak (Tekke) kasabasının 1 km güneydoğusundaki tepededir ve avlu, ön bölüm ile tekke ve mescit olmak üzere üç bölümden oluşur. Turgutoğlu Pir Hüseyin Bey Sultan Dediği için vakıf kurmuştur; vakfiyenin üç sûreti vardır. Yapının 1474-1476 tarihli vakıf defterinde kayıtlı tekkesi II. Bâyezid devrine ait üç defterde de anılır. 1980'lerde geniş çaplı tamirat görmüş, günümüze ulaşmış ve ziyarete açıktır.",
+        "en": "The building sits on a hill 1 km southeast of Beykonak (Tekke) town and consists of a courtyard, a front section, and the tekke and masjid. Turgutoğlu Pir Hüseyin Bey established a foundation for Sultan Dediği; the deed has three copies. The tekke, recorded in the foundations register of 1474-1476, is also named in three registers of the reign of Bayezid II. It underwent extensive repair in the 1980s, survives and is open to visitors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "440-443"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Tekkenin güney ve batı cepheleri ovaya ve köye bakar, kuzey ve doğu cepheleri dağ yamacına yaslanır. Yapı dıştan sadedir ve beyaz alçı sıvalıdır. İç içe üç bölüm ve kuzeydeki avludan oluşur; kırma taşla inşa edilmiş, üzeri kurşunla kaplıdır. Avlu hazire olarak değerlendirilmiştir. Giriş avludaki iki ahşap kolona dayanan bir sundurmadan sağlanır. Girişteki ilk bölüm kuzey-güney doğrultusunda enlemesine planlıdır ve hazire olarak kullanılır; sedir ahşap sütunla desteklenmiştir. Önceden giriş kapısı üstünde yer alan devşirme, çift tavus kuşu motifli levha şimdi girişin karşısında asılıdır. Güney duvarın ortasındaki sivri kemerli kapıdan ikinci bölüme geçilir: ortada kubbe, iki yanda beşik tonozlu birer eyvan vardır; batı eyvanında Dediği Sultan'ın, doğu eyvanında Mehmet Dede ve Ömer Baba'nın mezarı bulunur. Dediği Sultan'ın mezarının baş şahidesinde yazı ve süsleme yoktur. Bu bölümün güneyinden devşirme çerçeveli kapıyla üçüncü bölüme geçilir.",
+        "en": "The south and west facades overlook the plain and village; the north and east lean on the mountain slope. The exterior is simple and plastered in white. The building has three nested sections and a northern courtyard, built of crushed stone and covered with lead. The courtyard is used as a graveyard. Entry is through a porch resting on two wooden columns in the courtyard. The first section is a transverse north-south room used as a hazire, supported by a cedar wooden column; the spolia plate with a double peacock motif formerly over the door now hangs opposite the entrance. A pointed-arch door in the south wall leads to the second section: a dome in the middle and a barrel-vaulted iwan on each side; the west iwan holds the tomb of Dediği Sultan, the east iwan the tombs of Mehmet Dede and Ömer Baba. The headstone of Dediği Sultan's tomb has no writing or decoration. A door with a spolia frame leads south to the third section."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "443-444"
+        }
+      ]
+    },
+    {
+      "id": "mescit",
+      "order": 5,
+      "title": {
+        "tr": "Mescit bölümü",
+        "en": "Masjid section"
+      },
+      "body": {
+        "tr": "İki basamakla inilen üçüncü mekân, 5,44 x 5,30 m ölçülerinde kare planlı mescittir; üzerini tromplarla geçilen kubbe örter. Kıble duvarı ortasında giriş ekseninde, dikdörtgen nişli ve yarım kubbe kavsaralı mihrap vardır; niş üç devşirme mermer levhayla sınırlanmış, kenarları geometrik örgü, geçme motifleri, palmet ve rûmî yaprakla süslenmiştir. Yapının içinde ve dışında XIV-XVIII. yüzyıllara ait onlarca mezar taşı bulunur; bunlar Dediği Sultan'ın soyağacı ve müritleri hakkında kısmen bilgi içerir.",
+        "en": "The third space, reached by two steps down, is a square masjid of 5.44 x 5.30 m covered by a dome on squinches. The mihrab on the entrance axis has a rectangular niche and semi-dome, framed by three spolia marble slabs, decorated at the edges with geometric braiding, interlocking motifs, palmettes and rumi leaves. Dozens of tombstones of the 14th-18th centuries inside and outside the complex contain partial information on Dediği Sultan's lineage and disciples."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "444"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "asa-menkibesi",
+      "title": {
+        "tr": "Dediği Sultan'ın asası menkıbesi",
+        "en": "Legend of Dediği Sultan's staff"
+      },
+      "body": {
+        "tr": "Dediği Sultan'ın asasını attığı ve nereye düşerse oraya gideceğini söylediğine dair bir menkıbe vardır; bunun üzerine Mahmuthisar Köyü'ne gelmiştir.",
+        "en": "There is a legend that he threw his staff and said he would go wherever it landed; thereupon he came to Mahmuthisar village."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "440"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "mescit_olcusu",
+      "label": {
+        "tr": "Mescit bölümü ölçüleri",
+        "en": "Masjid section dimensions"
+      },
+      "value": "5,44 x 5,30",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "444"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcusu",
+      "label": {
+        "tr": "İnşa kitâbesi ölçüsü",
+        "en": "Construction inscription size"
+      },
+      "value": "65 x 96",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "443"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_satir",
+      "label": {
+        "tr": "İnşa kitâbesi satır sayısı",
+        "en": "Lines of the construction inscription"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "443"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sanavber Hâtun",
+      "role": {
+        "tr": "II. Kılıç Arslan'ın azatlı câriyesi; mescidi yaptıran",
+        "en": "Freed handmaid of Kılıç Arslan II; commissioned the masjid"
+      }
+    },
+    {
+      "name": "Emînüddîn Mirgün",
+      "role": {
+        "tr": "Mimar; Hâtun'un kölesi",
+        "en": "Architect; slave of the Hâtun"
+      }
+    },
+    {
+      "name": "Dediği Sultan",
+      "role": {
+        "tr": "Ahmed Yesevî'nin neslinden, Mahmuthisar'da yaşamış zat; tekkenin sahibi",
+        "en": "Of the lineage of Ahmed Yesevî; lived in Mahmuthisar"
+      }
+    },
+    {
+      "name": "Turgutoğlu Pir Hüseyin Bey",
+      "role": {
+        "tr": "Vakıf kuran",
+        "en": "Established the foundation"
+      }
+    },
+    {
+      "name": "Mehmet Dede",
+      "role": {
+        "tr": "Doğu eyvanında mezarı bulunan",
+        "en": "Buried in the east iwan"
+      }
+    },
+    {
+      "name": "Ömer Baba",
+      "role": {
+        "tr": "Doğu eyvanında mezarı bulunan",
+        "en": "Buried in the east iwan"
+      }
+    },
+    {
+      "name": "Osman bin Abdurrahman",
+      "role": {
+        "tr": "Usta kitâbesinde adı geçen; sonraki yüzyıllarda tamirde görev almış olabileceği düşünülen usta",
+        "en": "Master named in the second inscription; may have taken part in later repairs"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Mescidin giriş kapısı üzerinde (mermer, kabartma)",
+        "en": "Over the entrance door of the masjid (marble, relief)"
+      },
+      "language": "ar",
+      "script": "Celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Sultanların yücesi Kılıç Arslan’ın oğlu Gıyâseddin Keyhüsrev’in yönetimi zamanında, büyük Sultan Kılıç Arslan’ın âzadlı câriyesi bilgin, dînine bağlı, Allah’tan korkan, din ve dünyanın sevgisini kazanmış, dünya kadınlarının şereflisi Sanavber Hâtun, Allah’ın hoşnutluğunu kazanıp affını ricâ ve sevâbını isteyerek, azâbından da çekinerek bu mescidin yapılmasını emretti. Mescit, 576 / 1180 senesinin Receb ayında tamamlandı ve (Sanavber) Hâtun’un kölesi mîmar Emînüddîn Mirgün bu eseri yaptı",
+        "en": "During the rule of Gıyâseddin Keyhüsrev, the son of Kılıç Arslan, the greatest of the sultans, Sanavber Hâtun, the freed handmaid of the great Sultan Kılıç Arslan, a scholar, devoted to her religion, fearing God, who won the love of religion and the world, the honorable of the women of the world, asking for Allah's approval, for her forgiveness and reward, and fearing her punishment, ordered the construction of this mosque. The mosque was completed in the month of Rajab in 576 / 1180, and the architect Emînüddîn Mirgün, the slave of (Sanavber) Hatun, made this work"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 576,
+        "gregorian": "1180"
+      },
+      "note": {
+        "tr": "Yedi satır, 65 x 96 cm. Kitap transliterasyon vermiyor; 'Mealen' etiketi yok, metin kitabın Türkçe aktarımıdır.",
+        "en": "Seven lines, 65 x 96 cm. The book gives no transliteration; the text is the book's Turkish rendering."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "443"
+        }
+      ]
+    },
+    {
+      "id": "usta-kitabesi",
+      "location": {
+        "tr": "Mescide giriş kapısı üzerinde, duvar yüzeyinde (20x10 cm)",
+        "en": "On the wall surface over the masjid entrance door (20x10 cm)"
+      },
+      "language": "other",
+      "script": "Celî sülüs",
+      "transliteration": "Amelü Osman bin Abdurrahman",
+      "translation": null,
+      "author": "Osman bin Abdurrahman",
+      "date": null,
+      "note": {
+        "tr": "İki satırdır; ikinci satır silinmiştir, okunamamaktadır. Yazı üslubu diğer kitâbeden farklı olduğundan ustanın sonraki yüzyıllarda tamirde görev almış olabileceği düşünülmektedir. Kitap dili belirtmiyor.",
+        "en": "Two lines; the second is erased and unreadable. Because the style differs from the other inscription, the master may have taken part in later repairs. The book does not name the language."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "443"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1180",
+      "year": 1180,
+      "date": null,
+      "hijri": "576",
+      "type": "construction",
+      "title": {
+        "tr": "Sanavber Hâtun'un emriyle mescidin tamamlanması (Receb 576)",
+        "en": "Masjid completed by order of Sanavber Hâtun (Rajab 576)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "443"
+        }
+      ]
+    },
+    {
+      "id": "vakif-defteri-1474",
+      "year": 1474,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1474-1476 tarihli vakıf defterinde tekkenin kaydı; II. Bâyezid dönemi üç defterde de anılması",
+        "en": "Tekke recorded in the foundations register of 1474-1476 and named in three registers of Bayezid II's reign"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "441, 443"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Beykonak kasabasının güneydoğusundaki bir tepede yer alan, dıştan sade ve beyaz sıvalı bir mescit-tekkedir. Kuzeyde mezarlık olarak kullanılan bir avlu, içeride ise iç içe üç bölüm vardır: hazire olarak kullanılan giriş bölümü, ortasında kubbe ve iki yanında beşik tonozlu eyvanları olan, türbe işlevli ikinci bölüm ve trompla geçilen kubbeli, kare planlı mescit. Mihrap devşirme mermer levhalarla çevrilidir.",
+      "en": "A masjid-tekke on a hill southeast of Beykonak town, plain and white-plastered outside. A courtyard to the north serves as a graveyard; inside are three nested sections: an entrance room used as a hazire, a domed second section with a barrel-vaulted iwan on each side holding the tombs, and a square domed masjid on squinches. The mihrab is framed by spolia marble slabs."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "440-444"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1927",
+        "original_name": "pdf-s222-xref1927",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "440"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi (kitap s. 440)",
+        "en": "Beykonak Dediği Sultan Masjid and Tekke (book p. 440)"
+      },
+      "alt": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi fotoğrafı",
+        "en": "Photo of Beykonak Dediği Sultan Masjid and Tekke"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1929",
+        "original_name": "pdf-s222-xref1929",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "441"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi (kitap s. 441)",
+        "en": "Beykonak Dediği Sultan Masjid and Tekke (book p. 441)"
+      },
+      "alt": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi fotoğrafı",
+        "en": "Photo of Beykonak Dediği Sultan Masjid and Tekke"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1933",
+        "original_name": "pdf-s223-xref1933",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "442"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi (kitap s. 442)",
+        "en": "Beykonak Dediği Sultan Masjid and Tekke (book p. 442)"
+      },
+      "alt": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi fotoğrafı",
+        "en": "Photo of Beykonak Dediği Sultan Masjid and Tekke"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1939",
+        "original_name": "pdf-s223-xref1939",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "442"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi (kitap s. 442)",
+        "en": "Beykonak Dediği Sultan Masjid and Tekke (book p. 442)"
+      },
+      "alt": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi fotoğrafı",
+        "en": "Photo of Beykonak Dediği Sultan Masjid and Tekke"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1941",
+        "original_name": "pdf-s223-xref1941",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "443"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi (kitap s. 443)",
+        "en": "Beykonak Dediği Sultan Masjid and Tekke (book p. 443)"
+      },
+      "alt": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi fotoğrafı",
+        "en": "Photo of Beykonak Dediği Sultan Masjid and Tekke"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1945",
+        "original_name": "pdf-s224-xref1945",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "444"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi (kitap s. 444)",
+        "en": "Beykonak Dediği Sultan Masjid and Tekke (book p. 444)"
+      },
+      "alt": {
+        "tr": "Beykonak Dediği Sultan Mescit ve Tekkesi fotoğrafı",
+        "en": "Photo of Beykonak Dediği Sultan Masjid and Tekke"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

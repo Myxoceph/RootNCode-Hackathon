@@ -1,0 +1,281 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-gurb-i-cedidi-kosova-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Yapım tarihi ve banisi kitapta yok.",
+      "Era boş bırakıldı (yapım tarihi belirtilmemiş).",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Gurb-i Cedidi (Kosova) Mescidi",
+    "en": "Gurb-i Cedidi (Kosovo) Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Gurbi Cedit Mescidi",
+      "en": "Gurbi Cedit Masjid"
+    },
+    {
+      "tr": "Kosova Camii",
+      "en": "Kosovo Mosque"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "ahşap minare",
+    "vakfiye",
+    "Hacı Fettah Mezarlığı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Gurbi Cedit Mahallesi",
+    "address": "Kosova Sokak No: 15",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "154"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi belirtilmemiş; vakfiye H. 1244 / M. 1828-29",
+      "en": "Construction date not stated; charter 1244 AH / 1828-29 AD"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Metin yapım yılı vermez; yalnızca H. 1244 / M. 1828-29 tarihli vakfiyede adının geçtiğini söyler.",
+      "en": "The text gives no construction year, only that it is named in a charter dated 1244 AH / 1828-29 AD."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "154"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hacı Fettah Mezarlığı'nın güneydoğusunda, H. 1244 / M. 1828-29 tarihli vakfiyede 'Gurbi Cedit' adıyla geçen, bugün 'Kosova Camii' denilen, kuzeydoğu cephesinde ahşap minaresi olan kırma çatılı mescit.",
+    "en": "A hipped-roof masjid southeast of Hacı Fettah Cemetery, named 'Gurbi Cedit' in a charter dated 1244 AH / 1828-29 AD and today called 'Kosovo Mosque'; it has a wooden minaret on its northeast facade."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit, Meram, Gurbi Cedit Mahallesi, Kosova Sokak, No. 15'te, Hacı Fettah Mezarlığı'nın güneydoğu tarafında yer almaktadır. H. 1244 / M. 1828-29 tarihli vakfiyesinde ve 1939 yılı tapu kayıtlarında ismi \"Gurbi Cedit\" olarak geçen mescit, günümüzde \"Kosova Camii\" adıyla anılmaktadır.",
+        "en": "The masjid is at Kosova Street No: 15, Gurbi Cedit Neighborhood, Meram, southeast of Hacı Fettah Cemetery. Named \"Gurbi Cedit\" in the charter dated 1244 AH / 1828-29 AD and in the 1939 land registry, it is today called \"Kosovo Mosque\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "154"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Üzeri kırma çatıyla örtülü mescit dıştan dikdörtgen planlıdır. Kuzeydoğu cephesinde ahşap minaresi vardır. Harime çift kanatlı ahşap kapıdan girilir. Harim derinlemesine dikdörtgen planlıdır. Kıble duvarı ortasında, giriş ekseninde yarım daire planlı ve yarım kubbe kavsaralı mihrap bulunur.",
+        "en": "The hipped-roof masjid is rectangular in plan from outside, with a wooden minaret on the northeast facade. The harim is entered through a double-winged wooden door and is deeply rectangular. The mihrab on the qibla wall and entrance axis has a semicircular plan and a semi-domed hood."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "154"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "154"
+        }
+      ],
+      "note": {
+        "tr": "Ahşap",
+        "en": "Wooden"
+      }
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1828",
+      "year": 1828,
+      "date": null,
+      "hijri": "1244",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye (adı 'Gurbi Cedit' olarak geçer)",
+        "en": "Charter naming it 'Gurbi Cedit'"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "154"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dıştan dikdörtgen planlı, kırma çatılı bir mescittir. Kuzeydoğu cephesinde ahşap bir minare yükselir. Çift kanatlı ahşap kapıdan girilen derin dikdörtgen harimde, kıble duvarının ortasında yarım kubbe kavsaralı yarım daire planlı bir mihrap bulunur.",
+      "en": "A rectangular masjid with a hipped roof and a wooden minaret on its northeast facade. Entered through a double-winged wooden door, the deep rectangular prayer hall has a semicircular mihrab with a semi-domed hood in the middle of the qibla wall."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "154-154"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=574",
+        "original_name": "pdf-s79-xref574",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "154"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Gurb-i Cedidi (Kosova) Mescidi (kitap s. 154)",
+        "en": "Gurb-i Cedidi (Kosovo) Masjid (book p. 154)"
+      },
+      "alt": {
+        "tr": "Gurb-i Cedidi (Kosova) Mescidi fotoğrafı",
+        "en": "Photo of Gurb-i Cedidi (Kosovo) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=576",
+        "original_name": "pdf-s79-xref576",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "154"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Gurb-i Cedidi (Kosova) Mescidi (kitap s. 154)",
+        "en": "Gurb-i Cedidi (Kosovo) Masjid (book p. 154)"
+      },
+      "alt": {
+        "tr": "Gurb-i Cedidi (Kosova) Mescidi fotoğrafı",
+        "en": "Photo of Gurb-i Cedidi (Kosovo) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=578",
+        "original_name": "pdf-s79-xref578",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "154"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Gurb-i Cedidi (Kosova) Mescidi (kitap s. 154)",
+        "en": "Gurb-i Cedidi (Kosovo) Masjid (book p. 154)"
+      },
+      "alt": {
+        "tr": "Gurb-i Cedidi (Kosova) Mescidi fotoğrafı",
+        "en": "Photo of Gurb-i Cedidi (Kosovo) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

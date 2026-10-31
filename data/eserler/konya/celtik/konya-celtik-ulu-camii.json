@@ -1,0 +1,486 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-celtik-ulu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 400-403) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "İlk inşa tarihi ve banî bilinmiyor; founder null (Halil ve Ömer Beyler yenileyen olarak people ve timeline'da).",
+      "Kitabe çevirisi (meal) kitapta yok; translation null.",
+      "'Selçuklu Camisi' adının dayanağı kitapta açıklanmıyor.",
+      "Çevrenin açılması Cumhuriyet'in ilk yıllarında olmuş ama yıl verilmemiş; zaman çizelgesine eklenmedi.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[yenileme-kitabesi]",
+        "note": "Kitâbe metni 4 numaralı mısra 'târihiniânın' biçiminde basılmış (muhtemelen baskı/okuma hatası); olduğu gibi korundu. Kitap '4 satır, 8 kartuş' derken 5 numaralı satır yalnızca 'Sene 1230'u içeriyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ulu (Çarşı-Merkez) Camii",
+    "en": "Grand (Çarşı-Central) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Selçuklu Camisi",
+      "en": "Seljuk Mosque",
+      "note": "Kitapta 'Selçuklu Camisi de denmektedir'."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "çok kubbeli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Çeltik",
+    "neighborhood": null,
+    "address": "Mevlâna Bulvarı üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "400"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk inşa bilinmiyor; kitâbeye göre Ramazan 1230 / Ağustos 1815'te yenilendi",
+      "en": "First construction unknown; renewed Ramadan 1230 / August 1815 per the inscription"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 1230,
+    "century": 19,
+    "basis": {
+      "tr": "Yenileme kitâbesindeki tarih (Sene 1230); ilk inşa tarihi verilmediği için başlangıç yılı boş.",
+      "en": "Date on the renovation inscription (year 1230); first construction unknown so start year left empty."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "400-403"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Çeltik'te Mevlâna Bulvarı üzerindeki, 1815'te Halil ve Ömer Beyler tarafından yenilenen, dokuz kubbeli harime sahip çok kubbeli cami. Halk arasında “Selçuklu Camisi” de denir.",
+    "en": "A multi-domed mosque on Mevlâna Boulevard in Çeltik, renewed in 1815 by Halil and Ömer Beys, with a nine-domed harim. Also called “Seljuk Mosque”."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "İlk inşası hakkında bilgi yoktur. Giriş kapısı üzerindeki kitâbe, yapının Ramazan 1230 / Ağustos 1815'te Halil ve Ömer Beyler tarafından yenilendiğini bildirir. Yapıya “Selçuklu Camisi” de denir. Cumhuriyet'in ilk yıllarında çevresindeki yapılar ve hazire kaldırılarak etrafı açılmış, uzun yıllar onarımda kalmıştır.",
+        "en": "Nothing is known about the first construction. The inscription over the entrance states that it was renovated by Halil and Ömer Beys in Ramadan 1230 / August 1815. It is also called “Seljuk Mosque”. In the first years of the Republic, surrounding buildings and the burial ground were removed to open up the area; it remained under repair for many years."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "400"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dikdörtgen planlı ve çok kubbelidir; kubbeler sekizgen kasnağa oturur. Kaba yonu taştan yapılmıştır. Kuzeybatıda son cemaat bölümüne bitişik, düzgün kesme taş minare kare kaideli, silindirik gövdeli ve tek şerefelidir. Harim derinlemesine dikdörtgen ve üç sahınlıdır; sivri kemerlerle bağlı dört sütunun taşıdığı dokuz kubbeyle örtülüdür, geçişler üçgen tromplarladır. Kıble duvarı ortasında taş mihrap, sağında güneybatıda sade ahşap minber (onarımlardan sonra eklenmiş) bulunur. Bugünkü hâliyle Osmanlı klasik dönem çok kubbeli cami planındadır.",
+        "en": "The mosque is rectangular and multi-domed, the domes resting on octagonal drums, built of rough-cut stone. The cut-stone minaret in the northwest, adjoining the narthex, has a square base, cylindrical body and one balcony. The harim is deep rectangular with three aisles, covered by nine domes on four columns linked by pointed arches, with triangular squinches. A stone mihrab is centred on the qibla wall; the simple wooden minbar to its right (southwest) was added after repairs. In its present form it follows the Ottoman classical multi-domed plan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "400, 403"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 3,
+      "title": {
+        "tr": "Yenileme kitâbesi",
+        "en": "Renovation inscription"
+      },
+      "body": {
+        "tr": "Giriş kapısı üzerindeki kitâbe yuvarlak tepelikli dikdörtgen formda, yanlardan kıvrık dal biçiminde sonlanır. Mermer levha üzerine cetvellerle ayrılmış 4 satırda 8 kartuş hâlinde Osmanlı Türkçesiyle celî sülüs hatla oyma-kabartma tekniğinde yazılmıştır.",
+        "en": "The inscription over the entrance is a rectangle with a round top ending in curved-branch forms at the sides. It is carved in relief on a marble slab in 4 lines and 8 cartouches, in Ottoman Turkish Celi Thuluth script."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "401"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Harim kubbe sayısı",
+        "en": "Number of domes over the harim"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "403"
+        }
+      ]
+    },
+    {
+      "key": "sutun_sayisi",
+      "label": {
+        "tr": "Kubbeleri taşıyan sütun",
+        "en": "Columns carrying the domes"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "403"
+        }
+      ]
+    },
+    {
+      "key": "sah_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "403"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Halil Bey",
+      "role": {
+        "tr": "Camiyi yenileten (Mirzâdeler)",
+        "en": "Renewed the mosque"
+      }
+    },
+    {
+      "name": "Ömer Bey",
+      "role": {
+        "tr": "Camiyi yenileten (Mirzâdeler)",
+        "en": "Renewed the mosque"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "yenileme-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, mermer levha",
+        "en": "Above the entrance door, marble slab"
+      },
+      "language": "tr-ottoman",
+      "script": "Celî sülüs",
+      "transliteration": "1- Cihanbeyli Âl-i şân Mirzâdeler // Halil Bey hem Ömer Bey nâm-ı merdân\n2- Sevâb ve ecre âhenk eylerler // Mahallinde bu iki mîr-i zîşân\n3- İdüb bu câmi-i tecdîden ve ta’mîr // Müceddeden eylediler şimdi umrân\n4- Dedi târihiniânın bir musalli // Bu valâ-i câmi oldu hoş bünyâd\n5- Sene 1230",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1230,
+        "gregorian": "1815"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap yalnızca Osmanlıca metnin okunuşunu veriyor; mealen/çeviri yok.",
+        "en": "The book gives only the transliterated text, no translation."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "401"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yenileme-1815",
+      "year": 1815,
+      "date": null,
+      "hijri": "1230",
+      "type": "restoration",
+      "title": {
+        "tr": "Halil ve Ömer Beyler tarafından yenilendi",
+        "en": "Renewed by Halil and Ömer Beys"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "400"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, kaba yonu taştan çok kubbeli bir camidir; kubbeler sekizgen kasnaklar üzerinde durur. Kuzeybatı köşesinde, son cemaat yerine bitişik, düzgün kesme taştan tek şerefeli bir minare yükselir. Giriş kapısının üstünde beyaz mermer bir yenileme kitâbesi görülür. İçeride dört sütunun taşıdığı dokuz kubbe üç sahını örter; kıble duvarının ortasında taş mihrap, sağında sade ahşap minber vardır.",
+      "en": "A rectangular multi-domed mosque of rough-cut stone, its domes on octagonal drums. At the northwest corner, attached to the narthex, rises a single-balcony minaret of smooth cut stone. Above the entrance is a marble renovation inscription. Inside, nine domes carried by four columns cover three aisles; a stone mihrab stands in the middle of the qibla wall with a simple wooden minbar to its right."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 400-403) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "400-403"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1716",
+        "original_name": "pdf-s202-xref1716",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "400"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ulu (Çarşı-Merkez) Camii (kitap s. 400)",
+        "en": "Grand (Çarşı-Central) Mosque (book p. 400)"
+      },
+      "alt": {
+        "tr": "Ulu (Çarşı-Merkez) Camii fotoğrafı",
+        "en": "Photo of Grand (Çarşı-Central) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1718",
+        "original_name": "pdf-s202-xref1718",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "401"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ulu (Çarşı-Merkez) Camii (kitap s. 401)",
+        "en": "Grand (Çarşı-Central) Mosque (book p. 401)"
+      },
+      "alt": {
+        "tr": "Ulu (Çarşı-Merkez) Camii fotoğrafı",
+        "en": "Photo of Grand (Çarşı-Central) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1728",
+        "original_name": "pdf-s203-xref1728",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "402"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ulu (Çarşı-Merkez) Camii (kitap s. 402)",
+        "en": "Grand (Çarşı-Central) Mosque (book p. 402)"
+      },
+      "alt": {
+        "tr": "Ulu (Çarşı-Merkez) Camii fotoğrafı",
+        "en": "Photo of Grand (Çarşı-Central) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1730",
+        "original_name": "pdf-s203-xref1730",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "403"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ulu (Çarşı-Merkez) Camii (kitap s. 403)",
+        "en": "Grand (Çarşı-Central) Mosque (book p. 403)"
+      },
+      "alt": {
+        "tr": "Ulu (Çarşı-Merkez) Camii fotoğrafı",
+        "en": "Photo of Grand (Çarşı-Central) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1736",
+        "original_name": "pdf-s203-xref1736",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "403"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ulu (Çarşı-Merkez) Camii (kitap s. 403)",
+        "en": "Grand (Çarşı-Central) Mosque (book p. 403)"
+      },
+      "alt": {
+        "tr": "Ulu (Çarşı-Merkez) Camii fotoğrafı",
+        "en": "Photo of Grand (Çarşı-Central) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1732",
+        "original_name": "pdf-s203-xref1732",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "403"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ulu (Çarşı-Merkez) Camii (kitap s. 403)",
+        "en": "Grand (Çarşı-Central) Mosque (book p. 403)"
+      },
+      "alt": {
+        "tr": "Ulu (Çarşı-Merkez) Camii fotoğrafı",
+        "en": "Photo of Grand (Çarşı-Central) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1734",
+        "original_name": "pdf-s203-xref1734",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "403"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ulu (Çarşı-Merkez) Camii (kitap s. 403)",
+        "en": "Grand (Çarşı-Central) Mosque (book p. 403)"
+      },
+      "alt": {
+        "tr": "Ulu (Çarşı-Merkez) Camii fotoğrafı",
+        "en": "Photo of Grand (Çarşı-Central) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

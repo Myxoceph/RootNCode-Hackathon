@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-igdeli-sultan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî ve sanatkârlar kitapta yok.",
+      "Minare bulunup bulunmadığı metinde belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name/page",
+        "note": "Sayfa 198-199 çift sayfasında iki bina metni ve başlıkları iç içe: Uluırmak Burhandede Mahallesi'ndeki 1915 kitâbeli bina Burhan Dede Camii, Keçeciler Mahallesi'ndeki 1908 tarihli bina İğdeli Sultan Camii olarak eşleştirildi; içindekiler tablosundan (Burhan Dede 198, İğdeli Sultan 199) ve mahalle adlarından çıkarım yapıldı, metinde İğdeli adı geçmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İğdeli Sultan Camii",
+    "en": "İğdeli Sultan Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "bağdadi kubbe",
+    "ahşap direkli",
+    "1908",
+    "geç Osmanlı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Keçeciler Mahallesi",
+    "address": "Araplar Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "199"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1908 (kaynaklarda)",
+      "en": "1908 (in sources)"
+    },
+    "start_year": 1908,
+    "end_year": 1908,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kaynaklarda 1908'de yapıldığı belirtiliyor; banisi ve sanatkârlarını bildiren kitâbe yok.",
+      "en": "Sources state it was built in 1908; no inscription names its builder or artisans."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "199"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Keçeciler Mahallesi, Araplar Caddesi'nde, kaynaklara göre 1908'de yapılmış; içten bağdadi kubbeli, dıştan kırma çatılı, ahşap direkli geç Osmanlı camisi.",
+    "en": "A late Ottoman wooden-pillared mosque on Araplar Street, Keçeciler Neighborhood, built in 1908 per sources, with a baghdadi dome inside and a hipped roof outside."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, Karatay, Keçeciler Mahallesi, Araplar Caddesi'nde yer alır. Kaynaklarda 1908'de inşa edildiği belirtilmekle birlikte banisi ve sanatkârları hakkında bilgi veren kitâbe yoktur.",
+        "en": "The mosque is on Araplar Street, Keçeciler Neighborhood, Karatay. Sources state it was built in 1908, but no inscription gives its builder or artisans."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "199"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı derinlemesine dikdörtgen planlı ve kırma çatılıdır. Cepheler sadedir; beden duvarlarında simetrik, iki bölümlü pencere düzeni vardır: altta büyük düz lentolu dikdörtgen, üstte benzer ama daha küçük pencereler. Harime kuzey cepheye sonradan eklenen bölümden geçilir. Harim mihraba paralel üç sahınlıdır ve içten bağdadi kubbeyle örtülüdür; kuzeydeki ahşap mahfil iki ahşap direk üzerindedir. Mihrap yarım daire planlı ve yarım kubbe kavsaralıdır. Ahşap minberin nişinde perde motifli bordür, tepeliklerde bitkisel süsleme vardır; mihrabın sağında güneybatı köşedeki minber kapı, aynalık, korkuluk, köşk ve külahtan oluşan sade bir düzendedir. Cami, Konya'da görülen ahşap direkli, içten bağdadi, dıştan kırma çatılı geç Osmanlı camileri grubuna girer.",
+        "en": "The building has a deeply rectangular plan and a hipped roof. Facades are plain, with a symmetrical two-section window arrangement: large flat-lintel rectangular windows below, similar but smaller ones above. Access to the harim is through a section later added to the north facade. The harim has three naves parallel to the mihrab and a baghdadi dome inside; the north wooden mahfil sits on two wooden poles. The mihrab is semicircular with a semi-dome. The wooden minbar niche has curtain-motif borders and floral decoration on the tops; the minbar in the southwest corner has door, transom, railing, pavilion and cone. The mosque belongs to the group of late Ottoman mosques of Konya with wooden pillars, inner baghdadi dome and outer hipped roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "199"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1908",
+      "year": 1908,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kaynaklara göre inşa",
+        "en": "Built according to sources"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "199"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Derinlemesine dikdörtgen planlı, kırma çatılı, içten bağdadi kubbeli bir camidir. Girişi kuzey cepheye sonradan eklenmiş bölümden sağlanır. Harim mihraba paralel üç sahınlıdır; kuzeyde iki ahşap direkli mahfil bulunur. Ahşap minberin niş kısmında perde motifi ve bitkisel süslemeler vardır.",
+      "en": "A deeply rectangular mosque with a hipped roof and an inner baghdadi dome. Entry is through a later addition on the north facade. The harim has three naves parallel to the mihrab and a gallery on two wooden poles to the north. The wooden minbar niche has curtain motifs and floral decoration."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "199-199"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=771",
+        "original_name": "pdf-s101-xref771",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "199"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İğdeli Sultan Camii (kitap s. 199)",
+        "en": "İğdeli Sultan Mosque (book p. 199)"
+      },
+      "alt": {
+        "tr": "İğdeli Sultan Camii fotoğrafı",
+        "en": "Photo of İğdeli Sultan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=773",
+        "original_name": "pdf-s101-xref773",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "199"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İğdeli Sultan Camii (kitap s. 199)",
+        "en": "İğdeli Sultan Mosque (book p. 199)"
+      },
+      "alt": {
+        "tr": "İğdeli Sultan Camii fotoğrafı",
+        "en": "Photo of İğdeli Sultan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

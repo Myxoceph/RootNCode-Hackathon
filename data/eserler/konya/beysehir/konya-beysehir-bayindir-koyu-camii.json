@@ -1,0 +1,520 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-beysehir-bayindir-koyu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 378-381) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Era kitapta belirtilmiyor; era boş bırakıldı.",
+      "Banî ve usta bilinmiyor; vakfiye yok.",
+      "Kitâbenin dili ve metni kitapta verilmiyor.",
+      "İlişki hedefi (Eşrefoğlu Camii) kaydı henüz yok olabilir.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Bayındır Köyü Camii",
+    "en": "Bayındır Village Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şeyh Muhyiddin Camii",
+      "en": "Şeyh Muhyiddin Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "ahşap direkli",
+    "çok destekli",
+    "H. 767",
+    "Eşrefoğlu Camii'nden esinlenme"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Beyşehir",
+    "neighborhood": "Bayındır Köyü merkezi",
+    "address": "Konya-Beyşehir yolu üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "378-381"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 767 / M. 1365-66",
+      "en": "767 AH / 1365-66 AD"
+    },
+    "start_year": 1365,
+    "end_year": 1366,
+    "hijri_year": 767,
+    "century": 14,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki kitâbeye göre H. 767 / M. 1365-66.",
+      "en": "Per the inscription over the entrance door, 767 AH / 1365-66 AD."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "378-381"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bayındır Köyü merkezindeki cami, kitâbesine göre H. 767 / M. 1365-66'da yapılmıştır; banî ve usta bilinmez. Beyşehir Eşrefoğlu Camii'nden esinlendiği düşünülen yapı, XIV. yüzyıl çok destekli ahşap direkli camilerin güzel bir örneğidir.",
+    "en": "The mosque in the centre of Bayındır Village was built in 767 AH / 1365-66 AD per its inscription; builder and master are unknown. Thought to be inspired by the Beyşehir Eşrefoğlu Mosque, it is a fine example of 14th-century multi-supported wooden-pillar mosques."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Konya-Beyşehir yolu üzerindeki Bayındır Köyü merkezindedir. Giriş kapısı üzerindeki dikdörtgen kitâbe, mermer pano içinde dairesel madalyon biçiminde oyma-kabartma tekniğiyle celî sülüs hatla yazılmıştır; buna göre cami H. 767 / M. 1365-66'da yapılmıştır. Banî ve usta hakkında kayıt yoktur. Halk arasında 'Şeyh Muhyiddin Camii' olarak da bilinir; bu adın yapıyı sonraki dönemlerde onaran kişiye ithafen verilmiş olabileceği düşünülür. Vakıflar Bölge Müdürlüğü tarafından yakın zamanda onarılmıştır.",
+        "en": "The mosque is in the centre of Bayındır Village on the Konya-Beyşehir road. The rectangular inscription over the entrance is carved in relief in celi thuluth as a circular medallion within a marble panel; it shows the mosque was built in 767 AH / 1365-66 AD. There is no record of builder or master. It is also known as 'Şeyh Muhyiddin Mosque'; this name may have been given to a later repairer. It was recently repaired by the Regional Directorate of Foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "378-381"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kareye yakın dikdörtgen planlı, içten ahşap tavanlı, dıştan dört yöne eğimli kırma çatılıdır. Moloz taş ve devşirme malzeme kullanılmış, beden duvarları sıvalıdır. Doğu ve batı cephelerinde birer giriş kapısı vardır. Batı beden duvarındaki kesme taş minare sekizgen gövdeli ve tek şerefelidir. Harim üçer direkli dört sıra ahşap sütunla beş sahına bölünür; orta sah daha geniş ve yüksektir ve tavanı kare formlu bağdadi kubbelidir. Mihrap önündeki sütunlar yukarı doğru daralır, ahşap yastıklarla tavana bağlanır, zengin kalem işi süslüdür ve başlıkları beş sıra mukarnasla sonlanır. Tavan kaplamasında özellikle orta sahta yoğun kalem işi süsleme vardır; mahfil ahşaptır. Mihrap 1954'te Çiftliközü Köyü'nden Hasan Usta tarafından yapılmıştır; yarım daire planlı, sivri kemer formlu tepeliklidir ve boyalı yüzeyinde bitkisel süsleme vardır. Güneybatıdaki ahşap minber bitkisel ve geometrik düzenlidir; köşk altında daire içinde yıldız motifi bulunur.",
+        "en": "The mosque is almost square with an inside wooden ceiling and an outside four-way hipped roof, of rubble stone and spolia with plastered walls. There is an entrance on each of the east and west facades. The cut-stone minaret on the west wall has an octagonal body and one balcony. The harim is divided into five naves by four rows of wooden columns of three pillars each; the middle nave is wider and higher with a square Baghdadi-dome ceiling. The columns before the mihrab narrow upward, join the ceiling with wooden pillows, carry rich painted decoration and end in five rows of muqarnas. The ceiling, especially the middle, has intense painted decoration; the mahfil is wooden. The mihrab was added in 1954 by Hasan Usta of Çiftliközü Village; it is semicircular with a pointed-arch crown and painted floral decoration. The wooden southwest minbar has floral and geometric arrangements and a star-in-circle motif under the pavilion."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "379-381"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Hasan Usta (Çiftliközü Köyü)",
+      "role": {
+        "tr": "1954'te mihrabı yapan usta",
+        "en": "Master who made the mihrab in 1954"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzeri",
+        "en": "Above the entrance door"
+      },
+      "language": "other",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 767,
+        "gregorian": "1365-66"
+      },
+      "note": {
+        "tr": "Mermer panelde dairesel madalyon, oyma-kabartma; dili ve metni kitapta verilmiyor.",
+        "en": "Circular medallion in a marble panel, relief carving; language and text not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "378-379"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1365",
+      "year": 1365,
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa edildi",
+        "en": "Mosque built"
+      },
+      "hijri": "767",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "378-379"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "mihrap-1954",
+      "year": 1954,
+      "type": "addition",
+      "title": {
+        "tr": "Yeni mihrap Hasan Usta tarafından yapıldı",
+        "en": "New mihrab made by Hasan Usta"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "380-381"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-beysehir-esrefoglu-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Beyşehir Eşrefoğlu Camii'nden ilham alınarak yapıldığı düşünülmektedir.",
+        "en": "Thought to have been built inspired by the Beyşehir Eşrefoğlu Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "380-381"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Bayındır Köyü Camii kareye yakın, kırma çatılı bir camidir. Batı duvarında sekizgen gövdeli taş minare yükselir. İçeride dört sıra ahşap sütun harimi beş sahına ayırır; mihrap önü sütunları zengin boyalı süslemeli ve mukarnaslı başlıklıdır.",
+      "en": "Bayındır Village Mosque is almost square with a hipped roof. A stone minaret with an octagonal body rises on the west wall. Inside, four rows of wooden columns divide the harim into five naves; the columns before the mihrab are richly painted with muqarnas capitals."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 378-381)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "377-381"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1577",
+        "original_name": "pdf-s190-xref1577",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "377"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 377)",
+        "en": "Bayındır Village Mosque (book p. 377)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1583",
+        "original_name": "pdf-s191-xref1583",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "378"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 378)",
+        "en": "Bayındır Village Mosque (book p. 378)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1585",
+        "original_name": "pdf-s191-xref1585",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "379"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 379)",
+        "en": "Bayındır Village Mosque (book p. 379)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1590",
+        "original_name": "pdf-s192-xref1590",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "380"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 380)",
+        "en": "Bayındır Village Mosque (book p. 380)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1592",
+        "original_name": "pdf-s192-xref1592",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "380"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 380)",
+        "en": "Bayındır Village Mosque (book p. 380)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1594",
+        "original_name": "pdf-s192-xref1594",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "380"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 380)",
+        "en": "Bayındır Village Mosque (book p. 380)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1602",
+        "original_name": "pdf-s192-xref1602",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "381"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 381)",
+        "en": "Bayındır Village Mosque (book p. 381)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1596",
+        "original_name": "pdf-s192-xref1596",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "381"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 381)",
+        "en": "Bayındır Village Mosque (book p. 381)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1600",
+        "original_name": "pdf-s192-xref1600",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "381"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 381)",
+        "en": "Bayındır Village Mosque (book p. 381)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1598",
+        "original_name": "pdf-s192-xref1598",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "381"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Bayındır Köyü Camii (kitap s. 381)",
+        "en": "Bayındır Village Mosque (book p. 381)"
+      },
+      "alt": {
+        "tr": "Bayındır Köyü Camii fotoğrafı",
+        "en": "Photo of Bayındır Village Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,365 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-derbent-ciflikozu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 407) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "Betonarme yeniden yapımın yılı kitapta yok ('son yıllarda').",
+      "Banî kitapta yok (founder null).",
+      "Yapı büyük ölçüde yenilendiği için özgün doku kalmamış olabilir; kitap bunu açıkça söylemiyor, saha teyidi gerek.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitapta 'Çiftliközü' yazılıyor; id ascii olarak 'cifliközü' yerine 'ciflikozu' yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çiftliközü Beldesi Camii",
+    "en": "Çiftliközü Settlement Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "betonarme",
+    "yenilenmiş"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Derbent",
+    "neighborhood": "Çiftliközü Beldesi merkezi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "407"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1924",
+      "en": "1924"
+    },
+    "start_year": 1924,
+    "end_year": 1924,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap cami için 1924 yılını verir (Cumhuriyet'in ilk yılları); bugünkü yapı yeni betonarme.",
+      "en": "The book gives 1924 for the original mosque; the current building is a new reinforced-concrete one."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "407"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Derbent Çiftliközü Beldesi merkezindeki, 1924'te yapılan ahşap direkli camin yerine yakın zamanda betonarme olarak yeniden yapılan cami.",
+    "en": "A mosque in the centre of Çiftliközü Town, Derbent; the wooden-posted mosque built in 1924 was replaced recently by a reinforced-concrete one."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve mimari",
+        "en": "History and architecture"
+      },
+      "body": {
+        "tr": "Cumhuriyet'in ilk yıllarında, 1924'te yapılan cami ahşap direkli ve kırma çatılıydı. Minaresi 1961'de yapılmış, mihrap ve minberi 1976'da eklenmiştir. Son yıllarda tamamen yenilenerek yerine betonarme bir yapı inşa edilmiştir. Yeni cami derinlemesine dikdörtgen planlı ve kubbelidir; kuzeyde çokgen bir son cemaat yeri, kuzeydoğu köşede minare bulunur.",
+        "en": "The mosque, built in 1924 in the first years of the Republic, had wooden posts and a hipped roof. Its minaret was built in 1961 and its mihrab and minbar added in 1976. In recent years it was fully renovated and a reinforced-concrete building built in its place. The new mosque is deeply rectangular and domed, with a polygonal narthex in the north and a minaret in the northeast corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "407"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_yili",
+      "label": {
+        "tr": "Minare yapım yılı",
+        "en": "Year the minaret was built"
+      },
+      "value": 1961,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "407"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_minber_yili",
+      "label": {
+        "tr": "Mihrap ve minber eklenme yılı",
+        "en": "Year mihrab and minbar were added"
+      },
+      "value": 1976,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "407"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1924",
+      "year": 1924,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Ahşap direkli cami yapıldı",
+        "en": "Wooden-posted mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "407"
+        }
+      ]
+    },
+    {
+      "id": "minare-1961",
+      "year": 1961,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Minare yapıldı",
+        "en": "Minaret built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "407"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-1976",
+      "year": 1976,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Mihrap ve minber eklendi",
+        "en": "Mihrab and minbar added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "407"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Derbent'in Çiftliközü kasabasının merkezindeki bu cami yakın zamanda betonarme olarak yenilenmiştir. Derinlemesine dikdörtgen planlıdır ve bir kubbeyle örtülüdür. Kuzey tarafında çokgen planlı bir son cemaat yeri, kuzeydoğu köşesinde de bir minare bulunur.",
+      "en": "This mosque in the centre of Çiftliközü, Derbent, was recently rebuilt in reinforced concrete. It is deeply rectangular and covered with a dome. A polygonal narthex is on the north side and a minaret in the northeast corner."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 407) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "407-408"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1756",
+        "original_name": "pdf-s205-xref1756",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "407"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çiftliközü Beldesi Camii (kitap s. 407)",
+        "en": "Çiftliközü Settlement Mosque (book p. 407)"
+      },
+      "alt": {
+        "tr": "Çiftliközü Beldesi Camii fotoğrafı",
+        "en": "Photo of Çiftliközü Settlement Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1758",
+        "original_name": "pdf-s205-xref1758",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "407"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çiftliközü Beldesi Camii (kitap s. 407)",
+        "en": "Çiftliközü Settlement Mosque (book p. 407)"
+      },
+      "alt": {
+        "tr": "Çiftliközü Beldesi Camii fotoğrafı",
+        "en": "Photo of Çiftliközü Settlement Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1760",
+        "original_name": "pdf-s205-xref1760",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "407"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çiftliközü Beldesi Camii (kitap s. 407)",
+        "en": "Çiftliközü Settlement Mosque (book p. 407)"
+      },
+      "alt": {
+        "tr": "Çiftliközü Beldesi Camii fotoğrafı",
+        "en": "Photo of Çiftliközü Settlement Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1762",
+        "original_name": "pdf-s205-xref1762",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "407"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çiftliközü Beldesi Camii (kitap s. 407)",
+        "en": "Çiftliközü Settlement Mosque (book p. 407)"
+      },
+      "alt": {
+        "tr": "Çiftliközü Beldesi Camii fotoğrafı",
+        "en": "Photo of Çiftliközü Settlement Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1766",
+        "original_name": "pdf-s206-xref1766",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "408"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çiftliközü Beldesi Camii (kitap s. 408)",
+        "en": "Çiftliközü Settlement Mosque (book p. 408)"
+      },
+      "alt": {
+        "tr": "Çiftliközü Beldesi Camii fotoğrafı",
+        "en": "Photo of Çiftliközü Settlement Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

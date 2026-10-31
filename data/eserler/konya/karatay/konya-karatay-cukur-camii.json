@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-cukur-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 204-205) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Mevcut yapının bânîsi kitapta yok; vakfiyedeki önceki caminin bânîsi Emir İshak Bey people alanında.",
+      "'XX. yüzyıl' tek başına era koduna bağlanamadığı için era null; kontrol edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Çukur Camii",
+    "en": "Çukur Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Emir İshak Bey",
+    "Üçler Mezarlığı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Yunusoğlu Mahallesi",
+    "address": "Mengüç Caddesi (Üçler Mezarlığı'nın güneyi, Akçeşme İlkokulu'nun karşısı)",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "204-205"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl (mimari özelliklerine göre)",
+      "en": "20th century (based on architectural features)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap mimari özelliklerinden hareketle XX. yüzyıla tarihlendirilebileceğini söyler; kesin yıl verilmez.",
+      "en": "The book says it can be dated to the 20th century from its architectural features; no exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "204-205"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Yunusoğlu Mahallesi'ndeki cami; vakfiyesine göre yerinde daha önce Emir İshak Bey'in yaptırdığı bir cami vardı. Mevcut yapı XX. yüzyıla tarihlenir ve 2013'te onarılmıştır.",
+    "en": "A mosque in Yunusoğlu Neighborhood. According to its foundation charter a mosque built by Emir İshak Bey earlier stood on the site. The present building dates to the 20th century and was repaired in 2013."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami, Yunusoğlu Mahallesi, Mengüç Caddesi'ndedir. Üçler Mezarlığı'nın güneyinde, Akçeşme İlkokulu'nun karşısında bulunan yapının vakfiyesine göre bu yerde daha önce Emir İshak Bey tarafından yaptırılmış bir cami vardı. Emir İshak (Paşa) Bey Osmanlı döneminde Konya'da yönetici olan bir şahsiyettir; türbesi Şems-i Tebrîzî Türbesi'nin yanındadır. Yapı mimari özelliklerinden hareketle XX. yüzyıla tarihlenebilir; Vakıflar Bölge Müdürlüğü tarafından 2013'te tamir edilmiştir.",
+        "en": "The mosque is on Mengüç Street, Yunusoğlu Neighborhood. According to the foundation charter, a mosque built by Emir İshak Bey stood on this site earlier. Emir İshak (Paşa) Bey was a ruler in Konya during the Ottoman period; his tomb is next to the Tomb of Şems-i Tebrizî. The building can be dated to the 20th century from its architectural features and was repaired by the Regional Directorate of Foundations in 2013."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "204-205"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kare planlı ve dört yöne eğimli kırma çatılıdır; kuzeyine sonradan camekânlı bir son cemaat yeri eklenmiştir. Harime kuzey cephedeki kapıdan girilir. Harim kare planlı, içten ahşap düz tavanlıdır; kuzeyde ahşap direklerin taşıdığı mahfil bulunur. Mihrap yarım beşgen planlı, düz silmelerle sınırlı dikdörtgen formdadır. Güneybatıdaki sade ahşap minber sonradan eklenmiştir.",
+        "en": "Square plan with a hipped roof sloping in four directions; a glass-fronted narthex was later added to the north. The harim is entered through the north gate; it is square with a flat wooden ceiling and a mahfil on wooden poles in the north. The mihrab has a semi-pentagonal plan in a rectangular form bordered by flat moldings. The simple wooden minbar in the southwest was added later."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "204-205"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Emir İshak (Paşa) Bey",
+      "role": {
+        "tr": "Vakfiyeye göre yerdeki önceki caminin yaptırıcısı; Osmanlı döneminde Konya'da yönetici",
+        "en": "Per the charter, builder of the earlier mosque on the site; ruler in Konya in the Ottoman period"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "204-205"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çukur Camii kare planlı, dört yöne eğimli kırma çatılı bir camidir. Kuzeyde camekânlı son cemaat yeri vardır; harimde ahşap direkli mahfil, yarım beşgen planlı mihrap ve ahşap minber bulunur.",
+      "en": "Çukur Mosque is square with a four-way hipped roof. A glass-fronted narthex lies to the north; the harim has a mahfil on wooden poles, a semi-pentagonal mihrab and a wooden minbar."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 204-205)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "204-205"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=797",
+        "original_name": "pdf-s104-xref797",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "204"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çukur Camii (kitap s. 204)",
+        "en": "Çukur Mosque (book p. 204)"
+      },
+      "alt": {
+        "tr": "Çukur Camii fotoğrafı",
+        "en": "Photo of Çukur Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=799",
+        "original_name": "pdf-s104-xref799",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "204"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çukur Camii (kitap s. 204)",
+        "en": "Çukur Mosque (book p. 204)"
+      },
+      "alt": {
+        "tr": "Çukur Camii fotoğrafı",
+        "en": "Photo of Çukur Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=809",
+        "original_name": "pdf-s104-xref809",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "205"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çukur Camii (kitap s. 205)",
+        "en": "Çukur Mosque (book p. 205)"
+      },
+      "alt": {
+        "tr": "Çukur Camii fotoğrafı",
+        "en": "Photo of Çukur Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=803",
+        "original_name": "pdf-s104-xref803",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "205"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çukur Camii (kitap s. 205)",
+        "en": "Çukur Mosque (book p. 205)"
+      },
+      "alt": {
+        "tr": "Çukur Camii fotoğrafı",
+        "en": "Photo of Çukur Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

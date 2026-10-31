@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-karacihan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Son cümle 'Anadolu Selçuklu döneminden günümüze kadar gelmiş' diyor; oysa yapının XIX. yüzyılda yapılmış olması gerektiği söyleniyor. Çelişki muhtemelen ifade hatası; kaynağa sadık kalındı, tarih XIX. yüzyıl 'probable' bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Karacihan Camii",
+    "en": "Karacihan Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "çardak minare",
+    "U biçimli mahfil",
+    "ahşap mihrap ve minber"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Karacihan Mahallesi",
+    "address": "Karakayış Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "192"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl (mimari özelliklerine göre)",
+      "en": "19th century (per architectural features)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Mimari özellikleri itibarıyla XIX. yüzyılda yapılmış 'olmalıdır'; kitâbe/yıl belirtilmiyor.",
+      "en": "'Must have been' built in the 19th century based on architectural features; no inscription or year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "192"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Karacihan Mahallesi, Karakayış Caddesi'ndeki, taş temelli kerpiç yığma, kırma çatılı, ahşap çardak minareli ve altı ahşap direkli geç dönem ahşap uygulamalı cami.",
+    "en": "A late-period mosque with wooden elements on Karakayış Street, Karacihan Neighborhood: stone foundation, adobe masonry, hipped roof, wooden pergola minaret and six wooden poles."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, Karatay, Karacihan Mahallesi, Karakayış Caddesi üzerinde yer alır. Mimari özellikleri itibarıyla XIX. yüzyılda yapılmış olmalıdır.",
+        "en": "The mosque is on Karakayış Street, Karacihan Neighborhood, Karatay. Considering its architectural features, it must have been built in the 19th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "192"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Temelde taş, diğer kısımlarda kerpiç malzemeyle yığma olarak inşa edilmiş caminin üst örtüsü kırma çatılıdır. Doğu cephesinde ahşap çardak minare bulunur. Cephelerde altta dikdörtgen pencereler, üstte küçük tepe penceresi, güney duvarı ortasında rozet pencereler vardır. Giriş doğu cephede muhdes ayakkabılık bölümünden sağlanır. Harim, mihraba dik sıralanan altı ahşap direkle üç sahına ayrılmıştır; direkler yastıklara oturur, tavan sonradan kaplanmıştır ve sütunlar ahşap işçilikli başlıklıdır. Kuzey duvarında önde iki sütuna oturan “U” biçimli mahfil bulunur; mahfilin korkuluklu ortası yarım yuvarlak dışa taşkındır ve altı dikey hatlarla süslüdür. Mihrap ve minber ahşap işçiliklidir. Yapı, Anadolu Selçuklu döneminden günümüze gelen geç dönem ahşap uygulamalı cami örnekleri arasında sayılmıştır.",
+        "en": "Built of stone at the foundation and adobe elsewhere in masonry, the mosque has a hipped roof. A wooden pergola minaret stands on the east facade. Facades have rectangular windows below, a small skylight above and rosette windows in the middle of the south wall. Entry is through a recently built shoe-rack section on the east. The harim is divided into three naves by six wooden poles perpendicular to the mihrab, resting on cushions and with wood-worked capitals; the ceiling was covered later. A “U”-shaped mahfil on two columns lies at the north wall, its railed middle projecting in a half-circle and decorated underneath with vertical lines. Mihrab and minbar are wooden. The book lists it among late-period wooden mosques that have survived from the Anatolian Seljuk period to the present."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "192"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ahsap_direk_sayisi",
+      "label": {
+        "tr": "Harimdeki ahşap direk sayısı",
+        "en": "Wooden poles in the harim"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "192"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Taş temelli, kerpiç yığma, kırma çatılı bir camidir; doğu cephesinde ahşap çardak minare vardır. Harimde altı ahşap direk üç sahın oluşturur. Kuzeyde yarım yuvarlak çıkıntılı, U biçimli ahşap mahfil bulunur. Mihrap ve minber ahşaptır.",
+      "en": "A mosque of stone foundation and adobe masonry with a hipped roof and a wooden pergola minaret on the east facade. Six wooden poles form three naves in the harim. A U-shaped wooden gallery with a half-round projection lies to the north. Mihrab and minbar are wooden."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "192-192"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=728",
+        "original_name": "pdf-s98-xref728",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "192"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Karacihan Camii (kitap s. 192)",
+        "en": "Karacihan Mosque (book p. 192)"
+      },
+      "alt": {
+        "tr": "Karacihan Camii fotoğrafı",
+        "en": "Photo of Karacihan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=726",
+        "original_name": "pdf-s98-xref726",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "192"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Karacihan Camii (kitap s. 192)",
+        "en": "Karacihan Mosque (book p. 192)"
+      },
+      "alt": {
+        "tr": "Karacihan Camii fotoğrafı",
+        "en": "Photo of Karacihan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,311 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-haci-ivaz-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 269) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hacı İvaz'ın kimliği kitapta açıklanmıyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hacı İvaz Camii",
+    "en": "Hacı İvaz Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "ahşap direkli",
+    "Abid İmam Mescidi",
+    "1928"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Polatlar Mahallesi",
+    "address": "Sedirler Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "269"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1928 (günümüzdeki yapı)",
+      "en": "1928 (present building)"
+    },
+    "start_year": 1928,
+    "end_year": 1928,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap günümüzdeki yapının 1928'de Hacı İvaz tarafından yeniden inşa edildiğini belirtir. Aynı yerde 1821'de İsmail Efendi'nin yaptırdığı 'Abid İmam Mescidi' ve 1891'de yeniden inşa edilen yapı bulunuyordu.",
+      "en": "The book states the present building was rebuilt by Hacı İvaz in 1928. On the same site stood the 'Abid İmam Masjid' built by İsmail Efendi in 1821 and a building rebuilt in 1891."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "269"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı İvaz",
+    "role": "banî (günümüzdeki yapıyı 1928'de yeniden inşa ettiren)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "269"
+      }
+    ]
+  },
+  "architect": null,
+  "summary": {
+    "tr": "Polatlar Mahallesi'nde, 1821 tarihli Abid İmam Mescidi'nin yerinde Hacı İvaz'ın 1928'de yeniden inşa ettirdiği, ahşap direkli, moloz taş duvarlı mahalle camisi.",
+    "en": "A neighbourhood mosque in Polatlar Neighborhood, rebuilt in 1928 by Hacı İvaz on the site of the 1821 Abid İmam Masjid, with wooden posts and rubble-stone walls."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Polatlar Mahallesi, Sedirler Caddesi üzerinde yer almaktadır. Yapının bulunduğu yerde önceden İsmail Efendi tarafından 1821'de yaptırılmış 'Abid İmam Mescidi' vardı. Zamanla tahrip olan bu ilk yapı 1891'de ahşap direkli, düz damlı olarak yeniden inşa edilmiştir. Günümüzdeki yapı 1928'de Hacı İvaz tarafından yeniden inşa edilmiş ve bu tarihten sonra 'Hacı İvaz Mescidi' olarak anılmıştır.",
+        "en": "The mosque is on Sedirler Street, Polatlar Neighborhood, Karatay. The site previously held the 'Abid İmam Masjid', built by İsmail Efendi in 1821. This first building, destroyed over time, was rebuilt in 1891 with wooden pillars and flat roofs. The present structure was rebuilt by Hacı İvaz in 1928 and was called 'Hacı İvaz Masjid' thereafter."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlıdır; ahşap direkli yapı içten ahşap tavan kirişli, dıştan dört yöne eğimli kırma çatılıdır. Yığma teknikle moloz taştan yapılmış, doğu ve kuzey bölümlerine sonradan ara mekânlar eklenmiştir. Harime doğu cephenin kuzey bölümündeki kapıdan geçilir. Harim derinlemesine dikdörtgen planlı ve üç sahınlıdır; kuzeyinde mahfil vardır. Mihrap kıble duvarı ortasında, yarım daire planlıdır; nişin üst kısmında perde motifi görülür, hafif dışa taşıntılıdır ve yanlardan düz silmelerle sınırlandırılmıştır. Sonradan eklenen minber sadedir. Cami, Konya ve çevresinde yaygın mahalle mescitlerindendir.",
+        "en": "The mosque has a deeply rectangular plan; the wooden-pillared building has wooden ceiling beams inside and a hipped roof sloping in four directions outside. It is of rubble-stone masonry, with intermediate spaces later added on the east and north. The harim is entered through the door in the northern part of the east facade; it is deeply rectangular with three aisles and a mahfil in the north. The semicircular mihrab in the middle of the qibla wall has a curtain motif on the upper niche, projects slightly and is bordered by flat mouldings. The later-added minbar is simple. It is among the common neighbourhood masjids of Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "269"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "onceki_mescit_yili",
+      "label": {
+        "tr": "Yerindeki ilk mescit (Abid İmam)",
+        "en": "First masjid on the site (Abid İmam)"
+      },
+      "value": 1821,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_insa_1891",
+      "label": {
+        "tr": "İlk yeniden inşa",
+        "en": "First rebuilding"
+      },
+      "value": 1891,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "key": "gunumuzdeki_yapi_yili",
+      "label": {
+        "tr": "Günümüzdeki yapının yılı",
+        "en": "Present building"
+      },
+      "value": 1928,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "269"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı İvaz",
+      "role": {
+        "tr": "Günümüzdeki yapıyı 1928'de yeniden inşa ettiren",
+        "en": "Had the present building rebuilt in 1928"
+      }
+    },
+    {
+      "name": "İsmail Efendi",
+      "role": {
+        "tr": "1821'de yerindeki ilk 'Abid İmam Mescidi'ni yaptıran",
+        "en": "Had the first 'Abid İmam Masjid' built on the site in 1821"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "abid-imam-1821",
+      "year": 1821,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İsmail Efendi tarafından 'Abid İmam Mescidi' yaptırıldı",
+        "en": "'Abid İmam Masjid' built by İsmail Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1891",
+      "year": 1891,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Tahrip olan yapı ahşap direkli, düz damlı olarak yeniden inşa edildi",
+        "en": "Decayed building rebuilt with wooden pillars and flat roofs"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1928",
+      "year": 1928,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Hacı İvaz tarafından yeniden inşa edildi",
+        "en": "Rebuilt by Hacı İvaz"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "269"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hacı İvaz Camii, moloz taştan yapılmış, ahşap direkli, kırma çatılı bir mahalle camisidir. Doğu cephesinin kuzey bölümündeki kapıdan üç sahınlı harime girilir. Kuzeyde mahfil, kıble duvarında nişinin üstünde perde motifi bulunan yarım daire planlı bir mihrap ve sade bir minber vardır.",
+      "en": "Hacı İvaz Mosque is a wooden-pillared neighbourhood mosque of rubble stone with a hipped roof. The three-nave prayer hall is entered from the north part of the east facade. It has a gallery in the north, a semicircular mihrab with a curtain motif above the niche, and a simple minbar."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 269)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "269-269"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1094",
+        "original_name": "pdf-s136-xref1094",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "269"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı İvaz Camii (kitap s. 269)",
+        "en": "Hacı İvaz Mosque (book p. 269)"
+      },
+      "alt": {
+        "tr": "Hacı İvaz Camii fotoğrafı",
+        "en": "Photo of Hacı İvaz Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

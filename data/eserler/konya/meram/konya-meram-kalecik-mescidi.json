@@ -1,0 +1,354 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-kalecik-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Vakıflar Genel Müdürlüğü onarımının yılı kitapta yok.",
+      "'Veznedar Hüseyin Paşa' ile 'Veznedar Hüseyin Efendi (Asri) Camii'nin aynı kişi olup olmadığı metinde belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "1837 yapım (kaynaklardan) ile 1923 yeniden yapım (kitabe) birlikte aktarılıyor; bugünkü yapının hangisine ait olduğu açık değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kalecik Mescidi",
+    "en": "Kalecik Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mescit",
+    "yeniden yapım",
+    "sıvalı",
+    "Veznedar Hüseyin Paşa"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Kale Celp Mahallesi",
+    "address": "Hisar Sokak, İplikçi Camii'nin güneyi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "155"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1253 / M. 1837 (1923'te yeniden yapılmış)",
+      "en": "1253 AH / 1837 AD (rebuilt 1923)"
+    },
+    "start_year": 1837,
+    "end_year": 1837,
+    "hijri_year": 1253,
+    "century": 19,
+    "basis": {
+      "tr": "Kaynaklardan 1837'de yaptırıldığı 'anlaşılmaktadır'; kapı kitabesine göre H. 1342 / M. 1923'te mahalle halkınca yeniden yapılmıştır.",
+      "en": "'Understood from sources' to have been built in 1837; the entrance inscription says it was rebuilt by the neighborhood in 1342 AH / 1923 AD."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "155"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Veznedar Hüseyin Paşa",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "155"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kale Celp Mahallesi'nde, İplikçi Camii'nin güneyinde; kaynaklara göre 1837'de Veznedar Hüseyin Paşa'nın yaptırdığı, kitabesine göre 1923'te mahalle halkınca yeniden yapılan, kareye yakın planlı sıvalı mescit.",
+    "en": "A nearly square plastered masjid in Kale Celp Neighborhood south of the İplikçi Mosque; per sources built in 1837 by Treasurer Hüseyin Paşa and, per its inscription, rebuilt by the neighborhood in 1923."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit, Meram, Kale Celp Mahallesi Hisar Sokak üzerinde, İplikçi Camii'nin güneyinde yer almaktadır. Kaynaklardan mescidin H. 1253 / M. 1837'de Veznedar Hüseyin Paşa tarafından yaptırıldığı anlaşılmaktadır. Mescit 1911'de onarılmıştır. Giriş kapısı üzerindeki kitâbesine göre mahalle halkı tarafından H. 1342 / M. 1923 yılında yeniden yapılmıştır. Mescit Vakıflar Genel Müdürlüğü tarafından da onarılmıştır.",
+        "en": "The masjid is on Hisar Street, Kale Celp Neighborhood, south of the İplikçi Mosque. It is understood from sources that it was built by Treasurer Hüseyin Paşa in 1253 AH / 1837 AD, repaired in 1911, and, per the inscription on the entrance gate, rebuilt by the neighborhood in 1342 AH / 1923 AD. It was also repaired by the General Directorate of Foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "155"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kareye yakın dikdörtgen planlıdır; duvarları içten ve dıştan tamamen sıvanıp boyanmıştır, üzeri kırma çatıyla örtülüdür. Harime kuzeydeki çift kanatlı ahşap kapıdan girilir. Kıble duvarı ortasındaki mihrap yarım daire planlıdır ve yüzeyi yağlı boyayla boyanmıştır.",
+        "en": "The masjid is nearly square in plan, fully plastered and painted inside and out, with a hipped roof. The harim is entered through a double-winged wooden door on the north. The mihrab on the qibla wall is semicircular and painted with oil paint."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "155"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Veznedar Hüseyin Paşa",
+      "role": {
+        "tr": "Kaynaklara göre banî",
+        "en": "Founder per sources"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1837",
+      "year": 1837,
+      "date": null,
+      "hijri": "1253",
+      "type": "construction",
+      "title": {
+        "tr": "Veznedar Hüseyin Paşa tarafından yapımı",
+        "en": "Built by Treasurer Hüseyin Paşa"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "155"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1911",
+      "year": 1911,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "155"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-yapim-1923",
+      "year": 1923,
+      "date": null,
+      "hijri": "1342",
+      "type": "restoration",
+      "title": {
+        "tr": "Mahalle halkınca yeniden yapım (kitabe)",
+        "en": "Rebuilt by the neighborhood (inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "155"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-iplikci-altinapa-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Mescit İplikçi Camii'nin güneyinde yer alır.",
+        "en": "The masjid lies south of the İplikçi Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "155"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kareye yakın planlı, içi ve dışı sıvalı ve boyalı sade bir mescittir; üzeri kırma çatıyla örtülüdür. Kuzeydeki çift kanatlı ahşap kapıdan girilir. Kıble duvarının ortasında yarım daire planlı, yağlı boya ile boyanmış mihrap vardır.",
+      "en": "A plain, nearly square masjid, plastered and painted inside and out, with a hipped roof. Entry is through a double-winged wooden door on the north. The qibla wall has a semicircular mihrab painted in oil paint."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "155-155"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=580",
+        "original_name": "pdf-s79-xref580",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "155"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kalecik Mescidi (kitap s. 155)",
+        "en": "Kalecik Masjid (book p. 155)"
+      },
+      "alt": {
+        "tr": "Kalecik Mescidi fotoğrafı",
+        "en": "Photo of Kalecik Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=582",
+        "original_name": "pdf-s79-xref582",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "155"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kalecik Mescidi (kitap s. 155)",
+        "en": "Kalecik Masjid (book p. 155)"
+      },
+      "alt": {
+        "tr": "Kalecik Mescidi fotoğrafı",
+        "en": "Photo of Kalecik Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=586",
+        "original_name": "pdf-s79-xref586",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "155"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kalecik Mescidi (kitap s. 155)",
+        "en": "Kalecik Masjid (book p. 155)"
+      },
+      "alt": {
+        "tr": "Kalecik Mescidi fotoğrafı",
+        "en": "Photo of Kalecik Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=584",
+        "original_name": "pdf-s79-xref584",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "155"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kalecik Mescidi (kitap s. 155)",
+        "en": "Kalecik Masjid (book p. 155)"
+      },
+      "alt": {
+        "tr": "Kalecik Mescidi fotoğrafı",
+        "en": "Photo of Kalecik Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

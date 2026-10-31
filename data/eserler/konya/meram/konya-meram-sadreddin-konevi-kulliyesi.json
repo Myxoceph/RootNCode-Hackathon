@@ -1,0 +1,332 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-sadreddin-konevi-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 98-103) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Zaviye için kitapta ayrı bir anlatım yok; bu yüzden zaviye için ayrı çocuk kayıt yazılmadı.",
+      "Banî kitâbede adıyla geçmiyor ('Sadreddin Konevî adına' yaptırıldığı söyleniyor); founder null bırakıldı.",
+      "Külliye vakfiyesinin tarihi ve metni kitapta yok.",
+      "Türkçe başlık TOC'de 'Sadreddin Konevi Camii' olarak geçiyor; külliye kaydı kitaptaki anlatımdan türetildi.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Fotoğraf yok: bu ciltte Drive fotoğraf arşivi bulunmuyor; media ve archive_media boş, media_folder null. Fotoğraflar sonradan eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "meta.text_origin / konya-envanteri-1_cilt",
+        "note": "Kitabın İngilizce metni 'Manzumeye vakıflar ihdas edilmiş' cümlesini 'Poetry foundations were established' diye vermiş ('manzume' burada yapı topluluğu anlamında); Türkçe metne göre vakıflar külliye için kurulmuştur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sadreddin Konevi Külliyesi",
+    "en": "Sadreddin Konevi Complex"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sadreddin Konevi Camii",
+      "en": "Sadreddin Konevi Mosque"
+    },
+    {
+      "tr": "Sadreddin Konevi Manzumesi",
+      "en": "Sadreddin Konevi Manzume"
+    }
+  ],
+  "type": "kulliye",
+  "secondary_types": [
+    "cami",
+    "turbe",
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Sadreddin Konevi",
+    "Selçuklu",
+    "külliye",
+    "kütüphane",
+    "türbe",
+    "zaviye"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Şeyh Sadreddin Mahallesi",
+    "address": "Turgutoğlu Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "98"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 673 / M. 1274",
+      "en": "AH 673 / AD 1274"
+    },
+    "start_year": 1274,
+    "end_year": 1274,
+    "hijri_year": 673,
+    "century": 13,
+    "basis": {
+      "tr": "Taç kapıdaki birinci (inşa) kitâbesine göre külliye H. 673 / M. 1274'te yapılmıştır.",
+      "en": "According to the first (construction) inscription on the crown gate, the complex was built in AH 673 / AD 1274."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "98"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Taç kapı kitâbesine göre külliyedeki kitaplar, vakfiyede şart koşulduğu şekilde fakir ve salih kişiler için vakfedilmiştir.",
+      "en": "According to the crown gate inscription, the books in the complex were endowed for the poor and righteous as stipulated in the waqf deed."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "98"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Selçuklu döneminin Konya'daki en önemli eserlerinden biri: ünlü âlim Sadreddin Konevî adına H. 673 / M. 1274'te yaptırılan cami, türbe, zaviye ve kütüphaneden oluşan külliye. 1899'da vali Mehmed Ferid Paşa onarımı yaptırmış, külliye 2004'te yeniden onarılmıştır.",
+    "en": "One of the most important Seljuk works in Konya: a complex of mosque, tomb, zawiya and library built in AH 673 / AD 1274 in the name of the famous scholar Sadreddin Konevî. Governor Mehmed Ferid Paşa had it repaired in 1899, and it was repaired again in 2004."
+  },
+  "sections": [
+    {
+      "id": "sadreddin-konevi",
+      "order": 1,
+      "title": {
+        "tr": "Sadreddin Konevî",
+        "en": "Sadreddin Konevî"
+      },
+      "body": {
+        "tr": "Sadreddin Konevî H. 606 / M. 1209-10'da Malatya'da doğmuştur. Babasının vefatı üzerine Konya'ya gelip yerleşmiş, ilmi ve âlimliğiyle Konya'da meşhur olduğu için \"Konevî\" lakabını almıştır. Tam adı \"Sadreddin Ebu'l-Meâlî Muhammed b. İshak b. Muhammed b. Yusuf b. Ali el-Konevî\"dir. Hânikâhında hadis ilimlerini okutmuş, tasavvuf dersleriyle meşgul olmuştur. Hz. Mevlâna'nın vefatından dokuz ay sonra, 1274 Eylül'ünde Konya'da vefat etmiş ve bugünkü türbesinin bulunduğu yere defnedilmiştir.",
+        "en": "Sadreddin Konevi was born in Malatya in AH 606 / AD 1209-10. After his father's death he came to Konya and settled; he was called \"Konevî\" because he was famous in Konya for his scholarship. His full name is \"Sadreddin Ebu'l-Meâlî Muhammed b. İshak b. Muhammed b. Yusuf b. Ali el-Konevî.\" He taught hadith sciences at his khanikah and gave Sufism lessons. He died in Konya in September 1274, nine months after Mevlâna, and was buried where his tomb now stands."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-103"
+        }
+      ]
+    },
+    {
+      "id": "kulliye-tarihi",
+      "order": 2,
+      "title": {
+        "tr": "Külliyenin Tarihçesi",
+        "en": "History of the Complex"
+      },
+      "body": {
+        "tr": "Külliyeyi oluşturan cami, türbe, zaviye ve kütüphane, inşa kitâbesine göre H. 673 / M. 1274'te yaptırılmıştır. Cami ve türbe, Sultan II. Abdülhamit döneminde vilayet valisi Mehmet Ferit Paşa tarafından H. 1317 / M. 1899'da tamir ettirilmiştir; bu tamirde tek kubbeli olduğu bilinen cami ahşap direkli ve ahşap tavanlı plana dönüştürülmüştür. Manzumenin etrafındaki mezarlık son yüzyılda ortadan kaldırılmıştır. Cami bu plan özelliğini günümüze kadar korumuş ve 2004'te yeniden tamir edilmiştir. Manzumeye vakıflar ihdas edilmiş ve bu vakıflar Osmanlı döneminde de devam etmiştir.",
+        "en": "The mosque, tomb, zawiya and library of the complex were built in AH 673 / AD 1274 according to the construction inscription. The mosque and tomb were repaired in AH 1317 / AD 1899 by the provincial governor Mehmet Ferit Paşa under Sultan Abdülhamid II; in this repair the mosque, known to have had a single dome, was converted to a plan with wooden pillars and a wooden ceiling. The cemetery around the complex was removed in the last century. The mosque has kept this plan to the present and was repaired again in 2004. Foundations were established for the complex and continued in the Ottoman period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-103"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "insa_yili",
+      "label": {
+        "tr": "İnşa yılı (kitâbe)",
+        "en": "Construction year (inscription)"
+      },
+      "value": 1274,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-103"
+        }
+      ]
+    },
+    {
+      "key": "onarim_1899",
+      "label": {
+        "tr": "Vali Mehmet Ferit Paşa onarımı",
+        "en": "Governor Mehmet Ferit Paşa repair"
+      },
+      "value": 1899,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-103"
+        }
+      ]
+    },
+    {
+      "key": "onarim_2004",
+      "label": {
+        "tr": "Son onarım",
+        "en": "Latest repair"
+      },
+      "value": 2004,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-103"
+        }
+      ]
+    },
+    {
+      "key": "bolum_sayisi",
+      "label": {
+        "tr": "Külliye bölümleri",
+        "en": "Parts of the complex"
+      },
+      "value": "cami, türbe, zaviye, kütüphane",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-103"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sadreddin Konevî",
+      "role": {
+        "tr": "Külliyenin adına yapıldığı âlim; 1274'te vefat etti, türbesinde yatıyor",
+        "en": "Scholar in whose name the complex was built; died 1274, buried in his tomb"
+      }
+    },
+    {
+      "name": "Mehmed Ferid Paşa",
+      "role": {
+        "tr": "Vilayet valisi; 1899 onarımını yaptırdı",
+        "en": "Provincial governor; had the 1899 repair done"
+      }
+    },
+    {
+      "name": "II. Abdülhamid",
+      "role": {
+        "tr": "1899 onarımı sırasında hükümdar",
+        "en": "Sultan during the 1899 repair"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1274",
+      "year": 1274,
+      "date": null,
+      "hijri": "673",
+      "type": "construction",
+      "title": {
+        "tr": "Cami, türbe, zaviye ve kütüphane yaptırıldı",
+        "en": "Mosque, tomb, zawiya and library built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-103"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1899",
+      "year": 1899,
+      "date": null,
+      "hijri": "1317",
+      "type": "repair",
+      "title": {
+        "tr": "Cami ve türbe vali Mehmed Ferid Paşa tarafından onarıldı; cami ahşap direkli plana dönüştürüldü",
+        "en": "Mosque and tomb repaired by Governor Mehmed Ferid Paşa; the mosque was converted to a wooden-pillar plan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-103"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami yeniden onarıldı",
+        "en": "Mosque repaired again"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-103"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sadreddin Konevi Külliyesi; cami, türbe, zaviye ve kütüphaneden oluşur. Cami kuzey-güney yönünde dikdörtgen, düz damlıdır; batısında kapalı bir avlu, avlunun güneyinde kütüphane ve güneybatıda tuğla gövdeli tek şerefeli bir minare vardır. Girişin üstünde yarım daire biçimli, kurşun kaplı ahşap bir sundurma bulunur. Mihrap firuze ve patlıcan moru çinilerle kaplıdır.",
+      "en": "The Sadreddin Konevi Complex consists of a mosque, tomb, zawiya and library. The mosque is rectangular, running north-south, with a flat roof; to its west is a closed courtyard, with the library on the courtyard's south side and a single-balconied brick minaret to the southwest. A semicircular lead-covered wooden porch sits above the entrance. The mihrab is covered with turquoise and eggplant-purple tiles."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 98-103)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karapinar-cetmi-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 463) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banî ve kesin inşa tarihi kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Çetmi Camii",
+    "en": "Çetmi Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap direkli cami",
+    "XIX. yüzyıl",
+    "kaba yonu taş"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karapınar",
+    "neighborhood": "Çetmi Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "463"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1300 / M. 1882-83 (arşiv kaydı)",
+      "en": "AH 1300 / AD 1882-83 (archive record)"
+    },
+    "start_year": 1882,
+    "end_year": 1883,
+    "hijri_year": 1300,
+    "century": 19,
+    "basis": {
+      "tr": "Kitabe yok; arşiv ve kayıtlarda camiyle ilgili H. 1300 / M. 1882-83 tarihi yer alıyor.",
+      "en": "No inscription; archives and records give the date AH 1300 / AD 1882-83 for the mosque."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "463"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karapınar Çetmi Mahallesi'nde, kaba yonu taştan, dört ahşap direkli, XIX. yüzyıl ahşap direkli camiler grubundan cami.",
+    "en": "A rough-cut stone mosque in Çetmi Neighborhood, Karapınar, with four wooden poles, belonging to the group of 19th-century wooden-pillared mosques."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Karapınar, Çetmi Mahallesi'nde yer almaktadır. Yapının inşa tarihi ve bânisi hakkında kitâbe yoktur; arşiv ve kayıtlarda camiyle ilgili H. 1300 / M. 1882-83 tarihi geçer. Cami dikdörtgen planlı ve dört yöne eğimli kırma çatılıdır; kuzeybatı köşeye sonradan kesme taştan, kare kaideli, silindirik gövdeli, tek şerefeli bir minare eklenmiştir. Kaba yonu taştan inşa edilmiş, aralarda ahşap hatıllar kullanılmıştır; cephede düz lentolu dikdörtgen pencereler vardır. Harim iki sıra dört ahşap direkle üç sahına ayrılmış, düz ahşap tavanlıdır. Kuzeyde ahşap mahfil, kıble duvarında mihrap ve minber bulunur; ikisi de özgün özelliklerini kaybetmemiştir. Cami XIX. yüzyıl ahşap direkli camiler grubuna girer.",
+        "en": "The mosque is in Çetmi Neighborhood, Karapınar. There is no inscription about its construction date or builder; archives and records give the date 1300 AH / 1882-83 AD. It has a rectangular plan and a hipped roof sloping in four directions; a cut-stone minaret with a square base, cylindrical body and single balcony was later added in the northwest corner. Built of rough-cut stone with wooden beams between, its façade has rectangular windows with straight lintels. The harim is divided into three aisles by four wooden poles in two rows and has a flat wooden ceiling. A wooden gallery lies to the north, and the mihrab and minbar on the qibla wall have not lost their original features. The mosque belongs to the group of wooden-pillared mosques of the 19th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "463"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "direk",
+      "label": {
+        "tr": "Ahşap direk sayısı",
+        "en": "Number of wooden poles"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "463"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çetmi Camii, Karapınar'da kaba yonu taştan yapılmış, dikdörtgen planlı, kırma çatılı bir camidir. Kuzeybatı köşede kesme taş, tek şerefeli bir minare vardır. İçeride dört ahşap direk üç sahın oluşturur; tavan düz ahşaptır.",
+      "en": "Çetmi Mosque in Karapınar is a rough-cut stone building with a rectangular plan and a hipped roof. A cut-stone minaret with one balcony stands at the northwest corner. Inside, four wooden poles form three aisles beneath a flat wooden ceiling."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 463)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "463-463"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2047",
+        "original_name": "pdf-s233-xref2047",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "463"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çetmi Camii (kitap s. 463)",
+        "en": "Çetmi Mosque (book p. 463)"
+      },
+      "alt": {
+        "tr": "Çetmi Camii fotoğrafı",
+        "en": "Photo of Çetmi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2049",
+        "original_name": "pdf-s233-xref2049",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "463"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çetmi Camii (kitap s. 463)",
+        "en": "Çetmi Mosque (book p. 463)"
+      },
+      "alt": {
+        "tr": "Çetmi Camii fotoğrafı",
+        "en": "Photo of Çetmi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2051",
+        "original_name": "pdf-s233-xref2051",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "463"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çetmi Camii (kitap s. 463)",
+        "en": "Çetmi Mosque (book p. 463)"
+      },
+      "alt": {
+        "tr": "Çetmi Camii fotoğrafı",
+        "en": "Photo of Çetmi Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

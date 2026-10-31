@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-mevlana-hurrem-pasa-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Fotoğraf/medya yok: kitapta Drive arşivi yok; media: [] ve media_folder: null bırakıldı, fotoğraflar sonra eklenecek",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Türbeyi kimin yaptırdığı kitapta açık değil (kitâbe İbrahim Paşa'dan söz eder); founder null",
+      "Kitâbenin dili kitapta belirtilmiyor"
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel] TR/EN",
+        "note": "Türkçe 'matbaha bitişik' (matbah = mutfak); İngilizce 'adjacent to the printing house' diye çevrilmiş. Türkçe esas alındı, mutfak olarak yorumlandı."
+      },
+      {
+        "field": "inscriptions[kapi-kitabesi]",
+        "note": "Kitâbenin ilk satırı 'Sultan Süleyman b. Sultan Selim' ve ikinci satırda İbrahim Paşa'nın adını verir; türbenin bu kişiyle ilişkisi (banî mi, anılan mı) kitapta açık olmadığından founder null bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hürrem Paşa Türbesi",
+    "en": "Hürrem Paşa Tomb"
+  },
+  "subtitle": {
+    "tr": "Matbaha bitişik, önünde revaklı sekizgen türbe",
+    "en": "Octagonal tomb with a portico, adjacent to the kitchen"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "konya-karatay-mevlana-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "türbe",
+    "sekizgen",
+    "revak",
+    "Hürrem Paşa",
+    "Hacı Bey",
+    "kitâbe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "62-65"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 934 / M. 1529",
+      "en": "AH 934 / AD 1529"
+    },
+    "start_year": 1529,
+    "end_year": null,
+    "hijri_year": 934,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap 'H. 934 / M. 1529' diyor; kitâbede 'erbaa ve selâsîne ve tis'amie' (934) yazar.",
+      "en": "The book says 'AH 934 / AD 1529'; the inscription reads 934."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "62-65"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karaman Beylerbeyi Hürrem Paşa için 1529'da yaptırılan, matbaha bitişik sekizgen türbe. Önünde mermer sütunlu tek kubbeli revak vardır; içinde Hürrem Paşa ve Hacı Bey'in iki mermer sandukası bulunur.",
+    "en": "An octagonal tomb adjacent to the kitchen, built in 1529 for Karaman Beylerbeyi Hürrem Paşa. It has a single-domed portico with marble columns; inside are the two marble sarcophagi of Hürrem Paşa and Hacı Bey."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapımı ve Kitâbe",
+        "en": "Construction and Inscription"
+      },
+      "body": {
+        "tr": "Matbaha bitişik yapılmış türbe, Karaman Beylerbeyi Hürrem Paşa için H. 934 / M. 1529'da yaptırılmıştır. Kitâbede Sultan Süleyman devrinde büyük vezir İbrahim Paşa'dan söz edilir ve yapının 'şehit Hürrem'in ruhu için' olduğu belirtilir.",
+        "en": "The tomb, built adjacent to the kitchen (the English text says 'printing house'), was built for Karaman Beylerbeyi Hürrem Paşa in 934 AH / 1529 AD. The inscription mentions Grand Vizier İbrahim Paşa in Suleyman's reign and says the building is for the soul of the martyr Hürrem."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "62-63"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Sandukalar",
+        "en": "Architecture and Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbe ve önündeki revak 15 cm yükseklikte taş döşeme zemin üzerindedir. Önünde mermer sütunlu tek kubbeli revak bulunur. Sekizgen planlı türbenin kapısı üzerinde gök mermer söveli, kırmızı-beyaz taşlarla almaşık örülü, sivri kemerli, bitkisel motifli mermer alınlık yer alır; kapı kemeri siyah-beyaz mermerden zıvana geçmelidir. İçinde Hürrem Paşa ile Kanuni dönemi devlet adamlarından Hacı Bey'e ait iki mermer sanduka vardır. Hürrem Paşa'nın sarıklı sandukasında ayet ve hadislerle Sadi Şirazi'nin 'Ey kardeş dünya kimseye kalmaz...' sözleri yazılıdır. Şam vilayetinde üç sancağa mutasarrıflık yapmış Hacı Bey'in sandukasında hicretin 961. yılı, Zilkade ayının 11. gecesinde vefat ettiği yazılıdır.",
+        "en": "The tomb and portico stand on a stone floor 15 cm high. In front is a single-domed portico with marble columns. Over the door of the octagonal tomb is a marble pediment with sky marble jambs, built of red and white stones in alternating order, with a pointed arch and floral motifs; the door arch is black and white marble with mortise and tenon. Inside are two marble sarcophagi of Hürrem Paşa and Hacı Bey, a statesman of Suleyman's reign. Hürrem Paşa's turbaned sarcophagus bears verses, hadiths and Sadi Şirazi's words 'O Brother, the world does not belong to anyone...'. Hacı Bey, governor of three sanjaks in Damascus province, is recorded as dying on the 11th night of Dhul-Qadeh in 961 AH."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "64-65"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "zemin_yukseklik",
+      "label": {
+        "tr": "Taş zemin yüksekliği",
+        "en": "Stone floor height"
+      },
+      "value": 15,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "64-65"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hürrem Paşa",
+      "role": {
+        "tr": "Karaman Beylerbeyi; türbenin sahibi",
+        "en": "Governor of Karaman; the tomb's occupant"
+      }
+    },
+    {
+      "name": "Hacı Bey",
+      "role": {
+        "tr": "Kanuni dönemi devlet adamı; Şam vilayetinde üç sancağa mutasarrıf; ikinci sandukanın sahibi",
+        "en": "Statesman of Suleyman's reign; governor of three sanjaks in Damascus province; occupant of the second sarcophagus"
+      }
+    },
+    {
+      "name": "İbrahim Paşa",
+      "role": {
+        "tr": "Kitâbede anılan büyük vezir",
+        "en": "Grand vizier named in the inscription"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Türbe kitâbesi",
+        "en": "Tomb inscription"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "1-’Umira haze’l bina fi eyyâmi devleti’s-Sultan Süleyman b. Sultan Selim Han etâle’llahu\n‘umrehu bi’l-emni ve’l-eman düstûru’\n2-El-mu’azzam İbrahim Paşa el-müfehham edâma’llahu ikbâlehu bi’n- ni’ami’li ruhi Hurre El-merhum Eş-şehid El-muhtac ilâ rahmeti’llâhi’l-hamîd fî seneti erbaa ve selâsîne ve tis’amie.",
+      "translation": {
+        "tr": "Bu bina, Sultan Selim Han oğlu Sultan Süleyman Han’ın devleti günlerinde ululanmış büyük vezir İbrahim Paşa, Allah nimetler içinde ikbalini uzun eylesin, Allah rahmetine muhtaç şehit Hürrem’in ruhu için 934.",
+        "en": "This building is for the grand vizier Ibrahim Paşa, who was honored during the reign of Sultan Suleyman Han, son of Sultan Selim Han, may God grant him a long life in blessings, for the soul of martyr Hürrem, who is in need of God’s mercy."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 934,
+        "gregorian": "1529"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "62-63"
+        }
+      ],
+      "note": {
+        "tr": "Kitap dili belirtmiyor.",
+        "en": "The book does not name the language."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1529",
+      "year": 1529,
+      "date": null,
+      "hijri": "934",
+      "type": "construction",
+      "title": {
+        "tr": "Türbe Hürrem Paşa için yaptırıldı",
+        "en": "Tomb built for Hürrem Paşa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "62-63"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-mevlana-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Mevlâna Külliyesi'nin parçasıdır.",
+        "en": "Part of the Mevlâna Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "62-65"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sekizgen planlı küçük bir türbe; önünde mermer sütunlu tek kubbeli bir revak, kapısı üzerinde kırmızı-beyaz taşlı sivri kemerli mermer alınlık vardır. İçinde iki mermer sanduka bulunur.",
+      "en": "A small octagonal tomb with a single-domed marble-columned portico in front and a pointed-arch marble pediment of red and white stones over the door. Inside are two marble sarcophagi."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-burhan-dede-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî ve sanatkârlar kitapta yok.",
+      "Zaviyenin yıkıldığı tarih bilinmiyor (kitap da belirtmiyor).",
+      "Vakfiyenin metni kitapta yok; waqf.deed yalnızca tarihi taşıyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf",
+        "note": "Vakfiye H. 684 / M. 1285 bilgisi Yusuf Küçükdağ'a atfedilerek aktarılıyor; güven 'probable'. Zaviyenin Selçuklu dönemi yapımı da aynı atıfla bildiriliyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Burhan Dede Camii",
+    "en": "Burhan Dede Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Burhan Dede Zaviyesi yeri",
+    "bağdadi kubbe",
+    "1915",
+    "köşk minare",
+    "zaviye vakfiyesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Uluırmak Burhandede Mahallesi",
+    "address": "Karaman Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "198"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1915 (kitâbeye göre)",
+      "en": "1915 (per inscription)"
+    },
+    "start_year": 1915,
+    "end_year": 1915,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Yapı üzerindeki kitâbede 1915'te inşa edildiği belirtiliyor. Aynı yerde daha önce, Anadolu Selçukluları döneminde yapıldığı belirtilen Burhan Dede Zaviyesi bulunuyordu.",
+      "en": "The inscription on the building states it was built in 1915. A zawiya built in the Anatolian Seljuk period, according to the book, stood on the same site earlier."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "198"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Burhan Dede Zaviyesi vakfı",
+    "deed": {
+      "date_display": "H. 684 / M. 1285",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "198"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Vakfiyeye göre şeyhlik makamı evlada şartlıdır; bu yüzden soyundan gelen kadınlar da zaviyedarlık yapmıştır.",
+      "en": "Per the deed the position of sheikh was conditional on descent, so women of his lineage also served as zawiyadar."
+    },
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "198"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Uluırmak Burhandede Mahallesi'nde, yerinde Anadolu Selçuklu dönemi Burhan Dede Zaviyesi bulunduğu belirtilen, 1915 tarihli kitâbeli, bağdadi kubbeli geç Osmanlı mahalle camisi.",
+    "en": "A late Ottoman neighborhood mosque with a baghdadi dome and a 1915 inscription in Uluırmak Burhandede Neighborhood, on the site of the Burhan Dede Zawiya of the Anatolian Seljuk period."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, Karatay, Uluırmak Burhandede Mahallesi, Karaman Caddesi'nde yer alır. Üzerindeki kitâbeye göre 1915'te inşa edilmiştir; banisi ya da sanatkârları hakkında kaynak bulunamamıştır. Yusuf Küçükdağ, H. 684 / M. 1285 tarihli vakfiyeden hareketle Burhan Dede Camii'nin yerinde Burhan Dede Zaviyesi'nin bulunduğunu ve zaviyenin Anadolu Selçukluları döneminde inşa edildiğini ifade eder. Osmanlı belgelerine göre zaviye H. 1086 / M. 1675'te de ayaktaydı. Burhan Dede'nin düzenlediği vakfiyeye göre şeyhlik makamı evlada şartlı olduğundan soyundan gelen kadınlar da burada zaviyedarlık yapmıştır. Zaviyenin ne zaman yıkıldığı bilinmemektedir; yerine Burhan Dede Camisi yapılmıştır.",
+        "en": "The mosque is on Karaman Street, Uluırmak Burhandede Neighborhood, Karatay. The inscription on the building states it was built in 1915; no source on its founder or artisans could be found. Yusuf Küçükdağ, based on a foundation deed dated 684 AH / 1285 AD, states that the Burhan Dede Zawiya stood on the site and was built in the Seljuk period. By Ottoman documents the zawiya was still standing in 1086 AH / 1675 AD. According to the deed prepared by Burhan Dede, the position of sheikh was conditional on descent, so women of his lineage also served as zawiyadar. It is not known when the zawiya was demolished; the mosque was built in its place."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "198"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlıdır; içten bağdadi kubbe, dıştan dört yöne eğimli kırma çatıyla örtülüdür. Taş yığma tekniğinde, beden duvarları tamamen sıvalıdır. Cepheler simetriktir; sivri kemerli, büyük dikdörtgen pencereler açılmıştır. Kuzeybatı cephesinde ahşap köşk tipi minare bulunur. Harim, merkezde serbest dört taş kaide üzerine oturan yivli ahşap direklerin taşıdığı bağdadi kubbeyle örtülüdür; kuzeydeki mahfilin üzerinde elips biçimli ikinci bir bağdadi kubbe ve ahşap, motifli iki tavan göbeği vardır. Kıble duvarı ortasındaki ahşap mihrap yarım daire planlıdır. Minber yakın dönemde onarım görmüştür ve sadedir. Cami, Konya genelindeki geç Osmanlı mahalle camisi özelliklerini taşır.",
+        "en": "The mosque has a deeply rectangular plan and is covered by a baghdadi dome inside and a hipped roof outside. It is stone masonry with fully plastered walls. Facades are symmetrical with large rectangular pointed-arch windows. A wooden pavilion-type minaret stands on the northwest facade. The harim's baghdadi dome is carried by grooved wooden poles on four free stone plinths; above the north mahfil is a second, ellipse-shaped baghdadi dome and two wooden ceiling medallions with motifs. The wooden mihrab is semicircular. The minbar was recently repaired and is simple. The mosque has the features of late Ottoman neighborhood mosques seen across Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "198"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Burhan Dede",
+      "role": {
+        "tr": "Zaviyenin vakfiyesini düzenleyen",
+        "en": "Prepared the zawiya's foundation deed"
+      }
+    },
+    {
+      "name": "Yusuf Küçükdağ",
+      "role": {
+        "tr": "Zaviyenin yerini vakfiyeye dayanarak belirten araştırmacı",
+        "en": "Scholar who located the zawiya on the site based on the deed"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Yapı üzerindeki kitâbe",
+        "en": "Inscription on the building"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1915"
+      },
+      "note": {
+        "tr": "Kitap yalnızca kitâbenin 1915 tarihini belirttiğini söylüyor; metin, dil ve yeri verilmiyor.",
+        "en": "The book only says the inscription gives the year 1915; text, language and exact place are not given."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "198"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "zaviye-vakfiyesi-1285",
+      "year": 1285,
+      "date": null,
+      "hijri": "684",
+      "type": "record",
+      "title": {
+        "tr": "Burhan Dede Zaviyesi vakfiyesi (H. 684)",
+        "en": "Burhan Dede Zawiya foundation deed (684 AH)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "198"
+        }
+      ]
+    },
+    {
+      "id": "zaviye-ayakta-1675",
+      "year": 1675,
+      "date": null,
+      "hijri": "1086",
+      "type": "record",
+      "title": {
+        "tr": "Osmanlı belgelerine göre zaviye hâlâ ayakta (H. 1086)",
+        "en": "Zawiya still standing according to Ottoman documents (1086 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "198"
+        }
+      ]
+    },
+    {
+      "id": "insa-1915",
+      "year": 1915,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kitâbeye göre cami inşa edildi",
+        "en": "Mosque built according to the inscription"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "198"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sıvalı taş yığma duvarlı, içten bağdadi kubbeli, dıştan kırma çatılı camidir. Harimde dört taş kaide üzerinde yivli ahşap direkler orta kubbeyi taşır; kuzeydeki mahfilin üstünde elips biçimli ikinci bir bağdadi kubbe vardır. Kuzeybatıda ahşap köşk tipi minare bulunur.",
+      "en": "A mosque of plastered stone masonry with a baghdadi dome inside and a hipped roof outside. In the harim, grooved wooden poles on four stone plinths carry the central dome; an elliptical second baghdadi dome rises above the north gallery. A wooden pavilion-type minaret stands at the northwest."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "198-198"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=767",
+        "original_name": "pdf-s101-xref767",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "198"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Burhan Dede Camii (kitap s. 198)",
+        "en": "Burhan Dede Mosque (book p. 198)"
+      },
+      "alt": {
+        "tr": "Burhan Dede Camii fotoğrafı",
+        "en": "Photo of Burhan Dede Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

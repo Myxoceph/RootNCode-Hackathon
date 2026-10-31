@@ -1,0 +1,541 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-haci-hasan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 138-139) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mürsel'in kim olduğu ve ne zaman yaptığı kitapta yok.",
+      "Kitâbede geçen 'Abdülhamid Han' ile 1215 (1801) tarihinin uyumu kitapta açıklanmıyor; teyit edilmeli.",
+      "Güney duvardaki kitâbenin metni kitapta yok.",
+      "Kapı kitâbesinin ayrı bir Türkçe meali kitapta yok.",
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions.giris-tamir-kitabesi",
+        "note": "Kitap kitâbede 'Abdülhamid Hân'ın asrı' diyor ve kitâbe tarihi 1215 / 1801 olarak veriliyor; hükümdar ile tarihin uyumu kitapta açıklanmıyor, kaynağa sadık kalındı."
+      },
+      {
+        "field": "founder",
+        "note": "Kitâbeye göre Mürsel (ilk), Hacı Hasan (yenileyen) ve Hacı Halil Ağa (üçüncü banî) anılıyor; bugünkü yapının banisi olarak Hacı Halil Ağa yazıldı, 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Hasan Camii",
+    "en": "Hacı Hasan Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap destekli cami",
+    "Bursa kemeri",
+    "taş mihrap",
+    "tamir kitâbesi",
+    "tek şerefeli minare"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Şükran Mahallesi",
+    "address": "Vali Muammer Bey Caddesi, No. 48",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "138"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1215 / M. 1801 (bugünkü yapı); öncesinde 1409'da Karamanoğlu dönemi cami",
+      "en": "1215 AH / 1801 AD (present building); an earlier mosque of 1409 in the Karamanid period"
+    },
+    "start_year": 1801,
+    "end_year": 1801,
+    "hijri_year": 1215,
+    "century": 19,
+    "basis": {
+      "tr": "Güney duvardaki kitâbeye göre 1409'daki yapı yıkılıp H. 1215 / M. 1801'de yerine bugünkü cami yapılmıştır; giriş kapısı kitâbesinde de 1215 tarihi vardır.",
+      "en": "Per the south wall inscription the structure of 1409 was demolished and the present mosque built in its place in 1215 AH / 1801 AD; the entrance inscription is also dated 1215."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "138-139"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Halil Ağa (Gözlülü)",
+    "role": "banî (bugünkü yapıyı yaptıran; kitâbede 'bâni-i salis', üçüncü banî)",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "138"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karamanoğlu döneminde 1409'da yapılan cami yıkılarak H. 1215 / M. 1801'de yerine bugünkü ahşap destekli cami yaptırılmıştır. Üç sahınlı harimi, Bursa kemerleri, şemseli göbeği ve kesme taş-mermer mihrabıyla sade bir yapıdır; günümüzde sağlamdır ve ibadete açıktır.",
+    "en": "The mosque built in 1409 in the Karamanid period was demolished and today's wooden-supported mosque was built in its place in 1215 AH / 1801 AD. It is a plain building with a three-aisled harim, Bursa arches, a sun-motif centre and a cut stone and marble mihrab; it is in sound condition and open for worship."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Caminin güney duvarındaki kitâbeye göre 1409'da Karamanoğlu döneminde inşa edilen yapı yıkılarak, H. 1215 / M. 1801'de yerine mevcut cami yaptırılmıştır. Giriş kapısı üzerindeki iki satırlık talik hatlı Osmanlı Türkçesi tamir kitâbesine göre cami Abdülhamid Han'ın asrında yeniden ihya edilmiştir; bu yerde önce Mürsel cami yapmış, sonra Hacı Hasan yeniden inşa etmiş, Hacı Halil Ağa (Gözlülü) ise üçüncü banî olarak yapıyı baştan sona yaptırmıştır. Cami günümüzde sağlam vaziyettedir ve ibadete açıktır.",
+        "en": "According to the inscription on the south wall, the structure built in 1409 in the Karamanid period was demolished and the present mosque built in its place in 1215 AH / 1801 AD. The two-line Ottoman Turkish repair inscription in talik script above the entrance says the mosque was revived in the age of Abdülhamid Han; Mürsel first built a mosque here, Hacı Hasan rebuilt it, and Hacı Halil Ağa (Gözlülü) became the third builder and made it entirely. The mosque is in sound condition today and open for worship."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "138-139"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzey-güney yönünde uzanan dikdörtgen planlı cami ahşap destekli camilerdendir; kesme taş ve tuğladan inşa edilmiştir. Kuzeyinde son cemaat yeri, kuzeybatısında tek şerefeli tuğla minare vardır. Cepheler sadedir; güney cephede iki, doğu ve batıda üçer sivri kemerli pencere iç mekânı aydınlatır. Son cemaat yeri üç kısma ayrılmıştır, batısında mahfile çıkan merdiven vardır; dış cephesine sonradan iki çeşme ve abdest muslukları eklenmiştir. Harim kapısının iki yanında baklava dilimi başlıklı iki mermer sütun görülür. Minarenin şerefe altı kirpi saçaklıdır, petek kısmı kısa, külahı konik tutulmuştur.",
+        "en": "The rectangular mosque extending north-south is one of the wooden-supported mosques, built of cut stone and brick. It has a narthex to the north and a single-balconied brick minaret in the northwest. The facades are plain; two pointed-arched windows on the south and three each on the east and west light the interior. The narthex is divided into three parts, with a staircase to the mahfil in the west; two fountains and ablution taps were later added to its exterior. Two marble columns with diamond-shaped capitals flank the harim door. The minaret's balcony underside has hedgehog eaves, with a short honeycomb part and a conical cap."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "138-139"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân ve Mihrap",
+        "en": "Interior and Mihrab"
+      },
+      "body": {
+        "tr": "Harim kuzey-güney yönünde dikdörtgen planlıdır; iki sıra ikişer sütunla mihraba dikey üç sahına ayrılır. Çokgen ahşap destekler Bursa kemeriyle bağlanır; orta sahının orta ve güney kısmında ahşap oyma şemseli göbek vardır. Duvarlar sade, süslemesizdir. Kuzeydeki ahşap mahfilin orta kısmı yarım daire biçiminde harime taşırılmıştır. Kıble duvarındaki anıtsal mihrabın niş ve kavsarası kesme taş, diğer bölümleri mermerdir; yarım daire nişi yedi sıra mukarnas kavsaralıdır, kavsara üstündeki dört kitâbelik kartuşun içi boş bırakılmıştır. Mermer bordürlerde üç iri kaval silme, hilal ve yelpaze motifleri, zikzaklı ikinci bordür ve en üstte kaş kemer biçimli dendanlar görülür.",
+        "en": "The harim is rectangular and extends north-south; two rows of two columns divide it into three aisles perpendicular to the mihrab. Polygonal wooden supports are connected by Bursa arches; in the middle and south parts of the central aisle there is a carved wooden sun-motif centre. The walls are plain. The middle of the wooden mahfil in the north projects into the harim in a semicircle. The niche and kavsara of the monumental mihrab are cut stone and the rest marble; the semicircular niche has seven rows of muqarnas kavsara, and the four inscription cartouches above the kavsara were left empty. The marble borders show three large moldings with crescent and fan motifs, a zigzag second border and eyebrow-arch dendans at the top."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "138-139"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_guney",
+      "label": {
+        "tr": "Güney cephe pencere sayısı",
+        "en": "South facade windows"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "138"
+        }
+      ]
+    },
+    {
+      "key": "saha",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "138"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas",
+      "label": {
+        "tr": "Mihrap mukarnas kavsara sırası",
+        "en": "Mihrab muqarnas rows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "139"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mürsel",
+      "role": {
+        "tr": "Aynı yerde daha önce cami yaptığı kitâbede belirtilen kişi",
+        "en": "Person said in the inscription to have built a mosque here earlier"
+      }
+    },
+    {
+      "name": "Hacı Hasan",
+      "role": {
+        "tr": "Camiyi yeniden inşa eden (kitâbeye göre)",
+        "en": "Rebuilder of the mosque (per inscription)"
+      }
+    },
+    {
+      "name": "Hacı Halil Ağa (Gözlülü)",
+      "role": {
+        "tr": "Üçüncü banî",
+        "en": "Third builder"
+      }
+    },
+    {
+      "name": "Mehmed Rıfat",
+      "role": {
+        "tr": "Kitâbeyi yazan (Ketebehu)",
+        "en": "Wrote the inscription"
+      }
+    },
+    {
+      "name": "Ziya",
+      "role": {
+        "tr": "Tarih düşüren şair (kitâbeye göre)",
+        "en": "Poet who gave the chronogram (per inscription)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-tamir-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, talik hat, iki satır",
+        "en": "Above the entrance gate, talik script, two lines"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "1. Şehinşâh-ı cihan Abdülhamid Hân’ın asrında işbu câmi tekrar edildi ihya.\nYapmış idi mukaddem Mürsel bu yerde câmi’ Hacı Hasan âhiran tecdiden etti inşa\n2. Hacı Halil Ağa kim Gözlülü dirler ana bâni-i salis oldu yaptı bunu serâpâ\nmücîd-i mücevher âsâ tarihini dedi Ziya edildi inşa feyz Nûrî du bâlâ. Ketebehu Mehmed Rıfat Sene 1215.",
+      "translation": null,
+      "date": {
+        "hijri_year": 1215,
+        "gregorian": "1801"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "138"
+        }
+      ],
+      "note": {
+        "tr": "Kitap bu metni 'mealen' diye veriyor ancak metin Osmanlı Türkçesi şiiridir; ayrı bir günümüz Türkçesi meali yoktur. Metin kitaptaki yazımıyla alınmıştır.",
+        "en": "Kitap bu metni 'mealen' diye veriyor ancak metin Osmanlı Türkçesi şiiridir; ayrı bir günümüz Türkçesi meali yoktur. Metin kitaptaki yazımıyla alınmıştır."
+      }
+    },
+    {
+      "id": "guney-duvar-kitabesi",
+      "location": {
+        "tr": "Güney duvarda (metni kitapta verilmiyor)",
+        "en": "On the south wall (text not given in the book)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1409"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "138"
+        }
+      ],
+      "note": {
+        "tr": "Kitap bu kitâbenin yalnızca içeriğine (1409'da Karamanoğlu döneminde yapılan yapının yıkılıp 1801'de yenisinin yapıldığı) atıf yapıyor; dil ve metin verilmiyor.",
+        "en": "Kitap bu kitâbenin yalnızca içeriğine (1409'da Karamanoğlu döneminde yapılan yapının yıkılıp 1801'de yenisinin yapıldığı) atıf yapıyor; dil ve metin verilmiyor."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "ilk-cami",
+      "year": 1409,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Karamanoğlu döneminde ilk cami yapıldı (güney duvar kitâbesine göre)",
+        "en": "First mosque built in the Karamanid period (per south wall inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "138"
+        }
+      ]
+    },
+    {
+      "id": "yeni-cami",
+      "year": 1801,
+      "date": null,
+      "hijri": "1215",
+      "type": "construction",
+      "title": {
+        "tr": "Eski cami yıkıldı, yerine mevcut cami yaptırıldı",
+        "en": "Old mosque demolished and the present mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "138-139"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hacı Hasan Camii, kesme taş ve tuğladan yapılmış, ahşap destekli, sade görünümlü dikdörtgen bir camidir. Kuzeyinde son cemaat yeri ve kuzeybatı köşesinde kirpi saçaklı, tek şerefeli tuğla bir minare vardır. Harimde iki sıra ahşap destek Bursa kemerleriyle bağlanarak mekânı üç sahına ayırır; orta sahının tavanında oyma ahşap bir güneş motifi görülür. Kıble duvarında taş ve mermerden, yedi sıra mukarnaslı anıtsal bir mihrap bulunur.",
+      "en": "Hacı Hasan Mosque is a plain rectangular wooden-supported mosque of cut stone and brick, with a narthex to the north and a single-balconied brick minaret with hedgehog eaves in the northwest corner. Inside, two rows of wooden supports linked by Bursa arches divide the harim into three aisles; a carved wooden sun motif appears in the ceiling of the central aisle. The qibla wall has a monumental stone and marble mihrab with seven rows of muqarnas."
+    }
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]",
+      "en": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "138-139"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=492",
+        "original_name": "pdf-s71-xref492",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "138"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hasan Camii (kitap s. 138)",
+        "en": "Hacı Hasan Mosque (book p. 138)"
+      },
+      "alt": {
+        "tr": "Hacı Hasan Camii fotoğrafı",
+        "en": "Photo of Hacı Hasan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=494",
+        "original_name": "pdf-s71-xref494",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "138"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hasan Camii (kitap s. 138)",
+        "en": "Hacı Hasan Mosque (book p. 138)"
+      },
+      "alt": {
+        "tr": "Hacı Hasan Camii fotoğrafı",
+        "en": "Photo of Hacı Hasan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=496",
+        "original_name": "pdf-s71-xref496",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "138"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hasan Camii (kitap s. 138)",
+        "en": "Hacı Hasan Mosque (book p. 138)"
+      },
+      "alt": {
+        "tr": "Hacı Hasan Camii fotoğrafı",
+        "en": "Photo of Hacı Hasan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=500",
+        "original_name": "pdf-s71-xref500",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "139"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hasan Camii (kitap s. 139)",
+        "en": "Hacı Hasan Mosque (book p. 139)"
+      },
+      "alt": {
+        "tr": "Hacı Hasan Camii fotoğrafı",
+        "en": "Photo of Hacı Hasan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=498",
+        "original_name": "pdf-s71-xref498",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "139"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hasan Camii (kitap s. 139)",
+        "en": "Hacı Hasan Mosque (book p. 139)"
+      },
+      "alt": {
+        "tr": "Hacı Hasan Camii fotoğrafı",
+        "en": "Photo of Hacı Hasan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=502",
+        "original_name": "pdf-s71-xref502",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "139"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hasan Camii (kitap s. 139)",
+        "en": "Hacı Hasan Mosque (book p. 139)"
+      },
+      "alt": {
+        "tr": "Hacı Hasan Camii fotoğrafı",
+        "en": "Photo of Hacı Hasan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

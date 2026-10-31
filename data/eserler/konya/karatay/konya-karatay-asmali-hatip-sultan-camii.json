@@ -1,0 +1,352 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-asmali-hatip-sultan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banisi kitapta yok; vakıf bilgisi yok",
+      "Kapı üzerindeki yazının metni kitapta yok",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type/name",
+        "note": "TOC 'Asmalı Hatip Sultan Camii', başlık ve metin 'Mescit/Mescidi' diyor. type: mescit seçildi, ad TOC'taki biçimde bırakıldı, diğer biçim alternate_names'te."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Asmalı Hatip Sultan Camii",
+    "en": "Asmalı Hatip Sultan Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Asmalı Hatip Sultan Mescidi",
+      "en": "Asmalı Hatip Sultan Masjid",
+      "note": "Kitap metninde ve başlıkta bu şekilde de geçer"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "geç Osmanlı",
+    "mahalle mescidi",
+    "tuğla minare",
+    "ajur şerefe",
+    "Karatay"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Civar Mahallesi",
+    "address": "Şehit Nazım Bey Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "249"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1821",
+      "en": "1821"
+    },
+    "start_year": 1821,
+    "end_year": 1821,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki bilgilere göre 1821'de yaptırılmış.",
+      "en": "Built in 1821 according to the information on the entrance door."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "249"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karatay'da, Civar Mahallesi'nde, giriş kapısı üzerindeki bilgiye göre 1821'de yaptırılan, derinlemesine dikdörtgen planlı, üç sahınlı mahalle mescidi. 1952'de tuğla minare eklenmiştir.",
+    "en": "A neighborhood masjid in Civar Neighborhood, Karatay, built in 1821 according to the entrance door, with a deeply rectangular plan and three naves. A brick minaret was added in 1952."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit Karatay, Civar Mahallesi, Şehit Nazım Bey Caddesi üzerindedir. Giriş kapısı üzerindeki bilgilere göre 1821'de yaptırılmıştır. Kuzeybatı köşedeki tek şerefeli tuğla minare 1952'de Mümtaz Koru tarafından Usta Ali Yapıcı'ya inşa ettirilmiştir.",
+        "en": "The masjid is in Karatay, Civar Neighborhood, on Şehit Nazım Bey Street. According to the information on the entrance door it was built in 1821. The single-balcony brick minaret in the northwest corner was contracted by Mümtaz Koru in 1952 to Master Ali Yapıcı."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit derinlemesine dikdörtgen planlı ve kırma çatılıdır; yapıda taş, kerpiç ve tuğla kullanılmıştır. Minare kare kaideli, silindirik gövdeli, tek şerefelidir; şerefe altta mukarnas sırasıyla, korkuluklarda ajur tekniğinde çok kollu yıldızlarla bezenmiştir. Cepheler sadedir: güneyde iki, doğu ve batıda üç, kuzeyde altta iki, üstte üç pencere vardır. Harime kuzey cephenin doğu tarafındaki kapıdan girilir. Harim derinlemesine dikdörtgen planlı ve üç sahınlıdır; orta sahın diğerlerinden geniştir. Kuzeyde iki ahşap direğin taşıdığı mahfil, kıble duvarında mihrap ve minber bulunur; mihrap yarım daire planlı ve yarım kubbe kavsaralıdır. Kitaba göre Konya'da geç Osmanlı dönemi mahalle mescitlerindendir.",
+        "en": "The masjid has a deeply rectangular plan and a hipped roof; stone, adobe and brick were used. The minaret has a square base, a cylindrical body and a single balcony decorated with muqarnas rows below and multi-armed stars in openwork on the balustrades. The facades are simple: two windows on the south, three on the east and west, two below and three above on the north. The harim is entered by the door on the east side of the north facade. It is deeply rectangular and divided into three naves, the middle one wider. To the north is a mahfil on two wooden poles; the qibla wall has a mihrab and minbar, the mihrab semicircular with a semi-dome kavsara. The book calls it one of the late Ottoman neighborhood masjids of Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "249"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "nef_sayisi",
+      "label": {
+        "tr": "Harimde sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "key": "minare_yili",
+      "label": {
+        "tr": "Minarenin yapım yılı",
+        "en": "Minaret construction year"
+      },
+      "value": 1952,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "key": "minare_serefe",
+      "label": {
+        "tr": "Minare şerefe sayısı",
+        "en": "Minaret balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "249"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mümtaz Koru",
+      "role": {
+        "tr": "1952'de minareyi yaptıran",
+        "en": "Commissioned the minaret in 1952"
+      }
+    },
+    {
+      "name": "Usta Ali Yapıcı",
+      "role": {
+        "tr": "Minareyi inşa eden usta",
+        "en": "Master who built the minaret"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yapim-1821",
+      "year": 1821,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Giriş kapısındaki bilgiye göre yaptırıldı",
+        "en": "Built according to the entrance door information"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "id": "minare-1952",
+      "year": 1952,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Tuğla minare Mümtaz Koru tarafından Usta Ali Yapıcı'ya yaptırıldı",
+        "en": "Brick minaret built by Master Ali Yapıcı for Mümtaz Koru"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "249"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Derinlemesine dikdörtgen planlı, kırma çatılı bir mahalle mescidi. Kuzeybatı köşede ajur şerefeli tuğla minare vardır. İçeride orta sahın daha geniş üç sahın, kuzeyde ahşap direkli mahfil ve kıble duvarında yarım kubbe kavsaralı mihrap bulunur.",
+      "en": "A deeply rectangular neighborhood masjid with a hipped roof. In the northwest corner is a brick minaret with an openwork balcony. Inside are three naves with a wider middle one, a mahfil on wooden poles on the north and a semi-domed mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "249-250"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=991",
+        "original_name": "pdf-s126-xref991",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "249"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Asmalı Hatip Sultan Camii (kitap s. 249)",
+        "en": "Asmalı Hatip Sultan Mosque (book p. 249)"
+      },
+      "alt": {
+        "tr": "Asmalı Hatip Sultan Camii fotoğrafı",
+        "en": "Photo of Asmalı Hatip Sultan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=989",
+        "original_name": "pdf-s126-xref989",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "249"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Asmalı Hatip Sultan Camii (kitap s. 249)",
+        "en": "Asmalı Hatip Sultan Mosque (book p. 249)"
+      },
+      "alt": {
+        "tr": "Asmalı Hatip Sultan Camii fotoğrafı",
+        "en": "Photo of Asmalı Hatip Sultan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=997",
+        "original_name": "pdf-s127-xref997",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "250"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Asmalı Hatip Sultan Camii (kitap s. 250)",
+        "en": "Asmalı Hatip Sultan Mosque (book p. 250)"
+      },
+      "alt": {
+        "tr": "Asmalı Hatip Sultan Camii fotoğrafı",
+        "en": "Photo of Asmalı Hatip Sultan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

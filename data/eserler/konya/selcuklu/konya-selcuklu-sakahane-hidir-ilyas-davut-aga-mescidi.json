@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-sakahane-hidir-ilyas-davut-aga-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî ve yapım tarihi kitapta kesin değil (founder null).",
+      "Bitişikteki Hızır-İlyas türbesinin bugünkü durumu belirsiz: metin 'günümüze salim gelemeyen yapı'dan söz ediyor, yapının mescit mi türbe mi olduğu açık değil.",
+      "Sahip Ata'nın Sikaye çeşmesi: ilçesi/kaydı metinde yok, ilişki yazılmadı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Banî konusunda iki görüş var: Küçükdağ (Alâeddin Keykubat'ın şifahanesinin mescidi) ve Konyalı (Davut Ağa, Karamanoğulları dönemi). Kitap kesin bir banî vermediği için founder null bırakıldı, dating disputed işaretlendi."
+      },
+      {
+        "field": "era",
+        "note": "Kitap XIII. yüzyılı (Selçuklu) olası görüyor; Konyalı ise Karamanoğulları dönemi tahmini veriyor. era 'selcuklu' kitabın sonuç cümlesine göre seçildi."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Başlıktaki 'Sakahane', metinde Konyalı'dan alıntıda 'Sakane'; 'Davud/Davut' yazımları da değişiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sakahane (Hıdır İlyas - Davut Ağa) Mescidi",
+    "en": "Sakahane (Hıdır İlyas - Davut Ağa) Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sikaye Mescidi",
+      "en": "Sikaye Masjid",
+      "note": "Konyalı'nın aktardığı ilk ad"
+    },
+    {
+      "tr": "Davut Ağa Mescidi",
+      "en": "Davut Ağa Masjid"
+    },
+    {
+      "tr": "Hızır-İlyas Mescidi",
+      "en": "Hızır-İlyas Masjid",
+      "note": "Bitişikteki Hızır-İlyas makamından"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "mescit",
+    "Selçuklu",
+    "tek kubbeli",
+    "Hızır-İlyas",
+    "Alâeddin Tepesi",
+    "kurşun kubbe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Ferhuniye",
+    "address": "Sultan Mesut Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "294"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl (olası)",
+      "en": "13th century (possible)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitâbe yoktur. Küçükdağ Alâeddin Keykubat'a, Konyalı Karamanoğulları dönemine bağlar; kitap '13. yüzyılda yapılmış olması ihtimal dahilindedir' der.",
+      "en": "No inscription. Küçükdağ attributes it to Alâeddin Keykubad, Konyalı to the Karamanoğulları period; the book says a 13th-century date is possible."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "295"
+      }
+    ]
+  },
+  "founder": null,
+  "summary": {
+    "tr": "Banisi tartışmalı (Alâeddin Keykubat'ın şifahane mescidi ya da hayırsever Davut Ağa'nın eseri), kitâbesiz, kare planlı ve kurşun kaplı tek kubbeli mescit; XIII. yüzyıl tek kubbeli Selçuklu mescitleri arasında önemli kabul edilir.",
+    "en": "A square, single-domed masjid with a lead-covered dome and no inscription; its founder is disputed (the masjid of Alâeddin Keykubad's healing centre or the work of the philanthropist Davut Ağa). It is considered important among 13th-century single-domed Seljuk masjids."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Adları",
+        "en": "History and Names"
+      },
+      "body": {
+        "tr": "Mescit Selçuklu ilçesi Ferhuniye Mahallesi Sultan Mesut Sokak'tadır, Alâeddin Tepesi'nin kuzeyindedir ve kitâbesi yoktur. Yusuf Küçükdağ yapının Alâeddin Keykubat'ın yaptırdığı şifahanenin mescidi olduğunu, İbrahim Hakkı Konyalı ise Karamanoğulları döneminde Davut Ağa adlı bir hayırsever tarafından yaptırıldığını söyler. Konyalı'ya göre mescit, Sahip Ata'nın 'Sikaye' denilen meşhur çeşmesinin civarında yapıldığı için 'Sikaye Mescidi' adını almış, halk telaffuzu Sikaye'yi Sakane yapmıştır; Davut Ağa'nın bugünkü sanatlar mektebinin yerindeki Bedesten'in yanında da bir mescidi vardır. Bu bilgilerle XIII. yüzyılda yapılmış olması ihtimal dahilindedir. Bitişikteki türbede Hızır-İlyas makamı olduğu belirtilir ve mescit bu nedenle 'Hızır-İlyas' adıyla da anılır; bu türbe günümüze salim gelmemiştir. Mescit yakın zamanda esaslı bir tamirat geçirmiş, mihrabı yenilenmiştir.",
+        "en": "The masjid is on Sultan Mesut Street, Ferhuniye Neighborhood, north of Alâeddin Hill, and has no inscription. Yusuf Küçükdağ says it is the masjid of the healing centre built by Alâeddin Keykubad; İbrahim Hakkı Konyalı says a philanthropist named Davut Ağa built it in the Karamanoğulları period. According to Konyalı it was called Sikaye Masjid because it stood near Sahip Ata's famous Sikaye fountain, which folk pronunciation turned into Sakane; Davut Ağa also had a masjid next to the Bedesten on the site of today's arts school. A 13th-century date is possible. A Hızır-İlyas maqam is said to be in the tomb next to the building (which has not survived intact), hence the name Hızır-İlyas. The masjid recently had a major repair and its mihrab was renewed."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "294-295"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlı ve kubbelidir; kubbe kurşunla kaplıdır, içten kubbeye geçiş Türk üçgenleriyle sağlanır. Kıble duvarının ortasındaki yarım dörtgen planlı mihrap alçıdandır; son tamirde yenilenmiş olup geometrik ve bitkisel süslemelere sahiptir. Mescit XIII. yüzyıl tek kubbeli Selçuklu mescitleri içinde önemli bir yere sahiptir.",
+        "en": "The masjid has a square plan with a lead-covered dome; the interior transition to the dome is by Turkish triangles. The semi-rectangular plaster mihrab in the middle of the qibla wall was renewed in the last repair and has geometric and floral decoration. It has an important place among 13th-century single-domed Seljuk masjids."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "295"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Davut Ağa",
+      "role": {
+        "tr": "Konyalı'ya göre Karamanoğulları döneminde mescidi yaptıran hayırsever",
+        "en": "Philanthropist who built the masjid in the Karamanoğulları period, per Konyalı"
+      }
+    },
+    {
+      "name": "Alâeddin Keykubat",
+      "role": {
+        "tr": "Küçükdağ'a göre mescidin bağlı olduğu şifahaneyi yaptıran sultan",
+        "en": "Sultan who built the healing centre the masjid belonged to, per Küçükdağ"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, tek kubbeli küçük bir mescit. Kubbe kurşunla kaplıdır. İçeride kubbeye Türk üçgenleriyle geçilir; kıble duvarının ortasındaki yarım dörtgen planlı alçı mihrap geometrik ve bitkisel süslemelidir.",
+      "en": "A small square-plan, single-domed masjid with a lead-covered dome. Inside, the dome is reached by Turkish triangles; the semi-rectangular plaster mihrab in the qibla wall has geometric and floral decoration."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "295-295"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1217",
+        "original_name": "pdf-s149-xref1217",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "295"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sakahane (Hıdır İlyas - Davut Ağa) Mescidi (kitap s. 295)",
+        "en": "Sakahane (Hıdır İlyas - Davut Ağa) Masjid (book p. 295)"
+      },
+      "alt": {
+        "tr": "Sakahane (Hıdır İlyas - Davut Ağa) Mescidi fotoğrafı",
+        "en": "Photo of Sakahane (Hıdır İlyas - Davut Ağa) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1215",
+        "original_name": "pdf-s149-xref1215",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "295"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sakahane (Hıdır İlyas - Davut Ağa) Mescidi (kitap s. 295)",
+        "en": "Sakahane (Hıdır İlyas - Davut Ağa) Masjid (book p. 295)"
+      },
+      "alt": {
+        "tr": "Sakahane (Hıdır İlyas - Davut Ağa) Mescidi fotoğrafı",
+        "en": "Photo of Sakahane (Hıdır İlyas - Davut Ağa) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

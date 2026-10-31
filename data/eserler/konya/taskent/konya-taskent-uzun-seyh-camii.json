@@ -1,0 +1,489 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-taskent-uzun-seyh-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 478-481) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kitapta verilmiyor; start_year/end_year null.",
+      "Kurucu Uzun Şıh yalnızca kaynak/rivayet aktarımına dayanıyor (probable).",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf bilgisi kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[onarim-1283]",
+        "note": "Türkçe metin 'H. 1283 / M .866' yazıyor, İngilizce metin '1283 AH / 1866 AD'. Hicri 1283 yılı kitaptaki İngilizce değerle uyumludur; Türkçe 'M. 866' büyük olasılıkla baskı hatası. Yıl alanına İngilizce metindeki 1866 yazıldı, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "Başlıkta 'Uzun Şeyh (Şıh)' biçiminde iki yazım var; metinde 'Şıh' ve 'Şeyh' karışık kullanılıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Uzun Şeyh (Şıh) Camii",
+    "en": "Uzun Şeyh (Şıh) Mosque"
+  },
+  "subtitle": {
+    "tr": "Taşkent'te Yavuz Sultan Selim dönemine atfedilen ahşap direkli cami",
+    "en": "Wooden-pillared mosque in Taşkent attributed to the reign of Yavuz Sultan Selim"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "kündekâri taklidi minber",
+    "Uzun Şeyh",
+    "Yavuz Sultan Selim",
+    "Taşkent"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Taşkent",
+    "neighborhood": null,
+    "address": "Taşkent ilçe merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "478-479"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yavuz Sultan Selim dönemi (kaynaklara göre)",
+      "en": "Reign of Yavuz Sultan Selim (according to sources)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Yapıya ait kitâbe yoktur; kaynaklarda Yavuz Sultan Selim döneminde yaptırıldığı söylenmektedir. Kitapta yıl verilmediği için yıl alanları boş bırakıldı.",
+      "en": "There is no construction inscription; sources say it was built in the reign of Yavuz Sultan Selim. No year is given in the book, so year fields are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "478-479"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Uzun Şıh (Uzun Şeyh)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "478-479"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "478-479"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Taşkent ilçe merkezindeki cami, kaynaklara göre Yavuz Sultan Selim döneminde Uzun Şıh tarafından yaptırılmıştır; 2005 yangınından sonra onarılıp 2008'de yeniden ibadete açılmıştır.",
+    "en": "The mosque in Taşkent town center is said by sources to have been built by Uzun Şıh in the reign of Yavuz Sultan Selim; after a fire in 2005 it was repaired and reopened for worship in 2008."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami Taşkent ilçe merkezinde yer alır. Yapıya ait kitâbe yoktur; kaynaklarda Yavuz Sultan Selim döneminde Uzun Şıh isimli bir zât tarafından yaptırıldığı söylenir. Harimdeki levhadan H. 1283 senesinde, giriş kapısı üzerindeki kitâbeden H. 1337 / M. 1920'de onarım gördüğü anlaşılır. 1960'ta kuzeybatıdaki minare eklenmiş, 1995'te beden duvarlarının dışı yenilenmiş, pencere düzeni elden geçirilmiş ve çatı yenilenmiştir. 5.11.2005'te elektrik kontağından çıkan yangında beden duvarları ve minare dışında tümüyle yanmış; yeniden tamir edilerek Ekim 2008'de ibadete açılmıştır.",
+        "en": "The mosque is in the center of Taşkent District. There is no construction inscription; sources say it was built by Uzun Şıh during the reign of Yavuz Sultan Selim. A plate in the harim shows a repair in 1283 AH / 1866 AD and the entrance inscription one in 1337 AH / 1920 AD. The northwest minaret was added in 1960; in 1995 the exterior of the walls, windows and roof were renewed. On 5.11.2005 an electrical fire burned it down except the main walls and minaret; it was repaired and reopened for worship in October 2008."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "478-479"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami eğimli arazide yapılmış, derinlemesine dikdörtgen planlı, çok destekli ve kırma çatılıdır. Yenilenmiş minare kuzeybatı köşede yapıya bitişiktir. Beden duvarları ahşap hatıllarla desteklenmiş moloz taştandır; sade düzenlemeli doğu cephesi zemin seviyesi nedeniyle büyük ölçüde kördür. Harime batı cephenin kuzey köşesindeki kapıdan girilir; harim mihraba dik altı sahına ayrılmıştır, üstü ahşap destekli ahşap kirişlerle örtülüdür. Mihrap önündeki ahşap tavanı taşıyan direklerden ikisinin başlıkları mukarnaslıdır; kuzey 'U' biçimli ahşap mahfille örtülüdür. Kıble duvarında düzgün kesme taştan, dikdörtgen formlu, yarım daire planlı taş mihrap ve sağında dokuz basamaklı ahşap minber vardır. Minberin aynalıklarında sahte kündekâri tekniğinde altı köşeli yıldız, gül ve lale bitkisel süslemesi görülür. Cami, Konya ve çevresindeki ahşap destekli camiler arasında önemli bir yere sahiptir.",
+        "en": "The mosque was built on sloping land, with a deep rectangular plan, multiple supports and a hipped roof. The renewed minaret adjoins the building in the northwest corner. The walls are rubble stone supported by wooden beams; the simple east facade is largely blind due to ground level. The harim is entered through a door in the northern corner of the west facade and divided into six aisles perpendicular to the mihrab, covered with wooden beams on wooden supports. Two columns before the mihrab have stalactite capitals; the north has a U-shaped wooden mahfil. The qibla wall has a smooth-cut-stone mihrab of semicircular plan and, to its right, a nine-step wooden minbar with a six-pointed star in fake kundekari and a rose and tulip floral decoration. It holds an important place among the wooden-supported mosques of Konya and its surroundings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "480-481"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "uzun-seyh-rivayeti",
+      "title": {
+        "tr": "Uzun Şeyh ve Yavuz Sultan Selim",
+        "en": "Uzun Şeyh and Yavuz Sultan Selim"
+      },
+      "body": {
+        "tr": "Rivayete göre Yavuz Sultan Selim Doğu seferi sırasında Konya'da âlimlere sefere gidip gitmeme konusunda fikir sormak ister. Çadırının girişine görünmeyecek şekilde Kur'an-ı Kerim koydurur. Pirlerkondu'dan (Taşkent) gelen Uzun Şeyh yerdeki emanet kaldırılmadıkça içeri girmez. Padişah sefere çıkmasını tavsiye eden Şeyh'e, zaferle dönünce İstanbul'da kalmasını teklif eder; Şeyh memleketinde medresesi olduğunu söyleyip kasabasına bir cami yapılmasını ister ve cami bunun üzerine yaptırılır.",
+        "en": "According to the narration, while resting in Konya during the Eastern campaign Yavuz Sultan Selim sought the scholars' advice about the expedition and had a Quran placed unseen at his tent's entrance. Uzun Şeyh, from Pirlerkondu (Taşkent), would not enter until the relic on the ground was removed. He advised the Sultan to go on the expedition; on his victorious return the Sultan invited him to stay in Istanbul, but the Şeyh asked instead for a mosque in his town, and the mosque was built."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "479-481"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "harim_sah_sayisi",
+      "label": {
+        "tr": "Harim sah sayısı",
+        "en": "Number of aisles in harim"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "480-481"
+        }
+      ]
+    },
+    {
+      "key": "minber_basamak",
+      "label": {
+        "tr": "Minber basamak sayısı",
+        "en": "Minbar steps"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "480-481"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Uzun Şıh (Uzun Şeyh)",
+      "role": {
+        "tr": "Kaynaklara ve rivayete göre camiyi yaptıran zât",
+        "en": "Person said to have had the mosque built"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1283",
+      "year": 1866,
+      "date": null,
+      "hijri": "1283",
+      "type": "repair",
+      "title": {
+        "tr": "Harimdeki levhaya göre onarım",
+        "en": "Repair according to the plate in the harim"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "478-479"
+        }
+      ],
+      "note": {
+        "tr": "Türkçe metinde 'M. 866' yazıyor; İngilizce metin 1866 veriyor.",
+        "en": "Turkish text prints 'M. 866'; the English text gives 1866."
+      }
+    },
+    {
+      "id": "onarim-1920",
+      "year": 1920,
+      "date": null,
+      "hijri": "1337",
+      "type": "repair",
+      "title": {
+        "tr": "Giriş kapısı kitâbesine göre onarım",
+        "en": "Repair according to the entrance inscription"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "478-479"
+        }
+      ]
+    },
+    {
+      "id": "minare-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Kuzeybatıdaki minare eklendi",
+        "en": "Northwest minaret added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "478-479"
+        }
+      ]
+    },
+    {
+      "id": "yenileme-1995",
+      "year": 1995,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Beden duvarlarının dışı, pencere düzeni ve çatı yenilendi",
+        "en": "Exterior walls, windows and roof renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "478-479"
+        }
+      ]
+    },
+    {
+      "id": "yangin-2005",
+      "year": 2005,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "5.11.2005'te elektrik kontağı kaynaklı yangın",
+        "en": "Fire from electrical contact on 5.11.2005"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "478-479"
+        }
+      ]
+    },
+    {
+      "id": "acilis-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Onarım sonrası Ekim 2008'de yeniden ibadete açıldı",
+        "en": "Reopened for worship in October 2008 after repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "478-479"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "minber",
+      "title": {
+        "tr": "Minber",
+        "en": "Minbar"
+      },
+      "hint": {
+        "tr": "Aynalıklardaki altı köşeli yıldız ve gül-lale süsleri.",
+        "en": "Six-pointed star and rose-tulip motifs on the panels."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "entrance_fee": "unknown",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami eğimli arazide, derin dikdörtgen planlı, kırma çatılı bir yapıdır; duvarları ahşap hatıllı moloz taştır. Kuzeybatı köşede yenilenmiş bir minare yükselir. Harim altı sahına ayrılmıştır, ahşap direklerle taşınan ahşap tavanla örtülüdür; kuzeyde 'U' biçimli ahşap mahfil bulunur. Kıble duvarında yarım daire planlı taş mihrap ve sağında dokuz basamaklı, altı köşeli yıldız ve gül-lale süslü ahşap minber yer alır.",
+      "en": "The mosque stands on sloping land with a deep rectangular plan and hipped roof; its walls are rubble stone with wooden beams. A renewed minaret rises in the northwest corner. The harim has six aisles under a wooden ceiling on wooden columns, with a U-shaped wooden mahfil in the north. On the qibla wall are a semicircular stone mihrab and, to its right, a nine-step wooden minbar decorated with a six-pointed star and rose and tulip motifs."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlenmiştir."
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami ambiyansı]",
+      "en": "[Mosque ambience]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "478-482"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2122",
+        "original_name": "pdf-s241-xref2122",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "478"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Uzun Şeyh (Şıh) Camii (kitap s. 478)",
+        "en": "Uzun Şeyh (Şıh) Mosque (book p. 478)"
+      },
+      "alt": {
+        "tr": "Uzun Şeyh (Şıh) Camii fotoğrafı",
+        "en": "Photo of Uzun Şeyh (Şıh) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2124",
+        "original_name": "pdf-s241-xref2124",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "479"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Uzun Şeyh (Şıh) Camii (kitap s. 479)",
+        "en": "Uzun Şeyh (Şıh) Mosque (book p. 479)"
+      },
+      "alt": {
+        "tr": "Uzun Şeyh (Şıh) Camii fotoğrafı",
+        "en": "Photo of Uzun Şeyh (Şıh) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2128",
+        "original_name": "pdf-s242-xref2128",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "480"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Uzun Şeyh (Şıh) Camii (kitap s. 480)",
+        "en": "Uzun Şeyh (Şıh) Mosque (book p. 480)"
+      },
+      "alt": {
+        "tr": "Uzun Şeyh (Şıh) Camii fotoğrafı",
+        "en": "Photo of Uzun Şeyh (Şıh) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2132",
+        "original_name": "pdf-s243-xref2132",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "482"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Uzun Şeyh (Şıh) Camii (kitap s. 482)",
+        "en": "Uzun Şeyh (Şıh) Mosque (book p. 482)"
+      },
+      "alt": {
+        "tr": "Uzun Şeyh (Şıh) Camii fotoğrafı",
+        "en": "Photo of Uzun Şeyh (Şıh) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-iplikci-ambardar-kerim-aga-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 343-351) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Kitâbelerin Arapça metni kitapta verilmiyor; transliterasyon eklenmeli.",
+      "Vakfiye kitapta yok.",
+      "Bânî dışında mimar/usta bilgisi yok.",
+      "Cami çevresindeki dükkânlar ve Akşehir'deki diğer yapılarla ilişki hedef id'leri metinde yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[tamir-1540]",
+        "note": "Tamir kitâbesi Şeyh Bedreddinzade ailesinden birini tamir ettiren olarak verirken, Akşehir şer'iyye sicilleri Kanunî'nin ambardarı Abdülkerim Ağa'yı gösterir; ikisi de saklandı."
+      },
+      {
+        "field": "inscriptions[tamir-kitabesi]",
+        "note": "Kitâbe mealinde 'Abdullah oğlu Abdurrahman', Türkçe yorumda 'Abdurrahman oğlu Abdullah' yazıyor; kaynağa sadık kalındı."
+      },
+      {
+        "field": "name",
+        "note": "Başlıkta ve içindekilerde 'Ambarlar', metinde 'Ambardar' yazıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İplikçi (Ambarlar Kerim Ağa) Camii",
+    "en": "İplikçi (Ambarlar Kerim Ağa) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "İplikçi Camii",
+      "en": "İplikçi Mosque"
+    },
+    {
+      "tr": "Ambardar Kerim Ağa Camii",
+      "en": "Ambardar Kerim Ağa Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "Hamitoğulları",
+    "almaşık duvar",
+    "Ambardar Kerim Ağa",
+    "1894 yangını"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Kuşçu Mahallesi",
+    "address": "Çarşı içinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "343-351"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 738 / M. 1337",
+      "en": "738 AH / 1337 AD"
+    },
+    "start_year": 1337,
+    "end_year": 1337,
+    "hijri_year": 738,
+    "century": 14,
+    "basis": {
+      "tr": "Batı girişindeki celî sülüs, iki satırlık Arapça kitâbede 20 Safer 738 / M. 1337 tarihi geçer.",
+      "en": "The two-line Arabic inscription at the western entrance gives 20 Safar 738 / 1337 AD."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "343-351"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ambardar Kerim Ağa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "343-351"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Akşehir çarşısındaki cami, H. 738 / M. 1337'de Hamitoğulları Beyliği döneminde tüccar Ambardar Kerim Ağa tarafından yaptırılmıştır. Çevresindeki iplikçi dükkânlarından dolayı 'İplikçi' adıyla anılır; plan ve almaşık duvar tekniğiyle Akşehir'in beylikler dönemi önemli eseridir.",
+    "en": "The mosque in the Akşehir bazaar was built in 738 AH / 1337 AD under the Hamitoğulları Beylik by the merchant Ambardar Kerim Ağa. Called 'İplikçi' after the yarn shops around it, it is an important beylik-period work of Akşehir for its plan and alternating masonry."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve onarımlar",
+        "en": "History and repairs"
+      },
+      "body": {
+        "tr": "Cami Kuşçu Mahallesi'nde, çarşı içindedir; yapıldığı dönemde çevresi iplikçi dükkânlarıyla çevrili olduğu için 'İplikçi' adıyla anılır. Batı girişindeki iki satırlık celî sülüs Arapça kitâbeye göre H. 738 / M. 1337'de, Hamitoğulları Beyliği döneminde Ambardar Kerim Ağa tarafından yaptırılmıştır; kitâbeden banînin tüccar olduğu anlaşılır. Batı girişindeki kapı üzerindeki tamir kitâbesine göre H. 947 / M. 1540-41'de onarılmıştır. Akşehir şer'iyye sicillerine göre camiyi tamir ettiren Kanunî Sultan Süleyman'ın ambardarı Abdülkerim Ağa'dır; tamiratın ayrıntıları bilinmemektedir. Çevredeki iplikçi dükkânlarında 1894'te çıkan yangında cami de hasar görmüş; Akşehir Müftüsü Salim Efendi'nin yardım ve gayretiyle başta kubbeler olmak üzere onarılmıştır. Cami 1955'te, 1990'larda ve 2010'dan sonra da kısmi onarımlar geçirmiştir.",
+        "en": "The mosque is in Kuşçu Neighborhood inside the bazaar and was called 'İplikçi' because it was surrounded by yarn shops. According to the two-line Arabic inscription in celi thuluth at the western entrance, it was built by Ambardar Kerim Ağa in 738 AH / 1337 AD under the Hamitoğulları Beylik; the inscription shows the patron was a merchant. A repair inscription over the western door records a repair in 947 AH / 1540-41 AD. According to the Akşehir shariyya registers, the person who had it repaired was Abdülkerim Ağa, warehouse head of Suleiman the Magnificent; the details are unknown. A fire in the yarn shops in 1894 damaged the mosque; the domes in particular were repaired with the help of Akşehir Mufti Salim Efendi. Partial repairs followed in 1955, the 1990s and after 2010."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "343-351"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dıştan kuzey-güney doğrultusunda dikdörtgen planlıdır; kuzey, doğu ve batıdan açılan kapılardan girilir. Duvarlarda taş, tuğla ve devşirme malzeme kullanılmış, cepheler bir sıra taş, üç sıra tuğladan oluşan almaşık teknikte örülmüştür. İki sıra pencere sivri kemerli alınlıkla vurgulanmıştır. Batı cephedeki minare kare prizmal kaideli, silindirik gövdeli ve tek şerefelidir. İlk inşada derinlemesine dikdörtgen planlı, mihraba paralel beş sahınlı ve mihrap önünde üç anıtsal kubbeli olduğu anlaşılmaktadır; zaman içindeki onarımlarla plan önemli ölçüde değişmiştir. Bugün derinlemesine dikdörtgen planlıdır ve mihrap önü üç kubbeyle örtülüdür; kubbelere pandantiflerle geçilir. İç mekânda kalem işi süslemeler barok tarzda natüralist motiflerden oluşur. Kıble duvarının ortasındaki yarım daire planlı mihrap betonla yenilenmiştir; kuzey duvara bitişik kadınlar mahfili son onarımda yenilenmiştir.",
+        "en": "The mosque is a north-south rectangle with doors to the north, east and west. Walls use stone, brick and spolia in an alternating technique of one row of stone and three rows of brick; two rows of windows are emphasized by pointed-arch pediments. The western minaret has a square prismatic base, cylindrical body and a single balcony. Originally it appears to have been deeply rectangular with five aisles parallel to the mihrab and three monumental domes in front of it; repairs changed the plan considerably. Today the area in front of the mihrab is covered by three domes on pendentives. Interior hand-drawn decoration is baroque naturalistic. The semicircular mihrab was renewed in concrete and the women's mahfil was renovated in the last repair."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "343-351"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Ambardar Kerim Ağa",
+      "role": {
+        "tr": "Kitâbeye göre banî (tüccar)",
+        "en": "Founder per the inscription (a merchant)"
+      }
+    },
+    {
+      "name": "Şeyh Bedreddinzade Abdullah / Abdurrahman",
+      "role": {
+        "tr": "H. 947 tamir kitâbesinde adı geçen kişi (ad sırası Türkçe ve İngilizce metinde farklı)",
+        "en": "Person named in the AH 947 repair inscription (name order differs between texts)"
+      }
+    },
+    {
+      "name": "Abdülkerim Ağa",
+      "role": {
+        "tr": "Şer'iyye sicillerine göre Kanunî'nin ambardarı, camiyi tamir ettiren",
+        "en": "Per registers, Suleiman's warehouse head who had the mosque repaired"
+      }
+    },
+    {
+      "name": "Salim Efendi",
+      "role": {
+        "tr": "Akşehir Müftüsü; 1894 yangını sonrası onarıma yardım etti",
+        "en": "Mufti of Akşehir; helped repair after the 1894 fire"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Batı giriş",
+        "en": "Western entrance"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Allah'ın mescitlerini; yalnız Allah'a, ahiret gününe iman getirip, namazı dosdoğru kılan, zekatını veren, din babından ancak Allah'tan korkan kimse mamur kılar, işte bunlar yol bulanlardan olabilir. Secde edilen yerler (mescitler) Allah'ındır. Onun için oralarda Allah'la beraber hiç kimseye ibadet etmeyiniz. 20 Safer 738",
+        "en": "The mosques of Allah are built only by those who believe in Allah and the Last Day, duly perform prayers, pay zakat, and fear only Allah; those shall be the true finders of the path. The places of prostration (masjids) belong to Allah. Therefore, do not worship anyone with Allah there. 20 Safar 738"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 738,
+        "gregorian": "1337"
+      },
+      "note": {
+        "tr": "İki satırlık kitâbe; Arapça metin kitapta verilmiyor.",
+        "en": "Two-line inscription; the Arabic text is not printed in the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "343-351"
+        }
+      ]
+    },
+    {
+      "id": "tamir-kitabesi",
+      "location": {
+        "tr": "Batı girişteki kapının üzerinde",
+        "en": "Above the door at the western entrance"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu mescid-i şerifi 947 yılında lâtif, malik ve rahman olan Allah'ın rızası için Şeyh Bedrettin zade Abdullah oğlu Abdurrahman tamir ettirmiştir",
+        "en": "This Masjid al-Sharif was repaired by Şeyh Bedrettin Zade Abdullah's son Abdurrahman in 947 for the sake of Allah, the gracious, the possessive and the merciful."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 947,
+        "gregorian": "1540-41"
+      },
+      "note": {
+        "tr": "Mealdeki ad sırası ('Abdullah oğlu Abdurrahman') ile kitâbe yorumundaki sıra ('Abdurrahman oğlu Abdullah') farklıdır.",
+        "en": "The meal reads 'Abdurrahman son of Abdullah' while the commentary reads 'Abdullah son of Abdurrahman'."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "343-351"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1337",
+      "year": 1337,
+      "type": "construction",
+      "title": {
+        "tr": "Ambardar Kerim Ağa camiyi yaptırdı",
+        "en": "Ambardar Kerim Ağa had the mosque built"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "343-351"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "tamir-1540",
+      "year": 1540,
+      "type": "repair",
+      "title": {
+        "tr": "H. 947 / M. 1540-41 tamiri",
+        "en": "Repair of 947 AH / 1540-41 AD"
+      },
+      "confidence": "disputed",
+      "note": {
+        "tr": "Kitâbe Şeyh Bedreddinzade'yi, sicil kayıtları Abdülkerim Ağa'yı tamir ettiren olarak gösterir.",
+        "en": "The inscription names Şeyh Bedreddinzade, the registers name Abdülkerim Ağa."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "343-351"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1894",
+      "year": 1894,
+      "type": "damage",
+      "title": {
+        "tr": "İplikçi dükkânlarındaki yangında cami hasar gördü; sonra onarıldı",
+        "en": "Damaged in a fire in the yarn shops; later repaired"
+      },
+      "hijri": "1312",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "343-351"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "tamir-1955",
+      "year": 1955,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi onarım",
+        "en": "Partial repair"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "343-351"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İplikçi Camii, Akşehir çarşısı içinde, kuzey-güney doğrultusunda dikdörtgen planlı bir camidir. Cepheler bir sıra taş ve üç sıra tuğla ile örülmüştür. Batıdaki tek şerefeli minare kare kaideli ve silindirik gövdelidir. İçeride mihrap önü üç kubbeyle örtülüdür.",
+      "en": "İplikçi Mosque stands inside the Akşehir bazaar, a rectangle running north-south. Its facades alternate one row of stone with three of brick. The single-balcony minaret in the west has a square base and cylindrical body. Inside, the area in front of the mihrab is covered by three domes."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 343-351)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "342-351"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1423",
+        "original_name": "pdf-s173-xref1423",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "342"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 342)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 342)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1428",
+        "original_name": "pdf-s174-xref1428",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "345"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 345)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 345)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1432",
+        "original_name": "pdf-s175-xref1432",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "346"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 346)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 346)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1434",
+        "original_name": "pdf-s175-xref1434",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "346"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 346)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 346)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1438",
+        "original_name": "pdf-s175-xref1438",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "347"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 347)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 347)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1440",
+        "original_name": "pdf-s175-xref1440",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "347"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 347)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 347)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1436",
+        "original_name": "pdf-s175-xref1436",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "347"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 347)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 347)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1444",
+        "original_name": "pdf-s176-xref1444",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "348"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 348)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 348)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1448",
+        "original_name": "pdf-s177-xref1448",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "350"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 350)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 350)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1450",
+        "original_name": "pdf-s177-xref1450",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "351"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 351)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 351)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m11",
+      "type": "photo",
+      "is_cover": false,
+      "order": 11,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1454",
+        "original_name": "pdf-s177-xref1454",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "351"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 351)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 351)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m12",
+      "type": "photo",
+      "is_cover": false,
+      "order": 12,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1452",
+        "original_name": "pdf-s177-xref1452",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "351"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii (kitap s. 351)",
+        "en": "İplikçi (Ambarlar Kerim Ağa) Mosque (book p. 351)"
+      },
+      "alt": {
+        "tr": "İplikçi (Ambarlar Kerim Ağa) Camii fotoğrafı",
+        "en": "Photo of İplikçi (Ambarlar Kerim Ağa) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

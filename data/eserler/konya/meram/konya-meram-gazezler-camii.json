@@ -1,0 +1,289 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-gazezler-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 80) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitap caminin adını aldığı Gazezler (İpekçiler) Mescidi'nin ilçesini belirtmiyor; ilişki kaydı yazılmadı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Gazezler Camii",
+    "en": "Gazezler Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap destekli",
+    "Bursa kemeri",
+    "ipekçiler",
+    "mahfil"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Sahibiata Mahallesi",
+    "address": "Furgan Dede Caddesi, No. 47",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "80"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl başları",
+      "en": "Early 19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap, caminin Ahmet Necip Efendi tarafından XIX. yüzyıl başlarında yaptırılmış olması gerektiğini söylüyor; kesin yıl verilmiyor.",
+      "en": "The book says the mosque must have been built by Ahmet Necip Efendi in the early 19th century; no exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "80"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ahmet Necip Efendi",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "80"
+      }
+    ]
+  },
+  "architect": null,
+  "summary": {
+    "tr": "Selçuklulardan beri Konya ipekçilerinin bulunduğu semtteki, ahşap desteklerle üç sahına ayrılmış dikdörtgen planlı cami. Adını Gazezler (İpekçiler) Mescidi'nden alır.",
+    "en": "A rectangular mosque with three aisles on wooden supports, in the district where Konya's silk merchants have been since the Seljuks. It takes its name from the Gazezler (İpekçiler) Masjid."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami Meram, Sahibiata Mahallesi, Furgan Dede Caddesi No. 47'dedir. Adını Gazezler (İpekçiler) Mescidi'nden alır; bu bölge Selçuklulardan bu yana Konya ipekçilerinin bulunduğu yerdir. Caminin Ahmet Necip Efendi tarafından XIX. yüzyıl başlarında yaptırılmış olması gerektiği belirtilir.",
+        "en": "The mosque is at Furgan Dede Street No. 47, Sahibiata Neighborhood, Meram. It takes its name from the Gazezler (İpekçiler) Masjid; the area has been home to Konya's silk merchants since the Seljuks. It is said that Ahmet Necip Efendi must have had it built in the early 19th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "80"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kuzey-güney yönünde uzanan dikdörtgen planlıdır; mihraba dik üç sahından oluşur, içten düz dam, dıştan kırma çatıyla örtülüdür. Güney ve doğu cephelerde ikişer, batı cephede bir düz lentolu pencere vardır. Kuzeydoğu ve kuzeybatı cephelerde birer giriş kapısı bulunur; bugün kuzeydoğudaki kullanılmaktadır. İç mekân, iki sıra üçer ahşap destekle üç sahına ayrılır; destekler birbirine ve beden duvarlarına Bursa kemeriyle bağlanır. Harimin kuzeyindeki \"U\" biçimli mahfil alttan ahşap desteklerle taşınır. Kıble duvarı ortasındaki yarım daire nişli ahşap mihrap sonradan eklenmiştir. Doğu ve batı duvarlarında birer, kuzey duvarında iki niş vardır.",
+        "en": "The mosque is rectangular, running north-south, with three aisles perpendicular to the mihrab, a flat ceiling inside and a hipped roof outside. There are two flat-lintelled windows on the south and east facades and one on the west. Two entrances, northeast and northwest, are used one at a time; today the northeast door is in use. Two rows of three wooden supports divide the interior into three aisles, joined to each other and to the walls by Bursa arches. The U-shaped gallery in the north rests on wooden supports. The wooden mihrab with a semicircular niche in the middle of the qibla wall was added later. There is one niche on each of the east and west walls and two on the north wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "80"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "80"
+        }
+      ]
+    },
+    {
+      "key": "ahsap_destek",
+      "label": {
+        "tr": "Ahşap destek",
+        "en": "Wooden supports"
+      },
+      "value": "iki sıra, her sırada üç",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "80"
+        }
+      ]
+    },
+    {
+      "key": "kapi_sayisi",
+      "label": {
+        "tr": "Giriş kapısı sayısı",
+        "en": "Number of entrance doors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "80"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ahmet Necip Efendi",
+      "role": {
+        "tr": "Caminin yaptıranı (olması gerektiği belirtiliyor)",
+        "en": "Said to be the founder"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "mahfil",
+      "title": {
+        "tr": "U biçimli mahfil",
+        "en": "U-shaped gallery"
+      },
+      "hint": {
+        "tr": "Ahşap desteklerin Bursa kemeriyle bağlandığı yere bakın.",
+        "en": "Notice how the wooden supports are joined by Bursa arches."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Gazezler Camii kuzey-güney yönünde uzanan, dıştan kırma çatılı, sade bir camidir. İçeride iki sıra halinde dizilmiş altı ahşap direk, mihraba dik üç bölüm oluşturur; direkler Bursa kemerleriyle birbirine bağlanır. Kuzey duvarı boyunca U biçiminde ahşap bir mahfil uzanır. Kıble duvarının ortasında ahşap bir mihrap bulunur.",
+      "en": "Gazezler Mosque is a plain building running north-south with a hipped roof. Inside, six wooden posts in two rows form three aisles perpendicular to the mihrab, linked by Bursa arches. A U-shaped wooden gallery runs along the north wall. A wooden mihrab stands in the middle of the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 80)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "80-80"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=238",
+        "original_name": "pdf-s42-xref238",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "80"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Gazezler Camii (kitap s. 80)",
+        "en": "Gazezler Mosque (book p. 80)"
+      },
+      "alt": {
+        "tr": "Gazezler Camii fotoğrafı",
+        "en": "Photo of Gazezler Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=240",
+        "original_name": "pdf-s42-xref240",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "80"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Gazezler Camii (kitap s. 80)",
+        "en": "Gazezler Mosque (book p. 80)"
+      },
+      "alt": {
+        "tr": "Gazezler Camii fotoğrafı",
+        "en": "Photo of Gazezler Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

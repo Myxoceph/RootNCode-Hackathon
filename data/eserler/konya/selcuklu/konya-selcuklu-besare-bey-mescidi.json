@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-besare-bey-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Onarımların tarihleri kitapta yok.",
+      "Vakıfların ayrıntıları ve vakfiye kitapta yok.",
+      "Niğde Alâeddin Camii Konya dışındadır; ilişki yazılmadı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap s. 291'de kitâbenin iki yanının Selçuklu çinileriyle bezeli olduğunu, s. 293'te ise ilk yapımdaki duvar çinilerinin günümüze gelmediğini söylüyor. İkisi farklı unsurları (kitâbe çerçevesi / duvar çinileri) kastediyor olabilir; kaynağa sadık kalındı."
+      },
+      {
+        "field": "name",
+        "note": "Kitap 'Beşare Bey' ve 'Beşara Bey' yazımlarını birlikte kullanıyor; içindekiler 'Beşare Bey Mescidi' diyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Beşare Bey Mescidi",
+    "en": "Beşare Bey Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ferhuniye Mescidi",
+      "en": "Ferhuniye Masjid",
+      "note": "Bulunduğu mahalle adından"
+    },
+    {
+      "tr": "Beşara Bey (Ferhuniye) Mescidi",
+      "en": "Beşara Bey (Ferhuniye) Masjid",
+      "note": "Kitapta bu yazımla da geçer"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "mescit",
+    "Selçuklu",
+    "kitabeli",
+    "tek kubbeli",
+    "Beşare Bey",
+    "Alâeddin Tepesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Ferhuniye",
+    "address": "Başarabey Sokak No: 3",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "291"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "15 Cemaziyülevvel 616 / 29 Temmuz 1219",
+      "en": "15 Cemaziyülevvel 616 AH / 29 July 1219 AD"
+    },
+    "start_year": 1219,
+    "end_year": 1219,
+    "hijri_year": 616,
+    "century": 13,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki celî sülüs kitâbeye göre.",
+      "en": "According to the Celi Thuluth inscription over the entrance."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "291"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Beşare Bey (Zeyneddin Beşşâre bin Abdullah)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "291"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Beşare Bey, her türlü masrafı eksiksiz karşılamak için mescide zengin gelirli vakıflar tahsis etmiştir; vakıfların ayrıntısı kitapta yok.",
+      "en": "Beşare Bey allocated rich-income foundations to the masjid to cover all its expenses; no details of the foundations are given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "291"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Emîr-i Âhur Beşare Bey'in 616 / 1219'da yaptırdığı, kare planlı ve tek kubbeli klasik Selçuklu mescidi.",
+    "en": "A square-plan, single-domed classical Seljuk masjid built in 616 AH / 1219 AD by Emir-i Ahur Beşare Bey."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Banî",
+        "en": "History and Founder"
+      },
+      "body": {
+        "tr": "Mescit Selçuklu ilçesi Ferhuniye Mahallesi Başarabey Sokak No. 3'te, Alâeddin Tepesi'nin kuzeyindedir; mahalle adından dolayı 'Ferhuniye Mescidi' olarak da bilinir. Giriş kapısı üzerindeki dört satırlık celî sülüs kitâbeye göre Beşare Bey tarafından 15 Cemaziyülevvel 616 / 29 Temmuz 1219'da yaptırılmıştır. Kitâbenin iki yanı siyah çerçeveli turkuaz yeşili Selçuklu çinileriyle bezelidir. Beşare Bey, I. İzzeddin Keykavus ve Alâeddin Keykubat dönemlerinin devlet adamıdır; adı kitâbelere göre Zeyneddin Beşşâre bin Abdullah'tır. I. İzzettin Keykavus'un lalası olmuş, atların yetiştirilmesinden sorumlu 'Emir-i Ahur' makamına getirilmiş, sultanın dostu ve sırdaşı olmuştur. Sonraki yıllarda Niğde Valiliği'ne atanmış ve valiliği sırasında Niğde Alâeddin Camii'ni yaptırmıştır. Mescit zengin gelirli vakıflara bağlanmıştır.",
+        "en": "The masjid is in Ferhuniye Neighborhood, Başarabey Street No. 3, north of Alâeddin Hill, and is also called the Ferhuniye Masjid. According to the four-line Celi Thuluth inscription over the entrance it was built by Beşare Bey on 15 Cemaziyülevvel 616 / 29 July 1219. Both sides of the inscription are decorated with turquoise-green Seljuk tiles with black frames. Beşare Bey was a statesman under Izzeddin Keykavus I and Alâeddin Keykubad; his name in the inscriptions is Zeyneddin Beşşare bin Abdullah. He became tutor (lala) of Izzettin Keykavus, was appointed Emir-i Ahur (the ministry for breeding and training the state's horses), was the sultan's friend and confidant, and later governor of Niğde, where he had the Niğde Alâeddin Mosque built. He endowed the masjid with rich-income foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "290-291"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlıdır; harim ve giriş bölümünden oluşur. Önceden tonozla örtülü olan son cemaat yeri sonradan eğimli çatıyla kapatılmıştır. Aslında var olduğu bilinen minare günümüze ulaşmamıştır. Giriş cephesinde moloz taş, diğer cephelerde pencere alt seviyesine kadar moloz taş, üstte tuğla örgü kullanılmıştır. Kare planlı harim, mukarnas tromplarla geçilen tuğla örgülü bir kubbeyle örtülüdür; kubbe dıştan sekizgen kasnağa oturur. İlk yapımında duvarlarda bulunduğu bilinen çiniler günümüze gelmemiştir. Aslen çinili olan mihrap basit bir niş hâlindedir ve üzerine ayet panosu asılmıştır; minber de mihrap gibi özgün değildir. Yapı klasik Selçuklu dönemi mescit özelliklerini yansıtır.",
+        "en": "The masjid has a square plan with a harim and an entrance section. The narthex, once vaulted, was later covered with a sloping roof; the original minaret has not survived. Rubble stone was used on the entrance facade, and rubble stone up to window level with brickwork above on the other facades. The square harim is covered with a brick dome reached through muqarnas squinches, resting on an octagonal drum outside. The original wall tiles have not survived; the originally tiled mihrab is a simple niche with a verse panel, and the mimbar is not original either. The building reflects the characteristics of the classical Seljuk masjid."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "292-293"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Mescit günümüze gelene kadar farklı zamanlarda çeşitli onarımlar geçirmiş; mihrabı ve minberi yenilenmiştir. Onarımların tarihleri kitapta verilmemiştir.",
+        "en": "The masjid has undergone various repairs at different times; its mihrab and mimbar were renewed. The dates of the repairs are not given."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "292"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Beşare Bey (Zeyneddin Beşşâre bin Abdullah)",
+      "role": {
+        "tr": "Banî; Emir-i Ahur, I. İzzeddin Keykavus'un lalası, Niğde valisi",
+        "en": "Founder; Emir-i Ahur, tutor of Izzeddin Keykavus I, governor of Niğde"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde",
+        "en": "Above the entrance gate"
+      },
+      "language": "other",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 616,
+        "gregorian": "1219"
+      },
+      "note": {
+        "tr": "Dört satırdır; kitapta metni ve çevirisi verilmemiştir, dil belirtilmemiştir. Kitâbenin iki yanı turkuaz yeşili Selçuklu çinileriyle süslüdür.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "291"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1219",
+      "year": 1219,
+      "date": null,
+      "hijri": "616",
+      "type": "construction",
+      "title": {
+        "tr": "Beşare Bey tarafından yaptırıldı",
+        "en": "Built by Beşare Bey"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "291"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "Çinili giriş kitâbesi",
+        "en": "Tiled entrance inscription"
+      },
+      "hint": {
+        "tr": "Kapı üzerindeki dört satırlık celî sülüs kitâbeye ve yanındaki turkuaz çinilere bakın.",
+        "en": "Look at the four-line Celi Thuluth inscription and the turquoise tiles beside it."
+      },
+      "section_id": "tarihce"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, tek kubbeli küçük bir Selçuklu mescididir. Giriş cephesi moloz taştır; diğer cephelerde pencerelere kadar moloz taş, üstte tuğla örgü görülür. Kapının üzerinde dört satırlık kitâbe, iki yanında turkuaz yeşili çiniler bulunur. İçeride tuğla kubbe mukarnaslı tromplarla sekizgen kasnağa geçer; mihrap sade bir nişdir ve üzerinde ayet panosu asılıdır.",
+      "en": "A small square-plan, single-domed Seljuk masjid. The entrance facade is rubble stone; other facades have rubble stone up to the windows and brick above. Above the door is a four-line inscription flanked by turquoise-green tiles. Inside, a brick dome rests on muqarnas squinches; the mihrab is a simple niche with a verse panel hung above it."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "290-293"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1188",
+        "original_name": "pdf-s147-xref1188",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "290"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beşare Bey Mescidi (kitap s. 290)",
+        "en": "Beşare Bey Masjid (book p. 290)"
+      },
+      "alt": {
+        "tr": "Beşare Bey Mescidi fotoğrafı",
+        "en": "Photo of Beşare Bey Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1193",
+        "original_name": "pdf-s148-xref1193",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "292"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beşare Bey Mescidi (kitap s. 292)",
+        "en": "Beşare Bey Masjid (book p. 292)"
+      },
+      "alt": {
+        "tr": "Beşare Bey Mescidi fotoğrafı",
+        "en": "Photo of Beşare Bey Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1195",
+        "original_name": "pdf-s148-xref1195",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "292"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beşare Bey Mescidi (kitap s. 292)",
+        "en": "Beşare Bey Masjid (book p. 292)"
+      },
+      "alt": {
+        "tr": "Beşare Bey Mescidi fotoğrafı",
+        "en": "Photo of Beşare Bey Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1197",
+        "original_name": "pdf-s148-xref1197",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "292"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beşare Bey Mescidi (kitap s. 292)",
+        "en": "Beşare Bey Masjid (book p. 292)"
+      },
+      "alt": {
+        "tr": "Beşare Bey Mescidi fotoğrafı",
+        "en": "Photo of Beşare Bey Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1207",
+        "original_name": "pdf-s148-xref1207",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "293"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beşare Bey Mescidi (kitap s. 293)",
+        "en": "Beşare Bey Masjid (book p. 293)"
+      },
+      "alt": {
+        "tr": "Beşare Bey Mescidi fotoğrafı",
+        "en": "Photo of Beşare Bey Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1199",
+        "original_name": "pdf-s148-xref1199",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "293"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beşare Bey Mescidi (kitap s. 293)",
+        "en": "Beşare Bey Masjid (book p. 293)"
+      },
+      "alt": {
+        "tr": "Beşare Bey Mescidi fotoğrafı",
+        "en": "Photo of Beşare Bey Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,311 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-salih-pasa-dedemoglu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî kitapta belirtilmiyor; başlıktaki 'Salih Paşa' adının yapıyla ilişkisi açıklanmıyor.",
+      "Mahalle adı metinde yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metin 'wooden narthex' diyor; Türkçe metin 'ahşap mahfil'. Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Salih Paşa (Dedemoğlu) Camii",
+    "en": "Salih Paşa (Dedemoğlu) Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "kerpiç",
+    "ahşap minare",
+    "kitabeli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": null,
+    "address": "Kayısılıburun Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "148"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1162 / M. 1748-49",
+      "en": "1162 AH / 1748-49 AD"
+    },
+    "start_year": 1748,
+    "end_year": 1749,
+    "hijri_year": 1162,
+    "century": 18,
+    "basis": {
+      "tr": "Giriş üzerindeki yazıda bu tarihte yapıldığı belirtilir.",
+      "en": "The text over the entrance says it was built on this date."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "148"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kayısılıburun Sokak'ta, kerpiçten yapılmış, batı cephesinde kösk tipi ahşap minaresi olan, girişindeki yazıya göre H. 1162 / M. 1748-49'da yapılmış cami. 1992'de Vakıflar Genel Müdürlüğü onarmıştır.",
+    "en": "A mud-brick mosque on Kayısılıburun Street with a wooden pavilion-type minaret on its west facade, built in 1162 AH / 1748-49 AD according to the entrance; repaired by the General Directorate of Foundations in 1992."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami Meram, Kayısılıburun Sokak üzerinde yer almaktadır. Girişi üzerinde H. 1162 / M. 1748-49 tarihinde yapıldığı yazmaktadır. Yapı Vakıflar Genel Müdürlüğü tarafından 1992 senesinde onarım görmüştür.",
+        "en": "The mosque is located on Kayısılıburun Street, Meram. It is written on the entrance that it was built in 1162 AH / 1748-49 AD. It was repaired by the General Directorate of Foundations in 1992."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "148"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kerpiç malzemeden inşa edilmiştir. Batı cephesinde, beden duvarı üzerinde yer alan köşk tipi minare ahşaptandır; silindirik gövdeli ve tek şerefelidir. Harime giriş batı cephedeki kapıdan sağlanır. Harim mihraba dik uzanan üç sahınlı ve ahşap düz tavanlıdır. Kuzeyde ahşap mahfil, kıble duvarında mihrap ve minber vardır; ikisi de sonradan onarımlarla yenilenmiştir. Ahşap mihrap beden duvarından taşıntılı dikdörtgen formda ve yarım daire planlıdır.",
+        "en": "The mosque is built of mud brick. The pavilion-type minaret on the west facade, standing on the main wall, is wooden, cylindrical and single-balconied. The harim is entered from the west door; it has three naves perpendicular to the mihrab and a flat wooden ceiling. There is a wooden gallery in the north and a mihrab and minbar on the qibla wall, both renewed in later repairs. The wooden mihrab projects from the wall in rectangular form with a semicircular plan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "148"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "148"
+        }
+      ],
+      "note": {
+        "tr": "Köşk tipi, ahşap, tek şerefeli",
+        "en": "Pavilion type, wooden, single balcony"
+      }
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "148"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1748",
+      "year": 1748,
+      "date": null,
+      "hijri": "1162",
+      "type": "construction",
+      "title": {
+        "tr": "Caminin yapımı",
+        "en": "Construction of the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "148"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1992",
+      "year": 1992,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "148"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kerpiçten yapılmış bir camidir. Batı cephesinde duvarın üzerinde duran ahşap, silindirik gövdeli, tek şerefeli köşk tipi minare dikkat çeker. Batıdaki kapıdan girilince mihraba dik uzanan üç sahınlı, düz ahşap tavanlı bir harim, kuzeyde ahşap mahfil ve kıble duvarında yarım daire planlı ahşap mihrap görülür.",
+      "en": "A mud-brick mosque. A wooden, cylindrical, single-balcony pavilion minaret stands on the west facade wall. Entering by the west door, there is a three-nave prayer hall with a flat wooden ceiling, a wooden gallery in the north and a semicircular wooden mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "148-148"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=546",
+        "original_name": "pdf-s76-xref546",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "148"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Salih Paşa (Dedemoğlu) Camii (kitap s. 148)",
+        "en": "Salih Paşa (Dedemoğlu) Mosque (book p. 148)"
+      },
+      "alt": {
+        "tr": "Salih Paşa (Dedemoğlu) Camii fotoğrafı",
+        "en": "Photo of Salih Paşa (Dedemoğlu) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=550",
+        "original_name": "pdf-s76-xref550",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "148"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Salih Paşa (Dedemoğlu) Camii (kitap s. 148)",
+        "en": "Salih Paşa (Dedemoğlu) Mosque (book p. 148)"
+      },
+      "alt": {
+        "tr": "Salih Paşa (Dedemoğlu) Camii fotoğrafı",
+        "en": "Photo of Salih Paşa (Dedemoğlu) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=548",
+        "original_name": "pdf-s76-xref548",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "148"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Salih Paşa (Dedemoğlu) Camii (kitap s. 148)",
+        "en": "Salih Paşa (Dedemoğlu) Mosque (book p. 148)"
+      },
+      "alt": {
+        "tr": "Salih Paşa (Dedemoğlu) Camii fotoğrafı",
+        "en": "Photo of Salih Paşa (Dedemoğlu) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

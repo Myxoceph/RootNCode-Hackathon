@@ -1,0 +1,409 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-tahir-pasa-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî kitapta belirtilmiyor; founder null. Tahir Paşa ve Ali Bey yalnızca onarıcıdır.",
+      "XIV. yüzyıl sonu tarihi kesin yıl içermiyor; start_year/end_year null.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf şartları kitapta yok (aksi belirtilmedikçe); VGM arşivinden bulunabilir.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[onarim-1888]",
+        "note": "Kitap H. 1306 için M. 1888-1889 verir (1306 H. yılı 1888-1889'a denk gelir); kaynağa sadık kalındı, yıl alanına 1888 yazıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Camii",
+    "en": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Mosque"
+  },
+  "subtitle": {
+    "tr": "Dursun Fakih ile anılan, 1888-1889'da Tahir Paşa ve Ali Bey'in onardığı cami",
+    "en": "Mosque associated with Dursun Fakih, repaired in 1888-1889 by Tahir Paşa and Ali Bey"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Dursun Fakih",
+    "devşirme sütun",
+    "şadırvan",
+    "kitabe",
+    "Mecidiyezadeler"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Sahibiata Mahallesi",
+    "address": "Mimar Muzaffer Caddesi No. 39",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "111"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIV. yüzyıl sonları (muhtemel)",
+      "en": "Probably late 14th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "Kitabe yok; Dursun Fakih'in yaşadığı dönem ve inşa tekniği göz önüne alınarak XIV. yüzyıl sonlarına tarihlenmesi muhtemel görülüyor. Kesin yıl verilmediği için start/end_year null.",
+      "en": "No inscription; dating to the late 14th century is considered likely from Dursun Fakih's period and the construction technique. No exact year, so start/end_year are null."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "111"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sahibiata Mahallesi'ndeki kare planlı, tek kubbeli cami XIV. yüzyıl sonlarına tarihlenir, ilk kadı Konyalı Dursun Fakih ile anılır. H. 1306 / M. 1888-1889'da Mecidiyezade Tahir Paşa ve kardeşi Ali Bey onarım sırasında minare ve son cemaat yeri eklemiş, adı Tahir Paşa olmuştur.",
+    "en": "The square, single-domed mosque in Sahibiata Neighborhood is dated to the late 14th century and associated with Konyalı Dursun Fakih. In 1306 AH / 1888-1889 AD Tahir Paşa of the Mecidiyezades and his brother Ali Bey repaired it, adding the minaret and narthex; it was renamed Tahir Paşa."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihlendirme",
+        "en": "Overview and Dating"
+      },
+      "body": {
+        "tr": "Cami Meram'da Sahibiata Mahallesi, Mimar Muzaffer Caddesi No. 39'dadır. Banisini ve yapım zamanını bildiren kitabesi yoktur; Dursun Fakih'in yaşadığı dönem ve inşa tekniği göz önüne alınarak XIV. yüzyıl sonlarına tarihlenmesi muhtemeldir.",
+        "en": "The mosque is at Sahibiata Neighborhood, Mimar Muzaffer Street No. 39, Meram. It has no inscription on its founder or date; considering Dursun Fakih's period and the construction technique, a late 14th-century date is likely."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "id": "dursun-fakih",
+      "order": 2,
+      "title": {
+        "tr": "Dursun Fakih",
+        "en": "Dursun Fakih"
+      },
+      "body": {
+        "tr": "Kitaba göre Konyalı Dursun Fakih Osmanlı Devleti'nin ilk kadısıdır; ilk hutbeyi okuyan şair, ilim ve hukuk adamıdır. Şeyh Edebali'nin akrabası ve damadı, Osman Gazi'nin bacanağıdır. Söğüt'te Şeyh Edebali'den tefsir, hadis ve fıkıh dersleri almış, Osman Gazi'nin yanında imam olarak savaşlara katılmış, Şeyh Edebali'nin vefatından sonra fetva ve tedris işleriyle görevlendirilmiştir. Müneccimbaşı onun Osmanlı'nın ilk şeyhülislamı olduğunu yazar. 1326'da vefat etmiştir; kabri Bilecik'te Şeyh Edebali Zaviyesi içindeki türbededir. Kitap, bu zatla caminin bağını açıkça kurmaz, yalnızca tarihlendirmede dönemine atıf yapar.",
+        "en": "According to the book, Konyalı Dursun Fakih was the first judge of the Ottoman state, a poet, scholar and jurist who delivered the first sermon. He was a relative and son-in-law of Şeyh Edebali and brother-in-law of Osman Gazi. He studied tafsir, hadith and fiqh under Şeyh Edebali in Söğüt, took part in wars as imam beside Osman Gazi, and after Edebali's death was assigned fatwa and teaching duties; Müneccimbaşı writes that he was the first şeyhülislam. He died in 1326 and his grave is in the tomb within the Şeyh Edebali Zawiya in Bilecik. The book does not explicitly state his link with the mosque beyond using his period for dating."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kare planlı cami tek kubbeli harim, üç gözlü son cemaat yeri, tek şerefeli minare ve 2013 onarımında kısmen ortaya çıkarılan sekizgen planlı şadırvandan oluşur. Beden duvarlarında altta moloz ve kesme taş, üstte tuğla, son cemaat yerinde tamamen taş kullanılmıştır. Son cemaat yeri doğu cephede dışarı taşar ve dört devşirme sütuna oturan üç kubbeyle örtülüdür; harime güney duvardaki düz lentolu kapıyla geçilir. Minare güneybatı köşesindedir; kare kaidenin köşeleri üçgen pahlarla sekizgen gövdeye geçer, gövdenin alt ve üstünde kaval silme vardır, petek kısmı kısa ve sivri külahlıdır. Harimin doğu ve batı duvarlarında iki katlı birer pencere, kuzey ve güneyde altta iki üstte bir pencere vardır (altta düz lentolu, üstte sivri kemerli). Üst örtü içiçe ikişer tromp üzerine oturur. Kıble duvarındaki yarım daire mihrap orijinal değildir ve mermer kaplıdır. Kuzeydeki taş şadırvan sekizgen planlıdır.",
+        "en": "The square mosque comprises a single-domed harim, a three-bay narthex, a single-balcony minaret and an octagonal shadirvan partly uncovered in the 2013 repairs. Walls are rubble and cut stone below and brick above; the narthex is entirely stone. The narthex projects on the east facade under three domes on four spolia columns; the harim is entered through a flat-lintelled door in the south wall. The minaret at the southwest has a square base turning into an octagonal body by triangular chamfers, with bowtells at top and bottom, a short honeycomb and a pointed cone. Windows are two-storey on the east and west walls and two-over-one on the north and south (flat lintels below, pointed arches above). The dome sits on two nested squinches. The semicircular mihrab is not original and is marble-covered. The stone shadirvan to the north is octagonal."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "111-112"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "1306 Onarımı ve Kitabe",
+        "en": "The 1306 Repair and Inscription"
+      },
+      "body": {
+        "tr": "Cami H. 1306 / M. 1888-1889'da Mecidiyezadelerden Tahir Paşa ve Ali Bey tarafından onarılmıştır. Giriş kapısı üzerindeki 0,50 x 0,50 m ölçülü kitabe üç satır celî ta'lik hatla ve Osmanlı Türkçesiyle yazılmıştır. Bu onarım sırasında minare ve son cemaat yeri eklenmiş, caminin adı \"Tahir Paşa\" olarak değiştirilmiştir. Yapı 2013'te yeniden esaslı onarım görmüştür.",
+        "en": "The mosque was repaired in 1306 AH / 1888-1889 AD by Tahir Paşa and Ali Bey of the Mecidiyezades. The 0.50 x 0.50 m inscription above the entrance is in three lines of celi ta'lik in Ottoman Turkish. During this repair the minaret and narthex were added and the mosque renamed \"Tahir Paşa\". It underwent a major repair again in 2013."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "112"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kitabe_olculeri",
+      "label": {
+        "tr": "Kitabe ölçüleri",
+        "en": "Inscription dimensions"
+      },
+      "value": "0,50 x 0,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "112"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Dursun Fakih",
+      "role": {
+        "tr": "Osmanlı Devleti'nin ilk kadısı; dönemi tarihlendirmede esas alınmış",
+        "en": "First judge of the Ottoman state; his period used for dating"
+      }
+    },
+    {
+      "name": "Tahir Paşa (Mecidiyezade)",
+      "role": {
+        "tr": "1306'daki onarımı yaptıran; caminin adı ona verildi",
+        "en": "Commissioned the 1306 repair; mosque renamed after him"
+      }
+    },
+    {
+      "name": "Ali Bey",
+      "role": {
+        "tr": "Tahir Paşa'nın kardeşi; onarımda ortak",
+        "en": "Brother of Tahir Paşa; co-repairer"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "onarim-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde",
+        "en": "Above the entrance door"
+      },
+      "language": "tr-ottoman",
+      "script": "celî ta'lik (3 satır)",
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu cami-i şerif zamanla harap olduğundan Allah rızası için, Mecidiye zadelerden Tahir Paşa ile kardeşi Ali Bey tarafından 1306 yılında yenilenerek tamir edilmiştir.",
+        "en": "Since this mosque was ruined over time, it was renovated and repaired in 1306 by Tahir Paşa, one of the Mecidiyezades, and his brother Ali Bey, for the sake of God."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1306,
+        "gregorian": "1888-1889"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "112"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1888",
+      "year": 1888,
+      "date": null,
+      "hijri": "1306",
+      "type": "repair",
+      "title": {
+        "tr": "Tahir Paşa ve Ali Bey onarımı; minare ve son cemaat yeri eklendi, ad değişti",
+        "en": "Repair by Tahir Paşa and Ali Bey; minaret and narthex added, mosque renamed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "112"
+        }
+      ],
+      "note": {
+        "tr": "Kitap H. 1306 / M. 1888-1889 verir; yıl olarak 1888 alındı.",
+        "en": "Book gives AH 1306 / AD 1888-1889; 1888 used as year."
+      }
+    },
+    {
+      "id": "onarim-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Esaslı onarım; sekizgen şadırvan kısmen ortaya çıkarıldı",
+        "en": "Major repair; octagonal shadirvan partly uncovered"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "111-112"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tahir Paşa Camii kare planlı, tek kubbeli bir yapıdır. Duvarlarının altı moloz ve kesme taş, üstü tuğladır. Doğu yüzünde dışarı taşan, üç kubbeli ve dört devşirme sütunlu taş bir son cemaat yeri bulunur. Güneybatı köşesinde tek şerefeli, sade bir minare yükselir. Kuzeyinde sekizgen planlı taş bir şadırvan yer alır.",
+      "en": "Tahir Paşa Mosque is a square, single-domed building. Its walls are rubble and cut stone below and brick above. On the east it has a projecting stone narthex with three domes on four reused columns. A plain single-balcony minaret rises at the southwest corner, and an octagonal stone shadirvan lies to the north."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Konya Vakıf Eserleri I. Cilt) esas alınarak yazılmıştır."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "111-112"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=378",
+        "original_name": "pdf-s57-xref378",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "111"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Camii (kitap s. 111)",
+        "en": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Mosque (book p. 111)"
+      },
+      "alt": {
+        "tr": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Camii fotoğrafı",
+        "en": "Photo of Tahir Paşa (Tursunoğlu / Dursun Fakih) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=380",
+        "original_name": "pdf-s57-xref380",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "111"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Camii (kitap s. 111)",
+        "en": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Mosque (book p. 111)"
+      },
+      "alt": {
+        "tr": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Camii fotoğrafı",
+        "en": "Photo of Tahir Paşa (Tursunoğlu / Dursun Fakih) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=385",
+        "original_name": "pdf-s58-xref385",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "112"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Camii (kitap s. 112)",
+        "en": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Mosque (book p. 112)"
+      },
+      "alt": {
+        "tr": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Camii fotoğrafı",
+        "en": "Photo of Tahir Paşa (Tursunoğlu / Dursun Fakih) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=387",
+        "original_name": "pdf-s58-xref387",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "112"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Camii (kitap s. 112)",
+        "en": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Mosque (book p. 112)"
+      },
+      "alt": {
+        "tr": "Tahir Paşa (Tursunoğlu / Dursun Fakih) Camii fotoğrafı",
+        "en": "Photo of Tahir Paşa (Tursunoğlu / Dursun Fakih) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

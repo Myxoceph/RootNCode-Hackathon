@@ -1,0 +1,284 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-karakurt-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-29",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 81) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Karakurt Camii",
+    "en": "Karakurt Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "betonarme",
+    "baldaken minare",
+    "Cumhuriyet dönemi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Karakurt Mahallesi",
+    "address": "Birhan Sokak, No. 11",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "81"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1954",
+      "en": "1954"
+    },
+    "start_year": 1954,
+    "end_year": 1954,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap yapının 1954 senesinde yapıldığını belirtiyor.",
+      "en": "The book states the building was built in 1954."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "81"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "1954'te Cumhuriyet dönemi geleneksel mimari özellikleriyle, arazi koşullarına göre betonarme olarak yapılmış, düzgün planı olmayan iki sahınlı cami. Alt katı depo olarak yapılmıştır.",
+    "en": "A two-aisled mosque built in 1954 in reinforced concrete with traditional Republican-era features, shaped by its terrain and without a regular plan. Its lower floor was built as a warehouse."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Meram, Karakurt Mahallesi, Birhan Sokak No. 11'dedir. 1954'te Cumhuriyet dönemi geleneksel mimari özelliklerinde yapılmıştır. Yapıldığı arazinin şartlarına göre betonarme olarak inşa edilen cami düzgün bir plana sahip değildir. Enine dikdörtgen biçimli, iki sahınlıdır; alt katı depo olarak yapılmıştır. Harim de iki sahınlıdır. Kıble duvarı ortasındaki mihrap dışa taşıntılı ve yarım daire planlıdır. Baldaken minaresi Konya bölgesindeki minarelerin devamı niteliğindedir.",
+        "en": "The mosque is at Birhan Street No. 11, Karakurt Neighborhood, Meram. It was built in 1954 with traditional Republican-era features. Built of reinforced concrete to suit the land, it lacks a regular plan. It is transversely rectangular with two naves; the lower floor was built as a warehouse and the harim also has two naves. The mihrab in the middle of the qibla wall projects outward and is semicircular. Its baldachin minaret continues the tradition of Konya-region minarets."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "81"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapım yılı",
+        "en": "Year built"
+      },
+      "value": 1954,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "betonarme",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "81"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "81"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1954",
+      "year": 1954,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "81"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Karakurt Camii eğimli bir arazide betonarme olarak yapılmış, enine dikdörtgen biçimli bir camidir. Alt katı depo olarak kullanılır. İbadet mekânı iki bölümlüdür ve kıble duvarında dışa taşan yarım daire bir mihrap vardır. Konya'ya özgü, dört ayaklı baldaken bir minaresi bulunur.",
+      "en": "Karakurt Mosque is a transversely rectangular reinforced-concrete mosque on sloping land. Its lower floor is used as a warehouse. The prayer hall has two sections and a semicircular mihrab projecting from the qibla wall. It has a baldachin minaret in the Konya style."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 81)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "81-81"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=248",
+        "original_name": "pdf-s42-xref248",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "81"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Karakurt Camii (kitap s. 81)",
+        "en": "Karakurt Mosque (book p. 81)"
+      },
+      "alt": {
+        "tr": "Karakurt Camii fotoğrafı",
+        "en": "Photo of Karakurt Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=244",
+        "original_name": "pdf-s42-xref244",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "81"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Karakurt Camii (kitap s. 81)",
+        "en": "Karakurt Mosque (book p. 81)"
+      },
+      "alt": {
+        "tr": "Karakurt Camii fotoğrafı",
+        "en": "Photo of Karakurt Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=242",
+        "original_name": "pdf-s42-xref242",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "81"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Karakurt Camii (kitap s. 81)",
+        "en": "Karakurt Mosque (book p. 81)"
+      },
+      "alt": {
+        "tr": "Karakurt Camii fotoğrafı",
+        "en": "Photo of Karakurt Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

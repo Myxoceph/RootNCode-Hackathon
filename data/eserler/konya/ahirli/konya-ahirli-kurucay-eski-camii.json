@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ahirli-kurucay-eski-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakıf (vakfiye, gelirler) ayrıntısı kitapta yok.",
+      "Minare hakkında ayrıntı kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kuruçay Eski Camii",
+    "en": "Kuruçay Old Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "Ahırlı",
+    "Kuruçay",
+    "köy camisi",
+    "ahşap direkli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ahırlı",
+    "neighborhood": "Kuruçay Köyü",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "319"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyılın sonları (tahmini)",
+      "en": "Late 19th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitâbe ve vakfiye yok; plan ve mimari dokuya göre XIX. yüzyılın sonlarında yapılmış olabileceği düşünülmektedir. Kesin yıl yok.",
+      "en": "No inscription or foundation charter; thought to date from the late 19th century from plan and architectural texture. No exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "319"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "319"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kuruçay Köyü'nün ulu camisi; yazlık bölümü, minaresi ve üç sahınlı harimi olan, XIX. yüzyıl sonuna tarihlenen ahşap direkli köy camisi.",
+    "en": "The grand mosque of Kuruçay Village; a timber-columned village mosque probably of the late 19th century with a summer section, minaret and three-nave harim."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Ahırlı ilçesi Kuruçay Köyü'ndedir ve köyün ulu camisidir. Camiye ait kitâbe ve vakfiye yoktur. Plan ve mimari dokudan hareketle XIX. yüzyılın sonlarında yapılmış olabileceği düşünülmektedir. Günümüzde de ibadete açıktır.",
+        "en": "The mosque is in Kuruçay Village, Ahırlı District, and is the village's grand mosque. It has no inscription or foundation charter; from its plan and architectural texture it is thought to have been built in the late 19th century. It is still open for worship."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "319"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami yazlık mekân, minare ve üç sahınlı harimden oluşur. Eğimli arazide, dıştan dikdörtgen planlı ve kırma çatılıdır. Batı cephedeki merdivenle yazlık bölüme çıkılır; yazlığın kıble duvarında mihrap nişi vardır ve buradaki kapıdan harime geçilir. Derinlemesine dikdörtgen harim iki sıra ahşap direkle üç sahına ayrılmıştır; güney, doğu ve batı cephelerdeki iki sıra pencereyle aydınlanır. Kıble duvarının ortasındaki yarım daire planlı, yarım kubbe kavsaralı mihrabın ahşap bordürleri ajur tekniğinde bitkisel ve geometrik motiflidir; alınlıkta şemse motifi vardır. Mihrabın sağındaki minberde geometrik ve bitkisel süslemeler görülür. Kuzey duvarı kaplayan ahşap kadınlar mahfili geometrik süslemelidir.",
+        "en": "The mosque consists of a summer section, a minaret and a three-nave harim. Built on sloping land, it is rectangular in plan outside with a hipped roof. Stairs on the west side lead to the summer section, which has a mihrab niche on its qibla wall and a door into the harim. The deep rectangular harim is divided into three naves by two rows of wooden posts and lit by two rows of windows on the south, east and west. The semicircular mihrab with half-dome kavsara has wooden openwork borders with floral and geometric motifs and a sunburst in the pediment. The minbar to its right has geometric and floral decoration; the wooden women's gallery along the north wall is geometrically decorated."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "319"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Eğimli arazide, dikdörtgen planlı, kırma çatılı bir köy camisidir. Batıdaki merdivenle yazlık bölüme çıkılır, oradan iki sıra ahşap direkle üç sahına ayrılmış harime geçilir. Ahşap mihrap bordürleri ajur işlidir; kuzeyde ahşap kadınlar mahfili bulunur.",
+      "en": "A rectangular village mosque with a hipped roof on sloping land. Stairs on the west lead to a summer section and then to a harim divided into three naves by two rows of wooden posts. The wooden mihrab borders are openwork, and a wooden women's gallery lies on the north."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "319-319"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1306",
+        "original_name": "pdf-s161-xref1306",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "319"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kuruçay Eski Camii (kitap s. 319)",
+        "en": "Kuruçay Old Mosque (book p. 319)"
+      },
+      "alt": {
+        "tr": "Kuruçay Eski Camii fotoğrafı",
+        "en": "Photo of Kuruçay Old Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1304",
+        "original_name": "pdf-s161-xref1304",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "319"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Kuruçay Eski Camii (kitap s. 319)",
+        "en": "Kuruçay Old Mosque (book p. 319)"
+      },
+      "alt": {
+        "tr": "Kuruçay Eski Camii fotoğrafı",
+        "en": "Photo of Kuruçay Old Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

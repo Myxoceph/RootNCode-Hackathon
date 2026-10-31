@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-akoren-buyuk-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakıf (vakfiye, gelirler) ayrıntısı kitapta yok.",
+      "Banisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Büyük Camii",
+    "en": "Great Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Akören Büyük Camii",
+      "en": "Akören Great Mosque",
+      "note": "Kitapta Akören bölümü altında yer alır; ilçenin ulu camisidir"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "Akören",
+    "ulu cami",
+    "kitabeli",
+    "1858"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akören",
+    "neighborhood": "Akören ilçe merkezi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "321"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1275 / M. 1858",
+      "en": "1275 AH / 1858 AD"
+    },
+    "start_year": 1858,
+    "end_year": 1858,
+    "hijri_year": 1275,
+    "century": 19,
+    "basis": {
+      "tr": "12 satırlık celî talik kitâbeye göre.",
+      "en": "According to the 12-line celi talik inscription."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "321"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "321-322"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Akören ilçe merkezindeki, 1858 tarihli kitâbesi olan ve 1950'de yenilenen ilçenin ulu camisi.",
+    "en": "The grand mosque of Akören district centre, built in 1858 per its inscription and renewed in 1950."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Akören ilçe merkezindedir ve ilçenin ulu camisidir. Celî talik hatlı 12 satırlık kitâbesine göre H. 1275 / M. 1858'de yapılmıştır. Zamanla hasar gören yapı 1950'de yenilenmiş; bu tamirde eski caminin kitâbesi, kapı kanatları ve tavan göbeği korunmuştur.",
+        "en": "The mosque is in Akören district centre and is the district's grand mosque. According to its 12-line celi talik inscription it was built in 1275 AH / 1858 AD. Damaged over time, it was renovated in 1950, preserving the old inscription, door wings and ceiling core."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "321"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Derinlemesine dikdörtgen planlı yapı kırma çatıyla örtülüdür. Doğu tarafındaki yazlık bölümden harime geçilir. Giriş kapısının kanatları üçer tablalıdır. Harim iki sıra ahşap sütunla mihraba dik üç sahına ayrılmıştır. Tavan göbeği sekiz kollu, geometrik ve bitkisel bezemelidir; sekizgenin kolları palmet biçiminde taçlandırılmıştır. Kıble duvarı ortasındaki mihrap 1950'den kalmadır.",
+        "en": "The deeply rectangular building has a hipped roof. A summer section on the east gives access to the harim. The entrance door wings have three panels each. The harim is divided into three aisles perpendicular to the mihrab by two rows of wooden columns. The eight-armed ceiling core has geometric and floral decoration with palmette-crowned arms. The mihrab dates from 1950."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "321-322"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Eski caminin kitâbesi (konumu kitapta belirtilmemiş)",
+        "en": "Inscription of the old mosque (location not stated)"
+      },
+      "language": "other",
+      "script": "celî talik",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1275,
+        "gregorian": "1858"
+      },
+      "note": {
+        "tr": "12 satırdır; metni ve çevirisi kitapta verilmemiş, dil belirtilmemiş.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "321"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1858",
+      "year": 1858,
+      "date": null,
+      "hijri": "1275",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "321"
+        }
+      ]
+    },
+    {
+      "id": "yenileme-1950",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yapı yenilendi; kitâbe, kapı kanatları ve tavan göbeği korundu",
+        "en": "Building renewed; inscription, door wings and ceiling core kept"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "321"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Derinlemesine dikdörtgen planlı, kırma çatılı bir camidir. Doğuda yazlık bölüm, üçer tablalı kapı kanatları, iki sıra ahşap sütunlu üç sahınlı harim ve sekiz kollu bezemeli tavan göbeği bulunur.",
+      "en": "A deeply rectangular mosque with a hipped roof, a summer section on the east, three-panel door wings, a three-aisle harim with two rows of wooden columns, and an eight-armed decorated ceiling core."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "321-322"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1314",
+        "original_name": "pdf-s162-xref1314",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "321"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Büyük Camii (kitap s. 321)",
+        "en": "Great Mosque (book p. 321)"
+      },
+      "alt": {
+        "tr": "Büyük Camii fotoğrafı",
+        "en": "Photo of Great Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1318",
+        "original_name": "pdf-s163-xref1318",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "322"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Büyük Camii (kitap s. 322)",
+        "en": "Great Mosque (book p. 322)"
+      },
+      "alt": {
+        "tr": "Büyük Camii fotoğrafı",
+        "en": "Photo of Great Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1322",
+        "original_name": "pdf-s163-xref1322",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "322"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Büyük Camii (kitap s. 322)",
+        "en": "Great Mosque (book p. 322)"
+      },
+      "alt": {
+        "tr": "Büyük Camii fotoğrafı",
+        "en": "Photo of Great Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1320",
+        "original_name": "pdf-s163-xref1320",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "322"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Büyük Camii (kitap s. 322)",
+        "en": "Great Mosque (book p. 322)"
+      },
+      "alt": {
+        "tr": "Büyük Camii fotoğrafı",
+        "en": "Photo of Great Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}
