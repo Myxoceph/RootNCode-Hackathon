@@ -9,6 +9,8 @@ export interface AchievementsRepository {
   /** Records the first visit; false when the user had already visited the asset. */
   recordVisit(data: { userId: string; assetId: string; verified: boolean; distance: number | null }): Promise<boolean>;
   countVisitsSince(userId: string, since: Date): Promise<number>;
+  /** The user's visits to visible assets, newest first. */
+  listVisits(userId: string): Promise<{ asset_id: string; visited_at: Date; verified: boolean; proven_at: Date | null }[]>;
   /** Whether the asset has a photo with this media key. */
   hasMedia(assetId: string, mediaKey: string): Promise<boolean>;
   /** Records the visit if new and marks it proven; false for `firstVisit` when it existed. */
@@ -57,6 +59,14 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
 
     countVisitsSince(userId, since) {
       return prisma.visit.count({ where: { user_id: userId, visited_at: { gte: since } } });
+    },
+
+    listVisits(userId) {
+      return prisma.visit.findMany({
+        where: { user_id: userId, asset: { status: { in: statuses } } },
+        select: { asset_id: true, visited_at: true, verified: true, proven_at: true },
+        orderBy: [{ visited_at: "desc" }, { asset_id: "asc" }],
+      });
     },
 
     async facts(userId, complexIds) {

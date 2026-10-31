@@ -9,6 +9,7 @@ import {
   CONTRACT_VERSION,
   LangSchema,
   MyAchievementsResponseSchema,
+  MyVisitsResponseSchema,
   VISIT_RADIUS_METERS,
   VisitProofRequestSchema,
   VisitRequestSchema,
@@ -20,6 +21,7 @@ import {
   type AdminAchievementsResponse,
   type Lang,
   type MyAchievementsResponse,
+  type MyVisitsResponse,
   type VisitResponse,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync, FastifyRequest } from "fastify";
@@ -254,6 +256,28 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
       totalPoints: items.reduce((sum, item) => sum + (item.earnedAt ? item.points : 0), 0),
       visits,
       items,
+    });
+  });
+
+  app.get("/me/visits", {
+    schema: {
+      tags: ["community"],
+      summary: "Ziyaret ettiğim eserler (yeniden eskiye); harita bunların sisini kaldırır",
+      security: bearer,
+      response: { 200: toOpenApiSchema(MyVisitsResponseSchema), ...denied },
+    },
+  }, async (request, reply): Promise<MyVisitsResponse> => {
+    const user = await requireUser(request, community);
+    const visits = await repository.listVisits(user.id);
+    reply.header("cache-control", "no-store");
+    return MyVisitsResponseSchema.parse({
+      version: CONTRACT_VERSION,
+      items: visits.map((v) => ({
+        assetId: v.asset_id,
+        visitedAt: v.visited_at.toISOString(),
+        verified: v.verified,
+        proven: v.proven_at !== null,
+      })),
     });
   });
 

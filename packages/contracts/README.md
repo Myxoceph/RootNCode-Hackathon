@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.12`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.13`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -8,7 +8,7 @@ Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan v
 - `src/gastronomy.schema.ts`: `/cities/:code/dishes` (Yöresel Kültür & Gastronomi)
 - `src/sound.schema.ts`: `/meta/sounds` (Sesli Zaman Kapsülü); kaydın kendisi `asset.schema.ts`'te (`SoundRecordingSchema`)
 - `src/chat.schema.ts`: `POST /chat` ve `GET /chat/status` (AI asistan)
-- `src/achievement.schema.ts`: ziyaretler ve başarımlar (`/assets/:id/visit`, `/achievements`, `/me/achievements`, `/admin/achievements`); liste `docs/achievements.md`
+- `src/achievement.schema.ts`: ziyaretler ve başarımlar (`/assets/:id/visit`, `/achievements`, `/me/achievements`, `/me/visits`, `/admin/achievements`); liste `docs/achievements.md`
 - `src/reward.schema.ts`: ödül kataloğu ve cüzdan (`/rewards`, `/me/wallet`, `/rewards/:code/redeem`, `/admin/rewards`); anlatım `docs/rewards.md`
 - `src/admin.schema.ts`: yönetim paneli (`/admin/summary`, `/admin/users`, `/admin/assets`); moderasyon kuyruğu `community.schema.ts`'te
 - `scripts/validate-fixtures.ts`: uygulamanın örnek verisini (`apps/app/src/data/fixtures`) bu şemalarla doğrular
@@ -49,6 +49,7 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `POST /rewards/:code/redeem?lang=` 🔒 | `RedeemResponseSchema`: tek kullanımlık kod ve yeni bakiye; `INSUFFICIENT_POINTS`, `PROVEN_VISITS_REQUIRED`, `OUT_OF_STOCK` (409) |
 | `GET /achievements?lang=` | `AchievementsResponseSchema`: etkin başarımlar, kurallarıyla (`rule.kind`: `visit_count`, `districts`, `cities`, `within`, `complex`, `contributions`) |
 | `GET /me/achievements?lang=` 🔒 | `MyAchievementsResponseSchema`: her başarımda ilerleme (`progress.current/target`), `earnedAt`, toplam puan ve ziyaret sayısı |
+| `GET /me/visits` 🔒 | `MyVisitsResponseSchema`: ziyaret edilen yayındaki eserler, yeniden eskiye (`assetId`, `visitedAt`, `verified`, `proven`); harita bu eserlerin sisini kaldırır |
 | `GET /assets/:id/pulse?lang=&limit=` | `PulseResponseSchema` (veri setindeki ipuçları + onaylanmış topluluk katkıları) |
 | `GET /admin/contributions?status=&kind=&limit=&offset=` 🛡️ | `ModerationListResponseSchema` (`kind`: `notes` ya da `photos`; verilmezse hepsi) |
 | `GET /admin/summary` 🛡️ | `AdminSummaryResponseSchema` (bekleyen notlar ve fotoğraflar, kullanıcı sayıları, panelden eklenen eserler) |
