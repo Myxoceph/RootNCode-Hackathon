@@ -1,23 +1,26 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Button, fontFamily, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
-import { Link, useLocalSearchParams, useRouter } from "expo-router";
+import type { AssetSummary } from "@vagabonds/contracts";
+import { spacing, touchTarget, useTheme } from "@vagabonds/ui";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import Head from "expo-router/head";
 import { useEffect, useMemo, useState } from "react";
-import { BackHandler, Pressable, StyleSheet, View } from "react-native";
+import { BackHandler, Platform, Pressable, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CityAssetCards } from "@/components/city-asset-cards";
+import { MapSearch } from "@/components/map-search";
 import { CITY_LANDMARKS, useCities, useCityMapAssets } from "@/data";
 import { useAssistantAvailable } from "@/data/assistant";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, type MapCity, type MapPin, type MapProvince, type MapProvinces } from "@/map";
+import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, useMapStatusBar, useMapTheme, type MapCity, type MapPin, type MapProvince, type MapProvinces } from "@/map";
 
-/** Room kept free for the header card when framing Turkey. */
-const HEADER_SPACE = 120;
-/** Room kept free for the city's top bar and its cards. */
+/** Room kept free for the search bar when framing Turkey. */
+const HEADER_SPACE = 72;
+/** Room kept free for the search bar over a city, and for its cards. */
 const CITY_TOP_SPACE = 72;
-const CITY_CARDS_SPACE = 136;
+const CITY_CARDS_SPACE = 112;
 const NO_PINS: MapPin[] = [];
 
 /** Squared distance in degrees: enough to order a city's assets outward from its landmark. */
@@ -30,13 +33,17 @@ function nearness(from: { lat: number; lng: number }, to: { lat: number; lng: nu
  * the provinces with assets are outlined in color and named. Tapping one of them
  * flies into that city, onto its best-known asset: a light mist falls over the map and
  * each asset waits on its own cloud as a locked seal; their cards line up at the bottom.
- * Choosing on the map or swiping the cards moves both. The back button returns.
+ * Choosing on the map or swiping the cards moves both. The search bar on top finds cities and
+ * assets; in a city its back button returns.
  *
- * The map is visual only (ADR 0003): the header says the same in words
- * (which cities have assets, which one is open) and the cards list the city's assets.
+ * The map is visual only (ADR 0003): the search says the same in words (its list offers every
+ * city with assets before anything is typed) and the cards list the city's assets.
  */
 export default function MapScreen() {
-  const { colors: c } = useTheme();
+  const night = useMapTheme().colors;
+  useMapStatusBar();
+  // The tab bar floats over the map: the cards and the framing keep clear of it.
+  const tabBarHeight = useBottomTabBarHeight();
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
   const router = useRouter();
@@ -44,6 +51,10 @@ export default function MapScreen() {
   const assistant = useAssistantAvailable();
   const [mapError, setMapError] = useState<string | null>(null);
   const [selectedPlate, setSelectedPlate] = useState<number | null>(null);
+  /** The city the camera has finished flying into: its cards come in only then. */
+  const [landedPlate, setLandedPlate] = useState<number | null>(null);
+  /** An asset found in the search waits here while the camera flies into its city. */
+  const [pendingAsset, setPendingAsset] = useState<AssetSummary | null>(null);
   const [chosenAsset, setChosenAsset] = useState<string | null>(null);
   // "/?city=bursa" opens a city straight away: a shareable link on the web.
   const { city: cityParam } = useLocalSearchParams<{ city?: string }>();
@@ -117,7 +128,6 @@ export default function MapScreen() {
     () => ({ ...(JSON.parse(mapKey) as Omit<MapProvinces, "reveal">), reveal: !reduceMotion }),
     [mapKey, reduceMotion],
   );
-  const total = withAssets.reduce((sum, city) => sum + city.assetCount, 0);
 
   // Each city opens with its landmark chosen.
   const openingId = landmark?.id ?? null;
@@ -135,14 +145,52 @@ export default function MapScreen() {
     announce(`${city.label} açıldı.`);
   }
 
+  /** The place on the map that stands for an asset: itself, or the complex it is a building of. */
+  function placeOf(asset: AssetSummary): string | null {
+    return cards.find((card) => card.id === asset.id || card.id === asset.parentId)?.id ?? null;
+  }
+
+  function openAssetCard(asset: AssetSummary) {
+    router.push({ pathname: "/monuments/[id]", params: { id: asset.id } });
+  }
+
+  /**
+   * An asset picked in the search: chosen on the map if it is in the open city; in another city,
+   * that city opens and the asset is chosen once the camera has landed, so it glides on to it.
+   * One with no place on the map opens its card.
+   */
+  function pickAsset(asset: AssetSummary) {
+    const plate = withAssets.find((city) => city.code === asset.city.code)?.plate ?? null;
+    if (!asset.coordinates || plate === null) return openAssetCard(asset);
+    if (plate === selectedPlate) {
+      const place = placeOf(asset);
+      if (place) setChosenAsset(place);
+      else openAssetCard(asset);
+      return;
+    }
+    setPendingAsset(asset);
+    openCity(plate);
+  }
+
+  function onCityLanded(plate: number) {
+    setLandedPlate(plate);
+    if (!pendingAsset || plate !== selectedPlate) return;
+    const place = placeOf(pendingAsset);
+    if (place) setChosenAsset(place);
+    else openAssetCard(pendingAsset);
+    setPendingAsset(null);
+  }
+
   function backToTurkey() {
     setSelectedPlate(null);
+    setPendingAsset(null);
     announce("Türkiye haritası.");
   }
 
   // Android's back button leaves the city before it leaves the screen.
   useEffect(() => {
-    if (selectedPlate === null) return;
+    // Only Android has one; the web warns that BackHandler is not supported.
+    if (selectedPlate === null || Platform.OS !== "android") return;
     const subscription = BackHandler.addEventListener("hardwareBackPress", () => {
       setSelectedPlate(null);
       return true;
@@ -150,22 +198,20 @@ export default function MapScreen() {
     return () => subscription.remove();
   }, [selectedPlate]);
 
-  const missing = selectedCity ? selectedCity.assetCount - located.length : 0;
-  const cityStatus = mapError
-    ? `Harita çizilemedi: ${mapError}`
-    : !cityReady
-      ? "Eserlerin konumları yükleniyor…"
-      : cityAssets.status === "error"
-        ? cityAssets.error.message
-        : located.length === 0
-          ? "Bu şehirdeki eserlerin konumları henüz eklenmedi."
-          : `${located.length} eser haritada${missing > 0 ? ` · ${missing} eserin konumu yok` : ""}`;
+  // Only what went wrong is said over the map; the rest is in the cards and the search.
+  const notice = mapError
+    ? { message: `Harita çizilemedi: ${mapError}` }
+    : cities.status === "error"
+      ? { message: cities.error.message, onRetry: cities.retry }
+      : selectedCity && cityAssets.status === "error"
+        ? { message: cityAssets.error.message, onRetry: cityAssets.retry }
+        : null;
   const fitPadding = selectedCity
-    ? { top: insets.top + CITY_TOP_SPACE, right: spacing.lg, bottom: CITY_CARDS_SPACE, left: spacing.lg }
-    : { top: insets.top + HEADER_SPACE, right: spacing.lg, bottom: spacing.lg, left: spacing.lg };
+    ? { top: insets.top + CITY_TOP_SPACE, right: spacing.lg, bottom: tabBarHeight + CITY_CARDS_SPACE, left: spacing.lg }
+    : { top: insets.top + HEADER_SPACE, right: spacing.lg, bottom: tabBarHeight + spacing.lg, left: spacing.lg };
 
   return (
-    <View style={[styles.screen, { backgroundColor: c.mapBackground }]}>
+    <View style={[styles.screen, { backgroundColor: night.mapBackground }]}>
       <Head>
         <title>{selectedCity ? `${selectedCity.label} · Harita · Vagabonds` : "Harita · Vagabonds"}</title>
       </Head>
@@ -175,122 +221,29 @@ export default function MapScreen() {
         onSelect={(id) => id && setChosenAsset(id)}
         onSelectProvince={openCity}
         onLeaveCity={backToTurkey}
+        onCityLanded={onCityLanded}
         onError={setMapError}
         fitPadding={fitPadding}
         provinces={provinces}
         style={StyleSheet.absoluteFill}
       />
 
-      {selectedCity ? (
-        <>
-          <View style={[styles.bar, { top: insets.top + spacing.sm, backgroundColor: c.surface }]}>
-            <Pressable
-              accessibilityRole="button"
-              accessibilityLabel="Türkiye haritasına dön"
-              onPress={backToTurkey}
-              hitSlop={4}
-              style={[styles.round, { backgroundColor: c.surfaceRaised }]}
-            >
-              <Ionicons name="chevron-back" size={20} color={c.text} />
-            </Pressable>
-            <View style={styles.flex}>
-              <Text variant="label" headingLevel={1} numberOfLines={1}>
-                {selectedCity.label}
-              </Text>
-              <Text
-                variant="caption"
-                color={cityAssets.status === "error" || mapError ? "warning" : "textSecondary"}
-                numberOfLines={1}
-                accessibilityLiveRegion="polite"
-              >
-                {cityStatus}
-              </Text>
-            </View>
-            {assistant === true && <AssistantButton />}
-            {cityAssets.status === "error" ? (
-              <Button label="Tekrar dene" variant="ghost" onPress={cityAssets.retry} />
-            ) : (
-              // Not a `Link asChild`: that throws on this button's style.
-              <Pressable
-                accessibilityRole="link"
-                accessibilityLabel={`${selectedCity.label} eserlerinin listesi`}
-                onPress={() => router.push({ pathname: "/monuments", params: { city: selectedCity.code } })}
-                hitSlop={4}
-                style={[styles.round, { backgroundColor: c.surfaceRaised }]}
-              >
-                <Ionicons name="list" size={20} color={c.text} />
-              </Pressable>
-            )}
-          </View>
-          {cards.length > 0 && (
-            <View style={styles.cards}>
-              <CityAssetCards assets={cards} buildingsOf={buildingsOf} selectedId={chosenAsset} onSelect={setChosenAsset} />
-            </View>
-          )}
-        </>
-      ) : (
-        <View style={[styles.header, { top: insets.top + spacing.sm, backgroundColor: c.surface }]}>
-          <View style={styles.titleRow}>
-            <Text variant="heading" headingLevel={1} style={styles.flex}>
-              Türkiye
-            </Text>
-            {assistant === true && <AssistantButton />}
-            {cities.status === "success" && (
-              <View style={[styles.count, { backgroundColor: c.surfaceRaised }]}>
-                <Text variant="caption" style={styles.mono}>
-                  {`${withAssets.length} şehir · ${total} eser`}
-                </Text>
-              </View>
-            )}
-          </View>
-          {cities.status === "loading" && (
-            <Text variant="caption" color="textSecondary">
-              Eser bulunan şehirler yükleniyor…
-            </Text>
-          )}
-          {cities.status === "success" && withAssets.length > 0 && (
-            // The outlined provinces, in words; each one opens like a tap on the map.
-            <View style={styles.cityRow}>
-              <Text variant="caption" color="textSecondary">
-                Eser bulunan şehirler:
-              </Text>
-              {withAssets.map((city) =>
-                city.plate === null ? null : (
-                  <Pressable
-                    key={city.code}
-                    accessibilityRole="button"
-                    accessibilityLabel={`${city.label}, ${city.assetCount} eser. Haritada aç`}
-                    onPress={() => openCity(city.plate!)}
-                    style={styles.cityLink}
-                  >
-                    <Text variant="caption" color="primary" style={styles.underline}>
-                      {city.label}
-                    </Text>
-                  </Pressable>
-                ),
-              )}
-            </View>
-          )}
-          {cities.status === "error" && (
-            <View style={styles.errorRow}>
-              <Text variant="caption" color="warning" style={styles.flex}>
-                {cities.error.message}
-              </Text>
-              <Button label="Tekrar dene" variant="ghost" onPress={cities.retry} />
-            </View>
-          )}
-          <Link href="/monuments" style={styles.link}>
-            <Text variant="caption" color="primary" style={styles.underline}>
-              Tüm eserler
-            </Text>
-          </Link>
-          {mapError && (
-            <Text variant="caption" color="warning">
-              {`Harita çizilemedi: ${mapError}`}
-            </Text>
-          )}
+      {selectedCity && cards.length > 0 && (landedPlate === selectedPlate || mapError !== null) && (
+        // Without a map (it failed to draw) they come in at once: they are its content in words.
+        <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
+          <CityAssetCards assets={cards} buildingsOf={buildingsOf} selectedId={chosenAsset} onSelect={setChosenAsset} />
         </View>
       )}
+      <MapSearch
+        city={selectedCity}
+        cities={withAssets}
+        top={insets.top + spacing.sm}
+        onBack={backToTurkey}
+        onPickCity={openCity}
+        onPickAsset={pickAsset}
+        trailing={assistant === true ? <AssistantButton /> : null}
+        notice={notice}
+      />
     </View>
   );
 }
@@ -317,43 +270,6 @@ const styles = StyleSheet.create({
     flex: 1,
     overflow: "hidden",
   },
-  flex: {
-    flex: 1,
-  },
-  mono: {
-    fontFamily: fontFamily.monoMedium,
-  },
-  underline: {
-    textDecorationLine: "underline",
-  },
-  header: {
-    position: "absolute",
-    left: spacing.md,
-    right: spacing.md,
-    maxWidth: 560,
-    alignSelf: "center",
-    gap: spacing.xs,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.sm,
-    borderRadius: radius.xl,
-  },
-  bar: {
-    position: "absolute",
-    left: spacing.md,
-    right: spacing.md,
-    maxWidth: 560,
-    alignSelf: "center",
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-    padding: spacing.xs,
-    borderRadius: radius.full,
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 3,
-  },
   round: {
     width: touchTarget.min,
     height: touchTarget.min,
@@ -365,35 +281,5 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     right: 0,
-    bottom: spacing.md,
-  },
-  titleRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-  },
-  count: {
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.xs,
-    borderRadius: radius.md,
-  },
-  cityRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    columnGap: spacing.sm,
-  },
-  cityLink: {
-    minHeight: touchTarget.min,
-    justifyContent: "center",
-  },
-  errorRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-  },
-  link: {
-    alignSelf: "flex-start",
-    paddingVertical: spacing.xs,
   },
 });
