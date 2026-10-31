@@ -28,10 +28,17 @@ describe.skipIf(!DATABASE_URL)("visit proof, wallet and rewards (PostgreSQL)", (
   let asset: { id: string; lat: number; lng: number; mediaKey: string };
   let otherMediaKey: string;
 
-  async function createUser(role: "visitor" | "admin" = "visitor") {
+  /** An account by default; only accounts may redeem. */
+  async function createUser(role: "visitor" | "admin" = "visitor", { anonymous = false } = {}) {
     const token = newToken();
     const user = await prisma.app_user.create({
-      data: { nickname: `ödül-${role}`, role, sessions: { create: { token_hash: hashToken(token) } } },
+      data: {
+        nickname: `ödül-${role}`,
+        role,
+        // The tests sign in with the token; no password is ever checked.
+        ...(!anonymous && { username: `odul_${tag}_${userIds.length}`, password_hash: "scrypt$test-no-login" }),
+        sessions: { create: { token_hash: hashToken(token) } },
+      },
     });
     userIds.push(user.id);
     return { id: user.id, token };
@@ -122,6 +129,13 @@ describe.skipIf(!DATABASE_URL)("visit proof, wallet and rewards (PostgreSQL)", (
     const wallet = WalletResponseSchema.parse((await call("GET", "/me/wallet", visitor.token)).json());
     expect(wallet).toMatchObject({ earned: 120, spent: 50, balance: 70 });
     expect(wallet.redemptions.map((r) => r.code)).toEqual([got.redemption.code]);
+  });
+
+  it("asks an anonymous visitor to sign up before redeeming", async () => {
+    const visitor = await createUser("visitor", { anonymous: true });
+    await grantPoints(visitor.id, 500);
+    const res = await call("POST", `/rewards/${reward}/redeem`, visitor.token);
+    expect([res.statusCode, res.json().error.code]).toEqual([403, "ACCOUNT_REQUIRED"]);
   });
 
   it("never spends one balance twice or gives one code twice when requests race", async () => {

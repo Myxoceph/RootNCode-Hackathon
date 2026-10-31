@@ -142,6 +142,11 @@ export const rewardsRoutes: FastifyPluginAsync<RewardsRoutesOptions> = async (ap
     },
   }, async (request, reply): Promise<RedeemResponse> => {
     const user = await requireUser(request, community);
+    // Anonymous visitors cost nothing to create, so partner codes go only to accounts;
+    // POST /auth/upgrade keeps the points earned so far.
+    if (user.username === null) {
+      throw new HttpError(403, "ACCOUNT_REQUIRED", "Sign up (POST /auth/upgrade) to redeem rewards");
+    }
     const { code } = parseWith(CodeParamsSchema, request.params, "INVALID_ID");
     const lang = langOf(request);
     const result = await repository.redeem(user.id, code);
