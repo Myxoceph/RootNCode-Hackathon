@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetDetail, AssetSection, Confidence, Media } from "@vagabonds/contracts";
 import { cameraColors, fontFamily, palette, radius, SourceNote, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
-import { Link, useRouter, type Href } from "expo-router";
+import { Link, useNavigation, useRouter, type Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
 import {
@@ -25,7 +25,6 @@ import { AssetImage } from "@/components/asset-image";
 import { BuildingIllustration } from "@/components/building-illustration";
 import { VisitorPulse } from "@/components/visitor-pulse";
 import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds } from "@/content/capsules";
-import { useAssistantAvailable } from "@/data/assistant";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speak, stopSpeaking } from "@/lib/speak";
 import { useA11ySettings } from "@/settings/a11y-settings";
@@ -71,6 +70,7 @@ interface Figure {
  */
 export function AssetDetailView({ asset }: { asset: AssetDetail }) {
   const router = useRouter();
+  const navigation = useNavigation();
   const insets = useSafeAreaInsets();
   const chapters = useMemo(() => asset.sections.filter((s) => isCertain(s.confidence)), [asset]);
   const pages = useMemo(() => buildPages(asset, chapters), [asset, chapters]);
@@ -84,7 +84,13 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
     const at = Math.round(event.nativeEvent.contentOffset.y / height);
     if (at !== index) setIndex(at);
   };
-  const close = () => (router.canGoBack() ? router.back() : router.replace("/monuments"));
+  const close = () => {
+    if (!router.canGoBack()) return router.replace("/monuments");
+    // Opened from another tab (the map's cards, the assistant), the card is alone in the Eserler
+    // stack: leave the list in its place, so the tab opens on the list next time, then go back.
+    if (navigation.getState()?.routes.length === 1) navigation.dispatch({ type: "REPLACE", payload: { name: "index" } });
+    router.back();
+  };
   const last = pages[index]?.kind === "end";
 
   return (
@@ -541,7 +547,6 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
 /** The camera experiences, sound, spoken description and the assistant, a row each under hairlines. */
 function Experiences({ asset }: { asset: AssetDetail }) {
   const { settings } = useA11ySettings();
-  const assistant = useAssistantAvailable();
   const player = useCapsulePlayer();
   const [describing, setDescribing] = useState(false);
   const soundKey = asset.ambientSound?.key ?? null;
@@ -586,12 +591,8 @@ function Experiences({ asset }: { asset: AssetDetail }) {
       on: describing,
     });
   }
-  // Hidden while no model answers.
-  if (assistant === true) {
-    actions.push({ key: "ask", icon: "sparkles-outline", title: "Sor", hint: "Asistan kaynağıyla cevaplar", spoken: `Bu eser hakkında sor: ${asset.name}, asistanı açar`, href: { pathname: "/assistant", params: { asset: asset.id, name: asset.name } } });
-  }
-  if (actions.length === 0) return null;
-
+  // Always offered: when no model answers, the assistant's screen says it is closed for now.
+  actions.push({ key: "ask", icon: "sparkles-outline", title: "Sor", hint: "Asistan kaynağıyla cevaplar", spoken: `Bu eser hakkında sor: ${asset.name}, asistanı açar`, href: { pathname: "/assistant", params: { asset: asset.id, name: asset.name } } });
   return (
     <View style={styles.rows}>
       {actions.map((action) => (

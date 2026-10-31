@@ -14,8 +14,8 @@ export interface TabItem {
   iconFocused: IconName;
 }
 
-/** The tab that floats its bar over the screen: the map runs on under it. */
-const FLOATS_ON = "index";
+/** The tabs that float the bar over the screen: the map, the Eserler gallery and Profil run on under it. */
+const FLOATS_ON = new Set(["index", "monuments", "settings"]);
 /** Screens that fill the whole screen, the bar hidden: an asset's story. */
 const HIDDEN_ON = new Set(["[id]"]);
 const ICON_SIZE = 22;
@@ -27,7 +27,7 @@ const INSET = 6;
 /**
  * The tab bar: an opaque capsule floating over the bottom of the screen, white in the
  * light theme and night blue in the dark one. The open tab is a gold pill with its name; the
- * others show their icon, and Kamera sits in the middle as a gold disc. On the map the capsule floats over the map;
+ * others show their icon, and Kamera sits in the middle as a gold disc. On the map and the Eserler gallery the capsule floats over them;
  * elsewhere it rests on the screen's background, so no screen content hides behind it.
  *
  * Every tab is a button with the "tab" role and its title, whatever is shown of it.
@@ -37,7 +37,7 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
   const look = LOOKS[scheme];
   const onHeight = useContext(BottomTabBarHeightCallbackContext);
   const focusedName = state.routes[state.index]?.name;
-  const floats = focusedName === FLOATS_ON;
+  const floats = FLOATS_ON.has(focusedName ?? "");
   const segments = useSegments();
   if (HIDDEN_ON.has(segments.at(-1) ?? "")) return null;
 
