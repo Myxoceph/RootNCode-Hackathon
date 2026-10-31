@@ -7,6 +7,16 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-31 · Konya II. cilt fotoğrafları
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import`. Görseller R2'de; yerelde `media_pipeline.py` çalıştırmak gerekmez.
+
+Değişenler:
+- Konya II. cildindeki 93 eserden 91'ine kitabın 310 fotoğrafı eklendi; her fotoğrafın Türkçe ve İngilizce açıklaması ve alt metni var. Sahip Ata Sultan Hamamı ile Dedeler Hanı'nın kitapta fotoğrafı yok.
+- Bir fotoğraf iki eserin sınırına düştüyse yalnızca gösterdiği eserde kaldı; başka bir yapıyı gösteren fotoğraflar eklenmedi.
+
 ## 2026-10-31 · Külliyenin yapıları ve eserin tanınırlığı listede (sözleşme 0.3.12)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
