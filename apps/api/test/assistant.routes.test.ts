@@ -69,6 +69,9 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     const repository = createAssistantRepository(prisma, "published");
     const first = async (query: string) => (await repository.searchAssets(query, { lang: "tr", limit: 3 }))[0]?.id;
     expect(await first("ulu camii bursa")).toBe("bursa-osmangazi-ulucami");
+    // Who and when come with the hit, so those questions need no asset_details call.
+    const [ulucami] = await repository.searchAssets("ulu camii bursa", { lang: "tr", limit: 1 });
+    expect(ulucami).toMatchObject({ founder: expect.stringContaining("Bayezid"), dating: expect.any(String) });
     expect(await first("ordekli hamami")).toBe(HAMAM);
     const inHatay = await repository.searchAssets("Habib-i Neccar", { city: "hatay", lang: "tr", limit: 3 });
     expect(inHatay.every((hit) => hit.id.startsWith("hatay-"))).toBe(true);

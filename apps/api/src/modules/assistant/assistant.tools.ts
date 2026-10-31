@@ -100,7 +100,7 @@ export const TOOL_SPECS: ToolSpec[] = [
   {
     name: "search_assets",
     description:
-      "Vakıf eserlerini adında ya da metninde geçen kelimelerle arar (cami, han, hamam, kişi adı, olay...). En iyi 5 eseri id ve kısa bir alıntıyla döner.",
+      "Vakıf eserlerini adında ya da metninde geçen kelimelerle arar (cami, han, hamam, kişi adı, olay...). En iyi 5 eseri id, tarih, bani ve kısa bir alıntıyla döner; yalnızca tarihi ya da banisi soruluyorsa asset_details gerekmez.",
     parameters: {
       type: "object",
       properties: { query: { type: "string", description: "Aranacak kelimeler" }, city: cityParam },
