@@ -236,6 +236,11 @@ karşılaştırarak gör.
 **Demo sabahı:** Mac şarjda, Docker Desktop açık. `deploy/demo.sh up`, ayrı bir terminalde
 `deploy/demo.sh tunnel`, sonra `deploy/demo.sh check https://vagabonds.allbytech.com`: hepsi ✓ olmalı.
 
+**Asistanı ısıt:** sunumdan en çok 30 dakika önce sahnede soracağın soruları uygulamadan aynı kelimelerle bir kez
+sor. API, geçmişi olmayan ilk soruyu (aynı kelimeler, aynı eser sayfası, aynı dil) 30 dakika boyunca bellekten
+anında cevaplar; model 5–30 sn sürüyor. Takip soruları her zaman modele gider. API yeniden başlarsa
+(`deploy/demo.sh up`) bellek boşalır, yeniden ısıt.
+
 **Bir şey ters giderse:**
 
 | Durum | Ne yapılır |
@@ -257,6 +262,9 @@ sohbet girişlerini gizler; sitenin geri kalanı etkilenmez.
 ```
 API (Docker) ──► evren-llmapi.ssyz.org.tr/v1 ──► qwen3.8-flash-next
 ```
+
+`qwen3.8-flash-next` EVREN'deki en hızlı model: 2026-11-01'de aynı dört soruda bir cevap 4–9 sn sürdü;
+`deepseek-v4.1-flash`, `gemma-4-31b` ve `glm-5.3` 20–50 sn sürdü ya da 503 verdi.
 
 Kurulum (bir kez):
 
