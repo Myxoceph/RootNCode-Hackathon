@@ -7,7 +7,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CityPicker } from "@/components/city-picker";
 import { useCities, useMapAssets } from "@/data";
-import { MapLibreMap, type MapPin } from "@/map";
+import { MapLibreMap, useMapStatusBar, useMapTheme, type MapPin } from "@/map";
 
 /**
  * Map prototype for the decision record (Y6, ADR 0003): published assets with
@@ -16,6 +16,8 @@ import { MapLibreMap, type MapPin } from "@/map";
  */
 export default function MapPrototypeScreen() {
   const { colors: c } = useTheme();
+  const night = useMapTheme().colors;
+  useMapStatusBar();
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const [city, setCity] = useState<string | undefined>("bursa");
@@ -51,7 +53,7 @@ export default function MapPrototypeScreen() {
         : assets.error.message;
 
   return (
-    <View style={[styles.screen, { backgroundColor: c.mapBackground }]}>
+    <View style={[styles.screen, { backgroundColor: night.mapBackground }]}>
       <Head>
         <title>Harita prototipi · Vagabonds</title>
       </Head>
