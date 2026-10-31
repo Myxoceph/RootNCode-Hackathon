@@ -134,7 +134,12 @@ const turkeyDay = new Intl.DateTimeFormat("en-CA", {
 /** Today in Türkiye, where all the cities are. */
 export const turkeyToday = () => turkeyDay.format(new Date());
 
-function addDays(date: string, days: number): string {
+const turkeyHourFormat = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", hourCycle: "h23" });
+
+/** The hour in Türkiye, 0-23. */
+export const turkeyHour = () => Number(turkeyHourFormat.format(new Date()));
+
+export function addDays(date: string, days: number): string {
   const d = new Date(`${date}T00:00:00Z`);
   d.setUTCDate(d.getUTCDate() + days);
   return d.toISOString().slice(0, 10);
