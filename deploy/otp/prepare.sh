@@ -22,7 +22,9 @@ OSMIUM_IMAGE="debian:12-slim"
 
 gtfs_url=$(curl -fsS -m 60 "$GTFS_PACKAGE" | python3 -c 'import json,sys; print(json.load(sys.stdin)["result"]["resources"][0]["url"])')
 echo "GTFS: $gtfs_url"
-curl -fsS -m 300 -o "$DATA/konya-gtfs.zip" "$gtfs_url"
+curl -fsS -m 300 -o "$DATA/konya-gtfs-original.zip" "$gtfs_url"
+# The export cuts most main-tram trips after Belediye (fix_gtfs.py).
+python3 fix_gtfs.py "$DATA/konya-gtfs-original.zip" "$DATA/konya-gtfs.zip"
 
 if [[ ! -f "$DATA/konya.osm.pbf" ]]; then
   echo "OSM: Türkiye (~650 MB), then the Konya cut"
