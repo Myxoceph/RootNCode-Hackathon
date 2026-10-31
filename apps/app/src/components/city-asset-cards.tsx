@@ -13,6 +13,8 @@ const PHOTO = 84;
 
 interface CityAssetCardsProps {
   assets: AssetSummary[];
+  /** How many of a complex's buildings it stands for on the map. */
+  buildingsOf: ReadonlyMap<string, number>;
   selectedId: string | null;
   /** The card swiped to the middle. */
   onSelect: (id: string) => void;
@@ -24,7 +26,7 @@ interface CityAssetCardsProps {
  * its card here. A card opens the asset. For screen readers this row is the map's
  * content in words: every asset, a link each.
  */
-export function CityAssetCards({ assets, selectedId, onSelect }: CityAssetCardsProps) {
+export function CityAssetCards({ assets, buildingsOf, selectedId, onSelect }: CityAssetCardsProps) {
   const { colors: c } = useTheme();
   const { width } = useWindowDimensions();
   const cardWidth = Math.min(width - spacing.lg * 2 - PEEK, MAX_CARD_WIDTH);
@@ -56,7 +58,7 @@ export function CityAssetCards({ assets, selectedId, onSelect }: CityAssetCardsP
       getItemLayout={(_, i) => ({ length: step, offset: step * i, index: i })}
       contentContainerStyle={styles.row}
       ItemSeparatorComponent={() => <View style={{ width: spacing.md }} />}
-      renderItem={({ item }) => <CityAssetCard asset={item} width={cardWidth} chosen={item.id === selectedId} colors={colors} />}
+      renderItem={({ item }) => <CityAssetCard asset={item} buildings={buildingsOf.get(item.id) ?? 0} width={cardWidth} chosen={item.id === selectedId} colors={colors} />}
     />
   );
 }
@@ -70,9 +72,10 @@ interface CardColors {
   chosen: string;
 }
 
-function CityAssetCard({ asset, width, chosen, colors }: { asset: AssetSummary; width: number; chosen: boolean; colors: CardColors }) {
+function CityAssetCard({ asset, buildings, width, chosen, colors }: { asset: AssetSummary; buildings: number; width: number; chosen: boolean; colors: CardColors }) {
   const router = useRouter();
-  const label = [asset.name, asset.type.label, asset.district, asset.datingDisplay].filter(Boolean).join(", ");
+  const kind = [asset.type.label, asset.district, buildings > 0 ? `${buildings} yapı` : null].filter(Boolean).join(" · ");
+  const label = [asset.name, asset.type.label, asset.district, buildings > 0 ? `${buildings} yapısıyla` : null, asset.datingDisplay].filter(Boolean).join(", ");
 
   // Not a `Link asChild`: that throws on the style this card needs.
   return (
@@ -85,7 +88,7 @@ function CityAssetCard({ asset, width, chosen, colors }: { asset: AssetSummary; 
       <View style={[styles.photo, { backgroundColor: colors.tile }]}>{asset.cover && <AssetImage media={asset.cover} decorative fill />}</View>
       <View style={styles.body}>
         <Text variant="caption" color="textSecondary" numberOfLines={1}>
-          {asset.district ? `${asset.type.label} · ${asset.district}` : asset.type.label}
+          {kind}
         </Text>
         <Text variant="label" numberOfLines={2}>
           {asset.name}

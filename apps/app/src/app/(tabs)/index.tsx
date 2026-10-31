@@ -10,7 +10,7 @@ import { CityAssetCards } from "@/components/city-asset-cards";
 import { CITY_LANDMARKS, useCities, useCityMapAssets } from "@/data";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { areaAround, assetCategory, cityLandmark, MapLibreMap, type MapCity, type MapPin, type MapProvince, type MapProvinces } from "@/map";
+import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, type MapCity, type MapPin, type MapProvince, type MapProvinces } from "@/map";
 
 /** Room kept free for the header card when framing Turkey. */
 const HEADER_SPACE = 120;
@@ -27,8 +27,8 @@ function nearness(from: { lat: number; lng: number }, to: { lat: number; lng: nu
 /**
  * Harita: Turkey rises out of the fog with every province border drawn quietly;
  * the provinces with assets are outlined in color and named. Tapping one of them
- * flies into that city, onto its best-known asset: the map goes under fog, thickest
- * over the assets, which wait there as locked seals; their cards line up at the bottom.
+ * flies into that city, onto its best-known asset: a light mist falls over the map and
+ * each asset waits on its own cloud as a locked seal; their cards line up at the bottom.
  * Choosing on the map or swiping the cards moves both. The back button returns.
  *
  * The map is visual only (ADR 0003): the header says the same in words
@@ -56,26 +56,53 @@ export default function MapScreen() {
   const highlighted: MapProvince[] = withAssets.flatMap((city) =>
     city.plate === null ? [] : [{ plate: city.plate, name: city.label, rank: city.assetCount }],
   );
-  // The city opens on its best-known asset and the streets around it, not on all of it at once.
   const located = useMemo(() => (cityAnswer?.located ?? []).flatMap((asset) => (asset.coordinates ? [{ asset, at: asset.coordinates }] : [])), [cityAnswer]);
-  const landmark = selectedCity ? cityLandmark(located.map(({ asset, at }) => ({ id: asset.id, ...at })), CITY_LANDMARKS[selectedCity.code]) : null;
+  // A complex stands for its buildings: a building whose complex is on the map is not marked on its own,
+  // and the complex is as well known as its best-known building.
+  const { places, buildingsOf, prominenceOf } = useMemo(() => {
+    const onMap = new Set(located.map(({ asset }) => asset.id));
+    const counts = new Map<string, number>();
+    const prominence = new Map<string, number>();
+    for (const { asset } of located) {
+      const place = asset.parentId && onMap.has(asset.parentId) ? asset.parentId : asset.id;
+      if (place !== asset.id) counts.set(place, (counts.get(place) ?? 0) + 1);
+      prominence.set(place, Math.max(prominence.get(place) ?? 0, asset.prominence));
+    }
+    return { places: located.filter(({ asset }) => !(asset.parentId && onMap.has(asset.parentId))), buildingsOf: counts, prominenceOf: prominence };
+  }, [located]);
+  // The city opens on its best-known asset and the streets around it, not on all of it at once;
+  // a landmark that is a building of a complex opens on the complex.
+  const landmarkId = selectedCity ? CITY_LANDMARKS[selectedCity.code] : undefined;
+  const landmarkParent = located.find(({ asset }) => asset.id === landmarkId)?.asset.parentId;
+  const landmark = selectedCity
+    ? cityLandmark(
+        places.map(({ asset, at }) => ({ id: asset.id, ...at })),
+        landmarkParent && buildingsOf.has(landmarkParent) ? landmarkParent : landmarkId,
+      )
+    : null;
   // The cards start at the landmark and walk outwards from it.
   const cards = useMemo(
-    () => (landmark ? [...located].sort((a, b) => nearness(a.at, landmark) - nearness(b.at, landmark)) : located).map(({ asset }) => asset),
-    [located, landmark],
+    () => (landmark ? [...places].sort((a, b) => nearness(a.at, landmark) - nearness(b.at, landmark)) : places).map(({ asset }) => asset),
+    [places, landmark],
+  );
+  // Zooming out, the least known places go first; the landmark stays to the last.
+  const tiers = useMemo(
+    () => mapTiers(places.map(({ asset }) => ({ id: asset.id, prominence: prominenceOf.get(asset.id) ?? 0 })), landmark?.id),
+    [places, prominenceOf, landmark?.id],
   );
   // The city goes to the map once its assets are in, so the camera flies only once.
   const mapCity: MapCity | null =
     selectedCity?.plate != null && cityReady
       ? {
           plate: selectedCity.plate,
-          assets: located.map(({ asset, at }) => ({
+          assets: places.map(({ asset, at }) => ({
             id: asset.id,
             title: asset.name,
             lat: at.lat,
             lng: at.lng,
             category: assetCategory(asset.type.code),
             landmark: asset.id === landmark?.id,
+            tier: tiers.get(asset.id) ?? 0,
           })),
           focus: landmark ? areaAround(landmark) : null,
         }
@@ -91,8 +118,8 @@ export default function MapScreen() {
   const total = withAssets.reduce((sum, city) => sum + city.assetCount, 0);
 
   // Each city opens with its landmark chosen.
-  const landmarkId = landmark?.id ?? null;
-  useEffect(() => setChosenAsset(landmarkId), [landmarkId]);
+  const openingId = landmark?.id ?? null;
+  useEffect(() => setChosenAsset(openingId), [openingId]);
 
   const cityFromParam = cityParam ? withAssets.find((city) => city.code === cityParam)?.plate : undefined;
   useEffect(() => {
@@ -145,6 +172,7 @@ export default function MapScreen() {
         selectedId={selectedCity ? chosenAsset : null}
         onSelect={(id) => id && setChosenAsset(id)}
         onSelectProvince={openCity}
+        onLeaveCity={backToTurkey}
         onError={setMapError}
         fitPadding={fitPadding}
         provinces={provinces}
@@ -193,7 +221,7 @@ export default function MapScreen() {
           </View>
           {cards.length > 0 && (
             <View style={styles.cards}>
-              <CityAssetCards assets={cards} selectedId={chosenAsset} onSelect={setChosenAsset} />
+              <CityAssetCards assets={cards} buildingsOf={buildingsOf} selectedId={chosenAsset} onSelect={setChosenAsset} />
             </View>
           )}
         </>
