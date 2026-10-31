@@ -105,6 +105,12 @@ Bilinenler:
 - İçindekiler sayfasında "Hoca Fatih Çeşmesi" yazıyor; eserin sayfasında ve cadde adında "Hoca Fakih".
   Kayıt "Hoca Fakih" adıyla.
 - Bazı girişler iki yapıyı birlikte anlatıyor (ör. "Sahip Ata Hanikahı ve Türbesi"); bunlar tek kayıt.
+- İki eserin sınırına düşen çift sayfa fotoğraf yalnızca sağdaki (sonraki) esere yazılır; sağ sayfa bölüm
+  başlığıysa soldakine kalır. Fotoğraf yine de önceki eseri gösteriyorsa kayıt onu
+  `images/<sonraki-eser>/` yolundan alır (ör. Cemal Ali Dede Türbesi `m06`).
+- Kitap tek renkli turkuaz kutuyu birçok sayfada görsel olarak yeniden kullanıyor; bu düz görseller
+  (`is_flat`) çıkarılmaz. Fotoğraf numaraları (`pNNN-k`) yine sayılır, böylece kayıtlardaki yollar değişmez.
+  Sonuç: 310 fotoğraf, hiç tekrar yok.
 
 ## Bursa kitap fotoğrafları (fotoğrafı olmayan kayıtlar)
 
