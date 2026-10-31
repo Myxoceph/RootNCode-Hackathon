@@ -77,6 +77,18 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     expect(inHatay.every((hit) => hit.id.startsWith("hatay-"))).toBe(true);
   });
 
+  it("answers a repeated first question from memory, but not a follow-up", async () => {
+    const { model, calls } = scriptedModel([answer("Merhaba!")]);
+    const app = appWith(model);
+    const first = ChatResponseSchema.parse((await chat(app, { message: "Merhaba" })).json());
+    expect(ChatResponseSchema.parse((await chat(app, { message: "  merhaba " })).json())).toEqual(first);
+    expect(calls).toHaveLength(1);
+
+    await chat(app, { message: "Merhaba", history: [{ role: "user", content: "Selam" }, { role: "assistant", content: "Selam!" }] });
+    await chat(app, { message: "Merhaba", lang: "en" });
+    expect(calls).toHaveLength(3);
+  });
+
   it("reports itself unavailable without a model, and answers 503", async () => {
     const app = appWith(null);
     const status = ChatStatusResponseSchema.parse((await app.inject({ method: "GET", url: "/chat/status" })).json());
