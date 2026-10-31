@@ -352,13 +352,28 @@ export const AssetRelationSchema = z.strictObject({
   sources: z.array(SourceRefSchema),
 });
 
+/**
+ * A link to a place the dataset has no record of, e.g. the Istanbul complex a Bursa han was built to fund:
+ * shown by the name the source gives, not on the map. Always recorded on this asset.
+ */
+export const OutsideRelationSchema = z.strictObject({
+  type: LabeledCodeSchema,
+  /** As the source names it, e.g. "II. Bayezid Külliyesi (İstanbul)". */
+  name: z.string().min(1),
+  description: z.string().min(1),
+  confidence: ConfidenceSchema,
+  sources: z.array(SourceRefSchema),
+});
+
 /** Response body of `GET /assets/:id/relations`. */
 export const AssetRelationsResponseSchema = z.strictObject({
   version: ContractVersionSchema,
   lang: LangSchema,
   assetId: AssetIdSchema,
   items: z.array(AssetRelationSchema),
-  /** Links whose other asset is not in the dataset or not published yet: counted, never returned. */
+  /** Links to places outside the dataset, by name (Kentsel Ağ beyond the map). */
+  outside: z.array(OutsideRelationSchema),
+  /** Links to assets not published yet, or to outside places the source does not name: counted, never returned. */
   unavailableCount: z.int().min(0),
 });
 
@@ -409,6 +424,7 @@ export type AssetDetail = z.infer<typeof AssetDetailSchema>;
 export type AssetListResponse = z.infer<typeof AssetListResponseSchema>;
 export type RelationDirection = z.infer<typeof RelationDirectionSchema>;
 export type AssetRelation = z.infer<typeof AssetRelationSchema>;
+export type OutsideRelation = z.infer<typeof OutsideRelationSchema>;
 export type AssetRelationsResponse = z.infer<typeof AssetRelationsResponseSchema>;
 export type NearbyAsset = z.infer<typeof NearbyAssetSchema>;
 export type NearbyAssetsResponse = z.infer<typeof NearbyAssetsResponseSchema>;
