@@ -297,16 +297,24 @@ function start() {
       map.addImage("seal-" + category + "-landmark", sealImage(category, true), { pixelRatio: SEAL_RATIO });
     }
     // The city's fog, in two parts drawn by the map itself, so it stays fixed to the ground as the
-    // map moves. A light haze joins the assets into one fog over the quarters where they crowd...
+    // map moves. Its own copy of the assets, cut into tiles no smaller than zoom 12's (about 10 km)
+    // with a wide margin: the map draws a point only from the tiles on screen, and up close a fog
+    // bank reaches far past its asset, so with street-sized tiles it would vanish the moment its
+    // asset's tile left the screen.
+    map.addSource("city-fog", { type: "geojson", data: { type: "FeatureCollection", features: [] }, maxzoom: 12, buffer: 512 });
+    // A light haze joins the assets into one fog over the quarters where they crowd...
     map.addLayer({
       id: "city-haze",
       type: "heatmap",
-      source: "city-assets",
+      source: "city-fog",
       paint: {
-        // About 250 metres around each asset up close, wider further out, so from afar it covers whole districts.
-        // Closer in it spreads on, up to where it gets costly to draw.
-        "heatmap-radius": ["interpolate", ["exponential", 2], ["zoom"], 10, 14, 13, 70, 16, 270, 17.5, 600],
-        "heatmap-intensity": ["interpolate", ["linear"], ["zoom"], 10, 0.6, 16, 0.35],
+        // Wide from afar, so it covers whole districts; closer in it grows a little faster each level,
+        // never by a jump, up to where it gets costly to draw.
+        "heatmap-radius": ["interpolate", ["exponential", 2], ["zoom"], ...HAZE_RADIUS.flat()],
+        // As the map zooms out its assets close up on screen faster than the haze shrinks, so more of
+        // them pile onto each spot; each weighs that much less, and the haze stays as thick at every
+        // zoom instead of swelling into a glare.
+        "heatmap-intensity": ["interpolate", ["exponential", 2], ["zoom"], ...hazeWeights().flat()],
         "heatmap-color": hazeRamp(),
         "heatmap-opacity": 0,
         "heatmap-opacity-transition": { duration: 1200 },
@@ -317,15 +325,16 @@ function start() {
     map.addLayer({
       id: "city-clouds",
       type: "symbol",
-      source: "city-assets",
+      source: "city-fog",
       layout: {
         "icon-image": ["concat", "cloud-", ["to-string", ["get", "cloud"]]],
         "icon-rotate": ["get", "turn"],
         "icon-rotation-alignment": "map",
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
-        // Up close the bank spreads with the map, only a little slower, so it still thins towards the edges.
-        "icon-size": ["interpolate", ["exponential", 2], ["zoom"], DOTS_ZOOM, 0.36, 14, 0.75, FOG_GROUND_ZOOM, 1.15, 20, 1.15 * Math.pow(FOG_SPREAD, 20 - FOG_GROUND_ZOOM)],
+        // The bank keeps its ground: it grows and shrinks exactly as the map does, so zooming either
+        // way never thins it, piles it into a glare or changes it by a jump.
+        "icon-size": ["interpolate", ["exponential", 2], ["zoom"], 10, BANK_SIZE / 32, 20, BANK_SIZE * 32],
       },
       paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 900 } },
     });
@@ -629,7 +638,7 @@ function start() {
    */
   function showCity(city) {
     const plate = city ? city.plate : null;
-    map.getSource("city-assets").setData({
+    const assets = {
       type: "FeatureCollection",
       features: city
         ? city.assets.map((asset) => ({
@@ -638,7 +647,9 @@ function start() {
             properties: { id: asset.id, title: asset.title, category: asset.category, landmark: Boolean(asset.landmark), tier: asset.tier, cloud: cloudOf(asset.id), turn: cloudTurn(asset.id) },
           }))
         : [],
-    });
+    };
+    map.getSource("city-assets").setData(assets);
+    map.getSource("city-fog").setData(assets);
     cityAssets = city ? city.assets : [];
     if (plate === cityPlate) return;
     cityPlate = plate;
@@ -674,7 +685,7 @@ function start() {
     // The haze thins with the dots and is gone by the Turkey view.
     map.setPaintProperty("city-haze", "heatmap-opacity", shown ? shownFrom(outerZoom() + LEAVE_ROOM, wholeZoom, 1) : 0);
     // The banks thin out slowly around the seals' turn into dots, so the fog does not jump.
-    map.setPaintProperty("city-clouds", "icon-opacity", shown ? shownFrom(DOTS_ZOOM - 1, SEALS_ZOOM + 0.6, DARK ? 0.8 : 1) : 0);
+    map.setPaintProperty("city-clouds", "icon-opacity", shown ? shownFrom(DOTS_ZOOM - 1, SEALS_ZOOM + 0.6, DARK ? 0.7 : 0.88) : 0);
     showDots();
     haloShown = shown;
     pulse();
@@ -852,9 +863,8 @@ function start() {
   /** The seal's diameter at full size, in points, and the room around it for its glow. */
   const SEAL_SIZE = 26;
   const SEAL_ROOM = 6;
-  /** From this zoom in the fog banks grow FOG_SPREAD times each zoom level (the map grows 2 times). */
-  const FOG_GROUND_ZOOM = 15;
-  const FOG_SPREAD = 1.6;
+  /** A fog bank's size at zoom 15, where it is as wide as at a city's opening it should be. */
+  const BANK_SIZE = 0.78;
   /** How far outside the disc the landmark's second ring is drawn, and the chosen one's beats. */
   const LANDMARK_RING = 3;
   /** The icon's size inside the disc: room between it and the ring. */
@@ -940,12 +950,28 @@ function start() {
     return context.getImageData(0, 0, canvas.width, canvas.height);
   }
 
+  /** The haze's radius in screen points by zoom. */
+  const HAZE_RADIUS = [[10, 14], [11, 24], [12, 41], [13, 70], [14, 115], [15, 180], [16, 290], [17, 500], [18, 880]];
+  /** How much one asset weighs in the haze at zoom 16. */
+  const HAZE_WEIGHT = 0.35;
+
+  /**
+   * The haze's weight by zoom: how many assets fall within its radius on screen grows with the
+   * square of the radius over the map's scale; the weight follows the other way, so the pile-up
+   * is the same at every zoom as at 16.
+   */
+  function hazeWeights() {
+    const crowd = ([zoom, radius]) => (radius * radius) / Math.pow(4, zoom);
+    const at16 = crowd(HAZE_RADIUS.find(([zoom]) => zoom === 16));
+    return HAZE_RADIUS.map((stop) => [stop[0], (HAZE_WEIGHT * at16) / crowd(stop)]);
+  }
+
   /** The haze's color by how many assets crowd a spot: clear, then a light fog, never thick. */
   function hazeRamp() {
     const middle = rgb(colors.cloud.middle);
     const top = rgb(colors.cloud.top);
     const rgba = (c, a) => "rgba(" + c.map(Math.round).join(",") + "," + a + ")";
-    const strong = DARK ? 0.42 : 0.6;
+    const strong = DARK ? 0.37 : 0.53;
     return ["interpolate", ["linear"], ["heatmap-density"], 0, rgba(middle, 0), 0.15, rgba(middle, strong * 0.35), 0.5, rgba(mix(middle, top, 0.5), strong * 0.75), 1, rgba(top, strong)];
   }
 
@@ -1105,7 +1131,7 @@ function start() {
     return bounds;
   }
 
-  const OWN_SOURCES = new Set(["assets", "provinces", "province-names", "city-assets"]);
+  const OWN_SOURCES = new Set(["assets", "provinces", "province-names", "city-assets", "city-fog"]);
   /** Each base label layer's own filter and text, to put back when the provinces go away. */
   const baseLabels = new Map();
 
