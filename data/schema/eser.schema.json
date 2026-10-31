@@ -983,6 +983,10 @@
           "target_id": {
             "$ref": "#/$defs/slug"
           },
+          "target_name": {
+            "$ref": "#/$defs/i18n",
+            "description": "Hedef veri setinde yoksa adı, kaynaktaki gibi (ör. 'II. Bayezid Külliyesi (İstanbul)'); uygulama bağı bu adla gösterir."
+          },
           "type": {
             "type": "string"
           },

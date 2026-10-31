@@ -57,7 +57,8 @@ TABLES = {
     "asset_person": ["asset_id", "sort_order", "name", "role_tr", "role_en"],
     "timeline_event": ["asset_id", "slug", "year", "date", "hijri", "type_code", "title_tr", "title_en", "note_tr", "note_en", "confidence"],
     "asset_highlight": ["asset_id", "sort_order", "feature", "title_tr", "title_en", "hint_tr", "hint_en", "section_slug"],
-    "asset_relation": ["id", "source_asset_id", "target_asset_id", "type_code", "description_tr", "description_en", "confidence"],
+    "asset_relation": ["id", "source_asset_id", "target_asset_id", "type_code", "description_tr", "description_en", "confidence",
+                       "target_name_tr", "target_name_en"],
     "visitor_tip": ["id", "asset_id", "text_tr", "text_en", "origin", "collected_at"],
     "exhibition": ["id", "asset_id", "name_tr", "name_en", "venue", "start_date", "end_date"],
     "source_citation": ["id", "asset_id", "entity", "entity_key", "source_id", "pages"],
@@ -281,6 +282,7 @@ def asset_rows(a, manifest):
         rows["asset_relation"].append({
             "id": GENERATED, "source_asset_id": aid, "target_asset_id": r["target_id"], "type_code": r["type"],
             "description_tr": r["description"]["tr"], "description_en": r["description"].get("en"), "confidence": r["confidence"],
+            "target_name_tr": r.get("target_name", {}).get("tr"), "target_name_en": r.get("target_name", {}).get("en"),
         })
         cite("relation", f"{r['target_id']}:{r['type']}", r["source_refs"])
     for tip in V.get("visitor_tips", []):
