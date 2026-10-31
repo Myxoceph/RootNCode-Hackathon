@@ -124,6 +124,22 @@ export const VisitResponseSchema = z.strictObject({
   newAchievements: z.array(AchievementSchema),
 });
 
+export const MyVisitSchema = z.strictObject({
+  assetId: AssetIdSchema,
+  /** The first visit; later ones are not recorded. */
+  visitedAt: z.iso.datetime(),
+  /** True when the position was checked on site. */
+  verified: z.boolean(),
+  /** True once proven through the camera (`POST /assets/:id/visit/proof`). */
+  proven: z.boolean(),
+});
+
+/** `GET /me/visits`: every published asset the user has visited, newest first; the map lifts their fog. */
+export const MyVisitsResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  items: z.array(MyVisitSchema),
+});
+
 const I18n = z.strictObject({
   tr: z.string().trim().min(1).max(200),
   en: z.string().trim().min(1).max(200).nullable().optional(),
@@ -177,6 +193,8 @@ export type VisitRequest = z.infer<typeof VisitRequestSchema>;
 export type VisitResponse = z.infer<typeof VisitResponseSchema>;
 export type ProofMethod = z.infer<typeof ProofMethodSchema>;
 export type VisitProofRequest = z.infer<typeof VisitProofRequestSchema>;
+export type MyVisit = z.infer<typeof MyVisitSchema>;
+export type MyVisitsResponse = z.infer<typeof MyVisitsResponseSchema>;
 export type AdminAchievementInput = z.input<typeof AdminAchievementInputSchema>;
 export type AdminAchievementPatch = z.input<typeof AdminAchievementPatchSchema>;
 export type AdminAchievement = z.infer<typeof AdminAchievementSchema>;
