@@ -215,7 +215,7 @@ sisi kalkmalı, mühür açılmalı; ziyaret edilmemişler kilitli kalır.
 - Giriş yoksa (ya da anonim kullanıcı hiç ziyaret etmediyse) her şey kilitli kalır; çağrı `401` dönerse boş liste say.
 - Külliye tek mühürle görünüyorsa (`parentId`), külliyenin kendisi ya da yapılarından biri ziyaret edildiyse mühür açılabilir.
 - `proven` eserlere ayrı bir işaret (ör. altın çerçeve) iyi durur.
-- Demo hesabı `gezgin`: Bursa'da 42, Hatay'da 4 eser ziyaret edilmiş, Ulucami ve Koza Han kanıtlı; Konya bilerek boş.
+- Demo hesabı `gezgin`: Bursa'da 43, Hatay'da 4 eser ziyaret edilmiş, Ulucami ve Koza Han kanıtlı; Konya bilerek boş.
 
 ---
 
