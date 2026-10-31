@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Eğitim Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Tokat Gök Medrese kayıtlı olmadığından ilişki yazılmadı; bilgi bölüm metninde.",
@@ -593,7 +592,176 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sircali-medrese/p039-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "74-75"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Sırçalı Medrese'nin kuşbakışı dış görünümü",
+        "en": "Aerial view of Sırçalı Madrasa"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla örgülü, kurşun kaplı çatılı ve küçük kubbeli medrese binası. Sol tarafta sivri kemerli giriş çıkıntısı, önünde sokak ve çevrede şehir yapıları görünür.",
+        "en": "A stone and brick madrasa with a lead-covered roof and small domes. The pointed-arch entrance projects on the left, with a street in front and city buildings around."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sircali-medrese/p040-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "76"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Sırçalı Medrese'nin taç kapısı",
+        "en": "Main portal of Sırçalı Madrasa"
+      },
+      "alt": {
+        "tr": "Dikdörtgen çerçeveli, işlemeli taş taç kapı. Ortada sivri kemerli bir niş ve içinde demir parmaklıklı kapı bulunur.",
+        "en": "A carved stone portal in a rectangular frame. A pointed-arch niche in the middle holds a door with an iron grille."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sircali-medrese/p041-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "78-79"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Medresenin tuğla revaklı avlusu",
+        "en": "Brick arcaded courtyard of the madrasa"
+      },
+      "alt": {
+        "tr": "İki katlı, kırmızı tuğla revaklı avlu. Karşıda büyük bir eyvan, ortada küçük bir havuz ve zeminde taş döşeme görünür.",
+        "en": "A two-storey courtyard with red brick arcades. A large iwan faces the viewer, with a small pool in the middle and stone paving on the ground."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sircali-medrese/p040-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "77"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Eyvan duvarındaki turkuaz çini kalıntıları",
+        "en": "Turquoise tile remains on the iwan wall"
+      },
+      "alt": {
+        "tr": "Geniş, sivri kemerli eyvanın iki yanında kısmen dökülmüş turkuaz ve lacivert çini panolar vardır. Altta pencereler görünür.",
+        "en": "A wide pointed-arch iwan flanked by partly fallen turquoise and dark blue tile panels. Windows appear below."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sircali-medrese/p042-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "80"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Tuğla tonozlu revak koridoru",
+        "en": "Brick-vaulted arcade corridor"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğladan tonozlu ve kemerli uzun bir revak. Zemin taş döşeli, sağda bir bank bulunur.",
+        "en": "A long arcade with red brick vaults and arches. The floor is paved in stone and a bench stands on the right."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sircali-medrese/p042-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "80"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Kemer köşesinde çini süsleme",
+        "en": "Tile decoration beside an arch"
+      },
+      "alt": {
+        "tr": "Tuğla bir kemerin yanında turkuaz ve siyah çinilerle yapılmış geometrik desenli panonun bir bölümü görünür. Yüzeyde dökülmeler vardır.",
+        "en": "Part of a geometric panel of turquoise and black tiles beside a brick arch. The surface shows some losses."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sircali-medrese/p042-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "81"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Tuğla üzerinde turkuaz çini örgü",
+        "en": "Turquoise tile pattern on brick"
+      },
+      "alt": {
+        "tr": "Tuğla yüzeye turkuaz ve siyah çini parçalarıyla işlenmiş eşkenar dörtgen motifli geometrik desen.",
+        "en": "A geometric pattern of diamond motifs made of turquoise and black tile pieces set into a brick surface."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

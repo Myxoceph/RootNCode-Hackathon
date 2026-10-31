@@ -10,12 +10,10 @@
     "from": "Konya II. Cilt – Türbeler",
     "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 119-123 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Mescit/semahane kitapta ayrı bir yapı olarak anılıyor; ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
-      "Bânî, mimar ve yapım tarihi kitapta yok (kitâbe yok); founder/architect boş bırakıldı.",
-      "Eyvan cephesindeki çini bordürlerin fotoğrafları eklenmeli."
+      "Bânî, mimar ve yapım tarihi kitapta yok (kitâbe yok); founder/architect boş bırakıldı."
     ],
     "data_quality_notes": [
       {
@@ -369,7 +367,152 @@
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-cemal-ali-dede-turbesi/p061-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "118-119"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cemal Ali Dede Türbesi ve giriş cephesi",
+        "en": "Cemal Ali Dede Tomb and entrance facade"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı kubbeli türbenin yanında, çini şeritli sivri kemerli girişi olan tuğla bir cephe vardır. Çevrede çam ağaçları ve korkuluklu bir merdiven görünür.",
+        "en": "A lead-domed tomb beside a brick facade with a tiled pointed-arch entrance. Pine trees and a railed stairway surround it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-cemal-ali-dede-turbesi/p063-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "122-123"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin ahşap saçaklı yan cephesi",
+        "en": "Side of the tomb with a timber canopy"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş duvarlı türbenin kubbesi görünür. Önünde kafesli ahşap bir giriş bölümü, kırmızı bir bank ve çam ağacı vardır.",
+        "en": "The dome of a brick and stone tomb. A lattice timber porch, a red bench and a pine tree stand in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-cemal-ali-dede-turbesi/p062-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "121"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Türbenin kurşun kaplı kubbesi",
+        "en": "Lead-covered dome of the tomb"
+      },
+      "alt": {
+        "tr": "Dilimli, kurşun kaplı kubbenin tepesinde hilal bulunur. Altta tuğla duvar ve turuncu ahşap saçak görülür.",
+        "en": "A ribbed lead-covered dome topped with a crescent, above a brick wall and an orange timber eave."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-cemal-ali-dede-turbesi/p062-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "120"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yeşil örtülü sandukalar",
+        "en": "Sarcophagi under green covers"
+      },
+      "alt": {
+        "tr": "Tuğla tonozlu odada, yeşil örtülerle kaplı birkaç sanduka yan yana durur. Örtülerde yazılar vardır.",
+        "en": "In a brick-vaulted room, several sarcophagi covered in green cloths with lettering stand side by side."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-cemal-ali-dede-turbesi/p062-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "121"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Duvara bitişik taş blok",
+        "en": "Stone block against a wall"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla örgülü bir duvar önünde, üstü düz taşla kapatılmış kesme taş bir blok yükselir.",
+        "en": "A cut stone block capped with a flat stone, standing against a wall of stone and brick."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-cemal-ali-dede-turbesi/p064-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "124-125"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Türbe çevresinin kuşbakışı",
+        "en": "Aerial view of the tomb grounds"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremit çatılı binalar, taş döşeli yollar ve bahçe düzenlemesi tepeden görülür. Alçak bir taş duvarın içinde dilimli bir kubbe yer alır.",
+        "en": "A garden with red tiled roofs, paved paths and a ribbed dome inside a low stone wall, seen from above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

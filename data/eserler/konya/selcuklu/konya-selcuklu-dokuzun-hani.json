@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kitâbenin Arapça/Farsça asıl metni ve okunuşu kitapta verilmiyor (transliteration: null).",
@@ -366,7 +365,80 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-dokuzun-hani/p132-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "260"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dokuzun Hanı'nın uzaktan görünüşü",
+        "en": "Distant view of Dokuzun Hanı"
+      },
+      "alt": {
+        "tr": "Bozkırda, çam ağaçları ve çalılıkların arkasında duran alçak taş yapı. Ortasında kemerli bir giriş kapısı var; önünde taş döşeli bir yol uzanıyor, gökyüzü kapalı.",
+        "en": "A low stone building on open steppe behind conifers and shrubs, with an arched entrance in the middle. A paved path leads to it under a cloudy sky."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-dokuzun-hani/p132-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "261"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Hanın sivri kemerli girişi",
+        "en": "The han's pointed-arch entrance"
+      },
+      "alt": {
+        "tr": "Düzgün kesme taş duvarda sivri kemerli bir nişin içinde çift kanatlı koyu renkli ahşap kapı var. Kemerin üstünde dikdörtgen bir taş levha yer alıyor.",
+        "en": "A dark double-leaf wooden door set in a pointed-arch recess in a wall of dressed stone. A rectangular stone panel sits above the door."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-dokuzun-hani/p132-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "261"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avluda taş bloklar ve duvar",
+        "en": "Stone blocks and wall in the courtyard"
+      },
+      "alt": {
+        "tr": "Kaba taş duvarın önünde, taş döşeli zeminde duran iri dikdörtgen taş bloklar ve kırık mimari parçalar. Taşların arasında ot bitmiş.",
+        "en": "Large rectangular stone blocks and broken architectural fragments on a paved ground in front of a rough stone wall, with weeds growing between the stones."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

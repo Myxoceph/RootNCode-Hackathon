@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kayıt iki yapıyı birlikte anlatıyor (imaret ve tabhane/misafirhane); ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
@@ -249,7 +248,128 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-imareti/p023-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "42"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "İmaretin kubbeli çatıları",
+        "en": "Domed roofs of the imaret"
+      },
+      "alt": {
+        "tr": "Gri kurşun kaplı üç kubbe ve taş duvar; arkada küçük bir baca ve ön planda yeşil ağaçlar görülüyor.",
+        "en": "Three grey lead-covered domes above a stone wall, with a small chimney behind and green trees in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-imareti/p023-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "43"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kesme taş kapı yapısı",
+        "en": "Cut stone gate structure"
+      },
+      "alt": {
+        "tr": "Açık kapı kanatlarıyla görülen, kesme taştan kare gövdeli kapı yapısı; kemerinde siyah beyaz renkli taşlar var. Kapının ardında avlu ve başka bir yapı görülüyor.",
+        "en": "A square gate structure of cut stone with open doors and an arch of alternating black and white stones. A courtyard and another building are visible beyond."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-imareti/p023-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "43"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Tuğla kemerli demir kafesli pencere",
+        "en": "Barred window under a brick arch"
+      },
+      "alt": {
+        "tr": "Beyaz duvarda, kırmızı tuğla sivri kemerli ve sarı taş çerçeveli bir pencere; demir parmaklıkları var.",
+        "en": "A window with iron bars in a white wall, set under a pointed arch of red brick and a yellow stone frame."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-imareti/p023-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "43"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tuğla kemerli iç mekân",
+        "en": "Interior with brick arch"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla örgülü büyük sivri kemer, altında beyaz sıvalı duvar; sol altta kitap rafları, önde masa ve sandalyeler görülüyor.",
+        "en": "A large pointed arch of red brick over a white plastered wall, with bookshelves at lower left and tables and chairs in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-imareti/p023-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "43"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Beyaz sıvalı koni külahlı ocak",
+        "en": "White plastered hearth with a conical hood"
+      },
+      "alt": {
+        "tr": "Beyaz duvara oyulmuş niş; üzerinde koni biçimli, gri bir külah ve yanlarda köşeli omuzlar var.",
+        "en": "A niche cut into a white wall, topped with a grey conical hood and angular shoulders at each side."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -11,7 +11,6 @@
     "todos": [
       "Kitapta anılan iki eski onarımın tarihleri verilmiyor.",
       "Mustafa Turâbî'nin vefat tarihi yalnızca H. 900 / M. 1582 olarak veriliyor; kaynağın tutarlılığı kontrol edilmeli.",
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
     ],
@@ -275,7 +274,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-mustafa-turabi-kazan-dede-turbesi/p095-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "187"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin dıştan görünüşü",
+        "en": "Exterior of the tomb"
+      },
+      "alt": {
+        "tr": "Moloz taş örgülü, kare planlı türbenin üzeri gri kurşun kubbe ve alemle örtülü. Kemerli ahşap kapı ve pencere görülüyor; arkada dağlar yükseliyor.",
+        "en": "A square tomb of rubble stone topped by a grey lead dome with a finial. An arched wooden door and window show, with mountains behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-mustafa-turabi-kazan-dede-turbesi/p096-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "188"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi ve sanduka",
+        "en": "Inside the tomb with the sarcophagus"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada yeşil örtülü bir sanduka duruyor; üzerinde yazılı bir şerit var. Tuğla kemerli tavan ve ahşap çerçeveli pencere görülüyor.",
+        "en": "A white room with a sarcophagus under a green cover and an inscribed band. A brick vaulted ceiling and a wooden-framed window appear above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-mustafa-turabi-kazan-dede-turbesi/p096-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "188"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Çatı ve kubbe, havadan",
+        "en": "Roof and dome from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan çekilmiş görüntüde, kare çatı üzerinde mavimsi yıpranmış bakır levhalarla kaplı, dilimli bir kubbe görülüyor. Ortada koyu bir daire var.",
+        "en": "A top-down view of a ribbed dome on a square roof, covered in weathered bluish copper sheets, with a dark circle at the centre."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

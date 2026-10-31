@@ -13,7 +13,6 @@
       "Seyyid Harun Camii'nin kaydı ids.md'de yok; ilişki yazılmadı.",
       "Dönem (era) kodu: kitap dönem adı vermiyor; null bırakıldı.",
       "Seyyid Harun Veli Zaviyesi'nin kaydı ids.md'de yok.",
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
     ],
@@ -305,7 +304,56 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-halife-sultan-turbesi/p103-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "203"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami ve türbeler, havadan",
+        "en": "The mosque and tombs from above"
+      },
+      "alt": {
+        "tr": "Kuşbakışı görüntüde kırmızı kiremit çatılı cami, yanında bir minare ve önünde gri kubbeli küçük yapılar görülüyor. Arkada şehir ve dağlar uzanıyor.",
+        "en": "From above, a mosque with a red tiled roof and a minaret, with small grey-domed buildings in front. The town and mountains stretch behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-halife-sultan-turbesi/p104-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "204"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mavi külahlı türbe",
+        "en": "Tomb with a blue conical roof"
+      },
+      "alt": {
+        "tr": "Tuğla ve taştan örülü sekizgen türbenin üzeri mavi sivri bir külahla örtülü. Sivri kemerli giriş ve demir şebekeli bir pencere görülüyor; arkada mavi kubbe ve minare var.",
+        "en": "An octagonal tomb of brick and stone with a blue pointed roof, a pointed-arched entrance and a barred window. A blue dome and a minaret are behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

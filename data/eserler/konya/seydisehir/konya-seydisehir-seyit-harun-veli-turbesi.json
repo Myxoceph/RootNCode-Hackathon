@@ -13,7 +13,6 @@
       "Seyyid Harun Veli'nin kurduğu medrese kitapta anılıyor ama kaydı ids.md'de yok.",
       "Dönem (era) kodu: kitap dönem adı vermiyor; null bırakıldı.",
       "Yaptıran kişi kitapta belirtilmiyor; founder null.",
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
     ],
@@ -343,7 +342,104 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-seyit-harun-veli-turbesi/p105-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "207"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Türbe kapısı",
+        "en": "Door of the tomb"
+      },
+      "alt": {
+        "tr": "Gri taş örgülü duvarda, sivri kemerli bir niş içinde oymalı ahşap kapı duruyor. Kapının önünde taş basamaklar, üstünde ise bir yazı levhası var.",
+        "en": "A carved wooden door set in a pointed-arched recess in a grey stone wall. Stone steps lead to it, with an inscription plaque above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-seyit-harun-veli-turbesi/p105-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "206"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami ve kubbeler, havadan",
+        "en": "Mosque and domes from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan çekilmiş görüntüde, kiremit çatılı camiin yanında gri levhalarla kaplı üç kubbe ve külah görülüyor. Çevrede desenli taş zemin var.",
+        "en": "From above, a tiled mosque roof with three grey metal-clad domes and roofs beside it. Patterned paving surrounds them."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-seyit-harun-veli-turbesi/p104-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "205"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Çini mihraplı sanduka",
+        "en": "Sarcophagus before a tiled niche"
+      },
+      "alt": {
+        "tr": "Yeşil örtülü sandukanın başında beyaz bir sarık var. Arkada turkuaz ve koyu renkli çinilerle kaplı sivri kemerli bir niş yükseliyor.",
+        "en": "A sarcophagus under a green cover with a white turban at its head. A pointed niche faced with turquoise and dark tiles rises behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-seyit-harun-veli-turbesi/p105-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "207"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Oyma ahşap kapı süslemesi",
+        "en": "Carved wooden door ornament"
+      },
+      "alt": {
+        "tr": "Ahşap kapı yüzeyinde sekizgen ve yıldız biçimli geometrik çerçeveler var. İçlerinde bitkisel oymalar, altta demir halkalar görülüyor.",
+        "en": "Octagonal and star-shaped geometric frames on a wooden door, filled with plant-style carving. Iron rings are visible below."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

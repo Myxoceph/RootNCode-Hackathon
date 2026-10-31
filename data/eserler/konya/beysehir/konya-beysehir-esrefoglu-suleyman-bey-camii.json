@@ -9,12 +9,9 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
-      "Kitabelerin Arapça okunuşları ve mealleri kitapta yok (giriş ve harim kitabeleri, Âyet-el Kürsî); kitabe fotoğraflarından okunup eklenmeli.",
-      "Mihrap ve minberin tarihi/ustası dışında mimar kitapta yok; mimar bilinmiyor.",
-      "Caminin minber taç kapısı kitabesinin konumu (minber kapısı mı, caminin taç kapısı mı) kitap metninde belirsiz; fotoğraf/saha ile teyit edilmeli."
+      "Mihrap ve minberin tarihi/ustası dışında mimar kitapta yok; mimar bilinmiyor."
     ],
     "data_quality_notes": [
       {
@@ -674,7 +671,344 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p010-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "16"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mihrap yönüne bakış ve ahşap mahfil",
+        "en": "Toward the mihrab, with the wooden gallery"
+      },
+      "alt": {
+        "tr": "Önde ahşap korkuluklu yüksek bir mahfil, arkasında çini kaplı mihrap nişi görülüyor. İki yanda başlıklı ahşap direkler ve tavandan sarkan bir avize var.",
+        "en": "A raised wooden gallery with a railing in front, and a tiled mihrab niche behind it. Capital-topped wooden columns stand at both sides and a chandelier hangs from the ceiling."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p010-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "16"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap direkler ve mahfil",
+        "en": "Wooden columns and gallery"
+      },
+      "alt": {
+        "tr": "Taş kaideler üzerinde duran kalın ahşap direkler ve arkada ahşap korkuluklu mahfil. Zemin mavi halıyla kaplı.",
+        "en": "Thick wooden columns on stone bases, with the railed wooden gallery behind. The floor is covered with a blue carpet."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p012-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "21"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Işık vuran direk kaideleri",
+        "en": "Column bases catching the light"
+      },
+      "alt": {
+        "tr": "Yan pencereden giren ışığın mavi halıya düştüğü loş bir iç mekân. Taş kaideli ahşap direkler sıralanıyor; uzakta pencere parlıyor.",
+        "en": "A dim interior where light from a side window falls on the blue carpet. Wooden columns on stone bases stand in a row, with a glowing window in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p010-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "17"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Boyalı ahşap tavan ve sütun başlığı",
+        "en": "Painted wooden ceiling and capital"
+      },
+      "alt": {
+        "tr": "Çapraz kirişli ahşap tavan ve direğin tepesindeki kırmızı, mavi boyalı oyma başlık. Kirişlerin arasında kırmızı bezemeli tahta kaplamalar var.",
+        "en": "A wooden ceiling of crossing beams and a carved capital painted in red and blue at the top of a column. Red-patterned panels fill the spaces between the beams."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p011-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "19"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Boyalı ahşap sütun başlıkları",
+        "en": "Painted wooden column capitals"
+      },
+      "alt": {
+        "tr": "Koyu ahşap tavan kirişlerini taşıyan iki direk; başlıkları kırmızı, beyaz ve mavi renklerle boyanmış, dilimli ve oyuk biçimli.",
+        "en": "Two wooden columns supporting a dark beamed ceiling. Their capitals are carved with hollowed, tiered forms and painted red, white and blue."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p012-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "21"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Kırmızı boyalı ahşap sütun başlığı",
+        "en": "Red painted wooden column capital"
+      },
+      "alt": {
+        "tr": "Çapraz kirişli tavanın altında, kırmızı ve koyu renklerle boyalı, mukarnas benzeri oyma bir sütun başlığı.",
+        "en": "A carved, muqarnas-like column capital painted in red and dark colours, beneath a ceiling of diagonal beams."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p011-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "18"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Tavandaki ışıklık açıklığı",
+        "en": "The skylight opening in the ceiling"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakılan, mavi desenli ahşap tavanın ortasında kare biçimli bir ışıklık açıklığı. Açıklığın iki ucunda kırmızı rozetli bezemeler görülüyor.",
+        "en": "Looking up at a wooden ceiling with a blue pattern and a square skylight opening in the middle. Red rosette ornaments appear at two ends of the opening."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p012-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "21"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Geometrik oymalı ahşap kapı",
+        "en": "Wooden door with geometric carving"
+      },
+      "alt": {
+        "tr": "Çift kanatlı, koyu ahşap bir kapı; yüzeyi dikdörtgen ve geometrik kabartma panolarla süslü. Ortada bir halka tokmak görülüyor.",
+        "en": "A dark double-leaf wooden door whose surface is covered with rectangular and geometric relief panels. A ring knocker sits at the centre."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p012-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "21"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Çini yazı kuşağı ve oymalı ahşap kanat",
+        "en": "Tile inscription band beside a carved wooden leaf"
+      },
+      "alt": {
+        "tr": "Solda turkuaz zemin üzerinde siyah yazılı çini şerit, sağda geometrik oymalı ve ajurlu koyu ahşap bir kanat yer alıyor.",
+        "en": "On the left, a turquoise tile strip with black calligraphy; on the right, a dark wooden leaf with geometric carving and a pierced upper panel."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p013-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "23"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Geometrik kûfî yazılı ahşap panel",
+        "en": "Wooden panel with geometric Kufic script"
+      },
+      "alt": {
+        "tr": "Kare bir ahşap panelin ortasında, açık ve koyu ahşap parçalarla kurulmuş dik açılı, labirent benzeri kûfî yazı. Çevresinde yazı kuşakları var.",
+        "en": "A square wooden panel with angular, maze-like Kufic script made of light and dark wood pieces. Bands of writing run around the edges."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m11",
+      "type": "photo",
+      "is_cover": false,
+      "order": 11,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p013-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "22"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Çini yazılı sivri kemerli geçit",
+        "en": "Tiled pointed-arch opening with inscription"
+      },
+      "alt": {
+        "tr": "Turkuaz ve lacivert çinilerle çevrili sivri kemerli bir açıklık; üstünde yazı kuşağı var. Kemerin içinden ahşap direkli ibadet mekânı görünüyor, sağda çini mozaik zikzak desenli duvar yer alıyor.",
+        "en": "A pointed arch framed with turquoise and dark blue tiles and a band of writing above. Through the opening the wooden-columned hall is visible; on the right a wall has a zigzag tile mosaic."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m12",
+      "type": "photo",
+      "is_cover": false,
+      "order": 12,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p014-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "25"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Çini mukarnaslı mihrap nişi",
+        "en": "Tiled muqarnas of the mihrab niche"
+      },
+      "alt": {
+        "tr": "Turkuaz ve kırmızımsı çinilerle kaplı, sıra sıra sivri kemerli gözlerden oluşan mukarnas dolgu; altta yıldız geçmeli geometrik bir kuşak var.",
+        "en": "A muqarnas filling made of rows of small pointed-arch cells covered in turquoise and reddish tiles, with a star-pattern geometric band below."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m13",
+      "type": "photo",
+      "is_cover": false,
+      "order": 13,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p012-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "20"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Çini kaplı mihrap kubbesi",
+        "en": "Tile-covered semi-dome"
+      },
+      "alt": {
+        "tr": "Daire biçimli, tamamı turkuaz ve koyu renkli çinilerle kaplı içbükey bir yüzey; ortadan dışarı doğru yayılan ince geometrik desenler ve kenarda yazı kuşağı var.",
+        "en": "A circular concave surface fully covered in turquoise and dark tiles, with fine geometric patterns spreading from the centre and a band of writing at the edge."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m14",
+      "type": "photo",
+      "is_cover": false,
+      "order": 14,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-camii/p014-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "24"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Çini bezemeli kubbe içi",
+        "en": "Interior of the tiled dome"
+      },
+      "alt": {
+        "tr": "Aşağıdan görülen sekizgen kasnaklı kubbe; turkuaz çini ile örülmüş geometrik desenler köşelerde üçgen yüzeylere yayılıyor. Sağda tuğla bir kemer duruyor.",
+        "en": "A dome with an octagonal base seen from below, its turquoise tile patterns spreading onto triangular corner surfaces. A brick arch stands on the right."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

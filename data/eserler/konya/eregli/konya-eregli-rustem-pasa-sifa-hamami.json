@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Su Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Hamamın yaptıranı kitapta yok; founder boş. 'Rüstem Paşa' adının hamamla bağı kitapta açıklanmıyor.",
@@ -235,7 +234,104 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-eregli-rustem-pasa-sifa-hamami/p114-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "225"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hamamın kubbeleri, havadan görünüm",
+        "en": "Domes of the bath, aerial view"
+      },
+      "alt": {
+        "tr": "Havadan çekilmiş fotoğrafta kiremit kaplı sekizgen bir çatı ve düz damın üzerinde fil gözlü küçük kubbeler görülüyor. Çevrede şehir evleri ve uzakta dağ silueti var.",
+        "en": "Aerial view of a tiled octagonal roof and small domes with skylights on a flat roof, surrounded by town houses with distant hills at dusk."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-eregli-rustem-pasa-sifa-hamami/p113-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "223"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Kubbelerin tepeden görünüşü",
+        "en": "Top-down view of the domes"
+      },
+      "alt": {
+        "tr": "Tam tepeden çekilmiş fotoğrafta kiremit kaplı sekizgen bir çatı ve düz damda sıralanan, ışık delikli birçok kiremit kubbe görülüyor.",
+        "en": "A straight top-down view of an octagonal tiled roof and many tiled domes with light openings arranged on a flat roof."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-eregli-rustem-pasa-sifa-hamami/p114-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "225"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Taş dış duvar ve kubbe",
+        "en": "Stone outer wall and dome"
+      },
+      "alt": {
+        "tr": "Kaba kesme taş bir duvarın önünde demir korkuluk var. Duvarın ardında kiremit kaplı bir kubbe ve uzakta tuğla bir minare yükseliyor.",
+        "en": "A rough-cut stone wall behind an iron railing. A tiled dome rises behind the wall and a brick minaret stands in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-eregli-rustem-pasa-sifa-hamami/p114-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "224"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap soyunma salonu",
+        "en": "Wooden dressing hall"
+      },
+      "alt": {
+        "tr": "İki katlı, ahşap kaplı bir soyunma salonu. Alt katta numaralı kabin kapıları, üst katta ahşap korkuluklu galeri, ortada sekizgen bir masa ve deri koltuklar var.",
+        "en": "A two-storey wood-panelled dressing hall with numbered cabin doors below, a wooden balustraded gallery above, and an octagonal table with leather chairs in the centre."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

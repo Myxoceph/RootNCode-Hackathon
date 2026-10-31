@@ -10,7 +10,6 @@
     "from": "Konya II. Cilt – Türbeler",
     "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 134-142 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kayıt iki yapıyı birlikte anlatıyor; ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
@@ -568,7 +567,224 @@
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p069-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "134"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hanikâhın giriş cephesi",
+        "en": "Entrance facade of the hanikah"
+      },
+      "alt": {
+        "tr": "Dikdörtgen çerçeveli taş portalın ortasında kemerli bir giriş vardır. İki yanında kemerli, camlı tuğla ve taş cephe bölümleri uzanır.",
+        "en": "A rectangular-framed stone portal with an arched entrance in the middle, flanked by brick and stone wall sections with glazed arches."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p069-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "135"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Çinili sandukalar ve turkuaz duvarlar",
+        "en": "Tiled sarcophagi and turquoise walls"
+      },
+      "alt": {
+        "tr": "Turkuaz ve lacivert çinilerle kaplı odada, çini kaplı birkaç sanduka sıralanır. Duvarlarda altıgen çiniler ve bir pencere görünür.",
+        "en": "In a room covered with turquoise and dark blue tiles, several tile-clad sarcophagi stand in a row. Hexagonal tiles and a window are on the walls."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p073-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "143"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Altıgen çinili duvarlı iç mekân",
+        "en": "Interior with hexagonal tile walls"
+      },
+      "alt": {
+        "tr": "Tuğla tonozlu mekânın duvarlarında altıgen turkuaz çiniler ve üstte çini kafes süslemeli bir pencere vardır. Önde saatler ve sergi eşyaları durur.",
+        "en": "A brick-vaulted space with hexagonal turquoise tiles on the walls and a tiled lattice window above. Clocks and display items stand in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p070-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "136-137"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Altıgen çiniler ve geometrik çini şeridi",
+        "en": "Hexagonal tiles and a geometric tile band"
+      },
+      "alt": {
+        "tr": "Soldaki yeşil-mavi altıgen çinilerin yanında, sağda yıldız motifli koyu mavi ve turkuaz çini kuşağı uzanır.",
+        "en": "Green-blue hexagonal tiles on the left, beside a dark blue and turquoise tile band with star motifs on the right."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p073-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "142"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Mavi ve yeşil tonlarda altıgen çiniler",
+        "en": "Hexagonal tiles in blue and green"
+      },
+      "alt": {
+        "tr": "Birbirine bitişik altıgen çinilerin tonları mavi ile yeşil arasında değişir. Yüzeyde ince parlak noktalar vardır.",
+        "en": "Closely set hexagonal tiles in shades from blue to green, with fine glints across the surface."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p071-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "138"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Sandukanın kitabeli çini yüzü",
+        "en": "Inscribed tile end of a sarcophagus"
+      },
+      "alt": {
+        "tr": "Altıgen biçimli sanduka başında, lacivert zeminde kabartma Arapça yazılar bulunur. Çerçevesi turkuaz çinidir.",
+        "en": "The end of a sarcophagus with raised Arabic script on a dark blue ground inside a turquoise tile frame."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p071-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "138"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Sandukanın yazılı yan yüzü",
+        "en": "Inscribed side of a sarcophagus"
+      },
+      "alt": {
+        "tr": "Sandukanın yan yüzeyinde koyu renkli çini üzerinde kabartma Arapça yazı kuşakları görünür. Kenarlar turkuaz çinilidir.",
+        "en": "Bands of raised Arabic script on dark tile along the side of a sarcophagus, with turquoise tile edges."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p072-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "140-141"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Tuğla örgülü kubbe ve çini kuşak",
+        "en": "Brick dome with a tile band"
+      },
+      "alt": {
+        "tr": "Ortasında küçük bir çini madalyon bulunan, balıksırtı tuğla örgülü kubbe. Çevresini turkuaz çini kuşak ve üçgen geçişler sarar.",
+        "en": "A herringbone brick dome with a small tile medallion at the centre, ringed by a turquoise tile band and triangular transitions."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p073-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "142"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Taş üzerine oyulmuş kitabe",
+        "en": "Inscription carved in stone"
+      },
+      "alt": {
+        "tr": "Sivri kemerli bir nişte, taşa oyulmuş çok satırlı Arapça yazı levhası yer alır. Levhanın üst bölümü dar ve yüksektir.",
+        "en": "A multi-line Arabic inscription carved in stone and set in a pointed-arch niche. The upper part of the plaque is narrow and tall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Türbeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Yapım tarihi, bani ve türbede yatan kişi kitapta yok.",
@@ -205,7 +204,56 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-arap-dede-turbesi/p078-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "152"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin dıştan görünüşü",
+        "en": "Exterior of the tomb"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı, kırma kiremit çatılı küçük yapı yol kenarında duruyor. Sol tarafta koyu renkli ahşap kapı, sağda demir şebekeli bir pencere var; arkada apartmanlar görülüyor.",
+        "en": "A small white-plastered building with a red tiled hipped roof beside a street. A dark wooden door is on the left and a barred window on the right, with apartment blocks behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-arap-dede-turbesi/p078-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "152"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi ve sanduka",
+        "en": "Inside the tomb with the sarcophagus"
+      },
+      "alt": {
+        "tr": "Dar ve uzun, beyaz boyalı odada yeşil örtülü, sarıklı sanduka duruyor. Sağda ahşap çerçeveli pencere, solda duvara asılı bir levha ve üstte ahşap tavan var.",
+        "en": "A narrow white-painted room with a sarcophagus under a green cover and a turban. A wooden-framed window is on the right, a plaque on the left wall and a timber ceiling above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

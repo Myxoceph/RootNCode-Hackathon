@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kitabenin metni ve dili kitapta verilmiyor (yalnızca H. 701 tarihi); okunuşu eklenmeli.",
@@ -309,7 +308,128 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-turbesi/p015-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "26"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Konik külahlı türbenin dış görünüşü",
+        "en": "Exterior of the conical-roofed tomb"
+      },
+      "alt": {
+        "tr": "Kesme taştan, sekizgen gövdeli türbe, taş konik bir külahla örtülü. Önünde demir korkuluk, arkada taş duvarlı cami cephesi görünüyor.",
+        "en": "A tomb of cut stone with a polygonal body and a stone conical roof. An iron railing stands in front and the stone wall of the mosque rises behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-turbesi/p015-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "27"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Türbenin ahşap kapısı",
+        "en": "The tomb's wooden door"
+      },
+      "alt": {
+        "tr": "Kesme taş çerçeveli, sivri kemerli girişte çift kanatlı, geometrik oymalı ahşap kapı. Kapının üstünde boş bir kitabe alanı var.",
+        "en": "A double-leaf wooden door with geometric carving in a pointed-arch entrance framed by cut stone. An inscription panel sits above the door."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-turbesi/p015-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "27"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Geometrik taş şebekeli pencere",
+        "en": "Window with a geometric stone lattice"
+      },
+      "alt": {
+        "tr": "Yarım daire kemerli taş bir duvar açıklığında, yıldız geçmeli geometrik desenli taş şebeke görülüyor.",
+        "en": "A round-arched opening in a stone wall, filled with a stone lattice in an interlocking star pattern."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-turbesi/p015-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "27"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yeşil örtülü üç sanduka",
+        "en": "Three sarcophagi under green covers"
+      },
+      "alt": {
+        "tr": "Türbenin içinde yan yana duran, yeşil örtülerle kaplı üç sanduka. Arkada kesme taş duvar ve küçük bir niş görülüyor.",
+        "en": "Three sarcophagi side by side inside the tomb, covered in green cloth. A cut stone wall and a small niche are visible behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-turbesi/p015-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "27"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Duvara dayalı mezar taşları",
+        "en": "Gravestones leaning on the wall"
+      },
+      "alt": {
+        "tr": "Duvarın dibine dayanmış, kabartmalı ve yazılı birkaç taş mezar parçası; biri sarıklı biçimli başlık taşıyor. Arkada ahşap kapı görünüyor.",
+        "en": "Several carved and inscribed stone grave pieces leaning against the wall, one with a turban-shaped top. A wooden door shows behind them."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

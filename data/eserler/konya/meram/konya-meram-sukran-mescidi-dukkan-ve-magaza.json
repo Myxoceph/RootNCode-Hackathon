@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Yapım tarihi, banî ve vakıf bilgisi kitapta yok (dating/founder/waqf: null).",
@@ -196,7 +195,56 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sukran-mescidi-dukkan-ve-magaza/p129-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "255"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dükkân önünde taş çeşme",
+        "en": "Stone fountain beside a shop front"
+      },
+      "alt": {
+        "tr": "Eski bir yapının cephesinde yuvarlak kemerli taş bir çeşme nişi, yanında dükkân girişi ve önüne yığılmış beyaz çuvallar görülüyor.",
+        "en": "A round-arched stone fountain niche in the front of an old building, beside a shop entrance with white sacks piled in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sukran-mescidi-dukkan-ve-magaza/p129-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "255"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Dükkânın içi",
+        "en": "Inside the shop"
+      },
+      "alt": {
+        "tr": "Dar bir dükkânın içinde iki yanda raflara dizilmiş renkli kumaşlar, yorganlar ve halılar görülüyor; tavanda floresan ışık var.",
+        "en": "The inside of a narrow shop with colourful fabrics, quilts and rugs stacked on shelves along both sides, lit by strip lights."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

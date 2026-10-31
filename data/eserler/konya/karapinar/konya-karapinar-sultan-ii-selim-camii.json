@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kitabelerin metni ve dili kitapta yok; okunup eklenmeli.",
@@ -367,7 +366,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-camii/p022-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "40"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı",
+        "en": "Interior of the mosque"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, mavi halılı geniş ibadet mekânı. Ortada büyük bir avize, uzakta mihrap ve minber, üstte nakışlı kubbe ve kemerler görülüyor.",
+        "en": "A wide prayer hall with white walls and blue carpet. A large chandelier hangs in the middle, with the mihrab and minbar in the distance and a painted dome and arches above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-camii/p022-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "41"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kapı üstündeki kırmızı zeminli kitabe",
+        "en": "Red inscription panel above a niche"
+      },
+      "alt": {
+        "tr": "Mermer cephede kırmızı zeminli, altın tonlu yazılı dikdörtgen bir kitabe levhası; altında iki yuvarlak yazı madalyonu ve oymalı bir niş yer alıyor.",
+        "en": "A rectangular inscription panel with red ground on a marble facade, with two round calligraphic medallions and a carved niche below."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-camii/p022-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "41"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Geometrik panolu ahşap kapı",
+        "en": "Wooden door with geometric panels"
+      },
+      "alt": {
+        "tr": "Güneş ışığının çaprazlama düştüğü, geometrik kabartma panolu koyu kahverengi ahşap kapı; sağda metal bir halka tokmak var.",
+        "en": "A dark brown wooden door with geometric relief panels, crossed by sunlight, with a metal ring knocker on the right."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

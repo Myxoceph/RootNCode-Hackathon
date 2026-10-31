@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Aynı yerdeki İrfaniye Medresesi'nin ayrı kaydı ids.md'de yok; ilişki yazılmadı.",
@@ -285,7 +284,32 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-vakif-is-hani/p130-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "256-257"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Vakıf İş Hanı'nın köşeden görünüşü",
+        "en": "Corner view of the Vakıf İş Hanı"
+      },
+      "alt": {
+        "tr": "Dört katlı, krem boyalı büyük bir bina; zemin katta kemerli taş arkat ve turuncu bir tabela bandı var. Geniş çıkmalı çatı saçağı binayı çevreliyor, üst katlarda sıralı küçük pencereler yer alıyor.",
+        "en": "A large four-storey cream-coloured building with an arcade of stone arches on the ground floor and an orange sign band above it. A wide overhanging roof surrounds it, with rows of small windows on the upper floors."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

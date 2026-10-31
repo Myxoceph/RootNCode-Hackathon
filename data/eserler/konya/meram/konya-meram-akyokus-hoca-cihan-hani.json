@@ -9,13 +9,11 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Hanın yaptırıcısı için kitap yalnızca Altunapa Hanı vakfiyesindeki kayda dayanıyor; bu vakfiyedeki kervansarayın Hoca Cihan Hanı olduğu açıkça yazılmıyor, banî probable bırakıldı.",
       "Altunapa Hanı'nın ayrı bir kaydı ids.md'de yok; ilişki yazılmadı.",
-      "Vakfiyeyi yazan/bırakan Hacı İbrahim'in kimliği kitapta açıklanmıyor.",
-      "s. 246 metin içermiyor (yalnızca görsel); fotoğraf/çizim sonra eklenmeli."
+      "Vakfiyeyi yazan/bırakan Hacı İbrahim'in kimliği kitapta açıklanmıyor."
     ],
     "data_quality_notes": [
       {
@@ -372,7 +370,56 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-akyokus-hoca-cihan-hani/p124-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "244"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Akyokuş Hanı, havadan görünüm",
+        "en": "Akyokuş Inn, aerial view"
+      },
+      "alt": {
+        "tr": "Havadan çekilmiş fotoğrafta gri çatılı, taş duvarlı uzun bir yapı, yanında kiremit çatılı küçük bir bina ve taş döşeli bir alan görülüyor. Çevre kurak bir yamaç.",
+        "en": "Aerial view of a long stone building with a grey roof, a small tiled-roof building beside it, and a paved area, on a dry hillside."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-akyokus-hoca-cihan-hani/p124-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "245"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tonozlu salon, restoran düzeni",
+        "en": "Vaulted hall used as a restaurant"
+      },
+      "alt": {
+        "tr": "Kaba kesme taştan kemerli tonozlarla örtülü uzun bir salon. Ortada kırmızı halı, iki yanda örtülü masalar ve avizeler var.",
+        "en": "A long hall covered by rough-cut stone arches and vaults, with a red carpet in the middle, covered dining tables and chandeliers."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

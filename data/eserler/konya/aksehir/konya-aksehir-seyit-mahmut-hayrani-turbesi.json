@@ -12,7 +12,6 @@
       "Hayrani'nin Mevlâna Türbesi'ne benzerliği anılıyor ancak Mevlâna Türbesi'nin kaydı ids.md'de yok; ilişki yazılmadı.",
       "Dönem kodu: ilk yapı Hayrani'nin 1268'deki vefatından öncedir (Selçuklu), ikinci aşama 1420'dir (kitap dönem adı vermiyor); selcuklu olarak işaretlendi, gözden geçirilmeli.",
       "Türbe külliyesinin diğer yapıları (günümüze ulaşmamış) kitapta adlandırılmıyor.",
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
     ],
@@ -502,7 +501,176 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p096-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "189"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Türbe ve çevresi, havadan",
+        "en": "The tomb and its surroundings from above"
+      },
+      "alt": {
+        "tr": "Çam ağaçlarının arasında, tuğla örgülü dilimli sivri külahlı türbe taş bir kaide üzerinde yükseliyor. Solda mezar taşlarının olduğu bir alan, arkada evler görülüyor.",
+        "en": "Among pine trees, a tomb with a ribbed brick cone rises from a stone base. A graveyard area is on the left and houses lie in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p098-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "192"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Dilimli külah",
+        "en": "Ribbed conical roof"
+      },
+      "alt": {
+        "tr": "Mavi gökyüzü önünde, tuğla örgülü dilimli külah yukarı doğru daralıyor. Alt kısımda küçük sivri kemerli nişler sıralanıyor.",
+        "en": "A ribbed brick cone narrows upward against a blue sky. Small pointed-arched niches run along its lower part."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p098-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "192"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Çatı, havadan",
+        "en": "Roof from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında külah, yaprak biçimli dilimlerden oluşan bir çiçeğe benziyor. Etrafında kare bir çatı, yanında merdiven ve çam ağaçları var.",
+        "en": "Seen from above, the cone looks like a flower made of leaf-shaped segments. A square roof surrounds it, with a staircase and pine trees beside it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p097-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "190-191"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Tuğla duvarda çini süslemeler",
+        "en": "Tile details on the brick wall"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla duvarda sivri kemerli sığ nişler sıralanıyor. Bazı nişlerin içinde turkuaz ve beyaz çini parçaları görülüyor.",
+        "en": "A red brick wall with a row of shallow pointed-arched niches. Some niches hold turquoise and white tile fragments."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p098-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "193"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi ve sandukalar",
+        "en": "Inside the tomb with the sarcophagi"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada yeşil örtülü sandukalar halıların üzerinde yan yana duruyor. Tavan tuğla kemerli; duvarlarda ahşap çerçeveli pencereler var.",
+        "en": "In a white room, sarcophagi under green covers stand side by side on rugs. The ceiling is brick-vaulted and the walls have wooden-framed windows."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p099-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "194"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap nişi ve pencereler",
+        "en": "Mihrab niche and windows"
+      },
+      "alt": {
+        "tr": "Beyaz boyalı duvarda kemerli bir mihrap nişi var. İki yanda sivri kemerli pencereler, üstte hat levhası ve yuvarlak levhalar görülüyor.",
+        "en": "A white wall with an arched mihrab niche. Pointed-arched windows flank it, with a calligraphy panel and round plaques above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p099-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "195"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kitabe",
+        "en": "Inscription panel"
+      },
+      "alt": {
+        "tr": "Açık renkli taşa oyulmuş, sivri kemerli çerçeveli kitabede birkaç satır Arapça yazı var. Köşelerde geometrik kabartmalar görülüyor.",
+        "en": "A pale stone panel with a pointed-arch frame, carved with several lines of Arabic script and geometric reliefs in the corners."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

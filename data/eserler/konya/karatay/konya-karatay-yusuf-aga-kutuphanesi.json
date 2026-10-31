@@ -9,11 +9,9 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Sivil Mimari",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "\"Abit Çelebi\" adı kitapta açıklanmıyor (yalnızca başlıkta geçiyor); alternate_names'e eklendi, kimliği gözden geçirilmeli.",
-      "Kitâbe metinleri (inşa kitâbesi ve paneller) kitapta yazılı verilmiyor; fotoğraftan okunup transliterasyon ve meal eklenmeli.",
       "Sultan Selim Camii Konya'daki cami olup ids.md'de yok (tabloda yalnızca Karapınar II. Selim kayıtları var); ilişki yazılmadı, kayıt eklenirse urban_context ilişkisi düşünülmeli.",
       "Yusuf Ağa'nın Konya'da yaptırdığı medrese ids.md'de yok; ilişki yazılmadı.",
       "Mevlevî tarikatına bağlılık bilgisi kitapta \"kaynaklarda ifade edilmektedir\" ile aktarılıyor (people/sections içinde not olarak)."
@@ -425,7 +423,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-yusuf-aga-kutuphanesi/p146-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "288"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Yusuf Ağa Kütüphanesi'nin ön cephesi",
+        "en": "Front façade of Yusuf Ağa Library"
+      },
+      "alt": {
+        "tr": "Açık renkli kesme taştan, kubbeli bir yapı; köşelerinde küçük kubbecikler var. Kapıya merdivenle çıkılıyor, pencereler demir parmaklıklı ve kemerli.",
+        "en": "A dome-topped building of light cut stone with small domed corner turrets. Steps lead to a door, and the arched windows have iron grilles."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-yusuf-aga-kutuphanesi/p147-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "290"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Cephede iki sıra pencere",
+        "en": "Two rows of windows on the façade"
+      },
+      "alt": {
+        "tr": "Açık renkli taş duvarda iki sıra halinde demir parmaklıklı pencereler var. Üst sıradakiler kemerli, alt sıradakiler dikdörtgen çerçeveli; kemer taşları iki renkli.",
+        "en": "Two rows of iron-grilled windows in a pale stone wall. The upper ones are arched with two-tone voussoirs, the lower ones are set in rectangular frames."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-yusuf-aga-kutuphanesi/p146-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "289"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kütüphanenin okuma ve çalışma salonu",
+        "en": "Reading and work hall of the library"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kubbeli bir salonda ahşap dolaplar, çalışma masaları ve kitap sergileyen bir raf var. Üstte kemerli pencerelerden ışık giriyor, zemin parkelidir.",
+        "en": "A stone-walled domed hall with wooden bookcases, desks and a display rack of books. Light comes in through arched windows above, and the floor is parquet."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

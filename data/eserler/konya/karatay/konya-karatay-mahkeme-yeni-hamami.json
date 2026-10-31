@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Su Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "İnşa tarihi kitapta yok; vakfiye/vakıf kaydı bulunursa tarih eklenmeli.",
@@ -301,7 +300,32 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-mahkeme-yeni-hamami/p110-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "217"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Mahkeme Hamamı, yüksekten görünüm",
+        "en": "Mahkeme Bath, elevated view"
+      },
+      "alt": {
+        "tr": "Yüksekten çekilmiş fotoğrafta gri metal kaplı çatılar ve iki küçük kubbe benzeri çatı yapısı görülüyor. Binanın önünde köşeyi saran dükkânlar ve taş döşemeli bir meydan var.",
+        "en": "Elevated view of grey metal-clad roofs with two small pyramid-like roof structures. Shops wrap around the corner of the building, facing a paved square."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

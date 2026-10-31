@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Banî ve mimar bilgisi (Lala Mustafa Paşa, Mimar Sinan) üst eser (külliye) kaydından aktarıldı; yapı metninde ayrıca belirtilmiyor.",
@@ -247,7 +246,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-medresesi/p036-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "69"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Beyaz taş çerçeveli ahşap kapı",
+        "en": "Wooden door with a white stone frame"
+      },
+      "alt": {
+        "tr": "Moloz taş duvarda, sivri kemerli beyaz taş çerçeveli, kahverengi ahşap kapı; solda küçük bir levha ve fener görülüyor.",
+        "en": "A brown wooden door with a pointed white stone frame in a rubble stone wall, with a small plaque and a lamp beside it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-medresesi/p036-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "69"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Işık huzmeli tuğla tonozlu oda",
+        "en": "Brick-vaulted room with a shaft of light"
+      },
+      "alt": {
+        "tr": "Tuğla tonozlu odada tavandan giren ışık huzmesi halıya vuruyor; kenarlarda sedirler ve bir avize görülüyor.",
+        "en": "A shaft of light from the ceiling falls on the carpet of a brick-vaulted room with divans along the walls and a chandelier."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-medresesi/p037-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "70-71"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Bahçede kubbeli yapılar ve gölgelik",
+        "en": "Domed buildings and a pavilion in the garden"
+      },
+      "alt": {
+        "tr": "Ağaçlar ve çiçeklerle dolu bahçede, sütunlu bir gölgelik ve arkasında kurşun kaplı kubbeler, küçük bacalar görülüyor.",
+        "en": "A garden with trees and flowers, a columned pavilion and lead-covered domes with small chimneys behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }
