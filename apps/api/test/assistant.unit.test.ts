@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { createChatModel, oneSystemMessage } from "../src/modules/assistant/assistant.model.ts";
 import { searchTerms } from "../src/modules/assistant/assistant.repository.ts";
-import { plainText, resolveCitations } from "../src/modules/assistant/assistant.ts";
-import { SourceRegistry } from "../src/modules/assistant/assistant.tools.ts";
+import { plainText, resolveCitations, systemPrompt } from "../src/modules/assistant/assistant.ts";
+import { runTool, SourceRegistry, type ToolContext } from "../src/modules/assistant/assistant.tools.ts";
 
 describe("resolveCitations", () => {
   const sources = new SourceRegistry();
@@ -77,6 +77,55 @@ describe("createChatModel", () => {
     const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl });
     await expect(model.complete([], [], AbortSignal.timeout(1_000))).rejects.toThrow(/^Model returned HTTP 500$/);
   });
+
+  describe("ping", () => {
+    const ANSWER = JSON.stringify({ choices: [{ message: { content: "ok" } }] });
+    /** `/models` always answers; completions answer with `completion` (a status, or 200 with ANSWER). */
+    function provider() {
+      const state = { completion: 200, clock: 0 };
+      const fetchImpl = (async (url: string) =>
+        url.endsWith("/models")
+          ? new Response("{}")
+          : new Response(state.completion === 200 ? ANSWER : "busy", { status: state.completion })) as unknown as typeof fetch;
+      const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl, now: () => state.clock });
+      const ask = () => model.complete([], [], AbortSignal.timeout(1_000)).catch(() => null);
+      return { state, model, ask };
+    }
+
+    it("reports unavailable after the model fails on its side, though /models answers", async () => {
+      const { state, model, ask } = provider();
+      expect(await model.ping()).toBe(true);
+      state.completion = 503;
+      await ask();
+      expect(await model.ping()).toBe(false);
+    });
+
+    it("asks the provider again a minute after the failure", async () => {
+      const { state, model, ask } = provider();
+      state.completion = 429;
+      await ask();
+      state.clock = 59_000;
+      expect(await model.ping()).toBe(false);
+      state.clock = 61_000;
+      expect(await model.ping()).toBe(true);
+    });
+
+    it("is available again as soon as an answer comes back", async () => {
+      const { state, model, ask } = provider();
+      state.completion = 503;
+      await ask();
+      state.completion = 200;
+      await ask();
+      expect(await model.ping()).toBe(true);
+    });
+
+    it("stays available after a fault in our own request (400)", async () => {
+      const { state, model, ask } = provider();
+      state.completion = 400;
+      await ask();
+      expect(await model.ping()).toBe(true);
+    });
+  });
 });
 
 describe("oneSystemMessage", () => {
@@ -109,5 +158,40 @@ describe("oneSystemMessage", () => {
 describe("plainText", () => {
   it("removes bold and headings and turns * bullets into -", () => {
     expect(plainText("## Başlık\n* **Kubbe:** kiremit kaplı [1]\n  * iç madde")).toBe("Başlık\n- Kubbe: kiremit kaplı [1]\n  - iç madde");
+  });
+});
+
+describe("systemPrompt", () => {
+  it("names the cities it is given, so a newly published city is not turned away", () => {
+    expect(systemPrompt("tr", "2026-11-01", ["Bursa", "Hatay", "Konya"])).toContain("Bursa, Hatay ve Konya illerindeki");
+    expect(systemPrompt("tr", "2026-11-01", [])).toContain("Türkiye'deki vakıf eserleri");
+  });
+});
+
+describe("plan_trip tool", () => {
+  async function plannedDate(hour: number, date?: string) {
+    let query: Record<string, string> = {};
+    const context: ToolContext = {
+      api: async (_path, q) => {
+        query = q as Record<string, string>;
+        return { statusCode: 404, body: {} };
+      },
+      repository: { searchAssets: async () => [] },
+      sources: new SourceRegistry(),
+      lang: "tr",
+      today: "2026-10-31",
+      hour,
+    };
+    await runTool("plan_trip", JSON.stringify({ city: "bursa", duration: "1", ...(date && { date }) }), context);
+    return query.date;
+  }
+
+  it("starts a trip asked for in the evening tomorrow", async () => {
+    expect(await plannedDate(20)).toBe("2026-11-01");
+  });
+
+  it("leaves the planner's own default (today) during the day, and keeps a date the model gave", async () => {
+    expect(await plannedDate(10)).toBeUndefined();
+    expect(await plannedDate(20, "2026-11-02")).toBe("2026-11-02");
   });
 });

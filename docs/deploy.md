@@ -167,7 +167,16 @@ tünelden ulaşılır. `TRUSTED_PROXIES=private_ranges` ile Caddy özel ağdan g
 yalnızca tünelde ve portlar `127.0.0.1`'e bağlıyken açılır; sunucuda kapalı kalır (varsayılan), yoksa
 ziyaretçi IP'sini taklit edip hız sınırını aşabilir.
 
-Kurulum (alan adının sahibi yapar, bir kez):
+Kurulum (alan adının sahibi yapar, bir kez). İki yol var:
+
+- **Token (önerilen):** tünelin sahibi kendi bilgisayarında `cloudflared tunnel token vagabonds-demo`
+  çalıştırır, çıkan değeri demo Mac'inin `deploy/.env` dosyasına `TUNNEL_TOKEN=<değer>` olarak yazar.
+  Bu durumda demo Mac'inde `login`, sertifika ya da yapılandırma dosyası gerekmez; tünel ve alan adı
+  sahibinin hesabında kalır, DNS kaydı (`route dns`) zaten vardır. `deploy/demo.sh tunnel` tüneli
+  `HTTP_PORT`'taki Caddy'ye bağlar. Token bir parola gibidir: git'e, sohbete ya da komut satırına
+  yazılmaz (betik onu ortam değişkeniyle verir). Sahibi tüneli istediği an `cloudflared tunnel delete`
+  ya da panelden kapatabilir.
+- **Giriş:** aynı Mac'te aşağıdaki komutlar.
 
 ```bash
 brew install cloudflared
@@ -193,6 +202,49 @@ Terminal açık kaldıkça site yayındadır. Demo boyunca Mac'in uyumaması iç
 
 Docker'ın disk dosyası (`Docker.raw`) imajlar derlendikçe büyür. Mac'in diski dolarsa Docker'ın sanal
 makinesi bozulup açılmayabilir; derlemeden önce en az 10 GB boş yer bırak.
+
+## Final günü (MacBook Air M4)
+
+Final demosu ekibin MacBook Air'inden (M4, 16 GB) tünelle yayınlanır. Bütün komutlar `deploy/demo.sh`'te:
+
+| Komut | Ne yapar |
+|---|---|
+| `deploy/demo.sh up` | Yığını başlatır (yalnızca değişeni derler), hazır olmasını bekler, ön kontrolü çalıştırır |
+| `deploy/demo.sh tunnel` | Siteyi `PUBLIC_URL`'de yayınlar; Mac'i uyanık tutar, Ctrl-C kapatır |
+| `deploy/demo.sh check [URL]` | Ön kontrol; URL verilirse tünelden, ziyaretçinin gördüğü gibi |
+| `deploy/demo.sh backup` | Veritabanını `deploy/backups/`'a yedekler (hesaplar, ziyaretler, notlar, fotoğraflar) |
+| `deploy/demo.sh down` | Önce yedek alır, sonra yığını durdurur (veri volume'da kalır) |
+| `deploy/demo.sh logs` | API kayıtlarını izler |
+
+Ön kontrol (`npm run demo:check`) şunlara bakar: API ve veritabanı, yayındaki eser sayısı (en az 500),
+bir kapak fotoğrafının medya Worker'ından gelmesi, harita altlığı, web uygulaması, asistanın gerçek bir
+soruya cevap vermesi ve boş disk (en az 10 GB). `/chat/status` bir soru sağlayıcı tarafında
+başarısız olunca (yoğunluk, kota, reddedilen anahtar) bir dakika `available: false` döner ve uygulama
+sohbeti gizler; ama o ilk sorudan önce sorunu bilemez, bu yüzden kontrol bir soru da sorar.
+
+**Bir gün önce** (demonun yapılacağı ağdan):
+1. `git switch main && git pull`, `deploy/demo.sh up`: derleme burada yapılır, demo günü yeniden derlenmez.
+2. `npm run map:warm` (harita önbelleği) ve `deploy/demo.sh tunnel` ile telefondan bir tur.
+3. Moderatör ve admin hesaplarını aç ([Moderatör ve admin hesabı](#moderatör-ve-admin-hesabı)); parolalar bir kez yazılır.
+4. `deploy/demo.sh backup`.
+
+**Tüneli aynı anda yalnızca bir bilgisayar açar.** İki bilgisayar aynı tünele bağlanırsa Cloudflare
+istekleri ikisine dağıtır: kayıt birinin veritabanına, giriş öbürününkine düşer. Adresin hangi makineyi
+gösterdiğini `/api/health`'teki `uptimeSeconds`'ı yerel `http://127.0.0.1:8080/api/health` ile
+karşılaştırarak gör.
+
+**Demo sabahı:** Mac şarjda, Docker Desktop açık. `deploy/demo.sh up`, ayrı bir terminalde
+`deploy/demo.sh tunnel`, sonra `deploy/demo.sh check https://vagabonds.allbytech.com`: hepsi ✓ olmalı.
+
+**Bir şey ters giderse:**
+
+| Durum | Ne yapılır |
+|---|---|
+| Salonun interneti yok ya da yavaş | Mac'i bir telefonun hücresel hotspot'una bağla; tünel kendiliğinden yeniden bağlanır. Yanında hotspot verebilecek iki telefon olsun. |
+| Tünel bağlanmıyor | `deploy/demo.sh tunnel` çıktısına bak; token yanlışsa `Unauthorized`. Telefonlar ve Mac aynı ağdaysa geçici olarak `HTTP_PORT=0.0.0.0:8080` ile `up` ve uygulamada `EXPO_PUBLIC_API_URL=http://<Mac'in IP'si>:8080/api`; `TRUSTED_PROXIES` satırını o sırada kaldır. |
+| Asistan cevap vermiyor (`check`'te ✗) | Sağlayıcı yoğun ya da kota dolu. `deploy/.env`'de diğer sağlayıcıya (EVREN ↔ Gemini) geç ya da Ollama yedeği, sonra `deploy/demo.sh up`. Olmazsa asistanı gösterme; sitenin gerisi etkilenmez. |
+| İnternet hiç yok | Görseller, harita ve asistan dışarıdan gelir, çalışmaz. Uygulama `EXPO_PUBLIC_DATA_SOURCE=mock` ile paketli veriyle açılır (eser metinleri, rotalar; hesap, ziyaret ve ödüller yok). Bu derleme demodan önce telefonda hazır olmalı. |
+| Veri bozuldu | `deploy/demo.sh down`, ardından [yedekten geri yükle](#kayıtlar-yedek-sorun-giderme). |
 
 ## AI asistan
 
