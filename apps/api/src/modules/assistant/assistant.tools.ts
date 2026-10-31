@@ -1,12 +1,15 @@
 import {
   AssetDetailSchema,
   CityDishesResponseSchema,
+  TransitEntryPointCodeSchema,
+  TransitPlanResponseSchema,
   TripPlanResponseSchema,
   WeatherResponseSchema,
   type AssetDetail,
   type ChatCitation,
   type ChatCitationKind,
   type Lang,
+  type TransitPlanResponse,
   type TripPlanResponse,
 } from "@vagabonds/contracts";
 import { z } from "zod";
@@ -51,6 +54,8 @@ export interface ToolContext {
   /** Local date and hour of the question (Türkiye). */
   today: string;
   hour: number;
+  /** The visitor's position, when the app sent it. */
+  origin?: { lat: number; lng: number } | undefined;
 }
 
 export interface ToolResult {
@@ -58,6 +63,8 @@ export interface ToolResult {
   content: string;
   /** Set by `plan_trip`, for the response's `attachments.trip`. */
   trip?: TripPlanResponse;
+  /** Set by `transit_route`, for the response's `attachments.transit`. */
+  transit?: TransitPlanResponse;
 }
 
 // Keeps a tool result within a small model's context window.
@@ -88,6 +95,10 @@ const ARGS = {
   }),
   city_dishes: z.object({ city: CityArg, kind: z.enum(["main", "meze", "dessert", "street"]).optional() }),
   weather: z.object({ city: CityArg }),
+  transit_route: z.object({
+    to: z.string().trim().min(2).max(120),
+    from: z.string().trim().min(2).max(120).default("current"),
+  }),
 } as const;
 
 type ToolName = keyof typeof ARGS;
@@ -154,9 +165,53 @@ export const TOOL_SPECS: ToolSpec[] = [
     description: "Bir ilin anlık hava durumu ve 3 günlük tahmini.",
     parameters: { type: "object", properties: { city: cityParam }, required: ["city"] },
   },
+  {
+    name: "transit_route",
+    description:
+      "Konya'da (pilot) bir esere otobüs ve tramvayla nasıl gidilir: yürüme, binilecek ve inilecek duraklar, hat ve saatler. Diğer illerde yoktur.",
+    parameters: {
+      type: "object",
+      properties: {
+        to: { type: "string", description: "Varılacak eserin id'si (search_assets sonucundan)" },
+        from: {
+          type: "string",
+          description: `Başlangıç: current (ziyaretçinin konumu), ${TransitEntryPointCodeSchema.options.join(", ")} ya da bir eserin id'si`,
+        },
+      },
+      required: ["to"],
+    },
+  },
 ];
 
 const failure = (message: string): ToolResult => ({ content: JSON.stringify({ error: message }) });
+
+const clock = (iso: string) => iso.slice(11, 16);
+
+/** The options in words the model can retell; the app draws the same plan on the map. */
+function compactTransit(plan: TransitPlanResponse, ref: number): Record<string, unknown> {
+  if (plan.itineraries.length === 0) {
+    return { ref, from: plan.from.name, to: plan.to.name, options: [], note: "No bus or tram helps on this trip; suggest walking or a taxi." };
+  }
+  return {
+    ref,
+    from: plan.from.name,
+    to: plan.to.name,
+    // Set when nothing ran at the asked time (night): say the first departures are in the morning.
+    searchedFrom: plan.searchedFrom,
+    options: plan.itineraries.map((it) => ({
+      leave: clock(it.departure),
+      arrive: clock(it.arrival),
+      minutes: it.durationMinutes,
+      transfers: it.transfers,
+      steps: it.legs.map((leg) =>
+        leg.mode === "walk"
+          ? `walk ${leg.distanceMeters} m to ${leg.to.name}`
+          : `${leg.mode} ${leg.line?.name ?? ""}${leg.headsign ? ` towards ${leg.headsign}` : ""}: board at ${leg.from.name} ${clock(leg.departure)}, ${leg.stopsBetween + 1} stops, get off at ${leg.to.name} ${clock(leg.arrival)}`,
+      ),
+    })),
+    source: `${plan.source.name}, ${plan.source.timetable}`,
+  };
+}
 
 const clip = (text: string | null | undefined, max: number) => (!text ? null : text.length > max ? `${text.slice(0, max)}…` : text);
 
@@ -292,6 +347,22 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
     return {
       content: JSON.stringify({ ref: sources.add("weather", weather.city.code, title), current: weather.current, daily: weather.daily }),
     };
+  },
+
+  async transit_route({ to, from }, { api, sources, lang, origin }) {
+    const start = from === "current" ? origin && `${origin.lat},${origin.lng}` : from;
+    if (!start) {
+      return failure("The visitor's position is unknown: ask them to share their location, or where they start (a station, the bus terminal or a site).");
+    }
+    const { statusCode, body } = await api("/transit/plan", { from: start, to, lang });
+    const code = (body as { error?: { code?: string } }).error?.code;
+    if (code === "TRANSIT_NOT_AVAILABLE_HERE") return failure("Transit directions are piloted in Konya only, and only inside the city; say so.");
+    if (statusCode === 404) return failure(`No asset with id "${to}"; use search_assets first.`);
+    if (statusCode === 503) return failure("Transit directions are unavailable right now.");
+    if (statusCode !== 200) return failure(`Cannot plan this trip (${code ?? statusCode}).`);
+    const plan = TransitPlanResponseSchema.parse(body);
+    const ref = sources.add("transit", plan.to.assetId ?? plan.city, `${plan.from.name} → ${plan.to.name}`);
+    return { content: JSON.stringify(compactTransit(plan, ref)), transit: plan };
   },
 };
 

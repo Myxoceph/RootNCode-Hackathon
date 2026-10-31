@@ -78,7 +78,8 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
     const lang = resolveLang(body.lang, request.headers["accept-language"]);
     const today = turkeyToday();
     const hour = turkeyHour();
-    const key = body.history.length === 0 ? cacheKey(body.message, body.assetId, lang, today, hour) : null;
+    // A position makes every question different, and is never kept.
+    const key = body.history.length === 0 && !body.origin ? cacheKey(body.message, body.assetId, lang, today, hour) : null;
     const cached = key === null ? undefined : answers.get(key);
     reply.header("cache-control", "no-store");
     if (cached && Date.now() - cached.at < ANSWER_CACHE_MS) return cached.response;
@@ -94,7 +95,7 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
     try {
       const result = await ask(
         model,
-        { message: body.message, history: body.history, assetId: body.assetId, lang, today, hour },
+        { message: body.message, history: body.history, assetId: body.assetId, lang, today, hour, origin: body.origin },
         { api, repository },
         AbortSignal.timeout(CHAT_TIMEOUT_MS),
       );
@@ -104,7 +105,7 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
         answer: result.answer,
         citations: result.citations,
         grounded: result.citations.length > 0,
-        attachments: { trip: result.trip },
+        attachments: { trip: result.trip, transit: result.transit },
         model: model.name,
       });
       if (key !== null) {
