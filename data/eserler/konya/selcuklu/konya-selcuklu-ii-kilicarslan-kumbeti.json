@@ -12,7 +12,6 @@
       "Kitâbelerin okunuşu ve mealleri kitapta yalnızca kısmen veriliyor; beden, taş üstü ve Ayet'el-Kürsi kitâbelerinin metni eklenmeli.",
       "Mimar kitâbesi (Bursa kemeri üstü) ile pencere kemeri üstündeki Abdülgaffar oğlu Yusuf kitâbesinin aynı olup olmadığı netleştirilmeli.",
       "1960'lı yıllardaki temizlik/restorasyonun kesin yılı kitapta yok; zaman çizelgesine eklenmedi.",
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
     ],
@@ -526,7 +525,200 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ii-kilicarslan-kumbeti/p089-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "174-175"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "İki kümbet ve avlu cephesi",
+        "en": "The two kumbets and their courtyard"
+      },
+      "alt": {
+        "tr": "Akşam ışığında, bal rengi taştan sekizgen büyük bir kümbet ile yanında daha küçük bir kümbet görülüyor. İkisi de külahlı; girişlerine merdivenle çıkılıyor.",
+        "en": "Evening light on a large octagonal honey-coloured stone kumbet with a smaller one beside it. Both have conical roofs and stairs lead to their entrances."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ii-kilicarslan-kumbeti/p092-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "180-181"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kümbetler ve çevresi, havadan",
+        "en": "The kumbets and surroundings from above"
+      },
+      "alt": {
+        "tr": "Kuşbakışı görüntüde, gri külahlı büyük kümbet ile yanındaki küçük kümbet kemerli revaklı bir avluda duruyor. Arkada ağaçlar ve şehir silüeti var.",
+        "en": "From above, a large grey-roofed kumbet and a smaller one stand in a courtyard with arched galleries. Trees and the city skyline lie beyond."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ii-kilicarslan-kumbeti/p090-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "176"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Giriş merdiveni ve kapı",
+        "en": "Entrance stairs and doorway"
+      },
+      "alt": {
+        "tr": "Taş örgülü yüksek cephede sivri kemerli bir kapı var. Önünde korkuluklu bir merdiven yukarıya çıkıyor; yanda ikinci bir sivri kemer görülüyor.",
+        "en": "A tall stone façade with a pointed-arched doorway. A railed staircase climbs to it, with a second pointed arch visible beside it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ii-kilicarslan-kumbeti/p090-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "176"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kemer ve pencere, yazıtlı levha",
+        "en": "Arch, window and inscribed panel"
+      },
+      "alt": {
+        "tr": "Açık renkli taş duvarda küçük demir şebekeli bir pencere ve altında yarım daire kemer var. Kemerin içinde kare bir yazı levhası bulunuyor.",
+        "en": "A small barred window in a pale stone wall with a semicircular arch below it. A square inscribed panel sits inside the arch."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ii-kilicarslan-kumbeti/p090-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "177"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Çinili sandukada yazı kuşağı",
+        "en": "Inscription band on tiled sarcophagus"
+      },
+      "alt": {
+        "tr": "Lacivert ve turkuaz çinilerle kaplı sandukanın yüzeyinde kabartma Arapça yazı kuşakları sıralanıyor. Yazılar krem ve beyaz tonlarında.",
+        "en": "Bands of raised Arabic script run across a sarcophagus faced with dark blue and turquoise tiles. The lettering is in cream and white."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ii-kilicarslan-kumbeti/p091-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "178"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yazılı örtülü sanduka",
+        "en": "Sarcophagus under an inscribed cover"
+      },
+      "alt": {
+        "tr": "Koyu renkli, altın sarısı Arapça yazılarla işlenmiş örtü sandukanın üzerinde uzanıyor. Üstte iki beyaz sarık ve arka planda bayraklar görülüyor.",
+        "en": "A dark cover embroidered with golden Arabic script lies on a sarcophagus. Two white turbans rest on top and flags stand behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ii-kilicarslan-kumbeti/p091-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "179"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Çinili sandukalar ve sarıklar",
+        "en": "Tiled sarcophagi with turbans"
+      },
+      "alt": {
+        "tr": "Yan yana duran sandukaların yüzeyi lacivert çinilerle kaplı ve beyaz yazılarla bezeli. Üstlerinde beyaz sarıklar duruyor; arkada duvara güneş ışığı vuruyor.",
+        "en": "Sarcophagi side by side faced with dark blue tiles and white lettering. White turbans rest on top, and sunlight falls on the wall behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ii-kilicarslan-kumbeti/p091-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "179"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Oyma ahşap kapı kanadı",
+        "en": "Carved wooden door leaf"
+      },
+      "alt": {
+        "tr": "Turuncu ışıkta görülen ahşap kapı kanadı, sekizgen ve yıldız biçimli geometrik çerçevelerle bölünmüş. Çerçevelerin içinde yoğun bitkisel oyma süslemeler var.",
+        "en": "A wooden door leaf in warm light, divided by octagonal and star-shaped geometric frames. Dense plant-style carving fills each frame."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Türbeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Seyyid Harun Veli Camii (türbenin güneyinde) ids.md tablosunda yok; ilişki yazılmadı.",
@@ -443,7 +442,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-sultan-hatun-turbesi/p106-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "208"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin dıştan görünüşü",
+        "en": "Exterior of the tomb"
+      },
+      "alt": {
+        "tr": "Siyah ve gri taş örgülü yapının üzeri mavi sivri külahla örtülü. Sivri kemerli giriş ve altında demir şebekeli pencere var; arkada kiremit çatılı bir bina görülüyor.",
+        "en": "A building of dark and grey stone with a blue pointed roof. A pointed-arched entrance with a barred window below it appears, with a tiled-roof building behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-sultan-hatun-turbesi/p106-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "208"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi ve sandukalar",
+        "en": "Inside the tomb with the sarcophagi"
+      },
+      "alt": {
+        "tr": "Taş duvarlı odada turkuaz zeminli halı üzerinde sandukalar yan yana duruyor. Mavi, pembe kenarlı yazılı örtüler ve tavandan sarkan bir avize var.",
+        "en": "In a stone-walled room, sarcophagi stand side by side on a turquoise carpet under blue covers with pink borders and script. A chandelier hangs above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-sultan-hatun-turbesi/p106-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "209"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Taş mezarlar ve pencere",
+        "en": "Stone graves by a window"
+      },
+      "alt": {
+        "tr": "Pencerenin önünde, yazılarla işlenmiş uzun gri taş mezarlar yan yana uzanıyor. İkisi daha büyük, ikisi daha küçük; duvarda küçük bir niş var.",
+        "en": "Long grey stone graves with carved script lie in front of a window; two are larger and two smaller. A small niche is in the wall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

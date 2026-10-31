@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Türbeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Yapım yılı ve banisi kitapta yok; yalnızca Sadır Sultan'ın vefat tarihi veriliyor.",
@@ -275,7 +274,56 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sadr-sedir-sultan-turbesi/p076-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "148"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin dıştan görünüşü",
+        "en": "Exterior of the tomb"
+      },
+      "alt": {
+        "tr": "Ağaçlarla çevrili bir mezarlıkta, bej sıvalı, kırma kiremit çatılı tek katlı dikdörtgen yapı. Önünde yaban otları ve ayakta duran eski mezar taşları var.",
+        "en": "A single-storey rectangular building with beige plaster walls and a tiled hipped roof, among trees in a cemetery. Weeds and old upright gravestones fill the foreground."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sadr-sedir-sultan-turbesi/p076-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "148"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi ve sandukalar",
+        "en": "Inside the tomb with the sarcophagi"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı odada iki ahşap direk ve ahşap tavan görülüyor. Yeşil örtülü iki sanduka taş zeminde yan yana uzanıyor; duvarda iki küçük pencere ve nişler var.",
+        "en": "A plaster-walled room with two wooden posts and a timber ceiling. Two sarcophagi under green covers lie side by side on a stone floor, with small windows and niches in the wall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

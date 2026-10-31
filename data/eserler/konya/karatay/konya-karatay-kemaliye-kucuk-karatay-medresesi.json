@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Eğitim Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Vakfiye, kitabe ve mimar bilgisi kitapta yok.",
@@ -323,7 +322,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-kemaliye-kucuk-karatay-medresesi/p043-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "82"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kemaliye Medresesi'nin dış görünümü",
+        "en": "Exterior of Kemaliye Madrasa"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kırmızı kiremitli çatılı küçük yapı. Ön cephesinde vitrinler ve duvarda seramik tabaklar vardır, arkasında renkli ahşap evler görünür.",
+        "en": "A small stone-walled building with a red tiled roof. Shop windows and ceramic plates decorate the front, with colourful timber houses behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-kemaliye-kucuk-karatay-medresesi/p043-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "83"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Seramik satış mekânının iç görünümü",
+        "en": "Interior used as a ceramics shop"
+      },
+      "alt": {
+        "tr": "Raflarda çok sayıda seramik tabak ve vazo sıralanmış. Sağda petek desenli sivri kemerli bir pencere, duvarlarda turkuaz çini desenleri vardır.",
+        "en": "Shelves full of ceramic plates and vases. On the right a pointed-arch window with a honeycomb pattern, and turquoise tile patterns on the walls."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-kemaliye-kucuk-karatay-medresesi/p043-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "83"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çini kaplı duvar önünde seramik vazolar",
+        "en": "Ceramic vases before a tiled wall"
+      },
+      "alt": {
+        "tr": "Işıklı bir rafta mavi desenli vazolar ve yeşil bir ibrik durur. Arkadaki duvar turkuaz çinilerle geometrik biçimde kaplıdır.",
+        "en": "Blue-patterned vases and a green jug stand on a lit shelf. The wall behind is covered with turquoise tiles in a geometric layout."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

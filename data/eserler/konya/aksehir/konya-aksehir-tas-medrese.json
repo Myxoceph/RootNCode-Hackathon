@@ -10,7 +10,6 @@
     "from": "Konya II. Cilt – Eğitim Yapıları",
     "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 108-109 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Taçkapı kitâbesinin Arapça metni ve meali kitapta yok; eklenmeli.",
@@ -464,7 +463,56 @@
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-tas-medrese/p056-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "108"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Taş Medrese'nin revaklı avlusu",
+        "en": "Arcaded courtyard of Taş Madrasa"
+      },
+      "alt": {
+        "tr": "Tuğla kemerli revakların taş sütunlarla ayrıldığı avlunun ortasında dikdörtgen bir havuz, karşıda yüksek eyvan bulunur.",
+        "en": "An open courtyard with brick arches on stone columns, a rectangular pool in the middle and a tall iwan at the far end."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-tas-medrese/p057-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "110-111"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Avlunun kuşbakışı, taş parçalar ve çatılar",
+        "en": "Aerial view of the courtyard with stone pieces"
+      },
+      "alt": {
+        "tr": "Ağaçlarla çevrili avlunun ortasında toprak bir alana dizilmiş çok sayıda taş parça görülür. Çevresinde kırmızı kiremitli çatılar vardır.",
+        "en": "Many stone pieces laid out on an earth bed in the middle of a courtyard ringed by trees and red tiled roofs."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

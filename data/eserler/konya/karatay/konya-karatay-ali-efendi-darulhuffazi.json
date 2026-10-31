@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Eğitim Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Şerafettin Camii ids tablosunda yok; ilişki yazılmadı.",
@@ -360,7 +359,152 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-ali-efendi-darulhuffazi/p048-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "92-93"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Darülhuffaz'ın kubbeli ön cephesi",
+        "en": "Domed front of the Darülhuffaz"
+      },
+      "alt": {
+        "tr": "Açık renkli taş duvarlı, kurşun kubbeli yapı. Ortadaki turkuaz kapının iki yanında demir şebekeli pencereler ve önünde turkuaz banklar vardır.",
+        "en": "A light stone building with a lead dome. Windows with iron grilles flank a turquoise door, and turquoise benches stand in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-ali-efendi-darulhuffazi/p049-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "94"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Turkuaz kapılı giriş cephesi",
+        "en": "Entrance facade with turquoise door"
+      },
+      "alt": {
+        "tr": "Sivri kemerli taş çerçeve içinde iki kanatlı turkuaz kapı, üstünde altın renkli kitabe levhası bulunur. Yanlarda demir şebekeli pencereler ve turkuaz çiçeklikler vardır.",
+        "en": "A two-leaf turquoise door in a pointed-arch stone frame with a gilded inscription panel above. Grilled windows and turquoise planters are on both sides."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-ali-efendi-darulhuffazi/p049-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "95"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kapı üstündeki altın renkli kitabe",
+        "en": "Gilded inscription above the door"
+      },
+      "alt": {
+        "tr": "Sivri uçlu, dalgalı bir çerçeve içinde altın zemine yeşil Arapça yazılar işlenmiş dikdörtgen levha.",
+        "en": "A rectangular plaque with green Arabic script on a gold ground, set in a wavy pointed frame."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-ali-efendi-darulhuffazi/p049-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "95"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kubbeli odanın iç mekânı",
+        "en": "Interior of the domed room"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada yazı masası, deri koltuklar, kırmızı desenli halı ve duvar boyunca sedirler bulunur. Tavandan avize sarkar.",
+        "en": "A white-walled room with a writing desk, leather chairs, a red patterned carpet and low seating along the wall. A chandelier hangs from the ceiling."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-ali-efendi-darulhuffazi/p049-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "95"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kubbe altındaki altın renkli avize",
+        "en": "Gilded chandelier under the dome"
+      },
+      "alt": {
+        "tr": "Beyaz kubbe ve kemerli duvarlar arasında, iki halkalı, altın renkli ve buzlu cam gölgelikli bir avize asılıdır.",
+        "en": "A two-ring gilded chandelier with frosted glass shades hangs beneath a white dome and arched walls."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-ali-efendi-darulhuffazi/p049-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "95"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Avludaki kubbeli yapının kuşbakışı",
+        "en": "Aerial view of the domed structure in the courtyard"
+      },
+      "alt": {
+        "tr": "Kademeli bir taş kaide üzerinde yuvarlak kubbeli küçük yapı, çevresinde mavi taş döşeme ve ağaçlar görülür.",
+        "en": "A small round-domed structure on a stepped stone base, surrounded by blue paving and trees."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

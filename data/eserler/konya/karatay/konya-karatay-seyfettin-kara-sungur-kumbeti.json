@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Türbeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Vefat ve yapım yılı kitapta verilmiyor (yalnızca 1266-1284 yaşadığı yıllar).",
@@ -301,7 +300,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyfettin-kara-sungur-kumbeti/p078-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "153"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kümbetin dıştan görünüşü",
+        "en": "Exterior of the kumbet"
+      },
+      "alt": {
+        "tr": "Sekizgen gövdeli, üzeri sivri piramit külahla örtülü kahverengi taş yapı. Gövdede dar pencere açıklıkları var; sağ kenarda kemerli giriş görülüyor.",
+        "en": "A stone building with an octagonal body and a tall pointed pyramidal roof. Narrow slit windows pierce the walls and an arched entrance shows at the right edge."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyfettin-kara-sungur-kumbeti/p079-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "154"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kümbetin içi ve sanduka",
+        "en": "Inside the kumbet with the sarcophagus"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş örgülü geniş odada, kırmızı-kahverengi ahşap bir sanduka taş zeminde duruyor. Duvarda pencere boşluğu ve sıra sıra küçük delikler görülüyor.",
+        "en": "In a wide room of brick and stone, a red-brown wooden sarcophagus stands on a stone floor. A window opening and rows of small holes are visible in the wall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyfettin-kara-sungur-kumbeti/p078-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "153"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kümbetin iç kubbesi",
+        "en": "Inner dome of the kumbet"
+      },
+      "alt": {
+        "tr": "Tuğla örgülü kubbe içeriden, yukarı bakılarak görülüyor. Ortada ahşap bir çerçeve kare oluşturuyor; kenarlarda köşe geçişleri ve küçük pencere boşlukları var.",
+        "en": "The brick dome seen from below. A wooden frame forms a square at the centre, with corner transitions and small window openings around the edge."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

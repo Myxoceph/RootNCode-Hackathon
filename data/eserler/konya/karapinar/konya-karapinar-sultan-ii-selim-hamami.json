@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Hamamın yapım tarihi, mimarı ve ölçüleri kitapta yok.",
@@ -229,7 +228,128 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hamami/p024-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "44"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın taş duvarlı dışı ve kubbesi",
+        "en": "Stone exterior and dome of the bath"
+      },
+      "alt": {
+        "tr": "Siyah ve gri taştan örülmüş duvarlı, kurşun kubbeli yapı. Girişte saçaklı bir sundurma, ön planda büyük bir ağaç ve demir korkuluk var.",
+        "en": "A building of dark stone with a lead dome. A small roofed entrance porch, a large tree and an iron railing are in the foreground."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hamami/p024-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "45"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamamın ortasındaki sekizgen havuz",
+        "en": "Octagonal pool in the middle of the bath"
+      },
+      "alt": {
+        "tr": "Mermer sekizgen bir havuz ve ortasında küçük fıskiye; çevrede taş duvar, tuğla kubbe ve vitrinler görülüyor.",
+        "en": "A marble octagonal pool with a small fountain in its centre, surrounded by stone walls, a brick dome and display cases."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hamami/p024-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "45"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Tuğla kubbenin yıldız biçimli demir ağı",
+        "en": "Brick dome with star-shaped iron frame"
+      },
+      "alt": {
+        "tr": "Spiral örgülü kırmızı tuğla kubbenin ortasında ışık deliği; üzerinde yıldız biçimli siyah demir bir çerçeve uzanıyor.",
+        "en": "A red brick dome laid in a spiral with a light opening at the centre, crossed by a star-shaped black iron frame."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hamami/p024-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "45"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Beyaz sıvalı sıcaklık bölümü",
+        "en": "White plastered warm room"
+      },
+      "alt": {
+        "tr": "Sivri kemerli beyaz duvarlar, ortada mukarnaslı bir niş ve önünde mermer bir göbek taşı; iki yanda kapı açıklıkları var.",
+        "en": "White walls with pointed arches, a muqarnas niche in the centre and a marble platform in front, with doorways at both sides."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-hamami/p024-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "45"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kurnalı soyunma ve yıkanma köşesi",
+        "en": "Washing corner with basins"
+      },
+      "alt": {
+        "tr": "Siyah beyaz fotoğrafta, mermer kaplı duvarlı ve nişli bir köşe; yerde seki ve iki taş kurna görülüyor.",
+        "en": "A black and white view of a corner with marble-lined walls and niches, a raised platform and two stone basins."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

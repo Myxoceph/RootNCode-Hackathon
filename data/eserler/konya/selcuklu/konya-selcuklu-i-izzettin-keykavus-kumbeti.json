@@ -12,7 +12,6 @@
       "Yapı tarihine dair yıl kitapta yok; yalnızca XIII. yüzyıl deniyor.",
       "Sultanın Sivas'taki ölüm/defin tarihi kitapta verilmiyor.",
       "Kitap \"iki türbe\"den diğerini (II. Kılıçarslan Kümbeti) adlandırmıyor; ilişki yazılmadı.",
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
     ],
@@ -229,7 +228,80 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-i-izzettin-keykavus-kumbeti/p093-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "182"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kümbetin giriş cephesi",
+        "en": "Entrance front of the kumbet"
+      },
+      "alt": {
+        "tr": "Açık gri-beyaz taş ve mermer kaplı sekizgen yapının ortasında, süslemeli sivri kemerli bir portal ve ahşap kapı var. Üstte çatı kenarında kırmızı bir saçak görülüyor.",
+        "en": "An octagonal building of pale grey and white stone with an ornate pointed-arched portal and a wooden door at the centre. A red-trimmed eave shows at the roof edge."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-i-izzettin-keykavus-kumbeti/p093-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "183"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kümbetin içi",
+        "en": "Inside the kumbet"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, yuvarlak odanın duvarında soluk bir mihrap nişi var. Tavanda bir avize asılı; zemin turkuaz halıyla kaplı ve yanda bir bayrak duruyor.",
+        "en": "A round stone-walled room with a faint niche in the wall. A chandelier hangs from the ceiling, the floor has a turquoise carpet and a flag stands to one side."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-i-izzettin-keykavus-kumbeti/p093-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "183"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Saç tutamlı tuğ",
+        "en": "Horsehair standard (tug)"
+      },
+      "alt": {
+        "tr": "Taş duvar önünde, tepesinde hilal bulunan bir direk görülüyor. Direğe siyah, kahverengi ve krem renkli uzun saç tutamları asılmış.",
+        "en": "A standard in front of a stone wall, with a crescent at its top. Long tufts of black, brown and cream hair hang from the pole."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -10,7 +10,6 @@
     "from": "Konya II. Cilt – Türbeler",
     "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 144 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Yapım tarihi, bani ve kimin için yaptırıldığı kitapta yok; founder boş bırakıldı.",
@@ -273,7 +272,32 @@
     "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-seyh-hasan-i-rumi-turbesi/p074-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "144"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeyh Hasan-ı Rûmi Türbesi'nin dış görünümü",
+        "en": "Exterior of Şeyh Hasan-ı Rûmi Tomb"
+      },
+      "alt": {
+        "tr": "Krem ve kahverengi sıvalı, kiremit çatılı bir yapının yanında yeşil koni çatılı küçük türbe bölümü vardır. Pencereler demir şebekelidir, önde demir kapı bulunur.",
+        "en": "A cream and brown plastered building with a tiled roof, next to a small tomb section with a green pointed roof. Windows have iron grilles and an iron gate stands in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

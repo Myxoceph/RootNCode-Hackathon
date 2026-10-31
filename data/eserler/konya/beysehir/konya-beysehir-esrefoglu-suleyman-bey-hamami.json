@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Hamamın yapıcısı/mimarı kitapta yok.",
@@ -315,7 +314,32 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-hamami/p016-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "28"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın kiremit çatılı dışı",
+        "en": "Exterior of the bath with its tiled roof"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kırmızı kiremit çatılı, tepesinde küçük bir ışıklık bulunan yapı. Çevresinde ağaçlar ve evler, uzakta göl görülüyor.",
+        "en": "A stone-walled building with a red tiled roof and a small lantern on top. Trees and houses surround it and the lake is visible in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

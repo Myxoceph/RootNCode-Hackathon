@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Yapım tarihi, banî ve dönemi kitapta yok (dating: null, era: null); inşa kitâbesi Kokar Çeşmesi'nde olduğundan oradan okunmalı.",
@@ -174,7 +173,56 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-inlice-han/p129-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "254"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "İnlice Han'ın kalan duvarları",
+        "en": "Remaining walls of İnlice Han"
+      },
+      "alt": {
+        "tr": "Çayırlık bir yamaçta, yosun tutmuş kaba taşlardan örülmüş, ortası boşluklu iki alçak harabe duvar parçası duruyor. Arkada kayalık bir yamaç var.",
+        "en": "Two low ruined wall sections of rough, moss-covered stone with a gap between them, standing on a grassy slope with a rocky hillside behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-inlice-han/p129-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "254"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hanın bulunduğu vadi, havadan görünüm",
+        "en": "Valley of the inn, aerial view"
+      },
+      "alt": {
+        "tr": "Havadan çekilmiş fotoğrafta kurak, otlu tepeler arasında kıvrılan bir vadi ve kenarından geçen asfalt yol görülüyor. Uzakta dağlar var.",
+        "en": "Aerial view of a valley winding between dry grassy hills with an asphalt road at the side and mountains in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

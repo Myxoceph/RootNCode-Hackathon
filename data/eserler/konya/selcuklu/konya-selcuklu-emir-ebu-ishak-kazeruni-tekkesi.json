@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Türbeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kitabenin metni ve dili kitapta yok; eklenmeli.",
@@ -328,7 +327,56 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-emir-ebu-ishak-kazeruni-tekkesi/p082-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "160"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tekkenin dıştan görünüşü",
+        "en": "Exterior of the tekke"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı, uzun ve tek katlı yapının geniş saçaklı ahşap çatısı var. Duvarda demir şebekeli pencereler ve kapılar sıralanıyor; önde bilgi levhası duruyor.",
+        "en": "A long single-storey building with white plaster walls and a wide timber eave. Barred windows and doors line the wall, and an information sign stands in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-emir-ebu-ishak-kazeruni-tekkesi/p082-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "161"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tekkenin içi, sanduka",
+        "en": "Inside the tekke, sarcophagus"
+      },
+      "alt": {
+        "tr": "Kırmızı halılı, beyaz duvarlı odada yeşil örtülü ahşap sanduka duruyor. Üzerinde açık bir kitap, yanında sarıklı başlık taşı ve duvarlarda çerçeveli levhalar var.",
+        "en": "A white room with red carpet and a wooden sarcophagus under a green cover. An open book lies on top, a turbaned headstone stands beside it and framed pieces hang on the walls."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

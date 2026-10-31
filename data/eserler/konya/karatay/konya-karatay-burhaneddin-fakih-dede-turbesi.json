@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Türbeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kitaplarda anılan cenazelik katı mevcut değil/doğrulanamadı; sahada bakılmalı.",
@@ -340,7 +339,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-burhaneddin-fakih-dede-turbesi/p081-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "158"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin giriş cephesi",
+        "en": "Entrance front of the tomb"
+      },
+      "alt": {
+        "tr": "Taş örgülü, dar ve yüksek cepheli yapının üzeri sivri külahlıdır; köşelerde küçük külahlı çıkıntılar var. Altta ahşap kapı, üstünde çini süslemeli kemerli niş görülüyor.",
+        "en": "A tall narrow stone building with a pointed roof and small cone-capped projections at the corners. A wooden door is below a tile-decorated arched niche."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-burhaneddin-fakih-dede-turbesi/p081-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "159"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kapı üstündeki yazıtlı niş",
+        "en": "Inscribed niche above the door"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş dizili sivri kemerin içinde, çok satırlı Arapça yazı bulunan taş levha yer alıyor. Kemerin üst köşelerinde turkuaz ve lacivert çini parçaları kalmış.",
+        "en": "A pointed arch of alternating brick and stone frames a stone panel with several lines of Arabic script. Fragments of turquoise and dark blue tile remain in the upper corners."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-burhaneddin-fakih-dede-turbesi/p081-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "159"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi ve sanduka",
+        "en": "Inside the tomb with the sarcophagus"
+      },
+      "alt": {
+        "tr": "Sarımsı sıvalı odada, yeşil-lacivert nakışlı örtü ile kaplı sanduka duruyor. Duvarlarda sivri kemerli pencereler ve arkada bir bayrak görülüyor.",
+        "en": "A room with yellowish plaster walls holding a sarcophagus under a green and dark blue embroidered cover. Pointed-arched windows and a flag appear behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Türbeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Banisi, mimarı ve medfun kişi kitapta bilinmiyor.",
@@ -295,7 +294,80 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-kesikbas-kumbeti/p088-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "172"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kümbetin dıştan görünüşü",
+        "en": "Exterior of the kumbet"
+      },
+      "alt": {
+        "tr": "Sekizgen tuğla gövdeli, sivri külahlı kümbet çevresi taş kaplı yuvarlak bir alanda duruyor. Gövdede dar pencereler var; arkada ağaçlar ve bir bina görülüyor.",
+        "en": "A kumbet with an octagonal brick body and a pointed roof, standing in a round paved area. Narrow windows pierce the body, with trees and a building behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-kesikbas-kumbeti/p088-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "173"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kümbetin çatısı, havadan",
+        "en": "Roof of the kumbet from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan çekilmiş görüntüde külahın yedi dilimli, yıldız biçimli çatı örtüsü görülüyor. Çevresinde yuvarlak bir taş zemin ve kırmızı bir halka bulunuyor.",
+        "en": "A top-down view of the segmented, star-shaped roof of the kumbet. A round paved area with a reddish ring surrounds it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-kesikbas-kumbeti/p088-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "173"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kümbetin içi ve sanduka",
+        "en": "Inside the kumbet with the sarcophagus"
+      },
+      "alt": {
+        "tr": "Koyu taş zeminli odada, ahşap kaplı beşik çatılı bir sanduka duruyor. Duvarda tuğla ve taş örgü ile küçük, demir şebekeli bir pencere görülüyor.",
+        "en": "In a room with a dark stone floor, a gabled wooden sarcophagus lies. Brick and stone walls rise behind, with a small barred window."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

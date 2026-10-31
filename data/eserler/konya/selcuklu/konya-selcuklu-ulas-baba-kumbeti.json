@@ -9,11 +9,9 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Türbeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Dönem (era) kitapta açıkça tek bir döneme bağlanmıyor (XIII. yy. sonu - XIV. yy. başı).",
-      "Kitapta s. 168, 170 ve 171 metinsiz görünüyor (muhtemelen yalnızca görsel); eksik metin varsa kontrol edilmeli.",
       "Banisi ve yapım yılı kitapta yok."
     ],
     "data_quality_notes": [
@@ -328,7 +326,176 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ulas-baba-kumbeti/p085-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "167"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kümbetin giriş cephesi",
+        "en": "Entrance front of the kumbet"
+      },
+      "alt": {
+        "tr": "Sekizgen gövdeli, geniş piramit külahlı taş yapının önünde demir korkuluk var. Gövdede dar pencereler ve küçük kemerli ahşap kapı görülüyor; arkada cam cepheli bir bina yükseliyor.",
+        "en": "A stone building with an octagonal body and a broad pyramidal roof, with an iron railing in front. Narrow windows and a small arched wooden door show, with a glass-fronted building behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ulas-baba-kumbeti/p085-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "166"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kümbet ve çevresindeki yapılar",
+        "en": "The kumbet beside modern buildings"
+      },
+      "alt": {
+        "tr": "Kahverengi taş gövdeli kümbetin piramit külahı, arkadaki mavi camlı yüksek yapının önünde duruyor. Gövdede dar pencere aralıkları var.",
+        "en": "The brown stone kumbet with its pyramidal roof stands in front of a tall blue-glass building. Narrow window slits open in its walls."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ulas-baba-kumbeti/p085-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "167"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kümbetin kapısı ve süslemesi",
+        "en": "Doorway and relief of the kumbet"
+      },
+      "alt": {
+        "tr": "Sivri kemerli ahşap kapı, taş söve ile çevrelenmiş. Üstünde kabartma bir kalkan biçimli bezeme ve yıldız motifi görülüyor.",
+        "en": "A pointed-arched wooden door in a stone frame. A shield-shaped relief with a star motif is carved above it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ulas-baba-kumbeti/p086-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "168"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kümbetin içi ve sanduka",
+        "en": "Inside the kumbet with the sarcophagus"
+      },
+      "alt": {
+        "tr": "Taş duvarlı yuvarlak odada, ahşap parmaklıkla çevrili sanduka kırmızı halı üzerinde duruyor. Arkada pencereli sivri kemerli niş ile duvara asılı levhalar var.",
+        "en": "In a round stone room, a sarcophagus fenced by a wooden railing stands on red carpet. A pointed-arched window niche and hanging plaques are behind it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ulas-baba-kumbeti/p086-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "169"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "İçeriden pencere nişi",
+        "en": "Window niche from inside"
+      },
+      "alt": {
+        "tr": "Kalın taş duvara açılmış sivri kemerli bir pencere nişi, ahşap çerçeveli camlı pencereyle görülüyor. Zeminde kırmızı halının bir kısmı var.",
+        "en": "A pointed-arched window niche cut into a thick stone wall, fitted with a wooden-framed glazed window. A patch of red carpet lies on the floor."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ulas-baba-kumbeti/p086-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "169"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Dış cephede pencere",
+        "en": "Window on the outer wall"
+      },
+      "alt": {
+        "tr": "Taş duvara açılmış küçük pencere, gri taş söveyle çevrili ve demir şebekeyle kapatılmış. Çevresinde kahverengi kesme taşlar sıralanıyor.",
+        "en": "A small window in a stone wall, framed by grey stone and closed with an iron grille. Brown cut stones surround it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-ulas-baba-kumbeti/p087-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "170-171"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe içi tuğla örgüsü",
+        "en": "Brickwork of the inner dome"
+      },
+      "alt": {
+        "tr": "Kubbenin içi tuğlaların balık sırtı düzeninde örüldüğü, merkezden dışa yayılan geometrik bir desen oluşturuyor. Ortada küçük bir göbek var.",
+        "en": "The inside of the dome, with bricks laid in a herringbone pattern that spreads in a geometric design from a small central point."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

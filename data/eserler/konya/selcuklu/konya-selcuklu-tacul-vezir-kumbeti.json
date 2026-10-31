@@ -12,7 +12,6 @@
       "Tacül Vezir Külliyesi'nin medrese, zaviye ve mescit yapıları ids.md'de kayıtlı değil; ilişki yazılmadı.",
       "Türbenin kesin yapım yılı kitapta yok; yalnızca medresenin H. 637 / M. 1239 tarihi ve \"aynı zamanda\" bilgisi var.",
       "Tacül Vezir'in vefat tarihi kitapta verilmiyor.",
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
     ],
@@ -289,7 +288,32 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-tacul-vezir-kumbeti/p094-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "185"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kümbetin dıştan görünüşü",
+        "en": "Exterior of the kumbet"
+      },
+      "alt": {
+        "tr": "Ağaçların arkasında, tuğla örgülü sivri külahlı kümbet kısmen görülüyor. Önde demir parmaklık ve çimlik üzerinde dikilmiş taş sütun parçaları duruyor.",
+        "en": "A brick kumbet with a pointed roof, partly hidden by trees. An iron fence and stone column fragments stand on the lawn in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

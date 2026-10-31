@@ -9,13 +9,11 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kitâbelerin asıl metni, dili ve okunuşu kitapta verilmiyor.",
       "Kubadabad Sarayı için ids.md'de kayıt yok; ilişki yazılmadı.",
       "Hanın mimarı kitapta belirtilmiyor; Sadeddin Köpek'in mimarlığı yalnızca Kubadabad için aktarılıyor (architect: null).",
-      "s. 266-267 metin içermiyor (yalnızca görsel); fotoğraf/çizim sonra eklenmeli.",
       "Tömek Köyü'ne uzaklık kitapta verilmiyor."
     ],
     "data_quality_notes": [
@@ -456,7 +454,104 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-zazadin-hani/p133-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "262"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Zazadin Hanı'nın kuşbakışı görünüşü",
+        "en": "Aerial view of Zazadin Han"
+      },
+      "alt": {
+        "tr": "Ovada duran büyük taş han, akşam ışığında aydınlatılmış. Avlunun etrafında kapalı bölümler uzanıyor; girişteki yüksek kısmın üstünde küçük bir külah yükseliyor.",
+        "en": "A large stone han on a wide plain, lit at dusk. Covered sections wrap around an open courtyard, and a small cone rises over the taller entrance part."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-zazadin-hani/p133-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "263"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kapalı bölümün sütunlu uzun mekânı",
+        "en": "Long aisle of the covered hall"
+      },
+      "alt": {
+        "tr": "Taş kemerlerle ayrılmış uzun, tonozlu bir mekân; iki yanda sekiler ve uzaktaki kısımda aydınlık bir pencere var. Sol tarafta duvar renkli ışıkla aydınlanmış.",
+        "en": "A long vaulted hall divided by stone arches, with raised platforms on both sides and a bright window at the far end. The left wall is lit with coloured light."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-zazadin-hani/p134-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "264-265"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Hanın açık avlusu",
+        "en": "The han's open courtyard"
+      },
+      "alt": {
+        "tr": "Taş döşeli geniş bir avlu; iki yanda sivri kemerli girişleri olan revaklar uzanıyor. Karşıda düz bir duvar, üstte açık gökyüzü görülüyor.",
+        "en": "A wide stone-paved courtyard with arcades of pointed arches along both sides. A plain wall closes the far end under an open sky."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-zazadin-hani/p135-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "266-267"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe ve geçiş bölgesi",
+        "en": "Dome and transition zone"
+      },
+      "alt": {
+        "tr": "Aşağıdan bakılan taş bir kubbe; altında kabartmalı, kemerli nişler ve ortada küçük bir pencere var. Taş yüzey sarımsı ve kahverengi tonlarda.",
+        "en": "A stone dome seen from below, with arched niches and carved details beneath it and a small window in the middle. The stone is yellowish and brown."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

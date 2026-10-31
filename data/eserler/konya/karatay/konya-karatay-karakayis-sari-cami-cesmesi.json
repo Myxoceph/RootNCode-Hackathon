@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Su Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Kitabenin mealini kitap vermiyor; translation boş bırakıldı.",
@@ -232,7 +231,32 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-karakayis-sari-cami-cesmesi/p120-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "236"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Karakayış Sarı Cami Çeşmesi",
+        "en": "Karakayış Sarı Mosque Fountain"
+      },
+      "alt": {
+        "tr": "Kiremit saçaklı, sıvalı küçük bir yapı içinde yuvarlak kemerli bir çeşme nişi var. Nişin içinde küçük bir kitabe, yanlarda taş bloklar, önde sokak döşemesi görülüyor.",
+        "en": "A round-arched fountain niche in a small plastered structure with a tiled eave. A small plaque is in the niche, with stone blocks at the sides and paving in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

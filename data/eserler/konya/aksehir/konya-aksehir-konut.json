@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Sivil Mimari",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Konutun sahibi/yaptıranı, vakıf ilişkisi (VGM'ye neden dahil olduğu) ve tam adresi kitapta yok.",
@@ -266,7 +265,152 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-konut/p147-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "291"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Bahçeli ahşap karkas konut",
+        "en": "Timber-framed house with garden"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı, koyu ahşap kirişli, kırmızı kiremitli çatısı olan çok katlı bir konut. Önünde havuz ve iki heykel var; yan tarafta taş bir bahçe duvarı görülüyor.",
+        "en": "A multi-storey house with white plaster, dark timber framing and a red tiled roof. A pool and two statues stand in front, with a stone garden wall beside it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-konut/p148-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "292"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Konut ve çevresinin kuşbakışı",
+        "en": "Aerial view of the house and surroundings"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremitli evlerin arasında, avlulu bir ahşap konut ve yanında mavi kubbeli küçük bir taş yapı var. Çevre yeşil bahçeler ve ağaçlı bir yamaçla çevrili.",
+        "en": "A timber house with a courtyard among red-roofed homes, with a small stone building under a blue dome beside it. Green gardens and a wooded slope surround them."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-konut/p148-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "293"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Odada kitap okuyan iki figür",
+        "en": "Two figures with a book in a room"
+      },
+      "alt": {
+        "tr": "Beyaz sarıklı, uzun sakallı iki figür; biri ayakta, diğeri rahleye konmuş kitabın başında oturuyor. Yerde desenli halılar ve karo zemin, yanda koyu ahşap kapı var.",
+        "en": "Two figures in turbans with long beards, one standing and one seated at a book on a stand. Patterned rugs and tiled flooring lie below, with a dark wooden door at the side."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-konut/p148-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "293"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Odada sohbet eden üç figür",
+        "en": "Three figures seated in a room"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı ve geniş pencereli bir odada, alçak bir sehpanın çevresinde oturan üç figür var. Duvarlarda aplikler, yerde küçük bir halı görülüyor.",
+        "en": "Three seated figures around a low table in a room with a wooden ceiling and a wide window. Wall lamps hang on the walls and a small rug lies on the floor."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-konut/p149-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "294-295"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Eski bir kent panoraması",
+        "en": "Old panorama of the town"
+      },
+      "alt": {
+        "tr": "Renklendirilmiş eski bir fotoğrafta, taş ve kerpiç evlerle dolu bir kent ve ortasında minareli bir cami görülüyor. Önde kuru bir yamaç ve yürüyen birkaç kişi var.",
+        "en": "A colourised old photograph of a town of stone and mud-brick houses with a minaret in the middle. A dry slope with a few walking figures lies in the foreground."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-konut/p150-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "296"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Eski bir hayvan pazarı görüntüsü",
+        "en": "Old view of an animal market"
+      },
+      "alt": {
+        "tr": "Renklendirilmiş eski bir fotoğrafta, uzun saçaklı bir sundurmanın altında develer, atlar ve çeşitli giysili adamlar duruyor. Zemin kumlu ve açık.",
+        "en": "A colourised old photograph of camels, horses and men in varied clothing beneath a long open shed. The ground is open and sandy."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

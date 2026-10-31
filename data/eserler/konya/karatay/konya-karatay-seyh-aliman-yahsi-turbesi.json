@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Türbeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Dönem (era) kitapta belirtilmiyor; yalnızca zaviye kitabesindeki H. 687 / M. 1288 tarihi var.",
@@ -381,7 +380,104 @@
   },
   "ambient_sound": null,
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyh-aliman-yahsi-turbesi/p076-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "149"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin giriş cephesi",
+        "en": "Entrance front of the tomb"
+      },
+      "alt": {
+        "tr": "Kırmızımsı kesme taştan, kare planlı küçük yapının üzeri koyu gri kubbeyle örtülü. Ortada kemerli ahşap kapı var; iki yanda alçak taş duvarlar ve banklar yer alıyor.",
+        "en": "A small square building of reddish cut stone topped with a dark grey dome. A wooden arched door is in the centre, with low stone walls and benches on both sides."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyh-aliman-yahsi-turbesi/p077-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "151"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mezarlık içinde türbe",
+        "en": "The tomb inside the cemetery"
+      },
+      "alt": {
+        "tr": "Ağaçların arasındaki mezarlıkta, taş duvarlı küçük türbenin gri kubbesi görülüyor. Ön planda sıra sıra modern mezar taşları, arkada apartmanlar var.",
+        "en": "The grey dome and stone walls of the small tomb stand among trees in a cemetery. Rows of modern gravestones fill the foreground and apartment blocks rise behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyh-aliman-yahsi-turbesi/p077-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "150"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Cephedeki kitabe nişi",
+        "en": "Inscription niche on the wall"
+      },
+      "alt": {
+        "tr": "Kırmızımsı taş duvarda sivri kemerli bir niş var. Nişin içindeki taş levhada çok satırlı Arapça yazı işlenmiş; üstte profilli bir silme uzanıyor.",
+        "en": "A pointed-arched niche in a reddish stone wall. Inside is a stone panel carved with several lines of Arabic script, with a moulded cornice above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyh-aliman-yahsi-turbesi/p077-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "150"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi, örtülü sanduka",
+        "en": "Inside the tomb, covered sarcophagus"
+      },
+      "alt": {
+        "tr": "Taş duvarlı odada, arkası dönük durumdaki sanduka yeşil kadife örtü ve sarıklı başlıkla görülüyor. İki yanda ahşap pencere söveleri ve taş zemin var.",
+        "en": "In a stone-walled room, a sarcophagus seen from behind is draped in green velvet with a turban at its head. Window recesses flank it and the floor is stone."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

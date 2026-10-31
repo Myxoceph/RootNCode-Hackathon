@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Külliyenin sıbyan mektebi, tabhane, ikinci han ve iki yel değirmeni bu partide yok; kayıtları ayrıca eklenmeli.",
@@ -416,7 +415,200 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-kulliyesi/p018-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "32-33"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Külliye girişinden camiye bakış",
+        "en": "View to the mosque from the complex entrance"
+      },
+      "alt": {
+        "tr": "İki taş duvarlı yapının arasından görünen kurşun kubbeli cami ve onun iki uzun minaresi; kenarlarda iki küçük minare daha var. Orta kapıda girişin kemeri seçiliyor.",
+        "en": "A lead-domed mosque with two tall minarets seen between two stone-walled buildings, with two smaller minarets at the sides. The entrance arch is visible at the centre."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-kulliyesi/p019-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "34"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin yukarıdan görünüşü",
+        "en": "The mosque seen from above"
+      },
+      "alt": {
+        "tr": "Kenti arkasına almış, kubbeli ve iki minareli taş cami; önünde küçük kubbelerle örtülü son cemaat yeri ve avluda beton gölgelik görülüyor.",
+        "en": "A domed stone mosque with two minarets overlooking the town, with a portico under small domes in front and a concrete canopy in the courtyard."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-kulliyesi/p019-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "35"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Ağaçların arkasında kubbe ve minare",
+        "en": "Dome and minaret behind trees"
+      },
+      "alt": {
+        "tr": "Çam ağaçlarının arkasında yükselen kurşun kubbe ve bir minare; ön planda demir bir parmaklık var.",
+        "en": "A lead dome and a minaret rising behind pine trees, with an iron fence in the foreground."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-kulliyesi/p020-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "36"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minareler ve kubbe",
+        "en": "Minarets and dome"
+      },
+      "alt": {
+        "tr": "Mavi gökyüzüne yükselen, kalın bir şerefeli uzun minare ve yanında daha kısa ikinci minare; sol altta kubbenin kasnağı görünüyor.",
+        "en": "A tall minaret with a wide balcony rising into the blue sky, a shorter second minaret beside it, and the base of the dome at lower left."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-kulliyesi/p019-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "35"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kapı aralığından şadırvan",
+        "en": "The fountain seen through the gate"
+      },
+      "alt": {
+        "tr": "Siyah, çivili bir kapı kanadının aralığından, kubbeli bir şadırvan ve arka planda kurşun kubbeli yapılar görülüyor.",
+        "en": "Through the opening of a black studded gate, a domed ablution fountain and lead-covered domes behind it come into view."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-kulliyesi/p020-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "36"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Kubbeli şadırvan",
+        "en": "The domed ablution fountain"
+      },
+      "alt": {
+        "tr": "Sekiz ince sütunun taşıdığı kurşun kaplı kubbeli şadırvan; ortasında su haznesi ve çevresinde ağaçlar var.",
+        "en": "An ablution fountain with a lead-covered dome on slender columns, a water basin at its centre and trees around it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-kulliyesi/p020-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "37"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Caminin son cemaat yeri sütunları",
+        "en": "Columns of the mosque's portico"
+      },
+      "alt": {
+        "tr": "Taş sütunlara oturan sivri kemerli revak; kemerlerin arkasında cam cepheli bir bölüm ve kaldırım taşlı yol görülüyor.",
+        "en": "A portico of pointed arches on stone columns, with a glass-fronted section behind the arches and a paved street."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karapinar-sultan-ii-selim-kulliyesi/p021-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "38-39"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Ana kubbenin nakışlı içi",
+        "en": "Painted interior of the main dome"
+      },
+      "alt": {
+        "tr": "Aşağıdan görülen kubbenin ortasında sarkan çok kollu bir avize ve çevresinde mavi, kırmızı, yeşil motifli nakışlar; köşelerde kaligrafi levhaları ve pencereler var.",
+        "en": "A multi-armed chandelier hangs at the centre of the dome, surrounded by blue, red and green painted patterns, with calligraphic roundels and windows at the corners."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

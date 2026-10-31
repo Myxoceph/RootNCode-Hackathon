@@ -9,7 +9,6 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Ticari Yapılar",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Hanı kimin yaptırdığı kitapta yok; Osman Ağa yalnızca hana adını veren kişi olarak geçiyor (founder: null).",
@@ -288,7 +287,32 @@
     "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-deli-osman-hani/p123-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "242-243"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Deli Osman Hanı, havadan görünüm",
+        "en": "Deli Osman Inn, aerial view"
+      },
+      "alt": {
+        "tr": "Havadan çekilmiş fotoğrafta kırma kiremit çatılı, taş duvarlı tek katlı bir yapı ağaçlıklı bir bahçenin içinde duruyor. Yanından geniş bir yol geçiyor, ardında tarlalar uzanıyor.",
+        "en": "Aerial view of a single-storey stone building with a tiled hip roof in a tree-filled garden. A wide road runs alongside it with fields beyond."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

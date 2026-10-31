@@ -9,12 +9,10 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Külliyeler",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
       "Banî ve mimar bilgisi (Lala Mustafa Paşa, Mimar Sinan) üst eser (külliye) kaydından aktarıldı; yapı metninde ayrıca belirtilmiyor.",
       "Mahalle/cadde bilgisi kitapta yok; adres sahadan teyit edilmeli.",
-      "Kitâbe metinleri kitapta yok; fotoğraftan okunmalı.",
       "Hanın yapı malzemesi ve ölçüleri kitapta yok."
     ],
     "data_quality_notes": [
@@ -327,7 +325,152 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kervansarayi/p032-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "60"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kervansarayın tonozlu çatıları, havadan",
+        "en": "Vaulted roofs of the caravanserai, aerial"
+      },
+      "alt": {
+        "tr": "Mavi gri kurşunla kaplı ve sıra sıra bacalı uzun beşik çatılar; arkada kent ve ova görülüyor.",
+        "en": "Long barrel roofs covered in blue-grey lead with rows of chimneys, with the town and plain behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kervansarayi/p033-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "62"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliyenin kuşbakışı görünüşü",
+        "en": "Bird's-eye view of the complex"
+      },
+      "alt": {
+        "tr": "Kentin içinde, solda kubbeli ve minareli cami, sağda uzun tonozlu yapılar; arkada dağlar görülüyor.",
+        "en": "A domed mosque with a minaret on the left and long vaulted buildings on the right in the middle of the town, with mountains behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kervansarayi/p032-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "61"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Taş çerçeveli kapıdan iç mekân",
+        "en": "Interior through the stone-framed doorway"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla örgülü kemerli bir kapıdan, tonozlu ve masalarla dolu uzun bir salona bakış; yanlarda sergi panoları var.",
+        "en": "A view through a stone and brick arched doorway into a long vaulted hall with tables, with display boards at the sides."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kervansarayi/p032-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "61"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tuğla tonozlu salon ve sandalyeler",
+        "en": "Brick-vaulted hall with chairs"
+      },
+      "alt": {
+        "tr": "Tuğla tonozlu, kalın taş ayaklı salonda sıra sıra sandalyeler dizilmiş; ortada sivri bir kemer ve avize var.",
+        "en": "Rows of chairs in a brick-vaulted hall with thick stone piers, with a pointed arch and a chandelier in the centre."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kervansarayi/p032-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "61"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap kapılı tonozlu köşe",
+        "en": "Vaulted corner with wooden door"
+      },
+      "alt": {
+        "tr": "Taş ayak ve tuğla kemerlerin arasında büyük bir ahşap kapı, ön planda ahşap masa ve banklar, duvarda kilimler görülüyor.",
+        "en": "A large wooden door between stone piers and brick arches, with wooden tables and benches in front and kilims on the wall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kervansarayi/p032-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "61"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap tavanlı kütüphane bölümü",
+        "en": "Library section with wooden ceiling"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı, taş duvarlı bir bölümde kitap rafları, masalar ve koltuklar; ışıklı bir köşe görülüyor.",
+        "en": "A section with a wooden ceiling and stone walls holding bookshelves, tables and armchairs, with a lit corner."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

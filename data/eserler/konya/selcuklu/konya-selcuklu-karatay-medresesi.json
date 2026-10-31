@@ -9,10 +9,8 @@
     "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Konya II. Cilt – Eğitim Yapıları",
     "todos": [
-      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
       "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
-      "Kitâbenin metni ve mealı kitapta yok; fotoğraftan okunmalı.",
       "Alâeddin Camii ve Aksaray Sultan Hanı ids tablosunda yok; same_architect ilişkisi yazılmadı.",
       "Celaleddin Karatay türbesi ids tablosunda ayrı bir kayıt olarak yok; bu kayıtta anlatılıyor, ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
       "Müzenin ziyaret bilgileri (saat, bilet) kitapta yok."
@@ -500,7 +498,248 @@
     "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
   },
   "media_folder": null,
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p045-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "86"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Karatay Medresesi'nin kuşbakışı görünümü",
+        "en": "Aerial view of Karatay Madrasa"
+      },
+      "alt": {
+        "tr": "Gri kurşun kaplı büyük kubbesi, yanında küçük kubbeleri ve çatı fenerleri olan taş yapı. Cephede açık ve koyu taşlardan yatay şeritler görülür.",
+        "en": "A stone building with a large grey lead dome, smaller domes and roof lanterns beside it. Horizontal bands of light and dark stone run along the facade."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p045-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "87"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Medresenin taş taç kapısı",
+        "en": "Stone portal of the madrasa"
+      },
+      "alt": {
+        "tr": "Siyah ve beyaz taşlardan geçmeli geometrik bezemeli, sivri kemerli kapı. Kapı kemerinin üstünde mukarnas süslemeler vardır, arkada kubbe yükselir.",
+        "en": "A pointed-arch doorway framed with interlocking black and white stone geometry. Muqarnas carving sits above the arch and a dome rises behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p045-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "87"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Kubbe ve çatıların tepeden görünüşü",
+        "en": "Top-down view of the domes and roofs"
+      },
+      "alt": {
+        "tr": "Merkezî büyük kubbe, çevresinde küçük kubbeler ve camlı çatı fenerleri tepeden görülür. Yapının yanında yol ve ağaçlar vardır.",
+        "en": "The central large dome, surrounding smaller domes and glazed roof lanterns seen from above, with a road and trees beside the building."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p046-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "88"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ana mekânın çini kaplı kubbeli iç görünümü",
+        "en": "Tiled domed main hall interior"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı geniş salonda turkuaz ve lacivert çinilerle kaplı kubbe ve kemerler yükselir. Ortada korkuluklu bir havuz, yerde kırmızı tuğla döşeme vardır.",
+        "en": "A wide white-walled hall with a dome and arches covered in turquoise and dark blue tiles. A railed pool sits in the centre on a red brick floor."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p046-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "89"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbedeki çini yıldız ağı",
+        "en": "Tile star network on the dome"
+      },
+      "alt": {
+        "tr": "Turkuaz, beyaz ve koyu renkli çinilerden, merkezden açılan yıldızlarla kurulmuş yoğun geometrik kubbe süslemesi.",
+        "en": "A dense geometric dome decoration made of turquoise, white and dark tiles, with stars radiating from several centres."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p046-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "89"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Taş köşede sütun başlığı ve bitkisel kabartma",
+        "en": "Column capital and relief at a stone corner"
+      },
+      "alt": {
+        "tr": "Köşe sütunu üzerinde akantus yapraklı başlık ve çevresinde ince taş oymalı bitkisel süslemeler görünür.",
+        "en": "A leafy capital on a corner column, surrounded by fine plant motifs carved in stone."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p047-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "90"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Kubbeli odadaki lacivert örtülü sanduka",
+        "en": "Sarcophagus with a dark blue cover"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada, altın yaldızlı yazılarla bezeli lacivert örtülü sanduka durur. Başında yeşil sarık, çevresinde koruma şeridi vardır.",
+        "en": "In a white-walled room stands a sarcophagus under a dark blue cover with gold lettering, topped by a green turban and surrounded by a barrier cord."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p047-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "90"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe göbeği ve çinili iç yüzey",
+        "en": "Dome crown and tiled inner surface"
+      },
+      "alt": {
+        "tr": "Ortada ahşap, sekizgen bir kubbe başlığı ve pencereleri var. Çevresini turkuaz ve lacivert çini yıldızlar sarar, bir kısmında ışık yansıması görünür.",
+        "en": "A wooden octagonal crown with small windows in the middle, surrounded by turquoise and dark blue tile stars. A patch of light falls on one side."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p047-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "91"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Tuğla örgülü kubbe iç yüzeyi",
+        "en": "Brick pattern on the inner dome"
+      },
+      "alt": {
+        "tr": "Merkezden dışarı yayılan, balıksırtı biçiminde dizilmiş turuncu tuğla örgülü yuvarlak kubbe yüzeyi.",
+        "en": "A round dome surface of orange bricks laid in a herringbone pattern spreading out from the centre."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-karatay-medresesi/p044-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "84-85"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Turkuaz çini üzerinde yıldız geçmeli desen",
+        "en": "Star-pattern turquoise tilework"
+      },
+      "alt": {
+        "tr": "Turkuaz zemin üzerinde siyah çizgilerle oluşan, çok köşeli yıldızlardan kurulu yoğun geometrik desen.",
+        "en": "A dense geometric pattern of multi-pointed stars drawn with black lines on a turquoise ground."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }
