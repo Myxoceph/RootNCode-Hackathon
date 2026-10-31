@@ -55,6 +55,8 @@ services:
       ASSISTANT_BASE_URL: ${ASSISTANT_BASE_URL:-}
       ASSISTANT_MODEL: ${ASSISTANT_MODEL:-}
       ASSISTANT_API_KEY: ${ASSISTANT_API_KEY:-}
+      # Konya transit pilot (the otp service below).
+      OTP_URL: http://otp:8080
     # Lets the container reach a model served on the host (Docker Desktop has it already; Linux needs this).
     extra_hosts:
       - "host.docker.internal:host-gateway"
@@ -66,6 +68,8 @@ services:
         condition: service_healthy
       seed:
         condition: service_completed_successfully
+      otp:
+        condition: service_healthy
 
   # Konya transit pilot: OpenTripPlanner serves the graph deploy/otp/prepare.sh built (docs/deploy.md).
   otp:
