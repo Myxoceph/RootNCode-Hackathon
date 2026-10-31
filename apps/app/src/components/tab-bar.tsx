@@ -14,8 +14,8 @@ export interface TabItem {
   iconFocused: IconName;
 }
 
-/** The tabs that float the bar over the screen: the map and the Eserler gallery run on under it. */
-const FLOATS_ON = new Set(["index", "monuments"]);
+/** The tabs that float the bar over the screen: the map, the Eserler gallery and Profil run on under it. */
+const FLOATS_ON = new Set(["index", "monuments", "settings"]);
 /** Screens that fill the whole screen, the bar hidden: an asset's story. */
 const HIDDEN_ON = new Set(["[id]"]);
 const ICON_SIZE = 22;
