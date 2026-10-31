@@ -15,12 +15,12 @@ import {
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 import { HttpError } from "../../lib/http-error.ts";
-import { resolveLang } from "../../lib/lang.ts";
+import { pick, resolveLang } from "../../lib/lang.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { toSoundRecording } from "../sounds/sounds.mapper.ts";
 import type { SoundsRepository } from "../sounds/sounds.repository.ts";
-import { ambientKeyOf, toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, type MapperContext } from "./assets.mapper.ts";
+import { ambientKeyOf, toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, toOutsideRelation, type MapperContext } from "./assets.mapper.ts";
 import { boundingBox, distanceMeters, selectRelations } from "./assets.network.ts";
 import {
   visibleStatuses,
@@ -179,11 +179,16 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
     const otherIds = new Set(relations.flatMap((r) => [r.source_asset_id, r.target_asset_id]));
     otherIds.delete(id);
     const others = new Map((await repository.findSummaries([...otherIds])).map((other) => [other.id, other]));
-    const { items, unavailableCount } = selectRelations(id, relations, (otherId) => others.has(otherId));
+    const { items, unavailable } = selectRelations(id, relations, (otherId) => others.has(otherId));
+    // A link recorded here to a place with no record at all, named by the source: shown by name.
+    const existing = await repository.findExistingIds(unavailable.map((link) => link.otherId));
+    const outside = unavailable.filter(
+      (link) => link.direction === "outgoing" && !existing.has(link.otherId) && link.relation.target_name_tr,
+    );
 
     const [covers, citations] = await Promise.all([
       repository.findMedia(items.map((item) => item.otherId), { coversOnly: true }),
-      repository.findRelationCitations(items.map((item) => item.relation)),
+      repository.findRelationCitations([...items, ...outside].map((item) => item.relation)),
     ]);
     const coverOf = new Map(covers.map((cover) => [cover.asset_id, cover]));
     const ctx = context(lang);
@@ -200,7 +205,10 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
       lang,
       assetId: id,
       items: mapped,
-      unavailableCount,
+      outside: outside
+        .map((link) => toOutsideRelation(link, pick(link.relation.target_name_tr!, link.relation.target_name_en, lang), citations, ctx))
+        .sort((a, b) => a.type.code.localeCompare(b.type.code) || a.name.localeCompare(b.name, "tr")),
+      unavailableCount: unavailable.length - outside.length,
     });
   });
 

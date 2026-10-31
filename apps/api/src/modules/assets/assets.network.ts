@@ -47,7 +47,7 @@ export function selectRelations(
   assetId: string,
   relations: RelationRecord[],
   isVisible: (id: string) => boolean,
-): { items: DirectedRelation[]; unavailableCount: number } {
+): { items: DirectedRelation[]; unavailable: DirectedRelation[] } {
   const byLink = new Map<string, DirectedRelation>();
   for (const relation of relations) {
     const outgoing = relation.source_asset_id === assetId;
@@ -58,10 +58,7 @@ export function selectRelations(
   }
 
   const items: DirectedRelation[] = [];
-  let unavailableCount = 0;
-  for (const link of byLink.values()) {
-    if (isVisible(link.otherId)) items.push(link);
-    else unavailableCount += 1;
-  }
-  return { items, unavailableCount };
+  const unavailable: DirectedRelation[] = [];
+  for (const link of byLink.values()) (isVisible(link.otherId) ? items : unavailable).push(link);
+  return { items, unavailable };
 }

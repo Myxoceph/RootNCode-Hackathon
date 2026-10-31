@@ -233,6 +233,19 @@ describe.skipIf(!DATABASE_URL)("assets routes (PostgreSQL)", () => {
       }
     });
 
+    it("names a link to a place outside the dataset, such as the Istanbul complex a han funded", async () => {
+      const body = await relationsOf("bursa-osmangazi-koza-hani");
+      expect(body.outside).toContainEqual(
+        expect.objectContaining({ name: "II. Bayezid Külliyesi (İstanbul)", type: expect.objectContaining({ code: "waqf_income" }) }),
+      );
+      expect(body.outside.every((link) => link.sources.length > 0)).toBe(true);
+
+      // The source does not name this fountain: the link is counted, not shown.
+      const school = await relationsOf("bursa-osmangazi-sitti-hatun-mektebi");
+      expect(school.outside).toEqual([]);
+      expect(school.unavailableCount).toBeGreaterThan(0);
+    });
+
     it("returns 404 for unknown assets", async () => {
       const response = await app.inject({ method: "GET", url: "/assets/bursa-osmangazi-yok-boyle-bir-eser/relations" });
       expect(response.statusCode).toBe(404);

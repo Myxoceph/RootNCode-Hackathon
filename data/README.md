@@ -487,6 +487,9 @@ CREATE TABLE asset_relation (
   description_tr   text NOT NULL,
   description_en   text,
   confidence       confidence NOT NULL,
+  -- Hedef veri setinde yoksa adı (kaynaktaki gibi); uygulama bu bağı haritasız, adıyla gösterir.
+  target_name_tr   text,
+  target_name_en   text,
   UNIQUE (source_asset_id, target_asset_id, type_code),
   CHECK (source_asset_id <> target_asset_id)
 );

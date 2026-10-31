@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.14`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.15`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -22,7 +22,7 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 |---|---|
 | `GET /assets?city=&type=&era=&q=&bbox=&limit=&offset=&lang=` | `AssetListResponseSchema` (liste ve harita) |
 | `GET /assets/:id?lang=` | `AssetDetailSchema` |
-| `GET /assets/:id/relations?lang=` | `AssetRelationsResponseSchema` (Kentsel Ağ bağları) |
+| `GET /assets/:id/relations?lang=` | `AssetRelationsResponseSchema` (Kentsel Ağ bağları): `items` haritadaki eserlere bağlar; `outside` veri setinde olmayan yerlere bağlar, kaynaktaki adıyla (`name`, ör. "II. Bayezid Külliyesi (İstanbul)"), haritaya çizilmez; `unavailableCount` henüz yayında olmayanlar |
 | `GET /assets/:id/nearby?radius=&limit=&lang=` | `NearbyAssetsResponseSchema` (yarıçap metre: 100–50000, varsayılan 2000; limit 1–50, varsayılan 10) |
 | `GET /meta/enums?lang=` | `MetaEnumsResponseSchema` (il, tür, dönem, bağ türü, güven, erişilebilirlik, medya türü) |
 | `GET /weather?city=&lang=` | `WeatherResponseSchema` (anlık hava durumu, `advice` ve bugünden itibaren 3 günlük `daily` tahmin; sağlayıcıya ulaşılamazsa `available: false`, `daily: []`) |

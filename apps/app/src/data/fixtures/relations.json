@@ -1,6 +1,6 @@
 {
   "bursa-osmangazi-ulucami": {
-    "version": "0.3.14",
+    "version": "0.3.15",
     "lang": "tr",
     "assetId": "bursa-osmangazi-ulucami",
     "items": [
@@ -1198,10 +1198,32 @@
         ]
       }
     ],
-    "unavailableCount": 1
+    "outside": [
+      {
+        "type": {
+          "code": "same_craftsman",
+          "label": "Aynı usta"
+        },
+        "name": "Manisa Ulucamii (Manisa)",
+        "description": "Minber ustası İbnü'd-Dakkî, 1376 tarihli Manisa Ulucamii'nin minberini de yaptı.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "52-53",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 0
   },
   "bursa-osmangazi-orhan-bey-camii": {
-    "version": "0.3.14",
+    "version": "0.3.15",
     "lang": "tr",
     "assetId": "bursa-osmangazi-orhan-bey-camii",
     "items": [
@@ -2476,10 +2498,32 @@
         ]
       }
     ],
-    "unavailableCount": 1
+    "outside": [
+      {
+        "type": {
+          "code": "waqf_income",
+          "label": "Gelir / finansman bağı"
+        },
+        "name": "Orhan Gazi İmareti",
+        "description": "Vakfiyedeki gelir kaynakları (köyler, Eski Bedesten, dükkânlar, Bıçakçılar Hamamı) Orhan Gazi İmareti'ne vakfedilmiştir; imaret yok olmuştur.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "187-188",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 0
   },
   "bursa-osmangazi-emir-hani": {
-    "version": "0.3.14",
+    "version": "0.3.15",
     "lang": "tr",
     "assetId": "bursa-osmangazi-emir-hani",
     "items": [
@@ -3300,10 +3344,32 @@
         ]
       }
     ],
-    "unavailableCount": 1
+    "outside": [
+      {
+        "type": {
+          "code": "waqf_income",
+          "label": "Gelir / finansman bağı"
+        },
+        "name": "Orhan Gazi İmareti",
+        "description": "Vakfiye 'Eski Bedesten'i imarete vakfedilen kalemler arasında sayar; han de tarihî kayıtlarda 'Eski Bedesten' adıyla anılır. Eşleştirme çıkarımdır.",
+        "confidence": {
+          "code": "probable",
+          "label": "Tahmini"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "188, 210",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 0
   },
   "bursa-osmangazi-koza-hani": {
-    "version": "0.3.14",
+    "version": "0.3.15",
     "lang": "tr",
     "assetId": "bursa-osmangazi-koza-hani",
     "items": [
@@ -4312,10 +4378,32 @@
         ]
       }
     ],
-    "unavailableCount": 1
+    "outside": [
+      {
+        "type": {
+          "code": "waqf_income",
+          "label": "Gelir / finansman bağı"
+        },
+        "name": "II. Bayezid Külliyesi (İstanbul)",
+        "description": "Han, II. Bayezid'in İstanbul'daki külliyesine gelir sağlamak için yaptırılmıştır.",
+        "confidence": {
+          "code": "certain",
+          "label": "Kaynakta kesin"
+        },
+        "sources": [
+          {
+            "sourceId": "vk-bursa-c1",
+            "title": "Bursa Vakıf Eserleri – I. Cilt",
+            "pages": "649",
+            "url": "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/bursa-envanteri-cilt-1.pdf"
+          }
+        ]
+      }
+    ],
+    "unavailableCount": 0
   },
   "bursa-osmangazi-yildirim-bayezid-bedesteni": {
-    "version": "0.3.14",
+    "version": "0.3.15",
     "lang": "tr",
     "assetId": "bursa-osmangazi-yildirim-bayezid-bedesteni",
     "items": [
@@ -4873,10 +4961,11 @@
         ]
       }
     ],
+    "outside": [],
     "unavailableCount": 0
   },
   "bursa-osmangazi-muradiye-kulliyesi": {
-    "version": "0.3.14",
+    "version": "0.3.15",
     "lang": "tr",
     "assetId": "bursa-osmangazi-muradiye-kulliyesi",
     "items": [
@@ -6387,6 +6476,7 @@
         ]
       }
     ],
+    "outside": [],
     "unavailableCount": 0
   }
 }
