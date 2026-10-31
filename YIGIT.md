@@ -203,4 +203,20 @@ Haritada farklı bir işaretle (ör. içi boş daire) göster ve detayda "Konum 
 
 ---
 
+## 10. Haritada kişisel sis: ziyaret edilen eserler açık
+
+**Ne:** Harita şimdi her eseri kilitli mühür olarak gösteriyor. Giriş yapmış kullanıcının ziyaret ettiği eserlerin
+sisi kalkmalı, mühür açılmalı; ziyaret edilmemişler kilitli kalır.
+
+- Liste: `GET /me/visits` (oturum gerekli) → `MyVisitsResponseSchema`: `items[]` her ziyaret edilen eser için
+  `assetId`, `visitedAt`, `verified` (konum yerinde doğrulandı), `proven` (Zaman Perdesi ile kanıtlandı). Yeniden eskiye.
+- Harita açılınca ve bir ziyaret ya da kanıt başarılı olunca (`POST /assets/:id/visit` ve `/visit/proof`) listeyi yenile;
+  yanıtı beklemeden yeni eseri hemen açık say.
+- Giriş yoksa (ya da anonim kullanıcı hiç ziyaret etmediyse) her şey kilitli kalır; çağrı `401` dönerse boş liste say.
+- Külliye tek mühürle görünüyorsa (`parentId`), külliyenin kendisi ya da yapılarından biri ziyaret edildiyse mühür açılabilir.
+- `proven` eserlere ayrı bir işaret (ör. altın çerçeve) iyi durur.
+- Demo hesabı `gezgin`: Bursa'da 42, Hatay'da 4 eser ziyaret edilmiş, Ulucami ve Koza Han kanıtlı; Konya bilerek boş.
+
+---
+
 Takıldığın bir yer, eksik ya da garip bir yanıt olursa bana yaz; API'de değişiklik gerekirse hemen yaparım.

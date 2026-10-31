@@ -7,6 +7,16 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-31 · Ziyaret edilen eserler: `GET /me/visits` (sözleşme 0.3.13)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md) 10. madde)
+
+1. API'yi yeniden başlat. Migration ya da veri içe aktarma gerekmez.
+
+Değişenler:
+- `GET /me/visits` (oturum gerekli): kullanıcının ziyaret ettiği yayındaki eserler, yeniden eskiye; her birinde `assetId`, `visitedAt`, `verified`, `proven`. Harita bu eserlerin sisini kaldırmak için kullanır.
+- Uygulamanın fixture'ları 0.3.13 ile yeniden çekildi; önbellek sözleşme sürümüyle anahtarlandığı için kendiliğinden yenilenir.
+
 ## 2026-10-31 · Harita hep karanlık, eser kartları şeffaf cam (`expo-blur`)
 
 Kimler: **uygulama ekibi**

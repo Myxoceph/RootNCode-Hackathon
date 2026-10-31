@@ -7,6 +7,7 @@ adminler panelden yeni başarım ekleyebilir, düzenleyebilir ya da kapatabilir 
 - **Ziyaret** `POST /assets/:id/visit` ile kaydedilir. Eserin koordinatı varsa ziyaretçi 200 m içinde olmalıdır (`verified: true`).
   Koordinatı olmayan eserin ziyareti doğrulanmadan kabul edilir ve başarımlara yine sayılır. Her eser kullanıcı başına bir kez (ilk ziyaret) sayılır.
 - **İlerleme** `GET /me/achievements` ile okunur; kazanılan başarımlar bu çağrıda ve ziyaret yanıtında kaydedilir.
+- **Ziyaret edilen eserler** `GET /me/visits` ile okunur (yeniden eskiye); harita bu eserlerin sisini kaldırır.
 
 Toplam: **34 başarım**, en çok **1350 puan**. Puanlar cüzdana yazılır ve ödüllere harcanabilir ([`rewards.md`](rewards.md)).
 
