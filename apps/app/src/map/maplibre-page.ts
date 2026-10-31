@@ -304,7 +304,8 @@ function start() {
       source: "city-assets",
       paint: {
         // About 250 metres around each asset up close, wider further out, so from afar it covers whole districts.
-        "heatmap-radius": ["interpolate", ["exponential", 2], ["zoom"], 10, 14, 13, 70, 16, 270],
+        // Closer in it spreads on, up to where it gets costly to draw.
+        "heatmap-radius": ["interpolate", ["exponential", 2], ["zoom"], 10, 14, 13, 70, 16, 270, 17.5, 600],
         "heatmap-intensity": ["interpolate", ["linear"], ["zoom"], 10, 0.6, 16, 0.35],
         "heatmap-color": hazeRamp(),
         "heatmap-opacity": 0,
@@ -323,7 +324,8 @@ function start() {
         "icon-rotation-alignment": "map",
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
-        ...badgeLayout(null),
+        // Up close the bank spreads with the map, only a little slower, so it still thins towards the edges.
+        "icon-size": ["interpolate", ["exponential", 2], ["zoom"], DOTS_ZOOM, 0.36, 14, 0.75, FOG_GROUND_ZOOM, 1.15, 20, 1.15 * Math.pow(FOG_SPREAD, 20 - FOG_GROUND_ZOOM)],
       },
       paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 900 } },
     });
@@ -816,7 +818,7 @@ function start() {
 
   function showCitySelection() {
     for (const [property, value] of Object.entries(badgeLayout(citySelected))) {
-      for (const layer of ["city-asset-badges", "city-clouds"]) map.setLayoutProperty(layer, property, value);
+      map.setLayoutProperty("city-asset-badges", property, value);
     }
     map.setFilter("city-asset-halo", ["==", ["get", "id"], citySelected || ""]);
     showDots();
@@ -850,6 +852,9 @@ function start() {
   /** The seal's diameter at full size, in points, and the room around it for its glow. */
   const SEAL_SIZE = 26;
   const SEAL_ROOM = 6;
+  /** From this zoom in the fog banks grow FOG_SPREAD times each zoom level (the map grows 2 times). */
+  const FOG_GROUND_ZOOM = 15;
+  const FOG_SPREAD = 1.6;
   /** How far outside the disc the landmark's second ring is drawn, and the chosen one's beats. */
   const LANDMARK_RING = 3;
   /** The icon's size inside the disc: room between it and the ring. */
