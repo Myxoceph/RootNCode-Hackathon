@@ -218,14 +218,20 @@ Final demosu ekibin MacBook Air'inden (M4, 16 GB) tünelle yayınlanır. Bütün
 
 Ön kontrol (`npm run demo:check`) şunlara bakar: API ve veritabanı, yayındaki eser sayısı (en az 500),
 bir kapak fotoğrafının medya Worker'ından gelmesi, harita altlığı, web uygulaması, asistanın gerçek bir
-soruya cevap vermesi ve boş disk (en az 10 GB). `/chat/status` yalnızca modelin tanımlı olduğunu söyler;
-sağlayıcı yoğunken bile `available: true` döner, bu yüzden kontrol bir soru da sorar.
+soruya cevap vermesi ve boş disk (en az 10 GB). `/chat/status` bir soru sağlayıcı tarafında
+başarısız olunca (yoğunluk, kota, reddedilen anahtar) bir dakika `available: false` döner ve uygulama
+sohbeti gizler; ama o ilk sorudan önce sorunu bilemez, bu yüzden kontrol bir soru da sorar.
 
 **Bir gün önce** (demonun yapılacağı ağdan):
 1. `git switch main && git pull`, `deploy/demo.sh up`: derleme burada yapılır, demo günü yeniden derlenmez.
 2. `npm run map:warm` (harita önbelleği) ve `deploy/demo.sh tunnel` ile telefondan bir tur.
 3. Moderatör ve admin hesaplarını aç ([Moderatör ve admin hesabı](#moderatör-ve-admin-hesabı)); parolalar bir kez yazılır.
 4. `deploy/demo.sh backup`.
+
+**Tüneli aynı anda yalnızca bir bilgisayar açar.** İki bilgisayar aynı tünele bağlanırsa Cloudflare
+istekleri ikisine dağıtır: kayıt birinin veritabanına, giriş öbürününkine düşer. Adresin hangi makineyi
+gösterdiğini `/api/health`'teki `uptimeSeconds`'ı yerel `http://127.0.0.1:8080/api/health` ile
+karşılaştırarak gör.
 
 **Demo sabahı:** Mac şarjda, Docker Desktop açık. `deploy/demo.sh up`, ayrı bir terminalde
 `deploy/demo.sh tunnel`, sonra `deploy/demo.sh check https://vagabonds.allbytech.com`: hepsi ✓ olmalı.
