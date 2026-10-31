@@ -25,6 +25,9 @@ import { createPlannerRepository } from "./modules/planner/planner.repository.ts
 import { createSoundsRepository } from "./modules/sounds/sounds.repository.ts";
 import { soundsRoutes } from "./modules/sounds/sounds.routes.ts";
 import { plannerRoutes } from "./modules/planner/planner.routes.ts";
+import type { TransitPlanner } from "./modules/transit/otp.client.ts";
+import { createTransitRepository } from "./modules/transit/transit.repository.ts";
+import { transitRoutes } from "./modules/transit/transit.routes.ts";
 import type { WeatherService } from "./modules/weather/weather.service.ts";
 import { registerErrorHandlers } from "./plugins/error-handler.ts";
 import { registerOpenApi } from "./plugins/openapi.ts";
@@ -50,6 +53,8 @@ export interface BuildAppOptions {
   photoUrls?: PhotoUrls;
   /** Model behind the AI assistant (`POST /chat`); without one the assistant reports itself unavailable. */
   assistantModel?: ChatModel | null;
+  /** OpenTripPlanner for the Konya transit pilot (`GET /transit/plan`); without it the route answers 503. */
+  transitPlanner?: TransitPlanner | null;
 }
 
 const NO_WEATHER: WeatherService = { current: async () => null, forecast: async () => null };
@@ -72,6 +77,7 @@ export function buildApp({
   rateLimit = DEFAULT_RATE_LIMIT,
   weather = NO_WEATHER,
   assistantModel = null,
+  transitPlanner = null,
   photoUrls = createPhotoUrls(),
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
@@ -107,6 +113,10 @@ export function buildApp({
   });
   app.register(rewardsRoutes, { repository: createRewardsRepository(prisma), community: communityRepository });
   app.register(photosRoutes, { repository: communityRepository, visibility: assetVisibility, urls: photoUrls });
+  app.register(transitRoutes, {
+    planner: transitPlanner,
+    repository: createTransitRepository(prisma, visibleStatuses(assetVisibility)),
+  });
   app.register(assistantRoutes, { model: assistantModel, repository: createAssistantRepository(prisma, assetVisibility) });
 
   return app;
