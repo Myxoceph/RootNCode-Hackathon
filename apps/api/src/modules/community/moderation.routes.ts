@@ -76,6 +76,7 @@ export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = asy
 
     const result = await repository.review(id, moderator.id, decision);
     if (result === "not_found") throw new HttpError(404, "CONTRIBUTION_NOT_FOUND", `Contribution "${id}" not found`);
+    if (result === "own") throw new HttpError(403, "OWN_CONTRIBUTION", "Another moderator must review your own contribution");
     if (result === "already_reviewed") {
       throw new HttpError(409, "ALREADY_REVIEWED", `Contribution "${id}" has already been reviewed`);
     }

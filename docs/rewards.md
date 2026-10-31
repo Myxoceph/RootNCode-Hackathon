@@ -7,6 +7,8 @@ Başarımlardan kazanılan puan, ortak kurumların verdiği ödüllere harcanır
 - **Ödül almak** (`POST /rewards/:code/redeem`): bakiye yetiyor ve gereken kanıtlanmış ziyaret sayısı
   tamamsa kullanıcıya ortak kurumun **tek kullanımlık kodu** verilir ve puan düşülür. Kod şubede, müzede ya da
   kafede gösterilir. Aynı bakiye iki kez harcanamaz, aynı kod iki kişiye gitmez (tek veritabanı işlemi).
+- **Hesap gerekir:** anonim ziyaretçi puan kazanır ama kod alamaz (`403 ACCOUNT_REQUIRED`); anonim oturum açmak
+  bedava olduğu için kodlar yalnızca kullanıcı adı ve parolası olan hesaplara verilir. Hesap açınca puanlar korunur.
 - **Kanıtlanmış ziyaret**: konumun yanında, Zaman Perdesi'nde eserin fotoğrafının kamerada tanınması
   ([`achievements.md`](achievements.md)). Değeri yüksek ödüller bunu ister; yalnızca konumla gezen biri kodları toplayamaz.
 - **Kodlar** ortak kurumdan gelir; admin yükler (`POST /admin/rewards/:code/codes`, en çok 1000'er). Kodu biten

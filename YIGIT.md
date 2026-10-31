@@ -125,6 +125,8 @@ Adımlar:
 - Alma: `POST /rewards/:code/redeem` → `RedeemResponseSchema` (`redemption.code` = tek kullanımlık kod, yeni `balance`).
   - Önce onay sor ("150 puan harcansın mı?").
   - Hatalar (409): `INSUFFICIENT_POINTS`, `PROVEN_VISITS_REQUIRED`, `OUT_OF_STOCK`.
+  - Anonim kullanıcı kod alamaz: `403 ACCOUNT_REQUIRED`. Düğmede "Ödül almak için hesap aç" yaz ve 5. maddedeki
+    `POST /auth/upgrade`'e götür; kazanılan puanlar korunur (`AppUser.username` `null` ise düğmeyi baştan böyle göster).
   - Kodu büyük ve kopyalanabilir göster; istersen QR (`react-native-qrcode-svg`, sürümü en az 2 haftalık olsun).
 - "Puanlar parayla alınamaz, paraya çevrilemez" notu cüzdan ekranında dursun.
 - Anlatım: [`docs/rewards.md`](docs/rewards.md).
@@ -174,7 +176,7 @@ eser, başarım ve ödül işlemleri **yalnızca admin**; moderatör inceleme ku
 | Ekran | Uçlar |
 |---|---|
 | Özet | `GET /admin/summary` (bekleyen not ve fotoğraf sayıları, kullanıcılar, panel eserleri) |
-| İnceleme kuyruğu | `GET /admin/contributions?status=pending&kind=notes` ya da `kind=photos`, `POST …/:id/approve`, `POST …/:id/reject` `{ reason }` (fotoğrafta `photo.path` imzalı) |
+| İnceleme kuyruğu | `GET /admin/contributions?status=pending&kind=notes` ya da `kind=photos`, `POST …/:id/approve`, `POST …/:id/reject` `{ reason }` (fotoğrafta `photo.path` imzalı); kendi katkısında `403 OWN_CONTRIBUTION`, düğmeleri gizle |
 | Kullanıcılar | `GET /admin/users?q=&role=`, `POST /admin/users/:id/role` `{ role }`, `POST /admin/users/:id/ban`, `POST /admin/users/:id/unban` |
 | Eser ekle | `GET /admin/assets`, `POST /admin/assets` (ad, tür, il, ilçe, dönem, özet, tanıtım, tarih, bani, adres, koordinat, `status`), `PATCH /admin/assets/:id`, `DELETE /admin/assets/:id`; kodlar `GET /meta/enums`'tan |
 | Başarımlar | `GET`/`POST /admin/achievements`, `PATCH`/`DELETE /admin/achievements/:code` (kural türleri `docs/achievements.md` sonunda) |

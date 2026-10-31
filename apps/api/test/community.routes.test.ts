@@ -301,6 +301,14 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
       expect(mine.items.find((item) => item.id === id)).toMatchObject({ status: "rejected", rejectReason: "Doğrulanamadı" });
     });
 
+    it("leaves a moderator's own contribution to another moderator", async () => {
+      const author = await createUser("moderator", "test-moderator-yazar");
+      const id = (await contribute(author.token, { kind: "tip", body: "Avlu kapısı sabah 9'da açılıyor." })).json().id;
+      const own = await app.inject({ method: "POST", url: `/admin/contributions/${id}/approve`, headers: auth(author.token) });
+      expect([own.statusCode, own.json().error.code]).toEqual([403, "OWN_CONTRIBUTION"]);
+      expect((await app.inject({ method: "POST", url: `/admin/contributions/${id}/approve`, headers: auth(moderator) })).statusCode).toBe(200);
+    });
+
     it("answers 404 for unknown contributions and 400 for malformed ids", async () => {
       const unknown = await app.inject({ method: "POST", url: `/admin/contributions/${randomUUID()}/approve`, headers: auth(moderator) });
       expect(unknown.statusCode).toBe(404);

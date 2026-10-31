@@ -20,6 +20,19 @@ describe("CORS", () => {
     await app.close();
   });
 
+  it("lets the web admin panel send PATCH and DELETE", async () => {
+    const app = buildApp({ prisma, corsOrigins: ["http://localhost:8081"] });
+
+    const response = await app.inject({
+      method: "OPTIONS",
+      url: "/admin/achievements/x",
+      headers: { origin: "http://localhost:8081", "access-control-request-method": "DELETE" },
+    });
+
+    expect(response.headers["access-control-allow-methods"]).toMatch(/PATCH.*DELETE/);
+    await app.close();
+  });
+
   it("does not allow unknown origins", async () => {
     const app = buildApp({ prisma, corsOrigins: ["http://localhost:8081"] });
 

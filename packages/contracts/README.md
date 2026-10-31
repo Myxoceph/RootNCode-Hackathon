@@ -46,7 +46,7 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `POST /assets/:id/visit/proof?lang=` 🔒 | İstek `VisitProofRequestSchema` (`mediaKey`: eserin kamerada tanınan fotoğrafının `media[].key` değeri, `method: "device_recognition"`, konum ziyaretteki kuralla), yanıt `VisitResponseSchema` (`proven: true`). Ziyaret yoksa kaydedilir ve kanıtlanmış olarak işaretlenir; `UNKNOWN_MEDIA` (400) anahtar bu eserin değilse |
 | `GET /rewards?lang=` | `RewardsResponseSchema`: etkin ödüller (`costPoints`, `minProvenVisits`, `stock`, örnekse `sample: true`) |
 | `GET /me/wallet?lang=` 🔒 | `WalletResponseSchema`: `balance`, `earned`, `spent`, `provenVisits`, alınan kodlar |
-| `POST /rewards/:code/redeem?lang=` 🔒 | `RedeemResponseSchema`: tek kullanımlık kod ve yeni bakiye; `INSUFFICIENT_POINTS`, `PROVEN_VISITS_REQUIRED`, `OUT_OF_STOCK` (409) |
+| `POST /rewards/:code/redeem?lang=` 🔒 | `RedeemResponseSchema`: tek kullanımlık kod ve yeni bakiye; `INSUFFICIENT_POINTS`, `PROVEN_VISITS_REQUIRED`, `OUT_OF_STOCK` (409); anonim kullanıcıya `ACCOUNT_REQUIRED` (403) |
 | `GET /achievements?lang=` | `AchievementsResponseSchema`: etkin başarımlar, kurallarıyla (`rule.kind`: `visit_count`, `districts`, `cities`, `within`, `complex`, `contributions`) |
 | `GET /me/achievements?lang=` 🔒 | `MyAchievementsResponseSchema`: her başarımda ilerleme (`progress.current/target`), `earnedAt`, toplam puan ve ziyaret sayısı |
 | `GET /me/visits` 🔒 | `MyVisitsResponseSchema`: ziyaret edilen yayındaki eserler, yeniden eskiye (`assetId`, `visitedAt`, `verified`, `proven`); harita bu eserlerin sisini kaldırır |

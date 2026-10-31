@@ -124,7 +124,7 @@ export interface CommunityRepository {
     items: ModerationRecord[];
   }>;
   /** Reviews a pending contribution. The status filter makes concurrent reviews safe. */
-  review(id: string, reviewerId: string, decision: ReviewDecision): Promise<ModerationRecord | "not_found" | "already_reviewed">;
+  review(id: string, reviewerId: string, decision: ReviewDecision): Promise<ModerationRecord | "not_found" | "already_reviewed" | "own">;
   /** Bans a visitor; false when no such visitor exists. Moderators cannot be banned this way. */
   banVisitor(id: string): Promise<boolean>;
 }
@@ -322,7 +322,8 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
       // One conditional UPDATE: status, reviewer and time change together, so the
       // `reviewed_by/reviewed_at` CHECK holds and a second moderator cannot overwrite a decision.
       const { count } = await prisma.contribution.updateMany({
-        where: { id, status: "pending" },
+        // Not their own: approved notes earn achievements and points.
+        where: { id, status: "pending", user_id: { not: reviewerId } },
         data: {
           status: decision.status,
           reviewed_by: reviewerId,
@@ -331,8 +332,9 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
         },
       });
       if (count === 0) {
-        const exists = await prisma.contribution.findUnique({ where: { id }, select: { id: true } });
-        return exists === null ? "not_found" : "already_reviewed";
+        const found = await prisma.contribution.findUnique({ where: { id }, select: { user_id: true, status: true } });
+        if (found === null) return "not_found";
+        return found.status === "pending" && found.user_id === reviewerId ? "own" : "already_reviewed";
       }
       return prisma.contribution.findUniqueOrThrow({ where: { id }, select: moderationSelect });
     },
