@@ -6,7 +6,8 @@ export default function MonumentsLayout() {
   return (
     <Stack screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display } }}>
       <Stack.Screen name="index" options={{ title: "Eserler" }} />
-      <Stack.Screen name="[id]" options={{ title: "" }} />
+      {/* The card draws its own back button over the photo. */}
+      <Stack.Screen name="[id]" options={{ title: "", headerShown: false }} />
     </Stack>
   );
 }

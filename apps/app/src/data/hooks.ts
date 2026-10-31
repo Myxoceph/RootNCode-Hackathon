@@ -161,6 +161,22 @@ export function useCityMapAssets(
   return useResource(load);
 }
 
+/** Every published asset, located or not, 500 a request (the API's most). */
+async function loadAllAssets(): Promise<AssetSummary[]> {
+  const items: AssetSummary[] = [];
+  for (;;) {
+    const page = await dataSource.listAssets({ limit: 500, offset: items.length }, LANG);
+    items.push(...page.items);
+    if (page.items.length === 0 || items.length >= page.total) return items;
+  }
+}
+
+/** Every published asset, for the search on the map; `null` (and no request) until it is `wanted`. */
+export function useSearchableAssets(wanted: boolean): ResourceWithRetry<AssetSummary[] | null> {
+  const load = useCallback(async () => (wanted ? loadAllAssets() : null), [wanted]);
+  return useResource(load);
+}
+
 export function useCities(): ResourceWithRetry<CityOption[]> {
   const load = useCallback(() => dataSource.listCities(LANG), []);
   return useResource(load);

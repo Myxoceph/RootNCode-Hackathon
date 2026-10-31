@@ -52,6 +52,8 @@ export type MapPageEvent =
   | { type: "select"; id: string | null }
   | { type: "province"; plate: number }
   | { type: "leaveCity" }
+  /** The camera has landed on the chosen city, its flight over. */
+  | { type: "cityLanded"; plate: number }
   | { type: "error"; message: string };
 
 /** Messages the app sends to the map page. */
@@ -111,6 +113,11 @@ export function mapPageHtml({
 <style>${maplibre.css}</style>
 <style>
   html, body, #map { margin: 0; height: 100%; background: ${colors.land}; }
+  .maplibregl-ctrl-top-right { transition: top 0.3s ease; }
+  /* The credits: a faint (i) over the night map until it is tapped. */
+  body:not(.credits-open) .maplibregl-ctrl-attrib-inner { display: none; }
+  body:not(.credits-open) .maplibregl-ctrl-attrib.maplibregl-compact { padding: 0; background: rgba(255, 255, 255, 0.08); }
+  body:not(.credits-open) .maplibregl-ctrl-attrib-button { background-color: transparent; filter: invert(1); opacity: 0.45; }
   #network { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 </style>
 </head>
@@ -169,12 +176,39 @@ function start() {
     container: "map",
     style: ${JSON.stringify(STYLE_URL[scheme])},
     ...(OPENING ? { bounds: TURKEY_BOUNDS, fitBoundsOptions: { padding: 24 } } : { center: [29.06, 40.19], zoom: 11 }),
-    attributionControl: { compact: true },
+    // The credits go top right, under the screen's search bar (placeCredits).
+    attributionControl: false,
   });
+  map.addControl(new maplibregl.AttributionControl({ compact: true }), "top-right");
   window.vagabondsMap.map = map;
   map.on("error", (event) => post({ type: "error", message: String(event.error && event.error.message || event.error) }));
   // The base style asks for a few pattern images it does not ship; an empty one keeps the console quiet.
   map.on("styleimagemissing", (event) => map.addImage(event.id, { width: 1, height: 1, data: new Uint8Array(4) }));
+  // The credits the tiles and OpenStreetMap ask for stay one tap away behind a faint (i): the page's
+  // style keeps them folded until the button is tapped (credits-open), so they never flash open first.
+  const foldCredits = () => document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
+  map.once("load", foldCredits);
+  map.once("idle", foldCredits);
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element) || !event.target.closest(".maplibregl-ctrl-attrib-button")) return;
+    // After MapLibre's own toggle, follow it.
+    setTimeout(() => {
+      const shown = document.querySelector(".maplibregl-ctrl-attrib")?.classList.contains("maplibregl-compact-show");
+      document.body.classList.toggle("credits-open", Boolean(shown));
+    });
+  });
+
+  /**
+   * The (i) sits just under the screen's search bar, at the right: the top of the padding the screen
+   * asks for is where its bar ends, plus a little room. Opened, the credits unfold leftwards from there.
+   */
+  function placeCredits() {
+    const corner = document.querySelector(".maplibregl-ctrl-top-right");
+    if (!corner) return;
+    corner.style.top = Math.max(0, lastPadding.top - 14) + "px";
+    // In line with the bar's right edge (16 from the screen's), the control's own 10 margin taken off.
+    corner.style.right = "6px";
+  }
 
   map.on("load", () => {
     map.setPaintProperty("background", "background-color", colors.land);
@@ -495,6 +529,7 @@ function start() {
 
   function showPins(pins, padding) {
     lastPadding = padding;
+    placeCredits();
     hasPins = pins.length > 0;
     marks = pins.filter((pin) => pin.mark);
     draw();
@@ -672,6 +707,10 @@ function start() {
         setCityAssetsShown(true);
         cityLanded = true;
       }, motion ? FLY_MS * 0.75 : 0);
+      // The flight over, the screen brings in what goes with the city (its cards).
+      setTimeout(() => {
+        if (cityPlate === plate) post({ type: "cityLanded", plate });
+      }, motion ? FLY_MS : 0);
     } else if (turkeyView) {
       // Exactly the view the map opened on, whatever padding choosing an asset left on the camera.
       map.flyTo({ center: turkeyView.center, zoom: turkeyView.zoom, padding: { top: 0, right: 0, bottom: 0, left: 0 }, duration: options.duration, essential: true });

@@ -1,8 +1,9 @@
-import { palette, useTheme } from "@vagabonds/ui";
+import { palette } from "@vagabonds/ui";
 import { useEffect, useMemo, useRef } from "react";
 
 import { loadMaplibre, useVendored } from "@/vendor";
 
+import { useMapTheme } from "./map-theme";
 import { mapPageHtml, parseMapPageEvent, type MapPageCommand } from "./maplibre-page";
 import type { AssetMapProps } from "./types";
 
@@ -13,10 +14,10 @@ const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
  * the commands sent to it when pins or the selection change, and its events.
  */
 export function useMapPage(
-  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity }: AssetMapProps,
+  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity, onCityLanded }: AssetMapProps,
   send: (command: MapPageCommand) => void,
 ) {
-  const { scheme, colors: c } = useTheme();
+  const { scheme, colors: c } = useMapTheme();
   const maplibre = useVendored(loadMaplibre);
   // Only whether and how the map opens is baked into the page; the outlined plates are sent as commands.
   const showsProvinces = provinces !== null;
@@ -76,6 +77,7 @@ export function useMapPage(
     if (event?.type === "select") onSelect(event.id);
     if (event?.type === "province") onSelectProvince?.(event.plate);
     if (event?.type === "leaveCity") onLeaveCity?.();
+    if (event?.type === "cityLanded") onCityLanded?.(event.plate);
     if (event?.type === "error") onError?.(event.message);
     if (event?.type === "ready" && !ready.current) {
       ready.current = true;

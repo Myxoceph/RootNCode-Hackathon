@@ -12,6 +12,7 @@ export {
   useMyContributions,
   usePulse,
   useRelationsOf,
+  useSearchableAssets,
   type AssetListPage,
   type RelationsOf,
   type Resource,

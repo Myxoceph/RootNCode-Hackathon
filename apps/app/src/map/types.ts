@@ -106,5 +106,7 @@ export interface AssetMapProps {
   onSelectProvince?: (plate: number) => void;
   /** The city was zoomed out to the Turkey view: the map has let go of it, the screen should too. */
   onLeaveCity?: () => void;
+  /** The camera has finished flying into the chosen city. */
+  onCityLanded?: (plate: number) => void;
   style?: StyleProp<ViewStyle>;
 }

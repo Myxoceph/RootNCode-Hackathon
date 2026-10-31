@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-10-31 · Harita hep karanlık, eser kartları şeffaf cam (`expo-blur`)
+
+Kimler: **uygulama ekibi**
+
+1. `npm install` (uygulamaya `expo-blur` eklendi; Expo Go'da hazır geliyor, yeniden derleme gerekmez).
+
+Değişenler:
+- Harita, uygulama aydınlık modda olsa da karanlık temanın renkleriyle çiziliyor; harita ekranındayken durum çubuğu açık renk.
+- Şehrin altındaki eser kartları her temada şeffaf buzlu cam, beyaz yazılı; tarih bilgisi karttan kalktı.
+- Eser kartları şehre tıklanınca değil, kamera şehre inişini bitirince aşağıdan kayarak geliyor (harita sayfasının yeni `cityLanded` olayı).
+- Harita telif yazısı başta kapalı, sağ alttaki (i) ile açılıyor; şehir açıkken kartların üstünde duruyor.
+- Alt bar yeniden tasarlandı (`components/tab-bar.tsx`): yüzen opak bir kapsül (aydınlık temada beyaz, karanlıkta gece mavisi); açık sekme adıyla altın bir hap, Kamera ortada altın bir daire. Haritada barın altından harita görünüyor, diğer ekranlarda bar ekranın zemininde duruyor.
+- Haritanın üstündeki başlık kartı ve şehir barı kalktı; yerine eser arama çubuğu geldi (`components/map-search.tsx`). Türkiye görünümünde tüm eserlerde ve şehirlerde, şehirdeyken o şehrin eserlerinde arar; yazmadan önce şehirleri ve öne çıkan eserleri önerir. Seçilen eser haritada seçilir (başka şehirdeyse önce o şehre uçulur), konumu olmayan eserin kartı açılır. Arama uygulamada yapılıyor: API'den tüm eserler 500'erli sayfalarla bir kez yüklenir.
+- Alt barda Kapsül sekmesinin yerine Eserler (`/monuments`, tüm eserler listesi) geldi. Kapsül ekranı silinmedi: `/capsule` adresi çalışıyor, eser kartları kapsül seslerini çalmaya devam ediyor.
+
 ## 2026-10-31 · Konya II. cilt fotoğrafları
 
 Kimler: **API'yi yerelde çalıştıranlar**
