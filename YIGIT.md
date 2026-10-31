@@ -251,4 +251,20 @@ binilecek ve inilecek duraklar ve saatler görünür. Diğer illerde rota yok (a
 
 ---
 
+## 12. Bağlantılar: haritadaki oklar ve harita dışındaki yerler
+
+Sisli haritada bağı olan bir eser açılınca oklar (planınızdaki gibi) `GET /assets/:id/relations` → `items`'tan gelir.
+
+- **Hikâye anlatan türleri öne çıkar:** `waqf_income` (vakıf geliri: "bu hanın kirası şu camiyi yaşattı", ayrı bir
+  renk), `water_supply`, `same_founder`, `same_architect`, `architectural_lineage`. `urban_context` ("hemen
+  yanında") ya gösterme ya çok soluk göster; `same_complex` zaten tek mühür.
+- **Harita dışındaki yerler:** yeni `outside[]` (sözleşme 0.3.15): veri setinde olmayan yerlere bağlar, kaynaktaki
+  adıyla (`name`, ör. "II. Bayezid Külliyesi (İstanbul)"), `type`, `description`, `confidence`, `sources`. Noktası
+  yok, ok çizilmez; eser kartında "Bu yapının bağları" altında liste ya da haritanın kenarına doğru giden bir ok.
+  Örnekler: Koza Han → II. Bayezid Külliyesi (İstanbul), Fidan Han → Mahmud Paşa Külliyesi (İstanbul), dört yapı →
+  günümüze ulaşmamış Orhan Gazi İmareti. Vakıf ekonomisinin en vurucu cümleleri bunlar.
+- **Demo:** bağlar en zengin Bursa'da (vitrin hesabı `gezgin` Bursa'da 43 eser açmış); toplu taşıma Konya'da.
+
+---
+
 Takıldığın bir yer, eksik ya da garip bir yanıt olursa bana yaz; API'de değişiklik gerekirse hemen yaparım.

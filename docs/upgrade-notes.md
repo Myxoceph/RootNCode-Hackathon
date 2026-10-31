@@ -7,6 +7,17 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-01 · Veri seti dışındaki yerlere bağlar (migration, sözleşme 0.3.15)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **veri ekibi**, **uygulama ekibi** ([`YIGIT.md`](../YIGIT.md) 12. madde)
+
+1. `npm run db:deploy --workspace @vagabonds/api` (`asset_relation`'a `target_name_tr`, `target_name_en`).
+2. `npm run db:import`.
+
+Değişenler:
+- Kayıtlardaki bağa isteğe bağlı `target_name` ({ tr, en? }): hedef veri setinde yoksa kaynaktaki adı. 44 kayıtta 53 bağa yazıldı (ör. Koza Han → "II. Bayezid Külliyesi (İstanbul)"); adı kaynakta olmayan tek hedef (Sitti Hatun'un çeşmesi) adsız kaldı.
+- `GET /assets/:id/relations` yanıtında yeni `outside[]`: bu bağlar kaynaktaki adıyla, haritasız döner. `unavailableCount` artık yalnızca henüz yayında olmayan ve adsız bağları sayar.
+
 ## 2026-11-01 · Konya'da 7 eserin konumu
 
 Kimler: **API'yi yerelde çalıştıranlar**
