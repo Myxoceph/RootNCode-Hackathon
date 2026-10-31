@@ -78,6 +78,8 @@ export interface AskInput {
   lang: Lang;
   /** Local date, YYYY-MM-DD, so "yarın" means the right day. */
   today: string;
+  /** Local hour, 0-23: a trip asked for in the evening starts tomorrow. */
+  hour: number;
 }
 
 export interface AskResult {
@@ -100,11 +102,11 @@ async function servedCities(api: ToolContext["api"], lang: Lang): Promise<string
 /** Answers one question: the model may call up to `MAX_TOOL_CALLS` tools, then writes the answer. */
 export async function ask(
   model: ChatModel,
-  { message, history, assetId, lang, today }: AskInput,
-  tools: Omit<ToolContext, "sources" | "lang">,
+  { message, history, assetId, lang, today, hour }: AskInput,
+  tools: Omit<ToolContext, "sources" | "lang" | "today" | "hour">,
   signal: AbortSignal,
 ): Promise<AskResult> {
-  const context: ToolContext = { ...tools, sources: new SourceRegistry(), lang };
+  const context: ToolContext = { ...tools, sources: new SourceRegistry(), lang, today, hour };
   let system = systemPrompt(lang, today, await servedCities(tools.api, lang));
 
   if (assetId) {

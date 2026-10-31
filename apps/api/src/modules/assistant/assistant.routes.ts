@@ -12,7 +12,7 @@ import { resolveLang } from "../../lib/lang.ts";
 import { parseWith } from "../../lib/validate.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
-import { turkeyToday } from "../planner/planner.routes.ts";
+import { turkeyHour, turkeyToday } from "../planner/planner.routes.ts";
 import { ask } from "./assistant.ts";
 import { ModelError, type ChatModel } from "./assistant.model.ts";
 import type { AssistantRepository } from "./assistant.repository.ts";
@@ -74,7 +74,7 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
     try {
       const result = await ask(
         model,
-        { message: body.message, history: body.history, assetId: body.assetId, lang, today: turkeyToday() },
+        { message: body.message, history: body.history, assetId: body.assetId, lang, today: turkeyToday(), hour: turkeyHour() },
         { api, repository },
         AbortSignal.timeout(CHAT_TIMEOUT_MS),
       );

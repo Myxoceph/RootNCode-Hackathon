@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { createChatModel, oneSystemMessage } from "../src/modules/assistant/assistant.model.ts";
 import { searchTerms } from "../src/modules/assistant/assistant.repository.ts";
 import { plainText, resolveCitations, systemPrompt } from "../src/modules/assistant/assistant.ts";
-import { SourceRegistry } from "../src/modules/assistant/assistant.tools.ts";
+import { runTool, SourceRegistry, type ToolContext } from "../src/modules/assistant/assistant.tools.ts";
 
 describe("resolveCitations", () => {
   const sources = new SourceRegistry();
@@ -168,3 +168,30 @@ describe("systemPrompt", () => {
   });
 });
 
+describe("plan_trip tool", () => {
+  async function plannedDate(hour: number, date?: string) {
+    let query: Record<string, string> = {};
+    const context: ToolContext = {
+      api: async (_path, q) => {
+        query = q as Record<string, string>;
+        return { statusCode: 404, body: {} };
+      },
+      repository: { searchAssets: async () => [] },
+      sources: new SourceRegistry(),
+      lang: "tr",
+      today: "2026-10-31",
+      hour,
+    };
+    await runTool("plan_trip", JSON.stringify({ city: "bursa", duration: "1", ...(date && { date }) }), context);
+    return query.date;
+  }
+
+  it("starts a trip asked for in the evening tomorrow", async () => {
+    expect(await plannedDate(20)).toBe("2026-11-01");
+  });
+
+  it("leaves the planner's own default (today) during the day, and keeps a date the model gave", async () => {
+    expect(await plannedDate(10)).toBeUndefined();
+    expect(await plannedDate(20, "2026-11-02")).toBe("2026-11-02");
+  });
+});

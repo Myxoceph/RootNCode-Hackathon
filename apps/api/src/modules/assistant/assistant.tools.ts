@@ -12,6 +12,7 @@ import {
 import { z } from "zod";
 import { describeIssues } from "../../lib/validate.ts";
 import { toIdFragment } from "../assets/assets.repository.ts";
+import { addDays } from "../planner/planner.routes.ts";
 import type { ToolSpec } from "./assistant.model.ts";
 import type { AssistantRepository } from "./assistant.repository.ts";
 
@@ -47,6 +48,9 @@ export interface ToolContext {
   repository: AssistantRepository;
   sources: SourceRegistry;
   lang: Lang;
+  /** Local date and hour of the question (Türkiye). */
+  today: string;
+  hour: number;
 }
 
 export interface ToolResult {
@@ -89,6 +93,8 @@ type ToolName = keyof typeof ARGS;
 type ToolArgs<Name extends ToolName> = z.output<(typeof ARGS)[Name]>;
 
 const cityParam = { type: "string", description: "İl kodu, küçük harf (ör. bursa, hatay, konya)" };
+/** From this hour a trip without a date starts tomorrow: today's stops from 09:00 are already past. */
+const LATE_HOUR = 16;
 
 export const TOOL_SPECS: ToolSpec[] = [
   {
@@ -241,8 +247,9 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
     return { content: JSON.stringify(compactAsset(asset, sources.add("asset", asset.id, asset.name))) };
   },
 
-  async plan_trip({ city, duration, theme, date }, { api, sources, lang }) {
-    const { statusCode, body } = await api("/routes/trip", { city, duration, lang, ...(theme && { theme }), ...(date && { date }) });
+  async plan_trip({ city, duration, theme, date }, { api, sources, lang, today, hour }) {
+    const start = date ?? (hour >= LATE_HOUR ? addDays(today, 1) : undefined);
+    const { statusCode, body } = await api("/routes/trip", { city, duration, lang, ...(theme && { theme }), ...(start && { date: start }) });
     if (statusCode === 404) return failure(`Unknown city "${city}".`);
     if (statusCode === 400) return failure("Invalid trip parameters: the date must be today or within the next 2 days.");
     const trip = TripPlanResponseSchema.parse(body);
