@@ -169,8 +169,11 @@ def book_pages_text(doc, first, last):
     return "\n\n".join(parts)
 
 
-def photos(page, n, first, last):
-    """PDF sayfası n'deki fotoğraflardan basılı sayfası first..last aralığına düşenler."""
+def photos(page, n, first, last, entry_starts):
+    """PDF sayfası n'deki fotoğraflardan basılı sayfası first..last aralığına düşenler.
+
+    İki esere yayılan çift sayfa fotoğraf yalnızca sağdaki esere verilir (çift sayfa genelde
+    sonraki eseri açar); sağ sayfa bölüm başlığıysa soldaki esere kalır."""
     w = page.rect.width
     seen = set()
     for info in page.get_image_info(xrefs=True):
@@ -189,8 +192,29 @@ def photos(page, n, first, last):
             side, pages = "right", (right,)
         if not any(first <= p <= last for p in pages):
             continue  # sayfanın bu yarısı önceki ya da sonraki esere ait
+        if side == "spread" and first <= left <= last < right and right in entry_starts:
+            continue  # sonraki eserin fotoğrafı
         yield xref, {"pdf_page": n, "book_page": "-".join(map(str, pages)), "side": side,
                      "width": info["width"], "height": info["height"]}
+
+
+FLAT_STDDEV = 5  # kitabın tek renk zemin görselleri ≤ 1,7; en sade gerçek fotoğraf 13
+
+
+def is_flat(doc, xref):
+    """Görsel tek renkli bir zemin mi (kitap bu turkuaz kutuyu birçok sayfada yeniden kullanır)."""
+    pix = pymupdf.Pixmap(doc, xref)
+    if pix.n - pix.alpha != 3:
+        pix = pymupdf.Pixmap(pymupdf.csRGB, pix)
+    while pix.width > 128:
+        pix.shrink(1)
+    data, step = pix.samples, pix.n
+    for c in range(3):
+        values = data[c::step]
+        mean = sum(values) / len(values)
+        if (sum((v - mean) ** 2 for v in values) / len(values)) ** 0.5 > FLAT_STDDEV:
+            return False
+    return True
 
 
 def save_image(doc, xref):
@@ -214,6 +238,7 @@ def main(argv):
     doc = pymupdf.open(args.pdf)
     (args.out / "text").mkdir(parents=True, exist_ok=True)
     starts = sorted([c[0] for c in CHAPTERS] + [c[0] for c in CONTENTS])
+    entry_starts = {c[0] for c in CONTENTS}
     entries, total_photos = [], 0
     for i, (first, name, tr, en, district, parent) in enumerate(CONTENTS, 1):
         last = next(s for s in starts if s > first) - 1
@@ -236,7 +261,9 @@ def main(argv):
         if not args.no_images:
             folder = args.out / "images" / sid
             for n in range(pdf_page(first)[0], pdf_page(last)[0] + 1):
-                for k, (xref, meta) in enumerate(photos(doc[n - 1], n, first, last), 1):
+                for k, (xref, meta) in enumerate(photos(doc[n - 1], n, first, last, entry_starts), 1):
+                    if is_flat(doc, xref):
+                        continue  # numara yine sayılır: kayıtlardaki dosya adları değişmesin
                     data, ext = save_image(doc, xref)
                     folder.mkdir(parents=True, exist_ok=True)
                     path = folder / f"p{n:03d}-{k}.{ext}"
