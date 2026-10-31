@@ -206,7 +206,7 @@ function compactTransit(plan: TransitPlanResponse, ref: number): Record<string, 
       steps: it.legs.map((leg) =>
         leg.mode === "walk"
           ? `walk ${leg.distanceMeters} m to ${leg.to.name}`
-          : `${leg.mode} ${leg.line?.name ?? ""}${leg.headsign ? ` towards ${leg.headsign}` : ""}: board at ${leg.from.name} ${clock(leg.departure)}, ${leg.stopsBetween + 1} stops, get off at ${leg.to.name} ${clock(leg.arrival)}`,
+          : `${leg.mode === "tram" ? leg.line?.name ?? "tram" : `bus ${leg.line?.name ?? ""}`}${leg.headsign ? ` towards ${leg.headsign}` : ""}: board at ${leg.from.name} ${clock(leg.departure)}, ${leg.stopsBetween + 1} stops, get off at ${leg.to.name} ${clock(leg.arrival)}`,
       ),
     })),
     source: `${plan.source.name}, ${plan.source.timetable}`,

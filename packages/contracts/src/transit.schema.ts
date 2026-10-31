@@ -51,7 +51,12 @@ export const TransitLegSchema = z.strictObject({
   /** Null for walking. */
   line: z
     .strictObject({
-      /** As on the bus or tram, e.g. "56-A". */
+      /** The timetable's line code, e.g. "56-A" or, for a tram, "150-B". */
+      code: z.string().min(1),
+      /**
+       * What to show: the number on a bus ("56-A"); a tram's name as passengers know it
+       * ("Alaaddin – Selçuk Üniversitesi tramvayı"), since its timetable code is on no sign.
+       */
       name: z.string().min(1),
       longName: z.string().nullable(),
       /** "#RRGGBB" when the timetable gives one. */

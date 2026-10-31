@@ -20,7 +20,7 @@ import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import type { Point } from "../assets/assets.network.ts";
 import { turkeyOffsetTime, type TransitPlanner } from "./otp.client.ts";
-import { ENTRY_POINTS, inPilotArea, TRANSIT_SOURCE } from "./transit.places.ts";
+import { ENTRY_POINTS, inPilotArea, TRANSIT_SOURCE, tramName } from "./transit.places.ts";
 import type { TransitRepository } from "./transit.repository.ts";
 
 const CACHE_MS = 60_000;
@@ -160,7 +160,10 @@ export const transitRoutes: FastifyPluginAsync<TransitRoutesOptions> = async (ap
       from: { name: from.name, lat: from.lat, lng: from.lng, stopCode: null },
       to: { name: to.name, lat: to.lat, lng: to.lng, stopCode: null, assetId: to.assetId },
       searchedFrom: turkeyOffsetTime(searchedFrom),
-      itineraries,
+      itineraries: itineraries.map((it) => ({
+        ...it,
+        legs: it.legs.map((leg) => (leg.mode === "tram" && leg.line ? { ...leg, line: { ...leg.line, name: tramName(leg.line.code, lang) } } : leg)),
+      })),
       source: { ...TRANSIT_SOURCE[lang], license: TRANSIT_SOURCE.license, url: TRANSIT_SOURCE.url },
     });
   });

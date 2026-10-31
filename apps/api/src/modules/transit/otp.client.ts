@@ -145,6 +145,8 @@ function toLeg(leg: OtpLeg, start: Point, end: Point, fromName: string, toName: 
       mode === "walk" || !leg.route
         ? null
         : {
+            code: leg.route.shortName ?? leg.route.longName ?? "?",
+            // Trams are renamed per language by the route (transit.places.ts).
             name: leg.route.shortName ?? leg.route.longName ?? "?",
             longName: leg.route.longName,
             color: leg.route.color && /^[0-9A-Fa-f]{6}$/.test(leg.route.color) ? `#${leg.route.color}` : null,

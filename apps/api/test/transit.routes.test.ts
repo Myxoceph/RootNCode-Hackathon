@@ -76,6 +76,24 @@ describe.skipIf(!DATABASE_URL)("transit routes (PostgreSQL, recorded OTP)", () =
     expect((await plan(app, `from=Konya%20Gar%C4%B1&to=${KARATAY}`)).statusCode).toBe(400);
   });
 
+  it("names a tram as passengers know it, keeping its timetable code", async () => {
+    const asTram: TransitPlanner = {
+      async plan(from, to) {
+        return toItineraries(PLAN, { from, to }).map((it) => ({
+          ...it,
+          legs: it.legs.map((leg) => (leg.line ? { ...leg, mode: "tram" as const, line: { ...leg.line, code: "150-B", name: "150-B" } } : leg)),
+        }));
+      },
+    };
+    const app = appWith(asTram);
+    const lineOf = async (lang: string) => {
+      const body = TransitPlanResponseSchema.parse((await plan(app, `from=konya-gari&to=${KARATAY}&lang=${lang}`)).json());
+      return body.itineraries[0]!.legs.find((leg) => leg.mode === "tram")!.line;
+    };
+    expect(await lineOf("tr")).toMatchObject({ code: "150-B", name: "Alaaddin – Selçuk Üniversitesi tramvayı" });
+    expect((await lineOf("en"))!.name).toBe("Alaaddin – Selçuk University tram");
+  });
+
   it("searches from the morning when nothing runs at night", async () => {
     const asked: Date[] = [];
     const nightOnly: TransitPlanner = {
