@@ -22,6 +22,8 @@ function citationTarget(citation: ChatCitation): { href: Href; action: string } 
     case "trip":
       return { href: "/route", action: "Rotalar'ı aç" };
     case "weather":
+    // The route map opens from the answer's transit attachment (YIGIT.md §11).
+    case "transit":
       return null;
   }
 }
@@ -31,6 +33,7 @@ const citationIcon: Record<ChatCitation["kind"], IconName> = {
   dish: "restaurant",
   trip: "git-branch",
   weather: "partly-sunny",
+  transit: "bus",
 };
 
 /** The visitor's line: a grey bubble on the right. */
