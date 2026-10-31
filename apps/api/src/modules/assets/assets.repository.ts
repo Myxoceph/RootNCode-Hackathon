@@ -111,6 +111,8 @@ const relationSelect = {
   description_tr: true,
   description_en: true,
   confidence: true,
+  target_name_tr: true,
+  target_name_en: true,
   relation_type: { select: labelSelect },
 } satisfies Prisma.asset_relationSelect;
 
@@ -162,6 +164,8 @@ export interface AssetsRepository {
    * status; the caller drops links to assets it cannot show.
    */
   findRelations(id: string): Promise<RelationRecord[]>;
+  /** The ids that have a record in the dataset, whatever their status. */
+  findExistingIds(ids: string[]): Promise<Set<string>>;
   /** Citations of the given relations, keyed in the dataset as `<target id>:<type>` on the source asset. */
   findRelationCitations(relations: RelationRecord[]): Promise<CitationRecord[]>;
   /** Visible assets with coordinates inside the box, except `excludeId`. */
@@ -243,6 +247,12 @@ export function createAssetsRepository(prisma: PrismaClient, visibility: AssetVi
         select: relationSelect,
         orderBy: { id: "asc" },
       });
+    },
+
+    async findExistingIds(ids) {
+      if (ids.length === 0) return new Set();
+      const rows = await prisma.asset.findMany({ where: { id: { in: ids } }, select: { id: true } });
+      return new Set(rows.map((row) => row.id));
     },
 
     findRelationCitations(relations) {

@@ -10,6 +10,7 @@ import {
   type AssetDetail,
   type AssetRef,
   type AssetRelation,
+  type OutsideRelation,
   type AssetSummary,
   type Confidence,
   type Coordinates,
@@ -173,6 +174,25 @@ export function toAssetRelation(
     type: label(relation.relation_type, lang),
     direction,
     asset: toAssetSummary(other, otherCover, context),
+    description: pick(relation.description_tr, relation.description_en, lang),
+    confidence: requiredConfidence(relation.confidence, lang),
+    sources: citations
+      .filter((citation) => citation.asset_id === relation.source_asset_id && citation.entity_key === key)
+      .map((citation) => toSourceRef(citation, lang)),
+  };
+}
+
+/** A link to a place outside the dataset, named as the source names it. */
+export function toOutsideRelation(
+  { relation }: DirectedRelation,
+  name: string,
+  citations: CitationRecord[],
+  { lang }: MapperContext,
+): OutsideRelation {
+  const key = relationCitationKey(relation);
+  return {
+    type: label(relation.relation_type, lang),
+    name,
     description: pick(relation.description_tr, relation.description_en, lang),
     confidence: requiredConfidence(relation.confidence, lang),
     sources: citations

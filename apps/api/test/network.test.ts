@@ -53,6 +53,8 @@ function relation(source: string, target: string, type: string): RelationRecord 
     description_tr: `${source} → ${target}`,
     description_en: null,
     confidence: "certain",
+    target_name_tr: null,
+    target_name_en: null,
     relation_type: { code: type, label_tr: type, label_en: null },
   };
 }
@@ -87,13 +89,16 @@ describe("selectRelations", () => {
     expect(items).toHaveLength(2);
   });
 
-  it("counts links to missing or hidden assets without returning them", () => {
-    const { items, unavailableCount } = selectRelations(
+  it("sets links to missing or hidden assets apart", () => {
+    const { items, unavailable } = selectRelations(
       "a",
       [relation("a", "b", "same_founder"), relation("a", "not-in-dataset", "waqf_income"), relation("hidden", "a", "same_complex")],
       isVisible,
     );
     expect(items.map((item) => item.otherId)).toEqual(["b"]);
-    expect(unavailableCount).toBe(2);
+    expect(unavailable.map((link) => [link.otherId, link.direction])).toEqual([
+      ["not-in-dataset", "outgoing"],
+      ["hidden", "incoming"],
+    ]);
   });
 });
