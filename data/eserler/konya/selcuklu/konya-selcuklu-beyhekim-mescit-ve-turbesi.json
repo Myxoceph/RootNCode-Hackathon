@@ -1,0 +1,349 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-beyhekim-mescit-ve-turbesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Kitap yapım yılını vermiyor (dating.start_year/end_year null).",
+      "Mihrap kitabesinin metni ve çevirisi kitapta yok, kitabe kaydı yazılmadı.",
+      "Mahalle 'Beyhekim' adı metinde 'isminin verilmiş olduğu mahalle' olarak geçer; resmî mahalle adı teyit edilmeli.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap 'Tevbe Suresi 225. ayet' diyor; Tevbe Suresi'nin böyle bir ayet numarası olamaz, muhtemelen bir sure/ayet numarası hatası. İngilizce metin '225 verses of the Surah Al Tawbah and 45 verses of the Surah Al Ankebut' yazıyor. Kaynağa sadık kalınarak ayet numaraları metne taşınmadı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap 'Zengi dönemi özelliklerini Anadolu Selçuklu yapılarında yansıtan' diyor; Zengi etkisinin ne olduğu açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Beyhekim Mescit ve Türbesi",
+    "en": "Beyhekim Masjid and Tomb"
+  },
+  "alternate_names": [
+    {
+      "tr": "Beyhekim Mescidi",
+      "en": "Beyhekim Masjid",
+      "note": "Kitapta kısaca bu adla da geçer"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "mescit",
+    "türbe",
+    "Selçuklu",
+    "Beyhekim",
+    "çini mozaik mihrap",
+    "Berlin Pergamon Müzesi",
+    "Mevlâna'nın hekimi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Beyhekim",
+    "address": "Şair Yurdakul Sokak No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "300"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyılın ilk yarısı",
+      "en": "First half of the 13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitap yapım tarihini 'XIII. yüzyılın ilk yarısı' olarak verir; kesin yıl yoktur.",
+      "en": "The book gives 'the first half of the 13th century'; no exact year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "300"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Nahçıvanlı Tabip Ekmeleddin Beyhekim (Ekmeleddin İbn Abdüllatif Nahçivanî)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "300-301"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Selçuklu başhekimi Beyhekim'in XIII. yüzyılın ilk yarısında yaptırdığı, kendi türbesini de içeren kare planlı, tek kubbeli mescit; çini mozaik mihrabı 1899'da Berlin'e götürülmüştür.",
+    "en": "A square, single-domed masjid built in the first half of the 13th century by the Seljuk chief physician Beyhekim, including his tomb; its tile-mosaic mihrab was taken to Berlin in 1899."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Banî",
+        "en": "History and Founder"
+      },
+      "body": {
+        "tr": "Mescit Selçuklu ilçesi Şair Yurdakul Sokak No. 2'dedir; Alâeddin Tepesi'nin batısında, adını taşıyan mahalledesidir. Selçuklu döneminde Nahçıvanlı Tabip Ekmeleddin Beyhekim tarafından XIII. yüzyılın ilk yarısında yaptırılmıştır. Ekmeleddin İbn Abdüllatif Nahçivanî, Selçuklu döneminde yürüttüğü başhekimlik nedeniyle 'Beyhekim' adıyla bilinir; Mevlâna ve ailesinin hekimliğini yapmış, aynı zamanda Mevlâna'nın gönül dostlarındandır. Mescidin güneybatısındaki Beyhekim Mezarlığı'nın kalıntıları 1937'deki inşaatla bir kısmı yolun altında kalmış, bir kısmı inşaat sahasında kaybolmuştur.",
+        "en": "The masjid is at Şair Yurdakul Street No. 2, in the neighborhood bearing its name, west of Alâeddin Hill. It was built in the first half of the 13th century by Doctor Ekmeleddin Beyhekim of Nakhchivan. Ekmeleddin Ibn Abdullatif Nakhchivani is called 'Beyhekim' for his service as chief physician in the Seljuk period; he was physician to Mevlâna and his family and one of Mevlâna's close friends. The ruins of the Beyhekim Cemetery southwest of the masjid were partly buried under the road and partly lost on the construction site in 1937."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "300-301"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlı, tek kubbeli harim ile üç bölümlü bir giriş bölümünden oluşur. Girişin sağındaki bölüm tek sandukalı Beyhekim türbesidir; giriş bölümünün güneyi zaviye olarak kullanılmaktadır. Üst kısımdaki pencereler yakın zamanda açılmıştır. Beden duvarlarında taş, kubbe ve geçiş elemanlarında tuğla kullanılmıştır. İç mekânda mihrap ve kubbede çini mozaik tercih edilmiştir. Çini mozaik mihrap 1899'da Almanya'ya götürülmüş, bugün Berlin Pergamon Türk İslam Eserleri Müzesi'nde sergilenmektedir; geri getirilmesi için girişimler sürmektedir. Mihraptan yalnızca nişteki geometrik bezemeler kalmıştır. Niş içinde ve bordürlerde Tevbe ve Ankebût surelerinden ayetler yazılıdır. Yapı, banisinin medfun olduğu türbe bölümüyle birlikte Zengi dönemi özelliklerini Anadolu Selçuklu yapılarında yansıtan çok önemli bir eserdir.",
+        "en": "The masjid has a square harim covered by a single dome and a three-part entrance section. The section right of the entrance is Beyhekim's tomb, with a single sarcophagus; the southern part of the entrance is used as a zawiya. The upper windows were opened recently. Walls are stone; the dome and transition elements are brick. Tile mosaic was used on the mihrab and dome. The tile-mosaic mihrab was taken to Germany in 1899 and is exhibited in the Pergamon Museum of Turkish and Islamic Arts in Berlin; efforts to bring it back continue. Only the geometric decoration in the niche remains. Verses of the Tawbah and Ankebut surahs are written in the niche and borders. With the tomb of its founder, it is a very important work reflecting Zengid-period features in Anatolian Seljuk buildings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "300-301"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Ekmeleddin Beyhekim (İbn Abdüllatif Nahçivanî)",
+      "role": {
+        "tr": "Banî; Selçuklu başhekimi, Mevlâna ve ailesinin hekimi; türbede medfundur",
+        "en": "Founder; Seljuk chief physician and physician to Mevlâna's family; buried in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "mihrap-berlin-1899",
+      "year": 1899,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Çini mozaik mihrap Almanya'ya götürüldü",
+        "en": "The tile-mosaic mihrab was taken to Germany"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "301"
+        }
+      ]
+    },
+    {
+      "id": "mezarlik-1937",
+      "year": 1937,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "İnşaatla Beyhekim Mezarlığı kalıntıları kısmen yol altında kaldı, kısmen kayboldu",
+        "en": "Ruins of Beyhekim Cemetery partly buried under a road and partly lost during construction"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "301"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Berlin'deki çini mozaik mihrap",
+        "en": "The tile-mosaic mihrab in Berlin"
+      },
+      "hint": {
+        "tr": "Mihrabın aslı Berlin'dedir; nişte yalnızca geometrik bezemeler kalmıştır.",
+        "en": "The original mihrab is in Berlin; only the geometric decoration remains in the niche."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, tek kubbeli bir Selçuklu mescidi. Girişin sağında tek sandukalı Beyhekim türbesi, güneyinde zaviye olarak kullanılan bölüm vardır. Duvarlar taş, kubbe tuğladır. Çini mozaik mihrap 1899'da Berlin'e götürülmüştür; nişte yalnızca geometrik bezemeler durur.",
+      "en": "A square-plan, single-domed Seljuk masjid. On the right of the entrance is Beyhekim's tomb with a single sarcophagus; the part to the south is used as a zawiya. Walls are stone and the dome is brick. The tile-mosaic mihrab was taken to Berlin in 1899; only geometric decoration remains in the niche."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "300-301"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1243",
+        "original_name": "pdf-s152-xref1243",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "300"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beyhekim Mescit ve Türbesi (kitap s. 300)",
+        "en": "Beyhekim Masjid and Tomb (book p. 300)"
+      },
+      "alt": {
+        "tr": "Beyhekim Mescit ve Türbesi fotoğrafı",
+        "en": "Photo of Beyhekim Masjid and Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1245",
+        "original_name": "pdf-s152-xref1245",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "301"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beyhekim Mescit ve Türbesi (kitap s. 301)",
+        "en": "Beyhekim Masjid and Tomb (book p. 301)"
+      },
+      "alt": {
+        "tr": "Beyhekim Mescit ve Türbesi fotoğrafı",
+        "en": "Photo of Beyhekim Masjid and Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1247",
+        "original_name": "pdf-s152-xref1247",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "301"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beyhekim Mescit ve Türbesi (kitap s. 301)",
+        "en": "Beyhekim Masjid and Tomb (book p. 301)"
+      },
+      "alt": {
+        "tr": "Beyhekim Mescit ve Türbesi fotoğrafı",
+        "en": "Photo of Beyhekim Masjid and Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1249",
+        "original_name": "pdf-s152-xref1249",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "301"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Beyhekim Mescit ve Türbesi (kitap s. 301)",
+        "en": "Beyhekim Masjid and Tomb (book p. 301)"
+      },
+      "alt": {
+        "tr": "Beyhekim Mescit ve Türbesi fotoğrafı",
+        "en": "Photo of Beyhekim Masjid and Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

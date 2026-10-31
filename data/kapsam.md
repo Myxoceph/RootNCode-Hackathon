@@ -46,12 +46,12 @@ Kaynak: `konya-envanteri-1_cilt-web.pdf`; metin `build/cache/text/konya-1.txt` (
 | K1-3 | Meram II | 52-60 | 7 kayıt: `abdulaziz-camii`, `hoca-fakih-camii-ve-turbesi`, `hoca-hasan-camii`, `karatay-mescidi`, `saatci-camii`, `tahir-ile-zuhre-mescidi-ve-turbesi`, `tahir-pasa-camii` | Hüseyin (ajan) | draft |
 | K1-4 | Meram III | 61-73 | 9 kayıt: `abdulmumin-mescidi`, `gokyurt-koyu-camii`, `haci-hasan-camii`, `ihtiyarettin-mescidi`, `iplikci-camii`, `kapu-camii`, `sahip-ata-camii`, `seyh-osman-rumi-camii`, `tellioglu-camii` | Hüseyin (ajan) | draft |
 | K1-5 | Meram IV | 74-88 | 16 kayıt: `aksinne-kumbetli-gunbentli-mescidi`, `asagi-mahalle-kiziloren-kandemir-mescidi`, `emir-halil-camii`, `erdemsah-kale-i-cerp-mescidi`, `fahrunnisa-caybasi-mescit-ve-turbesi`, `gurb-i-cedidi-kosova-mescidi`, `hasbey-darul-huffaz-mescidi`, `kadi-mursel-camii`, `kalecik-mescidi`, `kurkcu-mescidi`, `nasuh-bey-camii`, `salih-pasa-dedemoglu-camii`, `tahtatepen-haci-adil-camii`, `tarhana-mescidi`, `veznedar-huseyin-efendi-asri-camii`, `yolcuoglu-gazioglu-camii` | Hüseyin (ajan) | draft |
-| K1-6 | Karatay I | 89-101 | | | sırada |
-| K1-7 | Karatay II | 102-114 | | | sırada |
-| K1-8 | Karatay III | 115-128 | | | sırada |
-| K1-9 | Karatay IV | 129-141 | | | sırada |
-| K1-10 | Karatay V | 142-146 | | | sırada |
-| K1-11 | Selçuklu I | 147-159 | | | sırada |
+| K1-6 | Karatay I | 89-101 | 12 kayıt: `sultan-selim-selimiye-camii`, `nuriye-camii`, `dolap-battal-mescidi`, `haci-veyis-camii-ve-cesmesi`, `selahaddin-kececiler-camii`, `karacihan-camii`, `garip-nasrullah-camii`, `haci-omerler-camii`, `obruk-koyu-camii`, `civiloglu-camii`, `burhan-dede-camii`, `igdeli-sultan-camii` | Hüseyin (ajan) | draft |
+| K1-7 | Karatay II | 102-114 | 16 kayıt: `karakayis-sari-camii`, `tahtali-mescidi`, `durak-fakih-camii`, `cukur-camii`, `toraman-mescidi`, `sarnic-camii`, `araplar-ak-camii`, `bagevliya-cami-ve-cesmesi`, `muftu-abdullah-mescidi`, `ovaloglu-celik-mehmet-pasa-camii`, `kinaci-camii`, `meydan-i-ahmet-camii`, `kadi-izzettin-karpuzoglu-camii`, `sitte-i-banu-mescidi`, `hatuniye-mescidi`, `sems-i-tebrizi-camii-ve-turbesi` | Hüseyin (ajan) | draft |
+| K1-8 | Karatay III | 115-128 | 10 kayıt: `sircali-demirci-haci-mescidi`, `cimilli-sari-mescidi`, `zenburi-mescidi`, `ickaraarslan-mescidi`, `sari-yakup-camii`, `koprubasi-mustafa-aga-camii`, `asmali-hatip-sultan-camii`, `pisili-pir-esat-kulliyesi`, `pisili-pir-esat-turbesi`, `pisili-pir-esat-camii` | Hüseyin (ajan) | draft |
+| K1-9 | Karatay IV | 129-141 | 20 kayıt: `mengene-camii`, `alemdar-camii`, `saksaganlar-camii`, `dolap-mektep-mescidi`, `polatlar-haci-cemal-hatip-camii`, `seyh-ulema-recep-aga-camii`, `yanik-sedirler-kenan-dede-camii`, `digin-camii`, `hamzaoglu-camii`, `hanedan-camii`, `cayir-camii`, `haci-ivaz-camii`, `sutcu-camii`, `cataloglu-camii`, `topraklik-hasan-efendi-camii`, `cavusoglu-camii`, `namik-pasa-camii`, `halkabegus-mescidi-ve-turbesi`, `tolluoglu-camii`, `seyh-ulema-yusuf-aga-camii` | Hüseyin (ajan) | draft |
+| K1-10 | Karatay V | 142-146 | 1 kayıt: `aziziye-camii` | Hüseyin (ajan) | draft |
+| K1-11 | Selçuklu I | 147-159 | 8 kayıt: `besare-bey-mescidi`, `ak-sazi-bey-camii`, `sakahane-hidir-ilyas-davut-aga-mescidi`, `zevle-sultan-mescidi`, `basarakavak-zahide-hatun-camii`, `tatkoy-merkez-camii`, `beyhekim-mescit-ve-turbesi`, `sultan-alaeddin-ulu-camii` | Hüseyin (ajan) | draft |
 | K1-12 | Selçuklu II / Akşehir | 160-170 | | | sırada |
 | K1-13 | Akşehir / Altınekin / Beyşehir | 171-192 | | | sırada |
 | K1-14 | Bozkır / Çeltik / Çumra / Derbent / Doğanhisar | 193-207 | | | sırada |

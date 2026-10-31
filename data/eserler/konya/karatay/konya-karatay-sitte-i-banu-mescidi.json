@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-sitte-i-banu-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 218-219) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "'XX. yüzyılın ilk yarısı' era koduna bağlanamadığı için era null.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Sitte-i Banu Mescidi",
+    "en": "Sitte-i Banu Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Şems Camii yakını"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Çifte Merdiven Mahallesi",
+    "address": "Abdulkadir Erdoğan Sokak (Şems Camii ve Türbesi'nin güneyi)",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "218-219"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyılın ilk yarısı",
+      "en": "First half of the 20th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "İlk inşa ve bânî bilinmiyor; yapı XX. yüzyılın ilk yarısına tarihlendirilmektedir. Kesin yıl yok.",
+      "en": "Original construction and founder unknown; the building is dated to the first half of the 20th century. No exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "218-219"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Çifte Merdiven Mahallesi'nde Şems Camii ve Türbesi'nin güneyindeki mescit; ilk inşası ve bânîsi bilinmiyor, XX. yüzyılın ilk yarısına tarihlenir.",
+    "en": "A masjid in Çifte Merdiven Neighborhood south of the Shams Mosque and Tomb; its original construction and founder are unknown and it is dated to the first half of the 20th century."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Şems Camii ve Türbesi'nin güneyindeki mescidin ilk inşasına ve banisine ilişkin bilgi yoktur. Yapı XX. yüzyılın ilk yarısına tarihlendirilmektedir.",
+        "en": "There is no information on the initial construction or patronage of the masjid south of the Shams Mosque and Tomb. The building is dated to the first half of the 20th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-219"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kare planlı, kırma çatılıdır; günümüzde özgün hâlini kaybetmiş, taş malzemeli, cephe düzeni sadedir. Harime kuzey cephedeki kapıdan geçilir. Harim içten düz ahşap tavanlıdır; mahfil, mihrap ve minberden oluşan sade bir düzenlemesi vardır.",
+        "en": "Square plan with a hipped roof; it has lost its original form, is built of stone and has a simple facade. The harim is entered via the north door and has a flat wooden ceiling and a simple arrangement of mahfil, mihrab and minbar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-219"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-sems-i-tebrizi-camii-ve-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Mescit, Şems Camii ve Türbesi'nin güneyinde yer alır.",
+        "en": "The masjid lies south of the Shams Mosque and Tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-219"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sitte-i Banu Mescidi kare planlı, kırma çatılı, taş bir mescittir. Giriş kuzey cephededir; içeride düz ahşap tavan, mahfil, mihrap ve minber bulunur.",
+      "en": "Sitte-i Banu Masjid is a square stone building with a hipped roof. The entrance is on the north facade; inside are a flat wooden ceiling, a mahfil, a mihrab and a minbar."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 218-219)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "218-219"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=879",
+        "original_name": "pdf-s111-xref879",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "218"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sitte-i Banu Mescidi (kitap s. 218)",
+        "en": "Sitte-i Banu Masjid (book p. 218)"
+      },
+      "alt": {
+        "tr": "Sitte-i Banu Mescidi fotoğrafı",
+        "en": "Photo of Sitte-i Banu Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=881",
+        "original_name": "pdf-s111-xref881",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "218"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sitte-i Banu Mescidi (kitap s. 218)",
+        "en": "Sitte-i Banu Masjid (book p. 218)"
+      },
+      "alt": {
+        "tr": "Sitte-i Banu Mescidi fotoğrafı",
+        "en": "Photo of Sitte-i Banu Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=883",
+        "original_name": "pdf-s111-xref883",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "219"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Sitte-i Banu Mescidi (kitap s. 219)",
+        "en": "Sitte-i Banu Masjid (book p. 219)"
+      },
+      "alt": {
+        "tr": "Sitte-i Banu Mescidi fotoğrafı",
+        "en": "Photo of Sitte-i Banu Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

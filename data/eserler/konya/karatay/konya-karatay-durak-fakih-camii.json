@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-durak-fakih-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 202-203) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Bânî kitapta belirtilmiyor.",
+      "Girişteki tarihin inşa tarihi olup olmadığı kitapta açık değil; era 'selcuklu' bu tarihe göre verildi.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Durak Fakih Camii",
+    "en": "Durak Fakih Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "iki katlı",
+    "at nalı kemerli pencere"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Aziziye Mahallesi",
+    "address": "Mor Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "202-203"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 650 / M. 1252-53 (giriş üzerindeki tarih)",
+      "en": "650 AH / 1252-53 AD (date on the entrance)"
+    },
+    "start_year": 1252,
+    "end_year": 1253,
+    "hijri_year": 650,
+    "century": 13,
+    "basis": {
+      "tr": "Kitap caminin girişinde H. 650 / M. 1252-53 tarihlerinin bulunduğunu söyler; bu tarihin inşa tarihi olduğunu açıkça belirtmez.",
+      "en": "The book says the dates 650 AH / 1252-53 AD are on the entrance; it does not explicitly say this is the construction date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "202-203"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Aziziye Mahallesi'nde, girişinde H. 650 / M. 1252-53 tarihi bulunan iki katlı sade cami. 1955'te onarım görmüştür. Harime giriş bölümünden yukarı çıkan merdivenle geçilir.",
+    "en": "A simple two-storey mosque in Aziziye Neighborhood whose entrance bears the dates 650 AH / 1252-53 AD. It was repaired in 1955. The harim is reached by a staircase leading up from the entrance."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Karatay, Aziziye Mahallesi, Mor Sokak üzerindedir. Girişi üzerinde H. 650 / M. 1252-53 tarihleri bulunur. Yapı 1955 senesinde onarım görmüştür.",
+        "en": "The mosque is on Mor Street, Aziziye Neighborhood, Karatay. The dates 650 AH / 1252-53 AD are on its entrance. The building was repaired in 1955."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Derinlemesine dikdörtgen planlı, iki katlı ve kırma çatılıdır. Beden duvarlarında at nalı kemerli, dikdörtgen formlu pencereler vardır. Giriş güney cephenin batı köşesindedir; harime girişten yukarı yönelen bir merdivenle geçilir. Harim enlemesine dikdörtgen planlı, içten ahşap tavanlıdır; kuzeyde iki ahşap direk ve duvarlara dayanan ahşap mahfil bulunur. Kıble duvarındaki mihrap onarım görmüş, mermer kaplamalı sade bir düzenlemedir. Güneybatı köşedeki ahşap minber taç kapı, aynalık ve köşk bölümlerinden oluşur.",
+        "en": "Deeply rectangular plan, two floors, hipped roof. The main walls have rectangular windows with horseshoe arches. The entrance is at the west corner of the south facade and a staircase leads up to the harim. The harim is transversely rectangular with a wooden ceiling; in the north are two wooden pillars and a wooden loggia leaning on the walls. The repaired mihrab is simple, with marble coating. The wooden minbar in the southwest corner consists of a crown door, transom and pavilion sections."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "giris-tarihi",
+      "location": {
+        "tr": "Cami girişi",
+        "en": "Mosque entrance"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 650,
+        "gregorian": "1252-53"
+      },
+      "note": {
+        "tr": "Kitap yalnızca tarihleri veriyor; yazı dili ve metni belirtilmiyor.",
+        "en": "The book gives only the dates; language and text are not stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yazit-1252",
+      "year": 1252,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Girişteki tarih (H. 650 / M. 1252-53)",
+        "en": "Date on the entrance (650 AH / 1252-53 AD)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Durak Fakih Camii iki katlı, kırma çatılı sade bir camidir. Girişten yukarı çıkan merdivenle harime geçilir. Harimde kuzeyde ahşap mahfil, kıble duvarında mermer kaplamalı mihrap ve ahşap minber bulunur.",
+      "en": "Durak Fakih Mosque is a plain two-storey building with a hipped roof. A staircase from the entrance leads up to the harim, which has a wooden loggia in the north and a marble-clad mihrab and wooden minbar on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 202-203)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "202-203"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=787",
+        "original_name": "pdf-s103-xref787",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "202"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Durak Fakih Camii (kitap s. 202)",
+        "en": "Durak Fakih Mosque (book p. 202)"
+      },
+      "alt": {
+        "tr": "Durak Fakih Camii fotoğrafı",
+        "en": "Photo of Durak Fakih Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=789",
+        "original_name": "pdf-s103-xref789",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "202"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Durak Fakih Camii (kitap s. 202)",
+        "en": "Durak Fakih Mosque (book p. 202)"
+      },
+      "alt": {
+        "tr": "Durak Fakih Camii fotoğrafı",
+        "en": "Photo of Durak Fakih Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=791",
+        "original_name": "pdf-s103-xref791",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "203"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Durak Fakih Camii (kitap s. 203)",
+        "en": "Durak Fakih Mosque (book p. 203)"
+      },
+      "alt": {
+        "tr": "Durak Fakih Camii fotoğrafı",
+        "en": "Photo of Durak Fakih Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

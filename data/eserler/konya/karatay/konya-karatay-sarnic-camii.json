@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-sarnic-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 206-207) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Fotoğraf yok; media: [] ve media_folder: null. Bu ciltte Drive fotoğraf arşivi yok, fotoğraflar sonradan eşlenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Sarnıç Camii",
+    "en": "Sarnıç Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mukarnas pahlı köşe",
+    "1947 onarımı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Sarnıç Mahallesi",
+    "address": "Sedirler Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "206-207"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyılın sonlarına doğru (tahmini)",
+      "en": "Towards the end of the 19th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Yapım tarihi ve bânîsi bilinmiyor; kitap XIX. yüzyılın sonlarına doğru inşa edildiğini düşünür.",
+      "en": "Construction date and founder unknown; the book thinks it was built towards the end of the 19th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "206-207"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sarnıç Mahallesi'ndeki cami, XIX. yüzyıl sonlarında yapıldığı düşünülen, 1947'de geniş onarım görmüş kesme taş bir yapıdır; 2007'de Vakıflar Bölge Müdürlüğü tarafından tamir edilmiştir.",
+    "en": "A cut-stone mosque in Sarnıç Neighborhood thought to date from the late 19th century, extensively repaired in 1947 and again by the Regional Directorate of Foundations in 2007."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve onarımlar",
+        "en": "History and repairs"
+      },
+      "body": {
+        "tr": "Yapım tarihi ve bânisi hakkında bilgi yoktur; XIX. yüzyılın sonlarına doğru inşa edildiği düşünülmektedir. 1947'de geniş onarım görmüştür; bu onarıma ait Latin harfli kitâbe güney cephededir. Cami 2007'de Vakıflar Bölge Müdürlüğü tarafından tamir edilmiştir.",
+        "en": "No information exists on its date or founder; it is thought to have been built towards the end of the 19th century. It was extensively repaired in 1947 and the Latin-letter inscription of this repair is on the south facade. The Regional Directorate of Foundations repaired it in 2007."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "206-207"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kareye yakın planlı, kırma çatılıdır; doğu cephesi yandaki konuta bitişiktir. Kesme taş malzemeyle yığma tekniğinde yapılmıştır. Harime geçiş kuzey cephedeki kapıdandır. Kuzey ve batı cephelerin kesiştiği köşe, üst bölümde beş sıra mukarnas dizisiyle pahlanmıştır. Harimde dört serbest direğin taşıdığı ahşap tavan, kuzeyde sade ahşap mahfil ve kıble duvarında ahşap mihrap vardır; ahşap minber yakın zamanda eklenmiştir.",
+        "en": "Nearly square plan with a hipped roof; the east facade abuts a neighboring house. Built of cut stone in masonry technique. The door to the harim is on the north facade. The corner where the north and west facades meet is chamfered with five rows of muqarnas at the top. The harim has a wooden ceiling on four free poles, a simple wooden mahfil in the north and a wooden mihrab on the qibla wall; the wooden minbar was added recently."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "206-207"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "mukarnas_sirasi",
+      "label": {
+        "tr": "Köşe pahındaki mukarnas sırası",
+        "en": "Rows of muqarnas on the chamfered corner"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "206-207"
+        }
+      ]
+    },
+    {
+      "key": "serbest_direk",
+      "label": {
+        "tr": "Harimdeki serbest direk",
+        "en": "Free poles in the harim"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "206-207"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "onarim-kitabesi-1947",
+      "location": {
+        "tr": "Güney cephe",
+        "en": "South facade"
+      },
+      "language": "tr",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1947"
+      },
+      "note": {
+        "tr": "1947 onarımına ait Latin harfli kitâbe; kitap metnini vermiyor.",
+        "en": "Latin-letter inscription of the 1947 repair; the book does not give its text."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "206-207"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1947",
+      "year": 1947,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Geniş onarım (Latin harfli kitâbe)",
+        "en": "Extensive repair (Latin-letter inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "206-207"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "206-207"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sarnıç Camii kareye yakın planlı, kırma çatılı, kesme taş bir camidir. Kuzey ve batı cephelerin birleştiği köşe mukarnaslı biçimde pahlanmıştır. Harimde dört serbest direk ahşap tavanı taşır.",
+      "en": "Sarnıç Mosque is a nearly square cut-stone building with a hipped roof. The corner where its north and west facades meet is chamfered with muqarnas. Four free poles hold up the wooden ceiling of the harim."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 206-207)."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

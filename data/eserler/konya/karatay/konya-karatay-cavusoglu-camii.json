@@ -1,0 +1,313 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-cavusoglu-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 274) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Giriş yönü kitapta çelişkili (kuzeybatı / doğu); sahada teyit edilmeli.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap önce girişin kuzeybatı köşede olduğunu, birkaç cümle sonra 'yapıya giriş doğu bölümden sağlanmaktadır' dediğini; iki ifade çelişiyor (Türkçe ve İngilizce metin aynı). Her ikisi de olduğu gibi aktarıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çavuşoğlu Camii",
+    "en": "Çavuşoğlu Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "1940",
+    "1949",
+    "köşk tipi minare",
+    "Bursa kemeri"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Şeyh Ulema Recep Ağa Mahallesi",
+    "address": "Şeyh Ulema Yahşi Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "274"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1940'ta inşa edildi; 1949'da ibadete açıldı",
+      "en": "Built in 1940; opened for worship in 1949"
+    },
+    "start_year": 1940,
+    "end_year": 1949,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap yapının Cumhuriyetin ilk yıllarında 1940'ta inşa edildiğini, 1949'da ibadete açıldığını belirtir.",
+      "en": "The book states the building was built in 1940, in the first years of the Republic, and opened for worship in 1949."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "274"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Şeyh Ulema Recep Ağa Mahallesi'nde 1940'ta inşa edilip 1949'da ibadete açılan, tek şerefeli köşk tipi minareli, mahfili Bursa kemerli üç direğe oturan mahalle camisi.",
+    "en": "A neighbourhood mosque in Şeyh Ulema Recep Ağa Neighborhood, built in 1940 and opened in 1949, with a pavilion-type single-balcony minaret and a gallery on three posts joined by Bursa arches."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Şeyh Ulema Recep Ağa Mahallesi, Şeyh Ulema Yahşi Caddesi üzerinde yer almaktadır. Cumhuriyetin ilk yıllarında 1940'ta inşa edilen yapı 1949'da ibadete açılmıştır. Cami, Konya merkezde oldukça sık görülen mahalle mescitlerindendir.",
+        "en": "The mosque is on Şeyh Ulema Yahşi Street, Şeyh Ulema Recep Ağa District, Karatay. Built in 1940 in the first years of the Republic, it opened for worship in 1949. It is one of the neighbourhood masjids very common in central Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı dikdörtgen planlıdır; içten düz ahşap tavan, dıştan dört yöne eğimli kırma çatıyla örtülüdür. Caminin girişi kuzeybatı köşededir ve bu bölümde beden duvarı üzerinde tek şerefeli köşk tipi minare bulunur; yapıya giriş doğu bölümden sağlanır. Harim kareye yakın dikdörtgen planlıdır. Kuzey duvarında, birbirine Bursa kemeriyle bağlı üç ahşap direğe oturan mahfil yer alır. Kıble duvarı ortasındaki mihrap yarım daire planlıdır; mihrabın sağında, güneybatı köşedeki minber ahşaptır.",
+        "en": "The building has a rectangular plan with a flat wooden ceiling inside and a hipped roof sloping in four directions outside. The entrance is stated to be at the northwest corner, where a pavilion-type minaret with a single balcony stands on the main wall; entry is also said to be from the eastern section. The harim is near-square rectangular. On its north wall is a wooden mahfil on three posts connected by Bursa arches. The semicircular mihrab is in the middle of the qibla wall; the wooden minbar is in the southwest corner, to the right of the mihrab."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "274"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "insa_yili",
+      "label": {
+        "tr": "İnşa yılı",
+        "en": "Year built"
+      },
+      "value": 1940,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "key": "ibadete_acilis_yili",
+      "label": {
+        "tr": "İbadete açılış yılı",
+        "en": "Year opened for worship"
+      },
+      "value": 1949,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "274"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1940",
+      "year": 1940,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa edildi",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "274"
+        }
+      ]
+    },
+    {
+      "id": "acilis-1949",
+      "year": 1949,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "İbadete açıldı",
+        "en": "Opened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "274"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çavuşoğlu Camii, dikdörtgen planlı, kırma çatılı bir mahalle camisidir. Kuzeybatı köşede tek şerefeli, köşk tipi bir minare bulunur. İçeride kuzey duvarda Bursa kemerleriyle birbirine bağlı üç ahşap direğe oturan mahfil, kıble duvarında yarım daire planlı mihrap ve ahşap minber vardır.",
+      "en": "Çavuşoğlu Mosque is a rectangular neighbourhood mosque with a hipped roof. A pavilion-type minaret with a single balcony stands at the northwest corner. Inside, a gallery on three wooden posts joined by Bursa arches sits on the north wall, and the qibla wall has a semicircular mihrab and a wooden minbar."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 274)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "273-274"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1116",
+        "original_name": "pdf-s138-xref1116",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "273"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çavuşoğlu Camii (kitap s. 273)",
+        "en": "Çavuşoğlu Mosque (book p. 273)"
+      },
+      "alt": {
+        "tr": "Çavuşoğlu Camii fotoğrafı",
+        "en": "Photo of Çavuşoğlu Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1121",
+        "original_name": "pdf-s139-xref1121",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "274"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çavuşoğlu Camii (kitap s. 274)",
+        "en": "Çavuşoğlu Mosque (book p. 274)"
+      },
+      "alt": {
+        "tr": "Çavuşoğlu Camii fotoğrafı",
+        "en": "Photo of Çavuşoğlu Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1123",
+        "original_name": "pdf-s139-xref1123",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "274"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Çavuşoğlu Camii (kitap s. 274)",
+        "en": "Çavuşoğlu Mosque (book p. 274)"
+      },
+      "alt": {
+        "tr": "Çavuşoğlu Camii fotoğrafı",
+        "en": "Photo of Çavuşoğlu Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

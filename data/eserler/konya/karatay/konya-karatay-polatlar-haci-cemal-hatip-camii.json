@@ -1,0 +1,369 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-polatlar-haci-cemal-hatip-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 261-262) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Cadde/sokak adı kitapta verilmiyor; yalnızca Sedir Mahallesi.",
+      "Hacı Cemil Vakfı hakkında kitapta başka bilgi yok; vakıf kaydı yazılmadı.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlıkta 'Hacı Cemal-Hatip' yazıyor; metinde onarımı yapan vakıf 'Hacı Cemil Vakfı' olarak geçiyor. Kitaptaki yazımlar olduğu gibi korundu; aynı kişi olup olmadığı kitapta belirtilmiyor."
+      },
+      {
+        "field": "dating",
+        "note": "Gregoryen karşılığı (25 Haziran 1813) kitapta Hicri tarihle birlikte veriliyor; ikisi birbiriyle çelişmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Polatlar (Hacı Cemal-Hatip) Camii",
+    "en": "Polatlar (Hacı Cemal-Hatip) Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "ahşap minare",
+    "kalem işi",
+    "1813"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Sedir Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "261-262"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "25 Cemaziye'l-âhir 1228 / 25 Haziran 1813",
+      "en": "25 Jumadi al-Akhir 1228 / 25 June 1813"
+    },
+    "start_year": 1813,
+    "end_year": 1813,
+    "hijri_year": 1228,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap, Vakıf Temettuat kayıtlarına göre caminin bu tarihte Hacı Abdurrahman tarafından inşa ettirildiğini belirtir.",
+      "en": "The book states that, according to the foundation dividend (temettuat) records, the mosque was built on this date by Hacı Abdurrahman."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "261"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Abdurrahman",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "261"
+      }
+    ]
+  },
+  "architect": null,
+  "summary": {
+    "tr": "Sedir Mahallesi'nde, Vakıf Temettuat kayıtlarına göre 1813'te Hacı Abdurrahman'ın yaptırdığı; ahşap direkli, kalem işi kemer karınlı, yivli gövdeli ahşap minareli geç dönem mahalle camisi.",
+    "en": "A late Ottoman neighbourhood mosque in Sedir Neighborhood, built in 1813 by Hacı Abdurrahman according to foundation dividend records, with wooden posts, hand-painted arch soffits and a fluted wooden minaret."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Sedir Mahallesi'nde yer almaktadır. Vakıf Temettuat kayıtlarına göre 25 Cemaziye'l-âhir 1228 / 25 Haziran 1813 tarihinde Hacı Abdurrahman tarafından inşa ettirilmiştir. 1870'te Hacı Cemil Vakfı tarafından, 2015'te Vakıflar Bölge Müdürlüğünce onarılmıştır. Kuzeybatısında caddeye bakan bir çeşme vardır.",
+        "en": "The mosque is in Sedir Neighborhood, Karatay. According to the foundation dividend records it was built by Hacı Abdurrahman on 25 Jumadi al-Akhir 1228 / 25 June 1813. It was repaired by the Hacı Cemil Foundation in 1870 and by the Regional Directorate of Foundations in 2015. A fountain faces the street at its northwest."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlıdır; üç sahınlı harim, kuzeyde son cemaat yeri ve ahşap minareden oluşur. Kuzey cephenin batı köşesindeki minare, son cemaat yerinin batı duvarına bitişik, yivli gövdeli, köşk tipi şerefelidir. Son cemaat yeri dördü bağımsız, ikisi duvara bitişik altı sütunla beş bölümlüdür. Harim, iki sıra üç ahşap direkle mihraba dik üç sahına ayrılmış, orta sah daha yüksek ve geniştir; direkler birbirine ve duvarlara bağdâdi formlu yuvarlak kemerlerle bağlanır. Kemer karınları mavi-beyaz kalem işi örgü motifleriyle, kemerler arası daire göbeklerle hareketlendirilmiştir. Mihrap dikdörtgen formlu, yarım yuvarlak nişli, basık kemerlidir; üzerinde bitkisel ve çok kollu yıldız motifleri vardır. Güneybatıdaki minber mihrapla benzer düzenlemededir. Cami, Konya ve çevresinde sık görülen geç dönem Osmanlı mahalle mescitlerinin güzel bir örneğidir.",
+        "en": "The mosque has a deeply rectangular plan, consisting of a three-nave harim, a narthex in the north and a wooden minaret. The minaret at the western corner of the north facade is attached to the narthex's west wall, with a fluted body and a pavilion-type balcony. The five-section narthex is divided by six columns, four free-standing and two attached to the wall. The harim has three aisles perpendicular to the mihrab on two rows of three wooden posts, the middle nave higher and wider; posts are linked to each other and the walls with round arches in baghdadi form, whose soffits carry blue-and-white hand-drawn braided motifs, with circular hubs between the arches. The rectangular mihrab has a half-round niche and a flat arch, with floral and multi-armed star motifs; the southwest minbar is similar. It is a fine example of the late Ottoman neighbourhood masjids common in Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "261-262"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_tipi",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "ahşap, yivli gövde, köşk tipi şerefe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "261-262"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_sutun",
+      "label": {
+        "tr": "Son cemaat yeri sütun sayısı",
+        "en": "Narthex columns"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_bolum",
+      "label": {
+        "tr": "Son cemaat yeri bölüm sayısı",
+        "en": "Narthex sections"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "262"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Abdurrahman",
+      "role": {
+        "tr": "Banî; camiyi 1813'te yaptırdı",
+        "en": "Founder; had the mosque built in 1813"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1813",
+      "year": 1813,
+      "date": "1813-06-25",
+      "hijri": "25 Cemaziye'l-âhir 1228",
+      "type": "construction",
+      "title": {
+        "tr": "Hacı Abdurrahman tarafından inşa ettirildi",
+        "en": "Built by Hacı Abdurrahman"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1870",
+      "year": 1870,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Hacı Cemil Vakfı tarafından onarıldı",
+        "en": "Repaired by the Hacı Cemil Foundation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından onarıldı",
+        "en": "Repaired by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Polatlar Camii, derinlemesine dikdörtgen planlı bir ahşap direkli camidir. Kuzeyde beş bölümlü, altı sütunlu son cemaat yeri, batı köşesinde yivli gövdeli ahşap bir minare yükselir. İçeride iki sıra ahşap direk üç sahı ayırır; kemer karınları mavi-beyaz kalem işi motiflerle süslüdür.",
+      "en": "Polatlar Mosque is a deeply rectangular wooden-pillared mosque. In the north is a five-section, six-column narthex, and a fluted wooden minaret rises at its west corner. Inside, two rows of wooden posts divide three naves, and the arch soffits are decorated with blue-and-white hand-drawn motifs."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 261-262)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "261-262"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1048",
+        "original_name": "pdf-s132-xref1048",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "261"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Polatlar (Hacı Cemal-Hatip) Camii (kitap s. 261)",
+        "en": "Polatlar (Hacı Cemal-Hatip) Mosque (book p. 261)"
+      },
+      "alt": {
+        "tr": "Polatlar (Hacı Cemal-Hatip) Camii fotoğrafı",
+        "en": "Photo of Polatlar (Hacı Cemal-Hatip) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1052",
+        "original_name": "pdf-s133-xref1052",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "262"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Polatlar (Hacı Cemal-Hatip) Camii (kitap s. 262)",
+        "en": "Polatlar (Hacı Cemal-Hatip) Mosque (book p. 262)"
+      },
+      "alt": {
+        "tr": "Polatlar (Hacı Cemal-Hatip) Camii fotoğrafı",
+        "en": "Photo of Polatlar (Hacı Cemal-Hatip) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1056",
+        "original_name": "pdf-s133-xref1056",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "262"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Polatlar (Hacı Cemal-Hatip) Camii (kitap s. 262)",
+        "en": "Polatlar (Hacı Cemal-Hatip) Mosque (book p. 262)"
+      },
+      "alt": {
+        "tr": "Polatlar (Hacı Cemal-Hatip) Camii fotoğrafı",
+        "en": "Photo of Polatlar (Hacı Cemal-Hatip) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

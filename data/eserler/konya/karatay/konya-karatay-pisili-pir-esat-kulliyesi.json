@@ -1,0 +1,396 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-pisili-pir-esat-kulliyesi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Manzumenin vakıf ayrıntıları kitapta anlatılmıyor ('pek çok vakıf tahsis edilmiştir' deniyor, hangileri belirtilmiyor)",
+      "Mahalle adı kitapta yok",
+      "Mescit ve zaviye yıkıldı; yalnızca 'çeşme' ekinin yeri/durumu kitapta belirtilmiyor",
+      "Çocuk kayıtlar: türbe ve 1989 camii ayrı kayıt olarak oluşturuldu",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating/timeline[vefat-1263]",
+        "note": "Türkçe ve İngilizce ana metin ölümü H. 662 / M. 1263 veriyor; Türbe bölümü aynı H. 662 tarihini M. 1264 olarak veriyor. Kaynağın iki değeri de saklandı. Kitabeyi türbe kaydında da not edildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Pisili (Pir Esat) Mescit ve Türbesi",
+    "en": "Pisili (Pir Esat) Masjid and Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Pisili Sultan",
+      "en": "Pisili Sultan (Sultan with Kitty)",
+      "note": "Pîr Esad'ın halk arasındaki adı; kedi menkıbesinden"
+    },
+    {
+      "tr": "Pir Esat Zaviye ve Türbesi",
+      "en": "Pir Esat Zawiya and Tomb"
+    }
+  ],
+  "type": "kulliye",
+  "secondary_types": [
+    "mescit",
+    "turbe",
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Pisili Sultan",
+    "Pir Esat",
+    "Selçuklu şeyhi",
+    "zaviye",
+    "kedi menkıbesi",
+    "Mevlâna'nın velileri"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Adak Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "251-253"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyılın ikinci yarısı",
+      "en": "Second half of the 13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitap manzumenin XIII. yüzyılın ikinci yarısında Pîr Esad tarafından yaptırıldığını söylüyor; kesin yıl yok. Pîr Esad'ın vefatı H. 662.",
+      "en": "The book says the complex was built by Pîr Esad in the second half of the 13th century; no exact year. Pîr Esad died in 662 AH."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "251"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Pîr Esad (Pir Esat Sultan, Pisili Sultan)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "251"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karatay'da, XIII. yüzyılın ikinci yarısında Selçuklu şeyhlerinden Pîr Esad tarafından yaptırılan mescit, türbe ve zâviyeden oluşan manzume; sonradan çeşme eklenmiş. Günümüze yalnızca türbe sağlam gelmiş, mescit yıkılıp 1989'da yeni cami yapılmıştır. Pîr Esad H. 662 / M. 1263'te vefat etmiştir ve 'Pisili Sultan' olarak anılır.",
+    "en": "A complex of masjid, tomb and zawiya built in the second half of the 13th century by Pîr Esad, a Seljuk-period sheikh, with a fountain added later. Only the tomb survives intact; the masjid was demolished and a new mosque built in 1989. Pîr Esad died in 662 AH / 1263 AD and is known as 'Pisili Sultan'."
+  },
+  "sections": [
+    {
+      "id": "genel-ve-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Mescit Karatay'da Adak Sokak üzerindedir. Mescit, türbe ve zâviyeden oluşan manzume XIII. yüzyılın ikinci yarısında Selçuklu dönemi şeyhlerinden Pîr Esad tarafından yaptırılmıştır. Yapıya ismini veren Pîr Esad Sultan, Selçuklu döneminin meşhur şeyhlerinden ve Hazreti Mevlâna'nın velilerindendir; 'Pisili Sultan' olarak da bilinir. Sandukasının başucundaki kitâbeden H. 662 / M. 1263'te vefat ettiği anlaşılır; kitaba göre Mevlâna'dan yaklaşık on yıl önce ölmüştür. Manzumeye sonradan bir çeşme eklenmiştir. Zamanla tahrip olan yapılardan yalnızca türbe sağlam gelmiştir. Kerpiçten yapılmış mescit 1980'li yıllara kadar kullanılmıştır. Mescit tescilli olduğu hâlde Almanya'da yaşayan Dr. A. Rıza Bahadır 1982'de yerine yeni cami yaptırmak için Vakıflar Genel Müdürlüğü'ne başvurmuş, tescili kaldırılan mescit yıkılmış ve otuz metre batısına 1989'da yeni cami yapılmıştır.",
+        "en": "The masjid is on Adak Street in Karatay. The complex of masjid, tomb and zawiya was built in the second half of the 13th century by Pîr Esad, a sheikh of the Seljuk period. Pîr Esad Sultan, who gave his name to the building, is one of the famous sheikhs of the Seljuk period and one of Mevlâna's saints; he is also known as 'Pisili Sultan'. The inscription at the head of his sarcophagus shows he died in 662 AH / 1263 AD, about ten years before Mevlâna according to the book. A fountain was later added to the complex. Of the structures destroyed over time only the tomb survives intact. The adobe masjid was used until the 1980s. Although the masjid was registered, Dr. A. Rıza Bahadır, living in Germany, applied to the General Directorate of Foundations in 1982 to build a new mosque in its place; the registration was lifted, the masjid demolished and a new mosque built thirty metres to its west in 1989."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "251-253"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "pisili-sultan-kedi",
+      "title": {
+        "tr": "Pisili Sultan ve kedisi",
+        "en": "Pisili Sultan and his cat"
+      },
+      "body": {
+        "tr": "Halk arasında anlatılan menkıbeye göre Pir Esat Sultan'ın çok sevdiği bir kedisi vardı. Bir gün kaba hem kendisi hem kedisi için süt koyup kapatarak çıktı; evde yokken zehirli bir yılan kaba girip sütten içti ve zehrini kalan sütün içine akıttı. Pir Esat Sultan dönüp sütü içmek isteyince kedi acı acı miyavlayarak engellemeye çalıştı; Sultan tekrar içmek isteyince kedi elindeki tastan sütü içti ve zehirlenip öldü. Sultan kedisinin sayesinde kurtulduğunu anlayıp Allah'a şükretti, kedisine bir mezar kazıp onu defnetti ve vefatına yakın bir zamanda kendisinin de kedisinin yanına defnedilmesini vasiyet etti. Bu menkıbe nedeniyle 'Pisili Sultan' mahlası takıldı. Kitap kedinin Pîr'in sandukasının sol tarafında, ayakucuna doğru küçük bir sandukada bulunduğunu halk inancı olarak aktarır.",
+        "en": "According to the legend told among the people, Pir Esat Sultan had a cat he loved dearly. One day he poured milk for both himself and the cat, covered it and left; a poisonous snake drank from it and let its poison into the rest. When he returned and wanted to drink, the cat meowed bitterly; when he tried again the cat drank from the bowl in his hand and died of the poison. The Sultan realized he was saved by the cat, thanked Allah, dug a grave for the cat and buried it, and near his death asked in his will to be buried next to it. For this reason he was nicknamed 'Pisili Sultan' (Sultan with Kitty). The book relates as popular belief that the cat lies in a small sarcophagus on the left of Pîr's sarcophagus, toward the foot."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "251-253"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "vefat_hicri",
+      "label": {
+        "tr": "Pîr Esad'ın vefat yılı (Hicri)",
+        "en": "Pîr Esad's death year (Hijri)"
+      },
+      "value": 662,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "251-253"
+        }
+      ]
+    },
+    {
+      "key": "yeni_cami_yili",
+      "label": {
+        "tr": "Yeni caminin yapım yılı",
+        "en": "Year the new mosque was built"
+      },
+      "value": 1989,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    },
+    {
+      "key": "yeni_cami_mesafe",
+      "label": {
+        "tr": "Yeni caminin eski mescide uzaklığı (batıda)",
+        "en": "Distance of the new mosque west of the old masjid"
+      },
+      "value": 30,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Pîr Esad (Pir Esat Sultan)",
+      "role": {
+        "tr": "Selçuklu şeyhi, banî; 'Pisili Sultan'",
+        "en": "Seljuk sheikh and founder; 'Pisili Sultan'"
+      }
+    },
+    {
+      "name": "Mûsâ Paşa",
+      "role": {
+        "tr": "H. 844 / M. 1440'ta türbe ve zaviyeyi yeniden yaptıran Karamanoğulları ümerâsından",
+        "en": "Karamanid emir who rebuilt the tomb and zawiya in 844 AH / 1440 AD"
+      }
+    },
+    {
+      "name": "Dr. A. Rıza Bahadır",
+      "role": {
+        "tr": "1982'de yeni cami için başvuran, Almanya'da yaşayan hayırsever",
+        "en": "Donor living in Germany who applied in 1982 for a new mosque"
+      }
+    },
+    {
+      "name": "A. Sami Ülgen",
+      "role": {
+        "tr": "Yeni caminin A tipi projesinin Vakıflar Genel Müdürlüğü mimarı",
+        "en": "Foundations General Directorate architect of the A-type project of the new mosque"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1263",
+      "year": 1263,
+      "date": null,
+      "hijri": "H. 662",
+      "type": "record",
+      "title": {
+        "tr": "Pîr Esad vefat etti (başucu kitâbesinde H. 662)",
+        "en": "Pîr Esad died (662 AH per the headstone inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "251-253"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-yapim-1440",
+      "year": 1440,
+      "date": null,
+      "hijri": "H. 844",
+      "type": "restoration",
+      "title": {
+        "tr": "Türbe ve zaviye Mûsâ Paşa tarafından yeniden yaptırıldı, birçok vakıf eklendi (H. 844)",
+        "en": "Tomb and zawiya rebuilt by Mûsâ Paşa and many more endowments added (844 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "basvuru-1982",
+      "year": 1982,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mescidin yerine yeni cami için Vakıflar Genel Müdürlüğü'ne başvuruldu; tescil kaldırıldı, mescit yıkıldı",
+        "en": "Application for a new mosque in place of the masjid; registration lifted, masjid demolished"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    },
+    {
+      "id": "yeni-cami-1989",
+      "year": 1989,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Mescidin otuz metre batısına yeni cami yapıldı",
+        "en": "A new mosque was built thirty metres west of the masjid"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mescit, türbe ve zaviyeden oluşan eski bir manzumenin yerine bugün iki yapı ayaktadır: tuğladan sağlam kalmış Pîr Esad türbesi ve otuz metre batısındaki, tek minareli, merkezî kubbeli, kuzeyde yedi bölümlü son cemaat yerine sahip 1989 tarihli cami.",
+      "en": "Of an old complex of masjid, tomb and zawiya, two structures stand today: the intact brick tomb of Pîr Esad and, thirty metres to its west, the 1989 single-minaret mosque with a central dome and a seven-bay narthex on the north."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "251-254"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=999",
+        "original_name": "pdf-s127-xref999",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "251"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Pisili (Pir Esat) Mescit ve Türbesi (kitap s. 251)",
+        "en": "Pisili (Pir Esat) Masjid and Tomb (book p. 251)"
+      },
+      "alt": {
+        "tr": "Pisili (Pir Esat) Mescit ve Türbesi fotoğrafı",
+        "en": "Photo of Pisili (Pir Esat) Masjid and Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1014",
+        "original_name": "pdf-s129-xref1014",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "254"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Pisili (Pir Esat) Mescit ve Türbesi (kitap s. 254)",
+        "en": "Pisili (Pir Esat) Masjid and Tomb (book p. 254)"
+      },
+      "alt": {
+        "tr": "Pisili (Pir Esat) Mescit ve Türbesi fotoğrafı",
+        "en": "Photo of Pisili (Pir Esat) Masjid and Tomb"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

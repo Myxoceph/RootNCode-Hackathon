@@ -1,0 +1,337 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-muftu-abdullah-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 210-211) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Mahalle adı kitapta 'Ovalıoğlu' (bu bölüm) ve 'Ovaloğlu' (sonraki bölüm) diye farklı yazılıyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.neighborhood",
+        "note": "Kitap bu mescidin mahallesini 'Ovalıoğlu', bir sonraki cami için 'Ovaloğlu' yazıyor; yazımlar olduğu gibi korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Müftü Abdullah Mescidi",
+    "en": "Müftü Abdullah Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Müsevvidzâde",
+    "Konya müftüsü"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Ovalıoğlu Mahallesi",
+    "address": "Köprübaşı Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "210-211"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1886'dan önce",
+      "en": "Before 1886"
+    },
+    "start_year": null,
+    "end_year": 1886,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap, mescidin Müftü Abdullah Vahdi Efendi tarafından vefatından önce (1886) yaptırıldığını söyler; kesin yapım yılı verilmez. Başlangıç yılı yok.",
+      "en": "The book says it was built by Müftü Abdullah Vahdi Efendi before his death (1886); no exact construction year. No start year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "210-211"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Müftü Abdullah Vahdi Efendi (Müsevvidzâde)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "210-211"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Ovalıoğlu Mahallesi'ndeki mescit, Konya Müftüsü Abdullah Vahdi Efendi (Müsevvidzâde) tarafından 1886'daki vefatından önce yaptırılmıştır. Zamanla tahrip olmuş, 1923'te ve yakın zamanda onarılmıştır.",
+    "en": "The masjid in Ovalıoğlu Neighborhood was built by Konya Mufti Abdullah Vahdi Efendi (Müsevvidzâde) before his death in 1886. It decayed over time and was repaired in 1923 and recently."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Mescit üzerinde inşasına ya da bânisine ilişkin kitâbe yoktur. Müftü Abdullah Vahdi Efendi tarafından vefatından önce (1886) yaptırılmıştır. Zamanla tahrip olan yapı 1923'te ve yakın zamanda onarım görmüştür.",
+        "en": "There is no inscription on the masjid regarding its construction or patronage. It was built by Müftü Abdullah Vahdi Efendi before his death (1886). Having decayed over time, it was repaired in 1923 and recently."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "210-211"
+        }
+      ]
+    },
+    {
+      "id": "banisi",
+      "order": 2,
+      "title": {
+        "tr": "Bânî: Abdullah Vahdi Efendi",
+        "en": "Founder: Abdullah Vahdi Efendi"
+      },
+      "body": {
+        "tr": "Müsevvidzâde olarak da bilinen Abdullah Vahdi Efendi, 'kör müsevvid' denilen Mustafa Fehmi Efendi'nin küçük oğlu olarak Konya Ereğli'de doğmuştur. İlk tahsilini babasından almış, Kırkağaçlı Süleyman Efendi ve Konya Müftüsü Abdülehad Efendi'den ders görmüş, son icazetini Özdemirî Hacı Mustafa Efendi'den almıştır. Babasının Cevizaltı'nda kurduğu Müsevvit Medresesi'nde uzun yıllar müderrislik yapmıştır. 1874'te vefat eden Müftü Kafalızade Mehmet Said Efendi'nin yerine 1875'te Konya Müftülüğü'ne getirilmiş, vefatına kadar görevde kalmıştır. 1886'da vefat etmiş ve Mevlâna Dergâhı haziresinde babasının yanına defnedilmiştir.",
+        "en": "Abdullah Vahdi Efendi, also known as Müsevvidzâde, was born in Konya Ereğli as the younger son of Mustafa Fehmi Efendi, known as the 'blind musevvid'. He studied first with his father, then with Kırkağaçlı Süleyman Efendi and Konya Mufti Abdülehad Efendi, and received his final license from Özdemirî Hacı Mustafa Efendi. He taught for many years at the Müsevvit Madrasa his father founded in Cevizaltı. In 1875 he became Mufti of Konya, replacing Müftü Kafalızade Mehmet Said Efendi, who died in 1874, and served until his death. He died in 1886 and was buried beside his father in the Mevlâna Dergâh cemetery."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "210-211"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kareye yakın dikdörtgen planlı, kırma çatılıdır. Kuzey ve güney cephelerde basık kemerli pencereler vardır; doğu ve batı cepheler sağırdır. Sonradan eklenen son cemaat yeri depo ve avludan oluşur. Harim içten düz betonarmedir; beden duvarları moloz taş, pencere kenarları düzgün kesme taştır. Harime kuzeydeki son cemaat yerinden girilir. Kuzeyde dört ahşap direğin taşıdığı mahfil, kıble duvarı ortasında yarım daire planlı, yarım mukarnas kavsaralı mihrap, batıda minber bulunur.",
+        "en": "Nearly square rectangular plan with a hipped roof. The north and south facades have flat-arched windows; the east and west facades are blind. The later-added narthex consists of a storeroom and a courtyard. The harim is plain reinforced concrete inside; the walls are rubble stone with smooth cut-stone window frames. It is entered from the narthex in the north. There is a mahfil on four wooden poles in the north, a semicircular mihrab with a semi-muqarnas hood in the middle of the qibla wall, and a minbar on the west side."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "210-211"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "direk_sayisi",
+      "label": {
+        "tr": "Mahfili taşıyan ahşap direk",
+        "en": "Wooden poles supporting the mahfil"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "210-211"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Abdullah Vahdi Efendi (Müsevvidzâde)",
+      "role": {
+        "tr": "Mescidin bânîsi; 1875'ten ölümüne kadar Konya Müftüsü",
+        "en": "Founder of the masjid; Mufti of Konya from 1875 until his death"
+      }
+    },
+    {
+      "name": "Mustafa Fehmi Efendi",
+      "role": {
+        "tr": "Abdullah Vahdi Efendi'nin babası, 'kör müsevvid'; Cevizaltı'ndaki Müsevvit Medresesi'nin kurucusu",
+        "en": "Father of Abdullah Vahdi Efendi, the 'blind musevvid'; founder of the Müsevvit Madrasa in Cevizaltı"
+      }
+    },
+    {
+      "name": "Kafalızade Mehmet Said Efendi",
+      "role": {
+        "tr": "1874'te vefat eden önceki Konya Müftüsü",
+        "en": "Previous Mufti of Konya, died 1874"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "muftuluk-1875",
+      "year": 1875,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Abdullah Vahdi Efendi Konya Müftüsü oldu",
+        "en": "Abdullah Vahdi Efendi became Mufti of Konya"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "210-211"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1886",
+      "year": 1886,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Abdullah Vahdi Efendi vefat etti",
+        "en": "Abdullah Vahdi Efendi died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "210-211"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1923",
+      "year": 1923,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "210-211"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Müftü Abdullah Mescidi kareye yakın dikdörtgen planlı, kırma çatılı, moloz taş duvarlı küçük bir mescittir. Kuzeyde sonradan eklenen son cemaat yerinden girilir. İçeride dört ahşap direkli mahfil ve mukarnaslı yarım daire mihrap vardır.",
+      "en": "Müftü Abdullah Masjid is a small, nearly square building of rubble stone with a hipped roof. It is entered from a later-added narthex on the north. Inside are a mahfil on four wooden poles and a semicircular mihrab with a muqarnas hood."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 210-211)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "210-211"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=833",
+        "original_name": "pdf-s107-xref833",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "210"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Müftü Abdullah Mescidi (kitap s. 210)",
+        "en": "Müftü Abdullah Masjid (book p. 210)"
+      },
+      "alt": {
+        "tr": "Müftü Abdullah Mescidi fotoğrafı",
+        "en": "Photo of Müftü Abdullah Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=835",
+        "original_name": "pdf-s107-xref835",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "211"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Müftü Abdullah Mescidi (kitap s. 211)",
+        "en": "Müftü Abdullah Masjid (book p. 211)"
+      },
+      "alt": {
+        "tr": "Müftü Abdullah Mescidi fotoğrafı",
+        "en": "Photo of Müftü Abdullah Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

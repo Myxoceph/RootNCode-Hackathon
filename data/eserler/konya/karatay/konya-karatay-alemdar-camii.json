@@ -1,0 +1,352 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-alemdar-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 257) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[yeniden-insa-1948]",
+        "note": "Türkçe metin camiyi 1948'de yeniden inşa edildi, minareyi 1972'de betonarme yapıldı diye ayırır; İngilizce metin 1948 yeniden inşasını minareye bağlar ('The minaret ... which was rebuilt in 1948'). Türkçe metin esas alındı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metinde 'gasilhane' (ölü yıkama odası) 'gas station' olarak yanlış çevrilmiş; Türkçe metin esas alındı."
+      },
+      {
+        "field": "era",
+        "note": "İlk inşa 1909 (Geç Osmanlı) ama mevcut yapı 1948'de yeniden inşa edildiğinden era 'cumhuriyet' seçildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Alemdar Camii",
+    "en": "Alemdar Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "1909",
+    "1948 yeniden inşa"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Küçük Sinan Mahallesi",
+    "address": "Araplar Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "257"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk inşa 1909; yeniden inşa 1948",
+      "en": "First built 1909; rebuilt 1948"
+    },
+    "start_year": 1909,
+    "end_year": 1909,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap ilk inşa tarihini 1909 olarak verir; cami orijinal hâliyle günümüze ulaşmamış, 1948'de yeniden inşa edilmiştir.",
+      "en": "The book gives 1909 as the first construction date; the mosque has not survived in its original form and was rebuilt in 1948."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "257"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Küçük Sinan Mahallesi'nde, ilk olarak 1909'da yapılan, 1948'de yeniden inşa edilen ve minaresi 1972'de betonarme olarak yenilenen dikdörtgen planlı cami.",
+    "en": "A rectangular mosque in Küçük Sinan Neighborhood, first built in 1909, rebuilt in 1948, with a minaret rebuilt in reinforced concrete in 1972."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Küçük Sinan Mahallesi, Araplar Caddesi üzerinde yer almaktadır. İlk inşa tarihi 1909 olan cami orijinal hâliyle günümüze ulaşamamıştır. 1948'de yeniden inşa edilmiş, 1972'de minaresi betonarme olarak yeniden yapılmıştır.",
+        "en": "The mosque is on Araplar Street, Küçük Sinan Neighborhood, Karatay. First built in 1909, it has not survived in its original form. It was rebuilt in 1948 and its minaret was rebuilt in reinforced concrete in 1972."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Caminin doğu cephesinde depo ve gasilhane, güneybatı köşesinde abdest alma yerleri vardır. Dikdörtgen planlı caminin üzeri kırma çatıyla örtülüdür. Harim mekânındaki tavan göbeği ile minber ilk yapıldığı dönemden kalmadır.",
+        "en": "On the east facade there are a storeroom and a ghusl room, and ablution areas at the southwest corner. The rectangular mosque is covered with a hipped roof. The ceiling hub and minbar in the prayer hall date from the first period of construction."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "257"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ilk_insa_yili",
+      "label": {
+        "tr": "İlk inşa yılı",
+        "en": "First built"
+      },
+      "value": 1909,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_insa_yili",
+      "label": {
+        "tr": "Yeniden inşa yılı",
+        "en": "Rebuilt"
+      },
+      "value": 1948,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "key": "minare_yenileme_yili",
+      "label": {
+        "tr": "Betonarme minare yılı",
+        "en": "Reinforced-concrete minaret"
+      },
+      "value": 1972,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "257"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1909",
+      "year": 1909,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami ilk kez inşa edildi",
+        "en": "Mosque first built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1948",
+      "year": 1948,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Cami yeniden inşa edildi",
+        "en": "Mosque rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "257"
+        }
+      ]
+    },
+    {
+      "id": "minare-1972",
+      "year": 1972,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Minare betonarme olarak yeniden yapıldı",
+        "en": "Minaret rebuilt in reinforced concrete"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "257"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Alemdar Camii, Küçük Sinan Mahallesi'nde, Araplar Caddesi üzerinde bulunan dikdörtgen planlı, kırma çatılı bir camidir. Doğu cephesinde depo ve gasilhane, güneybatı köşesinde abdest alma yerleri vardır. İçerideki tavan göbeği ve minber ilk yapıdan kalmadır.",
+      "en": "Alemdar Mosque is a rectangular, hipped-roof mosque on Araplar Street in Küçük Sinan Neighborhood. The east side has a storeroom and a ghusl room, and the southwest corner has ablution areas. The ceiling hub and minbar inside survive from the first building."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 257)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "257-257"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1024",
+        "original_name": "pdf-s130-xref1024",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "257"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Alemdar Camii (kitap s. 257)",
+        "en": "Alemdar Mosque (book p. 257)"
+      },
+      "alt": {
+        "tr": "Alemdar Camii fotoğrafı",
+        "en": "Photo of Alemdar Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1026",
+        "original_name": "pdf-s130-xref1026",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "257"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Alemdar Camii (kitap s. 257)",
+        "en": "Alemdar Mosque (book p. 257)"
+      },
+      "alt": {
+        "tr": "Alemdar Camii fotoğrafı",
+        "en": "Photo of Alemdar Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1028",
+        "original_name": "pdf-s130-xref1028",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "257"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Alemdar Camii (kitap s. 257)",
+        "en": "Alemdar Mosque (book p. 257)"
+      },
+      "alt": {
+        "tr": "Alemdar Camii fotoğrafı",
+        "en": "Photo of Alemdar Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

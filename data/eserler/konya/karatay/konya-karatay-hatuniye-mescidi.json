@@ -1,0 +1,411 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-hatuniye-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 218-221) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Külliyenin diğer yapıları günümüze ulaşmamış; ayrı kayıt oluşturulmadı.",
+      "Mahalle adı vakfiyelerde 'Esediye', şer'iyye sicillerinde 'Bremânî' olarak geçiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Arapça vakfiye bânînin Devlet Hatun (H. 610 / M. 1213-14) olduğunu söylerken, minaredeki H. 627 / M. 1229-30 tarihli kitâbede bâni olarak 'Bedreddin Bermutî (Bremânî) b. Hacı Mahmud' okunur. Kitap bu kişinin Devlet Hatun'un kardeşi olduğunu ve depremde yıkılan mescidi onardığını söyler; iki kaynak bilgisi korunmuştur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hatuniye (Güdük Minare - Akıncılar Mahmut) Mescidi",
+    "en": "Hatuniye (Güdük Minare - Akıncılar Mahmut) Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Güdük Minare Mescidi",
+      "en": "Güdük Minare Masjid"
+    },
+    {
+      "tr": "Akıncılar Mahmut Mescidi",
+      "en": "Akıncılar Mahmut Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Güdük Minare",
+    "Devlet Hatun",
+    "Alâeddin Tepesi",
+    "kayıp külliye"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Mihmandar Mahallesi",
+    "address": "Hatuniye Sokak (Alâeddin Tepesi'nin doğusu)",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "218-221"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 610 / M. 1213-14 (vakfiyeye göre)",
+      "en": "610 AH / 1213-14 AD (per the deed)"
+    },
+    "start_year": 1213,
+    "end_year": 1214,
+    "hijri_year": 610,
+    "century": 13,
+    "basis": {
+      "tr": "Arapça vakfiyede bânînin H. 610 / M. 1213-14'te Devlet Hatun olduğu belirtilir; minare kitâbesi H. 627 / M. 1229-30 tarihlidir. Bugünkü mescit 1957'de yeniden yapılmıştır.",
+      "en": "The Arabic deed names Devlet Hatun as founder in 610 AH / 1213-14 AD; the minaret inscription is dated 627 AH / 1229-30 AD. The present masjid was rebuilt in 1957."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "218-221"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Devlet Hatun (Selçuklu Hanedanı'ndan Ahmed el-Arûsî'nin kızı)",
+    "role": "banî (Arapça vakfiyeye göre)",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "218-221"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Arapça vakfiyede bânînin Devlet Hatun olduğu belirtilir. Şer'iyye sicil kayıtlarına göre bahçelik alanda mescit, han, medrese, imaret ve türbeden oluşan bir külliye vardı; minare hariç hiçbiri günümüze ulaşmamıştır.",
+      "en": "The Arabic deed names Devlet Hatun as founder. Per the shariyya registry, a complex of masjid, inn, madrasa, imaret and tomb stood in the garden area; nothing but the minaret survives."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "218-221"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Mihmandar Mahallesi'ndeki mescit; Arapça vakfiyeye göre bânîsi Devlet Hatun'dur (H. 610 / M. 1213-14). Minarenin üst kısmı 1716'da yıkıldığı için 'Güdük Minare' diye anılır. Bugünkü mescit 1957'de mahalle halkınca yeniden yapılmıştır.",
+    "en": "A masjid in Mihmandar Neighborhood; per the Arabic deed its founder was Devlet Hatun (610 AH / 1213-14 AD). The top of its minaret collapsed in 1716, hence the name 'Güdük Minare' (Stumpy Minaret). The present masjid was rebuilt by the locals in 1957."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Alâeddin Tepesi'nin doğusundaki yapı, vakfiyelerde Esediye, şer'iyye sicil kayıtlarında Bremânî olarak geçen Mihmandar Mahallesi'ndedir. Arapça vakfiyesinde bânisinin H. 610 / M. 1213-14'te Selçuklu Hanedanı'ndan Ahmed el-Arûsî'nin kızı Devlet Hatun olduğu belirtilir. Şer'iyye sicillerine göre bahçelik alanda mescit, han, medrese, imaret ve türbeden oluşan bir külliye vardı; minare hariç hiçbiri günümüze ulaşmamıştır. XVIII. yüzyıldaki mescit tek kubbeli bir yapıydı; 1873'te aynı yerde kerpiç, ahşap kirişli bir mescit yapılmış, tahrip olunca 1957'de mahalle halkı ahşap örtülü kâgir mescidi yeniden yaptırmıştır.",
+        "en": "The building east of Alâeddin Hill is in Mihmandar Neighborhood, called Esediye in the deeds and Bremânî in the shariyya registry. The Arabic deed states its founder was Devlet Hatun, daughter of Ahmed el-Arûsî of the Seljuk Dynasty, in 610 AH / 1213-14 AD. According to the registry, a complex of masjid, inn, madrasa, imaret and tomb stood in the garden; only the minaret survives. The 18th-century masjid was single-domed; in 1873 an adobe masjid with wooden beams was built on the site, and when it decayed the locals rebuilt a masonry masjid with wooden covering in 1957."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-221"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 2,
+      "title": {
+        "tr": "Güdük Minare ve kitâbe",
+        "en": "The Stumpy Minaret and its inscription"
+      },
+      "body": {
+        "tr": "Mevcut mescidin kuzeybatısındaki minare çevresine sonradan yapılan yüksek binalar yüzünden fark edilememektedir. Başlangıçta çift şerefeli yapılan minarenin üst kısmı 1716'da yıkılmış, bu yüzden halk arasında Güdük Minare denmiştir. Batı kısmındaki mavi çini çerçeveli H. 627 / M. 1229-30 tarihli kitâbede bâni olarak 'Bedreddin Bermutî (Bremânî) b. Hacı Mahmud' okunur. Bu kişi Devlet Hatun'un kardeşidir; Devlet Hatun'un vefatından sonra depremde yıkılan mescidi tamir ettirmiş ve mevcut kitâbeyi koydurmuştur.",
+        "en": "The minaret northwest of the present masjid cannot be noticed because of tall buildings built around it. Originally built with a double balcony, its upper part collapsed in 1716 and it is popularly called Güdük Minare. The inscription dated 627 AH / 1229-30 AD in a blue tile frame on its west side reads the builder's name as 'Bedreddin Bermutî (Bremânî) b. Hacı Mahmud'. He was Devlet Hatun's brother; after her death he repaired the masjid, which had been destroyed in an earthquake, and had the inscription installed."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-221"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Bugünkü mescit enlemesine dikdörtgen planlı, içten düz damlı, dıştan dört yöne eğimli kırma çatılıdır. Harime kuzey cephedeki kapıdan geçilir. Cephelerde iki kademeli pencere düzeni görülür.",
+        "en": "The present masjid has a transverse rectangular plan, a flat roof inside and a four-way hipped roof outside. The harim is entered via the north door. The facades have a two-stage window arrangement."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-221"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Devlet Hatun",
+      "role": {
+        "tr": "Arapça vakfiyeye göre bânî; Ahmed el-Arûsî'nin kızı",
+        "en": "Founder per the Arabic deed; daughter of Ahmed el-Arûsî"
+      }
+    },
+    {
+      "name": "Ahmed el-Arûsî",
+      "role": {
+        "tr": "Selçuklu Hanedanı'ndan, Devlet Hatun'un babası",
+        "en": "Of the Seljuk Dynasty, father of Devlet Hatun"
+      }
+    },
+    {
+      "name": "Bedreddin Bermutî (Bremânî) b. Hacı Mahmud",
+      "role": {
+        "tr": "Devlet Hatun'un kardeşi; depremde yıkılan mescidi tamir ettirdi, kitâbeyi koydurdu",
+        "en": "Brother of Devlet Hatun; repaired the earthquake-damaged masjid and had the inscription installed"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "minare-kitabesi",
+      "location": {
+        "tr": "Minarenin batı kısmı, mavi çini çerçeveli",
+        "en": "West part of the minaret, in a blue tile frame"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 627,
+        "gregorian": "1229-30"
+      },
+      "note": {
+        "tr": "Kitapta metin verilmiyor; yalnızca 'Bedreddin Bermutî (Bremânî) b. Hacı Mahmud' adının okunduğu aktarılıyor. Dil belirtilmiyor.",
+        "en": "No text is given; the book only reports the name 'Bedreddin Bermutî (Bremânî) b. Hacı Mahmud' being read. Language not stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "220-221"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1213",
+      "year": 1213,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Mescit Devlet Hatun tarafından yaptırıldı (vakfiye, H. 610 / M. 1213-14)",
+        "en": "Masjid founded by Devlet Hatun (deed, 610 AH / 1213-14 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-221"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1229",
+      "year": 1229,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bedreddin Bermutî mescidi onarttı, kitâbe konuldu (H. 627 / M. 1229-30)",
+        "en": "Bedreddin Bermutî repaired the masjid and installed the inscription (627 AH / 1229-30 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-221"
+        }
+      ]
+    },
+    {
+      "id": "minare-hasar-1716",
+      "year": 1716,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Minarenin üst kısmı yıkıldı",
+        "en": "Upper part of the minaret collapsed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-221"
+        }
+      ]
+    },
+    {
+      "id": "yeni-mescit-1873",
+      "year": 1873,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Aynı yerde kerpiç, ahşap kirişli mescit yapıldı",
+        "en": "Adobe masjid with wooden beams built on the site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-221"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mahalle halkı ahşap örtülü kâgir mescidi yeniden yaptırdı",
+        "en": "Locals rebuilt a masonry masjid with wooden covering"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "218-221"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hatuniye Mescidi enlemesine dikdörtgen planlı, kırma çatılı, 1957'de yeniden yapılmış bir mescittir. Kuzeybatısında üst kısmı yıkık, Güdük Minare denen tarihî bir minare bulunur; çevresindeki yüksek binalar yüzünden zor fark edilir.",
+      "en": "Hatuniye Masjid is a transversely rectangular masjid with a hipped roof, rebuilt in 1957. To its northwest stands a historic minaret with a collapsed top, called Güdük Minare, hard to notice because of the tall buildings around it."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 218-221)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "220-222"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=887",
+        "original_name": "pdf-s112-xref887",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "220"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hatuniye (Güdük Minare - Akıncılar Mahmut) Mescidi (kitap s. 220)",
+        "en": "Hatuniye (Güdük Minare - Akıncılar Mahmut) Masjid (book p. 220)"
+      },
+      "alt": {
+        "tr": "Hatuniye (Güdük Minare - Akıncılar Mahmut) Mescidi fotoğrafı",
+        "en": "Photo of Hatuniye (Güdük Minare - Akıncılar Mahmut) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=895",
+        "original_name": "pdf-s113-xref895",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "222"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hatuniye (Güdük Minare - Akıncılar Mahmut) Mescidi (kitap s. 222)",
+        "en": "Hatuniye (Güdük Minare - Akıncılar Mahmut) Masjid (book p. 222)"
+      },
+      "alt": {
+        "tr": "Hatuniye (Güdük Minare - Akıncılar Mahmut) Mescidi fotoğrafı",
+        "en": "Photo of Hatuniye (Güdük Minare - Akıncılar Mahmut) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-digin-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 265) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mahalle adı kitapta verilmiyor.",
+      "'Diğin' adının kökeni kitapta açıklanmıyor.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "1920 yapının üzerinde yazıyor ama kitap ilk inşa tarihini bilmediğini söylüyor; bu yüzden 'probable'. Tarihin nerede/nasıl yazıldığı (kitabe mi, levha mı) kitapta belirtilmiyor, inscriptions yazılmadı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Diğin Camii",
+    "en": "Diğin Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Çaputçu Camii",
+    "1920",
+    "ahşap minare"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "İstanbul, Aziziye ve Köprübaşı Caddelerinin kesiştiği köşe",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "265"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1920 (yapı üzerindeki tarih)",
+      "en": "1920 (date written on the building)"
+    },
+    "start_year": 1920,
+    "end_year": 1920,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Caminin üzerinde 1920 tarihi yazar; ancak ilk inşa tarihi ya da bânisi hakkında kitâbe veya belge yoktur. Bu yüzden 1920 kesin yapım tarihi değil, yapı üzerindeki tarih olarak alınmıştır.",
+      "en": "The date 1920 is written on the mosque, but there is no inscription or document about its first construction or builder. 1920 is therefore taken as the date on the building, not a certain construction date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "265"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "İstanbul, Aziziye ve Köprübaşı Caddelerinin kesiştiği köşede, 'Çaputçu Camii' olarak da bilinen, üzerinde 1920 tarihi yazan ahşap minareli, enlemesine dikdörtgen planlı cami.",
+    "en": "A transverse rectangular mosque at the corner of Istanbul, Aziziye and Köprübaşı Streets, also known as Çaputçu Mosque, bearing the date 1920 and with a wooden minaret."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay'da İstanbul, Aziziye ve Köprübaşı Caddelerinin kesiştiği köşede yer almaktadır. Yapı 'Çaputçu Camii' olarak da bilinmektedir. Caminin üzerinde 1920 tarihi yazmaktadır; ancak ilk inşa tarihi ya da bânisi hakkında herhangi bir kitâbe veya belge yoktur.",
+        "en": "The mosque is in Karatay at the corner of Istanbul, Aziziye and Köprübaşı Streets. It is also known as the 'Çaputçu Mosque'. The date 1920 is written on it, but there is no inscription or document about its first construction date or builder."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "265"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı enine dikdörtgen planlı ve dört yöne kırma çatılıdır. Giriş kapısı üzerinde yükselen ahşap minare çokgen gövdelidir ve köşk tipi şerefeyle sonlanır. Sade cephede batıda iki, güneyde dört pencere vardır. Harim enine dikdörtgen planlı, içten ahşap düz tavanlıdır; kuzeyinde dört ahşap direğin taşıdığı mahfil bulunur. Kıble duvarındaki mihrap yarım daire planlıdır; mihrabın güneybatısındaki ahşap minberin korkuluk, aynalık ve süpürgelik bölümlerinde geometrik süslemeler görülür.",
+        "en": "The building has a transverse rectangular plan and a hipped roof in four directions. The wooden minaret rising above the entrance gate has a polygonal body and ends with a pavilion-type balcony. The plain facade has two windows in the west and four in the south. The harim has a transverse rectangular plan and a flat wooden ceiling, with a mahfil on four wooden posts in the north. The mihrab is semicircular; the wooden minbar in its southwest has geometric decoration on the railing, transom and skirting."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "265"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "tarih_yapi_uzerinde",
+      "label": {
+        "tr": "Yapı üzerinde yazan tarih",
+        "en": "Date written on the building"
+      },
+      "value": 1920,
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "265"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "tarih-1920",
+      "year": 1920,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Yapı üzerinde 1920 tarihi yazılıdır",
+        "en": "The date 1920 is written on the building"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "265"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Diğin Camii, üç caddenin kesiştiği köşede duran, enine dikdörtgen planlı, kırma çatılı bir camidir. Giriş kapısının üzerinde çokgen gövdeli ahşap bir minare yükselir. İçeride kuzeyde dört ahşap direkli mahfil, kıble duvarında mihrap ve geometrik süslemeli ahşap minber vardır.",
+      "en": "Diğin Mosque stands at the corner where three streets meet; it has a transverse rectangular plan and a hipped roof. A polygonal-bodied wooden minaret rises above the entrance gate. Inside are a gallery on four wooden posts in the north, a mihrab, and a wooden minbar with geometric decoration."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 265)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "265-265"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1072",
+        "original_name": "pdf-s134-xref1072",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "265"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Diğin Camii (kitap s. 265)",
+        "en": "Diğin Mosque (book p. 265)"
+      },
+      "alt": {
+        "tr": "Diğin Camii fotoğrafı",
+        "en": "Photo of Diğin Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1074",
+        "original_name": "pdf-s134-xref1074",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "265"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Diğin Camii (kitap s. 265)",
+        "en": "Diğin Mosque (book p. 265)"
+      },
+      "alt": {
+        "tr": "Diğin Camii fotoğrafı",
+        "en": "Photo of Diğin Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

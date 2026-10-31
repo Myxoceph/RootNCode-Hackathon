@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-hanedan-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 267) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabe metni kitapta yok; sahada okunup eklenmeli.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[giris-kitabesi]",
+        "note": "Kitap 'Türkçe kitâbe' diyor; yazı türü (Osmanlıca/Latin harfli) belirtmiyor. Dil 'tr' olarak girildi, metin kitapta yok; transliteration/translation null."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hanedan Camii",
+    "en": "Hanedan Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "1929",
+    "minaresiz",
+    "Cumhuriyet dönemi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Şeyh Ulema Çavuşoğlu Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "267"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1929",
+      "en": "1929"
+    },
+    "start_year": 1929,
+    "end_year": 1929,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap, girişteki Türkçe kitâbeye göre caminin 1929'da, Cumhuriyetin ilk yıllarında yapıldığını belirtir.",
+      "en": "The book states that, according to the Turkish inscription at the entrance, the mosque was built in 1929, in the first years of the Republic."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "267"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Şeyh Ulema Çavuşoğlu Mahallesi'nde, girişteki Türkçe kitâbeye göre 1929'da yapılan, minaresiz, taş temelli kerpiç yığma, çıtalı tavanlı cami.",
+    "en": "A minaretless mosque in Şeyh Ulema Çavuşoğlu Neighborhood, built in 1929 according to the Turkish inscription at the entrance, of adobe masonry on stone foundations with a slatted ceiling."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Şeyh Ulema Çavuşoğlu Mahallesi'nde yer almaktadır. Girişte yer alan Türkçe kitâbesine göre 1929'da, Cumhuriyetin ilk yıllarında yapılmıştır.",
+        "en": "The mosque is in Şeyh Ulema Çavuşoğlu Neighborhood, Karatay. According to the Turkish inscription at the entrance, it was built in 1929, in the first years of the Republic."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Temelde taş, diğer bölümlerde kerpiç kullanılarak yığma teknikte inşa edilen cami dikdörtgen planlıdır ve kırma çatılıdır. Camide minare yoktur; giriş kuzey cepheden sağlanır. Cepheler altta dikdörtgen pencerelerle, üstte küçük dikdörtgen tepe pencereleriyle aydınlatılır. Harim üst örtüsü çıtalı tavandır; mihrap ve minber sade ve ahşaptır. Harimin kuzey duvarında mahfil yer alır.",
+        "en": "Built in masonry with stone at the foundation and adobe elsewhere, the mosque has a rectangular plan and a hipped roof. It has no minaret; the entrance is from the north. The facades are lit by rectangular windows below and small rectangular skylights above. The harim ceiling is slatted; the mihrab and minbar are simple and wooden. A mahfil stands on the north wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 0,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş",
+        "en": "Entrance"
+      },
+      "language": "tr",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1929"
+      },
+      "note": {
+        "tr": "Kitâbenin metni kitapta verilmiyor; yalnızca Türkçe olduğu ve 1929 tarihini taşıdığı belirtiliyor.",
+        "en": "The inscription text is not given in the book; it is only stated to be Turkish and to give the date 1929."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1929",
+      "year": 1929,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa edildi",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hanedan Camii, taş temelli, kerpiç yığma, dikdörtgen planlı ve kırma çatılı bir camidir; minaresi yoktur. Giriş kuzey cepheden yapılır. İçeride çıtalı ahşap tavan, ahşap mihrap ve minber, kuzey duvarda mahfil bulunur.",
+      "en": "Hanedan Mosque is a rectangular adobe-masonry building on stone foundations with a hipped roof and no minaret. Entrance is from the north. Inside are a slatted wooden ceiling, a wooden mihrab and minbar, and a gallery on the north wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 267)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "267-267"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1082",
+        "original_name": "pdf-s135-xref1082",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "267"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hanedan Camii (kitap s. 267)",
+        "en": "Hanedan Mosque (book p. 267)"
+      },
+      "alt": {
+        "tr": "Hanedan Camii fotoğrafı",
+        "en": "Photo of Hanedan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1084",
+        "original_name": "pdf-s135-xref1084",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "267"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hanedan Camii (kitap s. 267)",
+        "en": "Hanedan Mosque (book p. 267)"
+      },
+      "alt": {
+        "tr": "Hanedan Camii fotoğrafı",
+        "en": "Photo of Hanedan Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

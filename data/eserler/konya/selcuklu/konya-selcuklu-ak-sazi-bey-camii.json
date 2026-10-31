@@ -1,0 +1,289 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-ak-sazi-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Şaz Bey'in yaşadığı yıllar ve yapım tarihi kitapta yok (dating.start_year/end_year null).",
+      "Halkın yeniden inşa yılı kitapta yok (zaman çizelgesine eklenmedi).",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "İçindekiler ve başlık 'Şazi Bey', metin 'Şaz Bey' yazıyor; metindeki yazım banî adı için esas alındı."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Yeniden inşa ve tamirlerin tarihleri 2008 dışında verilmiyor; halkın yeniden yapımının yılı kitapta yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ak (Şazi Bey) Camii",
+    "en": "Ak (Şazi Bey) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ak Camii",
+      "en": "Ak Mosque",
+      "note": "Duvarları kireçle badanalı olduğu için"
+    },
+    {
+      "tr": "Yıkık Mahalle Mescidi",
+      "en": "Yıkık Mahalle Masjid",
+      "note": "Konumundan dolayı halk arasında"
+    },
+    {
+      "tr": "Şaz Bey Camii",
+      "en": "Şaz Bey Mosque",
+      "note": "Banisine izafeten; içindekiler başlığında 'Şazi Bey' geçer"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "cami",
+    "Karamanoğulları",
+    "tek kubbeli",
+    "ahşap minare",
+    "Alâeddin Tepesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Ferhuniye",
+    "address": "Alâeddin Bulvarı No: 21",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "294"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi bilinmiyor (Karamanoğulları dönemi devlet adamı Şaz Bey)",
+      "en": "Date unknown (built by Şaz Bey, a Karamanoğulları-period statesman)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitâbe ve vakfiye yoktur; kitap yalnızca banisinin Karamanoğulları döneminde yaşadığını söyler.",
+      "en": "There is no inscription or deed; the book only says the founder lived in the Karamanoğulları period."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "294"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şaz Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "294"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Karamanoğulları dönemi devlet adamı Şaz Bey'in yaptırdığı, kare planlı, tek kubbeli ve silindirik ahşap minareli cami; halk tarafından yeniden inşa edilmiş, 2008'de Vakıflar tarafından onarılmıştır.",
+    "en": "A square-plan, single-domed mosque with a cylindrical wooden minaret, built by the Karamanoğulları-period statesman Şaz Bey; rebuilt by the people and repaired by the General Directorate of Foundations in 2008."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Selçuklu ilçesi Ferhuniye Mahallesi Alâeddin Bulvarı No. 21'dedir; Alâeddin Tepesi'nin kuzeybatısında, tepeyi çeviren anayolun kenarındadır. Duvarları kireçle badanalı olduğu için 'Ak Camii', konumundan dolayı halk arasında 'Yıkık Mahalle Mescidi', banisine izafeten 'Şaz Bey Camii' gibi adlarla anılır. Cami, Karamanoğulları döneminde yaşamış ve önemli görevlerde bulunmuş devlet adamı Şaz Bey tarafından yaptırılmıştır. Kitâbesi ve vakfiyesi yoktur. Zamanla hasar gören yapı halk tarafından Hacı Kaymaklardan Kasım Ağa'nın önderliğinde yeniden inşa ettirilmiş; Vakıflar Genel Müdürlüğü 2008'de camide esaslı bir tamirat yapmıştır.",
+        "en": "The mosque is at Ferhuniye Neighborhood, Alâeddin Boulevard No. 21, northwest of Alâeddin Hill beside the main road around the hill. It is called Ak Mosque (its walls are whitewashed), Yıkık Mahalle Masjid (after its location) and Şaz Bey Mosque (after its builder). It was built by Şaz Bey, a statesman who lived and held important posts in the Karamanoğulları period. It has no inscription or foundation deed. Damaged over time, it was rebuilt by the people under the leadership of Kasım Ağa of the Hacı Kaymaklar family, and the General Directorate of Foundations carried out major repairs in 2008."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "294"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlı ve sekizgen kasnağa oturan tek kubbelidir. Harime batıdaki kapıdan girilir; giriş bölümünün üzerinde silindirik ahşap minare yer alır. İçten sekizgen kubbe eteğini dolaşan, siyah zemin üzerine beyaz sülüs yazı kuşağında Nebe Suresi yazılıdır. Kıble duvarının ortasındaki mihrap mermerdendir; mihrabın sağındaki minber yakın zamanda konmuştur.",
+        "en": "The masjid has a square plan and a single dome on an octagonal drum. The harim is entered through the west door; a cylindrical wooden minaret stands above the entrance section. A band of white thuluth on black around the base of the octagonal dome carries Surah An-Naba. The mihrab in the middle of the qibla wall is marble; the minbar to its right was installed recently."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "294"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Şaz Bey",
+      "role": {
+        "tr": "Banî; Karamanoğulları dönemi devlet adamı",
+        "en": "Founder; Karamanoğulları-period statesman"
+      }
+    },
+    {
+      "name": "Kasım Ağa (Hacı Kaymaklar)",
+      "role": {
+        "tr": "Camiyi halkla yeniden inşa ettiren kişi",
+        "en": "Led the people in rebuilding the mosque"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü'nün esaslı onarımı",
+        "en": "Major repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "294"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "yazi-kusagi",
+      "title": {
+        "tr": "Nebe Suresi yazı kuşağı",
+        "en": "Surah An-Naba calligraphy band"
+      },
+      "hint": {
+        "tr": "Kubbe eteğindeki siyah zeminli beyaz sülüs yazıya bakın.",
+        "en": "Look at the white thuluth on black around the dome base."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Beyaz badanalı, kare planlı, tek kubbeli bir cami. Kubbe sekizgen kasnağa oturur; giriş bölümünün üzerinde silindirik ahşap bir minare yükselir. İçeride kubbe eteğini siyah zemin üzerine beyaz yazılarla Nebe Suresi çevreler; kıble duvarındaki mihrap mermerdir.",
+      "en": "A whitewashed, square-plan, single-domed mosque. The dome rests on an octagonal drum and a cylindrical wooden minaret rises over the entrance section. Inside, white lettering on black circles the dome base with Surah An-Naba; the mihrab in the qibla wall is marble."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "294-294"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1213",
+        "original_name": "pdf-s149-xref1213",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "294"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ak (Şazi Bey) Camii (kitap s. 294)",
+        "en": "Ak (Şazi Bey) Mosque (book p. 294)"
+      },
+      "alt": {
+        "tr": "Ak (Şazi Bey) Camii fotoğrafı",
+        "en": "Photo of Ak (Şazi Bey) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1211",
+        "original_name": "pdf-s149-xref1211",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "294"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ak (Şazi Bey) Camii (kitap s. 294)",
+        "en": "Ak (Şazi Bey) Mosque (book p. 294)"
+      },
+      "alt": {
+        "tr": "Ak (Şazi Bey) Camii fotoğrafı",
+        "en": "Photo of Ak (Şazi Bey) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}
