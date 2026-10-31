@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ilgin-behlul-bey-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 445) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapının 20. yüzyılda yapıldığı plan tipi ve malzemeden çıkarılıyor; kesin yıl yok. Dönem (era) bu yüzden boş bırakıldı.",
+      "Banî kitapta belirtilmiyor.",
+      "Kitaptaki içindekiler listesi adı 'Behlül Bey Camii / Beylül Bey Mosque' yazıyor; İngilizce adda yazım farkı var.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name.en",
+        "note": "İçindekiler listesinde İngilizce ad 'Beylül Bey Mosque', sayfa başlığında 'Behlül Bey Mosque' yazıyor; Türkçe 'Behlül Bey' esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Behlül Bey Camii",
+    "en": "Behlül Bey Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kerpiç",
+    "ahşap mihrap",
+    "XX. yüzyıl"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ilgın",
+    "neighborhood": "Behlülbey Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "445"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl",
+      "en": "20th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap, kitabe ve vakfiye bulunmadığını; plan tipi ve malzemeden 20. yüzyılda yapıldığının anlaşıldığını söylüyor. Yıl verilmediği için başlangıç/bitiş yılı boş.",
+      "en": "The book says there is no inscription or foundation charter; the 20th-century date is inferred from plan type and materials. No year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "445"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Ilgın Behlülbey Mahallesi'nde, kerpiçten yapılmış, kırma çatılı, 20. yüzyıla ait olduğu anlaşılan sade bir cami.",
+    "en": "A plain adobe mosque with a hipped roof in Ilgın's Behlülbey Neighborhood, understood to date from the 20th century."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Ilgın, Behlülbey Mahallesi'ndedir. Camiye ait kitâbe ve vakfiye bulunmamaktadır; plan tipi ve yapımında kullanılan malzemeden XX. yüzyılda yapıldığı anlaşılmaktadır. Dıştan dikdörtgen planlı olup üzeri kırma çatıyla örtülüdür; yapıda kerpiç malzeme kullanılmıştır. Harim derinlemesine dikdörtgen planlıdır. Kıble duvarı ortasındaki mihrap yarım daire planlıdır; turkuaz renkteki ahşap mihrapta geometrik ve bitkisel süslemeler vardır. Mihrabın sağında, güneybatı köşedeki minber yenilenmiştir.",
+        "en": "The mosque is in Ilgın, Behlülbey Neighborhood. It has no inscription or foundation charter; its plan type and materials show that it was built in the 20th century. It has a rectangular plan from the outside and a hipped roof; adobe was used. The harim has a deeply rectangular plan. The mihrab in the middle of the qibla wall has a semicircular plan; the turquoise wooden mihrab carries geometric and floral decoration. The minbar in the southwest corner, to the right of the mihrab, has been renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "445"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "kerpiç",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "445"
+        }
+      ]
+    },
+    {
+      "key": "cati",
+      "label": {
+        "tr": "Çatı",
+        "en": "Roof"
+      },
+      "value": "kırma çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "445"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Behlül Bey Camii, Ilgın'da dıştan dikdörtgen planlı, kırma çatılı, kerpiçten yapılmış bir camidir. İçeride derinlemesine dikdörtgen bir harim ve kıble duvarının ortasında turkuaz renkli, süslemeli ahşap bir mihrap bulunur.",
+      "en": "Behlül Bey Mosque in Ilgın is an adobe building with a rectangular plan and a hipped roof. Inside is a deeply rectangular prayer hall with a turquoise decorated wooden mihrab in the middle of the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 445)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "445-445"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1947",
+        "original_name": "pdf-s224-xref1947",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "445"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Behlül Bey Camii (kitap s. 445)",
+        "en": "Behlül Bey Mosque (book p. 445)"
+      },
+      "alt": {
+        "tr": "Behlül Bey Camii fotoğrafı",
+        "en": "Photo of Behlül Bey Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1949",
+        "original_name": "pdf-s224-xref1949",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "445"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Behlül Bey Camii (kitap s. 445)",
+        "en": "Behlül Bey Mosque (book p. 445)"
+      },
+      "alt": {
+        "tr": "Behlül Bey Camii fotoğrafı",
+        "en": "Photo of Behlül Bey Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1953",
+        "original_name": "pdf-s224-xref1953",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "445"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Behlül Bey Camii (kitap s. 445)",
+        "en": "Behlül Bey Mosque (book p. 445)"
+      },
+      "alt": {
+        "tr": "Behlül Bey Camii fotoğrafı",
+        "en": "Photo of Behlül Bey Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1951",
+        "original_name": "pdf-s224-xref1951",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "445"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Behlül Bey Camii (kitap s. 445)",
+        "en": "Behlül Bey Mosque (book p. 445)"
+      },
+      "alt": {
+        "tr": "Behlül Bey Camii fotoğrafı",
+        "en": "Photo of Behlül Bey Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,325 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-beysehir-hamidiye-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 386) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Era kitapta belirtilmiyor; tarihe göre gec-osmanli seçildi.",
+      "Banî tek kişi değil, topluluk; founder.name topluluğu tanımlıyor, teyit edilmeli.",
+      "Mimari özellikler 1999 yeniden inşasına ait olabilir; kitap ayırt etmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hamidiye Camii",
+    "en": "Hamidiye Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Hamidiye Mahallesi",
+    "muhacir",
+    "1914",
+    "yeniden inşa"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Beyşehir",
+    "neighborhood": "Hamidiye Mahallesi",
+    "address": "Nazımbey Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "386"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1914 (1999'da yeniden inşa)",
+      "en": "1914 (rebuilt 1999)"
+    },
+    "start_year": 1914,
+    "end_year": 1914,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "1890'da Rusya'dan göç eden muhacirler tarafından 1914'te yaptırıldığı belirtiliyor.",
+      "en": "Stated as built in 1914 by immigrants who came from Russia in 1890."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "386"
+      }
+    ]
+  },
+  "founder": {
+    "name": "1890'da Rusya'dan göç eden muhacirler (topluluk)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "386"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hamidiye Mahallesi'ndeki cami 1914'te Rusya'dan göç eden muhacirlerce yaptırılmış, minaresi 1959'da, kendisi 1999'da yıkılıp aynı yıl yeniden inşa edilmiştir.",
+    "en": "The mosque in Hamidiye Neighborhood was built in 1914 by immigrants from Russia; its minaret was demolished and rebuilt in 1959 and the mosque itself in 1999."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Beyşehir, Nazımbey Caddesi, Hamidiye Mahallesi'ndedir. 1890'da Rusya'dan bölgeye göç eden muhacirler tarafından 1914'te yaptırılmıştır. 1959'da minaresi yıkılmış, aynı tarihte tekrar yaptırılmıştır. Cami 1999'da yıkılmış ve aynı sene yeniden inşa edilmiştir.",
+        "en": "The mosque is in Beyşehir, Nazımbey Street, Hamidiye Neighborhood. It was built in 1914 by immigrants who came from Russia in 1890. Its minaret was demolished in 1959 and rebuilt the same year. The mosque was demolished in 1999 and rebuilt the same year."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "386"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kareye yakın dikdörtgen planlı ve kırma çatılıdır. Kaba yonu taştan yapılan beden duvarlarında yuvarlak kemerli, dikdörtgen formda pencere açıklıkları vardır. Kuzeydeki minare kare kaideli, silindirik gövdeli ve tek şerefelidir. Harime kuzey cephedeki açıklıktan geçilir; harim sade bir düzenlemededir.",
+        "en": "The mosque is almost square with a hipped roof. Its rough-cut stone walls have round-arched rectangular windows. The minaret in the north has a square base, cylindrical body and one balcony. The harim is entered through an opening on the north facade and is plainly arranged."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "386"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1914",
+      "year": 1914,
+      "type": "construction",
+      "title": {
+        "tr": "Cami muhacirler tarafından yaptırıldı",
+        "en": "Mosque built by immigrants"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "386"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "minare-1959",
+      "year": 1959,
+      "type": "restoration",
+      "title": {
+        "tr": "Minare yıkılıp yeniden yaptırıldı",
+        "en": "Minaret demolished and rebuilt"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "386"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "yeniden-insa-1999",
+      "year": 1999,
+      "type": "restoration",
+      "title": {
+        "tr": "Cami yıkılıp yeniden inşa edildi",
+        "en": "Mosque demolished and rebuilt"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "386"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamidiye Camii kareye yakın dikdörtgen planlı, kaba yonu taşlı, kırma çatılı bir yapıdır. Beden duvarlarında yuvarlak kemerli dikdörtgen pencereler vardır. Kuzeyde kare kaideli, silindirik gövdeli, tek şerefeli minare yükselir; harime kuzey cephedeki açıklıktan girilir.",
+      "en": "Hamidiye Mosque is an almost square rough-cut stone building with a hipped roof and round-arched rectangular windows. A minaret with a square base, cylindrical body and one balcony rises in the north; the harim is entered through an opening on the north facade."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 386)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "386-386"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1632",
+        "original_name": "pdf-s195-xref1632",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "386"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hamidiye Camii (kitap s. 386)",
+        "en": "Hamidiye Mosque (book p. 386)"
+      },
+      "alt": {
+        "tr": "Hamidiye Camii fotoğrafı",
+        "en": "Photo of Hamidiye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1634",
+        "original_name": "pdf-s195-xref1634",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "386"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hamidiye Camii (kitap s. 386)",
+        "en": "Hamidiye Mosque (book p. 386)"
+      },
+      "alt": {
+        "tr": "Hamidiye Camii fotoğrafı",
+        "en": "Photo of Hamidiye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1636",
+        "original_name": "pdf-s195-xref1636",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "386"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hamidiye Camii (kitap s. 386)",
+        "en": "Hamidiye Mosque (book p. 386)"
+      },
+      "alt": {
+        "tr": "Hamidiye Camii fotoğrafı",
+        "en": "Photo of Hamidiye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1638",
+        "original_name": "pdf-s195-xref1638",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "386"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hamidiye Camii (kitap s. 386)",
+        "en": "Hamidiye Mosque (book p. 386)"
+      },
+      "alt": {
+        "tr": "Hamidiye Camii fotoğrafı",
+        "en": "Photo of Hamidiye Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

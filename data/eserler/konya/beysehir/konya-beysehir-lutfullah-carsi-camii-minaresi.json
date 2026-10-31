@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-beysehir-lutfullah-carsi-camii-minaresi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 389) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Minarenin kendi inşa tarihi kitapta yok; dating başlangıç/bitiş yılı null.",
+      "Celeboğlu'nun kimliği/adı kitapta açıklanmıyor.",
+      "Tür 'diger' seçildi (yalnızca minare); gerekirse gözden geçirilmeli.",
+      "Çarşı Camii'nin kaydı bu aralıkta yok; relation yazılmadı.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Lütfullah Çarşı Camii Minaresi",
+    "en": "Lütfullah Çarşı Mosque Minaret"
+  },
+  "alternate_names": [],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "minare",
+    "Evsât Mahallesi",
+    "çarşı",
+    "1823",
+    "testere dişi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Beyşehir",
+    "neighborhood": "Evsât Mahallesi (çarşı içi)",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "389"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Cami 1823; minare sonradan eklenmiş",
+      "en": "Mosque 1823; minaret added later"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "1823'te Hacı Lütfullah Ağa'nın yaptırdığı caminin yanına Celeboğlu'nun sonradan yaptırdığı belirtiliyor; minarenin kendi tarihi verilmiyor.",
+      "en": "Built later by Celeboğlu next to the mosque built by Hacı Lütfullah Ağa in 1823; the minaret's own date is not given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "389"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Celeboğlu",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "389"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Evsât Mahallesi'nde çarşı içinde, yenilenmiş Çarşı Camisi'nin kuzeydoğusundaki minare; 1823'te Hacı Lütfullah Ağa'nın yaptırdığı caminin yanına Celeboğlu tarafından sonradan eklenmiştir.",
+    "en": "The minaret stands in the bazaar in Evsât Neighborhood, northeast of the renovated Çarşı Mosque; it was added later by Celeboğlu next to the mosque built by Hacı Lütfullah Ağa in 1823."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Minare Beyşehir, Evsât Mahallesi'nde çarşı içinde, günümüzde yenilenmiş olan Çarşı Camisi'nin kuzeydoğusundadır. 1823'te Beyşehir Sancağı Mütesellimi Hacı Lütfullah Ağa tarafından yaptırılan caminin yanına Celeboğlu tarafından sonradan inşa ettirilmiştir.",
+        "en": "The minaret is in Beyşehir, Evsât Neighborhood, in the bazaar, northeast of the Çarşı Mosque which has been renovated today. It was later built by Celeboğlu next to the mosque built in 1823 by Hacı Lütfullah Ağa, the Mütesellim of Beyşehir Sanjak."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "389"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Minare kare kaideli, silindirik gövdeli ve tek şerefelidir. Şerefe altlığında beş sıra testere dişi sırası eklenmiştir.",
+        "en": "The minaret has a square base, cylindrical body and a single balcony. Five rows of sawtooth courses are added under the balcony."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "389"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Hacı Lütfullah Ağa",
+      "role": {
+        "tr": "1823'te camiyi yaptıran Beyşehir Sancağı Mütesellimi",
+        "en": "Mütesellim of Beyşehir Sanjak who had the mosque built in 1823"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "cami-1823",
+      "year": 1823,
+      "type": "construction",
+      "title": {
+        "tr": "Hacı Lütfullah Ağa camiyi yaptırdı (minare değil)",
+        "en": "Hacı Lütfullah Ağa had the mosque built (not the minaret)"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "389"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Lütfullah Çarşı Camii Minaresi çarşı içinde yer alır. Kare kaideli, silindirik gövdeli ve tek şerefelidir; şerefe altlığında beş sıra testere dişi bezeme bulunur.",
+      "en": "The Lütfullah Çarşı Mosque minaret stands in the bazaar. It has a square base, cylindrical body and a single balcony, with five rows of sawtooth ornament under the balcony."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 389)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "389-389"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1651",
+        "original_name": "pdf-s196-xref1651",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "389"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Lütfullah Çarşı Camii Minaresi (kitap s. 389)",
+        "en": "Lütfullah Çarşı Mosque Minaret (book p. 389)"
+      },
+      "alt": {
+        "tr": "Lütfullah Çarşı Camii Minaresi fotoğrafı",
+        "en": "Photo of Lütfullah Çarşı Mosque Minaret"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1653",
+        "original_name": "pdf-s196-xref1653",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "389"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Lütfullah Çarşı Camii Minaresi (kitap s. 389)",
+        "en": "Lütfullah Çarşı Mosque Minaret (book p. 389)"
+      },
+      "alt": {
+        "tr": "Lütfullah Çarşı Camii Minaresi fotoğrafı",
+        "en": "Photo of Lütfullah Çarşı Mosque Minaret"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

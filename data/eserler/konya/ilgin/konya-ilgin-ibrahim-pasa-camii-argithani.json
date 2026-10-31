@@ -1,0 +1,375 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ilgin-ibrahim-pasa-camii-argithani",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 447) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Külliyenin diğer yapıları günümüze ulaşmadığı için ayrı kayıt yok; parent_id yazılmadı.",
+      "Camiyi XIX. yüzyılda yenileten kişi kitapta belirtilmiyor.",
+      "Vakfiyenin içeriği (vakıf şartları) kitapta verilmiyor; VGM arşivinden bulunursa waqf alanına eklenecek.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "İbrahim Paşa Camii (Argıthanı)",
+    "en": "İbrahim Paşa Mosque (Argıthanı)"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Nevşehirli İbrahim Paşa",
+    "külliye",
+    "Argıthan",
+    "vakfiye 1133"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ilgın",
+    "neighborhood": "Argıthan Kasabası",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "447"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1133 / M. 1720 (külliye); cami XIX. yüzyılda yenilenmiş",
+      "en": "AH 1133 / AD 1720 (complex); mosque renovated in the 19th century"
+    },
+    "start_year": 1720,
+    "end_year": 1720,
+    "hijri_year": 1133,
+    "century": 18,
+    "basis": {
+      "tr": "Kitap külliyenin H. 1133 / M. 1720'de yaptırıldığını, camiin ise XIX. yüzyılda yenilendiğini söylüyor.",
+      "en": "The book says the complex was built in AH 1133 / AD 1720 and the mosque was renovated in the 19th century."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "447"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Nevşehirli İbrahim Paşa",
+    "role": "banî (külliyeyi yaptıran)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "447"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Vezîr-i Azam Nevşehirli İbrahim Paşa Vakfı (Ilgın)",
+    "deed": {
+      "date_display": "1133 (H.)",
+      "excerpt": {
+        "tr": "Vakıflar Genel Müdürlüğü arşivlerinde Ilgın'da Vezîr-i Azam Nevşehirli İbrahim Paşa Vakfı'na ait 1133 tarihli vakfiye bulunmaktadır.",
+        "en": "In the archives of the General Directorate of Foundations there is a foundation charter dated 1133 belonging to the Grand Vizier Nevşehirli İbrahim Paşa Foundation in Ilgın."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "447"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "447"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Nevşehirli İbrahim Paşa'nın 1720'de Argıthan'da yaptırdığı külliyeden günümüze kalan, XIX. yüzyılda yenilenmiş cami.",
+    "en": "The only surviving building, renovated in the 19th century, of the complex Nevşehirli İbrahim Paşa had built in Argıthan in 1720."
+  },
+  "sections": [
+    {
+      "id": "kulliye",
+      "order": 1,
+      "title": {
+        "tr": "Külliye ve Vakıf",
+        "en": "The Complex and its Foundation"
+      },
+      "body": {
+        "tr": "Nevşehirli İbrahim Paşa, Ilgın'a bağlı Argıthan Kasabası'nda cami, mektep, medrese, 16 ocaklı han, 14 dükkânlı çarşı, 6 çeşme ve kuyudan oluşan külliyeyi H. 1133 / M. 1720 senesinde yaptırmıştır. Osmanlı döneminde bölgenin en önemli külliyelerinden olan eserden günümüze XIX. yüzyılda yenilenen camiden başka yapı ulaşmamıştır. Vakıflar Genel Müdürlüğü arşivlerinde Ilgın'da Vezîr-i Azam Nevşehirli İbrahim Paşa Vakfı'na ait 1133 tarihli vakfiye bulunmaktadır.",
+        "en": "Nevşehirli İbrahim Paşa had a social complex built in 1133 AH / 1720 AD in Argıthan Town of Ilgın, consisting of a mosque, school, madrasa, an inn with 16 hearths, a bazaar with 14 shops, 6 fountains and a well. One of the most important complexes of the region in the Ottoman period, nothing but the mosque, renovated in the 19th century, has survived. The archives of the General Directorate of Foundations hold a foundation charter dated 1133 for the Grand Vizier Nevşehirli İbrahim Paşa Foundation in Ilgın."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "447"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kareye yakın dikdörtgen planlıdır. Üst örtüsü düz dam olan yapı sonradan kırma çatıyla kapatılmıştır. İç mekân ortadaki üç sıra ahşap ayakla desteklenmiştir. Cami günümüzde ibadete açıktır.",
+        "en": "The mosque has an almost square rectangular plan. Originally covered with a flat roof, it was later covered with a hipped roof. The interior is supported by three rows of wooden legs in the middle. The mosque is open for worship today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "447"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "han_ocak",
+      "label": {
+        "tr": "Han ocak sayısı (külliye)",
+        "en": "Hearths of the inn (complex)"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "447"
+        }
+      ]
+    },
+    {
+      "key": "carsi_dukkan",
+      "label": {
+        "tr": "Çarşı dükkân sayısı (külliye)",
+        "en": "Shops of the bazaar (complex)"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "447"
+        }
+      ]
+    },
+    {
+      "key": "cesme_sayisi",
+      "label": {
+        "tr": "Çeşme sayısı (külliye)",
+        "en": "Fountains (complex)"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "447"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Nevşehirli İbrahim Paşa",
+      "role": {
+        "tr": "Külliyeyi yaptıran vezîr-i azam",
+        "en": "Grand vizier who had the complex built"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kulliye-1720",
+      "year": 1720,
+      "hijri": "1133",
+      "type": "construction",
+      "title": {
+        "tr": "Külliye yaptırıldı",
+        "en": "Complex built"
+      },
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "447"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İbrahim Paşa Camii, Argıthan'da kareye yakın dikdörtgen planlı, kırma çatılı bir camidir. İçeride üç sıra ahşap ayak tavanı taşır. Camiyi yaptıran Nevşehirli İbrahim Paşa'nın külliyesinden günümüze yalnızca bu yapı kalmıştır.",
+      "en": "İbrahim Paşa Mosque in Argıthan has an almost square plan and a hipped roof. Inside, three rows of wooden legs support the ceiling. Of the complex built by Nevşehirli İbrahim Paşa only this building survives."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 447)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "447-447"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1967",
+        "original_name": "pdf-s225-xref1967",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "447"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İbrahim Paşa Camii (Argıthanı) (kitap s. 447)",
+        "en": "İbrahim Paşa Mosque (Argıthanı) (book p. 447)"
+      },
+      "alt": {
+        "tr": "İbrahim Paşa Camii (Argıthanı) fotoğrafı",
+        "en": "Photo of İbrahim Paşa Mosque (Argıthanı)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1969",
+        "original_name": "pdf-s225-xref1969",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "447"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İbrahim Paşa Camii (Argıthanı) (kitap s. 447)",
+        "en": "İbrahim Paşa Mosque (Argıthanı) (book p. 447)"
+      },
+      "alt": {
+        "tr": "İbrahim Paşa Camii (Argıthanı) fotoğrafı",
+        "en": "Photo of İbrahim Paşa Mosque (Argıthanı)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1965",
+        "original_name": "pdf-s225-xref1965",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "447"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İbrahim Paşa Camii (Argıthanı) (kitap s. 447)",
+        "en": "İbrahim Paşa Mosque (Argıthanı) (book p. 447)"
+      },
+      "alt": {
+        "tr": "İbrahim Paşa Camii (Argıthanı) fotoğrafı",
+        "en": "Photo of İbrahim Paşa Mosque (Argıthanı)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1971",
+        "original_name": "pdf-s225-xref1971",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "447"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "İbrahim Paşa Camii (Argıthanı) (kitap s. 447)",
+        "en": "İbrahim Paşa Mosque (Argıthanı) (book p. 447)"
+      },
+      "alt": {
+        "tr": "İbrahim Paşa Camii (Argıthanı) fotoğrafı",
+        "en": "Photo of İbrahim Paşa Mosque (Argıthanı)"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

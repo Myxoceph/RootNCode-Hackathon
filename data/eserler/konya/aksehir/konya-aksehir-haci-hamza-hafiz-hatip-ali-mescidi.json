@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-haci-hamza-hafiz-hatip-ali-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakıf (vakfiye, gelirler) ayrıntısı kitapta yok.",
+      "1476 kaydının bu mescide mi diğerine mi ait olduğu kitapta kesin değil (Hacı Hamza Mahallesi'ndeki olduğu ima edilir).",
+      "Banisi bilinmiyor; founder null.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hacı Hamza (Hafız Hatip Ali) Mescidi",
+    "en": "Hacı Hamza (Hafız Hatip Ali) Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "Akşehir",
+    "Yıldırım Mahallesi",
+    "tek kubbeli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Yıldırım Mahallesi",
+    "address": "Hacı Hamza Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "332"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII-XIV. yüzyıl (tahmini)",
+      "en": "13th-14th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitâbe yok; inşa tarihi ve banisi belli değil, XIII-XIV. yüzyıllarda yapıldığı düşünülüyor. Kesin yıl yok; iki yüzyıla yayıldığı için century boş.",
+      "en": "No inscription; date and builder unknown, thought to be 13th-14th century. No exact year; century left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "332"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "332"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Akşehir Yıldırım Mahallesi'nde, XIII-XIV. yüzyılda yapıldığı düşünülen, kare planlı tek kubbeli mescit; 2008'de onarıldı.",
+    "en": "A square single-domed masjid in Yıldırım Neighborhood, Akşehir, thought to date from the 13th-14th century; repaired in 2008."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Mescit Akşehir Yıldırım Mahallesi Hacı Hamza Sokak üzerindedir. Mahalle Cumhuriyet'ten önce 'Hacı Hamza Mahallesi' olarak bilinirdi. İnşa kitâbesi yoktur. Fatih Sultan Mehmed devrine ait H. 881 / M. 1476 tarihli vakıf kayıtlarında Akşehir'de 'Hamza Mescidi' adıyla biri Hacı Hamza Mahallesi'nde, biri Cambaz Mahallesi'nde iki mescit geçer. Yapım tarihi ve banisi belli olmayan mescidin XIII-XIV. yüzyıllarda yapıldığı düşünülmektedir. Vakıflar Bölge Müdürlüğü 2008'de tamir etmiştir.",
+        "en": "The masjid is on Hacı Hamza Street, Yıldırım Neighborhood, Akşehir; before the Republic the neighborhood was called Hacı Hamza. It has no construction inscription. Foundation records of 881 AH / 1476 AD (Mehmed the Conqueror) list two masjids named 'Hamza Masjid' in Akşehir, one in Hacı Hamza and one in Cambaz Neighborhood. Its date and builder are unknown and it is thought to be 13th-14th century. It was repaired by the Regional Directorate of Foundations in 2008."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "332"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlı ve tek kubbelidir; taş ve tuğla kullanılmıştır. Harime kuzeydeki kapıdan girilir. Kuzey cephedeki son cemaat yeri ve minare sonradan eklenmiştir; son cemaat yerindeki sivri kemerli pencere alınlığında firuze renkli geometrik süslemeler görülür. Kıble duvarı ortasındaki mihrap yenilenmiştir.",
+        "en": "The masjid is square and single-domed, built of stone and brick, entered through the north door. The north narthex and the minaret were added later; the pointed-arch window pediment in the narthex has turquoise geometric decoration. The mihrab has been renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "332"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakif-kaydi-1476",
+      "year": 1476,
+      "date": null,
+      "hijri": "881",
+      "type": "record",
+      "title": {
+        "tr": "Vakıf kayıtlarında 'Hamza Mescidi' adıyla iki mescitten biri olarak geçer",
+        "en": "Appears in foundation records among two masjids named 'Hamza Masjid'"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "332"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından tamir edildi",
+        "en": "Repaired by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "332"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, tek kubbeli, taş ve tuğla bir mescittir. Kuzeyde sonradan eklenmiş son cemaat yeri ve minare vardır; son cemaat yerinde sivri kemerli pencere alınlığında firuze geometrik süsleme görülür. Harime kuzeydeki kapıdan girilir.",
+      "en": "A square single-domed masjid of stone and brick. A later narthex and minaret are on the north; the narthex's pointed-arch window pediment has turquoise geometric decoration. The harim is entered from the north door."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "332-332"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1374",
+        "original_name": "pdf-s168-xref1374",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "332"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Hacı Hamza (Hafız Hatip Ali) Mescidi (kitap s. 332)",
+        "en": "Hacı Hamza (Hafız Hatip Ali) Masjid (book p. 332)"
+      },
+      "alt": {
+        "tr": "Hacı Hamza (Hafız Hatip Ali) Mescidi fotoğrafı",
+        "en": "Photo of Hacı Hamza (Hafız Hatip Ali) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

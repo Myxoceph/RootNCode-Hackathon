@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ilgin-sihcarullah-zincirli-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 450) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kesin yapım yılı ve banî kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şıhcarullah (Zincirli) Camii",
+    "en": "Şıhcarullah (Zincirli) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap mihrap",
+    "ahşap minber",
+    "XIX. yüzyıl"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ilgın",
+    "neighborhood": "Şıhcarullah Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "450"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl",
+      "en": "19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "İnşa kitabesi yok; plan, örtü ve süslemelerden XIX. yüzyıla tarihlendirilebiliyor.",
+      "en": "No construction inscription; dated to the 19th century from plan, covering and decoration."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "450"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Ilgın Şıhcarullah Mahallesi'nde, plan ve süslemelerinden XIX. yüzyıla tarihlenen, ahşap mihrap ve minberli cami.",
+    "en": "A mosque in Ilgın's Şıhcarullah Neighborhood, dated to the 19th century from plan and decoration, with a wooden mihrab and minbar."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Ilgın, Şıhcarullah Mahallesi'nde bulunmaktadır. Camiye ait bir inşa kitâbesi yoktur; plan, örtü ve süslemelerinden hareketle inşa tarihi XIX. yüzyıla tarihlendirilebilir. Harim dörtgen planlı ve ahşap desteklidir. Caminin mihrabı ve minberi ahşaptan yapılmış olup döneminin özelliğini yansıtmaktadır. Cami günümüzde de ibadete açıktır.",
+        "en": "The mosque is in Ilgın, Şıhcarullah Neighborhood. There is no construction inscription; from plan, covering and decoration its date can be placed in the 19th century. The harim has a quadrangular plan with wooden supports. The mihrab and minbar are of wood and reflect the characteristics of their period. The mosque is still open for worship."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "450"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şıhcarullah Camii, Ilgın'da dörtgen planlı, ahşap destekli bir camidir. Mihrap ve minber ahşaptır.",
+      "en": "Şıhcarullah Mosque in Ilgın has a quadrangular plan with wooden supports; its mihrab and minbar are made of wood."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 450)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "450-450"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1987",
+        "original_name": "pdf-s227-xref1987",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "450"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şıhcarullah (Zincirli) Camii (kitap s. 450)",
+        "en": "Şıhcarullah (Zincirli) Mosque (book p. 450)"
+      },
+      "alt": {
+        "tr": "Şıhcarullah (Zincirli) Camii fotoğrafı",
+        "en": "Photo of Şıhcarullah (Zincirli) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1989",
+        "original_name": "pdf-s227-xref1989",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "450"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Şıhcarullah (Zincirli) Camii (kitap s. 450)",
+        "en": "Şıhcarullah (Zincirli) Mosque (book p. 450)"
+      },
+      "alt": {
+        "tr": "Şıhcarullah (Zincirli) Camii fotoğrafı",
+        "en": "Photo of Şıhcarullah (Zincirli) Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

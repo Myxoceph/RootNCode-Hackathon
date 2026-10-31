@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-ferruhsah-seyit-mahmut-hayrani-mescidi",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakıf (vakfiye, gelirler) ayrıntısı kitapta yok.",
+      "Bulunduğu Seyyid Mahmut Hayrani haziresi için kitapta ayrı bir kayıt/ilçe bilgisi verilmiyor; ilişki yazılmadı.",
+      "Mescit kitabın başka yerinde 'zaviye' olarak anılıyor; vakıf ayrıntısı yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitâbe 'Rebiülevvel'in birinde 621' der; kitap bunu 1224 olarak veriyor. Hicrî-Miladî çevirisi kitaptan olduğu gibi alındı."
+      },
+      {
+        "field": "legends[yildirim-bayezid-rivayeti]",
+        "note": "Yıldırım Bayezid'in naaşı rivayeti kitapta İbrahim Hakkı Konyalı'ya atfedilen bir rivayettir; doğrulanmamış."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ferruhşah (Seyit Mahmut Hayrani) Mescidi",
+    "en": "Ferruhşah (Seyit Mahmut Hayrani) Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Mahmut Hayrani Mescidi",
+      "en": "Mahmut Hayrani Masjid",
+      "note": "Kitapta bu adla da anılır"
+    },
+    {
+      "tr": "Cıncıklı Mescit",
+      "en": "Cıncıklı Masjid",
+      "note": "Kitapta bu adla da anılır"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "mescit",
+    "Selçuklu",
+    "Akşehir",
+    "kitabeli",
+    "devşirme malzeme",
+    "çini"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Anıt Mahallesi",
+    "address": "Türbe Sokağı, Seyyid Mahmut Hayrani haziresi içinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "328"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 621 / M. 1224",
+      "en": "621 AH / 1224 AD"
+    },
+    "start_year": 1224,
+    "end_year": 1224,
+    "hijri_year": 621,
+    "century": 13,
+    "basis": {
+      "tr": "Batı cephedeki dört satırlık celî sülüs kitâbeye göre (1 Rebiülevvel 621).",
+      "en": "According to the four-line celi thuluth inscription on the west facade (1 Rabi al-Awwal 621)."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "328-329"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Konyalı Kuluoğlu Ferruh Şah",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "328"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "328-329"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Seyyid Mahmut Hayrani haziresi içinde, Sultan Alaaddin Keykubad zamanında 621 / 1224'te Ferruh Şah'ın yaptırdığı; kitâbe çini mozaikle çevrili, devşirme malzemeli kubbeli Selçuklu mescidi.",
+    "en": "A domed Seljuk masjid in the Seyyid Mahmut Hayrani graveyard, built in 621 AH / 1224 AD by Ferruh Shah under Sultan Alaaddin Keykubad, with a tile-framed inscription and spolia facades."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Mescit Akşehir Anıt Mahallesi Türbe Sokağı'nda Seyyid Mahmut Hayrani haziresi içindedir; 'Mahmut Hayrani' ve 'Cıncıklı Mescit' adlarıyla da anılır. Kitâbeye göre Sultan Alaaddin Keykubad zamanında Konyalı Kuluoğlu Ferruh Şah tarafından H. 621 / M. 1224'te yaptırılmıştır. Mescidin Mahmut Hayrani'nin zaviyesi olduğu da belirtilir. Vakıflar Bölge Müdürlüğü 2006'da tamir ettirmiştir.",
+        "en": "The masjid stands in the Seyyid Mahmut Hayrani graveyard on Türbe Street, Anıt Neighborhood, and is also called 'Mahmut Hayrani' and 'Cıncıklı Masjid'. As the inscription states, it was built by Kuluoğlu Ferruh Şah of Konya in 621 AH / 1224 AD under Sultan Alaaddin Keykubad. It is also said to be the zawiya of Mahmut Hayrani. The Regional Directorate of Foundations repaired it in 2006."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "328-329"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlı ve kubbelidir; kubbe dıştan kurşunla kaplıdır. Cephelerde taş ve devşirme malzeme kullanılmıştır; güney ve batı cephelerinde devşirme mermerler arasında friz, arşitrav parçaları ve templon levhaları, yer yer figürlü devşirmeler görülür. Batı duvarındaki iki pencere moloz taşla doldurulmuş, sövelerinde devşirme mimari plastikler vardır. Pencere kemer köşelikleri zikzak tuğla, sırlı seramik kase ve çini plakalarla bezelidir; pencereler arasında üstte kitâbe, ortada sekiz kollu çini plakalar, üstte eşkenar dörtgen ve daire süslemeler bulunur. Batı cephenin kuzey köşesindeki girişin ahşap kapı kanatları Akşehir Müzesi'nde korunur; kitâbeli, bitkisel ve geometrik panoludur, üst kısımda Farsça kitâbe vardır. İçi sıvalı kare harim kubbelidir; mihrap yarım daire planlıdır. Kitaba göre plan, süsleme ve cephe düzeniyle Akşehir'deki klasik Selçuklu mescitlerinin en güzel örneklerindendir.",
+        "en": "The masjid is square and domed; the dome is lead-covered. Facades use stone and spolia; the south and west facades show frieze and architrave pieces and templon panels among reused marble, some figural. The two west windows are filled with rubble and have reused architectural plastics on their jambs. Arch spandrels are decorated with zigzag brick, glazed ceramic bowls and tile plates; the inscription lies between the windows with eight-armed tile plates and rhombus and circle motifs. The wooden door wings of the entrance at the north corner of the west facade are kept in Akşehir Museum, with inscribed, floral and geometric panels and a Persian inscription above. The plastered square harim is domed; the mihrab is semicircular. The book calls it one of the best classical Seljuk masjids in Akşehir."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "328-329"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "yildirim-bayezid-rivayeti",
+      "title": {
+        "tr": "Yıldırım Bayezid rivayeti",
+        "en": "Yıldırım Bayezid rumor"
+      },
+      "body": {
+        "tr": "İbrahim Hakkı Konyalı, Akşehir'de vefat eden Yıldırım Bayezid'in naaşının burada saklandığının rivayet edildiğini belirtmektedir.",
+        "en": "İbrahim Hakkı Konyalı states it is rumored that the body of Yıldırım Bayezid, who died in Akşehir, was kept here."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "329"
+        }
+      ]
+    }
+  ],
+  "facts": [],
+  "people": [
+    {
+      "name": "Konyalı Kuluoğlu Ferruh Şah",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Seyyid Mahmut Hayrani",
+      "role": {
+        "tr": "Mescidin zaviyesi olduğu belirtilen kişi",
+        "en": "Person whose zawiya the masjid is said to be"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Batı cephede, sivri kemerli pencereler arasında; çevresi turkuaz çini mozaik plakalı",
+        "en": "On the west facade between the pointed-arch windows, framed by turquoise tile mosaic"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu mescit mamuresi 621 Rebiülevveli'nin birinde, Emir ül mümininin burhanı, dünya ve dinin yücesi Keyhüsrev oğlu büyük sultan Keykubat'ın hükümdarlık günlerinde, Allah'ın rahmetine muhtaç zayıf kulu Konyalı Kulu oğlu Ferruh Şah'ın ellerinde tamamlanmıştır.",
+        "en": "The construction of this masjid was completed on the first day of 621 Rabi al-Awwal, during the reign of the great sultan Keykubat, son of Keyhusrev, the supreme ruler of the world and religion, the proof of the Emir of the Faithful, in the hands of Ferruh Shah, son of Kulu of Konya, his weak servant in need of God's mercy."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 621,
+        "gregorian": "1224"
+      },
+      "note": {
+        "tr": "Dört satırdır; transliterasyon kitapta verilmemiştir. Çeviri kitabın aktardığı okumadır.",
+        "en": "Four lines; no transliteration in the book. The translation is the reading given by the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "328"
+        }
+      ]
+    },
+    {
+      "id": "kapi-kanadi-farsca-kitabe",
+      "location": {
+        "tr": "Ahşap kapı kanatlarının üst kısmı (Akşehir Müzesi)",
+        "en": "Upper part of the wooden door wings (Akşehir Museum)"
+      },
+      "language": "fa",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Metni ve çevirisi kitapta verilmemiştir.",
+        "en": "Text and translation are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "329"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1224",
+      "year": 1224,
+      "date": null,
+      "hijri": "621",
+      "type": "construction",
+      "title": {
+        "tr": "Ferruh Şah tarafından yaptırıldı",
+        "en": "Built by Ferruh Shah"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "328"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından tamir edildi",
+        "en": "Repaired by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "329"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, kurşun kaplı kubbeli bir Selçuklu mescididir. Taş ve devşirme mermer cephelerde friz, arşitrav ve templon parçaları görülür. Batı cephede iki sivri kemerli pencere arasında turkuaz çini mozaikle çevrili dört satırlık kitâbe, zikzak tuğla ve çini plakalar bulunur. İçeride sıvalı kare harim kubbeyle örtülüdür.",
+      "en": "A square Seljuk masjid with a lead-covered dome. Stone and spolia marble facades show frieze, architrave and templon pieces. On the west facade a four-line inscription framed by turquoise tile mosaic sits between two pointed-arch windows with zigzag brick and tile plates. Inside, a plastered square harim is domed."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "328-328"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1360",
+        "original_name": "pdf-s166-xref1360",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "328"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Ferruhşah (Seyit Mahmut Hayrani) Mescidi (kitap s. 328)",
+        "en": "Ferruhşah (Seyit Mahmut Hayrani) Masjid (book p. 328)"
+      },
+      "alt": {
+        "tr": "Ferruhşah (Seyit Mahmut Hayrani) Mescidi fotoğrafı",
+        "en": "Photo of Ferruhşah (Seyit Mahmut Hayrani) Masjid"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

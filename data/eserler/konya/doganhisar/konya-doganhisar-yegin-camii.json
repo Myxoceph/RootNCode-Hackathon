@@ -1,0 +1,313 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-doganhisar-yegin-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Kesin yapım yılı ve banî kitapta yok.",
+      "Vakıf/vakfiye bilgisi kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Yeğin Camii",
+    "en": "Yeğin Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "ahşap tavanlı",
+    "kalem işi",
+    "XVIII-XIX. yüzyıl",
+    "eğimli arazi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Doğanhisar",
+    "neighborhood": "Yeğin Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "424-425"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XVIII-XIX. yüzyıl",
+      "en": "18th-19th centuries"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitâbe yok; plan, mimari elemanlar ve süsleme özelliklerinden XVIII-XIX. yüzyıl. Kesin yıl verilmiyor.",
+      "en": "No inscription; dated to the 18th-19th centuries from plan, architectural elements and decoration."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "424-425"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Yeğin Mahallesi merkezinde, eğimli arazide, XVIII-XIX. yüzyılda yapıldığı anlaşılan; mihrap ve duvarları kalem işi ve celî sülüs yazılı madalyonlarla süslü, ahşap direkli cami.",
+    "en": "A wooden-pillared mosque on sloping land in the center of Yeğin Neighborhood, dated to the 18th-19th centuries, with hand-drawn decoration and Celi Thuluth medallions."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve yapı",
+        "en": "History and structure"
+      },
+      "body": {
+        "tr": "Doğanhisar, Yeğin Mahallesi merkezindeki cami eğimli bir arazi üzerine inşa edilmiştir. Kitâbe yoktur; plan, mimari elemanlar ve süslemeden XVIII-XIX. yüzyılda yapıldığı anlaşılmaktadır. Yakın zamanda kuzeydoğuya camiden bağımsız bir minare eklenmiştir. Derinlemesine dikdörtgen planlı, ahşap direkli, ahşap tavanlı cami dıştan kırma çatılıdır; harime doğu cephedeki iki kapıdan girilir.",
+        "en": "The mosque in the center of Yeğin Neighborhood was built on sloping land. There is no inscription; it is understood to date from the 18th-19th centuries. A freestanding minaret was recently added to the northeast. Deeply rectangular, with wooden pillars, wooden ceiling and hipped roof; the harim is entered through two doors on the east facade."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "424"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 2,
+      "title": {
+        "tr": "Harim ve mihrap",
+        "en": "Harim and mihrab"
+      },
+      "body": {
+        "tr": "Kuzey tarafın üst kısmı hanımlar mahfilidir. Harim ahşap sütunlarla üç sahına ayrılmıştır. Duvarlarda dikdörtgen panolar ve madalyonlar içinde celî sülüs ile Allah (CC), Muhammed (SAV), dört halife isimleri, ayet, hadis, dualar ve Osmanlı arması bulunur. Ahşap tavanın ortasındaki dikdörtgen göbek bitkisel süslemelidir. Giriş ekseninde, yarım daire planlı, yarım kubbe kavsaralı mihrap kalem işi bezemelidir; niş üstü istiridye kabuğu, altı perde motiflidir. Sivri kemerde Ayet'el-Kürsi, alınlıkta ve niş üstündeki kartuşta mihrap ayeti celî sülüsle yazılıdır.",
+        "en": "The upper north side is a women's gallery. The harim is divided into three aisles by wooden columns. Walls carry rectangular panels and medallions in Celi Thuluth with the names of Allah, Muhammad and the four caliphs, verses, hadiths, prayers and the Ottoman coat of arms. The rectangular hub of the wooden ceiling has floral decoration. The semicircular mihrab on the entrance axis, with a semi-dome, is hand-drawn; the niche top has an oyster-shell motif and the lower part a curtain motif. Ayat al-Kursi is written in Celi Thuluth on the pointed arch, and the mihrab verse on the pediment and in the cartouche above the niche."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "424-425"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Eğimli bir arazide, derinlemesine dikdörtgen planlı, ahşap direkli ve ahşap tavanlı bir camidir. Doğu cephede iki kapısı vardır. İçeride ahşap sütunlar üç sahın oluşturur, kuzeyde hanımlar mahfili bulunur. Duvarlarda celî sülüs yazılı madalyonlar, mihrapta istiridye kabuğu ve perde motifleri görülür.",
+      "en": "A deeply rectangular mosque with wooden pillars and ceiling on sloping land, with two doors on the east facade. Inside, wooden columns form three aisles, with a women's gallery in the north. Walls bear Celi Thuluth medallions; the mihrab shows oyster-shell and curtain motifs."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "424-425"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1833",
+        "original_name": "pdf-s214-xref1833",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "424"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeğin Camii (kitap s. 424)",
+        "en": "Yeğin Mosque (book p. 424)"
+      },
+      "alt": {
+        "tr": "Yeğin Camii fotoğrafı",
+        "en": "Photo of Yeğin Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1835",
+        "original_name": "pdf-s214-xref1835",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "424"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeğin Camii (kitap s. 424)",
+        "en": "Yeğin Mosque (book p. 424)"
+      },
+      "alt": {
+        "tr": "Yeğin Camii fotoğrafı",
+        "en": "Photo of Yeğin Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1839",
+        "original_name": "pdf-s214-xref1839",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "425"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeğin Camii (kitap s. 425)",
+        "en": "Yeğin Mosque (book p. 425)"
+      },
+      "alt": {
+        "tr": "Yeğin Camii fotoğrafı",
+        "en": "Photo of Yeğin Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1837",
+        "original_name": "pdf-s214-xref1837",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "425"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeğin Camii (kitap s. 425)",
+        "en": "Yeğin Mosque (book p. 425)"
+      },
+      "alt": {
+        "tr": "Yeğin Camii fotoğrafı",
+        "en": "Photo of Yeğin Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1841",
+        "original_name": "pdf-s214-xref1841",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "425"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeğin Camii (kitap s. 425)",
+        "en": "Yeğin Mosque (book p. 425)"
+      },
+      "alt": {
+        "tr": "Yeğin Camii fotoğrafı",
+        "en": "Photo of Yeğin Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1843",
+        "original_name": "pdf-s214-xref1843",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "425"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Yeğin Camii (kitap s. 425)",
+        "en": "Yeğin Mosque (book p. 425)"
+      },
+      "alt": {
+        "tr": "Yeğin Camii fotoğrafı",
+        "en": "Photo of Yeğin Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

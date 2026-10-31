@@ -1,0 +1,346 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-doganhisar-orta-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 412) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "Kitâbe metni kitapta yok.",
+      "Banî kitapta yok (founder null).",
+      "Hükümdar adı ile tarih uyumu teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people",
+        "note": "Usta adı burada 'Müslüm Gökçe'; Üçpınar Kurşunlu Camii bölümünde 'Müslüm Gökçek' (s. 399). Aynı kişi olup olmadığı belirtilmiyor."
+      },
+      {
+        "field": "dating",
+        "note": "Kitâbe Sultan Abdülhamit Han dönemini ve H. 1274 / M. 1857-58'i birlikte veriyor; kitap hükümdar ile tarih arasındaki uyumu açıklamıyor, olduğu gibi aktarıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Orta Camii",
+    "en": "Orta Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap minare",
+    "kalem işi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Doğanhisar",
+    "neighborhood": "Harman Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "412"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1274 / M. 1857-58",
+      "en": "AH 1274 / AD 1857-58"
+    },
+    "start_year": 1857,
+    "end_year": 1858,
+    "hijri_year": 1274,
+    "century": 19,
+    "basis": {
+      "tr": "Güneybatı duvardaki kitâbeye göre Sultan Abdülhamit Han döneminde yapılmıştır.",
+      "en": "According to the inscription on the southwest wall, built in the reign of Sultan Abdülhamit Han."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "412"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Doğanhisar Harman Mahallesi'ndeki, kitâbesine göre H. 1274 / M. 1857-58'de yapılan, ahşap minareli, kalem işi süslemeli cami. 1952 ve 1991'de VGM onarımı görmüş, ibadete açıktır.",
+    "en": "A mosque in Harman Neighborhood, Doğanhisar, built in AH 1274 / AD 1857-58 per its inscription, with a wooden minaret and painted decoration. Repaired by the VGM in 1952 and 1991; open for worship."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Güneybatı duvardaki kitâbeye göre Sultan Abdülhamit Han döneminde H. 1274 / M. 1857-58'de yapılmıştır. Zamanla tahrip olan yapı Vakıflar Genel Müdürlüğü tarafından 1952 ve 1991'de köklü tamirat görmüştür; günümüzde sağlamdır ve ibadete açıktır.",
+        "en": "According to the inscription on the southwest wall, built in the reign of Sultan Abdülhamit Han in AH 1274 / AD 1857-58. Damaged over time, it underwent radical repairs by the General Directorate of Foundations in 1952 and 1991; it is sound today and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "412"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dıştan derinlemesine dikdörtgen planlı, kırma çatılıdır. Kuzeybatı köşeye yakın ahşap bir minare vardır; şerefe köşkü üzerindeki kemer beş dilimlidir, köşk ve alem kurşun kaplıdır. Harime batı cephedeki dikdörtgen kapıdan girilir. Harim derinlemesine dikdörtgen ve ahşap tavanlıdır; girişin üstünde kadınlar mahfili, batısında imam odası bulunur.",
+        "en": "Deeply rectangular outside with a hipped roof. A wooden minaret stands near the northwest corner; the arch over its balcony pavilion is five-segmented, and the pavilion top and finial are lead-covered. The harim is entered through a rectangular door on the west facade; it is deeply rectangular with a wooden ceiling, a women's mahfil above the entrance and an imam's room west of it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "412"
+        }
+      ]
+    },
+    {
+      "id": "kalem-isi",
+      "order": 3,
+      "title": {
+        "tr": "Kalem işi, mihrap ve minber",
+        "en": "Painted decoration, mihrab and minbar"
+      },
+      "body": {
+        "tr": "Kalem işi süslemeler 1952'de Müslüm Gökçe tarafından yenilenmiştir. Alt kısımda üç güllü çiçek buketleri üzerinde madalyon ve kartuşlarda celî sülüs Yasin Suresi ile Allah, Muhammed ve dört halife isimleri yazılıdır. Ahşap tavan göbeği yeşil zeminde sarı bitkisel bezemelidir. Mihrap yarım daire planlı, yarım kubbe kavsaralı, giriş ekseninde değildir; ahşaptır ve kalem işi iki bordürle çevrilidir. Güneybatıdaki ahşap minberin aynalık, süpürgelik ve korkulukları mihrapla aynı tezyinattadır; minber kapısı tepeliğinde dua içerikli yazılar vardır.",
+        "en": "The painted decoration was renewed by Müslüm Gökçe in 1952. Below are Surah Ya-Sin in Celi Thuluth and the names of Allah, Muhammad and the four caliphs in medallions and cartouches on bouquets of three-rose flowers. The wooden ceiling hub has yellow floral decoration on green. The wooden mihrab is semicircular with a half-dome, off the entrance axis, surrounded by two painted borders. The wooden minbar in the southwest has the same decoration; prayer inscriptions are on the crown of its door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ahsap_minare",
+      "label": {
+        "tr": "Ahşap minare",
+        "en": "Wooden minaret"
+      },
+      "value": "var",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Müslüm Gökçe",
+      "role": {
+        "tr": "Kalem işi ustası (1952)",
+        "en": "Master painter (1952)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Güneybatı duvar",
+        "en": "Southwest wall"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1274,
+        "gregorian": "1857-58"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap kitâbenin dilini ve metnini vermiyor; yalnızca tarihi ve Abdülhamit Han dönemi bilgisini aktarıyor.",
+        "en": "The book gives neither language nor text, only the date and reign."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1857",
+      "year": 1857,
+      "date": null,
+      "hijri": "1274",
+      "type": "construction",
+      "title": {
+        "tr": "Kitâbeye göre yapıldı",
+        "en": "Built according to the inscription"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "412"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1952",
+      "year": 1952,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "VGM köklü tamirat; kalem işi yenilendi",
+        "en": "VGM radical repair; painted decoration renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "412"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1991",
+      "year": 1991,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "VGM köklü tamirat",
+        "en": "VGM radical repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "412"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Derinlemesine dikdörtgen planlı, kırma çatılı bir camidir. Kuzeybatı köşesine yakın ahşap bir minare yükselir; şerefe köşkü ve alemi kurşunla kaplıdır. Girişe batı cephedeki dikdörtgen kapıdan girilir; üstte kadınlar mahfili, yanda imam odası bulunur. İçerideki ahşap tavan ve duvarlar çiçek buketleri, yazı kuşakları ve yeşil-sarı bitkisel süslemelerle bezelidir.",
+      "en": "A deeply rectangular mosque with a hipped roof. A wooden minaret rises near the northwest corner, its balcony pavilion and finial covered in lead. The entrance is a rectangular door on the west facade, with a women's gallery above and the imam's room beside it. The wooden ceiling and walls inside are decorated with flower bouquets, bands of calligraphy and green and yellow plant motifs."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 412) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "412-412"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1792",
+        "original_name": "pdf-s208-xref1792",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "412"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Orta Camii (kitap s. 412)",
+        "en": "Orta Mosque (book p. 412)"
+      },
+      "alt": {
+        "tr": "Orta Camii fotoğrafı",
+        "en": "Photo of Orta Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1794",
+        "original_name": "pdf-s208-xref1794",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "412"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Orta Camii (kitap s. 412)",
+        "en": "Orta Mosque (book p. 412)"
+      },
+      "alt": {
+        "tr": "Orta Camii fotoğrafı",
+        "en": "Photo of Orta Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

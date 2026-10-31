@@ -1,0 +1,527 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-seydisehir-seyyid-harun-veli-camii",
+  "meta": {
+    "status": "draft",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": null,
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 474-477) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kurucu (banî) kitapta belirtilmiyor.",
+      "Dönem (era) kodu kitapta belirtilmediği için null.",
+      "Hicri yıl bilinmiyor (yapım tarihi tahmini).",
+      "Külliye için ayrı kayıt kitabın bu aralığında yok; same_complex hedefi henüz mevcut olmayabilir.",
+      "Seydişehir külliyesinin diğer parçaları (kümbetler) ayrı bölümlerde olabilir; kontrol edilmeli.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf bilgisi kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[seyyid-harun]",
+        "note": "Seyyid Harun'un hayatına ilişkin bilgiler 1555'te yazılan bir menkıbevi eserden aktarılmıştır; 'probable' işaretlendi. 'Gaipten gelen ses' anlatısı legends[] altına alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Seyyid Harun Veli Camii",
+    "en": "Seyyid Harun Veli Mosque"
+  },
+  "subtitle": {
+    "tr": "Seyyid Harun Velî Külliyesi'ndeki ahşap direkli cami",
+    "en": "Wooden-pillared mosque in the Seyyid Harun Velî Complex"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "ahşap direkli",
+    "külliye",
+    "kümbet",
+    "Seyyid Harun Velî",
+    "Seydişehir"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Seydişehir",
+    "neighborhood": null,
+    "address": "Seydişehir ilçe merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "475"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "M. 1302-1320 arası (tahmini)",
+      "en": "Between AD 1302 and 1320 (estimated)"
+    },
+    "start_year": 1302,
+    "end_year": 1320,
+    "hijri_year": null,
+    "century": 14,
+    "basis": {
+      "tr": "İnşa kitâbesi günümüze ulaşmamıştır; kitapta caminin M. 1302-1320 arasında yapıldığı tahmin edilmektedir.",
+      "en": "The construction inscription has not survived; the book estimates the mosque was built between AD 1302 and 1320."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "475"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "475"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Seydişehir ilçe merkezindeki Seyyid Harun Velî Külliyesi'nde, kuzey cephesine bitişik üç kümbetin yanında yer alan, M. 1302-1320 arasında yapıldığı tahmin edilen ahşap direkli cami.",
+    "en": "A wooden-pillared mosque in the Seyyid Harun Velî Complex in central Seydişehir, estimated to have been built between AD 1302 and 1320, with three kumbets adjoining its north facade."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami Seydişehir ilçe merkezinde, Seyyid Harun Velî Külliyesi içinde yer alır. İnşa kitâbesi günümüze ulaşamamıştır; M. 1302-1320 arasında yapıldığı tahmin edilmektedir. Vakıflar Bölge Müdürlüğü tarafından 2006'da tamir edilmiştir.",
+        "en": "The mosque is located in the center of Seydişehir, in the Seyyid Harun Velî Complex. Its construction inscription has not survived; it is estimated to have been built between 1302 and 1320 AD. It was repaired by the Regional Directorate of Foundations in 2006."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "475"
+        }
+      ]
+    },
+    {
+      "id": "seyyid-harun",
+      "order": 2,
+      "title": {
+        "tr": "Seyyid Harun Velî",
+        "en": "Seyyid Harun Velî"
+      },
+      "body": {
+        "tr": "Seyyid Harun Velî'nin hayatı hakkında bilinenler, kardeşi Seyyid Bedreddin'in dokuzuncu kuşaktan torunu Abdülkerîm bin Şeyh Mûsâ'nın H. 962 / M. 1555'te yazdığı 'Makālât-ı Seyyid Hârûn' adlı esere dayanır. Anlatıya göre Horasan civarında âdil bir hükümdardır; gaipten gelen sesle Anadolu'ya gidip Küpe Dağı çevresinde şehir kurmakla görevlendirilir ve kırk dervişi ve kardeşiyle yola çıkar. H. 702 / M. 1302 civarında Konya'ya gelir, Ahmed Fakih'in türbesini ziyaret eder, yaklaşık iki yıl sonra H. 705 / M. 1305 ilkbaharında Küpe Dağı civarına ulaşır ve Elite (Vervelit) adlı antik şehrin kalıntılarını kullanarak Seydişehir'i kurar. Şehirde önce kale, mescit, medrese, zâviye, hamam ve evler yaptırır, sonra inzivaya çekilir. Türbe kitâbesine göre 23 Rebîü'l-evvel 720 / 3 Mayıs 1320'de vefat etmiştir.",
+        "en": "What is known of Seyyid Harun Velî's life rests on 'Makālât-ı Seyyid Hârûn', written in 962 AH / 1555 AD by Abdülkerîm bin Şeyh Mûsâ, ninth-generation grandson of his brother Seyyid Bedreddin. He is said to be a just ruler near Khorasan who, ordered by a voice from the unseen, set out with forty dervishes and his brother to found a city around Küpe Mountain. He came to Konya around 702 AH / 1302 AD, visited the tomb of Ahmed Fakih, reached the Küpe Mountain area in spring 705 AH / 1305 AD and founded Seydişehir using the ruins of the ancient city Elite (Vervelit). He first built castles, masjids, madrasas, tekkes, baths and houses, then retreated into seclusion. According to the tomb inscription he died on 23 Rebîü'l-evvel 720 / 3 May 1320."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "475-476"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlı, çok destekli, içten düz dam, dıştan kırma çatılıdır; kaba yonu taş ve ahşap kullanılmıştır. Kuzey cephesine bitişik, Seyyid Harun Veli ve halifelerinin yer aldığı üç kümbet vardır; kümbetlerin ortasındaki kapı harime geçiş sağlar. Batı cephenin kuzey köşesinde dışa taşıntılı, düzgün kesme taştan, yuvarlak kemerli bir kapı bulunur. Kuzeybatı köşede, kare kaideli, silindirik gövdeli, tek şerefeli, düzgün kesme taş minare yükselir. Harim üç sahınlı ve sadedir; kuzeyde ahşap destekler üzerinde mahfil, kıble duvarında dışa taşıntılı ahşap mihrap ve sağında bitkisel süslemeli ahşap minber vardır.",
+        "en": "The mosque has a deeply rectangular plan, multiple supports, a flat roof inside and a hipped roof outside, built of rough-cut stone and wood. Three kumbets of Seyyid Harun Veli and his caliphs adjoin the north facade; a door in the middle of them gives access to the harim. In the northern corner of the west facade is a projecting, round-arched door of smooth cut stone. A smooth-cut-stone minaret with square base, cylindrical body and a single balcony stands in the northwest corner. The harim has three aisles and a simple arrangement, with a mahfil on wooden supports in the north, a projecting wooden mihrab and, to its right, a wooden minbar with floral decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "476-477"
+        }
+      ]
+    },
+    {
+      "id": "tipoloji",
+      "order": 4,
+      "title": {
+        "tr": "Ahşap Direkli Cami Tipi",
+        "en": "Wooden-Pillared Type"
+      },
+      "body": {
+        "tr": "Cami, ahşap direkli camilerin en güzel örneği olan Beyşehir'deki Eşrefoğlu Camii'nden yaklaşık 10 yıl sonra inşa edilmiştir ve bu plan tipinin güzel bir örneğidir.",
+        "en": "The mosque was built about 10 years after the Eşrefoğlu Mosque in Beyşehir, the best example of wooden pillared mosques, and is a good example of this plan type."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "476-477"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "seyyid-harun-hayati",
+      "title": {
+        "tr": "Seyyid Harun'a gaipten gelen ses",
+        "en": "The voice from the unseen to Seyyid Harun"
+      },
+      "body": {
+        "tr": "Menkıbeye göre Seyyid Harun atalarının mezarını ziyaret ederken gaipten gelen bir ses ona Anadolu'ya gidip Küpe Dağı civarında bir şehir kurmasını emreder.",
+        "en": "According to the account, while visiting his ancestors' graves Seyyid Harun hears a voice from the unseen ordering him to go to Anatolia and found a city around Küpe Mountain."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "475"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kumbet_sayisi",
+      "label": {
+        "tr": "Kuzey cephedeki kümbet sayısı",
+        "en": "Number of kumbets on north facade"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "476-477"
+        }
+      ]
+    },
+    {
+      "key": "harim_sah_sayisi",
+      "label": {
+        "tr": "Harim sah sayısı",
+        "en": "Number of aisles in harim"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "476-477"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyyid Harun Velî",
+      "role": {
+        "tr": "Seydişehir'in kurucusu olarak anlatılan velî; kümbette yatar",
+        "en": "Saint described as founder of Seydişehir; buried in a kumbet"
+      }
+    },
+    {
+      "name": "Abdülkerîm bin Şeyh Mûsâ",
+      "role": {
+        "tr": "'Makālât-ı Seyyid Hârûn' yazarı (H. 962 / M. 1555)",
+        "en": "Author of 'Makālât-ı Seyyid Hârûn' (AH 962 / AD 1555)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-tahmini",
+      "year": 1302,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "M. 1302-1320 arasında yapıldığı tahmin edilmektedir",
+        "en": "Estimated to have been built between AD 1302 and 1320"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "475"
+        }
+      ],
+      "note": {
+        "tr": "Yıl alanı tahmin aralığının başlangıcıdır (1302-1320).",
+        "en": "Year field is the start of the estimated range (1302-1320)."
+      }
+    },
+    {
+      "id": "vefat-1320",
+      "year": 1320,
+      "date": null,
+      "hijri": "720",
+      "type": "record",
+      "title": {
+        "tr": "Seyyid Harun Velî'nin vefatı (türbe kitâbesine göre 3 Mayıs 1320)",
+        "en": "Death of Seyyid Harun Velî (3 May 1320 per the tomb inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "476"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından tamir edildi",
+        "en": "Repaired by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "475"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kumbetler",
+      "title": {
+        "tr": "Üç kümbet",
+        "en": "Three kumbets"
+      },
+      "hint": {
+        "tr": "Kuzey cepheye bitişik kümbetlerin ortasından harime girilir.",
+        "en": "The harim is entered between the three kumbets on the north facade."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-beysehir-esrefoglu-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Cami, Beyşehir'deki Eşrefoğlu Camii'nden yaklaşık 10 yıl sonra inşa edilmiş, aynı ahşap direkli plan tipinin örneğidir.",
+        "en": "Built about 10 years after the Eşrefoğlu Mosque in Beyşehir as an example of the same wooden-pillared plan type."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "476-477"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-seydisehir-seyyid-harun-veli-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami, Seyyid Harun Velî Külliyesi içinde yer alır.",
+        "en": "The mosque is within the Seyyid Harun Velî Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "475"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "entrance_fee": "unknown",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, kuzeyinde Seyyid Harun Veli ve halifelerinin üç kümbetinin bitişik durduğu, derin dikdörtgen planlı bir yapıdır. Dış görünüşü kırma çatılı, kaba taş ve ahşaptandır; kuzeybatı köşede kare kaideli, silindirik gövdeli, tek şerefeli bir minare yükselir. Kümbetlerin ortasındaki kapıdan girilen harim üç sahınlı ve sadedir; kuzeyde ahşap destekli mahfil, kıble duvarında ahşap mihrap ve bitkisel süslemeli ahşap minber vardır.",
+      "en": "The mosque has a deeply rectangular plan with three kumbets of Seyyid Harun Veli and his caliphs against its north side. Outside it has a hipped roof, rough stone and wood; a minaret with a square base, cylindrical body and one balcony rises at the northwest corner. The harim, entered through the door between the kumbets, has three plain aisles, a wooden-supported mahfil in the north, a wooden mihrab and a wooden minbar with floral decoration."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlenmiştir."
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami ambiyansı]",
+      "en": "[Mosque ambience]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "475-477"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2107",
+        "original_name": "pdf-s239-xref2107",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "475"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Seyyid Harun Veli Camii (kitap s. 475)",
+        "en": "Seyyid Harun Veli Mosque (book p. 475)"
+      },
+      "alt": {
+        "tr": "Seyyid Harun Veli Camii fotoğrafı",
+        "en": "Photo of Seyyid Harun Veli Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2112",
+        "original_name": "pdf-s240-xref2112",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "476"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Seyyid Harun Veli Camii (kitap s. 476)",
+        "en": "Seyyid Harun Veli Mosque (book p. 476)"
+      },
+      "alt": {
+        "tr": "Seyyid Harun Veli Camii fotoğrafı",
+        "en": "Photo of Seyyid Harun Veli Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2114",
+        "original_name": "pdf-s240-xref2114",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "477"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Seyyid Harun Veli Camii (kitap s. 477)",
+        "en": "Seyyid Harun Veli Mosque (book p. 477)"
+      },
+      "alt": {
+        "tr": "Seyyid Harun Veli Camii fotoğrafı",
+        "en": "Photo of Seyyid Harun Veli Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2116",
+        "original_name": "pdf-s240-xref2116",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "477"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Seyyid Harun Veli Camii (kitap s. 477)",
+        "en": "Seyyid Harun Veli Mosque (book p. 477)"
+      },
+      "alt": {
+        "tr": "Seyyid Harun Veli Camii fotoğrafı",
+        "en": "Photo of Seyyid Harun Veli Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2118",
+        "original_name": "pdf-s240-xref2118",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "477"
+      },
+      "subject": "photo",
+      "caption": {
+        "tr": "Seyyid Harun Veli Camii (kitap s. 477)",
+        "en": "Seyyid Harun Veli Mosque (book p. 477)"
+      },
+      "alt": {
+        "tr": "Seyyid Harun Veli Camii fotoğrafı",
+        "en": "Photo of Seyyid Harun Veli Mosque"
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

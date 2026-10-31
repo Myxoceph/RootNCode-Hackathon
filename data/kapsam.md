@@ -52,9 +52,13 @@ Kaynak: `konya-envanteri-1_cilt-web.pdf`; metin `build/cache/text/konya-1.txt` (
 | K1-9 | Karatay IV | 129-141 | 20 kayıt: `mengene-camii`, `alemdar-camii`, `saksaganlar-camii`, `dolap-mektep-mescidi`, `polatlar-haci-cemal-hatip-camii`, `seyh-ulema-recep-aga-camii`, `yanik-sedirler-kenan-dede-camii`, `digin-camii`, `hamzaoglu-camii`, `hanedan-camii`, `cayir-camii`, `haci-ivaz-camii`, `sutcu-camii`, `cataloglu-camii`, `topraklik-hasan-efendi-camii`, `cavusoglu-camii`, `namik-pasa-camii`, `halkabegus-mescidi-ve-turbesi`, `tolluoglu-camii`, `seyh-ulema-yusuf-aga-camii` | Hüseyin (ajan) | draft |
 | K1-10 | Karatay V | 142-146 | 1 kayıt: `aziziye-camii` | Hüseyin (ajan) | draft |
 | K1-11 | Selçuklu I | 147-159 | 8 kayıt: `besare-bey-mescidi`, `ak-sazi-bey-camii`, `sakahane-hidir-ilyas-davut-aga-mescidi`, `zevle-sultan-mescidi`, `basarakavak-zahide-hatun-camii`, `tatkoy-merkez-camii`, `beyhekim-mescit-ve-turbesi`, `sultan-alaeddin-ulu-camii` | Hüseyin (ajan) | draft |
-| K1-12 | Selçuklu II / Akşehir | 160-170 | | | sırada |
-| K1-13 | Akşehir / Altınekin / Beyşehir | 171-192 | | | sırada |
-| K1-14 | Bozkır / Çeltik / Çumra / Derbent / Doğanhisar | 193-207 | | | sırada |
-| K1-15 | Doğanhisar / Ereğli / Hüyük / Ilgın | 208-223 | | | sırada |
-| K1-16 | Kadınhanı / Karapınar / Sarayönü / Seydişehir | 224-235 | | | sırada |
-| K1-17 | Taşkent / Yunak ve sonu | 236-246 | | | sırada |
+| K1-12 | Selçuklu II / Akşehir | 160-170 | 12 kayıt (`eserler/konya/{selcuklu, ahirli, akoren, aksehir}/`) | Hüseyin (ajan) | draft |
+| K1-13 | Akşehir / Altınekin / Beyşehir | 171-192 | 10 kayıt (`eserler/konya/{aksehir, altinekin, beysehir}/`) | Hüseyin (ajan) | draft |
+| K1-14 | Bozkır / Çeltik / Çumra / Derbent / Doğanhisar | 193-207 | 10 kayıt (`eserler/konya/{bozkir, celtik, cumra, derbent, doganhisar}/`) | Hüseyin (ajan) | draft |
+| K1-15 | Doğanhisar / Ereğli / Hüyük / Ilgın | 208-223 | 12 kayıt (`eserler/konya/{doganhisar, eregli, huyuk, ilgin}/`) | Hüseyin (ajan) | draft |
+| K1-16 | Kadınhanı / Karapınar / Sarayönü / Seydişehir | 224-235 | 16 kayıt (`eserler/konya/{ilgin, kadinhani, karapinar, sarayonu}/`) | Hüseyin (ajan) | draft |
+| K1-17 | Taşkent / Yunak ve sonu | 236-246 | 5 kayıt (`eserler/konya/{sarayonu, seydisehir, taskent, yunak}/`) | Hüseyin (ajan) | draft |
+| K1-13b | Beyşehir (ek, boşluk) | 190-197 | 7 kayıt (`eserler/konya/beysehir/`) | Hüseyin (ajan) | draft |
+
+Konya I. Cilt tamamlandı: 205 kayıt (Karatay 74, Meram 51, Akşehir 16, Selçuklu 9, Beyşehir 8, Doğanhisar 7, Ilgın 7, Kadınhanı 6, Ereğli 5, Bozkır 4, Karapınar 3, Sarayönü 2, Seydişehir 2, Akören 2, Hüyük 2, Ahırlı/Altınekin/Çeltik/Çumra/Derbent/Taşkent/Yunak 1).
+Not: dev'de Konya II. Cilt kayıtları (Ahmet) aynı ilçe klasörlerinde; id çakışması yok.
