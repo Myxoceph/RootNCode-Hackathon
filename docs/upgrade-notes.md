@@ -7,6 +7,18 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-01 · Konya'da toplu taşıma rotası (OpenTripPlanner, sözleşme 0.3.14)
+
+Kimler: **demo yığınını çalıştıran** (Ahmet), **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md) 11. madde)
+
+1. Demo yığını: `deploy/otp/prepare.sh` bir kez, sonra `deploy/demo.sh up` ([`deploy.md`](deploy.md), "Toplu taşıma").
+2. Yerelde API: bir şey gerekmez; `OTP_URL` boşken `GET /transit/plan` 503 döner, gerisi aynı. Denemek için `deploy.md`'deki `docker run` satırı ve `OTP_URL`.
+
+Değişenler:
+- `GET /transit/plan` ve `GET /transit/entry-points`: Konya'da otobüs ve tramvayla rota (yürüme, biniş ve iniş durakları, saatler, hat, haritaya çizgi). Veri Konya Büyükşehir GTFS'i (Kasım 2025, CC BY 4.0).
+- Asistan "X'e nasıl giderim" sorusunu Konya'da `transit_route` aracıyla cevaplar ve planı `attachments.transit` ile gönderir. `POST /chat` isteğine isteğe bağlı `origin: { lat, lng }` (ziyaretçinin konumu, saklanmaz).
+- Yeni kaynak türü `transit` (`ChatCitationKindSchema`).
+
 ## 2026-11-01 · Konya'nın yöresel lezzetleri
 
 Kimler: **API'yi yerelde çalıştıranlar**
