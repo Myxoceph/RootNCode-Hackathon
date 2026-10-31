@@ -7,6 +7,19 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-01 · Güvenlik turu: yerel veritabanı yalnızca bu bilgisayarda, Fastify 5.12.7
+
+Kimler: **herkes** (yerel PostgreSQL), **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. `npm run db:up`: yerel PostgreSQL artık yalnızca `127.0.0.1:5432`'de dinliyor (önceden bütün ağa açıktı ve parolası git'te). Konteyner yeniden oluşturulur, veriler kalır.
+2. `npm install` (API'de `fastify` 5.12.7: başlık doğrulamasındaki bir açık kapandı).
+
+Değişenler:
+- Anonim kullanıcı ödül kodu alamaz: `POST /rewards/:code/redeem` → `403 ACCOUNT_REQUIRED`. Puan kazanmaya devam eder; `POST /auth/upgrade` ile hesap açınca puanlar korunur ([`YIGIT.md`](../YIGIT.md) 4. madde).
+- Moderatör kendi notunu ya da fotoğrafını onaylayamaz ve reddedemez: `403 OWN_CONTRIBUTION`; başka bir moderatör ya da admin karar verir.
+- CORS artık `PATCH` ve `DELETE`'e izin veriyor: Expo web'deki yönetim paneli (`localhost:8081`) başarım, ödül ve eser düzenleyebiliyor.
+- Yeni test (`route-guards.test.ts`): bütün `/admin` ve `/me` rotaları oturumsuz isteğe 401, ziyaretçiye 403 vermeli; yeni bir rota korumayı unutursa CI kırılır.
+
 ## 2026-10-31 · Ziyaret edilen eserler: `GET /me/visits` (sözleşme 0.3.13)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md) 10. madde)
