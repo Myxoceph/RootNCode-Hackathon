@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetDetail, AssetSection, Confidence, Media } from "@vagabonds/contracts";
 import { cameraColors, fontFamily, palette, radius, SourceNote, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
-import { Link, useRouter, type Href } from "expo-router";
+import { Link, useNavigation, useRouter, type Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
 import {
@@ -70,6 +70,7 @@ interface Figure {
  */
 export function AssetDetailView({ asset }: { asset: AssetDetail }) {
   const router = useRouter();
+  const navigation = useNavigation();
   const insets = useSafeAreaInsets();
   const chapters = useMemo(() => asset.sections.filter((s) => isCertain(s.confidence)), [asset]);
   const pages = useMemo(() => buildPages(asset, chapters), [asset, chapters]);
@@ -83,7 +84,13 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
     const at = Math.round(event.nativeEvent.contentOffset.y / height);
     if (at !== index) setIndex(at);
   };
-  const close = () => (router.canGoBack() ? router.back() : router.replace("/monuments"));
+  const close = () => {
+    if (!router.canGoBack()) return router.replace("/monuments");
+    // Opened from another tab (the map's cards, the assistant), the card is alone in the Eserler
+    // stack: leave the list in its place, so the tab opens on the list next time, then go back.
+    if (navigation.getState()?.routes.length === 1) navigation.dispatch({ type: "REPLACE", payload: { name: "index" } });
+    router.back();
+  };
   const last = pages[index]?.kind === "end";
 
   return (
