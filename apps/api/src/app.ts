@@ -80,7 +80,7 @@ export function buildApp({
   // Both hook into route registration, so they come before every route (Swagger's own included).
   registerSecurity(app, rateLimit);
   registerOpenApi(app);
-  app.register(cors, { origin: corsOrigins, methods: ["GET", "HEAD", "POST", "OPTIONS"] });
+  app.register(cors, { origin: corsOrigins, methods: ["GET", "HEAD", "POST", "PATCH", "DELETE", "OPTIONS"] });
   app.register(healthRoutes, { prisma });
   const assetsRepository = createAssetsRepository(prisma, assetVisibility);
   const soundsRepository = createSoundsRepository(prisma, assetVisibility);
